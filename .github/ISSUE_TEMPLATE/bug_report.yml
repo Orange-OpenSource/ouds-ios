@@ -1,0 +1,50 @@
+name: Report a bug
+description: Tell us about a bug or issue you may have identified in UDS iOS.
+title: "[Bug]: Bug Summary"
+labels: ["🐞 bug", "🔍 triage"]
+assignees: ["ludovic35", "pylapp"]
+body:
+  - type: checkboxes
+    attributes:
+      label: Prerequisites
+      description: Take a couple minutes to help our maintainers work faster.
+      options:
+        - label: I have [searched the backlog](https://github.com/uds-sandbox/uds-ios/issues) for duplicate or closed feature requests
+          required: true
+  - type: input
+    id: device
+    attributes:
+      label: Your test device
+      description: 
+      placeholder: iPhone 13 pro
+    validations:
+      required: true
+  - type: input
+    id: os-version
+    attributes:
+      label: OS Version
+      description: 
+      placeholder: iOS 15.1
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: App version
+      placeholder: v1.0.1
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Describe the issue
+      description: Provide a summary of the issue, including specific steps to reproduce.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: Provide a description of what you expected to happen.
+    validations:
+      required: true
