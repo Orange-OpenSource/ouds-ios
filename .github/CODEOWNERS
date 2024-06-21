@@ -1,0 +1,31 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# Top-level files
+
+AUTHORS.txt @pylapp
+CONTRIBUTORS.txt @pylapp
+LICENSE @pylapp
+
+NOTICE.txt @pylapp
+
+CHANGELOG.md @ludovic35 @pylapp
+DEVELOP.md @ludovic35 @pylapp
+README.md @ludovic35 @pylapp
+THIRD-PARTY.md @ludovic35 @pylapp
+
+CONTRIBUTING.md @ludovic35 @pylapp
+
+# Project
+
+/.github/ @pylapp @ludovic35
