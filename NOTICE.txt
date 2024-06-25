@@ -8,6 +8,8 @@ in whole or part of, in any medium, except as required for reasonable and custom
 and reproducing the content of the NOTICE and DOCUMENTATION files.
 Any use or displaying shall constitute an infringement under intellectual property laws of France and international conventions.
 
-
+./DemoApp/DemoApp/Resources/Assets.xcassets/ic_components.imageset/ic_guidelines.svg
+./DemoApp/DemoApp/Resources/Assets.xcassets/ic_components.imageset/ic_components.svg
+./DemoApp/DemoApp/Resources/Assets.xcassets/ic_components.imageset/ic_info.svg
 
 End of the parts list under Orange SA Copyright

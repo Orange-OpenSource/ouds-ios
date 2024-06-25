@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  DemoApp
+
+  Created by Ludovic PINEL on 24/06/2024.
+  
+*/
+
+"components.page.title" = "Components";
+"guidelines.page.title" = "Guidelines";
+"info.page.title" = "Info";
+"info.page.cgu.title" = "CGU";
+"info.page.privacyPolicy.title" = "Privacy policy";
+"info.page.changelog.title" = "Changelog";
