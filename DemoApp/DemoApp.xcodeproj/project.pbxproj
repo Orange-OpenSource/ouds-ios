@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		076DC50E2C29C47600422E6E /* InfoPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DC50D2C29C47600422E6E /* InfoPage.swift */; };
+		076DC50E2C29C47600422E6E /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DC50D2C29C47600422E6E /* AboutPage.swift */; };
 		076DC5152C29CAEB00422E6E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076DC5132C29CAEB00422E6E /* Localizable.strings */; };
 		076DC51A2C2AA99300422E6E /* CGU.html in Resources */ = {isa = PBXBuildFile; fileRef = 076DC5162C2AA99300422E6E /* CGU.html */; };
 		076DC51B2C2AA99300422E6E /* PrivacyNotice.html in Resources */ = {isa = PBXBuildFile; fileRef = 076DC5182C2AA99300422E6E /* PrivacyNotice.html */; };
@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		076DC50D2C29C47600422E6E /* InfoPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPage.swift; sourceTree = "<group>"; };
+		076DC50D2C29C47600422E6E /* AboutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		076DC5142C29CAEB00422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		076DC5172C2AA99300422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/CGU.html; sourceTree = "<group>"; };
 		076DC5192C2AA99300422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/PrivacyNotice.html; sourceTree = "<group>"; };
@@ -69,12 +69,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		076DC50C2C29C45A00422E6E /* Info */ = {
+		076DC50C2C29C45A00422E6E /* About */ = {
 			isa = PBXGroup;
 			children = (
-				076DC50D2C29C47600422E6E /* InfoPage.swift */,
+				076DC50D2C29C47600422E6E /* AboutPage.swift */,
 			);
-			path = Info;
+			path = About;
 			sourceTree = "<group>";
 		};
 		076DC50F2C29CA2600422E6E /* Resources */ = {
@@ -114,7 +114,7 @@
 			children = (
 				07F4FFC02C29BD970054B418 /* Components */,
 				07F4FFC12C29BDA50054B418 /* Guidelines */,
-				076DC50C2C29C45A00422E6E /* Info */,
+				076DC50C2C29C45A00422E6E /* About */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 			files = (
 				07FDCD972C296A500009AA13 /* MainView.swift in Sources */,
 				07F4FFC42C29BDE60054B418 /* ComponentsPage.swift in Sources */,
-				076DC50E2C29C47600422E6E /* InfoPage.swift in Sources */,
+				076DC50E2C29C47600422E6E /* AboutPage.swift in Sources */,
 				076DC51E2C2AABDA00422E6E /* WebView.swift in Sources */,
 				07F4FFC82C29C0DD0054B418 /* GuidelinesPage.swift in Sources */,
 				07FDCD952C296A500009AA13 /* DemoApp.swift in Sources */,

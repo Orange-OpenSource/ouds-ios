@@ -13,7 +13,7 @@
 
 import SwiftUI
 
-struct InfoPage: View {
+struct AboutPage: View {
     
     // =======================
     // MARK: Stored properties
@@ -48,24 +48,24 @@ struct InfoPage: View {
                 NavigationLink {
                     Text("Add Change Log")
                 } label: {
-                    Text("info.page.changelog.title")
+                    Text("about.page.changelog.title")
                 }
 
                 NavigationLink {
                     WebView(from: privacyNoticeUrl)
-                        .navigationTitle("info.page.privacyPolicy.title")
+                        .navigationTitle("about.page.privacyPolicy.title")
                 } label: {
-                    Text("info.page.privacyPolicy.title")
+                    Text("about.page.privacyPolicy.title")
                 }
                 
                 NavigationLink {
                     WebView(from: cguUrl)
-                        .navigationTitle("info.page.cgu.title")
+                        .navigationTitle("about.page.cgu.title")
                 } label: {
-                    Text("info.page.cgu.title")
+                    Text("about.page.cgu.title")
                 }
             }
-            .navigationTitle("info.page.title")
+            .navigationTitle("about.page.title")
         }
     }
 }

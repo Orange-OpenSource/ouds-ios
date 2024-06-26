@@ -24,9 +24,9 @@ struct MainView: View {
                 .tabItem {
                     Label("components.page.title", image: "ic_components")
                 }
-            InfoPage()
+            AboutPage()
                 .tabItem {
-                    Label("info.page.title", image: "ic_info")
+                    Label("about.page.title", image: "ic_info")
                 }
 
         }
