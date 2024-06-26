@@ -20,7 +20,7 @@ struct WebView: UIViewRepresentable {
         case url(URL)
         case html(String)
     }
-    
+
     // =======================
     // MARK: Stored properties
     // =======================
@@ -30,7 +30,7 @@ struct WebView: UIViewRepresentable {
     // =================
     // MARK: Initializer
     // =================
-    
+
     init(from url: URL) {
         self.source = .url(url)
     }

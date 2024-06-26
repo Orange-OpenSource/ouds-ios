@@ -14,7 +14,7 @@
 import SwiftUI
 
 struct AboutPage: View {
-    
+
     // =======================
     // MARK: Stored properties
     // =======================
@@ -57,7 +57,7 @@ struct AboutPage: View {
                 } label: {
                     Text("about.page.privacyPolicy.title")
                 }
-                
+
                 NavigationLink {
                     WebView(from: cguUrl)
                         .navigationTitle("about.page.cgu.title")

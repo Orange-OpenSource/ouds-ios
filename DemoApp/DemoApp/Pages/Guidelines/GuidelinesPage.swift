@@ -14,7 +14,7 @@
 import SwiftUI
 
 struct GuidelinesPage: View {
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -27,4 +27,3 @@ struct GuidelinesPage: View {
         }
     }
 }
-

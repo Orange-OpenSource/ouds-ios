@@ -22,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		0707B6402C2C3C0400A911E7 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; name = .github; path = ../.github; sourceTree = "<group>"; };
+		0707B6432C2C569500A911E7 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
 		076DC50D2C29C47600422E6E /* AboutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		076DC5142C29CAEB00422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		076DC5172C2AA99300422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/CGU.html; sourceTree = "<group>"; };
@@ -172,6 +173,7 @@
 				07FDCDB72C296C370009AA13 /* .swiftformat */,
 				07FDCDB52C296C370009AA13 /* .swiftlint.yml */,
 				07FDCDA52C296B4B0009AA13 /* .gitattributes */,
+				0707B6432C2C569500A911E7 /* Gemfile */,
 			);
 			name = Configuration;
 			sourceTree = "<group>";
@@ -186,6 +188,7 @@
 				07FDCD8D2C296A500009AA13 /* Sources */,
 				07FDCD8E2C296A500009AA13 /* Frameworks */,
 				07FDCD8F2C296A500009AA13 /* Resources */,
+				0707B6412C2C414200A911E7 /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -243,6 +246,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0707B6412C2C414200A911E7 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml ./DemoApp/\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		07FDCD8D2C296A500009AA13 /* Sources */ = {
@@ -325,7 +350,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -388,7 +413,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

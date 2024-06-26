@@ -14,7 +14,7 @@
 import SwiftUI
 
 struct ComponentsPage: View {
-    
+
     var body: some View {
         NavigationView {
             VStack {
