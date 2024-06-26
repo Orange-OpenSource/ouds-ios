@@ -1,6 +1,6 @@
-# Contributing to Orange Unified Design System iOS
+# Contributing to OUDS iOS
 
-Looking to contribute something to Orange Unified Design System iOS? **Here's how you can help.**
+Looking to contribute something OUDS iOS? **Here's how you can help.**
 
 Please take a moment to review this document in order to make the contribution process easy for everyone involved.
 
@@ -8,9 +8,9 @@ Following these guidelines helps to communicate that you respect the time of the
 
 ## Using the Issue Tracker
 
-The [issue tracker](https://github.com/uds-sandbox/uds-ios/issues) is the preferred channel for [bug reports](#bug-reports), [feature requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
+The [issue tracker](https://github.com/ouds-sandbox/ouds-ios/issues) is the preferred channel for [bug reports](#bug-reports), [feature requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
 
-- Please **do not** use the issue tracker for personal support requests. [GitHub Discussions](https://github.com/uds-sandbox/uds-ios/discussions/categories/q-a) or our internal Orange communication tools are better places to get help.
+- Please **do not** use the issue tracker for personal support requests. [GitHub Discussions](https://github.com/ouds-sandbox/ouds-ios/discussions/categories/q-a) or our internal Orange communication tools are better places to get help.
 
 - Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
 
@@ -23,7 +23,7 @@ Our bug tracker utilizes several labels to help organize and identify issues. He
 - `feature` - Issues asking for a new feature to be added, or an existing one to be extended or modified. New features require a minor version bump (e.g., `v1.0.0` to `v1.1.0`).
 - `help wanted` - Issues we need or would love help from the community to resolve.
 
-For a complete look at our labels, see the [project labels page](https://github.com/uds-sandbox/uds-ios/labels).
+For a complete look at our labels, see the [project labels page](https://github.com/ouds-sandbox/ouds-ios/labels).
 
 ## Bug Reports
 
@@ -75,11 +75,11 @@ Adhering to the following process is the best way to get your work included in t
 
    ```bash
    # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/uds-ios.git
+   git clone https://github.com/<your-username>/ouds-ios.git
    # Navigate to the newly cloned directory
-   cd uds-ios
+   cd ouds-ios
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/Orange-OpenSource/uds-ios.git
+   git remote add upstream https://github.com/Orange-OpenSource/ouds-ios.git
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:
