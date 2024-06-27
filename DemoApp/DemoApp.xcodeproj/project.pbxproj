@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		076DC50E2C29C47600422E6E /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DC50D2C29C47600422E6E /* AboutPage.swift */; };
 		076DC5152C29CAEB00422E6E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 076DC5132C29CAEB00422E6E /* Localizable.strings */; };
-		076DC51A2C2AA99300422E6E /* CGU.html in Resources */ = {isa = PBXBuildFile; fileRef = 076DC5162C2AA99300422E6E /* CGU.html */; };
-		076DC51B2C2AA99300422E6E /* PrivacyNotice.html in Resources */ = {isa = PBXBuildFile; fileRef = 076DC5182C2AA99300422E6E /* PrivacyNotice.html */; };
+		076DC51A2C2AA99300422E6E /* about_legal_information.html in Resources */ = {isa = PBXBuildFile; fileRef = 076DC5162C2AA99300422E6E /* about_legal_information.html */; };
+		076DC51B2C2AA99300422E6E /* about_privacy_policy.html in Resources */ = {isa = PBXBuildFile; fileRef = 076DC5182C2AA99300422E6E /* about_privacy_policy.html */; };
 		076DC51E2C2AABDA00422E6E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076DC51D2C2AABDA00422E6E /* WebView.swift */; };
 		07F4FFC42C29BDE60054B418 /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4FFC32C29BDE60054B418 /* ComponentsPage.swift */; };
 		07F4FFC82C29C0DD0054B418 /* GuidelinesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F4FFC72C29C0DD0054B418 /* GuidelinesPage.swift */; };
@@ -25,8 +25,8 @@
 		0707B6432C2C569500A911E7 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
 		076DC50D2C29C47600422E6E /* AboutPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		076DC5142C29CAEB00422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		076DC5172C2AA99300422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/CGU.html; sourceTree = "<group>"; };
-		076DC5192C2AA99300422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/PrivacyNotice.html; sourceTree = "<group>"; };
+		076DC5172C2AA99300422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/about_legal_information.html; sourceTree = "<group>"; };
+		076DC5192C2AA99300422E6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		076DC51D2C2AABDA00422E6E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		07F4FFC32C29BDE60054B418 /* ComponentsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
 		07F4FFC72C29C0DD0054B418 /* GuidelinesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidelinesPage.swift; sourceTree = "<group>"; };
@@ -70,8 +70,8 @@
 		076DC50F2C29CA2600422E6E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				076DC5162C2AA99300422E6E /* CGU.html */,
-				076DC5182C2AA99300422E6E /* PrivacyNotice.html */,
+				076DC5162C2AA99300422E6E /* about_legal_information.html */,
+				076DC5182C2AA99300422E6E /* about_privacy_policy.html */,
 				07FDCD982C296A540009AA13 /* Assets.xcassets */,
 				076DC5132C29CAEB00422E6E /* Localizable.strings */,
 			);
@@ -237,11 +237,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076DC51B2C2AA99300422E6E /* PrivacyNotice.html in Resources */,
+				076DC51B2C2AA99300422E6E /* about_privacy_policy.html in Resources */,
 				07FDCD9C2C296A540009AA13 /* Preview Assets.xcassets in Resources */,
 				076DC5152C29CAEB00422E6E /* Localizable.strings in Resources */,
 				07FDCD992C296A540009AA13 /* Assets.xcassets in Resources */,
-				076DC51A2C2AA99300422E6E /* CGU.html in Resources */,
+				076DC51A2C2AA99300422E6E /* about_legal_information.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,20 +294,20 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		076DC5162C2AA99300422E6E /* CGU.html */ = {
+		076DC5162C2AA99300422E6E /* about_legal_information.html */ = {
 			isa = PBXVariantGroup;
 			children = (
 				076DC5172C2AA99300422E6E /* en */,
 			);
-			name = CGU.html;
+			name = about_legal_information.html;
 			sourceTree = "<group>";
 		};
-		076DC5182C2AA99300422E6E /* PrivacyNotice.html */ = {
+		076DC5182C2AA99300422E6E /* about_privacy_policy.html */ = {
 			isa = PBXVariantGroup;
 			children = (
 				076DC5192C2AA99300422E6E /* en */,
 			);
-			name = PrivacyNotice.html;
+			name = about_privacy_policy.html;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

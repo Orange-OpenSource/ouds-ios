@@ -19,23 +19,23 @@ struct AboutPage: View {
     // MARK: Stored properties
     // =======================
 
-    let privacyNoticeUrl: URL
-    let cguUrl: URL
+    let privacyPolicyUrl: URL
+    let legalInformationUrl: URL
 
     // =================
     // MARK: Initializer
     // =================
 
     init() {
-        guard let privacyNoticeUrl = Bundle.main.url(forResource: "PrivacyNotice", withExtension: "html") else {
-            fatalError("Unable to find PrivacyNotice.html in resources")
+        guard let privacyNoticeUrl = Bundle.main.url(forResource: "about_privacy_policy", withExtension: "html") else {
+            fatalError("Unable to find about_privacy_policy.html in resources")
         }
-        guard let cguUrl = Bundle.main.url(forResource: "CGU", withExtension: "html") else {
-            fatalError("Unable to find CGU.html in resources")
+        guard let legalInformationUrl = Bundle.main.url(forResource: "about_legal_information", withExtension: "html") else {
+            fatalError("Unable to find about_legal_information.html in resources")
         }
 
-        self.privacyNoticeUrl = privacyNoticeUrl
-        self.cguUrl = cguUrl
+        self.privacyPolicyUrl = privacyNoticeUrl
+        self.legalInformationUrl = legalInformationUrl
     }
 
     // ==========
@@ -52,17 +52,17 @@ struct AboutPage: View {
                 }
 
                 NavigationLink {
-                    WebView(from: privacyNoticeUrl)
+                    WebView(from: privacyPolicyUrl)
                         .navigationTitle("about.page.privacyPolicy.title")
                 } label: {
                     Text("about.page.privacyPolicy.title")
                 }
 
                 NavigationLink {
-                    WebView(from: cguUrl)
-                        .navigationTitle("about.page.cgu.title")
+                    WebView(from: legalInformationUrl)
+                        .navigationTitle("about.page.legalInformation.title")
                 } label: {
-                    Text("about.page.cgu.title")
+                    Text("about.page.legalInformation.title")
                 }
             }
             .navigationTitle("about.page.title")
