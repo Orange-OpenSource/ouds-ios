@@ -1,5 +1,5 @@
 name: Report a bug
-description: Tell us about a bug or issue you may have identified in UDS iOS.
+description: Tell us about a bug or issue you may have identified in OUDS iOS.
 title: "[Bug]: Bug Summary"
 labels: ["🐞 bug", "🔍 triage"]
 assignees: ["ludovic35", "pylapp"]
@@ -9,7 +9,7 @@ body:
       label: Prerequisites
       description: Take a couple minutes to help our maintainers work faster.
       options:
-        - label: I have [searched the backlog](https://github.com/uds-sandbox/uds-ios/issues) for duplicate or closed feature requests
+        - label: I have [searched the backlog](https://github.com/ouds-sandbox/ouds-ios/issues) for duplicate or closed feature requests
           required: true
   - type: input
     id: device

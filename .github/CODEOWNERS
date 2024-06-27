@@ -1,5 +1,5 @@
 #
-# Software Name: Orange Unified Design System
+# Software Name: OUDS iOS
 # SPDX-FileCopyrightText: Copyright (c) Orange SA
 # SPDX-License-Identifier: MIT
 #

@@ -1,5 +1,5 @@
 # This is the official list of people have contributed code to the
-# uds-ios repository.
+# ouds-ios repository.
 #
 # The AUTHORS file lists the copyright holders; this file
 # lists people.  For example, Orange employees are listed here
