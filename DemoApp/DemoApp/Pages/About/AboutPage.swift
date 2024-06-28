@@ -46,26 +46,20 @@ struct AboutPage: View {
         NavigationView {
             List {
                 NavigationLink {
-                    Text("Add Change Log")
-                } label: {
-                    Text("about.page.changelog.title")
-                }
-
-                NavigationLink {
                     WebView(from: privacyPolicyUrl)
-                        .navigationTitle("about.page.privacyPolicy.title")
+                        .navigationTitle("app_about_label_privacyPolicy")
                 } label: {
-                    Text("about.page.privacyPolicy.title")
+                    Text("app_about_label_privacyPolicy")
                 }
 
                 NavigationLink {
                     WebView(from: legalInformationUrl)
-                        .navigationTitle("about.page.legalInformation.title")
+                        .navigationTitle("app_about_label_legalInformation")
                 } label: {
-                    Text("about.page.legalInformation.title")
+                    Text("app_about_label_legalInformation")
                 }
             }
-            .navigationTitle("about.page.title")
+            .navigationTitle("app_bottomBar_about")
         }
     }
 }

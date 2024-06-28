@@ -23,7 +23,7 @@ struct ComponentsPage: View {
                     .foregroundStyle(.tint)
                 Text("Hello, world!")
             }
-            .navigationTitle("components.page.title")
+            .navigationTitle("app_bottomBar_components")
         }
     }
 }

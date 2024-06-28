@@ -18,15 +18,15 @@ struct MainView: View {
         TabView {
             GuidelinesPage()
                 .tabItem {
-                    Label("guidelines.page.title", image: "ic_guideline_dna")
+                    Label("app_bottomBar_guidelines", image: "ic_guideline_dna")
                 }
             ComponentsPage()
                 .tabItem {
-                    Label("components.page.title", image: "ic_component_atom")
+                    Label("app_bottomBar_components", image: "ic_component_atom")
                 }
             AboutPage()
                 .tabItem {
-                    Label("about.page.title", image: "ic_info")
+                    Label("app_bottomBar_about", image: "ic_info")
                 }
 
         }

@@ -23,7 +23,7 @@ struct GuidelinesPage: View {
                     .foregroundStyle(.tint)
                 Text("Hello, world!")
             }
-            .navigationTitle("guidelines.page.title")
+            .navigationTitle("app_bottomBar_guidelines")
         }
     }
 }

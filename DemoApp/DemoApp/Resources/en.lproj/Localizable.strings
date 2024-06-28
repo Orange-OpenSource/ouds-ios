@@ -11,9 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-"components.page.title" = "Components";
-"guidelines.page.title" = "Guidelines";
-"about.page.title" = "About";
-"about.page.legalInformation.title" = "Legal information";
-"about.page.privacyPolicy.title" = "Privacy policy";
-"about.page.changelog.title" = "Changelog";
+// =================
+// MARK: - bottomBar
+// =================
+
+"app_bottomBar_components" = "Components";
+"app_bottomBar_guidelines" = "Guidelines";
+"app_bottomBar_about" = "About";
+
+// ====================
+// MARK: - About Screen
+// ====================
+
+"app_about_label_legalInformation" = "Legal information";
+"app_about_label_privacyPolicy" = "Privacy policy";
