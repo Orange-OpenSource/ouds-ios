@@ -22,5 +22,5 @@ gem 'fastlane-plugin-mattermost', '1.3.2'
 gem 'xcode-install', '2.8.1'
 gem 'swiftlint', '0.54.0'
 
-plugins_path = File.join(File.dirname(__FILE__), 'OrangeDesignSystemDemo/fastlane', 'Pluginfile')
+plugins_path = File.join(File.dirname(__FILE__), 'DemoApp/fastlane', 'Pluginfile')
 eval_gemfile(plugins_path) if File.exist?(plugins_path)
