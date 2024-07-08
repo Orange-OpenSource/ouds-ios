@@ -9,7 +9,7 @@ body:
       label: Prerequisites
       description: Take a couple minutes to help our maintainers work faster.
       options:
-        - label: I have [searched the backlog](https://github.com/ouds-sandbox/ouds-ios/issues) for duplicate or closed feature requests
+        - label: I have [searched the backlog](https://github.com/Orange-OpenSource/ouds-ios/issues) for duplicate or closed feature requests
           required: true
   - type: markdown
     attributes:
