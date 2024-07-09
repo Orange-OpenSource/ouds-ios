@@ -81,6 +81,8 @@ gitleaks detect -v -l debug --source .
 
 Note that we face some issues about the use of _Gitleaks GitHub Action_ and _Gitleaks_ as CLI command, for fur further details see [#131](https://github.com/gitleaks/gitleaks-action/issues/131), [#132](https://github.com/gitleaks/gitleaks-action/issues/132) and [#1331](https://github.com/gitleaks/gitleaks/issues/1331).
 
+_Gitleaks_ is also used in GitHub project side thanks to the [dedicated GitHub Action](https://github.com/marketplace/actions/gitleaks).
+
 ## Update dependencies
 
 Sometimes dependencies should be updated, with for example warnings of [Renovate bot](https://github.com/apps/renovate).
