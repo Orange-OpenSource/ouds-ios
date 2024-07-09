@@ -54,6 +54,13 @@ Copyright (c) 2019 Zachary Rice
 *gitleaks* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/gitleaks/gitleaks).
 
+### Periphery
+
+Copyright (c) 2019 Ian Leitch
+
+*Periphery* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/peripheryapp/periphery).
+
 ### SwiftFormat
 
 Version 0.53.5
