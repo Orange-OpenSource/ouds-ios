@@ -11,21 +11,20 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
-# Top-level files
+# Utility files
 
 AUTHORS.txt @pylapp
 CONTRIBUTORS.txt @pylapp
 LICENSE @pylapp
 
-NOTICE.txt @pylapp
-
+README.md @ludovic35 @pylapp
 CHANGELOG.md @ludovic35 @pylapp
 DEVELOP.md @ludovic35 @pylapp
-README.md @ludovic35 @pylapp
-THIRD-PARTY.md @ludovic35 @pylapp
-
 CONTRIBUTING.md @ludovic35 @pylapp
+THIRD-PARTY.md @ludovic35 @pylapp
+NOTICE.txt @ludovic35 @pylapp
 
 # Project
 
 /.github/ @pylapp @ludovic35
+/DemoApp/ @pylapp @ludovic35
