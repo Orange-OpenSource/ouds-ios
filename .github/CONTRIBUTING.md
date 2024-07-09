@@ -4,7 +4,8 @@ Looking to contribute something OUDS iOS? **Here's how you can help.**
 
 Please take a moment to review this document in order to make the contribution process easy for everyone involved.
 
-Following these guidelines helps to communicate that you respect the time of the developers managing and developing this Open Source project. In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
+Following these guidelines helps to communicate that you respect the time of the developers managing and developing this Open Source project.
+In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
 
 ## Using the Issue Tracker
 
@@ -78,7 +79,7 @@ Adhering to the following process is the best way to get your work included in t
    git clone https://github.com/<your-username>/ouds-ios.git
    # Navigate to the newly cloned directory
    cd ouds-ios
-   # Assign the original repo to a remote called "upstream"
+   # Assign the original repo to a remote called "upstream" (you can use of course SSH instead of HTTPS)
    git remote add upstream https://github.com/Orange-OpenSource/ouds-ios.git
    ```
 
@@ -92,10 +93,10 @@ Adhering to the following process is the best way to get your work included in t
 3. Create a new topic branch (off the main project development branch) to contain your feature, change, or fix:
 
    ```bash
-   git checkout -b <topic-branch-name>
+   git checkout -b <topic-branch-name> develop
    ```
 
-4. Commit your changes in logical chunks. Use Git's [interactive rebase](https://help.github.com/articles/about-git-rebase/) feature to tidy up your commits before making them public.
+4. Commit your changes in logical chunks. Use Git's [interactive rebase](https://help.github.com/articles/about-git-rebase/) feature to tidy up your commits before making them public. Refer also to [commits style](#commits-style).
 
 5. Locally merge (or rebase) the upstream development branch into your topic branch:
 
@@ -109,15 +110,37 @@ Adhering to the following process is the best way to get your work included in t
    git push origin <topic-branch-name>
    ```
 
-7. [Open a Pull Request](https://help.github.com/articles/about-pull-requests/) with a clear title and description against the `main` branch.
+7. [Open a Pull Request](https://help.github.com/articles/about-pull-requests/) with a clear title and description against the `develop` branch.
 
 **IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](LICENSE).
+
+Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on `develop` branch: if any prerequisites are not futfilled in the pull request ticket the merge won't be done. 
 
 ## Code Guidelines
 
 ### Checking Coding Style
 
 Format your code before committing to ensure your changes follow our coding standards.
+
+## Commits style
+
+Try as best as possible to apply [conventional commits rules](https://www.conventionalcommits.org/en/v1.0.0/).
+Keep in mind to have your commits well prefixed, and with the issue number between parenthesis at the end.
+If your commits embed contributions for other people, do not forget to [add them as co-authors](https://docs.github.com/fr/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors). All of you should also comply to DCO.
+
+For example, given a commit to fix the issue n°43, the commit should be like:
+
+```text
+fix: title of your commit (#43)
+
+Some details about the fix you propose
+
+Co-authored-by: First author firstname and lastname <first author email>
+Co-authored-by: Second author firstname and lastname <second author email>
+
+Signed-off-by: First author firstname and lastname <first author email>
+Signed-off-by: Second author firstname and lastname <second author email>
+```
 
 ## License
 
