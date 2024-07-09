@@ -24,7 +24,7 @@ DemoApp/Pods/
 
 # Produced by Xcode
 DemoApp/DemoApp.xcodeproj/xcuserdata/
-DemoApp.xcworkspace/xcuserdata/
+DemoApp/DemoApp.xcworkspace/xcuserdata/
 DemoApp/DerivedData/
 
 # Produced by Swift Package Manager
