@@ -42,7 +42,6 @@
 		07FDCDA82C296B7A0009AA13 /* NOTICE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = NOTICE.txt; path = ../NOTICE.txt; sourceTree = "<group>"; };
 		07FDCDA92C296B7A0009AA13 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		07FDCDAA2C296B7A0009AA13 /* THIRD_PARTY.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = THIRD_PARTY.md; path = ../THIRD_PARTY.md; sourceTree = "<group>"; };
-		07FDCDAF2C296BAB0009AA13 /* CODE_OF_CONDUCT.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CODE_OF_CONDUCT.md; path = ../CODE_OF_CONDUCT.md; sourceTree = "<group>"; };
 		07FDCDB02C296BAB0009AA13 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		07FDCDB52C296C370009AA13 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		07FDCDB62C296C370009AA13 /* .gitleaks.toml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitleaks.toml; path = ../.gitleaks.toml; sourceTree = "<group>"; };
@@ -165,7 +164,6 @@
 				0707B6402C2C3C0400A911E7 /* .github */,
 				07FDCDA42C296B220009AA13 /* Configuration */,
 				07FDCDB02C296BAB0009AA13 /* CHANGELOG.md */,
-				07FDCDAF2C296BAB0009AA13 /* CODE_OF_CONDUCT.md */,
 				07FDCDA92C296B7A0009AA13 /* LICENSE */,
 				07FDCDA82C296B7A0009AA13 /* NOTICE.txt */,
 				07FDCDA72C296B7A0009AA13 /* README.md */,
