@@ -34,7 +34,7 @@ Guidelines for bug reports:
 
 1. **Use the GitHub issue search** &mdash; check if the issue has already been reported.
 
-2. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `main` in the repository.
+2. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `develop` in the repository.
 
 3. **Isolate the problem** &mdash; ideally create a reduced reproducible test case.
 
@@ -86,11 +86,11 @@ Adhering to the following process is the best way to get your work included in t
 2. If you cloned a while ago, get the latest changes from upstream:
 
    ```bash
-   git checkout main
-   git pull upstream main
+   git checkout develop
+   git pull upstream develop
    ```
 
-3. Create a new topic branch (off the main project development branch) to contain your feature, change, or fix:
+3. Create a new topic branch (off the `develop` project development branch) to contain your feature, change, or fix:
 
    ```bash
    git checkout -b <topic-branch-name> develop
@@ -101,7 +101,7 @@ Adhering to the following process is the best way to get your work included in t
 5. Locally merge (or rebase) the upstream development branch into your topic branch:
 
    ```bash
-   git pull [--rebase] upstream main
+   git pull [--rebase] upstream develop
    ```
 
 6. Push your topic branch up to your fork:
