@@ -72,7 +72,7 @@ You may download the source code on the [following website](https://github.com/n
 
 ### SwiftLint
 
-Version 0.54.0
+Version 0.55.1
 
 Copyright 2020 Realm Inc.
 
