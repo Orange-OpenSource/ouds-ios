@@ -22,7 +22,7 @@ You may download the source code on the [following website](https://github.com/C
                    
 ### Fastlane
 
-Version 2.219.0
+Version 2.221.1
 
 Copyright 2015-2022 The Fastlane Authors.
 
