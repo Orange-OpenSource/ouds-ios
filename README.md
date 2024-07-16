@@ -27,6 +27,17 @@
 
 This repository contains the OUDS iOS library that provides Orange iOS components, but also a demo application showcasing these different components.
 
+## Integrate OUDS
+
+If you want to add the iOS library of `Orange Unified Design System`, you need to add our _Swift Package_ into your project.
+To do that, add a new _package dependency_ to your _Xcode_ project by refering to it with `https://github.com/Orange-OpenSource/ouds-ios`.
+You are free to choose wether or not you want a branch or a specific tag.
+Then you will be able to import the library and the product you want jsut with a simple import in your Swift files like:
+
+```swift
+import OUDS
+```
+
 ## Bugs and feature requests
 
 Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new/choose).

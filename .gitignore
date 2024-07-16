@@ -20,12 +20,12 @@
 /Brewfile.lock.json
 
 # Produced by CocoaPods
-OUDS/Pods/
+Showcase/Pods/
 
 # Produced by Xcode
-OUDS/Showcase.xcodeproj/xcuserdata/
-OUDS/Showcase.xcworkspace/xcuserdata/
-OUDS/DerivedData/
+Showcase/Showcase.xcodeproj/xcuserdata/
+Showcase/Showcase.xcworkspace/xcuserdata/
+DerivedData/
 
 # Produced by Swift Package Manager
 .swiftpm/xcode/xcuserdata/
