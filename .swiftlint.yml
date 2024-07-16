@@ -19,15 +19,16 @@
 # ========
 
 included:
-- DemoApp/DemoApp
+- OUDS/OUDS
+- OUDS/Showcase
 
 # ========
 # Excluded
 # ========
 
 excluded:
-- DemoApp/DemoApp/Resources
-- DemoApp/Pods
+- OUDS/Showcase/Resources
+- OUDS/Pods
 - DerivedData
 
 # ==============

@@ -22,14 +22,14 @@ brew install peripheryapp/periphery/periphery
 brew install gitleaks
 ```
 
-## Build DemoApp
+## Build showcase demo app
 
 To build the demo application follow those steps:
 
-1. `cd DemoApp`
+1. `cd OUDS`
 2. `bundle exec pod install`
-3. Open *DemoApp/DemoApp.xcworkspace*
-4. Select *DemoApp* scheme
+3. Open *Showcase.xcworkspace*
+4. Select *Showcase* scheme
 5. Build and run the Application on your device ou simulator
 
 ## Documentation
@@ -42,7 +42,7 @@ The project contains several custom build phases so as to automatize several ste
 
 1. _SwiftLint_ will run the linter on the sources
 
-Note that sources headers are defined in *IDETemplateMacros.plist* inside *DemoApp/DemoApp.xcworkspace/xcshareddata*
+Note that sources headers are defined in *IDETemplateMacros.plist* inside *OUDS/Showcase.xcworkspace/xcshareddata*
 
 ## Targets
 
