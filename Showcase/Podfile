@@ -1,0 +1,39 @@
+#
+# Software Name: OUDS iOS
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+use_frameworks!
+
+platform :ios, '15.0'
+
+target 'Showcase' do
+  pod 'SwiftLint', '0.55.1'
+  pod 'SwiftFormat/CLI', '0.54.0'
+end
+
+post_install do |installer|
+  ENV['COCOAPODS_DISABLE_STATS'] = "true"
+  
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["DEAD_CODE_STRIPPING"] = "YES"
+  end
+
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete 'IPHONEOS_DEPLOYMENT_TARGET'
+      config.build_settings['SWIFT_VERSION'] = '5'
+      config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+      config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+      config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+    end
+  end
+end
