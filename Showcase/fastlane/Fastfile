@@ -161,6 +161,7 @@ platform :ios do
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "ALPHA")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "ODSBuildDetails", value: "#{params[:issueNumber]}")
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: "OUDS Showcase (ALPHA)")
         
         build_and_upload(isAlpha: true, upload: true, detailSymbol: params[:issueNumber])
     end
@@ -179,6 +180,7 @@ platform :ios do
 
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "BETA")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: "OUDS Showcase (BETA)")
 
         build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
     end
@@ -191,6 +193,7 @@ platform :ios do
         puts "👉 Prod"
         update_build_number
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "PROD")
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: "OUDS Showcase")
         build
         if params[:upload]
             puts "Upload to TestFlight requested"

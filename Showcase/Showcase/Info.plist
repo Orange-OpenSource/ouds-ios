@@ -4,5 +4,7 @@
 <dict>
 	<key>ODSBuildType</key>
 	<string>DEBUG</string>
+	<key>CFBundleDisplayName</key>
+	<string>OUDS Showcase (DEBUG)</string>
 </dict>
 </plist>
