@@ -158,9 +158,9 @@ platform :ios do
         #    sh "cp -R AppIconQualif.appiconset AppIconRelease.appiconset"
         #end
 
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Resources/Info.plist", key: "OUDSBuildType", value: "ALPHA")
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Resources/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Resources/Info.plist", key: "ODSBuildDetails", value: "#{params[:issueNumber]}")
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "ALPHA")
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "ODSBuildDetails", value: "#{params[:issueNumber]}")
         
         build_and_upload(isAlpha: true, upload: true, detailSymbol: params[:issueNumber])
     end
@@ -177,8 +177,8 @@ platform :ios do
         #    sh "cp -R AppIconQualif.appiconset AppIconRelease.appiconset"
         #end
 
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Resources/Info.plist", key: "OUDSBuildType", value: "BETA")
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Resources/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "BETA")
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
 
         build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
     end
@@ -190,7 +190,7 @@ platform :ios do
     lane :prod do |params|
         puts "👉 Prod"
         update_build_number
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Resources/Info.plist", key: "OUDSBuildType", value: "PROD")
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "PROD")
         build
         if params[:upload]
             puts "Upload to TestFlight requested"
@@ -253,7 +253,7 @@ platform :ios do
         begin
             update_app_identifier(
                 xcodeproj: "#{OUDS_PROJECT}",
-                plist_path: "Showcase/Resources/Info.plist",
+                plist_path: "Showcase/Info.plist",
                 app_identifier: CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
             )
 
