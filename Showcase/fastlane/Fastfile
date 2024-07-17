@@ -158,12 +158,15 @@ platform :ios do
         #    sh "cp -R AppIconQualif.appiconset AppIconRelease.appiconset"
         #end
 
+        marketingVersionBase = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleShortVersionString")
+        newMarketingVersion = "#{marketingVersionBase} (ALPHA) (#{params[:issueNumber]})"
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleShortVersionString", value: newMarketingVersion)
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: "OUDS Showcase ALPHA (#{params[:issueNumber]})")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "ALPHA")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "ODSBuildDetails", value: "#{params[:issueNumber]}")
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: "OUDS Showcase (ALPHA)")
-        
-        build_and_upload(isAlpha: true, upload: true, detailSymbol: params[:issueNumber])
+
+        build_and_upload(isAlpha: true, upload: true)
     end
 
     # ------------------------------------------------------------
@@ -207,17 +210,18 @@ platform :ios do
     # PRIVATE LANE BUILD & UPLOAD (ALPHA / BETA / PROD is set by main lane)
     # -----------------------------------------------------------------------
     private_lane :build_and_upload do |params|
-        isAlpha=params[:isAlpha]
-        detailSymbol=params[:detailSymbol]
-        puts "👉 Build and upload (alpha = #{isAlpha}, detail symbol = #{detailSymbol})"
+        isAlpha = params[:isAlpha]
 
         if isAlpha # Alpha case, detailSymbol should be the issue number of the feature/fix to test
-            increment_build_number(xcodeproj: OUDS_PROJECT, build_number: detailSymbol)
+            puts "👉 Build and upload (alpha)"
+            update_build_number
             build
             upload 
 
         else # Beta case (not production too), detailSymbol should be here commit hash
-
+            detailSymbol = params[:detailSymbol]
+            puts "👉 Build and upload (alpha = #{isAlpha}), detail symbol = #{detailSymbol})"
+            
             # If already built, prevents to build again for nothing
             # Warning: tag is done before build and not removed, so if build failed, tag will remain and needs to be removed manualy.
             # It prevents to have loops of failing builds.
