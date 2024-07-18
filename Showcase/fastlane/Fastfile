@@ -166,7 +166,7 @@ platform :ios do
         # Details for the GUI in the app
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "ALPHA")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "ODSBuildDetails", value: "#{params[:issueNumber]}")
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildDetails", value: "#{params[:issueNumber]}")
 
         build_and_upload(isAlpha: true, upload: true)
     end

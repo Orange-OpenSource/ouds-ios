@@ -38,7 +38,7 @@ extension Bundle {
 #if DEBUG
         "DEBUG"
 #else
-        string(forInfoDictionaryKey: "ODSBuildType")
+        string(forInfoDictionaryKey: "OUDSBuildType")
 #endif
     }
 
@@ -47,7 +47,7 @@ extension Bundle {
 #if DEBUG
         nil
 #else
-        string(forInfoDictionaryKey: "ODSBuildTag")
+        string(forInfoDictionaryKey: "OUDSBuildTag")
 #endif
     }
 
@@ -56,7 +56,7 @@ extension Bundle {
 #if DEBUG
         nil
 #else
-        string(forInfoDictionaryKey: "ODSBuildDetails")
+        string(forInfoDictionaryKey: "OUDSBuildDetails")
 #endif
     }
 
