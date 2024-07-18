@@ -74,7 +74,7 @@ platform :ios do
 
         timestamp = sh 'date +%s' # Timestamp are unique and bring details about build date
         timestamp = timestamp.strip!
-        puts "New builder number: '#{timestamp}'"
+        puts "ℹ️ New builder number: '#{timestamp}'"
 
         increment_build_number(xcodeproj: OUDS_PROJECT, build_number: timestamp)
     end
@@ -152,16 +152,18 @@ platform :ios do
     desc "BUILD & UPLOAD TO TESTFLIGHT ALPHA APP"
     lane :alpha do |params|
         puts "👉 Alpha (commit hash = '#{params[:commitHash]}, issue number = '#{params[:issueNumber]}')"
-        # Dir.pwd ???
         Dir.chdir "../Showcase/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconDev.appiconset AppIconRelease.appiconset"
         end
 
-        marketing_version_base = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleShortVersionString")
-        new_marketing_version = "#{marketing_version_base} (ALPHA) (#{params[:issueNumber]})"
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleShortVersionString", value: new_marketing_version)
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: "OUDS Showcase ALPHA (#{params[:issueNumber]})")
+        # CFBundleVersion and CFBundleShortVersionString must follow rules with integers and periods, should not change them
+        # But still possible to change CFBundleDisplayName
+        new_display_name = "OUDS Showcase ALPHA (#{params[:issueNumber]})"
+        puts "ℹ️ New display name version will be: '#{new_display_name}'"
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
+
+        # Details for the GUI in the app
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "ALPHA")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "ODSBuildDetails", value: "#{params[:issueNumber]}")
@@ -180,10 +182,14 @@ platform :ios do
             sh "cp -R AppIconQualif.appiconset AppIconRelease.appiconset"
         end
 
+        new_display_name = "OUDS Showcase (BETA)"
+        puts "ℹ️ New display name version will be: '#{new_display_name}'"
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
+
+        # Details for the GUI in the app
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "BETA")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: "OUDS Showcase (BETA)")
-
+        
         build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
     end
 
@@ -194,8 +200,14 @@ platform :ios do
     lane :prod do |params|
         puts "👉 Prod"
         update_build_number
+
+        new_display_name = "OUDS Showcase"
+        puts "ℹ️ New display name version will be: '#{new_display_name}'"
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
+
+        # Details for the GUI in the app
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "PROD")
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: "OUDS Showcase")
+        
         build
         if params[:upload]
             puts "Upload to TestFlight requested"
