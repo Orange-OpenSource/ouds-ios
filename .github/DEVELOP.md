@@ -1,6 +1,21 @@
 # Developer guide
 
-## Check preconditions
+- [Technical preconditions](#technical-preconditions)
+- [Build showcase demo app](#build-showcase-demo-app)
+- [Documentation](#documentation)
+- [Build phases](#build-phases)
+- [Targets](#targets)
+- [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
+- [Update dependencies with Renovate](#update-dependencies-with-renovate)
+- [Developer Certificate of Origin](#developer-certificate-of-origin)
+- [Commits, changelog, release note, versioning](#commits-changelog-release-note-versioning)
+  * [About commits](#about-commits)
+  * [About release note](#about-release-note)
+  * [About changelog](#about-changelog)
+- [Use of Gitleaks](#use-of-gitleaks)
+- [CI/CD](#cicd)
+
+## Technical preconditions
 
 You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
 You can have a look for example in thr **THIRD\_PARTY.md** file which lists any dependencies and tools we use are different levels (SDK, showcase app, projects).
@@ -19,6 +34,8 @@ brew install peripheryapp/periphery/periphery
 # For gitleaks (https://github.com/gitleaks/gitleaks) (secrets leaks)
 brew install gitleaks
 ```
+
+We use also for our GitLab CI runners **Xcode 15.3**, we suggest you use this version or newer if you want but beware.
 
 ## Build showcase demo app
 
@@ -49,13 +66,14 @@ The Xcode project contains two targets:
 1. _Showcase_ for the demo application
 2. _Periphery_ to look for dead code in the source code
 
-## Certificates and profiles
+## Certificates, profiles and identifiers
 
 We choose to use Xcode automatic signing for debug builds of the app so as to make easier onboarding of newcomers in development team, and also to prevent to update provisioning profiles with individual developers certificates each team someone wants to build the app and also to prevent to register each new build device). You may need to be part of our team if you want to build in debug mode.
+Note the bundle identifier here for lcoal builds is **com.orange.ouds.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.ouds.demoapp** identifiers.  
 
-However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.ouds.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners.
+However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.ouds.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners and must not be available outside.
 
-## Update dependencies (Renovate)
+## Update dependencies with Renovate
 
 Sometimes dependencies should be updated, with for example warnings of [Renovate bot](https://github.com/apps/renovate).
 
@@ -70,7 +88,7 @@ Maybe you will need to update your pods repo before if you updated a Pod:
 bundle exec pod install --repo-update
 ```
 
-## Developer Certificate of Origine (DCO Bot)
+## Developer Certificate of Origin
 
 A [GitHub Action bot](https://probot.github.io/apps/dco/) has been plugged in the repository so as to check wether or not the DCO is applied for commits.
 

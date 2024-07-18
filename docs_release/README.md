@@ -5,10 +5,14 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 - [Prepare release](#prepare-release)
 - [Release](#release)
   * [Publish release to GitHub](#publish-release-to-github)
-  * [Announce the new release on FoODS](#announce-the-new-release-on-foods)
 - [Prepare Next Release](#prepare-next-release)
 - [About CI/CD with GitLab CI](#about-cicd-with-gitlabci)
-
+  * [GitLab CI pipeline](#gitlab-ci-pipeline)
+  * [Prepare environement build Shell script](#prepare-environement-build-shell-script)  
+  * [GitHub download Shell script](#github-download-shell-script)
+- [How it works](#how-it-works)
+  * [Alpha builds](#alpha-builds)
+  
 ## Prepare release
 
 - Create a branch named `prepare-release` to prepare the new release for OUDS iOS version X.Y.Z.
@@ -100,7 +104,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 - Optionally check `Set as a pre-release` and click `Publish release`.<br /><br />
 
 <!-- TODO Section about annoucement -->
-<!-->
+<!--
 ### Announce the new release on FoODS
 
 - Go to [Teams - FoODS: ODS Mobile iOS]
@@ -346,91 +350,6 @@ build_production:
   when: manual
 ```
 
-### GitHub download Shell script
-
-```shell
-#!/usr/bin/env bash
-# Software Name: OUDS iOS
-# SPDX-FileCopyrightText: Copyright (c) Orange SA
-# SPDX-License-Identifier: MIT
-
-set -uxo pipefail
-
-# Exit codes
-# ----------
-
-EXIT_STATUS_ERROR_NO_ORGANIZATION=1
-EXIT_STATUS_ERROR_NO_PROJECT=2
-EXIT_STATUS_ERROR_NO_SHA1=3
-EXIT_STATUS_GITHUB_REQUEST_FAILED=4
-
-# Utils
-# ------
-
-DisplayUsage(){
-    echo " Usage: ./download_github_repository.sh orga_name repo_name commit_sha1"
-}
-
-# Parameters
-# ----------
-
-GITHUB_ORGA_NAME=$1
-if [[ -z $GITHUB_ORGA_NAME ]]; then
-    DisplayUsage
-    exit $EXIT_STATUS_ERROR_NO_ORGANIZATION
-fi
-
-GITHUB_REPO_NAME=$2
-if [[ -z $GITHUB_REPO_NAME ]]; then
-    DisplayUsage
-    exit $EXIT_STATUS_ERROR_NO_PROJECT
-fi
-
-COMMIT_SHA=$3
-if [[ -z $COMMIT_SHA ]]; then
-    DisplayUsage
-    exit $EXIT_STATUS_ERROR_NO_SHA1
-fi
-
-# Business logic
-# --------------
-
-echo "Downloading $GITHUB_ORGA_NAME/$GITHUB_REPO_NAME repository at $COMMIT_SHA"
-
-TMP_DIR_PATH="tmp"
-if [ -d $TMP_DIR_PATH ]; then
-    echo "Delete old temp directory"
-    rm -rf $TMP_DIR_PATH
-fi
-
-# No need to clone the Git repository which can be quite heavy.
-# Using also SSH implies to have proxy settings allowing this protocol and to use private key
-# but some developers of OUDS iOS are GitHub organization admins, thus their private key are much to powerfull
-# and their use is too hazardous
-
-echo "Create new temp directory"
-mkdir "$TMP_DIR_PATH"
-
-ZIP_FILE_PATH="$TMP_DIR_PATH/$GITHUB_REPO_NAME.zip"
-HEADERS=(-L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GITHUB_ACCESS_TOKEN" -H "X-GitHub-Api-Version: 2022-11-28")
-echo "Download version..."
-curlReturn=$(curl "${HEADERS[@]}" "https://api.github.com/repos/"$GITHUB_ORGA_NAME"/"$GITHUB_REPO_NAME"/zipball/"$COMMIT_SHA"" --output "$ZIP_FILE_PATH" 2>&1)
-if [ $? -ne 0 ] ; then
-   echo "Error with GitHub request: '$curlReturn'"
-   exit $EXIT_STATUS_GITHUB_REQUEST_FAILED
-fi
-
-echo "Unzip version"
-yes | unzip "$ZIP_FILE_PATH" -d $TMP_DIR_PATH
-echo "Unzip completed ($?)"
-
-# Rename for future steps
-echo "Moving items..."
-mv $TMP_DIR_PATH/"$GITHUB_ORGA_NAME"-"$GITHUB_REPO_NAME"-* "$TMP_DIR_PATH/$GITHUB_REPO_NAME"
-
-echo "✅ It seems the sources have been downloaded and extracted successfully!"
-```
-
 ### Prepare environement build Shell script
 
 ```shell
@@ -556,7 +475,92 @@ export IOS_APP_COMMIT_SHA
 echo "✅ It seems all environment variables are defined, let's continue"
 ```
 
-### How it works
+### GitHub download Shell script
+
+```shell
+#!/usr/bin/env bash
+# Software Name: OUDS iOS
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+
+set -uxo pipefail
+
+# Exit codes
+# ----------
+
+EXIT_STATUS_ERROR_NO_ORGANIZATION=1
+EXIT_STATUS_ERROR_NO_PROJECT=2
+EXIT_STATUS_ERROR_NO_SHA1=3
+EXIT_STATUS_GITHUB_REQUEST_FAILED=4
+
+# Utils
+# ------
+
+DisplayUsage(){
+    echo " Usage: ./download_github_repository.sh orga_name repo_name commit_sha1"
+}
+
+# Parameters
+# ----------
+
+GITHUB_ORGA_NAME=$1
+if [[ -z $GITHUB_ORGA_NAME ]]; then
+    DisplayUsage
+    exit $EXIT_STATUS_ERROR_NO_ORGANIZATION
+fi
+
+GITHUB_REPO_NAME=$2
+if [[ -z $GITHUB_REPO_NAME ]]; then
+    DisplayUsage
+    exit $EXIT_STATUS_ERROR_NO_PROJECT
+fi
+
+COMMIT_SHA=$3
+if [[ -z $COMMIT_SHA ]]; then
+    DisplayUsage
+    exit $EXIT_STATUS_ERROR_NO_SHA1
+fi
+
+# Business logic
+# --------------
+
+echo "Downloading $GITHUB_ORGA_NAME/$GITHUB_REPO_NAME repository at $COMMIT_SHA"
+
+TMP_DIR_PATH="tmp"
+if [ -d $TMP_DIR_PATH ]; then
+    echo "Delete old temp directory"
+    rm -rf $TMP_DIR_PATH
+fi
+
+# No need to clone the Git repository which can be quite heavy.
+# Using also SSH implies to have proxy settings allowing this protocol and to use private key
+# but some developers of OUDS iOS are GitHub organization admins, thus their private key are much to powerfull
+# and their use is too hazardous
+
+echo "Create new temp directory"
+mkdir "$TMP_DIR_PATH"
+
+ZIP_FILE_PATH="$TMP_DIR_PATH/$GITHUB_REPO_NAME.zip"
+HEADERS=(-L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GITHUB_ACCESS_TOKEN" -H "X-GitHub-Api-Version: 2022-11-28")
+echo "Download version..."
+curlReturn=$(curl "${HEADERS[@]}" "https://api.github.com/repos/"$GITHUB_ORGA_NAME"/"$GITHUB_REPO_NAME"/zipball/"$COMMIT_SHA"" --output "$ZIP_FILE_PATH" 2>&1)
+if [ $? -ne 0 ] ; then
+   echo "Error with GitHub request: '$curlReturn'"
+   exit $EXIT_STATUS_GITHUB_REQUEST_FAILED
+fi
+
+echo "Unzip version"
+yes | unzip "$ZIP_FILE_PATH" -d $TMP_DIR_PATH
+echo "Unzip completed ($?)"
+
+# Rename for future steps
+echo "Moving items..."
+mv $TMP_DIR_PATH/"$GITHUB_ORGA_NAME"-"$GITHUB_REPO_NAME"-* "$TMP_DIR_PATH/$GITHUB_REPO_NAME"
+
+echo "✅ It seems the sources have been downloaded and extracted successfully!"
+```
+
+## How it works
 
 ### Alpha builds
 
