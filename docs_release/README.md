@@ -153,6 +153,10 @@ Of course you will need also to fill secrets and environement variables.
 ### GitLab CI pipeline
 
 ```yaml
+# Software Name: OUDS iOS
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+
 # Variables defined by user who wants to start the pipeline
 variables:
   ALPHA_BRANCH_TO_BUILD:
@@ -160,7 +164,7 @@ variables:
     description: "The name of the branch to build as alpha version"
   IOS_ISSUE_NUMBER:
     value: ""
-    description: "The number of the issue in GitHub which will be implemented in ALPHA_BRANCH_TO_BUILD and built"
+    description: "The number(s) of the issue(s) in GitHub which will be implemented in ALPHA_BRANCH_TO_BUILD and built (e.g.: '42' or seperated with commas '42, 666, 1337')"
   GITHUB_REPOSITORY_NAME:
     value: "ouds-ios"
     description: "The name of the repository to use for builds (default: ouds-ios)"
@@ -173,6 +177,15 @@ variables:
   PRODUCTION_BRANCH_TO_BUILD:
     value: "main"
     description: "The name of the branch to build as production version (default: main)"
+  PATH_TO_IPA:
+    value: "./tmp/ouds-ios/Showcase/build/Showcase.ipa"
+    description: "The path to get the IPA for artifacts (default: ./tmp/ouds-ios/Showcase/build/Showcase.ipa)"
+  PATH_TO_ZIP:
+    value: "./tmp/ouds-ios/Showcase/build/oudsApp.zip"
+    description: "The path to get the ZIP for artifacts (default: ./tmp/ouds-ios/Showcase/build/oudsApp.zip)"
+  PATH_TO_APP_SOURCES:
+    value: "./Showcase"
+    description: "The path where the sources to build are (default: ./Showcase)"
 
 # All stages for alpha, beta, production builds and releases
 stages:
@@ -219,15 +232,15 @@ build_alpha:
   script:
     - pwd
     - bundle install
-    - cd ./Showcase
+    - cd "$PATH_TO_APP_SOURCES"
     - bundle exec pod cache clean --all
     - bundle exec pod install --repo-update
-    - bundle exec fastlane alpha commitHash:$IOS_APP_COMMIT_SHA issueNumber:$IOS_ISSUE_NUMBER # IOS_APP_COMMIT_SHA defined in prepare_alpha_environment phase script
+    - bundle exec fastlane alpha commitHash:$IOS_APP_COMMIT_SHA issueNumber:"$IOS_ISSUE_NUMBER" # IOS_APP_COMMIT_SHA defined in prepare_alpha_environment phase script
   artifacts:
     expire_in: 1 week
     paths:
-      - ./tmp/ouds-ios/Showcase/build/Showcase.ipa
-      - ./tmp/ouds-ios/Showcase/build/oudsApp.zip
+      - $PATH_TO_IPA
+      - $PATH_TO_ZIP
 
 # -------------------
 # Beta releases
@@ -264,7 +277,7 @@ test_beta_ios:
   needs: [prepare_beta_environment]  
   script:
     - bundle install
-    - cd ./Showcase
+    - cd "$PATH_TO_APP_SOURCES"
     - bundle exec pod cache clean --all
     - bundle exec pod install --repo-update
     - bundle exec fastlane ios test
@@ -275,7 +288,7 @@ build_beta_ios:
   needs: [prepare_beta_environment]  
   script:
     - bundle install
-    - cd ./Showcase
+    - cd "$PATH_TO_APP_SOURCES"
     - bundle exec pod cache clean --all
     - bundle exec pod install --repo-update
     - bundle exec fastlane beta commitHash:$IOS_APP_COMMIT_SHA
@@ -284,8 +297,8 @@ build_beta_ios:
   artifacts:
     expire_in: 1 week
     paths:
-      - ./tmp/ouds-ios/Showcase/build/Showcase.ipa
-      - ./tmp/ouds-ios/Showcase/build/oudsApp.zip
+      - $PATH_TO_IPA
+      - $PATH_TO_ZIP
 
 # -------------------
 # Production releases
@@ -302,7 +315,7 @@ build_beta_ios:
     # This IOS_APP_COMMIT_SHA variable is defined as environement variable in prepare-build-environment.sh
     - if [[ -z "$IOS_APP_COMMIT_SHA" ]]; then exit 81680085; fi
     - ./download_github_repository.sh $GITHUB_ORGANIZATION_NAME $GITHUB_REPOSITORY_NAME $IOS_APP_COMMIT_SHA 
-    - cd tmp/ouds-ios
+    - cd tmp/$GITHUB_REPOSITORY_NAME
   allow_failure:
     exit_codes: 81680085
 
@@ -321,29 +334,27 @@ build_production:
   needs: [prepare_production_environment]
   script:
     - bundle install
-    - cd ./Showcase
+    - cd "$PATH_TO_APP_SOURCES"
     - bundle exec pod cache clean --all
     - bundle exec pod install
     - bundle exec fastlane prod upload:true
   artifacts:
     expire_in: 1 week
     paths:
-      - ./tmp/ouds-ios/Showcase/build/Showcase.ipa
-      - ./tmp/ouds-ios/Showcase/build/oudsApp.zip
+      - $PATH_TO_IPA
+      - $PATH_TO_ZIP
   when: manual
 ```
 
 ### GitHub download Shell script
 
 ```shell
+#!/usr/bin/env bash
+# Software Name: OUDS iOS
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+
 set -uxo pipefail
-
-# Utils
-# ------
-
-DisplayUsage(){
-    echo " Usage: ./download_github_repository.sh orga_name repo_name commit_sha1"
-}
 
 # Exit codes
 # ----------
@@ -351,6 +362,14 @@ DisplayUsage(){
 EXIT_STATUS_ERROR_NO_ORGANIZATION=1
 EXIT_STATUS_ERROR_NO_PROJECT=2
 EXIT_STATUS_ERROR_NO_SHA1=3
+EXIT_STATUS_GITHUB_REQUEST_FAILED=4
+
+# Utils
+# ------
+
+DisplayUsage(){
+    echo " Usage: ./download_github_repository.sh orga_name repo_name commit_sha1"
+}
 
 # Parameters
 # ----------
@@ -395,32 +414,44 @@ mkdir "$TMP_DIR_PATH"
 ZIP_FILE_PATH="$TMP_DIR_PATH/$GITHUB_REPO_NAME.zip"
 HEADERS=(-L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GITHUB_ACCESS_TOKEN" -H "X-GitHub-Api-Version: 2022-11-28")
 echo "Download version..."
-curl "${HEADERS[@]}" "https://api.github.com/repos/$GITHUB_ORGA_NAME/$GITHUB_REPO_NAME/zipball/$COMMIT_SHA" --output $ZIP_FILE_PATH
+curlReturn=$(curl "${HEADERS[@]}" "https://api.github.com/repos/"$GITHUB_ORGA_NAME"/"$GITHUB_REPO_NAME"/zipball/"$COMMIT_SHA"" --output "$ZIP_FILE_PATH" 2>&1)
+if [ $? -ne 0 ] ; then
+   echo "Error with GitHub request: '$curlReturn'"
+   exit $EXIT_STATUS_GITHUB_REQUEST_FAILED
+fi
 
 echo "Unzip version"
-yes | unzip $ZIP_FILE_PATH -d $TMP_DIR_PATH
+yes | unzip "$ZIP_FILE_PATH" -d $TMP_DIR_PATH
 echo "Unzip completed ($?)"
 
 # Rename for future steps
 echo "Moving items..."
+mv $TMP_DIR_PATH/"$GITHUB_ORGA_NAME"-"$GITHUB_REPO_NAME"-* "$TMP_DIR_PATH/$GITHUB_REPO_NAME"
 
-mv $TMP_DIR_PATH/$GITHUB_ORGA_NAME-$GITHUB_REPO_NAME-* $TMP_DIR_PATH/$GITHUB_REPO_NAME
 echo "✅ It seems the sources have been downloaded and extracted successfully!"
+
 ```
 
 ### Prepare environement build Shell script
 
 ```shell
+#!/usr/bin/env bash
+# Software Name: OUDS iOS
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+
 set -euxo pipefail
 
 # Exit codes
 # ----------
 
-EXIT_STATUS_ERROR_NO_ORGANIZATION=1
-EXIT_STATUS_ERROR_NO_PROJECT=2
-EXIT_STATUS_UNDEFINED_ENV_VARIABLES=3
-EXIT_STATUS_NO_COMMITS=4
-EXIT_STATUS_UNDEFINED_BUILD_BRANCH=5
+EXIT_STATUS_MISSING_PREREQUISITES=100
+EXIT_STATUS_UNDEFINED_ENV_VARIABLES=101
+EXIT_STATUS_ERROR_MISSING_TAG_OR_BRANCH=102
+EXIT_STATUS_ERROR_NO_ORGANIZATION=200
+EXIT_STATUS_ERROR_NO_PROJECT=201
+EXIT_STATUS_GITHUB_REQUEST_FAILED=300
+EXIT_STATUS_NO_COMMITS=301
 
 # Functions
 # ---------
@@ -450,6 +481,19 @@ Check(){
   fi
 }
 
+# Requirements
+# ------------
+
+REQUIREMENTS=(curl jq)  
+
+for someCommand in ${REQUIREMENTS[@]}; do
+    command -v "$someCommand" > /dev/null 2>&1
+    if [[ $? -ne 0 ]]; then
+      >&2 echo "❌ Required '$someCommand' is not installed"
+      exit $EXIT_STATUS_MISSING_PREREQUISITES
+    fi
+done
+
 # Parameters
 # ----------
 
@@ -468,25 +512,24 @@ fi
 TAG_OR_BRANCH=$3 # e.g. "main" for production, "develop" for beta, other branch name for alpha
 if [[ -z $TAG_OR_BRANCH ]]; then
     DisplayUsage
-    exit $TAG_OR_BRANCH
+    exit $EXIT_STATUS_ERROR_MISSING_TAG_OR_BRANCH
 fi
 
 # Check main environment variables (defined in GitLab project settings)
 # ---------------------------------------------------------------------
 
-Check "IOS_ISSUE_NUMBER" $IOS_ISSUE_NUMBER
+Assert "OUDS_APPLE_ISSUER_ID" "$OUDS_APPLE_ISSUER_ID"
+Assert "OUDS_APPLE_KEY_CONTENT" "$OUDS_APPLE_KEY_CONTENT"
+Assert "OUDS_DEVELOPER_BUNDLE_IDENTIFIER" "$OUDS_DEVELOPER_BUNDLE_IDENTIFIER"
+Assert "OUDS_MATTERMOST_HOOK_URL" "$OUDS_MATTERMOST_HOOK_URL"
+Assert "OUDS_MATTERMOST_HOOK_BOT_NAME" "$OUDS_MATTERMOST_HOOK_BOT_NAME"
+Assert "OUDS_MATTERMOST_HOOK_BOT_ICON_URL" "$OUDS_MATTERMOST_HOOK_BOT_ICON_URL"
+Assert "OUDS_FASTLANE_APPLE_ID" "$OUDS_FASTLANE_APPLE_ID"
+Assert "OUDS_DEVELOPER_PORTAL_TEAM_ID" "$OUDS_DEVELOPER_PORTAL_TEAM_ID"
+Assert "OUDS_APPLE_KEY_ID" "$OUDS_APPLE_KEY_ID"
+Assert "GITHUB_ACCESS_TOKEN" "$GITHUB_ACCESS_TOKEN"
 
-# All these variables are secrets defined in your GitLab CI settings
-Assert "OUDS_APPLE_ISSUER_ID" $OUDS_APPLE_ISSUER_ID
-Assert "OUDS_APPLE_KEY_CONTENT" $OUDS_APPLE_KEY_CONTENT
-Assert "OUDS_DEVELOPER_BUNDLE_IDENTIFIER" $OUDS_DEVELOPER_BUNDLE_IDENTIFIER
-Assert "OUDS_MATTERMOST_HOOK_URL" $OUDS_MATTERMOST_HOOK_URL
-Assert "OUDS_MATTERMOST_HOOK_BOT_NAME" $OUDS_MATTERMOST_HOOK_BOT_NAME
-Assert "OUDS_MATTERMOST_HOOK_BOT_ICON_URL" $OUDS_MATTERMOST_HOOK_BOT_ICON_URL
-Assert "OUDS_FASTLANE_APPLE_ID" $OUDS_FASTLANE_APPLE_ID
-Assert "OUDS_DEVELOPER_PORTAL_TEAM_ID" $OUDS_DEVELOPER_PORTAL_TEAM_ID
-Assert "OUDS_APPLE_KEY_ID" $OUDS_APPLE_KEY_ID
-Assert "GITHUB_ACCESS_TOKEN" $GITHUB_ACCESS_TOKEN
+Check "IOS_ISSUE_NUMBER" "$IOS_ISSUE_NUMBER"
 
 # Get last commit hash
 # --------------------
@@ -512,4 +555,5 @@ IOS_APP_COMMIT_SHA="$release_commit_sha"
 export IOS_APP_COMMIT_SHA
 
 echo "✅ It seems all environment variables are defined, let's continue"
+
 ```
