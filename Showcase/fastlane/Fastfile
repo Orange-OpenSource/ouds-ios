@@ -152,14 +152,15 @@ platform :ios do
     desc "BUILD & UPLOAD TO TESTFLIGHT ALPHA APP"
     lane :alpha do |params|
         puts "👉 Alpha (commit hash = '#{params[:commitHash]}, issue number = '#{params[:issueNumber]}')"
+        # Dir.pwd ???
         Dir.chdir "../Showcase/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconDev.appiconset AppIconRelease.appiconset"
         end
 
-        marketingVersionBase = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleShortVersionString")
-        newMarketingVersion = "#{marketingVersionBase} (ALPHA) (#{params[:issueNumber]})"
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleShortVersionString", value: newMarketingVersion)
+        marketing_version_base = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleShortVersionString")
+        new_marketing_version = "#{marketing_version_base} (ALPHA) (#{params[:issueNumber]})"
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleShortVersionString", value: new_marketing_version)
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: "OUDS Showcase ALPHA (#{params[:issueNumber]})")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "ALPHA")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
@@ -290,7 +291,11 @@ platform :ios do
             zip(path: "build/oudsApp.xcarchive",
                 output_path: "build/oudsApp.zip")
 
-            publish_mattermost_notification("🔨 ✅ A new build has been done successfully")
+                          
+            version = get_app_version
+            build_number = get_build_number(xcodeproj: OUDS_PROJECT)
+
+            publish_mattermost_notification("🔨 ✅ A new build has been done successfully (version = '#{version}', build number = '#{build_number}')")
         rescue => error
             publish_mattermost_notification("🔨 🚨 @channel Some issue occurred during the build step (:build)")
             raise error
@@ -334,7 +339,7 @@ platform :ios do
                 api_key: api_key
             )
             
-            publish_mattermost_notification("📦 ✅ @here The upload to TestFlight has been done successfully")    
+            publish_mattermost_notification("📦 ✅ @here The upload to TestFlight has been done successfully (version = '#{version}', build number = '#{build_number}')")    
         rescue => error
             publish_mattermost_notification("📦 🚨 @channel Some issue occurred during the upload step (:upload)")
             raise error
