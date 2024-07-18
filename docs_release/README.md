@@ -12,7 +12,8 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
   * [GitHub download Shell script](#github-download-shell-script)
 - [How it works](#how-it-works)
   * [Alpha builds](#alpha-builds)
-  
+  * [Beta builds](#beta-builds)
+
 ## Prepare release
 
 - Create a branch named `prepare-release` to prepare the new release for OUDS iOS version X.Y.Z.
@@ -571,3 +572,13 @@ The *alpha* build then will be uploaded <a href="./images/build-alpha-TestFlight
 Both our <a href="./images/build-alpha-Mattermost-details.png">_Mattermost_ hook</a> and the _Fastlane_ lanes produce details about the build like <a href="./images/build-alpha-GitLabCI-meta_details.png">version, issues</a> and <a href="./images/build-alpha-GitLabCI-build_number.png">build number</a>.
 
 There are also in the app <a href="./images/build-alpha-in_app.jpeg">some extra fields</a> defined in the app _Info.plist_ through _Fastlane_ and _GitLab CI_ showing the app version, its build number, the build type (DEBUG for local builds, ALPHA for alpha release, BETA for beta release, PROD for production release) and the build details (issues numbers). The <a href="./images/build-alpha-display_name.jpeg">display name</a> will be modified too.
+
+### Beta builds
+
+The *beta* builds are created with a scheduled pipeline.
+This is quite the same logic as *alpha builds*, but with Git tags associated to the builds on *develop* branch (one for the build prefixed by *ci/*, one for TestFlight upload prefixed by *Test_Flight*) with commit hash as suffix.
+
+The *beta* build is automatically uploaded to _TestFlight_ for a dedicated team (here *beta-team*).
+
+The *Mattermsot* hook is also used, the app display name and the build details are updated too.
+
