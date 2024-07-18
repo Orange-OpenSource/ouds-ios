@@ -211,7 +211,7 @@ platform :ios do
         build
         if params[:upload]
             puts "Upload to TestFlight requested"
-            upload
+            upload(type: "prod")
         else
             puts "Upload to TestFlight not requested"
         end
@@ -227,7 +227,7 @@ platform :ios do
             puts "👉 Build and upload (alpha)"
             update_build_number
             build
-            upload 
+            upload(type: "alpha")
 
         else # Beta case (not production too), detailSymbol should be here commit hash
             detailSymbol = params[:detailSymbol]
@@ -241,21 +241,21 @@ platform :ios do
                 update_build_number
                 build
             else
-                puts "Nothing new to build today, a CI tag for commit '#{detailSymbol}' already exists"
+                puts "ℹ️ Nothing new to build today, a CI tag for commit '#{detailSymbol}' already exists"
                 publish_mattermost_notification("⚙️ 🤔 Nothing new to build today, a CI tag for commit '#{detailSymbol}' already exists")
             end
             
             if params[:upload]
-                puts "Upload to TestFlight requested"
+                puts "ℹ️ Upload to TestFlight requested"
                 # If already uploaded, prevents to upload again
                 if tag_testflight_upload(detailSymbol)
-                    upload 
+                    upload(type: "beta")
                 else
-                    puts "Nothing new to build today, a TestFlight tag for commit '#{detailSymbol}' already exists"
+                    puts "ℹ️ Nothing new to build today, a TestFlight tag for commit '#{detailSymbol}' already exists"
                     publish_mattermost_notification("⚙️ 🤔 Nothing new to build today, a TestFlight tag for commit '#{detailSymbol}' already exists")
                 end
             else
-                puts "Upload to TestFlight not requested"
+                puts "ℹ️ Upload to TestFlight not requested"
             end
 
         end
@@ -302,7 +302,6 @@ platform :ios do
             # Needed for upload later as .xcarchive for App Store through corporate portal
             zip(path: "build/oudsApp.xcarchive",
                 output_path: "build/oudsApp.zip")
-
                           
             version = get_app_version
             build_number = get_build_number(xcodeproj: OUDS_PROJECT)
@@ -318,7 +317,7 @@ platform :ios do
     # PRIVATE LANE UPLOAD TO TESTFLIGHT (ALPHA / BETA / PROD is set by main lane)
     # ---------------------------------------------------------------------------
     desc "PRIVATE LANE UPLOAD TO TESTFLIGHT"
-    private_lane :upload do
+    private_lane :upload do |params|
         puts "👉 Upload"
 
         begin
@@ -338,7 +337,14 @@ platform :ios do
             build_number = get_build_number(xcodeproj: OUDS_PROJECT)
             puts "ℹ️ App build number: '#{build_number}'"
 
-            news = read_current_release_notes
+            uploadType = params[:type]
+            if uploadType != nil && uploadType.to_s.empty? == false
+                puts "ℹ️ Upload type: '#{uploadType}'"
+                news = "Warning: this is #{uploadType} build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+            else
+                puts "ℹ️ Upload type seems to be production"
+                news = read_current_release_notes
+            end
 
             upload_to_testflight(
                 changelog: news,
@@ -368,7 +374,7 @@ platform :ios do
 
         begin
             if commitHash.nil? || commitHash.empty?
-                puts "No parameter sent for CI tag, nothing will be done"
+                puts "ℹ️ No parameter sent for CI tag, nothing will be done"
                 publish_mattermost_notification("⚙️ 🤔 No commit hash has been given, no tag can be created")
                 return false
             else
@@ -392,7 +398,7 @@ platform :ios do
 
         begin     
             if commitHash.nil? || commitHash.empty?
-                puts "No parameter sent for CI tag, nothing will be done"
+                puts "ℹ️ No parameter sent for CI tag, nothing will be done"
                 publish_mattermost_notification("⚙️ 🤔 No commit hash has been given, no tag can be created")
                 return false
             else
@@ -416,19 +422,19 @@ platform :ios do
       
         # Check personal access token for tag creation
         if GITHUB_ACCESS_TOKEN.nil? || GITHUB_ACCESS_TOKEN.empty?
-            puts "Error: No GitHub access token defined, cannot create and push tags"
+            puts "❌ Error: No GitHub access token defined, cannot create and push tags"
             publish_mattermost_notification("⚙️ 😰 @channel No GitHub access token defined, cannot create and push tags!")
             return false
         else
             # Check if given tag exists yet
-            puts "Check if '#{tag}' exists yet"
+            puts "ℹ️ Check if '#{tag}' exists yet"
             result=sh("curl -s 'https://api.github.com/repos/Orange-OpenSource/ouds-ios/git/refs/tags/#{tag}' | jq -r '.ref'") # TODO Shell error management
             # If tag exists, CURL response is formatted like "refs/tags/tag"
             if "refs/tags/#{tag}".eql? result.strip # Removes line break available in command result
-                puts "The tag '#{tag}' still exists, won't create new tag"
+                puts "ℹ️ The tag '#{tag}' still exists, won't create new tag"
                 return false
             else
-                puts "Commit SHA to tag is '#{IOS_APP_COMMIT_SHA}'"
+                puts "ℹ️ Commit SHA to tag is '#{IOS_APP_COMMIT_SHA}'"
                 # Just a light tag is enough 
                 sh("curl -L \
                   -X POST \
@@ -465,19 +471,19 @@ platform :ios do
     def read_current_release_notes
         version = get_app_version
 
-        changelog=read_changelog(
+        changelog = read_changelog(
             changelog_path: '../CHANGELOG.md',
             section_identifier: "[#{version}]",
         )
 
         if changelog == ""
-            changelog=read_changelog(
+            changelog = read_changelog(
                 changelog_path: '../CHANGELOG.md',
                 section_identifier: "[Unreleased]",
             )
         end
 
-        puts "Current relase notes = #{changelog}"
+        puts "ℹ️ Current relase notes = #{changelog}"
         return changelog
     end
 end
