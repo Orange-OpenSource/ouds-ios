@@ -58,6 +58,14 @@ struct AboutPage: View {
                 } label: {
                     Text("app_about_label_legalInformation")
                 }
+
+                // TODO: Only for debug purposes, should be displayed in another way
+                Text("Version: \(Bundle.main.marketingVersion)")
+                Text("Build number: \(Bundle.main.buildNumber)")
+                Text("Build type: \(Bundle.main.fullBuildType)")
+                if let buildDetails = Bundle.main.buildDetails {
+                    Text("Build details (GitHub): \(buildDetails)")
+                }
             }
             .navigationTitle("app_bottomBar_about")
         }
