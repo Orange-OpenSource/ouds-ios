@@ -548,7 +548,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 00;
 				DEVELOPMENT_ASSET_PATHS = "\"Showcase/Preview Content\"";
 				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
@@ -564,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "OUDS Showcase";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -586,7 +586,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 00;
 				DEVELOPMENT_ASSET_PATHS = "\"Showcase/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = MG2LSJNJB6;
@@ -603,7 +603,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.orange.ouds.demoapp;
 				PRODUCT_NAME = "OUDS Showcase";
 				PROVISIONING_PROFILE_SPECIFIER = "";

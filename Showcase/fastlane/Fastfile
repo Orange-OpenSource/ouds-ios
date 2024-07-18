@@ -333,10 +333,10 @@ platform :ios do
             TESTFLIGHT_GROUPS = ENV['TESTFLIGHT_GROUPS'] # Defined in Appfile
             
             version = get_app_version
-            puts "App version: '#{version}'"
+            puts "ℹ️ App version: '#{version}'"
 
             build_number = get_build_number(xcodeproj: OUDS_PROJECT)
-            puts "App build number: '#{build_number}'"
+            puts "ℹ️ App build number: '#{build_number}'"
 
             news = read_current_release_notes
 
