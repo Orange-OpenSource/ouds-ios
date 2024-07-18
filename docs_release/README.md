@@ -429,7 +429,6 @@ echo "Moving items..."
 mv $TMP_DIR_PATH/"$GITHUB_ORGA_NAME"-"$GITHUB_REPO_NAME"-* "$TMP_DIR_PATH/$GITHUB_REPO_NAME"
 
 echo "✅ It seems the sources have been downloaded and extracted successfully!"
-
 ```
 
 ### Prepare environement build Shell script
@@ -555,5 +554,16 @@ IOS_APP_COMMIT_SHA="$release_commit_sha"
 export IOS_APP_COMMIT_SHA
 
 echo "✅ It seems all environment variables are defined, let's continue"
-
 ```
+
+### How it works
+
+### Alpha builds
+
+The *alpha* builds must be created using a manual trigger of our internal pipeline. It needs a <a href="./images/build-alpha-GitHub-branch-commit.png">branch</a> to pull with sources to builds, and some issue(s) number(s). The last commit hash will be computed and used. A first step will prepare the build then a second step will build and upload the app.
+
+The *alpha* build then will be uploaded <a href="./images/build-alpha-TestFlight-console.png">automatically to _TestFlight_</a> and <a href="./images.build-alpha-TestFlight-app.jpeg">available for a team</a> defined in the `fastlane/Appfile` (here *alpha-team*).
+
+Both our <a href="./images/build-alpha-Mattermost-details.png">_Mattermost_ hook</a> and the _Fastlane_ lanes produce details about the build like <a href="./images/build-alpha-GitLabCI-meta_details.png">version, issues</a> and <a href="./images/build-alpha-GitLabCI-build_number.png">build number</a>.
+
+There are also in the app <a href="./images/build-alpha-in_app.jpeg">some extra fields</a> defined in the app _Info.plist_ through _Fastlane_ and _GitLab CI_ showing the app version, its build number, the build type (DEBUG for local builds, ALPHA for alpha release, BETA for beta release, PROD for production release) and the build details (issues numbers). The <a href="./images/build-alpha-display_name.jpeg">display name</a> will be modified too.
