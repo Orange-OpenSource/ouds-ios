@@ -16,14 +16,19 @@ import SwiftUI
 
 struct GuidelinesPage: View {
 
+    @State private var writtenText: String = ""
+
     var body: some View {
         NavigationView {
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                OUDSDummyView()
+            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
+                OUDSFormTextInput(placeholder: "Placeholder defined in app",
+                                  value: $writtenText)
+
+                OUDSFormTextInput(placeholder: "Placeholder defined in app",
+                                  value: $writtenText,
+                                  isEnabled: false)
             }
+            .padding(.horizontal, 20)
             .navigationTitle("app_bottomBar_guidelines")
         }
     }
