@@ -14,32 +14,33 @@
 import Foundation
 import SwiftUI
 
-struct BorderSemanticToken: SemanticToken {
+struct BorderPrimitiveToken: PrimitiveTokenContract {
 
-    var property: (any SemanticTokenProperty)?
-    var variant: (any SemanticTokenVariant)?
-    var subvariant: (any SemanticTokenSubvariant)?
-    var state: (any SemanticTokenState)?
-    var rawValue: any PrimitiveToken
+    var property: (any PrimitiveTokenPropertyContract)?
+    var concept: (any PrimitiveTokenConceptContract)?
+    var variant: (any PrimitiveTokenVariantContract)?
+    var scale: (any PrimitiveTokenScaleContract)?
+    var mode: (any PrimitiveTokenModeContract)?
 
-    let finalValue: CGFloat
+    typealias T = CGFloat
+    var rawValue: CGFloat
 
-    init(property: Self.Property, variant: Self.Variant, state: RealTokenState, rawValue: BorderPrimitiveToken) {
+    init(property: Self.Property, scale: Self.Scale, rawValue: CGFloat) {
         self.property = property
-        self.variant = variant
-        subvariant = nil
-        self.state = state
+        self.variant = nil
+        self.scale = scale
+        self.mode = nil
         self.rawValue = rawValue
-        finalValue = rawValue.rawValue
     }
 
-    enum Property: SemanticTokenProperty {
+    enum Property: PrimitiveTokenPropertyContract {
         case width
         case radius
         case style
     }
 
-    enum Variant: SemanticTokenVariant {
+    enum Scale: PrimitiveTokenScaleContract {
+        case integer(value: Int)
         case none
         case `default`
         case thin

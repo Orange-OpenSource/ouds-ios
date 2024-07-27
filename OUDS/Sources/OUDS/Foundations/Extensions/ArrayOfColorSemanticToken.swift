@@ -37,7 +37,7 @@ extension Array where Element == ColorSemanticToken {
         self.filter { colorSemanticToken in
             guard
                 let state = colorSemanticToken.state,
-                let colorState = state as? RealTokenState else { return false }
+                let colorState = state as? TokenState else { return false }
             return colorState == .enabled
         }
     }
@@ -46,7 +46,7 @@ extension Array where Element == ColorSemanticToken {
         self.filter { colorSemanticToken in
             guard
                 let state = colorSemanticToken.state,
-                let colorState = state as? RealTokenState else { return false }
+                let colorState = state as? TokenState else { return false }
             return colorState == .disabled
         }
     }
@@ -55,7 +55,7 @@ extension Array where Element == ColorSemanticToken {
         self.filter { colorSemanticToken in
             guard
                 let state = colorSemanticToken.state,
-                let colorState = state as? RealTokenState else { return false }
+                let colorState = state as? TokenState else { return false }
             return colorState == .focus
         }
     }

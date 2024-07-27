@@ -13,14 +13,8 @@
 
 import Foundation
 
-/// A `TokenState` can be used to describe the state of a component for example
-public enum RealTokenState: SemanticTokenState {
-    case enabled
-    case hover
-    case active
-    case selected
-    case disabled
-    case focus
+enum ComponentColorScheme {
+    case light
+    case dark
+    case inverted
 }
-
-// TODO: Question - Est-ce que tous ces cas sont pertinents pour iOS et SwiftUI et pas un reliquat hérité de la logique web ?

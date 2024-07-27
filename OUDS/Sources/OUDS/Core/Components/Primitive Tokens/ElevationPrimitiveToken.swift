@@ -13,13 +13,13 @@
 
 import Foundation
 
-struct ElevationPrimitiveToken: PrimitiveToken {
+struct ElevationPrimitiveToken: PrimitiveTokenContract {
 
-    var property: (any PrimitiveTokenProperty)?
-    var concept: (any PrimitiveTokenConcept)?
-    var variant: (any PrimitiveTokenVariant)?
-    var scale: (any PrimitiveTokenScale)?
-    var mode: (any PrimitiveTokenMode)?
+    var property: (any PrimitiveTokenPropertyContract)?
+    var concept: (any PrimitiveTokenConceptContract)?
+    var variant: (any PrimitiveTokenVariantContract)?
+    var scale: (any PrimitiveTokenScaleContract)?
+    var mode: (any PrimitiveTokenModeContract)?
 
     typealias T = Int
     var rawValue: Int
@@ -33,11 +33,11 @@ struct ElevationPrimitiveToken: PrimitiveToken {
         self.rawValue = rawValue
     }
 
-    enum Property: PrimitiveTokenProperty {
+    enum Property: PrimitiveTokenPropertyContract {
         case zIndex
     }
 
-    enum Mode: PrimitiveTokenMode {
+    enum Mode: PrimitiveTokenModeContract {
         case value(mode: Int)
     }
 }

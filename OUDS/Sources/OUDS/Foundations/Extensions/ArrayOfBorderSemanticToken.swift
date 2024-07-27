@@ -28,7 +28,7 @@ extension Array where Element == BorderSemanticToken {
         self.filter { borderSemanticToken in
             guard
                 let state = borderSemanticToken.state,
-                let borderState = state as? RealTokenState else { return false }
+                let borderState = state as? TokenState else { return false }
             return borderState == .enabled
         }
     }
@@ -37,7 +37,7 @@ extension Array where Element == BorderSemanticToken {
         self.filter { borderSemanticToken in
             guard
                 let state = borderSemanticToken.state,
-                let borderState = state as? RealTokenState else { return false }
+                let borderState = state as? TokenState else { return false }
             return borderState == .disabled
         }
     }

@@ -14,17 +14,17 @@
 import Foundation
 import SwiftUI
 
-public struct ColorSemanticToken: SemanticToken {
+public struct ColorSemanticToken: SemanticTokenContract {
 
-    var property: (any SemanticTokenProperty)?
-    var variant: (any SemanticTokenVariant)?
-    var subvariant: (any SemanticTokenSubvariant)?
-    var state: (any SemanticTokenState)?
-    var rawValue: any PrimitiveToken
+    var property: (any SemanticTokenPropertyContract)?
+    var variant: (any SemanticTokenVariantContract)?
+    var subvariant: (any SemanticTokenSubvariantContract)?
+    var state: (any SemanticTokenStateContract)?
+    var rawValue: any PrimitiveTokenContract
 
     let finalValue: Color
 
-    init(property: Self.Property, variant: Self.Variant, subvariant: Self.Subvariant, state: RealTokenState, rawValue: ColorPrimitiveToken) {
+    init(property: Self.Property, variant: Self.Variant, subvariant: Self.Subvariant, state: TokenState, rawValue: ColorPrimitiveToken) {
         self.property = property
         self.variant = variant
         self.subvariant = subvariant
@@ -33,14 +33,14 @@ public struct ColorSemanticToken: SemanticToken {
         finalValue = rawValue.rawValue
     }
 
-    enum Property: SemanticTokenProperty {
+    enum Property: SemanticTokenPropertyContract {
         case foreground
         case background
         case border
         case decorative
     }
 
-    enum Variant: SemanticTokenVariant {
+    enum Variant: SemanticTokenVariantContract {
         case primary
         case secondary
         case tertiary
@@ -55,7 +55,7 @@ public struct ColorSemanticToken: SemanticToken {
         case inverted
     }
 
-    enum Subvariant: SemanticTokenSubvariant {
+    enum Subvariant: SemanticTokenSubvariantContract {
         case `default`
         case low
         case lower
