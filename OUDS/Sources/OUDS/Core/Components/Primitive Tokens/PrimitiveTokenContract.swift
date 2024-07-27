@@ -15,18 +15,18 @@ import Foundation
 
 // MARK: - Grammar
 
-protocol PrimitiveTokenPropertyContract { }
-protocol PrimitiveTokenConceptContract { }
-protocol PrimitiveTokenVariantContract { }
-protocol PrimitiveTokenScaleContract { }
-protocol PrimitiveTokenModeContract { }
+public protocol PrimitiveTokenPropertyContract { }
+public protocol PrimitiveTokenConceptContract { }
+public protocol PrimitiveTokenVariantContract { }
+public protocol PrimitiveTokenScaleContract { }
+public protocol PrimitiveTokenModeContract { }
 
 // MARK: - Primitive Token
 
 /// A primitive token is a set of values defining an item with in the end a real useufl and not abstract value.
 /// This item can be caracterized by several fileds like domain,  base, property, concept, variant, scalen mode, etc.
 /// These values are picked from our exploration white board with the work od the designer.
-protocol PrimitiveTokenContract<T> {
+public protocol PrimitiveTokenContract<T> {
 
     // Base
     var property: PrimitiveTokenPropertyContract? { get set }

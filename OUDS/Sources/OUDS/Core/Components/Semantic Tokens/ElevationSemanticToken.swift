@@ -14,7 +14,7 @@
 import Foundation
 import SwiftUI
 
-struct ElavationSemanticToken: SemanticTokenContract {
+public struct ElevationSemanticToken: SemanticTokenContract {
 
     var property: (any SemanticTokenPropertyContract)?
     var variant: (any SemanticTokenVariantContract)?
@@ -23,7 +23,7 @@ struct ElavationSemanticToken: SemanticTokenContract {
 
     var rawValue: any PrimitiveTokenContract
 
-    init(property: Self.Property, variant: Self.Variant, subvariant: Self.Subvariant, rawValue: ElevationPrimitiveToken) {
+    public init(property: Self.Property, variant: Self.Variant, subvariant: Self.Subvariant, rawValue: ElevationPrimitiveToken) {
         self.property = property
         self.variant = variant
         self.subvariant = subvariant
@@ -31,11 +31,11 @@ struct ElavationSemanticToken: SemanticTokenContract {
         self.rawValue = rawValue
     }
 
-    enum Property: SemanticTokenPropertyContract {
+    public enum Property: SemanticTokenPropertyContract {
         case zIndex
     }
 
-    enum Variant: SemanticTokenVariantContract {
+    public enum Variant: SemanticTokenVariantContract {
         case deep
         case `default`
         case dropdown
@@ -46,7 +46,7 @@ struct ElavationSemanticToken: SemanticTokenContract {
         case tooltip
     }
 
-    enum Subvariant: SemanticTokenSubvariantContract {
+    public enum Subvariant: SemanticTokenSubvariantContract {
         case backdrop
         case `default`
         case emphasis

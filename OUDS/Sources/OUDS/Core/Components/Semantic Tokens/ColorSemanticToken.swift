@@ -24,7 +24,7 @@ public struct ColorSemanticToken: SemanticTokenContract {
 
     let finalValue: Color
 
-    init(property: Self.Property, variant: Self.Variant, subvariant: Self.Subvariant, state: TokenState, rawValue: ColorPrimitiveToken) {
+    public init(property: Self.Property, variant: Self.Variant, subvariant: Self.Subvariant, state: TokenState, rawValue: ColorPrimitiveToken) {
         self.property = property
         self.variant = variant
         self.subvariant = subvariant
@@ -33,14 +33,14 @@ public struct ColorSemanticToken: SemanticTokenContract {
         finalValue = rawValue.rawValue
     }
 
-    enum Property: SemanticTokenPropertyContract {
+    public enum Property: SemanticTokenPropertyContract {
         case foreground
         case background
         case border
         case decorative
     }
 
-    enum Variant: SemanticTokenVariantContract {
+    public enum Variant: SemanticTokenVariantContract {
         case primary
         case secondary
         case tertiary
@@ -55,7 +55,7 @@ public struct ColorSemanticToken: SemanticTokenContract {
         case inverted
     }
 
-    enum Subvariant: SemanticTokenSubvariantContract {
+    public enum Subvariant: SemanticTokenSubvariantContract {
         case `default`
         case low
         case lower

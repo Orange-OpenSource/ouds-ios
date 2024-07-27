@@ -26,10 +26,16 @@ struct BackgroundViewModifier: ViewModifier {
     }
 
     func body(content: Content) -> some View {
-        content.background(
-            isEnabled
-            ? colorBackgrounds.backgrounds.enabled.first!.finalValue // TODO: And if no value?
-            : colorBackgrounds.backgrounds.disabled.first!.finalValue // TODO: And if no value?
-        )
+        if let cbEnabled = colorBackgrounds.backgrounds.enabled.first,
+           let cbDisabled = colorBackgrounds.backgrounds.disabled.first {
+            content.background(
+                isEnabled
+                ? cbEnabled.finalValue
+                : cbDisabled.finalValue
+            )
+        } else {
+            content
+        }
+
     }
 }

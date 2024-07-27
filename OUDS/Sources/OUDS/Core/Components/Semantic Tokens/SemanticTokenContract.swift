@@ -39,7 +39,6 @@ protocol SemanticTokenContract {
     var rawValue: any PrimitiveTokenContract { get set }
 }
 
-
 /// Default implementation: if a new token field to caracterize a semantic token is added, default values here will prevent to break compatibility with old version
 extension SemanticTokenContract {
 
@@ -49,7 +48,7 @@ extension SemanticTokenContract {
         }
         set { }
     }
-    
+
     var variant: SemanticTokenVariantContract? {
         get {
             nil

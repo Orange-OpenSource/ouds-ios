@@ -26,9 +26,14 @@ struct BorderViewModifier: ViewModifier {
     }
 
     func body(content: Content) -> some View {
-        content.border(.black, width:
-                        isEnabled
-                       ? borderWidth.enabled.first!.finalValue // TODO: And what if no value?
-                       : borderWidth.disabled.first!.finalValue) // TODO: And what if no value?
+        if let bwEnabled = borderWidth.enabled.first,
+           let bwDisabled = borderWidth.disabled.first {
+            content.border(.black, width:
+                            isEnabled
+                           ? bwEnabled.finalValue
+                           : bwDisabled.finalValue)
+        } else {
+            content
+        }
     }
 }

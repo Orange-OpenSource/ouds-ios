@@ -14,18 +14,18 @@
 import Foundation
 import SwiftUI
 
-struct BorderPrimitiveToken: PrimitiveTokenContract {
+public struct BorderPrimitiveToken: PrimitiveTokenContract {
 
-    var property: (any PrimitiveTokenPropertyContract)?
-    var concept: (any PrimitiveTokenConceptContract)?
-    var variant: (any PrimitiveTokenVariantContract)?
-    var scale: (any PrimitiveTokenScaleContract)?
-    var mode: (any PrimitiveTokenModeContract)?
+    public var property: (any PrimitiveTokenPropertyContract)?
+    public var concept: (any PrimitiveTokenConceptContract)?
+    public var variant: (any PrimitiveTokenVariantContract)?
+    public var scale: (any PrimitiveTokenScaleContract)?
+    public var mode: (any PrimitiveTokenModeContract)?
 
-    typealias T = CGFloat
-    var rawValue: CGFloat
+    public typealias T = CGFloat
+    public var rawValue: CGFloat
 
-    init(property: Self.Property, scale: Self.Scale, rawValue: CGFloat) {
+    public init(property: Self.Property, scale: Self.Scale, rawValue: CGFloat) {
         self.property = property
         self.variant = nil
         self.scale = scale
@@ -33,13 +33,13 @@ struct BorderPrimitiveToken: PrimitiveTokenContract {
         self.rawValue = rawValue
     }
 
-    enum Property: PrimitiveTokenPropertyContract {
+    public enum Property: PrimitiveTokenPropertyContract {
         case width
         case radius
         case style
     }
 
-    enum Scale: PrimitiveTokenScaleContract {
+    public enum Scale: PrimitiveTokenScaleContract {
         case integer(value: Int)
         case none
         case `default`

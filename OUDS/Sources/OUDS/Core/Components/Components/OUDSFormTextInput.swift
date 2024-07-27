@@ -14,8 +14,10 @@
 import Foundation
 import SwiftUI
 
+// MARK: - Definition of the component
+
 /// An OUDS component for text input. A plain SwftUI ocmponent not so related to OUDS
-public struct OUDSFormTextInput: OUDSComponentContract, View {
+public struct OUDSFormTextInput: View {
 
     // MARK: - Component implementation own properties
 
@@ -23,6 +25,8 @@ public struct OUDSFormTextInput: OUDSComponentContract, View {
     @Binding var value: String
     var isEnabled: Bool
     @Environment(\.colorScheme) var colorScheme
+
+    @Environment(\.theme) var theme
 
     // MARK: - SwiftUI body
 
@@ -39,5 +43,28 @@ public struct OUDSFormTextInput: OUDSComponentContract, View {
         }
         .modifier(BackgroundViewModifier(self, isEnabled: isEnabled))
         .modifier(BorderViewModifier(self, isEnabled: isEnabled))
+    }
+}
+
+// MARK: - Definition of the semantic tokens the component can use
+
+extension OUDSFormTextInput: OUDSComponentContract {
+
+    var colorBackgrounds: [ColorSemanticToken] {
+        get {
+            theme.colors
+        }
+        set {
+
+        }
+    }
+
+    var borderWidth: [BorderSemanticToken] {
+        get {
+            theme.borders
+        }
+        set {
+
+        }
     }
 }

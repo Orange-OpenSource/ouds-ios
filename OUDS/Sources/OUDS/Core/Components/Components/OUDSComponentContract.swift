@@ -26,34 +26,41 @@ protocol OUDSComponentContract {
     var elevations: [ElevationPrimitiveToken] { get set }
 }
 
-/// Default implementation: if a new token family is added, default values here will prevent to break compatibility with old version
 extension OUDSComponentContract {
 
     var colorForegorunds: [ColorSemanticToken] {
         get {
             []
         }
-        set { }
+        set {
+
+        }
     }
-    
+
     var colorBackgrounds: [ColorSemanticToken] {
         get {
-            Mocks().mockColors // TODO: Get valeus from them (env object)
+            []
         }
-        set { }
+        set {
+
+        }
     }
 
     var borderWidth: [BorderSemanticToken] {
         get {
-            Mocks().mockBorders // TODO: Get valeus from them (env object)
+            []
         }
-        set { }
+        set {
+
+        }
     }
 
     var elevations: [ElevationPrimitiveToken] {
         get {
             []
         }
-        set { }
+        set {
+
+        }
     }
 }

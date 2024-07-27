@@ -14,7 +14,7 @@
 import Foundation
 import SwiftUI
 
-struct BorderSemanticToken: SemanticTokenContract {
+public struct BorderSemanticToken: SemanticTokenContract {
 
     var property: (any SemanticTokenPropertyContract)?
     var variant: (any SemanticTokenVariantContract)?
@@ -24,7 +24,7 @@ struct BorderSemanticToken: SemanticTokenContract {
 
     let finalValue: CGFloat
 
-    init(property: Self.Property, variant: Self.Variant, state: TokenState, rawValue: BorderPrimitiveToken) {
+    public init(property: Self.Property, variant: Self.Variant, state: TokenState, rawValue: BorderPrimitiveToken) {
         self.property = property
         self.variant = variant
         subvariant = nil
@@ -33,13 +33,13 @@ struct BorderSemanticToken: SemanticTokenContract {
         finalValue = rawValue.rawValue
     }
 
-    enum Property: SemanticTokenPropertyContract {
+    public enum Property: SemanticTokenPropertyContract {
         case width
         case radius
         case style
     }
 
-    enum Variant: SemanticTokenVariantContract {
+    public enum Variant: SemanticTokenVariantContract {
         case none
         case `default`
         case thin

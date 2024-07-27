@@ -12,12 +12,17 @@
 //
 
 import SwiftUI
+import OUDS
 
 @main
 struct Showcase: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+//             OUDSThemeableView(theme: MyCustomTheme()) {
+             OUDSThemeableView(theme: OUDSDefaultTheme()) {
+            // OUDSThemeableView(theme: SomeDumbTheme()) {
+                MainView()
+            }
         }
     }
 }

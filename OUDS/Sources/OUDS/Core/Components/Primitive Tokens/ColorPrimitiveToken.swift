@@ -14,18 +14,18 @@
 import Foundation
 import SwiftUI
 
-struct ColorPrimitiveToken: PrimitiveTokenContract {
+public struct ColorPrimitiveToken: PrimitiveTokenContract {
 
-    var property: (any PrimitiveTokenPropertyContract)?
-    var concept: (any PrimitiveTokenConceptContract)?
-    var variant: (any PrimitiveTokenVariantContract)?
-    var scale: (any PrimitiveTokenScaleContract)?
-    var mode: (any PrimitiveTokenModeContract)?
+    public var property: (any PrimitiveTokenPropertyContract)?
+    public var concept: (any PrimitiveTokenConceptContract)?
+    public var variant: (any PrimitiveTokenVariantContract)?
+    public var scale: (any PrimitiveTokenScaleContract)?
+    public var mode: (any PrimitiveTokenModeContract)?
 
-    typealias T = Color
-    var rawValue: Color
+    public typealias T = Color
+    public var rawValue: Color
 
-    init(concept: Self.Concept, variant: Self.Variant, mode: Self.Mode, rawValue: String) {
+    public init(concept: Self.Concept, variant: Self.Variant, mode: Self.Mode, rawValue: String) {
         self.property = nil
         self.concept = concept
         self.variant = variant
@@ -34,13 +34,13 @@ struct ColorPrimitiveToken: PrimitiveTokenContract {
         self.rawValue = Color(hex: rawValue)
     }
 
-    enum Concept: PrimitiveTokenConceptContract {
+    public enum Concept: PrimitiveTokenConceptContract {
         case semantic
         case decorative
         case transparent
     }
 
-    enum Variant: PrimitiveTokenVariantContract {
+    public enum Variant: PrimitiveTokenVariantContract {
         case white
         case black
         case orange
@@ -51,7 +51,7 @@ struct ColorPrimitiveToken: PrimitiveTokenContract {
         case sun
     }
 
-    enum Mode: PrimitiveTokenModeContract {
+    public enum Mode: PrimitiveTokenModeContract {
         case none
         case value(mode: Int)
     }
