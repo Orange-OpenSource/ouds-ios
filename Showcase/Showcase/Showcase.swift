@@ -12,7 +12,7 @@
 //
 
 import SwiftUI
-import OUDS
+import OUDSThemes
 
 @main
 struct Showcase: App {
@@ -20,7 +20,7 @@ struct Showcase: App {
         WindowGroup {
 //             OUDSThemeableView(theme: MyCustomTheme()) {
              OUDSThemeableView(theme: OUDSDefaultTheme()) {
-            // OUDSThemeableView(theme: SomeDumbTheme()) {
+//             OUDSThemeableView(theme: SomeDumbTheme()) {
                 MainView()
             }
         }

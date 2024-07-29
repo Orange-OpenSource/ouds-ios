@@ -12,14 +12,18 @@
 //
 
 import Foundation
+import OUDSTokens
 import OUDSMocks
-import OUDSThemes
 
-class MyCustomTheme: OUDSDefaultTheme {
+public class SomeDumbTheme: ThemeContract {
 
-    init() {
-        super.init(colors: MyCustomMocks().MyCustomTheme_mockColors,
-                   borders: MyCustomMocks().MyCustomTheme_mockBorders,
-                   elevations: MyCustomMocks().MyCustomTheme_mockElevations)
+    public var colors: [ColorSemanticToken]
+    public var borders: [BorderSemanticToken]
+    public var elevations: [ElevationSemanticToken]
+
+    public init() {
+        colors = SomeMocks().SomeDumbTheme_mockColors
+        borders = SomeMocks().SomeDumbTheme_mockBorders
+        elevations = []
     }
 }

@@ -13,7 +13,7 @@
 
 import Foundation
 import SwiftUI
-import OUDS
+import OUDSTokens
 
 // swiftlint:disable line_length
 struct MyCustomMocks {

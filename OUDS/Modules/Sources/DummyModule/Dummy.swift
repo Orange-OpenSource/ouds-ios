@@ -12,14 +12,3 @@
 //
 
 import Foundation
-import OUDSMocks
-import OUDSThemes
-
-class MyCustomTheme: OUDSDefaultTheme {
-
-    init() {
-        super.init(colors: MyCustomMocks().MyCustomTheme_mockColors,
-                   borders: MyCustomMocks().MyCustomTheme_mockBorders,
-                   elevations: MyCustomMocks().MyCustomTheme_mockElevations)
-    }
-}
