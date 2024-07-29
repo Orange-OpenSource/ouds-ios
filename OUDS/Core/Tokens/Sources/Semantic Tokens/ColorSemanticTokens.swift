@@ -12,14 +12,10 @@
 //
 
 import Foundation
-import OUDSMocks
-import OUDSThemes
+import SwiftUI
 
-class MyCustomTheme: OUDSDefaultTheme {
-
-    override init() {
-        super.init()
-        self.colors = MyCustomMocks().MyCustomTheme_mockColors
-        self.borders = MyCustomMocks().MyCustomTheme_mockBorders
-    }
+public struct ColorSemanticTokens {
+    
+    // TODO: Gérer les alias
+    // TODO: Tout ça dans de sprotocoeles à driver surement / thèmes
 }

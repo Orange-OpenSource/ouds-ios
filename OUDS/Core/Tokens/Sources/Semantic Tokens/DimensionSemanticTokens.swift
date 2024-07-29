@@ -12,18 +12,14 @@
 //
 
 import Foundation
-import OUDSTokens
-import OUDSMocks
 
-public class SomeDumbTheme: ThemeContract {
+// MARK: - Type aliases to keep grammar clear
 
-    public var colors: [ColorSemanticToken]
-    public var borders: [BorderSemanticToken]
-    public var elevations: [ElevationSemanticToken]
+public typealias DimensionSemanticToken = DimensionPrimitiveToken
 
-    public init() {
-        colors = SomeMocks().SomeDumbTheme_mockColors
-        borders = SomeMocks().SomeDumbTheme_mockBorders
-        elevations = []
-    }
+// MARK: - Semantic tokens
+
+public struct DimensionSemanticTokens {
+    
+    static let dimensionDensityDefault: DimensionSemanticToken = DimensionPrimitiveTokens.dimensionBase
 }

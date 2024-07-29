@@ -12,15 +12,10 @@
 //
 
 import Foundation
+import OUDSTokens
+import OUDSMocks
 
-/// A `TokenState` can be used to describe the state of a component for example
-public enum TokenState: SemanticTokenStateContract {
-    case enabled
-    case hover
-    case active
-    case selected
-    case disabled
-    case focus
+struct OUDSSemanticBorders {
+
+    let values: [OUDSBorderSemanticToken] = SomeMocks().OUDSDefaultTheme_mockBorders
 }
-
-// TODO: Question - Est-ce que tous ces cas sont pertinents pour iOS et SwiftUI et pas un reliquat hérité de la logique web ?

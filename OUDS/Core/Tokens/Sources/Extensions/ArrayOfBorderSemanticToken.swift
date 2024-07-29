@@ -13,18 +13,22 @@
 
 import Foundation
 
-extension Array where Element == BorderSemanticToken {
-
-    public var width: [BorderSemanticToken] {
+extension Array where Element == OUDSBorderSemanticToken {
+    
+    public var width: [OUDSBorderSemanticToken] {
         self.filter { borderSemanticToken in
             guard
                 let property = borderSemanticToken.property,
-                let borderProperty = property as? BorderSemanticToken.Property else { return false }
+                let borderProperty = property as? OUDSBorderSemanticToken.Property else { return false }
             return borderProperty == .width
         }
     }
 
-    public var enabled: [BorderSemanticToken] {
+    public var firstOrDefaultWidth: OUDSBorderSemanticToken {
+        first ?? OUDSBorderSemanticToken.defaultValue(for: OUDSBorderSemanticToken.Property.width)
+    }
+    
+    public var enabled: [OUDSBorderSemanticToken] {
         self.filter { borderSemanticToken in
             guard
                 let state = borderSemanticToken.state,
@@ -33,7 +37,7 @@ extension Array where Element == BorderSemanticToken {
         }
     }
 
-    public var disabled: [BorderSemanticToken] {
+    public var disabled: [OUDSBorderSemanticToken] {
         self.filter { borderSemanticToken in
             guard
                 let state = borderSemanticToken.state,

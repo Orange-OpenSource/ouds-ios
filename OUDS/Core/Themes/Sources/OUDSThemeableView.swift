@@ -18,12 +18,12 @@ import SwiftUI
 
 private struct ThemeContractEnvironmentKey: EnvironmentKey {
 
-    static let defaultValue: ThemeContract = OUDSDefaultTheme()
+    static let defaultValue: OUDSThemeContract = OUDSDefaultTheme()
 }
 
 extension EnvironmentValues {
 
-    public var theme: ThemeContract {
+    public var theme: OUDSThemeContract {
         get {
             self[ThemeContractEnvironmentKey.self]
         }
@@ -35,12 +35,15 @@ extension EnvironmentValues {
 
 // MARK: - Themeable View
 
+/// This a a kind of root view to add at the top level of your views tree so as to define
+/// as an environement varable, the theme which will be applied.
+/// By default the applied theme is `OUDSDefaultTheme`.
 public struct OUDSThemeableView<Content>: View where Content: View {
 
-    private let theme: ThemeContract
+    private let theme: OUDSThemeContract
     private let content: () -> Content
 
-    public init(theme: ThemeContract, @ViewBuilder content: @escaping () -> Content) {
+    public init(theme: OUDSThemeContract, @ViewBuilder content: @escaping () -> Content) {
         self.theme = theme
         self.content = content
     }

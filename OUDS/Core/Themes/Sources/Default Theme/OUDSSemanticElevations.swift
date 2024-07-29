@@ -12,14 +12,10 @@
 //
 
 import Foundation
+import OUDSTokens
 import OUDSMocks
-import OUDSThemes
 
-class MyCustomTheme: OUDSDefaultTheme {
+struct OUDSSemanticElevations {
 
-    override init() {
-        super.init()
-        self.colors = MyCustomMocks().MyCustomTheme_mockColors
-        self.borders = MyCustomMocks().MyCustomTheme_mockBorders
-    }
+    let values: [OUDSElevationSemanticToken] = SomeMocks().OUDSDefaultTheme_mockElevations
 }

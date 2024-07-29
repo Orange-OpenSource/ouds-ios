@@ -24,3 +24,5 @@
 7. Avoir d'un côté les *primitive tokens*, de l'autre les *semantic tokens*, le tout dans un *thème* dont une sous-partie semble être utilisée dans les *composants* parait confus. À quel niveau définit-on les *semantics tokens* à utiliser au sein d'un composant ? Est-ce le composant lui-même ? Ou est-ce un élément de plus au niveau ? Comment sont définies les reponsabilités ?
 
 8. Quand aurons-nous les éléments fournis par l'équipe des design (type *style dictionnary*) afin que l'on puisse enfin concevoir le SDK en fonction de ces éléments et avoir une solution élégante ?
+
+9. Comment modéliser effiacement les *raw et semantic tokens* ? Si on stocke tout dans des tableaux, on va devoir itérer et filtrer sur des gros volumes d'éléments. ce qui a un coup sur les performances. Ou alors utiliser une DSL ? Un arbre ? Que des valeurs en dur ? Comment savoir vu que l'on n'a pas encore les *outputs* de l'équipe de design ?

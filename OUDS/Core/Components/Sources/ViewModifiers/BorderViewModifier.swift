@@ -18,7 +18,7 @@ import OUDSTokens
 struct BorderViewModifier: ViewModifier {
 
     private var isEnabled: Bool
-    private var borderWidth: [BorderSemanticToken]
+    private var borderWidth: [OUDSBorderSemanticToken]
 
     init(_ contract: OUDSComponentContract,
          isEnabled: Bool) {

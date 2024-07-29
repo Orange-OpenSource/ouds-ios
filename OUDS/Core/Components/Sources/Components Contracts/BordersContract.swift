@@ -12,14 +12,11 @@
 //
 
 import Foundation
-import OUDSMocks
-import OUDSThemes
+import OUDSTokens
 
-class MyCustomTheme: OUDSDefaultTheme {
-
-    override init() {
-        super.init()
-        self.colors = MyCustomMocks().MyCustomTheme_mockColors
-        self.borders = MyCustomMocks().MyCustomTheme_mockBorders
-    }
+/// Defines a component which can have borders
+protocol OUDSComponentWithBorders: OUDSComponentContract {
+    
+    var borderWidthEnabled: OUDSBorderSemanticToken { get set }
+    var borderWidthDisabled: OUDSBorderSemanticToken { get set }
 }

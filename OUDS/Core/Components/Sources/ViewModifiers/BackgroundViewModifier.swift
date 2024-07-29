@@ -18,7 +18,7 @@ import OUDSTokens
 struct BackgroundViewModifier: ViewModifier {
 
     private var isEnabled: Bool
-    private var colorBackgrounds: [ColorSemanticToken]
+    private var colorBackgrounds: [OUDSColorSemanticToken]
 
     init(_ contract: OUDSComponentContract,
          isEnabled: Bool) {
@@ -37,6 +37,5 @@ struct BackgroundViewModifier: ViewModifier {
         } else {
             content
         }
-
     }
 }

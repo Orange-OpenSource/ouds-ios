@@ -12,39 +12,42 @@
 //
 
 import Foundation
-import SwiftUI
 
-public struct BorderPrimitiveToken: PrimitiveTokenContract {
+// MARK: - Type aliases to keep grammar clear
 
-    public var property: (any PrimitiveTokenPropertyContract)?
-    public var concept: (any PrimitiveTokenConceptContract)?
-    public var variant: (any PrimitiveTokenVariantContract)?
-    public var scale: (any PrimitiveTokenScaleContract)?
-    public var mode: (any PrimitiveTokenModeContract)?
+public typealias BorderWidthPrimitiveToken = Double
+public typealias BorderRadiusPrimitiveToken = Double
+public typealias BorderStylePrimitiveToken = String
 
-    public typealias T = CGFloat
-    public var rawValue: CGFloat
+// MARK: - Primitive tokens
 
-    public init(property: Self.Property, scale: Self.Scale, rawValue: CGFloat) {
-        self.property = property
-        self.variant = nil
-        self.scale = scale
-        self.mode = nil
-        self.rawValue = rawValue
-    }
-
-    public enum Property: PrimitiveTokenPropertyContract {
-        case width
-        case radius
-        case style
-    }
-
-    public enum Scale: PrimitiveTokenScaleContract {
-        case integer(value: Int)
-        case none
-        case `default`
-        case thin
-        case thick
-        case primary
-    }
+public struct BorderPrimitiveTokens {
+    
+    static let borderBase: Double = 4
+    
+    // MARK: Width
+    
+    static let borderWidth0: BorderWidthPrimitiveToken = borderBase * 0
+    static let borderWidth25: BorderWidthPrimitiveToken = borderBase * 0.25
+    static let borderWidth50: BorderWidthPrimitiveToken = borderBase * 0.5
+    static let borderWidth75: BorderWidthPrimitiveToken = borderBase * 0.75
+    static let borderWidth100: BorderWidthPrimitiveToken = borderBase * 1
+    static let borderWidth150: BorderWidthPrimitiveToken = borderBase * 1.5
+    static let borderWidth200: BorderWidthPrimitiveToken = borderBase * 3
+    
+    // MARK: Radius
+    
+    static let borderRadius0: BorderRadiusPrimitiveToken = borderBase * 0.75
+    static let borderRadius25: BorderRadiusPrimitiveToken = borderBase * 0.25
+    static let borderRadius50: BorderRadiusPrimitiveToken = borderBase * 0.5
+    static let borderRadius75: BorderRadiusPrimitiveToken = borderBase * 0.75
+    static let borderRadius100: BorderRadiusPrimitiveToken = borderBase * 1
+    // ...
+    
+    // MARK: Style
+    
+    static let borderStyleNone: BorderStylePrimitiveToken = "none"
+    static let borderStyleSolid: BorderStylePrimitiveToken = "solid"
+    static let borderStyleDashed: BorderStylePrimitiveToken = "dashed"
+    static let borderStyleDotted: BorderStylePrimitiveToken = "dotted"
 }

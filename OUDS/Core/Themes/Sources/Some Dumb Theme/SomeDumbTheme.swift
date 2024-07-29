@@ -12,14 +12,19 @@
 //
 
 import Foundation
+import OUDSTokens
 import OUDSMocks
-import OUDSThemes
 
-class MyCustomTheme: OUDSDefaultTheme {
+/// Another theme we don't allow to see subclassed.
+public final class SomeDumbTheme: OUDSThemeContract {
 
-    override init() {
-        super.init()
-        self.colors = MyCustomMocks().MyCustomTheme_mockColors
-        self.borders = MyCustomMocks().MyCustomTheme_mockBorders
+    public var colors: [OUDSColorSemanticToken]
+    public var borders: [OUDSBorderSemanticToken]
+    public var elevations: [OUDSElevationSemanticToken]
+
+    public init() {
+        colors = SomeMocks().SomeDumbTheme_mockColors
+        borders = SomeMocks().SomeDumbTheme_mockBorders
+        elevations = []
     }
 }

@@ -18,12 +18,12 @@ import OUDSTokens
 // swiftlint:disable line_length
 public struct SomeMocks {
 
-    public var OUDSDefaultTheme_mockColors = [ColorSemanticToken]()
-    public var OUDSDefaultTheme_mockBorders = [BorderSemanticToken]()
-    public var OUDSDefaultTheme_mockElevations = [ElevationSemanticToken]()
+    public var OUDSDefaultTheme_mockColors = [OUDSColorSemanticToken]()
+    public var OUDSDefaultTheme_mockBorders = [OUDSBorderSemanticToken]()
+    public var OUDSDefaultTheme_mockElevations = [OUDSElevationSemanticToken]()
 
-    public var SomeDumbTheme_mockColors = [ColorSemanticToken]()
-    public var SomeDumbTheme_mockBorders = [BorderSemanticToken]()
+    public var SomeDumbTheme_mockColors = [OUDSColorSemanticToken]()
+    public var SomeDumbTheme_mockBorders = [OUDSBorderSemanticToken]()
 
     public init() {
 
@@ -31,37 +31,37 @@ public struct SomeMocks {
 
         // Colors
 
-        OUDSDefaultTheme_mockColors.append(ColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .enabled,
+        OUDSDefaultTheme_mockColors.append(OUDSColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .enabled,
                                              rawValue: ColorPrimitiveToken(concept: .semantic, variant: .orange, mode: .value(mode: 500), rawValue: "FF7900")))
-        OUDSDefaultTheme_mockColors.append(ColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .focus,
+        OUDSDefaultTheme_mockColors.append(OUDSColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .focus,
                                              rawValue: ColorPrimitiveToken(concept: .semantic, variant: .sun, mode: .value(mode: 100), rawValue: "FFF7D6")))
-        OUDSDefaultTheme_mockColors.append(ColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .disabled,
+        OUDSDefaultTheme_mockColors.append(OUDSColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .disabled,
                                              rawValue: ColorPrimitiveToken(concept: .semantic, variant: .orange, mode: .value(mode: 900), rawValue: "6B3300")))
-        OUDSDefaultTheme_mockColors.append(ColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .disabled,
+        OUDSDefaultTheme_mockColors.append(OUDSColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .disabled,
                                              rawValue: ColorPrimitiveToken(concept: .semantic, variant: .lightGray, mode: .value(mode: 80), rawValue: "F4F4F4")))
 
         // Borders
 
-        OUDSDefaultTheme_mockBorders.append(BorderSemanticToken(property: .width, variant: .default, state: .enabled, rawValue: BorderPrimitiveToken(property: .width, scale: .default, rawValue: 2)))
-        OUDSDefaultTheme_mockBorders.append(BorderSemanticToken(property: .width, variant: .default, state: .disabled, rawValue: BorderPrimitiveToken(property: .width, scale: .default, rawValue: 5)))
+        OUDSDefaultTheme_mockBorders.append(OUDSBorderSemanticToken(property: .width, variant: .default, state: .enabled, rawValue: BorderPrimitiveToken(property: .width, scale: .default, rawValue: 2)))
+        OUDSDefaultTheme_mockBorders.append(OUDSBorderSemanticToken(property: .width, variant: .default, state: .disabled, rawValue: BorderPrimitiveToken(property: .width, scale: .default, rawValue: 5)))
 
         // Elevations
 
-        OUDSDefaultTheme_mockElevations.append(ElevationSemanticToken(property: .zIndex, variant: .default, subvariant: .default, rawValue: ElevationPrimitiveToken(property: .zIndex, mode: .value(mode: 42), rawValue: 100)))
+        OUDSDefaultTheme_mockElevations.append(OUDSElevationSemanticToken(property: .zIndex, variant: .default, subvariant: .default, rawValue: ElevationPrimitiveToken(property: .zIndex, mode: .value(mode: 42), rawValue: 100)))
 
         // MARK: Some Dumb Theme
 
         // Colors
 
-        SomeDumbTheme_mockColors.append(ColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .enabled,
+        SomeDumbTheme_mockColors.append(OUDSColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .enabled,
                                              rawValue: ColorPrimitiveToken(concept: .semantic, variant: .orange, mode: .value(mode: 500), rawValue: "007777")))
 
-        SomeDumbTheme_mockColors.append(ColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .disabled,
+        SomeDumbTheme_mockColors.append(OUDSColorSemanticToken(property: .background, variant: .default, subvariant: .default, state: .disabled,
                                              rawValue: ColorPrimitiveToken(concept: .semantic, variant: .orange, mode: .value(mode: 900), rawValue: "001111")))
 
         // Borders
 
-        SomeDumbTheme_mockBorders.append(BorderSemanticToken(property: .width, variant: .default, state: .disabled, rawValue: BorderPrimitiveToken(property: .width, scale: .default, rawValue: 1)))
+        SomeDumbTheme_mockBorders.append(OUDSBorderSemanticToken(property: .width, variant: .default, state: .disabled, rawValue: BorderPrimitiveToken(property: .width, scale: .default, rawValue: 1)))
     }
 }
 // swiftlint:enable line_length

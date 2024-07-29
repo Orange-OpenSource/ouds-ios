@@ -13,27 +13,27 @@
 
 import Foundation
 
-extension Array where Element == ColorSemanticToken {
+extension Array where Element == OUDSColorSemanticToken {
 
-    public var backgrounds: [ColorSemanticToken] {
+    public var backgrounds: [OUDSColorSemanticToken] {
         self.filter { colorSemanticToken in
             guard
                 let property = colorSemanticToken.property,
-                let colorProperty = property as? ColorSemanticToken.Property else { return false }
+                let colorProperty = property as? OUDSColorSemanticToken.Property else { return false }
             return colorProperty == .background
         }
     }
 
-    public var foregrounds: [ColorSemanticToken] {
+    public var foregrounds: [OUDSColorSemanticToken] {
         self.filter { colorSemanticToken in
             guard
                 let property = colorSemanticToken.property,
-                let colorProperty = property as? ColorSemanticToken.Property else { return false }
+                let colorProperty = property as? OUDSColorSemanticToken.Property else { return false }
             return colorProperty == .foreground
         }
     }
 
-    public var enabled: [ColorSemanticToken] {
+    public var enabled: [OUDSColorSemanticToken] {
         self.filter { colorSemanticToken in
             guard
                 let state = colorSemanticToken.state,
@@ -42,7 +42,7 @@ extension Array where Element == ColorSemanticToken {
         }
     }
 
-    public var disabled: [ColorSemanticToken] {
+    public var disabled: [OUDSColorSemanticToken] {
         self.filter { colorSemanticToken in
             guard
                 let state = colorSemanticToken.state,
@@ -51,7 +51,7 @@ extension Array where Element == ColorSemanticToken {
         }
     }
 
-    public var focus: [ColorSemanticToken] {
+    public var focus: [OUDSColorSemanticToken] {
         self.filter { colorSemanticToken in
             guard
                 let state = colorSemanticToken.state,

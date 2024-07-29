@@ -19,7 +19,12 @@ import OUDSTokens
 // MARK: - Definition of the component
 
 /// An OUDS component for text input. A plain SwftUI ocmponent not so related to OUDS
-public struct OUDSFormTextInput: View {
+/// A form input is a component which can be defined by:
+/// - a set of background colors (enabled, disabled, active, hover, selected, focus)
+/// - a set of border widths (enabled, disabled, active, hover, selected, focus)
+public struct OUDSFormTextInput: View, OUDSComponentWithBorders, 
+                                    OUDSComponentWithBackgroundColor,
+                                 OUDSComponentWithForegroundColor {
 
     // MARK: - Component implementation own properties
 
@@ -27,8 +32,6 @@ public struct OUDSFormTextInput: View {
     @Binding var value: String
     var isEnabled: Bool
     @Environment(\.colorScheme) var colorScheme
-
-    @Environment(\.theme) var theme
 
     // MARK: - SwiftUI body
 
@@ -46,27 +49,45 @@ public struct OUDSFormTextInput: View {
         .modifier(BackgroundViewModifier(self, isEnabled: isEnabled))
         .modifier(BorderViewModifier(self, isEnabled: isEnabled))
     }
-}
-
-// MARK: - Definition of the semantic tokens the component can use
-
-extension OUDSFormTextInput: OUDSComponentContract {
-
-    var colorBackgrounds: [ColorSemanticToken] {
+    
+    // MARK: - Components tokens
+    
+    @Environment(\.theme) var theme
+    
+    var borderWidthEnabled: OUDSTokens.OUDSBorderSemanticToken {
         get {
-            theme.colors
-        }
-        set {
-
+            theme.borders.enabled.firstOrDefaultWidth
         }
     }
-
-    var borderWidth: [BorderSemanticToken] {
+    
+    var borderWidthDisabled: OUDSTokens.OUDSBorderSemanticToken {
         get {
-            theme.borders
-        }
-        set {
-
+            theme.borders.disabled.width.firstOrDefaultWidth
         }
     }
+    
+    var colorBackgroundEnabled: OUDSTokens.OUDSColorSemanticToken {
+        get {
+            theme.colors.backgrounds.enabled
+        }
+    }
+    
+    var colorBackgroundDisabled: OUDSTokens.OUDSColorSemanticToken {
+        get {
+            theme.colors.backgrounds.disabled.first
+        }
+    }
+    
+    var colorForegroundEnabled: OUDSTokens.OUDSColorSemanticToken {
+        get {
+            theme.colors.foregrounds.enabled.first
+        }
+    }
+    
+    var colorForegroundDisabled: OUDSTokens.OUDSColorSemanticToken {
+        get {
+            theme.colors.foregrounds.enabled.first
+        }
+    }
+    
 }

@@ -12,14 +12,8 @@
 //
 
 import Foundation
-import OUDSMocks
-import OUDSThemes
+import OUDSTokens
 
-class MyCustomTheme: OUDSDefaultTheme {
-
-    override init() {
-        super.init()
-        self.colors = MyCustomMocks().MyCustomTheme_mockColors
-        self.borders = MyCustomMocks().MyCustomTheme_mockBorders
-    }
-}
+/// A component is a graphical object which can be defined and caracterized by several sets of values for many properties like colors, borders, elevation etc.
+/// A component can be of several types (form, input, label, button, etc).
+protocol OUDSComponentContract { }
