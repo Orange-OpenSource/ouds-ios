@@ -25,21 +25,15 @@ public struct GridPrimitiveTokens {
 
     // MARK: Min width
     
-    static let gridMinWidth100: GridPrimitiveToken = 1
-    static let gridMinWidth200: GridPrimitiveToken = 390
-    static let gridMinWidth300: GridPrimitiveToken = 480
-    static let gridMinWidth400: GridPrimitiveToken = 736
-    static let gridMinWidth500: GridPrimitiveToken = 1024
-    // ...
+    static let gridMinWidthIOSExtraCompact: GridPrimitiveToken = 320
+    static let gridMinWidthIOSCompact: GridPrimitiveToken = 390
+    static let gridMinWidthIOSRegular: GridPrimitiveToken = 736
     
     // MARK: Max width
     
-    static let gridMaxWidth100: GridPrimitiveToken = 389
-    static let gridMaxWidth200: GridPrimitiveToken = 479
-    static let gridMaxWidth300: GridPrimitiveToken = 735
-    static let gridMaxWidth400: GridPrimitiveToken = 2013
-    static let gridMaxWidth500: GridPrimitiveToken = 1319
-    // ...
+    static let gridMaxWidthIOSExtraCompact: GridPrimitiveToken = 389
+    static let gridMaxWidthIOSCompact: GridPrimitiveToken = 852
+    static let gridMaxWidthIOSRegular: GridPrimitiveToken = 1336
     
     // MARK: Margin
     
@@ -47,7 +41,30 @@ public struct GridPrimitiveTokens {
     static let gridMargin300: GridPrimitiveToken = dimensionBase * 6
     static let gridMargin400: GridPrimitiveToken = dimensionBase * 7
     static let gridMargin500: GridPrimitiveToken = dimensionBase * 8
-    // ...
+    static let gridMargin600: GridPrimitiveToken = dimensionBase * 9
+    static let gridMargin70: GridPrimitiveToken = dimensionBase * 10
+    static let gridMargin1000: GridPrimitiveToken = dimensionBase * 13
+    static let gridMargin1100: GridPrimitiveToken = dimensionBase * 14
+    static let gridMargin1700: GridPrimitiveToken = dimensionBase * 20
     static let gridMargin2500: GridPrimitiveToken = dimensionBase * 28
+    
+    // MARK: Column gap
+    
+    static let gridColumnGap10: GridPrimitiveToken = dimensionBase * 0.25
+    static let gridColumnGap100: GridPrimitiveToken = dimensionBase * 4
+    static let gridColumnGap200: GridPrimitiveToken = dimensionBase * 5
+    static let gridColumnGap300: GridPrimitiveToken = dimensionBase * 6
+    static let gridColumnGap500: GridPrimitiveToken = dimensionBase * 8
+    static let gridColumnGap700: GridPrimitiveToken = dimensionBase * 10
+    
+    // MARK: Column count
+    
+    static let gridColumnCount100: GridPrimitiveToken = dimensionBase * 1
+    static let gridColumnCount200: GridPrimitiveToken = dimensionBase * 2
+    static let gridColumnCount400: GridPrimitiveToken = dimensionBase * 4
+    static let gridColumnCount600: GridPrimitiveToken = dimensionBase * 6
+    static let gridColumnCount800: GridPrimitiveToken = dimensionBase * 8
+    static let gridColumnCount1000: GridPrimitiveToken = dimensionBase * 10
+    static let gridColumnCount1200: GridPrimitiveToken = dimensionBase * 12
     
 }

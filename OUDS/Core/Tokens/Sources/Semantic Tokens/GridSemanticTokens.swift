@@ -15,7 +15,9 @@ import Foundation
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias GridIOSExtraCompactSemanticTokens = GridPrimitiveToken
+public typealias GridIOSExtraCompactSemanticToken = GridPrimitiveToken
+public typealias GridIOSCompactSemanticToken = GridPrimitiveToken
+public typealias GridIOSRegularSemanticToken = GridPrimitiveToken
 
 // MARK: - Semantic tokens
 
@@ -23,14 +25,25 @@ public struct GridSemanticTokens {
     
     // MARK: iOS Extra Compact
     
-    static let gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridMaxWidth300
-    // ...
-    static let gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridMaxWidth300
-    // ...
+    static let gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticToken = GridPrimitiveTokens.gridMinWidthIOSExtraCompact
+    static let gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticToken = GridPrimitiveTokens.gridMaxWidthIOSExtraCompact
+    static let gridIOSExtraCompactMargin: GridIOSExtraCompactSemanticToken = GridPrimitiveTokens.gridMargin100
+    static let gridIOSExtraCompactColumnGap: GridIOSExtraCompactSemanticToken = GridPrimitiveTokens.gridColumnGap100
+    static let gridIOSExtraCompactColumnCount: GridIOSExtraCompactSemanticToken = GridPrimitiveTokens.gridColumnCount100
     
-    // iOS Compact
-    // ...
+    // MARK: iOS Compact
     
-    // iOS Regular
-    // ...
+    static let gridIOSCompactMinWidth: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridMinWidthIOSCompact
+    static let gridIOSCompactMaxWidth: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridMaxWidthIOSCompact
+    static let gridIOSCompactMargin: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridMargin300
+    static let gridIOSCompactColumnGap: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridColumnGap100
+    static let gridIOSCompactColumnCount: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridColumnCount400
+    
+    // MARK: iOS Regular
+    
+    static let gridIOSRegularMinWidth: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridMinWidthIOSRegular
+    static let gridIOSRegularMaxWidth: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridMaxWidthIOSRegular
+    static let gridIOSRegularMargin: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridMargin500
+    static let gridIOSRegularColumnGap: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridColumnGap300
+    static let gridIOSRegularColumnCount: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridColumnCount600
 }

@@ -21,5 +21,8 @@ public typealias DimensionSemanticToken = DimensionPrimitiveToken
 
 public struct DimensionSemanticTokens {
     
+    // MARK: Semantic token - Dimension
+
     static let dimensionDensityDefault: DimensionSemanticToken = DimensionPrimitiveTokens.dimensionBase
+
 }

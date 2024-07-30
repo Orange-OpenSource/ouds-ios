@@ -1,0 +1,719 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# Flags to rise to generate tokens you want
+# -----------------------------------------
+
+# Meta flag
+ALL_PRIMITIVE_TOKENS=false
+ALL_SEMANTIC_TOKENS=false
+ALL_TOKENS=false
+
+# Primitive tokens
+PRIMITIVE_TOKEN_OPACITY=false
+PRIMITIVE_TOKEN_BORDER_WIDTH=false
+PRIMITIVE_TOKEN_BORDER_RADIUS=false
+PRIMITIVE_TOKEN_BORDER_STYLE=false
+PRIMITIVE_TOKEN_DIMENSION=false
+PRIMITIVE_TOKEN_ELEVATION_ZINDEX=false
+PRIMITIVE_TOKEN_ELEVATION_X=false
+PRIMITIVE_TOKEN_ELEVATION_Y=false
+PRIMITIVE_TOKEN_ELEVATION_BLUR=false
+PRIMITIVE_TOKEN_ELEVATION_SPREAD=false
+PRIMITIVE_TOKEN_GRID_MIN_WIDTH=false
+PRIMITIVE_TOKEN_GRID_MAX_WIDTH=false
+PRIMITIVE_TOKEN_GRID_MARGIN=false
+PRIMITIVE_TOKEN_GRID_COLUMN_GAP=false
+PRIMITIVE_TOKEN_GRID_COLUMN_COUNT=false
+PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_SIZE=false
+PRIMITIVE_TOKEN_TYPOGRAPHY_LINE_HEIGHT=false
+PRIMITIVE_TOKEN_COLORS=false
+PRIMITIVE_TOKEN_TRANSPARENT_COLORS=false
+
+# Semantic tokens
+SEMANTIC_TOKEN_OPACITY=false
+SEMANTIC_TOKEN_BORDER_WIDTH=false
+SEMANTIC_TOKEN_BORDER_RADIUS=false
+SEMANTIC_TOKEN_BORDER_STYLE=false
+SEMANTIC_TOKEN_DIMENSION=false
+SEMANTIC_TOKEN_ELEVATION_Z_INDEX=true
+SEMANTIC_TOKEN_ELEVATION_X=true
+SEMANTIC_TOKEN_ELEVATION_Y=true
+SEMANTIC_TOKEN_ELEVATION_BLUR=true
+SEMANTIC_TOKEN_ELEVATION_SPREAD=true
+SEMANTIC_TOKEN_PADDING_PADDING_INLINE=false
+SEMANTIC_TOKEN_PADDING_PADDING_STACK=false
+SEMANTIC_TOKEN_PADDING_PADDING_INSET=false
+SEMANTIC_TOKEN_PADDING_GAP_LINE=false
+SEMANTIC_TOKEN_PADDING_GAP_STACK=false
+SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_DECORATIVE=false
+SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_COMPONENT=false
+SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_TYPOGRAPHY_HEADING=false
+SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_DECORATIVE_BODY=false
+SEMANTIC_TOKEN_SIZING_MAX_WIDTH=false
+SEMANTIC_TOKEN_GRID_IOS_EXTRA_COMPACT=false
+SEMANTIC_TOKEN_GRID_IOS_COMPACT=false
+SEMANTIC_TOKEN_GRID_IOS_REGULAR=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_FAMILY=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_WEIGHT=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE_MOBILE=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE_TABLET=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE_OTHERS=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_MOBILE=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_TABLET=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_OTHERS=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_MOBILE=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_TABLET=false
+SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_OTHERS=false
+
+# Exit codes
+# ----------
+
+EXIT_OK=0
+UNCONSISTENT_ARRAYS=1
+
+# Configuration
+# -------------
+
+# Temporary file for generated source code
+GENERATED_SWIFT_CODE_FILE="./tokens.swift"
+if [ -f "$GENERATED_SWIFT_CODE_FILE" ]; then
+    rm -f "$GENERATED_SWIFT_CODE_FILE"
+    touch "$GENERATED_SWIFT_CODE_FILE"
+fi
+
+# Function for output file
+# ------------------------
+
+Write() {
+    echo "$1" # For logs
+    echo -e "$1\n" >> "$GENERATED_SWIFT_CODE_FILE"
+}
+
+# Function to build the token line
+# --------------------------------
+
+GenerateTokens() {
+    while [[ $# -gt 0 ]]; do
+        key="$1"
+        case $key in
+            --string) # The string with the template
+            string="$2"
+            shift
+            ;;
+            --keys) # The values for the variable name
+            IFS=',' read -r -a keys <<< "$2"
+            shift
+            ;;
+            --values) # The values for the variable value
+            IFS=',' read -r -a values <<< "$2"
+            shift
+            ;;
+            *)
+            # unknown option
+            ;;
+        esac
+        shift
+    done
+
+    # Of course arrays must have same sizes
+    if [ ${#keys[@]} -ne ${#values[@]} ]; then
+        echo "Error: Arrays must have the same number of items (values = ${#values[@]}, keys = ${#keys[@]})" 1>&2
+        exit $UNCONSISTENT_ARRAYS
+    fi
+
+    # "KEY" value and "VALUE" value will be replace array items
+    for ((i=0; i<${#keys[@]}; i++)); do
+        replaced_string=${string//KEY/${keys[i]}}
+        replaced_string=${replaced_string//VALUE/${values[i]}}
+        echo $replaced_string >> "$GENERATED_SWIFT_CODE_FILE"
+        GENERATED_TOKENS_COUNT=$(( GENERATED_TOKENS_COUNT  + 1 ))
+    done
+
+    echo -e "\n" >> "$GENERATED_SWIFT_CODE_FILE"
+}
+
+# Run!
+# ----
+
+SECONDS=0
+GENERATED_TOKENS_COUNT=0
+
+# Primitive tokens
+# ----------------
+
+# Primitive token - Border - Width
+
+if [ "$PRIMITIVE_TOKEN_BORDER_WIDTH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Border - Width"
+GenerateTokens \
+--string "static let borderWidthKEY: BorderWidthPrimitiveToken = borderBase \* VALUE" \
+--keys "0,25,50,75,100,150,200" \
+--values "0,0.25,0.5,0.75,1,1.5,3"
+fi
+
+# Primitive token - Border - Radius
+
+if [ "$PRIMITIVE_TOKEN_BORDER_RADIUS" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Border - Radius"
+GenerateTokens \
+--string "static let borderRadiusKEY: BorderRadiusPrimitiveToken = borderBase \* VALUE" \
+--keys "0,25,50,75,100,150,200,300,400,500,600,800,9999" \
+--values "0.75,0.25,0.5,0.75,1,1.5,2,3,4,5,6,8,2000"
+fi
+    
+# Primitive token - Border - Style
+
+if [ "$PRIMITIVE_TOKEN_BORDER_STYLE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Border - Style"
+GenerateTokens \
+--string 'static let borderStyleKEY: BorderStylePrimitiveToken = "VALUE"' \
+--keys "None,Solid,Dashed,Dotted" \
+--values "none,solid,dashed,dotted"
+fi
+
+# Primitive token - Dimension
+
+if [ "$PRIMITIVE_TOKEN_DIMENSION" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Dimension"
+GenerateTokens \
+--string 'static let dimensionKEY: DimensionPrimitiveToken = dimensionBase \* VALUE' \
+--keys "0,25,50,75,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,900,1000,1200,1400,1600,1800,2000,3000,4000,5000,6000,7000,9000,11000" \
+--values "0,0.5,1,1.5,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,20,24,28,32,6,40,80,120,140,160,180,220,260"
+fi
+
+# Primitive token - Elevation - Z index
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_ZINDEX" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Elevation - Z Index"
+GenerateTokens \
+--string "static let elevationZIndexKEY: ElevationPrimitiveToken = VALUE" \
+--keys "0,Minus9999,1000,1010,1020,1030,1035,1038,1040,1045,1050,1060,1070,1080,1090" \
+--values "0,-9999,1000,1010,1020,1030,1035,1038,1040,1045,1050,1060,1070,1080,1090"
+fi
+
+# Primitive token - Elevation - X
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_X" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Elevation - X"
+GenerateTokens \
+--string "static let elevationXKEY: ElevationPrimitiveToken = VALUE" \
+--keys "0" \
+--values "0"
+fi
+
+# Primitive token - Elevation - Y
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_Y" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Elevation - Y"
+GenerateTokens \
+--string "static let elevationYKEY: ElevationPrimitiveToken = VALUE" \
+--keys "0,100,200,300,400,500,600" \
+--values "0,1,2,4,8,12,20"
+fi
+
+# Primitive token - Elevation - Blur
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_BLUR" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Elevation - Blur"
+GenerateTokens \
+--string "static let elevationBlurKEY: ElevationPrimitiveToken = VALUE" \
+--keys "0,100,200,300,400,500,600,700" \
+--values "0,1,2,3,4,8,12,20"
+fi
+
+# Primitive token - Elevation - Spread
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_SPREAD" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Elevation - Spread"
+GenerateTokens \
+--string "static let elevationSpreadKEY: ElevationPrimitiveToken = VALUE" \
+--keys "Minus100,Minus200,Minus300,Minus400,0,300" \
+--values "-1,-2,-4,-8,0,3"
+fi
+
+# Primitive token - Opacity
+
+if [ "$PRIMITIVE_TOKEN_OPACITY" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Opacity"
+GenerateTokens \
+--string "static let opacityKEY: OpacityPrimitiveToken = VALUE" \
+--keys "0,100,200,300,400,500,600,700,800,900" \
+--values "0,0.04,0.08,0.16,0.24,0.32,0.48,0.64,0.88,1"
+fi
+
+# Primitive token - Grid - Min width
+
+if [ "$PRIMITIVE_TOKEN_GRID_MIN_WIDTH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Grid - Min width"
+GenerateTokens \
+--string "static let gridMinWidthKEY: GridPrimitiveToken = VALUE" \
+--keys "IOSExtraCompact,IOSCompact,IOSRegular" \
+--values "320,390,736"
+fi
+
+# Primitive token - Grid - Max width
+
+if [ "$PRIMITIVE_TOKEN_GRID_MAX_WIDTH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Grid - Max width"
+GenerateTokens \
+--string "static let gridMaxWidthKEY: GridPrimitiveToken = VALUE" \
+--keys "IOSExtraCompact,IOSCompact,IOSRegular" \
+--values "389,852,1336"
+fi
+
+# Primitive token - Grid - Margin
+
+if [ "$PRIMITIVE_TOKEN_GRID_MARGIN" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Grid - Margin"
+GenerateTokens \
+--string "static let gridMarginKEY: GridPrimitiveToken = dimensionBase \* VALUE" \
+--keys "100,300,400,500,600,70,1000,1100,1700,2500" \
+--values "4,6,7,8,9,10,13,14,20,28"
+fi
+
+# Primitive token - Grid - Column gap
+
+if [ "$PRIMITIVE_TOKEN_GRID_COLUMN_GAP" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Grid - Column gap"
+GenerateTokens \
+--string "static let gridColumnGapKEY: GridPrimitiveToken = dimensionBase \* VALUE" \
+--keys "10,100,200,300,500,700" \
+--values "0.25,4,5,6,8,10"
+fi
+
+# Primitive token - Grid - Column count
+
+if [ "$PRIMITIVE_TOKEN_GRID_COLUMN_COUNT" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Grid - Column count"
+GenerateTokens \
+--string "static let gridColumnCountKEY: GridPrimitiveToken = dimensionBase \* VALUE" \
+--keys "100,200,400,600,800,1000,1200" \
+--values "1,2,4,6,8,10,12"
+fi
+
+# Primitive token - Typography - Font size
+
+if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_SIZE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Typography - Font size"
+GenerateTokens \
+--string "static let fontSizeKEY: TypographyFontLineHeightPrimitiveToken = VALUE" \
+--keys "150,175,200,250,300,350,450,550,650,750,850,950,1050,1150,1250,1450,1850" \
+--values "12,13,14,16,18,20,24,28,32,36,40,44,48,52,56,64,72"
+fi
+
+# Primitive token - Typography - Line height
+
+if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_LINE_HEIGHT" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Typography - Line height"
+GenerateTokens \
+--string "static let colorFunctionalKEY: TypographyColorFunctionalPrimitiveToken = VALUE" \
+--keys "250,350,450,550,650,750,850,950,1050,1150,1250,1350,1450,1850,2050" \
+--values "16,20,24,28,32,36,10,44,48,52,56,60,64,72,80"
+fi
+
+# Primitive token - Colors
+
+if [ "$PRIMITIVE_TOKEN_COLORS" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+
+Write "// MARK: Primitive token - Colors - Black, white"
+GenerateTokens \
+--string 'static let colorFunctionalKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "White,Black" \
+--values "#FFFFFF,#000000" # Black, white
+
+Write "// MARK: Primitive token - Colors - Functional light gray"
+GenerateTokens \
+--string 'static let colorFunctionalLightGrayKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "80,160,240,320,400,480,560,640,720,800,880,960" \
+--values "#F4F4F4,#EEEEEE,#E0E0E0,#D6D6D6,#CCCCCC,#C2C2C2,#BBBBBB,#ADADAD,#A3A3A3,#999999,#8F8F8F,#858585" # Light gray
+
+Write "// MARK: Primitive token - Colors - Functional dark gray"
+GenerateTokens \
+--string 'static let colorFunctionalDarkGrayKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "80,160,240,320,400,480,560,640,720,800,880,960" \
+--values "#7A7A7A,#707070,#666666,#5C5C5C,#555555,#44444,#3D3D3D,#333333,#272727,#1F1F1F,#141414,#0A0A0A" # Dark gray
+
+Write "// MARK: rimitive token - Colors - Functional scarlet"
+GenerateTokens \
+--string 'static let colorFunctionalScarletKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FFE5E6,#FFB2B3,#FF8081,#FF4D4E,#FF1A1B,#EA0305,#BZ000Z,#800001,#4D0001" # Functional scarlet
+
+Write "// MARK: Primitive token - Colors - Functional sun"
+GenerateTokens \
+--string 'static let colorFunctionalSunKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FFF7D6,#FFED99,#FFE270,#FFD73D,#FFD0D0,#D6AA00,#A38200,#665100,#3D3100" # Functional sun
+
+Write "// MARK: Primitive token - Colors - Functional malachite"
+GenerateTokens \
+--string 'static let colorFunctionalMalachiteKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#EDFCF0,#C1F6CA,#94F0A4,#67E97E,#3DE35A,#1ECD3C,#17A02F,#0E621D,#0A4715" # Functional malachite
+
+Write "// MARK: Primitive token - Colors - Functional dodger blue"
+GenerateTokens \
+--string 'static let colorFunctionalDodgerBlueKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#F0FAFF,#BDE7FF,#8AD5FF,#57C3FF,#26B2FF,#009BF0,#007ABD,#00598A,#003857" # Dodger blue
+
+fi
+
+if [ "$PRIMITIVE_TOKEN_TRANSPARENT_COLORS" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+
+Write "// MARK: Primitive token - Colors - Transparent black"
+GenerateTokens \
+--string 'static let colorTransparentBlackKEY: TypographyColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacityVALUE)' \
+--keys "0,100,200,300,400,500,600,700,800,900" \
+--values "0,100,200,300,400,500,600,700,800,900" # Transparent black
+
+Write "// Primitive token - Colors - Transparent white"
+GenerateTokens \
+--string 'static let colorTransparentWhiteKEY: TypographyColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacityVALUE)' \
+--keys "0,100,200,300,400,500,600,700,800,900" \
+--values "0,100,200,300,400,500,600,700,800,900" # Transparent white
+
+fi
+
+# Semantic tokens
+# ---------------
+
+# Semantic token - Opacity
+
+if [ "$SEMANTIC_TOKEN_OPACITY" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Opacity"
+GenerateTokens \
+--string "static let opacityKEY: OpacitySemanticToken = OpacityPrimitiveTokens.opacityVALUE" \
+--keys "Transparent,Weaker,Weak,Medum,Emphasis,Opaque" \
+--values "0,100,300,500,700,900"
+fi
+
+# Semantic token - Border - Width
+
+if [ "$SEMANTIC_TOKEN_BORDER_WIDTH" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Border - Width"
+GenerateTokens \
+--string "static let borderWidthKEY: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidthVALUE" \
+--keys "None,Default,Thin,Thick,Thicker,Thickest,InterfactivePrimaryFocus" \
+--values "0,25,25,50,75,100,100"
+fi
+
+# Semantic token - Border - Radius
+
+if [ "$SEMANTIC_TOKEN_BORDER_RADIUS" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Border - Radius"
+GenerateTokens \
+--string "static let borderRadiusKEY: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadiusVALUE" \
+--keys "None,Default,Short,Medium,Taill,Pill" \
+--values "0,0,75,150,300,9999"
+fi
+
+# Semantic token - Border - Style
+
+if [ "$SEMANTIC_TOKEN_BORDER_STYLE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Border - Style"
+GenerateTokens \
+--string "static let borderStyleKEY: BorderStyleSemanticToken = BorderPrimitiveTokens.borderStyleVALUE" \
+--keys "Default,Drag" \
+--values "Solid,Dashed"
+fi
+
+# Semantic token - Dimension
+
+if [ "$SEMANTIC_TOKEN_DIMENSION" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Dimension"
+GenerateTokens \
+--string "static let dimensionDensityKEY: DimensionSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "Default" \
+--values "Base"
+fi
+
+# Semantic token - Padding tokens - padding inline
+
+if [ "$SEMANTIC_TOKEN_PADDING_PADDING_INLINE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Padding - Padding inline"
+GenerateTokens \
+--string "static let spacePaddingInlineComponentKEY: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "None,Shorter,Short,Medium,Tall,Taller,IsIconNone,IsIconShorter,IsIconShort,IsIconMedium,IsIconTall,IsIconTaller,IsArrowNone,IsArrowShorter,IsArrowShort,IsArrowMedium,IsArrowTall,IsArrowTaller" \
+--values "0,50,100,200,300,400,0,25,50,75,100,200,0,25,50,75,100,200"
+fi
+
+# Semantic token - Padding tokens - padding stack
+
+if [ "$SEMANTIC_TOKEN_PADDING_PADDING_STACK" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Padding - Padding stack"
+GenerateTokens \
+--string "static let spacePaddingBlockComponentKEY: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "None,Shorter,Short,Medium,Tall,Taller,IsIconNone,IsIconShorter,IsIconShort,IsIconMedium,IsIconTall,IsIconTaller" \
+--values "0,50,100,200,300,400,0,25,50,75,100,200"
+fi
+
+# Semantic token - Padding tokens - padding inset
+
+if [ "$SEMANTIC_TOKEN_PADDING_PADDING_INSET" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Padding - Padding inset"
+GenerateTokens \
+--string "static let spaceInsetComponentGapComponentKEY: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "None,Smash,Shortest,Shorter,Short,Medium,Tall,Taller,Tallest,Spacious" \
+--values "0,25,50,75,100,150,200,300,400,500"
+fi
+
+# Semantic token - Padding tokens - gap inline
+
+if [ "$SEMANTIC_TOKEN_PADDING_GAP_LINE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Padding - Gap inline"
+GenerateTokens \
+--string "static let spaceColumnGapComponentKEY: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "None,Shorter,Short,Medium,Tall,Taller,IsIconNone,IsIconShorter,IsIconShort,IsIconMedium,IsIconTall,IsIconTaller,IsArrowNone,IsArrowShorter,IsArrowShort,IsArrowMedium,IsArrowTall,IsArrowTaller" \
+--values "0,50,100,200,300,400,0,25,50,75,100,200,0,25,50,75,100,200"
+fi
+
+# Semantic token - Padding tokens - gap stack
+
+if [ "$SEMANTIC_TOKEN_PADDING_GAP_STACK" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Padding - Gap stack"
+GenerateTokens \
+--string "static let spaceRowGapComponentKEY: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "None,Shorter,Short,Medium,Tall,Taller,IsIconNone,IsIconShorter,IsIconShort,IsIconMedium,IsIconTall,IsIconTaller" \
+--values "0,25,50,75,100,200,0,25,50,75,100,200"
+fi
+
+# Semantic token - Sizing - Width height - icon decorative
+
+if [ "$SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_DECORATIVE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Sizing - Width height - Icon decorative"
+GenerateTokens \
+--string "static let sizeWidthHeightIconKEY: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "Shortest,Shorter,Short,Medium,Tall,Taller,Tallest" \
+--values "200,300,400,500,600,700,900"
+fi
+
+# Semantic token - Sizing - Width height - icon component
+
+if [ "$SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_COMPONENT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Sizing - Width height - Icon component"
+GenerateTokens \
+--string "static let sizeWidthHeightIsLabelKEY: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "SmallShort,SmallMedium,SmallTall,MediumShort,MediumMedium,MediumTall,LargeShorter,LargeShort,LargeMedium,LargeTall,LargeTaller,XLargeShort,XLargeMedium,XLargeTall" \
+--values "150,200,250,200,250,300,250,300,350,400,550,400,500,550"
+fi
+
+# Semantic token - Sizing - Width height - icon typography
+
+if [ "$SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_TYPOGRAPHY_HEADING" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Sizing - Width height - Icon typography - Heading"
+GenerateTokens \
+--string "static let sizeWidthHeightIconIsHeadingKEY: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "SmallShort,SmallMedium,SmallTall,MediumShort,MediumMedium,MediumTall,LargeShort,LargeMedium,LargeTall,XLargeShort,XLargeMedium,XLargeTall" \
+--values "400,500,550,500,550,600,550,600,650,650,700,800"
+fi
+
+if [ "$SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_DECORATIVE_BODY" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Sizing - Width height - Icon typography - Body"
+GenerateTokens \
+--string "static let sizeWidthHeightIconIsBodyKEY: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "SmallTall,SmallMedium,SmallTall,MediumShort,MediumMedium,MediumTall,LargeShort,LargeMedium,LargeTall" \
+--values "150,500,250,200,250,300,250,300,350"
+fi
+
+# Semantic token - Sizing - Max Width
+
+if [ "$SEMANTIC_TOKEN_SIZING_MAX_WIDTH" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Sizing - Max width"
+GenerateTokens \
+--string "static let sizeMaxWidthTypographyKEY: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimensionVALUE" \
+--keys "DisplaySmall,DisplayMedium,DisplayLarge,HeadingSmall,HeadingMedium,HeadingLarge,HeadingXLarge,BodySmall,BodyMedium,BodyLarge" \
+--values "9000,9000,9000,6000,9000,9000,9000,6000,6000,6000"
+fi
+
+# Semantic token - Elevation - Z index
+
+if [ "$SEMANTIC_TOKEN_ELEVATION_Z_INDEX" = true  ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Elevation - Z index"
+GenerateTokens \
+--string "static let elevationZIndexKEY: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndexVALUE" \
+--keys "Deep,Default,Dropdown,Sticky,Fixed,BackToTop,Spinner,OffCanvasBackdrop,OffCanvas,ModalBackdrop,Modal,Popover,Tooltip,Toast" \
+--values "Minus9999,0,1000,1020,1030,1035,1038,1040,1045,1050,1060,1070,1080,1090"
+fi
+
+# Semantic token - Elevation - X
+
+if [ "$SEMANTIC_TOKEN_ELEVATION_X" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Elevation - X"
+GenerateTokens \
+--string "static let elevationXKEY: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationXVALUE" \
+--keys "None,Raised,Drag,OverlayDefault,OverlayEmphasis,StickyDefault,StickyEmphasis,StickyNavigationScrolled,FOcus" \
+--values "0,0,0,0,0,0,0,0,0"
+fi
+
+# Semantic token - Elevation - Y
+
+if [ "$SEMANTIC_TOKEN_ELEVATION_Y" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Elevation - Y"
+GenerateTokens \
+--string "static let elevationYKEY: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationYVALUE" \
+--keys "None,Raised,Drag,OverlayDefault,OverlayEmphasis,StickyDefault,StickyEmphasis,StickyNavigationScrolled,Focus" \
+--values "0,100,300,200,500,300,300,300,0"
+fi
+
+# Semantic token - Elevation - Blur
+
+if [ "$SEMANTIC_TOKEN_ELEVATION_BLUR" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Elevation - Blur"
+GenerateTokens \
+--string "static let elevationBlurKEY: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlurVALUE" \
+--keys "None,Raised,Drag,OverlayDefault,OverlayEmphasis,StickyDefault,StickyEmphasis,StickyNavigationScrolled,Focus" \
+--values "0,200,400,300,600,400,400,400,0"
+fi
+
+# Semantic token - Elevation - Spread
+
+if [ "$SEMANTIC_TOKEN_ELEVATION_SPREAD" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Elevation - Spread"
+GenerateTokens \
+--string "static let elevationSpreadKEY: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadVALUE" \
+--keys "None,Raised,Drag,OverlayDefault,OverlayEmphasis,StickyDefault,StickyEmphasis,StickyNavigationScrolled,Focus" \
+--values "0,0,Minus100,Minus100,Minus300,Minus100,Minus100,Minus100,300"
+fi
+
+# Semantic token - Grid - iOS Extra Compact
+
+if [ "$SEMANTIC_TOKEN_GRID_IOS_EXTRA_COMPACT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Grid - iOS Extra compact"
+GenerateTokens \
+--string "static let gridIOSExtraCompactKEY: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridVALUE" \
+--keys "MinWidth,MaxWidth,Margin,ColumnGap,ColumnCount" \
+--values "MinWidthIOSExtraCompact,MaxWidthIOSExtraCompact,Margin100,ColumnGap100,ColumnCount100"
+fi
+
+# Semantic token - Grid - iOS Compact
+
+if [ "$SEMANTIC_TOKEN_GRID_IOS_COMPACT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Grid - iOS Compact"
+GenerateTokens \
+--string "static let gridIOSCompactKEY: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridVALUE" \
+--keys "MinWidth,MaxWidth,Margin,ColumnGap,ColumnCount" \
+--values "MinWidthIOSCompact,MaxWidthIOSCompact,Margin300,ColumnGap100,ColumnCount400"
+fi
+
+# Semantic token - Grid - iOS Regular
+
+if [ "$SEMANTIC_TOKEN_GRID_IOS_REGULAR" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Grid - iOS Regular"
+GenerateTokens \
+--string "static let gridIOSRegularKEY: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridVALUE" \
+--keys "MinWidth,MaxWidth,Margin,ColumnGap,ColumnCount" \
+--values "MinWidthIOSRegular,MaxWidthIOSRegular,Margin500,ColumnGap300,ColumnCount600"
+fi
+
+# Semantic Token - Typography - Font - Family
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_FAMILY" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Family"
+GenerateTokens \
+--string "static let fontFamilyKEY: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilyVALUE" \
+--keys "Display,Heading,Body,Label,Code" \
+--values "System,System,System,System,System"
+fi
+
+# Semantic Token - Typography - Font - Weight
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_WEIGHT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Weight"
+GenerateTokens \
+--string "static let fontWeightKEY: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeightVALUE" \
+--keys "Display,Heading,BodyDefault,BodyStrong,LabelDefault,LabelStrong,WeightCode" \
+--values "700,700,400,700,400,700,400"
+fi
+
+# Semantic Token - Typography - Font - Size
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE_MOBILE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Size - Mobile"
+GenerateTokens \
+--string "static let fontSizeKEY: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSizeVALUE" \
+--keys "MobileDislayLarge,MobileDisplayMedium,MobileDisplaySmall,MobileHeadingXLarge,MobileHeadingLarge,MobileHeadingMedium,MobileHeadingSmall,MobileBodyLarge,MobileBodyMedium,MobileBodySmall" \
+--values "850,750,650,550,450,350,300,250,200,100"
+fi
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE_TABLET" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Size - Tablet"
+GenerateTokens \
+--string "static let fontSizeKEY: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSizeVALUE" \
+--keys "TabletDislayLarge,TabletDisplayMedium,TabletDisplaySmall,TabletHeadingXLarge,TabletHeadingLarge,TabletHeadingMedium,TabletHeadingSmall,TabletBodyLarge,TabletBodyMedium,TabletBodySmall" \
+--values "1450,1050,850,750,550,450,350,250,200,150"
+fi
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE_OTHERS" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Size - Others"
+GenerateTokens \
+--string "static let fontSizeKEY: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSizeVALUE" \
+--keys "LabelXLarge,LabelLarge,LabelMedium,LabelSmall,CodeMedium,CodeSmall" \
+--values "300,250,200,100,200,150"
+fi
+
+# Semantic Token - Typography - Font - Line Height
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_MOBILE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Light height - Mobile"
+GenerateTokens \
+--string "static let fontLineHeightKEY: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeightVALUE" \
+--keys "MobileDislayLarge,MobileDisplayMedium,MobileDisplaySmall,MobileHeadingXLarge,MobileHeadingLarge,MobileHeadingMedium,MobileHeadingSmall,MobileBodyLarge,MobileBodyMedium,MobileBodySmall" \
+--values "1050,950,850,750,650,550,450,450,350,250"
+fi
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_TABLET" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Light height - Tablet"
+GenerateTokens \
+--string "static let fontLineHeightKEY: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeightVALUE" \
+--keys "TabletDislayLarge,TabletDisplayMedium,TabletDisplaySmall,TabletHeadingXLarge,TabletHeadingLarge,TabletHeadingMedium,TabletHeadingSmall,TabletBodyLarge,TabletBodyMedium,TabletBodySmall" \
+--values "1850,1250,1050,950,750,650,550,450,350,250"
+fi
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_OTHERS" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Light height - Others"
+GenerateTokens \
+--string "static let fontLineHeightKEY: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeightVALUE" \
+--keys "LabelXLarge,LabelLarge,LabelMedium,LabelSmall,CodeMedium,CodeSmall" \
+--values "450,450,350,250,350,250"
+fi
+
+# Semantic Token - Typography - Font - Paragraph Spacing
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_MOBILE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Paragraph spacing - Mobile"
+GenerateTokens \
+--string "static let fontParagraphSpacingKEY: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacingVALUE" \
+--keys "MobileDislayLarge,MobileDisplayMedium,MobileDisplaySmall,MobileHeadingXLarge,MobileHeadingLarge,MobileHeadingMedium,MobileHeadingSmall,MobileBodyLarge,MobileBodyMedium,MobileBodySmall" \
+--values "100,100,100,100,100,100,100,100,100,100"
+fi
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_TABLET" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Paragraph spacing - Tablet"
+GenerateTokens \
+--string "static let fontParagraphSpacingKEY: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacingVALUE" \
+--keys "TabletDislayLarge,TabletDisplayMedium,TabletDisplaySmall,TabletHeadingXLarge,TabletHeadingLarge,TabletHeadingMedium,TabletHeadingSmall,TabletBodyLarge,TabletBodyMedium,TabletBodySmall" \
+--values "100,100,100,100,100,100,100,100,100,100"
+fi
+
+if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_OTHERS" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Typography - Font - Paragraph spacing - Others"
+GenerateTokens \
+--string "static let fontParagraphSpacingKEY: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacingVALUE" \
+--keys "LabelXLarge,LabelLarge,LabelMedium,LabelSmall,CodeMedium,CodeSmall" \
+--values "100,100,100,100,100,100"
+fi
+
+# Completed!
+# ---------
+
+# Copy file content into clipboard
+pbcopy < "$GENERATED_SWIFT_CODE_FILE"
+
+duration=$SECONDS
+echo "Generated $GENERATED_TOKENS_COUNT tokens in $((duration / 60)) minutes and $((duration % 60)) seconds elapsed"
+echo "Result file is: '$GENERATED_SWIFT_CODE_FILE', content copied in clipboard"
+exit $EXIT_OK

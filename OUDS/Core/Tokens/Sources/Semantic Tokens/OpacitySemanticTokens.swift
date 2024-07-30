@@ -21,10 +21,12 @@ public typealias OpacitySemanticToken = OpacityPrimitiveToken
 
 public struct OpacitySemanticTokens {
     
+    // MARK: Semantic token - Opacity
+
     static let opacityTransparent: OpacitySemanticToken = OpacityPrimitiveTokens.opacity0
     static let opacityWeaker: OpacitySemanticToken = OpacityPrimitiveTokens.opacity100
     static let opacityWeak: OpacitySemanticToken = OpacityPrimitiveTokens.opacity300
-    static let opacityMedium: OpacitySemanticToken = OpacityPrimitiveTokens.opacity500
+    static let opacityMedum: OpacitySemanticToken = OpacityPrimitiveTokens.opacity500
     static let opacityEmphasis: OpacitySemanticToken = OpacityPrimitiveTokens.opacity700
     static let opacityOpaque: OpacitySemanticToken = OpacityPrimitiveTokens.opacity900
 }

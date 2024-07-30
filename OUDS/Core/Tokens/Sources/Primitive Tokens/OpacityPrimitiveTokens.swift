@@ -21,6 +21,8 @@ public typealias OpacityPrimitiveToken = Double
 
 public struct OpacityPrimitiveTokens {
     
+    // MARK: Primitive token - Opacity
+
     static let opacity0: OpacityPrimitiveToken = 0
     static let opacity100: OpacityPrimitiveToken = 0.04
     static let opacity200: OpacityPrimitiveToken = 0.08
@@ -31,4 +33,5 @@ public struct OpacityPrimitiveTokens {
     static let opacity700: OpacityPrimitiveToken = 0.64
     static let opacity800: OpacityPrimitiveToken = 0.88
     static let opacity900: OpacityPrimitiveToken = 1
+
 }
