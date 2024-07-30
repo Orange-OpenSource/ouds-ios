@@ -233,4 +233,79 @@ public struct ColorSemanticTokens {
     static let colorBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? = sysColorBrandInformationDefault
     static let colorBackgroundStatusInformationEmphasisDark: ColorSemanticToken? = sysColorBrandInformationHighest
 
+    // MARK: - Content
+    
+    // MARK: Semantic token - Colors - Content - Default
+
+    static let colorContentDefaultLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorContentDefaultInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorContentDefaultDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Content - Default - On background emphasis
+
+    static let colorContentDefaultOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorContentDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorContentDefaultOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Content - Muted
+
+    static let colorContentMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+    static let colorContentMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
+    static let colorContentMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+    // MARK: Semantic token - Colors - Content - Muted - On background emphasis
+
+    static let colorContentMutedOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
+    static let colorContentMutedOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+    static let colorContentMutedOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedHigh
+
+    // MARK: Semantic token - Colors - Content - Brand - Primary
+
+    static let colorContentBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
+    static let colorContentBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryLow
+    static let colorContentBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+    // MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasis
+
+    static let colorContentBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandPrimaryLow
+    static let colorContentBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
+    static let colorContentBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+    // MARK: Semantic token - Colors - Content - Brand - Secondary
+
+    static let colorContentBrandSecondaryLight: ColorSemanticToken? = nil
+    static let colorContentBrandSecondaryInverse: ColorSemanticToken? = nil
+    static let colorContentBrandSecondaryDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Content - Brand - Tertiary
+
+    static let colorContentBrandTertiaryLight: ColorSemanticToken? = nil
+    static let colorContentBrandTertiaryInverse: ColorSemanticToken? = nil
+    static let colorContentBrandTertiaryDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Content - Status - Attractive
+
+    static let colorContentStatusAttractiveLight: ColorSemanticToken? = nil
+    static let colorContentStatusAttractiveInverse: ColorSemanticToken? = nil
+    static let colorContentStatusAttractiveDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Content - Status - Negative
+
+    static let colorContentStatusNegativeLight: ColorSemanticToken? = sysColorBrandNegativeDefault
+    static let colorContentStatusNegativeInverse: ColorSemanticToken? = sysColorBrandNegativeDefault
+    static let colorContentStatusNegativeDark: ColorSemanticToken? = sysColorBrandNegativeDefault
+
+    // MARK: Semantic token - Colors - Content - Status - Positive
+
+    static let colorContentStatusPositiveLight: ColorSemanticToken? = sysColorBrandPositiveDefault
+    static let colorContentStatusPositiveInverse: ColorSemanticToken? = sysColorBrandPositiveDefault
+    static let colorContentStatusPositiveDark: ColorSemanticToken? = sysColorBrandPositiveDefault
+
+    // MARK: Semantic token - Colors - Content - Status - Information
+
+    static let colorContentStatusInformationLight: ColorSemanticToken? = sysColorBrandInformationDefault
+    static let colorContentStatusInformationInverse: ColorSemanticToken? = sysColorBrandInformationDefault
+    static let colorContentStatusInformationDark: ColorSemanticToken? = sysColorBrandInformationDefault
+
+    // TODO: Border, on background, decorative, charts
 }

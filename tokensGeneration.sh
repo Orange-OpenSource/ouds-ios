@@ -8,7 +8,7 @@
 # Meta flag
 ALL_PRIMITIVE_TOKENS=false
 ALL_SEMANTIC_TOKENS=false
-ALL_TOKENS=false
+ALL_TOKENS=true
 
 # Primitive tokens
 PRIMITIVE_TOKEN_OPACITY=false
@@ -28,6 +28,7 @@ PRIMITIVE_TOKEN_GRID_COLUMN_GAP=false
 PRIMITIVE_TOKEN_GRID_COLUMN_COUNT=false
 PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_SIZE=false
 PRIMITIVE_TOKEN_TYPOGRAPHY_LINE_HEIGHT=false
+# TODO: Parapgrah spacing, font family, font weight, composite
 PRIMITIVE_TOKEN_COLORS_GLOBAL=false
 PRIMITIVE_TOKEN_TRANSPARENT_COLORS=false
 PRIMITIVE_TOKEN_COLORS_ORANGE_BRAND=false
@@ -70,8 +71,9 @@ SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_OTHERS=false
 SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_MOBILE=false
 SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_TABLET=false
 SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_OTHERS=false
-SEMANTIC_TOKEN_COLORS_ALIASES=true
-SEMANTIC_TOKEN_COLORS_BACKGROUND=true
+SEMANTIC_TOKEN_COLORS_ALIASES=false
+SEMANTIC_TOKEN_COLORS_BACKGROUND=false
+SEMANTIC_TOKEN_COLORS_CONTENT=false
 
 # Exit codes
 # ----------
@@ -275,7 +277,7 @@ if [ "$PRIMITIVE_TOKEN_GRID_MARGIN" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true
 Write "// MARK: Primitive token - Grid - Margin"
 GenerateTokens \
 --string "static let gridMarginKEY: GridPrimitiveToken = dimensionBase \* VALUE" \
---keys "100,300,400,500,600,70,1000,1100,1700,2500" \
+--keys "100,300,400,500,600,700,1000,1100,1700,2500" \
 --values "4,6,7,8,9,10,13,14,20,28"
 fi
 
@@ -340,7 +342,7 @@ GenerateTokens \
 --keys "80,160,240,320,400,480,560,640,720,800,880,960" \
 --values "#7A7A7A,#707070,#666666,#5C5C5C,#555555,#44444,#3D3D3D,#333333,#272727,#1F1F1F,#141414,#0A0A0A" # Dark gray
 
-Write "// MARK: rimitive token - Colors - Functional scarlet"
+Write "// MARK: Primitive token - Colors - Functional scarlet"
 GenerateTokens \
 --string 'static let colorFunctionalScarletKEY: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
@@ -375,7 +377,7 @@ GenerateTokens \
 --keys "0,100,200,300,400,500,600,700,800,900" \
 --values "0,100,200,300,400,500,600,700,800,900" # Transparent black
 
-Write "// Primitive token - Colors - Transparent white"
+Write "// MARK: Primitive token - Colors - Transparent white"
 GenerateTokens \
 --string 'static let colorTransparentWhiteKEY: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacityVALUE)' \
 --keys "0,100,200,300,400,500,600,700,800,900" \
@@ -985,7 +987,83 @@ GenerateTokens \
 --string "static let colorBackgroundStatusInformationEmphasisKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandInformationDefault,sysColorBrandInformationDefault,sysColorBrandInformationHighest"
+fi
 
+# Semantic Token - Colors - Content
+
+if [ "$SEMANTIC_TOKEN_COLORS_CONTENT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+
+Write "// MARK: Semantic token - Colors - Content - Default"
+GenerateTokens \
+--string "static let colorContentDefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Content - Default - On background emphasis"
+GenerateTokens \
+--string "static let colorContentDefaultOnBackgroundEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Content - Muted"
+GenerateTokens \
+--string "static let colorContentMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisLowest,sysColorBrandNeutralEmphasisMedium,sysColorBrandNeutralEmphasisHigh"
+
+Write "// MARK: Semantic token - Colors - Content - Muted - On background emphasis"
+GenerateTokens \
+--string "static let colorContentMutedOnBackgroundEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralMutedMedium,sysColorBrandNeutralEmphasisLowest,sysColorBrandNeutralMutedHigh"
+
+Write "// MARK: Semantic token - Colors - Content - Brand - Primary"
+GenerateTokens \
+--string "static let colorContentBrandPrimaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow,sysColorBrandPrimaryLow"
+
+Write "// MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasis"
+GenerateTokens \
+--string "static let colorContentBrandPrimaryOnBackgroundEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandPrimaryLow,sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow"
+
+Write "// MARK: Semantic token - Colors - Content - Brand - Secondary"
+GenerateTokens \
+--string "static let colorContentBrandSecondaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Content - Brand - Tertiary"
+GenerateTokens \
+--string "static let colorContentBrandTertiaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Content - Status - Attractive"
+GenerateTokens \
+--string "static let colorContentStatusAttractiveKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Content - Status - Negative"
+GenerateTokens \
+--string "static let colorContentStatusNegativeKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNegativeDefault,sysColorBrandNegativeDefault,sysColorBrandNegativeDefault"
+
+Write "// MARK: Semantic token - Colors - Content - Status - Positive"
+GenerateTokens \
+--string "static let colorContentStatusPositiveKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandPositiveDefault,sysColorBrandPositiveDefault,sysColorBrandPositiveDefault"
+
+Write "// MARK: Semantic token - Colors - Content - Status - Information"
+GenerateTokens \
+--string "static let colorContentStatusInformationKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandInformationDefault,sysColorBrandInformationDefault,sysColorBrandInformationDefault"
 fi
 
 # Completed!
@@ -998,6 +1076,7 @@ pbcopy < "$GENERATED_SWIFT_CODE_FILE"
 # TODO: header
 # TODO repalse JEY VALUE par sumbole
 # TODO: help
+# TODO: Splitter en plusieurs scripts?Car apssage en rptoocl = doublement ligne : d"claration var er defaulr value vzr
 
 duration=$SECONDS
 echo "Generated $GENERATED_TOKENS_COUNT tokens in $((duration / 60)) minutes and $((duration % 60)) seconds elapsed"
