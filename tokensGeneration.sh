@@ -32,7 +32,7 @@ PRIMITIVE_TOKEN_COLORS_GLOBAL=false
 PRIMITIVE_TOKEN_TRANSPARENT_COLORS=false
 PRIMITIVE_TOKEN_COLORS_ORANGE_BRAND=false
 PRIMITIVE_TOKEN_COLORS_ORANGE_DECORATIVE=false
-PRIMITIVE_TOKEN_COLORS_SOSH=true
+PRIMITIVE_TOKEN_COLORS_SOSH=false
 
 # Semantic tokens
 SEMANTIC_TOKEN_OPACITY=false
@@ -791,14 +791,78 @@ fi
 
 # Semantic Token - Colors - Aliases
 
-#if [ "$SEMANTIC_TOKEN_COLORS_ALIASES" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
-#Write "// MARK: Semantic token - Colors - Alias"
-#GenerateTokens \
-#--string "static let sysColorBrandKEY: ColorAliasSemanticToken = VALUE" \
-#--keys "PrimaryLowest,PrimaryLower,PrimaryLowe,PrimaryDefault,PrimaryHigh,PrimaryHigher,PrimaryHighest" \
-#--values "nil,nil,ColorPrimitiveTokens"
-#fi
+if [ "$SEMANTIC_TOKEN_COLORS_ALIASES" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Primary"
+GenerateTokens \
+--string "static let sysColorBrandPrimaryKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
+--values "nil,nil,$swiftClass.colorBrandOrange500,$swiftClass.colorBrandOrange550,nil,nil,nil"
 
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Secondary"
+GenerateTokens \
+--string "static let sysColorBrandSecondaryKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
+--values "nil,nil,nil,nil,nil,nil,nil"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Tertiary"
+GenerateTokens \
+--string "static let sysColorBrandTertiaryKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
+--values "nil,nil,nil,nil,nil,nil,nil"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Neutral - Muted"
+GenerateTokens \
+--string "static let sysColorBrandNeutralMutedKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "White,Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--values "$swiftClass.colorFunctionalWhite,$swiftClass.colorFunctionalLightGray80,$swiftClass.colorFunctionalLightGray160,nil,$swiftClass.colorFunctionalLightGray400,$swiftClass.colorFunctionalLightGray560,nil,nil"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Neutral - Emphasis"
+GenerateTokens \
+--string "static let sysColorBrandNeutralEmphasisKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "Lowest,Lower,Low,Medium,High,Higher,Highest,Black" \
+--values "$swiftClass.colorFunctionalDarkGray400,$swiftClass.colorFunctionalDarkGray480,$swiftClass.colorFunctionalDarkGray560,$swiftClass.colorFunctionalDarkGray640,$swiftClass.colorFunctionalDarkGray720,$swiftClass.colorFunctionalDarkGray800,$swiftClass.colorFunctionalDarkGray880,$swiftClass.colorFunctionalBlack"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Positive"
+GenerateTokens \
+--string "static let sysColorBrandPositiveKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--values "$swiftClass.colorFunctionalMalachite100,nil,nil,$swiftClass.colorFunctionalMalachite500,$swiftClass.colorFunctionalMalachite600,nil,$swiftClass.colorFunctionalMalachite800"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Information"
+GenerateTokens \
+--string "static let sysColorBrandInformationKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--values "$swiftClass.colorFunctionalDodgerBlue100,nil,nil,$swiftClass.colorFunctionalDodgerBlue500,$swiftClass.colorFunctionalDodgerBlue600,nil,$swiftClass.colorFunctionalDodgerBlue800"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Warning"
+GenerateTokens \
+--string "static let sysColorBrandWarningKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--values "$swiftClass.colorFunctionalSun100,nil,nil,$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun600,nil,$swiftClass.colorFunctionalSun800"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Negative"
+GenerateTokens \
+--string "static let sysColorBrandNegativeKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--values "$swiftClass.colorFunctionalScarlet100,nil,nil,$swiftClass.colorFunctionalScarlet500,$swiftClass.colorFunctionalScarlet600,nil,$swiftClass.colorFunctionalScarlet800"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+swiftClass2="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Alias - Attractive"
+GenerateTokens \
+--string "static let sysColorBrandAttractiveKEY: ColorAliasSemanticToken? = VALUE" \
+--keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--values "$swiftClass2.colorBrandWarmGray100,nil,nil,$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun600,nil,$swiftClass2.colorBrandWarmGray900"
+fi
 
 # Completed!
 # ---------
