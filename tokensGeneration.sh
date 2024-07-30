@@ -71,6 +71,7 @@ SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_MOBILE=false
 SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_TABLET=false
 SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_OTHERS=false
 SEMANTIC_TOKEN_COLORS_ALIASES=true
+SEMANTIC_TOKEN_COLORS_BACKGROUND=true
 
 # Exit codes
 # ----------
@@ -831,28 +832,28 @@ swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Positive"
 GenerateTokens \
 --string "static let sysColorBrandPositiveKEY: ColorAliasSemanticToken? = VALUE" \
---keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "$swiftClass.colorFunctionalMalachite100,nil,nil,$swiftClass.colorFunctionalMalachite500,$swiftClass.colorFunctionalMalachite600,nil,$swiftClass.colorFunctionalMalachite800"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Information"
 GenerateTokens \
 --string "static let sysColorBrandInformationKEY: ColorAliasSemanticToken? = VALUE" \
---keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "$swiftClass.colorFunctionalDodgerBlue100,nil,nil,$swiftClass.colorFunctionalDodgerBlue500,$swiftClass.colorFunctionalDodgerBlue600,nil,$swiftClass.colorFunctionalDodgerBlue800"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Warning"
 GenerateTokens \
 --string "static let sysColorBrandWarningKEY: ColorAliasSemanticToken? = VALUE" \
---keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "$swiftClass.colorFunctionalSun100,nil,nil,$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun600,nil,$swiftClass.colorFunctionalSun800"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Negative"
 GenerateTokens \
 --string "static let sysColorBrandNegativeKEY: ColorAliasSemanticToken? = VALUE" \
---keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
+--keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "$swiftClass.colorFunctionalScarlet100,nil,nil,$swiftClass.colorFunctionalScarlet500,$swiftClass.colorFunctionalScarlet600,nil,$swiftClass.colorFunctionalScarlet800"
 
 swiftClass="ColorGlobalPrimitiveTokens"
@@ -862,6 +863,129 @@ GenerateTokens \
 --string "static let sysColorBrandAttractiveKEY: ColorAliasSemanticToken? = VALUE" \
 --keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
 --values "$swiftClass2.colorBrandWarmGray100,nil,nil,$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun600,nil,$swiftClass2.colorBrandWarmGray900"
+fi
+
+# Semantic Token - Colors - Background
+
+if [ "$SEMANTIC_TOKEN_COLORS_BACKGROUND" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Colors - Background - Default - Primary"
+GenerateTokens \
+--string "static let colorBackgroundDefaultPrimaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisHighest"
+
+Write "// MARK: Semantic token - Colors - Background - Default - Secondary"
+GenerateTokens \
+--string "static let colorBackgroundDefaultSecondaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralMutedLowest,sysColorBrandNeutralEmphasisMedium,sysColorBrandNeutralEmphasisHigher"
+
+Write "// MARK: Semantic token - Colors - Background - Default - Tertiary"
+GenerateTokens \
+--string "static let colorBackgroundDefaultTertiaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandAttractiveLowest,sysColorBrandAttractiveHighest,sysColorBrandAttractiveHighest"
+
+Write "// MARK: Semantic token - Colors - Background - Emphasis - Primary"
+GenerateTokens \
+--string "static let colorBackgroundEmphasisPrimaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisMedium"
+
+Write "// MARK: Semantic token - Colors - Background - Emphasis - Secondary"
+GenerateTokens \
+--string "static let colorBackgroundEmphasisSecondaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisMedium,sysColorBrandNeutralMutedLowest,sysColorBrandNeutralEmphasisHigh"
+
+Write "// MARK: Semantic token - Colors - Background - Brand - Primary"
+GenerateTokens \
+--string "static let colorBackgroundBrandPrimaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandPrimaryDefault,sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow"
+
+Write "// MARK: Semantic token - Colors - Background - Brand - Secondary"
+GenerateTokens \
+--string "static let colorBackgroundBrandKEY: ColorSemanticToken? = VALUE" \
+--keys "Secondary" \
+--values "nil"
+
+Write "// MARK: Semantic token - Colors - Background - Brand - Tertiary"
+GenerateTokens \
+--string "static let colorBackgroundBrandKEY: ColorSemanticToken? = VALUE" \
+--keys "Tertiary" \
+--values "nil"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Attractive - Muted"
+GenerateTokens \
+--string "static let colorBackgroundStatusAttractiveMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandAttractiveLowest,sysColorBrandAttractiveLowest,sysColorBrandAttractiveHighest"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Attractive - Emphasis"
+GenerateTokens \
+--string "static let colorBackgroundStatusAttractiveEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandWarningDefault,sysColorBrandWarningDefault,sysColorBrandWarningHighest"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Warning - Muted"
+GenerateTokens \
+--string "static let colorBackgroundStatusWarningMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandWarningLowest,sysColorBrandWarningLowest,sysColorBrandNeutralEmphasisHigh"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Warning - Emphasis"
+GenerateTokens \
+--string "static let colorBackgroundStatusWarningEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandWarningDefault,sysColorBrandWarningDefault,sysColorBrandWarningHighest"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Negative - Muted"
+GenerateTokens \
+--string "static let colorBackgroundStatusNegativeMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNegativeLowest,sysColorBrandNegativeLowest,sysColorBrandNeutralEmphasisHigh"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Negative - Emphasis"
+GenerateTokens \
+--string "static let colorBackgroundStatusNegativeEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNegativeDefault,sysColorBrandNegativeDefault,sysColorBrandNegativeHighest"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Positive - Muted"
+GenerateTokens \
+--string "static let colorBackgroundStatusPositiveMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandPositiveLowest,sysColorBrandPositiveLowest,sysColorBrandNeutralEmphasisHigh"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Positive - Emphasis"
+GenerateTokens \
+--string "static let colorBackgroundStatusPositiveEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandPositiveDefault,sysColorBrandPositiveDefault,sysColorBrandPositiveHighest"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Information - Muted"
+GenerateTokens \
+--string "static let colorBackgroundStatusInformationMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandInformationLowest,sysColorBrandInformationLowest,sysColorBrandNeutralEmphasisHigh"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Background - Status - Information - Emphasis"
+GenerateTokens \
+--string "static let colorBackgroundStatusInformationEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandInformationDefault,sysColorBrandInformationDefault,sysColorBrandInformationHighest"
+
 fi
 
 # Completed!

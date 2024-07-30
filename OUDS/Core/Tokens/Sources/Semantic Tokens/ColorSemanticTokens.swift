@@ -16,12 +16,14 @@ import SwiftUI
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias ColorSemanticToken = ColorGlobalPrimitiveTokens
+public typealias ColorSemanticToken = SwiftUI.Color
 public typealias ColorAliasSemanticToken = SwiftUI.Color
 
 // MARK: - Semantic tokens
 
 public struct ColorSemanticTokens {
+    
+    // MARK: - Aliases
     
     // MARK: Semantic token - Colors - Alias - Primary
 
@@ -80,7 +82,7 @@ public struct ColorSemanticTokens {
     static let sysColorBrandPositiveLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite100
     static let sysColorBrandPositiveLower: ColorAliasSemanticToken? = nil
     static let sysColorBrandPositiveLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandPositiveMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite500
+    static let sysColorBrandPositiveDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite500
     static let sysColorBrandPositiveHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite600
     static let sysColorBrandPositiveHigher: ColorAliasSemanticToken? = nil
     static let sysColorBrandPositiveHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite800
@@ -90,7 +92,7 @@ public struct ColorSemanticTokens {
     static let sysColorBrandInformationLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue100
     static let sysColorBrandInformationLower: ColorAliasSemanticToken? = nil
     static let sysColorBrandInformationLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandInformationMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue500
+    static let sysColorBrandInformationDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue500
     static let sysColorBrandInformationHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue600
     static let sysColorBrandInformationHigher: ColorAliasSemanticToken? = nil
     static let sysColorBrandInformationHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue800
@@ -100,7 +102,7 @@ public struct ColorSemanticTokens {
     static let sysColorBrandWarningLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun100
     static let sysColorBrandWarningLower: ColorAliasSemanticToken? = nil
     static let sysColorBrandWarningLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandWarningMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
+    static let sysColorBrandWarningDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
     static let sysColorBrandWarningHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun600
     static let sysColorBrandWarningHigher: ColorAliasSemanticToken? = nil
     static let sysColorBrandWarningHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun800
@@ -110,7 +112,7 @@ public struct ColorSemanticTokens {
     static let sysColorBrandNegativeLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet100
     static let sysColorBrandNegativeLower: ColorAliasSemanticToken? = nil
     static let sysColorBrandNegativeLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandNegativeMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet500
+    static let sysColorBrandNegativeDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet500
     static let sysColorBrandNegativeHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet600
     static let sysColorBrandNegativeHigher: ColorAliasSemanticToken? = nil
     static let sysColorBrandNegativeHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet800
@@ -124,5 +126,111 @@ public struct ColorSemanticTokens {
     static let sysColorBrandAttractiveHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun600
     static let sysColorBrandAttractiveHigher: ColorAliasSemanticToken? = nil
     static let sysColorBrandAttractiveHighest: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandWarmGray900
+
+    // MARK: - Background
+    
+    // MARK: Semantic token - Colors - Background - Default - Primary
+
+    static let colorBackgroundDefaultPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorBackgroundDefaultPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorBackgroundDefaultPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHighest
+
+    // MARK: Semantic token - Colors - Background - Default - Secondary
+
+    static let colorBackgroundDefaultSecondaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedLowest
+    static let colorBackgroundDefaultSecondaryInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
+    static let colorBackgroundDefaultSecondaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigher
+
+    // MARK: Semantic token - Colors - Background - Default - Tertiary
+
+    static let colorBackgroundDefaultTertiaryLight: ColorSemanticToken? = sysColorBrandAttractiveLowest
+    static let colorBackgroundDefaultTertiaryInverse: ColorSemanticToken? = sysColorBrandAttractiveHighest
+    static let colorBackgroundDefaultTertiaryDark: ColorSemanticToken? = sysColorBrandAttractiveHighest
+
+    // MARK: Semantic token - Colors - Background - Emphasis - Primary
+
+    static let colorBackgroundEmphasisPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorBackgroundEmphasisPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorBackgroundEmphasisPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
+
+    // MARK: Semantic token - Colors - Background - Emphasis - Secondary
+
+    static let colorBackgroundEmphasisSecondaryLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
+    static let colorBackgroundEmphasisSecondaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedLowest
+    static let colorBackgroundEmphasisSecondaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+    // MARK: Semantic token - Colors - Background - Brand - Primary
+
+    static let colorBackgroundBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
+    static let colorBackgroundBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
+    static let colorBackgroundBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+    // MARK: Semantic token - Colors - Background - Brand - Secondary
+
+    static let colorBackgroundBrandSecondary: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Background - Brand - Tertiary
+
+    static let colorBackgroundBrandTertiary: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
+
+    static let colorBackgroundStatusAttractiveMutedLight: ColorSemanticToken? = sysColorBrandAttractiveLowest
+    static let colorBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? = sysColorBrandAttractiveLowest
+    static let colorBackgroundStatusAttractiveMutedDark: ColorSemanticToken? = sysColorBrandAttractiveHighest
+
+    // MARK: Semantic token - Colors - Background - Status - Attractive - Emphasis
+
+    static let colorBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? = sysColorBrandWarningDefault
+    static let colorBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? = sysColorBrandWarningDefault
+    static let colorBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? = sysColorBrandWarningHighest
+
+    // MARK: Semantic token - Colors - Background - Status - Warning - Muted
+
+    static let colorBackgroundStatusWarningMutedLight: ColorSemanticToken? = sysColorBrandWarningLowest
+    static let colorBackgroundStatusWarningMutedInverse: ColorSemanticToken? = sysColorBrandWarningLowest
+    static let colorBackgroundStatusWarningMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+    // MARK: Semantic token - Colors - Background - Status - Warning - Emphasis
+
+    static let colorBackgroundStatusWarningEmphasisLight: ColorSemanticToken? = sysColorBrandWarningDefault
+    static let colorBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? = sysColorBrandWarningDefault
+    static let colorBackgroundStatusWarningEmphasisDark: ColorSemanticToken? = sysColorBrandWarningHighest
+
+    // MARK: Semantic token - Colors - Background - Status - Negative - Muted
+
+    static let colorBackgroundStatusNegativeMutedLight: ColorSemanticToken? = sysColorBrandNegativeLowest
+    static let colorBackgroundStatusNegativeMutedInverse: ColorSemanticToken? = sysColorBrandNegativeLowest
+    static let colorBackgroundStatusNegativeMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+    // MARK: Semantic token - Colors - Background - Status - Negative - Emphasis
+
+    static let colorBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? = sysColorBrandNegativeDefault
+    static let colorBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? = sysColorBrandNegativeDefault
+    static let colorBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? = sysColorBrandNegativeHighest
+
+    // MARK: Semantic token - Colors - Background - Status - Positive - Muted
+
+    static let colorBackgroundStatusPositiveMutedLight: ColorSemanticToken? = sysColorBrandPositiveLowest
+    static let colorBackgroundStatusPositiveMutedInverse: ColorSemanticToken? = sysColorBrandPositiveLowest
+    static let colorBackgroundStatusPositiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+    // MARK: Semantic token - Colors - Background - Status - Positive - Emphasis
+
+    static let colorBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? = sysColorBrandPositiveDefault
+    static let colorBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? = sysColorBrandPositiveDefault
+    static let colorBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? = sysColorBrandPositiveHighest
+
+    // MARK: Semantic token - Colors - Background - Status - Information - Muted
+
+    static let colorBackgroundStatusInformationMutedLight: ColorSemanticToken? = sysColorBrandInformationLowest
+    static let colorBackgroundStatusInformationMutedInverse: ColorSemanticToken? = sysColorBrandInformationLowest
+    static let colorBackgroundStatusInformationMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+    // MARK: Semantic token - Colors - Background - Status - Information - Emphasis
+
+    static let colorBackgroundStatusInformationEmphasisLight: ColorSemanticToken? = sysColorBrandInformationDefault
+    static let colorBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? = sysColorBrandInformationDefault
+    static let colorBackgroundStatusInformationEmphasisDark: ColorSemanticToken? = sysColorBrandInformationHighest
 
 }
