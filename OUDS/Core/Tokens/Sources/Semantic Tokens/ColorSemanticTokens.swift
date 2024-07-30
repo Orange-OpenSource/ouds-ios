@@ -14,8 +14,15 @@
 import Foundation
 import SwiftUI
 
+// MARK: - Type aliases to keep grammar clear
+
+public typealias ColorSemanticToken = ColorGlobalPrimitiveTokens
+public typealias ColorAliasSemanticToken = ColorSemanticToken?
+
+// MARK: - Semantic tokens
+
 public struct ColorSemanticTokens {
     
-    // TODO: Gérer les alias
-    // TODO: Tout ça dans de sprotocoeles à driver surement / thèmes
+    static let sysColorBrandPrimaryLowest: ColorAliasSemanticToken = nil
+
 }

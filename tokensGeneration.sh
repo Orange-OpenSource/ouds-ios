@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+#set -euo pipefail
 
 # Flags to rise to generate tokens you want
 # -----------------------------------------
@@ -28,8 +28,11 @@ PRIMITIVE_TOKEN_GRID_COLUMN_GAP=false
 PRIMITIVE_TOKEN_GRID_COLUMN_COUNT=false
 PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_SIZE=false
 PRIMITIVE_TOKEN_TYPOGRAPHY_LINE_HEIGHT=false
-PRIMITIVE_TOKEN_COLORS=false
+PRIMITIVE_TOKEN_COLORS_GLOBAL=false
 PRIMITIVE_TOKEN_TRANSPARENT_COLORS=false
+PRIMITIVE_TOKEN_COLORS_ORANGE_BRAND=false
+PRIMITIVE_TOKEN_COLORS_ORANGE_DECORATIVE=false
+PRIMITIVE_TOKEN_COLORS_SOSH=true
 
 # Semantic tokens
 SEMANTIC_TOKEN_OPACITY=false
@@ -37,11 +40,11 @@ SEMANTIC_TOKEN_BORDER_WIDTH=false
 SEMANTIC_TOKEN_BORDER_RADIUS=false
 SEMANTIC_TOKEN_BORDER_STYLE=false
 SEMANTIC_TOKEN_DIMENSION=false
-SEMANTIC_TOKEN_ELEVATION_Z_INDEX=true
-SEMANTIC_TOKEN_ELEVATION_X=true
-SEMANTIC_TOKEN_ELEVATION_Y=true
-SEMANTIC_TOKEN_ELEVATION_BLUR=true
-SEMANTIC_TOKEN_ELEVATION_SPREAD=true
+SEMANTIC_TOKEN_ELEVATION_Z_INDEX=false
+SEMANTIC_TOKEN_ELEVATION_X=false
+SEMANTIC_TOKEN_ELEVATION_Y=false
+SEMANTIC_TOKEN_ELEVATION_BLUR=false
+SEMANTIC_TOKEN_ELEVATION_SPREAD=false
 SEMANTIC_TOKEN_PADDING_PADDING_INLINE=false
 SEMANTIC_TOKEN_PADDING_PADDING_STACK=false
 SEMANTIC_TOKEN_PADDING_PADDING_INSET=false
@@ -67,6 +70,7 @@ SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_OTHERS=false
 SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_MOBILE=false
 SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_TABLET=false
 SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_OTHERS=false
+SEMANTIC_TOKEN_COLORS_ALIASES=true
 
 # Exit codes
 # ----------
@@ -314,68 +318,146 @@ GenerateTokens \
 --values "16,20,24,28,32,36,10,44,48,52,56,60,64,72,80"
 fi
 
-# Primitive token - Colors
+# Primitive token - Colors - Global
 
-if [ "$PRIMITIVE_TOKEN_COLORS" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
-
+if [ "$PRIMITIVE_TOKEN_COLORS_GLOBAL" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
 Write "// MARK: Primitive token - Colors - Black, white"
 GenerateTokens \
---string 'static let colorFunctionalKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorFunctionalKEY: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "White,Black" \
 --values "#FFFFFF,#000000" # Black, white
 
 Write "// MARK: Primitive token - Colors - Functional light gray"
 GenerateTokens \
---string 'static let colorFunctionalLightGrayKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorFunctionalLightGrayKEY: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "80,160,240,320,400,480,560,640,720,800,880,960" \
 --values "#F4F4F4,#EEEEEE,#E0E0E0,#D6D6D6,#CCCCCC,#C2C2C2,#BBBBBB,#ADADAD,#A3A3A3,#999999,#8F8F8F,#858585" # Light gray
 
 Write "// MARK: Primitive token - Colors - Functional dark gray"
 GenerateTokens \
---string 'static let colorFunctionalDarkGrayKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorFunctionalDarkGrayKEY: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "80,160,240,320,400,480,560,640,720,800,880,960" \
 --values "#7A7A7A,#707070,#666666,#5C5C5C,#555555,#44444,#3D3D3D,#333333,#272727,#1F1F1F,#141414,#0A0A0A" # Dark gray
 
 Write "// MARK: rimitive token - Colors - Functional scarlet"
 GenerateTokens \
---string 'static let colorFunctionalScarletKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorFunctionalScarletKEY: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#FFE5E6,#FFB2B3,#FF8081,#FF4D4E,#FF1A1B,#EA0305,#BZ000Z,#800001,#4D0001" # Functional scarlet
 
 Write "// MARK: Primitive token - Colors - Functional sun"
 GenerateTokens \
---string 'static let colorFunctionalSunKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorFunctionalSunKEY: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#FFF7D6,#FFED99,#FFE270,#FFD73D,#FFD0D0,#D6AA00,#A38200,#665100,#3D3100" # Functional sun
 
 Write "// MARK: Primitive token - Colors - Functional malachite"
 GenerateTokens \
---string 'static let colorFunctionalMalachiteKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorFunctionalMalachiteKEY: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#EDFCF0,#C1F6CA,#94F0A4,#67E97E,#3DE35A,#1ECD3C,#17A02F,#0E621D,#0A4715" # Functional malachite
 
 Write "// MARK: Primitive token - Colors - Functional dodger blue"
 GenerateTokens \
---string 'static let colorFunctionalDodgerBlueKEY: TypographyColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorFunctionalDodgerBlueKEY: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#F0FAFF,#BDE7FF,#8AD5FF,#57C3FF,#26B2FF,#009BF0,#007ABD,#00598A,#003857" # Dodger blue
-
 fi
+
+# Primitive token - Colors - Transparent
 
 if [ "$PRIMITIVE_TOKEN_TRANSPARENT_COLORS" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
 
 Write "// MARK: Primitive token - Colors - Transparent black"
 GenerateTokens \
---string 'static let colorTransparentBlackKEY: TypographyColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacityVALUE)' \
+--string 'static let colorTransparentBlackKEY: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacityVALUE)' \
 --keys "0,100,200,300,400,500,600,700,800,900" \
 --values "0,100,200,300,400,500,600,700,800,900" # Transparent black
 
 Write "// Primitive token - Colors - Transparent white"
 GenerateTokens \
---string 'static let colorTransparentWhiteKEY: TypographyColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacityVALUE)' \
+--string 'static let colorTransparentWhiteKEY: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacityVALUE)' \
 --keys "0,100,200,300,400,500,600,700,800,900" \
 --values "0,100,200,300,400,500,600,700,800,900" # Transparent white
+fi
 
+# Primitive token - Colors - Orange - Brand
+
+if [ "$PRIMITIVE_TOKEN_COLORS_ORANGE_BRAND" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+
+Write "// MARK: Primitive token - Colors - Orange - Brand - Orange"
+GenerateTokens \
+--string 'static let colorBrandOrangeKEY: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "50,100,200,300,400,500,550,600,700,800,900" \
+--values "#FFF2E6,#FFD5B0,#FFC18A,#FFA554,#FF9433,#FF7900,#F16E00,#E86E00,#B55600,#8C4300,#6B3300"
+
+Write "// MARK: Primitive token - Colors - Orange - Brand - Warm gray"
+GenerateTokens \
+--string 'static let colorBrandWarmGrayKEY: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#F9F5F0,#E9DDCE,#D6C4AE,#C1AB90,#A99275,#8A7860,#685D50,#48433D,#353228"
+fi
+
+# Primitive token - Colors - Orange - Decorative
+
+if [ "$PRIMITIVE_TOKEN_COLORS_ORANGE_DECORATIVE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Colors - Orange - Emerald"
+GenerateTokens \
+--string 'static let colorDecorativeEmeraldKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#E5F5ED,#C0E8DA,#9BDABA,#75CCA1,#50BE87,#3BA06E,#2E7B54,#20563B,#123021"
+
+Write "// MARK: Primitive token - Colors - Orange - Sky"
+GenerateTokens \
+--string 'static let colorDecorativeSkyKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#D2ECF9,#A5DAF3,#79C7EC,#4AB4E6,#1FA2E0,#1982B3,#136186,#0C415A,#06202D"
+
+Write "// MARK: Primitive token - Colors - Orange - Amber"
+GenerateTokens \
+--string 'static let colorDecorativeAmberKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FFF0CC,#FFE199,#FFD266,#FFC333,#FFB400,#CC9000,#996C00,#664800,#332400"
+
+Write "// MARK: Primitive token - Colors - Orange - Amethyst"
+GenerateTokens \
+--string 'static let colorDecorativeAmethystKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#F1ECF9,#E0D4F2,#C5ADE6,#A885D8,#8D60CD,#5B2F98,#432371,#2C174A,#150B23"
+
+Write "// MARK: Primitive token - Colors - Orange - Shocking Pink"
+GenerateTokens \
+--string 'static let colorDecorativeShockingPinkKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FFE5F6,#FFB4E6,#FF80D4,#FF4DC3,#FF1AB2,#E50099,#B20077,#800055,#4D0033"
+
+Write "// MARK: Primitive token - Colors - Orange - Deep Peach"
+GenerateTokens \
+--string 'static let colorDecorativeDeepPeachKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FBEBDF,#F4CFB2,#E3B591,#C19372,#CF7E3F,#AA6631,#7E4F2A,#553720,#2E2014"
+fi
+
+# Primitive token - Colors - Sosh
+
+if [ "$PRIMITIVE_TOKEN_COLORS_SOSH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Primitive token - Colors - Sosh - Magenta"
+GenerateTokens \
+--string 'static let colorDecorativeMagentaKEY: ColorSoshPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "50,100,200,300,400,500,600,700,800,900,950" \
+--values "#FCE9EE,#F8D3DC,#F2A6B9,#EB7A96,#E55277,#DE2554,#B61B42,#851430,#590D20,#2C0710,#160308"
+
+Write "// MARK: Primitive token - Colors - Sosh - Citrine"
+GenerateTokens \
+--string 'static let colorDecorativeCitrineKEY: ColorSoshPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "50,100,200,300,400,500,600,700,800,900,950" \
+--values "#FFFAE5,#FFF6CC,#FFEC99,#FFE366,#FFD92E,#FBCD00,#C7A200,#997D00,#665300,#332A00,#191500"
+
+Write "// MARK: Primitive token - Colors - Sosh - Blue Duck"
+GenerateTokens \
+--string 'static let colorDecorativeBlueDuckKEY: ColorSoshPrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--keys "50,100,200,300,400,500,600,700,800,900,950" \
+--values "#E7F6F9,#CBEDF1,#96DAE3,#62C8D5,#34B1C1,#26828E,#1E6771,#174D55,#0F3438,#081A1C,#040F10"
 fi
 
 # Semantic tokens
@@ -707,11 +789,27 @@ GenerateTokens \
 --values "100,100,100,100,100,100"
 fi
 
+# Semantic Token - Colors - Aliases
+
+#if [ "$SEMANTIC_TOKEN_COLORS_ALIASES" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+#Write "// MARK: Semantic token - Colors - Alias"
+#GenerateTokens \
+#--string "static let sysColorBrandKEY: ColorAliasSemanticToken = VALUE" \
+#--keys "PrimaryLowest,PrimaryLower,PrimaryLowe,PrimaryDefault,PrimaryHigh,PrimaryHigher,PrimaryHighest" \
+#--values "nil,nil,ColorPrimitiveTokens"
+#fi
+
+
 # Completed!
 # ---------
 
 # Copy file content into clipboard
 pbcopy < "$GENERATED_SWIFT_CODE_FILE"
+
+# TODO : decoration emoji
+# TODO: header
+# TODO repalse JEY VALUE par sumbole
+# TODO: help
 
 duration=$SECONDS
 echo "Generated $GENERATED_TOKENS_COUNT tokens in $((duration / 60)) minutes and $((duration % 60)) seconds elapsed"
