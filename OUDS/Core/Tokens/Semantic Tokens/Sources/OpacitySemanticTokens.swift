@@ -16,18 +16,20 @@ import OUDSTokensPrimitive
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias OpacitySemanticToken = OpacityPrimitiveToken
+typealias OpacitySemanticToken = OpacityPrimitiveToken
 
 // MARK: - Semantic tokens
 
-public struct OpacitySemanticTokens {
+protocol OpacitySemanticTokens { }
+
+extension OpacitySemanticTokens {
     
     // MARK: Semantic token - Opacity
 
-    static let opacityTransparent: OpacitySemanticToken = OpacityPrimitiveTokens.opacity0
-    static let opacityWeaker: OpacitySemanticToken = OpacityPrimitiveTokens.opacity100
-    static let opacityWeak: OpacitySemanticToken = OpacityPrimitiveTokens.opacity300
-    static let opacityMedum: OpacitySemanticToken = OpacityPrimitiveTokens.opacity500
-    static let opacityEmphasis: OpacitySemanticToken = OpacityPrimitiveTokens.opacity700
-    static let opacityOpaque: OpacitySemanticToken = OpacityPrimitiveTokens.opacity900
+    var opacityTransparent: OpacitySemanticToken = OpacityPrimitiveTokens.opacity0
+    var opacityWeaker: OpacitySemanticToken = OpacityPrimitiveTokens.opacity100
+    var opacityWeak: OpacitySemanticToken = OpacityPrimitiveTokens.opacity300
+    var opacityMedum: OpacitySemanticToken = OpacityPrimitiveTokens.opacity500
+    var opacityEmphasis: OpacitySemanticToken = OpacityPrimitiveTokens.opacity700
+    var opacityOpaque: OpacitySemanticToken = OpacityPrimitiveTokens.opacity900
 }

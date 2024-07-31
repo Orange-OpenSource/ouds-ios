@@ -16,98 +16,100 @@ import OUDSTokensPrimitive
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias SpacingPaddingInlineSemanticToken = DimensionPrimitiveToken
-public typealias SpacingPaddingBlockSemanticToken = DimensionPrimitiveToken
-public typealias SpacingPaddingInsetSemanticToken = DimensionPrimitiveToken
-public typealias SpacingGapInlineSemanticToken = DimensionPrimitiveToken
-public typealias SpacingGapStackSemanticToken = DimensionPrimitiveToken
+typealias SpacingPaddingInlineSemanticToken = DimensionPrimitiveToken
+typealias SpacingPaddingBlockSemanticToken = DimensionPrimitiveToken
+typealias SpacingPaddingInsetSemanticToken = DimensionPrimitiveToken
+typealias SpacingGapInlineSemanticToken = DimensionPrimitiveToken
+typealias SpacingGapStackSemanticToken = DimensionPrimitiveToken
 
 // MARK: - Semantic tokens
 
-public struct SpacingSemanticTokens {
+protocol SpacingSemanticTokens { }
+
+extension SpacingSemanticTokens {
     
-    // MARK: Padding inline
+    // MARK: Semantic token - Padding - Padding inline
+
+    var spacePaddingInlineComponentNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spacePaddingInlineComponentShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spacePaddingInlineComponentShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spacePaddingInlineComponentMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+    var spacePaddingInlineComponentTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension300
+    var spacePaddingInlineComponentTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension400
+    var spacePaddingInlineComponentIsIconNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spacePaddingInlineComponentIsIconShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+    var spacePaddingInlineComponentIsIconShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spacePaddingInlineComponentIsIconMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+    var spacePaddingInlineComponentIsIconTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spacePaddingInlineComponentIsIconTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+    var spacePaddingInlineComponentIsArrowNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spacePaddingInlineComponentIsArrowShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+    var spacePaddingInlineComponentIsArrowShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spacePaddingInlineComponentIsArrowMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+    var spacePaddingInlineComponentIsArrowTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spacePaddingInlineComponentIsArrowTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
     
-    static let spacePaddingInlineComponentNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spacePaddingInlineComponentShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spacePaddingInlineComponentShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spacePaddingInlineComponentMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let spacePaddingInlineComponentTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension300
-    static let spacePaddingInlineComponentTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension400
-    static let spacePaddingInlineComponentIsIconNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spacePaddingInlineComponentIsIconShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
-    static let spacePaddingInlineComponentIsIconShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spacePaddingInlineComponentIsIconMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
-    static let spacePaddingInlineComponentIsIconTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spacePaddingInlineComponentIsIconTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let spacePaddingInlineComponentIsArrowNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spacePaddingInlineComponentIsArrowShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
-    static let spacePaddingInlineComponentIsArrowShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spacePaddingInlineComponentIsArrowMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
-    static let spacePaddingInlineComponentIsArrowTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spacePaddingInlineComponentIsArrowTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
-    
-    // MARK: Padding stack
-    
-    static let spacePaddingBlockComponentNone: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spacePaddingBlockComponentShorter: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spacePaddingBlockComponentShort: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spacePaddingBlockComponentMedium: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let spacePaddingBlockComponentTall: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension300
-    static let spacePaddingBlockComponentTaller: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension400
-    static let spacePaddingBlockComponentIsIconNone: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spacePaddingBlockComponentIsIconShorter: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension25
-    static let spacePaddingBlockComponentIsIconShort: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spacePaddingBlockComponentIsIconMedium: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension75
-    static let spacePaddingBlockComponentIsIconTall: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spacePaddingBlockComponentIsIconTaller: SpacingPaddingBlockSemanticToken = DimensionPrimitiveTokens.dimension200
- 
-    // MARK: Padding inset
-    
-    static let spaceInsetComponentGapComponentNone: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spaceInsetComponentGapComponentSmash: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension25
-    static let spaceInsetComponentGapComponentShortest: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spaceInsetComponentGapComponentShorter: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension75
-    static let spaceInsetComponentGapComponentShort: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spaceInsetComponentGapComponentMedium: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension150
-    static let spaceInsetComponentGapComponentTall: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let spaceInsetComponentGapComponentTaller: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension300
-    static let spaceInsetComponentGapComponentTallest: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension400
-    static let spaceInsetComponentGapComponentSpacious: SpacingPaddingInsetSemanticToken = DimensionPrimitiveTokens.dimension500
-    
-    // MARK: Gap inline
-    
-    static let spaceColumnGapComponentNone: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spaceColumnGapComponentShorter: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spaceColumnGapComponentShort: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spaceColumnGapComponentMedium: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let spaceColumnGapComponentTall: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension300
-    static let spaceColumnGapComponentTaller: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension400
-    static let spaceColumnGapComponentIsIconNone: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spaceColumnGapComponentIsIconShorter: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension25
-    static let spaceColumnGapComponentIsIconShort: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spaceColumnGapComponentIsIconMedium: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension75
-    static let spaceColumnGapComponentIsIconTall: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spaceColumnGapComponentIsIconTaller: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let spaceColumnGapComponentIsArrowNone: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spaceColumnGapComponentIsArrowShorter: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension25
-    static let spaceColumnGapComponentIsArrowShort: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spaceColumnGapComponentIsArrowMedium: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension75
-    static let spaceColumnGapComponentIsArrowTall: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spaceColumnGapComponentIsArrowTaller: SpacingGapInlineSemanticToken = DimensionPrimitiveTokens.dimension200
-    
-    // MARK: Gap stack
- 
-    static let spaceRowGapComponentNone: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spaceRowGapComponentShorter: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension25
-    static let spaceRowGapComponentShort: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spaceRowGapComponentMedium: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension75
-    static let spaceRowGapComponentTall: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spaceRowGapComponentTaller: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let spaceRowGapComponentIsIconNone: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension0
-    static let spaceRowGapComponentIsIconShorter: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension25
-    static let spaceRowGapComponentIsIconShort: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension50
-    static let spaceRowGapComponentIsIconMedium: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension75
-    static let spaceRowGapComponentIsIconTall: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension100
-    static let spaceRowGapComponentIsIconTaller: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension200
+    // MARK: Semantic token - Padding - Padding stack
+
+    var spacePaddingBlockComponentNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spacePaddingBlockComponentShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spacePaddingBlockComponentShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spacePaddingBlockComponentMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+    var spacePaddingBlockComponentTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension300
+    var spacePaddingBlockComponentTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension400
+    var spacePaddingBlockComponentIsIconNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spacePaddingBlockComponentIsIconShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+    var spacePaddingBlockComponentIsIconShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spacePaddingBlockComponentIsIconMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+    var spacePaddingBlockComponentIsIconTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spacePaddingBlockComponentIsIconTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+
+    // MARK: Semantic token - Padding - Padding inset
+
+    var spaceInsetComponentGapComponentNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spaceInsetComponentGapComponentSmash: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+    var spaceInsetComponentGapComponentShortest: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spaceInsetComponentGapComponentShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+    var spaceInsetComponentGapComponentShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spaceInsetComponentGapComponentMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension150
+    var spaceInsetComponentGapComponentTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+    var spaceInsetComponentGapComponentTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension300
+    var spaceInsetComponentGapComponentTallest: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension400
+    var spaceInsetComponentGapComponentSpacious: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension500
+
+    // MARK: Semantic token - Padding - Gap inline
+
+    var spaceColumnGapComponentNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spaceColumnGapComponentShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spaceColumnGapComponentShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spaceColumnGapComponentMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+    var spaceColumnGapComponentTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension300
+    var spaceColumnGapComponentTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension400
+    var spaceColumnGapComponentIsIconNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spaceColumnGapComponentIsIconShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+    var spaceColumnGapComponentIsIconShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spaceColumnGapComponentIsIconMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+    var spaceColumnGapComponentIsIconTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spaceColumnGapComponentIsIconTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+    var spaceColumnGapComponentIsArrowNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spaceColumnGapComponentIsArrowShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+    var spaceColumnGapComponentIsArrowShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spaceColumnGapComponentIsArrowMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+    var spaceColumnGapComponentIsArrowTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spaceColumnGapComponentIsArrowTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+
+    // MARK: Semantic token - Padding - Gap stack
+
+    var spaceRowGapComponentNone: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spaceRowGapComponentShorter: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension25
+    var spaceRowGapComponentShort: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spaceRowGapComponentMedium: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension75
+    var spaceRowGapComponentTall: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spaceRowGapComponentTaller: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension200
+    var spaceRowGapComponentIsIconNone: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension0
+    var spaceRowGapComponentIsIconShorter: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension25
+    var spaceRowGapComponentIsIconShort: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension50
+    var spaceRowGapComponentIsIconMedium: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension75
+    var spaceRowGapComponentIsIconTall: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension100
+    var spaceRowGapComponentIsIconTaller: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension200
 }

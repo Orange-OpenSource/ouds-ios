@@ -22,657 +22,440 @@ public typealias ColorAliasSemanticToken = SwiftUI.Color
 
 // MARK: - Semantic tokens
 
-public struct ColorSemanticTokens {
+public protocol ColorSemanticTokens {
     
     // MARK: Semantic token - Colors - Alias - Primary
-
-    static let sysColorBrandPrimaryLowest: ColorAliasSemanticToken? = nil
-    static let sysColorBrandPrimaryLower: ColorAliasSemanticToken? = nil
-    static let sysColorBrandPrimaryLow: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange500
-    static let sysColorBrandPrimaryDefault: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange550
-    static let sysColorBrandPrimaryHigh: ColorAliasSemanticToken? = nil
-    static let sysColorBrandPrimaryHigher: ColorAliasSemanticToken? = nil
-    static let sysColorBrandPrimaryHighest: ColorAliasSemanticToken? = nil
+    
+    var sysColorBrandPrimaryLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPrimaryLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPrimaryLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPrimaryDefault: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPrimaryHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPrimaryHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPrimaryHighest: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Alias - Secondary
 
-    static let sysColorBrandSecondaryLowest: ColorAliasSemanticToken? = nil
-    static let sysColorBrandSecondaryLower: ColorAliasSemanticToken? = nil
-    static let sysColorBrandSecondaryLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandSecondaryDefault: ColorAliasSemanticToken? = nil
-    static let sysColorBrandSecondaryHigh: ColorAliasSemanticToken? = nil
-    static let sysColorBrandSecondaryHigher: ColorAliasSemanticToken? = nil
-    static let sysColorBrandSecondaryHighest: ColorAliasSemanticToken? = nil
+    var sysColorBrandSecondaryLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandSecondaryLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandSecondaryLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandSecondaryDefault: ColorAliasSemanticToken? { get set }
+    var sysColorBrandSecondaryHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandSecondaryHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandSecondaryHighest: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Alias - Tertiary
 
-    static let sysColorBrandTertiaryLowest: ColorAliasSemanticToken? = nil
-    static let sysColorBrandTertiaryLower: ColorAliasSemanticToken? = nil
-    static let sysColorBrandTertiaryLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandTertiaryDefault: ColorAliasSemanticToken? = nil
-    static let sysColorBrandTertiaryHigh: ColorAliasSemanticToken? = nil
-    static let sysColorBrandTertiaryHigher: ColorAliasSemanticToken? = nil
-    static let sysColorBrandTertiaryHighest: ColorAliasSemanticToken? = nil
+    var sysColorBrandTertiaryLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandTertiaryLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandTertiaryLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandTertiaryDefault: ColorAliasSemanticToken? { get set }
+    var sysColorBrandTertiaryHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandTertiaryHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandTertiaryHighest: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Alias - Neutral - Muted
 
-    static let sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalWhite
-    static let sysColorBrandNeutralMutedLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray80
-    static let sysColorBrandNeutralMutedLower: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
-    static let sysColorBrandNeutralMutedLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandNeutralMutedMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray400
-    static let sysColorBrandNeutralMutedHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray560
-    static let sysColorBrandNeutralMutedHigher: ColorAliasSemanticToken? = nil
-    static let sysColorBrandNeutralMutedHighest: ColorAliasSemanticToken? = nil
+    var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralMutedLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralMutedLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralMutedLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralMutedMedium: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralMutedHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralMutedHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralMutedHighest: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Alias - Neutral - Emphasis
 
-    static let sysColorBrandNeutralEmphasisLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray400
-    static let sysColorBrandNeutralEmphasisLower: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray480
-    static let sysColorBrandNeutralEmphasisLow: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray560
-    static let sysColorBrandNeutralEmphasisMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray640
-    static let sysColorBrandNeutralEmphasisHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray720
-    static let sysColorBrandNeutralEmphasisHigher: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray800
-    static let sysColorBrandNeutralEmphasisHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray880
-    static let sysColorBrandNeutralEmphasisBlack: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalBlack
+    var sysColorBrandNeutralEmphasisLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralEmphasisLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralEmphasisLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralEmphasisMedium: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralEmphasisHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralEmphasisHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralEmphasisHighest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNeutralEmphasisBlack: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Alias - Positive
 
-    static let sysColorBrandPositiveLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite100
-    static let sysColorBrandPositiveLower: ColorAliasSemanticToken? = nil
-    static let sysColorBrandPositiveLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandPositiveDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite500
-    static let sysColorBrandPositiveHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite600
-    static let sysColorBrandPositiveHigher: ColorAliasSemanticToken? = nil
-    static let sysColorBrandPositiveHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite800
+    var sysColorBrandPositiveLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPositiveLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPositiveLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPositiveDefault: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPositiveHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPositiveHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandPositiveHighest: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Alias - Information
 
-    static let sysColorBrandInformationLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue100
-    static let sysColorBrandInformationLower: ColorAliasSemanticToken? = nil
-    static let sysColorBrandInformationLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandInformationDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue500
-    static let sysColorBrandInformationHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue600
-    static let sysColorBrandInformationHigher: ColorAliasSemanticToken? = nil
-    static let sysColorBrandInformationHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue800
+    var sysColorBrandInformationLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandInformationLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandInformationLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandInformationDefault: ColorAliasSemanticToken? { get set }
+    var sysColorBrandInformationHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandInformationHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandInformationHighest: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Alias - Warning
 
-    static let sysColorBrandWarningLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun100
-    static let sysColorBrandWarningLower: ColorAliasSemanticToken? = nil
-    static let sysColorBrandWarningLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandWarningDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
-    static let sysColorBrandWarningHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun600
-    static let sysColorBrandWarningHigher: ColorAliasSemanticToken? = nil
-    static let sysColorBrandWarningHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun800
+    var sysColorBrandWarningLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandWarningLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandWarningLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandWarningDefault: ColorAliasSemanticToken? { get set }
+    var sysColorBrandWarningHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandWarningHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandWarningHighest: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Alias - Negative
 
-    static let sysColorBrandNegativeLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet100
-    static let sysColorBrandNegativeLower: ColorAliasSemanticToken? = nil
-    static let sysColorBrandNegativeLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandNegativeDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet500
-    static let sysColorBrandNegativeHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet600
-    static let sysColorBrandNegativeHigher: ColorAliasSemanticToken? = nil
-    static let sysColorBrandNegativeHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet800
+    var sysColorBrandNegativeLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNegativeLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNegativeLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNegativeDefault: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNegativeHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNegativeHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandNegativeHighest: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Alias - Attractive
 
-    static let sysColorBrandAttractiveLowest: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandWarmGray100
-    static let sysColorBrandAttractiveLower: ColorAliasSemanticToken? = nil
-    static let sysColorBrandAttractiveLow: ColorAliasSemanticToken? = nil
-    static let sysColorBrandAttractiveMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
-    static let sysColorBrandAttractiveHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun600
-    static let sysColorBrandAttractiveHigher: ColorAliasSemanticToken? = nil
-    static let sysColorBrandAttractiveHighest: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandWarmGray900
+    var sysColorBrandAttractiveLowest: ColorAliasSemanticToken? { get set }
+    var sysColorBrandAttractiveLower: ColorAliasSemanticToken? { get set }
+    var sysColorBrandAttractiveLow: ColorAliasSemanticToken? { get set }
+    var sysColorBrandAttractiveMedium: ColorAliasSemanticToken? { get set }
+    var sysColorBrandAttractiveHigh: ColorAliasSemanticToken? { get set }
+    var sysColorBrandAttractiveHigher: ColorAliasSemanticToken? { get set }
+    var sysColorBrandAttractiveHighest: ColorAliasSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Default - Primary
 
-    static let colorBackgroundDefaultPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorBackgroundDefaultPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorBackgroundDefaultPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHighest
+    var colorBackgroundDefaultPrimaryLight: ColorSemanticToken? { get set }
+    var colorBackgroundDefaultPrimaryInverse: ColorSemanticToken? { get set }
+    var colorBackgroundDefaultPrimaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Default - Secondary
 
-    static let colorBackgroundDefaultSecondaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedLowest
-    static let colorBackgroundDefaultSecondaryInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
-    static let colorBackgroundDefaultSecondaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigher
+    var colorBackgroundDefaultSecondaryLight: ColorSemanticToken? { get set }
+    var colorBackgroundDefaultSecondaryInverse: ColorSemanticToken? { get set }
+    var colorBackgroundDefaultSecondaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Default - Tertiary
 
-    static let colorBackgroundDefaultTertiaryLight: ColorSemanticToken? = sysColorBrandAttractiveLowest
-    static let colorBackgroundDefaultTertiaryInverse: ColorSemanticToken? = sysColorBrandAttractiveHighest
-    static let colorBackgroundDefaultTertiaryDark: ColorSemanticToken? = sysColorBrandAttractiveHighest
+    var colorBackgroundDefaultTertiaryLight: ColorSemanticToken? { get set }
+    var colorBackgroundDefaultTertiaryInverse: ColorSemanticToken? { get set }
+    var colorBackgroundDefaultTertiaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Emphasis - Primary
 
-    static let colorBackgroundEmphasisPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorBackgroundEmphasisPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorBackgroundEmphasisPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
+    var colorBackgroundEmphasisPrimaryLight: ColorSemanticToken? { get set }
+    var colorBackgroundEmphasisPrimaryInverse: ColorSemanticToken? { get set }
+    var colorBackgroundEmphasisPrimaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Emphasis - Secondary
 
-    static let colorBackgroundEmphasisSecondaryLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
-    static let colorBackgroundEmphasisSecondaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedLowest
-    static let colorBackgroundEmphasisSecondaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+    var colorBackgroundEmphasisSecondaryLight: ColorSemanticToken? { get set }
+    var colorBackgroundEmphasisSecondaryInverse: ColorSemanticToken? { get set }
+    var colorBackgroundEmphasisSecondaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Brand - Primary
 
-    static let colorBackgroundBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    static let colorBackgroundBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    static let colorBackgroundBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+    var colorBackgroundBrandPrimaryLight: ColorSemanticToken? { get set }
+    var colorBackgroundBrandPrimaryInverse: ColorSemanticToken? { get set }
+    var colorBackgroundBrandPrimaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Brand - Secondary
 
-    static let colorBackgroundBrandSecondary: ColorSemanticToken? = nil
+    var colorBackgroundBrandSecondary: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Brand - Tertiary
 
-    static let colorBackgroundBrandTertiary: ColorSemanticToken? = nil
+    var colorBackgroundBrandTertiary: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
-    static let colorBackgroundStatusAttractiveMutedLight: ColorSemanticToken? = sysColorBrandAttractiveLowest
-    static let colorBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? = sysColorBrandAttractiveLowest
-    static let colorBackgroundStatusAttractiveMutedDark: ColorSemanticToken? = sysColorBrandAttractiveHighest
+    var colorBackgroundStatusAttractiveMutedLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusAttractiveMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Attractive - Emphasis
 
-    static let colorBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? = sysColorBrandWarningDefault
-    static let colorBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? = sysColorBrandWarningDefault
-    static let colorBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? = sysColorBrandWarningHighest
+    var colorBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Muted
 
-    static let colorBackgroundStatusWarningMutedLight: ColorSemanticToken? = sysColorBrandWarningLowest
-    static let colorBackgroundStatusWarningMutedInverse: ColorSemanticToken? = sysColorBrandWarningLowest
-    static let colorBackgroundStatusWarningMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+    var colorBackgroundStatusWarningMutedLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusWarningMutedInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusWarningMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Emphasis
 
-    static let colorBackgroundStatusWarningEmphasisLight: ColorSemanticToken? = sysColorBrandWarningDefault
-    static let colorBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? = sysColorBrandWarningDefault
-    static let colorBackgroundStatusWarningEmphasisDark: ColorSemanticToken? = sysColorBrandWarningHighest
+    var colorBackgroundStatusWarningEmphasisLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusWarningEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Negative - Muted
 
-    static let colorBackgroundStatusNegativeMutedLight: ColorSemanticToken? = sysColorBrandNegativeLowest
-    static let colorBackgroundStatusNegativeMutedInverse: ColorSemanticToken? = sysColorBrandNegativeLowest
-    static let colorBackgroundStatusNegativeMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+    var colorBackgroundStatusNegativeMutedLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusNegativeMutedInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusNegativeMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Negative - Emphasis
 
-    static let colorBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? = sysColorBrandNegativeDefault
-    static let colorBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? = sysColorBrandNegativeDefault
-    static let colorBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? = sysColorBrandNegativeHighest
+    var colorBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Positive - Muted
 
-    static let colorBackgroundStatusPositiveMutedLight: ColorSemanticToken? = sysColorBrandPositiveLowest
-    static let colorBackgroundStatusPositiveMutedInverse: ColorSemanticToken? = sysColorBrandPositiveLowest
-    static let colorBackgroundStatusPositiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+    var colorBackgroundStatusPositiveMutedLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusPositiveMutedInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusPositiveMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Positive - Emphasis
 
-    static let colorBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? = sysColorBrandPositiveDefault
-    static let colorBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? = sysColorBrandPositiveDefault
-    static let colorBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? = sysColorBrandPositiveHighest
+    var colorBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Information - Muted
 
-    static let colorBackgroundStatusInformationMutedLight: ColorSemanticToken? = sysColorBrandInformationLowest
-    static let colorBackgroundStatusInformationMutedInverse: ColorSemanticToken? = sysColorBrandInformationLowest
-    static let colorBackgroundStatusInformationMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+    var colorBackgroundStatusInformationMutedLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusInformationMutedInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusInformationMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Background - Status - Information - Emphasis
 
-    static let colorBackgroundStatusInformationEmphasisLight: ColorSemanticToken? = sysColorBrandInformationDefault
-    static let colorBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? = sysColorBrandInformationDefault
-    static let colorBackgroundStatusInformationEmphasisDark: ColorSemanticToken? = sysColorBrandInformationHighest
+    var colorBackgroundStatusInformationEmphasisLight: ColorSemanticToken? { get set }
+    var colorBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? { get set }
+    var colorBackgroundStatusInformationEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Default
 
-    static let colorContentDefaultLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorContentDefaultInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorContentDefaultDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorContentDefaultLight: ColorSemanticToken? { get set }
+    var colorContentDefaultInverse: ColorSemanticToken? { get set }
+    var colorContentDefaultDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Default - On background emphasis
 
-    static let colorContentDefaultOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorContentDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorContentDefaultOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorContentDefaultOnBackgroundEmphasisLight: ColorSemanticToken? { get set }
+    var colorContentDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? { get set }
+    var colorContentDefaultOnBackgroundEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Muted
 
-    static let colorContentMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-    static let colorContentMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
-    static let colorContentMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+    var colorContentMutedLight: ColorSemanticToken? { get set }
+    var colorContentMutedInverse: ColorSemanticToken? { get set }
+    var colorContentMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Muted - On background emphasis
 
-    static let colorContentMutedOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
-    static let colorContentMutedOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-    static let colorContentMutedOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedHigh
+    var colorContentMutedOnBackgroundEmphasisLight: ColorSemanticToken? { get set }
+    var colorContentMutedOnBackgroundEmphasisInverse: ColorSemanticToken? { get set }
+    var colorContentMutedOnBackgroundEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Brand - Primary
 
-    static let colorContentBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    static let colorContentBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryLow
-    static let colorContentBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+    var colorContentBrandPrimaryLight: ColorSemanticToken? { get set }
+    var colorContentBrandPrimaryInverse: ColorSemanticToken? { get set }
+    var colorContentBrandPrimaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasis
 
-    static let colorContentBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandPrimaryLow
-    static let colorContentBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    static let colorContentBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+    var colorContentBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? { get set }
+    var colorContentBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? { get set }
+    var colorContentBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Brand - Secondary
 
-    static let colorContentBrandSecondaryLight: ColorSemanticToken? = nil
-    static let colorContentBrandSecondaryInverse: ColorSemanticToken? = nil
-    static let colorContentBrandSecondaryDark: ColorSemanticToken? = nil
+    var colorContentBrandSecondaryLight: ColorSemanticToken? { get set }
+    var colorContentBrandSecondaryInverse: ColorSemanticToken? { get set }
+    var colorContentBrandSecondaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Brand - Tertiary
 
-    static let colorContentBrandTertiaryLight: ColorSemanticToken? = nil
-    static let colorContentBrandTertiaryInverse: ColorSemanticToken? = nil
-    static let colorContentBrandTertiaryDark: ColorSemanticToken? = nil
+    var colorContentBrandTertiaryLight: ColorSemanticToken? { get set }
+    var colorContentBrandTertiaryInverse: ColorSemanticToken? { get set }
+    var colorContentBrandTertiaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Status - Attractive
 
-    static let colorContentStatusAttractiveLight: ColorSemanticToken? = nil
-    static let colorContentStatusAttractiveInverse: ColorSemanticToken? = nil
-    static let colorContentStatusAttractiveDark: ColorSemanticToken? = nil
+    var colorContentStatusAttractiveLight: ColorSemanticToken? { get set }
+    var colorContentStatusAttractiveInverse: ColorSemanticToken? { get set }
+    var colorContentStatusAttractiveDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Status - Negative
 
-    static let colorContentStatusNegativeLight: ColorSemanticToken? = sysColorBrandNegativeDefault
-    static let colorContentStatusNegativeInverse: ColorSemanticToken? = sysColorBrandNegativeDefault
-    static let colorContentStatusNegativeDark: ColorSemanticToken? = sysColorBrandNegativeDefault
+    var colorContentStatusNegativeLight: ColorSemanticToken? { get set }
+    var colorContentStatusNegativeInverse: ColorSemanticToken? { get set }
+    var colorContentStatusNegativeDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Status - Positive
 
-    static let colorContentStatusPositiveLight: ColorSemanticToken? = sysColorBrandPositiveDefault
-    static let colorContentStatusPositiveInverse: ColorSemanticToken? = sysColorBrandPositiveDefault
-    static let colorContentStatusPositiveDark: ColorSemanticToken? = sysColorBrandPositiveDefault
+    var colorContentStatusPositiveLight: ColorSemanticToken? { get set }
+    var colorContentStatusPositiveInverse: ColorSemanticToken? { get set }
+    var colorContentStatusPositiveDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Content - Status - Information
 
-    static let colorContentStatusInformationLight: ColorSemanticToken? = sysColorBrandInformationDefault
-    static let colorContentStatusInformationInverse: ColorSemanticToken? = sysColorBrandInformationDefault
-    static let colorContentStatusInformationDark: ColorSemanticToken? = sysColorBrandInformationDefault
+    var colorContentStatusInformationLight: ColorSemanticToken? { get set }
+    var colorContentStatusInformationInverse: ColorSemanticToken? { get set }
+    var colorContentStatusInformationDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Default
 
-    static let colorBorderDefaultLight: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
-    static let colorBorderDefaultInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-    static let colorBorderDefaultDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+    var colorBorderDefaultLight: ColorSemanticToken? { get set }
+    var colorBorderDefaultInverse: ColorSemanticToken? { get set }
+    var colorBorderDefaultDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Default - On background emphasis
 
-    static let colorBorderDefaultOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-    static let colorBorderDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
-    static let colorBorderDefaultOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+    var colorBorderDefaultOnBackgroundEmphasisLight: ColorSemanticToken? { get set }
+    var colorBorderDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? { get set }
+    var colorBorderDefaultOnBackgroundEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Emphasis
 
-    static let colorBorderEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorBorderEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorBorderEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorBorderEmphasisLight: ColorSemanticToken? { get set }
+    var colorBorderEmphasisInverse: ColorSemanticToken? { get set }
+    var colorBorderEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Emphasis - On background emphasis
 
-    static let colorBorderEmphasisOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorBorderEmphasisOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorBorderEmphasisOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorBorderEmphasisOnBackgroundEmphasisLight: ColorSemanticToken? { get set }
+    var colorBorderEmphasisOnBackgroundEmphasisInverse: ColorSemanticToken? { get set }
+    var colorBorderEmphasisOnBackgroundEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Brand - Primary
 
-    static let colorBorderBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    static let colorBorderBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryLow
-    static let colorBorderBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+    var colorBorderBrandPrimaryLight: ColorSemanticToken? { get set }
+    var colorBorderBrandPrimaryInverse: ColorSemanticToken? { get set }
+    var colorBorderBrandPrimaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasis
 
-    static let colorBorderBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandPrimaryLow
-    static let colorBorderBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    static let colorBorderBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+    var colorBorderBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? { get set }
+    var colorBorderBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? { get set }
+    var colorBorderBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Brand - Secondary
 
-    static let colorBorderBrandSecondaryLight: ColorSemanticToken? = nil
-    static let colorBorderBrandSecondaryInverse: ColorSemanticToken? = nil
-    static let colorBorderBrandSecondaryDark: ColorSemanticToken? = nil
+    var colorBorderBrandSecondaryLight: ColorSemanticToken? { get set }
+    var colorBorderBrandSecondaryInverse: ColorSemanticToken? { get set }
+    var colorBorderBrandSecondaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Brand - Tertiary
 
-    static let colorBorderBrandTertiaryLight: ColorSemanticToken? = nil
-    static let colorBorderBrandTertiaryInverse: ColorSemanticToken? = nil
-    static let colorBorderBrandTertiaryDark: ColorSemanticToken? = nil
+    var colorBorderBrandTertiaryLight: ColorSemanticToken? { get set }
+    var colorBorderBrandTertiaryInverse: ColorSemanticToken? { get set }
+    var colorBorderBrandTertiaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Status - Attractive
 
-    static let colorBorderBrandStatusAttractiveLight: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusAttractiveInverse: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusAttractiveDark: ColorSemanticToken? = nil
+    var colorBorderBrandStatusAttractiveLight: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusAttractiveInverse: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusAttractiveDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Status - Warning
 
-    static let colorBorderBrandStatusWarningLight: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusWarningInverse: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusWarningDark: ColorSemanticToken? = nil
+    var colorBorderBrandStatusWarningLight: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusWarningInverse: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusWarningDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Status - Negative
 
-    static let colorBorderBrandStatusNegativeLight: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusNegativeInverse: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusNegativeDark: ColorSemanticToken? = nil
+    var colorBorderBrandStatusNegativeLight: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusNegativeInverse: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusNegativeDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Status - Positive
 
-    static let colorBorderBrandStatusPositiveLight: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusPositiveInverse: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusPositiveDark: ColorSemanticToken? = nil
+    var colorBorderBrandStatusPositiveLight: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusPositiveInverse: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusPositiveDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - Border - Status - Information
 
-    static let colorBorderBrandStatusInformationLight: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusInformationInverse: ColorSemanticToken? = nil
-    static let colorBorderBrandStatusInformationDark: ColorSemanticToken? = nil
+    var colorBorderBrandStatusInformationLight: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusInformationInverse: ColorSemanticToken? { get set }
+    var colorBorderBrandStatusInformationDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Primary
 
-    static let colorOnBackgroundPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorOnBackgroundPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorOnBackgroundPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHighest
+    var colorOnBackgroundPrimaryLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundPrimaryInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundPrimaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Secondary
 
-    static let colorOnBackgroundSecondaryLight: ColorSemanticToken? = nil
-    static let colorOnBackgroundSecondaryInverse: ColorSemanticToken? = nil
-    static let colorOnBackgroundSecondaryDark: ColorSemanticToken? = nil
+    var colorOnBackgroundSecondaryLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundSecondaryInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundSecondaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Tertiary
 
-    static let colorOnBackgroundTertiaryLight: ColorSemanticToken? = nil
-    static let colorOnBackgroundTertiaryInverse: ColorSemanticToken? = nil
-    static let colorOnBackgroundTertiaryDark: ColorSemanticToken? = nil
+    var colorOnBackgroundTertiaryLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundTertiaryInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundTertiaryDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Attrative - Muted
 
-    static let colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Attrative - Emphasis
 
-    static let colorOnBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Warning - Muted
 
-    static let colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusWarningMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusWarningMutedInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Warning - Emphasis
 
-    static let colorOnBackgroundStatusWarningEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusWarningEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusWarningEmphasisLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusWarningEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Negative - Muted
 
-    static let colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusNegativeMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusNegativeMutedInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Negative - Emphasis
 
-    static let colorOnBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorOnBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    static let colorOnBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Muted
 
-    static let colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusPositiveMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusPositiveMutedInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Emphasis
 
-    static let colorOnBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Information - Muted
 
-    static let colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusInformationMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusInformationMutedInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken? { get set }
 
     // MARK: Semantic token - Colors - On background - Status - Information - Emphasis
 
-    static let colorOnBackgroundStatusInformationEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    static let colorOnBackgroundStatusInformationEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+    var colorOnBackgroundStatusInformationEmphasisLight: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? { get set }
+    var colorOnBackgroundStatusInformationEmphasisDark: ColorSemanticToken? { get set }
 
-    // MARK: Semantic token - Colors - Decorative - Brand - Primary - Muted
-
-    static let colorDecorativeBrandPrimaryMutedLight: ColorSemanticToken? = nil
-    static let colorDecorativeBrandPrimaryMutedInverse: ColorSemanticToken? = nil
-    static let colorDecorativeBrandPrimaryMutedDark: ColorSemanticToken? = nil
-
-    // MARK: Semantic token - Colors - Decorative - Brand - Primary - Default
-
-    static let colorDecorativeBrandPrimaryDefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange500
-    static let colorDecorativeBrandPrimaryDefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange500
-    static let colorDecorativeBrandPrimaryDefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange500
-
-    // MARK: Semantic token - Colors - Decorative - Brand - Primary - Emphasis
-
-    static let colorDecorativeBrandPrimaryEmphasisLight: ColorSemanticToken? = nil
-    static let colorDecorativeBrandPrimaryEmphasisInverse: ColorSemanticToken? = nil
-    static let colorDecorativeBrandPrimaryEmphasisDark: ColorSemanticToken? = nil
-
-    // MARK: Semantic token - Colors - Decorative - Brand - Secondary - Muted
-
-    static let colorDecorativeBrandSecondaryMutedLight: ColorSemanticToken? = nil
-    static let colorDecorativeBrandSecondaryMutedInverse: ColorSemanticToken? = nil
-    static let colorDecorativeBrandSecondaryMutedDark: ColorSemanticToken? = nil
-
-    // MARK: Semantic token - Colors - Decorative - Brand - Secondary - Default
-
-    static let colorDecorativeBrandSecondaryDefaultLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalBlack
-    static let colorDecorativeBrandSecondaryDefaultInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalWhite
-    static let colorDecorativeBrandSecondaryDefaultDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
-
-    // MARK: Semantic token - Colors - Decorative - Brand - Secondary - Emphasis
-
-    static let colorDecorativeBrandSecondaryEmphasisLight: ColorSemanticToken? = nil
-    static let colorDecorativeBrandSecondaryEmphasisInverse: ColorSemanticToken? = nil
-    static let colorDecorativeBrandSecondaryEmphasisDark: ColorSemanticToken? = nil
-
-    // MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Muted
-
-    static let colorDecorativeBrandTertiaryMutedLight: ColorSemanticToken? = nil
-    static let colorDecorativeBrandTertiaryMutedInverse: ColorSemanticToken? = nil
-    static let colorDecorativeBrandTertiaryMutedDark: ColorSemanticToken? = nil
-
-    // MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Default
-
-    static let colorDecorativeBrandTertiaryDefaultLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalWhite
-    static let colorDecorativeBrandTertiaryDefaultInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalBlack
-    static let colorDecorativeBrandTertiaryDefaultDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray880
-
-    // MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Emphasis
-
-    static let colorDecorativeBrandTertiaryEmphasisLight: ColorSemanticToken? = nil
-    static let colorDecorativeBrandTertiaryEmphasisInverse: ColorSemanticToken? = nil
-    static let colorDecorativeBrandTertiaryEmphasisDark: ColorSemanticToken? = nil
-
-    // MARK: Semantic token - Colors - Decorative - Neutral - Muted
-
-    static let colorDecorativeNeutralMutedLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
-    static let colorDecorativeNeutralMutedInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray640
-    static let colorDecorativeNeutralMutedDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray720
-
-    // MARK: Semantic token - Colors - Decorative - Neutral - Default
-
-    static let colorDecorativeNeutralDefaultLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray400
-    static let colorDecorativeNeutralDefaultInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
-    static let colorDecorativeNeutralDefaultDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
-
-    // MARK: Semantic token - Colors - Decorative - Neutral - Emphasis
-
-    static let colorDecorativeNeutralEmphasisLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray640
-    static let colorDecorativeNeutralEmphasisInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
-    static let colorDecorativeNeutralEmphasisDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 1 - Muted
-
-    static let colorDecorativeAccent1MutedLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald200
-    static let colorDecorativeAccent1MutedInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald200
-    static let colorDecorativeAccent1MutedDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald200
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 1 - Default
-
-    static let colorDecorativeAccent1DefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald500
-    static let colorDecorativeAccent1DefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald500
-    static let colorDecorativeAccent1DefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald500
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 1 - Emphasis
-
-    static let colorDecorativeAccent1EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald700
-    static let colorDecorativeAccent1EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald700
-    static let colorDecorativeAccent1EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald700
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 2 - Muted
-
-    static let colorDecorativeAccent2MutedLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky200
-    static let colorDecorativeAccent2MutedInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky200
-    static let colorDecorativeAccent2MutedDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky200
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 2 - Default
-
-    static let colorDecorativeAccent2DefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky500
-    static let colorDecorativeAccent2DefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky500
-    static let colorDecorativeAccent2DefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky500
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 2 - Emphasis
-
-    static let colorDecorativeAccent2EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky700
-    static let colorDecorativeAccent2EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky700
-    static let colorDecorativeAccent2EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky700
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 3 - Muted
-
-    static let colorDecorativeAccent3MutedLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun200
-    static let colorDecorativeAccent3MutedInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun200
-    static let colorDecorativeAccent3MutedDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun200
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 3 - Default
-
-    static let colorDecorativeAccent3DefaultLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
-    static let colorDecorativeAccent3DefaultInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
-    static let colorDecorativeAccent3DefaultDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 3 - Emphasis
-
-    static let colorDecorativeAccent3EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmber500
-    static let colorDecorativeAccent3EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmber500
-    static let colorDecorativeAccent3EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmber500
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 4 - Muted
-
-    static let colorDecorativeAccent4MutedLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst200
-    static let colorDecorativeAccent4MutedInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst200
-    static let colorDecorativeAccent4MutedDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst200
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 4 - Default
-
-    static let colorDecorativeAccent4DefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst400
-    static let colorDecorativeAccent4DefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst400
-    static let colorDecorativeAccent4DefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst400
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 4 - Emphasis
-
-    static let colorDecorativeAccent4EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst800
-    static let colorDecorativeAccent4EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst800
-    static let colorDecorativeAccent4EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst800
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 5 - Muted
-
-    static let colorDecorativeAccent5MutedLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink100
-    static let colorDecorativeAccent5MutedInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink100
-    static let colorDecorativeAccent5MutedDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink100
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 5 - Default
-
-    static let colorDecorativeAccent5DefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink200
-    static let colorDecorativeAccent5DefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink200
-    static let colorDecorativeAccent5DefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink200
-
-    // MARK: Semantic token - Colors - Decorative - Accent - 5 - Emphasis
-
-    static let colorDecorativeAccent5EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink300
-    static let colorDecorativeAccent5EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink300
-    static let colorDecorativeAccent5EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink300
-
-    // MARK: Semantic token - Colors - Decorative - Skin - Tint
-
-    static let colorDecorativeSkinTint100Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach100
-    static let colorDecorativeSkinTint100Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach100
-    static let colorDecorativeSkinTint100Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach100
-
-    // MARK: Semantic token - Colors - Decorative - Skin - Tint
-
-    static let colorDecorativeSkinTint200Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach200
-    static let colorDecorativeSkinTint200Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach200
-    static let colorDecorativeSkinTint200Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach200
-
-    // MARK: Semantic token - Colors - Decorative - Skin - Tint
-
-    static let colorDecorativeSkinTint300Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach300
-    static let colorDecorativeSkinTint300Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach300
-    static let colorDecorativeSkinTint300Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach300
-
-    // MARK: Semantic token - Colors - Decorative - Skin - Tint
-
-    static let colorDecorativeSkinTint400Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach400
-    static let colorDecorativeSkinTint400Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach400
-    static let colorDecorativeSkinTint400Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach400
-
-    // MARK: Semantic token - Colors - Decorative - Skin - Tint
-
-    static let colorDecorativeSkinTint500Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach500
-    static let colorDecorativeSkinTint500Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach500
-    static let colorDecorativeSkinTint500Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach500
-
-    // MARK: Semantic token - Colors - Decorative - Skin - Tint
-
-    static let colorDecorativeSkinTint600Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach600
-    static let colorDecorativeSkinTint600Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach600
-    static let colorDecorativeSkinTint600Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach600
-
-    // MARK: Semantic token - Colors - Decorative - Skin - Tint
-
-    static let colorDecorativeSkinTint700Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach700
-    static let colorDecorativeSkinTint700Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach700
-    static let colorDecorativeSkinTint700Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach100
-
-    // MARK: Semantic token - Colors - Decorative - Skin - Tint
-
-    static let colorDecorativeSkinTint800Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach800
-    static let colorDecorativeSkinTint800Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach800
-    static let colorDecorativeSkinTint800Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach800
-
-    // MARK: Semantic token - Colors - Decorative - Skin - Tint
-
-    static let colorDecorativeSkinTint900Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach900
-    static let colorDecorativeSkinTint900Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach900
-    static let colorDecorativeSkinTint900Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach900
-
-    // TODO: Add semantic tokens for Color chart
 }

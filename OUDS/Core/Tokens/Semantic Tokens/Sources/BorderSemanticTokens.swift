@@ -22,30 +22,30 @@ public typealias BorderStyleSemanticToken = BorderStylePrimitiveToken
 
 // MARK: - Semantic tokens
 
-public struct BorderSemanticTokens {
+public protocol BorderSemanticTokens { 
     
     // MARK: Semantic token - Border - Width
 
-    static let borderWidthNone: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth0
-    static let borderWidthDefault: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth25
-    static let borderWidthThin: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth25
-    static let borderWidthThick: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth50
-    static let borderWidthThicker: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth75
-    static let borderWidthThickest: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth100
-    static let borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth100
+    var borderWidthNone: BorderWidthSemanticToken { get set }
+    var borderWidthDefault: BorderWidthSemanticToken { get set }
+    var borderWidthThin: BorderWidthSemanticToken { get set }
+    var borderWidthThick: BorderWidthSemanticToken { get set }
+    var borderWidthThicker: BorderWidthSemanticToken { get set }
+    var borderWidthThickest: BorderWidthSemanticToken { get set }
+    var borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken { get set }
 
     // MARK: Semantic token - Border - Radius
 
-    static let borderRadiusNone: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius0
-    static let borderRadiusDefault: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius0
-    static let borderRadiusShort: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius75
-    static let borderRadiusMedium: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius150
-    static let borderRadiusTaill: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius300
-    static let borderRadiusPill: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius9999
+    var borderRadiusNone: BorderRadiusSemanticToken { get set }
+    var borderRadiusDefault: BorderRadiusSemanticToken { get set }
+    var borderRadiusShort: BorderRadiusSemanticToken { get set }
+    var borderRadiusMedium: BorderRadiusSemanticToken { get set }
+    var borderRadiusTall: BorderRadiusSemanticToken { get set }
+    var borderRadiusPill: BorderRadiusSemanticToken { get set }
 
     // MARK: Semantic token - Border - Style
 
-    static let borderStyleDefault: BorderStyleSemanticToken = BorderPrimitiveTokens.borderStyleSolid
-    static let borderStyleDrag: BorderStyleSemanticToken = BorderPrimitiveTokens.borderStyleDashed
+    var borderStyleDefault: BorderStyleSemanticToken { get set }
+    var borderStyleDrag: BorderStyleSemanticToken { get set }
     
 }

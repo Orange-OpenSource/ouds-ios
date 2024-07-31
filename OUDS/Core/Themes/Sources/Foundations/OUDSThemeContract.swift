@@ -12,13 +12,13 @@
 //
 
 import Foundation
-import OUDSTokens
+import OUDSTokensSemantic
 
 // MARK: - Theme Contract
 
-/// A theme must define all the rules applied to the product.
+/// A theme must define all the rules applied to the product (themes, modules, components, etc).
 /// Colors, spacings, borders, elevations, typography, opacity... any available
-/// and usable values must be defined in a `ThemeContract`
-public protocol OUDSThemeContract {
+/// and usable values must be defined in a `OUDSThemeContract`
+public protocol OUDSThemeContract: BorderSemanticTokens, ColorSemanticTokens {
 
 }

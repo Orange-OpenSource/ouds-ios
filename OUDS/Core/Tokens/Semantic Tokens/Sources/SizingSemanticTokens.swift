@@ -16,84 +16,78 @@ import OUDSTokensPrimitive
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias SizingWidthHeightSemanticToken = DimensionPrimitiveToken
-public typealias SizingMaxWidthSemanticToken = DimensionPrimitiveToken
+typealias SizingWidthHeightSemanticToken = DimensionPrimitiveToken
+typealias SizingMaxWidthSemanticToken = DimensionPrimitiveToken
 
 // MARK: - Semantic tokens
 
-public struct SizingSemanticTokens {
+protocol SizingSemanticTokens {
     
-    // MARK: Width height - icon decorative
-    
-    static let sizeWidthHeightIconShortest: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let sizeWidthHeightIconShorter: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
-    static let sizeWidthHeightIconShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
-    static let sizeWidthHeightIconMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
-    static let sizeWidthHeightIconTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension600
-    static let sizeWidthHeightIconTaller: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension700
-    static let sizeWidthHeightIconTallest: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension900
-    
-    // MARK: Width height - icon component
- 
-    static let sizeWidthHeightIsLabelSmallShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension150
-    static let sizeWidthHeightIsLabelSmallMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let sizeWidthHeightIsLabelSmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
-    static let sizeWidthHeightIsLabelMediumShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let sizeWidthHeightIsLabelMediumMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
-    static let sizeWidthHeightIsLabelMediumTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
-    static let sizeWidthHeightIsLabelLargeShorter: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
-    static let sizeWidthHeightIsLabelLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
-    static let sizeWidthHeightIsLabelLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension350
-    static let sizeWidthHeightIsLabelLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
-    static let sizeWidthHeightIsLabelLargeTaller: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
-    static let sizeWidthHeightIsLabelXLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
-    static let sizeWidthHeightIsLabelXLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
-    static let sizeWidthHeightIsLabelXLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
-    
-    // MARK: Width height - icon typography
-    
-    // NOTE: In design team whiteboard, there are 3 values for each token depending to viewport. How to manage them?
-    static let sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
-    static let sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
-    static let sizeWidthHeightIconIsHeadingSmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
-    static let sizeWidthHeightIconIsHeadingMediumShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
-    static let sizeWidthHeightIconIsHeadingMediumMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
-    static let sizeWidthHeightIconIsHeadingMediumTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension600
-    static let sizeWidthHeightIconIsHeadingLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
-    static let sizeWidthHeightIconIsHeadingLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension600
-    static let sizeWidthHeightIconIsHeadingLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension650
-    static let sizeWidthHeightIconIsHeadingXLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension650
-    static let sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension700
-    static let sizeWidthHeightIconIsHeadingXLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension800
-    
-    // NOTE: In design team whiteboard, there are 3 values for each token depending to viewport. How to manage them?
-    static let sizeWidthHeightIconIsBodySmallShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension150
-    static let sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
-    static let sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
-    static let sizeWidthHeightIconIsBodyMediumShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
-    static let sizeWidthHeightIconIsBodyMediumMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
-    static let sizeWidthHeightIconIsBodyMediumTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
-    static let sizeWidthHeightIconIsBodyLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
-    static let sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
-    static let sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension350
-    
-    // MARK: Max width - typography
-    
-    static let sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
-    static let sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
-    static let sizeMaxWidthTypographyDisplayLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
-    static let sizeMaxWidthTypographyHeadingSmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
-    static let sizeMaxWidthTypographyHeadingMedium: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
-    static let sizeMaxWidthTypographyHeadingLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
-    static let sizeMaxWidthTypographyHeadingXLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
-    static let sizeMaxWidthTypographyBodySmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
-    static let sizeMaxWidthTypographyBodyMedium: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
-    static let sizeMaxWidthTypographyBodyLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
-    
-    // MARK: Max width - component
-    
-    // NOTE: Missing two values (short, tall)
-    static let sizeMaxWidthComponentSmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension400
-    
+    // MARK: Semantic token - Sizing - Width height - Icon decorative
+
+    var sizeWidthHeightIconShortest: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
+    var sizeWidthHeightIconShorter: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+    var sizeWidthHeightIconShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
+    var sizeWidthHeightIconMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+    var sizeWidthHeightIconTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension600
+    var sizeWidthHeightIconTaller: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension700
+    var sizeWidthHeightIconTallest: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension900
+
+    // MARK: Semantic token - Sizing - Width height - Icon component
+
+    var sizeWidthHeightIsLabelSmallShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension150
+    var sizeWidthHeightIsLabelSmallMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
+    var sizeWidthHeightIsLabelSmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+    var sizeWidthHeightIsLabelMediumShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
+    var sizeWidthHeightIsLabelMediumMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+    var sizeWidthHeightIsLabelMediumTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+    var sizeWidthHeightIsLabelLargeShorter: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+    var sizeWidthHeightIsLabelLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+    var sizeWidthHeightIsLabelLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension350
+    var sizeWidthHeightIsLabelLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
+    var sizeWidthHeightIsLabelLargeTaller: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+    var sizeWidthHeightIsLabelXLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
+    var sizeWidthHeightIsLabelXLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+    var sizeWidthHeightIsLabelXLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+
+    // MARK: Semantic token - Sizing - Width height - Icon typography - Heading
+
+    var sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
+    var sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+    var sizeWidthHeightIconIsHeadingSmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+    var sizeWidthHeightIconIsHeadingMediumShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+    var sizeWidthHeightIconIsHeadingMediumMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+    var sizeWidthHeightIconIsHeadingMediumTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension600
+    var sizeWidthHeightIconIsHeadingLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+    var sizeWidthHeightIconIsHeadingLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension600
+    var sizeWidthHeightIconIsHeadingLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension650
+    var sizeWidthHeightIconIsHeadingXLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension650
+    var sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension700
+    var sizeWidthHeightIconIsHeadingXLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension800
+
+    // MARK: Semantic token - Sizing - Width height - Icon typography - Body
+
+    var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension150
+    var sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+    var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+    var sizeWidthHeightIconIsBodyMediumShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
+    var sizeWidthHeightIconIsBodyMediumMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+    var sizeWidthHeightIconIsBodyMediumTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+    var sizeWidthHeightIconIsBodyLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+    var sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+    var sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension350
+
+    // MARK: Semantic token - Sizing - Max width
+
+    var sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+    var sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+    var sizeMaxWidthTypographyDisplayLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+    var sizeMaxWidthTypographyHeadingSmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
+    var sizeMaxWidthTypographyHeadingMedium: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+    var sizeMaxWidthTypographyHeadingLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+    var sizeMaxWidthTypographyHeadingXLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+    var sizeMaxWidthTypographyBodySmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
+    var sizeMaxWidthTypographyBodyMedium: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
+    var sizeMaxWidthTypographyBodyLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
     
 }

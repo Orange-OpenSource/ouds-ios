@@ -16,125 +16,138 @@ import OUDSTokensPrimitive
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias TypographyFontFamilySemanticToken = TypographyFontFamilyPrimitiveToken
-public typealias TypographyFontWeightSemanticToken = TypographyFontWeightPrimitiveToken
-public typealias TypographyFontSizeSemanticToken = TypographyFontSizePrimitiveToken
-public typealias TypographyFontLineHeightSemanticToken = TypographyFontLineHeightPrimitiveToken
+typealias TypographyFontFamilySemanticToken = TypographyFontFamilyPrimitiveToken
+typealias TypographyFontWeightSemanticToken = TypographyFontWeightPrimitiveToken
+typealias TypographyFontSizeSemanticToken = TypographyFontSizePrimitiveToken
+typealias TypographyFontLineHeightSemanticToken = TypographyFontLineHeightPrimitiveToken
 
 // MARK: - Semantic tokens
 
-public struct TypographySemanticTokens {
+protocol TypographySemanticTokens { }
+
+extension TypographySemanticTokens {
     
-    // MARK: Font family
-    
-    static let fontFamilyDisplay: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
-    static let fontFamilyHeading: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
-    static let fontFamilyBody: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
-    static let fontFamilyLabel: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
-    static let fontFamilyCode: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
-    
-    // MARK: Font weight
-    
-    static let fontWeightDisplay: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
-    static let fontWeightHeading: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
-    static let fontWeightBodyDefault: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight400
-    static let fontWeightBodyStrong: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
-    static let fontWeightLabelDefault: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight400
-    static let fontWeightLabelStrong: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
-    static let fontWeightWeightCode: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight400
-    
-    // MARK: Font size
-    
-    static let fontSizeMobileDislayLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize850
-    static let fontSizeMobileDisplayMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize750
-    static let fontSizeMobileDisplaySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize650
-    static let fontSizeMobileHeadingXLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize550
-    static let fontSizeMobileHeadingLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize450
-    static let fontSizeMobileHeadingMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize350
-    static let fontSizeMobileHeadingSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize300
-    static let fontSizeMobileBodyLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize250
-    static let fontSizeMobileBodyMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
-    static let fontSizeMobileBodySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize100
-    
-    static let fontSizeTabletDislayLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize1450
-    static let fontSizeTabletDisplayMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize1050
-    static let fontSizeTabletDisplaySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize850
-    static let fontSizeTabletHeadingXLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize750
-    static let fontSizeTabletHeadingLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize550
-    static let fontSizeTabletHeadingMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize450
-    static let fontSizeTabletHeadingSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize350
-    static let fontSizeTabletBodyLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize250
-    static let fontSizeTabletBodyMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
-    static let fontSizeTabletBodySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize150
-    
-    static let fontSizeLabelXLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize300
-    static let fontSizeLabelLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize250
-    static let fontSizeLabelMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
-    static let fontSizeLabelSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize100
-    static let fontSizeCodeMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
-    static let fontSizeCodeSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize150
-    
-    // MARK: Line height
-    
-    static let fontLineHeightMobileDislayLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1050
-    static let fontLineHeightMobileDisplayMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight950
-    static let fontLineHeightMobileDisplaySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight850
-    static let fontLineHeightMobileHeadingXLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight750
-    static let fontLineHeightMobileHeadingLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight650
-    static let fontLineHeightMobileHeadingMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight550
-    static let fontLineHeightMobileHeadingSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
-    static let fontLineHeightMobileBodyLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
-    static let fontLineHeightMobileBodyMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
-    static let fontLineHeightMobileBodySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
-    
-    static let fontLineHeightTabletDislayLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1850
-    static let fontLineHeightTabletDisplayMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1250
-    static let fontLineHeightTabletDisplaySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1050
-    static let fontLineHeightTabletHeadingXLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight950
-    static let fontLineHeightTabletHeadingLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight750
-    static let fontLineHeightTabletHeadingMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight650
-    static let fontLineHeightTabletHeadingSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight550
-    static let fontLineHeightTabletBodyLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
-    static let fontLineHeightTabletBodyMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
-    static let fontLineHeightTabletBodySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
-    
-    static let fontLineHeightLabelXLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
-    static let fontLineHeightLabelLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
-    static let fontLineHeightLabelMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
-    static let fontLineHeightLabelSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
-    
-    static let fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
-    static let fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
-    
-    // MARK: Paragraph spacing
-    
-    static let fontParagraphSpacingMobileDislayLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingMobileDisplayMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingMobileDisplaySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingMobileHeadingXLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingMobileHeadingLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingMobileHeadingMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingMobileHeadingSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingMobileBodyLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingMobileBodyMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingMobileBodySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    
-    static let fontParagraphSpacingTabletDislayLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingTabletDisplayMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingTabletDisplaySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingTabletHeadingXLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingTabletHeadingLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingTabletHeadingMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingTabletHeadingSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingTabletBodyLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingTabletBodyMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingTabletBodySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    
-    static let fontParagraphSpacingLabelXLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingLabelLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingLabelMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingLabelSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    
-    static let fontParagraphSpacingCodeMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
-    static let fontParagraphSpacingCodeSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    // MARK: Semantic token - Typography - Font - Family
+
+    var fontFamilyDisplay: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+    var fontFamilyHeading: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+    var fontFamilyBody: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+    var fontFamilyLabel: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+    var fontFamilyCode: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+
+    // MARK: Semantic token - Typography - Font - Weight
+
+    var fontWeightDisplay: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
+    var fontWeightHeading: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
+    var fontWeightBodyDefault: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight400
+    var fontWeightBodyStrong: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
+    var fontWeightLabelDefault: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight400
+    var fontWeightLabelStrong: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
+    var fontWeightWeightCode: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight400
+
+    // MARK: Semantic token - Typography - Font - Size - Mobile
+
+    var fontSizeMobileDislayLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize850
+    var fontSizeMobileDisplayMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize750
+    var fontSizeMobileDisplaySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize650
+    var fontSizeMobileHeadingXLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize550
+    var fontSizeMobileHeadingLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize450
+    var fontSizeMobileHeadingMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize350
+    var fontSizeMobileHeadingSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize300
+    var fontSizeMobileBodyLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize250
+    var fontSizeMobileBodyMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
+    var fontSizeMobileBodySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize100
+
+    // MARK: Semantic token - Typography - Font - Size - Tablet
+
+    var fontSizeTabletDislayLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize1450
+    var fontSizeTabletDisplayMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize1050
+    var fontSizeTabletDisplaySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize850
+    var fontSizeTabletHeadingXLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize750
+    var fontSizeTabletHeadingLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize550
+    var fontSizeTabletHeadingMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize450
+    var fontSizeTabletHeadingSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize350
+    var fontSizeTabletBodyLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize250
+    var fontSizeTabletBodyMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
+    var fontSizeTabletBodySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize150
+
+    // MARK: Semantic token - Typography - Font - Size - Others
+
+    var fontSizeLabelXLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize300
+    var fontSizeLabelLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize250
+    var fontSizeLabelMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
+    var fontSizeLabelSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize100
+    var fontSizeCodeMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
+    var fontSizeCodeSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize150
+
+    // MARK: Semantic token - Typography - Font - Light height - Mobile
+
+    var fontLineHeightMobileDislayLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1050
+    var fontLineHeightMobileDisplayMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight950
+    var fontLineHeightMobileDisplaySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight850
+    var fontLineHeightMobileHeadingXLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight750
+    var fontLineHeightMobileHeadingLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight650
+    var fontLineHeightMobileHeadingMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight550
+    var fontLineHeightMobileHeadingSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+    var fontLineHeightMobileBodyLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+    var fontLineHeightMobileBodyMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
+    var fontLineHeightMobileBodySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
+
+    // MARK: Semantic token - Typography - Font - Light height - Tablet
+
+    var fontLineHeightTabletDislayLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1850
+    var fontLineHeightTabletDisplayMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1250
+    var fontLineHeightTabletDisplaySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1050
+    var fontLineHeightTabletHeadingXLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight950
+    var fontLineHeightTabletHeadingLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight750
+    var fontLineHeightTabletHeadingMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight650
+    var fontLineHeightTabletHeadingSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight550
+    var fontLineHeightTabletBodyLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+    var fontLineHeightTabletBodyMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
+    var fontLineHeightTabletBodySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
+
+    // MARK: Semantic token - Typography - Font - Light height - Others
+
+    var fontLineHeightLabelXLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+    var fontLineHeightLabelLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+    var fontLineHeightLabelMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
+    var fontLineHeightLabelSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
+    var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
+    var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
+
+    // MARK: Semantic token - Typography - Font - Paragraph spacing - Mobile
+
+    var fontParagraphSpacingMobileDislayLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingMobileDisplayMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingMobileDisplaySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingMobileHeadingXLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingMobileHeadingLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingMobileHeadingMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingMobileHeadingSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingMobileBodyLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingMobileBodyMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingMobileBodySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+
+    // MARK: Semantic token - Typography - Font - Paragraph spacing - Tablet
+
+    var fontParagraphSpacingTabletDislayLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingTabletDisplayMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingTabletDisplaySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingTabletHeadingXLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingTabletHeadingLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingTabletHeadingMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingTabletHeadingSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingTabletBodyLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingTabletBodyMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingTabletBodySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+
+    // MARK: Semantic token - Typography - Font - Paragraph spacing - Others
+
+    var fontParagraphSpacingLabelXLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingLabelLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingLabelMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingLabelSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingCodeMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+    var fontParagraphSpacingCodeSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+
 }

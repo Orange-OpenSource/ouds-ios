@@ -23,39 +23,39 @@ public typealias BorderStylePrimitiveToken = String
 
 public struct BorderPrimitiveTokens {
     
-    static let borderBase: Double = 4
+    private static let borderBase: Double = 4
     
     // MARK: Primitive token - Border - Width
-    
-    static let borderWidth0: BorderWidthPrimitiveToken = borderBase * 0
-    static let borderWidth25: BorderWidthPrimitiveToken = borderBase * 0.25
-    static let borderWidth50: BorderWidthPrimitiveToken = borderBase * 0.5
-    static let borderWidth75: BorderWidthPrimitiveToken = borderBase * 0.75
-    static let borderWidth100: BorderWidthPrimitiveToken = borderBase * 1
-    static let borderWidth150: BorderWidthPrimitiveToken = borderBase * 1.5
-    static let borderWidth200: BorderWidthPrimitiveToken = borderBase * 3
-    
+
+    public static let borderWidth0: BorderWidthPrimitiveToken = borderBase * 0
+    public static let borderWidth25: BorderWidthPrimitiveToken = borderBase * 0.25
+    public static let borderWidth50: BorderWidthPrimitiveToken = borderBase * 0.5
+    public static let borderWidth75: BorderWidthPrimitiveToken = borderBase * 0.75
+    public static let borderWidth100: BorderWidthPrimitiveToken = borderBase * 1
+    public static let borderWidth150: BorderWidthPrimitiveToken = borderBase * 1.5
+    public static let borderWidth200: BorderWidthPrimitiveToken = borderBase * 3
+
     // MARK: Primitive token - Border - Radius
-    
-    static let borderRadius0: BorderRadiusPrimitiveToken = borderBase * 0.75
-    static let borderRadius25: BorderRadiusPrimitiveToken = borderBase * 0.25
-    static let borderRadius50: BorderRadiusPrimitiveToken = borderBase * 0.5
-    static let borderRadius75: BorderRadiusPrimitiveToken = borderBase * 0.75
-    static let borderRadius100: BorderRadiusPrimitiveToken = borderBase * 1
-    static let borderRadius150: BorderRadiusPrimitiveToken = borderBase * 1.5
-    static let borderRadius200: BorderRadiusPrimitiveToken = borderBase * 2
-    static let borderRadius300: BorderRadiusPrimitiveToken = borderBase * 3
-    static let borderRadius400: BorderRadiusPrimitiveToken = borderBase * 4
-    static let borderRadius500: BorderRadiusPrimitiveToken = borderBase * 5
-    static let borderRadius600: BorderRadiusPrimitiveToken = borderBase * 6
-    static let borderRadius800: BorderRadiusPrimitiveToken = borderBase * 8
-    static let borderRadius9999: BorderRadiusPrimitiveToken = borderBase * 2000
-    
+
+    public static let borderRadius0: BorderRadiusPrimitiveToken = borderBase * 0.75
+    public static let borderRadius25: BorderRadiusPrimitiveToken = borderBase * 0.25
+    public static let borderRadius50: BorderRadiusPrimitiveToken = borderBase * 0.5
+    public static let borderRadius75: BorderRadiusPrimitiveToken = borderBase * 0.75
+    public static let borderRadius100: BorderRadiusPrimitiveToken = borderBase * 1
+    public static let borderRadius150: BorderRadiusPrimitiveToken = borderBase * 1.5
+    public static let borderRadius200: BorderRadiusPrimitiveToken = borderBase * 2
+    public static let borderRadius300: BorderRadiusPrimitiveToken = borderBase * 3
+    public static let borderRadius400: BorderRadiusPrimitiveToken = borderBase * 4
+    public static let borderRadius500: BorderRadiusPrimitiveToken = borderBase * 5
+    public static let borderRadius600: BorderRadiusPrimitiveToken = borderBase * 6
+    public static let borderRadius800: BorderRadiusPrimitiveToken = borderBase * 8
+    public static let borderRadius9999: BorderRadiusPrimitiveToken = borderBase * 2000
+
     // MARK: Primitive token - Border - Style
-    
-    static let borderStyleNone: BorderStylePrimitiveToken = "none"
-    static let borderStyleSolid: BorderStylePrimitiveToken = "solid"
-    static let borderStyleDashed: BorderStylePrimitiveToken = "dashed"
-    static let borderStyleDotted: BorderStylePrimitiveToken = "dotted"
+
+    public static let borderStyleNone: BorderStylePrimitiveToken = "none"
+    public static let borderStyleSolid: BorderStylePrimitiveToken = "solid"
+    public static let borderStyleDashed: BorderStylePrimitiveToken = "dashed"
+    public static let borderStyleDotted: BorderStylePrimitiveToken = "dotted"
     
 }

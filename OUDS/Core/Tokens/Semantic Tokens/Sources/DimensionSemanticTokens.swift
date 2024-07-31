@@ -16,14 +16,15 @@ import OUDSTokensPrimitive
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias DimensionSemanticToken = DimensionPrimitiveToken
+typealias DimensionSemanticToken = DimensionPrimitiveToken
 
 // MARK: - Semantic tokens
 
-public struct DimensionSemanticTokens {
+protocol DimensionSemanticTokens { }
+
+extension DimensionSemanticTokens {
     
     // MARK: Semantic token - Dimension
 
-    static let dimensionDensityDefault: DimensionSemanticToken = DimensionPrimitiveTokens.dimensionBase
-
+    var dimensionDensityDefault: DimensionSemanticToken = DimensionPrimitiveTokens.dimensionBase
 }
