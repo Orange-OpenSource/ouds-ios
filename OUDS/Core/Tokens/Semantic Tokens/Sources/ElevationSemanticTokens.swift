@@ -16,136 +16,134 @@ import OUDSTokensPrimitive
 
 // MARK: - Type aliases to keep grammar clear
 
-typealias ElevationZIndexSemanticToken = ElevationPrimitiveToken
-typealias ElevationXSemanticToken = ElevationPrimitiveToken
-typealias ElevationYSemanticToken = ElevationPrimitiveToken
-typealias ElevationBlurSemanticToken = ElevationPrimitiveToken
-typealias ElevationSpreadSemanticToken = ElevationPrimitiveToken
-typealias ElevationColorSemanticToken = ColorTransparentPrimitiveToken
+public typealias ElevationZIndexSemanticToken = ElevationPrimitiveToken
+public typealias ElevationXSemanticToken = ElevationPrimitiveToken
+public typealias ElevationYSemanticToken = ElevationPrimitiveToken
+public typealias ElevationBlurSemanticToken = ElevationPrimitiveToken
+public typealias ElevationSpreadSemanticToken = ElevationPrimitiveToken
+public typealias ElevationColorSemanticToken = ColorTransparentPrimitiveToken
 
 // MARK: - Semantic tokens
 
-protocol ElevationSemanticTokens { }
-
-extension ElevationSemanticTokens {
+public protocol ElevationSemanticTokens {
     
     // MARK: Semantic token - Elevation - Z index
 
-    var elevationZIndexDeep: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndexMinus9999
-    var elevationZIndexDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex0
-    var elevationZIndexDropdown: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1000
-    var elevationZIndexSticky: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1020
-    var elevationZIndexFixed: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1030
-    var elevationZIndexBackToTop: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1035
-    var elevationZIndexSpinner: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1038
-    var elevationZIndexOffCanvasBackdrop: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1040
-    var elevationZIndexOffCanvas: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1045
-    var elevationZIndexModalBackdrop: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1050
-    var elevationZIndexModal: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1060
-    var elevationZIndexPopover: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1070
-    var elevationZIndexTooltip: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1080
-    var elevationZIndexToast: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1090
+    var elevationZIndexDeep: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexDefault: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexDropdown: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexSticky: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexFixed: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexBackToTop: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexSpinner: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexOffCanvasBackdrop: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexOffCanvas: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexModalBackdrop: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexModal: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexPopover: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexTooltip: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexToast: ElevationZIndexSemanticToken { get set }
 
     // MARK: Semantic token - Elevation - X
 
-    var elevationXNone: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
-    var elevationXRaised: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
-    var elevationXDrag: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
-    var elevationXOverlayDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
-    var elevationXOverlayEmphasis: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
-    var elevationXStickyDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
-    var elevationXStickyEmphasis: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
-    var elevationXStickyNavigationScrolled: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
-    var elevationXFOcus: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+    var elevationXNone: ElevationZIndexSemanticToken = { get set }
+    var elevationXRaised: ElevationZIndexSemanticToken = { get set }
+    var elevationXDrag: ElevationZIndexSemanticToken = { get set }
+    var elevationXOverlayDefault: ElevationZIndexSemanticToken = { get set }
+    var elevationXOverlayEmphasis: ElevationZIndexSemanticToken = { get set }
+    var elevationXStickyDefault: ElevationZIndexSemanticToken = { get set }
+    var elevationXStickyEmphasis: ElevationZIndexSemanticToken = { get set }
+    var elevationXStickyNavigationScrolled: ElevationZIndexSemanticToken = { get set }
+    var elevationXFOcus: ElevationZIndexSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Y
 
-    var elevationYNone: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY0
-    var elevationYRaised: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY100
-    var elevationYDrag: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY300
-    var elevationYOverlayDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY200
-    var elevationYOverlayEmphasis: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY500
-    var elevationYStickyDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY300
-    var elevationYStickyEmphasis: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY300
-    var elevationYStickyNavigationScrolled: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY300
-    var elevationYFocus: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY0
+    var elevationYNone: ElevationZIndexSemanticToken = { get set }
+    var elevationYRaised: ElevationZIndexSemanticToken = { get set }
+    var elevationYDrag: ElevationZIndexSemanticToken = { get set }
+    var elevationYOverlayDefault: ElevationZIndexSemanticToken = { get set }
+    var elevationYOverlayEmphasis: ElevationZIndexSemanticToken = { get set }
+    var elevationYStickyDefault: ElevationZIndexSemanticToken = { get set }
+    var elevationYStickyEmphasis: ElevationZIndexSemanticToken = { get set }
+    var elevationYStickyNavigationScrolled: ElevationZIndexSemanticToken = { get set }
+    var elevationYFocus: ElevationZIndexSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Blur
 
-    var elevationBlurNone: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur0
-    var elevationBlurRaised: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur200
-    var elevationBlurDrag: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur400
-    var elevationBlurOverlayDefault: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur300
-    var elevationBlurOverlayEmphasis: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur600
-    var elevationBlurStickyDefault: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur400
-    var elevationBlurStickyEmphasis: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur400
-    var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur400
-    var elevationBlurFocus: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur0
+    var elevationBlurNone: ElevationBlurSemanticToken = { get set }
+    var elevationBlurRaised: ElevationBlurSemanticToken = { get set }
+    var elevationBlurDrag: ElevationBlurSemanticToken = { get set }
+    var elevationBlurOverlayDefault: ElevationBlurSemanticToken = { get set }
+    var elevationBlurOverlayEmphasis: ElevationBlurSemanticToken = { get set }
+    var elevationBlurStickyDefault: ElevationBlurSemanticToken = { get set }
+    var elevationBlurStickyEmphasis: ElevationBlurSemanticToken = { get set }
+    var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken = { get set }
+    var elevationBlurFocus: ElevationBlurSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Spread
 
-    var elevationSpreadNone: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread0
-    var elevationSpreadRaised: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread0
-    var elevationSpreadDrag: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
-    var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
-    var elevationSpreadOverlayEmphasis: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus300
-    var elevationSpreadStickyDefault: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
-    var elevationSpreadStickyEmphasis: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
-    var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
-    var elevationSpreadFocus: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread300
+    var elevationSpreadNone: ElevationSpreadSemanticToken = { get set }
+    var elevationSpreadRaised: ElevationSpreadSemanticToken = { get set }
+    var elevationSpreadDrag: ElevationSpreadSemanticToken = { get set }
+    var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken = { get set }
+    var elevationSpreadOverlayEmphasis: ElevationSpreadSemanticToken = { get set }
+    var elevationSpreadStickyDefault: ElevationSpreadSemanticToken = { get set }
+    var elevationSpreadStickyEmphasis: ElevationSpreadSemanticToken = { get set }
+    var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken = { get set }
+    var elevationSpreadFocus: ElevationSpreadSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Color - None
 
-    var elevationColorNoneLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite0
-    var elevationColorNoneDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite0
-    var elevationColorNoneInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite0
+    var elevationColorNoneLigh: ElevationColorSemanticToken = { get set }
+    var elevationColorNoneDark: ElevationColorSemanticToken = { get set }
+    var elevationColorNoneInverse: ElevationColorSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Color - Raised
 
-    var elevationColorRaisedLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack500
-    var elevationColorRaisedDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack500
-    var elevationColorRaisedInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack500
+    var elevationColorRaisedLigh: ElevationColorSemanticToken = { get set }
+    var elevationColorRaisedDark: ElevationColorSemanticToken = { get set }
+    var elevationColorRaisedInverse: ElevationColorSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Color - Drag
 
-    var elevationColorDragLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack600
-    var elevationColorDragDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack600
-    var elevationColorDragInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack600
+    var elevationColorDragLigh: ElevationColorSemanticToken = { get set }
+    var elevationColorDragDark: ElevationColorSemanticToken = { get set }
+    var elevationColorDragInverse: ElevationColorSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Default
 
-    var elevationColorOverlayDefaultLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
-    var elevationColorOverlayDefaultDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
-    var elevationColorOverlayDefaultInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+    var elevationColorOverlayDefaultLigh: ElevationColorSemanticToken = { get set }
+    var elevationColorOverlayDefaultDark: ElevationColorSemanticToken = { get set }
+    var elevationColorOverlayDefaultInverse: ElevationColorSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Emphasis
 
-    var elevationColorOverlayEmphasisLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
-    var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
-    var elevationColorOverlayEmphasisInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+    var elevationColorOverlayEmphasisLigh: ElevationColorSemanticToken = { get set }
+    var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken = { get set }
+    var elevationColorOverlayEmphasisInverse: ElevationColorSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Default
 
-    var elevationColorStickyDefaultLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
-    var elevationColorStickyDefaultDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
-    var elevationColorStickyDefaultInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+    var elevationColorStickyDefaultLigh: ElevationColorSemanticToken = { get set }
+    var elevationColorStickyDefaultDark: ElevationColorSemanticToken = { get set }
+    var elevationColorStickyDefaultInverse: ElevationColorSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Emphasis
 
-    var elevationColorStickyEmphasisLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
-    var elevationColorStickyEmphasisDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
-    var elevationColorStickyEmphasisInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+    var elevationColorStickyEmphasisLigh: ElevationColorSemanticToken = { get set }
+    var elevationColorStickyEmphasisDark: ElevationColorSemanticToken = { get set }
+    var elevationColorStickyEmphasisInverse: ElevationColorSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
-    var elevationColorStickyNavigationScrolledLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
-    var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
-    var elevationColorStickyNavigationScrolledInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+    var elevationColorStickyNavigationScrolledLigh: ElevationColorSemanticToken = { get set }
+    var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken = { get set }
+    var elevationColorStickyNavigationScrolledInverse: ElevationColorSemanticToken = { get set }
 
     // MARK: Semantic token - Elevation - Color - Focus
 
-    var elevationColorFocusLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite900
-    var elevationColorFocusDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite900
-    var elevationColorFocusInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite900
+    var elevationColorFocusLigh: ElevationColorSemanticToken = { get set }
+    var elevationColorFocusDark: ElevationColorSemanticToken = { get set }
+    var elevationColorFocusInverse: ElevationColorSemanticToken = { get set }
 
 }

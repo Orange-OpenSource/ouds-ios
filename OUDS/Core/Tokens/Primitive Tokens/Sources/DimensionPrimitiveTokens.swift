@@ -21,7 +21,7 @@ public typealias DimensionPrimitiveToken = Double
 
 public struct DimensionPrimitiveTokens {
  
-    private static let dimensionBase: DimensionPrimitiveToken = 4
+    public static let dimensionBase: DimensionPrimitiveToken = 4
     
     // MARK: Primitive token - Dimension
 

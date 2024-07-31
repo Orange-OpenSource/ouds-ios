@@ -12,15 +12,11 @@
 //
 
 import Foundation
+import OUDSTokensPrimitive
 import OUDSTokensSemantic
 
-// MARK: - Theme Contract
-
-/// A theme must define all the rules applied to the product (themes, modules, components, etc).
-/// Colors, spacings, borders, elevations, typography, opacity... any available
-/// and usable values must be defined in a `OUDSThemeContract`
-public protocol OUDSThemeContract: BorderSemanticTokens,
-                                   ColorSemanticTokens,
-                                   DimensionSemanticTokens {
-
+extension OUDSDefaultTheme: DimensionSemanticTokens {
+    
+    public var dimensionDensityDefault: DimensionSemanticToken { get { DimensionPrimitiveTokens.dimensionBase } set { } }
+    
 }
