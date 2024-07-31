@@ -13,18 +13,12 @@
 
 import Foundation
 import OUDSTokens
-import OUDSMocks
 
-/// Another theme we don't allow to see subclassed.
-public final class SomeDumbTheme: OUDSThemeContract {
+// MARK: - Theme Contract
 
-    public var colors: [OUDSColorSemanticToken]
-    public var borders: [OUDSBorderSemanticToken]
-    public var elevations: [OUDSElevationSemanticToken]
+/// A theme must define all the rules applied to the product.
+/// Colors, spacings, borders, elevations, typography, opacity... any available
+/// and usable values must be defined in a `ThemeContract`
+public protocol OUDSThemeContract {
 
-    public init() {
-        colors = SomeMocks().SomeDumbTheme_mockColors
-        borders = SomeMocks().SomeDumbTheme_mockBorders
-        elevations = []
-    }
 }

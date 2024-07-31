@@ -30,14 +30,14 @@ ALL_PRIMITIVE_TOKEN_TYPOGRAPHY=false
 ALL_PRIMITIVE_TOKEN_COLORS=false
 
 ALL_SEMANTIC_TOKEN_OPACITY=false
-ALL_SEMANTIC_TOKEN_BORDER=false
+ALL_SEMANTIC_TOKEN_BORDER=true
 ALL_SEMANTIC_TOKEN_DIMENSION=false
 ALL_SEMANTIC_TOKEN_ELEVATION=false
 ALL_SEMANTIC_TOKEN_PADDING=false
 ALL_SEMANTIC_TOKEN_SIZING=false
 ALL_SEMANTIC_TOKEN_GRID=false
 ALL_SEMANTIC_TOKEN_TYPOGRAPHY=false
-ALL_SEMANTIC_TOKEN_COLORS=false
+ALL_SEMANTIC_TOKEN_COLORS=true
 
 # Primitive tokens - Pick the ones you want
 
@@ -80,7 +80,7 @@ SEMANTIC_TOKEN_ELEVATION_X=false
 SEMANTIC_TOKEN_ELEVATION_Y=false
 SEMANTIC_TOKEN_ELEVATION_BLUR=false
 SEMANTIC_TOKEN_ELEVATION_SPREAD=false
-SEMANTIC_TOKEN_ELEVATION_COLOR=true
+SEMANTIC_TOKEN_ELEVATION_COLOR=false
 SEMANTIC_TOKEN_PADDING_PADDING_INLINE=false
 SEMANTIC_TOKEN_PADDING_PADDING_STACK=false
 SEMANTIC_TOKEN_PADDING_PADDING_INSET=false
@@ -605,7 +605,7 @@ fi
 if [ "$SEMANTIC_TOKEN_OPACITY" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_OPACITY" = true ] ; then
 Write "// MARK: Semantic token - Opacity"
 GenerateTokens \
---string "static let opacity🆔: OpacitySemanticToken = OpacityPrimitiveTokens.opacity0️⃣" \
+--string "var opacity🆔: OpacitySemanticToken = OpacityPrimitiveTokens.opacity0️⃣" \
 --keys "Transparent,Weaker,Weak,Medum,Emphasis,Opaque" \
 --values "0,100,300,500,700,900"
 fi
@@ -615,7 +615,7 @@ fi
 if [ "$SEMANTIC_TOKEN_BORDER_WIDTH" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_BORDER" = true ] ; then
 Write "// MARK: Semantic token - Border - Width"
 GenerateTokens \
---string "static let borderWidth🆔: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth0️⃣" \
+--string "var borderWidth🆔: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth0️⃣" \
 --keys "None,Default,Thin,Thick,Thicker,Thickest,InterfactivePrimaryFocus" \
 --values "0,25,25,50,75,100,100"
 fi
@@ -625,8 +625,8 @@ fi
 if [ "$SEMANTIC_TOKEN_BORDER_RADIUS" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_BORDER" = true ] ; then
 Write "// MARK: Semantic token - Border - Radius"
 GenerateTokens \
---string "static let borderRadius🆔: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius0️⃣" \
---keys "None,Default,Short,Medium,Taill,Pill" \
+--string "var borderRadius🆔: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius0️⃣" \
+--keys "None,Default,Short,Medium,Tall,Pill" \
 --values "0,0,75,150,300,9999"
 fi
 
@@ -635,7 +635,7 @@ fi
 if [ "$SEMANTIC_TOKEN_BORDER_STYLE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_BORDER" = true ] ; then
 Write "// MARK: Semantic token - Border - Style"
 GenerateTokens \
---string "static let borderStyle🆔: BorderStyleSemanticToken = BorderPrimitiveTokens.borderStyle0️⃣" \
+--string "var borderStyle🆔: BorderStyleSemanticToken = BorderPrimitiveTokens.borderStyle0️⃣" \
 --keys "Default,Drag" \
 --values "Solid,Dashed"
 fi
@@ -645,7 +645,7 @@ fi
 if [ "$SEMANTIC_TOKEN_DIMENSION" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_DIMENSION" = true ] ; then
 Write "// MARK: Semantic token - Dimension"
 GenerateTokens \
---string "static let dimensionDensity🆔: DimensionSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var dimensionDensity🆔: DimensionSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "Default" \
 --values "Base"
 fi
@@ -653,9 +653,9 @@ fi
 # Semantic token - Padding tokens - padding inline
 
 if [ "$SEMANTIC_TOKEN_PADDING_PADDING_INLINE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_PADDING" = true ] ; then
-Write "// MARK: Semantic token - Padding - Padding inline"
+Write "// MARK: Semantic token - Spacing - Padding - Padding inline"
 GenerateTokens \
---string "static let spacePaddingInlineComponent🆔: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var spacePaddingInlineComponent🆔: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "None,Shorter,Short,Medium,Tall,Taller,IsIconNone,IsIconShorter,IsIconShort,IsIconMedium,IsIconTall,IsIconTaller,IsArrowNone,IsArrowShorter,IsArrowShort,IsArrowMedium,IsArrowTall,IsArrowTaller" \
 --values "0,50,100,200,300,400,0,25,50,75,100,200,0,25,50,75,100,200"
 fi
@@ -663,9 +663,9 @@ fi
 # Semantic token - Padding tokens - padding stack
 
 if [ "$SEMANTIC_TOKEN_PADDING_PADDING_STACK" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_PADDING" = true ] ; then
-Write "// MARK: Semantic token - Padding - Padding stack"
+Write "// MARK: Semantic token - Spacing - Padding - Padding stack"
 GenerateTokens \
---string "static let spacePaddingBlockComponent🆔: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var spacePaddingBlockComponent🆔: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "None,Shorter,Short,Medium,Tall,Taller,IsIconNone,IsIconShorter,IsIconShort,IsIconMedium,IsIconTall,IsIconTaller" \
 --values "0,50,100,200,300,400,0,25,50,75,100,200"
 fi
@@ -673,9 +673,9 @@ fi
 # Semantic token - Padding tokens - padding inset
 
 if [ "$SEMANTIC_TOKEN_PADDING_PADDING_INSET" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_PADDING" = true ] ; then
-Write "// MARK: Semantic token - Padding - Padding inset"
+Write "// MARK: Semantic token - Spacing - Padding - Padding inset"
 GenerateTokens \
---string "static let spaceInsetComponentGapComponent🆔: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var spaceInsetComponentGapComponent🆔: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "None,Smash,Shortest,Shorter,Short,Medium,Tall,Taller,Tallest,Spacious" \
 --values "0,25,50,75,100,150,200,300,400,500"
 fi
@@ -683,9 +683,9 @@ fi
 # Semantic token - Padding tokens - gap inline
 
 if [ "$SEMANTIC_TOKEN_PADDING_GAP_LINE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_PADDING" = true ] ; then
-Write "// MARK: Semantic token - Padding - Gap inline"
+Write "// MARK: Semantic token - Spacing - Padding - Gap inline"
 GenerateTokens \
---string "static let spaceColumnGapComponent🆔: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var spaceColumnGapComponent🆔: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "None,Shorter,Short,Medium,Tall,Taller,IsIconNone,IsIconShorter,IsIconShort,IsIconMedium,IsIconTall,IsIconTaller,IsArrowNone,IsArrowShorter,IsArrowShort,IsArrowMedium,IsArrowTall,IsArrowTaller" \
 --values "0,50,100,200,300,400,0,25,50,75,100,200,0,25,50,75,100,200"
 fi
@@ -693,9 +693,9 @@ fi
 # Semantic token - Padding tokens - gap stack
 
 if [ "$SEMANTIC_TOKEN_PADDING_GAP_STACK" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_PADDING" = true ] ; then
-Write "// MARK: Semantic token - Padding - Gap stack"
+Write "// MARK: Semantic token - Spacing - Padding - Gap stack"
 GenerateTokens \
---string "static let spaceRowGapComponent🆔: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var spaceRowGapComponent🆔: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "None,Shorter,Short,Medium,Tall,Taller,IsIconNone,IsIconShorter,IsIconShort,IsIconMedium,IsIconTall,IsIconTaller" \
 --values "0,25,50,75,100,200,0,25,50,75,100,200"
 fi
@@ -705,7 +705,7 @@ fi
 if [ "$SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_DECORATIVE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_SIZING" = true ] ; then
 Write "// MARK: Semantic token - Sizing - Width height - Icon decorative"
 GenerateTokens \
---string "static let sizeWidthHeightIcon🆔: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var sizeWidthHeightIcon🆔: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "Shortest,Shorter,Short,Medium,Tall,Taller,Tallest" \
 --values "200,300,400,500,600,700,900"
 fi
@@ -715,7 +715,7 @@ fi
 if [ "$SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_COMPONENT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_SIZING" = true ] ; then
 Write "// MARK: Semantic token - Sizing - Width height - Icon component"
 GenerateTokens \
---string "static let sizeWidthHeightIsLabel🆔: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var sizeWidthHeightIsLabel🆔: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "SmallShort,SmallMedium,SmallTall,MediumShort,MediumMedium,MediumTall,LargeShorter,LargeShort,LargeMedium,LargeTall,LargeTaller,XLargeShort,XLargeMedium,XLargeTall" \
 --values "150,200,250,200,250,300,250,300,350,400,550,400,500,550"
 fi
@@ -725,7 +725,7 @@ fi
 if [ "$SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_TYPOGRAPHY_HEADING" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_SIZING" = true ] ; then
 Write "// MARK: Semantic token - Sizing - Width height - Icon typography - Heading"
 GenerateTokens \
---string "static let sizeWidthHeightIconIsHeading🆔: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var sizeWidthHeightIconIsHeading🆔: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "SmallShort,SmallMedium,SmallTall,MediumShort,MediumMedium,MediumTall,LargeShort,LargeMedium,LargeTall,XLargeShort,XLargeMedium,XLargeTall" \
 --values "400,500,550,500,550,600,550,600,650,650,700,800"
 fi
@@ -733,7 +733,7 @@ fi
 if [ "$SEMANTIC_TOKEN_SIZING_WIDTH_HEIGHT_ICON_DECORATIVE_BODY" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_SIZING" = true ] ; then
 Write "// MARK: Semantic token - Sizing - Width height - Icon typography - Body"
 GenerateTokens \
---string "static let sizeWidthHeightIconIsBody🆔: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var sizeWidthHeightIconIsBody🆔: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "SmallTall,SmallMedium,SmallTall,MediumShort,MediumMedium,MediumTall,LargeShort,LargeMedium,LargeTall" \
 --values "150,500,250,200,250,300,250,300,350"
 fi
@@ -743,7 +743,7 @@ fi
 if [ "$SEMANTIC_TOKEN_SIZING_MAX_WIDTH" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_SIZING" = true ] ; then
 Write "// MARK: Semantic token - Sizing - Max width"
 GenerateTokens \
---string "static let sizeMaxWidthTypography🆔: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
+--string "var sizeMaxWidthTypography🆔: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension0️⃣" \
 --keys "DisplaySmall,DisplayMedium,DisplayLarge,HeadingSmall,HeadingMedium,HeadingLarge,HeadingXLarge,BodySmall,BodyMedium,BodyLarge" \
 --values "9000,9000,9000,6000,9000,9000,9000,6000,6000,6000"
 fi
@@ -753,7 +753,7 @@ fi
 if [ "$SEMANTIC_TOKEN_ELEVATION_Z_INDEX" = true  ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_ELEVATION" = true ] ; then
 Write "// MARK: Semantic token - Elevation - Z index"
 GenerateTokens \
---string "static let elevationZIndex🆔: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex0️⃣" \
+--string "var elevationZIndex🆔: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex0️⃣" \
 --keys "Deep,Default,Dropdown,Sticky,Fixed,BackToTop,Spinner,OffCanvasBackdrop,OffCanvas,ModalBackdrop,Modal,Popover,Tooltip,Toast" \
 --values "Minus9999,0,1000,1020,1030,1035,1038,1040,1045,1050,1060,1070,1080,1090"
 fi
@@ -763,7 +763,7 @@ fi
 if [ "$SEMANTIC_TOKEN_ELEVATION_X" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_ELEVATION" = true ] ; then
 Write "// MARK: Semantic token - Elevation - X"
 GenerateTokens \
---string "static let elevationX🆔: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0️⃣" \
+--string "var elevationX🆔: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0️⃣" \
 --keys "None,Raised,Drag,OverlayDefault,OverlayEmphasis,StickyDefault,StickyEmphasis,StickyNavigationScrolled,FOcus" \
 --values "0,0,0,0,0,0,0,0,0"
 fi
@@ -773,7 +773,7 @@ fi
 if [ "$SEMANTIC_TOKEN_ELEVATION_Y" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_ELEVATION" = true ] ; then
 Write "// MARK: Semantic token - Elevation - Y"
 GenerateTokens \
---string "static let elevationY🆔: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY0️⃣" \
+--string "var elevationY🆔: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY0️⃣" \
 --keys "None,Raised,Drag,OverlayDefault,OverlayEmphasis,StickyDefault,StickyEmphasis,StickyNavigationScrolled,Focus" \
 --values "0,100,300,200,500,300,300,300,0"
 fi
@@ -783,7 +783,7 @@ fi
 if [ "$SEMANTIC_TOKEN_ELEVATION_BLUR" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_ELEVATION" = true ] ; then
 Write "// MARK: Semantic token - Elevation - Blur"
 GenerateTokens \
---string "static let elevationBlur🆔: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur0️⃣" \
+--string "var elevationBlur🆔: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur0️⃣" \
 --keys "None,Raised,Drag,OverlayDefault,OverlayEmphasis,StickyDefault,StickyEmphasis,StickyNavigationScrolled,Focus" \
 --values "0,200,400,300,600,400,400,400,0"
 fi
@@ -793,7 +793,7 @@ fi
 if [ "$SEMANTIC_TOKEN_ELEVATION_SPREAD" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_ELEVATION" = true ] ; then
 Write "// MARK: Semantic token - Elevation - Spread"
 GenerateTokens \
---string "static let elevationSpread🆔: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread0️⃣" \
+--string "var elevationSpread🆔: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread0️⃣" \
 --keys "None,Raised,Drag,OverlayDefault,OverlayEmphasis,StickyDefault,StickyEmphasis,StickyNavigationScrolled,Focus" \
 --values "0,0,Minus100,Minus100,Minus300,Minus100,Minus100,Minus100,300"
 fi
@@ -804,55 +804,55 @@ if [ "$SEMANTIC_TOKEN_ELEVATION_COLOR" = true ] || [ "$ALL_SEMANTIC_TOKENS" = tr
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Elevation - Color - None"
 GenerateTokens \
---string "static let elevationColorNone🆔: ElevationColorSemanticToken = 0️⃣" \
+--string "var elevationColorNone🆔: ElevationColorSemanticToken = 0️⃣" \
 --keys "Ligh,Dark,Inverse" \
 --values "$swiftClass.colorTransparentWhite0,$swiftClass.colorTransparentWhite0,$swiftClass.colorTransparentWhite0"
 
 Write "// MARK: Semantic token - Elevation - Color - Raised"
 GenerateTokens \
---string "static let elevationColorRaised🆔: ElevationColorSemanticToken = 0️⃣" \
+--string "var elevationColorRaised🆔: ElevationColorSemanticToken = 0️⃣" \
 --keys "Ligh,Dark,Inverse" \
 --values "$swiftClass.colorTransparentBlack500,$swiftClass.colorTransparentBlack500,$swiftClass.colorTransparentBlack500"
 
 Write "// MARK: Semantic token - Elevation - Color - Drag"
 GenerateTokens \
---string "static let elevationColorDrag🆔: ElevationColorSemanticToken = 0️⃣" \
+--string "var elevationColorDrag🆔: ElevationColorSemanticToken = 0️⃣" \
 --keys "Ligh,Dark,Inverse" \
 --values "$swiftClass.colorTransparentBlack600,$swiftClass.colorTransparentBlack600,$swiftClass.colorTransparentBlack600"
 
 Write "// MARK: Semantic token - Elevation - Color - Overlay - Default"
 GenerateTokens \
---string "static let elevationColorOverlayDefault🆔: ElevationColorSemanticToken = 0️⃣" \
+--string "var elevationColorOverlayDefault🆔: ElevationColorSemanticToken = 0️⃣" \
 --keys "Ligh,Dark,Inverse" \
 --values "$swiftClass.colorTransparentBlack400,$swiftClass.colorTransparentBlack400,$swiftClass.colorTransparentBlack400"
 
 Write "// MARK: Semantic token - Elevation - Color - Overlay - Emphasis"
 GenerateTokens \
---string "static let elevationColorOverlayEmphasis🆔: ElevationColorSemanticToken = 0️⃣" \
+--string "var elevationColorOverlayEmphasis🆔: ElevationColorSemanticToken = 0️⃣" \
 --keys "Ligh,Dark,Inverse" \
 --values "$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300"
 
 Write "// MARK: Semantic token - Elevation - Color - Sticky - Default"
 GenerateTokens \
---string "static let elevationColorStickyDefault🆔: ElevationColorSemanticToken = 0️⃣" \
+--string "var elevationColorStickyDefault🆔: ElevationColorSemanticToken = 0️⃣" \
 --keys "Ligh,Dark,Inverse" \
 --values "$swiftClass.colorTransparentBlack400,$swiftClass.colorTransparentBlack400,$swiftClass.colorTransparentBlack400"
 
 Write "// MARK: Semantic token - Elevation - Color - Sticky - Emphasis"
 GenerateTokens \
---string "static let elevationColorStickyEmphasis🆔: ElevationColorSemanticToken = 0️⃣" \
+--string "var elevationColorStickyEmphasis🆔: ElevationColorSemanticToken = 0️⃣" \
 --keys "Ligh,Dark,Inverse" \
 --values "$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300"
 
 Write "// MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled"
 GenerateTokens \
---string "static let elevationColorStickyNavigationScrolled🆔: ElevationColorSemanticToken = 0️⃣" \
+--string "var elevationColorStickyNavigationScrolled🆔: ElevationColorSemanticToken = 0️⃣" \
 --keys "Ligh,Dark,Inverse" \
 --values "$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300"
 
 Write "// MARK: Semantic token - Elevation - Color - Focus"
 GenerateTokens \
---string "static let elevationColorFocus🆔: ElevationColorSemanticToken = 0️⃣" \
+--string "var elevationColorFocus🆔: ElevationColorSemanticToken = 0️⃣" \
 --keys "Ligh,Dark,Inverse" \
 --values "$swiftClass.colorTransparentWhite900,$swiftClass.colorTransparentWhite900,$swiftClass.colorTransparentWhite900"
 fi
@@ -862,7 +862,7 @@ fi
 if [ "$SEMANTIC_TOKEN_GRID_IOS_EXTRA_COMPACT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_GRID" = true ] ; then
 Write "// MARK: Semantic token - Grid - iOS Extra compact"
 GenerateTokens \
---string "static let gridIOSExtraCompact🆔: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.grid0️⃣" \
+--string "var gridIOSExtraCompact🆔: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.grid0️⃣" \
 --keys "MinWidth,MaxWidth,Margin,ColumnGap,ColumnCount" \
 --values "MinWidthIOSExtraCompact,MaxWidthIOSExtraCompact,Margin100,ColumnGap100,ColumnCount100"
 fi
@@ -872,7 +872,7 @@ fi
 if [ "$SEMANTIC_TOKEN_GRID_IOS_COMPACT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_GRID" = true ] ; then
 Write "// MARK: Semantic token - Grid - iOS Compact"
 GenerateTokens \
---string "static let gridIOSCompact🆔: GridIOSCompactSemanticToken = GridPrimitiveTokens.grid0️⃣" \
+--string "var gridIOSCompact🆔: GridIOSCompactSemanticToken = GridPrimitiveTokens.grid0️⃣" \
 --keys "MinWidth,MaxWidth,Margin,ColumnGap,ColumnCount" \
 --values "MinWidthIOSCompact,MaxWidthIOSCompact,Margin300,ColumnGap100,ColumnCount400"
 fi
@@ -882,7 +882,7 @@ fi
 if [ "$SEMANTIC_TOKEN_GRID_IOS_REGULAR" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_GRID" = true ] ; then
 Write "// MARK: Semantic token - Grid - iOS Regular"
 GenerateTokens \
---string "static let gridIOSRegular🆔: GridIOSRegularSemanticToken = GridPrimitiveTokens.grid0️⃣" \
+--string "var gridIOSRegular🆔: GridIOSRegularSemanticToken = GridPrimitiveTokens.grid0️⃣" \
 --keys "MinWidth,MaxWidth,Margin,ColumnGap,ColumnCount" \
 --values "MinWidthIOSRegular,MaxWidthIOSRegular,Margin500,ColumnGap300,ColumnCount600"
 fi
@@ -892,7 +892,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_FAMILY" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Family"
 GenerateTokens \
---string "static let fontFamily🆔: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamily0️⃣" \
+--string "var fontFamily🆔: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamily0️⃣" \
 --keys "Display,Heading,Body,Label,Code" \
 --values "System,System,System,System,System"
 fi
@@ -902,7 +902,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_WEIGHT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Weight"
 GenerateTokens \
---string "static let fontWeight🆔: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight0️⃣" \
+--string "var fontWeight🆔: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight0️⃣" \
 --keys "Display,Heading,BodyDefault,BodyStrong,LabelDefault,LabelStrong,WeightCode" \
 --values "700,700,400,700,400,700,400"
 fi
@@ -912,7 +912,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE_MOBILE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Size - Mobile"
 GenerateTokens \
---string "static let fontSize🆔: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize0️⃣" \
+--string "var fontSize🆔: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize0️⃣" \
 --keys "MobileDislayLarge,MobileDisplayMedium,MobileDisplaySmall,MobileHeadingXLarge,MobileHeadingLarge,MobileHeadingMedium,MobileHeadingSmall,MobileBodyLarge,MobileBodyMedium,MobileBodySmall" \
 --values "850,750,650,550,450,350,300,250,200,100"
 fi
@@ -920,7 +920,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE_TABLET" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Size - Tablet"
 GenerateTokens \
---string "static let fontSize🆔: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize0️⃣" \
+--string "var fontSize🆔: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize0️⃣" \
 --keys "TabletDislayLarge,TabletDisplayMedium,TabletDisplaySmall,TabletHeadingXLarge,TabletHeadingLarge,TabletHeadingMedium,TabletHeadingSmall,TabletBodyLarge,TabletBodyMedium,TabletBodySmall" \
 --values "1450,1050,850,750,550,450,350,250,200,150"
 fi
@@ -928,7 +928,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_SIZE_OTHERS" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Size - Others"
 GenerateTokens \
---string "static let fontSize🆔: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize0️⃣" \
+--string "var fontSize🆔: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize0️⃣" \
 --keys "LabelXLarge,LabelLarge,LabelMedium,LabelSmall,CodeMedium,CodeSmall" \
 --values "300,250,200,100,200,150"
 fi
@@ -938,7 +938,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_MOBILE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Light height - Mobile"
 GenerateTokens \
---string "static let fontLineHeight🆔: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight0️⃣" \
+--string "var fontLineHeight🆔: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight0️⃣" \
 --keys "MobileDislayLarge,MobileDisplayMedium,MobileDisplaySmall,MobileHeadingXLarge,MobileHeadingLarge,MobileHeadingMedium,MobileHeadingSmall,MobileBodyLarge,MobileBodyMedium,MobileBodySmall" \
 --values "1050,950,850,750,650,550,450,450,350,250"
 fi
@@ -946,7 +946,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_TABLET" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Light height - Tablet"
 GenerateTokens \
---string "static let fontLineHeight🆔: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight0️⃣" \
+--string "var fontLineHeight🆔: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight0️⃣" \
 --keys "TabletDislayLarge,TabletDisplayMedium,TabletDisplaySmall,TabletHeadingXLarge,TabletHeadingLarge,TabletHeadingMedium,TabletHeadingSmall,TabletBodyLarge,TabletBodyMedium,TabletBodySmall" \
 --values "1850,1250,1050,950,750,650,550,450,350,250"
 fi
@@ -954,7 +954,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_LINE_HEIGHT_OTHERS" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Light height - Others"
 GenerateTokens \
---string "static let fontLineHeight🆔: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight0️⃣" \
+--string "var fontLineHeight🆔: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight0️⃣" \
 --keys "LabelXLarge,LabelLarge,LabelMedium,LabelSmall,CodeMedium,CodeSmall" \
 --values "450,450,350,250,350,250"
 fi
@@ -964,7 +964,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_MOBILE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Paragraph spacing - Mobile"
 GenerateTokens \
---string "static let fontParagraphSpacing🆔: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing0️⃣" \
+--string "var fontParagraphSpacing🆔: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing0️⃣" \
 --keys "MobileDislayLarge,MobileDisplayMedium,MobileDisplaySmall,MobileHeadingXLarge,MobileHeadingLarge,MobileHeadingMedium,MobileHeadingSmall,MobileBodyLarge,MobileBodyMedium,MobileBodySmall" \
 --values "100,100,100,100,100,100,100,100,100,100"
 fi
@@ -972,7 +972,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_TABLET" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Paragraph spacing - Tablet"
 GenerateTokens \
---string "static let fontParagraphSpacing🆔: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing0️⃣" \
+--string "var fontParagraphSpacing🆔: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing0️⃣" \
 --keys "TabletDislayLarge,TabletDisplayMedium,TabletDisplaySmall,TabletHeadingXLarge,TabletHeadingLarge,TabletHeadingMedium,TabletHeadingSmall,TabletBodyLarge,TabletBodyMedium,TabletBodySmall" \
 --values "100,100,100,100,100,100,100,100,100,100"
 fi
@@ -980,7 +980,7 @@ fi
 if [ "$SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_OTHERS" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_TYPOGRAPHY" = true ] ; then
 Write "// MARK: Semantic token - Typography - Font - Paragraph spacing - Others"
 GenerateTokens \
---string "static let fontParagraphSpacing🆔: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing0️⃣" \
+--string "var fontParagraphSpacing🆔: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing0️⃣" \
 --keys "LabelXLarge,LabelLarge,LabelMedium,LabelSmall,CodeMedium,CodeSmall" \
 --values "100,100,100,100,100,100"
 fi
@@ -991,63 +991,63 @@ if [ "$SEMANTIC_TOKEN_COLORS_ALIASES" = true ] || [ "$ALL_SEMANTIC_TOKENS" = tru
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Primary"
 GenerateTokens \
---string "static let sysColorBrandPrimary🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandPrimary🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "nil,nil,$swiftClass.colorBrandOrange500,$swiftClass.colorBrandOrange550,nil,nil,nil"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Secondary"
 GenerateTokens \
---string "static let sysColorBrandSecondary🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandSecondary🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "nil,nil,nil,nil,nil,nil,nil"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Tertiary"
 GenerateTokens \
---string "static let sysColorBrandTertiary🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandTertiary🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "nil,nil,nil,nil,nil,nil,nil"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Neutral - Muted"
 GenerateTokens \
---string "static let sysColorBrandNeutralMuted🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandNeutralMuted🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "White,Lowest,Lower,Low,Medium,High,Higher,Highest" \
 --values "$swiftClass.colorFunctionalWhite,$swiftClass.colorFunctionalLightGray80,$swiftClass.colorFunctionalLightGray160,nil,$swiftClass.colorFunctionalLightGray400,$swiftClass.colorFunctionalLightGray560,nil,nil"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Neutral - Emphasis"
 GenerateTokens \
---string "static let sysColorBrandNeutralEmphasis🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandNeutralEmphasis🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "Lowest,Lower,Low,Medium,High,Higher,Highest,Black" \
 --values "$swiftClass.colorFunctionalDarkGray400,$swiftClass.colorFunctionalDarkGray480,$swiftClass.colorFunctionalDarkGray560,$swiftClass.colorFunctionalDarkGray640,$swiftClass.colorFunctionalDarkGray720,$swiftClass.colorFunctionalDarkGray800,$swiftClass.colorFunctionalDarkGray880,$swiftClass.colorFunctionalBlack"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Positive"
 GenerateTokens \
---string "static let sysColorBrandPositive🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandPositive🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "$swiftClass.colorFunctionalMalachite100,nil,nil,$swiftClass.colorFunctionalMalachite500,$swiftClass.colorFunctionalMalachite600,nil,$swiftClass.colorFunctionalMalachite800"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Information"
 GenerateTokens \
---string "static let sysColorBrandInformation🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandInformation🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "$swiftClass.colorFunctionalDodgerBlue100,nil,nil,$swiftClass.colorFunctionalDodgerBlue500,$swiftClass.colorFunctionalDodgerBlue600,nil,$swiftClass.colorFunctionalDodgerBlue800"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Warning"
 GenerateTokens \
---string "static let sysColorBrandWarning🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandWarning🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "$swiftClass.colorFunctionalSun100,nil,nil,$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun600,nil,$swiftClass.colorFunctionalSun800"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Negative"
 GenerateTokens \
---string "static let sysColorBrandNegative🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandNegative🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "Lowest,Lower,Low,Default,High,Higher,Highest" \
 --values "$swiftClass.colorFunctionalScarlet100,nil,nil,$swiftClass.colorFunctionalScarlet500,$swiftClass.colorFunctionalScarlet600,nil,$swiftClass.colorFunctionalScarlet800"
 
@@ -1055,7 +1055,7 @@ swiftClass="ColorGlobalPrimitiveTokens"
 swiftClass2="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Alias - Attractive"
 GenerateTokens \
---string "static let sysColorBrandAttractive🆔: ColorAliasSemanticToken? = 0️⃣" \
+--string "var sysColorBrandAttractive🆔: ColorAliasSemanticToken? = 0️⃣" \
 --keys "Lowest,Lower,Low,Medium,High,Higher,Highest" \
 --values "$swiftClass2.colorBrandWarmGray100,nil,nil,$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun600,nil,$swiftClass2.colorBrandWarmGray900"
 fi
@@ -1065,119 +1065,119 @@ fi
 if [ "$SEMANTIC_TOKEN_COLORS_BACKGROUND" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_COLORS" = true ] ; then
 Write "// MARK: Semantic token - Colors - Background - Default - Primary"
 GenerateTokens \
---string "static let colorBackgroundDefaultPrimary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundDefaultPrimary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisHighest"
 
 Write "// MARK: Semantic token - Colors - Background - Default - Secondary"
 GenerateTokens \
---string "static let colorBackgroundDefaultSecondary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundDefaultSecondary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedLowest,sysColorBrandNeutralEmphasisMedium,sysColorBrandNeutralEmphasisHigher"
 
 Write "// MARK: Semantic token - Colors - Background - Default - Tertiary"
 GenerateTokens \
---string "static let colorBackgroundDefaultTertiary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundDefaultTertiary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandAttractiveLowest,sysColorBrandAttractiveHighest,sysColorBrandAttractiveHighest"
 
 Write "// MARK: Semantic token - Colors - Background - Emphasis - Primary"
 GenerateTokens \
---string "static let colorBackgroundEmphasisPrimary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundEmphasisPrimary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisMedium"
 
 Write "// MARK: Semantic token - Colors - Background - Emphasis - Secondary"
 GenerateTokens \
---string "static let colorBackgroundEmphasisSecondary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundEmphasisSecondary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisMedium,sysColorBrandNeutralMutedLowest,sysColorBrandNeutralEmphasisHigh"
 
 Write "// MARK: Semantic token - Colors - Background - Brand - Primary"
 GenerateTokens \
---string "static let colorBackgroundBrandPrimary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundBrandPrimary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandPrimaryDefault,sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow"
 
 Write "// MARK: Semantic token - Colors - Background - Brand - Secondary"
 GenerateTokens \
---string "static let colorBackgroundBrand🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundBrand🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Secondary" \
 --values "nil"
 
 Write "// MARK: Semantic token - Colors - Background - Brand - Tertiary"
 GenerateTokens \
---string "static let colorBackgroundBrand🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundBrand🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Tertiary" \
 --values "nil"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Attractive - Muted"
 GenerateTokens \
---string "static let colorBackgroundStatusAttractiveMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusAttractiveMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandAttractiveLowest,sysColorBrandAttractiveLowest,sysColorBrandAttractiveHighest"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Attractive - Emphasis"
 GenerateTokens \
---string "static let colorBackgroundStatusAttractiveEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusAttractiveEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandWarningDefault,sysColorBrandWarningDefault,sysColorBrandWarningHighest"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Warning - Muted"
 GenerateTokens \
---string "static let colorBackgroundStatusWarningMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusWarningMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandWarningLowest,sysColorBrandWarningLowest,sysColorBrandNeutralEmphasisHigh"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Warning - Emphasis"
 GenerateTokens \
---string "static let colorBackgroundStatusWarningEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusWarningEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandWarningDefault,sysColorBrandWarningDefault,sysColorBrandWarningHighest"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Negative - Muted"
 GenerateTokens \
---string "static let colorBackgroundStatusNegativeMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusNegativeMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNegativeLowest,sysColorBrandNegativeLowest,sysColorBrandNeutralEmphasisHigh"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Negative - Emphasis"
 GenerateTokens \
---string "static let colorBackgroundStatusNegativeEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusNegativeEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNegativeDefault,sysColorBrandNegativeDefault,sysColorBrandNegativeHighest"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Positive - Muted"
 GenerateTokens \
---string "static let colorBackgroundStatusPositiveMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusPositiveMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandPositiveLowest,sysColorBrandPositiveLowest,sysColorBrandNeutralEmphasisHigh"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Positive - Emphasis"
 GenerateTokens \
---string "static let colorBackgroundStatusPositiveEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusPositiveEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandPositiveDefault,sysColorBrandPositiveDefault,sysColorBrandPositiveHighest"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Information - Muted"
 GenerateTokens \
---string "static let colorBackgroundStatusInformationMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusInformationMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandInformationLowest,sysColorBrandInformationLowest,sysColorBrandNeutralEmphasisHigh"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Background - Status - Information - Emphasis"
 GenerateTokens \
---string "static let colorBackgroundStatusInformationEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBackgroundStatusInformationEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandInformationDefault,sysColorBrandInformationDefault,sysColorBrandInformationHighest"
 fi
@@ -1188,73 +1188,73 @@ if [ "$SEMANTIC_TOKEN_COLORS_CONTENT" = true ] || [ "$ALL_SEMANTIC_TOKENS" = tru
 
 Write "// MARK: Semantic token - Colors - Content - Default"
 GenerateTokens \
---string "static let colorContentDefault🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentDefault🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - Content - Default - On background emphasis"
 GenerateTokens \
---string "static let colorContentDefaultOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentDefaultOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - Content - Muted"
 GenerateTokens \
---string "static let colorContentMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisLowest,sysColorBrandNeutralEmphasisMedium,sysColorBrandNeutralEmphasisHigh"
 
 Write "// MARK: Semantic token - Colors - Content - Muted - On background emphasis"
 GenerateTokens \
---string "static let colorContentMutedOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentMutedOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedMedium,sysColorBrandNeutralEmphasisLowest,sysColorBrandNeutralMutedHigh"
 
 Write "// MARK: Semantic token - Colors - Content - Brand - Primary"
 GenerateTokens \
---string "static let colorContentBrandPrimary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentBrandPrimary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow,sysColorBrandPrimaryLow"
 
 Write "// MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasis"
 GenerateTokens \
---string "static let colorContentBrandPrimaryOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentBrandPrimaryOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandPrimaryLow,sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow"
 
 Write "// MARK: Semantic token - Colors - Content - Brand - Secondary"
 GenerateTokens \
---string "static let colorContentBrandSecondary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentBrandSecondary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Content - Brand - Tertiary"
 GenerateTokens \
---string "static let colorContentBrandTertiary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentBrandTertiary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Content - Status - Attractive"
 GenerateTokens \
---string "static let colorContentStatusAttractive🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentStatusAttractive🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Content - Status - Negative"
 GenerateTokens \
---string "static let colorContentStatusNegative🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentStatusNegative🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNegativeDefault,sysColorBrandNegativeDefault,sysColorBrandNegativeDefault"
 
 Write "// MARK: Semantic token - Colors - Content - Status - Positive"
 GenerateTokens \
---string "static let colorContentStatusPositive🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentStatusPositive🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandPositiveDefault,sysColorBrandPositiveDefault,sysColorBrandPositiveDefault"
 
 Write "// MARK: Semantic token - Colors - Content - Status - Information"
 GenerateTokens \
---string "static let colorContentStatusInformation🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorContentStatusInformation🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandInformationDefault,sysColorBrandInformationDefault,sysColorBrandInformationDefault"
 fi
@@ -1264,79 +1264,79 @@ fi
 if [ "$SEMANTIC_TOKEN_COLORS_BORDER" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_COLORS" = true ] ; then
 Write "// MARK: Semantic token - Colors - Border - Default"
 GenerateTokens \
---string "static let colorBorderDefault🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderDefault🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedMedium,sysColorBrandNeutralEmphasisLowest,sysColorBrandNeutralEmphasisLowest"
 
 Write "// MARK: Semantic token - Colors - Border - Default - On background emphasis"
 GenerateTokens \
---string "static let colorBorderDefaultOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderDefaultOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisLowest,sysColorBrandNeutralMutedMedium,sysColorBrandNeutralEmphasisLowest"
 
 Write "// MARK: Semantic token - Colors - Border - Emphasis"
 GenerateTokens \
---string "static let colorBorderEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - Border - Emphasis - On background emphasis"
 GenerateTokens \
---string "static let colorBorderEmphasisOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderEmphasisOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - Border - Brand - Primary"
 GenerateTokens \
---string "static let colorBorderBrandPrimary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderBrandPrimary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow,sysColorBrandPrimaryLow"
 
 Write "// MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasis"
 GenerateTokens \
---string "static let colorBorderBrandPrimaryOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderBrandPrimaryOnBackgroundEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandPrimaryLow,sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow"
 
 Write "// MARK: Semantic token - Colors - Border - Brand - Secondary"
 GenerateTokens \
---string "static let colorBorderBrandSecondary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderBrandSecondary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Border - Brand - Tertiary"
 GenerateTokens \
---string "static let colorBorderBrandTertiary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderBrandTertiary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Border - Status - Attractive"
 GenerateTokens \
---string "static let colorBorderBrandStatusAttractive🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderBrandStatusAttractive🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Border - Status - Warning"
 GenerateTokens \
---string "static let colorBorderBrandStatusWarning🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderBrandStatusWarning🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Border - Status - Negative"
 GenerateTokens \
---string "static let colorBorderBrandStatusNegative🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderBrandStatusNegative🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Border - Status - Positive"
 GenerateTokens \
---string "static let colorBorderBrandStatusPositive🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderBrandStatusPositive🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Border - Status - Information"
 GenerateTokens \
---string "static let colorBorderBrandStatusInformation🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorBorderBrandStatusInformation🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 fi
@@ -1346,79 +1346,79 @@ fi
 if [ "$SEMANTIC_TOKEN_COLORS_ON_BACKGROUND" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_COLORS" = true ] ; then
 Write "// MARK: Semantic token - Colors - On background - Primary"
 GenerateTokens \
---string "static let colorOnBackgroundPrimary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundPrimary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisHighest"
 
 Write "// MARK: Semantic token - Colors - On background - Secondary"
 GenerateTokens \
---string "static let colorOnBackgroundSecondary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundSecondary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - On background - Tertiary"
 GenerateTokens \
---string "static let colorOnBackgroundTertiary🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundTertiary🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Attrative - Muted"
 GenerateTokens \
---string "static let colorOnBackgroundStatusAttractiveMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusAttractiveMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Attrative - Emphasis"
 GenerateTokens \
---string "static let colorOnBackgroundStatusAttractiveEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusAttractiveEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Warning - Muted"
 GenerateTokens \
---string "static let colorOnBackgroundStatusWarningMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusWarningMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Warning - Emphasis"
 GenerateTokens \
---string "static let colorOnBackgroundStatusWarningEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusWarningEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Negative - Muted"
 GenerateTokens \
---string "static let colorOnBackgroundStatusNegativeMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusNegativeMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Negative - Emphasis"
 GenerateTokens \
---string "static let colorOnBackgroundStatusNegativeEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusNegativeEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Positive - Muted"
 GenerateTokens \
---string "static let colorOnBackgroundStatusPositiveMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusPositiveMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Positive - Emphasis"
 GenerateTokens \
---string "static let colorOnBackgroundStatusPositiveEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusPositiveEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Information - Muted"
 GenerateTokens \
---string "static let colorOnBackgroundStatusInformationMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusInformationMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
 Write "// MARK: Semantic token - Colors - On background - Status - Information - Emphasis"
 GenerateTokens \
---string "static let colorOnBackgroundStatusInformationEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorOnBackgroundStatusInformationEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 fi
@@ -1428,223 +1428,223 @@ fi
 if [ "$SEMANTIC_TOKEN_COLORS_DECORATIVE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
 Write "// MARK: Semantic token - Colors - Decorative - Brand - Primary - Muted"
 GenerateTokens \
---string "static let colorDecorativeBrandPrimaryMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeBrandPrimaryMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Decorative - Brand - Primary - Default"
 GenerateTokens \
---string "static let colorDecorativeBrandPrimaryDefault🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeBrandPrimaryDefault🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorBrandOrange500,$swiftClass.colorBrandOrange500,$swiftClass.colorBrandOrange500"
 
 Write "// MARK: Semantic token - Colors - Decorative - Brand - Primary - Emphasis"
 GenerateTokens \
---string "static let colorDecorativeBrandPrimaryEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeBrandPrimaryEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Decorative - Brand - Secondary - Muted"
 GenerateTokens \
---string "static let colorDecorativeBrandSecondaryMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeBrandSecondaryMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Decorative - Brand - Secondary - Default"
 GenerateTokens \
---string "static let colorDecorativeBrandSecondaryDefault🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeBrandSecondaryDefault🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorFunctionalBlack,$swiftClass.colorFunctionalWhite,$swiftClass.colorFunctionalLightGray160"
 
 Write "// MARK: Semantic token - Colors - Decorative - Brand - Secondary - Emphasis"
 GenerateTokens \
---string "static let colorDecorativeBrandSecondaryEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeBrandSecondaryEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Muted"
 GenerateTokens \
---string "static let colorDecorativeBrandTertiaryMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeBrandTertiaryMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Default"
 GenerateTokens \
---string "static let colorDecorativeBrandTertiaryDefault🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeBrandTertiaryDefault🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorFunctionalWhite,$swiftClass.colorFunctionalBlack,$swiftClass.colorFunctionalDarkGray880"
 
 Write "// MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Emphasis"
 GenerateTokens \
---string "static let colorDecorativeBrandTertiaryEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeBrandTertiaryEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
 Write "// MARK: Semantic token - Colors - Decorative - Neutral - Muted"
 GenerateTokens \
---string "static let colorDecorativeNeutralMuted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeNeutralMuted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorFunctionalLightGray160,$swiftClass.colorFunctionalDarkGray640,$swiftClass.colorFunctionalDarkGray720"
 
 Write "// MARK: Semantic token - Colors - Decorative - Neutral - Default"
 GenerateTokens \
---string "static let colorDecorativeNeutralDefault🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeNeutralDefault🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorFunctionalDarkGray400,$swiftClass.colorFunctionalLightGray160,$swiftClass.colorFunctionalLightGray160"
 
 Write "// MARK: Semantic token - Colors - Decorative - Neutral - Emphasis"
 GenerateTokens \
---string "static let colorDecorativeNeutralEmphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeNeutralEmphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorFunctionalDarkGray640,$swiftClass.colorFunctionalLightGray160,$swiftClass.colorFunctionalLightGray160"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 1 - Muted"
 GenerateTokens \
---string "static let colorDecorativeAccent1Muted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent1Muted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeEmerald200,$swiftClass.colorDecorativeEmerald200,$swiftClass.colorDecorativeEmerald200"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 1 - Default"
 GenerateTokens \
---string "static let colorDecorativeAccent1Default🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent1Default🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeEmerald500,$swiftClass.colorDecorativeEmerald500,$swiftClass.colorDecorativeEmerald500"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 1 - Emphasis"
 GenerateTokens \
---string "static let colorDecorativeAccent1Emphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent1Emphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeEmerald700,$swiftClass.colorDecorativeEmerald700,$swiftClass.colorDecorativeEmerald700"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 2 - Muted"
 GenerateTokens \
---string "static let colorDecorativeAccent2Muted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent2Muted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeSky200,$swiftClass.colorDecorativeSky200,$swiftClass.colorDecorativeSky200"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 2 - Default"
 GenerateTokens \
---string "static let colorDecorativeAccent2Default🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent2Default🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeSky500,$swiftClass.colorDecorativeSky500,$swiftClass.colorDecorativeSky500"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 2 - Emphasis"
 GenerateTokens \
---string "static let colorDecorativeAccent2Emphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent2Emphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeSky700,$swiftClass.colorDecorativeSky700,$swiftClass.colorDecorativeSky700"
 
 swiftClass="ColorGlobalPrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 3 - Muted"
 GenerateTokens \
---string "static let colorDecorativeAccent3Muted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent3Muted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorFunctionalSun200,$swiftClass.colorFunctionalSun200,$swiftClass.colorFunctionalSun200"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 3 - Default"
 GenerateTokens \
---string "static let colorDecorativeAccent3Default🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent3Default🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun500"
 
 swiftClass="ColorOrangePrimitiveTokens"
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 3 - Emphasis"
 GenerateTokens \
---string "static let colorDecorativeAccent3Emphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent3Emphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeAmber500,$swiftClass.colorDecorativeAmber500,$swiftClass.colorDecorativeAmber500"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 4 - Muted"
 GenerateTokens \
---string "static let colorDecorativeAccent4Muted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent4Muted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeAmethyst200,$swiftClass.colorDecorativeAmethyst200,$swiftClass.colorDecorativeAmethyst200"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 4 - Default"
 GenerateTokens \
---string "static let colorDecorativeAccent4Default🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent4Default🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeAmethyst400,$swiftClass.colorDecorativeAmethyst400,$swiftClass.colorDecorativeAmethyst400"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 4 - Emphasis"
 GenerateTokens \
---string "static let colorDecorativeAccent4Emphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent4Emphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeAmethyst800,$swiftClass.colorDecorativeAmethyst800,$swiftClass.colorDecorativeAmethyst800"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 5 - Muted"
 GenerateTokens \
---string "static let colorDecorativeAccent5Muted🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent5Muted🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeShockingPink100,$swiftClass.colorDecorativeShockingPink100,$swiftClass.colorDecorativeShockingPink100"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 5 - Default"
 GenerateTokens \
---string "static let colorDecorativeAccent5Default🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent5Default🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeShockingPink200,$swiftClass.colorDecorativeShockingPink200,$swiftClass.colorDecorativeShockingPink200"
 
 Write "// MARK: Semantic token - Colors - Decorative - Accent - 5 - Emphasis"
 GenerateTokens \
---string "static let colorDecorativeAccent5Emphasis🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeAccent5Emphasis🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeShockingPink300,$swiftClass.colorDecorativeShockingPink300,$swiftClass.colorDecorativeShockingPink300"
 
 Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
 GenerateTokens \
---string "static let colorDecorativeSkinTint100🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeSkinTint100🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach100,$swiftClass.colorDecorativeDeepPeach100,$swiftClass.colorDecorativeDeepPeach100"
 
 Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
 GenerateTokens \
---string "static let colorDecorativeSkinTint200🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeSkinTint200🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach200,$swiftClass.colorDecorativeDeepPeach200,$swiftClass.colorDecorativeDeepPeach200"
 
 Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
 GenerateTokens \
---string "static let colorDecorativeSkinTint300🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeSkinTint300🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach300,$swiftClass.colorDecorativeDeepPeach300,$swiftClass.colorDecorativeDeepPeach300"
 
 Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
 GenerateTokens \
---string "static let colorDecorativeSkinTint400🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeSkinTint400🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach400,$swiftClass.colorDecorativeDeepPeach400,$swiftClass.colorDecorativeDeepPeach400"
 
 Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
 GenerateTokens \
---string "static let colorDecorativeSkinTint500🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeSkinTint500🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach500,$swiftClass.colorDecorativeDeepPeach500,$swiftClass.colorDecorativeDeepPeach500"
 
 Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
 GenerateTokens \
---string "static let colorDecorativeSkinTint600🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeSkinTint600🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach600,$swiftClass.colorDecorativeDeepPeach600,$swiftClass.colorDecorativeDeepPeach600"
 
 Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
 GenerateTokens \
---string "static let colorDecorativeSkinTint700🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeSkinTint700🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach700,$swiftClass.colorDecorativeDeepPeach700,$swiftClass.colorDecorativeDeepPeach100"
 
 Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
 GenerateTokens \
---string "static let colorDecorativeSkinTint800🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeSkinTint800🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach800,$swiftClass.colorDecorativeDeepPeach800,$swiftClass.colorDecorativeDeepPeach800"
 
 Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
 GenerateTokens \
---string "static let colorDecorativeSkinTint900🆔: ColorSemanticToken? = 0️⃣" \
+--string "var colorDecorativeSkinTint900🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach900,$swiftClass.colorDecorativeDeepPeach900,$swiftClass.colorDecorativeDeepPeach900"
 fi

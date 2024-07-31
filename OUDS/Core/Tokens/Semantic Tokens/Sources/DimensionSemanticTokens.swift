@@ -12,10 +12,18 @@
 //
 
 import Foundation
-import OUDSTokens
-import OUDSMocks
+import OUDSTokensPrimitive
 
-struct OUDSSemanticBorders {
+// MARK: - Type aliases to keep grammar clear
 
-    let values: [OUDSBorderSemanticToken] = SomeMocks().OUDSDefaultTheme_mockBorders
+public typealias DimensionSemanticToken = DimensionPrimitiveToken
+
+// MARK: - Semantic tokens
+
+public struct DimensionSemanticTokens {
+    
+    // MARK: Semantic token - Dimension
+
+    static let dimensionDensityDefault: DimensionSemanticToken = DimensionPrimitiveTokens.dimensionBase
+
 }

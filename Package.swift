@@ -23,53 +23,59 @@ let package = Package(
     defaultLocalization: "en",
     platforms: [.iOS(.v15)],
     // Products define the executables and libraries a package produces, making them visible to other packages.
-    // We choose to expose only components, themes and modules
     products: [
-        .library(
-            name: "OUDSComponents",
-            targets: ["OUDSComponents"]),
-        .library(
-            name: "OUDSThemes",
-            targets: ["OUDSThemes"]),
-        .library(
-            name: "OUDSTokens",
-            targets: ["OUDSTokens"]),
         .library(
             name: "OUDSModules",
             targets: ["OUDSModules"]),
         .library(
+            name: "OUDSComponents",
+            targets: ["OUDSComponents"]),
+        .library(
+            name: "OUDSThemesDefault",
+            targets: ["OUDSThemesDefault"]),
+        .library(
+            name: "OUDSThemesFoundations",
+            targets: ["OUDSThemesFoundations"]),
+        .library(
+            name: "OUDSTokensSemantic",
+            targets: ["OUDSTokensPrimitive"]),
+        .library(
+            name: "OUDSTokensPrimitive",
+            targets: ["OUDSTokensPrimitive"]),
+        .library(
             name: "OUDSFoundations",
             targets: ["OUDSFoundations"]),
-        .library( // Just for experimentation
-            name: "OUDSMocks",
-            targets: ["OUDSMocks"]),
     ],
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [
         .target(
+            name: "OUDSModules",
+            dependencies: ["OUDSFoundations", "OUDSThemesDefault", "OUDSComponents"],
+            path: "OUDS/Modules/Sources"),
+        .target(
             name: "OUDSComponents",
-            dependencies: ["OUDSFoundations", "OUDSTokens", "OUDSThemes"],
+            dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSThemesDefault"],
             path: "OUDS/Core/Components/Sources"),
         .target(
-            name: "OUDSThemes",
-            dependencies: ["OUDSFoundations", "OUDSTokens", "OUDSMocks"],
-            path: "OUDS/Core/Themes/Sources"),
+            name: "OUDSThemesDefault",
+            dependencies: ["OUDSThemesFoundations", "OUDSTokensSemantic"],
+            path: "OUDS/Core/Themes/Sources/Default Theme"),
         .target(
-            name: "OUDSTokens",
+            name: "OUDSThemesFoundations",
+            dependencies: ["OUDSFoundations", "OUDSTokensPrimitive", "OUDSTokensSemantic"],
+            path: "OUDS/Core/Themes/Sources/Foundations"),
+        .target(
+            name: "OUDSTokensSemantic",
+            dependencies: ["OUDSFoundations", "OUDSTokensPrimitive"],
+            path: "OUDS/Core/Tokens/Semantic Tokens/Sources"),
+        .target(
+            name: "OUDSTokensPrimitive",
             dependencies: ["OUDSFoundations"],
-            path: "OUDS/Core/Tokens/Sources"),
-        .target(
-            name: "OUDSModules",
-            dependencies: ["OUDSFoundations", "OUDSThemes", "OUDSComponents"],
-            path: "OUDS/Modules/Sources"),
+            path: "OUDS/Core/Tokens/Primitive Tokens/Sources"),
         .target(
             name: "OUDSFoundations",
             path: "OUDS/Foundations/Sources"),
-        .target( // Just for experimentation
-            name: "OUDSMocks",
-            dependencies: ["OUDSTokens"],
-            path: "OUDS/Mocks"),
     ],
     swiftLanguageVersions: [.v5]
 )
