@@ -75,7 +75,8 @@ SEMANTIC_TOKEN_COLORS_ALIASES=false
 SEMANTIC_TOKEN_COLORS_BACKGROUND=false
 SEMANTIC_TOKEN_COLORS_CONTENT=false
 SEMANTIC_TOKEN_COLORS_BORDER=false
-SEMANTIC_TOKEN_COLORS_ON_BACKGROUND=true
+SEMANTIC_TOKEN_COLORS_ON_BACKGROUND=false
+SEMANTIC_TOKEN_COLORS_DECORATIVE=false
 
 # Exit codes
 # ----------
@@ -408,37 +409,37 @@ fi
 if [ "$PRIMITIVE_TOKEN_COLORS_ORANGE_DECORATIVE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
 Write "// MARK: Primitive token - Colors - Orange - Emerald"
 GenerateTokens \
---string 'static let colorDecorativeEmeraldKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorDecorativeEmeraldKEY: colorDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#E5F5ED,#C0E8DA,#9BDABA,#75CCA1,#50BE87,#3BA06E,#2E7B54,#20563B,#123021"
 
 Write "// MARK: Primitive token - Colors - Orange - Sky"
 GenerateTokens \
---string 'static let colorDecorativeSkyKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorDecorativeSkyKEY: colorDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#D2ECF9,#A5DAF3,#79C7EC,#4AB4E6,#1FA2E0,#1982B3,#136186,#0C415A,#06202D"
 
 Write "// MARK: Primitive token - Colors - Orange - Amber"
 GenerateTokens \
---string 'static let colorDecorativeAmberKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorDecorativeAmberKEY: colorDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#FFF0CC,#FFE199,#FFD266,#FFC333,#FFB400,#CC9000,#996C00,#664800,#332400"
 
 Write "// MARK: Primitive token - Colors - Orange - Amethyst"
 GenerateTokens \
---string 'static let colorDecorativeAmethystKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorDecorativeAmethystKEY: colorDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#F1ECF9,#E0D4F2,#C5ADE6,#A885D8,#8D60CD,#5B2F98,#432371,#2C174A,#150B23"
 
 Write "// MARK: Primitive token - Colors - Orange - Shocking Pink"
 GenerateTokens \
---string 'static let colorDecorativeShockingPinkKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorDecorativeShockingPinkKEY: colorDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#FFE5F6,#FFB4E6,#FF80D4,#FF4DC3,#FF1AB2,#E50099,#B20077,#800055,#4D0033"
 
 Write "// MARK: Primitive token - Colors - Orange - Deep Peach"
 GenerateTokens \
---string 'static let colorDecorativeDeepPeachKEY: ColorOrangeDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
+--string 'static let colorDecorativeDeepPeachKEY: colorDecorativePrimitiveToken = Color(hexadecimalCode: "VALUE")' \
 --keys "100,200,300,400,500,600,700,800,900" \
 --values "#FBEBDF,#F4CFB2,#E3B591,#C19372,#CF7E3F,#AA6631,#7E4F2A,#553720,#2E2014"
 fi
@@ -1153,83 +1154,309 @@ fi
 # Semantic Token - Colors - On Background
 
 if [ "$SEMANTIC_TOKEN_COLORS_ON_BACKGROUND" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
-Write "// MARK: Semantic token - Colors - Border - On background - Primary"
+Write "// MARK: Semantic token - Colors - On background - Primary"
 GenerateTokens \
 --string "static let colorOnBackgroundPrimaryKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisHighest"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Secondary"
+Write "// MARK: Semantic token - Colors - On background - Secondary"
 GenerateTokens \
 --string "static let colorOnBackgroundSecondaryKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Tertiary"
+Write "// MARK: Semantic token - Colors - On background - Tertiary"
 GenerateTokens \
 --string "static let colorOnBackgroundTertiaryKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "nil,nil,nil"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Attrative - Muted"
+Write "// MARK: Semantic token - Colors - On background - Status - Attrative - Muted"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusAttractiveMutedKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Attrative - Emphasis"
+Write "// MARK: Semantic token - Colors - On background - Status - Attrative - Emphasis"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusAttractiveEmphasisKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Warning - Muted"
+Write "// MARK: Semantic token - Colors - On background - Status - Warning - Muted"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusWarningMutedKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Warning - Emphasis"
+Write "// MARK: Semantic token - Colors - On background - Status - Warning - Emphasis"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusWarningEmphasisKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Negative - Muted"
+Write "// MARK: Semantic token - Colors - On background - Status - Negative - Muted"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusNegativeMutedKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Negative - Emphasis"
+Write "// MARK: Semantic token - Colors - On background - Status - Negative - Emphasis"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusNegativeEmphasisKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedLower"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Positive - Muted"
+Write "// MARK: Semantic token - Colors - On background - Status - Positive - Muted"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusPositiveMutedKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Positive - Emphasis"
+Write "// MARK: Semantic token - Colors - On background - Status - Positive - Emphasis"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusPositiveEmphasisKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Information - Muted"
+Write "// MARK: Semantic token - Colors - On background - Status - Information - Muted"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusInformationMutedKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 
-Write "// MARK: Semantic token - Colors - Border - On background - Status - Information - Emphasis"
+Write "// MARK: Semantic token - Colors - On background - Status - Information - Emphasis"
 GenerateTokens \
 --string "static let colorOnBackgroundStatusInformationEmphasisKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+fi
+
+# Semantic Token - Colors - Decorative
+
+if [ "$SEMANTIC_TOKEN_COLORS_DECORATIVE" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Colors - Decorative - Brand - Primary - Muted"
+GenerateTokens \
+--string "static let colorDecorativeBrandPrimaryMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Decorative - Brand - Primary - Default"
+GenerateTokens \
+--string "static let colorDecorativeBrandPrimaryDefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorBrandOrange500,$swiftClass.colorBrandOrange500,$swiftClass.colorBrandOrange500"
+
+Write "// MARK: Semantic token - Colors - Decorative - Brand - Primary - Emphasis"
+GenerateTokens \
+--string "static let colorDecorativeBrandPrimaryEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Decorative - Brand - Secondary - Muted"
+GenerateTokens \
+--string "static let colorDecorativeBrandSecondaryMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Decorative - Brand - Secondary - Default"
+GenerateTokens \
+--string "static let colorDecorativeBrandSecondaryDefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorFunctionalBlack,$swiftClass.colorFunctionalWhite,$swiftClass.colorFunctionalLightGray160"
+
+Write "// MARK: Semantic token - Colors - Decorative - Brand - Secondary - Emphasis"
+GenerateTokens \
+--string "static let colorDecorativeBrandSecondaryEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Muted"
+GenerateTokens \
+--string "static let colorDecorativeBrandTertiaryMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Default"
+GenerateTokens \
+--string "static let colorDecorativeBrandTertiaryDefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorFunctionalWhite,$swiftClass.colorFunctionalBlack,$swiftClass.colorFunctionalDarkGray880"
+
+Write "// MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Emphasis"
+GenerateTokens \
+--string "static let colorDecorativeBrandTertiaryEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Decorative - Neutral - Muted"
+GenerateTokens \
+--string "static let colorDecorativeNeutralMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorFunctionalLightGray160,$swiftClass.colorFunctionalDarkGray640,$swiftClass.colorFunctionalDarkGray720"
+
+Write "// MARK: Semantic token - Colors - Decorative - Neutral - Default"
+GenerateTokens \
+--string "static let colorDecorativeNeutralDefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorFunctionalDarkGray400,$swiftClass.colorFunctionalLightGray160,$swiftClass.colorFunctionalLightGray160"
+
+Write "// MARK: Semantic token - Colors - Decorative - Neutral - Emphasis"
+GenerateTokens \
+--string "static let colorDecorativeNeutralEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorFunctionalDarkGray640,$swiftClass.colorFunctionalLightGray160,$swiftClass.colorFunctionalLightGray160"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 1 - Muted"
+GenerateTokens \
+--string "static let colorDecorativeAccent1MutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeEmerald200,$swiftClass.colorDecorativeEmerald200,$swiftClass.colorDecorativeEmerald200"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 1 - Default"
+GenerateTokens \
+--string "static let colorDecorativeAccent1DefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeEmerald500,$swiftClass.colorDecorativeEmerald500,$swiftClass.colorDecorativeEmerald500"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 1 - Emphasis"
+GenerateTokens \
+--string "static let colorDecorativeAccent1EmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeEmerald700,$swiftClass.colorDecorativeEmerald700,$swiftClass.colorDecorativeEmerald700"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 2 - Muted"
+GenerateTokens \
+--string "static let colorDecorativeAccent2MutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeSky200,$swiftClass.colorDecorativeSky200,$swiftClass.colorDecorativeSky200"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 2 - Default"
+GenerateTokens \
+--string "static let colorDecorativeAccent2DefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeSky500,$swiftClass.colorDecorativeSky500,$swiftClass.colorDecorativeSky500"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 2 - Emphasis"
+GenerateTokens \
+--string "static let colorDecorativeAccent2EmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeSky700,$swiftClass.colorDecorativeSky700,$swiftClass.colorDecorativeSky700"
+
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 3 - Muted"
+GenerateTokens \
+--string "static let colorDecorativeAccent3MutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorFunctionalSun200,$swiftClass.colorFunctionalSun200,$swiftClass.colorFunctionalSun200"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 3 - Default"
+GenerateTokens \
+--string "static let colorDecorativeAccent3DefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun500,$swiftClass.colorFunctionalSun500"
+
+swiftClass="ColorOrangePrimitiveTokens"
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 3 - Emphasis"
+GenerateTokens \
+--string "static let colorDecorativeAccent3EmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeAmber500,$swiftClass.colorDecorativeAmber500,$swiftClass.colorDecorativeAmber500"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 4 - Muted"
+GenerateTokens \
+--string "static let colorDecorativeAccent4MutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeAmethyst200,$swiftClass.colorDecorativeAmethyst200,$swiftClass.colorDecorativeAmethyst200"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 4 - Default"
+GenerateTokens \
+--string "static let colorDecorativeAccent4DefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeAmethyst400,$swiftClass.colorDecorativeAmethyst400,$swiftClass.colorDecorativeAmethyst400"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 4 - Emphasis"
+GenerateTokens \
+--string "static let colorDecorativeAccent4EmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeAmethyst800,$swiftClass.colorDecorativeAmethyst800,$swiftClass.colorDecorativeAmethyst800"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 5 - Muted"
+GenerateTokens \
+--string "static let colorDecorativeAccent5MutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeShockingPink100,$swiftClass.colorDecorativeShockingPink100,$swiftClass.colorDecorativeShockingPink100"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 5 - Default"
+GenerateTokens \
+--string "static let colorDecorativeAccent5DefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeShockingPink200,$swiftClass.colorDecorativeShockingPink200,$swiftClass.colorDecorativeShockingPink200"
+
+Write "// MARK: Semantic token - Colors - Decorative - Accent - 5 - Emphasis"
+GenerateTokens \
+--string "static let colorDecorativeAccent5EmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeShockingPink300,$swiftClass.colorDecorativeShockingPink300,$swiftClass.colorDecorativeShockingPink300"
+
+Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
+GenerateTokens \
+--string "static let colorDecorativeSkinTint100KEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeDeepPeach100,$swiftClass.colorDecorativeDeepPeach100,$swiftClass.colorDecorativeDeepPeach100"
+
+Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
+GenerateTokens \
+--string "static let colorDecorativeSkinTint200KEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeDeepPeach200,$swiftClass.colorDecorativeDeepPeach200,$swiftClass.colorDecorativeDeepPeach200"
+
+Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
+GenerateTokens \
+--string "static let colorDecorativeSkinTint300KEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeDeepPeach300,$swiftClass.colorDecorativeDeepPeach300,$swiftClass.colorDecorativeDeepPeach300"
+
+Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
+GenerateTokens \
+--string "static let colorDecorativeSkinTint400KEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeDeepPeach400,$swiftClass.colorDecorativeDeepPeach400,$swiftClass.colorDecorativeDeepPeach400"
+
+Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
+GenerateTokens \
+--string "static let colorDecorativeSkinTint500KEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeDeepPeach500,$swiftClass.colorDecorativeDeepPeach500,$swiftClass.colorDecorativeDeepPeach500"
+
+Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
+GenerateTokens \
+--string "static let colorDecorativeSkinTint600KEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeDeepPeach600,$swiftClass.colorDecorativeDeepPeach600,$swiftClass.colorDecorativeDeepPeach600"
+
+Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
+GenerateTokens \
+--string "static let colorDecorativeSkinTint700KEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeDeepPeach700,$swiftClass.colorDecorativeDeepPeach700,$swiftClass.colorDecorativeDeepPeach100"
+
+Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
+GenerateTokens \
+--string "static let colorDecorativeSkinTint800KEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeDeepPeach800,$swiftClass.colorDecorativeDeepPeach800,$swiftClass.colorDecorativeDeepPeach800"
+
+Write "// MARK: Semantic token - Colors - Decorative - Skin - Tint"
+GenerateTokens \
+--string "static let colorDecorativeSkinTint900KEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "$swiftClass.colorDecorativeDeepPeach900,$swiftClass.colorDecorativeDeepPeach900,$swiftClass.colorDecorativeDeepPeach900"
 fi
 
 # Completed!
