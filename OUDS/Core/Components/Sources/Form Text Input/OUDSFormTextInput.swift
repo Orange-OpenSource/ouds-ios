@@ -13,8 +13,6 @@
 
 import Foundation
 import SwiftUI
-import OUDSThemes
-import OUDSTokens
 
 // MARK: - Definition of the component
 
@@ -22,9 +20,7 @@ import OUDSTokens
 /// A form input is a component which can be defined by:
 /// - a set of background colors (enabled, disabled, active, hover, selected, focus)
 /// - a set of border widths (enabled, disabled, active, hover, selected, focus)
-public struct OUDSFormTextInput: View, OUDSComponentWithBorders, 
-                                    OUDSComponentWithBackgroundColor,
-                                 OUDSComponentWithForegroundColor {
+public struct OUDSFormTextInput: View{
 
     // MARK: - Component implementation own properties
 
@@ -50,44 +46,54 @@ public struct OUDSFormTextInput: View, OUDSComponentWithBorders,
         .modifier(BorderViewModifier(self, isEnabled: isEnabled))
     }
     
-    // MARK: - Components tokens
-    
-    @Environment(\.theme) var theme
-    
-    var borderWidthEnabled: OUDSTokens.OUDSBorderSemanticToken {
-        get {
-            theme.borders.enabled.firstOrDefaultWidth
+}
+
+// MARK: - Backgorund View Modifier
+
+private struct BackgroundViewModifier: ViewModifier {
+
+    private var isEnabled: Bool
+
+    init(_ contract: OUDSComponentContract,
+         isEnabled: Bool) {
+        self.isEnabled = isEnabled
+        colorBackgrounds = contract.colorBackgrounds
+    }
+
+    func body(content: Content) -> some View {
+        if let cbEnabled = colorBackgrounds.backgrounds.enabled.first,
+           let cbDisabled = colorBackgrounds.backgrounds.disabled.first {
+            content.background(
+                isEnabled
+                ? cbEnabled.finalValue
+                : cbDisabled.finalValue
+            )
+        } else {
+            content
         }
     }
-    
-    var borderWidthDisabled: OUDSTokens.OUDSBorderSemanticToken {
-        get {
-            theme.borders.disabled.width.firstOrDefaultWidth
+}
+
+struct BorderViewModifier: ViewModifier {
+
+    private var isEnabled: Bool
+    private var borderWidth: [OUDSBorderSemanticToken]
+
+    init(_ contract: OUDSComponentContract,
+         isEnabled: Bool) {
+        self.isEnabled = isEnabled
+        borderWidth = contract.borderWidth
+    }
+
+    func body(content: Content) -> some View {
+        if let bwEnabled = borderWidth.enabled.first,
+           let bwDisabled = borderWidth.disabled.first {
+            content.border(.black, width:
+                            isEnabled
+                           ? bwEnabled.finalValue
+                           : bwDisabled.finalValue)
+        } else {
+            content
         }
     }
-    
-    var colorBackgroundEnabled: OUDSTokens.OUDSColorSemanticToken {
-        get {
-            theme.colors.backgrounds.enabled
-        }
-    }
-    
-    var colorBackgroundDisabled: OUDSTokens.OUDSColorSemanticToken {
-        get {
-            theme.colors.backgrounds.disabled.first
-        }
-    }
-    
-    var colorForegroundEnabled: OUDSTokens.OUDSColorSemanticToken {
-        get {
-            theme.colors.foregrounds.enabled.first
-        }
-    }
-    
-    var colorForegroundDisabled: OUDSTokens.OUDSColorSemanticToken {
-        get {
-            theme.colors.foregrounds.enabled.first
-        }
-    }
-    
 }

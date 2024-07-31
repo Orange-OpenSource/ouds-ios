@@ -37,6 +37,9 @@ let package = Package(
             name: "OUDSThemesDefault",
             targets: ["OUDSThemesDefault"]),
         .library(
+            name: "OUDSTokensComponent",
+            targets: ["OUDSTokensComponent"]),
+        .library(
             name: "OUDSTokensSemantic",
             targets: ["OUDSTokensPrimitive"]),
         .library(
@@ -63,11 +66,15 @@ let package = Package(
             path: "OUDS/Core/Themes/Sources/Shared"),
         .target(
             name: "OUDSThemesDefault",
-            dependencies: ["OUDSTokensSemantic"],
+            dependencies: ["OUDSTokensSemantic", "OUDSTokensComponent"],
             path: "OUDS/Core/Themes/Sources/Default Theme"),
         .target(
+            name: "OUDSTokensComponent",
+            dependencies: ["OUDSTokensSemantic"],
+            path: "OUDS/Core/Tokens/Component Tokens/Sources"),
+        .target(
             name: "OUDSTokensSemantic",
-            dependencies: ["OUDSFoundations", "OUDSTokensPrimitive"],
+            dependencies: ["OUDSTokensPrimitive"],
             path: "OUDS/Core/Tokens/Semantic Tokens/Sources"),
         .target(
             name: "OUDSTokensPrimitive",
