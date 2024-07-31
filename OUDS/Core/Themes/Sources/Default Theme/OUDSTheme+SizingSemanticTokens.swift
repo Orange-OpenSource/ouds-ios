@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensPrimitive
 import OUDSTokensSemantic
 
-extension OUDSDefaultTheme: SizingSemanticTokens {
+extension OUDSTheme: SizingSemanticTokens {
     
     // MARK: Semantic token - Sizing - Width height - Icon decorative
 

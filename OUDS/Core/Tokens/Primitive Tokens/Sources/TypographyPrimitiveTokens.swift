@@ -50,6 +50,7 @@ public struct TypographyPrimitiveTokens {
     
     // MARK: Primitive token - Typography - Font size
 
+    public static let fontSize100: TypographyFontSizePrimitiveToken = 10
     public static let fontSize150: TypographyFontSizePrimitiveToken = 12
     public static let fontSize175: TypographyFontSizePrimitiveToken = 13
     public static let fontSize200: TypographyFontSizePrimitiveToken = 14

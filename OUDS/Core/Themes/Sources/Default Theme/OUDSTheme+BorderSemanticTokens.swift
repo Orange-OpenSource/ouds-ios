@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensPrimitive
 import OUDSTokensSemantic
 
-extension OUDSDefaultTheme: BorderSemanticTokens {
+extension OUDSTheme: BorderSemanticTokens {
     
     // MARK: Semantic token - Border - Width
 

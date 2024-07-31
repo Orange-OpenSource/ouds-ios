@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensPrimitive
 import OUDSTokensSemantic
 
-extension OUDSDefaultTheme: DimensionSemanticTokens {
+extension OUDSTheme: DimensionSemanticTokens {
     
     public var dimensionDensityDefault: DimensionSemanticToken { get { DimensionPrimitiveTokens.dimensionBase } set { } }
     

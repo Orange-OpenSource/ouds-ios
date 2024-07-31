@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensPrimitive
 import OUDSTokensSemantic
 
-extension OUDSDefaultTheme: OpacitySemanticTokens {
+extension OUDSTheme: OpacitySemanticTokens {
     
     public var opacityTransparent: OpacitySemanticToken { get { OpacityPrimitiveTokens.opacity0 } set { } }
     public var opacityWeaker: OpacitySemanticToken { get { OpacityPrimitiveTokens.opacity100 } set { } }

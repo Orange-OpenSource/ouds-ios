@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensPrimitive
 import OUDSTokensSemantic
 
-extension OUDSDefaultTheme: GridSemanticTokens {
+extension OUDSTheme: GridSemanticTokens {
     
     // MARK: Semantic token - Grid - iOS Extra compact
 

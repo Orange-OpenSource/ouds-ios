@@ -31,11 +31,11 @@ let package = Package(
             name: "OUDSComponents",
             targets: ["OUDSComponents"]),
         .library(
+            name: "OUDSThemesShared",
+            targets: ["OUDSThemesShared"]),
+        .library(
             name: "OUDSThemesDefault",
             targets: ["OUDSThemesDefault"]),
-        .library(
-            name: "OUDSThemesFoundations",
-            targets: ["OUDSThemesFoundations"]),
         .library(
             name: "OUDSTokensSemantic",
             targets: ["OUDSTokensPrimitive"]),
@@ -58,13 +58,13 @@ let package = Package(
             dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSThemesDefault"],
             path: "OUDS/Core/Components/Sources"),
         .target(
-            name: "OUDSThemesDefault",
-            dependencies: ["OUDSThemesFoundations", "OUDSTokensSemantic"],
-            path: "OUDS/Core/Themes/Sources/Default Theme"),
+            name: "OUDSThemesShared",
+            dependencies: ["OUDSThemesDefault"],
+            path: "OUDS/Core/Themes/Sources/Shared"),
         .target(
-            name: "OUDSThemesFoundations",
-            dependencies: ["OUDSFoundations", "OUDSTokensPrimitive", "OUDSTokensSemantic"],
-            path: "OUDS/Core/Themes/Sources/Foundations"),
+            name: "OUDSThemesDefault",
+            dependencies: ["OUDSTokensSemantic"],
+            path: "OUDS/Core/Themes/Sources/Default Theme"),
         .target(
             name: "OUDSTokensSemantic",
             dependencies: ["OUDSFoundations", "OUDSTokensPrimitive"],

@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensPrimitive
 import OUDSTokensSemantic
 
-extension OUDSDefaultTheme: ColorSemanticTokens {
+extension OUDSTheme: ColorSemanticTokens {
     
     // MARK: Semantic token - Colors - Alias - Primary
 

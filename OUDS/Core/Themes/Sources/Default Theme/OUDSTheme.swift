@@ -14,13 +14,13 @@
 import Foundation
 import OUDSTokensPrimitive
 import OUDSTokensSemantic
-import OUDSThemesFoundations
 
 /// Use an open Swift class will help users to make their own themes by overriding this current theme.
 /// Any properties of an overridable theme should be defined so as to provide deffaults values.
 /// We allow this theme to be derivated / be overriden.
-open class OUDSDefaultTheme {
+open class OUDSTheme {
     
-    // Cf extensions
+    public init() { }
     
+    // Please refer to extensions
 }

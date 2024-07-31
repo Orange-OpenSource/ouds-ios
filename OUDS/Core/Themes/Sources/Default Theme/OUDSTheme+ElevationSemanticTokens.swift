@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensPrimitive
 import OUDSTokensSemantic
 
-extension OUDSDefaultTheme: ElevationSemanticTokens {
+extension OUDSTheme: ElevationSemanticTokens {
     
     // MARK: Semantic token - Elevation - Z index
 
