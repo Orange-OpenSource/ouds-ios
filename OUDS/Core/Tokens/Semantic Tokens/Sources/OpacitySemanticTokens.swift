@@ -16,20 +16,18 @@ import OUDSTokensPrimitive
 
 // MARK: - Type aliases to keep grammar clear
 
-typealias OpacitySemanticToken = OpacityPrimitiveToken
+public typealias OpacitySemanticToken = OpacityPrimitiveToken
 
 // MARK: - Semantic tokens
 
-protocol OpacitySemanticTokens { }
-
-extension OpacitySemanticTokens {
+public protocol OpacitySemanticTokens {
     
     // MARK: Semantic token - Opacity
 
-    var opacityTransparent: OpacitySemanticToken = OpacityPrimitiveTokens.opacity0
-    var opacityWeaker: OpacitySemanticToken = OpacityPrimitiveTokens.opacity100
-    var opacityWeak: OpacitySemanticToken = OpacityPrimitiveTokens.opacity300
-    var opacityMedum: OpacitySemanticToken = OpacityPrimitiveTokens.opacity500
-    var opacityEmphasis: OpacitySemanticToken = OpacityPrimitiveTokens.opacity700
-    var opacityOpaque: OpacitySemanticToken = OpacityPrimitiveTokens.opacity900
+    var opacityTransparent: OpacitySemanticToken { get set }
+    var opacityWeaker: OpacitySemanticToken { get set }
+    var opacityWeak: OpacitySemanticToken { get set }
+    var opacityMedum: OpacitySemanticToken { get set }
+    var opacityEmphasis: OpacitySemanticToken { get set }
+    var opacityOpaque: OpacitySemanticToken { get set }
 }
