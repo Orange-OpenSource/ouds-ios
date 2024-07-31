@@ -16,38 +16,36 @@ import OUDSTokensPrimitive
 
 // MARK: - Type aliases to keep grammar clear
 
-typealias GridIOSExtraCompactSemanticToken = GridPrimitiveToken
-typealias GridIOSCompactSemanticToken = GridPrimitiveToken
-typealias GridIOSRegularSemanticToken = GridPrimitiveToken
+public typealias GridIOSExtraCompactSemanticToken = GridPrimitiveToken
+public typealias GridIOSCompactSemanticToken = GridPrimitiveToken
+public typealias GridIOSRegularSemanticToken = GridPrimitiveToken
 
 // MARK: - Semantic tokens
 
-protocol GridSemanticTokens { }
-
-extension GridSemanticTokens {
+public protocol GridSemanticTokens {
     
     // MARK: Semantic token - Grid - iOS Extra compact
 
-    var gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridMinWidthIOSExtraCompact
-    var gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridMaxWidthIOSExtraCompact
-    var gridIOSExtraCompactMargin: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridMargin100
-    var gridIOSExtraCompactColumnGap: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridColumnGap100
-    var gridIOSExtraCompactColumnCount: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridColumnCount100
+    var gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticToken { get set }
+    var gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticToken { get set }
+    var gridIOSExtraCompactMargin: GridIOSExtraCompactSemanticToken { get set }
+    var gridIOSExtraCompactColumnGap: GridIOSExtraCompactSemanticToken { get set }
+    var gridIOSExtraCompactColumnCount: GridIOSExtraCompactSemanticToken { get set }
 
     // MARK: Semantic token - Grid - iOS Compact
 
-    var gridIOSCompactMinWidth: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridMinWidthIOSCompact
-    var gridIOSCompactMaxWidth: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridMaxWidthIOSCompact
-    var gridIOSCompactMargin: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridMargin300
-    var gridIOSCompactColumnGap: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridColumnGap100
-    var gridIOSCompactColumnCount: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridColumnCount400
+    var gridIOSCompactMinWidth: GridIOSCompactSemanticToken { get set }
+    var gridIOSCompactMaxWidth: GridIOSCompactSemanticToken { get set }
+    var gridIOSCompactMargin: GridIOSCompactSemanticToken { get set }
+    var gridIOSCompactColumnGap: GridIOSCompactSemanticToken { get set }
+    var gridIOSCompactColumnCount: GridIOSCompactSemanticToken { get set }
 
     // MARK: Semantic token - Grid - iOS Regular
 
-    var gridIOSRegularMinWidth: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridMinWidthIOSRegular
-    var gridIOSRegularMaxWidth: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridMaxWidthIOSRegular
-    var gridIOSRegularMargin: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridMargin500
-    var gridIOSRegularColumnGap: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridColumnGap300
-    var gridIOSRegularColumnCount: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridColumnCount600
+    var gridIOSRegularMinWidth: GridIOSRegularSemanticToken { get set }
+    var gridIOSRegularMaxWidth: GridIOSRegularSemanticToken { get set }
+    var gridIOSRegularMargin: GridIOSRegularSemanticToken { get set }
+    var gridIOSRegularColumnGap: GridIOSRegularSemanticToken { get set }
+    var gridIOSRegularColumnCount: GridIOSRegularSemanticToken { get set }
     
 }
