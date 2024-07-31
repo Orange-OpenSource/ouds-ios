@@ -484,6 +484,9 @@ open class OUDSDefaultTheme: OUDSThemeContract {
     public var colorOnBackgroundStatusInformationEmphasisInverse: ColorSemanticToken?
     public var colorOnBackgroundStatusInformationEmphasisDark: ColorSemanticToken?
     
+    // MARK: - From OUDSThemeContract / DimensionSemanticTokens
+    
+    public var dimensionDensityDefault: DimensionSemanticToken
     
     // MARK: - Initializer
     
@@ -808,6 +811,7 @@ open class OUDSDefaultTheme: OUDSThemeContract {
         colorOnBackgroundStatusInformationEmphasisInverse = sysColorBrandNeutralEmphasisBlack
         colorOnBackgroundStatusInformationEmphasisDark = sysColorBrandNeutralMutedLower
 
-
+        dimensionDensityDefault = DimensionPrimitiveTokens.dimensionBase
     }
+    
 }

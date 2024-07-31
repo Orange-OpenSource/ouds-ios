@@ -19,6 +19,8 @@ import OUDSTokensSemantic
 /// A theme must define all the rules applied to the product (themes, modules, components, etc).
 /// Colors, spacings, borders, elevations, typography, opacity... any available
 /// and usable values must be defined in a `OUDSThemeContract`
-public protocol OUDSThemeContract: BorderSemanticTokens, ColorSemanticTokens {
+public protocol OUDSThemeContract: BorderSemanticTokens,
+                                   ColorSemanticTokens,
+                                   DimensionSemanticTokens {
 
 }
