@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import Foundation
@@ -21,469 +21,793 @@ import OUDSThemesFoundations
 /// We allow this theme to be derivated / be overriden.
 open class OUDSDefaultTheme: OUDSThemeContract {
     
-    init() { }
-    
     // MARK: - From OUDSThemeContract / BorderSemanticTokens
     
     // MARK: Semantic token - Border - Width
-
-    public var borderWidthNone: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth0
-    public var borderWidthDefault: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth25
-    public var borderWidthThin: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth25
-    public var borderWidthThick: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth50
-    public var borderWidthThicker: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth75
-    public var borderWidthThickest: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth100
-    public var borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth100
-
+    
+    public var borderWidthNone: BorderWidthSemanticToken
+    public var borderWidthDefault: BorderWidthSemanticToken
+    public var borderWidthThin: BorderWidthSemanticToken
+    public var borderWidthThick: BorderWidthSemanticToken
+    public var borderWidthThicker: BorderWidthSemanticToken
+    public var borderWidthThickest: BorderWidthSemanticToken
+    public var borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken
+    
     // MARK: Semantic token - Border - Radius
-
-    public var borderRadiusNone: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius0
-    public var borderRadiusDefault: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius0
-    public var borderRadiusShort: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius75
-    public var borderRadiusMedium: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius150
-    public var borderRadiusTall: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius300
-    public var borderRadiusPill: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius9999
-
+    
+    public var borderRadiusNone: BorderRadiusSemanticToken
+    public var borderRadiusDefault: BorderRadiusSemanticToken
+    public var borderRadiusShort: BorderRadiusSemanticToken
+    public var borderRadiusMedium: BorderRadiusSemanticToken
+    public var borderRadiusTall: BorderRadiusSemanticToken
+    public var borderRadiusPill: BorderRadiusSemanticToken
+    
     // MARK: Semantic token - Border - Style
-
-    public var borderStyleDefault: BorderStyleSemanticToken = BorderPrimitiveTokens.borderStyleSolid
-    public var borderStyleDrag: BorderStyleSemanticToken = BorderPrimitiveTokens.borderStyleDashed
-
+    
+    public var borderStyleDefault: BorderStyleSemanticToken
+    public var borderStyleDrag: BorderStyleSemanticToken
+    
     // MARK: - From OUDSThemeContract / ColorSemanticTokens
     
+    
     // MARK: Semantic token - Colors - Alias - Primary
-
-    public var sysColorBrandPrimaryLowest: ColorAliasSemanticToken? = nil
-    public var sysColorBrandPrimaryLower: ColorAliasSemanticToken? = nil
-    public var sysColorBrandPrimaryLow: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange500
-    public var sysColorBrandPrimaryDefault: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange550
-    public var sysColorBrandPrimaryHigh: ColorAliasSemanticToken? = nil
-    public var sysColorBrandPrimaryHigher: ColorAliasSemanticToken? = nil
-    public var sysColorBrandPrimaryHighest: ColorAliasSemanticToken? = nil
-
+    
+    public var sysColorBrandPrimaryLowest: ColorAliasSemanticToken?
+    public var sysColorBrandPrimaryLower: ColorAliasSemanticToken?
+    public var sysColorBrandPrimaryLow: ColorAliasSemanticToken?
+    public var sysColorBrandPrimaryDefault: ColorAliasSemanticToken?
+    public var sysColorBrandPrimaryHigh: ColorAliasSemanticToken?
+    public var sysColorBrandPrimaryHigher: ColorAliasSemanticToken?
+    public var sysColorBrandPrimaryHighest: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Alias - Secondary
-
-    public var sysColorBrandSecondaryLowest: ColorAliasSemanticToken? = nil
-    public var sysColorBrandSecondaryLower: ColorAliasSemanticToken? = nil
-    public var sysColorBrandSecondaryLow: ColorAliasSemanticToken? = nil
-    public var sysColorBrandSecondaryDefault: ColorAliasSemanticToken? = nil
-    public var sysColorBrandSecondaryHigh: ColorAliasSemanticToken? = nil
-    public var sysColorBrandSecondaryHigher: ColorAliasSemanticToken? = nil
-    public var sysColorBrandSecondaryHighest: ColorAliasSemanticToken? = nil
-
+    
+    public var sysColorBrandSecondaryLowest: ColorAliasSemanticToken?
+    public var sysColorBrandSecondaryLower: ColorAliasSemanticToken?
+    public var sysColorBrandSecondaryLow: ColorAliasSemanticToken?
+    public var sysColorBrandSecondaryDefault: ColorAliasSemanticToken?
+    public var sysColorBrandSecondaryHigh: ColorAliasSemanticToken?
+    public var sysColorBrandSecondaryHigher: ColorAliasSemanticToken?
+    public var sysColorBrandSecondaryHighest: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Alias - Tertiary
-
-    public var sysColorBrandTertiaryLowest: ColorAliasSemanticToken? = nil
-    public var sysColorBrandTertiaryLower: ColorAliasSemanticToken? = nil
-    public var sysColorBrandTertiaryLow: ColorAliasSemanticToken? = nil
-    public var sysColorBrandTertiaryDefault: ColorAliasSemanticToken? = nil
-    public var sysColorBrandTertiaryHigh: ColorAliasSemanticToken? = nil
-    public var sysColorBrandTertiaryHigher: ColorAliasSemanticToken? = nil
-    public var sysColorBrandTertiaryHighest: ColorAliasSemanticToken? = nil
-
+    
+    public var sysColorBrandTertiaryLowest: ColorAliasSemanticToken?
+    public var sysColorBrandTertiaryLower: ColorAliasSemanticToken?
+    public var sysColorBrandTertiaryLow: ColorAliasSemanticToken?
+    public var sysColorBrandTertiaryDefault: ColorAliasSemanticToken?
+    public var sysColorBrandTertiaryHigh: ColorAliasSemanticToken?
+    public var sysColorBrandTertiaryHigher: ColorAliasSemanticToken?
+    public var sysColorBrandTertiaryHighest: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Alias - Neutral - Muted
-
-    public var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalWhite
-    public var sysColorBrandNeutralMutedLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray80
-    public var sysColorBrandNeutralMutedLower: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
-    public var sysColorBrandNeutralMutedLow: ColorAliasSemanticToken? = nil
-    public var sysColorBrandNeutralMutedMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray400
-    public var sysColorBrandNeutralMutedHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray560
-    public var sysColorBrandNeutralMutedHigher: ColorAliasSemanticToken? = nil
-    public var sysColorBrandNeutralMutedHighest: ColorAliasSemanticToken? = nil
-
+    
+    public var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralMutedLowest: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralMutedLower: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralMutedLow: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralMutedMedium: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralMutedHigh: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralMutedHigher: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralMutedHighest: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Alias - Neutral - Emphasis
-
-    public var sysColorBrandNeutralEmphasisLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray400
-    public var sysColorBrandNeutralEmphasisLower: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray480
-    public var sysColorBrandNeutralEmphasisLow: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray560
-    public var sysColorBrandNeutralEmphasisMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray640
-    public var sysColorBrandNeutralEmphasisHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray720
-    public var sysColorBrandNeutralEmphasisHigher: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray800
-    public var sysColorBrandNeutralEmphasisHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray880
-    public var sysColorBrandNeutralEmphasisBlack: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalBlack
-
+    
+    public var sysColorBrandNeutralEmphasisLowest: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralEmphasisLower: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralEmphasisLow: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralEmphasisMedium: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralEmphasisHigh: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralEmphasisHigher: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralEmphasisHighest: ColorAliasSemanticToken?
+    public var sysColorBrandNeutralEmphasisBlack: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Alias - Positive
-
-    public var sysColorBrandPositiveLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite100
-    public var sysColorBrandPositiveLower: ColorAliasSemanticToken? = nil
-    public var sysColorBrandPositiveLow: ColorAliasSemanticToken? = nil
-    public var sysColorBrandPositiveDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite500
-    public var sysColorBrandPositiveHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite600
-    public var sysColorBrandPositiveHigher: ColorAliasSemanticToken? = nil
-    public var sysColorBrandPositiveHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite800
-
+    
+    public var sysColorBrandPositiveLowest: ColorAliasSemanticToken?
+    public var sysColorBrandPositiveLower: ColorAliasSemanticToken?
+    public var sysColorBrandPositiveLow: ColorAliasSemanticToken?
+    public var sysColorBrandPositiveDefault: ColorAliasSemanticToken?
+    public var sysColorBrandPositiveHigh: ColorAliasSemanticToken?
+    public var sysColorBrandPositiveHigher: ColorAliasSemanticToken?
+    public var sysColorBrandPositiveHighest: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Alias - Information
-
-    public var sysColorBrandInformationLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue100
-    public var sysColorBrandInformationLower: ColorAliasSemanticToken? = nil
-    public var sysColorBrandInformationLow: ColorAliasSemanticToken? = nil
-    public var sysColorBrandInformationDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue500
-    public var sysColorBrandInformationHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue600
-    public var sysColorBrandInformationHigher: ColorAliasSemanticToken? = nil
-    public var sysColorBrandInformationHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue800
-
+    
+    public var sysColorBrandInformationLowest: ColorAliasSemanticToken?
+    public var sysColorBrandInformationLower: ColorAliasSemanticToken?
+    public var sysColorBrandInformationLow: ColorAliasSemanticToken?
+    public var sysColorBrandInformationDefault: ColorAliasSemanticToken?
+    public var sysColorBrandInformationHigh: ColorAliasSemanticToken?
+    public var sysColorBrandInformationHigher: ColorAliasSemanticToken?
+    public var sysColorBrandInformationHighest: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Alias - Warning
-
-    public var sysColorBrandWarningLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun100
-    public var sysColorBrandWarningLower: ColorAliasSemanticToken? = nil
-    public var sysColorBrandWarningLow: ColorAliasSemanticToken? = nil
-    public var sysColorBrandWarningDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
-    public var sysColorBrandWarningHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun600
-    public var sysColorBrandWarningHigher: ColorAliasSemanticToken? = nil
-    public var sysColorBrandWarningHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun800
-
+    
+    public var sysColorBrandWarningLowest: ColorAliasSemanticToken?
+    public var sysColorBrandWarningLower: ColorAliasSemanticToken?
+    public var sysColorBrandWarningLow: ColorAliasSemanticToken?
+    public var sysColorBrandWarningDefault: ColorAliasSemanticToken?
+    public var sysColorBrandWarningHigh: ColorAliasSemanticToken?
+    public var sysColorBrandWarningHigher: ColorAliasSemanticToken?
+    public var sysColorBrandWarningHighest: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Alias - Negative
-
-    public var sysColorBrandNegativeLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet100
-    public var sysColorBrandNegativeLower: ColorAliasSemanticToken? = nil
-    public var sysColorBrandNegativeLow: ColorAliasSemanticToken? = nil
-    public var sysColorBrandNegativeDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet500
-    public var sysColorBrandNegativeHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet600
-    public var sysColorBrandNegativeHigher: ColorAliasSemanticToken? = nil
-    public var sysColorBrandNegativeHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet800
-
+    
+    public var sysColorBrandNegativeLowest: ColorAliasSemanticToken?
+    public var sysColorBrandNegativeLower: ColorAliasSemanticToken?
+    public var sysColorBrandNegativeLow: ColorAliasSemanticToken?
+    public var sysColorBrandNegativeDefault: ColorAliasSemanticToken?
+    public var sysColorBrandNegativeHigh: ColorAliasSemanticToken?
+    public var sysColorBrandNegativeHigher: ColorAliasSemanticToken?
+    public var sysColorBrandNegativeHighest: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Alias - Attractive
-
-    public var sysColorBrandAttractiveLowest: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandWarmGray100
-    public var sysColorBrandAttractiveLower: ColorAliasSemanticToken? = nil
-    public var sysColorBrandAttractiveLow: ColorAliasSemanticToken? = nil
-    public var sysColorBrandAttractiveMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
-    public var sysColorBrandAttractiveHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun600
-    public var sysColorBrandAttractiveHigher: ColorAliasSemanticToken? = nil
-    public var sysColorBrandAttractiveHighest: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandWarmGray900
-
+    
+    public var sysColorBrandAttractiveLowest: ColorAliasSemanticToken?
+    public var sysColorBrandAttractiveLower: ColorAliasSemanticToken?
+    public var sysColorBrandAttractiveLow: ColorAliasSemanticToken?
+    public var sysColorBrandAttractiveMedium: ColorAliasSemanticToken?
+    public var sysColorBrandAttractiveHigh: ColorAliasSemanticToken?
+    public var sysColorBrandAttractiveHigher: ColorAliasSemanticToken?
+    public var sysColorBrandAttractiveHighest: ColorAliasSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Default - Primary
-
-    public var colorBackgroundDefaultPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorBackgroundDefaultPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorBackgroundDefaultPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHighest
-
+    
+    public var colorBackgroundDefaultPrimaryLight: ColorSemanticToken?
+    public var colorBackgroundDefaultPrimaryInverse: ColorSemanticToken?
+    public var colorBackgroundDefaultPrimaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Default - Secondary
-
-    public var colorBackgroundDefaultSecondaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedLowest
-    public var colorBackgroundDefaultSecondaryInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
-    public var colorBackgroundDefaultSecondaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigher
-
+    
+    public var colorBackgroundDefaultSecondaryLight: ColorSemanticToken?
+    public var colorBackgroundDefaultSecondaryInverse: ColorSemanticToken?
+    public var colorBackgroundDefaultSecondaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Default - Tertiary
-
-    public var colorBackgroundDefaultTertiaryLight: ColorSemanticToken? = sysColorBrandAttractiveLowest
-    public var colorBackgroundDefaultTertiaryInverse: ColorSemanticToken? = sysColorBrandAttractiveHighest
-    public var colorBackgroundDefaultTertiaryDark: ColorSemanticToken? = sysColorBrandAttractiveHighest
-
+    
+    public var colorBackgroundDefaultTertiaryLight: ColorSemanticToken?
+    public var colorBackgroundDefaultTertiaryInverse: ColorSemanticToken?
+    public var colorBackgroundDefaultTertiaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Emphasis - Primary
-
-    public var colorBackgroundEmphasisPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorBackgroundEmphasisPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorBackgroundEmphasisPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
-
+    
+    public var colorBackgroundEmphasisPrimaryLight: ColorSemanticToken?
+    public var colorBackgroundEmphasisPrimaryInverse: ColorSemanticToken?
+    public var colorBackgroundEmphasisPrimaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Emphasis - Secondary
-
-    public var colorBackgroundEmphasisSecondaryLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
-    public var colorBackgroundEmphasisSecondaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedLowest
-    public var colorBackgroundEmphasisSecondaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
-
+    
+    public var colorBackgroundEmphasisSecondaryLight: ColorSemanticToken?
+    public var colorBackgroundEmphasisSecondaryInverse: ColorSemanticToken?
+    public var colorBackgroundEmphasisSecondaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Brand - Primary
-
-    public var colorBackgroundBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    public var colorBackgroundBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    public var colorBackgroundBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
-
+    
+    public var colorBackgroundBrandPrimaryLight: ColorSemanticToken?
+    public var colorBackgroundBrandPrimaryInverse: ColorSemanticToken?
+    public var colorBackgroundBrandPrimaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Brand - Secondary
-
-    public var colorBackgroundBrandSecondary: ColorSemanticToken? = nil
-
+    
+    public var colorBackgroundBrandSecondary: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Brand - Tertiary
-
-    public var colorBackgroundBrandTertiary: ColorSemanticToken? = nil
-
+    
+    public var colorBackgroundBrandTertiary: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
-
-    public var colorBackgroundStatusAttractiveMutedLight: ColorSemanticToken? = sysColorBrandAttractiveLowest
-    public var colorBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? = sysColorBrandAttractiveLowest
-    public var colorBackgroundStatusAttractiveMutedDark: ColorSemanticToken? = sysColorBrandAttractiveHighest
-
+    
+    public var colorBackgroundStatusAttractiveMutedLight: ColorSemanticToken?
+    public var colorBackgroundStatusAttractiveMutedInverse: ColorSemanticToken?
+    public var colorBackgroundStatusAttractiveMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Attractive - Emphasis
-
-    public var colorBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? = sysColorBrandWarningDefault
-    public var colorBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? = sysColorBrandWarningDefault
-    public var colorBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? = sysColorBrandWarningHighest
-
+    
+    public var colorBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken?
+    public var colorBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken?
+    public var colorBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Warning - Muted
-
-    public var colorBackgroundStatusWarningMutedLight: ColorSemanticToken? = sysColorBrandWarningLowest
-    public var colorBackgroundStatusWarningMutedInverse: ColorSemanticToken? = sysColorBrandWarningLowest
-    public var colorBackgroundStatusWarningMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
-
+    
+    public var colorBackgroundStatusWarningMutedLight: ColorSemanticToken?
+    public var colorBackgroundStatusWarningMutedInverse: ColorSemanticToken?
+    public var colorBackgroundStatusWarningMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Warning - Emphasis
-
-    public var colorBackgroundStatusWarningEmphasisLight: ColorSemanticToken? = sysColorBrandWarningDefault
-    public var colorBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? = sysColorBrandWarningDefault
-    public var colorBackgroundStatusWarningEmphasisDark: ColorSemanticToken? = sysColorBrandWarningHighest
-
+    
+    public var colorBackgroundStatusWarningEmphasisLight: ColorSemanticToken?
+    public var colorBackgroundStatusWarningEmphasisInverse: ColorSemanticToken?
+    public var colorBackgroundStatusWarningEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Negative - Muted
-
-    public var colorBackgroundStatusNegativeMutedLight: ColorSemanticToken? = sysColorBrandNegativeLowest
-    public var colorBackgroundStatusNegativeMutedInverse: ColorSemanticToken? = sysColorBrandNegativeLowest
-    public var colorBackgroundStatusNegativeMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
-
+    
+    public var colorBackgroundStatusNegativeMutedLight: ColorSemanticToken?
+    public var colorBackgroundStatusNegativeMutedInverse: ColorSemanticToken?
+    public var colorBackgroundStatusNegativeMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Negative - Emphasis
-
-    public var colorBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? = sysColorBrandNegativeDefault
-    public var colorBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? = sysColorBrandNegativeDefault
-    public var colorBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? = sysColorBrandNegativeHighest
-
+    
+    public var colorBackgroundStatusNegativeEmphasisLight: ColorSemanticToken?
+    public var colorBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken?
+    public var colorBackgroundStatusNegativeEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Positive - Muted
-
-    public var colorBackgroundStatusPositiveMutedLight: ColorSemanticToken? = sysColorBrandPositiveLowest
-    public var colorBackgroundStatusPositiveMutedInverse: ColorSemanticToken? = sysColorBrandPositiveLowest
-    public var colorBackgroundStatusPositiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
-
+    
+    public var colorBackgroundStatusPositiveMutedLight: ColorSemanticToken?
+    public var colorBackgroundStatusPositiveMutedInverse: ColorSemanticToken?
+    public var colorBackgroundStatusPositiveMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Positive - Emphasis
-
-    public var colorBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? = sysColorBrandPositiveDefault
-    public var colorBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? = sysColorBrandPositiveDefault
-    public var colorBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? = sysColorBrandPositiveHighest
-
+    
+    public var colorBackgroundStatusPositiveEmphasisLight: ColorSemanticToken?
+    public var colorBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken?
+    public var colorBackgroundStatusPositiveEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Information - Muted
-
-    public var colorBackgroundStatusInformationMutedLight: ColorSemanticToken? = sysColorBrandInformationLowest
-    public var colorBackgroundStatusInformationMutedInverse: ColorSemanticToken? = sysColorBrandInformationLowest
-    public var colorBackgroundStatusInformationMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
-
+    
+    public var colorBackgroundStatusInformationMutedLight: ColorSemanticToken?
+    public var colorBackgroundStatusInformationMutedInverse: ColorSemanticToken?
+    public var colorBackgroundStatusInformationMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Background - Status - Information - Emphasis
-
-    public var colorBackgroundStatusInformationEmphasisLight: ColorSemanticToken? = sysColorBrandInformationDefault
-    public var colorBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? = sysColorBrandInformationDefault
-    public var colorBackgroundStatusInformationEmphasisDark: ColorSemanticToken? = sysColorBrandInformationHighest
-
+    
+    public var colorBackgroundStatusInformationEmphasisLight: ColorSemanticToken?
+    public var colorBackgroundStatusInformationEmphasisInverse: ColorSemanticToken?
+    public var colorBackgroundStatusInformationEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Default
-
-    public var colorContentDefaultLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorContentDefaultInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorContentDefaultDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorContentDefaultLight: ColorSemanticToken?
+    public var colorContentDefaultInverse: ColorSemanticToken?
+    public var colorContentDefaultDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Default - On background emphasis
-
-    public var colorContentDefaultOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorContentDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorContentDefaultOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorContentDefaultOnBackgroundEmphasisLight: ColorSemanticToken?
+    public var colorContentDefaultOnBackgroundEmphasisInverse: ColorSemanticToken?
+    public var colorContentDefaultOnBackgroundEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Muted
-
-    public var colorContentMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-    public var colorContentMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
-    public var colorContentMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
-
+    
+    public var colorContentMutedLight: ColorSemanticToken?
+    public var colorContentMutedInverse: ColorSemanticToken?
+    public var colorContentMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Muted - On background emphasis
-
-    public var colorContentMutedOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
-    public var colorContentMutedOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-    public var colorContentMutedOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedHigh
-
+    
+    public var colorContentMutedOnBackgroundEmphasisLight: ColorSemanticToken?
+    public var colorContentMutedOnBackgroundEmphasisInverse: ColorSemanticToken?
+    public var colorContentMutedOnBackgroundEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Brand - Primary
-
-    public var colorContentBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    public var colorContentBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryLow
-    public var colorContentBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
-
+    
+    public var colorContentBrandPrimaryLight: ColorSemanticToken?
+    public var colorContentBrandPrimaryInverse: ColorSemanticToken?
+    public var colorContentBrandPrimaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasis
-
-    public var colorContentBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandPrimaryLow
-    public var colorContentBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    public var colorContentBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandPrimaryLow
-
+    
+    public var colorContentBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken?
+    public var colorContentBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken?
+    public var colorContentBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Brand - Secondary
-
-    public var colorContentBrandSecondaryLight: ColorSemanticToken? = nil
-    public var colorContentBrandSecondaryInverse: ColorSemanticToken? = nil
-    public var colorContentBrandSecondaryDark: ColorSemanticToken? = nil
-
+    
+    public var colorContentBrandSecondaryLight: ColorSemanticToken?
+    public var colorContentBrandSecondaryInverse: ColorSemanticToken?
+    public var colorContentBrandSecondaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Brand - Tertiary
-
-    public var colorContentBrandTertiaryLight: ColorSemanticToken? = nil
-    public var colorContentBrandTertiaryInverse: ColorSemanticToken? = nil
-    public var colorContentBrandTertiaryDark: ColorSemanticToken? = nil
-
+    
+    public var colorContentBrandTertiaryLight: ColorSemanticToken?
+    public var colorContentBrandTertiaryInverse: ColorSemanticToken?
+    public var colorContentBrandTertiaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Status - Attractive
-
-    public var colorContentStatusAttractiveLight: ColorSemanticToken? = nil
-    public var colorContentStatusAttractiveInverse: ColorSemanticToken? = nil
-    public var colorContentStatusAttractiveDark: ColorSemanticToken? = nil
-
+    
+    public var colorContentStatusAttractiveLight: ColorSemanticToken?
+    public var colorContentStatusAttractiveInverse: ColorSemanticToken?
+    public var colorContentStatusAttractiveDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Status - Negative
-
-    public var colorContentStatusNegativeLight: ColorSemanticToken? = sysColorBrandNegativeDefault
-    public var colorContentStatusNegativeInverse: ColorSemanticToken? = sysColorBrandNegativeDefault
-    public var colorContentStatusNegativeDark: ColorSemanticToken? = sysColorBrandNegativeDefault
-
+    
+    public var colorContentStatusNegativeLight: ColorSemanticToken?
+    public var colorContentStatusNegativeInverse: ColorSemanticToken?
+    public var colorContentStatusNegativeDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Status - Positive
-
-    public var colorContentStatusPositiveLight: ColorSemanticToken? = sysColorBrandPositiveDefault
-    public var colorContentStatusPositiveInverse: ColorSemanticToken? = sysColorBrandPositiveDefault
-    public var colorContentStatusPositiveDark: ColorSemanticToken? = sysColorBrandPositiveDefault
-
+    
+    public var colorContentStatusPositiveLight: ColorSemanticToken?
+    public var colorContentStatusPositiveInverse: ColorSemanticToken?
+    public var colorContentStatusPositiveDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Content - Status - Information
-
-    public var colorContentStatusInformationLight: ColorSemanticToken? = sysColorBrandInformationDefault
-    public var colorContentStatusInformationInverse: ColorSemanticToken? = sysColorBrandInformationDefault
-    public var colorContentStatusInformationDark: ColorSemanticToken? = sysColorBrandInformationDefault
-
+    
+    public var colorContentStatusInformationLight: ColorSemanticToken?
+    public var colorContentStatusInformationInverse: ColorSemanticToken?
+    public var colorContentStatusInformationDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Default
-
-    public var colorBorderDefaultLight: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
-    public var colorBorderDefaultInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-    public var colorBorderDefaultDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-
+    
+    public var colorBorderDefaultLight: ColorSemanticToken?
+    public var colorBorderDefaultInverse: ColorSemanticToken?
+    public var colorBorderDefaultDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Default - On background emphasis
-
-    public var colorBorderDefaultOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-    public var colorBorderDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
-    public var colorBorderDefaultOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
-
+    
+    public var colorBorderDefaultOnBackgroundEmphasisLight: ColorSemanticToken?
+    public var colorBorderDefaultOnBackgroundEmphasisInverse: ColorSemanticToken?
+    public var colorBorderDefaultOnBackgroundEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Emphasis
-
-    public var colorBorderEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorBorderEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorBorderEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorBorderEmphasisLight: ColorSemanticToken?
+    public var colorBorderEmphasisInverse: ColorSemanticToken?
+    public var colorBorderEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Emphasis - On background emphasis
-
-    public var colorBorderEmphasisOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorBorderEmphasisOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorBorderEmphasisOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorBorderEmphasisOnBackgroundEmphasisLight: ColorSemanticToken?
+    public var colorBorderEmphasisOnBackgroundEmphasisInverse: ColorSemanticToken?
+    public var colorBorderEmphasisOnBackgroundEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Brand - Primary
-
-    public var colorBorderBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    public var colorBorderBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryLow
-    public var colorBorderBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
-
+    
+    public var colorBorderBrandPrimaryLight: ColorSemanticToken?
+    public var colorBorderBrandPrimaryInverse: ColorSemanticToken?
+    public var colorBorderBrandPrimaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasis
-
-    public var colorBorderBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandPrimaryLow
-    public var colorBorderBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
-    public var colorBorderBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandPrimaryLow
-
+    
+    public var colorBorderBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken?
+    public var colorBorderBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken?
+    public var colorBorderBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Brand - Secondary
-
-    public var colorBorderBrandSecondaryLight: ColorSemanticToken? = nil
-    public var colorBorderBrandSecondaryInverse: ColorSemanticToken? = nil
-    public var colorBorderBrandSecondaryDark: ColorSemanticToken? = nil
-
+    
+    public var colorBorderBrandSecondaryLight: ColorSemanticToken?
+    public var colorBorderBrandSecondaryInverse: ColorSemanticToken?
+    public var colorBorderBrandSecondaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Brand - Tertiary
-
-    public var colorBorderBrandTertiaryLight: ColorSemanticToken? = nil
-    public var colorBorderBrandTertiaryInverse: ColorSemanticToken? = nil
-    public var colorBorderBrandTertiaryDark: ColorSemanticToken? = nil
-
+    
+    public var colorBorderBrandTertiaryLight: ColorSemanticToken?
+    public var colorBorderBrandTertiaryInverse: ColorSemanticToken?
+    public var colorBorderBrandTertiaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Status - Attractive
-
-    public var colorBorderBrandStatusAttractiveLight: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusAttractiveInverse: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusAttractiveDark: ColorSemanticToken? = nil
-
+    
+    public var colorBorderBrandStatusAttractiveLight: ColorSemanticToken?
+    public var colorBorderBrandStatusAttractiveInverse: ColorSemanticToken?
+    public var colorBorderBrandStatusAttractiveDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Status - Warning
-
-    public var colorBorderBrandStatusWarningLight: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusWarningInverse: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusWarningDark: ColorSemanticToken? = nil
-
+    
+    public var colorBorderBrandStatusWarningLight: ColorSemanticToken?
+    public var colorBorderBrandStatusWarningInverse: ColorSemanticToken?
+    public var colorBorderBrandStatusWarningDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Status - Negative
-
-    public var colorBorderBrandStatusNegativeLight: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusNegativeInverse: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusNegativeDark: ColorSemanticToken? = nil
-
+    
+    public var colorBorderBrandStatusNegativeLight: ColorSemanticToken?
+    public var colorBorderBrandStatusNegativeInverse: ColorSemanticToken?
+    public var colorBorderBrandStatusNegativeDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Status - Positive
-
-    public var colorBorderBrandStatusPositiveLight: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusPositiveInverse: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusPositiveDark: ColorSemanticToken? = nil
-
+    
+    public var colorBorderBrandStatusPositiveLight: ColorSemanticToken?
+    public var colorBorderBrandStatusPositiveInverse: ColorSemanticToken?
+    public var colorBorderBrandStatusPositiveDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - Border - Status - Information
-
-    public var colorBorderBrandStatusInformationLight: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusInformationInverse: ColorSemanticToken? = nil
-    public var colorBorderBrandStatusInformationDark: ColorSemanticToken? = nil
-
+    
+    public var colorBorderBrandStatusInformationLight: ColorSemanticToken?
+    public var colorBorderBrandStatusInformationInverse: ColorSemanticToken?
+    public var colorBorderBrandStatusInformationDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Primary
-
-    public var colorOnBackgroundPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorOnBackgroundPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorOnBackgroundPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHighest
-
+    
+    public var colorOnBackgroundPrimaryLight: ColorSemanticToken?
+    public var colorOnBackgroundPrimaryInverse: ColorSemanticToken?
+    public var colorOnBackgroundPrimaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Secondary
-
-    public var colorOnBackgroundSecondaryLight: ColorSemanticToken? = nil
-    public var colorOnBackgroundSecondaryInverse: ColorSemanticToken? = nil
-    public var colorOnBackgroundSecondaryDark: ColorSemanticToken? = nil
-
+    
+    public var colorOnBackgroundSecondaryLight: ColorSemanticToken?
+    public var colorOnBackgroundSecondaryInverse: ColorSemanticToken?
+    public var colorOnBackgroundSecondaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Tertiary
-
-    public var colorOnBackgroundTertiaryLight: ColorSemanticToken? = nil
-    public var colorOnBackgroundTertiaryInverse: ColorSemanticToken? = nil
-    public var colorOnBackgroundTertiaryDark: ColorSemanticToken? = nil
-
+    
+    public var colorOnBackgroundTertiaryLight: ColorSemanticToken?
+    public var colorOnBackgroundTertiaryInverse: ColorSemanticToken?
+    public var colorOnBackgroundTertiaryDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Attrative - Muted
-
-    public var colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusAttractiveMutedInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Attrative - Emphasis
-
-    public var colorOnBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorOnBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Warning - Muted
-
-    public var colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusWarningMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusWarningMutedInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Warning - Emphasis
-
-    public var colorOnBackgroundStatusWarningEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusWarningEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorOnBackgroundStatusWarningEmphasisLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusWarningEmphasisInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusWarningEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Negative - Muted
-
-    public var colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusNegativeMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusNegativeMutedInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Negative - Emphasis
-
-    public var colorOnBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorOnBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
-    public var colorOnBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorOnBackgroundStatusNegativeEmphasisLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusNegativeEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Positive - Muted
-
-    public var colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusPositiveMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusPositiveMutedInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Positive - Emphasis
-
-    public var colorOnBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorOnBackgroundStatusPositiveEmphasisLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusPositiveEmphasisDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Information - Muted
-
-    public var colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusInformationMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
-
+    
+    public var colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusInformationMutedInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken?
+    
     // MARK: Semantic token - Colors - On background - Status - Information - Emphasis
+    
+    public var colorOnBackgroundStatusInformationEmphasisLight: ColorSemanticToken?
+    public var colorOnBackgroundStatusInformationEmphasisInverse: ColorSemanticToken?
+    public var colorOnBackgroundStatusInformationEmphasisDark: ColorSemanticToken?
+    
+    
+    // MARK: - Initializer
+    
+    init() {
+        borderWidthNone = BorderPrimitiveTokens.borderWidth0
+        borderWidthDefault = BorderPrimitiveTokens.borderWidth25
+        borderWidthThin = BorderPrimitiveTokens.borderWidth25
+        borderWidthThick = BorderPrimitiveTokens.borderWidth50
+        borderWidthThicker = BorderPrimitiveTokens.borderWidth75
+        borderWidthThickest = BorderPrimitiveTokens.borderWidth100
+        borderWidthInterfactivePrimaryFocus = BorderPrimitiveTokens.borderWidth100
+        
+        borderRadiusNone = BorderPrimitiveTokens.borderRadius0
+        borderRadiusDefault = BorderPrimitiveTokens.borderRadius0
+        borderRadiusShort = BorderPrimitiveTokens.borderRadius75
+        borderRadiusMedium = BorderPrimitiveTokens.borderRadius150
+        borderRadiusTall = BorderPrimitiveTokens.borderRadius300
+        borderRadiusPill = BorderPrimitiveTokens.borderRadius9999
+        
+        borderStyleDefault = BorderPrimitiveTokens.borderStyleSolid
+        borderStyleDrag = BorderPrimitiveTokens.borderStyleDashed
+        
+        sysColorBrandPrimaryLowest = nil
+        sysColorBrandPrimaryLower = nil
+        sysColorBrandPrimaryLow = ColorOrangePrimitiveTokens.colorBrandOrange500
+        sysColorBrandPrimaryDefault = ColorOrangePrimitiveTokens.colorBrandOrange550
+        sysColorBrandPrimaryHigh = nil
+        sysColorBrandPrimaryHigher = nil
+        sysColorBrandPrimaryHighest = nil
 
-    public var colorOnBackgroundStatusInformationEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
-    public var colorOnBackgroundStatusInformationEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+        sysColorBrandSecondaryLowest = nil
+        sysColorBrandSecondaryLower = nil
+        sysColorBrandSecondaryLow = nil
+        sysColorBrandSecondaryDefault = nil
+        sysColorBrandSecondaryHigh = nil
+        sysColorBrandSecondaryHigher = nil
+        sysColorBrandSecondaryHighest = nil
+
+        sysColorBrandTertiaryLowest = nil
+        sysColorBrandTertiaryLower = nil
+        sysColorBrandTertiaryLow = nil
+        sysColorBrandTertiaryDefault = nil
+        sysColorBrandTertiaryHigh = nil
+        sysColorBrandTertiaryHigher = nil
+        sysColorBrandTertiaryHighest = nil
+
+        sysColorBrandNeutralMutedWhite = ColorGlobalPrimitiveTokens.colorFunctionalWhite
+        sysColorBrandNeutralMutedLowest = ColorGlobalPrimitiveTokens.colorFunctionalLightGray80
+        sysColorBrandNeutralMutedLower = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
+        sysColorBrandNeutralMutedLow = nil
+        sysColorBrandNeutralMutedMedium = ColorGlobalPrimitiveTokens.colorFunctionalLightGray400
+        sysColorBrandNeutralMutedHigh = ColorGlobalPrimitiveTokens.colorFunctionalLightGray560
+        sysColorBrandNeutralMutedHigher = nil
+        sysColorBrandNeutralMutedHighest = nil
+
+        sysColorBrandNeutralEmphasisLowest = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray400
+        sysColorBrandNeutralEmphasisLower = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray480
+        sysColorBrandNeutralEmphasisLow = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray560
+        sysColorBrandNeutralEmphasisMedium = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray640
+        sysColorBrandNeutralEmphasisHigh = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray720
+        sysColorBrandNeutralEmphasisHigher = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray800
+        sysColorBrandNeutralEmphasisHighest = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray880
+        sysColorBrandNeutralEmphasisBlack = ColorGlobalPrimitiveTokens.colorFunctionalBlack
+
+        sysColorBrandPositiveLowest = ColorGlobalPrimitiveTokens.colorFunctionalMalachite100
+        sysColorBrandPositiveLower = nil
+        sysColorBrandPositiveLow = nil
+        sysColorBrandPositiveDefault = ColorGlobalPrimitiveTokens.colorFunctionalMalachite500
+        sysColorBrandPositiveHigh = ColorGlobalPrimitiveTokens.colorFunctionalMalachite600
+        sysColorBrandPositiveHigher = nil
+        sysColorBrandPositiveHighest = ColorGlobalPrimitiveTokens.colorFunctionalMalachite800
+
+        sysColorBrandInformationLowest = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue100
+        sysColorBrandInformationLower = nil
+        sysColorBrandInformationLow = nil
+        sysColorBrandInformationDefault = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue500
+        sysColorBrandInformationHigh = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue600
+        sysColorBrandInformationHigher = nil
+        sysColorBrandInformationHighest = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue800
+
+        sysColorBrandWarningLowest = ColorGlobalPrimitiveTokens.colorFunctionalSun100
+        sysColorBrandWarningLower = nil
+        sysColorBrandWarningLow = nil
+        sysColorBrandWarningDefault = ColorGlobalPrimitiveTokens.colorFunctionalSun500
+        sysColorBrandWarningHigh = ColorGlobalPrimitiveTokens.colorFunctionalSun600
+        sysColorBrandWarningHigher = nil
+        sysColorBrandWarningHighest = ColorGlobalPrimitiveTokens.colorFunctionalSun800
+
+        sysColorBrandNegativeLowest = ColorGlobalPrimitiveTokens.colorFunctionalScarlet100
+        sysColorBrandNegativeLower = nil
+        sysColorBrandNegativeLow = nil
+        sysColorBrandNegativeDefault = ColorGlobalPrimitiveTokens.colorFunctionalScarlet500
+        sysColorBrandNegativeHigh = ColorGlobalPrimitiveTokens.colorFunctionalScarlet600
+        sysColorBrandNegativeHigher = nil
+        sysColorBrandNegativeHighest = ColorGlobalPrimitiveTokens.colorFunctionalScarlet800
+
+        sysColorBrandAttractiveLowest = ColorOrangePrimitiveTokens.colorBrandWarmGray100
+        sysColorBrandAttractiveLower = nil
+        sysColorBrandAttractiveLow = nil
+        sysColorBrandAttractiveMedium = ColorGlobalPrimitiveTokens.colorFunctionalSun500
+        sysColorBrandAttractiveHigh = ColorGlobalPrimitiveTokens.colorFunctionalSun600
+        sysColorBrandAttractiveHigher = nil
+        sysColorBrandAttractiveHighest = ColorOrangePrimitiveTokens.colorBrandWarmGray900
+
+        colorBackgroundDefaultPrimaryLight = sysColorBrandNeutralMutedWhite
+        colorBackgroundDefaultPrimaryInverse = sysColorBrandNeutralEmphasisBlack
+        colorBackgroundDefaultPrimaryDark = sysColorBrandNeutralEmphasisHighest
+
+        colorBackgroundDefaultSecondaryLight = sysColorBrandNeutralMutedLowest
+        colorBackgroundDefaultSecondaryInverse = sysColorBrandNeutralEmphasisMedium
+        colorBackgroundDefaultSecondaryDark = sysColorBrandNeutralEmphasisHigher
+
+        colorBackgroundDefaultTertiaryLight = sysColorBrandAttractiveLowest
+        colorBackgroundDefaultTertiaryInverse = sysColorBrandAttractiveHighest
+        colorBackgroundDefaultTertiaryDark = sysColorBrandAttractiveHighest
+
+        colorBackgroundEmphasisPrimaryLight = sysColorBrandNeutralEmphasisBlack
+        colorBackgroundEmphasisPrimaryInverse = sysColorBrandNeutralMutedWhite
+        colorBackgroundEmphasisPrimaryDark = sysColorBrandNeutralEmphasisMedium
+
+        colorBackgroundEmphasisSecondaryLight = sysColorBrandNeutralEmphasisMedium
+        colorBackgroundEmphasisSecondaryInverse = sysColorBrandNeutralMutedLowest
+        colorBackgroundEmphasisSecondaryDark = sysColorBrandNeutralEmphasisHigh
+
+        colorBackgroundBrandPrimaryLight = sysColorBrandPrimaryDefault
+        colorBackgroundBrandPrimaryInverse = sysColorBrandPrimaryDefault
+        colorBackgroundBrandPrimaryDark = sysColorBrandPrimaryLow
+
+        colorBackgroundBrandSecondary = nil
+
+        colorBackgroundBrandTertiary = nil
+
+        colorBackgroundStatusAttractiveMutedLight = sysColorBrandAttractiveLowest
+        colorBackgroundStatusAttractiveMutedInverse = sysColorBrandAttractiveLowest
+        colorBackgroundStatusAttractiveMutedDark = sysColorBrandAttractiveHighest
+
+        colorBackgroundStatusAttractiveEmphasisLight = sysColorBrandWarningDefault
+        colorBackgroundStatusAttractiveEmphasisInverse = sysColorBrandWarningDefault
+        colorBackgroundStatusAttractiveEmphasisDark = sysColorBrandWarningHighest
+
+        colorBackgroundStatusWarningMutedLight = sysColorBrandWarningLowest
+        colorBackgroundStatusWarningMutedInverse = sysColorBrandWarningLowest
+        colorBackgroundStatusWarningMutedDark = sysColorBrandNeutralEmphasisHigh
+
+        colorBackgroundStatusWarningEmphasisLight = sysColorBrandWarningDefault
+        colorBackgroundStatusWarningEmphasisInverse = sysColorBrandWarningDefault
+        colorBackgroundStatusWarningEmphasisDark = sysColorBrandWarningHighest
+
+        colorBackgroundStatusNegativeMutedLight = sysColorBrandNegativeLowest
+        colorBackgroundStatusNegativeMutedInverse = sysColorBrandNegativeLowest
+        colorBackgroundStatusNegativeMutedDark = sysColorBrandNeutralEmphasisHigh
+
+        colorBackgroundStatusNegativeEmphasisLight = sysColorBrandNegativeDefault
+        colorBackgroundStatusNegativeEmphasisInverse = sysColorBrandNegativeDefault
+        colorBackgroundStatusNegativeEmphasisDark = sysColorBrandNegativeHighest
+
+        colorBackgroundStatusPositiveMutedLight = sysColorBrandPositiveLowest
+        colorBackgroundStatusPositiveMutedInverse = sysColorBrandPositiveLowest
+        colorBackgroundStatusPositiveMutedDark = sysColorBrandNeutralEmphasisHigh
+
+        colorBackgroundStatusPositiveEmphasisLight = sysColorBrandPositiveDefault
+        colorBackgroundStatusPositiveEmphasisInverse = sysColorBrandPositiveDefault
+        colorBackgroundStatusPositiveEmphasisDark = sysColorBrandPositiveHighest
+
+        colorBackgroundStatusInformationMutedLight = sysColorBrandInformationLowest
+        colorBackgroundStatusInformationMutedInverse = sysColorBrandInformationLowest
+        colorBackgroundStatusInformationMutedDark = sysColorBrandNeutralEmphasisHigh
+
+        colorBackgroundStatusInformationEmphasisLight = sysColorBrandInformationDefault
+        colorBackgroundStatusInformationEmphasisInverse = sysColorBrandInformationDefault
+        colorBackgroundStatusInformationEmphasisDark = sysColorBrandInformationHighest
+
+        colorContentDefaultLight = sysColorBrandNeutralEmphasisBlack
+        colorContentDefaultInverse = sysColorBrandNeutralMutedWhite
+        colorContentDefaultDark = sysColorBrandNeutralMutedLower
+
+        colorContentDefaultOnBackgroundEmphasisLight = sysColorBrandNeutralMutedWhite
+        colorContentDefaultOnBackgroundEmphasisInverse = sysColorBrandNeutralEmphasisBlack
+        colorContentDefaultOnBackgroundEmphasisDark = sysColorBrandNeutralMutedLower
+
+        colorContentMutedLight = sysColorBrandNeutralEmphasisLowest
+        colorContentMutedInverse = sysColorBrandNeutralEmphasisMedium
+        colorContentMutedDark = sysColorBrandNeutralEmphasisHigh
+
+        colorContentMutedOnBackgroundEmphasisLight = sysColorBrandNeutralMutedMedium
+        colorContentMutedOnBackgroundEmphasisInverse = sysColorBrandNeutralEmphasisLowest
+        colorContentMutedOnBackgroundEmphasisDark = sysColorBrandNeutralMutedHigh
+
+        colorContentBrandPrimaryLight = sysColorBrandPrimaryDefault
+        colorContentBrandPrimaryInverse = sysColorBrandPrimaryLow
+        colorContentBrandPrimaryDark = sysColorBrandPrimaryLow
+
+        colorContentBrandPrimaryOnBackgroundEmphasisLight = sysColorBrandPrimaryLow
+        colorContentBrandPrimaryOnBackgroundEmphasisInverse = sysColorBrandPrimaryDefault
+        colorContentBrandPrimaryOnBackgroundEmphasisDark = sysColorBrandPrimaryLow
+
+        colorContentBrandSecondaryLight = nil
+        colorContentBrandSecondaryInverse = nil
+        colorContentBrandSecondaryDark = nil
+
+        colorContentBrandTertiaryLight = nil
+        colorContentBrandTertiaryInverse = nil
+        colorContentBrandTertiaryDark = nil
+
+        colorContentStatusAttractiveLight = nil
+        colorContentStatusAttractiveInverse = nil
+        colorContentStatusAttractiveDark = nil
+
+        colorContentStatusNegativeLight = sysColorBrandNegativeDefault
+        colorContentStatusNegativeInverse = sysColorBrandNegativeDefault
+        colorContentStatusNegativeDark = sysColorBrandNegativeDefault
+
+        colorContentStatusPositiveLight = sysColorBrandPositiveDefault
+        colorContentStatusPositiveInverse = sysColorBrandPositiveDefault
+        colorContentStatusPositiveDark = sysColorBrandPositiveDefault
+
+        colorContentStatusInformationLight = sysColorBrandInformationDefault
+        colorContentStatusInformationInverse = sysColorBrandInformationDefault
+        colorContentStatusInformationDark = sysColorBrandInformationDefault
+
+        colorBorderDefaultLight = sysColorBrandNeutralMutedMedium
+        colorBorderDefaultInverse = sysColorBrandNeutralEmphasisLowest
+        colorBorderDefaultDark = sysColorBrandNeutralEmphasisLowest
+
+        colorBorderDefaultOnBackgroundEmphasisLight = sysColorBrandNeutralEmphasisLowest
+        colorBorderDefaultOnBackgroundEmphasisInverse = sysColorBrandNeutralMutedMedium
+        colorBorderDefaultOnBackgroundEmphasisDark = sysColorBrandNeutralEmphasisLowest
+
+        colorBorderEmphasisLight = sysColorBrandNeutralEmphasisBlack
+        colorBorderEmphasisInverse = sysColorBrandNeutralMutedWhite
+        colorBorderEmphasisDark = sysColorBrandNeutralMutedLower
+
+        colorBorderEmphasisOnBackgroundEmphasisLight = sysColorBrandNeutralMutedWhite
+        colorBorderEmphasisOnBackgroundEmphasisInverse = sysColorBrandNeutralEmphasisBlack
+        colorBorderEmphasisOnBackgroundEmphasisDark = sysColorBrandNeutralMutedLower
+
+        colorBorderBrandPrimaryLight = sysColorBrandPrimaryDefault
+        colorBorderBrandPrimaryInverse = sysColorBrandPrimaryLow
+        colorBorderBrandPrimaryDark = sysColorBrandPrimaryLow
+
+        colorBorderBrandPrimaryOnBackgroundEmphasisLight = sysColorBrandPrimaryLow
+        colorBorderBrandPrimaryOnBackgroundEmphasisInverse = sysColorBrandPrimaryDefault
+        colorBorderBrandPrimaryOnBackgroundEmphasisDark = sysColorBrandPrimaryLow
+
+        colorBorderBrandSecondaryLight = nil
+        colorBorderBrandSecondaryInverse = nil
+        colorBorderBrandSecondaryDark = nil
+
+        colorBorderBrandTertiaryLight = nil
+        colorBorderBrandTertiaryInverse = nil
+        colorBorderBrandTertiaryDark = nil
+
+        colorBorderBrandStatusAttractiveLight = nil
+        colorBorderBrandStatusAttractiveInverse = nil
+        colorBorderBrandStatusAttractiveDark = nil
+
+        colorBorderBrandStatusWarningLight = nil
+        colorBorderBrandStatusWarningInverse = nil
+        colorBorderBrandStatusWarningDark = nil
+
+        colorBorderBrandStatusNegativeLight = nil
+        colorBorderBrandStatusNegativeInverse = nil
+        colorBorderBrandStatusNegativeDark = nil
+
+        colorBorderBrandStatusPositiveLight = nil
+        colorBorderBrandStatusPositiveInverse = nil
+        colorBorderBrandStatusPositiveDark = nil
+
+        colorBorderBrandStatusInformationLight = nil
+        colorBorderBrandStatusInformationInverse = nil
+        colorBorderBrandStatusInformationDark = nil
+
+        colorOnBackgroundPrimaryLight = sysColorBrandNeutralMutedWhite
+        colorOnBackgroundPrimaryInverse = sysColorBrandNeutralMutedWhite
+        colorOnBackgroundPrimaryDark = sysColorBrandNeutralEmphasisHighest
+
+        colorOnBackgroundSecondaryLight = nil
+        colorOnBackgroundSecondaryInverse = nil
+        colorOnBackgroundSecondaryDark = nil
+
+        colorOnBackgroundTertiaryLight = nil
+        colorOnBackgroundTertiaryInverse = nil
+        colorOnBackgroundTertiaryDark = nil
+
+        colorOnBackgroundStatusAttractiveMutedLight = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusAttractiveMutedInverse = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusAttractiveMutedDark = sysColorBrandNeutralMutedLower
+
+        colorOnBackgroundStatusAttractiveEmphasisLight = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusAttractiveEmphasisInverse = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusAttractiveEmphasisDark = sysColorBrandNeutralMutedLower
+
+        colorOnBackgroundStatusWarningMutedLight = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusWarningMutedInverse = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusWarningMutedDark = sysColorBrandNeutralMutedLower
+
+        colorOnBackgroundStatusWarningEmphasisLight = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusWarningEmphasisInverse = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusWarningEmphasisDark = sysColorBrandNeutralMutedLower
+
+        colorOnBackgroundStatusNegativeMutedLight = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusNegativeMutedInverse = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusNegativeMutedDark = sysColorBrandNeutralMutedLower
+
+        colorOnBackgroundStatusNegativeEmphasisLight = sysColorBrandNeutralMutedWhite
+        colorOnBackgroundStatusNegativeEmphasisInverse = sysColorBrandNeutralMutedWhite
+        colorOnBackgroundStatusNegativeEmphasisDark = sysColorBrandNeutralMutedLower
+
+        colorOnBackgroundStatusPositiveMutedLight = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusPositiveMutedInverse = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusPositiveMutedDark = sysColorBrandNeutralMutedLower
+
+        colorOnBackgroundStatusPositiveEmphasisLight = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusPositiveEmphasisInverse = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusPositiveEmphasisDark = sysColorBrandNeutralMutedLower
+
+        colorOnBackgroundStatusInformationMutedLight = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusInformationMutedInverse = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusInformationMutedDark = sysColorBrandNeutralMutedLower
+
+        colorOnBackgroundStatusInformationEmphasisLight = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusInformationEmphasisInverse = sysColorBrandNeutralEmphasisBlack
+        colorOnBackgroundStatusInformationEmphasisDark = sysColorBrandNeutralMutedLower
 
 
+    }
 }
