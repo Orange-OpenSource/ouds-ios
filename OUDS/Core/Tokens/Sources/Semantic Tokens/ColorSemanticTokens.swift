@@ -307,5 +307,166 @@ public struct ColorSemanticTokens {
     static let colorContentStatusInformationInverse: ColorSemanticToken? = sysColorBrandInformationDefault
     static let colorContentStatusInformationDark: ColorSemanticToken? = sysColorBrandInformationDefault
 
+    // MARK: Semantic token - Colors - Border - Default
+
+    static let colorBorderDefaultLight: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
+    static let colorBorderDefaultInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+    static let colorBorderDefaultDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+
+    // MARK: Semantic token - Colors - Border - Default - On background emphasis
+
+    static let colorBorderDefaultOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+    static let colorBorderDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
+    static let colorBorderDefaultOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+
+    // MARK: Semantic token - Colors - Border - Emphasis
+
+    static let colorBorderEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorBorderEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorBorderEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - Emphasis - On background emphasis
+
+    static let colorBorderEmphasisOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorBorderEmphasisOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorBorderEmphasisOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - Brand - Primary
+
+    static let colorBorderBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
+    static let colorBorderBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryLow
+    static let colorBorderBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+    // MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasis
+
+    static let colorBorderBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandPrimaryLow
+    static let colorBorderBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
+    static let colorBorderBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+    // MARK: Semantic token - Colors - Border - Brand - Secondary
+
+    static let colorBorderBrandSecondaryLight: ColorSemanticToken? = nil
+    static let colorBorderBrandSecondaryInverse: ColorSemanticToken? = nil
+    static let colorBorderBrandSecondaryDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Border - Brand - Tertiary
+
+    static let colorBorderBrandTertiaryLight: ColorSemanticToken? = nil
+    static let colorBorderBrandTertiaryInverse: ColorSemanticToken? = nil
+    static let colorBorderBrandTertiaryDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Border - Status - Attractive
+
+    static let colorBorderBrandStatusAttractiveLight: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusAttractiveInverse: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusAttractiveDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Border - Status - Warning
+
+    static let colorBorderBrandStatusWarningLight: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusWarningInverse: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusWarningDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Border - Status - Negative
+
+    static let colorBorderBrandStatusNegativeLight: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusNegativeInverse: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusNegativeDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Border - Status - Positive
+
+    static let colorBorderBrandStatusPositiveLight: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusPositiveInverse: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusPositiveDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Border - Status - Information
+
+    static let colorBorderBrandStatusInformationLight: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusInformationInverse: ColorSemanticToken? = nil
+    static let colorBorderBrandStatusInformationDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Border - On background - Primary
+
+    static let colorOnBackgroundPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorOnBackgroundPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorOnBackgroundPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHighest
+
+    // MARK: Semantic token - Colors - Border - On background - Secondary
+
+    static let colorOnBackgroundSecondaryLight: ColorSemanticToken? = nil
+    static let colorOnBackgroundSecondaryInverse: ColorSemanticToken? = nil
+    static let colorOnBackgroundSecondaryDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Border - On background - Tertiary
+
+    static let colorOnBackgroundTertiaryLight: ColorSemanticToken? = nil
+    static let colorOnBackgroundTertiaryInverse: ColorSemanticToken? = nil
+    static let colorOnBackgroundTertiaryDark: ColorSemanticToken? = nil
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Attrative - Muted
+
+    static let colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Attrative - Emphasis
+
+    static let colorOnBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Warning - Muted
+
+    static let colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusWarningMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Warning - Emphasis
+
+    static let colorOnBackgroundStatusWarningEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusWarningEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Negative - Muted
+
+    static let colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusNegativeMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Negative - Emphasis
+
+    static let colorOnBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorOnBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+    static let colorOnBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Positive - Muted
+
+    static let colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusPositiveMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Positive - Emphasis
+
+    static let colorOnBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Information - Muted
+
+    static let colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusInformationMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+    // MARK: Semantic token - Colors - Border - On background - Status - Information - Emphasis
+
+    static let colorOnBackgroundStatusInformationEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+    static let colorOnBackgroundStatusInformationEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+
+
+
+
+    
     // TODO: Border, on background, decorative, charts
 }

@@ -8,7 +8,7 @@
 # Meta flag
 ALL_PRIMITIVE_TOKENS=false
 ALL_SEMANTIC_TOKENS=false
-ALL_TOKENS=true
+ALL_TOKENS=false
 
 # Primitive tokens
 PRIMITIVE_TOKEN_OPACITY=false
@@ -74,6 +74,8 @@ SEMANTIC_TOKEN_TYPOGRAPHY_FONT_PARAGRAPH_SPACING_OTHERS=false
 SEMANTIC_TOKEN_COLORS_ALIASES=false
 SEMANTIC_TOKEN_COLORS_BACKGROUND=false
 SEMANTIC_TOKEN_COLORS_CONTENT=false
+SEMANTIC_TOKEN_COLORS_BORDER=false
+SEMANTIC_TOKEN_COLORS_ON_BACKGROUND=true
 
 # Exit codes
 # ----------
@@ -139,7 +141,7 @@ GenerateTokens() {
         GENERATED_TOKENS_COUNT=$(( GENERATED_TOKENS_COUNT  + 1 ))
     done
 
-    echo -e "\n" >> "$GENERATED_SWIFT_CODE_FILE"
+    echo "" >> "$GENERATED_SWIFT_CODE_FILE" # Line break
 }
 
 # Run!
@@ -1064,6 +1066,170 @@ GenerateTokens \
 --string "static let colorContentStatusInformationKEY: ColorSemanticToken? = VALUE" \
 --keys "Light,Inverse,Dark" \
 --values "sysColorBrandInformationDefault,sysColorBrandInformationDefault,sysColorBrandInformationDefault"
+fi
+
+# Semantic Token - Colors - Borders
+
+if [ "$SEMANTIC_TOKEN_COLORS_BORDER" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Colors - Border - Default"
+GenerateTokens \
+--string "static let colorBorderDefaultKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralMutedMedium,sysColorBrandNeutralEmphasisLowest,sysColorBrandNeutralEmphasisLowest"
+
+Write "// MARK: Semantic token - Colors - Border - Default - On background emphasis"
+GenerateTokens \
+--string "static let colorBorderDefaultOnBackgroundEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisLowest,sysColorBrandNeutralMutedMedium,sysColorBrandNeutralEmphasisLowest"
+
+Write "// MARK: Semantic token - Colors - Border - Emphasis"
+GenerateTokens \
+--string "static let colorBorderEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - Emphasis - On background emphasis"
+GenerateTokens \
+--string "static let colorBorderEmphasisOnBackgroundEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - Brand - Primary"
+GenerateTokens \
+--string "static let colorBorderBrandPrimaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow,sysColorBrandPrimaryLow"
+
+Write "// MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasis"
+GenerateTokens \
+--string "static let colorBorderBrandPrimaryOnBackgroundEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandPrimaryLow,sysColorBrandPrimaryDefault,sysColorBrandPrimaryLow"
+
+Write "// MARK: Semantic token - Colors - Border - Brand - Secondary"
+GenerateTokens \
+--string "static let colorBorderBrandSecondaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Border - Brand - Tertiary"
+GenerateTokens \
+--string "static let colorBorderBrandTertiaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Border - Status - Attractive"
+GenerateTokens \
+--string "static let colorBorderBrandStatusAttractiveKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Border - Status - Warning"
+GenerateTokens \
+--string "static let colorBorderBrandStatusWarningKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Border - Status - Negative"
+GenerateTokens \
+--string "static let colorBorderBrandStatusNegativeKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Border - Status - Positive"
+GenerateTokens \
+--string "static let colorBorderBrandStatusPositiveKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Border - Status - Information"
+GenerateTokens \
+--string "static let colorBorderBrandStatusInformationKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+fi
+
+# Semantic Token - Colors - On Background
+
+if [ "$SEMANTIC_TOKEN_COLORS_ON_BACKGROUND" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ]; then
+Write "// MARK: Semantic token - Colors - Border - On background - Primary"
+GenerateTokens \
+--string "static let colorOnBackgroundPrimaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralEmphasisHighest"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Secondary"
+GenerateTokens \
+--string "static let colorOnBackgroundSecondaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Tertiary"
+GenerateTokens \
+--string "static let colorOnBackgroundTertiaryKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "nil,nil,nil"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Attrative - Muted"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusAttractiveMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Attrative - Emphasis"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusAttractiveEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Warning - Muted"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusWarningMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Warning - Emphasis"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusWarningEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Negative - Muted"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusNegativeMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Negative - Emphasis"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusNegativeEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedWhite,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Positive - Muted"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusPositiveMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Positive - Emphasis"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusPositiveEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Information - Muted"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusInformationMutedKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
+
+Write "// MARK: Semantic token - Colors - Border - On background - Status - Information - Emphasis"
+GenerateTokens \
+--string "static let colorOnBackgroundStatusInformationEmphasisKEY: ColorSemanticToken? = VALUE" \
+--keys "Light,Inverse,Dark" \
+--values "sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralEmphasisBlack,sysColorBrandNeutralMutedLower"
 fi
 
 # Completed!
