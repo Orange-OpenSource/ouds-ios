@@ -48,28 +48,8 @@ public struct TypographyCompositePrimitiveToken {
 
 public struct TypographyPrimitiveTokens {
     
-    // MARK: Font family
-    
-    static let fontFamilySystem: TypographyFontFamilyPrimitiveToken = "SF-Pro-Text"
-    static let fontFamilyMonospace: TypographyFontFamilyPrimitiveToken = "Courrier-New"
-    // Note: Only added Apple system font
-    
-    // MARK: Font weight
-    
-    static let fontWeight100: TypographyFontWeightPrimitiveToken = Font.Weight.thin
-    static let fontWeight200: TypographyFontWeightPrimitiveToken = Font.Weight.ultraLight
-    static let fontWeight300: TypographyFontWeightPrimitiveToken = Font.Weight.light
-    static let fontWeight400: TypographyFontWeightPrimitiveToken = Font.Weight.regular
-    static let fontWeight500: TypographyFontWeightPrimitiveToken = Font.Weight.medium
-    static let fontWeight600: TypographyFontWeightPrimitiveToken = Font.Weight.semibold
-    static let fontWeight700: TypographyFontWeightPrimitiveToken = Font.Weight.bold
-    // No matching value for fontWeight800 "extra-bold, ultra-bold"
-    static let fontWeight900: TypographyFontWeightPrimitiveToken = Font.Weight.heavy
-    // No matching value for fontWeight950 "extra-black, ultra-black"
-    
-    // MARK: Font size (px)
-    
-    static let fontSize100: TypographyFontSizePrimitiveToken = 10 // NOTE: Missing value in design team whiteboard, added it
+    // MARK: Primitive token - Typography - Font size
+
     static let fontSize150: TypographyFontSizePrimitiveToken = 12
     static let fontSize175: TypographyFontSizePrimitiveToken = 13
     static let fontSize200: TypographyFontSizePrimitiveToken = 14
@@ -87,62 +67,70 @@ public struct TypographyPrimitiveTokens {
     static let fontSize1250: TypographyFontSizePrimitiveToken = 56
     static let fontSize1450: TypographyFontSizePrimitiveToken = 64
     static let fontSize1850: TypographyFontSizePrimitiveToken = 72
-    
-    // MARK: Line height (px)
-    
-    static let fontLineHeight250: TypographyFontSizePrimitiveToken = 16
-    static let fontLineHeight350: TypographyFontSizePrimitiveToken = 20
-    static let fontLineHeight450: TypographyFontSizePrimitiveToken = 24
-    static let fontLineHeight550: TypographyFontSizePrimitiveToken = 28
-    static let fontLineHeight650: TypographyFontSizePrimitiveToken = 32
-    static let fontLineHeight750: TypographyFontSizePrimitiveToken = 36
-    static let fontLineHeight850: TypographyFontSizePrimitiveToken = 10
-    static let fontLineHeight950: TypographyFontSizePrimitiveToken = 44
-    static let fontLineHeight1050: TypographyFontSizePrimitiveToken = 48
-    static let fontLineHeight1150: TypographyFontSizePrimitiveToken = 52
-    static let fontLineHeight1250: TypographyFontSizePrimitiveToken = 56
-    static let fontLineHeight1350: TypographyFontSizePrimitiveToken = 60
-    static let fontLineHeight1450: TypographyFontSizePrimitiveToken = 64
-    static let fontLineHeight1850: TypographyFontSizePrimitiveToken = 72
-    static let fontLineHeight2050: TypographyFontSizePrimitiveToken = 80
-    
-    // Letter spacing (%)
-    // NOTE: How to manage percentages defined in the design team whiteboard?
-    // ...
-    
-    // Font letter spacing
-    // NOTE: Cannot define without letter spacing
-    // ...
-    
-    // MARK: Paragraph spacing (px)
-    
+
+    // MARK: Primitive token - Typography - Line height
+
+    static let fontLineHeight250: TypographyFontLineHeightPrimitiveToken = 16
+    static let fontLineHeight350: TypographyFontLineHeightPrimitiveToken = 20
+    static let fontLineHeight450: TypographyFontLineHeightPrimitiveToken = 24
+    static let fontLineHeight550: TypographyFontLineHeightPrimitiveToken = 28
+    static let fontLineHeight650: TypographyFontLineHeightPrimitiveToken = 32
+    static let fontLineHeight750: TypographyFontLineHeightPrimitiveToken = 36
+    static let fontLineHeight850: TypographyFontLineHeightPrimitiveToken = 10
+    static let fontLineHeight950: TypographyFontLineHeightPrimitiveToken = 44
+    static let fontLineHeight1050: TypographyFontLineHeightPrimitiveToken = 48
+    static let fontLineHeight1150: TypographyFontLineHeightPrimitiveToken = 52
+    static let fontLineHeight1250: TypographyFontLineHeightPrimitiveToken = 56
+    static let fontLineHeight1350: TypographyFontLineHeightPrimitiveToken = 60
+    static let fontLineHeight1450: TypographyFontLineHeightPrimitiveToken = 64
+    static let fontLineHeight1850: TypographyFontLineHeightPrimitiveToken = 72
+    static let fontLineHeight2050: TypographyFontLineHeightPrimitiveToken = 80
+
+    // MARK: Primitive token - Typography - Paragraph spacing
+
     static let fontParagraphSpacing100: TypographyFontParagraphSpacingPrimitiveToken = 0
     static let fontParagraphSpacing200: TypographyFontParagraphSpacingPrimitiveToken = 8
     static let fontParagraphSpacing300: TypographyFontParagraphSpacingPrimitiveToken = 16
     static let fontParagraphSpacing400: TypographyFontParagraphSpacingPrimitiveToken = 24
-    
-    // MARK: Composite
-    
+
+    // MARK: Primitive token - Typography - Font family
+
+    static let fontFamilySystem: TypographyFontFamilyPrimitiveToken = "SF-Pro-Text"
+    static let fontFamilyMonospace: TypographyFontFamilyPrimitiveToken = "Courrier-New"
+
+    // MARK: Primitive token - Typography - Font weight
+
+    static let fontWeight100: TypographyFontWeightPrimitiveToken = Font.Weight.thin
+    static let fontWeight200: TypographyFontWeightPrimitiveToken = Font.Weight.ultraLight
+    static let fontWeight300: TypographyFontWeightPrimitiveToken = Font.Weight.light
+    static let fontWeight400: TypographyFontWeightPrimitiveToken = Font.Weight.regular
+    static let fontWeight500: TypographyFontWeightPrimitiveToken = Font.Weight.medium
+    static let fontWeight600: TypographyFontWeightPrimitiveToken = Font.Weight.semibold
+    static let fontWeight700: TypographyFontWeightPrimitiveToken = Font.Weight.bold
+    static let fontWeight900: TypographyFontWeightPrimitiveToken = Font.Weight.heavy
+
+    // MARK: Primitive token - Typography - Composite
+
     static let typeRegular150 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
     static let typeRegular175 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
-    static let typeRegular200 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize200, lineHeight: fontLineHeight350, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
-    static let typeRegular250 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize250, lineHeight: fontLineHeight450, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold150 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeRegular200 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize200, lineHeight: fontLineHeight250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
+    static let typeRegular250 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold150 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize150, lineHeight: fontLineHeight450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
     static let typeBold175 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold200 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize200, lineHeight: fontLineHeight350, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold250 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize250, lineHeight: fontLineHeight450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold200 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize200, lineHeight: fontLineHeight250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold250 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
     static let typeBold300 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize300, lineHeight: fontLineHeight450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
     static let typeBold350 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize350, lineHeight: fontLineHeight550, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold450 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize450, lineHeight: fontLineHeight650, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold550 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize550, lineHeight: fontLineHeight750, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold650 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize650, lineHeight: fontLineHeight850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold750 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize750, lineHeight: fontLineHeight950, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold850 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize850, lineHeight: fontLineHeight1050, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold950 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize950, lineHeight: fontLineHeight1150, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold1050 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1050, lineHeight: fontLineHeight1250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold1150
-    = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1150, lineHeight: fontLineHeight1350, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold1250 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1250, lineHeight: fontLineHeight1450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold1450 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1450, lineHeight: fontLineHeight1850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    static let typeBold1850 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1850, lineHeight: fontLineHeight2050, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold450 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize450, lineHeight: fontLineHeight550, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold550 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize550, lineHeight: fontLineHeight650, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold650 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize650, lineHeight: fontLineHeight750, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold750 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold850 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize850, lineHeight: fontLineHeight950, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold950 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize950, lineHeight: fontLineHeight1050, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold1050 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold1150 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1150, lineHeight: fontLineHeight1250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold1250 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1250, lineHeight: fontLineHeight1350, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold1450 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1450, lineHeight: fontLineHeight1450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+    static let typeBold1850 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1850, lineHeight: fontLineHeight1850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+
 }
