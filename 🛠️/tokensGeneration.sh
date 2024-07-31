@@ -15,7 +15,7 @@
 
 # Meta flags - Chose one of them
 
-ALL_TOKENS=true
+ALL_TOKENS=false
 ALL_PRIMITIVE_TOKENS=false
 ALL_SEMANTIC_TOKENS=false
 
@@ -80,6 +80,7 @@ SEMANTIC_TOKEN_ELEVATION_X=false
 SEMANTIC_TOKEN_ELEVATION_Y=false
 SEMANTIC_TOKEN_ELEVATION_BLUR=false
 SEMANTIC_TOKEN_ELEVATION_SPREAD=false
+SEMANTIC_TOKEN_ELEVATION_COLOR=true
 SEMANTIC_TOKEN_PADDING_PADDING_INLINE=false
 SEMANTIC_TOKEN_PADDING_PADDING_STACK=false
 SEMANTIC_TOKEN_PADDING_PADDING_INSET=false
@@ -795,6 +796,65 @@ GenerateTokens \
 --string "static let elevationSpread🆔: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread0️⃣" \
 --keys "None,Raised,Drag,OverlayDefault,OverlayEmphasis,StickyDefault,StickyEmphasis,StickyNavigationScrolled,Focus" \
 --values "0,0,Minus100,Minus100,Minus300,Minus100,Minus100,Minus100,300"
+fi
+
+# Semantic token - Elevation - Color
+
+if [ "$SEMANTIC_TOKEN_ELEVATION_COLOR" = true ] || [ "$ALL_SEMANTIC_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_SEMANTIC_TOKEN_ELEVATION" = true ] ; then
+swiftClass="ColorGlobalPrimitiveTokens"
+Write "// MARK: Semantic token - Elevation - Color - None"
+GenerateTokens \
+--string "static let elevationColorNone🆔: ElevationColorSemanticToken = 0️⃣" \
+--keys "Ligh,Dark,Inverse" \
+--values "$swiftClass.colorTransparentWhite0,$swiftClass.colorTransparentWhite0,$swiftClass.colorTransparentWhite0"
+
+Write "// MARK: Semantic token - Elevation - Color - Raised"
+GenerateTokens \
+--string "static let elevationColorRaised🆔: ElevationColorSemanticToken = 0️⃣" \
+--keys "Ligh,Dark,Inverse" \
+--values "$swiftClass.colorTransparentBlack500,$swiftClass.colorTransparentBlack500,$swiftClass.colorTransparentBlack500"
+
+Write "// MARK: Semantic token - Elevation - Color - Drag"
+GenerateTokens \
+--string "static let elevationColorDrag🆔: ElevationColorSemanticToken = 0️⃣" \
+--keys "Ligh,Dark,Inverse" \
+--values "$swiftClass.colorTransparentBlack600,$swiftClass.colorTransparentBlack600,$swiftClass.colorTransparentBlack600"
+
+Write "// MARK: Semantic token - Elevation - Color - Overlay - Default"
+GenerateTokens \
+--string "static let elevationColorOverlayDefault🆔: ElevationColorSemanticToken = 0️⃣" \
+--keys "Ligh,Dark,Inverse" \
+--values "$swiftClass.colorTransparentBlack400,$swiftClass.colorTransparentBlack400,$swiftClass.colorTransparentBlack400"
+
+Write "// MARK: Semantic token - Elevation - Color - Overlay - Emphasis"
+GenerateTokens \
+--string "static let elevationColorOverlayEmphasis🆔: ElevationColorSemanticToken = 0️⃣" \
+--keys "Ligh,Dark,Inverse" \
+--values "$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300"
+
+Write "// MARK: Semantic token - Elevation - Color - Sticky - Default"
+GenerateTokens \
+--string "static let elevationColorStickyDefault🆔: ElevationColorSemanticToken = 0️⃣" \
+--keys "Ligh,Dark,Inverse" \
+--values "$swiftClass.colorTransparentBlack400,$swiftClass.colorTransparentBlack400,$swiftClass.colorTransparentBlack400"
+
+Write "// MARK: Semantic token - Elevation - Color - Sticky - Emphasis"
+GenerateTokens \
+--string "static let elevationColorStickyEmphasis🆔: ElevationColorSemanticToken = 0️⃣" \
+--keys "Ligh,Dark,Inverse" \
+--values "$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300"
+
+Write "// MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled"
+GenerateTokens \
+--string "static let elevationColorStickyNavigationScrolled🆔: ElevationColorSemanticToken = 0️⃣" \
+--keys "Ligh,Dark,Inverse" \
+--values "$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300,$swiftClass.colorTransparentBlack300"
+
+Write "// MARK: Semantic token - Elevation - Color - Focus"
+GenerateTokens \
+--string "static let elevationColorFocus🆔: ElevationColorSemanticToken = 0️⃣" \
+--keys "Ligh,Dark,Inverse" \
+--values "$swiftClass.colorTransparentWhite900,$swiftClass.colorTransparentWhite900,$swiftClass.colorTransparentWhite900"
 fi
 
 # Semantic token - Grid - iOS Extra Compact

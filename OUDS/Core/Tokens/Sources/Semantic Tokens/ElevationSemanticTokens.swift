@@ -20,6 +20,7 @@ public typealias ElevationXSemanticToken = ElevationPrimitiveToken
 public typealias ElevationYSemanticToken = ElevationPrimitiveToken
 public typealias ElevationBlurSemanticToken = ElevationPrimitiveToken
 public typealias ElevationSpreadSemanticToken = ElevationPrimitiveToken
+public typealias ElevationColorSemanticToken = ColorTransparentPrimitiveToken
 
 // MARK: - Semantic tokens
 
@@ -90,6 +91,58 @@ public struct ElevationSemanticTokens {
     static let elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
     static let elevationSpreadFocus: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread300
     
-    // MARK: Color
-    // TODO: Add semantic tokens for color elevations
+    // MARK: Semantic token - Elevation - Color - None
+
+    static let elevationColorNoneLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite0
+    static let elevationColorNoneDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite0
+    static let elevationColorNoneInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite0
+
+    // MARK: Semantic token - Elevation - Color - Raised
+
+    static let elevationColorRaisedLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack500
+    static let elevationColorRaisedDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack500
+    static let elevationColorRaisedInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack500
+
+    // MARK: Semantic token - Elevation - Color - Drag
+
+    static let elevationColorDragLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack600
+    static let elevationColorDragDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack600
+    static let elevationColorDragInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack600
+
+    // MARK: Semantic token - Elevation - Color - Overlay - Default
+
+    static let elevationColorOverlayDefaultLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+    static let elevationColorOverlayDefaultDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+    static let elevationColorOverlayDefaultInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+
+    // MARK: Semantic token - Elevation - Color - Overlay - Emphasis
+
+    static let elevationColorOverlayEmphasisLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+    static let elevationColorOverlayEmphasisDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+    static let elevationColorOverlayEmphasisInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+
+    // MARK: Semantic token - Elevation - Color - Sticky - Default
+
+    static let elevationColorStickyDefaultLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+    static let elevationColorStickyDefaultDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+    static let elevationColorStickyDefaultInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+
+    // MARK: Semantic token - Elevation - Color - Sticky - Emphasis
+
+    static let elevationColorStickyEmphasisLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+    static let elevationColorStickyEmphasisDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+    static let elevationColorStickyEmphasisInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+
+    // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
+
+    static let elevationColorStickyNavigationScrolledLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+    static let elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+    static let elevationColorStickyNavigationScrolledInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+
+    // MARK: Semantic token - Elevation - Color - Focus
+
+    static let elevationColorFocusLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite900
+    static let elevationColorFocusDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite900
+    static let elevationColorFocusInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite900
+
 }
