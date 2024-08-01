@@ -12,84 +12,83 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias SizingWidthHeightSemanticToken = DimensionPrimitiveToken
-public typealias SizingMaxWidthSemanticToken = DimensionPrimitiveToken
+public typealias SizingWidthHeightSemanticToken = DimensionRawToken
+public typealias SizingMaxWidthSemanticToken = DimensionRawToken
 
 // MARK: - Semantic tokens
 
+/// This is a group of semantic tokens for **sizing**.
+/// It defines all `SizingSemanticToken` a theme must have.
 public protocol SizingSemanticTokens {
-    
+
     // MARK: Semantic token - Sizing - Width height - Icon decorative
 
-    var sizeWidthHeightIconShortest: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconShorter: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconTall: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconTaller: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconTallest: SizingWidthHeightSemanticToken { get set }
+    var sizeWidthHeightIconShortest: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconShorter: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconTaller: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconTallest: SizingWidthHeightSemanticToken { get }
 
     // MARK: Semantic token - Sizing - Width height - Icon component
 
-    var sizeWidthHeightIsLabelSmallShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelSmallMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelSmallTall: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelMediumShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelMediumMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelMediumTall: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelLargeShorter: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelLargeShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelLargeMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelLargeTall: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelLargeTaller: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelXLargeShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelXLargeMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIsLabelXLargeTall: SizingWidthHeightSemanticToken { get set }
+    var sizeWidthHeightIsLabelSmallShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelSmallMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelSmallTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelMediumShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelMediumMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelMediumTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelLargeShorter: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelLargeShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelLargeMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelLargeTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelLargeTaller: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelXLargeShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelXLargeMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIsLabelXLargeTall: SizingWidthHeightSemanticToken { get }
 
     // MARK: Semantic token - Sizing - Width height - Icon typography - Heading
 
-    var sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingSmallTall: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingMediumShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingMediumMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingMediumTall: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingLargeShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingLargeMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingLargeTall: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingXLargeShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsHeadingXLargeTall: SizingWidthHeightSemanticToken { get set }
+    var sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingSmallTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingMediumShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingMediumMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingMediumTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingLargeShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingLargeMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingLargeTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingXLargeShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingXLargeTall: SizingWidthHeightSemanticToken { get }
 
     // MARK: Semantic token - Sizing - Width height - Icon typography - Body
 
-    var sizeWidthHeightIconIsBodySmallShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsBodyMediumShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsBodyMediumMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsBodyMediumTall: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsBodyLargeShort: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken { get set }
-    var sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken { get set }
+    var sizeWidthHeightIconIsBodySmallShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsBodyMediumShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsBodyMediumMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsBodyMediumTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsBodyLargeShort: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken { get }
 
     // MARK: Semantic token - Sizing - Max width
 
-    var sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken { get set }
-    var sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken { get set }
-    var sizeMaxWidthTypographyDisplayLarge: SizingMaxWidthSemanticToken { get set }
-    var sizeMaxWidthTypographyHeadingSmall: SizingMaxWidthSemanticToken { get set }
-    var sizeMaxWidthTypographyHeadingMedium: SizingMaxWidthSemanticToken { get set }
-    var sizeMaxWidthTypographyHeadingLarge: SizingMaxWidthSemanticToken { get set }
-    var sizeMaxWidthTypographyHeadingXLarge: SizingMaxWidthSemanticToken { get set }
-    var sizeMaxWidthTypographyBodySmall: SizingMaxWidthSemanticToken { get set }
-    var sizeMaxWidthTypographyBodyMedium: SizingMaxWidthSemanticToken { get set }
-    var sizeMaxWidthTypographyBodyLarge: SizingMaxWidthSemanticToken { get set }
-
-
-    
+    var sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyDisplayLarge: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyHeadingSmall: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyHeadingMedium: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyHeadingLarge: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyHeadingXLarge: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyBodySmall: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyBodyMedium: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyBodyLarge: SizingMaxWidthSemanticToken { get }
 }

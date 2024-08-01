@@ -12,18 +12,20 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias DimensionSemanticToken = DimensionPrimitiveToken
+public typealias DimensionSemanticToken = DimensionRawToken
 
 // MARK: - Semantic tokens
 
+/// This is a group of semantic tokens for **dimensions**.
+/// It defines all `DimensionSemanticToken` a theme must have.
 public protocol DimensionSemanticTokens {
-    
+
     // MARK: Semantic token - Dimension
 
-    var dimensionDensityDefault: DimensionSemanticToken { get set }
-    
+    var dimensionDensityDefault: DimensionSemanticToken { get }
+
 }

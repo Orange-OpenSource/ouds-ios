@@ -12,140 +12,141 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias TypographyFontFamilySemanticToken = TypographyFontFamilyPrimitiveToken
-public typealias TypographyFontWeightSemanticToken = TypographyFontWeightPrimitiveToken
-public typealias TypographyFontSizeSemanticToken = TypographyFontSizePrimitiveToken
-public typealias TypographyFontLineHeightSemanticToken = TypographyFontLineHeightPrimitiveToken
+public typealias TypographyFontFamilySemanticToken = TypographyFontFamilyRawToken
+public typealias TypographyFontWeightSemanticToken = TypographyFontWeightRawToken
+public typealias TypographyFontSizeSemanticToken = TypographyFontSizeRawToken
+public typealias TypographyFontLineHeightSemanticToken = TypographyFontLineHeightRawToken
 
 // MARK: - Semantic tokens
 
+/// This is a group of semantic tokens for **typography**.
+/// It defines all `TypographySemanticToken` a theme must have.
 public protocol TypographySemanticTokens {
-    
+
     // MARK: Semantic token - Typography - Font - Family
 
-    var fontFamilyDisplay: TypographyFontFamilySemanticToken { get set }
-    var fontFamilyHeading: TypographyFontFamilySemanticToken { get set }
-    var fontFamilyBody: TypographyFontFamilySemanticToken { get set }
-    var fontFamilyLabel: TypographyFontFamilySemanticToken { get set }
-    var fontFamilyCode: TypographyFontFamilySemanticToken { get set }
+    var fontFamilyDisplay: TypographyFontFamilySemanticToken { get }
+    var fontFamilyHeading: TypographyFontFamilySemanticToken { get }
+    var fontFamilyBody: TypographyFontFamilySemanticToken { get }
+    var fontFamilyLabel: TypographyFontFamilySemanticToken { get }
+    var fontFamilyCode: TypographyFontFamilySemanticToken { get }
 
     // MARK: Semantic token - Typography - Font - Weight
 
-    var fontWeightDisplay: TypographyFontWeightSemanticToken { get set }
-    var fontWeightHeading: TypographyFontWeightSemanticToken { get set }
-    var fontWeightBodyDefault: TypographyFontWeightSemanticToken { get set }
-    var fontWeightBodyStrong: TypographyFontWeightSemanticToken { get set }
-    var fontWeightLabelDefault: TypographyFontWeightSemanticToken { get set }
-    var fontWeightLabelStrong: TypographyFontWeightSemanticToken { get set }
-    var fontWeightWeightCode: TypographyFontWeightSemanticToken { get set }
+    var fontWeightDisplay: TypographyFontWeightSemanticToken { get }
+    var fontWeightHeading: TypographyFontWeightSemanticToken { get }
+    var fontWeightBodyDefault: TypographyFontWeightSemanticToken { get }
+    var fontWeightBodyStrong: TypographyFontWeightSemanticToken { get }
+    var fontWeightLabelDefault: TypographyFontWeightSemanticToken { get }
+    var fontWeightLabelStrong: TypographyFontWeightSemanticToken { get }
+    var fontWeightWeightCode: TypographyFontWeightSemanticToken { get }
 
     // MARK: Semantic token - Typography - Font - Size - Mobile
 
-    var fontSizeMobileDislayLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeMobileDisplayMedium: TypographyFontSizeSemanticToken { get set }
-    var fontSizeMobileDisplaySmall: TypographyFontSizeSemanticToken { get set }
-    var fontSizeMobileHeadingXLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeMobileHeadingLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeMobileHeadingMedium: TypographyFontSizeSemanticToken { get set }
-    var fontSizeMobileHeadingSmall: TypographyFontSizeSemanticToken { get set }
-    var fontSizeMobileBodyLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeMobileBodyMedium: TypographyFontSizeSemanticToken { get set }
-    var fontSizeMobileBodySmall: TypographyFontSizeSemanticToken { get set }
+    var fontSizeMobileDislayLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeMobileDisplayMedium: TypographyFontSizeSemanticToken { get }
+    var fontSizeMobileDisplaySmall: TypographyFontSizeSemanticToken { get }
+    var fontSizeMobileHeadingXLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeMobileHeadingLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeMobileHeadingMedium: TypographyFontSizeSemanticToken { get }
+    var fontSizeMobileHeadingSmall: TypographyFontSizeSemanticToken { get }
+    var fontSizeMobileBodyLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeMobileBodyMedium: TypographyFontSizeSemanticToken { get }
+    var fontSizeMobileBodySmall: TypographyFontSizeSemanticToken { get }
 
     // MARK: Semantic token - Typography - Font - Size - Tablet
 
-    var fontSizeTabletDislayLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeTabletDisplayMedium: TypographyFontSizeSemanticToken { get set }
-    var fontSizeTabletDisplaySmall: TypographyFontSizeSemanticToken { get set }
-    var fontSizeTabletHeadingXLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeTabletHeadingLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeTabletHeadingMedium: TypographyFontSizeSemanticToken { get set }
-    var fontSizeTabletHeadingSmall: TypographyFontSizeSemanticToken { get set }
-    var fontSizeTabletBodyLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeTabletBodyMedium: TypographyFontSizeSemanticToken { get set }
-    var fontSizeTabletBodySmall: TypographyFontSizeSemanticToken { get set }
+    var fontSizeTabletDislayLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeTabletDisplayMedium: TypographyFontSizeSemanticToken { get }
+    var fontSizeTabletDisplaySmall: TypographyFontSizeSemanticToken { get }
+    var fontSizeTabletHeadingXLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeTabletHeadingLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeTabletHeadingMedium: TypographyFontSizeSemanticToken { get }
+    var fontSizeTabletHeadingSmall: TypographyFontSizeSemanticToken { get }
+    var fontSizeTabletBodyLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeTabletBodyMedium: TypographyFontSizeSemanticToken { get }
+    var fontSizeTabletBodySmall: TypographyFontSizeSemanticToken { get }
 
     // MARK: Semantic token - Typography - Font - Size - Others
 
-    var fontSizeLabelXLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeLabelLarge: TypographyFontSizeSemanticToken { get set }
-    var fontSizeLabelMedium: TypographyFontSizeSemanticToken { get set }
-    var fontSizeLabelSmall: TypographyFontSizeSemanticToken { get set }
-    var fontSizeCodeMedium: TypographyFontSizeSemanticToken { get set }
-    var fontSizeCodeSmall: TypographyFontSizeSemanticToken { get set }
+    var fontSizeLabelXLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeLabelLarge: TypographyFontSizeSemanticToken { get }
+    var fontSizeLabelMedium: TypographyFontSizeSemanticToken { get }
+    var fontSizeLabelSmall: TypographyFontSizeSemanticToken { get }
+    var fontSizeCodeMedium: TypographyFontSizeSemanticToken { get }
+    var fontSizeCodeSmall: TypographyFontSizeSemanticToken { get }
 
     // MARK: Semantic token - Typography - Font - Light height - Mobile
 
-    var fontLineHeightMobileDislayLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightMobileDisplayMedium: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightMobileDisplaySmall: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightMobileHeadingXLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightMobileHeadingLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightMobileHeadingMedium: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightMobileHeadingSmall: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightMobileBodyLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightMobileBodyMedium: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightMobileBodySmall: TypographyFontLineHeightSemanticToken { get set }
+    var fontLineHeightMobileDislayLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightMobileDisplayMedium: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightMobileDisplaySmall: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightMobileHeadingXLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightMobileHeadingLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightMobileHeadingMedium: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightMobileHeadingSmall: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightMobileBodyLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightMobileBodyMedium: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightMobileBodySmall: TypographyFontLineHeightSemanticToken { get }
 
     // MARK: Semantic token - Typography - Font - Light height - Tablet
 
-    var fontLineHeightTabletDislayLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightTabletDisplayMedium: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightTabletDisplaySmall: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightTabletHeadingXLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightTabletHeadingLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightTabletHeadingMedium: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightTabletHeadingSmall: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightTabletBodyLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightTabletBodyMedium: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightTabletBodySmall: TypographyFontLineHeightSemanticToken { get set }
+    var fontLineHeightTabletDislayLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightTabletDisplayMedium: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightTabletDisplaySmall: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightTabletHeadingXLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightTabletHeadingLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightTabletHeadingMedium: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightTabletHeadingSmall: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightTabletBodyLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightTabletBodyMedium: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightTabletBodySmall: TypographyFontLineHeightSemanticToken { get }
 
     // MARK: Semantic token - Typography - Font - Light height - Others
 
-    var fontLineHeightLabelXLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightLabelLarge: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightLabelMedium: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightLabelSmall: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken { get set }
-    var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { get set }
+    var fontLineHeightLabelXLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightLabelLarge: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightLabelMedium: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightLabelSmall: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken { get }
+    var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { get }
 
     // MARK: Semantic token - Typography - Font - Paragraph spacing - Mobile
 
-    var fontParagraphSpacingMobileDislayLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingMobileDisplayMedium: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingMobileDisplaySmall: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingMobileHeadingXLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingMobileHeadingLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingMobileHeadingMedium: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingMobileHeadingSmall: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingMobileBodyLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingMobileBodyMedium: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingMobileBodySmall: TypographyFontParagraphSpacingPrimitiveToken { get set }
+    var fontParagraphSpacingMobileDislayLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingMobileDisplayMedium: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingMobileDisplaySmall: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingMobileHeadingXLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingMobileHeadingLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingMobileHeadingMedium: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingMobileHeadingSmall: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingMobileBodyLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingMobileBodyMedium: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingMobileBodySmall: TypographyFontParagraphSpacingRawToken { get }
 
     // MARK: Semantic token - Typography - Font - Paragraph spacing - Tablet
 
-    var fontParagraphSpacingTabletDislayLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingTabletDisplayMedium: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingTabletDisplaySmall: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingTabletHeadingXLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingTabletHeadingLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingTabletHeadingMedium: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingTabletHeadingSmall: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingTabletBodyLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingTabletBodyMedium: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingTabletBodySmall: TypographyFontParagraphSpacingPrimitiveToken { get set }
+    var fontParagraphSpacingTabletDislayLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingTabletDisplayMedium: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingTabletDisplaySmall: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingTabletHeadingXLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingTabletHeadingLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingTabletHeadingMedium: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingTabletHeadingSmall: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingTabletBodyLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingTabletBodyMedium: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingTabletBodySmall: TypographyFontParagraphSpacingRawToken { get }
 
     // MARK: Semantic token - Typography - Font - Paragraph spacing - Others
 
-    var fontParagraphSpacingLabelXLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingLabelLarge: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingLabelMedium: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingLabelSmall: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingCodeMedium: TypographyFontParagraphSpacingPrimitiveToken { get set }
-    var fontParagraphSpacingCodeSmall: TypographyFontParagraphSpacingPrimitiveToken { get set }
-
+    var fontParagraphSpacingLabelXLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingLabelLarge: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingLabelMedium: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingLabelSmall: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingCodeMedium: TypographyFontParagraphSpacingRawToken { get }
+    var fontParagraphSpacingCodeSmall: TypographyFontParagraphSpacingRawToken { get }
 }

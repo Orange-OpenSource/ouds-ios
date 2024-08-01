@@ -16,24 +16,16 @@ import SwiftUI
 import OUDSFoundations
 import OUDSThemesShared
 
-// MARK: - Definition of the component
-
-/// An OUDS component for text input. A plain SwftUI ocmponent not so related to OUDS
-/// A form input is a component which can be defined by:
-/// - a set of background colors (enabled, disabled, active, hover, selected, focus)
-/// - a set of border widths (enabled, disabled, active, hover, selected, focus)
+/// An OUDS component for text input in formulars.
 public struct OUDSFormsTextInput: View{
-
-    @Environment(\.theme) var theme
-    
-    // MARK: - Component implementation own properties
 
     var placeholder: String
     @Binding var value: String
     var isEnabled: Bool
     @Environment(\.colorScheme) var colorScheme
 
-    // MARK: - SwiftUI body
+    /// Current OUDS theme to load styles
+    @Environment(\.theme) var theme
 
     public init(placeholder: String, value: Binding<String>, isEnabled: Bool = true) {
         self.placeholder = placeholder
@@ -49,5 +41,4 @@ public struct OUDSFormsTextInput: View{
         .background(isEnabled ? theme.formsTextInputColorBackgroundEnabled.color : theme.formsTextInputColorBackgroundDisabled.color)
         .border(theme.colorBorderDefaultDark?.color ?? oudsDefaultColor, width: isEnabled ? theme.formsTextInputBorderWidthEnabled : theme.formsTextInputBorderWidthDisabled)
     }
-    
 }

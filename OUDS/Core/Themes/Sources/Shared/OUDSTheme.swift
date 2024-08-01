@@ -12,15 +12,17 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 import OUDSTokensSemantic
 
-/// Use an open Swift class will help users to make their own themes by overriding this current theme.
-/// Any properties of an overridable theme should be defined so as to provide deffaults values.
+/// This is a basic theme any themes must be a subclass off.
+/// A Swift `class` has been sued to as to allow to easily override some attributes and have inheritance, wihtout having for developers
+/// to implement all tokens.
+/// Any properties of an overridable theme should be defined so as to provide defaults values.
 /// We allow this theme to be derivated / be overriden.
 open class OUDSTheme {
     
     public init() { }
     
-    // Please refer to extensions
+    // Please refer to extensions for properties, it will be more clear
 }

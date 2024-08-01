@@ -12,40 +12,41 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias BorderWidthSemanticToken = BorderWidthPrimitiveToken
-public typealias BorderRadiusSemanticToken = BorderRadiusPrimitiveToken
-public typealias BorderStyleSemanticToken = BorderStylePrimitiveToken
+public typealias BorderWidthSemanticToken = BorderWidthRawToken
+public typealias BorderRadiusSemanticToken = BorderRadiusRawToken
+public typealias BorderStyleSemanticToken = BorderStyleRawToken
 
 // MARK: - Semantic tokens
 
-public protocol BorderSemanticTokens { 
-    
+/// This is a group of semantic tokens for **borders**.
+/// It defines all `BorderWidthSemanticToken` a theme must have.
+public protocol BorderSemanticTokens {
+
     // MARK: Semantic token - Border - Width
 
-    var borderWidthNone: BorderWidthSemanticToken { get set }
-    var borderWidthDefault: BorderWidthSemanticToken { get set }
-    var borderWidthThin: BorderWidthSemanticToken { get set }
-    var borderWidthThick: BorderWidthSemanticToken { get set }
-    var borderWidthThicker: BorderWidthSemanticToken { get set }
-    var borderWidthThickest: BorderWidthSemanticToken { get set }
-    var borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken { get set }
+    var borderWidthNone: BorderWidthSemanticToken { get }
+    var borderWidthDefault: BorderWidthSemanticToken { get }
+    var borderWidthThin: BorderWidthSemanticToken { get }
+    var borderWidthThick: BorderWidthSemanticToken { get }
+    var borderWidthThicker: BorderWidthSemanticToken { get }
+    var borderWidthThickest: BorderWidthSemanticToken { get }
+    var borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken { get }
 
     // MARK: Semantic token - Border - Radius
 
-    var borderRadiusNone: BorderRadiusSemanticToken { get set }
-    var borderRadiusDefault: BorderRadiusSemanticToken { get set }
-    var borderRadiusShort: BorderRadiusSemanticToken { get set }
-    var borderRadiusMedium: BorderRadiusSemanticToken { get set }
-    var borderRadiusTall: BorderRadiusSemanticToken { get set }
-    var borderRadiusPill: BorderRadiusSemanticToken { get set }
+    var borderRadiusNone: BorderRadiusSemanticToken { get }
+    var borderRadiusDefault: BorderRadiusSemanticToken { get }
+    var borderRadiusShort: BorderRadiusSemanticToken { get }
+    var borderRadiusMedium: BorderRadiusSemanticToken { get }
+    var borderRadiusTall: BorderRadiusSemanticToken { get }
+    var borderRadiusPill: BorderRadiusSemanticToken { get }
 
     // MARK: Semantic token - Border - Style
 
-    var borderStyleDefault: BorderStyleSemanticToken { get set }
-    var borderStyleDrag: BorderStyleSemanticToken { get set }
-    
+    var borderStyleDefault: BorderStyleSemanticToken { get }
+    var borderStyleDrag: BorderStyleSemanticToken { get }
 }

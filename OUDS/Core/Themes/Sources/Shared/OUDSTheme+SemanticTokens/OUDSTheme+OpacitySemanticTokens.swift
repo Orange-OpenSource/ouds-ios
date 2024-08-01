@@ -12,15 +12,17 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 import OUDSTokensSemantic
 
+/// Defines basic values common to all themes for `OpacitySemanticTokens`.
+/// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: OpacitySemanticTokens {
-    
-    @objc open var opacityTransparent: OpacitySemanticToken { get { OpacityPrimitiveTokens.opacity0 } set { } }
-    @objc open var opacityWeaker: OpacitySemanticToken { get { OpacityPrimitiveTokens.opacity100 } set { } }
-    @objc open var opacityWeak: OpacitySemanticToken { get { OpacityPrimitiveTokens.opacity300 } set { } }
-    @objc open var opacityMedum: OpacitySemanticToken { get { OpacityPrimitiveTokens.opacity500 } set { } }
-    @objc open var opacityEmphasis: OpacitySemanticToken { get { OpacityPrimitiveTokens.opacity700 } set { } }
-    @objc open var opacityOpaque: OpacitySemanticToken { get { OpacityPrimitiveTokens.opacity900 } set { } }
+
+    @objc open var opacityTransparent: OpacitySemanticToken { OpacityRawTokens.opacity0 }
+    @objc open var opacityWeaker: OpacitySemanticToken { OpacityRawTokens.opacity100 }
+    @objc open var opacityWeak: OpacitySemanticToken { OpacityRawTokens.opacity300 }
+    @objc open var opacityMedum: OpacitySemanticToken { OpacityRawTokens.opacity500 }
+    @objc open var opacityEmphasis: OpacitySemanticToken { OpacityRawTokens.opacity700 }
+    @objc open var opacityOpaque: OpacitySemanticToken { OpacityRawTokens.opacity900 }
 }

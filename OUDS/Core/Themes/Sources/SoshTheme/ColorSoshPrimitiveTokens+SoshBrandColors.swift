@@ -13,7 +13,7 @@
 
 import Foundation
 import SwiftUI
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
@@ -21,8 +21,10 @@ public typealias ColorSoshPrimitiveToken = String
 
 // MARK: Primitive tokens
 
-extension ColorPrimitiveTokens {
-    
+/// This extension helps to add new raw tokens for this theme.
+/// Type aliases here are just for consistancy reasons.
+extension ColorRawTokens {
+
     // MARK: Primitive token - Colors - Sosh - Magenta
 
     public static let colorDecorativeMagenta50: ColorSoshPrimitiveToken = "#FCE9EE"

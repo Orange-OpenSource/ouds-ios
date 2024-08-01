@@ -12,138 +12,139 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias ElevationZIndexSemanticToken = ElevationPrimitiveToken
-public typealias ElevationXSemanticToken = ElevationPrimitiveToken
-public typealias ElevationYSemanticToken = ElevationPrimitiveToken
-public typealias ElevationBlurSemanticToken = ElevationPrimitiveToken
-public typealias ElevationSpreadSemanticToken = ElevationPrimitiveToken
-public typealias ElevationColorSemanticToken = ColorTransparentPrimitiveToken
+public typealias ElevationZIndexSemanticToken = ElevationRawToken
+public typealias ElevationXSemanticToken = ElevationRawToken
+public typealias ElevationYSemanticToken = ElevationRawToken
+public typealias ElevationBlurSemanticToken = ElevationRawToken
+public typealias ElevationSpreadSemanticToken = ElevationRawToken
+public typealias ElevationColorSemanticToken = ColorTransparentRawToken
 
 // MARK: - Semantic tokens
 
+/// This is a group of semantic tokens for **elevations**.
+/// It defines all `ElevationSemanticToken` a theme must have.
 public protocol ElevationSemanticTokens {
-    
+
     // MARK: Semantic token - Elevation - Z index
 
-    var elevationZIndexDeep: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexDefault: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexDropdown: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexSticky: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexFixed: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexBackToTop: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexSpinner: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexOffCanvasBackdrop: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexOffCanvas: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexModalBackdrop: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexModal: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexPopover: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexTooltip: ElevationZIndexSemanticToken { get set }
-    var elevationZIndexToast: ElevationZIndexSemanticToken { get set }
+    var elevationZIndexDeep: ElevationZIndexSemanticToken { get }
+    var elevationZIndexDefault: ElevationZIndexSemanticToken { get }
+    var elevationZIndexDropdown: ElevationZIndexSemanticToken { get }
+    var elevationZIndexSticky: ElevationZIndexSemanticToken { get }
+    var elevationZIndexFixed: ElevationZIndexSemanticToken { get }
+    var elevationZIndexBackToTop: ElevationZIndexSemanticToken { get }
+    var elevationZIndexSpinner: ElevationZIndexSemanticToken { get }
+    var elevationZIndexOffCanvasBackdrop: ElevationZIndexSemanticToken { get }
+    var elevationZIndexOffCanvas: ElevationZIndexSemanticToken { get }
+    var elevationZIndexModalBackdrop: ElevationZIndexSemanticToken { get }
+    var elevationZIndexModal: ElevationZIndexSemanticToken { get }
+    var elevationZIndexPopover: ElevationZIndexSemanticToken { get }
+    var elevationZIndexTooltip: ElevationZIndexSemanticToken { get }
+    var elevationZIndexToast: ElevationZIndexSemanticToken { get }
 
     // MARK: Semantic token - Elevation - X
 
-    var elevationXNone: ElevationZIndexSemanticToken { get set }
-    var elevationXRaised: ElevationZIndexSemanticToken { get set }
-    var elevationXDrag: ElevationZIndexSemanticToken { get set }
-    var elevationXOverlayDefault: ElevationZIndexSemanticToken { get set }
-    var elevationXOverlayEmphasis: ElevationZIndexSemanticToken { get set }
-    var elevationXStickyDefault: ElevationZIndexSemanticToken { get set }
-    var elevationXStickyEmphasis: ElevationZIndexSemanticToken { get set }
-    var elevationXStickyNavigationScrolled: ElevationZIndexSemanticToken { get set }
-    var elevationXFOcus: ElevationZIndexSemanticToken { get set }
+    var elevationXNone: ElevationZIndexSemanticToken { get }
+    var elevationXRaised: ElevationZIndexSemanticToken { get }
+    var elevationXDrag: ElevationZIndexSemanticToken { get }
+    var elevationXOverlayDefault: ElevationZIndexSemanticToken { get }
+    var elevationXOverlayEmphasis: ElevationZIndexSemanticToken { get }
+    var elevationXStickyDefault: ElevationZIndexSemanticToken { get }
+    var elevationXStickyEmphasis: ElevationZIndexSemanticToken { get }
+    var elevationXStickyNavigationScrolled: ElevationZIndexSemanticToken { get }
+    var elevationXFOcus: ElevationZIndexSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Y
 
-    var elevationYNone: ElevationZIndexSemanticToken { get set }
-    var elevationYRaised: ElevationZIndexSemanticToken { get set }
-    var elevationYDrag: ElevationZIndexSemanticToken { get set }
-    var elevationYOverlayDefault: ElevationZIndexSemanticToken { get set }
-    var elevationYOverlayEmphasis: ElevationZIndexSemanticToken { get set }
-    var elevationYStickyDefault: ElevationZIndexSemanticToken { get set }
-    var elevationYStickyEmphasis: ElevationZIndexSemanticToken { get set }
-    var elevationYStickyNavigationScrolled: ElevationZIndexSemanticToken { get set }
-    var elevationYFocus: ElevationZIndexSemanticToken { get set }
+    var elevationYNone: ElevationZIndexSemanticToken { get }
+    var elevationYRaised: ElevationZIndexSemanticToken { get }
+    var elevationYDrag: ElevationZIndexSemanticToken { get }
+    var elevationYOverlayDefault: ElevationZIndexSemanticToken { get }
+    var elevationYOverlayEmphasis: ElevationZIndexSemanticToken { get }
+    var elevationYStickyDefault: ElevationZIndexSemanticToken { get }
+    var elevationYStickyEmphasis: ElevationZIndexSemanticToken { get }
+    var elevationYStickyNavigationScrolled: ElevationZIndexSemanticToken { get }
+    var elevationYFocus: ElevationZIndexSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Blur
 
-    var elevationBlurNone: ElevationBlurSemanticToken { get set }
-    var elevationBlurRaised: ElevationBlurSemanticToken { get set }
-    var elevationBlurDrag: ElevationBlurSemanticToken { get set }
-    var elevationBlurOverlayDefault: ElevationBlurSemanticToken { get set }
-    var elevationBlurOverlayEmphasis: ElevationBlurSemanticToken { get set }
-    var elevationBlurStickyDefault: ElevationBlurSemanticToken { get set }
-    var elevationBlurStickyEmphasis: ElevationBlurSemanticToken { get set }
-    var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { get set }
-    var elevationBlurFocus: ElevationBlurSemanticToken { get set }
+    var elevationBlurNone: ElevationBlurSemanticToken { get }
+    var elevationBlurRaised: ElevationBlurSemanticToken { get }
+    var elevationBlurDrag: ElevationBlurSemanticToken { get }
+    var elevationBlurOverlayDefault: ElevationBlurSemanticToken { get }
+    var elevationBlurOverlayEmphasis: ElevationBlurSemanticToken { get }
+    var elevationBlurStickyDefault: ElevationBlurSemanticToken { get }
+    var elevationBlurStickyEmphasis: ElevationBlurSemanticToken { get }
+    var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { get }
+    var elevationBlurFocus: ElevationBlurSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Spread
 
-    var elevationSpreadNone: ElevationSpreadSemanticToken { get set }
-    var elevationSpreadRaised: ElevationSpreadSemanticToken { get set }
-    var elevationSpreadDrag: ElevationSpreadSemanticToken { get set }
-    var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken { get set }
-    var elevationSpreadOverlayEmphasis: ElevationSpreadSemanticToken { get set }
-    var elevationSpreadStickyDefault: ElevationSpreadSemanticToken { get set }
-    var elevationSpreadStickyEmphasis: ElevationSpreadSemanticToken { get set }
-    var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken { get set }
-    var elevationSpreadFocus: ElevationSpreadSemanticToken { get set }
+    var elevationSpreadNone: ElevationSpreadSemanticToken { get }
+    var elevationSpreadRaised: ElevationSpreadSemanticToken { get }
+    var elevationSpreadDrag: ElevationSpreadSemanticToken { get }
+    var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken { get }
+    var elevationSpreadOverlayEmphasis: ElevationSpreadSemanticToken { get }
+    var elevationSpreadStickyDefault: ElevationSpreadSemanticToken { get }
+    var elevationSpreadStickyEmphasis: ElevationSpreadSemanticToken { get }
+    var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken { get }
+    var elevationSpreadFocus: ElevationSpreadSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - None
 
-    var elevationColorNoneLigh: ElevationColorSemanticToken { get set }
-    var elevationColorNoneDark: ElevationColorSemanticToken { get set }
-    var elevationColorNoneInverse: ElevationColorSemanticToken { get set }
+    var elevationColorNoneLigh: ElevationColorSemanticToken { get }
+    var elevationColorNoneDark: ElevationColorSemanticToken { get }
+    var elevationColorNoneInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Raised
 
-    var elevationColorRaisedLigh: ElevationColorSemanticToken { get set }
-    var elevationColorRaisedDark: ElevationColorSemanticToken { get set }
-    var elevationColorRaisedInverse: ElevationColorSemanticToken { get set }
+    var elevationColorRaisedLigh: ElevationColorSemanticToken { get }
+    var elevationColorRaisedDark: ElevationColorSemanticToken { get }
+    var elevationColorRaisedInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Drag
 
-    var elevationColorDragLigh: ElevationColorSemanticToken { get set }
-    var elevationColorDragDark: ElevationColorSemanticToken { get set }
-    var elevationColorDragInverse: ElevationColorSemanticToken { get set }
+    var elevationColorDragLigh: ElevationColorSemanticToken { get }
+    var elevationColorDragDark: ElevationColorSemanticToken { get }
+    var elevationColorDragInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Default
 
-    var elevationColorOverlayDefaultLigh: ElevationColorSemanticToken { get set }
-    var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { get set }
-    var elevationColorOverlayDefaultInverse: ElevationColorSemanticToken { get set }
+    var elevationColorOverlayDefaultLigh: ElevationColorSemanticToken { get }
+    var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { get }
+    var elevationColorOverlayDefaultInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Emphasis
 
-    var elevationColorOverlayEmphasisLigh: ElevationColorSemanticToken { get set }
-    var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken { get set }
-    var elevationColorOverlayEmphasisInverse: ElevationColorSemanticToken { get set }
+    var elevationColorOverlayEmphasisLigh: ElevationColorSemanticToken { get }
+    var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken { get }
+    var elevationColorOverlayEmphasisInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Default
 
-    var elevationColorStickyDefaultLigh: ElevationColorSemanticToken { get set }
-    var elevationColorStickyDefaultDark: ElevationColorSemanticToken { get set }
-    var elevationColorStickyDefaultInverse: ElevationColorSemanticToken { get set }
+    var elevationColorStickyDefaultLigh: ElevationColorSemanticToken { get }
+    var elevationColorStickyDefaultDark: ElevationColorSemanticToken { get }
+    var elevationColorStickyDefaultInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Emphasis
 
-    var elevationColorStickyEmphasisLigh: ElevationColorSemanticToken { get set }
-    var elevationColorStickyEmphasisDark: ElevationColorSemanticToken { get set }
-    var elevationColorStickyEmphasisInverse: ElevationColorSemanticToken { get set }
+    var elevationColorStickyEmphasisLigh: ElevationColorSemanticToken { get }
+    var elevationColorStickyEmphasisDark: ElevationColorSemanticToken { get }
+    var elevationColorStickyEmphasisInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
-    var elevationColorStickyNavigationScrolledLigh: ElevationColorSemanticToken { get set }
-    var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { get set }
-    var elevationColorStickyNavigationScrolledInverse: ElevationColorSemanticToken { get set }
+    var elevationColorStickyNavigationScrolledLigh: ElevationColorSemanticToken { get }
+    var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { get }
+    var elevationColorStickyNavigationScrolledInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Focus
 
-    var elevationColorFocusLigh: ElevationColorSemanticToken { get set }
-    var elevationColorFocusDark: ElevationColorSemanticToken { get set }
-    var elevationColorFocusInverse: ElevationColorSemanticToken { get set }
-
+    var elevationColorFocusLigh: ElevationColorSemanticToken { get }
+    var elevationColorFocusDark: ElevationColorSemanticToken { get }
+    var elevationColorFocusInverse: ElevationColorSemanticToken { get }
 }

@@ -14,24 +14,25 @@
 import Foundation
 import OUDSTokensSemantic
 
+/// This is a component token for a text input in formulars.
+/// It can be defined by a groupe of background colors and border widths.
 public protocol FormsTextInputComponentToken {
-    
+
     // MARK: Semantic token - Forms Text Input - Color - Background
 
-    var formsTextInputColorBackgroundEnabled: ColorSemanticToken { get set }
-    var formsTextInputColorBackgroundHover: ColorSemanticToken { get set }
-    var formsTextInputColorBackgroundActive: ColorSemanticToken { get set }
-    var formsTextInputColorBackgroundSelected: ColorSemanticToken { get set }
-    var formsTextInputColorBackgroundDisabled: ColorSemanticToken { get set }
-    var formsTextInputColorBackgroundFocused: ColorSemanticToken { get set }
+    var formsTextInputColorBackgroundEnabled: ColorSemanticToken { get }
+    var formsTextInputColorBackgroundHover: ColorSemanticToken { get }
+    var formsTextInputColorBackgroundActive: ColorSemanticToken { get }
+    var formsTextInputColorBackgroundSelected: ColorSemanticToken { get }
+    var formsTextInputColorBackgroundDisabled: ColorSemanticToken { get }
+    var formsTextInputColorBackgroundFocused: ColorSemanticToken { get }
 
     // MARK: Semantic token - Forms Text Input - Border - Width
 
-    var formsTextInputBorderWidthEnabled: BorderWidthSemanticToken { get set }
-    var formsTextInputBorderWidthHover: BorderWidthSemanticToken { get set }
-    var formsTextInputBorderWidthActive: BorderWidthSemanticToken { get set }
-    var formsTextInputBorderWidthSelected: BorderWidthSemanticToken { get set }
-    var formsTextInputBorderWidthDisabled: BorderWidthSemanticToken { get set }
-    var formsTextInputBorderWidthFocused: BorderWidthSemanticToken { get set }
-
+    var formsTextInputBorderWidthEnabled: BorderWidthSemanticToken { get }
+    var formsTextInputBorderWidthHover: BorderWidthSemanticToken { get }
+    var formsTextInputBorderWidthActive: BorderWidthSemanticToken { get }
+    var formsTextInputBorderWidthSelected: BorderWidthSemanticToken { get }
+    var formsTextInputBorderWidthDisabled: BorderWidthSemanticToken { get }
+    var formsTextInputBorderWidthFocused: BorderWidthSemanticToken { get }
 }

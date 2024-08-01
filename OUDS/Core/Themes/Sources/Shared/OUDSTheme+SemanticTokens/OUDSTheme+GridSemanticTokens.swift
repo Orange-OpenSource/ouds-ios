@@ -12,33 +12,34 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 import OUDSTokensSemantic
 
+/// Defines basic values common to all themes for `DimensionSemanticTokens`.
+/// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: GridSemanticTokens {
-    
+
     // MARK: Semantic token - Grid - iOS Extra compact
 
-    @objc open var gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticToken { get { GridPrimitiveTokens.gridMinWidthIOSExtraCompact } set { } }
-    @objc open var gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticToken { get { GridPrimitiveTokens.gridMaxWidthIOSExtraCompact } set { } }
-    @objc open var gridIOSExtraCompactMargin: GridIOSExtraCompactSemanticToken { get { GridPrimitiveTokens.gridMargin100 } set { } }
-    @objc open var gridIOSExtraCompactColumnGap: GridIOSExtraCompactSemanticToken { get { GridPrimitiveTokens.gridColumnGap100 } set { } }
-    @objc open var gridIOSExtraCompactColumnCount: GridIOSExtraCompactSemanticToken { get { GridPrimitiveTokens.gridColumnCount100 } set { } }
+    @objc open var gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticToken { GridRawTokens.gridMinWidthIOSExtraCompact }
+    @objc open var gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticToken { GridRawTokens.gridMaxWidthIOSExtraCompact }
+    @objc open var gridIOSExtraCompactMargin: GridIOSExtraCompactSemanticToken { GridRawTokens.gridMargin100 }
+    @objc open var gridIOSExtraCompactColumnGap: GridIOSExtraCompactSemanticToken { GridRawTokens.gridColumnGap100 }
+    @objc open var gridIOSExtraCompactColumnCount: GridIOSExtraCompactSemanticToken { GridRawTokens.gridColumnCount100 }
 
     // MARK: Semantic token - Grid - iOS Compact
 
-    @objc open var gridIOSCompactMinWidth: GridIOSCompactSemanticToken { get { GridPrimitiveTokens.gridMinWidthIOSCompact } set { } }
-    @objc open var gridIOSCompactMaxWidth: GridIOSCompactSemanticToken { get { GridPrimitiveTokens.gridMaxWidthIOSCompact } set { } }
-    @objc open var gridIOSCompactMargin: GridIOSCompactSemanticToken { get { GridPrimitiveTokens.gridMargin300 } set { } }
-    @objc open var gridIOSCompactColumnGap: GridIOSCompactSemanticToken { get { GridPrimitiveTokens.gridColumnGap100 } set { } }
-    @objc open var gridIOSCompactColumnCount: GridIOSCompactSemanticToken { get { GridPrimitiveTokens.gridColumnCount400 } set { } }
+    @objc open var gridIOSCompactMinWidth: GridIOSCompactSemanticToken { GridRawTokens.gridMinWidthIOSCompact }
+    @objc open var gridIOSCompactMaxWidth: GridIOSCompactSemanticToken { GridRawTokens.gridMaxWidthIOSCompact }
+    @objc open var gridIOSCompactMargin: GridIOSCompactSemanticToken { GridRawTokens.gridMargin300 }
+    @objc open var gridIOSCompactColumnGap: GridIOSCompactSemanticToken { GridRawTokens.gridColumnGap100 }
+    @objc open var gridIOSCompactColumnCount: GridIOSCompactSemanticToken { GridRawTokens.gridColumnCount400 }
 
     // MARK: Semantic token - Grid - iOS Regular
 
-    @objc open var gridIOSRegularMinWidth: GridIOSRegularSemanticToken { get { GridPrimitiveTokens.gridMinWidthIOSRegular } set { } }
-    @objc open var gridIOSRegularMaxWidth: GridIOSRegularSemanticToken { get { GridPrimitiveTokens.gridMaxWidthIOSRegular } set { } }
-    @objc open var gridIOSRegularMargin: GridIOSRegularSemanticToken { get { GridPrimitiveTokens.gridMargin500 } set { } }
-    @objc open var gridIOSRegularColumnGap: GridIOSRegularSemanticToken { get { GridPrimitiveTokens.gridColumnGap300 } set { } }
-    @objc open var gridIOSRegularColumnCount: GridIOSRegularSemanticToken { get { GridPrimitiveTokens.gridColumnCount600 } set { } }
-
+    @objc open var gridIOSRegularMinWidth: GridIOSRegularSemanticToken { GridRawTokens.gridMinWidthIOSRegular }
+    @objc open var gridIOSRegularMaxWidth: GridIOSRegularSemanticToken { GridRawTokens.gridMaxWidthIOSRegular }
+    @objc open var gridIOSRegularMargin: GridIOSRegularSemanticToken { GridRawTokens.gridMargin500 }
+    @objc open var gridIOSRegularColumnGap: GridIOSRegularSemanticToken { GridRawTokens.gridColumnGap300 }
+    @objc open var gridIOSRegularColumnCount: GridIOSRegularSemanticToken { GridRawTokens.gridColumnCount600 }
 }

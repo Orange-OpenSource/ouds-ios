@@ -12,10 +12,11 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 import OUDSThemesShared
 
+/// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
 open class SoshTheme: OUDSTheme {
-    
+
     // For clarity reasons, please override OUDSTheme properties in extensions
 }

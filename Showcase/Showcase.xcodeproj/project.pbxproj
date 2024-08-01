@@ -30,7 +30,9 @@
 		513AD93E2C5AA31E0003253B /* OUDSThemesShared in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93D2C5AA31E0003253B /* OUDSThemesShared */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
-		5178627F2C5A71AA0086789C /* OUDSTokensPrimitive in Frameworks */ = {isa = PBXBuildFile; productRef = 5178627E2C5A71AA0086789C /* OUDSTokensPrimitive */; };
+		5163068D2C5BC4D5009A5FC7 /* OUDSTokensRaw in Frameworks */ = {isa = PBXBuildFile; productRef = 5163068C2C5BC4D5009A5FC7 /* OUDSTokensRaw */; };
+		5163068F2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 5163068E2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme */; };
+		516306912C5BC4E5009A5FC7 /* OUDSThemesSoshTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 516306902C5BC4E5009A5FC7 /* OUDSThemesSoshTheme */; };
 		517862812C5A71AE0086789C /* OUDSTokensSemantic in Frameworks */ = {isa = PBXBuildFile; productRef = 517862802C5A71AE0086789C /* OUDSTokensSemantic */; };
 		51BD76212C466FCF0033365D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		51BD76222C466FCF0033365D /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760D2C466FCF0033365D /* ComponentsPage.swift */; };
@@ -88,14 +90,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				516306912C5BC4E5009A5FC7 /* OUDSThemesSoshTheme in Frameworks */,
 				513AD93E2C5AA31E0003253B /* OUDSThemesShared in Frameworks */,
 				510A9CD82C567B6A00430620 /* OUDSFoundations in Frameworks */,
 				E537B9B66A6466473179DEE8 /* Pods_Showcase.framework in Frameworks */,
 				513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */,
 				510A9CD22C5679A300430620 /* OUDSModules in Frameworks */,
+				5163068F2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme in Frameworks */,
 				517862812C5A71AE0086789C /* OUDSTokensSemantic in Frameworks */,
+				5163068D2C5BC4D5009A5FC7 /* OUDSTokensRaw in Frameworks */,
 				510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */,
-				5178627F2C5A71AA0086789C /* OUDSTokensPrimitive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +272,12 @@
 				510A9CCF2C5679A300430620 /* OUDSComponents */,
 				510A9CD12C5679A300430620 /* OUDSModules */,
 				510A9CD72C567B6A00430620 /* OUDSFoundations */,
-				5178627E2C5A71AA0086789C /* OUDSTokensPrimitive */,
 				517862802C5A71AE0086789C /* OUDSTokensSemantic */,
 				513AD93D2C5AA31E0003253B /* OUDSThemesShared */,
 				513AD93F2C5AAADE0003253B /* OUDSTokensComponent */,
+				5163068C2C5BC4D5009A5FC7 /* OUDSTokensRaw */,
+				5163068E2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme */,
+				516306902C5BC4E5009A5FC7 /* OUDSThemesSoshTheme */,
 			);
 			productName = DemoApp;
 			productReference = 07FDCD912C296A500009AA13 /* OUDS Showcase.app */;
@@ -705,9 +711,17 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSTokensComponent;
 		};
-		5178627E2C5A71AA0086789C /* OUDSTokensPrimitive */ = {
+		5163068C2C5BC4D5009A5FC7 /* OUDSTokensRaw */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = OUDSTokensPrimitive;
+			productName = OUDSTokensRaw;
+		};
+		5163068E2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSThemesOrangeTheme;
+		};
+		516306902C5BC4E5009A5FC7 /* OUDSThemesSoshTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSThemesSoshTheme;
 		};
 		517862802C5A71AE0086789C /* OUDSTokensSemantic */ = {
 			isa = XCSwiftPackageProductDependency;

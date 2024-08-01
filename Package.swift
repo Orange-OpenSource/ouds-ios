@@ -16,12 +16,14 @@
 import PackageDescription
 
 /// Exposing OUDS through a Swift Package is a good start.
-/// Expose it through Pod or xcframework should be investigated later.
+/// Expose it through Pod or XCFamework should be investigated later.
 /// Defining here hierarchy between targets will prevent us to have cyclic dependencies and help to have seperated responsibilities.
 let package = Package(
+    
     name: "OUDS",
     defaultLocalization: "en",
     platforms: [.iOS(.v15)],
+    
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
         .library(
@@ -44,14 +46,15 @@ let package = Package(
             targets: ["OUDSTokensComponent"]),
         .library(
             name: "OUDSTokensSemantic",
-            targets: ["OUDSTokensPrimitive"]),
+            targets: ["OUDSTokensRaw"]),
         .library(
-            name: "OUDSTokensPrimitive",
-            targets: ["OUDSTokensPrimitive"]),
+            name: "OUDSTokensRaw",
+            targets: ["OUDSTokensRaw"]),
         .library(
             name: "OUDSFoundations",
             targets: ["OUDSFoundations"]),
     ],
+    
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [
@@ -73,7 +76,7 @@ let package = Package(
             path: "OUDS/Core/Themes/Sources/SoshTheme"),
         .target(
             name: "OUDSThemesShared",
-            dependencies: ["OUDSTokensComponent", "OUDSTokensSemantic", "OUDSTokensPrimitive"],
+            dependencies: ["OUDSTokensComponent", "OUDSTokensSemantic", "OUDSTokensRaw"],
             path: "OUDS/Core/Themes/Sources/Shared"),
         .target(
             name: "OUDSTokensComponent",
@@ -81,12 +84,12 @@ let package = Package(
             path: "OUDS/Core/Tokens/ComponentTokens/Sources"),
         .target(
             name: "OUDSTokensSemantic",
-            dependencies: ["OUDSTokensPrimitive"],
+            dependencies: ["OUDSTokensRaw"],
             path: "OUDS/Core/Tokens/SemanticTokens/Sources"),
         .target(
-            name: "OUDSTokensPrimitive",
+            name: "OUDSTokensRaw",
             dependencies: ["OUDSFoundations"],
-            path: "OUDS/Core/Tokens/PrimitiveTokens/Sources"),
+            path: "OUDS/Core/Tokens/RawTokens/Sources"),
         .target(
             name: "OUDSFoundations",
             path: "OUDS/Foundations/Sources"),

@@ -12,30 +12,32 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 import OUDSTokensSemantic
 import OUDSTokensComponent
 
+/// Defines for `FormsTextInputComponentToken` the basic configuration which can be overriden in subthemes / subclasses of this theme.
 extension OUDSTheme: FormsTextInputComponentToken {
-    
-    private static let defaultColorSemanticToken = ColorPrimitiveTokens.colorFunctionalDarkGray160
-    
+
+    // TODO: What should we do for unfound / undefined colors? This is a dumb random default value.
+    private static let defaultColorSemanticToken = ColorRawTokens.colorFunctionalDarkGray160
+
     // MARK: Component token - Forms Text Input - Color - Background
 
-    public var formsTextInputColorBackgroundEnabled: ColorSemanticToken { get { sysColorBrandAttractiveMedium ?? Self.defaultColorSemanticToken } set { } }
-    public var formsTextInputColorBackgroundHover: ColorSemanticToken { get { sysColorBrandAttractiveHigher ?? Self.defaultColorSemanticToken } set { } }
-    public var formsTextInputColorBackgroundActive: ColorSemanticToken { get { sysColorBrandAttractiveMedium ?? Self.defaultColorSemanticToken } set { } }
-    public var formsTextInputColorBackgroundSelected: ColorSemanticToken { get { colorContentMutedLight ?? Self.defaultColorSemanticToken } set { } }
-    public var formsTextInputColorBackgroundDisabled: ColorSemanticToken { get { colorOnBackgroundStatusPositiveEmphasisLight ?? Self.defaultColorSemanticToken } set { } }
-    public var formsTextInputColorBackgroundFocused: ColorSemanticToken { get { sysColorBrandAttractiveHigher ?? Self.defaultColorSemanticToken } set { } }
+    public var formsTextInputColorBackgroundEnabled: ColorSemanticToken { sysColorBrandAttractiveMedium ?? Self.defaultColorSemanticToken }
+    public var formsTextInputColorBackgroundHover: ColorSemanticToken { sysColorBrandAttractiveHigher ?? Self.defaultColorSemanticToken }
+    public var formsTextInputColorBackgroundActive: ColorSemanticToken { sysColorBrandAttractiveMedium ?? Self.defaultColorSemanticToken }
+    public var formsTextInputColorBackgroundSelected: ColorSemanticToken { colorContentMutedLight ?? Self.defaultColorSemanticToken }
+    public var formsTextInputColorBackgroundDisabled: ColorSemanticToken { colorOnBackgroundStatusPositiveEmphasisLight ?? Self.defaultColorSemanticToken }
+    public var formsTextInputColorBackgroundFocused: ColorSemanticToken { sysColorBrandAttractiveHigher ?? Self.defaultColorSemanticToken }
 
     // MARK: Component token - Forms Text Input - Border - Width
 
-    public var formsTextInputBorderWidthEnabled: BorderWidthSemanticToken { get { borderWidthThick } set { } }
-    public var formsTextInputBorderWidthHover: BorderWidthSemanticToken { get { borderWidthThickest } set { } }
-    public var formsTextInputBorderWidthActive: BorderWidthSemanticToken { get { borderWidthThickest } set { } }
-    public var formsTextInputBorderWidthSelected: BorderWidthSemanticToken { get { borderWidthThickest } set { } }
-    public var formsTextInputBorderWidthDisabled: BorderWidthSemanticToken { get { borderWidthNone } set { } }
-    public var formsTextInputBorderWidthFocused: BorderWidthSemanticToken { get { borderWidthInterfactivePrimaryFocus } set { } }
+    public var formsTextInputBorderWidthEnabled: BorderWidthSemanticToken { borderWidthThick }
+    public var formsTextInputBorderWidthHover: BorderWidthSemanticToken { borderWidthThickest }
+    public var formsTextInputBorderWidthActive: BorderWidthSemanticToken { borderWidthThickest }
+    public var formsTextInputBorderWidthSelected: BorderWidthSemanticToken { borderWidthThickest }
+    public var formsTextInputBorderWidthDisabled: BorderWidthSemanticToken { borderWidthNone }
+    public var formsTextInputBorderWidthFocused: BorderWidthSemanticToken { borderWidthInterfactivePrimaryFocus }
 
 }

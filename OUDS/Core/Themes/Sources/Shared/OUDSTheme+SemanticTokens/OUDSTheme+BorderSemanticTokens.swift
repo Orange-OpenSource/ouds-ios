@@ -12,34 +12,34 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 import OUDSTokensSemantic
 
+/// Defines basic values common to all themes for `BorderSemanticTokens`.
+/// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: BorderSemanticTokens {
-    
+
     // MARK: Semantic token - Border - Width
 
-    @objc open var borderWidthNone: BorderWidthSemanticToken { get { BorderPrimitiveTokens.borderWidth0 } set { } }
-    @objc open var borderWidthDefault: BorderWidthSemanticToken { get { BorderPrimitiveTokens.borderWidth25 } set { } }
-    @objc open var borderWidthThin: BorderWidthSemanticToken { get { BorderPrimitiveTokens.borderWidth25 } set { } }
-    @objc open var borderWidthThick: BorderWidthSemanticToken { get { BorderPrimitiveTokens.borderWidth50 } set { } }
-    @objc open var borderWidthThicker: BorderWidthSemanticToken { get { BorderPrimitiveTokens.borderWidth75 } set { } }
-    @objc open var borderWidthThickest: BorderWidthSemanticToken { get { BorderPrimitiveTokens.borderWidth100 } set { } }
-    @objc open var borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken { get { BorderPrimitiveTokens.borderWidth100 } set { } }
+    @objc open var borderWidthNone: BorderWidthSemanticToken { BorderRawTokens.borderWidth0 }
+    @objc open var borderWidthDefault: BorderWidthSemanticToken { BorderRawTokens.borderWidth25 }
+    @objc open var borderWidthThin: BorderWidthSemanticToken { BorderRawTokens.borderWidth25 }
+    @objc open var borderWidthThick: BorderWidthSemanticToken { BorderRawTokens.borderWidth50 }
+    @objc open var borderWidthThicker: BorderWidthSemanticToken { BorderRawTokens.borderWidth75 }
+    @objc open var borderWidthThickest: BorderWidthSemanticToken { BorderRawTokens.borderWidth100 }
+    @objc open var borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken { BorderRawTokens.borderWidth100 }
 
     // MARK: Semantic token - Border - Radius
 
-    @objc open var borderRadiusNone: BorderRadiusSemanticToken { get { BorderPrimitiveTokens.borderRadius0 } set { } }
-    @objc open var borderRadiusDefault: BorderRadiusSemanticToken { get { BorderPrimitiveTokens.borderRadius0 } set { } }
-    @objc open var borderRadiusShort: BorderRadiusSemanticToken { get { BorderPrimitiveTokens.borderRadius75 } set { } }
-    @objc open var borderRadiusMedium: BorderRadiusSemanticToken { get { BorderPrimitiveTokens.borderRadius150 } set { } }
-    @objc open var borderRadiusTall: BorderRadiusSemanticToken { get { BorderPrimitiveTokens.borderRadius300 } set { } }
-    @objc open var borderRadiusPill: BorderRadiusSemanticToken { get { BorderPrimitiveTokens.borderRadius9999 } set { } }
+    @objc open var borderRadiusNone: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }
+    @objc open var borderRadiusDefault: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }
+    @objc open var borderRadiusShort: BorderRadiusSemanticToken { BorderRawTokens.borderRadius75 }
+    @objc open var borderRadiusMedium: BorderRadiusSemanticToken { BorderRawTokens.borderRadius150 }
+    @objc open var borderRadiusTall: BorderRadiusSemanticToken { BorderRawTokens.borderRadius300 }
+    @objc open var borderRadiusPill: BorderRadiusSemanticToken { BorderRawTokens.borderRadius9999 }
 
     // MARK: Semantic token - Border - Style
 
-    @objc open var borderStyleDefault: BorderStyleSemanticToken { get { BorderPrimitiveTokens.borderStyleSolid } set { } }
-    @objc open var borderStyleDrag: BorderStyleSemanticToken { get { BorderPrimitiveTokens.borderStyleDashed } set { } }
-
-
+    @objc open var borderStyleDefault: BorderStyleSemanticToken { BorderRawTokens.borderStyleSolid }
+    @objc open var borderStyleDrag: BorderStyleSemanticToken { BorderRawTokens.borderStyleDashed }
 }

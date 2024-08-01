@@ -12,22 +12,24 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
+import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias OpacitySemanticToken = OpacityPrimitiveToken
+public typealias OpacitySemanticToken = OpacityRawToken
 
 // MARK: - Semantic tokens
 
+/// This is a group of semantic tokens for **opacity.**
+/// It defines all `OpacitySemanticToken` a theme must have.
 public protocol OpacitySemanticTokens {
-    
+
     // MARK: Semantic token - Opacity
 
-    var opacityTransparent: OpacitySemanticToken { get set }
-    var opacityWeaker: OpacitySemanticToken { get set }
-    var opacityWeak: OpacitySemanticToken { get set }
-    var opacityMedum: OpacitySemanticToken { get set }
-    var opacityEmphasis: OpacitySemanticToken { get set }
-    var opacityOpaque: OpacitySemanticToken { get set }
+    var opacityTransparent: OpacitySemanticToken { get }
+    var opacityWeaker: OpacitySemanticToken { get }
+    var opacityWeak: OpacitySemanticToken { get }
+    var opacityMedum: OpacitySemanticToken { get }
+    var opacityEmphasis: OpacitySemanticToken { get }
+    var opacityOpaque: OpacitySemanticToken { get }
 }
