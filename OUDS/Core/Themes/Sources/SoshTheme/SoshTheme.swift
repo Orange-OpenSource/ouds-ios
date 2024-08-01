@@ -12,9 +12,10 @@
 //
 
 import Foundation
+import OUDSTokensPrimitive
+import OUDSThemesShared
 
-enum ComponentColorScheme {
-    case light
-    case dark
-    case inverted
+open class SoshTheme: OUDSTheme {
+    
+    // For clarity reasons, please override OUDSTheme properties in extensions
 }

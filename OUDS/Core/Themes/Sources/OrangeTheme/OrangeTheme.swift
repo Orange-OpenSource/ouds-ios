@@ -12,11 +12,9 @@
 //
 
 import Foundation
-import OUDSTokensPrimitive
-import OUDSTokensSemantic
+import OUDSThemesShared
 
-extension OUDSTheme: DimensionSemanticTokens {
+open class OrangeTheme: OUDSTheme {
     
-    public var dimensionDensityDefault: DimensionSemanticToken { get { DimensionPrimitiveTokens.dimensionBase } set { } }
-    
+    // For clarity reasons, please override OUDSTheme properties in extensions
 }

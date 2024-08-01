@@ -17,8 +17,8 @@ import OUDSTokensPrimitive
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias ColorSemanticToken = SwiftUI.Color
-public typealias ColorAliasSemanticToken = SwiftUI.Color
+public typealias ColorSemanticToken = String
+public typealias ColorAliasSemanticToken = String
 
 // MARK: - Semantic tokens
 

@@ -12,7 +12,6 @@
 //
 
 import SwiftUI
-import OUDSTheme
 import OUDSThemesShared
 
 @main

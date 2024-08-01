@@ -46,8 +46,8 @@ public struct OUDSFormsTextInput: View{
             Text("This is a simple TextField from OUDS")
             TextField(placeholder, text: $value)
         }
-        .background(isEnabled ? theme.formsTextInputColorBackgroundEnabled : theme.formsTextInputColorBackgroundDisabled)
-        .border(theme.colorBorderDefaultDark ?? oudsDefaultColor, width: isEnabled ? theme.formsTextInputBorderWidthEnabled : theme.formsTextInputBorderWidthDisabled)
+        .background(isEnabled ? theme.formsTextInputColorBackgroundEnabled.color : theme.formsTextInputColorBackgroundDisabled.color)
+        .border(theme.colorBorderDefaultDark?.color ?? oudsDefaultColor, width: isEnabled ? theme.formsTextInputBorderWidthEnabled : theme.formsTextInputBorderWidthDisabled)
     }
     
 }

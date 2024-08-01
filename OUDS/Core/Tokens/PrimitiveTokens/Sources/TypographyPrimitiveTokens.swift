@@ -17,7 +17,7 @@ import SwiftUI
 // MARK: - Type aliases to keep grammar clear
 
 public typealias TypographyFontFamilyPrimitiveToken = String
-public typealias TypographyFontWeightPrimitiveToken = SwiftUI.Font.Weight
+public typealias TypographyFontWeightPrimitiveToken = String
 public typealias TypographyFontSizePrimitiveToken = Int
 public typealias TypographyFontLineHeightPrimitiveToken = Int
 public typealias TypographyFontParagraphSpacingPrimitiveToken = Int
@@ -104,14 +104,14 @@ public struct TypographyPrimitiveTokens {
 
     // MARK: Primitive token - Typography - Font weight
 
-    public static let fontWeight100: TypographyFontWeightPrimitiveToken = Font.Weight.thin
-    public static let fontWeight200: TypographyFontWeightPrimitiveToken = Font.Weight.ultraLight
-    public static let fontWeight300: TypographyFontWeightPrimitiveToken = Font.Weight.light
-    public static let fontWeight400: TypographyFontWeightPrimitiveToken = Font.Weight.regular
-    public static let fontWeight500: TypographyFontWeightPrimitiveToken = Font.Weight.medium
-    public static let fontWeight600: TypographyFontWeightPrimitiveToken = Font.Weight.semibold
-    public static let fontWeight700: TypographyFontWeightPrimitiveToken = Font.Weight.bold
-    public static let fontWeight900: TypographyFontWeightPrimitiveToken = Font.Weight.heavy
+    public static let fontWeight100: TypographyFontWeightPrimitiveToken = "thin"
+    public static let fontWeight200: TypographyFontWeightPrimitiveToken = "ultraLight"
+    public static let fontWeight300: TypographyFontWeightPrimitiveToken = "light"
+    public static let fontWeight400: TypographyFontWeightPrimitiveToken = "regular"
+    public static let fontWeight500: TypographyFontWeightPrimitiveToken = "medium"
+    public static let fontWeight600: TypographyFontWeightPrimitiveToken = "semibold"
+    public static let fontWeight700: TypographyFontWeightPrimitiveToken = "bold"
+    public static let fontWeight900: TypographyFontWeightPrimitiveToken = "heavy"
 
     // MARK: Primitive token - Typography - Composite
 

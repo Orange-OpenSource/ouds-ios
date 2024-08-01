@@ -25,7 +25,6 @@
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		510A9CD22C5679A300430620 /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CD12C5679A300430620 /* OUDSModules */; };
 		510A9CD82C567B6A00430620 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CD72C567B6A00430620 /* OUDSFoundations */; };
-		5110E0692C5B68B300EF5A64 /* OUDSTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 5110E0682C5B68B300EF5A64 /* OUDSTheme */; };
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		513AD93E2C5AA31E0003253B /* OUDSThemesShared in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93D2C5AA31E0003253B /* OUDSThemesShared */; };
@@ -92,7 +91,6 @@
 				513AD93E2C5AA31E0003253B /* OUDSThemesShared in Frameworks */,
 				510A9CD82C567B6A00430620 /* OUDSFoundations in Frameworks */,
 				E537B9B66A6466473179DEE8 /* Pods_Showcase.framework in Frameworks */,
-				5110E0692C5B68B300EF5A64 /* OUDSTheme in Frameworks */,
 				513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */,
 				510A9CD22C5679A300430620 /* OUDSModules in Frameworks */,
 				517862812C5A71AE0086789C /* OUDSTokensSemantic in Frameworks */,
@@ -274,7 +272,6 @@
 				517862802C5A71AE0086789C /* OUDSTokensSemantic */,
 				513AD93D2C5AA31E0003253B /* OUDSThemesShared */,
 				513AD93F2C5AAADE0003253B /* OUDSTokensComponent */,
-				5110E0682C5B68B300EF5A64 /* OUDSTheme */,
 			);
 			productName = DemoApp;
 			productReference = 07FDCD912C296A500009AA13 /* OUDS Showcase.app */;
@@ -699,10 +696,6 @@
 		510A9CD72C567B6A00430620 /* OUDSFoundations */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSFoundations;
-		};
-		5110E0682C5B68B300EF5A64 /* OUDSTheme */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSTheme;
 		};
 		513AD93D2C5AA31E0003253B /* OUDSThemesShared */ = {
 			isa = XCSwiftPackageProductDependency;

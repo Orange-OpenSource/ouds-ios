@@ -18,7 +18,7 @@ import OUDSTokensComponent
 
 extension OUDSTheme: FormsTextInputComponentToken {
     
-    private static let defaultColorSemanticToken = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray160
+    private static let defaultColorSemanticToken = ColorPrimitiveTokens.colorFunctionalDarkGray160
     
     // MARK: Component token - Forms Text Input - Color - Background
 
