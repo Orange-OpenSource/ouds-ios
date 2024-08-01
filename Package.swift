@@ -58,7 +58,7 @@ let package = Package(
             path: "OUDS/Modules/Sources"),
         .target(
             name: "OUDSComponents",
-            dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSTheme"],
+            dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSTheme", "OUDSThemesShared"],
             path: "OUDS/Core/Components/Sources"),
         .target(
             name: "OUDSThemesShared",

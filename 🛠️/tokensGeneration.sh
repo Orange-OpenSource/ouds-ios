@@ -15,7 +15,8 @@
 
 # Meta flags - Chose one of them
 
-ALL_TOKENS=true
+ALL_TOKENS=false
+ALL_COMPONENT_TOKENS=false
 ALL_PRIMITIVE_TOKENS=false
 ALL_SEMANTIC_TOKENS=false
 
@@ -39,36 +40,11 @@ ALL_SEMANTIC_TOKEN_GRID=false
 ALL_SEMANTIC_TOKEN_TYPOGRAPHY=false
 ALL_SEMANTIC_TOKEN_COLORS=false
 
-# Primitive tokens - Pick the ones you want
+# Component tokens - Pick the ones you want
 
-PRIMITIVE_TOKEN_OPACITY=false
-PRIMITIVE_TOKEN_BORDER_WIDTH=false
-PRIMITIVE_TOKEN_BORDER_RADIUS=false
-PRIMITIVE_TOKEN_BORDER_STYLE=false
-PRIMITIVE_TOKEN_DIMENSION=false
-PRIMITIVE_TOKEN_ELEVATION_ZINDEX=false
-PRIMITIVE_TOKEN_ELEVATION_X=false
-PRIMITIVE_TOKEN_ELEVATION_Y=false
-PRIMITIVE_TOKEN_ELEVATION_BLUR=false
-PRIMITIVE_TOKEN_ELEVATION_SPREAD=false
-PRIMITIVE_TOKEN_GRID_MIN_WIDTH=false
-PRIMITIVE_TOKEN_GRID_MAX_WIDTH=false
-PRIMITIVE_TOKEN_GRID_MARGIN=false
-PRIMITIVE_TOKEN_GRID_COLUMN_GAP=false
-PRIMITIVE_TOKEN_GRID_COLUMN_COUNT=false
-PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_SIZE=false
-PRIMITIVE_TOKEN_TYPOGRAPHY_LINE_HEIGHT=false
-PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_FAMILY=false
-PRIMITIVE_TOKEN_TYPOGRAPHY_PARAGRAPH_SPACING=false
-PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_WEIGHT=false
-PRIMITIVE_TOKEN_TYPOGRAPHY_COMPOSITE=false
-PRIMITIVE_TOKEN_COLORS_GLOBAL=false
-PRIMITIVE_TOKEN_TRANSPARENT_COLORS=false
-PRIMITIVE_TOKEN_COLORS_ORANGE_BRAND=false
-PRIMITIVE_TOKEN_COLORS_ORANGE_DECORATIVE=false
-PRIMITIVE_TOKEN_COLORS_SOSH=false
+COMPONENT_TOKEN_FORMS_TEXT_INPUT=true
 
-# Semantic tokens- Pick the ones you want
+# Semantic tokens - Pick the ones you want
 
 SEMANTIC_TOKEN_OPACITY=false
 SEMANTIC_TOKEN_BORDER_WIDTH=false
@@ -112,6 +88,35 @@ SEMANTIC_TOKEN_COLORS_CONTENT=false
 SEMANTIC_TOKEN_COLORS_BORDER=false
 SEMANTIC_TOKEN_COLORS_ON_BACKGROUND=false
 SEMANTIC_TOKEN_COLORS_DECORATIVE=false
+
+# Primitive tokens - Pick the ones you want
+
+PRIMITIVE_TOKEN_OPACITY=false
+PRIMITIVE_TOKEN_BORDER_WIDTH=false
+PRIMITIVE_TOKEN_BORDER_RADIUS=false
+PRIMITIVE_TOKEN_BORDER_STYLE=false
+PRIMITIVE_TOKEN_DIMENSION=false
+PRIMITIVE_TOKEN_ELEVATION_ZINDEX=false
+PRIMITIVE_TOKEN_ELEVATION_X=false
+PRIMITIVE_TOKEN_ELEVATION_Y=false
+PRIMITIVE_TOKEN_ELEVATION_BLUR=false
+PRIMITIVE_TOKEN_ELEVATION_SPREAD=false
+PRIMITIVE_TOKEN_GRID_MIN_WIDTH=false
+PRIMITIVE_TOKEN_GRID_MAX_WIDTH=false
+PRIMITIVE_TOKEN_GRID_MARGIN=false
+PRIMITIVE_TOKEN_GRID_COLUMN_GAP=false
+PRIMITIVE_TOKEN_GRID_COLUMN_COUNT=false
+PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_SIZE=false
+PRIMITIVE_TOKEN_TYPOGRAPHY_LINE_HEIGHT=false
+PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_FAMILY=false
+PRIMITIVE_TOKEN_TYPOGRAPHY_PARAGRAPH_SPACING=false
+PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_WEIGHT=false
+PRIMITIVE_TOKEN_TYPOGRAPHY_COMPOSITE=false
+PRIMITIVE_TOKEN_COLORS_GLOBAL=false
+PRIMITIVE_TOKEN_TRANSPARENT_COLORS=false
+PRIMITIVE_TOKEN_COLORS_ORANGE_BRAND=false
+PRIMITIVE_TOKEN_COLORS_ORANGE_DECORATIVE=false
+PRIMITIVE_TOKEN_COLORS_SOSH=false
 
 # Exit codes
 # ----------
@@ -238,363 +243,22 @@ echo "🔥 Let's go!"
 SECONDS=0
 GENERATED_TOKENS_COUNT=0
 
-# Primitive tokens
+# Component tokens
 # ----------------
 
-# Primitive token - Border - Width
-
-if [ "$PRIMITIVE_TOKEN_BORDER_WIDTH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_BORDER" = true ] ; then
-Write "// MARK: Primitive token - Border - Width"
+if [ "$COMPONENT_TOKEN_FORMS_TEXT_INPUT" = true ] || [ "$ALL_COMPONENT_TOKENS" = true ]; then
+swiftClass="ColorSemanticTokens"
+Write "// MARK: Component token - Forms Text Input - Color - Background"
 GenerateTokens \
---string "static let borderWidth🆔: BorderWidthPrimitiveToken = borderBase \* 0️⃣" \
---keys "0,25,50,75,100,150,200" \
---values "0,0.25,0.5,0.75,1,1.5,3"
-fi
+--string "var formsTextInputColorBackground🆔: ColorSemanticToken { get { 0️⃣ } set { } }" \
+--keys "Enabled,Hover,Active,Selected,Disabled,Focused" \
+--values "$swiftClass.sysColorBrandAttractiveMedium,$swiftClass.sysColorBrandAttractiveHigher,$swiftClass.sysColorBrandAttractiveMedium,$swiftClass.colorContentMutedLight,$swiftClass.colorTransparentBlack700,$swiftClass.sysColorBrandAttractiveHigher"
 
-# Primitive token - Border - Radius
-
-if [ "$PRIMITIVE_TOKEN_BORDER_RADIUS" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_BORDER" = true ] ; then
-Write "// MARK: Primitive token - Border - Radius"
+Write "// MARK: Component token - Forms Text Input - Border - Width"
 GenerateTokens \
---string "static let borderRadius🆔: BorderRadiusPrimitiveToken = borderBase \* 0️⃣" \
---keys "0,25,50,75,100,150,200,300,400,500,600,800,9999" \
---values "0.75,0.25,0.5,0.75,1,1.5,2,3,4,5,6,8,2000"
-fi
-    
-# Primitive token - Border - Style
-
-if [ "$PRIMITIVE_TOKEN_BORDER_STYLE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_BORDER" = true ] ; then
-Write "// MARK: Primitive token - Border - Style"
-GenerateTokens \
---string 'static let borderStyle🆔: BorderStylePrimitiveToken = "0️⃣"' \
---keys "None,Solid,Dashed,Dotted" \
---values "none,solid,dashed,dotted"
-fi
-
-# Primitive token - Dimension
-
-if [ "$PRIMITIVE_TOKEN_DIMENSION" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_DIMENSION" = true ] ; then
-Write "// MARK: Primitive token - Dimension"
-GenerateTokens \
---string 'static let dimension🆔: DimensionPrimitiveToken = dimensionBase \* 0️⃣' \
---keys "0,25,50,75,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,900,1000,1200,1400,1600,1800,2000,3000,4000,5000,6000,7000,9000,11000" \
---values "0,0.5,1,1.5,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,20,24,28,32,6,40,80,120,140,160,180,220,260"
-fi
-
-# Primitive token - Elevation - Z index
-
-if [ "$PRIMITIVE_TOKEN_ELEVATION_ZINDEX" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
-Write "// MARK: Primitive token - Elevation - Z Index"
-GenerateTokens \
---string "static let elevationZIndex🆔: ElevationPrimitiveToken = 0️⃣" \
---keys "0,Minus9999,1000,1010,1020,1030,1035,1038,1040,1045,1050,1060,1070,1080,1090" \
---values "0,-9999,1000,1010,1020,1030,1035,1038,1040,1045,1050,1060,1070,1080,1090"
-fi
-
-# Primitive token - Elevation - X
-
-if [ "$PRIMITIVE_TOKEN_ELEVATION_X" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
-Write "// MARK: Primitive token - Elevation - X"
-GenerateTokens \
---string "static let elevationX🆔: ElevationPrimitiveToken = 0️⃣" \
---keys "0" \
---values "0"
-fi
-
-# Primitive token - Elevation - Y
-
-if [ "$PRIMITIVE_TOKEN_ELEVATION_Y" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
-Write "// MARK: Primitive token - Elevation - Y"
-GenerateTokens \
---string "static let elevationY🆔: ElevationPrimitiveToken = 0️⃣" \
---keys "0,100,200,300,400,500,600" \
---values "0,1,2,4,8,12,20"
-fi
-
-# Primitive token - Elevation - Blur
-
-if [ "$PRIMITIVE_TOKEN_ELEVATION_BLUR" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
-Write "// MARK: Primitive token - Elevation - Blur"
-GenerateTokens \
---string "static let elevationBlur🆔: ElevationPrimitiveToken = 0️⃣" \
---keys "0,100,200,300,400,500,600,700" \
---values "0,1,2,3,4,8,12,20"
-fi
-
-# Primitive token - Elevation - Spread
-
-if [ "$PRIMITIVE_TOKEN_ELEVATION_SPREAD" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
-Write "// MARK: Primitive token - Elevation - Spread"
-GenerateTokens \
---string "static let elevationSpread🆔: ElevationPrimitiveToken = 0️⃣" \
---keys "Minus100,Minus200,Minus300,Minus400,0,300" \
---values "-1,-2,-4,-8,0,3"
-fi
-
-# Primitive token - Opacity
-
-if [ "$PRIMITIVE_TOKEN_OPACITY" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_OPACITY" = true ] ; then
-Write "// MARK: Primitive token - Opacity"
-GenerateTokens \
---string "static let opacity🆔: OpacityPrimitiveToken = 0️⃣" \
---keys "0,100,200,300,400,500,600,700,800,900" \
---values "0,0.04,0.08,0.16,0.24,0.32,0.48,0.64,0.88,1"
-fi
-
-# Primitive token - Grid - Min width
-
-if [ "$PRIMITIVE_TOKEN_GRID_MIN_WIDTH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
-Write "// MARK: Primitive token - Grid - Min width"
-GenerateTokens \
---string "static let gridMinWidth🆔: GridPrimitiveToken = 0️⃣" \
---keys "IOSExtraCompact,IOSCompact,IOSRegular" \
---values "320,390,736"
-fi
-
-# Primitive token - Grid - Max width
-
-if [ "$PRIMITIVE_TOKEN_GRID_MAX_WIDTH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
-Write "// MARK: Primitive token - Grid - Max width"
-GenerateTokens \
---string "static let gridMaxWidth🆔: GridPrimitiveToken = 0️⃣" \
---keys "IOSExtraCompact,IOSCompact,IOSRegular" \
---values "389,852,1336"
-fi
-
-# Primitive token - Grid - Margin
-
-if [ "$PRIMITIVE_TOKEN_GRID_MARGIN" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
-Write "// MARK: Primitive token - Grid - Margin"
-GenerateTokens \
---string "static let gridMargin🆔: GridPrimitiveToken = dimensionBase \* 0️⃣" \
---keys "100,300,400,500,600,700,1000,1100,1700,2500" \
---values "4,6,7,8,9,10,13,14,20,28"
-fi
-
-# Primitive token - Grid - Column gap
-
-if [ "$PRIMITIVE_TOKEN_GRID_COLUMN_GAP" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
-Write "// MARK: Primitive token - Grid - Column gap"
-GenerateTokens \
---string "static let gridColumnGap🆔: GridPrimitiveToken = dimensionBase \* 0️⃣" \
---keys "10,100,200,300,500,700" \
---values "0.25,4,5,6,8,10"
-fi
-
-# Primitive token - Grid - Column count
-
-if [ "$PRIMITIVE_TOKEN_GRID_COLUMN_COUNT" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
-Write "// MARK: Primitive token - Grid - Column count"
-GenerateTokens \
---string "static let gridColumnCount🆔: GridPrimitiveToken = dimensionBase \* 0️⃣" \
---keys "100,200,400,600,800,1000,1200" \
---values "1,2,4,6,8,10,12"
-fi
-
-# Primitive token - Typography - Font size
-
-if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_SIZE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
-Write "// MARK: Primitive token - Typography - Font size"
-GenerateTokens \
---string "static let fontSize🆔: TypographyFontSizePrimitiveToken = 0️⃣" \
---keys "150,175,200,250,300,350,450,550,650,750,850,950,1050,1150,1250,1450,1850" \
---values "12,13,14,16,18,20,24,28,32,36,40,44,48,52,56,64,72"
-fi
-
-# Primitive token - Typography - Line height
-
-if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_LINE_HEIGHT" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
-Write "// MARK: Primitive token - Typography - Line height"
-GenerateTokens \
---string "static let fontLineHeight🆔: TypographyFontLineHeightPrimitiveToken = 0️⃣" \
---keys "250,350,450,550,650,750,850,950,1050,1150,1250,1350,1450,1850,2050" \
---values "16,20,24,28,32,36,10,44,48,52,56,60,64,72,80"
-fi
-
-# Primitive token - Typography - Paragraph spacing
-
-if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_PARAGRAPH_SPACING" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
-Write "// MARK: Primitive token - Typography - Paragraph spacing"
-GenerateTokens \
---string "static let fontParagraphSpacing🆔: TypographyFontParagraphSpacingPrimitiveToken = 0️⃣" \
---keys "100,200,300,400" \
---values "0,8,16,24"
-fi
-
-# Primitive token - Typography - Font family
-
-if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_FAMILY" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
-Write "// MARK: Primitive token - Typography - Font family"
-GenerateTokens \
---string 'static let fontFamily🆔: TypographyFontFamilyPrimitiveToken = "0️⃣"' \
---keys "System,Monospace" \
---values "SF-Pro-Text,Courrier-New"
-fi
-
-# Primitive token - Typography - Font Weight
-
-if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_WEIGHT" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
-swiftClass="Font.Weight"
-Write "// MARK: Primitive token - Typography - Font weight"
-GenerateTokens \
---string "static let fontWeight🆔: TypographyFontWeightPrimitiveToken = $swiftClass.0️⃣" \
---keys "100,200,300,400,500,600,700,900" \
---values "thin,ultraLight,light,regular,medium,semibold,bold,heavy"
-fi
-
-# Primitive token - Typography - Composite
-
-if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_COMPOSITE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
-swiftClass="Font.Weight"
-Write "// MARK: Primitive token - Typography - Composite"
-GenerateTokensComposite \
---string "static let type🆔 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1️⃣, lineHeight: fontLineHeight2️⃣, weight: fontWeight3️⃣, paragraphSpacing: fontParagraphSpacing100)" \
---keys "Regular150,Regular175,Regular200,Regular250,Bold150,Bold175,Bold200,Bold250,Bold300,Bold350,Bold450,Bold550,Bold650,Bold750,Bold850,Bold950,Bold1050,Bold1150,Bold1250,Bold1450,Bold1850" \
---values1 "150,175,200,250,150,175,200,250,300,350,450,550,650,750,850,950,1050,1150,1250,1450,1850" \
---values2 "250,250,250,350,450,250,250,350,450,550,550,650,750,850,950,1050,1150,1250,1350,1450,1850,2050" \
---values3 "400,400,400,400,700,700,700,700,700,700,700,700,700,700,700,700,700,400,700,700,700"
-fi
-
-# Primitive token - Colors - Global
-
-if [ "$PRIMITIVE_TOKEN_COLORS_GLOBAL" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
-Write "// MARK: Primitive token - Colors - Black, white"
-GenerateTokens \
---string 'static let colorFunctional🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "White,Black" \
---values "#FFFFFF,#000000" # Black, white
-
-Write "// MARK: Primitive token - Colors - Functional light gray"
-GenerateTokens \
---string 'static let colorFunctionalLightGray🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "80,160,240,320,400,480,560,640,720,800,880,960" \
---values "#F4F4F4,#EEEEEE,#E0E0E0,#D6D6D6,#CCCCCC,#C2C2C2,#BBBBBB,#ADADAD,#A3A3A3,#999999,#8F8F8F,#858585" # Light gray
-
-Write "// MARK: Primitive token - Colors - Functional dark gray"
-GenerateTokens \
---string 'static let colorFunctionalDarkGray🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "80,160,240,320,400,480,560,640,720,800,880,960" \
---values "#7A7A7A,#707070,#666666,#5C5C5C,#555555,#44444,#3D3D3D,#333333,#272727,#1F1F1F,#141414,#0A0A0A" # Dark gray
-
-Write "// MARK: Primitive token - Colors - Functional scarlet"
-GenerateTokens \
---string 'static let colorFunctionalScarlet🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#FFE5E6,#FFB2B3,#FF8081,#FF4D4E,#FF1A1B,#EA0305,#BZ000Z,#800001,#4D0001" # Functional scarlet
-
-Write "// MARK: Primitive token - Colors - Functional sun"
-GenerateTokens \
---string 'static let colorFunctionalSun🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#FFF7D6,#FFED99,#FFE270,#FFD73D,#FFD0D0,#D6AA00,#A38200,#665100,#3D3100" # Functional sun
-
-Write "// MARK: Primitive token - Colors - Functional malachite"
-GenerateTokens \
---string 'static let colorFunctionalMalachite🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#EDFCF0,#C1F6CA,#94F0A4,#67E97E,#3DE35A,#1ECD3C,#17A02F,#0E621D,#0A4715" # Functional malachite
-
-Write "// MARK: Primitive token - Colors - Functional dodger blue"
-GenerateTokens \
---string 'static let colorFunctionalDodgerBlue🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#F0FAFF,#BDE7FF,#8AD5FF,#57C3FF,#26B2FF,#009BF0,#007ABD,#00598A,#003857" # Dodger blue
-fi
-
-# Primitive token - Colors - Transparent
-
-if [ "$PRIMITIVE_TOKEN_TRANSPARENT_COLORS" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
-
-Write "// MARK: Primitive token - Colors - Transparent black"
-GenerateTokens \
---string 'static let colorTransparentBlack🆔: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity0️⃣)' \
---keys "0,100,200,300,400,500,600,700,800,900" \
---values "0,100,200,300,400,500,600,700,800,900" # Transparent black
-
-Write "// MARK: Primitive token - Colors - Transparent white"
-GenerateTokens \
---string 'static let colorTransparentWhite🆔: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity0️⃣)' \
---keys "0,100,200,300,400,500,600,700,800,900" \
---values "0,100,200,300,400,500,600,700,800,900" # Transparent white
-fi
-
-# Primitive token - Colors - Orange - Brand
-
-if [ "$PRIMITIVE_TOKEN_COLORS_ORANGE_BRAND" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
-
-Write "// MARK: Primitive token - Colors - Orange - Brand - Orange"
-GenerateTokens \
---string 'static let colorBrandOrange🆔: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "50,100,200,300,400,500,550,600,700,800,900" \
---values "#FFF2E6,#FFD5B0,#FFC18A,#FFA554,#FF9433,#FF7900,#F16E00,#E86E00,#B55600,#8C4300,#6B3300"
-
-Write "// MARK: Primitive token - Colors - Orange - Brand - Warm gray"
-GenerateTokens \
---string 'static let colorBrandWarmGray🆔: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#F9F5F0,#E9DDCE,#D6C4AE,#C1AB90,#A99275,#8A7860,#685D50,#48433D,#353228"
-fi
-
-# Primitive token - Colors - Orange - Decorative
-
-if [ "$PRIMITIVE_TOKEN_COLORS_ORANGE_DECORATIVE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
-Write "// MARK: Primitive token - Colors - Orange - Emerald"
-GenerateTokens \
---string 'static let colorDecorativeEmerald🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#E5F5ED,#C0E8DA,#9BDABA,#75CCA1,#50BE87,#3BA06E,#2E7B54,#20563B,#123021"
-
-Write "// MARK: Primitive token - Colors - Orange - Sky"
-GenerateTokens \
---string 'static let colorDecorativeSky🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#D2ECF9,#A5DAF3,#79C7EC,#4AB4E6,#1FA2E0,#1982B3,#136186,#0C415A,#06202D"
-
-Write "// MARK: Primitive token - Colors - Orange - Amber"
-GenerateTokens \
---string 'static let colorDecorativeAmber🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#FFF0CC,#FFE199,#FFD266,#FFC333,#FFB400,#CC9000,#996C00,#664800,#332400"
-
-Write "// MARK: Primitive token - Colors - Orange - Amethyst"
-GenerateTokens \
---string 'static let colorDecorativeAmethyst🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#F1ECF9,#E0D4F2,#C5ADE6,#A885D8,#8D60CD,#5B2F98,#432371,#2C174A,#150B23"
-
-Write "// MARK: Primitive token - Colors - Orange - Shocking Pink"
-GenerateTokens \
---string 'static let colorDecorativeShockingPink🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#FFE5F6,#FFB4E6,#FF80D4,#FF4DC3,#FF1AB2,#E50099,#B20077,#800055,#4D0033"
-
-Write "// MARK: Primitive token - Colors - Orange - Deep Peach"
-GenerateTokens \
---string 'static let colorDecorativeDeepPeach🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "100,200,300,400,500,600,700,800,900" \
---values "#FBEBDF,#F4CFB2,#E3B591,#C19372,#CF7E3F,#AA6631,#7E4F2A,#553720,#2E2014"
-fi
-
-# Primitive token - Colors - Sosh
-
-if [ "$PRIMITIVE_TOKEN_COLORS_SOSH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
-Write "// MARK: Primitive token - Colors - Sosh - Magenta"
-GenerateTokens \
---string 'static let colorDecorativeMagenta🆔: ColorSoshPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "50,100,200,300,400,500,600,700,800,900,950" \
---values "#FCE9EE,#F8D3DC,#F2A6B9,#EB7A96,#E55277,#DE2554,#B61B42,#851430,#590D20,#2C0710,#160308"
-
-Write "// MARK: Primitive token - Colors - Sosh - Citrine"
-GenerateTokens \
---string 'static let colorDecorativeCitrine🆔: ColorSoshPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "50,100,200,300,400,500,600,700,800,900,950" \
---values "#FFFAE5,#FFF6CC,#FFEC99,#FFE366,#FFD92E,#FBCD00,#C7A200,#997D00,#665300,#332A00,#191500"
-
-Write "// MARK: Primitive token - Colors - Sosh - Blue Duck"
-GenerateTokens \
---string 'static let colorDecorativeBlueDuck🆔: ColorSoshPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
---keys "50,100,200,300,400,500,600,700,800,900,950" \
---values "#E7F6F9,#CBEDF1,#96DAE3,#62C8D5,#34B1C1,#26828E,#1E6771,#174D55,#0F3438,#081A1C,#040F10"
+--string "var formsTextInputBorderWidth🆔: BorderWidthSemanticToken { get { 0️⃣ } set { } }" \
+--keys "Enabled,Hover,Active,Selected,Disabled,Focused" \
+--values "borderWidthThick,borderWidthThickest,borderWidthThickest,borderWidthThickest,borderWidthNone,borderWidthInterfactivePrimaryFocus"
 fi
 
 # Semantic tokens
@@ -1647,6 +1311,365 @@ GenerateTokens \
 --string "var colorDecorativeSkinTint900🆔: ColorSemanticToken? = 0️⃣" \
 --keys "Light,Inverse,Dark" \
 --values "$swiftClass.colorDecorativeDeepPeach900,$swiftClass.colorDecorativeDeepPeach900,$swiftClass.colorDecorativeDeepPeach900"
+fi
+
+# Primitive tokens
+# ----------------
+
+# Primitive token - Border - Width
+
+if [ "$PRIMITIVE_TOKEN_BORDER_WIDTH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_BORDER" = true ] ; then
+Write "// MARK: Primitive token - Border - Width"
+GenerateTokens \
+--string "static let borderWidth🆔: BorderWidthPrimitiveToken = borderBase \* 0️⃣" \
+--keys "0,25,50,75,100,150,200" \
+--values "0,0.25,0.5,0.75,1,1.5,3"
+fi
+
+# Primitive token - Border - Radius
+
+if [ "$PRIMITIVE_TOKEN_BORDER_RADIUS" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_BORDER" = true ] ; then
+Write "// MARK: Primitive token - Border - Radius"
+GenerateTokens \
+--string "static let borderRadius🆔: BorderRadiusPrimitiveToken = borderBase \* 0️⃣" \
+--keys "0,25,50,75,100,150,200,300,400,500,600,800,9999" \
+--values "0.75,0.25,0.5,0.75,1,1.5,2,3,4,5,6,8,2000"
+fi
+    
+# Primitive token - Border - Style
+
+if [ "$PRIMITIVE_TOKEN_BORDER_STYLE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_BORDER" = true ] ; then
+Write "// MARK: Primitive token - Border - Style"
+GenerateTokens \
+--string 'static let borderStyle🆔: BorderStylePrimitiveToken = "0️⃣"' \
+--keys "None,Solid,Dashed,Dotted" \
+--values "none,solid,dashed,dotted"
+fi
+
+# Primitive token - Dimension
+
+if [ "$PRIMITIVE_TOKEN_DIMENSION" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_DIMENSION" = true ] ; then
+Write "// MARK: Primitive token - Dimension"
+GenerateTokens \
+--string 'static let dimension🆔: DimensionPrimitiveToken = dimensionBase \* 0️⃣' \
+--keys "0,25,50,75,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,900,1000,1200,1400,1600,1800,2000,3000,4000,5000,6000,7000,9000,11000" \
+--values "0,0.5,1,1.5,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,20,24,28,32,6,40,80,120,140,160,180,220,260"
+fi
+
+# Primitive token - Elevation - Z index
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_ZINDEX" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
+Write "// MARK: Primitive token - Elevation - Z Index"
+GenerateTokens \
+--string "static let elevationZIndex🆔: ElevationPrimitiveToken = 0️⃣" \
+--keys "0,Minus9999,1000,1010,1020,1030,1035,1038,1040,1045,1050,1060,1070,1080,1090" \
+--values "0,-9999,1000,1010,1020,1030,1035,1038,1040,1045,1050,1060,1070,1080,1090"
+fi
+
+# Primitive token - Elevation - X
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_X" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
+Write "// MARK: Primitive token - Elevation - X"
+GenerateTokens \
+--string "static let elevationX🆔: ElevationPrimitiveToken = 0️⃣" \
+--keys "0" \
+--values "0"
+fi
+
+# Primitive token - Elevation - Y
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_Y" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
+Write "// MARK: Primitive token - Elevation - Y"
+GenerateTokens \
+--string "static let elevationY🆔: ElevationPrimitiveToken = 0️⃣" \
+--keys "0,100,200,300,400,500,600" \
+--values "0,1,2,4,8,12,20"
+fi
+
+# Primitive token - Elevation - Blur
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_BLUR" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
+Write "// MARK: Primitive token - Elevation - Blur"
+GenerateTokens \
+--string "static let elevationBlur🆔: ElevationPrimitiveToken = 0️⃣" \
+--keys "0,100,200,300,400,500,600,700" \
+--values "0,1,2,3,4,8,12,20"
+fi
+
+# Primitive token - Elevation - Spread
+
+if [ "$PRIMITIVE_TOKEN_ELEVATION_SPREAD" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_ELEVATION" = true ] ; then
+Write "// MARK: Primitive token - Elevation - Spread"
+GenerateTokens \
+--string "static let elevationSpread🆔: ElevationPrimitiveToken = 0️⃣" \
+--keys "Minus100,Minus200,Minus300,Minus400,0,300" \
+--values "-1,-2,-4,-8,0,3"
+fi
+
+# Primitive token - Opacity
+
+if [ "$PRIMITIVE_TOKEN_OPACITY" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_OPACITY" = true ] ; then
+Write "// MARK: Primitive token - Opacity"
+GenerateTokens \
+--string "static let opacity🆔: OpacityPrimitiveToken = 0️⃣" \
+--keys "0,100,200,300,400,500,600,700,800,900" \
+--values "0,0.04,0.08,0.16,0.24,0.32,0.48,0.64,0.88,1"
+fi
+
+# Primitive token - Grid - Min width
+
+if [ "$PRIMITIVE_TOKEN_GRID_MIN_WIDTH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
+Write "// MARK: Primitive token - Grid - Min width"
+GenerateTokens \
+--string "static let gridMinWidth🆔: GridPrimitiveToken = 0️⃣" \
+--keys "IOSExtraCompact,IOSCompact,IOSRegular" \
+--values "320,390,736"
+fi
+
+# Primitive token - Grid - Max width
+
+if [ "$PRIMITIVE_TOKEN_GRID_MAX_WIDTH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
+Write "// MARK: Primitive token - Grid - Max width"
+GenerateTokens \
+--string "static let gridMaxWidth🆔: GridPrimitiveToken = 0️⃣" \
+--keys "IOSExtraCompact,IOSCompact,IOSRegular" \
+--values "389,852,1336"
+fi
+
+# Primitive token - Grid - Margin
+
+if [ "$PRIMITIVE_TOKEN_GRID_MARGIN" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
+Write "// MARK: Primitive token - Grid - Margin"
+GenerateTokens \
+--string "static let gridMargin🆔: GridPrimitiveToken = dimensionBase \* 0️⃣" \
+--keys "100,300,400,500,600,700,1000,1100,1700,2500" \
+--values "4,6,7,8,9,10,13,14,20,28"
+fi
+
+# Primitive token - Grid - Column gap
+
+if [ "$PRIMITIVE_TOKEN_GRID_COLUMN_GAP" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
+Write "// MARK: Primitive token - Grid - Column gap"
+GenerateTokens \
+--string "static let gridColumnGap🆔: GridPrimitiveToken = dimensionBase \* 0️⃣" \
+--keys "10,100,200,300,500,700" \
+--values "0.25,4,5,6,8,10"
+fi
+
+# Primitive token - Grid - Column count
+
+if [ "$PRIMITIVE_TOKEN_GRID_COLUMN_COUNT" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_GRID" = true ] ; then
+Write "// MARK: Primitive token - Grid - Column count"
+GenerateTokens \
+--string "static let gridColumnCount🆔: GridPrimitiveToken = dimensionBase \* 0️⃣" \
+--keys "100,200,400,600,800,1000,1200" \
+--values "1,2,4,6,8,10,12"
+fi
+
+# Primitive token - Typography - Font size
+
+if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_SIZE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
+Write "// MARK: Primitive token - Typography - Font size"
+GenerateTokens \
+--string "static let fontSize🆔: TypographyFontSizePrimitiveToken = 0️⃣" \
+--keys "150,175,200,250,300,350,450,550,650,750,850,950,1050,1150,1250,1450,1850" \
+--values "12,13,14,16,18,20,24,28,32,36,40,44,48,52,56,64,72"
+fi
+
+# Primitive token - Typography - Line height
+
+if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_LINE_HEIGHT" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
+Write "// MARK: Primitive token - Typography - Line height"
+GenerateTokens \
+--string "static let fontLineHeight🆔: TypographyFontLineHeightPrimitiveToken = 0️⃣" \
+--keys "250,350,450,550,650,750,850,950,1050,1150,1250,1350,1450,1850,2050" \
+--values "16,20,24,28,32,36,10,44,48,52,56,60,64,72,80"
+fi
+
+# Primitive token - Typography - Paragraph spacing
+
+if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_PARAGRAPH_SPACING" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
+Write "// MARK: Primitive token - Typography - Paragraph spacing"
+GenerateTokens \
+--string "static let fontParagraphSpacing🆔: TypographyFontParagraphSpacingPrimitiveToken = 0️⃣" \
+--keys "100,200,300,400" \
+--values "0,8,16,24"
+fi
+
+# Primitive token - Typography - Font family
+
+if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_FAMILY" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
+Write "// MARK: Primitive token - Typography - Font family"
+GenerateTokens \
+--string 'static let fontFamily🆔: TypographyFontFamilyPrimitiveToken = "0️⃣"' \
+--keys "System,Monospace" \
+--values "SF-Pro-Text,Courrier-New"
+fi
+
+# Primitive token - Typography - Font Weight
+
+if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_FONT_WEIGHT" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
+swiftClass="Font.Weight"
+Write "// MARK: Primitive token - Typography - Font weight"
+GenerateTokens \
+--string "static let fontWeight🆔: TypographyFontWeightPrimitiveToken = $swiftClass.0️⃣" \
+--keys "100,200,300,400,500,600,700,900" \
+--values "thin,ultraLight,light,regular,medium,semibold,bold,heavy"
+fi
+
+# Primitive token - Typography - Composite
+
+if [ "$PRIMITIVE_TOKEN_TYPOGRAPHY_COMPOSITE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_TYPOGRAPHY" = true ] ; then
+swiftClass="Font.Weight"
+Write "// MARK: Primitive token - Typography - Composite"
+GenerateTokensComposite \
+--string "static let type🆔 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1️⃣, lineHeight: fontLineHeight2️⃣, weight: fontWeight3️⃣, paragraphSpacing: fontParagraphSpacing100)" \
+--keys "Regular150,Regular175,Regular200,Regular250,Bold150,Bold175,Bold200,Bold250,Bold300,Bold350,Bold450,Bold550,Bold650,Bold750,Bold850,Bold950,Bold1050,Bold1150,Bold1250,Bold1450,Bold1850" \
+--values1 "150,175,200,250,150,175,200,250,300,350,450,550,650,750,850,950,1050,1150,1250,1450,1850" \
+--values2 "250,250,250,350,450,250,250,350,450,550,550,650,750,850,950,1050,1150,1250,1350,1450,1850,2050" \
+--values3 "400,400,400,400,700,700,700,700,700,700,700,700,700,700,700,700,700,400,700,700,700"
+fi
+
+# Primitive token - Colors - Global
+
+if [ "$PRIMITIVE_TOKEN_COLORS_GLOBAL" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
+Write "// MARK: Primitive token - Colors - Black, white"
+GenerateTokens \
+--string 'static let colorFunctional🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "White,Black" \
+--values "#FFFFFF,#000000" # Black, white
+
+Write "// MARK: Primitive token - Colors - Functional light gray"
+GenerateTokens \
+--string 'static let colorFunctionalLightGray🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "80,160,240,320,400,480,560,640,720,800,880,960" \
+--values "#F4F4F4,#EEEEEE,#E0E0E0,#D6D6D6,#CCCCCC,#C2C2C2,#BBBBBB,#ADADAD,#A3A3A3,#999999,#8F8F8F,#858585" # Light gray
+
+Write "// MARK: Primitive token - Colors - Functional dark gray"
+GenerateTokens \
+--string 'static let colorFunctionalDarkGray🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "80,160,240,320,400,480,560,640,720,800,880,960" \
+--values "#7A7A7A,#707070,#666666,#5C5C5C,#555555,#44444,#3D3D3D,#333333,#272727,#1F1F1F,#141414,#0A0A0A" # Dark gray
+
+Write "// MARK: Primitive token - Colors - Functional scarlet"
+GenerateTokens \
+--string 'static let colorFunctionalScarlet🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FFE5E6,#FFB2B3,#FF8081,#FF4D4E,#FF1A1B,#EA0305,#BZ000Z,#800001,#4D0001" # Functional scarlet
+
+Write "// MARK: Primitive token - Colors - Functional sun"
+GenerateTokens \
+--string 'static let colorFunctionalSun🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FFF7D6,#FFED99,#FFE270,#FFD73D,#FFD0D0,#D6AA00,#A38200,#665100,#3D3100" # Functional sun
+
+Write "// MARK: Primitive token - Colors - Functional malachite"
+GenerateTokens \
+--string 'static let colorFunctionalMalachite🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#EDFCF0,#C1F6CA,#94F0A4,#67E97E,#3DE35A,#1ECD3C,#17A02F,#0E621D,#0A4715" # Functional malachite
+
+Write "// MARK: Primitive token - Colors - Functional dodger blue"
+GenerateTokens \
+--string 'static let colorFunctionalDodgerBlue🆔: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#F0FAFF,#BDE7FF,#8AD5FF,#57C3FF,#26B2FF,#009BF0,#007ABD,#00598A,#003857" # Dodger blue
+fi
+
+# Primitive token - Colors - Transparent
+
+if [ "$PRIMITIVE_TOKEN_TRANSPARENT_COLORS" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
+
+Write "// MARK: Primitive token - Colors - Transparent black"
+GenerateTokens \
+--string 'static let colorTransparentBlack🆔: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity0️⃣)' \
+--keys "0,100,200,300,400,500,600,700,800,900" \
+--values "0,100,200,300,400,500,600,700,800,900" # Transparent black
+
+Write "// MARK: Primitive token - Colors - Transparent white"
+GenerateTokens \
+--string 'static let colorTransparentWhite🆔: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity0️⃣)' \
+--keys "0,100,200,300,400,500,600,700,800,900" \
+--values "0,100,200,300,400,500,600,700,800,900" # Transparent white
+fi
+
+# Primitive token - Colors - Orange - Brand
+
+if [ "$PRIMITIVE_TOKEN_COLORS_ORANGE_BRAND" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
+
+Write "// MARK: Primitive token - Colors - Orange - Brand - Orange"
+GenerateTokens \
+--string 'static let colorBrandOrange🆔: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "50,100,200,300,400,500,550,600,700,800,900" \
+--values "#FFF2E6,#FFD5B0,#FFC18A,#FFA554,#FF9433,#FF7900,#F16E00,#E86E00,#B55600,#8C4300,#6B3300"
+
+Write "// MARK: Primitive token - Colors - Orange - Brand - Warm gray"
+GenerateTokens \
+--string 'static let colorBrandWarmGray🆔: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#F9F5F0,#E9DDCE,#D6C4AE,#C1AB90,#A99275,#8A7860,#685D50,#48433D,#353228"
+fi
+
+# Primitive token - Colors - Orange - Decorative
+
+if [ "$PRIMITIVE_TOKEN_COLORS_ORANGE_DECORATIVE" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
+Write "// MARK: Primitive token - Colors - Orange - Emerald"
+GenerateTokens \
+--string 'static let colorDecorativeEmerald🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#E5F5ED,#C0E8DA,#9BDABA,#75CCA1,#50BE87,#3BA06E,#2E7B54,#20563B,#123021"
+
+Write "// MARK: Primitive token - Colors - Orange - Sky"
+GenerateTokens \
+--string 'static let colorDecorativeSky🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#D2ECF9,#A5DAF3,#79C7EC,#4AB4E6,#1FA2E0,#1982B3,#136186,#0C415A,#06202D"
+
+Write "// MARK: Primitive token - Colors - Orange - Amber"
+GenerateTokens \
+--string 'static let colorDecorativeAmber🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FFF0CC,#FFE199,#FFD266,#FFC333,#FFB400,#CC9000,#996C00,#664800,#332400"
+
+Write "// MARK: Primitive token - Colors - Orange - Amethyst"
+GenerateTokens \
+--string 'static let colorDecorativeAmethyst🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#F1ECF9,#E0D4F2,#C5ADE6,#A885D8,#8D60CD,#5B2F98,#432371,#2C174A,#150B23"
+
+Write "// MARK: Primitive token - Colors - Orange - Shocking Pink"
+GenerateTokens \
+--string 'static let colorDecorativeShockingPink🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FFE5F6,#FFB4E6,#FF80D4,#FF4DC3,#FF1AB2,#E50099,#B20077,#800055,#4D0033"
+
+Write "// MARK: Primitive token - Colors - Orange - Deep Peach"
+GenerateTokens \
+--string 'static let colorDecorativeDeepPeach🆔: colorDecorativePrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "100,200,300,400,500,600,700,800,900" \
+--values "#FBEBDF,#F4CFB2,#E3B591,#C19372,#CF7E3F,#AA6631,#7E4F2A,#553720,#2E2014"
+fi
+
+# Primitive token - Colors - Sosh
+
+if [ "$PRIMITIVE_TOKEN_COLORS_SOSH" = true ] || [ "$ALL_PRIMITIVE_TOKENS" = true ] || [ "$ALL_TOKENS" = true ] || [ "$ALL_PRIMITIVE_TOKEN_COLORS" = true ] ; then
+Write "// MARK: Primitive token - Colors - Sosh - Magenta"
+GenerateTokens \
+--string 'static let colorDecorativeMagenta🆔: ColorSoshPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "50,100,200,300,400,500,600,700,800,900,950" \
+--values "#FCE9EE,#F8D3DC,#F2A6B9,#EB7A96,#E55277,#DE2554,#B61B42,#851430,#590D20,#2C0710,#160308"
+
+Write "// MARK: Primitive token - Colors - Sosh - Citrine"
+GenerateTokens \
+--string 'static let colorDecorativeCitrine🆔: ColorSoshPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "50,100,200,300,400,500,600,700,800,900,950" \
+--values "#FFFAE5,#FFF6CC,#FFEC99,#FFE366,#FFD92E,#FBCD00,#C7A200,#997D00,#665300,#332A00,#191500"
+
+Write "// MARK: Primitive token - Colors - Sosh - Blue Duck"
+GenerateTokens \
+--string 'static let colorDecorativeBlueDuck🆔: ColorSoshPrimitiveToken = Color(hexadecimalCode: "0️⃣")' \
+--keys "50,100,200,300,400,500,600,700,800,900,950" \
+--values "#E7F6F9,#CBEDF1,#96DAE3,#62C8D5,#34B1C1,#26828E,#1E6771,#174D55,#0F3438,#081A1C,#040F10"
 fi
 
 # Completed!

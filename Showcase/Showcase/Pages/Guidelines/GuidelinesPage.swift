@@ -21,10 +21,10 @@ struct GuidelinesPage: View {
     var body: some View {
         NavigationView {
             VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
-                OUDSFormTextInput(placeholder: "Placeholder defined in app",
+                OUDSFormsTextInput(placeholder: "Placeholder defined in app",
                                   value: $writtenText)
 
-                OUDSFormTextInput(placeholder: "Placeholder defined in app",
+                OUDSFormsTextInput(placeholder: "Placeholder defined in app",
                                   value: $writtenText,
                                   isEnabled: false)
             }

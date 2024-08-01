@@ -23,9 +23,9 @@ public typealias ColorAliasSemanticToken = SwiftUI.Color
 // MARK: - Semantic tokens
 
 public protocol ColorSemanticTokens {
-    
+
     // MARK: Semantic token - Colors - Alias - Primary
-    
+
     var sysColorBrandPrimaryLowest: ColorAliasSemanticToken? { get set }
     var sysColorBrandPrimaryLower: ColorAliasSemanticToken? { get set }
     var sysColorBrandPrimaryLow: ColorAliasSemanticToken? { get set }
