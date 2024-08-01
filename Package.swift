@@ -34,8 +34,8 @@ let package = Package(
             name: "OUDSThemesShared",
             targets: ["OUDSThemesShared"]),
         .library(
-            name: "OUDSThemesDefault",
-            targets: ["OUDSThemesDefault"]),
+            name: "OUDSTheme",
+            targets: ["OUDSTheme"]),
         .library(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
@@ -54,32 +54,32 @@ let package = Package(
     targets: [
         .target(
             name: "OUDSModules",
-            dependencies: ["OUDSFoundations", "OUDSThemesDefault", "OUDSComponents"],
+            dependencies: ["OUDSFoundations", "OUDSTheme", "OUDSComponents"],
             path: "OUDS/Modules/Sources"),
         .target(
             name: "OUDSComponents",
-            dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSThemesDefault"],
+            dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSTheme"],
             path: "OUDS/Core/Components/Sources"),
         .target(
             name: "OUDSThemesShared",
-            dependencies: ["OUDSThemesDefault"],
+            dependencies: ["OUDSTheme"],
             path: "OUDS/Core/Themes/Sources/Shared"),
         .target(
-            name: "OUDSThemesDefault",
+            name: "OUDSTheme",
             dependencies: ["OUDSTokensSemantic", "OUDSTokensComponent"],
-            path: "OUDS/Core/Themes/Sources/Default Theme"),
+            path: "OUDS/Core/Themes/Sources/OUDSTheme"),
         .target(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],
-            path: "OUDS/Core/Tokens/Component Tokens/Sources"),
+            path: "OUDS/Core/Tokens/ComponentTokens/Sources"),
         .target(
             name: "OUDSTokensSemantic",
             dependencies: ["OUDSTokensPrimitive"],
-            path: "OUDS/Core/Tokens/Semantic Tokens/Sources"),
+            path: "OUDS/Core/Tokens/SemanticTokens/Sources"),
         .target(
             name: "OUDSTokensPrimitive",
             dependencies: ["OUDSFoundations"],
-            path: "OUDS/Core/Tokens/Primitive Tokens/Sources"),
+            path: "OUDS/Core/Tokens/PrimitiveTokens/Sources"),
         .target(
             name: "OUDSFoundations",
             path: "OUDS/Foundations/Sources"),

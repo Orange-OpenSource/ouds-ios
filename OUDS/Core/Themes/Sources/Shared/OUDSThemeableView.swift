@@ -13,7 +13,7 @@
 
 import Foundation
 import SwiftUI
-import OUDSThemesDefault
+import OUDSTheme
 
 // MARK: - Environment values
 

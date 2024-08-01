@@ -26,6 +26,7 @@ public typealias TypographyFontParagraphSpacingPrimitiveToken = Int
 
 // MARK: - Composite primitive token
 
+// swiftlint:disable line_length
 public struct TypographyCompositePrimitiveToken {
     
     let family: TypographyFontFamilyPrimitiveToken
@@ -43,9 +44,11 @@ public struct TypographyCompositePrimitiveToken {
         self.paragraphSpacing = paragraphSpacing
     }
 }
+// swiftlint:enable line_length
 
 // MARK: - Typography primitive tokens
 
+// swiftlint:disable line_length
 public struct TypographyPrimitiveTokens {
     
     // MARK: Primitive token - Typography - Font size
@@ -135,3 +138,4 @@ public struct TypographyPrimitiveTokens {
     public static let typeBold1850 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1850, lineHeight: fontLineHeight1850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
 
 }
+// swiftlint:enable line_length
