@@ -7,16 +7,17 @@ It contains modules, components, themes, and tokens (of components,s emantic and
 
 ## Exposed SPM modules
 
-This _Swift package_ exposes up to 9 _products_ as _libraries_:
+This _Swift package_ exposes up to #0 _products_ as _libraries_:
 1. `OUDSModules` containing OUDS modules with features ;
 2. `OUDSComponents` containing all components embeded also inside _modules_ ;
-3. `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_;
-4. `OUDSThemesSoshTheme` providing the default _Sosh_ theme defining style for _components_;
-5. `OUDSThemesShared` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
-6. `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_ ;
-7. `OUDSTokensSemantic` providing _semantic tokens_ ; 
-8. `OUDSTokensRaw` providing _raw tokens_ ;
-8. `OUDSFoundations` providing low level and utils objects.
+3. `OUDSThemesSoshTheme` providing the default _Sosh_ theme defining style for _components_;
+4. `OUDSThemesInverseTheme` providing a _theme_ with inversed colors for _components_;
+5. `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_;
+6. `OUDSThemesShared` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
+7. `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_ ;
+8. `OUDSTokensSemantic` providing _semantic tokens_ ; 
+9. `OUDSTokensRaw` providing _raw tokens_ ;
+10. `OUDSFoundations` providing low level and utils objects.
 
 Feel free to read [this Swift documentation](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html) if you are not used to _SPM_.
 

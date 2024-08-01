@@ -131,37 +131,31 @@ public protocol ColorSemanticTokens {
     // MARK: Semantic token - Colors - Background - Default - Primary
 
     var colorBackgroundDefaultPrimaryLight: ColorSemanticToken? { get }
-    var colorBackgroundDefaultPrimaryInverse: ColorSemanticToken? { get }
     var colorBackgroundDefaultPrimaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Default - Secondary
 
     var colorBackgroundDefaultSecondaryLight: ColorSemanticToken? { get }
-    var colorBackgroundDefaultSecondaryInverse: ColorSemanticToken? { get }
     var colorBackgroundDefaultSecondaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Default - Tertiary
 
     var colorBackgroundDefaultTertiaryLight: ColorSemanticToken? { get }
-    var colorBackgroundDefaultTertiaryInverse: ColorSemanticToken? { get }
     var colorBackgroundDefaultTertiaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Emphasis - Primary
 
     var colorBackgroundEmphasisPrimaryLight: ColorSemanticToken? { get }
-    var colorBackgroundEmphasisPrimaryInverse: ColorSemanticToken? { get }
     var colorBackgroundEmphasisPrimaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Emphasis - Secondary
 
     var colorBackgroundEmphasisSecondaryLight: ColorSemanticToken? { get }
-    var colorBackgroundEmphasisSecondaryInverse: ColorSemanticToken? { get }
     var colorBackgroundEmphasisSecondaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Brand - Primary
 
     var colorBackgroundBrandPrimaryLight: ColorSemanticToken? { get }
-    var colorBackgroundBrandPrimaryInverse: ColorSemanticToken? { get }
     var colorBackgroundBrandPrimaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Brand - Secondary
@@ -175,289 +169,241 @@ public protocol ColorSemanticTokens {
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
     var colorBackgroundStatusAttractiveMutedLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusAttractiveMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Attractive - Emphasis
 
     var colorBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Muted
 
     var colorBackgroundStatusWarningMutedLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusWarningMutedInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusWarningMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Emphasis
 
     var colorBackgroundStatusWarningEmphasisLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusWarningEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Negative - Muted
 
     var colorBackgroundStatusNegativeMutedLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusNegativeMutedInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusNegativeMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Negative - Emphasis
 
     var colorBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Positive - Muted
 
     var colorBackgroundStatusPositiveMutedLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusPositiveMutedInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusPositiveMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Positive - Emphasis
 
     var colorBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Information - Muted
 
     var colorBackgroundStatusInformationMutedLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusInformationMutedInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusInformationMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Information - Emphasis
 
     var colorBackgroundStatusInformationEmphasisLight: ColorSemanticToken? { get }
-    var colorBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? { get }
     var colorBackgroundStatusInformationEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Default
 
     var colorContentDefaultLight: ColorSemanticToken? { get }
-    var colorContentDefaultInverse: ColorSemanticToken? { get }
     var colorContentDefaultDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Default - On background emphasis
 
     var colorContentDefaultOnBackgroundEmphasisLight: ColorSemanticToken? { get }
-    var colorContentDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? { get }
     var colorContentDefaultOnBackgroundEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Muted
 
     var colorContentMutedLight: ColorSemanticToken? { get }
-    var colorContentMutedInverse: ColorSemanticToken? { get }
     var colorContentMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Muted - On background emphasis
 
     var colorContentMutedOnBackgroundEmphasisLight: ColorSemanticToken? { get }
-    var colorContentMutedOnBackgroundEmphasisInverse: ColorSemanticToken? { get }
     var colorContentMutedOnBackgroundEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Brand - Primary
 
     var colorContentBrandPrimaryLight: ColorSemanticToken? { get }
-    var colorContentBrandPrimaryInverse: ColorSemanticToken? { get }
     var colorContentBrandPrimaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasis
 
     var colorContentBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? { get }
-    var colorContentBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? { get }
     var colorContentBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Brand - Secondary
 
     var colorContentBrandSecondaryLight: ColorSemanticToken? { get }
-    var colorContentBrandSecondaryInverse: ColorSemanticToken? { get }
     var colorContentBrandSecondaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Brand - Tertiary
 
     var colorContentBrandTertiaryLight: ColorSemanticToken? { get }
-    var colorContentBrandTertiaryInverse: ColorSemanticToken? { get }
     var colorContentBrandTertiaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Status - Attractive
 
     var colorContentStatusAttractiveLight: ColorSemanticToken? { get }
-    var colorContentStatusAttractiveInverse: ColorSemanticToken? { get }
     var colorContentStatusAttractiveDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Status - Negative
 
     var colorContentStatusNegativeLight: ColorSemanticToken? { get }
-    var colorContentStatusNegativeInverse: ColorSemanticToken? { get }
     var colorContentStatusNegativeDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Status - Positive
 
     var colorContentStatusPositiveLight: ColorSemanticToken? { get }
-    var colorContentStatusPositiveInverse: ColorSemanticToken? { get }
     var colorContentStatusPositiveDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Status - Information
 
     var colorContentStatusInformationLight: ColorSemanticToken? { get }
-    var colorContentStatusInformationInverse: ColorSemanticToken? { get }
     var colorContentStatusInformationDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Default
 
     var colorBorderDefaultLight: ColorSemanticToken? { get }
-    var colorBorderDefaultInverse: ColorSemanticToken? { get }
     var colorBorderDefaultDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Default - On background emphasis
 
     var colorBorderDefaultOnBackgroundEmphasisLight: ColorSemanticToken? { get }
-    var colorBorderDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? { get }
     var colorBorderDefaultOnBackgroundEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Emphasis
 
     var colorBorderEmphasisLight: ColorSemanticToken? { get }
-    var colorBorderEmphasisInverse: ColorSemanticToken? { get }
     var colorBorderEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Emphasis - On background emphasis
 
     var colorBorderEmphasisOnBackgroundEmphasisLight: ColorSemanticToken? { get }
-    var colorBorderEmphasisOnBackgroundEmphasisInverse: ColorSemanticToken? { get }
     var colorBorderEmphasisOnBackgroundEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Brand - Primary
 
     var colorBorderBrandPrimaryLight: ColorSemanticToken? { get }
-    var colorBorderBrandPrimaryInverse: ColorSemanticToken? { get }
     var colorBorderBrandPrimaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasis
 
     var colorBorderBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? { get }
-    var colorBorderBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? { get }
     var colorBorderBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Brand - Secondary
 
     var colorBorderBrandSecondaryLight: ColorSemanticToken? { get }
-    var colorBorderBrandSecondaryInverse: ColorSemanticToken? { get }
     var colorBorderBrandSecondaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Brand - Tertiary
 
     var colorBorderBrandTertiaryLight: ColorSemanticToken? { get }
-    var colorBorderBrandTertiaryInverse: ColorSemanticToken? { get }
     var colorBorderBrandTertiaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Attractive
 
     var colorBorderBrandStatusAttractiveLight: ColorSemanticToken? { get }
-    var colorBorderBrandStatusAttractiveInverse: ColorSemanticToken? { get }
     var colorBorderBrandStatusAttractiveDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Warning
 
     var colorBorderBrandStatusWarningLight: ColorSemanticToken? { get }
-    var colorBorderBrandStatusWarningInverse: ColorSemanticToken? { get }
     var colorBorderBrandStatusWarningDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Negative
 
     var colorBorderBrandStatusNegativeLight: ColorSemanticToken? { get }
-    var colorBorderBrandStatusNegativeInverse: ColorSemanticToken? { get }
     var colorBorderBrandStatusNegativeDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Positive
 
     var colorBorderBrandStatusPositiveLight: ColorSemanticToken? { get }
-    var colorBorderBrandStatusPositiveInverse: ColorSemanticToken? { get }
     var colorBorderBrandStatusPositiveDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Information
 
     var colorBorderBrandStatusInformationLight: ColorSemanticToken? { get }
-    var colorBorderBrandStatusInformationInverse: ColorSemanticToken? { get }
     var colorBorderBrandStatusInformationDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Primary
 
     var colorOnBackgroundPrimaryLight: ColorSemanticToken? { get }
-    var colorOnBackgroundPrimaryInverse: ColorSemanticToken? { get }
     var colorOnBackgroundPrimaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Secondary
 
     var colorOnBackgroundSecondaryLight: ColorSemanticToken? { get }
-    var colorOnBackgroundSecondaryInverse: ColorSemanticToken? { get }
     var colorOnBackgroundSecondaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Tertiary
 
     var colorOnBackgroundTertiaryLight: ColorSemanticToken? { get }
-    var colorOnBackgroundTertiaryInverse: ColorSemanticToken? { get }
     var colorOnBackgroundTertiaryDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Attrative - Muted
 
     var colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Attrative - Emphasis
 
     var colorOnBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Warning - Muted
 
     var colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusWarningMutedInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Warning - Emphasis
 
     var colorOnBackgroundStatusWarningEmphasisLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusWarningEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Negative - Muted
 
     var colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusNegativeMutedInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Negative - Emphasis
 
     var colorOnBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Muted
 
     var colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusPositiveMutedInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Emphasis
 
     var colorOnBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Information - Muted
 
     var colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusInformationMutedInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Information - Emphasis
 
     var colorOnBackgroundStatusInformationEmphasisLight: ColorSemanticToken? { get }
-    var colorOnBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? { get }
     var colorOnBackgroundStatusInformationEmphasisDark: ColorSemanticToken? { get }
 
 }

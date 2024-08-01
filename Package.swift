@@ -33,11 +33,14 @@ let package = Package(
             name: "OUDSComponents",
             targets: ["OUDSComponents"]),
         .library(
-            name: "OUDSThemesOrangeTheme",
-            targets: ["OUDSThemesOrangeTheme"]),
-        .library(
             name: "OUDSThemesSoshTheme",
             targets: ["OUDSThemesSoshTheme"]),
+        .library(
+            name: "OUDSThemesInverseTheme",
+            targets: ["OUDSThemesInverseTheme"]),
+        .library(
+            name: "OUDSThemesOrangeTheme",
+            targets: ["OUDSThemesOrangeTheme"]),
         .library(
             name: "OUDSThemesShared",
             targets: ["OUDSThemesShared"]),
@@ -67,13 +70,17 @@ let package = Package(
             dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSThemesShared"],
             path: "OUDS/Core/Components/Sources"),
         .target(
-            name: "OUDSThemesOrangeTheme",
-            dependencies: ["OUDSThemesShared"],
-            path: "OUDS/Core/Themes/Sources/OrangeTheme"),
-        .target(
             name: "OUDSThemesSoshTheme",
             dependencies: ["OUDSThemesShared"],
             path: "OUDS/Core/Themes/Sources/SoshTheme"),
+        .target(
+            name: "OUDSThemesInverseTheme",
+            dependencies: ["OUDSThemesShared"],
+            path: "OUDS/Core/Themes/Sources/InverseTheme"),
+        .target(
+            name: "OUDSThemesOrangeTheme",
+            dependencies: ["OUDSThemesShared"],
+            path: "OUDS/Core/Themes/Sources/OrangeTheme"),
         .target(
             name: "OUDSThemesShared",
             dependencies: ["OUDSTokensComponent", "OUDSTokensSemantic", "OUDSTokensRaw"],
