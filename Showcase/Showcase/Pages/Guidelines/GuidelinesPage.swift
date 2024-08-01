@@ -11,25 +11,41 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSComponents
 import SwiftUI
+import OUDSComponents
+import OUDSThemesShared
+import OUDSThemesOrange
 
 struct GuidelinesPage: View {
 
     @State private var writtenText: String = ""
+    @State private var selectedTheme: OUDSTheme
+
+    init() {
+        writtenText = ""
+        selectedTheme = OrangeTheme()
+    }
 
     var body: some View {
-        NavigationView {
-            VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
-                OUDSFormsTextInput(placeholder: "Placeholder defined in app",
-                                  value: $writtenText)
+        OUDSThemeableView(theme: selectedTheme) {
+            NavigationView {
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
 
-                OUDSFormsTextInput(placeholder: "Placeholder defined in app",
-                                  value: $writtenText,
-                                  isEnabled: false)
+                    OUDSFormsTextInput(placeholder: "Placeholder defined in app",
+                                       value: $writtenText)
+
+                    Button("Try OUDS Orange Theme") {
+                        selectedTheme = OrangeTheme()
+                        print("Showcase app - Selected OUDS Orange theme")
+                    }
+                    Button("Try custom theme") {
+                        selectedTheme = OrangeCustomTheme()
+                        print("Showcase app - Selected app custom theme")
+                    }
+                }
+                .padding(.horizontal, 20)
+                .navigationTitle("app_bottomBar_guidelines")
             }
-            .padding(.horizontal, 20)
-            .navigationTitle("app_bottomBar_guidelines")
         }
     }
 }

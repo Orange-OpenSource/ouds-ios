@@ -18,7 +18,7 @@ import SwiftUI
 
 public typealias TypographyFontFamilyRawToken = String
 public typealias TypographyFontWeightRawToken = String
-public typealias TypographyFontSizeRawToken = Int
+public typealias TypographyFontSizeRawToken = CGFloat
 public typealias TypographyFontLineHeightRawToken = Int
 public typealias TypographyFontParagraphSpacingRawToken = Int
 
@@ -28,14 +28,14 @@ public typealias TypographyFontParagraphSpacingRawToken = Int
 
 // swiftlint:disable line_length
 public struct TypographyCompositeRawToken {
-    
+
     let family: TypographyFontFamilyRawToken
     let size: TypographyFontSizeRawToken
     let lineHeight: TypographyFontLineHeightRawToken
     let weight: TypographyFontWeightRawToken
     // let ter spacing...
     let paragraphSpacing: TypographyFontParagraphSpacingRawToken
-    
+
     init(family: TypographyFontFamilyRawToken, size: TypographyFontSizeRawToken, lineHeight: TypographyFontLineHeightRawToken, weight: TypographyFontWeightRawToken, paragraphSpacing: TypographyFontParagraphSpacingRawToken) {
         self.family = family
         self.size = size
@@ -52,7 +52,7 @@ public struct TypographyCompositeRawToken {
 /// This is the group of all **raw tokens** related to **typography**.
 /// Primitive types such as `Int` and `String` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 public struct TypographyRawTokens {
-    
+
     // MARK: Primitive token - Typography - Font size
 
     public static let fontSize100: TypographyFontSizeRawToken = 10

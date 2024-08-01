@@ -33,14 +33,14 @@ let package = Package(
             name: "OUDSComponents",
             targets: ["OUDSComponents"]),
         .library(
-            name: "OUDSThemesSoshTheme",
-            targets: ["OUDSThemesSoshTheme"]),
+            name: "OUDSThemesSosh",
+            targets: ["OUDSThemesSosh"]),
         .library(
-            name: "OUDSThemesInverseTheme",
-            targets: ["OUDSThemesInverseTheme"]),
+            name: "OUDSThemesInverse",
+            targets: ["OUDSThemesInverse"]),
         .library(
-            name: "OUDSThemesOrangeTheme",
-            targets: ["OUDSThemesOrangeTheme"]),
+            name: "OUDSThemesOrange",
+            targets: ["OUDSThemesOrange"]),
         .library(
             name: "OUDSThemesShared",
             targets: ["OUDSThemesShared"]),
@@ -67,20 +67,20 @@ let package = Package(
             path: "OUDS/Modules/Sources"),
         .target(
             name: "OUDSComponents",
-            dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSThemesShared"],
+            dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSThemesShared", "OUDSThemesOrange"],
             path: "OUDS/Core/Components/Sources"),
         .target(
-            name: "OUDSThemesSoshTheme",
+            name: "OUDSThemesSosh",
             dependencies: ["OUDSThemesShared"],
-            path: "OUDS/Core/Themes/Sources/SoshTheme"),
+            path: "OUDS/Core/Themes/Sources/Sosh"),
         .target(
-            name: "OUDSThemesInverseTheme",
-            dependencies: ["OUDSThemesShared"],
-            path: "OUDS/Core/Themes/Sources/InverseTheme"),
+            name: "OUDSThemesInverse",
+            dependencies: ["OUDSThemesOrange"],
+            path: "OUDS/Core/Themes/Sources/Inverse"),
         .target(
-            name: "OUDSThemesOrangeTheme",
+            name: "OUDSThemesOrange",
             dependencies: ["OUDSThemesShared"],
-            path: "OUDS/Core/Themes/Sources/OrangeTheme"),
+            path: "OUDS/Core/Themes/Sources/Orange"),
         .target(
             name: "OUDSThemesShared",
             dependencies: ["OUDSTokensComponent", "OUDSTokensSemantic", "OUDSTokensRaw"],

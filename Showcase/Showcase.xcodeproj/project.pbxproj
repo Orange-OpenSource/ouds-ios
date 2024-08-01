@@ -23,17 +23,12 @@
 /* Begin PBXBuildFile section */
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
-		510A9CD22C5679A300430620 /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CD12C5679A300430620 /* OUDSModules */; };
-		510A9CD82C567B6A00430620 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CD72C567B6A00430620 /* OUDSFoundations */; };
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		513AD93E2C5AA31E0003253B /* OUDSThemesShared in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93D2C5AA31E0003253B /* OUDSThemesShared */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
-		5163068D2C5BC4D5009A5FC7 /* OUDSTokensRaw in Frameworks */ = {isa = PBXBuildFile; productRef = 5163068C2C5BC4D5009A5FC7 /* OUDSTokensRaw */; };
-		5163068F2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 5163068E2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme */; };
-		516306912C5BC4E5009A5FC7 /* OUDSThemesSoshTheme in Frameworks */ = {isa = PBXBuildFile; productRef = 516306902C5BC4E5009A5FC7 /* OUDSThemesSoshTheme */; };
-		517862812C5A71AE0086789C /* OUDSTokensSemantic in Frameworks */ = {isa = PBXBuildFile; productRef = 517862802C5A71AE0086789C /* OUDSTokensSemantic */; };
+		51B4F7F42C5BEAB700312019 /* OrangeCustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */; };
 		51BD76212C466FCF0033365D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		51BD76222C466FCF0033365D /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760D2C466FCF0033365D /* ComponentsPage.swift */; };
 		51BD76232C466FCF0033365D /* GuidelinesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760F2C466FCF0033365D /* GuidelinesPage.swift */; };
@@ -45,6 +40,7 @@
 		51BD76292C466FCF0033365D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761C2C466FCF0033365D /* WebView.swift */; };
 		51BD762A2C466FCF0033365D /* Showcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* Showcase.swift */; };
 		51BD762B2C466FCF0033365D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
+		51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */; };
 		E537B9B66A6466473179DEE8 /* Pods_Showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D3017314DBC1733F8D0C79 /* Pods_Showcase.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +63,7 @@
 		5123647A2C3D7B3500572FD5 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeCustomTheme.swift; sourceTree = "<group>"; };
 		51BD760B2C466FCF0033365D /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		51BD760D2C466FCF0033365D /* ComponentsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
 		51BD760F2C466FCF0033365D /* GuidelinesPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuidelinesPage.swift; sourceTree = "<group>"; };
@@ -90,15 +87,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				516306912C5BC4E5009A5FC7 /* OUDSThemesSoshTheme in Frameworks */,
 				513AD93E2C5AA31E0003253B /* OUDSThemesShared in Frameworks */,
-				510A9CD82C567B6A00430620 /* OUDSFoundations in Frameworks */,
 				E537B9B66A6466473179DEE8 /* Pods_Showcase.framework in Frameworks */,
+				51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */,
 				513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */,
-				510A9CD22C5679A300430620 /* OUDSModules in Frameworks */,
-				5163068F2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme in Frameworks */,
-				517862812C5A71AE0086789C /* OUDSTokensSemantic in Frameworks */,
-				5163068D2C5BC4D5009A5FC7 /* OUDSTokensRaw in Frameworks */,
 				510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,6 +219,7 @@
 				51BD761D2C466FCF0033365D /* Utils */,
 				51BD761E2C466FCF0033365D /* Showcase.swift */,
 				51BD761F2C466FCF0033365D /* MainView.swift */,
+				51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */,
 			);
 			path = Showcase;
 			sourceTree = "<group>";
@@ -270,14 +263,9 @@
 			name = Showcase;
 			packageProductDependencies = (
 				510A9CCF2C5679A300430620 /* OUDSComponents */,
-				510A9CD12C5679A300430620 /* OUDSModules */,
-				510A9CD72C567B6A00430620 /* OUDSFoundations */,
-				517862802C5A71AE0086789C /* OUDSTokensSemantic */,
 				513AD93D2C5AA31E0003253B /* OUDSThemesShared */,
 				513AD93F2C5AAADE0003253B /* OUDSTokensComponent */,
-				5163068C2C5BC4D5009A5FC7 /* OUDSTokensRaw */,
-				5163068E2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme */,
-				516306902C5BC4E5009A5FC7 /* OUDSThemesSoshTheme */,
+				51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */,
 			);
 			productName = DemoApp;
 			productReference = 07FDCD912C296A500009AA13 /* OUDS Showcase.app */;
@@ -406,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51BD762B2C466FCF0033365D /* MainView.swift in Sources */,
+				51B4F7F42C5BEAB700312019 /* OrangeCustomTheme.swift in Sources */,
 				51BD76292C466FCF0033365D /* WebView.swift in Sources */,
 				51BD76232C466FCF0033365D /* GuidelinesPage.swift in Sources */,
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
@@ -695,14 +684,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSComponents;
 		};
-		510A9CD12C5679A300430620 /* OUDSModules */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSModules;
-		};
-		510A9CD72C567B6A00430620 /* OUDSFoundations */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSFoundations;
-		};
 		513AD93D2C5AA31E0003253B /* OUDSThemesShared */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSThemesShared;
@@ -711,21 +692,9 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSTokensComponent;
 		};
-		5163068C2C5BC4D5009A5FC7 /* OUDSTokensRaw */ = {
+		51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = OUDSTokensRaw;
-		};
-		5163068E2C5BC4E0009A5FC7 /* OUDSThemesOrangeTheme */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSThemesOrangeTheme;
-		};
-		516306902C5BC4E5009A5FC7 /* OUDSThemesSoshTheme */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSThemesSoshTheme;
-		};
-		517862802C5A71AE0086789C /* OUDSTokensSemantic */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSTokensSemantic;
+			productName = OUDSThemesOrange;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

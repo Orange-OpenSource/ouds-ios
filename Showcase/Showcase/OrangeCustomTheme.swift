@@ -12,11 +12,8 @@
 //
 
 import Foundation
-import OUDSTokensRaw
-import OUDSThemesShared
+import OUDSThemesOrange
 
-/// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
-open class SoshTheme: OUDSTheme {
-
-    // For clarity reasons, please override OUDSTheme properties in extensions
+class OrangeCustomTheme: OrangeTheme {
+    
 }

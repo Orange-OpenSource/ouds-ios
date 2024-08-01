@@ -66,5 +66,4 @@ extension ColorRawTokens {
     public static let colorDecorativeBlueDuck800: ColorSoshPrimitiveToken = "#0F3438"
     public static let colorDecorativeBlueDuck900: ColorSoshPrimitiveToken = "#081A1C"
     public static let colorDecorativeBlueDuck950: ColorSoshPrimitiveToken = "#040F10"
-
 }

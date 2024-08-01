@@ -23,5 +23,4 @@ extension OrangeTheme {
 
     public override var sysColorBrandAttractiveLowest: ColorAliasSemanticToken? { get { ColorRawTokens.colorBrandWarmGray100 } set { } }
     public override var sysColorBrandAttractiveHighest: ColorAliasSemanticToken? { get { ColorRawTokens.colorBrandWarmGray900 } set { } }
-
 }

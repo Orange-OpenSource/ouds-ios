@@ -12,11 +12,11 @@
 //
 
 import Foundation
-import OUDSThemesShared
+import OUDSThemesOrange
 
-/// This is an override of the default basic `OUDSTheme` with some inverted colors.
+/// This is an override of the default basic `OrangeTheme` with some inverted colors.
 /// It can overrides any properties from its superclass, and can be derived too.
-open class InverseTheme: OUDSTheme {
+open class InverseTheme: OrangeTheme {
 
     // For clarity reasons, please override OUDSTheme properties in extensions
 }

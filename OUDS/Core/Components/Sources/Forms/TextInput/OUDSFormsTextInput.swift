@@ -17,14 +17,13 @@ import OUDSFoundations
 import OUDSThemesShared
 
 /// An OUDS component for text input in formulars.
-public struct OUDSFormsTextInput: View{
+/// **Warning: This is a draft component **
+public struct OUDSFormsTextInput: View {
 
     var placeholder: String
     @Binding var value: String
     var isEnabled: Bool
-    @Environment(\.colorScheme) var colorScheme
 
-    /// Current OUDS theme to load styles
     @Environment(\.theme) var theme
 
     public init(placeholder: String, value: Binding<String>, isEnabled: Bool = true) {
@@ -34,11 +33,28 @@ public struct OUDSFormsTextInput: View{
     }
 
     public var body: some View {
-        VStack {
-            Text("This is a simple TextField from OUDS")
+        VStack(spacing: theme.spacePaddingBlockComponentTall) {
+
+            Label(
+                title: {
+                    Text("Example of OUDSFormsTextInput")
+                        .fontWeight(theme.titleFontWeight.fontWeight)
+                        .font(.system(size: theme.titleFontSize))
+                        .foregroundColor(theme.titleColor.color)
+                },
+                icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
+            )
+
+            Text("Write bellow some awesome text!")
+                .fontWeight(theme.subtitleFontWeight.fontWeight)
+                .font(.system(size: theme.subtitleFontSize))
+                .foregroundColor(theme.subtitleColor.color)
+            
             TextField(placeholder, text: $value)
         }
-        .background(isEnabled ? theme.formsTextInputColorBackgroundEnabled.color : theme.formsTextInputColorBackgroundDisabled.color)
-        .border(theme.colorBorderDefaultDark?.color ?? oudsDefaultColor, width: isEnabled ? theme.formsTextInputBorderWidthEnabled : theme.formsTextInputBorderWidthDisabled)
+        .padding(theme.spacePaddingBlockComponentTall)
+        .background(theme.backgroundColor.color)
+        .border(theme.borderColor.color, width: theme.borderWidth)
     }
 }
+

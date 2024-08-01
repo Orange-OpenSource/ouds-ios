@@ -15,24 +15,22 @@ import Foundation
 import OUDSTokensSemantic
 
 /// This is a component token for a text input in formulars.
-/// It can be defined by a groupe of background colors and border widths.
+/// **Warning: This is a draft component **
 public protocol FormsTextInputComponentToken {
 
-    // MARK: Semantic token - Forms Text Input - Color - Background
+    var ftiTitleFontWeight: TypographyFontWeightSemanticToken { get }
+    var ftiTitleFontSize: TypographyFontSizeSemanticToken { get }
+    var ftiTitleColor: ColorSemanticToken { get }
 
-    var formsTextInputColorBackgroundEnabled: ColorSemanticToken { get }
-    var formsTextInputColorBackgroundHover: ColorSemanticToken { get }
-    var formsTextInputColorBackgroundActive: ColorSemanticToken { get }
-    var formsTextInputColorBackgroundSelected: ColorSemanticToken { get }
-    var formsTextInputColorBackgroundDisabled: ColorSemanticToken { get }
-    var formsTextInputColorBackgroundFocused: ColorSemanticToken { get }
+    var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { get }
+    var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { get }
+    var ftiSubtitleColor: ColorSemanticToken { get }
 
-    // MARK: Semantic token - Forms Text Input - Border - Width
+    var ftiBackgroundColor: ColorSemanticToken { get }
 
-    var formsTextInputBorderWidthEnabled: BorderWidthSemanticToken { get }
-    var formsTextInputBorderWidthHover: BorderWidthSemanticToken { get }
-    var formsTextInputBorderWidthActive: BorderWidthSemanticToken { get }
-    var formsTextInputBorderWidthSelected: BorderWidthSemanticToken { get }
-    var formsTextInputBorderWidthDisabled: BorderWidthSemanticToken { get }
-    var formsTextInputBorderWidthFocused: BorderWidthSemanticToken { get }
+    var ftiBorderColor: ColorSemanticToken { get }
+
+    var ftiBorderStyle: BorderStyleSemanticToken { get }
+
+    var ftiBorderWidth: BorderWidthSemanticToken { get }
 }

@@ -17,27 +17,27 @@ import OUDSTokensSemantic
 import OUDSTokensComponent
 
 /// Defines for `FormsTextInputComponentToken` the basic configuration which can be overriden in subthemes / subclasses of this theme.
+/// **Warning: These are random and dumb values**
 extension OUDSTheme: FormsTextInputComponentToken {
 
-    // TODO: What should we do for unfound / undefined colors? This is a dumb random default value.
-    private static let defaultColorSemanticToken = ColorRawTokens.colorFunctionalDarkGray160
+    // TODO: What should we done if missing value? E.g. missing color or alias with empty values in the end
+    private static let defaultColor = ColorRawTokens.colorFunctionalBlack
 
-    // MARK: Component token - Forms Text Input - Color - Background
+    @objc open var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightHeading }
+    @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
+    @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultColor }
 
-    public var formsTextInputColorBackgroundEnabled: ColorSemanticToken { sysColorBrandAttractiveMedium ?? Self.defaultColorSemanticToken }
-    public var formsTextInputColorBackgroundHover: ColorSemanticToken { sysColorBrandAttractiveHigher ?? Self.defaultColorSemanticToken }
-    public var formsTextInputColorBackgroundActive: ColorSemanticToken { sysColorBrandAttractiveMedium ?? Self.defaultColorSemanticToken }
-    public var formsTextInputColorBackgroundSelected: ColorSemanticToken { colorContentMutedLight ?? Self.defaultColorSemanticToken }
-    public var formsTextInputColorBackgroundDisabled: ColorSemanticToken { colorOnBackgroundStatusPositiveEmphasisLight ?? Self.defaultColorSemanticToken }
-    public var formsTextInputColorBackgroundFocused: ColorSemanticToken { sysColorBrandAttractiveHigher ?? Self.defaultColorSemanticToken }
+    @objc open var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightDisplay }
+    @objc open var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
+    @objc open var ftiSubtitleColor: ColorSemanticToken { colorContentDefaultLight ?? Self.defaultColor }
 
-    // MARK: Component token - Forms Text Input - Border - Width
+    @objc open var ftiBackgroundColor: ColorSemanticToken { colorBackgroundDefaultPrimaryLight ?? Self.defaultColor }
 
-    public var formsTextInputBorderWidthEnabled: BorderWidthSemanticToken { borderWidthThick }
-    public var formsTextInputBorderWidthHover: BorderWidthSemanticToken { borderWidthThickest }
-    public var formsTextInputBorderWidthActive: BorderWidthSemanticToken { borderWidthThickest }
-    public var formsTextInputBorderWidthSelected: BorderWidthSemanticToken { borderWidthThickest }
-    public var formsTextInputBorderWidthDisabled: BorderWidthSemanticToken { borderWidthNone }
-    public var formsTextInputBorderWidthFocused: BorderWidthSemanticToken { borderWidthInterfactivePrimaryFocus }
+    @objc open var ftiBorderColor: ColorSemanticToken {
+        (colorScheme == .light ? colorBorderDefaultLight : colorBorderDefaultDark) ?? Self.defaultColor
+    }
 
+    @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
+
+    @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
 }
