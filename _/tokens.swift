@@ -1,0 +1,1617 @@
+// MARK: Semantic token - Opacity
+
+var opacityTransparent: OpacitySemanticToken = OpacityPrimitiveTokens.opacity0
+var opacityWeaker: OpacitySemanticToken = OpacityPrimitiveTokens.opacity100
+var opacityWeak: OpacitySemanticToken = OpacityPrimitiveTokens.opacity300
+var opacityMedum: OpacitySemanticToken = OpacityPrimitiveTokens.opacity500
+var opacityEmphasis: OpacitySemanticToken = OpacityPrimitiveTokens.opacity700
+var opacityOpaque: OpacitySemanticToken = OpacityPrimitiveTokens.opacity900
+
+// MARK: Semantic token - Border - Width
+
+var borderWidthNone: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth0
+var borderWidthDefault: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth25
+var borderWidthThin: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth25
+var borderWidthThick: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth50
+var borderWidthThicker: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth75
+var borderWidthThickest: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth100
+var borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken = BorderPrimitiveTokens.borderWidth100
+
+// MARK: Semantic token - Border - Radius
+
+var borderRadiusNone: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius0
+var borderRadiusDefault: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius0
+var borderRadiusShort: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius75
+var borderRadiusMedium: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius150
+var borderRadiusTall: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius300
+var borderRadiusPill: BorderRadiusSemanticToken = BorderPrimitiveTokens.borderRadius9999
+
+// MARK: Semantic token - Border - Style
+
+var borderStyleDefault: BorderStyleSemanticToken = BorderPrimitiveTokens.borderStyleSolid
+var borderStyleDrag: BorderStyleSemanticToken = BorderPrimitiveTokens.borderStyleDashed
+
+// MARK: Semantic token - Dimension
+
+var dimensionDensityDefault: DimensionSemanticToken = DimensionPrimitiveTokens.dimensionBase
+
+// MARK: Semantic token - Spacing - Padding - Padding inline
+
+var spacePaddingInlineComponentNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+var spacePaddingInlineComponentShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+var spacePaddingInlineComponentShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+var spacePaddingInlineComponentMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+var spacePaddingInlineComponentTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension300
+var spacePaddingInlineComponentTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension400
+var spacePaddingInlineComponentIsIconNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+var spacePaddingInlineComponentIsIconShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+var spacePaddingInlineComponentIsIconShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+var spacePaddingInlineComponentIsIconMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+var spacePaddingInlineComponentIsIconTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+var spacePaddingInlineComponentIsIconTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+var spacePaddingInlineComponentIsArrowNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+var spacePaddingInlineComponentIsArrowShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+var spacePaddingInlineComponentIsArrowShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+var spacePaddingInlineComponentIsArrowMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+var spacePaddingInlineComponentIsArrowTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+var spacePaddingInlineComponentIsArrowTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+
+// MARK: Semantic token - Spacing - Padding - Padding stack
+
+var spacePaddingBlockComponentNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+var spacePaddingBlockComponentShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+var spacePaddingBlockComponentShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+var spacePaddingBlockComponentMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+var spacePaddingBlockComponentTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension300
+var spacePaddingBlockComponentTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension400
+var spacePaddingBlockComponentIsIconNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+var spacePaddingBlockComponentIsIconShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+var spacePaddingBlockComponentIsIconShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+var spacePaddingBlockComponentIsIconMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+var spacePaddingBlockComponentIsIconTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+var spacePaddingBlockComponentIsIconTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+
+// MARK: Semantic token - Spacing - Padding - Padding inset
+
+var spaceInsetComponentGapComponentNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+var spaceInsetComponentGapComponentSmash: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+var spaceInsetComponentGapComponentShortest: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+var spaceInsetComponentGapComponentShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+var spaceInsetComponentGapComponentShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+var spaceInsetComponentGapComponentMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension150
+var spaceInsetComponentGapComponentTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+var spaceInsetComponentGapComponentTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension300
+var spaceInsetComponentGapComponentTallest: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension400
+var spaceInsetComponentGapComponentSpacious: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension500
+
+// MARK: Semantic token - Spacing - Padding - Gap inline
+
+var spaceColumnGapComponentNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+var spaceColumnGapComponentShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+var spaceColumnGapComponentShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+var spaceColumnGapComponentMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+var spaceColumnGapComponentTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension300
+var spaceColumnGapComponentTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension400
+var spaceColumnGapComponentIsIconNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+var spaceColumnGapComponentIsIconShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+var spaceColumnGapComponentIsIconShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+var spaceColumnGapComponentIsIconMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+var spaceColumnGapComponentIsIconTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+var spaceColumnGapComponentIsIconTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+var spaceColumnGapComponentIsArrowNone: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension0
+var spaceColumnGapComponentIsArrowShorter: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension25
+var spaceColumnGapComponentIsArrowShort: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension50
+var spaceColumnGapComponentIsArrowMedium: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension75
+var spaceColumnGapComponentIsArrowTall: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension100
+var spaceColumnGapComponentIsArrowTaller: SpacingPaddingInlineSemanticToken = DimensionPrimitiveTokens.dimension200
+
+// MARK: Semantic token - Spacing - Padding - Gap stack
+
+var spaceRowGapComponentNone: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension0
+var spaceRowGapComponentShorter: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension25
+var spaceRowGapComponentShort: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension50
+var spaceRowGapComponentMedium: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension75
+var spaceRowGapComponentTall: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension100
+var spaceRowGapComponentTaller: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension200
+var spaceRowGapComponentIsIconNone: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension0
+var spaceRowGapComponentIsIconShorter: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension25
+var spaceRowGapComponentIsIconShort: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension50
+var spaceRowGapComponentIsIconMedium: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension75
+var spaceRowGapComponentIsIconTall: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension100
+var spaceRowGapComponentIsIconTaller: SpacingGapStackSemanticToken = DimensionPrimitiveTokens.dimension200
+
+// MARK: Semantic token - Sizing - Width height - Icon decorative
+
+var sizeWidthHeightIconShortest: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
+var sizeWidthHeightIconShorter: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+var sizeWidthHeightIconShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
+var sizeWidthHeightIconMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+var sizeWidthHeightIconTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension600
+var sizeWidthHeightIconTaller: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension700
+var sizeWidthHeightIconTallest: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension900
+
+// MARK: Semantic token - Sizing - Width height - Icon component
+
+var sizeWidthHeightIsLabelSmallShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension150
+var sizeWidthHeightIsLabelSmallMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
+var sizeWidthHeightIsLabelSmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+var sizeWidthHeightIsLabelMediumShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
+var sizeWidthHeightIsLabelMediumMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+var sizeWidthHeightIsLabelMediumTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+var sizeWidthHeightIsLabelLargeShorter: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+var sizeWidthHeightIsLabelLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+var sizeWidthHeightIsLabelLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension350
+var sizeWidthHeightIsLabelLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
+var sizeWidthHeightIsLabelLargeTaller: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+var sizeWidthHeightIsLabelXLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
+var sizeWidthHeightIsLabelXLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+var sizeWidthHeightIsLabelXLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+
+// MARK: Semantic token - Sizing - Width height - Icon typography - Heading
+
+var sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension400
+var sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+var sizeWidthHeightIconIsHeadingSmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+var sizeWidthHeightIconIsHeadingMediumShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+var sizeWidthHeightIconIsHeadingMediumMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+var sizeWidthHeightIconIsHeadingMediumTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension600
+var sizeWidthHeightIconIsHeadingLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension550
+var sizeWidthHeightIconIsHeadingLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension600
+var sizeWidthHeightIconIsHeadingLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension650
+var sizeWidthHeightIconIsHeadingXLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension650
+var sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension700
+var sizeWidthHeightIconIsHeadingXLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension800
+
+// MARK: Semantic token - Sizing - Width height - Icon typography - Body
+
+var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension150
+var sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension500
+var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+var sizeWidthHeightIconIsBodyMediumShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension200
+var sizeWidthHeightIconIsBodyMediumMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+var sizeWidthHeightIconIsBodyMediumTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+var sizeWidthHeightIconIsBodyLargeShort: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension250
+var sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension300
+var sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken = DimensionPrimitiveTokens.dimension350
+
+// MARK: Semantic token - Sizing - Max width
+
+var sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+var sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+var sizeMaxWidthTypographyDisplayLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+var sizeMaxWidthTypographyHeadingSmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
+var sizeMaxWidthTypographyHeadingMedium: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+var sizeMaxWidthTypographyHeadingLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+var sizeMaxWidthTypographyHeadingXLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension9000
+var sizeMaxWidthTypographyBodySmall: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
+var sizeMaxWidthTypographyBodyMedium: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
+var sizeMaxWidthTypographyBodyLarge: SizingMaxWidthSemanticToken = DimensionPrimitiveTokens.dimension6000
+
+// MARK: Semantic token - Elevation - Z index
+
+var elevationZIndexDeep: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndexMinus9999
+var elevationZIndexDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex0
+var elevationZIndexDropdown: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1000
+var elevationZIndexSticky: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1020
+var elevationZIndexFixed: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1030
+var elevationZIndexBackToTop: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1035
+var elevationZIndexSpinner: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1038
+var elevationZIndexOffCanvasBackdrop: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1040
+var elevationZIndexOffCanvas: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1045
+var elevationZIndexModalBackdrop: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1050
+var elevationZIndexModal: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1060
+var elevationZIndexPopover: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1070
+var elevationZIndexTooltip: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1080
+var elevationZIndexToast: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationZIndex1090
+
+// MARK: Semantic token - Elevation - X
+
+var elevationXNone: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+var elevationXRaised: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+var elevationXDrag: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+var elevationXOverlayDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+var elevationXOverlayEmphasis: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+var elevationXStickyDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+var elevationXStickyEmphasis: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+var elevationXStickyNavigationScrolled: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+var elevationXFOcus: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationX0
+
+// MARK: Semantic token - Elevation - Y
+
+var elevationYNone: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY0
+var elevationYRaised: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY100
+var elevationYDrag: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY300
+var elevationYOverlayDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY200
+var elevationYOverlayEmphasis: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY500
+var elevationYStickyDefault: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY300
+var elevationYStickyEmphasis: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY300
+var elevationYStickyNavigationScrolled: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY300
+var elevationYFocus: ElevationZIndexSemanticToken = ElevationPrimitiveTokens.elevationY0
+
+// MARK: Semantic token - Elevation - Blur
+
+var elevationBlurNone: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur0
+var elevationBlurRaised: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur200
+var elevationBlurDrag: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur400
+var elevationBlurOverlayDefault: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur300
+var elevationBlurOverlayEmphasis: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur600
+var elevationBlurStickyDefault: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur400
+var elevationBlurStickyEmphasis: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur400
+var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur400
+var elevationBlurFocus: ElevationBlurSemanticToken = ElevationPrimitiveTokens.elevationBlur0
+
+// MARK: Semantic token - Elevation - Spread
+
+var elevationSpreadNone: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread0
+var elevationSpreadRaised: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread0
+var elevationSpreadDrag: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
+var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
+var elevationSpreadOverlayEmphasis: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus300
+var elevationSpreadStickyDefault: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
+var elevationSpreadStickyEmphasis: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
+var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpreadMinus100
+var elevationSpreadFocus: ElevationSpreadSemanticToken = ElevationPrimitiveTokens.elevationSpread300
+
+// MARK: Semantic token - Elevation - Color - None
+
+var elevationColorNoneLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite0
+var elevationColorNoneDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite0
+var elevationColorNoneInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite0
+
+// MARK: Semantic token - Elevation - Color - Raised
+
+var elevationColorRaisedLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack500
+var elevationColorRaisedDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack500
+var elevationColorRaisedInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack500
+
+// MARK: Semantic token - Elevation - Color - Drag
+
+var elevationColorDragLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack600
+var elevationColorDragDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack600
+var elevationColorDragInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack600
+
+// MARK: Semantic token - Elevation - Color - Overlay - Default
+
+var elevationColorOverlayDefaultLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+var elevationColorOverlayDefaultDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+var elevationColorOverlayDefaultInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+
+// MARK: Semantic token - Elevation - Color - Overlay - Emphasis
+
+var elevationColorOverlayEmphasisLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+var elevationColorOverlayEmphasisInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+
+// MARK: Semantic token - Elevation - Color - Sticky - Default
+
+var elevationColorStickyDefaultLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+var elevationColorStickyDefaultDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+var elevationColorStickyDefaultInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack400
+
+// MARK: Semantic token - Elevation - Color - Sticky - Emphasis
+
+var elevationColorStickyEmphasisLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+var elevationColorStickyEmphasisDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+var elevationColorStickyEmphasisInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+
+// MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
+
+var elevationColorStickyNavigationScrolledLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+var elevationColorStickyNavigationScrolledInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentBlack300
+
+// MARK: Semantic token - Elevation - Color - Focus
+
+var elevationColorFocusLigh: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite900
+var elevationColorFocusDark: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite900
+var elevationColorFocusInverse: ElevationColorSemanticToken = ColorGlobalPrimitiveTokens.colorTransparentWhite900
+
+// MARK: Semantic token - Grid - iOS Extra compact
+
+var gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridMinWidthIOSExtraCompact
+var gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridMaxWidthIOSExtraCompact
+var gridIOSExtraCompactMargin: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridMargin100
+var gridIOSExtraCompactColumnGap: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridColumnGap100
+var gridIOSExtraCompactColumnCount: GridIOSExtraCompactSemanticTokens = GridPrimitiveTokens.gridColumnCount100
+
+// MARK: Semantic token - Grid - iOS Compact
+
+var gridIOSCompactMinWidth: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridMinWidthIOSCompact
+var gridIOSCompactMaxWidth: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridMaxWidthIOSCompact
+var gridIOSCompactMargin: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridMargin300
+var gridIOSCompactColumnGap: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridColumnGap100
+var gridIOSCompactColumnCount: GridIOSCompactSemanticToken = GridPrimitiveTokens.gridColumnCount400
+
+// MARK: Semantic token - Grid - iOS Regular
+
+var gridIOSRegularMinWidth: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridMinWidthIOSRegular
+var gridIOSRegularMaxWidth: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridMaxWidthIOSRegular
+var gridIOSRegularMargin: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridMargin500
+var gridIOSRegularColumnGap: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridColumnGap300
+var gridIOSRegularColumnCount: GridIOSRegularSemanticToken = GridPrimitiveTokens.gridColumnCount600
+
+// MARK: Semantic token - Typography - Font - Family
+
+var fontFamilyDisplay: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+var fontFamilyHeading: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+var fontFamilyBody: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+var fontFamilyLabel: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+var fontFamilyCode: TypographyFontFamilySemanticToken = TypographyPrimitiveTokens.fontFamilySystem
+
+// MARK: Semantic token - Typography - Font - Weight
+
+var fontWeightDisplay: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
+var fontWeightHeading: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
+var fontWeightBodyDefault: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight400
+var fontWeightBodyStrong: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
+var fontWeightLabelDefault: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight400
+var fontWeightLabelStrong: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight700
+var fontWeightWeightCode: TypographyFontWeightSemanticToken = TypographyPrimitiveTokens.fontWeight400
+
+// MARK: Semantic token - Typography - Font - Size - Mobile
+
+var fontSizeMobileDislayLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize850
+var fontSizeMobileDisplayMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize750
+var fontSizeMobileDisplaySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize650
+var fontSizeMobileHeadingXLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize550
+var fontSizeMobileHeadingLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize450
+var fontSizeMobileHeadingMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize350
+var fontSizeMobileHeadingSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize300
+var fontSizeMobileBodyLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize250
+var fontSizeMobileBodyMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
+var fontSizeMobileBodySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize100
+
+// MARK: Semantic token - Typography - Font - Size - Tablet
+
+var fontSizeTabletDislayLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize1450
+var fontSizeTabletDisplayMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize1050
+var fontSizeTabletDisplaySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize850
+var fontSizeTabletHeadingXLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize750
+var fontSizeTabletHeadingLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize550
+var fontSizeTabletHeadingMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize450
+var fontSizeTabletHeadingSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize350
+var fontSizeTabletBodyLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize250
+var fontSizeTabletBodyMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
+var fontSizeTabletBodySmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize150
+
+// MARK: Semantic token - Typography - Font - Size - Others
+
+var fontSizeLabelXLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize300
+var fontSizeLabelLarge: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize250
+var fontSizeLabelMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
+var fontSizeLabelSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize100
+var fontSizeCodeMedium: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize200
+var fontSizeCodeSmall: TypographyFontSizeSemanticToken = TypographyPrimitiveTokens.fontSize150
+
+// MARK: Semantic token - Typography - Font - Light height - Mobile
+
+var fontLineHeightMobileDislayLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1050
+var fontLineHeightMobileDisplayMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight950
+var fontLineHeightMobileDisplaySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight850
+var fontLineHeightMobileHeadingXLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight750
+var fontLineHeightMobileHeadingLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight650
+var fontLineHeightMobileHeadingMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight550
+var fontLineHeightMobileHeadingSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+var fontLineHeightMobileBodyLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+var fontLineHeightMobileBodyMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
+var fontLineHeightMobileBodySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
+
+// MARK: Semantic token - Typography - Font - Light height - Tablet
+
+var fontLineHeightTabletDislayLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1850
+var fontLineHeightTabletDisplayMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1250
+var fontLineHeightTabletDisplaySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight1050
+var fontLineHeightTabletHeadingXLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight950
+var fontLineHeightTabletHeadingLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight750
+var fontLineHeightTabletHeadingMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight650
+var fontLineHeightTabletHeadingSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight550
+var fontLineHeightTabletBodyLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+var fontLineHeightTabletBodyMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
+var fontLineHeightTabletBodySmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
+
+// MARK: Semantic token - Typography - Font - Light height - Others
+
+var fontLineHeightLabelXLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+var fontLineHeightLabelLarge: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight450
+var fontLineHeightLabelMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
+var fontLineHeightLabelSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
+var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight350
+var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken = TypographyPrimitiveTokens.fontLineHeight250
+
+// MARK: Semantic token - Typography - Font - Paragraph spacing - Mobile
+
+var fontParagraphSpacingMobileDislayLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingMobileDisplayMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingMobileDisplaySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingMobileHeadingXLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingMobileHeadingLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingMobileHeadingMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingMobileHeadingSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingMobileBodyLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingMobileBodyMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingMobileBodySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+
+// MARK: Semantic token - Typography - Font - Paragraph spacing - Tablet
+
+var fontParagraphSpacingTabletDislayLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingTabletDisplayMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingTabletDisplaySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingTabletHeadingXLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingTabletHeadingLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingTabletHeadingMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingTabletHeadingSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingTabletBodyLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingTabletBodyMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingTabletBodySmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+
+// MARK: Semantic token - Typography - Font - Paragraph spacing - Others
+
+var fontParagraphSpacingLabelXLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingLabelLarge: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingLabelMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingLabelSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingCodeMedium: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+var fontParagraphSpacingCodeSmall: TypographyFontParagraphSpacingPrimitiveToken = TypographyPrimitiveTokens.fontParagraphSpacing100
+
+// MARK: Semantic token - Colors - Alias - Primary
+
+var sysColorBrandPrimaryLowest: ColorAliasSemanticToken? = nil
+var sysColorBrandPrimaryLower: ColorAliasSemanticToken? = nil
+var sysColorBrandPrimaryLow: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange500
+var sysColorBrandPrimaryDefault: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange550
+var sysColorBrandPrimaryHigh: ColorAliasSemanticToken? = nil
+var sysColorBrandPrimaryHigher: ColorAliasSemanticToken? = nil
+var sysColorBrandPrimaryHighest: ColorAliasSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Alias - Secondary
+
+var sysColorBrandSecondaryLowest: ColorAliasSemanticToken? = nil
+var sysColorBrandSecondaryLower: ColorAliasSemanticToken? = nil
+var sysColorBrandSecondaryLow: ColorAliasSemanticToken? = nil
+var sysColorBrandSecondaryDefault: ColorAliasSemanticToken? = nil
+var sysColorBrandSecondaryHigh: ColorAliasSemanticToken? = nil
+var sysColorBrandSecondaryHigher: ColorAliasSemanticToken? = nil
+var sysColorBrandSecondaryHighest: ColorAliasSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Alias - Tertiary
+
+var sysColorBrandTertiaryLowest: ColorAliasSemanticToken? = nil
+var sysColorBrandTertiaryLower: ColorAliasSemanticToken? = nil
+var sysColorBrandTertiaryLow: ColorAliasSemanticToken? = nil
+var sysColorBrandTertiaryDefault: ColorAliasSemanticToken? = nil
+var sysColorBrandTertiaryHigh: ColorAliasSemanticToken? = nil
+var sysColorBrandTertiaryHigher: ColorAliasSemanticToken? = nil
+var sysColorBrandTertiaryHighest: ColorAliasSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Alias - Neutral - Muted
+
+var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalWhite
+var sysColorBrandNeutralMutedLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray80
+var sysColorBrandNeutralMutedLower: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
+var sysColorBrandNeutralMutedLow: ColorAliasSemanticToken? = nil
+var sysColorBrandNeutralMutedMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray400
+var sysColorBrandNeutralMutedHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray560
+var sysColorBrandNeutralMutedHigher: ColorAliasSemanticToken? = nil
+var sysColorBrandNeutralMutedHighest: ColorAliasSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Alias - Neutral - Emphasis
+
+var sysColorBrandNeutralEmphasisLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray400
+var sysColorBrandNeutralEmphasisLower: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray480
+var sysColorBrandNeutralEmphasisLow: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray560
+var sysColorBrandNeutralEmphasisMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray640
+var sysColorBrandNeutralEmphasisHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray720
+var sysColorBrandNeutralEmphasisHigher: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray800
+var sysColorBrandNeutralEmphasisHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray880
+var sysColorBrandNeutralEmphasisBlack: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalBlack
+
+// MARK: Semantic token - Colors - Alias - Positive
+
+var sysColorBrandPositiveLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite100
+var sysColorBrandPositiveLower: ColorAliasSemanticToken? = nil
+var sysColorBrandPositiveLow: ColorAliasSemanticToken? = nil
+var sysColorBrandPositiveDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite500
+var sysColorBrandPositiveHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite600
+var sysColorBrandPositiveHigher: ColorAliasSemanticToken? = nil
+var sysColorBrandPositiveHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalMalachite800
+
+// MARK: Semantic token - Colors - Alias - Information
+
+var sysColorBrandInformationLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue100
+var sysColorBrandInformationLower: ColorAliasSemanticToken? = nil
+var sysColorBrandInformationLow: ColorAliasSemanticToken? = nil
+var sysColorBrandInformationDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue500
+var sysColorBrandInformationHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue600
+var sysColorBrandInformationHigher: ColorAliasSemanticToken? = nil
+var sysColorBrandInformationHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDodgerBlue800
+
+// MARK: Semantic token - Colors - Alias - Warning
+
+var sysColorBrandWarningLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun100
+var sysColorBrandWarningLower: ColorAliasSemanticToken? = nil
+var sysColorBrandWarningLow: ColorAliasSemanticToken? = nil
+var sysColorBrandWarningDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
+var sysColorBrandWarningHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun600
+var sysColorBrandWarningHigher: ColorAliasSemanticToken? = nil
+var sysColorBrandWarningHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun800
+
+// MARK: Semantic token - Colors - Alias - Negative
+
+var sysColorBrandNegativeLowest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet100
+var sysColorBrandNegativeLower: ColorAliasSemanticToken? = nil
+var sysColorBrandNegativeLow: ColorAliasSemanticToken? = nil
+var sysColorBrandNegativeDefault: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet500
+var sysColorBrandNegativeHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet600
+var sysColorBrandNegativeHigher: ColorAliasSemanticToken? = nil
+var sysColorBrandNegativeHighest: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalScarlet800
+
+// MARK: Semantic token - Colors - Alias - Attractive
+
+var sysColorBrandAttractiveLowest: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandWarmGray100
+var sysColorBrandAttractiveLower: ColorAliasSemanticToken? = nil
+var sysColorBrandAttractiveLow: ColorAliasSemanticToken? = nil
+var sysColorBrandAttractiveMedium: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
+var sysColorBrandAttractiveHigh: ColorAliasSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun600
+var sysColorBrandAttractiveHigher: ColorAliasSemanticToken? = nil
+var sysColorBrandAttractiveHighest: ColorAliasSemanticToken? = ColorOrangePrimitiveTokens.colorBrandWarmGray900
+
+// MARK: Semantic token - Colors - Background - Default - Primary
+
+var colorBackgroundDefaultPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorBackgroundDefaultPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorBackgroundDefaultPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHighest
+
+// MARK: Semantic token - Colors - Background - Default - Secondary
+
+var colorBackgroundDefaultSecondaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedLowest
+var colorBackgroundDefaultSecondaryInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
+var colorBackgroundDefaultSecondaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigher
+
+// MARK: Semantic token - Colors - Background - Default - Tertiary
+
+var colorBackgroundDefaultTertiaryLight: ColorSemanticToken? = sysColorBrandAttractiveLowest
+var colorBackgroundDefaultTertiaryInverse: ColorSemanticToken? = sysColorBrandAttractiveHighest
+var colorBackgroundDefaultTertiaryDark: ColorSemanticToken? = sysColorBrandAttractiveHighest
+
+// MARK: Semantic token - Colors - Background - Emphasis - Primary
+
+var colorBackgroundEmphasisPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorBackgroundEmphasisPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorBackgroundEmphasisPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
+
+// MARK: Semantic token - Colors - Background - Emphasis - Secondary
+
+var colorBackgroundEmphasisSecondaryLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
+var colorBackgroundEmphasisSecondaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedLowest
+var colorBackgroundEmphasisSecondaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+// MARK: Semantic token - Colors - Background - Brand - Primary
+
+var colorBackgroundBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
+var colorBackgroundBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
+var colorBackgroundBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+// MARK: Semantic token - Colors - Background - Brand - Secondary
+
+var colorBackgroundBrandSecondary: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Background - Brand - Tertiary
+
+var colorBackgroundBrandTertiary: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Background - Status - Attractive - Muted
+
+var colorBackgroundStatusAttractiveMutedLight: ColorSemanticToken? = sysColorBrandAttractiveLowest
+var colorBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? = sysColorBrandAttractiveLowest
+var colorBackgroundStatusAttractiveMutedDark: ColorSemanticToken? = sysColorBrandAttractiveHighest
+
+// MARK: Semantic token - Colors - Background - Status - Attractive - Emphasis
+
+var colorBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? = sysColorBrandWarningDefault
+var colorBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? = sysColorBrandWarningDefault
+var colorBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? = sysColorBrandWarningHighest
+
+// MARK: Semantic token - Colors - Background - Status - Warning - Muted
+
+var colorBackgroundStatusWarningMutedLight: ColorSemanticToken? = sysColorBrandWarningLowest
+var colorBackgroundStatusWarningMutedInverse: ColorSemanticToken? = sysColorBrandWarningLowest
+var colorBackgroundStatusWarningMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+// MARK: Semantic token - Colors - Background - Status - Warning - Emphasis
+
+var colorBackgroundStatusWarningEmphasisLight: ColorSemanticToken? = sysColorBrandWarningDefault
+var colorBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? = sysColorBrandWarningDefault
+var colorBackgroundStatusWarningEmphasisDark: ColorSemanticToken? = sysColorBrandWarningHighest
+
+// MARK: Semantic token - Colors - Background - Status - Negative - Muted
+
+var colorBackgroundStatusNegativeMutedLight: ColorSemanticToken? = sysColorBrandNegativeLowest
+var colorBackgroundStatusNegativeMutedInverse: ColorSemanticToken? = sysColorBrandNegativeLowest
+var colorBackgroundStatusNegativeMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+// MARK: Semantic token - Colors - Background - Status - Negative - Emphasis
+
+var colorBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? = sysColorBrandNegativeDefault
+var colorBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? = sysColorBrandNegativeDefault
+var colorBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? = sysColorBrandNegativeHighest
+
+// MARK: Semantic token - Colors - Background - Status - Positive - Muted
+
+var colorBackgroundStatusPositiveMutedLight: ColorSemanticToken? = sysColorBrandPositiveLowest
+var colorBackgroundStatusPositiveMutedInverse: ColorSemanticToken? = sysColorBrandPositiveLowest
+var colorBackgroundStatusPositiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+// MARK: Semantic token - Colors - Background - Status - Positive - Emphasis
+
+var colorBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? = sysColorBrandPositiveDefault
+var colorBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? = sysColorBrandPositiveDefault
+var colorBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? = sysColorBrandPositiveHighest
+
+// MARK: Semantic token - Colors - Background - Status - Information - Muted
+
+var colorBackgroundStatusInformationMutedLight: ColorSemanticToken? = sysColorBrandInformationLowest
+var colorBackgroundStatusInformationMutedInverse: ColorSemanticToken? = sysColorBrandInformationLowest
+var colorBackgroundStatusInformationMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+// MARK: Semantic token - Colors - Background - Status - Information - Emphasis
+
+var colorBackgroundStatusInformationEmphasisLight: ColorSemanticToken? = sysColorBrandInformationDefault
+var colorBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? = sysColorBrandInformationDefault
+var colorBackgroundStatusInformationEmphasisDark: ColorSemanticToken? = sysColorBrandInformationHighest
+
+// MARK: Semantic token - Colors - Content - Default
+
+var colorContentDefaultLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorContentDefaultInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorContentDefaultDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - Content - Default - On background emphasis
+
+var colorContentDefaultOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorContentDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorContentDefaultOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - Content - Muted
+
+var colorContentMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+var colorContentMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisMedium
+var colorContentMutedDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHigh
+
+// MARK: Semantic token - Colors - Content - Muted - On background emphasis
+
+var colorContentMutedOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
+var colorContentMutedOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+var colorContentMutedOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedHigh
+
+// MARK: Semantic token - Colors - Content - Brand - Primary
+
+var colorContentBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
+var colorContentBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryLow
+var colorContentBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+// MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasis
+
+var colorContentBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandPrimaryLow
+var colorContentBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
+var colorContentBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+// MARK: Semantic token - Colors - Content - Brand - Secondary
+
+var colorContentBrandSecondaryLight: ColorSemanticToken? = nil
+var colorContentBrandSecondaryInverse: ColorSemanticToken? = nil
+var colorContentBrandSecondaryDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Content - Brand - Tertiary
+
+var colorContentBrandTertiaryLight: ColorSemanticToken? = nil
+var colorContentBrandTertiaryInverse: ColorSemanticToken? = nil
+var colorContentBrandTertiaryDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Content - Status - Attractive
+
+var colorContentStatusAttractiveLight: ColorSemanticToken? = nil
+var colorContentStatusAttractiveInverse: ColorSemanticToken? = nil
+var colorContentStatusAttractiveDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Content - Status - Negative
+
+var colorContentStatusNegativeLight: ColorSemanticToken? = sysColorBrandNegativeDefault
+var colorContentStatusNegativeInverse: ColorSemanticToken? = sysColorBrandNegativeDefault
+var colorContentStatusNegativeDark: ColorSemanticToken? = sysColorBrandNegativeDefault
+
+// MARK: Semantic token - Colors - Content - Status - Positive
+
+var colorContentStatusPositiveLight: ColorSemanticToken? = sysColorBrandPositiveDefault
+var colorContentStatusPositiveInverse: ColorSemanticToken? = sysColorBrandPositiveDefault
+var colorContentStatusPositiveDark: ColorSemanticToken? = sysColorBrandPositiveDefault
+
+// MARK: Semantic token - Colors - Content - Status - Information
+
+var colorContentStatusInformationLight: ColorSemanticToken? = sysColorBrandInformationDefault
+var colorContentStatusInformationInverse: ColorSemanticToken? = sysColorBrandInformationDefault
+var colorContentStatusInformationDark: ColorSemanticToken? = sysColorBrandInformationDefault
+
+// MARK: Semantic token - Colors - Border - Default
+
+var colorBorderDefaultLight: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
+var colorBorderDefaultInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+var colorBorderDefaultDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+
+// MARK: Semantic token - Colors - Border - Default - On background emphasis
+
+var colorBorderDefaultOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+var colorBorderDefaultOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedMedium
+var colorBorderDefaultOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisLowest
+
+// MARK: Semantic token - Colors - Border - Emphasis
+
+var colorBorderEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorBorderEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorBorderEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - Border - Emphasis - On background emphasis
+
+var colorBorderEmphasisOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorBorderEmphasisOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorBorderEmphasisOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - Border - Brand - Primary
+
+var colorBorderBrandPrimaryLight: ColorSemanticToken? = sysColorBrandPrimaryDefault
+var colorBorderBrandPrimaryInverse: ColorSemanticToken? = sysColorBrandPrimaryLow
+var colorBorderBrandPrimaryDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+// MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasis
+
+var colorBorderBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? = sysColorBrandPrimaryLow
+var colorBorderBrandPrimaryOnBackgroundEmphasisInverse: ColorSemanticToken? = sysColorBrandPrimaryDefault
+var colorBorderBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? = sysColorBrandPrimaryLow
+
+// MARK: Semantic token - Colors - Border - Brand - Secondary
+
+var colorBorderBrandSecondaryLight: ColorSemanticToken? = nil
+var colorBorderBrandSecondaryInverse: ColorSemanticToken? = nil
+var colorBorderBrandSecondaryDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Border - Brand - Tertiary
+
+var colorBorderBrandTertiaryLight: ColorSemanticToken? = nil
+var colorBorderBrandTertiaryInverse: ColorSemanticToken? = nil
+var colorBorderBrandTertiaryDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Border - Status - Attractive
+
+var colorBorderBrandStatusAttractiveLight: ColorSemanticToken? = nil
+var colorBorderBrandStatusAttractiveInverse: ColorSemanticToken? = nil
+var colorBorderBrandStatusAttractiveDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Border - Status - Warning
+
+var colorBorderBrandStatusWarningLight: ColorSemanticToken? = nil
+var colorBorderBrandStatusWarningInverse: ColorSemanticToken? = nil
+var colorBorderBrandStatusWarningDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Border - Status - Negative
+
+var colorBorderBrandStatusNegativeLight: ColorSemanticToken? = nil
+var colorBorderBrandStatusNegativeInverse: ColorSemanticToken? = nil
+var colorBorderBrandStatusNegativeDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Border - Status - Positive
+
+var colorBorderBrandStatusPositiveLight: ColorSemanticToken? = nil
+var colorBorderBrandStatusPositiveInverse: ColorSemanticToken? = nil
+var colorBorderBrandStatusPositiveDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Border - Status - Information
+
+var colorBorderBrandStatusInformationLight: ColorSemanticToken? = nil
+var colorBorderBrandStatusInformationInverse: ColorSemanticToken? = nil
+var colorBorderBrandStatusInformationDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - On background - Primary
+
+var colorOnBackgroundPrimaryLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorOnBackgroundPrimaryInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorOnBackgroundPrimaryDark: ColorSemanticToken? = sysColorBrandNeutralEmphasisHighest
+
+// MARK: Semantic token - Colors - On background - Secondary
+
+var colorOnBackgroundSecondaryLight: ColorSemanticToken? = nil
+var colorOnBackgroundSecondaryInverse: ColorSemanticToken? = nil
+var colorOnBackgroundSecondaryDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - On background - Tertiary
+
+var colorOnBackgroundTertiaryLight: ColorSemanticToken? = nil
+var colorOnBackgroundTertiaryInverse: ColorSemanticToken? = nil
+var colorOnBackgroundTertiaryDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - On background - Status - Attrative - Muted
+
+var colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusAttractiveMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - On background - Status - Attrative - Emphasis
+
+var colorOnBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusAttractiveEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - On background - Status - Warning - Muted
+
+var colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusWarningMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - On background - Status - Warning - Emphasis
+
+var colorOnBackgroundStatusWarningEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusWarningEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusWarningEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - On background - Status - Negative - Muted
+
+var colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusNegativeMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - On background - Status - Negative - Emphasis
+
+var colorOnBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorOnBackgroundStatusNegativeEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralMutedWhite
+var colorOnBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - On background - Status - Positive - Muted
+
+var colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusPositiveMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - On background - Status - Positive - Emphasis
+
+var colorOnBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusPositiveEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - On background - Status - Information - Muted
+
+var colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusInformationMutedInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - On background - Status - Information - Emphasis
+
+var colorOnBackgroundStatusInformationEmphasisLight: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusInformationEmphasisInverse: ColorSemanticToken? = sysColorBrandNeutralEmphasisBlack
+var colorOnBackgroundStatusInformationEmphasisDark: ColorSemanticToken? = sysColorBrandNeutralMutedLower
+
+// MARK: Semantic token - Colors - Decorative - Brand - Primary - Muted
+
+var colorDecorativeBrandPrimaryMutedLight: ColorSemanticToken? = nil
+var colorDecorativeBrandPrimaryMutedInverse: ColorSemanticToken? = nil
+var colorDecorativeBrandPrimaryMutedDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Decorative - Brand - Primary - Default
+
+var colorDecorativeBrandPrimaryDefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange500
+var colorDecorativeBrandPrimaryDefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange500
+var colorDecorativeBrandPrimaryDefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorBrandOrange500
+
+// MARK: Semantic token - Colors - Decorative - Brand - Primary - Emphasis
+
+var colorDecorativeBrandPrimaryEmphasisLight: ColorSemanticToken? = nil
+var colorDecorativeBrandPrimaryEmphasisInverse: ColorSemanticToken? = nil
+var colorDecorativeBrandPrimaryEmphasisDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Decorative - Brand - Secondary - Muted
+
+var colorDecorativeBrandSecondaryMutedLight: ColorSemanticToken? = nil
+var colorDecorativeBrandSecondaryMutedInverse: ColorSemanticToken? = nil
+var colorDecorativeBrandSecondaryMutedDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Decorative - Brand - Secondary - Default
+
+var colorDecorativeBrandSecondaryDefaultLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalBlack
+var colorDecorativeBrandSecondaryDefaultInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalWhite
+var colorDecorativeBrandSecondaryDefaultDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
+
+// MARK: Semantic token - Colors - Decorative - Brand - Secondary - Emphasis
+
+var colorDecorativeBrandSecondaryEmphasisLight: ColorSemanticToken? = nil
+var colorDecorativeBrandSecondaryEmphasisInverse: ColorSemanticToken? = nil
+var colorDecorativeBrandSecondaryEmphasisDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Muted
+
+var colorDecorativeBrandTertiaryMutedLight: ColorSemanticToken? = nil
+var colorDecorativeBrandTertiaryMutedInverse: ColorSemanticToken? = nil
+var colorDecorativeBrandTertiaryMutedDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Default
+
+var colorDecorativeBrandTertiaryDefaultLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalWhite
+var colorDecorativeBrandTertiaryDefaultInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalBlack
+var colorDecorativeBrandTertiaryDefaultDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray880
+
+// MARK: Semantic token - Colors - Decorative - Brand - Tertiary - Emphasis
+
+var colorDecorativeBrandTertiaryEmphasisLight: ColorSemanticToken? = nil
+var colorDecorativeBrandTertiaryEmphasisInverse: ColorSemanticToken? = nil
+var colorDecorativeBrandTertiaryEmphasisDark: ColorSemanticToken? = nil
+
+// MARK: Semantic token - Colors - Decorative - Neutral - Muted
+
+var colorDecorativeNeutralMutedLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
+var colorDecorativeNeutralMutedInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray640
+var colorDecorativeNeutralMutedDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray720
+
+// MARK: Semantic token - Colors - Decorative - Neutral - Default
+
+var colorDecorativeNeutralDefaultLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray400
+var colorDecorativeNeutralDefaultInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
+var colorDecorativeNeutralDefaultDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
+
+// MARK: Semantic token - Colors - Decorative - Neutral - Emphasis
+
+var colorDecorativeNeutralEmphasisLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalDarkGray640
+var colorDecorativeNeutralEmphasisInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
+var colorDecorativeNeutralEmphasisDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalLightGray160
+
+// MARK: Semantic token - Colors - Decorative - Accent - 1 - Muted
+
+var colorDecorativeAccent1MutedLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald200
+var colorDecorativeAccent1MutedInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald200
+var colorDecorativeAccent1MutedDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald200
+
+// MARK: Semantic token - Colors - Decorative - Accent - 1 - Default
+
+var colorDecorativeAccent1DefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald500
+var colorDecorativeAccent1DefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald500
+var colorDecorativeAccent1DefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald500
+
+// MARK: Semantic token - Colors - Decorative - Accent - 1 - Emphasis
+
+var colorDecorativeAccent1EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald700
+var colorDecorativeAccent1EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald700
+var colorDecorativeAccent1EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeEmerald700
+
+// MARK: Semantic token - Colors - Decorative - Accent - 2 - Muted
+
+var colorDecorativeAccent2MutedLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky200
+var colorDecorativeAccent2MutedInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky200
+var colorDecorativeAccent2MutedDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky200
+
+// MARK: Semantic token - Colors - Decorative - Accent - 2 - Default
+
+var colorDecorativeAccent2DefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky500
+var colorDecorativeAccent2DefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky500
+var colorDecorativeAccent2DefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky500
+
+// MARK: Semantic token - Colors - Decorative - Accent - 2 - Emphasis
+
+var colorDecorativeAccent2EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky700
+var colorDecorativeAccent2EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky700
+var colorDecorativeAccent2EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeSky700
+
+// MARK: Semantic token - Colors - Decorative - Accent - 3 - Muted
+
+var colorDecorativeAccent3MutedLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun200
+var colorDecorativeAccent3MutedInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun200
+var colorDecorativeAccent3MutedDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun200
+
+// MARK: Semantic token - Colors - Decorative - Accent - 3 - Default
+
+var colorDecorativeAccent3DefaultLight: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
+var colorDecorativeAccent3DefaultInverse: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
+var colorDecorativeAccent3DefaultDark: ColorSemanticToken? = ColorGlobalPrimitiveTokens.colorFunctionalSun500
+
+// MARK: Semantic token - Colors - Decorative - Accent - 3 - Emphasis
+
+var colorDecorativeAccent3EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmber500
+var colorDecorativeAccent3EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmber500
+var colorDecorativeAccent3EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmber500
+
+// MARK: Semantic token - Colors - Decorative - Accent - 4 - Muted
+
+var colorDecorativeAccent4MutedLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst200
+var colorDecorativeAccent4MutedInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst200
+var colorDecorativeAccent4MutedDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst200
+
+// MARK: Semantic token - Colors - Decorative - Accent - 4 - Default
+
+var colorDecorativeAccent4DefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst400
+var colorDecorativeAccent4DefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst400
+var colorDecorativeAccent4DefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst400
+
+// MARK: Semantic token - Colors - Decorative - Accent - 4 - Emphasis
+
+var colorDecorativeAccent4EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst800
+var colorDecorativeAccent4EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst800
+var colorDecorativeAccent4EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeAmethyst800
+
+// MARK: Semantic token - Colors - Decorative - Accent - 5 - Muted
+
+var colorDecorativeAccent5MutedLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink100
+var colorDecorativeAccent5MutedInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink100
+var colorDecorativeAccent5MutedDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink100
+
+// MARK: Semantic token - Colors - Decorative - Accent - 5 - Default
+
+var colorDecorativeAccent5DefaultLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink200
+var colorDecorativeAccent5DefaultInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink200
+var colorDecorativeAccent5DefaultDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink200
+
+// MARK: Semantic token - Colors - Decorative - Accent - 5 - Emphasis
+
+var colorDecorativeAccent5EmphasisLight: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink300
+var colorDecorativeAccent5EmphasisInverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink300
+var colorDecorativeAccent5EmphasisDark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeShockingPink300
+
+// MARK: Semantic token - Colors - Decorative - Skin - Tint
+
+var colorDecorativeSkinTint100Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach100
+var colorDecorativeSkinTint100Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach100
+var colorDecorativeSkinTint100Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach100
+
+// MARK: Semantic token - Colors - Decorative - Skin - Tint
+
+var colorDecorativeSkinTint200Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach200
+var colorDecorativeSkinTint200Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach200
+var colorDecorativeSkinTint200Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach200
+
+// MARK: Semantic token - Colors - Decorative - Skin - Tint
+
+var colorDecorativeSkinTint300Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach300
+var colorDecorativeSkinTint300Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach300
+var colorDecorativeSkinTint300Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach300
+
+// MARK: Semantic token - Colors - Decorative - Skin - Tint
+
+var colorDecorativeSkinTint400Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach400
+var colorDecorativeSkinTint400Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach400
+var colorDecorativeSkinTint400Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach400
+
+// MARK: Semantic token - Colors - Decorative - Skin - Tint
+
+var colorDecorativeSkinTint500Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach500
+var colorDecorativeSkinTint500Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach500
+var colorDecorativeSkinTint500Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach500
+
+// MARK: Semantic token - Colors - Decorative - Skin - Tint
+
+var colorDecorativeSkinTint600Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach600
+var colorDecorativeSkinTint600Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach600
+var colorDecorativeSkinTint600Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach600
+
+// MARK: Semantic token - Colors - Decorative - Skin - Tint
+
+var colorDecorativeSkinTint700Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach700
+var colorDecorativeSkinTint700Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach700
+var colorDecorativeSkinTint700Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach100
+
+// MARK: Semantic token - Colors - Decorative - Skin - Tint
+
+var colorDecorativeSkinTint800Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach800
+var colorDecorativeSkinTint800Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach800
+var colorDecorativeSkinTint800Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach800
+
+// MARK: Semantic token - Colors - Decorative - Skin - Tint
+
+var colorDecorativeSkinTint900Light: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach900
+var colorDecorativeSkinTint900Inverse: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach900
+var colorDecorativeSkinTint900Dark: ColorSemanticToken? = ColorOrangePrimitiveTokens.colorDecorativeDeepPeach900
+
+// MARK: Primitive token - Border - Width
+
+static let borderWidth0: BorderWidthPrimitiveToken = borderBase \* 0
+static let borderWidth25: BorderWidthPrimitiveToken = borderBase \* 0.25
+static let borderWidth50: BorderWidthPrimitiveToken = borderBase \* 0.5
+static let borderWidth75: BorderWidthPrimitiveToken = borderBase \* 0.75
+static let borderWidth100: BorderWidthPrimitiveToken = borderBase \* 1
+static let borderWidth150: BorderWidthPrimitiveToken = borderBase \* 1.5
+static let borderWidth200: BorderWidthPrimitiveToken = borderBase \* 3
+
+// MARK: Primitive token - Border - Radius
+
+static let borderRadius0: BorderRadiusPrimitiveToken = borderBase \* 0.75
+static let borderRadius25: BorderRadiusPrimitiveToken = borderBase \* 0.25
+static let borderRadius50: BorderRadiusPrimitiveToken = borderBase \* 0.5
+static let borderRadius75: BorderRadiusPrimitiveToken = borderBase \* 0.75
+static let borderRadius100: BorderRadiusPrimitiveToken = borderBase \* 1
+static let borderRadius150: BorderRadiusPrimitiveToken = borderBase \* 1.5
+static let borderRadius200: BorderRadiusPrimitiveToken = borderBase \* 2
+static let borderRadius300: BorderRadiusPrimitiveToken = borderBase \* 3
+static let borderRadius400: BorderRadiusPrimitiveToken = borderBase \* 4
+static let borderRadius500: BorderRadiusPrimitiveToken = borderBase \* 5
+static let borderRadius600: BorderRadiusPrimitiveToken = borderBase \* 6
+static let borderRadius800: BorderRadiusPrimitiveToken = borderBase \* 8
+static let borderRadius9999: BorderRadiusPrimitiveToken = borderBase \* 2000
+
+// MARK: Primitive token - Border - Style
+
+static let borderStyleNone: BorderStylePrimitiveToken = "none"
+static let borderStyleSolid: BorderStylePrimitiveToken = "solid"
+static let borderStyleDashed: BorderStylePrimitiveToken = "dashed"
+static let borderStyleDotted: BorderStylePrimitiveToken = "dotted"
+
+// MARK: Primitive token - Dimension
+
+static let dimension0: DimensionPrimitiveToken = dimensionBase \* 0
+static let dimension25: DimensionPrimitiveToken = dimensionBase \* 0.5
+static let dimension50: DimensionPrimitiveToken = dimensionBase \* 1
+static let dimension75: DimensionPrimitiveToken = dimensionBase \* 1.5
+static let dimension100: DimensionPrimitiveToken = dimensionBase \* 2
+static let dimension150: DimensionPrimitiveToken = dimensionBase \* 3
+static let dimension200: DimensionPrimitiveToken = dimensionBase \* 4
+static let dimension250: DimensionPrimitiveToken = dimensionBase \* 5
+static let dimension300: DimensionPrimitiveToken = dimensionBase \* 6
+static let dimension350: DimensionPrimitiveToken = dimensionBase \* 7
+static let dimension400: DimensionPrimitiveToken = dimensionBase \* 8
+static let dimension450: DimensionPrimitiveToken = dimensionBase \* 9
+static let dimension500: DimensionPrimitiveToken = dimensionBase \* 10
+static let dimension550: DimensionPrimitiveToken = dimensionBase \* 11
+static let dimension600: DimensionPrimitiveToken = dimensionBase \* 12
+static let dimension650: DimensionPrimitiveToken = dimensionBase \* 13
+static let dimension700: DimensionPrimitiveToken = dimensionBase \* 14
+static let dimension750: DimensionPrimitiveToken = dimensionBase \* 15
+static let dimension800: DimensionPrimitiveToken = dimensionBase \* 16
+static let dimension900: DimensionPrimitiveToken = dimensionBase \* 18
+static let dimension1000: DimensionPrimitiveToken = dimensionBase \* 20
+static let dimension1200: DimensionPrimitiveToken = dimensionBase \* 24
+static let dimension1400: DimensionPrimitiveToken = dimensionBase \* 28
+static let dimension1600: DimensionPrimitiveToken = dimensionBase \* 32
+static let dimension1800: DimensionPrimitiveToken = dimensionBase \* 6
+static let dimension2000: DimensionPrimitiveToken = dimensionBase \* 40
+static let dimension3000: DimensionPrimitiveToken = dimensionBase \* 80
+static let dimension4000: DimensionPrimitiveToken = dimensionBase \* 120
+static let dimension5000: DimensionPrimitiveToken = dimensionBase \* 140
+static let dimension6000: DimensionPrimitiveToken = dimensionBase \* 160
+static let dimension7000: DimensionPrimitiveToken = dimensionBase \* 180
+static let dimension9000: DimensionPrimitiveToken = dimensionBase \* 220
+static let dimension11000: DimensionPrimitiveToken = dimensionBase \* 260
+
+// MARK: Primitive token - Elevation - Z Index
+
+static let elevationZIndex0: ElevationPrimitiveToken = 0
+static let elevationZIndexMinus9999: ElevationPrimitiveToken = -9999
+static let elevationZIndex1000: ElevationPrimitiveToken = 1000
+static let elevationZIndex1010: ElevationPrimitiveToken = 1010
+static let elevationZIndex1020: ElevationPrimitiveToken = 1020
+static let elevationZIndex1030: ElevationPrimitiveToken = 1030
+static let elevationZIndex1035: ElevationPrimitiveToken = 1035
+static let elevationZIndex1038: ElevationPrimitiveToken = 1038
+static let elevationZIndex1040: ElevationPrimitiveToken = 1040
+static let elevationZIndex1045: ElevationPrimitiveToken = 1045
+static let elevationZIndex1050: ElevationPrimitiveToken = 1050
+static let elevationZIndex1060: ElevationPrimitiveToken = 1060
+static let elevationZIndex1070: ElevationPrimitiveToken = 1070
+static let elevationZIndex1080: ElevationPrimitiveToken = 1080
+static let elevationZIndex1090: ElevationPrimitiveToken = 1090
+
+// MARK: Primitive token - Elevation - X
+
+static let elevationX0: ElevationPrimitiveToken = 0
+
+// MARK: Primitive token - Elevation - Y
+
+static let elevationY0: ElevationPrimitiveToken = 0
+static let elevationY100: ElevationPrimitiveToken = 1
+static let elevationY200: ElevationPrimitiveToken = 2
+static let elevationY300: ElevationPrimitiveToken = 4
+static let elevationY400: ElevationPrimitiveToken = 8
+static let elevationY500: ElevationPrimitiveToken = 12
+static let elevationY600: ElevationPrimitiveToken = 20
+
+// MARK: Primitive token - Elevation - Blur
+
+static let elevationBlur0: ElevationPrimitiveToken = 0
+static let elevationBlur100: ElevationPrimitiveToken = 1
+static let elevationBlur200: ElevationPrimitiveToken = 2
+static let elevationBlur300: ElevationPrimitiveToken = 3
+static let elevationBlur400: ElevationPrimitiveToken = 4
+static let elevationBlur500: ElevationPrimitiveToken = 8
+static let elevationBlur600: ElevationPrimitiveToken = 12
+static let elevationBlur700: ElevationPrimitiveToken = 20
+
+// MARK: Primitive token - Elevation - Spread
+
+static let elevationSpreadMinus100: ElevationPrimitiveToken = -1
+static let elevationSpreadMinus200: ElevationPrimitiveToken = -2
+static let elevationSpreadMinus300: ElevationPrimitiveToken = -4
+static let elevationSpreadMinus400: ElevationPrimitiveToken = -8
+static let elevationSpread0: ElevationPrimitiveToken = 0
+static let elevationSpread300: ElevationPrimitiveToken = 3
+
+// MARK: Primitive token - Opacity
+
+static let opacity0: OpacityPrimitiveToken = 0
+static let opacity100: OpacityPrimitiveToken = 0.04
+static let opacity200: OpacityPrimitiveToken = 0.08
+static let opacity300: OpacityPrimitiveToken = 0.16
+static let opacity400: OpacityPrimitiveToken = 0.24
+static let opacity500: OpacityPrimitiveToken = 0.32
+static let opacity600: OpacityPrimitiveToken = 0.48
+static let opacity700: OpacityPrimitiveToken = 0.64
+static let opacity800: OpacityPrimitiveToken = 0.88
+static let opacity900: OpacityPrimitiveToken = 1
+
+// MARK: Primitive token - Grid - Min width
+
+static let gridMinWidthIOSExtraCompact: GridPrimitiveToken = 320
+static let gridMinWidthIOSCompact: GridPrimitiveToken = 390
+static let gridMinWidthIOSRegular: GridPrimitiveToken = 736
+
+// MARK: Primitive token - Grid - Max width
+
+static let gridMaxWidthIOSExtraCompact: GridPrimitiveToken = 389
+static let gridMaxWidthIOSCompact: GridPrimitiveToken = 852
+static let gridMaxWidthIOSRegular: GridPrimitiveToken = 1336
+
+// MARK: Primitive token - Grid - Margin
+
+static let gridMargin100: GridPrimitiveToken = dimensionBase \* 4
+static let gridMargin300: GridPrimitiveToken = dimensionBase \* 6
+static let gridMargin400: GridPrimitiveToken = dimensionBase \* 7
+static let gridMargin500: GridPrimitiveToken = dimensionBase \* 8
+static let gridMargin600: GridPrimitiveToken = dimensionBase \* 9
+static let gridMargin700: GridPrimitiveToken = dimensionBase \* 10
+static let gridMargin1000: GridPrimitiveToken = dimensionBase \* 13
+static let gridMargin1100: GridPrimitiveToken = dimensionBase \* 14
+static let gridMargin1700: GridPrimitiveToken = dimensionBase \* 20
+static let gridMargin2500: GridPrimitiveToken = dimensionBase \* 28
+
+// MARK: Primitive token - Grid - Column gap
+
+static let gridColumnGap10: GridPrimitiveToken = dimensionBase \* 0.25
+static let gridColumnGap100: GridPrimitiveToken = dimensionBase \* 4
+static let gridColumnGap200: GridPrimitiveToken = dimensionBase \* 5
+static let gridColumnGap300: GridPrimitiveToken = dimensionBase \* 6
+static let gridColumnGap500: GridPrimitiveToken = dimensionBase \* 8
+static let gridColumnGap700: GridPrimitiveToken = dimensionBase \* 10
+
+// MARK: Primitive token - Grid - Column count
+
+static let gridColumnCount100: GridPrimitiveToken = dimensionBase \* 1
+static let gridColumnCount200: GridPrimitiveToken = dimensionBase \* 2
+static let gridColumnCount400: GridPrimitiveToken = dimensionBase \* 4
+static let gridColumnCount600: GridPrimitiveToken = dimensionBase \* 6
+static let gridColumnCount800: GridPrimitiveToken = dimensionBase \* 8
+static let gridColumnCount1000: GridPrimitiveToken = dimensionBase \* 10
+static let gridColumnCount1200: GridPrimitiveToken = dimensionBase \* 12
+
+// MARK: Primitive token - Typography - Font size
+
+static let fontSize150: TypographyFontSizePrimitiveToken = 12
+static let fontSize175: TypographyFontSizePrimitiveToken = 13
+static let fontSize200: TypographyFontSizePrimitiveToken = 14
+static let fontSize250: TypographyFontSizePrimitiveToken = 16
+static let fontSize300: TypographyFontSizePrimitiveToken = 18
+static let fontSize350: TypographyFontSizePrimitiveToken = 20
+static let fontSize450: TypographyFontSizePrimitiveToken = 24
+static let fontSize550: TypographyFontSizePrimitiveToken = 28
+static let fontSize650: TypographyFontSizePrimitiveToken = 32
+static let fontSize750: TypographyFontSizePrimitiveToken = 36
+static let fontSize850: TypographyFontSizePrimitiveToken = 40
+static let fontSize950: TypographyFontSizePrimitiveToken = 44
+static let fontSize1050: TypographyFontSizePrimitiveToken = 48
+static let fontSize1150: TypographyFontSizePrimitiveToken = 52
+static let fontSize1250: TypographyFontSizePrimitiveToken = 56
+static let fontSize1450: TypographyFontSizePrimitiveToken = 64
+static let fontSize1850: TypographyFontSizePrimitiveToken = 72
+
+// MARK: Primitive token - Typography - Line height
+
+static let fontLineHeight250: TypographyFontLineHeightPrimitiveToken = 16
+static let fontLineHeight350: TypographyFontLineHeightPrimitiveToken = 20
+static let fontLineHeight450: TypographyFontLineHeightPrimitiveToken = 24
+static let fontLineHeight550: TypographyFontLineHeightPrimitiveToken = 28
+static let fontLineHeight650: TypographyFontLineHeightPrimitiveToken = 32
+static let fontLineHeight750: TypographyFontLineHeightPrimitiveToken = 36
+static let fontLineHeight850: TypographyFontLineHeightPrimitiveToken = 10
+static let fontLineHeight950: TypographyFontLineHeightPrimitiveToken = 44
+static let fontLineHeight1050: TypographyFontLineHeightPrimitiveToken = 48
+static let fontLineHeight1150: TypographyFontLineHeightPrimitiveToken = 52
+static let fontLineHeight1250: TypographyFontLineHeightPrimitiveToken = 56
+static let fontLineHeight1350: TypographyFontLineHeightPrimitiveToken = 60
+static let fontLineHeight1450: TypographyFontLineHeightPrimitiveToken = 64
+static let fontLineHeight1850: TypographyFontLineHeightPrimitiveToken = 72
+static let fontLineHeight2050: TypographyFontLineHeightPrimitiveToken = 80
+
+// MARK: Primitive token - Typography - Paragraph spacing
+
+static let fontParagraphSpacing100: TypographyFontParagraphSpacingPrimitiveToken = 0
+static let fontParagraphSpacing200: TypographyFontParagraphSpacingPrimitiveToken = 8
+static let fontParagraphSpacing300: TypographyFontParagraphSpacingPrimitiveToken = 16
+static let fontParagraphSpacing400: TypographyFontParagraphSpacingPrimitiveToken = 24
+
+// MARK: Primitive token - Typography - Font family
+
+static let fontFamilySystem: TypographyFontFamilyPrimitiveToken = "SF-Pro-Text"
+static let fontFamilyMonospace: TypographyFontFamilyPrimitiveToken = "Courrier-New"
+
+// MARK: Primitive token - Typography - Font weight
+
+static let fontWeight100: TypographyFontWeightPrimitiveToken = Font.Weight.thin
+static let fontWeight200: TypographyFontWeightPrimitiveToken = Font.Weight.ultraLight
+static let fontWeight300: TypographyFontWeightPrimitiveToken = Font.Weight.light
+static let fontWeight400: TypographyFontWeightPrimitiveToken = Font.Weight.regular
+static let fontWeight500: TypographyFontWeightPrimitiveToken = Font.Weight.medium
+static let fontWeight600: TypographyFontWeightPrimitiveToken = Font.Weight.semibold
+static let fontWeight700: TypographyFontWeightPrimitiveToken = Font.Weight.bold
+static let fontWeight900: TypographyFontWeightPrimitiveToken = Font.Weight.heavy
+
+// MARK: Primitive token - Typography - Composite
+
+static let typeRegular150 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
+static let typeRegular175 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
+static let typeRegular200 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize200, lineHeight: fontLineHeight250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
+static let typeRegular250 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold150 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize150, lineHeight: fontLineHeight450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold175 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold200 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize200, lineHeight: fontLineHeight250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold250 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold300 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize300, lineHeight: fontLineHeight450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold350 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize350, lineHeight: fontLineHeight550, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold450 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize450, lineHeight: fontLineHeight550, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold550 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize550, lineHeight: fontLineHeight650, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold650 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize650, lineHeight: fontLineHeight750, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold750 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold850 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize850, lineHeight: fontLineHeight950, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold950 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize950, lineHeight: fontLineHeight1050, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold1050 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold1150 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1150, lineHeight: fontLineHeight1250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold1250 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1250, lineHeight: fontLineHeight1350, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold1450 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1450, lineHeight: fontLineHeight1450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+static let typeBold1850 = TypographyCompositePrimitiveToken(family: fontFamilySystem, size: fontSize1850, lineHeight: fontLineHeight1850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+
+// MARK: Primitive token - Colors - Black, white
+
+static let colorFunctionalWhite: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FFFFFF")
+static let colorFunctionalBlack: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#000000")
+
+// MARK: Primitive token - Colors - Functional light gray
+
+static let colorFunctionalLightGray80: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#F4F4F4")
+static let colorFunctionalLightGray160: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#EEEEEE")
+static let colorFunctionalLightGray240: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#E0E0E0")
+static let colorFunctionalLightGray320: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#D6D6D6")
+static let colorFunctionalLightGray400: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#CCCCCC")
+static let colorFunctionalLightGray480: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#C2C2C2")
+static let colorFunctionalLightGray560: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#BBBBBB")
+static let colorFunctionalLightGray640: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#ADADAD")
+static let colorFunctionalLightGray720: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#A3A3A3")
+static let colorFunctionalLightGray800: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#999999")
+static let colorFunctionalLightGray880: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#8F8F8F")
+static let colorFunctionalLightGray960: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#858585")
+
+// MARK: Primitive token - Colors - Functional dark gray
+
+static let colorFunctionalDarkGray80: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#7A7A7A")
+static let colorFunctionalDarkGray160: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#707070")
+static let colorFunctionalDarkGray240: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#666666")
+static let colorFunctionalDarkGray320: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#5C5C5C")
+static let colorFunctionalDarkGray400: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#555555")
+static let colorFunctionalDarkGray480: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#44444")
+static let colorFunctionalDarkGray560: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#3D3D3D")
+static let colorFunctionalDarkGray640: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#333333")
+static let colorFunctionalDarkGray720: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#272727")
+static let colorFunctionalDarkGray800: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#1F1F1F")
+static let colorFunctionalDarkGray880: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#141414")
+static let colorFunctionalDarkGray960: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#0A0A0A")
+
+// MARK: Primitive token - Colors - Functional scarlet
+
+static let colorFunctionalScarlet100: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FFE5E6")
+static let colorFunctionalScarlet200: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FFB2B3")
+static let colorFunctionalScarlet300: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FF8081")
+static let colorFunctionalScarlet400: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FF4D4E")
+static let colorFunctionalScarlet500: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FF1A1B")
+static let colorFunctionalScarlet600: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#EA0305")
+static let colorFunctionalScarlet700: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#BZ000Z")
+static let colorFunctionalScarlet800: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#800001")
+static let colorFunctionalScarlet900: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#4D0001")
+
+// MARK: Primitive token - Colors - Functional sun
+
+static let colorFunctionalSun100: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FFF7D6")
+static let colorFunctionalSun200: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FFED99")
+static let colorFunctionalSun300: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FFE270")
+static let colorFunctionalSun400: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FFD73D")
+static let colorFunctionalSun500: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#FFD0D0")
+static let colorFunctionalSun600: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#D6AA00")
+static let colorFunctionalSun700: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#A38200")
+static let colorFunctionalSun800: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#665100")
+static let colorFunctionalSun900: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#3D3100")
+
+// MARK: Primitive token - Colors - Functional malachite
+
+static let colorFunctionalMalachite100: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#EDFCF0")
+static let colorFunctionalMalachite200: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#C1F6CA")
+static let colorFunctionalMalachite300: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#94F0A4")
+static let colorFunctionalMalachite400: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#67E97E")
+static let colorFunctionalMalachite500: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#3DE35A")
+static let colorFunctionalMalachite600: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#1ECD3C")
+static let colorFunctionalMalachite700: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#17A02F")
+static let colorFunctionalMalachite800: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#0E621D")
+static let colorFunctionalMalachite900: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#0A4715")
+
+// MARK: Primitive token - Colors - Functional dodger blue
+
+static let colorFunctionalDodgerBlue100: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#F0FAFF")
+static let colorFunctionalDodgerBlue200: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#BDE7FF")
+static let colorFunctionalDodgerBlue300: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#8AD5FF")
+static let colorFunctionalDodgerBlue400: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#57C3FF")
+static let colorFunctionalDodgerBlue500: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#26B2FF")
+static let colorFunctionalDodgerBlue600: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#009BF0")
+static let colorFunctionalDodgerBlue700: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#007ABD")
+static let colorFunctionalDodgerBlue800: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#00598A")
+static let colorFunctionalDodgerBlue900: ColorFunctionalPrimitiveToken = Color(hexadecimalCode: "#003857")
+
+// MARK: Primitive token - Colors - Transparent black
+
+static let colorTransparentBlack0: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity0)
+static let colorTransparentBlack100: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity100)
+static let colorTransparentBlack200: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity200)
+static let colorTransparentBlack300: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity300)
+static let colorTransparentBlack400: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity400)
+static let colorTransparentBlack500: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity500)
+static let colorTransparentBlack600: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity600)
+static let colorTransparentBlack700: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity700)
+static let colorTransparentBlack800: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity800)
+static let colorTransparentBlack900: ColorTransparentPrimitiveToken = colorFunctionalBlack.opacity(OpacityPrimitiveTokens.opacity900)
+
+// MARK: Primitive token - Colors - Transparent white
+
+static let colorTransparentWhite0: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity0)
+static let colorTransparentWhite100: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity100)
+static let colorTransparentWhite200: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity200)
+static let colorTransparentWhite300: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity300)
+static let colorTransparentWhite400: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity400)
+static let colorTransparentWhite500: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity500)
+static let colorTransparentWhite600: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity600)
+static let colorTransparentWhite700: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity700)
+static let colorTransparentWhite800: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity800)
+static let colorTransparentWhite900: ColorTransparentPrimitiveToken = colorFunctionalWhite.opacity(OpacityPrimitiveTokens.opacity900)
+
+// MARK: Primitive token - Colors - Orange - Brand - Orange
+
+static let colorBrandOrange50: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#FFF2E6")
+static let colorBrandOrange100: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#FFD5B0")
+static let colorBrandOrange200: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#FFC18A")
+static let colorBrandOrange300: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#FFA554")
+static let colorBrandOrange400: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#FF9433")
+static let colorBrandOrange500: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#FF7900")
+static let colorBrandOrange550: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#F16E00")
+static let colorBrandOrange600: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#E86E00")
+static let colorBrandOrange700: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#B55600")
+static let colorBrandOrange800: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#8C4300")
+static let colorBrandOrange900: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#6B3300")
+
+// MARK: Primitive token - Colors - Orange - Brand - Warm gray
+
+static let colorBrandWarmGray100: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#F9F5F0")
+static let colorBrandWarmGray200: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#E9DDCE")
+static let colorBrandWarmGray300: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#D6C4AE")
+static let colorBrandWarmGray400: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#C1AB90")
+static let colorBrandWarmGray500: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#A99275")
+static let colorBrandWarmGray600: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#8A7860")
+static let colorBrandWarmGray700: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#685D50")
+static let colorBrandWarmGray800: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#48433D")
+static let colorBrandWarmGray900: ColorOrangeBrandPrimitiveToken = Color(hexadecimalCode: "#353228")
+
+// MARK: Primitive token - Colors - Orange - Emerald
+
+static let colorDecorativeEmerald100: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#E5F5ED")
+static let colorDecorativeEmerald200: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#C0E8DA")
+static let colorDecorativeEmerald300: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#9BDABA")
+static let colorDecorativeEmerald400: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#75CCA1")
+static let colorDecorativeEmerald500: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#50BE87")
+static let colorDecorativeEmerald600: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#3BA06E")
+static let colorDecorativeEmerald700: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#2E7B54")
+static let colorDecorativeEmerald800: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#20563B")
+static let colorDecorativeEmerald900: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#123021")
+
+// MARK: Primitive token - Colors - Orange - Sky
+
+static let colorDecorativeSky100: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#D2ECF9")
+static let colorDecorativeSky200: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#A5DAF3")
+static let colorDecorativeSky300: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#79C7EC")
+static let colorDecorativeSky400: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#4AB4E6")
+static let colorDecorativeSky500: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#1FA2E0")
+static let colorDecorativeSky600: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#1982B3")
+static let colorDecorativeSky700: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#136186")
+static let colorDecorativeSky800: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#0C415A")
+static let colorDecorativeSky900: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#06202D")
+
+// MARK: Primitive token - Colors - Orange - Amber
+
+static let colorDecorativeAmber100: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FFF0CC")
+static let colorDecorativeAmber200: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FFE199")
+static let colorDecorativeAmber300: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FFD266")
+static let colorDecorativeAmber400: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FFC333")
+static let colorDecorativeAmber500: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FFB400")
+static let colorDecorativeAmber600: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#CC9000")
+static let colorDecorativeAmber700: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#996C00")
+static let colorDecorativeAmber800: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#664800")
+static let colorDecorativeAmber900: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#332400")
+
+// MARK: Primitive token - Colors - Orange - Amethyst
+
+static let colorDecorativeAmethyst100: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#F1ECF9")
+static let colorDecorativeAmethyst200: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#E0D4F2")
+static let colorDecorativeAmethyst300: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#C5ADE6")
+static let colorDecorativeAmethyst400: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#A885D8")
+static let colorDecorativeAmethyst500: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#8D60CD")
+static let colorDecorativeAmethyst600: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#5B2F98")
+static let colorDecorativeAmethyst700: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#432371")
+static let colorDecorativeAmethyst800: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#2C174A")
+static let colorDecorativeAmethyst900: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#150B23")
+
+// MARK: Primitive token - Colors - Orange - Shocking Pink
+
+static let colorDecorativeShockingPink100: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FFE5F6")
+static let colorDecorativeShockingPink200: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FFB4E6")
+static let colorDecorativeShockingPink300: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FF80D4")
+static let colorDecorativeShockingPink400: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FF4DC3")
+static let colorDecorativeShockingPink500: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FF1AB2")
+static let colorDecorativeShockingPink600: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#E50099")
+static let colorDecorativeShockingPink700: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#B20077")
+static let colorDecorativeShockingPink800: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#800055")
+static let colorDecorativeShockingPink900: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#4D0033")
+
+// MARK: Primitive token - Colors - Orange - Deep Peach
+
+static let colorDecorativeDeepPeach100: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#FBEBDF")
+static let colorDecorativeDeepPeach200: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#F4CFB2")
+static let colorDecorativeDeepPeach300: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#E3B591")
+static let colorDecorativeDeepPeach400: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#C19372")
+static let colorDecorativeDeepPeach500: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#CF7E3F")
+static let colorDecorativeDeepPeach600: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#AA6631")
+static let colorDecorativeDeepPeach700: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#7E4F2A")
+static let colorDecorativeDeepPeach800: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#553720")
+static let colorDecorativeDeepPeach900: colorDecorativePrimitiveToken = Color(hexadecimalCode: "#2E2014")
+
+// MARK: Primitive token - Colors - Sosh - Magenta
+
+static let colorDecorativeMagenta50: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#FCE9EE")
+static let colorDecorativeMagenta100: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#F8D3DC")
+static let colorDecorativeMagenta200: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#F2A6B9")
+static let colorDecorativeMagenta300: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#EB7A96")
+static let colorDecorativeMagenta400: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#E55277")
+static let colorDecorativeMagenta500: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#DE2554")
+static let colorDecorativeMagenta600: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#B61B42")
+static let colorDecorativeMagenta700: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#851430")
+static let colorDecorativeMagenta800: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#590D20")
+static let colorDecorativeMagenta900: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#2C0710")
+static let colorDecorativeMagenta950: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#160308")
+
+// MARK: Primitive token - Colors - Sosh - Citrine
+
+static let colorDecorativeCitrine50: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#FFFAE5")
+static let colorDecorativeCitrine100: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#FFF6CC")
+static let colorDecorativeCitrine200: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#FFEC99")
+static let colorDecorativeCitrine300: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#FFE366")
+static let colorDecorativeCitrine400: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#FFD92E")
+static let colorDecorativeCitrine500: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#FBCD00")
+static let colorDecorativeCitrine600: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#C7A200")
+static let colorDecorativeCitrine700: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#997D00")
+static let colorDecorativeCitrine800: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#665300")
+static let colorDecorativeCitrine900: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#332A00")
+static let colorDecorativeCitrine950: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#191500")
+
+// MARK: Primitive token - Colors - Sosh - Blue Duck
+
+static let colorDecorativeBlueDuck50: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#E7F6F9")
+static let colorDecorativeBlueDuck100: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#CBEDF1")
+static let colorDecorativeBlueDuck200: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#96DAE3")
+static let colorDecorativeBlueDuck300: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#62C8D5")
+static let colorDecorativeBlueDuck400: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#34B1C1")
+static let colorDecorativeBlueDuck500: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#26828E")
+static let colorDecorativeBlueDuck600: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#1E6771")
+static let colorDecorativeBlueDuck700: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#174D55")
+static let colorDecorativeBlueDuck800: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#0F3438")
+static let colorDecorativeBlueDuck900: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#081A1C")
+static let colorDecorativeBlueDuck950: ColorSoshPrimitiveToken = Color(hexadecimalCode: "#040F10")
+
