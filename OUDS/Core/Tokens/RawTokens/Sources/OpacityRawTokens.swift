@@ -22,7 +22,7 @@ public typealias OpacityRawToken = Double
 /// This is the group of all **raw tokens** related to **opacity**.
 /// Primitive types such as `Double` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 public struct OpacityRawTokens {
-    
+
     // MARK: Primitive token - Opacity
 
     public static let opacity0: OpacityRawToken = 0

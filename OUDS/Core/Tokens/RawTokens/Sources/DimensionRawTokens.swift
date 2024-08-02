@@ -22,9 +22,9 @@ public typealias DimensionRawToken = Double
 /// This is the group of all **raw tokens** related to **dimensions**.
 /// Primitive types such as `Double` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 public struct DimensionRawTokens {
- 
+
     public static let dimensionBase: DimensionRawToken = 4
-    
+
     // MARK: Primitive token - Dimension
 
     public static let dimension0: DimensionRawToken = dimensionBase * 0

@@ -22,7 +22,7 @@ public typealias GridRawToken = DimensionRawToken
 /// This is the group of all **raw tokens** related to **grid**.
 /// Primitive types such as  `Int` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 public struct GridRawTokens {
-    
+
     private static let dimensionBase: GridRawToken = 4
 
     // MARK: Primitive token - Grid - Min width

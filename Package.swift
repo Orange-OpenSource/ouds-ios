@@ -63,11 +63,11 @@ let package = Package(
     targets: [
         .target(
             name: "OUDSModules",
-            dependencies: ["OUDSThemesShared", "OUDSComponents"],
+            dependencies: ["OUDSComponents"],
             path: "OUDS/Modules/Sources"),
         .target(
             name: "OUDSComponents",
-            dependencies: ["OUDSFoundations", "OUDSTokensSemantic", "OUDSThemesShared", "OUDSThemesOrange"],
+            dependencies: ["OUDSTokensComponent", "OUDSThemesOrange"],
             path: "OUDS/Core/Components/Sources"),
         .target(
             name: "OUDSThemesSosh",
@@ -83,7 +83,7 @@ let package = Package(
             path: "OUDS/Core/Themes/Sources/Orange"),
         .target(
             name: "OUDSThemesShared",
-            dependencies: ["OUDSTokensComponent", "OUDSTokensSemantic", "OUDSTokensRaw"],
+            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
             path: "OUDS/Core/Themes/Sources/Shared"),
         .target(
             name: "OUDSTokensComponent",

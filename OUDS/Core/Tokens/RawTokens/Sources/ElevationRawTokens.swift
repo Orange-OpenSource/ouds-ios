@@ -22,7 +22,7 @@ public typealias ElevationRawToken = Int
 /// This is the group of all **raw tokens** related to **elevations**.
 /// Primitive types such as `Int must be used to as to allow to use `@objc` keywords in extensions for overriding.
 public struct ElevationRawTokens {
-    
+
     // MARK: Primitive token - Elevation - Z Index
 
     public static let elevationZIndex0: ElevationRawToken = 0

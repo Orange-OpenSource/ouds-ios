@@ -35,14 +35,6 @@ public struct TypographyCompositeRawToken {
     let weight: TypographyFontWeightRawToken
     // let ter spacing...
     let paragraphSpacing: TypographyFontParagraphSpacingRawToken
-
-    init(family: TypographyFontFamilyRawToken, size: TypographyFontSizeRawToken, lineHeight: TypographyFontLineHeightRawToken, weight: TypographyFontWeightRawToken, paragraphSpacing: TypographyFontParagraphSpacingRawToken) {
-        self.family = family
-        self.size = size
-        self.lineHeight = lineHeight
-        self.weight = weight
-        self.paragraphSpacing = paragraphSpacing
-    }
 }
 // swiftlint:enable line_length
 
