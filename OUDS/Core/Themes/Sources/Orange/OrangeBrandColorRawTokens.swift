@@ -15,12 +15,12 @@ import Foundation
 import SwiftUI
 import OUDSTokensRaw
 
-public typealias ColorOrangeBrandRawToken = String
-public typealias ColorOrangeDecorativeRawToken = String
+public typealias ColorOrangeBrandRawToken = ColorRawToken
+public typealias ColorOrangeDecorativeRawToken = ColorRawToken
 
 /// This extension helps to add new raw tokens for this theme.
 /// Type aliases here are just for consistancy reasons.
-extension ColorRawTokens {
+public struct OrangeBrandColorRawTokens {
 
     // MARK: Primitive token - Colors - Orange - Brand - Orange
 

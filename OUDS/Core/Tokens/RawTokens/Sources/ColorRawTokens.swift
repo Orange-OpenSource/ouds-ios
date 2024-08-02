@@ -16,8 +16,7 @@ import OUDSFoundations
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias ColorFunctionalRawToken = String
-public typealias ColorTransparentRawToken = String
+public typealias ColorRawToken = String
 
 // MARK: Raw tokens
 
@@ -27,112 +26,112 @@ public struct ColorRawTokens {
 
     // MARK: Primitive token - Colors - Black, white
 
-    public static let colorFunctionalWhite: ColorFunctionalRawToken = "#FFFFFF"
-    public static let colorFunctionalBlack: ColorFunctionalRawToken = "#000000"
+    public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
+    public static let colorFunctionalBlack: ColorRawToken = "#000000"
 
     // MARK: Primitive token - Colors - Functional light gray
 
-    public static let colorFunctionalLightGray80: ColorFunctionalRawToken = "#F4F4F4"
-    public static let colorFunctionalLightGray160: ColorFunctionalRawToken = "#EEEEEE"
-    public static let colorFunctionalLightGray240: ColorFunctionalRawToken = "#E0E0E0"
-    public static let colorFunctionalLightGray320: ColorFunctionalRawToken = "#D6D6D6"
-    public static let colorFunctionalLightGray400: ColorFunctionalRawToken = "#CCCCCC"
-    public static let colorFunctionalLightGray480: ColorFunctionalRawToken = "#C2C2C2"
-    public static let colorFunctionalLightGray560: ColorFunctionalRawToken = "#BBBBBB"
-    public static let colorFunctionalLightGray640: ColorFunctionalRawToken = "#ADADAD"
-    public static let colorFunctionalLightGray720: ColorFunctionalRawToken = "#A3A3A3"
-    public static let colorFunctionalLightGray800: ColorFunctionalRawToken = "#999999"
-    public static let colorFunctionalLightGray880: ColorFunctionalRawToken = "#8F8F8F"
-    public static let colorFunctionalLightGray960: ColorFunctionalRawToken = "#858585"
+    public static let colorFunctionalLightGray80: ColorRawToken = "#F4F4F4"
+    public static let colorFunctionalLightGray160: ColorRawToken = "#EEEEEE"
+    public static let colorFunctionalLightGray240: ColorRawToken = "#E0E0E0"
+    public static let colorFunctionalLightGray320: ColorRawToken = "#D6D6D6"
+    public static let colorFunctionalLightGray400: ColorRawToken = "#CCCCCC"
+    public static let colorFunctionalLightGray480: ColorRawToken = "#C2C2C2"
+    public static let colorFunctionalLightGray560: ColorRawToken = "#BBBBBB"
+    public static let colorFunctionalLightGray640: ColorRawToken = "#ADADAD"
+    public static let colorFunctionalLightGray720: ColorRawToken = "#A3A3A3"
+    public static let colorFunctionalLightGray800: ColorRawToken = "#999999"
+    public static let colorFunctionalLightGray880: ColorRawToken = "#8F8F8F"
+    public static let colorFunctionalLightGray960: ColorRawToken = "#858585"
 
     // MARK: Primitive token - Colors - Functional dark gray
 
-    public static let colorFunctionalDarkGray80: ColorFunctionalRawToken = "#7A7A7A"
-    public static let colorFunctionalDarkGray160: ColorFunctionalRawToken = "#707070"
-    public static let colorFunctionalDarkGray240: ColorFunctionalRawToken = "#666666"
-    public static let colorFunctionalDarkGray320: ColorFunctionalRawToken = "#5C5C5C"
-    public static let colorFunctionalDarkGray400: ColorFunctionalRawToken = "#555555"
-    public static let colorFunctionalDarkGray480: ColorFunctionalRawToken = "#44444"
-    public static let colorFunctionalDarkGray560: ColorFunctionalRawToken = "#3D3D3D"
-    public static let colorFunctionalDarkGray640: ColorFunctionalRawToken = "#333333"
-    public static let colorFunctionalDarkGray720: ColorFunctionalRawToken = "#272727"
-    public static let colorFunctionalDarkGray800: ColorFunctionalRawToken = "#1F1F1F"
-    public static let colorFunctionalDarkGray880: ColorFunctionalRawToken = "#141414"
-    public static let colorFunctionalDarkGray960: ColorFunctionalRawToken = "#0A0A0A"
+    public static let colorFunctionalDarkGray80: ColorRawToken = "#7A7A7A"
+    public static let colorFunctionalDarkGray160: ColorRawToken = "#707070"
+    public static let colorFunctionalDarkGray240: ColorRawToken = "#666666"
+    public static let colorFunctionalDarkGray320: ColorRawToken = "#5C5C5C"
+    public static let colorFunctionalDarkGray400: ColorRawToken = "#555555"
+    public static let colorFunctionalDarkGray480: ColorRawToken = "#44444"
+    public static let colorFunctionalDarkGray560: ColorRawToken = "#3D3D3D"
+    public static let colorFunctionalDarkGray640: ColorRawToken = "#333333"
+    public static let colorFunctionalDarkGray720: ColorRawToken = "#272727"
+    public static let colorFunctionalDarkGray800: ColorRawToken = "#1F1F1F"
+    public static let colorFunctionalDarkGray880: ColorRawToken = "#141414"
+    public static let colorFunctionalDarkGray960: ColorRawToken = "#0A0A0A"
 
     // MARK: Primitive token - Colors - Functional scarlet
 
-    public static let colorFunctionalScarlet100: ColorFunctionalRawToken = "#FFE5E6"
-    public static let colorFunctionalScarlet200: ColorFunctionalRawToken = "#FFB2B3"
-    public static let colorFunctionalScarlet300: ColorFunctionalRawToken = "#FF8081"
-    public static let colorFunctionalScarlet400: ColorFunctionalRawToken = "#FF4D4E"
-    public static let colorFunctionalScarlet500: ColorFunctionalRawToken = "#FF1A1B"
-    public static let colorFunctionalScarlet600: ColorFunctionalRawToken = "#EA0305"
-    public static let colorFunctionalScarlet700: ColorFunctionalRawToken = "#BZ000Z"
-    public static let colorFunctionalScarlet800: ColorFunctionalRawToken = "#800001"
-    public static let colorFunctionalScarlet900: ColorFunctionalRawToken = "#4D0001"
+    public static let colorFunctionalScarlet100: ColorRawToken = "#FFE5E6"
+    public static let colorFunctionalScarlet200: ColorRawToken = "#FFB2B3"
+    public static let colorFunctionalScarlet300: ColorRawToken = "#FF8081"
+    public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E"
+    public static let colorFunctionalScarlet500: ColorRawToken = "#FF1A1B"
+    public static let colorFunctionalScarlet600: ColorRawToken = "#EA0305"
+    public static let colorFunctionalScarlet700: ColorRawToken = "#BZ000Z"
+    public static let colorFunctionalScarlet800: ColorRawToken = "#800001"
+    public static let colorFunctionalScarlet900: ColorRawToken = "#4D0001"
 
     // MARK: Primitive token - Colors - Functional sun
 
-    public static let colorFunctionalSun100: ColorFunctionalRawToken = "#FFF7D6"
-    public static let colorFunctionalSun200: ColorFunctionalRawToken = "#FFED99"
-    public static let colorFunctionalSun300: ColorFunctionalRawToken = "#FFE270"
-    public static let colorFunctionalSun400: ColorFunctionalRawToken = "#FFD73D"
-    public static let colorFunctionalSun500: ColorFunctionalRawToken = "#FFD0D0"
-    public static let colorFunctionalSun600: ColorFunctionalRawToken = "#D6AA00"
-    public static let colorFunctionalSun700: ColorFunctionalRawToken = "#A38200"
-    public static let colorFunctionalSun800: ColorFunctionalRawToken = "#665100"
-    public static let colorFunctionalSun900: ColorFunctionalRawToken = "#3D3100"
+    public static let colorFunctionalSun100: ColorRawToken = "#FFF7D6"
+    public static let colorFunctionalSun200: ColorRawToken = "#FFED99"
+    public static let colorFunctionalSun300: ColorRawToken = "#FFE270"
+    public static let colorFunctionalSun400: ColorRawToken = "#FFD73D"
+    public static let colorFunctionalSun500: ColorRawToken = "#FFD0D0"
+    public static let colorFunctionalSun600: ColorRawToken = "#D6AA00"
+    public static let colorFunctionalSun700: ColorRawToken = "#A38200"
+    public static let colorFunctionalSun800: ColorRawToken = "#665100"
+    public static let colorFunctionalSun900: ColorRawToken = "#3D3100"
 
     // MARK: Primitive token - Colors - Functional malachite
 
-    public static let colorFunctionalMalachite100: ColorFunctionalRawToken = "#EDFCF0"
-    public static let colorFunctionalMalachite200: ColorFunctionalRawToken = "#C1F6CA"
-    public static let colorFunctionalMalachite300: ColorFunctionalRawToken = "#94F0A4"
-    public static let colorFunctionalMalachite400: ColorFunctionalRawToken = "#67E97E"
-    public static let colorFunctionalMalachite500: ColorFunctionalRawToken = "#3DE35A"
-    public static let colorFunctionalMalachite600: ColorFunctionalRawToken = "#1ECD3C"
-    public static let colorFunctionalMalachite700: ColorFunctionalRawToken = "#17A02F"
-    public static let colorFunctionalMalachite800: ColorFunctionalRawToken = "#0E621D"
-    public static let colorFunctionalMalachite900: ColorFunctionalRawToken = "#0A4715"
+    public static let colorFunctionalMalachite100: ColorRawToken = "#EDFCF0"
+    public static let colorFunctionalMalachite200: ColorRawToken = "#C1F6CA"
+    public static let colorFunctionalMalachite300: ColorRawToken = "#94F0A4"
+    public static let colorFunctionalMalachite400: ColorRawToken = "#67E97E"
+    public static let colorFunctionalMalachite500: ColorRawToken = "#3DE35A"
+    public static let colorFunctionalMalachite600: ColorRawToken = "#1ECD3C"
+    public static let colorFunctionalMalachite700: ColorRawToken = "#17A02F"
+    public static let colorFunctionalMalachite800: ColorRawToken = "#0E621D"
+    public static let colorFunctionalMalachite900: ColorRawToken = "#0A4715"
 
     // MARK: Primitive token - Colors - Functional dodger blue
 
-    public static let colorFunctionalDodgerBlue100: ColorFunctionalRawToken = "#F0FAFF"
-    public static let colorFunctionalDodgerBlue200: ColorFunctionalRawToken = "#BDE7FF"
-    public static let colorFunctionalDodgerBlue300: ColorFunctionalRawToken = "#8AD5FF"
-    public static let colorFunctionalDodgerBlue400: ColorFunctionalRawToken = "#57C3FF"
-    public static let colorFunctionalDodgerBlue500: ColorFunctionalRawToken = "#26B2FF"
-    public static let colorFunctionalDodgerBlue600: ColorFunctionalRawToken = "#009BF0"
-    public static let colorFunctionalDodgerBlue700: ColorFunctionalRawToken = "#007ABD"
-    public static let colorFunctionalDodgerBlue800: ColorFunctionalRawToken = "#00598A"
-    public static let colorFunctionalDodgerBlue900: ColorFunctionalRawToken = "#003857"
+    public static let colorFunctionalDodgerBlue100: ColorRawToken = "#F0FAFF"
+    public static let colorFunctionalDodgerBlue200: ColorRawToken = "#BDE7FF"
+    public static let colorFunctionalDodgerBlue300: ColorRawToken = "#8AD5FF"
+    public static let colorFunctionalDodgerBlue400: ColorRawToken = "#57C3FF"
+    public static let colorFunctionalDodgerBlue500: ColorRawToken = "#26B2FF"
+    public static let colorFunctionalDodgerBlue600: ColorRawToken = "#009BF0"
+    public static let colorFunctionalDodgerBlue700: ColorRawToken = "#007ABD"
+    public static let colorFunctionalDodgerBlue800: ColorRawToken = "#00598A"
+    public static let colorFunctionalDodgerBlue900: ColorRawToken = "#003857"
 
     // MARK: Primitive token - Colors - Transparent black
 
-    public static let colorTransparentBlack0: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity0, on: colorFunctionalBlack)
-    public static let colorTransparentBlack100: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity100, on: colorFunctionalBlack)
-    public static let colorTransparentBlack200: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity200, on: colorFunctionalBlack)
-    public static let colorTransparentBlack300: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity300, on: colorFunctionalBlack)
-    public static let colorTransparentBlack400: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity400, on: colorFunctionalBlack)
-    public static let colorTransparentBlack500: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity500, on: colorFunctionalBlack)
-    public static let colorTransparentBlack600: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity600, on: colorFunctionalBlack)
-    public static let colorTransparentBlack700: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity700, on: colorFunctionalBlack)
-    public static let colorTransparentBlack800: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity800, on: colorFunctionalBlack)
-    public static let colorTransparentBlack900: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity900, on: colorFunctionalBlack)
+    public static let colorTransparentBlack0: ColorRawToken = apply(opacity: OpacityRawTokens.opacity0, on: colorFunctionalBlack)
+    public static let colorTransparentBlack100: ColorRawToken = apply(opacity: OpacityRawTokens.opacity100, on: colorFunctionalBlack)
+    public static let colorTransparentBlack200: ColorRawToken = apply(opacity: OpacityRawTokens.opacity200, on: colorFunctionalBlack)
+    public static let colorTransparentBlack300: ColorRawToken = apply(opacity: OpacityRawTokens.opacity300, on: colorFunctionalBlack)
+    public static let colorTransparentBlack400: ColorRawToken = apply(opacity: OpacityRawTokens.opacity400, on: colorFunctionalBlack)
+    public static let colorTransparentBlack500: ColorRawToken = apply(opacity: OpacityRawTokens.opacity500, on: colorFunctionalBlack)
+    public static let colorTransparentBlack600: ColorRawToken = apply(opacity: OpacityRawTokens.opacity600, on: colorFunctionalBlack)
+    public static let colorTransparentBlack700: ColorRawToken = apply(opacity: OpacityRawTokens.opacity700, on: colorFunctionalBlack)
+    public static let colorTransparentBlack800: ColorRawToken = apply(opacity: OpacityRawTokens.opacity800, on: colorFunctionalBlack)
+    public static let colorTransparentBlack900: ColorRawToken = apply(opacity: OpacityRawTokens.opacity900, on: colorFunctionalBlack)
 
     // MARK: Primitive token - Colors - Transparent white
 
-    public static let colorTransparentWhite0: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity0, on: colorFunctionalWhite)
-    public static let colorTransparentWhite100: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity100, on: colorFunctionalWhite)
-    public static let colorTransparentWhite200: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity200, on: colorFunctionalWhite)
-    public static let colorTransparentWhite300: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity300, on: colorFunctionalWhite)
-    public static let colorTransparentWhite400: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity400, on: colorFunctionalWhite)
-    public static let colorTransparentWhite500: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity500, on: colorFunctionalWhite)
-    public static let colorTransparentWhite600: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity600, on: colorFunctionalWhite)
-    public static let colorTransparentWhite700: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity700, on: colorFunctionalWhite)
-    public static let colorTransparentWhite800: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity800, on: colorFunctionalWhite)
-    public static let colorTransparentWhite900: ColorTransparentRawToken = apply(opacity: OpacityRawTokens.opacity900, on: colorFunctionalWhite)
+    public static let colorTransparentWhite0: ColorRawToken = apply(opacity: OpacityRawTokens.opacity0, on: colorFunctionalWhite)
+    public static let colorTransparentWhite100: ColorRawToken = apply(opacity: OpacityRawTokens.opacity100, on: colorFunctionalWhite)
+    public static let colorTransparentWhite200: ColorRawToken = apply(opacity: OpacityRawTokens.opacity200, on: colorFunctionalWhite)
+    public static let colorTransparentWhite300: ColorRawToken = apply(opacity: OpacityRawTokens.opacity300, on: colorFunctionalWhite)
+    public static let colorTransparentWhite400: ColorRawToken = apply(opacity: OpacityRawTokens.opacity400, on: colorFunctionalWhite)
+    public static let colorTransparentWhite500: ColorRawToken = apply(opacity: OpacityRawTokens.opacity500, on: colorFunctionalWhite)
+    public static let colorTransparentWhite600: ColorRawToken = apply(opacity: OpacityRawTokens.opacity600, on: colorFunctionalWhite)
+    public static let colorTransparentWhite700: ColorRawToken = apply(opacity: OpacityRawTokens.opacity700, on: colorFunctionalWhite)
+    public static let colorTransparentWhite800: ColorRawToken = apply(opacity: OpacityRawTokens.opacity800, on: colorFunctionalWhite)
+    public static let colorTransparentWhite900: ColorRawToken = apply(opacity: OpacityRawTokens.opacity900, on: colorFunctionalWhite)
  
     // MARK: - Helpers
     

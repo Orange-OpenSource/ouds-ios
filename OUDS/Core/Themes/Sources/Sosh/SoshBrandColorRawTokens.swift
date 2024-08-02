@@ -17,13 +17,13 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias ColorSoshPrimitiveToken = String
+public typealias ColorSoshPrimitiveToken = ColorRawToken
 
 // MARK: Primitive tokens
 
 /// This extension helps to add new raw tokens for this theme.
 /// Type aliases here are just for consistancy reasons.
-extension ColorRawTokens {
+public struct SoshBrandColorRawTokens {
 
     // MARK: Primitive token - Colors - Sosh - Magenta
 

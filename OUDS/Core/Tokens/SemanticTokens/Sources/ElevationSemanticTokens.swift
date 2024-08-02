@@ -21,7 +21,7 @@ public typealias ElevationXSemanticToken = ElevationRawToken
 public typealias ElevationYSemanticToken = ElevationRawToken
 public typealias ElevationBlurSemanticToken = ElevationRawToken
 public typealias ElevationSpreadSemanticToken = ElevationRawToken
-public typealias ElevationColorSemanticToken = ColorTransparentRawToken
+public typealias ElevationColorSemanticToken = ColorRawToken
 
 // MARK: - Semantic tokens
 
