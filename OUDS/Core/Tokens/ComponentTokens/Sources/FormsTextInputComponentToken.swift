@@ -26,8 +26,9 @@ public protocol FormsTextInputComponentToken {
     var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { get }
     var ftiSubtitleColor: ColorSemanticToken { get }
 
-    var ftiBackgroundColor: ColorSemanticToken { get }
-
+    var ftiBackgroundColorLight: ColorSemanticToken { get }
+    var ftiBackgroundColorDark: ColorSemanticToken { get }
+    
     var ftiBorderColor: ColorSemanticToken { get }
 
     var ftiBorderStyle: BorderStyleSemanticToken { get }

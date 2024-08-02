@@ -25,8 +25,6 @@ import OUDSTokensSemantic
 /// **Warning: You are not supposed to use this abstract default theme directly. Please prefer `OrangeTheme` instead**
 open class OUDSTheme {
 
-    @Environment(\.colorScheme) var colorScheme
-
     public init() { }
 
     // Please refer to extensions for properties, it will be more clear

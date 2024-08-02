@@ -12,9 +12,9 @@
 //
 
 import SwiftUI
-import OUDSComponents
-import OUDSThemesShared
-import OUDSThemesOrange
+import OUDSComponents       // To get for example OUDSFormsTextInput
+import OUDSThemesShared     // To get OUDSThemeableView
+import OUDSThemesOrange     // To get OrangeTheme
 
 struct GuidelinesPage: View {
 
@@ -38,7 +38,7 @@ struct GuidelinesPage: View {
                         selectedTheme = OrangeTheme()
                         print("Showcase app - Selected OUDS Orange theme")
                     }
-                    Button("Try custom theme") {
+                    Button("Try custom \"local\" theme") {
                         selectedTheme = OrangeCustomTheme()
                         print("Showcase app - Selected app custom theme")
                     }

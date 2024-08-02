@@ -13,8 +13,7 @@
 
 import Foundation
 import SwiftUI
-import OUDSFoundations
-import OUDSThemesShared
+import OUDSThemesShared // To get @Environment(\.theme) var theme
 
 /// An OUDS component for text input in formulars.
 /// **Warning: This is a draft component **
@@ -24,6 +23,7 @@ public struct OUDSFormsTextInput: View {
     @Binding var value: String
     var isEnabled: Bool
 
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.theme) var theme
 
     public init(placeholder: String, value: Binding<String>, isEnabled: Bool = true) {
@@ -38,23 +38,22 @@ public struct OUDSFormsTextInput: View {
             Label(
                 title: {
                     Text("Example of OUDSFormsTextInput")
-                        .fontWeight(theme.titleFontWeight.fontWeight)
-                        .font(.system(size: theme.titleFontSize))
-                        .foregroundColor(theme.titleColor.color)
+                        .fontWeight(theme.ftiTitleFontWeight.fontWeight)
+                        .font(.system(size: theme.ftiTitleFontSize))
+                        .foregroundColor(theme.ftiTitleColor.color)
                 },
                 icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
             )
 
             Text("Write bellow some awesome text!")
-                .fontWeight(theme.subtitleFontWeight.fontWeight)
-                .font(.system(size: theme.subtitleFontSize))
-                .foregroundColor(theme.subtitleColor.color)
-            
+                .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
+                .font(.system(size: theme.ftiSubtitleFontSize))
+                .foregroundColor(theme.ftiSubtitleColor.color)
+
             TextField(placeholder, text: $value)
         }
         .padding(theme.spacePaddingBlockComponentTall)
-        .background(theme.backgroundColor.color)
-        .border(theme.borderColor.color, width: theme.borderWidth)
+        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
+        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
     }
 }
-

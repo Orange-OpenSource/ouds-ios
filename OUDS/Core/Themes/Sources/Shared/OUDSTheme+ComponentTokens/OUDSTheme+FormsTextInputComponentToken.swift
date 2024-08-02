@@ -21,21 +21,21 @@ import OUDSTokensComponent
 extension OUDSTheme: FormsTextInputComponentToken {
 
     // TODO: What should we done if missing value? E.g. missing color or alias with empty values in the end
-    private static let defaultColor = ColorRawTokens.colorFunctionalBlack
+    private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
+    private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
 
     @objc open var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightHeading }
     @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
-    @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultColor }
+    @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultBlack }
 
     @objc open var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightDisplay }
     @objc open var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
-    @objc open var ftiSubtitleColor: ColorSemanticToken { colorContentDefaultLight ?? Self.defaultColor }
+    @objc open var ftiSubtitleColor: ColorSemanticToken { colorContentDefaultLight ?? Self.defaultBlack }
 
-    @objc open var ftiBackgroundColor: ColorSemanticToken { colorBackgroundDefaultPrimaryLight ?? Self.defaultColor }
+    @objc open var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight ?? Self.defaultWhite }
+    @objc open var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark ?? Self.defaultBlack }
 
-    @objc open var ftiBorderColor: ColorSemanticToken {
-        (colorScheme == .light ? colorBorderDefaultLight : colorBorderDefaultDark) ?? Self.defaultColor
-    }
+    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasisLight ?? Self.defaultBlack }
 
     @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
 

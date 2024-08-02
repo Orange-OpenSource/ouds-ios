@@ -12,8 +12,39 @@
 //
 
 import Foundation
+import SwiftUI
+import OUDSTokensRaw
+import OUDSTokensSemantic
+import OUDSTokensComponent
 import OUDSThemesOrange
 
-class OrangeCustomTheme: OrangeTheme {
-    
+// Can be for example a country theme
+class OrangeCustomTheme: OrangeTheme { }
+
+/// Overrides for `FormsTextInputComponentToken` the  configuration which for this theme.
+/// **Warning: These are random and dumb values**
+extension OrangeCustomTheme { // For FormsTextInputComponentToken
+
+    public override var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
+    public override var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
+    public override var ftiTitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
+
+    public override var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightBodyDefault }
+    public override var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
+    public override var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
+
+    public override var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight }
+    public override var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark }
+
+    public override var ftiBorderColor: ColorSemanticToken { colorBorderEmphasisDark ?? ColorRawTokens.colorDecorativeShockingPink500 }
+
+    public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
+
+    public override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThickest }
+}
+
+extension OrangeCustomTheme { // For ColorSemanticTokens
+
+    override var colorBackgroundDefaultPrimaryLight: ColorSemanticToken! { ColorRawTokens.colorFunctionalSun500 }
+    override var colorBackgroundDefaultPrimaryDark: ColorSemanticToken! { ColorRawTokens.colorFunctionalSun800 }
 }
