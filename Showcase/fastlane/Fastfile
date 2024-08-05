@@ -523,7 +523,7 @@ EOF
                 request = Net::HTTP::Post.new(uri.path)
                 request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
                 request['Content-Type'] = 'application/json'
-                request.body = { body: comment }.to_json
+                request.body = { body: comment_to_upload }.to_json
           
                 response = http.request(request)
           
