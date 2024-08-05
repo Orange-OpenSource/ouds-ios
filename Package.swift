@@ -97,6 +97,10 @@ let package = Package(
             name: "OUDSTokensRaw",
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Core/Tokens/RawTokens/Sources"),
+        .testTarget(
+            name: "OUDSTokensRawTests",
+            dependencies: ["OUDSTokensRaw"],
+            path: "OUDS/Core/Tokens/RawTokens/Tests"),
         .target(
             name: "OUDSFoundations",
             path: "OUDS/Foundations/Sources"),
