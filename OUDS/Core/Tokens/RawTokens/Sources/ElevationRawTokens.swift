@@ -15,6 +15,7 @@ import Foundation
 
 // MARK: - Type aliases to keep grammar clear
 
+/// Typeliases precising `Int` value are used (because used in _SwiftUI_ API) for each **elevation raw token**.
 public typealias ElevationRawToken = Int
 
 // MARK: - Raw tokens
@@ -76,4 +77,6 @@ public enum ElevationRawTokens {
     public static let elevationSpreadMinus400: ElevationRawToken = -8
     public static let elevationSpread0: ElevationRawToken = 0
     public static let elevationSpread300: ElevationRawToken = 3
+
+    // TODO: Is Box shadow (Composite) a raw token type to deal with?
 }

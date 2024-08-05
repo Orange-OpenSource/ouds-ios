@@ -26,7 +26,8 @@ public typealias ElevationColorSemanticToken = ColorRawToken
 // MARK: - Semantic tokens
 
 /// This is a group of semantic tokens for **elevations**.
-/// It defines all `ElevationSemanticToken` a theme must have.
+/// It defines all elevation semantic tokens a theme must have. (`ElevationZIndexSemanticToken`,`ElevationXSemanticToken`,`ElevationYSemanticToken`,
+/// `ElevationBlurSemanticToken`,`ElevationSpreadSemanticToken` and `ElevationColorSemanticToken`)
 public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Z index
@@ -56,7 +57,7 @@ public protocol ElevationSemanticTokens {
     var elevationXStickyDefault: ElevationZIndexSemanticToken { get }
     var elevationXStickyEmphasis: ElevationZIndexSemanticToken { get }
     var elevationXStickyNavigationScrolled: ElevationZIndexSemanticToken { get }
-    var elevationXFOcus: ElevationZIndexSemanticToken { get }
+    var elevationXFocus: ElevationZIndexSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Y
 
@@ -96,55 +97,49 @@ public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color - None
 
-    var elevationColorNoneLigh: ElevationColorSemanticToken { get }
+    var elevationColorNoneLight: ElevationColorSemanticToken { get }
     var elevationColorNoneDark: ElevationColorSemanticToken { get }
-    var elevationColorNoneInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Raised
 
-    var elevationColorRaisedLigh: ElevationColorSemanticToken { get }
+    var elevationColorRaisedLight: ElevationColorSemanticToken { get }
     var elevationColorRaisedDark: ElevationColorSemanticToken { get }
-    var elevationColorRaisedInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Drag
 
-    var elevationColorDragLigh: ElevationColorSemanticToken { get }
+    var elevationColorDragLight: ElevationColorSemanticToken { get }
     var elevationColorDragDark: ElevationColorSemanticToken { get }
-    var elevationColorDragInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Default
 
-    var elevationColorOverlayDefaultLigh: ElevationColorSemanticToken { get }
+    var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { get }
     var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { get }
-    var elevationColorOverlayDefaultInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Emphasis
 
-    var elevationColorOverlayEmphasisLigh: ElevationColorSemanticToken { get }
+    var elevationColorOverlayEmphasisLight: ElevationColorSemanticToken { get }
     var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken { get }
-    var elevationColorOverlayEmphasisInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Default
 
-    var elevationColorStickyDefaultLigh: ElevationColorSemanticToken { get }
+    var elevationColorStickyDefaultLight: ElevationColorSemanticToken { get }
     var elevationColorStickyDefaultDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyDefaultInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Emphasis
 
-    var elevationColorStickyEmphasisLigh: ElevationColorSemanticToken { get }
+    var elevationColorStickyEmphasisLight: ElevationColorSemanticToken { get }
     var elevationColorStickyEmphasisDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyEmphasisInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
-    var elevationColorStickyNavigationScrolledLigh: ElevationColorSemanticToken { get }
+    var elevationColorStickyNavigationScrolledLight: ElevationColorSemanticToken { get }
     var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { get }
-    var elevationColorStickyNavigationScrolledInverse: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Focus
 
-    var elevationColorFocusLigh: ElevationColorSemanticToken { get }
+    var elevationColorFocusLight: ElevationColorSemanticToken { get }
     var elevationColorFocusDark: ElevationColorSemanticToken { get }
-    var elevationColorFocusInverse: ElevationColorSemanticToken { get }
+
+    // TODO: Is Box shadow (Composite) a semantic token type to deal with?
+
 }

@@ -17,6 +17,8 @@ import OUDSTokensSemantic
 
 /// Defines basic values common to all themes for `ElevationSemanticTokenss`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// The aim of this extensions is to make relationships between all semantic tokens for elevations and associated raw tokens.
+/// `OUDSTheme` can be seen as a kind of "abstract class" in _object oriented paradigm_.
 extension OUDSTheme: ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Z index
@@ -46,7 +48,7 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationXStickyDefault: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
     @objc open var elevationXStickyEmphasis: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
     @objc open var elevationXStickyNavigationScrolled: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXFOcus: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXFocus: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
 
     // MARK: Semantic token - Elevation - Y
 
@@ -86,56 +88,46 @@ extension OUDSTheme: ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color - None
 
-    @objc open var elevationColorNoneLigh: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite0 }
-    @objc open var elevationColorNoneDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite0 }
-    @objc open var elevationColorNoneInverse: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite0 }
+    @objc open var elevationColorNoneLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack0 }
+    @objc open var elevationColorNoneDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack0 }
 
     // MARK: Semantic token - Elevation - Color - Raised
 
-    @objc open var elevationColorRaisedLigh: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack500 }
+    @objc open var elevationColorRaisedLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack500 }
     @objc open var elevationColorRaisedDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack500 }
-    @objc open var elevationColorRaisedInverse: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack500 }
 
     // MARK: Semantic token - Elevation - Color - Drag
 
-    @objc open var elevationColorDragLigh: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack600 }
+    @objc open var elevationColorDragLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack600 }
     @objc open var elevationColorDragDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack600 }
-    @objc open var elevationColorDragInverse: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack600 }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Default
 
-    @objc open var elevationColorOverlayDefaultLigh: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
+    @objc open var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
     @objc open var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
-    @objc open var elevationColorOverlayDefaultInverse: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Emphasis
 
-    @objc open var elevationColorOverlayEmphasisLigh: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    @objc open var elevationColorOverlayEmphasisLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
     @objc open var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
-    @objc open var elevationColorOverlayEmphasisInverse: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Default
 
-    @objc open var elevationColorStickyDefaultLigh: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
-    @objc open var elevationColorStickyDefaultDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
-    @objc open var elevationColorStickyDefaultInverse: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
+    @objc open var elevationColorStickyDefaultLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    @objc open var elevationColorStickyDefaultDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Emphasis
 
-    @objc open var elevationColorStickyEmphasisLigh: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    @objc open var elevationColorStickyEmphasisLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
     @objc open var elevationColorStickyEmphasisDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
-    @objc open var elevationColorStickyEmphasisInverse: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
-    @objc open var elevationColorStickyNavigationScrolledLigh: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    @objc open var elevationColorStickyNavigationScrolledLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
     @objc open var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
-    @objc open var elevationColorStickyNavigationScrolledInverse: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
 
     // MARK: Semantic token - Elevation - Color - Focus
 
-    @objc open var elevationColorFocusLigh: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
+    @objc open var elevationColorFocusLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
     @objc open var elevationColorFocusDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
-    @objc open var elevationColorFocusInverse: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
-
 }
