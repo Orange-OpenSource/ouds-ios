@@ -17,6 +17,8 @@ import OUDSTokensSemantic
 
 /// Defines basic values common to all themes for `BorderSemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// The aim of this extensions is to make relationships between all semantic tokens for borders and associated raw tokens.
+/// `OUDSTheme` can be seen as a kind of "abstract class" in _object oriented paradigm_.
 extension OUDSTheme: BorderSemanticTokens {
 
     // MARK: Semantic token - Border - Width
@@ -37,6 +39,7 @@ extension OUDSTheme: BorderSemanticTokens {
     @objc open var borderRadiusMedium: BorderRadiusSemanticToken { BorderRawTokens.borderRadius150 }
     @objc open var borderRadiusTall: BorderRadiusSemanticToken { BorderRawTokens.borderRadius300 }
     @objc open var borderRadiusPill: BorderRadiusSemanticToken { BorderRawTokens.borderRadius9999 }
+    // TODO: How to deal with "border-radius-circle : 50%"?
 
     // MARK: Semantic token - Border - Style
 

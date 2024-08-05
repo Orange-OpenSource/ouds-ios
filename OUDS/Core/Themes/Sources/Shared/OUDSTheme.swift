@@ -12,9 +12,6 @@
 //
 
 import Foundation
-import SwiftUI
-import OUDSTokensRaw
-import OUDSTokensSemantic
 
 /// This is a basic theme any themes must be a subclass off.
 /// A Swift `class` has been used to as to allow to easily override some attributes and have inheritance, without having for developers
@@ -23,6 +20,7 @@ import OUDSTokensSemantic
 /// We allow this theme to be derivated / be overriden.
 ///
 /// **Warning: You are not supposed to use this abstract default theme directly. Please prefer `OrangeTheme` instead**
+/// `OUDSTheme` can be seen as a kid of "abstract class" in _object oriented paradigm_.
 open class OUDSTheme {
 
     public init() { }
