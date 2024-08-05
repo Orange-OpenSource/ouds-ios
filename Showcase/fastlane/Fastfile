@@ -496,7 +496,7 @@ platform :ios do
         build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
         
         build_issues_numbers.each do |issue_number|
-            uri = URI("https://api.github.com/repos//Orange-OpenSource/ouds-ios/issues/#{issue_number}")
+            uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/issues/#{issue_number}")
             response = Net::HTTP.get(uri)
             issue = JSON.parse(response)
         
@@ -512,6 +512,8 @@ platform :ios do
 - Build tag: '#{build_tag}'
 - Build type: '#{build_type}'
 - Build details (GitHub):'#{build_details}'
+
+_This is an automated message sent with *Fastlane* from our CI/CD pipepline_
 EOF
 
                 uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/issues/#{issue_number}/comments")
