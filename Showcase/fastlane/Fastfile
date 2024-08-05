@@ -440,23 +440,37 @@ platform :ios do
         else
             # Check if given tag exists yet
             puts "ℹ️ Check if '#{tag}' exists yet"
-            result=sh("curl -s 'https://api.github.com/repos/Orange-OpenSource/ouds-ios/git/refs/tags/#{tag}' | jq -r '.ref'") # TODO Shell error management
-            # If tag exists, CURL response is formatted like "refs/tags/tag"
-            if "refs/tags/#{tag}".eql? result.strip # Removes line break available in command result
+
+            uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/tags")
+            response = Net::HTTP.get(uri)
+            tags = JSON.parse(response)
+
+            if tags.any? { |t| t['name'] == tag }
                 puts "ℹ️ The tag '#{tag}' still exists, won't create new tag"
                 return false
             else
                 puts "ℹ️ Commit SHA to tag is '#{IOS_APP_COMMIT_SHA}'"
-                # Just a light tag is enough 
-                sh("curl -L \
-                  -X POST \
-                  -H 'Accept: application/vnd.github+json' \
-                  -H 'Authorization: Bearer #{GITHUB_ACCESS_TOKEN}'\
-                  -H 'X-GitHub-Api-Version: 2022-11-28' \
-                  https://api.github.com/repos/Orange-OpenSource/ouds-ios/git/refs \
-                  -d '{\"ref\":\"refs/tags/#{tag}\",\"sha\":\"#{IOS_APP_COMMIT_SHA}\"}'") # TODO Shell error management
+
+                uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/git/refs")
+                http = Net::HTTP.new(uri.host, uri.port)
+                http.use_ssl = true
+                
+                request = Net::HTTP::Post.new(uri.path)
+                request['Accept'] = 'application/vnd.github+json'
+                request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
+                request['X-GitHub-Api-Version'] = '2022-11-28'
+                request.body = { ref: "refs/tags/#{tag}", sha: IOS_APP_COMMIT_SHA }.to_json
+                
+                response = http.request(request)
+                
+                if response.code.to_i == 201
+                  puts "ℹ️ Light tag '#{tag}' published in repository"
                   return true
-              end
+                else
+                  puts "❌ Error: Failed to publish light tag '#{tag}'"
+                  return false
+                end
+            end
         end
     end
 
