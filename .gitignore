@@ -16,9 +16,6 @@
 .DS_Store
 **/.DS_Store
 
-# Generated files
-/🛠️/tokens.swift
-
 # Produced by Brew
 /Brewfile.lock.json
 
