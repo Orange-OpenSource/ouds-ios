@@ -11,7 +11,9 @@ requirements of the relevant license of the Third Party Software they are using.
 
 ## In Project
 
-### CocoaPods
+### Ruby gems
+
+#### CocoaPods
 
 Version 1.15.2
 
@@ -20,7 +22,7 @@ Copyright 2011 Eloy Durán, Fabio Pelosin, Samuel Giddins, Marius Rackwitz, Kyle
 *CocoaPods* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/CocoaPods/CocoaPods).
                    
-### Fastlane
+#### Fastlane
 
 Version 2.221.1
 
@@ -29,7 +31,7 @@ Copyright 2015-2022 The Fastlane Authors.
 *Fastlane* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/fastlane/fastlane).
 
-### fastlane-plugin-changelog
+#### fastlane-plugin-changelog
 
 Version 0.16.0
 
@@ -38,7 +40,7 @@ Copyright 2018 Pavel Procházka.
 *fastlane-plugin-changelog* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/pajapro/fastlane-plugin-changelog).
 
-### fastlane-plugin-mattermost
+#### fastlane-plugin-mattermost
 
 Version 1.3.2
 
@@ -47,39 +49,19 @@ Copyright 2020 cpfriend1721994.
 *fastlane-plugin-mattermost* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/cpfriend1721994/fastlane-plugin-mattermost).
 
-### Gitleaks
+#### net-http
 
-Copyright (c) 2019 Zachary Rice
+Version 0.4.1
 
-*gitleaks* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/gitleaks/gitleaks).
+*net-http* is distributed under the terms and conditions of the [Ruby License](https://github.com/flori/json/blob/master/LICENSE).
 
-### Periphery
+#### json
 
-Copyright (c) 2019 Ian Leitch
+Version 2.7.2
 
-*Periphery* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/peripheryapp/periphery).
+*json* is distributed under the terms and conditions of the [Ruby License](https://github.com/flori/json/blob/master/LICENSE).
 
-### SwiftFormat
-
-Version 0.54.0
-
-Copyright 2016 Nick Lockwood.
-
-*SwiftFormat* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/nicklockwood/SwiftFormat).
-
-### SwiftLint
-
-Version 0.55.1
-
-Copyright 2020 Realm Inc.
-
-*SwiftLint* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/realm/SwiftLint).
-
-### xcode-install
+#### xcode-install
 
 Version 2.8.1
 
@@ -88,3 +70,36 @@ Copyright (c) 2015 Boris Bügling
 *xcode-install* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/xcpretty/xcode-install).
 
+### Other tools
+
+#### Gitleaks
+
+Copyright (c) 2019 Zachary Rice
+
+*gitleaks* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/gitleaks/gitleaks).
+
+#### Periphery
+
+Copyright (c) 2019 Ian Leitch
+
+*Periphery* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/peripheryapp/periphery).
+
+#### SwiftFormat
+
+Version 0.54.0
+
+Copyright 2016 Nick Lockwood.
+
+*SwiftFormat* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/nicklockwood/SwiftFormat).
+
+#### SwiftLint
+
+Version 0.55.1
+
+Copyright 2020 Realm Inc.
+
+*SwiftLint* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/realm/SwiftLint).
