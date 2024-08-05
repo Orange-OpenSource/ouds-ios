@@ -68,5 +68,4 @@ public struct GridRawTokens {
     public static let gridColumnCount800: GridRawToken = dimensionBase * 8
     public static let gridColumnCount1000: GridRawToken = dimensionBase * 10
     public static let gridColumnCount1200: GridRawToken = dimensionBase * 12
-    
 }

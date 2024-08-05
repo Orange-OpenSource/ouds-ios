@@ -1,0 +1,31 @@
+{
+  "configurations" : [
+    {
+      "id" : "D42E26CC-AA05-4E91-9495-DDB680E99EF8",
+      "name" : "OUDS Library TestPlan custom configuration",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "OUDSTokensRawTests",
+        "name" : "OUDSTokensRawTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "OUDSTokensThemesTests",
+        "name" : "OUDSTokensThemesTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -132,9 +132,9 @@ public struct ColorRawTokens {
     public static let colorTransparentWhite700: ColorRawToken = apply(opacity: OpacityRawTokens.opacity700, on: colorFunctionalWhite)
     public static let colorTransparentWhite800: ColorRawToken = apply(opacity: OpacityRawTokens.opacity800, on: colorFunctionalWhite)
     public static let colorTransparentWhite900: ColorRawToken = apply(opacity: OpacityRawTokens.opacity900, on: colorFunctionalWhite)
- 
+
     // MARK: - Helpers
-    
+
     private static func apply(opacity: OpacityRawToken, on hexColor: String) -> String {
         // TODO: Improve this algorithm too much naive
         // Values picked from https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
