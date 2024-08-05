@@ -16,5 +16,6 @@ import OUDSThemesShared
 
 /// A mock theme for tests
 class MockTheme: OUDSTheme {
-    
+
+    // Please refer to extensions
 }

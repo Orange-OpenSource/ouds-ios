@@ -15,13 +15,12 @@ import Foundation
 import OUDSTokensSemantic
 import OUDSTokensRaw
 
-
 extension MockTheme {
-    
+
     static let mockThemeBorderWidthRawToken: BorderWidthRawToken = 1337
     static let mockThemeBorderRadiusRawToken: BorderRadiusRawToken = 42
     static let mockThemeBorderStyleRawToken: BorderStyleRawToken = "(╯°□°）╯︵ ┻━┻"
-    
+
     // MARK: Semantic token - Border - Width
 
     override var borderWidthNone: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
