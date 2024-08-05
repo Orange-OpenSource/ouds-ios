@@ -86,7 +86,7 @@ extension OUDSTheme: SpacingSemanticTokens {
     @objc open var spaceColumnGapComponentIsArrowMedium: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension75 }
     @objc open var spaceColumnGapComponentIsArrowTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension100 }
     @objc open var spaceColumnGapComponentIsArrowTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension200 }
-    
+
     // MARK: Semantic token - Padding - Gap stack
 
     @objc open var spaceRowGapComponentNone: SpacingGapStackSemanticToken { DimensionRawTokens.dimension0 }

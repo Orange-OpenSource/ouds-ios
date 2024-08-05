@@ -16,14 +16,17 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
+/// Typeliases precising `BorderWidthRawToken`  is used as a value of this **border width semantic token**.
 public typealias BorderWidthSemanticToken = BorderWidthRawToken
+/// Typeliases precising `BorderRadiusSemanticToken`  is used as a value of t**his border raw semantic token**.
 public typealias BorderRadiusSemanticToken = BorderRadiusRawToken
+/// Typeliases precising `BorderStyleSemanticToken`  is used as a value of this **border style semantic token**.
 public typealias BorderStyleSemanticToken = BorderStyleRawToken
 
 // MARK: - Semantic tokens
 
 /// This is a group of semantic tokens for **borders**.
-/// It defines all `BorderWidthSemanticToken` a theme must have.
+/// It defines all `BorderWidthSemanticToken`, `BorderRadiusSemanticToken` and `BorderStyleSemanticToken` a theme must have.
 public protocol BorderSemanticTokens {
 
     // MARK: Semantic token - Border - Width
@@ -44,6 +47,7 @@ public protocol BorderSemanticTokens {
     var borderRadiusMedium: BorderRadiusSemanticToken { get }
     var borderRadiusTall: BorderRadiusSemanticToken { get }
     var borderRadiusPill: BorderRadiusSemanticToken { get }
+    // TODO: How to deal with "border-radius-circle"?
 
     // MARK: Semantic token - Border - Style
 
