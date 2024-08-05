@@ -496,12 +496,12 @@ platform :ios do
         build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
         
         build_issues_numbers.each do |issue_number|
-            uri = URI("https://api.github.com/repos//Orange-OpenSource/ouds-ios/issues/#{number}")
+            uri = URI("https://api.github.com/repos//Orange-OpenSource/ouds-ios/issues/#{issue_number}")
             response = Net::HTTP.get(uri)
             issue = JSON.parse(response)
         
             if issue['message'] == 'Not Found'
-                puts "❌ Error: Issue '#{number}' does not exist"
+                puts "❌ Error: Issue '#{issue_number}' does not exist"
             else
           
                 comment_to_upload=<<-EOF
@@ -514,7 +514,7 @@ platform :ios do
 - Build details (GitHub):'#{build_details}'
 EOF
 
-                uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/issues/#{number}/comments")
+                uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/issues/#{issue_number}/comments")
                 http = Net::HTTP.new(uri.host, uri.port)
                 http.use_ssl = true
           
@@ -526,9 +526,9 @@ EOF
                 response = http.request(request)
           
                 if response.code.to_i == 201
-                    puts "ℹ️ Comment posted on issue '#{number}'"
+                    puts "ℹ️ Comment posted on issue '#{issue_number}'"
                 else
-                    puts "❌ Error: Failed to post comment on issue '#{number}'"
+                    puts "❌ Error: Failed to post comment on issue '#{issue_number}'"
                 end
             end
         end
