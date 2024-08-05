@@ -30,7 +30,7 @@ final class BorderRawTokensTests: XCTestCase {
         XCTAssertLessThan(BorderRawTokens.borderWidth100, BorderRawTokens.borderWidth150)
         XCTAssertLessThan(BorderRawTokens.borderWidth150, BorderRawTokens.borderWidth200)
     }
-    
+
     /// Wathever the values are, border radius raw tokens must keep their order relationships
     func testOrderRelationshipForRadius() throws {
         XCTAssertLessThan(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius25)
@@ -46,7 +46,7 @@ final class BorderRawTokensTests: XCTestCase {
         XCTAssertLessThan(BorderRawTokens.borderRadius600, BorderRawTokens.borderRadius800)
         XCTAssertLessThan(BorderRawTokens.borderRadius800, BorderRawTokens.borderRadius9999)
     }
-    
+
     /// Border styles raw tokens should be different
     func testNonEqualityForStyles() throws {
         XCTAssertNotEqual(BorderRawTokens.borderStyleNone, BorderRawTokens.borderStyleSolid)
