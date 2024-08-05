@@ -85,6 +85,10 @@ let package = Package(
             name: "OUDSThemesShared",
             dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
             path: "OUDS/Core/Themes/Sources/Shared"),
+        .testTarget(
+            name: "OUDSTokensThemesTests",
+            dependencies: ["OUDSThemesShared", "OUDSThemesOrange"],
+            path: "OUDS/Core/Themes/Tests"),
         .target(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],

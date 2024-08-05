@@ -54,6 +54,6 @@ final class BorderRawTokensTests: XCTestCase {
         XCTAssertNotEqual(BorderRawTokens.borderStyleNone, BorderRawTokens.borderStyleDotted)
         XCTAssertNotEqual(BorderRawTokens.borderStyleSolid, BorderRawTokens.borderStyleDashed)
         XCTAssertNotEqual(BorderRawTokens.borderStyleSolid, BorderRawTokens.borderStyleDotted)
-        XCTAssertNotEqual(BorderRawTokens.borderStyleDashed, BorderRawTokens.borderStyleDotted)        
+        XCTAssertNotEqual(BorderRawTokens.borderStyleDashed, BorderRawTokens.borderStyleDotted)
     }
 }
