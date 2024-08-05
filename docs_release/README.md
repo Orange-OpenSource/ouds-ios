@@ -40,7 +40,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
     <!-- TODO Add AppNews file details -->
 
     - Ensure the marketing version defined in Xcode is updated with the new X.Y.Z
-    <!-- TODO add details about docs -->
+    <!-- TODO Add details about docs -->
     <!-- - Update the version precised in *home_content* file -->
     <!-- - Archive the documentation in `docs/X.Y.Z`. -->
     <!-- - Update Jekyll configuration files.<br /><br /> -->
@@ -90,12 +90,12 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 - Click on `Draft a new release`.
 
-    <!-- TODO update screenshot -->
+    <!-- TODO Update screenshot -->
     <!-- ![Edit GitHub release](images/github_release_01.png) -->
 
 - Create a new tag X.Y.Z. **Warning, maybe git-cliff will need tag prefixed by v, so the documentation should be applied with this new rule**
 
-    <!-- TODO update screenshot -->
+    <!-- TODO Update screenshot -->
     <!-- ![Create tag](images/github_release_02.png) -->
 
 - Add release notes and verify using the preview tab.
