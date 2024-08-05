@@ -26,17 +26,15 @@ public typealias TypographyFontParagraphSpacingRawToken = Int
 
 // MARK: - Composite raw token
 
-// swiftlint:disable line_length
 public struct TypographyCompositeRawToken {
 
     let family: TypographyFontFamilyRawToken
     let size: TypographyFontSizeRawToken
     let lineHeight: TypographyFontLineHeightRawToken
     let weight: TypographyFontWeightRawToken
-    // let ter spacing...
+    // TODO: How to deal "letter spacing"?
     let paragraphSpacing: TypographyFontParagraphSpacingRawToken
 }
-// swiftlint:enable line_length
 
 // MARK: - Raw tokens
 

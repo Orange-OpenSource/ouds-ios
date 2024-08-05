@@ -15,11 +15,11 @@ import Foundation
 import SwiftUI
 
 extension String {
-    
+
     public var color: Color {
         Color(hexadecimalCode: self)
     }
-    
+
     public var fontWeight: Font.Weight {
         if self == "thin" { return Font.Weight.thin }
         if self == "ultraLight" { return Font.Weight.ultraLight }
