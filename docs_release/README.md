@@ -8,7 +8,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 - [Prepare Next Release](#prepare-next-release)
 - [About CI/CD with GitLab CI](#about-cicd-with-gitlabci)
   * [GitLab CI pipeline](#gitlab-ci-pipeline)
-  * [Prepare environement build Shell script](#prepare-environement-build-shell-script)  
+  * [Prepare environment build Shell script](#prepare-environement-build-shell-script)  
   * [GitHub download Shell script](#github-download-shell-script)
 - [How it works](#how-it-works)
   * [Alpha builds](#alpha-builds)
@@ -572,6 +572,8 @@ mv $TMP_DIR_PATH/"$GITHUB_ORGA_NAME"-"$GITHUB_REPO_NAME"-* "$TMP_DIR_PATH/$GITHU
 
 echo "✅ It seems the sources have been downloaded and extracted successfully!"
 ```
+
+Note that the *GITHUB_ACCESS_TOKEN* mus be a fine grained personal access token with permissions *read and write* for *contents*, *read only* for *metadata*, and *read and write* for *commit statuses* and *issues*. Click on [this hyperlink](https://github.com/settings/tokens?type=beta) to create such token, however you may need to contact your GitHub organization admins for validation or help. For [Orange-OpenSource](https://github.com/Orange-OpenSource), use the usual help address you should know.
 
 ## How it works
 
