@@ -8,7 +8,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 - [Prepare Next Release](#prepare-next-release)
 - [About CI/CD with GitLab CI](#about-cicd-with-gitlabci)
   * [GitLab CI pipeline](#gitlab-ci-pipeline)
-  * [Prepare environement build Shell script](#prepare-environement-build-shell-script)  
+  * [Prepare environment build Shell script](#prepare-environement-build-shell-script)  
   * [GitHub download Shell script](#github-download-shell-script)
 - [How it works](#how-it-works)
   * [Alpha builds](#alpha-builds)
@@ -166,35 +166,36 @@ Of course you will need also to fill secrets and environement variables.
 variables:
   ALPHA_BRANCH_TO_BUILD:
     value: ""
-    description: "The name of the branch to build as alpha version"
-  IOS_ISSUE_NUMBER:
+    description: "Mandatory: The name of the branch to build as alpha version"
+  ALPHA_ISSUES_NUMBERS:
     value: ""
-    description: "The number(s) of the issue(s) in GitHub which will be implemented in ALPHA_BRANCH_TO_BUILD and built (e.g.: '42' or seperated with commas '42, 666, 1337')"
+    description: "Mandatory: The number(s) of the issue(s) in GitHub which will be implemented in ALPHA_BRANCH_TO_BUILD and built (e.g.: '42' or seperated with commas '42, 666, 1337'). Will be used also for GitHub notifications."
   GITHUB_REPOSITORY_NAME:
     value: "ouds-ios"
-    description: "The name of the repository to use for builds (default: ouds-ios)"
+    description: "Mandatory: The name of the repository to use for builds (default: ouds-ios)"
   GITHUB_ORGANIZATION_NAME:
     value: "Orange-OpenSource"
-    description: "The name of the GitHub organization containing the repository to use for builds (default: Orange-OpenSource)"
+    description: "Mandatory: The name of the GitHub organization containing the repository to use for builds (default: Orange-OpenSource)"
   BETA_BRANCH_TO_BUILD:
     value: "develop"
-    description: "The name of the branch to build as beta version (default: develop)"
+    description: "Mandatory: The name of the branch to build as beta version (default: develop)"
   PRODUCTION_BRANCH_TO_BUILD:
     value: "main"
-    description: "The name of the branch to build as production version (default: main)"
+    description: "Mandatory: The name of the branch to build as production version (default: main)"
   PATH_TO_IPA:
     value: "./tmp/ouds-ios/Showcase/build/Showcase.ipa"
-    description: "The path to get the IPA for artifacts (default: ./tmp/ouds-ios/Showcase/build/Showcase.ipa)"
+    description: "Mandatory: The path to get the IPA for artifacts (default: ./tmp/ouds-ios/Showcase/build/Showcase.ipa)"
   PATH_TO_ZIP:
     value: "./tmp/ouds-ios/Showcase/build/oudsApp.zip"
-    description: "The path to get the ZIP for artifacts (default: ./tmp/ouds-ios/Showcase/build/oudsApp.zip)"
+    description: "Mandatory: The path to get the ZIP for artifacts (default: ./tmp/ouds-ios/Showcase/build/oudsApp.zip)"
   PATH_TO_APP_SOURCES:
     value: "./Showcase"
-    description: "The path where the sources to build are (default: ./Showcase)"
+    description: "Mandatory: The path where the sources to build are (default: ./Showcase)"
 
 # All stages for alpha, beta, production builds and releases
 stages:
   - prepare-alpha
+  - test-alpha
   - build-alpha
   - prepare-beta
   - test-beta
@@ -229,6 +230,17 @@ prepare_alpha_environment:
     reports:
       dotenv: .env
   when: manual    
+
+test_alpha_ios:
+  extends: .common_alpha_ios
+  stage: test-alpha
+  needs: [prepare_alpha_environment]  
+  script:
+    - bundle install
+    - cd "$PATH_TO_APP_SOURCES"
+    - bundle exec pod cache clean --all
+    - bundle exec pod install --repo-update
+    - bundle exec fastlane ios test
 
 build_alpha:
   extends: .common_alpha_ios
@@ -560,6 +572,8 @@ mv $TMP_DIR_PATH/"$GITHUB_ORGA_NAME"-"$GITHUB_REPO_NAME"-* "$TMP_DIR_PATH/$GITHU
 
 echo "✅ It seems the sources have been downloaded and extracted successfully!"
 ```
+
+Note that the *GITHUB_ACCESS_TOKEN* mus be a fine grained personal access token with permissions *read and write* for *contents*, *read only* for *metadata*, and *read and write* for *commit statuses* and *issues*. Click on [this hyperlink](https://github.com/settings/tokens?type=beta) to create such token, however you may need to contact your GitHub organization admins for validation or help. For [Orange-OpenSource](https://github.com/Orange-OpenSource), use the usual help address you should know.
 
 ## How it works
 

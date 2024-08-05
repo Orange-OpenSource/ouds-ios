@@ -11,6 +11,9 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
+require 'net/http'
+require 'json'
+
 # App features configuration
 # --------------------------
 
@@ -151,7 +154,15 @@ platform :ios do
     # ------------------------------------------------------------
     desc "BUILD & UPLOAD TO TESTFLIGHT ALPHA APP"
     lane :alpha do |params|
-        puts "👉 Alpha (commit hash = '#{params[:commitHash]}, issue number = '#{params[:issueNumber]}')"
+        issues_numbers = params[:issueNumber]
+        puts "👉 Alpha (commit hash = '#{params[:commitHash]}, issue number = '#{issues_numbers}')"
+
+        if issues_numbers.nil? || issues_numbers.empty?
+            puts "❌ Error: No issues numbers have been given for alpha builds, nothing will be done"
+            publish_mattermost_notification("⚙️ 😰 Tried to build alpha version without mentioning issues numbers!")
+            raise "Bad prerequisites error - missing pipeline variable"
+        end
+
         Dir.chdir "../Showcase/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconDev.appiconset AppIconRelease.appiconset"
@@ -159,14 +170,14 @@ platform :ios do
 
         # CFBundleVersion and CFBundleShortVersionString must follow rules with integers and periods, should not change them
         # But still possible to change CFBundleDisplayName
-        new_display_name = "OUDS Showcase ALPHA (#{params[:issueNumber]})"
+        new_display_name = "OUDS Showcase ALPHA (#{issues_numbers})"
         puts "ℹ️ New display name version will be: '#{new_display_name}'"
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "ALPHA")
         set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildDetails", value: "#{params[:issueNumber]}")
+        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildDetails", value: "#{issues_numbers}")
 
         build_and_upload(isAlpha: true, upload: true)
     end
@@ -228,6 +239,7 @@ platform :ios do
             update_build_number
             build
             upload(type: "alpha")
+            public_github_notifications_build_details
 
         else # Beta case (not production too), detailSymbol should be here commit hash
             detailSymbol = params[:detailSymbol]
@@ -428,23 +440,37 @@ platform :ios do
         else
             # Check if given tag exists yet
             puts "ℹ️ Check if '#{tag}' exists yet"
-            result=sh("curl -s 'https://api.github.com/repos/Orange-OpenSource/ouds-ios/git/refs/tags/#{tag}' | jq -r '.ref'") # TODO Shell error management
-            # If tag exists, CURL response is formatted like "refs/tags/tag"
-            if "refs/tags/#{tag}".eql? result.strip # Removes line break available in command result
+
+            uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/tags")
+            response = Net::HTTP.get(uri)
+            tags = JSON.parse(response)
+
+            if tags.any? { |t| t['name'] == tag }
                 puts "ℹ️ The tag '#{tag}' still exists, won't create new tag"
                 return false
             else
                 puts "ℹ️ Commit SHA to tag is '#{IOS_APP_COMMIT_SHA}'"
-                # Just a light tag is enough 
-                sh("curl -L \
-                  -X POST \
-                  -H 'Accept: application/vnd.github+json' \
-                  -H 'Authorization: Bearer #{GITHUB_ACCESS_TOKEN}'\
-                  -H 'X-GitHub-Api-Version: 2022-11-28' \
-                  https://api.github.com/repos/Orange-OpenSource/ouds-ios/git/refs \
-                  -d '{\"ref\":\"refs/tags/#{tag}\",\"sha\":\"#{IOS_APP_COMMIT_SHA}\"}'") # TODO Shell error management
+
+                uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/git/refs")
+                http = Net::HTTP.new(uri.host, uri.port)
+                http.use_ssl = true
+                
+                request = Net::HTTP::Post.new(uri.path)
+                request['Accept'] = 'application/vnd.github+json'
+                request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
+                request['X-GitHub-Api-Version'] = '2022-11-28'
+                request.body = { ref: "refs/tags/#{tag}", sha: IOS_APP_COMMIT_SHA }.to_json
+                
+                response = http.request(request)
+                
+                if response.code.to_i == 201
+                  puts "ℹ️ Light tag '#{tag}' published in repository"
                   return true
-              end
+                else
+                  puts "❌ Error: Failed to publish light tag '#{tag}'"
+                  return false
+                end
+            end
         end
     end
 
@@ -455,6 +481,59 @@ platform :ios do
                   username: MATTERMOST_HOOK_BOT_NAME,
                   icon_url: MATTERMOST_HOOK_BOT_ICON_URL
                   )
+    end
+
+    # Send a comment to the GitHub related GitHub issues about a new available build.
+    # Will find in Info.plist of demo app all the suitable needed details.
+    def public_github_notifications_build_details
+        build_version = get_app_version
+        build_number = get_build_number(xcodeproj: OUDS_PROJECT)
+        build_display_name = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName")
+        build_type = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType")
+        build_tag = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag")
+        build_details = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildDetails")
+        
+        build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
+        
+        build_issues_numbers.each do |issue_number|
+            uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/issues/#{issue_number}")
+            response = Net::HTTP.get(uri)
+            issue = JSON.parse(response)
+        
+            if issue['message'] == 'Not Found'
+                puts "❌ Error: Issue '#{issue_number}' does not exist"
+            else
+          
+                comment_to_upload=<<-EOF
+📣 **New TestFlight ALPHA upload** 🚀
+- Display name: **#{build_display_name}**
+- Version: #{build_version}
+- Build number: **#{build_number}**
+- Build tag: #{build_tag}
+- Build type: #{build_type}
+- Build details (GitHub):#{build_details}
+
+_This is an automated message sent with *Fastlane* from our CI/CD pipeline 🤘_
+EOF
+
+                uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/issues/#{issue_number}/comments")
+                http = Net::HTTP.new(uri.host, uri.port)
+                http.use_ssl = true
+          
+                request = Net::HTTP::Post.new(uri.path)
+                request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
+                request['Content-Type'] = 'application/json'
+                request.body = { body: comment_to_upload }.to_json
+          
+                response = http.request(request)
+          
+                if response.code.to_i == 201
+                    puts "ℹ️ Comment posted on issue '#{issue_number}'"
+                else
+                    puts "❌ Error: Failed to post comment on issue '#{issue_number}'"
+                end
+            end
+        end
     end
 
     # Get version set in the Xcode project
