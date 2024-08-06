@@ -20,8 +20,10 @@ public typealias ElevationRawToken = Int
 // MARK: - Raw tokens
 
 /// This is the group of all **raw tokens** related to **elevations**.
-/// Primitive types such as `Int must be used to as to allow to use `@objc` keywords in extensions for overriding.
-public struct ElevationRawTokens {
+/// Primitive types such as `Int` must be used to as to allow to use `@objc` keywords in extensions for overriding.
+/// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
+///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
+public enum ElevationRawTokens {
 
     // MARK: Primitive token - Elevation - Z Index
 

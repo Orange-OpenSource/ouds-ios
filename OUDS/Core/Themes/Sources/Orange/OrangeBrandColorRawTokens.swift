@@ -20,7 +20,9 @@ public typealias ColorOrangeDecorativeRawToken = ColorRawToken
 
 /// This extension helps to add new raw tokens for this theme.
 /// Type aliases here are just for consistancy reasons.
-public struct OrangeBrandColorRawTokens {
+/// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
+///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
+public enum OrangeBrandColorRawTokens {
 
     // MARK: Primitive token - Colors - Orange - Brand - Orange
 
