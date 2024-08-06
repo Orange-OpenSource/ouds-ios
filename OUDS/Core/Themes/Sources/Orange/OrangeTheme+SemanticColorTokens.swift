@@ -18,9 +18,9 @@ import OUDSTokensSemantic
 /// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
 extension OrangeTheme {
 
-    public override var sysColorBrandPrimaryLow: ColorAliasSemanticToken! { get { OrangeBrandColorRawTokens.colorBrandOrange500 } set { } }
-    public override var sysColorBrandPrimaryDefault: ColorAliasSemanticToken! { get { OrangeBrandColorRawTokens.colorBrandOrange550 } set { } }
+    public override var sysColorBrandPrimaryLow: ColorAliasSemanticToken! { OrangeBrandColorRawTokens.colorBrandOrange500 }
+    public override var sysColorBrandPrimaryDefault: ColorAliasSemanticToken! { OrangeBrandColorRawTokens.colorBrandOrange550 }
 
-    public override var sysColorBrandAttractiveLowest: ColorAliasSemanticToken! { get { OrangeBrandColorRawTokens.colorBrandWarmGray100 } set { } }
-    public override var sysColorBrandAttractiveHighest: ColorAliasSemanticToken! { get { OrangeBrandColorRawTokens.colorBrandWarmGray900 } set { } }
+    public override var sysColorBrandAttractiveLowest: ColorAliasSemanticToken! { OrangeBrandColorRawTokens.colorBrandWarmGray100 }
+    public override var sysColorBrandAttractiveHighest: ColorAliasSemanticToken! { OrangeBrandColorRawTokens.colorBrandWarmGray900 }
 }
