@@ -120,7 +120,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
 _Raw tokens_ are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
 
-In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than structs of classes.
+In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than structs or classes.
 So we expose also in higher level some properties so as to convert when needed some of these types to `SwiftUI` types (like `Font.Weight` and `Color`).
 To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are avaialble for those who want too make their own theme.
 
@@ -132,7 +132,7 @@ Example for `ColorRawTokens`:
 // Define types for color raw tokens
 public typealias ColorRawToken = String
 
-public struct ColorRawTokens { // Gathers all color raw tokens
+public enum ColorRawTokens { // Gathers all color raw tokens
 
     public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
     public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E"
@@ -189,7 +189,7 @@ It is quite simple, you have to follow several steps.
 First, create a _Swift class_ which will inherit from `OrangeTheme` or `OUDSTheme`.
 You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes.
 Then, you should override the _semantic tokens_ and _components tokens_ you want ; we recommend to use _Swift extensions_ for clarity reasons.
-If your theme needs to define its own _raw tokens_, you can also define them using a `struct` and the _raw tokens types_.
+If your theme needs to define its own _raw tokens_, you can also define them using a `enum` and the _raw tokens types_.
 
 For example:
 
@@ -237,7 +237,7 @@ And your own theme colors _raw tokens_:
 
 public typealias MyThemeColorRawToken = ColorRawToken // Refer to type ColorRawToken for consistency
 
-public struct MyThemeColorRawTokens {
+public enum MyThemeColorRawTokens {
 
     public static let someAwesomeThemeExclusiveColor: MyThemeColorRawToken = "#12345600"
     

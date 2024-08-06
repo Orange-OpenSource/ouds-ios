@@ -32,12 +32,11 @@ public typealias BorderStyleRawToken = String
 
 /// This is the group of all **raw tokens** related to **borders**.
 /// Primitive types such as `Double` and `String` must be used to as to allow to use `@objc` keywords in _Swift extensions_ for overriding.
-/// Such tokens are packed in a _Swift struct_ so as to gather them in one object and avoid to have just constants in nothing else
-///  (i.e. publicly accessible from everywhere) or _Swift enum_ which are too heavy (no needs to iterate on them, no needs to make switch/cases,
-///  risks to have broken code if new values added breaking existing switch/cases).
+/// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
+///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
 ///
 /// In the future, generating tools like _Style Dictionary_ should either follow this file template and structure or just replace values or lines.
-public struct BorderRawTokens {
+public enum BorderRawTokens {
 
     private static let borderBase: Double = 4 // Double type because used bellow for computations with Double values
 

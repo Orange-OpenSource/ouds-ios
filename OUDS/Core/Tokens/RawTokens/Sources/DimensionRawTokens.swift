@@ -21,7 +21,9 @@ public typealias DimensionRawToken = Double
 
 /// This is the group of all **raw tokens** related to **dimensions**.
 /// Primitive types such as `Double` must be used to as to allow to use `@objc` keywords in extensions for overriding.
-public struct DimensionRawTokens {
+/// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
+///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
+public enum DimensionRawTokens {
 
     public static let dimensionBase: DimensionRawToken = 4
 
