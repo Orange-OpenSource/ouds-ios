@@ -23,6 +23,11 @@ extension MockTheme {
     static let mockThemeBlurRawToken: ElevationRawToken = 816
     static let mockThemeSpreadRawToken: ElevationRawToken = 80085
     static let mockThemeColorRawToken: ColorRawToken = ColorRawTokens.colorFunctionalMalachite500
+    static let mockThemeBoxShadowRawToken: ElevationBoxShadowRawToken = ElevationBoxShadowRawToken(x: 118,
+                                                                                                   y: 712,
+                                                                                                   blur: 118,
+                                                                                                   spread: 218,
+                                                                                                   color: ColorRawTokens.colorFunctionalDodgerBlue800)
 
     // MARK: Semantic token - Elevation - Z index
 
@@ -133,4 +138,30 @@ extension MockTheme {
 
     override var elevationColorFocusLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
     override var elevationColorFocusDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+
+    // MARK: Semantic token - Elevation - Box shadow
+
+    override var elevationBoxShadowRaisedLight: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+    override var elevationBoxShadowRaisedDark: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+
+    override var elevationBoxShadowDragLight: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+    override var elevationBoxShadowDragDark: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+
+    override var elevationBoxShadowOverlayDefaultLight: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+    override var elevationBoxShadowOverlayDefaultDark: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+
+    override var elevationBoxShadowOverlayEmphasisLight: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+    override var elevationBoxShadowOverlayEmphasisDark: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+
+    override var elevationBoxShadowStickyDefaultLight: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+    override var elevationBoxShadowStickyDefaultDark: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+
+    override var elevationBoxShadowStickyEmphasisLight: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+    override var elevationBoxShadowStickyEmphasisDark: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+
+    override var elevationBoxShadowStickyNavigationScrolledLight: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+    override var elevationBoxShadowStickyNavigationScrolledDark: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+
+    override var elevationBoxShadowFocusLight: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
+    override var elevationBoxShadowFocusDark: ElevationBoxShadowSemanticToken { Self.mockThemeBoxShadowRawToken }
 }

@@ -36,12 +36,16 @@ extension Color {
             (a, r, g, b) = (1, 1, 1, 0)
         }
 
-        self.init(
-            .sRGB,
-            red: Double(r) / 255,
-            green: Double(g) / 255,
-            blue: Double(b) / 255,
-            opacity: Double(a) / 255
-        )
+        self.init(.sRGB, red: Double(r) / 255, green: Double(g) / 255, blue: Double(b) / 255, opacity: Double(a) / 255)
+    }
+}
+
+extension Color {
+
+    public var brightness: Double {
+        var brightness: CGFloat = 0.0
+        let uiColor = UIColor(self)
+        uiColor.getHue(nil, saturation: nil, brightness: &brightness, alpha: nil)
+        return Double(brightness)
     }
 }

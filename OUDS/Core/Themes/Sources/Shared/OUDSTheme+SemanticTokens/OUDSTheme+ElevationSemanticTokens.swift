@@ -15,6 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// swiftlint:disable line_length
 /// Defines basic values common to all themes for `ElevationSemanticTokenss`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// The aim of this extensions is to make relationships between all semantic tokens for elevations and associated raw tokens.
@@ -130,4 +131,31 @@ extension OUDSTheme: ElevationSemanticTokens {
 
     @objc open var elevationColorFocusLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
     @objc open var elevationColorFocusDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
+
+    // MARK: Semantic token - Elevation - Box shadow
+
+    @objc open var elevationBoxShadowRaisedLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+    @objc open var elevationBoxShadowRaisedDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+
+    @objc open var elevationBoxShadowDragLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_600 }
+    @objc open var elevationBoxShadowDragDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_600 }
+
+    @objc open var elevationBoxShadowOverlayDefaultLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_2_400 }
+    @objc open var elevationBoxShadowOverlayDefaultDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_2_400 }
+
+    @objc open var elevationBoxShadowOverlayEmphasisLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_5_300 }
+    @objc open var elevationBoxShadowOverlayEmphasisDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_5_300 }
+
+    @objc open var elevationBoxShadowStickyDefaultLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+    @objc open var elevationBoxShadowStickyDefaultDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+
+    @objc open var elevationBoxShadowStickyEmphasisLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+    @objc open var elevationBoxShadowStickyEmphasisDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+
+    @objc open var elevationBoxShadowStickyNavigationScrolledLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+    @objc open var elevationBoxShadowStickyNavigationScrolledDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+
+    @objc open var elevationBoxShadowFocusLight: ElevationBoxShadowSemanticToken { ElevationBoxShadowRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
+    @objc open var elevationBoxShadowFocusDark: ElevationBoxShadowSemanticToken { ElevationBoxShadowRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
 }
+// swiftlint:enable line_length

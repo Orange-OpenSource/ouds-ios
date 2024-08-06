@@ -2,16 +2,17 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import XCTest
+import OUDSFoundations
 import OUDSTokensRaw
 
 /// The aim of this tests class is to look for regressions in **elevation raw tokens**.
@@ -67,5 +68,84 @@ final class ElevationRawTokensTests: XCTestCase {
         XCTAssertLessThan(ElevationRawTokens.elevationSpreadMinus200, ElevationRawTokens.elevationSpreadMinus100)
         XCTAssertLessThan(ElevationRawTokens.elevationSpreadMinus100, ElevationRawTokens.elevationSpread0)
         XCTAssertLessThan(ElevationRawTokens.elevationSpread0, ElevationRawTokens.elevationSpread300)
+    }
+
+    // swiftlint:disable function_body_length
+    /// Whathever the values are, elevation box shadows raw tokens must keep their order relationships
+    func testOrderRelationshipForBoxShadows() throws {
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_1_100.color, ElevationRawTokens.elevationBoxShadowBottom_1_200.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_1_200.color, ElevationRawTokens.elevationBoxShadowBottom_1_300.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_1_300.color, ElevationRawTokens.elevationBoxShadowBottom_1_400.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_1_400.color, ElevationRawTokens.elevationBoxShadowBottom_1_500.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_1_500.color, ElevationRawTokens.elevationBoxShadowBottom_1_600.color)
+
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_2_100.color, ElevationRawTokens.elevationBoxShadowBottom_2_200.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_2_200.color, ElevationRawTokens.elevationBoxShadowBottom_2_300.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_2_300.color, ElevationRawTokens.elevationBoxShadowBottom_2_400.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_2_400.color, ElevationRawTokens.elevationBoxShadowBottom_2_500.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_2_500.color, ElevationRawTokens.elevationBoxShadowBottom_2_600.color)
+
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_3_100.color, ElevationRawTokens.elevationBoxShadowBottom_3_200.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_3_200.color, ElevationRawTokens.elevationBoxShadowBottom_3_300.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_3_300.color, ElevationRawTokens.elevationBoxShadowBottom_3_400.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_3_400.color, ElevationRawTokens.elevationBoxShadowBottom_3_500.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_3_500.color, ElevationRawTokens.elevationBoxShadowBottom_3_600.color)
+
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_4_100.color, ElevationRawTokens.elevationBoxShadowBottom_4_200.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_4_200.color, ElevationRawTokens.elevationBoxShadowBottom_4_300.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_4_300.color, ElevationRawTokens.elevationBoxShadowBottom_4_400.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_4_400.color, ElevationRawTokens.elevationBoxShadowBottom_4_500.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_4_500.color, ElevationRawTokens.elevationBoxShadowBottom_4_600.color)
+
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_100.color, ElevationRawTokens.elevationBoxShadowBottom_5_200.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_200.color, ElevationRawTokens.elevationBoxShadowBottom_5_300.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_300.color, ElevationRawTokens.elevationBoxShadowBottom_5_400.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_400.color, ElevationRawTokens.elevationBoxShadowBottom_5_500.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_500.color, ElevationRawTokens.elevationBoxShadowBottom_5_600.color)
+
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_100.color, ElevationRawTokens.elevationBoxShadowBottom_6_200.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_200.color, ElevationRawTokens.elevationBoxShadowBottom_6_300.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_300.color, ElevationRawTokens.elevationBoxShadowBottom_6_400.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_400.color, ElevationRawTokens.elevationBoxShadowBottom_6_500.color)
+        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBoxShadowBottom_5_500.color, ElevationRawTokens.elevationBoxShadowBottom_6_600.color)
+
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_1_100, ElevationRawTokens.elevationBoxShadowBottom_2_100)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_2_100, ElevationRawTokens.elevationBoxShadowBottom_3_100)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_3_100, ElevationRawTokens.elevationBoxShadowBottom_4_100)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_4_100, ElevationRawTokens.elevationBoxShadowBottom_5_100)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_5_100, ElevationRawTokens.elevationBoxShadowBottom_6_100)
+
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_1_200, ElevationRawTokens.elevationBoxShadowBottom_2_200)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_2_200, ElevationRawTokens.elevationBoxShadowBottom_3_200)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_3_200, ElevationRawTokens.elevationBoxShadowBottom_4_200)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_4_200, ElevationRawTokens.elevationBoxShadowBottom_5_200)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_5_200, ElevationRawTokens.elevationBoxShadowBottom_6_200)
+
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_1_300, ElevationRawTokens.elevationBoxShadowBottom_2_300)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_2_300, ElevationRawTokens.elevationBoxShadowBottom_3_300)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_3_300, ElevationRawTokens.elevationBoxShadowBottom_4_300)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_4_300, ElevationRawTokens.elevationBoxShadowBottom_5_300)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_5_300, ElevationRawTokens.elevationBoxShadowBottom_6_300)
+
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_1_400, ElevationRawTokens.elevationBoxShadowBottom_2_400)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_2_400, ElevationRawTokens.elevationBoxShadowBottom_3_400)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_3_400, ElevationRawTokens.elevationBoxShadowBottom_4_400)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_4_400, ElevationRawTokens.elevationBoxShadowBottom_5_400)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_5_400, ElevationRawTokens.elevationBoxShadowBottom_6_400)
+
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_1_500, ElevationRawTokens.elevationBoxShadowBottom_2_500)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_2_500, ElevationRawTokens.elevationBoxShadowBottom_3_500)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_3_500, ElevationRawTokens.elevationBoxShadowBottom_4_500)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_4_500, ElevationRawTokens.elevationBoxShadowBottom_5_500)
+        assertBoxShadowLowerThan(ElevationRawTokens.elevationBoxShadowBottom_5_500, ElevationRawTokens.elevationBoxShadowBottom_6_500)
+    }
+    // swiftlint:enable function_body_length
+
+    // MARK: - Helpers
+
+    func assertBoxShadowLowerThan(_ left: ElevationBoxShadowRawToken, _ right: ElevationBoxShadowRawToken) {
+        XCTAssertLessThanOrEqual(left.y, right.y)
+        XCTAssertLessThanOrEqual(left.blur, right.blur)
+        XCTAssertGreaterThanOrEqual(left.spread, right.spread)
     }
 }

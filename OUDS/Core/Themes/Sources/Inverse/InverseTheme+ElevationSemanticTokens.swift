@@ -15,6 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// swiftlint:disable line_length
 extension InverseTheme {
 
     // MARK: Semantic token - Elevation - Color - None
@@ -61,4 +62,31 @@ extension InverseTheme {
 
     public override var elevationColorFocusLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
     public override var elevationColorFocusDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
+
+    // MARK: Semantic token - Elevation - Box shadow
+
+    public override var elevationBoxShadowRaisedLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+    public override var elevationBoxShadowRaisedDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+
+    public override var elevationBoxShadowDragLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_600 }
+    public override var elevationBoxShadowDragDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_600 }
+
+    public override var elevationBoxShadowOverlayDefaultLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_2_400 }
+    public override var elevationBoxShadowOverlayDefaultDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_2_400 }
+
+    public override var elevationBoxShadowOverlayEmphasisLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_5_300 }
+    public override var elevationBoxShadowOverlayEmphasisDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_5_300 }
+
+    public override var elevationBoxShadowStickyDefaultLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+    public override var elevationBoxShadowStickyDefaultDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+
+    public override var elevationBoxShadowStickyEmphasisLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+    public override var elevationBoxShadowStickyEmphasisDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+
+    public override var elevationBoxShadowStickyNavigationScrolledLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+    public override var elevationBoxShadowStickyNavigationScrolledDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+
+    public override var elevationBoxShadowFocusLight: ElevationBoxShadowSemanticToken { ElevationBoxShadowRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
+    public override var elevationBoxShadowFocusDark: ElevationBoxShadowSemanticToken { ElevationBoxShadowRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
 }
+// swiftlint:enable line_length

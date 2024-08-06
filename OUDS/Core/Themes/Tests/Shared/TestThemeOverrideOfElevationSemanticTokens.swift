@@ -246,4 +246,54 @@ final class TestThemeOverrideOfElevationSemanticTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.elevationColorFocusDark, abstractTheme.elevationColorFocusDark)
         XCTAssertTrue(inheritedTheme.elevationColorFocusDark == MockTheme.mockThemeColorRawToken)
     }
+
+    func testInheritedThemeCanOverrideElevationBpxShadowSemanticTokens() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowRaisedLight, abstractTheme.elevationBoxShadowRaisedLight)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowRaisedLight == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowRaisedDark, abstractTheme.elevationBoxShadowRaisedDark)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowRaisedDark == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowDragLight, abstractTheme.elevationBoxShadowDragLight)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowDragLight == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowDragDark, abstractTheme.elevationBoxShadowDragDark)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowDragDark == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowOverlayDefaultLight, abstractTheme.elevationBoxShadowOverlayDefaultLight)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowOverlayDefaultLight == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowOverlayDefaultDark, abstractTheme.elevationBoxShadowOverlayDefaultDark)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowOverlayDefaultDark == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowOverlayEmphasisLight, abstractTheme.elevationBoxShadowOverlayEmphasisLight)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowOverlayEmphasisLight == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowOverlayEmphasisDark, abstractTheme.elevationBoxShadowOverlayEmphasisDark)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowOverlayEmphasisDark == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowStickyDefaultLight, abstractTheme.elevationBoxShadowStickyDefaultLight)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowStickyDefaultLight == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowStickyDefaultDark, abstractTheme.elevationBoxShadowStickyDefaultDark)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowStickyDefaultDark == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowStickyEmphasisLight, abstractTheme.elevationBoxShadowStickyEmphasisLight)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowStickyEmphasisLight == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowStickyEmphasisDark, abstractTheme.elevationBoxShadowStickyEmphasisDark)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowStickyEmphasisDark == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowStickyNavigationScrolledLight, abstractTheme.elevationBoxShadowStickyNavigationScrolledLight)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowStickyNavigationScrolledLight == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowStickyNavigationScrolledDark, abstractTheme.elevationBoxShadowStickyNavigationScrolledDark)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowStickyNavigationScrolledDark == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowFocusLight, abstractTheme.elevationBoxShadowFocusLight)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowFocusLight == MockTheme.mockThemeBoxShadowRawToken)
+
+        XCTAssertNotEqual(inheritedTheme.elevationBoxShadowFocusDark, abstractTheme.elevationBoxShadowFocusDark)
+        XCTAssertTrue(inheritedTheme.elevationBoxShadowFocusDark == MockTheme.mockThemeBoxShadowRawToken)
+    }
 }

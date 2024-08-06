@@ -22,6 +22,7 @@ public typealias ElevationYSemanticToken = ElevationRawToken
 public typealias ElevationBlurSemanticToken = ElevationRawToken
 public typealias ElevationSpreadSemanticToken = ElevationRawToken
 public typealias ElevationColorSemanticToken = ColorRawToken
+public typealias ElevationBoxShadowSemanticToken = ElevationBoxShadowRawToken
 
 // MARK: - Semantic tokens
 
@@ -140,6 +141,31 @@ public protocol ElevationSemanticTokens {
     var elevationColorFocusLight: ElevationColorSemanticToken { get }
     var elevationColorFocusDark: ElevationColorSemanticToken { get }
 
-    // TODO: Is Box shadow (Composite) a semantic token type to deal with?
+    // MARK: Semantic token - Elevation - Bow shadow
 
+    // TODO: Missing elevationBoxShadowNoneLight semantic token
+
+    var elevationBoxShadowRaisedLight: ElevationBoxShadowSemanticToken { get }
+    var elevationBoxShadowRaisedDark: ElevationBoxShadowSemanticToken { get }
+
+    var elevationBoxShadowDragLight: ElevationBoxShadowSemanticToken { get }
+    var elevationBoxShadowDragDark: ElevationBoxShadowSemanticToken { get }
+
+    var elevationBoxShadowOverlayDefaultLight: ElevationBoxShadowSemanticToken { get }
+    var elevationBoxShadowOverlayDefaultDark: ElevationBoxShadowSemanticToken { get }
+
+    var elevationBoxShadowOverlayEmphasisLight: ElevationBoxShadowSemanticToken { get }
+    var elevationBoxShadowOverlayEmphasisDark: ElevationBoxShadowSemanticToken { get }
+
+    var elevationBoxShadowStickyDefaultLight: ElevationBoxShadowSemanticToken { get }
+    var elevationBoxShadowStickyDefaultDark: ElevationBoxShadowSemanticToken { get }
+
+    var elevationBoxShadowStickyEmphasisLight: ElevationBoxShadowSemanticToken { get }
+    var elevationBoxShadowStickyEmphasisDark: ElevationBoxShadowSemanticToken { get }
+
+    var elevationBoxShadowStickyNavigationScrolledLight: ElevationBoxShadowSemanticToken { get }
+    var elevationBoxShadowStickyNavigationScrolledDark: ElevationBoxShadowSemanticToken { get }
+
+    var elevationBoxShadowFocusLight: ElevationBoxShadowSemanticToken { get }
+    var elevationBoxShadowFocusDark: ElevationBoxShadowSemanticToken { get }
 }
