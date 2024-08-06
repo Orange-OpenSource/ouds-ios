@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] Add raw tokens and semantic tokens for opacity ([#29](https://github.com/Orange-OpenSource/ouds-ios/issues/29))
+- [Library] Add raw tokens and semantic tokens for typography ([#51](https://github.com/Orange-OpenSource/ouds-ios/issues/51))
 - [Showcase] Publication of comment on issues about new alpha build upload on TestFlight ([#56](https://github.com/Orange-OpenSource/ouds-ios/issues/56))
 - [Library] Add raw tokens and semantic tokens for elevation ([#32](https://github.com/Orange-OpenSource/ouds-ios/issues/32))
 - [Library] Add raw tokens and semantic tokens for border ([#30](https://github.com/Orange-OpenSource/ouds-ios/issues/30))
