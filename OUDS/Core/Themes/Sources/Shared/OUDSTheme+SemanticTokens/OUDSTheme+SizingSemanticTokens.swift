@@ -48,41 +48,44 @@ extension OUDSTheme: SizingSemanticTokens {
 
     // MARK: Semantic token - Sizing - Width height - Icon typography - Heading
 
-    @objc open var sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension400 }
-    @objc open var sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension500 }
-    @objc open var sizeWidthHeightIconIsHeadingSmallTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 }
-    @objc open var sizeWidthHeightIconIsHeadingMediumShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension500 }
-    @objc open var sizeWidthHeightIconIsHeadingMediumMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 }
-    @objc open var sizeWidthHeightIconIsHeadingMediumTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var sizeWidthHeightIconIsHeadingLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 }
-    @objc open var sizeWidthHeightIconIsHeadingLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var sizeWidthHeightIconIsHeadingLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension650 }
-    @objc open var sizeWidthHeightIconIsHeadingXLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension650 }
-    @objc open var sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension700 }
+    // TODO: What should we do? In issue #36 there are 3 possible values (web paradigm ?), selected here the xl-2xl-3xl case
+    @objc open var sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension500 }
+    @objc open var sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 }
+    @objc open var sizeWidthHeightIconIsHeadingSmallTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var sizeWidthHeightIconIsHeadingMediumShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 }
+    @objc open var sizeWidthHeightIconIsHeadingMediumMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var sizeWidthHeightIconIsHeadingMediumTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension650 }
+    @objc open var sizeWidthHeightIconIsHeadingLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var sizeWidthHeightIconIsHeadingLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension650 }
+    @objc open var sizeWidthHeightIconIsHeadingLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension700 }
+    @objc open var sizeWidthHeightIconIsHeadingXLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension700 }
+    @objc open var sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension750 }
     @objc open var sizeWidthHeightIconIsHeadingXLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension800 }
 
     // MARK: Semantic token - Sizing - Width height - Icon typography - Body
 
-    @objc open var sizeWidthHeightIconIsBodySmallShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension150 }
-    @objc open var sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension500 }
-    @objc open var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 }
-    @objc open var sizeWidthHeightIconIsBodyMediumShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension200 }
-    @objc open var sizeWidthHeightIconIsBodyMediumMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 }
-    @objc open var sizeWidthHeightIconIsBodyMediumTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension300 }
-    @objc open var sizeWidthHeightIconIsBodyLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 }
-    @objc open var sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension300 }
-    @objc open var sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension350 }
+    // TODO: What should we do? In issue #36 there are 3 possible values (web paradigm ?), selected here the xl-2xl-3xl case
+    @objc open var sizeWidthHeightIconIsBodySmallShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 }
+    @objc open var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension300 }
+    @objc open var sizeWidthHeightIconIsBodyMediumShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 }
+    @objc open var sizeWidthHeightIconIsBodyMediumMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension300 }
+    @objc open var sizeWidthHeightIconIsBodyMediumTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension350 }
+    @objc open var sizeWidthHeightIconIsBodyLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension400 }
+    @objc open var sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension500 }
+    @objc open var sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 }
 
     // MARK: Semantic token - Sizing - Max width
 
-    @objc open var sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension9000 }
-    @objc open var sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension9000 }
-    @objc open var sizeMaxWidthTypographyDisplayLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension9000 }
-    @objc open var sizeMaxWidthTypographyHeadingSmall: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension6000 }
-    @objc open var sizeMaxWidthTypographyHeadingMedium: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension9000 }
-    @objc open var sizeMaxWidthTypographyHeadingLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension9000 }
-    @objc open var sizeMaxWidthTypographyHeadingXLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension9000 }
+    // TODO: What should we do? In issue #36 there are 3 possible values (web paradigm ?), selected here the xl-2xl-3xl case
+    @objc open var sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
+    @objc open var sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
+    @objc open var sizeMaxWidthTypographyDisplayLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
+    @objc open var sizeMaxWidthTypographyHeadingSmall: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension7000 }
+    @objc open var sizeMaxWidthTypographyHeadingMedium: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
+    @objc open var sizeMaxWidthTypographyHeadingLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
+    @objc open var sizeMaxWidthTypographyHeadingXLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
     @objc open var sizeMaxWidthTypographyBodySmall: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension6000 }
-    @objc open var sizeMaxWidthTypographyBodyMedium: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension6000 }
-    @objc open var sizeMaxWidthTypographyBodyLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension6000 }
+    @objc open var sizeMaxWidthTypographyBodyMedium: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension7000 }
+    @objc open var sizeMaxWidthTypographyBodyLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension7000 }
 }

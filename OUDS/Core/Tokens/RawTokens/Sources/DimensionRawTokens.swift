@@ -53,7 +53,7 @@ public enum DimensionRawTokens {
     public static let dimension1200: DimensionRawToken = dimensionBase * 24
     public static let dimension1400: DimensionRawToken = dimensionBase * 28
     public static let dimension1600: DimensionRawToken = dimensionBase * 32
-    public static let dimension1800: DimensionRawToken = dimensionBase * 6
+    public static let dimension1800: DimensionRawToken = dimensionBase * 36
     public static let dimension2000: DimensionRawToken = dimensionBase * 40
     public static let dimension3000: DimensionRawToken = dimensionBase * 80
     public static let dimension4000: DimensionRawToken = dimensionBase * 120
