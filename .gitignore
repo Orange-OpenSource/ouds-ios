@@ -28,6 +28,7 @@
 /DerivedData/
 
 # Produced by Swift Package Manager
+/.swiftpm/xcode/xcshareddata/
 /.swiftpm/xcode/xcuserdata/
 /.swiftpm/xcode/package.xcworkspace/
 
