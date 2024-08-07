@@ -16,6 +16,7 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
+public typealias SpacingLayoutSemanticToken = DimensionRawToken
 public typealias SpacingPaddingInlineSemanticToken = DimensionRawToken
 public typealias SpacingPaddingBlockSemanticToken = DimensionRawToken
 public typealias SpacingPaddingInsetSemanticToken = DimensionRawToken
@@ -27,6 +28,32 @@ public typealias SpacingGapStackSemanticToken = DimensionRawToken
 /// This is a group of semantic tokens for **spacing**.
 /// It defines all `SpacingSemanticToken` a theme must have.
 public protocol SpacingSemanticTokens {
+
+    // MARK: Semantic token - Spacing - Layout fix
+
+    var spaceLayoutFixNone: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFixSmash: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFixShortest: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFixShorter: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFixShort: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFixMedium: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFixTall: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFixTaller: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFixTallest: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFixSpacious: SpacingLayoutSemanticToken { get }
+
+    // MARK: Semantic token - Spacing - Layout fluid
+
+    var spaceLayoutFluidNone: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidSmash: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidShortest: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidShorter: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidShort: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidMedium: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidTall: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidTaller: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidTallest: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidSpacious: SpacingLayoutSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding inline
 
@@ -66,16 +93,16 @@ public protocol SpacingSemanticTokens {
 
     // MARK: Semantic token - Spacing - Padding - Padding inset
 
-    var spaceInsetComponentGapComponentNone: SpacingPaddingInlineSemanticToken { get }
-    var spaceInsetComponentGapComponentSmash: SpacingPaddingInlineSemanticToken { get }
-    var spaceInsetComponentGapComponentShortest: SpacingPaddingInlineSemanticToken { get }
-    var spaceInsetComponentGapComponentShorter: SpacingPaddingInlineSemanticToken { get }
-    var spaceInsetComponentGapComponentShort: SpacingPaddingInlineSemanticToken { get }
-    var spaceInsetComponentGapComponentMedium: SpacingPaddingInlineSemanticToken { get }
-    var spaceInsetComponentGapComponentTall: SpacingPaddingInlineSemanticToken { get }
-    var spaceInsetComponentGapComponentTaller: SpacingPaddingInlineSemanticToken { get }
-    var spaceInsetComponentGapComponentTallest: SpacingPaddingInlineSemanticToken { get }
-    var spaceInsetComponentGapComponentSpacious: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentNone: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentSmash: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentShortest: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentShorter: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentShort: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentMedium: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentTall: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentTaller: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentTallest: SpacingPaddingInlineSemanticToken { get }
+    var spaceInsetComponentSpacious: SpacingPaddingInlineSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Gap inline
 
