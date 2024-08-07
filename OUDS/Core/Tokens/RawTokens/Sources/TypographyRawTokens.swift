@@ -28,12 +28,12 @@ public typealias TypographyFontParagraphSpacingRawToken = Int
 
 public struct TypographyCompositeRawToken {
 
-    let family: TypographyFontFamilyRawToken
-    let size: TypographyFontSizeRawToken
-    let lineHeight: TypographyFontLineHeightRawToken
-    let weight: TypographyFontWeightRawToken
+    public let family: TypographyFontFamilyRawToken
+    public let size: TypographyFontSizeRawToken
+    public let lineHeight: TypographyFontLineHeightRawToken
+    public let weight: TypographyFontWeightRawToken
     // TODO: How to deal "letter spacing"?
-    let paragraphSpacing: TypographyFontParagraphSpacingRawToken
+    public let paragraphSpacing: TypographyFontParagraphSpacingRawToken
 }
 
 // MARK: - Raw tokens
@@ -74,7 +74,7 @@ public enum TypographyRawTokens {
     public static let fontLineHeight550: TypographyFontLineHeightRawToken = 28
     public static let fontLineHeight650: TypographyFontLineHeightRawToken = 32
     public static let fontLineHeight750: TypographyFontLineHeightRawToken = 36
-    public static let fontLineHeight850: TypographyFontLineHeightRawToken = 10
+    public static let fontLineHeight850: TypographyFontLineHeightRawToken = 40
     public static let fontLineHeight950: TypographyFontLineHeightRawToken = 44
     public static let fontLineHeight1050: TypographyFontLineHeightRawToken = 48
     public static let fontLineHeight1150: TypographyFontLineHeightRawToken = 52
