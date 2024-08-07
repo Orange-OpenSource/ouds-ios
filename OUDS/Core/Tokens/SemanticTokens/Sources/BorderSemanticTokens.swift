@@ -29,7 +29,7 @@ public typealias BorderStyleSemanticToken = BorderStyleRawToken
 /// It defines all `BorderWidthSemanticToken`, `BorderRadiusSemanticToken` and `BorderStyleSemanticToken` a theme must have.
 public protocol BorderSemanticTokens {
 
-    // MARK: Semantic token - Border - Width
+    // MARK: - Semantic token - Border - Width
 
     var borderWidthNone: BorderWidthSemanticToken { get }
     var borderWidthDefault: BorderWidthSemanticToken { get }
@@ -39,7 +39,7 @@ public protocol BorderSemanticTokens {
     var borderWidthThickest: BorderWidthSemanticToken { get }
     var borderWidthInterfactivePrimaryFocus: BorderWidthSemanticToken { get }
 
-    // MARK: Semantic token - Border - Radius
+    // MARK: - Semantic token - Border - Radius
 
     var borderRadiusNone: BorderRadiusSemanticToken { get }
     var borderRadiusDefault: BorderRadiusSemanticToken { get }
@@ -49,7 +49,7 @@ public protocol BorderSemanticTokens {
     var borderRadiusPill: BorderRadiusSemanticToken { get }
     // TODO: How to deal with "border-radius-circle"?
 
-    // MARK: Semantic token - Border - Style
+    // MARK: - Semantic token - Border - Style
 
     var borderStyleDefault: BorderStyleSemanticToken { get }
     var borderStyleDrag: BorderStyleSemanticToken { get }
