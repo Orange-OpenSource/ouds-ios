@@ -34,7 +34,7 @@ Guidelines for bug reports:
 
 1. **Use the GitHub issue search** &mdash; check if the issue has already been reported.
 
-2. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `main` in the repository.
+2. **Check if the issue has been fixed** &mdash; try to reproduce it using the latest `develop` in the repository.
 
 3. **Isolate the problem** &mdash; ideally create a reduced reproducible test case.
 
@@ -64,7 +64,7 @@ Feature requests are welcome. But take a moment to find out whether your idea fi
 
 ## Pull requests
 
-Good pull requests—patches, improvements, new features—are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
+Good pull requests (patches, improvements, new features) are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
 **Please ask first** before embarking on any **significant** pull request (e.g. implementing features, refactoring code, porting to a different language), otherwise you risk spending a lot of time working on something that the project's developers might not want to merge into the project. For trivial things, or things that don't require a lot of your time, you can go ahead and make a PR.
 
@@ -86,11 +86,11 @@ Adhering to the following process is the best way to get your work included in t
 2. If you cloned a while ago, get the latest changes from upstream:
 
    ```bash
-   git checkout main
-   git pull upstream main
+   git checkout develop
+   git pull upstream develop
    ```
 
-3. Create a new topic branch (off the main project development branch) to contain your feature, change, or fix:
+3. Create a new topic branch (off the `develop` project development branch) to contain your feature, change, or fix:
 
    ```bash
    git checkout -b <topic-branch-name> develop
@@ -101,7 +101,7 @@ Adhering to the following process is the best way to get your work included in t
 5. Locally merge (or rebase) the upstream development branch into your topic branch:
 
    ```bash
-   git pull [--rebase] upstream main
+   git pull [--rebase] upstream develop
    ```
 
 6. Push your topic branch up to your fork:
@@ -140,6 +140,36 @@ Co-authored-by: Second author firstname and lastname <second author email>
 
 Signed-off-by: First author firstname and lastname <first author email>
 Signed-off-by: Second author firstname and lastname <second author email>
+```
+
+## Review workflow
+
+Because we want to define and provide an amazing design system for developers, we want to onboard for any evolutions the Q/A team for tests and also the design ans accessibiltiy (a11y) teams so as to check the fixes, patches or evolutions have been well implemented and tested.
+
+The following chart explain how the review is done with also the intermediate alpha builds.
+In few words, alpha builds are made for reviewers, and the merge is processed if and only if any review have been done.
+The [task-list-completed GitHub app](https://github.com/apps/task-list-completed) prevents pull requests to be merged if some mandatory / not optional prerequisites are not filled.
+
+```mermaid
+flowchart TD
+    A[New evolution needed, feature or bug fix] --> |Define needs and acceptance criteria| B(Create issue on GitHub)
+    B --> C(Implementation or refactoring in GitHub branch)
+    C --> |Code review| D{Code review OK?}
+    D --> |No| C
+    D --> |Yes| E(Build alpha version on TestFlight)
+    E --> F(Update GitHub issue with details of alpha build)
+    F --> G{Feature ready for review}
+    G --> |Test of feature| H{Tests OK?}
+    H --> |No| C
+    G -->|Design review| I{Design review OK?}
+    I --> |No| C
+    G -->|A11Y review| J{A11Y review OK?}
+    J --> |No| C
+    H --> |Yes| K
+    I --> |Yes| K
+    J --> |Yes| K
+    K[Merge in develop branch] --> |Nightly build| L(Beta build on TestFlight)
+    L --> M(Update GitHub issue with details of beta build)
 ```
 
 ## License
