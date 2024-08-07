@@ -20,7 +20,7 @@ import OUDSThemesShared
 /// In fact the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols _typography semantic tokens_.
 /// These semantic tokens should be overriden by subclass like the `OrangeTheme` default theme.
 /// **These tests checks if any _typography semantic tokens_ can be surcharged by a child theme**
-final class ThemeOverrideOfTypographySemanticTokens: XCTestCase {
+final class TestThemeOverrideOfTypographySemanticTokens: XCTestCase {
 
     private var abstractTheme: OUDSTheme!
     private var inheritedTheme: OUDSTheme!

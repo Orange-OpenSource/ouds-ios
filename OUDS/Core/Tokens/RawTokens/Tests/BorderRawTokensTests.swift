@@ -15,10 +15,10 @@ import XCTest
 import OUDSTokensRaw
 
 /// The aim of this tests class is to look for regressions in **border raw tokens**.
-/// Because these values will be at least generated through an external tool, is it not necessariy to test each token values.
-/// Indeed, each futur generation of Swift code may mreak theses tests because there are new values.
-/// However, in the semantics of border raw tokens, there will be some unchaged things like relationships between tokens.
-/// Thus this tests class just checks if such relationships are still here whatever the valuse at the end.
+/// Because these values will be at least generated through an external tool, is it not relevant to test each token values.
+/// Indeed, each futuer generation of Swift code may break theses tests because there are new values.
+/// However, in the semantics of **border raw tokens**, there will be some unchanged things like relationships between tokens.
+/// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 final class BorderRawTokensTests: XCTestCase {
 
     /// Wathever the values are, border width raw tokens must keep their order relationships

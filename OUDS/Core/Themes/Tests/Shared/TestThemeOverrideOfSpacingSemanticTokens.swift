@@ -20,7 +20,7 @@ import OUDSThemesShared
 /// In factn the `OUDSTheme` object is a class, which can be seens as an _asbtract class_, exposing through its extensions and protocols _spacing semantic tokens_.
 /// These semantic tokens should be overriden by subclass like the `OrangeTheme` default theme.
 /// **These tests checks if any _spacing semantic tokens_ can be surcharged by a child theme**
-final class ThemeOverrideOfSpacingSemanticTokens: XCTestCase {
+final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
 
     private var abstractTheme: OUDSTheme!
     private var inheritedTheme: OUDSTheme!
