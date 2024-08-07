@@ -29,9 +29,8 @@ final class ThemeOverrideOfDimensionSemanticTokens: XCTestCase {
     }
 
     /// Test overriding of dimension semantic tokens
-    func testInheritedThemeCanOverrideDimensionSemanticTokens() throws {
+    func testInheritedThemeCanOverrideSemanticTokenDimensionDensityDefault() throws {
         XCTAssertNotEqual(inheritedTheme.dimensionDensityDefault, abstractTheme.dimensionDensityDefault)
         XCTAssertTrue(inheritedTheme.dimensionDensityDefault == MockTheme.mockThemeDimensionSemanticToken)
-
     }
 }

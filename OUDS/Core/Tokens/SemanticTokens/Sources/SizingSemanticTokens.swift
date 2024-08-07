@@ -25,7 +25,7 @@ public typealias SizingMaxWidthSemanticToken = DimensionRawToken
 /// It defines all `SizingSemanticToken` a theme must have.
 public protocol SizingSemanticTokens {
 
-    // MARK: Semantic token - Sizing - Width height - Icon decorative
+    // MARK: - Semantic token - Sizing - Width height - Icon decorative
 
     var sizeWidthHeightIconShortest: SizingWidthHeightSemanticToken { get }
     var sizeWidthHeightIconShorter: SizingWidthHeightSemanticToken { get }
@@ -35,7 +35,7 @@ public protocol SizingSemanticTokens {
     var sizeWidthHeightIconTaller: SizingWidthHeightSemanticToken { get }
     var sizeWidthHeightIconTallest: SizingWidthHeightSemanticToken { get }
 
-    // MARK: Semantic token - Sizing - Width height - Icon component
+    // MARK: - Semantic token - Sizing - Width height - Icon component
 
     var sizeWidthHeightIsLabelSmallShort: SizingWidthHeightSemanticToken { get }
     var sizeWidthHeightIsLabelSmallMedium: SizingWidthHeightSemanticToken { get }
@@ -52,7 +52,7 @@ public protocol SizingSemanticTokens {
     var sizeWidthHeightIsLabelXLargeMedium: SizingWidthHeightSemanticToken { get }
     var sizeWidthHeightIsLabelXLargeTall: SizingWidthHeightSemanticToken { get }
 
-    // MARK: Semantic token - Sizing - Width height - Icon typography - Heading
+    // MARK: - Semantic token - Sizing - Width height - Icon typography - Heading
 
     var sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken { get }
     var sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken { get }
@@ -67,7 +67,7 @@ public protocol SizingSemanticTokens {
     var sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken { get }
     var sizeWidthHeightIconIsHeadingXLargeTall: SizingWidthHeightSemanticToken { get }
 
-    // MARK: Semantic token - Sizing - Width height - Icon typography - Body
+    // MARK: - Semantic token - Sizing - Width height - Icon typography - Body
 
     var sizeWidthHeightIconIsBodySmallShort: SizingWidthHeightSemanticToken { get }
     var sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken { get }
@@ -79,7 +79,7 @@ public protocol SizingSemanticTokens {
     var sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken { get }
     var sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken { get }
 
-    // MARK: Semantic token - Sizing - Max width
+    // MARK: - Semantic token - Sizing - Max width
 
     var sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken { get }
     var sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken { get }
