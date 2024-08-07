@@ -21,6 +21,7 @@ extension OUDSTheme: TypographySemanticTokens {
 
     // MARK: Semantic token - Typography - Font - Family
 
+    @objc open var fontFamily: TypographyFontFamilySemanticToken { TypographyRawTokens.fontFamilySystem }
     @objc open var fontFamilyDisplay: TypographyFontFamilySemanticToken { TypographyRawTokens.fontFamilySystem }
     @objc open var fontFamilyHeading: TypographyFontFamilySemanticToken { TypographyRawTokens.fontFamilySystem }
     @objc open var fontFamilyBody: TypographyFontFamilySemanticToken { TypographyRawTokens.fontFamilySystem }
@@ -35,11 +36,11 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontWeightBodyStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight700 }
     @objc open var fontWeightLabelDefault: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
     @objc open var fontWeightLabelStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight700 }
-    @objc open var fontWeightWeightCode: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
+    @objc open var fontWeightCode: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
 
     // MARK: Semantic token - Typography - Font - Size - Mobile
 
-    @objc open var fontSizeMobileDislayLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize850 }
+    @objc open var fontSizeMobileDisplayLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize850 }
     @objc open var fontSizeMobileDisplayMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize750 }
     @objc open var fontSizeMobileDisplaySmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize650 }
     @objc open var fontSizeMobileHeadingXLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize550 }
@@ -49,10 +50,12 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontSizeMobileBodyLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize250 }
     @objc open var fontSizeMobileBodyMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
     @objc open var fontSizeMobileBodySmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize100 }
+    @objc open var fontSizeMobileCodeMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
+    @objc open var fontSizeMobileCodeSmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize100 }
 
     // MARK: Semantic token - Typography - Font - Size - Tablet
 
-    @objc open var fontSizeTabletDislayLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize1450 }
+    @objc open var fontSizeTabletDisplayLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize1450 }
     @objc open var fontSizeTabletDisplayMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize1050 }
     @objc open var fontSizeTabletDisplaySmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize850 }
     @objc open var fontSizeTabletHeadingXLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize750 }
@@ -62,19 +65,21 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontSizeTabletBodyLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize250 }
     @objc open var fontSizeTabletBodyMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
     @objc open var fontSizeTabletBodySmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize150 }
+    @objc open var fontSizeTabletCodeMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
+    @objc open var fontSizeTabletCodeSmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize150 }
 
     // MARK: Semantic token - Typography - Font - Size - Others
 
     @objc open var fontSizeLabelXLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize300 }
     @objc open var fontSizeLabelLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize250 }
     @objc open var fontSizeLabelMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
-    @objc open var fontSizeLabelSmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize100 }
+    @objc open var fontSizeLabelSmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize150 }
     @objc open var fontSizeCodeMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
     @objc open var fontSizeCodeSmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize150 }
 
     // MARK: Semantic token - Typography - Font - Light height - Mobile
 
-    @objc open var fontLineHeightMobileDislayLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1050 }
+    @objc open var fontLineHeightMobileDisplayLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1050 }
     @objc open var fontLineHeightMobileDisplayMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight950 }
     @objc open var fontLineHeightMobileDisplaySmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight850 }
     @objc open var fontLineHeightMobileHeadingXLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight750 }
@@ -84,10 +89,12 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLineHeightMobileBodyLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
     @objc open var fontLineHeightMobileBodyMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
     @objc open var fontLineHeightMobileBodySmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
+    @objc open var fontLineHeightMobileCodeMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
+    @objc open var fontLineHeightMobileCodeSmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
 
     // MARK: Semantic token - Typography - Font - Light height - Tablet
 
-    @objc open var fontLineHeightTabletDislayLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1850 }
+    @objc open var fontLineHeightTabletDisplayLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1850 }
     @objc open var fontLineHeightTabletDisplayMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1250 }
     @objc open var fontLineHeightTabletDisplaySmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1050 }
     @objc open var fontLineHeightTabletHeadingXLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight950 }
@@ -97,6 +104,8 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLineHeightTabletBodyLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
     @objc open var fontLineHeightTabletBodyMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
     @objc open var fontLineHeightTabletBodySmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
+    @objc open var fontLineHeightTabletCodeMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
+    @objc open var fontLineHeightTabletCodeSmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
 
     // MARK: Semantic token - Typography - Font - Light height - Others
 
@@ -109,7 +118,7 @@ extension OUDSTheme: TypographySemanticTokens {
 
     // MARK: Semantic token - Typography - Font - Paragraph spacing - Mobile
 
-    @objc open var fontParagraphSpacingMobileDislayLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
+    @objc open var fontParagraphSpacingMobileDisplayLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingMobileDisplayMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingMobileDisplaySmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingMobileHeadingXLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
@@ -119,10 +128,12 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontParagraphSpacingMobileBodyLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingMobileBodyMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingMobileBodySmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
+    @objc open var fontParagraphSpacingMobileCodeMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
+    @objc open var fontParagraphSpacingMobileCodeSmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
 
     // MARK: Semantic token - Typography - Font - Paragraph spacing - Tablet
 
-    @objc open var fontParagraphSpacingTabletDislayLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
+    @objc open var fontParagraphSpacingTabletDisplayLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingTabletDisplayMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingTabletDisplaySmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingTabletHeadingXLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
@@ -132,6 +143,8 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontParagraphSpacingTabletBodyLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingTabletBodyMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingTabletBodySmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
+    @objc open var fontParagraphSpacingTabletCodeMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
+    @objc open var fontParagraphSpacingTabletCodeSmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
 
     // MARK: Semantic token - Typography - Font - Paragraph spacing - Others
 
@@ -141,5 +154,4 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontParagraphSpacingLabelSmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingCodeMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
     @objc open var fontParagraphSpacingCodeSmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-
 }
