@@ -22,7 +22,7 @@ extension OUDSTheme: OpacitySemanticTokens {
     @objc open var opacityTransparent: OpacitySemanticToken { OpacityRawTokens.opacity0 }
     @objc open var opacityWeaker: OpacitySemanticToken { OpacityRawTokens.opacity100 }
     @objc open var opacityWeak: OpacitySemanticToken { OpacityRawTokens.opacity300 }
-    @objc open var opacityMedum: OpacitySemanticToken { OpacityRawTokens.opacity500 }
+    @objc open var opacityMedium: OpacitySemanticToken { OpacityRawTokens.opacity500 }
     @objc open var opacityEmphasis: OpacitySemanticToken { OpacityRawTokens.opacity700 }
     @objc open var opacityOpaque: OpacitySemanticToken { OpacityRawTokens.opacity900 }
 }

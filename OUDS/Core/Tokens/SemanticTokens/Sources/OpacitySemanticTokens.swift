@@ -29,7 +29,7 @@ public protocol OpacitySemanticTokens {
     var opacityTransparent: OpacitySemanticToken { get }
     var opacityWeaker: OpacitySemanticToken { get }
     var opacityWeak: OpacitySemanticToken { get }
-    var opacityMedum: OpacitySemanticToken { get }
+    var opacityMedium: OpacitySemanticToken { get }
     var opacityEmphasis: OpacitySemanticToken { get }
     var opacityOpaque: OpacitySemanticToken { get }
 }
