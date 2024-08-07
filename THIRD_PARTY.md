@@ -88,7 +88,7 @@ You may download the source code on the [following website](https://github.com/p
 
 #### SwiftFormat
 
-Version 0.54.0
+Version 0.54.3
 
 Copyright 2016 Nick Lockwood.
 
