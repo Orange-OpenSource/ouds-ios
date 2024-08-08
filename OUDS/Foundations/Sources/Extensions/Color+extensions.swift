@@ -39,7 +39,7 @@ extension Color {
             b = CGFloat((rgb & 0x0000FF00) >> 8) / 255.0
             a = CGFloat(rgb & 0x000000FF) / 255.0
         } else {
-            print("[OUDS] Warning - The hexadecimal code value given for the colors cannot be processed (\(hexadecimalCode))")
+            OUDSLogger.warning("The hexadecimal code value given for the color cannot be processed, please check '\(hexadecimalCode)'")
             return nil
         }
 
