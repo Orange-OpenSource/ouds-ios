@@ -23,10 +23,15 @@
 
 ## Status
 
-[![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios)](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE)
-[![iOS 15.0](https://img.shields.io/badge/iOS-15.0-informational.svg)](https://developer.apple.com/support/app-store "iOS 15 supports")
-[![Still maintained](https://img.shields.io/maintenance/yes/2024)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
-[![Code size](https://img.shields.io/github/languages/code-size/Orange-OpenSource/ouds-ios)](https://github.com/Orange-OpenSource/ouds-ios)
+[![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE)
+
+[![Versions](https://img.shields.io/github/v/release/Orange-OpenSource/ouds-ios?label=Last%20version&style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/releases)
+[![Still maintained](https://img.shields.io/maintenance/yes/2024?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues?q=is%3Aissue+is%3Aclosed)
+
+[![Code size](https://img.shields.io/github/languages/code-size/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios)
+[![Opened issues](https://img.shields.io/github/issues-raw/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios)
+
+[![iOS 15.0](https://img.shields.io/badge/iOS-15.0-informational.svg?style=for-the-badge)](https://developer.apple.com/support/app-store "iOS 15 supports")
 
 ## Content
 
