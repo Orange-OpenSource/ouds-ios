@@ -13,7 +13,7 @@
 
 import Foundation
 import SwiftUI
-import OUDSThemesShared // To get @Environment(\.theme) var theme
+import OUDSThemesCommons // To get @Environment(\.theme) var theme
 
 /// An OUDS component for text input in formulars.
 /// **Warning: This is a draft component **

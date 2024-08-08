@@ -13,6 +13,7 @@
 
 import XCTest
 import OUDSThemesSosh
+import TestsUtils
 
 /// The aim of this tests class is to look for regressions in **Sosh brand color raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not relevant to test each token values.
@@ -62,7 +63,7 @@ final class SoshBrandColorRawTokensTests: XCTestCase {
     func testColorDecorativeMagenta900LighterThan950() throws {
         XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta900, SoshBrandColorRawTokens.colorDecorativeMagenta950)
     }
-    
+
     // MARK: Primitive token - Colors - Sosh - Citrine
 
     func testColorDecorativeCitrine50LighterThan100() throws {
@@ -104,7 +105,7 @@ final class SoshBrandColorRawTokensTests: XCTestCase {
     func testColorDecorativeCitrine900LighterThan950() throws {
         XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine900, SoshBrandColorRawTokens.colorDecorativeCitrine950)
     }
-    
+
     // MARK: Primitive token - Colors - Sosh - Blue Duck
 
     func testColorDecorativeBlueDuck50LighterThan100() throws {

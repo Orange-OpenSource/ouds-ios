@@ -18,7 +18,7 @@ import OUDSTokensSemantic
 extension MockTheme {
 
     static let mockThemeGridRawToken: GridRawToken = 3630
-    
+
     override var gridIOSExtraCompactDesignWidth: GridIOSExtraCompactSemanticToken { Self.mockThemeGridRawToken }
     override var gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticToken { Self.mockThemeGridRawToken }
     override var gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticToken { Self.mockThemeGridRawToken }

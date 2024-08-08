@@ -16,7 +16,7 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 
 extension MockTheme {
-    
+
     static let mockThemeColorRawToken: ColorRawToken = "#68489D"
 
     // MARK: Semantic token - Colors - Alias - Primary

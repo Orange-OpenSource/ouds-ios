@@ -13,6 +13,7 @@
 
 import XCTest
 import OUDSTokensRaw
+import TestsUtils
 
 /// The aim of this tests class is to look for regressions in **color raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not relevant to test each token values.
@@ -154,7 +155,7 @@ final class ColorRawTokensTests: XCTestCase {
     }
 
     // MARK: - Primitive token - Colors - Functional sun
-    
+
     func testColorRawTokenFunctionalSun100LighterThanFunctionalSun200() throws {
         XCTAssertColorLighterThan(ColorRawTokens.colorFunctionalSun100, ColorRawTokens.colorFunctionalSun200)
     }
@@ -188,7 +189,7 @@ final class ColorRawTokensTests: XCTestCase {
     }
 
     // MARK: Primitive token - Colors - Functional malachite
-    
+
     func testColorRawTokenFunctionalMalachite100LighterThanFunctionalMalachite200() throws {
         XCTAssertColorLighterThan(ColorRawTokens.colorFunctionalMalachite100, ColorRawTokens.colorFunctionalMalachite200)
     }
@@ -222,7 +223,7 @@ final class ColorRawTokensTests: XCTestCase {
     }
 
     // MARK: - Primitive token - Colors - Functional dodger blue
-    
+
     func testColorRawTokenFunctionalDodgerBlue100LighterThanFunctionalDodgerBlue200() throws {
         XCTAssertColorLighterThan(ColorRawTokens.colorFunctionalDodgerBlue100, ColorRawTokens.colorFunctionalDodgerBlue200)
     }
@@ -294,7 +295,7 @@ final class ColorRawTokensTests: XCTestCase {
     }
 
     // MARK: - Primitive token - Colors - Transparent white
-    
+
     func testColorRawTokenColorTransparentWhite0LighterThanColorTransparentWhite100() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorTransparentWhite0, ColorRawTokens.colorTransparentWhite100)
     }
