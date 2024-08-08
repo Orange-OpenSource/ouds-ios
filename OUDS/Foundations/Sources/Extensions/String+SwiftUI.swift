@@ -16,7 +16,7 @@ import SwiftUI
 
 extension String {
 
-    public var color: Color {
+    public var color: Color! {
         Color(hexadecimalCode: self)
     }
 

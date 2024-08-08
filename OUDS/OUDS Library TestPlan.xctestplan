@@ -15,15 +15,22 @@
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "OUDSTokensRawTests",
-        "name" : "OUDSTokensRawTests"
+        "identifier" : "Foundations tests",
+        "name" : "Foundations tests"
       }
     },
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "OUDSTokensThemesTests",
-        "name" : "OUDSTokensThemesTests"
+        "identifier" : "Raw tokens tests",
+        "name" : "Raw tokens tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "Themes tests",
+        "name" : "Themes tests"
       }
     }
   ],
