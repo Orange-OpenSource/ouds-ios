@@ -53,7 +53,7 @@ public enum ColorRawTokens {
     public static let colorFunctionalDarkGray240: ColorRawToken = "#666666"
     public static let colorFunctionalDarkGray320: ColorRawToken = "#5C5C5C"
     public static let colorFunctionalDarkGray400: ColorRawToken = "#555555"
-    public static let colorFunctionalDarkGray480: ColorRawToken = "#44444"
+    public static let colorFunctionalDarkGray480: ColorRawToken = "#444444"
     public static let colorFunctionalDarkGray560: ColorRawToken = "#3D3D3D"
     public static let colorFunctionalDarkGray640: ColorRawToken = "#333333"
     public static let colorFunctionalDarkGray720: ColorRawToken = "#272727"
@@ -69,7 +69,7 @@ public enum ColorRawTokens {
     public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E"
     public static let colorFunctionalScarlet500: ColorRawToken = "#FF1A1B"
     public static let colorFunctionalScarlet600: ColorRawToken = "#EA0305"
-    public static let colorFunctionalScarlet700: ColorRawToken = "#BZ000Z"
+    public static let colorFunctionalScarlet700: ColorRawToken = "#B20002"
     public static let colorFunctionalScarlet800: ColorRawToken = "#800001"
     public static let colorFunctionalScarlet900: ColorRawToken = "#4D0001"
 

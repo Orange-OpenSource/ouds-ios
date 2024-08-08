@@ -17,9 +17,22 @@ import XCTest
 
 extension XCTestCase {
 
+    public func XCTAssertColorLighterThan(_ left: String, _ right: String, file: StaticString = #file, line: UInt = #line) {
+        let leftBrightness = hexadecimalStringToInt(left)
+        let rightBrightness = hexadecimalStringToInt(right)
+        XCTAssertGreaterThan(leftBrightness, rightBrightness, "Right color is not lighter than the left color", file: file, line: line)
+    }
+
     public func XCTAssertColorDarkerThan(_ left: String, _ right: String, file: StaticString = #file, line: UInt = #line) {
-        let leftBrightness = Color(hexadecimalCode: left).brightness
-        let rightBrightness = Color(hexadecimalCode: right).brightness
-        XCTAssertGreaterThan(rightBrightness, leftBrightness, "Right color is not darker than the left color", file: file, line: line)
+        let leftBrightness = hexadecimalStringToInt(left)
+        let rightBrightness = hexadecimalStringToInt(right)
+        XCTAssertLessThan(leftBrightness, rightBrightness, "Right color is not darker than the left color", file: file, line: line)
+    }
+
+    private func hexadecimalStringToInt(_ value: String) -> Int {
+        let hexString = value.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var intValue: UInt64 = 0
+        Scanner(string: hexString).scanHexInt64(&intValue)
+        return Int(exactly: intValue)!
     }
 }
