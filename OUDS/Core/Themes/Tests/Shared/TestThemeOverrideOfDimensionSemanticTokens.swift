@@ -15,7 +15,7 @@ import XCTest
 import OUDSThemesShared
 
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
-/// In factn the `OUDSTheme` object is a class, which can be seens as an _asbtract class_, exposing through its extensions and protocols _dimension semantic tokens_.
+/// In fact the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols _dimension semantic tokens_.
 /// These semantic tokens should be overriden by subclass like the `OrangeTheme` default theme.
 /// **These tests checks if any _dimension semantic tokens_ can be surcharged by a child theme**
 final class TestThemeOverrideOfDimensionSemanticTokens: XCTestCase {
