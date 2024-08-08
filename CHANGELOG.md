@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Add simple logger for console outputs
 - [Library] Add unit tests for Sosh brand colors raw tokens
 - [Library] Add unit tests for Orange brand colors raw tokens
 - [Library] Add unit tests for foundations
