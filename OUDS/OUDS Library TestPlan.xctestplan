@@ -15,22 +15,43 @@
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "Foundations tests",
-        "name" : "Foundations tests"
+        "identifier" : "Foundations-Tests",
+        "name" : "Foundations-Tests"
       }
     },
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "Raw tokens tests",
-        "name" : "Raw tokens tests"
+        "identifier" : "Raw-Tokens-Tests",
+        "name" : "Raw-Tokens-Tests"
       }
     },
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "Themes tests",
-        "name" : "Themes tests"
+        "identifier" : "Theme-Tests-Commons",
+        "name" : "Theme-Tests-Commons"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "Theme-Tests-Inverse",
+        "name" : "Theme-Tests-Inverse"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "Theme-Tests-Orange",
+        "name" : "Theme-Tests-Orange"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "Theme-Tests-Sosh",
+        "name" : "Theme-Tests-Sosh"
       }
     }
   ],

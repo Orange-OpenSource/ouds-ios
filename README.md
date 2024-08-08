@@ -48,7 +48,7 @@ You should use one of the following imports for your needs:
 import OUDSModules           // To use modules
 import OUDSComponents        // To use components
 import OUDSThemesOrange      // To use the default theme
-import OUDSThemesShared      // If you want to define your theme or use OUDSThemeableView
+import OUDSThemesCommons     // If you want to define your theme or use OUDSThemeableView
 import OUDSTokensComponent   // If you need to override components tokens
 import OUDSTokenSemantic     // If you need to override semantic tokens
 import OUDSTokensRaw         // If you need to override raw tokens
@@ -58,7 +58,7 @@ import OUDSTokensRaw         // If you need to override raw tokens
 
 ```swift
 // Make imports
-import OUDSThemesShared
+import OUDSThemesCommons
 import OUDSThemesOrange
 
 // Add themeable view to your root view

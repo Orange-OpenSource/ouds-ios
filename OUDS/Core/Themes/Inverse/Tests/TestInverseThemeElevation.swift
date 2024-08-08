@@ -12,8 +12,8 @@
 //
 
 import XCTest
-import OUDSThemesShared
-@testable import OUDSThemesInverse
+import OUDSThemesCommons
+import OUDSThemesInverse
 
 /// `InverseTheme` is a quite particular theme with "inverse" color palette. Is it neuther a light mode theme nor a dark mode theme.
 /// This "inverse" mode as colors which, for a given semantic token, has the same value for both light and dark mode.
