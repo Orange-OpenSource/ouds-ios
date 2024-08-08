@@ -86,7 +86,7 @@ let package = Package(
             dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
             path: "OUDS/Core/Themes/Sources/Shared"),
         .testTarget(
-            name: "OUDSTokensThemesTests",
+            name: "Themes tests",
             dependencies: ["OUDSFoundations", "OUDSThemesShared", "OUDSThemesOrange", "OUDSThemesInverse"],
             path: "OUDS/Core/Themes/Tests"),
         .target(
@@ -102,12 +102,16 @@ let package = Package(
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Core/Tokens/RawTokens/Sources"),
         .testTarget(
-            name: "OUDSTokensRawTests",
+            name: "Raw tokens tests",
             dependencies: ["OUDSTokensRaw"],
             path: "OUDS/Core/Tokens/RawTokens/Tests"),
         .target(
             name: "OUDSFoundations",
             path: "OUDS/Foundations/Sources"),
+        .testTarget(
+            name: "Foundations tests",
+            dependencies: ["OUDSFoundations"],
+            path: "OUDS/Foundations/Tests"),
     ],
     swiftLanguageVersions: [.v5]
 )
