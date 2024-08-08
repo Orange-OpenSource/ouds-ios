@@ -12,9 +12,10 @@
 //
 
 import XCTest
-import OUDSThemesShared
+import OUDSThemesCommons
 
 // swiftlint:disable type_body_length
+// swiftlint:disable file_length
 
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
 /// In fact the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols _colors semantic tokens_.
@@ -374,7 +375,7 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
     }
 
     // MARK: - Semantic token - Colors - Alias - Attractive
-    
+
     func testInheritedThemeCanOverrideSemanticTokenSysColorBrandAttractiveLowest() throws {
         XCTAssertNotEqual(inheritedTheme.sysColorBrandAttractiveLowest, abstractTheme.sysColorBrandAttractiveLowest)
         XCTAssertTrue(inheritedTheme.sysColorBrandAttractiveLowest == MockTheme.mockThemeColorRawToken)
@@ -561,12 +562,12 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.colorBackgroundStatusPositiveEmphasisDark, abstractTheme.colorBackgroundStatusPositiveEmphasisDark)
         XCTAssertTrue(inheritedTheme.colorBackgroundStatusPositiveEmphasisDark == MockTheme.mockThemeColorRawToken)
     }
-  
+
     func testInheritedThemeCanOverrideSemanticTokenColorBackgroundStatusInformationMutedLight() throws {
         XCTAssertNotEqual(inheritedTheme.colorBackgroundStatusInformationMutedLight, abstractTheme.colorBackgroundStatusInformationMutedLight)
         XCTAssertTrue(inheritedTheme.colorBackgroundStatusInformationMutedLight == MockTheme.mockThemeColorRawToken)
     }
-  
+
     func testInheritedThemeCanOverrideSemanticTokenColorBackgroundStatusInformationMutedDark() throws {
         XCTAssertNotEqual(inheritedTheme.colorBackgroundStatusInformationMutedDark, abstractTheme.colorBackgroundStatusInformationMutedDark)
         XCTAssertTrue(inheritedTheme.colorBackgroundStatusInformationMutedDark == MockTheme.mockThemeColorRawToken)

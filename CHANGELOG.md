@@ -16,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Redefine Swift Package with clearer path for sources, tests cases and test plan
+- [Library] Expose product "OUDSThemesCommons" instead of "OUDSThemesShared"
 - [Library] Improve unit tests for elevation semantic tokens
 - [Library] Improve unit tests for typography raw tokens
 - [Library] Improve unit tests for opacity raw tokens
