@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Add unit tests for raw tokens and semantic tokens for colors
 - [Library] Add draft of raw tokens and semantic tokens for grids
 
 ### Changed
@@ -20,6 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Improve unit tests for borders raw tokens
 
 ### Fixed
+
+- [Library] Value for color raw token colorFunctionalScarlet700
 
 ## [0.0.0](https://github.com/Orange-OpenSource/ouds-ios/tree/main) - 2024-08-07
 

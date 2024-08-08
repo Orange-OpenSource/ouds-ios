@@ -22,7 +22,7 @@ extension MockTheme {
     static let mockThemeYRawToken: ElevationRawToken = 713
     static let mockThemeBlurRawToken: ElevationRawToken = 816
     static let mockThemeSpreadRawToken: ElevationRawToken = 80085
-    static let mockThemeColorRawToken: ColorRawToken = ColorRawTokens.colorFunctionalMalachite500
+    static let mockThemeElevationColorRawToken: ColorRawToken = ColorRawTokens.colorFunctionalMalachite500
     static let mockThemeBoxShadowRawToken: ElevationBoxShadowRawToken = ElevationBoxShadowRawToken(x: 118,
                                                                                                    y: 712,
                                                                                                    blur: 118,
@@ -96,48 +96,48 @@ extension MockTheme {
 
     // MARK: Semantic token - Elevation - Color - None
 
-    override var elevationColorNoneLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
-    override var elevationColorNoneDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+    override var elevationColorNoneLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorNoneDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Raised
 
-    override var elevationColorRaisedLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
-    override var elevationColorRaisedDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+    override var elevationColorRaisedLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorRaisedDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Drag
 
-    override var elevationColorDragLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
-    override var elevationColorDragDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+    override var elevationColorDragLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorDragDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Default
 
-    override var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
-    override var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+    override var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Emphasis
 
-    override var elevationColorOverlayEmphasisLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
-    override var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+    override var elevationColorOverlayEmphasisLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Default
 
-    override var elevationColorStickyDefaultLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
-    override var elevationColorStickyDefaultDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+    override var elevationColorStickyDefaultLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorStickyDefaultDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Emphasis
 
-    override var elevationColorStickyEmphasisLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
-    override var elevationColorStickyEmphasisDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+    override var elevationColorStickyEmphasisLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorStickyEmphasisDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
-    override var elevationColorStickyNavigationScrolledLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
-    override var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+    override var elevationColorStickyNavigationScrolledLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Focus
 
-    override var elevationColorFocusLight: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
-    override var elevationColorFocusDark: ElevationColorSemanticToken { Self.mockThemeColorRawToken }
+    override var elevationColorFocusLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorFocusDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Box shadow
 
