@@ -28,6 +28,7 @@ public protocol GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Extra compact
 
+    var gridIOSExtraCompactDesignWidth: GridIOSExtraCompactSemanticToken { get }
     var gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticToken { get }
     var gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticToken { get }
     var gridIOSExtraCompactMargin: GridIOSExtraCompactSemanticToken { get }
@@ -36,6 +37,7 @@ public protocol GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Compact
 
+    var gridIOSCompactDesignWidth: GridIOSCompactSemanticToken { get }
     var gridIOSCompactMinWidth: GridIOSCompactSemanticToken { get }
     var gridIOSCompactMaxWidth: GridIOSCompactSemanticToken { get }
     var gridIOSCompactMargin: GridIOSCompactSemanticToken { get }
@@ -44,6 +46,7 @@ public protocol GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Regular
 
+    var gridIOSRegularDesignWidth: GridIOSRegularSemanticToken { get }
     var gridIOSRegularMinWidth: GridIOSRegularSemanticToken { get }
     var gridIOSRegularMaxWidth: GridIOSRegularSemanticToken { get }
     var gridIOSRegularMargin: GridIOSRegularSemanticToken { get }
