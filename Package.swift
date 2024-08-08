@@ -42,8 +42,8 @@ let package = Package(
             name: "OUDSThemesOrange",
             targets: ["OUDSThemesOrange"]),
         .library(
-            name: "OUDSThemesShared",
-            targets: ["OUDSThemesShared"]),
+            name: "OUDSThemesCommons",
+            targets: ["OUDSThemesCommons"]),
         .library(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
@@ -71,24 +71,36 @@ let package = Package(
             path: "OUDS/Core/Components/Sources"),
         .target(
             name: "OUDSThemesSosh",
-            dependencies: ["OUDSThemesShared"],
-            path: "OUDS/Core/Themes/Sources/Sosh"),
+            dependencies: ["OUDSThemesCommons"],
+            path: "OUDS/Core/Themes/Sosh/Sources"),
+        .testTarget(
+            name: "Theme-Tests-Sosh",
+            dependencies: ["TestsUtils", "OUDSThemesSosh"],
+            path: "OUDS/Core/Themes/Sosh/Tests"),
         .target(
             name: "OUDSThemesInverse",
             dependencies: ["OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/Sources/Inverse"),
+            path: "OUDS/Core/Themes/Inverse/Sources"),
+        .testTarget(
+            name: "Theme-Tests-Inverse",
+            dependencies: ["OUDSThemesInverse"],
+            path: "OUDS/Core/Themes/Inverse/Tests"),
         .target(
             name: "OUDSThemesOrange",
-            dependencies: ["OUDSThemesShared"],
-            path: "OUDS/Core/Themes/Sources/Orange"),
-        .target(
-            name: "OUDSThemesShared",
-            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
-            path: "OUDS/Core/Themes/Sources/Shared"),
+            dependencies: ["OUDSThemesCommons"],
+            path: "OUDS/Core/Themes/Orange/Sources"),
         .testTarget(
-            name: "OUDSTokensThemesTests",
-            dependencies: ["OUDSFoundations", "OUDSThemesShared", "OUDSThemesOrange", "OUDSThemesInverse"],
-            path: "OUDS/Core/Themes/Tests"),
+            name: "Theme-Tests-Orange",
+            dependencies: ["TestsUtils", "OUDSThemesOrange"],
+            path: "OUDS/Core/Themes/Orange/Tests"),
+        .target(
+            name: "OUDSThemesCommons",
+            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
+            path: "OUDS/Core/Themes/Commons/Sources"),
+        .testTarget(
+            name: "Theme-Tests-Commons",
+            dependencies: ["OUDSThemesCommons"],
+            path: "OUDS/Core/Themes/Commons/Tests"),
         .target(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],
@@ -102,12 +114,19 @@ let package = Package(
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Core/Tokens/RawTokens/Sources"),
         .testTarget(
-            name: "OUDSTokensRawTests",
-            dependencies: ["OUDSTokensRaw"],
+            name: "Raw-Tokens-Tests",
+            dependencies: ["TestsUtils", "OUDSTokensRaw"],
             path: "OUDS/Core/Tokens/RawTokens/Tests"),
         .target(
             name: "OUDSFoundations",
             path: "OUDS/Foundations/Sources"),
+        .testTarget(
+            name: "Foundations-Tests",
+            dependencies: ["OUDSFoundations"],
+            path: "OUDS/Foundations/Tests"),
+        .target(
+            name: "TestsUtils",
+            path: "OUDS/Foundations/TestsUtils"),
     ],
     swiftLanguageVersions: [.v5]
 )

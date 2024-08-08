@@ -13,7 +13,7 @@
 
 import SwiftUI
 import OUDSComponents       // To get for example OUDSFormsTextInput
-import OUDSThemesShared     // To get OUDSThemeableView
+import OUDSThemesCommons    // To get OUDSThemeableView
 import OUDSThemesOrange     // To get OrangeTheme
 
 struct GuidelinesPage: View {

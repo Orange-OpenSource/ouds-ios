@@ -21,16 +21,35 @@ import OUDSTokensRaw
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 final class OpacityRawTokensTests: XCTestCase {
 
-    /// Whathever the values are, opacity raw tokens must keep their order relationships
-    func testOrderRelationshipForWidths() throws {
+    func testOpacityRawToken0LessThan100() throws {
         XCTAssertLessThan(OpacityRawTokens.opacity0, OpacityRawTokens.opacity100)
+    }
+
+    func testOpacityRawToken100LessThan200() throws {
         XCTAssertLessThan(OpacityRawTokens.opacity100, OpacityRawTokens.opacity200)
+    }
+
+    func testOpacityRawToken200LessThan300() throws {
         XCTAssertLessThan(OpacityRawTokens.opacity200, OpacityRawTokens.opacity300)
+    }
+
+    func testOpacityRawToken300LessThan400() throws {
         XCTAssertLessThan(OpacityRawTokens.opacity300, OpacityRawTokens.opacity400)
+    }
+
+    func testOpacityRawToken400LessThan500() throws {
         XCTAssertLessThan(OpacityRawTokens.opacity400, OpacityRawTokens.opacity500)
+    }
+
+    func testOpacityRawToken500LessThan600() throws {
         XCTAssertLessThan(OpacityRawTokens.opacity500, OpacityRawTokens.opacity600)
+    }
+
+    func testOpacityRawToken600LessThan700() throws {
         XCTAssertLessThan(OpacityRawTokens.opacity600, OpacityRawTokens.opacity700)
+    }
+
+    func testOpacityRawToken700LessThan800() throws {
         XCTAssertLessThan(OpacityRawTokens.opacity700, OpacityRawTokens.opacity800)
-        XCTAssertLessThan(OpacityRawTokens.opacity800, OpacityRawTokens.opacity900)
     }
 }

@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.0.0...0.1.0) - 2024-08-08
+
+### Added
+
+- [Library] Add simple logger for console outputs
+- [Library] Add unit tests for Sosh brand colors raw tokens
+- [Library] Add unit tests for Orange brand colors raw tokens
+- [Library] Add unit tests for foundations
+- [Library] Add unit tests for raw tokens and semantic tokens for colors
+- [Library] Add draft of raw tokens and semantic tokens for grids
+
+### Changed
+
+- [Library] Redefine Swift Package with clearer path for sources, tests cases and test plan
+- [Library] Expose product "OUDSThemesCommons" instead of "OUDSThemesShared"
+- [Library] Improve unit tests for elevation semantic tokens
+- [Library] Improve unit tests for typography raw tokens
+- [Library] Improve unit tests for opacity raw tokens
+- [Library] Improve unit tests for elevations raw tokens
+- [Library] Improve unit tests for dimensions raw tokens
+- [Library] Improve unit tests for borders raw tokens
+
+### Fixed
+
+- [Library] Value for color raw token colorFunctionalScarlet700
+
 ## [0.0.0](https://github.com/Orange-OpenSource/ouds-ios/tree/main) - 2024-08-07
 
 ### Added
