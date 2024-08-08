@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Improve unit tests for border raw tokens
+
 ### Fixed
 
 ## [0.0.0](https://github.com/Orange-OpenSource/ouds-ios/tree/main) - 2024-08-07
