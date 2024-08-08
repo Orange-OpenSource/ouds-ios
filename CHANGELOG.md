@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Add unit tests for Sosh brand colors raw tokens
+- [Library] Add unit tests for Orange brand colors raw tokens
+- [Library] Add unit tests for foundations
 - [Library] Add unit tests for raw tokens and semantic tokens for colors
 - [Library] Add draft of raw tokens and semantic tokens for grids
 
