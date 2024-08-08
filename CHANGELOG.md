@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Add draft of raw tokens and semantic tokens for grids
+
 ### Changed
 
 - [Library] Improve unit tests for typography raw tokens

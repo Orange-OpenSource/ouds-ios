@@ -21,6 +21,7 @@ extension OUDSTheme: GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Extra compact
 
+    @objc open var gridIOSExtraCompactDesignWidth: GridIOSExtraCompactSemanticToken { GridRawTokens.gridDesignWidth100 }
     @objc open var gridIOSExtraCompactMinWidth: GridIOSExtraCompactSemanticToken { GridRawTokens.gridMinWidthIOSExtraCompact }
     @objc open var gridIOSExtraCompactMaxWidth: GridIOSExtraCompactSemanticToken { GridRawTokens.gridMaxWidthIOSExtraCompact }
     @objc open var gridIOSExtraCompactMargin: GridIOSExtraCompactSemanticToken { GridRawTokens.gridMargin100 }
@@ -29,6 +30,7 @@ extension OUDSTheme: GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Compact
 
+    @objc open var gridIOSCompactDesignWidth: GridIOSExtraCompactSemanticToken { GridRawTokens.gridDesignWidth200 }
     @objc open var gridIOSCompactMinWidth: GridIOSCompactSemanticToken { GridRawTokens.gridMinWidthIOSCompact }
     @objc open var gridIOSCompactMaxWidth: GridIOSCompactSemanticToken { GridRawTokens.gridMaxWidthIOSCompact }
     @objc open var gridIOSCompactMargin: GridIOSCompactSemanticToken { GridRawTokens.gridMargin300 }
@@ -37,6 +39,7 @@ extension OUDSTheme: GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Regular
 
+    @objc open var gridIOSRegularDesignWidth: GridIOSExtraCompactSemanticToken { GridRawTokens.gridDesignWidth400 }
     @objc open var gridIOSRegularMinWidth: GridIOSRegularSemanticToken { GridRawTokens.gridMinWidthIOSRegular }
     @objc open var gridIOSRegularMaxWidth: GridIOSRegularSemanticToken { GridRawTokens.gridMaxWidthIOSRegular }
     @objc open var gridIOSRegularMargin: GridIOSRegularSemanticToken { GridRawTokens.gridMargin500 }
