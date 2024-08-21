@@ -27,6 +27,9 @@ let package = Package(
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
         .library(
+            name: "OUDS",
+            targets: ["OUDS"]),
+        .library(
             name: "OUDSModules",
             targets: ["OUDSModules"]),
         .library(
@@ -62,12 +65,16 @@ let package = Package(
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [
         .target(
+            name: "OUDS",
+            dependencies: ["OUDSThemesCommons"],
+            path: "OUDS/Sources/OUDS"),
+        .target(
             name: "OUDSModules",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Modules/Sources"),
         .target(
             name: "OUDSComponents",
-            dependencies: ["OUDSTokensComponent", "OUDSThemesOrange"],
+            dependencies: ["OUDSTokensComponent", "OUDSThemesOrange", "OUDS"],
             path: "OUDS/Core/Components/Sources"),
         .target(
             name: "OUDSThemesSosh",
