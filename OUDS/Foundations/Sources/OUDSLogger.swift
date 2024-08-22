@@ -13,7 +13,7 @@
 
 import Foundation
 import os
- 
+
 struct OUDSLogger {
 
     private init() {}

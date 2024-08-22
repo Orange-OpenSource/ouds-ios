@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSThemesCommons
+import OUDS
 
 /// A mock theme for tests
 class MockTheme: OUDSTheme {

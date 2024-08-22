@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSThemesCommons
+import OUDS
 
 /// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
 open class SoshTheme: OUDSTheme {

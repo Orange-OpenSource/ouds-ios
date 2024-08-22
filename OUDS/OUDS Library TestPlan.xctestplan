@@ -29,13 +29,6 @@
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "Theme-Tests-Commons",
-        "name" : "Theme-Tests-Commons"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:..",
         "identifier" : "Theme-Tests-Inverse",
         "name" : "Theme-Tests-Inverse"
       }
@@ -52,6 +45,13 @@
         "containerPath" : "container:..",
         "identifier" : "Theme-Tests-Sosh",
         "name" : "Theme-Tests-Sosh"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "OUDS-Tests",
+        "name" : "OUDS-Tests"
       }
     }
   ],

@@ -1,10 +1,10 @@
 # ``OUDS``
 
 @Metadata {
-   @TechnologyRoot
+@TechnologyRoot
 }
 
-Catalog sloths you find in nature and create new adorable virtual sloths.
+Full Design System to build Orange Mobile Application.
 
 ## Overview
 
@@ -19,7 +19,6 @@ Using these resources will allow you to create Orange branded applications faste
 
 The Orange Unified Design System framework supports iOS 15 and later.
 
-
 ## Topics
 
 ### Essentials
@@ -29,5 +28,4 @@ The Orange Unified Design System framework supports iOS 15 and later.
 - <doc:Themes>
 - <doc:Components>
 - <doc:Modules>
-- <doc:Foundations>
     
