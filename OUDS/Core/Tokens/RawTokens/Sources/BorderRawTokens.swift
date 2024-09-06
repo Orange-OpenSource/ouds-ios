@@ -65,7 +65,6 @@ public enum BorderRawTokens {
     public static let borderRadius500: BorderRadiusRawToken = borderBase * 5
     public static let borderRadius600: BorderRadiusRawToken = borderBase * 6
     public static let borderRadius800: BorderRadiusRawToken = borderBase * 8
-    public static let borderRadius9999: BorderRadiusRawToken = 2000
 
     // MARK: Primitive token - Border - Style
 

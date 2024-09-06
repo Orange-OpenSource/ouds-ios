@@ -93,10 +93,6 @@ final class BorderRawTokensTests: XCTestCase {
         XCTAssertLessThan(BorderRawTokens.borderRadius600, BorderRawTokens.borderRadius800)
     }
 
-    func testBorderRadiusRawToken800LessThan9999() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius800, BorderRawTokens.borderRadius9999)
-    }
-
     // MARK: - Primitive token - Border - Style
 
     /// Border styles raw tokens must be different
