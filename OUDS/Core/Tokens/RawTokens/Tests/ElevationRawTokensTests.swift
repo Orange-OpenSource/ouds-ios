@@ -141,19 +141,19 @@ final class ElevationRawTokensTests: XCTestCase {
     // MARK: - Primitive token - Elevation - Spread
 
     func testElevationSpreadMinus400LessThanMinus300() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationSpreadMinus400, ElevationRawTokens.elevationSpreadMinus300)
+        XCTAssertLessThan(ElevationRawTokens.elevationSpreadN400, ElevationRawTokens.elevationSpreadN300)
     }
 
     func testElevationSpreadMinus300LessThanMinus200() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationSpreadMinus300, ElevationRawTokens.elevationSpreadMinus200)
+        XCTAssertLessThan(ElevationRawTokens.elevationSpreadN300, ElevationRawTokens.elevationSpreadN200)
     }
 
     func testElevationSpreadMinus200LessThanMinus100() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationSpreadMinus200, ElevationRawTokens.elevationSpreadMinus100)
+        XCTAssertLessThan(ElevationRawTokens.elevationSpreadN200, ElevationRawTokens.elevationSpreadN100)
     }
 
     func testElevationSpreadMinus100LessThan0() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationSpreadMinus100, ElevationRawTokens.elevationSpread0)
+        XCTAssertLessThan(ElevationRawTokens.elevationSpreadN100, ElevationRawTokens.elevationSpread0)
     }
 
     func testElevationSpread0LessThan300() throws {

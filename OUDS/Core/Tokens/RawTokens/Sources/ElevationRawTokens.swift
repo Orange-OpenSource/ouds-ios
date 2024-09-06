@@ -106,10 +106,10 @@ public enum ElevationRawTokens {
 
     // MARK: Primitive token - Elevation - Spread
 
-    public static let elevationSpreadMinus100: ElevationRawToken = -1
-    public static let elevationSpreadMinus200: ElevationRawToken = -2
-    public static let elevationSpreadMinus300: ElevationRawToken = -4
-    public static let elevationSpreadMinus400: ElevationRawToken = -8
+    public static let elevationSpreadN100: ElevationRawToken = -1
+    public static let elevationSpreadN200: ElevationRawToken = -2
+    public static let elevationSpreadN300: ElevationRawToken = -4
+    public static let elevationSpreadN400: ElevationRawToken = -8
     public static let elevationSpread0: ElevationRawToken = 0
     public static let elevationSpread300: ElevationRawToken = 3
 

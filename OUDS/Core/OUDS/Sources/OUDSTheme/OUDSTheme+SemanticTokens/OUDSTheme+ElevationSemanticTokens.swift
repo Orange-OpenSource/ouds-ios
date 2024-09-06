@@ -79,12 +79,12 @@ extension OUDSTheme: ElevationSemanticTokens {
 
     @objc open var elevationSpreadNone: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpread0 }
     @objc open var elevationSpreadRaised: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpread0 }
-    @objc open var elevationSpreadDrag: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadMinus100 }
-    @objc open var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadMinus100 }
-    @objc open var elevationSpreadOverlayEmphasis: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadMinus300 }
-    @objc open var elevationSpreadStickyDefault: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadMinus100 }
-    @objc open var elevationSpreadStickyEmphasis: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadMinus100 }
-    @objc open var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadMinus100 }
+    @objc open var elevationSpreadDrag: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
+    @objc open var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
+    @objc open var elevationSpreadOverlayEmphasis: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN300 }
+    @objc open var elevationSpreadStickyDefault: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
+    @objc open var elevationSpreadStickyEmphasis: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
+    @objc open var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
     @objc open var elevationSpreadFocus: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpread300 }
 
     // MARK: Semantic token - Elevation - Color - None
