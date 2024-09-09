@@ -20,12 +20,12 @@
 You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
 You can have a look for example in thr **THIRD\_PARTY.md** file which lists any dependencies and tools we use are different levels (SDK, showcase app, projects).
 
-If some tools are missing, pick the suitable command line bellow:
+If some tools are missing, pick the suitable command line below:
 ```bash
 # Use Bundler to install a major part of dependencies (thanks to Gemfile and Gemfile.lock files)
 bundle install
 
-# Use CocoaPods to install other dependencies not avaialble as rubygems (thanks to Podfile and Podfile.lock files)
+# Use CocoaPods to install other dependencies not available as rubygems (thanks to Podfile and Podfile.lock files)
 bundle exec pod install
 
 # Some dependencies must be downloaded by hand:
@@ -69,7 +69,7 @@ The Xcode project contains two targets:
 ## Certificates, profiles and identifiers
 
 We choose to use Xcode automatic signing for debug builds of the app so as to make easier onboarding of newcomers in development team, and also to prevent to update provisioning profiles with individual developers certificates each team someone wants to build the app and also to prevent to register each new build device). You may need to be part of our team if you want to build in debug mode.
-Note the bundle identifier here for lcoal builds is **com.orange.ouds.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.ouds.demoapp** identifiers.  
+Note the bundle identifier here for local builds is **com.orange.ouds.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.ouds.demoapp** identifiers.
 
 However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.ouds.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners and must not be available outside.
 
@@ -166,7 +166,7 @@ exit 0
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 You can generate a `RELEASE_NOTE.md` file using your Git history and [git cliff](https://git-cliff.org/) tool.
-Define first a `cliff.toml` configuration file containing the code bellow.
+Define first a `cliff.toml` configuration file containing the code below.
 
 ```toml
 # git-cliff ~ configuration file
@@ -176,7 +176,7 @@ Define first a `cliff.toml` configuration file containing the code bellow.
 # changelog header
 header = """
 # Release Note\n
-All notable changes for this version are here and blablbla.\n
+All notable changes for this version are here and blablabla.\n
 """
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction
@@ -353,9 +353,9 @@ sort_commits = "oldest"
 A [GitHub Action](https://github.com/gitleaks/gitleaks-action) has been integrated to the repository with a configuration file defined in _/github/workflows_ named _gitleaks-action.yaml_.
 It will launch the _Gitleaks_ tool automatically.
 
-Howevere this tool does not detect plain API key mixed in URL, that is a reason why _Gitleaks_ can be called in a pre-commit hook, using the _giteaks.toml_ at the root of the prokect.
+However this tool does not detect plain API key mixed in URL, that is a reason why _Gitleaks_ can be called in a pre-commit hook, using the _giteaks.toml_ at the root of the project.
 To call _Gitleaks_ in pre-commit hooks, create a file named **pre-commit** inside _.git/hooks_ (then run `chmod u+x` in the file).
-Then place the bash code bellow in this file:
+Then place the bash code below in this file:
 
 ```bash
 # Run Gitleaks before commits
