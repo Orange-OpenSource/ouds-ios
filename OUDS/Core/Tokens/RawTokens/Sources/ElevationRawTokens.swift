@@ -15,7 +15,7 @@ import Foundation
 
 // MARK: - Type aliases to keep grammar clear
 
-/// Typeliases precising `Int` value are used (because used in _SwiftUI_ API) for each **elevation raw token**.
+/// Type alias precising `Int` value are used (because used in _SwiftUI_ API) for each **elevation raw token**.
 public typealias ElevationRawToken = Int
 
 // MARK: - Composite raw token

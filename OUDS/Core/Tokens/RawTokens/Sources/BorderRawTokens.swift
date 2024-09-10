@@ -18,7 +18,7 @@ import Foundation
 /// Type alias precising `Double` value are used (because of multiplier factors) for a **border width raw token**.
 public typealias BorderWidthRawToken = Double
 
-/// Type alias precising `Double` value are used (because of multiplier factors) for a **border widthradiusraw token**.
+/// Type alias precising `Double` value are used (because of multiplier factors) for a **border radius raw token**.
 public typealias BorderRadiusRawToken = Double
 
 /// Type alias for `String` so as to help users (developers) to see that raw tokens are needed and linked to `String` for **border style raw token**.

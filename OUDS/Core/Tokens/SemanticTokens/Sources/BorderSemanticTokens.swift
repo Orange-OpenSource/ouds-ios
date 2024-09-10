@@ -16,13 +16,13 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
-/// Typeliases precising `BorderWidthRawToken`  is used as a value of this **border width semantic token**.
+/// Type alias precising `BorderWidthRawToken` is used as a value of this **border width semantic token**.
 public typealias BorderWidthSemanticToken = BorderWidthRawToken
 
-/// Typeliases precising `BorderRadiusSemanticToken`  is used as a value of t**his border raw semantic token**.
+/// Type alias precising `BorderRadiusRawToken` is used as a value of this **border raw semantic token**.
 public typealias BorderRadiusSemanticToken = BorderRadiusRawToken
 
-/// Typeliases precising `BorderStyleSemanticToken`  is used as a value of this **border style semantic token**.
+/// Type alias precising `BorderStyleRawToken` is used as a value of this **border style semantic token**.
 public typealias BorderStyleSemanticToken = BorderStyleRawToken
 
 // MARK: - Semantic tokens
