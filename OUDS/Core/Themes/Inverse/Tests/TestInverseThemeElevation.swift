@@ -38,13 +38,13 @@ final class TestInverseThemeElevationColors: XCTestCase {
     }
 
     func testElevationBoxShadowsEquality() throws {
-        XCTAssertEqual(inverseTheme.elevationBoxShadowRaisedLight, inverseTheme.elevationBoxShadowRaisedDark)
-        XCTAssertEqual(inverseTheme.elevationBoxShadowDragLight, inverseTheme.elevationBoxShadowDragDark)
-        XCTAssertEqual(inverseTheme.elevationBoxShadowOverlayDefaultLight, inverseTheme.elevationBoxShadowOverlayDefaultDark)
-        XCTAssertEqual(inverseTheme.elevationBoxShadowOverlayEmphasisLight, inverseTheme.elevationBoxShadowOverlayEmphasisDark)
-        XCTAssertEqual(inverseTheme.elevationBoxShadowStickyDefaultLight, inverseTheme.elevationBoxShadowStickyDefaultDark)
-        XCTAssertEqual(inverseTheme.elevationBoxShadowStickyEmphasisLight, inverseTheme.elevationBoxShadowStickyEmphasisDark)
-        XCTAssertEqual(inverseTheme.elevationBoxShadowStickyNavigationScrolledLight, inverseTheme.elevationBoxShadowStickyNavigationScrolledDark)
-        XCTAssertEqual(inverseTheme.elevationBoxShadowFocusLight, inverseTheme.elevationBoxShadowFocusDark)
+        XCTAssertEqual(inverseTheme.elevationRaisedLight, inverseTheme.elevationRaisedDark)
+        XCTAssertEqual(inverseTheme.elevationDragLight, inverseTheme.elevationDragDark)
+        XCTAssertEqual(inverseTheme.elevationOverlayDefaultLight, inverseTheme.elevationOverlayDefaultDark)
+        XCTAssertEqual(inverseTheme.elevationOverlayEmphasisLight, inverseTheme.elevationOverlayEmphasisDark)
+        XCTAssertEqual(inverseTheme.elevationStickyDefaultLight, inverseTheme.elevationStickyDefaultDark)
+        XCTAssertEqual(inverseTheme.elevationStickyEmphasisLight, inverseTheme.elevationStickyEmphasisDark)
+        XCTAssertEqual(inverseTheme.elevationStickyNavigationScrolledLight, inverseTheme.elevationStickyNavigationScrolledDark)
+        XCTAssertEqual(inverseTheme.elevationFocusLight, inverseTheme.elevationFocusDark)
     }
 }

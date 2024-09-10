@@ -34,8 +34,8 @@ public typealias ElevationSpreadSemanticToken = ElevationRawToken
 /// Basically an elevation semantic token for shadow colors is a raw token for colors
 public typealias ElevationColorSemanticToken = ColorRawToken
 
-/// Basically an elevation semantic token for bow shadow is a raw token for bow shadow, with the same final type
-public typealias ElevationBoxShadowSemanticToken = ElevationBoxShadowRawToken
+/// Basically an elevation semantic token for box shadow is a raw token for box shadow, with the same final type
+public typealias ElevationCompositeSemanticToken = ElevationCompositeRawToken
 
 // MARK: - Semantic tokens
 
@@ -158,27 +158,27 @@ public protocol ElevationSemanticTokens {
 
     // TODO: Missing elevationBoxShadowNoneLight semantic token
 
-    var elevationBoxShadowRaisedLight: ElevationBoxShadowSemanticToken { get }
-    var elevationBoxShadowRaisedDark: ElevationBoxShadowSemanticToken { get }
+    var elevationRaisedLight: ElevationCompositeSemanticToken { get }
+    var elevationRaisedDark: ElevationCompositeSemanticToken { get }
 
-    var elevationBoxShadowDragLight: ElevationBoxShadowSemanticToken { get }
-    var elevationBoxShadowDragDark: ElevationBoxShadowSemanticToken { get }
+    var elevationDragLight: ElevationCompositeSemanticToken { get }
+    var elevationDragDark: ElevationCompositeSemanticToken { get }
 
-    var elevationBoxShadowOverlayDefaultLight: ElevationBoxShadowSemanticToken { get }
-    var elevationBoxShadowOverlayDefaultDark: ElevationBoxShadowSemanticToken { get }
+    var elevationOverlayDefaultLight: ElevationCompositeSemanticToken { get }
+    var elevationOverlayDefaultDark: ElevationCompositeSemanticToken { get }
 
-    var elevationBoxShadowOverlayEmphasisLight: ElevationBoxShadowSemanticToken { get }
-    var elevationBoxShadowOverlayEmphasisDark: ElevationBoxShadowSemanticToken { get }
+    var elevationOverlayEmphasisLight: ElevationCompositeSemanticToken { get }
+    var elevationOverlayEmphasisDark: ElevationCompositeSemanticToken { get }
 
-    var elevationBoxShadowStickyDefaultLight: ElevationBoxShadowSemanticToken { get }
-    var elevationBoxShadowStickyDefaultDark: ElevationBoxShadowSemanticToken { get }
+    var elevationStickyDefaultLight: ElevationCompositeSemanticToken { get }
+    var elevationStickyDefaultDark: ElevationCompositeSemanticToken { get }
 
-    var elevationBoxShadowStickyEmphasisLight: ElevationBoxShadowSemanticToken { get }
-    var elevationBoxShadowStickyEmphasisDark: ElevationBoxShadowSemanticToken { get }
+    var elevationStickyEmphasisLight: ElevationCompositeSemanticToken { get }
+    var elevationStickyEmphasisDark: ElevationCompositeSemanticToken { get }
 
-    var elevationBoxShadowStickyNavigationScrolledLight: ElevationBoxShadowSemanticToken { get }
-    var elevationBoxShadowStickyNavigationScrolledDark: ElevationBoxShadowSemanticToken { get }
+    var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { get }
+    var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { get }
 
-    var elevationBoxShadowFocusLight: ElevationBoxShadowSemanticToken { get }
-    var elevationBoxShadowFocusDark: ElevationBoxShadowSemanticToken { get }
+    var elevationFocusLight: ElevationCompositeSemanticToken { get }
+    var elevationFocusDark: ElevationCompositeSemanticToken { get }
 }

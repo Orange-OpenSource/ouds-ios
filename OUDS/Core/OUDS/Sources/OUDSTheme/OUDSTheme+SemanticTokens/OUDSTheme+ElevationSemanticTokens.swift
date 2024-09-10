@@ -134,28 +134,28 @@ extension OUDSTheme: ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Box shadow
 
-    @objc open var elevationBoxShadowRaisedLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
-    @objc open var elevationBoxShadowRaisedDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+    @objc open var elevationRaisedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
+    @objc open var elevationRaisedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
 
-    @objc open var elevationBoxShadowDragLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_600 }
-    @objc open var elevationBoxShadowDragDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_600 }
+    @objc open var elevationDragLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_600 }
+    @objc open var elevationDragDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_600 }
 
-    @objc open var elevationBoxShadowOverlayDefaultLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_2_400 }
-    @objc open var elevationBoxShadowOverlayDefaultDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_2_400 }
+    @objc open var elevationOverlayDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_2_400 }
+    @objc open var elevationOverlayDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_2_400 }
 
-    @objc open var elevationBoxShadowOverlayEmphasisLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_5_300 }
-    @objc open var elevationBoxShadowOverlayEmphasisDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_5_300 }
+    @objc open var elevationOverlayEmphasisLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
+    @objc open var elevationOverlayEmphasisDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
 
-    @objc open var elevationBoxShadowStickyDefaultLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
-    @objc open var elevationBoxShadowStickyDefaultDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+    @objc open var elevationStickyDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
+    @objc open var elevationStickyDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
 
-    @objc open var elevationBoxShadowStickyEmphasisLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
-    @objc open var elevationBoxShadowStickyEmphasisDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_3_300 }
+    @objc open var elevationStickyEmphasisLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
+    @objc open var elevationStickyEmphasisDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
 
-    @objc open var elevationBoxShadowStickyNavigationScrolledLight: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
-    @objc open var elevationBoxShadowStickyNavigationScrolledDark: ElevationBoxShadowSemanticToken { ElevationRawTokens.elevationBoxShadowBottom_1_500 }
+    @objc open var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
+    @objc open var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
 
-    @objc open var elevationBoxShadowFocusLight: ElevationBoxShadowSemanticToken { ElevationBoxShadowRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
-    @objc open var elevationBoxShadowFocusDark: ElevationBoxShadowSemanticToken { ElevationBoxShadowRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
+    @objc open var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
+    @objc open var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
 }
 // swiftlint:enable line_length
