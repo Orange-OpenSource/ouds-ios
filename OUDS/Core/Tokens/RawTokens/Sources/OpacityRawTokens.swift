@@ -36,6 +36,6 @@ public enum OpacityRawTokens {
     public static let opacity500: OpacityRawToken = 0.32
     public static let opacity600: OpacityRawToken = 0.48
     public static let opacity700: OpacityRawToken = 0.64
-    public static let opacity800: OpacityRawToken = 0.88
+    public static let opacity800: OpacityRawToken = 0.80
     public static let opacity900: OpacityRawToken = 1
 }
