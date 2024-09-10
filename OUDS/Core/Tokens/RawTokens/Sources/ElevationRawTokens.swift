@@ -15,8 +15,8 @@ import Foundation
 
 // MARK: - Type aliases to keep grammar clear
 
-/// Type alias precising `Int` value are used (because used in _SwiftUI_ API) for each **elevation raw token**.
-public typealias ElevationRawToken = Int
+/// Typeliases precising `CGFloat` value are used (because used in _SwiftUI_ API) for each **elevation raw token**.
+public typealias ElevationRawToken = CGFloat
 
 // MARK: - Composite raw token
 
@@ -34,6 +34,13 @@ public final class ElevationCompositeRawToken: NSObject { // For @objc compatibi
     public let spread: ElevationRawToken
     /// The color of the shadow effect
     public let color: ColorRawToken
+
+    /// The *Figma* tool uses its own implementation of shadow or elevation effect with a *blur* and a *spread* values defined in the *tokens*.
+    /// However *SwiftUI* for shadows effects uses only a *radius* which does not match the *Figma* *blur* and *spread* radiuses values.
+    /// Thus this value is computed from them so as to try to reproduce the same effect.
+    public var radius: ElevationRawToken {
+        blur + spread / 2 // Or maybe `CGFloat(blur + abs(spread))` ((╯°□°)╯︵ ┻━┻ according to GenAI tools)
+    }
 
     public init(x: ElevationRawToken, y: ElevationRawToken, blur: ElevationRawToken, spread: ElevationRawToken, color: ColorRawToken) {
         self.x = x
@@ -56,7 +63,7 @@ public final class ElevationCompositeRawToken: NSObject { // For @objc compatibi
 // MARK: - Raw tokens
 
 /// This is the group of all **raw tokens** related to **elevations**.
-/// Primitive types such as `Int` must be used to as to allow to use `@objc` keywords in extensions for overriding.
+/// Primitive types such as `CGFloat` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
 public enum ElevationRawTokens {

@@ -14,6 +14,7 @@
 import XCTest
 import OUDSFoundations
 import OUDSTokensRaw
+import SwiftUI
 
 // swiftlint:disable type_body_length
 
@@ -23,6 +24,45 @@ import OUDSTokensRaw
 /// However, in the semantics of **elevation raw tokens**, there will be some unchanged things like relationships between tokens.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 final class ElevationRawTokensTests: XCTestCase {
+
+    // MARK: - Computed properties
+
+    func testRadiusComputation() throws {
+        // Given
+        var token = ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 0, color: ColorRawTokens.colorTransparentBlack500)
+        // When
+        var radius = token.radius
+        // Then
+        XCTAssertTrue(radius == 0)
+
+        // Given
+        token = ElevationCompositeRawToken(x: 0, y: 2, blur: 1, spread: 0, color: ColorRawTokens.colorTransparentBlack400)
+        // When
+        radius = token.radius
+        // Then
+        XCTAssertTrue(radius == 1)
+
+        // Given
+        token = ElevationCompositeRawToken(x: 0, y: 3, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack300)
+        // When
+        radius = token.radius
+        // Then
+        XCTAssertTrue(radius == 2)
+
+        // Given
+        token = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack500)
+        // When
+        radius = token.radius
+        // Then
+        XCTAssertTrue(radius == 3.5)
+
+        // Given
+        token = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack300)
+        // When
+        radius = token.radius
+        // Then
+        XCTAssertTrue(radius == 10)
+    }
 
     // MARK: - Primitive token - Elevation - Z Index
 
