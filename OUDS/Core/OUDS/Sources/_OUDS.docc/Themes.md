@@ -5,8 +5,8 @@ A _theme_ contains any relevant _semantic tokens_ and _component tokens_ which c
 A _theme_ has also _raw tokens_ associated to primitive types so as to give to _components_, written with _SwiftUI_, the needed values in the suitable type. A _theme_ can add for itself any new _tokens_.
 
 This library exposes today up to two themes:
-1. `OrangeTheme` which can be seen as the default _theme_
-2.  `SoshTheme` for Sosh.
+1. <doc://OUDSThemesOrange/OrangeTheme> which can be seen as the default _theme_
+2. <doc://OUDSThemesSosh/SoshTheme> for Sosh.
 
 They both are based on an `OUDSTheme` defining default values.
 
@@ -18,7 +18,7 @@ _Themes_ have Swift _extensions_ so as to get the _tokens_ to define. These toke
 
 ```swift
 // Make imports
-import OUDSThemesShared
+import OUDS
 import OUDSThemesOrange
 
 // Add themeable view to your root view
@@ -112,7 +112,7 @@ The for your root view:
 
 ```swift
 import SwiftUI
-import OUDSThemesShared  // To get OUDSThemeableView
+import OUDS // To get ``OUDSThemeableView``
 
 struct MyAppRootView: View {
 

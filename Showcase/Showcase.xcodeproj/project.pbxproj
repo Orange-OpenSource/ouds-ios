@@ -51,6 +51,7 @@
 /* Begin PBXFileReference section */
 		0707B6402C2C3C0400A911E7 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; name = .github; path = ../.github; sourceTree = "<group>"; };
 		0707B6432C2C569500A911E7 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
+		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07FDCD912C296A500009AA13 /* OUDS Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OUDS Showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FDCDA52C296B4B0009AA13 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitattributes; path = ../.gitattributes; sourceTree = "<group>"; };
 		07FDCDA72C296B7A0009AA13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 		07FDCDA42C296B220009AA13 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				07CEDD802C7DB921003E1885 /* generateDoc.sh */,
 				0707B6432C2C569500A911E7 /* Gemfile */,
 				5123647A2C3D7B3500572FD5 /* Gemfile.lock */,
 				5149BADA2C3D6F4F000FA4BF /* Podfile */,

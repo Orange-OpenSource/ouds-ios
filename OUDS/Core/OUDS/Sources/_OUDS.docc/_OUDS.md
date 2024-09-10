@@ -1,10 +1,11 @@
 # ``OUDS``
 
-@Metadata {
-@TechnologyRoot
-}
-
 Full Design System to build Orange Mobile Application.
+
+@Metadata {
+    @TechnologyRoot
+    @SupportedLanguage(objc)
+}
 
 ## Overview
 

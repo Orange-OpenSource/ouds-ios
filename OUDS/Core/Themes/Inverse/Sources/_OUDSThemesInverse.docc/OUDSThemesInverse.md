@@ -1,10 +1,10 @@
 # ``OUDSThemesInverse``
 
-This theme override the ``OUDSThemesOrange/OrangeTheme`` for some colors.
+This theme override the <doc://OUDSThemesOrange/OrangeTheme> for some colors.
 
 ## Overview
 
-This is an override of the default basic ``OUDSThemesOrange/OrangeTheme`` with some inverted colors.
+This is an override of the default basic ``//OUDSThemesOrange/OrangeTheme`` with some inverted colors.
 It can overrides any properties from its superclass, and can be derived too.
 
 ## Topics
@@ -12,4 +12,3 @@ It can overrides any properties from its superclass, and can be derived too.
 ### Group
 
 - ``InverseTheme``
-- ``InverseTheme/Elevation``

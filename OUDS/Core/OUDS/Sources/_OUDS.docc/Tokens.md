@@ -20,7 +20,7 @@ flowchart TD
 
 ## Component tokens
 
-These _tokens_ (``OUDSTokensComponent``) can be used to apply some style and configuration values to _components_.
+These _tokens_ (``/OUDSTokensComponent``) can be used to apply some style and configuration values to _components_.
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ to get their style values.
 
@@ -64,7 +64,7 @@ That is the reason why tokens are exposed as `@objc open` to be available and ov
 
 To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are avaialble for those who want too make their own theme.
 
-Example with ``ColorSemanticTokens``:
+Example with ``/OUDSTokensComponent/ColorSemanticTokens``:
 
 ```swift
 protocol ColorSemanticTokens {
@@ -79,7 +79,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
 ## Raw tokens
 
-_Raw tokens_ (``OUDSTokensRaw``) are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
+_Raw tokens_ (<doc://OUDSTokensRaw>) are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
 
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than structs or classes.
 

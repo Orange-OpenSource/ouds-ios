@@ -21,7 +21,7 @@ struct YourView: View {
 }
 ```
 
-Of course you must use in your root view the `OUDSThemeableView` with the suitable theme:
+Of course you must use in your root view the <doc:/OUDS/OUDSThemeableView> with the suitable theme:
 
 ```swift
     // The theme can be OrangeTheme or your own

@@ -27,6 +27,10 @@
 /Showcase/Showcase.xcworkspace/xcuserdata/
 /DerivedData/
 
+# Produced by generateDoc.sh
+/docs/
+.build
+
 # Produced by Swift Package Manager
 /.swiftpm/xcode/xcshareddata/
 /.swiftpm/xcode/xcuserdata/
