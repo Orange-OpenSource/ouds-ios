@@ -15,17 +15,17 @@ import Foundation
 
 // MARK: - Type aliases to keep grammar clear
 
-/// Typeliases precising `Double` value are used (because of multiplier factors) for a **border width raw token**.
+/// Type alias precising `Double` value are used (because of multiplier factors) for a **border width raw token**.
 public typealias BorderWidthRawToken = Double
 
-/// Typeliases precising `Double` value are used (because of multiplier factors) for a **border widthradiusraw token**.
+/// Type alias precising `Double` value are used (because of multiplier factors) for a **border widthradiusraw token**.
 public typealias BorderRadiusRawToken = Double
 
-/// Typealise for `String` so as to help users (developers) to see that raw tokens are needed and linked to `String` for **border style raw tokeb**.
+/// Type alias for `String` so as to help users (developers) to see that raw tokens are needed and linked to `String` for **border style raw token**.
 /// `String` are used here to prevent to rely on _SwiftUI_ types which are not compatible with `@objc` and are heavier than primitive types.
 /// In addition, if new styles are defined in design team side (such as kind of composite styles) and need to be processed differently 
 /// (because not available with _SwiftUI_ because are composed of several styles),
-/// such  `String` values could be procesed later without any API breaks.
+/// such  `String` values could be processed later without any API breaks.
 public typealias BorderStyleRawToken = String
 
 // MARK: - Raw tokens
@@ -39,7 +39,7 @@ public typealias BorderStyleRawToken = String
 /// In the future, generating tools like _Style Dictionary_ should either follow this file template and structure or just replace values or lines.
 public enum BorderRawTokens {
 
-    private static let borderBase: Double = 4 // Double type because used bellow for computations with Double values
+    private static let borderBase: Double = 4 // Double type because used below for computations with Double values
 
     // MARK: Primitive token - Border - Width
 
