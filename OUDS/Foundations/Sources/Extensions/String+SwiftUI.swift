@@ -16,7 +16,7 @@ import SwiftUI
 
 extension String {
 
-    /// `String` extension to get a `Color` from the hex string representation.
+    /// `String` extension to get a `Color` from the hexadecimal string representation.
     public var color: Color! {
         Color(hexadecimalCode: self)
     }
