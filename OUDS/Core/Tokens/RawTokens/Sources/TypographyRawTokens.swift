@@ -115,16 +115,15 @@ public enum TypographyRawTokens {
 
     // MARK: Primitive token - Typography - Font family
 
-    // TODO: How to manage the San Francisco default font family? i.e. .system() (comapre to .custom below)
     public static let fontFamilyBrandDefault: TypographyFontFamilyRawToken = "Helvetica Neue"
-    // TODO: How to manage font-family-brand-tv = "Helvetica Neue LT"?
+    // TODO: How to manage font-family-brand-tv = "Helvetica Neue LT"? Not existing in iOS SwiftUI
     public static let fontFamilySystemArial: TypographyFontFamilyRawToken = "Arial"
     public static let fontFamilySystemHelvetica: TypographyFontFamilyRawToken = "Helvetica"
-    // TODO: How to manage font-family-system-noto-sans = "Noto sans"?
-    // TODO: How to manage font-family-system-sf-pro-text = "SF Pro Text"?
-    // TODO: How to manage font-family-system-roboto = "Roboto"?
+    // TODO: How to manage font-family-system-noto-sans = "Noto sans"? Not existing in iOS SwiftUI
+    // TODO: How to manage font-family-system-sf-pro-text = "SF Pro Text"? Not existing in iOS SwiftUI
+    // TODO: How to manage font-family-system-roboto = "Roboto"? Not existing in iOS SwiftUI
     public static let fontFamilyMonospaceMenlo: TypographyFontFamilyRawToken = "Menlo"
-    // TODO: How to manage font-family-system-monaco = "Monaco"?
+    // TODO: How to manage font-family-system-monaco = "Monaco"? Not existing in iOS SwiftUI
     public static let fontFamilyMonospaceCourierNew: TypographyFontFamilyRawToken = "Courier New"
 
     // MARK: Primitive token - Typography - Font weight
@@ -136,9 +135,9 @@ public enum TypographyRawTokens {
     public static let fontWeight500: TypographyFontWeightRawToken = "medium"
     public static let fontWeight600: TypographyFontWeightRawToken = "semibold"
     public static let fontWeight700: TypographyFontWeightRawToken = "bold"
-    // TODO: How to manage fontWeight800 = "extra bold"?
+    // TODO: How to manage fontWeight800 = "extra bold"? Not existing in iOS SwiftUI
     public static let fontWeight900: TypographyFontWeightRawToken = "heavy"
-    // TODO: How to manage fontWeight950 = "extra black"?
+    // TODO: How to manage fontWeight950 = "extra black"? Not existing in iOS SwiftUI
 
     // MARK: Primitive token - Typography - Composite
 

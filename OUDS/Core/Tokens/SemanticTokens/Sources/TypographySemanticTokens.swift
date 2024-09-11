@@ -44,8 +44,6 @@ public final class TypographyCompositeSemanticToken: NSObject {
         self.compact = compact
         self.regular = regular
     }
-
-    // TODO: Convert this semantic token to a concret typography using as parameter the chose font family which is the only thing which can vary
 }
 
 // MARK: - Semantic tokens
