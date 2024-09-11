@@ -88,7 +88,7 @@ let package = Package(
             dependencies: ["OUDS"],
             path: "OUDS/Core/Themes/Sosh/Sources"),
         .testTarget(
-            name: "Theme-Tests-Sosh",
+            name: "OUDSThemesSosh-Tests",
             dependencies: ["TestsUtils", "OUDSThemesSosh"],
             path: "OUDS/Core/Themes/Sosh/Tests"),
         .target(
@@ -96,7 +96,7 @@ let package = Package(
             dependencies: ["OUDSThemesOrange"],
             path: "OUDS/Core/Themes/Inverse/Sources"),
         .testTarget(
-            name: "Theme-Tests-Inverse",
+            name: "OUDSThemesInverse-Tests",
             dependencies: ["OUDSThemesInverse"],
             path: "OUDS/Core/Themes/Inverse/Tests"),
         .target(
@@ -104,7 +104,7 @@ let package = Package(
             dependencies: ["OUDS"],
             path: "OUDS/Core/Themes/Orange/Sources"),
         .testTarget(
-            name: "Theme-Tests-Orange",
+            name: "OUDSThemesOrange-Tests",
             dependencies: ["TestsUtils", "OUDSThemesOrange"],
             path: "OUDS/Core/Themes/Orange/Tests"),
         .target(
@@ -120,19 +120,20 @@ let package = Package(
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Core/Tokens/RawTokens/Sources"),
         .testTarget(
-            name: "Raw-Tokens-Tests",
+            name: "OUDSTokensRaw-Tests",
             dependencies: ["TestsUtils", "OUDSTokensRaw"],
             path: "OUDS/Core/Tokens/RawTokens/Tests"),
         .target(
             name: "OUDSFoundations",
             path: "OUDS/Foundations/Sources"),
         .testTarget(
-            name: "Foundations-Tests",
+            name: "OUDSFoundations-Tests",
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Foundations/Tests"),
         .target(
             name: "TestsUtils",
             path: "OUDS/Foundations/TestsUtils"),
     ],
+    
     swiftLanguageVersions: [.v5]
 )
