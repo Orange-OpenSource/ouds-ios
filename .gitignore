@@ -28,7 +28,6 @@
 /DerivedData/
 
 # Produced by generateDoc.sh
-/docs/
 .build
 
 # Produced by Swift Package Manager
