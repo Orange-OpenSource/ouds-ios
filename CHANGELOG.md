@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Box shadow 0 has been defined and elevation drag changed
 - [Library] "Emphasis" words have been replaced by "emphasized"
 - [Library] "Box shadow" words have been removed in elevation semantic and raw tokens
+- [Library] Manage regular and compact layouts for sizing and spacing tokens 
 
 ### Fixed
 
