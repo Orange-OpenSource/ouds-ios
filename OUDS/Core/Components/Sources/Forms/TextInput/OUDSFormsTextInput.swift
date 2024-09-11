@@ -12,8 +12,8 @@
 //
 
 import Foundation
+import OUDS
 import SwiftUI
-import OUDS // To get @Environment(\.theme) var theme
 
 /// An OUDS component for text input in formulars.
 /// __Warning: This is a draft component__.
@@ -32,9 +32,9 @@ public struct OUDSFormsTextInput: View {
     /// value and propose a placeholder.
     ///
     /// - Parameters:
-    ///     - placeholder: Text in placeholder
-    ///     - value: Binding of the value
-    ///     - isEnabled: Flag to indicate if input is enabled.
+    ///    - placeholder: Text in placeholder
+    ///    - value: Binding of the value
+    ///    - isEnabled: Flag to indicate if input is enabled (_true_ by default)
     public init(placeholder: String, value: Binding<String>, isEnabled: Bool = true) {
         self.placeholder = placeholder
         self._value = value
