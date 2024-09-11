@@ -1,6 +1,6 @@
 # ``OUDSThemesSosh``
 
-The Sosh Theme overwride some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDS library.
+The Sosh Theme overrides some tokens from the basic `OUDSTheme` and should be seen as the theme with the Sosh brand, sued for Sosh apps.
 
 ## Overview
 
