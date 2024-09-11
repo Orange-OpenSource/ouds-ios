@@ -16,10 +16,12 @@ To keep the same semantics as the ones used in our specifications, _typealias_ a
 Example with ``ColorSemanticTokens``:
 
 ```swift
+// Delcare the semantic tokens
 protocol ColorSemanticTokens {
     var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { get }
 }
 
+// Define the semantic tokens exposed through the theme
 extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalWhite }
@@ -34,7 +36,6 @@ extension OUDSTheme: ColorSemanticTokens {
 - ``ColorSemanticTokens``
 - ``DimensionSemanticTokens``
 - ``ElevationSemanticTokens``
-- ``GridSemanticTokens``
 - ``GridSemanticTokens``
 - ``OpacitySemanticTokens``
 - ``SizingSemanticTokens``
