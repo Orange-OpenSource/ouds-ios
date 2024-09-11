@@ -134,26 +134,26 @@ extension OUDSTheme: ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Box shadow
 
-    @objc open var elevationRaisedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
-    @objc open var elevationRaisedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
+    @objc open var elevationRaisedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
+    @objc open var elevationRaisedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
 
-    @objc open var elevationDragLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_600 }
-    @objc open var elevationDragDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_600 }
+    @objc open var elevationDragLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_500 }
+    @objc open var elevationDragDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_500 }
 
-    @objc open var elevationOverlayDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_2_400 }
-    @objc open var elevationOverlayDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_2_400 }
+    @objc open var elevationOverlayDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_2_400 }
+    @objc open var elevationOverlayDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_2_400 }
 
-    @objc open var elevationOverlayEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
-    @objc open var elevationOverlayEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
+    @objc open var elevationOverlayEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_5_300 }
+    @objc open var elevationOverlayEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_5_300 }
 
-    @objc open var elevationStickyDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
-    @objc open var elevationStickyDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
+    @objc open var elevationStickyDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_300 }
+    @objc open var elevationStickyDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_300 }
 
-    @objc open var elevationStickyEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
-    @objc open var elevationStickyEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
+    @objc open var elevationStickyEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_300 }
+    @objc open var elevationStickyEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_300 }
 
-    @objc open var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
-    @objc open var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
+    @objc open var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
+    @objc open var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
 
     @objc open var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
     @objc open var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }

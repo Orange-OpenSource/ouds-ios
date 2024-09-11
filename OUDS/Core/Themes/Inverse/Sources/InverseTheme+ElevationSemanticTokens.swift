@@ -65,26 +65,26 @@ extension InverseTheme {
 
     // MARK: Semantic token - Elevation - Box shadow
 
-    public override var elevationRaisedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
-    public override var elevationRaisedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
+    public override var elevationRaisedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
+    public override var elevationRaisedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
 
-    public override var elevationDragLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_600 }
-    public override var elevationDragDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_600 }
+    public override var elevationDragLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_600 }
+    public override var elevationDragDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_600 }
 
-    public override var elevationOverlayDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_2_400 }
-    public override var elevationOverlayDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_2_400 }
+    public override var elevationOverlayDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_2_400 }
+    public override var elevationOverlayDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_2_400 }
 
-    public override var elevationOverlayEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
-    public override var elevationOverlayEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
+    public override var elevationOverlayEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_5_300 }
+    public override var elevationOverlayEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_5_300 }
 
-    public override var elevationStickyDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
-    public override var elevationStickyDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
+    public override var elevationStickyDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_300 }
+    public override var elevationStickyDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_300 }
 
-    public override var elevationStickyEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
-    public override var elevationStickyEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
+    public override var elevationStickyEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_300 }
+    public override var elevationStickyEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_300 }
 
-    public override var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
-    public override var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
+    public override var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
+    public override var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
 
     public override var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
     public override var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
