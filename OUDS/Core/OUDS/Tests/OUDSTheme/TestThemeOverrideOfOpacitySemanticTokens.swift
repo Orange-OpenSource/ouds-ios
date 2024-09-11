@@ -48,9 +48,9 @@ final class TestThemeOverrideOfOpacitySemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.opacityMedium == MockTheme.mockThemeOpacityRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenOpacityEmphasis() throws {
-        XCTAssertNotEqual(inheritedTheme.opacityEmphasis, abstractTheme.opacityEmphasis)
-        XCTAssertTrue(inheritedTheme.opacityEmphasis == MockTheme.mockThemeOpacityRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenOpacityEmphasized() throws {
+        XCTAssertNotEqual(inheritedTheme.opacityEmphasized, abstractTheme.opacityEmphasized)
+        XCTAssertTrue(inheritedTheme.opacityEmphasized == MockTheme.mockThemeOpacityRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenOpacityOpaque() throws {

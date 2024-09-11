@@ -52,9 +52,9 @@ extension MockTheme {
     override var elevationXRaised: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
     override var elevationXDrag: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
     override var elevationXOverlayDefault: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
-    override var elevationXOverlayEmphasis: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
+    override var elevationXOverlayEmphasized: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
     override var elevationXStickyDefault: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
-    override var elevationXStickyEmphasis: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
+    override var elevationXStickyEmphasized: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
     override var elevationXStickyNavigationScrolled: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
     override var elevationXFocus: ElevationZIndexSemanticToken { Self.mockThemeXRawToken }
 
@@ -64,9 +64,9 @@ extension MockTheme {
     override var elevationYRaised: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
     override var elevationYDrag: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
     override var elevationYOverlayDefault: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
-    override var elevationYOverlayEmphasis: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
+    override var elevationYOverlayEmphasized: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
     override var elevationYStickyDefault: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
-    override var elevationYStickyEmphasis: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
+    override var elevationYStickyEmphasized: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
     override var elevationYStickyNavigationScrolled: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
     override var elevationYFocus: ElevationZIndexSemanticToken { Self.mockThemeYRawToken }
 
@@ -76,9 +76,9 @@ extension MockTheme {
     override var elevationBlurRaised: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
     override var elevationBlurDrag: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
     override var elevationBlurOverlayDefault: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
-    override var elevationBlurOverlayEmphasis: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
+    override var elevationBlurOverlayEmphasized: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
     override var elevationBlurStickyDefault: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
-    override var elevationBlurStickyEmphasis: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
+    override var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
     override var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
     override var elevationBlurFocus: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
 
@@ -88,9 +88,9 @@ extension MockTheme {
     override var elevationSpreadRaised: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
     override var elevationSpreadDrag: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
     override var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadOverlayEmphasis: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
+    override var elevationSpreadOverlayEmphasized: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
     override var elevationSpreadStickyDefault: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadStickyEmphasis: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
+    override var elevationSpreadStickyEmphasized: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
     override var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
     override var elevationSpreadFocus: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
 
@@ -114,20 +114,20 @@ extension MockTheme {
     override var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
-    // MARK: Semantic token - Elevation - Color - Overlay - Emphasis
+    // MARK: Semantic token - Elevation - Color - Overlay - Emphasized
 
-    override var elevationColorOverlayEmphasisLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
-    override var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorOverlayEmphasizedLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorOverlayEmphasizedDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Default
 
     override var elevationColorStickyDefaultLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override var elevationColorStickyDefaultDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
-    // MARK: Semantic token - Elevation - Color - Sticky - Emphasis
+    // MARK: Semantic token - Elevation - Color - Sticky - Emphasized
 
-    override var elevationColorStickyEmphasisLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
-    override var elevationColorStickyEmphasisDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorStickyEmphasizedLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override var elevationColorStickyEmphasizedDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
@@ -150,14 +150,14 @@ extension MockTheme {
     override var elevationOverlayDefaultLight: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
     override var elevationOverlayDefaultDark: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
 
-    override var elevationOverlayEmphasisLight: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
-    override var elevationOverlayEmphasisDark: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
+    override var elevationOverlayEmphasizedLight: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
+    override var elevationOverlayEmphasizedDark: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
 
     override var elevationStickyDefaultLight: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
     override var elevationStickyDefaultDark: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
 
-    override var elevationStickyEmphasisLight: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
-    override var elevationStickyEmphasisDark: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
+    override var elevationStickyEmphasizedLight: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
+    override var elevationStickyEmphasizedDark: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
 
     override var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }
     override var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { Self.mockThemeCompositeRawToken }

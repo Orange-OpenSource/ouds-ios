@@ -38,20 +38,20 @@ extension InverseTheme {
     public override var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
     public override var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
 
-    // MARK: Semantic token - Elevation - Color - Overlay - Emphasis
+    // MARK: Semantic token - Elevation - Color - Overlay - Emphasized
 
-    public override var elevationColorOverlayEmphasisLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
-    public override var elevationColorOverlayEmphasisDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    public override var elevationColorOverlayEmphasizedLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    public override var elevationColorOverlayEmphasizedDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Default
 
     public override var elevationColorStickyDefaultLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
     public override var elevationColorStickyDefaultDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
 
-    // MARK: Semantic token - Elevation - Color - Sticky - Emphasis
+    // MARK: Semantic token - Elevation - Color - Sticky - Emphasized
 
-    public override var elevationColorStickyEmphasisLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
-    public override var elevationColorStickyEmphasisDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    public override var elevationColorStickyEmphasizedLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    public override var elevationColorStickyEmphasizedDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
@@ -74,14 +74,14 @@ extension InverseTheme {
     public override var elevationOverlayDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_2_400 }
     public override var elevationOverlayDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_2_400 }
 
-    public override var elevationOverlayEmphasisLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
-    public override var elevationOverlayEmphasisDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
+    public override var elevationOverlayEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
+    public override var elevationOverlayEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_5_300 }
 
     public override var elevationStickyDefaultLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
     public override var elevationStickyDefaultDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
 
-    public override var elevationStickyEmphasisLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
-    public override var elevationStickyEmphasisDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
+    public override var elevationStickyEmphasizedLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
+    public override var elevationStickyEmphasizedDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_3_300 }
 
     public override var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }
     public override var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationCompositeBottom_1_500 }

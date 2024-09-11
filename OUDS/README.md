@@ -88,7 +88,7 @@ extension OUDSTheme: FormsTextInputComponentToken {
     @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
     @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultBlack }
     
-    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasisLight ?? Self.defaultBlack }
+    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedLight ?? Self.defaultBlack }
     @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
     @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
 }
@@ -247,7 +247,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentToken, used in compo
     public override var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight }
     public override var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark }
 
-    public override var ftiBorderColor: ColorSemanticToken { colorBorderEmphasisDark ?? MyThemeColorRawTokens.someAwesomeThemeExclusiveColor }
+    public override var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedDark ?? MyThemeColorRawTokens.someAwesomeThemeExclusiveColor }
 
     public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 
