@@ -2,7 +2,7 @@
   
 _Components_ are defined in the _OUDSComponents_ target and can be integrated in applications.
 
-More details coming soon.
+**More details coming soon.**
 
 ## How to use components
 
