@@ -31,7 +31,7 @@ struct GuidelinesPage: View {
             NavigationView {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
 
-                    OUDSFormsTextInput(placeholder: "Placeholder defined in app",
+                    OUDSFormsTextInput(placeholder: "Display large",
                                        value: $writtenText)
 
                     Button("Try OUDS Orange Theme") {

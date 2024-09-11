@@ -23,7 +23,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func displayLarge(_ theme: OUDSTheme) -> some View {
+    public func typeDisplayLarge(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeDisplayLarge))
     }
 
@@ -31,7 +31,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func displayMedium(_ theme: OUDSTheme) -> some View {
+    public func typeDisplayMedium(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeDisplayMedium))
     }
 
@@ -39,7 +39,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func displaySmall(_ theme: OUDSTheme) -> some View {
+    public func typeDisplaySmall(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeDisplaySmall))
     }
 
@@ -47,7 +47,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func headingXLarge(_ theme: OUDSTheme) -> some View {
+    public func typeHeadingXLarge(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeHeadingXLarge))
     }
 
@@ -55,7 +55,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func headingLarge(_ theme: OUDSTheme) -> some View {
+    public func typeHeadingLarge(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeHeadingLarge))
     }
 
@@ -63,7 +63,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func headingMedium(_ theme: OUDSTheme) -> some View {
+    public func typeHeadingMedium(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeHeadingMedium))
     }
 
@@ -71,7 +71,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func headingSmall(_ theme: OUDSTheme) -> some View {
+    public func typeHeadingSmall(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeHeadingSmall))
     }
 
@@ -79,7 +79,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyDefaultLarge(_ theme: OUDSTheme) -> some View {
+    public func typeBodyDefaultLarge(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeBodyDefaultLarge))
     }
 
@@ -87,7 +87,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyDefaultMedium(_ theme: OUDSTheme) -> some View {
+    public func typeBodyDefaultMedium(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeBodyDefaultMedium))
     }
 
@@ -95,7 +95,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyDefaultSmall(_ theme: OUDSTheme) -> some View {
+    public func typeBodyDefaultSmall(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeBodyDefaultSmall))
     }
 
@@ -103,7 +103,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyStrongLarge(_ theme: OUDSTheme) -> some View {
+    public func typeBodyStrongLarge(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeBodyStrongLarge))
     }
 
@@ -111,7 +111,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyStrongMedium(_ theme: OUDSTheme) -> some View {
+    public func typeBodyStrongMedium(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeBodyStrongMedium))
     }
 
@@ -119,7 +119,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyStrongSmall(_ theme: OUDSTheme) -> some View {
+    public func typeBodyStrongSmall(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeBodyStrongSmall))
     }
 
@@ -127,7 +127,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelDefaultXLarge(_ theme: OUDSTheme) -> some View {
+    public func typeLabelDefaultXLarge(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeLabelDefaultXLarge))
     }
 
@@ -135,7 +135,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelDefaultLarge(_ theme: OUDSTheme) -> some View {
+    public func typeLabelDefaultLarge(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeBodyDefaultLarge))
     }
 
@@ -143,7 +143,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelDefaultMedium(_ theme: OUDSTheme) -> some View {
+    public func typeLabelDefaultMedium(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeBodyDefaultMedium))
     }
 
@@ -151,7 +151,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelDefaultSmall(_ theme: OUDSTheme) -> some View {
+    public func typeLabelDefaultSmall(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeBodyDefaultSmall))
     }
 
@@ -159,7 +159,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelStrongXLarge(_ theme: OUDSTheme) -> some View {
+    public func typeLabelStrongXLarge(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeLabelStrongXLarge))
     }
 
@@ -167,7 +167,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelStrongLarge(_ theme: OUDSTheme) -> some View {
+    public func typeLabelStrongLarge(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeLabelStrongLarge))
     }
 
@@ -175,7 +175,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelStrongMedium(_ theme: OUDSTheme) -> some View {
+    public func typeLabelStrongMedium(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeLabelStrongMedium))
     }
 
@@ -183,7 +183,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelStrongSmall(_ theme: OUDSTheme) -> some View {
+    public func typeLabelStrongSmall(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeLabelStrongSmall))
     }
 
@@ -191,7 +191,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelCodeMedium(_ theme: OUDSTheme) -> some View {
+    public func typeLabelCodeMedium(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeCodeMedium))
     }
 
@@ -199,7 +199,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func bodyLabelCodeSmall(_ theme: OUDSTheme) -> some View {
+    public func typeLabelCodeSmall(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeCodeSmall))
     }
 }
