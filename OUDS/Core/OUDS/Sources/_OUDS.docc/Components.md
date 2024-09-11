@@ -1,8 +1,8 @@
 # Components
   
-_Components_ are defined here and can be integrated in applications.
+_Components_ are defined in the _OUDSComponents_ target and can be integrated in applications.
 
-Comming soon.
+More details coming soon.
 
 ## How to use components
 
@@ -29,5 +29,3 @@ Of course you must use in your root view the <doc:/OUDS/OUDSThemeableView> with 
         
     }
 ``` 
-
-
