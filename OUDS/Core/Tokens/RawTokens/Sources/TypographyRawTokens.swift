@@ -37,7 +37,7 @@ public typealias TypographyFontParagraphSpacingRawToken = Int
 
 /// Composite raw tokens are here to pack a set of specific values according to the global design system tool.
 /// Here a *typography* is finaly defined by some specific values.
-public struct TypographyCompositeRawToken {
+public struct TypographyCompositeRawToken: Equatable {
 
     // Font family is not included here because this is the only thing which can vary
     

@@ -44,6 +44,11 @@ public final class TypographyCompositeSemanticToken: NSObject {
         self.compact = compact
         self.regular = regular
     }
+
+    public override func isEqual(_ object: Any?) -> Bool {
+        guard let object = object as? TypographyCompositeSemanticToken else { return false }
+        return self.compact == object.compact && self.regular == object.regular
+    }
 }
 
 // MARK: - Semantic tokens
