@@ -7,9 +7,10 @@ These _tokens_ can be used to apply some style and configuration values to _comp
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ to get their style values.
 
-Example with `FormsTextInputComponentToken`:
+Example with a fake component named `FormsTextInputComponent` using component tokens in `FormsTextInputComponentToken`:
 
 ```swift
+// Declare component tokens
 public protocol FormsTextInputComponentToken {
     var ftiTitleFontWeight: TypographyFontWeightSemanticToken { get }
     var ftiTitleFontSize: TypographyFontSizeSemanticToken { get }
@@ -20,6 +21,7 @@ public protocol FormsTextInputComponentToken {
     var ftiBorderWidth: BorderWidthSemanticToken { get }
 }
 
+// Define the component tokens
 extension OUDSTheme: FormsTextInputComponentToken {
     private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
     private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
@@ -33,8 +35,9 @@ extension OUDSTheme: FormsTextInputComponentToken {
     @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
 }
 
-```
+// In the implementation of the component, the theme will be retrieved to get these component tokens
 
+```
 
 ## Topics
 
