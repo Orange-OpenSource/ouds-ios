@@ -22,7 +22,8 @@ let package = Package(
     
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15), .macOS(.v11)],
+    platforms: [.iOS(.v15),
+        .macOS(.v11)], // macOS v11 required for swift-docc-plugin, not official support of OUDS for macOS!
     
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
@@ -57,10 +58,12 @@ let package = Package(
             name: "OUDSFoundations",
             targets: ["OUDSFoundations"]),
     ],
+    
     dependencies: [
-        // other dependencies
+        // To build DocC documentation
         .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
+    
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [

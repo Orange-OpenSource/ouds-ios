@@ -60,6 +60,13 @@ You may download the source code on the [following website](https://github.com/x
 
 ### Other tools
 
+#### swift-docc-plugin
+
+Copyright (c) 2022 Apple Inc. and the Swift project authors
+
+*swift-docc-plugin* is distributed under the terms and conditions of the [Apache 2.0 License with Runtime Library Exception](https://github.com/swiftlang/swift-docc-plugin/blob/main/LICENSE.txt).
+You may download the source code on the [following website](https://github.com/swiftlang/swift-docc-plugin).
+
 #### Gitleaks
 
 Copyright (c) 2019 Zachary Rice
