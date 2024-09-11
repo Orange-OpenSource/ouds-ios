@@ -20,7 +20,7 @@ import OUDSFoundations
 final class TestString_SwiftUI: XCTestCase {
 
     /// Tests values of font weight
-    func testFontWeightValues() throws {
+    func testFontWeightValues() {
 
         // Expected values
         XCTAssertTrue("thin".fontWeight == Font.Weight.thin)
@@ -36,5 +36,45 @@ final class TestString_SwiftUI: XCTestCase {
         XCTAssertTrue("".fontWeight == Font.Weight.regular)
         XCTAssertTrue("42".fontWeight == Font.Weight.regular)
         XCTAssertTrue("Yowzah!".fontWeight == Font.Weight.regular)
+    }
+
+    /// Tests the font family values created using a font amily name and a weight
+    func testComposeWithFonts() {
+
+        var result: String
+
+        // Expected values
+
+        result = "Menlo".compose(withFont: "thin")
+        XCTAssertTrue(result == "Menlo-Thin", "Current value is '\(result)")
+
+        result = "Menlo".compose(withFont: "ultraLight")
+        XCTAssertTrue(result == "Menlo-UltraLight", "Current value is '\(result)")
+
+        result = "Menlo".compose(withFont: "light")
+        XCTAssertTrue(result == "Menlo-Light", "Current value is '\(result)")
+
+        result = "Menlo".compose(withFont: "regular")
+        XCTAssertTrue(result == "Menlo-Regular", "Current value is '\(result)")
+
+        result = "Menlo".compose(withFont: "medium")
+        XCTAssertTrue(result == "Menlo-Medium", "Current value is '\(result)")
+
+        result = "Menlo".compose(withFont: "semibold")
+        XCTAssertTrue(result == "Menlo-Semibold", "Current value is '\(result)")
+
+        result = "Menlo".compose(withFont: "bold")
+        XCTAssertTrue(result == "Menlo-Bold", "Current value is '\(result)")
+
+        result = "Menlo".compose(withFont: "heavy")
+        XCTAssertTrue(result == "Menlo-Heavy", "Current value is '\(result)")
+
+        // Edge cases
+
+        result = "Menlo".compose(withFont: "")
+        XCTAssertTrue(result == "Menlo", "Current value is '\(result)")
+
+        result = "".compose(withFont: "Yippee ki-yay")
+        XCTAssertTrue(result == "", "Current value is '\(result)")
     }
 }

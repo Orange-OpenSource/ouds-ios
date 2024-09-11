@@ -26,7 +26,7 @@ public typealias TypographyFontWeightRawToken = String
 public typealias TypographyFontSizeRawToken = CGFloat
 
 /// In the global design system tool, *font line height* raw tokens are basically `Int` values
-public typealias TypographyFontLineHeightRawToken = Int
+public typealias TypographyFontLineHeightRawToken = CGFloat
 
 /// In the global design system tool, *paragraph spacing* raw tokens are basically `Int` values
 public typealias TypographyFontParagraphSpacingRawToken = Int
