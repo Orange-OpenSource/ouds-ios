@@ -7,11 +7,11 @@ It contains modules, components, themes, and tokens (of components,s emantic and
 
 ## Exposed SPM modules
 
-This _Swift package_ exposes up to #0 _products_ as _libraries_:
+This _Swift package_ exposes up to 10 _products_ as _libraries_:
 1. `OUDSModules` containing OUDS modules with features ;
 2. `OUDSComponents` containing all components embeded also inside _modules_ ;
 3. `OUDSThemesSoshTheme` providing the default _Sosh_ theme defining style for _components_;
-4. `OUDSThemesInverseTheme` providing a _theme_ with inversed colors for _components_;
+4. `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_;
 5. `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_;
 6. `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
 7. `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_ ;
