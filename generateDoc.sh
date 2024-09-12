@@ -60,7 +60,7 @@ EXIT_NOT_GIT_REPO=2
 EXIT_BAD_PARAMETER=3
 
 on_error_signal() {
-    echo "🍊❌  An error occurred. Exits. ($EXIT_ERROR_SIG)"
+    echo "🍊❌  An error occurred with command '$BASH_COMMAND'. Exits. ($EXIT_ERROR_SIG)"
     if [[ $use_git -eq 1 ]]; then
         clean_repo
     fi
@@ -294,14 +294,14 @@ fi
 
 if [[ $no_zip -eq 0 ]]; then
     echo2 "👉 Zipping documentation folder"
-    zip -r "$DOCUMENTATION_ZIP_LOCATION"  "$DOCS_DIRECTORY"
+    zip -r "$DOCUMENTATION_ZIP_LOCATION" "$DOCS_DIRECTORY"/*
     echo2 "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION"
 fi
 
 if [[ $keep_generated -eq 0 ]]; then
     if [[ -d "$DOCS_DIRECTORY" ]]; then
-        echo2 "🧹 Deleting docs directory (don't worry, a ZIP should exist and pages have been pushed)"
-        yes | rm -rf "$DOCS_DIRECTORY"
+        echo2 "🧹 Deleting docs directory"
+        rm -rf "$DOCS_DIRECTORY"
     fi
 else
     echo2 "🎉 Documentation also available in $DOCS_DIRECTORY"
