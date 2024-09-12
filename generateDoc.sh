@@ -239,8 +239,8 @@ _ "👍 index.html updated!"
 
 files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
 
-# Step 4 - Checkout to GitHub Pages dedicated branch (if relevant)
-# ---------------------------------------------------------------
+# Step 4a - Checkout to service pages dedicated branch (if relevant)
+# ------------------------------------------------------------------
 
 if [[ $use_git -eq 1 ]]; then
     _ "👉 Versioning documentation in service pages branch (it can take a lot of time)..."
@@ -277,27 +277,30 @@ if [[ $use_git -eq 1 ]]; then
     _ "🔨 Cleaning stashes"
     git stash clear
 
-    commit_hash=`git rev-parse HEAD`
-
-    _ "🔨 Going back to previous Git branch"
-    git checkout "$current_branch"
-
 else
     _ "👍 Ok, just keep documentation here"
 fi
 
-# Step 5 - Metrics and conclusion
-# -------------------------------
+# Step 5 - Compress ZIP (if relevant)
+# -----------------------------------
 
-if [[ $use_git -eq 1 ]]; then
-    _ "👍 Pushed with commit '$commit_hash'"
-fi
-
+# ZIP action must be done before reset the Git workspace
 if [[ $no_zip -eq 0 ]]; then
     _ "👉 Zipping documentation folder"
     zip -r "$DOCUMENTATION_ZIP_LOCATION" "$DOCS_DIRECTORY"/*
     size_in_byte=`du "$DOCUMENTATION_ZIP_LOCATION" | cut -f1`
     _ "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION ($size_in_byte bytes)"
+fi
+
+# Step 4b - Resume work on Git branch (if relevant)
+# -------------------------------------------------
+
+if [[ $use_git -eq 1 ]]; then
+    commit_hash=`git rev-parse HEAD`
+
+    _ "🔨 Going back to previous Git branch"
+    git checkout "$current_branch"
+    _ "👍 Pushed with commit '$commit_hash'"
 fi
 
 if [[ $keep_generated -eq 0 ]]; then
@@ -310,6 +313,9 @@ else
     _ "🧮 There are '$files_count' in $DOCS_DIRECTORY!"
 fi
 
+# Step 6 - Metrics and conclusion
+# -------------------------------
+
 end_time=$(date +%s)
 elapsed_time=$(( end_time - start_time ))
 elapsed_time_minutes=$(( elapsed_time / 60 ))
@@ -319,3 +325,7 @@ _ "⌛ Elapsed time: ${elapsed_time_minutes} minutes and ${elapsed_time_seconds}
 _ "👋 Bye!"
 
 exit $EXIT_OK
+
+# In case of performances issues due to the large amount of file, run:
+# git clean -fd ; git reset --hard ; rm -rf .build
+# Or use git prune, or reclone repository
