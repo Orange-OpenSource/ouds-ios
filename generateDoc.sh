@@ -60,7 +60,7 @@ EXIT_NOT_GIT_REPO=2
 EXIT_BAD_PARAMETER=3
 
 on_error_signal() {
-    echo "🍊❌  An error occurred with command '$BASH_COMMAND'. Exits. ($EXIT_ERROR_SIG)"
+    echo2 "❌  An error occurred with command '$BASH_COMMAND'. Exits. ($EXIT_ERROR_SIG)"
     if [[ $use_git -eq 1 ]]; then
         clean_repo
     fi
@@ -273,7 +273,7 @@ if [[ $use_git -eq 1 ]]; then
     echo2 "🔨 Pushing things"
     git push origin
 
-    echo "🔨 Cleaning stashes"
+    echo2 "🔨 Cleaning stashes"
     git stash clear
 
     commit_hash=`git rev-parse HEAD`
