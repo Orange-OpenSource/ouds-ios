@@ -15,6 +15,7 @@ import Foundation
 
 // MARK: - Type aliases to keep grammar clear
 
+/// In the global design system tool, the notion of "raw tokens of grids" exist but refers always to dimension raw tokens.
 public typealias GridRawToken = DimensionRawToken
 
 // MARK: - Raw tokens

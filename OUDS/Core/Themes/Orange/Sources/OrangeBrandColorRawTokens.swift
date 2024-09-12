@@ -15,7 +15,10 @@ import Foundation
 import SwiftUI
 import OUDSTokensRaw
 
+/// In the global design system tool, the verbs of "brand colors" are used, and at this level mean simply raw tokens of colors.
 public typealias ColorOrangeBrandRawToken = ColorRawToken
+
+/// In the global design system tool, the verbs of "decorative colors" are used, and at this level mean simply raw tokens of colors, but decorative ones
 public typealias ColorOrangeDecorativeRawToken = ColorRawToken
 
 /// This extension helps to add new raw tokens for this theme.

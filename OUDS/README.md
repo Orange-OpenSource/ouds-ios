@@ -34,8 +34,9 @@ A _theme_ contains any relevant _semantic tokens_ and _component tokens_ which c
 A _theme_ has also _raw tokens_ associated to primitive types so as to give to _components_, written with _SwiftUI_, the needed values in the suitable type. A _theme_ can add for itself any new _tokens_.
 
 This library exposes today up to two themes:
-1. `OrangeTheme` which can be seen as the default _theme_
-2.  `SoshTheme` for Sosh.
+1. `OrangeTheme` which can be seen as the default _theme_ ;
+2. `SoshTheme` for Sosh ;
+2. `InverseTheme` for other use cases.
 
 They both are based on an `OUDSTheme` defining default values.
 
@@ -92,6 +93,35 @@ extension OUDSTheme: FormsTextInputComponentToken {
     @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
 }
 
+// The View
+
+struct OUDSFormsTextInput: View {
+
+    // ...
+    @Environment(\.theme) var theme
+
+    public var body: some View {
+        VStack(spacing: theme.spacePaddingBlockComponentTall) {
+            Label(
+                title: {
+                    Text("Example of OUDSFormsTextInput")
+                        .fontWeight(theme.ftiTitleFontWeight.fontWeight)
+                        .font(.system(size: theme.ftiTitleFontSize))
+                        .foregroundColor(theme.ftiTitleColor.color)
+                },
+                icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
+            )
+            Text("Write bellow some awesome text!")
+                .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
+                .font(.system(size: theme.ftiSubtitleFontSize))
+                .foregroundColor(theme.ftiSubtitleColor.color)
+            TextField(placeholder, text: $value)
+        }
+        .padding(theme.spacePaddingBlockComponentTall)
+        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
+        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
+    }
+}
 ```
 
 #### Semantic tokens

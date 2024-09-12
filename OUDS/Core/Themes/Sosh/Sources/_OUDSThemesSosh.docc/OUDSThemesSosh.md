@@ -1,6 +1,6 @@
 # ``OUDSThemesSosh``
 
-The Sosh Theme overrides some tokens from the basic `OUDSTheme` and should be seen as the theme with the Sosh brand, sued for Sosh apps.
+The Sosh theme overrides some tokens from the basic `OUDSTheme` and should be seen as the theme with the Sosh brand, used for Sosh apps.
 
 ## Overview
 

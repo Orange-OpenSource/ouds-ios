@@ -15,6 +15,7 @@ import Foundation
 import OUDS
 
 /// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
+/// This is the implementation of the Sosh brand.
 open class SoshTheme: OUDSTheme {
 
     // For clarity reasons, please override OUDSTheme properties in extensions

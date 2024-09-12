@@ -1,8 +1,8 @@
 # Components
   
-_Components_ are defined in the _OUDSComponents_ target and can be integrated in applications.
+_Components_ are defined in the [OUDSComponents](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/) target and can be integrated in applications.
 
-**More details coming soon.**
+❗**More details coming soon.**❗
 
 ## How to use components
 

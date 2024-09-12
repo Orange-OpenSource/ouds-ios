@@ -15,6 +15,7 @@ import Foundation
 
 // MARK: - Type aliases to keep grammar clear
 
+/// Raw tokens of dimensions are finaly `Double`
 public typealias DimensionRawToken = Double
 
 // MARK: - Raw tokens

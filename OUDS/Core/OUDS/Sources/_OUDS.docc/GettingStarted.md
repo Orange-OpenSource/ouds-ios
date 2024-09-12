@@ -1,8 +1,8 @@
 # Getting Started with OUDS
 
-Howto: Add the package as dependancy, and import libraries
+How to add the package as dependency, and import libraries
 
-**More details coming soon.**
+❗**More details coming soon.**❗
 
 ## Integrate OUDS
 
@@ -14,7 +14,7 @@ You are free to choose wether or not you want a branch or a specific tag, pick t
 
 ### Import the library you need
 
-You should use one (or several) of the following imports for your needs:
+You should use one (or several) of the following imports for your needs, which are basically _Swift Package_ products.
 
 ```swift
 import OUDS                  // If you want to define your theme or use OUDSThemeableView

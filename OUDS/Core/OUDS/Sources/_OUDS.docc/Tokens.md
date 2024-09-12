@@ -1,6 +1,6 @@
 # Tokens
 
-Design tokens represent the small, repeated design decisions that make up a design system's visual style. Tokens replace static values, such as hex codes for color, with self-explanatory names.
+Design tokens represent the small, repeated design decisions that make up a design system's visual style. Tokens replace hard-coded static values, such as hexadecimal codes for color, with self-explanatory names.
 
 About responsabilities:
 ```mermaid
@@ -18,10 +18,13 @@ flowchart TD
     C --> D(InformationModalView)
 ```
 
+*You can have the graphical rendering of this _Mermaid_ charts in the [README markdown](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/OUDS/README.md).*
+*Frustrated? Boost [the issue we submitted](https://github.com/swiftlang/swift-docc/issues/1026)*
+
 ## Component tokens
 
-These _tokens_ (``/OUDSTokensComponent``) can be used to apply some style and configuration values to _components_.
-Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
+These _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) can be used to apply some style and configuration values to _components_.
+Thus if a component needs to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ to get their style values.
 
 Example with a fake component `FormsTextInputComponentToken`:
@@ -52,13 +55,42 @@ extension OUDSTheme: FormsTextInputComponentToken {
     @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
 }
 
-// Then in the definition of the component FormsTextInputComponent, the theme will be called and the component tokens
+// Then in the definition of the component FormsTextInput component, the theme will be called and the component tokens
 // stored inside will be applied
+// The View
+
+struct OUDSFormsTextInput: View {
+
+    // ...
+    @Environment(\.theme) var theme
+
+    public var body: some View {
+        VStack(spacing: theme.spacePaddingBlockComponentTall) {
+            Label(
+                title: {
+                    Text("Example of OUDSFormsTextInput")
+                        .fontWeight(theme.ftiTitleFontWeight.fontWeight)
+                        .font(.system(size: theme.ftiTitleFontSize))
+                        .foregroundColor(theme.ftiTitleColor.color)
+                },
+                icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
+            )
+            Text("Write bellow some awesome text!")
+                .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
+                .font(.system(size: theme.ftiSubtitleFontSize))
+                .foregroundColor(theme.ftiSubtitleColor.color)
+            TextField(placeholder, text: $value)
+        }
+        .padding(theme.spacePaddingBlockComponentTall)
+        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
+        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
+    }
+}
 ```
 
 ## Semantic tokens
 
-These _tokens_ (``OUDSTokensSemantic``) can be used mainly for _component tokens_ to apply some style and configuration values.
+These _tokens_ ([OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/)) can be used mainly for _component tokens_ to apply some style and configuration values.
 They can be seen as an high level of usage with functional meanings.
 Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
 
@@ -68,7 +100,7 @@ That is the reason why tokens are exposed as `@objc open` to be available and ov
 
 To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are avaialble for those who want too make their own theme. It's only syntaxic sugar to bring _design words_ in our product.
 
-Example with ``/OUDSTokensComponent/ColorSemanticTokens``:
+Example with [OUDSTokensComponent/ColorSemanticTokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens):
 
 ```swift
 // Declare a semantic token for color
@@ -87,7 +119,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
 ## Raw tokens
 
-_Raw tokens_ (<doc://OUDSTokensRaw>) are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
+_Raw tokens_ ([OUDSTokensRaw](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/)) are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
 
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than *structs* or *classes*.
 
@@ -97,7 +129,7 @@ To keep the same semantics as the ones used in our specifications, _typealias_ a
 
 Using more simple and primitive types will help also to test the library. With also type aliases we force users to use our types and not higher level types like _SwiftUI_ types.
 
-Example for `ColorRawTokens`:
+Example for [ColorRawTokens](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/colorrawtokens):
 
 ```swift
 // Define type alias for color raw tokens, we don't care in higher level their real type, just use aliases

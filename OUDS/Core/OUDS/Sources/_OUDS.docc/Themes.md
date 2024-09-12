@@ -4,10 +4,10 @@ _Themes_ are applications of specific values for _components tokens_ and _semant
 A _theme_ contains any relevant _semantic tokens_ and _component tokens_ which can be used for components rendering.
 A _theme_ has also _raw tokens_ associated to primitive types so as to give to _components_, written with _SwiftUI_, the needed values in the suitable type. A _theme_ can add for itself any new _tokens_.
 
-This library exposes today up to two themes:
-1. <doc://OUDSThemesOrange/OrangeTheme> which can be seen as the default _theme_
-2. <doc://OUDSThemesSosh/SoshTheme> for *Sosh*.
-
+This library exposes today up to three themes:
+1. [Orange Theme](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/) which can be seen as the default _theme_ ;
+2. [Sosh Theme](https://ios.unified-design-system.orange.com/documentation/oudsthemessosh/) for *Sosh* ;
+3. [Inverse Theme](https://ios.unified-design-system.orange.com/documentation/oudsthemesinverse/) for other use cases.
 They both are based on an `OUDSTheme` defining default values.
 
 _Themes_ can be defined thanks to `open class` in Swift. It allows inheritance and derivation.

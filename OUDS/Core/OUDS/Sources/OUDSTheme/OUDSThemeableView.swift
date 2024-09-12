@@ -36,8 +36,8 @@ extension EnvironmentValues {
 // MARK: - Themeable View
 
 /// This is a kind of root `SwiftUI.View` to add at the top level of your views tree so as to define
-/// as an environement varable the theme which will be applied.
-/// Any theme to apply must be a child of `OUDSTheme`
+/// as an environement variable the theme which will be applied.
+/// Any theme to apply must be a child of `OUDSTheme`, direct or not.
 public struct OUDSThemeableView<Content>: View where Content: View {
 
     private let theme: OUDSTheme

@@ -36,7 +36,35 @@ extension OUDSTheme: FormsTextInputComponentToken {
 }
 
 // In the implementation of the component, the theme will be retrieved to get these component tokens
+// The View
 
+struct OUDSFormsTextInput: View {
+
+    // ...
+    @Environment(\.theme) var theme
+
+    public var body: some View {
+        VStack(spacing: theme.spacePaddingBlockComponentTall) {
+            Label(
+                title: {
+                    Text("Example of OUDSFormsTextInput")
+                        .fontWeight(theme.ftiTitleFontWeight.fontWeight)
+                        .font(.system(size: theme.ftiTitleFontSize))
+                        .foregroundColor(theme.ftiTitleColor.color)
+                },
+                icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
+            )
+            Text("Write bellow some awesome text!")
+                .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
+                .font(.system(size: theme.ftiSubtitleFontSize))
+                .foregroundColor(theme.ftiSubtitleColor.color)
+            TextField(placeholder, text: $value)
+        }
+        .padding(theme.spacePaddingBlockComponentTall)
+        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
+        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
+    }
+}
 ```
 
 ## Topics

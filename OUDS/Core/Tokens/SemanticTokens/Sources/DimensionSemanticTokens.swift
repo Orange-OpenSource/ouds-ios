@@ -16,6 +16,7 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
+/// Basically a semantic token for dimensions is a raw token for dimensions
 public typealias DimensionSemanticToken = DimensionRawToken
 
 // MARK: - Semantic tokens

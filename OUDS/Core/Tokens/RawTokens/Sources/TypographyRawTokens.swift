@@ -16,23 +16,39 @@ import SwiftUI
 
 // MARK: - Type aliases to keep grammar clear
 
+/// In the global design system tool, *font family* raw tokens are basically `String` values
 public typealias TypographyFontFamilyRawToken = String
+
+/// In the global design system tool, *font weight* raw tokens are basically `String` values
 public typealias TypographyFontWeightRawToken = String
+
+/// In the global design system tool, *font size* raw tokens are basically `CGFloat` values
 public typealias TypographyFontSizeRawToken = CGFloat
+
+/// In the global design system tool, *font line height* raw tokens are basically `Int` values
 public typealias TypographyFontLineHeightRawToken = Int
+
+/// In the global design system tool, *paragraph spacing* raw tokens are basically `Int` values
 public typealias TypographyFontParagraphSpacingRawToken = Int
 
 // MARK: Primitive tokens
 
 // MARK: - Composite raw token
 
+/// Composite raw tokens are here to pack a set of specific values according to the global design system tool.
+/// Here a *typography* is finaly defined by some specific values.
 public struct TypographyCompositeRawToken {
 
+    /// The font family to apply for this typography
     public let family: TypographyFontFamilyRawToken
+    /// The font size to apply for the texts
     public let size: TypographyFontSizeRawToken
+    /// The line height to apply on texts
     public let lineHeight: TypographyFontLineHeightRawToken
+    /// The font weight to associated wit the font family
     public let weight: TypographyFontWeightRawToken
     // TODO: How to deal "letter spacing"?
+    /// The paragraph spacing to apply on texts
     public let paragraphSpacing: TypographyFontParagraphSpacingRawToken
 }
 

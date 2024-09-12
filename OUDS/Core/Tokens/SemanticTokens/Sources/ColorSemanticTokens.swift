@@ -17,13 +17,16 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
-public typealias ColorSemanticToken = String // ColorFunctionalRawToken and ColorFunctionalRawToken
-public typealias ColorAliasSemanticToken = String
+/// Basically a semantic color token, which can be either a functional or a decorative token, is a `String`
+public typealias ColorSemanticToken = ColorRawToken
+
+/// The global design system tool defines aliases of semantic colors token as semantic color tokens
+public typealias ColorAliasSemanticToken = ColorSemanticToken
 
 // MARK: - Semantic tokens
 
 /// This is a group of semantic tokens for **colors**.
-/// It defines all `ColorSemanticToken` a theme must have.
+/// It defines all `ColorSemanticToken` and `ColorAliasSemanticToken` a theme must have.
 public protocol ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Alias - Primary

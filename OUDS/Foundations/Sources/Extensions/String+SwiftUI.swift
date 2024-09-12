@@ -16,12 +16,12 @@ import SwiftUI
 
 extension String {
 
-    /// `String` extension to get a `Color` from the hexadecimal string representation.
+    /// `String` extension to get a `Color` from `self` supposed to be an hexadecimal string representation.
     public var color: Color! {
         Color(hexadecimalCode: self)
     }
 
-    /// `String` extension to get `Font.Weight` from its string representation.
+    /// `String` extension to get `Font.Weight` of *SwiftUI* from its string representation.
     public var fontWeight: Font.Weight {
         if self == "thin" { return Font.Weight.thin }
         if self == "ultraLight" { return Font.Weight.ultraLight }

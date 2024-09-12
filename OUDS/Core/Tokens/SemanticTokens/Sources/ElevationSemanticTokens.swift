@@ -16,12 +16,25 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
+/// Basically an elevation semantic token for Z Index is a raw token for elevation, with the same final type
 public typealias ElevationZIndexSemanticToken = ElevationRawToken
+
+/// Basically an elevation semantic token for X offset is a raw token for elevation, with the same final type
 public typealias ElevationXSemanticToken = ElevationRawToken
+
+/// Basically an elevation semantic token for Y Index is a raw token for elevation, with the same final type
 public typealias ElevationYSemanticToken = ElevationRawToken
+
+/// Basically an elevation semantic token for blur effect is a raw token for elevation, with the same final type
 public typealias ElevationBlurSemanticToken = ElevationRawToken
+
+/// Basically an elevation semantic token for spread effect is a raw token for elevation, with the same final type
 public typealias ElevationSpreadSemanticToken = ElevationRawToken
+
+/// Basically an elevation semantic token for shadow colors is a raw token for colors
 public typealias ElevationColorSemanticToken = ColorRawToken
+
+/// Basically an elevation semantic token for bow shadow is a raw token for bow shadow, with the same final type
 public typealias ElevationBoxShadowSemanticToken = ElevationBoxShadowRawToken
 
 // MARK: - Semantic tokens
