@@ -52,9 +52,9 @@ DOCS_DIRECTORY="./docs"
 
 # The generated name of the ZIP containing the generated sources of documentation (for archive)
 timestamp=$(date +%s)
-DOCUMENTATION_ZIP_NAME="documentation-$timestamp.zip"
+DOCUMENTATION_ZIP_NAME="ouds-docs-$timestamp.zip"
 DOCUMENTATION_ZIP_LOCATION="/tmp/$DOCUMENTATION_ZIP_NAME"
-DOCUMENTATION_HTML_LOCATION="/tmp/docs-$timestamp"
+DOCUMENTATION_HTML_LOCATION="/tmp/ouds-docs-$timestamp"
 
 # Errors management
 # -----------------
@@ -171,7 +171,7 @@ if [[ $use_git -eq 1 ]]; then
     if [ -d ".git" ]; then
 
         # Xcode keeps files and dislikes updates of local branches...
-        _ "🚨 You should close Xcode or anyt software working on this workspace, before going further, just in case of..."
+        _ "🚨 You should close Xcode or any software working on this workspace, before going further, just in case of..."
         _ "Press any key to continue..."
         read -n 1 -s # Don't care of the input, just want the user be ready in the end
     
