@@ -19,6 +19,7 @@ set -euo pipefail
 # -------------
 
 # The Swift Package targets to build documentation of
+# Of course if your project is not compliant with Swift Package and DocC don't use this tool
 TARGETS="OUDS \
         OUDSThemesSosh \
         OUDSThemesInverse \
@@ -30,10 +31,10 @@ TARGETS="OUDS \
         OUDSModules \
         OUDSFoundations"
 
-# Services pages (like GitHub Pages) custom subdomain for the CNAME, don't forget to verify it in organization side!
+# Services pages (like GitHub Pages) custom subdomain for the CNAME, don't forget to verify it in organization side for security reasons!
 SERVICE_PAGES_DOMAIN="ios.unified-design-system.orange.com"
 
-# Some HTML fragments to ad in the HTML global page index.html
+# Some HTML fragments to adf in the HTML global page index.html
 HTML_TITLE="OUDS iOS Swift Documentation"
 HTML_H1="OUDS iOS Swift Documentation"
 HTML_H2="iOS SwiftUI implementation of the Unified Design System of Orange"
@@ -43,7 +44,7 @@ HTML_PROJECT_COPYRIGHT="Orange SA"
 # The name of the Git branch hosting the documentation (e.g. GitHub Pages branch defined in repository)
 SERVICE_PAGES_BRANCH="gh-pages"
 
-# Path where the documentation will be
+# Path where the documentation will be temporary
 DOCS_DIRECTORY="./docs"
 
 # The generated name of the ZIP containing the generated sources of documentation (for archive)
@@ -99,10 +100,9 @@ show_help() {
     echo -e "Usage: $0 [--help] --libversion=VERSION [--usegit | --nozip | --nokeep]\n"
     echo "Options:"
     echo "  --help                Shows this help message."
-    echo "  --libversion=VERSION  Specifies the library version to incldue in HTML page (mandatory)."
+    echo "  --libversion=VERSION  Specifies the library version to include in HTML page (mandatory)."
     echo "  --usegit              Specifies to version documentation in the current Git repository and upload (default it does not, only local)."
     echo "  --nozip               Specifies the ZIP archive of the documentation must not be done (by default it is)."
-    echo "  --nokeep              Specifies the local generated documentation folder must be deleted (by default it is kept)."
 }
 
 # Step 0 - Prerequisites checks
@@ -129,10 +129,7 @@ for arg in "$@"; do
             ;;
         --nozip)
             no_zip=1
-            ;;
-        --nokeep)
-            keep_generated=0
-            ;;            
+            ;;          
         *)
             _ "Unknown parameter: $arg. Exits. ($EXIT_BAD_PARAMETER)" true
             exit $EXIT_BAD_PARAMETER
@@ -157,14 +154,8 @@ else
     _ "✔️ OK, a ZIP archive will be created"
 fi       
 
-if [[ $keep_generated -eq 1 ]]; then
-    _ "✔️ OK, generated files will be kept"
-else
-    _ "✔️ OK, generated files will be deleted"
-fi
-
-if [[ "$use_git" -eq 0 && "$no_zip" -eq 1 && "$keep_generated" -eq 0 ]]; then
-    _ "🥴 WARNING: What do you use this script for?"
+if [[ "$use_git" -eq 0 && "$no_zip" -eq 1 ]]; then
+    _ "🥴 WARNING: What do you use this script for? You should at least save the doc in Git repository or in ZIP file"
 fi
 
 # Step 1 - Git setup (if relevant)
@@ -174,7 +165,7 @@ start_time=$(date +%s)
 
 if [[ $use_git -eq 1 ]]; then
     if [ -d ".git" ]; then
-        _ "✅ This is a Git repository. Ensure the credentials you need are ready (SSH, HTTPS, GPG, etc.)"
+        _ "✅ This is a Git repository. Please ensure the credentials you need are ready (SSH, HTTPS, GPG, etc.)"
         current_branch=$(git rev-parse --abbrev-ref HEAD)
         _ "🔨 Current Git branch is '$current_branch'"
         clean_repo # To get rid of unversioned files etc.
@@ -190,6 +181,12 @@ _ "👍 Documention folder created at '$DOCS_DIRECTORY'!"
 
 # Step 1 - For each target, build the DocC documentation
 # ------------------------------------------------------
+
+# WARNING
+# The version of swift-docc-plugin (https://github.com/swiftlang/swift-docc-plugin) we use (here 1.4.2 according to the Package.resolved file)
+# does not seem t manage very weeel Swift Packages with several targets.
+# Consider using this version of the tool or submit an issue / pull request for updates to https://github.com/Orange-OpenSource/ouds-ios
+# (╯°□°)╯︵ ┻━┻
 
 _ "👉 Generating docs..."
 
@@ -215,6 +212,8 @@ fi
 
 # Step 3 - Update global HTML file
 # --------------------------------
+
+# This is only to build a global index.html file referencing all other targets index.html files
 
 _ "👉 Updating index.html..."
 
@@ -242,6 +241,8 @@ files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
 # Step 4a - Checkout to service pages dedicated branch (if relevant)
 # ------------------------------------------------------------------
 
+# When the files have been generated, stash them, change branch, unstash, add, commit, push then clean
+
 if [[ $use_git -eq 1 ]]; then
     _ "👉 Versioning documentation in service pages branch (it can take a lot of time)..."
 
@@ -268,7 +269,7 @@ if [[ $use_git -eq 1 ]]; then
     git add "$DOCS_DIRECTORY"
 
     _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
-    commit_message=$(printf "doc: update DocC documentation for version v%s\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$lib_version" "$timestamp")
+    commit_message=$(printf "doc: update DocC documentation for version v%s (%timestamp)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
     git commit -m "$commit_message"
 
     _ "🔨 Pushing things"
@@ -284,7 +285,7 @@ fi
 # Step 5 - Compress ZIP (if relevant)
 # -----------------------------------
 
-# ZIP action must be done before reset the Git workspace
+# ZIP action must be done before reseting the Git workspace (otherwise everything will be wiped out)
 if [[ $no_zip -eq 0 ]]; then
     _ "👉 Zipping documentation folder"
     zip -r "$DOCUMENTATION_ZIP_LOCATION" "$DOCS_DIRECTORY"/*
@@ -303,16 +304,6 @@ if [[ $use_git -eq 1 ]]; then
     _ "👍 Pushed with commit '$commit_hash'"
 fi
 
-if [[ $keep_generated -eq 0 ]]; then
-    if [[ -d "$DOCS_DIRECTORY" ]]; then
-        _ "🧹 Deleting docs directory"
-        rm -rf "$DOCS_DIRECTORY"
-    fi
-else
-    _ "🎉 Documentation also available in $DOCS_DIRECTORY"
-    _ "🧮 There are '$files_count' in $DOCS_DIRECTORY!"
-fi
-
 # Step 6 - Metrics and conclusion
 # -------------------------------
 
@@ -326,6 +317,7 @@ _ "👋 Bye!"
 
 exit $EXIT_OK
 
-# In case of performances issues due to the large amount of file, run:
-# git clean -fd ; git reset --hard ; rm -rf .build
-# Or use git prune, or reclone repository
+# In case of performances issues due to the large amount of files in the Git repository:
+#   run "git clean -fd ; git reset --hard ; rm -rf .build"
+#   Or use "git prune"
+#   Or reclone the repository
