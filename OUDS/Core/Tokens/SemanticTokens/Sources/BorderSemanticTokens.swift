@@ -47,8 +47,6 @@ public protocol BorderSemanticTokens {
     var borderRadiusShort: BorderRadiusSemanticToken { get }
     var borderRadiusMedium: BorderRadiusSemanticToken { get }
     var borderRadiusTall: BorderRadiusSemanticToken { get }
-    var borderRadiusPill: BorderRadiusSemanticToken { get }
-    // TODO: How to deal with "border-radius-circle"?
 
     // MARK: - Semantic token - Border - Style
 

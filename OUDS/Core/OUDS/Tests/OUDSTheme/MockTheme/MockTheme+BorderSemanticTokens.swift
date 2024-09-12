@@ -38,7 +38,6 @@ extension MockTheme {
     override var borderRadiusShort: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
     override var borderRadiusMedium: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
     override var borderRadiusTall: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
-    override var borderRadiusPill: BorderRadiusSemanticToken { Self.mockThemeBorderRadiusRawToken }
 
     // MARK: Semantic token - Border - Style
 
