@@ -50,7 +50,7 @@ extension OUDSTheme: FormsTextInputComponentToken {
     @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
     @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultBlack }
     
-    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasisLight ?? Self.defaultBlack }
+    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedLight ?? Self.defaultBlack }
     @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
     @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
 }
