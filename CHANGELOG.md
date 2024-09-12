@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Manage regular and compact layouts for sizing and spacing tokens
+- [Library] Box shadow 0 has been defined and elevation drag changed
 - [Doc] Create the basics of a documentation ([#9](https://github.com/Orange-OpenSource/ouds-ios/issues/9))
 - [Library] Add more semanttic and raw tokens for typography
 - [Library] Add more semantic and raw tokens for typography, and SwiftUI API to apply them
@@ -16,16 +18,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] "OUDSThemesCommons" product has been renamed to "OUDS"
 - [Library] Update value of opacity raw token "opacity800" from 0.88 to 0.80 ([#87](https://github.com/Orange-OpenSource/ouds-ios/issues/87))
 - [Library] Add missing unit tests for opacity raw tokens
+- [Library] "OUDSThemesCommons" product has been renamed to "OUDS"
 
 ### Removed
 
 - [Library] Remove token borderRadiusPill and borderRadiusCircle ([#58](https://github.com/Orange-OpenSource/ouds-ios/issues/58))
-- [Library] Box shadow 0 has been defined and elevation drag changed
 - [Library] "Emphasis" words have been replaced by "emphasized"
-- [Library] "Box shadow" words have been removed in elevation semantic and raw tokens
+- [Library] "Box shadow" words have been removed in elevation semantic and raw tokens 
 
 ### Fixed
 

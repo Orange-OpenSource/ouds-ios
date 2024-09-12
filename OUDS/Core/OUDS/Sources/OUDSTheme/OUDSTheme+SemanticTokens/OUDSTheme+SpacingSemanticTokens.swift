@@ -15,6 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// swiftlint:disable line_length
 /// Defines basic values common to all themes for `SpacingSemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: SpacingSemanticTokens {
@@ -34,17 +35,16 @@ extension OUDSTheme: SpacingSemanticTokens {
 
     // MARK: Semantic token - Spacing - Layout fluid
 
-    // TODO: What should we do? In issue #36 there are 3 possible values (web paradigm ?), selected here the xl-2xl-3xl case
-    @objc open var spaceLayoutFluidNone: SpacingLayoutSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spaceLayoutFluidSmash: SpacingLayoutSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spaceLayoutFluidShortest: SpacingLayoutSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spaceLayoutFluidShorter: SpacingLayoutSemanticToken { DimensionRawTokens.dimension200 }
-    @objc open var spaceLayoutFluidShort: SpacingLayoutSemanticToken { DimensionRawTokens.dimension300 }
-    @objc open var spaceLayoutFluidMedium: SpacingLayoutSemanticToken { DimensionRawTokens.dimension400 }
-    @objc open var spaceLayoutFluidTall: SpacingLayoutSemanticToken { DimensionRawTokens.dimension500 }
-    @objc open var spaceLayoutFluidTaller: SpacingLayoutSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var spaceLayoutFluidTallest: SpacingLayoutSemanticToken { DimensionRawTokens.dimension700 }
-    @objc open var spaceLayoutFluidSpacious: SpacingLayoutSemanticToken { DimensionRawTokens.dimension800 }
+    @objc open var spaceLayoutFluidNone: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension0, regular: DimensionRawTokens.dimension0) }
+    @objc open var spaceLayoutFluidSmash: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension25, regular: DimensionRawTokens.dimension50) }
+    @objc open var spaceLayoutFluidShortest: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension50, regular: DimensionRawTokens.dimension100) }
+    @objc open var spaceLayoutFluidShorter: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension100, regular: DimensionRawTokens.dimension150) }
+    @objc open var spaceLayoutFluidShort: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension150, regular: DimensionRawTokens.dimension200) }
+    @objc open var spaceLayoutFluidMedium: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension300) }
+    @objc open var spaceLayoutFluidTall: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension400) }
+    @objc open var spaceLayoutFluidTaller: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension500) }
+    @objc open var spaceLayoutFluidTallest: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension600) }
+    @objc open var spaceLayoutFluidSpacious: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension700) }
 
     // MARK: Semantic token - Spacing - Padding - Padding inline
 
@@ -137,3 +137,4 @@ extension OUDSTheme: SpacingSemanticTokens {
     @objc open var spaceRowGapComponentIsIconTall: SpacingGapStackSemanticToken { DimensionRawTokens.dimension100 }
     @objc open var spaceRowGapComponentIsIconTaller: SpacingGapStackSemanticToken { DimensionRawTokens.dimension200 }
 }
+// swiftlint:enable line_length

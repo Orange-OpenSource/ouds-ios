@@ -15,6 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// swiftlint:disable line_length
 /// Defines basic values common to all themes for `SizingSemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: SizingSemanticTokens {
@@ -48,44 +49,42 @@ extension OUDSTheme: SizingSemanticTokens {
 
     // MARK: Semantic token - Sizing - Width height - Icon typography - Heading
 
-    // TODO: What should we do? In issue #36 there are 3 possible values (web paradigm ?), selected here the xl-2xl-3xl case
-    @objc open var sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension500 }
-    @objc open var sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 }
-    @objc open var sizeWidthHeightIconIsHeadingSmallTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var sizeWidthHeightIconIsHeadingMediumShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 }
-    @objc open var sizeWidthHeightIconIsHeadingMediumMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var sizeWidthHeightIconIsHeadingMediumTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension650 }
-    @objc open var sizeWidthHeightIconIsHeadingLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var sizeWidthHeightIconIsHeadingLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension650 }
-    @objc open var sizeWidthHeightIconIsHeadingLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension700 }
-    @objc open var sizeWidthHeightIconIsHeadingXLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension700 }
-    @objc open var sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension750 }
-    @objc open var sizeWidthHeightIconIsHeadingXLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension800 }
+    @objc open var sizeWidthHeightIconIsHeadingSmallShort: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension400) }
+    @objc open var sizeWidthHeightIconIsHeadingSmallMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension500 ) }
+    @objc open var sizeWidthHeightIconIsHeadingSmallTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension550 ) }
+    @objc open var sizeWidthHeightIconIsHeadingMediumShort: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension500 ) }
+    @objc open var sizeWidthHeightIconIsHeadingMediumMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension550 ) }
+    @objc open var sizeWidthHeightIconIsHeadingMediumTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension600 ) }
+    @objc open var sizeWidthHeightIconIsHeadingLargeShort: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension550 ) }
+    @objc open var sizeWidthHeightIconIsHeadingLargeMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension600 ) }
+    @objc open var sizeWidthHeightIconIsHeadingLargeTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension650 ) }
+    @objc open var sizeWidthHeightIconIsHeadingXLargeShort: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension650 ) }
+    @objc open var sizeWidthHeightIconIsHeadingXLargeMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension700 ) }
+    @objc open var sizeWidthHeightIconIsHeadingXLargeTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension650, regular: DimensionRawTokens.dimension800 ) }
 
     // MARK: Semantic token - Sizing - Width height - Icon typography - Body
 
-    // TODO: What should we do? In issue #36 there are 3 possible values (web paradigm ?), selected here the xl-2xl-3xl case
-    @objc open var sizeWidthHeightIconIsBodySmallShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension200 }
-    @objc open var sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 }
-    @objc open var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension300 }
-    @objc open var sizeWidthHeightIconIsBodyMediumShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 }
-    @objc open var sizeWidthHeightIconIsBodyMediumMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension300 }
-    @objc open var sizeWidthHeightIconIsBodyMediumTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension350 }
-    @objc open var sizeWidthHeightIconIsBodyLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension400 }
-    @objc open var sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension500 }
-    @objc open var sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 }
+    @objc open var sizeWidthHeightIconIsBodySmallShort: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension150, regular: DimensionRawTokens.dimension150 ) }
+    @objc open var sizeWidthHeightIconIsBodySmallMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension200 ) }
+    @objc open var sizeWidthHeightIconIsBodySmallTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension250, regular: DimensionRawTokens.dimension250 ) }
+    @objc open var sizeWidthHeightIconIsBodyMediumShort: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension200 ) }
+    @objc open var sizeWidthHeightIconIsBodyMediumMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension250, regular: DimensionRawTokens.dimension250 ) }
+    @objc open var sizeWidthHeightIconIsBodyMediumTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension300 ) }
+    @objc open var sizeWidthHeightIconIsBodyLargeShort: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension250, regular: DimensionRawTokens.dimension250 ) }
+    @objc open var sizeWidthHeightIconIsBodyLargeMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension300 ) }
+    @objc open var sizeWidthHeightIconIsBodyLargeTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension350, regular: DimensionRawTokens.dimension350 ) }
 
     // MARK: Semantic token - Sizing - Max width
 
-    // TODO: What should we do? In issue #36 there are 3 possible values (web paradigm ?), selected here the xl-2xl-3xl case
-    @objc open var sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
-    @objc open var sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
-    @objc open var sizeMaxWidthTypographyDisplayLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
-    @objc open var sizeMaxWidthTypographyHeadingSmall: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension7000 }
-    @objc open var sizeMaxWidthTypographyHeadingMedium: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
-    @objc open var sizeMaxWidthTypographyHeadingLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
-    @objc open var sizeMaxWidthTypographyHeadingXLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension11000 }
-    @objc open var sizeMaxWidthTypographyBodySmall: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension6000 }
-    @objc open var sizeMaxWidthTypographyBodyMedium: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension7000 }
-    @objc open var sizeMaxWidthTypographyBodyLarge: SizingMaxWidthSemanticToken { DimensionRawTokens.dimension7000 }
+    @objc open var sizeMaxWidthTypographyDisplaySmall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypographyDisplayMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypographyDisplayLarge: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypographyHeadingSmall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
+    @objc open var sizeMaxWidthTypographyHeadingMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypographyHeadingLarge: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypographyHeadingXLarge: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypographyBodySmall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
+    @objc open var sizeMaxWidthTypographyBodyMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
+    @objc open var sizeMaxWidthTypographyBodyLarge: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
 }
+// swiftlint:enable line_length

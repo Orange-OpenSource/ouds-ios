@@ -18,6 +18,7 @@ import OUDSTokensSemantic
 extension MockTheme {
 
     static let mockThemeSpaceRawToken: DimensionRawToken = 911
+    static let mockThemeSpaceSemanticToken: SpacingCompositeSemanticToken = SpacingCompositeSemanticToken(compact: 1, regular: 151)
 
     // MARK: Semantic token - Spacing - Layout fix
 
@@ -34,16 +35,16 @@ extension MockTheme {
 
     // MARK: Semantic token - Spacing - Layout fluid
 
-    override var spaceLayoutFluidNone: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceLayoutFluidSmash: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceLayoutFluidShortest: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceLayoutFluidShorter: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceLayoutFluidShort: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceLayoutFluidMedium: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceLayoutFluidTall: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceLayoutFluidTaller: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceLayoutFluidTallest: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceLayoutFluidSpacious: SpacingLayoutSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spaceLayoutFluidNone: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceLayoutFluidSmash: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceLayoutFluidShortest: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceLayoutFluidShorter: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceLayoutFluidShort: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceLayoutFluidMedium: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceLayoutFluidTall: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceLayoutFluidTaller: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceLayoutFluidTallest: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceLayoutFluidSpacious: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
 
     // MARK: Semantic token - Spacing - Padding - Padding inline
 

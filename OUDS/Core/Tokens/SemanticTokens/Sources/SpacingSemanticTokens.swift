@@ -34,7 +34,30 @@ public typealias SpacingGapInlineSemanticToken = DimensionRawToken
 /// Basically a space semantic token for gap stack is a dimension raw token, it has the same final type
 public typealias SpacingGapStackSemanticToken = DimensionRawToken
 
-// MARK: - Semantic tokens
+// MARK: Semantic tokens
+
+// MARK: - Composite Semantic Token
+
+/// Composite semantic tokens which will wrap a combination of `DimensionRawToken` depending to viewports.
+public final class SpacingCompositeSemanticToken: NSObject {
+
+    /// For **extra-compact** and **compact** viewports
+    public let compact: DimensionRawToken
+    /// For **regular** and **medium** viewports
+    public let regular: DimensionRawToken
+
+    public init(compact: DimensionRawToken, regular: DimensionRawToken) {
+        self.compact = compact
+        self.regular = regular
+    }
+
+    public override func isEqual(_ object: Any?) -> Bool {
+        guard let other = object as? SpacingCompositeSemanticToken else { return false }
+        return self.compact == other.compact && self.regular == other.regular
+    }
+}
+
+// MARK: - Spacing Semantic Tokens
 
 /// This is a group of semantic tokens for **spacing**.
 /// It defines all `SpacingSemanticToken` a theme must have.
@@ -55,16 +78,16 @@ public protocol SpacingSemanticTokens {
 
     // MARK: Semantic token - Spacing - Layout fluid
 
-    var spaceLayoutFluidNone: SpacingLayoutSemanticToken { get }
-    var spaceLayoutFluidSmash: SpacingLayoutSemanticToken { get }
-    var spaceLayoutFluidShortest: SpacingLayoutSemanticToken { get }
-    var spaceLayoutFluidShorter: SpacingLayoutSemanticToken { get }
-    var spaceLayoutFluidShort: SpacingLayoutSemanticToken { get }
-    var spaceLayoutFluidMedium: SpacingLayoutSemanticToken { get }
-    var spaceLayoutFluidTall: SpacingLayoutSemanticToken { get }
-    var spaceLayoutFluidTaller: SpacingLayoutSemanticToken { get }
-    var spaceLayoutFluidTallest: SpacingLayoutSemanticToken { get }
-    var spaceLayoutFluidSpacious: SpacingLayoutSemanticToken { get }
+    var spaceLayoutFluidNone: SpacingCompositeSemanticToken { get }
+    var spaceLayoutFluidSmash: SpacingCompositeSemanticToken { get }
+    var spaceLayoutFluidShortest: SpacingCompositeSemanticToken { get }
+    var spaceLayoutFluidShorter: SpacingCompositeSemanticToken { get }
+    var spaceLayoutFluidShort: SpacingCompositeSemanticToken { get }
+    var spaceLayoutFluidMedium: SpacingCompositeSemanticToken { get }
+    var spaceLayoutFluidTall: SpacingCompositeSemanticToken { get }
+    var spaceLayoutFluidTaller: SpacingCompositeSemanticToken { get }
+    var spaceLayoutFluidTallest: SpacingCompositeSemanticToken { get }
+    var spaceLayoutFluidSpacious: SpacingCompositeSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding inline
 

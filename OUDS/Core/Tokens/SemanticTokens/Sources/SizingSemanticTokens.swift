@@ -22,7 +22,30 @@ public typealias SizingWidthHeightSemanticToken = DimensionRawToken
 /// Basically a size semantic token for max width is a dimension raw token, it has the same final type
 public typealias SizingMaxWidthSemanticToken = DimensionRawToken
 
-// MARK: - Semantic tokens
+// MARK: Semantic tokens
+
+// MARK: - Composite Semantic Token
+
+/// Composite semantic tokens which will wrap a combination of `SizingWidthHeightSemanticToken` depending to viewports.
+public final class SizingCompositeSemanticToken: NSObject {
+
+    /// For **extra-compact** and **compact** viewports
+    public let compact: SizingWidthHeightSemanticToken
+    /// For **regular** and **medium** viewports
+    public let regular: SizingWidthHeightSemanticToken
+
+    public init(compact: SizingWidthHeightSemanticToken, regular: SizingWidthHeightSemanticToken) {
+        self.compact = compact
+        self.regular = regular
+    }
+
+    public override func isEqual(_ object: Any?) -> Bool {
+        guard let other = object as? SizingCompositeSemanticToken else { return false }
+        return self.compact == other.compact && self.regular == other.regular
+    }
+}
+
+// MARK: - Sizing Semantic Tokens
 
 /// This is a group of semantic tokens for **sizing**.
 /// It defines all `SizingSemanticToken` a theme must have.
@@ -57,41 +80,41 @@ public protocol SizingSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Width height - Icon typography - Heading
 
-    var sizeWidthHeightIconIsHeadingSmallShort: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingSmallMedium: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingSmallTall: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingMediumShort: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingMediumMedium: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingMediumTall: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingLargeShort: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingLargeMedium: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingLargeTall: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingXLargeShort: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingXLargeMedium: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsHeadingXLargeTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingSmallShort: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingSmallMedium: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingSmallTall: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingMediumShort: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingMediumMedium: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingMediumTall: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingLargeShort: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingLargeMedium: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingLargeTall: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingXLargeShort: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingXLargeMedium: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsHeadingXLargeTall: SizingCompositeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Width height - Icon typography - Body
 
-    var sizeWidthHeightIconIsBodySmallShort: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsBodySmallMedium: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsBodySmallTall: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsBodyMediumShort: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsBodyMediumMedium: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsBodyMediumTall: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsBodyLargeShort: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsBodyLargeMedium: SizingWidthHeightSemanticToken { get }
-    var sizeWidthHeightIconIsBodyLargeTall: SizingWidthHeightSemanticToken { get }
+    var sizeWidthHeightIconIsBodySmallShort: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsBodySmallMedium: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsBodySmallTall: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsBodyMediumShort: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsBodyMediumMedium: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsBodyMediumTall: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsBodyLargeShort: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsBodyLargeMedium: SizingCompositeSemanticToken { get }
+    var sizeWidthHeightIconIsBodyLargeTall: SizingCompositeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Max width
 
-    var sizeMaxWidthTypographyDisplaySmall: SizingMaxWidthSemanticToken { get }
-    var sizeMaxWidthTypographyDisplayMedium: SizingMaxWidthSemanticToken { get }
-    var sizeMaxWidthTypographyDisplayLarge: SizingMaxWidthSemanticToken { get }
-    var sizeMaxWidthTypographyHeadingSmall: SizingMaxWidthSemanticToken { get }
-    var sizeMaxWidthTypographyHeadingMedium: SizingMaxWidthSemanticToken { get }
-    var sizeMaxWidthTypographyHeadingLarge: SizingMaxWidthSemanticToken { get }
-    var sizeMaxWidthTypographyHeadingXLarge: SizingMaxWidthSemanticToken { get }
-    var sizeMaxWidthTypographyBodySmall: SizingMaxWidthSemanticToken { get }
-    var sizeMaxWidthTypographyBodyMedium: SizingMaxWidthSemanticToken { get }
-    var sizeMaxWidthTypographyBodyLarge: SizingMaxWidthSemanticToken { get }
+    var sizeMaxWidthTypographyDisplaySmall: SizingCompositeSemanticToken { get }
+    var sizeMaxWidthTypographyDisplayMedium: SizingCompositeSemanticToken { get }
+    var sizeMaxWidthTypographyDisplayLarge: SizingCompositeSemanticToken { get }
+    var sizeMaxWidthTypographyHeadingSmall: SizingCompositeSemanticToken { get }
+    var sizeMaxWidthTypographyHeadingMedium: SizingCompositeSemanticToken { get }
+    var sizeMaxWidthTypographyHeadingLarge: SizingCompositeSemanticToken { get }
+    var sizeMaxWidthTypographyHeadingXLarge: SizingCompositeSemanticToken { get }
+    var sizeMaxWidthTypographyBodySmall: SizingCompositeSemanticToken { get }
+    var sizeMaxWidthTypographyBodyMedium: SizingCompositeSemanticToken { get }
+    var sizeMaxWidthTypographyBodyLarge: SizingCompositeSemanticToken { get }
 }
