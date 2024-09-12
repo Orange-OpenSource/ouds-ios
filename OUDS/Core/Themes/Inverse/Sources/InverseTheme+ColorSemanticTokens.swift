@@ -17,20 +17,20 @@ import OUDSTokensSemantic
 /// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
 extension InverseTheme {
 
-    public override var colorBackgroundDefaultPrimaryLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorBackgroundDefaultPrimaryDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorBackgroundDefaultPrimaryLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorBackgroundDefaultPrimaryDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorBackgroundDefaultSecondaryLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisMedium }
-    public override var colorBackgroundDefaultSecondaryDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisMedium }
+    public override var colorBackgroundDefaultSecondaryLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedMedium }
+    public override var colorBackgroundDefaultSecondaryDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedMedium }
 
     public override var colorBackgroundDefaultTertiaryLight: ColorSemanticToken? { sysColorBrandAttractiveHighest }
     public override var colorBackgroundDefaultTertiaryDark: ColorSemanticToken? { sysColorBrandAttractiveHighest }
 
-    public override var colorBackgroundEmphasisPrimaryLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
-    public override var colorBackgroundEmphasisPrimaryDark: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
+    public override var colorBackgroundEmphasizedPrimaryLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
+    public override var colorBackgroundEmphasizedPrimaryDark: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
 
-    public override var colorBackgroundEmphasisSecondaryLight: ColorSemanticToken? { sysColorBrandNeutralMutedLowest }
-    public override var colorBackgroundEmphasisSecondaryDark: ColorSemanticToken? { sysColorBrandNeutralMutedLowest }
+    public override var colorBackgroundEmphasizedSecondaryLight: ColorSemanticToken? { sysColorBrandNeutralMutedLowest }
+    public override var colorBackgroundEmphasizedSecondaryDark: ColorSemanticToken? { sysColorBrandNeutralMutedLowest }
 
     public override var colorBackgroundBrandPrimaryLight: ColorSemanticToken? { sysColorBrandPrimaryDefault }
     public override var colorBackgroundBrandPrimaryDark: ColorSemanticToken? { sysColorBrandPrimaryDefault }
@@ -38,50 +38,50 @@ extension InverseTheme {
     public override var colorBackgroundStatusAttractiveMutedLight: ColorSemanticToken? { sysColorBrandAttractiveLowest }
     public override var colorBackgroundStatusAttractiveMutedDark: ColorSemanticToken? { sysColorBrandAttractiveLowest }
 
-    public override var colorBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? { sysColorBrandWarningDefault }
-    public override var colorBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? { sysColorBrandWarningDefault }
+    public override var colorBackgroundStatusAttractiveEmphasizedLight: ColorSemanticToken? { sysColorBrandWarningDefault }
+    public override var colorBackgroundStatusAttractiveEmphasizedDark: ColorSemanticToken? { sysColorBrandWarningDefault }
 
     public override var colorBackgroundStatusWarningMutedLight: ColorSemanticToken? { sysColorBrandWarningLowest }
     public override var colorBackgroundStatusWarningMutedDark: ColorSemanticToken? { sysColorBrandWarningLowest }
 
-    public override var colorBackgroundStatusWarningEmphasisLight: ColorSemanticToken? { sysColorBrandWarningDefault }
-    public override var colorBackgroundStatusWarningEmphasisDark: ColorSemanticToken? { sysColorBrandWarningDefault }
+    public override var colorBackgroundStatusWarningEmphasizedLight: ColorSemanticToken? { sysColorBrandWarningDefault }
+    public override var colorBackgroundStatusWarningEmphasizedDark: ColorSemanticToken? { sysColorBrandWarningDefault }
 
     public override var colorBackgroundStatusNegativeMutedLight: ColorSemanticToken? { sysColorBrandNegativeLowest }
     public override var colorBackgroundStatusNegativeMutedDark: ColorSemanticToken? { sysColorBrandNegativeLowest }
 
-    public override var colorBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? { sysColorBrandNegativeDefault }
-    public override var colorBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? { sysColorBrandNegativeDefault }
+    public override var colorBackgroundStatusNegativeEmphasizedLight: ColorSemanticToken? { sysColorBrandNegativeDefault }
+    public override var colorBackgroundStatusNegativeEmphasizedDark: ColorSemanticToken? { sysColorBrandNegativeDefault }
 
     public override var colorBackgroundStatusPositiveMutedLight: ColorSemanticToken? { sysColorBrandPositiveLowest }
     public override var colorBackgroundStatusPositiveMutedDark: ColorSemanticToken? { sysColorBrandPositiveLowest }
 
-    public override var colorBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? { sysColorBrandPositiveDefault }
-    public override var colorBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? { sysColorBrandPositiveDefault }
+    public override var colorBackgroundStatusPositiveEmphasizedLight: ColorSemanticToken? { sysColorBrandPositiveDefault }
+    public override var colorBackgroundStatusPositiveEmphasizedDark: ColorSemanticToken? { sysColorBrandPositiveDefault }
 
     public override var colorBackgroundStatusInformationMutedLight: ColorSemanticToken? { sysColorBrandInformationLowest }
     public override var colorBackgroundStatusInformationMutedDark: ColorSemanticToken? { sysColorBrandInformationLowest }
 
-    public override var colorBackgroundStatusInformationEmphasisLight: ColorSemanticToken? { sysColorBrandPositiveLowest }
-    public override var colorBackgroundStatusInformationEmphasisDark: ColorSemanticToken? { sysColorBrandPositiveLowest }
+    public override var colorBackgroundStatusInformationEmphasizedLight: ColorSemanticToken? { sysColorBrandPositiveLowest }
+    public override var colorBackgroundStatusInformationEmphasizedDark: ColorSemanticToken? { sysColorBrandPositiveLowest }
 
     public override var colorContentDefaultLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
     public override var colorContentDefaultDark: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
 
-    public override var colorContentDefaultOnBackgroundEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorContentDefaultOnBackgroundEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorContentDefaultOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorContentDefaultOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorContentMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisMedium }
-    public override var colorContentMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisMedium }
+    public override var colorContentMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedMedium }
+    public override var colorContentMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedMedium }
 
-    public override var colorContentMutedOnBackgroundEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisLowest }
-    public override var colorContentMutedOnBackgroundEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisLowest }
+    public override var colorContentMutedOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedLowest }
+    public override var colorContentMutedOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedLowest }
 
     public override var colorContentBrandPrimaryLight: ColorSemanticToken? { sysColorBrandPrimaryLow }
     public override var colorContentBrandPrimaryDark: ColorSemanticToken? { sysColorBrandPrimaryLow }
 
-    public override var colorContentBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? { sysColorBrandPrimaryDefault }
-    public override var colorContentBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? { sysColorBrandPrimaryDefault }
+    public override var colorContentBrandPrimaryOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandPrimaryDefault }
+    public override var colorContentBrandPrimaryOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandPrimaryDefault }
 
     public override var colorContentBrandSecondaryLight: ColorSemanticToken? { nil }
     public override var colorContentBrandSecondaryDark: ColorSemanticToken? { nil }
@@ -101,23 +101,23 @@ extension InverseTheme {
     public override var colorContentStatusInformationLight: ColorSemanticToken? { sysColorBrandInformationDefault }
     public override var colorContentStatusInformationDark: ColorSemanticToken? { sysColorBrandInformationDefault }
 
-    public override var colorBorderDefaultLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisLowest }
-    public override var colorBorderDefaultDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisLowest }
+    public override var colorBorderDefaultLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedLowest }
+    public override var colorBorderDefaultDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedLowest }
 
-    public override var colorBorderDefaultOnBackgroundEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralMutedMedium }
-    public override var colorBorderDefaultOnBackgroundEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralMutedMedium }
+    public override var colorBorderDefaultOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralMutedMedium }
+    public override var colorBorderDefaultOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedMedium }
 
-    public override var colorBorderEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
-    public override var colorBorderEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
+    public override var colorBorderEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
+    public override var colorBorderEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
 
-    public override var colorBorderEmphasisOnBackgroundEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorBorderEmphasisOnBackgroundEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorBorderEmphasizedOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorBorderEmphasizedOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
     public override var colorBorderBrandPrimaryLight: ColorSemanticToken? { sysColorBrandPrimaryLow }
     public override var colorBorderBrandPrimaryDark: ColorSemanticToken? { sysColorBrandPrimaryLow }
 
-    public override var colorBorderBrandPrimaryOnBackgroundEmphasisLight: ColorSemanticToken? { sysColorBrandPrimaryDefault }
-    public override var colorBorderBrandPrimaryOnBackgroundEmphasisDark: ColorSemanticToken? { sysColorBrandPrimaryDefault }
+    public override var colorBorderBrandPrimaryOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandPrimaryDefault }
+    public override var colorBorderBrandPrimaryOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandPrimaryDefault }
 
     public override var colorBorderBrandSecondaryLight: ColorSemanticToken? { nil }
     public override var colorBorderBrandSecondaryDark: ColorSemanticToken? { nil }
@@ -149,33 +149,33 @@ extension InverseTheme {
     public override var colorOnBackgroundTertiaryLight: ColorSemanticToken? { nil }
     public override var colorOnBackgroundTertiaryDark: ColorSemanticToken? { nil }
 
-    public override var colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorOnBackgroundStatusAttractiveEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorOnBackgroundStatusAttractiveEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorOnBackgroundStatusAttractiveEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorOnBackgroundStatusAttractiveEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorOnBackgroundStatusWarningEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorOnBackgroundStatusWarningEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorOnBackgroundStatusWarningEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorOnBackgroundStatusWarningEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorOnBackgroundStatusNegativeEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
-    public override var colorOnBackgroundStatusNegativeEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
+    public override var colorOnBackgroundStatusNegativeEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
+    public override var colorOnBackgroundStatusNegativeEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
 
-    public override var colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorOnBackgroundStatusPositiveEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorOnBackgroundStatusPositiveEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorOnBackgroundStatusPositiveEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorOnBackgroundStatusPositiveEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 
-    public override var colorOnBackgroundStatusInformationEmphasisLight: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
-    public override var colorOnBackgroundStatusInformationEmphasisDark: ColorSemanticToken? { sysColorBrandNeutralEmphasisBlack }
+    public override var colorOnBackgroundStatusInformationEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
+    public override var colorOnBackgroundStatusInformationEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
 }

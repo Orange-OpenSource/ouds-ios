@@ -23,6 +23,6 @@ extension MockTheme {
     override var opacityWeaker: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
     override var opacityWeak: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
     override var opacityMedium: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override var opacityEmphasis: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override var opacityEmphasized: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
     override var opacityOpaque: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
 }

@@ -15,14 +15,14 @@ import Foundation
 
 // MARK: - Type aliases to keep grammar clear
 
-/// Type alias precising `Int` value are used (because used in _SwiftUI_ API) for each **elevation raw token**.
-public typealias ElevationRawToken = Int
+/// Type aliases precising `CGFloat` values are used (because used in _SwiftUI_ API) for each **elevation raw token**.
+public typealias ElevationRawToken = CGFloat
 
 // MARK: - Composite raw token
 
 /// In the global design system, composite tokens are defined for elevation effects.
 /// It is defined as a `final class` and `NSObject` so as to be shared through `@objc` with extensions and protocols within modules.
-public final class ElevationBoxShadowRawToken: NSObject { // For @objc compatibility
+public final class ElevationCompositeRawToken: NSObject { // For @objc compatibility
 
     /// The X offset for the elevation
     public let x: ElevationRawToken
@@ -35,6 +35,13 @@ public final class ElevationBoxShadowRawToken: NSObject { // For @objc compatibi
     /// The color of the shadow effect
     public let color: ColorRawToken
 
+    /// The *Figma* tool uses its own implementation of shadow or elevation effect with a *blur* and a *spread* values defined in the *tokens*.
+    /// However *SwiftUI* for shadows effects uses only a *radius* which does not match the *Figma* *blur* and *spread* radiuses values.
+    /// Thus this value is computed from them so as to try to reproduce the same effect.
+    public var radius: ElevationRawToken {
+        blur + spread / 2 // Or maybe `CGFloat(blur + abs(spread))` ((╯°□°)╯︵ ┻━┻ according to GenAI tools)
+    }
+
     public init(x: ElevationRawToken, y: ElevationRawToken, blur: ElevationRawToken, spread: ElevationRawToken, color: ColorRawToken) {
         self.x = x
         self.y = y
@@ -44,7 +51,7 @@ public final class ElevationBoxShadowRawToken: NSObject { // For @objc compatibi
     }
 
     public override func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? ElevationBoxShadowRawToken else { return false }
+        guard let other = object as? ElevationCompositeRawToken else { return false }
         return self.x == other.x
         && self.y == other.y
         && self.blur == other.blur
@@ -56,7 +63,7 @@ public final class ElevationBoxShadowRawToken: NSObject { // For @objc compatibi
 // MARK: - Raw tokens
 
 /// This is the group of all **raw tokens** related to **elevations**.
-/// Primitive types such as `Int` must be used to as to allow to use `@objc` keywords in extensions for overriding.
+/// Primitive types such as `CGFloat` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
 public enum ElevationRawTokens {
@@ -106,50 +113,50 @@ public enum ElevationRawTokens {
 
     // MARK: Primitive token - Elevation - Spread
 
-    public static let elevationSpreadMinus100: ElevationRawToken = -1
-    public static let elevationSpreadMinus200: ElevationRawToken = -2
-    public static let elevationSpreadMinus300: ElevationRawToken = -4
-    public static let elevationSpreadMinus400: ElevationRawToken = -8
+    public static let elevationSpreadN100: ElevationRawToken = -1
+    public static let elevationSpreadN200: ElevationRawToken = -2
+    public static let elevationSpreadN300: ElevationRawToken = -4
+    public static let elevationSpreadN400: ElevationRawToken = -8
     public static let elevationSpread0: ElevationRawToken = 0
     public static let elevationSpread300: ElevationRawToken = 3
 
     // MARK: Primitive token - Elevation - Box Shadow
 
-    // TODO: Missing elevationBoxShadowBottom0 raw token
-    public static let elevationBoxShadowBottom_1_100 = ElevationBoxShadowRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack100)
-    public static let elevationBoxShadowBottom_1_200 = ElevationBoxShadowRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack200)
-    public static let elevationBoxShadowBottom_1_300 = ElevationBoxShadowRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack300)
-    public static let elevationBoxShadowBottom_1_400 = ElevationBoxShadowRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack400)
-    public static let elevationBoxShadowBottom_1_500 = ElevationBoxShadowRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack500)
-    public static let elevationBoxShadowBottom_1_600 = ElevationBoxShadowRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack600)
-    public static let elevationBoxShadowBottom_2_100 = ElevationBoxShadowRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack100)
-    public static let elevationBoxShadowBottom_2_200 = ElevationBoxShadowRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack200)
-    public static let elevationBoxShadowBottom_2_300 = ElevationBoxShadowRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack300)
-    public static let elevationBoxShadowBottom_2_400 = ElevationBoxShadowRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack400)
-    public static let elevationBoxShadowBottom_2_500 = ElevationBoxShadowRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack500)
-    public static let elevationBoxShadowBottom_2_600 = ElevationBoxShadowRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack600)
-    public static let elevationBoxShadowBottom_3_100 = ElevationBoxShadowRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack100)
-    public static let elevationBoxShadowBottom_3_200 = ElevationBoxShadowRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack200)
-    public static let elevationBoxShadowBottom_3_300 = ElevationBoxShadowRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack300)
-    public static let elevationBoxShadowBottom_3_400 = ElevationBoxShadowRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack400)
-    public static let elevationBoxShadowBottom_3_500 = ElevationBoxShadowRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack500)
-    public static let elevationBoxShadowBottom_3_600 = ElevationBoxShadowRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack600)
-    public static let elevationBoxShadowBottom_4_100 = ElevationBoxShadowRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack100)
-    public static let elevationBoxShadowBottom_4_200 = ElevationBoxShadowRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack200)
-    public static let elevationBoxShadowBottom_4_300 = ElevationBoxShadowRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack300)
-    public static let elevationBoxShadowBottom_4_400 = ElevationBoxShadowRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack400)
-    public static let elevationBoxShadowBottom_4_500 = ElevationBoxShadowRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack500)
-    public static let elevationBoxShadowBottom_4_600 = ElevationBoxShadowRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack600)
-    public static let elevationBoxShadowBottom_5_100 = ElevationBoxShadowRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack100)
-    public static let elevationBoxShadowBottom_5_200 = ElevationBoxShadowRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack200)
-    public static let elevationBoxShadowBottom_5_300 = ElevationBoxShadowRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack300)
-    public static let elevationBoxShadowBottom_5_400 = ElevationBoxShadowRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack400)
-    public static let elevationBoxShadowBottom_5_500 = ElevationBoxShadowRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack500)
-    public static let elevationBoxShadowBottom_5_600 = ElevationBoxShadowRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack600)
-    public static let elevationBoxShadowBottom_6_100 = ElevationBoxShadowRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack100)
-    public static let elevationBoxShadowBottom_6_200 = ElevationBoxShadowRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack200)
-    public static let elevationBoxShadowBottom_6_300 = ElevationBoxShadowRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack300)
-    public static let elevationBoxShadowBottom_6_400 = ElevationBoxShadowRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack400)
-    public static let elevationBoxShadowBottom_6_500 = ElevationBoxShadowRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack500)
-    public static let elevationBoxShadowBottom_6_600 = ElevationBoxShadowRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack600)
+    public static let elevationBottom_0 = ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 0, color: ColorRawTokens.colorTransparentBlack0)
+    public static let elevationBottom_1_100 = ElevationCompositeRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack100)
+    public static let elevationBottom_1_200 = ElevationCompositeRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack200)
+    public static let elevationBottom_1_300 = ElevationCompositeRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack300)
+    public static let elevationBottom_1_400 = ElevationCompositeRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack400)
+    public static let elevationBottom_1_500 = ElevationCompositeRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack500)
+    public static let elevationBottom_1_600 = ElevationCompositeRawToken(x: 0, y: 1, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack600)
+    public static let elevationBottom_2_100 = ElevationCompositeRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack100)
+    public static let elevationBottom_2_200 = ElevationCompositeRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack200)
+    public static let elevationBottom_2_300 = ElevationCompositeRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack300)
+    public static let elevationBottom_2_400 = ElevationCompositeRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack400)
+    public static let elevationBottom_2_500 = ElevationCompositeRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack500)
+    public static let elevationBottom_2_600 = ElevationCompositeRawToken(x: 0, y: 2, blur: 3, spread: 0, color: ColorRawTokens.colorTransparentBlack600)
+    public static let elevationBottom_3_100 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack100)
+    public static let elevationBottom_3_200 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack200)
+    public static let elevationBottom_3_300 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack300)
+    public static let elevationBottom_3_400 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack400)
+    public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack500)
+    public static let elevationBottom_3_600 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack600)
+    public static let elevationBottom_4_100 = ElevationCompositeRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack100)
+    public static let elevationBottom_4_200 = ElevationCompositeRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack200)
+    public static let elevationBottom_4_300 = ElevationCompositeRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack300)
+    public static let elevationBottom_4_400 = ElevationCompositeRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack400)
+    public static let elevationBottom_4_500 = ElevationCompositeRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack500)
+    public static let elevationBottom_4_600 = ElevationCompositeRawToken(x: 0, y: 8, blur: 8, spread: -2, color: ColorRawTokens.colorTransparentBlack600)
+    public static let elevationBottom_5_100 = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack100)
+    public static let elevationBottom_5_200 = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack200)
+    public static let elevationBottom_5_300 = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack300)
+    public static let elevationBottom_5_400 = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack400)
+    public static let elevationBottom_5_500 = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack500)
+    public static let elevationBottom_5_600 = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack600)
+    public static let elevationBottom_6_100 = ElevationCompositeRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack100)
+    public static let elevationBottom_6_200 = ElevationCompositeRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack200)
+    public static let elevationBottom_6_300 = ElevationCompositeRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack300)
+    public static let elevationBottom_6_400 = ElevationCompositeRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack400)
+    public static let elevationBottom_6_500 = ElevationCompositeRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack500)
+    public static let elevationBottom_6_600 = ElevationCompositeRawToken(x: 0, y: 20, blur: 20, spread: -8, color: ColorRawTokens.colorTransparentBlack600)
 }

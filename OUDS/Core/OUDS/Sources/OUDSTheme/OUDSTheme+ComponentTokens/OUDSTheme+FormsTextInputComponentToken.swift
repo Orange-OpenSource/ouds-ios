@@ -35,7 +35,7 @@ extension OUDSTheme: FormsTextInputComponentToken {
     @objc open var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight ?? Self.defaultWhite }
     @objc open var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark ?? Self.defaultBlack }
 
-    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasisLight ?? Self.defaultBlack }
+    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedLight ?? Self.defaultBlack }
 
     @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
 
