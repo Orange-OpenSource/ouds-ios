@@ -32,9 +32,11 @@ TARGETS="OUDS \
         OUDSFoundations"
 
 # Services pages (like GitHub Pages) custom subdomain for the CNAME, don't forget to verify it in organization side for security reasons!
+# For example, with GitHub pages; given the "ouds-ios" project for "Orange-OpenSource" organization,
+# the custom domain "ios.unified-design-system.orange.com" will thus automatically redirect to "orange-opensource.github.io/ouds-ios"
 SERVICE_PAGES_DOMAIN="ios.unified-design-system.orange.com"
 
-# Some HTML fragments to adf in the HTML global page index.html
+# Some HTML fragments to add in the HTML global page index.html
 HTML_TITLE="OUDS iOS Swift Documentation"
 HTML_H1="OUDS iOS Swift Documentation"
 HTML_H2="iOS SwiftUI implementation of the Unified Design System of Orange"
@@ -42,6 +44,7 @@ HTML_PROJECT_URL="https://github.com/Orange-OpenSource/ouds-ios"
 HTML_PROJECT_COPYRIGHT="Orange SA"
 
 # The name of the Git branch hosting the documentation (e.g. GitHub Pages branch defined in repository)
+# We suppose all the documentation will be in this dedicated branch
 SERVICE_PAGES_BRANCH="gh-pages"
 
 # Path where the documentation will be temporary
@@ -184,7 +187,7 @@ _ "👍 Documention folder created at '$DOCS_DIRECTORY'!"
 
 # WARNING
 # The version of swift-docc-plugin (https://github.com/swiftlang/swift-docc-plugin) we use (here 1.4.2 according to the Package.resolved file)
-# does not seem t manage very weeel Swift Packages with several targets.
+# does not seem to manage very weell Swift Packages with several targets.
 # Consider using this version of the tool or submit an issue / pull request for updates to https://github.com/Orange-OpenSource/ouds-ios
 # (╯°□°)╯︵ ┻━┻
 
@@ -269,7 +272,7 @@ if [[ $use_git -eq 1 ]]; then
     git add "$DOCS_DIRECTORY"
 
     _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
-    commit_message=$(printf "doc: update DocC documentation for version v%s (%timestamp)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
+    commit_message=$(printf "doc: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
     git commit -m "$commit_message"
 
     _ "🔨 Pushing things"
@@ -298,7 +301,6 @@ fi
 
 if [[ $use_git -eq 1 ]]; then
     commit_hash=`git rev-parse HEAD`
-
     _ "🔨 Going back to previous Git branch"
     git checkout "$current_branch"
     _ "👍 Pushed with commit '$commit_hash'"
