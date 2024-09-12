@@ -214,7 +214,7 @@ git stash apply
 
 files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
 
-echo2 "🔨 Adding things (about $files_count files)"
+echo2 "🔨 Adding things (~ $files_count files)"
 git add "$DOCS_DIRECTORY"
 
 echo2 "🔨 Committing things (be ready if passwords / passphrases are asked)"
@@ -241,6 +241,11 @@ echo2 "🧮 There are '$files_count' in $DOCS_DIRECTORY!"
 echo2 "👉 Zipping documentation folder"
 zip -r "$DOCUMENTATION_ZIP_LOCATION"  "$DOCS_DIRECTORY"
 echo2 "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION"
+
+if [ -d "$DOCS_DIRECTORY" ]; then
+    echo2 "🧹 Deleting docs directory (don't worry, a ZIP should exist and pages have been pushed)"
+    yes | rm -rf "$DOCS_DIRECTORY"
+fi
 
 end_time=$(date +%s)
 elapsed_time=$(( end_time - start_time ))
