@@ -218,7 +218,8 @@ echo2 "🔨 Adding things (~ $files_count files)"
 git add "$DOCS_DIRECTORY"
 
 echo2 "🔨 Committing things (be ready if passwords / passphrases are asked)"
-git commit -m $'doc: update DocC documentation for GitHub Pages\n\nWARNING: This is an automatic commit 🤖'
+commit_message=$'doc: update DocC documentation for version v'"$lib_version"'\n\nUpdate documentation for GitHub pages of version v'"$lib_version"' of OUDS iOS library (build timestamp '"$timestamp"')\n\nWARNING: This is an automatic commit 🤖'
+git commit -m "$commit_message"
 
 echo2 "🔨 Pushing things"
 git push origin
