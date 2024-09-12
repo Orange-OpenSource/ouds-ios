@@ -22,16 +22,23 @@ let package = Package(
     
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v15),
+        .macOS(.v11)], // macOS v11 required for swift-docc-plugin, not official support of OUDS for macOS!
     
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
+        .library(
+            name: "OUDS",
+            targets: ["OUDS"]),
         .library(
             name: "OUDSModules",
             targets: ["OUDSModules"]),
         .library(
             name: "OUDSComponents",
             targets: ["OUDSComponents"]),
+        .library(
+            name: "OUDSTokensComponent",
+            targets: ["OUDSTokensComponent"]),
         .library(
             name: "OUDSThemesSosh",
             targets: ["OUDSThemesSosh"]),
@@ -41,12 +48,6 @@ let package = Package(
         .library(
             name: "OUDSThemesOrange",
             targets: ["OUDSThemesOrange"]),
-        .library(
-            name: "OUDSThemesCommons",
-            targets: ["OUDSThemesCommons"]),
-        .library(
-            name: "OUDSTokensComponent",
-            targets: ["OUDSTokensComponent"]),
         .library(
             name: "OUDSTokensSemantic",
             targets: ["OUDSTokensRaw"]),
@@ -58,23 +59,36 @@ let package = Package(
             targets: ["OUDSFoundations"]),
     ],
     
+    dependencies: [
+        // To build DocC documentation
+        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
+    ],
+    
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [
+        .target(
+            name: "OUDS",
+            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
+            path: "OUDS/Core/OUDS/Sources"),
+        .testTarget(
+            name: "OUDS-Tests",
+            dependencies: ["OUDS"],
+            path: "OUDS/Core/OUDS/Tests"),
         .target(
             name: "OUDSModules",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Modules/Sources"),
         .target(
             name: "OUDSComponents",
-            dependencies: ["OUDSTokensComponent", "OUDSThemesOrange"],
+            dependencies: ["OUDSTokensComponent", "OUDS"],
             path: "OUDS/Core/Components/Sources"),
         .target(
             name: "OUDSThemesSosh",
-            dependencies: ["OUDSThemesCommons"],
+            dependencies: ["OUDS"],
             path: "OUDS/Core/Themes/Sosh/Sources"),
         .testTarget(
-            name: "Theme-Tests-Sosh",
+            name: "OUDSThemesSosh-Tests",
             dependencies: ["TestsUtils", "OUDSThemesSosh"],
             path: "OUDS/Core/Themes/Sosh/Tests"),
         .target(
@@ -82,25 +96,17 @@ let package = Package(
             dependencies: ["OUDSThemesOrange"],
             path: "OUDS/Core/Themes/Inverse/Sources"),
         .testTarget(
-            name: "Theme-Tests-Inverse",
+            name: "OUDSThemesInverse-Tests",
             dependencies: ["OUDSThemesInverse"],
             path: "OUDS/Core/Themes/Inverse/Tests"),
         .target(
             name: "OUDSThemesOrange",
-            dependencies: ["OUDSThemesCommons"],
+            dependencies: ["OUDS"],
             path: "OUDS/Core/Themes/Orange/Sources"),
         .testTarget(
-            name: "Theme-Tests-Orange",
+            name: "OUDSThemesOrange-Tests",
             dependencies: ["TestsUtils", "OUDSThemesOrange"],
             path: "OUDS/Core/Themes/Orange/Tests"),
-        .target(
-            name: "OUDSThemesCommons",
-            dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
-            path: "OUDS/Core/Themes/Commons/Sources"),
-        .testTarget(
-            name: "Theme-Tests-Commons",
-            dependencies: ["OUDSThemesCommons"],
-            path: "OUDS/Core/Themes/Commons/Tests"),
         .target(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],
@@ -114,19 +120,20 @@ let package = Package(
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Core/Tokens/RawTokens/Sources"),
         .testTarget(
-            name: "Raw-Tokens-Tests",
+            name: "OUDSTokensRaw-Tests",
             dependencies: ["TestsUtils", "OUDSTokensRaw"],
             path: "OUDS/Core/Tokens/RawTokens/Tests"),
         .target(
             name: "OUDSFoundations",
             path: "OUDS/Foundations/Sources"),
         .testTarget(
-            name: "Foundations-Tests",
+            name: "OUDSFoundations-Tests",
             dependencies: ["OUDSFoundations"],
             path: "OUDS/Foundations/Tests"),
         .target(
             name: "TestsUtils",
             path: "OUDS/Foundations/TestsUtils"),
     ],
+    
     swiftLanguageVersions: [.v5]
 )

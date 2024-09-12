@@ -12,11 +12,13 @@
 //
 
 import Foundation
+import OUDS
 import SwiftUI
-import OUDSThemesCommons // To get @Environment(\.theme) var theme
 
 /// An OUDS component for text input in formulars.
-/// **Warning: This is a draft component **
+/// __Warning: This is a draft component__.
+///
+/// This commponent is created to illustrate the mecanism of theme and tokens.
 public struct OUDSFormsTextInput: View {
 
     var placeholder: String
@@ -26,6 +28,13 @@ public struct OUDSFormsTextInput: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.theme) var theme
 
+    /// Use this initializer to create a text field that binds to a bound optional
+    /// value and propose a placeholder.
+    ///
+    /// - Parameters:
+    ///    - placeholder: Text in placeholder
+    ///    - value: Binding of the value
+    ///    - isEnabled: Flag to indicate if input is enabled (_true_ by default)
     public init(placeholder: String, value: Binding<String>, isEnabled: Bool = true) {
         self.placeholder = placeholder
         self._value = value

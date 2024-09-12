@@ -20,12 +20,19 @@ public typealias ElevationRawToken = Int
 
 // MARK: - Composite raw token
 
-public class ElevationBoxShadowRawToken: NSObject { // For @objc compatibility
+/// In the global design system, composite tokens are defined for elevation effects.
+/// It is defined as a `final class` and `NSObject` so as to be shared through `@objc` with extensions and protocols within modules.
+public final class ElevationBoxShadowRawToken: NSObject { // For @objc compatibility
 
+    /// The X offset for the elevation
     public let x: ElevationRawToken
+    /// The Y offset for the elevation
     public let y: ElevationRawToken
+    /// The *Figma* blur effect for the elevation
     public let blur: ElevationRawToken
+    /// The *Figma* spread effect for the elevation
     public let spread: ElevationRawToken
+    /// The color of the shadow effect
     public let color: ColorRawToken
 
     public init(x: ElevationRawToken, y: ElevationRawToken, blur: ElevationRawToken, spread: ElevationRawToken, color: ColorRawToken) {

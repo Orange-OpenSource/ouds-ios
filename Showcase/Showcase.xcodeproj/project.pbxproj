@@ -21,13 +21,16 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		070C35622C75EB1C0029C6A8 /* OUDS in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35612C75EB1C0029C6A8 /* OUDS */; };
+		070C35642C773A0D0029C6A8 /* OUDSThemesInverse in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35632C773A0D0029C6A8 /* OUDSThemesInverse */; };
+		070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35652C7762B90029C6A8 /* OUDSModules */; };
+		070C35682C7762B90029C6A8 /* OUDSThemesSosh in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35672C7762B90029C6A8 /* OUDSThemesSosh */; };
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
-		518CAA822C650DB9005B61CA /* OUDSThemesCommons in Frameworks */ = {isa = PBXBuildFile; productRef = 518CAA812C650DB9005B61CA /* OUDSThemesCommons */; };
 		51B4F7F42C5BEAB700312019 /* OrangeCustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
 		51BD76212C466FCF0033365D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
@@ -48,6 +51,7 @@
 /* Begin PBXFileReference section */
 		0707B6402C2C3C0400A911E7 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; name = .github; path = ../.github; sourceTree = "<group>"; };
 		0707B6432C2C569500A911E7 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
+		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07FDCD912C296A500009AA13 /* OUDS Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OUDS Showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FDCDA52C296B4B0009AA13 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitattributes; path = ../.gitattributes; sourceTree = "<group>"; };
 		07FDCDA72C296B7A0009AA13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -62,7 +66,7 @@
 		51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		512364782C3D7B2D00572FD5 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		5123647A2C3D7B3500572FD5 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
-		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeCustomTheme.swift; sourceTree = "<group>"; };
 		51BD760B2C466FCF0033365D /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
@@ -89,11 +93,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */,
+				070C35682C7762B90029C6A8 /* OUDSThemesSosh in Frameworks */,
 				E537B9B66A6466473179DEE8 /* Pods_Showcase.framework in Frameworks */,
+				070C35642C773A0D0029C6A8 /* OUDSThemesInverse in Frameworks */,
 				51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */,
-				518CAA822C650DB9005B61CA /* OUDSThemesCommons in Frameworks */,
+				070C35622C75EB1C0029C6A8 /* OUDS in Frameworks */,
 				513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */,
 				510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */,
+				070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +143,7 @@
 		07FDCDA42C296B220009AA13 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				07CEDD802C7DB921003E1885 /* generateDoc.sh */,
 				0707B6432C2C569500A911E7 /* Gemfile */,
 				5123647A2C3D7B3500572FD5 /* Gemfile.lock */,
 				5149BADA2C3D6F4F000FA4BF /* Podfile */,
@@ -267,8 +275,11 @@
 				510A9CCF2C5679A300430620 /* OUDSComponents */,
 				513AD93F2C5AAADE0003253B /* OUDSTokensComponent */,
 				51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */,
-				518CAA812C650DB9005B61CA /* OUDSThemesCommons */,
 				51BC9DE62C6513F200EB2A11 /* OUDSFoundations */,
+				070C35612C75EB1C0029C6A8 /* OUDS */,
+				070C35632C773A0D0029C6A8 /* OUDSThemesInverse */,
+				070C35652C7762B90029C6A8 /* OUDSModules */,
+				070C35672C7762B90029C6A8 /* OUDSThemesSosh */,
 			);
 			productName = DemoApp;
 			productReference = 07FDCD912C296A500009AA13 /* OUDS Showcase.app */;
@@ -683,6 +694,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		070C35612C75EB1C0029C6A8 /* OUDS */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDS;
+		};
+		070C35632C773A0D0029C6A8 /* OUDSThemesInverse */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSThemesInverse;
+		};
+		070C35652C7762B90029C6A8 /* OUDSModules */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSModules;
+		};
+		070C35672C7762B90029C6A8 /* OUDSThemesSosh */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OUDSThemesSosh;
+		};
 		510A9CCF2C5679A300430620 /* OUDSComponents */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSComponents;
@@ -690,10 +717,6 @@
 		513AD93F2C5AAADE0003253B /* OUDSTokensComponent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSTokensComponent;
-		};
-		518CAA812C650DB9005B61CA /* OUDSThemesCommons */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSThemesCommons;
 		};
 		51BC9DE62C6513F200EB2A11 /* OUDSFoundations */ = {
 			isa = XCSwiftPackageProductDependency;

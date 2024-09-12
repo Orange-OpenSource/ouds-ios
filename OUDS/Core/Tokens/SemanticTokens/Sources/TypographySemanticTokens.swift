@@ -16,15 +16,23 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
+/// The global design system tools uses verbs of semantic token for font family, which is basically a raw token for font family
 public typealias TypographyFontFamilySemanticToken = TypographyFontFamilyRawToken
+
+/// The global design system tools uses verbs of semantic token for font weight, which is basically a raw token for font weight
 public typealias TypographyFontWeightSemanticToken = TypographyFontWeightRawToken
+
+/// The global design system tools uses verbs of semantic token for font size, which is basically a raw token for font size
 public typealias TypographyFontSizeSemanticToken = TypographyFontSizeRawToken
+
+/// The global design system tools uses verbs of semantic token for font line height, which is basically a raw token for font line height
 public typealias TypographyFontLineHeightSemanticToken = TypographyFontLineHeightRawToken
 
 // MARK: - Semantic tokens
 
 /// This is a group of semantic tokens for **typography**.
-/// It defines all `TypographySemanticToken` a theme must have.
+/// It defines all typography semantic tokens a theme must have
+/// (`TypographyFontFamilySemanticToken`, `TypographyFontWeightSemanticToken`, `TypographyFontSizeSemanticToken`, `TypographyFontLineHeightSemanticToken`).
 public protocol TypographySemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Family

@@ -7,13 +7,13 @@ It contains modules, components, themes, and tokens (of components,s emantic and
 
 ## Exposed SPM modules
 
-This _Swift package_ exposes up to #0 _products_ as _libraries_:
+This _Swift package_ exposes up to 10 _products_ as _libraries_:
 1. `OUDSModules` containing OUDS modules with features ;
 2. `OUDSComponents` containing all components embeded also inside _modules_ ;
 3. `OUDSThemesSoshTheme` providing the default _Sosh_ theme defining style for _components_;
-4. `OUDSThemesInverseTheme` providing a _theme_ with inversed colors for _components_;
+4. `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_;
 5. `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_;
-6. `OUDSThemesCommons` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
+6. `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
 7. `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_ ;
 8. `OUDSTokensSemantic` providing _semantic tokens_ ; 
 9. `OUDSTokensRaw` providing _raw tokens_ ;
@@ -34,8 +34,9 @@ A _theme_ contains any relevant _semantic tokens_ and _component tokens_ which c
 A _theme_ has also _raw tokens_ associated to primitive types so as to give to _components_, written with _SwiftUI_, the needed values in the suitable type. A _theme_ can add for itself any new _tokens_.
 
 This library exposes today up to two themes:
-1. `OrangeTheme` which can be seen as the default _theme_
-2.  `SoshTheme` for Sosh.
+1. `OrangeTheme` which can be seen as the default _theme_ ;
+2. `SoshTheme` for Sosh ;
+2. `InverseTheme` for other use cases.
 
 They both are based on an `OUDSTheme` defining default values.
 
@@ -92,6 +93,35 @@ extension OUDSTheme: FormsTextInputComponentToken {
     @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
 }
 
+// The View
+
+struct OUDSFormsTextInput: View {
+
+    // ...
+    @Environment(\.theme) var theme
+
+    public var body: some View {
+        VStack(spacing: theme.spacePaddingBlockComponentTall) {
+            Label(
+                title: {
+                    Text("Example of OUDSFormsTextInput")
+                        .fontWeight(theme.ftiTitleFontWeight.fontWeight)
+                        .font(.system(size: theme.ftiTitleFontSize))
+                        .foregroundColor(theme.ftiTitleColor.color)
+                },
+                icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
+            )
+            Text("Write bellow some awesome text!")
+                .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
+                .font(.system(size: theme.ftiSubtitleFontSize))
+                .foregroundColor(theme.ftiSubtitleColor.color)
+            TextField(placeholder, text: $value)
+        }
+        .padding(theme.spacePaddingBlockComponentTall)
+        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
+        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
+    }
+}
 ```
 
 #### Semantic tokens
@@ -248,7 +278,7 @@ The for your root view:
 
 ```swift
 import SwiftUI
-import OUDSThemesCommons  // To get OUDSThemeableView
+import OUDS  // To get OUDSThemeableView
 
 struct MyAppRootView: View {
 

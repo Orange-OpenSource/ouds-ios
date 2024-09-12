@@ -12,7 +12,7 @@
 //
 
 import XCTest
-import OUDSThemesCommons
+import OUDS
 
 // swiftlint:disable type_body_length
 

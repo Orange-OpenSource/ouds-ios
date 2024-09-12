@@ -8,7 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Doc] Create the basics of a documentation ([#9](https://github.com/Orange-OpenSource/ouds-ios/issues/9))
+
 ### Changed
+
+- [Library] "OUDSThemesCommons" product has been renamed to "OUDS"
 
 ### Fixed
 

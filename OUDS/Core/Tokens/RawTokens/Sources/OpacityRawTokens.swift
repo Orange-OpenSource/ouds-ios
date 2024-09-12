@@ -15,6 +15,7 @@ import Foundation
 
 // MARK: - Type aliases to keep grammar clear
 
+/// Raw tokens of opacity are finaly `Double`
 public typealias OpacityRawToken = Double
 
 // MARK: - Raw tokens

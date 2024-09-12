@@ -16,6 +16,7 @@ import OUDSFoundations
 
 // MARK: - Type aliases to keep grammar clear
 
+/// A color raw token is finaly a `String` containing the hexadecimal code of the color
 public typealias ColorRawToken = String
 
 // MARK: Raw tokens

@@ -16,6 +16,7 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
+/// Basically an opacity semantic token is an opacity raw token
 public typealias OpacitySemanticToken = OpacityRawToken
 
 // MARK: - Semantic tokens

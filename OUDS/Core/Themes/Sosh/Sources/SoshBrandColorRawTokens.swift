@@ -17,6 +17,7 @@ import OUDSTokensRaw
 
 // MARK: - Type aliases to keep grammar clear
 
+/// In the global design system tool, the verbs of "primitive colors" are used, and at this level mean simply raw tokens of colors.
 public typealias ColorSoshPrimitiveToken = ColorRawToken
 
 // MARK: Primitive tokens
@@ -25,6 +26,7 @@ public typealias ColorSoshPrimitiveToken = ColorRawToken
 /// Type aliases here are just for consistancy reasons.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
+///  All colors of the Sosh brand are listed here.
 public enum SoshBrandColorRawTokens {
 
     // MARK: Primitive token - Colors - Sosh - Magenta

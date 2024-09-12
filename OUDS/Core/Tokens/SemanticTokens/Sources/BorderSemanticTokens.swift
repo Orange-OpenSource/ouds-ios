@@ -18,8 +18,10 @@ import OUDSTokensRaw
 
 /// Typeliases precising `BorderWidthRawToken`  is used as a value of this **border width semantic token**.
 public typealias BorderWidthSemanticToken = BorderWidthRawToken
+
 /// Typeliases precising `BorderRadiusSemanticToken`  is used as a value of t**his border raw semantic token**.
 public typealias BorderRadiusSemanticToken = BorderRadiusRawToken
+
 /// Typeliases precising `BorderStyleSemanticToken`  is used as a value of this **border style semantic token**.
 public typealias BorderStyleSemanticToken = BorderStyleRawToken
 
@@ -30,7 +32,6 @@ public typealias BorderStyleSemanticToken = BorderStyleRawToken
 public protocol BorderSemanticTokens {
 
     // MARK: - Semantic token - Border - Width
-
     var borderWidthNone: BorderWidthSemanticToken { get }
     var borderWidthDefault: BorderWidthSemanticToken { get }
     var borderWidthThin: BorderWidthSemanticToken { get }
