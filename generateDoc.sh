@@ -233,7 +233,7 @@ do
 done
 echo "</ol></main>" >> $DOCS_DIRECTORY/index.html
 echo "<footer><p>Find the source code on <a href=\"$HTML_PROJECT_URL\">GitHub</a></p>" >> $DOCS_DIRECTORY/index.html
-echo "<p>&copy; $(date +%Y) $HTML_PROJECT_COPYRIGHT</p><p>Documentation build $timestamp</p></footer></body></html>" >> $DOCS_DIRECTORY/index.html
+echo "<p>&copy; $(date +%Y) $HTML_PROJECT_COPYRIGHT</p><p>Documentation build n°$timestamp</p></footer></body></html>" >> $DOCS_DIRECTORY/index.html
 
 echo2 "👍 index.html updated!"
 
@@ -295,7 +295,8 @@ fi
 if [[ $no_zip -eq 0 ]]; then
     echo2 "👉 Zipping documentation folder"
     zip -r "$DOCUMENTATION_ZIP_LOCATION" "$DOCS_DIRECTORY"/*
-    echo2 "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION"
+    size_in_byte=`du "$DOCUMENTATION_ZIP_LOCATION" | cut -f1`
+    echo2 "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION ($size_in_byte bytes)"
 fi
 
 if [[ $keep_generated -eq 0 ]]; then
@@ -315,5 +316,6 @@ elapsed_time_minutes=$(( elapsed_time / 60 ))
 elapsed_time_seconds=$(( elapsed_time % 60 ))
 
 echo2 "⌛ Elapsed time: ${elapsed_time_minutes} minutes and ${elapsed_time_seconds} seconds"
+echo2 "👋 Bye!"
 
 exit $EXIT_OK
