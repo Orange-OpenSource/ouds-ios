@@ -196,6 +196,7 @@ _ "👍 Documention folder created at '$DOCS_DIRECTORY'!"
 # The version of swift-docc-plugin (https://github.com/swiftlang/swift-docc-plugin) we use (here 1.4.2 according to the Package.resolved file)
 # does not seem to manage very weell Swift Packages with several targets.
 # Consider using this version of the tool or submit an issue / pull request for updates to https://github.com/Orange-OpenSource/ouds-ios
+# Related issue: https://github.com/Orange-OpenSource/ouds-ios/issues/95
 # (╯°□°)╯︵ ┻━┻
 
 _ "👉 Generating docs..."
