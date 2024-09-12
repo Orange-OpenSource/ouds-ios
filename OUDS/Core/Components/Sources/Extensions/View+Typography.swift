@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import OUDSThemesCommons
+import OUDS
 import SwiftUI
 
 // MARK: - View extensions for typography

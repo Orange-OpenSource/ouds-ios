@@ -12,8 +12,8 @@
 //
 
 import Foundation
+import OUDS
 import OUDSFoundations
-import OUDSThemesCommons
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI

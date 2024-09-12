@@ -40,7 +40,7 @@ public typealias TypographyFontParagraphSpacingRawToken = Int
 public struct TypographyCompositeRawToken: Equatable {
 
     // Font family is not included here because this is the only thing which can vary
-    
+
     /// The font size to apply for the texts
     public let size: TypographyFontSizeRawToken
     /// The line height to apply on texts

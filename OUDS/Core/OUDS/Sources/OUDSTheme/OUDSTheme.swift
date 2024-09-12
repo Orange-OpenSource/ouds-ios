@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSTokensSemantic
 
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
 /// A Swift `class` has been used so as to allow to easily override some attributes and have inheritance, without having for developers
@@ -24,6 +25,9 @@ import Foundation
 open class OUDSTheme {
 
     public init() { }
+
+    /// A theme can have a custom font which is not the system font
+    public var customFontFamily: TypographyFontFamilySemanticToken?
 
     // Please refer to extensions for properties, it will be more clear
 }

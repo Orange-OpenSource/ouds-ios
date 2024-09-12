@@ -53,7 +53,7 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontSizeMobileBodyLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize250 }
     @objc open var fontSizeMobileBodyMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
     @objc open var fontSizeMobileBodySmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize100 }
-    
+
     // MARK: Semantic token - Typography - Font - Size - Tablet
 
     @objc open var fontSizeTabletDisplayLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize1450 }
@@ -101,7 +101,7 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLineHeightTabletBodyLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
     @objc open var fontLineHeightTabletBodyMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
     @objc open var fontLineHeightTabletBodySmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
-    
+
     // MARK: Semantic token - Typography - Font - Light height - Others
 
     @objc open var fontLineHeightLabelXLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
