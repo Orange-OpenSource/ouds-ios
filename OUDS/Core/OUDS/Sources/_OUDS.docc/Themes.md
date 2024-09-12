@@ -82,7 +82,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentToken, used in compo
     public override var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight }
     public override var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark }
 
-    public override var ftiBorderColor: ColorSemanticToken { colorBorderEmphasisDark ?? MyThemeColorRawTokens.someAwesomeThemeExclusiveColor }
+    public override var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedDark ?? MyThemeColorRawTokens.someAwesomeThemeExclusiveColor }
 
     public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 

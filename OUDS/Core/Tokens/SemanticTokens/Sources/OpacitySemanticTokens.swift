@@ -31,6 +31,6 @@ public protocol OpacitySemanticTokens {
     var opacityWeaker: OpacitySemanticToken { get }
     var opacityWeak: OpacitySemanticToken { get }
     var opacityMedium: OpacitySemanticToken { get }
-    var opacityEmphasized: OpacitySemanticToken { get }
+    var opacityStrong: OpacitySemanticToken { get }
     var opacityOpaque: OpacitySemanticToken { get }
 }
