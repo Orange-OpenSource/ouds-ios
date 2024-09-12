@@ -54,6 +54,7 @@ DOCS_DIRECTORY="./docs"
 timestamp=$(date +%s)
 DOCUMENTATION_ZIP_NAME="documentation-$timestamp.zip"
 DOCUMENTATION_ZIP_LOCATION="/tmp/$DOCUMENTATION_ZIP_NAME"
+DOCUMENTATION_HTML_LOCATION="/tmp/docs-$timestamp"
 
 # Errors management
 # -----------------
@@ -256,7 +257,7 @@ if [[ $use_git -eq 1 ]]; then
     _ "👉 Versioning documentation in service pages branch (it can take a lot of time)..."
 
     _ "🔨 Saving things"
-    rsync -a --delete "$DOCS_DIRECTORY" "/tmp/$DOCS_DIRECTORY"
+    cp -r "$DOCS_DIRECTORY" "$DOCUMENTATION_HTML_LOCATION"
     clean_repo
 
     _ "🔨 Checkout service pages branch, align with remote"
@@ -272,10 +273,9 @@ if [[ $use_git -eq 1 ]]; then
         git checkout -b "$SERVICE_PAGES_BRANCH" origin/"$SERVICE_PAGES_BRANCH"
     fi
 
-    _ "🔨 Applying changes things"
+    _ "🔨 Applying changes"
     rm -rf "$DOCS_DIRECTORY"
-    mkdir -p "$DOCS_DIRECTORY"
-    rsync -a "/tmp/$DOCS_DIRECTORY" "$DOCS_DIRECTORY"
+    cp -r "$DOCUMENTATION_HTML_LOCATION" "$DOCS_DIRECTORY"
 
     _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY"
