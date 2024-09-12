@@ -315,6 +315,7 @@ elapsed_time_minutes=$(( elapsed_time / 60 ))
 elapsed_time_seconds=$(( elapsed_time % 60 ))
 
 _ "⌛ Elapsed time: ${elapsed_time_minutes} minutes and ${elapsed_time_seconds} seconds"
+_ "🚀 There were about $files_count files to process!"
 _ "👋 Bye!"
 
 exit $EXIT_OK
