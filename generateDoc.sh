@@ -60,7 +60,7 @@ EXIT_NOT_GIT_REPO=2
 EXIT_BAD_PARAMETER=3
 
 on_error_signal() {
-    echo2 "❌  An error occurred with command '$BASH_COMMAND'. Exits. ($EXIT_ERROR_SIG)"
+    _ "❌  An error occurred with command '$BASH_COMMAND'. Exits. ($EXIT_ERROR_SIG)"
     if [[ $use_git -eq 1 ]]; then
         clean_repo
     fi
@@ -75,7 +75,7 @@ trap 'on_error_signal' SIGABRT
 # Functions
 # ---------
 
-echo2() {
+_() {
     local message="$1"
     local is_error="${2:-false}"
     local prefix="🍊 "
@@ -88,7 +88,7 @@ echo2() {
 }
 
 clean_repo() {
-    echo2 "🧹 Cleaning Git repository"
+    _ "🧹 Cleaning Git repository"
     git reset --hard
     git clean -fd
 }
@@ -122,7 +122,7 @@ for arg in "$@"; do
             ;;
         --libversion=*)
             lib_version="${arg#*=}"
-            echo2 "✔️ OK, library version to know is '$lib_version'"
+            _ "✔️ OK, library version to know is '$lib_version'"
             ;;
         --usegit)
             use_git=1
@@ -134,37 +134,37 @@ for arg in "$@"; do
             keep_generated=0
             ;;            
         *)
-            echo2 "Unknown parameter: $arg. Exits. ($EXIT_BAD_PARAMETER)" true
+            _ "Unknown parameter: $arg. Exits. ($EXIT_BAD_PARAMETER)" true
             exit $EXIT_BAD_PARAMETER
             ;;
     esac
 done
 
 if [[ -z "$lib_version" ]]; then
-    echo2 "Parameter --libversion is mandatory. Exits. ($EXIT_BAD_PARAMETER)" true
+    _ "Parameter --libversion is mandatory. Exits. ($EXIT_BAD_PARAMETER)" true
     exit $EXIT_BAD_PARAMETER
 fi
 
 if [[ $use_git -eq 1 ]]; then
-    echo2 "✔️ OK, Git will be used"
+    _ "✔️ OK, Git will be used"
 else
-    echo2 "✔️ OK, Git will NOT be used"
+    _ "✔️ OK, Git will NOT be used"
 fi
 
 if [[ $no_zip -eq 1 ]]; then
-    echo2 "✔️ OK, no ZIP archive will be done"
+    _ "✔️ OK, no ZIP archive will be done"
 else
-    echo2 "✔️ OK, a ZIP archive will be created"
+    _ "✔️ OK, a ZIP archive will be created"
 fi       
 
 if [[ $keep_generated -eq 1 ]]; then
-    echo2 "✔️ OK, generated files will be kept"
+    _ "✔️ OK, generated files will be kept"
 else
-    echo2 "✔️ OK, generated files will be deleted"
+    _ "✔️ OK, generated files will be deleted"
 fi
 
 if [[ "$use_git" -eq 0 && "$no_zip" -eq 1 && "$keep_generated" -eq 0 ]]; then
-    echo2 "🥴 WARNING: What do you use this script for?"
+    _ "🥴 WARNING: What do you use this script for?"
 fi
 
 # Step 1 - Git setup (if relevant)
@@ -174,49 +174,49 @@ start_time=$(date +%s)
 
 if [[ $use_git -eq 1 ]]; then
     if [ -d ".git" ]; then
-        echo2 "✅ This is a Git repository. Ensure the credentials you need are ready (SSH, HTTPS, GPG, etc.)"
+        _ "✅ This is a Git repository. Ensure the credentials you need are ready (SSH, HTTPS, GPG, etc.)"
         current_branch=$(git rev-parse --abbrev-ref HEAD)
-        echo2 "🔨 Current Git branch is '$current_branch'"
+        _ "🔨 Current Git branch is '$current_branch'"
         clean_repo # To get rid of unversioned files etc.
     else
-        echo2 "This is not a Git repository. Exits. ($EXIT_NOT_GIT_REPO)" true
+        _ "This is not a Git repository. Exits. ($EXIT_NOT_GIT_REPO)" true
         exit $EXIT_NOT_GIT_REPO
     fi
 fi
 
-echo2 "👉 Creating documentation folder..."
+_ "👉 Creating documentation folder..."
 mkdir -p "$DOCS_DIRECTORY"
-echo2 "👍 Documention folder created at '$DOCS_DIRECTORY'!"
+_ "👍 Documention folder created at '$DOCS_DIRECTORY'!"
 
 # Step 1 - For each target, build the DocC documentation
 # ------------------------------------------------------
 
-echo2 "👉 Generating docs..."
+_ "👉 Generating docs..."
 
 for target in ${TARGETS}
 do
-    echo2 "👉 Generating docs for $target..."
+    _ "👉 Generating docs for $target..."
     swift package --allow-writing-to-directory "$target-docs" generate-documentation  --disable-indexing --transform-for-static-hosting --output-path "$target-docs" --target "$target"
     
     cp -r $target-docs/* $DOCS_DIRECTORY
     modified_target=$(echo $target | tr '-' '_' | tr '[:upper:]' '[:lower:]')
     cp -r $target-docs/index/index.json "$DOCS_DIRECTORY/index/$modified_target.json"
-    echo2 "👍 Docs generated for $target!"
+    _ "👍 Docs generated for $target!"
 done
 
 # Step 2 - Add CNAME file for GitHub Pages
 # ----------------------------------------
 
 if [[ $use_git -eq 1 ]]; then
-    echo2 "👉 Updating CNAME file"
+    _ "👉 Updating CNAME file"
     echo "$SERVICE_PAGES_DOMAIN" > "$DOCS_DIRECTORY/CNAME"
-    echo2 "👍 Updated!"
+    _ "👍 Updated!"
 fi
 
 # Step 3 - Update global HTML file
 # --------------------------------
 
-echo2 "👉 Updating index.html..."
+_ "👉 Updating index.html..."
 
 echo "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>$HTML_TITLE</title><style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;padding:0;background-color:#000000;color:#fff;}header{background-color:#424242;color:white;padding:20px;text-align:center;}main{padding:20px;}h1{margin:0;}ol{padding-left:20px;}li{margin:10px 0;}a{color:#06f;text-decoration:none;}a:hover{text-decoration:underline;}footer{text-align:center;padding:10px;background-color:#000000;border-top:1px solid #e0e0e0;}</style></head><body><header><h1>$HTML_H1</h1></header><main>" > $DOCS_DIRECTORY/index.html
 echo "<h2>$HTML_H2</h2>" >> $DOCS_DIRECTORY/index.html
@@ -235,79 +235,79 @@ echo "</ol></main>" >> $DOCS_DIRECTORY/index.html
 echo "<footer><p>Find the source code on <a href=\"$HTML_PROJECT_URL\">GitHub</a></p>" >> $DOCS_DIRECTORY/index.html
 echo "<p>&copy; $(date +%Y) $HTML_PROJECT_COPYRIGHT</p><p>Documentation build n°$timestamp</p></footer></body></html>" >> $DOCS_DIRECTORY/index.html
 
-echo2 "👍 index.html updated!"
+_ "👍 index.html updated!"
+
+files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
 
 # Step 4 - Checkout to GitHub Pages dedicated branch (if relevant)
 # ---------------------------------------------------------------
 
 if [[ $use_git -eq 1 ]]; then
-    echo2 "👉 Versioning documentation in service pages branch (it can take a lot of time)..."
+    _ "👉 Versioning documentation in service pages branch (it can take a lot of time)..."
 
-    echo2 "🔨 Stashing things"
+    _ "🔨 Stashing things"
     git stash -u
 
-    echo2 "🔨 Checkout service pages branch, align with remote"
+    _ "🔨 Checkout service pages branch, align with remote"
 
     # Check if the local branch exists
     if git show-ref --verify --quiet refs/heads/"$SERVICE_PAGES_BRANCH"; then
-        echo2 "🔨 Checking out local branch '$SERVICE_PAGES_BRANCH'"
+        _ "🔨 Checking out local branch '$SERVICE_PAGES_BRANCH'"
         git checkout "$SERVICE_PAGES_BRANCH"
         git reset --hard origin/$SERVICE_PAGES_BRANCH # Ensure to be aligned with remote version
     else
-        echo2 "🔨 Local branch '$SERVICE_PAGES_BRANCH' does not exist. Checking out from remote."
+        _ "🔨 Local branch '$SERVICE_PAGES_BRANCH' does not exist. Checking out from remote."
         git fetch origin
         git checkout -b "$SERVICE_PAGES_BRANCH" origin/"$SERVICE_PAGES_BRANCH"
     fi
 
-    echo2 "🔨 Unstashing things"
+    _ "🔨 Unstashing things"
     git stash apply
 
-    files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
-    echo2 "🔨 Adding things (~ $files_count files)"
+    _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY"
 
-    echo2 "🔨 Committing things (be ready if passwords / passphrases are asked)"
+    _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
     commit_message=$(printf "doc: update DocC documentation for version v%s\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$lib_version" "$timestamp")
     git commit -m "$commit_message"
 
-    echo2 "🔨 Pushing things"
-    git push origin
+    _ "🔨 Pushing things"
+    git push origin "$SERVICE_PAGES_BRANCH"
 
-    echo2 "🔨 Cleaning stashes"
+    _ "🔨 Cleaning stashes"
     git stash clear
 
     commit_hash=`git rev-parse HEAD`
 
-    echo2 "🔨 Going back to previous Git branch"
+    _ "🔨 Going back to previous Git branch"
     git checkout "$current_branch"
 
 else
-    echo2 "👍 Ok, just keep documentation here"
+    _ "👍 Ok, just keep documentation here"
 fi
 
 # Step 5 - Metrics and conclusion
 # -------------------------------
 
 if [[ $use_git -eq 1 ]]; then
-    echo2 "👍 Pushed with commit '$commit_hash'"
+    _ "👍 Pushed with commit '$commit_hash'"
 fi
 
 if [[ $no_zip -eq 0 ]]; then
-    echo2 "👉 Zipping documentation folder"
+    _ "👉 Zipping documentation folder"
     zip -r "$DOCUMENTATION_ZIP_LOCATION" "$DOCS_DIRECTORY"/*
     size_in_byte=`du "$DOCUMENTATION_ZIP_LOCATION" | cut -f1`
-    echo2 "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION ($size_in_byte bytes)"
+    _ "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION ($size_in_byte bytes)"
 fi
 
 if [[ $keep_generated -eq 0 ]]; then
     if [[ -d "$DOCS_DIRECTORY" ]]; then
-        echo2 "🧹 Deleting docs directory"
+        _ "🧹 Deleting docs directory"
         rm -rf "$DOCS_DIRECTORY"
     fi
 else
-    echo2 "🎉 Documentation also available in $DOCS_DIRECTORY"
-    files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
-    echo2 "🧮 There are '$files_count' in $DOCS_DIRECTORY!"
+    _ "🎉 Documentation also available in $DOCS_DIRECTORY"
+    _ "🧮 There are '$files_count' in $DOCS_DIRECTORY!"
 fi
 
 end_time=$(date +%s)
@@ -315,7 +315,7 @@ elapsed_time=$(( end_time - start_time ))
 elapsed_time_minutes=$(( elapsed_time / 60 ))
 elapsed_time_seconds=$(( elapsed_time % 60 ))
 
-echo2 "⌛ Elapsed time: ${elapsed_time_minutes} minutes and ${elapsed_time_seconds} seconds"
-echo2 "👋 Bye!"
+_ "⌛ Elapsed time: ${elapsed_time_minutes} minutes and ${elapsed_time_seconds} seconds"
+_ "👋 Bye!"
 
 exit $EXIT_OK
