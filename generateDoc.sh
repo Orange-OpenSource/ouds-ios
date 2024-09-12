@@ -171,7 +171,7 @@ if [[ $use_git -eq 1 ]]; then
     if [ -d ".git" ]; then
 
         # Xcode keeps files and dislikes updates of local branches...
-        _ "🚨 You should close Xcode before going further"
+        _ "🚨 You should close Xcode or anyt software working on this workspace, before going further, just in case of..."
         _ "Press any key to continue..."
         read -n 1 -s # Don't care of the input, just want the user be ready in the end
     
@@ -189,7 +189,7 @@ _ "👉 Creating documentation folder..."
 mkdir -p "$DOCS_DIRECTORY"
 _ "👍 Documention folder created at '$DOCS_DIRECTORY'!"
 
-# Step 1 - For each target, build the DocC documentation
+# Step 2 - For each target, build the DocC documentation
 # ------------------------------------------------------
 
 # WARNING
@@ -211,7 +211,7 @@ do
     _ "👍 Docs generated for $target!"
 done
 
-# Step 2 - Add CNAME file for GitHub Pages
+# Step 3 - Add CNAME file for GitHub Pages
 # ----------------------------------------
 
 if [[ $use_git -eq 1 ]]; then
@@ -220,7 +220,7 @@ if [[ $use_git -eq 1 ]]; then
     _ "👍 Updated!"
 fi
 
-# Step 3 - Update global HTML file
+# Step 4 - Update global HTML file
 # --------------------------------
 
 # This is only to build a global index.html file referencing all other targets index.html files
@@ -248,7 +248,7 @@ _ "👍 index.html updated!"
 
 files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
 
-# Step 4a - Checkout to service pages dedicated branch (if relevant)
+# Step 5a - Checkout to service pages dedicated branch (if relevant)
 # ------------------------------------------------------------------
 
 # When the files have been generated, stash them, change branch, unstash, add, commit, push then clean
@@ -291,7 +291,7 @@ else
     _ "👍 Ok, just keep documentation here"
 fi
 
-# Step 5 - Compress ZIP (if relevant)
+# Step 6 - Compress ZIP (if relevant)
 # -----------------------------------
 
 # ZIP action must be done before reseting the Git workspace (otherwise everything will be wiped out)
@@ -302,7 +302,7 @@ if [[ $no_zip -eq 0 ]]; then
     _ "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION ($size_in_byte bytes)"
 fi
 
-# Step 4b - Resume work on Git branch (if relevant)
+# Step 5b - Resume work on Git branch (if relevant)
 # -------------------------------------------------
 
 if [[ $use_git -eq 1 ]]; then
@@ -313,7 +313,7 @@ if [[ $use_git -eq 1 ]]; then
     _ "👍 Pushed with commit '$commit_hash'"
 fi
 
-# Step 6 - Metrics and conclusion
+# Step 7 - Metrics and conclusion
 # -------------------------------
 
 end_time=$(date +%s)
