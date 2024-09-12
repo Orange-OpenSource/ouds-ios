@@ -18,19 +18,6 @@ set -euo pipefail
 # Configuration
 # -------------
 
-# The name of the Git branch hosting GitHub Pages service
-GH_PAGES_BRANCH="gh-pages"
-# If something wrong occurs, fallback to this branch to let the repo is a clean state
-GIT_FALLBACK_BRANCH="develop"
-
-# Path where the documentation will be
-DOCS_DIRECTORY="./docs"
-
-# The generated name of the ZIP containing the generated sources of documentation (for archive)
-timestamp=$(date +%s)
-DOCUMENTATION_ZIP_NAME="documentation-$timestamp.zip"
-DOCUMENTATION_ZIP_LOCATION="/tmp/$DOCUMENTATION_ZIP_NAME"
-
 # The Swift Package targets to build documentation of
 TARGETS="OUDS \
         OUDSThemesSosh \
@@ -42,6 +29,30 @@ TARGETS="OUDS \
         OUDSComponents \
         OUDSModules \
         OUDSFoundations"
+
+# GitHub Pages custom subdomain, don't forget to verify it in organization side!
+GH_PAGES_DOMAIN="ios.unified-design-system.orange.com"
+
+# Some HTML fragments to ad in the HTML global page index.html
+HTML_TITLE="OUDS iOS Swift Documentation"
+HTML_H1="OUDS iOS Swift Documentation"
+HTML_H2="iOS SwiftUI implementation of the Unified Design System of Orange"
+HTML_GITHUB_PROJECT_URL="https://github.com/Orange-OpenSource/ouds-ios"
+HTML_PROJECT_COPYRIGHT="Orange SA"
+
+# The name of the Git branch hosting GitHub Pages service
+GH_PAGES_BRANCH="gh-pages"
+
+# If something wrong occurs, fallback to this branch to let the repo is a clean state
+GIT_FALLBACK_BRANCH="develop"
+
+# Path where the documentation will be
+DOCS_DIRECTORY="./docs"
+
+# The generated name of the ZIP containing the generated sources of documentation (for archive)
+timestamp=$(date +%s)
+DOCUMENTATION_ZIP_NAME="documentation-$timestamp.zip"
+DOCUMENTATION_ZIP_LOCATION="/tmp/$DOCUMENTATION_ZIP_NAME"
 
 # Errors management
 # -----------------
@@ -133,13 +144,13 @@ fi
 
 start_time=$(date +%s)
 
-echo2 "👉 Creating documentation folder..."
-mkdir -p "$DOCS_DIRECTORY"
-echo2 "👍 Documention folder created at '$DOCS_DIRECTORY'!"
-
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 echo2 "🔨 Current Git branch is '$current_branch'"
 clean_repo # To get rid of unversioned files etc.
+
+echo2 "👉 Creating documentation folder..."
+mkdir -p "$DOCS_DIRECTORY"
+echo2 "👍 Documention folder created at '$DOCS_DIRECTORY'!"
 
 # Step 1 - For each target, build the DocC documentation
 # ------------------------------------------------------
@@ -161,7 +172,7 @@ done
 # ----------------------------------------
 
 echo2 "👉 Updating CNAME file"
-echo "ios.unified-design-system.orange.com" > "$DOCS_DIRECTORY/CNAME"
+echo "$GH_PAGES_DOMAIN" > "$DOCS_DIRECTORY/CNAME"
 echo2 "👍 Updated!"
     
 # Step 3 - Update global HTML file
@@ -169,8 +180,8 @@ echo2 "👍 Updated!"
 
 echo2 "👉 Updating index.html..."
 
-echo "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>OUDS iOS Swift Documentation</title><style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;padding:0;background-color:#000000;color:#fff;}header{background-color:#424242;color:white;padding:20px;text-align:center;}main{padding:20px;}h1{margin:0;}ol{padding-left:20px;}li{margin:10px 0;}a{color:#06f;text-decoration:none;}a:hover{text-decoration:underline;}footer{text-align:center;padding:10px;background-color:#000000;border-top:1px solid #e0e0e0;}</style></head><body><header><h1>OUDS iOS Swift Documentation/h1></header><main>" > $DOCS_DIRECTORY/index.html
-echo "<h2>iOS SwiftUI implementation of the Unified Design System of Orange</h2>" >> $DOCS_DIRECTORY/index.html
+echo "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>$HTML_TITLE</title><style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;padding:0;background-color:#000000;color:#fff;}header{background-color:#424242;color:white;padding:20px;text-align:center;}main{padding:20px;}h1{margin:0;}ol{padding-left:20px;}li{margin:10px 0;}a{color:#06f;text-decoration:none;}a:hover{text-decoration:underline;}footer{text-align:center;padding:10px;background-color:#000000;border-top:1px solid #e0e0e0;}</style></head><body><header><h1>$HTML_H1</h1></header><main>" > $DOCS_DIRECTORY/index.html
+echo "<h2>$HTML_H2</h2>" >> $DOCS_DIRECTORY/index.html
 echo "<h3>Version v$lib_version</h3>" >> $DOCS_DIRECTORY/index.html
 echo "<h4>All targets of the Swift Package are listed below</h4>" >> $DOCS_DIRECTORY/index.html
 echo "<ol>" >> $DOCS_DIRECTORY/index.html
@@ -183,8 +194,8 @@ do
     echo "<li><a href=\"./documentation/$modified_target\">$target</a></li>" >> $DOCS_DIRECTORY/index.html
 done
 echo "</ol></main>" >> $DOCS_DIRECTORY/index.html
-echo "<footer><p>Find the source code on <a href=\"https://github.com/Orange-OpenSource/ouds-ios\">GitHub</a></p>" >> $DOCS_DIRECTORY/index.html
-echo "<p>&copy; $(date +%Y) Orange</p><p>Documentation build $timestamp</p></footer></body></html>" >> $DOCS_DIRECTORY/index.html
+echo "<footer><p>Find the source code on <a href=\"$HTML_GITHUB_PROJECT_URL\">GitHub</a></p>" >> $DOCS_DIRECTORY/index.html
+echo "<p>&copy; $(date +%Y) $HTML_PROJECT_COPYRIGHT</p><p>Documentation build $timestamp</p></footer></body></html>" >> $DOCS_DIRECTORY/index.html
 
 echo2 "👍 index.html updated!"
 
