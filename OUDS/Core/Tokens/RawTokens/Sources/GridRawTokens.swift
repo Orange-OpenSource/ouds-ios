@@ -30,26 +30,28 @@ public enum GridRawTokens {
 
     // MARK: Primitive token - Grid - Design width
 
-    public static let gridDesignWidth100: GridRawToken = 320
-    public static let gridDesignWidth200: GridRawToken = 390
-    public static let gridDesignWidth300: GridRawToken = 480
-    public static let gridDesignWidth400: GridRawToken = 768
-    public static let gridDesignWidth500: GridRawToken = 1024
-    public static let gridDesignWidth600: GridRawToken = 1440
-    public static let gridDesignWidth700: GridRawToken = 1680
-    public static let gridDesignWidth800: GridRawToken = 1920
+    public static let gridWidth100: GridRawToken = 320
+    public static let gridWidth200: GridRawToken = 390
+    public static let gridWidth300: GridRawToken = 480
+    public static let gridWidth400: GridRawToken = 768
+    public static let gridWidth500: GridRawToken = 1024
+    public static let gridWidth600: GridRawToken = 1440
+    public static let gridWidth700: GridRawToken = 1680
+    public static let gridWidth800: GridRawToken = 1920
 
     // MARK: Primitive token - Grid - Min width
 
-    public static let gridMinWidthIOSExtraCompact: GridRawToken = 320
-    public static let gridMinWidthIOSCompact: GridRawToken = 390
-    public static let gridMinWidthIOSRegular: GridRawToken = 736
+    // TODO: Add missing min width
+    public static let gridMinWidthExtraCompact: GridRawToken = 320
+    public static let gridMinWidthCompact: GridRawToken = 390
+    public static let gridMinWidthRegular: GridRawToken = 736
 
     // MARK: Primitive token - Grid - Max width
 
-    public static let gridMaxWidthIOSExtraCompact: GridRawToken = 389
-    public static let gridMaxWidthIOSCompact: GridRawToken = 852
-    public static let gridMaxWidthIOSRegular: GridRawToken = 1336
+    // TODO: Add missing max width
+    public static let gridMaxWidthExtraCompact: GridRawToken = 389
+    public static let gridMaxWidthCompact: GridRawToken = 852
+    public static let gridMaxWidthRegular: GridRawToken = 1336
 
     // MARK: Primitive token - Grid - Margin
 
@@ -68,46 +70,42 @@ public enum GridRawTokens {
     // MARK: Primitive token - Grid - Column gap
 
     public static let gridColumnGap10: GridRawToken = dimensionBase * 0.25
-    public static let gridColumnGap100: GridRawToken = dimensionBase * 4
-    public static let gridColumnGap200: GridRawToken = dimensionBase * 5
-    public static let gridColumnGap300: GridRawToken = dimensionBase * 6
-    public static let gridColumnGap500: GridRawToken = dimensionBase * 8
+    public static let gridColumnGap100: GridRawToken = dimensionBase * 2
+    public static let gridColumnGap200: GridRawToken = dimensionBase * 4
+    public static let gridColumnGap300: GridRawToken = dimensionBase * 5
+    public static let gridColumnGap400: GridRawToken = dimensionBase * 6
+    public static let gridColumnGap600: GridRawToken = dimensionBase * 8
     public static let gridColumnGap700: GridRawToken = dimensionBase * 10
 
     // MARK: Primitive token - Grid - Column count
 
-    public static let gridColumnCount100: GridRawToken = dimensionBase * 1
-    public static let gridColumnCount200: GridRawToken = dimensionBase * 2
-    public static let gridColumnCount400: GridRawToken = dimensionBase * 4
-    public static let gridColumnCount600: GridRawToken = dimensionBase * 6
-    public static let gridColumnCount800: GridRawToken = dimensionBase * 8
-    public static let gridColumnCount1000: GridRawToken = dimensionBase * 10
-    public static let gridColumnCount1200: GridRawToken = dimensionBase * 12
+    public static let gridColumnCount100: GridRawToken = 1
+    public static let gridColumnCount200: GridRawToken = 2
+    public static let gridColumnCount400: GridRawToken = 4
+    public static let gridColumnCount600: GridRawToken = 6
+    public static let gridColumnCount800: GridRawToken = 8
+    public static let gridColumnCount1000: GridRawToken = 10
+    public static let gridColumnCount1200: GridRawToken = 12
 
     // MARK: Primitive token - Grid - Composite - iOS Extra Compact
 
-    public static let gridIOSExtraCompactDesignWidth: GridRawToken = gridDesignWidth100
-    public static let gridIOSExtraCompactMinWidth: GridRawToken = gridMinWidthIOSExtraCompact
-    public static let gridIOSExtraCompactMaxWidth: GridRawToken = gridMaxWidthIOSExtraCompact
-    public static let gridIOSExtraCompactMargin: GridRawToken = gridMargin100
-    public static let gridIOSExtraCompactColumnGap: GridRawToken = gridColumnGap100
-    public static let gridIOSExtraCompactColumnCount: GridRawToken = gridColumnCount100
+    public static let gridExtraCompactMinWidth: GridRawToken = gridMinWidthExtraCompact
+    public static let gridExtraCompactMaxWidth: GridRawToken = gridMaxWidthExtraCompact
+    public static let gridExtraCompactMargin: GridRawToken = gridMargin100
+    public static let gridExtraCompactColumnGap: GridRawToken = gridColumnGap100
 
     // MARK: Primitive token - Grid - Composite - iOS Compact
 
-    public static let gridIOSCompactDesignWidth: GridRawToken = gridDesignWidth200
-    public static let gridIOSCompactMinWidth: GridRawToken = gridMinWidthIOSCompact
-    public static let gridIOSCompactMaxWidth: GridRawToken = gridMaxWidthIOSCompact
-    public static let gridIOSCompactMargin: GridRawToken = gridMargin300
-    public static let gridIOSCompactColumnGap: GridRawToken = gridColumnGap100
-    public static let gridIOSCompactColumnCount: GridRawToken = gridColumnCount400
+    public static let gridCompactMinWidth: GridRawToken = gridMinWidthCompact
+    public static let gridCompactMaxWidth: GridRawToken = gridMaxWidthCompact
+    public static let gridCompactMargin: GridRawToken = gridMargin300
+    public static let gridCompactColumnGap: GridRawToken = gridColumnGap100
 
     // MARK: Primitive token - Grid - Composite - iOS Regular
 
-    public static let gridIOSRegularDesignWidth: GridRawToken = gridDesignWidth400
-    public static let gridIOSRegularMinWidth: GridRawToken = gridMinWidthIOSCompact
-    public static let gridIOSRegularMaxWidth: GridRawToken = gridMaxWidthIOSCompact
-    public static let gridIOSRegularMargin: GridRawToken = gridMargin500
-    public static let gridIOSRegularColumnGap: GridRawToken = gridColumnGap300
-    public static let gridIOSRegularColumnCount: GridRawToken = gridColumnCount600
+    public static let gridRegularWidth: GridRawToken = gridWidth400
+    public static let gridRegularMinWidth: GridRawToken = gridMinWidthCompact
+    public static let gridRegularMaxWidth: GridRawToken = gridMaxWidthCompact
+    public static let gridRegularMargin: GridRawToken = gridMargin500
+    public static let gridRegularColumnGap: GridRawToken = gridColumnGap300
 }
