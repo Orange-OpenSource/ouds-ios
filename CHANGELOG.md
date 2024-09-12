@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Doc] Create the basics of a documentation ([#9](https://github.com/Orange-OpenSource/ouds-ios/issues/9))
+- [Library] Add more semanttic and raw tokens for typography
+- [Library] Add more semantic and raw tokens for typography, and SwiftUI API to apply them
 
 ### Changed
 

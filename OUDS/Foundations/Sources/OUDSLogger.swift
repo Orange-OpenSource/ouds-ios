@@ -15,7 +15,7 @@ import Foundation
 import os
 
 /// The `os.Logger` wrapper used in the *OUDS iOS* library so as to logs things in standard output or elswhere.
-struct OUDSLogger {
+public struct OUDSLogger {
 
     private init() {}
 
@@ -23,27 +23,27 @@ struct OUDSLogger {
     private static let bullet: String = "🍊"
     private static let prefix: String = "\(bullet) [OUDS]"
 
-    static func debug(_ message: String) {
+    public static func debug(_ message: String) {
         #if DEBUG
         logger.debug("\(prefix):debug: 🪲 \(message)")
         #endif
     }
 
-    static func log(_ message: String) {
+    public static func log(_ message: String) {
         #if DEBUG
         logger.log("\(prefix): 🗒️ \(message)")
         #endif
     }
 
-    static func info(_ message: String) {
+    public static func info(_ message: String) {
         logger.info("\(prefix):info: ℹ️ \(message)")
     }
 
-    static func warning(_ message: String) {
+    public static func warning(_ message: String) {
         logger.warning("\(prefix):warning: ⚠️ \(message)")
     }
 
-    static func error(_ message: String) {
+    public static func error(_ message: String) {
         logger.error("\(prefix):error: 💥 \(message)")
     }
 }
