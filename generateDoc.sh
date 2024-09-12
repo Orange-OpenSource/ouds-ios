@@ -193,14 +193,14 @@ echo2 "👍 index.html updated!"
 
 echo2 "👉 Versioning documentation in GitHub Pages branch (it can take a lot of time)..."
 
-echo2 "🔨 Adding things"
-git add "$DOCS_DIRECTORY"
+echo2 "🔨 Stashing things"
+git stash -u
 
 echo2 "🔨 Checkout GitHub Pages branch, align with remote"
 
 # Check if the local branch exists
 if git show-ref --verify --quiet refs/heads/"$GH_PAGES_BRANCH"; then
-    echo2 "🔨 Checking out local branch '$GH_PAGES_BRANCH'."
+    echo2 "🔨 Checking out local branch '$GH_PAGES_BRANCH'"
     git checkout "$GH_PAGES_BRANCH"
     git reset --hard origin/$GH_PAGES_BRANCH # Ensure to be aligned with remote version
 else
@@ -209,13 +209,22 @@ else
     git checkout -b "$GH_PAGES_BRANCH" origin/"$GH_PAGES_BRANCH"
 fi
 
+echo2 "🔨 Unstashing things"
+git stash apply
+
 files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
+
+echo2 "🔨 Adding things (about $files_count files)"
+git add "$DOCS_DIRECTORY"
 
 echo2 "🔨 Committing things (be ready if passwords / passphrases are asked)"
 git commit -m $'doc: update DocC documentation for GitHub Pages\n\nWARNING: This is an automatic commit 🤖'
 
 echo2 "🔨 Pushing things"
 git push origin
+
+echo "🔨 Cleaning stashes"
+git stash clear
 
 commit_hash=`git rev-parse HEAD`
 
