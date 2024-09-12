@@ -172,7 +172,7 @@ if [[ $use_git -eq 1 ]]; then
         # Xcode keeps files and dislikes updates of local branches...
         _ "🚨 You should close Xcode before going further"
         _ "Press any key to continue..."
-        read -n 1 -s #Don't care of the input, jsut want he user be ready
+        read -n 1 -s # Don't care of the input, just want the user be ready in the end
     
         _ "✅ This is a Git repository. Please ensure the credentials you need are ready (SSH, HTTPS, GPG, etc.)"
         current_branch=$(git rev-parse --abbrev-ref HEAD)
@@ -255,8 +255,9 @@ files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
 if [[ $use_git -eq 1 ]]; then
     _ "👉 Versioning documentation in service pages branch (it can take a lot of time)..."
 
-    _ "🔨 Stashing things"
-    git stash -u
+    _ "🔨 Saving things"
+    rsync -a --delete "$DOCS_DIRECTORY" "/tmp/$DOCS_DIRECTORY"
+    clean_repo
 
     _ "🔨 Checkout service pages branch, align with remote"
 
@@ -271,8 +272,10 @@ if [[ $use_git -eq 1 ]]; then
         git checkout -b "$SERVICE_PAGES_BRANCH" origin/"$SERVICE_PAGES_BRANCH"
     fi
 
-    _ "🔨 Unstashing things"
-    git stash apply
+    _ "🔨 Applying changes things"
+    rm -rf "$DOCS_DIRECTORY"
+    mkdir -p "$DOCS_DIRECTORY"
+    rsync -a "/tmp/$DOCS_DIRECTORY" "$DOCS_DIRECTORY"
 
     _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY"
@@ -283,9 +286,6 @@ if [[ $use_git -eq 1 ]]; then
 
     _ "🔨 Pushing things"
     git push origin "$SERVICE_PAGES_BRANCH"
-
-    _ "🔨 Cleaning stashes"
-    git stash clear
 
 else
     _ "👍 Ok, just keep documentation here"
@@ -308,6 +308,7 @@ fi
 if [[ $use_git -eq 1 ]]; then
     commit_hash=`git rev-parse HEAD`
     _ "🔨 Going back to previous Git branch"
+    clean_repo
     git checkout "$current_branch"
     _ "👍 Pushed with commit '$commit_hash'"
 fi
