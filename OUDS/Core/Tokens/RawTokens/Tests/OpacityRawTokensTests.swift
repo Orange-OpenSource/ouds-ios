@@ -52,4 +52,8 @@ final class OpacityRawTokensTests: XCTestCase {
     func testOpacityRawToken700LessThan800() throws {
         XCTAssertLessThan(OpacityRawTokens.opacity700, OpacityRawTokens.opacity800)
     }
+
+    func testOpacityRawToken800LessThan900() throws {
+        XCTAssertLessThan(OpacityRawTokens.opacity800, OpacityRawTokens.opacity900)
+    }
 }
