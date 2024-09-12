@@ -30,21 +30,18 @@ TARGETS="OUDS \
         OUDSModules \
         OUDSFoundations"
 
-# GitHub Pages custom subdomain, don't forget to verify it in organization side!
-GH_PAGES_DOMAIN="ios.unified-design-system.orange.com"
+# Services pages (like GitHub Pages) custom subdomain for the CNAME, don't forget to verify it in organization side!
+SERVICE_PAGES_DOMAIN="ios.unified-design-system.orange.com"
 
 # Some HTML fragments to ad in the HTML global page index.html
 HTML_TITLE="OUDS iOS Swift Documentation"
 HTML_H1="OUDS iOS Swift Documentation"
 HTML_H2="iOS SwiftUI implementation of the Unified Design System of Orange"
-HTML_GITHUB_PROJECT_URL="https://github.com/Orange-OpenSource/ouds-ios"
+HTML_PROJECT_URL="https://github.com/Orange-OpenSource/ouds-ios"
 HTML_PROJECT_COPYRIGHT="Orange SA"
 
-# The name of the Git branch hosting GitHub Pages service
-GH_PAGES_BRANCH="gh-pages"
-
-# If something wrong occurs, fallback to this branch to let the repo is a clean state
-GIT_FALLBACK_BRANCH="develop"
+# The name of the Git branch hosting the documentation (e.g. GitHub Pages branch defined in repository)
+SERVICE_PAGES_BRANCH="gh-pages"
 
 # Path where the documentation will be
 DOCS_DIRECTORY="./docs"
@@ -64,9 +61,9 @@ EXIT_BAD_PARAMETER=3
 
 on_error_signal() {
     echo "🍊❌  An error occurred. Exits. ($EXIT_ERROR_SIG)"
-    clean_repo
-    echo "🍊❌  Swiching to branch '$GIT_FALLBACK_BRANCH'"
-    git checkout "$GIT_FALLBACK_BRANCH"
+    if [[ $use_git -eq 1 ]]; then
+        clean_repo
+    fi
     exit $EXIT_ERROR_SIG
 }
 
@@ -84,7 +81,7 @@ echo2() {
     local prefix="🍊 "
     
     if [[ "$is_error" == "true" ]]; then
-        echo "${prefix}❌ Error: $message" >&2
+        echo "${prefix}❌ ERROR: $message" >&2
     else
         echo "${prefix}$message"
     fi
@@ -97,18 +94,24 @@ clean_repo() {
 }
 
 show_help() {
-    echo "This $0 script will use swift-docc-plugin to build HTML documentation of the OUDS iOS Swift Package"
-    echo -e "Usage: $0 [--help] --libversion=VERSION\n"
+    echo "This script will use swift-docc-plugin to build HTML documentation of the OUDS iOS Swift Package"
+    echo "It can also update the Git repository."
+    echo -e "Usage: $0 [--help] --libversion=VERSION [--usegit | --nozip | --nokeep]\n"
     echo "Options:"
     echo "  --help                Shows this help message."
     echo "  --libversion=VERSION  Specifies the library version to incldue in HTML page (mandatory)."
+    echo "  --usegit              Specifies to version documentation in the current Git repository and upload (default it does not, only local)."
+    echo "  --nozip               Specifies the ZIP archive of the documentation must not be done (by default it is)."
+    echo "  --nokeep              Specifies the local generated documentation folder must be deleted (by default it is kept)."
 }
 
 # Step 0 - Prerequisites checks
 # -----------------------------
 
-# Default value for library version to add in main HTML page footer
 lib_version=""
+use_git=0
+no_zip=0
+keep_generated=1
 
 # Check for command-line arguments
 for arg in "$@"; do
@@ -119,7 +122,17 @@ for arg in "$@"; do
             ;;
         --libversion=*)
             lib_version="${arg#*=}"
+            echo2 "✔️ OK, library version to know is '$lib_version'"
             ;;
+        --usegit)
+            use_git=1
+            ;;
+        --nozip)
+            no_zip=1
+            ;;
+        --nokeep)
+            keep_generated=0
+            ;;            
         *)
             echo2 "Unknown parameter: $arg. Exits. ($EXIT_BAD_PARAMETER)" true
             exit $EXIT_BAD_PARAMETER
@@ -132,21 +145,44 @@ if [[ -z "$lib_version" ]]; then
     exit $EXIT_BAD_PARAMETER
 fi
 
-# Step 1 - Git setup
-# ------------------
-
-if [ -d ".git" ]; then
-    echo2 "✅ This is a Git repository. Ensure the credentials you need are ready (SSH, HTTPS, GPG, etc.)"
+if [[ $use_git -eq 1 ]]; then
+    echo2 "✔️ OK, Git will be used"
 else
-    echo2 "This is not a Git repository. Exits. ($EXIT_NOT_GIT_REPO)" true
-    exit $EXIT_NOT_GIT_REPO
+    echo2 "✔️ OK, Git will NOT be used"
 fi
+
+if [[ $no_zip -eq 1 ]]; then
+    echo2 "✔️ OK, no ZIP archive will be done"
+else
+    echo2 "✔️ OK, a ZIP archive will be created"
+fi       
+
+if [[ $keep_generated -eq 1 ]]; then
+    echo2 "✔️ OK, generated files will be kept"
+else
+    echo2 "✔️ OK, generated files will be deleted"
+fi
+
+if [[ "$use_git" -eq 0 && "$no_zip" -eq 1 && "$keep_generated" -eq 0 ]]; then
+    echo2 "🥴 WARNING: What do you use this script for?"
+fi
+
+# Step 1 - Git setup (if relevant)
+# --------------------------------
 
 start_time=$(date +%s)
 
-current_branch=$(git rev-parse --abbrev-ref HEAD)
-echo2 "🔨 Current Git branch is '$current_branch'"
-clean_repo # To get rid of unversioned files etc.
+if [[ $use_git -eq 1 ]]; then
+    if [ -d ".git" ]; then
+        echo2 "✅ This is a Git repository. Ensure the credentials you need are ready (SSH, HTTPS, GPG, etc.)"
+        current_branch=$(git rev-parse --abbrev-ref HEAD)
+        echo2 "🔨 Current Git branch is '$current_branch'"
+        clean_repo # To get rid of unversioned files etc.
+    else
+        echo2 "This is not a Git repository. Exits. ($EXIT_NOT_GIT_REPO)" true
+        exit $EXIT_NOT_GIT_REPO
+    fi
+fi
 
 echo2 "👉 Creating documentation folder..."
 mkdir -p "$DOCS_DIRECTORY"
@@ -171,10 +207,12 @@ done
 # Step 2 - Add CNAME file for GitHub Pages
 # ----------------------------------------
 
-echo2 "👉 Updating CNAME file"
-echo "$GH_PAGES_DOMAIN" > "$DOCS_DIRECTORY/CNAME"
-echo2 "👍 Updated!"
-    
+if [[ $use_git -eq 1 ]]; then
+    echo2 "👉 Updating CNAME file"
+    echo "$SERVICE_PAGES_DOMAIN" > "$DOCS_DIRECTORY/CNAME"
+    echo2 "👍 Updated!"
+fi
+
 # Step 3 - Update global HTML file
 # --------------------------------
 
@@ -194,69 +232,81 @@ do
     echo "<li><a href=\"./documentation/$modified_target\">$target</a></li>" >> $DOCS_DIRECTORY/index.html
 done
 echo "</ol></main>" >> $DOCS_DIRECTORY/index.html
-echo "<footer><p>Find the source code on <a href=\"$HTML_GITHUB_PROJECT_URL\">GitHub</a></p>" >> $DOCS_DIRECTORY/index.html
+echo "<footer><p>Find the source code on <a href=\"$HTML_PROJECT_URL\">GitHub</a></p>" >> $DOCS_DIRECTORY/index.html
 echo "<p>&copy; $(date +%Y) $HTML_PROJECT_COPYRIGHT</p><p>Documentation build $timestamp</p></footer></body></html>" >> $DOCS_DIRECTORY/index.html
 
 echo2 "👍 index.html updated!"
 
-# Step 4 - Checkout to GitHub Pages dedicated branch
-# --------------------------------------------------
+# Step 4 - Checkout to GitHub Pages dedicated branch (if relevant)
+# ---------------------------------------------------------------
 
-echo2 "👉 Versioning documentation in GitHub Pages branch (it can take a lot of time)..."
+if [[ $use_git -eq 1 ]]; then
+    echo2 "👉 Versioning documentation in service pages branch (it can take a lot of time)..."
 
-echo2 "🔨 Stashing things"
-git stash -u
+    echo2 "🔨 Stashing things"
+    git stash -u
 
-echo2 "🔨 Checkout GitHub Pages branch, align with remote"
+    echo2 "🔨 Checkout service pages branch, align with remote"
 
-# Check if the local branch exists
-if git show-ref --verify --quiet refs/heads/"$GH_PAGES_BRANCH"; then
-    echo2 "🔨 Checking out local branch '$GH_PAGES_BRANCH'"
-    git checkout "$GH_PAGES_BRANCH"
-    git reset --hard origin/$GH_PAGES_BRANCH # Ensure to be aligned with remote version
+    # Check if the local branch exists
+    if git show-ref --verify --quiet refs/heads/"$SERVICE_PAGES_BRANCH"; then
+        echo2 "🔨 Checking out local branch '$SERVICE_PAGES_BRANCH'"
+        git checkout "$SERVICE_PAGES_BRANCH"
+        git reset --hard origin/$SERVICE_PAGES_BRANCH # Ensure to be aligned with remote version
+    else
+        echo2 "🔨 Local branch '$SERVICE_PAGES_BRANCH' does not exist. Checking out from remote."
+        git fetch origin
+        git checkout -b "$SERVICE_PAGES_BRANCH" origin/"$SERVICE_PAGES_BRANCH"
+    fi
+
+    echo2 "🔨 Unstashing things"
+    git stash apply
+
+    files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
+    echo2 "🔨 Adding things (~ $files_count files)"
+    git add "$DOCS_DIRECTORY"
+
+    echo2 "🔨 Committing things (be ready if passwords / passphrases are asked)"
+    commit_message=$(printf "doc: update DocC documentation for version v%s\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$lib_version" "$timestamp")
+    git commit -m "$commit_message"
+
+    echo2 "🔨 Pushing things"
+    git push origin
+
+    echo "🔨 Cleaning stashes"
+    git stash clear
+
+    commit_hash=`git rev-parse HEAD`
+
+    echo2 "🔨 Going back to previous Git branch"
+    git checkout "$current_branch"
+
 else
-    echo2 "🔨 Local branch '$GH_PAGES_BRANCH' does not exist. Checking out from remote."
-    git fetch origin
-    git checkout -b "$GH_PAGES_BRANCH" origin/"$GH_PAGES_BRANCH"
+    echo2 "👍 Ok, just keep documentation here"
 fi
-
-echo2 "🔨 Unstashing things"
-git stash apply
-
-files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
-
-echo2 "🔨 Adding things (~ $files_count files)"
-git add "$DOCS_DIRECTORY"
-
-echo2 "🔨 Committing things (be ready if passwords / passphrases are asked)"
-commit_message=$'doc: update DocC documentation for version v'"$lib_version"'\n\nUpdate documentation for GitHub pages of version v'"$lib_version"' of OUDS iOS library (build timestamp '"$timestamp"')\n\nWARNING: This is an automatic commit 🤖'
-git commit -m "$commit_message"
-
-echo2 "🔨 Pushing things"
-git push origin
-
-echo "🔨 Cleaning stashes"
-git stash clear
-
-commit_hash=`git rev-parse HEAD`
-
-echo2 "🔨 Going back to previous Git branch"
-git checkout "$current_branch"
 
 # Step 5 - Metrics and conclusion
 # -------------------------------
 
-echo2 "👍 Pushed with commit '$commit_hash'"
-echo2 "🎉 Documentation also available in $DOCS_DIRECTORY"
-echo2 "🧮 There are '$files_count' in $DOCS_DIRECTORY!"
+if [[ $use_git -eq 1 ]]; then
+    echo2 "👍 Pushed with commit '$commit_hash'"
+fi
 
-echo2 "👉 Zipping documentation folder"
-zip -r "$DOCUMENTATION_ZIP_LOCATION"  "$DOCS_DIRECTORY"
-echo2 "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION"
+if [[ $no_zip -eq 0 ]]; then
+    echo2 "👉 Zipping documentation folder"
+    zip -r "$DOCUMENTATION_ZIP_LOCATION"  "$DOCS_DIRECTORY"
+    echo2 "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION"
+fi
 
-if [ -d "$DOCS_DIRECTORY" ]; then
-    echo2 "🧹 Deleting docs directory (don't worry, a ZIP should exist and pages have been pushed)"
-    yes | rm -rf "$DOCS_DIRECTORY"
+if [[ $keep_generated -eq 0 ]]; then
+    if [[ -d "$DOCS_DIRECTORY" ]]; then
+        echo2 "🧹 Deleting docs directory (don't worry, a ZIP should exist and pages have been pushed)"
+        yes | rm -rf "$DOCS_DIRECTORY"
+    fi
+else
+    echo2 "🎉 Documentation also available in $DOCS_DIRECTORY"
+    files_count=`find $DOCS_DIRECTORY -type f | wc -l | xargs`
+    echo2 "🧮 There are '$files_count' in $DOCS_DIRECTORY!"
 fi
 
 end_time=$(date +%s)
