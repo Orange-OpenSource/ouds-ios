@@ -168,6 +168,12 @@ start_time=$(date +%s)
 
 if [[ $use_git -eq 1 ]]; then
     if [ -d ".git" ]; then
+
+        # Xcode keeps files and dislikes updates of local branches...
+        _ "🚨 You should close Xcode before going further"
+        _ "Press any key to continue..."
+        read -n 1 -s #Don't care of the input, jsut want he user be ready
+    
         _ "✅ This is a Git repository. Please ensure the credentials you need are ready (SSH, HTTPS, GPG, etc.)"
         current_branch=$(git rev-parse --abbrev-ref HEAD)
         _ "🔨 Current Git branch is '$current_branch'"
