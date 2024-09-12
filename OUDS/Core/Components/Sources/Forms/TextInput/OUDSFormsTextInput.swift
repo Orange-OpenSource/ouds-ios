@@ -54,7 +54,7 @@ public struct OUDSFormsTextInput: View {
                 icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
             )
 
-            Text("Write bellow some awesome text!")
+            Text("Write below some awesome text!")
                 .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
                 .font(.system(size: theme.ftiSubtitleFontSize))
                 .foregroundColor(theme.ftiSubtitleColor.color)
