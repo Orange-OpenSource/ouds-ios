@@ -24,10 +24,21 @@ import OUDSTokensSemantic
 /// **Warning: You are not supposed to use this abstract default theme directly. Please prefer `OrangeTheme` instead**
 open class OUDSTheme {
 
-    public init() { }
-
     /// A theme can have a custom font which is not the system font
-    public var customFontFamily: TypographyFontFamilySemanticToken?
+    public let customFontFamily: TypographyFontFamilySemanticToken?
+
+    /// Defines a basic kind of abstract theme to subclass then.
+    /// No custom font family will be used.
+    public convenience init() {
+        self.init(customFontFamily: nil)
+    }
+
+    /// Defines a basic kind of abstract theme to subclass then.
+    /// - Parameters:
+    ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `TypographyFontFamilySemanticToken` you want to apply
+    public init(customFontFamily: TypographyFontFamilySemanticToken?) {
+        self.customFontFamily = customFontFamily
+    }
 
     // Please refer to extensions for properties, it will be more clear
 }

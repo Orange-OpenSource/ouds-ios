@@ -13,9 +13,18 @@
 
 import Foundation
 import OUDS
+import OUDSTokensSemantic
 
 /// A mock theme for tests
-class MockTheme: OUDSTheme {
+final class MockTheme: OUDSTheme {
+
+    convenience init() {
+        self.init(customFont: nil)
+    }
+
+    init(customFont: String?) {
+        super.init(customFontFamily: customFont)
+    }
 
     // Please refer to extensions
 }
