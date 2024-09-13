@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Add more unit tests for theme overriding and raw tokens controls
 - [Library] Add and update raw and semantic grid tokens ([#40](https://github.com/Orange-OpenSource/ouds-ios/issues/40))
 - [Library] Manage regular and compact layouts for sizing and spacing tokens
 - [Library] "Box shadow 0" has been defined and "elevation drag" changed
