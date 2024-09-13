@@ -16,6 +16,18 @@ import XCTest
 
 extension XCTestCase {
 
+    /// Checks if `value` is between `min` and `max`
+    public func XCTAssertBetween(min: Double, _ value: Double, max: Double, file: StaticString = #file, line: UInt = #line) {
+        XCTAssertTrue(min <= value && value <= max)
+    }
+
+    /// Checks if the `value` is a multiple of `factor`
+    public func XCTAssertMultipleOf(_ value: Double, factor: Int, file: StaticString = #file, line: UInt = #line) {
+        let remaining = Int(value) % factor
+        // If multiple, remaining will be 0 OR between 0 and factor if value less than factor
+        XCTAssertTrue(remaining == 0 || remaining < factor, "Current value: \(value) % \(factor) = \(remaining)")
+    }
+
     /// Compares two colors in hexadecimal values and asserts if `left` is "lighter" than `right`, i.e. has a bigger integer value
     public func XCTAssertColorLighterThan(_ left: String, _ right: String, file: StaticString = #file, line: UInt = #line) {
         let leftBrightness = hexadecimalStringToInt(left)
