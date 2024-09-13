@@ -77,29 +77,89 @@ final class GridRawTokensTests: XCTestCase {
 
     // MARK: - Primitive token - Grid - Min width
 
-    func testGridRawTokenGridMinWidthIOSExtraCompactLessThanGridMinWidthIOSCompact() throws {
+    func testGridRawTokenGridMinWidth100LessThanGridMinWidth200() throws {
+        XCTAssertLessThan(GridRawTokens.gridMinWidth100, GridRawTokens.gridMinWidth200)
+    }
+
+    func testGridRawTokenGridMinWidth200LessThanGridMinWidth300() throws {
+        XCTAssertLessThan(GridRawTokens.gridMinWidth200, GridRawTokens.gridMinWidth300)
+    }
+
+    func testGridRawTokenGridMinWidth300LessThanGridMinWidth400() throws {
+        XCTAssertLessThan(GridRawTokens.gridMinWidth300, GridRawTokens.gridMinWidth400)
+    }
+
+    func testGridRawTokenGridMinWidth400LessThanGridMinWidth500() throws {
+        XCTAssertLessThan(GridRawTokens.gridMinWidth400, GridRawTokens.gridMinWidth500)
+    }
+
+    func testGridRawTokenGridMinWidth500LessThanGridMinWidth600() throws {
+        XCTAssertLessThan(GridRawTokens.gridMinWidth500, GridRawTokens.gridMinWidth600)
+    }
+
+    func testGridRawTokenGridMinWidth600LessThanGridMinWidth700() throws {
+        XCTAssertLessThan(GridRawTokens.gridMinWidth600, GridRawTokens.gridMinWidth700)
+    }
+
+    func testGridRawTokenGridMinWidth700LessThanGridMinWidth800() throws {
+        XCTAssertLessThan(GridRawTokens.gridMinWidth700, GridRawTokens.gridMinWidth800)
+    }
+
+    func testGridRawTokenGridMinWidthExtraCompactLessThanGridMinWidthCompact() throws {
         XCTAssertLessThan(GridRawTokens.gridMinWidthExtraCompact, GridRawTokens.gridMinWidthCompact)
     }
 
-    func testGridRawTokenGridMinWidthIOSExtraCompactLessThanGridMinWidthIOSRegular() throws {
+    func testGridRawTokenGridMinWidthExtraCompactLessThanGridMinWidthRegular() throws {
         XCTAssertLessThan(GridRawTokens.gridMinWidthExtraCompact, GridRawTokens.gridMinWidthRegular)
     }
 
-    func testGridRawTokenGridMinWidthIOSCompactLessThanGridMinWidthIOSRegular() throws {
+    func testGridRawTokenGridMinWidthCompactLessThanGridMinWidthRegular() throws {
         XCTAssertLessThan(GridRawTokens.gridMinWidthCompact, GridRawTokens.gridMinWidthRegular)
     }
 
     // MARK: - Primitive token - Grid - Max width
 
-    func testGridRawTokenGridMaxWidthIOSExtraCompactLessThanGridMaxWidthIOSCompact() throws {
+    func testGridRawTokenGridMaxWidth100LessThanGridMaxWidth200() throws {
+        XCTAssertLessThan(GridRawTokens.gridMaxWidth100, GridRawTokens.gridMaxWidth200)
+    }
+
+    func testGridRawTokenGridMaxWidth200LessThanGridMaxWidth300() throws {
+        XCTAssertLessThan(GridRawTokens.gridMaxWidth200, GridRawTokens.gridMaxWidth300)
+    }
+
+    func testGridRawTokenGridMaxWidth300LessThanGridMaxWidth400() throws {
+        XCTAssertLessThan(GridRawTokens.gridMaxWidth300, GridRawTokens.gridMaxWidth400)
+    }
+
+    func testGridRawTokenGridMaxWidth400LessThanGridMaxWidth500() throws {
+        XCTAssertLessThan(GridRawTokens.gridMaxWidth400, GridRawTokens.gridMaxWidth500)
+    }
+
+    func testGridRawTokenGridMaxWidth500LessThanGridMaxWidth600() throws {
+        XCTAssertLessThan(GridRawTokens.gridMaxWidth500, GridRawTokens.gridMaxWidth600)
+    }
+
+    func testGridRawTokenGridMaxWidth600LessThanGridMaxWidth650() throws {
+        XCTAssertLessThan(GridRawTokens.gridMaxWidth600, GridRawTokens.gridMaxWidth650)
+    }
+
+    func testGridRawTokenGridMaxWidth650LessThanGridMaxWidth700() throws {
+        XCTAssertLessThan(GridRawTokens.gridMaxWidth650, GridRawTokens.gridMaxWidth700)
+    }
+
+    func testGridRawTokenGridMaxWidth700LessThanGridMaxWidth800() throws {
+        XCTAssertLessThan(GridRawTokens.gridMaxWidth700, GridRawTokens.gridMaxWidth800)
+    }
+
+    func testGridRawTokenGridMaxWidthExtraCompactLessThanGridMaxWidthCompact() throws {
         XCTAssertLessThan(GridRawTokens.gridMaxWidthExtraCompact, GridRawTokens.gridMaxWidthCompact)
     }
 
-    func testGridRawTokenGridMaxWidthIOSExtraCompactLessThanGridMaxWidthIOSRegular() throws {
+    func testGridRawTokenGridMaxWidthExtraCompactLessThanGridMaxWidthRegular() throws {
         XCTAssertLessThan(GridRawTokens.gridMaxWidthExtraCompact, GridRawTokens.gridMaxWidthRegular)
     }
 
-    func testGridRawTokenGridMaxWidthIOSCompactLessThanGridMaxWidthIOSRegular() throws {
+    func testGridRawTokenGridMaxWidthCompactLessThanGridMaxWidthRegular() throws {
         XCTAssertLessThan(GridRawTokens.gridMaxWidthCompact, GridRawTokens.gridMaxWidthRegular)
     }
 
