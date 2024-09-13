@@ -1,6 +1,6 @@
 # ``OUDSTokensSemantic``
 
-These _tokens_  can be used mainly for _component tokens_ (<doc://OUDSTokensComponent>) to apply some style and configuration values.
+These _tokens_  can be used mainly for _component tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) to apply some style and configuration values.
 They can be seen as an high level of usage with functional meanings.
 
 ## Overview
