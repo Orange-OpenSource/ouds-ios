@@ -78,16 +78,16 @@ public protocol SpacingSemanticTokens {
 
     // MARK: Semantic token - Spacing - Layout fluid
 
-    var spaceLayoutFluidNone: SpacingCompositeSemanticToken { get }
-    var spaceLayoutFluidSmash: SpacingCompositeSemanticToken { get }
-    var spaceLayoutFluidShortest: SpacingCompositeSemanticToken { get }
-    var spaceLayoutFluidShorter: SpacingCompositeSemanticToken { get }
-    var spaceLayoutFluidShort: SpacingCompositeSemanticToken { get }
-    var spaceLayoutFluidMedium: SpacingCompositeSemanticToken { get }
-    var spaceLayoutFluidTall: SpacingCompositeSemanticToken { get }
-    var spaceLayoutFluidTaller: SpacingCompositeSemanticToken { get }
-    var spaceLayoutFluidTallest: SpacingCompositeSemanticToken { get }
-    var spaceLayoutFluidSpacious: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableNone: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableSmash: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableShortest: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableShorter: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableShort: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableMedium: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableTall: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableTaller: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableTallest: SpacingCompositeSemanticToken { get }
+    var spaceLayoutAdaptableSpacious: SpacingCompositeSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding inline
 
