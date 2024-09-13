@@ -37,7 +37,9 @@ public final class ElevationCompositeRawToken: NSObject { // For @objc compatibi
 
     /// The *Figma* tool uses its own implementation of shadow or elevation effect with a *blur* and a *spread* values defined in the *tokens*.
     /// However *SwiftUI* for shadows effects uses only a *radius* which does not match the *Figma* *blur* and *spread* radiuses values.
-    /// Thus this value is computed from them so as to try to reproduce the same effect.
+    /// Thus this value is computed from them so as to try to reproduce the same effect applying the formula
+    ///
+    /// ** radius = blur + (spread / 2) **
     public var radius: ElevationRawToken {
         blur + spread / 2 // Or maybe `CGFloat(blur + abs(spread))` ((╯°□°)╯︵ ┻━┻ according to GenAI tools)
     }

@@ -138,6 +138,8 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
     >
 -->
 
+- Do not forget to update the documentation using `generateDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (_Right click on catalog > Export).
+
 ## Prepare Next Release
 
 - Create a branch named `prepare-new-release` to prepare the new release for OUDS iOS version U.V.W.
