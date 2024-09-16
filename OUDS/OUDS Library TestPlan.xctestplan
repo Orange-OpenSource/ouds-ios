@@ -53,6 +53,13 @@
         "identifier" : "OUDSTokensRaw-Tests",
         "name" : "OUDSTokensRaw-Tests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Showcase.xcodeproj",
+        "identifier" : "0740A98E2C9873500069D24A",
+        "name" : "ShowcaseTests"
+      }
     }
   ],
   "version" : 1

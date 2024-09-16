@@ -14,6 +14,8 @@
 import OUDS
 import SwiftUI
 
+import UIKit
+
 /// An OUDS component for text input in formulars.
 /// __Warning: This is a draft component__.
 ///
