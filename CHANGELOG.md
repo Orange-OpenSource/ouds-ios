@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] A theme can now override the custom font family
 - [Library] Add more unit tests for theme overriding and raw tokens controls
 - [Library] Add and update raw and semantic grid tokens ([#40](https://github.com/Orange-OpenSource/ouds-ios/issues/40))
+- [Tests] Implement UI regression tests using snapshoots compare ([#78](https://github.com/Orange-OpenSource/ouds-ios/issues/78))
 - [Library] Manage regular and compact layouts for sizing and spacing tokens
 - [Library] "Box shadow 0" has been defined and "elevation drag" changed
 - [Doc] Create the basics of a documentation ([#9](https://github.com/Orange-OpenSource/ouds-ios/issues/9))

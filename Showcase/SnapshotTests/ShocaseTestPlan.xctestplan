@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "4AE8CBD2-0C30-46AF-8D6A-AAE982A952C1",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Showcase.xcodeproj",
+        "identifier" : "074008152C942753006B8729",
+        "name" : "SnapshotTests"
+      }
+    }
+  ],
+  "version" : 1
+}
