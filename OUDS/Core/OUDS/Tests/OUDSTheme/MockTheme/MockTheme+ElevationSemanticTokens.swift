@@ -21,12 +21,10 @@ extension MockTheme {
     static let mockThemeXRawToken: ElevationRawToken = 711
     static let mockThemeYRawToken: ElevationRawToken = 713
     static let mockThemeBlurRawToken: ElevationRawToken = 816
-    static let mockThemeSpreadRawToken: ElevationRawToken = 80085
     static let mockThemeElevationColorRawToken: ColorRawToken = ColorRawTokens.colorFunctionalMalachite500
     static let mockThemeCompositeRawToken: ElevationCompositeRawToken = ElevationCompositeRawToken(x: 118,
                                                                                                    y: 712,
                                                                                                    blur: 118,
-                                                                                                   spread: 218,
                                                                                                    color: ColorRawTokens.colorFunctionalDodgerBlue800)
 
     // MARK: Semantic token - Elevation - Z index
@@ -81,18 +79,6 @@ extension MockTheme {
     override var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
     override var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
     override var elevationBlurFocus: ElevationBlurSemanticToken { Self.mockThemeBlurRawToken }
-
-    // MARK: Semantic token - Elevation - Spread
-
-    override var elevationSpreadNone: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadRaised: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadDrag: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadOverlayEmphasized: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadStickyDefault: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadStickyEmphasized: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
-    override var elevationSpreadFocus: ElevationSpreadSemanticToken { Self.mockThemeSpreadRawToken }
 
     // MARK: Semantic token - Elevation - Color - None
 

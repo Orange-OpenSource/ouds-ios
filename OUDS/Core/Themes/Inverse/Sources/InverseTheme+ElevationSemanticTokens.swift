@@ -15,7 +15,6 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// swiftlint:disable line_length
 extension InverseTheme {
 
     // MARK: Semantic token - Elevation - Color - None
@@ -86,7 +85,6 @@ extension InverseTheme {
     public override var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
     public override var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
 
-    public override var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
-    public override var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
+    public override var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorTransparentWhite900) }
+    public override var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorTransparentWhite900) }
 }
-// swiftlint:enable line_length

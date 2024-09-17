@@ -29,39 +29,39 @@ final class ElevationRawTokensTests: XCTestCase {
 
     func testRadiusComputation() throws {
         // Given
-        var token = ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 0, color: ColorRawTokens.colorTransparentBlack500)
+        var token = ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorTransparentBlack500)
         // When
         var radius = token.radius
         // Then
         XCTAssertTrue(radius == 0)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 2, blur: 1, spread: 0, color: ColorRawTokens.colorTransparentBlack400)
+        token = ElevationCompositeRawToken(x: 0, y: 2, blur: 1, color: ColorRawTokens.colorTransparentBlack400)
+        // When
+        radius = token.radius
+        // Then
+        XCTAssertTrue(radius == 0.5)
+
+        // Given
+        token = ElevationCompositeRawToken(x: 0, y: 3, blur: 2, color: ColorRawTokens.colorTransparentBlack300)
         // When
         radius = token.radius
         // Then
         XCTAssertTrue(radius == 1)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 3, blur: 2, spread: 0, color: ColorRawTokens.colorTransparentBlack300)
+        token = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack500)
         // When
         radius = token.radius
         // Then
         XCTAssertTrue(radius == 2)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack500)
+        token = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, color: ColorRawTokens.colorTransparentBlack300)
         // When
         radius = token.radius
         // Then
-        XCTAssertTrue(radius == 3.5)
-
-        // Given
-        token = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, spread: -4, color: ColorRawTokens.colorTransparentBlack300)
-        // When
-        radius = token.radius
-        // Then
-        XCTAssertTrue(radius == 10)
+        XCTAssertTrue(radius == 6)
     }
 
     // MARK: - Primitive token - Elevation - Z Index
@@ -176,28 +176,6 @@ final class ElevationRawTokensTests: XCTestCase {
 
     func testElevationBlurRawToken600LessThanBlur700() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationBlur600, ElevationRawTokens.elevationBlur700)
-    }
-
-    // MARK: - Primitive token - Elevation - Spread
-
-    func testElevationSpreadMinus400LessThanMinus300() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationSpreadN400, ElevationRawTokens.elevationSpreadN300)
-    }
-
-    func testElevationSpreadMinus300LessThanMinus200() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationSpreadN300, ElevationRawTokens.elevationSpreadN200)
-    }
-
-    func testElevationSpreadMinus200LessThanMinus100() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationSpreadN200, ElevationRawTokens.elevationSpreadN100)
-    }
-
-    func testElevationSpreadMinus100LessThan0() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationSpreadN100, ElevationRawTokens.elevationSpread0)
-    }
-
-    func testElevationSpread0LessThan300() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationSpread0, ElevationRawTokens.elevationSpread300)
     }
 
     // MARK: - Primitive token - Elevation - Box Shadow
@@ -427,7 +405,6 @@ final class ElevationRawTokensTests: XCTestCase {
     func assertCompositeLowerThan(_ left: ElevationCompositeRawToken, _ right: ElevationCompositeRawToken) {
         XCTAssertLessThanOrEqual(left.y, right.y)
         XCTAssertLessThanOrEqual(left.blur, right.blur)
-        XCTAssertGreaterThanOrEqual(left.spread, right.spread)
     }
 }
 

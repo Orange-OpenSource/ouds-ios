@@ -28,9 +28,6 @@ public typealias ElevationYSemanticToken = ElevationRawToken
 /// Basically an elevation semantic token for blur effect is a raw token for elevation, with the same final type
 public typealias ElevationBlurSemanticToken = ElevationRawToken
 
-/// Basically an elevation semantic token for spread effect is a raw token for elevation, with the same final type
-public typealias ElevationSpreadSemanticToken = ElevationRawToken
-
 /// Basically an elevation semantic token for shadow colors is a raw token for colors
 public typealias ElevationColorSemanticToken = ColorRawToken
 
@@ -41,7 +38,7 @@ public typealias ElevationCompositeSemanticToken = ElevationCompositeRawToken
 
 /// This is a group of semantic tokens for **elevations**.
 /// It defines all elevation semantic tokens a theme must have. (`ElevationZIndexSemanticToken`,`ElevationXSemanticToken`,`ElevationYSemanticToken`,
-/// `ElevationBlurSemanticToken`,`ElevationSpreadSemanticToken` and `ElevationColorSemanticToken`)
+/// `ElevationBlurSemanticToken` and `ElevationColorSemanticToken`)
 public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Z index
@@ -96,18 +93,6 @@ public protocol ElevationSemanticTokens {
     var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { get }
     var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { get }
     var elevationBlurFocus: ElevationBlurSemanticToken { get }
-
-    // MARK: Semantic token - Elevation - Spread
-
-    var elevationSpreadNone: ElevationSpreadSemanticToken { get }
-    var elevationSpreadRaised: ElevationSpreadSemanticToken { get }
-    var elevationSpreadDrag: ElevationSpreadSemanticToken { get }
-    var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken { get }
-    var elevationSpreadOverlayEmphasized: ElevationSpreadSemanticToken { get }
-    var elevationSpreadStickyDefault: ElevationSpreadSemanticToken { get }
-    var elevationSpreadStickyEmphasized: ElevationSpreadSemanticToken { get }
-    var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken { get }
-    var elevationSpreadFocus: ElevationSpreadSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - None
 

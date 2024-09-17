@@ -15,7 +15,6 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// swiftlint:disable line_length
 /// Defines basic values common to all themes for `ElevationSemanticTokenss`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// The aim of this extensions is to make relationships between all semantic tokens for elevations and associated raw tokens.
@@ -74,18 +73,6 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     @objc open var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     @objc open var elevationBlurFocus: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur0 }
-
-    // MARK: Semantic token - Elevation - Spread
-
-    @objc open var elevationSpreadNone: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpread0 }
-    @objc open var elevationSpreadRaised: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpread0 }
-    @objc open var elevationSpreadDrag: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
-    @objc open var elevationSpreadOverlayDefault: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
-    @objc open var elevationSpreadOverlayEmphasized: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN300 }
-    @objc open var elevationSpreadStickyDefault: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
-    @objc open var elevationSpreadStickyEmphasized: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
-    @objc open var elevationSpreadStickyNavigationScrolled: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpreadN100 }
-    @objc open var elevationSpreadFocus: ElevationSpreadSemanticToken { ElevationRawTokens.elevationSpread300 }
 
     // MARK: Semantic token - Elevation - Color - None
 
@@ -155,7 +142,6 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
     @objc open var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
 
-    @objc open var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
-    @objc open var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, spread: 3, color: ColorRawTokens.colorTransparentWhite900) }
+    @objc open var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorTransparentWhite900) }
+    @objc open var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorTransparentWhite900) }
 }
-// swiftlint:enable line_length
