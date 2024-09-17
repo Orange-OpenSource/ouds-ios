@@ -119,10 +119,11 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            device = "iPhone 14"
+            device = "iPhone 15 Pro"
             scan(scheme: "ShowcaseTests",
                 device: device,
-                skip_build: true)
+                skip_build: true
+            )
 
             publish_mattermost_notification("🧪 ✅ No issue with UI tests")
 

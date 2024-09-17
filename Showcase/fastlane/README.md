@@ -31,6 +31,14 @@ UPDATE BUILD NUMBER WITH TIMESTAMP
 
 RUN TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
 
+### ios test_ui
+
+```sh
+[bundle exec] fastlane ios test_ui
+```
+
+RUN UI TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT
+
 ### ios prepare_release
 
 ```sh
