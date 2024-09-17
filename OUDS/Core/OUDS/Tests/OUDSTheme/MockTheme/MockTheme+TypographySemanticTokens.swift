@@ -22,7 +22,6 @@ extension MockTheme {
     static let mockThemeFontWeightRawToken: TypographyFontWeightRawToken = "stiicckkyyyy"
     static let mockThemeFontSizeRawToken: TypographyFontSizeRawToken = 666
     static let mockThemeFontLineHeightRawToken: TypographyFontLineHeightRawToken = 321
-    static let mockThemeFontParagraphSpacingRawToken: TypographyFontParagraphSpacingRawToken = 0x911
     static let mockThemeTypographyCompositeSemanticToken: TypographyCompositeSemanticToken = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeBold1850, regular: TypographyRawTokens.typeBold1850)
 
     // MARK: Semantic token - Typography - Font - Family
@@ -113,41 +112,6 @@ extension MockTheme {
     override var fontLineHeightLabelSmall: TypographyFontLineHeightSemanticToken  { Self.mockThemeFontLineHeightRawToken }
     override var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken { Self.mockThemeFontLineHeightRawToken }
     override var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { Self.mockThemeFontLineHeightRawToken }
-
-    // MARK: Semantic token - Typography - Font - Paragraph spacing - Mobile
-
-    override var fontParagraphSpacingMobileDisplayLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingMobileDisplayMedium: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingMobileDisplaySmall: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingMobileHeadingXLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingMobileHeadingLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingMobileHeadingMedium: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingMobileHeadingSmall: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingMobileBodyLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingMobileBodyMedium: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingMobileBodySmall: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-
-    // MARK: Semantic token - Typography - Font - Paragraph spacing - Tablet
-
-    override var fontParagraphSpacingTabletDisplayLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingTabletDisplayMedium: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingTabletDisplaySmall: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingTabletHeadingXLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingTabletHeadingLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingTabletHeadingMedium: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingTabletHeadingSmall: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingTabletBodyLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingTabletBodyMedium: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingTabletBodySmall: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-
-    // MARK: Semantic token - Typography - Font - Paragraph spacing - Others
-
-    override var fontParagraphSpacingLabelXLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingLabelLarge: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingLabelMedium: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingLabelSmall: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingCodeMedium: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
-    override var fontParagraphSpacingCodeSmall: TypographyFontParagraphSpacingRawToken { Self.mockThemeFontParagraphSpacingRawToken }
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 

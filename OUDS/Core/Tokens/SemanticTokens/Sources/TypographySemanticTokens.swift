@@ -154,41 +154,6 @@ public protocol TypographySemanticTokens {
     // MARK: - Semantic token - Typography - Font - Letter spacing
     // TODO: Missing details about the types of the associated raw tokens
 
-    // MARK: - Semantic token - Typography - Font - Paragraph spacing - Mobile (extra-compact/compact)
-
-    var fontParagraphSpacingMobileDisplayLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingMobileDisplayMedium: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingMobileDisplaySmall: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingMobileHeadingXLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingMobileHeadingLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingMobileHeadingMedium: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingMobileHeadingSmall: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingMobileBodyLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingMobileBodyMedium: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingMobileBodySmall: TypographyFontParagraphSpacingRawToken { get }
-
-    // MARK: - Semantic token - Typography - Font - Paragraph spacing - Tablet (regular/medium)
-
-    var fontParagraphSpacingTabletDisplayLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingTabletDisplayMedium: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingTabletDisplaySmall: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingTabletHeadingXLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingTabletHeadingLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingTabletHeadingMedium: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingTabletHeadingSmall: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingTabletBodyLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingTabletBodyMedium: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingTabletBodySmall: TypographyFontParagraphSpacingRawToken { get }
-
-    // MARK: - Semantic token - Typography - Font - Paragraph spacing - Others
-
-    var fontParagraphSpacingLabelXLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingLabelLarge: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingLabelMedium: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingLabelSmall: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingCodeMedium: TypographyFontParagraphSpacingRawToken { get }
-    var fontParagraphSpacingCodeSmall: TypographyFontParagraphSpacingRawToken { get }
-
     // MARK: - Semantic tokens - Typography - Composites - Display
 
     var typeDisplayLarge: TypographyCompositeSemanticToken { get }

@@ -69,7 +69,6 @@ struct TypographyModifier: ViewModifier {
             .font(adaptiveFont())
             .lineSpacing(adaptiveTypography.lineHeight)
             // .tracking() for letter spacing
-            // TODO: How can we manage paragraph spacing?
     }
 }
 // swiftlint:enable line_length

@@ -28,9 +28,6 @@ public typealias TypographyFontSizeRawToken = CGFloat
 /// In the global design system tool, *font line height* raw tokens are basically `Int` values
 public typealias TypographyFontLineHeightRawToken = CGFloat
 
-/// In the global design system tool, *paragraph spacing* raw tokens are basically `Int` values
-public typealias TypographyFontParagraphSpacingRawToken = Int
-
 // MARK: Primitive tokens
 
 // MARK: - Composite raw token
@@ -48,13 +45,10 @@ public struct TypographyCompositeRawToken: Equatable {
     /// The font weight to associated wit the font family
     public let weight: TypographyFontWeightRawToken
     // TODO: How to deal "letter spacing"?
-    /// The paragraph spacing to apply on texts
-    public let paragraphSpacing: TypographyFontParagraphSpacingRawToken
 }
 
 // MARK: - Raw tokens
 
-// swiftlint:disable line_length
 /// This is the group of all **raw tokens** related to **typography**.
 /// Primitive types such as `Int` and `String` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
@@ -104,15 +98,6 @@ public enum TypographyRawTokens {
     public static let fontLineHeight1850: TypographyFontLineHeightRawToken = 72
     public static let fontLineHeight2050: TypographyFontLineHeightRawToken = 80
 
-    // MARK: Primitive token - Typography - Paragraph spacing
-
-    // Warning: values in pixels!
-
-    public static let fontParagraphSpacing100: TypographyFontParagraphSpacingRawToken = 0
-    public static let fontParagraphSpacing200: TypographyFontParagraphSpacingRawToken = 8
-    public static let fontParagraphSpacing300: TypographyFontParagraphSpacingRawToken = 16
-    public static let fontParagraphSpacing400: TypographyFontParagraphSpacingRawToken = 24
-
     // MARK: Primitive token - Typography - Font family
 
     public static let fontFamilyBrandDefault: TypographyFontFamilyRawToken = "Helvetica Neue"
@@ -141,27 +126,25 @@ public enum TypographyRawTokens {
 
     // MARK: Primitive token - Typography - Composite
 
-    public static let typeRegular150 = TypographyCompositeRawToken(size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeRegular175 = TypographyCompositeRawToken(size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeRegular200 = TypographyCompositeRawToken(size: fontSize200, lineHeight: fontLineHeight250, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeRegular250 = TypographyCompositeRawToken(size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight400, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold150 = TypographyCompositeRawToken(size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold175 = TypographyCompositeRawToken(size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold200 = TypographyCompositeRawToken(size: fontSize200, lineHeight: fontLineHeight250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold250 = TypographyCompositeRawToken(size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold300 = TypographyCompositeRawToken(size: fontSize300, lineHeight: fontLineHeight450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold350 = TypographyCompositeRawToken(size: fontSize350, lineHeight: fontLineHeight550, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold450 = TypographyCompositeRawToken(size: fontSize450, lineHeight: fontLineHeight550, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold550 = TypographyCompositeRawToken(size: fontSize550, lineHeight: fontLineHeight650, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold650 = TypographyCompositeRawToken(size: fontSize650, lineHeight: fontLineHeight750, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold750 = TypographyCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold850 = TypographyCompositeRawToken(size: fontSize850, lineHeight: fontLineHeight950, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold950 = TypographyCompositeRawToken(size: fontSize950, lineHeight: fontLineHeight1050, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold1050 = TypographyCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold1150 = TypographyCompositeRawToken(size: fontSize1150, lineHeight: fontLineHeight1250, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold1250 = TypographyCompositeRawToken(size: fontSize1250, lineHeight: fontLineHeight1350, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold1450 = TypographyCompositeRawToken(size: fontSize1450, lineHeight: fontLineHeight1450, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-    public static let typeBold1850 = TypographyCompositeRawToken(size: fontSize1850, lineHeight: fontLineHeight1850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
-
+    public static let typeRegular150 = TypographyCompositeRawToken(size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight400)
+    public static let typeRegular175 = TypographyCompositeRawToken(size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight400)
+    public static let typeRegular200 = TypographyCompositeRawToken(size: fontSize200, lineHeight: fontLineHeight250, weight: fontWeight400)
+    public static let typeRegular250 = TypographyCompositeRawToken(size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight400)
+    public static let typeBold150 = TypographyCompositeRawToken(size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight700)
+    public static let typeBold175 = TypographyCompositeRawToken(size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight700)
+    public static let typeBold200 = TypographyCompositeRawToken(size: fontSize200, lineHeight: fontLineHeight250, weight: fontWeight700)
+    public static let typeBold250 = TypographyCompositeRawToken(size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight700)
+    public static let typeBold300 = TypographyCompositeRawToken(size: fontSize300, lineHeight: fontLineHeight450, weight: fontWeight700)
+    public static let typeBold350 = TypographyCompositeRawToken(size: fontSize350, lineHeight: fontLineHeight550, weight: fontWeight700)
+    public static let typeBold450 = TypographyCompositeRawToken(size: fontSize450, lineHeight: fontLineHeight550, weight: fontWeight700)
+    public static let typeBold550 = TypographyCompositeRawToken(size: fontSize550, lineHeight: fontLineHeight650, weight: fontWeight700)
+    public static let typeBold650 = TypographyCompositeRawToken(size: fontSize650, lineHeight: fontLineHeight750, weight: fontWeight700)
+    public static let typeBold750 = TypographyCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeight700)
+    public static let typeBold850 = TypographyCompositeRawToken(size: fontSize850, lineHeight: fontLineHeight950, weight: fontWeight700)
+    public static let typeBold950 = TypographyCompositeRawToken(size: fontSize950, lineHeight: fontLineHeight1050, weight: fontWeight700)
+    public static let typeBold1050 = TypographyCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeight700)
+    public static let typeBold1150 = TypographyCompositeRawToken(size: fontSize1150, lineHeight: fontLineHeight1250, weight: fontWeight700)
+    public static let typeBold1250 = TypographyCompositeRawToken(size: fontSize1250, lineHeight: fontLineHeight1350, weight: fontWeight700)
+    public static let typeBold1450 = TypographyCompositeRawToken(size: fontSize1450, lineHeight: fontLineHeight1450, weight: fontWeight700)
+    public static let typeBold1850 = TypographyCompositeRawToken(size: fontSize1850, lineHeight: fontLineHeight1850, weight: fontWeight700)
 }
-// swiftlint:enable line_length
