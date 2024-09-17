@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Remove paragraph spacing tokens for typography
 - [Library] Term "fluid" has been replaced by "adaptable" in spacing semantic tokens
 - [Doc] Improve DocC documentation about tokens and views extensions
 - [Doc] Add more details in release documentation

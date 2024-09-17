@@ -111,41 +111,6 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
     @objc open var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
 
-    // MARK: Semantic token - Typography - Font - Paragraph spacing - Mobile
-
-    @objc open var fontParagraphSpacingMobileDisplayLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingMobileDisplayMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingMobileDisplaySmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingMobileHeadingXLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingMobileHeadingLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingMobileHeadingMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingMobileHeadingSmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingMobileBodyLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingMobileBodyMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingMobileBodySmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-
-    // MARK: Semantic token - Typography - Font - Paragraph spacing - Tablet
-
-    @objc open var fontParagraphSpacingTabletDisplayLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingTabletDisplayMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingTabletDisplaySmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingTabletHeadingXLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingTabletHeadingLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingTabletHeadingMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingTabletHeadingSmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingTabletBodyLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingTabletBodyMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingTabletBodySmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-
-    // MARK: Semantic token - Typography - Font - Paragraph spacing - Others
-
-    @objc open var fontParagraphSpacingLabelXLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingLabelLarge: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingLabelMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingLabelSmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingCodeMedium: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-    @objc open var fontParagraphSpacingCodeSmall: TypographyFontParagraphSpacingRawToken { TypographyRawTokens.fontParagraphSpacing100 }
-
     // MARK: - Semantic tokens - Typography - Composites - Display
 
     @objc open var typeDisplayLarge: TypographyCompositeSemanticToken { TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold1450) }

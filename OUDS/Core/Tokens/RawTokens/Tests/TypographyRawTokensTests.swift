@@ -173,20 +173,6 @@ final class TypographyRawTokensTests: XCTestCase {
         XCTAssertLessThan(TypographyRawTokens.fontLineHeight1850, TypographyRawTokens.fontLineHeight2050)
     }
 
-    // MARK: - Primitive token - Typography - Paragraph spacing
-
-    func testTypographyRawTokensFontParagraphSpacing100LessThanFontParagraphSpacing200() throws {
-        XCTAssertLessThan(TypographyRawTokens.fontParagraphSpacing100, TypographyRawTokens.fontParagraphSpacing200)
-    }
-
-    func testTypographyRawTokensFontParagraphSpacing200LessThanFontParagraphSpacing300() throws {
-        XCTAssertLessThan(TypographyRawTokens.fontParagraphSpacing200, TypographyRawTokens.fontParagraphSpacing300)
-    }
-
-    func testTypographyRawTokensFontParagraphSpacing300LessThanFontParagraphSpacing400() throws {
-        XCTAssertLessThan(TypographyRawTokens.fontParagraphSpacing300, TypographyRawTokens.fontParagraphSpacing400)
-    }
-
     // MARK: - Primitive token - Typography - Font family
 
     func testTypographyRawTokensFontFamiliesAreAllDifferent() throws {

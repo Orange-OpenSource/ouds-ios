@@ -47,9 +47,9 @@ The _theme_ contains lots of `TypographyCompositeSemanticToken` listing all the 
 }
 
 // And here are the raw tokebs definitions:
-public static let typeBold750 = TypographyCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+public static let typeBold750 = TypographyCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeight700)
 
-public static let typeBold1050 = TypographyCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeight700, paragraphSpacing: fontParagraphSpacing100)
+public static let typeBold1050 = TypographyCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeight700)
 ```
 
 However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
