@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DemoApp] Display fake components for elevation rendering tests
 - [Library] A theme can now override the custom font family
 - [Library] Add more unit tests for theme overriding and raw tokens controls
 - [Library] Add and update raw and semantic grid tokens ([#40](https://github.com/Orange-OpenSource/ouds-ios/issues/40))
@@ -21,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Remove spread value for elevation tokens
 - [Library] Remove paragraph spacing tokens for typography
 - [Library] Term "fluid" has been replaced by "adaptable" in spacing semantic tokens
 - [Doc] Improve DocC documentation about tokens and views extensions

@@ -27,9 +27,9 @@ myView.shadow(elevation: theme.elevationDragLight)
 ColorRawTokens.colorTransparentBlack400)
 
 // And if you look deeper, the raw token "elevationBottom_3_500" can be like:
-public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, spread: -1, color: ColorRawTokens.colorTransparentBlack500)
+public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack500)
 
-// Blur and spread will be used to compute the radius value
+// Blur will be used to compute the radius value
 ```
 
 ### Apply a specific typography

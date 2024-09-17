@@ -243,53 +243,6 @@ final class TestThemeOverrideOfElevationSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.elevationBlurFocus == MockTheme.mockThemeBlurRawToken)
     }
 
-    // MARK: - Semantic token - Elevation - Spread
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationSpreadNone() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationSpreadNone, abstractTheme.elevationSpreadNone)
-        XCTAssertTrue(inheritedTheme.elevationSpreadNone == MockTheme.mockThemeSpreadRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationSpreadRaised() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationSpreadRaised, abstractTheme.elevationSpreadRaised)
-        XCTAssertTrue(inheritedTheme.elevationSpreadRaised == MockTheme.mockThemeSpreadRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationSpreadDrag() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationSpreadDrag, abstractTheme.elevationSpreadDrag)
-        XCTAssertTrue(inheritedTheme.elevationSpreadDrag == MockTheme.mockThemeSpreadRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationSpreadOverlayDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationSpreadOverlayDefault, abstractTheme.elevationSpreadOverlayDefault)
-        XCTAssertTrue(inheritedTheme.elevationSpreadOverlayDefault == MockTheme.mockThemeSpreadRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationSpreadOverlayEmphasized() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationSpreadOverlayEmphasized, abstractTheme.elevationSpreadOverlayEmphasized)
-        XCTAssertTrue(inheritedTheme.elevationSpreadOverlayEmphasized == MockTheme.mockThemeSpreadRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationSpreadStickyDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationSpreadStickyDefault, abstractTheme.elevationSpreadStickyDefault)
-        XCTAssertTrue(inheritedTheme.elevationSpreadStickyDefault == MockTheme.mockThemeSpreadRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationSpreadStickyEmphasized() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationSpreadStickyEmphasized, abstractTheme.elevationSpreadStickyEmphasized)
-        XCTAssertTrue(inheritedTheme.elevationSpreadStickyEmphasized == MockTheme.mockThemeSpreadRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationSpreadStickyNavigationScrolled() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationSpreadStickyNavigationScrolled, abstractTheme.elevationSpreadStickyNavigationScrolled)
-        XCTAssertTrue(inheritedTheme.elevationSpreadStickyNavigationScrolled == MockTheme.mockThemeSpreadRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationSpreadFocus() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationSpreadFocus, abstractTheme.elevationSpreadFocus)
-        XCTAssertTrue(inheritedTheme.elevationSpreadFocus == MockTheme.mockThemeSpreadRawToken)
-    }
-
     // MARK: - Semantic token - Elevation - Color - None
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorNoneLight() throws {
