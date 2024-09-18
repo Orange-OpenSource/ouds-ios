@@ -11,6 +11,9 @@
       location = "group:../OUDS/OUDS Library TestPlan.xctestplan">
    </FileRef>
    <FileRef
+      location = "group:ShowcaseTests/../ShowcaseUITestPlan.xctestplan">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

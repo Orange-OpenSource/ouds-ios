@@ -72,7 +72,7 @@
 		0740A9882C9833670069D24A /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
 		0740A9892C9833670069D24A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = fastlane/README.md; sourceTree = "<group>"; };
 		0740A98F2C9873500069D24A /* ShowcaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowcaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0740A99C2C9888CF0069D24A /* ShowcaseUITestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ShowcaseUITestPlan.xctestplan; sourceTree = "<group>"; };
+		0740A99C2C9888CF0069D24A /* ShowcaseUITestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = ShowcaseUITestPlan.xctestplan; path = ../ShowcaseUITestPlan.xctestplan; sourceTree = "<group>"; };
 		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07FDCD912C296A500009AA13 /* OUDS Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OUDS Showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FDCDA52C296B4B0009AA13 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitattributes; path = ../.gitattributes; sourceTree = "<group>"; };
