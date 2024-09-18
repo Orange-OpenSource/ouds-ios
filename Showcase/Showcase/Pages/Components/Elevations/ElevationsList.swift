@@ -28,36 +28,68 @@ let overlayEmphasized = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, color:
 
 /// Simple rectangle
 struct ElevationRectangle: View {
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    var foregroundColor: Color {
+        switch colorScheme {
+        case .light:
+                .white
+        case .dark:
+            "#333333".color
+        @unknown default:
+            fatalError()
+        }
+    }
+
     let elevation: ElevationCompositeSemanticToken
     var body: some View {
         Rectangle()
             .frame(width: 300, height: 80)
-            .foregroundColor("#f4f4f4".color)
+            .foregroundColor(foregroundColor)
             .shadow(elevation: elevation)
     }
 }
 
 // MARK: - List of rectangles for rendering tests
 
-/// Just a debug `View` to list the elevations effects and render them
-struct ElevationsList: View {
+/// Just a debug `View` to list the elevations effects and render them.
+/// Set as public for UI tests purposes.
+public struct ElevationsList: View {
 
-    var body: some View {
-        ScrollView {
-            ElevationRectangle(elevation: raised)
-            Spacer().padding(.bottom, 20)
+    public init() {}
 
-            ElevationRectangle(elevation: overlayDefault)
-            Spacer().padding(.bottom, 20)
+    @Environment(\.colorScheme) private var colorScheme
 
-            ElevationRectangle(elevation: allSticky)
-            Spacer().padding(.bottom, 20)
-
-            ElevationRectangle(elevation: drag)
-            Spacer().padding(.bottom, 20)
-
-            ElevationRectangle(elevation: overlayEmphasized)
-            Spacer().padding(.bottom, 20)
+    var backgroundColor: Color {
+        switch colorScheme {
+        case .light:
+            "#f4f4f4".color
+        case .dark:
+            "#272727".color
+        @unknown default:
+            fatalError()
         }
     }
+
+    public var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 40) {
+                ElevationRectangle(elevation: raised)
+                ElevationRectangle(elevation: overlayDefault)
+                ElevationRectangle(elevation: allSticky)
+                ElevationRectangle(elevation: drag)
+                ElevationRectangle(elevation: overlayEmphasized)
+            }
+            .frame(maxWidth: .infinity)
+        }
+        .background(backgroundColor)
+    }
+}
+
+#Preview {
+    ElevationsList().preferredColorScheme(.dark)
+}
+#Preview {
+    ElevationsList().preferredColorScheme(.light)
 }

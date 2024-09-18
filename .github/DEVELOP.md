@@ -51,6 +51,29 @@ To build the demo application follow those steps:
 
 _To be defined soon_
 
+## Run tests 
+
+### Tests for OUDS package
+
+To run these unit tests follow some steps:
+
+1. `cd Showcase`
+2. `bundle exec pod install`
+3. Open *Showcase.xcworkspace*
+4. Select *Showcase* scheme
+5. Run tests (Product -> Test)
+
+### UI Tests in demo app
+
+To run these UI tests follow some steps:
+
+1. `cd Showcase`
+2. `bundle exec pod install`
+3. Open *Showcase.xcworkspace*
+4. Select *ShowcaseTests* scheme
+5. Select the **iPhone 15 Pro simulator** (for now)
+6. Run tests (Product -> Test)
+
 ## Build phases
 
 The project contains several custom build phases so as to automatize several steps:
@@ -65,6 +88,7 @@ The Xcode project contains two targets:
 
 1. _Showcase_ for the demo application
 2. _Periphery_ to look for dead code in the source code
+3. _ShowcaseTests_ for UI tests in demo app
 
 ## Certificates, profiles and identifiers
 

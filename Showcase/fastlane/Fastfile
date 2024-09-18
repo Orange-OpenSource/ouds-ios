@@ -107,6 +107,31 @@ platform :ios do
             raise error
         end
     end
+    
+    # ------------
+    # RUN UI TESTS
+    # ------------
+    desc "RUN UI TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT"
+    lane :test_ui do
+        puts "👉 Run UI tests"
+
+        # Should have on runner one device under at least iOS 15
+        # Check the available devices using `xcrun xctrace list devices`
+        # Add new environments using `xcodebuild -downloadPlatform iOS`
+        begin
+            device = "iPhone 15 Pro"
+            scan(scheme: "ShowcaseTests",
+                device: device,
+                skip_build: true
+            )
+
+            publish_mattermost_notification("🧪 ✅ No issue with UI tests")
+
+        rescue => error
+            publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_ui)")
+            raise error
+        end
+    end
 
     # ------------------------------------------------------------
     # READ AND SET NEXT RELEASE NOTE IN CHANGELOG

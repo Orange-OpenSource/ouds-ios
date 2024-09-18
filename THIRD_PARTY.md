@@ -11,6 +11,13 @@ For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *
 
 ## In Showcase demo app
 
+### swift-snapshot-testing
+
+Copyright 2019 Point-Free, Inc.
+
+*swift-snapshot-testing* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/pointfreeco/swift-snapshot-testing).
+
 ## In Project
 
 ### Ruby gems
