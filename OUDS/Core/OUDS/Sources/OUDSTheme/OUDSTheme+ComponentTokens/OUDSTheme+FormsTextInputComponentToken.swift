@@ -16,11 +16,12 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import OUDSTokensComponent
 
-/// Defines for `FormsTextInputComponentToken` the basic configuration which can be overriden in subthemes / subclasses of this theme.
+/// Defines for `FormsTextInputComponentTokens` the basic configuration which can be overriden in subthemes / subclasses of this theme.
 /// **Warning: These are random and dumb values**
-extension OUDSTheme: FormsTextInputComponentToken {
+extension OUDSTheme: FormsTextInputComponentTokens {
 
-    // TODO: What should we done if missing value? E.g. missing color or alias with empty values in the end
+    // NOTE: What should we done if missing value? E.g. missing color or alias with empty values in the end
+
     private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
     private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
 

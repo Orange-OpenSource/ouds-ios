@@ -34,12 +34,12 @@ extension String {
         return Font.Weight.regular
     }
 
-    /// Forges the font family name which is expected for the given weight.
+    /// Forges the font name which is expected for the given weight.
     /// Beware, the function does not check if the font exists.
     /// - Parameters:
     ///    - name: The font family name (e.g. "Menlo")
     ///    - weight: The weight to apply (e.g. "bold", "italic")
-    /// - Returns String: The full name of the font family to use (e.g. "Menlo-Bold" or "Menlo-Italic")
+    /// - Returns String: The full name of the font to use (e.g. "Menlo-Bold" or "Menlo-Italic")
     public func compose(withFont weight: String) -> String {
         guard !self.isEmpty else {
             OUDSLogger.error("No font family to compose with weight")

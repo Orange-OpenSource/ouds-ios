@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Showcase] Add fake components for demo and tokens tests
 - [Library] Remove spread value for elevation tokens
 - [Library] Remove paragraph spacing tokens for typography
 - [Library] Term "fluid" has been replaced by "adaptable" in spacing semantic tokens

@@ -67,10 +67,10 @@ These _tokens_ can be used to apply some style and configuration values to _comp
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ to get their style values.
 
-Example with `FormsTextInputComponentToken`:
+Example with `FormsTextInputComponentTokens`:
 
 ```swift
-public protocol FormsTextInputComponentToken {
+public protocol FormsTextInputComponentTokens {
     var ftiTitleFontWeight: TypographyFontWeightSemanticToken { get }
     var ftiTitleFontSize: TypographyFontSizeSemanticToken { get }
     var ftiTitleColor: ColorSemanticToken { get }
@@ -80,7 +80,7 @@ public protocol FormsTextInputComponentToken {
     var ftiBorderWidth: BorderWidthSemanticToken { get }
 }
 
-extension OUDSTheme: FormsTextInputComponentToken {
+extension OUDSTheme: FormsTextInputComponentTokens {
     private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
     private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
 
@@ -234,7 +234,7 @@ import OUDSThemesOrange     // To override OrangeTheme (which is default theme)
 // Can be for example a country theme
 class OrangeCustomTheme: OrangeTheme { }
 
-extension OrangeCustomTheme { // For FormsTextInputComponentToken, used in component FormsTextInputComponent
+extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in component FormsTextInputComponent
 
     public override var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
     public override var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
