@@ -63,18 +63,17 @@ struct BorderStyleModifier: ViewModifier {
 
     // MARK: - Body
 
+    @ViewBuilder
     func body(content: Content) -> some View {
         if token == "solid" {
-            return AnyView(solid(content))
+            solid(content)
+        } else if token == "dashed" {
+            dashed(content)
+        } else if token == "dotted" {
+            dotted(content)
+        } else { // if token == "none" and unmanaged cases
+            none(content)
         }
-        if token == "dashed" {
-            return AnyView(dashed(content))
-        }
-        if token == "dotted" {
-            return AnyView(dotted(content))
-        }
-        // if token == "none" and unmanaged cases
-        return AnyView(none(content))
     }
 
     private func none(_ content: Content) -> some View {
