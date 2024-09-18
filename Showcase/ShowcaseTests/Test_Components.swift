@@ -35,8 +35,14 @@ final class Test_Components: XCTestCase {
 
     func testFormsTextInput() {
         let testName = "testFormsTextInput"
-        Snapshot.assert(TestFormsTextInput().environment(\.theme, OrangeTheme()), testName: "\(testName)_OrangeTheme")
-        Snapshot.assert(TestFormsTextInput().environment(\.theme, SoshTheme()), testName: "\(testName)_SoshTheme")
-        Snapshot.assert(TestFormsTextInput().environment(\.theme, InverseTheme()), testName: "\(testName)_InverseTheme")
+        Snapshot.assert(TestFormsTextInput().environment(\.theme, OrangeTheme()), testName: "\(#function)OrangeTheme")
+        Snapshot.assert(TestFormsTextInput().environment(\.theme, SoshTheme()), testName: "\(#function)SoshTheme")
+        Snapshot.assert(TestFormsTextInput().environment(\.theme, InverseTheme()), testName: "\(#function)InverseTheme")
+    }
+
+    func testElevation() {
+        Snapshot.assert(ElevationsList().environment(\.theme, OrangeTheme()), testName: "\(#function)OrangeTheme")
+        Snapshot.assert(ElevationsList().environment(\.theme, SoshTheme()), testName: "\(#function)SoshTheme")
+        Snapshot.assert(ElevationsList().environment(\.theme, InverseTheme()), testName: "\(#function)InverseTheme")
     }
 }

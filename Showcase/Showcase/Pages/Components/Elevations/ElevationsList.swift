@@ -40,9 +40,12 @@ struct ElevationRectangle: View {
 // MARK: - List of rectangles for rendering tests
 
 /// Just a debug `View` to list the elevations effects and render them
-struct ElevationsList: View {
+/// Set as public for UI Tests purpose
+public struct ElevationsList: View {
 
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         ScrollView {
             ElevationRectangle(elevation: raised)
             Spacer().padding(.bottom, 20)
