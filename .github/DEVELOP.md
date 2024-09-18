@@ -55,7 +55,7 @@ _To be defined soon_
 
 ### Tests for OUDS package
 
-To run those unit tests follow those steps:
+To run these unit tests follow some steps:
 
 1. `cd Showcase`
 2. `bundle exec pod install`
@@ -65,13 +65,13 @@ To run those unit tests follow those steps:
 
 ### UI Tests in demo app
 
-To run those UI tests follow those steps:
+To run these UI tests follow some steps:
 
 1. `cd Showcase`
 2. `bundle exec pod install`
 3. Open *Showcase.xcworkspace*
 4. Select *ShowcaseTests* scheme
-5. Select the iPhone 15 Pro simlulateur (for now)
+5. Select the **iPhone 15 Pro simulator** (for now)
 6. Run tests (Product -> Test)
 
 ## Build phases
