@@ -71,7 +71,7 @@ To run these UI tests follow some steps:
 2. `bundle exec pod install`
 3. Open *Showcase.xcworkspace*
 4. Select *ShowcaseTests* scheme
-5. Select the **iPhone 15 Pro simulator** (for now)
+5. Select some simulator (tests designed for *iPhone 13 Pro Max* and *iPhone 14 Pro Max* but works elsewhere)
 6. Run tests (Product -> Test)
 
 ## Build phases
