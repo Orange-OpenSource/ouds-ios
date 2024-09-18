@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Tests] Implement UI regression tests using snapshoots compare ([#78](https://github.com/Orange-OpenSource/ouds-ios/issues/78))
+- [Tests] Add UI regression tests using snapshot comparisons with *swift-snapshot-testing* tool ([#78](https://github.com/Orange-OpenSource/ouds-ios/issues/78))
 - [DemoApp] Display fake components for elevation rendering tests
 - [Library] A theme can now override the custom font family
 - [Library] Add more unit tests for theme overriding and raw tokens controls
