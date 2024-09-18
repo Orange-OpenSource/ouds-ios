@@ -251,7 +251,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in comp
 
     public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 
-    public override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThickest }
+    public override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThick }
 }
 
 extension OrangeCustomTheme { // For ColorSemanticTokens using anywhere

@@ -40,7 +40,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens
 
     public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 
-    public override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThickest }
+    public override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthDefault }
 }
 
 extension OrangeCustomTheme { // For ColorSemanticTokens
