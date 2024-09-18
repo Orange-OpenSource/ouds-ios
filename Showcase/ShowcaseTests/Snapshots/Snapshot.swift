@@ -16,16 +16,13 @@ import SwiftUI
 
 enum Snapshot {
 
-    // =========
-    // MARK: API
-    // =========
+    // MARK: - API
 
     /// Asserts that a given view matches a reference on disk.
     /// The test is executed on light and dark modes on an iPhone 13 Pro Max.
     ///
     /// - Parameters:
     ///   - view: The view to compare against a reference.
-    ///   - snapshotting: A strategy for serializing, deserializing, and comparing values.
     ///   - file: The file in which failure occurred. Defaults to the file path of the test case in
     ///     which this function was called.
     ///   - testName: The name of the test in which failure occurred. Defaults to the function name of
@@ -55,14 +52,12 @@ enum Snapshot {
         }
     }
 
-    // ============================
-    // MARK: Private Implementation
-    // ============================
+    // MARK: - Private Implementation
 
     private static let darkStyleTraits = UITraitCollection(userInterfaceStyle: .dark)
     private static let lightStyleTraits = UITraitCollection(userInterfaceStyle: .light)
 
-    /// Add support for phone 14 Pro Max.
+    /// Add support for iPhone 14 Pro Max
     private static let iPhone14ProMax = iPhone14ProMax(.portrait)
 
     private static func iPhone14ProMax(_ orientation: ViewImageConfig.Orientation) -> ViewImageConfig {

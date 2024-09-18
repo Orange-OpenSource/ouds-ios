@@ -53,8 +53,8 @@ struct ElevationRectangle: View {
 
 // MARK: - List of rectangles for rendering tests
 
-/// Just a debug `View` to list the elevations effects and render them
-/// Set as public for UI Tests purpose
+/// Just a debug `View` to list the elevations effects and render them.
+/// Set as public for UI tests purposes.
 public struct ElevationsList: View {
 
     public init() {}
