@@ -21,9 +21,7 @@ struct ComponentsPage: View {
 
     var body: some View {
         NavigationView {
-            ElevationsList()
-                .background(Color.white)
-                .navigationTitle("app_bottomBar_components")
+            ElevationsList().navigationTitle("app_bottomBar_components")
         }
     }
 }
