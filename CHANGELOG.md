@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Tests] Add UI regression tests using snapshot comparisons with *swift-snapshot-testing* tool ([#78](https://github.com/Orange-OpenSource/ouds-ios/issues/78))
 - [DemoApp] Display fake components for elevation rendering tests
 - [Library] A theme can now override the custom font family
-- [Library] Add more unit tests for theme overriding and raw tokens controls
+- [Tests] Add more unit tests for theme overriding and raw tokens controls
 - [Library] Add and update raw and semantic grid tokens ([#40](https://github.com/Orange-OpenSource/ouds-ios/issues/40))
 - [Library] Manage regular and compact layouts for sizing and spacing tokens
 - [Library] "Box shadow 0" has been defined and "elevation drag" changed
@@ -30,7 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Doc] Add more details in release documentation
 - [Library] Rename semantic token "opacityEmphasized" to "opacityStrong" ([#94](https://github.com/Orange-OpenSource/ouds-ios/issues/94))
 - [Library] Update value of opacity raw token "opacity800" from 0.88 to 0.80 ([#87](https://github.com/Orange-OpenSource/ouds-ios/issues/87))
-- [Library] Add missing unit tests for opacity raw tokens
+- [Tests] Add missing unit tests for opacity raw tokens
 - [Library] "OUDSThemesCommons" product has been renamed to "OUDS"
 
 ### Removed
@@ -48,22 +48,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] Add simple logger for console outputs
-- [Library] Add unit tests for Sosh brand colors raw tokens
-- [Library] Add unit tests for Orange brand colors raw tokens
-- [Library] Add unit tests for foundations
-- [Library] Add unit tests for raw tokens and semantic tokens for colors
+- [Tests] Add unit tests for Sosh brand colors raw tokens
+- [Tests] Add unit tests for Orange brand colors raw tokens
+- [Tests] Add unit tests for foundations
+- [Tests] Add unit tests for raw tokens and semantic tokens for colors
 - [Library] Add draft of raw tokens and semantic tokens for grids
 
 ### Changed
 
 - [Library] Redefine Swift Package with clearer path for sources, tests cases and test plan
 - [Library] Expose product "OUDSThemesCommons" instead of "OUDSThemesShared"
-- [Library] Improve unit tests for elevation semantic tokens
-- [Library] Improve unit tests for typography raw tokens
-- [Library] Improve unit tests for opacity raw tokens
-- [Library] Improve unit tests for elevations raw tokens
-- [Library] Improve unit tests for dimensions raw tokens
-- [Library] Improve unit tests for borders raw tokens
+- [Tests] Improve unit tests for elevation semantic tokens
+- [Tests] Improve unit tests for typography raw tokens
+- [Tests] Improve unit tests for opacity raw tokens
+- [Tests] Improve unit tests for elevations raw tokens
+- [Tests] Improve unit tests for dimensions raw tokens
+- [Tests] Improve unit tests for borders raw tokens
 
 ### Fixed
 
