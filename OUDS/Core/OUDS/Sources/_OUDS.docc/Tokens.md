@@ -27,11 +27,11 @@ These _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.c
 Thus if a component needs to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ to get their style values.
 
-Example with a fake component `FormsTextInputComponentToken`:
+Example with a fake component `FormsTextInputComponentTokens`:
 
 ```swift
 // Declare the component tokens
-public protocol FormsTextInputComponentToken {
+public protocol FormsTextInputComponentTokens {
     var ftiTitleFontWeight: TypographyFontWeightSemanticToken { get }
     var ftiTitleFontSize: TypographyFontSizeSemanticToken { get }
     var ftiTitleColor: ColorSemanticToken { get }
@@ -42,7 +42,7 @@ public protocol FormsTextInputComponentToken {
 }
 
 // Define the component tokens
-extension OUDSTheme: FormsTextInputComponentToken {
+extension OUDSTheme: FormsTextInputComponentTokens {
     private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
     private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
 

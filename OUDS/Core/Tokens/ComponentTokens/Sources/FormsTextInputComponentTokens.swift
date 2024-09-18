@@ -16,7 +16,7 @@ import OUDSTokensSemantic
 
 /// This is a component token for a text input in formulars.
 /// **Warning: This is a draft component **
-public protocol FormsTextInputComponentToken {
+public protocol FormsTextInputComponentTokens {
 
     var ftiTitleFontWeight: TypographyFontWeightSemanticToken { get }
     var ftiTitleFontSize: TypographyFontSizeSemanticToken { get }

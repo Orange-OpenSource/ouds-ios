@@ -69,7 +69,7 @@ import OUDSThemesOrange     // To override OrangeTheme (which is default theme)
 // Can be for example a country theme
 class OrangeCustomTheme: OrangeTheme { }
 
-extension OrangeCustomTheme { // For FormsTextInputComponentToken, used in component FormsTextInputComponent
+extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in component FormsTextInputComponent
 
     public override var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
     public override var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
