@@ -19,9 +19,13 @@ import OUDSThemesInverse
 import SwiftUI
 import XCTest
 
-final class Test_Components: XCTestCase {
+/// Class to make UI tests on the fake component `OUDSFormsTextInput` using the
+/// [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library.
+final class OUDSFormsTextInputUITests: XCTestCase {
 
-    struct TestFormsTextInput: View {
+    // MARK: - Wrapper
+
+    private struct TestFormsTextInput: View {
         @State private var value: String = ""
 
         var body: some View {
@@ -29,17 +33,17 @@ final class Test_Components: XCTestCase {
         }
     }
 
-    // ===========
-    // MARK: Tests
-    // ===========
+    // MARK: - Tests
 
-    func testFormsTextInput() {
+    func testOUDSFormsTextInput_OrangeTheme() {
         Snapshot.assert(TestFormsTextInput().environment(\.theme, OrangeTheme()), testName: "\(#function)OrangeTheme")
-        Snapshot.assert(TestFormsTextInput().environment(\.theme, SoshTheme()), testName: "\(#function)SoshTheme")
-        Snapshot.assert(TestFormsTextInput().environment(\.theme, InverseTheme()), testName: "\(#function)InverseTheme")
     }
 
-    func testElevation() {
-        Snapshot.assert(ElevationsList().environment(\.theme, OrangeTheme()), testName: "\(#function)OrangeTheme")
+    func testOUDSFormsTextInput_SoshTheme() {
+        Snapshot.assert(TestFormsTextInput().environment(\.theme, SoshTheme()), testName: "\(#function)SoshTheme")
+    }
+
+    func testOUDSFormsTextInput_InverseTheme() {
+        Snapshot.assert(TestFormsTextInput().environment(\.theme, InverseTheme()), testName: "\(#function)InverseTheme")
     }
 }

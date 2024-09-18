@@ -25,7 +25,7 @@
 		070C35642C773A0D0029C6A8 /* OUDSThemesInverse in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35632C773A0D0029C6A8 /* OUDSThemesInverse */; };
 		070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35652C7762B90029C6A8 /* OUDSModules */; };
 		070C35682C7762B90029C6A8 /* OUDSThemesSosh in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35672C7762B90029C6A8 /* OUDSThemesSosh */; };
-		0740A9982C9874160069D24A /* Test_Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008182C942753006B8729 /* Test_Components.swift */; };
+		0740A9982C9874160069D24A /* OUDSFormsTextInputUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008182C942753006B8729 /* OUDSFormsTextInputUITests.swift */; };
 		0740A99A2C9874670069D24A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0740A9992C9874670069D24A /* SnapshotTesting */; };
 		0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* Snapshot.swift */; };
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
@@ -34,6 +34,7 @@
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
+		513D58C22C9B28E100614929 /* ElevationsEffectsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513D58C12C9B28E100614929 /* ElevationsEffectsUITests.swift */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
 		51B4F7F42C5BEAB700312019 /* OrangeCustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
@@ -65,7 +66,7 @@
 /* Begin PBXFileReference section */
 		0707B6402C2C3C0400A911E7 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; name = .github; path = ../.github; sourceTree = "<group>"; };
 		0707B6432C2C569500A911E7 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
-		074008182C942753006B8729 /* Test_Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_Components.swift; sourceTree = "<group>"; };
+		074008182C942753006B8729 /* OUDSFormsTextInputUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSFormsTextInputUITests.swift; sourceTree = "<group>"; };
 		074008222C942810006B8729 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		0740A9872C9833670069D24A /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
 		0740A9882C9833670069D24A /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
@@ -88,6 +89,7 @@
 		511B8EC02C99861600E7C2F1 /* ElevationsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationsList.swift; sourceTree = "<group>"; };
 		512364782C3D7B2D00572FD5 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		5123647A2C3D7B3500572FD5 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
+		513D58C12C9B28E100614929 /* ElevationsEffectsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevationsEffectsUITests.swift; sourceTree = "<group>"; };
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeCustomTheme.swift; sourceTree = "<group>"; };
@@ -159,7 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				074008212C9427F8006B8729 /* Snapshots */,
-				074008182C942753006B8729 /* Test_Components.swift */,
+				074008182C942753006B8729 /* OUDSFormsTextInputUITests.swift */,
+				513D58C12C9B28E100614929 /* ElevationsEffectsUITests.swift */,
 				0740A99C2C9888CF0069D24A /* ShowcaseUITestPlan.xctestplan */,
 			);
 			path = ShowcaseTests;
@@ -513,8 +516,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0740A9982C9874160069D24A /* Test_Components.swift in Sources */,
+				0740A9982C9874160069D24A /* OUDSFormsTextInputUITests.swift in Sources */,
 				0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */,
+				513D58C22C9B28E100614929 /* ElevationsEffectsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
