@@ -21,46 +21,29 @@ import OUDSTokensSemantic
 /// `OUDSTheme` can be seen as a kind of "abstract class" in _object oriented paradigm_.
 extension OUDSTheme: ElevationSemanticTokens {
 
-    // MARK: Semantic token - Elevation - Z index
-
-    @objc open var elevationZIndexDeep: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndexMinus9999 }
-    @objc open var elevationZIndexDefault: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex0 }
-    @objc open var elevationZIndexDropdown: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1000 }
-    @objc open var elevationZIndexSticky: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1020 }
-    @objc open var elevationZIndexFixed: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1030 }
-    @objc open var elevationZIndexBackToTop: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1035 }
-    @objc open var elevationZIndexSpinner: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1038 }
-    @objc open var elevationZIndexOffCanvasBackdrop: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1040 }
-    @objc open var elevationZIndexOffCanvas: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1045 }
-    @objc open var elevationZIndexModalBackdrop: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1050 }
-    @objc open var elevationZIndexModal: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1060 }
-    @objc open var elevationZIndexPopover: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1070 }
-    @objc open var elevationZIndexTooltip: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1080 }
-    @objc open var elevationZIndexToast: ElevationZIndexSemanticToken { ElevationRawTokens.elevationZIndex1090 }
-
     // MARK: Semantic token - Elevation - X
 
-    @objc open var elevationXNone: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXRaised: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXDrag: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXOverlayDefault: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXOverlayEmphasized: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXStickyDefault: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXStickyEmphasized: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXStickyNavigationScrolled: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXFocus: ElevationZIndexSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXNone: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXRaised: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXDrag: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXOverlayDefault: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXOverlayEmphasized: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXStickyDefault: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXStickyEmphasized: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXStickyNavigationScrolled: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
+    @objc open var elevationXFocus: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
 
     // MARK: Semantic token - Elevation - Y
 
-    @objc open var elevationYNone: ElevationZIndexSemanticToken { ElevationRawTokens.elevationY0 }
-    @objc open var elevationYRaised: ElevationZIndexSemanticToken { ElevationRawTokens.elevationY100 }
-    @objc open var elevationYDrag: ElevationZIndexSemanticToken { ElevationRawTokens.elevationY300 }
-    @objc open var elevationYOverlayDefault: ElevationZIndexSemanticToken { ElevationRawTokens.elevationY200 }
-    @objc open var elevationYOverlayEmphasized: ElevationZIndexSemanticToken { ElevationRawTokens.elevationY500 }
-    @objc open var elevationYStickyDefault: ElevationZIndexSemanticToken { ElevationRawTokens.elevationY300 }
-    @objc open var elevationYStickyEmphasized: ElevationZIndexSemanticToken { ElevationRawTokens.elevationY300 }
-    @objc open var elevationYStickyNavigationScrolled: ElevationZIndexSemanticToken { ElevationRawTokens.elevationY300 }
-    @objc open var elevationYFocus: ElevationZIndexSemanticToken { ElevationRawTokens.elevationY0 }
+    @objc open var elevationYNone: ElevationYSemanticToken { ElevationRawTokens.elevationY0 }
+    @objc open var elevationYRaised: ElevationYSemanticToken { ElevationRawTokens.elevationY100 }
+    @objc open var elevationYDrag: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
+    @objc open var elevationYOverlayDefault: ElevationYSemanticToken { ElevationRawTokens.elevationY200 }
+    @objc open var elevationYOverlayEmphasized: ElevationYSemanticToken { ElevationRawTokens.elevationY500 }
+    @objc open var elevationYStickyDefault: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
+    @objc open var elevationYStickyEmphasized: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
+    @objc open var elevationYStickyNavigationScrolled: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
+    @objc open var elevationYFocus: ElevationYSemanticToken { ElevationRawTokens.elevationY0 }
 
     // MARK: Semantic token - Elevation - Blur
 
