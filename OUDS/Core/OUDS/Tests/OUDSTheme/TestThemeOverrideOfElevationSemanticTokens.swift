@@ -14,8 +14,6 @@
 import XCTest
 import OUDS
 
-// swiftlint:disable type_body_length
-
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
 /// In fact, the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols _elevation semantic tokens_.
 /// These semantic tokens should be overriden by subclass like the `OrangeTheme` default theme.
@@ -28,78 +26,6 @@ final class TestThemeOverrideOfElevationSemanticTokens: XCTestCase {
     override func setUp() async throws {
         abstractTheme = OUDSTheme()
         inheritedTheme = MockTheme()
-    }
-
-    // MARK: - Semantic token - Elevation - Z index
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexDeep() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexDeep, abstractTheme.elevationZIndexDeep)
-        XCTAssertTrue(inheritedTheme.elevationZIndexDeep == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexDefault, abstractTheme.elevationZIndexDefault)
-        XCTAssertTrue(inheritedTheme.elevationZIndexDefault == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexDropdown() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexDropdown, abstractTheme.elevationZIndexDropdown)
-        XCTAssertTrue(inheritedTheme.elevationZIndexDropdown == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexSticky() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexSticky, abstractTheme.elevationZIndexSticky)
-        XCTAssertTrue(inheritedTheme.elevationZIndexSticky == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexFixed() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexFixed, abstractTheme.elevationZIndexFixed)
-        XCTAssertTrue(inheritedTheme.elevationZIndexFixed == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexBackToTop() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexBackToTop, abstractTheme.elevationZIndexBackToTop)
-        XCTAssertTrue(inheritedTheme.elevationZIndexBackToTop == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexSpinner() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexSpinner, abstractTheme.elevationZIndexSpinner)
-        XCTAssertTrue(inheritedTheme.elevationZIndexSpinner == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexOffCanvasBackdrop() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexOffCanvasBackdrop, abstractTheme.elevationZIndexOffCanvasBackdrop)
-        XCTAssertTrue(inheritedTheme.elevationZIndexOffCanvasBackdrop == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexOffCanvas() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexOffCanvas, abstractTheme.elevationZIndexOffCanvas)
-        XCTAssertTrue(inheritedTheme.elevationZIndexOffCanvas == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexModalBackdrop() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexModalBackdrop, abstractTheme.elevationZIndexModalBackdrop)
-        XCTAssertTrue(inheritedTheme.elevationZIndexModalBackdrop == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexModal() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexModal, abstractTheme.elevationZIndexModal)
-        XCTAssertTrue(inheritedTheme.elevationZIndexModal == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexPopover() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexPopover, abstractTheme.elevationZIndexPopover)
-        XCTAssertTrue(inheritedTheme.elevationZIndexPopover == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexTooltip() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexTooltip, abstractTheme.elevationZIndexTooltip)
-        XCTAssertTrue(inheritedTheme.elevationZIndexTooltip == MockTheme.mockThemeZIndexRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationZIndexToast() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationZIndexToast, abstractTheme.elevationZIndexToast)
-        XCTAssertTrue(inheritedTheme.elevationZIndexToast == MockTheme.mockThemeZIndexRawToken)
     }
 
     // MARK: - Semantic token - Elevation - X
@@ -410,5 +336,3 @@ final class TestThemeOverrideOfElevationSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.elevationFocusDark == MockTheme.mockThemeCompositeRawToken)
     }
 }
-
-// swiftlint:enable type_body_length

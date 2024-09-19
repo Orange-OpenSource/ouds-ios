@@ -29,7 +29,7 @@ final class OUDSFormsTextInputUITests: XCTestCase {
         @State private var value: String = ""
 
         var body: some View {
-            OUDSFormsTextInput(placeholder: "AddText Here", value: $value)
+            OUDSFormsTextInput(label: "Some label", hint: "Some hint", placeholder: "Add text here", value: $value)
         }
     }
 

@@ -16,8 +16,6 @@ import OUDSFoundations
 import OUDSTokensRaw
 import SwiftUI
 
-// swiftlint:disable type_body_length
-
 /// The aim of this tests class is to look for regressions in **elevation raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not mandatory and relevant to test each token values.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
@@ -62,64 +60,6 @@ final class ElevationRawTokensTests: XCTestCase {
         radius = token.radius
         // Then
         XCTAssertTrue(radius == 6)
-    }
-
-    // MARK: - Primitive token - Elevation - Z Index
-
-    func testElevationZIndexRawTokenMinus9999LessThanZIndex0() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndexMinus9999, ElevationRawTokens.elevationZIndex0)
-    }
-
-    func testElevationZIndexRawToken0LessThanZIndex1000() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex0, ElevationRawTokens.elevationZIndex1000)
-    }
-
-    func testElevationZIndexRawToken1000LessThanZIndex1010() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1000, ElevationRawTokens.elevationZIndex1010)
-    }
-
-    func testElevationZIndexRawToken1010LessThanZIndex1020() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1010, ElevationRawTokens.elevationZIndex1020)
-    }
-
-    func testElevationZIndexRawToken1020LessThanZIndex1030() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1020, ElevationRawTokens.elevationZIndex1030)
-    }
-
-    func testElevationZIndexRawToken1030LessThanZIndex1035() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1030, ElevationRawTokens.elevationZIndex1035)
-    }
-
-    func testElevationZIndexRawToken1035LessThanZIndex1038() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1035, ElevationRawTokens.elevationZIndex1038)
-    }
-
-    func testElevationZIndexRawToken1038LessThanZIndex1040() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1038, ElevationRawTokens.elevationZIndex1040)
-    }
-
-    func testElevationZIndexRawToken1040LessThanZIndex1045() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1040, ElevationRawTokens.elevationZIndex1045)
-    }
-
-    func testElevationZIndexRawToken1045LessThanZIndex1050() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1045, ElevationRawTokens.elevationZIndex1050)
-    }
-
-    func testElevationZIndexRawToken1050LessThanZIndex1060() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1050, ElevationRawTokens.elevationZIndex1060)
-    }
-
-    func testElevationZIndexRawToken1060LessThanZIndex1070() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1060, ElevationRawTokens.elevationZIndex1070)
-    }
-
-    func testElevationZIndexRawToken1070LessThanZIndex1080() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1070, ElevationRawTokens.elevationZIndex1080)
-    }
-
-    func testElevationZIndexRawToken1080LessThanZIndex1090() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationZIndex1080, ElevationRawTokens.elevationZIndex1090)
     }
 
     // MARK: - Primitive token - Elevation - Y
@@ -407,5 +347,3 @@ final class ElevationRawTokensTests: XCTestCase {
         XCTAssertLessThanOrEqual(left.blur, right.blur)
     }
 }
-
-// swiftlint:enable type_body_length

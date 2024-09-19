@@ -74,6 +74,8 @@ To run these UI tests follow some steps:
 5. Select some simulator (tests designed for *iPhone 13 Pro Max* and *iPhone 14 Pro Max* but works elsewhere)
 6. Run tests (Product -> Test)
 
+Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time. Indeed for new tests the tool makes snapshots of the views, thus for the first run no preview exist making the tests fail. You should run the tests twice for new tests.
+
 ## Build phases
 
 The project contains several custom build phases so as to automatize several steps:
