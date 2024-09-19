@@ -58,13 +58,6 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
     <!-- Once the Jekyll server is started, the documentation for version X.Y.Z should be available at http://127.0.0.1:4000/ods-ios/X.Y.Z/. -->
 
-- Generate documentation from Swift sources, it will update online version and generate a ZIP file
-    ```shell
-    ./generateDoc.sh --libversion=X.Y.Z --usegit
-    # --usegit means updating GitHub Pages branch
-    # Add --nozip if you don't want a ZIP file
-    # X.Y.Z here is just the version number to display in main index.html pages, replace values of course
-    ```
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.
 
 - Review and merge this pull request on GitHub.<br /><br />
@@ -75,7 +68,16 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 - Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits** (this strategy is only dedicated to feature branches to merge in develop branch).
 
+- Generate documentation from Swift sources, it will update online version and generate a ZIP file in _/tmp_
+    ```shell
+    ./generateDoc.sh --libversion=X.Y.Z --usegit
+    # --usegit means updating GitHub Pages branch
+    # Add --nozip if you don't want a ZIP file
+    # X.Y.Z here is just the version number to display in main index.html pages, replace values of course
+    ```
+    
 - Launch a job on your runner to build the demo application
+
 - Or use _Fastlane_ command:
     ```shell
     # Variables for application signing
@@ -153,7 +155,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
     \## [Unreleased]\(https://github.com/Orange-OpenSource/ouds-ios/compare/X.Y.Z...develop)
     ```
     
-    - Update in Xcode the version of Showcase target to U.V.W (the new version you suppose it will be)
+    - Update in Xcode the version of Showcase target to U.V.W (the new version you suppose it will be) and increment build number
     - Commit your modifications
     - Push them to the repository
     - Create a new pull request named `Update release U.V.W` on GitHub to merge your branch into `develop`.
