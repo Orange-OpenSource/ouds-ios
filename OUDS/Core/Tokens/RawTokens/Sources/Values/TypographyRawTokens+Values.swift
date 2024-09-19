@@ -14,7 +14,7 @@
 import Foundation
 import SwiftUI
 
-/// Extracted in a separated files to help the *Figma* JSON to Swift parser to generate files to include easily.
+/// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension TypographyRawTokens {
 
     // MARK: Primitive token - Typography - Font size

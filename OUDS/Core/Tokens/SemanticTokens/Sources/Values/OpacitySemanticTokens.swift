@@ -12,7 +12,6 @@
 //
 
 import Foundation
-import OUDSTokensRaw
 
 /// This is a group of semantic tokens for **opacity.**
 /// It defines all `OpacitySemanticToken` a theme must have.

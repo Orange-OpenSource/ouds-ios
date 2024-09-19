@@ -12,8 +12,6 @@
 //
 
 import Foundation
-import SwiftUI
-import OUDSTokensRaw
 
 /// This is a group of semantic tokens for **colors**.
 /// It defines all `ColorSemanticToken` and `ColorAliasSemanticToken` a theme must have.

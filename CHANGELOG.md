@@ -23,10 +23,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Showcase] Improve Fastlane alpha build notifications
-- [Library] Change type aliases for X and Y offsets of elevations tokens
-- [Library] Split raw, semantic and components tokens definitions of values, composites and aliases
 - [Library] Split raws, semantics and components tokens definitions and also values, composites and type aliases
+- [Showcase] Improve Fastlane alpha build notifications
+- [Library] Do not store blur value in elevation semantic tokens
+- [Library] Change type aliases for X and Y offsets of elevations tokens
 - [Library] Update border semantic tokens values ([#106](https://github.com/Orange-OpenSource/ouds-ios/issues/106))
 - [Showcase] Add fake components for demo and tokens tests
 - [Library] Remove spread value for elevation tokens

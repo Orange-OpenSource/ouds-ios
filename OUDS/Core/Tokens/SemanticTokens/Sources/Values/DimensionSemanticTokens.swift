@@ -12,7 +12,6 @@
 //
 
 import Foundation
-import OUDSTokensRaw
 
 /// This is a group of semantic tokens for **dimensions**.
 /// It defines all `DimensionSemanticToken` a theme must have.

@@ -344,6 +344,6 @@ final class ElevationRawTokensTests: XCTestCase {
 
     func assertCompositeLowerThan(_ left: ElevationCompositeRawToken, _ right: ElevationCompositeRawToken) {
         XCTAssertLessThanOrEqual(left.y, right.y)
-        XCTAssertLessThanOrEqual(left.blur, right.blur)
+        XCTAssertLessThanOrEqual(left.radius, right.radius)
     }
 }

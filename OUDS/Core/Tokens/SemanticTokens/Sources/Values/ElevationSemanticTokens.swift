@@ -12,7 +12,6 @@
 //
 
 import Foundation
-import OUDSTokensRaw
 
 /// This is a group of semantic tokens for **elevations**.
 /// It defines all elevation semantic tokens a theme must have. (`ElevationXSemanticToken`,`ElevationYSemanticToken`,

@@ -12,7 +12,6 @@
 //
 
 import Foundation
-import OUDSTokensRaw
 
 /// This is a group of semantic tokens for **sizing**.
 /// It defines all `SizingSemanticToken` a theme must have.

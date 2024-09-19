@@ -15,8 +15,6 @@ import Foundation
 import SwiftUI
 import OUDSTokensRaw
 
-// MARK: - Type aliases to keep grammar clear
-
 /// Basically a semantic color token, which can be either a functional or a decorative token, is a `String`, to keep grammar clean and clear with design system grammar.
 public typealias ColorSemanticToken = ColorRawToken
 

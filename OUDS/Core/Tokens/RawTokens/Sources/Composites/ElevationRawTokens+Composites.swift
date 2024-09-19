@@ -21,32 +21,37 @@ public final class ElevationCompositeRawToken: NSObject { // For @objc compatibi
     public let x: ElevationRawToken
     /// The Y offset for the elevation
     public let y: ElevationRawToken
-    /// The *Figma* blur effect for the elevation, to use for `radius` computations.
-    public let blur: ElevationRawToken
     /// The color of the shadow effect
     public let color: ColorRawToken
 
     /// The *Figma* tool uses its own implementation of shadow or elevation effect with a *blur* and a *spread* values defined in the *tokens*, inherited from web universe.
     /// However *SwiftUI* for shadows effects uses only a *radius* which does not match the *Figma* *blur* and *spread* radiuses values.
-    /// Thus this value is computed from the *blur* value so as to try to reproduce the same effect applying the formula
-    ///
-    /// ** radius = blur +  / 2**
-    public var radius: ElevationRawToken {
-        blur / 2
-    }
+    public let radius: ElevationRawToken
 
+    /// Defines a composite elevation token and computes the *SwftUI radius* from the given *Figma blur* applying formula:
+    ///
+    /// ** radius = blur / 2 **
+    ///
+    /// - Parameters:
+    ///    - x: The X offset for elevation
+    ///    - y: The Y offset for elevation
+    ///    - blur: The blur effect from *Figma*, used to compute *SwiftUI radius*
+    ///    - color: The color to apply on the shafow
     public init(x: ElevationRawToken, y: ElevationRawToken, blur: ElevationRawToken, color: ColorRawToken) {
         self.x = x
         self.y = y
-        self.blur = blur
         self.color = color
+        radius = blur / 2
     }
 
+    /// Compares the `self.x`, `self.y`, `self.blur` and `self.color` values between tokens.
+    /// If `object` is not an `ElevationCompositeRawToken`, or ahs one of its four proeprties with another value than `self`,
+    /// return `false`. Otherwise returns `true`.
     public override func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? ElevationCompositeRawToken else { return false }
         return self.x == other.x
         && self.y == other.y
-        && self.blur == other.blur
+        && self.radius == other.radius
         && self.color == other.color
     }
 }

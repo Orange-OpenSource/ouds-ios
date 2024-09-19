@@ -12,7 +12,6 @@
 //
 
 import Foundation
-import OUDSTokensRaw
 
 /// This is a group of semantic tokens for **spacing**.
 /// It defines all `SpacingSemanticToken` a theme must have.

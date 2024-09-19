@@ -21,9 +21,12 @@ public struct TypographyCompositeRawToken: Equatable {
 
     /// The font size to apply for the texts
     public let size: TypographyFontSizeRawToken
+
     /// The line height to apply on texts
     public let lineHeight: TypographyFontLineHeightRawToken
+
     /// The font weight to associated wit the font family
     public let weight: TypographyFontWeightRawToken
+
     // TODO: How to deal "letter spacing"?
 }

@@ -12,7 +12,6 @@
 //
 
 import Foundation
-import OUDSTokensRaw
 
 /// This is a group of semantic tokens for **borders**.
 /// It defines all `BorderWidthSemanticToken`, `BorderRadiusSemanticToken` and `BorderStyleSemanticToken` a theme must have.

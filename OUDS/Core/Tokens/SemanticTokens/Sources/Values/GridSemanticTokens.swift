@@ -12,7 +12,6 @@
 //
 
 import Foundation
-import OUDSTokensRaw
 
 /// This is a group of semantic tokens for **grids**.
 /// It defines all `GridSemanticToken` a theme must have.
