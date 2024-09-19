@@ -12,13 +12,17 @@ To keep the same semantics as the ones used in our specifications, _typealias_ a
 
 Using more simple and primitive types will help also to test the library. With also type aliases we force users to use our types and not higher level types like _SwiftUI_ types.
 
+We also choose to add in _extension_ all the tokens values in a separated file so as to help the *Figma*-JSON-to-Swift parser to build files to copy and past easily in the project and keeping all the other objects.
+
 Example for ``ColorRawTokens`:
 
 ```swift
 // Define types for color raw tokens
 public typealias ColorRawToken = String
 
-public enum ColorRawTokens { // Gathers all color raw tokens
+public enum ColorRawTokens { } // Gathers all color raw tokens
+
+extension ColorRawTokens {
 
     public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
     public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E"

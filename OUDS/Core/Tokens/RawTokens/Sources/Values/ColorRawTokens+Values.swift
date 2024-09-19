@@ -11,21 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-import OUDSFoundations
-
-// MARK: - Type aliases to keep grammar clear
-
-/// A color raw token is finaly a `String` containing the hexadecimal code of the color
-public typealias ColorRawToken = String
-
-// MARK: Raw tokens
-
-/// This is the group of all **raw tokens** related to **colors**.
-/// Primitive types such as  `String` must be used to as to allow to use `@objc` keywords in extensions for overriding.
-/// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
-///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
-public enum ColorRawTokens {
+/// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
+/// Should be fully generated in the future.
+extension ColorRawTokens {
 
     // MARK: Primitive token - Colors - Black, white
 
@@ -135,42 +123,4 @@ public enum ColorRawTokens {
     public static let colorTransparentWhite700: ColorRawToken = apply(opacity: OpacityRawTokens.opacity700, on: colorFunctionalWhite)
     public static let colorTransparentWhite800: ColorRawToken = apply(opacity: OpacityRawTokens.opacity800, on: colorFunctionalWhite)
     public static let colorTransparentWhite900: ColorRawToken = apply(opacity: OpacityRawTokens.opacity900, on: colorFunctionalWhite)
-
-    // MARK: - Helpers
-
-    private static func apply(opacity: OpacityRawToken, on hexColor: String) -> String {
-        // TODO: Improve this algorithm too much naive
-        // Values picked from https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-        if opacity == OpacityRawTokens.opacity0 {
-            return hexColor + "00"
-        }
-        if opacity == OpacityRawTokens.opacity100 {
-            return hexColor + "0A"
-        }
-        if opacity == OpacityRawTokens.opacity200 {
-            return hexColor + "14"
-        }
-        if opacity == OpacityRawTokens.opacity300 {
-            return hexColor + "29"
-        }
-        if opacity == OpacityRawTokens.opacity400 {
-            return hexColor + "3D"
-        }
-        if opacity == OpacityRawTokens.opacity500 {
-            return hexColor + "52"
-        }
-        if opacity == OpacityRawTokens.opacity600 {
-            return hexColor + "7A"
-        }
-        if opacity == OpacityRawTokens.opacity700 {
-            return hexColor + "A3"
-        }
-        if opacity == OpacityRawTokens.opacity800 {
-            return hexColor + "E0"
-        }
-        if opacity == OpacityRawTokens.opacity900 {
-            return hexColor + "FF"
-        }
-        return hexColor
-    }
 }
