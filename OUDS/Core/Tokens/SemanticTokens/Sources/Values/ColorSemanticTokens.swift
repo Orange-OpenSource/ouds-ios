@@ -15,16 +15,6 @@ import Foundation
 import SwiftUI
 import OUDSTokensRaw
 
-// MARK: - Type aliases to keep grammar clear
-
-/// Basically a semantic color token, which can be either a functional or a decorative token, is a `String`
-public typealias ColorSemanticToken = ColorRawToken
-
-/// The global design system tool defines aliases of semantic colors token as semantic color tokens
-public typealias ColorAliasSemanticToken = ColorSemanticToken
-
-// MARK: - Semantic tokens
-
 /// This is a group of semantic tokens for **colors**.
 /// It defines all `ColorSemanticToken` and `ColorAliasSemanticToken` a theme must have.
 public protocol ColorSemanticTokens {

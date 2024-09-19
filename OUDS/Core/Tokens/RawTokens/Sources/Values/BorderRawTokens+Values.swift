@@ -15,7 +15,7 @@ import Foundation
 
 /// Extracted in a separated files to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension BorderRawTokens {
-    
+
     // Double type because used below for computations with Double values
     private static let borderBase: Double = 4
 

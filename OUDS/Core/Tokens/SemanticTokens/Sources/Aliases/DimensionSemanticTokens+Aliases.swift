@@ -14,19 +14,5 @@
 import Foundation
 import OUDSTokensRaw
 
-// MARK: - Type aliases to keep grammar clear
-
-/// Basically a semantic token for dimensions is a raw token for dimensions
+/// Basically a semantic token for dimensions is a raw token for dimensions, to keep grammar clean and clear with design system grammar.
 public typealias DimensionSemanticToken = DimensionRawToken
-
-// MARK: - Semantic tokens
-
-/// This is a group of semantic tokens for **dimensions**.
-/// It defines all `DimensionSemanticToken` a theme must have.
-public protocol DimensionSemanticTokens {
-
-    // MARK: Semantic token - Dimension
-
-    var dimensionDensityDefault: DimensionSemanticToken { get }
-
-}

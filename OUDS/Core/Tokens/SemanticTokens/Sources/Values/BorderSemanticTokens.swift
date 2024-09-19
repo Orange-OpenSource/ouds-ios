@@ -14,24 +14,12 @@
 import Foundation
 import OUDSTokensRaw
 
-// MARK: - Type aliases to keep grammar clear
-
-/// Type alias precising `BorderWidthRawToken` is used as a value of this **border width semantic token**.
-public typealias BorderWidthSemanticToken = BorderWidthRawToken
-
-/// Type alias precising `BorderRadiusRawToken` is used as a value of this **border raw semantic token**.
-public typealias BorderRadiusSemanticToken = BorderRadiusRawToken
-
-/// Type alias precising `BorderStyleRawToken` is used as a value of this **border style semantic token**.
-public typealias BorderStyleSemanticToken = BorderStyleRawToken
-
-// MARK: - Semantic tokens
-
 /// This is a group of semantic tokens for **borders**.
 /// It defines all `BorderWidthSemanticToken`, `BorderRadiusSemanticToken` and `BorderStyleSemanticToken` a theme must have.
 public protocol BorderSemanticTokens {
 
     // MARK: - Semantic token - Border - Width
+
     var borderWidthNone: BorderWidthSemanticToken { get }
     var borderWidthDefault: BorderWidthSemanticToken { get }
     var borderWidthThin: BorderWidthSemanticToken { get }

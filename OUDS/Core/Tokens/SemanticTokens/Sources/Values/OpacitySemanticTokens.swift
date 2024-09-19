@@ -14,13 +14,6 @@
 import Foundation
 import OUDSTokensRaw
 
-// MARK: - Type aliases to keep grammar clear
-
-/// Basically an opacity semantic token is an opacity raw token
-public typealias OpacitySemanticToken = OpacityRawToken
-
-// MARK: - Semantic tokens
-
 /// This is a group of semantic tokens for **opacity.**
 /// It defines all `OpacitySemanticToken` a theme must have.
 public protocol OpacitySemanticTokens {

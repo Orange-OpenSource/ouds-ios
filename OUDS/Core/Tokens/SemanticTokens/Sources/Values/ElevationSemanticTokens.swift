@@ -14,25 +14,6 @@
 import Foundation
 import OUDSTokensRaw
 
-// MARK: - Type aliases to keep grammar clear
-
-/// Basically an elevation semantic token for X offset is a raw token for elevation, with the same final type
-public typealias ElevationXSemanticToken = ElevationRawToken
-
-/// Basically an elevation semantic token for Y Index is a raw token for elevation, with the same final type
-public typealias ElevationYSemanticToken = ElevationRawToken
-
-/// Basically an elevation semantic token for blur effect is a raw token for elevation, with the same final type
-public typealias ElevationBlurSemanticToken = ElevationRawToken
-
-/// Basically an elevation semantic token for shadow colors is a raw token for colors
-public typealias ElevationColorSemanticToken = ColorRawToken
-
-/// Basically an elevation semantic token for box shadow is a raw token for box shadow, with the same final type
-public typealias ElevationCompositeSemanticToken = ElevationCompositeRawToken
-
-// MARK: - Semantic tokens
-
 /// This is a group of semantic tokens for **elevations**.
 /// It defines all elevation semantic tokens a theme must have. (`ElevationXSemanticToken`,`ElevationYSemanticToken`,
 /// `ElevationBlurSemanticToken` and `ElevationColorSemanticToken`)

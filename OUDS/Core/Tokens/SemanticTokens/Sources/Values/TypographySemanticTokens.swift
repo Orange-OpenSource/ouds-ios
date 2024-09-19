@@ -14,45 +14,6 @@
 import Foundation
 import OUDSTokensRaw
 
-// MARK: - Type aliases to keep grammar clear
-
-/// The global design system tools uses verbs of semantic token for font family, which is basically a raw token for font family
-public typealias TypographyFontFamilySemanticToken = TypographyFontFamilyRawToken
-
-/// The global design system tools uses verbs of semantic token for font weight, which is basically a raw token for font weight
-public typealias TypographyFontWeightSemanticToken = TypographyFontWeightRawToken
-
-/// The global design system tools uses verbs of semantic token for font size, which is basically a raw token for font size
-public typealias TypographyFontSizeSemanticToken = TypographyFontSizeRawToken
-
-/// The global design system tools uses verbs of semantic token for font line height, which is basically a raw token for font line height
-public typealias TypographyFontLineHeightSemanticToken = TypographyFontLineHeightRawToken
-
-// MARK: Semantic tokens
-
-// MARK: - Composite semantic token
-
-/// Composite semantic tokens which will wrap a combination of `TypographyCompositeRawToken` depending to viewports.
-public final class TypographyCompositeSemanticToken: NSObject {
-
-    /// For **extra-compact** and **compact** viewports
-    public let compact: TypographyCompositeRawToken
-    /// For **regular** and **medium** viewports
-    public let regular: TypographyCompositeRawToken
-
-    public init(compact: TypographyCompositeRawToken, regular: TypographyCompositeRawToken) {
-        self.compact = compact
-        self.regular = regular
-    }
-
-    public override func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? TypographyCompositeSemanticToken else { return false }
-        return self.compact == object.compact && self.regular == object.regular
-    }
-}
-
-// MARK: - Semantic tokens
-
 /// This is a group of semantic tokens for **typography**.
 /// It defines all typography semantic tokens a theme must have
 /// (`TypographyFontFamilySemanticToken`, `TypographyFontWeightSemanticToken`, `TypographyFontSizeSemanticToken`, `TypographyFontLineHeightSemanticToken`).
