@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Showcase] Improve Fastlane alpha build notifications
 - [Library] Change type aliases for X and Y offsets of elevations tokens
 - [Library] Update border semantic tokens values ([#106](https://github.com/Orange-OpenSource/ouds-ios/issues/106))
 - [Showcase] Add fake components for demo and tokens tests
