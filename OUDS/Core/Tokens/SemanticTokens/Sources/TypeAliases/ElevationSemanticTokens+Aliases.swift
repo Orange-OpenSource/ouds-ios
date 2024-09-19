@@ -11,9 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-import OUDSTokensRaw
-
 /// Basically an elevation semantic token for Z Index is a raw token for elevation, with the same final type, to keep grammar clean and clear with design system grammar.
 public typealias ElevationZIndexSemanticToken = ElevationRawToken
 

@@ -11,9 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-import OUDSTokensRaw
-
 /// Basically a grid semantic token for iOS Extra Compact values is a grid raw token, to keep grammar clean and clear with design system grammar.
 public typealias GridExtraCompactSemanticToken = GridRawToken
 

@@ -11,7 +11,5 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import Foundation
-
 /// Raw tokens of opacity are finaly `Double`, to keep grammar clean and clear with design system grammar.
 public typealias OpacityRawToken = Double

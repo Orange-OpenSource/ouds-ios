@@ -11,10 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import Foundation
-import SwiftUI
-
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
+/// Should be fully generated in the future.
 extension TypographyRawTokens {
 
     // MARK: Primitive token - Typography - Font size

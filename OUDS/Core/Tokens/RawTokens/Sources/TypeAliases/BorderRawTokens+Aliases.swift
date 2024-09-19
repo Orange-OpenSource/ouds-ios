@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import Foundation
-
 /// Type alias precising `Double` value are used (because of multiplier factors) for a **border width raw token**, to keep grammar clean and clear with design system grammar.
 public typealias BorderWidthRawToken = Double
 

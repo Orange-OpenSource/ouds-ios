@@ -11,9 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import Foundation
-import OUDSTokensRaw
-
 /// Basically a size semantic token for width and height is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
 public typealias SizingWidthHeightSemanticToken = DimensionRawToken
 

@@ -11,9 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-import OUDSFoundations
-
 /// Defined as the group of all **raw tokens** related to **colors**.
 /// Primitive types such as  `String` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else

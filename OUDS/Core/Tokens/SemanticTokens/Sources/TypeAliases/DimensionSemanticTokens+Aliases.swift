@@ -11,8 +11,5 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-import OUDSTokensRaw
-
 /// Basically a semantic token for dimensions is a raw token for dimensions, to keep grammar clean and clear with design system grammar.
 public typealias DimensionSemanticToken = DimensionRawToken

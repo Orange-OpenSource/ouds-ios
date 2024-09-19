@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-
 /// Defined as the group of all **raw tokens** related to **borders**.
 ///
 /// Primitive types such as `Double` and `String` must be used to as to allow to use `@objc` keywords in _Swift extensions_ for overriding.

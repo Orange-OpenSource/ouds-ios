@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-
 /// Composite raw tokens are here to pack a set of specific values according to the global design system tool.
 /// Here a *typography* is finaly defined by some specific values.
 public struct TypographyCompositeRawToken: Equatable {

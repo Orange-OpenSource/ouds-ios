@@ -11,9 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import Foundation
-import OUDSTokensRaw
-
 /// Type alias precising `BorderWidthRawToken` is used as a value of this **border width semantic token**, to keep grammar clean and clear with design system grammar.
 public typealias BorderWidthSemanticToken = BorderWidthRawToken
 

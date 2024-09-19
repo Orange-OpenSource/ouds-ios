@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-
 /// In the global design system tool, the notion of "raw tokens of grids" exist but refers always to dimension raw tokens,
 /// to keep grammar clean and clear with design system grammar.
 public typealias GridRawToken = DimensionRawToken
