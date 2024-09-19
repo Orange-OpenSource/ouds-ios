@@ -32,7 +32,11 @@
 
 ## Content
 
-This repository contains the OUDS iOS library that provides Orange iOS components, but also a demo application showcasing these different components.
+This repository contains the OUDS iOS library that provides Orange iOS components for its unified design system, but also a demo application showcasing these different components.
+
+You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/), and also the [whole design system](https://unified-design-system.orange.com/).
+
+Documentation is powered by [GitHub Pages](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
 
 ## Bugs and feature requests
 
@@ -40,8 +44,9 @@ Have a bug or a feature request? Please first search for existing and closed iss
 
 ## Contributing
 
-Please read through our [contributing guidelines](https://github.com/Orange-OpenSource/ouds-ios/blob/main/.github/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development.
+Please read through our [contributing guidelines](https://github.com/Orange-OpenSource/ouds-ios/blob/main/.github/CONTRIBUTING.md). Included are directions for opening issues, coding standards, and notes on development. More technical details are available also in the [DEVELOP](https://github.com/Orange-OpenSource/ouds-ios/blob/main/.github/DEVELOP.md) file.
 
 ## Copyright and license
 
 Code released under the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE).
+For images and other assets, please [refer to the NOTICE.txt](https://github.com/Orange-OpenSource/ouds-ios/blob/ain/NOTICE.txt).
