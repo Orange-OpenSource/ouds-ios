@@ -34,6 +34,7 @@ public final class TypographyCompositeSemanticToken: NSObject {
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `TypographyCompositeSemanticToken`. Otherwise returns `false`.
+    /// `isEqual` override is preferred for `NSObject`.
     public override func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? TypographyCompositeSemanticToken else { return false }
         return self.compact == object.compact && self.regular == object.regular

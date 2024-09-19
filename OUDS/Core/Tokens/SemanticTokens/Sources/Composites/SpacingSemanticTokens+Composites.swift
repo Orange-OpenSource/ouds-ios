@@ -34,6 +34,7 @@ public final class SpacingCompositeSemanticToken: NSObject {
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `SpacingCompositeSemanticToken`. Otherwise returns `false`.
+    /// `isEqual` override is preferred for `NSObject`.
     public override func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? SpacingCompositeSemanticToken else { return false }
         return self.compact == other.compact && self.regular == other.regular
