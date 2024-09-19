@@ -3,6 +3,9 @@
 - [Technical preconditions](#technical-preconditions)
 - [Build showcase demo app](#build-showcase-demo-app)
 - [Documentation](#documentation)
+- [Run tests](#run-tests)
+  * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
+  * [UI tests in demo app](#ui-tests-in-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
 - [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
@@ -49,11 +52,18 @@ To build the demo application follow those steps:
 
 ## Documentation
 
-_To be defined soon_
+The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
+We use here the [swift-docc-plugin](https://github.com/swiftlang/swift-docc-plugin) to build the HTML documentations using the documentation catalogs
+and any _DocC_ comments in the source code.
+
+The documentation can be built from Xcode with _Product > Build Documentation_.
+
+The `generateDoc.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
+the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
 
 ## Run tests 
 
-### Tests for OUDS package
+### Unit tests for OUDS Swift package
 
 To run these unit tests follow some steps:
 
@@ -63,7 +73,18 @@ To run these unit tests follow some steps:
 4. Select *Showcase* scheme
 5. Run tests (Product -> Test)
 
-### UI Tests in demo app
+Unit tests care have been implemented for several reasons. 
+
+First, we don't have too much control on the raw tokens values. We rely on the _Figma_ design tool which outputs the tokens in a JSON file. 
+And this file will be parsed to as to generate Swift files. But if there are inconsistencies in the _Figma_ side or in the parser side, the inconsistencies will be spread in our code base. 
+It is not useful to define unit tests for raw tokens to test their values ; in fact they exist here to be updated.
+But we wan still check other things like the relationship between them. For example a _grid100_ should always be less or equal than a _grid100_. Some _color100_ should be always lighter than a _color200_, etc, etc. A small typo should be always smaller or with the sale size has a one-step-bigger typo.
+
+Then, we want to know when tokens have been removed so as to warn our users and keep release notes and changelog clean. If we don't spot such changes, maybe some users will be impacted.
+
+Finally, we ensure our themes can override any semantic tokens. Themes are in fact a set of values for the whole universe of semantic tokens, and if a theme cannot override a semantic token, there could be an issue. Unit tests also help us to find if some tokens have been removed before releasing the library.
+
+### UI tests in demo app
 
 To run these UI tests follow some steps:
 
@@ -74,7 +95,10 @@ To run these UI tests follow some steps:
 5. Select some simulator (tests designed for *iPhone 13 Pro Max* and *iPhone 14 Pro Max* but works elsewhere)
 6. Run tests (Product -> Test)
 
-Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time. Indeed for new tests the tool makes snapshots of the views, thus for the first run no preview exist making the tests fail. You should run the tests twice for new tests.
+Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
+Indeed for new tests the tool makes snapshots of the views, thus for the first run no preview exist making the tests fail. You should run the tests twice for new tests.
+
+Such tests here are used to as to be sure the look and feel of any components and tokens rendering remaing the expected ones.
 
 ## Build phases
 
