@@ -3,6 +3,9 @@
 - [Technical preconditions](#technical-preconditions)
 - [Build showcase demo app](#build-showcase-demo-app)
 - [Documentation](#documentation)
+- [Run tests](#run-tests)
+  * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
+  * [UI tests in demo app](#ui-tests-in-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
 - [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
@@ -20,12 +23,12 @@
 You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
 You can have a look for example in thr **THIRD\_PARTY.md** file which lists any dependencies and tools we use are different levels (SDK, showcase app, projects).
 
-If some tools are missing, pick the suitable command line bellow:
+If some tools are missing, pick the suitable command line below:
 ```bash
 # Use Bundler to install a major part of dependencies (thanks to Gemfile and Gemfile.lock files)
 bundle install
 
-# Use CocoaPods to install other dependencies not avaialble as rubygems (thanks to Podfile and Podfile.lock files)
+# Use CocoaPods to install other dependencies not available as rubygems (thanks to Podfile and Podfile.lock files)
 bundle exec pod install
 
 # Some dependencies must be downloaded by hand:
@@ -49,7 +52,53 @@ To build the demo application follow those steps:
 
 ## Documentation
 
-_To be defined soon_
+The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
+We use here the [swift-docc-plugin](https://github.com/swiftlang/swift-docc-plugin) to build the HTML documentations using the documentation catalogs
+and any _DocC_ comments in the source code.
+
+The documentation can be built from Xcode with _Product > Build Documentation_.
+
+The `generateDoc.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
+the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
+
+## Run tests 
+
+### Unit tests for OUDS Swift package
+
+To run these unit tests follow some steps:
+
+1. `cd Showcase`
+2. `bundle exec pod install`
+3. Open *Showcase.xcworkspace*
+4. Select *Showcase* scheme
+5. Run tests (Product -> Test)
+
+Unit tests care have been implemented for several reasons. 
+
+First, we don't have too much control on the raw tokens values. We rely on the _Figma_ design tool which outputs the tokens in a JSON file. 
+And this file will be parsed to as to generate Swift files. But if there are inconsistencies in the _Figma_ side or in the parser side, the inconsistencies will be spread in our code base. 
+It is not useful to define unit tests for raw tokens to test their values ; in fact they exist here to be updated.
+But we wan still check other things like the relationship between them. For example a _grid100_ should always be less or equal than a _grid100_. Some _color100_ should be always lighter than a _color200_, etc, etc. A small typo should be always smaller or with the sale size has a one-step-bigger typo.
+
+Then, we want to know when tokens have been removed so as to warn our users and keep release notes and changelog clean. If we don't spot such changes, maybe some users will be impacted.
+
+Finally, we ensure our themes can override any semantic tokens. Themes are in fact a set of values for the whole universe of semantic tokens, and if a theme cannot override a semantic token, there could be an issue. Unit tests also help us to find if some tokens have been removed before releasing the library.
+
+### UI tests in demo app
+
+To run these UI tests follow some steps:
+
+1. `cd Showcase`
+2. `bundle exec pod install`
+3. Open *Showcase.xcworkspace*
+4. Select *ShowcaseTests* scheme
+5. Select some simulator (tests designed for *iPhone 13 Pro Max* and *iPhone 14 Pro Max* but works elsewhere)
+6. Run tests (Product -> Test)
+
+Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
+Indeed for new tests the tool makes snapshots of the views, thus for the first run no preview exist making the tests fail. You should run the tests twice for new tests.
+
+Such tests here are used to as to be sure the look and feel of any components and tokens rendering remaing the expected ones.
 
 ## Build phases
 
@@ -65,11 +114,12 @@ The Xcode project contains two targets:
 
 1. _Showcase_ for the demo application
 2. _Periphery_ to look for dead code in the source code
+3. _ShowcaseTests_ for UI tests in demo app
 
 ## Certificates, profiles and identifiers
 
 We choose to use Xcode automatic signing for debug builds of the app so as to make easier onboarding of newcomers in development team, and also to prevent to update provisioning profiles with individual developers certificates each team someone wants to build the app and also to prevent to register each new build device). You may need to be part of our team if you want to build in debug mode.
-Note the bundle identifier here for lcoal builds is **com.orange.ouds.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.ouds.demoapp** identifiers.  
+Note the bundle identifier here for local builds is **com.orange.ouds.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.ouds.demoapp** identifiers.
 
 However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.ouds.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners and must not be available outside.
 
@@ -166,7 +216,7 @@ exit 0
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 You can generate a `RELEASE_NOTE.md` file using your Git history and [git cliff](https://git-cliff.org/) tool.
-Define first a `cliff.toml` configuration file containing the code bellow.
+Define first a `cliff.toml` configuration file containing the code below.
 
 ```toml
 # git-cliff ~ configuration file
@@ -176,7 +226,7 @@ Define first a `cliff.toml` configuration file containing the code bellow.
 # changelog header
 header = """
 # Release Note\n
-All notable changes for this version are here and blablbla.\n
+All notable changes for this version are here and blablabla.\n
 """
 # template for the changelog body
 # https://keats.github.io/tera/docs/#introduction
@@ -353,9 +403,9 @@ sort_commits = "oldest"
 A [GitHub Action](https://github.com/gitleaks/gitleaks-action) has been integrated to the repository with a configuration file defined in _/github/workflows_ named _gitleaks-action.yaml_.
 It will launch the _Gitleaks_ tool automatically.
 
-Howevere this tool does not detect plain API key mixed in URL, that is a reason why _Gitleaks_ can be called in a pre-commit hook, using the _giteaks.toml_ at the root of the prokect.
+However this tool does not detect plain API key mixed in URL, that is a reason why _Gitleaks_ can be called in a pre-commit hook, using the _giteaks.toml_ at the root of the project.
 To call _Gitleaks_ in pre-commit hooks, create a file named **pre-commit** inside _.git/hooks_ (then run `chmod u+x` in the file).
-Then place the bash code bellow in this file:
+Then place the bash code below in this file:
 
 ```bash
 # Run Gitleaks before commits

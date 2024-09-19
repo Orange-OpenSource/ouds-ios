@@ -12,9 +12,9 @@
 //
 
 import SwiftUI
-import OUDSComponents       // To get for example OUDSFormsTextInput
-import OUDSThemesCommons    // To get OUDSThemeableView
-import OUDSThemesOrange     // To get OrangeTheme
+import OUDS
+import OUDSComponents
+import OUDSThemesOrange
 
 struct GuidelinesPage: View {
 
@@ -29,19 +29,25 @@ struct GuidelinesPage: View {
     var body: some View {
         OUDSThemeableView(theme: selectedTheme) {
             NavigationView {
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20) {
+                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 30) {
 
-                    OUDSFormsTextInput(placeholder: "Placeholder defined in app",
+                    OUDSFormsTextInput(label: "Awesome form",
+                                       hint: "Type something",
+                                       placeholder: "Display large",
                                        value: $writtenText)
+
+                    OUDSButton(text: "Some button") {}
 
                     Button("Try OUDS Orange Theme") {
                         selectedTheme = OrangeTheme()
                         print("Showcase app - Selected OUDS Orange theme")
                     }
+
                     Button("Try custom \"local\" theme") {
                         selectedTheme = OrangeCustomTheme()
                         print("Showcase app - Selected app custom theme")
                     }
+
                 }
                 .padding(.horizontal, 20)
                 .navigationTitle("app_bottomBar_guidelines")

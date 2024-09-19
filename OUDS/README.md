@@ -7,13 +7,13 @@ It contains modules, components, themes, and tokens (of components,s emantic and
 
 ## Exposed SPM modules
 
-This _Swift package_ exposes up to #0 _products_ as _libraries_:
+This _Swift package_ exposes up to 10 _products_ as _libraries_:
 1. `OUDSModules` containing OUDS modules with features ;
 2. `OUDSComponents` containing all components embeded also inside _modules_ ;
 3. `OUDSThemesSoshTheme` providing the default _Sosh_ theme defining style for _components_;
-4. `OUDSThemesInverseTheme` providing a _theme_ with inversed colors for _components_;
+4. `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_;
 5. `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_;
-6. `OUDSThemesCommons` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
+6. `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
 7. `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_ ;
 8. `OUDSTokensSemantic` providing _semantic tokens_ ; 
 9. `OUDSTokensRaw` providing _raw tokens_ ;
@@ -34,8 +34,9 @@ A _theme_ contains any relevant _semantic tokens_ and _component tokens_ which c
 A _theme_ has also _raw tokens_ associated to primitive types so as to give to _components_, written with _SwiftUI_, the needed values in the suitable type. A _theme_ can add for itself any new _tokens_.
 
 This library exposes today up to two themes:
-1. `OrangeTheme` which can be seen as the default _theme_
-2.  `SoshTheme` for Sosh.
+1. `OrangeTheme` which can be seen as the default _theme_ ;
+2. `SoshTheme` for Sosh ;
+2. `InverseTheme` for other use cases.
 
 They both are based on an `OUDSTheme` defining default values.
 
@@ -66,10 +67,10 @@ These _tokens_ can be used to apply some style and configuration values to _comp
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ to get their style values.
 
-Example with `FormsTextInputComponentToken`:
+Example with `FormsTextInputComponentTokens`:
 
 ```swift
-public protocol FormsTextInputComponentToken {
+public protocol FormsTextInputComponentTokens {
     var ftiTitleFontWeight: TypographyFontWeightSemanticToken { get }
     var ftiTitleFontSize: TypographyFontSizeSemanticToken { get }
     var ftiTitleColor: ColorSemanticToken { get }
@@ -79,7 +80,7 @@ public protocol FormsTextInputComponentToken {
     var ftiBorderWidth: BorderWidthSemanticToken { get }
 }
 
-extension OUDSTheme: FormsTextInputComponentToken {
+extension OUDSTheme: FormsTextInputComponentTokens {
     private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
     private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
 
@@ -87,11 +88,40 @@ extension OUDSTheme: FormsTextInputComponentToken {
     @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
     @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultBlack }
     
-    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasisLight ?? Self.defaultBlack }
+    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedLight ?? Self.defaultBlack }
     @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
     @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
 }
 
+// The View
+
+struct OUDSFormsTextInput: View {
+
+    // ...
+    @Environment(\.theme) var theme
+
+    public var body: some View {
+        VStack(spacing: theme.spacePaddingBlockComponentTall) {
+            Label(
+                title: {
+                    Text("Example of OUDSFormsTextInput")
+                        .fontWeight(theme.ftiTitleFontWeight.fontWeight)
+                        .font(.system(size: theme.ftiTitleFontSize))
+                        .foregroundColor(theme.ftiTitleColor.color)
+                },
+                icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
+            )
+            Text("Write bellow some awesome text!")
+                .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
+                .font(.system(size: theme.ftiSubtitleFontSize))
+                .foregroundColor(theme.ftiSubtitleColor.color)
+            TextField(placeholder, text: $value)
+        }
+        .padding(theme.spacePaddingBlockComponentTall)
+        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
+        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
+    }
+}
 ```
 
 #### Semantic tokens
@@ -101,7 +131,7 @@ They can be seen as an high level of usage with functional meanings.
 Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we onlyhave to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
 In addition, there are hundreds of _semantics tokens_ and we needed to add them to the abstract root theme using extensions for clarity reasons to prevent to have a _Swift class_ with thousands of lines. Each _raw token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
 That is the reason why tokens are exposed as `@objc open` to be available and oveeridable anywhere. 
-To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are avaialble for those who want too make their own theme.
+To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are available for those who want too make their own theme.
 
 Example with `ColorSemanticTokens`:
 
@@ -122,9 +152,11 @@ _Raw tokens_ are smallest _tokens_ possible. They are associated to raw values a
 
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than structs or classes.
 So we expose also in higher level some properties so as to convert when needed some of these types to `SwiftUI` types (like `Font.Weight` and `Color`).
-To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are avaialble for those who want too make their own theme.
+To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are available for those who want too make their own theme.
 
 Using more simple and primitive types will help also to test the library. With also type aliases we force users to use our types and not higher level types like _SwiftUI_ types.
+
+We also choose to add in _extension_ all the tokens values in a separated file so as to help the *Figma*-JSON-to-Swift parser to build files to copy and past easily in the project and keeping all the other objects.
 
 Example for `ColorRawTokens`:
 
@@ -132,7 +164,9 @@ Example for `ColorRawTokens`:
 // Define types for color raw tokens
 public typealias ColorRawToken = String
 
-public enum ColorRawTokens { // Gathers all color raw tokens
+public enum ColorRawTokens { }
+
+extension ColorRawTokens { // Gathers all color raw tokens
 
     public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
     public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E"
@@ -204,7 +238,7 @@ import OUDSThemesOrange     // To override OrangeTheme (which is default theme)
 // Can be for example a country theme
 class OrangeCustomTheme: OrangeTheme { }
 
-extension OrangeCustomTheme { // For FormsTextInputComponentToken, used in component FormsTextInputComponent
+extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in component FormsTextInputComponent
 
     public override var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
     public override var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
@@ -217,11 +251,11 @@ extension OrangeCustomTheme { // For FormsTextInputComponentToken, used in compo
     public override var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight }
     public override var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark }
 
-    public override var ftiBorderColor: ColorSemanticToken { colorBorderEmphasisDark ?? MyThemeColorRawTokens.someAwesomeThemeExclusiveColor }
+    public override var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedDark ?? MyThemeColorRawTokens.someAwesomeThemeExclusiveColor }
 
     public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 
-    public override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThickest }
+    public override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThick }
 }
 
 extension OrangeCustomTheme { // For ColorSemanticTokens using anywhere
@@ -248,7 +282,7 @@ The for your root view:
 
 ```swift
 import SwiftUI
-import OUDSThemesCommons  // To get OUDSThemeableView
+import OUDS  // To get OUDSThemeableView
 
 struct MyAppRootView: View {
 

@@ -11,33 +11,54 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import Foundation
+import OUDS
 import SwiftUI
-import OUDSThemesCommons // To get @Environment(\.theme) var theme
 
 /// An OUDS component for text input in formulars.
-/// **Warning: This is a draft component **
+/// __Warning: This is a draft component__.
+///
+/// This component is created to illustrate the mecanism of theme and tokens.
 public struct OUDSFormsTextInput: View {
 
-    var placeholder: String
+    // MARK: - Properties
+
+    private let label: String
+    private let hint: String
+    private let placeholder: String
+    private let isEnabled: Bool
+
     @Binding var value: String
-    var isEnabled: Bool
 
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.theme) var theme
 
-    public init(placeholder: String, value: Binding<String>, isEnabled: Bool = true) {
+    // MARK: - Initializer
+
+    /// Use this initializer to create a text field that binds to a bound optional
+    /// value and propose a placeholder.
+    ///
+    /// - Parameters:
+    ///    - label: The text to display in the top of the component
+    ///    - hint: The text to display in above the input field
+    ///    - placeholder: Text in placeholder
+    ///    - value: Binding of the value
+    ///    - isEnabled: Flag to indicate if input is enabled (_true_ by default)
+    public init(label: String, hint: String, placeholder: String, value: Binding<String>, isEnabled: Bool = true) {
+        self.label = label
+        self.hint = hint
         self.placeholder = placeholder
         self._value = value
         self.isEnabled = isEnabled
     }
+
+    // MARK: - Body
 
     public var body: some View {
         VStack(spacing: theme.spacePaddingBlockComponentTall) {
 
             Label(
                 title: {
-                    Text("Example of OUDSFormsTextInput")
+                    Text(label)
                         .fontWeight(theme.ftiTitleFontWeight.fontWeight)
                         .font(.system(size: theme.ftiTitleFontSize))
                         .foregroundColor(theme.ftiTitleColor.color)
@@ -45,7 +66,7 @@ public struct OUDSFormsTextInput: View {
                 icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
             )
 
-            Text("Write bellow some awesome text!")
+            Text(hint)
                 .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
                 .font(.system(size: theme.ftiSubtitleFontSize))
                 .foregroundColor(theme.ftiSubtitleColor.color)

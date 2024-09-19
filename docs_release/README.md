@@ -6,6 +6,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 - [Release](#release)
   * [Publish release to GitHub](#publish-release-to-github)
 - [Prepare Next Release](#prepare-next-release)
+- [About documentation](#about-documentation)
 - [About CI/CD with GitLab CI](#about-cicd-with-gitlabci)
   * [GitLab CI pipeline](#gitlab-ci-pipeline)
   * [Prepare environment build Shell script](#prepare-environement-build-shell-script)  
@@ -56,7 +57,14 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
     <!-- Please see [DEVELOP.md](../.github/DEVELOP.md#documentation) to get more information about how to build and verify the documentation. -->
 
     <!-- Once the Jekyll server is started, the documentation for version X.Y.Z should be available at http://127.0.0.1:4000/ods-ios/X.Y.Z/. -->
-      
+
+- Generate documentation from Swift sources, it will update online version and generate a ZIP file
+    ```shell
+    ./generateDoc.sh --libversion=X.Y.Z --usegit
+    # --usegit means updating GitHub Pages branch
+    # Add --nozip if you don't want a ZIP file
+    # X.Y.Z here is just the version number to display in main index.html pages, replace values of course
+    ```
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.
 
 - Review and merge this pull request on GitHub.<br /><br />
@@ -130,6 +138,8 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
     >
 -->
 
+- Do not forget to update the documentation using `generateDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (_Right click on catalog > Export).
+
 ## Prepare Next Release
 
 - Create a branch named `prepare-new-release` to prepare the new release for OUDS iOS version U.V.W.
@@ -148,6 +158,33 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
     - Push them to the repository
     - Create a new pull request named `Update release U.V.W` on GitHub to merge your branch into `develop`.
     - Review and merge this pull request on GitHub.<br /><br />
+
+## About documentation
+
+The documentation tool in use is [Swift DocC](https://www.swift.org/documentation/docc/), and the [swift-docc](https://github.com/swiftlang/swift-docc) plugin is sued to build the HTML documentation.
+To do that, the `generateDoc.sh` script has been defined, and helps to build the HTML documentation, compress it as archive file and also update the GitHub Pages dedicated branch.
+
+```shell
+# To show the help:
+./generateDoc.sh --help
+
+# To build the doc and push to GitHub:
+# VERSION will be added in the main page
+# --usegit make the script upload sources to GitHub
+./generateDoc.sh --libversion=VERSION --usegit
+
+# If you don't want the ZIP to be computed:
+./generateDoc.sh --libversion=VERSION --usegit --nozip
+```
+
+Keep in mind everything is stored in _/tmp_ folder with the execution timestamp, thus if you asked for a ZIP archive or want to get the generated files, look for files named "ouds-docs".
+
+The *swift-docc* plugin has troubles for Swift Package with several targets, we should wait for evolutions, an [issue has been created about evolutions of doc we would like to have](https://github.com/Orange-OpenSource/ouds-ios/issues/95).
+
+The plugin produces a lot of files, a lot. For example for our v0.1.0, more than 6,000 files have beenc reated for a ZIP archive of about 17 MB.
+Thus, keeping all versions of the documentation is a non-sense, no one will read it and it will increase the size of the branch in our VCS tool.
+
+We prefer to build ZIP documentation and Xcode doc archive to add as artifacts of releases.
 
 ## About CI/CD with GitLabCI
 

@@ -16,6 +16,7 @@ import SwiftUI
 
 extension Color {
 
+    /// `Color` extension to get a `Color` from its hexadecimal string representation.
     public init?(hexadecimalCode: String) {
 
         let hexadecimalCodeSanitized = hexadecimalCode.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "#", with: "")

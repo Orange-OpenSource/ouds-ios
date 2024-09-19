@@ -12,18 +12,16 @@
 //
 
 import SwiftUI
+import OUDSTokensSemantic
+import OUDSTokensRaw
+
+// MARK: - View for display
 
 struct ComponentsPage: View {
 
     var body: some View {
         NavigationView {
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
-            }
-            .navigationTitle("app_bottomBar_components")
+            ElevationsList().navigationTitle("app_bottomBar_components")
         }
     }
 }
