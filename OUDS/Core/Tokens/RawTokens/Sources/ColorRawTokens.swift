@@ -14,20 +14,13 @@
 import Foundation
 import OUDSFoundations
 
-// MARK: - Type aliases to keep grammar clear
-
-/// A color raw token is finaly a `String` containing the hexadecimal code of the color
-public typealias ColorRawToken = String
-
-// MARK: Raw tokens
-
-/// This is the group of all **raw tokens** related to **colors**.
+/// Defined as the group of all **raw tokens** related to **colors**.
 /// Primitive types such as  `String` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
 public enum ColorRawTokens {
 
-    // MARK: - Helpers
+    // Note: So as to help the Figma JSON to Swift parser the values have been added in the Values folder
 
     static func apply(opacity: OpacityRawToken, on hexColor: String) -> String {
         // TODO: Improve this algorithm too much naive

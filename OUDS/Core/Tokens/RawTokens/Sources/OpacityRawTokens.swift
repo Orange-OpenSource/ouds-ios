@@ -13,15 +13,11 @@
 
 import Foundation
 
-// MARK: - Type aliases to keep grammar clear
-
-/// Raw tokens of opacity are finaly `Double`
-public typealias OpacityRawToken = Double
-
-// MARK: - Raw tokens
-
-/// This is the group of all **raw tokens** related to **opacity**.
+/// Defined as the group of all **raw tokens** related to **opacity**.
 /// Primitive types such as `Double` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
-public enum OpacityRawTokens { }
+public enum OpacityRawTokens {
+
+    // Note: So as to help the Figma JSON to Swift parser the values have been added in the Values folder
+}

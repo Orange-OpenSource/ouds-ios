@@ -13,15 +13,11 @@
 
 import Foundation
 
-// MARK: - Type aliases to keep grammar clear
-
-/// In the global design system tool, the notion of "raw tokens of grids" exist but refers always to dimension raw tokens.
-public typealias GridRawToken = DimensionRawToken
-
-// MARK: - Raw tokens
-
-/// This is the group of all **raw tokens** related to **grid**.
+/// Defined as the group of all **raw tokens** related to **grid**.
 /// Primitive types such as `Int` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
-public enum GridRawTokens { }
+public enum GridRawTokens {
+
+    // Note: So as to help the Figma JSON to Swift parser the values have been added in the Values folder
+}
