@@ -15,27 +15,10 @@
 /// Should be fully generated in the future.
 extension ElevationRawTokens {
 
-    // MARK: Primitive token - Elevation - Z Index
-
-    public static let elevationZIndex0: ElevationRawToken = 0
-    public static let elevationZIndexMinus9999: ElevationRawToken = -9999
-    public static let elevationZIndex1000: ElevationRawToken = 1000
-    public static let elevationZIndex1010: ElevationRawToken = 1010
-    public static let elevationZIndex1020: ElevationRawToken = 1020
-    public static let elevationZIndex1030: ElevationRawToken = 1030
-    public static let elevationZIndex1035: ElevationRawToken = 1035
-    public static let elevationZIndex1038: ElevationRawToken = 1038
-    public static let elevationZIndex1040: ElevationRawToken = 1040
-    public static let elevationZIndex1045: ElevationRawToken = 1045
-    public static let elevationZIndex1050: ElevationRawToken = 1050
-    public static let elevationZIndex1060: ElevationRawToken = 1060
-    public static let elevationZIndex1070: ElevationRawToken = 1070
-    public static let elevationZIndex1080: ElevationRawToken = 1080
-    public static let elevationZIndex1090: ElevationRawToken = 1090
-
     // MARK: Primitive token - Elevation - X
 
     public static let elevationX0: ElevationRawToken = 0
+    public static let elevationX200: ElevationRawToken = 2
 
     // MARK: Primitive token - Elevation - Y
 
