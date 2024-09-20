@@ -34,7 +34,7 @@ public struct TypographyCompositeRawToken: Equatable {
     /// The font letter spacing to associated with the font family
     public let letterSpacing: TypographyFontLetterSpacingRawToken
 
-    /// Operator which will return true `true` if `lhs` is smaller than `rhs`.
+    /// Operator which will return `true` if `lhs` is smaller than `rhs`.
     /// By "smaller" we mean smaller `size` and smaller or equal `lineHeight`, `weight` and `letterSpacing`
     /// - Parameters:
     ///    - lhs: The typography composite token we expect to be smaller than `rhs`
