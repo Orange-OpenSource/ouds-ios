@@ -14,7 +14,7 @@
 import OUDSTokensRaw
 
 /// Basically a space semantic token for layout is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
-public typealias SpacingLayoutSemanticToken = DimensionRawToken
+public typealias SpacingSemanticToken = DimensionRawToken
 
 /// Basically a space semantic token for padding inline is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
 public typealias SpacingPaddingInlineSemanticToken = DimensionRawToken
