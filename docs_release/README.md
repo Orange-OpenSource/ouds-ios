@@ -66,7 +66,38 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 - Create a new pull request named `Release X.Y.Z` on GitHub to merge `develop` into `main`.
 
-- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits** (this strategy is only dedicated to feature branches to merge in develop branch).
+- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits** (this strategy is only dedicated to feature branches to merge in develop branch). The _merge commit_ can be defined so as to bring details about the merge and make links automatically with GitHub issues. To do that, you can copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed.
+
+Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/98640b4b63037c2780128f41ceba5b896763b94f)):
+
+```text
+Version 0.2.0 (#113) // <--- Commit title, #113 is PR nummber
+
+// Bellow is commit body, keep an empty line
+Released of version 0.2.0
+See below the full CHANGELOG details.
+
+// Keep also an empty line above
+// And copy/paste changelog without #
+Added:
+- [Tests] Add UI regression tests using snapshot comparisons with *swift-snapshot-testing* tool ([#78](#78))
+- [DemoApp] Display fake components for elevation rendering tests
+
+Changed:
+- [Library] Split raws, semantics and components tokens definitions and also values, composites and type aliases
+- [Showcase] Improve Fastlane alpha build notifications
+
+Removed:
+- [Library] Remove Z Index tokens for elevations ([#109](#109))
+
+Fixed:
+- [Library] Fix some typos in documentation ([#89](#89))
+
+// Add in co authors anyone working on the commits being merged
+Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
+Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+Co-authored-by: Julien Déramond <julien.deramond@orange.com>
+```
 
 - Generate documentation from Swift sources, it will update online version and generate a ZIP file in _/tmp_
     ```shell
