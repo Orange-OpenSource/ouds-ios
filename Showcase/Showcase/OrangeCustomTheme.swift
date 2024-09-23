@@ -64,8 +64,8 @@ extension OrangeCustomTheme { // For ButtonsComponentTokens
     override var buttonBackgroundColorLight: ColorSemanticToken { sysColorBrandPositiveLowest! }
     override var buttonBackgroundColorDark: ColorSemanticToken { sysColorBrandPositiveHighest! }
 
-    override var buttonWidth: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension2000 }
-    override var buttonHeight: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension800 }
+    override var buttonWidth: SizingSemanticToken { DimensionRawTokens.dimension2000 }
+    override var buttonHeight: SizingSemanticToken { DimensionRawTokens.dimension800 }
 
     override var buttonTypography: TypographyCompositeSemanticToken { typeDisplaySmall }
 }

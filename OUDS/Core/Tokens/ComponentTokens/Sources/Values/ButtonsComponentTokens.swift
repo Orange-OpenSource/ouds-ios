@@ -37,8 +37,8 @@ public protocol ButtonsComponentTokens {
     var buttonBackgroundColorLight: ColorSemanticToken { get }
     var buttonBackgroundColorDark: ColorSemanticToken { get }
 
-    var buttonWidth: SizingWidthHeightSemanticToken { get }
-    var buttonHeight: SizingWidthHeightSemanticToken { get }
+    var buttonWidth: SizingSemanticToken { get }
+    var buttonHeight: SizingSemanticToken { get }
 
     var buttonTypography: TypographyCompositeSemanticToken { get }
 }

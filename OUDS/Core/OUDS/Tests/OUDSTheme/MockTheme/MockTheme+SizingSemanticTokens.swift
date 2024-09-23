@@ -20,70 +20,76 @@ extension MockTheme {
     static let mockThemeSizeRawToken: DimensionRawToken = 118_000
     static let mockThemeSizeCompositeToken: SizingCompositeSemanticToken = SizingCompositeSemanticToken(compact: 1, regular: 151)
 
-    // MARK: Semantic token - Sizing - Width height - Icon decorative
+    // MARK: - Semantic token - Sizing - Icon decorative
 
-    override var sizeWidthHeightIconShortest: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIconShorter: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIconShort: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIconMedium: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIconTall: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIconTaller: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIconTallest: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeShortest: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeShorter: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeShort: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeMedium: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeTall: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeTaller: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconDecorativeTallest: SizingSemanticToken { Self.mockThemeSizeRawToken }
 
-    // MARK: Semantic token - Sizing - Width height - Icon component
+    // MARK: - Semantic token - Sizing - Icon with typography
 
-    override var sizeWidthHeightIsLabelSmallShort: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelSmallMedium: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelSmallTall: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelMediumShort: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelMediumMedium: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelMediumTall: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelLargeShorter: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelLargeShort: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelLargeMedium: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelLargeTall: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelLargeTaller: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelXLargeShort: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelXLargeMedium: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
-    override var sizeWidthHeightIsLabelXLargeTall: SizingWidthHeightSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeHeadingSmallShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeHeadingSmallMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeHeadingSmallTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
 
-    // MARK: Semantic token - Sizing - Width height - Icon typography - Heading
+    override var sizeIconWithTypeHeadingMediumShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeHeadingMediumMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeHeadingMediumTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
 
-    override var sizeWidthHeightIconIsHeadingSmallShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingSmallMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingSmallTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingMediumShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingMediumMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingMediumTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingLargeShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingLargeMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingLargeTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingXLargeShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingXLargeMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsHeadingXLargeTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeHeadingLargeShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeHeadingLargeMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeHeadingLargeTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
 
-    // MARK: Semantic token - Sizing - Width height - Icon typography - Body
+    override var sizeIconWithTypeHeadingXLargeShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeHeadingXLargeMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeHeadingXLargeTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
 
-    override var sizeWidthHeightIconIsBodySmallShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsBodySmallMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsBodySmallTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsBodyMediumShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsBodyMediumMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsBodyMediumTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsBodyLargeShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsBodyLargeMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeWidthHeightIconIsBodyLargeTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeBodySmallShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeBodySmallMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeBodySmallTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
 
-    // MARK: Semantic token - Sizing - Max width
+    override var sizeIconWithTypeBodyMediumShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeBodyMediumMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeBodyMediumTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
 
-    override var sizeMaxWidthTypographyDisplaySmall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeMaxWidthTypographyDisplayMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeMaxWidthTypographyDisplayLarge: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeMaxWidthTypographyHeadingSmall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeMaxWidthTypographyHeadingMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeMaxWidthTypographyHeadingLarge: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeMaxWidthTypographyHeadingXLarge: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeMaxWidthTypographyBodySmall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeMaxWidthTypographyBodyMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
-    override var sizeMaxWidthTypographyBodyLarge: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeBodyLargeShort: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeBodyLargeMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeIconWithTypeBodyLargeTall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+
+    override var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelSmallTall: SizingSemanticToken { Self.mockThemeSizeRawToken }
+
+    override var sizeIconWithTypeLabelMediumShort: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelMediumMedium: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelMediumTall: SizingSemanticToken { Self.mockThemeSizeRawToken }
+
+    override var sizeIconWithTypeLabelLargeShorter: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelLargeShort: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelLargeMedium: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelLargeTall: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelLargeTaller: SizingSemanticToken { Self.mockThemeSizeRawToken }
+
+    override var sizeIconWithTypeLabelXLargeShort: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelXLargeMedium: SizingSemanticToken { Self.mockThemeSizeRawToken }
+    override var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { Self.mockThemeSizeRawToken }
+
+    // MARK: - Semantic token - Sizing - Max width typography
+
+    override var sizeMaxWidthTypeDisplaySmall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeMaxWidthTypeDisplayMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeMaxWidthTypeDisplayLarge: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+
+    override var sizeMaxWidthTypeHeadingSmall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeMaxWidthTypeHeadingMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeMaxWidthTypeHeadingLarge: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeMaxWidthTypeHeadingXLarge: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+
+    override var sizeMaxWidthTypeBodySmall: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeMaxWidthTypeBodyMedium: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
+    override var sizeMaxWidthTypeBodyLarge: SizingCompositeSemanticToken { Self.mockThemeSizeCompositeToken }
 }
