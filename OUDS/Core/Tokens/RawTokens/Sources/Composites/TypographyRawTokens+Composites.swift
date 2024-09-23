@@ -11,6 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSFoundations
+
+/// An operator to make for example comparisons between `TypographyCompositeRawToken`
+infix operator <|
+
 /// Composite raw tokens are here to pack a set of specific values according to the global design system tool.
 /// Here a *typography* is finaly defined by some specific values.
 public struct TypographyCompositeRawToken: Equatable {
@@ -23,8 +28,22 @@ public struct TypographyCompositeRawToken: Equatable {
     /// The line height to apply on texts
     public let lineHeight: TypographyFontLineHeightRawToken
 
-    /// The font weight to associated wit the font family
+    /// The font weight to associate with the font family
     public let weight: TypographyFontWeightRawToken
 
-    // TODO: How to deal "letter spacing"?
+    /// The font letter spacing to associated with the font family
+    public let letterSpacing: TypographyFontLetterSpacingRawToken
+
+    /// Operator which will return `true` if `lhs` is smaller than `rhs`.
+    /// By "smaller" we mean smaller `size` and smaller or equal `lineHeight`, `weight` and `letterSpacing`
+    /// - Parameters:
+    ///    - lhs: The typography composite token we expect to be smaller than `rhs`
+    ///    - rhs: The typography composite token we expect to be bigger than `lhs`
+    /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
+    static func <| (lhs: TypographyCompositeRawToken, rhs: TypographyCompositeRawToken) -> Bool {
+        lhs.size < rhs.size
+        && lhs.lineHeight <= rhs.lineHeight
+        && lhs.weight <= rhs.weight
+        && lhs.letterSpacing <= rhs.letterSpacing
+    }
 }

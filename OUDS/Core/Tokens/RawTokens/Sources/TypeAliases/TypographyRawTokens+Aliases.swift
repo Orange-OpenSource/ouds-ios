@@ -22,5 +22,8 @@ public typealias TypographyFontWeightRawToken = String
 /// In the global design system tool, *font size* raw tokens are basically `CGFloat` values, to keep grammar clean and clear with design system grammar.
 public typealias TypographyFontSizeRawToken = CGFloat
 
-/// In the global design system tool, *font line height* raw tokens are basically `Int` values, to keep grammar clean and clear with design system grammar.
+/// In the global design system tool, *font line height* raw tokens are basically `CGFloat` values, to keep grammar clean and clear with design system grammar.
 public typealias TypographyFontLineHeightRawToken = CGFloat
+
+/// In the global design system tool, *font letter spacing* raw tokens are basically `CGFloat` values, to keep grammar clean and clear with design system grammar.
+public typealias TypographyFontLetterSpacingRawToken = CGFloat
