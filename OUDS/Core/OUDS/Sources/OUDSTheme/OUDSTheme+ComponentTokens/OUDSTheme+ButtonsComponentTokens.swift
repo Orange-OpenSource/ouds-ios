@@ -33,8 +33,8 @@ extension OUDSTheme: ButtonsComponentTokens {
     @objc open var buttonBackgroundColorLight: ColorSemanticToken { colorBackgroundBrandPrimaryLight! }
     @objc open var buttonBackgroundColorDark: ColorSemanticToken { colorBackgroundBrandPrimaryDark! }
 
-    @objc open var buttonWidth: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension3000 }
-    @objc open var buttonHeight: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension1000 }
+    @objc open var buttonWidth: SizingSemanticToken { DimensionRawTokens.dimension3000 }
+    @objc open var buttonHeight: SizingSemanticToken { DimensionRawTokens.dimension1000 }
 
     @objc open var buttonTypography: TypographyCompositeSemanticToken { typeDisplayMedium }
 }

@@ -22,13 +22,13 @@ extension OUDSTheme: SizingSemanticTokens {
 
     // MARK: Semantic token - Sizing - Width height - Icon decorative
 
-    @objc open var sizeIconDecorativeShortest: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension200 }
-    @objc open var sizeIconDecorativeShorter: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension300 }
-    @objc open var sizeIconDecorativeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension400 }
-    @objc open var sizeIconDecorativeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension500 }
-    @objc open var sizeIconDecorativeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var sizeIconDecorativeTaller: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension700 }
-    @objc open var sizeIconDecorativeTallest: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension900 }
+    @objc open var sizeIconDecorativeShortest: SizingSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var sizeIconDecorativeShorter: SizingSemanticToken { DimensionRawTokens.dimension300 }
+    @objc open var sizeIconDecorativeShort: SizingSemanticToken { DimensionRawTokens.dimension400 }
+    @objc open var sizeIconDecorativeMedium: SizingSemanticToken { DimensionRawTokens.dimension500 }
+    @objc open var sizeIconDecorativeTall: SizingSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var sizeIconDecorativeTaller: SizingSemanticToken { DimensionRawTokens.dimension700 }
+    @objc open var sizeIconDecorativeTallest: SizingSemanticToken { DimensionRawTokens.dimension900 }
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
@@ -62,23 +62,23 @@ extension OUDSTheme: SizingSemanticTokens {
     @objc open var sizeIconWithTypeBodyLargeMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension300 ) }
     @objc open var sizeIconWithTypeBodyLargeTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension350, regular: DimensionRawTokens.dimension350 ) }
 
-    @objc open var sizeIconWithTypeLabelSmallShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension150 } // sys-dimension-50
-    @objc open var sizeIconWithTypeLabelSmallMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension200 } // sys-dimension-60
-    @objc open var sizeIconWithTypeLabelSmallTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 } // sys-dimension-70
+    @objc open var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { DimensionRawTokens.dimension150 } // sys-dimension-50
+    @objc open var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { DimensionRawTokens.dimension200 } // sys-dimension-60
+    @objc open var sizeIconWithTypeLabelSmallTall: SizingSemanticToken { DimensionRawTokens.dimension250 } // sys-dimension-70
 
-    @objc open var sizeIconWithTypeLabelMediumShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension200 } // sys-dimension-60
-    @objc open var sizeIconWithTypeLabelMediumMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 } // sys-dimension-70
-    @objc open var sizeIconWithTypeLabelMediumTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension300 } // sys-dimension-80
+    @objc open var sizeIconWithTypeLabelMediumShort: SizingSemanticToken { DimensionRawTokens.dimension200 } // sys-dimension-60
+    @objc open var sizeIconWithTypeLabelMediumMedium: SizingSemanticToken { DimensionRawTokens.dimension250 } // sys-dimension-70
+    @objc open var sizeIconWithTypeLabelMediumTall: SizingSemanticToken { DimensionRawTokens.dimension300 } // sys-dimension-80
 
-    @objc open var sizeIconWithTypeLabelLargeShorter: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension250 } // sys-dimension-70
-    @objc open var sizeIconWithTypeLabelLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension300 } // sys-dimension-80
-    @objc open var sizeIconWithTypeLabelLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension350 } // sys-dimension-90
-    @objc open var sizeIconWithTypeLabelLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension100 } // sys-dimension-100
-    @objc open var sizeIconWithTypeLabelLargeTaller: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 } // sys-dimension-130
+    @objc open var sizeIconWithTypeLabelLargeShorter: SizingSemanticToken { DimensionRawTokens.dimension250 } // sys-dimension-70
+    @objc open var sizeIconWithTypeLabelLargeShort: SizingSemanticToken { DimensionRawTokens.dimension300 } // sys-dimension-80
+    @objc open var sizeIconWithTypeLabelLargeMedium: SizingSemanticToken { DimensionRawTokens.dimension350 } // sys-dimension-90
+    @objc open var sizeIconWithTypeLabelLargeTall: SizingSemanticToken { DimensionRawTokens.dimension100 } // sys-dimension-100
+    @objc open var sizeIconWithTypeLabelLargeTaller: SizingSemanticToken { DimensionRawTokens.dimension550 } // sys-dimension-130
 
-    @objc open var sizeIconWithTypeLabelXLargeShort: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension400 } // sys-dimension-100
-    @objc open var sizeIconWithTypeLabelXLargeMedium: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension500 } // sys-dimension-120
-    @objc open var sizeIconWithTypeLabelXLargeTall: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension550 } // sys-dimension-130
+    @objc open var sizeIconWithTypeLabelXLargeShort: SizingSemanticToken { DimensionRawTokens.dimension400 } // sys-dimension-100
+    @objc open var sizeIconWithTypeLabelXLargeMedium: SizingSemanticToken { DimensionRawTokens.dimension500 } // sys-dimension-120
+    @objc open var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { DimensionRawTokens.dimension550 } // sys-dimension-130
 
     // MARK: Semantic token - Sizing - Max width
 

@@ -13,10 +13,8 @@
 
 import OUDSTokensRaw
 
-// TODO: #112 - Rename SizingWidthHeightSemanticToken to SizingSemanticToken
-
 /// Basically a size semantic token for width and height is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
-public typealias SizingWidthHeightSemanticToken = DimensionRawToken
+public typealias SizingSemanticToken = DimensionRawToken
 
 /// Basically a size semantic token for max width is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
 public typealias SizingMaxWidthSemanticToken = DimensionRawToken

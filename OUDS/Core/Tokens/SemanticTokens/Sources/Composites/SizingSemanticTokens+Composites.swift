@@ -17,16 +17,16 @@ import Foundation
 public final class SizingCompositeSemanticToken: NSObject {
 
     /// For **extra-compact** and **compact** viewports
-    public let compact: SizingWidthHeightSemanticToken
+    public let compact: SizingSemanticToken
 
     /// For **regular** and **medium** viewports
-    public let regular: SizingWidthHeightSemanticToken
+    public let regular: SizingSemanticToken
 
     /// Initializes a new sizing composite semantic token.
     /// - Parameters:
     ///    - compact: The `SizingWidthHeightSemanticToken` to apply if device in *compact* mode
     ///    - regular: The `SizingWidthHeightSemanticToken` to apply if device in *regular* mode
-    public init(compact: SizingWidthHeightSemanticToken, regular: SizingWidthHeightSemanticToken) {
+    public init(compact: SizingSemanticToken, regular: SizingSemanticToken) {
         self.compact = compact
         self.regular = regular
     }

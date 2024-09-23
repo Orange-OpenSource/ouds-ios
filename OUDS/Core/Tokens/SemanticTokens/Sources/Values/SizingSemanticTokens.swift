@@ -19,13 +19,13 @@ public protocol SizingSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon decorative
 
-    var sizeIconDecorativeShortest: SizingWidthHeightSemanticToken { get }
-    var sizeIconDecorativeShorter: SizingWidthHeightSemanticToken { get }
-    var sizeIconDecorativeShort: SizingWidthHeightSemanticToken { get }
-    var sizeIconDecorativeMedium: SizingWidthHeightSemanticToken { get }
-    var sizeIconDecorativeTall: SizingWidthHeightSemanticToken { get }
-    var sizeIconDecorativeTaller: SizingWidthHeightSemanticToken { get }
-    var sizeIconDecorativeTallest: SizingWidthHeightSemanticToken { get }
+    var sizeIconDecorativeShortest: SizingSemanticToken { get }
+    var sizeIconDecorativeShorter: SizingSemanticToken { get }
+    var sizeIconDecorativeShort: SizingSemanticToken { get }
+    var sizeIconDecorativeMedium: SizingSemanticToken { get }
+    var sizeIconDecorativeTall: SizingSemanticToken { get }
+    var sizeIconDecorativeTaller: SizingSemanticToken { get }
+    var sizeIconDecorativeTallest: SizingSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
@@ -58,25 +58,25 @@ public protocol SizingSemanticTokens {
     var sizeIconWithTypeBodyLargeTall: SizingCompositeSemanticToken { get }
 
     // TODO: #122 - Add unit tests for them
-    var sizeIconWithTypeLabelSmallShort: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelSmallMedium: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelSmallTall: SizingWidthHeightSemanticToken { get }
+    var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelSmallTall: SizingSemanticToken { get }
 
     // TODO: #122 - Add unit tests for them
-    var sizeIconWithTypeLabelMediumShort: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelMediumMedium: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelMediumTall: SizingWidthHeightSemanticToken { get }
+    var sizeIconWithTypeLabelMediumShort: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelMediumMedium: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelMediumTall: SizingSemanticToken { get }
 
     // TODO: #122 - Add unit tests for them
-    var sizeIconWithTypeLabelLargeShorter: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelLargeShort: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelLargeMedium: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelLargeTall: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelLargeTaller: SizingWidthHeightSemanticToken { get }
+    var sizeIconWithTypeLabelLargeShorter: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelLargeShort: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelLargeMedium: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelLargeTall: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelLargeTaller: SizingSemanticToken { get }
 
-    var sizeIconWithTypeLabelXLargeShort: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelXLargeMedium: SizingWidthHeightSemanticToken { get }
-    var sizeIconWithTypeLabelXLargeTall: SizingWidthHeightSemanticToken { get } // TODO: #122: Unit test to add
+    var sizeIconWithTypeLabelXLargeShort: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelXLargeMedium: SizingSemanticToken { get }
+    var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { get } // TODO: #122: Unit test to add
 
     // MARK: - Semantic token - Sizing - Max width typography
 
