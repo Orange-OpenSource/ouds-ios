@@ -13,7 +13,7 @@
 
 import Foundation
 
-/// Composite semantic tokens which will wrap a combination of `SizingWidthHeightSemanticToken` depending to viewports / size classes.
+/// Composite semantic tokens which will wrap a combination of `SizingSemanticToken` depending to viewports / size classes.
 public final class SizingCompositeSemanticToken: NSObject {
 
     /// For **extra-compact** and **compact** viewports
@@ -24,8 +24,8 @@ public final class SizingCompositeSemanticToken: NSObject {
 
     /// Initializes a new sizing composite semantic token.
     /// - Parameters:
-    ///    - compact: The `SizingWidthHeightSemanticToken` to apply if device in *compact* mode
-    ///    - regular: The `SizingWidthHeightSemanticToken` to apply if device in *regular* mode
+    ///    - compact: The `SizingSemanticToken` to apply if device in *compact* mode
+    ///    - regular: The `SizingSemanticToken` to apply if device in *regular* mode
     public init(compact: SizingSemanticToken, regular: SizingSemanticToken) {
         self.compact = compact
         self.regular = regular
