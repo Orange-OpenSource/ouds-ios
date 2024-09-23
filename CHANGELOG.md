@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Tool] GitHub issue template for tokens update request
 - [Library] Add letter spacing and more font family tokens for typography ([#51](https://github.com/Orange-OpenSource/ouds-ios/issues/51))
 - [Library] Add `elevationX200` raw token ([#119](https://github.com/Orange-OpenSource/ouds-ios/issues/119))
 
