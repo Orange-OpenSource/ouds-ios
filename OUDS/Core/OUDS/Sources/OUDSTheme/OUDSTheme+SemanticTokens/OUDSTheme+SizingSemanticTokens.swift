@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: SizingSemanticTokens {
 
-    // MARK: Semantic token - Sizing - Width height - Icon decorative
+    // MARK: - Semantic token - Sizing - Icon decorative
 
     @objc open var sizeIconDecorativeShortest: SizingSemanticToken { DimensionRawTokens.dimension200 }
     @objc open var sizeIconDecorativeShorter: SizingSemanticToken { DimensionRawTokens.dimension300 }
@@ -47,8 +47,6 @@ extension OUDSTheme: SizingSemanticTokens {
     @objc open var sizeIconWithTypeHeadingXLargeShort: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension650) }
     @objc open var sizeIconWithTypeHeadingXLargeMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension700) }
     @objc open var sizeIconWithTypeHeadingXLargeTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension650) }
-
-    // MARK: Semantic token - Sizing - Width height - Icon typography - Body
 
     @objc open var sizeIconWithTypeBodySmallShort: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension150, regular: DimensionRawTokens.dimension150 ) }
     @objc open var sizeIconWithTypeBodySmallMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension200 ) }
@@ -80,7 +78,7 @@ extension OUDSTheme: SizingSemanticTokens {
     @objc open var sizeIconWithTypeLabelXLargeMedium: SizingSemanticToken { DimensionRawTokens.dimension500 } // sys-dimension-120
     @objc open var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { DimensionRawTokens.dimension550 } // sys-dimension-130
 
-    // MARK: Semantic token - Sizing - Max width
+    // MARK: - Semantic token - Sizing - Max width typography
 
     @objc open var sizeMaxWidthTypeDisplaySmall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
     @objc open var sizeMaxWidthTypeDisplayMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
