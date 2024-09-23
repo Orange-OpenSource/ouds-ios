@@ -32,61 +32,63 @@ public protocol SizingSemanticTokens {
     var sizeIconWithTypeHeadingSmallShort: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeHeadingSmallMedium: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeHeadingSmallTall: SizingCompositeSemanticToken { get }
-    
+
     var sizeIconWithTypeHeadingMediumShort: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeHeadingMediumMedium: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeHeadingMediumTall: SizingCompositeSemanticToken { get }
-    
+
     var sizeIconWithTypeHeadingLargeShort: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeHeadingLargeMedium: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeHeadingLargeTall: SizingCompositeSemanticToken { get }
-    
+
     var sizeIconWithTypeHeadingXLargeShort: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeHeadingXLargeMedium: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeHeadingXLargeTall: SizingCompositeSemanticToken { get }
-    
+
     var sizeIconWithTypeBodySmallShort: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeBodySmallMedium: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeBodySmallTall: SizingCompositeSemanticToken { get }
-    
+
     var sizeIconWithTypeBodyMediumShort: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeBodyMediumMedium: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeBodyMediumTall: SizingCompositeSemanticToken { get }
-    
+
     var sizeIconWithTypeBodyLargeShort: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeBodyLargeMedium: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeBodyLargeTall: SizingCompositeSemanticToken { get }
-    
+
     // TODO: #122 - Add unit tests for them
     var sizeIconWithTypeLabelSmallShort: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelSmallMedium: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelSmallTall: SizingWidthHeightSemanticToken { get }
-    
+
     // TODO: #122 - Add unit tests for them
     var sizeIconWithTypeLabelMediumShort: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelMediumMedium: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelMediumTall: SizingWidthHeightSemanticToken { get }
-    
+
     // TODO: #122 - Add unit tests for them
     var sizeIconWithTypeLabelLargeShorter: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelLargeShort: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelLargeMedium: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelLargeTall: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelLargeTaller: SizingWidthHeightSemanticToken { get }
-    
+
     var sizeIconWithTypeLabelXLargeShort: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelXLargeMedium: SizingWidthHeightSemanticToken { get }
     var sizeIconWithTypeLabelXLargeTall: SizingWidthHeightSemanticToken { get } // TODO: #122: Unit test to add
 
     // MARK: - Semantic token - Sizing - Max width typography
-    
+
     var sizeMaxWidthTypeDisplaySmall: SizingCompositeSemanticToken { get }
     var sizeMaxWidthTypeDisplayMedium: SizingCompositeSemanticToken { get }
     var sizeMaxWidthTypeDisplayLarge: SizingCompositeSemanticToken { get }
+
     var sizeMaxWidthTypeHeadingSmall: SizingCompositeSemanticToken { get }
     var sizeMaxWidthTypeHeadingMedium: SizingCompositeSemanticToken { get }
     var sizeMaxWidthTypeHeadingLarge: SizingCompositeSemanticToken { get }
     var sizeMaxWidthTypeHeadingXLarge: SizingCompositeSemanticToken { get }
+
     var sizeMaxWidthTypeBodySmall: SizingCompositeSemanticToken { get }
     var sizeMaxWidthTypeBodyMedium: SizingCompositeSemanticToken { get }
     var sizeMaxWidthTypeBodyLarge: SizingCompositeSemanticToken { get }
