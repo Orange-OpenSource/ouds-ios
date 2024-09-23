@@ -57,17 +57,14 @@ public protocol SizingSemanticTokens {
     var sizeIconWithTypeBodyLargeMedium: SizingCompositeSemanticToken { get }
     var sizeIconWithTypeBodyLargeTall: SizingCompositeSemanticToken { get }
 
-    // TODO: #122 - Add unit tests for them
     var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { get }
     var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { get }
     var sizeIconWithTypeLabelSmallTall: SizingSemanticToken { get }
 
-    // TODO: #122 - Add unit tests for them
     var sizeIconWithTypeLabelMediumShort: SizingSemanticToken { get }
     var sizeIconWithTypeLabelMediumMedium: SizingSemanticToken { get }
     var sizeIconWithTypeLabelMediumTall: SizingSemanticToken { get }
 
-    // TODO: #122 - Add unit tests for them
     var sizeIconWithTypeLabelLargeShorter: SizingSemanticToken { get }
     var sizeIconWithTypeLabelLargeShort: SizingSemanticToken { get }
     var sizeIconWithTypeLabelLargeMedium: SizingSemanticToken { get }
