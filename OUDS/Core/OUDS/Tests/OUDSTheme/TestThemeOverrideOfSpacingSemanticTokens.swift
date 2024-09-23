@@ -33,105 +33,105 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
     // MARK: - Semantic token - Spacing - Layout fix
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixNone() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixNone, abstractTheme.spaceLayoutFixNone)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixNone == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedNone, abstractTheme.spaceFixedNone)
+        XCTAssertTrue(inheritedTheme.spaceFixedNone == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixSmash() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixSmash, abstractTheme.spaceLayoutFixSmash)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixSmash == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedSmash, abstractTheme.spaceFixedSmash)
+        XCTAssertTrue(inheritedTheme.spaceFixedSmash == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixShortest() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixShortest, abstractTheme.spaceLayoutFixShortest)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixShortest == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedShortest, abstractTheme.spaceFixedShortest)
+        XCTAssertTrue(inheritedTheme.spaceFixedShortest == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixShorter() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixShorter, abstractTheme.spaceLayoutFixShorter)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixShorter == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedShorter, abstractTheme.spaceFixedShorter)
+        XCTAssertTrue(inheritedTheme.spaceFixedShorter == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixShort() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixShort, abstractTheme.spaceLayoutFixShort)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixShort == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedShort, abstractTheme.spaceFixedShort)
+        XCTAssertTrue(inheritedTheme.spaceFixedShort == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixMedium, abstractTheme.spaceLayoutFixMedium)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixMedium == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedMedium, abstractTheme.spaceFixedMedium)
+        XCTAssertTrue(inheritedTheme.spaceFixedMedium == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixTall() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixTall, abstractTheme.spaceLayoutFixTall)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixTall == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedTall, abstractTheme.spaceFixedTall)
+        XCTAssertTrue(inheritedTheme.spaceFixedTall == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixTaller() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixTaller, abstractTheme.spaceLayoutFixTaller)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixTaller == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedTaller, abstractTheme.spaceFixedTaller)
+        XCTAssertTrue(inheritedTheme.spaceFixedTaller == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixTallest() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixTallest, abstractTheme.spaceLayoutFixTallest)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixTallest == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedTallest, abstractTheme.spaceFixedTallest)
+        XCTAssertTrue(inheritedTheme.spaceFixedTallest == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutFixSpacious() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutFixSpacious, abstractTheme.spaceLayoutFixSpacious)
-        XCTAssertTrue(inheritedTheme.spaceLayoutFixSpacious == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spaceFixedSpacious, abstractTheme.spaceFixedSpacious)
+        XCTAssertTrue(inheritedTheme.spaceFixedSpacious == MockTheme.mockThemeSpaceRawToken)
     }
 
     // MARK: - Semantic token - Spacing - Layout fluid
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableNone() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableNone, abstractTheme.spaceLayoutAdaptableNone)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableNone.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledNone, abstractTheme.spaceScaledNone)
+        XCTAssertTrue(inheritedTheme.spaceScaledNone.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableSmash() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableSmash, abstractTheme.spaceLayoutAdaptableSmash)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableSmash.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledSmash, abstractTheme.spaceScaledSmash)
+        XCTAssertTrue(inheritedTheme.spaceScaledSmash.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableShortest() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableShortest, abstractTheme.spaceLayoutAdaptableShortest)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableShortest.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledShortest, abstractTheme.spaceScaledShortest)
+        XCTAssertTrue(inheritedTheme.spaceScaledShortest.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableShorter() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableShorter, abstractTheme.spaceLayoutAdaptableShorter)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableShorter.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledShorter, abstractTheme.spaceScaledShorter)
+        XCTAssertTrue(inheritedTheme.spaceScaledShorter.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableShort() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableShort, abstractTheme.spaceLayoutAdaptableShort)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableShort.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledShort, abstractTheme.spaceScaledShort)
+        XCTAssertTrue(inheritedTheme.spaceScaledShort.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableMedium, abstractTheme.spaceLayoutAdaptableMedium)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableMedium.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledMedium, abstractTheme.spaceScaledMedium)
+        XCTAssertTrue(inheritedTheme.spaceScaledMedium.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableTall() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableTall, abstractTheme.spaceLayoutAdaptableTall)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableTall.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledTall, abstractTheme.spaceScaledTall)
+        XCTAssertTrue(inheritedTheme.spaceScaledTall.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableTaller() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableTaller, abstractTheme.spaceLayoutAdaptableTaller)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableTaller.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledTaller, abstractTheme.spaceScaledTaller)
+        XCTAssertTrue(inheritedTheme.spaceScaledTaller.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableTallest() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableTallest, abstractTheme.spaceLayoutAdaptableTallest)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableTallest.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledTallest, abstractTheme.spaceScaledTallest)
+        XCTAssertTrue(inheritedTheme.spaceScaledTallest.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceLayoutAdaptableSpacious() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceLayoutAdaptableSpacious, abstractTheme.spaceLayoutAdaptableSpacious)
-        XCTAssertTrue(inheritedTheme.spaceLayoutAdaptableSpacious.isEqual(MockTheme.mockThemeSpaceSemanticToken))
+        XCTAssertNotEqual(inheritedTheme.spaceScaledSpacious, abstractTheme.spaceScaledSpacious)
+        XCTAssertTrue(inheritedTheme.spaceScaledSpacious.isEqual(MockTheme.mockThemeSpaceSemanticToken))
     }
 
     // MARK: - Semantic token - Spacing - Padding - Padding inline
