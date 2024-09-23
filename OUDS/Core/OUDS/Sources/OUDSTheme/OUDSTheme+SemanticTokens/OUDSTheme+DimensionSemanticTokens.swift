@@ -19,6 +19,6 @@ import OUDSTokensSemantic
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: DimensionSemanticTokens {
 
-    @objc open var dimensionDensityDefault: DimensionSemanticToken { DimensionRawTokens.dimensionBase }
+    @objc open var dimensionDensityDefault: DimensionSemanticToken { 4 }
 
 }

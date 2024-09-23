@@ -15,33 +15,30 @@
 /// Should be fully generated in the future.
 extension BorderRawTokens {
 
-    // Double type because used below for computations with Double values
-    private static let borderBase: Double = 4
-
     // MARK: Primitive token - Border - Width
 
-    public static let borderWidth0: BorderWidthRawToken = borderBase * 0
-    public static let borderWidth25: BorderWidthRawToken = borderBase * 0.25
-    public static let borderWidth50: BorderWidthRawToken = borderBase * 0.5
-    public static let borderWidth75: BorderWidthRawToken = borderBase * 0.75
-    public static let borderWidth100: BorderWidthRawToken = borderBase * 1
-    public static let borderWidth150: BorderWidthRawToken = borderBase * 1.5
-    public static let borderWidth200: BorderWidthRawToken = borderBase * 2
+    public static let borderWidth0: BorderWidthRawToken = 4 * 0
+    public static let borderWidth25: BorderWidthRawToken = 4 * 0.25
+    public static let borderWidth50: BorderWidthRawToken = 4 * 0.5
+    public static let borderWidth75: BorderWidthRawToken = 4 * 0.75
+    public static let borderWidth100: BorderWidthRawToken = 4 * 1
+    public static let borderWidth150: BorderWidthRawToken = 4 * 1.5
+    public static let borderWidth200: BorderWidthRawToken = 4 * 2
 
     // MARK: Primitive token - Border - Radius
 
-    public static let borderRadius0: BorderRadiusRawToken = borderBase * 0
-    public static let borderRadius25: BorderRadiusRawToken = borderBase * 0.25
-    public static let borderRadius50: BorderRadiusRawToken = borderBase * 0.5
-    public static let borderRadius75: BorderRadiusRawToken = borderBase * 0.75
-    public static let borderRadius100: BorderRadiusRawToken = borderBase * 1
-    public static let borderRadius150: BorderRadiusRawToken = borderBase * 1.5
-    public static let borderRadius200: BorderRadiusRawToken = borderBase * 2
-    public static let borderRadius300: BorderRadiusRawToken = borderBase * 3
-    public static let borderRadius400: BorderRadiusRawToken = borderBase * 4
-    public static let borderRadius500: BorderRadiusRawToken = borderBase * 5
-    public static let borderRadius600: BorderRadiusRawToken = borderBase * 6
-    public static let borderRadius800: BorderRadiusRawToken = borderBase * 8
+    public static let borderRadius0: BorderRadiusRawToken = 4 * 0
+    public static let borderRadius25: BorderRadiusRawToken = 4 * 0.25
+    public static let borderRadius50: BorderRadiusRawToken = 4 * 0.5
+    public static let borderRadius75: BorderRadiusRawToken = 4 * 0.75
+    public static let borderRadius100: BorderRadiusRawToken = 4 * 1
+    public static let borderRadius150: BorderRadiusRawToken = 4 * 1.5
+    public static let borderRadius200: BorderRadiusRawToken = 4 * 2
+    public static let borderRadius300: BorderRadiusRawToken = 4 * 3
+    public static let borderRadius400: BorderRadiusRawToken = 4 * 4
+    public static let borderRadius500: BorderRadiusRawToken = 4 * 5
+    public static let borderRadius600: BorderRadiusRawToken = 4 * 6
+    public static let borderRadius800: BorderRadiusRawToken = 4 * 8
 
     // MARK: Primitive token - Border - Style
 
