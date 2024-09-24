@@ -60,23 +60,23 @@ extension OUDSTheme: SizingSemanticTokens {
     @objc open var sizeIconWithTypeBodyLargeMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension300 ) }
     @objc open var sizeIconWithTypeBodyLargeTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension350, regular: DimensionRawTokens.dimension350 ) }
 
-    @objc open var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { DimensionRawTokens.dimension150 } // sys-dimension-50
-    @objc open var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { DimensionRawTokens.dimension200 } // sys-dimension-60
-    @objc open var sizeIconWithTypeLabelSmallTall: SizingSemanticToken { DimensionRawTokens.dimension250 } // sys-dimension-70
+    @objc open var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { dimension50 }
+    @objc open var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { dimension60 }
+    @objc open var sizeIconWithTypeLabelSmallTall: SizingSemanticToken { dimension70 }
 
-    @objc open var sizeIconWithTypeLabelMediumShort: SizingSemanticToken { DimensionRawTokens.dimension200 } // sys-dimension-60
-    @objc open var sizeIconWithTypeLabelMediumMedium: SizingSemanticToken { DimensionRawTokens.dimension250 } // sys-dimension-70
-    @objc open var sizeIconWithTypeLabelMediumTall: SizingSemanticToken { DimensionRawTokens.dimension300 } // sys-dimension-80
+    @objc open var sizeIconWithTypeLabelMediumShort: SizingSemanticToken { dimension60 }
+    @objc open var sizeIconWithTypeLabelMediumMedium: SizingSemanticToken { dimension70 }
+    @objc open var sizeIconWithTypeLabelMediumTall: SizingSemanticToken { dimension80 }
 
-    @objc open var sizeIconWithTypeLabelLargeShorter: SizingSemanticToken { DimensionRawTokens.dimension250 } // sys-dimension-70
-    @objc open var sizeIconWithTypeLabelLargeShort: SizingSemanticToken { DimensionRawTokens.dimension300 } // sys-dimension-80
-    @objc open var sizeIconWithTypeLabelLargeMedium: SizingSemanticToken { DimensionRawTokens.dimension350 } // sys-dimension-90
-    @objc open var sizeIconWithTypeLabelLargeTall: SizingSemanticToken { DimensionRawTokens.dimension100 } // sys-dimension-100
-    @objc open var sizeIconWithTypeLabelLargeTaller: SizingSemanticToken { DimensionRawTokens.dimension550 } // sys-dimension-130
+    @objc open var sizeIconWithTypeLabelLargeShorter: SizingSemanticToken { dimension70 }
+    @objc open var sizeIconWithTypeLabelLargeShort: SizingSemanticToken { dimension80 }
+    @objc open var sizeIconWithTypeLabelLargeMedium: SizingSemanticToken { dimension90 }
+    @objc open var sizeIconWithTypeLabelLargeTall: SizingSemanticToken { dimension100 }
+    @objc open var sizeIconWithTypeLabelLargeTaller: SizingSemanticToken { dimension130 }
 
-    @objc open var sizeIconWithTypeLabelXLargeShort: SizingSemanticToken { DimensionRawTokens.dimension400 } // sys-dimension-100
-    @objc open var sizeIconWithTypeLabelXLargeMedium: SizingSemanticToken { DimensionRawTokens.dimension500 } // sys-dimension-120
-    @objc open var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { DimensionRawTokens.dimension550 } // sys-dimension-130
+    @objc open var sizeIconWithTypeLabelXLargeShort: SizingSemanticToken { dimension100 }
+    @objc open var sizeIconWithTypeLabelXLargeMedium: SizingSemanticToken { dimension120 }
+    @objc open var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { dimension130 }
 
     // MARK: - Semantic token - Sizing - Max width typography
 
