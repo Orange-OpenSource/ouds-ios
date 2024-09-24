@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 /// **Warning: These are random and dumb values**
 extension OUDSTheme: ButtonsComponentTokens {
 
-    @objc open var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { spacePaddingInlineComponentShort }
+    @objc open var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { spacePaddingInlineShort }
 
     @objc open var buttonBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
     @objc open var buttonBorderColorLight: ColorSemanticToken { colorBorderDefaultLight! }

@@ -54,7 +54,7 @@ public struct OUDSFormsTextInput: View {
     // MARK: - Body
 
     public var body: some View {
-        VStack(spacing: theme.spacePaddingBlockComponentTall) {
+        VStack(spacing: theme.spacePaddingBlockTall) {
 
             Label(
                 title: {
@@ -73,7 +73,7 @@ public struct OUDSFormsTextInput: View {
 
             TextField(placeholder, text: $value)
         }
-        .padding(theme.spacePaddingBlockComponentTall)
+        .padding(theme.spacePaddingBlockTall)
         .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
         .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
     }

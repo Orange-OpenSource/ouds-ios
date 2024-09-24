@@ -51,7 +51,7 @@ extension OrangeCustomTheme { // For ColorSemanticTokens
 
 extension OrangeCustomTheme { // For ButtonsComponentTokens
 
-    override var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { spacePaddingInlineComponentShorter }
+    override var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { spacePaddingInlineShorter }
 
     override var buttonBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
     override var buttonBorderColorLight: ColorSemanticToken { colorBorderDefaultLight! }
