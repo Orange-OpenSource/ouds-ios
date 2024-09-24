@@ -18,6 +18,8 @@ import OUDSTokensSemantic
 import OUDSTokensComponent
 import OUDSThemesOrange
 
+// swiftlint:disable line_length
+
 // Can be for example a country theme
 class OrangeCustomTheme: OrangeTheme { }
 
@@ -27,16 +29,15 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens
 
     public override var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
     public override var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
-    public override var ftiTitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
+    public override var ftiTitleColor: ColorSemanticToken { ColorCompositeSemanticToken(ColorRawTokens.colorFunctionalDodgerBlue500) }
 
     public override var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightBodyDefault }
     public override var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
-    public override var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
+    public override var ftiSubtitleColor: ColorSemanticToken { ColorCompositeSemanticToken(ColorRawTokens.colorFunctionalMalachite500) }
 
-    public override var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight }
-    public override var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark }
+    public override var ftiBackgroundColor: ColorSemanticToken { colorBackgroundDefaultPrimary }
 
-    public override var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedDark ?? OrangeBrandColorRawTokens.colorDecorativeShockingPink500 }
+    public override var ftiBorderColor: ColorSemanticToken { ColorCompositeSemanticToken(light: OrangeBrandColorRawTokens.colorDecorativeShockingPink800, dark: OrangeBrandColorRawTokens.colorDecorativeShockingPink200) }
 
     public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 
@@ -45,8 +46,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens
 
 extension OrangeCustomTheme { // For ColorSemanticTokens
 
-    override var colorBackgroundDefaultPrimaryLight: ColorSemanticToken! { ColorRawTokens.colorFunctionalSun500 }
-    override var colorBackgroundDefaultPrimaryDark: ColorSemanticToken! { ColorRawTokens.colorFunctionalSun800 }
+    override var colorBackgroundDefaultPrimary: ColorSemanticToken! { ColorCompositeSemanticToken(light: ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.colorFunctionalSun800) }
 }
 
 extension OrangeCustomTheme { // For ButtonsComponentTokens
@@ -54,18 +54,16 @@ extension OrangeCustomTheme { // For ButtonsComponentTokens
     override var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { spacePaddingInlineShorter }
 
     override var buttonBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
-    override var buttonBorderColorLight: ColorSemanticToken { colorBorderDefaultLight! }
-    override var buttonBorderColorDark: ColorSemanticToken { colorBorderDefaultDark! }
+    override var buttonBorderColor: ColorSemanticToken { colorBorderDefault! }
     override var buttonBorderWidth: BorderWidthSemanticToken { borderWidthDefault }
     override var buttonBorderRadius: BorderRadiusSemanticToken { borderRadiusShort }
 
-    override var buttonForegroundColorLight: ColorSemanticToken { sysColorBrandNeutralMutedLower! }
-    override var buttonForegroundColorDark: ColorSemanticToken { sysColorBrandNeutralMutedWhite! }
-    override var buttonBackgroundColorLight: ColorSemanticToken { sysColorBrandPositiveLowest! }
-    override var buttonBackgroundColorDark: ColorSemanticToken { sysColorBrandPositiveHighest! }
+    override var buttonForegroundColor: ColorSemanticToken { ColorCompositeSemanticToken(light: sysColorBrandNeutralMutedLower!, dark: sysColorBrandNeutralMutedWhite!) }
+    override var buttonBackgroundColor: ColorSemanticToken { ColorCompositeSemanticToken(light: sysColorBrandPositiveLowest!, dark: sysColorBrandPositiveHighest!) }
 
     override var buttonWidth: SizingSemanticToken { DimensionRawTokens.dimension2000 }
     override var buttonHeight: SizingSemanticToken { DimensionRawTokens.dimension800 }
 
     override var buttonTypography: TypographyCompositeSemanticToken { typeDisplaySmall }
 }
+// swiftlint:enable line_length

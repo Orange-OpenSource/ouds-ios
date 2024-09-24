@@ -61,7 +61,7 @@ public struct OUDSFormsTextInput: View {
                     Text(label)
                         .fontWeight(theme.ftiTitleFontWeight.fontWeight)
                         .font(.system(size: theme.ftiTitleFontSize))
-                        .foregroundColor(theme.ftiTitleColor.color)
+                        .foregroundColor(theme.ftiTitleColor.light.color)
                 },
                 icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
             )
@@ -69,12 +69,12 @@ public struct OUDSFormsTextInput: View {
             Text(hint)
                 .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
                 .font(.system(size: theme.ftiSubtitleFontSize))
-                .foregroundColor(theme.ftiSubtitleColor.color)
+                .foregroundColor(theme.ftiSubtitleColor.light.color)
 
             TextField(placeholder, text: $value)
         }
         .padding(theme.spacePaddingBlockTall)
-        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
-        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
+        .background(colorScheme == .light ? theme.ftiBackgroundColor.light.color : theme.ftiBackgroundColor.dark.color)
+        .border(theme.ftiBorderColor.light.color, width: theme.ftiBorderWidth)
     }
 }

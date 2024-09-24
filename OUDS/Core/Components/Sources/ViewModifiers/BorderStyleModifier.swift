@@ -30,15 +30,12 @@ struct BorderStyleModifier: ViewModifier {
     /// The radius of the border to apply
     private let radius: BorderRadiusSemanticToken
 
-    /// The color in light scheme of the border
-    private let colorLight: ColorSemanticToken
-
-    /// The color in dark scheme of the border
-    private let colorDark: ColorSemanticToken
+    /// The colors of the border
+    private let color: ColorSemanticToken
 
     /// Color to apply depending to the `colorScheme`
     private var colorToApply: Color {
-        colorScheme == .light ? colorLight.color : colorDark.color
+        colorScheme == .light ? color.light.color : color.dark.color
     }
 
     /// To know if the device is in light mode or in dark mode
@@ -49,13 +46,11 @@ struct BorderStyleModifier: ViewModifier {
     init(_ token: BorderStyleSemanticToken,
          _ width: BorderWidthSemanticToken,
          _ radius: BorderRadiusSemanticToken,
-         _ colorLight: ColorSemanticToken,
-         _ colorDark: ColorSemanticToken) {
+         _ color: ColorSemanticToken) {
         self.token = token
         self.width = width
         self.radius = radius
-        self.colorLight = colorLight
-        self.colorDark = colorDark
+        self.color = color
         if token != "solid" && token != "dashed" && token != "dotted" {
             OUDSLogger.error("Unmanaged token: '\(token)'!")
         }

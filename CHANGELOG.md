@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] Add  spacing semantic tokens huge and jumno
+- [Library] Add color semantic composite tokens embeding light and dark modes values
+- [Library] Add spacing semantic tokens huge and jumbo
 - [Library] Add closed "sys" dimension semantic tokens
 - [Tool] GitHub issue template for tokens update request
 - [Library] Add more sizing semantic tokens ([#122](https://github.com/Orange-OpenSource/ouds-ios/issues/122))
@@ -16,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update color semantic tokens to better manage light and dark modes values
 - [Library] Update elevation colors focus light and dark
 - [Library] Rename space padding inline component tokens by removing "component" word
 - [Library] Rename some sizing semantic tokens ([#122](https://github.com/Orange-OpenSource/ouds-ios/issues/122))
