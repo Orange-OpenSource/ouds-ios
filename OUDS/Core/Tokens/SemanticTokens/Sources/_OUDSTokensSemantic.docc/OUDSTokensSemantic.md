@@ -11,7 +11,7 @@ In addition, there are hundreds of _semantics tokens_ and we needed to add them 
 
 That is the reason why tokens are exposed as `@objc open` to be available and oveeridable anywhere. 
 
-To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are avaialble for those who want too make their own theme.
+To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are available for those who want too make their own theme.
 
 Example with ``ColorSemanticTokens``:
 
