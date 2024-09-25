@@ -22,7 +22,7 @@ final class MultipleColorRawTokenTests: XCTestCase {
     func testInitTwoNonNilValues() {
         let light: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
         let dark: ColorRawToken = ColorRawTokens.colorFunctionalScarlet900
-        let token = MultipleColorRawToken(light: light, dark: dark)
+        let token = MultipleColorTokens(light: light, dark: dark)
 
         XCTAssertTrue(token.light == light)
         XCTAssertTrue(token.dark == dark)
@@ -33,25 +33,25 @@ final class MultipleColorRawTokenTests: XCTestCase {
         let light: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
         let dark: ColorRawToken = ColorRawTokens.colorFunctionalScarlet900
 
-        XCTAssertNil(MultipleColorRawToken(light: light, dark: nil))
-        XCTAssertNil(MultipleColorRawToken(light: nil, dark: dark))
-        XCTAssertNil(MultipleColorRawToken(light: nil, dark: nil))
+        XCTAssertNil(MultipleColorTokens(light: light, dark: nil))
+        XCTAssertNil(MultipleColorTokens(light: nil, dark: dark))
+        XCTAssertNil(MultipleColorTokens(light: nil, dark: nil))
     }
 
     /// Tests init of `MultipleColorRawToken` with nil value in parameter
     func testInitNilValue() {
-        XCTAssertNil(MultipleColorRawToken(nil))
+        XCTAssertNil(MultipleColorTokens(nil))
     }
 
     /// Tests comparisons between two `MultipleColorRawToken` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
-        let second = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalSun100)
-        let third = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalSun100)
-        let fourth = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalScarlet900)
-        let fifth = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
-        let sixth = MultipleSizingSemanticToken(compact: 12, regular: 12)
+        let first = MultipleColorTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
+        let second = MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalSun100)
+        let third = MultipleColorTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalSun100)
+        let fourth = MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalScarlet900)
+        let fifth = MultipleColorTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
+        let sixth = MultipleSizingTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

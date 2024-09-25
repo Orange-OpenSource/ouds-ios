@@ -35,33 +35,33 @@ extension OUDSTheme: SizingSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    @objc open var sizeIconWithTypeHeadingSmallShort: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension400) }
-    @objc open var sizeIconWithTypeHeadingSmallMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension500) }
-    @objc open var sizeIconWithTypeHeadingSmallTall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension550) }
+    @objc open var sizeIconWithTypeHeadingSmallShort: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension400) }
+    @objc open var sizeIconWithTypeHeadingSmallMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension500) }
+    @objc open var sizeIconWithTypeHeadingSmallTall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension550) }
 
-    @objc open var sizeIconWithTypeHeadingMediumShort: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension500) }
-    @objc open var sizeIconWithTypeHeadingMediumMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension550) }
-    @objc open var sizeIconWithTypeHeadingMediumTall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension600) }
+    @objc open var sizeIconWithTypeHeadingMediumShort: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension500) }
+    @objc open var sizeIconWithTypeHeadingMediumMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension550) }
+    @objc open var sizeIconWithTypeHeadingMediumTall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension600) }
 
-    @objc open var sizeIconWithTypeHeadingLargeShort: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension550) }
-    @objc open var sizeIconWithTypeHeadingLargeMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension600) }
-    @objc open var sizeIconWithTypeHeadingLargeTall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension650) }
+    @objc open var sizeIconWithTypeHeadingLargeShort: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension550) }
+    @objc open var sizeIconWithTypeHeadingLargeMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension600) }
+    @objc open var sizeIconWithTypeHeadingLargeTall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension650) }
 
-    @objc open var sizeIconWithTypeHeadingXLargeShort: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension650) }
-    @objc open var sizeIconWithTypeHeadingXLargeMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension700) }
-    @objc open var sizeIconWithTypeHeadingXLargeTall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension650) }
+    @objc open var sizeIconWithTypeHeadingXLargeShort: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension650) }
+    @objc open var sizeIconWithTypeHeadingXLargeMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension700) }
+    @objc open var sizeIconWithTypeHeadingXLargeTall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension650) }
 
-    @objc open var sizeIconWithTypeBodySmallShort: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension150, regular: DimensionRawTokens.dimension150 ) }
-    @objc open var sizeIconWithTypeBodySmallMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension200 ) }
-    @objc open var sizeIconWithTypeBodySmallTall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension250, regular: DimensionRawTokens.dimension250 ) }
+    @objc open var sizeIconWithTypeBodySmallShort: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension150, regular: DimensionRawTokens.dimension150 ) }
+    @objc open var sizeIconWithTypeBodySmallMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension200 ) }
+    @objc open var sizeIconWithTypeBodySmallTall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension250, regular: DimensionRawTokens.dimension250 ) }
 
-    @objc open var sizeIconWithTypeBodyMediumShort: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension200 ) }
-    @objc open var sizeIconWithTypeBodyMediumMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension250, regular: DimensionRawTokens.dimension250 ) }
-    @objc open var sizeIconWithTypeBodyMediumTall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension300 ) }
+    @objc open var sizeIconWithTypeBodyMediumShort: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension200 ) }
+    @objc open var sizeIconWithTypeBodyMediumMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension250, regular: DimensionRawTokens.dimension250 ) }
+    @objc open var sizeIconWithTypeBodyMediumTall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension300 ) }
 
-    @objc open var sizeIconWithTypeBodyLargeShort: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension250, regular: DimensionRawTokens.dimension250 ) }
-    @objc open var sizeIconWithTypeBodyLargeMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension300 ) }
-    @objc open var sizeIconWithTypeBodyLargeTall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension350, regular: DimensionRawTokens.dimension350 ) }
+    @objc open var sizeIconWithTypeBodyLargeShort: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension250, regular: DimensionRawTokens.dimension250 ) }
+    @objc open var sizeIconWithTypeBodyLargeMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension300 ) }
+    @objc open var sizeIconWithTypeBodyLargeTall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension350, regular: DimensionRawTokens.dimension350 ) }
 
     @objc open var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { dimension6XS }
     @objc open var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { dimension5XS }
@@ -83,17 +83,17 @@ extension OUDSTheme: SizingSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Max width typography
 
-    @objc open var sizeMaxWidthTypeDisplaySmall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
-    @objc open var sizeMaxWidthTypeDisplayMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
-    @objc open var sizeMaxWidthTypeDisplayLarge: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypeDisplaySmall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypeDisplayMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypeDisplayLarge: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
 
-    @objc open var sizeMaxWidthTypeHeadingSmall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
-    @objc open var sizeMaxWidthTypeHeadingMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
-    @objc open var sizeMaxWidthTypeHeadingLarge: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
-    @objc open var sizeMaxWidthTypeHeadingXLarge: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypeHeadingSmall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
+    @objc open var sizeMaxWidthTypeHeadingMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypeHeadingLarge: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
+    @objc open var sizeMaxWidthTypeHeadingXLarge: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension9000, regular: DimensionRawTokens.dimension9000 ) }
 
-    @objc open var sizeMaxWidthTypeBodySmall: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
-    @objc open var sizeMaxWidthTypeBodyMedium: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
-    @objc open var sizeMaxWidthTypeBodyLarge: MultipleSizingSemanticToken { MultipleSizingSemanticToken(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
+    @objc open var sizeMaxWidthTypeBodySmall: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
+    @objc open var sizeMaxWidthTypeBodyMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
+    @objc open var sizeMaxWidthTypeBodyLarge: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
 }
 // swiftlint:enable line_length

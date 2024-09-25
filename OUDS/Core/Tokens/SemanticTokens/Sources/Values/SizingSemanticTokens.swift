@@ -32,33 +32,33 @@ public protocol SizingSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    var sizeIconWithTypeHeadingSmallShort: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeHeadingSmallMedium: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeHeadingSmallTall: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingSmallShort: MultipleSizingTokens { get }
+    var sizeIconWithTypeHeadingSmallMedium: MultipleSizingTokens { get }
+    var sizeIconWithTypeHeadingSmallTall: MultipleSizingTokens { get }
 
-    var sizeIconWithTypeHeadingMediumShort: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeHeadingMediumMedium: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeHeadingMediumTall: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingMediumShort: MultipleSizingTokens { get }
+    var sizeIconWithTypeHeadingMediumMedium: MultipleSizingTokens { get }
+    var sizeIconWithTypeHeadingMediumTall: MultipleSizingTokens { get }
 
-    var sizeIconWithTypeHeadingLargeShort: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeHeadingLargeMedium: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeHeadingLargeTall: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingLargeShort: MultipleSizingTokens { get }
+    var sizeIconWithTypeHeadingLargeMedium: MultipleSizingTokens { get }
+    var sizeIconWithTypeHeadingLargeTall: MultipleSizingTokens { get }
 
-    var sizeIconWithTypeHeadingXLargeShort: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeHeadingXLargeMedium: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeHeadingXLargeTall: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingXLargeShort: MultipleSizingTokens { get }
+    var sizeIconWithTypeHeadingXLargeMedium: MultipleSizingTokens { get }
+    var sizeIconWithTypeHeadingXLargeTall: MultipleSizingTokens { get }
 
-    var sizeIconWithTypeBodySmallShort: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeBodySmallMedium: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeBodySmallTall: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeBodySmallShort: MultipleSizingTokens { get }
+    var sizeIconWithTypeBodySmallMedium: MultipleSizingTokens { get }
+    var sizeIconWithTypeBodySmallTall: MultipleSizingTokens { get }
 
-    var sizeIconWithTypeBodyMediumShort: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeBodyMediumMedium: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeBodyMediumTall: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeBodyMediumShort: MultipleSizingTokens { get }
+    var sizeIconWithTypeBodyMediumMedium: MultipleSizingTokens { get }
+    var sizeIconWithTypeBodyMediumTall: MultipleSizingTokens { get }
 
-    var sizeIconWithTypeBodyLargeShort: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeBodyLargeMedium: MultipleSizingSemanticToken { get }
-    var sizeIconWithTypeBodyLargeTall: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeBodyLargeShort: MultipleSizingTokens { get }
+    var sizeIconWithTypeBodyLargeMedium: MultipleSizingTokens { get }
+    var sizeIconWithTypeBodyLargeTall: MultipleSizingTokens { get }
 
     var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { get }
     var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { get }
@@ -80,16 +80,16 @@ public protocol SizingSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Max width typography
 
-    var sizeMaxWidthTypeDisplaySmall: MultipleSizingSemanticToken { get }
-    var sizeMaxWidthTypeDisplayMedium: MultipleSizingSemanticToken { get }
-    var sizeMaxWidthTypeDisplayLarge: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeDisplaySmall: MultipleSizingTokens { get }
+    var sizeMaxWidthTypeDisplayMedium: MultipleSizingTokens { get }
+    var sizeMaxWidthTypeDisplayLarge: MultipleSizingTokens { get }
 
-    var sizeMaxWidthTypeHeadingSmall: MultipleSizingSemanticToken { get }
-    var sizeMaxWidthTypeHeadingMedium: MultipleSizingSemanticToken { get }
-    var sizeMaxWidthTypeHeadingLarge: MultipleSizingSemanticToken { get }
-    var sizeMaxWidthTypeHeadingXLarge: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeHeadingSmall: MultipleSizingTokens { get }
+    var sizeMaxWidthTypeHeadingMedium: MultipleSizingTokens { get }
+    var sizeMaxWidthTypeHeadingLarge: MultipleSizingTokens { get }
+    var sizeMaxWidthTypeHeadingXLarge: MultipleSizingTokens { get }
 
-    var sizeMaxWidthTypeBodySmall: MultipleSizingSemanticToken { get }
-    var sizeMaxWidthTypeBodyMedium: MultipleSizingSemanticToken { get }
-    var sizeMaxWidthTypeBodyLarge: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeBodySmall: MultipleSizingTokens { get }
+    var sizeMaxWidthTypeBodyMedium: MultipleSizingTokens { get }
+    var sizeMaxWidthTypeBodyLarge: MultipleSizingTokens { get }
 }

@@ -36,7 +36,7 @@ final class TypographyCompositeSemanticTokenTests: XCTestCase {
         let third = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold750)
         let fourth = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold550)
         let fifth = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold550)
-        let sixth = MultipleSizingSemanticToken(compact: 0, regular: 0)
+        let sixth = MultipleSizingTokens(compact: 0, regular: 0)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

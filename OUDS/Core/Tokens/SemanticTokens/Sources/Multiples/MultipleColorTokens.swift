@@ -17,7 +17,7 @@ import OUDSFoundations
 
 /// Semantic tokens which will wrap a combination of `ColorRawToken` depending to color scheme.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
-public final class MultipleColorRawToken: NSObject {
+public final class MultipleColorTokens: NSObject {
 
     /// For **light** mode scheme
     public let light: ColorRawToken
@@ -37,7 +37,7 @@ public final class MultipleColorRawToken: NSObject {
     /// - Parameter value: The `ColorRawToken` to apply wether the device is in *light* and *dark* mode
     public convenience init?(_ value: ColorRawToken?) {
         guard let value = value else {
-            OUDSLogger.error("Tried to define a MultipleColorRawToken with a nil unique value!")
+            OUDSLogger.error("Tried to define a MultipleColorTokens with a nil unique value!")
             return nil
         }
         self.init(value)
@@ -58,7 +58,7 @@ public final class MultipleColorRawToken: NSObject {
     ///    - dark: The `ColorRawToken` to apply if device in *dark* mode
     public convenience init?(light: ColorRawToken?, dark: ColorRawToken?) {
         guard let light = light, let dark = dark else {
-            OUDSLogger.error("Tried to define a MultipleColorRawToken with at least one nil value! (light = '\(light ?? "nil")', dark = '\(dark ?? "nil")')")
+            OUDSLogger.error("Tried to define a MultipleColorTokens with at least one nil value! (light = '\(light ?? "nil")', dark = '\(dark ?? "nil")')")
             return nil
         }
         self.init(light: light, dark: dark)
@@ -68,7 +68,7 @@ public final class MultipleColorRawToken: NSObject {
     /// as a `MultipleColorRawToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     public override func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleColorRawToken else { return false }
+        guard let other = object as? MultipleColorTokens else { return false }
         return self.light == other.light && self.dark == other.dark
     }
 }

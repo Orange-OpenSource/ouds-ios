@@ -22,7 +22,7 @@ extension InverseTheme {
 
     // MARK: Semantic token - Elevation - Color - Focus
 
-    public override var elevationColorFocus: ElevationColorSemanticToken { MultipleColorRawToken( ColorRawTokens.colorFunctionalLightGray160) }
+    public override var elevationColorFocus: ElevationColorSemanticToken { MultipleColorTokens( ColorRawTokens.colorFunctionalLightGray160) }
 
     // MARK: Semantic token - Elevation - Box shadow
 

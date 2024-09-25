@@ -17,7 +17,7 @@ import OUDSFoundations
 
 /// Semantic tokens which will wrap a combination of `ElevationCompositeRawToken` depending to color scheme.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
-public final class MultipleElevationCompositeRawToken: NSObject {
+public final class MultipleElevationTokens: NSObject {
 
     /// For **light** mode scheme
     public let light: ElevationCompositeRawToken
@@ -42,10 +42,10 @@ public final class MultipleElevationCompositeRawToken: NSObject {
     }
 
     /// Returns `true` if `self` and `object` has the same `light` and `dark` values and with `object`
-    /// as a `MultipleElevationCompositeRawToken`. Otherwise returns `false`.
+    /// as a `MultipleElevationTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     public override func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleElevationCompositeRawToken else { return false }
+        guard let other = object as? MultipleElevationTokens else { return false }
         return self.light == other.light && self.dark == other.dark
     }
 }

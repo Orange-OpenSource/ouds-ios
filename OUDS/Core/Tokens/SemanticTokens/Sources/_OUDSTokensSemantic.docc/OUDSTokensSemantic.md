@@ -56,7 +56,7 @@ If you need to define Swift `typealias`, update the suitable file in the *TypeAl
 Please, respect the nomenclature of the files, e.g. for a new family "Awesome semantic" tokens:
 - values must be in `AwesomeSemanticTokens.swift`
 - type aliases must be in `AwesomeSemanticTokens+Aliases.swift`
-- mutiple objects must be in `MultipleAwesome@Token.swift` (where @ can be "Raw" or "Semantic" depending to your needs)
+- mutiple objects must be in `MultipleAwesomeTokens.swift`
 
 Then, update the unit tests. For each semantic tokens we check if a subtheme can override the token, i.e. update the `MockTheme` by overring the property with a fake value, then compare it to the `OUDSTheme` containing a default value. If you have defined also composite objects, add unit tests to check if they do their job.
 
