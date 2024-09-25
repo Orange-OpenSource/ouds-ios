@@ -13,6 +13,9 @@
 
 import OUDSTokensRaw
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
+
 /// This is a group of semantic tokens for **typography**.
 /// It defines all typography semantic tokens a theme must have
 /// (`TypographyFontFamilySemanticToken`, `TypographyFontWeightSemanticToken`, `TypographyFontSizeSemanticToken`, `TypographyFontLineHeightSemanticToken`).

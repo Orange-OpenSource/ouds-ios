@@ -11,6 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
+
 /// This is a group of semantic tokens for **dimensions**.
 /// It defines all `DimensionSemanticToken` a theme must have.
 ///

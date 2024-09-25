@@ -15,17 +15,10 @@ import Foundation
 import SwiftUI
 import OUDSTokensRaw
 
-/// In the global design system tool, the verbs of "brand colors" are used, and at this level mean simply raw tokens of colors.
-public typealias ColorOrangeBrandRawToken = ColorRawToken
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
 
-/// In the global design system tool, the verbs of "decorative colors" are used, and at this level mean simply raw tokens of colors, but decorative ones
-public typealias ColorOrangeDecorativeRawToken = ColorRawToken
-
-/// This extension helps to add new raw tokens for this theme.
-/// Type aliases here are just for consistancy reasons.
-/// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
-///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
-public enum OrangeBrandColorRawTokens {
+extension OrangeBrandColorRawTokens {
 
     // MARK: Primitive token - Colors - Orange - Brand - Orange
 

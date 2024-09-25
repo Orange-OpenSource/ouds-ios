@@ -17,5 +17,6 @@
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
 public enum ElevationRawTokens {
 
-    // Note: So as to help the Figma JSON to Swift parser the values have been added in the Values folder
+    // ଘ( ･ω･)_/ﾟ･:*:･｡☆
+    // Note: So as to help the Figma-JSON-to-Swift parser the values have been added in the Values folder
 }
