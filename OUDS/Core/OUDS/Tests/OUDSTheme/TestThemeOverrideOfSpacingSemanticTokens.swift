@@ -91,7 +91,7 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.spaceFixedJumbo, abstractTheme.spaceFixedJumbo)
         XCTAssertTrue(inheritedTheme.spaceFixedJumbo == MockTheme.mockThemeSpaceRawToken)
     }
-    
+
     // MARK: - Semantic token - Spacing - Layout fluid
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledNone() throws {
