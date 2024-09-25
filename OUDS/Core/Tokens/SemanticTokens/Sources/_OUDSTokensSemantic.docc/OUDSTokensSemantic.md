@@ -66,7 +66,6 @@ But beware, if you change the name of the property or if you move it from a `pro
 
 If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let yout users know the variables have been changed.
 
-
 ## Topics
 
 ### Group
