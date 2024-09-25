@@ -28,6 +28,21 @@ extension OUDSTheme: ColorSemanticTokens {
 }
 ```
 
+## Architecture
+
+The *Composites* folder contains some _composite class_ defined to pack double values for dedicated needs, like size classes management (_regular_ or _compact_ device modes), and also for color schemes management (_light_ and _dark_ modes).
+This *composites* are not the same as the ones defined in the *Figma* design systme, they are just utilities to handle tuple of values, without the syntaxe of tuples and with some helper functions.
+
+The *TypeAliases* folder contains all the *typealias* values used for the semantic tokens.
+Indeed these aliases are here to bring clarity and meanings in the library, and also to help users (i.e. developers) to know what kind of objects they handle with the same vocabulary as the one used in *Figma*, and in general, in the whole design system. They can be seen as a ligh level of abstraction with meanings, without having to define real types with `struct` or `class`.
+Type aliases here point to raw tokens aliases, thus by transition they point to real types.
+
+The *Values* folder is maybe the hotter one.
+In fact all the semantic tokens values are defined there, and if a JSON to Swift parser generate files, these files must be stored there. We need any _theme_ can embed and override all or some of the tokens, and if a new theme must be implemented from nothing, it must implement all the semantic tokens. Thus each semantic tokens group is declared in a Swft `protocol`.
+These protocols list all semantic tokens for each "family". Thus, any theme implementation (at least `OUDSTheme`) must implement the values, and if possible through a _Swift_ extension of the `class` so as to keep seperated the objects.
+
+In a nutshell, declare the tokens somewhere in protocols, and define theme in theme implementation.
+
 ## Topics
 
 ### Group
