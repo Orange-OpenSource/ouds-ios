@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensRaw
 
 /// Composite semantic tokens which will wrap a combination of `DimensionRawToken` depending to viewports.
-public final class SpacingCompositeSemanticToken: NSObject {
+public final class MultipleSpacingTokens: NSObject {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: DimensionRawToken
@@ -33,10 +33,10 @@ public final class SpacingCompositeSemanticToken: NSObject {
     }
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
-    /// as a `SpacingCompositeSemanticToken`. Otherwise returns `false`.
+    /// as a `MultipleSpacingTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     public override func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? SpacingCompositeSemanticToken else { return false }
+        guard let other = object as? MultipleSpacingTokens else { return false }
         return self.compact == other.compact && self.regular == other.regular
     }
 }

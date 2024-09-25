@@ -22,16 +22,16 @@ public protocol SpacingSemanticTokens {
 
     // MARK: Semantic token - Spacing - Scaled
 
-    var spaceScaledNone: SpacingCompositeSemanticToken { get }
-    var spaceScaledSmash: SpacingCompositeSemanticToken { get }
-    var spaceScaledShortest: SpacingCompositeSemanticToken { get }
-    var spaceScaledShorter: SpacingCompositeSemanticToken { get }
-    var spaceScaledShort: SpacingCompositeSemanticToken { get }
-    var spaceScaledMedium: SpacingCompositeSemanticToken { get }
-    var spaceScaledTall: SpacingCompositeSemanticToken { get }
-    var spaceScaledTaller: SpacingCompositeSemanticToken { get }
-    var spaceScaledTallest: SpacingCompositeSemanticToken { get }
-    var spaceScaledSpacious: SpacingCompositeSemanticToken { get }
+    var spaceScaledNone: MultipleSpacingTokens { get }
+    var spaceScaledSmash: MultipleSpacingTokens { get }
+    var spaceScaledShortest: MultipleSpacingTokens { get }
+    var spaceScaledShorter: MultipleSpacingTokens { get }
+    var spaceScaledShort: MultipleSpacingTokens { get }
+    var spaceScaledMedium: MultipleSpacingTokens { get }
+    var spaceScaledTall: MultipleSpacingTokens { get }
+    var spaceScaledTaller: MultipleSpacingTokens { get }
+    var spaceScaledTallest: MultipleSpacingTokens { get }
+    var spaceScaledSpacious: MultipleSpacingTokens { get }
 
     // MARK: Semantic token - Spacing - Fixed
 

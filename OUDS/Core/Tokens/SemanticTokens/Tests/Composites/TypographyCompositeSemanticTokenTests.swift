@@ -28,7 +28,7 @@ final class TypographyCompositeSemanticTokenTests: XCTestCase {
         XCTAssertTrue(token.regular == regular)
     }
 
-    /// Tests comparisons between two `SpacingCompositeSemanticToken` to ensure tokens are considered as equal
+    /// Tests comparisons between two `TypographyCompositeSemanticToken` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
         let first = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold550)

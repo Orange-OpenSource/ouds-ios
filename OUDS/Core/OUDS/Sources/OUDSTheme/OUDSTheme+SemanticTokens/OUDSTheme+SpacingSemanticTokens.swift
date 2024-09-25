@@ -25,16 +25,16 @@ extension OUDSTheme: SpacingSemanticTokens {
 
     // MARK: Semantic token - Spacing - Layout fluid
 
-    @objc open var spaceScaledNone: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension0, regular: DimensionRawTokens.dimension0) }
-    @objc open var spaceScaledSmash: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension25, regular: DimensionRawTokens.dimension50) }
-    @objc open var spaceScaledShortest: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension50, regular: DimensionRawTokens.dimension100) }
-    @objc open var spaceScaledShorter: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension100, regular: DimensionRawTokens.dimension150) }
-    @objc open var spaceScaledShort: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension150, regular: DimensionRawTokens.dimension200) }
-    @objc open var spaceScaledMedium: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension300) }
-    @objc open var spaceScaledTall: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension400) }
-    @objc open var spaceScaledTaller: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension500) }
-    @objc open var spaceScaledTallest: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension600) }
-    @objc open var spaceScaledSpacious: SpacingCompositeSemanticToken { SpacingCompositeSemanticToken(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension700) }
+    @objc open var spaceScaledNone: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension0, regular: DimensionRawTokens.dimension0) }
+    @objc open var spaceScaledSmash: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension25, regular: DimensionRawTokens.dimension50) }
+    @objc open var spaceScaledShortest: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension50, regular: DimensionRawTokens.dimension100) }
+    @objc open var spaceScaledShorter: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension100, regular: DimensionRawTokens.dimension150) }
+    @objc open var spaceScaledShort: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension150, regular: DimensionRawTokens.dimension200) }
+    @objc open var spaceScaledMedium: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension300) }
+    @objc open var spaceScaledTall: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension400) }
+    @objc open var spaceScaledTaller: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension500) }
+    @objc open var spaceScaledTallest: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension600) }
+    @objc open var spaceScaledSpacious: MultipleSpacingTokens { MultipleSpacingTokens(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension700) }
 
     // MARK: Semantic token - Spacing - Layout fix
 
