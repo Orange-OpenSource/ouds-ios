@@ -101,7 +101,7 @@ clean_repo() {
 show_help() {
     echo "This script will use swift-docc-plugin to build HTML documentation of the OUDS iOS Swift Package"
     echo "It can also update the Git repository."
-    echo -e "Usage: $0 [--help] --libversion=VERSION [--usegit | --nozip | --nokeep]\n"
+    echo -e "Usage: $0 [--help] --libversion=VERSION [--usegit | --nozip]\n"
     echo "Options:"
     echo "  --help                Shows this help message."
     echo "  --libversion=VERSION  Specifies the library version to include in HTML page (mandatory)."
