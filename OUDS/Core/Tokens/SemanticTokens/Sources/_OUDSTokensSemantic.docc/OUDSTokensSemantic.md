@@ -48,6 +48,7 @@ In a nutshell, declare the tokens somewhere in protocols, and define theme in th
 ### How to add semantic tokens
 
 First, you need to define which from family this semantic comes. We have today 9 families: *border*, *color*, *dimension*, *elevation*, *grid*, *opacity*, *sizing*, *spacing* and *typography*.
+
 If your token is not from one of these groups, maybe you should redesign your token or create a new family. To do that, you will have to create a dedicated Swift `protocol`, with a useful name, and declare as a `var` the semantic token. If you already know the family, just update the matching files.
 
 If you need to define Swift `typealias`, update the suitable file in the *TypeAliases* folder. If you think users may handle your tokens with tuples, or pack of tokens, you can add your own *composite* object.
