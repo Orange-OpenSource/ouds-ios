@@ -22,8 +22,10 @@ extension XCTestCase {
     }
 
     /// Checks if the `value` is a multiple of `factor`
-    public func XCTAssertMultipleOf(_ value: Double, factor: Int, file: StaticString = #file, line: UInt = #line) {
-        let remaining = Int(value) % factor
+    public func XCTAssertMultipleOf(_ value: Double, factor: Double, file: StaticString = #file, line: UInt = #line) {
+        let value = Int(value)
+        let factor = Int(factor)
+        let remaining = value % factor
         // If multiple, remaining will be 0 OR between 0 and factor if value less than factor
         XCTAssertTrue(remaining == 0 || remaining < factor, "Current value: \(value) % \(factor) = \(remaining)")
     }
