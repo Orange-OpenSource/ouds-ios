@@ -17,15 +17,15 @@ AUTHORS.txt @pylapp
 CONTRIBUTORS.txt @pylapp
 LICENSE @pylapp
 
-README.md @ludovic35 @pylapp
-CHANGELOG.md @ludovic35 @pylapp
+README.md @ludovic35 @pylapp @Tayebsed93
+CHANGELOG.md @ludovic35 @pylapp @Tayebsed93
 DEVELOP.md @ludovic35 @pylapp
 CONTRIBUTING.md @ludovic35 @pylapp
-THIRD-PARTY.md @ludovic35 @pylapp
-NOTICE.txt @ludovic35 @pylapp
+THIRD-PARTY.md @pylapp
+NOTICE.txt @pylapp
 
 # Project
 
-/.github/ @pylapp @ludovic35
-/Showcase/ @pylapp @ludovic35
-/OUDS/ @pylapp @ludovic35
+/.github/ @pylapp
+/Showcase/ @pylapp @ludovic35 @Tayebsed93
+/OUDS/ @pylapp @ludovic35 @Tayebsed93
