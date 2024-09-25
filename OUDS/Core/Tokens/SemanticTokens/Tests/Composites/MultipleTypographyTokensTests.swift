@@ -15,27 +15,27 @@ import XCTest
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-/// To ensure the `TypographyCompositeSemanticToken` is tested as a wrapper of semantic tokens for compact and regular size classes.
-final class TypographyCompositeSemanticTokenTests: XCTestCase {
+/// To ensure the `MultipleTypographyTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+final class MultipleTypographyTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined
     func testInit() {
         let compact = TypographyRawTokens.typeRegular150
         let regular = TypographyRawTokens.typeBold550
-        let token = TypographyCompositeSemanticToken(compact: compact, regular: regular)
+        let token = MultipleTypographyTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)
         XCTAssertTrue(token.regular == regular)
     }
 
-    /// Tests comparisons between two `TypographyCompositeSemanticToken` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleTypographyTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold550)
-        let second = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold750)
-        let third = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold750)
-        let fourth = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold550)
-        let fifth = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold550)
+        let first = MultipleTypographyTokens(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold550)
+        let second = MultipleTypographyTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold750)
+        let third = MultipleTypographyTokens(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold750)
+        let fourth = MultipleTypographyTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold550)
+        let fifth = MultipleTypographyTokens(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold550)
         let sixth = MultipleSizingTokens(compact: 0, regular: 0)
 
         XCTAssertTrue(first.isEqual(first))

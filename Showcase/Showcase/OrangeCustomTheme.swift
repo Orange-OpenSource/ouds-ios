@@ -64,6 +64,6 @@ extension OrangeCustomTheme { // For ButtonsComponentTokens
     override var buttonWidth: SizingSemanticToken { DimensionRawTokens.dimension2000 }
     override var buttonHeight: SizingSemanticToken { DimensionRawTokens.dimension800 }
 
-    override var buttonTypography: TypographyCompositeSemanticToken { typeDisplaySmall }
+    override var buttonTypography: MultipleTypographyTokens { typeDisplaySmall }
 }
 // swiftlint:enable line_length

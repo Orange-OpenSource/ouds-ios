@@ -22,14 +22,14 @@ extension View {
     ///    - familyName: The font family name to load later (e.g. "Luciole")
     ///    - token: The typography token to use to get useful values for `compact` or `regular` mode
     /// - Returns: The `View` with the custom font applied
-    func customFont(familyName: String, typography token: TypographyCompositeSemanticToken) -> some View {
+    func customFont(familyName: String, typography token: MultipleTypographyTokens) -> some View {
         self.modifier(CustomFontModifier(token: token, fontFamilyName: familyName))
     }
 
     /// Applies a `FontModifier` to use the system font on the current `View` with a specific token
     /// - Parameter token: The typography token to use to get useful values for `compact` or `regular` mode
     /// - Returns: The `View` with the custom font applied
-    func systemFont(typography token: TypographyCompositeSemanticToken) -> some View {
+    func systemFont(typography token: MultipleTypographyTokens) -> some View {
         self.modifier(FontModifier(token: token))
     }
 }

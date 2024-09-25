@@ -19,6 +19,7 @@ import OUDSTokensSemantic
 // [File to generate with the tokenator]
 
 // swiftlint:disable line_length
+
 /// Defines basic values common to all themes for `SpacingSemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: SpacingSemanticTokens {
@@ -142,4 +143,3 @@ extension OUDSTheme: SpacingSemanticTokens {
     @objc open var spaceRowGapIsIconTall: SpacingGapStackSemanticToken { DimensionRawTokens.dimension100 }
     @objc open var spaceRowGapIsIconTaller: SpacingGapStackSemanticToken { DimensionRawTokens.dimension200 }
 }
-// swiftlint:enable line_length

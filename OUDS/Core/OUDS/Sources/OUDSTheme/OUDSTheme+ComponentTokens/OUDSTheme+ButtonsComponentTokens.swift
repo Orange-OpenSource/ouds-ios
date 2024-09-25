@@ -33,5 +33,5 @@ extension OUDSTheme: ButtonsComponentTokens {
     @objc open var buttonWidth: SizingSemanticToken { DimensionRawTokens.dimension3000 }
     @objc open var buttonHeight: SizingSemanticToken { DimensionRawTokens.dimension1000 }
 
-    @objc open var buttonTypography: TypographyCompositeSemanticToken { typeDisplayMedium }
+    @objc open var buttonTypography: MultipleTypographyTokens { typeDisplayMedium }
 }
