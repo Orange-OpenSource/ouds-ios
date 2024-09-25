@@ -157,23 +157,12 @@ extension String { // The OUDS library still exposes this comptuer property
 ## Add, edit or remove tokens
 
 If you need to add, edit or remove tokens, you will have to follow some simple steps.
-You may need to [create an issue](https://github.com/Orange-OpenSource/ouds-ios/issues) or [a pull request](https://github.com/Orange-OpenSource/ouds-ios/pulls) to submit the evolutions you want.
+You may need to [create an issue](https://github.com/Orange-OpenSource/ouds-ios/issues) or [a pull request](https://github.com/Orange-OpenSource/ouds-ios/pulls) to submit the evolutions you want. Use for example the _Token Update Request_ issue template.
 
 ### For raw tokens
 
-First, find the file containing the tokens you target. For example, _raw tokens_ are listed and gathered in dedicated files (one file for elevation tokens, one file for dimensions tokens, etc.).
-Then, in the _enum_, add as _static let_ the new raw rotken you want, or update or remove the one you target. Beware, some of them are not *raw types* but *composite types* because they wrap severla values.
-
-Do not forget to update the unit tests. Indeed we don't want to test realy the values of each raw token, because for each update of values the unit tests will have to be updated, and it is time wasting. Thus we only test relationship between tokens. For exemple, for a color palette we ensure the colors are lighter and lighter (or darker and darker). For sizes we check if a variable remains lower than the next one, etc.
-
-Beware, if you want remove tokens and if the raw tokens you want to remove are shared to others, prefer keeping the old value until the next release and flag it as deprecated so as to avoid to break the backward compatibility.
+You can refer to the *OUDSTokensRaw* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/)
 
 ### For semantic tokens
 
-Semantic tokens are declared in dedicated protocols, i.e. each semantic token family is gathered in its own protocol definition. It allows to not spread tokens everywhere, keep things clean, and will force themes to implement them so as to be sure the tokens will always been defined.
-You may need thus to add the semantic tokens you want in the suitable protocol, then update the theme which defines the vavlues by implementing the protocol.
-You can declare a semantic token (or several) in a protocol, and define them in your theme assigning in the end a raw token as value.
-
-Do not forget to update the unit tests. Indeed we don't tests the real values of the semantic tokens which can change a lot, but we test if the semantic tokens can be overriden, i.e. if a theme which is a subclass of an higher level them can change the value for each semantic token. It will ensure that tokens remain overridable.
-
-Beware, if you want remove tokens and if the semantic tokens you want to remove are shared to others, prefer keeping the old value until the next release and flag it as deprecated so as to avoid to break the backward compatibility.
+You can refer to the *OUDSTokensSemantic* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/

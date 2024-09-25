@@ -14,7 +14,7 @@ Using more simple and primitive types will help also to test the library. With a
 
 We also choose to add in _extension_ all the tokens values in a separated file so as to help the *Figma*-JSON-to-Swift parser to build files to copy and paste easily in the project and keeping all the other objects.
 
-Example for ``ColorRawTokens`:
+Example for ``ColorRawTokens``:
 
 ```swift
 // Define types for color raw tokens
@@ -53,6 +53,33 @@ The *Values* folder is maybe the hotter one.
 In fact all the raw tokens values are defined there, and if a JSON to Swift parser generate files, these files must be stored there. It contains only pure raw tokens Swift values, without any type aliases definitions or objects declarations.
 
 In a nutshell, place the generated values somewhere, and the types and objects elsewhere.
+
+## Raw tokens management
+
+### How to add raw tokens
+
+First, you need to define which from family this semantic comes. We have today up to 7 families: *border*, *color*, *dimension*, *elevation*, *grid*, *opacity* and *typography*.
+If your token is not from one of these groups, maybe you should redesign your token or create a new family. To do that, you will have to create a dedicated Swift `enum`, with a useful name, and declare as a `static let` the raw tokens in an `extension`. If you already know the family, just update the matching files.
+
+If you need to define Swift `typealias`, update the suitable file in the *TypeAliases* folder.
+
+Please, respect the nomenclature of the files, e.g. for a new family "Awesome raw" tokens:
+- declaration of raw tokens family must be `AwesomeRawTokens.swift`
+- values must be in `AwesomeRawTokens+Values.swift`
+- type aliases must be in `AwesomeRawTokens+Aliases.swift`
+- composites objects must be in `AwesomeRawTokens+Composites.swift`
+
+*Composites* here are notions from *Figma* and are here to pack several raw tokens together to expose a plain, useful and usable object.
+
+Then, update the unit tests. We do not test the raw tokens values as they are, because these values will be generated and keeping up to date the unit tests may be time wasting.
+But we can however test the relationships between tokens, for exemple for colors if they go lighter and lighter, or for dimensions if they go smaller and smaller. If some raw tokens like font weights strongly rely on the values, we still test these values.
+
+### How to update or remove raw tokens
+
+Quite simple, find the raw token you want to update or remove, and update or remove it.
+But beware, if you change the name of the property or if you move it from an `enum` to another, or if you remove the token, you must keep retrocompatibility as much as possible so as to avoid to break any public API. Keep also the CHANGELOG and/or the release updated with some BREAKING CHANGE notification, and also the Git history clean.
+
+If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let yout users know the variables have been changed.
 
 ## Topics
 
