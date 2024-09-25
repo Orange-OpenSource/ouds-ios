@@ -29,6 +29,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens
 
     public override var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
     public override var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
+<<<<<<< HEAD
     public override var ftiTitleColor: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
 
     public override var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightBodyDefault }
@@ -38,6 +39,17 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens
     public override var ftiBackgroundColor: ColorSemanticToken { colorBackgroundDefaultPrimary }
 
     public override var ftiBorderColor: ColorSemanticToken { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorDecorativeShockingPink800, dark: OrangeBrandColorRawTokens.colorDecorativeShockingPink200) }
+=======
+    public override var ftiTitleColor: ColorSemanticToken { MultipleColorRawToken(ColorRawTokens.colorFunctionalDodgerBlue500) }
+
+    public override var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightBodyDefault }
+    public override var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
+    public override var ftiSubtitleColor: ColorSemanticToken { MultipleColorRawToken(ColorRawTokens.colorFunctionalMalachite500) }
+
+    public override var ftiBackgroundColor: ColorSemanticToken { colorBackgroundDefaultPrimary }
+
+    public override var ftiBorderColor: ColorSemanticToken { MultipleColorRawToken(light: OrangeBrandColorRawTokens.colorDecorativeShockingPink800, dark: OrangeBrandColorRawTokens.colorDecorativeShockingPink200) }
+>>>>>>> 3e14861c (refactor: multiple tokens for elevations)
 
     public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 
@@ -46,7 +58,11 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens
 
 extension OrangeCustomTheme { // For ColorSemanticTokens
 
+<<<<<<< HEAD
     override var colorBackgroundDefaultPrimary: ColorSemanticToken! { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.colorFunctionalSun800) }
+=======
+    override var colorBackgroundDefaultPrimary: ColorSemanticToken! { MultipleColorRawToken(light: ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.colorFunctionalSun800) }
+>>>>>>> 3e14861c (refactor: multiple tokens for elevations)
 }
 
 extension OrangeCustomTheme { // For ButtonsComponentTokens
@@ -58,8 +74,13 @@ extension OrangeCustomTheme { // For ButtonsComponentTokens
     override var buttonBorderWidth: BorderWidthSemanticToken { borderWidthDefault }
     override var buttonBorderRadius: BorderRadiusSemanticToken { borderRadiusShort }
 
+<<<<<<< HEAD
     override var buttonForegroundColor: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralMutedLower!, dark: sysColorBrandNeutralMutedWhite!) }
     override var buttonBackgroundColor: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandPositiveLowest!, dark: sysColorBrandPositiveHighest!) }
+=======
+    override var buttonForegroundColor: ColorSemanticToken { MultipleColorRawToken(light: sysColorBrandNeutralMutedLower!, dark: sysColorBrandNeutralMutedWhite!) }
+    override var buttonBackgroundColor: ColorSemanticToken { MultipleColorRawToken(light: sysColorBrandPositiveLowest!, dark: sysColorBrandPositiveHighest!) }
+>>>>>>> 3e14861c (refactor: multiple tokens for elevations)
 
     override var buttonWidth: SizingSemanticToken { DimensionRawTokens.dimension2000 }
     override var buttonHeight: SizingSemanticToken { DimensionRawTokens.dimension800 }

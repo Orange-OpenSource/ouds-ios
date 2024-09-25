@@ -24,11 +24,8 @@ extension OUDSTheme: FormsTextInputComponentTokens {
 
     @objc open var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightHeading }
     @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
-<<<<<<< HEAD
+
     @objc open var ftiTitleColor: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray640) }
-=======
-    @objc open var ftiTitleColor: ColorSemanticToken { MultipleColorSemanticToken(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray640) }
->>>>>>> 3e552ea8 (refactor: use of composite colors for elevations)
 
     @objc open var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightDisplay }
     @objc open var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }

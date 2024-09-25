@@ -22,15 +22,8 @@ extension MockTheme {
     static let mockThemeElevationBlurRawToken: ElevationRawToken = 816
     static let mockThemeElevationColorRawToken: ColorRawToken = ColorRawTokens.colorFunctionalMalachite500
     static let mockThemeElevationMultipleColorSemanticToken: ElevationColorSemanticToken = ElevationColorSemanticToken(mockThemeElevationColorRawToken)
-<<<<<<< HEAD
     static let mockThemeElevationCompositeRawToken = ElevationCompositeRawToken(x: 118, y: 712, blur: 118, color: ColorRawTokens.colorFunctionalDodgerBlue800)
     static let mockThemeElevationCompositeSemanticToken = ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_1_600)
-=======
-    static let mockThemeElevationCompositeRawToken: ElevationCompositeRawToken = ElevationCompositeRawToken(x: 118,
-                                                                                                   y: 712,
-                                                                                                   blur: 118,
-                                                                                                   color: ColorRawTokens.colorFunctionalDodgerBlue800)
->>>>>>> 3e552ea8 (refactor: use of composite colors for elevations)
 
     // MARK: Semantic token - Elevation - X
 
