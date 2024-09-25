@@ -23,7 +23,7 @@ public typealias ElevationYSemanticToken = ElevationRawToken
 public typealias ElevationBlurSemanticToken = ElevationRawToken
 
 /// Basically an elevation semantic token for shadow colors is a raw token for colors, to keep grammar clean and clear with design system grammar.
-public typealias ElevationColorSemanticToken = ColorRawToken
+public typealias ElevationColorSemanticToken = MultipleColorTokens
 
 /// Basically an elevation semantic token for box shadow is a raw token for box shadow, with the same final type, to keep grammar clean and clear with design system grammar.
-public typealias ElevationCompositeSemanticToken = ElevationCompositeRawToken
+public typealias ElevationCompositeSemanticToken = MultipleElevationTokens

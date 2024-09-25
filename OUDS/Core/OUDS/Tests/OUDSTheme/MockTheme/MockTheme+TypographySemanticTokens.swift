@@ -22,7 +22,7 @@ extension MockTheme {
     static let mockThemeTypographyFontWeightRawToken: TypographyFontWeightRawToken = "stiicckkyyyy"
     static let mockThemeTypographyFontSizeRawToken: TypographyFontSizeRawToken = 666
     static let mockThemeTypographyFontLineHeightRawToken: TypographyFontLineHeightRawToken = 321
-    static let mockThemeTypographyCompositeSemanticToken: TypographyCompositeSemanticToken = TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeBold1850, regular: TypographyRawTokens.typeBold1850)
+    static let mockThemeMultipleTypographyTokens: MultipleTypographyTokens = MultipleTypographyTokens(compact: TypographyRawTokens.typeBold1850, regular: TypographyRawTokens.typeBold1850)
 
     // MARK: Semantic token - Typography - Font - Family
 
@@ -115,40 +115,40 @@ extension MockTheme {
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    override var typeDisplayLarge: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeDisplayMedium: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeDisplaySmall: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
+    override var typeDisplayLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeDisplayMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeDisplaySmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    override var typeHeadingXLarge: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeHeadingLarge: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeHeadingMedium: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeHeadingSmall: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
+    override var typeHeadingXLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeHeadingLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeHeadingMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeHeadingSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    override var typeBodyDefaultLarge: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeBodyDefaultMedium: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeBodyDefaultSmall: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeBodyStrongLarge: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeBodyStrongMedium: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeBodyStrongSmall: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
+    override var typeBodyDefaultLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeBodyDefaultMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeBodyDefaultSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeBodyStrongLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeBodyStrongMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeBodyStrongSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    override var typeLabelDefaultXLarge: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeLabelDefaultLarge: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeLabelDefaultMedium: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeLabelDefaultSmall: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeLabelStrongXLarge: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeLabelStrongLarge: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeLabelStrongMedium: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeLabelStrongSmall: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
+    override var typeLabelDefaultXLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeLabelDefaultLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeLabelDefaultMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeLabelDefaultSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeLabelStrongXLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeLabelStrongLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeLabelStrongMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeLabelStrongSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    override var typeCodeMedium: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
-    override var typeCodeSmall: TypographyCompositeSemanticToken { Self.mockThemeTypographyCompositeSemanticToken }
+    override var typeCodeMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override var typeCodeSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
 }
 // swiftlint:enable line_length

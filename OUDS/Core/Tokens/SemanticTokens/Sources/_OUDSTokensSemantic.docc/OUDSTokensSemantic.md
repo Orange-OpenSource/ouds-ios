@@ -30,8 +30,9 @@ extension OUDSTheme: ColorSemanticTokens {
 
 ## Architecture
 
-The *Composites* folder contains some _composite class_ defined to pack double values for dedicated needs, like size classes management (_regular_ or _compact_ device modes), and also for color schemes management (_light_ and _dark_ modes).
-This *composites* are not the same as the ones defined in the *Figma* design systme, they are just utilities to handle tuple of values, without the syntaxe of tuples and with some helper functions.
+The *Multiples* folder contains some _composite class_ defined to pack double values for dedicated needs, like size classes management (_regular_ or _compact_ device modes), and also for color schemes management (_light_ and _dark_ modes).
+Such *composites* are not the same as the ones defined in the *Figma* design system, they are just utilities to handle tuple of values, without the syntaxe of tuples and with some helper functions.
+We would like to define one class for all combinations of things depending to light and dark modes, and another for regular and compact modes. However, it implies to use _Swift generics_ and it is not compatible with Objective-C runtime (we use through `@objc` keyword).
 
 The *TypeAliases* folder contains all the *typealias* values used for the semantic tokens.
 Indeed these aliases are here to bring clarity and meanings in the library, and also to help users (i.e. developers) to know what kind of objects they handle with the same vocabulary as the one used in *Figma*, and in general, in the whole design system. They can be seen as a ligh level of abstraction with meanings, without having to define real types with `struct` or `class`.
@@ -48,6 +49,7 @@ In a nutshell, declare the tokens somewhere in protocols, and define theme in th
 ### How to add semantic tokens
 
 First, you need to define which from family this semantic comes. We have today 9 families: *border*, *color*, *dimension*, *elevation*, *grid*, *opacity*, *sizing*, *spacing* and *typography*.
+
 If your token is not from one of these groups, maybe you should redesign your token or create a new family. To do that, you will have to create a dedicated Swift `protocol`, with a useful name, and declare as a `var` the semantic token. If you already know the family, just update the matching files.
 
 If you need to define Swift `typealias`, update the suitable file in the *TypeAliases* folder. If you think users may handle your tokens with tuples, or pack of tokens, you can add your own *composite* object.
@@ -55,7 +57,7 @@ If you need to define Swift `typealias`, update the suitable file in the *TypeAl
 Please, respect the nomenclature of the files, e.g. for a new family "Awesome semantic" tokens:
 - values must be in `AwesomeSemanticTokens.swift`
 - type aliases must be in `AwesomeSemanticTokens+Aliases.swift`
-- composites objects must be in `AwesomeSemanticTokens+Composites.swift`
+- mutiple objects must be in `MultipleAwesomeTokens.swift`
 
 Then, update the unit tests. For each semantic tokens we check if a subtheme can override the token, i.e. update the `MockTheme` by overring the property with a fake value, then compare it to the `OUDSTheme` containing a default value. If you have defined also composite objects, add unit tests to check if they do their job.
 
@@ -65,7 +67,6 @@ Quite simple, find the semantic token you want to update or remove, and update o
 But beware, if you change the name of the property or if you move it from a `protocol` to another, or if you remove the token, you must keep retrocompatibility as much as possible so as to avoid to break any public API. Keep also the CHANGELOG and/or the release updated with some BREAKING CHANGE notification, and also the Git history clean.
 
 If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let yout users know the variables have been changed.
-
 
 ## Topics
 

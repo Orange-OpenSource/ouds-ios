@@ -20,7 +20,7 @@ import SwiftUI
 
 // swiftlint:disable line_length
 /// A `ViewModifier` which will make possible to get the horizontal and vertical classes as `@Environment` values
-/// so as to define the viewport and use finaly the suitable `TypographyCompositeSemanticToken`.
+/// so as to define the viewport and use finaly the suitable `MultipleTypographyTokens`.
 /// In fact _Swift extension_ does not allow to have such stored properties, and we don't want to use *UIKit* `UIScreen.main.traitCollection` to get values
 /// which may be out of date.
 /// For more details about layouts, see [the Apple documentation about devices dimensions](https://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-size-classes)
@@ -29,7 +29,7 @@ struct TypographyModifier: ViewModifier {
     /// The name of a possible custom font family, or `nil` if the font is use is _system font_
     let customFontFamily: TypographyFontFamilyRawToken?
     /// The typography to apply for *compact* or *regular* modes
-    let typography: TypographyCompositeSemanticToken
+    let typography: MultipleTypographyTokens
 
     /// To get programatically and on the fly the horizontal layout size
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -63,7 +63,7 @@ struct TypographyModifier: ViewModifier {
     }
 
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight*, *font size* and the *line height*
-    /// depending to the current `TypographyCompositeSemanticToken`
+    /// depending to the current `MultipleTypographyTokens`
     func body(content: Content) -> some View {
         content
             .font(adaptiveFont())

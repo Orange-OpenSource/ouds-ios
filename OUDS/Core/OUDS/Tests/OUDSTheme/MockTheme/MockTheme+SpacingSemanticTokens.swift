@@ -18,20 +18,20 @@ import OUDSTokensSemantic
 extension MockTheme {
 
     static let mockThemeSpaceRawToken: DimensionRawToken = 911
-    static let mockThemeSpaceSemanticToken: SpacingCompositeSemanticToken = SpacingCompositeSemanticToken(compact: 1, regular: 151)
+    static let mockThemeSpaceSemanticToken: MultipleSpacingTokens = MultipleSpacingTokens(compact: 1, regular: 151)
 
     // MARK: Semantic token - Spacing - Layout fluid
 
-    override var spaceScaledNone: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
-    override var spaceScaledSmash: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
-    override var spaceScaledShortest: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
-    override var spaceScaledShorter: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
-    override var spaceScaledShort: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
-    override var spaceScaledMedium: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
-    override var spaceScaledTall: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
-    override var spaceScaledTaller: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
-    override var spaceScaledTallest: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
-    override var spaceScaledSpacious: SpacingCompositeSemanticToken { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledNone: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledSmash: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledShortest: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledShorter: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledShort: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledMedium: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledTall: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledTaller: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledTallest: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
+    override var spaceScaledSpacious: MultipleSpacingTokens { Self.mockThemeSpaceSemanticToken }
 
     // MARK: Semantic token - Spacing - Layout fix
 

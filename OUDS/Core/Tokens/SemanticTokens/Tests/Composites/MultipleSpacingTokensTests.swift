@@ -12,30 +12,31 @@
 //
 
 import XCTest
+import OUDSTokensRaw
 import OUDSTokensSemantic
 
-/// To ensure the `SizingCompositeSemanticToken` is tested as a wrapper of semantic tokens for compact and regular size classes.
-final class SizingCompositeSemanticTokenTests: XCTestCase {
+/// To ensure the `MultipleSpacingTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+final class MultipleSpacingTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined
     func testInit() {
-        let compact: SizingSemanticToken = 123
-        let regular: SizingSemanticToken = 456
-        let token = SizingCompositeSemanticToken(compact: compact, regular: regular)
+        let compact: DimensionRawToken = 123
+        let regular: DimensionRawToken = 456
+        let token = MultipleSpacingTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)
         XCTAssertTrue(token.regular == regular)
     }
 
-    /// Tests comparisons between two `SizingCompositeSemanticToken` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleSpacingTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = SizingCompositeSemanticToken(compact: 12, regular: 34)
-        let second = SizingCompositeSemanticToken(compact: 56, regular: 78)
-        let third = SizingCompositeSemanticToken(compact: 12, regular: 78)
-        let fourth = SizingCompositeSemanticToken(compact: 56, regular: 34)
-        let fifth = SizingCompositeSemanticToken(compact: 12, regular: 34)
-        let sixth = ColorCompositeSemanticToken("#000000")
+        let first = MultipleSpacingTokens(compact: 12, regular: 34)
+        let second = MultipleSpacingTokens(compact: 56, regular: 78)
+        let third = MultipleSpacingTokens(compact: 12, regular: 78)
+        let fourth = MultipleSpacingTokens(compact: 56, regular: 34)
+        let fifth = MultipleSpacingTokens(compact: 12, regular: 34)
+        let sixth = MultipleSizingTokens(compact: 0, regular: 00)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

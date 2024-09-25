@@ -121,39 +121,39 @@ public protocol TypographySemanticTokens {
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    var typeDisplayLarge: TypographyCompositeSemanticToken { get }
-    var typeDisplayMedium: TypographyCompositeSemanticToken { get }
-    var typeDisplaySmall: TypographyCompositeSemanticToken { get }
+    var typeDisplayLarge: MultipleTypographyTokens { get }
+    var typeDisplayMedium: MultipleTypographyTokens { get }
+    var typeDisplaySmall: MultipleTypographyTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    var typeHeadingXLarge: TypographyCompositeSemanticToken { get }
-    var typeHeadingLarge: TypographyCompositeSemanticToken { get }
-    var typeHeadingMedium: TypographyCompositeSemanticToken { get }
-    var typeHeadingSmall: TypographyCompositeSemanticToken { get }
+    var typeHeadingXLarge: MultipleTypographyTokens { get }
+    var typeHeadingLarge: MultipleTypographyTokens { get }
+    var typeHeadingMedium: MultipleTypographyTokens { get }
+    var typeHeadingSmall: MultipleTypographyTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    var typeBodyDefaultLarge: TypographyCompositeSemanticToken { get }
-    var typeBodyDefaultMedium: TypographyCompositeSemanticToken { get }
-    var typeBodyDefaultSmall: TypographyCompositeSemanticToken { get }
-    var typeBodyStrongLarge: TypographyCompositeSemanticToken { get }
-    var typeBodyStrongMedium: TypographyCompositeSemanticToken { get }
-    var typeBodyStrongSmall: TypographyCompositeSemanticToken { get }
+    var typeBodyDefaultLarge: MultipleTypographyTokens { get }
+    var typeBodyDefaultMedium: MultipleTypographyTokens { get }
+    var typeBodyDefaultSmall: MultipleTypographyTokens { get }
+    var typeBodyStrongLarge: MultipleTypographyTokens { get }
+    var typeBodyStrongMedium: MultipleTypographyTokens { get }
+    var typeBodyStrongSmall: MultipleTypographyTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    var typeLabelDefaultXLarge: TypographyCompositeSemanticToken { get }
-    var typeLabelDefaultLarge: TypographyCompositeSemanticToken { get }
-    var typeLabelDefaultMedium: TypographyCompositeSemanticToken { get }
-    var typeLabelDefaultSmall: TypographyCompositeSemanticToken { get }
-    var typeLabelStrongXLarge: TypographyCompositeSemanticToken { get }
-    var typeLabelStrongLarge: TypographyCompositeSemanticToken { get }
-    var typeLabelStrongMedium: TypographyCompositeSemanticToken { get }
-    var typeLabelStrongSmall: TypographyCompositeSemanticToken { get }
+    var typeLabelDefaultXLarge: MultipleTypographyTokens { get }
+    var typeLabelDefaultLarge: MultipleTypographyTokens { get }
+    var typeLabelDefaultMedium: MultipleTypographyTokens { get }
+    var typeLabelDefaultSmall: MultipleTypographyTokens { get }
+    var typeLabelStrongXLarge: MultipleTypographyTokens { get }
+    var typeLabelStrongLarge: MultipleTypographyTokens { get }
+    var typeLabelStrongMedium: MultipleTypographyTokens { get }
+    var typeLabelStrongSmall: MultipleTypographyTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    var typeCodeMedium: TypographyCompositeSemanticToken { get }
-    var typeCodeSmall: TypographyCompositeSemanticToken { get }
+    var typeCodeMedium: MultipleTypographyTokens { get }
+    var typeCodeSmall: MultipleTypographyTokens { get }
 }

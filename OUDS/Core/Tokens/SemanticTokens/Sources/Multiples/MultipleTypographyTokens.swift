@@ -14,8 +14,10 @@
 import Foundation
 import OUDSTokensRaw
 
-/// Composite semantic tokens which will wrap a combination of `TypographyCompositeRawToken` depending to viewports.
-public final class TypographyCompositeSemanticToken: NSObject {
+/// Kind of semantic tokens which will wrap a combination of `TypographyCompositeRawToken` depending to size classes.
+/// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
+/// Allows to gather the multiple-value tokens from Figma inside one object.
+public final class MultipleTypographyTokens: NSObject {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: TypographyCompositeRawToken
@@ -33,10 +35,10 @@ public final class TypographyCompositeSemanticToken: NSObject {
     }
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
-    /// as a `TypographyCompositeSemanticToken`. Otherwise returns `false`.
+    /// as a `MultipleTypographyTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     public override func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? TypographyCompositeSemanticToken else { return false }
+        guard let object = object as? MultipleTypographyTokens else { return false }
         return self.compact == object.compact && self.regular == object.regular
     }
 }

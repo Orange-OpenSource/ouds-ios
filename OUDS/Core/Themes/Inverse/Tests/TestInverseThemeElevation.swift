@@ -26,25 +26,10 @@ final class TestInverseThemeElevationColors: XCTestCase {
     }
 
     func testElevationColorsEquality() throws {
-        XCTAssertEqual(inverseTheme.elevationColorNoneLight, inverseTheme.elevationColorNoneDark)
-        XCTAssertEqual(inverseTheme.elevationColorRaisedLight, inverseTheme.elevationColorRaisedDark)
-        XCTAssertEqual(inverseTheme.elevationColorDragLight, inverseTheme.elevationColorDragDark)
-        XCTAssertEqual(inverseTheme.elevationColorOverlayDefaultLight, inverseTheme.elevationColorOverlayDefaultDark)
-        XCTAssertEqual(inverseTheme.elevationColorOverlayEmphasizedLight, inverseTheme.elevationColorOverlayEmphasizedDark)
-        XCTAssertEqual(inverseTheme.elevationColorStickyDefaultLight, inverseTheme.elevationColorStickyDefaultDark)
-        XCTAssertEqual(inverseTheme.elevationColorStickyEmphasizedLight, inverseTheme.elevationColorStickyEmphasizedDark)
-        XCTAssertEqual(inverseTheme.elevationColorStickyNavigationScrolledLight, inverseTheme.elevationColorStickyNavigationScrolledDark)
-        XCTAssertEqual(inverseTheme.elevationColorFocusLight, inverseTheme.elevationColorFocusDark)
+        XCTAssertEqual(inverseTheme.elevationColorFocus.light, inverseTheme.elevationColorFocus.dark)
     }
 
     func testElevationEquality() throws {
-        XCTAssertEqual(inverseTheme.elevationRaisedLight, inverseTheme.elevationRaisedDark)
-        XCTAssertEqual(inverseTheme.elevationDragLight, inverseTheme.elevationDragDark)
-        XCTAssertEqual(inverseTheme.elevationOverlayDefaultLight, inverseTheme.elevationOverlayDefaultDark)
-        XCTAssertEqual(inverseTheme.elevationOverlayEmphasizedLight, inverseTheme.elevationOverlayEmphasizedDark)
-        XCTAssertEqual(inverseTheme.elevationStickyDefaultLight, inverseTheme.elevationStickyDefaultDark)
-        XCTAssertEqual(inverseTheme.elevationStickyEmphasizedLight, inverseTheme.elevationStickyEmphasizedDark)
-        XCTAssertEqual(inverseTheme.elevationStickyNavigationScrolledLight, inverseTheme.elevationStickyNavigationScrolledDark)
-        XCTAssertEqual(inverseTheme.elevationFocusLight, inverseTheme.elevationFocusDark)
+        XCTAssertEqual(inverseTheme.elevationFocus.light, inverseTheme.elevationFocus.dark)
     }
 }

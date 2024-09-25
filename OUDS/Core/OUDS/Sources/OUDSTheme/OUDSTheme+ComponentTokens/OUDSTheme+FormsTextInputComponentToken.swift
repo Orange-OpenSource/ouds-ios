@@ -16,8 +16,6 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import OUDSTokensComponent
 
-// swiftlint:disable line_length
-
 /// Defines for `FormsTextInputComponentTokens` the basic configuration which can be overriden in subthemes / subclasses of this theme.
 /// **Warning: These are random and dumb values**
 extension OUDSTheme: FormsTextInputComponentTokens {
@@ -26,7 +24,7 @@ extension OUDSTheme: FormsTextInputComponentTokens {
 
     @objc open var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightHeading }
     @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
-    @objc open var ftiTitleColor: ColorSemanticToken { ColorCompositeSemanticToken(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray640) }
+    @objc open var ftiTitleColor: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
     @objc open var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightDisplay }
     @objc open var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
@@ -40,5 +38,3 @@ extension OUDSTheme: FormsTextInputComponentTokens {
 
     @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
 }
-
-// swiftlint:enable line_length

@@ -171,168 +171,88 @@ final class TestThemeOverrideOfElevationSemanticTokens: XCTestCase {
 
     // MARK: - Semantic token - Elevation - Color - None
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorNoneLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorNoneLight, abstractTheme.elevationColorNoneLight)
-        XCTAssertTrue(inheritedTheme.elevationColorNoneLight == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorNone() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorNone, abstractTheme.elevationColorNone)
+        XCTAssertTrue(inheritedTheme.elevationColorNone == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorNoneDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorNoneDark, abstractTheme.elevationColorNoneDark)
-        XCTAssertTrue(inheritedTheme.elevationColorNoneDark == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorRaised() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorRaised, abstractTheme.elevationColorRaised)
+        XCTAssertTrue(inheritedTheme.elevationColorRaised == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorRaisedLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorRaisedLight, abstractTheme.elevationColorRaisedLight)
-        XCTAssertTrue(inheritedTheme.elevationColorRaisedLight == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorDrag() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorDrag, abstractTheme.elevationColorDrag)
+        XCTAssertTrue(inheritedTheme.elevationColorDrag == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorRaisedDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorRaisedDark, abstractTheme.elevationColorRaisedDark)
-        XCTAssertTrue(inheritedTheme.elevationColorRaisedDark == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorOverlayDefault() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorOverlayDefault, abstractTheme.elevationColorOverlayDefault)
+        XCTAssertTrue(inheritedTheme.elevationColorOverlayDefault == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorDragLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorDragLight, abstractTheme.elevationColorDragLight)
-        XCTAssertTrue(inheritedTheme.elevationColorDragLight == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorOverlayEmphasized() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorOverlayEmphasized, abstractTheme.elevationColorOverlayEmphasized)
+        XCTAssertTrue(inheritedTheme.elevationColorOverlayEmphasized == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorDragDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorDragDark, abstractTheme.elevationColorDragDark)
-        XCTAssertTrue(inheritedTheme.elevationColorDragDark == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyDefault() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorStickyDefault, abstractTheme.elevationColorStickyDefault)
+        XCTAssertTrue(inheritedTheme.elevationColorStickyDefault == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorOverlayDefaultLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorOverlayDefaultLight, abstractTheme.elevationColorOverlayDefaultLight)
-        XCTAssertTrue(inheritedTheme.elevationColorOverlayDefaultLight == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyEmphasized() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorStickyEmphasized, abstractTheme.elevationColorStickyEmphasized)
+        XCTAssertTrue(inheritedTheme.elevationColorStickyEmphasized == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorOverlayDefaultDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorOverlayDefaultDark, abstractTheme.elevationColorOverlayDefaultDark)
-        XCTAssertTrue(inheritedTheme.elevationColorOverlayDefaultDark == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyNavigationScrolled() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorStickyNavigationScrolled, abstractTheme.elevationColorStickyNavigationScrolled)
+        XCTAssertTrue(inheritedTheme.elevationColorStickyNavigationScrolled == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorOverlayEmphasizedLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorOverlayEmphasizedLight, abstractTheme.elevationColorOverlayEmphasizedLight)
-        XCTAssertTrue(inheritedTheme.elevationColorOverlayEmphasizedLight == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorFocus() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorFocus, abstractTheme.elevationColorFocus)
+        XCTAssertTrue(inheritedTheme.elevationColorFocus == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorOverlayEmphasizedDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorOverlayEmphasizedDark, abstractTheme.elevationColorOverlayEmphasizedDark)
-        XCTAssertTrue(inheritedTheme.elevationColorOverlayEmphasizedDark == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeRaised() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationRaised, abstractTheme.elevationRaised)
+        XCTAssertTrue(inheritedTheme.elevationRaised == MockTheme.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyDefaultLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorStickyDefaultLight, abstractTheme.elevationColorStickyDefaultLight)
-        XCTAssertTrue(inheritedTheme.elevationColorStickyDefaultLight == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeDrag() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationDrag, abstractTheme.elevationDrag)
+        XCTAssertTrue(inheritedTheme.elevationDrag == MockTheme.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyDefaultDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorStickyDefaultDark, abstractTheme.elevationColorStickyDefaultDark)
-        XCTAssertTrue(inheritedTheme.elevationColorStickyDefaultDark == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayDefault() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationOverlayDefault, abstractTheme.elevationOverlayDefault)
+        XCTAssertTrue(inheritedTheme.elevationOverlayDefault == MockTheme.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyEmphasizedLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorStickyEmphasizedLight, abstractTheme.elevationColorStickyEmphasizedLight)
-        XCTAssertTrue(inheritedTheme.elevationColorStickyEmphasizedLight == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayEmphasized() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationOverlayEmphasized, abstractTheme.elevationOverlayEmphasized)
+        XCTAssertTrue(inheritedTheme.elevationOverlayEmphasized == MockTheme.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyEmphasizedDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorStickyEmphasizedDark, abstractTheme.elevationColorStickyEmphasizedDark)
-        XCTAssertTrue(inheritedTheme.elevationColorStickyEmphasizedDark == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyDefault() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationStickyDefault, abstractTheme.elevationStickyDefault)
+        XCTAssertTrue(inheritedTheme.elevationStickyDefault  == MockTheme.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyNavigationScrolledLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorStickyNavigationScrolledLight, abstractTheme.elevationColorStickyNavigationScrolledLight)
-        XCTAssertTrue(inheritedTheme.elevationColorStickyNavigationScrolledLight == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyEmphasized() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationStickyEmphasized, abstractTheme.elevationStickyEmphasized)
+        XCTAssertTrue(inheritedTheme.elevationStickyEmphasized == MockTheme.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyNavigationScrolledDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorStickyNavigationScrolledDark, abstractTheme.elevationColorStickyNavigationScrolledDark)
-        XCTAssertTrue(inheritedTheme.elevationColorStickyNavigationScrolledDark == MockTheme.mockThemeElevationColorRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyNavigationScrolled() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationStickyNavigationScrolled, abstractTheme.elevationStickyNavigationScrolled)
+        XCTAssertTrue(inheritedTheme.elevationStickyNavigationScrolled == MockTheme.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorFocusLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorFocusLight, abstractTheme.elevationColorFocusLight)
-        XCTAssertTrue(inheritedTheme.elevationColorFocusLight == MockTheme.mockThemeElevationColorRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorFocusDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorFocusDark, abstractTheme.elevationColorFocusDark)
-        XCTAssertTrue(inheritedTheme.elevationColorFocusDark == MockTheme.mockThemeElevationColorRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeRaisedDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationRaisedDark, abstractTheme.elevationRaisedDark)
-        XCTAssertTrue(inheritedTheme.elevationRaisedDark == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeDragLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationDragLight, abstractTheme.elevationDragLight)
-        XCTAssertTrue(inheritedTheme.elevationDragLight == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeDragDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationDragDark, abstractTheme.elevationDragDark)
-        XCTAssertTrue(inheritedTheme.elevationDragDark == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayDefaultLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationOverlayDefaultLight, abstractTheme.elevationOverlayDefaultLight)
-        XCTAssertTrue(inheritedTheme.elevationOverlayDefaultLight == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayDefaultDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationOverlayDefaultDark, abstractTheme.elevationOverlayDefaultDark)
-        XCTAssertTrue(inheritedTheme.elevationOverlayDefaultDark == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayEmphasizedLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationOverlayEmphasizedLight, abstractTheme.elevationOverlayEmphasizedLight)
-        XCTAssertTrue(inheritedTheme.elevationOverlayEmphasizedLight == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayEmphasizedDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationOverlayEmphasizedDark, abstractTheme.elevationOverlayEmphasizedDark)
-        XCTAssertTrue(inheritedTheme.elevationOverlayEmphasizedDark == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyDefaultLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationStickyDefaultLight, abstractTheme.elevationStickyDefaultLight)
-        XCTAssertTrue(inheritedTheme.elevationStickyDefaultLight  == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyDefaultDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationStickyDefaultDark, abstractTheme.elevationStickyDefaultDark)
-        XCTAssertTrue(inheritedTheme.elevationStickyDefaultDark == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyEmphasizedLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationStickyEmphasizedLight, abstractTheme.elevationStickyEmphasizedLight)
-        XCTAssertTrue(inheritedTheme.elevationStickyEmphasizedLight == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyEmphasizedDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationStickyEmphasizedDark, abstractTheme.elevationStickyEmphasizedDark)
-        XCTAssertTrue(inheritedTheme.elevationStickyEmphasizedDark == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyNavigationScrolledLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationStickyNavigationScrolledLight, abstractTheme.elevationStickyNavigationScrolledLight)
-        XCTAssertTrue(inheritedTheme.elevationStickyNavigationScrolledLight == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyNavigationScrolledDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationStickyNavigationScrolledDark, abstractTheme.elevationStickyNavigationScrolledDark)
-        XCTAssertTrue(inheritedTheme.elevationStickyNavigationScrolledDark  == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeFocusLight() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationFocusLight, abstractTheme.elevationFocusLight)
-        XCTAssertTrue(inheritedTheme.elevationFocusLight == MockTheme.mockThemeElevationCompositeRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeFocusDark() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationFocusDark, abstractTheme.elevationFocusDark)
-        XCTAssertTrue(inheritedTheme.elevationFocusDark == MockTheme.mockThemeElevationCompositeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeFocus() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationFocus, abstractTheme.elevationFocus)
+        XCTAssertTrue(inheritedTheme.elevationFocus == MockTheme.mockThemeElevationCompositeSemanticToken)
     }
 }

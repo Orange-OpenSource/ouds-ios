@@ -20,49 +20,49 @@ import OUDSTokensSemantic
 /// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
 extension InverseTheme {
 
-    public override var colorBackgroundDefaultPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorBackgroundDefaultPrimary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorBackgroundDefaultSecondary: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedMedium!) }
+    public override var colorBackgroundDefaultSecondary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedMedium!) }
 
-    public override var colorBackgroundDefaultTertiary: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandAttractiveHighest!) }
+    public override var colorBackgroundDefaultTertiary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandAttractiveHighest!) }
 
-    public override var colorBackgroundEmphasizedPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralMutedWhite!) }
+    public override var colorBackgroundEmphasizedPrimary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite!) }
 
-    public override var colorBackgroundEmphasizedSecondary: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralMutedLowest!) }
+    public override var colorBackgroundEmphasizedSecondary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedLowest!) }
 
-    public override var colorBackgroundBrandPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandPrimaryDefault!) }
+    public override var colorBackgroundBrandPrimary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPrimaryDefault!) }
 
-    public override var colorBackgroundStatusAttractiveMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandAttractiveLowest!) }
+    public override var colorBackgroundStatusAttractiveMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandAttractiveLowest!) }
 
-    public override var colorBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandWarningDefault!) }
+    public override var colorBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandWarningDefault!) }
 
-    public override var colorBackgroundStatusWarningMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandWarningLowest!) }
+    public override var colorBackgroundStatusWarningMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandWarningLowest!) }
 
-    public override var colorBackgroundStatusWarningEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandWarningDefault!) }
+    public override var colorBackgroundStatusWarningEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandWarningDefault!) }
 
-    public override var colorBackgroundStatusNegativeMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNegativeLowest!) }
+    public override var colorBackgroundStatusNegativeMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNegativeLowest!) }
 
-    public override var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNegativeDefault!) }
+    public override var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNegativeDefault!) }
 
-    public override var colorBackgroundStatusPositiveMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandPositiveLowest!) }
+    public override var colorBackgroundStatusPositiveMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPositiveLowest!) }
 
-    public override var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandPositiveDefault!) }
+    public override var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPositiveDefault!) }
 
-    public override var colorBackgroundStatusInformationMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandInformationLowest!) }
+    public override var colorBackgroundStatusInformationMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandInformationLowest!) }
 
-    public override var colorBackgroundStatusInformationEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandPositiveLowest!) }
+    public override var colorBackgroundStatusInformationEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPositiveLowest!) }
 
-    public override var colorContentDefault: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralMutedWhite!) }
+    public override var colorContentDefault: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite!) }
 
-    public override var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorContentMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedMedium!) }
+    public override var colorContentMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedMedium!) }
 
-    public override var colorContentMutedOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedLowest!) }
+    public override var colorContentMutedOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedLowest!) }
 
-    public override var colorContentBrandPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandPrimaryLow!) }
+    public override var colorContentBrandPrimary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPrimaryLow!) }
 
-    public override var colorContentBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandPrimaryDefault!) }
+    public override var colorContentBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPrimaryDefault!) }
 
     public override var colorContentBrandSecondary: ColorSemanticToken? { nil }
 
@@ -70,23 +70,23 @@ extension InverseTheme {
 
     public override var colorContentStatusAttractive: ColorSemanticToken? { nil }
 
-    public override var colorContentStatusNegative: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNegativeDefault!) }
+    public override var colorContentStatusNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNegativeDefault!) }
 
-    public override var colorContentStatusPositive: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandPositiveDefault!) }
+    public override var colorContentStatusPositive: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPositiveDefault!) }
 
-    public override var colorContentStatusInformation: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandInformationDefault!) }
+    public override var colorContentStatusInformation: ColorSemanticToken? { MultipleColorTokens(sysColorBrandInformationDefault!) }
 
-    public override var colorBorderDefault: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedLowest!) }
+    public override var colorBorderDefault: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedLowest!) }
 
-    public override var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralMutedMedium!) }
+    public override var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedMedium!) }
 
-    public override var colorBorderEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralMutedWhite!) }
+    public override var colorBorderEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite!) }
 
-    public override var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorBorderBrandPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandPrimaryLow!) }
+    public override var colorBorderBrandPrimary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPrimaryLow!) }
 
-    public override var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandPrimaryDefault!) }
+    public override var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPrimaryDefault!) }
 
     public override var colorBorderBrandSecondary: ColorSemanticToken? { nil }
 
@@ -102,29 +102,29 @@ extension InverseTheme {
 
     public override var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
 
-    public override var colorOnBackgroundPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralMutedWhite!) }
+    public override var colorOnBackgroundPrimary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite!) }
 
     public override var colorOnBackgroundSecondary: ColorSemanticToken? { nil }
 
     public override var colorOnBackgroundTertiary: ColorSemanticToken? { nil }
 
-    public override var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorOnBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorOnBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorOnBackgroundStatusWarningMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorOnBackgroundStatusWarningMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorOnBackgroundStatusWarningEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorOnBackgroundStatusWarningEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorOnBackgroundStatusNegativeMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorOnBackgroundStatusNegativeMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralMutedWhite!) }
+    public override var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite!) }
 
-    public override var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorOnBackgroundStatusPositiveEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorOnBackgroundStatusPositiveEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorOnBackgroundStatusInformationMuted: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorOnBackgroundStatusInformationMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 
-    public override var colorOnBackgroundStatusInformationEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(sysColorBrandNeutralEmphasizedBlack!) }
+    public override var colorOnBackgroundStatusInformationEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 }

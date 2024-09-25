@@ -37,5 +37,5 @@ public protocol ButtonsComponentTokens {
     var buttonWidth: SizingSemanticToken { get }
     var buttonHeight: SizingSemanticToken { get }
 
-    var buttonTypography: TypographyCompositeSemanticToken { get }
+    var buttonTypography: MultipleTypographyTokens { get }
 }

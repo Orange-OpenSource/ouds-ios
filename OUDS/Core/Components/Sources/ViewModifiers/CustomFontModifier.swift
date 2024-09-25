@@ -22,7 +22,7 @@ struct CustomFontModifier: ViewModifier {
     // MARK: - Properties
 
     /// The typography style to apply
-    let token: TypographyCompositeSemanticToken
+    let token: MultipleTypographyTokens
 
     /// The name of the custom font family, should be registered previously in the app, like "Luciole".
     let fontFamilyName: String
