@@ -23,7 +23,7 @@ struct TypographyTokenPage: View {
     // ==========
 
     var body: some View {
-        VStack(alignment: .center, spacing: theme.spacePaddingBlockComponentShort) {
+        VStack(alignment: .center, spacing: theme.spaceFixedShort) {
             Text("Display Large").typeDisplayLarge(theme)
             Text("Display Medium").typeDisplayMedium(theme)
             Text("Display Small").typeDisplaySmall(theme)
@@ -49,7 +49,7 @@ struct TypographyTokenPage: View {
             Text("Code Small").typeLabelCodeSmall(theme)
         }
         .frame(maxWidth: .infinity, alignment: .center)
-        .padding(.horizontal, theme.spacePaddingBlockComponentMedium)
+        .padding(.horizontal, theme.spaceFixedShort)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 }

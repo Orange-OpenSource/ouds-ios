@@ -42,6 +42,8 @@
 		07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
 		07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42762CA3F4BE000BD03E /* ElevationTokenElement.swift */; };
 		07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42772CA3F4BE000BD03E /* ElevationTokenPage.swift */; };
+		07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF427D2CA41325000BD03E /* OpacityTokenElement.swift */; };
+		07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF427E2CA41325000BD03E /* OpacityTokenPage.swift */; };
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
@@ -99,6 +101,8 @@
 		07CF42732CA3EC58000BD03E /* CardIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardIllustration.swift; sourceTree = "<group>"; };
 		07CF42762CA3F4BE000BD03E /* ElevationTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElevationTokenElement.swift; sourceTree = "<group>"; };
 		07CF42772CA3F4BE000BD03E /* ElevationTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElevationTokenPage.swift; sourceTree = "<group>"; };
+		07CF427D2CA41325000BD03E /* OpacityTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpacityTokenElement.swift; sourceTree = "<group>"; };
+		07CF427E2CA41325000BD03E /* OpacityTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpacityTokenPage.swift; sourceTree = "<group>"; };
 		07FDCD912C296A500009AA13 /* OUDS Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OUDS Showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FDCDA52C296B4B0009AA13 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitattributes; path = ../.gitattributes; sourceTree = "<group>"; };
 		07FDCDA72C296B7A0009AA13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -236,6 +240,15 @@
 			path = Elevation;
 			sourceTree = "<group>";
 		};
+		07CF427C2CA412F5000BD03E /* Opacity */ = {
+			isa = PBXGroup;
+			children = (
+				07CF427D2CA41325000BD03E /* OpacityTokenElement.swift */,
+				07CF427E2CA41325000BD03E /* OpacityTokenPage.swift */,
+			);
+			path = Opacity;
+			sourceTree = "<group>";
+		};
 		07FDCD882C296A500009AA13 = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +321,7 @@
 		51BD76102C466FCF0033365D /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
+				07CF427C2CA412F5000BD03E /* Opacity */,
 				07CF426C2CA30F6B000BD03E /* Border */,
 				07CF42752CA3F461000BD03E /* Elevation */,
 				073543192CA17388001187EA /* Typography */,
@@ -591,6 +605,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */,
 				51BD762B2C466FCF0033365D /* MainView.swift in Sources */,
 				51B4F7F42C5BEAB700312019 /* OrangeCustomTheme.swift in Sources */,
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
@@ -607,6 +622,7 @@
 				0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */,
 				0735432B2CA192F9001187EA /* ShacaseElementPage.swift in Sources */,
 				51BD76222C466FCF0033365D /* ComponentsPage.swift in Sources */,
+				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
 				073543112CA154DE001187EA /* Card.swift in Sources */,
 				51BD76212C466FCF0033365D /* AboutPage.swift in Sources */,

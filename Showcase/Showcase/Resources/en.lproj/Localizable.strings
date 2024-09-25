@@ -35,4 +35,6 @@
 "app_tokens_typography_label" = "Typogaphy";
 "app_tokens_typography_description_text" = "Apple proposes built-in text styles based on the Apple Dynamic Types and using the native typeface San Francisco for all Latin, Greek and Cyrillic alphabets. \nTo create you application you should use the following updated styles.";
 
+"app_tokens_opacity_label" = "Opacity";
+"app_tokens_opacity_description_text" = "Opacity can help distinguish foreground elements from background elements, making content easier to read and important actions more noticeable.";
 
