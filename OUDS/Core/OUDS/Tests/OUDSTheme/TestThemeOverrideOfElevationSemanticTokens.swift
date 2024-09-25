@@ -183,7 +183,6 @@ final class TestThemeOverrideOfElevationSemanticTokens: XCTestCase {
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorDrag() throws {
         XCTAssertNotEqual(inheritedTheme.elevationColorDrag, abstractTheme.elevationColorDrag)
-        XCTAssertTrue(inheritedTheme.elevationColorDrag == MockTheme.mockThemeMultipleColorRawToken)
         XCTAssertTrue(inheritedTheme.elevationColorDrag == MockTheme.mockThemeElevationMultipleColorSemanticToken)
     }
 

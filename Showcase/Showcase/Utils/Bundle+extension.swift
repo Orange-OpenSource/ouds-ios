@@ -15,9 +15,7 @@ import Foundation
 
 extension Bundle {
 
-    // =========
     // MARK: API
-    // =========
 
     /// Marketing version in semantic versioning
     var marketingVersion: String {
@@ -69,9 +67,7 @@ extension Bundle {
         return "\(type)\(tag)"
     }
 
-    // ============================
     // MARK: Private Implementation
-    // ============================
 
     private func string(forInfoDictionaryKey key: String) -> String? {
         object(forInfoDictionaryKey: key) as? String
