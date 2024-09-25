@@ -18,7 +18,11 @@ import OUDSTokensSemantic
 extension MockTheme {
 
     static let mockThemeColorRawToken: ColorRawToken = "#68489D"
+<<<<<<< HEAD
     static let mockThemeMultipleColorTokens: MultipleColorTokens = MultipleColorTokens("#68489D")
+=======
+    static let mockThemeMultipleColorSemanticToken: MultipleColorSemanticToken = MultipleColorSemanticToken("#68489D")
+>>>>>>> 3e552ea8 (refactor: use of composite colors for elevations)
 
     // MARK: Semantic token - Colors - Alias - Primary
 
@@ -124,6 +128,7 @@ extension MockTheme {
 
     // MARK: Semantic token - Colors - Background - Default - Primary
 
+<<<<<<< HEAD
     override var colorBackgroundDefaultPrimary: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
     // MARK: Semantic token - Colors - Background - Default - Secondary
@@ -345,4 +350,227 @@ extension MockTheme {
     // MARK: Semantic token - Colors - On background - Status - Information - Emphasized
 
     override var colorOnBackgroundStatusInformationEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
+=======
+    override var colorBackgroundDefaultPrimary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Default - Secondary
+
+    override var colorBackgroundDefaultSecondary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Default - Tertiary
+
+    override var colorBackgroundDefaultTertiary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Emphasized - Primary
+
+    override var colorBackgroundEmphasizedPrimary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Emphasized - Secondary
+
+    override var colorBackgroundEmphasizedSecondary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Brand - Primary
+
+    override var colorBackgroundBrandPrimary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Brand - Secondary
+
+    override var colorBackgroundBrandSecondary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Brand - Tertiary
+
+    override var colorBackgroundBrandTertiary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
+
+    override var colorBackgroundStatusAttractiveMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Attractive - Emphasized
+
+    override var colorBackgroundStatusAttractiveEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Warning - Muted
+
+    override var colorBackgroundStatusWarningMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Warning - Emphasized
+
+    override var colorBackgroundStatusWarningEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Negative - Muted
+
+    override var colorBackgroundStatusNegativeMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Negative - Emphasized
+
+    override var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Positive - Muted
+
+    override var colorBackgroundStatusPositiveMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Positive - Emphasized
+
+    override var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Information - Muted
+
+    override var colorBackgroundStatusInformationMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Background - Status - Information - Emphasized
+
+    override var colorBackgroundStatusInformationEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Default
+
+    override var colorContentDefault: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Default - On background emphasized
+
+    override var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Muted
+
+    override var colorContentMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Muted - On background emphasized
+
+    override var colorContentMutedOnBackgroundEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Brand - Primary
+
+    override var colorContentBrandPrimary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasized
+
+    override var colorContentBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Brand - Secondary
+
+    override var colorContentBrandSecondary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Brand - Tertiary
+
+    override var colorContentBrandTertiary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Status - Attractive
+
+    override var colorContentStatusAttractive: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Status - Negative
+
+    override var colorContentStatusNegative: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Status - Positive
+
+    override var colorContentStatusPositive: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Content - Status - Information
+
+    override var colorContentStatusInformation: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Default
+
+    override var colorBorderDefault: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Default - On background emphasized
+
+    override var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Emphasized
+
+    override var colorBorderEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Emphasized - On background emphasized
+
+    override var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Brand - Primary
+
+    override var colorBorderBrandPrimary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasized
+
+    override var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Brand - Secondary
+
+    override var colorBorderBrandSecondary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Brand - Tertiary
+
+    override var colorBorderBrandTertiary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Status - Attractive
+
+    override var colorBorderBrandStatusAttractive: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Status - Warning
+
+    override var colorBorderBrandStatusWarning: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Status - Negative
+
+    override var colorBorderBrandStatusNegative: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Status - Positive
+
+    override var colorBorderBrandStatusPositive: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - Border - Status - Information
+
+    override var colorBorderBrandStatusInformation: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Primary
+
+    override var colorOnBackgroundPrimary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Secondary
+
+    override var colorOnBackgroundSecondary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Tertiary
+
+    override var colorOnBackgroundTertiary: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Attractive - Muted
+
+    override var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Attractive - Emphasized
+
+    override var colorOnBackgroundStatusAttractiveEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Warning - Muted
+
+    override var colorOnBackgroundStatusWarningMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Warning - Emphasized
+
+    override var colorOnBackgroundStatusWarningEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Negative - Muted
+
+    override var colorOnBackgroundStatusNegativeMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Negative - Emphasized
+
+    override var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Positive - Muted
+
+    override var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Positive - Emphasized
+
+    override var colorOnBackgroundStatusPositiveEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Information - Muted
+
+    override var colorOnBackgroundStatusInformationMuted: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+
+    // MARK: Semantic token - Colors - On background - Status - Information - Emphasized
+
+    override var colorOnBackgroundStatusInformationEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorSemanticToken }
+>>>>>>> 3e552ea8 (refactor: use of composite colors for elevations)
 }

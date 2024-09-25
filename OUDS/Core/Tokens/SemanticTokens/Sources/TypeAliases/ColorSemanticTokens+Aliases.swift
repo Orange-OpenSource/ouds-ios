@@ -14,7 +14,11 @@
 import OUDSTokensRaw
 
 /// Basically a semantic color token, which can be either a functional or a decorative token, is a `String`, to keep grammar clean and clear with design system grammar.
+<<<<<<< HEAD
 public typealias ColorSemanticToken = MultipleColorTokens
+=======
+public typealias ColorSemanticToken = MultipleColorSemanticToken
+>>>>>>> 3e552ea8 (refactor: use of composite colors for elevations)
 
 /// The global design system tool defines aliases of semantic colors token as semantic color tokens, to keep grammar clean and clear with design system grammar.
 public typealias ColorAliasSemanticToken = ColorRawToken

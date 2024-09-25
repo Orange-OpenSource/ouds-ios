@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Rename `SizingCompositeSemanticToken` to `MultipleSizingTokens` to keep "composite" word for *Figma* design system
 - [Library] Rename `ColorCompositeSemanticToken` to `MultipleColorTokens` to keep "composite" word for *Figma* design system
 - [Library] Elevation colors have been merged into "multiple" objects colors to have less variables and manage color schemes
+- [Library] Rename `ColorCompositeSemanticToken` to `MultipleColorSemanticToken` to keep "composite" word for *Figma* design system
+- [Library] Elevation colors have been merged into composite colors to have less variables and manage color schemes
 - [Library] Update color semantic tokens to better manage light and dark modes values
 - [Library] Update elevation colors focus light and dark
 - [Library] Rename space padding inline component tokens by removing "component" word

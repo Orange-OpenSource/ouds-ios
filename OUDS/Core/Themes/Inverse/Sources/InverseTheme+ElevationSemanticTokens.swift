@@ -24,8 +24,13 @@ extension InverseTheme {
 
     // MARK: Semantic token - Elevation - Color - Focus
 
+<<<<<<< HEAD
     public override var elevationColorFocus: ElevationColorSemanticToken { MultipleColorTokens( ColorRawTokens.colorFunctionalLightGray160) }
 
+=======
+    public override var elevationColorFocus: ElevationColorSemanticToken { MultipleColorSemanticToken( ColorRawTokens.colorFunctionalLightGray160) }
+    
+>>>>>>> 3e552ea8 (refactor: use of composite colors for elevations)
     // MARK: Semantic token - Elevation - Box shadow
 
     public override var elevationFocus: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(light: ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalLightGray160), dark: ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalLightGray160)) }

@@ -26,6 +26,17 @@ final class TestInverseThemeElevationColors: XCTestCase {
     }
 
     func testElevationColorsEquality() throws {
+<<<<<<< HEAD
+=======
+        XCTAssertEqual(inverseTheme.elevationColorNone.light, inverseTheme.elevationColorNone.dark)
+        XCTAssertEqual(inverseTheme.elevationColorRaised.light, inverseTheme.elevationColorRaised.dark)
+        XCTAssertEqual(inverseTheme.elevationColorDrag.light, inverseTheme.elevationColorDrag.dark)
+        XCTAssertEqual(inverseTheme.elevationColorOverlayDefault.light, inverseTheme.elevationColorOverlayDefault.dark)
+        XCTAssertEqual(inverseTheme.elevationColorOverlayEmphasized.light, inverseTheme.elevationColorOverlayEmphasized.dark)
+        XCTAssertEqual(inverseTheme.elevationColorStickyDefault.light, inverseTheme.elevationColorStickyDefault.dark)
+        XCTAssertEqual(inverseTheme.elevationColorStickyEmphasized.light, inverseTheme.elevationColorStickyEmphasized.dark)
+        XCTAssertEqual(inverseTheme.elevationColorStickyNavigationScrolled.light, inverseTheme.elevationColorStickyNavigationScrolled.dark)
+>>>>>>> 3e552ea8 (refactor: use of composite colors for elevations)
         XCTAssertEqual(inverseTheme.elevationColorFocus.light, inverseTheme.elevationColorFocus.dark)
     }
 

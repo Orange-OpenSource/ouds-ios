@@ -32,6 +32,7 @@ public protocol SizingSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
+<<<<<<< HEAD
     var sizeIconWithTypeHeadingSmallShort: MultipleSizingTokens { get }
     var sizeIconWithTypeHeadingSmallMedium: MultipleSizingTokens { get }
     var sizeIconWithTypeHeadingSmallTall: MultipleSizingTokens { get }
@@ -59,6 +60,35 @@ public protocol SizingSemanticTokens {
     var sizeIconWithTypeBodyLargeShort: MultipleSizingTokens { get }
     var sizeIconWithTypeBodyLargeMedium: MultipleSizingTokens { get }
     var sizeIconWithTypeBodyLargeTall: MultipleSizingTokens { get }
+=======
+    var sizeIconWithTypeHeadingSmallShort: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingSmallMedium: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingSmallTall: MultipleSizingSemanticToken { get }
+
+    var sizeIconWithTypeHeadingMediumShort: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingMediumMedium: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingMediumTall: MultipleSizingSemanticToken { get }
+
+    var sizeIconWithTypeHeadingLargeShort: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingLargeMedium: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingLargeTall: MultipleSizingSemanticToken { get }
+
+    var sizeIconWithTypeHeadingXLargeShort: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingXLargeMedium: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeHeadingXLargeTall: MultipleSizingSemanticToken { get }
+
+    var sizeIconWithTypeBodySmallShort: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeBodySmallMedium: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeBodySmallTall: MultipleSizingSemanticToken { get }
+
+    var sizeIconWithTypeBodyMediumShort: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeBodyMediumMedium: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeBodyMediumTall: MultipleSizingSemanticToken { get }
+
+    var sizeIconWithTypeBodyLargeShort: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeBodyLargeMedium: MultipleSizingSemanticToken { get }
+    var sizeIconWithTypeBodyLargeTall: MultipleSizingSemanticToken { get }
+>>>>>>> 3e552ea8 (refactor: use of composite colors for elevations)
 
     var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { get }
     var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { get }
@@ -80,6 +110,7 @@ public protocol SizingSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Max width typography
 
+<<<<<<< HEAD
     var sizeMaxWidthTypeDisplaySmall: MultipleSizingTokens { get }
     var sizeMaxWidthTypeDisplayMedium: MultipleSizingTokens { get }
     var sizeMaxWidthTypeDisplayLarge: MultipleSizingTokens { get }
@@ -92,4 +123,18 @@ public protocol SizingSemanticTokens {
     var sizeMaxWidthTypeBodySmall: MultipleSizingTokens { get }
     var sizeMaxWidthTypeBodyMedium: MultipleSizingTokens { get }
     var sizeMaxWidthTypeBodyLarge: MultipleSizingTokens { get }
+=======
+    var sizeMaxWidthTypeDisplaySmall: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeDisplayMedium: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeDisplayLarge: MultipleSizingSemanticToken { get }
+
+    var sizeMaxWidthTypeHeadingSmall: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeHeadingMedium: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeHeadingLarge: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeHeadingXLarge: MultipleSizingSemanticToken { get }
+
+    var sizeMaxWidthTypeBodySmall: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeBodyMedium: MultipleSizingSemanticToken { get }
+    var sizeMaxWidthTypeBodyLarge: MultipleSizingSemanticToken { get }
+>>>>>>> 3e552ea8 (refactor: use of composite colors for elevations)
 }
