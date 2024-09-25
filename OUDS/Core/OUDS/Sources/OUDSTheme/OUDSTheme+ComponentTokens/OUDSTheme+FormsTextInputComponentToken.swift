@@ -24,6 +24,7 @@ extension OUDSTheme: FormsTextInputComponentTokens {
 
     @objc open var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightHeading }
     @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
+
     @objc open var ftiTitleColor: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
     @objc open var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightDisplay }
