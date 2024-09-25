@@ -75,11 +75,11 @@ public struct ElevationsList: View {
     public var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 40) {
-                ElevationRectangle(elevation: raised)
-                ElevationRectangle(elevation: overlayDefault)
-                ElevationRectangle(elevation: allSticky)
-                ElevationRectangle(elevation: drag)
-                ElevationRectangle(elevation: overlayEmphasized)
+                ElevationRectangle(elevation: ElevationCompositeSemanticToken(raised))
+                ElevationRectangle(elevation: ElevationCompositeSemanticToken(overlayDefault))
+                ElevationRectangle(elevation: ElevationCompositeSemanticToken(allSticky))
+                ElevationRectangle(elevation: ElevationCompositeSemanticToken(drag))
+                ElevationRectangle(elevation: ElevationCompositeSemanticToken(overlayEmphasized))
             }
             .frame(maxWidth: .infinity)
         }

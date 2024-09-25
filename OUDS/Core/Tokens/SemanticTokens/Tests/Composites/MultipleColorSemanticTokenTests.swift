@@ -15,42 +15,42 @@ import XCTest
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-/// To ensure the `MultipleColorSemanticToken` is tested as a wrapper of semantic tokens for light and dark color schemes.
-final class MultipleColorSemanticTokenTests: XCTestCase {
+/// To ensure the `MultipleColorRawToken` is tested as a wrapper of semantic tokens for light and dark color schemes.
+final class MultipleColorRawTokenTests: XCTestCase {
 
     /// Tests if light and dark values are preserved when defined with two assigned non nil values
     func testInitTwoNonNilValues() {
         let light: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
         let dark: ColorRawToken = ColorRawTokens.colorFunctionalScarlet900
-        let token = MultipleColorSemanticToken(light: light, dark: dark)
+        let token = MultipleColorRawToken(light: light, dark: dark)
 
         XCTAssertTrue(token.light == light)
         XCTAssertTrue(token.dark == dark)
     }
 
-    /// Tests init of `MultipleColorSemanticToken` with nil values in parameters
+    /// Tests init of `MultipleColorRawToken` with nil values in parameters
     func testInitNilValues() {
         let light: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
         let dark: ColorRawToken = ColorRawTokens.colorFunctionalScarlet900
 
-        XCTAssertNil(MultipleColorSemanticToken(light: light, dark: nil))
-        XCTAssertNil(MultipleColorSemanticToken(light: nil, dark: dark))
-        XCTAssertNil(MultipleColorSemanticToken(light: nil, dark: nil))
+        XCTAssertNil(MultipleColorRawToken(light: light, dark: nil))
+        XCTAssertNil(MultipleColorRawToken(light: nil, dark: dark))
+        XCTAssertNil(MultipleColorRawToken(light: nil, dark: nil))
     }
 
-    /// Tests init of `MultipleColorSemanticToken` with nil value in parameter
+    /// Tests init of `MultipleColorRawToken` with nil value in parameter
     func testInitNilValue() {
-        XCTAssertNil(MultipleColorSemanticToken(nil))
+        XCTAssertNil(MultipleColorRawToken(nil))
     }
 
-    /// Tests comparisons between two `MultipleColorSemanticToken` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleColorRawToken` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = MultipleColorSemanticToken(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
-        let second = MultipleColorSemanticToken(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalSun100)
-        let third = MultipleColorSemanticToken(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalSun100)
-        let fourth = MultipleColorSemanticToken(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalScarlet900)
-        let fifth = MultipleColorSemanticToken(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
+        let first = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
+        let second = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalSun100)
+        let third = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalSun100)
+        let fourth = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalScarlet900)
+        let fifth = MultipleColorRawToken(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
         let sixth = MultipleSizingSemanticToken(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))

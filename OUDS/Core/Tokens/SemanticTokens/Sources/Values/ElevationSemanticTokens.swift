@@ -93,31 +93,23 @@ public protocol ElevationSemanticTokens {
 
     var elevationColorFocus: ElevationColorSemanticToken { get }
 
-    // MARK: Semantic token - Elevation - Bow shadow
+    // MARK: Semantic token - Elevation - Box shadow
 
-    // TODO: Missing elevationBoxShadowNoneLight semantic token
+    var elevationNone: ElevationCompositeSemanticToken { get }
 
-    var elevationRaisedLight: ElevationCompositeSemanticToken { get }
-    var elevationRaisedDark: ElevationCompositeSemanticToken { get }
+    var elevationRaised: ElevationCompositeSemanticToken { get }
 
-    var elevationDragLight: ElevationCompositeSemanticToken { get }
-    var elevationDragDark: ElevationCompositeSemanticToken { get }
+    var elevationDrag: ElevationCompositeSemanticToken { get }
 
-    var elevationOverlayDefaultLight: ElevationCompositeSemanticToken { get }
-    var elevationOverlayDefaultDark: ElevationCompositeSemanticToken { get }
+    var elevationOverlayDefault: ElevationCompositeSemanticToken { get }
 
-    var elevationOverlayEmphasizedLight: ElevationCompositeSemanticToken { get }
-    var elevationOverlayEmphasizedDark: ElevationCompositeSemanticToken { get }
+    var elevationOverlayEmphasized: ElevationCompositeSemanticToken { get }
 
-    var elevationStickyDefaultLight: ElevationCompositeSemanticToken { get }
-    var elevationStickyDefaultDark: ElevationCompositeSemanticToken { get }
+    var elevationStickyDefault: ElevationCompositeSemanticToken { get }
 
-    var elevationStickyEmphasizedLight: ElevationCompositeSemanticToken { get }
-    var elevationStickyEmphasizedDark: ElevationCompositeSemanticToken { get }
+    var elevationStickyEmphasized: ElevationCompositeSemanticToken { get }
 
-    var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { get }
-    var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { get }
+    var elevationStickyNavigationScrolled: ElevationCompositeSemanticToken { get }
 
-    var elevationFocusLight: ElevationCompositeSemanticToken { get }
-    var elevationFocusDark: ElevationCompositeSemanticToken { get }
+    var elevationFocus: ElevationCompositeSemanticToken { get }
 }

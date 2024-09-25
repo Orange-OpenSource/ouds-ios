@@ -30,8 +30,8 @@ extension OUDSTheme: ColorSemanticTokens {
 
 ## Architecture
 
-The *Composites* folder contains some _composite class_ defined to pack double values for dedicated needs, like size classes management (_regular_ or _compact_ device modes), and also for color schemes management (_light_ and _dark_ modes).
-This *composites* are not the same as the ones defined in the *Figma* design systme, they are just utilities to handle tuple of values, without the syntaxe of tuples and with some helper functions.
+The *Multiples* folder contains some _composite class_ defined to pack double values for dedicated needs, like size classes management (_regular_ or _compact_ device modes), and also for color schemes management (_light_ and _dark_ modes).
+Such *composites* are not the same as the ones defined in the *Figma* design system, they are just utilities to handle tuple of values, without the syntaxe of tuples and with some helper functions.
 
 The *TypeAliases* folder contains all the *typealias* values used for the semantic tokens.
 Indeed these aliases are here to bring clarity and meanings in the library, and also to help users (i.e. developers) to know what kind of objects they handle with the same vocabulary as the one used in *Figma*, and in general, in the whole design system. They can be seen as a ligh level of abstraction with meanings, without having to define real types with `struct` or `class`.
@@ -56,7 +56,7 @@ If you need to define Swift `typealias`, update the suitable file in the *TypeAl
 Please, respect the nomenclature of the files, e.g. for a new family "Awesome semantic" tokens:
 - values must be in `AwesomeSemanticTokens.swift`
 - type aliases must be in `AwesomeSemanticTokens+Aliases.swift`
-- composites objects must be in `AwesomeSemanticTokens+Composites.swift`
+- mutiple objects must be in `MultipleAwesome@Token.swift` (where @ can be "Raw" or "Semantic" depending to your needs)
 
 Then, update the unit tests. For each semantic tokens we check if a subtheme can override the token, i.e. update the `MockTheme` by overring the property with a fake value, then compare it to the `OUDSTheme` containing a default value. If you have defined also composite objects, add unit tests to check if they do their job.
 

@@ -20,8 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Rename dimension semantic tokens to apply T-Shirt size rules ([#130](https://github.com/Orange-OpenSource/ouds-ios/issues/130))
 - [Library] Rename `SizingCompositeSemanticToken` to `MultipleSizingSemanticToken` to keep "composite" word for *Figma* design system
-- [Library] Rename `ColorCompositeSemanticToken` to `MultipleColorSemanticToken` to keep "composite" word for *Figma* design system
-- [Library] Elevation colors have been merged into composite colors to have less variables and manage color schemes
+- [Library] Rename `ColorCompositeSemanticToken` to `MultipleColorRawToken` to keep "composite" word for *Figma* design system
+- [Library] Elevation colors have been merged into "multiple" objects colors to have less variables and manage color schemes
 - [Library] Update color semantic tokens to better manage light and dark modes values
 - [Library] Update elevation colors focus light and dark
 - [Library] Rename space padding inline component tokens by removing "component" word
@@ -36,6 +36,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Remove some base multiplier factor from raw tokens
 - [Library] Remove raw tokens `elevationZIndex` ([#119](https://github.com/Orange-OpenSource/ouds-ios/issues/119))
+
+### Fixed
+
+- [Library] Blur values for elevation composite raw tokens
 
 ## [0.2.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.1.0...0.2.0) - 2024-09-19
 

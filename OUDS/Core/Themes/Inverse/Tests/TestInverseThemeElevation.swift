@@ -26,25 +26,10 @@ final class TestInverseThemeElevationColors: XCTestCase {
     }
 
     func testElevationColorsEquality() throws {
-        XCTAssertEqual(inverseTheme.elevationColorNone.light, inverseTheme.elevationColorNone.dark)
-        XCTAssertEqual(inverseTheme.elevationColorRaised.light, inverseTheme.elevationColorRaised.dark)
-        XCTAssertEqual(inverseTheme.elevationColorDrag.light, inverseTheme.elevationColorDrag.dark)
-        XCTAssertEqual(inverseTheme.elevationColorOverlayDefault.light, inverseTheme.elevationColorOverlayDefault.dark)
-        XCTAssertEqual(inverseTheme.elevationColorOverlayEmphasized.light, inverseTheme.elevationColorOverlayEmphasized.dark)
-        XCTAssertEqual(inverseTheme.elevationColorStickyDefault.light, inverseTheme.elevationColorStickyDefault.dark)
-        XCTAssertEqual(inverseTheme.elevationColorStickyEmphasized.light, inverseTheme.elevationColorStickyEmphasized.dark)
-        XCTAssertEqual(inverseTheme.elevationColorStickyNavigationScrolled.light, inverseTheme.elevationColorStickyNavigationScrolled.dark)
         XCTAssertEqual(inverseTheme.elevationColorFocus.light, inverseTheme.elevationColorFocus.dark)
     }
 
     func testElevationEquality() throws {
-        XCTAssertEqual(inverseTheme.elevationRaisedLight, inverseTheme.elevationRaisedDark)
-        XCTAssertEqual(inverseTheme.elevationDragLight, inverseTheme.elevationDragDark)
-        XCTAssertEqual(inverseTheme.elevationOverlayDefaultLight, inverseTheme.elevationOverlayDefaultDark)
-        XCTAssertEqual(inverseTheme.elevationOverlayEmphasizedLight, inverseTheme.elevationOverlayEmphasizedDark)
-        XCTAssertEqual(inverseTheme.elevationStickyDefaultLight, inverseTheme.elevationStickyDefaultDark)
-        XCTAssertEqual(inverseTheme.elevationStickyEmphasizedLight, inverseTheme.elevationStickyEmphasizedDark)
-        XCTAssertEqual(inverseTheme.elevationStickyNavigationScrolledLight, inverseTheme.elevationStickyNavigationScrolledDark)
-        XCTAssertEqual(inverseTheme.elevationFocusLight, inverseTheme.elevationFocusDark)
+        XCTAssertEqual(inverseTheme.elevationFocus.light, inverseTheme.elevationFocus.dark)
     }
 }

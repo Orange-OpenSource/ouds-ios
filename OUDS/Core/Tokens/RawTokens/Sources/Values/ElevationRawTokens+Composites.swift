@@ -82,15 +82,15 @@ extension ElevationRawTokens {
 
     public static let elevationBottom_5_600 = ElevationCompositeRawToken(x: elevationX0, y: elevationY500, blur: elevationBlur600, color: ColorRawTokens.colorTransparentBlack600)
 
-    public static let elevationBottom_6_100 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur200, color: ColorRawTokens.colorTransparentBlack100)
+    public static let elevationBottom_6_100 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur700, color: ColorRawTokens.colorTransparentBlack100)
 
-    public static let elevationBottom_6_200 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur200, color: ColorRawTokens.colorTransparentBlack200)
+    public static let elevationBottom_6_200 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur700, color: ColorRawTokens.colorTransparentBlack200)
 
-    public static let elevationBottom_6_300 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur200, color: ColorRawTokens.colorTransparentBlack300)
+    public static let elevationBottom_6_300 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur700, color: ColorRawTokens.colorTransparentBlack300)
 
-    public static let elevationBottom_6_400 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur200, color: ColorRawTokens.colorTransparentBlack400)
+    public static let elevationBottom_6_400 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur700, color: ColorRawTokens.colorTransparentBlack400)
 
-    public static let elevationBottom_6_500 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur200, color: ColorRawTokens.colorTransparentBlack500)
+    public static let elevationBottom_6_500 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur700, color: ColorRawTokens.colorTransparentBlack500)
 
-    public static let elevationBottom_6_600 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur200, color: ColorRawTokens.colorTransparentBlack600)
+    public static let elevationBottom_6_600 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur700, color: ColorRawTokens.colorTransparentBlack600)
 }

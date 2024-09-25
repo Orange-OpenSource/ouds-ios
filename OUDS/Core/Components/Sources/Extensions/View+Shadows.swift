@@ -22,10 +22,11 @@ extension View {
     /// - Parameter elevation: The token to give for the shadow / elevation effect
     /// - Returns `View`: The current `View` with the shadow / elevation effect
     public func shadow(elevation: ElevationCompositeSemanticToken) -> some View {
+        // TODO: Manage light and dark color scheme
         return self
-            .shadow(color: elevation.color.color,
-                    radius: elevation.radius,
-                    x: CGFloat(elevation.x),
-                    y: CGFloat(elevation.y))
+            .shadow(color: elevation.light.color.color,
+                    radius: elevation.light.radius,
+                    x: CGFloat(elevation.light.x),
+                    y: CGFloat(elevation.light.y))
     }
 }
