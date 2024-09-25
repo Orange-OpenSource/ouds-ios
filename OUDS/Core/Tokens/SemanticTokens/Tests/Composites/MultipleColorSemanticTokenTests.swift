@@ -18,6 +18,15 @@ import OUDSTokensSemantic
 /// To ensure the `MultipleColorRawToken` is tested as a wrapper of semantic tokens for light and dark color schemes.
 final class MultipleColorRawTokenTests: XCTestCase {
 
+    /// Tests if the unique value is applied for light and dark modes
+    func testInitWithOneValue() {
+        let unique: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
+        let token = MultipleColorTokens(unique)
+
+        XCTAssertTrue(token.light == unique)
+        XCTAssertTrue(token.dark == unique)
+    }
+
     /// Tests if light and dark values are preserved when defined with two assigned non nil values
     func testInitTwoNonNilValues() {
         let light: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
