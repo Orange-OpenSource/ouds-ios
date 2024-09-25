@@ -99,8 +99,8 @@ extension OUDSTheme: ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color - Focus
 
-    @objc open var elevationColorFocusLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
-    @objc open var elevationColorFocusDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentWhite900 }
+    @objc open var elevationColorFocusLight: ElevationColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
+    @objc open var elevationColorFocusDark: ElevationColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
 
     // MARK: Semantic token - Elevation - Box shadow
 
@@ -125,6 +125,6 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationStickyNavigationScrolledLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
     @objc open var elevationStickyNavigationScrolledDark: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_1_500 }
 
-    @objc open var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorTransparentWhite900) }
-    @objc open var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorTransparentWhite900) }
+    @objc open var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalLightGray160) }
 }

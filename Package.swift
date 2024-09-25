@@ -115,6 +115,10 @@ let package = Package(
             name: "OUDSTokensSemantic",
             dependencies: ["OUDSTokensRaw"],
             path: "OUDS/Core/Tokens/SemanticTokens/Sources"),
+        .testTarget(
+            name: "OUDSTokensSemantic-Tests",
+            dependencies: ["OUDSTokensSemantic"],
+            path: "OUDS/Core/Tokens/SemanticTokens/Tests"),
         .target(
             name: "OUDSTokensRaw",
             dependencies: ["OUDSFoundations"],

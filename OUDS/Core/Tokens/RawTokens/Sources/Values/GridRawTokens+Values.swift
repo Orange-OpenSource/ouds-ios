@@ -15,8 +15,6 @@
 /// Should be fully generated in the future.
 extension GridRawTokens {
 
-    private static let dimensionBase: GridRawToken = 4
-
     // MARK: Primitive token - Grid - Design width
 
     public static let gridWidth100: GridRawToken = 320
@@ -59,27 +57,27 @@ extension GridRawTokens {
 
     // MARK: Primitive token - Grid - Margin
 
-    public static let gridMargin100: GridRawToken = dimensionBase * 4
-    public static let gridMargin300: GridRawToken = dimensionBase * 6
-    public static let gridMargin400: GridRawToken = dimensionBase * 7
-    public static let gridMargin500: GridRawToken = dimensionBase * 8
-    public static let gridMargin600: GridRawToken = dimensionBase * 9
-    public static let gridMargin700: GridRawToken = dimensionBase * 10
-    public static let gridMargin900: GridRawToken = dimensionBase * 12
-    public static let gridMargin1000: GridRawToken = dimensionBase * 13
-    public static let gridMargin1100: GridRawToken = dimensionBase * 14
-    public static let gridMargin1700: GridRawToken = dimensionBase * 20
-    public static let gridMargin2500: GridRawToken = dimensionBase * 28
+    public static let gridMargin100: GridRawToken = 4 * 4
+    public static let gridMargin300: GridRawToken = 4 * 6
+    public static let gridMargin400: GridRawToken = 4 * 7
+    public static let gridMargin500: GridRawToken = 4 * 8
+    public static let gridMargin600: GridRawToken = 4 * 9
+    public static let gridMargin700: GridRawToken = 4 * 10
+    public static let gridMargin900: GridRawToken = 4 * 12
+    public static let gridMargin1000: GridRawToken = 4 * 13
+    public static let gridMargin1100: GridRawToken = 4 * 14
+    public static let gridMargin1700: GridRawToken = 4 * 20
+    public static let gridMargin2500: GridRawToken = 4 * 28
 
     // MARK: Primitive token - Grid - Column gap
 
-    public static let gridColumnGap10: GridRawToken = dimensionBase * 0.25
-    public static let gridColumnGap100: GridRawToken = dimensionBase * 2
-    public static let gridColumnGap200: GridRawToken = dimensionBase * 4
-    public static let gridColumnGap300: GridRawToken = dimensionBase * 5
-    public static let gridColumnGap400: GridRawToken = dimensionBase * 6
-    public static let gridColumnGap600: GridRawToken = dimensionBase * 8
-    public static let gridColumnGap700: GridRawToken = dimensionBase * 10
+    public static let gridColumnGap10: GridRawToken = 4 * 0.25
+    public static let gridColumnGap100: GridRawToken = 4 * 2
+    public static let gridColumnGap200: GridRawToken = 4 * 4
+    public static let gridColumnGap300: GridRawToken = 4 * 5
+    public static let gridColumnGap400: GridRawToken = 4 * 6
+    public static let gridColumnGap600: GridRawToken = 4 * 8
+    public static let gridColumnGap700: GridRawToken = 4 * 10
 
     // MARK: Primitive token - Grid - Column count
 

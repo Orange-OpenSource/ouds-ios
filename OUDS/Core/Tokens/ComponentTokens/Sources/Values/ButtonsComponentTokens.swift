@@ -27,15 +27,12 @@ public protocol ButtonsComponentTokens {
     var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { get }
 
     var buttonBorderStyle: BorderStyleSemanticToken { get }
-    var buttonBorderColorLight: ColorSemanticToken { get }
-    var buttonBorderColorDark: ColorSemanticToken { get }
+    var buttonBorderColor: ColorSemanticToken { get }
     var buttonBorderWidth: BorderWidthSemanticToken { get }
     var buttonBorderRadius: BorderRadiusSemanticToken { get }
 
-    var buttonForegroundColorLight: ColorSemanticToken { get }
-    var buttonForegroundColorDark: ColorSemanticToken { get }
-    var buttonBackgroundColorLight: ColorSemanticToken { get }
-    var buttonBackgroundColorDark: ColorSemanticToken { get }
+    var buttonForegroundColor: ColorSemanticToken { get }
+    var buttonBackgroundColor: ColorSemanticToken { get }
 
     var buttonWidth: SizingSemanticToken { get }
     var buttonHeight: SizingSemanticToken { get }

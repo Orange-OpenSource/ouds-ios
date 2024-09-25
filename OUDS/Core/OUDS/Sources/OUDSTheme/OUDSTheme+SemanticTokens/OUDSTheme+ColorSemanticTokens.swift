@@ -16,6 +16,7 @@ import OUDSFoundations
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// swiftlint:disable line_length
 /// Defines basic values common to all themes for `ColorSemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: ColorSemanticTokens {
@@ -124,33 +125,27 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Background - Default - Primary
 
-    @objc open var colorBackgroundDefaultPrimaryLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
-    @objc open var colorBackgroundDefaultPrimaryDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedHighest }
+    @objc open var colorBackgroundDefaultPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralEmphasizedHighest) }
 
     // MARK: Semantic token - Colors - Background - Default - Secondary
 
-    @objc open var colorBackgroundDefaultSecondaryLight: ColorSemanticToken? { sysColorBrandNeutralMutedLowest }
-    @objc open var colorBackgroundDefaultSecondaryDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedHigher }
+    @objc open var colorBackgroundDefaultSecondary: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralMutedLowest, dark: sysColorBrandNeutralEmphasizedHigher) }
 
     // MARK: Semantic token - Colors - Background - Default - Tertiary
 
-    @objc open var colorBackgroundDefaultTertiaryLight: ColorSemanticToken? { sysColorBrandAttractiveLowest }
-    @objc open var colorBackgroundDefaultTertiaryDark: ColorSemanticToken? { sysColorBrandAttractiveHighest }
+    @objc open var colorBackgroundDefaultTertiary: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandAttractiveLowest, dark: sysColorBrandAttractiveHighest) }
 
     // MARK: Semantic token - Colors - Background - Emphasized - Primary
 
-    @objc open var colorBackgroundEmphasizedPrimaryLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorBackgroundEmphasizedPrimaryDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedMedium }
+    @objc open var colorBackgroundEmphasizedPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralEmphasizedMedium) }
 
     // MARK: Semantic token - Colors - Background - Emphasized - Secondary
 
-    @objc open var colorBackgroundEmphasizedSecondaryLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedMedium }
-    @objc open var colorBackgroundEmphasizedSecondaryDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedHigh }
+    @objc open var colorBackgroundEmphasizedSecondary: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedMedium, dark: sysColorBrandNeutralEmphasizedHigh) }
 
     // MARK: Semantic token - Colors - Background - Brand - Primary
 
-    @objc open var colorBackgroundBrandPrimaryLight: ColorSemanticToken? { sysColorBrandPrimaryDefault }
-    @objc open var colorBackgroundBrandPrimaryDark: ColorSemanticToken? { sysColorBrandPrimaryLow }
+    @objc open var colorBackgroundBrandPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandPrimaryDefault, dark: sysColorBrandPrimaryLow) }
 
     // MARK: Semantic token - Colors - Background - Brand - Secondary
 
@@ -162,244 +157,194 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
-    @objc open var colorBackgroundStatusAttractiveMutedLight: ColorSemanticToken? { sysColorBrandAttractiveLowest }
-    @objc open var colorBackgroundStatusAttractiveMutedDark: ColorSemanticToken? { sysColorBrandAttractiveHighest }
+    @objc open var colorBackgroundStatusAttractiveMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandAttractiveLowest, dark: sysColorBrandAttractiveHighest) }
 
     // MARK: Semantic token - Colors - Background - Status - Attractive - Emphasized
 
-    @objc open var colorBackgroundStatusAttractiveEmphasizedLight: ColorSemanticToken? { sysColorBrandWarningDefault }
-    @objc open var colorBackgroundStatusAttractiveEmphasizedDark: ColorSemanticToken? { sysColorBrandWarningHighest }
+    @objc open var colorBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningHighest) }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Muted
 
-    @objc open var colorBackgroundStatusWarningMutedLight: ColorSemanticToken? { sysColorBrandWarningLowest }
-    @objc open var colorBackgroundStatusWarningMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedHigh }
+    @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandWarningLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Emphasized
 
-    @objc open var colorBackgroundStatusWarningEmphasizedLight: ColorSemanticToken? { sysColorBrandWarningDefault }
-    @objc open var colorBackgroundStatusWarningEmphasizedDark: ColorSemanticToken? { sysColorBrandWarningHighest }
+    @objc open var colorBackgroundStatusWarningEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningHighest) }
 
     // MARK: Semantic token - Colors - Background - Status - Negative - Muted
 
-    @objc open var colorBackgroundStatusNegativeMutedLight: ColorSemanticToken? { sysColorBrandNegativeLowest }
-    @objc open var colorBackgroundStatusNegativeMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedHigh }
+    @objc open var colorBackgroundStatusNegativeMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNegativeLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
 
     // MARK: Semantic token - Colors - Background - Status - Negative - Emphasized
 
-    @objc open var colorBackgroundStatusNegativeEmphasizedLight: ColorSemanticToken? { sysColorBrandNegativeDefault }
-    @objc open var colorBackgroundStatusNegativeEmphasizedDark: ColorSemanticToken? { sysColorBrandNegativeHighest }
+    @objc open var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNegativeDefault, dark: sysColorBrandNegativeHighest) }
 
     // MARK: Semantic token - Colors - Background - Status - Positive - Muted
 
-    @objc open var colorBackgroundStatusPositiveMutedLight: ColorSemanticToken? { sysColorBrandPositiveLowest }
-    @objc open var colorBackgroundStatusPositiveMutedInverse: ColorSemanticToken? { sysColorBrandPositiveLowest }
-    @objc open var colorBackgroundStatusPositiveMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedHigh }
+    @objc open var colorBackgroundStatusPositiveMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandPositiveLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
 
     // MARK: Semantic token - Colors - Background - Status - Positive - Emphasized
 
-    @objc open var colorBackgroundStatusPositiveEmphasizedLight: ColorSemanticToken? { sysColorBrandPositiveDefault }
-    @objc open var colorBackgroundStatusPositiveEmphasizedDark: ColorSemanticToken? { sysColorBrandPositiveHighest }
+    @objc open var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandPositiveDefault, dark: sysColorBrandPositiveHighest) }
 
     // MARK: Semantic token - Colors - Background - Status - Information - Muted
 
-    @objc open var colorBackgroundStatusInformationMutedLight: ColorSemanticToken? { sysColorBrandInformationLowest }
-    @objc open var colorBackgroundStatusInformationMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedHigh }
+    @objc open var colorBackgroundStatusInformationMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandInformationLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
 
     // MARK: Semantic token - Colors - Background - Status - Information - Emphasized
 
-    @objc open var colorBackgroundStatusInformationEmphasizedLight: ColorSemanticToken? { sysColorBrandInformationDefault }
-    @objc open var colorBackgroundStatusInformationEmphasizedDark: ColorSemanticToken? { sysColorBrandInformationHighest }
+    @objc open var colorBackgroundStatusInformationEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandInformationDefault, dark: sysColorBrandInformationHighest) }
 
     // MARK: Semantic token - Colors - Content - Default
 
-    @objc open var colorContentDefaultLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorContentDefaultDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorContentDefault: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - Content - Default - On background emphasized
 
-    @objc open var colorContentDefaultOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
-    @objc open var colorContentDefaultOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - Content - Muted
 
-    @objc open var colorContentMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedLowest }
-    @objc open var colorContentMutedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedHigh }
+    @objc open var colorContentMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
 
     // MARK: Semantic token - Colors - Content - Muted - On background emphasized
 
-    @objc open var colorContentMutedOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralMutedMedium }
-    @objc open var colorContentMutedOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedHigh }
+    @objc open var colorContentMutedOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralMutedMedium, dark: sysColorBrandNeutralMutedHigh) }
 
     // MARK: Semantic token - Colors - Content - Brand - Primary
 
-    @objc open var colorContentBrandPrimaryLight: ColorSemanticToken? { sysColorBrandPrimaryDefault }
-    @objc open var colorContentBrandPrimaryDark: ColorSemanticToken? { sysColorBrandPrimaryLow }
+    @objc open var colorContentBrandPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandPrimaryDefault, dark: sysColorBrandPrimaryLow) }
 
     // MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasized
 
-    @objc open var colorContentBrandPrimaryOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandPrimaryLow }
-    @objc open var colorContentBrandPrimaryOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandPrimaryLow }
+    @objc open var colorContentBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandPrimaryLow, dark: sysColorBrandPrimaryLow) }
 
     // MARK: Semantic token - Colors - Content - Brand - Secondary
 
-    @objc open var colorContentBrandSecondaryLight: ColorSemanticToken? { nil }
-    @objc open var colorContentBrandSecondaryDark: ColorSemanticToken? { nil }
+    @objc open var colorContentBrandSecondary: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - Content - Brand - Tertiary
 
-    @objc open var colorContentBrandTertiaryLight: ColorSemanticToken? { nil }
-    @objc open var colorContentBrandTertiaryDark: ColorSemanticToken? { nil }
+    @objc open var colorContentBrandTertiary: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - Content - Status - Attractive
 
-    @objc open var colorContentStatusAttractiveLight: ColorSemanticToken? { nil }
-    @objc open var colorContentStatusAttractiveDark: ColorSemanticToken? { nil }
+    @objc open var colorContentStatusAttractive: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - Content - Status - Negative
 
-    @objc open var colorContentStatusNegativeLight: ColorSemanticToken? { sysColorBrandNegativeDefault }
-    @objc open var colorContentStatusNegativeDark: ColorSemanticToken? { sysColorBrandNegativeDefault }
+    @objc open var colorContentStatusNegative: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNegativeDefault, dark: sysColorBrandNegativeDefault) }
 
     // MARK: Semantic token - Colors - Content - Status - Positive
 
-    @objc open var colorContentStatusPositiveLight: ColorSemanticToken? { sysColorBrandPositiveDefault }
-    @objc open var colorContentStatusPositiveInverse: ColorSemanticToken? { sysColorBrandPositiveDefault }
-    @objc open var colorContentStatusPositiveDark: ColorSemanticToken? { sysColorBrandPositiveDefault }
+    @objc open var colorContentStatusPositive: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandPositiveDefault, dark: sysColorBrandPositiveDefault) }
 
     // MARK: Semantic token - Colors - Content - Status - Information
 
-    @objc open var colorContentStatusInformationLight: ColorSemanticToken? { sysColorBrandInformationDefault }
-    @objc open var colorContentStatusInformationDark: ColorSemanticToken? { sysColorBrandInformationDefault }
+    @objc open var colorContentStatusInformation: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandInformationDefault, dark: sysColorBrandInformationDefault) }
 
     // MARK: Semantic token - Colors - Border - Default
 
-    @objc open var colorBorderDefaultLight: ColorSemanticToken? { sysColorBrandNeutralMutedMedium }
-    @objc open var colorBorderDefaultDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedLowest }
+    @objc open var colorBorderDefault: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralMutedMedium, dark: sysColorBrandNeutralEmphasizedLowest) }
 
     // MARK: Semantic token - Colors - Border - Default - On background emphasized
 
-    @objc open var colorBorderDefaultOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedLowest }
-    @objc open var colorBorderDefaultOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedLowest }
+    @objc open var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedLowest, dark: sysColorBrandNeutralEmphasizedLowest) }
 
     // MARK: Semantic token - Colors - Border - Emphasized
 
-    @objc open var colorBorderEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorBorderEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorBorderEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - Border - Emphasized - On background emphasized
 
-    @objc open var colorBorderEmphasizedOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
-    @objc open var colorBorderEmphasizedOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - Border - Brand - Primary
 
-    @objc open var colorBorderBrandPrimaryLight: ColorSemanticToken? { sysColorBrandPrimaryDefault }
-    @objc open var colorBorderBrandPrimaryDark: ColorSemanticToken? { sysColorBrandPrimaryLow }
+    @objc open var colorBorderBrandPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandPrimaryDefault, dark: sysColorBrandPrimaryLow) }
 
     // MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasized
 
-    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasizedLight: ColorSemanticToken? { sysColorBrandPrimaryLow }
-    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasizedDark: ColorSemanticToken? { sysColorBrandPrimaryLow }
+    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandPrimaryLow, dark: sysColorBrandPrimaryLow) }
 
     // MARK: Semantic token - Colors - Border - Brand - Secondary
 
-    @objc open var colorBorderBrandSecondaryLight: ColorSemanticToken? { nil }
-    @objc open var colorBorderBrandSecondaryDark: ColorSemanticToken? { nil }
+    @objc open var colorBorderBrandSecondary: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - Border - Brand - Tertiary
 
-    @objc open var colorBorderBrandTertiaryLight: ColorSemanticToken? { nil }
-    @objc open var colorBorderBrandTertiaryDark: ColorSemanticToken? { nil }
+    @objc open var colorBorderBrandTertiary: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - Border - Status - Attractive
 
-    @objc open var colorBorderBrandStatusAttractiveLight: ColorSemanticToken? { nil }
-    @objc open var colorBorderBrandStatusAttractiveDark: ColorSemanticToken? { nil }
+    @objc open var colorBorderBrandStatusAttractive: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - Border - Status - Warning
 
-    @objc open var colorBorderBrandStatusWarningLight: ColorSemanticToken? { nil }
-    @objc open var colorBorderBrandStatusWarningDark: ColorSemanticToken? { nil }
+    @objc open var colorBorderBrandStatusWarning: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - Border - Status - Negative
 
-    @objc open var colorBorderBrandStatusNegativeLight: ColorSemanticToken? { nil }
-    @objc open var colorBorderBrandStatusNegativeDark: ColorSemanticToken? { nil }
+    @objc open var colorBorderBrandStatusNegative: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - Border - Status - Positive
 
-    @objc open var colorBorderBrandStatusPositiveLight: ColorSemanticToken? { nil }
-    @objc open var colorBorderBrandStatusPositiveDark: ColorSemanticToken? { nil }
+    @objc open var colorBorderBrandStatusPositive: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - Border - Status - Information
 
-    @objc open var colorBorderBrandStatusInformationLight: ColorSemanticToken? { nil }
-    @objc open var colorBorderBrandStatusInformationDark: ColorSemanticToken? { nil }
+    @objc open var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - On background - Primary
 
-    @objc open var colorOnBackgroundPrimaryLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
-    @objc open var colorOnBackgroundPrimaryDark: ColorSemanticToken? { sysColorBrandNeutralEmphasizedHighest }
+    @objc open var colorOnBackgroundPrimary: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralEmphasizedHighest) }
 
     // MARK: Semantic token - Colors - On background - Secondary
 
-    @objc open var colorOnBackgroundSecondaryLight: ColorSemanticToken? { nil }
-    @objc open var colorOnBackgroundSecondaryDark: ColorSemanticToken? { nil }
+    @objc open var colorOnBackgroundSecondary: ColorSemanticToken? { nil }
 
     // MARK: Semantic token - Colors - On background - Tertiary
 
-    @objc open var colorOnBackgroundTertiaryLight: ColorSemanticToken? { nil }
-    @objc open var colorOnBackgroundTertiaryDark: ColorSemanticToken? { nil }
+    @objc open var colorOnBackgroundTertiary: ColorSemanticToken? { nil }
 
-    // MARK: Semantic token - Colors - On background - Status - Attrative - Muted
+    // MARK: Semantic token - Colors - On background - Status - Attractive - Muted
 
-    @objc open var colorOnBackgroundStatusAttractiveMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorOnBackgroundStatusAttractiveMutedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
-    // MARK: Semantic token - Colors - On background - Status - Attrative - Emphasized
+    // MARK: Semantic token - Colors - On background - Status - Attractive - Emphasized
 
-    @objc open var colorOnBackgroundStatusAttractiveEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorOnBackgroundStatusAttractiveEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorOnBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - On background - Status - Warning - Muted
 
-    @objc open var colorOnBackgroundStatusWarningMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorOnBackgroundStatusWarningMutedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorOnBackgroundStatusWarningMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - On background - Status - Warning - Emphasized
 
-    @objc open var colorOnBackgroundStatusWarningEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorOnBackgroundStatusWarningEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorOnBackgroundStatusWarningEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - On background - Status - Negative - Muted
 
-    @objc open var colorOnBackgroundStatusNegativeMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorOnBackgroundStatusNegativeMutedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorOnBackgroundStatusNegativeMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - On background - Status - Negative - Emphasized
 
-    @objc open var colorOnBackgroundStatusNegativeEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralMutedWhite }
-    @objc open var colorOnBackgroundStatusNegativeEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Muted
 
-    @objc open var colorOnBackgroundStatusPositiveMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorOnBackgroundStatusPositiveMutedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Emphasized
 
-    @objc open var colorOnBackgroundStatusPositiveEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorOnBackgroundStatusPositiveEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorOnBackgroundStatusPositiveEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - On background - Status - Information - Muted
 
-    @objc open var colorOnBackgroundStatusInformationMutedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorOnBackgroundStatusInformationMutedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
+    @objc open var colorOnBackgroundStatusInformationMuted: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     // MARK: Semantic token - Colors - On background - Status - Information - Emphasized
 
-    @objc open var colorOnBackgroundStatusInformationEmphasizedLight: ColorSemanticToken? { sysColorBrandNeutralEmphasizedBlack }
-    @objc open var colorOnBackgroundStatusInformationEmphasizedDark: ColorSemanticToken? { sysColorBrandNeutralMutedLower }
-
+    @objc open var colorOnBackgroundStatusInformationEmphasized: ColorSemanticToken? { ColorCompositeSemanticToken(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 }
+// swiftlint:enable line_length
