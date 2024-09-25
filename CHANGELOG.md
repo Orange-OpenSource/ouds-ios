@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Unit tests for composite tokens
 - [Library] Add color semantic composite tokens embeding light and dark modes values
 - [Library] Add spacing semantic tokens huge and jumbo
 - [Library] Add closed "sys" dimension semantic tokens

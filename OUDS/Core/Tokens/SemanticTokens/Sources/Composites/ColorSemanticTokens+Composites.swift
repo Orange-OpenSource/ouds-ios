@@ -6,13 +6,14 @@
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// ww
+// 
 // Authors: See CONTRIBUTORS.txt
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import Foundation
 import OUDSTokensRaw
+import OUDSFoundations
 
 /// Composite semantic tokens which will wrap a combination of `ColorRawToken` depending to color scheme
 public final class ColorCompositeSemanticToken: NSObject {
@@ -34,7 +35,10 @@ public final class ColorCompositeSemanticToken: NSObject {
     /// which can be `nil` (because for example use of optional `ColorAliasSemanticToken`)
     /// - Parameter value: The `ColorRawToken` to apply wether the device is in *light* and *dark* mode
     public convenience init?(_ value: ColorRawToken?) {
-        guard let value = value else { return nil }
+        guard let value = value else {
+            OUDSLogger.error("Tried to define a ColorCompositeSemanticToken with a nil unique value!")
+            return nil
+        }
         self.init(value)
     }
 
@@ -52,7 +56,10 @@ public final class ColorCompositeSemanticToken: NSObject {
     ///    - light: The `ColorRawToken` to apply if device in *light* mode
     ///    - dark: The `ColorRawToken` to apply if device in *dark* mode
     public convenience init?(light: ColorRawToken?, dark: ColorRawToken?) {
-        guard let light = light, let dark = dark else { return nil }
+        guard let light = light, let dark = dark else {
+            OUDSLogger.error("Tried to define a ColorCompositeSemanticToken with at least one nil value! (light = '\(light ?? "nil")', dark = '\(dark ?? "nil")')")
+            return nil
+        }
         self.init(light: light, dark: dark)
     }
 
