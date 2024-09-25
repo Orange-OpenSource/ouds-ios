@@ -14,9 +14,57 @@
 import SwiftUI
 import OUDS
 import OUDSComponents
-import OUDSThemesOrange
 
-struct GuidelinesPage: View {
+struct ShowcaseElementsPage: View {
+
+    @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
+
+    // =======================
+    // MARK: Stored properties
+    // =======================
+
+    private let elements: [ShowcaseElement]
+    private let columns = [GridItem(.flexible(), alignment: .topLeading)]
+
+    init(elements: [ShowcaseElement]) {
+        self.elements = elements
+    }
+
+    var spacingM: Double = 16 // Todo add tokens
+
+    // ==========
+    // MARK: Body
+    // ==========
+
+    var body: some View {
+        NavigationView {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 4) {
+                    ForEach(elements, id: \.id) { element in
+                        NavigationLink {
+                            ShacaseElementPage(element: element)
+                        } label: {
+                            Card(
+                                title: Text(LocalizedStringKey(element.name)),
+                                image: Image(element.imageName))
+                            .accessibilityFocused($requestFocus, equals: .some(id: element.id))
+                            .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+
+                        }
+                    }
+                }
+                .padding(.all, spacingM)
+//                .navigationbarMenuForThemeSelection()
+                .oudsNavigationTitle("app_bottomBar_tokens")
+            }
+        }
+        .navigationViewStyle(.stack)
+    }
+}
+
+
+/*
+struct TokensPage: View {
 
     @State private var writtenText: String = ""
     @State private var selectedTheme: OUDSTheme
@@ -50,8 +98,10 @@ struct GuidelinesPage: View {
 
                 }
                 .padding(.horizontal, 20)
-                .navigationTitle("app_bottomBar_guidelines")
+                .navigationTitle("app_bottomBar_tokens")
             }
         }
     }
 }
+
+*/

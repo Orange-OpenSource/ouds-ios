@@ -12,24 +12,31 @@
 //
 
 import SwiftUI
+import OUDSThemesOrange
+import OUDS
 
 struct MainView: View {
+    
+    let theme = OrangeCustomTheme()
+    
     var body: some View {
-        TabView {
-            GuidelinesPage()
-                .tabItem {
-                    Label("app_bottomBar_guidelines", image: "ic_guideline_dna")
-                }
-            ComponentsPage()
-                .tabItem {
-                    Label("app_bottomBar_components", image: "ic_component_atom")
-                }
-            AboutPage()
-                .tabItem {
-                    Label("app_bottomBar_about", image: "ic_info")
-                }
-
+        OUDSThemeableView(theme: theme) {
+            TabView {
+                TokensPage()
+                    .tabItem {
+                        Label("app_bottomBar_tokens", image: "ic_token")
+                    }
+                ComponentsPage()
+                    .tabItem {
+                        Label("app_bottomBar_components", image: "ic_component_atom")
+                    }
+                AboutPage()
+                    .tabItem {
+                        Label("app_bottomBar_about", image: "ic_info")
+                    }
+            }
         }
+        .accentColor(theme.sysColorBrandPrimaryDefault.color)
     }
 }
 

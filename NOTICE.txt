@@ -66,8 +66,15 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./Showcase/Showcase/Resources/Assets.xcassets/AppIconQualif.appiconset/iPad-Notification-20@2x.png
 ./Showcase/Showcase/Resources/Assets.xcassets/AppIconQualif.appiconset/iPad-Settings-29@1x.png
 
-./Showcase/Showcase/Resources/Assets.xcassets/ic_guideline_dna.imageset/ic_guideline_dna.svg
+./Showcase/Showcase/Resources/Assets.xcassets/ic_token.imageset/ic_token.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/ic_component_atom.imageset/ic_component_atom.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/ic_info.imageset/ic_info.svg
+./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_border.imageset/ic_border.svg
+./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_elevation.imageset/ic_elevation.svg
+./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
+
+
+
+
 
 End of the parts list under Orange SA Copyright

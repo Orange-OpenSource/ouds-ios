@@ -14,10 +14,25 @@
 // MARK: - bottomBar
 
 "app_bottomBar_components" = "Components";
-"app_bottomBar_guidelines" = "Guidelines";
+"app_bottomBar_tokens" = "Tokens";
 "app_bottomBar_about" = "About";
 
 // MARK: - About Screen
 
 "app_about_label_legalInformation" = "Legal information";
 "app_about_label_privacyPolicy" = "Privacy policy";
+
+// =====================
+// MARK: - Tokens Screen
+// =====================
+
+"app_tokens_border_label" = "Border";
+"app_tokens_border_description_text" = "Add description";
+
+"app_tokens_elevation_label" = "Elevation";
+"app_tokens_elevation_description_text" = "Add description";
+
+"app_tokens_typography_label" = "Typogaphy";
+"app_tokens_typography_description_text" = "Apple proposes built-in text styles based on the Apple Dynamic Types and using the native typeface San Francisco for all Latin, Greek and Cyrillic alphabets. \nTo create you application you should use the following updated styles.";
+
+
