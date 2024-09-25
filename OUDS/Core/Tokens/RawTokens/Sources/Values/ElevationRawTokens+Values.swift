@@ -15,11 +15,6 @@
 // [File to generate with the tokenator]
 
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
-<<<<<<< HEAD
-=======
-/// Should be fully generated in the future. Does not contain composite tokens because *Figma* cannot manage them and output in JSON
-/// for the parser.
->>>>>>> ac940198 (refactor: split raw composite tokens from their enums)
 extension ElevationRawTokens {
 
     // MARK: Primitive token - Elevation - X

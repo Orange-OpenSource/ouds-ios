@@ -11,9 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
+
 /// Extracted in a separated file because the the *Figma* JSON to Swift parser is not abale to process such composite tokens, and the *Figma* tool is not able to.
 ///
-/// **Beware, may result in desynchornization between generated raw tokens values and theses composite raw tokens**
+/// **Beware, may result in desynchronization between generated raw tokens values and theses composite raw tokens**
 extension ElevationRawTokens {
 
     // MARK: Primitive token - Elevation - Box Shadow

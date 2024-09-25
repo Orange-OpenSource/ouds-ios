@@ -18,6 +18,8 @@ import OUDSTokensSemantic
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable line_length
+
 /// Defines basic values common to all themes for `ElevationSemanticTokenss`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// The aim of this extensions is to make relationships between all semantic tokens for elevations and associated raw tokens.

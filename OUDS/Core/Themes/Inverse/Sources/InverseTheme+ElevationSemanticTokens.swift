@@ -18,6 +18,8 @@ import OUDSTokensSemantic
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable line_length
+
 extension InverseTheme {
 
     // MARK: Semantic token - Elevation - Color - Focus
