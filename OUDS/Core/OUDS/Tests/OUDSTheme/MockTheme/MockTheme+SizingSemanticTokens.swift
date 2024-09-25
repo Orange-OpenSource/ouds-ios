@@ -20,7 +20,6 @@ extension MockTheme {
     static let mockThemeSizeRawToken: DimensionRawToken = 118_000
     static let mockThemeSizeCompositeToken: MultipleSizingTokens = MultipleSizingTokens(compact: 1, regular: 151)
 
-
     // MARK: - Semantic token - Sizing - Icon decorative
 
     override var sizeIconDecorativeShortest: SizingSemanticToken { Self.mockThemeSizeRawToken }
