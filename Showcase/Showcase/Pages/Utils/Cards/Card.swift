@@ -13,34 +13,28 @@
 
 import SwiftUI
 
-public struct Card: View {
+struct Card: View {
 
-    // =======================
     // MARK: Stored Properties
-    // =======================
 
     private let title: Text
     private let icon: Image
 
-    // =================
     // MARK: Initializer
-    // =================
 
     /// Initialization without button.
     ///
     /// - Parameters:
     ///  - title: Title displayed into the card.
     ///  - icon: Icon displayed into illustration area of the card.
-    public init(title: Text, icon: Image) {
+    init(title: Text, icon: Image) {
         self.title = title
         self.icon = icon
     }
 
-    // ==========
     // MARK: Body
-    // ==========
 
-    public var body: some View {
+    var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             CardIllustration(icon: icon)
             title
@@ -58,9 +52,7 @@ public struct Card: View {
     }
 }
 
-// ================
 // MARK: - Previews
-// ================
 
 #Preview {
     ScrollView {

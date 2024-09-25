@@ -18,9 +18,7 @@ struct TypographyTokenPage: View {
 
     @Environment(\.theme) private var theme
 
-    // ==========
     // MARK: Body
-    // ==========
 
     var body: some View {
         VStack(alignment: .center, spacing: theme.spaceFixedShort) {

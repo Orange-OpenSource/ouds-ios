@@ -17,7 +17,7 @@ struct BorderTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    
+
     var foregroundColor: Color {
         switch colorScheme {
         case .light:
@@ -29,9 +29,7 @@ struct BorderTokenPage: View {
         }
     }
 
-    // ==========
     // MARK: Body
-    // ==========
 
     var body: some View {
         VStack(alignment: .center, spacing: 8) {

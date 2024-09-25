@@ -21,9 +21,7 @@ struct OpacityTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // ==========
     // MARK: Body
-    // ==========
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -38,9 +36,7 @@ struct OpacityTokenPage: View {
         .padding(.horizontal, theme.spaceFixedShort)
     }
 
-    // ====================
     // MARK: Private helper
-    // ====================
 
     private func illustration(for opacityToken: OpacitySemanticToken, named name: String) -> some View {
         HStack(alignment: .center, spacing: 8) {

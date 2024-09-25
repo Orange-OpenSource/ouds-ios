@@ -17,11 +17,11 @@ import OUDSTokensSemantic
 import OUDSTokensRaw
 
 // MARK: - Raw tokens
-//let raised = ElevationCompositeRawToken(x: 0, y: 1, blur: 2, color: ColorRawTokens.colorTransparentBlack500)
-//let overlayDefault = ElevationCompositeRawToken(x: 0, y: 2, blur: 3, color: ColorRawTokens.colorTransparentBlack400)
-//let allSticky = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack300)
-//let drag = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack500)
-//let overlayEmphasized = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, color: ColorRawTokens.colorTransparentBlack300)
+// let raised = ElevationCompositeRawToken(x: 0, y: 1, blur: 2, color: ColorRawTokens.colorTransparentBlack500)
+// let overlayDefault = ElevationCompositeRawToken(x: 0, y: 2, blur: 3, color: ColorRawTokens.colorTransparentBlack400)
+// let allSticky = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack300)
+// let drag = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack500)
+// let overlayEmphasized = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, color: ColorRawTokens.colorTransparentBlack300)
 //
 
 struct ElevationTokenPage: View {
@@ -29,49 +29,35 @@ struct ElevationTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // ==========
     // MARK: Body
-    // ==========
 
     var body: some View {
         VStack(alignment: .leading, spacing: 40) {
-            colorScheme == .light ?
-            illustration(for: theme.elevationFocusLight, named: "elevationFocusLight") :
-            illustration(for: theme.elevationFocusDark, named: "elevationFocusDark")
-
-            colorScheme == .light ?
-            illustration(for: theme.elevationRaisedLight, named: "elevationRaisedLight") :
-            illustration(for: theme.elevationRaisedDark, named: "elevationRaisedDark")
-
-            colorScheme == .light ?
-            illustration(for: theme.elevationStickyNavigationScrolledLight, named: "elevationStickyNavigationScrolledLight") :
-            illustration(for: theme.elevationStickyNavigationScrolledDark, named: "elevationStickyNavigationScrolledDark")
-
-            colorScheme == .light ?
-            illustration(for: theme.elevationOverlayDefaultLight, named: "elevationOverlayDefaultLight") :
-            illustration(for: theme.elevationOverlayDefaultDark, named: "elevationOverlayDefaultDark")
-
-            colorScheme == .light ?
-            illustration(for: theme.elevationStickyEmphasizedLight, named: "elevationStickyEmphasizedLight") :
-            illustration(for: theme.elevationStickyEmphasizedDark, named: "elevationStickyEmphasizedDark")
-
-            colorScheme == .light ?
-            illustration(for: theme.elevationDragLight, named: "elevationDragLight") :
-            illustration(for: theme.elevationDragDark, named: "elevationDragDark")
-
-            colorScheme == .light ?
-            illustration(for: theme.elevationOverlayEmphasizedLight, named: "elevationOverlayEmphasizedLight") :
-            illustration(for: theme.elevationOverlayEmphasizedDark, named: "elevationOverlayEmphasizedDark")
+            if colorScheme == .light {
+                illustration(for: theme.elevationFocus.light, named: "elevationFocusLight")
+                illustration(for: theme.elevationRaised.light, named: "elevationRaisedLight")
+                illustration(for: theme.elevationStickyNavigationScrolled.light, named: "elevationStickyNavigationScrolledLight")
+                illustration(for: theme.elevationOverlayDefault.light, named: "elevationOverlayDefaultLight")
+                illustration(for: theme.elevationStickyEmphasized.light, named: "elevationStickyEmphasizedLight")
+                illustration(for: theme.elevationDrag.light, named: "elevationDragLight")
+                illustration(for: theme.elevationOverlayEmphasized.light, named: "elevationOverlayEmphasizedLight")
+            } else { // colorScheme == .dark
+                illustration(for: theme.elevationFocus.dark, named: "elevationFocusDark")
+                illustration(for: theme.elevationRaised.dark, named: "elevationRaisedDark")
+                illustration(for: theme.elevationStickyNavigationScrolled.dark, named: "elevationStickyNavigationScrolledDark")
+                illustration(for: theme.elevationOverlayDefault.dark, named: "elevationOverlayDefaultDark")
+                illustration(for: theme.elevationStickyEmphasized.dark, named: "elevationStickyEmphasizedDark")
+                illustration(for: theme.elevationDrag.dark, named: "elevationDragDark")
+                illustration(for: theme.elevationOverlayEmphasized.dark, named: "elevationOverlayEmphasizedDark")
+            }
         }
         .frame(maxWidth: .infinity)
         .padding(.all, 16)
     }
 
-    // ============
-    // MARK: Helper
-    // ============
+    // MARK: Helpers
 
-    private func illustration(for elevation: ElevationCompositeSemanticToken, named: String) -> some View {
+    private func illustration(for elevation: ElevationCompositeRawToken, named: String) -> some View {
         HStack(alignment: .center) {
             elevationRectangle(elevation: elevation)
 
@@ -87,7 +73,7 @@ struct ElevationTokenPage: View {
         }
     }
 
-    private func elevationRectangle(elevation: ElevationCompositeSemanticToken) -> some View {
+    private func elevationRectangle(elevation: ElevationCompositeRawToken) -> some View {
         Rectangle()
             .frame(width: 64, height: 64)
             .foregroundColor(foregroundColor)

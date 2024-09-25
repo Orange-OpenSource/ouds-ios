@@ -20,17 +20,13 @@ struct ShacaseElementPage: View {
     @AccessibilityFocusState private var requestFocus: Bool
     @Environment(\.theme) private var theme
 
-    // =======================
     // MARK: Stored Properties
-    // =======================
 
     let element: ShowcaseElement
     private let spacingM: Double = 16 //  TODO use sementic tokenb
     private let spacingNone: Double = 0 //  TODO use sementic tokenb
 
-    // ==========
     // MARK: Body
-    // ==========
 
     var body: some View {
         List {

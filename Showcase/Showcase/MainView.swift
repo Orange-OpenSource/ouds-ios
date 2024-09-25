@@ -16,9 +16,9 @@ import OUDSThemesOrange
 import OUDS
 
 struct MainView: View {
-    
+
     let theme = OrangeCustomTheme()
-    
+
     var body: some View {
         OUDSThemeableView(theme: theme) {
             TabView {

@@ -12,22 +12,21 @@
 //
 
 import Foundation
-import OUDSTokensSemantic
+import OUDSTokensRaw
 import SwiftUI
 
 extension View {
 
     /// Wraps the *SwiftUI* `shadow(color:radius:x:y)` method so as to use as `radius` value
-    /// the computed `radius` value of the given `ElevationCompositeSemanticToken`.
+    /// the computed `radius` value of the given `ElevationCompositeRawToken`.
     /// - Parameter elevation: The token to give for the shadow / elevation effect
     /// - Returns `View`: The current `View` with the shadow / elevation effect
-    public func shadow(elevation: ElevationCompositeSemanticToken) -> some View {
-        // TODO: Manage light and dark color scheme
+    public func shadow(elevation: ElevationCompositeRawToken) -> some View {
         return self
-            .shadow(color: elevation.light.color.color,
-                    radius: elevation.light.radius,
-                    x: CGFloat(elevation.light.x),
-                    y: CGFloat(elevation.light.y))
+            .shadow(color: elevation.color.color,
+                    radius: elevation.radius,
+                    x: CGFloat(elevation.x),
+                    y: CGFloat(elevation.y))
     }
 }
 /*

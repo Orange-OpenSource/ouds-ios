@@ -19,9 +19,7 @@ struct ShowcaseElementsPage: View {
 
     @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
 
-    // =======================
     // MARK: Stored properties
-    // =======================
 
     private let elements: [ShowcaseElement]
     private let columns = [GridItem(.flexible(), alignment: .topLeading)]
@@ -31,9 +29,7 @@ struct ShowcaseElementsPage: View {
         self.elements = elements
     }
 
-    // ==========
     // MARK: Body
-    // ==========
 
     var body: some View {
         NavigationView {

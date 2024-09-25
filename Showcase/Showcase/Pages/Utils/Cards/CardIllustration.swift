@@ -13,27 +13,23 @@
 
 import SwiftUI
 
-public struct CardIllustration: View {
+struct CardIllustration: View {
 
     private let icon: Image
 
-    // =================
     // MARK: Initializer
-    // =================
-    
+
     /// Initialization of the illustration for card from a icon.
     ///
     /// - Parameters:
     ///  - icon: Icon displayed into the card.
-    public init(icon: Image) {
+    init(icon: Image) {
         self.icon = icon
     }
 
-    // ==========
     // MARK: Body
-    // ==========
 
-    public var body: some View {
+    var body: some View {
         HStack {
             Spacer()
             icon
@@ -54,5 +50,5 @@ public struct CardIllustration: View {
 }
 
 #Preview {
-    CardIllustration(icon:  Image("ic_border", bundle: .main))
+    CardIllustration(icon: Image("ic_border", bundle: .main))
 }
