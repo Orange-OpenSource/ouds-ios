@@ -124,225 +124,225 @@ public protocol ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Background - Default - Primary
 
-    var colorBackgroundDefaultPrimary: ColorCompositeSemanticToken? { get }
+    var colorBackgroundDefaultPrimary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Default - Secondary
 
-    var colorBackgroundDefaultSecondary: ColorCompositeSemanticToken? { get }
+    var colorBackgroundDefaultSecondary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Default - Tertiary
 
-    var colorBackgroundDefaultTertiary: ColorCompositeSemanticToken? { get }
+    var colorBackgroundDefaultTertiary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Emphasized - Primary
 
-    var colorBackgroundEmphasizedPrimary: ColorCompositeSemanticToken? { get }
+    var colorBackgroundEmphasizedPrimary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Emphasized - Secondary
 
-    var colorBackgroundEmphasizedSecondary: ColorCompositeSemanticToken? { get }
+    var colorBackgroundEmphasizedSecondary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Brand - Primary
 
-    var colorBackgroundBrandPrimary: ColorCompositeSemanticToken? { get }
+    var colorBackgroundBrandPrimary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Brand - Secondary
 
-    var colorBackgroundBrandSecondary: ColorCompositeSemanticToken? { get }
+    var colorBackgroundBrandSecondary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Brand - Tertiary
 
-    var colorBackgroundBrandTertiary: ColorCompositeSemanticToken? { get }
+    var colorBackgroundBrandTertiary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
-    var colorBackgroundStatusAttractiveMuted: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusAttractiveMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Attractive - Emphasized
 
-    var colorBackgroundStatusAttractiveEmphasized: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusAttractiveEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Muted
 
-    var colorBackgroundStatusWarningMuted: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusWarningMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Emphasized
 
-    var colorBackgroundStatusWarningEmphasized: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusWarningEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Negative - Muted
 
-    var colorBackgroundStatusNegativeMuted: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusNegativeMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Negative - Emphasized
 
-    var colorBackgroundStatusNegativeEmphasized: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusNegativeEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Positive - Muted
 
-    var colorBackgroundStatusPositiveMuted: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusPositiveMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Positive - Emphasized
 
-    var colorBackgroundStatusPositiveEmphasized: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusPositiveEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Information - Muted
 
-    var colorBackgroundStatusInformationMuted: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusInformationMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Background - Status - Information - Emphasized
 
-    var colorBackgroundStatusInformationEmphasized: ColorCompositeSemanticToken? { get }
+    var colorBackgroundStatusInformationEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Default
 
-    var colorContentDefault: ColorCompositeSemanticToken? { get }
+    var colorContentDefault: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Default - On background emphasized
 
-    var colorContentDefaultOnBackgroundEmphasized: ColorCompositeSemanticToken? { get }
+    var colorContentDefaultOnBackgroundEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Muted
 
-    var colorContentMuted: ColorCompositeSemanticToken? { get }
+    var colorContentMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Muted - On background emphasized
 
-    var colorContentMutedOnBackgroundEmphasized: ColorCompositeSemanticToken? { get }
+    var colorContentMutedOnBackgroundEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Brand - Primary
 
-    var colorContentBrandPrimary: ColorCompositeSemanticToken? { get }
+    var colorContentBrandPrimary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasized
 
-    var colorContentBrandPrimaryOnBackgroundEmphasized: ColorCompositeSemanticToken? { get }
+    var colorContentBrandPrimaryOnBackgroundEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Brand - Secondary
 
-    var colorContentBrandSecondary: ColorCompositeSemanticToken? { get }
+    var colorContentBrandSecondary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Brand - Tertiary
 
-    var colorContentBrandTertiary: ColorCompositeSemanticToken? { get }
+    var colorContentBrandTertiary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Status - Attractive
 
-    var colorContentStatusAttractive: ColorCompositeSemanticToken? { get }
+    var colorContentStatusAttractive: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Status - Negative
 
-    var colorContentStatusNegative: ColorCompositeSemanticToken? { get }
+    var colorContentStatusNegative: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Status - Positive
 
-    var colorContentStatusPositive: ColorCompositeSemanticToken? { get }
+    var colorContentStatusPositive: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Content - Status - Information
 
-    var colorContentStatusInformation: ColorCompositeSemanticToken? { get }
+    var colorContentStatusInformation: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Default
 
-    var colorBorderDefault: ColorCompositeSemanticToken? { get }
+    var colorBorderDefault: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Default - On background emphasized
 
-    var colorBorderDefaultOnBackgroundEmphasized: ColorCompositeSemanticToken? { get }
+    var colorBorderDefaultOnBackgroundEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Emphasized
 
-    var colorBorderEmphasized: ColorCompositeSemanticToken? { get }
+    var colorBorderEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Emphasized - On background emphasized
 
-    var colorBorderEmphasizedOnBackgroundEmphasized: ColorCompositeSemanticToken? { get }
+    var colorBorderEmphasizedOnBackgroundEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Brand - Primary
 
-    var colorBorderBrandPrimary: ColorCompositeSemanticToken? { get }
+    var colorBorderBrandPrimary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasized
 
-    var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorCompositeSemanticToken? { get }
+    var colorBorderBrandPrimaryOnBackgroundEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Brand - Secondary
 
-    var colorBorderBrandSecondary: ColorCompositeSemanticToken? { get }
+    var colorBorderBrandSecondary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Brand - Tertiary
 
-    var colorBorderBrandTertiary: ColorCompositeSemanticToken? { get }
+    var colorBorderBrandTertiary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Attractive
 
-    var colorBorderBrandStatusAttractive: ColorCompositeSemanticToken? { get }
+    var colorBorderBrandStatusAttractive: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Warning
 
-    var colorBorderBrandStatusWarning: ColorCompositeSemanticToken? { get }
+    var colorBorderBrandStatusWarning: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Negative
 
-    var colorBorderBrandStatusNegative: ColorCompositeSemanticToken? { get }
+    var colorBorderBrandStatusNegative: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Positive
 
-    var colorBorderBrandStatusPositive: ColorCompositeSemanticToken? { get }
+    var colorBorderBrandStatusPositive: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - Border - Status - Information
 
-    var colorBorderBrandStatusInformation: ColorCompositeSemanticToken? { get }
+    var colorBorderBrandStatusInformation: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Primary
 
-    var colorOnBackgroundPrimary: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundPrimary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Secondary
 
-    var colorOnBackgroundSecondary: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundSecondary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Tertiary
 
-    var colorOnBackgroundTertiary: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundTertiary: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Attrative - Muted
 
-    var colorOnBackgroundStatusAttractiveMuted: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusAttractiveMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Attrative - Emphasized
 
-    var colorOnBackgroundStatusAttractiveEmphasized: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusAttractiveEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Warning - Muted
 
-    var colorOnBackgroundStatusWarningMuted: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusWarningMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Warning - Emphasized
 
-    var colorOnBackgroundStatusWarningEmphasized: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusWarningEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Negative - Muted
 
-    var colorOnBackgroundStatusNegativeMuted: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusNegativeMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Negative - Emphasized
 
-    var colorOnBackgroundStatusNegativeEmphasized: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusNegativeEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Muted
 
-    var colorOnBackgroundStatusPositiveMuted: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusPositiveMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Emphasized
 
-    var colorOnBackgroundStatusPositiveEmphasized: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusPositiveEmphasized: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Information - Muted
 
-    var colorOnBackgroundStatusInformationMuted: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusInformationMuted: MultipleColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Status - Information - Emphasized
 
-    var colorOnBackgroundStatusInformationEmphasized: ColorCompositeSemanticToken? { get }
+    var colorOnBackgroundStatusInformationEmphasized: MultipleColorSemanticToken? { get }
 }

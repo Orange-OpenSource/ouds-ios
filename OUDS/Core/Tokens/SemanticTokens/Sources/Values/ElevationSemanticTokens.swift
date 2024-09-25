@@ -59,48 +59,39 @@ public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color - None
 
-    var elevationColorNoneLight: ElevationColorSemanticToken { get }
-    var elevationColorNoneDark: ElevationColorSemanticToken { get }
+    var elevationColorNone: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Raised
 
-    var elevationColorRaisedLight: ElevationColorSemanticToken { get }
-    var elevationColorRaisedDark: ElevationColorSemanticToken { get }
+    var elevationColorRaised: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Drag
 
-    var elevationColorDragLight: ElevationColorSemanticToken { get }
-    var elevationColorDragDark: ElevationColorSemanticToken { get }
+    var elevationColorDrag: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Default
 
-    var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { get }
-    var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { get }
+    var elevationColorOverlayDefault: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Emphasized
 
-    var elevationColorOverlayEmphasizedLight: ElevationColorSemanticToken { get }
-    var elevationColorOverlayEmphasizedDark: ElevationColorSemanticToken { get }
+    var elevationColorOverlayEmphasized: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Default
 
-    var elevationColorStickyDefaultLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyDefaultDark: ElevationColorSemanticToken { get }
+    var elevationColorStickyDefault: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Emphasized
 
-    var elevationColorStickyEmphasizedLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyEmphasizedDark: ElevationColorSemanticToken { get }
+    var elevationColorStickyEmphasized: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
-    var elevationColorStickyNavigationScrolledLight: ElevationColorSemanticToken { get }
-    var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { get }
+    var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color - Focus
 
-    var elevationColorFocusLight: ElevationColorSemanticToken { get }
-    var elevationColorFocusDark: ElevationColorSemanticToken { get }
+    var elevationColorFocus: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Bow shadow
 

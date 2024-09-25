@@ -36,7 +36,7 @@ final class SpacingCompositeSemanticTokenTests: XCTestCase {
         let third = SpacingCompositeSemanticToken(compact: 12, regular: 78)
         let fourth = SpacingCompositeSemanticToken(compact: 56, regular: 34)
         let fifth = SpacingCompositeSemanticToken(compact: 12, regular: 34)
-        let sixth = SizingCompositeSemanticToken(compact: 0, regular: 00)
+        let sixth = MultipleSizingSemanticToken(compact: 0, regular: 00)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

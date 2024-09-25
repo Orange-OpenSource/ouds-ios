@@ -62,48 +62,39 @@ extension OUDSTheme: ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color - None
 
-    @objc open var elevationColorNoneLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack0 }
-    @objc open var elevationColorNoneDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack0 }
+    @objc open var elevationColorNone: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack0) }
 
     // MARK: Semantic token - Elevation - Color - Raised
 
-    @objc open var elevationColorRaisedLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack500 }
-    @objc open var elevationColorRaisedDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack500 }
+    @objc open var elevationColorRaised: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack500) }
 
     // MARK: Semantic token - Elevation - Color - Drag
 
-    @objc open var elevationColorDragLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack600 }
-    @objc open var elevationColorDragDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack600 }
+    @objc open var elevationColorDrag: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack500) }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Default
 
-    @objc open var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
-    @objc open var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack400 }
+    @objc open var elevationColorOverlayDefault: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack400) }
 
     // MARK: Semantic token - Elevation - Color - Overlay - Emphasized
 
-    @objc open var elevationColorOverlayEmphasizedLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
-    @objc open var elevationColorOverlayEmphasizedDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    @objc open var elevationColorOverlayEmphasized: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Default
 
-    @objc open var elevationColorStickyDefaultLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
-    @objc open var elevationColorStickyDefaultDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    @objc open var elevationColorStickyDefault: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Emphasized
 
-    @objc open var elevationColorStickyEmphasizedLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
-    @objc open var elevationColorStickyEmphasizedDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    @objc open var elevationColorStickyEmphasized: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
 
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
-    @objc open var elevationColorStickyNavigationScrolledLight: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
-    @objc open var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
+    @objc open var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
 
     // MARK: Semantic token - Elevation - Color - Focus
 
-    @objc open var elevationColorFocusLight: ElevationColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    @objc open var elevationColorFocusDark: ElevationColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
+    @objc open var elevationColorFocus: ElevationColorSemanticToken { ElevationColorSemanticToken(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
     // MARK: Semantic token - Elevation - Box shadow
 
@@ -131,3 +122,5 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationFocusLight: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalBlack) }
     @objc open var elevationFocusDark: ElevationCompositeSemanticToken { ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalLightGray160) }
 }
+
+// swiftlint:enable line_length

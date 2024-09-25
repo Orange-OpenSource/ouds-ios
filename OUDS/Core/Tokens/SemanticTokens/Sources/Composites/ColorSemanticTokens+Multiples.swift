@@ -15,8 +15,9 @@ import Foundation
 import OUDSTokensRaw
 import OUDSFoundations
 
-/// Composite semantic tokens which will wrap a combination of `ColorRawToken` depending to color scheme
-public final class ColorCompositeSemanticToken: NSObject {
+/// Semantic tokens which will wrap a combination of `ColorRawToken` depending to color scheme.
+/// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
+public final class MultipleColorSemanticToken: NSObject {
 
     /// For **light** mode scheme
     public let light: ColorRawToken
@@ -36,7 +37,7 @@ public final class ColorCompositeSemanticToken: NSObject {
     /// - Parameter value: The `ColorRawToken` to apply wether the device is in *light* and *dark* mode
     public convenience init?(_ value: ColorRawToken?) {
         guard let value = value else {
-            OUDSLogger.error("Tried to define a ColorCompositeSemanticToken with a nil unique value!")
+            OUDSLogger.error("Tried to define a MultipleColorSemanticToken with a nil unique value!")
             return nil
         }
         self.init(value)
@@ -57,17 +58,17 @@ public final class ColorCompositeSemanticToken: NSObject {
     ///    - dark: The `ColorRawToken` to apply if device in *dark* mode
     public convenience init?(light: ColorRawToken?, dark: ColorRawToken?) {
         guard let light = light, let dark = dark else {
-            OUDSLogger.error("Tried to define a ColorCompositeSemanticToken with at least one nil value! (light = '\(light ?? "nil")', dark = '\(dark ?? "nil")')")
+            OUDSLogger.error("Tried to define a MultipleColorSemanticToken with at least one nil value! (light = '\(light ?? "nil")', dark = '\(dark ?? "nil")')")
             return nil
         }
         self.init(light: light, dark: dark)
     }
 
     /// Returns `true` if `self` and `object` has the same `light` and `dark` values and with `object`
-    /// as a `ColorCompositeSemanticToken`. Otherwise returns `false`.
+    /// as a `MultipleColorSemanticToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     public override func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? ColorCompositeSemanticToken else { return false }
+        guard let other = object as? MultipleColorSemanticToken else { return false }
         return self.light == other.light && self.dark == other.dark
     }
 }
