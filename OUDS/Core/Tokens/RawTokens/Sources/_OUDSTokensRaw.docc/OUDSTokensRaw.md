@@ -50,7 +50,7 @@ The *TypeAliases* folder contains all the *typealias* values used for the raw to
 Indeed these aliases are here to bring clarity and meanings in the library, and also to help users (i.e. developers) to know what kind of objects they handle with the same vocabulary as the one used in *Figma*, and in general, in the whole design system. They can be seen as a ligh level of abstraction with meanings, without having to define real types with `struct` or `class`.
 
 The *Values* folder is maybe the hotter one.
-In fact all the raw tokens values are defined there, and if a JSON to Swift parser generate files, these files must be stored there. It contains only pure raw tokens Swift values, without any type aliases definitions or objects declarations.
+In fact all the raw tokens values are defined there, and if a JSON to Swift parser generate files, these files must be stored there. It contains only pure raw tokens Swift values, without any type aliases definitions or objects declarations. Generated values are place din _+Values_ files, and composite raw tokens are in _+Composites_.
 
 In a nutshell, place the generated values somewhere, and the types and objects elsewhere.
 
@@ -65,11 +65,14 @@ If you need to define Swift `typealias`, update the suitable file in the *TypeAl
 
 Please, respect the nomenclature of the files, e.g. for a new family "Awesome raw" tokens:
 - declaration of raw tokens family must be `AwesomeRawTokens.swift`
-- values must be in `AwesomeRawTokens+Values.swift`
+- generated values must be in `AwesomeRawTokens+Values.swift`
+- composite tokens must be in `AwesomeRawTokens+Composites.swift`
 - type aliases must be in `AwesomeRawTokens+Aliases.swift`
-- composites objects must be in `AwesomeRawTokens+Composites.swift`
+- composites objects must be in `AwesomeCompositeRawTokens.swift`
 
-*Composites* here are notions from *Figma* and are here to pack several raw tokens together to expose a plain, useful and usable object.
+*Composites* here are notions from the *Figjam*, a bit, but *Figma* is not able to manage such gorup of raw tokens. This it cannot output composite raw tokens in the JSON for the parser. 
+As a consequence the composites are defined in a folder, and their values in the *Values* folder in dedicated files.
+It may imply some synchornization issues between the raw tokens and the composite tokens using them, but we don't have any solution yet.
 
 Then, update the unit tests. We do not test the raw tokens values as they are, because these values will be generated and keeping up to date the unit tests may be time wasting.
 But we can however test the relationships between tokens, for exemple for colors if they go lighter and lighter, or for dimensions if they go smaller and smaller. If some raw tokens like font weights strongly rely on the values, we still test these values.
