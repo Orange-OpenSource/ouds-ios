@@ -15,14 +15,18 @@ import SwiftUI
 
 public struct CardIllustration: View {
 
-    private let image: Image
+    private let icon: Image
 
-    /// Initialization the illustration for card.
+    // =================
+    // MARK: Initializer
+    // =================
+    
+    /// Initialization of the illustration for card from a icon.
     ///
     /// - Parameters:
-    ///  - image: Image displayed into the card.
-    public init(image: Image) {
-        self.image = image
+    ///  - icon: Icon displayed into the card.
+    public init(icon: Image) {
+        self.icon = icon
     }
 
     // ==========
@@ -30,18 +34,25 @@ public struct CardIllustration: View {
     // ==========
 
     public var body: some View {
-        ZStack {
-            Rectangle().fill("#1C1C1A".color)
-            image
+        HStack {
+            Spacer()
+            icon
                 .resizable()
+                .renderingMode(.template)
+                .foregroundColor(.white)
                 .aspectRatio(contentMode: .fit)
-                .frame(maxHeight: 42, alignment: .center)
+                .frame(width: 88, height: 88, alignment: .center)
                 .clipped()
+            Spacer()
         }
-        .frame(minHeight: 160, alignment: .center)
-        .frame(maxHeight: 192, alignment: .center)
+        .padding(.vertical, 53)
+        .background(.black)
         .accessibilityElement(children: .combine)
         .accessibilityRemoveTraits(.isImage)
         .accessibilityHidden(true)
     }
+}
+
+#Preview {
+    CardIllustration(icon:  Image("ic_border", bundle: .main))
 }

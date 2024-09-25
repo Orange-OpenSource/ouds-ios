@@ -15,17 +15,25 @@ import SwiftUI
 
 public struct Card: View {
 
+    // =======================
+    // MARK: Stored Properties
+    // =======================
+
     private let title: Text
-    private let image: Image
+    private let icon: Image
+
+    // =================
+    // MARK: Initializer
+    // =================
 
     /// Initialization without button.
     ///
     /// - Parameters:
     ///  - title: Title displayed into the card.
-    ///  - image: Image displayed into the card.
-    public init(title: Text, image: Image) {
+    ///  - icon: Icon displayed into illustration area of the card.
+    public init(title: Text, icon: Image) {
         self.title = title
-        self.image = image
+        self.icon = icon
     }
 
     // ==========
@@ -34,8 +42,7 @@ public struct Card: View {
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            CardIllustration(image: image)
-            
+            CardIllustration(icon: icon)
             title
                 .font(.body)
                 .multilineTextAlignment(.leading)
@@ -51,11 +58,15 @@ public struct Card: View {
     }
 }
 
+// ================
+// MARK: - Previews
+// ================
+
 #Preview {
     ScrollView {
         VStack {
-            Card(title: Text("Color"), image: Image("Typography", bundle: .main))
-            Card(title: Text("Typography"), image: Image("Typography", bundle: .main))
+            Card(title: Text("Border"), icon: Image("ic_border", bundle: .main))
+            Card(title: Text("Typography"), icon: Image("ic_typography", bundle: .main))
         }
         .padding(.horizontal, 16)
     }

@@ -25,12 +25,11 @@ struct ShowcaseElementsPage: View {
 
     private let elements: [ShowcaseElement]
     private let columns = [GridItem(.flexible(), alignment: .topLeading)]
+    private let spacingM: Double = 16 // Todo add tokens
 
     init(elements: [ShowcaseElement]) {
         self.elements = elements
     }
-
-    var spacingM: Double = 16 // Todo add tokens
 
     // ==========
     // MARK: Body
@@ -46,10 +45,9 @@ struct ShowcaseElementsPage: View {
                         } label: {
                             Card(
                                 title: Text(LocalizedStringKey(element.name)),
-                                image: Image(element.imageName))
+                                icon: Image(element.imageName))
                             .accessibilityFocused($requestFocus, equals: .some(id: element.id))
                             .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
-
                         }
                     }
                 }
@@ -61,47 +59,3 @@ struct ShowcaseElementsPage: View {
         .navigationViewStyle(.stack)
     }
 }
-
-
-/*
-struct TokensPage: View {
-
-    @State private var writtenText: String = ""
-    @State private var selectedTheme: OUDSTheme
-
-    init() {
-        writtenText = ""
-        selectedTheme = OrangeTheme()
-    }
-
-    var body: some View {
-        OUDSThemeableView(theme: selectedTheme) {
-            NavigationView {
-                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 30) {
-
-                    OUDSFormsTextInput(label: "Awesome form",
-                                       hint: "Type something",
-                                       placeholder: "Display large",
-                                       value: $writtenText)
-
-                    OUDSButton(text: "Some button") {}
-
-                    Button("Try OUDS Orange Theme") {
-                        selectedTheme = OrangeTheme()
-                        print("Showcase app - Selected OUDS Orange theme")
-                    }
-
-                    Button("Try custom \"local\" theme") {
-                        selectedTheme = OrangeCustomTheme()
-                        print("Showcase app - Selected app custom theme")
-                    }
-
-                }
-                .padding(.horizontal, 20)
-                .navigationTitle("app_bottomBar_tokens")
-            }
-        }
-    }
-}
-
-*/

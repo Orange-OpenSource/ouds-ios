@@ -60,5 +60,6 @@ struct OpacityTokenPage: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding(.bottom, 16)
     }
 }

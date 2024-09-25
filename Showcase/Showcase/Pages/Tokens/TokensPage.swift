@@ -16,7 +16,6 @@ import SwiftUI
 struct TokensPage: View {
 
     let tokenElements: [TokenElement] = [
-        BorderTokenElement(),
         ElevationTokenElement(),
         OpacityTokenElement(),
         TypographyTokenElement(),

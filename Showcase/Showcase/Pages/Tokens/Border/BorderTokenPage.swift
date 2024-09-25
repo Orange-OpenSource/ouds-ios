@@ -45,7 +45,7 @@ struct BorderTokenPage: View {
                 .cornerRadius(15)
         }
     }
-    
+
     var rectangle: some View {
         Rectangle().fill(self.foregroundColor)
             .frame(width: 300, height: 80)

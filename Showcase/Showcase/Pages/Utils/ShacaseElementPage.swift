@@ -25,8 +25,8 @@ struct ShacaseElementPage: View {
     // =======================
 
     let element: ShowcaseElement
-    var spacingM: Double = 16 //  TODO use sementic tokenb
-    var spacingNone: Double = 0 //  TODO use sementic tokenb
+    private let spacingM: Double = 16 //  TODO use sementic tokenb
+    private let spacingNone: Double = 0 //  TODO use sementic tokenb
 
     // ==========
     // MARK: Body
@@ -35,7 +35,7 @@ struct ShacaseElementPage: View {
     var body: some View {
         List {
             VStack(alignment: .leading, spacing: spacingNone) {
-                CardIllustration(image: Image(element.imageName))
+                CardIllustration(icon: Image(element.imageName))
                     .padding(.bottom, spacingM)
                     .accessibilityHidden(true)
 
@@ -57,7 +57,7 @@ struct ShacaseElementPage: View {
         .padding(.horizontal, spacingNone)
         .navigationTitle(LocalizedStringKey(element.name))
 //        .navigationbarMenuForThemeSelection()
-        .background(Color(UIColor.systemBackground))
+        .background("#272727".color)
         .oudsRequestAccessibleFocus(_requestFocus)
     }
 }
