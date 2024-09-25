@@ -28,128 +28,128 @@ final class TestThemeOverrideOfDimensionSemanticTokens: XCTestCase {
         inheritedTheme = MockTheme()
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension0() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension0, abstractTheme.dimension0)
-        XCTAssertTrue(inheritedTheme.dimension0 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimensionNone() throws {
+        XCTAssertNotEqual(inheritedTheme.dimensionNone, abstractTheme.dimensionNone)
+        XCTAssertTrue(inheritedTheme.dimensionNone == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension10() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension10, abstractTheme.dimension10)
-        XCTAssertTrue(inheritedTheme.dimension10 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension10XS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension10XS, abstractTheme.dimension10XS)
+        XCTAssertTrue(inheritedTheme.dimension10XS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension20() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension20, abstractTheme.dimension20)
-        XCTAssertTrue(inheritedTheme.dimension20 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension9XS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension9XS, abstractTheme.dimension9XS)
+        XCTAssertTrue(inheritedTheme.dimension9XS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimensio3n0() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension30, abstractTheme.dimension30)
-        XCTAssertTrue(inheritedTheme.dimension30 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension8XS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension8XS, abstractTheme.dimension8XS)
+        XCTAssertTrue(inheritedTheme.dimension8XS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension40() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension40, abstractTheme.dimension40)
-        XCTAssertTrue(inheritedTheme.dimension40 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension7XS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension7XS, abstractTheme.dimension7XS)
+        XCTAssertTrue(inheritedTheme.dimension7XS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension50() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension50, abstractTheme.dimension50)
-        XCTAssertTrue(inheritedTheme.dimension50 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension6XS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension6XS, abstractTheme.dimension6XS)
+        XCTAssertTrue(inheritedTheme.dimension6XS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension60() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension60, abstractTheme.dimension60)
-        XCTAssertTrue(inheritedTheme.dimension60 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension5XS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension5XS, abstractTheme.dimension5XS)
+        XCTAssertTrue(inheritedTheme.dimension5XS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension70() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension70, abstractTheme.dimension70)
-        XCTAssertTrue(inheritedTheme.dimension70 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension4XS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension4XS, abstractTheme.dimension4XS)
+        XCTAssertTrue(inheritedTheme.dimension4XS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension80() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension0, abstractTheme.dimension0)
-        XCTAssertTrue(inheritedTheme.dimension0 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension3XS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension3XS, abstractTheme.dimension3XS)
+        XCTAssertTrue(inheritedTheme.dimension3XS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension90() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension90, abstractTheme.dimension90)
-        XCTAssertTrue(inheritedTheme.dimension90 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension2XS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension2XS, abstractTheme.dimension2XS)
+        XCTAssertTrue(inheritedTheme.dimension2XS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension100() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension100, abstractTheme.dimension100)
-        XCTAssertTrue(inheritedTheme.dimension100 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimensionXS() throws {
+        XCTAssertNotEqual(inheritedTheme.dimensionXS, abstractTheme.dimensionXS)
+        XCTAssertTrue(inheritedTheme.dimensionXS == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension110() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension110, abstractTheme.dimension110)
-        XCTAssertTrue(inheritedTheme.dimension110 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimensionSM() throws {
+        XCTAssertNotEqual(inheritedTheme.dimensionSM, abstractTheme.dimensionSM)
+        XCTAssertTrue(inheritedTheme.dimensionSM == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension120() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension120, abstractTheme.dimension120)
-        XCTAssertTrue(inheritedTheme.dimension120 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimensionMD() throws {
+        XCTAssertNotEqual(inheritedTheme.dimensionMD, abstractTheme.dimensionMD)
+        XCTAssertTrue(inheritedTheme.dimensionMD == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension130() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension130, abstractTheme.dimension130)
-        XCTAssertTrue(inheritedTheme.dimension130 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimensionLG() throws {
+        XCTAssertNotEqual(inheritedTheme.dimensionLG, abstractTheme.dimensionLG)
+        XCTAssertTrue(inheritedTheme.dimensionLG == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension140() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension140, abstractTheme.dimension140)
-        XCTAssertTrue(inheritedTheme.dimension140 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimensionXL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimensionXL, abstractTheme.dimensionXL)
+        XCTAssertTrue(inheritedTheme.dimensionXL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension150() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension150, abstractTheme.dimension150)
-        XCTAssertTrue(inheritedTheme.dimension150 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension2XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension2XL, abstractTheme.dimension2XL)
+        XCTAssertTrue(inheritedTheme.dimension2XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension160() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension160, abstractTheme.dimension160)
-        XCTAssertTrue(inheritedTheme.dimension160 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension3XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension3XL, abstractTheme.dimension3XL)
+        XCTAssertTrue(inheritedTheme.dimension3XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension170() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension170, abstractTheme.dimension170)
-        XCTAssertTrue(inheritedTheme.dimension170 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension4XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension4XL, abstractTheme.dimension4XL)
+        XCTAssertTrue(inheritedTheme.dimension4XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension180() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension180, abstractTheme.dimension180)
-        XCTAssertTrue(inheritedTheme.dimension180 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension5XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension5XL, abstractTheme.dimension5XL)
+        XCTAssertTrue(inheritedTheme.dimension5XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension190() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension190, abstractTheme.dimension190)
-        XCTAssertTrue(inheritedTheme.dimension190 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension6XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension6XL, abstractTheme.dimension6XL)
+        XCTAssertTrue(inheritedTheme.dimension6XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension200() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension200, abstractTheme.dimension200)
-        XCTAssertTrue(inheritedTheme.dimension200 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension7XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension7XL, abstractTheme.dimension7XL)
+        XCTAssertTrue(inheritedTheme.dimension7XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension210() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension210, abstractTheme.dimension210)
-        XCTAssertTrue(inheritedTheme.dimension210 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension8XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension8XL, abstractTheme.dimension8XL)
+        XCTAssertTrue(inheritedTheme.dimension8XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension220() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension220, abstractTheme.dimension220)
-        XCTAssertTrue(inheritedTheme.dimension220 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension9XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension9XL, abstractTheme.dimension9XL)
+        XCTAssertTrue(inheritedTheme.dimension9XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension230() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension230, abstractTheme.dimension230)
-        XCTAssertTrue(inheritedTheme.dimension230 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension10XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension10XL, abstractTheme.dimension10XL)
+        XCTAssertTrue(inheritedTheme.dimension10XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenDimension240() throws {
-        XCTAssertNotEqual(inheritedTheme.dimension240, abstractTheme.dimension240)
-        XCTAssertTrue(inheritedTheme.dimension240 == MockTheme.mockThemeDimensionSemanticToken)
+    func testInheritedThemeCanOverrideSemanticTokenDimension11XL() throws {
+        XCTAssertNotEqual(inheritedTheme.dimension11XL, abstractTheme.dimension11XL)
+        XCTAssertTrue(inheritedTheme.dimension11XL == MockTheme.mockThemeDimensionSemanticToken)
     }
 }

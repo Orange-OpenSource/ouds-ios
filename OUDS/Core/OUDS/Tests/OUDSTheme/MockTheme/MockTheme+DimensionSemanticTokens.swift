@@ -20,29 +20,29 @@ extension MockTheme {
 
     static let mockThemeDimensionSemanticToken: DimensionSemanticToken = 007
 
-    override var dimension0: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension10: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension20: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension30: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension40: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension50: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension60: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension70: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension80: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension90: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension100: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension110: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension120: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension130: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension140: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension150: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension160: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension170: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension180: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension190: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension200: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension210: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension220: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension230: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
-    override var dimension240: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimensionNone: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension10XS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension9XS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension8XS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension7XS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension6XS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension5XS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension4XS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension3XS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension2XS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimensionXS: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimensionSM: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimensionMD: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimensionLG: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimensionXL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension2XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension3XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension4XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension5XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension6XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension7XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension8XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension9XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension10XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
+    override var dimension11XL: DimensionSemanticToken { Self.mockThemeDimensionSemanticToken }
 }

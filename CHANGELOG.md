@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Rename dimension semantic tokens to apply T-Shirt size rules ([#130](https://github.com/Orange-OpenSource/ouds-ios/issues/130))
 - [Library] Update color semantic tokens to better manage light and dark modes values
 - [Library] Update elevation colors focus light and dark
 - [Library] Rename space padding inline component tokens by removing "component" word

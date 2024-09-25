@@ -15,6 +15,9 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
+
 extension InverseTheme {
 
     // MARK: Semantic token - Elevation - Color - None

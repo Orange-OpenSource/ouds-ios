@@ -17,8 +17,14 @@
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
 public enum ColorRawTokens {
 
-    // Note: So as to help the Figma JSON to Swift parser the values have been added in the Values folder
+    // ଘ( ･ω･)_/ﾟ･:*:･｡☆
+    // Note: So as to help the Figma-JSON-to-Swift parser the values have been added in the Values folder
 
+    /// Applies to a color in its hexadecimal representation the given `opacity`
+    /// - Parameters:
+    ///    - opacity: The opacity effect to apply
+    ///    - hexColor: The String color to update
+    /// - Returns: The new color, as a `String`, update with the given `OpacityRawToken` value
     static func apply(opacity: OpacityRawToken, on hexColor: String) -> String {
         // TODO: Improve this algorithm too much naive
         // Values picked from https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4

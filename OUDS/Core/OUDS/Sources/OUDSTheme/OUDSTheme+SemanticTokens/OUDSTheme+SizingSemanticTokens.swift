@@ -15,6 +15,9 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
+
 // swiftlint:disable line_length
 /// Defines basic values common to all themes for `SizingSemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
@@ -60,23 +63,23 @@ extension OUDSTheme: SizingSemanticTokens {
     @objc open var sizeIconWithTypeBodyLargeMedium: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension300 ) }
     @objc open var sizeIconWithTypeBodyLargeTall: SizingCompositeSemanticToken { SizingCompositeSemanticToken(compact: DimensionRawTokens.dimension350, regular: DimensionRawTokens.dimension350 ) }
 
-    @objc open var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { dimension50 }
-    @objc open var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { dimension60 }
-    @objc open var sizeIconWithTypeLabelSmallTall: SizingSemanticToken { dimension70 }
+    @objc open var sizeIconWithTypeLabelSmallShort: SizingSemanticToken { dimension6XS }
+    @objc open var sizeIconWithTypeLabelSmallMedium: SizingSemanticToken { dimension5XS }
+    @objc open var sizeIconWithTypeLabelSmallTall: SizingSemanticToken { dimension4XS }
 
-    @objc open var sizeIconWithTypeLabelMediumShort: SizingSemanticToken { dimension60 }
-    @objc open var sizeIconWithTypeLabelMediumMedium: SizingSemanticToken { dimension70 }
-    @objc open var sizeIconWithTypeLabelMediumTall: SizingSemanticToken { dimension80 }
+    @objc open var sizeIconWithTypeLabelMediumShort: SizingSemanticToken { dimension5XS }
+    @objc open var sizeIconWithTypeLabelMediumMedium: SizingSemanticToken { dimension4XS }
+    @objc open var sizeIconWithTypeLabelMediumTall: SizingSemanticToken { dimension3XS }
 
-    @objc open var sizeIconWithTypeLabelLargeShorter: SizingSemanticToken { dimension70 }
-    @objc open var sizeIconWithTypeLabelLargeShort: SizingSemanticToken { dimension80 }
-    @objc open var sizeIconWithTypeLabelLargeMedium: SizingSemanticToken { dimension90 }
-    @objc open var sizeIconWithTypeLabelLargeTall: SizingSemanticToken { dimension100 }
-    @objc open var sizeIconWithTypeLabelLargeTaller: SizingSemanticToken { dimension130 }
+    @objc open var sizeIconWithTypeLabelLargeShorter: SizingSemanticToken { dimension4XS }
+    @objc open var sizeIconWithTypeLabelLargeShort: SizingSemanticToken { dimension3XS }
+    @objc open var sizeIconWithTypeLabelLargeMedium: SizingSemanticToken { dimension2XS }
+    @objc open var sizeIconWithTypeLabelLargeTall: SizingSemanticToken { dimensionXS }
+    @objc open var sizeIconWithTypeLabelLargeTaller: SizingSemanticToken { dimensionLG }
 
-    @objc open var sizeIconWithTypeLabelXLargeShort: SizingSemanticToken { dimension100 }
-    @objc open var sizeIconWithTypeLabelXLargeMedium: SizingSemanticToken { dimension120 }
-    @objc open var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { dimension130 }
+    @objc open var sizeIconWithTypeLabelXLargeShort: SizingSemanticToken { dimensionXS }
+    @objc open var sizeIconWithTypeLabelXLargeMedium: SizingSemanticToken { dimensionMD }
+    @objc open var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { dimensionLG }
 
     // MARK: - Semantic token - Sizing - Max width typography
 
