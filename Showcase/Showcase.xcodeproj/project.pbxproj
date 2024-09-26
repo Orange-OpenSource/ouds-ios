@@ -44,6 +44,7 @@
 		07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF427E2CA41325000BD03E /* OpacityTokenPage.swift */; };
 		07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */; };
 		07CF42852CA45DA9000BD03E /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
+		07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
@@ -103,6 +104,7 @@
 		07CF427E2CA41325000BD03E /* OpacityTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpacityTokenPage.swift; sourceTree = "<group>"; };
 		07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTokenElement.swift; sourceTree = "<group>"; };
 		07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTokenPage.swift; sourceTree = "<group>"; };
+		07CF42882CA55BC8000BD03E /* ThemeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelection.swift; sourceTree = "<group>"; };
 		07FDCD912C296A500009AA13 /* OUDS Showcase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OUDS Showcase.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FDCDA52C296B4B0009AA13 /* .gitattributes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitattributes; path = ../.gitattributes; sourceTree = "<group>"; };
 		07FDCDA72C296B7A0009AA13 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -249,6 +251,14 @@
 			path = Border;
 			sourceTree = "<group>";
 		};
+		07CF42872CA55BB4000BD03E /* ThemeSelection */ = {
+			isa = PBXGroup;
+			children = (
+				07CF42882CA55BC8000BD03E /* ThemeSelection.swift */,
+			);
+			path = ThemeSelection;
+			sourceTree = "<group>";
+		};
 		07FDCD882C296A500009AA13 = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +344,7 @@
 		51BD76112C466FCF0033365D /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				07CF42872CA55BB4000BD03E /* ThemeSelection */,
 				073543142CA17244001187EA /* Utils */,
 				51BD760C2C466FCF0033365D /* About */,
 				51BD760E2C466FCF0033365D /* Components */,
@@ -622,6 +633,7 @@
 				0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */,
 				0735432B2CA192F9001187EA /* ShacaseElementPage.swift in Sources */,
 				51BD76222C466FCF0033365D /* ComponentsPage.swift in Sources */,
+				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
 				073543112CA154DE001187EA /* Card.swift in Sources */,

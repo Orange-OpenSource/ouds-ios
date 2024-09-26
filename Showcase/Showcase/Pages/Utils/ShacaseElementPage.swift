@@ -50,7 +50,7 @@ struct ShacaseElementPage: View {
         .padding(.top, theme.spaceFixedNone)
         .padding(.horizontal, theme.spaceFixedNone)
         .navigationTitle(LocalizedStringKey(element.name))
-//        .navigationbarMenuForThemeSelection()
+        .navigationbarMenuForThemeSelection()
         .oudsRequestAccessibleFocus(_requestFocus)
     }
 }

@@ -50,7 +50,7 @@ struct ShowcaseElementsPage: View {
                     }
                 }
                 .padding(.all, theme.spaceFixedMedium)
-//                .navigationbarMenuForThemeSelection()
+                .navigationbarMenuForThemeSelection()
                 .oudsNavigationTitle("app_bottomBar_tokens")
             }
         }

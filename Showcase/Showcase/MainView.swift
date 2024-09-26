@@ -17,26 +17,24 @@ import OUDS
 
 struct MainView: View {
 
-    let theme = OrangeCustomTheme()
+    @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSThemeableView(theme: theme) {
-            TabView {
-                TokensPage()
-                    .tabItem {
-                        Label("app_bottomBar_tokens", image: "ic_token")
-                    }
-                ComponentsPage()
-                    .tabItem {
-                        Label("app_bottomBar_components", image: "ic_component_atom")
-                    }
-                AboutPage()
-                    .tabItem {
-                        Label("app_bottomBar_about", image: "ic_info")
-                    }
-            }
+        TabView {
+            TokensPage()
+                .tabItem {
+                    Label("app_bottomBar_tokens", image: "ic_token")
+                }
+            ComponentsPage()
+                .tabItem {
+                    Label("app_bottomBar_components", image: "ic_component_atom")
+                }
+            AboutPage()
+                .tabItem {
+                    Label("app_bottomBar_about", image: "ic_info")
+                }
         }
-        .accentColor(theme.sysColorBrandPrimaryDefault.color)
+        .accentColor(theme.sysColorBrandPrimaryDefault?.color)
     }
 }
 

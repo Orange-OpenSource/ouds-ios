@@ -19,6 +19,7 @@ import OUDSTokensRaw
 struct OpacityTokenPage: View {
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
@@ -36,13 +37,17 @@ struct OpacityTokenPage: View {
     }
 
     // MARK: Private helper
+    
+    private var fillColor: Color {
+        theme.colorContentBrandPrimary?.color(for: colorScheme) ?? .green
+    }
 
     private func illustration(for opacityToken: OpacitySemanticToken, named name: String) -> some View {
         HStack(alignment: .center, spacing: theme.spaceFixedShorter) {
             ZStack {
-                Rectangle().fill(.orange)
+                Rectangle().fill(fillColor)
                     .frame(width: 44, height: 44)
-                Rectangle().fill(.orange)
+                Rectangle().fill(fillColor)
                     .opacity(opacityToken)
                     .frame(width: 44, height: 44)
                     .transformEffect(CGAffineTransform(translationX: 10, y: 10))
