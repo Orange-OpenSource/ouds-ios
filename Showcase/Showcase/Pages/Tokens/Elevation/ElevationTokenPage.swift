@@ -32,7 +32,7 @@ struct ElevationTokenPage: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 40) {
+        VStack(alignment: .leading, spacing: theme.spaceFixedTallest) {
             if colorScheme == .light {
                 illustration(for: theme.elevationFocus.light, named: "elevationFocusLight")
                 illustration(for: theme.elevationRaised.light, named: "elevationRaisedLight")
@@ -52,7 +52,7 @@ struct ElevationTokenPage: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.all, 16)
+        .padding(.all, theme.spaceFixedMedium)
     }
 
     // MARK: Helpers
@@ -75,7 +75,7 @@ struct ElevationTokenPage: View {
 
     private func elevationRectangle(elevation: ElevationCompositeRawToken) -> some View {
         Rectangle()
-            .frame(width: 64, height: 64)
+            .frame(width: theme.sizeIconDecorativeTallest, height: theme.sizeIconDecorativeTallest)
             .foregroundColor(foregroundColor)
             .shadow(elevation: elevation)
     }

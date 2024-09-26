@@ -18,12 +18,14 @@ import OUDSComponents
 struct ShowcaseElementsPage: View {
 
     @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
+    @Environment(\.theme) private var theme
 
     // MARK: Stored properties
 
     private let elements: [ShowcaseElement]
     private let columns = [GridItem(.flexible(), alignment: .topLeading)]
-    private let spacingM: Double = 16 // Todo add tokens
+
+    // MARK: Initializer
 
     init(elements: [ShowcaseElement]) {
         self.elements = elements
@@ -34,7 +36,7 @@ struct ShowcaseElementsPage: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 4) {
+                LazyVGrid(columns: columns, spacing: theme.spaceFixedShortest) {
                     ForEach(elements, id: \.id) { element in
                         NavigationLink {
                             ShacaseElementPage(element: element)
@@ -47,7 +49,7 @@ struct ShowcaseElementsPage: View {
                         }
                     }
                 }
-                .padding(.all, spacingM)
+                .padding(.all, theme.spaceFixedMedium)
 //                .navigationbarMenuForThemeSelection()
                 .oudsNavigationTitle("app_bottomBar_tokens")
             }

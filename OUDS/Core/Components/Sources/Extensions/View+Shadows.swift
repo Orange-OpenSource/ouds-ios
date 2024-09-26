@@ -29,13 +29,3 @@ extension View {
                     y: CGFloat(elevation.y))
     }
 }
-/*
-extension View {
-    func elevationRaised() -> some View {
-        ...
-    }
-    
-    func elevationAllSticky() -> some View {
-        ...
-    }
-}*/

@@ -23,37 +23,34 @@ struct ShacaseElementPage: View {
     // MARK: Stored Properties
 
     let element: ShowcaseElement
-    private let spacingM: Double = 16 //  TODO use sementic tokenb
-    private let spacingNone: Double = 0 //  TODO use sementic tokenb
 
     // MARK: Body
 
     var body: some View {
         List {
-            VStack(alignment: .leading, spacing: spacingNone) {
+            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
                 CardIllustration(icon: Image(element.imageName))
-                    .padding(.bottom, spacingM)
+                    .padding(.bottom, theme.spaceFixedMedium)
                     .accessibilityHidden(true)
 
                 Text(LocalizedStringKey(element.description))
                     .accessibilityFocused($requestFocus)
-                    .padding(.horizontal, spacingM)
-                    .padding(.bottom, spacingM)
+                    .padding(.horizontal, theme.spaceFixedMedium)
+                    .padding(.bottom, theme.spaceFixedMedium)
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
-            .padding(.horizontal, spacingNone)
+            .padding(.horizontal, theme.spaceFixedNone)
 
             element.pageDescription
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
         }
         .listStyle(.plain)
-        .padding(.top, spacingNone)
-        .padding(.horizontal, spacingNone)
+        .padding(.top, theme.spaceFixedNone)
+        .padding(.horizontal, theme.spaceFixedNone)
         .navigationTitle(LocalizedStringKey(element.name))
 //        .navigationbarMenuForThemeSelection()
-        .background("#272727".color)
         .oudsRequestAccessibleFocus(_requestFocus)
     }
 }
