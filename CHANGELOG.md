@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Add color semantic tokens `colorBackgroundStatusNeutral`, some `OnBackgroundEmphasized`, `colorBackgroundAction`, `colorBackgroundAlways`, `colorContent` variants
 - [Library] Add typography semantic tokens for font letter spacing
+- [DemoApp] Create token section (Border, Typography, Elevation, Opacity) ([#120](https://github.com/Orange-OpenSource/ouds-ios/issues/120))
 - [Library] Unit tests for multiple tokens
 - [Library] Add color semantic composite tokens embeding light and dark modes values
 - [Library] Add spacing semantic tokens "huge" and "jumbo"
