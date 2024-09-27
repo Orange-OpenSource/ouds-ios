@@ -12,40 +12,149 @@
 //
 
 import SwiftUI
+import OUDS
+import OUDSTokensSemantic
+import OUDSComponents // for BorderStyleModifier
+
+// Remark: do we need to keep BorderStyleModifier in OUDSComponent or move it to OUDS or OUDSSementicToken ?
 
 struct BorderTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    var foregroundColor: Color {
-        switch colorScheme {
-        case .light:
-            "#f4f4f4".color
-        case .dark:
-            "#272727".color
-        @unknown default:
-            fatalError()
-        }
-    }
-
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .center, spacing: 8) {
-            rectangle.border(.red, width: theme.borderWidthNone)
-            rectangle.border(.red, width: theme.borderWidthDefault)
-            rectangle.border(.red, width: theme.borderWidthThin)
-            rectangle.border(.red, width: theme.borderWidthMedium)
-            rectangle.border(.red, width: theme.borderWidthThick)
-            rectangle.border(.red, width: theme.borderWidthThicker)
-            rectangle.border(.red, width: theme.borderWidthOutsideFocus)
-                .cornerRadius(15)
+        VStack(alignment: .center, spacing: theme.spaceFixedMedium) {
+            groupOfIllustrations(name: "Width") {
+                ForEach(Width.allCases, id: \.rawValue) { width in
+                    let token = width.token(from: theme)
+
+                    illustration(width: token,
+                                 radius: theme.borderRadiusNone,
+                                 style: theme.borderStyleDefault,
+                                 name: width.rawValue,
+                                 value: token)
+                }
+            }
+
+            groupOfIllustrations(name: "Radius") {
+                ForEach(Radius.allCases, id: \.rawValue) { radius in
+                    let token = radius.token(from: theme)
+                    illustration(width: theme.borderWidthDefault,
+                                 radius: token,
+                                 style: theme.borderStyleDefault,
+                                 name: radius.rawValue,
+                                 value: token)
+                }
+            }
+
+            groupOfIllustrations(name: "Style") {
+                illustration(width: theme.borderWidthMedium,
+                             radius: theme.borderRadiusNone,
+                             style: theme.borderStyleDefault,
+                             name: "borderStyleDefault")
+                illustration(width: theme.borderWidthMedium,
+                             radius: theme.borderRadiusNone,
+                             style: theme.borderStyleDrag,
+                             name: "borderStyleDrag")
+            }
+        }
+        .padding(.horizontal, theme.spaceFixedMedium)
+    }
+
+    // MARK: Private helpers
+
+    @ViewBuilder
+    private func groupOfIllustrations<Illustration> (name: String, @ViewBuilder illustartions: () -> Illustration) -> some View where Illustration: View {
+        VStack(alignment: .leading, spacing: theme.spaceFixedShorter) {
+            Text(name).typeHeadingLarge(theme)
+
+            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                illustartions()
+            }
         }
     }
 
-    var rectangle: some View {
-        Rectangle().fill(self.foregroundColor)
-            .frame(width: 300, height: 80)
+    private func illustration(
+        width: BorderWidthSemanticToken,
+        radius: BorderRadiusSemanticToken,
+        style: BorderStyleSemanticToken,
+        name: String,
+        value: Double? = nil) -> some View {
+        HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
+
+            Rectangle()
+                .fill(Color(UIColor.systemBackground))
+                .frame(width: 64, height: 64)
+            .modifier(BorderStyleModifier(
+                style,
+                width,
+                radius,
+                theme.colorBorderDefault!))
+
+            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                Text(name).bold()
+                if let value {
+                    Text("\(value, specifier: "%.1f")")
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(.vertical, theme.spaceFixedShorter)
+    }
+}
+
+private enum Radius: String, CaseIterable {
+    case borderRadiusNone
+    case borderRadiusDefault
+    case borderRadiusShort
+    case borderRadiusMedium
+    case borderRadiusTall
+
+    func token(from theme: OUDSTheme) -> BorderRadiusSemanticToken {
+        switch self {
+        case .borderRadiusNone:
+            return theme.borderRadiusNone
+        case .borderRadiusDefault:
+            return theme.borderRadiusDefault
+        case .borderRadiusShort:
+            return theme.borderRadiusShort
+        case .borderRadiusMedium:
+            return theme.borderRadiusMedium
+        case .borderRadiusTall:
+            return theme.borderRadiusTall
+        }
+    }
+}
+
+private enum Width: String, CaseIterable {
+
+    case borderWidthNone
+    case borderWidthDefault
+    case borderWidthThin
+    case borderWidthMedium
+    case borderWidthThick
+    case borderWidthThicker
+    case borderWidthOutsideFocus
+
+    func token(from theme: OUDSTheme) -> BorderWidthSemanticToken {
+        switch self {
+        case .borderWidthNone:
+            return theme.borderWidthNone
+        case .borderWidthDefault:
+            return theme.borderWidthDefault
+        case .borderWidthThin:
+            return theme.borderWidthThin
+        case .borderWidthMedium:
+            return theme.borderWidthMedium
+        case .borderWidthThick:
+            return theme.borderWidthThick
+        case .borderWidthThicker:
+            return theme.borderWidthThicker
+        case .borderWidthOutsideFocus:
+            return theme.borderWidthOutsideFocus
+        }
     }
 }

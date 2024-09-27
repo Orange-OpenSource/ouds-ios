@@ -17,7 +17,7 @@ import OUDSFoundations
 import SwiftUI
 
 /// A `ViewModifier` which will apply a specific border style to a `View` using several semantic tokens.
-struct BorderStyleModifier: ViewModifier {
+public struct BorderStyleModifier: ViewModifier {
 
     // MARK: - Properties
 
@@ -35,7 +35,7 @@ struct BorderStyleModifier: ViewModifier {
 
     /// Color to apply depending to the `colorScheme`
     private var colorToApply: Color {
-        colorScheme == .light ? color.light.color : color.dark.color
+        (colorScheme == .light ? color.light.color : color.dark.color).opacity(0.5)
     }
 
     /// To know if the device is in light mode or in dark mode
@@ -43,10 +43,10 @@ struct BorderStyleModifier: ViewModifier {
 
     // MARK: - Initializer
 
-    init(_ token: BorderStyleSemanticToken,
-         _ width: BorderWidthSemanticToken,
-         _ radius: BorderRadiusSemanticToken,
-         _ color: ColorSemanticToken) {
+    public init(_ token: BorderStyleSemanticToken,
+                _ width: BorderWidthSemanticToken,
+                _ radius: BorderRadiusSemanticToken,
+                _ color: ColorSemanticToken) {
         self.token = token
         self.width = width
         self.radius = radius
@@ -59,7 +59,7 @@ struct BorderStyleModifier: ViewModifier {
     // MARK: - Body
 
     @ViewBuilder
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         if token == "solid" {
             solid(content)
         } else if token == "dashed" {
@@ -76,34 +76,26 @@ struct BorderStyleModifier: ViewModifier {
     }
 
     private func solid(_ content: Content) -> some View {
-        content.background(
-            RoundedRectangle(
-                cornerRadius: radius,
-                style: .circular
-            )
-            .border(colorToApply, width: width)
-        )
+        content
+            .clipShape(RoundedRectangle(cornerRadius: radius))
+            .overlay(RoundedRectangle(cornerRadius: radius).stroke(colorToApply, lineWidth: width))
     }
 
     private func dashed(_ content: Content) -> some View {
-        content.background(
-            RoundedRectangle(
-                cornerRadius: radius,
-                style: .circular
+        content
+            .clipShape(RoundedRectangle(cornerRadius: radius))
+            .overlay(RoundedRectangle(cornerRadius: radius)
+                .stroke(style: StrokeStyle(lineWidth: width, dash: [10, 5]))
+                .foregroundColor(colorToApply)
             )
-            .stroke(style: StrokeStyle(lineWidth: width, dash: [10, 5]))
-            .foregroundColor(colorToApply)
-        )
     }
 
     private func dotted(_ content: Content) -> some View {
-        content.background(
-            RoundedRectangle(
-                cornerRadius: radius,
-                style: .circular
+        content
+            .clipShape(RoundedRectangle(cornerRadius: radius))
+            .overlay(RoundedRectangle(cornerRadius: radius)
+                .stroke(style: StrokeStyle(lineWidth: width, dash: [1, 5]))
+                .foregroundColor(colorToApply)
             )
-            .stroke(style: StrokeStyle(lineWidth: width, dash: [1, 5]))
-            .foregroundColor(colorToApply)
-        )
     }
 }

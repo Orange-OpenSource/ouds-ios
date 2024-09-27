@@ -19,16 +19,16 @@ import SwiftUI
 extension OUDSTheme: Identifiable, Hashable {
 
     var name: String {
-        if let orangeTheme = self as? OrangeTheme {
+        if self is OrangeTheme {
             return "Orange"
         }
-        if let soshTheme = self as? SoshTheme {
+        if self is SoshTheme {
             return "Sosh"
         }
-        
+
         return String(describing: Self.self)
     }
-    
+
     // MARK: Identifiable
 
     public var id: String {
