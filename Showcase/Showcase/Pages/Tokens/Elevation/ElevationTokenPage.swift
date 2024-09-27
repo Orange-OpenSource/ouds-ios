@@ -17,12 +17,6 @@ import OUDSTokensSemantic
 import OUDSTokensRaw
 
 // MARK: - Raw tokens
-// let raised = ElevationCompositeRawToken(x: 0, y: 1, blur: 2, color: ColorRawTokens.colorTransparentBlack500)
-// let overlayDefault = ElevationCompositeRawToken(x: 0, y: 2, blur: 3, color: ColorRawTokens.colorTransparentBlack400)
-// let allSticky = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack300)
-// let drag = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack500)
-// let overlayEmphasized = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, color: ColorRawTokens.colorTransparentBlack300)
-//
 
 struct ElevationTokenPage: View {
 
@@ -32,7 +26,7 @@ struct ElevationTokenPage: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedTallest) {
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             if colorScheme == .light {
                 illustration(for: theme.elevationFocus.light, named: "elevationFocusLight")
                 illustration(for: theme.elevationRaised.light, named: "elevationRaisedLight")
@@ -52,13 +46,13 @@ struct ElevationTokenPage: View {
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.all, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaceFixedMedium)
     }
 
     // MARK: Helpers
 
     private func illustration(for elevation: ElevationCompositeRawToken, named: String) -> some View {
-        HStack(alignment: .center) {
+        HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
             elevationRectangle(elevation: elevation)
 
             VStack(alignment: .leading) {
@@ -71,6 +65,7 @@ struct ElevationTokenPage: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding(.vertical, theme.spaceFixedShorter)
     }
 
     private func elevationRectangle(elevation: ElevationCompositeRawToken) -> some View {

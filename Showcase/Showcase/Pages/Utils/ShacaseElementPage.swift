@@ -28,23 +28,23 @@ struct ShacaseElementPage: View {
 
     var body: some View {
         List {
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
                 CardIllustration(icon: Image(element.imageName))
-                    .padding(.bottom, theme.spaceFixedMedium)
                     .accessibilityHidden(true)
 
                 Text(LocalizedStringKey(element.description))
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaceFixedMedium)
-                    .padding(.bottom, theme.spaceFixedMedium)
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
             .padding(.horizontal, theme.spaceFixedNone)
+            .padding(.bottom, theme.spaceFixedMedium)
 
             element.pageDescription
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
+                .padding(.bottom, theme.spaceFixedMedium)
         }
         .listStyle(.plain)
         .padding(.top, theme.spaceFixedNone)
