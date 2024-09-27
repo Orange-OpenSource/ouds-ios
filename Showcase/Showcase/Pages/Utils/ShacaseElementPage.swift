@@ -19,6 +19,7 @@ struct ShacaseElementPage: View {
 
     @AccessibilityFocusState private var requestFocus: Bool
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored Properties
 
@@ -35,20 +36,24 @@ struct ShacaseElementPage: View {
                 Text(LocalizedStringKey(element.description))
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaceFixedMedium)
+
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
             .padding(.horizontal, theme.spaceFixedNone)
             .padding(.bottom, theme.spaceFixedMedium)
+            .background(theme.colorBackgroundDefaultPrimary?.color(for: colorScheme))
 
             element.pageDescription
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
                 .padding(.bottom, theme.spaceFixedMedium)
+                .background(theme.colorBackgroundDefaultPrimary?.color(for: colorScheme))
         }
         .listStyle(.plain)
         .padding(.top, theme.spaceFixedNone)
         .padding(.horizontal, theme.spaceFixedNone)
+        .background(theme.colorBackgroundDefaultPrimary?.color(for: colorScheme))
         .navigationTitle(LocalizedStringKey(element.name))
         .navigationbarMenuForThemeSelection()
         .oudsRequestAccessibleFocus(_requestFocus)

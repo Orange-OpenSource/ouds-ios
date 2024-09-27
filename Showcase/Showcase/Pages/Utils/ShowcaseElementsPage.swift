@@ -19,6 +19,7 @@ struct ShowcaseElementsPage: View {
 
     @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 
@@ -53,6 +54,7 @@ struct ShowcaseElementsPage: View {
                 .navigationbarMenuForThemeSelection()
                 .oudsNavigationTitle("app_bottomBar_tokens")
             }
+            .background(theme.colorBackgroundDefaultPrimary?.color(for: colorScheme))
         }
         .navigationViewStyle(.stack)
     }
