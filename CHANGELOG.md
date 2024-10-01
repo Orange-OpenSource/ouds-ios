@@ -18,6 +18,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DemoApp] Create a separate alpha release version ([#141](https://github.com/Orange-OpenSource/ouds-ios/issues/141))
+- [DemoApp] Update the app icon with the new launch icon ([#140](https://github.com/Orange-OpenSource/ouds-ios/issues/140))
+- [DemoApp] Renaming of demo application ([#85](https://github.com/Orange-OpenSource/ouds-ios/issues/85)) 
 - [Library] Rename dimension semantic tokens to apply T-Shirt size rules ([#130](https://github.com/Orange-OpenSource/ouds-ios/issues/130))
 - [Library] Rename `SizingCompositeSemanticToken` to `MultipleSizingSemanticToken` to keep "composite" word for *Figma* design system
 - [Library] Rename `ColorCompositeSemanticToken` to `MultipleColorRawToken` to keep "composite" word for *Figma* design system
