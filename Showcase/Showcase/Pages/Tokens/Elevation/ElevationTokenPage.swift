@@ -11,10 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+// swiftlint:enable_rule sorted_imports
+
 import SwiftUI
 import OUDS
-import OUDSTokensSemantic
 import OUDSTokensRaw
+import OUDSTokensSemantic
 
 // MARK: - Raw tokens
 

@@ -15,19 +15,7 @@ import SwiftUI
 
 struct CardIllustration: View {
 
-    private let icon: Image
-
-    // MARK: Initializer
-
-    /// Initialization of the illustration for card from a icon.
-    ///
-    /// - Parameters:
-    ///  - icon: Icon displayed into the card.
-    init(icon: Image) {
-        self.icon = icon
-    }
-
-    // MARK: Body
+    let icon: Image
 
     var body: some View {
         HStack {

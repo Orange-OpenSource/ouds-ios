@@ -11,9 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import SwiftUI
 import OUDS
-import OUDSComponents
+import SwiftUI
 
 struct ShowcaseElementsPage: View {
 
@@ -23,21 +22,14 @@ struct ShowcaseElementsPage: View {
 
     // MARK: Stored properties
 
-    private let elements: [ShowcaseElement]
-    private let columns = [GridItem(.flexible(), alignment: .topLeading)]
-
-    // MARK: Initializer
-
-    init(elements: [ShowcaseElement]) {
-        self.elements = elements
-    }
+    let elements: [ShowcaseElement]
 
     // MARK: Body
 
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: columns, spacing: theme.spaceFixedShortest) {
+                LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaceFixedShortest) {
                     ForEach(elements, id: \.id) { element in
                         NavigationLink {
                             ShacaseElementPage(element: element)

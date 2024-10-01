@@ -67,12 +67,12 @@ struct BorderTokenPage: View {
     // MARK: Private helpers
 
     @ViewBuilder
-    private func groupOfIllustrations<Illustration> (name: String, @ViewBuilder illustartions: () -> Illustration) -> some View where Illustration: View {
+    private func groupOfIllustrations<Illustration> (name: String, @ViewBuilder illustrations: () -> Illustration) -> some View where Illustration: View {
         VStack(alignment: .leading, spacing: theme.spaceFixedShorter) {
             Text(name).typeHeadingLarge(theme)
 
             VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-                illustartions()
+                illustrations()
             }
         }
     }
@@ -88,11 +88,10 @@ struct BorderTokenPage: View {
             Rectangle()
                 .fill(Color(UIColor.systemBackground))
                 .frame(width: 64, height: 64)
-            .modifier(BorderStyleModifier(
-                style,
-                width,
-                radius,
-                theme.colorBorderDefault!))
+                .oudsBorder(style: style,
+                            width: width,
+                            radius: radius,
+                            color: theme.colorBorderDefault!)
 
             VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
                 Text(name).bold()

@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import SwiftUI
-import OUDSThemesOrange
 import OUDS
+import OUDSThemesOrange
+import SwiftUI
 
 struct MainView: View {
 

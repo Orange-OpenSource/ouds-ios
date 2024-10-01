@@ -11,18 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-import OUDSTokensSemantic
 import OUDSFoundations
+import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` which will apply a specific border style to a `View` using several semantic tokens.
-public struct BorderStyleModifier: ViewModifier {
+/// A `ViewModifier` which will apply a specific border to a `View` using several semantic tokens.
+struct BorderModifier: ViewModifier {
 
     // MARK: - Properties
 
     /// The style to apply on the component
-    private let token: BorderStyleSemanticToken
+    private let style: BorderStyleSemanticToken
 
     /// The width of the border
     private let width: BorderWidthSemanticToken
@@ -35,7 +34,7 @@ public struct BorderStyleModifier: ViewModifier {
 
     /// Color to apply depending to the `colorScheme`
     private var colorToApply: Color {
-        (colorScheme == .light ? color.light.color : color.dark.color).opacity(0.5)
+        (colorScheme == .light ? color.light.color : color.dark.color)
     }
 
     /// To know if the device is in light mode or in dark mode
@@ -43,28 +42,28 @@ public struct BorderStyleModifier: ViewModifier {
 
     // MARK: - Initializer
 
-    public init(_ token: BorderStyleSemanticToken,
+    init(_ style: BorderStyleSemanticToken,
                 _ width: BorderWidthSemanticToken,
                 _ radius: BorderRadiusSemanticToken,
                 _ color: ColorSemanticToken) {
-        self.token = token
+        self.style = style
         self.width = width
         self.radius = radius
         self.color = color
-        if token != "solid" && token != "dashed" && token != "dotted" {
-            OUDSLogger.error("Unmanaged token: '\(token)'!")
+        if style != "solid" && style != "dashed" && style != "dotted" {
+            OUDSLogger.error("Unmanaged style: '\(style)'!")
         }
     }
 
     // MARK: - Body
 
     @ViewBuilder
-    public func body(content: Content) -> some View {
-        if token == "solid" {
+    func body(content: Content) -> some View {
+        if style == "solid" {
             solid(content)
-        } else if token == "dashed" {
+        } else if style == "dashed" {
             dashed(content)
-        } else if token == "dotted" {
+        } else if style == "dotted" {
             dotted(content)
         } else { // if token == "none" and unmanaged cases
             none(content)

@@ -11,11 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import SwiftUI
+import OUDSTokensComponent
 import OUDSTokensRaw
 import OUDSTokensSemantic
-import OUDSTokensComponent
 import OUDSThemesOrange
 
 // swiftlint:disable line_length

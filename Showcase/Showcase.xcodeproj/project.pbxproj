@@ -445,10 +445,10 @@
 			buildConfigurationList = 07FDCD9F2C296A540009AA13 /* Build configuration list for PBXNativeTarget "Showcase" */;
 			buildPhases = (
 				2A5B2E6765E57E6A6B13CBA1 /* [CP] Check Pods Manifest.lock */,
+				0707B6412C2C414200A911E7 /* Run Swiftlint */,
 				07FDCD8D2C296A500009AA13 /* Sources */,
 				07FDCD8E2C296A500009AA13 /* Frameworks */,
 				07FDCD8F2C296A500009AA13 /* Resources */,
-				0707B6412C2C414200A911E7 /* Run Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -558,7 +558,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml OUDS/*\n    swiftlint --config ../.swiftlint.yml Showcase/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
+			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml Showcase/*\n    swiftlint --config ../.swiftlint.yml OUDS/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
 		};
 		2A5B2E6765E57E6A6B13CBA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

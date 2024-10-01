@@ -12,8 +12,8 @@
 //
 
 import Foundation
-import OUDSTokensSemantic
 import OUDSTokensRaw
+import OUDSTokensSemantic
 
 extension MockTheme {
 

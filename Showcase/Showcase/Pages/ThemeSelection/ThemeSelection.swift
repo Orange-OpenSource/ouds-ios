@@ -11,11 +11,14 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import OUDSThemesSosh
-import OUDSThemesOrange
 import OUDS
+import OUDSThemesOrange
+import OUDSThemesSosh
 import SwiftUI
 
+/// Ewtesion of the `OUDSTheme` :
+/// - Identifiable to be enumerated in the ForEach used to build the list of elements in picker.
+/// - Hashable, because it is used in a picker than need Hashable element.
 extension OUDSTheme: Identifiable, Hashable {
 
     var name: String {
@@ -36,7 +39,6 @@ extension OUDSTheme: Identifiable, Hashable {
     }
 
     // MARK: Hashable
-
     public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
         lhs.name == rhs.name
     }
@@ -50,25 +52,18 @@ extension OUDSTheme: Identifiable, Hashable {
 /// It also stores the current theme, selected by user.
 final class ThemeProvider: ObservableObject {
 
-    // =======================
     // MARK: Stored Properties
-    // =======================
+
     @Published
     var currentTheme: OUDSTheme {
         didSet {
-            if currentTheme.name != oldValue.name {
-                hotSwitchWarningIndicator.showAlert = true
-            }
             UserDefaults.standard.set(currentTheme.name, forKey: "themeName")
         }
     }
 
-    var hotSwitchWarningIndicator: HotSwitchWarningIndicator
     let themes: [OUDSTheme]
 
-    // ==================
     // MARK: Initializers
-    // ==================
 
     init() {
         let orangeTheme = OrangeTheme()
@@ -82,8 +77,6 @@ final class ThemeProvider: ObservableObject {
         } else {
             currentTheme = defaultTheme
         }
-
-        hotSwitchWarningIndicator = HotSwitchWarningIndicator()
     }
 }
 
@@ -97,23 +90,17 @@ extension View {
     }
 }
 
-// ==============================
 // MARK: - Theme Selection Button
-// ==============================
 
 /// Button is added in navigation bar to allow, the user to change the current theme.
 struct ThemeSelectionButton: View {
 
-    // =======================
     // MARK: Stored properties
-    // =======================
 
     @EnvironmentObject private var themeProvider: ThemeProvider
     @Environment(\.colorScheme) private var colorScheme
 
-    // ==========
     // MARK: Body
-    // ==========
 
     var body: some View {
         Menu {
@@ -127,40 +114,5 @@ struct ThemeSelectionButton: View {
             Image(systemName: "paintpalette")
         }
         .foregroundColor(themeProvider.currentTheme.colorContentBrandPrimary?.color(for: colorScheme))
-//        .modifier(HotSwhitchIndicatorModifier(hotSwitchWarningIndicator: themeProvider.hotSwitchWarningIndicator))
-    }
-}
-
-// ===========================
-// MARK: - Hot Switch Warning
-// ===========================
-
-/// Will be removed when hot switch will be supported
-final class HotSwitchWarningIndicator: ObservableObject {
-    @Published var showAlert: Bool = false
-}
-
-struct HotSwhitchIndicatorModifier: ViewModifier {
-
-    // =======================
-    // MARK: Stored Properties
-    // =======================
-
-    @ObservedObject var hotSwitchWarningIndicator: HotSwitchWarningIndicator
-
-    // ==================
-    // MARK: Initializers
-    // ==================
-
-    init(hotSwitchWarningIndicator: HotSwitchWarningIndicator) {
-        self.hotSwitchWarningIndicator = hotSwitchWarningIndicator
-    }
-
-    @ViewBuilder
-    func body(content: Content) -> some View {
-        content
-            .alert("Warning", isPresented: $hotSwitchWarningIndicator.showAlert) {} message: {
-                Text("You need to restart application to see design with new theme")
-            }
     }
 }

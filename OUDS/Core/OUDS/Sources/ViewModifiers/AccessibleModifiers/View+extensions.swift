@@ -11,24 +11,19 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import SwiftUI
 
-// ===========================
 // MARK: - Accessibility Delay
-// ===========================
 
 /// Contains some delays to apply to view modifiers' deadlines for vocalizations or accessibility notifications
-private struct AccessibilityDelay {
+private enum AccessibilityDelay: Double {
     // Must be lower than accesibleFocusRequestDelay to start before
-    fileprivate static let accessibleTitleNotificationDelay = 0.0
+    case accessibleTitleNotificationDelay = 0.0
     // Must be greater than accessibleTitleNotificationDelay to start after
-    fileprivate static let accessibleFocusRequestDelay = 1.0
+    case accessibleFocusRequestDelay = 1.0
 }
 
-// ======================
 // MARK: - View extension
-// ======================
 
 extension View {
 
@@ -38,7 +33,7 @@ extension View {
     /// - Returns View: The view with a new modifier
     public func oudsNavigationTitle(_ title: String) -> some View {
         self.modifier(AccessibleNavigationTitleModifier(title: title,
-                                                        deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay))
+                                                        deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay.rawValue))
     }
 
     /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed
@@ -46,7 +41,7 @@ extension View {
     /// - Returns View: The view with a new modifier
     public func oudsRequestAccessibleFocus(_ requestFocus: AccessibilityFocusState<Bool>) -> some View {
         self.modifier(RequestAccessibleFocusModifier(requestFocus: requestFocus,
-                                                     deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay))
+                                                     deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
     }
 
     /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed for the given elment
@@ -57,6 +52,6 @@ extension View {
     public func oudsRequestAccessibleFocus(_ requestFocus: AccessibilityFocusState<AccessibilityFocusable?>, for target: AccessibilityFocusable) -> some View {
         self.modifier(RestrictedRequestAccessibleFocusModifier(requestFocus: requestFocus,
                                                                target: target,
-                                                               deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay))
+                                                               deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
     }
 }
