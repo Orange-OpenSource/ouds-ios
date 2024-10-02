@@ -37,7 +37,6 @@ final class GridRawTokensTests: XCTestCase {
 
     // MARK: - Primitive token - Grid - Max width
 
-    
     func testGridRawTokenGridMaxWidthExtraCompactLessThanGridMaxWidthCompact() throws {
         XCTAssertLessThan(GridRawTokens.gridMaxWidthExtraCompact, GridRawTokens.gridMaxWidthCompact)
     }
