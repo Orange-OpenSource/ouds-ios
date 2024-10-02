@@ -40,12 +40,9 @@ extension OUDSTheme: GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Regular
 
+    @objc open var gridRegularMinWidth: GridRegularSemanticToken { GridRawTokens.gridMinWidthRegular }
+    @objc open var gridRegularMaxWidth: GridRegularSemanticToken { GridRawTokens.gridMaxWidthRegular }
     @objc open var gridRegularMargin: GridRegularSemanticToken { GridRawTokens.gridMargin500 }
     @objc open var gridRegularColumnGap: GridRegularSemanticToken { GridRawTokens.gridColumnGap300 }
     @objc open var gridRegularColumnCount: GridRegularSemanticToken { GridRawTokens.gridColumnCount600 }
-    
-    // MARK: Semantic token - Grid - iOS Medium
-
-    @objc open var gridMediumMinWidth: GridMediumSemanticToken { GridRawTokens.gridMinWidthMedium }
-    @objc open var gridMediumMaxWidth: GridRegularSemanticToken { GridRawTokens.gridMaxWidthMedium }
 }
