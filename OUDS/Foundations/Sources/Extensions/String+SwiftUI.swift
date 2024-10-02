@@ -20,7 +20,7 @@ extension String {
     public var color: Color! {
         Color(hexadecimalCode: self)
     }
-    
+
     /// Forges the font name which is expected for the given weight.
     /// Beware, the function does not check if the font exists.
     /// - Parameters:

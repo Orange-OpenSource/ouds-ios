@@ -18,7 +18,7 @@ import XCTest
 
 /// Class to test `Font` extensions related to `SwiftUI`
 final class TestFont_SwiftUI: XCTestCase {
-    
+
     /// Tests description values of font weight
     func testFontWeightDescription() throws {
         XCTAssertTrue(Font.Weight.ultraLight == "Ultra-Light")

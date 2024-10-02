@@ -115,7 +115,7 @@ public protocol TypographySemanticTokens {
     var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { get }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing - Mobile (extra-compact/compact)
-    
+
     var fontLetterSpacingMobileDisplayLarge: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingMobileDisplayMedium: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingMobileDisplaySmall: TypographyFontLetterSpacingSemanticToken { get }
@@ -126,9 +126,9 @@ public protocol TypographySemanticTokens {
     var fontLetterSpacingMobileBodyLarge: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingMobileBodyMedium: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingMobileBodySmall: TypographyFontLetterSpacingSemanticToken { get }
-    
+
     // MARK: - Semantic token - Typography - Font - Letter spacing - Tablet (regular/medium)
-    
+
     var fontLetterSpacingTabletDisplayLarge: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingTabletDisplayMedium: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingTabletDisplaySmall: TypographyFontLetterSpacingSemanticToken { get }
@@ -139,7 +139,7 @@ public protocol TypographySemanticTokens {
     var fontLetterSpacingTabletBodyLarge: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingTabletBodyMedium: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingTabletBodySmall: TypographyFontLetterSpacingSemanticToken { get }
-    
+
     // MARK: - Semantic token - Typography - Font - Letter spacing - Others
 
     var fontLetterSpacingLabelXLarge: TypographyFontLetterSpacingSemanticToken { get }
@@ -148,7 +148,7 @@ public protocol TypographySemanticTokens {
     var fontLetterSpacingLabelSmall: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingCodeMedium: TypographyFontLetterSpacingSemanticToken { get }
     var fontLetterSpacingCodeSmall: TypographyFontLetterSpacingSemanticToken { get }
-    
+
     // MARK: - Semantic tokens - Typography - Composites - Display
 
     var typeDisplayLarge: MultipleTypographyTokens { get }

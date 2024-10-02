@@ -236,7 +236,7 @@ final class TestThemeOverrideOfTypographySemanticTokens: XCTestCase {
     }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing - Mobile
-    
+
     func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingMobileDisplayLarge() throws {
         XCTAssertNotEqual(inheritedTheme.fontLetterSpacingMobileDisplayLarge, abstractTheme.fontLetterSpacingMobileDisplayLarge)
         XCTAssertTrue(inheritedTheme.fontLetterSpacingMobileDisplayLarge == MockTheme.mockThemeTypographyFontLetterSpacingRawToken)
@@ -288,7 +288,7 @@ final class TestThemeOverrideOfTypographySemanticTokens: XCTestCase {
     }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing - Tablet
-    
+
     func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingTabletDisplayLarge() throws {
         XCTAssertNotEqual(inheritedTheme.fontLetterSpacingTabletDisplayLarge, abstractTheme.fontLetterSpacingTabletDisplayLarge)
         XCTAssertTrue(inheritedTheme.fontLetterSpacingTabletDisplayLarge == MockTheme.mockThemeTypographyFontLetterSpacingRawToken)
@@ -369,7 +369,6 @@ final class TestThemeOverrideOfTypographySemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.fontLetterSpacingCodeSmall == MockTheme.mockThemeTypographyFontLetterSpacingRawToken)
     }
 
-    
     // MARK: - Semantic token - Typography - Font - Line height - Mobile
 
     func testInheritedThemeCanOverrideSemanticTokenFontLineHeightMobileDisplayLarge() throws {

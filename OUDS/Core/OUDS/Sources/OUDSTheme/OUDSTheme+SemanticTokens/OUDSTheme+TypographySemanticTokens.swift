@@ -114,7 +114,7 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing - Mobile (extra-compact/compact)
-    
+
     @objc open var fontLetterSpacingMobileDisplayLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing850 }
     @objc open var fontLetterSpacingMobileDisplayMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing750 }
     @objc open var fontLetterSpacingMobileDisplaySmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing650 }
@@ -125,9 +125,9 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLetterSpacingMobileBodyLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing250 }
     @objc open var fontLetterSpacingMobileBodyMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing200 }
     @objc open var fontLetterSpacingMobileBodySmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing150 }
-        
-        // MARK: - Semantic token - Typography - Font - Letter spacing - Tablet (regular/medium)
-        
+
+    // MARK: - Semantic token - Typography - Font - Letter spacing - Tablet (regular/medium)
+
     @objc open var fontLetterSpacingTabletDisplayLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing1450 }
     @objc open var fontLetterSpacingTabletDisplayMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing1050 }
     @objc open var fontLetterSpacingTabletDisplaySmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing850 }
@@ -138,8 +138,8 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLetterSpacingTabletBodyLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing250 }
     @objc open var fontLetterSpacingTabletBodyMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing200 }
     @objc open var fontLetterSpacingTabletBodySmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing150 }
-        
-        // MARK: - Semantic token - Typography - Font - Letter spacing - Others
+
+    // MARK: - Semantic token - Typography - Font - Letter spacing - Others
 
     @objc open var fontLetterSpacingLabelXLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing300 }
     @objc open var fontLetterSpacingLabelLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing250 }
@@ -147,7 +147,7 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLetterSpacingLabelSmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing150 }
     @objc open var fontLetterSpacingCodeMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing200 }
     @objc open var fontLetterSpacingCodeSmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing150 }
-        
+
     // MARK: - Semantic tokens - Typography - Composites - Display
 
     @objc open var typeDisplayLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold1450) }

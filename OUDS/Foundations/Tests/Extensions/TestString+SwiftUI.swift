@@ -18,7 +18,7 @@ import XCTest
 
 /// Class to test `String` extensions related to `SwiftUI`
 final class TestString_SwiftUI: XCTestCase {
-    
+
     /// Tests the font family values created using a font amily name and a weight
     func testComposeWithFonts() {
 
