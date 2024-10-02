@@ -31,10 +31,9 @@ extension MockTheme {
     override var gridCompactColumnGap: GridCompactSemanticToken { Self.mockThemeGridRawToken }
     override var gridCompactColumnCount: GridCompactSemanticToken { Self.mockThemeGridRawToken }
 
+    override var gridRegularMinWidth: GridRegularSemanticToken { Self.mockThemeGridRawToken }
+    override var gridRegularMaxWidth: GridRegularSemanticToken { Self.mockThemeGridRawToken }
     override var gridRegularMargin: GridRegularSemanticToken { Self.mockThemeGridRawToken }
     override var gridRegularColumnGap: GridRegularSemanticToken { Self.mockThemeGridRawToken }
     override var gridRegularColumnCount: GridRegularSemanticToken { Self.mockThemeGridRawToken }
-    
-    override var gridMediumMinWidth: GridMediumSemanticToken { Self.mockThemeGridRawToken }
-    override var gridMediumMaxWidth: GridMediumSemanticToken { Self.mockThemeGridRawToken }
 }
