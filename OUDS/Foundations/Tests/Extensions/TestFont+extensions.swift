@@ -21,14 +21,24 @@ final class TestFont_SwiftUI: XCTestCase {
 
     /// Tests description values of font weight
     func testFontWeightDescription() throws {
-        XCTAssertTrue(Font.Weight.ultraLight == "Ultra-Light")
-        XCTAssertTrue(Font.Weight.thin == "Thin")
-        XCTAssertTrue(Font.Weight.light == "Light")
-        XCTAssertTrue(Font.Weight.regular == "Regular")
-        XCTAssertTrue(Font.Weight.medium == "Medium")
-        XCTAssertTrue(Font.Weight.semibold == "Semi-Bold")
-        XCTAssertTrue(Font.Weight.bold == "Bold")
-        XCTAssertTrue(Font.Weight.heavy == "Heavy")
-        XCTAssertTrue(Font.Weight.black == "Black")
+        XCTAssertTrue(Font.Weight.ultraLight.description == "Ultra-Light")
+        XCTAssertTrue(Font.Weight.thin.description == "Thin")
+        XCTAssertTrue(Font.Weight.light.description == "Light")
+        XCTAssertTrue(Font.Weight.regular.description == "Regular")
+        XCTAssertTrue(Font.Weight.medium.description == "Medium")
+        XCTAssertTrue(Font.Weight.semibold.description == "Semi-Bold")
+        XCTAssertTrue(Font.Weight.bold.description == "Bold")
+        XCTAssertTrue(Font.Weight.heavy.description == "Heavy")
+        XCTAssertTrue(Font.Weight.black.description == "Black")
+
+        XCTAssertTrue("\(Font.Weight.ultraLight)" == "Ultra-Light")
+        XCTAssertTrue("\(Font.Weight.thin)" == "Thin")
+        XCTAssertTrue("\(Font.Weight.light)" == "Light")
+        XCTAssertTrue("\(Font.Weight.regular)" == "Regular")
+        XCTAssertTrue("\(Font.Weight.medium)" == "Medium")
+        XCTAssertTrue("\(Font.Weight.semibold)" == "Semi-Bold")
+        XCTAssertTrue("\(Font.Weight.bold)" == "Bold")
+        XCTAssertTrue("\(Font.Weight.heavy)" == "Heavy")
+        XCTAssertTrue("\(Font.Weight.black)" == "Black")
     }
 }
