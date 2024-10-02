@@ -24,12 +24,9 @@ struct OpacityTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            illustration(for: theme.opacityTransparent, named: "opacityTransparent")
-            illustration(for: theme.opacityWeaker, named: "opacityWeaker")
-            illustration(for: theme.opacityWeak, named: "opacityWeak")
-            illustration(for: theme.opacityMedium, named: "opacityMedium")
-            illustration(for: theme.opacityStrong, named: "opacityStrong")
-            illustration(for: theme.opacityOpaque, named: "opacityOpaque")
+            ForEach(NamedOpacity.allCases, id: \.rawValue) { opmacityName in
+                illustration(for: opmacityName)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, theme.spaceFixedMedium)
@@ -37,17 +34,18 @@ struct OpacityTokenPage: View {
 
     // MARK: Private helper
 
-    private var fillColor: Color {
-        theme.colorContentBrandPrimary?.color(for: colorScheme) ?? .green
+    private func illustration(for opacityName: NamedOpacity) -> some View {
+        illustration(for: opacityName.token(from: theme), named: opacityName.rawValue)
     }
 
     private func illustration(for opacityToken: OpacitySemanticToken, named name: String) -> some View {
         HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
             ZStack {
-                Rectangle().fill(fillColor)
+                Image("ic_union")
+                    .resizable()
                     .frame(width: 44, height: 44)
 
-                Rectangle().fill( colorScheme == .dark ? .white : .black)
+                Rectangle().fill(colorScheme == .dark ? .white : .black)
                     .opacity(opacityToken)
                     .frame(width: 44, height: 44)
                     .transformEffect(CGAffineTransform(translationX: 10, y: 10))
@@ -61,5 +59,31 @@ struct OpacityTokenPage: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.vertical, theme.spaceFixedShorter)
+    }
+}
+
+private enum NamedOpacity: String, CaseIterable {
+    case opacityTransparent
+    case opacityWeaker
+    case opacityWeak
+    case opacityMedium
+    case opacityStrong
+    case opacityOpaque
+
+    func token(from theme: OUDSTheme) -> OpacitySemanticToken {
+        switch self {
+        case .opacityTransparent:
+            return theme.opacityTransparent
+        case .opacityWeaker:
+            return theme.opacityWeaker
+        case .opacityWeak:
+            return theme.opacityWeak
+        case .opacityMedium:
+            return theme.opacityMedium
+        case .opacityStrong:
+            return theme.opacityStrong
+        case .opacityOpaque:
+            return theme.opacityOpaque
+        }
     }
 }
