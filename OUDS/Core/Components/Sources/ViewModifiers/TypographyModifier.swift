@@ -65,10 +65,17 @@ struct TypographyModifier: ViewModifier {
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight*, *font size* and the *line height*
     /// depending to the current `MultipleTypographyTokens`
     func body(content: Content) -> some View {
-        content
-            .font(adaptiveFont())
-            .lineSpacing(adaptiveTypography.lineHeight)
-            // .tracking() for letter spacing
+        if #available(iOS 16.0, *) {
+            content
+                .font(adaptiveFont())
+                .lineSpacing(adaptiveTypography.lineHeight)
+                .tracking(adaptiveTypography.letterSpacing)
+        } else {
+            content
+                .font(adaptiveFont())
+                .lineSpacing(adaptiveTypography.lineHeight)
+            // tracking() and kerning() only available for iOS 16+
+        }
     }
 }
 // swiftlint:enable line_length

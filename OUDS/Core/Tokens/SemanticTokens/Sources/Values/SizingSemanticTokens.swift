@@ -76,7 +76,7 @@ public protocol SizingSemanticTokens {
 
     var sizeIconWithTypeLabelXLargeShort: SizingSemanticToken { get }
     var sizeIconWithTypeLabelXLargeMedium: SizingSemanticToken { get }
-    var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { get } // TODO: #122: Unit test to add
+    var sizeIconWithTypeLabelXLargeTall: SizingSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Max width typography
 
