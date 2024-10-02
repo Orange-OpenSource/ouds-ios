@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSTokensSemantic
 import SwiftUI
 
 struct TypographyTokenPage: View {
@@ -21,50 +22,164 @@ struct TypographyTokenPage: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedShorter) {
-            VStack(alignment: .leading, spacing: theme.spaceFixedSmash) {
-                Text("Display Large").typeDisplayLarge(theme)
-                Text("Display Medium").typeDisplayMedium(theme)
-                Text("Display Small").typeDisplaySmall(theme)
-            }
-
-            VStack(alignment: .leading, spacing: theme.spaceFixedSmash) {
-                Text("Heading X Large").typeHeadingXLarge(theme)
-                Text("Heading Large").typeHeadingLarge(theme)
-                Text("Heading Medium").typeHeadingMedium(theme)
-                Text("Heading Small").typeHeadingSmall(theme)
-            }
-
-            VStack(alignment: .leading, spacing: theme.spaceFixedSmash) {
-                Text("Body Default Large").typeBodyDefaultLarge(theme)
-                Text("Body Default Medium").typeBodyDefaultMedium(theme)
-                Text("Body Default Small").typeBodyDefaultSmall(theme)
-                Text("Body Strong Large").typeBodyStrongLarge(theme)
-                Text("Body Strong Medium").typeBodyStrongMedium(theme)
-                Text("Body Strong Small").typeBodyStrongSmall(theme)
-            }
-
-            VStack(alignment: .leading, spacing: theme.spaceFixedSmash) {
-                Text("Label Default X Large").typeLabelDefaultXLarge(theme)
-                Text("Label Default Large").typeLabelDefaultLarge(theme)
-                Text("Label Default Medium").typeLabelDefaultMedium(theme)
-                Text("Label Default Small").typeLabelDefaultSmall(theme)
-            }
-
-            VStack(alignment: .leading, spacing: theme.spaceFixedSmash) {
-                Text("Label Strong X Large").typeLabelStrongXLarge(theme)
-                Text("Label Strong Large").typeLabelStrongLarge(theme)
-                Text("Label Strong Medium").typeLabelStrongMedium(theme)
-                Text("Label Strong Small").typeLabelStrongSmall(theme)
-            }
-
-            VStack(alignment: .leading, spacing: theme.spaceFixedSmash) {
-                Text("Code Medium").typeLabelCodeMedium(theme)
-                Text("Code Small").typeLabelCodeSmall(theme)
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            ForEach(NamedTypography.allCases, id: \.rawValue) { typographyName in
+                illustration(from: typographyName)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, theme.spaceFixedShort)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
+    }
+
+    // MARK: Private helpers
+    @ViewBuilder
+    private func illustration(from namedTypography: NamedTypography) -> some View {
+        let token = namedTypography.token(from: theme).compact
+
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+
+            typgraphyName(from: namedTypography)
+
+            Group {
+                Text("family (\(theme.customFontFamily ?? "system")), ")
+                Text("weight (\(token.weight)), ")
+                + Text("size (\(token.size, specifier: "%.2f")), ")
+                + Text("lineHeight (\(token.lineHeight, specifier: "%.2f")), ")
+                + Text("letterSpacing \(token.letterSpacing, specifier: "%.2f"))")
+            }
+            .fixedSize(horizontal: false, vertical: true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, theme.spaceFixedShorter)
+    }
+
+    @ViewBuilder
+    private func typgraphyName(from namedTypography: NamedTypography) ->some View {
+        switch namedTypography {
+        case .displayLarge:
+            Text(namedTypography.rawValue).typeDisplayLarge(theme)
+        case .displayMedium:
+            Text(namedTypography.rawValue).typeDisplayMedium(theme)
+        case .displaySmall:
+            Text(namedTypography.rawValue).typeDisplaySmall(theme)
+        case .headingXLarge:
+            Text(namedTypography.rawValue).typeHeadingXLarge(theme)
+        case .headingLarge:
+            Text(namedTypography.rawValue).typeHeadingLarge(theme)
+        case .headingMedium:
+            Text(namedTypography.rawValue).typeHeadingMedium(theme)
+        case .headingSmall:
+            Text(namedTypography.rawValue).typeHeadingSmall(theme)
+        case .bodyDefaultLarge:
+            Text(namedTypography.rawValue).typeBodyDefaultLarge(theme)
+        case .bodyDefaultMedium:
+            Text(namedTypography.rawValue).typeBodyDefaultMedium(theme)
+        case .bodyDefaullSmall:
+            Text(namedTypography.rawValue).typeBodyDefaultSmall(theme)
+        case .bodyStrongLarge:
+            Text(namedTypography.rawValue).typeBodyStrongLarge(theme)
+        case .bodyStrongMedium:
+            Text(namedTypography.rawValue).typeBodyStrongMedium(theme)
+        case .bodyStrongSmall:
+            Text(namedTypography.rawValue).typeBodyStrongSmall(theme)
+        case .labelDefaultXLarge:
+            Text(namedTypography.rawValue).typeLabelDefaultXLarge(theme)
+        case .labelDefaultLarge:
+            Text(namedTypography.rawValue).typeLabelDefaultLarge(theme)
+        case .labelDefaultMedium:
+            Text(namedTypography.rawValue).typeLabelDefaultMedium(theme)
+        case .labelDefaultSmall:
+            Text(namedTypography.rawValue).typeLabelDefaultSmall(theme)
+        case .labelStrongXLarge:
+            Text(namedTypography.rawValue).typeLabelStrongXLarge(theme)
+        case .labelStrongLarge:
+            Text(namedTypography.rawValue).typeLabelStrongLarge(theme)
+        case .labelStrongMedium:
+            Text(namedTypography.rawValue).typeLabelStrongMedium(theme)
+        case .labelStrongSmall:
+            Text(namedTypography.rawValue).typeLabelStrongSmall(theme)
+        case .codeSmall:
+            Text(namedTypography.rawValue).typeCodeMedium(theme)
+        case .codeMedium:
+            Text(namedTypography.rawValue).typeCodeMedium(theme)
+        }
+    }
+}
+
+private enum NamedTypography: String, CaseIterable {
+    case displayLarge
+    case displayMedium
+    case displaySmall
+    case headingXLarge
+    case headingLarge
+    case headingMedium
+    case headingSmall
+    case bodyDefaultLarge
+    case bodyDefaultMedium
+    case bodyDefaullSmall
+    case bodyStrongLarge
+    case bodyStrongMedium
+    case bodyStrongSmall
+    case labelDefaultXLarge
+    case labelDefaultLarge
+    case labelDefaultMedium
+    case labelDefaultSmall
+    case labelStrongXLarge
+    case labelStrongLarge
+    case labelStrongMedium
+    case labelStrongSmall
+    case codeMedium
+    case codeSmall
+
+    func token(from theme: OUDSTheme) -> MultipleTypographyTokens {
+        switch self {
+        case .displayLarge:
+            return theme.typeDisplayLarge
+        case .displayMedium:
+            return theme.typeDisplayMedium
+        case .displaySmall:
+            return theme.typeDisplaySmall
+        case .headingXLarge:
+            return theme.typeHeadingXLarge
+        case .headingLarge:
+            return theme.typeHeadingLarge
+        case .headingMedium:
+            return theme.typeHeadingMedium
+        case .headingSmall:
+            return theme.typeHeadingSmall
+        case .bodyDefaultLarge:
+            return theme.typeBodyDefaultLarge
+        case .bodyDefaultMedium:
+            return theme.typeBodyDefaultMedium
+        case .bodyDefaullSmall:
+            return theme.typeBodyDefaultSmall
+        case .bodyStrongLarge:
+            return theme.typeBodyStrongLarge
+        case .bodyStrongMedium:
+            return theme.typeBodyStrongMedium
+        case .bodyStrongSmall:
+            return theme.typeBodyStrongSmall
+        case .labelDefaultXLarge:
+            return theme.typeLabelDefaultXLarge
+        case .labelDefaultLarge:
+            return theme.typeLabelDefaultLarge
+        case .labelDefaultMedium:
+            return theme.typeLabelDefaultMedium
+        case .labelDefaultSmall:
+            return theme.typeLabelDefaultSmall
+        case .labelStrongXLarge:
+            return theme.typeLabelStrongXLarge
+        case .labelStrongLarge:
+            return theme.typeLabelStrongLarge
+        case .labelStrongMedium:
+            return theme.typeLabelStrongMedium
+        case .labelStrongSmall:
+            return theme.typeLabelStrongSmall
+        case .codeSmall:
+            return theme.typeCodeSmall
+        case .codeMedium:
+            return theme.typeCodeMedium
+        }
     }
 }
