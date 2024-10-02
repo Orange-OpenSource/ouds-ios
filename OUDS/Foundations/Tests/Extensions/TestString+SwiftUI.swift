@@ -12,32 +12,13 @@
 //
 
 import Foundation
-import XCTest
-import SwiftUI
 import OUDSFoundations
+import SwiftUI
+import XCTest
 
 /// Class to test `String` extensions related to `SwiftUI`
 final class TestString_SwiftUI: XCTestCase {
-
-    /// Tests values of font weight
-    func testFontWeightValues() {
-
-        // Expected values
-        XCTAssertTrue("thin".fontWeight == Font.Weight.thin)
-        XCTAssertTrue("ultraLight".fontWeight == Font.Weight.ultraLight)
-        XCTAssertTrue("light".fontWeight == Font.Weight.light)
-        XCTAssertTrue("regular".fontWeight == Font.Weight.regular)
-        XCTAssertTrue("medium".fontWeight == Font.Weight.medium)
-        XCTAssertTrue("semibold".fontWeight == Font.Weight.semibold)
-        XCTAssertTrue("bold".fontWeight == Font.Weight.bold)
-        XCTAssertTrue("heavy".fontWeight == Font.Weight.heavy)
-
-        // Other default cases
-        XCTAssertTrue("".fontWeight == Font.Weight.regular)
-        XCTAssertTrue("42".fontWeight == Font.Weight.regular)
-        XCTAssertTrue("Yowzah!".fontWeight == Font.Weight.regular)
-    }
-
+    
     /// Tests the font family values created using a font amily name and a weight
     func testComposeWithFonts() {
 

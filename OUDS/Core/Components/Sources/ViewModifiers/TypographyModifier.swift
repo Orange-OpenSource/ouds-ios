@@ -54,7 +54,7 @@ struct TypographyModifier: ViewModifier {
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `View`
     private func adaptiveFont() -> Font {
         if let fontFamilyName = customFontFamily {
-            let composedFontFamily = fontFamilyName.compose(withFont: adaptiveTypography.weight)
+            let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveTypography.weight.fontWeight)")
             let customFont: Font = .custom(composedFontFamily, size: adaptiveTypography.size)
             return customFont
         } else {

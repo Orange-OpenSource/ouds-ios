@@ -20,4 +20,23 @@ extension String {
     public var color: Color! {
         Color(hexadecimalCode: self)
     }
+    
+    /// Forges the font name which is expected for the given weight.
+    /// Beware, the function does not check if the font exists.
+    /// - Parameters:
+    ///    - name: The font family name (e.g. "Menlo")
+    ///    - weight: The weight to apply (e.g. "bold", "italic")
+    /// - Returns String: The full name of the font to use (e.g. "Menlo-Bold" or "Menlo-Italic")
+    public func compose(withFont weight: String) -> String {
+        guard !self.isEmpty else {
+            OUDSLogger.error("No font family to compose with weight")
+            return self
+        }
+        if !weight.isEmpty {
+            return self + "-" + weight
+        } else {
+            return self
+        }
+        // TODO: String manipulation can be costly, add values in Cache
+    }
 }
