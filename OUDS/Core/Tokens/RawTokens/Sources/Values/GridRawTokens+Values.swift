@@ -24,13 +24,13 @@ extension GridRawTokens {
 
     public static let gridMinWidthExtraCompact: GridRawToken = 320
     public static let gridMinWidthCompact: GridRawToken = 390
-    public static let gridMinWidthMedium: GridRawToken = 600
+    public static let gridMinWidthRegular: GridRawToken = 736
 
     // MARK: Primitive token - Grid - Max width
 
     public static let gridMaxWidthExtraCompact: GridRawToken = 389
-    public static let gridMaxWidthCompact: GridRawToken = 599
-    public static let gridMaxWidthMedium: GridRawToken = 1200
+    public static let gridMaxWidthCompact: GridRawToken = 852
+    public static let gridMaxWidthRegular: GridRawToken = 1336
 
     // MARK: Primitive token - Grid - Margin
 
@@ -80,7 +80,6 @@ extension GridRawTokens {
     public static let gridCompactMargin: GridRawToken = gridMargin300
     public static let gridCompactColumnGap: GridRawToken = gridColumnGap100
 
-    
     // MARK: Primitive token - Grid - Composite - iOS Regular
 
     public static let gridRegularMinWidth: GridRawToken = gridMinWidthCompact
