@@ -37,7 +37,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens
 
     public override var ftiBackgroundColor: ColorSemanticToken { colorBackgroundDefaultPrimary }
 
-    public override var ftiBorderColor: ColorSemanticToken { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorDecorativeShockingPink800, dark: OrangeBrandColorRawTokens.colorDecorativeShockingPink200) }
+    public override var ftiBorderColor: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink800, dark: ColorRawTokens.colorDecorativeShockingPink200) }
 
     public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 
