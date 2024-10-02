@@ -99,12 +99,16 @@ extension TypographyRawTokens {
 
     // MARK: Primitive token - Typography - Font weight
 
-    public static let fontWeight100: TypographyFontWeightRawToken = "thin"
-    public static let fontWeight200: TypographyFontWeightRawToken = "ultraLight"
-    public static let fontWeight300: TypographyFontWeightRawToken = "light"
-    public static let fontWeight400: TypographyFontWeightRawToken = "regular"
-    public static let fontWeight500: TypographyFontWeightRawToken = "medium"
-    public static let fontWeight600: TypographyFontWeightRawToken = "semibold"
-    public static let fontWeight700: TypographyFontWeightRawToken = "bold"
-    public static let fontWeight900: TypographyFontWeightRawToken = "heavy"
+    // WARNING: Some tokens will be useless (extra light, extra bold, extra black)
+    // But need to keep the Figma logic and use our conversion algorithm
+    public static let fontWeightThin: TypographyFontWeightRawToken = 100
+    public static let fontWeightExtraLight: TypographyFontWeightRawToken = 200
+    public static let fontWeightLight: TypographyFontWeightRawToken = 300
+    public static let fontWeightRegular: TypographyFontWeightRawToken = 400
+    public static let fontWeightMedium: TypographyFontWeightRawToken = 500
+    public static let fontWeightSemiBold: TypographyFontWeightRawToken = 600
+    public static let fontWeightBold: TypographyFontWeightRawToken = 700
+    public static let fontWeightExtraBold: TypographyFontWeightRawToken = 800
+    public static let fontWeightBlack: TypographyFontWeightRawToken = 900
+    public static let fontWeightExtraBlack: TypographyFontWeightRawToken = 950
 }
