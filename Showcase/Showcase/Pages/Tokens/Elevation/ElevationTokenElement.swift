@@ -21,7 +21,7 @@ struct ElevationTokenElement: TokenElement {
 
     init() {
         name = "app_tokens_elevation_label"
-        imageName = "ic_elevation"
+        imageName = "ic_layers"
         description = "app_tokens_elevation_description_text"
         pageDescription = AnyView(ElevationTokenPage())
     }

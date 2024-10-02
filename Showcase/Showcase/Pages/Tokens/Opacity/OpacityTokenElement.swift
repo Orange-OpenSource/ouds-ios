@@ -21,7 +21,7 @@ struct OpacityTokenElement: TokenElement {
 
     init() {
         name = "app_tokens_opacity_label"
-        imageName = "ic_opacity"
+        imageName = "ic_filter_effects"
         description = "app_tokens_opacity_description_text"
         pageDescription = AnyView(OpacityTokenPage())
     }
