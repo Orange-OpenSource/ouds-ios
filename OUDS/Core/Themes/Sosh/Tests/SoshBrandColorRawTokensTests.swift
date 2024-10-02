@@ -24,127 +24,127 @@ final class SoshBrandColorRawTokensTests: XCTestCase {
 
     // MARK: Primitive token - Colors - Sosh - Magenta
 
-    func testColorDecorativeMagenta50LighterThan100() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta50, SoshBrandColorRawTokens.colorDecorativeMagenta100)
+    func testColorBrandMagenta50LighterThan100() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta50, SoshBrandColorRawTokens.colorBrandMagenta100)
     }
 
-    func testColorDecorativeMagenta100LighterThan200() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta100, SoshBrandColorRawTokens.colorDecorativeMagenta200)
+    func testColorBrandMagenta100LighterThan200() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta100, SoshBrandColorRawTokens.colorBrandMagenta200)
     }
 
-    func testColorDecorativeMagenta200LighterThan300() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta200, SoshBrandColorRawTokens.colorDecorativeMagenta300)
+    func testColorBrandMagenta200LighterThan300() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta200, SoshBrandColorRawTokens.colorBrandMagenta300)
     }
 
-    func testColorDecorativeMagenta300LighterThan400() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta300, SoshBrandColorRawTokens.colorDecorativeMagenta400)
+    func testColorBrandMagenta300LighterThan400() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta300, SoshBrandColorRawTokens.colorBrandMagenta400)
     }
 
-    func testColorDecorativeMagenta400LighterThan500() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta400, SoshBrandColorRawTokens.colorDecorativeMagenta500)
+    func testColorBrandMagenta400LighterThan500() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta400, SoshBrandColorRawTokens.colorBrandMagenta500)
     }
 
-    func testColorDecorativeMagenta500LighterThan600() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta500, SoshBrandColorRawTokens.colorDecorativeMagenta600)
+    func testColorBrandMagenta500LighterThan600() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta500, SoshBrandColorRawTokens.colorBrandMagenta600)
     }
 
-    func testColorDecorativeMagenta600LighterThan700() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta600, SoshBrandColorRawTokens.colorDecorativeMagenta700)
+    func testColorBrandMagenta600LighterThan700() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta600, SoshBrandColorRawTokens.colorBrandMagenta700)
     }
 
-    func testColorDecorativeMagenta700LighterThan800() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta700, SoshBrandColorRawTokens.colorDecorativeMagenta800)
+    func testColorBrandMagenta700LighterThan800() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta700, SoshBrandColorRawTokens.colorBrandMagenta800)
     }
 
-    func testColorDecorativeMagenta800LighterThan900() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta800, SoshBrandColorRawTokens.colorDecorativeMagenta900)
+    func testColorBrandMagenta800LighterThan900() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta800, SoshBrandColorRawTokens.colorBrandMagenta900)
     }
 
-    func testColorDecorativeMagenta900LighterThan950() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeMagenta900, SoshBrandColorRawTokens.colorDecorativeMagenta950)
+    func testColorBrandMagenta900LighterThan950() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandMagenta900, SoshBrandColorRawTokens.colorBrandMagenta950)
     }
 
     // MARK: Primitive token - Colors - Sosh - Citrine
 
-    func testColorDecorativeCitrine50LighterThan100() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine50, SoshBrandColorRawTokens.colorDecorativeCitrine100)
+    func testColorBrandCitrine50LighterThan100() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine50, SoshBrandColorRawTokens.colorBrandCitrine100)
     }
 
-    func testColorDecorativeCitrine100LighterThan200() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine100, SoshBrandColorRawTokens.colorDecorativeCitrine200)
+    func testColorBrandCitrine100LighterThan200() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine100, SoshBrandColorRawTokens.colorBrandCitrine200)
     }
 
-    func testColorDecorativeCitrine200LighterThan300() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine200, SoshBrandColorRawTokens.colorDecorativeCitrine300)
+    func testColorBrandCitrine200LighterThan300() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine200, SoshBrandColorRawTokens.colorBrandCitrine300)
     }
 
-    func testColorDecorativeCitrine300LighterThan400() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine300, SoshBrandColorRawTokens.colorDecorativeCitrine400)
+    func testColorBrandCitrine300LighterThan400() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine300, SoshBrandColorRawTokens.colorBrandCitrine400)
     }
 
-    func testColorDecorativeCitrine400LighterThan500() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine400, SoshBrandColorRawTokens.colorDecorativeCitrine500)
+    func testColorBrandCitrine400LighterThan500() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine400, SoshBrandColorRawTokens.colorBrandCitrine500)
     }
 
-    func testColorDecorativeCitrine500LighterThan600() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine500, SoshBrandColorRawTokens.colorDecorativeCitrine600)
+    func testColorBrandCitrine500LighterThan600() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine500, SoshBrandColorRawTokens.colorBrandCitrine600)
     }
 
-    func testColorDecorativeCitrine600LighterThan700() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine600, SoshBrandColorRawTokens.colorDecorativeCitrine700)
+    func testColorBrandCitrine600LighterThan700() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine600, SoshBrandColorRawTokens.colorBrandCitrine700)
     }
 
-    func testColorDecorativeCitrine700LighterThan800() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine700, SoshBrandColorRawTokens.colorDecorativeCitrine800)
+    func testColorBrandCitrine700LighterThan800() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine700, SoshBrandColorRawTokens.colorBrandCitrine800)
     }
 
-    func testColorDecorativeCitrine800LighterThan900() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine800, SoshBrandColorRawTokens.colorDecorativeCitrine900)
+    func testColorBrandCitrine800LighterThan900() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine800, SoshBrandColorRawTokens.colorBrandCitrine900)
     }
 
-    func testColorDecorativeCitrine900LighterThan950() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeCitrine900, SoshBrandColorRawTokens.colorDecorativeCitrine950)
+    func testColorBrandCitrine900LighterThan950() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandCitrine900, SoshBrandColorRawTokens.colorBrandCitrine950)
     }
 
     // MARK: Primitive token - Colors - Sosh - Blue Duck
 
-    func testColorDecorativeBlueDuck50LighterThan100() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck50, SoshBrandColorRawTokens.colorDecorativeBlueDuck100)
+    func testColorBrandBlueDuck50LighterThan100() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck50, SoshBrandColorRawTokens.colorBrandBlueDuck100)
     }
 
-    func testColorDecorativeBlueDuck100LighterThan200() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck100, SoshBrandColorRawTokens.colorDecorativeBlueDuck200)
+    func testColorBrandBlueDuck100LighterThan200() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck100, SoshBrandColorRawTokens.colorBrandBlueDuck200)
     }
 
-    func testColorDecorativeBlueDuck200LighterThan300() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck200, SoshBrandColorRawTokens.colorDecorativeBlueDuck300)
+    func testColorBrandBlueDuck200LighterThan300() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck200, SoshBrandColorRawTokens.colorBrandBlueDuck300)
     }
 
-    func testColorDecorativeBlueDuck300LighterThan400() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck300, SoshBrandColorRawTokens.colorDecorativeBlueDuck400)
+    func testColorBrandBlueDuck300LighterThan400() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck300, SoshBrandColorRawTokens.colorBrandBlueDuck400)
     }
 
-    func testColorDecorativeBlueDuck400LighterThan500() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck400, SoshBrandColorRawTokens.colorDecorativeBlueDuck500)
+    func testColorBrandBlueDuck400LighterThan500() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck400, SoshBrandColorRawTokens.colorBrandBlueDuck500)
     }
 
-    func testColorDecorativeBlueDuck500LighterThan600() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck500, SoshBrandColorRawTokens.colorDecorativeBlueDuck600)
+    func testColorBrandBlueDuck500LighterThan600() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck500, SoshBrandColorRawTokens.colorBrandBlueDuck600)
     }
 
-    func testColorDecorativeBlueDuck600LighterThan700() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck600, SoshBrandColorRawTokens.colorDecorativeBlueDuck700)
+    func testColorBrandBlueDuck600LighterThan700() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck600, SoshBrandColorRawTokens.colorBrandBlueDuck700)
     }
 
-    func testColorDecorativeBlueDuck700LighterThan800() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck700, SoshBrandColorRawTokens.colorDecorativeBlueDuck800)
+    func testColorBrandBlueDuck700LighterThan800() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck700, SoshBrandColorRawTokens.colorBrandBlueDuck800)
     }
 
-    func testColorDecorativeBlueDuck800LighterThan900() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck800, SoshBrandColorRawTokens.colorDecorativeBlueDuck900)
+    func testColorBrandBlueDuck800LighterThan900() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck800, SoshBrandColorRawTokens.colorBrandBlueDuck900)
     }
 
-    func testColorDecorativeBlueDuck900LighterThan950() throws {
-        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorDecorativeBlueDuck900, SoshBrandColorRawTokens.colorDecorativeBlueDuck950)
+    func testColorBrandBlueDuck900LighterThan950() throws {
+        XCTAssertColorLighterThan(SoshBrandColorRawTokens.colorBrandBlueDuck900, SoshBrandColorRawTokens.colorBrandBlueDuck950)
     }
 }
