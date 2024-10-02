@@ -47,7 +47,7 @@ extension TypographyRawTokens {
 
     public static let typeBold650 = TypographyCompositeRawToken(size: fontSize650, lineHeight: fontLineHeight750, weight: fontWeightBold, letterSpacing: fontLetterSpacing650)
 
-    public static let typeBold750 = TypographyCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeight700, letterSpacing: fontLetterSpacing750)
+    public static let typeBold750 = TypographyCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeightBold, letterSpacing: fontLetterSpacing750)
 
     public static let typeBold850 = TypographyCompositeRawToken(size: fontSize850, lineHeight: fontLineHeight950, weight: fontWeightBold, letterSpacing: fontLetterSpacing850)
 
