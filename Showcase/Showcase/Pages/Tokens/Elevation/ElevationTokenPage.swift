@@ -29,22 +29,8 @@ struct ElevationTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            if colorScheme == .light {
-                illustration(for: theme.elevationFocus.light, named: "elevationFocusLight")
-                illustration(for: theme.elevationRaised.light, named: "elevationRaisedLight")
-                illustration(for: theme.elevationStickyNavigationScrolled.light, named: "elevationStickyNavigationScrolledLight")
-                illustration(for: theme.elevationOverlayDefault.light, named: "elevationOverlayDefaultLight")
-                illustration(for: theme.elevationStickyEmphasized.light, named: "elevationStickyEmphasizedLight")
-                illustration(for: theme.elevationDrag.light, named: "elevationDragLight")
-                illustration(for: theme.elevationOverlayEmphasized.light, named: "elevationOverlayEmphasizedLight")
-            } else { // colorScheme == .dark
-                illustration(for: theme.elevationFocus.dark, named: "elevationFocusDark")
-                illustration(for: theme.elevationRaised.dark, named: "elevationRaisedDark")
-                illustration(for: theme.elevationStickyNavigationScrolled.dark, named: "elevationStickyNavigationScrolledDark")
-                illustration(for: theme.elevationOverlayDefault.dark, named: "elevationOverlayDefaultDark")
-                illustration(for: theme.elevationStickyEmphasized.dark, named: "elevationStickyEmphasizedDark")
-                illustration(for: theme.elevationDrag.dark, named: "elevationDragDark")
-                illustration(for: theme.elevationOverlayEmphasized.dark, named: "elevationOverlayEmphasizedDark")
+            ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
+                illustration(for: elevationName)
             }
         }
         .frame(maxWidth: .infinity)
@@ -52,37 +38,68 @@ struct ElevationTokenPage: View {
     }
 
     // MARK: Helpers
+    private func illustration(for elevation: NamedElevation) -> some View {
+        illustration(for: elevation.token(from: theme), named: elevation.rawValue)
+    }
 
-    private func illustration(for elevation: ElevationCompositeRawToken, named: String) -> some View {
-        HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
-            elevationRectangle(elevation: elevation)
+    private func illustration(for elevationSementicToken: ElevationCompositeSemanticToken, named: String) -> some View {
+
+        let elevationRawToken = elevationSementicToken.elevation(for: colorScheme)
+        return HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
+            elevationRectangle(elevationRawToken: elevationRawToken)
 
             VStack(alignment: .leading) {
                 Text(named).bold()
-                Text("x: \(elevation.x, specifier: "%.2f"), ")
-                + Text("y: \(elevation.y, specifier: "%.2f"), ")
-                + Text("radius: \(elevation.radius, specifier: "%.2f")")
+                Text("x: \(elevationRawToken.x, specifier: "%.2f"), ")
+                + Text("y: \(elevationRawToken.y, specifier: "%.2f"), ")
+                + Text("radius: \(elevationRawToken.radius, specifier: "%.2f")")
 
-                Text("Color: \(elevation.color)")
+                Text("Color: \(elevationRawToken.color)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(.vertical, theme.spaceFixedShorter)
     }
 
-    private func elevationRectangle(elevation: ElevationCompositeRawToken) -> some View {
+    private func elevationRectangle(elevationRawToken: ElevationCompositeRawToken) -> some View {
         Rectangle()
             .frame(width: theme.sizeIconDecorativeTallest, height: theme.sizeIconDecorativeTallest)
-            .foregroundColor(foregroundColor)
-            .shadow(elevation: elevation)
+            .foregroundColor(theme.colorBackgroundDefaultSecondary?.color(for: colorScheme))
+            .shadow(elevation: elevationRawToken)
     }
+}
 
-    private var foregroundColor: Color {
-        switch colorScheme {
-        case .light: "#f4f4f4".color
-        case .dark: "#272727".color
-        @unknown default:
-            fatalError()
+private enum NamedElevation: String, CaseIterable {
+    case elevationNone
+    case elevationFocus
+    case elevationRaised
+    case elevationStickyNavigationScrolled
+    case elevationOverlayDefault
+    case elevationStickyDefault
+    case elevationStickyEmphasized
+    case elevationDrag
+    case elevationOverlayEmphasized
+
+    func token(from theme: OUDSTheme) -> ElevationCompositeSemanticToken {
+        switch self {
+        case .elevationNone:
+            return theme.elevationNone
+        case .elevationFocus:
+            return theme.elevationFocus
+        case .elevationRaised:
+            return theme.elevationRaised
+        case .elevationStickyNavigationScrolled:
+            return theme.elevationStickyNavigationScrolled
+        case .elevationOverlayDefault:
+            return theme.elevationOverlayDefault
+        case .elevationStickyDefault:
+            return theme.elevationStickyDefault
+        case .elevationStickyEmphasized:
+            return theme.elevationStickyEmphasized
+        case .elevationDrag:
+            return theme.elevationDrag
+        case .elevationOverlayEmphasized:
+            return theme.elevationOverlayEmphasized
         }
     }
 }
