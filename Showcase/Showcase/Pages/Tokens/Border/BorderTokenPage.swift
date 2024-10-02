@@ -86,7 +86,7 @@ struct BorderTokenPage: View {
         HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
 
             Rectangle()
-                .fill(Color(UIColor.systemBackground))
+                .fill(theme.colorBackgroundDefaultSecondary?.color(for: colorScheme) ?? Color(UIColor.systemGroupedBackground))
                 .frame(width: 64, height: 64)
                 .oudsBorder(style: style,
                             width: width,
