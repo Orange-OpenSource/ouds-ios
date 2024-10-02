@@ -21,3 +21,6 @@ public typealias GridCompactSemanticToken = GridRawToken
 
 /// Basically a grid semantic token for iOS Regulard values is a grid raw token, to keep grammar clean and clear with design system grammar.
 public typealias GridRegularSemanticToken = GridRawToken
+
+/// Basically a grid semantic token for iOS Medium values is a grid raw token, to keep grammar clean and clear with design system grammar.
+public typealias GridMediumSemanticToken = GridRawToken

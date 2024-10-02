@@ -38,9 +38,12 @@ public protocol GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Regular
 
-    var gridRegularMinWidth: GridRegularSemanticToken { get }
-    var gridRegularMaxWidth: GridRegularSemanticToken { get }
     var gridRegularMargin: GridRegularSemanticToken { get }
     var gridRegularColumnGap: GridRegularSemanticToken { get }
     var gridRegularColumnCount: GridRegularSemanticToken { get }
+    
+    // MARK: Semantic token - Grid - iOS Medium
+
+    var gridMediumMinWidth: GridMediumSemanticToken { get }
+    var gridMediumMaxWidth: GridMediumSemanticToken { get }
 }
