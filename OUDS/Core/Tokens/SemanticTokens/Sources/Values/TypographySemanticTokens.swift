@@ -25,8 +25,6 @@ public protocol TypographySemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Family
 
-    // TODO: Should we suffix our tokens names by "iOS"?
-
     var fontFamily: TypographyFontFamilyRawToken { get }
     var fontFamilyDisplay: TypographyFontFamilySemanticToken { get }
     var fontFamilyHeading: TypographyFontFamilySemanticToken { get }
@@ -116,8 +114,40 @@ public protocol TypographySemanticTokens {
     var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken { get }
     var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { get }
 
-    // MARK: - Semantic token - Typography - Font - Letter spacing
-    // TODO: Missing details about the types of the associated raw tokens
+    // MARK: - Semantic token - Typography - Font - Letter spacing - Mobile (extra-compact/compact)
+
+    var fontLetterSpacingMobileDisplayLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileDisplayMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileDisplaySmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileHeadingXLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileHeadingLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileHeadingMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileHeadingSmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileBodyLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileBodyMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileBodySmall: TypographyFontLetterSpacingSemanticToken { get }
+
+    // MARK: - Semantic token - Typography - Font - Letter spacing - Tablet (regular/medium)
+
+    var fontLetterSpacingTabletDisplayLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletDisplayMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletDisplaySmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletHeadingXLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletHeadingLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletHeadingMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletHeadingSmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletBodyLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletBodyMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletBodySmall: TypographyFontLetterSpacingSemanticToken { get }
+
+    // MARK: - Semantic token - Typography - Font - Letter spacing - Others
+
+    var fontLetterSpacingLabelXLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelSmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingCodeMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingCodeSmall: TypographyFontLetterSpacingSemanticToken { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 

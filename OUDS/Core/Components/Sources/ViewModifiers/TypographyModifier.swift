@@ -54,7 +54,7 @@ struct TypographyModifier: ViewModifier {
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `View`
     private func adaptiveFont() -> Font {
         if let fontFamilyName = customFontFamily {
-            let composedFontFamily = fontFamilyName.compose(withFont: adaptiveTypography.weight)
+            let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveTypography.weight.fontWeight)")
             let customFont: Font = .custom(composedFontFamily, size: adaptiveTypography.size)
             return customFont
         } else {
@@ -65,10 +65,17 @@ struct TypographyModifier: ViewModifier {
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight*, *font size* and the *line height*
     /// depending to the current `MultipleTypographyTokens`
     func body(content: Content) -> some View {
-        content
-            .font(adaptiveFont())
-            .lineSpacing(adaptiveTypography.lineHeight)
-            // .tracking() for letter spacing
+        if #available(iOS 16.0, *) {
+            content
+                .font(adaptiveFont())
+                .lineSpacing(adaptiveTypography.lineHeight)
+                .tracking(adaptiveTypography.letterSpacing)
+        } else {
+            content
+                .font(adaptiveFont())
+                .lineSpacing(adaptiveTypography.lineHeight)
+            // tracking() and kerning() only available for iOS 16+
+        }
     }
 }
 // swiftlint:enable line_length

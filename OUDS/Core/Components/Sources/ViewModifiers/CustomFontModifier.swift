@@ -41,10 +41,10 @@ struct CustomFontModifier: ViewModifier {
 
     /// The weight to apply on the font, like "Bold" or "BoldItalic"
     private var weight: String {
-        sizeClass == .compact ? token.compact.weight : token.regular.weight
+        sizeClass == .compact ? "\(token.compact.weight.fontWeight)" : "\(token.regular.weight.fontWeight)"
     }
 
-    @Environment(\.horizontalSizeClass) private var sizeClass // TODO: reguar / comapct mode util
+    @Environment(\.horizontalSizeClass) private var sizeClass // TODO: regular / compact mode util
 
     // MARK: - Body
 

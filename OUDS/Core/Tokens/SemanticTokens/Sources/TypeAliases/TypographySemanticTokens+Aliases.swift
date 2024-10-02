@@ -24,3 +24,6 @@ public typealias TypographyFontSizeSemanticToken = TypographyFontSizeRawToken
 
 /// The global design system tools uses verbs of semantic token for font line height, which is basically a raw token for font line height
 public typealias TypographyFontLineHeightSemanticToken = TypographyFontLineHeightRawToken
+
+/// The global design system tools uses verbs of semantic token for font letter spacing, which is basically a raw token for font letter spacing
+public typealias TypographyFontLetterSpacingSemanticToken = TypographyFontLetterSpacingRawToken
