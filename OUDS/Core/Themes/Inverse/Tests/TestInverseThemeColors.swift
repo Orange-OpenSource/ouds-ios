@@ -116,12 +116,24 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorContentDefaultOnBackgroundEmphasized)
     }
 
+    func testColorsHomogeneityContentDefaultOnBackgroundBrandPrimary() throws {
+        assertHomogeneity(inverseTheme.colorContentDefaultOnBackgroundBrandPrimary)
+    }
+
     func testColorsHomogeneityContentMuted() throws {
         assertHomogeneity(inverseTheme.colorContentMuted)
     }
 
     func testColorsHomogeneityContentMutedOnBackgroundEmphasized() throws {
         assertHomogeneity(inverseTheme.colorContentMutedOnBackgroundEmphasized)
+    }
+
+    func testColorsHomogeneityContentDisabled() {
+        assertHomogeneity(inverseTheme.colorContentDisabled)
+    }
+
+    func testColorsHomogeneityContentDisabledOnBackgroundEmphasized() {
+        assertHomogeneity(inverseTheme.colorContentDisabledOnBackgroundEmphasized)
     }
 
     func testColorsHomogeneityContentBrandPrimary() throws {

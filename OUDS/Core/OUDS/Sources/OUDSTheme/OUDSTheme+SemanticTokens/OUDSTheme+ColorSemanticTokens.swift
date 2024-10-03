@@ -229,7 +229,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorContentDefault: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
-    @objc open var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralMutedLower) }
+    @objc open var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralMutedLower, dark: sysColorBrandNeutralMutedLower) }
 
     @objc open var colorContentMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
 
@@ -257,9 +257,15 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedLowest, dark: sysColorBrandNeutralEmphasizedLowest) }
 
+    @objc open var colorContentDefaultOnBackgroundBrandPrimary: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralEmphasizedBlack) }
+
     @objc open var colorBorderEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 
     @objc open var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralMutedLower) }
+
+    @objc open var colorContentDisabled: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralMutedMedium, dark: sysColorBrandNeutralEmphasizedLowest) }
+
+    @objc open var colorContentDisabledOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedLowest) }
 
     @objc open var colorBorderBrandPrimary: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandPrimaryDefault, dark: sysColorBrandPrimaryLow) }
 
@@ -282,8 +288,7 @@ extension OUDSTheme: ColorSemanticTokens {
     /*
          TODO: #124
          WARNING: Some color semantic tokens are missing because of Figma synchronization issues
-         - color background
-         - color braground awlways
+
          - color content
          - color border
          - color on background

@@ -229,9 +229,15 @@ public protocol ColorSemanticTokens {
 
     var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken? { get }
 
+    var colorContentDefaultOnBackgroundBrandPrimary: ColorSemanticToken? { get }
+
     var colorContentMuted: ColorSemanticToken? { get }
 
     var colorContentMutedOnBackgroundEmphasized: ColorSemanticToken? { get }
+
+    var colorContentDisabled: ColorSemanticToken? { get }
+
+    var colorContentDisabledOnBackgroundEmphasized: ColorSemanticToken? { get }
 
     var colorContentBrandPrimary: ColorSemanticToken? { get }
 
