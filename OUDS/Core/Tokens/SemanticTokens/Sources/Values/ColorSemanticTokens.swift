@@ -13,6 +13,7 @@
 
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
+// WARNING: Not synchronized anymore with the Figjam
 
 /// This is a group of semantic tokens for **colors**.
 /// It defines all `ColorSemanticToken` and `ColorAliasSemanticToken` a theme must have.
@@ -122,195 +123,118 @@ public protocol ColorSemanticTokens {
     var sysColorBrandAttractiveHigher: ColorAliasSemanticToken? { get }
     var sysColorBrandAttractiveHighest: ColorAliasSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Default - Primary
+    // MARK: Semantic token - Colors - Background
 
     var colorBackgroundDefaultPrimary: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Default - Secondary
-
     var colorBackgroundDefaultSecondary: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Background - Default - Tertiary
 
     var colorBackgroundDefaultTertiary: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Emphasized - Primary
-
     var colorBackgroundEmphasizedPrimary: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Background - Brand - Primary
 
     var colorBackgroundBrandPrimary: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Brand - Secondary
-
     var colorBackgroundBrandSecondary: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Background - Brand - Tertiary
 
     var colorBackgroundBrandTertiary: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Status - Neutral
-    
     var colorBackgroundStatusNeutral: ColorSemanticToken? { get }
-    
-    // MARK: Semantic token - Colors - Background - Status - Neutral - Emphasized
-    
+
     var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken? { get }
-    
-    // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
     var colorBackgroundStatusAttractiveMuted: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Status - Attractive - Emphasized
-
     var colorBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Background - Status - Warning - Muted
 
     var colorBackgroundStatusWarningMuted: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Status - Warning - Muted - On Background - Emphasized
-
     var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken? { get }
-    
-    // MARK: Semantic token - Colors - Background - Status - Warning - Emphasized
 
     var colorBackgroundStatusWarningEmphasized: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Status - Negative - Muted
-
     var colorBackgroundStatusNegativeMuted: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Status - Negative - Muted - On background - Emphasized
-
     var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken? { get }
-    
-    // MARK: Semantic token - Colors - Background - Status - Negative - Emphasized
 
     var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Status - Positive - Muted
-
     var colorBackgroundStatusPositiveMuted: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Status - Positive - Muted - On background - Emphasized
-
     var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken? { get }
-    
-    // MARK: Semantic token - Colors - Background - Status - Positive - Emphasized
 
     var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Status - Information - Muted
-
     var colorBackgroundStatusInformationMuted: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Background - Status - Information - Muted - On background - Emphasized
-
     var colorBackgroundStatusInformationMutedOnBackgroundEmphasized: ColorSemanticToken? { get }
-    
-    // MARK: Semantic token - Colors - Background - Status - Information - Muted - Emphasized
 
     var colorBackgroundStatusInformationEmphasized: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Content - Default
+    // MARK: Semantic token - Colors - Content
 
     var colorContentDefault: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Content - Default - On background emphasized
-
     var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Content - Muted
 
     var colorContentMuted: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Content - Muted - On background emphasized
-
     var colorContentMutedOnBackgroundEmphasized: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Content - Brand - Primary
 
     var colorContentBrandPrimary: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Content - Brand - Primary - On background emphasized
-
     var colorContentBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Content - Brand - Secondary
 
     var colorContentBrandSecondary: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Content - Brand - Tertiary
-
     var colorContentBrandTertiary: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Content - Status - Attractive
 
     var colorContentStatusAttractive: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Content - Status - Negative
-
     var colorContentStatusNegative: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Content - Status - Positive
 
     var colorContentStatusPositive: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Content - Status - Information
-
     var colorContentStatusInformation: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Border - Default
-
+    // MARK: Semantic token - Colors - Border
+    
     var colorBorderDefault: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Border - Default - On background emphasized
 
     var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Border - Emphasized
-
     var colorBorderEmphasized: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Border - Emphasized - On background emphasized
 
     var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Border - Brand - Primary
-
     var colorBorderBrandPrimary: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Border - Brand - Primary - On background emphasized
 
     var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Border - Brand - Secondary
-
     var colorBorderBrandSecondary: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Border - Brand - Tertiary
 
     var colorBorderBrandTertiary: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Border - Status - Attractive
-
     var colorBorderBrandStatusAttractive: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Border - Status - Warning
 
     var colorBorderBrandStatusWarning: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Border - Status - Negative
-
     var colorBorderBrandStatusNegative: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - Border - Status - Positive
 
     var colorBorderBrandStatusPositive: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - Border - Status - Information
-
     var colorBorderBrandStatusInformation: ColorSemanticToken? { get }
+
+    /*
+         TODO: #124
+         WARNING: Some color semantic tokens are missing because of Figma synchronization issues
+         - color background
+         - color braground awlways
+         - color content
+         - color border
+         - color on background
+         - color elevation
+         - color decorative
+         - color chart
+     */
 }
