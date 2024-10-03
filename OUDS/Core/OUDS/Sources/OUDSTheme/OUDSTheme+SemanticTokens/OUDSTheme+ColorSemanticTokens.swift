@@ -26,10 +26,10 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Alias - Primary
 
-    @objc open var sysColorBrandPrimaryLowest: ColorAliasSemanticToken? { nil }
+    @objc open var sysColorBrandPrimaryLowest: ColorAliasSemanticToken? { nil } // Defined in OrangeTheme+SemanticColorTokens.swift because uses an Orange brand color
     @objc open var sysColorBrandPrimaryLower: ColorAliasSemanticToken? { nil }
     @objc open var sysColorBrandPrimaryLow: ColorAliasSemanticToken? { nil }
-    @objc open var sysColorBrandPrimaryDefault: ColorAliasSemanticToken? { nil }
+    @objc open var sysColorBrandPrimaryDefault: ColorAliasSemanticToken? { nil } // Defined in OrangeTheme+SemanticColorTokens.swift because uses an Orange brand color
     @objc open var sysColorBrandPrimaryHigh: ColorAliasSemanticToken? { nil }
     @objc open var sysColorBrandPrimaryHigher: ColorAliasSemanticToken? { nil }
     @objc open var sysColorBrandPrimaryHighest: ColorAliasSemanticToken? { nil }
@@ -63,7 +63,7 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var sysColorBrandNeutralMutedMedium: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalLightGray400 }
     @objc open var sysColorBrandNeutralMutedHigh: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalLightGray560 }
     @objc open var sysColorBrandNeutralMutedHigher: ColorAliasSemanticToken? { nil }
-    @objc open var sysColorBrandNeutralMutedHighest: ColorAliasSemanticToken? { nil }
+    @objc open var sysColorBrandNeutralMutedHighest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalDarkGray160 }
 
     // MARK: Semantic token - Colors - Alias - Neutral - Emphasized
 
@@ -88,13 +88,13 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Alias - Information
 
-    @objc open var sysColorBrandInformationLowest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalDodgerBlue100 }
+    @objc open var sysColorBrandInformationLowest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalMalachite100 }
     @objc open var sysColorBrandInformationLower: ColorAliasSemanticToken? { nil }
     @objc open var sysColorBrandInformationLow: ColorAliasSemanticToken? { nil }
-    @objc open var sysColorBrandInformationDefault: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalDodgerBlue500 }
+    @objc open var sysColorBrandInformationDefault: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalMalachite500 }
     @objc open var sysColorBrandInformationHigh: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalDodgerBlue600 }
     @objc open var sysColorBrandInformationHigher: ColorAliasSemanticToken? { nil }
-    @objc open var sysColorBrandInformationHighest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalDodgerBlue800 }
+    @objc open var sysColorBrandInformationHighest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalMalachite900 }
 
     // MARK: Semantic token - Colors - Alias - Warning
 
@@ -104,27 +104,27 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var sysColorBrandWarningDefault: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalSun500 }
     @objc open var sysColorBrandWarningHigh: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalSun600 }
     @objc open var sysColorBrandWarningHigher: ColorAliasSemanticToken? { nil }
-    @objc open var sysColorBrandWarningHighest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalSun800 }
+    @objc open var sysColorBrandWarningHighest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalSun900 }
 
     // MARK: Semantic token - Colors - Alias - Negative
 
     @objc open var sysColorBrandNegativeLowest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalScarlet100 }
     @objc open var sysColorBrandNegativeLower: ColorAliasSemanticToken? { nil }
     @objc open var sysColorBrandNegativeLow: ColorAliasSemanticToken? { nil }
-    @objc open var sysColorBrandNegativeDefault: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalScarlet500 }
-    @objc open var sysColorBrandNegativeHigh: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalScarlet600 }
+    @objc open var sysColorBrandNegativeDefault: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalScarlet600 }
+    @objc open var sysColorBrandNegativeHigh: ColorAliasSemanticToken? { nil }
     @objc open var sysColorBrandNegativeHigher: ColorAliasSemanticToken? { nil }
-    @objc open var sysColorBrandNegativeHighest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalScarlet800 }
+    @objc open var sysColorBrandNegativeHighest: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalScarlet900 }
 
     // MARK: Semantic token - Colors - Alias - Attractive
 
-    @objc open var sysColorBrandAttractiveLowest: ColorAliasSemanticToken? { nil }
+    @objc open var sysColorBrandAttractiveLowest: ColorAliasSemanticToken? { nil } // Defined in OrangeTheme+SemanticColorTokens.swift because uses an Orange brand color
     @objc open var sysColorBrandAttractiveLower: ColorAliasSemanticToken? { nil }
     @objc open var sysColorBrandAttractiveLow: ColorAliasSemanticToken? { nil }
     @objc open var sysColorBrandAttractiveMedium: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalSun500 }
     @objc open var sysColorBrandAttractiveHigh: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalSun600 }
     @objc open var sysColorBrandAttractiveHigher: ColorAliasSemanticToken? { nil }
-    @objc open var sysColorBrandAttractiveHighest: ColorAliasSemanticToken? { nil }
+    @objc open var sysColorBrandAttractiveHighest: ColorAliasSemanticToken? { nil } // Defined in OrangeTheme+SemanticColorTokens.swift because uses an Orange brand color
 
     // MARK: Semantic token - Colors - Background - Default - Primary
 
@@ -140,11 +140,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Background - Emphasized - Primary
 
-    @objc open var colorBackgroundEmphasizedPrimary: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralEmphasizedMedium) }
-
-    // MARK: Semantic token - Colors - Background - Emphasized - Secondary
-
-    @objc open var colorBackgroundEmphasizedSecondary: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedMedium, dark: sysColorBrandNeutralEmphasizedHigh) }
+    @objc open var colorBackgroundEmphasizedPrimary: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedHighest, dark: sysColorBrandNeutralEmphasizedMedium) }
 
     // MARK: Semantic token - Colors - Background - Brand - Primary
 
@@ -158,6 +154,10 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundBrandTertiary: ColorSemanticToken? { nil }
 
+    // MARK: Semantic token - Colors - Background - Brand - Neutral
+    
+    @objc open var colorBackgroundStatusNeutral: MultipleColorTokens? { MultipleColorTokens(light: sysColorBrandNeutralLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
+    
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
     @objc open var colorBackgroundStatusAttractiveMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandAttractiveLowest, dark: sysColorBrandAttractiveHighest) }

@@ -138,10 +138,6 @@ public protocol ColorSemanticTokens {
 
     var colorBackgroundEmphasizedPrimary: MultipleColorTokens? { get }
 
-    // MARK: Semantic token - Colors - Background - Emphasized - Secondary
-
-    var colorBackgroundEmphasizedSecondary: MultipleColorTokens? { get }
-
     // MARK: Semantic token - Colors - Background - Brand - Primary
 
     var colorBackgroundBrandPrimary: MultipleColorTokens? { get }
@@ -154,6 +150,10 @@ public protocol ColorSemanticTokens {
 
     var colorBackgroundBrandTertiary: MultipleColorTokens? { get }
 
+    // MARK: Semantic token - Colors - Background - Status - Neutral
+    
+    var colorBackgroundStatusNeutral: MultipleColorTokens? { get }
+    
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
     var colorBackgroundStatusAttractiveMuted: MultipleColorTokens? { get }
