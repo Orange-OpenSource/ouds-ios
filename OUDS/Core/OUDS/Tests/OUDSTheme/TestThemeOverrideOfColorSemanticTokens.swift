@@ -1020,6 +1020,46 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colorBackgroundActionDisabledOnBackgroundStatusNegative?.dark == MockTheme.mockThemeColorRawToken)
     }
 
+    func testInheritedThemeCanOverrideSemanticTokenColorBackgroundActionFocusLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBackgroundActionFocus?.light, abstractTheme.colorBackgroundActionFocus?.light)
+        XCTAssertTrue(inheritedTheme.colorBackgroundActionFocus?.light == MockTheme.mockThemeColorRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBackgroundActionFocusDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBackgroundActionFocus?.dark, abstractTheme.colorBackgroundActionFocus?.dark)
+        XCTAssertTrue(inheritedTheme.colorBackgroundActionFocus?.dark == MockTheme.mockThemeColorRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBackgroundActionFocusOnBackgroundEmphasizedLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBackgroundActionFocusOnBackgroundEmphasized?.light, abstractTheme.colorBackgroundActionFocusOnBackgroundEmphasized?.light)
+        XCTAssertTrue(inheritedTheme.colorBackgroundActionFocusOnBackgroundEmphasized?.light == MockTheme.mockThemeColorRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBackgroundActionFocusOnBackgroundEmphasizedDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBackgroundActionFocusOnBackgroundEmphasized?.dark, abstractTheme.colorBackgroundActionFocusOnBackgroundEmphasized?.dark)
+        XCTAssertTrue(inheritedTheme.colorBackgroundActionFocusOnBackgroundEmphasized?.dark == MockTheme.mockThemeColorRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBackgroundActionFocusOnBackgroundStatusExcNegativeLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBackgroundActionFocusOnBackgroundStatusExcNegative?.light, abstractTheme.colorBackgroundActionFocusOnBackgroundStatusExcNegative?.light)
+        XCTAssertTrue(inheritedTheme.colorBackgroundActionFocusOnBackgroundStatusExcNegative?.light == MockTheme.mockThemeColorRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBackgroundActionFocusOnBackgroundStatusExcNegativeDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBackgroundActionFocusOnBackgroundStatusExcNegative?.dark, abstractTheme.colorBackgroundActionFocusOnBackgroundStatusExcNegative?.dark)
+        XCTAssertTrue(inheritedTheme.colorBackgroundActionFocusOnBackgroundStatusExcNegative?.dark == MockTheme.mockThemeColorRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBackgroundActionFocusOnBackgroundStatusNegativeLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBackgroundActionFocusOnBackgroundStatusNegative?.light, abstractTheme.colorBackgroundActionFocusOnBackgroundStatusNegative?.light)
+        XCTAssertTrue(inheritedTheme.colorBackgroundActionFocusOnBackgroundStatusNegative?.light == MockTheme.mockThemeColorRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBackgroundActionFocusOnBackgroundStatusNegativeDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBackgroundActionFocusOnBackgroundStatusNegative?.dark, abstractTheme.colorBackgroundActionFocusOnBackgroundStatusNegative?.dark)
+        XCTAssertTrue(inheritedTheme.colorBackgroundActionFocusOnBackgroundStatusNegative?.dark == MockTheme.mockThemeColorRawToken)
+    }
+
     /*
         TODO: #124
         WARNING: Some color semantic tokens are missing because of Figma synchronization issues.

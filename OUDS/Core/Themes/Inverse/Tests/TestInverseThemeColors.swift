@@ -216,6 +216,22 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorBackgroundActionDisabledOnBackgroundStatusNegative)
     }
 
+    func testColorsHomogeneityActionFocus() {
+        assertHomogeneity(inverseTheme.colorBackgroundActionFocus)
+    }
+
+    func testColorsHomogeneityActionFocusOnBackgroundEmphasized() {
+        assertHomogeneity(inverseTheme.colorBackgroundActionFocusOnBackgroundEmphasized)
+    }
+
+    func testColorsHomogeneityActionFocusOnBackgroundStatusExcNegative() {
+        assertHomogeneity(inverseTheme.colorBackgroundActionFocusOnBackgroundStatusExcNegative)
+    }
+
+    func testColorsHomogeneityActionFocusOnBackgroundStatusNegative() {
+        assertHomogeneity(inverseTheme.colorBackgroundActionFocusOnBackgroundStatusNegative)
+    }
+
     /*
         TODO: #124
         WARNING: Some color semantic tokens are missing because of Figma synchronization issues.
