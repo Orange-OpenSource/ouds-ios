@@ -38,6 +38,8 @@ final class TestInverseThemeColors: XCTestCase {
 
         XCTAssertEqual(inverseTheme.colorBackgroundStatusNeutral!.light, inverseTheme.colorBackgroundStatusNeutral!.dark)
         
+        XCTAssertEqual(inverseTheme.colorBackgroundStatusNeutralOnBackgroundEmphasized!.light, inverseTheme.colorBackgroundStatusNeutralOnBackgroundEmphasized!.dark)
+        
         XCTAssertEqual(inverseTheme.colorBackgroundStatusAttractiveMuted!.light, inverseTheme.colorBackgroundStatusAttractiveMuted!.dark)
 
         XCTAssertEqual(inverseTheme.colorBackgroundStatusAttractiveEmphasized!.light, inverseTheme.colorBackgroundStatusAttractiveEmphasized!.dark)

@@ -154,6 +154,10 @@ public protocol ColorSemanticTokens {
     
     var colorBackgroundStatusNeutral: ColorSemanticToken? { get }
     
+    // MARK: Semantic token - Colors - Background - Status - Neutral - Emphasized
+    
+    var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken? { get }
+    
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
     var colorBackgroundStatusAttractiveMuted: ColorSemanticToken? { get }

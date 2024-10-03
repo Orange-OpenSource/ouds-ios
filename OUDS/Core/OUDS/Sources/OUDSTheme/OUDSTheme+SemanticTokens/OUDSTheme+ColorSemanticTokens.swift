@@ -158,17 +158,21 @@ extension OUDSTheme: ColorSemanticTokens {
     
     @objc open var colorBackgroundStatusNeutral: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
     
+    // MARK: Semantic token - Colors - Background - Status - Neutral - Emphasized
+    
+    @objc open var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedHigh, dark: sysColorBrandNeutralEmphasizedHigh) }
+    
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
     @objc open var colorBackgroundStatusAttractiveMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandAttractiveLowest, dark: sysColorBrandAttractiveHighest) }
 
     // MARK: Semantic token - Colors - Background - Status - Attractive - Emphasized
 
-    @objc open var colorBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningHighest) }
+    @objc open var colorBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningDefault) }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Muted
 
-    @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandWarningLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
+    @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandWarningLowest, dark: sysColorBrandWarningHighest) }
 
     // MARK: Semantic token - Colors - Background - Status - Warning - Emphasized
 

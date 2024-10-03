@@ -154,6 +154,10 @@ extension MockTheme {
     
     override var colorBackgroundStatusNeutral: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
     
+    // MARK: Semantic token - Colors - Background - Status - Neutral - Emphasized
+    
+    override var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+    
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 
     override var colorBackgroundStatusAttractiveMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
