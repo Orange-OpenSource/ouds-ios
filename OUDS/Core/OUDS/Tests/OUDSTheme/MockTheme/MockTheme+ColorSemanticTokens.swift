@@ -182,6 +182,10 @@ extension MockTheme {
 
     override var colorBackgroundStatusNegativeMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
+    // MARK: Semantic token - Colors - Background - Status - Negative - Muted - On background - Emphasized
+
+    override var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+    
     // MARK: Semantic token - Colors - Background - Status - Negative - Emphasized
 
     override var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
@@ -190,6 +194,10 @@ extension MockTheme {
 
     override var colorBackgroundStatusPositiveMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
+    // MARK: Semantic token - Colors - Background - Status - Positive - Muted - On background - Emphasized
+
+    override var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+    
     // MARK: Semantic token - Colors - Background - Status - Positive - Emphasized
 
     override var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
@@ -198,6 +206,10 @@ extension MockTheme {
 
     override var colorBackgroundStatusInformationMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
+    // MARK: Semantic token - Colors - Background - Status - Information - Muted - On background - Emphasized
+
+    override var colorBackgroundStatusInformationMutedOnBackgroundEmphasized: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+    
     // MARK: Semantic token - Colors - Background - Status - Information - Emphasized
 
     override var colorBackgroundStatusInformationEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }

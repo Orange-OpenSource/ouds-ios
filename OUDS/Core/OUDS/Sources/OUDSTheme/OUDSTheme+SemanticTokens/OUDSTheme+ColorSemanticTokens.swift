@@ -186,6 +186,10 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusNegativeMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNegativeLowest, dark: sysColorBrandNeutralEmphasizedHighest) }
 
+    // MARK: Semantic token - Colors - Background - Status - Negative - Muted - On background - Emphasized
+
+    @objc open var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNegativeHighest) }
+    
     // MARK: Semantic token - Colors - Background - Status - Negative - Emphasized
 
     @objc open var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNegativeDefault, dark: sysColorBrandNegativeHighest) }
@@ -193,6 +197,10 @@ extension OUDSTheme: ColorSemanticTokens {
     // MARK: Semantic token - Colors - Background - Status - Positive - Muted
 
     @objc open var colorBackgroundStatusPositiveMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandPositiveLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
+    
+    // MARK: Semantic token - Colors - Background - Status - Positive - Muted
+
+    @objc open var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPositiveHighest) }
 
     // MARK: Semantic token - Colors - Background - Status - Positive - Emphasized
 
@@ -202,6 +210,10 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusInformationMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandInformationLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
 
+    // MARK: Semantic token - Colors - Background - Status - Information - Muted - On background - Emphasized
+
+    @objc open var colorBackgroundStatusInformationMutedOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandInformationHighest) }
+    
     // MARK: Semantic token - Colors - Background - Status - Information - Emphasized
 
     @objc open var colorBackgroundStatusInformationEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandInformationDefault, dark: sysColorBrandInformationHighest) }
