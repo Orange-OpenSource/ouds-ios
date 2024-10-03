@@ -18,7 +18,7 @@ import OUDSTokensSemantic
 extension MockTheme {
 
     static let mockThemeColorRawToken: ColorRawToken = "#68489D"
-    static let mockThemeMultipleColorTokens: MultipleColorTokens = MultipleColorTokens("#68489D")
+    static let mockThemeMultipleColorTokens: ColorSemanticToken = MultipleColorTokens("#68489D")
 
     // MARK: Semantic token - Colors - Alias - Primary
 
@@ -137,10 +137,6 @@ extension MockTheme {
     // MARK: Semantic token - Colors - Background - Emphasized - Primary
 
     override var colorBackgroundEmphasizedPrimary: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - Background - Emphasized - Secondary
-
-    override var colorBackgroundEmphasizedSecondary: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
     // MARK: Semantic token - Colors - Background - Brand - Primary
 

@@ -156,7 +156,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Background - Brand - Neutral
     
-    @objc open var colorBackgroundStatusNeutral: MultipleColorTokens? { MultipleColorTokens(light: sysColorBrandNeutralLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
+    @objc open var colorBackgroundStatusNeutral: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
     
     // MARK: Semantic token - Colors - Background - Status - Attractive - Muted
 

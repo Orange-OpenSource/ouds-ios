@@ -30,7 +30,7 @@ extension InverseTheme {
 
     public override var colorBackgroundBrandPrimary: ColorSemanticToken? { MultipleColorTokens(sysColorBrandPrimaryLow!) }
 
-    public override var colorBackgroundStatusNeutral: MultipleColorTokens? { MultipleColorTokens(sysColorBrandNeutralEmphasizedHigh!) }
+    public override var colorBackgroundStatusNeutral: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedHigh!) }
     
     public override var colorBackgroundStatusAttractiveMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandAttractiveLowest!) }
 
