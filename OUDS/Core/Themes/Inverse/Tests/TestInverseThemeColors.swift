@@ -156,6 +156,22 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorContentStatusInformation)
     }
 
+    func testColorsHomogeneityContentActionEnabled() {
+        assertHomogeneity(inverseTheme.colorContentActionEnabled)
+    }
+
+    func testColorsHomogeneityContentActionEnabledOnBackgroundEmphasized() {
+        assertHomogeneity(inverseTheme.colorContentActionEnabledOnBackgroundEmphasized)
+    }
+
+    func testColorsHomogeneityContentActionEnabledOnBackgroundStatusExcNegative() {
+        assertHomogeneity(inverseTheme.colorContentActionEnabledOnBackgroundStatusExcNegative)
+    }
+
+    func testColorsHomogeneityContentActionEnabledOnBackgroundStatusNegative() {
+        assertHomogeneity(inverseTheme.colorContentActionEnabledOnBackgroundStatusNegative)
+    }
+
     func testColorsHomogeneityBorderDefault() throws {
         assertHomogeneity(inverseTheme.colorBorderDefault)
     }

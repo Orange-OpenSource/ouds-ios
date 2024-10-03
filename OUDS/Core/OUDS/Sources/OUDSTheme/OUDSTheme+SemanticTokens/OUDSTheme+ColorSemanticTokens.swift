@@ -285,6 +285,14 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
 
+    @objc open var colorContentActionEnabled: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
+
+    @objc open var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedLower) }
+
+    @objc open var colorContentActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack) }
+
+    @objc open var colorContentActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite) }
+    
     /*
          TODO: #124
          WARNING: Some color semantic tokens are missing because of Figma synchronization issues

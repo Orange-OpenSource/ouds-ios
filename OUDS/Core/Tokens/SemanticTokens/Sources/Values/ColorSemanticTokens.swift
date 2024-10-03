@@ -255,6 +255,14 @@ public protocol ColorSemanticTokens {
 
     var colorContentStatusInformation: ColorSemanticToken? { get }
 
+    var colorContentActionEnabled: ColorSemanticToken? { get }
+    
+    var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken? { get }
+    
+    var colorContentActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken? { get }
+    
+    var colorContentActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { get }
+    
     // MARK: Semantic token - Colors - Border
 
     var colorBorderDefault: ColorSemanticToken? { get }

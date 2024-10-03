@@ -236,6 +236,14 @@ extension MockTheme {
 
     override var colorContentStatusInformation: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
+    override var colorContentActionEnabled: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+    
+    override var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+    
+    override var colorContentActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+    
+    override var colorContentActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+    
     // MARK: Semantic token - Colors - Border
 
     override var colorBorderDefault: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
