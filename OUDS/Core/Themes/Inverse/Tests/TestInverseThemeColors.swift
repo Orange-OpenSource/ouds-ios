@@ -95,25 +95,5 @@ final class TestInverseThemeColors: XCTestCase {
         XCTAssertEqual(inverseTheme.colorBorderBrandPrimary!.light, inverseTheme.colorBorderBrandPrimary!.dark)
 
         XCTAssertEqual(inverseTheme.colorBorderBrandPrimaryOnBackgroundEmphasized!.light, inverseTheme.colorBorderBrandPrimaryOnBackgroundEmphasized!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusAttractiveMuted!.light, inverseTheme.colorOnBackgroundStatusAttractiveMuted!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusAttractiveEmphasized!.light, inverseTheme.colorOnBackgroundStatusAttractiveEmphasized!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusWarningMuted!.light, inverseTheme.colorOnBackgroundStatusWarningMuted!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusWarningEmphasized!.light, inverseTheme.colorOnBackgroundStatusWarningEmphasized!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusNegativeMuted!.light, inverseTheme.colorOnBackgroundStatusNegativeMuted!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusNegativeEmphasized!.light, inverseTheme.colorOnBackgroundStatusNegativeEmphasized!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusPositiveMuted!.light, inverseTheme.colorOnBackgroundStatusPositiveMuted!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusPositiveEmphasized!.light, inverseTheme.colorOnBackgroundStatusPositiveEmphasized!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusInformationMuted!.light, inverseTheme.colorOnBackgroundStatusInformationMuted!.dark)
-
-        XCTAssertEqual(inverseTheme.colorOnBackgroundStatusInformationEmphasized!.light, inverseTheme.colorOnBackgroundStatusInformationEmphasized!.dark)
     }
 }

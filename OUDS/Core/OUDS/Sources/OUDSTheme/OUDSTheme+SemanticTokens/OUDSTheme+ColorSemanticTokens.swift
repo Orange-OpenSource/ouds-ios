@@ -305,49 +305,5 @@ extension OUDSTheme: ColorSemanticTokens {
     // MARK: Semantic token - Colors - Border - Status - Information
 
     @objc open var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
-
-    // MARK: Semantic token - Colors - On background - Status - Attractive - Muted
-
-    @objc open var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
-
-    // MARK: Semantic token - Colors - On background - Status - Attractive - Emphasized
-
-    @objc open var colorOnBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
-
-    // MARK: Semantic token - Colors - On background - Status - Warning - Muted
-
-    @objc open var colorOnBackgroundStatusWarningMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
-
-    // MARK: Semantic token - Colors - On background - Status - Warning - Emphasized
-
-    @objc open var colorOnBackgroundStatusWarningEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
-
-    // MARK: Semantic token - Colors - On background - Status - Negative - Muted
-
-    @objc open var colorOnBackgroundStatusNegativeMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
-
-    // MARK: Semantic token - Colors - Background - Status - Negative - Muted - On background - Emphasized
-
-    @objc open var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNegativeHighest) }
-    
-    // MARK: Semantic token - Colors - On background - Status - Negative - Emphasized
-
-    @objc open var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNegativeDefault, dark: sysColorBrandNegativeDefault) }
-
-    // MARK: Semantic token - Colors - On background - Status - Positive - Muted
-
-    @objc open var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandPositiveHighest, dark: sysColorBrandPositiveHighest) }
-
-    // MARK: Semantic token - Colors - On background - Status - Positive - Emphasized
-
-    @objc open var colorOnBackgroundStatusPositiveEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
-
-    // MARK: Semantic token - Colors - On background - Status - Information - Muted
-
-    @objc open var colorOnBackgroundStatusInformationMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
-
-    // MARK: Semantic token - Colors - On background - Status - Information - Emphasized
-
-    @objc open var colorOnBackgroundStatusInformationEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
 }
 // swiftlint:enable line_length

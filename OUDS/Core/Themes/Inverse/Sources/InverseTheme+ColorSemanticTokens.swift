@@ -107,24 +107,4 @@ extension InverseTheme {
     public override var colorBorderBrandStatusPositive: ColorSemanticToken? { nil }
 
     public override var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
-
-    public override var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
-
-    public override var colorOnBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
-
-    public override var colorOnBackgroundStatusWarningMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
-
-    public override var colorOnBackgroundStatusWarningEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
-
-    public override var colorOnBackgroundStatusNegativeMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
-
-    public override var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite!) }
-
-    public override var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
-
-    public override var colorOnBackgroundStatusPositiveEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
-
-    public override var colorOnBackgroundStatusInformationMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
-
-    public override var colorOnBackgroundStatusInformationEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }
 }

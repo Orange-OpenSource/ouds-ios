@@ -301,44 +301,4 @@ extension MockTheme {
     // MARK: Semantic token - Colors - Border - Status - Information
 
     override var colorBorderBrandStatusInformation: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Attractive - Muted
-
-    override var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Attractive - Emphasized
-
-    override var colorOnBackgroundStatusAttractiveEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Warning - Muted
-
-    override var colorOnBackgroundStatusWarningMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Warning - Emphasized
-
-    override var colorOnBackgroundStatusWarningEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Negative - Muted
-
-    override var colorOnBackgroundStatusNegativeMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Negative - Emphasized
-
-    override var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Positive - Muted
-
-    override var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Positive - Emphasized
-
-    override var colorOnBackgroundStatusPositiveEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Information - Muted
-
-    override var colorOnBackgroundStatusInformationMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
-    // MARK: Semantic token - Colors - On background - Status - Information - Emphasized
-
-    override var colorOnBackgroundStatusInformationEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 }

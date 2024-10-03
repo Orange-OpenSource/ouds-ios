@@ -309,44 +309,4 @@ public protocol ColorSemanticTokens {
     // MARK: Semantic token - Colors - Border - Status - Information
 
     var colorBorderBrandStatusInformation: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Attrative - Muted
-
-    var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Attrative - Emphasized
-
-    var colorOnBackgroundStatusAttractiveEmphasized: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Warning - Muted
-
-    var colorOnBackgroundStatusWarningMuted: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Warning - Emphasized
-
-    var colorOnBackgroundStatusWarningEmphasized: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Negative - Muted
-
-    var colorOnBackgroundStatusNegativeMuted: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Negative - Emphasized
-
-    var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Positive - Muted
-
-    var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Positive - Emphasized
-
-    var colorOnBackgroundStatusPositiveEmphasized: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Information - Muted
-
-    var colorOnBackgroundStatusInformationMuted: ColorSemanticToken? { get }
-
-    // MARK: Semantic token - Colors - On background - Status - Information - Emphasized
-
-    var colorOnBackgroundStatusInformationEmphasized: ColorSemanticToken? { get }
 }
