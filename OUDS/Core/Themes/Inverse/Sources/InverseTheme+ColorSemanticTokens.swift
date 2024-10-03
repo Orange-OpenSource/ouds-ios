@@ -113,6 +113,14 @@ extension InverseTheme {
 
     public override var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
 
+    public override var colorBackgroundActionEnabled: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedLower) }
+
+    public override var colorBackgroundActionEnabledOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack) }
+
+    public override var colorBackgroundActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack) }
+
+    public override var colorBackgroundActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite) }
+
     /*
          TODO: #124
          WARNING: Some color semantic tokens are missing because of Figma synchronization issues

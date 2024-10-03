@@ -123,7 +123,7 @@ extension MockTheme {
     override var sysColorBrandAttractiveHighest: ColorAliasSemanticToken! { Self.mockThemeColorRawToken }
 
     // MARK: Semantic token - Colors - Background
-    
+
     override var colorBackgroundDefaultPrimary: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
     override var colorBackgroundDefaultSecondary: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
@@ -170,8 +170,18 @@ extension MockTheme {
 
     override var colorBackgroundStatusInformationEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
+    // MARK: Semantic token - Colors - Background - Action
+
+    override var colorBackgroundActionEnabled: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+
+    override var colorBackgroundActionEnabledOnBackgroundEmphasized: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+
+    override var colorBackgroundActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+
+    override var colorBackgroundActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+
     // MARK: Semantic token - Colors - Content
-    
+
     override var colorContentDefault: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
     override var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
@@ -197,7 +207,7 @@ extension MockTheme {
     override var colorContentStatusInformation: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
     // MARK: Semantic token - Colors - Border
-    
+
     override var colorBorderDefault: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
     override var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }

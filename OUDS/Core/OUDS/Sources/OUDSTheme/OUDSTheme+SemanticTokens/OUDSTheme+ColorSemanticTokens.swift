@@ -175,6 +175,16 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusInformationEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandInformationDefault, dark: sysColorBrandInformationHighest) }
 
+    // MARK: Semantic token - Colors - Background - Action
+
+    @objc open var colorBackgroundActionEnabled: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
+
+    @objc open var colorBackgroundActionEnabledOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralMutedLower, dark: sysColorBrandNeutralMutedLower) }
+
+    @objc open var colorBackgroundActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralEmphasizedBlack) }
+
+    @objc open var colorBackgroundActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralMutedWhite) }
+
     // MARK: Semantic token - Colors - Content
 
     @objc open var colorContentDefault: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
@@ -228,7 +238,7 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var colorBorderBrandStatusPositive: ColorSemanticToken? { nil }
 
     @objc open var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
-    
+
     /*
          TODO: #124
          WARNING: Some color semantic tokens are missing because of Figma synchronization issues
