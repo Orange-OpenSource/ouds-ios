@@ -108,8 +108,6 @@ extension InverseTheme {
 
     public override var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
 
-    public override var colorOnBackgroundSecondary: ColorSemanticToken? { nil }
-
     public override var colorOnBackgroundTertiary: ColorSemanticToken? { nil }
 
     public override var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack!) }

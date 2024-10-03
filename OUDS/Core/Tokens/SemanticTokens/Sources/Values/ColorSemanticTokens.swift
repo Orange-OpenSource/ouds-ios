@@ -313,11 +313,6 @@ public protocol ColorSemanticTokens {
     
     
     
-    
-
-    // MARK: Semantic token - Colors - On background - Secondary
-
-    var colorOnBackgroundSecondary: ColorSemanticToken? { get }
 
     // MARK: Semantic token - Colors - On background - Tertiary
 
