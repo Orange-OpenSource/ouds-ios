@@ -34,6 +34,7 @@ struct ShacaseElementPage: View {
                     .accessibilityHidden(true)
 
                 Text(LocalizedStringKey(element.description))
+                    .typeBodyDefaultMedium(theme)
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaceFixedMedium)
 

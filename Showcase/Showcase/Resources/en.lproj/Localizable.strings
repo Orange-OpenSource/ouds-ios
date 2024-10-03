@@ -22,9 +22,7 @@
 "app_about_label_legalInformation" = "Legal information";
 "app_about_label_privacyPolicy" = "Privacy policy";
 
-// =====================
 // MARK: - Tokens Screen
-// =====================
 
 "app_tokens_border_label" = "Border";
 "app_tokens_border_description_text" = "Borders are used for the stroke colours on components and also for the colours of divider lines for components like tables.";
@@ -38,3 +36,7 @@
 "app_tokens_opacity_label" = "Opacity";
 "app_tokens_opacity_description_text" = "Opacity can help distinguish foreground elements from background elements, making content easier to read and important actions more noticeable.";
 
+
+// MARK: - Component Screen
+"app_component_empty_content_text" = "No content";
+"app_component_empty_content_description_text" = "This content is under construction and will be available very soon";

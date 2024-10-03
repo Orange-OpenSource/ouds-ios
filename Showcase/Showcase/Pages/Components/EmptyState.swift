@@ -25,9 +25,9 @@ struct EmptyState: View {
                     .frame(width: 160, height: 160, alignment: .center)
 
                 VStack(alignment: .center, spacing: theme.spaceFixedShorter) {
-                    Text("No content")
+                    Text("app_component_empty_content_text")
                         .typeHeadingMedium(theme)
-                    Text("This content is under construction and will be available very soon")
+                    Text("app_component_empty_content_description_text")
                         .typeBodyDefaultSmall(theme)
                 }
                 .padding(.vertical, theme.spaceFixedMedium)

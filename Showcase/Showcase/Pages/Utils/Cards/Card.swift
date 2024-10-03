@@ -15,6 +15,8 @@ import SwiftUI
 
 struct Card: View {
 
+    @Environment(\.theme) private var theme
+
     // MARK: Stored Properties
 
     private let title: Text
@@ -38,7 +40,7 @@ struct Card: View {
         VStack(alignment: .leading, spacing: 0) {
             CardIllustration(icon: icon)
             title
-                .font(.body)
+                .typeBodyDefaultMedium(theme)
                 .multilineTextAlignment(.leading)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 16)
