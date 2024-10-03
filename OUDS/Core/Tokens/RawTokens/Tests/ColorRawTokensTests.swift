@@ -15,6 +15,8 @@ import XCTest
 import OUDSTokensRaw
 import TestsUtils
 
+// swiftlint:disable type_body_length
+
 /// The aim of this tests class is to look for regressions in **color raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not relevant to test each token values.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
@@ -331,4 +333,211 @@ final class ColorRawTokensTests: XCTestCase {
     func testColorRawTokenColorTransparentWhite800LighterThanColorTransparentWhite900() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorTransparentWhite800, ColorRawTokens.colorTransparentWhite900)
     }
+
+    // MARK: Primitive token - Colors -  Emerald
+
+    func testOrangeBrandColorRawTokenColorDecorativeEmerald100LighterThanEmerald200() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeEmerald100, ColorRawTokens.colorDecorativeEmerald200)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeEmerald200LighterThanEmerald300() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeEmerald200, ColorRawTokens.colorDecorativeEmerald300)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeEmerald300LighterThanEmerald400() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeEmerald300, ColorRawTokens.colorDecorativeEmerald400)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeEmerald400LighterThanEmerald500() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeEmerald400, ColorRawTokens.colorDecorativeEmerald500)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeEmerald500LighterThanEmerald600() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeEmerald500, ColorRawTokens.colorDecorativeEmerald600)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeEmerald600LighterThanEmerald700() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeEmerald600, ColorRawTokens.colorDecorativeEmerald700)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeEmerald700LighterThanEmerald800() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeEmerald700, ColorRawTokens.colorDecorativeEmerald800)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeEmerald800LighterThanEmerald900() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeEmerald800, ColorRawTokens.colorDecorativeEmerald900)
+    }
+
+    // MARK: Primitive token - Colors -  Sky
+
+    func testOrangeBrandColorRawTokenColorDecorativeSky100LighterThanSky200() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeSky100, ColorRawTokens.colorDecorativeSky200)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeSky200LighterThanSky300() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeSky200, ColorRawTokens.colorDecorativeSky300)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeSky300LighterThanSky400() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeSky300, ColorRawTokens.colorDecorativeSky400)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeSky400LighterThanSky500() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeSky400, ColorRawTokens.colorDecorativeSky500)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeSky500LighterThanSky600() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeSky500, ColorRawTokens.colorDecorativeSky600)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeSky600LighterThanSky700() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeSky600, ColorRawTokens.colorDecorativeSky700)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeSky700LighterThanSky800() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeSky700, ColorRawTokens.colorDecorativeSky800)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeSky800LighterThanSky900() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeSky800, ColorRawTokens.colorDecorativeSky900)
+    }
+
+    // MARK: Primitive token - Colors -  Amber
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmber100LighterThanAmber200() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmber100, ColorRawTokens.colorDecorativeAmber200)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmber200LighterThanAmber300() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmber200, ColorRawTokens.colorDecorativeAmber300)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmber300LighterThanAmber400() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmber300, ColorRawTokens.colorDecorativeAmber400)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmber400LighterThanAmber500() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmber400, ColorRawTokens.colorDecorativeAmber500)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmber500LighterThanAmber600() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmber500, ColorRawTokens.colorDecorativeAmber600)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmber600LighterThanAmber700() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmber600, ColorRawTokens.colorDecorativeAmber700)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmber700LighterThanAmber800() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmber700, ColorRawTokens.colorDecorativeAmber800)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmber800LighterThanAmber900() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmber800, ColorRawTokens.colorDecorativeAmber900)
+    }
+
+    // MARK: Primitive token - Colors -  Amethyst
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmethyst100LighterThanAmethyst200() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst100, ColorRawTokens.colorDecorativeAmethyst200)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmethyst200LighterThanAmethyst300() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst200, ColorRawTokens.colorDecorativeAmethyst300)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmethyst300LighterThanAmethyst400() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst300, ColorRawTokens.colorDecorativeAmethyst400)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmethyst400LighterThanAmethyst500() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst400, ColorRawTokens.colorDecorativeAmethyst500)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmethyst500LighterThanAmethyst600() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst500, ColorRawTokens.colorDecorativeAmethyst600)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmethyst600LighterThanAmethyst700() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst600, ColorRawTokens.colorDecorativeAmethyst700)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmethyst700LighterThanAmethyst800() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst700, ColorRawTokens.colorDecorativeAmethyst800)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeAmethyst800LighterThanAmethyst900() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeAmethyst800, ColorRawTokens.colorDecorativeAmethyst900)
+    }
+
+    // MARK: Primitive token - Colors -  Shocking Pink
+
+    func testOrangeBrandColorRawTokenColorDecorativeShockingPink100LighterThan200() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink100, ColorRawTokens.colorDecorativeShockingPink200)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeShockingPink200LighterThan300() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink200, ColorRawTokens.colorDecorativeShockingPink300)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeShockingPink300LighterThan400() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink300, ColorRawTokens.colorDecorativeShockingPink400)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeShockingPink400LighterThan500() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink400, ColorRawTokens.colorDecorativeShockingPink500)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeShockingPink500LighterThan600() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink500, ColorRawTokens.colorDecorativeShockingPink600)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeShockingPink600LighterThan700() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink600, ColorRawTokens.colorDecorativeShockingPink700)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeShockingPink700LighterThan800() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink700, ColorRawTokens.colorDecorativeShockingPink800)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeShockingPink800LighterThan900() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeShockingPink800, ColorRawTokens.colorDecorativeShockingPink900)
+    }
+
+    // MARK: Primitive token - Colors -  Deep Peach
+
+    func testOrangeBrandColorRawTokenColorDecorativeDeepPeach100LighterThan200() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach100, ColorRawTokens.colorDecorativeDeepPeach200)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeDeepPeach200LighterThan300() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach200, ColorRawTokens.colorDecorativeDeepPeach300)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeDeepPeach300LighterThan400() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach300, ColorRawTokens.colorDecorativeDeepPeach400)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeDeepPeach400LighterThan500() throws {
+        XCTAssertColorDarkerThan(ColorRawTokens.colorDecorativeDeepPeach400, ColorRawTokens.colorDecorativeDeepPeach500)
+        // TODO: Why? Is the palette well defined in design team. This is the only case 400 is darker than 500
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeDeepPeach500LighterThan600() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach500, ColorRawTokens.colorDecorativeDeepPeach600)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeDeepPeach600LighterThan700() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach600, ColorRawTokens.colorDecorativeDeepPeach700)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeDeepPeach700LighterThan800() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach700, ColorRawTokens.colorDecorativeDeepPeach800)
+    }
+
+    func testOrangeBrandColorRawTokenColorDecorativeDeepPeach800LighterThan900() throws {
+        XCTAssertColorLighterThan(ColorRawTokens.colorDecorativeDeepPeach800, ColorRawTokens.colorDecorativeDeepPeach900)
+    }
 }
+
+// swiftlint:enable type_body_length

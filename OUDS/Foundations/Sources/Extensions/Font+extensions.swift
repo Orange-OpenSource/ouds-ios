@@ -13,6 +13,7 @@
 
 import SwiftUI
 
+// TODO: Xcode 16 - Add @retroactive
 extension Font.Weight: CustomStringConvertible {
 
     /// Computes from the current `self` value a description of the object which can be used later
