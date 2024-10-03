@@ -306,10 +306,6 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
 
-    // MARK: Semantic token - Colors - On background - Tertiary
-
-    @objc open var colorOnBackgroundTertiary: ColorSemanticToken? { nil }
-
     // MARK: Semantic token - Colors - On background - Status - Attractive - Muted
 
     @objc open var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }

@@ -879,16 +879,6 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
 
     // MARK: - Semantic token - Colors - On background
 
-    func testInheritedThemeCanOverrideSemanticTokenColorOnBackgroundTertiaryLight() throws {
-        XCTAssertNotEqual(inheritedTheme.colorOnBackgroundTertiary?.light, abstractTheme.colorOnBackgroundTertiary?.light)
-        XCTAssertTrue(inheritedTheme.colorOnBackgroundTertiary?.light == MockTheme.mockThemeColorRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenColorOnBackgroundTertiaryDark() throws {
-        XCTAssertNotEqual(inheritedTheme.colorOnBackgroundTertiary?.dark, abstractTheme.colorOnBackgroundTertiary?.dark)
-        XCTAssertTrue(inheritedTheme.colorOnBackgroundTertiary?.dark == MockTheme.mockThemeColorRawToken)
-    }
-
     func testInheritedThemeCanOverrideSemanticTokenColorOnBackgroundStatusAttractiveMutedLight() throws {
         XCTAssertNotEqual(inheritedTheme.colorOnBackgroundStatusAttractiveMuted?.light, abstractTheme.colorOnBackgroundStatusAttractiveMuted?.light)
         XCTAssertTrue(inheritedTheme.colorOnBackgroundStatusAttractiveMuted?.light == MockTheme.mockThemeColorRawToken)

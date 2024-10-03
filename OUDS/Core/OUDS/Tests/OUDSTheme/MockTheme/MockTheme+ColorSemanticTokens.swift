@@ -302,10 +302,6 @@ extension MockTheme {
 
     override var colorBorderBrandStatusInformation: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
-    // MARK: Semantic token - Colors - On background - Tertiary
-
-    override var colorOnBackgroundTertiary: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
-
     // MARK: Semantic token - Colors - On background - Status - Attractive - Muted
 
     override var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
