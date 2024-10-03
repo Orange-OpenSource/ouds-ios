@@ -25,6 +25,8 @@ final class TestInverseThemeColors: XCTestCase {
         inverseTheme = InverseTheme()
     }
 
+    // TODO: #124 - Split in as many fuctions, and define XCTAssertIdempotence
+    
     func testColorsEquality() throws {
         XCTAssertEqual(inverseTheme.colorBackgroundDefaultPrimary!.light, inverseTheme.colorBackgroundDefaultPrimary!.dark)
 
@@ -46,6 +48,8 @@ final class TestInverseThemeColors: XCTestCase {
 
         XCTAssertEqual(inverseTheme.colorBackgroundStatusWarningMuted!.light, inverseTheme.colorBackgroundStatusWarningMuted!.dark)
 
+        XCTAssertEqual(inverseTheme.colorBackgroundStatusWarningMutedOnBackgroundEmphasized!.light, inverseTheme.colorBackgroundStatusWarningMutedOnBackgroundEmphasized!.dark)
+        
         XCTAssertEqual(inverseTheme.colorBackgroundStatusWarningEmphasized!.light, inverseTheme.colorBackgroundStatusWarningEmphasized!.dark)
 
         XCTAssertEqual(inverseTheme.colorBackgroundStatusNegativeMuted!.light, inverseTheme.colorBackgroundStatusNegativeMuted!.dark)

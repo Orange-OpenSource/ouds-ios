@@ -170,6 +170,10 @@ extension MockTheme {
 
     override var colorBackgroundStatusWarningMuted: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }
 
+    // MARK: Semantic token - Colors - Background - Status - Warning - Muted - On background - Emphasized
+    
+    override var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+    
     // MARK: Semantic token - Colors - Background - Status - Warning - Emphasized
 
     override var colorBackgroundStatusWarningEmphasized: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }

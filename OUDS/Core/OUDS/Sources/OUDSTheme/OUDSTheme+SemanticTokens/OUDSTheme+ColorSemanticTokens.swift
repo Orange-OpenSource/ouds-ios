@@ -174,6 +174,10 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandWarningLowest, dark: sysColorBrandWarningHighest) }
 
+    // MARK: Semantic token - Colors - Background - Status - Warning - On Background - Emphasized
+
+    @objc open var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandWarningHighest, dark: sysColorBrandWarningHighest) }
+    
     // MARK: Semantic token - Colors - Background - Status - Warning - Emphasized
 
     @objc open var colorBackgroundStatusWarningEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningHighest) }

@@ -170,6 +170,10 @@ public protocol ColorSemanticTokens {
 
     var colorBackgroundStatusWarningMuted: ColorSemanticToken? { get }
 
+    // MARK: Semantic token - Colors - Background - Status - Warning - Muted - On Background - Emphasized
+
+    var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken? { get }
+    
     // MARK: Semantic token - Colors - Background - Status - Warning - Emphasized
 
     var colorBackgroundStatusWarningEmphasized: ColorSemanticToken? { get }
