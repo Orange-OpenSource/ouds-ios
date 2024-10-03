@@ -49,7 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- [Library] Color semantic token `colorBackgroundEmphasizedSecondary`
+- [Library] Color semantic token `colorBackgroundEmphasizedSecondary`, `colorOnBackgroundPrimary
 - [Library] Remove raw tokens `elevationZIndex` ([#119](https://github.com/Orange-OpenSource/ouds-ios/issues/119))
 
 ### Fixed

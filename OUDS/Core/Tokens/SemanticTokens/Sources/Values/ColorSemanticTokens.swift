@@ -310,9 +310,10 @@ public protocol ColorSemanticTokens {
 
     var colorBorderBrandStatusInformation: ColorSemanticToken? { get }
 
-    // MARK: Semantic token - Colors - On background - Primary
-
-    var colorOnBackgroundPrimary: ColorSemanticToken? { get }
+    
+    
+    
+    
 
     // MARK: Semantic token - Colors - On background - Secondary
 
@@ -322,6 +323,12 @@ public protocol ColorSemanticTokens {
 
     var colorOnBackgroundTertiary: ColorSemanticToken? { get }
 
+    
+    
+    
+    
+    
+    
     // MARK: Semantic token - Colors - On background - Status - Attrative - Muted
 
     var colorOnBackgroundStatusAttractiveMuted: ColorSemanticToken? { get }
