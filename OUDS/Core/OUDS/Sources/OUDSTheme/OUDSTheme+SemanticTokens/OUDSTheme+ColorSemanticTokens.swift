@@ -344,11 +344,11 @@ extension OUDSTheme: ColorSemanticTokens {
     
     // MARK: Semantic token - Colors - On background - Status - Negative - Emphasized
 
-    @objc open var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralMutedLower) }
+    @objc open var colorOnBackgroundStatusNegativeEmphasized: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNegativeDefault, dark: sysColorBrandNegativeDefault) }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Muted
 
-    @objc open var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
+    @objc open var colorOnBackgroundStatusPositiveMuted: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandPositiveHighest, dark: sysColorBrandPositiveHighest) }
 
     // MARK: Semantic token - Colors - On background - Status - Positive - Emphasized
 
