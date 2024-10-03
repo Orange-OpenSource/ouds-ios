@@ -180,6 +180,14 @@ extension MockTheme {
 
     override var colorBackgroundActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
 
+    override var colorBackgroundActionPressed: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+
+    override var colorBackgroundActionPressedOnBackgroundEmphasized: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+
+    override var colorBackgroundActionPressedOnBackgroundStatusExcNegative: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+
+    override var colorBackgroundActionPressedOnBackgroundStautsNegative: ColorSemanticToken? { Self.mockThemeMultipleColorTokens }
+
     // MARK: Semantic token - Colors - Content
 
     override var colorContentDefault: ColorSemanticToken! { Self.mockThemeMultipleColorTokens }

@@ -183,6 +183,14 @@ public protocol ColorSemanticTokens {
 
     var colorBackgroundActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { get }
 
+    var colorBackgroundActionPressed: ColorSemanticToken? { get }
+
+    var colorBackgroundActionPressedOnBackgroundEmphasized: ColorSemanticToken? { get }
+
+    var colorBackgroundActionPressedOnBackgroundStatusExcNegative: ColorSemanticToken? { get }
+
+    var colorBackgroundActionPressedOnBackgroundStautsNegative: ColorSemanticToken? { get }
+
     // MARK: Semantic token - Colors - Content
 
     var colorContentDefault: ColorSemanticToken? { get }
