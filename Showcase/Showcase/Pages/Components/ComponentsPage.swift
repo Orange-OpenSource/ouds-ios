@@ -20,38 +20,9 @@ import OUDSComponents
 
 struct ComponentsPage: View {
 
-    @State private var writtenText: String = ""
-    @State private var selectedTheme: OUDSTheme
-
-    init() {
-        writtenText = ""
-        selectedTheme = OrangeTheme()
-    }
-
     var body: some View {
-        OUDSThemeableView(theme: selectedTheme) {
-            NavigationView {
-                VStack(spacing: 30) {
-                    OUDSFormsTextInput(label: "Awesome form",
-                                       hint: "Type something",
-                                       placeholder: "Display large",
-                                       value: $writtenText)
-
-                    OUDSButton(text: "Some button") {}
-
-                    Button("Try OUDS Orange Theme") {
-                        selectedTheme = OrangeTheme()
-                        print("Showcase app - Selected OUDS Orange theme")
-                    }
-
-                    Button("Try custom \"local\" theme") {
-                        selectedTheme = OrangeCustomTheme()
-                        print("Showcase app - Selected app custom theme")
-                    }
-                }
-                .padding(.horizontal, 20)
-                .navigationTitle("app_bottomBar_components")
-            }
+        NavigationView {
+            EmptyState()
         }
     }
 }

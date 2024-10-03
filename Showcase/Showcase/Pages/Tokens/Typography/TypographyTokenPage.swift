@@ -38,16 +38,15 @@ struct TypographyTokenPage: View {
         let token = namedTypography.token(from: theme).compact
 
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-
             typgraphyName(from: namedTypography)
-
             Group {
                 Text("family (\(theme.customFontFamily ?? "system")), ")
-                Text("weight (\(token.weight)), ")
+                + Text("weight (\(token.weight)), ")
                 + Text("size (\(token.size, specifier: "%.2f")), ")
                 + Text("lineHeight (\(token.lineHeight, specifier: "%.2f")), ")
                 + Text("letterSpacing \(token.letterSpacing, specifier: "%.2f"))")
             }
+            .typeBodyDefaultSmall(theme)
             .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -75,7 +74,7 @@ struct TypographyTokenPage: View {
             Text(namedTypography.rawValue).typeBodyDefaultLarge(theme)
         case .bodyDefaultMedium:
             Text(namedTypography.rawValue).typeBodyDefaultMedium(theme)
-        case .bodyDefaullSmall:
+        case .bodyDefaultSmall:
             Text(namedTypography.rawValue).typeBodyDefaultSmall(theme)
         case .bodyStrongLarge:
             Text(namedTypography.rawValue).typeBodyStrongLarge(theme)
@@ -117,7 +116,7 @@ private enum NamedTypography: String, CaseIterable {
     case headingSmall
     case bodyDefaultLarge
     case bodyDefaultMedium
-    case bodyDefaullSmall
+    case bodyDefaultSmall
     case bodyStrongLarge
     case bodyStrongMedium
     case bodyStrongSmall
@@ -152,7 +151,7 @@ private enum NamedTypography: String, CaseIterable {
             return theme.typeBodyDefaultLarge
         case .bodyDefaultMedium:
             return theme.typeBodyDefaultMedium
-        case .bodyDefaullSmall:
+        case .bodyDefaultSmall:
             return theme.typeBodyDefaultSmall
         case .bodyStrongLarge:
             return theme.typeBodyStrongLarge
