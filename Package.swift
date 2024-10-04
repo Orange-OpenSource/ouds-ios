@@ -23,7 +23,7 @@ let package = Package(
     name: "OUDS",
     defaultLocalization: "en",
     platforms: [.iOS(.v15),
-        .macOS(.v11)], // macOS v11 required for swift-docc-plugin, not official support of OUDS for macOS!
+        .macOS(.v12)], // macOS v12 required for swift-docc-plugin, not official support of OUDS for macOS!
     
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
