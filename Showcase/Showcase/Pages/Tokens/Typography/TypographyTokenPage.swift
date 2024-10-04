@@ -15,6 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Typography Token Page
 struct TypographyTokenPage: View {
 
     @Environment(\.theme) private var theme
@@ -32,7 +33,8 @@ struct TypographyTokenPage: View {
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 
-    // MARK: Private helpers
+    // MARK: Helpers
+    
     @ViewBuilder
     private func illustration(from namedTypography: NamedTypography) -> some View {
         let token = namedTypography.token(from: theme).compact
@@ -105,6 +107,8 @@ struct TypographyTokenPage: View {
         }
     }
 }
+
+// MARK: - Named Typography
 
 private enum NamedTypography: String, CaseIterable {
     case displayLarge

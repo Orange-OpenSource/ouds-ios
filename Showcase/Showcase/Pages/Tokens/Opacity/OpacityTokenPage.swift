@@ -15,6 +15,8 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Opacity Token Page
+
 struct OpacityTokenPage: View {
 
     @Environment(\.theme) private var theme
@@ -32,7 +34,7 @@ struct OpacityTokenPage: View {
         .padding(.horizontal, theme.spaceFixedMedium)
     }
 
-    // MARK: Private helper
+    // MARK: Helpers
 
     private func illustration(for opacityName: NamedOpacity) -> some View {
         illustration(for: opacityName.token(from: theme), named: opacityName.rawValue)
@@ -61,6 +63,8 @@ struct OpacityTokenPage: View {
         .padding(.vertical, theme.spaceFixedShorter)
     }
 }
+
+// MARK: - Named Opacity
 
 private enum NamedOpacity: String, CaseIterable {
     case opacityTransparent

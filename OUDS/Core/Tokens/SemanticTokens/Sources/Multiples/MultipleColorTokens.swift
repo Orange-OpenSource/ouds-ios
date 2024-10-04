@@ -74,8 +74,8 @@ public final class MultipleColorTokens: NSObject {
     }
 
     /// Returns the right color according to the `colorScheme`.
-    ///   - Parameter: colorScheme The color scheme
-    ///   - Returns: The right color raw token
+    /// - Parameter colorScheme: The color scheme
+    /// - Returns: The right color raw token
     public func color(for colorSheme: ColorScheme) -> Color {
         (colorSheme == .light ? light : dark).color
     }

@@ -16,9 +16,11 @@ import OUDSThemesOrange
 import OUDSThemesSosh
 import SwiftUI
 
-/// Ewtesion of the `OUDSTheme` :
-/// - Identifiable to be enumerated in the ForEach used to build the list of elements in picker.
-/// - Hashable, because it is used in a picker than need Hashable element.
+// MARK: - Extension of OUDSTheme
+
+/// Extension of the `OUDSTheme` to add both `Identifiable` and `Hashable`.
+/// An `OUDSTheme` must be `Identifiable` to be enumerated like in `ForEach`(e.g. used to build the list of elements in picker).
+/// It must be `Hashable` because it is used in a picker than need `Hashable` element.
 extension OUDSTheme: Identifiable, Hashable {
 
     var name: String {
@@ -39,6 +41,7 @@ extension OUDSTheme: Identifiable, Hashable {
     }
 
     // MARK: Hashable
+    
     public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
         lhs.name == rhs.name
     }
@@ -48,22 +51,20 @@ extension OUDSTheme: Identifiable, Hashable {
     }
 }
 
+// MARK: - Theme Provider
+
 /// Theme provider that proposes all supported themes for the demo application.
 /// It also stores the current theme, selected by user.
 final class ThemeProvider: ObservableObject {
 
-    // MARK: Stored Properties
-
+    let themes: [OUDSTheme]
+    
     @Published
     var currentTheme: OUDSTheme {
         didSet {
             UserDefaults.standard.set(currentTheme.name, forKey: "themeName")
         }
     }
-
-    let themes: [OUDSTheme]
-
-    // MARK: Initializers
 
     init() {
         let orangeTheme = OrangeTheme()
@@ -80,7 +81,11 @@ final class ThemeProvider: ObservableObject {
     }
 }
 
+// MARK: - Theme Selection Button
+
 extension View {
+    
+    /// To add a `ThemeSelectionButton` in the toolbar
     func navigationbarMenuForThemeSelection() -> some View {
         toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -90,17 +95,11 @@ extension View {
     }
 }
 
-// MARK: - Theme Selection Button
-
-/// Button is added in navigation bar to allow, the user to change the current theme.
+/// Button to make the user change the current theme.
 struct ThemeSelectionButton: View {
-
-    // MARK: Stored properties
 
     @EnvironmentObject private var themeProvider: ThemeProvider
     @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Body
 
     var body: some View {
         Menu {

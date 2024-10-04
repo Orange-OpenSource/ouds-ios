@@ -51,8 +51,8 @@ public final class MultipleElevationTokens: NSObject {
     }
 
     /// Returns the right elevation according to the `colorScheme`.
-    ///   - Parameter: colorScheme The color scheme
-    ///   - Returns: The right elevation raw token
+    /// - Parameter colorScheme: The color scheme
+    /// - Returns: The right elevation raw token
     public func elevation(for colorSheme: ColorScheme) -> ElevationCompositeRawToken {
         (colorSheme == .light ? light : dark)
     }
