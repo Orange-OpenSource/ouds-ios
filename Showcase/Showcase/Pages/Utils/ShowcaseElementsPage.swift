@@ -32,7 +32,7 @@ struct ShowcaseElementsPage: View {
                 LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaceFixedShortest) {
                     ForEach(elements, id: \.id) { element in
                         NavigationLink {
-                            ShacaseElementPage(element: element)
+                            ShowcaseElementPage(element: element)
                         } label: {
                             Card(
                                 title: Text(LocalizedStringKey(element.name)),

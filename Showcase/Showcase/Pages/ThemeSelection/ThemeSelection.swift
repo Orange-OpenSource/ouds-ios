@@ -41,7 +41,7 @@ extension OUDSTheme: Identifiable, Hashable {
     }
 
     // MARK: Hashable
-    
+
     public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
         lhs.name == rhs.name
     }
@@ -58,7 +58,7 @@ extension OUDSTheme: Identifiable, Hashable {
 final class ThemeProvider: ObservableObject {
 
     let themes: [OUDSTheme]
-    
+
     @Published
     var currentTheme: OUDSTheme {
         didSet {
@@ -84,7 +84,7 @@ final class ThemeProvider: ObservableObject {
 // MARK: - Theme Selection Button
 
 extension View {
-    
+
     /// To add a `ThemeSelectionButton` in the toolbar
     func navigationbarMenuForThemeSelection() -> some View {
         toolbar {

@@ -20,7 +20,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
     /// The title used as a `LocalizedStringKey` to add as navigation title
     let title: String
-    
+
     /// Elapsed time to wait before sending an accessibility notification of a screen change with the `title` in argument
     let deadline: DispatchTime
 
@@ -42,7 +42,7 @@ struct RequestAccessibleFocusModifier: ViewModifier {
 
     /// Flag to listen saying wether or not the `View` got the focus
     @AccessibilityFocusState var requestFocus: Bool
-    
+
     /// Elapsed time to wait before requesting the focus
     let deadline: DispatchTime
 
@@ -69,10 +69,10 @@ struct RestrictedRequestAccessibleFocusModifier: ViewModifier {
 
     /// Flag to listen saying wether or not the `View` got the focus
     @AccessibilityFocusState var requestFocus: AccessibilityFocusable?
-    
+
     /// The target to give the focus after the deadLine` delay
     let target: AccessibilityFocusable
-    
+
     /// Elapsed time to wait before requesting the focus
     let deadline: DispatchTime
 

@@ -13,28 +13,14 @@
 
 import SwiftUI
 
+// MARK: - Card
+
 struct Card: View {
 
+    let title: Text
+    let icon: Image
+
     @Environment(\.theme) private var theme
-
-    // MARK: Stored Properties
-
-    private let title: Text
-    private let icon: Image
-
-    // MARK: Initializer
-
-    /// Initialization without button.
-    ///
-    /// - Parameters:
-    ///  - title: Title displayed into the card.
-    ///  - icon: Icon displayed into illustration area of the card.
-    init(title: Text, icon: Image) {
-        self.title = title
-        self.icon = icon
-    }
-
-    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {

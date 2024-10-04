@@ -34,7 +34,7 @@ struct TypographyTokenPage: View {
     }
 
     // MARK: Helpers
-    
+
     @ViewBuilder
     private func illustration(from namedTypography: NamedTypography) -> some View {
         let token = namedTypography.token(from: theme).compact

@@ -15,7 +15,7 @@ import SwiftUI
 import OUDS
 import OUDSTokensSemantic
 
-struct ShacaseElementPage: View {
+struct ShowcaseElementPage: View {
 
     @AccessibilityFocusState private var requestFocus: Bool
     @Environment(\.theme) private var theme

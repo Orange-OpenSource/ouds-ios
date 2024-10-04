@@ -24,7 +24,7 @@ struct ElevationTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
-    
+
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
@@ -36,7 +36,7 @@ struct ElevationTokenPage: View {
     }
 
     // MARK: Helpers
-    
+
     private func illustration(for elevation: NamedElevation) -> some View {
         illustration(for: elevation.token(from: theme), named: elevation.rawValue)
     }

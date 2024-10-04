@@ -31,7 +31,6 @@
 		073543182CA172CA001187EA /* TypographyTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543172CA172CA001187EA /* TypographyTokenElement.swift */; };
 		0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735431A2CA18C48001187EA /* TypographyTokenPage.swift */; };
 		0735432A2CA192F9001187EA /* TokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543222CA192F9001187EA /* TokenElement.swift */; };
-		0735432B2CA192F9001187EA /* ShacaseElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543232CA192F9001187EA /* ShacaseElementPage.swift */; };
 		0740A9982C9874160069D24A /* OUDSFormsTextInputUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008182C942753006B8729 /* OUDSFormsTextInputUITests.swift */; };
 		0740A99A2C9874670069D24A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0740A9992C9874670069D24A /* SnapshotTesting */; };
 		0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* Snapshot.swift */; };
@@ -64,6 +63,7 @@
 		51BD76292C466FCF0033365D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761C2C466FCF0033365D /* WebView.swift */; };
 		51BD762A2C466FCF0033365D /* Showcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* Showcase.swift */; };
 		51BD762B2C466FCF0033365D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
+		51E3FF0B2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */; };
 		51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */; };
 		E537B9B66A6466473179DEE8 /* Pods_Showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D3017314DBC1733F8D0C79 /* Pods_Showcase.framework */; };
 /* End PBXBuildFile section */
@@ -134,6 +134,7 @@
 		51BD761C2C466FCF0033365D /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		51BD761E2C466FCF0033365D /* Showcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Showcase.swift; sourceTree = "<group>"; };
 		51BD761F2C466FCF0033365D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowcaseElementPage.swift; path = Showcase/Pages/Utils/ShowcaseElementPage.swift; sourceTree = "<group>"; };
 		974E2EAB64D9123627CD7D29 /* Pods-DemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.release.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		BF4130905502F287757622E2 /* Pods-DemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoApp.debug.xcconfig"; path = "Target Support Files/Pods-DemoApp/Pods-DemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		E0D3017314DBC1733F8D0C79 /* Pods_Showcase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showcase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -264,6 +265,7 @@
 		07FDCD882C296A500009AA13 = {
 			isa = PBXGroup;
 			children = (
+				51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */,
 				07FDCDA32C296B170009AA13 /* 🛠 */,
 				51BD76202C466FCF0033365D /* Showcase */,
 				0740A9902C9873500069D24A /* ShowcaseTests */,
@@ -632,10 +634,10 @@
 				073543182CA172CA001187EA /* TypographyTokenElement.swift in Sources */,
 				51BD76292C466FCF0033365D /* WebView.swift in Sources */,
 				51BD76232C466FCF0033365D /* ShowcaseElementsPage.swift in Sources */,
+				51E3FF0B2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift in Sources */,
 				073543162CA17275001187EA /* ShowcaseElement.swift in Sources */,
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
 				0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */,
-				0735432B2CA192F9001187EA /* ShacaseElementPage.swift in Sources */,
 				51BD76222C466FCF0033365D /* ComponentsPage.swift in Sources */,
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
