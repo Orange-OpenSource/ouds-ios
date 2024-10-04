@@ -61,19 +61,20 @@ struct TypographyModifier: ViewModifier {
         }
     }
 
-    /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight*, *font size* and the *line height*
-    /// depending to the current `MultipleTypographyTokens`
+    // TODO: #51 - Call lineSpacing() and tracking() functions when values usable in TypographyRawTokens
+    /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
+    /// depending to the current `MultipleTypographyTokens`.
+    /// **Does not apply _letter spacing_ nor _line height_ because raw tokens values are not usable!**
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
             content
                 .font(adaptiveFont())
-                .lineSpacing(adaptiveTypography.lineHeight)
-                .tracking(adaptiveTypography.letterSpacing)
-        } else {
+//                .lineSpacing(adaptiveTypography.lineHeight)
+//                .tracking(adaptiveTypography.letterSpacing)
+        } else { // tracking() and kerning() only available for iOS 16+
             content
                 .font(adaptiveFont())
-                .lineSpacing(adaptiveTypography.lineHeight)
-            // tracking() and kerning() only available for iOS 16+
+//                .lineSpacing(adaptiveTypography.lineHeight)
         }
     }
 }

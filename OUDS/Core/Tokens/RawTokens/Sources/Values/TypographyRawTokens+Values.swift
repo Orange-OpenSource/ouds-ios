@@ -11,6 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import UIKit
+
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
@@ -64,23 +66,23 @@ extension TypographyRawTokens {
 
     // WARNING: values in pixels and not in points, do not use as is!
 
-    public static let fontLetterSpacing150: TypographyFontLetterSpacingRawToken = 150
-    public static let fontLetterSpacing175: TypographyFontLetterSpacingRawToken = 175
-    public static let fontLetterSpacing200: TypographyFontLetterSpacingRawToken = 200
-    public static let fontLetterSpacing250: TypographyFontLetterSpacingRawToken = 250
-    public static let fontLetterSpacing300: TypographyFontLetterSpacingRawToken = 300
-    public static let fontLetterSpacing350: TypographyFontLetterSpacingRawToken = 350
-    public static let fontLetterSpacing450: TypographyFontLetterSpacingRawToken = 450
-    public static let fontLetterSpacing550: TypographyFontLetterSpacingRawToken = 550
-    public static let fontLetterSpacing650: TypographyFontLetterSpacingRawToken = 650
-    public static let fontLetterSpacing750: TypographyFontLetterSpacingRawToken = 750
-    public static let fontLetterSpacing850: TypographyFontLetterSpacingRawToken = 850
-    public static let fontLetterSpacing950: TypographyFontLetterSpacingRawToken = 950
-    public static let fontLetterSpacing1050: TypographyFontLetterSpacingRawToken = 1050
-    public static let fontLetterSpacing1150: TypographyFontLetterSpacingRawToken = 1150
-    public static let fontLetterSpacing1250: TypographyFontLetterSpacingRawToken = 1250
-    public static let fontLetterSpacing1450: TypographyFontLetterSpacingRawToken = 1450
-    public static let fontLetterSpacing1850: TypographyFontLetterSpacingRawToken = 1850
+    public static let fontLetterSpacing150: TypographyFontLetterSpacingRawToken = 150 / UIScreen.main.scale
+    public static let fontLetterSpacing175: TypographyFontLetterSpacingRawToken = 175 / UIScreen.main.scale
+    public static let fontLetterSpacing200: TypographyFontLetterSpacingRawToken = 200 / UIScreen.main.scale
+    public static let fontLetterSpacing250: TypographyFontLetterSpacingRawToken = 250 / UIScreen.main.scale
+    public static let fontLetterSpacing300: TypographyFontLetterSpacingRawToken = 300 / UIScreen.main.scale
+    public static let fontLetterSpacing350: TypographyFontLetterSpacingRawToken = 350 / UIScreen.main.scale
+    public static let fontLetterSpacing450: TypographyFontLetterSpacingRawToken = 450 / UIScreen.main.scale
+    public static let fontLetterSpacing550: TypographyFontLetterSpacingRawToken = 550 / UIScreen.main.scale
+    public static let fontLetterSpacing650: TypographyFontLetterSpacingRawToken = 650 / UIScreen.main.scale
+    public static let fontLetterSpacing750: TypographyFontLetterSpacingRawToken = 750 / UIScreen.main.scale
+    public static let fontLetterSpacing850: TypographyFontLetterSpacingRawToken = 850 / UIScreen.main.scale
+    public static let fontLetterSpacing950: TypographyFontLetterSpacingRawToken = 950 / UIScreen.main.scale
+    public static let fontLetterSpacing1050: TypographyFontLetterSpacingRawToken = 1050 / UIScreen.main.scale
+    public static let fontLetterSpacing1150: TypographyFontLetterSpacingRawToken = 1150 / UIScreen.main.scale
+    public static let fontLetterSpacing1250: TypographyFontLetterSpacingRawToken = 1250 / UIScreen.main.scale
+    public static let fontLetterSpacing1450: TypographyFontLetterSpacingRawToken = 1450 / UIScreen.main.scale
+    public static let fontLetterSpacing1850: TypographyFontLetterSpacingRawToken = 1850 / UIScreen.main.scale
 
     // MARK: Primitive token - Typography - Font family
 
