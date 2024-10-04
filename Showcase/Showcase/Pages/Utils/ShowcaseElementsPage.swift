@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSComponents
 import SwiftUI
 
 struct ShowcaseElementsPage: View {

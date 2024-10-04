@@ -1,6 +1,6 @@
 # ``OUDSComponents``
 
-The catalog of all components provided by OUDS.
+The catalog of all components provided by OUDS. It contains also `View` extensions and `ViewModifiers` to apply tokens and styles on components and higher-level views.
 
 @Metadata {
     @TechnologyRoot
