@@ -31,7 +31,6 @@
 		073543182CA172CA001187EA /* TypographyTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543172CA172CA001187EA /* TypographyTokenElement.swift */; };
 		0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735431A2CA18C48001187EA /* TypographyTokenPage.swift */; };
 		0735432A2CA192F9001187EA /* TokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543222CA192F9001187EA /* TokenElement.swift */; };
-		0740A9982C9874160069D24A /* OUDSFormsTextInputUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008182C942753006B8729 /* OUDSFormsTextInputUITests.swift */; };
 		0740A99A2C9874670069D24A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0740A9992C9874670069D24A /* SnapshotTesting */; };
 		0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* Snapshot.swift */; };
 		0747947A2CAE882A0033C2D8 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074794792CAE882A0033C2D8 /* EmptyState.swift */; };
@@ -88,7 +87,6 @@
 		0735431A2CA18C48001187EA /* TypographyTokenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyTokenPage.swift; sourceTree = "<group>"; };
 		073543222CA192F9001187EA /* TokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenElement.swift; sourceTree = "<group>"; };
 		073543232CA192F9001187EA /* ShacaseElementPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShacaseElementPage.swift; sourceTree = "<group>"; };
-		074008182C942753006B8729 /* OUDSFormsTextInputUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSFormsTextInputUITests.swift; sourceTree = "<group>"; };
 		074008222C942810006B8729 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		0740A9872C9833670069D24A /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
 		0740A9882C9833670069D24A /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 			isa = PBXGroup;
 			children = (
 				074008212C9427F8006B8729 /* Snapshots */,
-				074008182C942753006B8729 /* OUDSFormsTextInputUITests.swift */,
 				0740A99C2C9888CF0069D24A /* ShowcaseUITestPlan.xctestplan */,
 			);
 			path = ShowcaseTests;
@@ -612,7 +609,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0740A9982C9874160069D24A /* OUDSFormsTextInputUITests.swift in Sources */,
 				0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

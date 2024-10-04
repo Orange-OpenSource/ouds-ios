@@ -10,15 +10,6 @@ Import the target of components, and use the component you want:
 
 ```swift
 import OUDSComponents // To get the components
-
-struct YourView: View {
-
-    @State private var writtenText: String = ""
-
-    var body: some View {
-        OUDSFormsTextInput(placeholder: "Some placeholder to display", value: $writtenText)
-    }
-}
 ```
 
 Of course you must use in your root view the <doc:/OUDS/OUDSThemeableView> with the suitable theme:
