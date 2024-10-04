@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSThemesSosh
 import SwiftUI
@@ -24,9 +25,14 @@ import SwiftUI
 extension OUDSTheme: Identifiable, Hashable {
 
     var name: String {
+        if self is InverseTheme { // Is also an OrangeTheme, should be checked before
+            return "Inverse"
+        }
+
         if self is OrangeTheme {
             return "Orange"
         }
+
         if self is SoshTheme {
             return "Sosh"
         }
@@ -69,8 +75,9 @@ final class ThemeProvider: ObservableObject {
     init() {
         let orangeTheme = OrangeTheme()
         let soshTheme = SoshTheme()
+        let inverseTheme = InverseTheme()
         let defaultTheme = orangeTheme
-        themes = [orangeTheme, soshTheme]
+        themes = [orangeTheme, soshTheme, inverseTheme]
 
         if let themeName = UserDefaults.standard.value(forKey: "themeName") as? String,
            let theme = themes.first(where: { $0.name == themeName }) {
