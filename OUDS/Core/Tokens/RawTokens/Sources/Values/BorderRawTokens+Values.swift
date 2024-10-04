@@ -11,12 +11,14 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
+
 /// Extracted in this separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
-/// Should be fully generated in the future.
 extension BorderRawTokens {
 
-    // Double type because used below for computations with Double values
-    private static let borderBase: Double = 4
+    /// Double type because used below for computations with Double values, output of the parser
+    public static let borderBase: Double = 4
 
     // MARK: Primitive token - Border - Width
 

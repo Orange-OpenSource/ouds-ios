@@ -15,16 +15,12 @@ import SwiftUI
 
 struct AboutPage: View {
 
-    // =======================
     // MARK: Stored properties
-    // =======================
 
     let privacyPolicyUrl: URL
     let legalInformationUrl: URL
 
-    // =================
     // MARK: Initializer
-    // =================
 
     init() {
         guard let privacyNoticeUrl = Bundle.main.url(forResource: "about_privacy_policy", withExtension: "html") else {
@@ -38,9 +34,7 @@ struct AboutPage: View {
         self.legalInformationUrl = legalInformationUrl
     }
 
-    // ==========
     // MARK: Body
-    // ==========
 
     var body: some View {
         NavigationView {

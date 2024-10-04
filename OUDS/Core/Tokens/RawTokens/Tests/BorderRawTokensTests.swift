@@ -21,9 +21,6 @@ import OUDSTokensRaw
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 final class BorderRawTokensTests: XCTestCase {
 
-    // Curent value of BorderRawTokens.borderBase
-    static let borderRawTokensBorderBase = 4
-
     // MARK: - Primitive token - Border - Width
 
     func testBorderWidthRawToken0LessThan25() throws {
@@ -31,7 +28,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderWidthRawToken0MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth0, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderWidth0, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderWidthRawToken25LessThan50() throws {
@@ -39,7 +36,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderWidthRawToken25MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth25, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderWidth25, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderWidthRawToken50LessThan75() throws {
@@ -47,7 +44,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderWidthRawToken50MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth50, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderWidth50, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderWidthRawToken75LessThan100() throws {
@@ -55,7 +52,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderWidthRawToken75MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth75, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderWidth75, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderWidthRawToken100LessThan150() throws {
@@ -63,7 +60,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderWidthRawToken100MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth100, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderWidth100, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderWidthRawToken150LessThan200() throws {
@@ -71,11 +68,11 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderWidthRawToken150MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth150, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderWidth150, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderWidthRawToken200MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth200, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderWidth200, factor: BorderRawTokens.borderBase)
     }
 
     // MARK: - Primitive token - Border - Radius
@@ -85,7 +82,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken0MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius0, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius0, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken25LessThan50() throws {
@@ -93,7 +90,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken25MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius25, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius25, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken50LessThan75() throws {
@@ -101,7 +98,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken50MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius50, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius50, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken75LessThan100() throws {
@@ -109,7 +106,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken75MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius75, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius75, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken100LessThan150() throws {
@@ -117,7 +114,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken100MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius100, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius100, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken150LessThan200() throws {
@@ -125,7 +122,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken150MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius150, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius150, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken200LessThan300() throws {
@@ -133,7 +130,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken200MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius200, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius200, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken300LessThan400() throws {
@@ -141,7 +138,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken300MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius300, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius300, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken400LessThan500() throws {
@@ -149,7 +146,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken400MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius400, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius400, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken500LessThan600() throws {
@@ -157,7 +154,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken500MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius500, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius500, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken600LessThan800() throws {
@@ -165,11 +162,11 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     func testBorderRadiusRawToken600MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius600, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius600, factor: BorderRawTokens.borderBase)
     }
 
     func testBorderRadiusRawToken800MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius800, factor: Self.borderRawTokensBorderBase)
+        XCTAssertMultipleOf(BorderRawTokens.borderRadius800, factor: BorderRawTokens.borderBase)
     }
 
     // MARK: - Primitive token - Border - Style

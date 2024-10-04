@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import Foundation
+import OUDS
 import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
@@ -61,13 +61,12 @@ public struct OUDSButton: View {
                 .systemFont(typography: theme.buttonTypography)
                 .padding(theme.buttonInternalSpacing)
                 .foregroundColor(colorScheme == .light
-                                 ? theme.buttonForegroundColorLight.color
-                                 : theme.buttonForegroundColorDark.color)
-                .modifier(BorderStyleModifier(theme.buttonBorderStyle,
-                                              theme.buttonBorderWidth,
-                                              theme.buttonBorderRadius,
-                                              theme.buttonBorderColorLight,
-                                              theme.buttonBorderColorDark))
+                                 ? theme.buttonForegroundColor.light.color
+                                 : theme.buttonForegroundColor.dark.color)
+                .oudsBorder(style: theme.buttonBorderStyle,
+                            width: theme.buttonBorderWidth,
+                            radius: theme.buttonBorderRadius,
+                            color: theme.buttonBorderColor)
         }.frame(width: theme.buttonWidth, height: theme.buttonHeight)
     }
 }

@@ -2,17 +2,19 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import XCTest
-import OUDSTokensRaw
+@testable import OUDSTokensRaw
+
+// swiftlint:disable type_body_length
 
 /// The aim of this tests class is to look for regressions in **typography raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not relevant to test each token values.
@@ -24,9 +26,12 @@ final class TypographyRawTokensTests: XCTestCase {
     // MARK: - Primitive token - Typography - Font family
 
     // Just to ensure the font families in tokens are the ones in system with the same name
-
     func testTypographyRawTokenFontFamilyBrandDefault() throws {
         XCTAssertEqual(TypographyRawTokens.fontFamilyBrandDefault, "Helvetica Neue")
+    }
+
+    func testTypographyRawTokenFontFamilyBrandTV() throws {
+        XCTAssertEqual(TypographyRawTokens.fontFamilyBrandTV, "Helvetica Neue LT")
     }
 
     func testTypographyRawTokenFontFamilySystemArial() throws {
@@ -37,8 +42,24 @@ final class TypographyRawTokensTests: XCTestCase {
         XCTAssertEqual(TypographyRawTokens.fontFamilySystemHelvetica, "Helvetica")
     }
 
+    func testTypographyRawTokenFontFamilySystemNotoSans() throws {
+        XCTAssertEqual(TypographyRawTokens.fontFamilySystemNotoSans, "Noto sans")
+    }
+
+    func testTypographyRawTokenFontFamilySystemSFProText() throws {
+        XCTAssertEqual(TypographyRawTokens.fontFamilySystemSFProText, "SF Pro Text")
+    }
+
+    func testTypographyRawTokenFontFamilySystemRoboto() throws {
+        XCTAssertEqual(TypographyRawTokens.fontFamilySystemRoboto, "Roboto")
+    }
+
     func testTypographyRawTokenFontFamilyMonospaceMenlo() throws {
         XCTAssertEqual(TypographyRawTokens.fontFamilyMonospaceMenlo, "Menlo")
+    }
+
+    func testTypographyRawTokenFontFamilyMonospaceMonaco() throws {
+        XCTAssertEqual(TypographyRawTokens.fontFamilyMonospaceMonaco, "Monaco")
     }
 
     func testTypographyRawTokenFontFamilyCourrierNew() throws {
@@ -173,6 +194,72 @@ final class TypographyRawTokensTests: XCTestCase {
         XCTAssertLessThan(TypographyRawTokens.fontLineHeight1850, TypographyRawTokens.fontLineHeight2050)
     }
 
+    // MARK: - Primitive token - Typography - Letter spacong
+
+    func testTypographyRawTokensFontLetterSpacing150LessThanFontLetterSpacing175() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing150, TypographyRawTokens.fontLetterSpacing175)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing175LessThanFontLetterSpacing200() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing175, TypographyRawTokens.fontLetterSpacing200)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing200LessThanFontLetterSpacing250() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing200, TypographyRawTokens.fontLetterSpacing250)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing250LessThanFontLetterSpacing300() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing250, TypographyRawTokens.fontLetterSpacing300)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing300LessThanFontLetterSpacing350() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing300, TypographyRawTokens.fontLetterSpacing350)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing350LessThanFontLetterSpacing450() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing350, TypographyRawTokens.fontLetterSpacing450)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing450LessThanFontLetterSpacing550() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing450, TypographyRawTokens.fontLetterSpacing550)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing550LessThanFontLetterSpacing650() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing550, TypographyRawTokens.fontLetterSpacing650)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing650LessThanFontLetterSpacing750() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing650, TypographyRawTokens.fontLetterSpacing750)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing750LessThanFontLetterSpacing850() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing750, TypographyRawTokens.fontLetterSpacing850)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing850LessThanFontLetterSpacing950() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing850, TypographyRawTokens.fontLetterSpacing950)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing950LessThanFontLetterSpacing1050() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing950, TypographyRawTokens.fontLetterSpacing1050)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing1050LessThanFontLetterSpacing1150() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing1050, TypographyRawTokens.fontLetterSpacing1150)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing1150LessThanFontLetterSpacing1250() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing1150, TypographyRawTokens.fontLetterSpacing1250)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing1250LessThanFontLetterSpacing1450() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing1250, TypographyRawTokens.fontLetterSpacing1450)
+    }
+
+    func testTypographyRawTokensFontLetterSpacing1450LessThanFontLetterSpacing1850() throws {
+        XCTAssertLessThan(TypographyRawTokens.fontLetterSpacing1450, TypographyRawTokens.fontLetterSpacing1850)
+    }
+
     // MARK: - Primitive token - Typography - Font family
 
     func testTypographyRawTokensFontFamiliesAreAllDifferent() throws {
@@ -185,155 +272,118 @@ final class TypographyRawTokensTests: XCTestCase {
     // MARK: - Primitive token - Typography - Font weight
 
     func testTypographyRawTokensFontWeightsAreAllDifferent() throws {
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight200)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight300)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight400)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight500)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight600)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight700)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight900)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightExtraLight)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightLight)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightRegular)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightMedium)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightSemiBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightExtraBold)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight300)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight400)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight500)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight600)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight700)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight900)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightLight)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightRegular)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightMedium)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightSemiBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightExtraBold)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight400)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight500)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight600)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight700)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight900)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightRegular)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightMedium)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightSemiBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightExtraBold)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight400, TypographyRawTokens.fontWeight500)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight400, TypographyRawTokens.fontWeight600)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight400, TypographyRawTokens.fontWeight700)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight400, TypographyRawTokens.fontWeight900)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightRegular, TypographyRawTokens.fontWeightMedium)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightRegular, TypographyRawTokens.fontWeightSemiBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightRegular, TypographyRawTokens.fontWeightBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightRegular, TypographyRawTokens.fontWeightExtraBold)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight500, TypographyRawTokens.fontWeight600)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight500, TypographyRawTokens.fontWeight700)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight500, TypographyRawTokens.fontWeight900)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightMedium, TypographyRawTokens.fontWeightSemiBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightMedium, TypographyRawTokens.fontWeightBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightMedium, TypographyRawTokens.fontWeightExtraBold)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight600, TypographyRawTokens.fontWeight700)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight600, TypographyRawTokens.fontWeight900)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightSemiBold, TypographyRawTokens.fontWeightBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightSemiBold, TypographyRawTokens.fontWeightExtraBold)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeight700, TypographyRawTokens.fontWeight900)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeightBold, TypographyRawTokens.fontWeightExtraBold)
     }
 
     // MARK: - Primitive token - Typography - Composite
 
     func testTypographyRawTokensTypeRegular150LessThanTypeRegular175() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeRegular150.size, TypographyRawTokens.typeRegular175.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeRegular150.lineHeight, TypographyRawTokens.typeRegular175.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeRegular150.weight, TypographyRawTokens.typeRegular175.weight)
+        XCTAssertTrue(TypographyRawTokens.typeRegular150 <| TypographyRawTokens.typeRegular175)
     }
 
     func testTypographyRawTokensTypeRegular175LessThanTypeRegular200() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeRegular175.size, TypographyRawTokens.typeRegular200.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeRegular175.lineHeight, TypographyRawTokens.typeRegular200.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeRegular175.weight, TypographyRawTokens.typeRegular200.weight)
+        XCTAssertTrue(TypographyRawTokens.typeRegular175 <| TypographyRawTokens.typeRegular200)
     }
 
     func testTypographyRawTokensTypeRegular200LessThanTypeRegular250() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeRegular200.size, TypographyRawTokens.typeRegular250.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeRegular200.lineHeight, TypographyRawTokens.typeRegular250.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeRegular200.weight, TypographyRawTokens.typeRegular250.weight)
+        XCTAssertTrue(TypographyRawTokens.typeRegular200 <| TypographyRawTokens.typeRegular250)
     }
 
     func testTypographyRawTokensTypeBold150LessThanTypeBold175() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold150.size, TypographyRawTokens.typeBold175.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold150.lineHeight, TypographyRawTokens.typeBold175.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold150.weight, TypographyRawTokens.typeBold175.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold150 <| TypographyRawTokens.typeBold175)
     }
 
     func testTypographyRawTokensTypeBold175LessThanTypeBold200() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold175.size, TypographyRawTokens.typeBold200.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold175.lineHeight, TypographyRawTokens.typeBold200.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold175.weight, TypographyRawTokens.typeBold200.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold175 <| TypographyRawTokens.typeBold200)
     }
 
     func testTypographyRawTokensTypeBold200LessThanTypeBold250() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold200.size, TypographyRawTokens.typeBold250.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold200.lineHeight, TypographyRawTokens.typeBold250.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold200.weight, TypographyRawTokens.typeBold250.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold200 <| TypographyRawTokens.typeBold250)
     }
 
     func testTypographyRawTokensTypeBold250LessThanTypeBold300() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold250.size, TypographyRawTokens.typeBold300.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold250.lineHeight, TypographyRawTokens.typeBold300.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold250.weight, TypographyRawTokens.typeBold300.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold250 <| TypographyRawTokens.typeBold300)
     }
 
     func testTypographyRawTokensTypeBold300LessThanTypeBold350() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold300.size, TypographyRawTokens.typeBold350.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold300.lineHeight, TypographyRawTokens.typeBold350.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold300.weight, TypographyRawTokens.typeBold350.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold300 <| TypographyRawTokens.typeBold350)
     }
 
     func testTypographyRawTokensTypeBold350LessThanTypeBold450() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold350.size, TypographyRawTokens.typeBold450.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold350.lineHeight, TypographyRawTokens.typeBold450.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold350.weight, TypographyRawTokens.typeBold450.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold350 <| TypographyRawTokens.typeBold450)
     }
 
     func testTypographyRawTokensTypeBold450LessThanTypeBold550() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold450.size, TypographyRawTokens.typeBold550.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold450.lineHeight, TypographyRawTokens.typeBold550.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold450.weight, TypographyRawTokens.typeBold550.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold450 <| TypographyRawTokens.typeBold550)
     }
 
     func testTypographyRawTokensTypeBold550LessThanTypeBold650() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold550.size, TypographyRawTokens.typeBold650.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold550.lineHeight, TypographyRawTokens.typeBold650.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold550.weight, TypographyRawTokens.typeBold650.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold550 <| TypographyRawTokens.typeBold650)
     }
 
     func testTypographyRawTokensTypeBold650LessThanTypeBold750() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold650.size, TypographyRawTokens.typeBold750.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold650.lineHeight, TypographyRawTokens.typeBold750.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold650.weight, TypographyRawTokens.typeBold750.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold650 <| TypographyRawTokens.typeBold750)
     }
 
     func testTypographyRawTokensTypeBold750LessThanTypeBold850() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold750.size, TypographyRawTokens.typeBold850.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold750.lineHeight, TypographyRawTokens.typeBold850.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold750.weight, TypographyRawTokens.typeBold850.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold750 <| TypographyRawTokens.typeBold850)
     }
 
     func testTypographyRawTokensTypeBold850LessThanTypeBold950() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold850.size, TypographyRawTokens.typeBold950.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold850.lineHeight, TypographyRawTokens.typeBold950.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold850.weight, TypographyRawTokens.typeBold950.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold850 <| TypographyRawTokens.typeBold950)
     }
 
     func testTypographyRawTokensTypeBold950LessThanTypeBold1050() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold950.size, TypographyRawTokens.typeBold1050.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold950.lineHeight, TypographyRawTokens.typeBold1050.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold950.weight, TypographyRawTokens.typeBold1050.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold950 <| TypographyRawTokens.typeBold1050)
     }
 
     func testTypographyRawTokensTypeBold1050LessThanTypeBold1150() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold1050.size, TypographyRawTokens.typeBold1150.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold1050.lineHeight, TypographyRawTokens.typeBold1150.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold1050.weight, TypographyRawTokens.typeBold1150.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold1050 <| TypographyRawTokens.typeBold1150)
     }
 
     func testTypographyRawTokensTypeBold1150LessThanTypeBold1250() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold1150.size, TypographyRawTokens.typeBold1250.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold1150.lineHeight, TypographyRawTokens.typeBold1250.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold1150.weight, TypographyRawTokens.typeBold1250.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold1150 <| TypographyRawTokens.typeBold1250)
     }
 
     func testTypographyRawTokensTypeBold1250LessThanTypeBold1450() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold1250.size, TypographyRawTokens.typeBold1450.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold1250.lineHeight, TypographyRawTokens.typeBold1450.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold1250.weight, TypographyRawTokens.typeBold1450.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold1250 <| TypographyRawTokens.typeBold1450)
     }
 
     func testTypographyRawTokensTypeBold1450LessThanTypeBold1850() throws {
-        XCTAssertLessThan(TypographyRawTokens.typeBold1450.size, TypographyRawTokens.typeBold1850.size)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold1450.lineHeight, TypographyRawTokens.typeBold1850.lineHeight)
-        XCTAssertLessThanOrEqual(TypographyRawTokens.typeBold1450.weight, TypographyRawTokens.typeBold1850.weight)
+        XCTAssertTrue(TypographyRawTokens.typeBold1450 <| TypographyRawTokens.typeBold1850)
     }
 }
+// swiftlint:enable type_body_length

@@ -13,6 +13,9 @@
 
 import OUDSTokensRaw
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
+
 /// This is a group of semantic tokens for **typography**.
 /// It defines all typography semantic tokens a theme must have
 /// (`TypographyFontFamilySemanticToken`, `TypographyFontWeightSemanticToken`, `TypographyFontSizeSemanticToken`, `TypographyFontLineHeightSemanticToken`).
@@ -21,8 +24,6 @@ import OUDSTokensRaw
 public protocol TypographySemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Family
-
-    // TODO: Should we suffix our tokens names by "iOS"?
 
     var fontFamily: TypographyFontFamilyRawToken { get }
     var fontFamilyDisplay: TypographyFontFamilySemanticToken { get }
@@ -113,44 +114,76 @@ public protocol TypographySemanticTokens {
     var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken { get }
     var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { get }
 
-    // MARK: - Semantic token - Typography - Font - Letter spacing
-    // TODO: Missing details about the types of the associated raw tokens
+    // MARK: - Semantic token - Typography - Font - Letter spacing - Mobile (extra-compact/compact)
+
+    var fontLetterSpacingMobileDisplayLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileDisplayMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileDisplaySmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileHeadingXLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileHeadingLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileHeadingMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileHeadingSmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileBodyLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileBodyMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingMobileBodySmall: TypographyFontLetterSpacingSemanticToken { get }
+
+    // MARK: - Semantic token - Typography - Font - Letter spacing - Tablet (regular/medium)
+
+    var fontLetterSpacingTabletDisplayLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletDisplayMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletDisplaySmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletHeadingXLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletHeadingLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletHeadingMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletHeadingSmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletBodyLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletBodyMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingTabletBodySmall: TypographyFontLetterSpacingSemanticToken { get }
+
+    // MARK: - Semantic token - Typography - Font - Letter spacing - Others
+
+    var fontLetterSpacingLabelXLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelLarge: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelSmall: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingCodeMedium: TypographyFontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingCodeSmall: TypographyFontLetterSpacingSemanticToken { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    var typeDisplayLarge: TypographyCompositeSemanticToken { get }
-    var typeDisplayMedium: TypographyCompositeSemanticToken { get }
-    var typeDisplaySmall: TypographyCompositeSemanticToken { get }
+    var typeDisplayLarge: MultipleTypographyTokens { get }
+    var typeDisplayMedium: MultipleTypographyTokens { get }
+    var typeDisplaySmall: MultipleTypographyTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    var typeHeadingXLarge: TypographyCompositeSemanticToken { get }
-    var typeHeadingLarge: TypographyCompositeSemanticToken { get }
-    var typeHeadingMedium: TypographyCompositeSemanticToken { get }
-    var typeHeadingSmall: TypographyCompositeSemanticToken { get }
+    var typeHeadingXLarge: MultipleTypographyTokens { get }
+    var typeHeadingLarge: MultipleTypographyTokens { get }
+    var typeHeadingMedium: MultipleTypographyTokens { get }
+    var typeHeadingSmall: MultipleTypographyTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    var typeBodyDefaultLarge: TypographyCompositeSemanticToken { get }
-    var typeBodyDefaultMedium: TypographyCompositeSemanticToken { get }
-    var typeBodyDefaultSmall: TypographyCompositeSemanticToken { get }
-    var typeBodyStrongLarge: TypographyCompositeSemanticToken { get }
-    var typeBodyStrongMedium: TypographyCompositeSemanticToken { get }
-    var typeBodyStrongSmall: TypographyCompositeSemanticToken { get }
+    var typeBodyDefaultLarge: MultipleTypographyTokens { get }
+    var typeBodyDefaultMedium: MultipleTypographyTokens { get }
+    var typeBodyDefaultSmall: MultipleTypographyTokens { get }
+    var typeBodyStrongLarge: MultipleTypographyTokens { get }
+    var typeBodyStrongMedium: MultipleTypographyTokens { get }
+    var typeBodyStrongSmall: MultipleTypographyTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    var typeLabelDefaultXLarge: TypographyCompositeSemanticToken { get }
-    var typeLabelDefaultLarge: TypographyCompositeSemanticToken { get }
-    var typeLabelDefaultMedium: TypographyCompositeSemanticToken { get }
-    var typeLabelDefaultSmall: TypographyCompositeSemanticToken { get }
-    var typeLabelStrongXLarge: TypographyCompositeSemanticToken { get }
-    var typeLabelStrongLarge: TypographyCompositeSemanticToken { get }
-    var typeLabelStrongMedium: TypographyCompositeSemanticToken { get }
-    var typeLabelStrongSmall: TypographyCompositeSemanticToken { get }
+    var typeLabelDefaultXLarge: MultipleTypographyTokens { get }
+    var typeLabelDefaultLarge: MultipleTypographyTokens { get }
+    var typeLabelDefaultMedium: MultipleTypographyTokens { get }
+    var typeLabelDefaultSmall: MultipleTypographyTokens { get }
+    var typeLabelStrongXLarge: MultipleTypographyTokens { get }
+    var typeLabelStrongLarge: MultipleTypographyTokens { get }
+    var typeLabelStrongMedium: MultipleTypographyTokens { get }
+    var typeLabelStrongSmall: MultipleTypographyTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    var typeCodeMedium: TypographyCompositeSemanticToken { get }
-    var typeCodeSmall: TypographyCompositeSemanticToken { get }
+    var typeCodeMedium: MultipleTypographyTokens { get }
+    var typeCodeSmall: MultipleTypographyTokens { get }
 }

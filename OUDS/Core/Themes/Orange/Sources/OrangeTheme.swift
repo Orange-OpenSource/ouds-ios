@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import OUDS
 
 /// This is an override of the default basic `OUDSTheme` and should be seen as the default theme for the OUDS library.

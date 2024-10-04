@@ -11,14 +11,19 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
+import OUDSThemesOrange
 import SwiftUI
 
 struct MainView: View {
+
+    @Environment(\.theme) private var theme
+
     var body: some View {
         TabView {
-            GuidelinesPage()
+            TokensPage()
                 .tabItem {
-                    Label("app_bottomBar_guidelines", image: "ic_guideline_dna")
+                    Label("app_bottomBar_tokens", image: "ic_token")
                 }
             ComponentsPage()
                 .tabItem {
@@ -28,8 +33,8 @@ struct MainView: View {
                 .tabItem {
                     Label("app_bottomBar_about", image: "ic_info")
                 }
-
         }
+        .accentColor(theme.sysColorBrandPrimaryDefault?.color)
     }
 }
 

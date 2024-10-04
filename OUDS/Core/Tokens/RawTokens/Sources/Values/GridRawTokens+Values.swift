@@ -11,48 +11,23 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
+
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
-/// Should be fully generated in the future.
 extension GridRawTokens {
 
-    private static let dimensionBase: GridRawToken = 4
-
-    // MARK: Primitive token - Grid - Design width
-
-    public static let gridWidth100: GridRawToken = 320
-    public static let gridWidth200: GridRawToken = 390
-    public static let gridWidth300: GridRawToken = 480
-    public static let gridWidth400: GridRawToken = 768
-    public static let gridWidth500: GridRawToken = 1024
-    public static let gridWidth600: GridRawToken = 1440
-    public static let gridWidth700: GridRawToken = 1680
-    public static let gridWidth800: GridRawToken = 1920
+    /// Double type because used below for computations with Double values, output of the parser
+    public static let dimensionBase: Double = 4
 
     // MARK: Primitive token - Grid - Min width
 
-    public static let gridMinWidth100: GridRawToken = 1
-    public static let gridMinWidth200: GridRawToken = 390
-    public static let gridMinWidth300: GridRawToken = 480
-    public static let gridMinWidth400: GridRawToken = 736
-    public static let gridMinWidth500: GridRawToken = 1024
-    public static let gridMinWidth600: GridRawToken = 1320
-    public static let gridMinWidth700: GridRawToken = 1640
-    public static let gridMinWidth800: GridRawToken = 1880
     public static let gridMinWidthExtraCompact: GridRawToken = 320
     public static let gridMinWidthCompact: GridRawToken = 390
     public static let gridMinWidthRegular: GridRawToken = 736
 
     // MARK: Primitive token - Grid - Max width
 
-    public static let gridMaxWidth100: GridRawToken = 389
-    public static let gridMaxWidth200: GridRawToken = 479
-    public static let gridMaxWidth300: GridRawToken = 735
-    public static let gridMaxWidth400: GridRawToken = 1023
-    public static let gridMaxWidth500: GridRawToken = 1339
-    public static let gridMaxWidth600: GridRawToken = 1639
-    public static let gridMaxWidth650: GridRawToken = 1680
-    public static let gridMaxWidth700: GridRawToken = 1879
-    public static let gridMaxWidth800: GridRawToken = 1920
     public static let gridMaxWidthExtraCompact: GridRawToken = 389
     public static let gridMaxWidthCompact: GridRawToken = 852
     public static let gridMaxWidthRegular: GridRawToken = 1336
@@ -107,7 +82,6 @@ extension GridRawTokens {
 
     // MARK: Primitive token - Grid - Composite - iOS Regular
 
-    public static let gridRegularWidth: GridRawToken = gridWidth400
     public static let gridRegularMinWidth: GridRawToken = gridMinWidthCompact
     public static let gridRegularMaxWidth: GridRawToken = gridMaxWidthCompact
     public static let gridRegularMargin: GridRawToken = gridMargin500

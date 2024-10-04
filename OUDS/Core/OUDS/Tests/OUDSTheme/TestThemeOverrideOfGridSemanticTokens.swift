@@ -14,6 +14,8 @@
 import XCTest
 import OUDS
 
+// WARNING: Maybe removed in the future or needs to be updated with token generation
+
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
 /// In fact the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols _grid semantic tokens_.
 /// These semantic tokens should be overriden by subclass like the `OrangeTheme` default theme.
@@ -26,11 +28,6 @@ final class TestThemeOverrideOfGridSemanticTokens: XCTestCase {
     override func setUp() async throws {
         abstractTheme = OUDSTheme()
         inheritedTheme = MockTheme()
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenGridIOSExtraCompactDesignWidth() throws {
-        XCTAssertNotEqual(inheritedTheme.gridExtraCompactWidth, abstractTheme.gridExtraCompactWidth)
-        XCTAssertTrue(inheritedTheme.gridExtraCompactWidth == MockTheme.mockThemeGridRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenGridIOSExtraCompactMinWidth() throws {
@@ -58,11 +55,6 @@ final class TestThemeOverrideOfGridSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.gridExtraCompactColumnCount == MockTheme.mockThemeGridRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenGridIOSCompactDesignWidth() throws {
-        XCTAssertNotEqual(inheritedTheme.gridCompactWidth, abstractTheme.gridCompactWidth)
-        XCTAssertTrue(inheritedTheme.gridCompactWidth == MockTheme.mockThemeGridRawToken)
-    }
-
     func testInheritedThemeCanOverrideSemanticTokenGridIOSCompactMinWidth() throws {
         XCTAssertNotEqual(inheritedTheme.gridCompactMinWidth, abstractTheme.gridCompactMinWidth)
         XCTAssertTrue(inheritedTheme.gridCompactMinWidth == MockTheme.mockThemeGridRawToken)
@@ -86,11 +78,6 @@ final class TestThemeOverrideOfGridSemanticTokens: XCTestCase {
     func testInheritedThemeCanOverrideSemanticTokenGridIOSCompactColumnCount() throws {
         XCTAssertNotEqual(inheritedTheme.gridCompactColumnCount, abstractTheme.gridCompactColumnCount)
         XCTAssertTrue(inheritedTheme.gridCompactColumnCount == MockTheme.mockThemeGridRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenGridIOSRegularDesignWidth() throws {
-        XCTAssertNotEqual(inheritedTheme.gridRegularWidth, abstractTheme.gridRegularWidth)
-        XCTAssertTrue(inheritedTheme.gridRegularWidth == MockTheme.mockThemeGridRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenGridIOSRegularMinWidth() throws {

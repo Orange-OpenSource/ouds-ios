@@ -20,21 +20,18 @@ import OUDSTokensSemantic
 /// **Warning: These are random and dumb values**
 extension OUDSTheme: ButtonsComponentTokens {
 
-    @objc open var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { spacePaddingInlineComponentShort }
+    @objc open var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { spacePaddingInlineShort }
 
     @objc open var buttonBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
-    @objc open var buttonBorderColorLight: ColorSemanticToken { colorBorderDefaultLight! }
-    @objc open var buttonBorderColorDark: ColorSemanticToken { colorBorderDefaultDark! }
+    @objc open var buttonBorderColor: ColorSemanticToken { colorBorderDefault! }
     @objc open var buttonBorderWidth: BorderWidthSemanticToken { borderWidthDefault }
     @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borderRadiusShort }
 
-    @objc open var buttonForegroundColorLight: ColorSemanticToken { colorContentBrandPrimaryLight! }
-    @objc open var buttonForegroundColorDark: ColorSemanticToken { colorContentBrandPrimaryDark! }
-    @objc open var buttonBackgroundColorLight: ColorSemanticToken { colorBackgroundBrandPrimaryLight! }
-    @objc open var buttonBackgroundColorDark: ColorSemanticToken { colorBackgroundBrandPrimaryDark! }
+    @objc open var buttonForegroundColor: ColorSemanticToken { colorContentBrandPrimary! }
+    @objc open var buttonBackgroundColor: ColorSemanticToken { colorBackgroundBrandPrimary! }
 
-    @objc open var buttonWidth: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension3000 }
-    @objc open var buttonHeight: SizingWidthHeightSemanticToken { DimensionRawTokens.dimension1000 }
+    @objc open var buttonWidth: SizingSemanticToken { DimensionRawTokens.dimension3000 }
+    @objc open var buttonHeight: SizingSemanticToken { DimensionRawTokens.dimension1000 }
 
-    @objc open var buttonTypography: TypographyCompositeSemanticToken { typeDisplayMedium }
+    @objc open var buttonTypography: MultipleTypographyTokens { typeDisplayMedium }
 }

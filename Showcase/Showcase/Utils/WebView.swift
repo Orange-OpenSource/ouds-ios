@@ -21,15 +21,11 @@ struct WebView: UIViewRepresentable {
         case html(String)
     }
 
-    // =======================
     // MARK: Stored properties
-    // =======================
 
     let source: ContentSource
 
-    // =================
     // MARK: Initializer
-    // =================
 
     init(from url: URL) {
         self.source = .url(url)
@@ -39,9 +35,7 @@ struct WebView: UIViewRepresentable {
         self.source = .html(htmlContent)
     }
 
-    // =========================
     // MARK: UIViewRepresentable
-    // =========================
 
     @MainActor
     func makeUIView(context: Context) -> WKWebView {

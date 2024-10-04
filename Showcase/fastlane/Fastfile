@@ -530,9 +530,9 @@ platform :ios do
             else
           
                 comment_to_upload=<<-EOF
-📣 **New TestFlight ALPHA uploap available** 🚀
+📣 **New TestFlight ALPHA upload available** 🚀
 
-Please, get the new build from *TestFlight* app.
+Please, get the new build from *TestFlight* app, or contact the project maintainers if you don't have access.
 
 - Display name: **#{build_display_name}**
 - Version: **#{build_version}**
@@ -540,6 +540,15 @@ Please, get the new build from *TestFlight* app.
 - Build tag: **#{build_tag}**
 - Build type: **#{build_type}**
 - Build details (GitHub): **#{build_details}**
+
+<!--
+@B3nz01d - Benoît SUZANNE - Product Owner
+@pylapp - Pierre-Yves LAPERSONNE - iOS developer
+@ludovic35 - Ludovic PINEL - iOS developer
+@Tayebsed93 - Tayeb SEDRAIA - iOS developer and accessibility expert
+@mccart77 - Stephen McCARTHY - designer
+-->
+cc @B3nz01d @pylapp @ludovic35 @Tayebsed93 @mccart77
 
 _This is an automated message sent with love and *Fastlane* from our CI/CD pipeline 🤘_
 EOF

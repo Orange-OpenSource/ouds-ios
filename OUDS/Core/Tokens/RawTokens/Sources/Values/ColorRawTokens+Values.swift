@@ -11,8 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
+
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
-/// Should be fully generated in the future.
 extension ColorRawTokens {
 
     // MARK: Primitive token - Colors - Black, white
@@ -97,6 +99,78 @@ extension ColorRawTokens {
     public static let colorFunctionalDodgerBlue700: ColorRawToken = "#007ABD"
     public static let colorFunctionalDodgerBlue800: ColorRawToken = "#00598A"
     public static let colorFunctionalDodgerBlue900: ColorRawToken = "#003857"
+
+    // MARK: Primitive token - Colors - Orange - Emerald
+
+    public static let colorDecorativeEmerald100: ColorRawToken = "#E5F5ED"
+    public static let colorDecorativeEmerald200: ColorRawToken = "#C0E8DA"
+    public static let colorDecorativeEmerald300: ColorRawToken = "#9BDABA"
+    public static let colorDecorativeEmerald400: ColorRawToken = "#75CCA1"
+    public static let colorDecorativeEmerald500: ColorRawToken = "#50BE87"
+    public static let colorDecorativeEmerald600: ColorRawToken = "#3BA06E"
+    public static let colorDecorativeEmerald700: ColorRawToken = "#2E7B54"
+    public static let colorDecorativeEmerald800: ColorRawToken = "#20563B"
+    public static let colorDecorativeEmerald900: ColorRawToken = "#123021"
+
+    // MARK: Primitive token - Colors - Orange - Sky
+
+    public static let colorDecorativeSky100: ColorRawToken = "#D2ECF9"
+    public static let colorDecorativeSky200: ColorRawToken = "#A5DAF3"
+    public static let colorDecorativeSky300: ColorRawToken = "#79C7EC"
+    public static let colorDecorativeSky400: ColorRawToken = "#4AB4E6"
+    public static let colorDecorativeSky500: ColorRawToken = "#1FA2E0"
+    public static let colorDecorativeSky600: ColorRawToken = "#1982B3"
+    public static let colorDecorativeSky700: ColorRawToken = "#136186"
+    public static let colorDecorativeSky800: ColorRawToken = "#0C415A"
+    public static let colorDecorativeSky900: ColorRawToken = "#06202D"
+
+    // MARK: Primitive token - Colors - Orange - Amber
+
+    public static let colorDecorativeAmber100: ColorRawToken = "#FFF0CC"
+    public static let colorDecorativeAmber200: ColorRawToken = "#FFE199"
+    public static let colorDecorativeAmber300: ColorRawToken = "#FFD266"
+    public static let colorDecorativeAmber400: ColorRawToken = "#FFC333"
+    public static let colorDecorativeAmber500: ColorRawToken = "#FFB400"
+    public static let colorDecorativeAmber600: ColorRawToken = "#CC9000"
+    public static let colorDecorativeAmber700: ColorRawToken = "#996C00"
+    public static let colorDecorativeAmber800: ColorRawToken = "#664800"
+    public static let colorDecorativeAmber900: ColorRawToken = "#332400"
+
+    // MARK: Primitive token - Colors - Orange - Amethyst
+
+    public static let colorDecorativeAmethyst100: ColorRawToken = "#F1ECF9"
+    public static let colorDecorativeAmethyst200: ColorRawToken = "#E0D4F2"
+    public static let colorDecorativeAmethyst300: ColorRawToken = "#C5ADE6"
+    public static let colorDecorativeAmethyst400: ColorRawToken = "#A885D8"
+    public static let colorDecorativeAmethyst500: ColorRawToken = "#8D60CD"
+    public static let colorDecorativeAmethyst600: ColorRawToken = "#5B2F98"
+    public static let colorDecorativeAmethyst700: ColorRawToken = "#432371"
+    public static let colorDecorativeAmethyst800: ColorRawToken = "#2C174A"
+    public static let colorDecorativeAmethyst900: ColorRawToken = "#150B23"
+
+    // MARK: Primitive token - Colors - Orange - Shocking Pink
+
+    public static let colorDecorativeShockingPink100: ColorRawToken = "#FFE5F6"
+    public static let colorDecorativeShockingPink200: ColorRawToken = "#FFB4E6"
+    public static let colorDecorativeShockingPink300: ColorRawToken = "#FF80D4"
+    public static let colorDecorativeShockingPink400: ColorRawToken = "#FF4DC3"
+    public static let colorDecorativeShockingPink500: ColorRawToken = "#FF1AB2"
+    public static let colorDecorativeShockingPink600: ColorRawToken = "#E50099"
+    public static let colorDecorativeShockingPink700: ColorRawToken = "#B20077"
+    public static let colorDecorativeShockingPink800: ColorRawToken = "#800055"
+    public static let colorDecorativeShockingPink900: ColorRawToken = "#4D0033"
+
+    // MARK: Primitive token - Colors - Orange - Deep Peach
+
+    public static let colorDecorativeDeepPeach100: ColorRawToken = "#FBEBDF"
+    public static let colorDecorativeDeepPeach200: ColorRawToken = "#F4CFB2"
+    public static let colorDecorativeDeepPeach300: ColorRawToken = "#E3B591"
+    public static let colorDecorativeDeepPeach400: ColorRawToken = "#C19372"
+    public static let colorDecorativeDeepPeach500: ColorRawToken = "#CF7E3F"
+    public static let colorDecorativeDeepPeach600: ColorRawToken = "#AA6631"
+    public static let colorDecorativeDeepPeach700: ColorRawToken = "#7E4F2A"
+    public static let colorDecorativeDeepPeach800: ColorRawToken = "#553720"
+    public static let colorDecorativeDeepPeach900: ColorRawToken = "#2E2014"
 
     // MARK: Primitive token - Colors - Transparent black
 

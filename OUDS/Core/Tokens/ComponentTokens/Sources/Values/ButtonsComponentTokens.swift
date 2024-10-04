@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import OUDSTokensSemantic
 
 /// This is a component tokens list for buttons like `OUDSButton`.
@@ -27,18 +26,15 @@ public protocol ButtonsComponentTokens {
     var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { get }
 
     var buttonBorderStyle: BorderStyleSemanticToken { get }
-    var buttonBorderColorLight: ColorSemanticToken { get }
-    var buttonBorderColorDark: ColorSemanticToken { get }
+    var buttonBorderColor: ColorSemanticToken { get }
     var buttonBorderWidth: BorderWidthSemanticToken { get }
     var buttonBorderRadius: BorderRadiusSemanticToken { get }
 
-    var buttonForegroundColorLight: ColorSemanticToken { get }
-    var buttonForegroundColorDark: ColorSemanticToken { get }
-    var buttonBackgroundColorLight: ColorSemanticToken { get }
-    var buttonBackgroundColorDark: ColorSemanticToken { get }
+    var buttonForegroundColor: ColorSemanticToken { get }
+    var buttonBackgroundColor: ColorSemanticToken { get }
 
-    var buttonWidth: SizingWidthHeightSemanticToken { get }
-    var buttonHeight: SizingWidthHeightSemanticToken { get }
+    var buttonWidth: SizingSemanticToken { get }
+    var buttonHeight: SizingSemanticToken { get }
 
-    var buttonTypography: TypographyCompositeSemanticToken { get }
+    var buttonTypography: MultipleTypographyTokens { get }
 }

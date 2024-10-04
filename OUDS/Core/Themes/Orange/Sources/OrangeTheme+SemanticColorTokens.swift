@@ -11,9 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
+
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator]
 
 /// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
 extension OrangeTheme {

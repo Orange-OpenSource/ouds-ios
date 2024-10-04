@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import OUDSTokensSemantic
 
 /// This is a component token for a text input in formulars.
@@ -26,8 +25,7 @@ public protocol FormsTextInputComponentTokens {
     var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { get }
     var ftiSubtitleColor: ColorSemanticToken { get }
 
-    var ftiBackgroundColorLight: ColorSemanticToken { get }
-    var ftiBackgroundColorDark: ColorSemanticToken { get }
+    var ftiBackgroundColor: ColorSemanticToken { get }
 
     var ftiBorderColor: ColorSemanticToken { get }
 

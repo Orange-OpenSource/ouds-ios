@@ -12,9 +12,9 @@
 //
 
 import Foundation
+import OUDSTokensComponent
 import OUDSTokensRaw
 import OUDSTokensSemantic
-import OUDSTokensComponent
 
 /// Defines for `FormsTextInputComponentTokens` the basic configuration which can be overriden in subthemes / subclasses of this theme.
 /// **Warning: These are random and dumb values**
@@ -22,21 +22,18 @@ extension OUDSTheme: FormsTextInputComponentTokens {
 
     // NOTE: What should we done if missing value? E.g. missing color or alias with empty values in the end
 
-    private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
-    private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
-
     @objc open var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightHeading }
     @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
-    @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultBlack }
+
+    @objc open var ftiTitleColor: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
     @objc open var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightDisplay }
     @objc open var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
-    @objc open var ftiSubtitleColor: ColorSemanticToken { colorContentDefaultLight ?? Self.defaultBlack }
+    @objc open var ftiSubtitleColor: ColorSemanticToken { colorContentDefault! }
 
-    @objc open var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight ?? Self.defaultWhite }
-    @objc open var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark ?? Self.defaultBlack }
+    @objc open var ftiBackgroundColor: ColorSemanticToken { colorBackgroundDefaultPrimary! }
 
-    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedLight ?? Self.defaultBlack }
+    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasized! }
 
     @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
 

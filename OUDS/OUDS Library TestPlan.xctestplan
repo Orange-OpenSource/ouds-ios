@@ -53,6 +53,13 @@
         "identifier" : "OUDSTokensRaw-Tests",
         "name" : "OUDSTokensRaw-Tests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "OUDSTokensSemantic-Tests",
+        "name" : "OUDSTokensSemantic-Tests"
+      }
     }
   ],
   "version" : 1

@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import OUDS
 
 /// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.

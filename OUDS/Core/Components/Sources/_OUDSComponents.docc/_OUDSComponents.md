@@ -1,6 +1,6 @@
 # ``OUDSComponents``
 
-The catalog of all components provided by OUDS.
+The catalog of all components provided by OUDS. It contains also `View` extensions and `ViewModifiers` to apply tokens and styles on components and higher-level views.
 
 @Metadata {
     @TechnologyRoot
@@ -36,20 +36,20 @@ public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: 0, y: 4,
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`TypographyCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/typographycompositesemantictoken). defined in the [`OUDSTkensSemantic` `TypographySemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/typographysemantictokens/).
+With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleTypographyTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multipletypographytokens). defined in the [`OUDSTkensSemantic` `TypographySemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/typographysemantictokens/).
 
-The _theme_ contains lots of `TypographyCompositeSemanticToken` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
+The _theme_ contains lots of `MultipleTypographyTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "typeDisplayMedium":
-@objc open var typeDisplayMedium: TypographyCompositeSemanticToken { 
-    TypographyCompositeSemanticToken(compact: TypographyRawTokens.typeBold750, regular: TypographyRawTokens.typeBold1050) 
+@objc open var typeDisplayMedium: MultipleTypographyTokens { 
+MultipleTypographyTokens(compact: TypographyRawTokens.typeBold750, regular: TypographyRawTokens.typeBold1050) 
 }
 
 // And here are the raw tokebs definitions:
-public static let typeBold750 = TypographyCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeight700)
+public static let typeBold750 = TypographyCompositeRawToken(size: fontSize750, lineHeight: fontLineHeight850, weight: fontWeightBold)
 
-public static let typeBold1050 = TypographyCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeight700)
+public static let typeBold1050 = TypographyCompositeRawToken(size: fontSize1050, lineHeight: fontLineHeight1150, weight: fontWeightBold)
 ```
 
 However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
@@ -66,6 +66,6 @@ myView.typeLabelStrongXLarge(theme)
 
 // Etc.
 ```
+
 ### Group
 
-- ``OUDSFormsTextInput``

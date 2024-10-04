@@ -21,7 +21,8 @@
 ## Technical preconditions
 
 You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
-You can have a look for example in thr **THIRD\_PARTY.md** file which lists any dependencies and tools we use are different levels (SDK, showcase app, projects).
+You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use are different levels (SDK, showcase app, projects).
+Have a look on the lociks file to know which versions we are using (*Podfile*, *Podfile.lock*, *Packages.swift*, *Package.resolved*, *Gemfile*, *Gemfile.lock*).
 
 If some tools are missing, pick the suitable command line below:
 ```bash
@@ -38,7 +39,23 @@ brew install peripheryapp/periphery/periphery
 brew install gitleaks
 ```
 
+Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
+We use here _Ruby 3_ (3.1.x).
+If you are not used to this tool:
+
+```shell
+# List available local version of Ruby
+rbenv install --list
+
+# Apply the 3.1.2 version of Ruby (if listed previously)
+rbenv global 3.1.2
+
+# Check Ruby version
+ruby --version
+```
+
 We use also for our GitLab CI runners **Xcode 15.3**, we suggest you use this version or newer if you want but beware.
+**Xcode 16** use will come.
 
 ## Build showcase demo app
 
@@ -147,9 +164,26 @@ A [GitHub Action bot](https://probot.github.io/apps/dco/) has been plugged in th
 ### About commits
 
 Try as best as possible to apply [conventional commits rules](https://www.conventionalcommits.org/en/v1.0.0/).
-Keep in mind to have your commits well prefixed, and with the issue number between parenthesis at the end.
+Keep in mind to have your commits well prefixed, and with the issue number between parenthesis at the end, and also if needed the pull request issue number.
 If your commits embed contributions for other people, do not forget to [add them as co-authors](https://docs.github.com/fr/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors).
 All of you should also comply to DCO.
+
+You commit message should be prefixed by keywords [you can find in the specification](https://www.conventionalcommits.org/en/v1.0.0/#specification):
+- fix:
+- feat:
+- build:
+- chore:
+- ci:
+- docs:
+- style:
+- refactor:
+- perf:
+- test:
+
+You can add also ! aftter the keyword to say a breaking change occur, and also add a scope between parenthesis like:
+- feat!: breaking change because..
+- feat(API)!: breaking change in the API because..
+- feat: add something in the API...
 
 For example, given a commit to fix the issue n°42, the commit should be like:
 
