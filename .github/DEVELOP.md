@@ -21,7 +21,8 @@
 ## Technical preconditions
 
 You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
-You can have a look for example in thr **THIRD\_PARTY.md** file which lists any dependencies and tools we use are different levels (SDK, showcase app, projects).
+You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use are different levels (SDK, showcase app, projects).
+Have a look on the lociks file to know which versions we are using (*Podfile*, *Podfile.lock*, *Packages.swift*, *Package.resolved*, *Gemfile*, *Gemfile.lock*).
 
 If some tools are missing, pick the suitable command line below:
 ```bash
@@ -38,7 +39,23 @@ brew install peripheryapp/periphery/periphery
 brew install gitleaks
 ```
 
+Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
+We use here _Ruby 3_ (3.1.x).
+If you are not used to this tool:
+
+```shell
+# List available local version of Ruby
+rbenv install --list
+
+# Apply the 3.1.2 version of Ruby (if listed previously)
+rbenv global 3.1.2
+
+# Check Ruby version
+ruby --version
+```
+
 We use also for our GitLab CI runners **Xcode 15.3**, we suggest you use this version or newer if you want but beware.
+**Xcode 16** use will come.
 
 ## Build showcase demo app
 
