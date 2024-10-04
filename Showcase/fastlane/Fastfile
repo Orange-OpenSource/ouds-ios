@@ -532,7 +532,7 @@ platform :ios do
                 comment_to_upload=<<-EOF
 📣 **New TestFlight ALPHA upload available** 🚀
 
-Please, get the new build from *TestFlight* app.
+Please, get the new build from *TestFlight* app, or contact the project maintainers if you don't have access.
 
 - Display name: **#{build_display_name}**
 - Version: **#{build_version}**
@@ -549,6 +549,7 @@ Please, get the new build from *TestFlight* app.
 @mccart77 - Stephen McCARTHY - designer
 -->
 cc @B3nz01d @pylapp @ludovic35 @Tayebsed93 @mccart77
+
 _This is an automated message sent with love and *Fastlane* from our CI/CD pipeline 🤘_
 EOF
 
