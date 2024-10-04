@@ -73,8 +73,8 @@ Below is an example of what should be a merge commit in `main` branch for a rele
 ```text
 Version 0.2.0 (#113) // <--- Commit title, #113 is PR nummber
 
-// Bellow is commit body, keep an empty line
-Released of version 0.2.0
+// Below is commit body, keep an empty line
+Release of version 0.2.0
 See below the full CHANGELOG details.
 
 // Keep also an empty line above
