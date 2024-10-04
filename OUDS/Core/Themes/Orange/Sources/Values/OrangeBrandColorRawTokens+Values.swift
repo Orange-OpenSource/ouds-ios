@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
-import SwiftUI
 import OUDSTokensRaw
 
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆

@@ -12,8 +12,9 @@
 //
 
 import SwiftUI
-import OUDSTokensSemantic
-import OUDSTokensRaw
+import OUDS
+import OUDSThemesOrange
+import OUDSComponents
 
 // MARK: - View for display
 
@@ -21,7 +22,7 @@ struct ComponentsPage: View {
 
     var body: some View {
         NavigationView {
-            ElevationsList().navigationTitle("app_bottomBar_components")
+            EmptyState()
         }
     }
 }

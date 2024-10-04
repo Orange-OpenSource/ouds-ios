@@ -11,13 +11,18 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import SwiftUI
 
 @main
 struct Showcase: App {
+    @StateObject var themeProvider = ThemeProvider()
+
     var body: some Scene {
         WindowGroup {
-            MainView()
+            OUDSThemeableView(theme: themeProvider.currentTheme) {
+                MainView().environmentObject(themeProvider)
+            }
         }
     }
 }

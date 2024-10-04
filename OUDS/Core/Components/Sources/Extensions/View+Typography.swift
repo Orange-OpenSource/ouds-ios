@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import OUDS
 import SwiftUI
 
@@ -191,7 +190,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func typeLabelCodeMedium(_ theme: OUDSTheme) -> some View {
+    public func typeCodeMedium(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeCodeMedium))
     }
 
@@ -199,7 +198,7 @@ extension View {
     /// The current `OUDSTheme` must be given in parameter because `@Environment` property cannot be accessed through an extension or inside a method.
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable typography semantic token.
     /// - Returns some View: The current `View` but with new typography applied
-    public func typeLabelCodeSmall(_ theme: OUDSTheme) -> some View {
+    public func typeCodeSmall(_ theme: OUDSTheme) -> some View {
         self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, typography: theme.typeCodeSmall))
     }
 }

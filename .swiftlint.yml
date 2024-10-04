@@ -31,6 +31,8 @@ excluded:
 - Showcase/Pods
 - Showcase/DerivedData
 
+strict: true
+
 # ==============
 # Disabled rules
 # ==============

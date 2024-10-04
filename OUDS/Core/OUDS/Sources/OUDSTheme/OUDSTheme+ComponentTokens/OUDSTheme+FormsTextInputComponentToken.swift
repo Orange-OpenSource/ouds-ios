@@ -12,9 +12,9 @@
 //
 
 import Foundation
+import OUDSTokensComponent
 import OUDSTokensRaw
 import OUDSTokensSemantic
-import OUDSTokensComponent
 
 /// Defines for `FormsTextInputComponentTokens` the basic configuration which can be overriden in subthemes / subclasses of this theme.
 /// **Warning: These are random and dumb values**

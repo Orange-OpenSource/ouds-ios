@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import OUDSThemesOrange
 
 /// This is an override of the default basic `OrangeTheme` with some inverted colors.

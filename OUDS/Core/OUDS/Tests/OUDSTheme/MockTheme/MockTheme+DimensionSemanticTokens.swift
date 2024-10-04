@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
 import OUDSTokensSemantic
 
 /// Defines basic values common to all themes for `DimensionSemanticTokens`.
