@@ -18,7 +18,10 @@ import SwiftUI
 /// `ViewModifier` which defines a navigation title for the calling `View` and also uses `UIAccessibility` to notify for screen changed.
 struct AccessibleNavigationTitleModifier: ViewModifier {
 
+    /// The title used as a `LocalizedStringKey` to add as navigation title
     let title: String
+    
+    /// Elapsed time to wait before sending an accessibility notification of a screen change with the `title` in argument
     let deadline: DispatchTime
 
     func body(content: Content) -> some View {
@@ -34,9 +37,13 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
 // MARK: - Request Accessible Focus Modifier
 
+/// `ViewModifier` to apply on a a `View` so as to request the focus after a given time.
 struct RequestAccessibleFocusModifier: ViewModifier {
 
+    /// Flag to listen saying wether or not the `View` got the focus
     @AccessibilityFocusState var requestFocus: Bool
+    
+    /// Elapsed time to wait before requesting the focus
     let deadline: DispatchTime
 
     func body(content: Content) -> some View {
@@ -57,10 +64,16 @@ public enum AccessibilityFocusable: Hashable {
 
 // MARK: - Restricted Request Accessible Focus Modifier
 
+/// `ViewModifier` to apply on a `View` to request the focus on that `View` after a given time
 struct RestrictedRequestAccessibleFocusModifier: ViewModifier {
 
+    /// Flag to listen saying wether or not the `View` got the focus
     @AccessibilityFocusState var requestFocus: AccessibilityFocusable?
+    
+    /// The target to give the focus after the deadLine` delay
     let target: AccessibilityFocusable
+    
+    /// Elapsed time to wait before requesting the focus
     let deadline: DispatchTime
 
    func body(content: Content) -> some View {

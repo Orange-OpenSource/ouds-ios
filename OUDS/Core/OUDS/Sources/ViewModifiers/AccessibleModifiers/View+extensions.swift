@@ -44,7 +44,7 @@ extension View {
                                                      deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
     }
 
-    /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed for the given elment
+    /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed for the given element
     /// - Parameters:
     ///    - requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
     ///    - target: The item which will get the focus

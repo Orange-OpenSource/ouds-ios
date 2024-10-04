@@ -54,7 +54,7 @@ struct TypographyTokenPage: View {
     }
 
     @ViewBuilder
-    private func typgraphyName(from namedTypography: NamedTypography) ->some View {
+    private func typgraphyName(from namedTypography: NamedTypography) -> some View {
         switch namedTypography {
         case .displayLarge:
             Text(namedTypography.rawValue).typeDisplayLarge(theme)

@@ -14,8 +14,6 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - View extensions for typography
-
 extension View {
 
     /// Modifies the current `View` to apply a border.
@@ -25,7 +23,6 @@ extension View {
     ///     - width: The width of the border
     ///     - radius: The radius of the border to apply
     ///     - color: The colors of the border (depending to the `colorScheme`)
-    ///
     /// - Returns some View: The current `View` but with a border.
     public func oudsBorder(
         style: BorderStyleSemanticToken,

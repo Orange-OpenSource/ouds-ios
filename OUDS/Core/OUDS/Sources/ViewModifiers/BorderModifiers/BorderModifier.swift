@@ -43,9 +43,9 @@ struct BorderModifier: ViewModifier {
     // MARK: - Initializer
 
     init(_ style: BorderStyleSemanticToken,
-                _ width: BorderWidthSemanticToken,
-                _ radius: BorderRadiusSemanticToken,
-                _ color: ColorSemanticToken) {
+         _ width: BorderWidthSemanticToken,
+         _ radius: BorderRadiusSemanticToken,
+         _ color: ColorSemanticToken) {
         self.style = style
         self.width = width
         self.radius = radius
