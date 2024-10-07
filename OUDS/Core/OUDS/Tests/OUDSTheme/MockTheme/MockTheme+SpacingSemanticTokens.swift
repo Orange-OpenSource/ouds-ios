@@ -82,6 +82,7 @@ extension MockTheme {
     override var spacePaddingBlockMedium: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spacePaddingBlockTall: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spacePaddingBlockTaller: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    
     override var spacePaddingBlockWithIconNone: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spacePaddingBlockWithIconShortest: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spacePaddingBlockWithIconShorter: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
@@ -110,12 +111,13 @@ extension MockTheme {
     override var spaceColumnGapShort: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spaceColumnGapMedium: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spaceColumnGapTall: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spaceColumnGapTaller: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+
     override var spaceColumnGapWithIconNone: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spaceColumnGapWithIconShorter: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spaceColumnGapWithIconShort: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spaceColumnGapWithIconMedium: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spaceColumnGapWithIconTall: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+
     override var spaceColumnGapWithArrowNone: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spaceColumnGapWithArrowShorter: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spaceColumnGapWithArrowShort: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
