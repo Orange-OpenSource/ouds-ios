@@ -47,7 +47,7 @@ final class TypographyRawTokensTests: XCTestCase {
     }
 
     func testTypographyRawTokenFontFamilySystemSFProText() throws {
-        XCTAssertEqual(TypographyRawTokens.fontFamilySystemSFProText, "SF Pro Text")
+        XCTAssertEqual(TypographyRawTokens.fontFamilySystemSFPro, "SF Pro")
     }
 
     func testTypographyRawTokenFontFamilySystemRoboto() throws {

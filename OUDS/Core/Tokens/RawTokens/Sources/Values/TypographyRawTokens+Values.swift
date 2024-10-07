@@ -91,7 +91,7 @@ extension TypographyRawTokens {
     public static let fontFamilySystemArial: TypographyFontFamilyRawToken = "Arial"
     public static let fontFamilySystemHelvetica: TypographyFontFamilyRawToken = "Helvetica"
     public static let fontFamilySystemNotoSans: TypographyFontFamilyRawToken = "Noto sans"
-    public static let fontFamilySystemSFProText: TypographyFontFamilyRawToken = "SF Pro Text"
+    public static let fontFamilySystemSFPro: TypographyFontFamilyRawToken = "SF Pro"
     public static let fontFamilySystemRoboto: TypographyFontFamilyRawToken = "Roboto"
     public static let fontFamilyMonospaceMenlo: TypographyFontFamilyRawToken = "Menlo"
     public static let fontFamilyMonospaceMonaco: TypographyFontFamilyRawToken = "Monaco"
