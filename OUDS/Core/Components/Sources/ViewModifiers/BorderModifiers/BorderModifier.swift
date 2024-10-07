@@ -30,11 +30,11 @@ struct BorderModifier: ViewModifier {
     private let radius: BorderRadiusSemanticToken
 
     /// The colors of the border
-    private let color: ColorSemanticToken
+    private let colorSementic: ColorSemanticToken
 
     /// Color to apply depending to the `colorScheme`
     private var colorToApply: Color {
-        (colorScheme == .light ? color.light.color : color.dark.color)
+        colorSementic.color(for: colorScheme)
     }
 
     /// To know if the device is in light mode or in dark mode
@@ -49,7 +49,7 @@ struct BorderModifier: ViewModifier {
         self.style = style
         self.width = width
         self.radius = radius
-        self.color = color
+        self.colorSementic = color
         if style != "solid" && style != "dashed" && style != "dotted" {
             OUDSLogger.error("Unmanaged style: '\(style)'!")
         }
