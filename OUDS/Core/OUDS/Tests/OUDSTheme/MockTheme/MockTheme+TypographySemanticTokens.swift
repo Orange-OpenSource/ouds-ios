@@ -14,7 +14,6 @@
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// swiftlint:disable line_length
 extension MockTheme {
 
     static let mockThemeTypographyFontFamilyRawToken: TypographyFontFamilyRawToken = "o°xXSkyBl0GF0ntxXx°o"
@@ -22,7 +21,9 @@ extension MockTheme {
     static let mockThemeTypographyFontSizeRawToken: TypographyFontSizeRawToken = 666
     static let mockThemeTypographyFontLineHeightRawToken: TypographyFontLineHeightRawToken = 321
     static let mockThemeTypographyFontLetterSpacingRawToken: TypographyFontLetterSpacingRawToken = 21_092_024
-    static let mockThemeMultipleTypographyTokens: MultipleTypographyTokens = MultipleTypographyTokens(compact: TypographyRawTokens.typeBold1850, regular: TypographyRawTokens.typeBold1850)
+    static let mockThemeMultipleTypographyTokens = MultipleTypographyTokens(TypographyRawTokens.typeBold1850)
+    static let mockThemeMultipleTypographyFontSizeTokens = MultipleFontSizeTokens(mockThemeTypographyFontSizeRawToken)
+    static let mockThemeMultipleTypographyLineHeightTokens = MultipleFontLineHeightTokens(mockThemeTypographyFontLineHeightRawToken)
 
     // MARK: Semantic token - Typography - Font - Family
 
@@ -43,31 +44,18 @@ extension MockTheme {
     override var fontWeightLabelStrong: TypographyFontWeightSemanticToken { Self.mockThemeTypographyFontWeightRawToken }
     override var fontWeightCode: TypographyFontWeightSemanticToken { Self.mockThemeTypographyFontWeightRawToken }
 
-    // MARK: Semantic token - Typography - Font - Size - Mobile
-
-    override var fontSizeMobileDisplayLarge: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeMobileDisplayMedium: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeMobileDisplaySmall: TypographyFontSizeSemanticToken  { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeMobileHeadingXLarge: TypographyFontSizeSemanticToken  { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeMobileHeadingLarge: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeMobileHeadingMedium: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeMobileHeadingSmall: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeMobileBodyLarge: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeMobileBodyMedium: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeMobileBodySmall: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-
-    // MARK: Semantic token - Typography - Font - Size - Tablet
-
-    override var fontSizeTabletDisplayLarge: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeTabletDisplayMedium: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeTabletDisplaySmall: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeTabletHeadingXLarge: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeTabletHeadingLarge: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeTabletHeadingMedium: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeTabletHeadingSmall: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeTabletBodyLarge: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeTabletBodyMedium: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
-    override var fontSizeTabletBodySmall: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
+    // MARK: Semantic token - Typography - Font - Size
+    
+    override var fontSizeDisplayLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override var fontSizeDisplayMedium: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override var fontSizeDisplaySmall: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override var fontSizeHeadingXLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override var fontSizeHeadingLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override var fontSizeHeadingMedium: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override var fontSizeHeadingSmall: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override var fontSizeBodyLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override var fontSizeBodyMedium: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override var fontSizeBodySmall: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
 
     // MARK: Semantic token - Typography - Font - Size - Others
 
@@ -78,40 +66,24 @@ extension MockTheme {
     override var fontSizeCodeMedium: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
     override var fontSizeCodeSmall: TypographyFontSizeSemanticToken { Self.mockThemeTypographyFontSizeRawToken }
 
-    // MARK: Semantic token - Typography - Font - Line height - Mobile
+    // MARK: - Semantic token - Typography - Font - Line height
 
-    override var fontLineHeightMobileDisplayLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightMobileDisplayMedium: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightMobileDisplaySmall: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightMobileHeadingXLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightMobileHeadingLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightMobileHeadingMedium: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightMobileHeadingSmall: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightMobileBodyLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightMobileBodyMedium: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightMobileBodySmall: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-
-    // MARK: Semantic token - Typography - Font - Line height - Tablet
-
-    override var fontLineHeightTabletDisplayLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightTabletDisplayMedium: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightTabletDisplaySmall: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightTabletHeadingXLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightTabletHeadingLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightTabletHeadingMedium: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightTabletHeadingSmall: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightTabletBodyLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightTabletBodyMedium: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightTabletBodySmall: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-
-    // MARK: Semantic token - Typography - Font - Light height - Others
-
-    override var fontLineHeightLabelXLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightLabelLarge: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightLabelMedium: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightLabelSmall: TypographyFontLineHeightSemanticToken  { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
-    override var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { Self.mockThemeTypographyFontLineHeightRawToken }
+    override var fontLineHeightDisplayLarge: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightDisplayMedium: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightDisplaySmall: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightHeadingXLarge: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightHeadingLarge: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightHeadingMedium: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightHeadingSmall: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightBodyLarge: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightBodyMedium: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightBodySmall: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightLabelLarge: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightLabelMedium: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightLabelSmall: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightCodeMedium: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
+    override var fontLineHeightCodeSmall: MultipleFontLineHeightTokens { Self.mockThemeMultipleTypographyLineHeightTokens }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing - Mobile (extra-compact/compact)
 
@@ -186,4 +158,3 @@ extension MockTheme {
     override var typeCodeMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
     override var typeCodeSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
 }
-// swiftlint:enable line_length
