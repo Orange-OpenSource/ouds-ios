@@ -179,63 +179,83 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsIconNone() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsIconNone, abstractTheme.spacePaddingInlineIsIconNone)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsIconNone == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithIconNone, abstractTheme.spacePaddingInlineWithIconNone)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithIconNone == MockTheme.mockThemeSpaceRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsIconShortest() throws {
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithIconShortest, abstractTheme.spacePaddingInlineWithIconShortest)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithIconShortest == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsIconShorter() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsIconShorter, abstractTheme.spacePaddingInlineIsIconShorter)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsIconShorter == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithIconShorter, abstractTheme.spacePaddingInlineWithIconShorter)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithIconShorter == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsIconShort() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsIconShort, abstractTheme.spacePaddingInlineIsIconShort)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsIconShort == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithIconShort, abstractTheme.spacePaddingInlineWithIconShort)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithIconShort == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsIconMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsIconMedium, abstractTheme.spacePaddingInlineIsIconMedium)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsIconMedium == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithIconMedium, abstractTheme.spacePaddingInlineWithIconMedium)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithIconMedium == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsIconTall() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsIconTall, abstractTheme.spacePaddingInlineIsIconTall)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsIconTall == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithIconTall, abstractTheme.spacePaddingInlineWithIconTall)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithIconTall == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsIconTaller() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsIconTaller, abstractTheme.spacePaddingInlineIsIconTaller)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsIconTaller == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithIconTaller, abstractTheme.spacePaddingInlineWithIconTaller)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithIconTaller == MockTheme.mockThemeSpaceRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsIconTallest() throws {
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithIconTallest, abstractTheme.spacePaddingInlineWithIconTallest)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithIconTallest == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsArrowNone() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsArrowNone, abstractTheme.spacePaddingInlineIsArrowNone)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsArrowNone == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithArrowNone, abstractTheme.spacePaddingInlineWithArrowNone)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithArrowNone == MockTheme.mockThemeSpaceRawToken)
     }
 
+    func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsArrowShortest() throws {
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithArrowShortest, abstractTheme.spacePaddingInlineWithArrowShortest)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithArrowShortest == MockTheme.mockThemeSpaceRawToken)
+    }
+    
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsArrowShorter() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsArrowShorter, abstractTheme.spacePaddingInlineIsArrowShorter)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsArrowShorter == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithArrowShorter, abstractTheme.spacePaddingInlineWithArrowShorter)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithArrowShorter == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsArrowShort() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsArrowShort, abstractTheme.spacePaddingInlineIsArrowShort)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsArrowShort == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithArrowShort, abstractTheme.spacePaddingInlineWithArrowShort)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithArrowShort == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsArrowMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsArrowMedium, abstractTheme.spacePaddingInlineIsArrowMedium)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsArrowMedium == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithArrowMedium, abstractTheme.spacePaddingInlineWithArrowMedium)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithArrowMedium == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsArrowTall() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsArrowTaller, abstractTheme.spacePaddingInlineIsArrowTaller)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsArrowTaller == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithArrowTaller, abstractTheme.spacePaddingInlineWithArrowTaller)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithArrowTaller == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsArrowTaller() throws {
-        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineIsArrowTaller, abstractTheme.spacePaddingInlineIsArrowTaller)
-        XCTAssertTrue(inheritedTheme.spacePaddingInlineIsArrowTaller == MockTheme.mockThemeSpaceRawToken)
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithArrowTaller, abstractTheme.spacePaddingInlineWithArrowTaller)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithArrowTaller == MockTheme.mockThemeSpaceRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineIsArrowTallest() throws {
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithArrowTallest, abstractTheme.spacePaddingInlineWithArrowTallest)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineWithArrowTallest == MockTheme.mockThemeSpaceRawToken)
     }
 
     // MARK: - Semantic token - Spacing - Padding - Padding stack

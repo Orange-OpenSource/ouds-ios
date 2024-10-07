@@ -59,19 +59,23 @@ extension OUDSTheme: SpacingSemanticTokens {
     @objc open var spacePaddingInlineTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension300 }
     @objc open var spacePaddingInlineTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension400 }
 
-    @objc open var spacePaddingInlineIsIconNone: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spacePaddingInlineIsIconShorter: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension25 }
-    @objc open var spacePaddingInlineIsIconShort: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spacePaddingInlineIsIconMedium: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension75 }
-    @objc open var spacePaddingInlineIsIconTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spacePaddingInlineIsIconTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var spacePaddingInlineWithIconNone: SpacingPaddingInlineSemanticToken { dimensionNone }
+    @objc open var spacePaddingInlineWithIconShortest: SpacingPaddingInlineSemanticToken { dimension10XS }
+    @objc open var spacePaddingInlineWithIconShorter: SpacingPaddingInlineSemanticToken { dimension9XS }
+    @objc open var spacePaddingInlineWithIconShort: SpacingPaddingInlineSemanticToken { dimension8XS }
+    @objc open var spacePaddingInlineWithIconMedium: SpacingPaddingInlineSemanticToken { dimension7XS }
+    @objc open var spacePaddingInlineWithIconTall: SpacingPaddingInlineSemanticToken { dimension5XS }
+    @objc open var spacePaddingInlineWithIconTaller: SpacingPaddingInlineSemanticToken { dimension3XS }
+    @objc open var spacePaddingInlineWithIconTallest: SpacingPaddingInlineSemanticToken { dimension2XS }
 
-    @objc open var spacePaddingInlineIsArrowNone: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spacePaddingInlineIsArrowShorter: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension25 }
-    @objc open var spacePaddingInlineIsArrowShort: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spacePaddingInlineIsArrowMedium: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension75 }
-    @objc open var spacePaddingInlineIsArrowTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spacePaddingInlineIsArrowTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var spacePaddingInlineWithArrowNone: SpacingPaddingInlineSemanticToken { dimensionNone }
+    @objc open var spacePaddingInlineWithArrowShortest: SpacingPaddingInlineSemanticToken { dimension10XS }
+    @objc open var spacePaddingInlineWithArrowShorter: SpacingPaddingInlineSemanticToken { dimension9XS }
+    @objc open var spacePaddingInlineWithArrowShort: SpacingPaddingInlineSemanticToken { dimension8XS }
+    @objc open var spacePaddingInlineWithArrowMedium: SpacingPaddingInlineSemanticToken { dimension7XS }
+    @objc open var spacePaddingInlineWithArrowTall: SpacingPaddingInlineSemanticToken { dimension6XS }
+    @objc open var spacePaddingInlineWithArrowTaller: SpacingPaddingInlineSemanticToken { dimension4XS }
+    @objc open var spacePaddingInlineWithArrowTallest: SpacingPaddingInlineSemanticToken { dimension3XS }
 
     // MARK: Semantic token - Padding - Padding stack
 

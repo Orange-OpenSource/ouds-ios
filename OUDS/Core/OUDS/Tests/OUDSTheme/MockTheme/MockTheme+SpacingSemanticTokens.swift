@@ -55,18 +55,24 @@ extension MockTheme {
     override var spacePaddingInlineMedium: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spacePaddingInlineTall: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override var spacePaddingInlineTaller: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsIconNone: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsIconShorter: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsIconShort: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsIconMedium: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsIconTall: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsIconTaller: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsArrowNone: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsArrowShorter: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsArrowShort: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsArrowMedium: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsArrowTall: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-    override var spacePaddingInlineIsArrowTaller: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+
+    override var spacePaddingInlineWithIconNone: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithIconShortest: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithIconShorter: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithIconShort: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithIconMedium: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithIconTall: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithIconTaller: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithIconTallest: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+
+    override var spacePaddingInlineWithArrowNone: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithArrowShortest: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithArrowShorter: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithArrowShort: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithArrowMedium: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithArrowTall: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithArrowTaller: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    override var spacePaddingInlineWithArrowTallest: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
 
     // MARK: Semantic token - Padding - Padding stack
 
