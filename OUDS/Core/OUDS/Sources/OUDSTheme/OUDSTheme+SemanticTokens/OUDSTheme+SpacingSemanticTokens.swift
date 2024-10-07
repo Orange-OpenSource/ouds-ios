@@ -62,9 +62,9 @@ extension OUDSTheme: SpacingSemanticTokens {
     @objc open var spacePaddingInlineWithIconNone: SpacingPaddingInlineSemanticToken { dimensionNone }
     @objc open var spacePaddingInlineWithIconShortest: SpacingPaddingInlineSemanticToken { dimension10XS }
     @objc open var spacePaddingInlineWithIconShorter: SpacingPaddingInlineSemanticToken { dimension9XS }
-    @objc open var spacePaddingInlineWithIconShort: SpacingPaddingInlineSemanticToken { dimension8XS }
-    @objc open var spacePaddingInlineWithIconMedium: SpacingPaddingInlineSemanticToken { dimension7XS }
-    @objc open var spacePaddingInlineWithIconTall: SpacingPaddingInlineSemanticToken { dimension5XS }
+    @objc open var spacePaddingInlineWithIconShort: SpacingPaddingInlineSemanticToken { dimension7XS }
+    @objc open var spacePaddingInlineWithIconMedium: SpacingPaddingInlineSemanticToken { dimension5XS }
+    @objc open var spacePaddingInlineWithIconTall: SpacingPaddingInlineSemanticToken { dimension4XS }
     @objc open var spacePaddingInlineWithIconTaller: SpacingPaddingInlineSemanticToken { dimension3XS }
     @objc open var spacePaddingInlineWithIconTallest: SpacingPaddingInlineSemanticToken { dimension2XS }
 
@@ -73,7 +73,7 @@ extension OUDSTheme: SpacingSemanticTokens {
     @objc open var spacePaddingInlineWithArrowShorter: SpacingPaddingInlineSemanticToken { dimension9XS }
     @objc open var spacePaddingInlineWithArrowShort: SpacingPaddingInlineSemanticToken { dimension8XS }
     @objc open var spacePaddingInlineWithArrowMedium: SpacingPaddingInlineSemanticToken { dimension7XS }
-    @objc open var spacePaddingInlineWithArrowTall: SpacingPaddingInlineSemanticToken { dimension6XS }
+    @objc open var spacePaddingInlineWithArrowTall: SpacingPaddingInlineSemanticToken { dimension5XS }
     @objc open var spacePaddingInlineWithArrowTaller: SpacingPaddingInlineSemanticToken { dimension4XS }
     @objc open var spacePaddingInlineWithArrowTallest: SpacingPaddingInlineSemanticToken { dimension3XS }
 
@@ -86,12 +86,13 @@ extension OUDSTheme: SpacingSemanticTokens {
     @objc open var spacePaddingBlockTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension300 }
     @objc open var spacePaddingBlockTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension400 }
 
-    @objc open var spacePaddingBlockIsIconNone: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spacePaddingBlockIsIconShorter: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension25 }
-    @objc open var spacePaddingBlockIsIconShort: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spacePaddingBlockIsIconMedium: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension75 }
-    @objc open var spacePaddingBlockIsIconTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spacePaddingBlockIsIconTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var spacePaddingBlockWithIconNone: SpacingPaddingInlineSemanticToken { dimensionNone }
+    @objc open var spacePaddingBlockWithIconShortest: SpacingPaddingInlineSemanticToken { dimension10XS }
+    @objc open var spacePaddingBlockWithIconShorter: SpacingPaddingInlineSemanticToken { dimension9XS }
+    @objc open var spacePaddingBlockWithIconShort: SpacingPaddingInlineSemanticToken { dimension8XS }
+    @objc open var spacePaddingBlockWithIconMedium: SpacingPaddingInlineSemanticToken { dimension7XS }
+    @objc open var spacePaddingBlockWithIconTall: SpacingPaddingInlineSemanticToken { dimension6XS }
+    @objc open var spacePaddingBlockWithIconTaller: SpacingPaddingInlineSemanticToken { dimension5XS }
 
     // MARK: Semantic token - Padding - Padding inset
 
@@ -108,40 +109,39 @@ extension OUDSTheme: SpacingSemanticTokens {
 
     // MARK: Semantic token - Padding - Gap inline
 
-    @objc open var spaceColumnGapNone: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spaceColumnGapShorter: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spaceColumnGapShort: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spaceColumnGapMedium: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension200 }
-    @objc open var spaceColumnGapTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension300 }
-    @objc open var spaceColumnGapTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension400 }
+    @objc open var spaceColumnGapNone: SpacingPaddingInlineSemanticToken { dimensionNone }
+    @objc open var spaceColumnGapShorter: SpacingPaddingInlineSemanticToken { dimension9XS }
+    @objc open var spaceColumnGapShort: SpacingPaddingInlineSemanticToken { dimension7XS }
+    @objc open var spaceColumnGapMedium: SpacingPaddingInlineSemanticToken { dimension5XS }
+    @objc open var spaceColumnGapTall: SpacingPaddingInlineSemanticToken { dimension3XS }
 
-    @objc open var spaceColumnGapIsIconNone: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spaceColumnGapIsIconShorter: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension25 }
-    @objc open var spaceColumnGapIsIconShort: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spaceColumnGapIsIconMedium: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension75 }
-    @objc open var spaceColumnGapIsIconTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spaceColumnGapIsIconTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var spaceColumnGapWithIconNone: SpacingPaddingInlineSemanticToken { dimensionNone }
+    @objc open var spaceColumnGapWithIconShortest: SpacingPaddingInlineSemanticToken { dimension10XS }
+    @objc open var spaceColumnGapWithIconShorter: SpacingPaddingInlineSemanticToken { dimension9XS }
+    @objc open var spaceColumnGapWithIconShort: SpacingPaddingInlineSemanticToken { dimension8XS }
+    @objc open var spaceColumnGapWithIconMedium: SpacingPaddingInlineSemanticToken { dimension7XS }
+    @objc open var spaceColumnGapWithIconTall: SpacingPaddingInlineSemanticToken { dimension5XS }
 
-    @objc open var spaceColumnGapIsArrowNone: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spaceColumnGapIsArrowShorter: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension25 }
-    @objc open var spaceColumnGapIsArrowShort: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spaceColumnGapIsArrowMedium: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension75 }
-    @objc open var spaceColumnGapIsArrowTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spaceColumnGapIsArrowTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var spaceColumnGapWithArrowNone: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension0 }
+    @objc open var spaceColumnGapWithArrowShorter: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension25 }
+    @objc open var spaceColumnGapWithArrowShort: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension50 }
+    @objc open var spaceColumnGapWithArrowMedium: SpacingPaddingInlineSemanticToken { dimension7XS }
+    @objc open var spaceColumnGapWithArrowTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension100 }
+    @objc open var spaceColumnGapWithArrowTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension200 }
 
     // MARK: Semantic token - Padding - Gap stack
 
     @objc open var spaceRowGapNone: SpacingGapStackSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spaceRowGapShorter: SpacingGapStackSemanticToken { DimensionRawTokens.dimension25 }
-    @objc open var spaceRowGapShort: SpacingGapStackSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spaceRowGapMedium: SpacingGapStackSemanticToken { DimensionRawTokens.dimension75 }
-    @objc open var spaceRowGapTall: SpacingGapStackSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spaceRowGapTaller: SpacingGapStackSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var spaceRowGapShortest: SpacingGapStackSemanticToken { dimension10XS }
+    @objc open var spaceRowGapShorter: SpacingGapStackSemanticToken { dimension9XS }
+    @objc open var spaceRowGapShort: SpacingGapStackSemanticToken { dimension8XS }
+    @objc open var spaceRowGapMedium: SpacingGapStackSemanticToken { dimension7XS }
+    @objc open var spaceRowGapTall: SpacingGapStackSemanticToken { dimension5XS }
 
-    @objc open var spaceRowGapIsIconNone: SpacingGapStackSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spaceRowGapIsIconShorter: SpacingGapStackSemanticToken { DimensionRawTokens.dimension25 }
-    @objc open var spaceRowGapIsIconShort: SpacingGapStackSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spaceRowGapIsIconMedium: SpacingGapStackSemanticToken { DimensionRawTokens.dimension75 }
-    @objc open var spaceRowGapIsIconTall: SpacingGapStackSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spaceRowGapIsIconTaller: SpacingGapStackSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var spaceRowGapWithIconNone: SpacingGapStackSemanticToken { dimensionNone }
+    @objc open var spaceRowGapWithIconShortest: SpacingGapStackSemanticToken { dimension10XS }
+    @objc open var spaceRowGapWithIconShorter: SpacingGapStackSemanticToken { dimension9XS }
+    @objc open var spaceRowGapWithIconShort: SpacingGapStackSemanticToken { dimension8XS }
+    @objc open var spaceRowGapWithIconMedium: SpacingGapStackSemanticToken { dimension7XS }
+    @objc open var spaceRowGapWithIconTall: SpacingGapStackSemanticToken { dimension5XS }
 }
