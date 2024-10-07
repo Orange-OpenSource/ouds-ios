@@ -29,12 +29,12 @@ struct BorderModifier: ViewModifier {
     /// The radius of the border to apply
     private let radius: BorderRadiusSemanticToken
 
-    /// The colors of the border
+    /// The color token used for the border
     private let color: ColorSemanticToken
 
     /// Color to apply depending to the `colorScheme`
     private var colorToApply: Color {
-        (colorScheme == .light ? color.light.color : color.dark.color)
+        color.color(for: colorScheme)
     }
 
     /// To know if the device is in light mode or in dark mode

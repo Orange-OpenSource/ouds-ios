@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSComponents // for BorderStyleModifier
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -50,6 +51,10 @@ struct OpacityTokenPage: View {
                 Rectangle().fill(colorScheme == .dark ? .white : .black)
                     .opacity(opacityToken)
                     .frame(width: 44, height: 44)
+                    .oudsBorder(style: theme.borderStyleDefault,
+                                width: theme.borderWidthThin,
+                                radius: theme.borderRadiusNone,
+                                color: theme.colorContentDefault!)
                     .transformEffect(CGAffineTransform(translationX: 10, y: 10))
             }
             .frame(width: 54, height: 54, alignment: .leading)
