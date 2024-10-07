@@ -53,12 +53,20 @@ final class DimensionRawTokensTests: XCTestCase {
         XCTAssertMultipleOf(DimensionRawTokens.dimension75, factor: DimensionRawTokens.dimensionBase)
     }
 
-    func testDimensionRawToken100LessThan150() throws {
-        XCTAssertLessThan(DimensionRawTokens.dimension100, DimensionRawTokens.dimension150)
+    func testDimensionRawToken100LessThan125() throws {
+        XCTAssertLessThan(DimensionRawTokens.dimension100, DimensionRawTokens.dimension125)
     }
 
     func testDimensionRawToken100MultipleOfBase() throws {
         XCTAssertMultipleOf(DimensionRawTokens.dimension100, factor: DimensionRawTokens.dimensionBase)
+    }
+
+    func testDimensionRawToken125LessThan150() throws {
+        XCTAssertLessThan(DimensionRawTokens.dimension125, DimensionRawTokens.dimension150)
+    }
+
+    func testDimensionRawToken125MultipleOfBase() throws {
+        XCTAssertMultipleOf(DimensionRawTokens.dimension125, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testDimensionRawToken150LessThan200() throws {

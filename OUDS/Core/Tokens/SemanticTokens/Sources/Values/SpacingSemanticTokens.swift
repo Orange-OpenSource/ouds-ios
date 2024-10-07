@@ -56,18 +56,24 @@ public protocol SpacingSemanticTokens {
     var spacePaddingInlineMedium: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingInlineTall: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingInlineTaller: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsIconNone: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsIconShorter: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsIconShort: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsIconMedium: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsIconTall: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsIconTaller: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsArrowNone: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsArrowShorter: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsArrowShort: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsArrowMedium: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsArrowTall: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingInlineIsArrowTaller: SpacingPaddingInlineSemanticToken { get }
+
+    var spacePaddingInlineWithIconNone: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithIconShortest: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithIconShorter: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithIconShort: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithIconMedium: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithIconTall: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithIconTaller: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithIconTallest: SpacingPaddingInlineSemanticToken { get }
+
+    var spacePaddingInlineWithArrowNone: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithArrowShortest: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithArrowShorter: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithArrowShort: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithArrowMedium: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithArrowTall: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithArrowTaller: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingInlineWithArrowTallest: SpacingPaddingInlineSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding stack
 
@@ -77,12 +83,14 @@ public protocol SpacingSemanticTokens {
     var spacePaddingBlockMedium: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockTall: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockTaller: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingBlockIsIconNone: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingBlockIsIconShorter: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingBlockIsIconShort: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingBlockIsIconMedium: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingBlockIsIconTall: SpacingPaddingInlineSemanticToken { get }
-    var spacePaddingBlockIsIconTaller: SpacingPaddingInlineSemanticToken { get }
+
+    var spacePaddingBlockWithIconNone: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingBlockWithIconShortest: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingBlockWithIconShorter: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingBlockWithIconShort: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingBlockWithIconMedium: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingBlockWithIconTall: SpacingPaddingInlineSemanticToken { get }
+    var spacePaddingBlockWithIconTaller: SpacingPaddingInlineSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding inset
 
@@ -104,19 +112,20 @@ public protocol SpacingSemanticTokens {
     var spaceColumnGapShort: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapMedium: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapTall: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapTaller: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsIconNone: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsIconShorter: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsIconShort: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsIconMedium: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsIconTall: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsIconTaller: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsArrowNone: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsArrowShorter: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsArrowShort: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsArrowMedium: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsArrowTall: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapIsArrowTaller: SpacingPaddingInlineSemanticToken { get }
+
+    var spaceColumnGapWithIconNone: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithIconShortest: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithIconShorter: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithIconShort: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithIconMedium: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithIconTall: SpacingPaddingInlineSemanticToken { get }
+
+    var spaceColumnGapWithArrowNone: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithArrowShorter: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithArrowShort: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithArrowMedium: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithArrowTall: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithArrowTaller: SpacingPaddingInlineSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Gap stack
 
@@ -125,11 +134,11 @@ public protocol SpacingSemanticTokens {
     var spaceRowGapShort: SpacingGapStackSemanticToken { get }
     var spaceRowGapMedium: SpacingGapStackSemanticToken { get }
     var spaceRowGapTall: SpacingGapStackSemanticToken { get }
-    var spaceRowGapTaller: SpacingGapStackSemanticToken { get }
-    var spaceRowGapIsIconNone: SpacingGapStackSemanticToken { get }
-    var spaceRowGapIsIconShorter: SpacingGapStackSemanticToken { get }
-    var spaceRowGapIsIconShort: SpacingGapStackSemanticToken { get }
-    var spaceRowGapIsIconMedium: SpacingGapStackSemanticToken { get }
-    var spaceRowGapIsIconTall: SpacingGapStackSemanticToken { get }
-    var spaceRowGapIsIconTaller: SpacingGapStackSemanticToken { get }
+
+    var spaceRowGapWithIconNone: SpacingGapStackSemanticToken { get }
+    var spaceRowGapWithIconShortest: SpacingGapStackSemanticToken { get }
+    var spaceRowGapWithIconShorter: SpacingGapStackSemanticToken { get }
+    var spaceRowGapWithIconShort: SpacingGapStackSemanticToken { get }
+    var spaceRowGapWithIconMedium: SpacingGapStackSemanticToken { get }
+    var spaceRowGapWithIconTall: SpacingGapStackSemanticToken { get }
 }

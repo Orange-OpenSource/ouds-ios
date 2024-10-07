@@ -18,8 +18,17 @@ import OUDSTokensSemantic
 /// To ensure the `MultipleTypographyTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
 final class MultipleTypographyTokensTests: XCTestCase {
 
+    /// Tests if the unique value is applied for compact and regular size classes
+    func testInitWithOneValue() {
+        let unique = TypographyRawTokens.typeBold550
+        let token = MultipleTypographyTokens(unique)
+
+        XCTAssertTrue(token.compact == unique)
+        XCTAssertTrue(token.regular == unique)
+    }
+
     /// Tests if compact and regular values are preserved when defined
-    func testInit() {
+    func testInitWithTwoValues() {
         let compact = TypographyRawTokens.typeRegular150
         let regular = TypographyRawTokens.typeBold550
         let token = MultipleTypographyTokens(compact: compact, regular: regular)
