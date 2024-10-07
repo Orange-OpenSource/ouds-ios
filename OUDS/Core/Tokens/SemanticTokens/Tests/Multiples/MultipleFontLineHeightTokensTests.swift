@@ -44,7 +44,7 @@ final class MultipleFontLineHeightTokensTests: XCTestCase {
         let second = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight650, regular: TypographyRawTokens.fontLineHeight550)
         let third = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight550)
         let fourth = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight650, regular: TypographyRawTokens.fontLineHeight750)
-        let fifth = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight750)
+        let fifth = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight450)
         let sixth = MultipleSizingTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))

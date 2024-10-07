@@ -26,7 +26,7 @@ final class MultipleTypographyTokensTests: XCTestCase {
         XCTAssertTrue(token.compact == unique)
         XCTAssertTrue(token.regular == unique)
     }
-    
+
     /// Tests if compact and regular values are preserved when defined
     func testInitWithTwoValues() {
         let compact = TypographyRawTokens.typeRegular150

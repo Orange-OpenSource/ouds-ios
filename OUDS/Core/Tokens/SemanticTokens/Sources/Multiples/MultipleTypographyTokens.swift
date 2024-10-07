@@ -31,7 +31,7 @@ public final class MultipleTypographyTokens: NSObject {
         self.compact = unique
         self.regular = unique
     }
-    
+
     /// Initializes a new typography composite semantic token.
     /// - Parameters:
     ///    - compact: The `TypographyCompositeRawToken` to apply if device in *compact* mode

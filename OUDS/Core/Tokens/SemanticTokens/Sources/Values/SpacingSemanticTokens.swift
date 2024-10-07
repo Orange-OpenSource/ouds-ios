@@ -83,7 +83,7 @@ public protocol SpacingSemanticTokens {
     var spacePaddingBlockMedium: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockTall: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockTaller: SpacingPaddingInlineSemanticToken { get }
-    
+
     var spacePaddingBlockWithIconNone: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockWithIconShortest: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockWithIconShorter: SpacingPaddingInlineSemanticToken { get }
@@ -112,14 +112,14 @@ public protocol SpacingSemanticTokens {
     var spaceColumnGapShort: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapMedium: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapTall: SpacingPaddingInlineSemanticToken { get }
-    
+
     var spaceColumnGapWithIconNone: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithIconShortest: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithIconShorter: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithIconShort: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithIconMedium: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithIconTall: SpacingPaddingInlineSemanticToken { get }
-    
+
     var spaceColumnGapWithArrowNone: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithArrowShorter: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithArrowShort: SpacingPaddingInlineSemanticToken { get }
