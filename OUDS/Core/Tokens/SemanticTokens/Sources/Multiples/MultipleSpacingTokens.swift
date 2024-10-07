@@ -43,10 +43,10 @@ public final class MultipleSpacingTokens: NSObject {
         return self.compact == other.compact && self.regular == other.regular
     }
 
-    /// Returns the right dimension according to the `horizontalSizeClass`.
-    /// - Parameter horizontalSizeClass: The horizontal size class
+    /// Returns the right dimension according to the `userInterfaceSizeClass`.
+    /// - Parameter userInterfaceSizeClass: The user interface size class (Could be horizontal or vertical)
     /// - Returns: The right dimension raw token
-    public func dimension(for horizontalSizeClass: UserInterfaceSizeClass) -> DimensionRawToken {
-        horizontalSizeClass == .compact ? compact : regular
+    public func dimension(for userInterfaceSizeClass: UserInterfaceSizeClass) -> DimensionRawToken {
+        userInterfaceSizeClass == .compact ? compact : regular
     }
 }
