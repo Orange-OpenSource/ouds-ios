@@ -82,7 +82,8 @@ let package = Package(
         .target(
             name: "OUDSComponents",
             dependencies: ["OUDSTokensComponent", "OUDS"],
-            path: "OUDS/Core/Components/Sources"),
+            path: "OUDS/Core/Components/Sources",
+            resources: [Resource.copy("OUDS/Core/Components/Resources")]),
         .target(
             name: "OUDSThemesSosh",
             dependencies: ["OUDS"],
