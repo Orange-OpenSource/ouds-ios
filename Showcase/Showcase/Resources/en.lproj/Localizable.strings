@@ -25,16 +25,22 @@
 // MARK: - Tokens Screen
 
 "app_tokens_border_label" = "Border";
-"app_tokens_border_description_text" = "Borders are used for the stroke colours on components and also for the colours of divider lines for components like tables";
+"app_tokens_border_description_text" = "Borders are used for the stroke colours on components and also for the colours of divider lines for components like tables.";
+
+"app_tokens_dimension_label" = "Dimension";
+"app_tokens_dimension_description_text" = "Dimension provides standard sizing and spacing to ensure visual consistency across the UI.";
+
+"app_tokens_dimension_spacing_label" = "Spacing";
+"app_tokens_dimension_size_label" = "Size";
 
 "app_tokens_elevation_label" = "Elevation";
-"app_tokens_elevation_description_text" = "Shadows are used to give the impression of distance or elevation between surfaces, which adds depth to our designs";
+"app_tokens_elevation_description_text" = "Shadows are used to give the impression of distance or elevation between surfaces, which adds depth to our designs.";
 
 "app_tokens_typography_label" = "Typogaphy";
-"app_tokens_typography_description_text" = "Typography is our system of fonts and text styles. They enhance communication and reinforce the brand style";
+"app_tokens_typography_description_text" = "Typography is our system of fonts and text styles. They enhance communication and reinforce the brand style.";
 
 "app_tokens_opacity_label" = "Opacity";
-"app_tokens_opacity_description_text" = "Opacity can help distinguish foreground elements from background elements, making content easier to read and important actions more noticeable";
+"app_tokens_opacity_description_text" = "Opacity can help distinguish foreground elements from background elements, making content easier to read and important actions more noticeable.";
 
 
 // MARK: - Component Screen

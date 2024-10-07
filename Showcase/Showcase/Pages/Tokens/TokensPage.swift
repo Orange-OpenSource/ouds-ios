@@ -17,6 +17,7 @@ struct TokensPage: View {
 
     let tokenElements: [TokenElement] = [
         BorderTokenElement(),
+        DimensionTokenElement(),
         ElevationTokenElement(),
         OpacityTokenElement(),
         TypographyTokenElement(),
