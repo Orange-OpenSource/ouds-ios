@@ -37,7 +37,6 @@
 		077CCE572CB426090059CC28 /* SpacingTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE512CB426090059CC28 /* SpacingTokenElement.swift */; };
 		077CCE582CB426090059CC28 /* SpacingTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE522CB426090059CC28 /* SpacingTokenPage.swift */; };
 		077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
-		077CCE5A2CB426090059CC28 /* DimensionTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE552CB426090059CC28 /* DimensionTokenPage.swift */; };
 		077CCE5C2CB431C50059CC28 /* ShowcaseVariantElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */; };
 		07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		07CF42722CA31AC3000BD03E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF42712CA31AC3000BD03E /* Assets.xcassets */; };
@@ -103,7 +102,6 @@
 		077CCE512CB426090059CC28 /* SpacingTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenElement.swift; sourceTree = "<group>"; };
 		077CCE522CB426090059CC28 /* SpacingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenPage.swift; sourceTree = "<group>"; };
 		077CCE542CB426090059CC28 /* DimensionTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTokenElement.swift; sourceTree = "<group>"; };
-		077CCE552CB426090059CC28 /* DimensionTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTokenPage.swift; sourceTree = "<group>"; };
 		077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseVariantElement.swift; sourceTree = "<group>"; };
 		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07CF426A2CA30728000BD03E /* TokensPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensPage.swift; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 			children = (
 				077CCE532CB426090059CC28 /* Spacing */,
 				077CCE542CB426090059CC28 /* DimensionTokenElement.swift */,
-				077CCE552CB426090059CC28 /* DimensionTokenPage.swift */,
 			);
 			path = Dimension;
 			sourceTree = "<group>";
@@ -673,7 +670,6 @@
 				077CCE5C2CB431C50059CC28 /* ShowcaseVariantElement.swift in Sources */,
 				077CCE582CB426090059CC28 /* SpacingTokenPage.swift in Sources */,
 				51BD76292C466FCF0033365D /* WebView.swift in Sources */,
-				077CCE5A2CB426090059CC28 /* DimensionTokenPage.swift in Sources */,
 				51BD76232C466FCF0033365D /* ShowcaseElementsPage.swift in Sources */,
 				51E3FF0B2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift in Sources */,
 				073543162CA17275001187EA /* ShowcaseElement.swift in Sources */,
