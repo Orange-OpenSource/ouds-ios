@@ -38,6 +38,7 @@
 		077CCE582CB426090059CC28 /* SpacingTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE522CB426090059CC28 /* SpacingTokenPage.swift */; };
 		077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
 		077CCE5A2CB426090059CC28 /* DimensionTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE552CB426090059CC28 /* DimensionTokenPage.swift */; };
+		077CCE5C2CB431C50059CC28 /* ShowcaseVariantElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */; };
 		07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		07CF42722CA31AC3000BD03E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF42712CA31AC3000BD03E /* Assets.xcassets */; };
 		07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
@@ -103,6 +104,7 @@
 		077CCE522CB426090059CC28 /* SpacingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenPage.swift; sourceTree = "<group>"; };
 		077CCE542CB426090059CC28 /* DimensionTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTokenElement.swift; sourceTree = "<group>"; };
 		077CCE552CB426090059CC28 /* DimensionTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTokenPage.swift; sourceTree = "<group>"; };
+		077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseVariantElement.swift; sourceTree = "<group>"; };
 		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07CF426A2CA30728000BD03E /* TokensPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensPage.swift; sourceTree = "<group>"; };
 		07CF42712CA31AC3000BD03E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				51BD760F2C466FCF0033365D /* ShowcaseElementsPage.swift */,
 				51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */,
 				073543152CA17275001187EA /* ShowcaseElement.swift */,
+				077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
 				0735432A2CA192F9001187EA /* TokenElement.swift in Sources */,
 				073543182CA172CA001187EA /* TypographyTokenElement.swift in Sources */,
+				077CCE5C2CB431C50059CC28 /* ShowcaseVariantElement.swift in Sources */,
 				077CCE582CB426090059CC28 /* SpacingTokenPage.swift in Sources */,
 				51BD76292C466FCF0033365D /* WebView.swift in Sources */,
 				077CCE5A2CB426090059CC28 /* DimensionTokenPage.swift in Sources */,

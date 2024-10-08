@@ -19,10 +19,14 @@ struct DimensionTokenElement: TokenElement {
     let description: String
     let pageDescription: AnyView
 
+    let variants: [TokenElement] = [
+        SpacingTokenElement()
+    ]
+
     init() {
         name = "app_tokens_dimension_label"
         imageName = "ic_dimension"
         description = "app_tokens_dimension_description_text"
-        pageDescription = AnyView(DimensionTokenPage())
+        pageDescription = AnyView(ShowcaseVariantElement(elements: variants))
     }
 }
