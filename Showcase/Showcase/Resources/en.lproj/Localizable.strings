@@ -29,11 +29,13 @@
 
 "app_tokens_dimension_label" = "Dimension";
 "app_tokens_dimension_description_text" = "Dimension provides standard sizing and spacing to ensure visual consistency across the UI.";
+"app_tokens_dimension_sizing_label" = "Size";
+"app_tokens_dimension_sizing_description_text" = "Size refers to the specific measurements used to define the dimensions of UI elements within the design system.";
 "app_tokens_dimension_spacing_label" = "Spacing";
 "app_tokens_dimension_spacing_description_text" = "Space refers to the measurements used to define the spacing between UI elements.";
 
 "app_tokens_dimension_spacing_label" = "Spacing";
-"app_tokens_dimension_size_label" = "Size";
+"app_tokens_dimension_sizing_label" = "Size";
 
 "app_tokens_elevation_label" = "Elevation";
 "app_tokens_elevation_description_text" = "Shadows are used to give the impression of distance or elevation between surfaces, which adds depth to our designs.";
