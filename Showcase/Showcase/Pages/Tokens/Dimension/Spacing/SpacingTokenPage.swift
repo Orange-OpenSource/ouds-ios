@@ -50,15 +50,15 @@ struct SpacingTokenPage: View {
                     .fill((theme.colorBackgroundEmphasizedPrimary?.color(for: colorScheme))!)
                     .frame(width: 64, height: 64, alignment: .center)
                 Rectangle()
-//                    .fill((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO Update when color is available
+//                    .fill((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO: Update when color is available
                     .fill(.blue)
                     .frame(width: horizontalDimensionRawToken, height: 64, alignment: .center)
-
+/* TODO: Do we need to show the vertical spacing like this
                 Rectangle()
 //                    .fill((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO Update when color is available
                     .fill(.yellow)
                     .frame(width: 64, height: verticalDimensionRawToken, alignment: .center)
-
+*/
             }
             VStack(alignment: .leading) {
                 Text(named).typeBodyStrongLarge(theme)
