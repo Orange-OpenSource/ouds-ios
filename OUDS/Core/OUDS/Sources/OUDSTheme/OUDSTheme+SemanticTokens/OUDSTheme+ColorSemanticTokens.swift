@@ -224,6 +224,10 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundAlwaysInformation: ColorSemanticToken? { MultipleColorTokens(sysColorBrandInformationDefault) }
 
+    // MARK: Semantic token - Colors - Background - Transparent
+
+    @objc open var colorBackgroundTransparentDefault: ColorSemanticToken? { MultipleColorTokens(ColorRawTokens.colorTransparentBlack0) }
+
     // MARK: Semantic token - Colors - Content
 
     @objc open var colorContentDefault: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
@@ -249,6 +253,24 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var colorContentStatusPositive: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandPositiveDefault, dark: sysColorBrandPositiveDefault) }
 
     @objc open var colorContentStatusInformation: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandInformationDefault, dark: sysColorBrandInformationDefault) }
+
+    @objc open var colorContentActionEnabled: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
+
+    @objc open var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedLower) }
+
+    @objc open var colorContentActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack) }
+
+    @objc open var colorContentActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite) }
+
+    @objc open var colorContentActionHover: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedLowest, dark: sysColorBrandNeutralMutedMedium) }
+
+    @objc open var colorContentActionHoverOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedMedium) }
+
+    @objc open var colorContentActionHoverOnBackgroundStatusExcNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedLow) }
+
+    @objc open var colorContentActionHoverOnBackgroundStatusNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack) }
+
+    @objc open var colorContentTransparentDefault: ColorSemanticToken? { MultipleColorTokens(ColorRawTokens.colorTransparentBlack0) }
 
     // MARK: Semantic token - Colors - Border
 
@@ -284,21 +306,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBorderBrandStatusInformation: ColorSemanticToken? { nil }
 
-    @objc open var colorContentActionEnabled: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
-
-    @objc open var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedLower) }
-
-    @objc open var colorContentActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack) }
-
-    @objc open var colorContentActionEnabledOnBackgroundStatusNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedWhite) }
-
-    @objc open var colorContentActionHover: ColorSemanticToken? { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedLowest, dark: sysColorBrandNeutralMutedMedium) }
-
-    @objc open var colorContentActionHoverOnBackgroundEmphasized: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralMutedMedium) }
-
-    @objc open var colorContentActionHoverOnBackgroundStatusExcNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedLow) }
-
-    @objc open var colorContentActionHoverOnBackgroundStatusNegative: ColorSemanticToken? { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack) }
+    @objc open var colorBorderTransparentDefault: ColorSemanticToken? { MultipleColorTokens(ColorRawTokens.colorTransparentBlack0) }
 
     // TODO: #124 - Add missing colorBorderActionEnabled*
     // TODO: #124 - Add missing colorBorderActionHover*

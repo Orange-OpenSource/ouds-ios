@@ -223,6 +223,10 @@ public protocol ColorSemanticTokens {
 
     var colorBackgroundAlwaysInformation: ColorSemanticToken? { get }
 
+    // MARK: Semantic token - Colors - Background - Transparent
+
+    var colorBackgroundTransparentDefault: ColorSemanticToken? { get }
+
     // MARK: Semantic token - Colors - Content
 
     var colorContentDefault: ColorSemanticToken? { get }
@@ -271,6 +275,8 @@ public protocol ColorSemanticTokens {
 
     var colorContentActionHoverOnBackgroundStatusNegative: ColorSemanticToken? { get }
 
+    var colorContentTransparentDefault: ColorSemanticToken? { get }
+
     // TODO: #124 - Add missing colorContentActionPressed* tokens
     // TODO: #124 - Add missing colorContentActionDisabled* tokens
     // TODO: #124 - Add missing colorContentActionFocus* tokens
@@ -313,6 +319,8 @@ public protocol ColorSemanticTokens {
     var colorBorderBrandStatusPositive: ColorSemanticToken? { get }
 
     var colorBorderBrandStatusInformation: ColorSemanticToken? { get }
+
+    var colorBorderTransparentDefault: ColorSemanticToken? { get }
 
     // TODO: #124 - Add missing colorBorderActionEnabled*
     // TODO: #124 - Add missing colorBorderActionHover*
