@@ -24,12 +24,6 @@ struct ShowcaseVariantElement: View {
 
     let elements: [ShowcaseElement]
 
-    // MARK: Initializer
-
-    init(elements: [ShowcaseElement]) {
-        self.elements = elements
-    }
-
     // MARK: Body
 
     var body: some View {
