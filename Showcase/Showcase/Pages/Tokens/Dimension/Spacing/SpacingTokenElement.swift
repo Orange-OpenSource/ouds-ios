@@ -13,17 +13,16 @@
 
 import SwiftUI
 
-struct TokensPage: View {
+struct SpacingTokenElement: TokenElement {
+    let name: String
+    let imageName: String
+    let description: String
+    let pageDescription: AnyView
 
-    let tokenElements: [TokenElement] = [
-        BorderTokenElement(),
-        DimensionTokenElement(),
-        ElevationTokenElement(),
-        OpacityTokenElement(),
-        TypographyTokenElement(),
-    ]
-
-    var body: some View {
-        ShowcaseElementsPage(elements: tokenElements)
+    init() {
+        name = "app_tokens_dimension_spacing_label"
+        imageName = "ic_dimension"
+        description = "app_tokens_dimension_spacing_description_text"
+        pageDescription = AnyView(SpacingTokenPage())
     }
 }
