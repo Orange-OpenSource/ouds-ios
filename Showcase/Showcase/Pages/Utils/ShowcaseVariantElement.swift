@@ -24,24 +24,16 @@ struct ShowcaseVariantElement: View {
 
     let elements: [ShowcaseElement]
 
-    // MARK: Initializer
-
-    init(elements: [ShowcaseElement]) {
-        self.elements = elements
-    }
-
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .center, spacing: theme.spaceFixedMedium) {
-            ForEach(elements, id: \.id) { element in
-                NavigationLink {
-                    ShowcaseElementPage(element: element)
-                } label: {
-                    Text(LocalizedStringKey(element.name))
-                        .typeHeadingMedium(theme)
-                        .padding(.vertical, theme.spaceFixedShorter)
-                }
+        ForEach(elements, id: \.id) { element in
+            NavigationLink {
+                ShowcaseElementPage(element: element)
+            } label: {
+                Text(LocalizedStringKey(element.name))
+                    .typeHeadingMedium(theme)
+                    .padding(.vertical, theme.spaceFixedShorter)
             }
         }
         .padding(.horizontal, theme.spaceFixedMedium)
