@@ -328,6 +328,7 @@ if [[ $use_git -eq 1 ]]; then
     cp -r "$DOCUMENTATION_HTML_LOCATION/data/documentation/"* "$DOCS_DIRECTORY/data/documentation/"
     cp -r "$DOCUMENTATION_HTML_LOCATION/documentation/"* "$DOCS_DIRECTORY/documentation/"
     cp -r "$DOCUMENTATION_HTML_LOCATION/index/"* "$DOCS_DIRECTORY/index/"
+    cp -r "$DOCUMENTATION_HTML_LOCATION/index.html" "$DOCS_DIRECTORY/"
 
     _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY"
