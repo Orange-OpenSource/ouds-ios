@@ -324,10 +324,14 @@ if [[ $use_git -eq 1 ]]; then
     mkdir -p "$DOCS_DIRECTORY/documentation"
     mkdir -p "$DOCS_DIRECTORY/index"
 
-    cp -r "$DOCUMENTATION_HTML_LOCATION" "$DOCS_DIRECTORY"
+    # The HTML shards to update, hoping we won't loose some (╯°□°)╯︵ ┻━┻
+    cp -r "$DOCUMENTATION_HTML_LOCATION/data/documentation/"* "$DOCS_DIRECTORY/data/documentation/"
+    cp -r "$DOCUMENTATION_HTML_LOCATION/documentation/"* "$DOCS_DIRECTORY/documentation/"
+    cp -r "$DOCUMENTATION_HTML_LOCATION/index/"* "$DOCS_DIRECTORY/index/"
 
     _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY"
+    git add "$DOCS_DIRECTORY/index.html"
 
     _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
     commit_message=$(printf "docs: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
