@@ -18,6 +18,10 @@ set -euo pipefail
 # Configuration
 # -------------
 
+# WARNING:
+# - `swift package` cannot manage UIKit and fails when it meets some calls to that
+# - `xcrun docc` or `xcodebuild docbuild` fail to manage targets and Swift Package products
+
 # The Swift Package targets to build documentation of
 # Of course if your project is not compliant with Swift Package and DocC don't use this tool
 TARGETS="OUDS \
