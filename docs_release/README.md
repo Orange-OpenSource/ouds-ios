@@ -171,7 +171,7 @@ Co-authored-by: Julien Déramond <julien.deramond@orange.com>
     >
 -->
 
-- Do not forget to update the documentation using `generateDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (_Right click on catalog > Export).
+- Do not forget to update the documentation using `generateDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact, or if you want just download the sources from GitHub on *gh-pages* branch. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (doccarchive) (_Right click on catalog > Export), compress all these files in one ZIP archive (GitHub consider them as empty so won't accept them for upload) and upload as artifact.
 
 ## Prepare Next Release
 
@@ -212,12 +212,13 @@ To do that, the `generateDoc.sh` script has been defined, and helps to build the
 
 Keep in mind everything is stored in _/tmp_ folder with the execution timestamp, thus if you asked for a ZIP archive or want to get the generated files, look for files named "ouds-docs".
 
-The *swift-docc* plugin has troubles for Swift Package with several targets, we should wait for evolutions, an [issue has been created about evolutions of doc we would like to have](https://github.com/Orange-OpenSource/ouds-ios/issues/95).
+The *swift-docc* plugin has troubles for Swift Package with several targets, we should wait for evolutions, an [issue has been created about evolutions of doc we would like to have](https://github.com/Orange-OpenSource/ouds-ios/issues/95). It cannot also manage _UIKit_, so we are not able to use it anymore because of the accessibility features we need in our codebase, available in _UIKit_ and not _SwiftUI_ (see [#168]((https://github.com/Orange-OpenSource/ouds-ios/issues/168).)
 
-The plugin produces a lot of files, a lot. For example for our v0.1.0, more than 6,000 files have beenc reated for a ZIP archive of about 17 MB.
-Thus, keeping all versions of the documentation is a non-sense, no one will read it and it will increase the size of the branch in our VCS tool.
+The plugin produces a lot of files, a lot. For example for our v0.1.0, more than 6,000 files have been created for a ZIP archive of about 17 MB.
+Thus, keeping all versions of the documentation is a non-sense, no one will read it and it will increase the size of the branch in our VCS tool, consuming a lot of bandwidth, and reaching limits of Git to handle large amounts of file. We would like to avoid to force developers to define a specific Git configuration to handle such massive branch.
 
-We prefer to build ZIP documentation and Xcode doc archive to add as artifacts of releases.
+We prefer to build ZIP documentation and Xcode doccarchives to add as artifacts of releases.
+Thus, the online version of the documentation is for the last release, and each release in GitHub contains doccarchive files generated through Xcode and ZIP of HTML files picked from the *gh-pages*.
 
 ## About CI/CD with GitLabCI
 
