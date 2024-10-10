@@ -26,8 +26,8 @@ set -euo pipefail
 # See also https://github.com/Orange-OpenSource/ouds-ios/issues/95
 # (╯°□°)╯︵ ┻━┻
 
-# The folder where all the .doccarchive files to process are
-# If workspace is a Git repository you should NOT place the doccarchive inside, because they will be wiped
+# The folder where all the .doccarchive folders to process are
+# If workspace is a Git repository you should NOT place the doccarchives inside, because they will be wiped
 DOCCARCHIVES_PATH="$HOME/Downloads"
 
 # Services pages (like GitHub Pages) custom subdomain for the CNAME, don't forget to verify it in organization side for security reasons!
@@ -212,16 +212,13 @@ for doccarchiveDir in $DOCCARCHIVES_PATH/*.doccarchive; do
         base_name=$(basename "$doccarchiveDir" .doccarchive)
         doccarchive_names+=("$base_name")
 
-        # Ensure we have only updated files
-        rm -rf "$DOCS_DIRECTORY/data/documentation/*"
-        rm -rf "$DOCS_DIRECTORY/documentation/*"
-        rm -f "$DOCS_DIRECTORY/index/*"
+        # Prepare folders
         mkdir -p "$DOCS_DIRECTORY/data/documentation"
         mkdir -p "$DOCS_DIRECTORY/documentation"
         mkdir -p "$DOCS_DIRECTORY/index"
 
         # Things to copy are stored at three levels (╯°□°)╯︵ ┻━┻
-        # WARNING: We rely too much on own files are generated, it is tinkering... 
+        # WARNING: We rely too much on how files are generated, it is tinkering... 
         cp -r "$doccarchiveDir/data/documentation/" "$DOCS_DIRECTORY/data/documentation/"
 
         cp -r "$doccarchiveDir/documentation/" "$DOCS_DIRECTORY/documentation/"
@@ -300,7 +297,15 @@ if [[ $use_git -eq 1 ]]; then
     fi
 
     _ "🔨 Applying changes"
-    rm -rf "$DOCS_DIRECTORY"
+
+    # Ensure we have only updated files
+    rm -rf "$DOCS_DIRECTORY/data/documentation/*"
+    rm -rf "$DOCS_DIRECTORY/documentation/*"
+    rm -f "$DOCS_DIRECTORY/index/*"
+    mkdir -p "$DOCS_DIRECTORY/data/documentation"
+    mkdir -p "$DOCS_DIRECTORY/documentation"
+    mkdir -p "$DOCS_DIRECTORY/index"
+
     cp -r "$DOCUMENTATION_HTML_LOCATION" "$DOCS_DIRECTORY"
 
     _ "🔨 Adding things (~ $files_count files)"
