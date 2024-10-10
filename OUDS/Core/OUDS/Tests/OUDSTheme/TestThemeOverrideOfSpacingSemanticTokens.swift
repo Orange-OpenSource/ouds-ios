@@ -413,7 +413,7 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.spaceColumnGapWithIconShortest, abstractTheme.spaceColumnGapWithIconShortest)
         XCTAssertTrue(inheritedTheme.spaceColumnGapWithIconShortest == MockTheme.mockThemeSpaceRawToken)
     }
-    
+
     func testInheritedThemeCanOverrideSemanticTokenSpaceColumnGapWithIconShorter() throws {
         XCTAssertNotEqual(inheritedTheme.spaceColumnGapWithIconShorter, abstractTheme.spaceColumnGapWithIconShorter)
         XCTAssertTrue(inheritedTheme.spaceColumnGapWithIconShorter == MockTheme.mockThemeSpaceRawToken)
@@ -500,7 +500,7 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.spaceRowGapWithIconShortest, abstractTheme.spaceRowGapWithIconShortest)
         XCTAssertTrue(inheritedTheme.spaceRowGapWithIconShortest == MockTheme.mockThemeSpaceRawToken)
     }
-    
+
     func testInheritedThemeCanOverrideSemanticTokenSpaceRowGapWithIconShorter() throws {
         XCTAssertNotEqual(inheritedTheme.spaceRowGapWithIconShorter, abstractTheme.spaceRowGapWithIconShorter)
         XCTAssertTrue(inheritedTheme.spaceRowGapWithIconShorter == MockTheme.mockThemeSpaceRawToken)

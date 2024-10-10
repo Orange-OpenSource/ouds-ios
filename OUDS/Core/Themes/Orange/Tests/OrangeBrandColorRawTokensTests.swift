@@ -22,79 +22,79 @@ import TestsUtils
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 final class OrangeBrandColorRawTokensTests: XCTestCase {
 
-    // MARK: Primitive token - Colors - Orange - Brand - Orange
+    // MARK: Primitive token - Colors - Orange - Orange
 
-    func testOrangeBrandColorRawTokenColorBrandOrange50LighterThanOrange100() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange50, OrangeBrandColorRawTokens.colorBrandOrange100)
+    func testOrangeBrandColorRawTokenColorOrange50LighterThanOrange100() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange50, OrangeBrandColorRawTokens.colorOrange100)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandOrange100LighterThanOrange200() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange100, OrangeBrandColorRawTokens.colorBrandOrange200)
+    func testOrangeBrandColorRawTokenColorOrange100LighterThanOrange200() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange100, OrangeBrandColorRawTokens.colorOrange200)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandOrange200LighterThanOrange300() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange200, OrangeBrandColorRawTokens.colorBrandOrange300)
+    func testOrangeBrandColorRawTokenColorOrange200LighterThanOrange300() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange200, OrangeBrandColorRawTokens.colorOrange300)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandOrange300LighterThanOrange400() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange300, OrangeBrandColorRawTokens.colorBrandOrange400)
+    func testOrangeBrandColorRawTokenColorOrange300LighterThanOrange400() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange300, OrangeBrandColorRawTokens.colorOrange400)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandOrange400LighterThanOrange500() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange400, OrangeBrandColorRawTokens.colorBrandOrange500)
+    func testOrangeBrandColorRawTokenColorOrange400LighterThanOrange500() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange400, OrangeBrandColorRawTokens.colorOrange500)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandOrange500LighterThanOrange550() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange500, OrangeBrandColorRawTokens.colorBrandOrange550)
+    func testOrangeBrandColorRawTokenColorOrange500LighterThanOrange550() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange500, OrangeBrandColorRawTokens.colorOrange550)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandOrange550LighterThanOrange600() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange550, OrangeBrandColorRawTokens.colorBrandOrange600)
+    func testOrangeBrandColorRawTokenColorOrange550LighterThanOrange600() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange550, OrangeBrandColorRawTokens.colorOrange600)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandOrange600LighterThanOrange700() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange600, OrangeBrandColorRawTokens.colorBrandOrange700)
+    func testOrangeBrandColorRawTokenColorOrange600LighterThanOrange700() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange600, OrangeBrandColorRawTokens.colorOrange700)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandOrange700LighterThanOrange800() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange700, OrangeBrandColorRawTokens.colorBrandOrange800)
+    func testOrangeBrandColorRawTokenColorOrange700LighterThanOrange800() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange700, OrangeBrandColorRawTokens.colorOrange800)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandOrange800LighterThanOrange900() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandOrange800, OrangeBrandColorRawTokens.colorBrandOrange900)
+    func testOrangeBrandColorRawTokenColorOrange800LighterThanOrange900() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange800, OrangeBrandColorRawTokens.colorOrange900)
     }
 
     // MARK: Primitive token - Colors - Orange - Brand - Warm gray
 
-    func testOrangeBrandColorRawTokenColorBrandWarmGray100LighterThanWarmGray200() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandWarmGray100, OrangeBrandColorRawTokens.colorBrandWarmGray200)
+    func testOrangeBrandColorRawTokenColorWarmGray100LighterThanWarmGray200() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray100, OrangeBrandColorRawTokens.colorWarmGray200)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandWarmGray200LighterThanWarmGray300() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandWarmGray200, OrangeBrandColorRawTokens.colorBrandWarmGray300)
+    func testOrangeBrandColorRawTokenColorWarmGray200LighterThanWarmGray300() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray200, OrangeBrandColorRawTokens.colorWarmGray300)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandWarmGray300LighterThanWarmGray400() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandWarmGray300, OrangeBrandColorRawTokens.colorBrandWarmGray400)
+    func testOrangeBrandColorRawTokenColorWarmGray300LighterThanWarmGray400() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray300, OrangeBrandColorRawTokens.colorWarmGray400)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandWarmGray400LighterThanWarmGray500() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandWarmGray400, OrangeBrandColorRawTokens.colorBrandWarmGray500)
+    func testOrangeBrandColorRawTokenColorWarmGray400LighterThanWarmGray500() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray400, OrangeBrandColorRawTokens.colorWarmGray500)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandWarmGray500LighterThanWarmGray600() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandWarmGray500, OrangeBrandColorRawTokens.colorBrandWarmGray600)
+    func testOrangeBrandColorRawTokenColorWarmGray500LighterThanWarmGray600() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray500, OrangeBrandColorRawTokens.colorWarmGray600)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandWarmGray600LighterThanWarmGray700() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandWarmGray600, OrangeBrandColorRawTokens.colorBrandWarmGray700)
+    func testOrangeBrandColorRawTokenColorWarmGray600LighterThanWarmGray700() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray600, OrangeBrandColorRawTokens.colorWarmGray700)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandWarmGray700LighterThanWarmGray800() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandWarmGray700, OrangeBrandColorRawTokens.colorBrandWarmGray800)
+    func testOrangeBrandColorRawTokenColorWarmGray700LighterThanWarmGray800() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray700, OrangeBrandColorRawTokens.colorWarmGray800)
     }
 
-    func testOrangeBrandColorRawTokenColorBrandWarmGray800LighterThanWarmGray900() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorBrandWarmGray800, OrangeBrandColorRawTokens.colorBrandWarmGray900)
+    func testOrangeBrandColorRawTokenColorWarmGray800LighterThanWarmGray900() throws {
+        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray800, OrangeBrandColorRawTokens.colorWarmGray900)
     }
 }
