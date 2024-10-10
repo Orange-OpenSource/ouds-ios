@@ -20,7 +20,8 @@ struct DimensionTokenElement: TokenElement {
     let pageDescription: AnyView
 
     let variants: [TokenElement] = [
-        SpacingTokenElement()
+        SizingTokenElement(),
+        SpacingTokenElement(),
     ]
 
     init() {
