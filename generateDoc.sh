@@ -282,7 +282,7 @@ if [[ $use_git -eq 1 ]]; then
     git add "$DOCS_DIRECTORY"
 
     _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
-    commit_message=$(printf "doc: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
+    commit_message=$(printf "docs: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
     git commit -m "$commit_message"
 
     _ "🔨 Pushing things"
