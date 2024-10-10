@@ -43,13 +43,6 @@
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "OUDSThemesSosh-Tests",
-        "name" : "OUDSThemesSosh-Tests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:..",
         "identifier" : "OUDSTokensRaw-Tests",
         "name" : "OUDSTokensRaw-Tests"
       }
