@@ -27,7 +27,8 @@ set -euo pipefail
 # (╯°□°)╯︵ ┻━┻
 
 # The folder where all the .doccarchive files to process are
-DOCCARCHIVES_PATH="."
+# If workspace is a Git repository you should NOT place the doccarchive inside, because they will be wiped
+DOCCARCHIVES_PATH="$HOME/Downloads"
 
 # Services pages (like GitHub Pages) custom subdomain for the CNAME, don't forget to verify it in organization side for security reasons!
 # For example, with GitHub pages; given the "ouds-ios" project for "Orange-OpenSource" organization,
@@ -59,9 +60,10 @@ DOCUMENTATION_HTML_LOCATION="/tmp/ouds-docs-$timestamp"
 
 EXIT_OK=0
 EXIT_ERROR_SIG=1
-EXIT_NOT_GIT_REPO=2
-EXIT_BAD_PARAMETER=3
-EXIT_CANNOT_PROCESS=4
+EXIT_ERROR_BAD_PREREQUISITES=2
+EXIT_NOT_GIT_REPO=3
+EXIT_BAD_PARAMETER=4
+EXIT_CANNOT_PROCESS=5
 
 on_error_signal() {
     _ "❌  An error occurred with command '$BASH_COMMAND'. Exits. ($EXIT_ERROR_SIG)"
@@ -163,6 +165,11 @@ fi
 
 # Step 1 - Git setup (if relevant)
 # --------------------------------
+
+if [ ! -d "$DOCCARCHIVES_PATH" ]; then
+    _ "'$DOCCARCHIVES_PATH' does not exist, how can I get the doccarchives? Exits. ($EXIT_ERROR_BAD_PREREQUISITES)" true
+    exit $EXIT_ERROR_BAD_PREREQUISITES
+fi
 
 start_time=$(date +%s)
 
