@@ -24,7 +24,6 @@
 		070C35622C75EB1C0029C6A8 /* OUDS in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35612C75EB1C0029C6A8 /* OUDS */; };
 		070C35642C773A0D0029C6A8 /* OUDSThemesInverse in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35632C773A0D0029C6A8 /* OUDSThemesInverse */; };
 		070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35652C7762B90029C6A8 /* OUDSModules */; };
-		070C35682C7762B90029C6A8 /* OUDSThemesSosh in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35672C7762B90029C6A8 /* OUDSThemesSosh */; };
 		073543112CA154DE001187EA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543102CA154DE001187EA /* Card.swift */; };
 		073543132CA1676C001187EA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 073543122CA1676C001187EA /* Colors.xcassets */; };
 		073543162CA17275001187EA /* ShowcaseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543152CA17275001187EA /* ShowcaseElement.swift */; };
@@ -163,7 +162,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */,
-				070C35682C7762B90029C6A8 /* OUDSThemesSosh in Frameworks */,
 				E537B9B66A6466473179DEE8 /* Pods_Showcase.framework in Frameworks */,
 				070C35642C773A0D0029C6A8 /* OUDSThemesInverse in Frameworks */,
 				51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */,
@@ -503,7 +501,6 @@
 				070C35612C75EB1C0029C6A8 /* OUDS */,
 				070C35632C773A0D0029C6A8 /* OUDSThemesInverse */,
 				070C35652C7762B90029C6A8 /* OUDSModules */,
-				070C35672C7762B90029C6A8 /* OUDSThemesSosh */,
 			);
 			productName = DemoApp;
 			productReference = 07FDCD912C296A500009AA13 /* OUDS Showcase.app */;
@@ -1049,10 +1046,6 @@
 		070C35652C7762B90029C6A8 /* OUDSModules */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSModules;
-		};
-		070C35672C7762B90029C6A8 /* OUDSThemesSosh */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSThemesSosh;
 		};
 		0740A9992C9874670069D24A /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
