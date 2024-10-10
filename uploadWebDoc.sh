@@ -172,15 +172,24 @@ else
     _ "👍 Ok, let's go!"
 fi
 
-# Step 1 - Git setup (if relevant)
-# --------------------------------
-
+# Check if the folder containing doccarchives exists and has doccarchives
 if [ ! -d "$DOCCARCHIVES_PATH" ]; then
     _ "'$DOCCARCHIVES_PATH' does not exist, how can I get the doccarchives? Exits. ($EXIT_ERROR_BAD_PREREQUISITES)" true
     exit $EXIT_ERROR_BAD_PREREQUISITES
 fi
 
+shopt -s nullglob  # Allow glob patterns to return nothing if no match
+doccarchives=("$DOCCARCHIVES_PATH"/*.doccarchive)
+
+if [ ${#doccarchives[@]} -eq 0 ]; then
+    _ "There is no doccarchive in '$DOCCARCHIVES_PATH. Exits. ($EXIT_ERROR_BAD_PREREQUISITES)" true
+    exit $EXIT_ERROR_BAD_PREREQUISITES
+fi
+
 start_time=$(date +%s)
+
+# Step 1 - Git setup (if relevant)
+# --------------------------------
 
 if [[ $use_git -eq 1 ]]; then
     if [ -d ".git" ]; then
@@ -213,7 +222,7 @@ _ "👉 Generating docs..."
 declare -a doccarchive_names
 
 # Process all .doccarchive folders in the target path
-for doccarchiveDir in $DOCCARCHIVES_PATH/*.doccarchive; do
+for doccarchiveDir in "${doccarchives[@]}"; do
     _ "👉 Generating docs for $doccarchiveDir..."
     if [ -d "$doccarchiveDir" ]; then
 
