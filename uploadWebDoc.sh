@@ -163,6 +163,15 @@ if [[ "$use_git" -eq 0 && "$no_zip" -eq 1 ]]; then
     _ "🥴 WARNING: What do you use this script for? You should at least save the doc in Git repository or in ZIP file"
 fi
 
+# Ask the user if he/she wants to go further (updating documentation updates the production website)
+read -p "❓ Do you want to update the documentation? (yes/YES/Y/y): " answer
+if [[ ! "$answer" =~ ^(yes|YES|Y|y)$ ]]; then
+    _ "👋 Bye!"
+    exit $EXIT_OK
+else
+    _ "👍 Ok, let's go!"
+fi
+
 # Step 1 - Git setup (if relevant)
 # --------------------------------
 
@@ -193,7 +202,7 @@ fi
 
 _ "👉 Creating documentation folder..."
 mkdir -p "$DOCS_DIRECTORY"
-_ "👍 Documention folder created at '$DOCS_DIRECTORY'!"
+_ "👍 Documentation folder created at '$DOCS_DIRECTORY'!"
 
 # Step 2 - For each doccarchive, copy the assets
 # ----------------------------------------------
