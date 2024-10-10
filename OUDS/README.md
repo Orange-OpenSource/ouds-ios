@@ -10,14 +10,13 @@ It contains modules, components, themes, and tokens (of components,s emantic and
 This _Swift package_ exposes up to 10 _products_ as _libraries_:
 1. `OUDSModules` containing OUDS modules with features ;
 2. `OUDSComponents` containing all components embeded also inside _modules_ ;
-3. `OUDSThemesSoshTheme` providing the default _Sosh_ theme defining style for _components_;
-4. `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_;
-5. `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_;
-6. `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
-7. `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_ ;
-8. `OUDSTokensSemantic` providing _semantic tokens_ ; 
-9. `OUDSTokensRaw` providing _raw tokens_ ;
-10. `OUDSFoundations` providing low level and utils objects.
+3. `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_;
+4. `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_;
+5. `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
+6. `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_ ;
+7. `OUDSTokensSemantic` providing _semantic tokens_ ; 
+8. `OUDSTokensRaw` providing _raw tokens_ ;
+9. `OUDSFoundations` providing low level and utils objects.
 
 Feel free to read [this Swift documentation](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html) if you are not used to _SPM_.
 
@@ -35,7 +34,6 @@ A _theme_ has also _raw tokens_ associated to primitive types so as to give to _
 
 This library exposes today up to two themes:
 1. `OrangeTheme` which can be seen as the default _theme_ ;
-2. `SoshTheme` for Sosh ;
 2. `InverseTheme` for other use cases.
 
 They both are based on an `OUDSTheme` defining default values.

@@ -21,7 +21,6 @@ set -euo pipefail
 # The Swift Package targets to build documentation of
 # Of course if your project is not compliant with Swift Package and DocC don't use this tool
 TARGETS="OUDS \
-        OUDSThemesSosh \
         OUDSThemesInverse \
         OUDSThemesOrange \
         OUDSTokensRaw \
