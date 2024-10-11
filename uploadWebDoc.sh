@@ -18,17 +18,17 @@ set -euo pipefail
 # Configuration
 # -------------
 
-# The Swift Package targets to build documentation of
-# Of course if your project is not compliant with Swift Package and DocC don't use this tool
-TARGETS="OUDS \
-        OUDSThemesInverse \
-        OUDSThemesOrange \
-        OUDSTokensRaw \
-        OUDSTokensSemantic \
-        OUDSTokensComponent \
-        OUDSComponents \
-        OUDSModules \
-        OUDSFoundations"
+# CONTEXT:
+# - `swift package` cannot manage UIKit and fails when it meets some calls to that
+# - `xcrun docc` or `xcodebuild docbuild` fail to manage targets and Swift Package products
+# Thus need tp rely on manualy generated doccarchive files before processing them
+# See https://github.com/Orange-OpenSource/ouds-ios/issues/168
+# See also https://github.com/Orange-OpenSource/ouds-ios/issues/95
+# (╯°□°)╯︵ ┻━┻
+
+# The folder where all the .doccarchive folders to process are
+# If workspace is a Git repository you should NOT place the doccarchives inside, because they will be wiped
+DOCCARCHIVES_PATH="$HOME/Downloads"
 
 # Services pages (like GitHub Pages) custom subdomain for the CNAME, don't forget to verify it in organization side for security reasons!
 # For example, with GitHub pages; given the "ouds-ios" project for "Orange-OpenSource" organization,
@@ -60,8 +60,10 @@ DOCUMENTATION_HTML_LOCATION="/tmp/ouds-docs-$timestamp"
 
 EXIT_OK=0
 EXIT_ERROR_SIG=1
-EXIT_NOT_GIT_REPO=2
-EXIT_BAD_PARAMETER=3
+EXIT_ERROR_BAD_PREREQUISITES=2
+EXIT_NOT_GIT_REPO=3
+EXIT_BAD_PARAMETER=4
+EXIT_CANNOT_PROCESS=5
 
 on_error_signal() {
     _ "❌  An error occurred with command '$BASH_COMMAND'. Exits. ($EXIT_ERROR_SIG)"
@@ -161,10 +163,33 @@ if [[ "$use_git" -eq 0 && "$no_zip" -eq 1 ]]; then
     _ "🥴 WARNING: What do you use this script for? You should at least save the doc in Git repository or in ZIP file"
 fi
 
-# Step 1 - Git setup (if relevant)
-# --------------------------------
+# Ask the user if he/she wants to go further (updating documentation updates the production website)
+read -p "❓ Do you want to update the documentation? (yes/YES/Y/y): " answer
+if [[ ! "$answer" =~ ^(yes|YES|Y|y)$ ]]; then
+    _ "👋 Bye!"
+    exit $EXIT_OK
+else
+    _ "👍 Ok, let's go!"
+fi
+
+# Check if the folder containing doccarchives exists and has doccarchives
+if [ ! -d "$DOCCARCHIVES_PATH" ]; then
+    _ "'$DOCCARCHIVES_PATH' does not exist, how can I get the doccarchives? Exits. ($EXIT_ERROR_BAD_PREREQUISITES)" true
+    exit $EXIT_ERROR_BAD_PREREQUISITES
+fi
+
+shopt -s nullglob  # Allow glob patterns to return nothing if no match
+doccarchives=("$DOCCARCHIVES_PATH"/*.doccarchive)
+
+if [ ${#doccarchives[@]} -eq 0 ]; then
+    _ "There is no doccarchive in '$DOCCARCHIVES_PATH. Exits. ($EXIT_ERROR_BAD_PREREQUISITES)" true
+    exit $EXIT_ERROR_BAD_PREREQUISITES
+fi
 
 start_time=$(date +%s)
+
+# Step 1 - Git setup (if relevant)
+# --------------------------------
 
 if [[ $use_git -eq 1 ]]; then
     if [ -d ".git" ]; then
@@ -186,30 +211,49 @@ fi
 
 _ "👉 Creating documentation folder..."
 mkdir -p "$DOCS_DIRECTORY"
-_ "👍 Documention folder created at '$DOCS_DIRECTORY'!"
+_ "👍 Documentation folder created at '$DOCS_DIRECTORY'!"
 
-# Step 2 - For each target, build the DocC documentation
-# ------------------------------------------------------
-
-# WARNING
-# The version of swift-docc-plugin (https://github.com/swiftlang/swift-docc-plugin) we use (here 1.4.2 according to the Package.resolved file)
-# does not seem to manage very well Swift Packages with several targets.
-# Consider using this version of the tool or submit an issue / pull request for updates to https://github.com/Orange-OpenSource/ouds-ios
-# It fails also with iOS frameworks with UIKit (https://forums.swift.org/t/generate-documentation-failing-on-import-uikit/55202)
-# Related issue: https://github.com/Orange-OpenSource/ouds-ios/issues/95
-# (╯°□°)╯︵ ┻━┻
+# Step 2 - For each doccarchive, copy the assets
+# ----------------------------------------------
 
 _ "👉 Generating docs..."
 
-for target in ${TARGETS}
-do
-    _ "👉 Generating docs for $target..."
-    swift package --allow-writing-to-directory "$target-docs" generate-documentation  --disable-indexing --transform-for-static-hosting --output-path "$target-docs" --target "$target"
-    
-    cp -r $target-docs/* $DOCS_DIRECTORY
-    modified_target=$(echo $target | tr '-' '_' | tr '[:upper:]' '[:lower:]')
-    cp -r $target-docs/index/index.json "$DOCS_DIRECTORY/index/$modified_target.json"
-    _ "👍 Docs generated for $target!"
+# To store the docarchive folder names for later
+declare -a doccarchive_names
+
+# Process all .doccarchive folders in the target path
+for doccarchiveDir in "${doccarchives[@]}"; do
+    _ "👉 Generating docs for $doccarchiveDir..."
+    if [ -d "$doccarchiveDir" ]; then
+
+        # Get name of the doccarchive folder and save it
+        base_name=$(basename "$doccarchiveDir" .doccarchive)
+        doccarchive_names+=("$base_name")
+
+        # Prepare folders
+        mkdir -p "$DOCS_DIRECTORY/data/documentation"
+        mkdir -p "$DOCS_DIRECTORY/documentation"
+        mkdir -p "$DOCS_DIRECTORY/index"
+
+        # Things to copy are stored at three levels (╯°□°)╯︵ ┻━┻
+        # WARNING: We rely too much on how files are generated, it is tinkering... 
+        cp -r "$doccarchiveDir/data/documentation/" "$DOCS_DIRECTORY/data/documentation/"
+
+        cp -r "$doccarchiveDir/documentation/" "$DOCS_DIRECTORY/documentation/"
+
+        index_file="$doccarchiveDir/index/index.json"
+        if [ -f "$index_file" ]; then
+            new_index_name=$(echo "$base_name" | tr '[:upper:]' '[:lower:]').json 
+            cp "$index_file" "$DOCS_DIRECTORY/index/$new_index_name"
+        else
+            _ "The index.json file at '$index_file' cannot be processed. Exits. ($EXIT_CANNOT_PROCESS)" true
+            exit $EXIT_CANNOT_PROCESS            
+        fi
+    else
+        _ "The .doccarchive folder '$doccarchiveDir' cannot be processed. Exits. ($EXIT_CANNOT_PROCESS)" true
+        exit $EXIT_CANNOT_PROCESS
+    fi
+    _ "👍 Docs generated for $doccarchiveDir!"
 done
 
 # Step 3 - Add CNAME file for GitHub Pages
@@ -233,13 +277,9 @@ echo "<h2>$HTML_H2</h2>" >> $DOCS_DIRECTORY/index.html
 echo "<h3>Version v$lib_version</h3>" >> $DOCS_DIRECTORY/index.html
 echo "<h4>All targets of the Swift Package are listed below</h4>" >> $DOCS_DIRECTORY/index.html
 echo "<ol>" >> $DOCS_DIRECTORY/index.html
-for target in ${TARGETS}
-do
-    cp -R "$target-docs/data/documentation/"* "$DOCS_DIRECTORY/data/documentation/"
-    cp -R "$target-docs/documentation/"* "$DOCS_DIRECTORY/documentation/"
-    rm -r "$target-docs"
-    modified_target=$(echo "$target" | tr '-' '_' | tr '[:upper:]' '[:lower:]')
-    echo "<li><a href=\"./documentation/$modified_target\">$target</a></li>" >> $DOCS_DIRECTORY/index.html
+for doccarchive_name in "${doccarchive_names[@]}"; do
+    target_name=$(echo "$doccarchive_name" | tr '-' '_' | tr '[:upper:]' '[:lower:]')
+    echo "<li><a href=\"./documentation/$target_name\">$doccarchive_name</a></li>" >> $DOCS_DIRECTORY/index.html
 done
 echo "</ol></main>" >> $DOCS_DIRECTORY/index.html
 echo "<footer><p>Find the source code on <a href=\"$HTML_PROJECT_URL\">GitHub</a></p>" >> $DOCS_DIRECTORY/index.html
@@ -275,14 +315,27 @@ if [[ $use_git -eq 1 ]]; then
     fi
 
     _ "🔨 Applying changes"
-    rm -rf "$DOCS_DIRECTORY"
-    cp -r "$DOCUMENTATION_HTML_LOCATION" "$DOCS_DIRECTORY"
+
+    # Ensure we have only updated files
+    rm -rf "$DOCS_DIRECTORY/data/documentation/*"
+    rm -rf "$DOCS_DIRECTORY/documentation/*"
+    rm -f "$DOCS_DIRECTORY/index/*"
+    mkdir -p "$DOCS_DIRECTORY/data/documentation"
+    mkdir -p "$DOCS_DIRECTORY/documentation"
+    mkdir -p "$DOCS_DIRECTORY/index"
+
+    # The HTML shards to update, hoping we won't loose some (╯°□°)╯︵ ┻━┻
+    cp -r "$DOCUMENTATION_HTML_LOCATION/data/documentation/"* "$DOCS_DIRECTORY/data/documentation/"
+    cp -r "$DOCUMENTATION_HTML_LOCATION/documentation/"* "$DOCS_DIRECTORY/documentation/"
+    cp -r "$DOCUMENTATION_HTML_LOCATION/index/"* "$DOCS_DIRECTORY/index/"
+    cp -r "$DOCUMENTATION_HTML_LOCATION/index.html" "$DOCS_DIRECTORY/"
 
     _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY"
+    git add "$DOCS_DIRECTORY/index.html"
 
     _ "🔨 Committing things (be ready if passwords / passphrases are asked)"
-    commit_message=$(printf "doc: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
+    commit_message=$(printf "docs: update DocC documentation for version v%s (%s)\n\nUpdate documentation for GitHub pages of version v%s of OUDS iOS library (build timestamp %s)\n\nWARNING: This is an automatic commit 🤖" "$lib_version" "$timestamp" "$lib_version" "$timestamp")
     git commit -m "$commit_message"
 
     _ "🔨 Pushing things"
