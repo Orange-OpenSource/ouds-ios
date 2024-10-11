@@ -1,6 +1,6 @@
 name: Documentation Update
 description: Describe this issue found in the documentation
-title: "[Doc]: "
+title: "[Doc] "
 labels: ["📖 documentation", "🔍 triage"]
 assignees: ["ludovic35", "pylapp", "Tayebsed93"]
 body:
