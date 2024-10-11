@@ -33,6 +33,7 @@ struct ShowcaseVariantElement: View {
             } label: {
                 Text(LocalizedStringKey(element.name))
                     .typeHeadingMedium(theme)
+                    .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
                     .padding(.vertical, theme.spaceFixedShorter)
             }
         }
