@@ -1,6 +1,6 @@
 name: Feature Request
 description: Suggest a new Epic to be added to the backlog.
-title: "[feature]: "
+title: "[Feature] "
 labels: ["feature", "🔍 triage"]
 assignees: ["ludovic35", "pylapp", "Tayebsed93"]
 body:
