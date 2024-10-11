@@ -38,34 +38,45 @@ struct OpacityTokenPage: View {
     // MARK: Helpers
 
     private func illustration(for opacityName: NamedOpacity) -> some View {
-        illustration(for: opacityName.token(from: theme), named: opacityName.rawValue)
-    }
+        let token = opacityName.token(from: theme)
+        let name = opacityName.rawValue
+        let value = String(format: "%.2f", token)
 
-    private func illustration(for opacityToken: OpacitySemanticToken, named name: String) -> some View {
-        HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Image("ic_union")
                     .resizable()
                     .frame(width: 44, height: 44)
 
-                Rectangle().fill(colorScheme == .dark ? .white : .black)
-                    .opacity(opacityToken)
+                Rectangle()
+                    .fill((theme.colorContentDefault?.color(for: colorScheme))!)
+                    .opacity(token)
                     .frame(width: 44, height: 44)
-                    .oudsBorder(style: theme.borderStyleDefault,
-                                width: theme.borderWidthThin,
-                                radius: theme.borderRadiusNone,
-                                color: theme.colorContentDefault!)
+                    .modifier(ExtraBorderModifier(namedOpacity: opacityName))
                     .transformEffect(CGAffineTransform(translationX: 10, y: 10))
             }
             .frame(width: 54, height: 54, alignment: .leading)
-
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-                Text(name).bold()
-                Text("\(opacityToken, specifier: "%.2f")")
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.vertical, theme.spaceFixedShorter)
+    }
+}
+
+// MARK: - Extra border modifier
+
+// Add a border for transparent token
+private struct ExtraBorderModifier: ViewModifier {
+
+    @Environment(\.theme) private var theme
+    let namedOpacity: NamedOpacity
+
+    func body(content: Content) -> some View {
+        if namedOpacity == .opacityTransparent {
+            content.oudsBorder(style: theme.borderStyleDefault,
+                               width: theme.borderWidthThin,
+                               radius: theme.borderRadiusNone,
+                               color: theme.colorContentDefault!)
+        } else {
+            content
+        }
     }
 }
 

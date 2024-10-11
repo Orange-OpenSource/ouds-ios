@@ -35,6 +35,7 @@
 		0747947A2CAE882A0033C2D8 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074794792CAE882A0033C2D8 /* EmptyState.swift */; };
 		075114DB2CB7D28D00B8B759 /* SizingTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D82CB7D28D00B8B759 /* SizingTokenElement.swift */; };
 		075114DC2CB7D28D00B8B759 /* SizingTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D92CB7D28D00B8B759 /* SizingTokenPage.swift */; };
+		075114E82CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */; };
 		077CCE572CB426090059CC28 /* SpacingTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE512CB426090059CC28 /* SpacingTokenElement.swift */; };
 		077CCE582CB426090059CC28 /* SpacingTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE522CB426090059CC28 /* SpacingTokenPage.swift */; };
 		077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
@@ -102,6 +103,7 @@
 		074794792CAE882A0033C2D8 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		075114D82CB7D28D00B8B759 /* SizingTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingTokenElement.swift; sourceTree = "<group>"; };
 		075114D92CB7D28D00B8B759 /* SizingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingTokenPage.swift; sourceTree = "<group>"; };
+		075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseTokenIllustration.swift; sourceTree = "<group>"; };
 		077CCE512CB426090059CC28 /* SpacingTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenElement.swift; sourceTree = "<group>"; };
 		077CCE522CB426090059CC28 /* SpacingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenPage.swift; sourceTree = "<group>"; };
 		077CCE542CB426090059CC28 /* DimensionTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTokenElement.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */,
 				073543152CA17275001187EA /* ShowcaseElement.swift */,
 				077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */,
+				075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */,
 				51BD76222C466FCF0033365D /* ComponentsPage.swift in Sources */,
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
+				075114E82CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
 				073543112CA154DE001187EA /* Card.swift in Sources */,

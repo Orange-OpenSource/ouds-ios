@@ -37,34 +37,19 @@ struct ElevationTokenPage: View {
 
     // MARK: Helpers
 
-    private func illustration(for elevation: NamedElevation) -> some View {
-        illustration(for: elevation.token(from: theme), named: elevation.rawValue)
-    }
+    private func illustration(for namedElevation: NamedElevation) -> some View {
+        let token = namedElevation.token(from: theme).elevation(for: colorScheme)
+        let name = namedElevation.rawValue
+        let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)
 
-    private func illustration(for elevationSementicToken: ElevationCompositeSemanticToken, named: String) -> some View {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            Rectangle()
+                .frame(width: theme.sizeIconDecorativeTallest, height: theme.sizeIconDecorativeTallest)
+                .foregroundColor(theme.colorBackgroundDefaultSecondary?.color(for: colorScheme))
+                .shadow(elevation: token)
+                .padding(.bottom, 2)
 
-        let elevationRawToken = elevationSementicToken.elevation(for: colorScheme)
-        return HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
-            elevationRectangle(elevationRawToken: elevationRawToken)
-
-            VStack(alignment: .leading) {
-                Text(named).bold()
-                Text("x: \(elevationRawToken.x, specifier: "%.2f"), ")
-                + Text("y: \(elevationRawToken.y, specifier: "%.2f"), ")
-                + Text("radius: \(elevationRawToken.radius, specifier: "%.2f")")
-
-                Text("Color: \(elevationRawToken.color)")
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.vertical, theme.spaceFixedShorter)
-    }
-
-    private func elevationRectangle(elevationRawToken: ElevationCompositeRawToken) -> some View {
-        Rectangle()
-            .frame(width: theme.sizeIconDecorativeTallest, height: theme.sizeIconDecorativeTallest)
-            .foregroundColor(theme.colorBackgroundDefaultSecondary?.color(for: colorScheme))
-            .shadow(elevation: elevationRawToken)
     }
 }
 
