@@ -13,18 +13,16 @@
 
 import SwiftUI
 
-struct TokensPage: View {
+struct ColorTokenElement: TokenElement {
+    let name: String
+    let imageName: String
+    let description: String
+    let pageDescription: AnyView
 
-    let tokenElements: [TokenElement] = [
-        BorderTokenElement(),
-        ColorTokenElement(),
-        DimensionTokenElement(),
-        ElevationTokenElement(),
-        OpacityTokenElement(),
-        TypographyTokenElement(),
-    ]
-
-    var body: some View {
-        ShowcaseElementsPage(elements: tokenElements)
+    init() {
+        name = "app_tokens_color_label"
+        imageName = "ic_palette"
+        description = "app_tokens_color_description_text"
+        pageDescription = AnyView(ColorTokenPage())
     }
 }
