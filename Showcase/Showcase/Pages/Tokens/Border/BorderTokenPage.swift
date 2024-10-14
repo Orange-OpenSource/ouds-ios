@@ -29,7 +29,7 @@ struct BorderTokenPage: View {
         VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
             Section {
                 VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-                    ForEach(NamedBoderWidth.allCases, id: \.rawValue) { namedWidth in
+                    ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
                         illustration(for: namedWidth)
                     }
                 }
@@ -74,7 +74,7 @@ struct BorderTokenPage: View {
             .frame(width: 64, height: 64)
     }
 
-    private func illustration(for namedWidth: NamedBoderWidth) -> some View {
+    private func illustration(for namedWidth: NamedBorderWidth) -> some View {
         let token = namedWidth.token(from: theme)
         let name = namedWidth.rawValue
         let value = String(format: "(%.0f) pt", token)
@@ -140,7 +140,7 @@ private enum NamedBorderRadius: String, CaseIterable {
     }
 }
 
-private enum NamedBoderWidth: String, CaseIterable {
+private enum NamedBorderWidth: String, CaseIterable {
 
     case borderWidthNone
     case borderWidthDefault
