@@ -11,9 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import SwiftUI
 import OUDS
 import OUDSTokensSemantic
+import SwiftUI
+
+// swiftlint:disable force_unwrapping
 
 struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustration: View {
 
@@ -57,3 +59,5 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
         .padding(.vertical, theme.spaceFixedShorter)
     }
 }
+
+// swiftlint:enable force_unwrapping

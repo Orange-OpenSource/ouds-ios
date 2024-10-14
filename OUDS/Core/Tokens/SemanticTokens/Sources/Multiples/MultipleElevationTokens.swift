@@ -42,10 +42,12 @@ public final class MultipleElevationTokens: NSObject {
         self.dark = dark
     }
 
+    deinit { }
+
     /// Returns `true` if `self` and `object` has the same `light` and `dark` values and with `object`
     /// as a `MultipleElevationTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
-    public override func isEqual(_ object: Any?) -> Bool {
+    override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleElevationTokens else { return false }
         return self.light == other.light && self.dark == other.dark
     }

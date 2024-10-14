@@ -12,7 +12,7 @@
 #
 
 # More details at https://realm.github.io/SwiftLint
-# Online validator at https://www.yamllint.com/ (beware of data you copy/paste)
+
 
 # ========
 # Included
@@ -27,6 +27,7 @@ included:
 # ========
 
 excluded:
+- Showcase/Showcase/Info.plist
 - Showcase/Showcase/Resources
 - Showcase/Pods
 - Showcase/DerivedData
@@ -38,14 +39,23 @@ strict: true
 # ==============
 
 disabled_rules:
+- attributes
+- conditional_returns_on_newline
+- explicit_enum_raw_value
 - explicit_type_interface
 - extension_access_modifier
-- identifier_name
+- file_name
+- file_types_order
+- multiline_arguments_brackets
+- multiline_parameters_brackets
 - opening_brace
+- override_in_extension
 - strong_iboutlet
 - todo
-- type_name
+- type_contents_order
 - valid_ibinspectable
+- vertical_whitespace_between_cases
+- vertical_whitespace_opening_braces
 
 # =====================================
 # Opt-in rules (not enabled by default)
@@ -56,32 +66,27 @@ opt_in_rules:
 - accessibility_trait_for_button
 - anyobject_protocol
 - array_init
-- attributes
 - closure_body_length
 - closure_end_indentation
 - closure_spacing
 - collection_alignment
-- conditional_returns_on_newline
 - contains_over_first_not_nil
-- convenience_type:
-    severity: error
+- convenience_type
 - discouraged_object_literal
 - discouraged_optional_boolean
 - discouraged_optional_collection
 - empty_count
 - empty_string
 - empty_xctest_method
-- explicit_enum_raw_value
 - explicit_init
 - explicit_self
 - fallthrough
 - fatal_error_message
-- file_name
-- file_types_order
 - first_where
 - force_unwrapping
 - function_default_parameter_at_end
 - identical_operands
+- identifier_name
 - implicit_return
 - implicitly_unwrapped_optional
 - joined_default_parameter
@@ -92,14 +97,10 @@ opt_in_rules:
 - literal_expression_end_indentation
 - missing_docs
 - modifier_order
-- multiline_arguments:
-    severity: error
-- multiline_arguments_brackets
-- multiline_function_chains:
-    severity: error
+- multiline_arguments
+- multiline_function_chains
 - multiline_literal_brackets
 - multiline_parameters
-- multiline_parameters_brackets
 - nimble_operator
 - no_extension_access_modifier
 - no_grouping_extension
@@ -110,8 +111,7 @@ opt_in_rules:
 - operator_usage_whitespace
 - overridden_super_call
 - override_in_extension
-- pattern_matching_keywords:
-    severity: error
+- pattern_matching_keywords
 - prefixed_toplevel_constant
 - private_action
 - prohibited_super_call
@@ -125,42 +125,40 @@ opt_in_rules:
 - sorted_first_last
 - sorted_imports
 - static_operator
-- strict_fileprivate:
-    severity: error
+- strict_fileprivate
 - strong_iboutlet
 - switch_case_alignment
 - switch_case_on_newline
-- syntactic_sugar:
-    severity: error
+- syntactic_sugar
 - toggle_bool
-- trailing_closure:
-    only_single_muted_parameter: true
-- trailing_newline:
-    severity: error
+- trailing_closure
+- trailing_newline
 - trailing_whitespace
 - type_body_length
-- type_contents_order
+- type_name
 - unavailable_function
 - unneeded_parentheses_in_closure_argument
 - unowned_variable_capture
 - untyped_error_in_catch
 - unused_import
 - unused_optional_binding
-- vertical_parameter_alignment:
-    severity: error
-- vertical_parameter_alignment_on_call:
-    severity: error
-- vertical_whitespace_between_cases
+- vertical_parameter_alignment
+- vertical_parameter_alignment_on_call
 - vertical_whitespace_closing_braces
-- vertical_whitespace_opening_braces
-- weak_delegate:
-    severity: error
+- weak_delegate
 - yoda_condition
 
-# ================================
-# Other rules (enabled by default)
-# ================================
+# =============
+# Rules details
+# =============
 
+closure_body_length:
+    warning: 50
+    error: 80
+    
+convenience_type:
+    severity: error
+    
 control_statement:
     severity: error
 
@@ -187,6 +185,15 @@ function_parameter_count:
 implicit_getter:
     severity: error
 
+identifier_name:
+    max_length:
+        warning: 60
+        error: 80
+    min_length:
+        warning: 1
+    allowed_symbols:
+        - _
+
 large_tuple:
     warning: 3
     error: 4
@@ -194,8 +201,47 @@ large_tuple:
 line_length:
     warning: 180
     error: 200
+
+multiline_arguments:
+    severity: error
+
+multiline_function_chains:
+    severity: error
+    
+pattern_matching_keywords:
+    severity: error
+    
+strict_fileprivate:
+    severity: error
+    
+syntactic_sugar:
+    severity: error
     
 trailing_comma:
-  mandatory_comma: true
+    mandatory_comma: true
 
+trailing_closure:
+    only_single_muted_parameter: true
+
+trailing_newline:
+    severity: error
+    
 type_body_length: 250
+
+type_name:
+    max_length:
+        warning: 60
+        error: 80
+    min_length:
+        warning: 1
+    allowed_symbols:
+        - _
+
+vertical_parameter_alignment:
+    severity: error
+
+vertical_parameter_alignment_on_call:
+    severity: error
+    
+weak_delegate:
+    severity: error

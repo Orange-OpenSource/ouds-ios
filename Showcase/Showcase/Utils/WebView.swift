@@ -39,7 +39,7 @@ struct WebView: UIViewRepresentable {
 
     @MainActor
     func makeUIView(context: Context) -> WKWebView {
-        return WKWebView()
+        WKWebView()
     }
 
     @MainActor

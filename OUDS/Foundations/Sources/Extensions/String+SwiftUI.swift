@@ -14,9 +14,12 @@
 import Foundation
 import SwiftUI
 
+// swiftlint:disable implicitly_unwrapped_optional
+
 extension String {
 
     /// `String` extension to get a `Color` from `self` supposed to be an hexadecimal string representation.
+    /// We assume the value of `self` is a valid hexadecimal string.
     public var color: Color! {
         Color(hexadecimalCode: self)
     }
@@ -40,3 +43,5 @@ extension String {
         // TODO: String manipulation can be costly, add values in Cache
     }
 }
+
+// swiftlint:enable implicitly_unwrapped_optional

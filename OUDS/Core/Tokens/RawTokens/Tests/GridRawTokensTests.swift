@@ -11,8 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import XCTest
 import OUDSTokensRaw
+import XCTest
+
+// swiftlint:disable required_deinit
 
 /// The aim of this tests class is to look for regressions in **grid raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not mandatory and relevant to test each token values.
@@ -199,3 +201,5 @@ final class GridRawTokensTests: XCTestCase {
         XCTAssertLessThan(GridRawTokens.gridColumnCount1000, GridRawTokens.gridColumnCount1200)
     }
 }
+
+// swiftlint:enable required_deinit

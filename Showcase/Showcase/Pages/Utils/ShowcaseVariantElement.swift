@@ -15,6 +15,8 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+// swiftlint:disable force_unwrapping
+
 struct ShowcaseVariantElement: View {
 
     @Environment(\.theme) private var theme
@@ -40,3 +42,5 @@ struct ShowcaseVariantElement: View {
         .padding(.horizontal, theme.spaceFixedMedium)
     }
 }
+
+// swiftlint:enable force_unwrapping

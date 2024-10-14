@@ -11,37 +11,19 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import SwiftUI
+import OUDSThemesOrange
 import OUDSTokensComponent
 import OUDSTokensRaw
 import OUDSTokensSemantic
-import OUDSThemesOrange
+import SwiftUI
 
-// swiftlint:disable line_length
+// swiftlint:disable required_deinit
+// swiftlint:disable no_grouping_extension
+// swiftlint:disable force_unwrapping
+// swiftlint:disable implicitly_unwrapped_optional
 
 // Can be for example a country theme
 class OrangeCustomTheme: OrangeTheme { }
-
-/// Overrides for `FormsTextInputComponentTokens` the  configuration which for this theme.
-/// **Warning: These are random and dumb values**
-extension OrangeCustomTheme { // For FormsTextInputComponentTokens
-
-    public override var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
-    public override var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
-    public override var ftiTitleColor: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
-
-    public override var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightBodyDefault }
-    public override var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
-    public override var ftiSubtitleColor: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
-
-    public override var ftiBackgroundColor: ColorSemanticToken { colorBackgroundDefaultPrimary }
-
-    public override var ftiBorderColor: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink800, dark: ColorRawTokens.colorDecorativeShockingPink200) }
-
-    public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
-
-    public override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthDefault }
-}
 
 extension OrangeCustomTheme { // For ColorSemanticTokens
 
@@ -65,4 +47,8 @@ extension OrangeCustomTheme { // For ButtonsComponentTokens
 
     override var buttonTypography: MultipleTypographyTokens { typeDisplaySmall }
 }
-// swiftlint:enable line_length
+
+// swiftlint:enable required_deinit
+// swiftlint:enable no_grouping_extension
+// swiftlint:enable force_unwrapping
+// swiftlint:enable implicitly_unwrapped_optional

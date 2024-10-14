@@ -11,10 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import SwiftUI
 import OUDS
 import OUDSTokensRaw
 import OUDSTokensSemantic
+import SwiftUI
 
 // MARK: - Elevation Token Page
 
@@ -48,7 +48,6 @@ struct ElevationTokenPage: View {
                 .foregroundColor(theme.colorBackgroundDefaultSecondary?.color(for: colorScheme))
                 .shadow(elevation: token)
                 .padding(.bottom, 2)
-
         }
     }
 }

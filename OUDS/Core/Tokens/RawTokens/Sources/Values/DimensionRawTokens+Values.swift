@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension DimensionRawTokens {
 
@@ -58,3 +60,5 @@ extension DimensionRawTokens {
     public static let dimension9000: DimensionRawToken = dimensionBase * 220
     public static let dimension11000: DimensionRawToken = dimensionBase * 260
 }
+
+// swiftlint:enable missing_docs

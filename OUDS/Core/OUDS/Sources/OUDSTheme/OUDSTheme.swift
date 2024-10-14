@@ -40,5 +40,7 @@ open class OUDSTheme {
         self.customFontFamily = customFontFamily
     }
 
+    deinit { }
+
     // Please refer to extensions for properties, it will be more clear
 }

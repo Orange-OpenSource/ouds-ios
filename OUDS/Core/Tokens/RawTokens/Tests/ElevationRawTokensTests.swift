@@ -11,10 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import XCTest
 import OUDSFoundations
 import OUDSTokensRaw
 import SwiftUI
+import XCTest
+
+// swiftlint:disable required_deinit
 
 /// The aim of this tests class is to look for regressions in **elevation raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not mandatory and relevant to test each token values.
@@ -347,3 +349,5 @@ final class ElevationRawTokensTests: XCTestCase {
         XCTAssertLessThanOrEqual(left.radius, right.radius)
     }
 }
+
+// swiftlint:enable required_deinit

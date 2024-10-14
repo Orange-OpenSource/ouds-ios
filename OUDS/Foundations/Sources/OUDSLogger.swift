@@ -23,26 +23,37 @@ public struct OUDSLogger {
     private static let bullet: String = "🍊"
     private static let prefix: String = "\(bullet) [OUDS]"
 
+    /// If compile mode is set as DEBUG, logs the message with a "debug" prefix
+    /// and the `debug` method of the `os.Logger`
+    /// - Parameter message: The message to log after the decoration
     public static func debug(_ message: String) {
         #if DEBUG
         logger.debug("\(prefix):debug: 🪲 \(message)")
         #endif
     }
 
+    /// Logs the message with a "log" prefix and the `log` method of the `os.Logger`
+    /// - Parameter message: The message to log after the prefix
     public static func log(_ message: String) {
         #if DEBUG
         logger.log("\(prefix): 🗒️ \(message)")
         #endif
     }
 
+    /// Logs the message with a "info" prefix and the `info` method of the `os.Logger`
+    /// - Parameter message: The message to log after the prefix
     public static func info(_ message: String) {
         logger.info("\(prefix):info: ℹ️ \(message)")
     }
 
+    /// Logs the message with a "warning" prefix and the `warning` method of the `os.Logger`
+    /// - Parameter message: The message to log after the prefix
     public static func warning(_ message: String) {
         logger.warning("\(prefix):warning: ⚠️ \(message)")
     }
 
+    /// Logs the message with a "error" prefix and the `error` method of the `os.Logger`
+    /// - Parameter message: The message to log after the prefix
     public static func error(_ message: String) {
         logger.error("\(prefix):error: 💥 \(message)")
     }

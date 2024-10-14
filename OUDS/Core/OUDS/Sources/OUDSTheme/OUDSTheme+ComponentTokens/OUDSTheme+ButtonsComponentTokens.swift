@@ -16,6 +16,9 @@ import OUDSTokensComponent
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// TODO: Check if we can get rid of alias colors tokens which are optional
+// swiftlint:disable force_unwrapping
+
 /// Defines for `OUDSButton` the basic configuration which can be overriden in subthemes / subclasses of this theme.
 /// **Warning: These are random and dumb values**
 extension OUDSTheme: ButtonsComponentTokens {
@@ -35,3 +38,5 @@ extension OUDSTheme: ButtonsComponentTokens {
 
     @objc open var buttonTypography: MultipleTypographyTokens { typeDisplayMedium }
 }
+
+// swiftlint:enable force_unwrapping

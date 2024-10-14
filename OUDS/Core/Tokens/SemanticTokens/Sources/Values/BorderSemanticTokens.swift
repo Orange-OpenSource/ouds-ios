@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// This is a group of semantic tokens for **borders**.
 /// It defines all `BorderWidthSemanticToken`, `BorderRadiusSemanticToken` and `BorderStyleSemanticToken` a theme must have.
 ///
@@ -43,3 +45,5 @@ public protocol BorderSemanticTokens {
     var borderStyleDefault: BorderStyleSemanticToken { get }
     var borderStyleDrag: BorderStyleSemanticToken { get }
 }
+
+// swiftlint:enable missing_docs

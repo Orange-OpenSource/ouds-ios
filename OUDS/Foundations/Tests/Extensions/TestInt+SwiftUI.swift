@@ -16,6 +16,8 @@ import OUDSFoundations
 import SwiftUI
 import XCTest
 
+// swiftlint:disable required_deinit
+
 /// Class to test `Int` extensions related to `SwiftUI`
 final class TestInt_SwiftUI: XCTestCase {
 
@@ -56,7 +58,9 @@ final class TestInt_SwiftUI: XCTestCase {
         XCTAssertTrue(951.fontWeight == Font.Weight.regular)
 
         // Other default cases
-        XCTAssertTrue(1000.fontWeight == Font.Weight.regular)
+        XCTAssertTrue(1_000.fontWeight == Font.Weight.regular)
         XCTAssertTrue((-1).fontWeight == Font.Weight.regular)
     }
 }
+
+// swiftlint:enable required_deinit

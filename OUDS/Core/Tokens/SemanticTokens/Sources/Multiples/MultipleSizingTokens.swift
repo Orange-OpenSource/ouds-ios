@@ -33,11 +33,15 @@ public final class MultipleSizingTokens: NSObject {
         self.regular = regular
     }
 
+    deinit { }
+
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `MultipleSizingTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
-    public override func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleSizingTokens else { return false }
+    override public func isEqual(_ object: Any?) -> Bool {
+        guard let other = object as? MultipleSizingTokens else {
+            return false
+        }
         return self.compact == other.compact && self.regular == other.regular
     }
 }

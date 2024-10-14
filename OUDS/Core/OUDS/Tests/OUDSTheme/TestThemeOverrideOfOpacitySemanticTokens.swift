@@ -11,8 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import XCTest
 import OUDS
+import XCTest
+
+// swiftlint:disable required_deinit
+// swiftlint:disable implicitly_unwrapped_optional
 
 // WARNING: Maybe removed in the future or needs to be updated with token generation
 
@@ -60,3 +63,6 @@ final class TestThemeOverrideOfOpacitySemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.opacityOpaque == MockTheme.mockThemeOpacityRawToken)
     }
 }
+
+// swiftlint:enable required_deinit
+// swiftlint:enable implicitly_unwrapped_optional

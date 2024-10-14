@@ -15,6 +15,8 @@
 // [File to generate with the tokenator]
 // WARNING: Not synchronized anymore with the Figjam
 
+// swiftlint:disable missing_docs
+
 /// This is a group of semantic tokens for **colors**.
 /// It defines all `ColorSemanticToken` and `ColorAliasSemanticToken` a theme must have.
 /// Because `ColorSemanticToken` can be based on `ColorAliasSemanticToken` which are optional, the instanciation of such values can result to `nil`, 
@@ -349,3 +351,5 @@ public protocol ColorSemanticTokens {
     // TODO: #124 - Add missing colorDecorativeSkin*
     // TODO: #124 - Add missing colorChart*
 }
+
+// swiftlint:enable missing_docs

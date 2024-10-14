@@ -17,5 +17,7 @@ import OUDSThemesOrange
 /// It can overrides any properties from its superclass, and can be derived too.
 open class InverseTheme: OrangeTheme {
 
+    deinit { }
+
     // For clarity reasons, please override OUDSTheme properties in extensions
 }

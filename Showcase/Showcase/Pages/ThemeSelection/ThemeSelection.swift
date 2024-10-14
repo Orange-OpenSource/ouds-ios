@@ -80,6 +80,8 @@ final class ThemeProvider: ObservableObject {
             currentTheme = defaultTheme
         }
     }
+
+    deinit { }
 }
 
 // MARK: - Theme Selection Button

@@ -15,6 +15,9 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+// TODO: Check if we can get rid of colors alaises tokens to avoid handling optional values
+// swiftlint:disable force_unwrapping
+
 struct SizingTokenPage: View {
 
     @Environment(\.theme) private var theme
@@ -53,10 +56,13 @@ struct SizingTokenPage: View {
                     .foregroundColor(.blue)
                 //                    .foregroundColor((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO: Update when color is available
                     .frame(width: token, height: token, alignment: .center)
+                    .accessibilityHidden(true)
             }
         }
     }
 }
+
+// swiftlint:enable force_unwrapping
 
 // MARK: - Named Spacing
 

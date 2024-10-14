@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import SwiftUI
 import OUDSTokensSemantic
+import SwiftUI
 
 struct EmptyState: View {
 
@@ -22,6 +22,7 @@ struct EmptyState: View {
         ScrollView {
             VStack(alignment: .center, spacing: theme.spaceFixedMedium) {
                 Image("il_empty_screen")
+                    .accessibilityHidden(true)
                     .frame(width: 160, height: 160, alignment: .center)
 
                 VStack(alignment: .center, spacing: theme.spaceFixedShorter) {

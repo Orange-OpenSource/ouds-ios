@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// This is a group of semantic tokens for **spacing**.
 /// It defines all `SpacingSemanticToken` a theme must have.
 ///
@@ -142,3 +144,5 @@ public protocol SpacingSemanticTokens {
     var spaceRowGapWithIconMedium: SpacingGapStackSemanticToken { get }
     var spaceRowGapWithIconTall: SpacingGapStackSemanticToken { get }
 }
+
+// swiftlint:enable missing_docs

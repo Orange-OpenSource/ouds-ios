@@ -48,6 +48,7 @@ _Note: Please transform `- [ ]` into `- (NA)` in the description when things are
 #### Development
 
 - [ ] My change follows the [developer guide](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md)
+- [ ] I checked my changes do not add new SwiftLint warnings
 - [ ] <!-- OPTIONAL --> I have added unit tests to cover my changes _(optional)_
 
 #### Documentation

@@ -15,6 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// swiftlint:disable implicitly_unwrapped_optional
 extension MockTheme {
 
     static let mockThemeColorRawToken: ColorRawToken = "#68489D"
@@ -330,3 +331,4 @@ extension MockTheme {
     // TODO: #124 - Add missing colorDecorativeSkin*
     // TODO: #124 - Add missing colorChart*
 }
+// swiftlint:enable  implicitly_unwrapped_optional

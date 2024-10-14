@@ -17,7 +17,7 @@ import OUDSTokensSemantic
 
 extension MockTheme {
 
-    static let mockThemeBorderWidthRawToken: BorderWidthRawToken = 1337
+    static let mockThemeBorderWidthRawToken: BorderWidthRawToken = 1_337
     static let mockThemeBorderRadiusRawToken: BorderRadiusRawToken = 42
     static let mockThemeBorderStyleRawToken: BorderStyleRawToken = "(╯°□°）╯︵ ┻━┻"
 

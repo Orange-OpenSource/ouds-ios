@@ -11,8 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import XCTest
 import OUDSTokensRaw
+import XCTest
+
+// swiftlint:disable required_deinit
 
 /// The aim of this tests class is to look for regressions in **opacity raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not relevant to test each token values.
@@ -97,3 +99,5 @@ final class OpacityRawTokensTests: XCTestCase {
         XCTAssertBetween(min: 0, OpacityRawTokens.opacity900, max: 1)
     }
 }
+
+// swiftlint:enable required_deinit
