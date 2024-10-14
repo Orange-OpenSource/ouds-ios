@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DemoApp] Fix some design issues and mutualize some UI elements ([#189](https://github.com/Orange-OpenSource/ouds-ios/issues/189))
 - [DemoApp] Add sizing token screen in demo app ([#150](https://github.com/Orange-OpenSource/ouds-ios/issues/150))
 - [DemoApp] Add spacing token screen in demo app ([#149](https://github.com/Orange-OpenSource/ouds-ios/issues/149))
 - [Library] Add color semantic tokens `colorContentTransparentDefault`, `colorBorderTransparentDefault` and `colorBackgroundTransparentDefault` (October 8th) ([#177](https://github.com/Orange-OpenSource/ouds-ios/issues/177))

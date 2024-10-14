@@ -34,7 +34,7 @@ struct ShowcaseElementPage: View {
                     .accessibilityHidden(true)
 
                 Text(LocalizedStringKey(element.description))
-                    .typeBodyDefaultMedium(theme)
+                    .typeBodyDefaultLarge(theme)
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaceFixedMedium)
 

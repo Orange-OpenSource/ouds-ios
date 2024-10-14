@@ -36,33 +36,25 @@ struct SpacingTokenPage: View {
 
     // MARK: Private helpers
 
-    private func illustration(for spacingName: NamedSpacing) -> some View {
-        illustration(for: spacingName.token(from: theme), named: spacingName.rawValue)
-    }
+    private func illustration(for namedSpacing: NamedSpacing) -> some View {
+        let token = namedSpacing.token(from: theme)
+        let name = namedSpacing.rawValue
+        let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
+        let value = String(format: "horizontal %@\n %.0f pt",
+                           horizontalSizeClass == .regular ? "regular" : "compact",
+                           horizontalDimensionRawToken)
 
-    private func illustration(for spacingSementicToken: MultipleSpacingTokens, named: String) -> some View {
-
-        let horizontalDimensionRawToken = spacingSementicToken.dimension(for: horizontalSizeClass ?? .regular)
-        let verticalDimensionRawToken = spacingSementicToken.dimension(for: verticalSizeClass ?? .regular)
-        return HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
                     .fill((theme.colorBackgroundEmphasizedPrimary?.color(for: colorScheme))!)
                     .frame(width: 64, height: 64, alignment: .center)
                 Rectangle()
-//                    .fill((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO: Update when color is available
+                //                    .fill((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO: Update when color is available
                     .fill(.blue)
                     .frame(width: horizontalDimensionRawToken, height: 64, alignment: .center)
             }
-            VStack(alignment: .leading) {
-                Text(named).typeBodyStrongLarge(theme)
-                Text("horizontal \(horizontalSizeClass == .regular ? "regular" : "compact") \(horizontalDimensionRawToken, specifier: "%.0f") pt")
-                Text("vertical \(verticalSizeClass == .regular ? "regular" : "compact") \(verticalDimensionRawToken, specifier: "%.0f") pt")
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .foregroundColor(theme.colorContentDefault?.color(for: colorScheme))
         }
-        .padding(.vertical, theme.spaceFixedShorter)
     }
 }
 

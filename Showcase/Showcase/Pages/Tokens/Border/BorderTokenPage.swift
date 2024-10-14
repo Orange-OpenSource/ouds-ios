@@ -26,39 +26,41 @@ struct BorderTokenPage: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .center, spacing: theme.spaceFixedMedium) {
-            groupOfIllustrations(name: "Width") {
-                ForEach(Width.allCases, id: \.rawValue) { width in
-                    let token = width.token(from: theme)
-
-                    illustration(width: token,
-                                 radius: theme.borderRadiusNone,
-                                 style: theme.borderStyleDefault,
-                                 name: width.rawValue,
-                                 value: token)
+        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+            Section {
+                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                    ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
+                        illustration(for: namedWidth)
+                    }
                 }
+            } header: {
+                Text("Width")
+                    .typeHeadingLarge(theme)
+                    .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
             }
 
-            groupOfIllustrations(name: "Radius") {
-                ForEach(Radius.allCases, id: \.rawValue) { radius in
-                    let token = radius.token(from: theme)
-                    illustration(width: theme.borderWidthDefault,
-                                 radius: token,
-                                 style: theme.borderStyleDefault,
-                                 name: radius.rawValue,
-                                 value: token)
+            Section {
+                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                    ForEach(NamedBorderRadius.allCases, id: \.rawValue) { namedRadius in
+                        illustration(for: namedRadius)
+                    }
                 }
+            } header: {
+                Text("Radius")
+                    .typeHeadingLarge(theme)
+                    .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
             }
 
-            groupOfIllustrations(name: "Style") {
-                illustration(width: theme.borderWidthMedium,
-                             radius: theme.borderRadiusNone,
-                             style: theme.borderStyleDefault,
-                             name: "borderStyleDefault")
-                illustration(width: theme.borderWidthMedium,
-                             radius: theme.borderRadiusNone,
-                             style: theme.borderStyleDrag,
-                             name: "borderStyleDrag")
+            Section {
+                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                    ForEach(NamedBorderStyle.allCases, id: \.rawValue) { namedStyle in
+                        illustration(for: namedStyle)
+                    }
+                }
+            } header: {
+                Text("Style")
+                    .typeHeadingLarge(theme)
+                    .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
             }
         }
         .padding(.horizontal, theme.spaceFixedMedium)
@@ -66,46 +68,56 @@ struct BorderTokenPage: View {
 
     // MARK: Private helpers
 
-    @ViewBuilder
-    private func groupOfIllustrations<Illustration> (name: String, @ViewBuilder illustrations: () -> Illustration) -> some View where Illustration: View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedShorter) {
-            Text(name).typeHeadingLarge(theme)
+    private var rectangle: some View {
+        Rectangle()
+            .fill(theme.colorBackgroundDefaultSecondary?.color(for: colorScheme) ?? Color(UIColor.systemGroupedBackground))
+            .frame(width: 64, height: 64)
+    }
 
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-                illustrations()
-            }
+    private func illustration(for namedWidth: NamedBorderWidth) -> some View {
+        let token = namedWidth.token(from: theme)
+        let name = namedWidth.rawValue
+        let value = String(format: "(%.0f) pt", token)
+
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            rectangle
+                .oudsBorder(style: theme.borderStyleDefault,
+                            width: token,
+                            radius: theme.borderRadiusNone,
+                            color: theme.colorBorderDefault!)
         }
     }
 
-    private func illustration(
-        width: BorderWidthSemanticToken,
-        radius: BorderRadiusSemanticToken,
-        style: BorderStyleSemanticToken,
-        name: String,
-        value: Double? = nil) -> some View {
-        HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
+    private func illustration(for namedRadius: NamedBorderRadius) -> some View {
+        let token = namedRadius.token(from: theme)
+        let name = namedRadius.rawValue
+        let value = String(format: "(%.0f) pt", token)
 
-            Rectangle()
-                .fill(theme.colorBackgroundDefaultSecondary?.color(for: colorScheme) ?? Color(UIColor.systemGroupedBackground))
-                .frame(width: 64, height: 64)
-                .oudsBorder(style: style,
-                            width: width,
-                            radius: radius,
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            rectangle
+                .oudsBorder(style: theme.borderStyleDefault,
+                            width: theme.borderWidthDefault,
+                            radius: token,
                             color: theme.colorBorderDefault!)
-
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-                Text(name).bold()
-                if let value {
-                    Text("\(value, specifier: "%.1f")")
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.vertical, theme.spaceFixedShorter)
+    }
+
+    private func illustration(for namedStyle: NamedBorderStyle) -> some View {
+        let token = namedStyle.token(from: theme)
+        let name = namedStyle.rawValue
+        let value = token
+
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            rectangle
+                .oudsBorder(style: token,
+                            width: theme.borderWidthDefault,
+                            radius: theme.borderRadiusNone,
+                            color: theme.colorBorderDefault!)
+        }
     }
 }
 
-private enum Radius: String, CaseIterable {
+private enum NamedBorderRadius: String, CaseIterable {
     case borderRadiusNone
     case borderRadiusDefault
     case borderRadiusShort
@@ -128,7 +140,7 @@ private enum Radius: String, CaseIterable {
     }
 }
 
-private enum Width: String, CaseIterable {
+private enum NamedBorderWidth: String, CaseIterable {
 
     case borderWidthNone
     case borderWidthDefault
@@ -154,6 +166,20 @@ private enum Width: String, CaseIterable {
             return theme.borderWidthThicker
         case .borderWidthOutsideFocus:
             return theme.borderWidthOutsideFocus
+        }
+    }
+}
+
+private enum NamedBorderStyle: String, CaseIterable {
+    case borderStyleDefault
+    case borderStyleDrag
+
+    func token(from theme: OUDSTheme) -> BorderStyleSemanticToken {
+        switch self {
+        case .borderStyleDefault:
+            return theme.borderStyleDefault
+        case .borderStyleDrag:
+            return theme.borderStyleDrag
         }
     }
 }

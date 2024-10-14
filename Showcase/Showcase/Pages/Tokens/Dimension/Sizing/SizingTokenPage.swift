@@ -36,12 +36,12 @@ struct SizingTokenPage: View {
 
     // MARK: Private helpers
 
-    private func illustration(for sizingName: NamedSizing) -> some View {
-        illustration(for: sizingName.token(from: theme), named: sizingName.rawValue)
-    }
+    private func illustration(for namedSizing: NamedSizing) -> some View {
+        let token = namedSizing.token(from: theme)
+        let name = namedSizing.rawValue
+        let value = String(format: "(%.0f) pt", token)
 
-    private func illustration(for sizingSementicToken: SizingSemanticToken, named: String) -> some View {
-        HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
                     .fill((theme.colorBackgroundEmphasizedPrimary?.color(for: colorScheme))!)
@@ -52,17 +52,9 @@ struct SizingTokenPage: View {
                     .renderingMode(.template)
                     .foregroundColor(.blue)
                 //                    .foregroundColor((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO: Update when color is available
-                    .frame(width: sizingSementicToken, height: sizingSementicToken, alignment: .center)
+                    .frame(width: token, height: token, alignment: .center)
             }
-
-            VStack(alignment: .leading) {
-                Text(named).typeBodyStrongLarge(theme)
-                Text("(\(sizingSementicToken, specifier: "%.0f")) pt")
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .foregroundColor(theme.colorContentDefault?.color(for: colorScheme))
         }
-        .padding(.vertical, theme.spaceFixedShorter)
     }
 }
 
