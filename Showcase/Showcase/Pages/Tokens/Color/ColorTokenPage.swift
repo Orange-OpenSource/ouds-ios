@@ -60,7 +60,7 @@ struct ColorTokenPage: View {
     }
 
     private func illustrationForBackgroundAlways() -> some View {
-        ForEach(NamedColor.Background.Action.allCases, id: \.rawValue) { namedColorToken in
+        ForEach(NamedColor.Background.Always.allCases, id: \.rawValue) { namedColorToken in
             illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
         }
     }
@@ -69,28 +69,44 @@ struct ColorTokenPage: View {
     @ViewBuilder
     private func illustration(for token: MultipleColorTokens?, name: String) -> some View {
         if let token {
-            let rawToken = colorScheme == .dark ? token.dark : token.light
-            illustration(for: rawToken, name: name)
-        }
-    }
+            let colorRawToken = colorScheme == .dark ? token.dark : token.light
 
-    private func illustration(for colorRawToken: ColorRawToken, name: String) -> some View {
-        HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
-
-            Rectangle()
-                .fill(colorRawToken.color)
-                .frame(width: 64, height: 64)
-
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-                Text(name).bold()
-                Text(colorRawToken)
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
+                Rectangle()
+                    .fill(colorRawToken.color)
+                    .frame(width: 64, height: 64)
+                    .modifier(ExtraBorderModifier(colorRawToken: colorRawToken))
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.vertical, theme.spaceFixedShorter)
     }
 }
 
+// MARK: - Extra border modifier
+
+// Add a border if color define by token is equal to default background color of the root view
+private struct ExtraBorderModifier: ViewModifier {
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    let colorRawToken: ColorRawToken
+
+    func body(content: Content) -> some View {
+        let defaultContentBackground = theme.colorBackgroundDefaultPrimary?.color(for: colorScheme) ?? Color(UIColor.systemBackground)
+        let addBorder = (colorRawToken.color) == defaultContentBackground
+
+        if addBorder {
+            content.oudsBorder(style: theme.borderStyleDefault,
+                               width: theme.borderWidthThin,
+                               radius: theme.borderRadiusNone,
+                               color: theme.colorContentDefault!)
+        } else {
+            content
+        }
+    }
+}
+
+// swiftlint:disable nesting
 private enum NamedColor {
     enum Background: String, CaseIterable {
 
@@ -171,6 +187,7 @@ private enum NamedColor {
         }
 
         // MARK: Semantic token - Colors - Background - Action
+
         enum Action: String, CaseIterable {
             case colorBackgroundActionEnabled
             case colorBackgroundActionEnabledOnBackgroundEmphasized
