@@ -40,10 +40,12 @@ public final class MultipleFontLineHeightTokens: NSObject {
         self.regular = regular
     }
 
+    deinit { }
+
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `MultipleFontTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
-    public override func isEqual(_ object: Any?) -> Bool {
+    override public func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? MultipleFontLineHeightTokens else { return false }
         return self.compact == object.compact && self.regular == object.regular
     }

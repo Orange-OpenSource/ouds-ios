@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension TypographyRawTokens {
 
@@ -76,11 +78,11 @@ extension TypographyRawTokens {
     public static let fontLetterSpacing750: TypographyFontLetterSpacingRawToken = 750
     public static let fontLetterSpacing850: TypographyFontLetterSpacingRawToken = 850
     public static let fontLetterSpacing950: TypographyFontLetterSpacingRawToken = 950
-    public static let fontLetterSpacing1050: TypographyFontLetterSpacingRawToken = 1050
-    public static let fontLetterSpacing1150: TypographyFontLetterSpacingRawToken = 1150
-    public static let fontLetterSpacing1250: TypographyFontLetterSpacingRawToken = 1250
-    public static let fontLetterSpacing1450: TypographyFontLetterSpacingRawToken = 1450
-    public static let fontLetterSpacing1850: TypographyFontLetterSpacingRawToken = 1850
+    public static let fontLetterSpacing1050: TypographyFontLetterSpacingRawToken = 1_050
+    public static let fontLetterSpacing1150: TypographyFontLetterSpacingRawToken = 1_150
+    public static let fontLetterSpacing1250: TypographyFontLetterSpacingRawToken = 1_250
+    public static let fontLetterSpacing1450: TypographyFontLetterSpacingRawToken = 1_450
+    public static let fontLetterSpacing1850: TypographyFontLetterSpacingRawToken = 1_850
 
     // MARK: Primitive token - Typography - Font family
 
@@ -110,3 +112,5 @@ extension TypographyRawTokens {
     public static let fontWeight900: TypographyFontWeightRawToken = 900
     public static let fontWeight950: TypographyFontWeightRawToken = 950
 }
+
+// swiftlint:enable missing_docs

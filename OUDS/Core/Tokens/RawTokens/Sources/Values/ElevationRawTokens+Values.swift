@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension ElevationRawTokens {
 
@@ -42,3 +44,5 @@ extension ElevationRawTokens {
     public static let elevationBlur600: ElevationRawToken = 12
     public static let elevationBlur700: ElevationRawToken = 20
 }
+
+// swiftlint:enable missing_docs

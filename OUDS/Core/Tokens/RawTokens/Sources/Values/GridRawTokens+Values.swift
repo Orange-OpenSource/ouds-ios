@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension GridRawTokens {
 
@@ -30,7 +32,7 @@ extension GridRawTokens {
 
     public static let gridMaxWidthExtraCompact: GridRawToken = 389
     public static let gridMaxWidthCompact: GridRawToken = 852
-    public static let gridMaxWidthRegular: GridRawToken = 1336
+    public static let gridMaxWidthRegular: GridRawToken = 1_336
 
     // MARK: Primitive token - Grid - Margin
 
@@ -87,3 +89,5 @@ extension GridRawTokens {
     public static let gridRegularMargin: GridRawToken = gridMargin500
     public static let gridRegularColumnGap: GridRawToken = gridColumnGap300
 }
+
+// swiftlint:enable missing_docs

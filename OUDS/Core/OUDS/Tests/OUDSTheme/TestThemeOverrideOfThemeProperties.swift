@@ -16,6 +16,9 @@ import XCTest
 
 // WARNING: Maybe removed in the future or needs to be updated with token generation
 
+// swiftlint:disable required_deinit
+// swiftlint:disable implicitly_unwrapped_optional
+
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
 /// In fact the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols some properties.
 /// These properties should be overridable by subclasses like the `OrangeTheme` default theme.
@@ -35,3 +38,6 @@ final class TestThemeOverrideOfThemeProperties: XCTestCase {
         XCTAssertTrue(inheritedTheme.customFontFamily == "Mr R08øT")
     }
 }
+
+// swiftlint:enable required_deinit
+// swiftlint:enable implicitly_unwrapped_optional

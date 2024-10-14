@@ -35,10 +35,12 @@ public final class MultipleSpacingTokens: NSObject {
         self.regular = regular
     }
 
+    deinit { }
+
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `MultipleSpacingTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
-    public override func isEqual(_ object: Any?) -> Bool {
+    override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleSpacingTokens else { return false }
         return self.compact == other.compact && self.regular == other.regular
     }

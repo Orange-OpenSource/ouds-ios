@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// This is a group of semantic tokens for **elevations**.
 /// It defines all elevation semantic tokens a theme must have. (`ElevationXSemanticToken`,`ElevationYSemanticToken`,
 /// `ElevationBlurSemanticToken` and `ElevationColorSemanticToken`)
@@ -113,3 +115,5 @@ public protocol ElevationSemanticTokens {
 
     var elevationFocus: ElevationCompositeSemanticToken { get }
 }
+
+// swiftlint:enable missing_docs

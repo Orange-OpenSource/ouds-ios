@@ -11,11 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import XCTest
 import OUDSTokensRaw
 import TestsUtils
+import XCTest
 
 // swiftlint:disable type_body_length
+// swiftlint:disable required_deinit
 
 /// The aim of this tests class is to look for regressions in **color raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not relevant to test each token values.
@@ -541,3 +542,4 @@ final class ColorRawTokensTests: XCTestCase {
 }
 
 // swiftlint:enable type_body_length
+// swiftlint:enable required_deinit

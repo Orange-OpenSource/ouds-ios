@@ -11,9 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import XCTest
 import OUDSTokensRaw
 import OUDSTokensSemantic
+import XCTest
+
+// swiftlint:disable required_deinit
 
 /// To ensure the `MultipleElevationTokens` is tested as a wrapper of semantic tokens for light and dark color schemes.
 final class MultipleElevationTokensTests: XCTestCase {
@@ -55,3 +57,5 @@ final class MultipleElevationTokensTests: XCTestCase {
         XCTAssertFalse(first.isEqual(sixth))
     }
 }
+
+// swiftlint:enable required_deinit

@@ -11,9 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import XCTest
 import OUDSTokensRaw
 import OUDSTokensSemantic
+import XCTest
+
+// swiftlint:disable required_deinit
 
 /// To ensure the `MultipleFontLetterSpacingTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
 final class MultipleFontLetterSpacingTokensTests: XCTestCase {
@@ -55,3 +57,4 @@ final class MultipleFontLetterSpacingTokensTests: XCTestCase {
         XCTAssertFalse(first.isEqual(sixth))
     }
 }
+// swiftlint:enable required_deinit

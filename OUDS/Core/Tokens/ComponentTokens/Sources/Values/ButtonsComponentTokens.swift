@@ -13,6 +13,8 @@
 
 import OUDSTokensSemantic
 
+// swiftlint:disable missing_docs
+
 /// This is a component tokens list for buttons like `OUDSButton`.
 /// **Warning: This is a draft component **
 public protocol ButtonsComponentTokens {
@@ -38,3 +40,5 @@ public protocol ButtonsComponentTokens {
 
     var buttonTypography: MultipleTypographyTokens { get }
 }
+
+// swiftlint:enable missing_docs

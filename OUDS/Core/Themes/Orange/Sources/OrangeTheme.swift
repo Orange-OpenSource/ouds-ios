@@ -17,5 +17,7 @@ import OUDS
 /// It can overrides any properties from its superclass, and can be derived too.
 open class OrangeTheme: OUDSTheme {
 
+    deinit { }
+
     // For clarity reasons, please override OUDSTheme properties in extensions
 }

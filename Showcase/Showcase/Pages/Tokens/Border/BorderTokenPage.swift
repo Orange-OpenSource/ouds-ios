@@ -11,12 +11,13 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import SwiftUI
 import OUDS
+import OUDSComponents
 import OUDSTokensSemantic
-import OUDSComponents // for BorderStyleModifier
+import SwiftUI
 
-// Remark: do we need to keep BorderStyleModifier in OUDSComponent or move it to OUDS or OUDSSementicToken ?
+// TODO: Check if we can get rid of alias colors tokens which are optional
+// swiftlint:disable force_unwrapping
 
 struct BorderTokenPage: View {
 
@@ -116,6 +117,7 @@ struct BorderTokenPage: View {
         }
     }
 }
+// swiftlint:enable force_unwrapping
 
 private enum NamedBorderRadius: String, CaseIterable {
     case borderRadiusNone

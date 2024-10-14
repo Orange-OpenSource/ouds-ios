@@ -26,5 +26,7 @@ final class MockTheme: OUDSTheme {
         super.init(customFontFamily: customFont)
     }
 
+    deinit { }
+
     // Please refer to extensions
 }

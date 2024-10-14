@@ -16,6 +16,7 @@
   * [About release note](#about-release-note)
   * [About changelog](#about-changelog)
 - [Use of Gitleaks](#use-of-gitleaks)
+- [Linter](#linter)
 - [CI/CD](#cicd)
 
 ## Technical preconditions
@@ -462,6 +463,13 @@ gitleaks detect -v -l debug --source .
 Note that we face some issues about the use of _Gitleaks GitHub Action_ and _Gitleaks_ as CLI command, for fur further details see [#131](https://github.com/gitleaks/gitleaks-action/issues/131), [#132](https://github.com/gitleaks/gitleaks-action/issues/132) and [#1331](https://github.com/gitleaks/gitleaks/issues/1331).
 
 Remember _Gitleaks_ is also used in GitHub project side thanks to the [dedicated GitHub Action](https://github.com/marketplace/actions/gitleaks) but these controls are done online once commits have left the local environment.
+
+## Linter
+
+We use _SwiftLint_ in this project so as to be sure the source code follows defined guidelines for the syntax and other points.
+You must run _SwiftLint_ in CLI or using _Xcode_ to be sure you don't keep and submit warnings.
+In most of cases you **must** fiw warnigns, but it could happen some of them should be disabled, mainly for tests cases.
+Explain why in yout commtis and pull request comments you choose to disable them.
 
 ## CI/CD
 

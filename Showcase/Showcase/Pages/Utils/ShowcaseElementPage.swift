@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import SwiftUI
 import OUDS
 import OUDSTokensSemantic
+import SwiftUI
 
 struct ShowcaseElementPage: View {
 
@@ -37,7 +37,6 @@ struct ShowcaseElementPage: View {
                     .typeBodyDefaultLarge(theme)
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaceFixedMedium)
-
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)

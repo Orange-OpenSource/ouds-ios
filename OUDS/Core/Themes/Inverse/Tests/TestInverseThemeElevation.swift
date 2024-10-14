@@ -11,9 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import XCTest
 import OUDS
 import OUDSThemesInverse
+import XCTest
+
+// swiftlint:disable required_deinit
+// swiftlint:disable implicitly_unwrapped_optional
 
 /// `InverseTheme` is a quite particular theme with "inverse" color palette. Is it neuther a light mode theme nor a dark mode theme.
 /// This "inverse" mode as colors which, for a given semantic token, has the same value for both light and dark mode.
@@ -41,3 +44,6 @@ final class TestInverseThemeElevationColors: XCTestCase {
         XCTAssertEqual(inverseTheme.elevationFocus.light, inverseTheme.elevationFocus.dark)
     }
 }
+
+// swiftlint:enable required_deinit
+// swiftlint:enable implicitly_unwrapped_optional

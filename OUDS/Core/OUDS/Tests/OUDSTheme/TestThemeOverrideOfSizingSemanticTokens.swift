@@ -11,10 +11,13 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import XCTest
 import OUDS
+import XCTest
 
 // WARNING: Maybe removed in the future or needs to be updated with token generation
+
+// swiftlint:disable required_deinit
+// swiftlint:disable implicitly_unwrapped_optional
 
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
 /// In fact the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols _sizing semantic tokens_.
@@ -296,3 +299,6 @@ final class TestThemeOverrideOfSizingSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.sizeMaxWidthTypeBodyLarge.isEqual(MockTheme.mockThemeSizeCompositeToken))
     }
 }
+
+// swiftlint:enable required_deinit
+// swiftlint:enable implicitly_unwrapped_optional

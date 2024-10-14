@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
 import OUDSFoundations
+import OUDSTokensRaw
 import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of `ColorRawToken` depending to color scheme.
@@ -65,10 +65,12 @@ public final class MultipleColorTokens: NSObject {
         self.init(light: light, dark: dark)
     }
 
+    deinit { }
+
     /// Returns `true` if `self` and `object` has the same `light` and `dark` values and with `object`
     /// as a `MultipleColorRawToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
-    public override func isEqual(_ object: Any?) -> Bool {
+    override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleColorTokens else { return false }
         return self.light == other.light && self.dark == other.dark
     }

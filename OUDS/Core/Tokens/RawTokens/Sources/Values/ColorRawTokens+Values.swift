@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension ColorRawTokens {
 
@@ -198,3 +200,5 @@ extension ColorRawTokens {
     public static let colorTransparentWhite800: ColorRawToken = apply(opacity: OpacityRawTokens.opacity800, on: colorFunctionalWhite)
     public static let colorTransparentWhite900: ColorRawToken = apply(opacity: OpacityRawTokens.opacity900, on: colorFunctionalWhite)
 }
+
+// swiftlint:enable missing_docs

@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// This is a group of semantic tokens for **sizing**.
 /// It defines all `SizingSemanticToken` a theme must have.
 ///
@@ -93,3 +95,5 @@ public protocol SizingSemanticTokens {
     var sizeMaxWidthTypeBodyMedium: MultipleSizingTokens { get }
     var sizeMaxWidthTypeBodyLarge: MultipleSizingTokens { get }
 }
+
+// swiftlint:enable missing_docs

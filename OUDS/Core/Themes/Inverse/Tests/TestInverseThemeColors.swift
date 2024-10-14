@@ -16,6 +16,10 @@ import OUDSThemesInverse
 import OUDSTokensSemantic
 import XCTest
 
+// swiftlint:disable required_deinit
+// swiftlint:disable implicitly_unwrapped_optional
+// swiftlint:disable force_unwrapping
+
 /// `InverseTheme` is a quite particular theme with "inverse" color palette. Is it neuther a light mode theme nor a dark mode theme.
 /// This "inverse" mode as colors which, for a given semantic token, has the same value for both light and dark mode.
 final class TestInverseThemeColors: XCTestCase {
@@ -346,3 +350,7 @@ final class TestInverseThemeColors: XCTestCase {
     // TODO: #124 - Add missing colorDecorativeSkin*
     // TODO: #124 - Add missing colorChart*
 }
+
+// swiftlint:enable required_deinit
+// swiftlint:enable implicitly_unwrapped_optional
+// swiftlint:enable force_unwrapping

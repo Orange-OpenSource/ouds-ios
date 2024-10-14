@@ -15,6 +15,9 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+// TODO: Check if we can get rid of alias colors tokens which are optional
+// swiftlint:disable force_unwrapping
+
 struct SpacingTokenPage: View {
 
     @Environment(\.theme) private var theme
@@ -57,6 +60,8 @@ struct SpacingTokenPage: View {
         }
     }
 }
+
+// swiftlint:enable force_unwrapping
 
 // MARK: - Named Spacing
 

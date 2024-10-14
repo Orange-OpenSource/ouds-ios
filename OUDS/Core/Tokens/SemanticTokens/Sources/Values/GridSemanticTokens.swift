@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// This is a group of semantic tokens for **grids**.
 /// It defines all `GridSemanticToken` a theme must have.
 ///
@@ -44,3 +46,5 @@ public protocol GridSemanticTokens {
     var gridRegularColumnGap: GridRegularSemanticToken { get }
     var gridRegularColumnCount: GridRegularSemanticToken { get }
 }
+
+// swiftlint:enable missing_docs

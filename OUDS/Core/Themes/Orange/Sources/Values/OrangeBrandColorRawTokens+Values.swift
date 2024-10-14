@@ -16,6 +16,8 @@ import OUDSTokensRaw
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 extension OrangeBrandColorRawTokens {
 
     // MARK: Primitive token - Colors - Orange - Orange
@@ -44,3 +46,5 @@ extension OrangeBrandColorRawTokens {
     public static let colorWarmGray800: ColorOrangeBrandRawToken = "#48433D"
     public static let colorWarmGray900: ColorOrangeBrandRawToken = "#353228"
 }
+
+// swiftlint:enable missing_docs

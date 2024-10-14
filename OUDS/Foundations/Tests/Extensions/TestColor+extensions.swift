@@ -11,9 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import XCTest
-import SwiftUI
 import OUDSFoundations
+import SwiftUI
+import XCTest
+
+// swiftlint:disable required_deinit
+// swiftlint:disable force_unwrapping
 
 /// To test some extensions of `SwiftUI.Color`
 final class TestColor_extensions: XCTestCase {
@@ -63,3 +66,6 @@ extension Color {
     }
 }
 // swiftlint:enable large_tuple
+
+// swiftlint:enable required_deinit
+// swiftlint:enable force_unwrapping

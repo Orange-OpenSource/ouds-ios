@@ -17,7 +17,7 @@ import OUDSTokensSemantic
 extension MockTheme {
 
     static let mockThemeSpaceRawToken: DimensionRawToken = 911
-    static let mockThemeSpaceSemanticToken: MultipleSpacingTokens = MultipleSpacingTokens(compact: 1, regular: 151)
+    static let mockThemeSpaceSemanticToken = MultipleSpacingTokens(compact: 1, regular: 151)
 
     // MARK: Semantic token - Spacing - Layout fluid
 

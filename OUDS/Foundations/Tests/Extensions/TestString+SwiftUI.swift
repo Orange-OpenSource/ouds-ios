@@ -16,6 +16,8 @@ import OUDSFoundations
 import SwiftUI
 import XCTest
 
+// swiftlint:disable required_deinit
+
 /// Class to test `String` extensions related to `SwiftUI`
 final class TestString_SwiftUI: XCTestCase {
 
@@ -82,6 +84,8 @@ final class TestString_SwiftUI: XCTestCase {
         XCTAssertTrue(result == "Menlo", "Current value is '\(result)")
 
         result = "".compose(withFont: "Yippee ki-yay")
-        XCTAssertTrue(result == "", "Current value is '\(result)")
+        XCTAssertTrue(result.isEmpty, "Current value is '\(result)")
     }
 }
+
+// swiftlint:enable required_deinit

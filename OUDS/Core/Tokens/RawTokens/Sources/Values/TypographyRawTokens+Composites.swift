@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// Extracted in a separated file because the the *Figma* JSON to Swift parser is not abale to process such composite tokens, and the *Figma* tool is not able to.
 ///
 /// **Beware, may result in desynchronization between generated raw tokens values and theses composite raw tokens**
@@ -63,3 +65,5 @@ extension TypographyRawTokens {
 
     public static let typeBold1850 = TypographyCompositeRawToken(size: fontSize1850, lineHeight: fontLineHeight1850, weight: fontWeight700, letterSpacing: fontLetterSpacing1850)
 }
+
+// swiftlint:enable missing_docs

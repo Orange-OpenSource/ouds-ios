@@ -16,6 +16,8 @@ import OUDSFoundations
 import SwiftUI
 import XCTest
 
+// swiftlint:disable required_deinit
+
 /// Class to test `Font` extensions related to `SwiftUI`
 final class TestFont_SwiftUI: XCTestCase {
 
@@ -42,3 +44,5 @@ final class TestFont_SwiftUI: XCTestCase {
         XCTAssertTrue("\(Font.Weight.black)" == "Black")
     }
 }
+
+// swiftlint:enable required_deinit
