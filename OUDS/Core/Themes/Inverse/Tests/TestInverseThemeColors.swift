@@ -30,14 +30,14 @@ final class TestInverseThemeColors: XCTestCase {
         inverseTheme = InverseTheme()
     }
 
-    private func assertHomogeneity(_ value: ColorSemanticToken?) {
-        XCTAssertEqual(value!.light, value!.dark)
+    private func assertHomogeneity(_ value: ColorSemanticToken) {
+        XCTAssertEqual(value.light, value.dark)
     }
 
     // MARK: - Test cases
 
     func testColorsHomogeneityBackgroundDefaultPrimary() throws {
-        assertHomogeneity(inverseTheme.colorBackgroundDefaultPrimary)
+        assertHomogeneity(inverseTheme.colorBackgroundPrimary)
     }
 
     func testColorsHomogeneityBackgroundDefaultSecondary() throws {

@@ -47,7 +47,7 @@ struct ShowcaseElementsPage: View {
                 .navigationbarMenuForThemeSelection()
                 .oudsNavigationTitle("app_bottomBar_tokens")
             }
-            .background(theme.colorBackgroundDefaultPrimary?.color(for: colorScheme))
+            .background(theme.colorBackgroundPrimary?.color(for: colorScheme))
         }
         .navigationViewStyle(.stack)
     }

@@ -27,7 +27,7 @@ class OrangeCustomTheme: OrangeTheme { }
 
 extension OrangeCustomTheme { // For ColorSemanticTokens
 
-    override var colorBackgroundDefaultPrimary: ColorSemanticToken! { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.colorFunctionalSun800) }
+    override var colorBackgroundPrimary: ColorSemanticToken! { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.colorFunctionalSun800) }
 }
 
 extension OrangeCustomTheme { // For ButtonsComponentTokens
