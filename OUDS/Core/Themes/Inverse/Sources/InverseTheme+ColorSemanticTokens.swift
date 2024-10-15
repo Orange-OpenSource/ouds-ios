@@ -49,7 +49,12 @@ extension InverseTheme {
 
     override public var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
     
-    
+    override public var colorBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun900) }
+
+    // WARNING: #124 - Missing alias value for the light value in the Figjam
+    override public var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens("FFF7D6") }
+
+    override public var colorBackgroundStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
     
     
     
@@ -59,11 +64,7 @@ extension InverseTheme {
 
     override public var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandWarningDefault) }
 
-    override public var colorBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(sysColorBrandWarningHighest) }
-
-    override public var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandWarningLowest) }
-
-    override public var colorBackgroundStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandWarningDefault) }
+    
 
     override public var colorBackgroundStatusNegativeMuted: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralEmphasizedHighest) }
 

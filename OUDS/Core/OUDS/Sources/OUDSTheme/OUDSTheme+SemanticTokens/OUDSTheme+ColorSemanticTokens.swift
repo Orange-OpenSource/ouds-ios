@@ -58,6 +58,14 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
     
+    // WARNING: #124 - Missing alias value for the light value in the Figjam
+    @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(light: "FFF7D6", dark: ColorRawTokens.colorFunctionalSun900) }
+
+    @objc open var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun900) }
+
+    @objc open var colorBackgroundStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
+    
+    
     
     
     
@@ -66,11 +74,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningDefault) }
 
-    @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandWarningLowest, dark: sysColorBrandWarningHighest) }
 
-    @objc open var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandWarningHighest, dark: sysColorBrandWarningHighest) }
-
-    @objc open var colorBackgroundStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningDefault) }
 
     @objc open var colorBackgroundStatusNegativeMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNegativeLowest, dark: sysColorBrandNeutralEmphasizedHighest) }
 
