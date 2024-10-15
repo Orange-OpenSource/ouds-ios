@@ -42,6 +42,18 @@ struct ColorTokenPage: View {
             } header: {
                 Text("Background Always").typeHeadingMedium(theme).fixedSize(horizontal: false, vertical: true)
             }
+
+            Section {
+                illustrationForContent()
+            } header: {
+                Text("Content").typeHeadingMedium(theme).fixedSize(horizontal: false, vertical: true)
+            }
+
+            Section {
+                illustrationForBorder()
+            } header: {
+                Text("Border").typeHeadingMedium(theme).fixedSize(horizontal: false, vertical: true)
+            }
         }
         .padding(.horizontal, theme.spaceFixedMedium)
     }
@@ -65,9 +77,21 @@ struct ColorTokenPage: View {
         }
     }
 
+    private func illustrationForContent() -> some View {
+        ForEach(NamedColor.Content.allCases, id: \.rawValue) { namedColorToken in
+            illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+        }
+    }
+
+    private func illustrationForBorder() -> some View {
+        ForEach(NamedColor.Border.allCases, id: \.rawValue) { namedColorToken in
+            illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+        }
+    }
+
     // MARK: Common private helpers
     @ViewBuilder
-    private func illustration(for token: MultipleColorTokens?, name: String) -> some View {
+    private func illustration(for token: ColorSemanticToken?, name: String) -> some View {
         if let token {
             let colorRawToken = colorScheme == .dark ? token.dark : token.light
 
@@ -135,7 +159,7 @@ private enum NamedColor {
         case colorBackgroundStatusInformationMutedOnBackgroundEmphasized
         case colorBackgroundStatusInformationEmphasized
 
-        func token(from theme: OUDSTheme) -> MultipleColorTokens? {
+        func token(from theme: OUDSTheme) -> ColorSemanticToken? {
             switch self {
             case .colorBackgroundDefaultPrimary:
                 return theme.colorBackgroundDefaultPrimary
@@ -206,7 +230,7 @@ private enum NamedColor {
             case colorBackgroundActionFocusOnBackgroundStatusExcNegative
             case colorBackgroundActionFocusOnBackgroundStatusNegative
 
-            func token(from theme: OUDSTheme) -> MultipleColorTokens? {
+            func token(from theme: OUDSTheme) -> ColorSemanticToken? {
                 switch self {
                 case .colorBackgroundActionEnabled:
                     return theme.colorBackgroundActionEnabled
@@ -256,7 +280,7 @@ private enum NamedColor {
             case colorBackgroundAlwaysInformation
 
             // MARK: Tokenable impl
-            func token(from theme: OUDSTheme) -> MultipleColorTokens? {
+            func token(from theme: OUDSTheme) -> ColorSemanticToken? {
                 switch self {
                 case .colorBackgroundAlwaysBlack:
                     return theme.colorBackgroundAlwaysBlack
@@ -280,11 +304,155 @@ private enum NamedColor {
         enum Transparent: String, CaseIterable {
             case colorBackgroundTransparentDefault
 
-            func token(from theme: OUDSTheme) -> MultipleColorTokens? {
+            func token(from theme: OUDSTheme) -> ColorSemanticToken? {
                 switch self {
                 case .colorBackgroundTransparentDefault:
                     return theme.colorBackgroundTransparentDefault
                 }
+            }
+        }
+    }
+
+
+    // MARK: Semantic token - Colors - Content
+    enum Content: String, CaseIterable {
+        case colorContentDefault
+        case colorContentDefaultOnBackgroundEmphasized
+        case colorContentDefaultOnBackgroundBrandPrimary
+        case colorContentMuted
+        case colorContentMutedOnBackgroundEmphasized
+        case colorContentDisabled
+        case colorContentDisabledOnBackgroundEmphasized
+        case colorContentBrandPrimary
+        case colorContentBrandPrimaryOnBackgroundEmphasized
+        case colorContentBrandSecondary
+        case colorContentBrandTertiary
+        case colorContentStatusAttractive
+        case colorContentStatusNegative
+        case colorContentStatusPositive
+        case colorContentStatusInformation
+        case colorContentActionEnabled
+        case colorContentActionEnabledOnBackgroundEmphasized
+        case colorContentActionEnabledOnBackgroundStatusExcNegative
+        case colorContentActionEnabledOnBackgroundStatusNegative
+        case colorContentActionHover
+        case colorContentActionHoverOnBackgroundEmphasized
+        case colorContentActionHoverOnBackgroundStatusExcNegative
+        case colorContentActionHoverOnBackgroundStatusNegative
+        case colorContentTransparentDefault
+
+        func token(from theme: OUDSTheme) -> ColorSemanticToken? {
+            switch self {
+            case .colorContentDefault:
+                return theme.colorContentDefault
+            case .colorContentDefaultOnBackgroundEmphasized:
+                return theme.colorContentDefaultOnBackgroundEmphasized
+            case .colorContentDefaultOnBackgroundBrandPrimary:
+                return theme.colorContentDefaultOnBackgroundBrandPrimary
+            case .colorContentMuted:
+                return theme.colorContentMuted
+            case .colorContentMutedOnBackgroundEmphasized:
+                return theme.colorContentMutedOnBackgroundEmphasized
+            case .colorContentDisabled:
+                return theme.colorContentDisabled
+            case .colorContentDisabledOnBackgroundEmphasized:
+                return theme.colorContentDisabledOnBackgroundEmphasized
+            case .colorContentBrandPrimary:
+                return theme.colorContentBrandPrimary
+            case .colorContentBrandPrimaryOnBackgroundEmphasized:
+                return theme.colorContentBrandPrimaryOnBackgroundEmphasized
+            case .colorContentBrandSecondary:
+                return theme.colorContentBrandSecondary
+            case .colorContentBrandTertiary:
+                return theme.colorContentBrandTertiary
+            case .colorContentStatusAttractive:
+                return theme.colorContentStatusAttractive
+            case .colorContentStatusNegative:
+                return theme.colorContentStatusNegative
+            case .colorContentStatusPositive:
+                return theme.colorContentStatusPositive
+            case .colorContentStatusInformation:
+                return theme.colorContentStatusInformation
+            case .colorContentActionEnabled:
+                return theme.colorContentActionEnabled
+            case .colorContentActionEnabledOnBackgroundEmphasized:
+                return theme.colorContentActionEnabledOnBackgroundEmphasized
+            case .colorContentActionEnabledOnBackgroundStatusExcNegative:
+                return theme.colorContentActionEnabledOnBackgroundStatusExcNegative
+            case .colorContentActionEnabledOnBackgroundStatusNegative:
+                return theme.colorContentActionEnabledOnBackgroundStatusNegative
+            case .colorContentActionHover:
+                return theme.colorContentActionHover
+            case .colorContentActionHoverOnBackgroundEmphasized:
+                return theme.colorContentActionHoverOnBackgroundEmphasized
+            case .colorContentActionHoverOnBackgroundStatusExcNegative:
+                return theme.colorContentActionHoverOnBackgroundStatusExcNegative
+            case .colorContentActionHoverOnBackgroundStatusNegative:
+                return theme.colorContentActionHoverOnBackgroundStatusNegative
+            case .colorContentTransparentDefault:
+                return theme.colorContentTransparentDefault
+            }
+        }
+    }
+    // MARK: Semantic token - Colors - Border
+    enum Border: String, CaseIterable {
+        case colorBorderDefault
+        case colorBorderDefaultOnBackgroundEmphasized
+        // TODO: #124 - Add missing colorBorderDefaultOnBackgroundBrandPrimary
+        // TODO: #124 - Add missing colorBorderDefaultOnBackgroundBrandSecondary
+        // TODO: #124 - Add missing colorBorderDefaultOnBackgroundBrandTertiary
+        case colorBorderEmphasized
+        case colorBorderEmphasizedOnBackgroundEmphasized
+        case colorBorderBrandPrimary
+        case colorBorderBrandPrimaryOnBackgroundEmphasized
+        case colorBorderBrandSecondary
+        case colorBorderBrandTertiary
+        case colorBorderBrandStatusAttractive
+        case colorBorderBrandStatusWarning
+        case colorBorderBrandStatusNegative
+        case colorBorderBrandStatusPositive
+        case colorBorderBrandStatusInformation
+        case colorBorderTransparentDefault
+        // TODO: #124 - Add missing colorBorderActionEnabled*
+        // TODO: #124 - Add missing colorBorderActionHover*
+        // TODO: #124 - Add missing colorBorderActionPressed*
+        // TODO: #124 - Add missing colorBorderActionDisabled*
+        // TODO: #124 - Add missing colorBorderActionFocus*
+        // TODO: #124 - Add missing colorBorderSelectionSelected*
+        // TODO: #124 - Add missing colorBorderSelectionUnselected*
+        // TODO: #124 - Add missing colorBorderAlways*
+        // TODO: #124 - Add missing colorBorderOutside
+
+        func token(from theme: OUDSTheme) -> ColorSemanticToken? {
+            switch self {
+            case .colorBorderDefault:
+                return theme.colorBorderDefault
+            case .colorBorderDefaultOnBackgroundEmphasized:
+                return theme.colorBorderDefaultOnBackgroundEmphasized
+            case .colorBorderEmphasized:
+                return theme.colorBorderEmphasized
+            case .colorBorderEmphasizedOnBackgroundEmphasized:
+                return theme.colorBorderEmphasizedOnBackgroundEmphasized
+            case .colorBorderBrandPrimary:
+                return theme.colorBorderBrandPrimary
+            case .colorBorderBrandPrimaryOnBackgroundEmphasized:
+                return theme.colorBorderBrandPrimaryOnBackgroundEmphasized
+            case .colorBorderBrandSecondary:
+                return theme.colorBorderBrandSecondary
+            case .colorBorderBrandTertiary:
+                return theme.colorBorderBrandTertiary
+            case .colorBorderBrandStatusAttractive:
+                return theme.colorBorderBrandStatusAttractive
+            case .colorBorderBrandStatusWarning:
+                return theme.colorBorderBrandStatusWarning
+            case .colorBorderBrandStatusNegative:
+                return theme.colorBorderBrandStatusNegative
+            case .colorBorderBrandStatusPositive:
+                return theme.colorBorderBrandStatusPositive
+            case .colorBorderBrandStatusInformation:
+                return theme.colorBorderBrandStatusInformation
+            case .colorBorderTransparentDefault:
+                return theme.colorBorderTransparentDefault
             }
         }
     }
