@@ -29,11 +29,11 @@ public protocol ColorSemanticTokens {
 
     var colorBackgroundPrimary: ColorSemanticToken { get }
 
-    var colorBackgroundDefaultSecondary: ColorSemanticToken { get }
+    var colorBackgroundSecondary: ColorSemanticToken { get }
 
-    var colorBackgroundDefaultTertiary: ColorSemanticToken { get }
+    var colorBackgroundTertiary: ColorSemanticToken { get }
 
-    var colorBackgroundEmphasizedPrimary: ColorSemanticToken { get }
+    var colorBackgroundEmphasized: ColorSemanticToken { get }
 
     var colorBackgroundBrandPrimary: ColorSemanticToken { get }
 
@@ -45,33 +45,36 @@ public protocol ColorSemanticTokens {
 
     var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusAttractiveMuted: ColorSemanticToken { get }
-
-    var colorBackgroundStatusAttractiveEmphasized: ColorSemanticToken { get }
-
-    var colorBackgroundStatusWarningMuted: ColorSemanticToken { get }
-
-    var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorBackgroundStatusWarningEmphasized: ColorSemanticToken { get }
-
-    var colorBackgroundStatusNegativeMuted: ColorSemanticToken { get }
-
-    var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { get }
-
     var colorBackgroundStatusPositiveMuted: ColorSemanticToken { get }
 
     var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { get }
 
     var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusInformationMuted: ColorSemanticToken { get }
+    var colorBackgroundStatusInfoMuted: ColorSemanticToken { get }
 
-    var colorBackgroundStatusInformationMutedOnBackgroundEmphasized: ColorSemanticToken { get }
+    var colorBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusInformationEmphasized: ColorSemanticToken { get }
+    var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { get }
+    
+    var colorBackgroundStatusWarningMuted: ColorSemanticToken { get }
+
+    var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { get }
+
+    var colorBackgroundStatusWarningEmphasized: ColorSemanticToken { get }
+    
+    var colorBackgroundStatusNegativeMuted: ColorSemanticToken { get }
+
+    var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken { get }
+
+    var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { get }
+    
+    var colorBackgroundStatusAccentMuted: ColorSemanticToken { get }
+
+    var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { get }
+
+    var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { get }
+
 
     // MARK: Semantic token - Colors - Background - Action
 

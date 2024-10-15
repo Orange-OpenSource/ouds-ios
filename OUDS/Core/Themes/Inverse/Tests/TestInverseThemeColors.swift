@@ -41,15 +41,15 @@ final class TestInverseThemeColors: XCTestCase {
     }
 
     func testColorsHomogeneityBackgroundDefaultSecondary() throws {
-        assertHomogeneity(inverseTheme.colorBackgroundDefaultSecondary)
+        assertHomogeneity(inverseTheme.colorBackgroundSecondary)
     }
 
     func testColorsHomogeneityBackgroundDefaultTertiary() throws {
-        assertHomogeneity(inverseTheme.colorBackgroundDefaultTertiary)
+        assertHomogeneity(inverseTheme.colorBackgroundTertiary)
     }
 
     func testColorsHomogeneityBackgroundEmphasizedPrimary() throws {
-        assertHomogeneity(inverseTheme.colorBackgroundEmphasizedPrimary)
+        assertHomogeneity(inverseTheme.colorBackgroundEmphasized)
     }
 
     func testColorsHomogeneityBackgroundBrandPrimary() throws {
@@ -65,11 +65,11 @@ final class TestInverseThemeColors: XCTestCase {
     }
 
     func testColorsHomogeneityBackgroundStatusAttractiveMuted() throws {
-        assertHomogeneity(inverseTheme.colorBackgroundStatusAttractiveMuted)
+        assertHomogeneity(inverseTheme.colorBackgroundStatusAccentMuted)
     }
 
     func testColorsHomogeneityBackgroundStatusAttractiveEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorBackgroundStatusAttractiveEmphasized)
+        assertHomogeneity(inverseTheme.colorBackgroundStatusAccentMutedOnBackgroundEmphasized)
     }
 
     func testColorsHomogeneityBackgroundStatusWarningMuted() throws {
@@ -105,11 +105,11 @@ final class TestInverseThemeColors: XCTestCase {
     }
 
     func testColorsHomogeneityBackgroundStatusInformationMuted() throws {
-        assertHomogeneity(inverseTheme.colorBackgroundStatusInformationMuted)
+        assertHomogeneity(inverseTheme.colorBackgroundStatusInfoMuted)
     }
 
     func testColorsHomogeneityBackgroundStatusInformationEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorBackgroundStatusInformationEmphasized)
+        assertHomogeneity(inverseTheme.colorBackgroundStatusInfoEmphasized)
     }
 
     func testColorsHomogeneityContentDefault() throws {

@@ -26,27 +26,29 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Background
 
-    @objc open var colorBackgroundPrimary: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralEmphasizedHighest) }
+    @objc open var colorBackgroundPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray880) }
 
-    @objc open var colorBackgroundDefaultSecondary: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralMutedLowest, dark: sysColorBrandNeutralEmphasizedHigher) }
+    @objc open var colorBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray800) }
 
-    @objc open var colorBackgroundDefaultTertiary: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandAttractiveLowest, dark: sysColorBrandAttractiveHighest) }
+    // WARNING: #124 - Colors to use are part of OUDSOrangeTheme so are not reachable at this level, as a workaround add raw values
+    @objc open var colorBackgroundTertiary: ColorSemanticToken { MultipleColorTokens(light: "F9F5F0", dark: "353228") }
 
-    @objc open var colorBackgroundEmphasizedPrimary: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedHighest, dark: sysColorBrandNeutralEmphasizedMedium) }
+    @objc open var colorBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray880, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    @objc open var colorBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandPrimaryDefault, dark: sysColorBrandPrimaryLow) }
+    // WARNING: #124 - Colors to use are part of OUDSOrangeTheme so are not reachable at this level, as a workaround add raw values
+    @objc open var colorBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: "F16E00", dark: "FF7900") }
 
-    @objc open var colorBackgroundBrandSecondary: ColorSemanticToken { nil }
+    @objc open var colorBackgroundBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBackgroundBrandSecondary!") }
 
-    @objc open var colorBackgroundBrandTertiary: ColorSemanticToken { nil }
+    @objc open var colorBackgroundBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBackgroundBrandTertiary!") }
 
-    @objc open var colorBackgroundStatusNeutral: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
+    @objc open var colorBackgroundStatusNeutral: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
-    @objc open var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedHigh, dark: sysColorBrandNeutralEmphasizedHigh) }
+    @objc open var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
-    @objc open var colorBackgroundStatusAttractiveMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandAttractiveLowest, dark: sysColorBrandAttractiveHighest) }
+    @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandAttractiveLowest, dark: sysColorBrandAttractiveHighest) }
 
-    @objc open var colorBackgroundStatusAttractiveEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningDefault) }
+    @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningDefault) }
 
     @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandWarningLowest, dark: sysColorBrandWarningHighest) }
 
@@ -66,11 +68,11 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandPositiveDefault, dark: sysColorBrandPositiveHighest) }
 
-    @objc open var colorBackgroundStatusInformationMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandInformationLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
+    @objc open var colorBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandInformationLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
 
-    @objc open var colorBackgroundStatusInformationMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandInformationHighest) }
+    @objc open var colorBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandInformationHighest) }
 
-    @objc open var colorBackgroundStatusInformationEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandInformationDefault, dark: sysColorBrandInformationHighest) }
+    @objc open var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandInformationDefault, dark: sysColorBrandInformationHighest) }
 
     // MARK: Semantic token - Colors - Background - Action
 

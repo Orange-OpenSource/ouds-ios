@@ -17,17 +17,14 @@ import OUDSTokensSemantic
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
-// TODO: Check if we can get rid of alias colors tokens which are optional
-// swiftlint:disable implicitly_unwrapped_optional
-
-/// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
+/// Overrides some color tokens using values available in `OrangeBrandColorRawTokens`
 extension OrangeTheme {
 
-    override public var sysColorBrandPrimaryLow: ColorAliasSemanticToken! { OrangeBrandColorRawTokens.colorOrange500 }
-    override public var sysColorBrandPrimaryDefault: ColorAliasSemanticToken! { OrangeBrandColorRawTokens.colorOrange550 }
-
-    override public var sysColorBrandAttractiveLowest: ColorAliasSemanticToken! { OrangeBrandColorRawTokens.colorWarmGray100 }
-    override public var sysColorBrandAttractiveHighest: ColorAliasSemanticToken! { OrangeBrandColorRawTokens.colorWarmGray900 }
+    // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
+    override open var colorBackgroundTertiary: ColorSemanticToken { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorWarmGray100, dark: OrangeBrandColorRawTokens.colorWarmGray900) }
+ 
+    // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
+    override open var colorBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
+    
 }
 
-// swiftlint:enable implicitly_unwrapped_optional
