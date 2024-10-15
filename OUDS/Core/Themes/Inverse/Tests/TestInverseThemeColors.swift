@@ -157,7 +157,7 @@ final class TestInverseThemeColors: XCTestCase {
     }
 
     func testColorsHomogeneityContentStatusInformation() throws {
-        assertHomogeneity(inverseTheme.colorContentStatusInformation)
+        assertHomogeneity(inverseTheme.colorContentStatusInfo)
     }
 
     func testColorsHomogeneityContentActionEnabled() {

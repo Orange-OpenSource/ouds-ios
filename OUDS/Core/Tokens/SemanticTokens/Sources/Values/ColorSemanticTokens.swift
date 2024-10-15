@@ -75,6 +75,61 @@ public protocol ColorSemanticTokens {
 
     var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { get }
 
+    // MARK: Semantic token - Colors - Content
+
+    var colorContentDefault: ColorSemanticToken { get }
+
+    var colorContentMuted: ColorSemanticToken { get }
+
+    var colorContentDisabled: ColorSemanticToken { get }
+
+    var colorContentBrandPrimary: ColorSemanticToken { get }
+
+    var colorContentBrandSecondary: ColorSemanticToken { get }
+
+    var colorContentBrandTertiary: ColorSemanticToken { get }
+
+    var colorContentStatusPositive: ColorSemanticToken { get }
+    
+    var colorContentStatusInfo: ColorSemanticToken { get }
+    
+    var colorContentStatusWarning: ColorSemanticToken { get }
+
+    var colorContentStatusNegative: ColorSemanticToken { get }
+
+    var colorContentStatusAccent: ColorSemanticToken { get }
+    
+    
+    
+    
+
+    
+
+    var colorContentActionEnabled: ColorSemanticToken { get }
+
+    var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken { get }
+
+    var colorContentActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken { get }
+
+    var colorContentActionEnabledOnBackgroundStatusNegative: ColorSemanticToken { get }
+
+    var colorContentActionHover: ColorSemanticToken { get }
+
+    var colorContentActionHoverOnBackgroundEmphasized: ColorSemanticToken { get }
+
+    var colorContentActionHoverOnBackgroundStatusExcNegative: ColorSemanticToken { get }
+
+    var colorContentActionHoverOnBackgroundStatusNegative: ColorSemanticToken { get }
+
+    var colorContentTransparentDefault: ColorSemanticToken { get }
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: Semantic token - Colors - Background - Action
 
     var colorBackgroundActionEnabled: ColorSemanticToken { get }
@@ -128,67 +183,6 @@ public protocol ColorSemanticTokens {
     // MARK: Semantic token - Colors - Background - Transparent
 
     var colorBackgroundTransparentDefault: ColorSemanticToken { get }
-
-    // MARK: Semantic token - Colors - Content
-
-    var colorContentDefault: ColorSemanticToken { get }
-
-    var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorContentDefaultOnBackgroundBrandPrimary: ColorSemanticToken { get }
-
-    var colorContentMuted: ColorSemanticToken { get }
-
-    var colorContentMutedOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorContentDisabled: ColorSemanticToken { get }
-
-    var colorContentDisabledOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorContentBrandPrimary: ColorSemanticToken { get }
-
-    var colorContentBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorContentBrandSecondary: ColorSemanticToken { get }
-
-    var colorContentBrandTertiary: ColorSemanticToken { get }
-
-    var colorContentStatusAttractive: ColorSemanticToken { get }
-
-    var colorContentStatusNegative: ColorSemanticToken { get }
-
-    var colorContentStatusPositive: ColorSemanticToken { get }
-
-    var colorContentStatusInformation: ColorSemanticToken { get }
-
-    var colorContentActionEnabled: ColorSemanticToken { get }
-
-    var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorContentActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken { get }
-
-    var colorContentActionEnabledOnBackgroundStatusNegative: ColorSemanticToken { get }
-
-    var colorContentActionHover: ColorSemanticToken { get }
-
-    var colorContentActionHoverOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorContentActionHoverOnBackgroundStatusExcNegative: ColorSemanticToken { get }
-
-    var colorContentActionHoverOnBackgroundStatusNegative: ColorSemanticToken { get }
-
-    var colorContentTransparentDefault: ColorSemanticToken { get }
-
-    // TODO: #124 - Add missing colorContentActionPressed* tokens
-    // TODO: #124 - Add missing colorContentActionDisabled* tokens
-    // TODO: #124 - Add missing colorContentActionFocus* tokens
-    // TODO: #124 - Add missing colorContentVisited* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionSelected* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionHover* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionPressed* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionSelectedFocus* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionUnselected* tokens
-    // TODO: #124 - Add missing colorContentActionAlways* tokens
 
     // MARK: Semantic token - Colors - Border
 

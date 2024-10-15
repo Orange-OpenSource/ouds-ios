@@ -130,13 +130,13 @@ extension MockTheme {
 
     override var colorContentBrandTertiary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override var colorContentStatusAttractive: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override var colorContentStatusWarning: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
     override var colorContentStatusNegative: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
     override var colorContentStatusPositive: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override var colorContentStatusInformation: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override var colorContentStatusInfo: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
     override var colorContentActionEnabled: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 

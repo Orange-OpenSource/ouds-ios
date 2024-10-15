@@ -22,6 +22,8 @@ import OUDSTokensSemantic
 
 /// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
 extension InverseTheme {
+    
+    // MARK: Semantic token - Colors - Background
 
     override public var colorBackgroundPrimary: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray880) }
 
@@ -68,38 +70,38 @@ extension InverseTheme {
 
     override public var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
 
+    // MARK: Semantic token - Colors - Content
     
+    override public var colorContentDefault: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
-    override public var colorContentDefault: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralMutedWhite) }
+    override public var colorContentMuted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
-    override public var colorContentDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack) }
+    override public var colorContentDisabled: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
-    override public var colorContentDefaultOnBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack) }
+    override public var colorContentBrandPrimary: ColorSemanticToken { MultipleColorTokens("#FF7900") }
 
-    override public var colorContentMuted: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralEmphasizedMedium) }
+    override public var colorContentBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorContentBrandSecondary!") }
 
-    override public var colorContentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralEmphasizedLowest) }
+    override public var colorContentBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorContentBrandTertiary!") }
 
-    override public var colorContentDisabled: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralEmphasizedLowest) }
+    override public var colorContentStatusPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
 
-    override public var colorContentDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralMutedMedium) }
+    override public var colorContentStatusInfo: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
+    
+    override public var colorContentStatusWarning: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
 
-    override public var colorContentBrandPrimary: ColorSemanticToken { MultipleColorTokens(sysColorBrandPrimaryLow) }
+    override public var colorContentStatusNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
 
-    override public var colorContentBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandPrimaryDefault) }
-
-    override public var colorContentBrandSecondary: ColorSemanticToken { nil }
-
-    override public var colorContentBrandTertiary: ColorSemanticToken { nil }
-
-    override public var colorContentStatusAttractive: ColorSemanticToken { nil }
-
-    override public var colorContentStatusNegative: ColorSemanticToken { MultipleColorTokens(sysColorBrandNegativeDefault) }
-
-    override public var colorContentStatusPositive: ColorSemanticToken { MultipleColorTokens(sysColorBrandPositiveDefault) }
-
-    override public var colorContentStatusInformation: ColorSemanticToken { MultipleColorTokens(sysColorBrandInformationDefault) }
-
+    override public var colorContentStatusAccent: ColorSemanticToken { fatalError("No value defined for colorContentStatusAccent!") }
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override public var colorContentActionEnabled: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralMutedLower)  }
 
     override public var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralEmphasizedBlack)  }
