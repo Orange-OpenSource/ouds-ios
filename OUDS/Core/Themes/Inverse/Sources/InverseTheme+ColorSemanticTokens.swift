@@ -37,6 +37,24 @@ extension InverseTheme {
 
     override public var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray80) }
 
+    override public var colorBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite100) }
+
+    override public var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite100) }
+
+    override public var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
+    
+    override public var colorBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue900) }
+
+    override public var colorBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue100) }
+
+    override public var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
+    
+    
+    
+    
+    
+    
+    
     override public var colorBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(sysColorBrandAttractiveLowest) }
 
     override public var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandWarningDefault) }
@@ -52,18 +70,6 @@ extension InverseTheme {
     override public var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandNegativeLowest) }
 
     override public var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandNegativeDefault) }
-
-    override public var colorBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(sysColorBrandPositiveHighest) }
-
-    override public var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandPositiveLowest) }
-
-    override public var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandPositiveDefault) }
-
-    override public var colorBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(sysColorBrandInformationLowest) }
-
-    override public var colorBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandInformationLowest) }
-
-    override public var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandPositiveLowest) }
 
     override public var colorContentDefault: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralMutedWhite) }
 

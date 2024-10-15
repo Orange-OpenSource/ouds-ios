@@ -46,6 +46,22 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
+    @objc open var colorBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawToken.colorFunctionalMalachite100, dark: ColorRawTokens.colorFunctionalMalachite900) }
+
+    @objc open var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawToken.colorFunctionalMalachite900) }
+
+    @objc open var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
+    
+    @objc open var colorBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDodgerBlue100, dark: ColorRawTokens.colorFunctionalDodgerBlue900) }
+
+    @objc open var colorBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue900) }
+
+    @objc open var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
+    
+    
+    
+    
+    
     @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandAttractiveLowest, dark: sysColorBrandAttractiveHighest) }
 
     @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningDefault) }
@@ -61,18 +77,6 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandNegativeHighest) }
 
     @objc open var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNegativeDefault, dark: sysColorBrandNegativeHighest) }
-
-    @objc open var colorBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandPositiveLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
-
-    @objc open var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandPositiveHighest) }
-
-    @objc open var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandPositiveDefault, dark: sysColorBrandPositiveHighest) }
-
-    @objc open var colorBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandInformationLowest, dark: sysColorBrandNeutralEmphasizedHigh) }
-
-    @objc open var colorBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandInformationHighest) }
-
-    @objc open var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandInformationDefault, dark: sysColorBrandInformationHighest) }
 
     // MARK: Semantic token - Colors - Background - Action
 
