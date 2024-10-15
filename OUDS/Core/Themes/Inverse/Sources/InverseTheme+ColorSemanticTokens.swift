@@ -61,20 +61,12 @@ extension InverseTheme {
     override public var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet100) }
 
     override public var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    override public var colorBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(sysColorBrandAttractiveLowest) }
 
-    override public var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandWarningDefault) }
+    override public var colorBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(OrangeBrandColorRawTokens.colorWarmGray900) }
 
-    
+    override public var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(OrangeBrandColorRawTokens.colorWarmGray100) }
+
+    override public var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
 
     
 

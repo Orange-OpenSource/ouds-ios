@@ -71,17 +71,14 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandAttractiveLowest, dark: sysColorBrandAttractiveHighest) }
+    @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(light: "#F9F5F0", dark: "#323228") }
 
-    @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandWarningDefault, dark: sysColorBrandWarningDefault) }
+    @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: "#323228", dark: "#323228") }
+    
+    @objc open var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
+    
+    
+    
 
 
 

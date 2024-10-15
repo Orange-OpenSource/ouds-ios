@@ -75,7 +75,6 @@ public protocol ColorSemanticTokens {
 
     var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { get }
 
-
     // MARK: Semantic token - Colors - Background - Action
 
     var colorBackgroundActionEnabled: ColorSemanticToken { get }

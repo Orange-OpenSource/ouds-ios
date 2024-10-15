@@ -26,6 +26,8 @@ extension OrangeTheme {
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
     override open var colorBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
 
+    // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
+    override open var colorBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorWarmGray100, dark: OrangeBrandColorRawTokens.colorWarmGray900) }
     
 }
 
