@@ -17,6 +17,8 @@ import SwiftUI
 import OUDS
 import OUDSComponents
 import OUDSTokensSemantic
+import OUDSThemesOrange
+import OUDSThemesInverse
 
 class OUDSTokensBorderUITests: XCTestCase {
     
@@ -27,37 +29,37 @@ class OUDSTokensBorderUITests: XCTestCase {
     // MARK: - Width Tokens Tests
     
     func testBorderToken_OrangeTheme_SectionWidth_BorderWidthNone_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionWidth_BorderWidthNone_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionWidth_BorderWidthDefault_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionWidth_BorderWidthDefault_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionWidth_BorderWidthThin_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionWidth_BorderWidthThin_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionWidth_BorderWidthMedium_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionWidth_BorderWidthMedium_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionWidth_BorderWidthThick_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionWidth_BorderWidthThick_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionWidth_BorderWidthThicker_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionWidth_BorderWidthThicker_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionWidth_BorderWidthOutsideFocus_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionWidth_BorderWidthOutsideFocus_Light")
     }
     
@@ -66,27 +68,27 @@ class OUDSTokensBorderUITests: XCTestCase {
     // MARK: - Radius Tokens Tests
     
     func testBorderToken_OrangeTheme_SectionRadius_BorderRadiusNone_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusNone_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionRadius_BorderRadiusDefault_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusDefault_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionRadius_BorderRadiusShort_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusShort_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionRadius_BorderRadiusMedium_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusMedium_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionRadius_BorderRadiusTall_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusTall_Light")
     }
     
@@ -95,12 +97,12 @@ class OUDSTokensBorderUITests: XCTestCase {
     // MARK: - Style Tokens Tests
     
     func testBorderToken_OrangeTheme_SectionStyle_BorderStyleDefault_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionStyle_BorderStyleDefault_Light")
     }
     
     func testBorderToken_OrangeTheme_SectionStyle_BorderStyleDrag_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testBorderToken_OrangeTheme_SectionStyle_BorderStyleDrag_Light")
     }
     
@@ -111,37 +113,37 @@ class OUDSTokensBorderUITests: XCTestCase {
     // MARK: - Width Tokens Tests
     
     func testBorderToken_InverseTheme_SectionWidth_BorderWidthNone_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_InverseTheme_SectionWidth_BorderWidthNone_Light")
     }
     
     func testBorderToken_InverseTheme_SectionWidth_BorderWidthDefault_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_InverseTheme_SectionWidth_BorderWidthDefault_Light")
     }
     
     func testBorderToken_InverseTheme_SectionWidth_BorderWidthThin_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_InverseTheme_SectionWidth_BorderWidthThin_Light")
     }
     
     func testBorderToken_InverseTheme_SectionWidth_BorderWidthMedium_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_InverseTheme_SectionWidth_BorderWidthMedium_Light")
     }
     
     func testBorderToken_InverseTheme_SectionWidth_BorderWidthThick_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_InverseTheme_SectionWidth_BorderWidthThick_Light")
     }
     
     func testBorderToken_InverseTheme_SectionWidth_BorderWidthThicker_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_InverseTheme_SectionWidth_BorderWidthThicker_Light")
     }
     
     func testBorderToken_InverseTheme_SectionWidth_BorderWidthOutsideFocus_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_InverseTheme_SectionWidth_BorderWidthOutsideFocus_Light")
     }
 }
@@ -151,27 +153,27 @@ class OUDSTokensBorderUITests: XCTestCase {
 // MARK: - Radius Tokens Tests
 
 func testBorderToken_InverseTheme_SectionRadius_BorderRadiusNone_Light() {
-    let vc = BorderTokenPage()
+    let vc = BorderTokenPage().environment(\.theme, InverseTheme())
     assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusNone_Light")
 }
 
 func testBorderToken_InverseTheme_SectionRadius_BorderRadiusDefault_Light() {
-    let vc = BorderTokenPage()
+    let vc = BorderTokenPage().environment(\.theme, InverseTheme())
     assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusDefault_Light")
 }
 
 func testBorderToken_InverseTheme_SectionRadius_BorderRadiusShort_Light() {
-    let vc = BorderTokenPage()
+    let vc = BorderTokenPage().environment(\.theme, InverseTheme())
     assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusShort_Light")
 }
 
 func testBorderToken_InverseTheme_SectionRadius_BorderRadiusMedium_Light() {
-    let vc = BorderTokenPage()
+    let vc = BorderTokenPage().environment(\.theme, InverseTheme())
     assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusMedium_Light")
 }
 
 func testBorderToken_InverseTheme_SectionRadius_BorderRadiusTall_Light() {
-    let vc = BorderTokenPage()
+    let vc = BorderTokenPage().environment(\.theme, InverseTheme())
     assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_OrangeTheme_SectionRadius_BorderRadiusTall_Light")
 }
 
@@ -180,11 +182,11 @@ func testBorderToken_InverseTheme_SectionRadius_BorderRadiusTall_Light() {
 // MARK: - Style Tokens Tests
 
 func testBorderToken_InverseTheme_SectionStyle_BorderStyleDefault_Light() {
-    let vc = BorderTokenPage()
+    let vc = BorderTokenPage().environment(\.theme, InverseTheme())
     assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_OrangeTheme_SectionStyle_BorderStyleDefault_Light")
 }
 
 func testBorderToken_InverseTheme_SectionStyle_BorderStyleDrag_Light() {
-    let vc = BorderTokenPage()
+    let vc = BorderTokenPage().environment(\.theme, InverseTheme())
     assertSnapshot(of: vc, as: .image, named: "InverseTheme/testBorderToken_OrangeTheme_SectionStyle_BorderStyleDrag_Light")
 }
