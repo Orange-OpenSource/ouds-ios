@@ -16,7 +16,6 @@ import XCTest
 
 // WARNING: Maybe removed in the future or needs to be updated with token generation
 
-// TODO: Check if we can get rid of alias colors tokens which are optional
 // swiftlint:disable required_deinit
 // swiftlint:disable implicitly_unwrapped_optional
 

@@ -45,7 +45,7 @@ struct TypographyTokenPage: View {
 
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             typgraphyIllustration(from: namedTypography)
-                .foregroundStyle((theme.colorContentMuted?.color(for: colorScheme))!)
+                .foregroundStyle((theme.colorContentMuted.color(for: colorScheme)))
 
             Group {
                 Text("family (\(theme.customFontFamily ?? "system")), ")

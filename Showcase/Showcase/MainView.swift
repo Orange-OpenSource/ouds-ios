@@ -34,7 +34,7 @@ struct MainView: View {
                     Label("app_bottomBar_about", image: "ic_info")
                 }
         }
-        .accentColor(theme.sysColorBrandPrimaryDefault?.color)
+        .accentColor(theme.colorContentBrandPrimary.color)
     }
 }
 

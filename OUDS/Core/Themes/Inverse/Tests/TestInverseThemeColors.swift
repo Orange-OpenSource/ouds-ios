@@ -18,7 +18,6 @@ import XCTest
 
 // swiftlint:disable required_deinit
 // swiftlint:disable implicitly_unwrapped_optional
-// swiftlint:disable force_unwrapping
 
 /// `InverseTheme` is a quite particular theme with "inverse" color palette. Is it neuther a light mode theme nor a dark mode theme.
 /// This "inverse" mode as colors which, for a given semantic token, has the same value for both light and dark mode.
@@ -192,17 +191,6 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorContentActionHoverOnBackgroundStatusNegative)
     }
 
-    // TODO: #124 - Add missing colorContentActionPressed* tokens
-    // TODO: #124 - Add missing colorContentActionDisabled* tokens
-    // TODO: #124 - Add missing colorContentActionFocus* tokens
-    // TODO: #124 - Add missing colorContentVisited* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionSelected* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionHover* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionPressed* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionSelectedFocus* tokens
-    // TODO: #124 - Add missing colorContentActionSelectionUnselected* tokens
-    // TODO: #124 - Add missing colorContentActionAlways* tokens
-
     func testColorsHomogeneityBorderDefault() throws {
         assertHomogeneity(inverseTheme.colorBorderDefault)
     }
@@ -210,10 +198,6 @@ final class TestInverseThemeColors: XCTestCase {
     func testColorsHomogeneityBorderDefaultOnBackgroundEmphasized() throws {
         assertHomogeneity(inverseTheme.colorBorderDefaultOnBackgroundEmphasized)
     }
-
-    // TODO: #124 - Add missing colorBorderDefaultOnBackgroundBrandPrimary
-    // TODO: #124 - Add missing colorBorderDefaultOnBackgroundBrandSecondary
-    // TODO: #124 - Add missing colorBorderDefaultOnBackgroundBrandTertiary
 
     func testColorsHomogeneityBorderEmphasized() throws {
         assertHomogeneity(inverseTheme.colorBorderEmphasized)
@@ -323,34 +307,7 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorBackgroundAlwaysInformation)
     }
 
-    // TODO: #124 - Add missing colorBorderActionEnabled*
-    // TODO: #124 - Add missing colorBorderActionHover*
-    // TODO: #124 - Add missing colorBorderActionPressed*
-    // TODO: #124 - Add missing colorBorderActionDisabled*
-    // TODO: #124 - Add missing colorBorderActionFocus*
-    // TODO: #124 - Add missing colorBorderSelectionSelected*
-    // TODO: #124 - Add missing colorBorderSelectionUnselected*
-    // TODO: #124 - Add missing colorBorderAlways*
-    // TODO: #124 - Add missing colorBorderOutside
-    // TODO: #124 - Add missing colorOnBackgroundStatusAttractive*
-    // TODO: #124 - Add missing colorOnBackgroundStatusWarning*
-    // TODO: #124 - Add missing colorOnBackgroundStatusNegative*
-    // TODO: #124 - Add missing colorOnBackgroundStatusPositive*
-    // TODO: #124 - Add missing colorOnBackgroundStatusInformation*
-    // TODO: #124 - Add missing colorOnBackgroundActionEnabled*
-    // TODO: #124 - Add missing colorOnBackgroundActionHover*
-    // TODO: #124 - Add missing colorOnBackgroundActionPressed*
-    // TODO: #124 - Add missing colorOnBackgroundActionDisabled*
-    // TODO: #124 - Add missing colorOnBackgroundActionFocus*
-    // TODO: #124 - Add missing colorOnBackgroundActionAlways*
-    // TODO: #124 - Add missing colorElevation*
-    // TODO: #124 - Add missing colorDecorativeBrand*
-    // TODO: #124 - Add missing colorDecorativeNeutral*
-    // TODO: #124 - Add missing colorDecorativeAccent*
-    // TODO: #124 - Add missing colorDecorativeSkin*
-    // TODO: #124 - Add missing colorChart*
 }
 
 // swiftlint:enable required_deinit
 // swiftlint:enable implicitly_unwrapped_optional
-// swiftlint:enable force_unwrapping

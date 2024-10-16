@@ -14,6 +14,8 @@
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// swiftlint:disable identifier_name
+
 extension MockTheme {
 
     static let mockThemeTypographyFontFamilyRawToken: TypographyFontFamilyRawToken = "o°xXSkyBl0GF0ntxXx°o"
@@ -144,3 +146,5 @@ extension MockTheme {
     override var typeCodeMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
     override var typeCodeSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
 }
+
+// swiftlint:enable identifier_name

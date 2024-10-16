@@ -20,6 +20,9 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam
 
 // swiftlint:disable line_length
+// swiftlint:disable identifier_name
+// swiftlint:disable file_length
+
 /// Defines basic values common to all themes for `ColorSemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: ColorSemanticTokens {
@@ -151,9 +154,9 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
     @objc open var colorBorderEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
-    
+
     @objc open var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
-    
+
     @objc open var colorBorderFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray880) }
 
     @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorBorderBrandPrimaryOnBackgroundEmphasized!") }
@@ -241,10 +244,10 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var colorActionNegativePressed: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet800) }
 
     @objc open var colorActionNegativeLoading: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet800) }
-    
+
     @objc open var colorActionNegativeFocus: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet700) }
 
-    @objc open var colorActionOnBackgroundActionDisabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite , dark: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBackgroundActionDisabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
     @objc open var colorActionOnBackgroundActionDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
@@ -546,4 +549,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorChartSequentialAccent5Tint900: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun900, dark: ColorRawTokens.colorFunctionalSun100) }
 }
+
 // swiftlint:enable line_length
+// swiftlint:enable identifier_name
+// swiftlint:enable file_length

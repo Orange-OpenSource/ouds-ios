@@ -15,6 +15,8 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// swiftlint:disable identifier_name
+
 extension MockTheme {
 
     static let mockThemeElevationXRawToken: ElevationRawToken = 711
@@ -115,3 +117,4 @@ extension MockTheme {
 
     override var elevationFocus: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
 }
+// swiftlint:enable identifier_name

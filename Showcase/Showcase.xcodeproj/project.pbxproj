@@ -56,7 +56,6 @@
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
-		51B4F7F42C5BEAB700312019 /* OrangeCustomTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
 		51BD76212C466FCF0033365D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		51BD76222C466FCF0033365D /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760D2C466FCF0033365D /* ComponentsPage.swift */; };
@@ -135,7 +134,6 @@
 		5123647A2C3D7B3500572FD5 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeCustomTheme.swift; sourceTree = "<group>"; };
 		51BD760B2C466FCF0033365D /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		51BD760D2C466FCF0033365D /* ComponentsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
 		51BD760F2C466FCF0033365D /* ShowcaseElementsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowcaseElementsPage.swift; sourceTree = "<group>"; };
@@ -447,7 +445,6 @@
 				51BD761D2C466FCF0033365D /* Utils */,
 				51BD761E2C466FCF0033365D /* Showcase.swift */,
 				51BD761F2C466FCF0033365D /* MainView.swift */,
-				51B4F7F32C5BEAB700312019 /* OrangeCustomTheme.swift */,
 			);
 			path = Showcase;
 			sourceTree = "<group>";
@@ -676,7 +673,6 @@
 				07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */,
 				0747947A2CAE882A0033C2D8 /* EmptyState.swift in Sources */,
 				51BD762B2C466FCF0033365D /* MainView.swift in Sources */,
-				51B4F7F42C5BEAB700312019 /* OrangeCustomTheme.swift in Sources */,
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
 				07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */,
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
