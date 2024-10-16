@@ -88,9 +88,9 @@ extension InverseTheme {
 
     override public var colorContentBrandPrimary: ColorSemanticToken { MultipleColorTokens("#FF7900") }
 
-    override public var colorContentBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorContentBrandSecondary!") }
+    override public var colorContentBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentBrandSecondary!") }
 
-    override public var colorContentBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorContentBrandTertiary!") }
+    override public var colorContentBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentBrandTertiary!") }
 
     override public var colorContentStatusPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
 
@@ -100,15 +100,15 @@ extension InverseTheme {
 
     override public var colorContentStatusNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
 
-    override public var colorContentStatusAccent: ColorSemanticToken { fatalError("No value defined for colorContentStatusAccent!") }
+    override public var colorContentStatusAccent: ColorSemanticToken { fatalError("🤖 No value defined for colorContentStatusAccent!") }
 
     // MARK: Semantic token - Colors - Content - On Background
 
     override public var colorContentOnBackgroundPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    override public var colorContentOnBackgroundSecondary: ColorSemanticToken { fatalError("No value defined for colorContentOnBackgroundSecondary!") }
+    override public var colorContentOnBackgroundSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentOnBackgroundSecondary!") }
 
-    override public var colorContentOnBackgroundTertiary: ColorSemanticToken { fatalError("No value defined for colorContentOnBackgroundTertiary!") }
+    override public var colorContentOnBackgroundTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentOnBackgroundTertiary!") }
 
     override public var colorContentOnBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
@@ -156,25 +156,25 @@ extension InverseTheme {
 
     override public var colorBorderBrandPrimary: ColorSemanticToken { MultipleColorTokens("#FF7900") }
 
-    override public var colorBorderBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBorderBrandSecondary!") }
+    override public var colorBorderBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderBrandSecondary!") }
 
-    override public var colorBorderBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBorderBrandTertiary!") }
+    override public var colorBorderBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderBrandTertiary!") }
 
-    override public var colorBorderStatusPositive: ColorSemanticToken { fatalError("No value defined for colorBorderStatusPositive!") }
+    override public var colorBorderStatusPositive: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusPositive!") }
 
-    override public var colorBorderStatusInfo: ColorSemanticToken { fatalError("No value defined for colorBorderStatusInfo!") }
+    override public var colorBorderStatusInfo: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusInfo!") }
 
-    override public var colorBorderStatusWarning: ColorSemanticToken { fatalError("No value defined for colorBorderStatusWarning!") }
+    override public var colorBorderStatusWarning: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusWarning!") }
 
-    override public var colorBorderStatusNegative: ColorSemanticToken { fatalError("No value defined for colorBorderStatusNegative!") }
+    override public var colorBorderStatusNegative: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusNegative!") }
 
-    override public var colorBorderStatusAccent: ColorSemanticToken { fatalError("No value defined for colorBorderStatusAccent!") }
+    override public var colorBorderStatusAccent: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusAccent!") }
 
     override public var colorBorderOnBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    override public var colorBorderOnBackgroundBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBorderOnBackgroundBrandSecondary!") }
+    override public var colorBorderOnBackgroundBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderOnBackgroundBrandSecondary!") }
 
-    override public var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBorderOnBackgroundBrandTertiary!") }
+    override public var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderOnBackgroundBrandTertiary!") }
 
     // MARK: Semantic token - Colors - Action
 
@@ -266,25 +266,25 @@ extension InverseTheme {
 
     override public var colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
 
-    override public var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryEnabled!")  }
+    override public var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryEnabled!")  }
 
-    override public var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken {  fatalError("No value defined for colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized!") }
+    override public var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken {  fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized!") }
 
-    override public var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryHover!") }
+    override public var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHover!") }
 
-    override public var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!")  }
+    override public var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!")  }
 
-    override public var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryPressed!")  }
+    override public var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressed!")  }
 
-    override public var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!")  }
+    override public var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!")  }
 
-    override public var colorActionOnBackgroundActionSecondaryLoading: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryLoading!") }
+    override public var colorActionOnBackgroundActionSecondaryLoading: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryLoading!") }
 
-    override public var colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized!") }
+    override public var colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized!") }
 
-    override public var colorActionOnBackgroundActionSecondaryFocus: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryFocus!") }
+    override public var colorActionOnBackgroundActionSecondaryFocus: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryFocus!") }
 
-    override public var colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized!") }
+    override public var colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized!") }
 
     // MARK: Semantic token - Colors - Elevation
 

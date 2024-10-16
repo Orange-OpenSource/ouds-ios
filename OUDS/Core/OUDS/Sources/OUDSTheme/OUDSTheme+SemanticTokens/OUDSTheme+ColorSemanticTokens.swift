@@ -34,16 +34,16 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var colorBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray800) }
 
     // WARNING: #124 - Colors to use are part of OUDSOran MultipleColorTokens(light: ColorRawTokens., dark: ColorRawTokens.)heme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBackgroundTertiary: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundBrandSecondary!") }
+    @objc open var colorBackgroundTertiary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundBrandSecondary!") }
 
     @objc open var colorBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray880, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
     // WARNING: #124 - Colors to use are part of OUDSOran MultipleColorTokens(light: ColorRawTokens., dark: ColorRawTokens.)heme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBackgroundBrandPrimary: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundBrandPrimary!") }
+    @objc open var colorBackgroundBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundBrandPrimary!") }
 
-    @objc open var colorBackgroundBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBackgroundBrandSecondary!") }
+    @objc open var colorBackgroundBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBackgroundBrandSecondary!") }
 
-    @objc open var colorBackgroundBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBackgroundBrandTertiary!") }
+    @objc open var colorBackgroundBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBackgroundBrandTertiary!") }
 
     @objc open var colorBackgroundStatusNeutral: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
@@ -73,9 +73,9 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
 
-    @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundStatusAccentMuted!") }
+    @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundStatusAccentMuted!") }
 
-    @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundStatusAccentMutedOnBackgroundEmphasized!") }
+    @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundStatusAccentMutedOnBackgroundEmphasized!") }
 
     @objc open var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
 
@@ -93,11 +93,11 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorContentContentDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
-    @objc open var colorContentBrandPrimary: ColorSemanticToken { fatalError("Raw token unavailable for colorContentBrandPrimary!") }
+    @objc open var colorContentBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorContentBrandPrimary!") }
 
-    @objc open var colorContentBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorContentBrandSecondary!") }
+    @objc open var colorContentBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentBrandSecondary!") }
 
-    @objc open var colorContentBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorContentBrandTertiary!") }
+    @objc open var colorContentBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentBrandTertiary!") }
 
     @objc open var colorContentStatusPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
 
@@ -107,15 +107,15 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorContentStatusNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
 
-    @objc open var colorContentStatusAccent: ColorSemanticToken { fatalError("No value defined for colorContentStatusAccent!") }
+    @objc open var colorContentStatusAccent: ColorSemanticToken { fatalError("🤖 No value defined for colorContentStatusAccent!") }
 
     // MARK: Semantic token - Colors - Content - On Background
 
     @objc open var colorContentOnBackgroundPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorContentOnBackgroundSecondary: ColorSemanticToken { fatalError("No value defined for colorContentOnBackgroundSecondary!") }
+    @objc open var colorContentOnBackgroundSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentOnBackgroundSecondary!") }
 
-    @objc open var colorContentOnBackgroundTertiary: ColorSemanticToken { fatalError("No value defined for colorContentOnBackgroundTertiary!") }
+    @objc open var colorContentOnBackgroundTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentOnBackgroundTertiary!") }
 
     @objc open var colorContentOnBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
@@ -159,35 +159,35 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBorderFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray880) }
 
-    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorBorderBrandPrimaryOnBackgroundEmphasized!") }
+    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimaryOnBackgroundEmphasized!") }
 
-    @objc open var colorBorderBrandPrimary: ColorSemanticToken { fatalError("Raw token unavailable for colorBorderBrandPrimary!") }
+    @objc open var colorBorderBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimary!") }
 
-    @objc open var colorBorderBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBorderBrandSecondary!") }
+    @objc open var colorBorderBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderBrandSecondary!") }
 
-    @objc open var colorBorderBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBorderBrandTertiary!") }
+    @objc open var colorBorderBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderBrandTertiary!") }
 
-    @objc open var colorBorderStatusPositive: ColorSemanticToken { fatalError("No value defined for colorBorderStatusPositive!") }
+    @objc open var colorBorderStatusPositive: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusPositive!") }
 
-    @objc open var colorBorderStatusInfo: ColorSemanticToken { fatalError("No value defined for colorBorderStatusInfo!") }
+    @objc open var colorBorderStatusInfo: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusInfo!") }
 
-    @objc open var colorBorderStatusWarning: ColorSemanticToken { fatalError("No value defined for colorBorderStatusWarning!") }
+    @objc open var colorBorderStatusWarning: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusWarning!") }
 
-    @objc open var colorBorderStatusNegative: ColorSemanticToken { fatalError("No value defined for colorBorderStatusNegative!") }
+    @objc open var colorBorderStatusNegative: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusNegative!") }
 
-    @objc open var colorBorderStatusAccent: ColorSemanticToken { fatalError("No value defined for colorBorderStatusAccent!") }
+    @objc open var colorBorderStatusAccent: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusAccent!") }
 
     @objc open var colorBorderOnBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorBorderOnBackgroundBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBorderOnBackgroundBrandSecondary!") }
+    @objc open var colorBorderOnBackgroundBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderOnBackgroundBrandSecondary!") }
 
-    @objc open var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBorderOnBackgroundBrandTertiary!") }
+    @objc open var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderOnBackgroundBrandTertiary!") }
 
     // MARK: Semantic token - Colors - Action
 
-    @objc open var colorActionSelected: ColorSemanticToken { fatalError("Raw token unavailable for colorActionSelected!") }
+    @objc open var colorActionSelected: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionSelected!") }
 
-    @objc open var colorActionSelectedOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorActionSelectedOnBackgroundEmphasized!") }
+    @objc open var colorActionSelectedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionSelectedOnBackgroundEmphasized!") }
 
     @objc open var colorActionDisabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray400, dark: ColorRawTokens.colorFunctionalDarkGray400) }
 
@@ -205,13 +205,13 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorActionPrimaryHoverOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
-    @objc open var colorActionPrimaryPressed: ColorSemanticToken { fatalError("Raw token unavailable for colorActionPrimaryPressed!") }
+    @objc open var colorActionPrimaryPressed: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryPressed!") }
 
-    @objc open var colorActionPrimaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorActionPrimaryPressedOnBackgroundEmphasized!") }
+    @objc open var colorActionPrimaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryPressedOnBackgroundEmphasized!") }
 
-    @objc open var colorActionPrimaryLoading: ColorSemanticToken { fatalError("Raw token unavailable for colorActionPrimaryLoading!") }
+    @objc open var colorActionPrimaryLoading: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoading!") }
 
-    @objc open var colorActionPrimaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorActionPrimaryLoadingOnBackgroundEmphasized!") }
+    @objc open var colorActionPrimaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoadingOnBackgroundEmphasized!") }
 
     @objc open var colorActionPrimaryFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
 
@@ -273,25 +273,25 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryEnabled!")  }
+    @objc open var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryEnabled!")  }
 
-    @objc open var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized!") }
+    @objc open var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryHover!") }
+    @objc open var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHover!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!")  }
+    @objc open var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!")  }
 
-    @objc open var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryPressed!")  }
+    @objc open var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressed!")  }
 
-    @objc open var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!")  }
+    @objc open var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!")  }
 
-    @objc open var colorActionOnBackgroundActionSecondaryLoading: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryLoading!") }
+    @objc open var colorActionOnBackgroundActionSecondaryLoading: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryLoading!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized!") }
+    @objc open var colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryFocus: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryFocus!") }
+    @objc open var colorActionOnBackgroundActionSecondaryFocus: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryFocus!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized!") }
+    @objc open var colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized!") }
 
     // MARK: Semantic token - Colors - Always
 
@@ -357,23 +357,23 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Elevation
 
-    @objc open var colorDecorativeBrandPrimary: ColorSemanticToken { fatalError("Raw token unavailable for colorDecorativeBrandPrimary!") }
+    @objc open var colorDecorativeBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorDecorativeBrandPrimary!") }
 
-    @objc open var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { fatalError("No value defined for colorDecorativeBrandPrimaryMuted!") }
+    @objc open var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandPrimaryMuted!") }
 
-    @objc open var colorDecorativeBrandPrimaryEmphasized: ColorSemanticToken { fatalError("No value defined for colorDecorativeBrandPrimaryEmphasized!") }
+    @objc open var colorDecorativeBrandPrimaryEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandPrimaryEmphasized!") }
 
     @objc open var colorDecorativeSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorDecorativeSecondaryMuted: ColorSemanticToken { fatalError("No value defined for colorDecorativeSecondaryMuted!") }
+    @objc open var colorDecorativeSecondaryMuted: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeSecondaryMuted!") }
 
-    @objc open var colorDecorativeSecondaryEmphasized: ColorSemanticToken { fatalError("No value defined for colorDecorativeSecondaryEmphasized!") }
+    @objc open var colorDecorativeSecondaryEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeSecondaryEmphasized!") }
 
     @objc open var colorDecorativeBrandTertiary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalDarkGray880) }
 
-    @objc open var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { fatalError("No value defined for colorDecorativeBrandTertiaryMuted!") }
+    @objc open var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandTertiaryMuted!") }
 
-    @objc open var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { fatalError("No value defined for colorDecorativeBrandTertiaryEmphasized!") }
+    @objc open var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandTertiaryEmphasized!") }
 
     @objc open var colorDecorativeNeutralMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray560) }
 
@@ -433,7 +433,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorChartCategoricalNeutral: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
-    @objc open var colorChartCategoricalBrand: ColorSemanticToken { fatalError("Raw token unavailable for colorChartCategoricalBrand!") }
+    @objc open var colorChartCategoricalBrand: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorChartCategoricalBrand!") }
 
     @objc open var colorChartCategoricalPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
 
