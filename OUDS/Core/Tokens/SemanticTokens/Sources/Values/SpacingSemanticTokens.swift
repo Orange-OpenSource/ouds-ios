@@ -86,7 +86,8 @@ public protocol SpacingSemanticTokens {
     var spacePaddingBlockMedium: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockTall: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockTaller: SpacingPaddingInlineSemanticToken { get }
-
+    var spacePaddingBlockTallest: SpacingPaddingInlineSemanticToken { get }
+    
     var spacePaddingBlockWithIconNone: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockWithIconShortest: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockWithIconShorter: SpacingPaddingInlineSemanticToken { get }

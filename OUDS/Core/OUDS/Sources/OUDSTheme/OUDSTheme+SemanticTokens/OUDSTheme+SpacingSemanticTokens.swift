@@ -80,13 +80,14 @@ extension OUDSTheme: SpacingSemanticTokens {
 
     // MARK: Semantic token - Padding - Padding stack
 
-    @objc open var spacePaddingBlockNone: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension0 }
-    @objc open var spacePaddingBlockShorter: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension50 }
-    @objc open var spacePaddingBlockShort: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension100 }
-    @objc open var spacePaddingBlockMedium: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension200 }
-    @objc open var spacePaddingBlockTall: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension300 }
-    @objc open var spacePaddingBlockTaller: SpacingPaddingInlineSemanticToken { DimensionRawTokens.dimension400 }
-
+    @objc open var spacePaddingBlockNone: SpacingPaddingInlineSemanticToken { dimensionNone }
+    @objc open var spacePaddingBlockShorter: SpacingPaddingInlineSemanticToken { dimension9XS }
+    @objc open var spacePaddingBlockShort: SpacingPaddingInlineSemanticToken { dimension7XS }
+    @objc open var spacePaddingBlockMedium: SpacingPaddingInlineSemanticToken { dimension6XS }
+    @objc open var spacePaddingBlockTall: SpacingPaddingInlineSemanticToken { dimension5XS }
+    @objc open var spacePaddingBlockTaller: SpacingPaddingInlineSemanticToken { dimension3XS }
+    @objc open var spacePaddingBlockTallest: SpacingPaddingInlineSemanticToken { dimensionXS }
+    
     @objc open var spacePaddingBlockWithIconNone: SpacingPaddingInlineSemanticToken { dimensionNone }
     @objc open var spacePaddingBlockWithIconShortest: SpacingPaddingInlineSemanticToken { dimension10XS }
     @objc open var spacePaddingBlockWithIconShorter: SpacingPaddingInlineSemanticToken { dimension9XS }

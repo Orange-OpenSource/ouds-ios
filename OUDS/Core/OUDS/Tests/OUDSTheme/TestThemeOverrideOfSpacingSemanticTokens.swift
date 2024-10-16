@@ -296,6 +296,11 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.spacePaddingBlockTaller == MockTheme.mockThemeSpaceRawToken)
     }
 
+    func testInheritedThemeCanOverrideSemanticTokenSpacePaddingBlockTallest() throws {
+        XCTAssertNotEqual(inheritedTheme.spacePaddingBlockTallest, abstractTheme.spacePaddingBlockTallest)
+        XCTAssertTrue(inheritedTheme.spacePaddingBlockTallest == MockTheme.mockThemeSpaceRawToken)
+    }
+
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingBlockWithIconNone() throws {
         XCTAssertNotEqual(inheritedTheme.spacePaddingBlockWithIconNone, abstractTheme.spacePaddingBlockWithIconNone)
         XCTAssertTrue(inheritedTheme.spacePaddingBlockWithIconNone == MockTheme.mockThemeSpaceRawToken)
