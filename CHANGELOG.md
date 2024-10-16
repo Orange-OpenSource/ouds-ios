@@ -19,9 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] Update of semantic grid tokens `gridExtraCompactColumnCount`, `gridCompactColumnGap`, `gridRegularColumnGap
-- [Library] Update of semantic elevation token `elevationStickyNavigationScrolled`
-- [Library] Update of semantic color tokens, semantic sizing tokens
+- [Library] Update of semantic typography tokens (Figjam final synchronization of October 16th)
+- [Library] Update of semantic grid tokens `gridExtraCompactColumnCount`, `gridCompactColumnGap`, `gridRegularColumnGap (Figjam final synchronization of October 16th)
+- [Library] Update of semantic elevation token `elevationStickyNavigationScrolled` (Figjam final synchronization of October 16th)
+- [Library] Update of semantic color tokens, semantic sizing tokens (Figjam final synchronization of October 16th)
 - [Library/DemoApp] Updates SwiftLint rules, fix linter warnings ([#143](https://github.com/Orange-OpenSource/ouds-ios/issues/143))
 - [Tool] Update the templates for GitHub issues
 - [Tool] Improve script for documentation generation ([#168](https://github.com/Orange-OpenSource/ouds-ios/issues/168))
@@ -42,8 +43,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- [Library] Raw typography token `fontSize100
-- [Library] Semantic token `spaceColumnGapWithArrowTaller`
+- [Library] Raw typography token `fontSize100 (Figjam final synchronization of October 16th)
+- [Library] Semantic token `spaceColumnGapWithArrowTaller` (Figjam final synchronization of October 16th)
 - [Library] Remove all color alias semantic tokens and any optional color tokens type uses
 - [Library] `SoshTheme` ([#180](https://github.com/Orange-OpenSource/ouds-ios/issues/180))
 - [Library] `fontSizeMobile*`, `fontSizeTablet*`, `fontLineHeightMobile*`, `fontLineHeightTablet*`, `fontLetterSpacingMobile*`, `fontLetterSpacingTablet*` removed (update of October 4th)

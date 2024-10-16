@@ -37,12 +37,12 @@ extension OUDSTheme: TypographySemanticTokens {
 
     @objc open var fontWeightDefault: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
     @objc open var fontWeightStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight700 }
-    @objc open var fontWeightDisplay: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight700 }
-    @objc open var fontWeightHeading: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight700 }
-    @objc open var fontWeightBodyDefault: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
-    @objc open var fontWeightBodyStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight700 }
-    @objc open var fontWeightLabelDefault: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
-    @objc open var fontWeightLabelStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight700 }
+    @objc open var fontWeightDisplay: TypographyFontWeightSemanticToken { fontWeightStrong }
+    @objc open var fontWeightHeading: TypographyFontWeightSemanticToken { fontWeightStrong }
+    @objc open var fontWeightBodyDefault: TypographyFontWeightSemanticToken { fontWeightDefault }
+    @objc open var fontWeightBodyStrong: TypographyFontWeightSemanticToken { fontWeightStrong }
+    @objc open var fontWeightLabelDefault: TypographyFontWeightSemanticToken { fontWeightDefault }
+    @objc open var fontWeightLabelStrong: TypographyFontWeightSemanticToken { fontWeightStrong }
     @objc open var fontWeightCode: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
 
     // MARK: Semantic token - Typography - Font - Size
@@ -95,16 +95,16 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLetterSpacingHeadingLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing450, regular: TypographyRawTokens.fontLetterSpacing750) }
     @objc open var fontLetterSpacingHeadingMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing350, regular: TypographyRawTokens.fontLetterSpacing450) }
     @objc open var fontLetterSpacingHeadingSmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing300, regular: TypographyRawTokens.fontLetterSpacing350 ) }
-    @objc open var fontLetterSpacingBodyLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing150, regular: TypographyRawTokens.fontLetterSpacing150) }
-    @objc open var fontLetterSpacingBodyMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing200, regular: TypographyRawTokens.fontLetterSpacing200) }
-    @objc open var fontLetterSpacingBodySmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing150, regular: TypographyRawTokens.fontLetterSpacing150) }
+    @objc open var fontLetterSpacingBodyLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing250) }
+    @objc open var fontLetterSpacingBodyMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing200) }
+    @objc open var fontLetterSpacingBodySmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing150) }
 
     @objc open var fontLetterSpacingLabelXLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing300) }
     @objc open var fontLetterSpacingLabelLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing250) }
     @objc open var fontLetterSpacingLabelMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing200) }
     @objc open var fontLetterSpacingLabelSmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing150) }
-    @objc open var fontLetterSpacingCodeMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLineHeight350) }
-    @objc open var fontLetterSpacingCodeSmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLineHeight250) }
+    @objc open var fontLetterSpacingCodeMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing200) }
+    @objc open var fontLetterSpacingCodeSmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing150) }
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
@@ -121,28 +121,28 @@ extension OUDSTheme: TypographySemanticTokens {
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    @objc open var typeBodyDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeRegular250, regular: TypographyRawTokens.typeRegular250) }
-    @objc open var typeBodyDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeBodyDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
-    @objc open var typeBodyStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold250, regular: TypographyRawTokens.typeBold250) }
-    @objc open var typeBodyStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeBodyStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
+    @objc open var typeBodyDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular250) }
+    @objc open var typeBodyDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular200) }
+    @objc open var typeBodyDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular150) }
+    @objc open var typeBodyStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold250) }
+    @objc open var typeBodyStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold200) }
+    @objc open var typeBodyStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold150) }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    @objc open var typeLabelDefaultXLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold300, regular: TypographyRawTokens.typeBold300) }
-    @objc open var typeLabelDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold250, regular: TypographyRawTokens.typeBold250) }
-    @objc open var typeLabelDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeLabelDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
-    @objc open var typeLabelStrongXLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold300, regular: TypographyRawTokens.typeBold300) }
-    @objc open var typeLabelStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold250, regular: TypographyRawTokens.typeBold250) }
-    @objc open var typeLabelStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeLabelStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
+    @objc open var typeLabelDefaultXLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular250) } // NOTE: .typeRegular300 in Figjam but undefined
+    @objc open var typeLabelDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold250) }
+    @objc open var typeLabelDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular200) }
+    @objc open var typeLabelDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular150) }
+    @objc open var typeLabelStrongXLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold300) }
+    @objc open var typeLabelStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold250) }
+    @objc open var typeLabelStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold200) }
+    @objc open var typeLabelStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold150) }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    @objc open var typeCodeMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeCodeSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
+    @objc open var typeCodeMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular200) }
+    @objc open var typeCodeSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular150) }
 }
 
 // swiftlint:enable line_length
