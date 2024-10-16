@@ -25,6 +25,13 @@ public final class MultipleSizingTokens: NSObject {
     public let regular: SizingSemanticToken
 
     /// Initializes a new sizing composite semantic token.
+    /// - Parameter value: The `SizingSemanticToken` to apply if device in *compact* mode or *regular* mode
+    public init(_ value: SizingSemanticToken) {
+        self.compact = value
+        self.regular = value
+    }
+
+    /// Initializes a new sizing composite semantic token.
     /// - Parameters:
     ///    - compact: The `SizingSemanticToken` to apply if device in *compact* mode
     ///    - regular: The `SizingSemanticToken` to apply if device in *regular* mode

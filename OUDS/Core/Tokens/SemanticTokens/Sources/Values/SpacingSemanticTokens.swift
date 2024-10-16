@@ -59,7 +59,7 @@ public protocol SpacingSemanticTokens {
     var spacePaddingInlineTall: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingInlineTaller: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingInlineTallest: SpacingPaddingInlineSemanticToken { get }
-    
+
     var spacePaddingInlineWithIconNone: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingInlineWithIconShortest: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingInlineWithIconShorter: SpacingPaddingInlineSemanticToken { get }
@@ -87,7 +87,7 @@ public protocol SpacingSemanticTokens {
     var spacePaddingBlockTall: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockTaller: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockTallest: SpacingPaddingInlineSemanticToken { get }
-    
+
     var spacePaddingBlockWithIconNone: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockWithIconShortest: SpacingPaddingInlineSemanticToken { get }
     var spacePaddingBlockWithIconShorter: SpacingPaddingInlineSemanticToken { get }
@@ -117,7 +117,7 @@ public protocol SpacingSemanticTokens {
     var spaceColumnGapMedium: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapTall: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapTaller: SpacingPaddingInlineSemanticToken { get }
-    
+
     var spaceColumnGapWithIconNone: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithIconShortest: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithIconShorter: SpacingPaddingInlineSemanticToken { get }

@@ -87,7 +87,7 @@ extension OUDSTheme: SpacingSemanticTokens {
     @objc open var spacePaddingBlockTall: SpacingPaddingInlineSemanticToken { dimension5XS }
     @objc open var spacePaddingBlockTaller: SpacingPaddingInlineSemanticToken { dimension3XS }
     @objc open var spacePaddingBlockTallest: SpacingPaddingInlineSemanticToken { dimensionXS }
-    
+
     @objc open var spacePaddingBlockWithIconNone: SpacingPaddingInlineSemanticToken { dimensionNone }
     @objc open var spacePaddingBlockWithIconShortest: SpacingPaddingInlineSemanticToken { dimension10XS }
     @objc open var spacePaddingBlockWithIconShorter: SpacingPaddingInlineSemanticToken { dimension9XS }
