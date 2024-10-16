@@ -35,9 +35,19 @@
 		0747947A2CAE882A0033C2D8 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074794792CAE882A0033C2D8 /* EmptyState.swift */; };
 		075114DB2CB7D28D00B8B759 /* SizingTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D82CB7D28D00B8B759 /* SizingTokenElement.swift */; };
 		075114DC2CB7D28D00B8B759 /* SizingTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D92CB7D28D00B8B759 /* SizingTokenPage.swift */; };
-		075114E82CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */; };
 		075114E02CB7FDC200B8B759 /* ColorTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */; };
 		075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */; };
+		075114E82CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */; };
+		0765B4942CC1597C00E69359 /* NamedColor+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4932CC1597C00E69359 /* NamedColor+Background.swift */; };
+		0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4952CC159F600E69359 /* NamedColor+Action.swift */; };
+		0765B4982CC15A4000E69359 /* NamedColor+Always.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4972CC15A4000E69359 /* NamedColor+Always.swift */; };
+		0765B49A2CC15ACE00E69359 /* NamedColor+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4992CC15ACE00E69359 /* NamedColor+Border.swift */; };
+		0765B49C2CC15B2E00E69359 /* NamedColor+Elevation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B49B2CC15B2E00E69359 /* NamedColor+Elevation.swift */; };
+		0765B49E2CC15B7E00E69359 /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B49D2CC15B7E00E69359 /* NamedColor+Decorative.swift */; };
+		0765B4A02CC15BBC00E69359 /* NamedColor+Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B49F2CC15BBC00E69359 /* NamedColor+Content.swift */; };
+		0765B4A22CC15C0500E69359 /* NamedColor+OnContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4A12CC15C0500E69359 /* NamedColor+OnContent.swift */; };
+		0765B4A42CC15C3E00E69359 /* NamedColor+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4A32CC15C3E00E69359 /* NamedColor+Chart.swift */; };
+		0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4A52CC15C9D00E69359 /* NamedColor.swift */; };
 		077CCE572CB426090059CC28 /* SpacingTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE512CB426090059CC28 /* SpacingTokenElement.swift */; };
 		077CCE582CB426090059CC28 /* SpacingTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE522CB426090059CC28 /* SpacingTokenPage.swift */; };
 		077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
@@ -104,9 +114,19 @@
 		074794792CAE882A0033C2D8 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		075114D82CB7D28D00B8B759 /* SizingTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingTokenElement.swift; sourceTree = "<group>"; };
 		075114D92CB7D28D00B8B759 /* SizingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingTokenPage.swift; sourceTree = "<group>"; };
-		075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseTokenIllustration.swift; sourceTree = "<group>"; };
 		075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTokenElement.swift; sourceTree = "<group>"; };
 		075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTokenPage.swift; sourceTree = "<group>"; };
+		075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseTokenIllustration.swift; sourceTree = "<group>"; };
+		0765B4932CC1597C00E69359 /* NamedColor+Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Background.swift"; sourceTree = "<group>"; };
+		0765B4952CC159F600E69359 /* NamedColor+Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Action.swift"; sourceTree = "<group>"; };
+		0765B4972CC15A4000E69359 /* NamedColor+Always.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Always.swift"; sourceTree = "<group>"; };
+		0765B4992CC15ACE00E69359 /* NamedColor+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Border.swift"; sourceTree = "<group>"; };
+		0765B49B2CC15B2E00E69359 /* NamedColor+Elevation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Elevation.swift"; sourceTree = "<group>"; };
+		0765B49D2CC15B7E00E69359 /* NamedColor+Decorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Decorative.swift"; sourceTree = "<group>"; };
+		0765B49F2CC15BBC00E69359 /* NamedColor+Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Content.swift"; sourceTree = "<group>"; };
+		0765B4A12CC15C0500E69359 /* NamedColor+OnContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+OnContent.swift"; sourceTree = "<group>"; };
+		0765B4A32CC15C3E00E69359 /* NamedColor+Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedColor+Chart.swift"; sourceTree = "<group>"; };
+		0765B4A52CC15C9D00E69359 /* NamedColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColor.swift; sourceTree = "<group>"; };
 		077CCE512CB426090059CC28 /* SpacingTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenElement.swift; sourceTree = "<group>"; };
 		077CCE522CB426090059CC28 /* SpacingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenPage.swift; sourceTree = "<group>"; };
 		077CCE542CB426090059CC28 /* DimensionTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTokenElement.swift; sourceTree = "<group>"; };
@@ -253,10 +273,28 @@
 		075114DD2CB7FD7E00B8B759 /* Color */ = {
 			isa = PBXGroup;
 			children = (
+				0765B4922CC1592900E69359 /* NamedColor */,
 				075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */,
 				075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		0765B4922CC1592900E69359 /* NamedColor */ = {
+			isa = PBXGroup;
+			children = (
+				0765B4A52CC15C9D00E69359 /* NamedColor.swift */,
+				0765B4952CC159F600E69359 /* NamedColor+Action.swift */,
+				0765B4972CC15A4000E69359 /* NamedColor+Always.swift */,
+				0765B4932CC1597C00E69359 /* NamedColor+Background.swift */,
+				0765B4992CC15ACE00E69359 /* NamedColor+Border.swift */,
+				0765B4A32CC15C3E00E69359 /* NamedColor+Chart.swift */,
+				0765B49F2CC15BBC00E69359 /* NamedColor+Content.swift */,
+				0765B4A12CC15C0500E69359 /* NamedColor+OnContent.swift */,
+				0765B49D2CC15B7E00E69359 /* NamedColor+Decorative.swift */,
+				0765B49B2CC15B2E00E69359 /* NamedColor+Elevation.swift */,
+			);
+			path = NamedColor;
 			sourceTree = "<group>";
 		};
 		077CCE502CB4254B0059CC28 /* Recovered References */ = {
@@ -683,6 +721,7 @@
 				075114DC2CB7D28D00B8B759 /* SizingTokenPage.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,
 				07CF42852CA45DA9000BD03E /* BorderTokenPage.swift in Sources */,
+				0765B4982CC15A4000E69359 /* NamedColor+Always.swift in Sources */,
 				07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */,
 				07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */,
 				075114E02CB7FDC200B8B759 /* ColorTokenElement.swift in Sources */,
@@ -690,6 +729,7 @@
 				51BD762B2C466FCF0033365D /* MainView.swift in Sources */,
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
 				07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */,
+				0765B4A42CC15C3E00E69359 /* NamedColor+Chart.swift in Sources */,
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
 				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
 				0735432A2CA192F9001187EA /* TokenElement.swift in Sources */,
@@ -698,10 +738,16 @@
 				077CCE582CB426090059CC28 /* SpacingTokenPage.swift in Sources */,
 				51BD76292C466FCF0033365D /* WebView.swift in Sources */,
 				51BD76232C466FCF0033365D /* ShowcaseElementsPage.swift in Sources */,
+				0765B49C2CC15B2E00E69359 /* NamedColor+Elevation.swift in Sources */,
 				51E3FF0B2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift in Sources */,
+				0765B4942CC1597C00E69359 /* NamedColor+Background.swift in Sources */,
 				075114DB2CB7D28D00B8B759 /* SizingTokenElement.swift in Sources */,
 				073543162CA17275001187EA /* ShowcaseElement.swift in Sources */,
+				0765B4A02CC15BBC00E69359 /* NamedColor+Content.swift in Sources */,
+				0765B49A2CC15ACE00E69359 /* NamedColor+Border.swift in Sources */,
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
+				0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */,
+				0765B4A22CC15C0500E69359 /* NamedColor+OnContent.swift in Sources */,
 				077CCE572CB426090059CC28 /* SpacingTokenElement.swift in Sources */,
 				0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */,
 				51BD76222C466FCF0033365D /* ComponentsPage.swift in Sources */,
@@ -709,9 +755,11 @@
 				075114E82CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
+				0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */,
 				073543112CA154DE001187EA /* Card.swift in Sources */,
 				51BD76212C466FCF0033365D /* AboutPage.swift in Sources */,
 				51BD762A2C466FCF0033365D /* Showcase.swift in Sources */,
+				0765B49E2CC15B7E00E69359 /* NamedColor+Decorative.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

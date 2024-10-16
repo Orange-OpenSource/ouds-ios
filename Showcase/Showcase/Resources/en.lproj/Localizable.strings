@@ -45,7 +45,7 @@
 "app_tokens_opacity_label" = "Opacity";
 "app_tokens_opacity_description_text" = "Opacity can help distinguish foreground elements from background elements, making content easier to read and important actions more noticeable.";
 
-"app_tokens_typography_label" = "Typogaphy";
+"app_tokens_typography_label" = "Typography";
 "app_tokens_typography_description_text" = "Typography is our system of fonts and text styles. They enhance communication and reinforce the brand style.";
 
 
