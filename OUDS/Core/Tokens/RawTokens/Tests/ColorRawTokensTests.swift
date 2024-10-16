@@ -17,6 +17,7 @@ import XCTest
 
 // swiftlint:disable type_body_length
 // swiftlint:disable required_deinit
+// swiftlint:disable file_length
 
 /// The aim of this tests class is to look for regressions in **color raw tokens**.
 /// Because these values will be at least generated through an external tool, is it not relevant to test each token values.

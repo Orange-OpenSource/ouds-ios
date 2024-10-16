@@ -15,8 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// swiftlint:disable force_unwrapping
-
 struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustration: View {
 
     @Environment(\.theme) private var theme
@@ -47,11 +45,11 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
             VStack(alignment: .leading) {
                 Text(tokenName)
                     .typeBodyStrongLarge(theme)
-                    .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
+                    .foregroundStyle((theme.colorContentDefault.color(for: colorScheme)))
                 if let tokenValue {
                     Text(tokenValue)
                         .typeBodyDefaultMedium(theme)
-                        .foregroundStyle((theme.colorContentMuted?.color(for: colorScheme))!)
+                        .foregroundStyle((theme.colorContentMuted.color(for: colorScheme)))
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -59,5 +57,3 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
         .padding(.vertical, theme.spaceFixedShorter)
     }
 }
-
-// swiftlint:enable force_unwrapping

@@ -15,8 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// swiftlint:disable force_unwrapping
-
 // MARK: - Typography Token Page
 
 struct TypographyTokenPage: View {
@@ -45,7 +43,7 @@ struct TypographyTokenPage: View {
 
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             typgraphyIllustration(from: namedTypography)
-                .foregroundStyle((theme.colorContentMuted?.color(for: colorScheme))!)
+                .foregroundStyle((theme.colorContentMuted.color(for: colorScheme)))
 
             Group {
                 Text("family (\(theme.customFontFamily ?? "system")), ")
@@ -56,7 +54,7 @@ struct TypographyTokenPage: View {
             }
             .typeBodyDefaultMedium(theme)
             .fixedSize(horizontal: false, vertical: true)
-            .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
+            .foregroundStyle((theme.colorContentDefault.color(for: colorScheme)))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaceFixedShorter)
@@ -114,8 +112,6 @@ struct TypographyTokenPage: View {
         }
     }
 }
-
-// swiftlint:enable force_unwrapping
 
 // MARK: - Named Typography
 

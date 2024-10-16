@@ -18,6 +18,7 @@ import SwiftUI
 struct MainView: View {
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         TabView {
@@ -34,7 +35,7 @@ struct MainView: View {
                     Label("app_bottomBar_about", image: "ic_info")
                 }
         }
-        .accentColor(theme.sysColorBrandPrimaryDefault?.color)
+        .accentColor(theme.colorContentBrandPrimary.color(for: colorScheme))
     }
 }
 

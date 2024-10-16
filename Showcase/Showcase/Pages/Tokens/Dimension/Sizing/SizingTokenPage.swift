@@ -15,9 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: Check if we can get rid of colors alaises tokens to avoid handling optional values
-// swiftlint:disable force_unwrapping
-
 struct SizingTokenPage: View {
 
     @Environment(\.theme) private var theme
@@ -47,7 +44,7 @@ struct SizingTokenPage: View {
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill((theme.colorBackgroundEmphasizedPrimary?.color(for: colorScheme))!)
+                    .fill((theme.colorBackgroundEmphasized.color(for: colorScheme)))
                     .frame(width: 82, height: 82, alignment: .center)
 
                 Image("ic_token")
@@ -61,8 +58,6 @@ struct SizingTokenPage: View {
         }
     }
 }
-
-// swiftlint:enable force_unwrapping
 
 // MARK: - Named Spacing
 

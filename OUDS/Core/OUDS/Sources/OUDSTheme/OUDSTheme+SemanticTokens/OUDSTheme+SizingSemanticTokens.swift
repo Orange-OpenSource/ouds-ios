@@ -19,6 +19,7 @@ import OUDSTokensSemantic
 // [File to generate with the tokenator]
 
 // swiftlint:disable line_length
+
 /// Defines basic values common to all themes for `SizingSemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: SizingSemanticTokens {
@@ -96,4 +97,5 @@ extension OUDSTheme: SizingSemanticTokens {
     @objc open var sizeMaxWidthTypeBodyMedium: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
     @objc open var sizeMaxWidthTypeBodyLarge: MultipleSizingTokens { MultipleSizingTokens(compact: DimensionRawTokens.dimension6000, regular: DimensionRawTokens.dimension6000 ) }
 }
+
 // swiftlint:enable line_length
