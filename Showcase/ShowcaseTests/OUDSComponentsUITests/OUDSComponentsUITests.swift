@@ -17,6 +17,8 @@ import SwiftUI
 import OUDS
 import OUDSComponents
 import OUDSTokensSemantic
+import OUDSThemesOrange
+import OUDSThemesInverse
 
 class OUDSComponentsUITests: XCTestCase {
     
@@ -25,7 +27,7 @@ class OUDSComponentsUITests: XCTestCase {
     // MARK: - Orange Theme Light Mode Components Page Tests
     
     func testComponents_OrangeTheme_Page_Light() {
-        let vc = ComponentsPage()
+        let vc = ComponentsPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testComponents_OrangeTheme_Page_Light")
     }
     
@@ -34,7 +36,7 @@ class OUDSComponentsUITests: XCTestCase {
     // MARK: - Inverse Theme Light Mode Components Page Tests
     
     func testComponents_InverseTheme_Page_Light() {
-        let vc = ComponentsPage()
+        let vc = ComponentsPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testComponents_InverseTheme_Page_Light")
     }
 }
