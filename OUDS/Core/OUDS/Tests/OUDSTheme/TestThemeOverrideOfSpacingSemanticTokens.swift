@@ -179,6 +179,11 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.spacePaddingInlineTaller == MockTheme.mockThemeSpaceRawToken)
     }
 
+    func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineTallest() throws {
+        XCTAssertNotEqual(inheritedTheme.spacePaddingInlineTallest, abstractTheme.spacePaddingInlineTallest)
+        XCTAssertTrue(inheritedTheme.spacePaddingInlineTallest == MockTheme.mockThemeSpaceRawToken)
+    }
+
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingInlineWithIconNone() throws {
         XCTAssertNotEqual(inheritedTheme.spacePaddingInlineWithIconNone, abstractTheme.spacePaddingInlineWithIconNone)
         XCTAssertTrue(inheritedTheme.spacePaddingInlineWithIconNone == MockTheme.mockThemeSpaceRawToken)
@@ -289,6 +294,11 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingBlockTaller() throws {
         XCTAssertNotEqual(inheritedTheme.spacePaddingBlockTaller, abstractTheme.spacePaddingBlockTaller)
         XCTAssertTrue(inheritedTheme.spacePaddingBlockTaller == MockTheme.mockThemeSpaceRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenSpacePaddingBlockTallest() throws {
+        XCTAssertNotEqual(inheritedTheme.spacePaddingBlockTallest, abstractTheme.spacePaddingBlockTallest)
+        XCTAssertTrue(inheritedTheme.spacePaddingBlockTallest == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpacePaddingBlockWithIconNone() throws {
@@ -405,6 +415,11 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.spaceColumnGapTall == MockTheme.mockThemeSpaceRawToken)
     }
 
+    func testInheritedThemeCanOverrideSemanticTokenSpaceColumnGapTaller() throws {
+        XCTAssertNotEqual(inheritedTheme.spaceColumnGapTaller, abstractTheme.spaceColumnGapTaller)
+        XCTAssertTrue(inheritedTheme.spaceColumnGapTaller == MockTheme.mockThemeSpaceRawToken)
+    }
+
     func testInheritedThemeCanOverrideSemanticTokenSpaceColumnGapWithIconNone() throws {
         XCTAssertNotEqual(inheritedTheme.spaceColumnGapWithIconNone, abstractTheme.spaceColumnGapWithIconNone)
         XCTAssertTrue(inheritedTheme.spaceColumnGapWithIconNone == MockTheme.mockThemeSpaceRawToken)
@@ -440,6 +455,11 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.spaceColumnGapWithArrowNone == MockTheme.mockThemeSpaceRawToken)
     }
 
+    func testInheritedThemeCanOverrideSemanticTokenSpaceColumnGapWithArrowShortest() throws {
+        XCTAssertNotEqual(inheritedTheme.spaceColumnGapWithArrowShortest, abstractTheme.spaceColumnGapWithArrowShortest)
+        XCTAssertTrue(inheritedTheme.spaceColumnGapWithArrowShortest == MockTheme.mockThemeSpaceRawToken)
+    }
+
     func testInheritedThemeCanOverrideSemanticTokenSpaceColumnGapWithArrowShorter() throws {
         XCTAssertNotEqual(inheritedTheme.spaceColumnGapWithArrowShorter, abstractTheme.spaceColumnGapWithArrowShorter)
         XCTAssertTrue(inheritedTheme.spaceColumnGapWithArrowShorter == MockTheme.mockThemeSpaceRawToken)
@@ -460,16 +480,16 @@ final class TestThemeOverrideOfSpacingSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.spaceColumnGapWithArrowTall == MockTheme.mockThemeSpaceRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSpaceColumnGapWithArrowTaller() throws {
-        XCTAssertNotEqual(inheritedTheme.spaceColumnGapWithArrowTaller, abstractTheme.spaceColumnGapWithArrowTaller)
-        XCTAssertTrue(inheritedTheme.spaceColumnGapWithArrowTaller == MockTheme.mockThemeSpaceRawToken)
-    }
-
     // MARK: - Semantic token - Spacing - Padding - Gap stack
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceRowGapNone() throws {
         XCTAssertNotEqual(inheritedTheme.spaceRowGapNone, abstractTheme.spaceRowGapNone)
         XCTAssertTrue(inheritedTheme.spaceRowGapNone == MockTheme.mockThemeSpaceRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenSpaceRowGapShortest() throws {
+        XCTAssertNotEqual(inheritedTheme.spaceRowGapShortest, abstractTheme.spaceRowGapShortest)
+        XCTAssertTrue(inheritedTheme.spaceRowGapShortest == MockTheme.mockThemeSpaceRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceRowGapShorter() throws {

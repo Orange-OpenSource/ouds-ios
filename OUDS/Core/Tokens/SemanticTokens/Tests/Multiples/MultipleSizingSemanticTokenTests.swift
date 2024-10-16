@@ -20,7 +20,16 @@ import XCTest
 final class MultipleSizingTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined
-    func testInit() {
+    func testInitWithOneValues() {
+        let unique: SizingSemanticToken = 888
+        let token = MultipleSizingTokens(unique)
+
+        XCTAssertTrue(token.compact == unique)
+        XCTAssertTrue(token.regular == unique)
+    }
+
+    /// Tests if compact and regular values are preserved when defined
+    func testInitTwoValues() {
         let compact: SizingSemanticToken = 123
         let regular: SizingSemanticToken = 456
         let token = MultipleSizingTokens(compact: compact, regular: regular)

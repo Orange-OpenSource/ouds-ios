@@ -22,7 +22,7 @@ import OUDSTokensSemantic
 
 extension InverseTheme {
 
-    // MARK: Semantic token - Elevation - Color - Focus
+    // MARK: Semantic token - Elevation - Color 
 
     override public var elevationColorFocus: ElevationColorSemanticToken { MultipleColorTokens( ColorRawTokens.colorFunctionalLightGray160) }
 

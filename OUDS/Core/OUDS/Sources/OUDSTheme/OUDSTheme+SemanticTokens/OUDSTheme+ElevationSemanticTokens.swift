@@ -62,60 +62,28 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     @objc open var elevationBlurFocus: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur0 }
 
-    // MARK: Semantic token - Elevation - Color - None
+    // MARK: Semantic token - Elevation - Color
 
     @objc open var elevationColorNone: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack0) }
-
-    // MARK: Semantic token - Elevation - Color - Raised
-
     @objc open var elevationColorRaised: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack500) }
-
-    // MARK: Semantic token - Elevation - Color - Drag
-
     @objc open var elevationColorDrag: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack500) }
-
-    // MARK: Semantic token - Elevation - Color - Overlay - Default
-
     @objc open var elevationColorOverlayDefault: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack400) }
-
-    // MARK: Semantic token - Elevation - Color - Overlay - Emphasized
-
     @objc open var elevationColorOverlayEmphasized: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
-
-    // MARK: Semantic token - Elevation - Color - Sticky - Default
-
     @objc open var elevationColorStickyDefault: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
-
-    // MARK: Semantic token - Elevation - Color - Sticky - Emphasized
-
     @objc open var elevationColorStickyEmphasized: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
-
-    // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
-
     @objc open var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
-
-    // MARK: Semantic token - Elevation - Color - Focus
-
     @objc open var elevationColorFocus: ElevationColorSemanticToken { ElevationColorSemanticToken(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
     // MARK: Semantic token - Elevation - Box shadow
 
     @objc open var elevationNone: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_0) }
-
     @objc open var elevationRaised: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_1_500) }
-
     @objc open var elevationDrag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_500) }
-
     @objc open var elevationOverlayDefault: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_2_400) }
-
     @objc open var elevationOverlayEmphasized: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_5_300) }
-
     @objc open var elevationStickyDefault: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
-
     @objc open var elevationStickyEmphasized: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
-
-    @objc open var elevationStickyNavigationScrolled: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_1_500) }
-
+    @objc open var elevationStickyNavigationScrolled: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
     @objc open var elevationFocus: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(light: ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalBlack), dark: ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalLightGray160)) }
 }
 
