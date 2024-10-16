@@ -289,6 +289,39 @@ public protocol ColorSemanticTokens {
     
     var colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { get }
 
+    // MARK: Semantic token - Colors - Always
+    
+    var colorAlwaysBlack: ColorSemanticToken { get }
+    
+    var colorAlwaysWhite: ColorSemanticToken { get }
+    
+    var colorAlwaysWarning: ColorSemanticToken { get }
+    
+    var colorAlwaysNegative: ColorSemanticToken { get }
+    
+    var colorAlwaysPositive: ColorSemanticToken { get }
+    
+    var colorAlwaysInfo: ColorSemanticToken { get }
+    
+    var colorAlwaysAccent: ColorSemanticToken { get }
+    
+    var colorAlwaysOnBackgroundBlack: ColorSemanticToken { get }
+    
+    var colorAlwaysOnBackgroundWhite: ColorSemanticToken { get }
+    
+    var colorAlwaysOnBackgroundWarning: ColorSemanticToken { get }
+    
+    var colorAlwaysOnBackgroundNegative: ColorSemanticToken { get }
+    
+    var colorAlwaysOnBackgroundPositive: ColorSemanticToken { get }
+    
+    var colorAlwaysOnBackgroundInfo: ColorSemanticToken { get }
+    
+    var colorAlwaysOnBackgroundAccent: ColorSemanticToken { get }
+    
+    
+    
+    
     
     
     // ---------------------------------------------

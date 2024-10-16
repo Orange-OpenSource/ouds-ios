@@ -290,6 +290,53 @@ extension OUDSTheme: ColorSemanticTokens {
     
     @objc open var colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized!") }
     
+    // MARK: Semantic token - Colors - Always
+    
+    @objc open var colorAlwaysBlack: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    @objc open var colorAlwaysWhite: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    
+    @objc open var colorAlwaysWarning: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
+    
+    @objc open var colorAlwaysNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    
+    @objc open var colorAlwaysPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
+    
+    @objc open var colorAlwaysInfo: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
+    
+    @objc open var colorAlwaysAccent: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
+    
+    @objc open var colorAlwaysOnBackgroundBlack: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    
+    @objc open var colorAlwaysOnBackgroundWhite: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    @objc open var colorAlwaysOnBackgroundWarning: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    @objc open var colorAlwaysOnBackgroundNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    
+    @objc open var colorAlwaysOnBackgroundPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    @objc open var colorAlwaysOnBackgroundInfo: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    @objc open var colorAlwaysOnBackgroundAccent: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // --------------
     
     
