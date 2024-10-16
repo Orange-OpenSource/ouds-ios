@@ -120,11 +120,11 @@ extension InverseTheme {
     
     override public var colorContentOnBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
     
-    override public var colorContentOnBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens() }
+    override public var colorContentOnBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
     
-    override public var colorContentOnBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    override public var colorContentOnBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
     
-    override public var colorContentOnBackgroundStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    override public var colorContentOnBackgroundStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
     
     override public var colorContentOnBackgroundStatusNegativeMuted: ColorSemanticToken { MultipleColorTokens() }
     
