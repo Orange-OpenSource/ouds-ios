@@ -134,7 +134,7 @@ extension OUDSTheme: SpacingSemanticTokens {
 
     // MARK: Semantic token - Padding - Gap stack
 
-    @objc open var spaceRowGapNone: SpacingGapStackSemanticToken { DimensionRawTokens.dimension0 }
+    @objc open var spaceRowGapNone: SpacingGapStackSemanticToken { dimensionNone }
     @objc open var spaceRowGapShortest: SpacingGapStackSemanticToken { dimension10XS }
     @objc open var spaceRowGapShorter: SpacingGapStackSemanticToken { dimension9XS }
     @objc open var spaceRowGapShort: SpacingGapStackSemanticToken { dimension8XS }

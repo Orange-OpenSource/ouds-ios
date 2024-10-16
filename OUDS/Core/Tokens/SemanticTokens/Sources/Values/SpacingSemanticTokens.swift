@@ -135,6 +135,7 @@ public protocol SpacingSemanticTokens {
     // MARK: Semantic token - Spacing - Padding - Gap stack
 
     var spaceRowGapNone: SpacingGapStackSemanticToken { get }
+    var spaceRowGapShortest: SpacingGapStackSemanticToken { get }
     var spaceRowGapShorter: SpacingGapStackSemanticToken { get }
     var spaceRowGapShort: SpacingGapStackSemanticToken { get }
     var spaceRowGapMedium: SpacingGapStackSemanticToken { get }

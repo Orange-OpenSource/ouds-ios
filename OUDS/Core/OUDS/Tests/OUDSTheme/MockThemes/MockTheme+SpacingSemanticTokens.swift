@@ -132,6 +132,7 @@ extension MockTheme {
     // MARK: Semantic token - Padding - Gap stack
 
     override open var spaceRowGapNone: SpacingGapStackSemanticToken { Self.mockThemeSpaceRawToken }
+    override open var spaceRowGapShortest: SpacingGapStackSemanticToken { Self.mockThemeSpaceRawToken }
     override open var spaceRowGapShorter: SpacingGapStackSemanticToken { Self.mockThemeSpaceRawToken }
     override open var spaceRowGapShort: SpacingGapStackSemanticToken { Self.mockThemeSpaceRawToken }
     override open var spaceRowGapMedium: SpacingGapStackSemanticToken { Self.mockThemeSpaceRawToken }
