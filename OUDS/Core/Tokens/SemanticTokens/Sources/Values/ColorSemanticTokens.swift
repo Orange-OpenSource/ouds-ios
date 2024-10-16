@@ -351,7 +351,7 @@ public protocol ColorSemanticTokens {
     
     var colorElevationModal: ColorSemanticToken { get }
     
-    // MARK: Semantic token - Colors - Elevation
+    // MARK: Semantic token - Colors - Decorative
     
     var colorDecorativeBrandPrimary: ColorSemanticToken { get }
     
@@ -424,6 +424,126 @@ public protocol ColorSemanticTokens {
     var colorDecorativeSkintTint800: ColorSemanticToken { get }
     
     var colorDecorativeSkintTint900: ColorSemanticToken { get }
+    
+    // MARK: Semantic token - Colors - Chart
+    
+    var colorChartCategoricalNeutral: ColorSemanticToken { get }
+    
+    var colorChartCategoricalBrand: ColorSemanticToken { get }
+    
+    var colorChartCategoricalPositive: ColorSemanticToken { get }
+    
+    var colorChartCategoricalNegative: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier1: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier2: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier3: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier4: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier5: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier6: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier7: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier8: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier9: ColorSemanticToken { get }
+    
+    var colorChartCategoricalTier10: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent1Tint100: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent1Tint200: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent1Tint300: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent1Tint400: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent1Tint500: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent1Tint600: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent1Tint700: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent1Tint800: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent1Tint900: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent2Tint100: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent2Tint200: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent2Tint300: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent2Tint400: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent2Tint500: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent2Tint600: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent2Tint700: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent2Tint800: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent2Tint900: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent3Tint100: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent3Tint200: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent3Tint300: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent3Tint400: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent3Tint500: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent3Tint600: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent3Tint700: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent3Tint800: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent3Tint900: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent4Tint100: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent4Tint200: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent4Tint300: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent4Tint400: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent4Tint500: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent4Tint600: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent4Tint700: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent4Tint800: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent4Tint900: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent5Tint100: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent5Tint200: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent5Tint300: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent5Tint400: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent5Tint500: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent5Tint600: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent5Tint700: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent5Tint800: ColorSemanticToken { get }
+    
+    var colorChartSequentialAccent5Tint900: ColorSemanticToken { get }
 }
 
 

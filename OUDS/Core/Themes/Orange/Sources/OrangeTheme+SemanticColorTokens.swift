@@ -77,5 +77,9 @@ extension OrangeTheme {
     
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
     override open var colorDecorativeBrandPrimary: ColorSemanticToken { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    
+    // MARK: Semantic token - Colors - Chart
+    
+    override open var colorChartCategoricalBrand: ColorSemanticToken { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
 }
 

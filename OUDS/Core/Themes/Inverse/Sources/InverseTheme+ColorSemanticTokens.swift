@@ -311,4 +311,122 @@ extension InverseTheme {
     override public var colorElevationOverlayEmphasizedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
     
     override public var colorElevationModal: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    
+    // MARK: Semantic token - Colors - Chart
+    
+    override public var colorChartCategoricalNeutral: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    
+    override public var colorChartCategoricalPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
+    
+    override public var colorChartCategoricalNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    
+    override public var colorChartCategoricalTier1: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst500) }
+    
+    override public var colorChartCategoricalTier2: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink400) }
+    
+    override public var colorChartCategoricalTier3: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald600) }
+    
+    override public var colorChartCategoricalTier4: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky200) }
+    
+    override public var colorChartCategoricalTier5: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmber700) }
+    
+    override public var colorChartCategoricalTier6: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst600) }
+    
+    override public var colorChartCategoricalTier7: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink600) }
+    
+    override public var colorChartCategoricalTier8: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald400) }
+    
+    override public var colorChartCategoricalTier9: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky500) }
+    
+    override public var colorChartCategoricalTier10: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmber300) }
+    
+    override public var colorChartSequentialAccent1Tint100: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky900) }
+    
+    override public var colorChartSequentialAccent1Tint200: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky800) }
+    
+    override public var colorChartSequentialAccent1Tint300: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky700) }
+    
+    override public var colorChartSequentialAccent1Tint400: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky600) }
+    
+    override public var colorChartSequentialAccent1Tint500: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky500) }
+    
+    override public  var colorChartSequentialAccent1Tint600: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky400) }
+    
+    override public var colorChartSequentialAccent1Tint700: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky300) }
+    
+    override public var colorChartSequentialAccent1Tint800: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky200) }
+    
+    override public var colorChartSequentialAccent1Tint900: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky100) }
+    
+    override public var colorChartSequentialAccent2Tint100: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald900) }
+    
+    override public var colorChartSequentialAccent2Tint200: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald800) }
+    
+    override public var colorChartSequentialAccent2Tint300: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald700) }
+    
+    override public var colorChartSequentialAccent2Tint400: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald600) }
+    
+    override public var colorChartSequentialAccent2Tint500: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald500) }
+    
+    override public var colorChartSequentialAccent2Tint600: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald400) }
+    
+    override public var colorChartSequentialAccent2Tint700: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald300) }
+    
+    override public var colorChartSequentialAccent2Tint800: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald200) }
+    
+    override public var colorChartSequentialAccent2Tint900: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald100) }
+    
+    override public var colorChartSequentialAccent3Tint100: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink900) }
+    
+    override public var colorChartSequentialAccent3Tint200: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink800) }
+    
+    override public var colorChartSequentialAccent3Tint300: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink700) }
+    
+    override public var colorChartSequentialAccent3Tint400: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink600) }
+    
+    override public var colorChartSequentialAccent3Tint500: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink500) }
+    
+    override public var colorChartSequentialAccent3Tint600: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink400) }
+    
+    override public var colorChartSequentialAccent3Tint700: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink300) }
+    
+    override public var colorChartSequentialAccent3Tint800: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink200) }
+    
+    override public var colorChartSequentialAccent3Tint900: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink100) }
+    
+    override public var colorChartSequentialAccent4Tint100: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst900) }
+    
+    override public var colorChartSequentialAccent4Tint200: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst800) }
+    
+    override public var colorChartSequentialAccent4Tint300: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst700) }
+    
+    override public var colorChartSequentialAccent4Tint400: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst600) }
+    
+    override public var colorChartSequentialAccent4Tint500: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst500) }
+    
+    override public var colorChartSequentialAccent4Tint600: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst400) }
+    
+    override public var colorChartSequentialAccent4Tint700: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst300) }
+    
+    override public var colorChartSequentialAccent4Tint800: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst200) }
+    
+    override public var colorChartSequentialAccent4Tint900: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst100) }
+    
+    override public var colorChartSequentialAccent5Tint100: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun900) }
+    
+    override public var colorChartSequentialAccent5Tint200: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun800) }
+    
+    override public var colorChartSequentialAccent5Tint300: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun700) }
+    
+    override public var colorChartSequentialAccent5Tint400: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun600) }
+    
+    override public var colorChartSequentialAccent5Tint500: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
+    
+    override public var colorChartSequentialAccent5Tint600: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun400) }
+    
+    override public var colorChartSequentialAccent5Tint700: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun300) }
+    
+    override public var colorChartSequentialAccent5Tint800: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun200) }
+    
+    override public var colorChartSequentialAccent5Tint900: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun100) }
 }

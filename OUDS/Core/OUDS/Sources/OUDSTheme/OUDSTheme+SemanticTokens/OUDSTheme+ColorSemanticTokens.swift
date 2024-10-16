@@ -426,6 +426,125 @@ extension OUDSTheme: ColorSemanticTokens {
     
     @objc open var colorDecorativeSkintTint900: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach900) }
     
+    // MARK: Semantic token - Colors - Chart
+    
+    @objc open var colorChartCategoricalNeutral: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray720) }
+    
+    @objc open var colorChartCategoricalBrand: ColorSemanticToken { fatalError("Raw token unavailable for colorChartCategoricalBrand!") }
+    
+    @objc open var colorChartCategoricalPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
+    
+    @objc open var colorChartCategoricalNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    
+    @objc open var colorChartCategoricalTier1: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst600, dark: ColorRawTokens.colorDecorativeAmethyst500) }
+    
+    @objc open var colorChartCategoricalTier2: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink700, dark: ColorRawTokens.colorDecorativeShockingPink400) }
+    
+    @objc open var colorChartCategoricalTier3: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald700, dark: ColorRawTokens.colorDecorativeEmerald600) }
+    
+    @objc open var colorChartCategoricalTier4: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky700, dark: ColorRawTokens.colorDecorativeSky200) }
+    
+    @objc open var colorChartCategoricalTier5: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmber800, dark: ColorRawTokens.colorDecorativeAmber700) }
+    
+    @objc open var colorChartCategoricalTier6: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst500, dark: ColorRawTokens.colorDecorativeAmethyst300) }
+    
+    @objc open var colorChartCategoricalTier7: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink800, dark: ColorRawTokens.colorDecorativeShockingPink600) }
+    
+    @objc open var colorChartCategoricalTier8: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald600, dark: ColorRawTokens.colorDecorativeEmerald400) }
+    
+    @objc open var colorChartCategoricalTier9: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky800, dark: ColorRawTokens.colorDecorativeSky500) }
+    
+    @objc open var colorChartCategoricalTier10: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmber700, dark: ColorRawTokens.colorDecorativeAmber300) }
+    
+    @objc open var colorChartSequentialAccent1Tint100: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky100, dark: ColorRawTokens.colorDecorativeSky900) }
+    
+    @objc open var colorChartSequentialAccent1Tint200: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky200, dark: ColorRawTokens.colorDecorativeSky800) }
+    
+    @objc open var colorChartSequentialAccent1Tint300: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky300, dark: ColorRawTokens.colorDecorativeSky700) }
+    
+    @objc open var colorChartSequentialAccent1Tint400: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky400, dark: ColorRawTokens.colorDecorativeSky600) }
+    
+    @objc open var colorChartSequentialAccent1Tint500: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky500, dark: ColorRawTokens.colorDecorativeSky500) }
+    
+    @objc open var colorChartSequentialAccent1Tint600: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky600, dark: ColorRawTokens.colorDecorativeSky400) }
+    
+    @objc open var colorChartSequentialAccent1Tint700: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky700, dark: ColorRawTokens.colorDecorativeSky300) }
+    
+    @objc open var colorChartSequentialAccent1Tint800: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky800, dark: ColorRawTokens.colorDecorativeSky200) }
+    
+    @objc open var colorChartSequentialAccent1Tint900: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeSky900, dark: ColorRawTokens.colorDecorativeSky100) }
+    
+    @objc open var colorChartSequentialAccent2Tint100: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald100, dark: ColorRawTokens.colorDecorativeEmerald900) }
+    
+    @objc open var colorChartSequentialAccent2Tint200: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald200, dark: ColorRawTokens.colorDecorativeEmerald800) }
+    
+    @objc open var colorChartSequentialAccent2Tint300: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald300, dark: ColorRawTokens.colorDecorativeEmerald700) }
+    
+    @objc open var colorChartSequentialAccent2Tint400: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald400, dark: ColorRawTokens.colorDecorativeEmerald600) }
+    
+    @objc open var colorChartSequentialAccent2Tint500: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald500, dark: ColorRawTokens.colorDecorativeEmerald500) }
+    
+    @objc open var colorChartSequentialAccent2Tint600: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald600, dark: ColorRawTokens.colorDecorativeEmerald400) }
+    
+    @objc open var colorChartSequentialAccent2Tint700: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald700, dark: ColorRawTokens.colorDecorativeEmerald300) }
+    
+    @objc open var colorChartSequentialAccent2Tint800: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald800, dark: ColorRawTokens.colorDecorativeEmerald200) }
+    
+    @objc open var colorChartSequentialAccent2Tint900: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeEmerald900, dark: ColorRawTokens.colorDecorativeEmerald100) }
+    
+    @objc open var colorChartSequentialAccent3Tint100: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.colorDecorativeShockingPink900) }
+    
+    @objc open var colorChartSequentialAccent3Tint200: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink200, dark: ColorRawTokens.colorDecorativeShockingPink800) }
+    
+    @objc open var colorChartSequentialAccent3Tint300: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink300, dark: ColorRawTokens.colorDecorativeShockingPink700) }
+    
+    @objc open var colorChartSequentialAccent3Tint400: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink400, dark: ColorRawTokens.colorDecorativeShockingPink600) }
+    
+    @objc open var colorChartSequentialAccent3Tint500: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink500, dark: ColorRawTokens.colorDecorativeShockingPink500) }
+    
+    @objc open var colorChartSequentialAccent3Tint600: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink600, dark: ColorRawTokens.colorDecorativeShockingPink400) }
+    
+    @objc open var colorChartSequentialAccent3Tint700: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink700, dark: ColorRawTokens.colorDecorativeShockingPink300) }
+    
+    @objc open var colorChartSequentialAccent3Tint800: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink800, dark: ColorRawTokens.colorDecorativeShockingPink200) }
+    
+    @objc open var colorChartSequentialAccent3Tint900: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeShockingPink900, dark: ColorRawTokens.colorDecorativeShockingPink100) }
+    
+    @objc open var colorChartSequentialAccent4Tint100: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst100, dark: ColorRawTokens.colorDecorativeAmethyst900) }
+    
+    @objc open var colorChartSequentialAccent4Tint200: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst200, dark: ColorRawTokens.colorDecorativeAmethyst800) }
+    
+    @objc open var colorChartSequentialAccent4Tint300: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst300, dark: ColorRawTokens.colorDecorativeAmethyst700) }
+    
+    @objc open var colorChartSequentialAccent4Tint400: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst400, dark: ColorRawTokens.colorDecorativeAmethyst600) }
+    
+    @objc open var colorChartSequentialAccent4Tint500: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst500, dark: ColorRawTokens.colorDecorativeAmethyst500) }
+    
+    @objc open var colorChartSequentialAccent4Tint600: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst600, dark: ColorRawTokens.colorDecorativeAmethyst400) }
+    
+    @objc open var colorChartSequentialAccent4Tint700: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst700, dark: ColorRawTokens.colorDecorativeAmethyst300) }
+    
+    @objc open var colorChartSequentialAccent4Tint800: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst800, dark: ColorRawTokens.colorDecorativeAmethyst200) }
+    
+    @objc open var colorChartSequentialAccent4Tint900: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst900, dark: ColorRawTokens.colorDecorativeAmethyst100) }
+    
+    @objc open var colorChartSequentialAccent5Tint100: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun100, dark: ColorRawTokens.colorFunctionalSun900) }
+    
+    @objc open var colorChartSequentialAccent5Tint200: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun200, dark: ColorRawTokens.colorFunctionalSun800) }
+    
+    @objc open var colorChartSequentialAccent5Tint300: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun300, dark: ColorRawTokens.colorFunctionalSun700) }
+    
+    @objc open var colorChartSequentialAccent5Tint400: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun400, dark: ColorRawTokens.colorFunctionalSun600) }
+    
+    @objc open var colorChartSequentialAccent5Tint500: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.colorFunctionalSun500) }
+    
+    @objc open var colorChartSequentialAccent5Tint600: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun600, dark: ColorRawTokens.colorFunctionalSun400) }
+    
+    @objc open var colorChartSequentialAccent5Tint700: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun700, dark: ColorRawTokens.colorFunctionalSun300) }
+    
+    @objc open var colorChartSequentialAccent5Tint800: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun800, dark: ColorRawTokens.colorFunctionalSun200) }
+    
+    @objc open var colorChartSequentialAccent5Tint900: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun900, dark: ColorRawTokens.colorFunctionalSun100) }
     
 }
 // swiftlint:enable line_length
