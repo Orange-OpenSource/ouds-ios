@@ -179,6 +179,40 @@ public protocol ColorSemanticTokens {
     
     var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { get }
     
+    // MARK: Semantic token - Colors - Action
+    
+    var colorActionSelected: ColorSemanticToken { get }
+    
+    var colorActionSelectedOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionDisabled: ColorSemanticToken { get }
+    
+    var colorActionDisabledOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionVisited: ColorSemanticToken { get }
+    
+    var colorActionVistedOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionPrimaryEnabled: ColorSemanticToken { get }
+    
+    var colorActionPrimaryEnabledOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionPrimaryHover: ColorSemanticToken { get }
+    
+    var colorActionPrimaryHoverOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionPrimaryPressed: ColorSemanticToken { get }
+    
+    var colorActionPrimaryPressedOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionPrimaryLoading: ColorSemanticToken { get }
+    
+    var colorActionPrimaryLoadingOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionPrimaryFocus: ColorSemanticToken { get }
+    
+    var colorActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { get }
+    
     // --------------
     
 

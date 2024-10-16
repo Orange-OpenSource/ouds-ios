@@ -180,7 +180,61 @@ extension OUDSTheme: ColorSemanticTokens {
     
     @objc open var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBorderOnBackgroundBrandTertiary!") }
     
+    // MARK: Semantic token - Colors - Action
+    
+    @objc open var colorActionSelected: ColorSemanticToken { fatalError("Raw token unavailable for colorActionSelected!") }
+    
+    @objc open var colorActionSelectedOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorActionSelectedOnBackgroundEmphasized!") }
+    
+    @objc open var colorActionDisabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray400, dark: ColorRawTokens.colorFunctionalDarkGray400) }
+    
+    @objc open var colorActionDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    
+    @objc open var colorActionVisited: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst600, dark: ColorRawTokens.colorDecorativeAmethyst400) }
+    
+    @objc open var colorActionVistedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst400) }
+    
+    @objc open var colorActionPrimaryEnabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
+    
+    @objc open var colorActionPrimaryEnabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    
+    @objc open var colorActionPrimaryHover: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
+    
+    @objc open var colorActionPrimaryHoverOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    
+    @objc open var colorActionPrimaryPressed: ColorSemanticToken { fatalError("Raw token unavailable for colorActionPrimaryPressed!") }
+    
+    @objc open var colorActionPrimaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorActionPrimaryPressedOnBackgroundEmphasized!") }
+    
+    @objc open var colorActionPrimaryLoading: ColorSemanticToken { fatalError("Raw token unavailable for colorActionPrimaryLoading!") }
+    
+    @objc open var colorActionPrimaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorActionPrimaryLoadingOnBackgroundEmphasized!") }
+    
+    @objc open var colorActionPrimaryFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
+    
+    @objc open var colorActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    
     // --------------
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
