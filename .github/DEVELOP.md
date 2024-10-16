@@ -76,7 +76,7 @@ and any _DocC_ comments in the source code.
 
 The documentation can be built from Xcode with _Product > Build Documentation_.
 
-The `generateDoc.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
+The `uploadWebDoc.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
 the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
 
 ## Run tests 

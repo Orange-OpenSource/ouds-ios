@@ -99,12 +99,12 @@ Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Co-authored-by: Julien Déramond <julien.deramond@orange.com>
 ```
 
-- Generate documentation from Swift sources, it will update online version and generate a ZIP file in _/tmp_
+- Generate documentation: from Xcode build the doc, export each doccarchive, then rnu the script ; it will update online version and generate a ZIP file in _/tmp_
     ```shell
-    ./generateDoc.sh --libversion=X.Y.Z --usegit
+    ./uploadWebDoc.sh --libversion=X.Y.Z --usegit
     # --usegit means updating GitHub Pages branch
     # Add --nozip if you don't want a ZIP file
-    # X.Y.Z here is just the version number to display in main index.html pages, replace values of course
+    # X.Y.Z here is just the version number to display in main index.html page, replace value of course
     ```
     
 - Launch a job on your runner to build the demo application
@@ -171,7 +171,7 @@ Co-authored-by: Julien Déramond <julien.deramond@orange.com>
     >
 -->
 
-- Do not forget to update the documentation using `generateDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact, or if you want just download the sources from GitHub on *gh-pages* branch. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (doccarchive) (_Right click on catalog > Export), compress all these files in one ZIP archive (GitHub consider them as empty so won't accept them for upload) and upload as artifact.
+- Do not forget to update the documentation using `uploadWebDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact, or if you want just download the sources from GitHub on *gh-pages* branch. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (doccarchive) (_Right click on catalog > Export_), compress all these files in one ZIP archive (GitHub consider them as empty so won't accept them for upload) and upload as artifact. In few words, put in release artifacts all the doccarchives in a ZIP in one side, and the HTML merged version in the other side.
 
 ## Prepare Next Release
 
