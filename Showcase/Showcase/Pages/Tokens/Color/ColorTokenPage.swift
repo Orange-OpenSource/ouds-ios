@@ -131,6 +131,7 @@ private struct ExtraBorderModifier: ViewModifier {
         let addBorder = (colorRawToken.color) == defaultContentBackground
 
         if addBorder {
+            // swiftlint:disable force_unwrapping
             content.oudsBorder(style: theme.borderStyleDefault,
                                width: theme.borderWidthThin,
                                radius: theme.borderRadiusNone,
