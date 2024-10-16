@@ -19,8 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] Update of semantic color tokens, semantic sizing tokens
+- [Library] Update of semantic grid tokens `gridExtraCompactColumnCount`, `gridCompactColumnGap`, `gridRegularColumnGap
 - [Library] Update of semantic elevation token `elevationStickyNavigationScrolled`
+- [Library] Update of semantic color tokens, semantic sizing tokens
 - [Library/DemoApp] Updates SwiftLint rules, fix linter warnings ([#143](https://github.com/Orange-OpenSource/ouds-ios/issues/143))
 - [Tool] Update the templates for GitHub issues
 - [Tool] Improve script for documentation generation ([#168](https://github.com/Orange-OpenSource/ouds-ios/issues/168))
