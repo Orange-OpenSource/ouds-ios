@@ -121,11 +121,11 @@ extension OUDSTheme: ColorSemanticTokens {
     
     @objc open var colorContentOnBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
     
-    @objc open var colorContentOnBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens() }
+    @objc open var colorContentOnBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
     
-    @objc open var colorContentOnBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    @objc open var colorContentOnBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
     
-    @objc open var colorContentOnBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    @objc open var colorContentOnBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
     
     @objc open var colorContentOnBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens() }
     
