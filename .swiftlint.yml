@@ -168,15 +168,15 @@ cyclomatic_complexity:
     ignores_case_statements: true
 
 file_length:
-    warning: 800
-    error: 1000
+    warning: 500
+    error: 800
 
 force_cast:
     severity: error
 
 function_body_length:
     warning: 50
-    error: 100
+    error: 80
     
 function_parameter_count:
     warning: 6
@@ -187,8 +187,8 @@ implicit_getter:
 
 identifier_name:
     max_length:
-        warning: 60
-        error: 80
+        warning: 20
+        error: 30
     min_length:
         warning: 1
     allowed_symbols:
@@ -230,8 +230,8 @@ type_body_length: 250
 
 type_name:
     max_length:
-        warning: 60
-        error: 80
+        warning: 20
+        error: 30
     min_length:
         warning: 1
     allowed_symbols:
