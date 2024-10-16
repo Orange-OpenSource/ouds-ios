@@ -15,6 +15,8 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+// swiftlint:disable force_unwrapping let_var_whitespace
+
 struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustration: View {
 
     @Environment(\.theme) private var theme
