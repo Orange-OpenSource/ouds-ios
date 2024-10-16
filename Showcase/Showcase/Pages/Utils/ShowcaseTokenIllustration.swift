@@ -15,8 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// swiftlint:disable force_unwrapping
-
 struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustration: View {
 
     @Environment(\.theme) private var theme
@@ -59,5 +57,3 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
         .padding(.vertical, theme.spaceFixedShorter)
     }
 }
-
-// swiftlint:enable force_unwrapping

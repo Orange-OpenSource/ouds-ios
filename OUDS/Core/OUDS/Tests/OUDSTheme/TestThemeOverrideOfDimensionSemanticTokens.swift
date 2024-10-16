@@ -14,8 +14,6 @@
 import OUDS
 import XCTest
 
-// WARNING: Maybe removed in the future or needs to be updated with token generation
-
 // swiftlint:disable implicitly_unwrapped_optional
 // swiftlint:disable required_deinit
 // swiftlint:disable type_name

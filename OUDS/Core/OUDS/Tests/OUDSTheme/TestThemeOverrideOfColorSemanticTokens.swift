@@ -14,8 +14,6 @@
 import OUDS
 import XCTest
 
-// WARNING: Maybe removed in the future or needs to be updated with token generation
-
 // swiftlint:disable type_body_length
 // swiftlint:disable line_length
 // swiftlint:disable file_length

@@ -306,7 +306,6 @@ final class TestInverseThemeColors: XCTestCase {
     func testColorsHomogeneityBackgroundAlwaysInformation() {
         assertHomogeneity(inverseTheme.colorBackgroundAlwaysInformation)
     }
-
 }
 
 // swiftlint:enable required_deinit
