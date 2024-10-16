@@ -116,7 +116,8 @@ public protocol SpacingSemanticTokens {
     var spaceColumnGapShort: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapMedium: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapTall: SpacingPaddingInlineSemanticToken { get }
-
+    var spaceColumnGapTaller: SpacingPaddingInlineSemanticToken { get }
+    
     var spaceColumnGapWithIconNone: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithIconShortest: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithIconShorter: SpacingPaddingInlineSemanticToken { get }
@@ -125,11 +126,11 @@ public protocol SpacingSemanticTokens {
     var spaceColumnGapWithIconTall: SpacingPaddingInlineSemanticToken { get }
 
     var spaceColumnGapWithArrowNone: SpacingPaddingInlineSemanticToken { get }
+    var spaceColumnGapWithArrowShortest: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithArrowShorter: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithArrowShort: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithArrowMedium: SpacingPaddingInlineSemanticToken { get }
     var spaceColumnGapWithArrowTall: SpacingPaddingInlineSemanticToken { get }
-    var spaceColumnGapWithArrowTaller: SpacingPaddingInlineSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Gap stack
 
