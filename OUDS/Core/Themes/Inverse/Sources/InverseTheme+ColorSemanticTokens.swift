@@ -74,10 +74,16 @@ extension InverseTheme {
     
     override public var colorContentDefault: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
+    override public var colorContentContentDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
     override public var colorContentMuted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
+    override public var colorContentContentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    
     override public var colorContentDisabled: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
+    override public var colorContentContentDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    
     override public var colorContentBrandPrimary: ColorSemanticToken { MultipleColorTokens("#FF7900") }
 
     override public var colorContentBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorContentBrandSecondary!") }
@@ -94,8 +100,45 @@ extension InverseTheme {
 
     override public var colorContentStatusAccent: ColorSemanticToken { fatalError("No value defined for colorContentStatusAccent!") }
     
+    // MARK: Semantic token - Colors - Content - On Background
     
+    override public var colorContentOnBackgroundPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+
+    override public var colorContentOnBackgroundSecondary: ColorSemanticToken { fatalError("No value defined for colorContentOnBackgroundSecondary!") }
     
+    override public var colorContentOnBackgroundTertiary: ColorSemanticToken { fatalError("No value defined for colorContentOnBackgroundTertiary!") }
+    
+    override public var colorContentOnBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    
+    override public var colorContentOnBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorContentOnBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorContentOnBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusNegativeMuted: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    
+    override public var colorContentOnBackgroundStatusAccentedEmphasized: ColorSemanticToken { MultipleColorTokens() }
+    
+    // --------------
     
     
     
