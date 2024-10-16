@@ -15,8 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// swiftlint:disable force_unwrapping
-
 // MARK: - Typography Token Page
 
 struct TypographyTokenPage: View {
@@ -114,8 +112,6 @@ struct TypographyTokenPage: View {
         }
     }
 }
-
-// swiftlint:enable force_unwrapping
 
 // MARK: - Named Typography
 
