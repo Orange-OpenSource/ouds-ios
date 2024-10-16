@@ -173,6 +173,8 @@ Co-authored-by: Julien Déramond <julien.deramond@orange.com>
 
 - Do not forget to update the documentation using `uploadWebDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact, or if you want just download the sources from GitHub on *gh-pages* branch. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (doccarchive) (_Right click on catalog > Export_), compress all these files in one ZIP archive (GitHub consider them as empty so won't accept them for upload) and upload as artifact. In few words, put in release artifacts all the doccarchives in a ZIP in one side, and the HTML merged version in the other side.
 
+- Clone the [wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) (available at https://github.com/Orange-OpenSource/ouds-ios.wiki.git), compress its content as ZIP, and place the ZIP in release artifacts
+
 ## Prepare Next Release
 
 - Create a branch named `prepare-new-release` to prepare the new release for OUDS iOS version U.V.W.
