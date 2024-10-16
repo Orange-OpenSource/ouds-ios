@@ -17,6 +17,8 @@ import SwiftUI
 import OUDS
 import OUDSComponents
 import OUDSTokensSemantic
+import OUDSThemesOrange
+import OUDSThemesInverse
 
 class OUDSTokensDimensionUITests: XCTestCase {
     
@@ -27,37 +29,37 @@ class OUDSTokensDimensionUITests: XCTestCase {
     // MARK: - Sizing Tokens Tests
     
     func testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeShortest_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeShortest_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeShorter_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeShorter_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeShort_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeShort_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeMedium_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeMedium_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeTall_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeTall_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeTaller_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeTaller_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeTalles_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSizing_SizeIconDecorativeTalles_Light")
     }
     
@@ -68,37 +70,37 @@ class OUDSTokensDimensionUITests: XCTestCase {
     // MARK: - Sizing Tokens Tests
     
     func testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeShortest_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeShortest_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeShorter_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeShorter_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeShort_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeShort_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeMedium_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeMedium_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeTall_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeTall_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeTaller_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeTaller_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeTalles_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSizing_SizeIconDecorativeTalles_Light")
     }
     
@@ -109,52 +111,52 @@ class OUDSTokensDimensionUITests: XCTestCase {
     // MARK: - Spacing Tokens Tests
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledNone_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledNone_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledSmash_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledSmash_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledShortest_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledShortest_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledShorter_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledShorter_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledShort_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledShort_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledMedium_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledMedium_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledTall_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledTall_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledTaller_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledTaller_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledTallest_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledTallest_Light")
     }
     
     func testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledSpacious_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, OrangeTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_OrangeTheme_SectionSpacing_SpaceScaledSpacious_Light")
     }
     
@@ -165,52 +167,52 @@ class OUDSTokensDimensionUITests: XCTestCase {
     // MARK: - Spacing Tokens Tests
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledNone_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledNone_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledSmash_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledSmash_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledShortest_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledShortest_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledShorter_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledShorter_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledShort_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledShort_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledMedium_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledMedium_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledTall_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledTall_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledTaller_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledTaller_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledTallest_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledTallest_Light")
     }
     
     func testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledSpacious_Light() {
-        let vc = BorderTokenPage()
+        let vc = BorderTokenPage().environment(\.theme, InverseTheme())
         assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testDimensionToken_InverseTheme_SectionSpacing_SpaceScaledSpacious_Light")
     }
 }
