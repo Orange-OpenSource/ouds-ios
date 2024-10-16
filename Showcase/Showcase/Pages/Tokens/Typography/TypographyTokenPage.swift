@@ -56,7 +56,7 @@ struct TypographyTokenPage: View {
             }
             .typeBodyDefaultMedium(theme)
             .fixedSize(horizontal: false, vertical: true)
-            .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
+            .foregroundStyle((theme.colorContentDefault.color(for: colorScheme)))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaceFixedShorter)
