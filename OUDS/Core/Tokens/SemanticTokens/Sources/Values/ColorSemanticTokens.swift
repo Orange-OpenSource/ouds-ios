@@ -318,104 +318,11 @@ public protocol ColorSemanticTokens {
     var colorAlwaysOnBackgroundInfo: ColorSemanticToken { get }
     
     var colorAlwaysOnBackgroundAccent: ColorSemanticToken { get }
+ 
+    // MARK: Semantic token - Colors - Transparent
     
+    var colorTransparentDefault: ColorSemanticToken { get }
     
-    
-    
-    
-    
-    // ---------------------------------------------
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    var colorContentActionEnabled: ColorSemanticToken { get }
-
-    var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorContentActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken { get }
-
-    var colorContentActionEnabledOnBackgroundStatusNegative: ColorSemanticToken { get }
-
-    var colorContentActionHover: ColorSemanticToken { get }
-
-    var colorContentActionHoverOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorContentActionHoverOnBackgroundStatusExcNegative: ColorSemanticToken { get }
-
-    var colorContentActionHoverOnBackgroundStatusNegative: ColorSemanticToken { get }
-
-    var colorContentTransparentDefault: ColorSemanticToken { get }
-    
-    
-    
-    
-    
-    
-    
-    
-    // MARK: Semantic token - Colors - Background - Action
-
-    var colorBackgroundActionEnabled: ColorSemanticToken { get }
-
-    var colorBackgroundActionEnabledOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorBackgroundActionEnabledOnBackgroundStatusExcNegative: ColorSemanticToken { get }
-
-    var colorBackgroundActionEnabledOnBackgroundStatusNegative: ColorSemanticToken { get }
-
-    var colorBackgroundActionPressed: ColorSemanticToken { get }
-
-    var colorBackgroundActionPressedOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorBackgroundActionPressedOnBackgroundStatusExcNegative: ColorSemanticToken { get }
-
-    var colorBackgroundActionPressedOnBackgroundStautsNegative: ColorSemanticToken { get }
-
-    var colorBackgroundActionDisabled: ColorSemanticToken { get }
-
-    var colorBackgroundActionDisabledOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorBackgroundActionDisabledOnBackgroundStatusExcNegative: ColorSemanticToken { get }
-
-    var colorBackgroundActionDisabledOnBackgroundStatusNegative: ColorSemanticToken { get }
-
-    var colorBackgroundActionFocus: ColorSemanticToken { get }
-
-    var colorBackgroundActionFocusOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorBackgroundActionFocusOnBackgroundStatusExcNegative: ColorSemanticToken { get }
-
-    var colorBackgroundActionFocusOnBackgroundStatusNegative: ColorSemanticToken { get }
-
-    // MARK: Semantic token - Colors - Background - Always
-
-    var colorBackgroundAlwaysBlack: ColorSemanticToken { get }
-
-    var colorBackgroundAlwaysWhite: ColorSemanticToken { get }
-
-    var colorBackgroundAlwaysAttractive: ColorSemanticToken { get }
-
-    var colorBackgroundAlwaysWarning: ColorSemanticToken { get }
-
-    var colorBackgroundAlwaysNegative: ColorSemanticToken { get }
-
-    var colorBackgroundAlwaysPositive: ColorSemanticToken { get }
-
-    var colorBackgroundAlwaysInformation: ColorSemanticToken { get }
-
-    // MARK: Semantic token - Colors - Background - Transparent
-
-    var colorBackgroundTransparentDefault: ColorSemanticToken { get }
-
 }
 
 // swiftlint:enable missing_docs
