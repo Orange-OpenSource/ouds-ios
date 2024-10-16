@@ -213,9 +213,97 @@ public protocol ColorSemanticTokens {
     
     var colorActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { get }
     
-    // --------------
+    var colorActionSecondaryEnabled: ColorSemanticToken { get }
     
+    var colorActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionSecondaryHover: ColorSemanticToken { get }
+    
+    var colorActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionSecondaryPressed: ColorSemanticToken { get }
+    
+    var colorActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionSecondaryLoading: ColorSemanticToken { get }
+    
+    var colorActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionSecondaryFocus: ColorSemanticToken { get }
+    
+    var colorActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionNegativeEnabled: ColorSemanticToken { get }
+    
+    var colorActionNegativeHover: ColorSemanticToken { get }
+    
+    var colorActionNegativePressed: ColorSemanticToken { get }
+    
+    var colorActionNegativeLoading: ColorSemanticToken { get }
+    
+    var colorActionNegativeFocus: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionDisabled: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionDisabledOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionNegative: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryEnabled: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryEnabledOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryHover: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryHoverOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryPressed: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryPressedOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryLoading: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryLoadingOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryFocus: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryLoading: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryFocus: ColorSemanticToken { get }
+    
+    var colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { get }
 
+    
+    
+    // ---------------------------------------------
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     var colorContentActionEnabled: ColorSemanticToken { get }
 
     var colorContentActionEnabledOnBackgroundEmphasized: ColorSemanticToken { get }

@@ -208,6 +208,93 @@ extension InverseTheme {
     
     override public var colorActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
     
+    override public var colorActionSecondaryEnabled: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    
+    override public var colorActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray80) }
+    
+    override public var colorActionSecondaryHover: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    
+    override public var colorActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    
+    override public var colorActionSecondaryPressed: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    
+    override public var colorActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    
+    override public var colorActionSecondaryLoading: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    
+    override public var colorActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    
+    override public var colorActionSecondaryFocus: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    
+    override public var colorActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    
+    override public var colorActionNegativeEnabled: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    
+    override public var colorActionNegativeHover: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet700) }
+    
+    override public var colorActionNegativePressed: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet800) }
+    
+    override public var colorActionNegativeLoading: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet800) }
+    
+    override public var colorActionNegativeFocus: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet700) }
+    
+    override public var colorActionOnBackgroundActionDisabled: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorActionOnBackgroundActionDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    
+    override public var colorActionOnBackgroundActionNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    
+    override public var colorActionOnBackgroundActionPrimaryEnabled: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorActionOnBackgroundActionPrimaryEnabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    
+    override public var colorActionOnBackgroundActionPrimaryHover: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorActionOnBackgroundActionPrimaryHoverOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    
+    override public var colorActionOnBackgroundActionPrimaryPressed: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorActionOnBackgroundActionPrimaryPressedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    
+    override public var colorActionOnBackgroundActionPrimaryLoading: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorActionOnBackgroundActionPrimaryLoadingOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    
+    override public var colorActionOnBackgroundActionPrimaryFocus: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.white) }
+    
+    override public var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryEnabled!")  }
+    
+    override public var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken {  fatalError("No value defined for colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized!") }
+    
+    override public var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryHover!") }
+    
+    override public var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!")  }
+    
+    override public var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryPressed!")  }
+    
+    override public var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!")  }
+    
+    override public var colorActionOnBackgroundActionSecondaryLoading: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryLoading!") }
+    
+    override public var colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized!") }
+    
+    override public var colorActionOnBackgroundActionSecondaryFocus: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryFocus!") }
+    
+    override public var colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized!") }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // --------------
     
     
