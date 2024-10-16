@@ -31,12 +31,12 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var colorBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray800) }
 
     // WARNING: #124 - Colors to use are part of OUDSOrangeTheme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBackgroundTertiary: ColorSemanticToken { MultipleColorTokens(light: "F9F5F0", dark: "353228") }
+    @objc open var colorBackgroundTertiary: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundBrandSecondary!") }
 
     @objc open var colorBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray880, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
     // WARNING: #124 - Colors to use are part of OUDSOrangeTheme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: "F16E00", dark: "FF7900") }
+    @objc open var colorBackgroundBrandPrimary: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundBrandPrimary!") }
 
     @objc open var colorBackgroundBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBackgroundBrandSecondary!") }
 
@@ -46,9 +46,9 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
-    @objc open var colorBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawToken.colorFunctionalMalachite100, dark: ColorRawTokens.colorFunctionalMalachite900) }
+    @objc open var colorBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalMalachite100, dark: ColorRawTokens.colorFunctionalMalachite900) }
 
-    @objc open var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawToken.colorFunctionalMalachite900) }
+    @objc open var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite900) }
 
     @objc open var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
     
@@ -58,8 +58,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
     
-    // WARNING: #124 - Missing alias value for the light value in the Figjam
-    @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(light: "FFF7D6", dark: ColorRawTokens.colorFunctionalSun900) }
+    @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun100, dark: ColorRawTokens.colorFunctionalSun900) }
 
     @objc open var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun900) }
 
@@ -71,9 +70,9 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
     
-    @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(light: "#F9F5F0", dark: "#323228") }
+    @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundStatusAccentMuted!") }
 
-    @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: "#323228", dark: "#323228") }
+    @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundStatusAccentMutedOnBackgroundEmphasized!") }
     
     @objc open var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
     
@@ -91,7 +90,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorContentContentDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
     
-    @objc open var colorContentBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: "#F16E00", dark: "#FF7900") }
+    @objc open var colorContentBrandPrimary: ColorSemanticToken { fatalError("Raw token unavailable for colorContentBrandPrimary!") }
 
     @objc open var colorContentBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorContentBrandSecondary!") }
 
@@ -157,9 +156,9 @@ extension OUDSTheme: ColorSemanticTokens {
     
     @objc open var colorBorderFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray880) }
     
-    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens("#FF7900") }
+    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { fatalError("Raw token unavailable for colorBorderBrandPrimaryOnBackgroundEmphasized!") }
     
-    @objc open var colorBorderBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: "#F16E00", dark: "#FF7900") }
+    @objc open var colorBorderBrandPrimary: ColorSemanticToken { fatalError("Raw token unavailable for colorBorderBrandPrimary!") }
     
     @objc open var colorBorderBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBorderBrandSecondary!") }
 
