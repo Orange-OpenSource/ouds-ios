@@ -163,15 +163,15 @@ public protocol ColorSemanticTokens {
 
     var colorBorderBrandTertiary: ColorSemanticToken { get }
     
-    var colorBorderBrandStatusPositive: ColorSemanticToken { get }
+    var colorBorderStatusPositive: ColorSemanticToken { get }
 
-    var colorBorderBrandStatusInformation: ColorSemanticToken { get }
+    var colorBorderStatusInfo: ColorSemanticToken { get }
 
-    var colorBorderBrandStatusWarning: ColorSemanticToken { get }
+    var colorBorderStatusWarning: ColorSemanticToken { get }
 
-    var colorBorderBrandStatusNegative: ColorSemanticToken { get }
+    var colorBorderStatusNegative: ColorSemanticToken { get }
 
-    var colorBorderBrandStatusAccent: ColorSemanticToken { get }
+    var colorBorderStatusAccent: ColorSemanticToken { get }
     
     var colorBorderOnBackgroundBrandPrimary: ColorSemanticToken { get }
     
