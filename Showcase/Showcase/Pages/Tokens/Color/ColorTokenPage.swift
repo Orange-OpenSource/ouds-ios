@@ -120,6 +120,7 @@ private struct ExtraBorderModifier: ViewModifier {
         let addBorder = (colorRawToken.color) == defaultContentBackground
 
         if addBorder {
+            // swiftlint:disable force_unwrapping
             content.oudsBorder(style: theme.borderStyleDefault,
                                width: theme.borderWidthThin,
                                radius: theme.borderRadiusNone,
@@ -130,7 +131,7 @@ private struct ExtraBorderModifier: ViewModifier {
     }
 }
 
-// swiftlint:disable nesting
+// swiftlint:disable nesting type_body_length
 private enum NamedColor {
     enum Background: String, CaseIterable {
 
@@ -312,7 +313,6 @@ private enum NamedColor {
             }
         }
     }
-
 
     // MARK: Semantic token - Colors - Content
     enum Content: String, CaseIterable {
