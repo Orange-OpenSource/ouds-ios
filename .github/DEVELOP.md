@@ -468,8 +468,28 @@ Remember _Gitleaks_ is also used in GitHub project side thanks to the [dedicated
 
 We use _SwiftLint_ in this project so as to be sure the source code follows defined guidelines for the syntax and other points.
 You must run _SwiftLint_ in CLI or using _Xcode_ to be sure you don't keep and submit warnings.
-In most of cases you **must** fiw warnigns, but it could happen some of them should be disabled, mainly for tests cases.
-Explain why in yout commtis and pull request comments you choose to disable them.
+**In most of cases you must fix warnings, or explain why in your commtis and pull request comments you choose to disable them.**
+
+Today, only in very few cases some SwiftLint warnings are disabled:
+- in tests classes
+- in files containing tokens which will be generated
+
+The warnings which can be disabled for token files: 
+- *missing_docs*: because tokens will be generated without documentation by the tokenator
+- *identifier_name*: because the name of the tokens are defined in *Figma* and strongly related to the design system
+- *line_length*: because tokens definition can take a lot of place
+- *file_length*: because the files containing declarations or definitions of tokens can be very long
+
+The warnings which can be disabled for test classes files:
+- *identifier_name*: because of length of tokens names 
+- *type_name*: because stringly related to the types under test, which can have a long name
+- *line_length*: because of length of tokens names
+- *file_length*: because of the amount of tokens to test
+- *type_body_length*: because we can have a lot of tests to do
+- *required_deinit*: because we do not need to manage init and deinit of test classe
+- *implicitly_unwrapped_optional*: because for declaration of themes to test we bang!
+
+Do not forget if possible to enable the warnings in the end of the file to reduce as much as possible th scope of the disabled warnings.
 
 ## CI/CD
 
