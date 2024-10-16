@@ -480,7 +480,7 @@ The warnings which can be disabled for token files:
 - *line_length*: because tokens definition can take a lot of place
 - *file_length*: because the files containing declarations or definitions of tokens can be very long
 
-The warnings which can be disabled for test classes files:
+The warnings which can be disabled for test classes files and mocks files:
 - *identifier_name*: because of length of tokens names 
 - *type_name*: because stringly related to the types under test, which can have a long name
 - *line_length*: because of length of tokens names
@@ -489,7 +489,7 @@ The warnings which can be disabled for test classes files:
 - *required_deinit*: because we do not need to manage init and deinit of test classe
 - *implicitly_unwrapped_optional*: because for declaration of themes to test we bang!
 
-Do not forget if possible to enable the warnings in the end of the file to reduce as much as possible th scope of the disabled warnings.
+Do not forget if possible to enable the warnings in the end of the file to reduce as much as possible the scope of the disabled warnings. Disable warnings only if needed.
 
 ## CI/CD
 

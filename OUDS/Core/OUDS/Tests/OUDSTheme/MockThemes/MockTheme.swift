@@ -16,7 +16,7 @@ import OUDS
 import OUDSTokensSemantic
 
 /// A mock theme for tests
-final class MockTheme: OUDSTheme {
+open class MockTheme: OUDSTheme {
 
     convenience init() {
         self.init(customFont: nil)

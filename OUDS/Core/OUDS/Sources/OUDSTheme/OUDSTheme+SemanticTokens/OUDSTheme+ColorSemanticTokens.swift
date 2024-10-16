@@ -355,7 +355,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorElevationModal: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    // MARK: Semantic token - Colors - Elevation
+    // MARK: Semantic token - Colors - Decorative
 
     @objc open var colorDecorativeBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorDecorativeBrandPrimary!") }
 
