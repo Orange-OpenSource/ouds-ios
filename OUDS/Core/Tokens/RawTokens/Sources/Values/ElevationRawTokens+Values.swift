@@ -22,7 +22,8 @@ extension ElevationRawTokens {
     // MARK: Primitive token - Elevation - X
 
     public static let elevationX0: ElevationRawToken = 0
-
+    public static let elevationX200: ElevationRawToken = 2
+    
     // MARK: Primitive token - Elevation - Y
 
     public static let elevationY0: ElevationRawToken = 0
