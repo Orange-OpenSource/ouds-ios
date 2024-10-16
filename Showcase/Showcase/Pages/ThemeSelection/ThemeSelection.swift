@@ -115,6 +115,6 @@ struct ThemeSelectionButton: View {
         } label: {
             Image(systemName: "paintpalette")
         }
-        .foregroundColor(themeProvider.currentTheme.colorContentBrandPrimary?.color(for: colorScheme))
+        .foregroundColor(themeProvider.currentTheme.colorContentBrandPrimary.color(for: colorScheme))
     }
 }

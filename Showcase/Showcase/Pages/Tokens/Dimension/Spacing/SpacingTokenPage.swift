@@ -15,9 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: Check if we can get rid of alias colors tokens which are optional
-// swiftlint:disable force_unwrapping
-
 struct SpacingTokenPage: View {
 
     @Environment(\.theme) private var theme
@@ -50,7 +47,7 @@ struct SpacingTokenPage: View {
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill((theme.colorBackgroundEmphasizedPrimary?.color(for: colorScheme))!)
+                    .fill((theme.colorAlwaysOnBackgroundAccent.color(for: colorScheme)))
                     .frame(width: 64, height: 64, alignment: .center)
                 Rectangle()
                 //                    .fill((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO: Update when color is available
@@ -60,8 +57,6 @@ struct SpacingTokenPage: View {
         }
     }
 }
-
-// swiftlint:enable force_unwrapping
 
 // MARK: - Named Spacing
 

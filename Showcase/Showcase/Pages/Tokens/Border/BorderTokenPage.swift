@@ -16,9 +16,6 @@ import OUDSComponents
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: Check if we can get rid of alias colors tokens which are optional
-// swiftlint:disable force_unwrapping
-
 struct BorderTokenPage: View {
 
     @Environment(\.theme) private var theme
@@ -37,7 +34,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("Width")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
+                    .foregroundStyle((theme.colorContentDefault.color(for: colorScheme)))
             }
 
             Section {
@@ -49,7 +46,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("Radius")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
+                    .foregroundStyle((theme.colorContentDefault.color(for: colorScheme)))
             }
 
             Section {
@@ -61,7 +58,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("Style")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle((theme.colorContentDefault?.color(for: colorScheme))!)
+                    .foregroundStyle((theme.colorContentDefault.color(for: colorScheme)))
             }
         }
         .padding(.horizontal, theme.spaceFixedMedium)
@@ -71,7 +68,7 @@ struct BorderTokenPage: View {
 
     private var rectangle: some View {
         Rectangle()
-            .fill(theme.colorBackgroundDefaultSecondary?.color(for: colorScheme) ?? Color(UIColor.systemGroupedBackground))
+            .fill(theme.colorBackgroundSecondary.color(for: colorScheme))
             .frame(width: 64, height: 64)
     }
 
@@ -85,7 +82,7 @@ struct BorderTokenPage: View {
                 .oudsBorder(style: theme.borderStyleDefault,
                             width: token,
                             radius: theme.borderRadiusNone,
-                            color: theme.colorBorderDefault!)
+                            color: theme.colorBorderDefault)
         }
     }
 
@@ -99,7 +96,7 @@ struct BorderTokenPage: View {
                 .oudsBorder(style: theme.borderStyleDefault,
                             width: theme.borderWidthDefault,
                             radius: token,
-                            color: theme.colorBorderDefault!)
+                            color: theme.colorBorderDefault)
         }
     }
 
@@ -113,11 +110,10 @@ struct BorderTokenPage: View {
                 .oudsBorder(style: token,
                             width: theme.borderWidthDefault,
                             radius: theme.borderRadiusNone,
-                            color: theme.colorBorderDefault!)
+                            color: theme.colorBorderDefault)
         }
     }
 }
-// swiftlint:enable force_unwrapping
 
 private enum NamedBorderRadius: String, CaseIterable {
     case borderRadiusNone

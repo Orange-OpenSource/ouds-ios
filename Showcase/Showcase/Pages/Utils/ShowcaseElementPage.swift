@@ -48,7 +48,7 @@ struct ShowcaseElementPage: View {
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
                 .padding(.bottom, theme.spaceFixedMedium)
-                .background(theme.colorBackgroundPrimary?.color(for: colorScheme))
+                .background(theme.colorBackgroundPrimary.color(for: colorScheme))
         }
         .listStyle(.plain)
         .padding(.top, theme.spaceFixedNone)

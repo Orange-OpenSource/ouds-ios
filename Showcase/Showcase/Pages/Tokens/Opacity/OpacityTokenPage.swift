@@ -16,9 +16,6 @@ import OUDSComponents
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: Check if we can get rid of colors alaises tokens to avoid handling optional values
-// swiftlint:disable force_unwrapping
-
 // MARK: - Opacity Token Page
 
 struct OpacityTokenPage: View {
@@ -77,7 +74,7 @@ private struct ExtraBorderModifier: ViewModifier {
             content.oudsBorder(style: theme.borderStyleDefault,
                                width: theme.borderWidthThin,
                                radius: theme.borderRadiusNone,
-                               color: theme.colorContentDefault!)
+                               color: theme.colorContentDefault)
         } else {
             content
         }
@@ -111,5 +108,3 @@ private enum NamedOpacity: String, CaseIterable {
         }
     }
 }
-
-// swiftlint:enable force_unwrapping
