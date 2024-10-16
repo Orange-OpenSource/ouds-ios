@@ -254,6 +254,8 @@
 		6D8F9C492CBFD3A30078A10E /* OUDSComponentsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F9C482CBFD3A30078A10E /* OUDSComponentsUITests.swift */; };
 		6D8F9C4B2CBFD47D0078A10E /* testComponents_InverseTheme_Page_Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D8F9C4A2CBFD47D0078A10E /* testComponents_InverseTheme_Page_Light.png */; };
 		6D8F9C4D2CBFD48D0078A10E /* testComponents_OrangeTheme_Page_Light.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D8F9C4C2CBFD48D0078A10E /* testComponents_OrangeTheme_Page_Light.png */; };
+		6D8F9C4E2CBFDC380078A10E /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760D2C466FCF0033365D /* ComponentsPage.swift */; };
+		6D8F9C4F2CBFDC8B0078A10E /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074794792CAE882A0033C2D8 /* EmptyState.swift */; };
 		E537B9B66A6466473179DEE8 /* Pods_Showcase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D3017314DBC1733F8D0C79 /* Pods_Showcase.framework */; };
 /* End PBXBuildFile section */
 
@@ -1565,6 +1567,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D8F9C4F2CBFDC8B0078A10E /* EmptyState.swift in Sources */,
+				6D8F9C4E2CBFDC380078A10E /* ComponentsPage.swift in Sources */,
 				6D2465902CBEAEE40023E359 /* ShowcaseTokenIllustration.swift in Sources */,
 				6D8F9B9D2CBFB8CA0078A10E /* OUDSTokensDimensionUITests.swift in Sources */,
 				6D8F9BE82CBFC3360078A10E /* OUDSTokensTypographyUITests.swift in Sources */,
