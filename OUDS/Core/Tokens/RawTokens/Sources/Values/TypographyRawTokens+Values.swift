@@ -19,11 +19,38 @@
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension TypographyRawTokens {
 
+    // MARK: Primitive token - Typography - Font family
+
+    // WARNING: Raw values, do not use as is, ensure fonts are available
+
+    public static let fontFamilyBrandDefault: TypographyFontFamilyRawToken = "Helvetica Neue"
+    public static let fontFamilyBrandTV: TypographyFontFamilyRawToken = "Helvetica Neue LT"
+    public static let fontFamilySystemArial: TypographyFontFamilyRawToken = "Arial"
+    public static let fontFamilySystemHelvetica: TypographyFontFamilyRawToken = "Helvetica"
+    public static let fontFamilySystemNotoSans: TypographyFontFamilyRawToken = "Noto sans"
+    public static let fontFamilySystemSFPro: TypographyFontFamilyRawToken = "SF Pro"
+    public static let fontFamilySystemRoboto: TypographyFontFamilyRawToken = "Roboto"
+    public static let fontFamilyMonospaceMenlo: TypographyFontFamilyRawToken = "Menlo"
+    public static let fontFamilyMonospaceMonaco: TypographyFontFamilyRawToken = "Monaco"
+    public static let fontFamilyMonospaceCourierNew: TypographyFontFamilyRawToken = "Courier New"
+
+    // MARK: Primitive token - Typography - Font weight
+
+    public static let fontWeight100: TypographyFontWeightRawToken = 100
+    public static let fontWeight200: TypographyFontWeightRawToken = 200
+    public static let fontWeight300: TypographyFontWeightRawToken = 300
+    public static let fontWeight400: TypographyFontWeightRawToken = 400
+    public static let fontWeight500: TypographyFontWeightRawToken = 500
+    public static let fontWeight600: TypographyFontWeightRawToken = 600
+    public static let fontWeight700: TypographyFontWeightRawToken = 700
+    public static let fontWeight800: TypographyFontWeightRawToken = 800
+    public static let fontWeight900: TypographyFontWeightRawToken = 900
+    public static let fontWeight950: TypographyFontWeightRawToken = 950
+
     // MARK: Primitive token - Typography - Font size
 
     // WARNING: values in pixels and not in points, do not use as is!
 
-    public static let fontSize100: TypographyFontSizeRawToken = 10
     public static let fontSize150: TypographyFontSizeRawToken = 12
     public static let fontSize175: TypographyFontSizeRawToken = 13
     public static let fontSize200: TypographyFontSizeRawToken = 14
@@ -83,34 +110,6 @@ extension TypographyRawTokens {
     public static let fontLetterSpacing1250: TypographyFontLetterSpacingRawToken = 1_250
     public static let fontLetterSpacing1450: TypographyFontLetterSpacingRawToken = 1_450
     public static let fontLetterSpacing1850: TypographyFontLetterSpacingRawToken = 1_850
-
-    // MARK: Primitive token - Typography - Font family
-
-    // WARNING: Raw values, do not use as is, ensure fonts are available
-
-    public static let fontFamilyBrandDefault: TypographyFontFamilyRawToken = "Helvetica Neue"
-    public static let fontFamilyBrandTV: TypographyFontFamilyRawToken = "Helvetica Neue LT"
-    public static let fontFamilySystemArial: TypographyFontFamilyRawToken = "Arial"
-    public static let fontFamilySystemHelvetica: TypographyFontFamilyRawToken = "Helvetica"
-    public static let fontFamilySystemNotoSans: TypographyFontFamilyRawToken = "Noto sans"
-    public static let fontFamilySystemSFPro: TypographyFontFamilyRawToken = "SF Pro"
-    public static let fontFamilySystemRoboto: TypographyFontFamilyRawToken = "Roboto"
-    public static let fontFamilyMonospaceMenlo: TypographyFontFamilyRawToken = "Menlo"
-    public static let fontFamilyMonospaceMonaco: TypographyFontFamilyRawToken = "Monaco"
-    public static let fontFamilyMonospaceCourierNew: TypographyFontFamilyRawToken = "Courier New"
-
-    // MARK: Primitive token - Typography - Font weight
-
-    public static let fontWeight100: TypographyFontWeightRawToken = 100
-    public static let fontWeight200: TypographyFontWeightRawToken = 200
-    public static let fontWeight300: TypographyFontWeightRawToken = 300
-    public static let fontWeight400: TypographyFontWeightRawToken = 400
-    public static let fontWeight500: TypographyFontWeightRawToken = 500
-    public static let fontWeight600: TypographyFontWeightRawToken = 600
-    public static let fontWeight700: TypographyFontWeightRawToken = 700
-    public static let fontWeight800: TypographyFontWeightRawToken = 800
-    public static let fontWeight900: TypographyFontWeightRawToken = 900
-    public static let fontWeight950: TypographyFontWeightRawToken = 950
 }
 
 // swiftlint:enable missing_docs

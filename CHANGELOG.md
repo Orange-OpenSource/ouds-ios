@@ -42,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- [Library] Raw typography token `fontSize100
 - [Library] Semantic token `spaceColumnGapWithArrowTaller`
 - [Library] Remove all color alias semantic tokens and any optional color tokens type uses
 - [Library] `SoshTheme` ([#180](https://github.com/Orange-OpenSource/ouds-ios/issues/180))

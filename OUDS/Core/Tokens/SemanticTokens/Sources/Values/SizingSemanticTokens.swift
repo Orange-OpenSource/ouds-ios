@@ -75,12 +75,12 @@ public protocol SizingSemanticTokens {
     var sizeMaxWidthTypeDisplayLarge: MultipleSizingTokens { get }
     var sizeMaxWidthTypeDisplayMedium: MultipleSizingTokens { get }
     var sizeMaxWidthTypeDisplaySmall: MultipleSizingTokens { get }
-    
+
     var sizeMaxWidthTypeHeadingXLarge: MultipleSizingTokens { get }
     var sizeMaxWidthTypeHeadingLarge: MultipleSizingTokens { get }
     var sizeMaxWidthTypeHeadingMedium: MultipleSizingTokens { get }
     var sizeMaxWidthTypeHeadingSmall: MultipleSizingTokens { get }
-    
+
     var sizeMaxWidthTypeBodyLarge: MultipleSizingTokens { get }
     var sizeMaxWidthTypeBodyMedium: MultipleSizingTokens { get }
     var sizeMaxWidthTypeBodySmall: MultipleSizingTokens { get }
