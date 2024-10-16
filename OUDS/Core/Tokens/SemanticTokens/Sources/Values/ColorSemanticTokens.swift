@@ -350,6 +350,80 @@ public protocol ColorSemanticTokens {
     var colorElevationOverlayEmphasizedOnBackgroundEmphasized: ColorSemanticToken { get }
     
     var colorElevationModal: ColorSemanticToken { get }
+    
+    // MARK: Semantic token - Colors - Elevation
+    
+    var colorDecorativeBrandPrimary: ColorSemanticToken { get }
+    
+    var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { get }
+    
+    var colorDecorativeBrandPrimaryEmphasized: ColorSemanticToken { get }
+    
+    var colorDecorativeSecondary: ColorSemanticToken { get }
+    
+    var colorDecorativeSecondaryMuted: ColorSemanticToken { get }
+    
+    var colorDecorativeSecondaryEmphasized: ColorSemanticToken { get }
+    
+    var colorDecorativeBrandTertiary: ColorSemanticToken { get }
+    
+    var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { get }
+    
+    var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { get }
+    
+    var colorDecorativeNeutralMuted: ColorSemanticToken { get }
+    
+    var colorDecorativeNeutralDefault: ColorSemanticToken { get }
+    
+    var colorDecorativeNeutralEmphasized: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent1Muted: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent1Default: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent1Emphasized: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent2Muted: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent2Default: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent2Emphasized: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent3Muted: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent3Default: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent3Emphasized: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent4Muted: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent4Default: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent4Emphasized: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent5Muted: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent5Default: ColorSemanticToken { get }
+    
+    var colorDecorativeAccent5Emphasized: ColorSemanticToken { get }
+    
+    var colorDecorativeSkintTint100: ColorSemanticToken { get }
+    
+    var colorDecorativeSkintTint200: ColorSemanticToken { get }
+    
+    var colorDecorativeSkintTint300: ColorSemanticToken { get }
+    
+    var colorDecorativeSkintTint400: ColorSemanticToken { get }
+    
+    var colorDecorativeSkintTint500: ColorSemanticToken { get }
+    
+    var colorDecorativeSkintTint600: ColorSemanticToken { get }
+    
+    var colorDecorativeSkintTint700: ColorSemanticToken { get }
+    
+    var colorDecorativeSkintTint800: ColorSemanticToken { get }
+    
+    var colorDecorativeSkintTint900: ColorSemanticToken { get }
 }
 
 

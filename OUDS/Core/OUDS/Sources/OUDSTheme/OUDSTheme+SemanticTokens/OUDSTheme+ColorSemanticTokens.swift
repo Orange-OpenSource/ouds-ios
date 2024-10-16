@@ -352,6 +352,79 @@ extension OUDSTheme: ColorSemanticTokens {
     
     @objc open var colorElevationModal: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray640) }
     
+    // MARK: Semantic token - Colors - Elevation
+    
+    @objc open var colorDecorativeBrandPrimary: ColorSemanticToken { fatalError("Raw token unavailable for colorDecorativeBrandPrimary!") }
+    
+    @objc open var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { fatalError("No value defined for colorDecorativeBrandPrimaryMuted!") }
+    
+    @objc open var colorDecorativeBrandPrimaryEmphasized: ColorSemanticToken { fatalError("No value defined for colorDecorativeBrandPrimaryEmphasized!") }
+    
+    @objc open var colorDecorativeSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
+    
+    @objc open var colorDecorativeSecondaryMuted: ColorSemanticToken { fatalError("No value defined for colorDecorativeSecondaryMuted!") }
+    
+    @objc open var colorDecorativeSecondaryEmphasized: ColorSemanticToken { fatalError("No value defined for colorDecorativeSecondaryEmphasized!") }
+    
+    @objc open var colorDecorativeBrandTertiary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalDarkGray880) }
+    
+    @objc open var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { fatalError("No value defined for colorDecorativeBrandTertiaryMuted!") }
+    
+    @objc open var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { fatalError("No value defined for colorDecorativeBrandTertiaryEmphasized!") }
+    
+    @objc open var colorDecorativeNeutralMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray560) }
+    
+    @objc open var colorDecorativeNeutralDefault: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray400, dark: ColorRawTokens.colorFunctionalLightGray560) }
+    
+    @objc open var colorDecorativeNeutralEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray640, dark: ColorRawTokens.colorFunctionalLightGray160) }
+    
+    @objc open var colorDecorativeAccent1Muted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald200) }
+    
+    @objc open var colorDecorativeAccent1Default: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald500) }
+    
+    @objc open var colorDecorativeAccent1Emphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeEmerald700) }
+    
+    @objc open var colorDecorativeAccent2Muted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky200) }
+    
+    @objc open var colorDecorativeAccent2Default: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky400) }
+    
+    @objc open var colorDecorativeAccent2Emphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeSky700) }
+    
+    @objc open var colorDecorativeAccent3Muted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun200) }
+    
+    @objc open var colorDecorativeAccent3Default: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
+    
+    @objc open var colorDecorativeAccent3Emphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmber500) }
+    
+    @objc open var colorDecorativeAccent4Muted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst200) }
+    
+    @objc open var colorDecorativeAccent4Default: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst400) }
+    
+    @objc open var colorDecorativeAccent4Emphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst800) }
+    
+    @objc open var colorDecorativeAccent5Muted: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink100) }
+    
+    @objc open var colorDecorativeAccent5Default: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink200) }
+    
+    @objc open var colorDecorativeAccent5Emphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink300) }
+    
+    @objc open var colorDecorativeSkintTint100: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach100) }
+    
+    @objc open var colorDecorativeSkintTint200: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach200) }
+    
+    @objc open var colorDecorativeSkintTint300: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach300) }
+    
+    @objc open var colorDecorativeSkintTint400: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach400) }
+    
+    @objc open var colorDecorativeSkintTint500: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach500) }
+    
+    @objc open var colorDecorativeSkintTint600: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach600) }
+    
+    @objc open var colorDecorativeSkintTint700: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach700) }
+    
+    @objc open var colorDecorativeSkintTint800: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach800) }
+    
+    @objc open var colorDecorativeSkintTint900: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach900) }
     
     
 }

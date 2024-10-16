@@ -72,5 +72,10 @@ extension OrangeTheme {
     
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
     override open var colorActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    
+    // MARK: Semantic token - Colors - Elevation
+    
+    // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
+    override open var colorDecorativeBrandPrimary: ColorSemanticToken { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
 }
 
