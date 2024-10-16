@@ -30,12 +30,12 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray800) }
 
-    // WARNING: #124 - Colors to use are part of OUDSOrangeTheme so are not reachable at this level, as a workaround add raw values
+    // WARNING: #124 - Colors to use are part of OUDSOran MultipleColorTokens(light: ColorRawTokens., dark: ColorRawTokens.)heme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBackgroundTertiary: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundBrandSecondary!") }
 
     @objc open var colorBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray880, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    // WARNING: #124 - Colors to use are part of OUDSOrangeTheme so are not reachable at this level, as a workaround add raw values
+    // WARNING: #124 - Colors to use are part of OUDSOran MultipleColorTokens(light: ColorRawTokens., dark: ColorRawTokens.)heme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBackgroundBrandPrimary: ColorSemanticToken { fatalError("Raw token unavailable for colorBackgroundBrandPrimary!") }
 
     @objc open var colorBackgroundBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBackgroundBrandSecondary!") }
@@ -272,7 +272,7 @@ extension OUDSTheme: ColorSemanticTokens {
     
     @objc open var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryEnabled!")  }
     
-    @objc open var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken {  fatalError("No value defined for colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized!") }
+    @objc open var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized!") }
     
     @objc open var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { fatalError("No value defined for colorActionOnBackgroundActionSecondaryHover!") }
     
@@ -323,6 +323,36 @@ extension OUDSTheme: ColorSemanticTokens {
     // MARK: Semantic token - Colors - Transparent
     
     @objc open var colorTransparentDefault: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorTransparentBlack0) }
+    
+    // MARK: Semantic token - Colors - Elevation
+    
+    @objc open var colorElevationRaised: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray800) }
+    
+    @objc open var colorElevationRaisedOnBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray720) }
+    
+    @objc open var colorElevationRaisedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray800, dark: ColorRawTokens.colorFunctionalDarkGray560) }
+    
+    @objc open var colorElevationDrag: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray720) }
+    
+    @objc open var colorElevationDragOnBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray640) }
+    
+    @objc open var colorElevationDragOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray480) }
+    
+    @objc open var colorElevationOverlayDefault: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray720) }
+    
+    @objc open var colorElevationOverlayDefaultOnBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray640) }
+    
+    @objc open var colorElevationOverlayDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray480) }
+    
+    @objc open var colorElevationOverlayEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray640, dark: ColorRawTokens.colorFunctionalDarkGray480) }
+    
+    @objc open var colorElevationOverlayEmphasizedOnBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray640, dark: ColorRawTokens.colorFunctionalDarkGray480) }
+    
+    @objc open var colorElevationOverlayEmphasizedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray480) }
+    
+    @objc open var colorElevationModal: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray640) }
+    
+    
     
 }
 // swiftlint:enable line_length

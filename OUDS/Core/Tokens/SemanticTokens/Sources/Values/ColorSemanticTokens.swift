@@ -323,6 +323,34 @@ public protocol ColorSemanticTokens {
     
     var colorTransparentDefault: ColorSemanticToken { get }
     
+    // MARK: Semantic token - Colors - Elevation
+    
+    var colorElevationRaised: ColorSemanticToken { get }
+    
+    var colorElevationRaisedOnBackgroundSecondary: ColorSemanticToken { get }
+    
+    var colorElevationRaisedOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorElevationDrag: ColorSemanticToken { get }
+    
+    var colorElevationDragOnBackgroundSecondary: ColorSemanticToken { get }
+    
+    var colorElevationDragOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorElevationOverlayDefault: ColorSemanticToken { get }
+    
+    var colorElevationOverlayDefaultOnBackgroundSecondary: ColorSemanticToken { get }
+    
+    var colorElevationOverlayDefaultOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorElevationOverlayEmphasized: ColorSemanticToken { get }
+    
+    var colorElevationOverlayEmphasizedOnBackgroundSecondary: ColorSemanticToken { get }
+    
+    var colorElevationOverlayEmphasizedOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorElevationModal: ColorSemanticToken { get }
 }
+
 
 // swiftlint:enable missing_docs
