@@ -55,7 +55,8 @@ extension MockTheme {
     override open var spacePaddingInlineMedium: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override open var spacePaddingInlineTall: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override open var spacePaddingInlineTaller: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
-
+    override open var spacePaddingInlineTallest: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
+    
     override open var spacePaddingInlineWithIconNone: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override open var spacePaddingInlineWithIconShortest: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
     override open var spacePaddingInlineWithIconShorter: SpacingPaddingInlineSemanticToken { Self.mockThemeSpaceRawToken }
