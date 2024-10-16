@@ -138,6 +138,42 @@ extension InverseTheme {
     
     override public var colorContentOnBackgroundStatusAccentedEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
     
+    // MARK: Semantic token - Colors - Border
+
+    override public var colorBorderDefault: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+
+    override public var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
+
+    override public var colorBorderEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    
+    override public var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorBorderFocus: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray880) }
+    
+    override public var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens("#FF6E00") }
+    
+    override public var colorBorderBrandPrimary: ColorSemanticToken { MultipleColorTokens("#FF7900") }
+    
+    override public var colorBorderBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBorderBrandSecondary!") }
+
+    override public var colorBorderBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBorderBrandTertiary!") }
+    
+    override public var colorBorderBrandStatusPositive: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusPositive!") }
+    
+    override public var colorBorderBrandStatusInformation: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusInformation!") }
+    
+    override public var colorBorderBrandStatusWarning: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusWarning!") }
+
+    override public var colorBorderBrandStatusNegative: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusNegative!") }
+    
+    override public var colorBorderBrandStatusAttractive: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusAttractive!") }
+    
+    override public var colorBorderOnBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    
+    override public var colorBorderOnBackgroundBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBorderOnBackgroundBrandSecondary!") }
+    
+    override public var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBorderOnBackgroundBrandTertiary!") }
+    
     // --------------
     
     

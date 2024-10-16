@@ -145,6 +145,71 @@ extension OUDSTheme: ColorSemanticTokens {
     
     @objc open var colorContentOnBackgroundStatusAccentedEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
     
+    // MARK: Semantic token - Colors - Border
+
+    @objc open var colorBorderDefault: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray400, dark: ColorRawTokens.colorFunctionalDarkGray400) }
+
+    @objc open var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+
+    @objc open var colorBorderEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
+    
+    @objc open var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    
+    @objc open var colorBorderFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray880) }
+    
+    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens("#FF7900") }
+    
+    @objc open var colorBorderBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: "#F16E00", dark: "#FF7900") }
+    
+    @objc open var colorBorderBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBorderBrandSecondary!") }
+
+    @objc open var colorBorderBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBorderBrandTertiary!") }
+    
+    @objc open var colorBorderBrandStatusPositive: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusPositive!") }
+    
+    @objc open var colorBorderBrandStatusInformation: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusInformation!") }
+    
+    @objc open var colorBorderBrandStatusWarning: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusWarning!") }
+
+    @objc open var colorBorderBrandStatusNegative: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusNegative!") }
+    
+    @objc open var colorBorderBrandStatusAttractive: ColorSemanticToken { fatalError("No value defined for colorBorderBrandStatusAttractive!") }
+    
+    @objc open var colorBorderOnBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+    
+    @objc open var colorBorderOnBackgroundBrandSecondary: ColorSemanticToken { fatalError("No value defined for colorBorderOnBackgroundBrandSecondary!") }
+    
+    @objc open var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { fatalError("No value defined for colorBorderOnBackgroundBrandTertiary!") }
+    
+    // --------------
+    
+    
+    
+    
+    @objc open var colorContentDefaultOnBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralEmphasizedBlack) }
+
+
+
+    
+
+    @objc open var colorContentDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralEmphasizedLowest) }
+
+    
+
+    
+
+
+
+    
+
+
+
+
+
+    
+
+    @objc open var colorBorderTransparentDefault: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorTransparentBlack0) }
+    
     // --------------
     
     @objc open var colorContentActionEnabled: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
@@ -222,41 +287,5 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundTransparentDefault: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorTransparentBlack0) }
     
-
-    // MARK: Semantic token - Colors - Border
-
-    @objc open var colorBorderDefault: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralMutedMedium, dark: sysColorBrandNeutralEmphasizedLowest) }
-
-    @objc open var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedLowest, dark: sysColorBrandNeutralEmphasizedLowest) }
-
-    @objc open var colorContentDefaultOnBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralEmphasizedBlack) }
-
-    @objc open var colorBorderEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralEmphasizedBlack, dark: sysColorBrandNeutralMutedLower) }
-
-    @objc open var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandNeutralMutedWhite, dark: sysColorBrandNeutralMutedLower) }
-
-    
-
-    @objc open var colorContentDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(sysColorBrandNeutralEmphasizedLowest) }
-
-    @objc open var colorBorderBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandPrimaryDefault, dark: sysColorBrandPrimaryLow) }
-
-    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: sysColorBrandPrimaryLow, dark: sysColorBrandPrimaryLow) }
-
-    @objc open var colorBorderBrandSecondary: ColorSemanticToken { nil }
-
-    @objc open var colorBorderBrandTertiary: ColorSemanticToken { nil }
-
-    @objc open var colorBorderBrandStatusAttractive: ColorSemanticToken { nil }
-
-    @objc open var colorBorderBrandStatusWarning: ColorSemanticToken { nil }
-
-    @objc open var colorBorderBrandStatusNegative: ColorSemanticToken { nil }
-
-    @objc open var colorBorderBrandStatusPositive: ColorSemanticToken { nil }
-
-    @objc open var colorBorderBrandStatusInformation: ColorSemanticToken { nil }
-
-    @objc open var colorBorderTransparentDefault: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorTransparentBlack0) }
 }
 // swiftlint:enable line_length

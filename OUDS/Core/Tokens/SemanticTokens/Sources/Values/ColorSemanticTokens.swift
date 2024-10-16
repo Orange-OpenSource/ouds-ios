@@ -143,6 +143,42 @@ public protocol ColorSemanticTokens {
     
     var colorContentOnBackgroundStatusAccentedEmphasized: ColorSemanticToken { get }
     
+    // MARK: Semantic token - Colors - Border
+
+    var colorBorderDefault: ColorSemanticToken { get }
+
+    var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken { get }
+
+    var colorBorderEmphasized: ColorSemanticToken { get }
+
+    var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken { get }
+
+    var colorBorderFocus: ColorSemanticToken { get }
+    
+    var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { get }
+    
+    var colorBorderBrandPrimary: ColorSemanticToken { get }
+
+    var colorBorderBrandSecondary: ColorSemanticToken { get }
+
+    var colorBorderBrandTertiary: ColorSemanticToken { get }
+    
+    var colorBorderBrandStatusPositive: ColorSemanticToken { get }
+
+    var colorBorderBrandStatusInformation: ColorSemanticToken { get }
+
+    var colorBorderBrandStatusWarning: ColorSemanticToken { get }
+
+    var colorBorderBrandStatusNegative: ColorSemanticToken { get }
+
+    var colorBorderBrandStatusAccent: ColorSemanticToken { get }
+    
+    var colorBorderOnBackgroundBrandPrimary: ColorSemanticToken { get }
+    
+    var colorBorderOnBackgroundBrandSecondary: ColorSemanticToken { get }
+    
+    var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { get }
+    
     // --------------
     
 
@@ -224,40 +260,6 @@ public protocol ColorSemanticTokens {
     // MARK: Semantic token - Colors - Background - Transparent
 
     var colorBackgroundTransparentDefault: ColorSemanticToken { get }
-
-    // MARK: Semantic token - Colors - Border
-
-    var colorBorderDefault: ColorSemanticToken { get }
-
-    var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    // TODO: #124 - Add missing colorBorderDefaultOnBackgroundBrandPrimary
-    // TODO: #124 - Add missing colorBorderDefaultOnBackgroundBrandSecondary
-    // TODO: #124 - Add missing colorBorderDefaultOnBackgroundBrandTertiary
-
-    var colorBorderEmphasized: ColorSemanticToken { get }
-
-    var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorBorderBrandPrimary: ColorSemanticToken { get }
-
-    var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { get }
-
-    var colorBorderBrandSecondary: ColorSemanticToken { get }
-
-    var colorBorderBrandTertiary: ColorSemanticToken { get }
-
-    var colorBorderBrandStatusAttractive: ColorSemanticToken { get }
-
-    var colorBorderBrandStatusWarning: ColorSemanticToken { get }
-
-    var colorBorderBrandStatusNegative: ColorSemanticToken { get }
-
-    var colorBorderBrandStatusPositive: ColorSemanticToken { get }
-
-    var colorBorderBrandStatusInformation: ColorSemanticToken { get }
-
-    var colorBorderTransparentDefault: ColorSemanticToken { get }
 
 }
 
