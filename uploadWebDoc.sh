@@ -41,6 +41,7 @@ HTML_H1="OUDS iOS Swift Documentation"
 HTML_H2="iOS SwiftUI implementation of the Unified Design System of Orange"
 HTML_PROJECT_URL="https://github.com/Orange-OpenSource/ouds-ios"
 HTML_PROJECT_COPYRIGHT="Orange SA"
+HTML_PROJECT_WIKI_URL="https://github.com/Orange-OpenSource/ouds-ios/wiki"
 
 # The name of the Git branch hosting the documentation (e.g. GitHub Pages branch defined in repository)
 # We suppose all the documentation will be in this dedicated branch
@@ -283,6 +284,7 @@ for doccarchive_name in "${doccarchive_names[@]}"; do
 done
 echo "</ol></main>" >> $DOCS_DIRECTORY/index.html
 echo "<footer><p>Find the source code on <a href=\"$HTML_PROJECT_URL\">GitHub</a></p>" >> $DOCS_DIRECTORY/index.html
+echo "<p>Looking for other things? Have a look on <a href=\"$HTML_PROJECT_WIKI_URL\">the wiki</a></p>" >> $DOCS_DIRECTORY/index.html
 echo "<p>&copy; $(date +%Y) $HTML_PROJECT_COPYRIGHT</p><p>Documentation build n°$timestamp</p></footer></body></html>" >> $DOCS_DIRECTORY/index.html
 
 _ "👍 index.html updated!"
