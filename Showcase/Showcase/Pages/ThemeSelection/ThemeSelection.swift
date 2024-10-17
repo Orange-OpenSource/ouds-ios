@@ -114,6 +114,7 @@ struct ThemeSelectionButton: View {
             .pickerStyle(.automatic)
         } label: {
             Image(systemName: "paintpalette")
+                .accessibilityLabel("app_common_theme_image_a11y")
         }
         .foregroundColor(themeProvider.currentTheme.colorContentBrandPrimary.color(for: colorScheme))
     }

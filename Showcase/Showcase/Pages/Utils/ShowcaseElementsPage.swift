@@ -38,6 +38,7 @@ struct ShowcaseElementsPage: View {
                             Card(
                                 title: Text(LocalizedStringKey(element.name)),
                                 icon: Image(element.imageName))
+                            .accessibilityLabel(element.id)
                             .accessibilityFocused($requestFocus, equals: .some(id: element.id))
                             .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
                         }

@@ -1,0 +1,79 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import SwiftUI
+import XCTest
+
+import OUDS
+import OUDSComponents
+import OUDSThemesInverse
+import OUDSThemesOrange
+import OUDSTokensSemantic
+import SnapshotTesting
+
+class OUDSTokensOpacityUITests: XCTestCase {
+    deinit {
+    }
+    // MARK: - Tests
+    // MARK: - Orange Theme Light Mode Tests
+    func testOpacityToken_OrangeTheme_OpacityTransparent_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
+        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityTransparent_Light")
+    }
+    func testOpacityToken_OrangeTheme_OpacityWeaker_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
+        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityWeaker_Light")
+    }
+    func testOpacityToken_OrangeTheme_OpacityWeak_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
+        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityWeak_Light")
+    }
+    func testOpacityToken_OrangeTheme_OpacityMedium_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
+        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityMedium_Light")
+    }
+    func testOpacityToken_OrangeTheme_OpacityStrong_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
+        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityStrong_Light")
+    }
+    func testOpacityToken_OrangeTheme_OpacityOpaque_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
+        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityOpaque_Light")
+    }
+    // MARK: - Tests
+    // MARK: - Inverse Theme Light Mode Tests
+    func testOpacityToken_InverseTheme_OpacityTransparent_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
+        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityTransparent_Light")
+    }
+    func testOpacityToken_InverseTheme_OpacityWeaker_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
+        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityWeaker_Light")
+    }
+    func testOpacityToken_InverseTheme_OpacityWeak_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
+        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityWeak_Light")
+    }
+    func testOpacityToken_InverseTheme_OpacityMedium_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
+        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityMedium_Light")
+    }
+    func testOpacityToken_InverseTheme_OpacityStrong_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
+        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityStrong_Light")
+    }
+    func testOpacityToken_InverseTheme_OpacityOpaque_Light() {
+        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
+        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityOpaque_Light")
+    }
+}
