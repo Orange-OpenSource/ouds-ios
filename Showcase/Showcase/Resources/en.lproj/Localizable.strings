@@ -11,6 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// MARK: - Common
+"app_common_theme_image_a11y" = "Choose a theme";
+
 // MARK: - bottomBar
 
 "app_bottomBar_components_label" = "Components";
