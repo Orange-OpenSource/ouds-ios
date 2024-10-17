@@ -25,6 +25,8 @@ import OUDSTokensSemantic
 
 /// Defines basic values common to all themes for `ColorSemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// Some tokens do not have values assigned in the design system, and must be overriden.
+/// Some tokens must be overiden in `OrangeTheme` side because they rely on Oange brand colors.
 extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Background
@@ -33,12 +35,12 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray800) }
 
-    // WARNING: #124 - Colors to use are part of OUDSOran MultipleColorTokens(light: ColorRawTokens., dark: ColorRawTokens.)heme so are not reachable at this level, as a workaround add raw values
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBackgroundTertiary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundBrandSecondary!") }
 
     @objc open var colorBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray880, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    // WARNING: #124 - Colors to use are part of OUDSOran MultipleColorTokens(light: ColorRawTokens., dark: ColorRawTokens.)heme so are not reachable at this level, as a workaround add raw values
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBackgroundBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundBrandPrimary!") }
 
     @objc open var colorBackgroundBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBackgroundBrandSecondary!") }
@@ -73,8 +75,10 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundStatusAccentMuted!") }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundStatusAccentMutedOnBackgroundEmphasized!") }
 
     @objc open var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
@@ -93,6 +97,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorContentContentDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorContentBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorContentBrandPrimary!") }
 
     @objc open var colorContentBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentBrandSecondary!") }
@@ -159,8 +164,10 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBorderFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray880) }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimaryOnBackgroundEmphasized!") }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBorderBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimary!") }
 
     @objc open var colorBorderBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderBrandSecondary!") }
@@ -185,8 +192,10 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Action
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorActionSelected: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionSelected!") }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorActionSelectedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionSelectedOnBackgroundEmphasized!") }
 
     @objc open var colorActionDisabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray400, dark: ColorRawTokens.colorFunctionalDarkGray400) }
@@ -205,12 +214,16 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorActionPrimaryHoverOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorActionPrimaryPressed: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryPressed!") }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorActionPrimaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryPressedOnBackgroundEmphasized!") }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorActionPrimaryLoading: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoading!") }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorActionPrimaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoadingOnBackgroundEmphasized!") }
 
     @objc open var colorActionPrimaryFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
@@ -357,6 +370,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Decorative
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorDecorativeBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorDecorativeBrandPrimary!") }
 
     @objc open var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandPrimaryMuted!") }
@@ -433,6 +447,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorChartCategoricalNeutral: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorChartCategoricalBrand: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorChartCategoricalBrand!") }
 
     @objc open var colorChartCategoricalPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }

@@ -24,6 +24,7 @@ import OUDSTokensSemantic
 // swiftlint:disable file_length
 
 /// Overrides some colors using values defined in extension of `ColorRawTokens` in this current module.
+/// Some tokens do not have values assigned in the design system, and must be overriden.
 extension InverseTheme {
 
     // MARK: Semantic token - Colors - Background

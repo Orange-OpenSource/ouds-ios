@@ -63,6 +63,7 @@ struct OUDSFormsTextInput: View {
 
     // ...
     @Environment(\.theme) var theme
+    @Environment(\.colorScheme) var colorScheme
 
     public var body: some View {
         VStack(spacing: theme.spacePaddingBlockComponentTall) {
@@ -82,8 +83,8 @@ struct OUDSFormsTextInput: View {
             TextField(placeholder, text: $value)
         }
         .padding(theme.spacePaddingBlockComponentTall)
-        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
-        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
+        .background(theme.ftiBorderColor.color(for: colorScheme))
+        .border(theme.ftiBorderColor.color(for: colorScheme), width: theme.ftiBorderWidth)
     }
 }
 ```

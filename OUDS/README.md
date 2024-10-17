@@ -116,8 +116,8 @@ struct OUDSFormsTextInput: View {
             TextField(placeholder, text: $value)
         }
         .padding(theme.spacePaddingBlockComponentTall)
-        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
-        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
+        .background(theme.ftiBorderColor.color(for: colorScheme))
+        .border(theme.ftiBorderColor.color(for: colorScheme), width: theme.ftiBorderWidth)
     }
 }
 ```
@@ -246,10 +246,9 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in comp
     override public var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
     override public var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
 
-    override public var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight }
-    override public var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark }
+    override public var ftiBackgroundColor: ColorSemanticToken { colorBackgroundPrimary }
 
-    override public var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedDark ?? MyThemeColorRawTokens.someAwesomeThemeExclusiveColor }
+    override public var ftiBorderColor: ColorSemanticToken { colorBorderEmphasized }
 
     override public var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 
@@ -258,8 +257,9 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in comp
 
 extension OrangeCustomTheme { // For ColorSemanticTokens using anywhere
 
-    override var colorBackgroundDefaultPrimaryLight: ColorSemanticToken! { ColorRawTokens.colorFunctionalSun500 }
-    override var colorBackgroundDefaultPrimaryDark: ColorSemanticToken! { ColorRawTokens.colorFunctionalSun800 }
+    override var colorBackgroundPrimary: ColorSemanticToken { 
+        MultipleColorTokens(light: ColorRawTokens.ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.ColorRawTokens.colorFunctionalSun800)
+    }
 }
 ```
 
