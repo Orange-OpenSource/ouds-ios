@@ -22,10 +22,10 @@
 ## Technical preconditions
 
 You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
-You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use are different levels (SDK, showcase app, projects).
-Have a look on the lociks file to know which versions we are using (*Podfile*, *Podfile.lock*, *Packages.swift*, *Package.resolved*, *Gemfile*, *Gemfile.lock*).
+You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use at different levels (SDK, showcase app, projects).
+Have a look on the locks file to know which versions we are using (*Podfile*, *Podfile.lock*, *Packages.swift*, *Package.resolved*, *Gemfile*, *Gemfile.lock*).
 
-If some tools are missing, pick the suitable command line below:
+If some tools are missing, pick the suitable command line below and check versions:
 ```bash
 # Use Bundler to install a major part of dependencies (thanks to Gemfile and Gemfile.lock files)
 bundle install
@@ -33,11 +33,17 @@ bundle install
 # Use CocoaPods to install other dependencies not available as rubygems (thanks to Podfile and Podfile.lock files)
 bundle exec pod install
 
-# Some dependencies must be downloaded by hand:
-# For Periphery (https://github.com/peripheryapp/periphery) (dead code hunt)
+# For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.0)
 brew install peripheryapp/periphery/periphery
-# For gitleaks (https://github.com/gitleaks/gitleaks) (secrets leaks)
+
+# For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.18.1)
 brew install gitleaks
+
+# For SwiftLint (at least 0.52.4)
+brew install swiftlint
+
+# For SwiftFormat (at least 0.52.4)
+brew install swiftformat
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
