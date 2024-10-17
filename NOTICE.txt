@@ -74,6 +74,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_dimension.imageset/ic_dimension.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_filter_effects.imageset/ic_filter_effects.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_layers.imageset/ic_layers.svg
+./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_palette.imageset/ic_palette.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
 

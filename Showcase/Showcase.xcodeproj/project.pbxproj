@@ -36,6 +36,8 @@
 		075114DB2CB7D28D00B8B759 /* SizingTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D82CB7D28D00B8B759 /* SizingTokenElement.swift */; };
 		075114DC2CB7D28D00B8B759 /* SizingTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D92CB7D28D00B8B759 /* SizingTokenPage.swift */; };
 		075114E82CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */; };
+		075114E02CB7FDC200B8B759 /* ColorTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */; };
+		075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */; };
 		077CCE572CB426090059CC28 /* SpacingTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE512CB426090059CC28 /* SpacingTokenElement.swift */; };
 		077CCE582CB426090059CC28 /* SpacingTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE522CB426090059CC28 /* SpacingTokenPage.swift */; };
 		077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
@@ -103,6 +105,8 @@
 		075114D82CB7D28D00B8B759 /* SizingTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingTokenElement.swift; sourceTree = "<group>"; };
 		075114D92CB7D28D00B8B759 /* SizingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizingTokenPage.swift; sourceTree = "<group>"; };
 		075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseTokenIllustration.swift; sourceTree = "<group>"; };
+		075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTokenElement.swift; sourceTree = "<group>"; };
+		075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTokenPage.swift; sourceTree = "<group>"; };
 		077CCE512CB426090059CC28 /* SpacingTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenElement.swift; sourceTree = "<group>"; };
 		077CCE522CB426090059CC28 /* SpacingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenPage.swift; sourceTree = "<group>"; };
 		077CCE542CB426090059CC28 /* DimensionTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTokenElement.swift; sourceTree = "<group>"; };
@@ -246,6 +250,15 @@
 			path = Sizing;
 			sourceTree = "<group>";
 		};
+		075114DD2CB7FD7E00B8B759 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */,
+				075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		077CCE502CB4254B0059CC28 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,10 +396,11 @@
 		51BD76102C466FCF0033365D /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
-				077CCE562CB426090059CC28 /* Dimension */,
 				07CF42832CA45DA9000BD03E /* Border */,
-				07CF427C2CA412F5000BD03E /* Opacity */,
+				075114DD2CB7FD7E00B8B759 /* Color */,
+				077CCE562CB426090059CC28 /* Dimension */,
 				07CF42752CA3F461000BD03E /* Elevation */,
+				07CF427C2CA412F5000BD03E /* Opacity */,
 				073543192CA17388001187EA /* Typography */,
 				073543222CA192F9001187EA /* TokenElement.swift */,
 				07CF426A2CA30728000BD03E /* TokensPage.swift */,
@@ -671,11 +685,13 @@
 				07CF42852CA45DA9000BD03E /* BorderTokenPage.swift in Sources */,
 				07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */,
 				07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */,
+				075114E02CB7FDC200B8B759 /* ColorTokenElement.swift in Sources */,
 				0747947A2CAE882A0033C2D8 /* EmptyState.swift in Sources */,
 				51BD762B2C466FCF0033365D /* MainView.swift in Sources */,
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
 				07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */,
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
+				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
 				0735432A2CA192F9001187EA /* TokenElement.swift in Sources */,
 				073543182CA172CA001187EA /* TypographyTokenElement.swift in Sources */,
 				077CCE5C2CB431C50059CC28 /* ShowcaseVariantElement.swift in Sources */,
