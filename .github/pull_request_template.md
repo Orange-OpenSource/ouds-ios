@@ -65,3 +65,4 @@ _Note: Please transform `- [ ]` into `- (NA)` in the description when things are
 - [ ] Documentation has been updated if relevant
 - [ ] Internal files have been updated if relevant (like CONTRIBUTING, DEVELOP, THIRD_PARTY, CONTRIBUTORS, NOTICE)
 - [ ] CHANGELOG has been updated respecting [keep a changelog rules](https://keepachangelog.com/en/1.0.0/) and reference the issues
+- [ ] <!-- OPTIONAL --> [The wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) has been updated if needed _(optional)_
