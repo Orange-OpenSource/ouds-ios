@@ -44,39 +44,25 @@ struct OpacityTokenPage: View {
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
-                Image("ic_union")
+                Image(decorative: "ic_union")
                     .resizable()
-                    .frame(width: 44, height: 44)
+                    .renderingMode(.template)
+                    .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
+                    .frame(width: 48, height: 48)
                     .accessibilityHidden(true)
 
                 Rectangle()
-                    .fill(theme.colorContentDefault.color(for: colorScheme))
+                    .fill(theme.colorBackgroundEmphasized.color(for: colorScheme))
                     .opacity(token)
-                    .frame(width: 44, height: 44)
-                    .modifier(ExtraBorderModifier(namedOpacity: opacityName))
-                    .transformEffect(CGAffineTransform(translationX: 10, y: 10))
+                    .frame(width: 48, height: 48)
+                    .oudsBorder(style: theme.borderStyleDefault,
+                                width: theme.borderWidthThin,
+                                radius: theme.borderRadiusNone,
+                                color: theme.colorBorderEmphasized)
+                    .padding(.top, 24)
+                    .padding(.leading, 24)
             }
-            .frame(width: 54, height: 54, alignment: .leading)
-        }
-    }
-}
-
-// MARK: - Extra border modifier
-
-// Add a border for transparent token
-private struct ExtraBorderModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-    let namedOpacity: NamedOpacity
-
-    func body(content: Content) -> some View {
-        if namedOpacity == .opacityTransparent {
-            content.oudsBorder(style: theme.borderStyleDefault,
-                               width: theme.borderWidthThin,
-                               radius: theme.borderRadiusNone,
-                               color: theme.colorContentDefault)
-        } else {
-            content
+            .frame(width: 64, height: 64, alignment: .leading)
         }
     }
 }
