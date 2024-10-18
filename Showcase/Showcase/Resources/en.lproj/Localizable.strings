@@ -48,7 +48,6 @@
 "app_tokens_typography_label" = "Typography";
 "app_tokens_typography_description_text" = "Typography is our system of fonts and text styles. They enhance communication and reinforce the brand style.";
 
-
 // MARK: - Component Screen
 
 "app_component_empty_content_text" = "No content";
