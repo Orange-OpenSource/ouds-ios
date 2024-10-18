@@ -52,7 +52,7 @@ struct OpacityTokenPage: View {
                     .accessibilityHidden(true)
 
                 Rectangle()
-                    .fill((theme.colorBackgroundEmphasized.color(for: colorScheme)))
+                    .fill(theme.colorBackgroundEmphasized.color(for: colorScheme))
                     .opacity(token)
                     .frame(width: 48, height: 48)
                     .oudsBorder(style: theme.borderStyleDefault,
