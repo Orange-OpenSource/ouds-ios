@@ -21,8 +21,8 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Action: String, CaseIterable {
-        // case colorActionSelected
-        // case colorActionSelectedOnBackgroundEmphasized
+        case colorActionSelected
+        case colorActionSelectedOnBackgroundEmphasized
         case colorActionDisabled
         case colorActionDisabledOnBackgroundEmphasized
         case colorActionVisited
@@ -32,9 +32,9 @@ extension NamedColor {
         case colorActionPrimaryHover
         case colorActionPrimaryHoverOnBackgroundEmphasized
         // case colorActionPrimaryPressed
-        // case colorActionPrimaryPressedOnBackgroundEmphasized
-        // case colorActionPrimaryLoading
-        // case colorActionPrimaryLoadingOnBackgroundEmphasized
+        case colorActionPrimaryPressedOnBackgroundEmphasized
+        case colorActionPrimaryLoading
+        case colorActionPrimaryLoadingOnBackgroundEmphasized
         case colorActionPrimaryFocus
         case colorActionPrimaryFocusOnBackgroundEmphasized
         case colorActionSecondaryEnabled
@@ -74,14 +74,14 @@ extension NamedColor {
         // case colorActionOnBackgroundActionSecondaryLoading
         // case colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized
         // case colorActionOnBackgroundActionSecondaryFocus
-        // case colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized
+//         case colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
-//            case .colorActionSelected:
-//                return theme.colorActionSelected
-//            case .colorActionSelectedOnBackgroundEmphasized:
-//                return theme.colorActionSelectedOnBackgroundEmphasized
+            case .colorActionSelected:
+                return theme.colorActionSelected
+            case .colorActionSelectedOnBackgroundEmphasized:
+                return theme.colorActionSelectedOnBackgroundEmphasized
             case .colorActionDisabled:
                 return theme.colorActionDisabled
             case .colorActionDisabledOnBackgroundEmphasized:
@@ -100,12 +100,12 @@ extension NamedColor {
                 return theme.colorActionPrimaryHoverOnBackgroundEmphasized
 //            case .colorActionPrimaryPressed:
 //                return theme.colorActionPrimaryPressed
-//            case .colorActionPrimaryPressedOnBackgroundEmphasized:
-//                return theme.colorActionPrimaryPressedOnBackgroundEmphasized
-//            case .colorActionPrimaryLoading:
-//                return theme.colorActionPrimaryLoading
-//            case .colorActionPrimaryLoadingOnBackgroundEmphasized:
-//                return theme.colorActionPrimaryLoadingOnBackgroundEmphasized
+            case .colorActionPrimaryPressedOnBackgroundEmphasized:
+                return theme.colorActionPrimaryPressedOnBackgroundEmphasized
+            case .colorActionPrimaryLoading:
+                return theme.colorActionPrimaryLoading
+            case .colorActionPrimaryLoadingOnBackgroundEmphasized:
+                return theme.colorActionPrimaryLoadingOnBackgroundEmphasized
             case .colorActionPrimaryFocus:
                 return theme.colorActionPrimaryFocus
             case .colorActionPrimaryFocusOnBackgroundEmphasized:
@@ -190,3 +190,7 @@ extension NamedColor {
         }
     }
 }
+
+// swiftlint:enable identifier_name
+// swiftlint:enable line_length
+// swiftlint:enable function_body_length

@@ -15,7 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 
 // swiftlint:disable identifier_name
-// swiftlint:disable line_length
 
 extension NamedColor {
 
@@ -24,9 +23,9 @@ extension NamedColor {
         case colorBackgroundSecondary
         // case colorBackgroundTertiary
         case colorBackgroundEmphasized
-        // case colorBackgroundBrandPrimary
+        case colorBackgroundBrandPrimary
         // case colorBackgroundBrandSecondary
-        // case colorBackgroundBrandTertiary
+        case colorBackgroundBrandTertiary
         case colorBackgroundStatusNeutral
         case colorBackgroundStatusNeutralOnBackgroundEmphasized
         case colorBackgroundStatusPositiveMuted
@@ -41,8 +40,8 @@ extension NamedColor {
         case colorBackgroundStatusNegativeMuted
         case colorBackgroundStatusNegativeMutedOnBackgroundEmphasized
         case colorBackgroundStatusNegativeEmphasized
-        // case colorBackgroundStatusAccentMuted
-        // case colorBackgroundStatusAccentMutedOnBackgroundEmphasized
+        case colorBackgroundStatusAccentMuted
+        case colorBackgroundStatusAccentMutedOnBackgroundEmphasized
         case colorBackgroundStatusAccentEmphasized
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
@@ -55,12 +54,12 @@ extension NamedColor {
 //                return theme.colorBackgroundTertiary
             case .colorBackgroundEmphasized:
                 return theme.colorBackgroundEmphasized
-//            case .colorBackgroundBrandPrimary:
-//                return theme.colorBackgroundBrandPrimary
+            case .colorBackgroundBrandPrimary:
+                return theme.colorBackgroundBrandPrimary
 //            case .colorBackgroundBrandSecondary:
 //                return theme.colorBackgroundBrandSecondary
-//            case .colorBackgroundBrandTertiary:
-//                return theme.colorBackgroundBrandTertiary
+            case .colorBackgroundBrandTertiary:
+                return theme.colorBackgroundBrandTertiary
             case .colorBackgroundStatusNeutral:
                 return theme.colorBackgroundStatusNeutral
             case .colorBackgroundStatusNeutralOnBackgroundEmphasized:
@@ -89,13 +88,15 @@ extension NamedColor {
                 return theme.colorBackgroundStatusNegativeMutedOnBackgroundEmphasized
             case .colorBackgroundStatusNegativeEmphasized:
                 return theme.colorBackgroundStatusNegativeEmphasized
-//            case .colorBackgroundStatusAccentMuted:
-//                return theme.colorBackgroundStatusAccentMuted
-//            case .colorBackgroundStatusAccentMutedOnBackgroundEmphasized:
-//                return theme.colorBackgroundStatusAccentMutedOnBackgroundEmphasized
+            case .colorBackgroundStatusAccentMuted:
+                return theme.colorBackgroundStatusAccentMuted
+            case .colorBackgroundStatusAccentMutedOnBackgroundEmphasized:
+                return theme.colorBackgroundStatusAccentMutedOnBackgroundEmphasized
             case .colorBackgroundStatusAccentEmphasized:
                 return theme.colorBackgroundStatusAccentEmphasized
             }
         }
     }
 }
+
+// swiftlint:enable identifier_name

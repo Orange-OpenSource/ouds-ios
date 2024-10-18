@@ -24,12 +24,12 @@ extension MockTheme {
     // MARK: Semantic token - Border - Width
 
     override open var borderWidthNone: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
-    override open var borderWidthDefault: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken}
-    override open var borderWidthThin: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken}
-    override open var borderWidthMedium: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken}
-    override open var borderWidthThick: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken}
-    override open var borderWidthThicker: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken}
-    override open var borderWidthOutsideFocus: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken}
+    override open var borderWidthDefault: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override open var borderWidthThin: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override open var borderWidthMedium: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override open var borderWidthThick: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override open var borderWidthThicker: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
+    override open var borderWidthOutsideFocus: BorderWidthSemanticToken { Self.mockThemeBorderWidthRawToken }
 
     // MARK: Semantic token - Border - Radius
 

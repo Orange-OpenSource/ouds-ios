@@ -25,7 +25,7 @@ extension NamedColor {
         case colorContentContentMutedOnBackgroundEmphasized
         case colorContentDisabled
         case colorContentContentDisabledOnBackgroundEmphasized
-        // case colorContentBrandPrimary
+        case colorContentBrandPrimary
         // case colorContentBrandSecondary
         // case colorContentBrandTertiary
         case colorContentStatusPositive
@@ -48,8 +48,8 @@ extension NamedColor {
                 return theme.colorContentDisabled
             case .colorContentContentDisabledOnBackgroundEmphasized:
                 return theme.colorContentContentDisabledOnBackgroundEmphasized
-//            case .colorContentBrandPrimary:
-//                return theme.colorContentBrandPrimary
+            case .colorContentBrandPrimary:
+                return theme.colorContentBrandPrimary
 //            case .colorContentBrandSecondary:
 //                return theme.colorContentBrandSecondary
 //            case .colorContentBrandTertiary:
@@ -68,3 +68,5 @@ extension NamedColor {
         }
     }
 }
+
+// swiftlint:enable identifier_name

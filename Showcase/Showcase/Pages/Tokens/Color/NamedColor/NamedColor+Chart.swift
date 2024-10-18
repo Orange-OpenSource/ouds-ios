@@ -20,7 +20,7 @@ extension NamedColor {
 
     enum Chart: String, CaseIterable {
         case colorChartCategoricalNeutral
-        // case colorChartCategoricalBrand
+        case colorChartCategoricalBrand
         case colorChartCategoricalPositive
         case colorChartCategoricalNegative
         case colorChartCategoricalTier1
@@ -83,8 +83,8 @@ extension NamedColor {
             switch self {
             case .colorChartCategoricalNeutral:
                 return theme.colorChartCategoricalNeutral
-//            case .colorChartCategoricalBrand:
-//                return theme.colorChartCategoricalBrand
+            case .colorChartCategoricalBrand:
+                return theme.colorChartCategoricalBrand
             case .colorChartCategoricalPositive:
                 return theme.colorChartCategoricalPositive
             case .colorChartCategoricalNegative:
@@ -203,3 +203,5 @@ extension NamedColor {
         }
     }
 }
+
+// swiftlint:enable function_body_length

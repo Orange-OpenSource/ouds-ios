@@ -65,3 +65,5 @@ extension NamedColor {
         }
     }
 }
+
+// swiftlint:enable identifier_name

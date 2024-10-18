@@ -292,11 +292,11 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHover!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!")  }
+    @objc open var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressed!")  }
+    @objc open var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressed!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!")  }
+    @objc open var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!") }
 
     @objc open var colorActionOnBackgroundActionSecondaryLoading: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryLoading!") }
 

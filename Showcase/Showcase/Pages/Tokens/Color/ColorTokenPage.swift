@@ -40,6 +40,7 @@ struct ColorTokenPage: View {
     }
 
     // MARK: Private helpers
+
     private func header(_ text: String) -> some View {
         Text(text)
             .typeHeadingMedium(theme)
@@ -101,6 +102,7 @@ struct ColorTokenPage: View {
     }
 
     // MARK: Common private helpers
+
     @ViewBuilder
     private func illustration(for token: ColorSemanticToken?, name: String) -> some View {
         if let token {
@@ -118,7 +120,7 @@ struct ColorTokenPage: View {
 
 // MARK: - Extra border modifier
 
-// Add a border if color define by token is equal to default background color of the root view
+// Add a border if color defined by token is equal to default background color of the root view
 private struct ExtraBorderModifier: ViewModifier {
 
     @Environment(\.theme) private var theme

@@ -271,17 +271,17 @@ extension InverseTheme {
 
     override public var colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
 
-    override public var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryEnabled!")  }
+    override public var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryEnabled!") }
 
     override public var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken {  fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized!") }
 
     override public var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHover!") }
 
-    override public var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!")  }
+    override public var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!") }
 
-    override public var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressed!")  }
+    override public var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressed!") }
 
-    override public var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!")  }
+    override public var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!") }
 
     override public var colorActionOnBackgroundActionSecondaryLoading: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryLoading!") }
 

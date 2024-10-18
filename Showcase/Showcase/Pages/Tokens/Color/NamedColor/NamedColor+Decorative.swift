@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Decorative: String, CaseIterable {
-        // case colorDecorativeBrandPrimary
+        case colorDecorativeBrandPrimary
         // case colorDecorativeBrandPrimaryMuted
         // case colorDecorativeBrandPrimaryEmphasized
         case colorDecorativeSecondary
@@ -58,8 +58,8 @@ extension NamedColor {
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
-//            case .colorDecorativeBrandPrimary:
-//                return theme.colorDecorativeBrandPrimary
+            case .colorDecorativeBrandPrimary:
+                return theme.colorDecorativeBrandPrimary
 //            case .colorDecorativeBrandPrimaryMuted:
 //                return theme.colorDecorativeBrandPrimaryMuted
 //            case .colorDecorativeBrandPrimaryEmphasized:
@@ -134,3 +134,5 @@ extension NamedColor {
         }
     }
 }
+
+// swiftlint:enable function_body_length
