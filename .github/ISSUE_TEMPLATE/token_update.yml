@@ -24,8 +24,6 @@ body:
     attributes:
       label: Motivation & Context
       description: Why is this change required? What problem does it solve?
-    validations:
-      required: true     
   - type: checkboxes
     attributes:
       label: Types of change
@@ -40,6 +38,6 @@ body:
       description: Some points to check before any merge
       options:
         - label: Tokens have been updated
-        - label: Documentation have been updated
+        - label: Documentations have been updated
         - label: Unit tests have been updated
-        - label: Retrocompatibility has been checked, or broken API has been flagged as deprecated with a workaround
+        - label: Retrocompatibility has been checked, or broken API have been flagged as deprecated with a workaround
