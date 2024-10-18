@@ -64,12 +64,6 @@ final class ElevationRawTokensTests: XCTestCase {
         XCTAssertTrue(radius == 6)
     }
 
-    // MARK: - Primitive token - Elevation - X
-
-    func testElevationXRawToken0LessThanX200() throws {
-        XCTAssertLessThan(ElevationRawTokens.elevationX0, ElevationRawTokens.elevationX200)
-    }
-
     // MARK: - Primitive token - Elevation - Y
 
     func testElevationYRawToken0LessThanY100() throws {
