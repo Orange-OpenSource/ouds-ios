@@ -11,20 +11,19 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import SwiftUI
+import OUDS
+import OUDSTokensSemantic
 
-struct TokensPage: View {
+enum NamedColor {
 
-    let tokenElements: [TokenElement] = [
-        BorderTokenElement(),
-        ColorTokenElement(),
-        DimensionTokenElement(),
-        ElevationTokenElement(),
-        OpacityTokenElement(),
-        TypographyTokenElement(),
-    ]
+    enum Transparent: String, CaseIterable {
+        case colorTransparentDefault
 
-    var body: some View {
-        ShowcaseElementsPage(elements: tokenElements)
+        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+            switch self {
+            case .colorTransparentDefault:
+                return theme.colorTransparentDefault
+            }
+        }
     }
 }

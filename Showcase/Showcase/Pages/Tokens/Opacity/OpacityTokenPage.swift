@@ -50,7 +50,7 @@ struct OpacityTokenPage: View {
                     .accessibilityHidden(true)
 
                 Rectangle()
-                    .fill((theme.colorContentDefault.color(for: colorScheme)))
+                    .fill(theme.colorContentDefault.color(for: colorScheme))
                     .opacity(token)
                     .frame(width: 44, height: 44)
                     .modifier(ExtraBorderModifier(namedOpacity: opacityName))

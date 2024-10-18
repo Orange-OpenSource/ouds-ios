@@ -1,10 +1,8 @@
 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Spacing icon">
-<mask id="mask0_279_7324" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="80" height="80">
-<rect id="Bounding box" width="80" height="80" fill="#D9D9D9"/>
+<mask id="mask0_659_6987" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="80" height="80">
+<rect width="80" height="80" fill="#D9D9D9"/>
 </mask>
-<g mask="url(#mask0_279_7324)">
-<path id="fit_width" d="M10 70V10H16.6667V70H10ZM23.3333 43.3333V36.6667H30V43.3333H23.3333ZM36.6667 43.3333V36.6667H43.3333V43.3333H36.6667ZM50 43.3333V36.6667H56.6667V43.3333H50ZM63.3333 70V10H70V70H63.3333Z" fill="#EEEEEE"/>
-</g>
+<g mask="url(#mask0_659_6987)">
+<path d="M10 70V10H16.6667V70H10ZM23.3333 43.3333V36.6667H30V43.3333H23.3333ZM36.6667 43.3333V36.6667H43.3333V43.3333H36.6667ZM50 43.3333V36.6667H56.6667V43.3333H50ZM63.3333 70V10H70V70H63.3333Z" fill="#EEEEEE"/>
 </g>
 </svg>

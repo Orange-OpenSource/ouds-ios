@@ -44,14 +44,13 @@ struct SizingTokenPage: View {
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill((theme.colorBackgroundEmphasized.color(for: colorScheme)))
+                    .fill(theme.colorBackgroundEmphasized.color(for: colorScheme))
                     .frame(width: 82, height: 82, alignment: .center)
 
                 Image("ic_token")
                     .resizable()
                     .renderingMode(.template)
                     .foregroundColor(.blue)
-                //                    .foregroundColor((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO: Update when color is available
                     .frame(width: token, height: token, alignment: .center)
                     .accessibilityHidden(true)
             }

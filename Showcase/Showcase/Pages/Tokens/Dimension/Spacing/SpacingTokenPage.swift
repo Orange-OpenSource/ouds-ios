@@ -50,7 +50,6 @@ struct SpacingTokenPage: View {
                     .fill((theme.colorAlwaysOnBackgroundAccent.color(for: colorScheme)))
                     .frame(width: 64, height: 64, alignment: .center)
                 Rectangle()
-                //                    .fill((theme.colorBackgroundStatusAttractiveEmphasized?.color(for: colorScheme))!) // TODO: Update when color is available
                     .fill(.blue)
                     .frame(width: horizontalDimensionRawToken, height: 64, alignment: .center)
             }

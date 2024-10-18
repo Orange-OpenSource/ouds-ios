@@ -60,8 +60,7 @@ final class ThemeProvider: ObservableObject {
 
     let themes: [OUDSTheme]
 
-    @Published
-    var currentTheme: OUDSTheme {
+    @Published var currentTheme: OUDSTheme {
         didSet {
             UserDefaults.standard.set(currentTheme.name, forKey: "themeName")
         }
