@@ -10,14 +10,13 @@ It contains modules, components, themes, and tokens (of components,s emantic and
 This _Swift package_ exposes up to 10 _products_ as _libraries_:
 1. `OUDSModules` containing OUDS modules with features ;
 2. `OUDSComponents` containing all components embeded also inside _modules_ ;
-3. `OUDSThemesSoshTheme` providing the default _Sosh_ theme defining style for _components_;
-4. `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_;
-5. `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_;
-6. `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
-7. `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_ ;
-8. `OUDSTokensSemantic` providing _semantic tokens_ ; 
-9. `OUDSTokensRaw` providing _raw tokens_ ;
-10. `OUDSFoundations` providing low level and utils objects.
+3. `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_;
+4. `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_;
+5. `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_ ;
+6. `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_ ;
+7. `OUDSTokensSemantic` providing _semantic tokens_ ; 
+8. `OUDSTokensRaw` providing _raw tokens_ ;
+9. `OUDSFoundations` providing low level and utils objects.
 
 Feel free to read [this Swift documentation](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html) if you are not used to _SPM_.
 
@@ -35,7 +34,6 @@ A _theme_ has also _raw tokens_ associated to primitive types so as to give to _
 
 This library exposes today up to two themes:
 1. `OrangeTheme` which can be seen as the default _theme_ ;
-2. `SoshTheme` for Sosh ;
 2. `InverseTheme` for other use cases.
 
 They both are based on an `OUDSTheme` defining default values.
@@ -118,8 +116,8 @@ struct OUDSFormsTextInput: View {
             TextField(placeholder, text: $value)
         }
         .padding(theme.spacePaddingBlockComponentTall)
-        .background(colorScheme == .light ? theme.ftiBackgroundColorLight.color : theme.ftiBackgroundColorDark.color)
-        .border(theme.ftiBorderColor.color, width: theme.ftiBorderWidth)
+        .background(theme.ftiBorderColor.color(for: colorScheme))
+        .border(theme.ftiBorderColor.color(for: colorScheme), width: theme.ftiBorderWidth)
     }
 }
 ```
@@ -240,28 +238,28 @@ class OrangeCustomTheme: OrangeTheme { }
 
 extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in component FormsTextInputComponent
 
-    public override var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
-    public override var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
-    public override var ftiTitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
+    override public var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
+    override public var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
+    override public var ftiTitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
 
-    public override var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightBodyDefault }
-    public override var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
-    public override var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
+    override public var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightBodyDefault }
+    override public var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
+    override public var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
 
-    public override var ftiBackgroundColorLight: ColorSemanticToken { colorBackgroundDefaultPrimaryLight }
-    public override var ftiBackgroundColorDark: ColorSemanticToken { colorBackgroundDefaultPrimaryDark }
+    override public var ftiBackgroundColor: ColorSemanticToken { colorBackgroundPrimary }
 
-    public override var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedDark ?? MyThemeColorRawTokens.someAwesomeThemeExclusiveColor }
+    override public var ftiBorderColor: ColorSemanticToken { colorBorderEmphasized }
 
-    public override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
+    override public var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
 
-    public override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThick }
+    override public var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThick }
 }
 
 extension OrangeCustomTheme { // For ColorSemanticTokens using anywhere
 
-    override var colorBackgroundDefaultPrimaryLight: ColorSemanticToken! { ColorRawTokens.colorFunctionalSun500 }
-    override var colorBackgroundDefaultPrimaryDark: ColorSemanticToken! { ColorRawTokens.colorFunctionalSun800 }
+    override var colorBackgroundPrimary: ColorSemanticToken { 
+        MultipleColorTokens(light: ColorRawTokens.ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.ColorRawTokens.colorFunctionalSun800)
+    }
 }
 ```
 

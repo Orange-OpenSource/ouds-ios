@@ -22,8 +22,7 @@ let package = Package(
     
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15),
-        .macOS(.v11)], // macOS v11 required for swift-docc-plugin, not official support of OUDS for macOS!
+    platforms: [.iOS(.v15)],
     
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
@@ -40,9 +39,6 @@ let package = Package(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
         .library(
-            name: "OUDSThemesSosh",
-            targets: ["OUDSThemesSosh"]),
-        .library(
             name: "OUDSThemesInverse",
             targets: ["OUDSThemesInverse"]),
         .library(
@@ -57,11 +53,6 @@ let package = Package(
         .library(
             name: "OUDSFoundations",
             targets: ["OUDSFoundations"]),
-    ],
-    
-    dependencies: [
-        // To build DocC documentation
-        .package(url: "https://github.com/apple/swift-docc-plugin", from: "1.0.0"),
     ],
     
     // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -83,14 +74,6 @@ let package = Package(
             name: "OUDSComponents",
             dependencies: ["OUDSTokensComponent", "OUDS"],
             path: "OUDS/Core/Components/Sources"),
-        .target(
-            name: "OUDSThemesSosh",
-            dependencies: ["OUDS"],
-            path: "OUDS/Core/Themes/Sosh/Sources"),
-        .testTarget(
-            name: "OUDSThemesSosh-Tests",
-            dependencies: ["TestsUtils", "OUDSThemesSosh"],
-            path: "OUDS/Core/Themes/Sosh/Tests"),
         .target(
             name: "OUDSThemesInverse",
             dependencies: ["OUDSThemesOrange"],

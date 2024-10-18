@@ -11,21 +11,23 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import XCTest
 @testable import OUDSTokensRaw
+import XCTest
 
 // swiftlint:disable type_body_length
+// swiftlint:disable required_deinit
 
 /// The aim of this tests class is to look for regressions in **typography raw tokens**.
-/// Because these values will be at least generated through an external tool, is it not relevant to test each token values.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
-/// However, in the semantics of **typography raw tokens**, there will be some unchanged things like relationships between tokens.
+/// In the semantics of **typography raw tokens**, there will be some unchanged things like relationships between tokens.
+/// Some of these tokens are also strongly based on their raw tvalues (like font family names) and must be tested.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 final class TypographyRawTokensTests: XCTestCase {
 
     // MARK: - Primitive token - Typography - Font family
 
     // Just to ensure the font families in tokens are the ones in system with the same name
+
     func testTypographyRawTokenFontFamilyBrandDefault() throws {
         XCTAssertEqual(TypographyRawTokens.fontFamilyBrandDefault, "Helvetica Neue")
     }
@@ -47,7 +49,7 @@ final class TypographyRawTokensTests: XCTestCase {
     }
 
     func testTypographyRawTokenFontFamilySystemSFProText() throws {
-        XCTAssertEqual(TypographyRawTokens.fontFamilySystemSFProText, "SF Pro Text")
+        XCTAssertEqual(TypographyRawTokens.fontFamilySystemSFPro, "SF Pro")
     }
 
     func testTypographyRawTokenFontFamilySystemRoboto() throws {
@@ -67,10 +69,6 @@ final class TypographyRawTokensTests: XCTestCase {
     }
 
     // MARK: - Primitive token - Typography - Font size
-
-    func testTypographyRawTokensFontSize100LessThanFontSize150() throws {
-        XCTAssertLessThan(TypographyRawTokens.fontSize100, TypographyRawTokens.fontSize150)
-    }
 
     func testTypographyRawTokensFontSize150LessThanFontSize175() throws {
         XCTAssertLessThan(TypographyRawTokens.fontSize150, TypographyRawTokens.fontSize175)
@@ -272,40 +270,40 @@ final class TypographyRawTokensTests: XCTestCase {
     // MARK: - Primitive token - Typography - Font weight
 
     func testTypographyRawTokensFontWeightsAreAllDifferent() throws {
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightExtraLight)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightLight)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightRegular)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightMedium)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightSemiBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightThin, TypographyRawTokens.fontWeightExtraBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight200)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight300)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight400)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight500)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight600)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight700)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight100, TypographyRawTokens.fontWeight800)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightLight)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightRegular)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightMedium)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightSemiBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightExtraLight, TypographyRawTokens.fontWeightExtraBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight300)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight400)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight500)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight600)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight700)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight200, TypographyRawTokens.fontWeight800)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightRegular)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightMedium)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightSemiBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightLight, TypographyRawTokens.fontWeightExtraBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight400)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight500)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight600)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight700)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight300, TypographyRawTokens.fontWeight800)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightRegular, TypographyRawTokens.fontWeightMedium)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightRegular, TypographyRawTokens.fontWeightSemiBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightRegular, TypographyRawTokens.fontWeightBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightRegular, TypographyRawTokens.fontWeightExtraBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight400, TypographyRawTokens.fontWeight500)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight400, TypographyRawTokens.fontWeight600)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight400, TypographyRawTokens.fontWeight700)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight400, TypographyRawTokens.fontWeight800)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightMedium, TypographyRawTokens.fontWeightSemiBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightMedium, TypographyRawTokens.fontWeightBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightMedium, TypographyRawTokens.fontWeightExtraBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight500, TypographyRawTokens.fontWeight600)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight500, TypographyRawTokens.fontWeight700)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight500, TypographyRawTokens.fontWeight800)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightSemiBold, TypographyRawTokens.fontWeightBold)
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightSemiBold, TypographyRawTokens.fontWeightExtraBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight600, TypographyRawTokens.fontWeight700)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight600, TypographyRawTokens.fontWeight800)
 
-        XCTAssertNotEqual(TypographyRawTokens.fontWeightBold, TypographyRawTokens.fontWeightExtraBold)
+        XCTAssertNotEqual(TypographyRawTokens.fontWeight700, TypographyRawTokens.fontWeight800)
     }
 
     // MARK: - Primitive token - Typography - Composite
@@ -387,3 +385,4 @@ final class TypographyRawTokensTests: XCTestCase {
     }
 }
 // swiftlint:enable type_body_length
+// swiftlint:enable required_deinit

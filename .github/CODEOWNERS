@@ -11,21 +11,41 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
-# Utility files
+# Items ordered with the same order as used in GitHub web UI
+# Items splitted by owners groups
 
-AUTHORS.txt @pylapp
-CONTRIBUTORS.txt @pylapp
-LICENSE @pylapp
-
-README.md @ludovic35 @pylapp @Tayebsed93
-CHANGELOG.md @ludovic35 @pylapp @Tayebsed93
-DEVELOP.md @ludovic35 @pylapp
-CONTRIBUTING.md @ludovic35 @pylapp
-THIRD-PARTY.md @pylapp
-NOTICE.txt @pylapp
-
-# Project
+# Project folders
 
 /.github/ @pylapp
-/Showcase/ @pylapp @ludovic35 @Tayebsed93
+
 /OUDS/ @pylapp @ludovic35 @Tayebsed93
+/Showcase/ @pylapp @ludovic35 @Tayebsed93
+
+/docs_release/ @pylapp @ludovic35
+
+# Utility files
+
+.gitattributes @pylapp @ludovic35
+.gitignore @pylapp @ludovic35
+
+.gitleaks.toml @pylapp
+.swiftformat @pylapp
+
+.swiftlint.yml @pylapp @ludovic35
+
+CHANGELOG.md @ludovic35 @pylapp @Tayebsed93
+
+Gemfile @pylapp @ludovic35
+Gemfile.lock @pylapp @ludovic35
+
+LICENSE @pylapp
+
+NOTICE.txt @pylapp @ludovic35
+Package.resolved @pylapp @ludovic35
+Package.swift @pylapp @ludovic35
+
+README.md @ludovic35 @pylapp
+
+THIRD_PARTY.md @pylapp
+renovate.json @pylapp
+uploadWebDoc.sh @pylapp

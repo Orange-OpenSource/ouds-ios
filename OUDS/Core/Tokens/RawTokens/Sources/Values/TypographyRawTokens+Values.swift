@@ -11,19 +11,46 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import UIKit
-
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension TypographyRawTokens {
+
+    // MARK: Primitive token - Typography - Font family
+
+    // WARNING: Raw values, do not use as is, ensure fonts are available
+
+    public static let fontFamilyBrandDefault: TypographyFontFamilyRawToken = "Helvetica Neue"
+    public static let fontFamilyBrandTV: TypographyFontFamilyRawToken = "Helvetica Neue LT"
+    public static let fontFamilySystemArial: TypographyFontFamilyRawToken = "Arial"
+    public static let fontFamilySystemHelvetica: TypographyFontFamilyRawToken = "Helvetica"
+    public static let fontFamilySystemNotoSans: TypographyFontFamilyRawToken = "Noto sans"
+    public static let fontFamilySystemSFPro: TypographyFontFamilyRawToken = "SF Pro"
+    public static let fontFamilySystemRoboto: TypographyFontFamilyRawToken = "Roboto"
+    public static let fontFamilyMonospaceMenlo: TypographyFontFamilyRawToken = "Menlo"
+    public static let fontFamilyMonospaceMonaco: TypographyFontFamilyRawToken = "Monaco"
+    public static let fontFamilyMonospaceCourierNew: TypographyFontFamilyRawToken = "Courier New"
+
+    // MARK: Primitive token - Typography - Font weight
+
+    public static let fontWeight100: TypographyFontWeightRawToken = 100
+    public static let fontWeight200: TypographyFontWeightRawToken = 200
+    public static let fontWeight300: TypographyFontWeightRawToken = 300
+    public static let fontWeight400: TypographyFontWeightRawToken = 400
+    public static let fontWeight500: TypographyFontWeightRawToken = 500
+    public static let fontWeight600: TypographyFontWeightRawToken = 600
+    public static let fontWeight700: TypographyFontWeightRawToken = 700
+    public static let fontWeight800: TypographyFontWeightRawToken = 800
+    public static let fontWeight900: TypographyFontWeightRawToken = 900
+    public static let fontWeight950: TypographyFontWeightRawToken = 950
 
     // MARK: Primitive token - Typography - Font size
 
     // WARNING: values in pixels and not in points, do not use as is!
 
-    public static let fontSize100: TypographyFontSizeRawToken = 10
     public static let fontSize150: TypographyFontSizeRawToken = 12
     public static let fontSize175: TypographyFontSizeRawToken = 13
     public static let fontSize200: TypographyFontSizeRawToken = 14
@@ -66,51 +93,23 @@ extension TypographyRawTokens {
 
     // WARNING: values in pixels and not in points, do not use as is!
 
-    public static let fontLetterSpacing150: TypographyFontLetterSpacingRawToken = 150 / UIScreen.main.scale
-    public static let fontLetterSpacing175: TypographyFontLetterSpacingRawToken = 175 / UIScreen.main.scale
-    public static let fontLetterSpacing200: TypographyFontLetterSpacingRawToken = 200 / UIScreen.main.scale
-    public static let fontLetterSpacing250: TypographyFontLetterSpacingRawToken = 250 / UIScreen.main.scale
-    public static let fontLetterSpacing300: TypographyFontLetterSpacingRawToken = 300 / UIScreen.main.scale
-    public static let fontLetterSpacing350: TypographyFontLetterSpacingRawToken = 350 / UIScreen.main.scale
-    public static let fontLetterSpacing450: TypographyFontLetterSpacingRawToken = 450 / UIScreen.main.scale
-    public static let fontLetterSpacing550: TypographyFontLetterSpacingRawToken = 550 / UIScreen.main.scale
-    public static let fontLetterSpacing650: TypographyFontLetterSpacingRawToken = 650 / UIScreen.main.scale
-    public static let fontLetterSpacing750: TypographyFontLetterSpacingRawToken = 750 / UIScreen.main.scale
-    public static let fontLetterSpacing850: TypographyFontLetterSpacingRawToken = 850 / UIScreen.main.scale
-    public static let fontLetterSpacing950: TypographyFontLetterSpacingRawToken = 950 / UIScreen.main.scale
-    public static let fontLetterSpacing1050: TypographyFontLetterSpacingRawToken = 1050 / UIScreen.main.scale
-    public static let fontLetterSpacing1150: TypographyFontLetterSpacingRawToken = 1150 / UIScreen.main.scale
-    public static let fontLetterSpacing1250: TypographyFontLetterSpacingRawToken = 1250 / UIScreen.main.scale
-    public static let fontLetterSpacing1450: TypographyFontLetterSpacingRawToken = 1450 / UIScreen.main.scale
-    public static let fontLetterSpacing1850: TypographyFontLetterSpacingRawToken = 1850 / UIScreen.main.scale
-
-    // MARK: Primitive token - Typography - Font family
-
-    // WARNING: Raw values, do not use as is, ensure fonts are available
-
-    public static let fontFamilyBrandDefault: TypographyFontFamilyRawToken = "Helvetica Neue"
-    public static let fontFamilyBrandTV: TypographyFontFamilyRawToken = "Helvetica Neue LT"
-    public static let fontFamilySystemArial: TypographyFontFamilyRawToken = "Arial"
-    public static let fontFamilySystemHelvetica: TypographyFontFamilyRawToken = "Helvetica"
-    public static let fontFamilySystemNotoSans: TypographyFontFamilyRawToken = "Noto sans"
-    public static let fontFamilySystemSFProText: TypographyFontFamilyRawToken = "SF Pro Text"
-    public static let fontFamilySystemRoboto: TypographyFontFamilyRawToken = "Roboto"
-    public static let fontFamilyMonospaceMenlo: TypographyFontFamilyRawToken = "Menlo"
-    public static let fontFamilyMonospaceMonaco: TypographyFontFamilyRawToken = "Monaco"
-    public static let fontFamilyMonospaceCourierNew: TypographyFontFamilyRawToken = "Courier New"
-
-    // MARK: Primitive token - Typography - Font weight
-
-    // WARNING: Some tokens will be useless (extra light, extra bold, extra black)
-    // But need to keep the Figma logic and use our conversion algorithm
-    public static let fontWeightThin: TypographyFontWeightRawToken = 100
-    public static let fontWeightExtraLight: TypographyFontWeightRawToken = 200
-    public static let fontWeightLight: TypographyFontWeightRawToken = 300
-    public static let fontWeightRegular: TypographyFontWeightRawToken = 400
-    public static let fontWeightMedium: TypographyFontWeightRawToken = 500
-    public static let fontWeightSemiBold: TypographyFontWeightRawToken = 600
-    public static let fontWeightBold: TypographyFontWeightRawToken = 700
-    public static let fontWeightExtraBold: TypographyFontWeightRawToken = 800
-    public static let fontWeightBlack: TypographyFontWeightRawToken = 900
-    public static let fontWeightExtraBlack: TypographyFontWeightRawToken = 950
+    public static let fontLetterSpacing150: TypographyFontLetterSpacingRawToken = 150
+    public static let fontLetterSpacing175: TypographyFontLetterSpacingRawToken = 175
+    public static let fontLetterSpacing200: TypographyFontLetterSpacingRawToken = 200
+    public static let fontLetterSpacing250: TypographyFontLetterSpacingRawToken = 250
+    public static let fontLetterSpacing300: TypographyFontLetterSpacingRawToken = 300
+    public static let fontLetterSpacing350: TypographyFontLetterSpacingRawToken = 350
+    public static let fontLetterSpacing450: TypographyFontLetterSpacingRawToken = 450
+    public static let fontLetterSpacing550: TypographyFontLetterSpacingRawToken = 550
+    public static let fontLetterSpacing650: TypographyFontLetterSpacingRawToken = 650
+    public static let fontLetterSpacing750: TypographyFontLetterSpacingRawToken = 750
+    public static let fontLetterSpacing850: TypographyFontLetterSpacingRawToken = 850
+    public static let fontLetterSpacing950: TypographyFontLetterSpacingRawToken = 950
+    public static let fontLetterSpacing1050: TypographyFontLetterSpacingRawToken = 1_050
+    public static let fontLetterSpacing1150: TypographyFontLetterSpacingRawToken = 1_150
+    public static let fontLetterSpacing1250: TypographyFontLetterSpacingRawToken = 1_250
+    public static let fontLetterSpacing1450: TypographyFontLetterSpacingRawToken = 1_450
+    public static let fontLetterSpacing1850: TypographyFontLetterSpacingRawToken = 1_850
 }
+
+// swiftlint:enable missing_docs

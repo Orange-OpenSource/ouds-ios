@@ -8,6 +8,8 @@
   <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?assignees=pylapp&labels=feature%2C%F0%9F%94%8D%20triage&template=feature_request.yml&title=[feature]%3A+">Request feature</a>
   ·
   <a href="https://ios.unified-design-system.orange.com/">Online documentation</a>
+·
+  <a href="https://github.com/Orange-OpenSource/ouds-ios/wiki">Wiki</a>
 </p>
 
 ## Table of contents

@@ -16,6 +16,8 @@ import OUDSTokensComponent
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// TODO: Check if we can get rid of alias colors tokens which are optional
+
 /// Defines for `OUDSButton` the basic configuration which can be overriden in subthemes / subclasses of this theme.
 /// **Warning: These are random and dumb values**
 extension OUDSTheme: ButtonsComponentTokens {
@@ -23,12 +25,12 @@ extension OUDSTheme: ButtonsComponentTokens {
     @objc open var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { spacePaddingInlineShort }
 
     @objc open var buttonBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
-    @objc open var buttonBorderColor: ColorSemanticToken { colorBorderDefault! }
+    @objc open var buttonBorderColor: ColorSemanticToken { colorBorderDefault }
     @objc open var buttonBorderWidth: BorderWidthSemanticToken { borderWidthDefault }
     @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borderRadiusShort }
 
-    @objc open var buttonForegroundColor: ColorSemanticToken { colorContentBrandPrimary! }
-    @objc open var buttonBackgroundColor: ColorSemanticToken { colorBackgroundBrandPrimary! }
+    @objc open var buttonForegroundColor: ColorSemanticToken { colorContentBrandPrimary }
+    @objc open var buttonBackgroundColor: ColorSemanticToken { colorBackgroundBrandPrimary }
 
     @objc open var buttonWidth: SizingSemanticToken { DimensionRawTokens.dimension3000 }
     @objc open var buttonHeight: SizingSemanticToken { DimensionRawTokens.dimension1000 }

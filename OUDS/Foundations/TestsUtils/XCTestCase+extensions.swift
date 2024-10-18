@@ -14,6 +14,8 @@
 import Foundation
 import XCTest
 
+// swiftlint:disable force_unwrapping
+
 extension XCTestCase {
 
     /// Checks if `value` is between `min` and `max`
@@ -53,3 +55,5 @@ extension XCTestCase {
         return Int(exactly: intValue)!
     }
 }
+
+// swiftlint:enable force_unwrapping

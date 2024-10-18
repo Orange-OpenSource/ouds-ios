@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSComponents
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -37,30 +38,32 @@ struct OpacityTokenPage: View {
     // MARK: Helpers
 
     private func illustration(for opacityName: NamedOpacity) -> some View {
-        illustration(for: opacityName.token(from: theme), named: opacityName.rawValue)
-    }
+        let token = opacityName.token(from: theme)
+        let name = opacityName.rawValue
+        let value = String(format: "%.2f", token)
 
-    private func illustration(for opacityToken: OpacitySemanticToken, named name: String) -> some View {
-        HStack(alignment: .center, spacing: theme.spaceFixedMedium) {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
-                Image("ic_union")
+                Image(decorative: "ic_union")
                     .resizable()
-                    .frame(width: 44, height: 44)
+                    .renderingMode(.template)
+                    .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
+                    .frame(width: 48, height: 48)
+                    .accessibilityHidden(true)
 
-                Rectangle().fill(colorScheme == .dark ? .white : .black)
-                    .opacity(opacityToken)
-                    .frame(width: 44, height: 44)
-                    .transformEffect(CGAffineTransform(translationX: 10, y: 10))
+                Rectangle()
+                    .fill(theme.colorBackgroundEmphasized.color(for: colorScheme))
+                    .opacity(token)
+                    .frame(width: 48, height: 48)
+                    .oudsBorder(style: theme.borderStyleDefault,
+                                width: theme.borderWidthThin,
+                                radius: theme.borderRadiusNone,
+                                color: theme.colorBorderEmphasized)
+                    .padding(.top, 24)
+                    .padding(.leading, 24)
             }
-            .frame(width: 54, height: 54, alignment: .leading)
-
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-                Text(name).bold()
-                Text("\(opacityToken, specifier: "%.2f")")
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(width: 64, height: 64, alignment: .leading)
         }
-        .padding(.vertical, theme.spaceFixedShorter)
     }
 }
 

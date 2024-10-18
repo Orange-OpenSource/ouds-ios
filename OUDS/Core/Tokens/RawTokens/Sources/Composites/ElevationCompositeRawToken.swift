@@ -44,11 +44,15 @@ public final class ElevationCompositeRawToken: NSObject { // For @objc compatibi
         radius = blur / 2
     }
 
+    deinit { }
+
     /// Compares the `self.x`, `self.y`, `self.blur` and `self.color` values between tokens.
     /// If `object` is not an `ElevationCompositeRawToken`, or ahs one of its four proeprties with another value than `self`,
     /// return `false`. Otherwise returns `true`. `isEqual` override is preferred for `NSObject`.
-    public override func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? ElevationCompositeRawToken else { return false }
+    override public func isEqual(_ object: Any?) -> Bool {
+        guard let other = object as? ElevationCompositeRawToken else {
+            return false
+        }
         return self.x == other.x
         && self.y == other.y
         && self.radius == other.radius

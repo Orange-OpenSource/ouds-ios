@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// This is a group of semantic tokens for **dimensions**.
 /// It defines all `DimensionSemanticToken` a theme must have.
 ///
@@ -46,3 +48,5 @@ public protocol DimensionSemanticTokens {
     var dimension10XL: DimensionSemanticToken { get }
     var dimension11XL: DimensionSemanticToken { get }
 }
+
+// swiftlint:enable missing_docs

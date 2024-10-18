@@ -11,9 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import SwiftUI
 import OUDS
 import OUDSTokensSemantic
+import SwiftUI
 
 struct ShowcaseElementPage: View {
 
@@ -34,27 +34,26 @@ struct ShowcaseElementPage: View {
                     .accessibilityHidden(true)
 
                 Text(LocalizedStringKey(element.description))
-                    .typeBodyDefaultMedium(theme)
+                    .typeBodyDefaultLarge(theme)
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaceFixedMedium)
-
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
             .padding(.horizontal, theme.spaceFixedNone)
             .padding(.bottom, theme.spaceFixedMedium)
-            .background(theme.colorBackgroundDefaultPrimary?.color(for: colorScheme))
+            .background(theme.colorBackgroundPrimary.color(for: colorScheme))
 
             element.pageDescription
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
                 .padding(.bottom, theme.spaceFixedMedium)
-                .background(theme.colorBackgroundDefaultPrimary?.color(for: colorScheme))
+                .background(theme.colorBackgroundPrimary.color(for: colorScheme))
         }
         .listStyle(.plain)
         .padding(.top, theme.spaceFixedNone)
         .padding(.horizontal, theme.spaceFixedNone)
-        .background(theme.colorBackgroundDefaultPrimary?.color(for: colorScheme))
+        .background(theme.colorBackgroundPrimary.color(for: colorScheme))
         .navigationTitle(LocalizedStringKey(element.name))
         .navigationbarMenuForThemeSelection()
         .oudsRequestAccessibleFocus(_requestFocus)

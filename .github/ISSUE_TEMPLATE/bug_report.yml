@@ -1,6 +1,6 @@
 name: Report a bug
 description: Tell us about a bug or issue you may have identified in OUDS iOS.
-title: "[Bug]: Bug Summary"
+title: "[Bug] "
 labels: ["🐞 bug", "🔍 triage"]
 assignees: ["ludovic35", "pylapp", "Tayebsed93"]
 body:

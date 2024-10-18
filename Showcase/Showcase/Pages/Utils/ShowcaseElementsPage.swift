@@ -37,7 +37,7 @@ struct ShowcaseElementsPage: View {
                         } label: {
                             Card(
                                 title: Text(LocalizedStringKey(element.name)),
-                                icon: Image(element.imageName))
+                                icon: Image(decorative: element.imageName))
                             .accessibilityFocused($requestFocus, equals: .some(id: element.id))
                             .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
                         }
@@ -47,7 +47,7 @@ struct ShowcaseElementsPage: View {
                 .navigationbarMenuForThemeSelection()
                 .oudsNavigationTitle("app_bottomBar_tokens")
             }
-            .background(theme.colorBackgroundDefaultPrimary?.color(for: colorScheme))
+            .background(theme.colorBackgroundPrimary.color(for: colorScheme))
         }
         .navigationViewStyle(.stack)
     }

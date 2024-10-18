@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// This is a group of semantic tokens for **elevations**.
 /// It defines all elevation semantic tokens a theme must have. (`ElevationXSemanticToken`,`ElevationYSemanticToken`,
 /// `ElevationBlurSemanticToken` and `ElevationColorSemanticToken`)
@@ -57,59 +59,29 @@ public protocol ElevationSemanticTokens {
     var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { get }
     var elevationBlurFocus: ElevationBlurSemanticToken { get }
 
-    // MARK: Semantic token - Elevation - Color - None
+    // MARK: Semantic token - Elevation - Color
 
     var elevationColorNone: ElevationColorSemanticToken { get }
-
-    // MARK: Semantic token - Elevation - Color - Raised
-
     var elevationColorRaised: ElevationColorSemanticToken { get }
-
-    // MARK: Semantic token - Elevation - Color - Drag
-
     var elevationColorDrag: ElevationColorSemanticToken { get }
-
-    // MARK: Semantic token - Elevation - Color - Overlay - Default
-
     var elevationColorOverlayDefault: ElevationColorSemanticToken { get }
-
-    // MARK: Semantic token - Elevation - Color - Overlay - Emphasized
-
     var elevationColorOverlayEmphasized: ElevationColorSemanticToken { get }
-
-    // MARK: Semantic token - Elevation - Color - Sticky - Default
-
     var elevationColorStickyDefault: ElevationColorSemanticToken { get }
-
-    // MARK: Semantic token - Elevation - Color - Sticky - Emphasized
-
     var elevationColorStickyEmphasized: ElevationColorSemanticToken { get }
-
-    // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
-
     var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { get }
-
-    // MARK: Semantic token - Elevation - Color - Focus
-
     var elevationColorFocus: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Box shadow
 
     var elevationNone: ElevationCompositeSemanticToken { get }
-
     var elevationRaised: ElevationCompositeSemanticToken { get }
-
     var elevationDrag: ElevationCompositeSemanticToken { get }
-
     var elevationOverlayDefault: ElevationCompositeSemanticToken { get }
-
     var elevationOverlayEmphasized: ElevationCompositeSemanticToken { get }
-
     var elevationStickyDefault: ElevationCompositeSemanticToken { get }
-
     var elevationStickyEmphasized: ElevationCompositeSemanticToken { get }
-
     var elevationStickyNavigationScrolled: ElevationCompositeSemanticToken { get }
-
     var elevationFocus: ElevationCompositeSemanticToken { get }
 }
+
+// swiftlint:enable missing_docs

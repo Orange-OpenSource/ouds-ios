@@ -48,6 +48,7 @@ _Note: Please transform `- [ ]` into `- (NA)` in the description when things are
 #### Development
 
 - [ ] My change follows the [developer guide](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/DEVELOP.md)
+- [ ] I checked my changes do not add new SwiftLint warnings
 - [ ] <!-- OPTIONAL --> I have added unit tests to cover my changes _(optional)_
 
 #### Documentation
@@ -64,3 +65,4 @@ _Note: Please transform `- [ ]` into `- (NA)` in the description when things are
 - [ ] Documentation has been updated if relevant
 - [ ] Internal files have been updated if relevant (like CONTRIBUTING, DEVELOP, THIRD_PARTY, CONTRIBUTORS, NOTICE)
 - [ ] CHANGELOG has been updated respecting [keep a changelog rules](https://keepachangelog.com/en/1.0.0/) and reference the issues
+- [ ] <!-- OPTIONAL --> [The wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) has been updated if needed _(optional)_

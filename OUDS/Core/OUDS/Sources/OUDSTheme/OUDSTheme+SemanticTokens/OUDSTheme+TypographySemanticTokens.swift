@@ -18,13 +18,15 @@ import OUDSTokensSemantic
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable line_length
+
 /// Defines basic values common to all themes for `TypographySemanticTokens`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: TypographySemanticTokens {
 
     // MARK: Semantic token - Typography - Font - Family
 
-    @objc open var fontFamily: TypographyFontFamilySemanticToken { TypographyRawTokens.fontFamilyBrandDefault }
+    @objc open var fontFamily: TypographyFontFamilySemanticToken { TypographyRawTokens.fontFamilySystemSFPro }
     @objc open var fontFamilyDisplay: TypographyFontFamilySemanticToken { fontFamily }
     @objc open var fontFamilyHeading: TypographyFontFamilySemanticToken { fontFamily }
     @objc open var fontFamilyBody: TypographyFontFamilySemanticToken { fontFamily }
@@ -33,41 +35,28 @@ extension OUDSTheme: TypographySemanticTokens {
 
     // MARK: Semantic token - Typography - Font - Weight
 
-    @objc open var fontWeightDefault: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeightRegular }
-    @objc open var fontWeightStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeightBold }
-    @objc open var fontWeightDisplay: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeightBold }
-    @objc open var fontWeightHeading: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeightBold }
-    @objc open var fontWeightBodyDefault: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeightRegular }
-    @objc open var fontWeightBodyStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeightBold }
-    @objc open var fontWeightLabelDefault: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeightRegular }
-    @objc open var fontWeightLabelStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeightBold }
-    @objc open var fontWeightCode: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeightRegular }
+    @objc open var fontWeightDefault: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
+    @objc open var fontWeightStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight700 }
+    @objc open var fontWeightDisplay: TypographyFontWeightSemanticToken { fontWeightStrong }
+    @objc open var fontWeightHeading: TypographyFontWeightSemanticToken { fontWeightStrong }
+    @objc open var fontWeightBodyDefault: TypographyFontWeightSemanticToken { fontWeightDefault }
+    @objc open var fontWeightBodyStrong: TypographyFontWeightSemanticToken { fontWeightStrong }
+    @objc open var fontWeightLabelDefault: TypographyFontWeightSemanticToken { fontWeightDefault }
+    @objc open var fontWeightLabelStrong: TypographyFontWeightSemanticToken { fontWeightStrong }
+    @objc open var fontWeightCode: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
 
-    // MARK: Semantic token - Typography - Font - Size - Mobile
+    // MARK: Semantic token - Typography - Font - Size
 
-    @objc open var fontSizeMobileDisplayLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize850 }
-    @objc open var fontSizeMobileDisplayMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize750 }
-    @objc open var fontSizeMobileDisplaySmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize650 }
-    @objc open var fontSizeMobileHeadingXLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize550 }
-    @objc open var fontSizeMobileHeadingLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize450 }
-    @objc open var fontSizeMobileHeadingMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize350 }
-    @objc open var fontSizeMobileHeadingSmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize300 }
-    @objc open var fontSizeMobileBodyLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize250 }
-    @objc open var fontSizeMobileBodyMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
-    @objc open var fontSizeMobileBodySmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize100 }
-
-    // MARK: Semantic token - Typography - Font - Size - Tablet
-
-    @objc open var fontSizeTabletDisplayLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize1450 }
-    @objc open var fontSizeTabletDisplayMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize1050 }
-    @objc open var fontSizeTabletDisplaySmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize850 }
-    @objc open var fontSizeTabletHeadingXLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize750 }
-    @objc open var fontSizeTabletHeadingLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize550 }
-    @objc open var fontSizeTabletHeadingMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize450 }
-    @objc open var fontSizeTabletHeadingSmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize350 }
-    @objc open var fontSizeTabletBodyLarge: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize250 }
-    @objc open var fontSizeTabletBodyMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
-    @objc open var fontSizeTabletBodySmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize150 }
+    @objc open var fontSizeDisplayLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize850, regular: TypographyRawTokens.fontSize1450) }
+    @objc open var fontSizeDisplayMedium: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize750, regular: TypographyRawTokens.fontSize1050) }
+    @objc open var fontSizeDisplaySmall: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize650, regular: TypographyRawTokens.fontSize850) }
+    @objc open var fontSizeHeadingXLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize550, regular: TypographyRawTokens.fontSize750) }
+    @objc open var fontSizeHeadingLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize450, regular: TypographyRawTokens.fontSize550) }
+    @objc open var fontSizeHeadingMedium: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize350, regular: TypographyRawTokens.fontSize450) }
+    @objc open var fontSizeHeadingSmall: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize300, regular: TypographyRawTokens.fontSize350) }
+    @objc open var fontSizeBodyLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(TypographyRawTokens.fontSize250) }
+    @objc open var fontSizeBodyMedium: MultipleFontSizeTokens { MultipleFontSizeTokens(TypographyRawTokens.fontSize200) }
+    @objc open var fontSizeBodySmall: MultipleFontSizeTokens { MultipleFontSizeTokens(TypographyRawTokens.fontSize150) }
 
     // MARK: Semantic token - Typography - Font - Size - Others
 
@@ -78,75 +67,44 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontSizeCodeMedium: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize200 }
     @objc open var fontSizeCodeSmall: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize150 }
 
-    // MARK: Semantic token - Typography - Font - Light height - Mobile
+    // MARK: - Semantic token - Typography - Font - Line height
 
-    @objc open var fontLineHeightMobileDisplayLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1050 }
-    @objc open var fontLineHeightMobileDisplayMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight950 }
-    @objc open var fontLineHeightMobileDisplaySmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight850 }
-    @objc open var fontLineHeightMobileHeadingXLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight750 }
-    @objc open var fontLineHeightMobileHeadingLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight650 }
-    @objc open var fontLineHeightMobileHeadingMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight550 }
-    @objc open var fontLineHeightMobileHeadingSmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
-    @objc open var fontLineHeightMobileBodyLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
-    @objc open var fontLineHeightMobileBodyMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
-    @objc open var fontLineHeightMobileBodySmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
+    @objc open var fontLineHeightDisplayLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight1050, regular: TypographyRawTokens.fontLineHeight1850) }
+    @objc open var fontLineHeightDisplayMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight950, regular: TypographyRawTokens.fontLineHeight1250) }
+    @objc open var fontLineHeightDisplaySmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight850, regular: TypographyRawTokens.fontLineHeight1050) }
+    @objc open var fontLineHeightHeadingXLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight750, regular: TypographyRawTokens.fontLineHeight950) }
+    @objc open var fontLineHeightHeadingLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight650, regular: TypographyRawTokens.fontLineHeight750) }
+    @objc open var fontLineHeightHeadingMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight550, regular: TypographyRawTokens.fontLineHeight650) }
+    @objc open var fontLineHeightHeadingSmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight550) }
+    @objc open var fontLineHeightBodyLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(TypographyRawTokens.fontLineHeight450) }
+    @objc open var fontLineHeightBodyMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(TypographyRawTokens.fontLineHeight350) }
+    @objc open var fontLineHeightBodySmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(TypographyRawTokens.fontLineHeight250) }
+    @objc open var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(TypographyRawTokens.fontLineHeight450) }
+    @objc open var fontLineHeightLabelLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(TypographyRawTokens.fontLineHeight450) }
+    @objc open var fontLineHeightLabelMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(TypographyRawTokens.fontLineHeight350) }
+    @objc open var fontLineHeightLabelSmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(TypographyRawTokens.fontLineHeight250) }
+    @objc open var fontLineHeightCodeMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(TypographyRawTokens.fontLineHeight350) }
+    @objc open var fontLineHeightCodeSmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(TypographyRawTokens.fontLineHeight250) }
 
-    // MARK: Semantic token - Typography - Font - Light height - Tablet
+    // MARK: - Semantic token - Typography - Font - Letter spacing
 
-    @objc open var fontLineHeightTabletDisplayLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1850 }
-    @objc open var fontLineHeightTabletDisplayMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1250 }
-    @objc open var fontLineHeightTabletDisplaySmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight1050 }
-    @objc open var fontLineHeightTabletHeadingXLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight950 }
-    @objc open var fontLineHeightTabletHeadingLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight750 }
-    @objc open var fontLineHeightTabletHeadingMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight650 }
-    @objc open var fontLineHeightTabletHeadingSmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight550 }
-    @objc open var fontLineHeightTabletBodyLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
-    @objc open var fontLineHeightTabletBodyMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
-    @objc open var fontLineHeightTabletBodySmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
+    @objc open var fontLetterSpacingDisplayLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing850, regular: TypographyRawTokens.fontLetterSpacing1450) }
+    @objc open var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing750, regular: TypographyRawTokens.fontLetterSpacing1050) }
+    @objc open var fontLetterSpacingDisplaySmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing650, regular: TypographyRawTokens.fontLetterSpacing850 ) }
+    @objc open var fontLetterSpacingHeadingXLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing550, regular: TypographyRawTokens.fontLetterSpacing750) }
+    @objc open var fontLetterSpacingHeadingLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing450, regular: TypographyRawTokens.fontLetterSpacing750) }
+    @objc open var fontLetterSpacingHeadingMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing350, regular: TypographyRawTokens.fontLetterSpacing450) }
+    @objc open var fontLetterSpacingHeadingSmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: TypographyRawTokens.fontLetterSpacing300, regular: TypographyRawTokens.fontLetterSpacing350 ) }
+    @objc open var fontLetterSpacingBodyLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing250) }
+    @objc open var fontLetterSpacingBodyMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing200) }
+    @objc open var fontLetterSpacingBodySmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing150) }
 
-    // MARK: Semantic token - Typography - Font - Light height - Others
-
-    @objc open var fontLineHeightLabelXLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
-    @objc open var fontLineHeightLabelLarge: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
-    @objc open var fontLineHeightLabelMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
-    @objc open var fontLineHeightLabelSmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
-    @objc open var fontLineHeightCodeMedium: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight350 }
-    @objc open var fontLineHeightCodeSmall: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight250 }
-
-    // MARK: - Semantic token - Typography - Font - Letter spacing - Mobile (extra-compact/compact)
-
-    @objc open var fontLetterSpacingMobileDisplayLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing850 }
-    @objc open var fontLetterSpacingMobileDisplayMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing750 }
-    @objc open var fontLetterSpacingMobileDisplaySmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing650 }
-    @objc open var fontLetterSpacingMobileHeadingXLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing550 }
-    @objc open var fontLetterSpacingMobileHeadingLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing450 }
-    @objc open var fontLetterSpacingMobileHeadingMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing350 }
-    @objc open var fontLetterSpacingMobileHeadingSmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing300 }
-    @objc open var fontLetterSpacingMobileBodyLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing250 }
-    @objc open var fontLetterSpacingMobileBodyMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing200 }
-    @objc open var fontLetterSpacingMobileBodySmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing150 }
-
-    // MARK: - Semantic token - Typography - Font - Letter spacing - Tablet (regular/medium)
-
-    @objc open var fontLetterSpacingTabletDisplayLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing1450 }
-    @objc open var fontLetterSpacingTabletDisplayMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing1050 }
-    @objc open var fontLetterSpacingTabletDisplaySmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing850 }
-    @objc open var fontLetterSpacingTabletHeadingXLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing750 }
-    @objc open var fontLetterSpacingTabletHeadingLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing550 }
-    @objc open var fontLetterSpacingTabletHeadingMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing450 }
-    @objc open var fontLetterSpacingTabletHeadingSmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing350 }
-    @objc open var fontLetterSpacingTabletBodyLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing250 }
-    @objc open var fontLetterSpacingTabletBodyMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing200 }
-    @objc open var fontLetterSpacingTabletBodySmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing150 }
-
-    // MARK: - Semantic token - Typography - Font - Letter spacing - Others
-
-    @objc open var fontLetterSpacingLabelXLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing300 }
-    @objc open var fontLetterSpacingLabelLarge: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing250 }
-    @objc open var fontLetterSpacingLabelMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing200 }
-    @objc open var fontLetterSpacingLabelSmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing150 }
-    @objc open var fontLetterSpacingCodeMedium: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing200 }
-    @objc open var fontLetterSpacingCodeSmall: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing150 }
+    @objc open var fontLetterSpacingLabelXLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing300) }
+    @objc open var fontLetterSpacingLabelLarge: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing250) }
+    @objc open var fontLetterSpacingLabelMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing200) }
+    @objc open var fontLetterSpacingLabelSmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing150) }
+    @objc open var fontLetterSpacingCodeMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing200) }
+    @objc open var fontLetterSpacingCodeSmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing150) }
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
@@ -163,26 +121,28 @@ extension OUDSTheme: TypographySemanticTokens {
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    @objc open var typeBodyDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold250, regular: TypographyRawTokens.typeBold250) }
-    @objc open var typeBodyDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeBodyDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
-    @objc open var typeBodyStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold250, regular: TypographyRawTokens.typeBold250) }
-    @objc open var typeBodyStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeBodyStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
+    @objc open var typeBodyDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular250) }
+    @objc open var typeBodyDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular200) }
+    @objc open var typeBodyDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular150) }
+    @objc open var typeBodyStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold250) }
+    @objc open var typeBodyStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold200) }
+    @objc open var typeBodyStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold150) }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    @objc open var typeLabelDefaultXLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold300, regular: TypographyRawTokens.typeBold300) }
-    @objc open var typeLabelDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold250, regular: TypographyRawTokens.typeBold250) }
-    @objc open var typeLabelDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeLabelDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
-    @objc open var typeLabelStrongXLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold300, regular: TypographyRawTokens.typeBold300) }
-    @objc open var typeLabelStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold250, regular: TypographyRawTokens.typeBold250) }
-    @objc open var typeLabelStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeLabelStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
+    @objc open var typeLabelDefaultXLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular250) } // NOTE: .typeRegular300 in Figjam but undefined
+    @objc open var typeLabelDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold250) }
+    @objc open var typeLabelDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular200) }
+    @objc open var typeLabelDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular150) }
+    @objc open var typeLabelStrongXLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold300) }
+    @objc open var typeLabelStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold250) }
+    @objc open var typeLabelStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold200) }
+    @objc open var typeLabelStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold150) }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    @objc open var typeCodeMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold200, regular: TypographyRawTokens.typeBold200) }
-    @objc open var typeCodeSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold150, regular: TypographyRawTokens.typeBold150) }
+    @objc open var typeCodeMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular200) }
+    @objc open var typeCodeSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular150) }
 }
+
+// swiftlint:enable line_length

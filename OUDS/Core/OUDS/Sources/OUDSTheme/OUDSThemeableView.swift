@@ -18,11 +18,12 @@ import SwiftUI
 
 private struct ThemeContractEnvironmentKey: EnvironmentKey {
 
-    static let defaultValue: OUDSTheme = OUDSTheme()
+    static let defaultValue = OUDSTheme()
 }
 
 extension EnvironmentValues {
 
+    /// The `OUDSTheme` instance exposed as en environment values across the library
     public var theme: OUDSTheme {
         get {
             self[ThemeContractEnvironmentKey.self]

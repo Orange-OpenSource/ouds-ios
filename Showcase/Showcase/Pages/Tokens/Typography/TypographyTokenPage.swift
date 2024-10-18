@@ -16,9 +16,11 @@ import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - Typography Token Page
+
 struct TypographyTokenPage: View {
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
@@ -40,7 +42,9 @@ struct TypographyTokenPage: View {
         let token = namedTypography.token(from: theme).compact
 
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            typgraphyName(from: namedTypography)
+            typgraphyIllustration(from: namedTypography)
+                .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
+
             Group {
                 Text("family (\(theme.customFontFamily ?? "system")), ")
                 + Text("weight (\(token.weight)), ")
@@ -48,15 +52,16 @@ struct TypographyTokenPage: View {
                 + Text("lineHeight (\(token.lineHeight, specifier: "%.2f")), ")
                 + Text("letterSpacing \(token.letterSpacing, specifier: "%.2f"))")
             }
-            .typeBodyDefaultSmall(theme)
+            .typeBodyDefaultMedium(theme)
             .fixedSize(horizontal: false, vertical: true)
+            .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaceFixedShorter)
     }
 
     @ViewBuilder
-    private func typgraphyName(from namedTypography: NamedTypography) -> some View {
+    private func typgraphyIllustration(from namedTypography: NamedTypography) -> some View {
         switch namedTypography {
         case .displayLarge:
             Text(namedTypography.rawValue).typeDisplayLarge(theme)

@@ -13,6 +13,7 @@
 
 import Foundation
 import OUDSTokensRaw
+import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of `DimensionRawToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
@@ -34,11 +35,20 @@ public final class MultipleSpacingTokens: NSObject {
         self.regular = regular
     }
 
+    deinit { }
+
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `MultipleSpacingTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
-    public override func isEqual(_ object: Any?) -> Bool {
+    override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleSpacingTokens else { return false }
         return self.compact == other.compact && self.regular == other.regular
+    }
+
+    /// Returns the right dimension according to the `userInterfaceSizeClass`.
+    /// - Parameter userInterfaceSizeClass: The user interface size class (Could be the horizontal or the vertical size class)
+    /// - Returns: The right dimension raw token
+    public func dimension(for userInterfaceSizeClass: UserInterfaceSizeClass) -> DimensionRawToken {
+        userInterfaceSizeClass == .compact ? compact : regular
     }
 }

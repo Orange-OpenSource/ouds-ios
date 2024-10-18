@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// Extracted in a separated file because the the *Figma* JSON to Swift parser is not abale to process such composite tokens, and the *Figma* tool is not able to.
 ///
 /// **Beware, may result in desynchronization between generated raw tokens values and theses composite raw tokens**
@@ -97,3 +99,5 @@ extension ElevationRawTokens {
 
     public static let elevationBottom_6_600 = ElevationCompositeRawToken(x: elevationX0, y: elevationY600, blur: elevationBlur700, color: ColorRawTokens.colorTransparentBlack600)
 }
+
+// swiftlint:enable missing_docs

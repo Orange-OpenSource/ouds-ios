@@ -28,14 +28,14 @@ extension OUDSTheme: GridSemanticTokens {
     @objc open var gridExtraCompactMaxWidth: GridExtraCompactSemanticToken { GridRawTokens.gridMaxWidthExtraCompact }
     @objc open var gridExtraCompactMargin: GridExtraCompactSemanticToken { GridRawTokens.gridMargin100 }
     @objc open var gridExtraCompactColumnGap: GridExtraCompactSemanticToken { GridRawTokens.gridColumnGap100 }
-    @objc open var gridExtraCompactColumnCount: GridExtraCompactSemanticToken { GridRawTokens.gridColumnCount100 }
+    @objc open var gridExtraCompactColumnCount: GridExtraCompactSemanticToken { GridRawTokens.gridColumnCount400 }
 
     // MARK: Semantic token - Grid - iOS Compact
 
     @objc open var gridCompactMinWidth: GridCompactSemanticToken { GridRawTokens.gridMinWidthCompact }
     @objc open var gridCompactMaxWidth: GridCompactSemanticToken { GridRawTokens.gridMaxWidthCompact }
     @objc open var gridCompactMargin: GridCompactSemanticToken { GridRawTokens.gridMargin300 }
-    @objc open var gridCompactColumnGap: GridCompactSemanticToken { GridRawTokens.gridColumnGap100 }
+    @objc open var gridCompactColumnGap: GridCompactSemanticToken { GridRawTokens.gridColumnGap200 }
     @objc open var gridCompactColumnCount: GridCompactSemanticToken { GridRawTokens.gridColumnCount400 }
 
     // MARK: Semantic token - Grid - iOS Regular
@@ -43,6 +43,6 @@ extension OUDSTheme: GridSemanticTokens {
     @objc open var gridRegularMinWidth: GridRegularSemanticToken { GridRawTokens.gridMinWidthRegular }
     @objc open var gridRegularMaxWidth: GridRegularSemanticToken { GridRawTokens.gridMaxWidthRegular }
     @objc open var gridRegularMargin: GridRegularSemanticToken { GridRawTokens.gridMargin500 }
-    @objc open var gridRegularColumnGap: GridRegularSemanticToken { GridRawTokens.gridColumnGap300 }
+    @objc open var gridRegularColumnGap: GridRegularSemanticToken { GridRawTokens.gridColumnGap400 }
     @objc open var gridRegularColumnCount: GridRegularSemanticToken { GridRawTokens.gridColumnCount600 }
 }

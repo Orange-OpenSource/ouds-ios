@@ -14,6 +14,8 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
+// swiftlint:disable missing_docs
+
 /// Extracted in this separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension BorderRawTokens {
 
@@ -52,3 +54,5 @@ extension BorderRawTokens {
     public static let borderStyleDashed: BorderStyleRawToken = "dashed"
     public static let borderStyleDotted: BorderStyleRawToken = "dotted"
 }
+
+// swiftlint:enable missing_docs

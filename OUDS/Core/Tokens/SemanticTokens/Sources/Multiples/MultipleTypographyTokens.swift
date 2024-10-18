@@ -26,6 +26,13 @@ public final class MultipleTypographyTokens: NSObject {
     public let regular: TypographyCompositeRawToken
 
     /// Initializes a new typography composite semantic token.
+    /// - Parameter unique: The `TypographyCompositeRawToken` to apply for both in *compact* and *regular* modes
+    public init(_ unique: TypographyCompositeRawToken) {
+        self.compact = unique
+        self.regular = unique
+    }
+
+    /// Initializes a new typography composite semantic token.
     /// - Parameters:
     ///    - compact: The `TypographyCompositeRawToken` to apply if device in *compact* mode
     ///    - regular: The `TypographyCompositeRawToken` to apply if device in *regular* mode
@@ -34,10 +41,12 @@ public final class MultipleTypographyTokens: NSObject {
         self.regular = regular
     }
 
+    deinit { }
+
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `MultipleTypographyTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
-    public override func isEqual(_ object: Any?) -> Bool {
+    override public func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? MultipleTypographyTokens else { return false }
         return self.compact == object.compact && self.regular == object.regular
     }

@@ -1,19 +1,17 @@
 name: Token Update Request
 description: Please fill out the following details for your token update request.
-title: "[Token Update] - Title"
+title: "[Token Update] "
 labels: ["📀 token", "🔍 triage"]
 assignees: ["ludovic35", "pylapp", "Tayebsed93"]
 body:
-  - type: markdown
+  - type: checkboxes
     attributes:
-      value: |
-        ### Type of tokens
-        Please fill the checkboxes of the token type you want to update:
-        - [ ] Raw token (i.e. associated to _SwiftUI_ or _Swift_ value)
-        - [ ] Semantic token (i.e. pointing to a raw token)
-        - [ ] Component token (i.e. pointing to a semantic token, used for a component)
-    validations:
-      required: true        
+      label: Type of tokens
+      description: Please fill the checkboxes of the token type you want to update
+      options:
+        - label: Raw token (i.e. associated to _SwiftUI_ or _Swift_ value)
+        - label: Semantic token (i.e. pointing to a raw token)
+        - label: Component token (i.e. pointing to a semantic token, used for a component)
   - type: textarea
     id: description
     attributes:
@@ -26,24 +24,20 @@ body:
     attributes:
       label: Motivation & Context
       description: Why is this change required? What problem does it solve?
-    validations:
-      required: true      
-  - type: markdown
+  - type: checkboxes
     attributes:
-      value: |
-        ### Types of change
-        Please fill the suitable items in the list:
-        - [ ] Add new tokens
-        - [ ] Update existing tokens (i.e. change name or value)
-        - [ ] Remove existing token
-    validations:
-      required: true        
-  - type: markdown
+      label: Types of change
+      description: Please fill the suitable items in the list
+      options:
+        - label: Add new tokens
+        - label: Update existing tokens (i.e. change name or value)
+        - label: Remove existing token
+  - type: checkboxes
     attributes:
-      value: |
-        ### Checklist for Core Team
-        - [ ] Tokens have been updated
-        - [ ] Documentation have been updated
-        - [ ] Unit tests have been updated
-        - [ ] Retrocompatibility has been checked, or broken API have been flagged as deprecated without a workaround
-
+      label: Checklist for Core Team
+      description: Some points to check before any merge
+      options:
+        - label: Tokens have been updated
+        - label: Documentations have been updated
+        - label: Unit tests have been updated
+        - label: Retrocompatibility has been checked, or broken API have been flagged as deprecated with a workaround
