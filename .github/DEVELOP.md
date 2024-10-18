@@ -135,6 +135,33 @@ Indeed for new tests the tool makes snapshots of the views, thus for the first r
 
 Such tests here are used to as to be sure the look and feel of any components and tokens rendering remaing the expected ones.
 
+### Steps to Use swift-snapshot-testing
+
+1. Navigate to the Project :
+    - Open your project in Xcode and go to the directory:
+    ```shell
+    Showcase -> ShowcaseTests -> OUDSTokensBorderUITests
+    ```
+2. Locate Reference Images:
+    - Inside the `OUDSTokensBorderUITests` folder, you will find the `OrangeTheme` and `InverseTheme` directories. These folders contain the reference screenshots for the Orange and Inverse themes, which will serve as comparison points.
+3. Open the Test File:
+    - Open the file `OUDSTokensBorderUITests.swift`.
+4. Run the Snapshot Test:
+    - Locate and execute the function `testBorderToken_OrangeTheme_SectionWidth_BorderWidthNone_Light()`.
+    - Running this test will launch the selected simulator and create a new snapshot of the `BorderTokenPage`.
+5. Run the Snapshot Test:
+    - After the snapshot has been generated, re-run the same test after the error indicating that there is no snapshot, so it can use the newly created snapshot as a comparison against the reference image.
+6. Verify the Output:
+    - The test will check the rendered output of the `BorderTokenPage`, which is instantiated with the `Orange theme`:
+    ```swift
+    BorderTokenPage().environment(\.theme, OrangeTheme())
+    ```
+    - If the generated screenshot matches the reference image, the test will pass. If they do not match, the test will fail, indicating a discrepancy
+7. Verify the Output:
+    - **Important:** If you change the device or simulator you are using, **delete the snapshots** located in the `__Snapshots__` folder to avoid mismatches:
+    - Snapshots should **never be committed** to the repository, as they are meant for local testing purposes only
+
+
 ## Build phases
 
 The project contains several custom build phases so as to automatize several steps:
