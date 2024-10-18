@@ -148,9 +148,15 @@ Such tests here are used to as to be sure the look and feel of any components an
     - Open the file `OUDSTokensBorderUITests.swift`.
 4. Run the Snapshot Test:
     - Locate and execute the function `testBorderToken_OrangeTheme_SectionWidth_BorderWidthNone_Light()`.
+      <img width="898" alt="Capture d’écran 2024-10-18 à 16 44 46" src="https://github.com/user-attachments/assets/bc2d6cb4-3854-499a-82b2-6b5676e2505b">
+
     - Running this test will launch the selected simulator and create a new snapshot of the `BorderTokenPage`.
+      <img width="909" alt="Capture d’écran 2024-10-18 à 16 53 55" src="https://github.com/user-attachments/assets/d07dfc72-1034-4b40-8875-6fff22dad412">
+
 5. Run the Snapshot Test:
     - After the snapshot has been generated, re-run the same test after the error indicating that there is no snapshot, so it can use the newly created snapshot as a comparison against the reference image.
+      <img width="910" alt="Capture d’écran 2024-10-18 à 16 55 15" src="https://github.com/user-attachments/assets/2588e0a5-6571-4049-97dd-c92a92e2a4d2">
+
 6. Verify the Output:
     - The test will check the rendered output of the `BorderTokenPage`, which is instantiated with the `Orange theme`:
     ```swift
@@ -160,6 +166,7 @@ Such tests here are used to as to be sure the look and feel of any components an
 7. Verify the Output:
     - **Important:** If you change the device or simulator you are using, **delete the snapshots** located in the `__Snapshots__` folder to avoid mismatches:
     - Snapshots should **never be committed** to the repository, as they are meant for local testing purposes only
+<img width="548" alt="Capture d’écran 2024-10-18 à 17 00 42" src="https://github.com/user-attachments/assets/9e11e225-6218-4cb5-bae1-933d305aefa6">
 
 
 ## Build phases
