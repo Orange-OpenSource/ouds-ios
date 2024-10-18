@@ -34,7 +34,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("Width")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle((theme.colorContentDefault.color(for: colorScheme)))
+                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
             }
 
             Section {
@@ -46,7 +46,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("Radius")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle((theme.colorContentDefault.color(for: colorScheme)))
+                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
             }
 
             Section {
@@ -58,7 +58,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("Style")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle((theme.colorContentDefault.color(for: colorScheme)))
+                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
             }
         }
         .padding(.horizontal, theme.spaceFixedMedium)

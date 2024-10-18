@@ -20,6 +20,7 @@ extension NamedColor {
 
     enum ContentOnBackground: String, CaseIterable {
         case colorContentOnBackgroundPrimary
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorContentOnBackgroundSecondary
         // case colorContentOnBackgroundTertiary
         case colorContentOnBackgroundStatusPositiveMuted
@@ -42,6 +43,7 @@ extension NamedColor {
             switch self {
             case .colorContentOnBackgroundPrimary:
                 return theme.colorContentOnBackgroundPrimary
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorContentOnBackgroundSecondary:
 //                return theme.colorContentOnBackgroundSecondary
 //            case .colorContentOnBackgroundTertiary:

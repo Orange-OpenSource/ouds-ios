@@ -26,13 +26,15 @@ extension NamedColor {
         case colorContentDisabled
         case colorContentContentDisabledOnBackgroundEmphasized
         case colorContentBrandPrimary
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorContentBrandSecondary
         // case colorContentBrandTertiary
         case colorContentStatusPositive
         case colorContentStatusInfo
         case colorContentStatusWarning
         case colorContentStatusNegative
-//        case colorContentStatusAccent
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
+        // case colorContentStatusAccent
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
@@ -50,6 +52,7 @@ extension NamedColor {
                 return theme.colorContentContentDisabledOnBackgroundEmphasized
             case .colorContentBrandPrimary:
                 return theme.colorContentBrandPrimary
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorContentBrandSecondary:
 //                return theme.colorContentBrandSecondary
 //            case .colorContentBrandTertiary:
@@ -62,6 +65,7 @@ extension NamedColor {
                 return theme.colorContentStatusWarning
             case .colorContentStatusNegative:
                 return theme.colorContentStatusNegative
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorContentStatusAccent:
 //                return theme.colorContentStatusAccent
             }

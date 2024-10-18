@@ -20,12 +20,15 @@ extension NamedColor {
 
     enum Decorative: String, CaseIterable {
         case colorDecorativeBrandPrimary
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorDecorativeBrandPrimaryMuted
         // case colorDecorativeBrandPrimaryEmphasized
         case colorDecorativeSecondary
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorDecorativeSecondaryMuted
         // case colorDecorativeSecondaryEmphasized
         case colorDecorativeBrandTertiary
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorDecorativeBrandTertiaryMuted
         // case colorDecorativeBrandTertiaryEmphasized
         case colorDecorativeNeutralMuted
@@ -60,18 +63,21 @@ extension NamedColor {
             switch self {
             case .colorDecorativeBrandPrimary:
                 return theme.colorDecorativeBrandPrimary
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorDecorativeBrandPrimaryMuted:
 //                return theme.colorDecorativeBrandPrimaryMuted
 //            case .colorDecorativeBrandPrimaryEmphasized:
 //                return theme.colorDecorativeBrandPrimaryEmphasized
             case .colorDecorativeSecondary:
                 return theme.colorDecorativeSecondary
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorDecorativeSecondaryMuted:
 //                return theme.colorDecorativeSecondaryMuted
 //            case .colorDecorativeSecondaryEmphasized:
 //                return theme.colorDecorativeSecondaryEmphasized
             case .colorDecorativeBrandTertiary:
                 return theme.colorDecorativeBrandTertiary
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorDecorativeBrandTertiaryMuted:
 //                return theme.colorDecorativeBrandTertiaryMuted
 //            case .colorDecorativeBrandTertiaryEmphasized:

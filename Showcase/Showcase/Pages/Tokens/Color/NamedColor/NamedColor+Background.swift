@@ -21,9 +21,11 @@ extension NamedColor {
     enum Background: String, CaseIterable {
         case colorBackgroundPrimary
         case colorBackgroundSecondary
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorBackgroundTertiary
         case colorBackgroundEmphasized
         case colorBackgroundBrandPrimary
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorBackgroundBrandSecondary
         case colorBackgroundBrandTertiary
         case colorBackgroundStatusNeutral
@@ -50,12 +52,14 @@ extension NamedColor {
                 return theme.colorBackgroundPrimary
             case .colorBackgroundSecondary:
                 return theme.colorBackgroundSecondary
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorBackgroundTertiary:
 //                return theme.colorBackgroundTertiary
             case .colorBackgroundEmphasized:
                 return theme.colorBackgroundEmphasized
             case .colorBackgroundBrandPrimary:
                 return theme.colorBackgroundBrandPrimary
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorBackgroundBrandSecondary:
 //                return theme.colorBackgroundBrandSecondary
             case .colorBackgroundBrandTertiary:

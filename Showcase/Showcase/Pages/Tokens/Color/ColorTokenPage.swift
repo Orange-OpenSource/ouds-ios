@@ -112,7 +112,7 @@ struct ColorTokenPage: View {
                 Rectangle()
                     .fill(colorRawToken.color)
                     .frame(width: 64, height: 64)
-                    .modifier(ExtraBorderModifier(colorRawToken: colorRawToken))
+                    .modifier(ExtraBorderModifier(color: colorRawToken))
             }
         }
     }
@@ -126,14 +126,13 @@ private struct ExtraBorderModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    let colorRawToken: ColorRawToken
+    let color: ColorRawToken
 
     func body(content: Content) -> some View {
         let defaultContentBackground = theme.colorBackgroundPrimary.color(for: colorScheme)
-        let addBorder = (colorRawToken.color) == defaultContentBackground
+        let addBorder = color.color == defaultContentBackground
 
         if addBorder {
-            // swiftlint:disable force_unwrapping
             content.oudsBorder(style: theme.borderStyleDefault,
                                width: theme.borderWidthThin,
                                radius: theme.borderRadiusNone,

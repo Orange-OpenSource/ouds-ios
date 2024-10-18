@@ -15,7 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 
 // swiftlint:disable identifier_name
-// swiftlint:disable line_length
 // swiftlint:disable function_body_length
 
 extension NamedColor {
@@ -31,7 +30,8 @@ extension NamedColor {
         case colorActionPrimaryEnabledOnBackgroundEmphasized
         case colorActionPrimaryHover
         case colorActionPrimaryHoverOnBackgroundEmphasized
-        // case colorActionPrimaryPressed
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
+//        case colorActionPrimaryPressed
         case colorActionPrimaryPressedOnBackgroundEmphasized
         case colorActionPrimaryLoading
         case colorActionPrimaryLoadingOnBackgroundEmphasized
@@ -65,16 +65,17 @@ extension NamedColor {
         case colorActionOnBackgroundActionPrimaryLoadingOnBackgroundEmphasized
         case colorActionOnBackgroundActionPrimaryFocus
         case colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized
-        // case colorActionOnBackgroundActionSecondaryEnabled
-        // case colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized
-        // case colorActionOnBackgroundActionSecondaryHover
-        // case colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized
-        // case colorActionOnBackgroundActionSecondaryPressed
-        // case colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized
-        // case colorActionOnBackgroundActionSecondaryLoading
-        // case colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized
-        // case colorActionOnBackgroundActionSecondaryFocus
-//         case colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized
+        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
+//        case colorActionOnBackgroundActionSecondaryEnabled
+//        case colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized
+//        case colorActionOnBackgroundActionSecondaryHover
+//        case colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized
+//        case colorActionOnBackgroundActionSecondaryPressed
+//        case colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized
+//        case colorActionOnBackgroundActionSecondaryLoading
+//        case colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized
+//        case colorActionOnBackgroundActionSecondaryFocus
+//        case colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
@@ -98,6 +99,7 @@ extension NamedColor {
                 return theme.colorActionPrimaryHover
             case .colorActionPrimaryHoverOnBackgroundEmphasized:
                 return theme.colorActionPrimaryHoverOnBackgroundEmphasized
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorActionPrimaryPressed:
 //                return theme.colorActionPrimaryPressed
             case .colorActionPrimaryPressedOnBackgroundEmphasized:
@@ -166,6 +168,7 @@ extension NamedColor {
                 return theme.colorActionOnBackgroundActionPrimaryFocus
             case .colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized:
                 return theme.colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized
+            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorActionOnBackgroundActionSecondaryEnabled:
 //                return theme.colorActionOnBackgroundActionSecondaryEnabled
 //            case .colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized:
@@ -192,5 +195,4 @@ extension NamedColor {
 }
 
 // swiftlint:enable identifier_name
-// swiftlint:enable line_length
 // swiftlint:enable function_body_length

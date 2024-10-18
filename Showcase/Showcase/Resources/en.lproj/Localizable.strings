@@ -28,7 +28,7 @@
 "app_tokens_border_description_text" = "Borders are used for the stroke colours on components and also for the colours of divider lines for components like tables.";
 
 "app_tokens_color_label" = "Color";
-"app_tokens_color_description_text" = "The color Semantic Tokens are optimized to build the services and formatted using descriptive usage names. They are based on the values representing the colors of the brand identity.";
+"app_tokens_color_description_text" = "Colour reinforces our brand identity and ensures consistency across all product experiences. The semantic tokens described are the onse you should use when building a mobile app.";
 
 "app_tokens_dimension_label" = "Dimension";
 "app_tokens_dimension_description_text" = "Dimension provides standard sizing and spacing to ensure visual consistency across the UI.";
