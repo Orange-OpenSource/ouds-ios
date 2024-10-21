@@ -43,7 +43,6 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontWeightBodyStrong: TypographyFontWeightSemanticToken { fontWeightStrong }
     @objc open var fontWeightLabelDefault: TypographyFontWeightSemanticToken { fontWeightDefault }
     @objc open var fontWeightLabelStrong: TypographyFontWeightSemanticToken { fontWeightStrong }
-    @objc open var fontWeightCode: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
 
     // MARK: Semantic token - Typography - Font - Size
 
