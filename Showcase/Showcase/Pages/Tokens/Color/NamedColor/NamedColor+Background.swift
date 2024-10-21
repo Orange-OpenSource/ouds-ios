@@ -27,7 +27,7 @@ extension NamedColor {
         case colorBackgroundBrandPrimary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorBackgroundBrandSecondary
-        case colorBackgroundBrandTertiary
+        // case colorBackgroundBrandTertiary
         case colorBackgroundStatusNeutral
         case colorBackgroundStatusNeutralOnBackgroundEmphasized
         case colorBackgroundStatusPositiveMuted
@@ -62,8 +62,8 @@ extension NamedColor {
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorBackgroundBrandSecondary:
 //                return theme.colorBackgroundBrandSecondary
-            case .colorBackgroundBrandTertiary:
-                return theme.colorBackgroundBrandTertiary
+//            case .colorBackgroundBrandTertiary:
+//                return theme.colorBackgroundBrandTertiary
             case .colorBackgroundStatusNeutral:
                 return theme.colorBackgroundStatusNeutral
             case .colorBackgroundStatusNeutralOnBackgroundEmphasized:
