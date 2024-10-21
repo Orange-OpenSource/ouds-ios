@@ -146,7 +146,8 @@ private enum NamedBorderWidth: String, CaseIterable {
     case borderWidthMedium
     case borderWidthThick
     case borderWidthThicker
-    case borderWidthOutsideFocus
+    case borderWidthFocus
+    case borderWidthFocusInset
 
     func token(from theme: OUDSTheme) -> BorderWidthSemanticToken {
         switch self {
@@ -162,8 +163,10 @@ private enum NamedBorderWidth: String, CaseIterable {
             return theme.borderWidthThick
         case .borderWidthThicker:
             return theme.borderWidthThicker
-        case .borderWidthOutsideFocus:
-            return theme.borderWidthOutsideFocus
+        case .borderWidthFocus:
+            return theme.borderWidthFocus
+        case .borderWidthFocusInset:
+            return theme.borderWidthFocusInset
         }
     }
 }
