@@ -18,8 +18,6 @@ import OUDSTokensSemantic
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 
-// swiftlint:disable line_length
-
 /// Defines basic values common to all themes for `ElevationSemanticTokenss`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// The aim of this extensions is to make relationships between all semantic tokens for elevations and associated raw tokens.
@@ -36,7 +34,6 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationXStickyDefault: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     @objc open var elevationXStickyEmphasized: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
     @objc open var elevationXStickyNavigationScrolled: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
-    @objc open var elevationXFocus: ElevationXSemanticToken { ElevationRawTokens.elevationX0 }
 
     // MARK: Semantic token - Elevation - Y
 
@@ -48,7 +45,6 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationYStickyDefault: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
     @objc open var elevationYStickyEmphasized: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
     @objc open var elevationYStickyNavigationScrolled: ElevationYSemanticToken { ElevationRawTokens.elevationY300 }
-    @objc open var elevationYFocus: ElevationYSemanticToken { ElevationRawTokens.elevationY0 }
 
     // MARK: Semantic token - Elevation - Blur
 
@@ -60,7 +56,6 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationBlurStickyDefault: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     @objc open var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     @objc open var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
-    @objc open var elevationBlurFocus: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur0 }
 
     // MARK: Semantic token - Elevation - Color
 
@@ -72,7 +67,6 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationColorStickyDefault: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
     @objc open var elevationColorStickyEmphasized: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
     @objc open var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { ElevationColorSemanticToken(ColorRawTokens.colorTransparentBlack300) }
-    @objc open var elevationColorFocus: ElevationColorSemanticToken { ElevationColorSemanticToken(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
     // MARK: Semantic token - Elevation - Box shadow
 
@@ -84,7 +78,4 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationStickyDefault: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
     @objc open var elevationStickyEmphasized: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
     @objc open var elevationStickyNavigationScrolled: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
-    @objc open var elevationFocus: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(light: ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalBlack), dark: ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorFunctionalLightGray160)) }
 }
-
-// swiftlint:enable line_length

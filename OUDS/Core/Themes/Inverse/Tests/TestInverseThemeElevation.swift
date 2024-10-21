@@ -37,11 +37,6 @@ final class TestInverseThemeElevationColors: XCTestCase {
         XCTAssertEqual(inverseTheme.elevationColorStickyDefault.light, inverseTheme.elevationColorStickyDefault.dark)
         XCTAssertEqual(inverseTheme.elevationColorStickyEmphasized.light, inverseTheme.elevationColorStickyEmphasized.dark)
         XCTAssertEqual(inverseTheme.elevationColorStickyNavigationScrolled.light, inverseTheme.elevationColorStickyNavigationScrolled.dark)
-        XCTAssertEqual(inverseTheme.elevationColorFocus.light, inverseTheme.elevationColorFocus.dark)
-    }
-
-    func testElevationEquality() throws {
-        XCTAssertEqual(inverseTheme.elevationFocus.light, inverseTheme.elevationFocus.dark)
     }
 }
 
