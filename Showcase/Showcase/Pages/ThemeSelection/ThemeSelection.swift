@@ -117,7 +117,7 @@ struct ThemeSelectionButton: View {
             }
             .pickerStyle(.automatic)
         } label: {
-            Image(systemName: "paintpalette")
+            Image(systemName: "paintpalette").accessibilityHidden(true)
         }
         .foregroundColor(themeProvider.currentTheme.colorContentBrandPrimary.color(for: colorScheme))
     }

@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Semantic tokens `elevationBlurFocus`, `elevationXFocus`, `elevationYFocus`, `elevationColorFocus` ([#209](https://github.com/Orange-OpenSource/ouds-ios/issues/209))
 - [Library] Semantic token `fontWeightCode` ([#210](https://github.com/Orange-OpenSource/ouds-ios/issues/210))
 
+### Fixed
+
+- [DemoApp] Hide from Voice Over decorative image in theme selector (a11y)
+
 ## [0.4.1](https://github.com/Orange-OpenSource/ouds-ios/compare/0.4.0...0.4.1) - 2024-10-21
 
 ### Fixed
