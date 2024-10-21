@@ -24,7 +24,7 @@ import XCTest
 
 /// To ensure the TokensTypography are tested for UI compatibility with the reference image previously recorded.
 
-class OUDSTokensTypographyUITests: XCTestCase {
+final class OUDSTokensTypographyUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Typography Tests
 

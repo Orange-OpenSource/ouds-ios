@@ -24,7 +24,7 @@ import XCTest
 
 /// To ensure the Components Screen  are tested for UI compatibility with the reference image previously recorded.
 
-class OUDSComponentsUITests: XCTestCase {
+final class OUDSComponentsUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Components Page Tests
 

@@ -21,7 +21,7 @@ import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
 
-class OUDSTokensElevationUITests: XCTestCase {
+final class OUDSTokensElevationUITests: XCTestCase {
     deinit {
     }
     // MARK: - Tests

@@ -24,7 +24,7 @@ import XCTest
 
 /// To ensure the TokensOpacity are tested for UI compatibility with the reference image previously recorded
 
-class OUDSTokensOpacityUITests: XCTestCase {
+final class OUDSTokensOpacityUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Opacity Tests
 
