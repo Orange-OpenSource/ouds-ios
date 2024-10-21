@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 /// Some color semantic tokens may be not implemented, making fatalError() be triggered at `OUDSTheme` level and tests crash.
 /// Thus we use another mock theme to make comparisons with `MockTheme` and ensure pverriding property of tokens is still working.
 /// This case of not implemented token only happns with color tokens.  (╯° °）╯︵ ┻━┻
-final class OtherMockTheme: MockTheme {
+final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     static let otherMockThemeMultipleColorTokens: ColorSemanticToken = MultipleColorTokens("#FF0000")
 

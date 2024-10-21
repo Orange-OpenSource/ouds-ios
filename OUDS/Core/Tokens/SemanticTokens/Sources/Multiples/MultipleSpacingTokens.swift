@@ -18,7 +18,7 @@ import SwiftUI
 /// Kind of semantic tokens which will wrap a combination of `DimensionRawToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-public final class MultipleSpacingTokens: NSObject {
+public final class MultipleSpacingTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: DimensionRawToken
