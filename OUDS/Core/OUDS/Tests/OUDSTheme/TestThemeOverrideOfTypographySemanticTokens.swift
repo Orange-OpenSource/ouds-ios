@@ -97,11 +97,6 @@ final class TestThemeOverrideOfTypographySemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.fontWeightLabelStrong == MockTheme.mockThemeTypographyFontWeightRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenFontWeightCode() throws {
-        XCTAssertNotEqual(inheritedTheme.fontWeightCode, abstractTheme.fontWeightCode)
-        XCTAssertTrue(inheritedTheme.fontWeightCode == MockTheme.mockThemeTypographyFontWeightRawToken)
-    }
-
     // MARK: - Semantic token - Typography - Font - Size
 
     func testInheritedThemeCanOverrideSemanticTokenFontSizeDisplayLarge() throws {
