@@ -33,7 +33,6 @@ public protocol ElevationSemanticTokens {
     var elevationXStickyDefault: ElevationXSemanticToken { get }
     var elevationXStickyEmphasized: ElevationXSemanticToken { get }
     var elevationXStickyNavigationScrolled: ElevationXSemanticToken { get }
-    var elevationXFocus: ElevationXSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Y
 
@@ -45,7 +44,6 @@ public protocol ElevationSemanticTokens {
     var elevationYStickyDefault: ElevationYSemanticToken { get }
     var elevationYStickyEmphasized: ElevationYSemanticToken { get }
     var elevationYStickyNavigationScrolled: ElevationYSemanticToken { get }
-    var elevationYFocus: ElevationYSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Blur
 
@@ -57,7 +55,6 @@ public protocol ElevationSemanticTokens {
     var elevationBlurStickyDefault: ElevationBlurSemanticToken { get }
     var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { get }
     var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { get }
-    var elevationBlurFocus: ElevationBlurSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color
 
@@ -69,7 +66,6 @@ public protocol ElevationSemanticTokens {
     var elevationColorStickyDefault: ElevationColorSemanticToken { get }
     var elevationColorStickyEmphasized: ElevationColorSemanticToken { get }
     var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { get }
-    var elevationColorFocus: ElevationColorSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Box shadow
 
@@ -81,7 +77,6 @@ public protocol ElevationSemanticTokens {
     var elevationStickyDefault: ElevationCompositeSemanticToken { get }
     var elevationStickyEmphasized: ElevationCompositeSemanticToken { get }
     var elevationStickyNavigationScrolled: ElevationCompositeSemanticToken { get }
-    var elevationFocus: ElevationCompositeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

@@ -56,7 +56,6 @@ struct ElevationTokenPage: View {
 
 private enum NamedElevation: String, CaseIterable {
     case elevationNone
-    case elevationFocus
     case elevationRaised
     case elevationStickyNavigationScrolled
     case elevationOverlayDefault
@@ -69,8 +68,6 @@ private enum NamedElevation: String, CaseIterable {
         switch self {
         case .elevationNone:
             return theme.elevationNone
-        case .elevationFocus:
-            return theme.elevationFocus
         case .elevationRaised:
             return theme.elevationRaised
         case .elevationStickyNavigationScrolled:
