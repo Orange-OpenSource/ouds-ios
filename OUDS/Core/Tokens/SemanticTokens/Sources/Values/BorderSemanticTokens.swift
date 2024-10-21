@@ -30,7 +30,8 @@ public protocol BorderSemanticTokens {
     var borderWidthMedium: BorderWidthSemanticToken { get }
     var borderWidthThick: BorderWidthSemanticToken { get }
     var borderWidthThicker: BorderWidthSemanticToken { get }
-    var borderWidthOutsideFocus: BorderWidthSemanticToken { get }
+    var borderWidthFocus: BorderWidthSemanticToken { get }
+    var borderWidthFocusInset: BorderWidthSemanticToken { get }
 
     // MARK: - Semantic token - Border - Radius
 

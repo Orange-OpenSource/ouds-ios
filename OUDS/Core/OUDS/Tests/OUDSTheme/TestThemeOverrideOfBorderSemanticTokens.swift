@@ -63,9 +63,14 @@ final class TestThemeOverrideOfBorderSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.borderWidthThicker == MockTheme.mockThemeBorderWidthRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenBorderWidthOutsideFocus() throws {
-        XCTAssertNotEqual(inheritedTheme.borderWidthOutsideFocus, abstractTheme.borderWidthOutsideFocus)
-        XCTAssertTrue(inheritedTheme.borderWidthOutsideFocus == MockTheme.mockThemeBorderWidthRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenBorderWidthFocus() throws {
+        XCTAssertNotEqual(inheritedTheme.borderWidthFocus, abstractTheme.borderWidthFocus)
+        XCTAssertTrue(inheritedTheme.borderWidthFocus == MockTheme.mockThemeBorderWidthRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenBorderWidthFocusInset() throws {
+        XCTAssertNotEqual(inheritedTheme.borderWidthFocusInset, abstractTheme.borderWidthFocusInset)
+        XCTAssertTrue(inheritedTheme.borderWidthFocusInset == MockTheme.mockThemeBorderWidthRawToken)
     }
 
     // MARK: - Semantic token - Border - Radius

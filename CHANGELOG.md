@@ -6,8 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.4.1...develop)
 
+### Added
+
+- [Library] Semantic token `borderWidthFocusInset` ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207))
+
 ### Changed
 
+- [Library] Rename `borderWidthOutsideFocus` to `borderWidthFocus` ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207))
 - [Library] Update `OpacityRawTokens` (tokenator *20241021134644*)
 
 ### Removed
