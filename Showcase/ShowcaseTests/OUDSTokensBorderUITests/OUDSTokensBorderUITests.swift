@@ -24,7 +24,7 @@ import XCTest
 
 /// To ensure the TokensBorder are tested for UI compatibility with the reference image previously recorded.
 
-class OUDSTokensBorderUITests: XCTestCase {
+final class OUDSTokensBorderUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Width Tests
 

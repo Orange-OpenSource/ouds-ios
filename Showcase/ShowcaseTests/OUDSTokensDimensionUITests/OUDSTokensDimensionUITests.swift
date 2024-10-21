@@ -24,7 +24,7 @@ import XCTest
 
 /// To ensure the TokensDimension are tested for UI compatibility with the reference image previously recorded.
 
-class OUDSTokensDimensionUITests: XCTestCase {
+final class OUDSTokensDimensionUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Dimension Tests
 
