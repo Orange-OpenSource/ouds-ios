@@ -60,8 +60,9 @@ rbenv global 3.1.2
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 15.3**, we suggest you use this version or newer if you want but beware.
-**Xcode 16** use will come.
+We use also for our GitLab CI runners **Xcode 16**, we suggest you use this version or newer if you want.
+
+**Xcode 16** and **Swift 6** are used for this project. You must use this configuration.
 
 ## Build showcase demo app
 

@@ -1,4 +1,4 @@
-// swift-tools-version: 5.10
+// swift-tools-version: 6.0
 
 //
 // Software Name: OUDS iOS
@@ -122,5 +122,5 @@ let package = Package(
             path: "OUDS/Foundations/TestsUtils"),
     ],
     
-    swiftLanguageVersions: [.v5]
+    swiftLanguageModes: [.v6]
 )

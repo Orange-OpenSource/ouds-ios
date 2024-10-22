@@ -21,8 +21,11 @@ import OUDSTokensSemantic
 /// We allow this theme to be derivated and be overriden.
 ///
 /// `OUDSTheme` can be seen as a kind of "abstract class" in _object oriented paradigm_.
+///
+/// Because `OUDSTheme` is not a *final* class, its type cannot be seen as `Sendable`, that is the reason why this conformity is unchecked.
+///
 /// **Warning: You are not supposed to use this abstract default theme directly. Please prefer `OrangeTheme` instead**
-open class OUDSTheme {
+open class OUDSTheme: @unchecked Sendable {
 
     /// A theme can have a custom font which is not the system font
     public let customFontFamily: TypographyFontFamilySemanticToken?

@@ -18,7 +18,7 @@ import SwiftUI
 /// Kind of semantic tokens which will wrap a combination of `ColorRawToken` depending to color scheme.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-public final class MultipleColorTokens: NSObject {
+public final class MultipleColorTokens: NSObject, Sendable {
 
     /// For **light** mode scheme
     public let light: ColorRawToken

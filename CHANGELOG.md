@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library/DemoApp] Migration to Swift 6
+- [Library/DemoApp] Migration from *Xcode 15.3* to to *Xcode 16* ([#201](https://github.com/Orange-OpenSource/ouds-ios/issues/201))
 - [Library] Rename `borderWidthOutsideFocus` to `borderWidthFocus` ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207))
 - [Library] Update `OpacityRawTokens` (tokenator *20241021134644*)
 
@@ -20,11 +22,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Semantic tokens `elevationBlurFocus`, `elevationXFocus`, `elevationYFocus`, `elevationColorFocus` ([#209](https://github.com/Orange-OpenSource/ouds-ios/issues/209))
 - [Library] Semantic token `fontWeightCode` ([#210](https://github.com/Orange-OpenSource/ouds-ios/issues/210))
 
+### Fixed
+
+- [DemoApp] Hide from Voice Over decorative image in theme selector (a11y)
+
 ## [0.4.1](https://github.com/Orange-OpenSource/ouds-ios/compare/0.4.0...0.4.1) - 2024-10-21
 
 ### Fixed
 
-- [Demoapp] App crash on color token page opening ([#215](https://github.com/Orange-OpenSource/ouds-ios/issues/215))
+- [DemoApp] App crash on color token page opening ([#215](https://github.com/Orange-OpenSource/ouds-ios/issues/215))
 
 ## [0.4.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.3.0...0.4.0) - 2024-10-18
 

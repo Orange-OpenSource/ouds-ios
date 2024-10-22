@@ -13,6 +13,7 @@
 
 import SwiftUI
 
+@MainActor
 protocol ShowcaseElement {
     var name: String { get }
     var imageName: String { get }

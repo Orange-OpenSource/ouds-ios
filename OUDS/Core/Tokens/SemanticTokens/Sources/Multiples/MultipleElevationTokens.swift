@@ -18,7 +18,7 @@ import SwiftUI
 /// Semantic tokens which will wrap a combination of `ElevationCompositeRawToken` depending to color scheme.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-public final class MultipleElevationTokens: NSObject {
+public final class MultipleElevationTokens: NSObject, Sendable {
 
     /// For **light** mode scheme
     public let light: ElevationCompositeRawToken
