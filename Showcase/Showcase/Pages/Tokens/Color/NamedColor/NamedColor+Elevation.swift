@@ -20,45 +20,45 @@ extension NamedColor {
 
     enum Elevation: String, CaseIterable {
         case colorElevationRaised
-        case colorElevationRaisedOnBackgroundSecondary
-        case colorElevationRaisedOnBackgroundEmphasized
+        case colorElevationRaisedOnBgSecondary
+        case colorElevationRaisedOnBgEmphasized
         case colorElevationDrag
-        case colorElevationDragOnBackgroundSecondary
-        case colorElevationDragOnBackgroundEmphasized
+        case colorElevationDragOnBgSecondary
+        case colorElevationDragOnBgEmphasized
         case colorElevationOverlayDefault
-        case colorElevationOverlayDefaultOnBackgroundSecondary
-        case colorElevationOverlayDefaultOnBackgroundEmphasized
+        case colorElevationOverlayDefaultOnBgSecondary
+        case colorElevationOverlayDefaultOnBgEmphasized
         case colorElevationOverlayEmphasized
-        case colorElevationOverlayEmphasizedOnBackgroundSecondary
-        case colorElevationOverlayEmphasizedOnBackgroundEmphasized
+        case colorElevationOverlayEmphasizedOnBgSecondary
+        case colorElevationOverlayEmphasizedOnBgEmphasized
         case colorElevationModal
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
             case .colorElevationRaised:
                 return theme.colorElevationRaised
-            case .colorElevationRaisedOnBackgroundSecondary:
-                return theme.colorElevationRaisedOnBackgroundSecondary
-            case .colorElevationRaisedOnBackgroundEmphasized:
-                return theme.colorElevationRaisedOnBackgroundEmphasized
+            case .colorElevationRaisedOnBgSecondary:
+                return theme.colorElevationRaisedOnBgSecondary
+            case .colorElevationRaisedOnBgEmphasized:
+                return theme.colorElevationRaisedOnBgEmphasized
             case .colorElevationDrag:
                 return theme.colorElevationDrag
-            case .colorElevationDragOnBackgroundSecondary:
-                return theme.colorElevationDragOnBackgroundSecondary
-            case .colorElevationDragOnBackgroundEmphasized:
-                return theme.colorElevationDragOnBackgroundEmphasized
+            case .colorElevationDragOnBgSecondary:
+                return theme.colorElevationDragOnBgSecondary
+            case .colorElevationDragOnBgEmphasized:
+                return theme.colorElevationDragOnBgEmphasized
             case .colorElevationOverlayDefault:
                 return theme.colorElevationOverlayDefault
-            case .colorElevationOverlayDefaultOnBackgroundSecondary:
-                return theme.colorElevationOverlayDefaultOnBackgroundSecondary
-            case .colorElevationOverlayDefaultOnBackgroundEmphasized:
-                return theme.colorElevationOverlayDefaultOnBackgroundEmphasized
+            case .colorElevationOverlayDefaultOnBgSecondary:
+                return theme.colorElevationOverlayDefaultOnBgSecondary
+            case .colorElevationOverlayDefaultOnBgEmphasized:
+                return theme.colorElevationOverlayDefaultOnBgEmphasized
             case .colorElevationOverlayEmphasized:
                 return theme.colorElevationOverlayEmphasized
-            case .colorElevationOverlayEmphasizedOnBackgroundSecondary:
-                return theme.colorElevationOverlayEmphasizedOnBackgroundSecondary
-            case .colorElevationOverlayEmphasizedOnBackgroundEmphasized:
-                return theme.colorElevationOverlayEmphasizedOnBackgroundEmphasized
+            case .colorElevationOverlayEmphasizedOnBgSecondary:
+                return theme.colorElevationOverlayEmphasizedOnBgSecondary
+            case .colorElevationOverlayEmphasizedOnBgEmphasized:
+                return theme.colorElevationOverlayEmphasizedOnBgEmphasized
             case .colorElevationModal:
                 return theme.colorElevationModal
             }

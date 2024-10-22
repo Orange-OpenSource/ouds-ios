@@ -20,11 +20,11 @@ extension NamedColor {
 
     enum Content: String, CaseIterable {
         case colorContentDefault
-        case colorContentContentDefaultOnBackgroundEmphasized
+        case colorContentContentDefaultOnBgEmphasized
         case colorContentMuted
-        case colorContentContentMutedOnBackgroundEmphasized
+        case colorContentContentMutedOnBgEmphasized
         case colorContentDisabled
-        case colorContentContentDisabledOnBackgroundEmphasized
+        case colorContentContentDisabledOnBgEmphasized
         case colorContentBrandPrimary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorContentBrandSecondary
@@ -40,16 +40,16 @@ extension NamedColor {
             switch self {
             case .colorContentDefault:
                 return theme.colorContentDefault
-            case .colorContentContentDefaultOnBackgroundEmphasized:
-                return theme.colorContentContentDefaultOnBackgroundEmphasized
+            case .colorContentContentDefaultOnBgEmphasized:
+                return theme.colorContentContentDefaultOnBgEmphasized
             case .colorContentMuted:
                 return theme.colorContentMuted
-            case .colorContentContentMutedOnBackgroundEmphasized:
-                return theme.colorContentContentMutedOnBackgroundEmphasized
+            case .colorContentContentMutedOnBgEmphasized:
+                return theme.colorContentContentMutedOnBgEmphasized
             case .colorContentDisabled:
                 return theme.colorContentDisabled
-            case .colorContentContentDisabledOnBackgroundEmphasized:
-                return theme.colorContentContentDisabledOnBackgroundEmphasized
+            case .colorContentContentDisabledOnBgEmphasized:
+                return theme.colorContentContentDisabledOnBgEmphasized
             case .colorContentBrandPrimary:
                 return theme.colorContentBrandPrimary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
