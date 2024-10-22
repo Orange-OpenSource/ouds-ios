@@ -702,7 +702,7 @@ final class TestInverseThemeColors: XCTestCase {
     // MARK: Semantic token - Colors - Decorative
 
     func testColorsHomogeneityColorDecorativeBrandPrimary() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeBrandPrimary)
+        assertHomogeneity(inverseTheme.colorDecorativePrimary)
     }
 
     // In InverseTheme token not implemented yet

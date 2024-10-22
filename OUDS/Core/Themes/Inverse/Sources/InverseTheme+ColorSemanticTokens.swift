@@ -321,7 +321,7 @@ extension InverseTheme {
 
     // MARK: Semantic token - Colors - Decorative
 
-    override public var colorDecorativeBrandPrimary: ColorSemanticToken { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override public var colorDecorativePrimary: ColorSemanticToken { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
     override public var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandPrimaryMuted!") }
 

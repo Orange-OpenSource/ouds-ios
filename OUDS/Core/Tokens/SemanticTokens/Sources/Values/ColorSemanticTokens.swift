@@ -355,7 +355,7 @@ public protocol ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Decorative
 
-    var colorDecorativeBrandPrimary: ColorSemanticToken { get }
+    var colorDecorativePrimary: ColorSemanticToken { get }
 
     var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { get }
 

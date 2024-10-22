@@ -828,9 +828,9 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
 
     // MARK: Semantic token - Colors - Decorative
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeBrandPrimary() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeBrandPrimary, abstractTheme.colorDecorativeBrandPrimary)
-        XCTAssertTrue(inheritedTheme.colorDecorativeBrandPrimary == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativePrimary() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativePrimary, abstractTheme.colorDecorativePrimary)
+        XCTAssertTrue(inheritedTheme.colorDecorativePrimary == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenColorDecorativeBrandPrimaryMuted() throws {

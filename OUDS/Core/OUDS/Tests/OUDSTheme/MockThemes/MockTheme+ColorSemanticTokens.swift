@@ -349,7 +349,7 @@ extension MockTheme {
 
     // MARK: Semantic token - Colors - Decorative
 
-    override open var colorDecorativeBrandPrimary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorDecorativePrimary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
     override open var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 

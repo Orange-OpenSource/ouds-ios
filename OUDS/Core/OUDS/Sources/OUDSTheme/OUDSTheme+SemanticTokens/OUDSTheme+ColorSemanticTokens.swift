@@ -371,7 +371,7 @@ extension OUDSTheme: ColorSemanticTokens {
     // MARK: Semantic token - Colors - Decorative
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorDecorativeBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorDecorativeBrandPrimary!") }
+    @objc open var colorDecorativePrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorDecorativePrimary!") }
 
     @objc open var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandPrimaryMuted!") }
 

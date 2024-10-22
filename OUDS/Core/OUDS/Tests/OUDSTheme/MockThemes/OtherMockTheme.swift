@@ -352,7 +352,7 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     // MARK: Semantic token - Colors - Decorative
 
-    override var colorDecorativeBrandPrimary: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativePrimary: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
     override var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 

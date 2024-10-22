@@ -62,7 +62,7 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
             case .colorDecorativeBrandPrimary:
-                return theme.colorDecorativeBrandPrimary
+                return theme.colorDecorativePrimary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorDecorativeBrandPrimaryMuted:
 //                return theme.colorDecorativeBrandPrimaryMuted

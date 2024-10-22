@@ -78,7 +78,7 @@ extension OrangeTheme {
     // MARK: Semantic token - Colors - Elevation
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorDecorativeBrandPrimary: ColorSemanticToken { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorDecorativePrimary: ColorSemanticToken { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
     // MARK: Semantic token - Colors - Chart
 
