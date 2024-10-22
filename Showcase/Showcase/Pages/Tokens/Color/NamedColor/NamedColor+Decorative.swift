@@ -19,10 +19,7 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Decorative: String, CaseIterable {
-        case colorDecorativeBrandPrimary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorDecorativeBrandPrimaryMuted
-        // case colorDecorativeBrandPrimaryEmphasized
+        case colorDecorativePrimary
         case colorDecorativeSecondary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorDecorativeSecondaryMuted
@@ -61,13 +58,8 @@ extension NamedColor {
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
-            case .colorDecorativeBrandPrimary:
+            case .colorDecorativePrimary:
                 return theme.colorDecorativePrimary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorDecorativeBrandPrimaryMuted:
-//                return theme.colorDecorativeBrandPrimaryMuted
-//            case .colorDecorativeBrandPrimaryEmphasized:
-//                return theme.colorDecorativeBrandPrimaryEmphasized
             case .colorDecorativeSecondary:
                 return theme.colorDecorativeSecondary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
