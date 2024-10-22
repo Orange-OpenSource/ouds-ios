@@ -84,7 +84,7 @@ struct ColorTokenPage: View {
     }
 
     private func illustrationForContentOnBackground() -> some View {
-        ForEach(NamedColor.ContentOnBackground.allCases, id: \.rawValue) { namedColorToken in
+        ForEach(NamedColor.ContentOnBg.allCases, id: \.rawValue) { namedColorToken in
             illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
         }
     }

@@ -29,21 +29,21 @@ extension NamedColor {
         // case colorBackgroundBrandSecondary
         // case colorBackgroundBrandTertiary
         case colorBackgroundStatusNeutral
-        case colorBackgroundStatusNeutralOnBackgroundEmphasized
+        case colorBackgroundStatusNeutralOnBgEmphasized
         case colorBackgroundStatusPositiveMuted
-        case colorBackgroundStatusPositiveMutedOnBackgroundEmphasized
+        case colorBackgroundStatusPositiveMutedOnBgEmphasized
         case colorBackgroundStatusPositiveEmphasized
         case colorBackgroundStatusInfoMuted
-        case colorBackgroundStatusInfoMutedOnBackgroundEmphasized
+        case colorBackgroundStatusInfoMutedOnBgEmphasized
         case colorBackgroundStatusInfoEmphasized
         case colorBackgroundStatusWarningMuted
-        case colorBackgroundStatusWarningMutedOnBackgroundEmphasized
+        case colorBackgroundStatusWarningMutedOnBgEmphasized
         case colorBackgroundStatusWarningEmphasized
         case colorBackgroundStatusNegativeMuted
-        case colorBackgroundStatusNegativeMutedOnBackgroundEmphasized
+        case colorBackgroundStatusNegativeMutedOnBgEmphasized
         case colorBackgroundStatusNegativeEmphasized
         case colorBackgroundStatusAccentMuted
-        case colorBackgroundStatusAccentMutedOnBackgroundEmphasized
+        case colorBackgroundStatusAccentMutedOnBgEmphasized
         case colorBackgroundStatusAccentEmphasized
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
@@ -66,36 +66,36 @@ extension NamedColor {
 //                return theme.colorBackgroundBrandTertiary
             case .colorBackgroundStatusNeutral:
                 return theme.colorBackgroundStatusNeutral
-            case .colorBackgroundStatusNeutralOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusNeutralOnBackgroundEmphasized
+            case .colorBackgroundStatusNeutralOnBgEmphasized:
+                return theme.colorBackgroundStatusNeutralOnBgEmphasized
             case .colorBackgroundStatusPositiveMuted:
                 return theme.colorBackgroundStatusPositiveMuted
-            case .colorBackgroundStatusPositiveMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusPositiveMutedOnBackgroundEmphasized
+            case .colorBackgroundStatusPositiveMutedOnBgEmphasized:
+                return theme.colorBackgroundStatusPositiveMutedOnBgEmphasized
             case .colorBackgroundStatusPositiveEmphasized:
                 return theme.colorBackgroundStatusPositiveEmphasized
             case .colorBackgroundStatusInfoMuted:
                 return theme.colorBackgroundStatusInfoMuted
-            case .colorBackgroundStatusInfoMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusInfoMutedOnBackgroundEmphasized
+            case .colorBackgroundStatusInfoMutedOnBgEmphasized:
+                return theme.colorBackgroundStatusInfoMutedOnBgEmphasized
             case .colorBackgroundStatusInfoEmphasized:
                 return theme.colorBackgroundStatusInfoEmphasized
             case .colorBackgroundStatusWarningMuted:
                 return theme.colorBackgroundStatusWarningMuted
-            case .colorBackgroundStatusWarningMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusWarningMutedOnBackgroundEmphasized
+            case .colorBackgroundStatusWarningMutedOnBgEmphasized:
+                return theme.colorBackgroundStatusWarningMutedOnBgEmphasized
             case .colorBackgroundStatusWarningEmphasized:
                 return theme.colorBackgroundStatusWarningEmphasized
             case .colorBackgroundStatusNegativeMuted:
                 return theme.colorBackgroundStatusNegativeMuted
-            case .colorBackgroundStatusNegativeMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusNegativeMutedOnBackgroundEmphasized
+            case .colorBackgroundStatusNegativeMutedOnBgEmphasized:
+                return theme.colorBackgroundStatusNegativeMutedOnBgEmphasized
             case .colorBackgroundStatusNegativeEmphasized:
                 return theme.colorBackgroundStatusNegativeEmphasized
             case .colorBackgroundStatusAccentMuted:
                 return theme.colorBackgroundStatusAccentMuted
-            case .colorBackgroundStatusAccentMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusAccentMutedOnBackgroundEmphasized
+            case .colorBackgroundStatusAccentMutedOnBgEmphasized:
+                return theme.colorBackgroundStatusAccentMutedOnBgEmphasized
             case .colorBackgroundStatusAccentEmphasized:
                 return theme.colorBackgroundStatusAccentEmphasized
             }

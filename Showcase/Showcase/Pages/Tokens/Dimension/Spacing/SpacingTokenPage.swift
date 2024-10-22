@@ -47,7 +47,7 @@ struct SpacingTokenPage: View {
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill(theme.colorAlwaysOnBackgroundAccent.color(for: colorScheme))
+                    .fill(theme.colorAlwaysOnBgAccent.color(for: colorScheme))
                     .frame(width: 64, height: 64, alignment: .center)
                 Rectangle()
                     .fill(.blue)
