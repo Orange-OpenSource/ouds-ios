@@ -32,7 +32,7 @@
 
 [![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store "iOS 15 supports")
 [![Xcode 16](https://img.shields.io/badge/Xcode-16-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes)
-[![Swift 6](https://img.shields.io/badge/Swift-6-orange?style=for-the-badge)
+[![Swift 6](https://img.shields.io/badge/Swift-6-orange?style=for-the-badge)](https://www.swift.org/blog/announcing-swift-6/)
 
 ## Content
 
