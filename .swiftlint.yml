@@ -12,6 +12,7 @@
 #
 
 # More details at https://realm.github.io/SwiftLint
+# Expected SwiftLint v0.57.0 (at least)
 
 strict: true
 
@@ -71,7 +72,6 @@ analyzer_rules:
 opt_in_rules:
 - accessibility_label_for_image
 - accessibility_trait_for_button
-- anyobject_protocol
 - array_init
 - closure_body_length
 - closure_end_indentation
