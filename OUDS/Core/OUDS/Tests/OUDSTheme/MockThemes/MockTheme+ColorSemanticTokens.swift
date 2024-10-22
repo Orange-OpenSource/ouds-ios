@@ -353,10 +353,6 @@ extension MockTheme {
 
     override open var colorDecorativeSecondary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorDecorativeSecondaryMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
-
-    override open var colorDecorativeSecondaryEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
-
     override open var colorDecorativeBrandTertiary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
     override open var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }

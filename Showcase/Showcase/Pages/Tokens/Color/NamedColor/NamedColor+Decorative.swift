@@ -21,9 +21,6 @@ extension NamedColor {
     enum Decorative: String, CaseIterable {
         case colorDecorativePrimary
         case colorDecorativeSecondary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorDecorativeSecondaryMuted
-        // case colorDecorativeSecondaryEmphasized
         case colorDecorativeBrandTertiary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorDecorativeBrandTertiaryMuted
@@ -62,11 +59,6 @@ extension NamedColor {
                 return theme.colorDecorativePrimary
             case .colorDecorativeSecondary:
                 return theme.colorDecorativeSecondary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorDecorativeSecondaryMuted:
-//                return theme.colorDecorativeSecondaryMuted
-//            case .colorDecorativeSecondaryEmphasized:
-//                return theme.colorDecorativeSecondaryEmphasized
             case .colorDecorativeBrandTertiary:
                 return theme.colorDecorativeBrandTertiary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!

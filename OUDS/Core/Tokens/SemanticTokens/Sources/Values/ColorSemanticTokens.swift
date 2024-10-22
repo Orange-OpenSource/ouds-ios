@@ -359,10 +359,6 @@ public protocol ColorSemanticTokens {
 
     var colorDecorativeSecondary: ColorSemanticToken { get }
 
-    var colorDecorativeSecondaryMuted: ColorSemanticToken { get }
-
-    var colorDecorativeSecondaryEmphasized: ColorSemanticToken { get }
-
     var colorDecorativeBrandTertiary: ColorSemanticToken { get }
 
     var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { get }
