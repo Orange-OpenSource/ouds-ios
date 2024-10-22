@@ -204,7 +204,7 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorActionVisited: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst600, dark: ColorRawTokens.colorDecorativeAmethyst400) }
 
-    @objc open var colorActionVistedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst400) }
+    @objc open var colorActionVistedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst400) }
 
     @objc open var colorActionPrimaryEnabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 

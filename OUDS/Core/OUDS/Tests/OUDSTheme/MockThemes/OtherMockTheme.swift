@@ -190,7 +190,7 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     override var colorActionVisited: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorActionVistedOnBackgroundEmphasized: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorActionVistedOnBgEmphasized: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
     override var colorActionPrimaryEnabled: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 

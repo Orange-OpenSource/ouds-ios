@@ -193,7 +193,7 @@ public protocol ColorSemanticTokens {
 
     var colorActionVisited: ColorSemanticToken { get }
 
-    var colorActionVistedOnBackgroundEmphasized: ColorSemanticToken { get }
+    var colorActionVistedOnBgEmphasized: ColorSemanticToken { get }
 
     var colorActionPrimaryEnabled: ColorSemanticToken { get }
 

@@ -25,7 +25,7 @@ extension NamedColor {
         case colorActionDisabled
         case colorActionDisabledOnBackgroundEmphasized
         case colorActionVisited
-        case colorActionVistedOnBackgroundEmphasized
+        case colorActionVistedOnBgEmphasized
         case colorActionPrimaryEnabled
         case colorActionPrimaryEnabledOnBackgroundEmphasized
         case colorActionPrimaryHover
@@ -89,8 +89,8 @@ extension NamedColor {
                 return theme.colorActionDisabledOnBackgroundEmphasized
             case .colorActionVisited:
                 return theme.colorActionVisited
-            case .colorActionVistedOnBackgroundEmphasized:
-                return theme.colorActionVistedOnBackgroundEmphasized
+            case .colorActionVistedOnBgEmphasized:
+                return theme.colorActionVistedOnBgEmphasized
             case .colorActionPrimaryEnabled:
                 return theme.colorActionPrimaryEnabled
             case .colorActionPrimaryEnabledOnBackgroundEmphasized:

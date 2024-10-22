@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Rename `colorActionVisitedOnBackgroundEmphasized` to `colorActionVisitedOnBgEmphasized` ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
+- [Library] Update color semantic tokens ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
 - [Library] Update `BorderRawTokens` (tokenator *20241022102003*)
 - [Library] Update `ColorRawTokens` (tokenator *20241021180411*)
 - [Library/DemoApp] Migration to Swift 6

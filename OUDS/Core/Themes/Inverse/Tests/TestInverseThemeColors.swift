@@ -375,8 +375,8 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorActionVisited)
     }
 
-    func testColorsHomogeneityColorActionVistedOnBackgroundEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorActionVistedOnBackgroundEmphasized)
+    func testColorsHomogeneityColorActionVistedOnBgEmphasized() throws {
+        assertHomogeneity(inverseTheme.colorActionVistedOnBgEmphasized)
     }
 
     func testColorsHomogeneityColorActionPrimaryEnabled() throws {

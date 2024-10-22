@@ -187,7 +187,7 @@ extension MockTheme {
 
     override open var colorActionVisited: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorActionVistedOnBackgroundEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorActionVistedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
     override open var colorActionPrimaryEnabled: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
