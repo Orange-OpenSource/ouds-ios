@@ -17,7 +17,7 @@ platform :ios, '15.0'
 
 target 'Showcase' do
   pod 'SwiftLint', '0.57.0'
-  pod 'SwiftFormat/CLI', '0.54.3'
+  pod 'SwiftFormat/CLI', '0.54.6'
 end
 
 post_install do |installer|
