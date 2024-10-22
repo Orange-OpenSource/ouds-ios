@@ -815,40 +815,40 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorDecorativeAccent5Emphasized)
     }
 
-    func testColorsHomogeneityColorDecorativeSkintTint100() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSkintTint100)
+    func testColorsHomogeneityColorDecorativeSkinTint100() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeSkinTint100)
     }
 
-    func testColorsHomogeneityColorDecorativeSkintTint200() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSkintTint200)
+    func testColorsHomogeneityColorDecorativeSkinTint200() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeSkinTint200)
     }
 
-    func testColorsHomogeneityColorDecorativeSkintTint300() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSkintTint300)
+    func testColorsHomogeneityColorDecorativeSkinTint300() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeSkinTint300)
     }
 
-    func testColorsHomogeneityColorDecorativeSkintTint400() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSkintTint400)
+    func testColorsHomogeneityColorDecorativeSkinTint400() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeSkinTint400)
     }
 
-    func testColorsHomogeneityColorDecorativeSkintTint500() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSkintTint500)
+    func testColorsHomogeneityColorDecorativeSkinTint500() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeSkinTint500)
     }
 
-    func testColorsHomogeneityColorDecorativeSkintTint600() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSkintTint600)
+    func testColorsHomogeneityColorDecorativeSkinTint600() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeSkinTint600)
     }
 
-    func testColorsHomogeneityColorDecorativeSkintTint700() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSkintTint700)
+    func testColorsHomogeneityColorDecorativeSkinTint700() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeSkinTint700)
     }
 
-    func testColorsHomogeneityColorDecorativeSkintTint800() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSkintTint800)
+    func testColorsHomogeneityColorDecorativeSkinTint800() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeSkinTint800)
     }
 
-    func testColorsHomogeneityColorDecorativeSkintTint900() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSkintTint900)
+    func testColorsHomogeneityColorDecorativeSkinTint900() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeSkinTint900)
     }
 
     // MARK: Semantic token - Colors - Chart

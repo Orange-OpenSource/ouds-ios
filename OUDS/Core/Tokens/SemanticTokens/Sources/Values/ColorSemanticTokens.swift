@@ -409,23 +409,23 @@ public protocol ColorSemanticTokens {
 
     var colorDecorativeAccent5Emphasized: ColorSemanticToken { get }
 
-    var colorDecorativeSkintTint100: ColorSemanticToken { get }
+    var colorDecorativeSkinTint100: ColorSemanticToken { get }
 
-    var colorDecorativeSkintTint200: ColorSemanticToken { get }
+    var colorDecorativeSkinTint200: ColorSemanticToken { get }
 
-    var colorDecorativeSkintTint300: ColorSemanticToken { get }
+    var colorDecorativeSkinTint300: ColorSemanticToken { get }
 
-    var colorDecorativeSkintTint400: ColorSemanticToken { get }
+    var colorDecorativeSkinTint400: ColorSemanticToken { get }
 
-    var colorDecorativeSkintTint500: ColorSemanticToken { get }
+    var colorDecorativeSkinTint500: ColorSemanticToken { get }
 
-    var colorDecorativeSkintTint600: ColorSemanticToken { get }
+    var colorDecorativeSkinTint600: ColorSemanticToken { get }
 
-    var colorDecorativeSkintTint700: ColorSemanticToken { get }
+    var colorDecorativeSkinTint700: ColorSemanticToken { get }
 
-    var colorDecorativeSkintTint800: ColorSemanticToken { get }
+    var colorDecorativeSkinTint800: ColorSemanticToken { get }
 
-    var colorDecorativeSkintTint900: ColorSemanticToken { get }
+    var colorDecorativeSkinTint900: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Chart
 

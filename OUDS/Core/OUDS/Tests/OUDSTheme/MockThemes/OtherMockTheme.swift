@@ -406,23 +406,23 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     override var colorDecorativeAccent5Emphasized: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeSkintTint100: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativeSkinTint100: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeSkintTint200: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativeSkinTint200: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeSkintTint300: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativeSkinTint300: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeSkintTint400: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativeSkinTint400: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeSkintTint500: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativeSkinTint500: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeSkintTint600: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativeSkinTint600: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeSkintTint700: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativeSkinTint700: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeSkintTint800: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativeSkinTint800: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeSkintTint900: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
+    override var colorDecorativeSkinTint900: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
     // MARK: Semantic token - Colors - Chart
 

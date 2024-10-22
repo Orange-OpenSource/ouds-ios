@@ -963,49 +963,49 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colorDecorativeAccent5Emphasized == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkintTint100() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkintTint100, abstractTheme.colorDecorativeSkintTint100)
-        XCTAssertTrue(inheritedTheme.colorDecorativeSkintTint100 == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint100() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkinTint100, abstractTheme.colorDecorativeSkinTint100)
+        XCTAssertTrue(inheritedTheme.colorDecorativeSkinTint100 == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkintTint200() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkintTint200, abstractTheme.colorDecorativeSkintTint200)
-        XCTAssertTrue(inheritedTheme.colorDecorativeSkintTint200 == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint200() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkinTint200, abstractTheme.colorDecorativeSkinTint200)
+        XCTAssertTrue(inheritedTheme.colorDecorativeSkinTint200 == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkintTint300() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkintTint300, abstractTheme.colorDecorativeSkintTint300)
-        XCTAssertTrue(inheritedTheme.colorDecorativeSkintTint300 == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint300() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkinTint300, abstractTheme.colorDecorativeSkinTint300)
+        XCTAssertTrue(inheritedTheme.colorDecorativeSkinTint300 == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkintTint400() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkintTint400, abstractTheme.colorDecorativeSkintTint400)
-        XCTAssertTrue(inheritedTheme.colorDecorativeSkintTint400 == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint400() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkinTint400, abstractTheme.colorDecorativeSkinTint400)
+        XCTAssertTrue(inheritedTheme.colorDecorativeSkinTint400 == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkintTint500() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkintTint500, abstractTheme.colorDecorativeSkintTint500)
-        XCTAssertTrue(inheritedTheme.colorDecorativeSkintTint500 == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint500() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkinTint500, abstractTheme.colorDecorativeSkinTint500)
+        XCTAssertTrue(inheritedTheme.colorDecorativeSkinTint500 == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkintTint600() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkintTint600, abstractTheme.colorDecorativeSkintTint600)
-        XCTAssertTrue(inheritedTheme.colorDecorativeSkintTint600 == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint600() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkinTint600, abstractTheme.colorDecorativeSkinTint600)
+        XCTAssertTrue(inheritedTheme.colorDecorativeSkinTint600 == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkintTint700() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkintTint700, abstractTheme.colorDecorativeSkintTint700)
-        XCTAssertTrue(inheritedTheme.colorDecorativeSkintTint700 == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint700() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkinTint700, abstractTheme.colorDecorativeSkinTint700)
+        XCTAssertTrue(inheritedTheme.colorDecorativeSkinTint700 == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkintTint800() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkintTint800, abstractTheme.colorDecorativeSkintTint800)
-        XCTAssertTrue(inheritedTheme.colorDecorativeSkintTint800 == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint800() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkinTint800, abstractTheme.colorDecorativeSkinTint800)
+        XCTAssertTrue(inheritedTheme.colorDecorativeSkinTint800 == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkintTint900() throws {
-        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkintTint900, abstractTheme.colorDecorativeSkintTint900)
-        XCTAssertTrue(inheritedTheme.colorDecorativeSkintTint900 == OtherMockTheme.otherMockThemeMultipleColorTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorDecorativeSkinTint900() throws {
+        XCTAssertNotEqual(inheritedTheme.colorDecorativeSkinTint900, abstractTheme.colorDecorativeSkinTint900)
+        XCTAssertTrue(inheritedTheme.colorDecorativeSkinTint900 == OtherMockTheme.otherMockThemeMultipleColorTokens)
     }
 
     // MARK: Semantic token - Colors - Chart
