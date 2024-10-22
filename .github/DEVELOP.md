@@ -62,6 +62,8 @@ ruby --version
 
 We use also for our GitLab CI runners **Xcode 16**, we suggest you use this version or newer if you want.
 
+**Xcode 16** and **Swift 6** are used for this project. You must use this configuration.
+
 ## Build showcase demo app
 
 To build the demo application follow those steps:

@@ -21,7 +21,7 @@ The [issue tracker](https://github.com/Orange-OpenSource/ouds-ios/issues) is the
 
 Our bug tracker utilizes several labels to help organize and identify issues. Here's what they represent and how we use them:
 
-- `feature` - Issues asking for a new feature to be added, or an existing one to be extended or modified. New features require a minor version bump (e.g., `v1.0.0` to `v1.1.0`).
+- `feature` - Issues asking for a new feature to be added, or an existing one to be extended or modified. New features require a minor version bump (e.g., `v1.0.0` to `v1.1.0`) or a major version bump if public API broken (e.g., `v1.0.0` to `v2.0.0`)
 - `help wanted` - Issues we need or would love help from the community to resolve.
 
 For a complete look at our labels, see the [project labels page](https://github.com/Orange-OpenSource/ouds-ios/labels).
@@ -75,11 +75,11 @@ Adhering to the following process is the best way to get your work included in t
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the project, clone your fork, and configure the remotes:
 
    ```bash
-   # Clone your fork of the repo into the current directory
+   # Clone your fork of the repo into the current directory (use either SSH or HTTPS)
    git clone https://github.com/<your-username>/ouds-ios.git
    # Navigate to the newly cloned directory
    cd ouds-ios
-   # Assign the original repo to a remote called "upstream" (you can use of course SSH instead of HTTPS)
+   # Assign the original repo to a remote called "upstream" (use either SSH or HTTPS)
    git remote add upstream https://github.com/Orange-OpenSource/ouds-ios.git
    ```
 
