@@ -30,19 +30,25 @@ If some tools are missing, pick the suitable command line below and check versio
 bundle install
 
 # Use CocoaPods to install other dependencies not available as rubygems (thanks to Podfile and Podfile.lock files)
-bundle exec pod install
+bundle exec pod install --repo-update
+
+# Update your references
+brew update
 
 # For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.0)
 brew install peripheryapp/periphery/periphery
 
 # For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.18.1)
 brew install gitleaks
+# or `brew reinstall gitleaks` to get updates if old version installed
 
-# For SwiftLint (at least 0.52.4)
+# For SwiftLint (at least 0.57.0)
 brew install swiftlint
+# or `brew reinstall swiftlint` to get updates if old version installed
 
 # For SwiftFormat (at least 0.52.4)
 brew install swiftformat
+# or `brew reinstall swiftformat` to get updates if old version installed
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.

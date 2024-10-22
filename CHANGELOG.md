@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Improve configuration of SwiftLint, update to v0.57.0 ([#77](https://github.com/Orange-OpenSource/ouds-ios/pull/77))
 - [Library] Rename all color semantic tokens `*OnBackground*` to `*OnBg*` ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
 - [Library] Rename `colorDecorativeBrandTertiary` to `colorDecorativeTertiary`
 - [Library] Rename `colorDecorativeBrandPrimary` to `colorDecorativePrimary` ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
@@ -20,8 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Update color semantic tokens ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
 - [Library] Update `BorderRawTokens` (tokenator *20241022102003*)
 - [Library] Update `ColorRawTokens` (tokenator *20241021180411*)
-- [Library/DemoApp] Migration to Swift 6
-- [Library/DemoApp] Migration from *Xcode 15.3* to to *Xcode 16* ([#201](https://github.com/Orange-OpenSource/ouds-ios/issues/201))
+- [Tool] Migration to Swift 6
+- [Tool] Migration from *Xcode 15.3* to to *Xcode 16* ([#201](https://github.com/Orange-OpenSource/ouds-ios/issues/201))
 - [Library] Rename `borderWidthOutsideFocus` to `borderWidthFocus` ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207))
 - [Library] Update `OpacityRawTokens` (tokenator *20241021134644*)
 
