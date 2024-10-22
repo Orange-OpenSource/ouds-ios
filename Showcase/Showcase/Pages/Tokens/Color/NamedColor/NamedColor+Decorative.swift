@@ -22,9 +22,6 @@ extension NamedColor {
         case colorDecorativePrimary
         case colorDecorativeSecondary
         case colorDecorativeTertiary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorDecorativeBrandTertiaryMuted
-        // case colorDecorativeBrandTertiaryEmphasized
         case colorDecorativeNeutralMuted
         case colorDecorativeNeutralDefault
         case colorDecorativeNeutralEmphasized
@@ -61,11 +58,6 @@ extension NamedColor {
                 return theme.colorDecorativeSecondary
             case .colorDecorativeTertiary:
                 return theme.colorDecorativeTertiary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorDecorativeBrandTertiaryMuted:
-//                return theme.colorDecorativeBrandTertiaryMuted
-//            case .colorDecorativeBrandTertiaryEmphasized:
-//                return theme.colorDecorativeBrandTertiaryEmphasized
             case .colorDecorativeNeutralMuted:
                 return theme.colorDecorativeNeutralMuted
             case .colorDecorativeNeutralDefault:

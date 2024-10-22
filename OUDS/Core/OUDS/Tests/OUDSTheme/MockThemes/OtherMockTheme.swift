@@ -358,10 +358,6 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     override var colorDecorativeTertiary: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
-    override var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
-
-    override var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
-
     override var colorDecorativeNeutralMuted: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
 
     override var colorDecorativeNeutralDefault: ColorSemanticToken { Self.otherMockThemeMultipleColorTokens }
