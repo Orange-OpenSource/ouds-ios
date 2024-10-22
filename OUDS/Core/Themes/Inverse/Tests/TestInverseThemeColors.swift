@@ -709,8 +709,8 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorDecorativeSecondary)
     }
 
-    func testColorsHomogeneityColorDecorativeBrandTertiary() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeBrandTertiary)
+    func testColorsHomogeneityColorDecorativeTertiary() throws {
+        assertHomogeneity(inverseTheme.colorDecorativeTertiary)
     }
 
     // In InverseTheme token not implemented yet
