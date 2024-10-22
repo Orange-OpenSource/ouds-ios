@@ -30,8 +30,7 @@ extension NamedColor {
         case colorActionPrimaryEnabledOnBgEmphasized
         case colorActionPrimaryHover
         case colorActionPrimaryHoverOnBgEmphasized
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//        case colorActionPrimaryPressed
+        case colorActionPrimaryPressed
         case colorActionPrimaryPressedOnBgEmphasized
         case colorActionPrimaryLoading
         case colorActionPrimaryLoadingOnBgEmphasized
@@ -100,8 +99,8 @@ extension NamedColor {
             case .colorActionPrimaryHoverOnBgEmphasized:
                 return theme.colorActionPrimaryHoverOnBgEmphasized
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorActionPrimaryPressed:
-//                return theme.colorActionPrimaryPressed
+            case .colorActionPrimaryPressed:
+                return theme.colorActionPrimaryPressed
             case .colorActionPrimaryPressedOnBgEmphasized:
                 return theme.colorActionPrimaryPressedOnBgEmphasized
             case .colorActionPrimaryLoading:
