@@ -13,6 +13,7 @@
 
 # More details at https://realm.github.io/SwiftLint
 
+strict: true
 
 # ========
 # Included
@@ -31,8 +32,6 @@ excluded:
 - Showcase/Showcase/Resources
 - Showcase/Pods
 - Showcase/DerivedData
-
-strict: true
 
 # ==============
 # Disabled rules
@@ -57,6 +56,14 @@ disabled_rules:
 - vertical_whitespace_between_cases
 - vertical_whitespace_opening_braces
 
+# ==============
+# Analyzer rules
+# ==============
+
+analyzer_rules:
+- explicit_self
+- unused_import
+
 # =====================================
 # Opt-in rules (not enabled by default)
 # =====================================
@@ -79,7 +86,6 @@ opt_in_rules:
 - empty_string
 - empty_xctest_method
 - explicit_init
-- explicit_self
 - fallthrough
 - fatal_error_message
 - first_where
@@ -140,7 +146,6 @@ opt_in_rules:
 - unneeded_parentheses_in_closure_argument
 - unowned_variable_capture
 - untyped_error_in_catch
-- unused_import
 - unused_optional_binding
 - vertical_parameter_alignment
 - vertical_parameter_alignment_on_call
