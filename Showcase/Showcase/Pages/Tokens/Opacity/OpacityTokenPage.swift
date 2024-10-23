@@ -23,6 +23,15 @@ struct OpacityTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    private let forcedTheme: OUDSTheme?
+    private let forcedColorScheme: ColorScheme?
+
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+        self.forcedTheme = theme
+        self.forcedColorScheme = colorScheme
+    }
+
     // MARK: Body
 
     var body: some View {
@@ -37,28 +46,39 @@ struct OpacityTokenPage: View {
 
     // MARK: Helpers
 
-    private func illustration(for opacityName: NamedOpacity) -> some View {
-        let token = opacityName.token(from: theme)
+    public func illustration(for opacityName: NamedOpacity) -> some View {
+        let token = opacityName.token(from: forcedTheme ?? theme)
         let name = opacityName.rawValue
         let value = String(format: "%.2f", token)
+
+        /// Move currentColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let currentColorScheme = forcedColorScheme ?? colorScheme
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Image(decorative: "ic_union")
                     .resizable()
                     .renderingMode(.template)
-                    .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
+                    .foregroundColor(
+                        forcedTheme?.colorContentStatusInfo.color(for: currentColorScheme)
+                        ?? theme.colorContentStatusInfo.color(for: currentColorScheme)
+                    )
                     .frame(width: 48, height: 48)
                     .accessibilityHidden(true)
 
                 Rectangle()
-                    .fill(theme.colorBackgroundEmphasized.color(for: colorScheme))
+                    .fill(
+                        forcedTheme?.colorBackgroundEmphasized.color(for: currentColorScheme)
+                        ?? theme.colorBackgroundEmphasized.color(for: currentColorScheme)
+                    )
                     .opacity(token)
                     .frame(width: 48, height: 48)
-                    .oudsBorder(style: theme.borderStyleDefault,
-                                width: theme.borderWidthThin,
-                                radius: theme.borderRadiusNone,
-                                color: theme.colorBorderEmphasized)
+                    .oudsBorder(
+                        style: forcedTheme?.borderStyleDefault ?? theme.borderStyleDefault,
+                        width: forcedTheme?.borderWidthThin ?? theme.borderWidthThin,
+                        radius: forcedTheme?.borderRadiusNone ?? theme.borderRadiusNone,
+                        color: forcedTheme?.colorBorderEmphasized ?? theme.colorBorderEmphasized
+                    )
                     .padding(.top, 24)
                     .padding(.leading, 24)
             }
@@ -69,7 +89,7 @@ struct OpacityTokenPage: View {
 
 // MARK: - Named Opacity
 
-private enum NamedOpacity: String, CaseIterable {
+public enum NamedOpacity: String, CaseIterable {
     case opacityTransparent
     case opacityWeaker
     case opacityWeak
