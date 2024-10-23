@@ -37,17 +37,19 @@
 "app_tokens_dimension_label" = "Dimension";
 "app_tokens_dimension_description_text" = "Dimension provides standard sizing and spacing to ensure visual consistency across the UI.";
 
-"app_tokens_dimension_space_label" = "Spacing";
+"app_tokens_dimension_space_label" = "Space";
 "app_tokens_dimension_space_description_text" = "Space refers to the measurements used to define the spacing between UI elements.";
 "app_tokens_dimension_space_scaled_label" = "Scaled";
 "app_tokens_dimension_space_fixed_label" = "Fixed";
 "app_tokens_dimension_space_paddingInline_label" = "Padding inline";
+"app_tokens_dimension_space_paddingInlineWithIcon_label" = "Padding inline with icon";
+"app_tokens_dimension_space_paddingInlineWithArrow_label" = "Padding inline with arrow";
 "app_tokens_dimension_space_paddingInset_label" = "Padding inset";
 "app_tokens_dimension_space_paddingStack_label" = "Padding stack";
 "app_tokens_dimension_space_gapInline_label" = "Gap inline";
 "app_tokens_dimension_space_gapStack_label" = "Gap stack";
 
-"app_tokens_dimension_size_label" = "Sizing";
+"app_tokens_dimension_size_label" = "Size";
 "app_tokens_dimension_size_description_text" = "Size refers to the specific measurements used to define the dimensions of UI elements within the design system.";
 
 "app_tokens_elevation_label" = "Elevation";

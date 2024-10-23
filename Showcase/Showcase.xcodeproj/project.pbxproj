@@ -62,6 +62,8 @@
 		07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */; };
 		07CF42852CA45DA9000BD03E /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
 		07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
+		07F0FA8A2CC935FF000F166F /* NameSpace+PaddingInlineWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0FA892CC935FF000F166F /* NameSpace+PaddingInlineWithIcon.swift */; };
+		07F0FA8C2CC9408C000F166F /* NameSpace+PaddingInlineWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0FA8B2CC9408C000F166F /* NameSpace+PaddingInlineWithArrow.swift */; };
 		07F7533B2CC785620007450D /* ShowcaseSectionHeaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F7533A2CC785620007450D /* ShowcaseSectionHeaderStyle.swift */; };
 		07F75A372CC644C80004F1AD /* NamedSpace+Scaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A362CC644C80004F1AD /* NamedSpace+Scaled.swift */; };
 		07F75A392CC6462D0004F1AD /* NamedSpace+Fixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A382CC6462D0004F1AD /* NamedSpace+Fixed.swift */; };
@@ -150,6 +152,8 @@
 		07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTokenElement.swift; sourceTree = "<group>"; };
 		07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTokenPage.swift; sourceTree = "<group>"; };
 		07CF42882CA55BC8000BD03E /* ThemeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelection.swift; sourceTree = "<group>"; };
+		07F0FA892CC935FF000F166F /* NameSpace+PaddingInlineWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+PaddingInlineWithIcon.swift"; sourceTree = "<group>"; };
+		07F0FA8B2CC9408C000F166F /* NameSpace+PaddingInlineWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+PaddingInlineWithArrow.swift"; sourceTree = "<group>"; };
 		07F7533A2CC785620007450D /* ShowcaseSectionHeaderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseSectionHeaderStyle.swift; sourceTree = "<group>"; };
 		07F75A362CC644C80004F1AD /* NamedSpace+Scaled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSpace+Scaled.swift"; sourceTree = "<group>"; };
 		07F75A382CC6462D0004F1AD /* NamedSpace+Fixed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSpace+Fixed.swift"; sourceTree = "<group>"; };
@@ -382,12 +386,14 @@
 			isa = PBXGroup;
 			children = (
 				07F75A362CC644C80004F1AD /* NamedSpace+Scaled.swift */,
+				07F0FA892CC935FF000F166F /* NameSpace+PaddingInlineWithIcon.swift */,
 				07F75A382CC6462D0004F1AD /* NamedSpace+Fixed.swift */,
 				07F75A3A2CC651EB0004F1AD /* NameSpace+PaddingInline.swift */,
 				07F75A3C2CC653BD0004F1AD /* NameSpace+PaddingInset.swift */,
 				07F75A422CC654050004F1AD /* NameSpace+PaddingStack.swift */,
 				07F75A3E2CC653CD0004F1AD /* NameSpace+GapInline.swift */,
 				07F75A402CC653EB0004F1AD /* NameSpace+GapStack.swift */,
+				07F0FA8B2CC9408C000F166F /* NameSpace+PaddingInlineWithArrow.swift */,
 			);
 			path = NamedSpace;
 			sourceTree = "<group>";
@@ -763,6 +769,8 @@
 				0747947A2CAE882A0033C2D8 /* EmptyState.swift in Sources */,
 				51BD762B2C466FCF0033365D /* MainView.swift in Sources */,
 				07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */,
+				07F0FA8A2CC935FF000F166F /* NameSpace+PaddingInlineWithIcon.swift in Sources */,
+				07F0FA8C2CC9408C000F166F /* NameSpace+PaddingInlineWithArrow.swift in Sources */,
 				07CF42782CA3F4BE000BD03E /* ElevationTokenElement.swift in Sources */,
 				0765B4A42CC15C3E00E69359 /* NamedColor+Chart.swift in Sources */,
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
