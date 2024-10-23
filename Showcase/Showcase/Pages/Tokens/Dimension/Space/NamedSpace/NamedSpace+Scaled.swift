@@ -14,7 +14,7 @@
 import OUDS
 import OUDSTokensSemantic
 
-extension NamedSpacing {
+extension NamedSpace {
 
     enum Scaled: String, CaseIterable {
         case spaceScaledNone

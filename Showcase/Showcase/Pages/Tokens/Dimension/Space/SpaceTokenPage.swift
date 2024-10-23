@@ -19,7 +19,7 @@ import SwiftUI
 private let kIillustrationHeight = 72.0
 private let kIllustrationWidth = 72.0
 
-struct SpacingTokenPage: View {
+struct SpaceTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -31,22 +31,35 @@ struct SpacingTokenPage: View {
     var body: some View {
         Group {
             // Basic Spacings
-            Section { illustrationForScaledSpacings() } header: { header("Scaled") }
-            Section { illustrationForFixedSpacings() } header: { header("Fixed") }
+            Section { illustrationForScaledSpaces() } header: {
+                header("app_tokens_dimension_space_scaled_label")
+            }
+            Section { illustrationForFixedSpacings() } header: { header("app_tokens_dimension_space_fixed_label")
+            }
             // Padding Dimensions
-            Section { illustrationForPaddingInline() } header: { header("Padding Inline") }
-            Section { illustrationForPaddingInset() } header: { header("Padding Inset") }
-            Section { illustrationForPaddingStack() } header: { header("Padding Stack") }
+            Section { illustrationForPaddingInline() } header: {
+                header("app_tokens_dimension_space_paddingInline_label")
+            }
+            Section { illustrationForPaddingInset() } header: {
+                header("app_tokens_dimension_space_PaddingInset_label")
+            }
+            Section { illustrationForPaddingStack() } header: {
+                header("app_tokens_dimension_space_paddingStack_label")
+            }
             // Gap Dimensions
-            Section { illustrationForGapInline() } header: { header("Gap Inline") }
-            Section { illustrationForGapStack() } header: { header("Gap Stack") }
+            Section { illustrationForGapInline() } header: {
+                header("app_tokens_dimension_space_gapInline_label")
+            }
+            Section { illustrationForGapStack() } header: {
+                header("app_tokens_dimension_space_gapStack_label")
+            }
         }
         .padding(.horizontal, theme.spaceFixedMedium)
     }
 
     // MARK: Private helpers
 
-    private func header(_ text: String) -> some View {
+    private func header(_ text: LocalizedStringKey) -> some View {
         Text(text).showcaseSectionHeaderStyle()
     }
 
@@ -54,9 +67,9 @@ struct SpacingTokenPage: View {
 
     private func illustrationForFixedSpacings() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedSpacing.Fixed.allCases, id: \.rawValue) { namedSpacingToken in
-                let token = namedSpacingToken.token(from: theme)
-                let name = namedSpacingToken.rawValue
+            ForEach(NamedSpace.Fixed.allCases, id: \.rawValue) { namedSpaceToken in
+                let token = namedSpaceToken.token(from: theme)
+                let name = namedSpaceToken.rawValue
                 // Fixed spacings are illustrated as a gap inline spacing
                 illustation(for: Gap.inline(token), name: name)
             }
@@ -65,17 +78,17 @@ struct SpacingTokenPage: View {
 
     // MARK: Scaled Spacings
 
-    private func illustrationForScaledSpacings() -> some View {
+    private func illustrationForScaledSpaces() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedSpacing.Scaled.allCases, id: \.rawValue) { namedSpacingToken in
-                illustration(for: namedSpacingToken)
+            ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
+                illustration(for: namedSpaceToken)
             }
         }
     }
 
-    private func illustration(for namedSpacing: NamedSpacing.Scaled) -> some View {
-        let token = namedSpacing.token(from: theme)
-        let name = namedSpacing.rawValue
+    private func illustration(for namedSpaceToken: NamedSpace.Scaled) -> some View {
+        let token = namedSpaceToken.token(from: theme)
+        let name = namedSpaceToken.rawValue
         let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
         let verticalDimensionRawToken = token.dimension(for: verticalSizeClass ?? .regular)
 
@@ -107,9 +120,9 @@ struct SpacingTokenPage: View {
 
     private func illustrationForPaddingInline() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedSpacing.PaddingInline.allCases, id: \.rawValue) { namedSpacingToken in
-                let token = namedSpacingToken.token(from: theme)
-                let name = namedSpacingToken.rawValue
+            ForEach(NamedSpace.PaddingInline.allCases, id: \.rawValue) { namedSpaceToken in
+                let token = namedSpaceToken.token(from: theme)
+                let name = namedSpaceToken.rawValue
                 illustation(for: Padding.inline(token), name: name)
             }
         }
@@ -117,9 +130,9 @@ struct SpacingTokenPage: View {
 
     private func illustrationForPaddingInset() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedSpacing.PaddingInset.allCases, id: \.rawValue) { namedSpacingToken in
-                let token = namedSpacingToken.token(from: theme)
-                let name = namedSpacingToken.rawValue
+            ForEach(NamedSpace.PaddingInset.allCases, id: \.rawValue) { namedSpaceToken in
+                let token = namedSpaceToken.token(from: theme)
+                let name = namedSpaceToken.rawValue
                 illustation(for: Padding.inset(token), name: name)
             }
         }
@@ -127,9 +140,9 @@ struct SpacingTokenPage: View {
 
     private func illustrationForPaddingStack() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedSpacing.PaddingStack.allCases, id: \.rawValue) { namedSpacingToken in
-                let token = namedSpacingToken.token(from: theme)
-                let name = namedSpacingToken.rawValue
+            ForEach(NamedSpace.PaddingStack.allCases, id: \.rawValue) { namedSpaceToken in
+                let token = namedSpaceToken.token(from: theme)
+                let name = namedSpaceToken.rawValue
                 illustation(for: Padding.stack(token), name: name)
             }
         }
@@ -139,9 +152,9 @@ struct SpacingTokenPage: View {
 
     private func illustrationForGapInline() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedSpacing.GapInline.allCases, id: \.rawValue) { namedSpacingToken in
-                let token = namedSpacingToken.token(from: theme)
-                let name = namedSpacingToken.rawValue
+            ForEach(NamedSpace.GapInline.allCases, id: \.rawValue) { namedSpaceToken in
+                let token = namedSpaceToken.token(from: theme)
+                let name = namedSpaceToken.rawValue
                 illustation(for: Gap.inline(token), name: name)
             }
         }
@@ -149,9 +162,9 @@ struct SpacingTokenPage: View {
 
     private func illustrationForGapStack() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedSpacing.GapStack.allCases, id: \.rawValue) { namedSpacingToken in
-                let token = namedSpacingToken.token(from: theme)
-                let name = namedSpacingToken.rawValue
+            ForEach(NamedSpace.GapStack.allCases, id: \.rawValue) { namedSpaceToken in
+                let token = namedSpaceToken.token(from: theme)
+                let name = namedSpaceToken.rawValue
                 illustation(for: Gap.stack(token), name: name)
             }
         }
@@ -252,6 +265,6 @@ struct PaddingModifier: ViewModifier {
     }
 }
 
-// MARK: - Named Spacing
+// MARK: - Named Space
 
-enum NamedSpacing { }
+enum NamedSpace { }

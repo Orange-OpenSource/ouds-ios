@@ -116,6 +116,7 @@ struct ThemeSelectionButton: View {
                 }
             }
             .pickerStyle(.automatic)
+            .accessibilityLabel("app_topBar_theme_button_a11y")
         } label: {
             Image(systemName: "paintpalette").accessibilityHidden(true)
         }

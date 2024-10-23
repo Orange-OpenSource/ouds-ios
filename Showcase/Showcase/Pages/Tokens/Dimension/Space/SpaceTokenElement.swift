@@ -13,16 +13,16 @@
 
 import SwiftUI
 
-struct SizingTokenElement: TokenElement {
+struct SpaceTokenElement: TokenElement {
     let name: String
     let imageName: String
     let description: String
     let pageDescription: AnyView
 
     init() {
-        name = "app_tokens_dimension_sizing_label"
+        name = "app_tokens_dimension_space_label"
         imageName = "ic_dimension"
-        description = "app_tokens_dimension_sizing_description_text"
-        pageDescription = AnyView(SizingTokenPage())
+        description = "app_tokens_dimension_space_description_text"
+        pageDescription = AnyView(SpaceTokenPage())
     }
 }

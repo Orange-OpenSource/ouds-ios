@@ -23,6 +23,7 @@ struct ComponentsPage: View {
     var body: some View {
         NavigationView {
             EmptyState()
+                .navigationTitle("app_bottomBar_component_label")
         }
     }
 }
