@@ -22,84 +22,96 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the TokensOpacity are tested for UI compatibility with the reference image previously recorded
+/// To ensure the TokensOpacity are tested for UI compatibility with the reference image recorded
 
 final class OUDSTokensOpacityUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Opacity Tests
 
-    /// Verifies that the `OpacityTransparent` token from the orange theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_OrangeTheme_OpacityTransparent_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
-        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityTransparent_Light")
+    /// This function tests all opacity tokens in the `OrangeTheme` with the `light` color scheme.
+    /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
+    func testAllOpacitiesOrangeThemeLight() {
+        /// Create an instance of the page with a forced OrangeTheme and light color scheme
+        let opacityPage = OpacityTokenPage(forceTo: OrangeTheme(), colorScheme: .light)
+
+        for opacity in NamedOpacity.allCases {
+            /// Use the `illustration(for:)` method to test a single illustration
+            let illustration = opacityPage.illustration(for: opacity)
+
+            /// Encapsulate the element in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
+
+            /// Capture the snapshot of the illustration with the correct theme and color scheme
+            let snapshotName = "\(opacity.rawValue)"
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.light)), named: snapshotName)
+        }
     }
 
-    /// Verifies that the `OpacityWeaker` token from the orange theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_OrangeTheme_OpacityWeaker_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
-        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityWeaker_Light")
-    }
+    // MARK: - Orange Theme Dark Mode Opacity Tests
 
-    /// Verifies that the `OpacityWeak` token from the orange theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_OrangeTheme_OpacityWeak_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
-        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityWeak_Light")
-    }
+    /// This function tests all opacity tokens in the `OrangeTheme` with the `dark` color scheme.
+    /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
+    func testAllOpacitiesOrangeThemeDark() {
+        /// Create an instance of the page with a forced OrangeTheme and dark color scheme
+        let opacityPage = OpacityTokenPage(forceTo: OrangeTheme(), colorScheme: .dark)
 
-    /// Verifies that the `OpacityMedium` token from the orange theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_OrangeTheme_OpacityMedium_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
-        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityMedium_Light")
-    }
+        for opacity in NamedOpacity.allCases {
+            /// Use the `illustration(for:)` method to test a single illustration
+            let illustration = opacityPage.illustration(for: opacity)
 
-    /// Verifies that the `OpacityStrong` token from the orange theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_OrangeTheme_OpacityStrong_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
-        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityStrong_Light")
-    }
+            /// Encapsulate the element in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
 
-    /// Verifies that the `OpacityOpaque` token from the orange theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_OrangeTheme_OpacityOpaque_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, OrangeTheme())
-        assertSnapshot(of: vc, as: .image, named: "OrangeTheme/testOpacityToken_OrangeTheme_OpacityOpaque_Light")
+            /// Capture the snapshot of the illustration with the correct theme and color scheme
+            let snapshotName = "\(opacity.rawValue)"
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
+        }
     }
 
     // MARK: - Inverse Theme Light Mode Opacity Tests
 
-    /// Verifies that the `OpacityTransparent` token from the inverse theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_InverseTheme_OpacityTransparent_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
-        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityTransparent_Light")
+    /// This function tests all opacity tokens in the `InverseTheme` with the `light` color scheme.
+    /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
+    func testAllOpacitiesInverseThemeLight() {
+        /// Create an instance of the page with a forced InverseTheme and dark color scheme
+        let opacityPage = OpacityTokenPage(forceTo: InverseTheme(), colorScheme: .light)
+
+        for opacity in NamedOpacity.allCases {
+            /// Use the `illustration(for:)` method to test a single illustration
+            let illustration = opacityPage.illustration(for: opacity)
+
+            /// Encapsulate the element in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
+
+            /// Capture the snapshot of the illustration with the correct theme and color scheme
+            let snapshotName = "\(opacity.rawValue)"
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
+        }
     }
 
-    /// Verifies that the `OpacityWeaker` token from the inverse theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_InverseTheme_OpacityWeaker_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
-        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityWeaker_Light")
-    }
+    // MARK: - Inverse Theme Dark Mode Opacity Tests
 
-    /// Verifies that the `OpacityWeak` token from the inverse theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_InverseTheme_OpacityWeak_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
-        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityWeak_Light")
-    }
+    /// This function tests all opacity tokens in the `InverseTheme` with the `dark` color scheme.
+    /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
+    func testAllOpacitiesInverseThemeDark() {
+        /// Create an instance of the page with a forced InverseTheme and dark color scheme
+        let opacityPage = OpacityTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
 
-    /// Verifies that the `OpacityMedium` token from the inverse theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_InverseTheme_OpacityMedium_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
-        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityMedium_Light")
-    }
+        for opacity in NamedOpacity.allCases {
+            /// Use the `illustration(for:)` method to test a single illustration
+            let illustration = opacityPage.illustration(for: opacity)
 
-    /// Verifies that the `OpacityStrong` token from the inverse theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_InverseTheme_OpacityStrong_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
-        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityStrong_Light")
-    }
+            /// Encapsulate the element in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
 
-    /// Verifies that the `OpacityOpaque` token from the inverse theme's matches the saved reference image in light mode using snapshot testing.
-    func testOpacityToken_InverseTheme_OpacityOpaque_Light() {
-        let vc = OpacityTokenPage().environment(\.theme, InverseTheme())
-        assertSnapshot(of: vc, as: .image, named: "InverseTheme/testOpacityToken_InverseTheme_OpacityOpaque_Light")
+            /// Capture the snapshot of the illustration with the correct theme and color scheme
+            let snapshotName = "\(opacity.rawValue)"
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
+        }
     }
 }
 
