@@ -39,6 +39,9 @@ extension MockTheme {
 
     // MARK: Semantic token - Typography - Font - Weight
 
+    override open var fontWeightDefault: TypographyFontWeightSemanticToken { Self.mockThemeTypographyFontWeightRawToken }
+    override open var fontWeightCode: TypographyFontWeightSemanticToken { Self.mockThemeTypographyFontWeightRawToken }
+    override open var fontWeightStrong: TypographyFontWeightSemanticToken { Self.mockThemeTypographyFontWeightRawToken }
     override open var fontWeightDisplay: TypographyFontWeightSemanticToken { Self.mockThemeTypographyFontWeightRawToken }
     override open var fontWeightHeading: TypographyFontWeightSemanticToken { Self.mockThemeTypographyFontWeightRawToken }
     override open var fontWeightBodyDefault: TypographyFontWeightSemanticToken { Self.mockThemeTypographyFontWeightRawToken }
