@@ -30,7 +30,7 @@ extension NamedSpace {
         case spaceFixedHuge
         case spaceFixedJumbo
 
-        func token(from theme: OUDSTheme) -> SpacingSemanticToken {
+        func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
             case .spaceFixedNone:
                 return theme.spaceFixedNone

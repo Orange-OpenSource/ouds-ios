@@ -26,7 +26,7 @@ extension NamedSpace {
         case spacePaddingInlineWithIconTaller
         case spacePaddingInlineWithIconTallest
 
-        func token(from theme: OUDSTheme) -> SpacingSemanticToken {
+        func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
             case .spacePaddingInlineWithIconNone:
                 return theme.spacePaddingInlineWithIconNone

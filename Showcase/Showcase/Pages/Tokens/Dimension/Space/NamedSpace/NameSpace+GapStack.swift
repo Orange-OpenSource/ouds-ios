@@ -24,7 +24,7 @@ extension NamedSpace {
         case spaceRowGapMedium
         case spaceRowGapTall
 
-        func token(from theme: OUDSTheme) -> SpacingSemanticToken {
+        func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
             case .spaceRowGapNone:
                 return theme.spaceRowGapNone

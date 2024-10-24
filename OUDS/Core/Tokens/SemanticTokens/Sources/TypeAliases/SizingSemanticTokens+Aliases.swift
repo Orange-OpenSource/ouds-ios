@@ -14,4 +14,4 @@
 import OUDSTokensRaw
 
 /// Basically a size semantic token for width and height is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
-public typealias SizingSemanticToken = DimensionRawToken
+public typealias SizeSemanticToken = DimensionRawToken

@@ -25,7 +25,7 @@ extension NamedSpace {
         case spacePaddingBlockTaller
         case spacePaddingBlockTallest
 
-        func token(from theme: OUDSTheme) -> SpacingSemanticToken {
+        func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
             case .spacePaddingBlockNone:
                 return theme.spacePaddingBlockNone
