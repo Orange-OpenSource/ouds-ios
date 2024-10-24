@@ -37,6 +37,7 @@ public protocol TypographySemanticTokens {
     // MARK: - Semantic token - Typography - Font - Weight
 
     var fontWeightDefault: TypographyFontWeightSemanticToken { get }
+    var fontWeightCode: TypographyFontWeightSemanticToken { get }
     var fontWeightStrong: TypographyFontWeightSemanticToken { get }
     var fontWeightDisplay: TypographyFontWeightSemanticToken { get }
     var fontWeightHeading: TypographyFontWeightSemanticToken { get }
