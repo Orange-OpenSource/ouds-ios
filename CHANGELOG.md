@@ -47,6 +47,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Semantic token `borderWidthFocusInset` (value of `borderWidth100`) ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207), [#241](https://github.com/Orange-OpenSource/ouds-ios/issues/241))
 - [Library] Semantic token `fontWeightCode` ([#242](https://github.com/Orange-OpenSource/ouds-ios/issues/242))
 - [DemoApp] Update space tokens screen with all categories ([#178](https://github.com/Orange-OpenSource/ouds-ios/issues/178))
+- [DemoApp] Add more UI tests on demo app ([#154](https://github.com/Orange-OpenSource/ouds-ios/issues/154))
+- [Library] Semantic token `borderWidthFocusInset` ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207))
 
 ### Changed
 
@@ -106,7 +108,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DemoApp] Add color tokens screen in demo app ([#152](https://github.com/Orange-OpenSource/ouds-ios/issues/152))
 - [Library] Add semantic tokens `spacePaddingInlineTallest`, `spacePaddingBlockTallest`, `spaceColumnGapTaller`, `spaceColumnGapWithArrowShortest`, `spaceRowGapShortest` (Figjam final synchronization of October 16th)
 - [Library] Add semantic color tokens ([#124](https://github.com/Orange-OpenSource/ouds-ios/issues/124))
-- [DemoApp] Add more UI tests on demo app ([#154](https://github.com/Orange-OpenSource/ouds-ios/issues/154))
 - [DemoApp] Fix some design issues and mutualize some UI elements ([#189](https://github.com/Orange-OpenSource/ouds-ios/issues/189))
 - [DemoApp] Add sizing tokens screen in demo app ([#150](https://github.com/Orange-OpenSource/ouds-ios/issues/150))
 - [DemoApp] Add spacing tokens screen in demo app ([#149](https://github.com/Orange-OpenSource/ouds-ios/issues/149))
