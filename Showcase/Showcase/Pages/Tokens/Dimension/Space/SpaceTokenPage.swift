@@ -16,8 +16,12 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Internal constants
+
 private let kIillustrationHeight = 72.0
 private let kIllustrationWidth = 72.0
+
+// MARK: - Space Token Page
 
 struct SpaceTokenPage: View {
 
@@ -61,12 +65,6 @@ struct SpaceTokenPage: View {
             }
         }
         .padding(.horizontal, theme.spaceFixedMedium)
-    }
-
-    // MARK: Private helpers
-
-    private func header(_ text: LocalizedStringKey) -> some View {
-        Text(text).showcaseSectionHeaderStyle()
     }
 
     // MARK: Fixed Sapces
@@ -203,6 +201,10 @@ struct SpaceTokenPage: View {
 
     // MARK: Common helpers
 
+    private func header(_ text: LocalizedStringKey) -> some View {
+        Text(text).showcaseSectionHeaderStyle()
+    }
+
     @ViewBuilder
     private func illustation(for paddingType: Padding, name: String, additionalAsset: (icon: Image, horizontalPadding: Double)? = nil) -> some View {
         let value = String(format: "%.2f (pt)", paddingType.dimension)
@@ -251,6 +253,8 @@ struct SpaceTokenPage: View {
     }
 }
 
+// MARK: - Gap
+
 enum Gap {
     case inline(DimensionRawToken)
     case stack(DimensionRawToken)
@@ -263,7 +267,9 @@ enum Gap {
     }
 }
 
-struct GapModifier: ViewModifier {
+// MARK: - Gap Modifier
+
+private struct GapModifier: ViewModifier {
 
     let gap: Gap
 
@@ -277,6 +283,8 @@ struct GapModifier: ViewModifier {
         }
     }
 }
+
+// MARK: - Padding
 
 enum Padding {
     case inline(DimensionRawToken)
@@ -293,7 +301,9 @@ enum Padding {
     }
 }
 
-struct PaddingModifier: ViewModifier {
+// MARK: - Padding Modifier
+
+private struct PaddingModifier: ViewModifier {
 
     let padding: Padding
 
