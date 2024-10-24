@@ -127,7 +127,7 @@ To run these UI tests follow some steps:
 2. `bundle exec pod install`
 3. Open *Showcase.xcworkspace*
 4. Select *ShowcaseTests* scheme
-5. Select some simulator (tests designed for *iPhone 13 Pro Max* and *iPhone 14 Pro Max* but works elsewhere)
+5. Select some simulator (tests designed for *iPhone 16 Pro*)
 6. Run tests (Product -> Test)
 
 Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
@@ -135,38 +135,65 @@ Indeed for new tests the tool makes snapshots of the views, thus for the first r
 
 Such tests here are used to as to be sure the look and feel of any components and tokens rendering remaing the expected ones.
 
+Any interface modifications require regenerating the illustrations using the tool. In this case, the reference illustrations for 'Opacity' have already been saved within the project.
+
 ### Steps to Use swift-snapshot-testing
 
+1. Locate Reference Images:
+    - In the Package directory, you will find the reference screenshots for the Orange and Inverse themes (Light/Dark), which will serve as comparison baselines.
+    ```shell
+    Package -> Showcase -> ShowcaseTests -> OUDSTokensBorderUITests -> Snapshots -> OUDSTokensOpacityUITests
+    ```
 1. Navigate to the Project :
     - Open your project in Xcode and go to the directory:
     ```shell
-    Showcase -> ShowcaseTests -> OUDSTokensBorderUITests
+    Showcase -> ShowcaseTests -> OUDSTokensBorderUITests -> OUDSTokensBorderUITests.swift
     ```
-2. Locate Reference Images:
-    - Inside the `OUDSTokensBorderUITests` folder, you will find the `OrangeTheme` and `InverseTheme` directories. These folders contain the reference screenshots for the Orange and Inverse themes, which will serve as comparison points.
 3. Open the Test File:
     - Open the file `OUDSTokensBorderUITests.swift`.
-4. Run the Snapshot Test:
-    - Locate and execute the function `testBorderToken_OrangeTheme_SectionWidth_BorderWidthNone_Light()`.
-      <img width="898" alt="Capture d’écran 2024-10-18 à 16 44 46" src="https://github.com/user-attachments/assets/bc2d6cb4-3854-499a-82b2-6b5676e2505b">
+4. Run the Snapshot Test (success):
+    - Locate and execute the function `testAllOpacitiesOrangeThemeLight()`.
 
-    - Running this test will launch the selected simulator and create a new snapshot of the `BorderTokenPage`.
-      <img width="909" alt="Capture d’écran 2024-10-18 à 16 53 55" src="https://github.com/user-attachments/assets/d07dfc72-1034-4b40-8875-6fff22dad412">
+      <img width="897" alt="OrangeThemeLight_OpacityTest_Success" src="https://github.com/user-attachments/assets/550bed90-6bc9-4d68-aaf0-8e04de35d916">
+ 
+The snapshot tool fetched the reference image to compare it against the current screen and detected no differences, resulting in a success
 
-5. Run the Snapshot Test:
-    - After the snapshot has been generated, re-run the same test after the error indicating that there is no snapshot, so it can use the newly created snapshot as a comparison against the reference image.
-      <img width="910" alt="Capture d’écran 2024-10-18 à 16 55 15" src="https://github.com/user-attachments/assets/2588e0a5-6571-4049-97dd-c92a92e2a4d2">
+5. Run the Snapshot Test (failure):
+    - We will deliberately change the image by setting the `OpacityOpaque` token to `OpacityTransparent` in class `OpacityTokenPage.swift`
 
-6. Verify the Output:
-    - The test will check the rendered output of the `BorderTokenPage`, which is instantiated with the `Orange theme`:
-    ```swift
-    BorderTokenPage().environment(\.theme, OrangeTheme())
-    ```
-    - If the generated screenshot matches the reference image, the test will pass. If they do not match, the test will fail, indicating a discrepancy
+      <img width="561" alt="IntentionalTokenModification" src="https://github.com/user-attachments/assets/1d138b7b-2998-40b7-bf39-d9a597ced6c0">
+    - Test result failure :
+
+    <img width="897" alt="IntentionalUITestError" src="https://github.com/user-attachments/assets/0a6bb578-adba-42f1-abe8-e2f50ddba2a7">
+
+
+   The swift-snapshot-testing tool indicates that the issue originates from the transparent token illustration. We can observe that there are two paths: the first corresponds to our reference illustration (the one we intend to base our comparison on), while the second path is the illustration used for the current image of the application. You can open both paths and visually compare the differences.
+
 7. Verify the Output:
-    - **Important:** If you change the device or simulator you are using, **delete the snapshots** located in the `__Snapshots__` folder to avoid mismatches:
-    - Snapshots should **never be committed** to the repository, as they are meant for local testing purposes only
-<img width="548" alt="Capture d’écran 2024-10-18 à 17 00 42" src="https://github.com/user-attachments/assets/9e11e225-6218-4cb5-bae1-933d305aefa6">
+    - It is recommended to use the `Show the Report Navigator` tool in Xcode :
+
+
+    <img width="512" alt="ShowReportNavigator_Xcode" src="https://github.com/user-attachments/assets/8d866d79-5dfc-46c7-934e-8d03ec1fc667">
+
+    - In Xcode go to :
+
+    ```shell
+    ShowcaseTests -> ShowcaseTests/ShowcaseTests
+    ```
+
+    <img width="1206" alt="TestResult_Failed_testAllOpacitiesOrangeThemeLight" src="https://github.com/user-attachments/assets/1793df83-ffc1-4226-8be2-fbd7e2b71deb">
+
+
+8. Comparison (reference and failure):
+   
+   **Reference:**
+
+    <img width="1307" alt="OpacityReferenceImage" src="https://github.com/user-attachments/assets/493dabde-4139-468f-a57b-10ee5a5269c1">
+
+
+   **Failure:**
+
+   <img width="1364" alt="OpacityFailureImage" src="https://github.com/user-attachments/assets/03cfe17f-3752-4aba-a482-f89d3b89f53d">
 
 
 ## Build phases
