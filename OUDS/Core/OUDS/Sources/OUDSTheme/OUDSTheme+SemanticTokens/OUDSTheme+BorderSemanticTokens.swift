@@ -33,7 +33,7 @@ extension OUDSTheme: BorderSemanticTokens {
     @objc open var borderWidthThick: BorderWidthSemanticToken { BorderRawTokens.borderWidth75 }
     @objc open var borderWidthThicker: BorderWidthSemanticToken { BorderRawTokens.borderWidth100 }
     @objc open var borderWidthFocus: BorderWidthSemanticToken { BorderRawTokens.borderWidth50 }
-    @objc open var borderWidthFocusInset: BorderWidthSemanticToken { BorderRawTokens.borderWidth75 }
+    @objc open var borderWidthFocusInset: BorderWidthSemanticToken { BorderRawTokens.borderWidth100 }
 
     // MARK: Semantic token - Border - Radius
 
