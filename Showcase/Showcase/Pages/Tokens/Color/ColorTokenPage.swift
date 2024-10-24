@@ -30,7 +30,6 @@ struct ColorTokenPage: View {
             Section { illustrationForAlways() } header: { header("Always") }
             Section { illustrationForContent() } header: { header("Content") }
             Section { illustrationForContentOnBackground() } header: { header("Content On Background") }
-            Section { illustrationForContentOnBackground() } header: { header("Content On Background") }
             Section { illustrationForBorder() } header: { header("Border") }
             Section { illustrationForeElevation() } header: { header("Elevation") }
             Section { illustrationForDecorative() } header: { header("Decorative") }
