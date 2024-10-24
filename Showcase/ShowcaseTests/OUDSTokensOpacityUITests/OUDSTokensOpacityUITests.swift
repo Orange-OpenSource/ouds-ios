@@ -31,7 +31,7 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// This function tests all opacity tokens in the `OrangeTheme` with the `light` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
-    func testAllOpacitiesOrangeThemeLight() {
+    @MainActor func testAllOpacitiesOrangeThemeLight() {
         /// Create an instance of the page with a forced OrangeTheme and light color scheme
         let opacityPage = OpacityTokenPage(forceTo: OrangeTheme(), colorScheme: .light)
 
@@ -53,7 +53,7 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// This function tests all opacity tokens in the `OrangeTheme` with the `dark` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
-    func testAllOpacitiesOrangeThemeDark() {
+    @MainActor func testAllOpacitiesOrangeThemeDark() {
         /// Create an instance of the page with a forced OrangeTheme and dark color scheme
         let opacityPage = OpacityTokenPage(forceTo: OrangeTheme(), colorScheme: .dark)
 
@@ -75,7 +75,7 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// This function tests all opacity tokens in the `InverseTheme` with the `light` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
-    func testAllOpacitiesInverseThemeLight() {
+    @MainActor func testAllOpacitiesInverseThemeLight() {
         /// Create an instance of the page with a forced InverseTheme and dark color scheme
         let opacityPage = OpacityTokenPage(forceTo: InverseTheme(), colorScheme: .light)
 
@@ -97,7 +97,7 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// This function tests all opacity tokens in the `InverseTheme` with the `dark` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
-    func testAllOpacitiesInverseThemeDark() {
+    @MainActor func testAllOpacitiesInverseThemeDark() {
         /// Create an instance of the page with a forced InverseTheme and dark color scheme
         let opacityPage = OpacityTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
 
