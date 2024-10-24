@@ -1,22 +1,22 @@
 {
-  "originHash" : "e71a5b08dd41106aab31bef69b8183c27372e20aad985d3798a43491894b7e7c",
+  "originHash" : "b0e966f4ace0da078a6fcc1dcd094050f4d63b9437f87a3a6b4948c17b90db4e",
   "pins" : [
     {
-      "identity" : "swift-docc-plugin",
+      "identity" : "swift-snapshot-testing",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-docc-plugin",
+      "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
       "state" : {
-        "revision" : "2eb22993b3dfd0c0d32729b357c8dabb6cd44680",
-        "version" : "1.4.2"
+        "revision" : "7b0bbbae90c41f848f90ac7b4df6c4f50068256d",
+        "version" : "1.17.5"
       }
     },
     {
-      "identity" : "swift-docc-symbolkit",
+      "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
+      "location" : "https://github.com/swiftlang/swift-syntax",
       "state" : {
-        "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
-        "version" : "1.0.0"
+        "revision" : "515f79b522918f83483068d99c68daeb5116342d",
+        "version" : "600.0.0-prerelease-2024-09-04"
       }
     }
   ],
