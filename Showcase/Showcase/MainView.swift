@@ -24,15 +24,15 @@ struct MainView: View {
         TabView {
             TokensPage()
                 .tabItem {
-                    Label("app_bottomBar_tokens", image: "ic_token")
+                    Label("app_bottomBar_tokens_label", image: "ic_token")
                 }
             ComponentsPage()
                 .tabItem {
-                    Label("app_bottomBar_components", image: "ic_component_atom")
+                    Label("app_bottomBar_components_label", image: "ic_component_atom")
                 }
             AboutPage()
                 .tabItem {
-                    Label("app_bottomBar_about", image: "ic_info")
+                    Label("app_bottomBar_about_label", image: "ic_info")
                 }
         }
         .accentColor(theme.colorContentBrandPrimary.color(for: colorScheme))

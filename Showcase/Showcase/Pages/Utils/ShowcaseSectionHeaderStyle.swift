@@ -12,18 +12,22 @@
 //
 
 import OUDS
-import OUDSComponents
-import OUDSThemesOrange
+import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - View for display
+struct ShowcaseSectionHeaderModifier: ViewModifier {
 
-struct ComponentsPage: View {
+    @Environment(\.theme) private var theme
 
-    var body: some View {
-        NavigationView {
-            EmptyState()
-                .navigationTitle("app_bottomBar_component_label")
-        }
+    func body(content: Content) -> some View {
+        content
+            .typeHeadingMedium(theme)
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+extension Text {
+    func showcaseSectionHeaderStyle() -> some View {
+        self.modifier(ShowcaseSectionHeaderModifier())
     }
 }

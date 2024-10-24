@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-struct SizingTokenPage: View {
+struct SizeTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
