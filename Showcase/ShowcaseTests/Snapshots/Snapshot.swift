@@ -29,7 +29,7 @@ enum Snapshot {
     ///     the test case in which this function was called.
     ///   - line: The line number on which failure occurred. Defaults to the line number on which this
     ///     function was called.
-    static func assert<Content>(_ view: Content, file: StaticString = #file, testName: String = #function, line: UInt = #line) where Content: View {
+    @MainActor static func assert<Content>(_ view: Content, file: StaticString = #file, testName: String = #function, line: UInt = #line) where Content: View {
         let viewController = UIHostingController(rootView: view)
         assertSnapshot(
             of: viewController,
@@ -46,7 +46,7 @@ enum Snapshot {
             line: line)
     }
 
-    static func assert<Content>(_ views: [Content], file: StaticString = #file, testName: String = #function, line: UInt = #line) where Content: View {
+    @MainActor static func assert<Content>(_ views: [Content], file: StaticString = #file, testName: String = #function, line: UInt = #line) where Content: View {
         for view in views {
             assert(view, file: file, testName: testName, line: line)
         }
