@@ -21,8 +21,8 @@ final class MultipleSizingTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined
     func testInitWithOneValues() {
-        let unique: SizingSemanticToken = 888
-        let token = MultipleSizingTokens(unique)
+        let unique: SizeSemanticToken = 888
+        let token = MultipleSizeTokens(unique)
 
         XCTAssertTrue(token.compact == unique)
         XCTAssertTrue(token.regular == unique)
@@ -30,9 +30,9 @@ final class MultipleSizingTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined
     func testInitTwoValues() {
-        let compact: SizingSemanticToken = 123
-        let regular: SizingSemanticToken = 456
-        let token = MultipleSizingTokens(compact: compact, regular: regular)
+        let compact: SizeSemanticToken = 123
+        let regular: SizeSemanticToken = 456
+        let token = MultipleSizeTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)
         XCTAssertTrue(token.regular == regular)
@@ -41,11 +41,11 @@ final class MultipleSizingTokensTests: XCTestCase {
     /// Tests comparisons between two `MultipleSizingTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = MultipleSizingTokens(compact: 12, regular: 34)
-        let second = MultipleSizingTokens(compact: 56, regular: 78)
-        let third = MultipleSizingTokens(compact: 12, regular: 78)
-        let fourth = MultipleSizingTokens(compact: 56, regular: 34)
-        let fifth = MultipleSizingTokens(compact: 12, regular: 34)
+        let first = MultipleSizeTokens(compact: 12, regular: 34)
+        let second = MultipleSizeTokens(compact: 56, regular: 78)
+        let third = MultipleSizeTokens(compact: 12, regular: 78)
+        let fourth = MultipleSizeTokens(compact: 56, regular: 34)
+        let fifth = MultipleSizeTokens(compact: 12, regular: 34)
         let sixth = MultipleColorTokens("#000000")
 
         XCTAssertTrue(first.isEqual(first))

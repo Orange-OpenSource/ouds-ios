@@ -22,7 +22,7 @@ import OUDSTokensSemantic
 /// **Warning: These are random and dumb values**
 extension OUDSTheme: ButtonsComponentTokens {
 
-    @objc open var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { spacePaddingInlineShort }
+    @objc open var buttonInternalSpacing: SpacePaddingInlineSemanticToken { spacePaddingInlineShort }
 
     @objc open var buttonBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
     @objc open var buttonBorderColor: ColorSemanticToken { colorBorderDefault }
@@ -32,8 +32,8 @@ extension OUDSTheme: ButtonsComponentTokens {
     @objc open var buttonForegroundColor: ColorSemanticToken { colorContentBrandPrimary }
     @objc open var buttonBackgroundColor: ColorSemanticToken { colorBackgroundBrandPrimary }
 
-    @objc open var buttonWidth: SizingSemanticToken { DimensionRawTokens.dimension3000 }
-    @objc open var buttonHeight: SizingSemanticToken { DimensionRawTokens.dimension1000 }
+    @objc open var buttonWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
+    @objc open var buttonHeight: SizeSemanticToken { DimensionRawTokens.dimension1000 }
 
     @objc open var buttonTypography: MultipleTypographyTokens { typeDisplayMedium }
 }

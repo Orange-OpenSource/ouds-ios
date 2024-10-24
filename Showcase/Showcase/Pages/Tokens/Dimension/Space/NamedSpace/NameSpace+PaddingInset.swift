@@ -28,7 +28,7 @@ extension NamedSpace {
         case spaceInsetTallest
         case spaceInsetSpacious
 
-        func token(from theme: OUDSTheme) -> SpacingSemanticToken {
+        func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
             case .spaceInsetNone:
                 return theme.spaceInsetNone

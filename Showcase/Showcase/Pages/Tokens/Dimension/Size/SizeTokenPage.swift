@@ -69,7 +69,7 @@ private enum NamedSizing: String, CaseIterable {
     case sizeIconDecorativeTaller
     case sizeIconDecorativeTallest
 
-    func token(from theme: OUDSTheme) -> SizingSemanticToken {
+    func token(from theme: OUDSTheme) -> SizeSemanticToken {
         switch self {
         case .sizeIconDecorativeShortest:
             return theme.sizeIconDecorativeShortest

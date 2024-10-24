@@ -80,6 +80,6 @@ If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so 
 - ``ElevationSemanticTokens``
 - ``GridSemanticTokens``
 - ``OpacitySemanticTokens``
-- ``SizingSemanticTokens``
-- ``SpacingSemanticTokens``
+- ``SizeSemanticTokens``
+- ``SpaceSemanticTokens``
 - ``TypographySemanticTokens``
