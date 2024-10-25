@@ -16,8 +16,8 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the `MultipleSizingTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
-final class MultipleSizingTokensTests: XCTestCase {
+/// To ensure the `MultipleSizeTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+final class MultipleSizeTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined
     func testInitWithOneValues() {
@@ -38,7 +38,7 @@ final class MultipleSizingTokensTests: XCTestCase {
         XCTAssertTrue(token.regular == regular)
     }
 
-    /// Tests comparisons between two `MultipleSizingTokens` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleSizeTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
         let first = MultipleSizeTokens(compact: 12, regular: 34)
