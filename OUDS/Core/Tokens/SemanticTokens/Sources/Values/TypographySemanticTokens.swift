@@ -14,6 +14,7 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
+// Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
 
@@ -26,7 +27,7 @@ public protocol TypographySemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Family
 
-    var fontFamily: TypographyFontFamilyRawToken { get }
+    var fontFamily: TypographyFontFamilySemanticToken { get }
     var fontFamilyDisplay: TypographyFontFamilySemanticToken { get }
     var fontFamilyHeading: TypographyFontFamilySemanticToken { get }
     var fontFamilyBody: TypographyFontFamilySemanticToken { get }

@@ -14,10 +14,11 @@
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 // WARNING: Not synchronized anymore with the Figjam / Figma by developer team
+// Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
 
-/// Extracted in a separated file because the the *Figma* JSON to Swift parser is not abale to process such composite tokens, and the *Figma* tool is not able to.
+/// Extracted in a separated file because the  *Figma* JSON to Swift, i.e. the *tokenator* parser is not able to process such composite tokens, and the *Figma* tool is not able to.
 ///
 /// **Beware, may result in desynchronization between generated raw tokens values and theses composite raw tokens**
 extension ElevationRawTokens {
