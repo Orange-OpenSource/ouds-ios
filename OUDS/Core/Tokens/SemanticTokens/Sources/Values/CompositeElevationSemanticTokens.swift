@@ -13,13 +13,17 @@
 
 // swiftlint:disable missing_docs
 
+// WARNING: Not synchronized anymore with the Figjam / Figma by developer team
+
 /// This is a group of semantic tokens for **elevations**, but only **composite tokens**.
 /// There are splitted and not declared in `ElevationSemanticTokens` as the *tokenator* tool parsing *Figma* JSON to Swift code is not able to manage them.
-/// Thus we need to decalre them in another file to prevent them to be deleted.
+/// Thus we need to declare them in another file to prevent them to be erased.
+/// 
 /// It declares in fact box shadows effects.
 ///
-/// This protocl makes themes able to provide and override `ElevationCompositeSemanticToken`, which are `MultipleElevationTokens`, i.e.
-/// tokens having a different value (or not) depending to the color scheme
+/// This protocol makes themes able to provide and override `ElevationCompositeSemanticToken`.
+/// `ElevationCompositeSemanticToken` refers to `MultipleElevationTokens`, which contains for light and dark color schemes `ElevationCompositeRawToken`.
+/// This `ElevationCompositeRawToken` is not managed by tokenator yet as it is composed by three properties.
 public protocol CompositeElevationSemanticTokens {
 
     var elevationNone: ElevationCompositeSemanticToken { get }

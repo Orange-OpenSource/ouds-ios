@@ -13,7 +13,7 @@
 
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
-// WARNING: Not synchronized anymore with the Figjam
+// WARNING: Not synchronized anymore with the Figjam / Figma by developer team
 
 // swiftlint:disable missing_docs
 // swiftlint:disable identifier_name
