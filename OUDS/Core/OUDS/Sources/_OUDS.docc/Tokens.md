@@ -31,7 +31,8 @@ No _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/
 
 These _tokens_ ([OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/)) can be used mainly for _component tokens_ to apply some style and configuration values.
 They can be seen as an high level of usage with functional meanings.
-Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
+
+A semantic token points to a raw token, and is used by components. A semantic token brings meanings, higher level notions. For example, a raw token can be a "red color", and a semantic token pointing to it can be a "danger information color". Semantic tokens are used by components tokens and shared definition of themes. They are splitted in kind of families, i.e. borders, dimensions, colors, spacings, elevations, sizings, opacities, grids and typographies. For some of theses tokens, like for borders, subfamilies can be defined likes width, radius and style. Finally, any of these raw tokens is associated to a raw value which will be - in the end - applied to SwiftUI views inside components. Type aliases will help to make a simple math between any semantic tokens and raw tokens. Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition, only their rendering.
 
 In addition, there are hundreds of _semantics tokens_ and we needed to add them to the abstract root theme using extensions for clarity reasons to prevent to have a _Swift class_ with thousands of lines. Each _raw token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
 
@@ -92,6 +93,8 @@ Feel free to send issues and contact us for further details or if you spotted so
 
 ## Raw tokens
 
+### What they are
+
 _Raw tokens_ ([OUDSTokensRaw](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/)) are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
 
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than *structs* or *classes*.
@@ -138,8 +141,8 @@ You may need to [create an issue](https://github.com/Orange-OpenSource/ouds-ios/
 
 ### For raw tokens
 
-You can refer to the *OUDSTokensRaw* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/)
+You can refer to the *OUDSTokensRaw* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/). [The wiki provides details](https://github.com/Orange-OpenSource/ouds-ios/wiki/0-%E2%80%90-How-to-update-tokens) also.
 
 ### For semantic tokens
 
-You can refer to the *OUDSTokensSemantic* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/
+You can refer to the *OUDSTokensSemantic* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/). [The wiki provides details](https://github.com/Orange-OpenSource/ouds-ios/wiki/0-%E2%80%90-How-to-update-tokens) also.
