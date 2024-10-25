@@ -9,7 +9,7 @@ The catalog of all components provided by OUDS. It contains also `View` extensio
 
 ## Overview
 
-Comming soon
+❗**More details coming soon.**❗
 
 ## Topics
 

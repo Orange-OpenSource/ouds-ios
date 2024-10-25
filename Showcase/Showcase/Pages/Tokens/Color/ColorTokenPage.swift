@@ -144,7 +144,7 @@ private struct ExtraBorderModifier: ViewModifier {
     let color: ColorRawToken
 
     func body(content: Content) -> some View {
-        let defaultContentBackground = theme.colorBackgroundPrimary.color(for: colorScheme)
+        let defaultContentBackground = theme.colorBgPrimary.color(for: colorScheme)
         let addBorder = color.color == defaultContentBackground
 
         if addBorder {

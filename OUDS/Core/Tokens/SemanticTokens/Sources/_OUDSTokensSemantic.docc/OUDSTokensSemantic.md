@@ -1,11 +1,11 @@
 # ``OUDSTokensSemantic``
 
-These _tokens_  can be used mainly for _component tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) to apply some style and configuration values.
+These _tokens_ can be used mainly for _component tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) to apply some style and configuration values ; today _component tokens_ or _components_ are not defined yet.
 They can be seen as an high level of usage with functional meanings.
 
 ## Overview
 
-Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we onlyhave to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
+Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
 
 In addition, there are hundreds of _semantics tokens_ and we needed to add them to the abstract root theme using extensions for clarity reasons to prevent to have a _Swift class_ with thousands of lines. Each _raw token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
 
@@ -16,22 +16,40 @@ To keep the same semantics as the ones used in our specifications, _typealias_ a
 Example with ``ColorSemanticTokens``:
 
 ```swift
-// Delcare the semantic tokens
+// Declare the semantic tokens
 protocol ColorSemanticTokens {
-    var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { get }
+
+    var colorBgPrimary: ColorSemanticToken { get }
+    var colorBgSecondary: ColorSemanticToken { get }
+    var colorBgTertiary: ColorSemanticToken { get }
+    // ...
 }
 
 // Define the semantic tokens exposed through the theme
 extension OUDSTheme: ColorSemanticTokens {
 
-    @objc open var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalWhite }
+    // Color is available in the module of OUDSTheme
+    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+
+    // If the semantic token refers to a raw token not stored in the OUDSTheme module, override later and throw error because unxpected state if used
+    @objc open var colorBgSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgSecondary!") }
+
+    // Possible to have tokens not defined in lwoer level must only in themes implementation, throw error if used because unexpected state
+    @objc open var colorBgTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgTertiary!") }
+}
+
+// Add missing values
+extension OrangeTheme: ColorSemanticTokens {
+
+    // Define value value with the accessible token 
+    @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
 }
 ```
 
 ## Architecture
 
 The *Multiples* folder contains some _composite class_ defined to pack double values for dedicated needs, like size classes management (_regular_ or _compact_ device modes), and also for color schemes management (_light_ and _dark_ modes).
-Such *composites* are not the same as the ones defined in the *Figma* design system, they are just utilities to handle tuple of values, without the syntaxe of tuples and with some helper functions.
+Such *composites* are not the same as the ones defined in the *Figma* design system, they are just utilities to handle tuple of values, without the syntax of tuples and with some helper functions.
 We would like to define one class for all combinations of things depending to light and dark modes, and another for regular and compact modes. However, it implies to use _Swift generics_ and it is not compatible with Objective-C runtime (we use through `@objc` keyword).
 
 We would like to define one class for all combinations of things depending to light and dark modes, and another for regular and compact modes. However, it implies to use _Swift generics_ and it is not compatible with Objective-C runtime (we use through `@objc` keyword).
@@ -70,6 +88,56 @@ But beware, if you change the name of the property or if you move it from a `pro
 
 If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let yout users know the variables have been changed.
 
+### Some note about composites
+
+The *tokenator* is not able today to generate composites tokens, i.e. tokens which contain by definition several properties.
+For example, *elevation semantic token* dedicated to bow shadows are composed by several properties (x, y, blur, shadow).
+*Typography semantic token* can be token containing several properties too (weght, size, spacinf, font family).
+These are considered as *composite tokens*. They are defined in dedicated protocols and files.
+Thus when the *tokenator* generates tokens without managing composites, the file can still be used as is with generated tokens, and the composites are not erased.
+
+## How to use semantic tokens
+
+In fact, the semantic tokens are declared and gathered in _Swift protocol_ so as to force any theme to implement them, and also to allow any theme to expose such properties wathever the implementation of the theme is.
+Because *semantic tokens* have for values *raw tokens*, and these *raw tokens* have for values primitive types, and all these tokens are decalred with *type aliases* refering all together, you can handle a *semantic token* directly in your view because the final value will be used.
+Thus, get the theme and call the needed property with some helpers.
+
+```swift
+struct SomeView: View {
+
+    @Environment(\.theme) private var theme // Supposed you used in your root view the `OUDSThemeableView` to register the theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        Rectangle()
+            .frame(width: theme.sizeIconDecorativeTallest, height: theme.sizeIconDecorativeTallest)
+            .foregroundColor(theme.colorBgSecondary.color(for: colorScheme))
+            .shadow(elevation: theme.elevationRaised.elevation(for: colorScheme))
+            .padding(.bottom, theme.spaceFixedNone)
+    }
+/*
+    - The theme provides size semantic tokens "sizeIconDecorativeTallest" and "sizeIconDecorativeTallest"
+    - The theme provides a color semantic token "colorBgSecondary" with values for light and dark scheme, and you can use the color(for:) helper
+    - The theme provides an elevation semantic token "elevationRaised" with values for compact and regualr size classes, and you can use the elevation(for:) helper
+    - The theme provides a space semantic token "spaceFixedNone" usable as is
+*/
+}
+
+// Do not forget in your app to use the `OUDSThemeableView` for your theme, e.g. `OrangeTheme`
+@main
+struct Showcase: App {
+
+    var body: some Scene {
+        WindowGroup {
+            OUDSThemeableView(theme: OrangeTheme()) {
+                // Your root view
+                ...
+            }
+        }
+    }
+}
+```
+
 ## Topics
 
 ### Group
@@ -77,9 +145,11 @@ If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so 
 - ``BorderSemanticTokens``
 - ``ColorSemanticTokens``
 - ``DimensionSemanticTokens``
+- ``ElevationCompositeSemanticTokens``
 - ``ElevationSemanticTokens``
 - ``GridSemanticTokens``
 - ``OpacitySemanticTokens``
 - ``SizeSemanticTokens``
 - ``SpaceSemanticTokens``
 - ``TypographySemanticTokens``
+- ``TypographyCompositeSemanticTokens``

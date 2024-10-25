@@ -44,7 +44,7 @@ struct SizeTokenPage: View {
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill(theme.colorBackgroundEmphasized.color(for: colorScheme))
+                    .fill(theme.colorBgEmphasized.color(for: colorScheme))
                     .frame(width: 82, height: 82, alignment: .center)
 
                 Image("ic_token")

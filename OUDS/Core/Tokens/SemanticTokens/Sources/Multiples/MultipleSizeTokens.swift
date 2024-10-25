@@ -43,7 +43,7 @@ public final class MultipleSizeTokens: NSObject, Sendable {
     deinit { }
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
-    /// as a `MultipleSizingTokens`. Otherwise returns `false`.
+    /// as a `MultipleSizeTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleSizeTokens else {

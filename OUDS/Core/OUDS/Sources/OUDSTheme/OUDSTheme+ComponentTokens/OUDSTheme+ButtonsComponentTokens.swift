@@ -30,7 +30,7 @@ extension OUDSTheme: ButtonsComponentTokens {
     @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borderRadiusShort }
 
     @objc open var buttonForegroundColor: ColorSemanticToken { colorContentBrandPrimary }
-    @objc open var buttonBackgroundColor: ColorSemanticToken { colorBackgroundBrandPrimary }
+    @objc open var buttonBackgroundColor: ColorSemanticToken { colorBgBrandPrimary }
 
     @objc open var buttonWidth: SizeSemanticToken { DimensionRawTokens.dimension3000 }
     @objc open var buttonHeight: SizeSemanticToken { DimensionRawTokens.dimension1000 }

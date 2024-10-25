@@ -23,53 +23,53 @@ extension MockTheme {
 
     // MARK: Semantic token - Colors - Background
 
-    override open var colorBackgroundPrimary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgPrimary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundSecondary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgSecondary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundTertiary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgTertiary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundBrandPrimary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgBrandPrimary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundBrandSecondary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgBrandSecondary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundBrandTertiary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgBrandTertiary: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusNeutral: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusNeutral: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusNeutralOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusNeutralOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusPositiveMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusPositiveMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusPositiveMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusPositiveMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusPositiveEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusInfoMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusInfoMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusInfoMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusInfoMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusInfoEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusWarningMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusWarningMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusWarningMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusWarningMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusWarningEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusWarningEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusNegativeMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusNegativeMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusNegativeMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusNegativeMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusNegativeEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusAccentMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusAccentMuted: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusAccentMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusAccentMutedOnBgEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
-    override open var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
+    override open var colorBgStatusAccentEmphasized: ColorSemanticToken { Self.mockThemeMultipleColorTokens }
 
     // MARK: Semantic token - Colors - Content - Status
 
