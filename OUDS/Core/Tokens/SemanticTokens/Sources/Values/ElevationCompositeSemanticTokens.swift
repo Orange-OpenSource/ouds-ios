@@ -13,6 +13,8 @@
 
 // swiftlint:disable missing_docs
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate with the tokenator with Figma able to output composites and tokenatoer able to manage them]
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
@@ -25,7 +27,7 @@
 /// This protocol makes themes able to provide and override `ElevationCompositeSemanticToken`.
 /// `ElevationCompositeSemanticToken` refers to `MultipleElevationTokens`, which contains for light and dark color schemes `ElevationCompositeRawToken`.
 /// This `ElevationCompositeRawToken` is not managed by tokenator yet as it is composed by three properties.
-public protocol CompositeElevationSemanticTokens {
+public protocol ElevationCompositeSemanticTokens {
 
     var elevationNone: ElevationCompositeSemanticToken { get }
     var elevationRaised: ElevationCompositeSemanticToken { get }

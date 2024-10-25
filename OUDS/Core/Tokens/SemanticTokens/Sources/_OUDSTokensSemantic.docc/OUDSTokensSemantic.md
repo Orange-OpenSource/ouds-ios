@@ -88,6 +88,14 @@ But beware, if you change the name of the property or if you move it from a `pro
 
 If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let yout users know the variables have been changed.
 
+### Some note about composites
+
+The *tokenator* is not able today to generate composites tokens, i.e. tokens which contain by definition several properties.
+For example, *elevation semantic token* dedicated to bow shadows are composed by several properties (x, y, blur, shadow).
+*Typography semantic token* can be token containing several properties too (weght, size, spacinf, font family).
+These are considered as *composite tokens*. They are defined in dedicated protocols and files.
+Thus when the *tokenator* generates tokens without managing composites, the file can still be used as is with generated tokens, and the composites are not erased.
+
 ## How to use semantic tokens
 
 In fact, the semantic tokens are declared and gathered in _Swift protocol_ so as to force any theme to implement them, and also to allow any theme to expose such properties wathever the implementation of the theme is.
@@ -137,10 +145,11 @@ struct Showcase: App {
 - ``BorderSemanticTokens``
 - ``ColorSemanticTokens``
 - ``DimensionSemanticTokens``
-- ``CompositeElevationSemanticTokens``
+- ``ElevationCompositeSemanticTokens``
 - ``ElevationSemanticTokens``
 - ``GridSemanticTokens``
 - ``OpacitySemanticTokens``
 - ``SizeSemanticTokens``
 - ``SpaceSemanticTokens``
 - ``TypographySemanticTokens``
+- ``TypographyCompositeSemanticTokens``

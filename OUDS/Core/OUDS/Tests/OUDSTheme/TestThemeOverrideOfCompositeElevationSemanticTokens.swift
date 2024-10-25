@@ -22,7 +22,7 @@ import XCTest
 /// In fact, the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols _composite elevation semantic tokens_.
 /// These semantic tokens should be overriden by subclass like the `OrangeTheme` default theme.
 /// **These tests checks if any _composite elevation semantic tokens_ can be surcharged by a child theme**
-final class TestThemeOverrideOfCompositeElevationSemanticTokens: XCTestCase {
+final class TestThemeOverrideOfElevationCompositeSemanticTokens: XCTestCase {
 
     private var abstractTheme: OUDSTheme!
     private var inheritedTheme: OUDSTheme!
