@@ -1,4 +1,8 @@
 //
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
@@ -7,7 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-// swiftlint:disable missing_docs
+import Foundation
+import OUDSTokensRaw
+import OUDSTokensSemantic
 
 extension OUDSTheme: OpacitySemanticTokens {
     @objc open var opacityMedium: OpacitySemanticToken { OpacityRawTokens.opacity500 }
@@ -17,5 +23,3 @@ extension OUDSTheme: OpacitySemanticTokens {
     @objc open var opacityWeak: OpacitySemanticToken { OpacityRawTokens.opacity300 }
     @objc open var opacityWeaker: OpacitySemanticToken { OpacityRawTokens.opacity100 }
 }
-
-// swiftlint:enable missing_docs
