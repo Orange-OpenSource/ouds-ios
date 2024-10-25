@@ -19,98 +19,78 @@ Not that other brands like _Parnasse_ or _Sosh_ can be implemented in a dedicate
 
 ```swift
 // Make imports
-import OUDS
-import OUDSThemesOrange
+import OUDS // For OUDSThemeableView
+import OUDSThemesOrange // For OrangeTheme
 
-// Add themeable view to your root view
+// Add themeable view to your root view to use the OrangeTheme
 OUDSThemeableView(theme: OrangeTheme()) {
+    YourRootView()
+}
+
+// Or use your custom theme if you want
+OUDSThemeableView(theme: YourCustomTheme()) {
     YourRootView()
 }
 ```
 
 ## Define a custom theme if needed
 
-```swift
-class YourCustomTheme: OrangeTheme { }
-
-extension YourCustomTheme {
-
-    // Override components tokens if needed
-    override var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
-    override var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThick }
-    
-    // Override colors semantic tokens if needed
-    override var colorBackgroundPrimary: ColorSemanticToken { 
-        MultipleColorTokens(light: ColorRawTokens.ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.ColorRawTokens.colorFunctionalSun800)
-    }
-    
-    // Etc.
-}
-```
-
-## How to create your own theme
-
 It is quite simple, you have to follow several steps.
 
-First, create a _Swift class_ which will inherit from `OrangeTheme` or `OUDSTheme`.
-You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes. We do not recommend to sue directly the `OUDSTheme` as is.
+You will have to create a _Swift class_ which will inherit from `OrangeTheme` or `OUDSTheme`.
+You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes. We do not recommend to use directly the `OUDSTheme` as is.
 Then, you should override the _semantic tokens_ and _components tokens_ you want ; we recommend to use _Swift extensions_ for clarity reasons.
 If your theme needs to define its own _raw tokens_, you can also define them using a `enum` and the _raw tokens types_.
 
-For example:
-
+First, use the suitable imports:
 ```swift
-import Foundation
-import SwiftUI
+import OUDS                 // To get OUDSTheme
 import OUDSTokensRaw        // To get raw tokens
 import OUDSTokensSemantic   // To get semantic tokens
 import OUDSTokensComponent  // To get component tokens
 import OUDSThemesOrange     // To override OrangeTheme (which is default theme)
+```
 
-// Can be for example a country theme
-class OrangeCustomTheme: OrangeTheme { }
+Then, declare the class:
+```
+// If you jsut want to make a subtheme with some changes
+final class YourCustomTheme: OrangeTheme { }
 
-extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in component FormsTextInputComponent
+// Or for white label themes or themes with more configurations not that much related to OrangeTheme, choose the one you want
+final class YourCustomTheme: OUDSTheme { }
+```
 
-    override public var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
-    override public var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
-    override public var ftiTitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
+And define the theme by overriding the values you want:
 
-    override public var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightBodyDefault }
-    override public var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
-    override public var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
+```
+extension YourCustomTheme {
 
-    override public var ftiBackgroundColor: ColorSemanticToken { colorBackgroundDefault }
+    // Override components tokens
+    // Not define dyet
+    
+    // Override colors semantic tokens
+    override public var colorBackgroundPrimary: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray880) }
+    
+    // Override some fonts semantic tokens
+    public var fontFamily: TypographyFontFamilySemanticToken { TypographyRawTokens.fontFamilySystemSFPro }
+    public var fontFamilyBody: TypographyFontFamilySemanticToken { MyOwnFontRawTokens.someFontBody }
 
-    override public var ftiBorderColor: ColorSemanticToken { colorBorderEmphasized }
-
-    override public var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
-
-    override public var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThick }
-}
-
-extension OrangeCustomTheme { // For ColorSemanticTokens using anywhere
-
-    override var colorBackgroundPrimary: ColorSemanticToken { 
-        MultipleColorTokens(light: ColorRawTokens.ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.ColorRawTokens.colorFunctionalSun800)
-    }
+    // Etc.
 }
 ```
 
-And your own theme colors _raw tokens_:
+You can defined your own set of raw tokens, for example:
+```
+public typealias MyOwnTypographyRawTokens = TypographyRawTokens // Refer to type TypographyRawTokens for consistency, declared in OUDSTokensRaw
 
-```swift
+public enum MyOwnFontRawTokens {
 
-public typealias MyThemeColorRawToken = ColorRawToken // Refer to type ColorRawToken for consistency
-
-public enum MyThemeColorRawTokens {
-
-    public static let someAwesomeThemeExclusiveColor: MyThemeColorRawToken = "#12345600"
+    public static let someFontBody: MyOwnTypographyRawTokens = "Arial"
     
 }
 ```
 
-Then for your root view:
+Finaly for your app root view:
 
 ```swift
 import SwiftUI
@@ -119,10 +99,16 @@ import OUDS // To get ``OUDSThemeableView``
 struct MyAppRootView: View {
 
     var body: some View {
-        OUDSThemeableView(theme: OrangeCustomTheme()) {
+        OUDSThemeableView(theme: YourCustomTheme()) {
             // ...
         }
     }
 }
 ```
+
+All components the OUDS library provides are based on themes, handle through the abstract `OUDSTheme`, exposing *semantic tokens*, defined by *raw tokens* assigned to usable final values.
+In few words, if you want to change the look and feel for the OUDS components you use, you will have to override the matching *semantic tokens*, but it will bring side effects as these *semantic tokens* are shared accross several components.
+In the future we will have components and *component tokens*.
+
+You are also able to define your components and your *semantic tokens* used by them.
 
