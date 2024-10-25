@@ -13,7 +13,7 @@
 
 // swiftlint:disable missing_docs
 
-// WARNING: Not synchronized anymore with the Figjam / Figma by developer team
+// WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 
 /// This is a group of semantic tokens for **elevations**, but only **composite tokens**.
 /// There are splitted and not declared in `ElevationSemanticTokens` as the *tokenator* tool parsing *Figma* JSON to Swift code is not able to manage them.

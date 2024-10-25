@@ -11,10 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import OUDSTokensRaw
-
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
+// WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 
 // swiftlint:disable missing_docs
 
