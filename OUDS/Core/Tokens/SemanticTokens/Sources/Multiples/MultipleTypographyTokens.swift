@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import Foundation
 import OUDSTokensRaw
+import SwiftUICore
 
 /// Kind of semantic tokens which will wrap a combination of `TypographyCompositeRawToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
@@ -50,4 +50,12 @@ public final class MultipleTypographyTokens: NSObject, Sendable {
         guard let object = object as? MultipleTypographyTokens else { return false }
         return self.compact == object.compact && self.regular == object.regular
     }
+
+    /// Returns a kind of semantic tokens which will wrap a combination of `TypographyCompositeRawToken` according to the `userInterfaceSizeClass`.
+    /// - Parameter userInterfaceSizeClass: The user interface size class
+    /// - Returns: A kind of semantic tokens which will wrap a combination of `TypographyCompositeRawToken`
+    public func typographyToken(for userInterfaceSizeClass: UserInterfaceSizeClass) -> TypographyCompositeRawToken {
+        userInterfaceSizeClass == .compact ? compact : regular
+    }
+
 }
