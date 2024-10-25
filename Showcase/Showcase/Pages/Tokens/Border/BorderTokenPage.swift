@@ -68,7 +68,7 @@ struct BorderTokenPage: View {
 
     private var rectangle: some View {
         Rectangle()
-            .fill(theme.colorBackgroundSecondary.color(for: colorScheme))
+            .fill(theme.colorBgSecondary.color(for: colorScheme))
             .frame(width: 64, height: 64)
     }
 

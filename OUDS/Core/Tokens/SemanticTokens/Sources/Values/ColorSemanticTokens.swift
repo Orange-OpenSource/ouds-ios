@@ -30,53 +30,53 @@ public protocol ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Background
 
-    var colorBackgroundPrimary: ColorSemanticToken { get }
+    var colorBgPrimary: ColorSemanticToken { get }
 
-    var colorBackgroundSecondary: ColorSemanticToken { get }
+    var colorBgSecondary: ColorSemanticToken { get }
 
-    var colorBackgroundTertiary: ColorSemanticToken { get }
+    var colorBgTertiary: ColorSemanticToken { get }
 
-    var colorBackgroundEmphasized: ColorSemanticToken { get }
+    var colorBgEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundBrandPrimary: ColorSemanticToken { get }
+    var colorBgBrandPrimary: ColorSemanticToken { get }
 
-    var colorBackgroundBrandSecondary: ColorSemanticToken { get }
+    var colorBgBrandSecondary: ColorSemanticToken { get }
 
-    var colorBackgroundBrandTertiary: ColorSemanticToken { get }
+    var colorBgBrandTertiary: ColorSemanticToken { get }
 
-    var colorBackgroundStatusNeutral: ColorSemanticToken { get }
+    var colorBgStatusNeutral: ColorSemanticToken { get }
 
-    var colorBackgroundStatusNeutralOnBgEmphasized: ColorSemanticToken { get }
+    var colorBgStatusNeutralOnBgEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusPositiveMuted: ColorSemanticToken { get }
+    var colorBgStatusPositiveMuted: ColorSemanticToken { get }
 
-    var colorBackgroundStatusPositiveMutedOnBgEmphasized: ColorSemanticToken { get }
+    var colorBgStatusPositiveMutedOnBgEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { get }
+    var colorBgStatusPositiveEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusInfoMuted: ColorSemanticToken { get }
+    var colorBgStatusInfoMuted: ColorSemanticToken { get }
 
-    var colorBackgroundStatusInfoMutedOnBgEmphasized: ColorSemanticToken { get }
+    var colorBgStatusInfoMutedOnBgEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { get }
+    var colorBgStatusInfoEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusWarningMuted: ColorSemanticToken { get }
+    var colorBgStatusWarningMuted: ColorSemanticToken { get }
 
-    var colorBackgroundStatusWarningMutedOnBgEmphasized: ColorSemanticToken { get }
+    var colorBgStatusWarningMutedOnBgEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusWarningEmphasized: ColorSemanticToken { get }
+    var colorBgStatusWarningEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusNegativeMuted: ColorSemanticToken { get }
+    var colorBgStatusNegativeMuted: ColorSemanticToken { get }
 
-    var colorBackgroundStatusNegativeMutedOnBgEmphasized: ColorSemanticToken { get }
+    var colorBgStatusNegativeMutedOnBgEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { get }
+    var colorBgStatusNegativeEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusAccentMuted: ColorSemanticToken { get }
+    var colorBgStatusAccentMuted: ColorSemanticToken { get }
 
-    var colorBackgroundStatusAccentMutedOnBgEmphasized: ColorSemanticToken { get }
+    var colorBgStatusAccentMutedOnBgEmphasized: ColorSemanticToken { get }
 
-    var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { get }
+    var colorBgStatusAccentEmphasized: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Content - Status
 

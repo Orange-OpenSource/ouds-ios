@@ -105,7 +105,7 @@ struct SpaceTokenPage: View {
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill(theme.colorBackgroundEmphasized.color(for: colorScheme))
+                    .fill(theme.colorBgEmphasized.color(for: colorScheme))
                     .frame(width: kIllustrationWidth, height: kIillustrationHeight, alignment: .center)
                 Rectangle()
                     .fill(theme.colorAlwaysInfo.color(for: colorScheme))
@@ -215,7 +215,7 @@ struct SpaceTokenPage: View {
                     .fill(theme.colorAlwaysInfo.color(for: colorScheme))
 
                 Rectangle()
-                    .fill(theme.colorBackgroundEmphasized.color(for: colorScheme))
+                    .fill(theme.colorBgEmphasized.color(for: colorScheme))
                     .modifier(PaddingModifier(padding: paddingType))
 
                 if let additionalAsset {
@@ -242,7 +242,7 @@ struct SpaceTokenPage: View {
         ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill(theme.colorBackgroundEmphasized.color(for: colorScheme))
+                    .fill(theme.colorBgEmphasized.color(for: colorScheme))
 
                 Rectangle()
                     .fill(theme.colorAlwaysInfo.color(for: colorScheme))

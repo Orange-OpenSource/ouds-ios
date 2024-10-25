@@ -27,6 +27,8 @@ No _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/
 
 ## Semantic tokens
 
+### What they are
+
 These _tokens_ ([OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/)) can be used mainly for _component tokens_ to apply some style and configuration values.
 They can be seen as an high level of usage with functional meanings.
 Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
@@ -43,9 +45,9 @@ Example with [OUDSTokensComponent/ColorSemanticTokens](https://ios.unified-desig
 // Declare the semantic tokens
 protocol ColorSemanticTokens {
 
-    var colorBackgroundPrimary: ColorSemanticToken { get }
-    var colorBackgroundSecondary: ColorSemanticToken { get }
-    var colorBackgroundTertiary: ColorSemanticToken { get }
+    var colorBgPrimary: ColorSemanticToken { get }
+    var colorBgSecondary: ColorSemanticToken { get }
+    var colorBgTertiary: ColorSemanticToken { get }
     // ...
 }
 
@@ -53,22 +55,40 @@ protocol ColorSemanticTokens {
 extension OUDSTheme: ColorSemanticTokens {
 
     // Color is available in the module of OUDSTheme
-    @objc open var colorBackgroundPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
 
     // If the semantic token refers to a raw token not stored in the OUDSTheme module, override later and throw error because unxpected state if used
-    @objc open var colorBackgroundSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundSecondary!") }
+    @objc open var colorBgSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgSecondary!") }
 
     // Possible to have tokens not defined in lwoer level must only in themes implementation, throw error if used because unexpected state
-    @objc open var colorBackgroundTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBackgroundTertiary!") }
+    @objc open var colorBgTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgTertiary!") }
 }
 
 // Add missing values
 extension OrangeTheme: ColorSemanticTokens {
 
     // Define value value with the accessible token 
-    @objc open var colorBackgroundSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
+    @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
 }
 ```
+
+### Important notice
+
+You may see the source code can be more simple, or the source code does not follow the Swift guidelines, or plenty of warnings of SwiftLint are disabled, or things are dirty.
+
+In fact, rely to much on *Figma* and how the design system is implemented.
+There are thousands of tokens, and we do now know if they will be used, how and by whom. In addition, the logic behind these tokens, their nature and names, is very tight to the web domain because the design team behind is more used to web environment than mobileones like Android and iOS. Some tokens like composite tokens are defined in *Figma* but *Figma* is not able to manage them, it is tinkering, and the outputed JSON cannot manage that too.
+In addition, *Figma* exposts the tokens in JSON, which is then parsed with our own fork and implementation of _style dictionary_ tool which struggles to outputs the JSON to web, Kotlin and Swift assets.
+
+That is the reason why:
+- some *SwiftLint* warnings on tokens are disabled: not possible to have doc of public tokens, too long names, too long lines, too long body, too long identifiers
+- some tokens do not have full names, e.g. "colorBackground" are named "colorBg"
+- somes tokens are defined without attached values, thus we throw `fatalError` because that state is not relevant
+- some tokens in the *Figma* use colors defined in another module, thus we throw `fatalError` to force themes to override with the good and avaialble values
+- we have thousands of tokens, as thousands of tokens are defined
+- we do not know if there is dead code because API are public
+
+Feel free to send issues and contact us for further details or if you spotted something interesting.
 
 ## Raw tokens
 

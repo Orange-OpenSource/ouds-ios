@@ -45,7 +45,7 @@ struct ElevationTokenPage: View {
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             Rectangle()
                 .frame(width: theme.sizeIconDecorativeTallest, height: theme.sizeIconDecorativeTallest)
-                .foregroundColor(theme.colorBackgroundSecondary.color(for: colorScheme))
+                .foregroundColor(theme.colorBgSecondary.color(for: colorScheme))
                 .shadow(elevation: token)
                 .padding(.bottom, 2)
         }

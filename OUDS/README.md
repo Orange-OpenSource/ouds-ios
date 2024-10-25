@@ -82,9 +82,9 @@ Example with `ColorSemanticTokens``:
 // Declare the semantic tokens
 protocol ColorSemanticTokens {
 
-    var colorBackgroundPrimary: ColorSemanticToken { get }
-    var colorBackgroundSecondary: ColorSemanticToken { get }
-    var colorBackgroundTertiary: ColorSemanticToken { get }
+    var colorBgPrimary: ColorSemanticToken { get }
+    var colorBgSecondary: ColorSemanticToken { get }
+    var colorBgTertiary: ColorSemanticToken { get }
     // ...
 }
 
@@ -92,20 +92,20 @@ protocol ColorSemanticTokens {
 extension OUDSTheme: ColorSemanticTokens {
 
     // Color is available in the module of OUDSTheme
-    @objc open var colorBackgroundPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
 
     // If the semantic token refers to a raw token not stored in the OUDSTheme module, override later and throw error because unxpected state if used
-    @objc open var colorBackgroundSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundSecondary!") }
+    @objc open var colorBgSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgSecondary!") }
 
     // Possible to have tokens not defined in lwoer level must only in themes implementation, throw error if used because unexpected state
-    @objc open var colorBackgroundTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBackgroundTertiary!") }
+    @objc open var colorBgTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgTertiary!") }
 }
 
 // Add missing values
 extension OrangeTheme: ColorSemanticTokens {
 
     // Define value value with the accessible token 
-    @objc open var colorBackgroundSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
+    @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
 }
 ```
 
@@ -211,7 +211,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in comp
     override public var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
     override public var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
 
-    override public var ftiBackgroundColor: ColorSemanticToken { colorBackgroundPrimary }
+    override public var ftiBackgroundColor: ColorSemanticToken { colorBgrimary }
 
     override public var ftiBorderColor: ColorSemanticToken { colorBorderEmphasized }
 
@@ -222,7 +222,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in comp
 
 extension OrangeCustomTheme { // For ColorSemanticTokens using anywhere
 
-    override var colorBackgroundPrimary: ColorSemanticToken { 
+    override var colorBgPrimary: ColorSemanticToken { 
         MultipleColorTokens(light: ColorRawTokens.ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.ColorRawTokens.colorFunctionalSun800)
     }
 }
