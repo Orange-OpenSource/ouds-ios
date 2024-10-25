@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Extract library composite semantic tokens from semantic tokens (`ElevationSemanticTokens`)
+- [Library] Improve documentation about the use of semantic tokens
 - [Library] Update `OpacitySemanticTokens` (tokenator *20241025101305*)
 - [Library] Rename `*Spacing*Tokens` and `*Sizing*Tokens` to `*Space*Tokens` and `*Size*Tokens` ([#237](https://github.com/Orange-OpenSource/ouds-ios/issues/237))
 - [Library] Update `ElevationRawTokens` (tokenator *20241022174330*)

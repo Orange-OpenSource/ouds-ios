@@ -23,71 +23,7 @@ flowchart TD
 
 ## Component tokens
 
-These _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) can be used to apply some style and configuration values to _components_.
-Thus if a component needs to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
-_Components_ use _component tokens_ exposed through the _theme_ to get their style values.
-
-Example with a fake component `FormsTextInputComponentTokens`:
-
-```swift
-// Declare the component tokens
-public protocol FormsTextInputComponentTokens {
-    var ftiTitleFontWeight: TypographyFontWeightSemanticToken { get }
-    var ftiTitleFontSize: TypographyFontSizeSemanticToken { get }
-    var ftiTitleColor: ColorSemanticToken { get }
-    
-    var ftiBorderColor: ColorSemanticToken { get }
-    var ftiBorderStyle: BorderStyleSemanticToken { get }
-    var ftiBorderWidth: BorderWidthSemanticToken { get }
-}
-
-// Define the component tokens
-extension OUDSTheme: FormsTextInputComponentTokens {
-    private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
-    private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
-
-    @objc open var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightHeading }
-    @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
-    @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultBlack }
-    
-    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedLight ?? Self.defaultBlack }
-    @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
-    @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
-}
-
-// Then in the definition of the component FormsTextInput component, the theme will be called and the component tokens
-// stored inside will be applied
-// The View
-
-struct OUDSFormsTextInput: View {
-
-    // ...
-    @Environment(\.theme) var theme
-    @Environment(\.colorScheme) var colorScheme
-
-    public var body: some View {
-        VStack(spacing: theme.spacePaddingBlockComponentTall) {
-            Label(
-                title: {
-                    Text("Example of OUDSFormsTextInput")
-                        .fontWeight(theme.ftiTitleFontWeight.fontWeight)
-                        .font(.system(size: theme.ftiTitleFontSize))
-                        .foregroundColor(theme.ftiTitleColor.color)
-                },
-                icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
-            )
-            Text("Write bellow some awesome text!")
-                .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
-                .font(.system(size: theme.ftiSubtitleFontSize))
-                .foregroundColor(theme.ftiSubtitleColor.color)
-            TextField(placeholder, text: $value)
-        }
-        .padding(theme.spacePaddingBlockComponentTall)
-        .background(theme.ftiBorderColor.color(for: colorScheme))
-        .border(theme.ftiBorderColor.color(for: colorScheme), width: theme.ftiBorderWidth)
-    }
-}
-```
+No _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) are defined for components yet.
 
 ## Semantic tokens
 
@@ -104,18 +40,34 @@ To keep the same semantics as the ones used in our specifications, _typealias_ a
 Example with [OUDSTokensComponent/ColorSemanticTokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens):
 
 ```swift
-// Declare a semantic token for color
+// Declare the semantic tokens
 protocol ColorSemanticTokens {
-    var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { get }
+
+    var colorBackgroundPrimary: ColorSemanticToken { get }
+    var colorBackgroundSecondary: ColorSemanticToken { get }
+    var colorBackgroundTertiary: ColorSemanticToken { get }
+    // ...
 }
 
-// Define the semantic token
+// Define the semantic tokens exposed through the theme
 extension OUDSTheme: ColorSemanticTokens {
 
-    @objc open var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalWhite }
+    // Color is available in the module of OUDSTheme
+    @objc open var colorBackgroundPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+
+    // If the semantic token refers to a raw token not stored in the OUDSTheme module, override later and throw error because unxpected state if used
+    @objc open var colorBackgroundSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundSecondary!") }
+
+    // Possible to have tokens not defined in lwoer level must only in themes implementation, throw error if used because unexpected state
+    @objc open var colorBackgroundTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBackgroundTertiary!") }
 }
 
-// Then any component and view can use the theme and get the stored colors, only manipulating them by their variable names.
+// Add missing values
+extension OrangeTheme: ColorSemanticTokens {
+
+    // Define value value with the accessible token 
+    @objc open var colorBackgroundSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
+}
 ```
 
 ## Raw tokens
@@ -143,7 +95,6 @@ public enum ColorRawTokens { }
 extension ColorRawTokens { // Gathers all color raw tokens, use enums for namespace optimization with static let
 
     public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
-    public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E"
     public static let colorTransparentBlack0: ColorRawToken = apply(opacity: OpacityRawTokens.opacity0, on: colorFunctionalBlack)
     ...
 }
@@ -152,6 +103,11 @@ extension String { // The OUDS library still exposes this comptuer property
     public var color: Color {
         Color(hexadecimalCode: self)
     }
+}
+
+// Themes can embed their own tokens
+enum OrangeBrandColorRawTokens {
+    public static let colorOrange200: ColorOrangeBrandRawToken = "#FFC18A"
 }
 ```
 

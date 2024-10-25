@@ -24,8 +24,6 @@ extension MockTheme {
     static let mockThemeElevationBlurRawToken: ElevationRawToken = 816
     static let mockThemeElevationColorRawToken: ColorRawToken = ColorRawTokens.colorFunctionalMalachite500
     static let mockThemeElevationMultipleColorSemanticToken = ElevationColorSemanticToken(mockThemeElevationColorRawToken)
-    static let mockThemeElevationCompositeRawToken = ElevationCompositeRawToken(x: 118, y: 712, blur: 118, color: ColorRawTokens.colorFunctionalDodgerBlue800)
-    static let mockThemeElevationCompositeSemanticToken = ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_1_600)
 
     // MARK: Semantic token - Elevation - X
 
@@ -91,21 +89,5 @@ extension MockTheme {
     // MARK: Semantic token - Elevation - Color - Sticky - Navigation scrolled
 
     override open var elevationColorStickyNavigationScrolled: ElevationColorSemanticToken { Self.mockThemeElevationMultipleColorSemanticToken }
-
-    // MARK: Semantic token - Elevation - Box shadow
-
-    override open var elevationRaised: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
-
-    override open var elevationDrag: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
-
-    override open var elevationOverlayDefault: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
-
-    override open var elevationOverlayEmphasized: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
-
-    override open var elevationStickyDefault: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
-
-    override open var elevationStickyEmphasized: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
-
-    override open var elevationStickyNavigationScrolled: ElevationCompositeSemanticToken { Self.mockThemeElevationCompositeSemanticToken }
 }
 // swiftlint:enable identifier_name
