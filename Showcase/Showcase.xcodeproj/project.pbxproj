@@ -52,6 +52,10 @@
 		077CCE582CB426090059CC28 /* SpaceTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE522CB426090059CC28 /* SpaceTokenPage.swift */; };
 		077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
 		077CCE5C2CB431C50059CC28 /* ShowcaseVariantElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */; };
+		0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */; };
+		0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */; };
+		0784B2762CCBD9C300299C10 /* NamedTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2752CCBD9C300299C10 /* NamedTypography.swift */; };
+		0784B2782CCBDD8900299C10 /* NamedTypography+Illustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2772CCBDD8900299C10 /* NamedTypography+Illustration.swift */; };
 		07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		07CF42722CA31AC3000BD03E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF42712CA31AC3000BD03E /* Assets.xcassets */; };
 		07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
@@ -141,6 +145,10 @@
 		077CCE522CB426090059CC28 /* SpaceTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceTokenPage.swift; sourceTree = "<group>"; };
 		077CCE542CB426090059CC28 /* DimensionTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTokenElement.swift; sourceTree = "<group>"; };
 		077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseVariantElement.swift; sourceTree = "<group>"; };
+		0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconWithTypography.swift"; sourceTree = "<group>"; };
+		0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconDecorative.swift"; sourceTree = "<group>"; };
+		0784B2752CCBD9C300299C10 /* NamedTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedTypography.swift; sourceTree = "<group>"; };
+		0784B2772CCBDD8900299C10 /* NamedTypography+Illustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedTypography+Illustration.swift"; sourceTree = "<group>"; };
 		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07CF426A2CA30728000BD03E /* TokensPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensPage.swift; sourceTree = "<group>"; };
 		07CF42712CA31AC3000BD03E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -249,6 +257,7 @@
 		073543192CA17388001187EA /* Typography */ = {
 			isa = PBXGroup;
 			children = (
+				0784B2742CCBD9A900299C10 /* NamedTypography */,
 				073543172CA172CA001187EA /* TypographyTokenElement.swift */,
 				0735431A2CA18C48001187EA /* TypographyTokenPage.swift */,
 			);
@@ -285,6 +294,7 @@
 		075114DA2CB7D28D00B8B759 /* Size */ = {
 			isa = PBXGroup;
 			children = (
+				0784B2702CCB86C500299C10 /* NamedSize */,
 				075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */,
 				075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */,
 			);
@@ -345,6 +355,24 @@
 				077CCE542CB426090059CC28 /* DimensionTokenElement.swift */,
 			);
 			path = Dimension;
+			sourceTree = "<group>";
+		};
+		0784B2702CCB86C500299C10 /* NamedSize */ = {
+			isa = PBXGroup;
+			children = (
+				0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */,
+				0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */,
+			);
+			path = NamedSize;
+			sourceTree = "<group>";
+		};
+		0784B2742CCBD9A900299C10 /* NamedTypography */ = {
+			isa = PBXGroup;
+			children = (
+				0784B2772CCBDD8900299C10 /* NamedTypography+Illustration.swift */,
+				0784B2752CCBD9C300299C10 /* NamedTypography.swift */,
+			);
+			path = NamedTypography;
 			sourceTree = "<group>";
 		};
 		07CF42752CA3F461000BD03E /* Elevation */ = {
@@ -793,6 +821,7 @@
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
 				0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */,
 				0765B4A22CC15C0500E69359 /* NamedColor+OnContent.swift in Sources */,
+				0784B2782CCBDD8900299C10 /* NamedTypography+Illustration.swift in Sources */,
 				077CCE572CB426090059CC28 /* SpaceTokenElement.swift in Sources */,
 				0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */,
 				07F75A412CC653EB0004F1AD /* NameSpace+GapStack.swift in Sources */,
@@ -805,9 +834,12 @@
 				0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */,
 				073543112CA154DE001187EA /* Card.swift in Sources */,
 				51BD76212C466FCF0033365D /* AboutPage.swift in Sources */,
+				0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */,
 				51BD762A2C466FCF0033365D /* Showcase.swift in Sources */,
 				0765B49E2CC15B7E00E69359 /* NamedColor+Decorative.swift in Sources */,
 				07F75A432CC654050004F1AD /* NameSpace+PaddingStack.swift in Sources */,
+				0784B2762CCBD9C300299C10 /* NamedTypography.swift in Sources */,
+				0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1156,8 +1188,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.17.5;
+				kind = exactVersion;
+				version = 1.17.6;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

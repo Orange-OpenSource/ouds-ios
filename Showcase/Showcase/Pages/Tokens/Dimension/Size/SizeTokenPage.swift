@@ -19,26 +19,33 @@ struct SizeTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedSizing.allCases, id: \.rawValue) { sizingName in
-                illustration(for: sizingName)
+        Group {
+            Section { illustrationForIconDecorative() } header: {
+                header("app_tokens_dimension_size_iconDecorative_label")
+            }
+            Section { illustrationIconWithLabel() } header: {
+                header("app_tokens_dimension_size_iconWithLabel_label")
             }
         }
-        .frame(maxWidth: .infinity)
         .padding(.horizontal, theme.spaceFixedMedium)
     }
 
-    // MARK: Private helpers
+    // MARK: Illustration icon decorative
 
-    private func illustration(for namedSizing: NamedSizing) -> some View {
-        let token = namedSizing.token(from: theme)
-        let name = namedSizing.rawValue
+    private func illustrationForIconDecorative() -> some View {
+        ForEach(NamedSize.IconDecorative.allCases, id: \.rawValue) { namedSize in
+            illustrationIconDecorative(for: namedSize)
+        }
+    }
+
+    private func illustrationIconDecorative(for namedSize: NamedSize.IconDecorative) -> some View {
+        let token = namedSize.token(from: theme)
+        let name = namedSize.rawValue
         let value = String(format: "(%.0f) pt", token)
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
@@ -50,41 +57,52 @@ struct SizeTokenPage: View {
                 Image("ic_token")
                     .resizable()
                     .renderingMode(.template)
-                    .foregroundColor(.blue)
+                    .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
                     .frame(width: token, height: token, alignment: .center)
                     .accessibilityHidden(true)
             }
         }
     }
-}
 
-// MARK: - Named Spacing
+    // MARK: Illustration icon with label
 
-private enum NamedSizing: String, CaseIterable {
-    case sizeIconDecorativeShortest
-    case sizeIconDecorativeShorter
-    case sizeIconDecorativeShort
-    case sizeIconDecorativeMedium
-    case sizeIconDecorativeTall
-    case sizeIconDecorativeTaller
-    case sizeIconDecorativeTallest
-
-    func token(from theme: OUDSTheme) -> SizeSemanticToken {
-        switch self {
-        case .sizeIconDecorativeShortest:
-            return theme.sizeIconDecorativeShortest
-        case .sizeIconDecorativeShorter:
-            return theme.sizeIconDecorativeShorter
-        case .sizeIconDecorativeShort:
-            return theme.sizeIconDecorativeShort
-        case .sizeIconDecorativeMedium:
-            return theme.sizeIconDecorativeMedium
-        case .sizeIconDecorativeTall:
-            return theme.sizeIconDecorativeTall
-        case .sizeIconDecorativeTaller:
-            return theme.sizeIconDecorativeTaller
-        case .sizeIconDecorativeTallest:
-            return theme.sizeIconDecorativeTallest
+    private func illustrationIconWithLabel() -> some View {
+        ForEach(NamedSize.IconWithTypography.allCases, id: \.rawValue) { namedIconSize in
+            illustrationIconWithLabel(for: namedIconSize)
         }
     }
+
+    @ViewBuilder
+    private func illustrationIconWithLabel(for namedSize: NamedSize.IconWithTypography) -> some View {
+        let token = namedSize.token(fot: theme, userInterfaceSizeClass: horizontalSizeClass ?? .regular)
+        let namedTypography = namedSize.namedTypography
+        let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)
+
+        HStack {
+            Image("ic_token")
+                .resizable()
+                .renderingMode(.template)
+                .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+                .frame(width: token, height: token, alignment: .center)
+                .accessibilityHidden(true)
+
+            VStack(alignment: .leading) {
+                illustration(for: namedTypography, in: theme)
+                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                Text(value)
+                    .typeBodyDefaultMedium(theme)
+                    .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
+            }
+        }
+    }
+
+    // MARK: Common helpers
+
+    private func header(_ text: LocalizedStringKey) -> some View {
+        Text(text).showcaseSectionHeaderStyle()
+    }
 }
+
+// MARK: - Named Size
+
+enum NamedSize { }

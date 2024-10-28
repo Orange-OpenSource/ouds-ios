@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import SwiftUICore
 
 /// Kind of semantic tokens which will wrap a combination of `SizeSemanticToken` depending to viewports / size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
@@ -50,5 +51,12 @@ public final class MultipleSizeTokens: NSObject, Sendable {
             return false
         }
         return self.compact == other.compact && self.regular == other.regular
+    }
+
+    /// Returns the right dimension according to the `userInterfaceSizeClass`.
+    /// - Parameter userInterfaceSizeClass: The user interface size class (could be the horizontal or the vertical size class)
+    /// - Returns: The right size semantic token (pointing to the dimension raw token to use)
+    public func dimension(for userInterfaceSizeClass: UserInterfaceSizeClass) -> SizeSemanticToken {
+        userInterfaceSizeClass == .compact ? compact : regular
     }
 }
