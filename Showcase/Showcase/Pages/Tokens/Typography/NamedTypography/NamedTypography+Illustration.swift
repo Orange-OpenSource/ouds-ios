@@ -15,8 +15,9 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Token Illustration (used in Typography screen and SizeIconWithLabel)
+// MARK: - Token Illustration
 
+// Used in Typography screen and SizeIconWithLabel
 extension View {
 
     @ViewBuilder
@@ -73,7 +74,9 @@ extension View {
 }
 
 extension String {
-    var camelCase: String {
+    // swiftlint:disable strict_fileprivate
+    fileprivate var camelCase: String {
         self.prefix(1).capitalized + self.dropFirst()
     }
+    // swiftlint:enable strict_fileprivate
 }

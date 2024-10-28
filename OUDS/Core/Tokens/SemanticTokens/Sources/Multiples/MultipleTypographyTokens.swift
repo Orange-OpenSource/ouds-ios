@@ -51,11 +51,10 @@ public final class MultipleTypographyTokens: NSObject, Sendable {
         return self.compact == object.compact && self.regular == object.regular
     }
 
-    /// Returns a kind of semantic tokens which will wrap a combination of `TypographyCompositeRawToken` according to the `userInterfaceSizeClass`.
+    /// Returns the composite raw token of typography to use according to the `userInterfaceSizeClass` (i.e. `compact` or `regular`)
     /// - Parameter userInterfaceSizeClass: The user interface size class
-    /// - Returns: A kind of semantic tokens which will wrap a combination of `TypographyCompositeRawToken`
+    /// - Returns: The composite raw token to use (of type `TypographyCompositeRawToken`)
     public func typographyToken(for userInterfaceSizeClass: UserInterfaceSizeClass) -> TypographyCompositeRawToken {
         userInterfaceSizeClass == .compact ? compact : regular
     }
-
 }

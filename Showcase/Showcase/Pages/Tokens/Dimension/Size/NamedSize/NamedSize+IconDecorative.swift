@@ -23,7 +23,7 @@ extension NamedSize {
         case sizeIconDecorativeTall
         case sizeIconDecorativeTaller
         case sizeIconDecorativeTallest
-        
+
         func token(from theme: OUDSTheme) -> SizeSemanticToken {
             switch self {
             case .sizeIconDecorativeShortest:

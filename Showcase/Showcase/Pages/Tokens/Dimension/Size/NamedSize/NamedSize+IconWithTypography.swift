@@ -54,47 +54,80 @@ extension NamedSize {
         case sizeIconWithLabelSmallSizeMedium
         case sizeIconWithLabelSmallSizeTall
 
-        // swiftlint:disable switch_case_on_newline
         var namedTypography: NamedTypography {
             switch self {
-            case .sizeIconWithHeadingXLargeShort: return .headingXLarge
-            case .sizeIconWithHeadingXLargeMedium: return .headingXLarge
-            case .sizeIconWithHeadingXLargeTall: return .headingXLarge
-            case .sizeIconWithHeadingLargeShort: return .headingLarge
-            case .sizeIconWithHeadingLargeMedium: return .headingLarge
-            case .sizeIconWithHeadingLargeTall: return .headingLarge
-            case .sizeIconWithHeadingMediumShort: return .headingMedium
-            case .sizeIconWithHeadingMediumMedium: return .headingMedium
-            case .sizeIconWithHeadingMediumTall: return .headingMedium
-            case .sizeIconWithHeadingSmallShort: return .headingSmall
-            case .sizeIconWithHeadingSmallMedium: return .headingSmall
-            case .sizeIconWithHeadingSmallTall: return .headingSmall
-            case .sizeIconWithBodyLargeShort: return .bodyDefaultLarge
-            case .sizeIconWithBodyLargeMedium: return .bodyDefaultLarge
-            case .sizeIconWithBodyLargeTall: return .bodyDefaultLarge
-            case .sizeIconWithBodyMediumShort: return .bodyDefaultMedium
-            case .sizeIconWithBodyMediumMedium: return .bodyDefaultMedium
-            case .sizeIconWithBodyMediumTall: return .bodyDefaultMedium
-            case .sizeIconWithBodySmallShort: return .bodyDefaultSmall
-            case .sizeIconWithBodySmallMedium: return .bodyDefaultSmall
-            case .sizeIconWithBodySmallTall: return .bodyDefaultSmall
-            case .sizeIconWithLabelXLargeSizeShort: return .labelDefaultXLarge
-            case .sizeIconWithLabelXLargeSizeMedium: return .labelDefaultXLarge
-            case .sizeIconWithLabelXLargeSizeTall: return .labelDefaultXLarge
-            case .sizeIconWithLabelLargeSizeShorter: return .labelDefaultXLarge
-            case .sizeIconWithLabelLargeSizeShort: return .labelDefaultLarge
-            case .sizeIconWithLabelLargeSizeMedium: return .labelDefaultLarge
-            case .sizeIconWithLabelLargeSizeTall: return .labelDefaultLarge
-            case .sizeIconWithLabelLargeSizeTaller: return .labelDefaultLarge
-            case .sizeIconWithLabelMediumSizeShort: return .labelDefaultMedium
-            case .sizeIconWithLabelMediumSizeMedium: return .labelDefaultMedium
-            case .sizeIconWithLabelMediumSizeTall: return .labelDefaultMedium
-            case .sizeIconWithLabelSmallSizeShort: return .labelDefaultSmall
-            case .sizeIconWithLabelSmallSizeMedium: return .labelDefaultSmall
-            case .sizeIconWithLabelSmallSizeTall: return .labelDefaultSmall
+            case .sizeIconWithHeadingXLargeShort:
+                return .headingXLarge
+            case .sizeIconWithHeadingXLargeMedium:
+                return .headingXLarge
+            case .sizeIconWithHeadingXLargeTall:
+                return .headingXLarge
+            case .sizeIconWithHeadingLargeShort:
+                return .headingLarge
+            case .sizeIconWithHeadingLargeMedium:
+                return .headingLarge
+            case .sizeIconWithHeadingLargeTall:
+                return .headingLarge
+            case .sizeIconWithHeadingMediumShort:
+                return .headingMedium
+            case .sizeIconWithHeadingMediumMedium:
+                return .headingMedium
+            case .sizeIconWithHeadingMediumTall:
+                return .headingMedium
+            case .sizeIconWithHeadingSmallShort:
+                return .headingSmall
+            case .sizeIconWithHeadingSmallMedium:
+                return .headingSmall
+            case .sizeIconWithHeadingSmallTall:
+                return .headingSmall
+            case .sizeIconWithBodyLargeShort:
+                return .bodyDefaultLarge
+            case .sizeIconWithBodyLargeMedium:
+                return .bodyDefaultLarge
+            case .sizeIconWithBodyLargeTall:
+                return .bodyDefaultLarge
+            case .sizeIconWithBodyMediumShort:
+                return .bodyDefaultMedium
+            case .sizeIconWithBodyMediumMedium:
+                return .bodyDefaultMedium
+            case .sizeIconWithBodyMediumTall:
+                return .bodyDefaultMedium
+            case .sizeIconWithBodySmallShort:
+                return .bodyDefaultSmall
+            case .sizeIconWithBodySmallMedium:
+                return .bodyDefaultSmall
+            case .sizeIconWithBodySmallTall:
+                return .bodyDefaultSmall
+            case .sizeIconWithLabelXLargeSizeShort:
+                return .labelDefaultXLarge
+            case .sizeIconWithLabelXLargeSizeMedium:
+                return .labelDefaultXLarge
+            case .sizeIconWithLabelXLargeSizeTall:
+                return .labelDefaultXLarge
+            case .sizeIconWithLabelLargeSizeShorter:
+                return .labelDefaultXLarge
+            case .sizeIconWithLabelLargeSizeShort:
+                return .labelDefaultLarge
+            case .sizeIconWithLabelLargeSizeMedium:
+                return .labelDefaultLarge
+            case .sizeIconWithLabelLargeSizeTall:
+                return .labelDefaultLarge
+            case .sizeIconWithLabelLargeSizeTaller:
+                return .labelDefaultLarge
+            case .sizeIconWithLabelMediumSizeShort:
+                return .labelDefaultMedium
+            case .sizeIconWithLabelMediumSizeMedium:
+                return .labelDefaultMedium
+            case .sizeIconWithLabelMediumSizeTall:
+                return .labelDefaultMedium
+            case .sizeIconWithLabelSmallSizeShort:
+                return .labelDefaultSmall
+            case .sizeIconWithLabelSmallSizeMedium:
+                return .labelDefaultSmall
+            case .sizeIconWithLabelSmallSizeTall:
+                return .labelDefaultSmall
             }
         }
-        // swiftlint:enable switch_case_on_newline
 
         // swiftlint:disable function_body_length
         func token(fot theme: OUDSTheme, userInterfaceSizeClass: UserInterfaceSizeClass) -> SizeSemanticToken {
@@ -171,6 +204,6 @@ extension NamedSize {
                 return theme.sizeIconWithLabelSmallSizeTall
             }
         }
-        // swiftlint:enable function_body_lengt
+        // swiftlint:enable function_body_length
     }
 }
