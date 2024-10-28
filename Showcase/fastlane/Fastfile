@@ -100,10 +100,17 @@ platform :ios do
                 device: device,
                 skip_build: true)
 
-            publish_mattermost_notification("🧪 ✅ No issue with tests")
-
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                publish_mattermost_notification("🧪 ✅ No issue with tests")
+            else
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow"
+            end
         rescue => error
-            publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test)")
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test)")
+            else
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow"
+            end
             raise error
         end
     end
@@ -125,10 +132,17 @@ platform :ios do
                 skip_build: true
             )
 
-            publish_mattermost_notification("🧪 ✅ No issue with UI tests")
-
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                publish_mattermost_notification("🧪 ✅ No issue with UI tests")
+            else
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow"
+            end
         rescue => error
-            publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_ui)")
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_ui)")
+            else
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow"
+            end
             raise error
         end
     end
