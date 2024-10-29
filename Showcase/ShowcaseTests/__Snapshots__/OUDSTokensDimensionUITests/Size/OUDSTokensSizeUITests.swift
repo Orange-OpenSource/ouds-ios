@@ -22,25 +22,23 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the TokensDimension are tested for UI compatibility with the reference image recorded
+/// To ensure the TokensSize are tested for UI compatibility with the reference image recorded
 
-final class OUDSTokensDimensionUITests: XCTestCase {
+final class OUDSTokensSizeUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Dimension Tests
 
     /// This function tests all dimensions tokens in the `OrangeTheme` with the `light` color scheme.
-    /// It iterates through all `NamedSizing`,`NamedSpacing` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the dimension, theme, and color scheme.
-    @MainActor func testAllDimensionsOrangeThemeLight() {
+    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
+    @MainActor func testAllSizesOrangeThemeLight() {
         /// Create an instance of the page with a forced OrangeTheme and light color scheme
-        let sizingPage = SizingTokenPage(forceTo: OrangeTheme(), colorScheme: .light)
-        /// Create an instance of the page with a forced OrangeTheme and light color scheme
-        let spacingPage = SpacingTokenPage(forceTo: OrangeTheme(), colorScheme: .light)
+        let sizePage = SizeTokenPage(forceTo: OrangeTheme(), colorScheme: .light)
 
-        /// Section Sizing
-        for sizing in NamedSizing.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
-            let illustration = sizingPage.illustration(for: sizing)
+        /// IconDecorative
+        for sizing in NamedSize.IconDecorative.allCases {
+            /// Use the `illustrationIconDecorative(for:)` method to test a single illustration
+            let illustration = sizePage.illustrationIconDecorative(for: sizing)
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -50,16 +48,16 @@ final class OUDSTokensDimensionUITests: XCTestCase {
             assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.light)), named: snapshotName)
         }
 
-        /// Section Spacing
-        for spacing in NamedSpacing.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
-            let illustration = spacingPage.illustration(for: spacing)
+        /// IconWithLabel
+        for sizing in NamedSize.IconWithTypography.allCases {
+            /// Use the `illustrationIconDecorative(for:)` method to test a single illustration
+            let illustration = sizePage.illustrationIconWithLabel(for: sizing)
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
             /// Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(spacing.rawValue)"
+            let snapshotName = "\(sizing.rawValue)"
             assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.light)), named: snapshotName)
         }
     }
@@ -67,18 +65,16 @@ final class OUDSTokensDimensionUITests: XCTestCase {
     // MARK: - Orange Theme Dark Mode Border Tests
 
     /// This function tests all dimensions tokens in the `OrangeTheme` with the `dark` color scheme.
-    /// It iterates through all `NamedSizing`,`NamedSpacing` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the dimension, theme, and color scheme.
-    @MainActor func testAllDimensionsOrangeThemeDark() {
+    /// It iterates through all `NamedSize`cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
+    @MainActor func testAllSizesOrangeThemeDark() {
         /// Create an instance of the page with a forced OrangeTheme and light color scheme
-        let sizingPage = SizingTokenPage(forceTo: OrangeTheme(), colorScheme: .dark)
-        /// Create an instance of the page with a forced OrangeTheme and light color scheme
-        let spacingPage = SpacingTokenPage(forceTo: OrangeTheme(), colorScheme: .dark)
+        let sizePage = SizeTokenPage(forceTo: OrangeTheme(), colorScheme: .dark)
 
-        /// Section Sizing
-        for sizing in NamedSizing.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
-            let illustration = sizingPage.illustration(for: sizing)
+        /// IconDecorative
+        for sizing in NamedSize.IconDecorative.allCases {
+            /// Use the `illustrationIconDecorative(for:)` method to test a single illustration
+            let illustration = sizePage.illustrationIconDecorative(for: sizing)
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -88,16 +84,16 @@ final class OUDSTokensDimensionUITests: XCTestCase {
             assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
         }
 
-        /// Section Spacing
-        for spacing in NamedSpacing.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
-            let illustration = spacingPage.illustration(for: spacing).background(OrangeTheme().colorBackgroundPrimary.color(for: .dark))
+        /// IconWithLabel
+        for sizing in NamedSize.IconWithTypography.allCases {
+            /// Use the `illustrationIconDecorative(for:)` method to test a single illustration
+            let illustration = sizePage.illustrationIconWithLabel(for: sizing)
 
-            /// Encapsuler l'élément dans un UIHostingController pour le test de capture d'écran
+            /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
             /// Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(spacing.rawValue)"
+            let snapshotName = "\(sizing.rawValue)"
             assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
         }
     }
@@ -105,39 +101,36 @@ final class OUDSTokensDimensionUITests: XCTestCase {
     // MARK: - Inverse Theme Light Mode Border Tests
 
     /// This function tests all dimensions tokens in the `InverseTheme` with the `light` color scheme.
-    /// It iterates through all `NamedSizing`,`NamedSpacing` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the dimension, theme, and color scheme.
-    @MainActor func testAllDimensionsInverseThemeLight() {
+    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
+    @MainActor func testAllSizesInverseThemeLight() {
         /// Create an instance of the page with a forced InverseTheme and light color scheme
-        let sizingPage = SizingTokenPage(forceTo: InverseTheme(), colorScheme: .light)
-        /// Create an instance of the page with a forced InverseTheme and light color scheme
-        let spacingPage = SpacingTokenPage(forceTo: InverseTheme(), colorScheme: .light)
+        let sizePage = SizeTokenPage(forceTo: InverseTheme(), colorScheme: .light)
 
-        /// Section Sizing
-        for sizing in NamedSizing.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
-            let illustration = sizingPage.illustration(for: sizing)
+        /// IconDecorative
+        for sizing in NamedSize.IconDecorative.allCases {
+            /// Use the `illustrationIconDecorative(for:)` method to test a single illustration
+            let illustration = sizePage.illustrationIconDecorative(for: sizing)
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
-            isRecording = true
+
             /// Capture the snapshot of the illustration with the correct theme and color scheme
             let snapshotName = "\(sizing.rawValue)"
             assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.light)), named: snapshotName)
         }
 
-        /// Section Spacing
-        for spacing in NamedSpacing.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
-            // let illustration = spacingPage.illustration(for: spacing)
-            let illustration = spacingPage.illustration(for: spacing)
+        /// IconWithLabel
+        for sizing in NamedSize.IconWithTypography.allCases {
+            /// Use the `illustrationIconDecorative(for:)` method to test a single illustration
+            let illustration = sizePage.illustrationIconWithLabel(for: sizing)
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
-            isRecording = true
+
             /// Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(spacing.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(), named: snapshotName)
+            let snapshotName = "\(sizing.rawValue)"
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.light)), named: snapshotName)
         }
     }
 
@@ -145,18 +138,15 @@ final class OUDSTokensDimensionUITests: XCTestCase {
 
     /// This function tests all dimensions tokens in the `InverseTheme` with the `dark` color scheme.
     /// It iterates through all `NamedSizing`,`NamedSpacing` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the dimension, theme, and color scheme.
+    /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
     @MainActor func testAllDimensionsInverseThemeDark() {
         /// Create an instance of the page with a forced InverseTheme and light color scheme
-        let sizingPage = SizingTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
-        /// Create an instance of the page with a forced InverseTheme and light color scheme
-        let spacingPage = SpacingTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
+        let sizePage = SizeTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
 
-        /// Section Sizing
-        for sizing in NamedSizing.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            // let illustration = sizingPage.illustration(for: sizing)
-            let illustration = sizingPage.illustration(for: sizing).background(InverseTheme().colorBackgroundPrimary.color(for: .dark))
+        /// IconDecorative
+        for sizing in NamedSize.IconDecorative.allCases {
+            /// Use the `illustrationIconDecorative(for:)` method to test a single illustration
+            let illustration = sizePage.illustrationIconDecorative(for: sizing)
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -166,16 +156,16 @@ final class OUDSTokensDimensionUITests: XCTestCase {
             assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
         }
 
-        /// Section Spacing
-        for spacing in NamedSpacing.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
-            let illustration = spacingPage.illustration(for: spacing)
+        /// IconWithLabel
+        for sizing in NamedSize.IconWithTypography.allCases {
+            /// Use the `illustrationIconDecorative(for:)` method to test a single illustration
+            let illustration = sizePage.illustrationIconWithLabel(for: sizing)
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
             /// Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(spacing.rawValue)"
+            let snapshotName = "\(sizing.rawValue)"
             assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
         }
     }
