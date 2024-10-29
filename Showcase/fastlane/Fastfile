@@ -101,15 +101,15 @@ platform :ios do
                 skip_build: true)
 
             if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
-                publish_mattermost_notification("🧪 ✅ No issue with tests")
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
             else
-                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow"
+                publish_mattermost_notification("🧪 ✅ No issue with tests")
             end
         rescue => error
             if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
-                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test)")
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
             else
-                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow"
+                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test)")
             end
             raise error
         end
@@ -133,15 +133,15 @@ platform :ios do
             )
 
             if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
-                publish_mattermost_notification("🧪 ✅ No issue with UI tests")
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
             else
-                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow"
+                publish_mattermost_notification("🧪 ✅ No issue with UI tests")
             end
         rescue => error
             if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
-                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_ui)")
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
             else
-                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow"
+                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_ui)")
             end
             raise error
         end
