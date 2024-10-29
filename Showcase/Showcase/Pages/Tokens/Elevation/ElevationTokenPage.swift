@@ -23,29 +23,46 @@ struct ElevationTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    private let forcedTheme: OUDSTheme?
+    private let forcedColorScheme: ColorScheme?
+
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+        self.forcedTheme = theme
+        self.forcedColorScheme = colorScheme
+    }
+
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 illustration(for: elevationName)
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, activeTheme.spaceFixedMedium)
     }
 
     // MARK: Helpers
 
-    private func illustration(for namedElevation: NamedElevation) -> some View {
-        let token = namedElevation.token(from: theme).elevation(for: colorScheme)
+    public func illustration(for namedElevation: NamedElevation) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
+        let token = namedElevation.token(from: activeTheme).elevation(for: activeColorScheme)
         let name = namedElevation.rawValue
         let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             Rectangle()
-                .frame(width: theme.sizeIconDecorativeTallest, height: theme.sizeIconDecorativeTallest)
-                .foregroundColor(theme.colorBgSecondary.color(for: colorScheme))
+                .frame(width: activeTheme.sizeIconDecorativeTallest, height: activeTheme.sizeIconDecorativeTallest)
+                .foregroundColor(theme.colorBgSecondary.color(for: activeColorScheme))
                 .shadow(elevation: token)
                 .padding(.bottom, 2)
         }
@@ -54,7 +71,7 @@ struct ElevationTokenPage: View {
 
 // MARK: - Named Elevation
 
-private enum NamedElevation: String, CaseIterable {
+public enum NamedElevation: String, CaseIterable {
     case elevationNone
     case elevationRaised
     case elevationStickyNavigationScrolled
