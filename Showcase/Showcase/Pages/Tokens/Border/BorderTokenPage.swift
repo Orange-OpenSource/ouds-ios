@@ -21,12 +21,26 @@ struct BorderTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    private let forcedTheme: OUDSTheme?
+    private let forcedColorScheme: ColorScheme?
+
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+        self.forcedTheme = theme
+        self.forcedColorScheme = colorScheme
+    }
+
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedMedium) {
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
                     ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
                         illustration(for: namedWidth)
                     }
@@ -34,12 +48,12 @@ struct BorderTokenPage: View {
                 }
             } header: {
                 Text("app_tokens_border_width_label")
-                    .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .typeHeadingLarge(activeTheme)
+                    .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
                     ForEach(NamedBorderRadius.allCases, id: \.rawValue) { namedRadius in
                         illustration(for: namedRadius)
                     }
@@ -47,12 +61,12 @@ struct BorderTokenPage: View {
                 }
             } header: {
                 Text("app_tokens_border_radius_label")
-                    .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .typeHeadingLarge(activeTheme)
+                    .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
                     ForEach(NamedBorderStyle.allCases, id: \.rawValue) { namedStyle in
                         illustration(for: namedStyle)
                     }
@@ -60,65 +74,80 @@ struct BorderTokenPage: View {
                 }
             } header: {
                 Text("app_tokens_border_style_label")
-                    .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .typeHeadingLarge(activeTheme)
+                    .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, activeTheme.spaceFixedMedium)
     }
 
     // MARK: Private helpers
 
     private var rectangle: some View {
         Rectangle()
-            .fill(theme.colorBgSecondary.color(for: colorScheme))
+            .fill(forcedTheme?.colorBgSecondary.color(for: forcedColorScheme ?? colorScheme) ?? theme.colorBgSecondary.color(for: colorScheme))
             .frame(width: 64, height: 64)
     }
 
-    private func illustration(for namedWidth: NamedBorderWidth) -> some View {
-        let token = namedWidth.token(from: theme)
+    public func illustration(for namedWidth: NamedBorderWidth) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
+        let token = namedWidth.token(from: activeTheme)
         let name = namedWidth.rawValue
         let value = String(format: "(%.0f) pt", token)
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             rectangle
-                .oudsBorder(style: theme.borderStyleDefault,
+                .oudsBorder(style: activeTheme.borderStyleDefault,
                             width: token,
-                            radius: theme.borderRadiusNone,
-                            color: theme.colorBorderDefault)
+                            radius: activeTheme.borderRadiusNone,
+                            color: activeTheme.colorBorderDefault)
         }
     }
 
-    private func illustration(for namedRadius: NamedBorderRadius) -> some View {
-        let token = namedRadius.token(from: theme)
+    public func illustration(for namedRadius: NamedBorderRadius) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
+        let token = namedRadius.token(from: activeTheme)
         let name = namedRadius.rawValue
         let value = String(format: "(%.0f) pt", token)
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             rectangle
-                .oudsBorder(style: theme.borderStyleDefault,
-                            width: theme.borderWidthDefault,
+                .oudsBorder(style: activeTheme.borderStyleDefault,
+                            width: activeTheme.borderWidthDefault,
                             radius: token,
-                            color: theme.colorBorderDefault)
+                            color: activeTheme.colorBorderDefault)
         }
     }
 
-    private func illustration(for namedStyle: NamedBorderStyle) -> some View {
-        let token = namedStyle.token(from: theme)
+    public func illustration(for namedStyle: NamedBorderStyle) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
+        let token = namedStyle.token(from: activeTheme)
         let name = namedStyle.rawValue
         let value = token
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             rectangle
                 .oudsBorder(style: token,
-                            width: theme.borderWidthDefault,
-                            radius: theme.borderRadiusNone,
-                            color: theme.colorBorderDefault)
+                            width: activeTheme.borderWidthDefault,
+                            radius: activeTheme.borderRadiusNone,
+                            color: activeTheme.colorBorderDefault)
         }
     }
 }
 
-private enum NamedBorderRadius: String, CaseIterable {
+public enum NamedBorderRadius: String, CaseIterable {
     case borderRadiusNone
     case borderRadiusDefault
     case borderRadiusShort
@@ -141,7 +170,7 @@ private enum NamedBorderRadius: String, CaseIterable {
     }
 }
 
-private enum NamedBorderWidth: String, CaseIterable {
+public enum NamedBorderWidth: String, CaseIterable {
 
     case borderWidthNone
     case borderWidthDefault
@@ -174,7 +203,7 @@ private enum NamedBorderWidth: String, CaseIterable {
     }
 }
 
-private enum NamedBorderStyle: String, CaseIterable {
+public enum NamedBorderStyle: String, CaseIterable {
     case borderStyleDefault
     case borderStyleDrag
 
