@@ -177,6 +177,11 @@ platform :ios do
           clean_install: true
         )
 
+        Dir.chdir "../Showcase/Resources/Assets.xcassets" do
+            sh "rm -Rf AppIconRelease.appiconset"
+            sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
+        end
+
         gym(
             scheme: OUDS_SCHEME,
             output_directory: 'build/',
@@ -205,7 +210,7 @@ platform :ios do
 
         Dir.chdir "../Showcase/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
-            sh "cp -R AppIconDev.appiconset AppIconRelease.appiconset"
+            sh "cp -R AppIconAlpha.appiconset AppIconRelease.appiconset"
         end
 
         # CFBundleVersion and CFBundleShortVersionString must follow rules with integers and periods, should not change them
@@ -230,7 +235,7 @@ platform :ios do
         puts "👉 Beta (commit hash = '#{params[:commitHash]}')"
         Dir.chdir "../Showcase/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
-            sh "cp -R AppIconQualif.appiconset AppIconRelease.appiconset"
+            sh "cp -R AppIconBeta.appiconset AppIconRelease.appiconset"
         end
 
         new_display_name = "OUDS Showcase (BETA)"
