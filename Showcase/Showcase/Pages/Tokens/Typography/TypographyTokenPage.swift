@@ -23,42 +23,61 @@ struct TypographyTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
+    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    private let forcedTheme: OUDSTheme?
+    private let forcedColorScheme: ColorScheme?
+
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+        self.forcedTheme = theme
+        self.forcedColorScheme = colorScheme
+    }
+
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedTypography.allCases, id: \.rawValue) { typographyName in
                 illustration(from: typographyName)
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, activeTheme.spaceFixedMedium)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 
     // MARK: Helpers
 
     @ViewBuilder
-    private func illustration(from namedTypography: NamedTypography) -> some View {
-        let horizontalSizeClass = horizontalSizeClass ?? .regular
-        let token = namedTypography.token(from: theme).typographyToken(for: horizontalSizeClass)
+    public func illustration(from namedTypography: NamedTypography) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
 
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            illustration(for: namedTypography, in: theme)
-                .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+        let horizontalSizeClass = horizontalSizeClass ?? .regular
+        let token = namedTypography.token(from: activeTheme).typographyToken(for: horizontalSizeClass)
+
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+            illustration(for: namedTypography, in: activeTheme)
+                .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
 
             Group {
-                Text("family (\(theme.customFontFamily ?? "system")), ")
+                Text("family (\(activeTheme.customFontFamily ?? "system")), ")
                 + Text("weight (\(token.weight)), ")
                 + Text("size (\(token.size, specifier: "%.2f")), ")
                 + Text("lineHeight (\(token.lineHeight, specifier: "%.2f")), ")
                 + Text("letterSpacing \(token.letterSpacing, specifier: "%.2f"))")
             }
-            .typeBodyDefaultMedium(theme)
+            .typeBodyDefaultMedium(activeTheme)
             .fixedSize(horizontal: false, vertical: true)
-            .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
+            .foregroundStyle(activeTheme.colorContentMuted.color(for: activeColorScheme))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, theme.spaceFixedShorter)
+        .padding(.vertical, activeTheme.spaceFixedShorter)
         .accessibilityElement(children: .combine)
     }
 }
