@@ -137,9 +137,9 @@ final class OUDSTokensSizeUITests: XCTestCase {
     // MARK: - Inverse Theme Dark Mode Border Tests
 
     /// This function tests all dimensions tokens in the `InverseTheme` with the `dark` color scheme.
-    /// It iterates through all `NamedSizing`,`NamedSpacing` cases, rendering each illustration in a `UIHostingController`
+    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
-    @MainActor func testAllDimensionsInverseThemeDark() {
+    @MainActor func testAllSizeInverseThemeDark() {
         /// Create an instance of the page with a forced InverseTheme and light color scheme
         let sizePage = SizeTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
 
