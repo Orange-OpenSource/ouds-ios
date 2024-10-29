@@ -21,9 +21,21 @@ struct SizeTokenPage: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.colorScheme) private var colorScheme
 
+    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    private let forcedTheme: OUDSTheme?
+    private let forcedColorScheme: ColorScheme?
+
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+        self.forcedTheme = theme
+        self.forcedColorScheme = colorScheme
+    }
+
     // MARK: Body
 
     var body: some View {
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
         Group {
             Section { illustrationForIconDecorative() } header: {
                 header("app_tokens_dimension_size_iconDecorative_label")
@@ -32,7 +44,7 @@ struct SizeTokenPage: View {
                 header("app_tokens_dimension_size_iconWithLabel_label")
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, activeTheme.spaceFixedMedium)
     }
 
     // MARK: Illustration icon decorative
@@ -43,21 +55,26 @@ struct SizeTokenPage: View {
         }
     }
 
-    private func illustrationIconDecorative(for namedSize: NamedSize.IconDecorative) -> some View {
-        let token = namedSize.token(from: theme)
+    public func illustrationIconDecorative(for namedSize: NamedSize.IconDecorative) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
+        let token = namedSize.token(from: activeTheme)
         let name = namedSize.rawValue
         let value = String(format: "(%.0f) pt", token)
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill(theme.colorBgEmphasized.color(for: colorScheme))
+                    .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
                     .frame(width: 82, height: 82, alignment: .center)
 
                 Image("ic_token")
                     .resizable()
                     .renderingMode(.template)
-                    .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+                    .foregroundColor(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
                     .frame(width: token, height: token, alignment: .center)
                     .accessibilityHidden(true)
             }
@@ -73,7 +90,12 @@ struct SizeTokenPage: View {
     }
 
     @ViewBuilder
-    private func illustrationIconWithLabel(for namedSize: NamedSize.IconWithTypography) -> some View {
+    public func illustrationIconWithLabel(for namedSize: NamedSize.IconWithTypography) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
         let token = namedSize.token(fot: theme, userInterfaceSizeClass: horizontalSizeClass ?? .regular)
         let namedTypography = namedSize.namedTypography
         let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)
@@ -82,16 +104,16 @@ struct SizeTokenPage: View {
             Image("ic_token")
                 .resizable()
                 .renderingMode(.template)
-                .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+                .foregroundColor(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
                 .frame(width: token, height: token, alignment: .center)
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading) {
-                illustration(for: namedTypography, in: theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                illustration(for: namedTypography, in: activeTheme)
+                    .foregroundStyle(theme.colorContentDefault.color(for: activeColorScheme))
                 Text(value)
-                    .typeBodyDefaultMedium(theme)
-                    .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
+                    .typeBodyDefaultMedium(activeTheme)
+                    .foregroundStyle(theme.colorContentMuted.color(for: activeColorScheme))
             }
             .accessibilityElement(children: .combine)
         }
