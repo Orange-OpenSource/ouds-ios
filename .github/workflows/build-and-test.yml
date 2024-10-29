@@ -66,4 +66,5 @@ jobs:
       - name: Run unit tests on demo app
         run: |
           cd Showcase
+          bundle exec pod install
           bundle exec fastlane ios test
