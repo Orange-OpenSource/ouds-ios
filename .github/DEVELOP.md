@@ -52,15 +52,21 @@ brew install swiftformat
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
-We use here _Ruby 3_ (3.1.x).
+We use here _Ruby 3_ (>= 3.3).
 If you are not used to this tool:
 
 ```shell
-# List available local version of Ruby
+# List available local versions of Ruby
 rbenv install --list
 
-# Apply the 3.1.2 version of Ruby (if listed previously)
-rbenv global 3.1.2
+# Apply the expected x.y.z version of Ruby (if listed previously with the command above)
+rbenv global 3.3.5
+
+# If you don't have the expected x.y.z version of Ruby, run:
+# >  brew update && brew upgrade ruby-build
+# >  rbenv install x.y.z
+# then 
+# >  rbenv global x.y.z
 
 # Check Ruby version
 ruby --version
