@@ -181,10 +181,11 @@ platform :ios do
             scheme: OUDS_SCHEME,
             output_directory: 'build/',
             archive_path: 'build/',
-            output_name: 'oudsApp',
+            output_name: 'odsApp',
             configuration: 'Debug',
             include_symbols: true,
-            export_method: 'development'
+            skip_archive: true,
+            destination: "generic/platform=iOS Simulator"
         )
     end
 
