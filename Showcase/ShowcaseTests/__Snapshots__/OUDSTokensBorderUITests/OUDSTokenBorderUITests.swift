@@ -30,7 +30,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     /// This function tests all elevation tokens in the `OrangeTheme` with the `light` color scheme.
     /// It iterates through all `NamedBorder` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
+    /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
     @MainActor func testAllBordersOrangeThemeLight() {
         /// Create an instance of the page with a forced OrangeTheme and light color scheme
         let borderPage = BorderTokenPage(forceTo: OrangeTheme(), colorScheme: .light)
@@ -79,7 +79,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     /// This function tests all elevation tokens in the `OrangeTheme` with the `dark` color scheme.
     /// It iterates through all `NamedBorder` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
+    /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
     @MainActor func testAllBordersOrangeThemeDark() {
         /// Create an instance of the page with a forced OrangeTheme and dark color scheme
         let borderPage = BorderTokenPage(forceTo: OrangeTheme(), colorScheme: .dark)
@@ -128,7 +128,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     /// This function tests all elevation tokens in the `InverseTheme` with the `light` color scheme.
     /// It iterates through all `NamedBorder` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
+    /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
     @MainActor func testAllBordersInverseThemeLight() {
         /// Create an instance of the page with a forced InverseTheme and dark color scheme
         let borderPage = BorderTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
@@ -177,7 +177,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     /// This function tests all elevation tokens in the `InverseTheme` with the `dark` color scheme.
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
+    /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
     @MainActor func testAllBordersInverseThemeDark() {
         /// Create an instance of the page with a forced InverseTheme and dark color scheme
         let borderPage = BorderTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
