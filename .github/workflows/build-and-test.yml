@@ -14,12 +14,23 @@
 name: Build and Test
 
 on:
+  # For protected and most important branches
+  push:
+    branches:
+      - main
+      - develop
+
+  # To trigger manually
+  workflow_dispatch:
+
+  # Pull request events
   pull_request:
     types:
       - opened
       - synchronize
 
 jobs:
+  # Build the app (if there are linter errors or compiler issues, it will fail)
   build:
     runs-on: macos-latest
     steps:
@@ -44,6 +55,7 @@ jobs:
           cd Showcase
           bundle exec fastlane buildDebugApp
 
+  # Test the library with unit tests
   test:
     runs-on: macos-latest
     steps:
