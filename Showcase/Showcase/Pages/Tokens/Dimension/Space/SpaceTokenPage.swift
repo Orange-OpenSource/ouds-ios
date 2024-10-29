@@ -30,9 +30,21 @@ struct SpaceTokenPage: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.colorScheme) private var colorScheme
 
+    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    private let forcedTheme: OUDSTheme?
+    private let forcedColorScheme: ColorScheme?
+
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+        self.forcedTheme = theme
+        self.forcedColorScheme = colorScheme
+    }
+
     // MARK: Body
 
     var body: some View {
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
         Group {
             // Basic Space Tokens
             Section { illustrationForScaledSpaces() } header: {
@@ -64,15 +76,15 @@ struct SpaceTokenPage: View {
                 header("app_tokens_dimension_space_gapStack_label")
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, activeTheme.spaceFixedMedium)
     }
 
     // MARK: Fixed Sapces
 
     private func illustrationForFixedSpacings() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
             ForEach(NamedSpace.Fixed.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
+                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
                 let name = namedSpaceToken.rawValue
                 // Fixed spacings are illustrated as a gap inline
                 illustation(for: Gap.inline(token), name: name)
@@ -83,15 +95,20 @@ struct SpaceTokenPage: View {
     // MARK: Scaled Spaces
 
     private func illustrationForScaledSpaces() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
             ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
                 illustration(for: namedSpaceToken)
             }
         }
     }
 
-    private func illustration(for namedSpaceToken: NamedSpace.Scaled) -> some View {
-        let token = namedSpaceToken.token(from: theme)
+    public func illustration(for namedSpaceToken: NamedSpace.Scaled) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
+        let token = namedSpaceToken.token(from: activeTheme)
         let name = namedSpaceToken.rawValue
         let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
         let verticalDimensionRawToken = token.dimension(for: verticalSizeClass ?? .regular)
@@ -105,15 +122,15 @@ struct SpaceTokenPage: View {
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill(theme.colorBgEmphasized.color(for: colorScheme))
+                    .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
                     .frame(width: kIllustrationWidth, height: kIillustrationHeight, alignment: .center)
                 Rectangle()
-                    .fill(theme.colorAlwaysInfo.color(for: colorScheme))
+                    .fill(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
                     .opacity(0.5)
                     .frame(width: horizontalDimensionRawToken, height: kIillustrationHeight, alignment: .center)
 
                 Rectangle()
-                    .fill(theme.colorAlwaysInfo.color(for: colorScheme))
+                    .fill(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
                     .opacity(0.5)
                     .frame(width: kIllustrationWidth, height: verticalDimensionRawToken, alignment: .center)
             }
@@ -122,10 +139,10 @@ struct SpaceTokenPage: View {
 
     // MARK: Padding illustrations
 
-    private func illustrationForPaddingInline() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+    public func illustrationForPaddingInline() -> some View {
+        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingInline.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
+                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Padding.inline(token), name: name)
             }
@@ -133,9 +150,9 @@ struct SpaceTokenPage: View {
     }
 
     private func illustrationForPaddingInlineWithIcon() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingInlineWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
+                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
                 let name = namedSpaceToken.rawValue
                 illustation(
                     for: Padding.inlineWithIcon(token),
@@ -145,9 +162,9 @@ struct SpaceTokenPage: View {
         }
     }
     private func illustrationForPaddingInlineWithArrow() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingInlineWithArrow.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
+                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
                 let name = namedSpaceToken.rawValue
                 illustation(
                     for: Padding.inlineWithArrow(token),
@@ -158,9 +175,9 @@ struct SpaceTokenPage: View {
     }
 
     private func illustrationForPaddingInset() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingInset.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
+                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Padding.inset(token), name: name)
             }
@@ -168,9 +185,9 @@ struct SpaceTokenPage: View {
     }
 
     private func illustrationForPaddingStack() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingStack.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
+                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Padding.stack(token), name: name)
             }
@@ -180,9 +197,9 @@ struct SpaceTokenPage: View {
     // MARK: Gap illustrations
 
     private func illustrationForGapInline() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
             ForEach(NamedSpace.GapInline.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
+                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Gap.inline(token), name: name)
             }
@@ -190,9 +207,9 @@ struct SpaceTokenPage: View {
     }
 
     private func illustrationForGapStack() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
             ForEach(NamedSpace.GapStack.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
+                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Gap.stack(token), name: name)
             }
@@ -206,16 +223,21 @@ struct SpaceTokenPage: View {
     }
 
     @ViewBuilder
-    private func illustation(for paddingType: Padding, name: String, additionalAsset: (icon: Image, horizontalPadding: Double)? = nil) -> some View {
+    public func illustation(for paddingType: Padding, name: String, additionalAsset: (icon: Image, horizontalPadding: Double)? = nil) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
         let value = String(format: "%.2f (pt)", paddingType.dimension)
 
         ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack(alignment: .leading) {
                 Rectangle()
-                    .fill(theme.colorAlwaysInfo.color(for: colorScheme))
+                    .fill(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
 
                 Rectangle()
-                    .fill(theme.colorBgEmphasized.color(for: colorScheme))
+                    .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
                     .modifier(PaddingModifier(padding: paddingType))
 
                 if let additionalAsset {
@@ -224,7 +246,7 @@ struct SpaceTokenPage: View {
                             .renderingMode(.template)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+                            .foregroundColor(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
                     }
                     .padding(.horizontal, additionalAsset.horizontalPadding)
                     .frame(width: 24, alignment: .leading)
@@ -236,16 +258,21 @@ struct SpaceTokenPage: View {
     }
 
     @ViewBuilder
-    private func illustation(for gapType: Gap, name: String) -> some View {
+    public func illustation(for gapType: Gap, name: String) -> some View {
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
+
         let value = String(format: "%.2f (pt)", gapType.dimension)
 
         ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             ZStack {
                 Rectangle()
-                    .fill(theme.colorBgEmphasized.color(for: colorScheme))
+                    .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
 
                 Rectangle()
-                    .fill(theme.colorAlwaysInfo.color(for: colorScheme))
+                    .fill(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
                     .modifier(GapModifier(gap: gapType))
             }
             .frame(width: kIllustrationWidth, height: kIillustrationHeight, alignment: .center)
