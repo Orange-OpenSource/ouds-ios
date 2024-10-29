@@ -279,9 +279,23 @@ Do not forget if possible to enable the warnings in the end of the file to reduc
 
 ## CI/CD
 
-We use GitLab CI for CI/CD with our own runners so as to keep private our sensitive files likes certificates and provisioning profiles.
-Our currant plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
-If you want to set up your runners, feel free to have a look on */docs_release/README.md*
-However of course you will have to define all the variables, secrets and have the mandatory files listed above.
+### GitHub Action
 
-You can find more details about the pipelines and script [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/5-%E2%80%90-About-continuous-integration-and-delivery).
+We use also *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
+It will help use to ensure code on pull requests or being merged compiles and has all tests green.
+This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml)
+
+We have also a *gitleaks* workflow making some scans on the code to loook fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml).
+
+We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
+There is on control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
+
+### GitLab CI (internal)
+
+We use *GitLab CI*for CI/CD with our own runners so as to keep private our sensitive files likes certificates and provisioning profiles.
+Our currant plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
+However of course you will have to define all the variables, secrets and have the mandatory files.
+
+You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/5-%E2%80%90-About-continuous-integration-and-delivery).
+
+In few words, there is a pipeline containing some stages and jobs to build alpha, nightly/beta and production releases.
