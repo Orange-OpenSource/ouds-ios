@@ -132,10 +132,15 @@ struct ColorTokenPage: View {
 
     @ViewBuilder
     public func illustration(for token: ColorSemanticToken?, name: String) -> some View {
-        if let token {
-            let colorRawToken = colorScheme == .dark ? token.dark : token.light
+        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        let activeColorScheme = forcedColorScheme ?? colorScheme
+        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        let activeTheme = forcedTheme ?? theme
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
+        if let token {
+            let colorRawToken = activeColorScheme == .dark ? token.dark : token.light
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: colorRawToken, forceTo: activeTheme, colorScheme: activeColorScheme) {
                 Rectangle()
                     .fill(colorRawToken.color)
                     .frame(width: 64, height: 64)
