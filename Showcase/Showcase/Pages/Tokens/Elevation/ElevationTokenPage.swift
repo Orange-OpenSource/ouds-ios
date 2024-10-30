@@ -59,10 +59,10 @@ struct ElevationTokenPage: View {
         let name = namedElevation.rawValue
         let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
             Rectangle()
                 .frame(width: activeTheme.sizeIconDecorativeTallest, height: activeTheme.sizeIconDecorativeTallest)
-                .foregroundColor(theme.colorBgSecondary.color(for: activeColorScheme))
+                .foregroundColor(activeTheme.colorBgSecondary.color(for: activeColorScheme))
                 .shadow(elevation: token)
                 .padding(.bottom, 2)
         }
