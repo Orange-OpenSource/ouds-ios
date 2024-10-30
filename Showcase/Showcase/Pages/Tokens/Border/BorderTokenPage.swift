@@ -99,7 +99,7 @@ struct BorderTokenPage: View {
         let name = namedWidth.rawValue
         let value = String(format: "(%.0f) pt", token)
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
             rectangle
                 .oudsBorder(style: activeTheme.borderStyleDefault,
                             width: token,
@@ -118,7 +118,7 @@ struct BorderTokenPage: View {
         let name = namedRadius.rawValue
         let value = String(format: "(%.0f) pt", token)
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
             rectangle
                 .oudsBorder(style: activeTheme.borderStyleDefault,
                             width: activeTheme.borderWidthDefault,
@@ -137,7 +137,7 @@ struct BorderTokenPage: View {
         let name = namedStyle.rawValue
         let value = token
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
             rectangle
                 .oudsBorder(style: token,
                             width: activeTheme.borderWidthDefault,
