@@ -26,6 +26,13 @@ import XCTest
 
 final class OUDSTokensOpacityUITests: XCTestCase {
 
+    // MARK: Properties
+
+    private let inverseTheme = InverseTheme()
+    private let orangeTheme = OrangeTheme()
+    private let lightScheme: ColorScheme = .light
+    private let darkScheme: ColorScheme = .dark
+
     // MARK: - Orange Theme Light Mode Opacity Tests
 
     /// This function tests all opacity tokens in the `OrangeTheme` with the `light` color scheme.
@@ -33,18 +40,19 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
     @MainActor func testAllOpacitiesOrangeThemeLight() {
         /// Create an instance of the page with a forced OrangeTheme and light color scheme
-        let opacityPage = OpacityTokenPage(forceTo: OrangeTheme(), colorScheme: .light)
+        let opacityPage = OpacityTokenPage(forceTo: orangeTheme, colorScheme: lightScheme)
 
         for opacity in NamedOpacity.allCases {
             /// Use the `illustration(for:)` method to test a single illustration
             let illustration = opacityPage.illustration(for: opacity)
+                .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
             /// Capture the snapshot of the illustration with the correct theme and color scheme
             let snapshotName = "\(opacity.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.light)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
         }
     }
 
@@ -55,18 +63,19 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
     @MainActor func testAllOpacitiesOrangeThemeDark() {
         /// Create an instance of the page with a forced OrangeTheme and dark color scheme
-        let opacityPage = OpacityTokenPage(forceTo: OrangeTheme(), colorScheme: .dark)
+        let opacityPage = OpacityTokenPage(forceTo: orangeTheme, colorScheme: darkScheme)
 
         for opacity in NamedOpacity.allCases {
             /// Use the `illustration(for:)` method to test a single illustration
             let illustration = opacityPage.illustration(for: opacity)
+                .background(orangeTheme.colorBgPrimary.color(for: darkScheme))
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
             /// Capture the snapshot of the illustration with the correct theme and color scheme
             let snapshotName = "\(opacity.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
         }
     }
 
@@ -76,19 +85,20 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
     @MainActor func testAllOpacitiesInverseThemeLight() {
-        /// Create an instance of the page with a forced InverseTheme and dark color scheme
-        let opacityPage = OpacityTokenPage(forceTo: InverseTheme(), colorScheme: .light)
+        /// Create an instance of the page with a forced InverseTheme and light color scheme
+        let opacityPage = OpacityTokenPage(forceTo: inverseTheme, colorScheme: lightScheme)
 
         for opacity in NamedOpacity.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
+            // Use the `illustration(for:)` method to test a single illustration
             let illustration = opacityPage.illustration(for: opacity)
+                .background(inverseTheme.colorBgPrimary.color(for: lightScheme))
 
-            /// Encapsulate the element in a UIHostingController for snapshot testing
+            // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
             /// Capture the snapshot of the illustration with the correct theme and color scheme
             let snapshotName = "\(opacity.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
         }
     }
 
@@ -99,18 +109,19 @@ final class OUDSTokensOpacityUITests: XCTestCase {
     /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
     @MainActor func testAllOpacitiesInverseThemeDark() {
         /// Create an instance of the page with a forced InverseTheme and dark color scheme
-        let opacityPage = OpacityTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
+        let opacityPage = OpacityTokenPage(forceTo: inverseTheme, colorScheme: darkScheme)
 
         for opacity in NamedOpacity.allCases {
             /// Use the `illustration(for:)` method to test a single illustration
             let illustration = opacityPage.illustration(for: opacity)
+                .background(inverseTheme.colorBgPrimary.color(for: darkScheme))
 
             /// Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
             /// Capture the snapshot of the illustration with the correct theme and color scheme
             let snapshotName = "\(opacity.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: UIUserInterfaceStyle.dark)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
         }
     }
 }
