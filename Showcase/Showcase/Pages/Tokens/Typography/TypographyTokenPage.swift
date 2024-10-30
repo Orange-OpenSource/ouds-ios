@@ -23,20 +23,20 @@ struct TypographyTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
-    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme`,  including the `colorScheme` and `horizontalSizeClass` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
     private let forcedColorScheme: ColorScheme?
+    private let forcedHorizontalSizeClass: UserInterfaceSizeClass?
 
-    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil, horizontalSizeClass: UserInterfaceSizeClass? = nil) {
         self.forcedTheme = theme
         self.forcedColorScheme = colorScheme
+        self.forcedHorizontalSizeClass = horizontalSizeClass
     }
 
     // MARK: Body
 
     var body: some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
         /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
         let activeTheme = forcedTheme ?? theme
 
@@ -57,9 +57,10 @@ struct TypographyTokenPage: View {
         let activeColorScheme = forcedColorScheme ?? colorScheme
         /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
         let activeTheme = forcedTheme ?? theme
+        /// Move activeHorizontalSizeClass here to ensure horizontalSizeClass is accessible (for UI tests purposes)
+        let activeHorizontalSizeClass = forcedHorizontalSizeClass ?? horizontalSizeClass ?? .regular
 
-        let horizontalSizeClass = horizontalSizeClass ?? .regular
-        let token = namedTypography.token(from: activeTheme).typographyToken(for: horizontalSizeClass)
+        let token = namedTypography.token(from: activeTheme).typographyToken(for: activeHorizontalSizeClass)
 
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             illustration(for: namedTypography, in: activeTheme)
