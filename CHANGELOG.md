@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update `ElevationSemanticTokens` (tokenator *20241031125053*)
 - [Library] Update `OrangeBrandColorRawTokens` (tokenator *20241030132734*)
 - [Library] Update `BorderSemanticTokens` (tokenator *20241025110844*)
 - [Library] Rename color semantic tokens `colorBackground*` to `colorBg*`
