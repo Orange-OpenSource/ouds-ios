@@ -18,7 +18,7 @@ infix operator <|
 
 /// Composite raw tokens are here to pack a set of specific values according to the global design system tool.
 /// Here a *typography* is finaly defined by some specific values.
-public struct TypographyCompositeRawToken: Equatable {
+public struct TypographyCompositeRawToken: Equatable, Sendable {
 
     // Font family is not included here because this is the only thing which can vary
 

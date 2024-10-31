@@ -47,7 +47,7 @@ final class MultipleElevationTokensTests: XCTestCase {
         let third = MultipleElevationTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_3_500)
         let fourth = MultipleElevationTokens(light: ElevationRawTokens.elevationBottom_3_300, dark: ElevationRawTokens.elevationBottom_2_500)
         let fifth = MultipleElevationTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_2_500)
-        let sixth = MultipleSizingTokens(compact: 12, regular: 12)
+        let sixth = MultipleSizeTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

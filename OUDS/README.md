@@ -65,62 +65,7 @@ These _tokens_ can be used to apply some style and configuration values to _comp
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ to get their style values.
 
-Example with `FormsTextInputComponentTokens`:
-
-```swift
-public protocol FormsTextInputComponentTokens {
-    var ftiTitleFontWeight: TypographyFontWeightSemanticToken { get }
-    var ftiTitleFontSize: TypographyFontSizeSemanticToken { get }
-    var ftiTitleColor: ColorSemanticToken { get }
-    
-    var ftiBorderColor: ColorSemanticToken { get }
-    var ftiBorderStyle: BorderStyleSemanticToken { get }
-    var ftiBorderWidth: BorderWidthSemanticToken { get }
-}
-
-extension OUDSTheme: FormsTextInputComponentTokens {
-    private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
-    private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
-
-    @objc open var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightHeading }
-    @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
-    @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultBlack }
-    
-    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedLight ?? Self.defaultBlack }
-    @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
-    @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
-}
-
-// The View
-
-struct OUDSFormsTextInput: View {
-
-    // ...
-    @Environment(\.theme) var theme
-
-    public var body: some View {
-        VStack(spacing: theme.spacePaddingBlockComponentTall) {
-            Label(
-                title: {
-                    Text("Example of OUDSFormsTextInput")
-                        .fontWeight(theme.ftiTitleFontWeight.fontWeight)
-                        .font(.system(size: theme.ftiTitleFontSize))
-                        .foregroundColor(theme.ftiTitleColor.color)
-                },
-                icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
-            )
-            Text("Write bellow some awesome text!")
-                .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
-                .font(.system(size: theme.ftiSubtitleFontSize))
-                .foregroundColor(theme.ftiSubtitleColor.color)
-            TextField(placeholder, text: $value)
-        }
-        .padding(theme.spacePaddingBlockComponentTall)
-        .background(theme.ftiBorderColor.color(for: colorScheme))
-        .border(theme.ftiBorderColor.color(for: colorScheme), width: theme.ftiBorderWidth)
-    }
-}
-```
+❗**More details coming soon.**❗
 
 #### Semantic tokens
 
@@ -131,16 +76,36 @@ In addition, there are hundreds of _semantics tokens_ and we needed to add them 
 That is the reason why tokens are exposed as `@objc open` to be available and oveeridable anywhere. 
 To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are available for those who want to make their own theme.
 
-Example with `ColorSemanticTokens`:
+Example with `ColorSemanticTokens``:
 
 ```swift
+// Declare the semantic tokens
 protocol ColorSemanticTokens {
-    var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { get }
+
+    var colorBgPrimary: ColorSemanticToken { get }
+    var colorBgSecondary: ColorSemanticToken { get }
+    var colorBgTertiary: ColorSemanticToken { get }
+    // ...
 }
 
+// Define the semantic tokens exposed through the theme
 extension OUDSTheme: ColorSemanticTokens {
 
-    @objc open var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalWhite }
+    // Color is available in the module of OUDSTheme
+    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+
+    // If the semantic token refers to a raw token not stored in the OUDSTheme module, override later and throw error because unxpected state if used
+    @objc open var colorBgSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgSecondary!") }
+
+    // Possible to have tokens not defined in lwoer level must only in themes implementation, throw error if used because unexpected state
+    @objc open var colorBgTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgTertiary!") }
+}
+
+// Add missing values
+extension OrangeTheme: ColorSemanticTokens {
+
+    // Define value value with the accessible token 
+    @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
 }
 ```
 
@@ -246,7 +211,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in comp
     override public var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
     override public var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
 
-    override public var ftiBackgroundColor: ColorSemanticToken { colorBackgroundPrimary }
+    override public var ftiBackgroundColor: ColorSemanticToken { colorBgrimary }
 
     override public var ftiBorderColor: ColorSemanticToken { colorBorderEmphasized }
 
@@ -257,7 +222,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in comp
 
 extension OrangeCustomTheme { // For ColorSemanticTokens using anywhere
 
-    override var colorBackgroundPrimary: ColorSemanticToken { 
+    override var colorBgPrimary: ColorSemanticToken { 
         MultipleColorTokens(light: ColorRawTokens.ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.ColorRawTokens.colorFunctionalSun800)
     }
 }

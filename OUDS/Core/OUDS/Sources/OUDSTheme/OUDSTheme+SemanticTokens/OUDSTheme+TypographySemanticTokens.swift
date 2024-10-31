@@ -17,6 +17,8 @@ import OUDSTokensSemantic
 
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
+// WARNING: Not synchronized anymore with the Figjam / Figma by developers team
+// Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable line_length
 
@@ -36,6 +38,7 @@ extension OUDSTheme: TypographySemanticTokens {
     // MARK: Semantic token - Typography - Font - Weight
 
     @objc open var fontWeightDefault: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
+    @objc open var fontWeightCode: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
     @objc open var fontWeightStrong: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight700 }
     @objc open var fontWeightDisplay: TypographyFontWeightSemanticToken { fontWeightStrong }
     @objc open var fontWeightHeading: TypographyFontWeightSemanticToken { fontWeightStrong }
@@ -43,7 +46,6 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontWeightBodyStrong: TypographyFontWeightSemanticToken { fontWeightStrong }
     @objc open var fontWeightLabelDefault: TypographyFontWeightSemanticToken { fontWeightDefault }
     @objc open var fontWeightLabelStrong: TypographyFontWeightSemanticToken { fontWeightStrong }
-    @objc open var fontWeightCode: TypographyFontWeightSemanticToken { TypographyRawTokens.fontWeight400 }
 
     // MARK: Semantic token - Typography - Font - Size
 
@@ -105,44 +107,6 @@ extension OUDSTheme: TypographySemanticTokens {
     @objc open var fontLetterSpacingLabelSmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing150) }
     @objc open var fontLetterSpacingCodeMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing200) }
     @objc open var fontLetterSpacingCodeSmall: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(TypographyRawTokens.fontLetterSpacing150) }
-
-    // MARK: - Semantic tokens - Typography - Composites - Display
-
-    @objc open var typeDisplayLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold1450) }
-    @objc open var typeDisplayMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold750, regular: TypographyRawTokens.typeBold1050) }
-    @objc open var typeDisplaySmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold650, regular: TypographyRawTokens.typeBold850) }
-
-    // MARK: - Semantic tokens - Typography - Composites - Heading
-
-    @objc open var typeHeadingXLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold550, regular: TypographyRawTokens.typeBold750) }
-    @objc open var typeHeadingLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold450, regular: TypographyRawTokens.typeBold550) }
-    @objc open var typeHeadingMedium: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold350, regular: TypographyRawTokens.typeBold450) }
-    @objc open var typeHeadingSmall: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold300, regular: TypographyRawTokens.typeBold350) }
-
-    // MARK: - Semantic tokens - Typography - Composites - Body
-
-    @objc open var typeBodyDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular250) }
-    @objc open var typeBodyDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular200) }
-    @objc open var typeBodyDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular150) }
-    @objc open var typeBodyStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold250) }
-    @objc open var typeBodyStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold200) }
-    @objc open var typeBodyStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold150) }
-
-    // MARK: - Semantic tokens - Typography - Composites - Label
-
-    @objc open var typeLabelDefaultXLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular250) } // NOTE: .typeRegular300 in Figjam but undefined
-    @objc open var typeLabelDefaultLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold250) }
-    @objc open var typeLabelDefaultMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular200) }
-    @objc open var typeLabelDefaultSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular150) }
-    @objc open var typeLabelStrongXLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold300) }
-    @objc open var typeLabelStrongLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold250) }
-    @objc open var typeLabelStrongMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold200) }
-    @objc open var typeLabelStrongSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold150) }
-
-    // MARK: - Semantic tokens - Typography - Composites - Code
-
-    @objc open var typeCodeMedium: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular200) }
-    @objc open var typeCodeSmall: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeRegular150) }
 }
 
 // swiftlint:enable line_length

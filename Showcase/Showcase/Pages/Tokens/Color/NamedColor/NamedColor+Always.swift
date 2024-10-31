@@ -24,13 +24,13 @@ extension NamedColor {
         case colorAlwaysPositive
         case colorAlwaysInfo
         case colorAlwaysAccent
-        case colorAlwaysOnBackgroundBlack
-        case colorAlwaysOnBackgroundWhite
-        case colorAlwaysOnBackgroundWarning
-        case colorAlwaysOnBackgroundNegative
-        case colorAlwaysOnBackgroundPositive
-        case colorAlwaysOnBackgroundInfo
-        case colorAlwaysOnBackgroundAccent
+        case colorAlwaysOnBgBlack
+        case colorAlwaysOnBgWhite
+        case colorAlwaysOnBgWarning
+        case colorAlwaysOnBgNegative
+        case colorAlwaysOnBgPositive
+        case colorAlwaysOnBgInfo
+        case colorAlwaysOnBgAccent
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
@@ -48,20 +48,20 @@ extension NamedColor {
                 return theme.colorAlwaysInfo
             case .colorAlwaysAccent:
                 return theme.colorAlwaysAccent
-            case .colorAlwaysOnBackgroundBlack:
-                return theme.colorAlwaysOnBackgroundBlack
-            case .colorAlwaysOnBackgroundWhite:
-                return theme.colorAlwaysOnBackgroundWhite
-            case .colorAlwaysOnBackgroundWarning:
-                return theme.colorAlwaysOnBackgroundWarning
-            case .colorAlwaysOnBackgroundNegative:
-                return theme.colorAlwaysOnBackgroundNegative
-            case .colorAlwaysOnBackgroundPositive:
-                return theme.colorAlwaysOnBackgroundPositive
-            case .colorAlwaysOnBackgroundInfo:
-                return theme.colorAlwaysOnBackgroundInfo
-            case .colorAlwaysOnBackgroundAccent:
-                return theme.colorAlwaysOnBackgroundAccent
+            case .colorAlwaysOnBgBlack:
+                return theme.colorAlwaysOnBgBlack
+            case .colorAlwaysOnBgWhite:
+                return theme.colorAlwaysOnBgWhite
+            case .colorAlwaysOnBgWarning:
+                return theme.colorAlwaysOnBgWarning
+            case .colorAlwaysOnBgNegative:
+                return theme.colorAlwaysOnBgNegative
+            case .colorAlwaysOnBgPositive:
+                return theme.colorAlwaysOnBgPositive
+            case .colorAlwaysOnBgInfo:
+                return theme.colorAlwaysOnBgInfo
+            case .colorAlwaysOnBgAccent:
+                return theme.colorAlwaysOnBgAccent
             }
         }
     }

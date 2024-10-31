@@ -32,7 +32,7 @@ struct BorderTokenPage: View {
                     }
                 }
             } header: {
-                Text("Width")
+                Text("app_tokens_border_width_label")
                     .typeHeadingLarge(theme)
                     .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
             }
@@ -44,7 +44,7 @@ struct BorderTokenPage: View {
                     }
                 }
             } header: {
-                Text("Radius")
+                Text("app_tokens_border_radius_label")
                     .typeHeadingLarge(theme)
                     .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
             }
@@ -56,7 +56,7 @@ struct BorderTokenPage: View {
                     }
                 }
             } header: {
-                Text("Style")
+                Text("app_tokens_border_style_label")
                     .typeHeadingLarge(theme)
                     .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
             }
@@ -68,7 +68,7 @@ struct BorderTokenPage: View {
 
     private var rectangle: some View {
         Rectangle()
-            .fill(theme.colorBackgroundSecondary.color(for: colorScheme))
+            .fill(theme.colorBgSecondary.color(for: colorScheme))
             .frame(width: 64, height: 64)
     }
 
@@ -146,7 +146,8 @@ private enum NamedBorderWidth: String, CaseIterable {
     case borderWidthMedium
     case borderWidthThick
     case borderWidthThicker
-    case borderWidthOutsideFocus
+    case borderWidthFocus
+    case borderWidthFocusInset
 
     func token(from theme: OUDSTheme) -> BorderWidthSemanticToken {
         switch self {
@@ -162,8 +163,10 @@ private enum NamedBorderWidth: String, CaseIterable {
             return theme.borderWidthThick
         case .borderWidthThicker:
             return theme.borderWidthThicker
-        case .borderWidthOutsideFocus:
-            return theme.borderWidthOutsideFocus
+        case .borderWidthFocus:
+            return theme.borderWidthFocus
+        case .borderWidthFocusInset:
+            return theme.borderWidthFocusInset
         }
     }
 }

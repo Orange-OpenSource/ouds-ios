@@ -4,11 +4,66 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.4.1...0.5.0) - 2024-10-31
+
+### Added
+
+- [DemoApp] App icons for debug, alpha, beta and production releases ([#140](https://github.com/Orange-OpenSource/ouds-ios/issues/140))
+- [Tool] GitHub Actions workflow for CI/CD ([#256](https://github.com/Orange-OpenSource/ouds-ios/issues/256))
+- [DemoApp] Add new tokens in size tokens page ([#245](https://github.com/Orange-OpenSource/ouds-ios/issues/245))
+- [Library] Semantic token `borderWidthFocusInset` (value of `borderWidth100`) ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207), [#241](https://github.com/Orange-OpenSource/ouds-ios/issues/241))
+- [Library] Semantic token `fontWeightCode` ([#242](https://github.com/Orange-OpenSource/ouds-ios/issues/242))
+- [DemoApp] Update space tokens screen with all categories ([#178](https://github.com/Orange-OpenSource/ouds-ios/issues/178))
+
+### Changed
+
+- [Library] Update `ElevationSemanticTokens` (tokenator *20241031125053*)
+- [Library] Update `OrangeBrandColorRawTokens` (tokenator *20241030132734*)
+- [Library] Update `BorderSemanticTokens` (tokenator *20241025110844*)
+- [Library] Rename color semantic tokens `colorBackground*` to `colorBg*`
+- [Library] Rename `MultipleSpacingTokens` to `MultipleSpaceTokens` and `MultipleSizingTokens` to `MultipleSizeTokens`
+- [Library] Extract composite semantic tokens from semantic tokens (`ElevationSemanticTokens`, `TypographySemanticTokens`)
+- [Library] Improve documentation about the use of semantic tokens
+- [Library] Update `OpacitySemanticTokens` (tokenator *20241025101305*)
+- [Library] Rename `*Spacing*Tokens` and `*Sizing*Tokens` to `*Space*Tokens` and `*Size*Tokens` ([#237](https://github.com/Orange-OpenSource/ouds-ios/issues/237))
+- [Library] Update `ElevationRawTokens` (tokenator *20241022174330*)
+- [Library] Update `DimensionRawTokens` (tokenator *20241022132646*)
+- [Tool] Improve configuration of SwiftLint, update to v0.57.0 ([#77](https://github.com/Orange-OpenSource/ouds-ios/pull/77))
+- [Library] Rename all color semantic tokens `*OnBackground*` to `*OnBg*` ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
+- [Library] Rename `colorDecorativeBrandTertiary` to `colorDecorativeTertiary`
+- [Library] Rename `colorDecorativeBrandPrimary` to `colorDecorativePrimary` ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
+- [Library] Rename `colorDecorativeSkinTint*` to `colorDecorativeSkinTint*`
+- [Library] Rename `colorActionVisitedOnBackgroundEmphasized` to `colorActionVisitedOnBgEmphasized` ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
+- [Library] Update color semantic tokens ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
+- [Library] Update `BorderRawTokens` (tokenator *20241022102003*)
+- [Library] Update `ColorRawTokens` (tokenator *20241021180411*)
+- [Tool] Migration to Swift 6
+- [Tool] Migration from *Xcode 15.3* to to *Xcode 16* ([#201](https://github.com/Orange-OpenSource/ouds-ios/issues/201))
+- [Library] Rename `borderWidthOutsideFocus` to `borderWidthFocus` ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207))
+- [Library] Update `OpacityRawTokens` (tokenator *20241021134644*)
+
+### Removed
+
+- [Library] Semantic tokens `colorDecorativeBrandTertiaryMuted`, `colorDecorativeBrandTertiaryEmphasized` ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
+- [Library] Semantic tokens `colorDecorativeBrandSecondaryMuted`, `colorDecorativeBrandSecondaryEmphasized` ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
+- [Library] Semantic tokens `colorDecorativeBrandPrimaryMuted`, `colorDecorativeBrandPrimaryEmphasized` ([#208](https://github.com/Orange-OpenSource/ouds-ios/issues/208))
+- [Library] Semantic tokens `elevationBlurFocus`, `elevationXFocus`, `elevationYFocus`, `elevationColorFocus` ([#209](https://github.com/Orange-OpenSource/ouds-ios/issues/209))
+
+### Fixed
+
+- [DemoApp] Update typography screen to use right color on token name ([#213](https://github.com/Orange-OpenSource/ouds-ios/issues/213))
+- [DemoApp] Remove duplicated section in color page for content on background values ([#236](https://github.com/Orange-OpenSource/ouds-ios/issues/236))
+- [DemoApp] Hide from Voice Over decorative image in theme selector (a11y)
+
+### Security
+
+- [Tool] Move to Ruby 3.3.5 to fix Dependabot alert about *REXML ReDoS vulnerability* (CVE-2024-49761) ([#5](https://github.com/Orange-OpenSource/ouds-ios/security/dependabot/5))
+
 ## [0.4.1](https://github.com/Orange-OpenSource/ouds-ios/compare/0.4.0...0.4.1) - 2024-10-21
 
 ### Fixed
 
-- [Demoapp] App crash on color token page opening ([#215](https://github.com/Orange-OpenSource/ouds-ios/issues/215))
+- [DemoApp] App crash on color token page opening ([#215](https://github.com/Orange-OpenSource/ouds-ios/issues/215))
 
 ## [0.4.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.3.0...0.4.0) - 2024-10-18
 

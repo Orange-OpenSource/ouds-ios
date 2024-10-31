@@ -41,16 +41,16 @@ struct AboutPage: View {
             List {
                 NavigationLink {
                     WebView(from: privacyPolicyUrl)
-                        .navigationTitle("app_about_label_privacyPolicy")
+                        .navigationTitle("app_about_privacyPolicy_label")
                 } label: {
-                    Text("app_about_label_privacyPolicy")
+                    Text("app_about_privacyPolicy_label")
                 }
 
                 NavigationLink {
                     WebView(from: legalInformationUrl)
-                        .navigationTitle("app_about_label_legalInformation")
+                        .navigationTitle("app_about_legalInformation_label")
                 } label: {
-                    Text("app_about_label_legalInformation")
+                    Text("app_about_legalInformation_label")
                 }
 
                 // TODO: Only for debug purposes, should be displayed in another way
@@ -61,7 +61,7 @@ struct AboutPage: View {
                     Text("Build details (GitHub): \(buildDetails)")
                 }
             }
-            .navigationTitle("app_bottomBar_about")
+            .navigationTitle("app_bottomBar_about_label")
         }
     }
 }

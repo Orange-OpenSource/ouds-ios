@@ -15,7 +15,7 @@ import Foundation
 
 /// In the global design system, composite tokens are defined for elevation effects.
 /// It is defined as a `final class` and `NSObject` so as to be shared through `@objc` with extensions and protocols within modules.
-public final class ElevationCompositeRawToken: NSObject { // For @objc compatibility
+public final class ElevationCompositeRawToken: NSObject, Sendable { // NSObject for @objc compatibility
 
     /// The X offset for the elevation
     public let x: ElevationRawToken

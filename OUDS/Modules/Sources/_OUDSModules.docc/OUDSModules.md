@@ -4,5 +4,5 @@ The catalog of all modules provided by OUDS.
 
 ## Overview
 
-Comming soon
+❗**More details coming soon.**❗
 

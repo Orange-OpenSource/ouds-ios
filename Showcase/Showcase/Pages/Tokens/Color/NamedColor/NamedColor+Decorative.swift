@@ -19,18 +19,9 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Decorative: String, CaseIterable {
-        case colorDecorativeBrandPrimary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorDecorativeBrandPrimaryMuted
-        // case colorDecorativeBrandPrimaryEmphasized
+        case colorDecorativePrimary
         case colorDecorativeSecondary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorDecorativeSecondaryMuted
-        // case colorDecorativeSecondaryEmphasized
-        case colorDecorativeBrandTertiary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorDecorativeBrandTertiaryMuted
-        // case colorDecorativeBrandTertiaryEmphasized
+        case colorDecorativeTertiary
         case colorDecorativeNeutralMuted
         case colorDecorativeNeutralDefault
         case colorDecorativeNeutralEmphasized
@@ -49,39 +40,24 @@ extension NamedColor {
         case colorDecorativeAccent5Muted
         case colorDecorativeAccent5Default
         case colorDecorativeAccent5Emphasized
-        case colorDecorativeSkintTint100
-        case colorDecorativeSkintTint200
-        case colorDecorativeSkintTint300
-        case colorDecorativeSkintTint400
-        case colorDecorativeSkintTint500
-        case colorDecorativeSkintTint600
-        case colorDecorativeSkintTint700
-        case colorDecorativeSkintTint800
-        case colorDecorativeSkintTint900
+        case colorDecorativeSkinTint100
+        case colorDecorativeSkinTint200
+        case colorDecorativeSkinTint300
+        case colorDecorativeSkinTint400
+        case colorDecorativeSkinTint500
+        case colorDecorativeSkinTint600
+        case colorDecorativeSkinTint700
+        case colorDecorativeSkinTint800
+        case colorDecorativeSkinTint900
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
-            case .colorDecorativeBrandPrimary:
-                return theme.colorDecorativeBrandPrimary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorDecorativeBrandPrimaryMuted:
-//                return theme.colorDecorativeBrandPrimaryMuted
-//            case .colorDecorativeBrandPrimaryEmphasized:
-//                return theme.colorDecorativeBrandPrimaryEmphasized
+            case .colorDecorativePrimary:
+                return theme.colorDecorativePrimary
             case .colorDecorativeSecondary:
                 return theme.colorDecorativeSecondary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorDecorativeSecondaryMuted:
-//                return theme.colorDecorativeSecondaryMuted
-//            case .colorDecorativeSecondaryEmphasized:
-//                return theme.colorDecorativeSecondaryEmphasized
-            case .colorDecorativeBrandTertiary:
-                return theme.colorDecorativeBrandTertiary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorDecorativeBrandTertiaryMuted:
-//                return theme.colorDecorativeBrandTertiaryMuted
-//            case .colorDecorativeBrandTertiaryEmphasized:
-//                return theme.colorDecorativeBrandTertiaryEmphasized
+            case .colorDecorativeTertiary:
+                return theme.colorDecorativeTertiary
             case .colorDecorativeNeutralMuted:
                 return theme.colorDecorativeNeutralMuted
             case .colorDecorativeNeutralDefault:
@@ -118,24 +94,24 @@ extension NamedColor {
                 return theme.colorDecorativeAccent5Default
             case .colorDecorativeAccent5Emphasized:
                 return theme.colorDecorativeAccent5Emphasized
-            case .colorDecorativeSkintTint100:
-                return theme.colorDecorativeSkintTint100
-            case .colorDecorativeSkintTint200:
-                return theme.colorDecorativeSkintTint200
-            case .colorDecorativeSkintTint300:
-                return theme.colorDecorativeSkintTint300
-            case .colorDecorativeSkintTint400:
-                return theme.colorDecorativeSkintTint400
-            case .colorDecorativeSkintTint500:
-                return theme.colorDecorativeSkintTint500
-            case .colorDecorativeSkintTint600:
-                return theme.colorDecorativeSkintTint600
-            case .colorDecorativeSkintTint700:
-                return theme.colorDecorativeSkintTint700
-            case .colorDecorativeSkintTint800:
-                return theme.colorDecorativeSkintTint800
-            case .colorDecorativeSkintTint900:
-                return theme.colorDecorativeSkintTint900
+            case .colorDecorativeSkinTint100:
+                return theme.colorDecorativeSkinTint100
+            case .colorDecorativeSkinTint200:
+                return theme.colorDecorativeSkinTint200
+            case .colorDecorativeSkinTint300:
+                return theme.colorDecorativeSkinTint300
+            case .colorDecorativeSkinTint400:
+                return theme.colorDecorativeSkinTint400
+            case .colorDecorativeSkinTint500:
+                return theme.colorDecorativeSkinTint500
+            case .colorDecorativeSkinTint600:
+                return theme.colorDecorativeSkinTint600
+            case .colorDecorativeSkinTint700:
+                return theme.colorDecorativeSkinTint700
+            case .colorDecorativeSkinTint800:
+                return theme.colorDecorativeSkinTint800
+            case .colorDecorativeSkinTint900:
+                return theme.colorDecorativeSkinTint900
             }
         }
     }

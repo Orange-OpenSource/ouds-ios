@@ -14,17 +14,15 @@
 import OUDS
 import OUDSTokensSemantic
 
-// swiftlint:disable identifier_name
-
 extension NamedColor {
 
     enum Border: String, CaseIterable {
         case colorBorderDefault
-        case colorBorderDefaultOnBackgroundEmphasized
+        case colorBorderDefaultOnBgEmphasized
         case colorBorderEmphasized
-        case colorBorderEmphasizedOnBackgroundEmphasized
+        case colorBorderEmphasizedOnBgEmphasized
         case colorBorderFocus
-        case colorBorderBrandPrimaryOnBackgroundEmphasized
+        case colorBorderBrandPrimaryOnBgEmphasized
         case colorBorderBrandPrimary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorBorderBrandSecondary
@@ -34,25 +32,25 @@ extension NamedColor {
         // case colorBorderStatusWarning
         // case colorBorderStatusNegative
         // case colorBorderStatusAccent
-        case colorBorderOnBackgroundBrandPrimary
+        case colorBorderOnBgBrandPrimary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorBorderOnBackgroundBrandSecondary
-        // case colorBorderOnBackgroundBrandTertiary
+        // case colorBorderOnBgBrandSecondary
+        // case colorBorderOnBgBrandTertiary
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
             case .colorBorderDefault:
                 return theme.colorBorderDefault
-            case .colorBorderDefaultOnBackgroundEmphasized:
-                return theme.colorBorderDefaultOnBackgroundEmphasized
+            case .colorBorderDefaultOnBgEmphasized:
+                return theme.colorBorderDefaultOnBgEmphasized
             case .colorBorderEmphasized:
                 return theme.colorBorderEmphasized
-            case .colorBorderEmphasizedOnBackgroundEmphasized:
-                return theme.colorBorderEmphasizedOnBackgroundEmphasized
+            case .colorBorderEmphasizedOnBgEmphasized:
+                return theme.colorBorderEmphasizedOnBgEmphasized
             case .colorBorderFocus:
                 return theme.colorBorderFocus
-            case .colorBorderBrandPrimaryOnBackgroundEmphasized:
-                return theme.colorBorderBrandPrimaryOnBackgroundEmphasized
+            case .colorBorderBrandPrimaryOnBgEmphasized:
+                return theme.colorBorderBrandPrimaryOnBgEmphasized
             case .colorBorderBrandPrimary:
                 return theme.colorBorderBrandPrimary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
@@ -70,16 +68,14 @@ extension NamedColor {
 //                return theme.colorBorderStatusNegative
 //            case .colorBorderStatusAccent:
 //                return theme.colorBorderStatusAccent
-            case .colorBorderOnBackgroundBrandPrimary:
-                return theme.colorBorderOnBackgroundBrandPrimary
+            case .colorBorderOnBgBrandPrimary:
+                return theme.colorBorderOnBgBrandPrimary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorBorderOnBackgroundBrandSecondary:
-//                return theme.colorBorderOnBackgroundBrandSecondary
-//            case .colorBorderOnBackgroundBrandTertiary:
-//                return theme.colorBorderOnBackgroundBrandTertiary
+//            case .colorBorderOnBgBrandSecondary:
+//                return theme.colorBorderOnBgBrandSecondary
+//            case .colorBorderOnBgBrandTertiary:
+//                return theme.colorBorderOnBgBrandTertiary
             }
         }
     }
 }
-
-// swiftlint:enable identifier_name

@@ -30,38 +30,51 @@ If some tools are missing, pick the suitable command line below and check versio
 bundle install
 
 # Use CocoaPods to install other dependencies not available as rubygems (thanks to Podfile and Podfile.lock files)
-bundle exec pod install
+bundle exec pod install --repo-update
+
+# Update your references
+brew update
 
 # For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.0)
 brew install peripheryapp/periphery/periphery
 
 # For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.18.1)
 brew install gitleaks
+# or `brew reinstall gitleaks` to get updates if old version installed
 
-# For SwiftLint (at least 0.52.4)
+# For SwiftLint (at least 0.57.0)
 brew install swiftlint
+# or `brew reinstall swiftlint` to get updates if old version installed
 
 # For SwiftFormat (at least 0.52.4)
 brew install swiftformat
+# or `brew reinstall swiftformat` to get updates if old version installed
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
-We use here _Ruby 3_ (3.1.x).
+We use here _Ruby 3_ (>= 3.3).
 If you are not used to this tool:
 
 ```shell
-# List available local version of Ruby
+# List available local versions of Ruby
 rbenv install --list
 
-# Apply the 3.1.2 version of Ruby (if listed previously)
-rbenv global 3.1.2
+# Apply the expected x.y.z version of Ruby (if listed previously with the command above)
+rbenv global 3.3.5
+
+# If you don't have the expected x.y.z version of Ruby, run:
+# >  brew update && brew upgrade ruby-build
+# >  rbenv install x.y.z
+# then 
+# >  rbenv global x.y.z
 
 # Check Ruby version
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 15.3**, we suggest you use this version or newer if you want but beware.
-**Xcode 16** use will come.
+We use also for our GitLab CI runners **Xcode 16**, we suggest you use this version or newer if you want.
+
+**Xcode 16** and **Swift 6** are used for this project. You must use this configuration.
 
 ## Build showcase demo app
 
@@ -272,9 +285,23 @@ Do not forget if possible to enable the warnings in the end of the file to reduc
 
 ## CI/CD
 
-We use GitLab CI for CI/CD with our own runners so as to keep private our sensitive files likes certificates and provisioning profiles.
-Our currant plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
-If you want to set up your runners, feel free to have a look on */docs_release/README.md*
-However of course you will have to define all the variables, secrets and have the mandatory files listed above.
+### GitHub Action
 
-You can find more details about the pipelines and script [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/5-%E2%80%90-About-continuous-integration-and-delivery).
+We use also *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
+It will help use to ensure code on pull requests or being merged compiles and has all tests green.
+This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml)
+
+We have also a *gitleaks* workflow making some scans on the code to loook fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml).
+
+We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
+There is on control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
+
+### GitLab CI (internal)
+
+We use *GitLab CI*for CI/CD with our own runners so as to keep private our sensitive files likes certificates and provisioning profiles.
+Our currant plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
+However of course you will have to define all the variables, secrets and have the mandatory files.
+
+You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/5-%E2%80%90-About-continuous-integration-and-delivery).
+
+In few words, there is a pipeline containing some stages and jobs to build alpha, nightly/beta and production releases.

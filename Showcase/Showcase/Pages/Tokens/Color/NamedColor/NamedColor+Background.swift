@@ -14,93 +14,89 @@
 import OUDS
 import OUDSTokensSemantic
 
-// swiftlint:disable identifier_name
-
 extension NamedColor {
 
     enum Background: String, CaseIterable {
-        case colorBackgroundPrimary
-        case colorBackgroundSecondary
+        case colorBgPrimary
+        case colorBgSecondary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorBackgroundTertiary
-        case colorBackgroundEmphasized
-        case colorBackgroundBrandPrimary
+        // case colorBgTertiary
+        case colorBgEmphasized
+        case colorBgBrandPrimary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorBackgroundBrandSecondary
-        // case colorBackgroundBrandTertiary
-        case colorBackgroundStatusNeutral
-        case colorBackgroundStatusNeutralOnBackgroundEmphasized
-        case colorBackgroundStatusPositiveMuted
-        case colorBackgroundStatusPositiveMutedOnBackgroundEmphasized
-        case colorBackgroundStatusPositiveEmphasized
-        case colorBackgroundStatusInfoMuted
-        case colorBackgroundStatusInfoMutedOnBackgroundEmphasized
-        case colorBackgroundStatusInfoEmphasized
-        case colorBackgroundStatusWarningMuted
-        case colorBackgroundStatusWarningMutedOnBackgroundEmphasized
-        case colorBackgroundStatusWarningEmphasized
-        case colorBackgroundStatusNegativeMuted
-        case colorBackgroundStatusNegativeMutedOnBackgroundEmphasized
-        case colorBackgroundStatusNegativeEmphasized
-        case colorBackgroundStatusAccentMuted
-        case colorBackgroundStatusAccentMutedOnBackgroundEmphasized
-        case colorBackgroundStatusAccentEmphasized
+        // case colorBgBrandSecondary
+        // case colorBgBrandTertiary
+        case colorBgStatusNeutral
+        case colorBgStatusNeutralOnBgEmphasized
+        case colorBgStatusPositiveMuted
+        case colorBgStatusPositiveMutedOnBgEmphasized
+        case colorBgStatusPositiveEmphasized
+        case colorBgStatusInfoMuted
+        case colorBgStatusInfoMutedOnBgEmphasized
+        case colorBgStatusInfoEmphasized
+        case colorBgStatusWarningMuted
+        case colorBgStatusWarningMutedOnBgEmphasized
+        case colorBgStatusWarningEmphasized
+        case colorBgStatusNegativeMuted
+        case colorBgStatusNegativeMutedOnBgEmphasized
+        case colorBgStatusNegativeEmphasized
+        case colorBgStatusAccentMuted
+        case colorBgStatusAccentMutedOnBgEmphasized
+        case colorBgStatusAccentEmphasized
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
-            case .colorBackgroundPrimary:
-                return theme.colorBackgroundPrimary
-            case .colorBackgroundSecondary:
-                return theme.colorBackgroundSecondary
+            case .colorBgPrimary:
+                return theme.colorBgPrimary
+            case .colorBgSecondary:
+                return theme.colorBgSecondary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorBackgroundTertiary:
-//                return theme.colorBackgroundTertiary
-            case .colorBackgroundEmphasized:
-                return theme.colorBackgroundEmphasized
-            case .colorBackgroundBrandPrimary:
-                return theme.colorBackgroundBrandPrimary
+//            case .colorBgTertiary:
+//                return theme.colorBgTertiary
+            case .colorBgEmphasized:
+                return theme.colorBgEmphasized
+            case .colorBgBrandPrimary:
+                return theme.colorBgBrandPrimary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorBackgroundBrandSecondary:
-//                return theme.colorBackgroundBrandSecondary
-//            case .colorBackgroundBrandTertiary:
-//                return theme.colorBackgroundBrandTertiary
-            case .colorBackgroundStatusNeutral:
-                return theme.colorBackgroundStatusNeutral
-            case .colorBackgroundStatusNeutralOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusNeutralOnBackgroundEmphasized
-            case .colorBackgroundStatusPositiveMuted:
-                return theme.colorBackgroundStatusPositiveMuted
-            case .colorBackgroundStatusPositiveMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusPositiveMutedOnBackgroundEmphasized
-            case .colorBackgroundStatusPositiveEmphasized:
-                return theme.colorBackgroundStatusPositiveEmphasized
-            case .colorBackgroundStatusInfoMuted:
-                return theme.colorBackgroundStatusInfoMuted
-            case .colorBackgroundStatusInfoMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusInfoMutedOnBackgroundEmphasized
-            case .colorBackgroundStatusInfoEmphasized:
-                return theme.colorBackgroundStatusInfoEmphasized
-            case .colorBackgroundStatusWarningMuted:
-                return theme.colorBackgroundStatusWarningMuted
-            case .colorBackgroundStatusWarningMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusWarningMutedOnBackgroundEmphasized
-            case .colorBackgroundStatusWarningEmphasized:
-                return theme.colorBackgroundStatusWarningEmphasized
-            case .colorBackgroundStatusNegativeMuted:
-                return theme.colorBackgroundStatusNegativeMuted
-            case .colorBackgroundStatusNegativeMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusNegativeMutedOnBackgroundEmphasized
-            case .colorBackgroundStatusNegativeEmphasized:
-                return theme.colorBackgroundStatusNegativeEmphasized
-            case .colorBackgroundStatusAccentMuted:
-                return theme.colorBackgroundStatusAccentMuted
-            case .colorBackgroundStatusAccentMutedOnBackgroundEmphasized:
-                return theme.colorBackgroundStatusAccentMutedOnBackgroundEmphasized
-            case .colorBackgroundStatusAccentEmphasized:
-                return theme.colorBackgroundStatusAccentEmphasized
+//            case .colorBgBrandSecondary:
+//                return theme.colorBgBrandSecondary
+//            case .colorBgBrandTertiary:
+//                return theme.colorBgBrandTertiary
+            case .colorBgStatusNeutral:
+                return theme.colorBgStatusNeutral
+            case .colorBgStatusNeutralOnBgEmphasized:
+                return theme.colorBgStatusNeutralOnBgEmphasized
+            case .colorBgStatusPositiveMuted:
+                return theme.colorBgStatusPositiveMuted
+            case .colorBgStatusPositiveMutedOnBgEmphasized:
+                return theme.colorBgStatusPositiveMutedOnBgEmphasized
+            case .colorBgStatusPositiveEmphasized:
+                return theme.colorBgStatusPositiveEmphasized
+            case .colorBgStatusInfoMuted:
+                return theme.colorBgStatusInfoMuted
+            case .colorBgStatusInfoMutedOnBgEmphasized:
+                return theme.colorBgStatusInfoMutedOnBgEmphasized
+            case .colorBgStatusInfoEmphasized:
+                return theme.colorBgStatusInfoEmphasized
+            case .colorBgStatusWarningMuted:
+                return theme.colorBgStatusWarningMuted
+            case .colorBgStatusWarningMutedOnBgEmphasized:
+                return theme.colorBgStatusWarningMutedOnBgEmphasized
+            case .colorBgStatusWarningEmphasized:
+                return theme.colorBgStatusWarningEmphasized
+            case .colorBgStatusNegativeMuted:
+                return theme.colorBgStatusNegativeMuted
+            case .colorBgStatusNegativeMutedOnBgEmphasized:
+                return theme.colorBgStatusNegativeMutedOnBgEmphasized
+            case .colorBgStatusNegativeEmphasized:
+                return theme.colorBgStatusNegativeEmphasized
+            case .colorBgStatusAccentMuted:
+                return theme.colorBgStatusAccentMuted
+            case .colorBgStatusAccentMutedOnBgEmphasized:
+                return theme.colorBgStatusAccentMutedOnBgEmphasized
+            case .colorBgStatusAccentEmphasized:
+                return theme.colorBgStatusAccentEmphasized
             }
         }
     }
 }
-
-// swiftlint:enable identifier_name

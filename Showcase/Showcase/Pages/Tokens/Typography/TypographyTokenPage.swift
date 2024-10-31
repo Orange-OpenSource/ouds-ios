@@ -21,6 +21,7 @@ struct TypographyTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // MARK: Body
 
@@ -30,8 +31,7 @@ struct TypographyTokenPage: View {
                 illustration(from: typographyName)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, theme.spaceFixedShort)
+        .padding(.horizontal, theme.spaceFixedMedium)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 
@@ -39,11 +39,12 @@ struct TypographyTokenPage: View {
 
     @ViewBuilder
     private func illustration(from namedTypography: NamedTypography) -> some View {
-        let token = namedTypography.token(from: theme).compact
+        let horizontalSizeClass = horizontalSizeClass ?? .regular
+        let token = namedTypography.token(from: theme).typographyToken(for: horizontalSizeClass)
 
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            typgraphyIllustration(from: namedTypography)
-                .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
+            illustration(for: namedTypography, in: theme)
+                .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
 
             Group {
                 Text("family (\(theme.customFontFamily ?? "system")), ")
@@ -54,140 +55,9 @@ struct TypographyTokenPage: View {
             }
             .typeBodyDefaultMedium(theme)
             .fixedSize(horizontal: false, vertical: true)
-            .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+            .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaceFixedShorter)
-    }
-
-    @ViewBuilder
-    private func typgraphyIllustration(from namedTypography: NamedTypography) -> some View {
-        switch namedTypography {
-        case .displayLarge:
-            Text(namedTypography.rawValue).typeDisplayLarge(theme)
-        case .displayMedium:
-            Text(namedTypography.rawValue).typeDisplayMedium(theme)
-        case .displaySmall:
-            Text(namedTypography.rawValue).typeDisplaySmall(theme)
-        case .headingXLarge:
-            Text(namedTypography.rawValue).typeHeadingXLarge(theme)
-        case .headingLarge:
-            Text(namedTypography.rawValue).typeHeadingLarge(theme)
-        case .headingMedium:
-            Text(namedTypography.rawValue).typeHeadingMedium(theme)
-        case .headingSmall:
-            Text(namedTypography.rawValue).typeHeadingSmall(theme)
-        case .bodyDefaultLarge:
-            Text(namedTypography.rawValue).typeBodyDefaultLarge(theme)
-        case .bodyDefaultMedium:
-            Text(namedTypography.rawValue).typeBodyDefaultMedium(theme)
-        case .bodyDefaultSmall:
-            Text(namedTypography.rawValue).typeBodyDefaultSmall(theme)
-        case .bodyStrongLarge:
-            Text(namedTypography.rawValue).typeBodyStrongLarge(theme)
-        case .bodyStrongMedium:
-            Text(namedTypography.rawValue).typeBodyStrongMedium(theme)
-        case .bodyStrongSmall:
-            Text(namedTypography.rawValue).typeBodyStrongSmall(theme)
-        case .labelDefaultXLarge:
-            Text(namedTypography.rawValue).typeLabelDefaultXLarge(theme)
-        case .labelDefaultLarge:
-            Text(namedTypography.rawValue).typeLabelDefaultLarge(theme)
-        case .labelDefaultMedium:
-            Text(namedTypography.rawValue).typeLabelDefaultMedium(theme)
-        case .labelDefaultSmall:
-            Text(namedTypography.rawValue).typeLabelDefaultSmall(theme)
-        case .labelStrongXLarge:
-            Text(namedTypography.rawValue).typeLabelStrongXLarge(theme)
-        case .labelStrongLarge:
-            Text(namedTypography.rawValue).typeLabelStrongLarge(theme)
-        case .labelStrongMedium:
-            Text(namedTypography.rawValue).typeLabelStrongMedium(theme)
-        case .labelStrongSmall:
-            Text(namedTypography.rawValue).typeLabelStrongSmall(theme)
-        case .codeSmall:
-            Text(namedTypography.rawValue).typeCodeMedium(theme)
-        case .codeMedium:
-            Text(namedTypography.rawValue).typeCodeMedium(theme)
-        }
-    }
-}
-
-// MARK: - Named Typography
-
-private enum NamedTypography: String, CaseIterable {
-    case displayLarge
-    case displayMedium
-    case displaySmall
-    case headingXLarge
-    case headingLarge
-    case headingMedium
-    case headingSmall
-    case bodyDefaultLarge
-    case bodyDefaultMedium
-    case bodyDefaultSmall
-    case bodyStrongLarge
-    case bodyStrongMedium
-    case bodyStrongSmall
-    case labelDefaultXLarge
-    case labelDefaultLarge
-    case labelDefaultMedium
-    case labelDefaultSmall
-    case labelStrongXLarge
-    case labelStrongLarge
-    case labelStrongMedium
-    case labelStrongSmall
-    case codeMedium
-    case codeSmall
-
-    func token(from theme: OUDSTheme) -> MultipleTypographyTokens {
-        switch self {
-        case .displayLarge:
-            return theme.typeDisplayLarge
-        case .displayMedium:
-            return theme.typeDisplayMedium
-        case .displaySmall:
-            return theme.typeDisplaySmall
-        case .headingXLarge:
-            return theme.typeHeadingXLarge
-        case .headingLarge:
-            return theme.typeHeadingLarge
-        case .headingMedium:
-            return theme.typeHeadingMedium
-        case .headingSmall:
-            return theme.typeHeadingSmall
-        case .bodyDefaultLarge:
-            return theme.typeBodyDefaultLarge
-        case .bodyDefaultMedium:
-            return theme.typeBodyDefaultMedium
-        case .bodyDefaultSmall:
-            return theme.typeBodyDefaultSmall
-        case .bodyStrongLarge:
-            return theme.typeBodyStrongLarge
-        case .bodyStrongMedium:
-            return theme.typeBodyStrongMedium
-        case .bodyStrongSmall:
-            return theme.typeBodyStrongSmall
-        case .labelDefaultXLarge:
-            return theme.typeLabelDefaultXLarge
-        case .labelDefaultLarge:
-            return theme.typeLabelDefaultLarge
-        case .labelDefaultMedium:
-            return theme.typeLabelDefaultMedium
-        case .labelDefaultSmall:
-            return theme.typeLabelDefaultSmall
-        case .labelStrongXLarge:
-            return theme.typeLabelStrongXLarge
-        case .labelStrongLarge:
-            return theme.typeLabelStrongLarge
-        case .labelStrongMedium:
-            return theme.typeLabelStrongMedium
-        case .labelStrongSmall:
-            return theme.typeLabelStrongSmall
-        case .codeSmall:
-            return theme.typeCodeSmall
-        case .codeMedium:
-            return theme.typeCodeMedium
-        }
     }
 }

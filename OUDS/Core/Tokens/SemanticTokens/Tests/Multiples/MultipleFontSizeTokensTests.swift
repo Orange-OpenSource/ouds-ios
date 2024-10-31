@@ -47,7 +47,7 @@ final class MultipleFontSizeTokensTests: XCTestCase {
         let third = MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize200, regular: TypographyRawTokens.fontSize950)
         let fourth = MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize550, regular: TypographyRawTokens.fontSize450)
         let fifth = MultipleFontSizeTokens(compact: TypographyRawTokens.fontSize200, regular: TypographyRawTokens.fontSize450)
-        let sixth = MultipleSizingTokens(compact: 12, regular: 12)
+        let sixth = MultipleSizeTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

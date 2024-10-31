@@ -1,0 +1,82 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+name: Build and Test
+
+on:
+  # For protected and most important branches
+  push:
+    branches:
+      - main
+      - develop
+
+  # To trigger manually
+  workflow_dispatch:
+
+  # Pull request events
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  # Build the app (if there are linter errors or compiler issues, it will fail)
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Xcode 16
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install Fastlane
+        run: |
+          bundle install
+
+      - name: Build demo app
+        run: |
+          cd Showcase
+          bundle exec fastlane buildDebugApp
+
+  # Test the library with unit tests
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Xcode 16
+        run: |
+          sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3'
+
+      - name: Install Fastlane
+        run: |
+          bundle install
+
+      - name: Run unit tests on demo app
+        run: |
+          cd Showcase
+          bundle exec pod install
+          bundle exec fastlane ios test

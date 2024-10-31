@@ -11,7 +11,5 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensRaw
-
-/// Basically a semantic color token, which can be either a functional or a decorative token, is a `String`, to keep grammar clean and clear with design system grammar.
+/// Basically a color semantic  token is a paire of `ColorRawToken` to use for light or dark color scheme, packed in a `MultipleColorTokens` object
 public typealias ColorSemanticToken = MultipleColorTokens

@@ -14,19 +14,16 @@
 import OUDSTokensRaw
 
 /// Basically a space semantic token for layout is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
-public typealias SpacingSemanticToken = DimensionRawToken
+public typealias SpaceSemanticToken = DimensionRawToken
 
 /// Basically a space semantic token for padding inline is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
-public typealias SpacingPaddingInlineSemanticToken = DimensionRawToken
+public typealias SpacePaddingInlineSemanticToken = DimensionRawToken
 
 /// Basically a space semantic token for padding block is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
-public typealias SpacingPaddingBlockSemanticToken = DimensionRawToken
-
-/// Basically a space semantic token for padding inset is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
-public typealias SpacingPaddingInsetSemanticToken = DimensionRawToken
+public typealias SpacePaddingBlockSemanticToken = DimensionRawToken
 
 /// Basically a space semantic token for gap inline is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
-public typealias SpacingGapInlineSemanticToken = DimensionRawToken
+public typealias SpaceGapInlineSemanticToken = DimensionRawToken
 
 /// Basically a space semantic token for gap stack is a dimension raw token, it has the same final type, to keep grammar clean and clear with design system grammar.
-public typealias SpacingGapStackSemanticToken = DimensionRawToken
+public typealias SpaceGapStackSemanticToken = DimensionRawToken

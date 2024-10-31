@@ -17,7 +17,8 @@ import OUDSTokensSemantic
 
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
-// WARNING: Not synchronized anymore with the Figjam
+// WARNING: Not synchronized anymore with the Figjam / Figma by developers team
+// Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable line_length
 // swiftlint:disable identifier_name
@@ -31,71 +32,71 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Background
 
-    @objc open var colorBackgroundPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray880) }
+    @objc open var colorBgPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray880) }
 
-    @objc open var colorBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray800) }
-
-    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBackgroundTertiary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundBrandSecondary!") }
-
-    @objc open var colorBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray880, dark: ColorRawTokens.colorFunctionalDarkGray640) }
+    @objc open var colorBgSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray800) }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBackgroundBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundBrandPrimary!") }
+    @objc open var colorBgTertiary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgTertiary!") }
 
-    @objc open var colorBackgroundBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBackgroundBrandSecondary!") }
-
-    @objc open var colorBackgroundBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBackgroundBrandTertiary!") }
-
-    @objc open var colorBackgroundStatusNeutral: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray720) }
-
-    @objc open var colorBackgroundStatusNeutralOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray720) }
-
-    @objc open var colorBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalMalachite100, dark: ColorRawTokens.colorFunctionalMalachite900) }
-
-    @objc open var colorBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite900) }
-
-    @objc open var colorBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
-
-    @objc open var colorBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDodgerBlue100, dark: ColorRawTokens.colorFunctionalDodgerBlue900) }
-
-    @objc open var colorBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue900) }
-
-    @objc open var colorBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
-
-    @objc open var colorBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun100, dark: ColorRawTokens.colorFunctionalSun900) }
-
-    @objc open var colorBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun900) }
-
-    @objc open var colorBackgroundStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
-
-    @objc open var colorBackgroundStatusNegativeMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalScarlet100, dark: ColorRawTokens.colorFunctionalScarlet900) }
-
-    @objc open var colorBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet900) }
-
-    @objc open var colorBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    @objc open var colorBgEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray880, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBackgroundStatusAccentMuted: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundStatusAccentMuted!") }
+    @objc open var colorBgBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgBrandPrimary!") }
+
+    @objc open var colorBgBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgBrandSecondary!") }
+
+    @objc open var colorBgBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgBrandTertiary!") }
+
+    @objc open var colorBgStatusNeutral: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray720) }
+
+    @objc open var colorBgStatusNeutralOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray720) }
+
+    @objc open var colorBgStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalMalachite100, dark: ColorRawTokens.colorFunctionalMalachite900) }
+
+    @objc open var colorBgStatusPositiveMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite900) }
+
+    @objc open var colorBgStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalMalachite500) }
+
+    @objc open var colorBgStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDodgerBlue100, dark: ColorRawTokens.colorFunctionalDodgerBlue900) }
+
+    @objc open var colorBgStatusInfoMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue900) }
+
+    @objc open var colorBgStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
+
+    @objc open var colorBgStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalSun100, dark: ColorRawTokens.colorFunctionalSun900) }
+
+    @objc open var colorBgStatusWarningMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun900) }
+
+    @objc open var colorBgStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
+
+    @objc open var colorBgStatusNegativeMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalScarlet100, dark: ColorRawTokens.colorFunctionalScarlet900) }
+
+    @objc open var colorBgStatusNegativeMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet900) }
+
+    @objc open var colorBgStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBackgroundStatusAccentMutedOnBackgroundEmphasized!") }
+    @objc open var colorBgStatusAccentMuted: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgStatusAccentMuted!") }
 
-    @objc open var colorBackgroundStatusAccentEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
+    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
+    @objc open var colorBgStatusAccentMutedOnBgEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgStatusAccentMutedOnBgEmphasized!") }
+
+    @objc open var colorBgStatusAccentEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
 
     // MARK: Semantic token - Colors - Content
 
     @objc open var colorContentDefault: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentContentDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentContentDefaultOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
     @objc open var colorContentMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
 
-    @objc open var colorContentContentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    @objc open var colorContentContentMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
     @objc open var colorContentDisabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray400, dark: ColorRawTokens.colorFunctionalDarkGray400) }
 
-    @objc open var colorContentContentDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    @objc open var colorContentContentDisabledOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorContentBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorContentBrandPrimary!") }
@@ -116,56 +117,56 @@ extension OUDSTheme: ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Content - On Background
 
-    @objc open var colorContentOnBackgroundPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorContentOnBgPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorContentOnBackgroundSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentOnBackgroundSecondary!") }
+    @objc open var colorContentOnBgSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentOnBgSecondary!") }
 
-    @objc open var colorContentOnBackgroundTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentOnBackgroundTertiary!") }
+    @objc open var colorContentOnBgTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorContentOnBgTertiary!") }
 
-    @objc open var colorContentOnBackgroundStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusPositiveMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusPositiveMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusPositiveMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorContentOnBgStatusPositiveEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorContentOnBackgroundStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusInfoMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusInfoMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusInfoMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorContentOnBgStatusInfoEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorContentOnBackgroundStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusWarningMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusWarningMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusWarningMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorContentOnBgStatusWarningEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorContentOnBackgroundStatusNegativeMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusNegativeMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusNegativeMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusNegativeMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    @objc open var colorContentOnBgStatusNegativeEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
 
-    @objc open var colorContentOnBackgroundStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusAccentMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusAccentMutedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorContentOnBgStatusAccentMutedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorContentOnBackgroundStatusAccentedEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorContentOnBgStatusAccentedEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
     // MARK: Semantic token - Colors - Border
 
     @objc open var colorBorderDefault: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray400, dark: ColorRawTokens.colorFunctionalDarkGray400) }
 
-    @objc open var colorBorderDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    @objc open var colorBorderDefaultOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
     @objc open var colorBorderEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorBorderEmphasizedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorBorderEmphasizedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
     @objc open var colorBorderFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray880) }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBorderBrandPrimaryOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimaryOnBackgroundEmphasized!") }
+    @objc open var colorBorderBrandPrimaryOnBgEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimaryOnBgEmphasized!") }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBorderBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimary!") }
@@ -184,11 +185,11 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorBorderStatusAccent: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderStatusAccent!") }
 
-    @objc open var colorBorderOnBackgroundBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorBorderOnBgBrandPrimary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorBorderOnBackgroundBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderOnBackgroundBrandSecondary!") }
+    @objc open var colorBorderOnBgBrandSecondary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderOnBgBrandSecondary!") }
 
-    @objc open var colorBorderOnBackgroundBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderOnBackgroundBrandTertiary!") }
+    @objc open var colorBorderOnBgBrandTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBorderOnBgBrandTertiary!") }
 
     // MARK: Semantic token - Colors - Action
 
@@ -196,59 +197,59 @@ extension OUDSTheme: ColorSemanticTokens {
     @objc open var colorActionSelected: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionSelected!") }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorActionSelectedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionSelectedOnBackgroundEmphasized!") }
+    @objc open var colorActionSelectedOnBgEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionSelectedOnBgEmphasized!") }
 
     @objc open var colorActionDisabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray400, dark: ColorRawTokens.colorFunctionalDarkGray400) }
 
-    @objc open var colorActionDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    @objc open var colorActionDisabledOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
     @objc open var colorActionVisited: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorDecorativeAmethyst600, dark: ColorRawTokens.colorDecorativeAmethyst400) }
 
-    @objc open var colorActionVistedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst400) }
+    @objc open var colorActionVistedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeAmethyst400) }
 
     @objc open var colorActionPrimaryEnabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorActionPrimaryEnabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorActionPrimaryEnabledOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
     @objc open var colorActionPrimaryHover: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
 
-    @objc open var colorActionPrimaryHoverOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    @objc open var colorActionPrimaryHoverOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorActionPrimaryPressed: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryPressed!") }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorActionPrimaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryPressedOnBackgroundEmphasized!") }
+    @objc open var colorActionPrimaryPressedOnBgEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryPressedOnBgEmphasized!") }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorActionPrimaryLoading: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoading!") }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorActionPrimaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoadingOnBackgroundEmphasized!") }
+    @objc open var colorActionPrimaryLoadingOnBgEmphasized: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoadingOnBgEmphasized!") }
 
     @objc open var colorActionPrimaryFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
 
-    @objc open var colorActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    @objc open var colorActionPrimaryFocusOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
     @objc open var colorActionSecondaryEnabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray720) }
+    @objc open var colorActionSecondaryEnabledOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray720) }
 
     @objc open var colorActionSecondaryHover: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    @objc open var colorActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    @objc open var colorActionSecondaryHoverOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
     @objc open var colorActionSecondaryPressed: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    @objc open var colorActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    @objc open var colorActionSecondaryPressedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
 
     @objc open var colorActionSecondaryLoading: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    @objc open var colorActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    @objc open var colorActionSecondaryLoadingOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
 
     @objc open var colorActionSecondaryFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    @objc open var colorActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    @objc open var colorActionSecondaryFocusOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray640) }
 
     @objc open var colorActionNegativeEnabled: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet600) }
 
@@ -260,51 +261,51 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorActionNegativeFocus: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalScarlet700) }
 
-    @objc open var colorActionOnBackgroundActionDisabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionDisabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionDisabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionDisabledOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    @objc open var colorActionOnBgActionNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryEnabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryEnabled: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryEnabledOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryEnabledOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryHover: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryHover: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryHoverOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryHoverOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryPressed: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryPressed: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryPressedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryPressedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryLoading: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryLoading: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryLoadingOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryLoadingOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryFocus: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorActionOnBgActionPrimaryFocusOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorActionOnBackgroundActionSecondaryEnabled: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryEnabled!")  }
+    @objc open var colorActionOnBgActionSecondaryEnabled: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryEnabled!")  }
 
-    @objc open var colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized!") }
+    @objc open var colorActionOnBgActionSecondaryEnabledOnBgEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryEnabledOnBgEmphasized!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryHover: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHover!") }
+    @objc open var colorActionOnBgActionSecondaryHover: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryHover!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized!") }
+    @objc open var colorActionOnBgActionSecondaryHoverOnBgEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryHoverOnBgEmphasized!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryPressed: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressed!") }
+    @objc open var colorActionOnBgActionSecondaryPressed: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryPressed!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized!") }
+    @objc open var colorActionOnBgActionSecondaryPressedOnBgEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryPressedOnBgEmphasized!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryLoading: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryLoading!") }
+    @objc open var colorActionOnBgActionSecondaryLoading: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryLoading!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized!") }
+    @objc open var colorActionOnBgActionSecondaryLoadingOnBgEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryLoadingOnBgEmphasized!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryFocus: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryFocus!") }
+    @objc open var colorActionOnBgActionSecondaryFocus: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryFocus!") }
 
-    @objc open var colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized!") }
+    @objc open var colorActionOnBgActionSecondaryFocusOnBgEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryFocusOnBgEmphasized!") }
 
     // MARK: Semantic token - Colors - Always
 
@@ -322,19 +323,19 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorAlwaysAccent: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalSun500) }
 
-    @objc open var colorAlwaysOnBackgroundBlack: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    @objc open var colorAlwaysOnBgBlack: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
 
-    @objc open var colorAlwaysOnBackgroundWhite: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorAlwaysOnBgWhite: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorAlwaysOnBackgroundWarning: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorAlwaysOnBgWarning: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorAlwaysOnBackgroundNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
+    @objc open var colorAlwaysOnBgNegative: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalWhite) }
 
-    @objc open var colorAlwaysOnBackgroundPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorAlwaysOnBgPositive: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorAlwaysOnBackgroundInfo: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorAlwaysOnBgInfo: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
-    @objc open var colorAlwaysOnBackgroundAccent: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorAlwaysOnBgAccent: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalBlack) }
 
     // MARK: Semantic token - Colors - Transparent
 
@@ -344,50 +345,38 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorElevationRaised: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray800) }
 
-    @objc open var colorElevationRaisedOnBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray720) }
+    @objc open var colorElevationRaisedOnBgSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
-    @objc open var colorElevationRaisedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray800, dark: ColorRawTokens.colorFunctionalDarkGray560) }
+    @objc open var colorElevationRaisedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray800, dark: ColorRawTokens.colorFunctionalDarkGray560) }
 
     @objc open var colorElevationDrag: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
-    @objc open var colorElevationDragOnBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray640) }
+    @objc open var colorElevationDragOnBgSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    @objc open var colorElevationDragOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray480) }
+    @objc open var colorElevationDragOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray480) }
 
     @objc open var colorElevationOverlayDefault: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray720) }
 
-    @objc open var colorElevationOverlayDefaultOnBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray640) }
+    @objc open var colorElevationOverlayDefaultOnBgSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
-    @objc open var colorElevationOverlayDefaultOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray480) }
+    @objc open var colorElevationOverlayDefaultOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray720, dark: ColorRawTokens.colorFunctionalDarkGray480) }
 
     @objc open var colorElevationOverlayEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray640, dark: ColorRawTokens.colorFunctionalDarkGray480) }
 
-    @objc open var colorElevationOverlayEmphasizedOnBackgroundSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray640, dark: ColorRawTokens.colorFunctionalDarkGray480) }
+    @objc open var colorElevationOverlayEmphasizedOnBgSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray640, dark: ColorRawTokens.colorFunctionalDarkGray480) }
 
-    @objc open var colorElevationOverlayEmphasizedOnBackgroundEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray480) }
+    @objc open var colorElevationOverlayEmphasizedOnBgEmphasized: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray80, dark: ColorRawTokens.colorFunctionalDarkGray480) }
 
     @objc open var colorElevationModal: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalWhite, dark: ColorRawTokens.colorFunctionalDarkGray640) }
 
     // MARK: Semantic token - Colors - Decorative
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorDecorativeBrandPrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorDecorativeBrandPrimary!") }
-
-    @objc open var colorDecorativeBrandPrimaryMuted: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandPrimaryMuted!") }
-
-    @objc open var colorDecorativeBrandPrimaryEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandPrimaryEmphasized!") }
+    @objc open var colorDecorativePrimary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorDecorativePrimary!") }
 
     @objc open var colorDecorativeSecondary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalLightGray160) }
 
-    @objc open var colorDecorativeSecondaryMuted: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeSecondaryMuted!") }
-
-    @objc open var colorDecorativeSecondaryEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeSecondaryEmphasized!") }
-
-    @objc open var colorDecorativeBrandTertiary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalDarkGray880) }
-
-    @objc open var colorDecorativeBrandTertiaryMuted: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandTertiaryMuted!") }
-
-    @objc open var colorDecorativeBrandTertiaryEmphasized: ColorSemanticToken { fatalError("🤖 No value defined for colorDecorativeBrandTertiaryEmphasized!") }
+    @objc open var colorDecorativeTertiary: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalBlack, dark: ColorRawTokens.colorFunctionalDarkGray880) }
 
     @objc open var colorDecorativeNeutralMuted: ColorSemanticToken { MultipleColorTokens(light: ColorRawTokens.colorFunctionalLightGray160, dark: ColorRawTokens.colorFunctionalDarkGray560) }
 
@@ -425,23 +414,23 @@ extension OUDSTheme: ColorSemanticTokens {
 
     @objc open var colorDecorativeAccent5Emphasized: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeShockingPink300) }
 
-    @objc open var colorDecorativeSkintTint100: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach100) }
+    @objc open var colorDecorativeSkinTint100: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach100) }
 
-    @objc open var colorDecorativeSkintTint200: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach200) }
+    @objc open var colorDecorativeSkinTint200: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach200) }
 
-    @objc open var colorDecorativeSkintTint300: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach300) }
+    @objc open var colorDecorativeSkinTint300: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach300) }
 
-    @objc open var colorDecorativeSkintTint400: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach400) }
+    @objc open var colorDecorativeSkinTint400: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach400) }
 
-    @objc open var colorDecorativeSkintTint500: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach500) }
+    @objc open var colorDecorativeSkinTint500: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach500) }
 
-    @objc open var colorDecorativeSkintTint600: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach600) }
+    @objc open var colorDecorativeSkinTint600: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach600) }
 
-    @objc open var colorDecorativeSkintTint700: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach700) }
+    @objc open var colorDecorativeSkinTint700: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach700) }
 
-    @objc open var colorDecorativeSkintTint800: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach800) }
+    @objc open var colorDecorativeSkinTint800: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach800) }
 
-    @objc open var colorDecorativeSkintTint900: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach900) }
+    @objc open var colorDecorativeSkinTint900: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorDecorativeDeepPeach900) }
 
     // MARK: Semantic token - Colors - Chart
 

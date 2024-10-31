@@ -16,7 +16,7 @@ import OUDSTokensRaw
 
 /// Kind of semantic tokens which will wrap a combination of `TypographyFontLineHeightSemanticToken` depending to size classes.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-public final class MultipleFontLineHeightTokens: NSObject {
+public final class MultipleFontLineHeightTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: TypographyFontLineHeightSemanticToken

@@ -25,7 +25,7 @@ public protocol ButtonsComponentTokens {
      2. Maybe a composite tokens should be defined and used to gather all these atomic semantic tokens
      */
 
-    var buttonInternalSpacing: SpacingPaddingInlineSemanticToken { get }
+    var buttonInternalSpacing: SpacePaddingInlineSemanticToken { get }
 
     var buttonBorderStyle: BorderStyleSemanticToken { get }
     var buttonBorderColor: ColorSemanticToken { get }
@@ -35,8 +35,8 @@ public protocol ButtonsComponentTokens {
     var buttonForegroundColor: ColorSemanticToken { get }
     var buttonBackgroundColor: ColorSemanticToken { get }
 
-    var buttonWidth: SizingSemanticToken { get }
-    var buttonHeight: SizingSemanticToken { get }
+    var buttonWidth: SizeSemanticToken { get }
+    var buttonHeight: SizeSemanticToken { get }
 
     var buttonTypography: MultipleTypographyTokens { get }
 }

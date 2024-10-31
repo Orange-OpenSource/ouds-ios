@@ -65,7 +65,7 @@ default_platform(:ios)
 platform :ios do
 
     before_all do |lane, options|
-        xcversion(version: "~> 15.3")
+        xcversion(version: "~> 16.0")
     end
 
     # ------------------------------------------------------------
@@ -100,10 +100,17 @@ platform :ios do
                 device: device,
                 skip_build: true)
 
-            publish_mattermost_notification("🧪 ✅ No issue with tests")
-
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
+            else
+                publish_mattermost_notification("🧪 ✅ No issue with tests")
+            end
         rescue => error
-            publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test)")
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
+            else
+                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test)")
+            end
             raise error
         end
     end
@@ -125,10 +132,17 @@ platform :ios do
                 skip_build: true
             )
 
-            publish_mattermost_notification("🧪 ✅ No issue with UI tests")
-
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
+            else
+                publish_mattermost_notification("🧪 ✅ No issue with UI tests")
+            end
         rescue => error
-            publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_ui)")
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
+            else
+                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_ui)")
+            end
             raise error
         end
     end
@@ -163,14 +177,20 @@ platform :ios do
           clean_install: true
         )
 
+        Dir.chdir "../Showcase/Resources/Assets.xcassets" do
+            sh "rm -Rf AppIconRelease.appiconset"
+            sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
+        end
+
         gym(
             scheme: OUDS_SCHEME,
             output_directory: 'build/',
             archive_path: 'build/',
-            output_name: 'oudsApp',
+            output_name: 'odsApp',
             configuration: 'Debug',
             include_symbols: true,
-            export_method: 'development'
+            skip_archive: true,
+            destination: "generic/platform=iOS Simulator"
         )
     end
 
@@ -190,7 +210,7 @@ platform :ios do
 
         Dir.chdir "../Showcase/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
-            sh "cp -R AppIconDev.appiconset AppIconRelease.appiconset"
+            sh "cp -R AppIconAlpha.appiconset AppIconRelease.appiconset"
         end
 
         # CFBundleVersion and CFBundleShortVersionString must follow rules with integers and periods, should not change them
@@ -215,7 +235,7 @@ platform :ios do
         puts "👉 Beta (commit hash = '#{params[:commitHash]}')"
         Dir.chdir "../Showcase/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
-            sh "cp -R AppIconQualif.appiconset AppIconRelease.appiconset"
+            sh "cp -R AppIconBeta.appiconset AppIconRelease.appiconset"
         end
 
         new_display_name = "OUDS Showcase (BETA)"

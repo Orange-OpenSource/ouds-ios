@@ -11,16 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-// ଘ( ･ω･)_/ﾟ･:*:･｡☆
-// [File to generate with the tokenator]
-
 // swiftlint:disable missing_docs
 
-/// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
 extension OpacityRawTokens {
-
-    // MARK: Primitive token - Opacity
-
     public static let opacity0: OpacityRawToken = 0
     public static let opacity100: OpacityRawToken = 0.04
     public static let opacity200: OpacityRawToken = 0.08
@@ -29,7 +22,7 @@ extension OpacityRawTokens {
     public static let opacity500: OpacityRawToken = 0.32
     public static let opacity600: OpacityRawToken = 0.48
     public static let opacity700: OpacityRawToken = 0.64
-    public static let opacity800: OpacityRawToken = 0.80
+    public static let opacity800: OpacityRawToken = 0.8
     public static let opacity900: OpacityRawToken = 1
 }
 

@@ -23,77 +23,16 @@ flowchart TD
 
 ## Component tokens
 
-These _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) can be used to apply some style and configuration values to _components_.
-Thus if a component needs to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
-_Components_ use _component tokens_ exposed through the _theme_ to get their style values.
-
-Example with a fake component `FormsTextInputComponentTokens`:
-
-```swift
-// Declare the component tokens
-public protocol FormsTextInputComponentTokens {
-    var ftiTitleFontWeight: TypographyFontWeightSemanticToken { get }
-    var ftiTitleFontSize: TypographyFontSizeSemanticToken { get }
-    var ftiTitleColor: ColorSemanticToken { get }
-    
-    var ftiBorderColor: ColorSemanticToken { get }
-    var ftiBorderStyle: BorderStyleSemanticToken { get }
-    var ftiBorderWidth: BorderWidthSemanticToken { get }
-}
-
-// Define the component tokens
-extension OUDSTheme: FormsTextInputComponentTokens {
-    private static let defaultBlack: ColorSemanticToken = ColorRawTokens.colorFunctionalBlack
-    private static let defaultWhite: ColorSemanticToken = ColorRawTokens.colorFunctionalWhite
-
-    @objc open var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightHeading }
-    @objc open var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelLarge }
-    @objc open var ftiTitleColor: ColorSemanticToken { colorContentBrandPrimaryLight ?? Self.defaultBlack }
-    
-    @objc open var ftiBorderColor: ColorSemanticToken { colorBorderEmphasizedLight ?? Self.defaultBlack }
-    @objc open var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDefault }
-    @objc open var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThin }
-}
-
-// Then in the definition of the component FormsTextInput component, the theme will be called and the component tokens
-// stored inside will be applied
-// The View
-
-struct OUDSFormsTextInput: View {
-
-    // ...
-    @Environment(\.theme) var theme
-    @Environment(\.colorScheme) var colorScheme
-
-    public var body: some View {
-        VStack(spacing: theme.spacePaddingBlockComponentTall) {
-            Label(
-                title: {
-                    Text("Example of OUDSFormsTextInput")
-                        .fontWeight(theme.ftiTitleFontWeight.fontWeight)
-                        .font(.system(size: theme.ftiTitleFontSize))
-                        .foregroundColor(theme.ftiTitleColor.color)
-                },
-                icon: { /*@START_MENU_TOKEN@*/Image(systemName: "42.circle")/*@END_MENU_TOKEN@*/ }
-            )
-            Text("Write bellow some awesome text!")
-                .fontWeight(theme.ftiSubtitleFontWeight.fontWeight)
-                .font(.system(size: theme.ftiSubtitleFontSize))
-                .foregroundColor(theme.ftiSubtitleColor.color)
-            TextField(placeholder, text: $value)
-        }
-        .padding(theme.spacePaddingBlockComponentTall)
-        .background(theme.ftiBorderColor.color(for: colorScheme))
-        .border(theme.ftiBorderColor.color(for: colorScheme), width: theme.ftiBorderWidth)
-    }
-}
-```
+No _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) are defined for components yet.
 
 ## Semantic tokens
 
+### What they are
+
 These _tokens_ ([OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/)) can be used mainly for _component tokens_ to apply some style and configuration values.
 They can be seen as an high level of usage with functional meanings.
-Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
+
+A semantic token points to a raw token, and is used by components. A semantic token brings meanings, higher level notions. For example, a raw token can be a "red color", and a semantic token pointing to it can be a "danger information color". Semantic tokens are used by components tokens and shared definition of themes. They are splitted in kind of families, i.e. borders, dimensions, colors, spacings, elevations, sizings, opacities, grids and typographies. For some of theses tokens, like for borders, subfamilies can be defined likes width, radius and style. Finally, any of these raw tokens is associated to a raw value which will be - in the end - applied to SwiftUI views inside components. Type aliases will help to make a simple math between any semantic tokens and raw tokens. Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition, only their rendering.
 
 In addition, there are hundreds of _semantics tokens_ and we needed to add them to the abstract root theme using extensions for clarity reasons to prevent to have a _Swift class_ with thousands of lines. Each _raw token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
 
@@ -104,21 +43,57 @@ To keep the same semantics as the ones used in our specifications, _typealias_ a
 Example with [OUDSTokensComponent/ColorSemanticTokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens):
 
 ```swift
-// Declare a semantic token for color
+// Declare the semantic tokens
 protocol ColorSemanticTokens {
-    var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { get }
+
+    var colorBgPrimary: ColorSemanticToken { get }
+    var colorBgSecondary: ColorSemanticToken { get }
+    var colorBgTertiary: ColorSemanticToken { get }
+    // ...
 }
 
-// Define the semantic token
+// Define the semantic tokens exposed through the theme
 extension OUDSTheme: ColorSemanticTokens {
 
-    @objc open var sysColorBrandNeutralMutedWhite: ColorAliasSemanticToken? { ColorRawTokens.colorFunctionalWhite }
+    // Color is available in the module of OUDSTheme
+    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+
+    // If the semantic token refers to a raw token not stored in the OUDSTheme module, override later and throw error because unxpected state if used
+    @objc open var colorBgSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgSecondary!") }
+
+    // Possible to have tokens not defined in lwoer level must only in themes implementation, throw error if used because unexpected state
+    @objc open var colorBgTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgTertiary!") }
 }
 
-// Then any component and view can use the theme and get the stored colors, only manipulating them by their variable names.
+// Add missing values
+extension OrangeTheme: ColorSemanticTokens {
+
+    // Define value value with the accessible token 
+    @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
+}
 ```
 
+### Important notice
+
+You may see the source code can be more simple, or the source code does not follow the Swift guidelines, or plenty of warnings of SwiftLint are disabled, or things are dirty.
+
+In fact, rely to much on *Figma* and how the design system is implemented.
+There are thousands of tokens, and we do now know if they will be used, how and by whom. In addition, the logic behind these tokens, their nature and names, is very tight to the web domain because the design team behind is more used to web environment than mobileones like Android and iOS. Some tokens like composite tokens are defined in *Figma* but *Figma* is not able to manage them, it is tinkering, and the outputed JSON cannot manage that too.
+In addition, *Figma* exposts the tokens in JSON, which is then parsed with our own fork and implementation of _style dictionary_ tool which struggles to outputs the JSON to web, Kotlin and Swift assets.
+
+That is the reason why:
+- some *SwiftLint* warnings on tokens are disabled: not possible to have doc of public tokens, too long names, too long lines, too long body, too long identifiers
+- some tokens do not have full names, e.g. "colorBackground" are named "colorBg"
+- somes tokens are defined without attached values, thus we throw `fatalError` because that state is not relevant
+- some tokens in the *Figma* use colors defined in another module, thus we throw `fatalError` to force themes to override with the good and avaialble values
+- we have thousands of tokens, as thousands of tokens are defined
+- we do not know if there is dead code because API are public
+
+Feel free to send issues and contact us for further details or if you spotted something interesting.
+
 ## Raw tokens
+
+### What they are
 
 _Raw tokens_ ([OUDSTokensRaw](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/)) are smallest _tokens_ possible. They are associated to raw values and will be finaly the values assigned to the _components_ properties.
 
@@ -143,7 +118,6 @@ public enum ColorRawTokens { }
 extension ColorRawTokens { // Gathers all color raw tokens, use enums for namespace optimization with static let
 
     public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
-    public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E"
     public static let colorTransparentBlack0: ColorRawToken = apply(opacity: OpacityRawTokens.opacity0, on: colorFunctionalBlack)
     ...
 }
@@ -152,6 +126,11 @@ extension String { // The OUDS library still exposes this comptuer property
     public var color: Color {
         Color(hexadecimalCode: self)
     }
+}
+
+// Themes can embed their own tokens
+enum OrangeBrandColorRawTokens {
+    public static let colorOrange200: ColorOrangeBrandRawToken = "#FFC18A"
 }
 ```
 
@@ -162,8 +141,8 @@ You may need to [create an issue](https://github.com/Orange-OpenSource/ouds-ios/
 
 ### For raw tokens
 
-You can refer to the *OUDSTokensRaw* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/)
+You can refer to the *OUDSTokensRaw* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/). [The wiki provides details](https://github.com/Orange-OpenSource/ouds-ios/wiki/0-%E2%80%90-How-to-update-tokens) also.
 
 ### For semantic tokens
 
-You can refer to the *OUDSTokensSemantic* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/
+You can refer to the *OUDSTokensSemantic* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/). [The wiki provides details](https://github.com/Orange-OpenSource/ouds-ios/wiki/0-%E2%80%90-How-to-update-tokens) also.

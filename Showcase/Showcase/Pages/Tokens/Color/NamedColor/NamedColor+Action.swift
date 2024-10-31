@@ -21,117 +21,116 @@ extension NamedColor {
 
     enum Action: String, CaseIterable {
         case colorActionSelected
-        case colorActionSelectedOnBackgroundEmphasized
+        case colorActionSelectedOnBgEmphasized
         case colorActionDisabled
-        case colorActionDisabledOnBackgroundEmphasized
+        case colorActionDisabledOnBgEmphasized
         case colorActionVisited
-        case colorActionVistedOnBackgroundEmphasized
+        case colorActionVistedOnBgEmphasized
         case colorActionPrimaryEnabled
-        case colorActionPrimaryEnabledOnBackgroundEmphasized
+        case colorActionPrimaryEnabledOnBgEmphasized
         case colorActionPrimaryHover
-        case colorActionPrimaryHoverOnBackgroundEmphasized
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//        case colorActionPrimaryPressed
-        case colorActionPrimaryPressedOnBackgroundEmphasized
+        case colorActionPrimaryHoverOnBgEmphasized
+        case colorActionPrimaryPressed
+        case colorActionPrimaryPressedOnBgEmphasized
         case colorActionPrimaryLoading
-        case colorActionPrimaryLoadingOnBackgroundEmphasized
+        case colorActionPrimaryLoadingOnBgEmphasized
         case colorActionPrimaryFocus
-        case colorActionPrimaryFocusOnBackgroundEmphasized
+        case colorActionPrimaryFocusOnBgEmphasized
         case colorActionSecondaryEnabled
-        case colorActionSecondaryEnabledOnBackgroundEmphasized
+        case colorActionSecondaryEnabledOnBgEmphasized
         case colorActionSecondaryHover
-        case colorActionSecondaryHoverOnBackgroundEmphasized
+        case colorActionSecondaryHoverOnBgEmphasized
         case colorActionSecondaryPressed
-        case colorActionSecondaryPressedOnBackgroundEmphasized
+        case colorActionSecondaryPressedOnBgEmphasized
         case colorActionSecondaryLoading
-        case colorActionSecondaryLoadingOnBackgroundEmphasized
+        case colorActionSecondaryLoadingOnBgEmphasized
         case colorActionSecondaryFocus
-        case colorActionSecondaryFocusOnBackgroundEmphasized
+        case colorActionSecondaryFocusOnBgEmphasized
         case colorActionNegativeEnabled
         case colorActionNegativeHover
         case colorActionNegativePressed
         case colorActionNegativeLoading
         case colorActionNegativeFocus
-        case colorActionOnBackgroundActionDisabled
-        case colorActionOnBackgroundActionDisabledOnBackgroundEmphasized
-        case colorActionOnBackgroundActionNegative
-        case colorActionOnBackgroundActionPrimaryEnabled
-        case colorActionOnBackgroundActionPrimaryEnabledOnBackgroundEmphasized
-        case colorActionOnBackgroundActionPrimaryHover
-        case colorActionOnBackgroundActionPrimaryHoverOnBackgroundEmphasized
-        case colorActionOnBackgroundActionPrimaryPressed
-        case colorActionOnBackgroundActionPrimaryPressedOnBackgroundEmphasized
-        case colorActionOnBackgroundActionPrimaryLoading
-        case colorActionOnBackgroundActionPrimaryLoadingOnBackgroundEmphasized
-        case colorActionOnBackgroundActionPrimaryFocus
-        case colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized
+        case colorActionOnBgActionDisabled
+        case colorActionOnBgActionDisabledOnBgEmphasized
+        case colorActionOnBgActionNegative
+        case colorActionOnBgActionPrimaryEnabled
+        case colorActionOnBgActionPrimaryEnabledOnBgEmphasized
+        case colorActionOnBgActionPrimaryHover
+        case colorActionOnBgActionPrimaryHoverOnBgEmphasized
+        case colorActionOnBgActionPrimaryPressed
+        case colorActionOnBgActionPrimaryPressedOnBgEmphasized
+        case colorActionOnBgActionPrimaryLoading
+        case colorActionOnBgActionPrimaryLoadingOnBgEmphasized
+        case colorActionOnBgActionPrimaryFocus
+        case colorActionOnBgActionPrimaryFocusOnBgEmphasized
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//        case colorActionOnBackgroundActionSecondaryEnabled
-//        case colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized
-//        case colorActionOnBackgroundActionSecondaryHover
-//        case colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized
-//        case colorActionOnBackgroundActionSecondaryPressed
-//        case colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized
-//        case colorActionOnBackgroundActionSecondaryLoading
-//        case colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized
-//        case colorActionOnBackgroundActionSecondaryFocus
-//        case colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized
+//        case colorActionOnBgActionSecondaryEnabled
+//        case colorActionOnBgActionSecondaryEnabledOnBgEmphasized
+//        case colorActionOnBgActionSecondaryHover
+//        case colorActionOnBgActionSecondaryHoverOnBgEmphasized
+//        case colorActionOnBgActionSecondaryPressed
+//        case colorActionOnBgActionSecondaryPressedOnBgEmphasized
+//        case colorActionOnBgActionSecondaryLoading
+//        case colorActionOnBgActionSecondaryLoadingOnBgEmphasized
+//        case colorActionOnBgActionSecondaryFocus
+//        case colorActionOnBgActionSecondaryFocusOnBgEmphasized
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
             case .colorActionSelected:
                 return theme.colorActionSelected
-            case .colorActionSelectedOnBackgroundEmphasized:
-                return theme.colorActionSelectedOnBackgroundEmphasized
+            case .colorActionSelectedOnBgEmphasized:
+                return theme.colorActionSelectedOnBgEmphasized
             case .colorActionDisabled:
                 return theme.colorActionDisabled
-            case .colorActionDisabledOnBackgroundEmphasized:
-                return theme.colorActionDisabledOnBackgroundEmphasized
+            case .colorActionDisabledOnBgEmphasized:
+                return theme.colorActionDisabledOnBgEmphasized
             case .colorActionVisited:
                 return theme.colorActionVisited
-            case .colorActionVistedOnBackgroundEmphasized:
-                return theme.colorActionVistedOnBackgroundEmphasized
+            case .colorActionVistedOnBgEmphasized:
+                return theme.colorActionVistedOnBgEmphasized
             case .colorActionPrimaryEnabled:
                 return theme.colorActionPrimaryEnabled
-            case .colorActionPrimaryEnabledOnBackgroundEmphasized:
-                return theme.colorActionPrimaryEnabledOnBackgroundEmphasized
+            case .colorActionPrimaryEnabledOnBgEmphasized:
+                return theme.colorActionPrimaryEnabledOnBgEmphasized
             case .colorActionPrimaryHover:
                 return theme.colorActionPrimaryHover
-            case .colorActionPrimaryHoverOnBackgroundEmphasized:
-                return theme.colorActionPrimaryHoverOnBackgroundEmphasized
+            case .colorActionPrimaryHoverOnBgEmphasized:
+                return theme.colorActionPrimaryHoverOnBgEmphasized
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorActionPrimaryPressed:
-//                return theme.colorActionPrimaryPressed
-            case .colorActionPrimaryPressedOnBackgroundEmphasized:
-                return theme.colorActionPrimaryPressedOnBackgroundEmphasized
+            case .colorActionPrimaryPressed:
+                return theme.colorActionPrimaryPressed
+            case .colorActionPrimaryPressedOnBgEmphasized:
+                return theme.colorActionPrimaryPressedOnBgEmphasized
             case .colorActionPrimaryLoading:
                 return theme.colorActionPrimaryLoading
-            case .colorActionPrimaryLoadingOnBackgroundEmphasized:
-                return theme.colorActionPrimaryLoadingOnBackgroundEmphasized
+            case .colorActionPrimaryLoadingOnBgEmphasized:
+                return theme.colorActionPrimaryLoadingOnBgEmphasized
             case .colorActionPrimaryFocus:
                 return theme.colorActionPrimaryFocus
-            case .colorActionPrimaryFocusOnBackgroundEmphasized:
-                return theme.colorActionPrimaryFocusOnBackgroundEmphasized
+            case .colorActionPrimaryFocusOnBgEmphasized:
+                return theme.colorActionPrimaryFocusOnBgEmphasized
             case .colorActionSecondaryEnabled:
                 return theme.colorActionSecondaryEnabled
-            case .colorActionSecondaryEnabledOnBackgroundEmphasized:
-                return theme.colorActionSecondaryEnabledOnBackgroundEmphasized
+            case .colorActionSecondaryEnabledOnBgEmphasized:
+                return theme.colorActionSecondaryEnabledOnBgEmphasized
             case .colorActionSecondaryHover:
                 return theme.colorActionSecondaryHover
-            case .colorActionSecondaryHoverOnBackgroundEmphasized:
-                return theme.colorActionSecondaryHoverOnBackgroundEmphasized
+            case .colorActionSecondaryHoverOnBgEmphasized:
+                return theme.colorActionSecondaryHoverOnBgEmphasized
             case .colorActionSecondaryPressed:
                 return theme.colorActionSecondaryPressed
-            case .colorActionSecondaryPressedOnBackgroundEmphasized:
-                return theme.colorActionSecondaryPressedOnBackgroundEmphasized
+            case .colorActionSecondaryPressedOnBgEmphasized:
+                return theme.colorActionSecondaryPressedOnBgEmphasized
             case .colorActionSecondaryLoading:
                 return theme.colorActionSecondaryLoading
-            case .colorActionSecondaryLoadingOnBackgroundEmphasized:
-                return theme.colorActionSecondaryLoadingOnBackgroundEmphasized
+            case .colorActionSecondaryLoadingOnBgEmphasized:
+                return theme.colorActionSecondaryLoadingOnBgEmphasized
             case .colorActionSecondaryFocus:
                 return theme.colorActionSecondaryFocus
-            case .colorActionSecondaryFocusOnBackgroundEmphasized:
-                return theme.colorActionSecondaryFocusOnBackgroundEmphasized
+            case .colorActionSecondaryFocusOnBgEmphasized:
+                return theme.colorActionSecondaryFocusOnBgEmphasized
             case .colorActionNegativeEnabled:
                 return theme.colorActionNegativeEnabled
             case .colorActionNegativeHover:
@@ -142,53 +141,53 @@ extension NamedColor {
                 return theme.colorActionNegativeLoading
             case .colorActionNegativeFocus:
                 return theme.colorActionNegativeFocus
-            case .colorActionOnBackgroundActionDisabled:
-                return theme.colorActionOnBackgroundActionDisabled
-            case .colorActionOnBackgroundActionDisabledOnBackgroundEmphasized:
-                return theme.colorActionOnBackgroundActionDisabledOnBackgroundEmphasized
-            case .colorActionOnBackgroundActionNegative:
-                return theme.colorActionOnBackgroundActionNegative
-            case .colorActionOnBackgroundActionPrimaryEnabled:
-                return theme.colorActionOnBackgroundActionPrimaryEnabled
-            case .colorActionOnBackgroundActionPrimaryEnabledOnBackgroundEmphasized:
-                return theme.colorActionOnBackgroundActionPrimaryEnabledOnBackgroundEmphasized
-            case .colorActionOnBackgroundActionPrimaryHover:
-                return theme.colorActionOnBackgroundActionPrimaryHover
-            case .colorActionOnBackgroundActionPrimaryHoverOnBackgroundEmphasized:
-                return theme.colorActionOnBackgroundActionPrimaryHoverOnBackgroundEmphasized
-            case .colorActionOnBackgroundActionPrimaryPressed:
-                return theme.colorActionOnBackgroundActionPrimaryPressed
-            case .colorActionOnBackgroundActionPrimaryPressedOnBackgroundEmphasized:
-                return theme.colorActionOnBackgroundActionPrimaryPressedOnBackgroundEmphasized
-            case .colorActionOnBackgroundActionPrimaryLoading:
-                return theme.colorActionOnBackgroundActionPrimaryLoading
-            case .colorActionOnBackgroundActionPrimaryLoadingOnBackgroundEmphasized:
-                return theme.colorActionOnBackgroundActionPrimaryLoadingOnBackgroundEmphasized
-            case .colorActionOnBackgroundActionPrimaryFocus:
-                return theme.colorActionOnBackgroundActionPrimaryFocus
-            case .colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized:
-                return theme.colorActionOnBackgroundActionPrimaryFocusOnBackgroundEmphasized
+            case .colorActionOnBgActionDisabled:
+                return theme.colorActionOnBgActionDisabled
+            case .colorActionOnBgActionDisabledOnBgEmphasized:
+                return theme.colorActionOnBgActionDisabledOnBgEmphasized
+            case .colorActionOnBgActionNegative:
+                return theme.colorActionOnBgActionNegative
+            case .colorActionOnBgActionPrimaryEnabled:
+                return theme.colorActionOnBgActionPrimaryEnabled
+            case .colorActionOnBgActionPrimaryEnabledOnBgEmphasized:
+                return theme.colorActionOnBgActionPrimaryEnabledOnBgEmphasized
+            case .colorActionOnBgActionPrimaryHover:
+                return theme.colorActionOnBgActionPrimaryHover
+            case .colorActionOnBgActionPrimaryHoverOnBgEmphasized:
+                return theme.colorActionOnBgActionPrimaryHoverOnBgEmphasized
+            case .colorActionOnBgActionPrimaryPressed:
+                return theme.colorActionOnBgActionPrimaryPressed
+            case .colorActionOnBgActionPrimaryPressedOnBgEmphasized:
+                return theme.colorActionOnBgActionPrimaryPressedOnBgEmphasized
+            case .colorActionOnBgActionPrimaryLoading:
+                return theme.colorActionOnBgActionPrimaryLoading
+            case .colorActionOnBgActionPrimaryLoadingOnBgEmphasized:
+                return theme.colorActionOnBgActionPrimaryLoadingOnBgEmphasized
+            case .colorActionOnBgActionPrimaryFocus:
+                return theme.colorActionOnBgActionPrimaryFocus
+            case .colorActionOnBgActionPrimaryFocusOnBgEmphasized:
+                return theme.colorActionOnBgActionPrimaryFocusOnBgEmphasized
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorActionOnBackgroundActionSecondaryEnabled:
-//                return theme.colorActionOnBackgroundActionSecondaryEnabled
-//            case .colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized:
-//                return theme.colorActionOnBackgroundActionSecondaryEnabledOnBackgroundEmphasized
-//            case .colorActionOnBackgroundActionSecondaryHover:
-//                return theme.colorActionOnBackgroundActionSecondaryHover
-//            case .colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized:
-//                return theme.colorActionOnBackgroundActionSecondaryHoverOnBackgroundEmphasized
-//            case .colorActionOnBackgroundActionSecondaryPressed:
-//                return theme.colorActionOnBackgroundActionSecondaryPressed
-//            case .colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized:
-//                return theme.colorActionOnBackgroundActionSecondaryPressedOnBackgroundEmphasized
-//            case .colorActionOnBackgroundActionSecondaryLoading:
-//                return theme.colorActionOnBackgroundActionSecondaryLoading
-//            case .colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized:
-//                return theme.colorActionOnBackgroundActionSecondaryLoadingOnBackgroundEmphasized
-//            case .colorActionOnBackgroundActionSecondaryFocus:
-//                return theme.colorActionOnBackgroundActionSecondaryFocus
-//            case .colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized:
-//                return theme.colorActionOnBackgroundActionSecondaryFocusOnBackgroundEmphasized
+//            case .colorActionOnBgActionSecondaryEnabled:
+//                return theme.colorActionOnBgActionSecondaryEnabled
+//            case .colorActionOnBgActionSecondaryEnabledOnBgEmphasized:
+//                return theme.colorActionOnBgActionSecondaryEnabledOnBgEmphasized
+//            case .colorActionOnBgActionSecondaryHover:
+//                return theme.colorActionOnBgActionSecondaryHover
+//            case .colorActionOnBgActionSecondaryHoverOnBgEmphasized:
+//                return theme.colorActionOnBgActionSecondaryHoverOnBgEmphasized
+//            case .colorActionOnBgActionSecondaryPressed:
+//                return theme.colorActionOnBgActionSecondaryPressed
+//            case .colorActionOnBgActionSecondaryPressedOnBgEmphasized:
+//                return theme.colorActionOnBgActionSecondaryPressedOnBgEmphasized
+//            case .colorActionOnBgActionSecondaryLoading:
+//                return theme.colorActionOnBgActionSecondaryLoading
+//            case .colorActionOnBgActionSecondaryLoadingOnBgEmphasized:
+//                return theme.colorActionOnBgActionSecondaryLoadingOnBgEmphasized
+//            case .colorActionOnBgActionSecondaryFocus:
+//                return theme.colorActionOnBgActionSecondaryFocus
+//            case .colorActionOnBgActionSecondaryFocusOnBgEmphasized:
+//                return theme.colorActionOnBgActionSecondaryFocusOnBgEmphasized
             }
         }
     }

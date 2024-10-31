@@ -16,12 +16,21 @@ import OUDSThemesInverse
 import OUDSThemesOrange
 import SwiftUI
 
-// MARK: - Extension of OUDSTheme
+// MARK: - Extensions of OUDSTheme
+
+extension OUDSTheme: @retroactive Equatable {
+
+    // MARK: Equtabable
+
+    public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
+        lhs.name == rhs.name
+    }
+}
 
 /// Extension of the `OUDSTheme` to add both `Identifiable` and `Hashable`.
 /// An `OUDSTheme` must be `Identifiable` to be enumerated like in `ForEach`(e.g. used to build the list of elements in picker).
 /// It must be `Hashable` because it is used in a picker than need `Hashable` element.
-extension OUDSTheme: Identifiable, Hashable {
+extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     var name: String {
         if self is InverseTheme { // Is also an OrangeTheme, should be checked before
@@ -42,10 +51,6 @@ extension OUDSTheme: Identifiable, Hashable {
     }
 
     // MARK: Hashable
-
-    public static func == (lhs: OUDSTheme, rhs: OUDSTheme) -> Bool {
-        lhs.name == rhs.name
-    }
 
     public func hash(into hasher: inout Hasher) {
         hasher.combine(name)
@@ -111,8 +116,9 @@ struct ThemeSelectionButton: View {
                 }
             }
             .pickerStyle(.automatic)
+            .accessibilityLabel("app_topBar_theme_button_a11y")
         } label: {
-            Image(systemName: "paintpalette")
+            Image(systemName: "paintpalette").accessibilityHidden(true)
         }
         .foregroundColor(themeProvider.currentTheme.colorContentBrandPrimary.color(for: colorScheme))
     }

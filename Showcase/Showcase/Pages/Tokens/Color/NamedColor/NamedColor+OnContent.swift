@@ -18,66 +18,66 @@ import OUDSTokensSemantic
 
 extension NamedColor {
 
-    enum ContentOnBackground: String, CaseIterable {
-        case colorContentOnBackgroundPrimary
+    enum ContentOnBg: String, CaseIterable {
+        case colorContentOnBgPrimary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorContentOnBackgroundSecondary
-        // case colorContentOnBackgroundTertiary
-        case colorContentOnBackgroundStatusPositiveMuted
-        case colorContentOnBackgroundStatusPositiveMutedOnBackgroundEmphasized
-        case colorContentOnBackgroundStatusPositiveEmphasized
-        case colorContentOnBackgroundStatusInfoMuted
-        case colorContentOnBackgroundStatusInfoMutedOnBackgroundEmphasized
-        case colorContentOnBackgroundStatusInfoEmphasized
-        case colorContentOnBackgroundStatusWarningMuted
-        case colorContentOnBackgroundStatusWarningMutedOnBackgroundEmphasized
-        case colorContentOnBackgroundStatusWarningEmphasized
-        case colorContentOnBackgroundStatusNegativeMuted
-        case colorContentOnBackgroundStatusNegativeMutedOnBackgroundEmphasized
-        case colorContentOnBackgroundStatusNegativeEmphasized
-        case colorContentOnBackgroundStatusAccentMuted
-        case colorContentOnBackgroundStatusAccentMutedOnBackgroundEmphasized
-        case colorContentOnBackgroundStatusAccentedEmphasized
+        // case colorContentOnBgSecondary
+        // case colorContentOnBgTertiary
+        case colorContentOnBgStatusPositiveMuted
+        case colorContentOnBgStatusPositiveMutedOnBgEmphasized
+        case colorContentOnBgStatusPositiveEmphasized
+        case colorContentOnBgStatusInfoMuted
+        case colorContentOnBgStatusInfoMutedOnBgEmphasized
+        case colorContentOnBgStatusInfoEmphasized
+        case colorContentOnBgStatusWarningMuted
+        case colorContentOnBgStatusWarningMutedOnBgEmphasized
+        case colorContentOnBgStatusWarningEmphasized
+        case colorContentOnBgStatusNegativeMuted
+        case colorContentOnBgStatusNegativeMutedOnBgEmphasized
+        case colorContentOnBgStatusNegativeEmphasized
+        case colorContentOnBgStatusAccentMuted
+        case colorContentOnBgStatusAccentMutedOnBgEmphasized
+        case colorContentOnBgStatusAccentedEmphasized
 
         func token(from theme: OUDSTheme) -> ColorSemanticToken {
             switch self {
-            case .colorContentOnBackgroundPrimary:
-                return theme.colorContentOnBackgroundPrimary
+            case .colorContentOnBgPrimary:
+                return theme.colorContentOnBgPrimary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorContentOnBackgroundSecondary:
-//                return theme.colorContentOnBackgroundSecondary
-//            case .colorContentOnBackgroundTertiary:
-//                return theme.colorContentOnBackgroundTertiary
-            case .colorContentOnBackgroundStatusPositiveMuted:
-                return theme.colorContentOnBackgroundStatusPositiveMuted
-            case .colorContentOnBackgroundStatusPositiveMutedOnBackgroundEmphasized:
-                return theme.colorContentOnBackgroundStatusPositiveMutedOnBackgroundEmphasized
-            case .colorContentOnBackgroundStatusPositiveEmphasized:
-                return theme.colorContentOnBackgroundStatusPositiveEmphasized
-            case .colorContentOnBackgroundStatusInfoMuted:
-                return theme.colorContentOnBackgroundStatusInfoMuted
-            case .colorContentOnBackgroundStatusInfoMutedOnBackgroundEmphasized:
-                return theme.colorContentOnBackgroundStatusInfoMutedOnBackgroundEmphasized
-            case .colorContentOnBackgroundStatusInfoEmphasized:
-                return theme.colorContentOnBackgroundStatusInfoEmphasized
-            case .colorContentOnBackgroundStatusWarningMuted:
-                return theme.colorContentOnBackgroundStatusWarningMuted
-            case .colorContentOnBackgroundStatusWarningMutedOnBackgroundEmphasized:
-                return theme.colorContentOnBackgroundStatusWarningMutedOnBackgroundEmphasized
-            case .colorContentOnBackgroundStatusWarningEmphasized:
-                return theme.colorContentOnBackgroundStatusWarningEmphasized
-            case .colorContentOnBackgroundStatusNegativeMuted:
-                return theme.colorContentOnBackgroundStatusNegativeMuted
-            case .colorContentOnBackgroundStatusNegativeMutedOnBackgroundEmphasized:
-                return theme.colorContentOnBackgroundStatusNegativeMutedOnBackgroundEmphasized
-            case .colorContentOnBackgroundStatusNegativeEmphasized:
-                return theme.colorContentOnBackgroundStatusNegativeEmphasized
-            case .colorContentOnBackgroundStatusAccentMuted:
-                return theme.colorContentOnBackgroundStatusAccentMuted
-            case .colorContentOnBackgroundStatusAccentMutedOnBackgroundEmphasized:
-                return theme.colorContentOnBackgroundStatusAccentMutedOnBackgroundEmphasized
-            case .colorContentOnBackgroundStatusAccentedEmphasized:
-                return theme.colorContentOnBackgroundStatusAccentedEmphasized
+//            case .colorContentOnBgSecondary:
+//                return theme.colorContentOnBgSecondary
+//            case .colorContentOnBgTertiary:
+//                return theme.colorContentOnBgTertiary
+            case .colorContentOnBgStatusPositiveMuted:
+                return theme.colorContentOnBgStatusPositiveMuted
+            case .colorContentOnBgStatusPositiveMutedOnBgEmphasized:
+                return theme.colorContentOnBgStatusPositiveMutedOnBgEmphasized
+            case .colorContentOnBgStatusPositiveEmphasized:
+                return theme.colorContentOnBgStatusPositiveEmphasized
+            case .colorContentOnBgStatusInfoMuted:
+                return theme.colorContentOnBgStatusInfoMuted
+            case .colorContentOnBgStatusInfoMutedOnBgEmphasized:
+                return theme.colorContentOnBgStatusInfoMutedOnBgEmphasized
+            case .colorContentOnBgStatusInfoEmphasized:
+                return theme.colorContentOnBgStatusInfoEmphasized
+            case .colorContentOnBgStatusWarningMuted:
+                return theme.colorContentOnBgStatusWarningMuted
+            case .colorContentOnBgStatusWarningMutedOnBgEmphasized:
+                return theme.colorContentOnBgStatusWarningMutedOnBgEmphasized
+            case .colorContentOnBgStatusWarningEmphasized:
+                return theme.colorContentOnBgStatusWarningEmphasized
+            case .colorContentOnBgStatusNegativeMuted:
+                return theme.colorContentOnBgStatusNegativeMuted
+            case .colorContentOnBgStatusNegativeMutedOnBgEmphasized:
+                return theme.colorContentOnBgStatusNegativeMutedOnBgEmphasized
+            case .colorContentOnBgStatusNegativeEmphasized:
+                return theme.colorContentOnBgStatusNegativeEmphasized
+            case .colorContentOnBgStatusAccentMuted:
+                return theme.colorContentOnBgStatusAccentMuted
+            case .colorContentOnBgStatusAccentMutedOnBgEmphasized:
+                return theme.colorContentOnBgStatusAccentMutedOnBgEmphasized
+            case .colorContentOnBgStatusAccentedEmphasized:
+                return theme.colorContentOnBgStatusAccentedEmphasized
             }
         }
     }
