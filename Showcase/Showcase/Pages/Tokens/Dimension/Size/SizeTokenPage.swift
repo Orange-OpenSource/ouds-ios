@@ -21,13 +21,15 @@ struct SizeTokenPage: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme`,  including the `colorScheme` and `horizontalSizeClass` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
     private let forcedColorScheme: ColorScheme?
+    private let forcedHorizontalSizeClass: UserInterfaceSizeClass?
 
-    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil, horizontalSizeClass: UserInterfaceSizeClass? = nil) {
         self.forcedTheme = theme
         self.forcedColorScheme = colorScheme
+        self.forcedHorizontalSizeClass = horizontalSizeClass
     }
 
     // MARK: Body
@@ -95,8 +97,10 @@ struct SizeTokenPage: View {
         let activeColorScheme = forcedColorScheme ?? colorScheme
         /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
         let activeTheme = forcedTheme ?? theme
+        /// Move activeHorizontalSizeClass here to ensure horizontalSizeClass is accessible (for UI tests purposes)
+        let activeHorizontalSizeClass = forcedHorizontalSizeClass ?? horizontalSizeClass ?? .regular
 
-        let token = namedSize.token(fot: theme, userInterfaceSizeClass: horizontalSizeClass ?? .regular)
+        let token = namedSize.token(fot: activeTheme, userInterfaceSizeClass: activeHorizontalSizeClass)
         let namedTypography = namedSize.namedTypography
         let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)
 
@@ -110,10 +114,10 @@ struct SizeTokenPage: View {
 
             VStack(alignment: .leading) {
                 illustration(for: namedTypography, in: activeTheme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: activeColorScheme))
+                    .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
                 Text(value)
                     .typeBodyDefaultMedium(activeTheme)
-                    .foregroundStyle(theme.colorContentMuted.color(for: activeColorScheme))
+                    .foregroundStyle(activeTheme.colorContentMuted.color(for: activeColorScheme))
             }
             .accessibilityElement(children: .combine)
         }
