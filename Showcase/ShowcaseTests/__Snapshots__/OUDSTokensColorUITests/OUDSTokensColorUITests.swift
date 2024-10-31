@@ -26,72 +26,88 @@ import XCTest
 
 final class OUDSTokensColorUITests: XCTestCase {
 
-    // MARK: - Orange Theme Color Tests
+    // MARK: - Orange Theme Light Mode Color Tests
 
-    /// This function tests all elevation tokens in the `OrangeTheme` with both the `light` and `dark` color schemes.
+    /// This function tests all elevation tokens in the `OrangeTheme` with both the `light` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
-    @MainActor func testAllColorsOrangeTheme() {
+    @MainActor func testAllColorsOrangeThemeLight() {
         /// Create an instance of the page with a forced OrangeTheme for light mode
-        let lightColorPage = ColorTokenPage(forceTo: OrangeTheme(), colorScheme: .light)
-        /// Create an instance of the page with a forced OrangeTheme for dark mode
-        let darkColorPage = ColorTokenPage(forceTo: OrangeTheme(), colorScheme: .dark)
+        let colorPage = ColorTokenPage(forceTo: OrangeTheme(), colorScheme: .light)
 
         /// Test all color sections individually for light mode
-        testBackgroundColors(using: lightColorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-        testActionColors(using: lightColorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-        testAlwaysColors(using: lightColorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-        testContentColors(using: lightColorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-        testContentOnBgColors(using: lightColorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-        testBorderColors(using: lightColorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-        testElevationColors(using: lightColorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-        testDecorativeColors(using: lightColorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-        testChartColors(using: lightColorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-
-        /// Test all color sections individually for dark mode
-        testBackgroundColors(using: darkColorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testActionColors(using: darkColorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testAlwaysColors(using: darkColorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testContentColors(using: darkColorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testContentOnBgColors(using: darkColorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testBorderColors(using: darkColorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testElevationColors(using: darkColorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testDecorativeColors(using: darkColorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testChartColors(using: darkColorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testBackgroundColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testActionColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testAlwaysColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testContentColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testContentOnBgColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testBorderColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testElevationColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testDecorativeColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testChartColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
     }
 
-    // MARK: - Inverse Theme Color Tests
+    // MARK: - Orange Theme Dark Mode Color Tests
 
-    /// This function tests all elevation tokens in the `InverseTheme` with both the `light` and `dark` color schemes.
+    /// This function tests all elevation tokens in the `OrangeTheme` with both the `dark` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
-    @MainActor func testAllColorsInverseTheme() {
+    @MainActor func testAllColorsOrangeThemeDark() {
+        /// Create an instance of the page with a forced OrangeTheme for dark mode
+        let colorPage = ColorTokenPage(forceTo: OrangeTheme(), colorScheme: .dark)
+
+        /// Test all color sections individually for dark mode
+        testBackgroundColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testActionColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testAlwaysColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testContentColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testContentOnBgColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testBorderColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testElevationColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testDecorativeColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testChartColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+    }
+
+    // MARK: - Inverse Theme Light Mode Color Tests
+
+    /// This function tests all elevation tokens in the `InverseTheme` with both the `light` color schemes.
+    /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
+    /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
+    @MainActor func testAllColorsInverseThemeLight() {
         /// Create an instance of the page with a forced InverseTheme for light mode
-        let lightColorPage = ColorTokenPage(forceTo: InverseTheme(), colorScheme: .light)
-        /// Create an instance of the page with a forced InverseTheme for dark mode
-        let darkColorPage = ColorTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
+        let colorPage = ColorTokenPage(forceTo: InverseTheme(), colorScheme: .light)
 
         /// Test all color sections individually for light mode
-        testBackgroundColors(using: lightColorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
-        testActionColors(using: lightColorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
-        testAlwaysColors(using: lightColorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
-        testContentColors(using: lightColorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
-        testContentOnBgColors(using: lightColorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
-        testBorderColors(using: lightColorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
-        testElevationColors(using: lightColorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
-        testDecorativeColors(using: lightColorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
-        testChartColors(using: lightColorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testBackgroundColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testActionColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testAlwaysColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testContentColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testContentOnBgColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testBorderColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testElevationColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testDecorativeColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testChartColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+    }
+
+    // MARK: - Inverse Theme Dark Mode Color Tests
+
+    /// This function tests all elevation tokens in the `InverseTheme` with both the `dark` color schemes.
+    /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
+    /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
+    @MainActor func testAllColorsInverseThemeDark() {
+        /// Create an instance of the page with a forced InverseTheme for dark mode
+        let colorPage = ColorTokenPage(forceTo: InverseTheme(), colorScheme: .dark)
 
         /// Test all color sections individually for dark interfaceStyle
-        testBackgroundColors(using: darkColorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testActionColors(using: darkColorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testAlwaysColors(using: darkColorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testContentColors(using: darkColorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testContentOnBgColors(using: darkColorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testBorderColors(using: darkColorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testElevationColors(using: darkColorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testDecorativeColors(using: darkColorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testChartColors(using: darkColorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testBackgroundColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testActionColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testAlwaysColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testContentColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testContentOnBgColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testBorderColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testElevationColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testDecorativeColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testChartColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
     }
 
     /// This function tests colors for the `Background` section of the OrangeTheme.
