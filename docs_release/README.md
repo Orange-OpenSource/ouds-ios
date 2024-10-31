@@ -59,7 +59,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 - Create a new pull request named `Release X.Y.Z` on GitHub to merge `develop` into `main`.
 
-- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits** (this strategy is only dedicated to feature branches to merge in develop branch). The _merge commit_ can be defined so as to bring details about the merge and make links automatically with GitHub issues. To do that, you can copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed.
+- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits**, i.e. "create a merge commit". Rebase should be used to align feature branches with default one, and squash should be used when needed for work branches. The _merge commit_ can be defined so as to bring details about the merge and make links automatically with GitHub issues. To do that, you can copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed.
 
 Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/98640b4b63037c2780128f41ceba5b896763b94f)):
 
@@ -86,11 +86,15 @@ Removed:
 Fixed:
 - [Library] Fix some typos in documentation ([#89](#89))
 
-// Add in co authors anyone working on the commits being merged
-Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
-Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+// Add in co authors anyone working on the commits being merged, add the ones who contributed (copy-paste if too lazy)
 Co-authored-by: Julien Déramond <julien.deramond@orange.com>
+Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
+Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
+Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
 ```
+
+You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds-ios/commit/5ce9b68aa03304fef91fc45ef43a379b4f22f98b) for example.
 
 - Generate documentation: from Xcode build the doc, export each doccarchive, then rnu the script ; it will update online version and generate a ZIP file in _/tmp_
     ```shell
@@ -137,7 +141,6 @@ Co-authored-by: Julien Déramond <julien.deramond@orange.com>
     <!-- TODO Check with git-cliff release note generation and vTag prefix -->
 
 - Optionally check `Set as a pre-release` and click `Publish release`.<br /><br />
-
 <!-- TODO Section about annoucement -->
 <!--
 ### Announce the new release on FoODS
@@ -167,6 +170,8 @@ Co-authored-by: Julien Déramond <julien.deramond@orange.com>
 - Do not forget to update the documentation using `uploadWebDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact, or if you want just download the sources from GitHub on *gh-pages* branch. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (doccarchive) (_Right click on catalog > Export_), compress all these files in one ZIP archive (GitHub consider them as empty so won't accept them for upload) and upload as artifact. In few words, put in release artifacts all the doccarchives in a ZIP in one side, and the HTML merged version in the other side.
 
 - Clone the [wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) (available at https://github.com/Orange-OpenSource/ouds-ios.wiki.git), compress its content as ZIP, and place the ZIP in release artifacts
+
+- From the GitLab CI pipeline job which made the production release, get the artifacts and put it in the release.
 
 ## Prepare Next Release
 
