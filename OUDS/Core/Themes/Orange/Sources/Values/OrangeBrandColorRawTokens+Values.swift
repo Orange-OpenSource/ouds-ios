@@ -2,26 +2,20 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSTokensRaw
 
-// ଘ( ･ω･)_/ﾟ･:*:･｡☆
-// [File to generate with the tokenator]
-
 // swiftlint:disable missing_docs
 
 extension OrangeBrandColorRawTokens {
-
-    // MARK: Primitive token - Colors - Orange - Orange
-
     public static let colorOrange50: ColorOrangeBrandRawToken = "#FFF2E6"
     public static let colorOrange100: ColorOrangeBrandRawToken = "#FFD5B0"
     public static let colorOrange200: ColorOrangeBrandRawToken = "#FFC18A"
@@ -33,9 +27,6 @@ extension OrangeBrandColorRawTokens {
     public static let colorOrange700: ColorOrangeBrandRawToken = "#B55600"
     public static let colorOrange800: ColorOrangeBrandRawToken = "#8C4300"
     public static let colorOrange900: ColorOrangeBrandRawToken = "#6B3300"
-
-    // MARK: Primitive token - Colors - Orange - Warm gray
-
     public static let colorWarmGray100: ColorOrangeBrandRawToken = "#F9F5F0"
     public static let colorWarmGray200: ColorOrangeBrandRawToken = "#E9DDCE"
     public static let colorWarmGray300: ColorOrangeBrandRawToken = "#D6C4AE"
