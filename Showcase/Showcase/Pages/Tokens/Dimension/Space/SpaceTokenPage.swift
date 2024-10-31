@@ -30,13 +30,17 @@ struct SpaceTokenPage: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme`,  including the `colorScheme`,`horizontalSizeClass`and `verticalSizeClass`  is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
     private let forcedColorScheme: ColorScheme?
+    private let forcedHorizontalSizeClass: UserInterfaceSizeClass?
+    private let forcedVerticalSizeClass: UserInterfaceSizeClass?
 
-    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil, horizontalSizeClass: UserInterfaceSizeClass? = nil, verticalSizeClass: UserInterfaceSizeClass? = nil) {
         self.forcedTheme = theme
         self.forcedColorScheme = colorScheme
+        self.forcedHorizontalSizeClass = horizontalSizeClass
+        self.forcedVerticalSizeClass = verticalSizeClass
     }
 
     // MARK: Body
@@ -107,19 +111,23 @@ struct SpaceTokenPage: View {
         let activeColorScheme = forcedColorScheme ?? colorScheme
         /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
         let activeTheme = forcedTheme ?? theme
+        /// Move activeHorizontalSizeClass here to ensure horizontalSizeClass is accessible (for UI tests purposes)
+        let activeHorizontalSizeClass = forcedHorizontalSizeClass ?? horizontalSizeClass ?? .regular
+        /// Move activeVerticalSizeClass here to ensure verticalSizeClass is accessible (for UI tests purposes)
+        let activeVerticalSizeClass = forcedVerticalSizeClass ?? verticalSizeClass ?? .regular
 
         let token = namedSpaceToken.token(from: activeTheme)
         let name = namedSpaceToken.rawValue
-        let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
-        let verticalDimensionRawToken = token.dimension(for: verticalSizeClass ?? .regular)
+        let horizontalDimensionRawToken = token.dimension(for: activeHorizontalSizeClass)
+        let verticalDimensionRawToken = token.dimension(for: activeVerticalSizeClass)
 
         let value = String(format: "horizontal %@ (%.0f pt)\nvertical %@ (%.0f pt)",
-                           horizontalSizeClass == .regular ? "regular" : "compact",
+                           activeHorizontalSizeClass == .regular ? "regular" : "compact",
                            horizontalDimensionRawToken,
-                           verticalSizeClass == .regular ? "regular" : "compact",
+                           activeVerticalSizeClass == .regular ? "regular" : "compact",
                            verticalDimensionRawToken)
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
             ZStack {
                 Rectangle()
                     .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
@@ -231,7 +239,7 @@ struct SpaceTokenPage: View {
 
         let value = String(format: "%.2f (pt)", paddingType.dimension)
 
-        ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+        ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
             ZStack(alignment: .leading) {
                 Rectangle()
                     .fill(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
@@ -266,7 +274,7 @@ struct SpaceTokenPage: View {
 
         let value = String(format: "%.2f (pt)", gapType.dimension)
 
-        ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+        ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
             ZStack {
                 Rectangle()
                     .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
