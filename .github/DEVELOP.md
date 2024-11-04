@@ -288,13 +288,15 @@ Do not forget if possible to enable the warnings in the end of the file to reduc
 ### GitHub Action
 
 We use also *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
-It will help use to ensure code on pull requests or being merged compiles and has all tests green.
+It will help us to ensure code on pull requests or being merged compiles and has all tests green.
 This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml)
 
 We have also a *gitleaks* workflow making some scans on the code to loook fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml).
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
 There is on control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
+
+Finaly we have [this *GitHub Action*](https://github.com/cirruslabs/swiftlint-action) using _SwiftLint_ to ensure no warnings are in our codebase.
 
 ### GitLab CI (internal)
 
