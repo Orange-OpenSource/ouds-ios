@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Demo App] [Bug] A11y Dynamic Type Text ([#247](https://github.com/Orange-OpenSource/ouds-ios/issues/247))
 - [Library] Update `ElevationSemanticTokens` (tokenator *20241031125053*)
 - [Library] Update `OrangeBrandColorRawTokens` (tokenator *20241030132734*)
 - [Library] Update `BorderSemanticTokens` (tokenator *20241025110844*)
@@ -30,7 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Rename `MultipleSpacingTokens` to `MultipleSpaceTokens` and `MultipleSizingTokens` to `MultipleSizeTokens`
 - [Library] Extract composite semantic tokens from semantic tokens (`ElevationSemanticTokens`, `TypographySemanticTokens`)
 - [Library] Improve documentation about the use of semantic tokens
-- [Demo App] [Bug] A11y Dynamic Type Text ([#247](https://github.com/Orange-OpenSource/ouds-ios/issues/247))
 - [Library] Update `OpacitySemanticTokens` (tokenator *20241025101305*)
 - [Library] Rename `*Spacing*Tokens` and `*Sizing*Tokens` to `*Space*Tokens` and `*Size*Tokens` ([#237](https://github.com/Orange-OpenSource/ouds-ios/issues/237))
 - [Library] Update `ElevationRawTokens` (tokenator *20241022174330*)
