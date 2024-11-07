@@ -17,6 +17,7 @@
 "app_bottomBar_tokens_label" = "Tokens";
 "app_bottomBar_about_label" = "About";
 "app_topBar_theme_button_a11y" = "Change theme";
+"app_topBar_theme_button_hint_a11y" = "Tap to change the theme of the app";
 
 // MARK: - About Screen
 

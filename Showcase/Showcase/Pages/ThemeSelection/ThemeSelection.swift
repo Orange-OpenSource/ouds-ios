@@ -116,9 +116,10 @@ struct ThemeSelectionButton: View {
                 }
             }
             .pickerStyle(.automatic)
-            .accessibilityLabel("app_topBar_theme_button_a11y")
         } label: {
-            Image(systemName: "paintpalette").accessibilityHidden(true)
+            Image(systemName: "paintpalette")
+                .accessibilityLabel("app_topBar_theme_button_a11y")
+                .accessibilityHint("app_topBar_theme_button_hint_a11y")
         }
         .foregroundColor(themeProvider.currentTheme.colorContentBrandPrimary.color(for: colorScheme))
     }
