@@ -34,6 +34,8 @@ struct TypographyModifier: ViewModifier {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     /// To get programatically and on the fly the vertical layout size
     @Environment(\.verticalSizeClass) private var verticalSizeClass
+    /// Environment variable to observe Dynamic Type changes in accessibility settings
+    @Environment(\.sizeCategory) private var sizeCategory
 
     /// Says wether or not the layout is in *compact mode*
     private var isCompactMode: Bool {
@@ -50,14 +52,21 @@ struct TypographyModifier: ViewModifier {
         isCompactMode ? typography.compact : typography.regular
     }
 
-    /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `View`
+    /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
     private func adaptiveFont() -> Font {
+        // Retrieves the base font size from the adaptive typography settings
+        let fontSize = adaptiveTypography.size
+        // Adjusts the font size dynamically based on the user's accessibility settings
+        // using UIFontMetrics to scale the font size, ensuring Dynamic Type support
+        let scaledFontSize = UIFontMetrics.default.scaledValue(for: fontSize)
+
         if let fontFamilyName = customFontFamily {
             let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveTypography.weight.fontWeight)")
             let customFont: Font = .custom(composedFontFamily, size: adaptiveTypography.size)
             return customFont
         } else {
-            return .system(size: adaptiveTypography.size, weight: adaptiveTypography.weight.fontWeight)
+            // Apply the system font with weight, responsive to Dynamic Type
+            return .system(size: scaledFontSize, weight: adaptiveTypography.weight.fontWeight, design: .default)
         }
     }
 
@@ -69,11 +78,15 @@ struct TypographyModifier: ViewModifier {
         if #available(iOS 16.0, *) {
             content
                 .font(adaptiveFont())
+                .minimumScaleFactor(0.5) /// Ensures text remains readable by allowing scaling down
+                .onChange(of: sizeCategory) { _ in } /// Triggers view update when Dynamic Type size changes
 //                .lineSpacing(adaptiveTypography.lineHeight)
 //                .tracking(adaptiveTypography.letterSpacing)
         } else { // tracking() and kerning() only available for iOS 16+
             content
                 .font(adaptiveFont())
+                .minimumScaleFactor(0.5) /// Ensures text remains readable by allowing scaling down
+                .onChange(of: sizeCategory) { _ in } /// Triggers view update when Dynamic Type size changes
 //                .lineSpacing(adaptiveTypography.lineHeight)
         }
     }
