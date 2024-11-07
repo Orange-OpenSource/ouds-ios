@@ -32,6 +32,24 @@ struct SizeTokenPage: View {
         self.forcedHorizontalSizeClass = horizontalSizeClass
     }
 
+    /// Computed property for colorScheme
+    /// Returns `forcedColorScheme` if available, otherwise falls back to the environment `colorScheme`
+    var activeColorScheme: ColorScheme {
+        forcedColorScheme ?? colorScheme
+    }
+
+    /// Computed property for theme
+    /// Returns `forcedTheme` if available, otherwise falls back to the environment `theme`
+    var activeTheme: OUDSTheme {
+        forcedTheme ?? theme
+    }
+
+    /// Computed property for horizontalSizeClass
+    /// Returns `forcedHorizontalSizeClass` if available, otherwise falls back to the environment `horizontalSizeClass`
+    var activeHorizontalSizeClass: UserInterfaceSizeClass {
+        forcedHorizontalSizeClass ?? horizontalSizeClass ?? .regular
+    }
+
     // MARK: Body
 
     var body: some View {
@@ -58,11 +76,6 @@ struct SizeTokenPage: View {
     }
 
     public func illustrationIconDecorative(for namedSize: NamedSize.IconDecorative) -> some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         let token = namedSize.token(from: activeTheme)
         let name = namedSize.rawValue
         let value = String(format: "(%.0f) pt", token)
@@ -93,13 +106,6 @@ struct SizeTokenPage: View {
 
     @ViewBuilder
     public func illustrationIconWithLabel(for namedSize: NamedSize.IconWithTypography) -> some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-        /// Move activeHorizontalSizeClass here to ensure horizontalSizeClass is accessible (for UI tests purposes)
-        let activeHorizontalSizeClass = forcedHorizontalSizeClass ?? horizontalSizeClass ?? .regular
-
         let token = namedSize.token(fot: activeTheme, userInterfaceSizeClass: activeHorizontalSizeClass)
         let namedTypography = namedSize.namedTypography
         let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)

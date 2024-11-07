@@ -21,7 +21,7 @@ struct BorderTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme`,  including the `colorScheme` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
     private let forcedColorScheme: ColorScheme?
 
@@ -30,14 +30,21 @@ struct BorderTokenPage: View {
         self.forcedColorScheme = colorScheme
     }
 
+    /// Computed property for colorScheme
+    /// Returns `forcedColorScheme` if available, otherwise falls back to the environment `colorScheme`
+    var activeColorScheme: ColorScheme {
+        forcedColorScheme ?? colorScheme
+    }
+
+    /// Computed property for theme
+    /// Returns `forcedTheme` if available, otherwise falls back to the environment `theme`
+    var activeTheme: OUDSTheme {
+        forcedTheme ?? theme
+    }
+
     // MARK: Body
 
     var body: some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedMedium) {
             Section {
                 VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
@@ -85,16 +92,11 @@ struct BorderTokenPage: View {
 
     private var rectangle: some View {
         Rectangle()
-            .fill(forcedTheme?.colorBgSecondary.color(for: forcedColorScheme ?? colorScheme) ?? theme.colorBgSecondary.color(for: colorScheme))
+            .fill(activeTheme.colorBgSecondary.color(for: activeColorScheme))
             .frame(width: 64, height: 64)
     }
 
     public func illustration(for namedWidth: NamedBorderWidth) -> some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         let token = namedWidth.token(from: activeTheme)
         let name = namedWidth.rawValue
         let value = String(format: "(%.0f) pt", token)
@@ -109,11 +111,6 @@ struct BorderTokenPage: View {
     }
 
     public func illustration(for namedRadius: NamedBorderRadius) -> some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         let token = namedRadius.token(from: activeTheme)
         let name = namedRadius.rawValue
         let value = String(format: "(%.0f) pt", token)
@@ -128,11 +125,6 @@ struct BorderTokenPage: View {
     }
 
     public func illustration(for namedStyle: NamedBorderStyle) -> some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         let token = namedStyle.token(from: activeTheme)
         let name = namedStyle.rawValue
         let value = token

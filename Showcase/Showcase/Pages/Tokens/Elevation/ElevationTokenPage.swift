@@ -23,7 +23,7 @@ struct ElevationTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme`,  including the `colorScheme` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
     private let forcedColorScheme: ColorScheme?
 
@@ -32,12 +32,21 @@ struct ElevationTokenPage: View {
         self.forcedColorScheme = colorScheme
     }
 
+    /// Computed property for colorScheme
+    /// Returns `forcedColorScheme` if available, otherwise falls back to the environment `colorScheme`
+    var activeColorScheme: ColorScheme {
+        forcedColorScheme ?? colorScheme
+    }
+
+    /// Computed property for theme
+    /// Returns `forcedTheme` if available, otherwise falls back to the environment `theme`
+    var activeTheme: OUDSTheme {
+        forcedTheme ?? theme
+    }
+
     // MARK: Body
 
     var body: some View {
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 illustration(for: elevationName)
@@ -50,11 +59,6 @@ struct ElevationTokenPage: View {
     // MARK: Helpers
 
     public func illustration(for namedElevation: NamedElevation) -> some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         let token = namedElevation.token(from: activeTheme).elevation(for: activeColorScheme)
         let name = namedElevation.rawValue
         let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)

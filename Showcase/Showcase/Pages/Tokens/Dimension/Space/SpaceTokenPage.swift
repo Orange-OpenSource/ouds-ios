@@ -43,12 +43,33 @@ struct SpaceTokenPage: View {
         self.forcedVerticalSizeClass = verticalSizeClass
     }
 
+    /// Computed property for colorScheme
+    /// Returns `forcedColorScheme` if available, otherwise falls back to the environment `colorScheme`
+    var activeColorScheme: ColorScheme {
+        forcedColorScheme ?? colorScheme
+    }
+
+    /// Computed property for theme
+    /// Returns `forcedTheme` if available, otherwise falls back to the environment `theme`
+    var activeTheme: OUDSTheme {
+        forcedTheme ?? theme
+    }
+
+    /// Computed property for horizontalSizeClass
+    /// Returns `forcedHorizontalSizeClass` if available, otherwise falls back to the environment `horizontalSizeClass`
+    var activeHorizontalSizeClass: UserInterfaceSizeClass {
+        forcedHorizontalSizeClass ?? horizontalSizeClass ?? .regular
+    }
+
+    /// Computed property for verticalSizeClass
+    /// Returns `forcedVerticalSizeClass` if available, otherwise falls back to the environment `verticalSizeClass`
+    var activeVerticalSizeClass: UserInterfaceSizeClass {
+        forcedVerticalSizeClass ?? verticalSizeClass ?? .compact
+    }
+
     // MARK: Body
 
     var body: some View {
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         Group {
             // Basic Space Tokens
             Section { illustrationForScaledSpaces() } header: {
@@ -86,9 +107,9 @@ struct SpaceTokenPage: View {
     // MARK: Fixed Sapces
 
     private func illustrationForFixedSpacings() -> some View {
-        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.Fixed.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
+                let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
                 // Fixed spacings are illustrated as a gap inline
                 illustation(for: Gap.inline(token), name: name)
@@ -99,7 +120,7 @@ struct SpaceTokenPage: View {
     // MARK: Scaled Spaces
 
     private func illustrationForScaledSpaces() -> some View {
-        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
                 illustration(for: namedSpaceToken)
             }
@@ -107,15 +128,6 @@ struct SpaceTokenPage: View {
     }
 
     public func illustration(for namedSpaceToken: NamedSpace.Scaled) -> some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-        /// Move activeHorizontalSizeClass here to ensure horizontalSizeClass is accessible (for UI tests purposes)
-        let activeHorizontalSizeClass = forcedHorizontalSizeClass ?? horizontalSizeClass ?? .regular
-        /// Move activeVerticalSizeClass here to ensure verticalSizeClass is accessible (for UI tests purposes)
-        let activeVerticalSizeClass = forcedVerticalSizeClass ?? verticalSizeClass ?? .regular
-
         let token = namedSpaceToken.token(from: activeTheme)
         let name = namedSpaceToken.rawValue
         let horizontalDimensionRawToken = token.dimension(for: activeHorizontalSizeClass)
@@ -148,9 +160,9 @@ struct SpaceTokenPage: View {
     // MARK: Padding illustrations
 
     public func illustrationForPaddingInline() -> some View {
-        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingInline.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
+                let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Padding.inline(token), name: name)
             }
@@ -158,9 +170,9 @@ struct SpaceTokenPage: View {
     }
 
     private func illustrationForPaddingInlineWithIcon() -> some View {
-        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingInlineWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
+                let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
                 illustation(
                     for: Padding.inlineWithIcon(token),
@@ -170,9 +182,9 @@ struct SpaceTokenPage: View {
         }
     }
     private func illustrationForPaddingInlineWithArrow() -> some View {
-        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingInlineWithArrow.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
+                let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
                 illustation(
                     for: Padding.inlineWithArrow(token),
@@ -183,9 +195,9 @@ struct SpaceTokenPage: View {
     }
 
     private func illustrationForPaddingInset() -> some View {
-        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingInset.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
+                let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Padding.inset(token), name: name)
             }
@@ -193,9 +205,9 @@ struct SpaceTokenPage: View {
     }
 
     private func illustrationForPaddingStack() -> some View {
-        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingStack.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
+                let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Padding.stack(token), name: name)
             }
@@ -205,9 +217,9 @@ struct SpaceTokenPage: View {
     // MARK: Gap illustrations
 
     private func illustrationForGapInline() -> some View {
-        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.GapInline.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
+                let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Gap.inline(token), name: name)
             }
@@ -215,9 +227,9 @@ struct SpaceTokenPage: View {
     }
 
     private func illustrationForGapStack() -> some View {
-        VStack(alignment: .leading, spacing: forcedTheme?.spaceFixedNone ?? theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.GapStack.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: forcedTheme ?? theme)
+                let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
                 illustation(for: Gap.stack(token), name: name)
             }
@@ -232,11 +244,6 @@ struct SpaceTokenPage: View {
 
     @ViewBuilder
     public func illustation(for paddingType: Padding, name: String, additionalAsset: (icon: Image, horizontalPadding: Double)? = nil) -> some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         let value = String(format: "%.2f (pt)", paddingType.dimension)
 
         ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
@@ -267,11 +274,6 @@ struct SpaceTokenPage: View {
 
     @ViewBuilder
     public func illustation(for gapType: Gap, name: String) -> some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         let value = String(format: "%.2f (pt)", gapType.dimension)
 
         ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
