@@ -14,7 +14,6 @@
 import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
-
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
 // [File to generate with the tokenator]
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team

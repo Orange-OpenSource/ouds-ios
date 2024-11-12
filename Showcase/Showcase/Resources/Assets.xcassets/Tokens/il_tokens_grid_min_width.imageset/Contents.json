@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "il_tokens_grid_min_width.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -69,5 +69,33 @@ public struct OUDSThemeableView<Content>: View where Content: View {
     public var body: some View {
         content()
             .environment(\.theme, theme)
+            .modifier(UserInterfaceSizeClassModifier())
+    }
+}
+
+struct UserInterfaceSizeClassModifier: ViewModifier {
+
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+
+    private var oudsHorizontalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
+        if UIScreen.main.bounds.width < 389 {
+            return .extraCompact
+        } else {
+            return horizontalSizeClass == .compact ? .compact : .regular
+        }
+    }
+    private var oudsVerticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
+        if UIScreen.main.bounds.width < 389 {
+            return .extraCompact
+        } else {
+            return verticalSizeClass == .compact ? .compact : .regular
+        }
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .environment(\.oudsHorizontalUserInterfaceSizeClass, oudsHorizontalUserInterfaceSizeClass)
+            .environment(\.oudsVerticalUserInterfaceSizeClass, oudsVerticalUserInterfaceSizeClass)
     }
 }

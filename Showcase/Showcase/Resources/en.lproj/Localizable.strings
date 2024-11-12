@@ -53,11 +53,14 @@
 
 "app_tokens_dimension_size_label" = "Size";
 "app_tokens_dimension_size_description_text" = "Size refers to the specific measurements used to define the dimensions of UI elements within the design system.";
-"app_tokens_dimension_size_iconWithLabel_label" = "Icon with label";
+"app_tokens_dimension_size_iconWithLabel_label" = "Icon with text";
 "app_tokens_dimension_size_iconDecorative_label" = "Icon decorative";
 
 "app_tokens_elevation_label" = "Elevation";
 "app_tokens_elevation_description_text" = "Shadows are used to give the impression of distance or elevation between surfaces, which adds depth to our designs.";
+
+"app_tokens_grid_label" = "Grid";
+"app_tokens_grid_description_text" = "Grids are used to position content and create consistent page layouts";
 
 "app_tokens_opacity_label" = "Opacity";
 "app_tokens_opacity_description_text" = "Opacity can help distinguish foreground elements from background elements, making content easier to read and important actions more noticeable.";

@@ -13,19 +13,16 @@
 
 import SwiftUI
 
-struct TokensPage: View {
+struct GridTokenElement: TokenElement {
+    let name: String
+    let imageName: String
+    let description: String
+    let pageDescription: AnyView
 
-    let tokenElements: [TokenElement] = [
-        BorderTokenElement(),
-        ColorTokenElement(),
-        DimensionTokenElement(),
-        ElevationTokenElement(),
-        GridTokenElement(),
-        OpacityTokenElement(),
-        TypographyTokenElement(),
-    ]
-
-    var body: some View {
-        ShowcaseElementsPage(elements: tokenElements)
+    init() {
+        name = "app_tokens_grid_label"
+        imageName = "ic_grid"
+        description = "app_tokens_grid_description_text"
+        pageDescription = AnyView(GridTokenPage())
     }
 }
