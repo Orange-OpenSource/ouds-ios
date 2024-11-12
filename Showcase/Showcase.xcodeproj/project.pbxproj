@@ -96,7 +96,6 @@
 		51E3FF0B2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */; };
 		51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */; };
 		6DFC208B2CDE669500F2EC33 /* AccessibilityStatementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */; };
-		6DFC20932CDE775600F2EC33 /* DeclarationAccessibility in Frameworks */ = {isa = PBXBuildFile; productRef = 6DFC20922CDE775600F2EC33 /* DeclarationAccessibility */; };
 		6DFC20B52CE3AF1500F2EC33 /* boosted-grid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */; };
 		6DFC20B62CE3AF1500F2EC33 /* favicon.ico in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B12CE3AF1500F2EC33 /* favicon.ico */; };
 		6DFC20B72CE3AF1500F2EC33 /* pie.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B32CE3AF1500F2EC33 /* pie.css */; };
@@ -235,7 +234,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DFC20932CDE775600F2EC33 /* DeclarationAccessibility in Frameworks */,
 				51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */,
 				E537B9B66A6466473179DEE8 /* Pods_Showcase.framework in Frameworks */,
 				070C35642C773A0D0029C6A8 /* OUDSThemesInverse in Frameworks */,
@@ -677,7 +675,6 @@
 				070C35612C75EB1C0029C6A8 /* OUDS */,
 				070C35632C773A0D0029C6A8 /* OUDSThemesInverse */,
 				070C35652C7762B90029C6A8 /* OUDSModules */,
-				6DFC20922CDE775600F2EC33 /* DeclarationAccessibility */,
 				6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */,
 			);
 			productName = DemoApp;
@@ -1110,10 +1107,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDebug;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Showcase/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MG2LSJNJB6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Showcase/Info.plist;
@@ -1130,7 +1127,6 @@
 				MARKETING_VERSION = 0.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.orange.ouds.demoapp-debug";
 				PRODUCT_NAME = "OUDS Showcase";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1291,10 +1287,6 @@
 		51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDSThemesOrange;
-		};
-		6DFC20922CDE775600F2EC33 /* DeclarationAccessibility */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DeclarationAccessibility;
 		};
 		6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */ = {
 			isa = XCSwiftPackageProductDependency;
