@@ -15,6 +15,7 @@ import SwiftUICore
 import UIKit
 
 // MARK: - Environment values
+
 // swiftlint:disable type_name
 private struct HorizontalUserInterfaceSizeClassContractEnvironmentKey: EnvironmentKey {
 
@@ -49,7 +50,8 @@ extension EnvironmentValues {
 }
 
 public enum OUDSUserInterfaceSizeClass: String, Sendable {
-    case extraCompact
-    case compact
-    case regular
+    case extraCompact = "Extra Compact"
+    case compact = "Compact"
+    case regular = "Regular"
 }
+// swiftlint:enable type_name
