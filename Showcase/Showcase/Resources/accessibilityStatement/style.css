@@ -1,0 +1,106 @@
+html {
+    margin: 16px;
+    -webkit-text-size-adjust: none;
+    font-family: -apple-system, sans-serif;
+}
+
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    font: -apple-system-body;
+    background-color: clear;
+}
+
+h1 {
+    background-image: url(orange-logo.svg);
+    background-size: 3.5rem 3.5rem;
+    background-repeat: no-repeat;
+    background-position: 1rem 1.5rem;
+    font: -apple-system-short-headline;
+    margin: 0;
+    padding: 2rem 2rem 2rem 8rem;
+}
+
+h2 {
+    font: -apple-system-short-subheadline;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+}
+
+p {
+    font: -apple-system-body;
+}
+
+a:link, a:visited {
+    color: #FF7900;
+    text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+    color: #527EDB;
+}
+
+.pie-noncompliant{
+    font-size: 1.75em !important;
+}
+
+.underover {
+  text-decoration: underline overline #FF3028;
+}
+
+.sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap; /* added line */
+            border: 0;
+}
+
+.visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap; /* added line */
+            border: 0;
+}
+
+em {
+    color: #e00;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.underover {
+  text-decoration: underline overline #FF3028;
+}
+
+.lead {
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    border-collapse: collapse;
+    text-align: center;
+    overflow-x:auto;
+}
+
+.table-responsive{
+    overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
