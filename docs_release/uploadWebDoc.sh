@@ -21,18 +21,18 @@ set -euo pipefail
 # CONTEXT:
 # - `swift package` cannot manage UIKit and fails when it meets some calls to that
 # - `xcrun docc` or `xcodebuild docbuild` fail to manage targets and Swift Package products
-# Thus need tp rely on manualy generated doccarchive files before processing them
+# Thus need to rely on manualy generated doccarchive files before processing them.
 # See https://github.com/Orange-OpenSource/ouds-ios/issues/168
 # See also https://github.com/Orange-OpenSource/ouds-ios/issues/95
 # (╯°□°)╯︵ ┻━┻
 
-# The folder where all the .doccarchive folders to process are
-# If workspace is a Git repository you should NOT place the doccarchives inside, because they will be wiped
+# The folder where all the .doccarchive folders to process are.
+# If workspace is a Git repository you should NOT place the doccarchives inside, because they will be wiped.
 DOCCARCHIVES_PATH="$HOME/Downloads"
 
 # Services pages (like GitHub Pages) custom subdomain for the CNAME, don't forget to verify it in organization side for security reasons!
-# For example, with GitHub pages; given the "ouds-ios" project for "Orange-OpenSource" organization,
-# the custom domain "ios.unified-design-system.orange.com" will thus automatically redirect to "orange-opensource.github.io/ouds-ios"
+# For example, with GitHub pages, given the "ouds-ios" project for "Orange-OpenSource" organization,
+# the custom domain "ios.unified-design-system.orange.com" will thus automatically redirect to "orange-opensource.github.io/ouds-ios".
 SERVICE_PAGES_DOMAIN="ios.unified-design-system.orange.com"
 
 # Some HTML fragments to add in the HTML global page index.html
@@ -43,14 +43,14 @@ HTML_PROJECT_URL="https://github.com/Orange-OpenSource/ouds-ios"
 HTML_PROJECT_COPYRIGHT="Orange SA"
 HTML_PROJECT_WIKI_URL="https://github.com/Orange-OpenSource/ouds-ios/wiki"
 
-# The name of the Git branch hosting the documentation (e.g. GitHub Pages branch defined in repository)
-# We suppose all the documentation will be in this dedicated branch
+# The name of the Git branch hosting the documentation (e.g. GitHub Pages branch defined in repository).
+# We suppose all the documentation will be in this dedicated branch.
 SERVICE_PAGES_BRANCH="gh-pages"
 
 # Path where the documentation will be temporary
-DOCS_DIRECTORY="./docs"
+DOCS_DIRECTORY="../docs"
 
-# The generated name of the ZIP containing the generated sources of documentation (for archive)
+# The generated name of the ZIP containing the generated sources of documentation (for archive).
 timestamp=$(date +%s)
 DOCUMENTATION_ZIP_NAME="ouds-docs-$timestamp.zip"
 DOCUMENTATION_ZIP_LOCATION="/tmp/$DOCUMENTATION_ZIP_NAME"
@@ -143,17 +143,20 @@ for arg in "$@"; do
     esac
 done
 
+# Get the version of the library to add it in main page.
 if [[ -z "$lib_version" ]]; then
     _ "Parameter --libversion is mandatory. Exits. ($EXIT_BAD_PARAMETER)" true
     exit $EXIT_BAD_PARAMETER
 fi
 
+# Upload to Git repository or not.
 if [[ $use_git -eq 1 ]]; then
     _ "✔️ OK, Git will be used"
 else
     _ "✔️ OK, Git will NOT be used"
 fi
 
+# Keep ZIP or not.
 if [[ $no_zip -eq 1 ]]; then
     _ "✔️ OK, no ZIP archive will be done"
 else
@@ -164,8 +167,8 @@ if [[ "$use_git" -eq 0 && "$no_zip" -eq 1 ]]; then
     _ "🥴 WARNING: What do you use this script for? You should at least save the doc in Git repository or in ZIP file"
 fi
 
-# Ask the user if he/she wants to go further (updating documentation updates the production website)
-read -p "❓ Do you want to update the documentation? (yes/YES/Y/y): " answer
+# Ask the user if he/she wants to go further (updating documentation updates the production website).
+read -p "🍊 ❓ Do you want to update the documentation? (yes/YES/Y/y): " answer
 if [[ ! "$answer" =~ ^(yes|YES|Y|y)$ ]]; then
     _ "👋 Bye!"
     exit $EXIT_OK
@@ -173,15 +176,16 @@ else
     _ "👍 Ok, let's go!"
 fi
 
-# Check if the folder containing doccarchives exists and has doccarchives
+# Check if the folder containing doccarchives exists and has doccarchive.
 if [ ! -d "$DOCCARCHIVES_PATH" ]; then
     _ "'$DOCCARCHIVES_PATH' does not exist, how can I get the doccarchives? Exits. ($EXIT_ERROR_BAD_PREREQUISITES)" true
     exit $EXIT_ERROR_BAD_PREREQUISITES
 fi
 
-shopt -s nullglob  # Allow glob patterns to return nothing if no match
+shopt -s nullglob  # Allow glob patterns to return nothing if no match.
 doccarchives=("$DOCCARCHIVES_PATH"/*.doccarchive)
 
+# Check of there are things to process.
 if [ ${#doccarchives[@]} -eq 0 ]; then
     _ "There is no doccarchive in '$DOCCARCHIVES_PATH. Exits. ($EXIT_ERROR_BAD_PREREQUISITES)" true
     exit $EXIT_ERROR_BAD_PREREQUISITES
@@ -193,12 +197,12 @@ start_time=$(date +%s)
 # --------------------------------
 
 if [[ $use_git -eq 1 ]]; then
-    if [ -d ".git" ]; then
+    if [ -d "../.git" ]; then
 
         # Xcode keeps files and dislikes updates of local branches...
         _ "🚨 You should close Xcode or any software working on this workspace, before going further, just in case of..."
         _ "Press any key to continue..."
-        read -n 1 -s # Don't care of the input, just want the user be ready in the end
+        read -n 1 -s # Don't care of the input, just want the user be ready in the end.
     
         _ "✅ This is a Git repository. Please ensure the credentials you need are ready (SSH, HTTPS, GPG, etc.)"
         current_branch=$(git rev-parse --abbrev-ref HEAD)
@@ -217,30 +221,39 @@ _ "👍 Documentation folder created at '$DOCS_DIRECTORY'!"
 # Step 2 - For each doccarchive, copy the assets
 # ----------------------------------------------
 
-_ "👉 Generating docs..."
+_ "👉 Preparing docs..."
 
-# To store the docarchive folder names for later
+# To store the docarchive folder names for later.
 declare -a doccarchive_names
 
-# Process all .doccarchive folders in the target path
+# Process all .doccarchive folders in the target path.
 for doccarchiveDir in "${doccarchives[@]}"; do
-    _ "👉 Generating docs for $doccarchiveDir..."
+    _ "👉 Processing docs for $doccarchiveDir..."
     if [ -d "$doccarchiveDir" ]; then
 
-        # Get name of the doccarchive folder and save it
+        # Get name of the doccarchive folder and save it.
         base_name=$(basename "$doccarchiveDir" .doccarchive)
         doccarchive_names+=("$base_name")
 
-        # Prepare folders
+        # TODO: Refactor this part by copying only the needed files.
+        # WARNING: This is pure tikering (╯°□°)╯︵ ┻━┻
+        # We are pretty sure some files may be not that much useful and can not be copied.
+        # This solution works, but a refactoring should be done.
+
+        # Prepare folders.
+        mkdir -p "$DOCS_DIRECTORY/css"
         mkdir -p "$DOCS_DIRECTORY/data/documentation"
         mkdir -p "$DOCS_DIRECTORY/documentation"
+        mkdir -p "$DOCS_DIRECTORY/img"
         mkdir -p "$DOCS_DIRECTORY/index"
+        mkdir -p "$DOCS_DIRECTORY/js"
 
-        # Things to copy are stored at three levels (╯°□°)╯︵ ┻━┻
-        # WARNING: We rely too much on how files are generated, it is tinkering... 
+        # Copy assets for the browser and pages (dumb implementation copy everything)
+        cp -r "$doccarchiveDir/css/" "$DOCS_DIRECTORY/css/"
         cp -r "$doccarchiveDir/data/documentation/" "$DOCS_DIRECTORY/data/documentation/"
-
         cp -r "$doccarchiveDir/documentation/" "$DOCS_DIRECTORY/documentation/"
+        cp -r "$doccarchiveDir/img/" "$DOCS_DIRECTORY/img/"
+        cp -r "$doccarchiveDir/js/" "$DOCS_DIRECTORY/js/"
 
         index_file="$doccarchiveDir/index/index.json"
         if [ -f "$index_file" ]; then
@@ -254,8 +267,12 @@ for doccarchiveDir in "${doccarchives[@]}"; do
         _ "The .doccarchive folder '$doccarchiveDir' cannot be processed. Exits. ($EXIT_CANNOT_PROCESS)" true
         exit $EXIT_CANNOT_PROCESS
     fi
-    _ "👍 Docs generated for $doccarchiveDir!"
+    _ "👍 Docs processed for $doccarchiveDir!"
 done
+
+_ "👉 All index.json files processed, now time to merge them"
+python3 merge-json-indexes.py "$DOCS_DIRECTORY/index"
+_ "👍 Merge done!"
 
 # Step 3 - Add CNAME file for GitHub Pages
 # ----------------------------------------
@@ -269,7 +286,7 @@ fi
 # Step 4 - Update global HTML file
 # --------------------------------
 
-# This is only to build a global index.html file referencing all other targets index.html files
+# This is only to build a global index.html file referencing all other targets index.html files.
 
 _ "👉 Updating index.html..."
 
@@ -301,15 +318,17 @@ if [[ $use_git -eq 1 ]]; then
 
     _ "🔨 Saving things"
     cp -r "$DOCS_DIRECTORY" "$DOCUMENTATION_HTML_LOCATION"
+
     clean_repo
+    rm -rf "$DOCS_DIRECTORY"
 
     _ "🔨 Checkout service pages branch, align with remote"
 
-    # Check if the local branch exists
+    # Check if the local branch exists.
     if git show-ref --verify --quiet refs/heads/"$SERVICE_PAGES_BRANCH"; then
         _ "🔨 Checking out local branch '$SERVICE_PAGES_BRANCH'"
         git checkout "$SERVICE_PAGES_BRANCH"
-        git reset --hard origin/$SERVICE_PAGES_BRANCH # Ensure to be aligned with remote version
+        git reset --hard origin/$SERVICE_PAGES_BRANCH # Ensure to be aligned with remote version.
     else
         _ "🔨 Local branch '$SERVICE_PAGES_BRANCH' does not exist. Checking out from remote."
         git fetch origin
@@ -318,18 +337,23 @@ if [[ $use_git -eq 1 ]]; then
 
     _ "🔨 Applying changes"
 
-    # Ensure we have only updated files
-    rm -rf "$DOCS_DIRECTORY/data/documentation/*"
-    rm -rf "$DOCS_DIRECTORY/documentation/*"
-    rm -f "$DOCS_DIRECTORY/index/*"
+    # Ensure we have only updated files.
+    mkdir -p "$DOCS_DIRECTORY/css"
     mkdir -p "$DOCS_DIRECTORY/data/documentation"
     mkdir -p "$DOCS_DIRECTORY/documentation"
+    mkdir -p "$DOCS_DIRECTORY/img"
     mkdir -p "$DOCS_DIRECTORY/index"
-
+    mkdir -p "$DOCS_DIRECTORY/js"
+    
     # The HTML shards to update, hoping we won't loose some (╯°□°)╯︵ ┻━┻
+    cp -r "$DOCUMENTATION_HTML_LOCATION/css/"* "$DOCS_DIRECTORY/css/"
     cp -r "$DOCUMENTATION_HTML_LOCATION/data/documentation/"* "$DOCS_DIRECTORY/data/documentation/"
     cp -r "$DOCUMENTATION_HTML_LOCATION/documentation/"* "$DOCS_DIRECTORY/documentation/"
+    cp -r "$DOCUMENTATION_HTML_LOCATION/img/"* "$DOCS_DIRECTORY/img/"
     cp -r "$DOCUMENTATION_HTML_LOCATION/index/"* "$DOCS_DIRECTORY/index/"
+    cp -r "$DOCUMENTATION_HTML_LOCATION/js/"* "$DOCS_DIRECTORY/js/"
+    
+    cp -r "$DOCUMENTATION_HTML_LOCATION/CNAME" "$DOCS_DIRECTORY/"
     cp -r "$DOCUMENTATION_HTML_LOCATION/index.html" "$DOCS_DIRECTORY/"
 
     _ "🔨 Adding things (~ $files_count files)"
@@ -350,7 +374,7 @@ fi
 # Step 6 - Compress ZIP (if relevant)
 # -----------------------------------
 
-# ZIP action must be done before reseting the Git workspace (otherwise everything will be wiped out)
+# ZIP action must be done before reseting the Git workspace (otherwise everything will be wiped out).
 if [[ $no_zip -eq 0 ]]; then
     _ "👉 Zipping documentation folder"
     zip -r "$DOCUMENTATION_ZIP_LOCATION" "$DOCS_DIRECTORY"/*
@@ -365,7 +389,9 @@ if [[ $use_git -eq 1 ]]; then
     commit_hash=`git rev-parse HEAD`
     _ "🔨 Going back to previous Git branch"
     clean_repo
+    git fetch origin
     git checkout "$current_branch"
+    git reset --hard "origin/$current_branch"
     _ "👍 Pushed with commit '$commit_hash'"
 fi
 

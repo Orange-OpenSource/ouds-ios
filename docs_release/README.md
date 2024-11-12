@@ -194,15 +194,15 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 
 ## About documentation
 
-The documentation tool in use is [Swift DocC](https://www.swift.org/documentation/docc/) ; we try as best as we can to use these conventions in our source code, and use also DocC catalogs so as to let Xcode build the doccarchives and render the documentation in the Apple fashion.
-The documentation should be updated during a release ; to do that a script has been designed to update the GitHub Pages dedicated to the documentation in the OUDS iOS repository.
-However, because we faced several issues with `swift package`, `xcodebuild` and `xcrun docc` commands and were not able yet to use them to generate the doccarchives and the HTML pages, a manual step must be done before. For further details, see [#95](https://github.com/Orange-OpenSource/ouds-ios/issues/95) and [#168](https://github.com/Orange-OpenSource/ouds-ios/issues/168) (in few words: not possible to manage easily multiple targets in Swift Package, _UIKit_ not supported).
+The documentation tool in use is [Swift DocC](https://www.swift.org/documentation/docc/) ; we try as best as we can to use these conventions in our source code, and use also _DocC_ catalogs so as to let _Xcode_ build the _doccarchives_ and render the documentation in the Apple fashion.
+The documentation should be updated during a release ; to do that a script has been designed to update the _GitHub Pages_ dedicated to the documentation in the OUDS iOS repository.
+However, because we faced several issues with `swift package`, `xcodebuild` and `xcrun docc` commands and were not able yet to use them to generate the _doccarchives_ and the HTML pages, a manual step must be done for the update. For further details, see [#95](https://github.com/Orange-OpenSource/ouds-ios/issues/95) and [#168](https://github.com/Orange-OpenSource/ouds-ios/issues/168) (in few words: not possible to manage easily multiple targets in Swift Package, _UIKit_ not supported, no unified _doccarchive_ for several targets).
 
-First, you will have to use Xcode to build the documentation (_Product > Build Documentation_) which will open the documentation viewer.
-Then, **for each documentation catalog of the Swift package, i.e. for each target**, export the doccarchive **in your _Downloads_ folder**.
-Today you will have to do this operation for the doccarchives *OUDS*, *OUDSComponents*, *OUDSFoundations*, *OUDSModules*, *OUDSThemesInverse*, *OUDSThemesOrange*, *OUDSTokensComponent*, *OUDSTokenSemantic* and *OUDSTokenRaw*.
+First, you will have to use _Xcode_ to build the documentation (_Product > Build Documentation_) which will open the documentation viewer.
+Then, **for each documentation catalog of the Swift package, i.e. for each target**, export the _doccarchive_ **in your _Downloads_ folder**.
+Today you will have to do this operation for the _doccarchives_ *OUDS*, *OUDSComponents*, *OUDSFoundations*, *OUDSModules*, *OUDSThemesInverse*, *OUDSThemesOrange*, *OUDSTokensComponent*, *OUDSTokenSemantic* and *OUDSTokenRaw*.
 
-Then, you will have to run the script `uploadWebDoc.sh` which will use these doccarchives, get their HTML content and upload the GitHub Pages branch.
+Then, you will have to run the script `uploadWebDoc.sh` which will use these _doccarchives_, get their HTML content and upload the GitHub Pages branch.
 
 ```shell
 # To show the help:
@@ -222,5 +222,7 @@ Keep in mind everything is stored in _/tmp_ folder with the execution timestamp,
 The plugin produces a lot of files, a lot. For example for our v0.1.0, more than 6,000 files have been created for a ZIP archive of about 17 MB.
 Thus, keeping all versions of the documentation is a non-sense, no one will read it and it will increase the size of the branch in our VCS tool, consuming a lot of bandwidth, and reaching limits of Git to handle large amounts of file. We would like to avoid to force developers to define a specific Git configuration to handle such massive branch.
 
-We prefer to build ZIP documentation and Xcode doccarchives to add as artifacts of releases.
-Thus, the online version of the documentation is for the last release, and each release in GitHub contains doccarchive files generated through Xcode and ZIP of HTML files picked from the *gh-pages*.
+We prefer to build ZIP documentation and _Xcode_ _doccarchives_ to add as artifacts of releases.
+Thus, the online version of the documentation is for the last release, and each release in GitHub contains _doccarchive_ files generated through _Xcode_ and ZIP of HTML files picked from the *gh-pages*.
+
+You may see also the *merge-json-indexed.py* Python script: this tool is sued by the mentioned Shell script to merge easily all *index.json* files of all _doccarchives_ so as to produce one single and unique *index.json* file used mainly for the side bar menu and the highlight bar.
