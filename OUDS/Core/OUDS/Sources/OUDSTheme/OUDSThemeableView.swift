@@ -73,20 +73,25 @@ public struct OUDSThemeableView<Content>: View where Content: View {
     }
 }
 
-struct UserInterfaceSizeClassModifier: ViewModifier {
+/// Private modifier used to set in environment the computed
+/// horizontal and vertival size classes.
+///
+private struct UserInterfaceSizeClassModifier: ViewModifier {
 
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
 
+    let extraCompactMaxWidth = 390.0
+
     private var oudsHorizontalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
-        if UIScreen.main.bounds.width < 389 {
+        if UIScreen.main.bounds.width < extraCompactMaxWidth {
             return .extraCompact
         } else {
             return horizontalSizeClass == .compact ? .compact : .regular
         }
     }
     private var oudsVerticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
-        if UIScreen.main.bounds.width < 389 {
+        if UIScreen.main.bounds.width < extraCompactMaxWidth {
             return .extraCompact
         } else {
             return verticalSizeClass == .compact ? .compact : .regular
