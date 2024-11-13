@@ -18,11 +18,11 @@ extension OUDSTheme {
 
     // MARK: Semantic Grid token - Helper
 
-    /// The min column with of a grid
-    /// - Parameter oudsUserInterfaceSizeClass: The current interface size class
+    /// The min column width of a grid.
+    /// - Parameter sizeClass: The current interface size class
     /// - Returns `GridRawToken`: The minimal width according to viewports / size classes.
-    public final func gridMinWidth(for oudsUserInterfaceSizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
-        switch oudsUserInterfaceSizeClass {
+    public final func gridMinWidth(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
+        switch sizeClass {
         case .extraCompact:
             return gridExtraCompactMinWidth
         case .compact:
@@ -30,15 +30,15 @@ extension OUDSTheme {
         case .regular:
             return gridRegularMinWidth
         @unknown default:
-            fatalError("🤖 Raw token unavailable for \(oudsUserInterfaceSizeClass)!")
+            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
-    /// The max column with of a grid
-    /// - Parameter oudsUserInterfaceSizeClass: The current interface size class
+    /// The max column width of a grid.
+    /// - Parameter sizeClass: The current interface size class
     /// - Returns `GridRawToken`: The maximal width according to viewports / size classes.
-    public final func gridMaxWidth(for oudsUserInterfaceSizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
-        switch oudsUserInterfaceSizeClass {
+    public final func gridMaxWidth(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
+        switch sizeClass {
         case .extraCompact:
             return gridExtraCompactMaxWidth
         case .compact:
@@ -46,15 +46,15 @@ extension OUDSTheme {
         case .regular:
             return gridRegularMaxWidth
         @unknown default:
-            fatalError("🤖 Raw token unavailable for \(oudsUserInterfaceSizeClass)!")
+            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
     /// The margin of a grid.
-    /// - Parameter oudsUserInterfaceSizeClass: The current interface size class
+    /// - Parameter sizeClass: The current interface size class
     /// - Returns `GridRawToken`: The margin according to viewports / size classes.
-    public final func gridMargin(for oudsUserInterfaceSizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
-        switch oudsUserInterfaceSizeClass {
+    public final func gridMargin(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
+        switch sizeClass {
         case .extraCompact:
             return gridExtraCompactMargin
         case .compact:
@@ -62,15 +62,15 @@ extension OUDSTheme {
         case .regular:
             return gridRegularMargin
         @unknown default:
-            fatalError("🤖 Raw token unavailable for \(oudsUserInterfaceSizeClass)!")
+            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
     /// The column gap of a grid.
-    /// - Parameter oudsUserInterfaceSizeClass: The current interface size class
+    /// - Parameter sizeClass: The current interface size class
     /// - Returns `GridRawToken`: The column gap according to viewports / size classes.
-    public final func gridColumnGap(for oudsUserInterfaceSizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
-        switch oudsUserInterfaceSizeClass {
+    public final func gridColumnGap(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
+        switch sizeClass {
         case .extraCompact:
             return gridExtraCompactColumnGap
         case .compact:
@@ -78,15 +78,15 @@ extension OUDSTheme {
         case .regular:
             return gridRegularColumnGap
         @unknown default:
-            fatalError("🤖 Raw token unavailable for \(oudsUserInterfaceSizeClass)!")
+            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
     /// The column count of a grid.
-    /// - Parameter oudsUserInterfaceSizeClass: The current interface size class
+    /// - Parameter sizeClass: The current interface size class
     /// - Returns `GridRawToken`: The column count according to viewports / size classes.
-    public final func gridColumnCount(for oudsUserInterfaceSizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
-        switch oudsUserInterfaceSizeClass {
+    public final func gridColumnCount(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
+        switch sizeClass {
         case .extraCompact:
             return gridExtraCompactColumnCount
         case .compact:
@@ -94,7 +94,7 @@ extension OUDSTheme {
         case .regular:
             return gridRegularColumnCount
         @unknown default:
-            fatalError("🤖 Raw token unavailable for \(oudsUserInterfaceSizeClass)!")
+            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 }

@@ -16,7 +16,7 @@ import SwiftUI
 
 // MARK: - Environment values
 
-private struct ThemeContractEnvironmentKey: EnvironmentKey {
+private struct ThemeEnvironmentKey: EnvironmentKey {
 
     static let defaultValue = OUDSTheme()
 }
@@ -26,10 +26,10 @@ extension EnvironmentValues {
     /// The `OUDSTheme` instance exposed as en environment values across the library
     public var theme: OUDSTheme {
         get {
-            self[ThemeContractEnvironmentKey.self]
+            self[ThemeEnvironmentKey.self]
         }
         set {
-            self[ThemeContractEnvironmentKey.self] = newValue
+            self[ThemeEnvironmentKey.self] = newValue
         }
     }
 }
@@ -95,7 +95,7 @@ struct UserInterfaceSizeClassModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .environment(\.oudsHorizontalUserInterfaceSizeClass, oudsHorizontalUserInterfaceSizeClass)
-            .environment(\.oudsVerticalUserInterfaceSizeClass, oudsVerticalUserInterfaceSizeClass)
+            .environment(\.oudsHorizontalSizeClass, oudsHorizontalUserInterfaceSizeClass)
+            .environment(\.oudsVerticalSizeClass, oudsVerticalUserInterfaceSizeClass)
     }
 }

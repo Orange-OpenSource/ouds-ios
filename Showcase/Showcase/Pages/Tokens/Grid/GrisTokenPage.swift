@@ -19,28 +19,30 @@ import SwiftUI
 struct GridTokenPage: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.oudsHorizontalUserInterfaceSizeClass) private var oudsHorizontalSizeClass
+    @Environment(\.oudsHorizontalSizeClass) private var horizontalSizeClass
     @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
-            Image(decorative: "il_tokens_grid_column_margin")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .background(theme.colorBgEmphasized.color(for: colorScheme))
-            Image(decorative: "il_tokens_grid_min_width")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .background(theme.colorBgEmphasized.color(for: colorScheme))
-            Image(decorative: "il_tokens_grid_max_width")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .background(theme.colorBgEmphasized.color(for: colorScheme))
+        Group {
+            VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+                Image(decorative: "il_tokens_grid_column_margin")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .background(theme.colorBgEmphasized.color(for: colorScheme))
+                Image(decorative: "il_tokens_grid_min_width")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .background(theme.colorBgEmphasized.color(for: colorScheme))
+                Image(decorative: "il_tokens_grid_max_width")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .background(theme.colorBgEmphasized.color(for: colorScheme))
+            }
 
             Section { illustrationForGridTokens() } header: {
-                Text(oudsHorizontalSizeClass.rawValue)
+                Text(horizontalSizeClass.rawValue)
                     .showcaseSectionHeaderStyle()
             }
         }
@@ -58,7 +60,7 @@ struct GridTokenPage: View {
     }
 
     private func illustration(for namedGrid: NamedGrid) -> some View {
-        let token = namedGrid.token(from: theme, for: oudsHorizontalSizeClass)
+        let token = namedGrid.token(from: theme, for: horizontalSizeClass)
         let name = namedGrid.rawValue
         let value = String(format: "(%.0f) pt", token)
 
@@ -76,18 +78,18 @@ private enum NamedGrid: String, CaseIterable {
     case gridColumnCount
 
     @MainActor
-    func token(from theme: OUDSTheme, for oudsUerInterfaceSizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
+    func token(from theme: OUDSTheme, for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch self {
         case .gridMinWidth:
-            return theme.gridMinWidth(for: oudsUerInterfaceSizeClass)
+            return theme.gridMinWidth(for: sizeClass)
         case .gridMaxWidth:
-            return theme.gridMaxWidth(for: oudsUerInterfaceSizeClass)
+            return theme.gridMaxWidth(for: sizeClass)
         case .gridMargin:
-            return theme.gridMargin(for: oudsUerInterfaceSizeClass)
+            return theme.gridMargin(for: sizeClass)
         case .gridColumnGap:
-            return theme.gridColumnGap(for: oudsUerInterfaceSizeClass)
+            return theme.gridColumnGap(for: sizeClass)
         case .gridColumnCount:
-            return theme.gridColumnCount(for: oudsUerInterfaceSizeClass)
+            return theme.gridColumnCount(for: sizeClass)
         }
     }
 }

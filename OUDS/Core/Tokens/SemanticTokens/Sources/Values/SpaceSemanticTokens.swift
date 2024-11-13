@@ -27,7 +27,6 @@ public protocol SpaceSemanticTokens {
     // MARK: Semantic token - Spacing - Scaled
 
     var spaceScaledNone: MultipleSpaceTokens { get }
-    var spaceScaledSmash: MultipleSpaceTokens { get }
     var spaceScaledShortest: MultipleSpaceTokens { get }
     var spaceScaledShorter: MultipleSpaceTokens { get }
     var spaceScaledShort: MultipleSpaceTokens { get }
