@@ -11,6 +11,13 @@ For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *
 
 ## In Showcase demo app
 
+#### DeclarationAccessibility
+
+Copyright 2024 Orange-OpenSource Authors
+
+*DeclarationAccessibility* is distributed under the terms and conditions of the [Apache License](http://www.apache.org/licenses/).
+You may download the source code on the [following website](https://github.com/Orange-OpenSource/accessibility-statement-lib-ios).
+
 ### swift-snapshot-testing
 
 Copyright 2019 Point-Free, Inc.
