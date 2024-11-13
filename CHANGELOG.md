@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DemoApp] Add missing accessibility label for images ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/212))
 - [DemoApp] Fix text sizes when dynamic type is used (a11y) ([#247](https://github.com/Orange-OpenSource/ouds-ios/issues/247))
 
 ## [0.5.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.4.1...0.5.0) - 2024-10-31
@@ -27,7 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Demo App] [Bug] A11y Dynamic Type Text ([#247](https://github.com/Orange-OpenSource/ouds-ios/issues/247))
 - [Library] Update `ElevationSemanticTokens` (tokenator *20241031125053*)
 - [Library] Update `OrangeBrandColorRawTokens` (tokenator *20241030132734*)
 - [Library] Update `BorderSemanticTokens` (tokenator *20241025110844*)
@@ -62,7 +62,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [DemoApp] Added Missing Accessibility Label to Image ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/212))
 - [DemoApp] Update typography screen to use right color on token name ([#213](https://github.com/Orange-OpenSource/ouds-ios/issues/213))
 - [DemoApp] Remove duplicated section in color page for content on background values ([#236](https://github.com/Orange-OpenSource/ouds-ios/issues/236))
 - [DemoApp] Hide from Voice Over decorative image in theme selector (a11y)
