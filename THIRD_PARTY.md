@@ -13,9 +13,9 @@ For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *
 
 #### DeclarationAccessibility
 
-Copyright 2024 Orange-OpenSource Authors
+Copyright 2021-2023 Orange SA
 
-*DeclarationAccessibility* is distributed under the terms and conditions of the [Apache License](http://www.apache.org/licenses/).
+*DeclarationAccessibility* is distributed under the terms and conditions of the [Apache License](https://opensource.org/license/apache-2-0).
 You may download the source code on the [following website](https://github.com/Orange-OpenSource/accessibility-statement-lib-ios).
 
 ### swift-snapshot-testing
