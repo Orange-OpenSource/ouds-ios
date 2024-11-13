@@ -47,6 +47,9 @@ HTML_PROJECT_WIKI_URL="https://github.com/Orange-OpenSource/ouds-ios/wiki"
 # We suppose all the documentation will be in this dedicated branch.
 SERVICE_PAGES_BRANCH="gh-pages"
 
+# Path where assets to copy are
+ASSETS_DIRECTORY="./docs_assets"
+
 # Path where the documentation will be temporary
 DOCS_DIRECTORY="../docs"
 
@@ -274,9 +277,16 @@ _ "👉 All index.json files processed, now time to merge them"
 python3 merge-json-indexes.py "$DOCS_DIRECTORY/index"
 _ "👍 Merge done!"
 
-# Step 3 - Add CNAME file for GitHub Pages
-# ----------------------------------------
+# Step 3 - Add custom assets
+# --------------------------
 
+# Some custom assets for the website
+cp "$ASSETS_DIRECTORY/apple-touch-icon.png" "$DOCS_DIRECTORY/"
+cp "$ASSETS_DIRECTORY/favicon-16x16.png" "$DOCS_DIRECTORY/"
+cp "$ASSETS_DIRECTORY/favicon-32x32.png" "$DOCS_DIRECTORY/"
+cp "$ASSETS_DIRECTORY/favicon.ico" "$DOCS_DIRECTORY/"
+
+# CNAME for GitHub Pages etc.
 if [[ $use_git -eq 1 ]]; then
     _ "👉 Updating CNAME file"
     echo "$SERVICE_PAGES_DOMAIN" > "$DOCS_DIRECTORY/CNAME"
@@ -290,7 +300,19 @@ fi
 
 _ "👉 Updating index.html..."
 
-echo "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>$HTML_TITLE</title><style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;padding:0;background-color:#000000;color:#fff;}header{background-color:#424242;color:white;padding:20px;text-align:center;}main{padding:20px;}h1{margin:0;}ol{padding-left:20px;}li{margin:10px 0;}a{color:#06f;text-decoration:none;}a:hover{text-decoration:underline;}footer{text-align:center;padding:10px;background-color:#000000;border-top:1px solid #e0e0e0;}</style></head><body><header><h1>$HTML_H1</h1></header><main>" > $DOCS_DIRECTORY/index.html
+echo "<!DOCTYPE html><html lang=\"en\"><head>" > $DOCS_DIRECTORY/index.html
+echo "<meta charset=\"UTF-8\">"  >> $DOCS_DIRECTORY/index.html
+echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">" >> $DOCS_DIRECTORY/index.html
+echo "<title>$HTML_TITLE</title>" >> $DOCS_DIRECTORY/index.html
+echo "<link rel=\"icon\" href=\"./favicon-32x32.png\" sizes=\"32x32\" type=\"image/png\">" >> $DOCS_DIRECTORY/index.html
+echo "<link rel=\"icon\" href=\"./favicon-16x16.png\" sizes=\"16x16\" type=\"image/png\">" >> $DOCS_DIRECTORY/index.html
+echo "<link rel=\"apple-touch-icon\" href=\"./apple-touch-icon.png\" sizes=\"180x180\">" >> $DOCS_DIRECTORY/index.html
+echo "<link rel=\"icon\" href=\"./favicon.ico\">" >> $DOCS_DIRECTORY/index.html
+echo "<style>body{font-family:Arial,sans-serif;line-height:1.6;margin:0;padding:0;background-color:#000000;color:#fff;}header{background-color:#424242;color:white;padding:20px;text-align:center;}main{padding:20px;}h1{margin:0;}ol{padding-left:20px;}li{margin:10px 0;}a{color:#06f;text-decoration:none;}a:hover{text-decoration:underline;}footer{text-align:center;padding:10px;background-color:#000000;border-top:1px solid #e0e0e0;}</style>" >> $DOCS_DIRECTORY/index.html
+echo "</head><body>" >> $DOCS_DIRECTORY/index.html
+echo "<header><h1>$HTML_H1</h1></header>" >> $DOCS_DIRECTORY/index.html
+echo "<main>" >> $DOCS_DIRECTORY/index.html
+
 echo "<h2>$HTML_H2</h2>" >> $DOCS_DIRECTORY/index.html
 echo "<h3>Version v$lib_version</h3>" >> $DOCS_DIRECTORY/index.html
 echo "<h4>All targets of the Swift Package are listed below</h4>" >> $DOCS_DIRECTORY/index.html
@@ -353,8 +375,14 @@ if [[ $use_git -eq 1 ]]; then
     cp -r "$DOCUMENTATION_HTML_LOCATION/index/"* "$DOCS_DIRECTORY/index/"
     cp -r "$DOCUMENTATION_HTML_LOCATION/js/"* "$DOCS_DIRECTORY/js/"
     
-    cp -r "$DOCUMENTATION_HTML_LOCATION/CNAME" "$DOCS_DIRECTORY/"
-    cp -r "$DOCUMENTATION_HTML_LOCATION/index.html" "$DOCS_DIRECTORY/"
+    cp "$DOCUMENTATION_HTML_LOCATION/CNAME" "$DOCS_DIRECTORY/"
+    cp "$DOCUMENTATION_HTML_LOCATION/index.html" "$DOCS_DIRECTORY/"
+
+    # Some custom assets for the website
+    cp "$DOCUMENTATION_HTML_LOCATION/apple-touch-icon.png" "$DOCS_DIRECTORY/"
+    cp "$DOCUMENTATION_HTML_LOCATION/favicon-16x16.png" "$DOCS_DIRECTORY/"
+    cp "$DOCUMENTATION_HTML_LOCATION/favicon-32x32.png" "$DOCS_DIRECTORY/"
+    cp "$DOCUMENTATION_HTML_LOCATION/favicon.ico" "$DOCS_DIRECTORY/"
 
     _ "🔨 Adding things (~ $files_count files)"
     git add "$DOCS_DIRECTORY"
