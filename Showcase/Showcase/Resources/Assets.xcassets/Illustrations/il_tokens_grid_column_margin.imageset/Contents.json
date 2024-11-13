@@ -3,6 +3,16 @@
     {
       "filename" : "il_tokens_grid_column_margin.png",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "il_tokens_grid_column_margin_dark.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

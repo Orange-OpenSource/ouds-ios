@@ -27,8 +27,11 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_empty_screen.imageset/il_empty_screen.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
+./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
 ./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.png
+./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width_dark.png
 ./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width.png
+./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width_dark.png
 ./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_border.imageset/ic_border.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_dimension.imageset/ic_dimension.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_filter_effects.imageset/ic_filter_effects.svg
