@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Tool] GitHub Action to run SwiftLint for *main* and *develop* branches
 
+### Changed
+
+- [DemoApp] Update accessibility statement usage and instructions ([#278](https://github.com/Orange-OpenSource/ouds-ios/issues/278))
+
 ### Fixed
 
 - [DemoApp] Fix text sizes when dynamic type is used (a11y) ([#247](https://github.com/Orange-OpenSource/ouds-ios/issues/247))
@@ -27,8 +31,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DemoApp] Update accessibility statement usage and instructions ([#844](https://github.com/Orange-OpenSource/ouds-ios/issues/844))
-- [Demo App] [Bug] A11y Dynamic Type Text ([#247](https://github.com/Orange-OpenSource/ouds-ios/issues/247))
 - [Library] Update `ElevationSemanticTokens` (tokenator *20241031125053*)
 - [Library] Update `OrangeBrandColorRawTokens` (tokenator *20241030132734*)
 - [Library] Update `BorderSemanticTokens` (tokenator *20241025110844*)
