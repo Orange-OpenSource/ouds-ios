@@ -23,6 +23,7 @@
 
 "app_about_legalInformation_label" = "Legal information";
 "app_about_privacyPolicy_label" = "Privacy policy";
+"app_about_accessibilityStatement_label" = "Accessibility statement";
 
 // MARK: - Tokens Screen
 

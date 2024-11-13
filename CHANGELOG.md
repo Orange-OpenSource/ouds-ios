@@ -10,6 +10,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Tool] GitHub Action to run SwiftLint for *main* and *develop* branches
 
+### Changed
+
+- [DemoApp] Update accessibility statement usage and instructions ([#278](https://github.com/Orange-OpenSource/ouds-ios/issues/278))
+
 ### Fixed
 
 - [DemoApp] Add missing accessibility label for images ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/212))

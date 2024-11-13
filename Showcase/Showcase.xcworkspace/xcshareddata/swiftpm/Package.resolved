@@ -1,6 +1,15 @@
 {
-  "originHash" : "b0e966f4ace0da078a6fcc1dcd094050f4d63b9437f87a3a6b4948c17b90db4e",
+  "originHash" : "ce9d2b5fcd836ee7f16c345c970c6dad8b1405cc6afc0904bafd4a5916517710",
   "pins" : [
+    {
+      "identity" : "accessibility-statement-lib-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git",
+      "state" : {
+        "revision" : "480bf4629b951e459308379030f1ca0ce28a0987",
+        "version" : "1.3.0"
+      }
+    },
     {
       "identity" : "swift-snapshot-testing",
       "kind" : "remoteSourceControl",

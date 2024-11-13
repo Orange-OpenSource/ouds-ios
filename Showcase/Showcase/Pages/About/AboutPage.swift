@@ -53,6 +53,13 @@ struct AboutPage: View {
                     Text("app_about_legalInformation_label")
                 }
 
+                NavigationLink {
+                    AccessibilityStatementPage()
+                        .navigationTitle("app_about_accessibilityStatement_label")
+                } label: {
+                    Text("app_about_accessibilityStatement_label")
+                }
+
                 // TODO: Only for debug purposes, should be displayed in another way
                 Text("Version: \(Bundle.main.marketingVersion)")
                 Text("Build number: \(Bundle.main.buildNumber)")
