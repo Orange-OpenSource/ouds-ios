@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "il_tokens_grid_min_width.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "il_tokens_grid_min_width_dark.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -16,7 +16,7 @@ import SwiftUI
 
 // MARK: - Environment values
 
-private struct ThemeContractEnvironmentKey: EnvironmentKey {
+private struct ThemeEnvironmentKey: EnvironmentKey {
 
     static let defaultValue = OUDSTheme()
 }
@@ -26,10 +26,10 @@ extension EnvironmentValues {
     /// The `OUDSTheme` instance exposed as en environment values across the library
     public var theme: OUDSTheme {
         get {
-            self[ThemeContractEnvironmentKey.self]
+            self[ThemeEnvironmentKey.self]
         }
         set {
-            self[ThemeContractEnvironmentKey.self] = newValue
+            self[ThemeEnvironmentKey.self] = newValue
         }
     }
 }
@@ -69,5 +69,37 @@ public struct OUDSThemeableView<Content>: View where Content: View {
     public var body: some View {
         content()
             .environment(\.theme, theme)
+            .modifier(UserInterfaceSizeClassModifier())
+    }
+}
+
+/// Private modifier used to set in environment the computed orizontal and vertical size classes.
+private struct UserInterfaceSizeClassModifier: ViewModifier {
+
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+
+    /// According to Apple guidelines, this value of 390 is the limit defining extract compact size classes if lower and compact if higher or equal
+    private static let extraCompactMaxWidth = 390.0
+
+    private var horizontalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
+        if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
+            return .extraCompact
+        } else {
+            return horizontalSizeClass == .compact ? .compact : .regular
+        }
+    }
+    private var verticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
+        if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
+            return .extraCompact
+        } else {
+            return verticalSizeClass == .compact ? .compact : .regular
+        }
+    }
+
+    func body(content: Content) -> some View {
+        content
+            .environment(\.oudsHorizontalSizeClass, horizontalUserInterfaceSizeClass)
+            .environment(\.oudsVerticalSizeClass, verticalUserInterfaceSizeClass)
     }
 }
