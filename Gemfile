@@ -17,7 +17,7 @@ gem 'cocoapods',  '1.15.2'
 gem 'fastlane', '2.225.0'
 gem 'fastlane-plugin-changelog', '0.16.0'
 gem 'fastlane-plugin-mattermost', '1.3.2'
-gem 'json', '2.7.2'
+gem 'json', '2.8.2'
 gem 'net-http', '0.4.1'
 gem 'xcode-install', '2.8.1'
 
