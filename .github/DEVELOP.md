@@ -222,7 +222,7 @@ Signed-off-by: Second author firstname and lastname <second author email>
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 We do not generate yet `RELEASE_NOTE.md` file using the Git history and [git cliff](https://git-cliff.org/) tool.
-Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/7-%E2%80%90-About-changelog,-release-notes-and-hooks)
+Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/8-%E2%80%90-About-changelog,-release-notes-and-hooks)
 
 ## Use of Gitleaks
 
@@ -304,6 +304,6 @@ We use *GitLab CI*for CI/CD with our own runners so as to keep private our sensi
 Our currant plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
 However of course you will have to define all the variables, secrets and have the mandatory files.
 
-You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/5-%E2%80%90-About-continuous-integration-and-delivery).
+You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/9-%E2%80%90-About-continuous-integration-and-delivery).
 
 In few words, there is a pipeline containing some stages and jobs to build alpha, nightly/beta and production releases.
