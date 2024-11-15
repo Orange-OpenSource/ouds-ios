@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Update `net-http` gem from 0.4.1 to 0.5.0 ([#286](https://github.com/Orange-OpenSource/ouds-ios/issues/286))
+- [Tool] Update `cocoapods` gem from 1.15.2 to 1.16.2 ([#286](https://github.com/Orange-OpenSource/ouds-ios/issues/286))
+- [Tool] Update `json` gem from 2.7.2 to 2.8.2 ([#286](https://github.com/Orange-OpenSource/ouds-ios/issues/286))
+- [Tool] Update `swiftformat/cli` from 0.54.3 to 0.54.6 ([#286](https://github.com/Orange-OpenSource/ouds-ios/issues/286))
+- [Tool] Update `Fastlane` from 2.223.1 to 2.225.0 ([#286](https://github.com/Orange-OpenSource/ouds-ios/issues/286))
 - [DemoApp] Update accessibility statement usage and instructions ([#278](https://github.com/Orange-OpenSource/ouds-ios/issues/278))
 
 ### Fixed
