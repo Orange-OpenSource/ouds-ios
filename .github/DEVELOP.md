@@ -181,6 +181,8 @@ A [GitHub Action bot](https://probot.github.io/apps/dco/) has been plugged in th
 
 ### About commits
 
+#### Convention commits rules
+
 Try as best as possible to apply [conventional commits rules](https://www.conventionalcommits.org/en/v1.0.0/).
 Keep in mind to have your commits well prefixed, and with the issue number between parenthesis at the end, and also if needed the pull request issue number.
 If your commits embed contributions for other people, do not forget to [add them as co-authors](https://docs.github.com/fr/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors).
@@ -203,18 +205,28 @@ You can add also ! after the keyword to say a breaking change occurs, and also a
 - `feat(API)!:` breaking change in the API because..
 - `feat:` add something in the API...
 
-For example, given a commit to fix the issue n°42, the commit should be like:
+#### Chain of responsability
+
+We can add metafields picked from [this good guideline](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n525) in the commit messages.
+
+This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
+
+For example, given a commit to fix the issue n°42, with Foo FOO and Bar BAR as commit authors, with Wizz WIZZ as source code reviewer, and John DOE as accessibility / PO / design reviewer, the commit should be like:
 
 ```text
 fix: title of your commit (#42)
 
 Some details about the fix you propose
 
-Co-authored-by: First author firstname and lastname <first author email>
-Co-authored-by: Second author firstname and lastname <second author email>
+Co-authored-by: Foo FOO <foo email>
+Co-authored-by: Bar BAR <bar email>
 
-Signed-off-by: First author firstname and lastname <first author email>
-Signed-off-by: Second author firstname and lastname <second author email>
+Reviewed-by: Wizz WIZZ <wizz email>
+
+Acked-by: John DOE <john email>
+
+Signed-off-by: Foo FOO <foo email>
+Signed-off-by: Bar BAR <bar email>
 ```
 
 ### About release note and changelog
