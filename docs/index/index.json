@@ -108,6 +108,35 @@
                                 "type": "property"
                             },
                             {
+                                "title": "Instance Methods",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudstheme/gridcolumncount(for:)",
+                                "title": "func gridColumnCount(for: OUDSUserInterfaceSizeClass) -> GridRawToken",
+                                "type": "method"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudstheme/gridcolumngap(for:)",
+                                "title": "func gridColumnGap(for: OUDSUserInterfaceSizeClass) -> GridRawToken",
+                                "type": "method"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudstheme/gridmargin(for:)",
+                                "title": "func gridMargin(for: OUDSUserInterfaceSizeClass) -> GridRawToken",
+                                "type": "method"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudstheme/gridmaxwidth(for:)",
+                                "title": "func gridMaxWidth(for: OUDSUserInterfaceSizeClass) -> GridRawToken",
+                                "type": "method"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudstheme/gridminwidth(for:)",
+                                "title": "func gridMinWidth(for: OUDSUserInterfaceSizeClass) -> GridRawToken",
+                                "type": "method"
+                            },
+                            {
                                 "title": "Default Implementations",
                                 "type": "groupMarker"
                             },
@@ -6594,6 +6623,90 @@
                         "type": "struct"
                     },
                     {
+                        "title": "Enumerations",
+                        "type": "groupMarker"
+                    },
+                    {
+                        "children": [
+                            {
+                                "title": "Enumeration Cases",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudsuserinterfacesizeclass/compact",
+                                "title": "case compact",
+                                "type": "case"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudsuserinterfacesizeclass/extracompact",
+                                "title": "case extraCompact",
+                                "type": "case"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudsuserinterfacesizeclass/regular",
+                                "title": "case regular",
+                                "type": "case"
+                            },
+                            {
+                                "title": "Initializers",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudsuserinterfacesizeclass/init(rawvalue:)",
+                                "title": "init?(rawValue: String)",
+                                "type": "init"
+                            },
+                            {
+                                "title": "Default Implementations",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "title": "Operators",
+                                        "type": "groupMarker"
+                                    },
+                                    {
+                                        "path": "/documentation/ouds/oudsuserinterfacesizeclass/!=(_:_:)",
+                                        "title": "static func != (Self, Self) -> Bool",
+                                        "type": "op"
+                                    }
+                                ],
+                                "path": "/documentation/ouds/oudsuserinterfacesizeclass/equatable-implementations",
+                                "title": "Equatable Implementations",
+                                "type": "symbol"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "title": "Instance Properties",
+                                        "type": "groupMarker"
+                                    },
+                                    {
+                                        "path": "/documentation/ouds/oudsuserinterfacesizeclass/hashvalue",
+                                        "title": "var hashValue: Int",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "title": "Instance Methods",
+                                        "type": "groupMarker"
+                                    },
+                                    {
+                                        "path": "/documentation/ouds/oudsuserinterfacesizeclass/hash(into:)",
+                                        "title": "func hash(into: inout Hasher)",
+                                        "type": "method"
+                                    }
+                                ],
+                                "path": "/documentation/ouds/oudsuserinterfacesizeclass/rawrepresentable-implementations",
+                                "title": "RawRepresentable Implementations",
+                                "type": "symbol"
+                            }
+                        ],
+                        "path": "/documentation/ouds/oudsuserinterfacesizeclass",
+                        "title": "OUDSUserInterfaceSizeClass",
+                        "type": "enum"
+                    },
+                    {
                         "title": "Extended Modules",
                         "type": "groupMarker"
                     },
@@ -6608,6 +6721,16 @@
                                     {
                                         "title": "Instance Properties",
                                         "type": "groupMarker"
+                                    },
+                                    {
+                                        "path": "/documentation/ouds/swiftuicore/environmentvalues/oudshorizontalsizeclass",
+                                        "title": "var oudsHorizontalSizeClass: OUDSUserInterfaceSizeClass",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/ouds/swiftuicore/environmentvalues/oudsverticalsizeclass",
+                                        "title": "var oudsVerticalSizeClass: OUDSUserInterfaceSizeClass",
+                                        "type": "property"
                                     },
                                     {
                                         "path": "/documentation/ouds/swiftuicore/environmentvalues/theme",
