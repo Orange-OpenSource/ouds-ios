@@ -127,33 +127,11 @@ struct ColorTokenPage: View {
                 Rectangle()
                     .fill(colorRawToken.color)
                     .frame(width: 64, height: 64)
-                    .modifier(ExtraBorderModifier(color: colorRawToken))
+                    .oudsBorder(style: theme.borderStyleDefault,
+                                width: theme.borderWidthThin,
+                                radius: theme.borderRadiusNone,
+                                color: theme.colorBorderDefault)
             }
-        }
-    }
-}
-
-// MARK: - Extra border modifier
-
-// Add a border if color defined by token is equal to default background color of the root view
-private struct ExtraBorderModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
-    let color: ColorRawToken
-
-    func body(content: Content) -> some View {
-        let defaultContentBackground = theme.colorBgPrimary.color(for: colorScheme)
-        let addBorder = color.color == defaultContentBackground
-
-        if addBorder {
-            content.oudsBorder(style: theme.borderStyleDefault,
-                               width: theme.borderWidthThin,
-                               radius: theme.borderRadiusNone,
-                               color: theme.colorContentDefault)
-        } else {
-            content
         }
     }
 }

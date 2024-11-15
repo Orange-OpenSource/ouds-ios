@@ -12,7 +12,7 @@ If you want to add the iOS library of **Orange Unified Design System**, you need
 To do that, add a new _package dependency_ to your _Xcode_ project by refering to it with `https://github.com/Orange-OpenSource/ouds-ios`.
 You are free to choose wether or not you want a branch or a specific tag, pick the solution you want.
 
-You can [refer to the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/6-%E2%80%90-About-versions,-releases-and-builds) for more details about versions, releases and tags.
+You can [refer to the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/7-%E2%80%90-About-versions,-releases-and-builds) for more details about versions, releases and tags.
 
 ### Import the library you need
 

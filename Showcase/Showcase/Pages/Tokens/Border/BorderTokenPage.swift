@@ -30,6 +30,7 @@ struct BorderTokenPage: View {
                     ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
                         illustration(for: namedWidth)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
                 Text("app_tokens_border_width_label")
@@ -42,6 +43,7 @@ struct BorderTokenPage: View {
                     ForEach(NamedBorderRadius.allCases, id: \.rawValue) { namedRadius in
                         illustration(for: namedRadius)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
                 Text("app_tokens_border_radius_label")
@@ -54,6 +56,7 @@ struct BorderTokenPage: View {
                     ForEach(NamedBorderStyle.allCases, id: \.rawValue) { namedStyle in
                         illustration(for: namedStyle)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
                 Text("app_tokens_border_style_label")

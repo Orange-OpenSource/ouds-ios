@@ -59,7 +59,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 - Create a new pull request named `Release X.Y.Z` on GitHub to merge `develop` into `main`.
 
-- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits** (this strategy is only dedicated to feature branches to merge in develop branch). The _merge commit_ can be defined so as to bring details about the merge and make links automatically with GitHub issues. To do that, you can copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed.
+- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits**, i.e. "create a merge commit". Rebase should be used to align feature branches with default one, and squash should be used when needed for work branches. The _merge commit_ can be defined so as to bring details about the merge and make links automatically with GitHub issues. To do that, you can copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed.
 
 Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/98640b4b63037c2780128f41ceba5b896763b94f)):
 
@@ -86,11 +86,15 @@ Removed:
 Fixed:
 - [Library] Fix some typos in documentation ([#89](#89))
 
-// Add in co authors anyone working on the commits being merged
-Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
-Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+// Add in co authors anyone working on the commits being merged, add the ones who contributed (copy-paste if too lazy)
 Co-authored-by: Julien Déramond <julien.deramond@orange.com>
+Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
+Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
+Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
 ```
+
+You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds-ios/commit/5ce9b68aa03304fef91fc45ef43a379b4f22f98b) for example.
 
 - Generate documentation: from Xcode build the doc, export each doccarchive, then rnu the script ; it will update online version and generate a ZIP file in _/tmp_
     ```shell
@@ -137,7 +141,6 @@ Co-authored-by: Julien Déramond <julien.deramond@orange.com>
     <!-- TODO Check with git-cliff release note generation and vTag prefix -->
 
 - Optionally check `Set as a pre-release` and click `Publish release`.<br /><br />
-
 <!-- TODO Section about annoucement -->
 <!--
 ### Announce the new release on FoODS
@@ -168,6 +171,8 @@ Co-authored-by: Julien Déramond <julien.deramond@orange.com>
 
 - Clone the [wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) (available at https://github.com/Orange-OpenSource/ouds-ios.wiki.git), compress its content as ZIP, and place the ZIP in release artifacts
 
+- From the GitLab CI pipeline job which made the production release, get the artifacts and put it in the release.
+
 ## Prepare Next Release
 
 - Create a branch named `prepare-new-release` to prepare the new release for OUDS iOS version U.V.W.
@@ -189,15 +194,15 @@ Co-authored-by: Julien Déramond <julien.deramond@orange.com>
 
 ## About documentation
 
-The documentation tool in use is [Swift DocC](https://www.swift.org/documentation/docc/) ; we try as best as we can to use these conventions in our source code, and use also DocC catalogs so as to let Xcode build the doccarchives and render the documentation in the Apple fashion.
-The documentation should be updated during a release ; to do that a script has been designed to update the GitHub Pages dedicated to the documentation in the OUDS iOS repository.
-However, because we faced several issues with `swift package`, `xcodebuild` and `xcrun docc` commands and were not able yet to use them to generate the doccarchives and the HTML pages, a manual step must be done before. For further details, see [#95](https://github.com/Orange-OpenSource/ouds-ios/issues/95) and [#168](https://github.com/Orange-OpenSource/ouds-ios/issues/168) (in few words: not possible to manage easily multiple targets in Swift Package, _UIKit_ not supported).
+The documentation tool in use is [Swift DocC](https://www.swift.org/documentation/docc/) ; we try as best as we can to use these conventions in our source code, and use also _DocC_ catalogs so as to let _Xcode_ build the _doccarchives_ and render the documentation in the Apple fashion.
+The documentation should be updated during a release ; to do that a script has been designed to update the _GitHub Pages_ dedicated to the documentation in the OUDS iOS repository.
+However, because we faced several issues with `swift package`, `xcodebuild` and `xcrun docc` commands and were not able yet to use them to generate the _doccarchives_ and the HTML pages, a manual step must be done for the update. For further details, see [#95](https://github.com/Orange-OpenSource/ouds-ios/issues/95) and [#168](https://github.com/Orange-OpenSource/ouds-ios/issues/168) (in few words: not possible to manage easily multiple targets in Swift Package, _UIKit_ not supported, no unified _doccarchive_ for several targets).
 
-First, you will have to use Xcode to build the documentation (_Product > Build Documentation_) which will open the documentation viewer.
-Then, **for each documentation catalog of the Swift package, i.e. for each target**, export the doccarchive **in your _Downloads_ folder**.
-Today you will have to do this operation for the doccarchives *OUDS*, *OUDSComponents*, *OUDSFoundations*, *OUDSModules*, *OUDSThemesInverse*, *OUDSThemesOrange*, *OUDSTokensComponent*, *OUDSTokenSemantic* and *OUDSTokenRaw*.
+First, you will have to use _Xcode_ to build the documentation (_Product > Build Documentation_) which will open the documentation viewer.
+Then, **for each documentation catalog of the Swift package, i.e. for each target**, export the _doccarchive_ **in your _Downloads_ folder**.
+Today you will have to do this operation for the _doccarchives_ *OUDS*, *OUDSComponents*, *OUDSFoundations*, *OUDSModules*, *OUDSThemesInverse*, *OUDSThemesOrange*, *OUDSTokensComponent*, *OUDSTokenSemantic* and *OUDSTokenRaw*.
 
-Then, you will have to run the script `uploadWebDoc.sh` which will use these doccarchives, get their HTML content and upload the GitHub Pages branch.
+Then, you will have to run the script `uploadWebDoc.sh` which will use these _doccarchives_, get their HTML content and upload the GitHub Pages branch.
 
 ```shell
 # To show the help:
@@ -217,5 +222,7 @@ Keep in mind everything is stored in _/tmp_ folder with the execution timestamp,
 The plugin produces a lot of files, a lot. For example for our v0.1.0, more than 6,000 files have been created for a ZIP archive of about 17 MB.
 Thus, keeping all versions of the documentation is a non-sense, no one will read it and it will increase the size of the branch in our VCS tool, consuming a lot of bandwidth, and reaching limits of Git to handle large amounts of file. We would like to avoid to force developers to define a specific Git configuration to handle such massive branch.
 
-We prefer to build ZIP documentation and Xcode doccarchives to add as artifacts of releases.
-Thus, the online version of the documentation is for the last release, and each release in GitHub contains doccarchive files generated through Xcode and ZIP of HTML files picked from the *gh-pages*.
+We prefer to build ZIP documentation and _Xcode_ _doccarchives_ to add as artifacts of releases.
+Thus, the online version of the documentation is for the last release, and each release in GitHub contains _doccarchive_ files generated through _Xcode_ and ZIP of HTML files picked from the *gh-pages*.
+
+You may see also the *merge-json-indexed.py* Python script: this tool is sued by the mentioned Shell script to merge easily all *index.json* files of all _doccarchives_ so as to produce one single and unique *index.json* file used mainly for the side bar menu and the highlight bar.

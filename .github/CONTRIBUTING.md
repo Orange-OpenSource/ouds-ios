@@ -148,7 +148,6 @@ Because we want to define and provide an amazing design system for developers, w
 
 The following chart explain how the review is done with also the intermediate alpha builds.
 In few words, alpha builds are made for reviewers, and the merge is processed if and only if any review have been done.
-The [task-list-completed GitHub app](https://github.com/apps/task-list-completed) prevents pull requests to be merged if some mandatory / not optional prerequisites are not filled.
 
 ```mermaid
 flowchart TD
@@ -171,6 +170,13 @@ flowchart TD
     K[Merge in develop branch] --> |Nightly build| L(Beta build on TestFlight)
     L --> M(Update GitHub issue with details of beta build)
 ```
+
+Pull requests will be merged if no conditions / prerequisites / checks are red (except DCO which is not - yet - mandatory, but we must at least outside contributors to apply it). Some _GitHub Actions_ workflows are defined:
+- [task-list-completed GitHub app](https://github.com/apps/task-list-completed) prevents pull requests to be merged if some mandatory / not optional prerequisites are not filled ;
+- another [workflow YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml) building and testing the app / lib;
+- another [using GitLeaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml) ensuring no screts are leaked ;
+- the almost-optional-one checking [DCO is applied](https://probot.github.io/apps/dco/) ;
+- and the one [for the linter warnings](https://github.com/cirruslabs/swiftlint-action).
 
 ## License
 
