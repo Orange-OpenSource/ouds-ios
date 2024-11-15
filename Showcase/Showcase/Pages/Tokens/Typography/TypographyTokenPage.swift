@@ -59,5 +59,6 @@ struct TypographyTokenPage: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaceFixedShorter)
+        .accessibilityElement(children: .combine)
     }
 }

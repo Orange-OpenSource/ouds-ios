@@ -52,6 +52,7 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityElement(children: .combine)
         }
         .padding(.vertical, theme.spaceFixedShorter)
     }

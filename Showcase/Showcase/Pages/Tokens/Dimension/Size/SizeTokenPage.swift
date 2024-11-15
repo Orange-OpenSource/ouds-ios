@@ -93,6 +93,7 @@ struct SizeTokenPage: View {
                     .typeBodyDefaultMedium(theme)
                     .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
             }
+            .accessibilityElement(children: .combine)
         }
     }
 
