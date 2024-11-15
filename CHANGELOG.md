@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Update `json` gem from 2.7.2 to 2.8.2
 - [Tool] Update `swiftformat/cli` from 0.54.3 to 0.54.6
 - [Tool] Update `Fastlane` from 2.223.1 to 2.225.0
 - [DemoApp] Update accessibility statement usage and instructions ([#278](https://github.com/Orange-OpenSource/ouds-ios/issues/278))
