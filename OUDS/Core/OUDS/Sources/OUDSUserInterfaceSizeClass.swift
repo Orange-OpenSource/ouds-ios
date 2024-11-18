@@ -32,7 +32,7 @@ extension EnvironmentValues {
     ///
     /// You receive a ``OUDSUserInterfaceSizeClass`` value when you read this environment value.
     /// The value tells you about the amount of horizontal space available to the view that reads it.
-    /// You can read this size class like any other of the ``EnvironmentValues``, by creating a property with the ``Environment`` property wrapper:
+    /// You can read this size class like any other of the ``EnvironmentValues``, by creating a property with the `Environment` property wrapper:
     ///
     ///     @Environment(\.oudsHorizontalSizeClass) private var horizontalSizeClass
     ///
@@ -49,7 +49,7 @@ extension EnvironmentValues {
     ///
     /// You receive a ``OUDSUserInterfaceSizeClass`` value when you read this environment value.
     /// The value tells you about the amount of vertical space available to the view that reads it.
-    /// You can read this size class like any other of the ``EnvironmentValues``, by creating a property with the ``Environment`` property wrapper:
+    /// You can read this size class like any other of the ``EnvironmentValues``, by creating a property with the `Environment` property wrapper:
     ///
     ///     @Environment(\.oudsVerticalSizeClass) private var verticalSizeClass
     ///

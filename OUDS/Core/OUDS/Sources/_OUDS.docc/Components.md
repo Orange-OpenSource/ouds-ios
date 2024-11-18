@@ -1,6 +1,6 @@
 # Components
   
-_Components_ are defined in the [OUDSComponents](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/) target and can be integrated in applications.
+_Components_ are defined in the `OUDSComponents` target and can be integrated in applications.
 
 ❗**More details coming soon.**❗
 
@@ -20,3 +20,5 @@ Of course you must use in your root view the <doc:/OUDS/OUDSThemeableView> with 
         
     }
 ``` 
+
+You can get more details about _Components_ with the [OUDSComponents documentation](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/).
