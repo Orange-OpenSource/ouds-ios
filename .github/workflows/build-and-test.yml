@@ -11,6 +11,9 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
+# About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+# Runners details: https://github.com/actions/runner-images/tree/main/images/macos
+
 name: Build and Test
 
 on:
@@ -32,7 +35,7 @@ on:
 jobs:
   # Build the app (if there are linter errors or compiler issues, it will fail)
   build:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -57,7 +60,7 @@ jobs:
 
   # Test the library with unit tests
   test:
-    runs-on: macos-latest
+    runs-on: macos-15
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
