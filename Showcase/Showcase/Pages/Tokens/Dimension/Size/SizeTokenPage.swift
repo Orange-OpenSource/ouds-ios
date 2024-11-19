@@ -21,9 +21,11 @@ struct SizeTokenPage: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this `View` whatever the environnement `theme`,  including the `colorScheme` and `horizontalSizeClass` is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
+    /// A `ColorScheme` to force  for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
     private let forcedColorScheme: ColorScheme?
+    /// A `HorizontalSizeClass` to force  for this `View` whatever the environnement `horizontalSizeClass` is (for UI tests purposes)
     private let forcedHorizontalSizeClass: UserInterfaceSizeClass?
 
     init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil, horizontalSizeClass: UserInterfaceSizeClass? = nil) {
@@ -53,9 +55,6 @@ struct SizeTokenPage: View {
     // MARK: Body
 
     var body: some View {
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         Group {
             Section { illustrationForIconDecorative() } header: {
                 header("app_tokens_dimension_size_iconDecorative_label")
@@ -75,7 +74,7 @@ struct SizeTokenPage: View {
         }
     }
 
-    public func illustrationIconDecorative(for namedSize: NamedSize.IconDecorative) -> some View {
+    private func illustrationIconDecorative(for namedSize: NamedSize.IconDecorative) -> some View {
         let token = namedSize.token(from: activeTheme)
         let name = namedSize.rawValue
         let value = String(format: "(%.0f) pt", token)
@@ -105,7 +104,7 @@ struct SizeTokenPage: View {
     }
 
     @ViewBuilder
-    public func illustrationIconWithLabel(for namedSize: NamedSize.IconWithTypography) -> some View {
+    private func illustrationIconWithLabel(for namedSize: NamedSize.IconWithTypography) -> some View {
         let token = namedSize.token(fot: activeTheme, userInterfaceSizeClass: activeHorizontalSizeClass)
         let namedTypography = namedSize.namedTypography
         let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)

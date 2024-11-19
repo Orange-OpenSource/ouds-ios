@@ -21,8 +21,9 @@ struct BorderTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this `View` whatever the environnement `theme`,  including the `colorScheme` is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
+    /// A `ColorScheme` to force  for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
     private let forcedColorScheme: ColorScheme?
 
     init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {

@@ -26,8 +26,9 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
     let tokenValue: String?
     @ViewBuilder let tokenIllustration: () -> TokenIllustration
 
-    /// A theme to force  for this 'View' whatever the environnement theme,  including the color scheme is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
+    /// A `ColorScheme` to force  for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
     private let forcedColorScheme: ColorScheme?
 
     // MARK: Initializer
@@ -43,9 +44,9 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
     // MARK: Body
 
     var body: some View {
-        /// Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
+        // Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
         let activeColorScheme = forcedColorScheme ?? colorScheme
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
+        // Move activeTheme here to ensure theme is accessible (for UI tests purposes)
         let activeTheme = forcedTheme ?? theme
 
         HStack(alignment: .top, spacing: theme.spaceFixedMedium) {

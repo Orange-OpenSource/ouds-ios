@@ -30,10 +30,13 @@ struct SpaceTokenPage: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this `View` whatever the environnement `theme`,  including the `colorScheme`,`horizontalSizeClass`and `verticalSizeClass`  is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
+    /// A `ColorScheme` to force  for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
     private let forcedColorScheme: ColorScheme?
+    /// A `HorizontalSizeClass` to force  for this `View` whatever the environnement `horizontalSizeClass` is (for UI tests purposes)
     private let forcedHorizontalSizeClass: UserInterfaceSizeClass?
+    /// A `VerticalSizeClass` to force  for this `View` whatever the environnement `verticalSizeClass` is (for UI tests purposes)
     private let forcedVerticalSizeClass: UserInterfaceSizeClass?
 
     init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil, horizontalSizeClass: UserInterfaceSizeClass? = nil, verticalSizeClass: UserInterfaceSizeClass? = nil) {
@@ -127,7 +130,7 @@ struct SpaceTokenPage: View {
         }
     }
 
-    public func illustration(for namedSpaceToken: NamedSpace.Scaled) -> some View {
+    private func illustration(for namedSpaceToken: NamedSpace.Scaled) -> some View {
         let token = namedSpaceToken.token(from: activeTheme)
         let name = namedSpaceToken.rawValue
         let horizontalDimensionRawToken = token.dimension(for: activeHorizontalSizeClass)
@@ -159,7 +162,7 @@ struct SpaceTokenPage: View {
 
     // MARK: Padding illustrations
 
-    public func illustrationForPaddingInline() -> some View {
+    private func illustrationForPaddingInline() -> some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.PaddingInline.allCases, id: \.rawValue) { namedSpaceToken in
                 let token = namedSpaceToken.token(from: activeTheme)
@@ -243,7 +246,7 @@ struct SpaceTokenPage: View {
     }
 
     @ViewBuilder
-    public func illustation(for paddingType: Padding, name: String, additionalAsset: (icon: Image, horizontalPadding: Double)? = nil) -> some View {
+    private func illustation(for paddingType: Padding, name: String, additionalAsset: (icon: Image, horizontalPadding: Double)? = nil) -> some View {
         let value = String(format: "%.2f (pt)", paddingType.dimension)
 
         ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
@@ -273,7 +276,7 @@ struct SpaceTokenPage: View {
     }
 
     @ViewBuilder
-    public func illustation(for gapType: Gap, name: String) -> some View {
+    private func illustation(for gapType: Gap, name: String) -> some View {
         let value = String(format: "%.2f (pt)", gapType.dimension)
 
         ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {

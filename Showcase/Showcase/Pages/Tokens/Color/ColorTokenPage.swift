@@ -21,8 +21,9 @@ struct ColorTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this `View` whatever the environnement `theme`,  including the `colorScheme` is (for UI tests purposes)
+    /// A theme to force  for this `View` whatever the environnement `theme` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
+    /// A `ColorScheme` to force  for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
     private let forcedColorScheme: ColorScheme?
 
     init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
@@ -45,9 +46,6 @@ struct ColorTokenPage: View {
     // MARK: Body
 
     var body: some View {
-        /// Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
-
         Group {
             Section { illustrationForBackground() } header: { header("Background") }
             Section { illustrationForAction() } header: { header("Action") }
@@ -143,7 +141,7 @@ struct ColorTokenPage: View {
     // MARK: Common private helpers
 
     @ViewBuilder
-    public func illustration(for token: ColorSemanticToken?, name: String) -> some View {
+    private func illustration(for token: ColorSemanticToken?, name: String) -> some View {
         if let token {
             let colorRawToken = activeColorScheme == .dark ? token.dark : token.light
 
