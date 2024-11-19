@@ -135,30 +135,30 @@ Indeed for new tests the tool makes snapshots of the views, thus for the first r
 
 Such tests here are used to as to be sure the look and feel of any components and tokens rendering remaing the expected ones.
 
-Any interface modifications require regenerating the illustrations using the tool. In this case, the reference illustrations for 'Opacity' have already been saved within the project.
+Any interface modifications require regenerating the illustrations using the tool. The reference illustrations have already been saved within the project.
 
-### Steps to Use swift-snapshot-testing
+#### Steps to use swift-snapshot-testing
 
-1. Locate Reference Images:
+1. Locate reference images:
     - In the Package directory, you will find the reference screenshots for the Orange and Inverse themes (Light/Dark), which will serve as comparison baselines.
-    ```shell
-    Package -> Showcase -> ShowcaseTests -> OUDSTokensBorderUITests -> Snapshots -> OUDSTokensOpacityUITests
+    ```text
+    OUDS -> Showcase -> ShowcaseTests -> __Snapshots__
     ```
-1. Navigate to the Project :
+2. Navigate to the project :
     - Open your project in Xcode and go to the directory:
     ```shell
     Showcase -> ShowcaseTests -> OUDSTokensBorderUITests -> OUDSTokensBorderUITests.swift
     ```
-3. Open the Test File:
+3. Open the test tile:
     - Open the file `OUDSTokensBorderUITests.swift`.
-4. Run the Snapshot Test (success):
+4. Run the snapshot test (success):
     - Locate and execute the function `testAllOpacitiesOrangeThemeLight()`.
 
       <img width="897" alt="OrangeThemeLight_OpacityTest_Success" src="https://github.com/user-attachments/assets/550bed90-6bc9-4d68-aaf0-8e04de35d916">
  
 The snapshot tool fetched the reference image to compare it against the current screen and detected no differences, resulting in a success
 
-5. Run the Snapshot Test (failure):
+5. Run the snapshot test (failure):
     - We will deliberately change the image by setting the `OpacityOpaque` token to `OpacityTransparent` in class `OpacityTokenPage.swift`
 
       <img width="561" alt="IntentionalTokenModification" src="https://github.com/user-attachments/assets/1d138b7b-2998-40b7-bf39-d9a597ced6c0">
@@ -169,7 +169,7 @@ The snapshot tool fetched the reference image to compare it against the current 
 
    The swift-snapshot-testing tool indicates that the issue originates from the transparent token illustration. We can observe that there are two paths: the first corresponds to our reference illustration (the one we intend to base our comparison on), while the second path is the illustration used for the current image of the application. You can open both paths and visually compare the differences.
 
-7. Verify the Output:
+7. Verify the output:
     - It is recommended to use the `Show the Report Navigator` tool in Xcode :
 
 
