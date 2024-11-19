@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.6.0...develop)
 
+### Added
+
+- [DemoApp] Add more UI tests on demo app ([#154](https://github.com/Orange-OpenSource/ouds-ios/issues/154))
+
+### Fixed
+
+- [Library] Warning issues for DocC catalogs ([#293](https://github.com/Orange-OpenSource/ouds-ios/issues/293))
+
 ### Changed
 
 - [Tool] Use `macos-15` runner for GitHub Actions builds ([#296](https://github.com/Orange-OpenSource/ouds-ios/issues/296))
@@ -21,7 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [DemoApp] Update color screen to add a border on color illustration square ([#280](https://github.com/Orange-OpenSource/ouds-ios/issues/280))
 - [DemoApp] Add grid tokens screen in demo app ([#151](https://github.com/Orange-OpenSource/ouds-ios/issues/151))
-- [DemoApp] Add more UI tests on demo app ([#154](https://github.com/Orange-OpenSource/ouds-ios/issues/154))
 - [Tool] GitHub Action to run SwiftLint for *main* and *develop* branches
 
 ### Changed
@@ -48,7 +55,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Semantic token `borderWidthFocusInset` (value of `borderWidth100`) ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207), [#241](https://github.com/Orange-OpenSource/ouds-ios/issues/241))
 - [Library] Semantic token `fontWeightCode` ([#242](https://github.com/Orange-OpenSource/ouds-ios/issues/242))
 - [DemoApp] Update space tokens screen with all categories ([#178](https://github.com/Orange-OpenSource/ouds-ios/issues/178))
-- [Library] Semantic token `borderWidthFocusInset` ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207))
 
 ### Changed
 
