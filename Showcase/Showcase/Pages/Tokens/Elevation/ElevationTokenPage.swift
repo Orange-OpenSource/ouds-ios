@@ -61,7 +61,7 @@ struct ElevationTokenPage: View {
 
     // MARK: Helpers
 
-    private func illustration(for namedElevation: NamedElevation) -> some View {
+    public func illustration(for namedElevation: NamedElevation) -> some View {
         let token = namedElevation.token(from: activeTheme).elevation(for: activeColorScheme)
         let name = namedElevation.rawValue
         let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)
@@ -78,7 +78,7 @@ struct ElevationTokenPage: View {
 
 // MARK: - Named Elevation
 
-private enum NamedElevation: String, CaseIterable {
+public enum NamedElevation: String, CaseIterable {
     case elevationNone
     case elevationRaised
     case elevationStickyNavigationScrolled

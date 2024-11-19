@@ -350,7 +350,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             let illustration = colorPage.illustration(for: token, name: color.rawValue)
                 .background(theme.colorBgPrimary.color(for: colorScheme))
 
-            ///Encapsulate the generated illustration in a UIHostingController for snapshot testing
+            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value

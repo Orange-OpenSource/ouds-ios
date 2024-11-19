@@ -134,7 +134,7 @@ struct SpaceTokenPage: View {
         }
     }
 
-    private func illustration(for namedSpaceToken: NamedSpace.Scaled) -> some View {
+    public func illustration(for namedSpaceToken: NamedSpace.Scaled) -> some View {
         let token = namedSpaceToken.token(from: activeTheme)
         let name = namedSpaceToken.rawValue
         let horizontalDimensionRawToken = token.dimension(for: activeHorizontalSizeClass)
@@ -250,7 +250,7 @@ struct SpaceTokenPage: View {
     }
 
     @ViewBuilder
-    private func illustation(for paddingType: Padding, name: String, additionalAsset: (icon: Image, horizontalPadding: Double)? = nil) -> some View {
+    public func illustation(for paddingType: Padding, name: String, additionalAsset: (icon: Image, horizontalPadding: Double)? = nil) -> some View {
         let value = String(format: "%.2f (pt)", paddingType.dimension)
 
         ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
@@ -280,7 +280,7 @@ struct SpaceTokenPage: View {
     }
 
     @ViewBuilder
-    private func illustation(for gapType: Gap, name: String) -> some View {
+    public func illustation(for gapType: Gap, name: String) -> some View {
         let value = String(format: "%.2f (pt)", gapType.dimension)
 
         ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
