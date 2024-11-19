@@ -16,11 +16,6 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Internal constants
-
-private let kIillustrationHeight = 72.0
-private let kIllustrationWidth = 72.0
-
 // MARK: - Space Token Page
 
 struct SpaceTokenPage: View {
@@ -103,12 +98,22 @@ struct SpaceTokenPage: View {
             Section { illustrationForPaddingStack() } header: {
                 header("app_tokens_dimension_space_paddingStack_label")
             }
+
             // Gap Space Tokens
             Section { illustrationForGapInline() } header: {
                 header("app_tokens_dimension_space_gapInline_label")
             }
+            Section { illustrationForGapInlineWithIcon() } header: {
+                header("app_tokens_dimension_space_gapInlineWithIcon_label")
+            }
+            Section { illustrationForGapInlineWithArrow() } header: {
+                header("app_tokens_dimension_space_gapInlineWithArrow_label")
+            }
             Section { illustrationForGapStack() } header: {
                 header("app_tokens_dimension_space_gapStack_label")
+            }
+            Section { illustrationForGapStackWithIcon() } header: {
+                header("app_tokens_dimension_space_gapStackWithIcon_label")
             }
         }
         .padding(.horizontal, activeTheme.spaceFixedMedium)
@@ -121,8 +126,11 @@ struct SpaceTokenPage: View {
             ForEach(NamedSpace.Fixed.allCases, id: \.rawValue) { namedSpaceToken in
                 let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
-                // Fixed spacings are illustrated as a gap inline
-                illustation(for: Gap.inline(token), name: name)
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .center))
+                }
             }
         }
     }
@@ -132,37 +140,20 @@ struct SpaceTokenPage: View {
     private func illustrationForScaledSpaces() -> some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
-                illustration(for: namedSpaceToken)
-            }
-        }
-    }
+                let token = namedSpaceToken.token(from: activeTheme)
+                let name = namedSpaceToken.rawValue
+                let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
+                let verticalDimensionRawToken = token.dimension(for: verticalSizeClass ?? .regular)
 
-    func illustration(for namedSpaceToken: NamedSpace.Scaled) -> some View {
-        let token = namedSpaceToken.token(from: activeTheme)
-        let name = namedSpaceToken.rawValue
-        let horizontalDimensionRawToken = token.dimension(for: activeHorizontalSizeClass)
-        let verticalDimensionRawToken = token.dimension(for: activeVerticalSizeClass)
+                let value = String(format: "horizontal %@ (%.0f pt)\nvertical %@ (%.0f pt)",
+                                   activeHorizontalSizeClass == .regular ? "regular" : "compact",
+                                   horizontalDimensionRawToken,
+                                   activeVerticalSizeClass == .regular ? "regular" : "compact",
+                                   verticalDimensionRawToken)
 
-        let value = String(format: "horizontal %@ (%.0f pt)\nvertical %@ (%.0f pt)",
-                           activeHorizontalSizeClass == .regular ? "regular" : "compact",
-                           horizontalDimensionRawToken,
-                           activeVerticalSizeClass == .regular ? "regular" : "compact",
-                           verticalDimensionRawToken)
-
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
-            ZStack {
-                Rectangle()
-                    .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
-                    .frame(width: kIllustrationWidth, height: kIillustrationHeight, alignment: .center)
-                Rectangle()
-                    .fill(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
-                    .opacity(0.5)
-                    .frame(width: horizontalDimensionRawToken, height: kIillustrationHeight, alignment: .center)
-
-                Rectangle()
-                    .fill(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
-                    .opacity(0.5)
-                    .frame(width: kIllustrationWidth, height: verticalDimensionRawToken, alignment: .center)
+                return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
+                    SpaceScaledIllustration(horizontalDimension: horizontalDimensionRawToken, verticalDimension: verticalDimensionRawToken)
+                }
             }
         }
     }
@@ -174,7 +165,11 @@ struct SpaceTokenPage: View {
             ForEach(NamedSpace.PaddingInline.allCases, id: \.rawValue) { namedSpaceToken in
                 let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
-                illustation(for: Padding.inline(token), name: name)
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading))
+                }
             }
         }
     }
@@ -184,10 +179,11 @@ struct SpaceTokenPage: View {
             ForEach(NamedSpace.PaddingInlineWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
                 let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
-                illustation(
-                    for: Padding.inlineWithIcon(token),
-                    name: name,
-                    additionalAsset: (icon: Image(decorative: "ic_token"), horizontalPadding: 1))
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), icon: Image(decorative: "ic_token"), iconExtraPadding: 1)
+                }
             }
         }
     }
@@ -196,10 +192,11 @@ struct SpaceTokenPage: View {
             ForEach(NamedSpace.PaddingInlineWithArrow.allCases, id: \.rawValue) { namedSpaceToken in
                 let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
-                illustation(
-                    for: Padding.inlineWithArrow(token),
-                    name: name,
-                    additionalAsset: (icon: Image(decorative: "ic_vector"), horizontalPadding: 5))
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), icon: Image(decorative: "ic_vector"), iconExtraPadding: 5)
+                }
             }
         }
     }
@@ -209,7 +206,11 @@ struct SpaceTokenPage: View {
             ForEach(NamedSpace.PaddingInset.allCases, id: \.rawValue) { namedSpaceToken in
                 let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
-                illustation(for: Padding.inset(token), name: name)
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpacePaddingInsetIllustration(dimension: token)
+                }
             }
         }
     }
@@ -219,7 +220,11 @@ struct SpaceTokenPage: View {
             ForEach(NamedSpace.PaddingStack.allCases, id: \.rawValue) { namedSpaceToken in
                 let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
-                illustation(for: Padding.stack(token), name: name)
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .center))
+                }
             }
         }
     }
@@ -231,7 +236,39 @@ struct SpaceTokenPage: View {
             ForEach(NamedSpace.GapInline.allCases, id: \.rawValue) { namedSpaceToken in
                 let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
-                illustation(for: Gap.inline(token), name: name)
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .vertical(position: .center))
+                }
+            }
+        }
+    }
+
+    private func illustrationForGapInlineWithIcon() -> some View {
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            ForEach(NamedSpace.GapInlineWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
+                let token = namedSpaceToken.token(from: theme)
+                let name = namedSpaceToken.rawValue
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), icon: Image(decorative: "ic_token"), iconExtraPadding: 1)
+                }
+            }
+        }
+    }
+
+    private func illustrationForGapInlineWithArrow() -> some View {
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            ForEach(NamedSpace.GapInlineWithArrow.allCases, id: \.rawValue) { namedSpaceToken in
+                let token = namedSpaceToken.token(from: theme)
+                let name = namedSpaceToken.rawValue
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), icon: Image(decorative: "ic_vector"), iconExtraPadding: 5)
+                }
             }
         }
     }
@@ -241,7 +278,25 @@ struct SpaceTokenPage: View {
             ForEach(NamedSpace.GapStack.allCases, id: \.rawValue) { namedSpaceToken in
                 let token = namedSpaceToken.token(from: activeTheme)
                 let name = namedSpaceToken.rawValue
-                illustation(for: Gap.stack(token), name: name)
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .vertical(position: .center))
+                }
+            }
+        }
+    }
+
+    private func illustrationForGapStackWithIcon() -> some View {
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            ForEach(NamedSpace.GapStackWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
+                let token = namedSpaceToken.token(from: theme)
+                let name = namedSpaceToken.rawValue
+                let value = String(format: "%.2f (pt)", token)
+
+                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                    SpaceIllustration(dimension: token, orientation: .vertical(position: .bottom), icon: Image(decorative: "ic_token"), iconExtraPadding: 1)
+                }
             }
         }
     }
@@ -250,121 +305,6 @@ struct SpaceTokenPage: View {
 
     private func header(_ text: LocalizedStringKey) -> some View {
         Text(text).showcaseSectionHeaderStyle()
-    }
-
-    @ViewBuilder
-    func illustation(for paddingType: Padding, name: String, additionalAsset: (icon: Image, horizontalPadding: Double)? = nil) -> some View {
-        let value = String(format: "%.2f (pt)", paddingType.dimension)
-
-        ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
-            ZStack(alignment: .leading) {
-                Rectangle()
-                    .fill(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
-
-                Rectangle()
-                    .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
-                    .modifier(PaddingModifier(padding: paddingType))
-
-                if let additionalAsset {
-                    VStack(alignment: .leading) {
-                        additionalAsset.icon
-                            .renderingMode(.template)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .foregroundColor(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
-                    }
-                    .padding(.horizontal, additionalAsset.horizontalPadding)
-                    .frame(width: 24, alignment: .leading)
-                    .modifier(PaddingModifier(padding: paddingType))
-                }
-            }
-            .frame(width: kIllustrationWidth, height: kIillustrationHeight, alignment: .leading)
-        }
-    }
-
-    @ViewBuilder
-    func illustation(for gapType: Gap, name: String) -> some View {
-        let value = String(format: "%.2f (pt)", gapType.dimension)
-
-        ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
-            ZStack {
-                Rectangle()
-                    .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
-
-                Rectangle()
-                    .fill(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
-                    .modifier(GapModifier(gap: gapType))
-            }
-            .frame(width: kIllustrationWidth, height: kIillustrationHeight, alignment: .center)
-        }
-    }
-}
-
-// MARK: - Gap
-
-enum Gap {
-    case inline(DimensionRawToken)
-    case stack(DimensionRawToken)
-
-    var dimension: DimensionRawToken {
-        switch self {
-        case .inline(let dimension), .stack(let dimension):
-            return dimension
-        }
-    }
-}
-
-// MARK: - Gap Modifier
-
-private struct GapModifier: ViewModifier {
-
-    let gap: Gap
-
-    func body(content: Content) -> some View {
-        switch gap {
-        case .inline(let dimensionRawToken):
-            content.frame(width: dimensionRawToken, height: kIillustrationHeight, alignment: .center)
-
-        case .stack(let dimensionRawToken):
-            content.frame(width: kIllustrationWidth, height: dimensionRawToken, alignment: .center)
-        }
-    }
-}
-
-// MARK: - Padding
-
-enum Padding {
-    case inline(DimensionRawToken)
-    case stack(DimensionRawToken)
-    case inset(DimensionRawToken)
-    case inlineWithIcon(DimensionRawToken)
-    case inlineWithArrow(DimensionRawToken)
-
-    var dimension: DimensionRawToken {
-        switch self {
-        case .inline(let dimension), .stack(let dimension), .inset(let dimension), .inlineWithIcon(let dimension), .inlineWithArrow(let dimension):
-            return dimension
-        }
-    }
-}
-
-// MARK: - Padding Modifier
-
-private struct PaddingModifier: ViewModifier {
-
-    let padding: Padding
-
-    func body(content: Content) -> some View {
-        switch padding {
-        case .inline(let dimension), .inlineWithIcon(let dimension), .inlineWithArrow(let dimension):
-            content.padding(.leading, dimension)
-        case .stack(let dimension):
-            content.padding(.top, dimension)
-        case .inset(let dimension):
-            content
-                .padding(.top, dimension)
-                .padding(.leading, dimension)
-        }
     }
 }
 

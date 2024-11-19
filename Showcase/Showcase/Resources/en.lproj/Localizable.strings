@@ -49,7 +49,10 @@
 "app_tokens_dimension_space_paddingInset_label" = "Padding inset";
 "app_tokens_dimension_space_paddingStack_label" = "Padding stack";
 "app_tokens_dimension_space_gapInline_label" = "Gap inline";
+"app_tokens_dimension_space_gapInlineWithIcon_label" = "Gap inline with icon";
+"app_tokens_dimension_space_gapInlineWithArrow_label" = "Gap inline with arrow";
 "app_tokens_dimension_space_gapStack_label" = "Gap stack";
+"app_tokens_dimension_space_gapStackWithIcon_label" = "Gap stack with icon";
 
 "app_tokens_dimension_size_label" = "Size";
 "app_tokens_dimension_size_description_text" = "Size refers to the specific measurements used to define the dimensions of UI elements within the design system.";
