@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Warning issues for DocC catalogs ([#293](https://github.com/Orange-OpenSource/ouds-ios/issues/293))
 ### Changed
 
+- [DemoApp] Fix VoiceOver issue with element grouping in presentation tokens and update accessibility statement ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/285))
 - [Tool] Use `macos-15` runner for GitHub Actions builds ([#296](https://github.com/Orange-OpenSource/ouds-ios/issues/296))
 
 ## [0.6.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.5.0...0.6.0) - 2024-11-15
@@ -32,7 +33,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [DemoApp] Fix VoiceOver issue with element grouping in presentation tokens ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/285))
 - [DemoApp] Add missing accessibility label for images ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/212))
 - [DemoApp] Fix text sizes when dynamic type is used (a11y) ([#247](https://github.com/Orange-OpenSource/ouds-ios/issues/247))
 
