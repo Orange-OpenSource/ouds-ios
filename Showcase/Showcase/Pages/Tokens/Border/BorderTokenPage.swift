@@ -33,12 +33,14 @@ struct BorderTokenPage: View {
 
     /// Computed property for colorScheme
     /// Returns `forcedColorScheme` if available, otherwise falls back to the environment `colorScheme`
+    /// If neither is available, the default system `colorScheme` will be applied.
     var activeColorScheme: ColorScheme {
         forcedColorScheme ?? colorScheme
     }
 
     /// Computed property for theme
     /// Returns `forcedTheme` if available, otherwise falls back to the environment `theme`
+    /// If neither is available, the default `theme` will be applied.
     var activeTheme: OUDSTheme {
         forcedTheme ?? theme
     }
