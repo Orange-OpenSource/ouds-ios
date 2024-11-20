@@ -49,6 +49,9 @@ struct ColorTokenPage: View {
 
     var body: some View {
         Group {
+            Section {
+                ShowcaseTokenCode(code: "colorBgStatusPositiveMutedOnBgEmphasized")
+            }
             Section { illustrationForBackground() } header: { header("Background") }
             Section { illustrationForAction() } header: { header("Action") }
             Section { illustrationForAlways() } header: { header("Always") }

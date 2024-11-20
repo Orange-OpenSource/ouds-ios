@@ -50,11 +50,7 @@ struct BorderTokenPage: View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedMedium) {
             Section {
                 VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
-                    Button(action: {
-                        print("test")
-                    }, label: {
-                    })
-                    .accessibilityLabel("Copy code to clipboard")
+                    ShowcaseTokenCode(code: "borderWidthFocusInset")
                 }
             }
             Section {

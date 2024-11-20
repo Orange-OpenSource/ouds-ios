@@ -41,6 +41,8 @@ struct GridTokenPage: View {
                     .background(theme.colorBgEmphasized.color(for: colorScheme))
             }
 
+            Section { ShowcaseTokenCode(code: "colorBgStatusPositiveMutedOnBgEmphasized") }
+
             Section { illustrationForGridTokens() } header: {
                 Text(horizontalSizeClass.rawValue)
                     .showcaseSectionHeaderStyle()

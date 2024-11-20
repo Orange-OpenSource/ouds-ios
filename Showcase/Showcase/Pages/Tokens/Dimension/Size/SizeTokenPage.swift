@@ -59,6 +59,7 @@ struct SizeTokenPage: View {
 
     var body: some View {
         Group {
+            Section { ShowcaseTokenCode(code: "colorBgStatusPositiveMutedOnBgEmphasized") }
             Section { illustrationForIconDecorative() } header: {
                 header("app_tokens_dimension_size_iconDecorative_label")
             }

@@ -27,6 +27,8 @@ struct SpaceTokenPage: View {
 
     var body: some View {
         Group {
+            // Show token code
+            Section { ShowcaseTokenCode(code: "colorBgStatusPositiveMutedOnBgEmphasized") }
             // Basic Space Tokens
             Section { ScaledSpacesCategory() } header: {
                 header("app_tokens_dimension_space_scaled_label")
