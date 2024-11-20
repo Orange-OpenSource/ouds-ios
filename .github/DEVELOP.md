@@ -127,13 +127,73 @@ To run these UI tests follow some steps:
 2. `bundle exec pod install`
 3. Open *Showcase.xcworkspace*
 4. Select *ShowcaseTests* scheme
-5. Select some simulator (tests designed for *iPhone 13 Pro Max* and *iPhone 14 Pro Max* but works elsewhere)
+5. Select *iPhone 16 Pro* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
 Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
-Indeed for new tests the tool makes snapshots of the views, thus for the first run no preview exist making the tests fail. You should run the tests twice for new tests.
+Indeed for new tests the tool makes snapshots of the views, thus for the first run no previews exist making the tests fail. You should run the tests twice for new tests.
 
-Such tests here are used to as to be sure the look and feel of any components and tokens rendering remaing the expected ones.
+Such tests here are used to as to be sure the look and feel of any components and tokens rendering remain the expected ones.
+
+Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
+
+**Note today because the showcase app is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the showcase app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
+
+#### How to use to use swift-snapshot-testing library
+
+1. Locate where are the reference images:
+    - In the Package directory, you will find the reference screenshots for the Orange and Inverse themes (Light/Dark), which will serve as comparison baselines.
+    ```text
+    OUDS -> Showcase -> ShowcaseTests -> __Snapshots__
+    ```
+2. Navigate to the project :
+    - Open your project in Xcode and go to a directory containing tests (e.g. here *OUDSTokensOpacityUITests*):
+    ```shell
+    Showcase -> ShowcaseTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
+    ```
+3. Open a test file (e.g. here *OUDSTokensOpacityUITests*):
+    - Open the file `OUDSTokensOpacityUITests.swift`.
+4. Run the snapshot test (success):
+    - Locate and execute some function like `testAllOpacitiesOrangeThemeLight()`.
+
+      <img width="897" alt="OrangeThemeLight_OpacityTest_Success" src="https://github.com/user-attachments/assets/550bed90-6bc9-4d68-aaf0-8e04de35d916">
+ 
+The snapshot tool fetched the reference image to compare it against the current screen and detected no differences, resulting in a success
+
+5. Run the snapshot test (failure):
+    - We will deliberately change the image by setting the `OpacityOpaque` token to `OpacityTransparent` in class `OpacityTokenPage.swift`
+
+      <img width="561" alt="IntentionalTokenModification" src="https://github.com/user-attachments/assets/1d138b7b-2998-40b7-bf39-d9a597ced6c0">
+    - Test result failure :
+
+    <img width="897" alt="IntentionalUITestError" src="https://github.com/user-attachments/assets/0a6bb578-adba-42f1-abe8-e2f50ddba2a7">
+
+   The *swift-snapshot-testing tool* indicates that the issue originates from the transparent token illustration. We can observe that there are two paths: the first corresponds to our reference illustration (the one we intend to base our comparison on), while the second path is the illustration used for the current image of the application. You can open both paths and visually compare the differences.
+
+7. Verify the output:
+    - It is recommended to use the `Show the Report Navigator` tool in Xcode :
+
+    <img width="512" alt="ShowReportNavigator_Xcode" src="https://github.com/user-attachments/assets/8d866d79-5dfc-46c7-934e-8d03ec1fc667">
+
+    - In Xcode go to :
+
+    ```shell
+    ShowcaseTests -> ShowcaseTests/ShowcaseTests
+    ```
+
+    <img width="1206" alt="TestResult_Failed_testAllOpacitiesOrangeThemeLight" src="https://github.com/user-attachments/assets/1793df83-ffc1-4226-8be2-fbd7e2b71deb">
+
+8. Comparison (reference and failure):
+   
+   **Reference:**
+
+    <img width="1307" alt="OpacityReferenceImage" src="https://github.com/user-attachments/assets/493dabde-4139-468f-a57b-10ee5a5269c1">
+
+
+   **Failure:**
+
+   <img width="1364" alt="OpacityFailureImage" src="https://github.com/user-attachments/assets/03cfe17f-3752-4aba-a482-f89d3b89f53d">
+
 
 ## Build phases
 

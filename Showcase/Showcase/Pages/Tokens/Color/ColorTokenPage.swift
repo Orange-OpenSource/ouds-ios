@@ -21,6 +21,30 @@ struct ColorTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    /// A theme to force for this `View` whatever the environnement `theme` is (for UI tests purposes)
+    private let forcedTheme: OUDSTheme?
+    /// A `ColorScheme` to force for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
+    private let forcedColorScheme: ColorScheme?
+
+    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
+        forcedTheme = theme
+        forcedColorScheme = colorScheme
+    }
+
+    /// Computed property for colorScheme
+    /// Returns `forcedColorScheme` if available, otherwise falls back to the environment `colorScheme`
+    /// If neither is available, the default system `colorScheme` will be applied.
+    var activeColorScheme: ColorScheme {
+        forcedColorScheme ?? colorScheme
+    }
+
+    /// Computed property for theme
+    /// Returns `forcedTheme` if available, otherwise falls back to the environment `theme`
+    /// If neither is available, the default `theme` will be applied.
+    var activeTheme: OUDSTheme {
+        forcedTheme ?? theme
+    }
+
     // MARK: Body
 
     var body: some View {
@@ -35,7 +59,7 @@ struct ColorTokenPage: View {
             Section { illustrationForDecorative() } header: { header("Decorative") }
             Section { illustrationForChart() } header: { header("Chart") }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, activeTheme.spaceFixedMedium)
     }
 
     // MARK: Private helpers
@@ -45,73 +69,73 @@ struct ColorTokenPage: View {
     }
 
     private func illustrationForBackground() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Background.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
     }
 
     private func illustrationForAction() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Action.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
     }
 
     private func illustrationForAlways() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Always.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
     }
 
     private func illustrationForChart() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Chart.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
     }
 
     private func illustrationForBorder() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Border.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
     }
 
     private func illustrationForContent() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Content.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
     }
 
     private func illustrationForContentOnBackground() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.ContentOnBg.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
     }
 
     private func illustrationForDecorative() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Decorative.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
     }
 
     private func illustrationForeElevation() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Elevation.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
     }
@@ -119,18 +143,18 @@ struct ColorTokenPage: View {
     // MARK: Common private helpers
 
     @ViewBuilder
-    private func illustration(for token: ColorSemanticToken?, name: String) -> some View {
+    func illustration(for token: ColorSemanticToken?, name: String) -> some View {
         if let token {
-            let colorRawToken = colorScheme == .dark ? token.dark : token.light
+            let colorRawToken = activeColorScheme == .dark ? token.dark : token.light
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: colorRawToken, forceTo: activeTheme, colorScheme: activeColorScheme) {
                 Rectangle()
                     .fill(colorRawToken.color)
                     .frame(width: 64, height: 64)
-                    .oudsBorder(style: theme.borderStyleDefault,
-                                width: theme.borderWidthThin,
-                                radius: theme.borderRadiusNone,
-                                color: theme.colorBorderDefault)
+                    .oudsBorder(style: activeTheme.borderStyleDefault,
+                                width: activeTheme.borderWidthThin,
+                                radius: activeTheme.borderRadiusNone,
+                                color: activeTheme.colorBorderDefault)
             }
         }
     }
