@@ -26,33 +26,102 @@ extension OUDSTheme: SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    @objc open var sizeIconWithHeadingXLargeShort: MultipleSizeTokens { MultipleSizeTokens(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension650) }
-    @objc open var sizeIconWithHeadingXLargeMedium: MultipleSizeTokens { MultipleSizeTokens(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension700) }
-    @objc open var sizeIconWithHeadingXLargeTall: MultipleSizeTokens { MultipleSizeTokens(compact: DimensionRawTokens.dimension650, regular: DimensionRawTokens.dimension800) }
+    @objc open var sizeIconWithHeadingXLargeShortMobile: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    @objc open var sizeIconWithHeadingXLargeShortTablet: SizeSemanticToken { DimensionRawTokens.dimension650 }
 
-    @objc open var sizeIconWithHeadingLargeShort: MultipleSizeTokens { MultipleSizeTokens(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension550) }
-    @objc open var sizeIconWithHeadingLargeMedium: MultipleSizeTokens { MultipleSizeTokens(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension600) }
-    @objc open var sizeIconWithHeadingLargeTall: MultipleSizeTokens { MultipleSizeTokens(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension650) }
+    @objc open var sizeIconWithHeadingXLargeMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var sizeIconWithHeadingXLargeMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension700 }
 
-    @objc open var sizeIconWithHeadingMediumShort: MultipleSizeTokens { MultipleSizeTokens(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension500) }
-    @objc open var sizeIconWithHeadingMediumMedium: MultipleSizeTokens { MultipleSizeTokens(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension550) }
-    @objc open var sizeIconWithHeadingMediumTall: MultipleSizeTokens { MultipleSizeTokens(compact: DimensionRawTokens.dimension550, regular: DimensionRawTokens.dimension600) }
+    @objc open var sizeIconWithHeadingXLargeTallMobile: SizeSemanticToken { DimensionRawTokens.dimension650 }
+    @objc open var sizeIconWithHeadingXLargeTallTablet: SizeSemanticToken { DimensionRawTokens.dimension800 }
 
-    @objc open var sizeIconWithHeadingSmallShort: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension400) }
-    @objc open var sizeIconWithHeadingSmallMedium: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension500) }
-    @objc open var sizeIconWithHeadingSmallTall: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension550) }
+    @objc open var sizeIconWithHeadingLargeShortMobile: SizeSemanticToken { DimensionRawTokens.dimension500 }
+    @objc open var sizeIconWithHeadingLargeShortTablet: SizeSemanticToken { DimensionRawTokens.dimension550 }
 
-    @objc open var sizeIconWithBodyLargeShort: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension250) }
-    @objc open var sizeIconWithBodyLargeMedium: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension300) }
-    @objc open var sizeIconWithBodyLargeTall: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension350) }
+    @objc open var sizeIconWithHeadingLargeMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    @objc open var sizeIconWithHeadingLargeMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension600 }
 
-    @objc open var sizeIconWithBodyMediumShort: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension200) }
-    @objc open var sizeIconWithBodyMediumMedium: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension250) }
-    @objc open var sizeIconWithBodyMediumTall: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension300) }
+    @objc open var sizeIconWithHeadingLargeTallMobile: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var sizeIconWithHeadingLargeTallTablet: SizeSemanticToken { DimensionRawTokens.dimension650 }
 
-    @objc open var sizeIconWithBodySmallShort: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension150) }
-    @objc open var sizeIconWithBodySmallMedium: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension200) }
-    @objc open var sizeIconWithBodySmallTall: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension250) }
+    @objc open var sizeIconWithHeadingMediumShortMobile: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    @objc open var sizeIconWithHeadingMediumShortTablet: SizeSemanticToken { DimensionRawTokens.dimension500 }
+
+    @objc open var sizeIconWithHeadingMediumMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension500 }
+    @objc open var sizeIconWithHeadingMediumMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension550 }
+
+    @objc open var sizeIconWithHeadingMediumTallMobile: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    @objc open var sizeIconWithHeadingMediumTallTablet: SizeSemanticToken { DimensionRawTokens.dimension600 }
+
+    @objc open var sizeIconWithHeadingSmallShortMobile: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    @objc open var sizeIconWithHeadingSmallShortTablet: SizeSemanticToken { DimensionRawTokens.dimension400 }
+
+    @objc open var sizeIconWithHeadingSmallMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension500 }
+    @objc open var sizeIconWithHeadingSmallMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension500 }
+
+    @objc open var sizeIconWithHeadingSmallTallMobile: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    @objc open var sizeIconWithHeadingSmallTallTablet: SizeSemanticToken { DimensionRawTokens.dimension550 }
+
+    @objc open var sizeIconWithBodyLargeShortMobile: SizeSemanticToken { DimensionRawTokens.dimension250 }
+    @objc open var sizeIconWithBodyLargeShortTablet: SizeSemanticToken { DimensionRawTokens.dimension250 }
+
+    @objc open var sizeIconWithBodyLargeMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension300 }
+    @objc open var sizeIconWithBodyLargeMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension300 }
+
+    @objc open var sizeIconWithBodyLargeTallMobile: SizeSemanticToken { DimensionRawTokens.dimension350 }
+    @objc open var sizeIconWithBodyLargeTallTablet: SizeSemanticToken { DimensionRawTokens.dimension350 }
+
+    @objc open var sizeIconWithBodyMediumShortMobile: SizeSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var sizeIconWithBodyMediumShortTablet: SizeSemanticToken { DimensionRawTokens.dimension200 }
+
+    @objc open var sizeIconWithBodyMediumMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension250 }
+    @objc open var sizeIconWithBodyMediumMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension250 }
+
+    @objc open var sizeIconWithBodyMediumTallMobile: SizeSemanticToken { DimensionRawTokens.dimension300 }
+    @objc open var sizeIconWithBodyMediumTallTablet: SizeSemanticToken { DimensionRawTokens.dimension300 }
+
+    @objc open var sizeIconWithBodySmallShortMobile: SizeSemanticToken { DimensionRawTokens.dimension150 }
+    @objc open var sizeIconWithBodySmallShortTablet: SizeSemanticToken { DimensionRawTokens.dimension150 }
+
+    @objc open var sizeIconWithBodySmallMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var sizeIconWithBodySmallMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension200 }
+
+    @objc open var sizeIconWithBodySmallTallMobile: SizeSemanticToken { DimensionRawTokens.dimension250 }
+    @objc open var sizeIconWithBodySmallTallTablet: SizeSemanticToken { DimensionRawTokens.dimension250 }
+
+    // MARK: - Semantic token - Sizing - Max width typography
+
+    @objc open var sizeMaxWidthTypeDisplaySmallMobile: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+    @objc open var sizeMaxWidthTypeDisplaySmallTablet: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+
+    @objc open var sizeMaxWidthTypeDisplayMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+    @objc open var sizeMaxWidthTypeDisplayMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+
+    @objc open var sizeMaxWidthTypeDisplayLargeMobile: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+    @objc open var sizeMaxWidthTypeDisplayLargeTablet: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+
+    @objc open var sizeMaxWidthTypeHeadingXLargeMobile: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+    @objc open var sizeMaxWidthTypeHeadingXLargeTablet: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+
+    @objc open var sizeMaxWidthTypeHeadingLargeMobile: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+    @objc open var sizeMaxWidthTypeHeadingLargeTablet: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+
+    @objc open var sizeMaxWidthTypeHeadingMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+    @objc open var sizeMaxWidthTypeHeadingMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension9000 }
+
+    @objc open var sizeMaxWidthTypeHeadingSmallMobile: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+    @objc open var sizeMaxWidthTypeHeadingSmallTablet: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+
+    @objc open var sizeMaxWidthTypeBodySmallMobile: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+    @objc open var sizeMaxWidthTypeBodySmallTablet: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+
+    @objc open var sizeMaxWidthTypeBodyMediumMobile: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+    @objc open var sizeMaxWidthTypeBodyMediumTablet: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+
+    @objc open var sizeMaxWidthTypeBodyLargeMobile: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+    @objc open var sizeMaxWidthTypeBodyLargeTablet: SizeSemanticToken { DimensionRawTokens.dimension6000 }
+
+    // MARK: - Semantic token - Sizing - Icon with typography
 
     @objc open var sizeIconWithLabelXLargeSizeShort: SizeSemanticToken { dimensionXS }
     @objc open var sizeIconWithLabelXLargeSizeMedium: SizeSemanticToken { dimensionMD }
@@ -81,19 +150,4 @@ extension OUDSTheme: SizeSemanticTokens {
     @objc open var sizeIconDecorativeTall: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var sizeIconDecorativeTaller: SizeSemanticToken { DimensionRawTokens.dimension700 }
     @objc open var sizeIconDecorativeTallest: SizeSemanticToken { DimensionRawTokens.dimension900 }
-
-    // MARK: - Semantic token - Sizing - Max width typography
-
-    @objc open var sizeMaxWidthTypeDisplaySmall: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension9000) }
-    @objc open var sizeMaxWidthTypeDisplayMedium: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension9000) }
-    @objc open var sizeMaxWidthTypeDisplayLarge: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension9000) }
-
-    @objc open var sizeMaxWidthTypeHeadingXLarge: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension9000) }
-    @objc open var sizeMaxWidthTypeHeadingLarge: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension9000) }
-    @objc open var sizeMaxWidthTypeHeadingMedium: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension9000) }
-    @objc open var sizeMaxWidthTypeHeadingSmall: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension6000) }
-
-    @objc open var sizeMaxWidthTypeBodySmall: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension6000) }
-    @objc open var sizeMaxWidthTypeBodyMedium: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension6000) }
-    @objc open var sizeMaxWidthTypeBodyLarge: MultipleSizeTokens { MultipleSizeTokens(DimensionRawTokens.dimension6000) }
 }

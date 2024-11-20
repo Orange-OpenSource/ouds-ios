@@ -18,7 +18,7 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **elevation colors** but using `MultipleColorTokens`, in order tod efined box shadow effects.
+/// This is a group of semantic tokens for **elevation colors** but using `MultipleColorTokens`, in order to define box shadow effects.
 ///
 /// In fact the `MultipleColorTokens` class will help users (i.e. developers) to handle one semantic token for color containing values for light and dark modes.
 /// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such `MultipleColorTokens`.
