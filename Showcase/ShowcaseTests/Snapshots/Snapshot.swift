@@ -34,14 +34,14 @@ enum Snapshot {
         assertSnapshot(
             of: viewController,
             as: .image(on: .iPhone13ProMax, traits: Self.darkStyleTraits),
-            file: file,
+            file: (file),
             testName: testName,
             line: line)
 
         assertSnapshot(
             of: viewController,
             as: .image(on: .iPhone13ProMax, traits: Self.lightStyleTraits),
-            file: file,
+            file: (file),
             testName: testName,
             line: line)
     }

@@ -57,7 +57,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
         // Section Radius
         for borderRadius in NamedBorderRadius.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
+            // Use the `illustration(for:)` method to test a single illustration
             let illustration = borderPage.illustration(for: borderRadius)
                 .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
 
@@ -71,7 +71,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
         // Section Style
         for borderStyle in NamedBorderStyle.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
+            // Use the `illustration(for:)` method to test a single illustration
             let illustration = borderPage.illustration(for: borderStyle)
                 .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
 
@@ -147,7 +147,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
         // Section Width
         for borderWidth in NamedBorderWidth.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
+            // Use the `illustration(for:)` method to test a single illustration
             let illustration = borderPage.illustration(for: borderWidth)
                 .background(inverseTheme.colorBgPrimary.color(for: lightScheme))
 
@@ -213,7 +213,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
         // Section Radius
         for borderRadius in NamedBorderRadius.allCases {
-            /// Use the `illustration(for:)` method to test a single illustration
+            // Use the `illustration(for:)` method to test a single illustration
             let illustration = borderPage.illustration(for: borderRadius)
                 .background(inverseTheme.colorBgPrimary.color(for: darkScheme))
 

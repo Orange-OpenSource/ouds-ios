@@ -26,17 +26,21 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
     let tokenValue: String?
     @ViewBuilder let tokenIllustration: () -> TokenIllustration
 
-    /// A theme to force  for this `View` whatever the environnement `theme` is (for UI tests purposes)
+    /// A theme to force for this `View` whatever the environnement `theme` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
-    /// A `ColorScheme` to force  for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
+    /// A `ColorScheme` to force for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
     private let forcedColorScheme: ColorScheme?
 
     // MARK: Initializer
 
-    init(tokenName: String, tokenValue: String? = nil, forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil, tokenIllustration: @escaping () -> TokenIllustration) {
+    init(tokenName: String,
+         tokenValue: String? = nil,
+         forceTo theme: OUDSTheme? = nil,
+         colorScheme: ColorScheme? = nil,
+         tokenIllustration: @escaping () -> TokenIllustration) {
         self.tokenIllustration = tokenIllustration
-        self.forcedTheme = theme
-        self.forcedColorScheme = colorScheme
+        forcedTheme = theme
+        forcedColorScheme = colorScheme
         self.tokenName = tokenName
         self.tokenValue = tokenValue
     }

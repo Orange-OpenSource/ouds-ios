@@ -43,7 +43,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
         // IconDecorative
         for sizing in NamedSize.IconDecorative.allCases {
-            /// Use the `illustrationIconDecorative(for:)` method to test a single illustration
+            // Use the `illustrationIconDecorative(for:)` method to test a single illustration
             let illustration = sizePage.illustrationIconDecorative(for: sizing)
                 .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
 

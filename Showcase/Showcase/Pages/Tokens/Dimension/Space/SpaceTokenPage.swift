@@ -30,20 +30,23 @@ struct SpaceTokenPage: View {
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this `View` whatever the environnement `theme` is (for UI tests purposes)
+    /// A theme to force for this `View` whatever the environnement `theme` is (for UI tests purposes)
     private let forcedTheme: OUDSTheme?
-    /// A `ColorScheme` to force  for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
+    /// A `ColorScheme` to force for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
     private let forcedColorScheme: ColorScheme?
-    /// A `HorizontalSizeClass` to force  for this `View` whatever the environnement `horizontalSizeClass` is (for UI tests purposes)
+    /// A `HorizontalSizeClass to force  for this `View` whatever the environnement `horizontalSizeClass` is (for UI tests purposes)
     private let forcedHorizontalSizeClass: UserInterfaceSizeClass?
-    /// A `VerticalSizeClass` to force  for this `View` whatever the environnement `verticalSizeClass` is (for UI tests purposes)
+    /// A `VerticalSizeClass` to force for this `View` whatever the environnement `verticalSizeClass` is (for UI tests purposes)
     private let forcedVerticalSizeClass: UserInterfaceSizeClass?
 
-    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil, horizontalSizeClass: UserInterfaceSizeClass? = nil, verticalSizeClass: UserInterfaceSizeClass? = nil) {
-        self.forcedTheme = theme
-        self.forcedColorScheme = colorScheme
-        self.forcedHorizontalSizeClass = horizontalSizeClass
-        self.forcedVerticalSizeClass = verticalSizeClass
+    init(forceTo theme: OUDSTheme? = nil,
+         colorScheme: ColorScheme? = nil,
+         horizontalSizeClass: UserInterfaceSizeClass? = nil,
+         verticalSizeClass: UserInterfaceSizeClass? = nil) {
+        forcedTheme = theme
+        forcedColorScheme = colorScheme
+        forcedHorizontalSizeClass = horizontalSizeClass
+        forcedVerticalSizeClass = verticalSizeClass
     }
 
     /// Computed property for colorScheme

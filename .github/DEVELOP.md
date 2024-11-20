@@ -127,32 +127,34 @@ To run these UI tests follow some steps:
 2. `bundle exec pod install`
 3. Open *Showcase.xcworkspace*
 4. Select *ShowcaseTests* scheme
-5. Select some simulator (tests designed for *iPhone 16 Pro*)
+5. Select *iPhone 16 Pro* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
 Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
-Indeed for new tests the tool makes snapshots of the views, thus for the first run no preview exist making the tests fail. You should run the tests twice for new tests.
+Indeed for new tests the tool makes snapshots of the views, thus for the first run no previews exist making the tests fail. You should run the tests twice for new tests.
 
-Such tests here are used to as to be sure the look and feel of any components and tokens rendering remaing the expected ones.
+Such tests here are used to as to be sure the look and feel of any components and tokens rendering remain the expected ones.
 
-Any interface modifications require regenerating the illustrations using the tool. The reference illustrations have already been saved within the project.
+Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
-#### Steps to use swift-snapshot-testing
+**Note today because the showcase app is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the showcase app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
 
-1. Locate reference images:
+#### How to use to use swift-snapshot-testing library
+
+1. Locate where are the reference images:
     - In the Package directory, you will find the reference screenshots for the Orange and Inverse themes (Light/Dark), which will serve as comparison baselines.
     ```text
     OUDS -> Showcase -> ShowcaseTests -> __Snapshots__
     ```
 2. Navigate to the project :
-    - Open your project in Xcode and go to the directory:
+    - Open your project in Xcode and go to a directory containing tests (e.g. here *OUDSTokensOpacityUITests*):
     ```shell
-    Showcase -> ShowcaseTests -> OUDSTokensBorderUITests -> OUDSTokensBorderUITests.swift
+    Showcase -> ShowcaseTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
     ```
-3. Open the test tile:
-    - Open the file `OUDSTokensBorderUITests.swift`.
+3. Open a test file (e.g. here *OUDSTokensOpacityUITests*):
+    - Open the file `OUDSTokensOpacityUITests.swift`.
 4. Run the snapshot test (success):
-    - Locate and execute the function `testAllOpacitiesOrangeThemeLight()`.
+    - Locate and execute some function like `testAllOpacitiesOrangeThemeLight()`.
 
       <img width="897" alt="OrangeThemeLight_OpacityTest_Success" src="https://github.com/user-attachments/assets/550bed90-6bc9-4d68-aaf0-8e04de35d916">
  
@@ -166,12 +168,10 @@ The snapshot tool fetched the reference image to compare it against the current 
 
     <img width="897" alt="IntentionalUITestError" src="https://github.com/user-attachments/assets/0a6bb578-adba-42f1-abe8-e2f50ddba2a7">
 
-
-   The swift-snapshot-testing tool indicates that the issue originates from the transparent token illustration. We can observe that there are two paths: the first corresponds to our reference illustration (the one we intend to base our comparison on), while the second path is the illustration used for the current image of the application. You can open both paths and visually compare the differences.
+   The *swift-snapshot-testing tool* indicates that the issue originates from the transparent token illustration. We can observe that there are two paths: the first corresponds to our reference illustration (the one we intend to base our comparison on), while the second path is the illustration used for the current image of the application. You can open both paths and visually compare the differences.
 
 7. Verify the output:
     - It is recommended to use the `Show the Report Navigator` tool in Xcode :
-
 
     <img width="512" alt="ShowReportNavigator_Xcode" src="https://github.com/user-attachments/assets/8d866d79-5dfc-46c7-934e-8d03ec1fc667">
 
@@ -182,7 +182,6 @@ The snapshot tool fetched the reference image to compare it against the current 
     ```
 
     <img width="1206" alt="TestResult_Failed_testAllOpacitiesOrangeThemeLight" src="https://github.com/user-attachments/assets/1793df83-ffc1-4226-8be2-fbd7e2b71deb">
-
 
 8. Comparison (reference and failure):
    
