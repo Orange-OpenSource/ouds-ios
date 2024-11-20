@@ -13,9 +13,9 @@ LANGUAGE
 This declaration was done in this language:
 (please use proper HTML lang attribute)
 -->
-<lang>fr</lang>
+<lang>en</lang>
 
-<!-- 
+<!--
 STATUS
 Either being audited or having been audited
 So:
@@ -37,11 +37,11 @@ GENERAL DECLARATION INFORMATION
 <!--
 APPROVAL
 Name: approval name
-Content: usefull for additional information like a postal address for example. This is CDATA-protected, please add properly formatted HTML. 
+Content: usefull for additional information like a postal address for example. This is CDATA-protected, please add properly formatted HTML.
 -->
 <approval>
-	<name>Service interne</name>
-	<content>
+    <name>Service interne</name>
+    <content>
 <![CDATA[]]>
 </content>
 </approval>
@@ -49,11 +49,11 @@ Content: usefull for additional information like a postal address for example. T
 <!--
 CONTACT
 Name: contact name
-Content: full contact informations. This is CDATA-protected, please add properly formatted HTML. 
+Content: full contact informations. This is CDATA-protected, please add properly formatted HTML.
 -->
 <contact>
-	<name>Orange France</name>
-	<content>
+    <name>Orange France</name>
+    <content>
 <![CDATA[<p>Contacter [Nom de l’entité responsable du service en ligne] [url d’une page avec les coordonnées de l'entité]</p>
 ]]>
 </content>
@@ -73,7 +73,7 @@ Format: YYYY-MM-DD
 
 <!--
 DIGITAL ACCESSIBILITY PLAN
-Plan: Paragraph for the digital accessibility plan. This is CDATA-protected, please add properly formatted HTML. 
+Plan: Paragraph for the digital accessibility plan. This is CDATA-protected, please add properly formatted HTML.
 -->
 <plan>
 <![CDATA[<p>Orange s'engage à rendre ses sites internet, intranet, extranet et ses applications mobiles accessibles conformément à l'article 47 de la loi n° 2005-102 du 11 février 2005.</p>
@@ -86,17 +86,17 @@ Plan: Paragraph for the digital accessibility plan. This is CDATA-protected, ple
 REFERENTIAL USED
 -->
 <referential>
-	<name>WCAG</name><!-- if it's an abbreviation, the document template must translate it to plain text -->
-	<version>2.2</version>
-	<level>AA</level>
-	<url>https://www.w3.org/Translations/WCAG20-fr/</url>
+    <name>WCAG</name><!-- if it's an abbreviation, the document template must translate it to plain text -->
+    <version>2.2</version>
+    <level>AA</level>
+    <url>https://www.w3.org/Translations/WCAG20-fr/</url>
 </referential>
 
 <!--
 TECHNOLOGIES USED IN THE SITE
 -->
 <technologies>
-	<technology>Swift </technology>
+    <technology>Swift </technology>
 </technologies>
 
 <!--
@@ -108,22 +108,22 @@ a test can have the type [auto|manual|functional|user]:
 * test done by a real user
 -->
 <tests>
-	<test type="auto">
-		<name>Accessibility Inspector</name>
-		<version></version>
-	</test>
-	<test type="functional">
-		<name>Voice Over</name>
-		<version></version>
-	</test>
+    <test type="auto">
+        <name>Accessibility Inspector</name>
+        <version></version>
+    </test>
+    <test type="functional">
+        <name>Voice Over</name>
+        <version></version>
+    </test>
 </tests>
 
 <!--
 ENVIRONMENTS USED TO EVALUATE ACCESSIBILITY
-Environment: an environment should indicate a user agent and an assistive technologie. This is CDATA-protected, please add properly formatted HTML. 
+Environment: an environment should indicate a user agent and an assistive technologie. This is CDATA-protected, please add properly formatted HTML.
 -->
 <environments>
-	<environment><![CDATA[IOS et Voice Over]]></environment>
+    <environment><![CDATA[IOS et Voice Over]]></environment>
 </environments>
 
 <!--
@@ -132,42 +132,42 @@ This is the list of URLs that were tested
 This is CDATA-protected, please add properly formatted HTML.
 -->
 <urls>
-	<url>
-		<name><![CDATA[Tokens]]></name>
-		<location><![CDATA[]]></location>
-	</url>
-	<url>
-		<name><![CDATA[Border]]></name>
-		<location><![CDATA[]]></location>
-	</url>
-	<url>
-		<name><![CDATA[Corlor]]></name>
-		<location><![CDATA[]]></location>
-	</url>
-	<url>
-		<name><![CDATA[Dimension]]></name>
-		<location><![CDATA[]]></location>
-	</url>
-	<url>
-		<name><![CDATA[Elevation]]></name>
-		<location><![CDATA[]]></location>
-	</url>
-	<url>
-		<name><![CDATA[Opacity]]></name>
-		<location><![CDATA[]]></location>
-	</url>
-	<url>
-		<name><![CDATA[Typography]]></name>
-		<location><![CDATA[]]></location>
-	</url>
-	<url>
-		<name><![CDATA[Components]]></name>
-		<location><![CDATA[]]></location>
-	</url>
-	<url>
-		<name><![CDATA[About]]></name>
-		<location><![CDATA[]]></location>
-	</url>
+    <url>
+        <name><![CDATA[Tokens]]></name>
+        <location><![CDATA[]]></location>
+    </url>
+    <url>
+        <name><![CDATA[Border]]></name>
+        <location><![CDATA[]]></location>
+    </url>
+    <url>
+        <name><![CDATA[Corlor]]></name>
+        <location><![CDATA[]]></location>
+    </url>
+    <url>
+        <name><![CDATA[Dimension]]></name>
+        <location><![CDATA[]]></location>
+    </url>
+    <url>
+        <name><![CDATA[Elevation]]></name>
+        <location><![CDATA[]]></location>
+    </url>
+    <url>
+        <name><![CDATA[Opacity]]></name>
+        <location><![CDATA[]]></location>
+    </url>
+    <url>
+        <name><![CDATA[Typography]]></name>
+        <location><![CDATA[]]></location>
+    </url>
+    <url>
+        <name><![CDATA[Components]]></name>
+        <location><![CDATA[]]></location>
+    </url>
+    <url>
+        <name><![CDATA[About]]></name>
+        <location><![CDATA[]]></location>
+    </url>
 </urls>
 <!--
 ******************************************************
@@ -178,7 +178,7 @@ START SPECIFIC CONFORMITY NUMBERS
 -->
 <!--
 Comment of non-compliance
-Comment of non-compliance. This is CDATA-protected, please add properly formatted HTML. 
+Comment of non-compliance. This is CDATA-protected, please add properly formatted HTML.
 -->
 <nonComplianceComment>
 <![CDATA[]]>
@@ -196,115 +196,115 @@ and blocking points they found (if 0, the document will have to say “with no b
 RESULTS DETAILS
 -->
 <results>
-	<result type="a">
-		<criteria>32</criteria>
-		<ok>18</ok><!-- valid -->
-		<nok>1</nok><!-- not valid -->
-		<na>13</na><!-- not applicable -->
-		<conformity>95</conformity><!-- percentage, expressed as a number with no “%” sign -->
-	</result>
+    <result type="a">
+        <criteria>32</criteria>
+        <ok>19</ok><!-- valid -->
+        <nok>0</nok><!-- not valid -->
+        <na>13</na><!-- not applicable -->
+        <conformity>100</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    </result>
 
-	<result type="aa">
-		<criteria>24</criteria>
-		<ok>14</ok><!-- valid -->
-		<nok>1</nok><!-- not valid -->
-		<na>9</na><!-- not applicable -->
-		<conformity>93</conformity><!-- percentage, expressed as a number with no “%” sign -->
-	</result>
+    <result type="aa">
+        <criteria>24</criteria>
+        <ok>14</ok><!-- valid -->
+        <nok>1</nok><!-- not valid -->
+        <na>9</na><!-- not applicable -->
+        <conformity>93</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    </result>
 
-	<result type="total">
-		<criteria>56</criteria>
-		<ok>32</ok><!-- valid -->
-		<nok>2</nok><!-- not valid -->
-		<na>22</na><!-- not applicable -->
-		<conformity>94</conformity><!-- percentage, expressed as a number with no “%” sign -->
-	</result>
+    <result type="total">
+        <criteria>56</criteria>
+        <ok>33</ok><!-- valid -->
+        <nok>1</nok><!-- not valid -->
+        <na>22</na><!-- not applicable -->
+        <conformity>97</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    </result>
 </results>
 
 <!--
 Pages results details
 -->
-<pages_results conformity="96">
-	<page name="Tokens">
-		<ok type="a">19</ok><!-- valid -->
-		<ok type="aa">14</ok><!-- valid -->
-		<nok type="a">0</nok> <!-- not valid -->
-		<nok type="aa">1</nok> <!-- not valid -->
-		<na type="a">13</na><!-- not applicable -->
-		<na type="aa">9</na><!-- not applicable -->
-		<conformity>97</conformity><!-- percentage, expressed as a number with no “%” sign -->
+<pages_results conformity="98">
+    <page name="Tokens">
+        <ok type="a">19</ok><!-- valid -->
+        <ok type="aa">14</ok><!-- valid -->
+        <nok type="a">0</nok> <!-- not valid -->
+        <nok type="aa">1</nok> <!-- not valid -->
+        <na type="a">13</na><!-- not applicable -->
+        <na type="aa">9</na><!-- not applicable -->
+        <conformity>97</conformity><!-- percentage, expressed as a number with no “%” sign -->
 </page>
-	<page name="Border">
-		<ok type="a">18</ok><!-- valid -->
-		<ok type="aa">14</ok><!-- valid -->
-		<nok type="a">1</nok> <!-- not valid -->
-		<nok type="aa">1</nok> <!-- not valid -->
-		<na type="a">13</na><!-- not applicable -->
-		<na type="aa">9</na><!-- not applicable -->
-		<conformity>94</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    <page name="Border">
+        <ok type="a">19</ok><!-- valid -->
+        <ok type="aa">14</ok><!-- valid -->
+        <nok type="a">0</nok> <!-- not valid -->
+        <nok type="aa">1</nok> <!-- not valid -->
+        <na type="a">13</na><!-- not applicable -->
+        <na type="aa">9</na><!-- not applicable -->
+        <conformity>97</conformity><!-- percentage, expressed as a number with no “%” sign -->
 </page>
-	<page name="Corlor">
-		<ok type="a">18</ok><!-- valid -->
-		<ok type="aa">14</ok><!-- valid -->
-		<nok type="a">1</nok> <!-- not valid -->
-		<nok type="aa">1</nok> <!-- not valid -->
-		<na type="a">13</na><!-- not applicable -->
-		<na type="aa">9</na><!-- not applicable -->
-		<conformity>94</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    <page name="Corlor">
+        <ok type="a">19</ok><!-- valid -->
+        <ok type="aa">15</ok><!-- valid -->
+        <nok type="a">0</nok> <!-- not valid -->
+        <nok type="aa">0</nok> <!-- not valid -->
+        <na type="a">13</na><!-- not applicable -->
+        <na type="aa">9</na><!-- not applicable -->
+        <conformity>100</conformity><!-- percentage, expressed as a number with no “%” sign -->
 </page>
-	<page name="Dimension">
-		<ok type="a">18</ok><!-- valid -->
-		<ok type="aa">14</ok><!-- valid -->
-		<nok type="a">1</nok> <!-- not valid -->
-		<nok type="aa">1</nok> <!-- not valid -->
-		<na type="a">13</na><!-- not applicable -->
-		<na type="aa">9</na><!-- not applicable -->
-		<conformity>94</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    <page name="Dimension">
+        <ok type="a">19</ok><!-- valid -->
+        <ok type="aa">14</ok><!-- valid -->
+        <nok type="a">0</nok> <!-- not valid -->
+        <nok type="aa">1</nok> <!-- not valid -->
+        <na type="a">13</na><!-- not applicable -->
+        <na type="aa">9</na><!-- not applicable -->
+        <conformity>97</conformity><!-- percentage, expressed as a number with no “%” sign -->
 </page>
-	<page name="Elevation">
-		<ok type="a">18</ok><!-- valid -->
-		<ok type="aa">14</ok><!-- valid -->
-		<nok type="a">1</nok> <!-- not valid -->
-		<nok type="aa">1</nok> <!-- not valid -->
-		<na type="a">13</na><!-- not applicable -->
-		<na type="aa">9</na><!-- not applicable -->
-		<conformity>94</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    <page name="Elevation">
+        <ok type="a">19</ok><!-- valid -->
+        <ok type="aa">14</ok><!-- valid -->
+        <nok type="a">0</nok> <!-- not valid -->
+        <nok type="aa">1</nok> <!-- not valid -->
+        <na type="a">13</na><!-- not applicable -->
+        <na type="aa">9</na><!-- not applicable -->
+        <conformity>97</conformity><!-- percentage, expressed as a number with no “%” sign -->
 </page>
-	<page name="Opacity">
-		<ok type="a">18</ok><!-- valid -->
-		<ok type="aa">14</ok><!-- valid -->
-		<nok type="a">1</nok> <!-- not valid -->
-		<nok type="aa">1</nok> <!-- not valid -->
-		<na type="a">13</na><!-- not applicable -->
-		<na type="aa">9</na><!-- not applicable -->
-		<conformity>94</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    <page name="Opacity">
+        <ok type="a">19</ok><!-- valid -->
+        <ok type="aa">14</ok><!-- valid -->
+        <nok type="a">0</nok> <!-- not valid -->
+        <nok type="aa">1</nok> <!-- not valid -->
+        <na type="a">13</na><!-- not applicable -->
+        <na type="aa">9</na><!-- not applicable -->
+        <conformity>97</conformity><!-- percentage, expressed as a number with no “%” sign -->
 </page>
-	<page name="Typography">
-		<ok type="a">18</ok><!-- valid -->
-		<ok type="aa">14</ok><!-- valid -->
-		<nok type="a">1</nok> <!-- not valid -->
-		<nok type="aa">1</nok> <!-- not valid -->
-		<na type="a">13</na><!-- not applicable -->
-		<na type="aa">9</na><!-- not applicable -->
-		<conformity>94</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    <page name="Typography">
+        <ok type="a">19</ok><!-- valid -->
+        <ok type="aa">14</ok><!-- valid -->
+        <nok type="a">0</nok> <!-- not valid -->
+        <nok type="aa">1</nok> <!-- not valid -->
+        <na type="a">13</na><!-- not applicable -->
+        <na type="aa">9</na><!-- not applicable -->
+        <conformity>97</conformity><!-- percentage, expressed as a number with no “%” sign -->
 </page>
-	<page name="Components">
-		<ok type="a">19</ok><!-- valid -->
-		<ok type="aa">15</ok><!-- valid -->
-		<nok type="a">0</nok> <!-- not valid -->
-		<nok type="aa">0</nok> <!-- not valid -->
-		<na type="a">13</na><!-- not applicable -->
-		<na type="aa">9</na><!-- not applicable -->
-		<conformity>100</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    <page name="Components">
+        <ok type="a">19</ok><!-- valid -->
+        <ok type="aa">15</ok><!-- valid -->
+        <nok type="a">0</nok> <!-- not valid -->
+        <nok type="aa">0</nok> <!-- not valid -->
+        <na type="a">13</na><!-- not applicable -->
+        <na type="aa">9</na><!-- not applicable -->
+        <conformity>100</conformity><!-- percentage, expressed as a number with no “%” sign -->
 </page>
-	<page name="About">
-		<ok type="a">19</ok><!-- valid -->
-		<ok type="aa">15</ok><!-- valid -->
-		<nok type="a">0</nok> <!-- not valid -->
-		<nok type="aa">0</nok> <!-- not valid -->
-		<na type="a">13</na><!-- not applicable -->
-		<na type="aa">9</na><!-- not applicable -->
-		<conformity>100</conformity><!-- percentage, expressed as a number with no “%” sign -->
+    <page name="About">
+        <ok type="a">19</ok><!-- valid -->
+        <ok type="aa">15</ok><!-- valid -->
+        <nok type="a">0</nok> <!-- not valid -->
+        <nok type="aa">0</nok> <!-- not valid -->
+        <na type="a">13</na><!-- not applicable -->
+        <na type="aa">9</na><!-- not applicable -->
+        <conformity>100</conformity><!-- percentage, expressed as a number with no “%” sign -->
 </page>
 </pages_results>
 
@@ -312,19 +312,15 @@ Pages results details
 Non conformity details
 -->
 <details>
-	<detail>
-		<title>1.3.1, Information et relations, Niveau A</title>
-		<description><![CDATA[]]></description>
-	</detail>
-	<detail>
-		<title>1.4.3, Contraste (minimum), Niveau AA</title>
-		<description><![CDATA[]]></description>
-	</detail>
+    <detail>
+        <title>1.4.3, Contrast (Minimum), Niveau AA</title>
+        <description><![CDATA[]]></description>
+    </detail>
 </details>
 
 <!--
 COMPLIANT STATE Comment
-Compliant state comment. This is CDATA-protected, please add properly formatted HTML. 
+Compliant state comment. This is CDATA-protected, please add properly formatted HTML.
 -->
 <compliantStateComment>
 <![CDATA[]]>
@@ -332,7 +328,7 @@ Compliant state comment. This is CDATA-protected, please add properly formatted 
 
 <!--
 DEROGATIONS
-Derogations list. This is CDATA-protected, please add properly formatted HTML. 
+Derogations list. This is CDATA-protected, please add properly formatted HTML.
 -->
 <derogations>
 <![CDATA[]]>
@@ -340,7 +336,7 @@ Derogations list. This is CDATA-protected, please add properly formatted HTML.
 
 <!--
 EXEMPTIONS
-Exemptions list. This is CDATA-protected, please add properly formatted HTML. 
+Exemptions list. This is CDATA-protected, please add properly formatted HTML.
 -->
 <exemptions>
 <![CDATA[]]>
