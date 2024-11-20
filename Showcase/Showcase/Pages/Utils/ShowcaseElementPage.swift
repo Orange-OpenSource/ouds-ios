@@ -28,7 +28,7 @@ struct ShowcaseElementPage: View {
     // MARK: Body
 
     var body: some View {
-        List {
+        ScrollView {
             VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
                 CardIllustration(icon: Image(element.imageName))
                     .accessibilityHidden(true)
