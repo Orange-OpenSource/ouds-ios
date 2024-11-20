@@ -37,7 +37,7 @@
 ///         var colorBgPrimaryDark: ColorSemanticTokens { ColorRawTokens.colorDecorativeAmber200 }
 ///
 ///         // The 'higher level' color semantic tokens wrapping them and exposed to users
-///         / declared (in this ColorMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+ColorMultipleSemanticTokens.swift)
+///         // declared (in this ColorMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+ColorMultipleSemanticTokens.swift)
 ///         var colorBgPrimary: MultipleColorTokens { MultipleColorTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
 ///
 ///         // Thus users can in their components use colorBgPrimary as defined in their design system

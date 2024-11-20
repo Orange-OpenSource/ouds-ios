@@ -1,0 +1,60 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+// 
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+// 
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+//
+
+// [File not generated with the tokenator]
+// WARNING: Not synchronized with the Figjam / Figma by developers team
+// Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
+
+// swiftlint:disable missing_docs
+// swiftlint:disable line_length
+
+/// This is a group of semantic tokens for **elevation colors** but using `MultipleColorTokens`, in order tod efined box shadow effects.
+///
+/// In fact the `MultipleColorTokens` class will help users (i.e. developers) to handle one semantic token for color containing values for light and dark modes.
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such `MultipleColorTokens`.
+/// Thus the "real" elevation color semantic tokens are declared in `ElevationSemanticTokens` protocol and defined inside `OUDSTheme`(to be overridable then by subthemes).
+/// These tokens are updated by the *tokenator*.
+/// Then they are gathered and wrapped so as to be used easily thanks to this `ElevationMultipleSemanticTokens` which must be updated manually.
+///
+/// In few words:
+///
+///         // Some color raw tokens, defined by the tokenator (in ColorRawTokens+Values.swift)
+///         public static let colorDecorativeAmber100: ColorRawToken = "#FFF0CC"
+///         public static let colorDecorativeAmber200: ColorRawToken = "#FFE199"
+///
+///         // The elevation color semantic tokens using them
+///         // declared (in ElevationSemanticTokens.swift) and defined (in OUDSTheme+ElevationSemanticTokens.swift) by the tokenator
+///         var elevationColorNoneLight: ColorSemanticTokens { ColorRawTokens.colorDecorativeAmber100 }
+///         var elevationColorNoneDark: ColorSemanticTokens { ColorRawTokens.colorDecorativeAmber200 }
+///
+///         // The 'higher level' color semantic tokens wrapping them and exposed to users
+///         // declared (in this ElevationMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+ElevationMultipleSemanticTokens.swift)
+///         var elevationColorNone: MultipleColorTokens { MultipleColorTokens(light: elevationColorNoneLight, dark: elevationColorNoneDark) }
+///
+///         // Thus users can in their components use elevationColorNone as defined in their design system
+///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
+///
+public protocol ElevationMultipleSemanticTokens {
+
+    var elevationColorNone: MultipleColorTokens { get }
+    var elevationColorRaised: MultipleColorTokens { get }
+    var elevationColorDrag: MultipleColorTokens { get }
+    var elevationColorOverlayDefault: MultipleColorTokens { get }
+    var elevationColorOverlayEmphasized: MultipleColorTokens { get }
+    var elevationColorStickyDefault: MultipleColorTokens { get }
+    var elevationColorStickyEmphasized: MultipleColorTokens { get }
+    var elevationColorStickyNavigationScrolled: MultipleColorTokens { get }
+}
+
+// swiftlint:enable missing_docs
+// swiftlint:enable line_length
