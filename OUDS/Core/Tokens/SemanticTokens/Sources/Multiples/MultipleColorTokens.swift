@@ -21,23 +21,23 @@ import SwiftUI
 public final class MultipleColorTokens: NSObject, Sendable {
 
     /// For **light** mode scheme
-    public let light: ColorRawToken
+    public let light: ColorSemanticToken
 
     /// For **dark** mode scheme
-    public let dark: ColorRawToken
+    public let dark: ColorSemanticToken
 
     /// Initializes a new color composite semantic token with the same value for light and dark modes
-    /// - Parameter value: The `ColorRawToken` to apply wether the device is in *light* and *dark* mode
-    public init(_ value: ColorRawToken) {
+    /// - Parameter value: The `ColorSemanticToken` to apply wether the device is in *light* and *dark* mode
+    public init(_ value: ColorSemanticToken) {
         self.light = value
         self.dark = value
     }
 
     /// Initializes a new color composite semantic token with two values
     /// - Parameters:
-    ///    - light: The `ColorRawToken` to apply if device in *light* mode
-    ///    - dark: The `ColorRawToken` to apply if device in *dark* mode
-    public init(light: ColorRawToken, dark: ColorRawToken) {
+    ///    - light: The `ColorSemanticToken` to apply if device in *light* mode
+    ///    - dark: The `ColorSemanticToken` to apply if device in *dark* mode
+    public init(light: ColorSemanticToken, dark: ColorSemanticToken) {
         self.light = light
         self.dark = dark
     }

@@ -26,16 +26,26 @@ public protocol SpaceSemanticTokens {
 
     // MARK: Semantic token - Spacing - Scaled
 
-    var spaceScaledNone: MultipleSpaceTokens { get }
-    var spaceScaledSmash: MultipleSpaceTokens { get }
-    var spaceScaledShortest: MultipleSpaceTokens { get }
-    var spaceScaledShorter: MultipleSpaceTokens { get }
-    var spaceScaledShort: MultipleSpaceTokens { get }
-    var spaceScaledMedium: MultipleSpaceTokens { get }
-    var spaceScaledTall: MultipleSpaceTokens { get }
-    var spaceScaledTaller: MultipleSpaceTokens { get }
-    var spaceScaledTallest: MultipleSpaceTokens { get }
-    var spaceScaledSpacious: MultipleSpaceTokens { get }
+    var spaceScaledNoneMobile: SpaceSemanticToken { get }
+    var spaceScaledNoneTablet: SpaceSemanticToken { get }
+    var spaceScaledSmashMobile: SpaceSemanticToken { get }
+    var spaceScaledSmashTablet: SpaceSemanticToken { get }
+    var spaceScaledShortestMobile: SpaceSemanticToken { get }
+    var spaceScaledShortestTablet: SpaceSemanticToken { get }
+    var spaceScaledShorterMobile: SpaceSemanticToken { get }
+    var spaceScaledShorterTablet: SpaceSemanticToken { get }
+    var spaceScaledShortMobile: SpaceSemanticToken { get }
+    var spaceScaledShortTablet: SpaceSemanticToken { get }
+    var spaceScaledMediumMobile: SpaceSemanticToken { get }
+    var spaceScaledMediumTablet: SpaceSemanticToken { get }
+    var spaceScaledTallMobile: SpaceSemanticToken { get }
+    var spaceScaledTallTablet: SpaceSemanticToken { get }
+    var spaceScaledTallerMobile: SpaceSemanticToken { get }
+    var spaceScaledTallerTablet: SpaceSemanticToken { get }
+    var spaceScaledTallestMobile: SpaceSemanticToken { get }
+    var spaceScaledTallestTablet: SpaceSemanticToken { get }
+    var spaceScaledSpaciousMobile: SpaceSemanticToken { get }
+    var spaceScaledSpaciousTablet: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Fixed
 

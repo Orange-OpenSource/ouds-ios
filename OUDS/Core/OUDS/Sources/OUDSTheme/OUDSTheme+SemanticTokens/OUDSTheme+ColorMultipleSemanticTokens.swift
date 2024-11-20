@@ -23,7 +23,7 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 // swiftlint:disable file_length
 
-/// Defines wrapper objects for `MultipleColorTokenss`.
+/// Defines wrapper objects for `ColorSemanticToken`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// Some tokens do not have values assigned in the design system, and must be overriden.
 /// Some tokens must be overiden in `OrangeTheme` side because they rely on Orange brand colors.

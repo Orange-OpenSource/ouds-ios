@@ -31,7 +31,7 @@ final class TestInverseThemeColors: XCTestCase {
         inverseTheme = InverseTheme()
     }
 
-    private func assertHomogeneity(_ value: ColorSemanticToken) {
+    private func assertHomogeneity(_ value: MultipleColorTokens) {
         XCTAssertEqual(value.light, value.dark)
     }
 

@@ -27,15 +27,17 @@
 ///
 /// In few words:
 ///
-///         // Some color raw tokens, defined by the tokenator
+///         // Some color raw tokens, defined by the tokenator (in ColorRawTokens+Values.swift)
 ///         public static let colorDecorativeAmber100: ColorRawToken = "#FFF0CC"
 ///         public static let colorDecorativeAmber200: ColorRawToken = "#FFE199"
 ///
-///         // The color semantic tokens using them, declared and defined by the tokenator
+///         // The color semantic tokens using them
+///         // declared (in ColorSemanticTokens.swift) and defined (in OUDSTheme+ColorSemanticTokens.swift) by the tokenator
 ///         var colorBgPrimaryLight: ColorSemanticTokens { ColorRawTokens.colorDecorativeAmber100 }
 ///         var colorBgPrimaryDark: ColorSemanticTokens { ColorRawTokens.colorDecorativeAmber200 }
 ///
-///         // The 'higher level' color semantic tokens wrapping them and exposed to users, defined and declared manualy
+///         // The 'higher level' color semantic tokens wrapping them and exposed to users
+///         / declared (in this ColorMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+ColorMultipleSemanticTokens.swift)
 ///         var colorBgPrimary: MultipleColorTokens { MultipleColorTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
 ///
 ///         // Thus users can in their components use colorBgPrimary as defined in their design system
