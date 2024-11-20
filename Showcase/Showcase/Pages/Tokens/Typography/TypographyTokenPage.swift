@@ -72,7 +72,7 @@ struct TypographyTokenPage: View {
     // MARK: Helpers
 
     @ViewBuilder
-    public func illustration(from namedTypography: NamedTypography) -> some View {
+    func illustration(from namedTypography: NamedTypography) -> some View {
         let token = namedTypography.token(from: activeTheme).typographyToken(for: activeHorizontalSizeClass)
 
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {

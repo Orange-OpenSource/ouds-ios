@@ -99,7 +99,7 @@ struct BorderTokenPage: View {
             .frame(width: 64, height: 64)
     }
 
-    public func illustration(for namedWidth: NamedBorderWidth) -> some View {
+    func illustration(for namedWidth: NamedBorderWidth) -> some View {
         let token = namedWidth.token(from: activeTheme)
         let name = namedWidth.rawValue
         let value = String(format: "(%.0f) pt", token)
@@ -113,7 +113,7 @@ struct BorderTokenPage: View {
         }
     }
 
-    public func illustration(for namedRadius: NamedBorderRadius) -> some View {
+    func illustration(for namedRadius: NamedBorderRadius) -> some View {
         let token = namedRadius.token(from: activeTheme)
         let name = namedRadius.rawValue
         let value = String(format: "(%.0f) pt", token)
@@ -127,7 +127,7 @@ struct BorderTokenPage: View {
         }
     }
 
-    public func illustration(for namedStyle: NamedBorderStyle) -> some View {
+    func illustration(for namedStyle: NamedBorderStyle) -> some View {
         let token = namedStyle.token(from: activeTheme)
         let name = namedStyle.rawValue
         let value = token
@@ -142,7 +142,7 @@ struct BorderTokenPage: View {
     }
 }
 
-public enum NamedBorderRadius: String, CaseIterable {
+enum NamedBorderRadius: String, CaseIterable {
     case borderRadiusNone
     case borderRadiusDefault
     case borderRadiusShort
@@ -165,7 +165,7 @@ public enum NamedBorderRadius: String, CaseIterable {
     }
 }
 
-public enum NamedBorderWidth: String, CaseIterable {
+enum NamedBorderWidth: String, CaseIterable {
 
     case borderWidthNone
     case borderWidthDefault
@@ -198,7 +198,7 @@ public enum NamedBorderWidth: String, CaseIterable {
     }
 }
 
-public enum NamedBorderStyle: String, CaseIterable {
+enum NamedBorderStyle: String, CaseIterable {
     case borderStyleDefault
     case borderStyleDrag
 

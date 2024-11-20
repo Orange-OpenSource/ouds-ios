@@ -61,7 +61,7 @@ struct OpacityTokenPage: View {
 
     // MARK: Helpers
 
-    public func illustration(for opacityName: NamedOpacity) -> some View {
+    func illustration(for opacityName: NamedOpacity) -> some View {
         let token = opacityName.token(from: activeTheme)
         let name = opacityName.rawValue
         let value = String(format: "%.2f", token)
@@ -93,7 +93,7 @@ struct OpacityTokenPage: View {
 
 // MARK: - Named Opacity
 
-public enum NamedOpacity: String, CaseIterable {
+enum NamedOpacity: String, CaseIterable {
     case opacityTransparent
     case opacityWeaker
     case opacityWeak

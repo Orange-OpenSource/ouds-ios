@@ -77,7 +77,7 @@ struct SizeTokenPage: View {
         }
     }
 
-    public func illustrationIconDecorative(for namedSize: NamedSize.IconDecorative) -> some View {
+    func illustrationIconDecorative(for namedSize: NamedSize.IconDecorative) -> some View {
         let token = namedSize.token(from: activeTheme)
         let name = namedSize.rawValue
         let value = String(format: "(%.0f) pt", token)
@@ -107,7 +107,7 @@ struct SizeTokenPage: View {
     }
 
     @ViewBuilder
-    public func illustrationIconWithLabel(for namedSize: NamedSize.IconWithTypography) -> some View {
+    func illustrationIconWithLabel(for namedSize: NamedSize.IconWithTypography) -> some View {
         let token = namedSize.token(fot: activeTheme, userInterfaceSizeClass: activeHorizontalSizeClass)
         let namedTypography = namedSize.namedTypography
         let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)

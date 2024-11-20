@@ -143,7 +143,7 @@ struct ColorTokenPage: View {
     // MARK: Common private helpers
 
     @ViewBuilder
-    public func illustration(for token: ColorSemanticToken?, name: String) -> some View {
+    func illustration(for token: ColorSemanticToken?, name: String) -> some View {
         if let token {
             let colorRawToken = activeColorScheme == .dark ? token.dark : token.light
 
