@@ -73,6 +73,10 @@
 "app_tokens_typography_label" = "Typography";
 "app_tokens_typography_description_text" = "Typography is our system of fonts and text styles. They enhance communication and reinforce the brand style.";
 
+"app_tokens_code_title_label" = "View token code example";
+"app_tokens_code_visibility_button_a11y" = "Toggle code visibility";
+"app_tokens_code_copy_button_a11y" = "Copy code to clipboard";
+
 // MARK: - Component Screen
 
 "app_component_emptyContent_text" = "No content";
