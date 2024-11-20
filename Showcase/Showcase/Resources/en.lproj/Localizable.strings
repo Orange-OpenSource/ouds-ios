@@ -41,6 +41,7 @@
 
 "app_tokens_dimension_space_label" = "Space";
 "app_tokens_dimension_space_description_text" = "Space refers to the measurements used to define the spacing between UI elements.";
+"app_tokens_dimension_space_header_text" = "Leverage agile frameworks to provide a robust synopsis for high-level overviews.";
 "app_tokens_dimension_space_scaled_label" = "Scaled";
 "app_tokens_dimension_space_fixed_label" = "Fixed";
 "app_tokens_dimension_space_paddingInline_label" = "Padding inline";
