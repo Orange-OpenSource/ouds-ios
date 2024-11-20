@@ -50,7 +50,7 @@ extension NamedColor {
         case colorDecorativeSkinTint800
         case colorDecorativeSkinTint900
 
-        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+        func token(from theme: OUDSTheme) -> MultipleColorTokens {
             switch self {
             case .colorDecorativePrimary:
                 return theme.colorDecorativePrimary

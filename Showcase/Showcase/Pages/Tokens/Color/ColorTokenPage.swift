@@ -143,19 +143,16 @@ struct ColorTokenPage: View {
     // MARK: Common private helpers
 
     @ViewBuilder
-    func illustration(for token: ColorSemanticToken?, name: String) -> some View {
-        if let token {
-            let colorRawToken = activeColorScheme == .dark ? token.dark : token.light
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: colorRawToken, forceTo: activeTheme, colorScheme: activeColorScheme) {
-                Rectangle()
-                    .fill(colorRawToken.color)
-                    .frame(width: 64, height: 64)
-                    .oudsBorder(style: activeTheme.borderStyleDefault,
-                                width: activeTheme.borderWidthThin,
-                                radius: activeTheme.borderRadiusNone,
-                                color: activeTheme.colorBorderDefault)
-            }
+    func illustration(for token: MultipleColorTokens, name: String) -> some View {
+        let colorRawToken = activeColorScheme == .dark ? token.dark : token.light
+        ShowcaseTokenIllustration(tokenName: name, tokenValue: colorRawToken, forceTo: activeTheme, colorScheme: activeColorScheme) {
+            Rectangle()
+                .fill(colorRawToken.color)
+                .frame(width: 64, height: 64)
+                .oudsBorder(style: activeTheme.borderStyleDefault,
+                            width: activeTheme.borderWidthThin,
+                            radius: activeTheme.borderRadiusNone,
+                            color: activeTheme.colorBorderDefault)
         }
     }
 }

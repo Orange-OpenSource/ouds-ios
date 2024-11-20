@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Improve Multiple-based objects for tokenator values integration  ([#279](https://github.com/Orange-OpenSource/ouds-ios/issues/279))
 - [Tool] Use `macos-15` runner for GitHub Actions builds ([#296](https://github.com/Orange-OpenSource/ouds-ios/issues/296))
 
 ### Fixed

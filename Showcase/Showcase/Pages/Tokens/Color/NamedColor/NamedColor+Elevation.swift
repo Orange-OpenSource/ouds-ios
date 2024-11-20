@@ -33,7 +33,7 @@ extension NamedColor {
         case colorElevationOverlayEmphasizedOnBgEmphasized
         case colorElevationModal
 
-        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+        func token(from theme: OUDSTheme) -> MultipleColorTokens {
             switch self {
             case .colorElevationRaised:
                 return theme.colorElevationRaised

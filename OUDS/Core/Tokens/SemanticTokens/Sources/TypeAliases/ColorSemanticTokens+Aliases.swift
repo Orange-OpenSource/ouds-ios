@@ -11,5 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-/// Basically a color semantic  token is a paire of `ColorRawToken` to use for light or dark color scheme, packed in a `MultipleColorTokens` object
-public typealias ColorSemanticToken = MultipleColorTokens
+import OUDSTokensRaw
+
+/// Basically a color semantic  token is a `ColorRawToken`
+public typealias ColorSemanticToken = ColorRawToken

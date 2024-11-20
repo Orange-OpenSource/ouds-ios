@@ -76,7 +76,7 @@ extension NamedColor {
 //        case colorActionOnBgActionSecondaryFocus
 //        case colorActionOnBgActionSecondaryFocusOnBgEmphasized
 
-        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+        func token(from theme: OUDSTheme) -> MultipleColorTokens {
             switch self {
             case .colorActionSelected:
                 return theme.colorActionSelected

@@ -33,17 +33,6 @@ public final class MultipleColorTokens: NSObject, Sendable {
         self.dark = value
     }
 
-    /// Initializes a new color composite semantic token with the same value for light and dark modes, 
-    /// which can be `nil` (because for example use of optional `ColorAliasSemanticToken`)
-    /// - Parameter value: The `ColorRawToken` to apply wether the device is in *light* and *dark* mode
-    public convenience init?(_ value: ColorRawToken?) {
-        guard let value = value else {
-            OUDSLogger.error("Tried to define a MultipleColorTokens with a nil unique value!")
-            return nil
-        }
-        self.init(value)
-    }
-
     /// Initializes a new color composite semantic token with two values
     /// - Parameters:
     ///    - light: The `ColorRawToken` to apply if device in *light* mode
@@ -51,18 +40,6 @@ public final class MultipleColorTokens: NSObject, Sendable {
     public init(light: ColorRawToken, dark: ColorRawToken) {
         self.light = light
         self.dark = dark
-    }
-
-    /// Initializes a new color composite semantic token with two values which can be `nil` (because for example use of optional `ColorAliasSemanticToken`)
-    /// - Parameters:
-    ///    - light: The `ColorRawToken` to apply if device in *light* mode
-    ///    - dark: The `ColorRawToken` to apply if device in *dark* mode
-    public convenience init?(light: ColorRawToken?, dark: ColorRawToken?) {
-        guard let light = light, let dark = dark else {
-            OUDSLogger.error("Tried to define a MultipleColorTokens with at least one nil value! (light = '\(light ?? "nil")', dark = '\(dark ?? "nil")')")
-            return nil
-        }
-        self.init(light: light, dark: dark)
     }
 
     deinit { }

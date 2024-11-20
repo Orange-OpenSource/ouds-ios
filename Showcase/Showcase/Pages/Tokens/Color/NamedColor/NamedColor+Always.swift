@@ -32,7 +32,7 @@ extension NamedColor {
         case colorAlwaysOnBgInfo
         case colorAlwaysOnBgAccent
 
-        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+        func token(from theme: OUDSTheme) -> MultipleColorTokens {
             switch self {
             case .colorAlwaysBlack:
                 return theme.colorAlwaysBlack

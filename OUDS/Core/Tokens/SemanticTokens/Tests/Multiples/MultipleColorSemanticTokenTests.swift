@@ -39,21 +39,6 @@ final class MultipleColorRawTokenTests: XCTestCase {
         XCTAssertTrue(token.dark == dark)
     }
 
-    /// Tests init of `MultipleColorRawToken` with nil values in parameters
-    func testInitNilValues() {
-        let light: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
-        let dark: ColorRawToken = ColorRawTokens.colorFunctionalScarlet900
-
-        XCTAssertNil(MultipleColorTokens(light: light, dark: nil))
-        XCTAssertNil(MultipleColorTokens(light: nil, dark: dark))
-        XCTAssertNil(MultipleColorTokens(light: nil, dark: nil))
-    }
-
-    /// Tests init of `MultipleColorRawToken` with nil value in parameter
-    func testInitNilValue() {
-        XCTAssertNil(MultipleColorTokens(nil))
-    }
-
     /// Tests comparisons between two `MultipleColorRawToken` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
