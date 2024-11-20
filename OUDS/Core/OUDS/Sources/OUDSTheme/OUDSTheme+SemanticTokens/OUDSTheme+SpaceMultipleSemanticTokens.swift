@@ -33,6 +33,6 @@ extension OUDSTheme: SpaceMultipleSemanticTokens {
     @objc open var spaceScaledMedium: MultipleSpaceTokens { MultipleSpaceTokens(compact: spaceScaledMediumMobile, regular: spaceScaledMediumTablet) }
     @objc open var spaceScaledTall: MultipleSpaceTokens { MultipleSpaceTokens(compact: spaceScaledTallMobile, regular: spaceScaledTallTablet) }
     @objc open var spaceScaledTaller: MultipleSpaceTokens { MultipleSpaceTokens(compact: spaceScaledTallerMobile, regular: spaceScaledTallerTablet) }
-    @objc open var spaceScaledTallest: MultipleSpaceTokens { MultipleSpaceTokens(compact: spaceScaledTallestMobile, regular: spaceScaledTallerTablet) }
+    @objc open var spaceScaledTallest: MultipleSpaceTokens { MultipleSpaceTokens(compact: spaceScaledTallestMobile, regular: spaceScaledTallestTablet) }
     @objc open var spaceScaledSpacious: MultipleSpaceTokens { MultipleSpaceTokens(compact: spaceScaledSpaciousMobile, regular: spaceScaledSpaciousTablet) }
 }
