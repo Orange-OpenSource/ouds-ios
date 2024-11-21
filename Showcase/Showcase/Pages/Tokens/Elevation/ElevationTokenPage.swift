@@ -54,9 +54,7 @@ struct ElevationTokenPage: View {
             Section {
                 ShowcaseTokenCode(code: NamedElevation.elevationStickyNavigationScrolled.rawValue)
             }
-
             Spacer()
-
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 illustration(for: elevationName)
             }
