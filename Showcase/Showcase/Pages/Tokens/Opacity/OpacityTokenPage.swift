@@ -55,6 +55,7 @@ struct OpacityTokenPage: View {
                 ShowcaseTokenCode(code: NamedOpacity.opacityTransparent.rawValue)
             }
             Spacer()
+                .frame(height: activeTheme.spaceFixedMedium)
             ForEach(NamedOpacity.allCases, id: \.rawValue) { opmacityName in
                 illustration(for: opmacityName)
             }
