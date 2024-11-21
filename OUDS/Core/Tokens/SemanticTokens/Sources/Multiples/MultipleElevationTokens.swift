@@ -15,7 +15,7 @@ import OUDSFoundations
 import OUDSTokensRaw
 import SwiftUI
 
-/// Semantic tokens which will wrap a combination of ``ElevationCompositeRawToken`` depending to color scheme (i.e. light mode or dark mode)
+/// Semantic tokens which will wrap a combination of `ElevationCompositeRawToken` depending to color scheme (i.e. light mode or dark mode)
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
 /// If an elevation token exists with its value depending to the color scheme, it must be packed in such ``MultipleElevationTokens`
@@ -30,10 +30,14 @@ import SwiftUI
 ///         // inside ElevationCompositeSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+ElevationCompositeSemanticTokens extension
 ///         // ElevationCompositeSemanticToken is a typealias for MultipleElevationTokens to keep same grammar as dsign kit
-///         var elevationNone: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(light: elevationBottom_0, dark: elevationBottom_1_100) }
+///         var elevationNone: ElevationCompositeSemanticToken {
+///             ElevationCompositeSemanticToken(light: elevationBottom_0, dark: elevationBottom_1_100)
+///         }
 ///
-///         // If the same color is used whatever the color scheme is
-///         var elevationNone: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(elevationBottom_0) }
+///         // If the same elevation is used whatever the color scheme is
+///         var elevationNone: ElevationCompositeSemanticToken {
+///             ElevationCompositeSemanticToken(elevationBottom_0)
+///         }
 ///
 ///         // The theme exposes both generated elevation semantic tokens and "crafted" higher level elevation semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.

@@ -23,7 +23,7 @@
 /// This is a group of semantic tokens for **colors** but using ``MultipleColorTokens``.
 ///
 /// In fact the ``MultipleColorTokens`` class will help users (i.e. developers) to handle one semantic token for color containing values for light and dark modes.
-/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleColorTokens``. Thus the "real" color semantic tokens are declared in ``ColorSemanticTokens`` protocol and defined inside ``OUDSTheme`` (to be overridable then by subthemes). These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``ColorMultipleSemanticTokens` which must be updated manually.
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleColorTokens``. Thus the "real" color semantic tokens are declared in ``ColorSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes). These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``ColorMultipleSemanticTokens`` which must be updated manually.
 ///
 /// In few words:
 ///

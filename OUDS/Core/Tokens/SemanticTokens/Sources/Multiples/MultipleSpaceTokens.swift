@@ -15,10 +15,10 @@ import Foundation
 import OUDSTokensRaw
 import SwiftUICore
 
-/// Kind of semantic tokens which will wrap a combination of ``DimensionRawToken`` depending to size classes.
+/// Kind of semantic tokens which will wrap a combination of `DimensionRawToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-/// If a space token exists with its value depending to the size class, it must be packed in such ``MultipleSpaceTokens``
+/// If a space token exists with its value depending to the size class, it must be packed in such ``MultipleSpaceTokens``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a space semantic token spaceScaledShortest,

@@ -13,7 +13,7 @@
 
 import OUDSThemesOrange
 
-/// This is an override of the default basic ``OrangeTheme`` with some inverted colors.
+/// This is an override of the default basic `OrangeTheme` with some inverted colors.
 /// It can overrides any properties from its superclass, and can be derived too.
 open class InverseTheme: OrangeTheme, @unchecked Sendable {
 

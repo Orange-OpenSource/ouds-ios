@@ -20,9 +20,9 @@
 
 /// This is a group of semantic tokens for **size** but using ``MultipleSizeTokens``
 ///
-/// In fact the ``MultipleSizeTokens` class will help users (i.e. developers) to handle one semantic token for size containing values for compact and regular viewports / size classes.
+/// In fact the ``MultipleSizeTokens`` class will help users (i.e. developers) to handle one semantic token for size containing values for compact and regular viewports / size classes.
 /// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleSizeTokens``.
-/// A major part the "real" size semantic tokens are declared in ``SizeSemanticTokens`` protocol and defined inside ``OUDSTheme`` (to be overridable then by subthemes), and othershere.
+/// A major part the "real" size semantic tokens are declared in ``SizeSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes), and othershere.
 /// These tokens are updated by the *tokenator*.
 /// Then they are gathered and wrapped so as to be used easily thanks to this ``MultipleSizeTokens`` which must be updated manually.
 ///

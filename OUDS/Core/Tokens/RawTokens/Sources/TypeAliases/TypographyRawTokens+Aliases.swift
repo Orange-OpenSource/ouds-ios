@@ -13,17 +13,17 @@
 
 import Foundation
 
-/// In the global design system tool, *font family* raw tokens are basically ``String`` values, to keep grammar clean and clear with design system grammar.
+/// In the global design system tool, *font family* raw tokens are basically `String` values, to keep grammar clean and clear with design system grammar.
 public typealias TypographyFontFamilyRawToken = String
 
-/// In the global design system tool, *font weight* raw tokens are basically ``Int`` values, to keep grammar clean and clear with design system grammar.
+/// In the global design system tool, *font weight* raw tokens are basically `Int` values, to keep grammar clean and clear with design system grammar.
 public typealias TypographyFontWeightRawToken = Int
 
-/// In the global design system tool, *font size* raw tokens are basically ``CGFloat`` values, to keep grammar clean and clear with design system grammar.
+/// In the global design system tool, *font size* raw tokens are basically `CGFloat` values, to keep grammar clean and clear with design system grammar.
 public typealias TypographyFontSizeRawToken = CGFloat
 
-/// In the global design system tool, *font line height* raw tokens are basically ``CGFloat`` values, to keep grammar clean and clear with design system grammar.
+/// In the global design system tool, *font line height* raw tokens are basically `CGFloat` values, to keep grammar clean and clear with design system grammar.
 public typealias TypographyFontLineHeightRawToken = CGFloat
 
-/// In the global design system tool, *font letter spacing* raw tokens are basically ``CGFloat` values, to keep grammar clean and clear with design system grammar.
+/// In the global design system tool, *font letter spacing* raw tokens are basically `CGFloat` values, to keep grammar clean and clear with design system grammar.
 public typealias TypographyFontLetterSpacingRawToken = CGFloat

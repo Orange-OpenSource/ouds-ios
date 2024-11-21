@@ -22,7 +22,7 @@
 ///
 /// In fact the ``MultipleColorTokens`` class will help users (i.e. developers) to handle one semantic token for color containing values for light and dark modes.
 /// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleColorTokens``.
-/// Thus the "real" elevation color semantic tokens are declared in ``ElevationSemanticTokens`` protocol and defined inside ``OUDSTheme`` (to be overridable then by subthemes).
+/// Thus the "real" elevation color semantic tokens are declared in ``ElevationSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).
 /// These tokens are updated by the *tokenator*.
 /// Then they are gathered and wrapped so as to be used easily thanks to this ``ElevationMultipleSemanticTokens`` which must be updated manually.
 ///

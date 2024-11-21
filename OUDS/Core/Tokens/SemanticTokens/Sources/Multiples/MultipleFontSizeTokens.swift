@@ -16,7 +16,7 @@ import OUDSTokensRaw
 
 /// Kind of semantic tokens which will wrap a combination of ``TypographyFontSizeSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-/// If a font size exists with its value depending to the size class, it must be packed in such ``MultipleFontSizeTokens``
+/// If a font size exists with its value depending to the size class, it must be packed in such ``MultipleFontSizeTokens``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a font size semantic token fontSizeBodySmall,

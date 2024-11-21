@@ -17,7 +17,7 @@ import SwiftUICore
 /// Kind of semantic tokens which will wrap a combination of ``SizeSemanticToken`` depending to viewports / size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-/// If a size token exists with its value depending to the size class, it must be packed in such ``MultipleSizeTokens`
+/// If a size token exists with its value depending to the size class, it must be packed in such ``MultipleSizeTokens``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a size semantic token sizeIconWithHeadingXLargeTall,

@@ -22,8 +22,8 @@
 ///
 /// In fact the ``MultipleSpaceTokens`` class will help users (i.e. developers) to handle one semantic token for spacing containing values for compact (mobile) or regular (tablet) size classes.
 /// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleSpaceTokens``.
-/// Thus the "real" color semantic tokens are declared in ``SpaceSemanticTokens`` protocol and defined inside ``OUDSTheme``(to be overridable then by subthemes).
-/// These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``SpaceMultipleSemanticTokens` which must be updated manually.
+/// Thus the "real" color semantic tokens are declared in ``SpaceSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).
+/// These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``SpaceMultipleSemanticTokens`` which must be updated manually.
 ///
 /// In few words:
 /// ```swift
