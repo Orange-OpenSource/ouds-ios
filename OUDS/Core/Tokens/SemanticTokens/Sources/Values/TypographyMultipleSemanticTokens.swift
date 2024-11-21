@@ -1,0 +1,113 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+// 
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+// 
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+//
+
+// [File not generated with the tokenator]
+// WARNING: Not synchronized with the Figjam / Figma by developers team
+// Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
+
+// swiftlint:disable missing_docs
+// swiftlint:disable line_length
+
+/// This is a group of semantic tokens for **typography** but using `MultipleFontLetterSpacingTokens` for *letter spacings*,
+/// `MultipleFontLineHeightTokens` for *line heights* and `MultipleFontSizeTokens` for *font sizes*.
+///
+/// In fact these `MultipleFontLetterSpacingTokens`, `MultipleFontLineHeightTokens` and  `MultipleFontSizeTokens` classes will help users
+/// (i.e. developers) to handle one semantic token for typography things depending to size class (wether it could be compact / mobile or regular / tablet).
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide
+/// such `MultipleFontLetterSpacingTokens`, `MultipleFontLineHeightTokens` and `MultipleFontSizeTokens` tokens.
+/// Thus the "real" letter spacing, line height and font size tokens are declared in `TypographySemanticTokens` protocol and defined inside `OUDSTheme`(to be overridable then by subthemes).
+/// These tokens are updated by the *tokenator*.
+/// Then they are gathered and wrapped so as to be used easily thanks to this `TypographyMultipleSemanticTokens` which must be updated manually.
+///
+/// However the composite tokens (here the ones gathering each type of semantic token here) are defined in `TypographyCompositeSemanticTokens` because the *tokenator*
+/// is not able to generate them yet, and they must be defined elsewhere to not be deleted.
+/// 
+/// In few words:
+///
+///         // Some font size raw tokens, defined by the tokenator (in TypographyRawTokens+Values.swift)
+///         public static let fontSize850: TypographyFontSizeRawToken = 40
+///         public static let fontSize1450: TypographyFontSizeRawToken = 64
+///
+///         // The font size semantic tokens using them
+///         // declared (in TypographyMultipleSemanticTokens.swift) and defined (in OUDSTheme+TypographySemanticTokens.swift) by the tokenator
+///         var fontSizeDisplayLargeMobile: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize850 }
+///         var fontSizeDisplayLargeTablet: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize1450 }
+///
+///         // The 'higher level' typography semantic tokens wrapping them and exposed to users
+///         // declared (in this TypographyMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+TypographyMultipleSemanticTokens.swift)
+///         var fontSizeDisplayLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeDisplayLargeMobile, regular: fontSizeDisplayLargeTablet) }
+///
+///         // Thus users can in their components use elevationColorNone as defined in their design system
+///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
+public protocol TypographyMultipleSemanticTokens {
+
+    // MARK: - Semantic token - Typography - Font - Size
+
+    var fontSizeDisplayLarge: MultipleFontSizeTokens { get }
+    var fontSizeDisplayMedium: MultipleFontSizeTokens { get }
+    var fontSizeDisplaySmall: MultipleFontSizeTokens { get }
+    var fontSizeHeadingXLarge: MultipleFontSizeTokens { get }
+    var fontSizeHeadingLarge: MultipleFontSizeTokens { get }
+    var fontSizeHeadingMedium: MultipleFontSizeTokens { get }
+    var fontSizeHeadingSmall: MultipleFontSizeTokens { get }
+    var fontSizeBodyLarge: MultipleFontSizeTokens { get }
+    var fontSizeBodyMedium: MultipleFontSizeTokens { get }
+    var fontSizeBodySmall: MultipleFontSizeTokens { get }
+    var fontSizeLabelXLarge: MultipleFontSizeTokens { get }
+    var fontSizeLabelLarge: MultipleFontSizeTokens { get }
+    var fontSizeLabelMedium: MultipleFontSizeTokens { get }
+    var fontSizeLabelSmall: MultipleFontSizeTokens { get }
+    var fontSizeCodeMedium: MultipleFontSizeTokens { get }
+    var fontSizeCodeSmall: MultipleFontSizeTokens { get }
+
+    // MARK: - Semantic token - Typography - Font - Line height
+
+    var fontLineHeightDisplayLarge: MultipleFontLineHeightTokens { get }
+    var fontLineHeightDisplayMedium: MultipleFontLineHeightTokens { get }
+    var fontLineHeightDisplaySmall: MultipleFontLineHeightTokens { get }
+    var fontLineHeightHeadingXLarge: MultipleFontLineHeightTokens { get }
+    var fontLineHeightHeadingLarge: MultipleFontLineHeightTokens { get }
+    var fontLineHeightHeadingMedium: MultipleFontLineHeightTokens { get }
+    var fontLineHeightHeadingSmall: MultipleFontLineHeightTokens { get }
+    var fontLineHeightBodyLarge: MultipleFontLineHeightTokens { get }
+    var fontLineHeightBodyMedium: MultipleFontLineHeightTokens { get }
+    var fontLineHeightBodySmall: MultipleFontLineHeightTokens { get }
+    var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens { get }
+    var fontLineHeightLabelLarge: MultipleFontLineHeightTokens { get }
+    var fontLineHeightLabelMedium: MultipleFontLineHeightTokens { get }
+    var fontLineHeightLabelSmall: MultipleFontLineHeightTokens { get }
+    var fontLineHeightCodeMedium: MultipleFontLineHeightTokens { get }
+    var fontLineHeightCodeSmall: MultipleFontLineHeightTokens { get }
+
+    // MARK: - Semantic token - Typography - Font - Letter spacing
+
+    var fontLetterSpacingDisplayLarge: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingDisplaySmall: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingHeadingXLarge: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingHeadingLarge: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingHeadingMedium: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingHeadingSmall: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingBodyLarge: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingBodyMedium: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingBodySmall: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingLabelXLarge: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingLabelLarge: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingLabelMedium: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingLabelSmall: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingCodeMedium: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingCodeSmall: MultipleFontLetterSpacingTokens { get }
+}
+
+// swiftlint:enable missing_docs
+// swiftlint:enable line_length
