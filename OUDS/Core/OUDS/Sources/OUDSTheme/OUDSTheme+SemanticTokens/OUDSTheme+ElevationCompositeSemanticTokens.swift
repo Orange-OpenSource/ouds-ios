@@ -16,7 +16,7 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // [File not generated with the tokenator]
-// WARNING: Not synchronized with the Figjam / Figma by developers team
+// WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 /// Defines basic values common to all themes for `ElevationCompositeSemanticTokens`.
