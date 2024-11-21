@@ -43,7 +43,6 @@ struct ShowcaseVariantElement: View {
                         .padding(.trailing, theme.spaceFixedMedium)
                         .accessibilityHidden(true)
                 }
-                // .padding(.horizontal, theme.spaceFixedShort)
             }
         }
     }
