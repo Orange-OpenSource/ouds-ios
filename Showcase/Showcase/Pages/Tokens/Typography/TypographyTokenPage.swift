@@ -61,7 +61,7 @@ struct TypographyTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
-            Section { ShowcaseTokenCode(code: "colorBgStatusPositiveMutedOnBgEmphasized") }
+            Section { ShowcaseTokenCode(code: NamedTypography.labelDefaultXLarge.rawValue) }
 
             Spacer()
 

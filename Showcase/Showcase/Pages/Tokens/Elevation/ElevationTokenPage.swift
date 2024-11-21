@@ -52,7 +52,7 @@ struct ElevationTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             Section {
-                ShowcaseTokenCode(code: "colorBgStatusPositiveMutedOnBgEmphasized")
+                ShowcaseTokenCode(code: NamedElevation.elevationStickyNavigationScrolled.rawValue)
             }
 
             Spacer()

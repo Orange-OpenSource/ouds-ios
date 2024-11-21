@@ -36,6 +36,8 @@ struct ShowcaseTokenCode: View {
         }
     }
 
+    // MARK: Private helpers
+
     private func toggleButtonSection() -> some View {
         HStack {
             Button(action: {
@@ -45,7 +47,7 @@ struct ShowcaseTokenCode: View {
                     Text("app_tokens_code_title_label")
                         .typeBodyStrongLarge(theme)
                         .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
-                    Image(isCodeVisible ? "form-chevron-down" : "form-chevron-up")
+                    Image(isCodeVisible ? "ic_chevron-down" : "ic_chevron-up")
                         .resizable()
                         .renderingMode(.template)
                         .foregroundColor(theme.colorBgBrandPrimary.color(for: colorScheme))
@@ -98,16 +100,6 @@ struct ShowcaseTokenCode: View {
                             width: theme.borderWidthThin,
                             radius: theme.borderRadiusDefault,
                             color: theme.colorBorderDefault)
-        )
-    }
-}
-
-// MARK: - Previews
-
-struct ShowcaseTokenCode_Previews: PreviewProvider {
-    static var previews: some View {
-        ShowcaseTokenCode(
-            code: "sizeIconWithHeadingXlargeSizeShortMobile"
         )
     }
 }
