@@ -20,8 +20,6 @@ struct ShowcaseTokenCode: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Stored Properties
-
     @State private var isCodeVisible = true
     var code: String
 
