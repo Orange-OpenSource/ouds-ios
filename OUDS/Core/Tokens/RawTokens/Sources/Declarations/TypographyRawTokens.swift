@@ -22,6 +22,6 @@
 public enum TypographyRawTokens {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
-    // Note: So as to help the Figma-JSON-to-Swift parser the values have been added in the Values folder
+    // Note: So as to help the tokenator, the values have been added in the Values folder
     // This trick helps also to write documentation for these tokens as the tokenator cannot generate documentation
 }
