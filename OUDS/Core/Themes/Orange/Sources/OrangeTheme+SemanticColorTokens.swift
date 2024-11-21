@@ -21,7 +21,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 
-/// Overrides some color tokens using values available in `OrangeBrandColorRawTokens`
+/// Overrides some color tokens using values available in ``OrangeBrandColorRawTokens``
 extension OrangeTheme {
 
     // MARK: Semantic token - Colors - Background

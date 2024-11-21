@@ -13,5 +13,5 @@
 
 import Foundation
 
-/// Type aliases precising `CGFloat` values are used (because used in _SwiftUI_ API) for each **elevation raw token**, to keep grammar clean and clear with design system grammar.
+/// Type aliases precising ``CGFloat` values are used (because used in _SwiftUI_ API) for each **elevation raw token**, to keep grammar clean and clear with design system grammar.
 public typealias ElevationRawToken = CGFloat

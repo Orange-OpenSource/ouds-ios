@@ -18,14 +18,14 @@
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 /// This is a group of semantic tokens for **elevations**, but only **composite tokens**.
-/// There are splitted and not declared in `ElevationSemanticTokens` as the *tokenator* tool parsing *Figma* JSON to Swift code is not able to manage them.
+/// There are splitted and not declared in ``ElevationSemanticTokens`` as the *tokenator* tool parsing *Figma* JSON to Swift code is not able to manage them.
 /// Thus we need to declare them in another file to prevent them to be erased.
 /// 
 /// It declares in fact box shadows effects.
 ///
-/// This protocol makes themes able to provide and override `ElevationCompositeSemanticToken`.
-/// `ElevationCompositeSemanticToken` refers to `MultipleElevationTokens`, which contains for light and dark color schemes `ElevationCompositeRawToken`.
-/// This `ElevationCompositeRawToken` is not managed by tokenator yet as it is composed by three properties.
+/// This protocol makes themes able to provide and override ``ElevationCompositeSemanticToken``.
+/// ``ElevationCompositeSemanticToken`` refers to ``MultipleElevationTokens`, which contains for light and dark color schemes ``ElevationCompositeRawToken`.
+/// This ``ElevationCompositeRawToken` is not managed by tokenator yet as it is composed by three properties.
 public protocol ElevationCompositeSemanticTokens {
 
     var elevationNone: ElevationCompositeSemanticToken { get }

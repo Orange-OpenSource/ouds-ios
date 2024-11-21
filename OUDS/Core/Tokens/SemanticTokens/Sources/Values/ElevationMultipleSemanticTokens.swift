@@ -18,16 +18,16 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **elevation colors** but using `MultipleColorTokens`, in order to define box shadow effects.
+/// This is a group of semantic tokens for **elevation colors** but using ``MultipleColorTokens``, in order to define box shadow effects.
 ///
-/// In fact the `MultipleColorTokens` class will help users (i.e. developers) to handle one semantic token for color containing values for light and dark modes.
-/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such `MultipleColorTokens`.
-/// Thus the "real" elevation color semantic tokens are declared in `ElevationSemanticTokens` protocol and defined inside `OUDSTheme`(to be overridable then by subthemes).
+/// In fact the ``MultipleColorTokens`` class will help users (i.e. developers) to handle one semantic token for color containing values for light and dark modes.
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleColorTokens``.
+/// Thus the "real" elevation color semantic tokens are declared in ``ElevationSemanticTokens`` protocol and defined inside ``OUDSTheme`` (to be overridable then by subthemes).
 /// These tokens are updated by the *tokenator*.
-/// Then they are gathered and wrapped so as to be used easily thanks to this `ElevationMultipleSemanticTokens` which must be updated manually.
+/// Then they are gathered and wrapped so as to be used easily thanks to this ``ElevationMultipleSemanticTokens`` which must be updated manually.
 ///
 /// In few words:
-///
+/// ```swift
 ///         // Some color raw tokens, defined by the tokenator (in ColorRawTokens+Values.swift)
 ///         public static let colorDecorativeAmber100: ColorRawToken = "#FFF0CC"
 ///         public static let colorDecorativeAmber200: ColorRawToken = "#FFE199"
@@ -43,6 +43,7 @@
 ///
 ///         // Thus users can in their components use elevationColorNone as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
+/// ```
 ///
 public protocol ElevationMultipleSemanticTokens {
 

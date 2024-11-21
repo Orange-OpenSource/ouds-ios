@@ -18,15 +18,15 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **spacings** but using `MultipleSpaceTokens`.
+/// This is a group of semantic tokens for **spacings** but using ``MultipleSpaceTokens``.
 ///
-/// In fact the `MultipleSpaceTokens` class will help users (i.e. developers) to handle one semantic token for spacing containing values for compact (mobile) or regular (tablet) size classes.
-/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such `MultipleSpaceTokens`.
-/// Thus the "real" color semantic tokens are declared in `SpaceSemanticTokens` protocol and defined inside `OUDSTheme`(to be overridable then by subthemes).
-/// These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this `SpaceMultipleSemanticTokens` which must be updated manually.
+/// In fact the ``MultipleSpaceTokens`` class will help users (i.e. developers) to handle one semantic token for spacing containing values for compact (mobile) or regular (tablet) size classes.
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleSpaceTokens``.
+/// Thus the "real" color semantic tokens are declared in ``SpaceSemanticTokens`` protocol and defined inside ``OUDSTheme``(to be overridable then by subthemes).
+/// These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``SpaceMultipleSemanticTokens` which must be updated manually.
 ///
 /// In few words:
-///
+/// ```swift
 ///         // Some spacing raw tokens, defined by the tokenator (in DimensionRawTokens+Values.swift)
 ///         public static let dimension0: DimensionRawToken = 0
 ///         public static let dimension25: DimensionRawToken = 2
@@ -42,7 +42,8 @@
 ///
 ///         // Thus users can in their components use spaceScaledNone as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
-///
+/// ```
+/// 
 public protocol SpaceMultipleSemanticTokens {
 
     // MARK: Semantic token - Spacing - Scaled

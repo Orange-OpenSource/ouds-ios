@@ -19,10 +19,10 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-/// Defines basic values common to all themes for `ElevationCompositeSemanticTokens`.
-/// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// Defines basic values common to all themes for ``ElevationCompositeSemanticTokens``.
+/// These values can be overriden inside ``OUDSTheme`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// The aim of this extensions is to make relationships between all semantic tokens for elevations and associated raw tokens.
-/// `OUDSTheme` can be seen as a kind of "abstract class" in _object oriented paradigm_.
+/// `OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_.
 /// The *tokenator* is not able to provide code for such "composite" objects because the *Figma* tool itself cannot manage that and does not output anything in its JSON to process/
 /// It defines in fact box shadows effects.
 extension OUDSTheme: ElevationCompositeSemanticTokens {

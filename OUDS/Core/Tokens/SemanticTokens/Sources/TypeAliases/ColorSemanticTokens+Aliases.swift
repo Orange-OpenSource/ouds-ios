@@ -13,5 +13,5 @@
 
 import OUDSTokensRaw
 
-/// Basically a color semantic  token is a `ColorRawToken`, to keep grammar clean and clear with design system grammar.
+/// Basically a color semantic  token is a ``ColorRawToken`, to keep grammar clean and clear with design system grammar.
 public typealias ColorSemanticToken = ColorRawToken

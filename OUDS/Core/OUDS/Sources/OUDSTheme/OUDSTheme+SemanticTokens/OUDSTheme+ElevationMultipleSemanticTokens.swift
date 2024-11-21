@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 /// Defines wrapper objects for eelvation color semantic  tokens.
-/// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// These values can be overriden inside ``OUDSTheme`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: ElevationMultipleSemanticTokens {
 
     @objc open var elevationColorDrag: MultipleColorTokens { MultipleColorTokens(ColorRawTokens.colorTransparentBlack500) }

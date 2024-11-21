@@ -15,11 +15,12 @@ import OUDSFoundations
 import OUDSTokensRaw
 import SwiftUI
 
-/// Semantic tokens which will wrap a combination of `ElevationCompositeRawToken` depending to color scheme (i.e. light mode or dark mode)
+/// Semantic tokens which will wrap a combination of ``ElevationCompositeRawToken`` depending to color scheme (i.e. light mode or dark mode)
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If an elevation token exists with its value depending to the color scheme, it must be packed in such `MultipleElevationTokens`
+/// If an elevation token exists with its value depending to the color scheme, it must be packed in such ``MultipleElevationTokens`
 ///
+/// ```swift
 ///         // Assuming in Figma with have a elevation semantic token elevationNone,
 ///         // with values depending to color scheme. These values are defined as elevation raw tokens.
 ///         let elevationBottom_0 = ElevationCompositeRawToken(x: elevationX0, y: elevationY0, blur: elevationBlur0, color: ColorRawTokens.colorTransparentBlack0)
@@ -36,6 +37,7 @@ import SwiftUI
 ///
 ///         // The theme exposes both generated elevation semantic tokens and "crafted" higher level elevation semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
+/// ```
 ///
 /// The case of this `MultipleElevationTokens` is quite particular because in fact it contains `ElevationCompositeRawToken` (i.e. raw tokens) instead of semantic tokens.
 /// In fact only the *color* of the elevation effect vary depending to the color scheme,

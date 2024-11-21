@@ -18,16 +18,16 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **size** but using `MultipleSizeTokens`
+/// This is a group of semantic tokens for **size** but using ``MultipleSizeTokens``
 ///
-/// In fact the `MultipleSizeTokens` class will help users (i.e. developers) to handle one semantic token for size containing values for compact and regular viewports / size classes.
-/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such `MultipleSizeTokens`.
-/// A major part the "real" size semantic tokens are declared in `SizeSemanticTokens` protocol and defined inside `OUDSTheme`(to be overridable then by subthemes), and othershere.
+/// In fact the ``MultipleSizeTokens` class will help users (i.e. developers) to handle one semantic token for size containing values for compact and regular viewports / size classes.
+/// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide such ``MultipleSizeTokens``.
+/// A major part the "real" size semantic tokens are declared in ``SizeSemanticTokens`` protocol and defined inside ``OUDSTheme`` (to be overridable then by subthemes), and othershere.
 /// These tokens are updated by the *tokenator*.
-/// Then they are gathered and wrapped so as to be used easily thanks to this `MultipleSizeTokens` which must be updated manually.
+/// Then they are gathered and wrapped so as to be used easily thanks to this ``MultipleSizeTokens`` which must be updated manually.
 ///
 /// In few words:
-///
+/// ```swift
 ///         // Some sizing raw tokens, defined by the tokenator (in DimensionRawTokens+Values.swift)
 ///         public static let dimension550: DimensionRawToken = 44
 ///         public static let dimension650: DimensionRawToken = 52
@@ -43,7 +43,8 @@
 ///
 ///         // Thus users can in their components use sizeIconWithHeadingXLargeShort as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
-///
+/// ```
+/// 
 public protocol SizeMultipleSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography

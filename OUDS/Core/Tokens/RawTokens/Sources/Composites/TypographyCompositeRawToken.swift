@@ -13,7 +13,7 @@
 
 import OUDSFoundations
 
-/// An operator to make for example comparisons between `TypographyCompositeRawToken`
+/// An operator to make for example comparisons between ``TypographyCompositeRawToken``
 infix operator <|
 
 /// In the *Figma* global design system, composite tokens are defined for typography-related things.

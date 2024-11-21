@@ -14,11 +14,12 @@
 import OUDSTokensRaw
 import SwiftUICore
 
-/// Kind of semantic tokens which will wrap a combination of `TypographyCompositeRawToken` depending to size classes.
+/// Kind of semantic tokens which will wrap a combination of ``TypographyCompositeRawToken`` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a typography token exists with its value depending to the size class, it must be packed in such `MultipleTypographyTokens`
+/// If a typography token exists with its value depending to the size class, it must be packed in such ``MultipleTypographyTokens``
 ///
+/// ```swift
 ///         // Assuming in Figma with have a typography semantic token typeDisplayLarge,
 ///         // with values depending to size class. These values are defined as typography composite raw tokens.
 ///         let typeBold850 = TypographyCompositeRawToken(size: fontSize850, lineHeight: fontLineHeight1050, weight: fontWeight700, letterSpacing: fontLetterSpacing850)
@@ -34,9 +35,11 @@ import SwiftUICore
 ///
 ///         // The theme exposes both generated elevation semantic tokens and "crafted" higher level elevation semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
+/// ```
 ///
-/// The case of this `MultipleTypographyTokens` is quite particular because in fact it contains `TypographyCompositeRawToken` (i.e. raw tokens) instead of semantic tokens.
+/// The case of this ``MultipleTypographyTokens`` is quite particular because in fact it contains ``TypographyCompositeRawToken`` (i.e. raw tokens) instead of semantic tokens.
 /// In fact there is not "typography composite semantic tokens" defined in the *Figma* kit.
+/// 
 public final class MultipleTypographyTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
