@@ -13,7 +13,10 @@
 
 import Foundation
 
-/// In the global design system, composite tokens are defined for elevation effects.
+/// In the *Figma* global design system, composite tokens are defined for elevation effects.
+/// Composite tokens are tokens defined in *Figma* by other tokens.
+/// Here an *elevation* is caracterized by *x and Y offsets*, a *radius* for the shadow and a *color* to apply on that shadow.
+/// All these elements are *raw tokens*, and together define a *composite raw token* for *elevation* effect.
 /// It is defined as a `final class` and `NSObject` so as to be shared through `@objc` with extensions and protocols within modules.
 public final class ElevationCompositeRawToken: NSObject, Sendable { // NSObject for @objc compatibility
 
