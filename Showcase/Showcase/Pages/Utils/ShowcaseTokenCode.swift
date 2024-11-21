@@ -62,7 +62,7 @@ struct ShowcaseTokenCode: View {
     private func codeTokenDisplayCodeSection() -> some View {
         HStack(alignment: .firstTextBaseline, spacing: theme.spacePaddingBlockMedium) {
             Text(code)
-                .font(.system(size: 16, weight: .regular, design: .monospaced))
+                .font(.system(.body, design: .monospaced))
                 .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
                 .padding(.vertical, theme.spacePaddingInlineShort)
 
