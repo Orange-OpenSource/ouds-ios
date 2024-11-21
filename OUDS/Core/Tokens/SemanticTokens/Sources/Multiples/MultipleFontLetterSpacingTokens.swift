@@ -29,7 +29,9 @@ import OUDSTokensRaw
 ///         // Then the develoment team declares an "higher" level font letter spacing semantic token for fontLetterSpacingDisplayMedium
 ///         // inside TypographyMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+TypographyMultipleSemanticTokens extension
-///         var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(compact: fontLetterSpacingDisplayMediumMobile, regular: fontLetterSpacingDisplayMediumTablet) }
+///         var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingTokens {
+///             MultipleFontLetterSpacingTokens(compact: fontLetterSpacingDisplayMediumMobile, regular: fontLetterSpacingDisplayMediumTablet)
+///         }
 ///
 ///         // If the same value is used whatever the size class is
 ///         var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(fontLetterSpacingDisplayMediumMobile) }

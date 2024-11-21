@@ -29,7 +29,9 @@ import OUDSTokensRaw
 ///         // Then the develoment team declares an "higher" level line height semantic token for fontLineHeightLabelXLarge
 ///         // inside TypographyMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+TypographyMultipleSemanticTokens extension
-///         var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightLabelXLargeMobile, regular: fontLineHeightLabelXLargeTablet) }
+///         var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens {
+///             MultipleFontLineHeightTokens(compact: fontLineHeightLabelXLargeMobile, regular: fontLineHeightLabelXLargeTablet)
+///         }
 ///
 ///         // If the same value is used whatever the size class is
 ///         var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(fontLineHeightLabelXLargeMobile) }

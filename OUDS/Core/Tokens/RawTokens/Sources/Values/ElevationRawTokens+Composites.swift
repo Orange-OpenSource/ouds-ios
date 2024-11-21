@@ -17,7 +17,9 @@
 
 // swiftlint:disable missing_docs
 
-/// Extracted in a separated file because *Figma* is not able to manage *composite tokens*, even if the design team tinkered them in this tool. So *Figma* cannot output such *composite tokens* to its JSON file, and then *tokenator* cannot process things which do not exist.
+/// Extracted in a separated file because *Figma* is not able to manage *composite tokens*,
+/// even if the design team tinkered them in this tool.
+/// So *Figma* cannot output such *composite tokens* to its JSON file, and then *tokenator* cannot process things which do not exist.
 extension ElevationRawTokens {
 
     // MARK: Primitive token - Elevation - Box Shadow
