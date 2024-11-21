@@ -27,7 +27,6 @@ struct SpaceTokenPage: View {
 
     var body: some View {
         Group {
-            // Show token code
             Section { ShowcaseTokenCode(code: NamedSpace.PaddingInlineWithIcon.spacePaddingInlineWithIconShortest.rawValue) }
             // Basic Space Tokens
             Section { ScaledSpacesCategory() } header: {
