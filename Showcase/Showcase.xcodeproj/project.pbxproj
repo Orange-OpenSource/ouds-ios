@@ -65,6 +65,14 @@
 		07A8E9232CE63607005B19E6 /* NameSpace+GapInlineWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8E9222CE63606005B19E6 /* NameSpace+GapInlineWithIcon.swift */; };
 		07A8E92B2CE7A51D005B19E6 /* NameSpace+GapInlineWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8E92A2CE7A51C005B19E6 /* NameSpace+GapInlineWithArrow.swift */; };
 		07A8E92D2CE7AB82005B19E6 /* NameSpace+GapStackWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8E92C2CE7AB82005B19E6 /* NameSpace+GapStackWithIcon.swift */; };
+		07CAE7682CEE20A600D6C5D1 /* SpaceTokenCommonIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71322CEB743300B93FC3 /* SpaceTokenCommonIllustration.swift */; };
+		07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C713A2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift */; };
+		07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71362CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift */; };
+		07CAE76B2CEE20B200D6C5D1 /* SpaceBasicTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71382CECC50F00B93FC3 /* SpaceBasicTokenIllustrations.swift */; };
+		07CAE76C2CEE210B00D6C5D1 /* ShowcaseTokkenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71342CEB9BD200B93FC3 /* ShowcaseTokkenIllustrationBackground.swift */; };
+		07CAE76D2CEE26AF00D6C5D1 /* NameSpace+GapInlineWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8E9222CE63606005B19E6 /* NameSpace+GapInlineWithIcon.swift */; };
+		07CAE76E2CEE26C000D6C5D1 /* NameSpace+GapInlineWithArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8E92A2CE7A51C005B19E6 /* NameSpace+GapInlineWithArrow.swift */; };
+		07CAE76F2CEE26D200D6C5D1 /* NameSpace+GapStackWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A8E92C2CE7AB82005B19E6 /* NameSpace+GapStackWithIcon.swift */; };
 		07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		07CF42722CA31AC3000BD03E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF42712CA31AC3000BD03E /* Assets.xcassets */; };
 		07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
@@ -992,8 +1000,10 @@
 				6DED17EC2CD23D3A00584BC9 /* ShowcaseElement.swift in Sources */,
 				6DB260E62CD0F07D0091F72E /* NamedTypography+Illustration.swift in Sources */,
 				6DB260DE2CD0F0520091F72E /* NameSpace+PaddingInlineWithIcon.swift in Sources */,
+				07CAE76C2CEE210B00D6C5D1 /* ShowcaseTokkenIllustrationBackground.swift in Sources */,
 				6DB260DF2CD0F0520091F72E /* NamedSpace+Fixed.swift in Sources */,
 				6DB260E02CD0F0520091F72E /* NameSpace+PaddingInline.swift in Sources */,
+				07CAE76D2CEE26AF00D6C5D1 /* NameSpace+GapInlineWithIcon.swift in Sources */,
 				6DB260E12CD0F0520091F72E /* NameSpace+PaddingInset.swift in Sources */,
 				6DB260E22CD0F0520091F72E /* NameSpace+PaddingStack.swift in Sources */,
 				6DB260E32CD0F0520091F72E /* NameSpace+GapInline.swift in Sources */,
@@ -1005,17 +1015,23 @@
 				6DB260DB2CD0EFD90091F72E /* NamedSize+IconWithTypography.swift in Sources */,
 				6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */,
 				6DB260D92CD0E65F0091F72E /* NamedTypography.swift in Sources */,
+				07CAE76E2CEE26C000D6C5D1 /* NameSpace+GapInlineWithArrow.swift in Sources */,
 				6D17A2352CCF8DC300C00512 /* NamedColor.swift in Sources */,
 				6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */,
 				6D17A22D2CCBF12B00C00512 /* NamedColor+Always.swift in Sources */,
+				07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */,
+				07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */,
+				07CAE76B2CEE20B200D6C5D1 /* SpaceBasicTokenIllustrations.swift in Sources */,
 				6D17A22E2CCBF12B00C00512 /* NamedColor+Background.swift in Sources */,
 				6D17A22F2CCBF12B00C00512 /* NamedColor+Border.swift in Sources */,
 				6D17A2302CCBF12B00C00512 /* NamedColor+Chart.swift in Sources */,
 				6D17A2312CCBF12B00C00512 /* NamedColor+Content.swift in Sources */,
 				6D17A2332CCBF12B00C00512 /* NamedColor+Decorative.swift in Sources */,
 				6D17A2342CCBF12B00C00512 /* NamedColor+Elevation.swift in Sources */,
+				07CAE76F2CEE26D200D6C5D1 /* NameSpace+GapStackWithIcon.swift in Sources */,
 				6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */,
 				6D17A2182CCBE50700C00512 /* OUDSTypographyUITests.swift in Sources */,
+				07CAE7682CEE20A600D6C5D1 /* SpaceTokenCommonIllustration.swift in Sources */,
 				6D17A21A2CCBE74C00C00512 /* OUDSTokensElevationUITests.swift in Sources */,
 				6DED17E92CD1143500584BC9 /* OUDSTokensSizeUITests.swift in Sources */,
 				6D17A22A2CCBEF6700C00512 /* OUDSTokensColorUITests.swift in Sources */,

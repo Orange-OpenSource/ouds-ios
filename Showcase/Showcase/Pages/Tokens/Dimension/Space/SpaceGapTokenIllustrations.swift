@@ -34,13 +34,36 @@ struct GapInlineIllustration: View {
             .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.GapInline.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(for: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .vertical(position: .center))
-                }
+    struct Illustration: View {
+
+        // MARK: Environment properties
+
+        @Environment(\.theme) private var theme
+
+        // MARK: Stored properties
+
+        let namedSpaceToken: NamedSpace.GapInline
+
+        // MARK: Initializer
+
+        init(for namedSpaceToken: NamedSpace.GapInline) {
+            self.namedSpaceToken = namedSpaceToken
+        }
+
+        // MARK: Body
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .horizontal(position: .center))
             }
         }
     }
@@ -65,13 +88,36 @@ struct GapInlineWithIconIllustration: View {
             .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.GapInlineWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(for: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
-                }
+    struct Illustration: View {
+
+        // MARK: Environment properties
+
+        @Environment(\.theme) private var theme
+
+        // MARK: Stored properties
+
+        let namedSpaceToken: NamedSpace.GapInlineWithIcon
+
+        // MARK: Initializer
+
+        init(for namedSpaceToken: NamedSpace.GapInlineWithIcon) {
+            self.namedSpaceToken = namedSpaceToken
+        }
+
+        // MARK: Body
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
             }
         }
     }
@@ -96,13 +142,36 @@ struct GapInlineWithArrowIllustration: View {
             .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.GapInlineWithArrow.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(for: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
-                }
+    struct Illustration: View {
+
+        // MARK: Environment properties
+
+        @Environment(\.theme) private var theme
+
+        // MARK: Stored properties
+
+        let namedSpaceToken: NamedSpace.GapInlineWithArrow
+
+        // MARK: Initializer
+
+        init(for namedSpaceToken: NamedSpace.GapInlineWithArrow) {
+            self.namedSpaceToken = namedSpaceToken
+        }
+
+        // MARK: Body
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
             }
         }
     }
@@ -128,13 +197,36 @@ struct GapStackIllustration: View {
             .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.GapStack.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(for: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .vertical(position: .center))
-                }
+    struct Illustration: View {
+
+        // MARK: Environment properties
+
+        @Environment(\.theme) private var theme
+
+        // MARK: Stored properties
+
+        let namedSpaceToken: NamedSpace.GapStack
+
+        // MARK: Initializer
+
+        init(for namedSpaceToken: NamedSpace.GapStack) {
+            self.namedSpaceToken = namedSpaceToken
+        }
+
+        // MARK: Body
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .vertical(position: .center))
             }
         }
     }
@@ -159,13 +251,36 @@ struct GapStackWithIconIllustration: View {
             .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.GapStackWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(for: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .vertical(position: .bottom), iconAsset: .icon)
-                }
+    struct Illustration: View {
+
+        // MARK: Environment properties
+
+        @Environment(\.theme) private var theme
+
+        // MARK: Stored properties
+
+        let namedSpaceToken: NamedSpace.GapStackWithIcon
+
+        // MARK: Initializer
+
+        init(for namedSpaceToken: NamedSpace.GapStackWithIcon) {
+            self.namedSpaceToken = namedSpaceToken
+        }
+
+        // MARK: Body
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .vertical(position: .bottom), iconAsset: .icon)
             }
         }
     }

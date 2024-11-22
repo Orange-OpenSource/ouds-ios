@@ -16,7 +16,7 @@ import SwiftUI
 
 // MARK: Fixed Spaces
 
-struct FixedSapcesIllustration: View {
+struct FixedSapcesIllustrations: View {
 
     // MARK: Environment properties
 
@@ -33,19 +33,68 @@ struct FixedSapcesIllustration: View {
                 .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.Fixed.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(for: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .center))
-                }
+    struct Illustration: View {
+
+        // MARK: Environment properties
+
+        @Environment(\.theme) private var theme
+        @Environment(\.colorScheme) private var colorScheme
+        @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+        @Environment(\.verticalSizeClass) private var verticalSizeClass
+
+        // MARK: Stored properties
+
+        let namedSpaceToken: NamedSpace.Fixed
+
+        // MARK: Initializer
+
+        init(for namedSpaceToken: NamedSpace.Fixed) {
+            self.namedSpaceToken = namedSpaceToken
+        }
+
+        // MARK: Body
+
+        public var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .horizontal(position: .center))
             }
         }
     }
 }
 
 // MARK: Scaled Spaces
+
+struct ScaledSpacesIllustrations: View {
+
+    // MARK: Environment properties
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
+
+    // MARK: Body
+
+    var body:  some View {
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 4, leading: 8, bottom: 0, trailing: 0))
+                .padding(.bottom, theme.spaceFixedMedium)
+
+            ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
+                ScaledSpacesIllustration(for: namedSpaceToken)
+            }
+        }
+    }
+}
 
 struct ScaledSpacesIllustration: View {
 
@@ -56,27 +105,31 @@ struct ScaledSpacesIllustration: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
 
+    // MARK: Stored property
+
+    let namedSpaceToken: NamedSpace.Scaled
+
+    // MARK: Initializer
+
+    init(for namedSpaceToken: NamedSpace.Scaled) {
+        self.namedSpaceToken = namedSpaceToken
+    }
+
     // MARK: Body
-    var body:  some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 4, leading: 8, bottom: 0, trailing: 0))
-                .padding(.bottom, theme.spaceFixedMedium)
 
-            ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
-                let verticalDimensionRawToken = token.dimension(for: verticalSizeClass ?? .regular)
-                let value = String(format: "horizontal %@ (%.0f pt)\nvertical %@ (%.0f pt)",
-                                   horizontalSizeClass == .regular ? "regular" : "compact",
-                                   horizontalDimensionRawToken,
-                                   verticalSizeClass == .regular ? "regular" : "compact",
-                                   verticalDimensionRawToken)
+    var body: some View {
+        let token = namedSpaceToken.token(from: theme)
+        let name = namedSpaceToken.rawValue
+        let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
+        let verticalDimensionRawToken = token.dimension(for: verticalSizeClass ?? .regular)
+        let value = String(format: "horizontal %@ (%.0f pt)\nvertical %@ (%.0f pt)",
+                           horizontalSizeClass == .regular ? "regular" : "compact",
+                           horizontalDimensionRawToken,
+                           verticalSizeClass == .regular ? "regular" : "compact",
+                           verticalDimensionRawToken)
 
-                return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceScaledIllustration(horizontalDimension: horizontalDimensionRawToken, verticalDimension: verticalDimensionRawToken)
-                }
-            }
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            SpaceScaledIllustration(horizontalDimension: horizontalDimensionRawToken, verticalDimension: verticalDimensionRawToken)
         }
     }
 }

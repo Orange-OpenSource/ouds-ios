@@ -21,7 +21,6 @@ struct PaddingInlineIllustration: View {
     // MARK: Environment properties
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
@@ -31,13 +30,22 @@ struct PaddingInlineIllustration: View {
                 .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.PaddingInline.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(namedSpaceToken: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading))
-                }
+    struct Illustration: View {
+        @Environment(\.theme) private var theme
+        let namedSpaceToken: NamedSpace.PaddingInline
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading))
             }
         }
     }
@@ -58,13 +66,22 @@ struct PaddingInlineWithIconIllustration: View {
                 .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.PaddingInlineWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(namedSpaceToken: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
-                }
+    struct Illustration: View {
+        @Environment(\.theme) private var theme
+        let namedSpaceToken: NamedSpace.PaddingInlineWithIcon
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
             }
         }
     }
@@ -85,13 +102,22 @@ struct PaddingInlineWithArrowIllustration: View {
                 .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.PaddingInlineWithArrow.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(namedSpaceToken: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
-                }
+    struct Illustration: View {
+        @Environment(\.theme) private var theme
+        let namedSpaceToken: NamedSpace.PaddingInlineWithArrow
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
             }
         }
     }
@@ -112,13 +138,22 @@ struct PaddingInsetIllustration: View {
                 .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.PaddingInset.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(namedSpaceToken: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpacePaddingInsetIllustration(dimension: token)
-                }
+    struct Illustration: View {
+        @Environment(\.theme) private var theme
+        let namedSpaceToken: NamedSpace.PaddingInset
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpacePaddingInsetIllustration(dimension: token)
             }
         }
     }
@@ -141,13 +176,22 @@ struct PaddingStackIllustration: View {
                 .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.PaddingStack.allCases, id: \.rawValue) { namedSpaceToken in
-                let token = namedSpaceToken.token(from: theme)
-                let name = namedSpaceToken.rawValue
-                let value = String(format: "%.2f (pt)", token)
+                Illustration(namedSpaceToken: namedSpaceToken)
+            }
+        }
+    }
 
-                ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                    SpaceIllustration(dimension: token, orientation: .horizontal(position: .center))
-                }
+    struct Illustration: View {
+        @Environment(\.theme) private var theme
+        let namedSpaceToken: NamedSpace.PaddingStack
+
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let value = String(format: "%.2f (pt)", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceIllustration(dimension: token, orientation: .vertical(position: .top))
             }
         }
     }

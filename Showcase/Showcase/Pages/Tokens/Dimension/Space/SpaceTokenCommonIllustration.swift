@@ -159,7 +159,7 @@ struct SpaceIllustrationIcon: View {
             case .icon:
                 1.0
             case .arrow:
-                4.0
+                5.0
             }
         }
     }
