@@ -45,7 +45,7 @@ struct ShowcaseTokenCode: View {
                     Text("app_tokens_code_title_label")
                         .typeBodyStrongLarge(theme)
                         .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
-                    Image(isCodeVisible ? "ic_chevron-down" : "ic_chevron-up")
+                    Image(isCodeVisible ? "ic_chevron-up" : "ic_chevron-down")
                         .resizable()
                         .renderingMode(.template)
                         .foregroundColor(theme.colorBgBrandPrimary.color(for: colorScheme))
