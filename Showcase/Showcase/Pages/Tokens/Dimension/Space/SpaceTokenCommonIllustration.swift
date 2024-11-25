@@ -20,6 +20,9 @@ import SwiftUI
 private let kIllustrationHeight = 72.0
 private let kIllustrationWidth = 72.0
 
+/// Internal View used to illustrate all tokens based on
+/// `dimension`, the `orientation` of the blue rectangle illustrating
+/// the dimension and an optional icon asset.
 struct SpaceIllustration: View {
 
     // MARK: Environment properties
@@ -90,6 +93,8 @@ struct SpaceIllustration: View {
     }
 }
 
+/// Internal specific view used to illustrate scaled tokens.
+/// It is specific, because there are two (horizontal and vertical) dimensions.
 struct SpaceScaledIllustration: View {
 
     // MARK: Stored properties
@@ -115,6 +120,8 @@ struct SpaceScaledIllustration: View {
     }
 }
 
+/// Internal specific view used to illustrate padding inset tokens.
+/// It is specific because there is only inset padding on the illustration.
 struct SpacePaddingInsetIllustration: View {
 
     // MARK: Environment properties
@@ -139,6 +146,8 @@ struct SpacePaddingInsetIllustration: View {
     }
 }
 
+/// Private view used to display icon asset
+/// on token illustrations.
 struct SpaceIllustrationIcon: View {
 
     enum Asset {
@@ -189,7 +198,9 @@ struct SpaceIllustrationIcon: View {
     }
 }
 
-struct SpaceIllustrationRectangle: View {
+/// View used to display a rectangle showing a padding according to
+/// the `dimmension` and the `orientation`.
+private struct SpaceIllustrationRectangle: View {
 
     // MARK: Environment properties
 
@@ -232,6 +243,7 @@ enum SpaceIllustrationOrientation {
     case vertical(position: VerticalPosition)
 }
 
+/// View used to display a header that discribes the token category.
 struct SpaceHeaderDescription: View {
 
     // MARK: Environment properties
