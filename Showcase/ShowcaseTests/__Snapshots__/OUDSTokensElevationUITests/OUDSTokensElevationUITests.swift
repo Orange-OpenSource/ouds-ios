@@ -38,14 +38,12 @@ final class OUDSTokensElevationUITests: XCTestCase {
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsOrangeThemeLight() {
-        // Create an instance of the page with a forced OrangeTheme and light color scheme
-        let elevationPage = ElevationTokenPage(forceTo: orangeTheme, colorScheme: .light)
-
         for elevation in NamedElevation.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = elevationPage.illustration(for: elevation)
-                .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
-
+            // Use the `IllustrationElevation` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: orangeTheme) {
+                ElevationTokenPage.IllustrationElevation(namedElevation: elevation)
+                    .background(self.orangeTheme.colorBgPrimary.color(for: self.lightScheme))
+            }
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
@@ -61,13 +59,12 @@ final class OUDSTokensElevationUITests: XCTestCase {
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsOrangeThemeDark() {
-        // Create an instance of the page with a forced OrangeTheme and dark color scheme
-        let elevationPage = ElevationTokenPage(forceTo: orangeTheme, colorScheme: darkScheme)
-
         for elevation in NamedElevation.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = elevationPage.illustration(for: elevation)
-                .background(orangeTheme.colorBgPrimary.color(for: darkScheme))
+            // Use the `IllustrationElevation` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: orangeTheme) {
+                ElevationTokenPage.IllustrationElevation(namedElevation: elevation)
+                    .background(self.orangeTheme.colorBgPrimary.color(for: self.darkScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -84,13 +81,12 @@ final class OUDSTokensElevationUITests: XCTestCase {
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsInverseThemeLight() {
-        // Create an instance of the page with a forced InverseTheme and dark color scheme
-        let elevationPage = ElevationTokenPage(forceTo: inverseTheme, colorScheme: .light)
-
         for elevation in NamedElevation.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = elevationPage.illustration(for: elevation)
-                .background(inverseTheme.colorBgPrimary.color(for: lightScheme))
+            // Use the `IllustrationElevation` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: inverseTheme) {
+                ElevationTokenPage.IllustrationElevation(namedElevation: elevation)
+                    .background(self.inverseTheme.colorBgPrimary.color(for: self.lightScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -107,13 +103,12 @@ final class OUDSTokensElevationUITests: XCTestCase {
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllElevationsInverseThemeDark() {
-        // Create an instance of the page with a forced InverseTheme and dark color scheme
-        let elevationPage = ElevationTokenPage(forceTo: inverseTheme, colorScheme: .dark)
-
         for elevation in NamedElevation.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = elevationPage.illustration(for: elevation)
-                .background(inverseTheme.colorBgPrimary.color(for: darkScheme))
+            // Use the `IllustrationElevation` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: inverseTheme) {
+                ElevationTokenPage.IllustrationElevation(namedElevation: elevation)
+                    .background(self.inverseTheme.colorBgPrimary.color(for: self.darkScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
