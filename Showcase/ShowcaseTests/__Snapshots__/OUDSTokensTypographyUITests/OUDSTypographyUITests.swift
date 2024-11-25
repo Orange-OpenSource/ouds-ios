@@ -38,13 +38,12 @@ final class OUDSTokensTypographyUITests: XCTestCase {
     /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme and horizontalSizeClass.
     @MainActor func testAllTypographiesOrangeThemeLight() {
-        // Create an instance of the page with a forced OrangeTheme,  light color scheme and horizontalSizeClass
-        let typographyPage = TypographyTokenPage(forceTo: orangeTheme, colorScheme: lightScheme, horizontalSizeClass: .compact)
-
         for typography in NamedTypography.allCases {
-            // Use the `illustration(from:)` method to test a single illustration
-            let illustration = typographyPage.illustration(from: typography)
-                .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
+            // Use the `IllustrationTypography` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: orangeTheme) {
+                TypographyTokenPage.IllustrationTypography(namedTypography: typography)
+                    .background(self.orangeTheme.colorBgPrimary.color(for: self.lightScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -61,13 +60,12 @@ final class OUDSTokensTypographyUITests: XCTestCase {
     /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme horizontalSizeClass.
     @MainActor func testAllTypographiesOrangeThemeDark() {
-        // Create an instance of the page with a forced OrangeTheme, dark color scheme horizontalSizeClass
-        let typographyPage = TypographyTokenPage(forceTo: orangeTheme, colorScheme: darkScheme, horizontalSizeClass: .compact)
-
         for typography in NamedTypography.allCases {
-            // Use the `illustration(from:)` method to test a single illustration
-            let illustration = typographyPage.illustration(from: typography)
-                .background(orangeTheme.colorBgPrimary.color(for: darkScheme))
+            // Use the `IllustrationTypography` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: orangeTheme) {
+                TypographyTokenPage.IllustrationTypography(namedTypography: typography)
+                    .background(self.orangeTheme.colorBgPrimary.color(for: self.darkScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -84,13 +82,12 @@ final class OUDSTokensTypographyUITests: XCTestCase {
     /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme and horizontalSizeClass
     @MainActor func testAllTypographiesInverseThemeLight() {
-        // Create an instance of the page with a forced InverseTheme and light color scheme
-        let typographyPage = TypographyTokenPage(forceTo: inverseTheme, colorScheme: lightScheme, horizontalSizeClass: .compact)
-
         for typography in NamedTypography.allCases {
-            // Use the `illustration(from:)` method to test a single illustration
-            let illustration = typographyPage.illustration(from: typography)
-                .background(inverseTheme.colorBgPrimary.color(for: lightScheme))
+            // Use the `IllustrationTypography` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: inverseTheme) {
+                TypographyTokenPage.IllustrationTypography(namedTypography: typography)
+                    .background(self.inverseTheme.colorBgPrimary.color(for: self.lightScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -107,13 +104,12 @@ final class OUDSTokensTypographyUITests: XCTestCase {
     /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme and horizontalSizeClass.
     @MainActor func testAllTypographiesInverseThemeDark() {
-        // Create an instance of the page with a forced InverseTheme, dark color scheme and horizontalSizeClass
-        let typographyPage = TypographyTokenPage(forceTo: inverseTheme, colorScheme: darkScheme, horizontalSizeClass: .compact)
-
         for typography in NamedTypography.allCases {
-            // Use the `illustration(from:)` method to test a single illustration
-            let illustration = typographyPage.illustration(from: typography)
-                .background(inverseTheme.colorBgPrimary.color(for: darkScheme))
+            // Use the `IllustrationTypography` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: inverseTheme) {
+                TypographyTokenPage.IllustrationTypography(namedTypography: typography)
+                    .background(self.inverseTheme.colorBgPrimary.color(for: self.darkScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
