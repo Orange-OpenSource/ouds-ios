@@ -15,6 +15,8 @@ import OUDSFoundations
 import OUDSTokensRaw
 import SwiftUI
 
+// swiftlint:disable line_length
+
 /// Semantic tokens which will wrap a combination of `ElevationCompositeRawToken` depending to color scheme (i.e. light mode or dark mode)
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
@@ -87,3 +89,5 @@ public final class MultipleElevationCompositeRawTokens: NSObject, Sendable {
         (colorScheme == .light ? light : dark)
     }
 }
+
+// swiftlint:enable line_length

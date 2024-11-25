@@ -16,6 +16,7 @@ import OUDSTokensSemantic
 // swiftlint:disable required_deinit
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
+// swiftlint:disable identifier_name
 
 /// Some color semantic tokens may be not implemented, making fatalError() be triggered at `OUDSTheme` level and tests crash.
 /// Thus we use another mock theme to make comparisons with `MockTheme` and ensure overriding property of tokens is still working.
@@ -1187,3 +1188,4 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
 // swiftlint:enable required_deinit
 // swiftlint:enable type_body_length
+// swiftlint:enable identifier_name

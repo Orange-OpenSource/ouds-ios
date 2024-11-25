@@ -19,12 +19,12 @@
 // swiftlint:disable line_length
 
 /// This is a group of semantic tokens for **typography** but using ``MultipleFontLetterSpacingSemanticTokens`` for *letter spacings*,
-/// ``MultipleFontLineHeightTokens`` for *line heights* and ``MultipleFontSizeTokens`` for *font sizes*.
+/// ``MultipleFontLineHeightSemanticTokens`` for *line heights* and ``MultipleFontSizeTokens`` for *font sizes*.
 ///
-/// In fact these ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightTokens`` and  ``MultipleFontSizeTokens`` classes will help users
+/// In fact these ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightSemanticTokens`` and  ``MultipleFontSizeTokens`` classes will help users
 /// (i.e. developers) to handle one semantic token for typography things depending to size class (wether it could be compact / mobile or regular / tablet).
 /// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide
-/// such ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightTokens`` and ``MultipleFontSizeTokens`` tokens.
+/// such ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightSemanticTokens`` and ``MultipleFontSizeTokens`` tokens.
 /// Thus the "real" letter spacing, line height and font size tokens are declared in ``TypographySemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).
 /// These tokens are updated by the *tokenator*.
 /// Then they are gathered and wrapped so as to be used easily thanks to this ``TypographyMultipleSemanticTokens`` which must be updated manually.
@@ -74,22 +74,22 @@ public protocol TypographyMultipleSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Line height
 
-    var fontLineHeightDisplayLarge: MultipleFontLineHeightTokens { get }
-    var fontLineHeightDisplayMedium: MultipleFontLineHeightTokens { get }
-    var fontLineHeightDisplaySmall: MultipleFontLineHeightTokens { get }
-    var fontLineHeightHeadingXLarge: MultipleFontLineHeightTokens { get }
-    var fontLineHeightHeadingLarge: MultipleFontLineHeightTokens { get }
-    var fontLineHeightHeadingMedium: MultipleFontLineHeightTokens { get }
-    var fontLineHeightHeadingSmall: MultipleFontLineHeightTokens { get }
-    var fontLineHeightBodyLarge: MultipleFontLineHeightTokens { get }
-    var fontLineHeightBodyMedium: MultipleFontLineHeightTokens { get }
-    var fontLineHeightBodySmall: MultipleFontLineHeightTokens { get }
-    var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens { get }
-    var fontLineHeightLabelLarge: MultipleFontLineHeightTokens { get }
-    var fontLineHeightLabelMedium: MultipleFontLineHeightTokens { get }
-    var fontLineHeightLabelSmall: MultipleFontLineHeightTokens { get }
-    var fontLineHeightCodeMedium: MultipleFontLineHeightTokens { get }
-    var fontLineHeightCodeSmall: MultipleFontLineHeightTokens { get }
+    var fontLineHeightDisplayLarge: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightDisplayMedium: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightDisplaySmall: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightHeadingXLarge: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightHeadingLarge: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightHeadingMedium: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightHeadingSmall: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightBodyLarge: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightBodyMedium: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightBodySmall: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightLabelXLarge: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightLabelLarge: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightLabelMedium: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightLabelSmall: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightCodeMedium: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightCodeSmall: MultipleFontLineHeightSemanticTokens { get }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing
 

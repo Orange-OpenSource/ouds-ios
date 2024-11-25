@@ -46,22 +46,22 @@ extension OUDSTheme: TypographyMultipleSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Line height
 
-    @objc open var fontLineHeightDisplayLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightDisplayLargeMobile, regular: fontLineHeightDisplayLargeTablet) }
-    @objc open var fontLineHeightDisplayMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightDisplayMediumMobile, regular: fontLineHeightDisplayMediumTablet) }
-    @objc open var fontLineHeightDisplaySmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightDisplaySmallMobile, regular: fontLineHeightDisplaySmallTablet) }
-    @objc open var fontLineHeightHeadingXLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightHeadingXLargeMobile, regular: fontLineHeightHeadingXLargeTablet) }
-    @objc open var fontLineHeightHeadingLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightHeadingLargeMobile, regular: fontLineHeightHeadingLargeTablet) }
-    @objc open var fontLineHeightHeadingMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightHeadingMediumMobile, regular: fontLineHeightHeadingMediumTablet) }
-    @objc open var fontLineHeightHeadingSmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightHeadingSmallMobile, regular: fontLineHeightHeadingSmallTablet) }
-    @objc open var fontLineHeightBodyLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightBodyLargeMobile, regular: fontLineHeightBodyLargeTablet) }
-    @objc open var fontLineHeightBodyMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightBodyMediumMobile, regular: fontLineHeightBodyMediumTablet) }
-    @objc open var fontLineHeightBodySmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightBodySmallMobile, regular: fontLineHeightBodySmallTablet) }
-    @objc open var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightLabelXLargeMobile, regular: fontLineHeightLabelXLargeTablet) }
-    @objc open var fontLineHeightLabelLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightLabelLargeMobile, regular: fontLineHeightLabelLargeTablet) }
-    @objc open var fontLineHeightLabelMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightLabelMediumMobile, regular: fontLineHeightLabelMediumTablet) }
-    @objc open var fontLineHeightLabelSmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightLabelSmallMobile, regular: fontLineHeightLabelSmallTablet) }
-    @objc open var fontLineHeightCodeMedium: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightCodeMediumMobile, regular: fontLineHeightCodeMediumTablet) }
-    @objc open var fontLineHeightCodeSmall: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(compact: fontLineHeightCodeSmallMobile, regular: fontLineHeightCodeSmallTablet) }
+    @objc open var fontLineHeightDisplayLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightDisplayLargeMobile, regular: fontLineHeightDisplayLargeTablet) }
+    @objc open var fontLineHeightDisplayMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightDisplayMediumMobile, regular: fontLineHeightDisplayMediumTablet) }
+    @objc open var fontLineHeightDisplaySmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightDisplaySmallMobile, regular: fontLineHeightDisplaySmallTablet) }
+    @objc open var fontLineHeightHeadingXLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightHeadingXLargeMobile, regular: fontLineHeightHeadingXLargeTablet) }
+    @objc open var fontLineHeightHeadingLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightHeadingLargeMobile, regular: fontLineHeightHeadingLargeTablet) }
+    @objc open var fontLineHeightHeadingMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightHeadingMediumMobile, regular: fontLineHeightHeadingMediumTablet) }
+    @objc open var fontLineHeightHeadingSmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightHeadingSmallMobile, regular: fontLineHeightHeadingSmallTablet) }
+    @objc open var fontLineHeightBodyLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightBodyLargeMobile, regular: fontLineHeightBodyLargeTablet) }
+    @objc open var fontLineHeightBodyMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightBodyMediumMobile, regular: fontLineHeightBodyMediumTablet) }
+    @objc open var fontLineHeightBodySmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightBodySmallMobile, regular: fontLineHeightBodySmallTablet) }
+    @objc open var fontLineHeightLabelXLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightLabelXLargeMobile, regular: fontLineHeightLabelXLargeTablet) }
+    @objc open var fontLineHeightLabelLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightLabelLargeMobile, regular: fontLineHeightLabelLargeTablet) }
+    @objc open var fontLineHeightLabelMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightLabelMediumMobile, regular: fontLineHeightLabelMediumTablet) }
+    @objc open var fontLineHeightLabelSmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightLabelSmallMobile, regular: fontLineHeightLabelSmallTablet) }
+    @objc open var fontLineHeightCodeMedium: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightCodeMediumMobile, regular: fontLineHeightCodeMediumTablet) }
+    @objc open var fontLineHeightCodeSmall: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(compact: fontLineHeightCodeSmallMobile, regular: fontLineHeightCodeSmallTablet) }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing
 

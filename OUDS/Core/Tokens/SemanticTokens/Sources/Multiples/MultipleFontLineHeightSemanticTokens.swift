@@ -16,7 +16,7 @@ import OUDSTokensRaw
 
 /// Kind of semantic tokens which will wrap a combination of ``TypographyFontLineHeightSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a font line height token exists with its value depending to the size class, it must be packed in such ``MultipleFontLineHeightTokens`
+/// If a font line height token exists with its value depending to the size class, it must be packed in such ``MultipleFontLineHeightSemanticTokens`
 ///
 /// ```swift
 ///         // Assuming in Figma with have a font letter spacing semantic token fontLineHeightLabelXLarge,
@@ -30,18 +30,18 @@ import OUDSTokensRaw
 ///         // Then the develoment team declares an "higher" level line height semantic token for fontLineHeightLabelXLarge
 ///         // inside TypographyMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+TypographyMultipleSemanticTokens extension
-///         var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens {
-///             MultipleFontLineHeightTokens(compact: fontLineHeightLabelXLargeMobile, regular: fontLineHeightLabelXLargeTablet)
+///         var fontLineHeightLabelXLarge: MultipleFontLineHeightSemanticTokens {
+///             MultipleFontLineHeightSemanticTokens(compact: fontLineHeightLabelXLargeMobile, regular: fontLineHeightLabelXLargeTablet)
 ///         }
 ///
 ///         // If the same value is used whatever the size class is
-///         var fontLineHeightLabelXLarge: MultipleFontLineHeightTokens { MultipleFontLineHeightTokens(fontLineHeightLabelXLargeMobile) }
+///         var fontLineHeightLabelXLarge: MultipleFontLineHeightSemanticTokens { MultipleFontLineHeightSemanticTokens(fontLineHeightLabelXLargeMobile) }
 ///
 ///         // The theme exposes both generated font line height semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 /// 
-public final class MultipleFontLineHeightTokens: NSObject, Sendable {
+public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: TypographyFontLineHeightSemanticToken
@@ -71,7 +71,7 @@ public final class MultipleFontLineHeightTokens: NSObject, Sendable {
     /// as a `MultipleFontTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MultipleFontLineHeightTokens else { return false }
+        guard let object = object as? MultipleFontLineHeightSemanticTokens else { return false }
         return self.compact == object.compact && self.regular == object.regular
     }
 }

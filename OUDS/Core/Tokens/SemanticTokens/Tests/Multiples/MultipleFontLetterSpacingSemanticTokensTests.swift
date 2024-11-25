@@ -16,6 +16,7 @@ import OUDSTokensSemantic
 import XCTest
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
 /// To ensure the `MultipleFontLetterSpacingSemanticTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
 final class MultipleFontLetterSpacingSemanticTokensTests: XCTestCase {
@@ -57,4 +58,6 @@ final class MultipleFontLetterSpacingSemanticTokensTests: XCTestCase {
         XCTAssertFalse(first.isEqual(sixth))
     }
 }
+
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name
