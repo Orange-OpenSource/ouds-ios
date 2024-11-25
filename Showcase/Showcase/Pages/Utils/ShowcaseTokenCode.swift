@@ -37,14 +37,13 @@ struct ShowcaseTokenCode: View {
     // MARK: Private helpers
 
     private func toggleButtonSection() -> some View {
-        HStack {
-            Button(action: {
-                isCodeVisible.toggle()
-            }, label: {
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            Button(action: toggle) {
                 HStack {
                     Text("app_tokens_code_title_label")
                         .typeBodyStrongLarge(theme)
                         .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                        .padding(.vertical, theme.spacePaddingInlineShort)
                     Image(isCodeVisible ? "ic_chevron-up" : "ic_chevron-down")
                         .resizable()
                         .renderingMode(.template)
@@ -53,10 +52,11 @@ struct ShowcaseTokenCode: View {
                         .padding(.trailing, theme.spacePaddingInlineMedium)
                         .accessibilityLabel("app_tokens_code_visibility_button_a11y")
                 }
-            })
+            }
+            .buttonStyle(PlainButtonStyle())
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.bottom, theme.spacePaddingBlockMedium)
+        .padding(.bottom, theme.spacePaddingBlockShort)
     }
 
     private func codeTokenDisplayCodeSection() -> some View {
@@ -99,5 +99,9 @@ struct ShowcaseTokenCode: View {
                             radius: theme.borderRadiusDefault,
                             color: theme.colorBorderDefault)
         )
+    }
+
+    private func toggle() {
+        isCodeVisible.toggle()
     }
 }
