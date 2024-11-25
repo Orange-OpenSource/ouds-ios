@@ -38,14 +38,13 @@ final class OUDSTokensSizeUITests: XCTestCase {
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
     @MainActor func testAllSizesOrangeThemeLight() {
-        // Create an instance of the page with a forced OrangeTheme,  light color scheme and horizontalSizeClass
-        let sizePage = SizeTokenPage(forceTo: orangeTheme, colorScheme: lightScheme, horizontalSizeClass: .compact)
-
         // IconDecorative
         for sizing in NamedSize.IconDecorative.allCases {
-            // Use the `illustrationIconDecorative(for:)` method to test a single illustration
-            let illustration = sizePage.illustrationIconDecorative(for: sizing)
-                .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
+            // Use the `IllustrationIconDecorative` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: orangeTheme) {
+                SizeTokenPage.IllustrationIconDecorative(namedSize: sizing)
+                    .background(self.orangeTheme.colorBgPrimary.color(for: self.lightScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -57,9 +56,11 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
         // IconWithLabel
         for sizing in NamedSize.IconWithTypography.allCases {
-            // Use the `illustrationIconDecorative(for:)` method to test a single illustration
-            let illustration = sizePage.illustrationIconWithLabel(for: sizing)
-                .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
+            // Use the `IllustrationIconWithLabel` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: orangeTheme) {
+                SizeTokenPage.IllustrationIconWithLabel(namedSize: sizing)
+                    .background(self.orangeTheme.colorBgPrimary.color(for: self.lightScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -76,14 +77,13 @@ final class OUDSTokensSizeUITests: XCTestCase {
     /// It iterates through all `NamedSize`cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
     @MainActor func testAllSizesOrangeThemeDark() {
-        // Create an instance of the page with a forced OrangeTheme, dark color scheme and horizontalSizeClass
-        let sizePage = SizeTokenPage(forceTo: orangeTheme, colorScheme: darkScheme, horizontalSizeClass: .compact)
-
         // IconDecorative
         for sizing in NamedSize.IconDecorative.allCases {
-            // Use the `illustrationIconDecorative(for:)` method to test a single illustration
-            let illustration = sizePage.illustrationIconDecorative(for: sizing)
-                .background(orangeTheme.colorBgPrimary.color(for: darkScheme))
+            // Use the `IllustrationIconDecorative` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: orangeTheme) {
+                SizeTokenPage.IllustrationIconDecorative(namedSize: sizing)
+                    .background(self.orangeTheme.colorBgPrimary.color(for: self.darkScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -95,9 +95,11 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
         // IconWithLabel
         for sizing in NamedSize.IconWithTypography.allCases {
-            // Use the `illustrationIconDecorative(for:)` method to test a single illustration
-            let illustration = sizePage.illustrationIconWithLabel(for: sizing)
-                .background(orangeTheme.colorBgPrimary.color(for: darkScheme))
+            // Use the `IllustrationIconWithLabel` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: orangeTheme) {
+                SizeTokenPage.IllustrationIconWithLabel(namedSize: sizing)
+                    .background(self.orangeTheme.colorBgPrimary.color(for: self.darkScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -114,14 +116,13 @@ final class OUDSTokensSizeUITests: XCTestCase {
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
     @MainActor func testAllSizesInverseThemeLight() {
-        // Create an instance of the page with a forced InverseTheme and light color scheme and horizontalSizeClass
-        let sizePage = SizeTokenPage(forceTo: inverseTheme, colorScheme: lightScheme, horizontalSizeClass: .compact)
-
         // IconDecorative
         for sizing in NamedSize.IconDecorative.allCases {
-            // Use the `illustrationIconDecorative(for:)` method to test a single illustration
-            let illustration = sizePage.illustrationIconDecorative(for: sizing)
-                .background(inverseTheme.colorBgPrimary.color(for: lightScheme))
+            // Use the `IllustrationIconDecorative` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: inverseTheme) {
+                SizeTokenPage.IllustrationIconDecorative(namedSize: sizing)
+                    .background(self.inverseTheme.colorBgPrimary.color(for: self.lightScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -133,9 +134,11 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
         // IconWithLabel
         for sizing in NamedSize.IconWithTypography.allCases {
-            // Use the `illustrationIconDecorative(for:)` method to test a single illustration
-            let illustration = sizePage.illustrationIconWithLabel(for: sizing)
-                .background(inverseTheme.colorBgPrimary.color(for: lightScheme))
+            // Use the `IllustrationIconWithLabel` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: inverseTheme) {
+                SizeTokenPage.IllustrationIconWithLabel(namedSize: sizing)
+                    .background(self.inverseTheme.colorBgPrimary.color(for: self.lightScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -152,14 +155,13 @@ final class OUDSTokensSizeUITests: XCTestCase {
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
     @MainActor func testAllSizeInverseThemeDark() {
-        // Create an instance of the page with a forced InverseTheme and dark color scheme and horizontalSizeClass
-        let sizePage = SizeTokenPage(forceTo: inverseTheme, colorScheme: darkScheme, horizontalSizeClass: .compact)
-
         // IconDecorative
         for sizing in NamedSize.IconDecorative.allCases {
-            // Use the `illustrationIconDecorative(for:)` method to test a single illustration
-            let illustration = sizePage.illustrationIconDecorative(for: sizing)
-                .background(inverseTheme.colorBgPrimary.color(for: darkScheme))
+            // Use the `IllustrationIconDecorative` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: inverseTheme) {
+                SizeTokenPage.IllustrationIconDecorative(namedSize: sizing)
+                    .background(self.inverseTheme.colorBgPrimary.color(for: self.darkScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
@@ -171,9 +173,11 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
         // IconWithLabel
         for sizing in NamedSize.IconWithTypography.allCases {
-            // Use the `illustrationIconDecorative(for:)` method to test a single illustration
-            let illustration = sizePage.illustrationIconWithLabel(for: sizing)
-                .background(inverseTheme.colorBgPrimary.color(for: darkScheme))
+            // Use the `IllustrationIconWithLabel` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: inverseTheme) {
+                SizeTokenPage.IllustrationIconWithLabel(namedSize: sizing)
+                    .background(self.inverseTheme.colorBgPrimary.color(for: self.darkScheme))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
