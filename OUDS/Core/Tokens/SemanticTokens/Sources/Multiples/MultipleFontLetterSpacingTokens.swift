@@ -14,9 +14,9 @@
 import Foundation
 import OUDSTokensRaw
 
-/// Kind of semantic tokens which will wrap a combination of ``MultipleFontLetterSpacingTokens` depending to size classes.
+/// Kind of semantic tokens which will wrap a combination of ``MultipleFontLetterSpacingSemanticTokens`` depending to size classes.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a font letter spacing token exists with its value depending to the size class (i.e. comapct or regular mode), it must be packed in such `MultipleFontLetterSpacingTokens`
+/// If a font letter spacing token exists with its value depending to the size class (i.e. comapct or regular mode), it must be packed in such `MultipleFontLetterSpacingSemanticTokens`
 ///
 /// ```swift
 ///         // Assuming in Figma with have a font letter spacing semantic token fontLetterSpacingDisplayMedium,
@@ -30,18 +30,18 @@ import OUDSTokensRaw
 ///         // Then the develoment team declares an "higher" level font letter spacing semantic token for fontLetterSpacingDisplayMedium
 ///         // inside TypographyMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+TypographyMultipleSemanticTokens extension
-///         var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingTokens {
-///             MultipleFontLetterSpacingTokens(compact: fontLetterSpacingDisplayMediumMobile, regular: fontLetterSpacingDisplayMediumTablet)
+///         var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticTokens {
+///             MultipleFontLetterSpacingSemanticTokens(compact: fontLetterSpacingDisplayMediumMobile, regular: fontLetterSpacingDisplayMediumTablet)
 ///         }
 ///
 ///         // If the same value is used whatever the size class is
-///         var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingTokens { MultipleFontLetterSpacingTokens(fontLetterSpacingDisplayMediumMobile) }
+///         var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticTokens { MultipleFontLetterSpacingSemanticTokens(fontLetterSpacingDisplayMediumMobile) }
 ///
 ///         // The theme exposes both generated font letter spacing semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 /// 
-public final class MultipleFontLetterSpacingTokens: NSObject, Sendable {
+public final class MultipleFontLetterSpacingSemanticTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: TypographyFontLetterSpacingSemanticToken
@@ -71,7 +71,7 @@ public final class MultipleFontLetterSpacingTokens: NSObject, Sendable {
     /// as a `MultipleFontTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MultipleFontLetterSpacingTokens else {
+        guard let object = object as? MultipleFontLetterSpacingSemanticTokens else {
             return false
         }
         return self.compact == object.compact && self.regular == object.regular

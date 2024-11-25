@@ -18,13 +18,13 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **typography** but using ``MultipleFontLetterSpacingTokens`` for *letter spacings*,
+/// This is a group of semantic tokens for **typography** but using ``MultipleFontLetterSpacingSemanticTokens`` for *letter spacings*,
 /// ``MultipleFontLineHeightTokens`` for *line heights* and ``MultipleFontSizeTokens`` for *font sizes*.
 ///
-/// In fact these ``MultipleFontLetterSpacingTokens``, ``MultipleFontLineHeightTokens`` and  ``MultipleFontSizeTokens`` classes will help users
+/// In fact these ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightTokens`` and  ``MultipleFontSizeTokens`` classes will help users
 /// (i.e. developers) to handle one semantic token for typography things depending to size class (wether it could be compact / mobile or regular / tablet).
 /// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide
-/// such ``MultipleFontLetterSpacingTokens``, ``MultipleFontLineHeightTokens`` and ``MultipleFontSizeTokens`` tokens.
+/// such ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightTokens`` and ``MultipleFontSizeTokens`` tokens.
 /// Thus the "real" letter spacing, line height and font size tokens are declared in ``TypographySemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).
 /// These tokens are updated by the *tokenator*.
 /// Then they are gathered and wrapped so as to be used easily thanks to this ``TypographyMultipleSemanticTokens`` which must be updated manually.
@@ -93,22 +93,22 @@ public protocol TypographyMultipleSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Letter spacing
 
-    var fontLetterSpacingDisplayLarge: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingDisplaySmall: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingHeadingXLarge: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingHeadingLarge: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingHeadingMedium: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingHeadingSmall: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingBodyLarge: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingBodyMedium: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingBodySmall: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingLabelXLarge: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingLabelLarge: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingLabelMedium: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingLabelSmall: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingCodeMedium: MultipleFontLetterSpacingTokens { get }
-    var fontLetterSpacingCodeSmall: MultipleFontLetterSpacingTokens { get }
+    var fontLetterSpacingDisplayLarge: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingDisplaySmall: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingHeadingXLarge: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingHeadingLarge: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingHeadingMedium: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingHeadingSmall: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingBodyLarge: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingBodyMedium: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingBodySmall: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingLabelXLarge: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingLabelLarge: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingLabelMedium: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingLabelSmall: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingCodeMedium: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingCodeSmall: MultipleFontLetterSpacingSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs
