@@ -108,7 +108,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         testDecorativeColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testChartColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
     }
-    
+
     // MARK: - Helpers
 
     /// This function tests colors for the `Background` category of the given theme.
