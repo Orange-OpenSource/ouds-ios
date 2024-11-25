@@ -28,7 +28,9 @@ import SwiftUICore
 ///         // Then the develoment team declares an "higher" level typography semantic token
 ///         // inside TypographyCompositeSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+TypographyCompositeSemanticTokens extension
-///         var typeDisplayLarge: MultipleTypographyCompositeRawTokens { MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold1450) }
+///         var typeDisplayLarge: MultipleTypographyCompositeRawTokens {
+///             MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold1450)
+///         }
 ///
 ///         // If the same typography is used whatever the size class is
 ///         var typeDisplayLarge: MultipleTypographyCompositeRawTokens { MultipleTypographyCompositeRawTokens(TypographyRawTokens.typeBold650) }
@@ -37,7 +39,8 @@ import SwiftUICore
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 ///
-/// The case of this ``MultipleTypographyCompositeRawTokens`` is quite particular because in fact it contains `TypographyCompositeRawToken` (i.e. raw tokens) instead of semantic tokens.
+/// The case of this ``MultipleTypographyCompositeRawTokens`` is quite particular because in fact it contains `TypographyCompositeRawToken`
+/// (i.e. raw tokens) instead of semantic tokens.
 /// In fact there is not "typography composite semantic tokens" defined in the *Figma* kit.
 /// 
 public final class MultipleTypographyCompositeRawTokens: NSObject, Sendable {
