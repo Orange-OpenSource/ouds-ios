@@ -48,7 +48,7 @@ final class MultipleFontLetterSpacingSemanticTokensTests: XCTestCase {
         let third = MultipleFontLetterSpacingSemanticTokens(compact: TypographyRawTokens.fontLetterSpacing300, regular: TypographyRawTokens.fontLineHeight250)
         let fourth = MultipleFontLetterSpacingSemanticTokens(compact: TypographyRawTokens.fontLetterSpacing650, regular: TypographyRawTokens.fontLineHeight850)
         let fifth = MultipleFontLetterSpacingSemanticTokens(compact: TypographyRawTokens.fontLetterSpacing300, regular: TypographyRawTokens.fontLetterSpacing300)
-        let sixth = MultipleSizeTokens(compact: 12, regular: 12)
+        let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

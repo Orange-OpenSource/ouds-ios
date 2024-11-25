@@ -47,7 +47,7 @@ final class MultipleColorRawTokenTests: XCTestCase {
         let third = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalSun100)
         let fourth = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalScarlet900)
         let fifth = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
-        let sixth = MultipleSizeTokens(compact: 12, regular: 12)
+        let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

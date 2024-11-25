@@ -16,13 +16,13 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the `MultipleSizeTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
-final class MultipleSizeTokensTests: XCTestCase {
+/// To ensure the `MultipleSizeSemanticTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+final class MultipleSizeSemanticTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined
     func testInitWithOneValues() {
         let unique: SizeSemanticToken = 888
-        let token = MultipleSizeTokens(unique)
+        let token = MultipleSizeSemanticTokens(unique)
 
         XCTAssertTrue(token.compact == unique)
         XCTAssertTrue(token.regular == unique)
@@ -32,20 +32,20 @@ final class MultipleSizeTokensTests: XCTestCase {
     func testInitTwoValues() {
         let compact: SizeSemanticToken = 123
         let regular: SizeSemanticToken = 456
-        let token = MultipleSizeTokens(compact: compact, regular: regular)
+        let token = MultipleSizeSemanticTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)
         XCTAssertTrue(token.regular == regular)
     }
 
-    /// Tests comparisons between two `MultipleSizeTokens` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleSizeSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = MultipleSizeTokens(compact: 12, regular: 34)
-        let second = MultipleSizeTokens(compact: 56, regular: 78)
-        let third = MultipleSizeTokens(compact: 12, regular: 78)
-        let fourth = MultipleSizeTokens(compact: 56, regular: 34)
-        let fifth = MultipleSizeTokens(compact: 12, regular: 34)
+        let first = MultipleSizeSemanticTokens(compact: 12, regular: 34)
+        let second = MultipleSizeSemanticTokens(compact: 56, regular: 78)
+        let third = MultipleSizeSemanticTokens(compact: 12, regular: 78)
+        let fourth = MultipleSizeSemanticTokens(compact: 56, regular: 34)
+        let fifth = MultipleSizeSemanticTokens(compact: 12, regular: 34)
         let sixth = MultipleColorSemanticTokens("#000000")
 
         XCTAssertTrue(first.isEqual(first))

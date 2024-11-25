@@ -47,7 +47,7 @@ final class MultipleFontSizeSemanticTokensTests: XCTestCase {
         let third = MultipleFontSizeSemanticTokens(compact: TypographyRawTokens.fontSize200, regular: TypographyRawTokens.fontSize950)
         let fourth = MultipleFontSizeSemanticTokens(compact: TypographyRawTokens.fontSize550, regular: TypographyRawTokens.fontSize450)
         let fifth = MultipleFontSizeSemanticTokens(compact: TypographyRawTokens.fontSize200, regular: TypographyRawTokens.fontSize450)
-        let sixth = MultipleSizeTokens(compact: 12, regular: 12)
+        let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))
