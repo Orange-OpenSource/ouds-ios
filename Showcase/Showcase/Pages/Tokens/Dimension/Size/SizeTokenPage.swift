@@ -59,7 +59,10 @@ struct SizeTokenPage: View {
 
     var body: some View {
         Group {
-            Section { ShowcaseTokenCode(code: NamedSize.IconDecorative.sizeIconDecorativeShortest.rawValue) }
+            Section {
+                let tokenCode = "theme.sizeIconWithHeadingXLargeShort.dimension(for: horizontalSizeClass ?? .regular)"
+                ShowcaseTokenCode(code: tokenCode)
+            }
             Section { illustrationForIconDecorative() } header: {
                 header("app_tokens_dimension_size_iconDecorative_label")
             }

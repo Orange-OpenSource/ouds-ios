@@ -50,7 +50,8 @@ struct ColorTokenPage: View {
     var body: some View {
         Group {
             Section {
-                ShowcaseTokenCode(code: NamedColor.Background.colorBgStatusNeutralOnBgEmphasized.rawValue)
+                let tokenCode = "theme.colorBgPrimary.color(for: colorScheme)"
+                ShowcaseTokenCode(code: tokenCode)
             }
             Section { illustrationForBackground() } header: { header("Background") }
             Section { illustrationForAction() } header: { header("Action") }

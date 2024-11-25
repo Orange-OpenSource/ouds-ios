@@ -52,7 +52,8 @@ struct OpacityTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             Section {
-                ShowcaseTokenCode(code: NamedOpacity.opacityTransparent.rawValue)
+                let tokenCode = "theme.opacityTransparent"
+                ShowcaseTokenCode(code: tokenCode)
             }
             Spacer()
                 .frame(height: activeTheme.spaceFixedMedium)

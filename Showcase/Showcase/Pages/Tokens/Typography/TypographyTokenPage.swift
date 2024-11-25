@@ -61,7 +61,10 @@ struct TypographyTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
-            Section { ShowcaseTokenCode(code: NamedTypography.labelDefaultXLarge.rawValue) }
+            Section {
+                let tokenCode = "theme.typeBodyStrongLarge(theme)"
+                ShowcaseTokenCode(code: tokenCode)
+            }
             Spacer()
             ForEach(NamedTypography.allCases, id: \.rawValue) { typographyName in
                 illustration(from: typographyName)
