@@ -110,7 +110,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                ScaledSpacesIllustration(for: scaled)
+                ScaledSpacesIllustrations.Illustration(for: scaled)
                     .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 

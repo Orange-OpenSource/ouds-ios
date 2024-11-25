@@ -135,7 +135,7 @@ struct BorderTokenPage: View {
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
             rectangle
                 .oudsBorder(style: token,
-                            width: activeTheme.borderWidthDefault,
+                            width: theme.borderWidthDefault,
                             radius: activeTheme.borderRadiusNone,
                             color: activeTheme.colorBorderDefault)
         }

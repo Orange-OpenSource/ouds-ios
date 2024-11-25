@@ -22,8 +22,6 @@ struct FixedSapcesIllustrations: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
 
     // MARK: Body
 
@@ -44,8 +42,6 @@ struct FixedSapcesIllustrations: View {
 
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
-        @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-        @Environment(\.verticalSizeClass) private var verticalSizeClass
 
         // MARK: Stored properties
 
@@ -79,8 +75,6 @@ struct ScaledSpacesIllustrations: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
 
     // MARK: Body
 
@@ -90,46 +84,46 @@ struct ScaledSpacesIllustrations: View {
                 .padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
-                ScaledSpacesIllustration(for: namedSpaceToken)
+                Illustration(for: namedSpaceToken)
             }
         }
     }
-}
 
-struct ScaledSpacesIllustration: View {
+    struct Illustration: View {
 
-    // MARK: Environment properties
+        // MARK: Environment properties
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
+        @Environment(\.theme) private var theme
+        @Environment(\.colorScheme) private var colorScheme
+        @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+        @Environment(\.verticalSizeClass) private var verticalSizeClass
 
-    // MARK: Stored property
+        // MARK: Stored property
 
-    let namedSpaceToken: NamedSpace.Scaled
+        let namedSpaceToken: NamedSpace.Scaled
 
-    // MARK: Initializer
+        // MARK: Initializer
 
-    init(for namedSpaceToken: NamedSpace.Scaled) {
-        self.namedSpaceToken = namedSpaceToken
-    }
+        init(for namedSpaceToken: NamedSpace.Scaled) {
+            self.namedSpaceToken = namedSpaceToken
+        }
 
-    // MARK: Body
+        // MARK: Body
 
-    var body: some View {
-        let token = namedSpaceToken.token(from: theme)
-        let name = namedSpaceToken.rawValue
-        let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
-        let verticalDimensionRawToken = token.dimension(for: verticalSizeClass ?? .regular)
-        let value = String(format: "horizontal %@ (%.0f pt)\nvertical %@ (%.0f pt)",
-                           horizontalSizeClass == .regular ? "regular" : "compact",
-                           horizontalDimensionRawToken,
-                           verticalSizeClass == .regular ? "regular" : "compact",
-                           verticalDimensionRawToken)
+        var body: some View {
+            let token = namedSpaceToken.token(from: theme)
+            let name = namedSpaceToken.rawValue
+            let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
+            let verticalDimensionRawToken = token.dimension(for: verticalSizeClass ?? .regular)
+            let value = String(format: "horizontal %@ (%.0f pt)\nvertical %@ (%.0f pt)",
+                               horizontalSizeClass == .regular ? "regular" : "compact",
+                               horizontalDimensionRawToken,
+                               verticalSizeClass == .regular ? "regular" : "compact",
+                               verticalDimensionRawToken)
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-            SpaceScaledIllustration(horizontalDimension: horizontalDimensionRawToken, verticalDimension: verticalDimensionRawToken)
+            return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                SpaceScaledIllustration(horizontalDimension: horizontalDimensionRawToken, verticalDimension: verticalDimensionRawToken)
+            }
         }
     }
 }
