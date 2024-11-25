@@ -17,27 +17,27 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the `MultipleSpaceTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
-final class MultipleSpaceTokensTests: XCTestCase {
+/// To ensure the `MultipleSpaceSemanticTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+final class MultipleSpaceSemanticTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined
     func testInit() {
         let compact: DimensionRawToken = 123
         let regular: DimensionRawToken = 456
-        let token = MultipleSpaceTokens(compact: compact, regular: regular)
+        let token = MultipleSpaceSemanticTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)
         XCTAssertTrue(token.regular == regular)
     }
 
-    /// Tests comparisons between two `MultipleSpaceTokens` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleSpaceSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = MultipleSpaceTokens(compact: 12, regular: 34)
-        let second = MultipleSpaceTokens(compact: 56, regular: 78)
-        let third = MultipleSpaceTokens(compact: 12, regular: 78)
-        let fourth = MultipleSpaceTokens(compact: 56, regular: 34)
-        let fifth = MultipleSpaceTokens(compact: 12, regular: 34)
+        let first = MultipleSpaceSemanticTokens(compact: 12, regular: 34)
+        let second = MultipleSpaceSemanticTokens(compact: 56, regular: 78)
+        let third = MultipleSpaceSemanticTokens(compact: 12, regular: 78)
+        let fourth = MultipleSpaceSemanticTokens(compact: 56, regular: 34)
+        let fifth = MultipleSpaceSemanticTokens(compact: 12, regular: 34)
         let sixth = MultipleSizeSemanticTokens(compact: 0, regular: 00)
 
         XCTAssertTrue(first.isEqual(first))
