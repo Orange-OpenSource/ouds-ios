@@ -22,7 +22,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the TokensSize are tested for UI compatibility with the reference image recorded
+/// Tests the UI rendering of each **size token** using reference images
 final class OUDSTokensSizeUITests: XCTestCase {
 
     // MARK: Properties
@@ -34,7 +34,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Dimension Tests
 
-    /// This function tests all dimensions tokens in the `OrangeTheme` with the `light` color scheme.
+    /// This function tests all size tokens in the `OrangeTheme` with the `light` color scheme.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
     @MainActor func testAllSizesOrangeThemeLight() {
@@ -72,7 +72,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
     // MARK: - Orange Theme Dark Mode Border Tests
 
-    /// This function tests all dimensions tokens in the `OrangeTheme` with the `dark` color scheme.
+    /// This function tests all size tokens in the `OrangeTheme` with the `dark` color scheme.
     /// It iterates through all `NamedSize`cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
     @MainActor func testAllSizesOrangeThemeDark() {
@@ -110,7 +110,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
     // MARK: - Inverse Theme Light Mode Border Tests
 
-    /// This function tests all dimensions tokens in the `InverseTheme` with the `light` color scheme.
+    /// This function tests all size tokens in the `InverseTheme` with the `light` color scheme.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
     @MainActor func testAllSizesInverseThemeLight() {
@@ -148,7 +148,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
 
     // MARK: - Inverse Theme Dark Mode Border Tests
 
-    /// This function tests all dimensions tokens in the `InverseTheme` with the `dark` color scheme.
+    /// This function tests all size tokens in the `InverseTheme` with the `dark` color scheme.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the size, theme, and color scheme.
     @MainActor func testAllSizeInverseThemeDark() {

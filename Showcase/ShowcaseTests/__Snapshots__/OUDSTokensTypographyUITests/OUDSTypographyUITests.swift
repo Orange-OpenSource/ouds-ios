@@ -22,7 +22,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the TokensTypography are tested for UI compatibility with the reference image recorded
+/// Tests the UI rendering of each **typography token** using reference images
 final class OUDSTokensTypographyUITests: XCTestCase {
 
     // MARK: Properties
@@ -34,7 +34,7 @@ final class OUDSTokensTypographyUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Typography Tests
 
-    /// This function tests all elevation tokens in the `OrangeTheme` with the `light` color scheme.
+    /// This function tests all typography tokens in the `OrangeTheme` with the `light` color scheme.
     /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme and horizontalSizeClass.
     @MainActor func testAllTypographiesOrangeThemeLight() {
@@ -57,7 +57,7 @@ final class OUDSTokensTypographyUITests: XCTestCase {
 
     // MARK: - Orange Theme Dark Mode Typography Tests
 
-    /// This function tests all elevation tokens in the `OrangeTheme` with the `dark` color scheme.
+    /// This function tests all typography tokens in the `OrangeTheme` with the `dark` color scheme.
     /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme horizontalSizeClass.
     @MainActor func testAllTypographiesOrangeThemeDark() {
@@ -80,7 +80,7 @@ final class OUDSTokensTypographyUITests: XCTestCase {
 
     // MARK: - Inverse Theme Light Mode Typography Tests
 
-    /// This function tests all elevation tokens in the `InverseTheme` with the `light` color scheme.
+    /// This function tests all typography tokens in the `InverseTheme` with the `light` color scheme.
     /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme and horizontalSizeClass
     @MainActor func testAllTypographiesInverseThemeLight() {
@@ -103,7 +103,7 @@ final class OUDSTokensTypographyUITests: XCTestCase {
 
     // MARK: - Inverse Theme Dark Mode Typography Tests
 
-    /// This function tests all elevation tokens in the `InverseTheme` with the `dark` color scheme.
+    /// This function tests all typography tokens in the `InverseTheme` with the `dark` color scheme.
     /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme and horizontalSizeClass.
     @MainActor func testAllTypographiesInverseThemeDark() {

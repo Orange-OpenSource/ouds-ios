@@ -22,12 +22,12 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the TokensColors are tested for UI compatibility with the reference image recorded
+/// Tests the UI rendering of each **color token** using reference images
 final class OUDSTokensColorUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Color Tests
 
-    /// This function tests all elevation tokens in the `OrangeTheme` with both the `light` color schemes.
+    /// This function tests all color tokens in the `OrangeTheme` with both the `light` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsOrangeThemeLight() {
@@ -48,7 +48,7 @@ final class OUDSTokensColorUITests: XCTestCase {
 
     // MARK: - Orange Theme Dark Mode Color Tests
 
-    /// This function tests all elevation tokens in the `OrangeTheme` with both the `dark` color schemes.
+    /// This function tests all color tokens in the `OrangeTheme` with both the `dark` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsOrangeThemeDark() {
@@ -69,7 +69,7 @@ final class OUDSTokensColorUITests: XCTestCase {
 
     // MARK: - Inverse Theme Light Mode Color Tests
 
-    /// This function tests all elevation tokens in the `InverseTheme` with both the `light` color schemes.
+    /// This function tests all color tokens in the `InverseTheme` with both the `light` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsInverseThemeLight() {
@@ -90,7 +90,7 @@ final class OUDSTokensColorUITests: XCTestCase {
 
     // MARK: - Inverse Theme Dark Mode Color Tests
 
-    /// This function tests all elevation tokens in the `InverseTheme` with both the `dark` color schemes.
+    /// This function tests all color tokens in the `InverseTheme` with both the `dark` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsInverseThemeDark() {
@@ -108,8 +108,10 @@ final class OUDSTokensColorUITests: XCTestCase {
         testDecorativeColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testChartColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
     }
+    
+    // MARK: - Helpers
 
-    /// This function tests colors for the `Background` section of the OrangeTheme.
+    /// This function tests colors for the `Background` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
@@ -137,7 +139,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `Action` section of the OrangeTheme.
+    /// This function tests colors for the `Action` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
@@ -165,7 +167,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `Always` section of the OrangeTheme.
+    /// This function tests colors for the `Always` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
@@ -193,7 +195,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `Content` section of the OrangeTheme.
+    /// This function tests colors for the `Content` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
@@ -221,7 +223,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `ContentOnBg` section of the OrangeTheme.
+    /// This function tests colors for the `ContentOnBg` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
@@ -249,7 +251,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `Border` section of the OrangeTheme.
+    /// This function tests colors for the `Border` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
@@ -277,7 +279,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `Elevation` section of the OrangeTheme.
+    /// This function tests colors for the `Elevation` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
@@ -305,7 +307,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `Decorative` section of the OrangeTheme.
+    /// This function tests colors for the `Decorative` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
@@ -333,7 +335,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `Chart` section of the OrangeTheme.
+    /// This function tests colors for the `Chart` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.

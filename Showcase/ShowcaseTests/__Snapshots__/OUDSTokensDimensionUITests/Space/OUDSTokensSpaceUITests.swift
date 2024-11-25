@@ -22,13 +22,13 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the TokensSpace are tested for UI compatibility with the reference image recorded
+/// Tests the UI rendering of each **space token** using reference images
 final class OUDSTokensSpaceUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Space Tests
 
-    /// This function tests all dimension tokens in the `OrangeTheme` with both the `light` color schemes.
-    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
+    /// This function tests all space tokens in the `OrangeTheme` with both the `light` color schemes.
+    /// It iterates through all `NamedSpace` cases, rendering each illustration in a `UIHostingController`
     /// and captures snapshots. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllSpacesOrangeThemeLight() {
         // Create an instance of the page with a forced OrangeTheme and light color scheme
@@ -48,7 +48,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     // MARK: - Orange Theme Dark Mode Space Tests
 
-    /// This function tests all dimension tokens in the `OrangeTheme` with both the  `dark` color schemes.
+    /// This function tests all space tokens in the `OrangeTheme` with both the  `dark` color schemes.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures snapshots. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllSpacesOrangeThemeDark() {
@@ -69,7 +69,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     // MARK: - Inverse Theme Light Mode Space Tests
 
-    /// This function tests all dimensions tokens in the `InverseTheme` with both the `light` color scheme.
+    /// This function tests all space tokens in the `InverseTheme` with both the `light` color scheme.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the space type, theme, and color scheme.
     @MainActor func testAllSpaceInverseThemeLight() {
@@ -90,7 +90,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     // MARK: - Inverse Theme Dark Mode Space Tests
 
-    /// This function tests all dimensions tokens in the `InverseTheme` with both the `dark` color scheme.
+    /// This function tests all space tokens in the `InverseTheme` with both the `dark` color scheme.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the space type, theme, and color scheme.
     @MainActor func testAllSpaceInverseThemeDark() {
