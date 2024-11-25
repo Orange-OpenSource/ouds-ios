@@ -22,7 +22,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the TokensElevation are tested for UI compatibility with the reference image recorded
+/// Tests the UI rendering of each **elevation token** using reference images
 final class OUDSTokensElevationUITests: XCTestCase {
 
     // MARK: Properties

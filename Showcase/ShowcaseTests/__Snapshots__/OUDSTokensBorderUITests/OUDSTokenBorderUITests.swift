@@ -22,10 +22,10 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the TokensBorder are tested for UI compatibility with the reference image recorded
+/// Tests the UI rendering of each **border token** using reference images
 final class OUDSTokensBorderUITests: XCTestCase {
 
-    // MARK: Properties
+    // MARK: - Properties
 
     private let inverseTheme = InverseTheme()
     private let orangeTheme = OrangeTheme()
@@ -34,7 +34,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Border Tests
 
-    /// This function tests all elevation tokens in the `OrangeTheme` with the `light` color scheme.
+    /// This function tests all border tokens in the `OrangeTheme` with the `light` color scheme.
     /// It iterates through all `NamedBorder` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
     @MainActor func testAllBordersOrangeThemeLight() {
@@ -50,7 +50,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
-            /// Capture the snapshot of the illustration with the correct theme and color scheme
+            // Capture the snapshot of the illustration with the correct theme and color scheme
             let snapshotName = "\(borderWidth.rawValue)"
             assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
         }
@@ -86,7 +86,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     // MARK: - Orange Theme Dark Mode Border Tests
 
-    /// This function tests all elevation tokens in the `OrangeTheme` with the `dark` color scheme.
+    /// This function tests all border tokens in the `OrangeTheme` with the `dark` color scheme.
     /// It iterates through all `NamedBorder` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
     @MainActor func testAllBordersOrangeThemeDark() {
@@ -138,7 +138,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     // MARK: - Inverse Theme Light Mode Border Tests
 
-    /// This function tests all elevation tokens in the `InverseTheme` with the `light` color scheme.
+    /// This function tests all border tokens in the `InverseTheme` with the `light` color scheme.
     /// It iterates through all `NamedBorder` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
     @MainActor func testAllBordersInverseThemeLight() {
@@ -190,7 +190,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     // MARK: - Inverse Theme Dark Mode Border Tests
 
-    /// This function tests all elevation tokens in the `InverseTheme` with the `dark` color scheme.
+    /// This function tests all border tokens in the `InverseTheme` with the `dark` color scheme.
     /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
     @MainActor func testAllBordersInverseThemeDark() {
