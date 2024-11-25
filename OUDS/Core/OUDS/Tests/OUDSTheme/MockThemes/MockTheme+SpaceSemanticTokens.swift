@@ -17,20 +17,20 @@ import OUDSTokensSemantic
 extension MockTheme {
 
     static let mockThemeSpaceRawToken: DimensionRawToken = 911
-    static let mockThemeSpaceSemanticToken = MultipleSpaceTokens(compact: 1, regular: 151)
+    static let mockThemeSpaceSemanticToken = MultipleSpaceSemanticTokens(compact: 1, regular: 151)
 
     // MARK: Semantic token - Spacing - Layout fluid (multiple)
 
-    override open var spaceScaledNone: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
-    override open var spaceScaledSmash: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
-    override open var spaceScaledShortest: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
-    override open var spaceScaledShorter: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
-    override open var spaceScaledShort: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
-    override open var spaceScaledMedium: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
-    override open var spaceScaledTall: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
-    override open var spaceScaledTaller: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
-    override open var spaceScaledTallest: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
-    override open var spaceScaledSpacious: MultipleSpaceTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledNone: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledSmash: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledShortest: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledShorter: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledShort: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledMedium: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledTall: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledTaller: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledTallest: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
+    override open var spaceScaledSpacious: MultipleSpaceSemanticTokens { Self.mockThemeSpaceSemanticToken }
 
     // MARK: Semantic token - Spacing - Layout fluid (pure semantic)
 

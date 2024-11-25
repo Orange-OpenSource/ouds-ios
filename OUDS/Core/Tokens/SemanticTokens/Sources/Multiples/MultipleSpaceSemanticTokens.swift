@@ -18,7 +18,7 @@ import SwiftUICore
 /// Kind of semantic tokens which will wrap a combination of `DimensionRawToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-/// If a space token exists with its value depending to the size class, it must be packed in such ``MultipleSpaceTokens``.
+/// If a space token exists with its value depending to the size class, it must be packed in such ``MultipleSpaceSemanticTokens``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a space semantic token spaceScaledShortest,
@@ -32,16 +32,16 @@ import SwiftUICore
 ///         // Then the develoment team declares an "higher" level space semantic token for spaceScaledShortest
 ///         // inside SpaceMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+SpaceMultipleSemanticTokens extension
-///         var spaceScaledShortest: MultipleSpaceTokens { MultipleSpaceTokens(compact: spaceScaledShortestMobile, regular: spaceScaledShortestTablet) }
+///         var spaceScaledShortest: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(compact: spaceScaledShortestMobile, regular: spaceScaledShortestTablet) }
 ///
 ///         // If the same value is used whatever the size class is
-///         var spaceScaledShortest: MultipleSpaceTokens { MultipleSpaceTokens(spaceScaledShortestTabley) }
+///         var spaceScaledShortest: MultipleSpaceSemanticTokens { MultipleSpaceSemanticTokens(spaceScaledShortestTabley) }
 ///
 ///         // The theme exposes both generated font space semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 /// 
-public final class MultipleSpaceTokens: NSObject, Sendable {
+public final class MultipleSpaceSemanticTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: DimensionRawToken
@@ -61,10 +61,10 @@ public final class MultipleSpaceTokens: NSObject, Sendable {
     deinit { }
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
-    /// as a `MultipleSpaceTokens`. Otherwise returns `false`.
+    /// as a `MultipleSpaceSemanticTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleSpaceTokens else { return false }
+        guard let other = object as? MultipleSpaceSemanticTokens else { return false }
         return self.compact == other.compact && self.regular == other.regular
     }
 
