@@ -16,43 +16,43 @@ import OUDSTokensSemantic
 
 extension MockTheme {
 
-    static let mockThemeMultipleTypographyTokens = MultipleTypographyTokens(TypographyRawTokens.typeBold1850)
+    static let mockThemeMultipleTypographyCompositeRawTokens = MultipleTypographyCompositeRawTokens(TypographyRawTokens.typeBold1850)
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    override open var typeDisplayLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeDisplayMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeDisplaySmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override open var typeDisplayLarge: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeDisplayMedium: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeDisplaySmall: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    override open var typeHeadingXLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeHeadingLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeHeadingMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeHeadingSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override open var typeHeadingXLarge: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeHeadingLarge: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeHeadingMedium: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeHeadingSmall: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    override open var typeBodyDefaultLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeBodyDefaultMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeBodyDefaultSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeBodyStrongLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeBodyStrongMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeBodyStrongSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override open var typeBodyDefaultLarge: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeBodyDefaultMedium: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeBodyDefaultSmall: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeBodyStrongLarge: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeBodyStrongMedium: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeBodyStrongSmall: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    override open var typeLabelDefaultXLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeLabelDefaultLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeLabelDefaultMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeLabelDefaultSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeLabelStrongXLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeLabelStrongLarge: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeLabelStrongMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeLabelStrongSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override open var typeLabelDefaultXLarge: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeLabelDefaultLarge: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeLabelDefaultMedium: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeLabelDefaultSmall: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeLabelStrongXLarge: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeLabelStrongLarge: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeLabelStrongMedium: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeLabelStrongSmall: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    override open var typeCodeMedium: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
-    override open var typeCodeSmall: MultipleTypographyTokens { Self.mockThemeMultipleTypographyTokens }
+    override open var typeCodeMedium: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
+    override open var typeCodeSmall: MultipleTypographyCompositeRawTokens { Self.mockThemeMultipleTypographyCompositeRawTokens }
 }

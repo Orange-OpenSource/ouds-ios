@@ -17,7 +17,7 @@ import SwiftUICore
 /// Kind of semantic tokens which will wrap a combination of `TypographyCompositeRawToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a typography token exists with its value depending to the size class, it must be packed in such ``MultipleTypographyTokens``.
+/// If a typography token exists with its value depending to the size class, it must be packed in such ``MultipleTypographyCompositeRawTokens``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a typography semantic token typeDisplayLarge,
@@ -28,19 +28,19 @@ import SwiftUICore
 ///         // Then the develoment team declares an "higher" level typography semantic token
 ///         // inside TypographyCompositeSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+TypographyCompositeSemanticTokens extension
-///         var typeDisplayLarge: MultipleTypographyTokens { MultipleTypographyTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold1450) }
+///         var typeDisplayLarge: MultipleTypographyCompositeRawTokens { MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold1450) }
 ///
 ///         // If the same typography is used whatever the size class is
-///         var typeDisplayLarge: MultipleTypographyTokens { MultipleTypographyTokens(TypographyRawTokens.typeBold650) }
+///         var typeDisplayLarge: MultipleTypographyCompositeRawTokens { MultipleTypographyCompositeRawTokens(TypographyRawTokens.typeBold650) }
 ///
 ///         // The theme exposes both generated elevation semantic tokens and "crafted" higher level elevation semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 ///
-/// The case of this ``MultipleTypographyTokens`` is quite particular because in fact it contains `TypographyCompositeRawToken` (i.e. raw tokens) instead of semantic tokens.
+/// The case of this ``MultipleTypographyCompositeRawTokens`` is quite particular because in fact it contains `TypographyCompositeRawToken` (i.e. raw tokens) instead of semantic tokens.
 /// In fact there is not "typography composite semantic tokens" defined in the *Figma* kit.
 /// 
-public final class MultipleTypographyTokens: NSObject, Sendable {
+public final class MultipleTypographyCompositeRawTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: TypographyCompositeRawToken
@@ -67,10 +67,10 @@ public final class MultipleTypographyTokens: NSObject, Sendable {
     deinit { }
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
-    /// as a `MultipleTypographyTokens`. Otherwise returns `false`.
+    /// as a `MultipleTypographyCompositeRawTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MultipleTypographyTokens else { return false }
+        guard let object = object as? MultipleTypographyCompositeRawTokens else { return false }
         return self.compact == object.compact && self.regular == object.regular
     }
 
