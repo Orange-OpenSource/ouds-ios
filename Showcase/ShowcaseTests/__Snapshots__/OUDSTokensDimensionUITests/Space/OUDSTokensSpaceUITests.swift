@@ -25,6 +25,15 @@ import XCTest
 /// Tests the UI rendering of each **space token** using reference images
 final class OUDSTokensSpaceUITests: XCTestCase {
 
+    // MARK: Properties
+
+    private let inverseTheme = InverseTheme()
+    private let orangeTheme = OrangeTheme()
+    private let lightScheme: ColorScheme = .light
+    private let lightInterfaceStyle: UIUserInterfaceStyle = .light
+    private let darkScheme: ColorScheme = .dark
+    private let darkInterfaceStyle: UIUserInterfaceStyle = .dark
+
     // MARK: - Orange Theme Light Mode Space Tests
 
     /// This function tests all dimension tokens in the `OrangeTheme` with both the `light` color schemes.
@@ -32,17 +41,19 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllSpacesOrangeThemeLight() {
         // Testing for different types of spacing for light mode
-        testScaledSpaces(theme: OrangeTheme(), interfaceStyle: .light)
-        testFixedSpacing(theme: OrangeTheme(), interfaceStyle: .light)
-        testPaddingInline(theme: OrangeTheme(), interfaceStyle: .light)
-        testPaddingInlineWithIcon(theme: OrangeTheme(), interfaceStyle: .light)
-        testPaddingInlineWithArrow(theme: OrangeTheme(), interfaceStyle: .light)
-        testPaddingInset(theme: OrangeTheme(), interfaceStyle: .light)
-        testPaddingStack(theme: OrangeTheme(), interfaceStyle: .light)
-        testPaddingStackWithIcon(theme: OrangeTheme(), interfaceStyle: .light)
-        testGapInline(theme: OrangeTheme(), interfaceStyle: .light)
-        testGapStack(theme: OrangeTheme(), interfaceStyle: .light)
-        testGapStackWithIcon(theme: OrangeTheme(), interfaceStyle: .light)
+        let theme = OrangeTheme()
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testScaledSpaces(theme: theme, interfaceStyle: interfaceStyle)
+        testFixedSpacing(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInline(theme: theme, interfaceStyle: interfaceStyle)
+        testGapStack(theme: theme, interfaceStyle: interfaceStyle)
+        testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Orange Theme Dark Mode Space Tests
@@ -52,17 +63,19 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     /// and captures a snapshot. The snapshot is saved with a name indicating the space type, theme, and interfaceStyle (i.e color scheme).
     @MainActor func testAllSpacesOrangeThemeDark() {
         // Testing for different types of spacing for dark mode
-        testScaledSpaces(theme: OrangeTheme(), interfaceStyle: .dark)
-        testFixedSpacing(theme: OrangeTheme(), interfaceStyle: .dark)
-        testPaddingInline(theme: OrangeTheme(), interfaceStyle: .dark)
-        testPaddingInlineWithIcon(theme: OrangeTheme(), interfaceStyle: .dark)
-        testPaddingInlineWithArrow(theme: OrangeTheme(), interfaceStyle: .dark)
-        testPaddingInset(theme: OrangeTheme(), interfaceStyle: .dark)
-        testPaddingStack(theme: OrangeTheme(), interfaceStyle: .dark)
-        testPaddingStackWithIcon(theme: OrangeTheme(), interfaceStyle: .dark)
-        testGapInline(theme: OrangeTheme(), interfaceStyle: .dark)
-        testGapStack(theme: OrangeTheme(), interfaceStyle: .dark)
-        testGapStackWithIcon(theme: OrangeTheme(), interfaceStyle: .dark)
+        let theme = OrangeTheme()
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testScaledSpaces(theme: theme, interfaceStyle: interfaceStyle)
+        testFixedSpacing(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInline(theme: theme, interfaceStyle: interfaceStyle)
+        testGapStack(theme: theme, interfaceStyle: interfaceStyle)
+        testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Light Mode Space Tests
@@ -71,18 +84,19 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the space type, theme, and interfaceStyle (i.e color scheme).
     @MainActor func testAllSpaceInverseThemeLight() {
-        // Testing for different types of spacing for light mode
-        testScaledSpaces(theme: InverseTheme(), interfaceStyle: .light)
-        testFixedSpacing(theme: InverseTheme(), interfaceStyle: .light)
-        testPaddingInline(theme: InverseTheme(), interfaceStyle: .light)
-        testPaddingInlineWithIcon(theme: InverseTheme(), interfaceStyle: .light)
-        testPaddingInlineWithArrow(theme: InverseTheme(), interfaceStyle: .light)
-        testPaddingInset(theme: InverseTheme(), interfaceStyle: .light)
-        testPaddingStack(theme: InverseTheme(), interfaceStyle: .light)
-        testPaddingStackWithIcon(theme: InverseTheme(), interfaceStyle: .light)
-        testGapInline(theme: InverseTheme(), interfaceStyle: .light)
-        testGapStack(theme: InverseTheme(), interfaceStyle: .light)
-        testGapStackWithIcon(theme: InverseTheme(), interfaceStyle: .light)
+        let theme = InverseTheme()
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testScaledSpaces(theme: theme, interfaceStyle: interfaceStyle)
+        testFixedSpacing(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInline(theme: theme, interfaceStyle: interfaceStyle)
+        testGapStack(theme: theme, interfaceStyle: interfaceStyle)
+        testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Dark Mode Space Tests
@@ -91,18 +105,19 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. The snapshot is saved with a name indicating the space type, theme, and interfaceStyle (i.e color scheme).
     @MainActor func testAllSpaceInverseThemeDark() {
-        // Testing for different types of spacing for dark mode
-        testScaledSpaces(theme: InverseTheme(), interfaceStyle: .dark)
-        testFixedSpacing(theme: InverseTheme(), interfaceStyle: .dark)
-        testPaddingInline(theme: InverseTheme(), interfaceStyle: .dark)
-        testPaddingInlineWithIcon(theme: InverseTheme(), interfaceStyle: .dark)
-        testPaddingInlineWithArrow(theme: InverseTheme(), interfaceStyle: .dark)
-        testPaddingInset(theme: InverseTheme(), interfaceStyle: .dark)
-        testPaddingStack(theme: InverseTheme(), interfaceStyle: .dark)
-        testPaddingStackWithIcon(theme: InverseTheme(), interfaceStyle: .dark)
-        testGapInline(theme: InverseTheme(), interfaceStyle: .dark)
-        testGapStack(theme: InverseTheme(), interfaceStyle: .dark)
-        testGapStackWithIcon(theme: InverseTheme(), interfaceStyle: .dark)
+        let theme = InverseTheme()
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testScaledSpaces(theme: theme, interfaceStyle: interfaceStyle)
+        testFixedSpacing(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
+        testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInline(theme: theme, interfaceStyle: interfaceStyle)
+        testGapStack(theme: theme, interfaceStyle: interfaceStyle)
+        testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Helper Functions
@@ -115,10 +130,9 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
         // Iterate through all background color cases defined in NamedSpace.Scaled
         for namedToken in NamedSpace.Scaled.allCases {
-
-            // Generate the illustration for the specified space token using the spacePage instance
+            // Generate the illustration for the specified space token
             let illustration = OUDSThemeableView(theme: theme) {
-                ScaledSpacesCategory.Illustration(for: namedToken)
+                IllustrationScaled(namedSpaceToken: namedToken)
                     .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
@@ -167,7 +181,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     @MainActor private func testPaddingInline(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedSpace.PaddingInline
         for namedToken in NamedSpace.PaddingInline.allCases {
-
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenEntry(namedSpaceToken: namedToken) { token in
@@ -192,9 +205,9 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testPaddingInlineWithIcon(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+
         // Iterate through all background color cases defined in NamedSpace.PaddingInlineWithIcon
         for namedToken in NamedSpace.PaddingInlineWithIcon.allCases {
-
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenEntry(namedSpaceToken: namedToken) { token in
@@ -219,9 +232,9 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testPaddingInlineWithArrow(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+
         /// Iterate through all background color cases defined in NamedSpace.PaddingInlineWithArrow
         for namedToken in NamedSpace.PaddingInlineWithArrow.allCases {
-
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenEntry(namedSpaceToken: namedToken) { token in
@@ -246,9 +259,9 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testPaddingInset(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+
         // Iterate through all background color cases defined in NamedSpace.PaddingInset
         for namedToken in NamedSpace.PaddingInset.allCases {
-
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenEntry(namedSpaceToken: namedToken) { token in
@@ -273,9 +286,9 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testPaddingStack(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+
         // Iterate through all background color cases defined in NamedSpace.PaddingStack
         for namedToken in NamedSpace.PaddingStack.allCases {
-
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenEntry(namedSpaceToken: namedToken) { token in
@@ -327,9 +340,9 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testGapInline(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+
         // Iterate through all background color cases defined in NamedSpace.GapInline
         for namedToken in NamedSpace.GapInline.allCases {
-
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenEntry(namedSpaceToken: namedToken) { token in
@@ -354,9 +367,9 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testGapStack(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+
         // Iterate through all background color cases defined in NamedSpace.GapInline
         for namedToken in NamedSpace.GapStack.allCases {
-
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenEntry(namedSpaceToken: namedToken) { token in

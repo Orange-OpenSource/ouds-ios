@@ -76,6 +76,8 @@ struct SpaceTokenPage: View {
         .padding(.horizontal, theme.spaceFixedMedium)
     }
 
+    // MARK: Common helpers
+
     private func header(_ text: LocalizedStringKey) -> some View {
         Text(text).showcaseSectionHeaderStyle()
     }

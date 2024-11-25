@@ -26,11 +26,6 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
     let tokenValue: String?
     @ViewBuilder let tokenIllustration: () -> TokenIllustration
 
-    /// A theme to force for this `View` whatever the environnement `theme` is (for UI tests purposes)
-    private let forcedTheme: OUDSTheme?
-    /// A `ColorScheme` to force for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
-    private let forcedColorScheme: ColorScheme?
-
     // MARK: Initializer
 
     init(tokenName: String,
@@ -39,8 +34,6 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
          colorScheme: ColorScheme? = nil,
          tokenIllustration: @escaping () -> TokenIllustration) {
         self.tokenIllustration = tokenIllustration
-        forcedTheme = theme
-        forcedColorScheme = colorScheme
         self.tokenName = tokenName
         self.tokenValue = tokenValue
     }
@@ -48,10 +41,6 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
     // MARK: Body
 
     var body: some View {
-        // Move activeColorScheme here to ensure colorScheme is accessible (for UI tests purposes)
-        let activeColorScheme = forcedColorScheme ?? colorScheme
-        // Move activeTheme here to ensure theme is accessible (for UI tests purposes)
-        let activeTheme = forcedTheme ?? theme
 
         HStack(alignment: .top, spacing: theme.spaceFixedMedium) {
 
@@ -59,17 +48,17 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
 
             VStack(alignment: .leading) {
                 Text(tokenName)
-                    .typeBodyStrongLarge(activeTheme)
-                    .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
+                    .typeBodyStrongLarge(theme)
+                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
                 if let tokenValue {
                     Text(tokenValue)
-                        .typeBodyDefaultMedium(activeTheme)
-                        .foregroundStyle(activeTheme.colorContentMuted.color(for: activeColorScheme))
+                        .typeBodyDefaultMedium(theme)
+                        .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .accessibilityElement(children: .combine)
         }
-        .padding(.vertical, activeTheme.spaceFixedShorter)
+        .padding(.vertical, theme.spaceFixedShorter)
     }
 }
