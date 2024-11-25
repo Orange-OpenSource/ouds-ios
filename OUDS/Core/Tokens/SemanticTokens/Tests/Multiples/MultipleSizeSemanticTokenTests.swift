@@ -46,7 +46,7 @@ final class MultipleSizeTokensTests: XCTestCase {
         let third = MultipleSizeTokens(compact: 12, regular: 78)
         let fourth = MultipleSizeTokens(compact: 56, regular: 34)
         let fifth = MultipleSizeTokens(compact: 12, regular: 34)
-        let sixth = MultipleColorTokens("#000000")
+        let sixth = MultipleColorSemanticTokens("#000000")
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

@@ -37,7 +37,7 @@ extension NamedColor {
         // case colorBorderOnBgBrandSecondary
         // case colorBorderOnBgBrandTertiary
 
-        func token(from theme: OUDSTheme) -> MultipleColorTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorBorderDefault:
                 return theme.colorBorderDefault

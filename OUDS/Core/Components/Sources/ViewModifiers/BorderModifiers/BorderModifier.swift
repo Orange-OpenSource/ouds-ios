@@ -30,7 +30,7 @@ struct BorderModifier: ViewModifier {
     private let radius: BorderRadiusSemanticToken
 
     /// The color token used for the border
-    private let color: MultipleColorTokens
+    private let color: MultipleColorSemanticTokens
 
     /// Color to apply depending to the `colorScheme`
     private var colorToApply: Color {
@@ -45,7 +45,7 @@ struct BorderModifier: ViewModifier {
     init(_ style: BorderStyleSemanticToken,
          _ width: BorderWidthSemanticToken,
          _ radius: BorderRadiusSemanticToken,
-         _ color: MultipleColorTokens) {
+         _ color: MultipleColorSemanticTokens) {
         self.style = style
         self.width = width
         self.radius = radius

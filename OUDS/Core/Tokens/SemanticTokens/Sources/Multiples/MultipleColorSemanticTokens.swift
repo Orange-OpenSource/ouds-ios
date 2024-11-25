@@ -18,7 +18,7 @@ import SwiftUI
 /// Kind of semantic tokens which will wrap a combination of ``ColorSemanticToken`` depending to *color scheme* (i.e. ligh mode or dark mode).
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If a color token exists with its value depending to the color scheme, it must be packed in such ``MultipleColorTokens`
+/// If a color token exists with its value depending to the color scheme, it must be packed in such ``MultipleColorSemanticTokens`
 ///
 /// ```swift
 ///         // Assuming in Figma with have a color semantic token colorBgPrimary,
@@ -31,16 +31,16 @@ import SwiftUI
 ///         // Then the develoment team declares an "higher" level color semantic token for colorBgPrimary
 ///         // inside ColorMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+ColorMultipleSemanticToken extension
-///         var colorBgPrimary: MultipleColorTokens { MultipleColorTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
+///         var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
 ///
 ///         // If the same color is used whatever the color scheme is
-///         var colorBgPrimary: MultipleColorTokens { MultipleColorTokens(colorBgPrimaryLight) }
+///         var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBgPrimaryLight) }
 ///
 ///         // The theme exposes both generated color semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 ///
-public final class MultipleColorTokens: NSObject, Sendable {
+public final class MultipleColorSemanticTokens: NSObject, Sendable {
 
     /// For **light** mode scheme
     public let light: ColorSemanticToken
@@ -70,7 +70,7 @@ public final class MultipleColorTokens: NSObject, Sendable {
     /// as a `MultipleColorRawToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleColorTokens else { return false }
+        guard let other = object as? MultipleColorSemanticTokens else { return false }
         return self.light == other.light && self.dark == other.dark
     }
 

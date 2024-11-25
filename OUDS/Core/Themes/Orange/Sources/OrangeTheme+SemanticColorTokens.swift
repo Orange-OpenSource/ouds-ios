@@ -27,64 +27,64 @@ extension OrangeTheme {
     // MARK: Semantic token - Colors - Background
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorBgTertiary: MultipleColorTokens { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorWarmGray100, dark: OrangeBrandColorRawTokens.colorWarmGray900) }
+    override open var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: OrangeBrandColorRawTokens.colorWarmGray100, dark: OrangeBrandColorRawTokens.colorWarmGray900) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorBgBrandPrimary: MultipleColorTokens { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorBgBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorBgStatusAccentMuted: MultipleColorTokens { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorWarmGray100, dark: OrangeBrandColorRawTokens.colorWarmGray900) }
+    override open var colorBgStatusAccentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: OrangeBrandColorRawTokens.colorWarmGray100, dark: OrangeBrandColorRawTokens.colorWarmGray900) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorBgStatusAccentMutedOnBgEmphasized: MultipleColorTokens { MultipleColorTokens(OrangeBrandColorRawTokens.colorWarmGray900) }
+    override open var colorBgStatusAccentMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorWarmGray900) }
 
     // MARK: Semantic token - Colors - Content
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorContentBrandPrimary: MultipleColorTokens { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
 
     // MARK: Semantic token - Colors - Border
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorTokens { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorBorderBrandPrimary: MultipleColorTokens { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
 
     // MARK: Semantic token - Colors - Action
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorActionSelected: MultipleColorTokens { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorActionSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorActionSelectedOnBgEmphasized: MultipleColorTokens { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorActionSelectedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorActionPrimaryPressed: MultipleColorTokens { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorActionPrimaryPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorActionPrimaryPressedOnBgEmphasized: MultipleColorTokens { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorActionPrimaryPressedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorActionPrimaryLoading: MultipleColorTokens { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorActionPrimaryLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorActionPrimaryLoadingOnBgEmphasized: MultipleColorTokens { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorActionPrimaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorActionPrimaryFocus: MultipleColorTokens { MultipleColorTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
+    override open var colorActionPrimaryFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorActionPrimaryFocusOnBgEmphasized: MultipleColorTokens { MultipleColorTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override open var colorActionPrimaryFocusOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
     // MARK: Semantic token - Colors - Elevation
 
     // NOTE: Defined here because use values available only in this Orange theme, open for InverseTheme overriding
-    override open var colorDecorativePrimary: MultipleColorTokens { MultipleColorTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorDecorativePrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
     // MARK: Semantic token - Colors - Chart
 
-    override open var colorChartCategoricalBrand: MultipleColorTokens { MultipleColorTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorChartCategoricalBrand: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: OrangeBrandColorRawTokens.colorOrange550, dark: OrangeBrandColorRawTokens.colorOrange500) }
 }
 
 // swiftlint:enable line_length

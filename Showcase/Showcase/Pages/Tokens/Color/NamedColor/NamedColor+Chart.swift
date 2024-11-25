@@ -79,7 +79,7 @@ extension NamedColor {
         case colorChartSequentialAccent5Tint800
         case colorChartSequentialAccent5Tint900
 
-        func token(from theme: OUDSTheme) -> MultipleColorTokens {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorChartCategoricalNeutral:
                 return theme.colorChartCategoricalNeutral
