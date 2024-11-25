@@ -18,7 +18,7 @@ import SwiftUI
 /// Semantic tokens which will wrap a combination of `ElevationCompositeRawToken` depending to color scheme (i.e. light mode or dark mode)
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
-/// If an elevation token exists with its value depending to the color scheme, it must be packed in such ``MultipleElevationTokens`
+/// If an elevation token exists with its value depending to the color scheme, it must be packed in such ``MultipleElevationCompositeRawTokens`
 ///
 /// ```swift
 ///         // Assuming in Figma with have a elevation semantic token elevationNone,
@@ -29,7 +29,7 @@ import SwiftUI
 ///         // Then the develoment team declares an "higher" level elevation semantic token
 ///         // inside ElevationCompositeSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+ElevationCompositeSemanticTokens extension
-///         // ElevationCompositeSemanticToken is a typealias for MultipleElevationTokens to keep same grammar as dsign kit
+///         // ElevationCompositeSemanticToken is a typealias for MultipleElevationCompositeRawTokens to keep same grammar as dsign kit
 ///         var elevationNone: ElevationCompositeSemanticToken {
 ///             ElevationCompositeSemanticToken(light: elevationBottom_0, dark: elevationBottom_1_100)
 ///         }
@@ -43,10 +43,10 @@ import SwiftUI
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 ///
-/// The case of this `MultipleElevationTokens` is quite particular because in fact it contains `ElevationCompositeRawToken` (i.e. raw tokens) instead of semantic tokens.
+/// The case of this `MultipleElevationCompositeRawTokens` is quite particular because in fact it contains `MultipleElevationCompositeRawTokens` (i.e. raw tokens) instead of semantic tokens.
 /// In fact only the *color* of the elevation effect vary depending to the color scheme,
 /// but in the *Figma* kit this is composite raw tokens which are defined for ligh and dark mode as only one token.
-public final class MultipleElevationTokens: NSObject, Sendable {
+public final class MultipleElevationCompositeRawTokens: NSObject, Sendable {
 
     /// For **light** mode scheme
     public let light: ElevationCompositeRawToken
@@ -73,10 +73,10 @@ public final class MultipleElevationTokens: NSObject, Sendable {
     deinit { }
 
     /// Returns `true` if `self` and `object` has the same `light` and `dark` values and with `object`
-    /// as a `MultipleElevationTokens`. Otherwise returns `false`.
+    /// as a `MultipleElevationCompositeRawTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let other = object as? MultipleElevationTokens else { return false }
+        guard let other = object as? MultipleElevationCompositeRawTokens else { return false }
         return self.light == other.light && self.dark == other.dark
     }
 

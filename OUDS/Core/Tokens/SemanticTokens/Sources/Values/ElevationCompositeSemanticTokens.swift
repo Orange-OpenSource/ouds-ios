@@ -23,7 +23,7 @@
 /// It declares in fact box shadows effects.
 ///
 /// This protocol makes themes able to provide and override ``ElevationCompositeSemanticToken``.
-/// ``ElevationCompositeSemanticToken`` refers to ``MultipleElevationTokens``, which contains for light and dark color schemes `ElevationCompositeRawToken`.
+/// ``ElevationCompositeSemanticToken`` refers to ``MultipleElevationCompositeRawTokens``, which contains for light and dark color schemes `ElevationCompositeRawToken`.
 /// This `ElevationCompositeRawToken` is not managed by tokenator yet as it is composed by three properties.
 public protocol ElevationCompositeSemanticTokens {
 
