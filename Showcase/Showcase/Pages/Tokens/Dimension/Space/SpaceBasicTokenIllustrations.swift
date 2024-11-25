@@ -25,7 +25,7 @@ struct FixedSapcesIllustrations: View {
 
     // MARK: Body
 
-    var body:  some View {
+    var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
                 .padding(.bottom, theme.spaceFixedMedium)
@@ -78,7 +78,7 @@ struct ScaledSpacesIllustrations: View {
 
     // MARK: Body
 
-    var body:  some View {
+    var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 4, leading: 8, bottom: 0, trailing: 0))
                 .padding(.bottom, theme.spaceFixedMedium)

@@ -84,7 +84,7 @@ struct BorderModifier: ViewModifier {
         content
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .overlay(RoundedRectangle(cornerRadius: radius)
-                .stroke(style: StrokeStyle(lineWidth: width, dash: [2, 2]))
+                .stroke(style: StrokeStyle(lineWidth: width, dash: [5, 5]))
                 .foregroundColor(colorToApply)
             )
     }
