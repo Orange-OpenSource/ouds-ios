@@ -42,8 +42,7 @@ struct GridTokenPage: View {
             }
 
             Section {
-                let tokenCode = "theme.gridColumnCount(for: horizontalSizeClass)"
-                ShowcaseTokenCode(code: tokenCode)
+                ShowcaseTokenCode(code: "theme.gridColumnCount(for: horizontalSizeClass)")
             }
 
             Section { illustrationForGridTokens() } header: {

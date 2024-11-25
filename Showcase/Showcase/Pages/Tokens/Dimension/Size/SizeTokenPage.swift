@@ -60,8 +60,7 @@ struct SizeTokenPage: View {
     var body: some View {
         Group {
             Section {
-                let tokenCode = "theme.sizeIconWithHeadingXLargeShort.dimension(for: horizontalSizeClass ?? .regular)"
-                ShowcaseTokenCode(code: tokenCode)
+                ShowcaseTokenCode(code: "theme.sizeIconWithHeadingXLargeShort.dimension(for: horizontalSizeClass ?? .regular)")
             }
             Section { illustrationForIconDecorative() } header: {
                 header("app_tokens_dimension_size_iconDecorative_label")
