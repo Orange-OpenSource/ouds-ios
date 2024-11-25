@@ -11,11 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-/// This enum helps to add new raw tokens for this theme.
+/// This enum helps to add new **color raw tokens** exclusive to this theme.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
 public enum OrangeBrandColorRawTokens {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
-    // Note: So as to help the Figma-JSON-to-Swift parser the values have been added in the Values folder
+    // Note: So as to help the tokenator, the values have been added in the Values folder
+    // This trick helps also to write documentation for these tokens as the tokenator cannot generate documentation
 }

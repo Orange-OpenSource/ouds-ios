@@ -16,7 +16,7 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // ଘ( ･ω･)_/ﾟ･:*:･｡☆
-// [File to generate with the tokenator]
+// [File to generate by the tokenator]
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
@@ -26,16 +26,26 @@ extension OUDSTheme: SpaceSemanticTokens {
 
     // MARK: Semantic token - Spacing - Layout fluid
 
-    @objc open var spaceScaledNone: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension0, regular: DimensionRawTokens.dimension0) }
-    @objc open var spaceScaledSmash: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension25, regular: DimensionRawTokens.dimension50) }
-    @objc open var spaceScaledShortest: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension50, regular: DimensionRawTokens.dimension100) }
-    @objc open var spaceScaledShorter: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension100, regular: DimensionRawTokens.dimension150) }
-    @objc open var spaceScaledShort: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension150, regular: DimensionRawTokens.dimension200) }
-    @objc open var spaceScaledMedium: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension200, regular: DimensionRawTokens.dimension300) }
-    @objc open var spaceScaledTall: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension300, regular: DimensionRawTokens.dimension400) }
-    @objc open var spaceScaledTaller: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension400, regular: DimensionRawTokens.dimension500) }
-    @objc open var spaceScaledTallest: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension500, regular: DimensionRawTokens.dimension600) }
-    @objc open var spaceScaledSpacious: MultipleSpaceTokens { MultipleSpaceTokens(compact: DimensionRawTokens.dimension600, regular: DimensionRawTokens.dimension700) }
+    @objc open var spaceScaledNoneMobile: SpaceSemanticToken { DimensionRawTokens.dimension0 }
+    @objc open var spaceScaledNoneTablet: SpaceSemanticToken { DimensionRawTokens.dimension0 }
+    @objc open var spaceScaledSmashMobile: SpaceSemanticToken { DimensionRawTokens.dimension25 }
+    @objc open var spaceScaledSmashTablet: SpaceSemanticToken { DimensionRawTokens.dimension50 }
+    @objc open var spaceScaledShortestMobile: SpaceSemanticToken { DimensionRawTokens.dimension50 }
+    @objc open var spaceScaledShortestTablet: SpaceSemanticToken { DimensionRawTokens.dimension100 }
+    @objc open var spaceScaledShorterMobile: SpaceSemanticToken { DimensionRawTokens.dimension100 }
+    @objc open var spaceScaledShorterTablet: SpaceSemanticToken { DimensionRawTokens.dimension150 }
+    @objc open var spaceScaledShortMobile: SpaceSemanticToken { DimensionRawTokens.dimension150 }
+    @objc open var spaceScaledShortTablet: SpaceSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var spaceScaledMediumMobile: SpaceSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var spaceScaledMediumTablet: SpaceSemanticToken { DimensionRawTokens.dimension300 }
+    @objc open var spaceScaledTallMobile: SpaceSemanticToken { DimensionRawTokens.dimension300 }
+    @objc open var spaceScaledTallTablet: SpaceSemanticToken { DimensionRawTokens.dimension400 }
+    @objc open var spaceScaledTallerMobile: SpaceSemanticToken { DimensionRawTokens.dimension400 }
+    @objc open var spaceScaledTallerTablet: SpaceSemanticToken { DimensionRawTokens.dimension500}
+    @objc open var spaceScaledTallestMobile: SpaceSemanticToken { DimensionRawTokens.dimension500 }
+    @objc open var spaceScaledTallestTablet: SpaceSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var spaceScaledSpaciousMobile: SpaceSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var spaceScaledSpaciousTablet: SpaceSemanticToken { DimensionRawTokens.dimension700 }
 
     // MARK: Semantic token - Spacing - Layout fix
 

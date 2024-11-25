@@ -17,13 +17,13 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the `MultipleElevationTokens` is tested as a wrapper of semantic tokens for light and dark color schemes.
-final class MultipleElevationTokensTests: XCTestCase {
+/// To ensure the `MultipleElevationCompositeRawTokens` is tested as a wrapper of semantic tokens for light and dark color schemes.
+final class MultipleElevationCompositeRawTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for light and dark modes
     func testInitWithOneValue() {
         let unique: ElevationCompositeRawToken = ElevationRawTokens.elevationBottom_4_100
-        let token = MultipleElevationTokens(unique)
+        let token = MultipleElevationCompositeRawTokens(unique)
 
         XCTAssertTrue(token.light == unique)
         XCTAssertTrue(token.dark == unique)
@@ -33,21 +33,21 @@ final class MultipleElevationTokensTests: XCTestCase {
     func testInitWithTwoValues() {
         let light: ElevationCompositeRawToken = ElevationRawTokens.elevationBottom_1_200
         let dark: ElevationCompositeRawToken = ElevationRawTokens.elevationBottom_1_300
-        let token = MultipleElevationTokens(light: light, dark: dark)
+        let token = MultipleElevationCompositeRawTokens(light: light, dark: dark)
 
         XCTAssertTrue(token.light == light)
         XCTAssertTrue(token.dark == dark)
     }
 
-    /// Tests comparisons between two `MultipleElevationTokens` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleElevationCompositeRawTokens` to ensure tokens are considered as equal
     /// if an only if they have the same light and dark values and have the same types.
     func testIsEqual() {
-        let first = MultipleElevationTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_2_500)
-        let second = MultipleElevationTokens(light: ElevationRawTokens.elevationBottom_3_300, dark: ElevationRawTokens.elevationBottom_3_500)
-        let third = MultipleElevationTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_3_500)
-        let fourth = MultipleElevationTokens(light: ElevationRawTokens.elevationBottom_3_300, dark: ElevationRawTokens.elevationBottom_2_500)
-        let fifth = MultipleElevationTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_2_500)
-        let sixth = MultipleSizeTokens(compact: 12, regular: 12)
+        let first = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_2_500)
+        let second = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_3_300, dark: ElevationRawTokens.elevationBottom_3_500)
+        let third = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_3_500)
+        let fourth = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_3_300, dark: ElevationRawTokens.elevationBottom_2_500)
+        let fifth = MultipleElevationCompositeRawTokens(light: ElevationRawTokens.elevationBottom_4_100, dark: ElevationRawTokens.elevationBottom_2_500)
+        let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

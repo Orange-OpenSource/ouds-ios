@@ -16,14 +16,15 @@ import OUDSTokensSemantic
 import XCTest
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_name
 
-/// To ensure the `MultipleFontLineHeightTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
-final class MultipleFontLineHeightTokensTests: XCTestCase {
+/// To ensure the `MultipleFontLineHeightSemanticTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+final class MultipleFontLineHeightSemanticTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for light and dark modes
     func testInitWithOneValue() {
         let unique: TypographyFontLineHeightSemanticToken = TypographyRawTokens.fontLineHeight250
-        let token = MultipleFontLineHeightTokens(unique)
+        let token = MultipleFontLineHeightSemanticTokens(unique)
 
         XCTAssertTrue(token.compact == unique)
         XCTAssertTrue(token.regular == unique)
@@ -33,21 +34,21 @@ final class MultipleFontLineHeightTokensTests: XCTestCase {
     func testInitWithTwoValues() {
         let compact: TypographyFontLineHeightSemanticToken = TypographyRawTokens.fontLineHeight450
         let regular: TypographyFontLineHeightSemanticToken = TypographyRawTokens.fontLineHeight550
-        let token = MultipleFontLineHeightTokens(compact: compact, regular: regular)
+        let token = MultipleFontLineHeightSemanticTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)
         XCTAssertTrue(token.regular == regular)
     }
 
-    /// Tests comparisons between two `MultipleFontLineHeightTokens` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleFontLineHeightSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight450)
-        let second = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight650, regular: TypographyRawTokens.fontLineHeight550)
-        let third = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight550)
-        let fourth = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight650, regular: TypographyRawTokens.fontLineHeight750)
-        let fifth = MultipleFontLineHeightTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight450)
-        let sixth = MultipleSizeTokens(compact: 12, regular: 12)
+        let first = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight450)
+        let second = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight650, regular: TypographyRawTokens.fontLineHeight550)
+        let third = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight550)
+        let fourth = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight650, regular: TypographyRawTokens.fontLineHeight750)
+        let fifth = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight450)
+        let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))
@@ -59,3 +60,4 @@ final class MultipleFontLineHeightTokensTests: XCTestCase {
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_name

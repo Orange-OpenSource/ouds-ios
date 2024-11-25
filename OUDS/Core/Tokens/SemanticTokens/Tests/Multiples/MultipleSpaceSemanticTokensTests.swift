@@ -38,7 +38,7 @@ final class MultipleSpaceTokensTests: XCTestCase {
         let third = MultipleSpaceTokens(compact: 12, regular: 78)
         let fourth = MultipleSpaceTokens(compact: 56, regular: 34)
         let fifth = MultipleSpaceTokens(compact: 12, regular: 34)
-        let sixth = MultipleSizeTokens(compact: 0, regular: 00)
+        let sixth = MultipleSizeSemanticTokens(compact: 0, regular: 00)
 
         XCTAssertTrue(first.isEqual(first))
         XCTAssertFalse(first.isEqual(second))

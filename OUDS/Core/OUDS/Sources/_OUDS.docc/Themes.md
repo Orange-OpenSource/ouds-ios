@@ -76,7 +76,7 @@ extension YourCustomTheme {
     // Not define dyet
     
     // Override colors semantic tokens
-    override public var colorBgPrimary: ColorSemanticToken { MultipleColorTokens(ColorRawTokens.colorFunctionalDarkGray880) }
+    override public var colorBgPrimary: ColorSemanticToken { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray880) }
     
     // Override some fonts semantic tokens
     public var fontFamily: TypographyFontFamilySemanticToken { TypographyRawTokens.fontFamilySystemSFPro }

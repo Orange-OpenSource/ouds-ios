@@ -5,13 +5,13 @@ They can be seen as an high level of usage with functional meanings.
 
 ## Overview
 
-Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
+If we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
 
 In addition, there are hundreds of _semantics tokens_ and we needed to add them to the abstract root theme using extensions for clarity reasons to prevent to have a _Swift class_ with thousands of lines. Each _raw token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
 
-That is the reason why tokens are exposed as `@objc open` to be available and oveeridable anywhere. 
+That is the reason why tokens are exposed as `@objc open` to be available and overridable anywhere. 
 
-To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are available for those who want to make their own theme.
+To keep the same semantics as the ones used in our specifications, _typealias_ are used so as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are available for those who want to make their own theme.
 
 Example with ``ColorSemanticTokens``:
 
@@ -99,7 +99,7 @@ Thus when the *tokenator* generates tokens without managing composites, the file
 ## How to use semantic tokens
 
 In fact, the semantic tokens are declared and gathered in _Swift protocol_ so as to force any theme to implement them, and also to allow any theme to expose such properties wathever the implementation of the theme is.
-Because *semantic tokens* have for values *raw tokens*, and these *raw tokens* have for values primitive types, and all these tokens are decalred with *type aliases* refering all together, you can handle a *semantic token* directly in your view because the final value will be used.
+Because *semantic tokens* have for values *raw tokens*, and these *raw tokens* have for values primitive types, and all these tokens are declared with *type aliases* refering all together, you can handle a *semantic token* directly in your view because the final value will be used.
 Thus, get the theme and call the needed property with some helpers.
 
 ```swift
@@ -144,12 +144,16 @@ struct Showcase: App {
 
 - ``BorderSemanticTokens``
 - ``ColorSemanticTokens``
+- ``ColorMultipleSemanticTokens``
 - ``DimensionSemanticTokens``
-- ``ElevationCompositeSemanticTokens``
 - ``ElevationSemanticTokens``
+- ``ElevationCompositeSemanticTokens``
+- ``ElevationMultipleSemanticTokens``
 - ``GridSemanticTokens``
 - ``OpacitySemanticTokens``
 - ``SizeSemanticTokens``
+- ``SizeMultipleSemanticTokens``
 - ``SpaceSemanticTokens``
 - ``TypographySemanticTokens``
 - ``TypographyCompositeSemanticTokens``
+- ``TypographyMultipleSemanticTokens``

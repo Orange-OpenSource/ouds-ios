@@ -13,7 +13,7 @@
 
 import OUDS
 
-/// This is an override of the default basic `OUDSTheme` and should be seen as the default theme for the OUDS library.
+/// This is an override of the default basic ``OUDSTheme` and should be seen as the default theme for the OUDS library.
 /// It can overrides any properties from its superclass, and can be derived too.
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 

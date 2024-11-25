@@ -44,7 +44,7 @@ enum NamedTypography: String, CaseIterable {
 
     // MARK: - Token Values
 
-    func token(from theme: OUDSTheme) -> MultipleTypographyTokens {
+    func token(from theme: OUDSTheme) -> MultipleTypographyCompositeRawTokens {
         switch self {
         case .displayLarge:
             return theme.typeDisplayLarge

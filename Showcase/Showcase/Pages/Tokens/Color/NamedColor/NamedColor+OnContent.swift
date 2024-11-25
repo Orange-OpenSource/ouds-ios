@@ -39,7 +39,7 @@ extension NamedColor {
         case colorContentOnBgStatusAccentMutedOnBgEmphasized
         case colorContentOnBgStatusAccentedEmphasized
 
-        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorContentOnBgPrimary:
                 return theme.colorContentOnBgPrimary

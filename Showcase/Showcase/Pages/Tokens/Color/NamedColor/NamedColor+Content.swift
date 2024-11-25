@@ -36,7 +36,7 @@ extension NamedColor {
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorContentStatusAccent
 
-        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorContentDefault:
                 return theme.colorContentDefault
