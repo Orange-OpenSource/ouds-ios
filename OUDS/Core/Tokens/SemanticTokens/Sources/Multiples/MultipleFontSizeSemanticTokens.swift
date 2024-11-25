@@ -16,7 +16,7 @@ import OUDSTokensRaw
 
 /// Kind of semantic tokens which will wrap a combination of ``TypographyFontSizeSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
-/// If a font size exists with its value depending to the size class, it must be packed in such ``MultipleFontSizeTokens``.
+/// If a font size exists with its value depending to the size class, it must be packed in such ``MultipleFontSizeSemanticTokens``.
 ///
 /// ```swift
 ///         // Assuming in Figma with have a font size semantic token fontSizeBodySmall,
@@ -30,16 +30,16 @@ import OUDSTokensRaw
 ///         // Then the develoment team declares an "higher" level font size semantic token for fontSizeBodySmall
 ///         // inside TypographyMultipleSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+TypographyMultipleSemanticTokens extension
-///         var fontSizeBodySmall: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeBodySmallMobile, regular: fontSizeBodySmallTablet) }
+///         var fontSizeBodySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeBodySmallMobile, regular: fontSizeBodySmallTablet) }
 ///
 ///         // If the same value is used whatever the size class is
-///         var fontSizeBodySmall: MultipleFontSizeTokens { MultipleFontSizeTokens(fontSizeBodySmallMobile) }
+///         var fontSizeBodySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(fontSizeBodySmallMobile) }
 ///
 ///         // The theme exposes both generated font size semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 /// 
-public final class MultipleFontSizeTokens: NSObject, Sendable {
+public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
     public let compact: TypographyFontSizeSemanticToken
@@ -69,7 +69,7 @@ public final class MultipleFontSizeTokens: NSObject, Sendable {
     /// as a `MultipleFontTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? MultipleFontSizeTokens else {
+        guard let object = object as? MultipleFontSizeSemanticTokens else {
             return false
         }
         return self.compact == object.compact && self.regular == object.regular

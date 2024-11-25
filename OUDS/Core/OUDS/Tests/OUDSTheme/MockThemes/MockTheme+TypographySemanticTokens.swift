@@ -23,7 +23,7 @@ extension MockTheme {
     static let mockThemeTypographyFontSizeRawToken: TypographyFontSizeRawToken = 666
     static let mockThemeTypographyFontLineHeightRawToken: TypographyFontLineHeightRawToken = 321
     static let mockThemeTypographyFontLetterSpacingRawToken: TypographyFontLetterSpacingRawToken = 21_092_024
-    static let mockThemeMultipleTypographyFontSizeTokens = MultipleFontSizeTokens(mockThemeTypographyFontSizeRawToken)
+    static let mockThemeMultipleTypographyFontSizeTokens = MultipleFontSizeSemanticTokens(mockThemeTypographyFontSizeRawToken)
     static let mockThemeMultipleTypographyLineHeightTokens = MultipleFontLineHeightSemanticTokens(mockThemeTypographyFontLineHeightRawToken)
     static let mockThemeMultipleTypographyLetterSpacingTokens = MultipleFontLetterSpacingSemanticTokens(mockThemeTypographyFontLetterSpacingRawToken)
 
@@ -52,22 +52,22 @@ extension MockTheme {
 
     // MARK: Semantic token - Typography - Font - Size
 
-    override open var fontSizeDisplayLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeDisplayMedium: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeDisplaySmall: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeHeadingXLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeHeadingLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeHeadingMedium: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeHeadingSmall: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeBodyLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeBodyMedium: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeBodySmall: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeLabelXLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeLabelLarge: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeLabelMedium: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeLabelSmall: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeCodeMedium: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
-    override open var fontSizeCodeSmall: MultipleFontSizeTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeDisplayLarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeDisplayMedium: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeDisplaySmall: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeHeadingXLarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeHeadingLarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeHeadingMedium: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeHeadingSmall: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeBodyLarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeBodyMedium: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeBodySmall: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeLabelXLarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeLabelLarge: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeLabelMedium: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeLabelSmall: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeCodeMedium: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
+    override open var fontSizeCodeSmall: MultipleFontSizeSemanticTokens { Self.mockThemeMultipleTypographyFontSizeTokens }
 
     // MARK: - Semantic token - Typography - Font - Line height
 

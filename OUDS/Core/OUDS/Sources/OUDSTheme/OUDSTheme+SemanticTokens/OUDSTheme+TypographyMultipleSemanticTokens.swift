@@ -27,22 +27,22 @@ extension OUDSTheme: TypographyMultipleSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Size
 
-    @objc open var fontSizeDisplayLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeDisplayLargeMobile, regular: fontSizeDisplayLargeTablet) }
-    @objc open var fontSizeDisplayMedium: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeDisplayMediumMobile, regular: fontSizeDisplayMediumTablet) }
-    @objc open var fontSizeDisplaySmall: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeDisplaySmallMobile, regular: fontSizeDisplaySmallTablet) }
-    @objc open var fontSizeHeadingXLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeHeadingXLargeMobile, regular: fontSizeHeadingXLargeTablet) }
-    @objc open var fontSizeHeadingLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeHeadingLargeMobile, regular: fontSizeHeadingLargeTablet) }
-    @objc open var fontSizeHeadingMedium: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeHeadingMediumMobile, regular: fontSizeHeadingMediumTablet) }
-    @objc open var fontSizeHeadingSmall: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeHeadingSmallMobile, regular: fontSizeHeadingSmallTablet) }
-    @objc open var fontSizeBodyLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeBodyLargeMobile, regular: fontSizeBodyLargeTablet) }
-    @objc open var fontSizeBodyMedium: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeBodyMediumMobile, regular: fontSizeBodyMediumTablet) }
-    @objc open var fontSizeBodySmall: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeBodySmallMobile, regular: fontSizeBodySmallTablet) }
-    @objc open var fontSizeLabelXLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeLabelXLargeMobile, regular: fontSizeLabelXLargeTablet) }
-    @objc open var fontSizeLabelLarge: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeLabelLargeMobile, regular: fontSizeLabelLargeTablet) }
-    @objc open var fontSizeLabelMedium: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeLabelMediumMobile, regular: fontSizeLabelMediumTablet) }
-    @objc open var fontSizeLabelSmall: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeLabelSmallMobile, regular: fontSizeLabelSmallTablet) }
-    @objc open var fontSizeCodeMedium: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeCodeMediumMobile, regular: fontSizeCodeMediumTablet) }
-    @objc open var fontSizeCodeSmall: MultipleFontSizeTokens { MultipleFontSizeTokens(compact: fontSizeCodeSmallMobile, regular: fontSizeCodeSmallTablet) }
+    @objc open var fontSizeDisplayLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeDisplayLargeMobile, regular: fontSizeDisplayLargeTablet) }
+    @objc open var fontSizeDisplayMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeDisplayMediumMobile, regular: fontSizeDisplayMediumTablet) }
+    @objc open var fontSizeDisplaySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeDisplaySmallMobile, regular: fontSizeDisplaySmallTablet) }
+    @objc open var fontSizeHeadingXLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeHeadingXLargeMobile, regular: fontSizeHeadingXLargeTablet) }
+    @objc open var fontSizeHeadingLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeHeadingLargeMobile, regular: fontSizeHeadingLargeTablet) }
+    @objc open var fontSizeHeadingMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeHeadingMediumMobile, regular: fontSizeHeadingMediumTablet) }
+    @objc open var fontSizeHeadingSmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeHeadingSmallMobile, regular: fontSizeHeadingSmallTablet) }
+    @objc open var fontSizeBodyLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeBodyLargeMobile, regular: fontSizeBodyLargeTablet) }
+    @objc open var fontSizeBodyMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeBodyMediumMobile, regular: fontSizeBodyMediumTablet) }
+    @objc open var fontSizeBodySmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeBodySmallMobile, regular: fontSizeBodySmallTablet) }
+    @objc open var fontSizeLabelXLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeLabelXLargeMobile, regular: fontSizeLabelXLargeTablet) }
+    @objc open var fontSizeLabelLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeLabelLargeMobile, regular: fontSizeLabelLargeTablet) }
+    @objc open var fontSizeLabelMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeLabelMediumMobile, regular: fontSizeLabelMediumTablet) }
+    @objc open var fontSizeLabelSmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeLabelSmallMobile, regular: fontSizeLabelSmallTablet) }
+    @objc open var fontSizeCodeMedium: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeCodeMediumMobile, regular: fontSizeCodeMediumTablet) }
+    @objc open var fontSizeCodeSmall: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeCodeSmallMobile, regular: fontSizeCodeSmallTablet) }
 
     // MARK: - Semantic token - Typography - Font - Line height
 
