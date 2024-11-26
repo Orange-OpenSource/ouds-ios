@@ -36,229 +36,229 @@ final class TestThemeOverrideOfSizeSemanticTokens: XCTestCase {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXLargeShortMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXLargeShortMobile, abstractTheme.sizeIconWithHeadingXLargeShortMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXLargeShortMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeShortMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXlargeSizeShortMobile, abstractTheme.sizeIconWithHeadingXlargeSizeShortMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXlargeSizeShortMobile == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXLargeShortTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXLargeShortTablet, abstractTheme.sizeIconWithHeadingXLargeShortTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXLargeShortTablet == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeShortTablet() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXlargeSizeShortTablet, abstractTheme.sizeIconWithHeadingXlargeSizeShortTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXlargeSizeShortTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXLargeMediumMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXLargeMediumMobile, abstractTheme.sizeIconWithHeadingXLargeMediumMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXLargeMediumMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeMediumMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXlargeSizeMediumMobile, abstractTheme.sizeIconWithHeadingXlargeSizeMediumMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXlargeSizeMediumMobile == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXLargeMediumTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXLargeMediumTablet, abstractTheme.sizeIconWithHeadingXLargeMediumTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXLargeMediumTablet == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeMediumTablet() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXlargeSizeMediumTablet, abstractTheme.sizeIconWithHeadingXlargeSizeMediumTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXlargeSizeMediumTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXLargeTallMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXLargeTallMobile, abstractTheme.sizeIconWithHeadingXLargeTallMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXLargeTallMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeTallMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXlargeSizeTallMobile, abstractTheme.sizeIconWithHeadingXlargeSizeTallMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXlargeSizeTallMobile == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXLargeTallTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXLargeTallTablet, abstractTheme.sizeIconWithHeadingXLargeTallTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXLargeTallTablet == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeTallTablet() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXlargeSizeTallTablet, abstractTheme.sizeIconWithHeadingXlargeSizeTallTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXlargeSizeTallTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeShortMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeShortMobile, abstractTheme.sizeIconWithHeadingLargeShortMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeShortMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeSizeShortMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeSizeShortMobile, abstractTheme.sizeIconWithHeadingLargeSizeShortMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeSizeShortMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeShortTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeShortTablet, abstractTheme.sizeIconWithHeadingLargeShortTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeShortTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeSizeShortTablet, abstractTheme.sizeIconWithHeadingLargeSizeShortTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeSizeShortTablet == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeMediumMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeMediumMobile, abstractTheme.sizeIconWithHeadingLargeMediumMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeMediumMobile == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeSizeMediumMobile, abstractTheme.sizeIconWithHeadingLargeSizeMediumMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeSizeMediumMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeMediumTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeMediumTablet, abstractTheme.sizeIconWithHeadingLargeMediumTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeMediumTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeSizeMediumTablet, abstractTheme.sizeIconWithHeadingLargeSizeMediumTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeSizeMediumTablet == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeTallMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeTallMobile, abstractTheme.sizeIconWithHeadingLargeTallMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeTallMobile == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeSizeTallMobile, abstractTheme.sizeIconWithHeadingLargeSizeTallMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeSizeTallMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeTallTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeTallTablet, abstractTheme.sizeIconWithHeadingLargeTallTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeTallTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingLargeSizeTallTablet, abstractTheme.sizeIconWithHeadingLargeSizeTallTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingLargeSizeTallTablet == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumShortMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumShortMobile, abstractTheme.sizeIconWithHeadingMediumShortMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumShortMobile == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumSizeShortMobile, abstractTheme.sizeIconWithHeadingMediumSizeShortMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumSizeShortMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumShortTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumShortTablet, abstractTheme.sizeIconWithHeadingMediumShortTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumShortTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumSizeShortTablet, abstractTheme.sizeIconWithHeadingMediumSizeShortTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumSizeShortTablet == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumMediumMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumMediumMobile, abstractTheme.sizeIconWithHeadingMediumMediumMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumMediumMobile == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumSizeMediumMobile, abstractTheme.sizeIconWithHeadingMediumSizeMediumMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumSizeMediumMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumMediumTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumMediumTablet, abstractTheme.sizeIconWithHeadingMediumMediumTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumMediumTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumSizeMediumTablet, abstractTheme.sizeIconWithHeadingMediumSizeMediumTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumSizeMediumTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumTallMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumTallMobile, abstractTheme.sizeIconWithHeadingMediumTallMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumTallMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumSizeTallMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumSizeTallMobile, abstractTheme.sizeIconWithHeadingMediumSizeTallMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumSizeTallMobile == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumTallTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumTallTablet, abstractTheme.sizeIconWithHeadingMediumTallTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumTallTablet == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumSizeTallTablet() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingMediumSizeTallTablet, abstractTheme.sizeIconWithHeadingMediumSizeTallTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingMediumSizeTallTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallShortMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallShortMobile, abstractTheme.sizeIconWithHeadingSmallShortMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallShortMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallSizeShortMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallSizeShortMobile, abstractTheme.sizeIconWithHeadingSmallSizeShortMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallSizeShortMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallShortTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallShortTablet, abstractTheme.sizeIconWithHeadingSmallShortTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallShortTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallSizeShortTablet, abstractTheme.sizeIconWithHeadingSmallSizeShortTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallSizeShortTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallMediumMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallMediumMobile, abstractTheme.sizeIconWithHeadingSmallMediumMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallMediumMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallSizeMediumMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallSizeMediumMobile, abstractTheme.sizeIconWithHeadingSmallSizeMediumMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallSizeMediumMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallMediumTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallMediumTablet, abstractTheme.sizeIconWithHeadingSmallMediumTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallMediumTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallSizeMediumTablet, abstractTheme.sizeIconWithHeadingSmallSizeMediumTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallSizeMediumTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallTallMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallTallMobile, abstractTheme.sizeIconWithHeadingSmallTallMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallTallMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallSizeTallMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallSizeTallMobile, abstractTheme.sizeIconWithHeadingSmallSizeTallMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallSizeTallMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallTallTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallTallTablet, abstractTheme.sizeIconWithHeadingSmallTallTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallTallTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingSmallSizeTallTablet, abstractTheme.sizeIconWithHeadingSmallSizeTallTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingSmallSizeTallTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeShortMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeShortMobile, abstractTheme.sizeIconWithBodyLargeShortMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeShortMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeSizeShortMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeSizeShortMobile, abstractTheme.sizeIconWithBodyLargeSizeShortMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeSizeShortMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeShortTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeShortTablet, abstractTheme.sizeIconWithBodyLargeShortTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeShortTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeSizeShortTablet, abstractTheme.sizeIconWithBodyLargeSizeShortTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeSizeShortTablet == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeMediumMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeMediumMobile, abstractTheme.sizeIconWithBodyLargeMediumMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeMediumMobile == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeSizeMediumMobile, abstractTheme.sizeIconWithBodyLargeSizeMediumMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeSizeMediumMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeMediumTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeMediumTablet, abstractTheme.sizeIconWithBodyLargeMediumTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeMediumTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeSizeMediumTablet, abstractTheme.sizeIconWithBodyLargeSizeMediumTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeSizeMediumTablet == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeTallMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeTallMobile, abstractTheme.sizeIconWithBodyLargeTallMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeTallMobile == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeSizeTallMobile, abstractTheme.sizeIconWithBodyLargeSizeTallMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeSizeTallMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeTallTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeTallTablet, abstractTheme.sizeIconWithBodyLargeTallTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeTallTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyLargeSizeTallTablet, abstractTheme.sizeIconWithBodyLargeSizeTallTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyLargeSizeTallTablet == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumShortMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumShortMobile, abstractTheme.sizeIconWithBodyMediumShortMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumShortMobile == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumSizeShortMobile, abstractTheme.sizeIconWithBodyMediumSizeShortMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumSizeShortMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumShortTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumShortTablet, abstractTheme.sizeIconWithBodyMediumShortTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumShortTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumSizeShortTablet, abstractTheme.sizeIconWithBodyMediumSizeShortTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumSizeShortTablet == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumMediumMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumMediumMobile, abstractTheme.sizeIconWithBodyMediumMediumMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumMediumMobile == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumSizeMediumMobile, abstractTheme.sizeIconWithBodyMediumSizeMediumMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumSizeMediumMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumMediumTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumMediumTablet, abstractTheme.sizeIconWithBodyMediumMediumTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumMediumTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumSizeMediumTablet, abstractTheme.sizeIconWithBodyMediumSizeMediumTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumSizeMediumTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumTallMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumTallMobile, abstractTheme.sizeIconWithBodyMediumTallMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumTallMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumSizeTallMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumSizeTallMobile, abstractTheme.sizeIconWithBodyMediumSizeTallMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumSizeTallMobile == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumTallTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumTallTablet, abstractTheme.sizeIconWithBodyMediumTallTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumTallTablet == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumSizeTallTablet() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodyMediumSizeTallTablet, abstractTheme.sizeIconWithBodyMediumSizeTallTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodyMediumSizeTallTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallShortMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallShortMobile, abstractTheme.sizeIconWithBodySmallShortMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallShortMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallSizeShortMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallSizeShortMobile, abstractTheme.sizeIconWithBodySmallSizeShortMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallSizeShortMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallShortTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallShortTablet, abstractTheme.sizeIconWithBodySmallShortTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallShortTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallSizeShortTablet, abstractTheme.sizeIconWithBodySmallSizeShortTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallSizeShortTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallMediumMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallMediumMobile, abstractTheme.sizeIconWithBodySmallMediumMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallMediumMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallSizeMediumMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallSizeMediumMobile, abstractTheme.sizeIconWithBodySmallSizeMediumMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallSizeMediumMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallMediumTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallMediumTablet, abstractTheme.sizeIconWithBodySmallMediumTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallMediumTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallSizeMediumTablet, abstractTheme.sizeIconWithBodySmallSizeMediumTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallSizeMediumTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallTallMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallTallMobile, abstractTheme.sizeIconWithBodySmallTallMobile)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallTallMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallSizeTallMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallSizeTallMobile, abstractTheme.sizeIconWithBodySmallSizeTallMobile)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallSizeTallMobile == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallTallTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallTallTablet, abstractTheme.sizeIconWithBodySmallTallTablet)
-        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallTallTablet == MockTheme.mockThemeSizeRawToken)
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithBodySmallSizeTallTablet, abstractTheme.sizeIconWithBodySmallSizeTallTablet)
+        XCTAssertTrue(inheritedTheme.sizeIconWithBodySmallSizeTallTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelXLargeShort() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithLabelXLargeSizeShort, abstractTheme.sizeIconWithLabelXLargeSizeShort)
-        XCTAssertTrue(inheritedTheme.sizeIconWithLabelXLargeSizeShort == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelXlargeSizeShort() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithLabelXlargeSizeShort, abstractTheme.sizeIconWithLabelXlargeSizeShort)
+        XCTAssertTrue(inheritedTheme.sizeIconWithLabelXlargeSizeShort == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelXLargeMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithLabelXLargeSizeMedium, abstractTheme.sizeIconWithLabelXLargeSizeMedium)
-        XCTAssertTrue(inheritedTheme.sizeIconWithLabelXLargeSizeMedium == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelXlargeSizeMedium() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithLabelXlargeSizeMedium, abstractTheme.sizeIconWithLabelXlargeSizeMedium)
+        XCTAssertTrue(inheritedTheme.sizeIconWithLabelXlargeSizeMedium == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelXLargeTall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithLabelXLargeSizeTall, abstractTheme.sizeIconWithLabelXLargeSizeTall)
-        XCTAssertTrue(inheritedTheme.sizeIconWithLabelXLargeSizeTall == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelXlargeSizeTall() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithLabelXlargeSizeTall, abstractTheme.sizeIconWithLabelXlargeSizeTall)
+        XCTAssertTrue(inheritedTheme.sizeIconWithLabelXlargeSizeTall == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelLargeShorter() throws {
@@ -385,14 +385,14 @@ final class TestThemeOverrideOfSizeSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.sizeMaxWidthTypeDisplaySmallTablet == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypographyHeadingXLargeMobile() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeMaxWidthTypeHeadingXLargeMobile, abstractTheme.sizeMaxWidthTypeHeadingXLargeMobile)
-        XCTAssertTrue(inheritedTheme.sizeMaxWidthTypeHeadingXLargeMobile == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypographyHeadingXlargeSizeMobile() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeMaxWidthTypeHeadingXlargeMobile, abstractTheme.sizeMaxWidthTypeHeadingXlargeMobile)
+        XCTAssertTrue(inheritedTheme.sizeMaxWidthTypeHeadingXlargeMobile == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypographyHeadingXLargeTablet() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeMaxWidthTypeHeadingXLargeTablet, abstractTheme.sizeMaxWidthTypeHeadingXLargeTablet)
-        XCTAssertTrue(inheritedTheme.sizeMaxWidthTypeHeadingXLargeTablet == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypographyHeadingXlargeSizeTablet() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeMaxWidthTypeHeadingXlargeTablet, abstractTheme.sizeMaxWidthTypeHeadingXlargeTablet)
+        XCTAssertTrue(inheritedTheme.sizeMaxWidthTypeHeadingXlargeTablet == MockTheme.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypographyHeadingLargeMobile() throws {
