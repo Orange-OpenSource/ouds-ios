@@ -289,12 +289,24 @@ Signed-off-by: Foo FOO <foo email>
 Signed-off-by: Bar BAR <bar email>
 ```
 
+#### Integration of tokenator updates
+
+You should refer to the [dedicated page in the wiki for more details](https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens).
+
+Keep in mind the commit adding *tokenator* updates in the codebase must be formatted like
+
+```text
+chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#225)
+``` 
+
+i.e. precise the tokens updated, the *tokenator* generation timestamp and the pull request number.
+
 ### About release note and changelog
 
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 We do not generate yet `RELEASE_NOTE.md` file using the Git history and [git cliff](https://git-cliff.org/) tool.
-Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/8-%E2%80%90-About-changelog,-release-notes-and-hooks)
+Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/52-%E2%80%90-About-changelog,-release-notes-and-hooks)
 
 ## Use of Gitleaks
 
@@ -359,23 +371,23 @@ Do not forget if possible to enable the warnings in the end of the file to reduc
 
 ### GitHub Action
 
-We use also *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
+We use *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
-This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml)
+This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml), and makes build, unit tests and UI tests. Keep in mind we may have [some troubles with UI tests](https://github.com/Orange-OpenSource/ouds-ios/issues/305).
 
-We have also a *gitleaks* workflow making some scans on the code to loook fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml).
+We have also a *gitleaks* workflow making some scans on the code to look fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml).
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
-There is on control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
+There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
 
 Finaly we have [this *GitHub Action*](https://github.com/cirruslabs/swiftlint-action) using _SwiftLint_ to ensure no warnings are in our codebase.
 
 ### GitLab CI (internal)
 
 We use *GitLab CI*for CI/CD with our own runners so as to keep private our sensitive files likes certificates and provisioning profiles.
-Our currant plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
+Our current plan does not allow to make GitHub mirroring, so we use GitHub HTTP REST API to download sources, before using Xcode to build and sign.
 However of course you will have to define all the variables, secrets and have the mandatory files.
 
-You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/9-%E2%80%90-About-continuous-integration-and-delivery).
+You can find more details about the pipelines, how to set up runners and scripts to use [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/51-%E2%80%90-About-continuous-integration-and-delivery).
 
 In few words, there is a pipeline containing some stages and jobs to build alpha, nightly/beta and production releases.
