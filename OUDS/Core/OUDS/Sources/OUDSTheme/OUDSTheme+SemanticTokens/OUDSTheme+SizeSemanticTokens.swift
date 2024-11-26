@@ -123,23 +123,23 @@ extension OUDSTheme: SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    @objc open var sizeIconWithLabelXLargeSizeShort: SizeSemanticToken { dimensionXS }
-    @objc open var sizeIconWithLabelXLargeSizeMedium: SizeSemanticToken { dimensionMD }
-    @objc open var sizeIconWithLabelXLargeSizeTall: SizeSemanticToken { dimensionLG }
+    @objc open var sizeIconWithLabelXLargeSizeShort: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    @objc open var sizeIconWithLabelXLargeSizeMedium: SizeSemanticToken { DimensionRawTokens.dimension500 }
+    @objc open var sizeIconWithLabelXLargeSizeTall: SizeSemanticToken { DimensionRawTokens.dimension550 }
 
-    @objc open var sizeIconWithLabelLargeSizeShorter: SizeSemanticToken { dimension4XS }
-    @objc open var sizeIconWithLabelLargeSizeShort: SizeSemanticToken { dimension3XS }
-    @objc open var sizeIconWithLabelLargeSizeMedium: SizeSemanticToken { dimension2XS }
-    @objc open var sizeIconWithLabelLargeSizeTall: SizeSemanticToken { dimensionXS }
-    @objc open var sizeIconWithLabelLargeSizeTaller: SizeSemanticToken { dimensionLG }
+    @objc open var sizeIconWithLabelLargeSizeShorter: SizeSemanticToken { DimensionRawTokens.dimension250 }
+    @objc open var sizeIconWithLabelLargeSizeShort: SizeSemanticToken { DimensionRawTokens.dimension300 }
+    @objc open var sizeIconWithLabelLargeSizeMedium: SizeSemanticToken { DimensionRawTokens.dimension350 }
+    @objc open var sizeIconWithLabelLargeSizeTall: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    @objc open var sizeIconWithLabelLargeSizeTaller: SizeSemanticToken { DimensionRawTokens.dimension550 }
 
-    @objc open var sizeIconWithLabelMediumSizeShort: SizeSemanticToken { dimension5XS }
-    @objc open var sizeIconWithLabelMediumSizeMedium: SizeSemanticToken { dimension4XS }
-    @objc open var sizeIconWithLabelMediumSizeTall: SizeSemanticToken { dimension3XS }
+    @objc open var sizeIconWithLabelMediumSizeShort: SizeSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var sizeIconWithLabelMediumSizeMedium: SizeSemanticToken { DimensionRawTokens.dimension250 }
+    @objc open var sizeIconWithLabelMediumSizeTall: SizeSemanticToken { DimensionRawTokens.dimension300 }
 
-    @objc open var sizeIconWithLabelSmallSizeShort: SizeSemanticToken { dimension6XS }
-    @objc open var sizeIconWithLabelSmallSizeMedium: SizeSemanticToken { dimension5XS }
-    @objc open var sizeIconWithLabelSmallSizeTall: SizeSemanticToken { dimension4XS }
+    @objc open var sizeIconWithLabelSmallSizeShort: SizeSemanticToken { DimensionRawTokens.dimension150 }
+    @objc open var sizeIconWithLabelSmallSizeMedium: SizeSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var sizeIconWithLabelSmallSizeTall: SizeSemanticToken { DimensionRawTokens.dimension250 }
 
     // MARK: - Semantic token - Sizing - Icon decorative
 
