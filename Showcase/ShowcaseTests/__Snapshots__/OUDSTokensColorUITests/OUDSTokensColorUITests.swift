@@ -46,7 +46,6 @@ final class OUDSTokensColorUITests: XCTestCase {
         testActionColors(theme: self.orangeTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testAlwaysColors(theme: self.orangeTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testContentColors(theme: self.orangeTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
-        testContentOnBgColors(theme: self.orangeTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testBorderColors(theme: self.orangeTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testElevationColors(theme: self.orangeTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testDecorativeColors(theme: self.orangeTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
@@ -65,7 +64,6 @@ final class OUDSTokensColorUITests: XCTestCase {
         testActionColors(theme: self.orangeTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testAlwaysColors(theme: self.orangeTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testContentColors(theme: self.orangeTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
-        testContentOnBgColors(theme: self.orangeTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testBorderColors(theme: self.orangeTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testElevationColors(theme: self.orangeTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testDecorativeColors(theme: self.orangeTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
@@ -84,7 +82,6 @@ final class OUDSTokensColorUITests: XCTestCase {
         testActionColors(theme: self.inverseTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testAlwaysColors(theme: self.inverseTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testContentColors(theme: self.inverseTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
-        testContentOnBgColors(theme: self.inverseTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testBorderColors(theme: self.inverseTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testElevationColors(theme: self.inverseTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
         testDecorativeColors(theme: self.inverseTheme, interfaceStyle: self.lightInterfaceStyle, colorScheme: self.lightScheme)
@@ -103,7 +100,6 @@ final class OUDSTokensColorUITests: XCTestCase {
         testActionColors(theme: self.inverseTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testAlwaysColors(theme: self.inverseTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testContentColors(theme: self.inverseTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
-        testContentOnBgColors(theme: self.inverseTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testBorderColors(theme: self.inverseTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testElevationColors(theme: self.inverseTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
         testDecorativeColors(theme: self.inverseTheme, interfaceStyle: self.darkInterfaceStyle, colorScheme: self.darkScheme)
@@ -208,35 +204,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     @MainActor private func testContentColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle, colorScheme: ColorScheme) {
         // Iterate through all background color cases defined in NamedColor.Content
         for color in NamedColor.Content.allCases {
-            // Retrieve the corresponding color token from the provided theme
-            let token = color.token(from: theme)
-
-            // Generate the illustration for the specified color token
-            let illustration = OUDSThemeableView(theme: theme) {
-                ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: colorScheme))
-            }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
-        }
-    }
-
-    /// This function tests colors for the `ContentOnBg` category of the given theme.
-    /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
-    /// - Parameters:
-    ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - colorScheme: The color scheme (light or dark) to be used for testing
-    @MainActor private func testContentOnBgColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle, colorScheme: ColorScheme) {
-        // Iterate through all background color cases defined in NamedColor.ContentOnBg
-        for color in NamedColor.ContentOnBg.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 

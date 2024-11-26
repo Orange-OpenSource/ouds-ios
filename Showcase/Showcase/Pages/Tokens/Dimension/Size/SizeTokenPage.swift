@@ -87,7 +87,7 @@ struct SizeTokenPage: View {
             let token = namedSize.token(fot: theme, userInterfaceSizeClass: horizontalSizeClass ?? .regular)
             let namedTypography = namedSize.namedTypography
             let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)
-            
+
             HStack {
                 Image("ic_token")
                     .resizable()
@@ -95,7 +95,7 @@ struct SizeTokenPage: View {
                     .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
                     .frame(width: token, height: token, alignment: .center)
                     .accessibilityHidden(true)
-                
+
                 VStack(alignment: .leading) {
                     illustration(for: namedTypography, in: theme)
                         .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
