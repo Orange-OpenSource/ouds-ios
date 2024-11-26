@@ -15,6 +15,8 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// swiftlint:disable identifier_name
+
 extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationBlurDrag: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     @objc open var elevationBlurNone: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur0 }
@@ -57,3 +59,5 @@ extension OUDSTheme: ElevationSemanticTokens {
     @objc open var elevationColorStickyEmphasizedDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
     @objc open var elevationColorStickyNavigationScrolledDark: ElevationColorSemanticToken { ColorRawTokens.colorTransparentBlack300 }
 }
+
+// swiftlint:enable identifier_name
