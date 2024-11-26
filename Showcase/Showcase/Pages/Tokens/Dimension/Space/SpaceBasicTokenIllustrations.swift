@@ -61,7 +61,7 @@ struct FixedSapcesIllustrations: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .horizontal(position: .center))
+                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .center))
             }
         }
     }

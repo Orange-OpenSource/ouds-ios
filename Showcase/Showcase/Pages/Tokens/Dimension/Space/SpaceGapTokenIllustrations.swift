@@ -63,7 +63,7 @@ struct GapInlineIllustration: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .horizontal(position: .center))
+                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .center))
             }
         }
     }
@@ -117,7 +117,7 @@ struct GapInlineWithIconIllustration: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
+                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
             }
         }
     }
@@ -171,7 +171,7 @@ struct GapInlineWithArrowIllustration: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
+                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
             }
         }
     }
@@ -226,7 +226,7 @@ struct GapStackIllustration: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .vertical(position: .center))
+                SpaceCommonIllustration(dimension: token, orientation: .vertical(position: .center))
             }
         }
     }
@@ -280,7 +280,7 @@ struct GapStackWithIconIllustration: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .vertical(position: .bottom), iconAsset: .icon)
+                SpaceCommonIllustration(dimension: token, orientation: .vertical(position: .bottom), iconAsset: .icon)
             }
         }
     }

@@ -23,7 +23,7 @@ private let kIllustrationWidth = 72.0
 /// Internal View used to illustrate all tokens based on
 /// `dimension`, the `orientation` of the blue rectangle illustrating
 /// the dimension and an optional icon asset.
-struct SpaceIllustration: View {
+struct SpaceCommonIllustration: View {
 
     // MARK: Environment properties
 

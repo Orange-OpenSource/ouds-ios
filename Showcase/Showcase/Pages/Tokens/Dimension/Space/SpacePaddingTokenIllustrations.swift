@@ -45,7 +45,7 @@ struct PaddingInlineIllustration: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading))
+                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading))
             }
         }
     }
@@ -81,7 +81,7 @@ struct PaddingInlineWithIconIllustration: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
+                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
             }
         }
     }
@@ -117,7 +117,7 @@ struct PaddingInlineWithArrowIllustration: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
+                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
             }
         }
     }
@@ -191,7 +191,7 @@ struct PaddingStackIllustration: View {
             let value = String(format: "%.2f (pt)", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceIllustration(dimension: token, orientation: .vertical(position: .top))
+                SpaceCommonIllustration(dimension: token, orientation: .vertical(position: .top))
             }
         }
     }
