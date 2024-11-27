@@ -91,7 +91,6 @@ struct SpaceTokenEntry<TokenIllustration>: View where TokenIllustration: View {
     }
 }
 
-
 /// Internal View used to illustrate all tokens based on
 /// `dimension`, the `padding` of the blue rectangle illustrating
 /// the dimension and an optional icon asset.

@@ -16,19 +16,17 @@ import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: Fixed Spaces
-
+// swiftlint:disable multiline_arguments
 struct FixedSapcesCategory: View {
 
     // MARK: Body
 
     var body: some View {
-        // swiftlint:disable multiline_arguments
         SpaceTokenCategory(namedTokens: NamedSpace.Fixed.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
         } illustration: { token in
             Illustration(token: token)
         }
-        // swiftlint:enable multiline_arguments
     }
 
     // MARK: Internal for UI testing
@@ -101,3 +99,4 @@ struct ScaledSpacesCategory: View {
         }
     }
 }
+// swiftlint:enable multiline_arguments

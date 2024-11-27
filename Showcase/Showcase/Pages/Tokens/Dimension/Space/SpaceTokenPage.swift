@@ -95,5 +95,3 @@ protocol NamedSpaceToken {
     // To get the token value
     func token(from theme: OUDSTheme) -> SpaceSemanticToken
 }
-
-
