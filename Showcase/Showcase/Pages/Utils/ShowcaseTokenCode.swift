@@ -17,10 +17,14 @@ import SwiftUI
 
 struct ShowcaseTokenCode: View {
 
+    // MARK: Environment properties
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    @State private var isCodeVisible = true
+    // MARK: Stored properties
+
+    @State private var isCodeVisible = false
     var code: String
 
     // MARK: Body
@@ -44,9 +48,10 @@ struct ShowcaseTokenCode: View {
                         .typeBodyStrongLarge(theme)
                         .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
                         .padding(.vertical, theme.spacePaddingInlineShort)
-                    Image(isCodeVisible ? "ic_chevron-up" : "ic_chevron-down")
+                    Image("ic_chevron-up")
                         .resizable()
                         .renderingMode(.template)
+                        .rotationEffect(Angle.degrees(isCodeVisible ? 0 : 180))
                         .foregroundColor(theme.colorBgBrandPrimary.color(for: colorScheme))
                         .frame(width: 20, height: 20)
                         .padding(.trailing, theme.spacePaddingInlineMedium)
@@ -102,6 +107,8 @@ struct ShowcaseTokenCode: View {
     }
 
     private func toggle() {
-        isCodeVisible.toggle()
+        withAnimation {
+            isCodeVisible.toggle()
+        }
     }
 }
