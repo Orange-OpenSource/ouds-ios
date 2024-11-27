@@ -14,17 +14,15 @@
 import OUDS
 import OUDSTokensSemantic
 
-// swiftlint:disable identifier_name
-
 extension NamedColor {
 
     enum Content: String, CaseIterable {
         case colorContentDefault
-        case colorContentContentDefaultOnBgEmphasized
+        case colorContentDefaultOnBgEmphasized
         case colorContentMuted
-        case colorContentContentMutedOnBgEmphasized
+        case colorContentMutedOnBgEmphasized
         case colorContentDisabled
-        case colorContentContentDisabledOnBgEmphasized
+        case colorContentDisabledOnBgEmphasized
         case colorContentBrandPrimary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorContentBrandSecondary
@@ -40,16 +38,16 @@ extension NamedColor {
             switch self {
             case .colorContentDefault:
                 return theme.colorContentDefault
-            case .colorContentContentDefaultOnBgEmphasized:
-                return theme.colorContentContentDefaultOnBgEmphasized
+            case .colorContentDefaultOnBgEmphasized:
+                return theme.colorContentDefaultOnBgEmphasized
             case .colorContentMuted:
                 return theme.colorContentMuted
-            case .colorContentContentMutedOnBgEmphasized:
-                return theme.colorContentContentMutedOnBgEmphasized
+            case .colorContentMutedOnBgEmphasized:
+                return theme.colorContentMutedOnBgEmphasized
             case .colorContentDisabled:
                 return theme.colorContentDisabled
-            case .colorContentContentDisabledOnBgEmphasized:
-                return theme.colorContentContentDisabledOnBgEmphasized
+            case .colorContentDisabledOnBgEmphasized:
+                return theme.colorContentDisabledOnBgEmphasized
             case .colorContentBrandPrimary:
                 return theme.colorContentBrandPrimary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
@@ -72,5 +70,3 @@ extension NamedColor {
         }
     }
 }
-
-// swiftlint:enable identifier_name

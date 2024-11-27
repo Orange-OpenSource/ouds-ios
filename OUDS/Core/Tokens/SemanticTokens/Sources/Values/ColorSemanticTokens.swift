@@ -41,10 +41,6 @@ public protocol ColorSemanticTokens {
 
     var colorBgBrandPrimaryLight: ColorSemanticToken { get }
 
-    var colorBgBrandSecondaryLight: ColorSemanticToken { get }
-
-    var colorBgBrandTertiaryLight: ColorSemanticToken { get }
-
     var colorBgStatusNeutralLight: ColorSemanticToken { get }
 
     var colorBgStatusNeutralOnBgEmphasizedLight: ColorSemanticToken { get }
@@ -83,21 +79,17 @@ public protocol ColorSemanticTokens {
 
     var colorContentDefaultLight: ColorSemanticToken { get }
 
-    var colorContentContentDefaultOnBgEmphasizedLight: ColorSemanticToken { get }
+    var colorContentDefaultOnBgEmphasizedLight: ColorSemanticToken { get }
 
     var colorContentMutedLight: ColorSemanticToken { get }
 
-    var colorContentContentMutedOnBgEmphasizedLight: ColorSemanticToken { get }
+    var colorContentMutedOnBgEmphasizedLight: ColorSemanticToken { get }
 
     var colorContentDisabledLight: ColorSemanticToken { get }
 
-    var colorContentContentDisabledOnBgEmphasizedLight: ColorSemanticToken { get }
+    var colorContentDisabledOnBgEmphasizedLight: ColorSemanticToken { get }
 
     var colorContentBrandPrimaryLight: ColorSemanticToken { get }
-
-    var colorContentBrandSecondaryLight: ColorSemanticToken { get }
-
-    var colorContentBrandTertiaryLight: ColorSemanticToken { get }
 
     var colorContentStatusPositiveLight: ColorSemanticToken { get }
 
@@ -106,46 +98,6 @@ public protocol ColorSemanticTokens {
     var colorContentStatusWarningLight: ColorSemanticToken { get }
 
     var colorContentStatusNegativeLight: ColorSemanticToken { get }
-
-    var colorContentStatusAccentLight: ColorSemanticToken { get }
-
-    // MARK: Semantic token - Colors - Content - On Background
-
-    var colorContentOnBgPrimaryLight: ColorSemanticToken { get }
-
-    var colorContentOnBgSecondaryLight: ColorSemanticToken { get }
-
-    var colorContentOnBgTertiaryLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusPositiveMutedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusPositiveMutedOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusPositiveEmphasizedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusInfoMutedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusInfoMutedOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusInfoEmphasizedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusWarningMutedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusWarningMutedOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusWarningEmphasizedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusNegativeMutedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusNegativeMutedOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusNegativeEmphasizedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusAccentMutedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusAccentMutedOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusAccentedEmphasizedLight: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Border
 
@@ -163,26 +115,6 @@ public protocol ColorSemanticTokens {
 
     var colorBorderBrandPrimaryLight: ColorSemanticToken { get }
 
-    var colorBorderBrandSecondaryLight: ColorSemanticToken { get }
-
-    var colorBorderBrandTertiaryLight: ColorSemanticToken { get }
-
-    var colorBorderStatusPositiveLight: ColorSemanticToken { get }
-
-    var colorBorderStatusInfoLight: ColorSemanticToken { get }
-
-    var colorBorderStatusWarningLight: ColorSemanticToken { get }
-
-    var colorBorderStatusNegativeLight: ColorSemanticToken { get }
-
-    var colorBorderStatusAccentLight: ColorSemanticToken { get }
-
-    var colorBorderOnBgBrandPrimaryLight: ColorSemanticToken { get }
-
-    var colorBorderOnBgBrandSecondaryLight: ColorSemanticToken { get }
-
-    var colorBorderOnBgBrandTertiaryLight: ColorSemanticToken { get }
-
     // MARK: Semantic token - Colors - Action
 
     var colorActionSelectedLight: ColorSemanticToken { get }
@@ -194,8 +126,6 @@ public protocol ColorSemanticTokens {
     var colorActionDisabledOnBgEmphasizedLight: ColorSemanticToken { get }
 
     var colorActionVisitedLight: ColorSemanticToken { get }
-
-    var colorActionVistedOnBgEmphasizedLight: ColorSemanticToken { get }
 
     var colorActionPrimaryEnabledLight: ColorSemanticToken { get }
 
@@ -247,52 +177,6 @@ public protocol ColorSemanticTokens {
 
     var colorActionNegativeFocusLight: ColorSemanticToken { get }
 
-    var colorActionOnBgActionDisabledLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionDisabledOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionNegativeLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryEnabledLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryEnabledOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryHoverLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryHoverOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryPressedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryPressedOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryLoadingLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryFocusLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryFocusOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryEnabledLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryEnabledOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryHoverLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryHoverOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryPressedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryPressedOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryLoadingLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryLoadingOnBgEmphasizedLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryFocusLight: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryFocusOnBgEmphasizedLight: ColorSemanticToken { get }
-
     // MARK: Semantic token - Colors - Always
 
     var colorAlwaysBlackLight: ColorSemanticToken { get }
@@ -308,20 +192,6 @@ public protocol ColorSemanticTokens {
     var colorAlwaysInfoLight: ColorSemanticToken { get }
 
     var colorAlwaysAccentLight: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgBlackLight: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgWhiteLight: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgWarningLight: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgNegativeLight: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgPositiveLight: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgInfoLight: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgAccentLight: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Transparent
 
@@ -357,11 +227,11 @@ public protocol ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Decorative
 
-    var colorDecorativePrimaryLight: ColorSemanticToken { get }
+    var colorDecorativeBrandPrimaryLight: ColorSemanticToken { get }
 
-    var colorDecorativeSecondaryLight: ColorSemanticToken { get }
+    var colorDecorativeBrandSecondaryLight: ColorSemanticToken { get }
 
-    var colorDecorativeTertiaryLight: ColorSemanticToken { get }
+    var colorDecorativeBrandTertiaryLight: ColorSemanticToken { get }
 
     var colorDecorativeNeutralMutedLight: ColorSemanticToken { get }
 
@@ -551,10 +421,6 @@ public protocol ColorSemanticTokens {
 
     var colorBgBrandPrimaryDark: ColorSemanticToken { get }
 
-    var colorBgBrandSecondaryDark: ColorSemanticToken { get }
-
-    var colorBgBrandTertiaryDark: ColorSemanticToken { get }
-
     var colorBgStatusNeutralDark: ColorSemanticToken { get }
 
     var colorBgStatusNeutralOnBgEmphasizedDark: ColorSemanticToken { get }
@@ -593,21 +459,17 @@ public protocol ColorSemanticTokens {
 
     var colorContentDefaultDark: ColorSemanticToken { get }
 
-    var colorContentContentDefaultOnBgEmphasizedDark: ColorSemanticToken { get }
+    var colorContentDefaultOnBgEmphasizedDark: ColorSemanticToken { get }
 
     var colorContentMutedDark: ColorSemanticToken { get }
 
-    var colorContentContentMutedOnBgEmphasizedDark: ColorSemanticToken { get }
+    var colorContentMutedOnBgEmphasizedDark: ColorSemanticToken { get }
 
     var colorContentDisabledDark: ColorSemanticToken { get }
 
-    var colorContentContentDisabledOnBgEmphasizedDark: ColorSemanticToken { get }
+    var colorContentDisabledOnBgEmphasizedDark: ColorSemanticToken { get }
 
     var colorContentBrandPrimaryDark: ColorSemanticToken { get }
-
-    var colorContentBrandSecondaryDark: ColorSemanticToken { get }
-
-    var colorContentBrandTertiaryDark: ColorSemanticToken { get }
 
     var colorContentStatusPositiveDark: ColorSemanticToken { get }
 
@@ -616,46 +478,6 @@ public protocol ColorSemanticTokens {
     var colorContentStatusWarningDark: ColorSemanticToken { get }
 
     var colorContentStatusNegativeDark: ColorSemanticToken { get }
-
-    var colorContentStatusAccentDark: ColorSemanticToken { get }
-
-    // MARK: Semantic token - Colors - Content - On Background
-
-    var colorContentOnBgPrimaryDark: ColorSemanticToken { get }
-
-    var colorContentOnBgSecondaryDark: ColorSemanticToken { get }
-
-    var colorContentOnBgTertiaryDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusPositiveMutedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusPositiveMutedOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusPositiveEmphasizedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusInfoMutedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusInfoMutedOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusInfoEmphasizedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusWarningMutedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusWarningMutedOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusWarningEmphasizedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusNegativeMutedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusNegativeMutedOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusNegativeEmphasizedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusAccentMutedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusAccentMutedOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorContentOnBgStatusAccentedEmphasizedDark: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Border
 
@@ -673,26 +495,6 @@ public protocol ColorSemanticTokens {
 
     var colorBorderBrandPrimaryDark: ColorSemanticToken { get }
 
-    var colorBorderBrandSecondaryDark: ColorSemanticToken { get }
-
-    var colorBorderBrandTertiaryDark: ColorSemanticToken { get }
-
-    var colorBorderStatusPositiveDark: ColorSemanticToken { get }
-
-    var colorBorderStatusInfoDark: ColorSemanticToken { get }
-
-    var colorBorderStatusWarningDark: ColorSemanticToken { get }
-
-    var colorBorderStatusNegativeDark: ColorSemanticToken { get }
-
-    var colorBorderStatusAccentDark: ColorSemanticToken { get }
-
-    var colorBorderOnBgBrandPrimaryDark: ColorSemanticToken { get }
-
-    var colorBorderOnBgBrandSecondaryDark: ColorSemanticToken { get }
-
-    var colorBorderOnBgBrandTertiaryDark: ColorSemanticToken { get }
-
     // MARK: Semantic token - Colors - Action
 
     var colorActionSelectedDark: ColorSemanticToken { get }
@@ -704,8 +506,6 @@ public protocol ColorSemanticTokens {
     var colorActionDisabledOnBgEmphasizedDark: ColorSemanticToken { get }
 
     var colorActionVisitedDark: ColorSemanticToken { get }
-
-    var colorActionVistedOnBgEmphasizedDark: ColorSemanticToken { get }
 
     var colorActionPrimaryEnabledDark: ColorSemanticToken { get }
 
@@ -757,52 +557,6 @@ public protocol ColorSemanticTokens {
 
     var colorActionNegativeFocusDark: ColorSemanticToken { get }
 
-    var colorActionOnBgActionDisabledDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionDisabledOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionNegativeDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryEnabledDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryEnabledOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryHoverDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryHoverOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryPressedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryPressedOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryLoadingDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryLoadingOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryFocusDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionPrimaryFocusOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryEnabledDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryEnabledOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryHoverDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryHoverOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryPressedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryPressedOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryLoadingDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryLoadingOnBgEmphasizedDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryFocusDark: ColorSemanticToken { get }
-
-    var colorActionOnBgActionSecondaryFocusOnBgEmphasizedDark: ColorSemanticToken { get }
-
     // MARK: Semantic token - Colors - Always
 
     var colorAlwaysBlackDark: ColorSemanticToken { get }
@@ -818,20 +572,6 @@ public protocol ColorSemanticTokens {
     var colorAlwaysInfoDark: ColorSemanticToken { get }
 
     var colorAlwaysAccentDark: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgBlackDark: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgWhiteDark: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgWarningDark: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgNegativeDark: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgPositiveDark: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgInfoDark: ColorSemanticToken { get }
-
-    var colorAlwaysOnBgAccentDark: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Transparent
 
@@ -867,11 +607,11 @@ public protocol ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Decorative
 
-    var colorDecorativePrimaryDark: ColorSemanticToken { get }
+    var colorDecorativeBrandPrimaryDark: ColorSemanticToken { get }
 
-    var colorDecorativeSecondaryDark: ColorSemanticToken { get }
+    var colorDecorativeBrandSecondaryDark: ColorSemanticToken { get }
 
-    var colorDecorativeTertiaryDark: ColorSemanticToken { get }
+    var colorDecorativeBrandTertiaryDark: ColorSemanticToken { get }
 
     var colorDecorativeNeutralMutedDark: ColorSemanticToken { get }
 

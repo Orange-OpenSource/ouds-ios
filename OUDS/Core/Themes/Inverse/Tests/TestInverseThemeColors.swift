@@ -143,24 +143,24 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorContentDefault)
     }
 
-    func testColorsHomogeneityColorContentContentDefaultOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentContentDefaultOnBgEmphasized)
+    func testColorsHomogeneityColorContentDefaultOnBgEmphasized() throws {
+        assertHomogeneity(inverseTheme.colorContentDefaultOnBgEmphasized)
     }
 
     func testColorsHomogeneityColorContentMuted() throws {
         assertHomogeneity(inverseTheme.colorContentMuted)
     }
 
-    func testColorsHomogeneityColorContentContentMutedOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentContentMutedOnBgEmphasized)
+    func testColorsHomogeneityColorContentMutedOnBgEmphasized() throws {
+        assertHomogeneity(inverseTheme.colorContentMutedOnBgEmphasized)
     }
 
     func testColorsHomogeneityColorContentDisabled() throws {
         assertHomogeneity(inverseTheme.colorContentDisabled)
     }
 
-    func testColorsHomogeneityColorContentContentDisabledOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentContentDisabledOnBgEmphasized)
+    func testColorsHomogeneityColorContentDisabledOnBgEmphasized() throws {
+        assertHomogeneity(inverseTheme.colorContentDisabledOnBgEmphasized)
     }
 
     func testColorsHomogeneityColorContentBrandPrimary() throws {
@@ -193,87 +193,6 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorContentStatusNegative)
     }
 
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorContentStatusAccent() throws {
-//        assertHomogeneity(inverseTheme.colorContentStatusAccent)
-//    }
-
-    // MARK: Semantic token - Colors - Content - On Background
-
-    func testColorsHomogeneityColorContentOnBgPrimary() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgPrimary)
-    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorContentOnBgSecondary() throws {
-//        assertHomogeneity(inverseTheme.colorContentOnBgSecondary)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorContentOnBgTertiary() throws {
-//        assertHomogeneity(inverseTheme.colorContentOnBgTertiary)
-//    }
-
-    func testColorsHomogeneityColorContentOnBgStatusPositiveMuted() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusPositiveMuted)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusPositiveMutedOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusPositiveMutedOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusPositiveEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusPositiveEmphasized)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusInfoMuted() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusInfoMuted)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusInfoMutedOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusInfoMutedOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusInfoEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusInfoEmphasized)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusWarningMuted() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusWarningMuted)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusWarningMutedOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusWarningMutedOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusWarningEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusWarningEmphasized)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusNegativeMuted() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusNegativeMuted)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusNegativeMutedOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusNegativeMutedOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusNegativeEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusNegativeEmphasized)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusAccentMuted() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusAccentMuted)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusAccentMutedOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusAccentMutedOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorContentOnBgStatusAccentedEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorContentOnBgStatusAccentedEmphasized)
-    }
-
     // MARK: Semantic token - Colors - Border
 
     func testColorsHomogeneityColorBorderDefault() throws {
@@ -304,55 +223,6 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorBorderBrandPrimary)
     }
 
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBorderBrandSecondary() throws {
-//        assertHomogeneity(inverseTheme.colorBorderBrandSecondary)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBorderBrandTertiary() throws {
-//        assertHomogeneity(inverseTheme.colorBorderBrandTertiary)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBorderStatusPositive() throws {
-//        assertHomogeneity(inverseTheme.colorBorderStatusPositive)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBorderStatusInfo() throws {
-//        assertHomogeneity(inverseTheme.colorBorderStatusInfo)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBorderStatusWarning() throws {
-//        assertHomogeneity(inverseTheme.colorBorderStatusWarning)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBorderStatusNegative() throws {
-//        assertHomogeneity(inverseTheme.colorBorderStatusNegative)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBorderStatusAccent() throws {
-//        assertHomogeneity(inverseTheme.colorBorderStatusAccent)
-//    }
-
-    func testColorsHomogeneityColorBorderOnBgBrandPrimary() throws {
-        assertHomogeneity(inverseTheme.colorBorderOnBgBrandPrimary)
-    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBorderOnBgBrandSecondary() throws {
-//        assertHomogeneity(inverseTheme.colorBorderOnBgBrandSecondary)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBorderOnBgBrandTertiary() throws {
-//        assertHomogeneity(inverseTheme.colorBorderOnBgBrandTertiary)
-//    }
-
     // MARK: Semantic token - Colors - Action
 
     func testColorsHomogeneityColorActionSelected() throws {
@@ -373,10 +243,6 @@ final class TestInverseThemeColors: XCTestCase {
 
     func testColorsHomogeneityColorActionVisited() throws {
         assertHomogeneity(inverseTheme.colorActionVisited)
-    }
-
-    func testColorsHomogeneityColorActionVistedOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorActionVistedOnBgEmphasized)
     }
 
     func testColorsHomogeneityColorActionPrimaryEnabled() throws {
@@ -478,108 +344,6 @@ final class TestInverseThemeColors: XCTestCase {
     func testColorsHomogeneityColorActionNegativeFocus() throws {
         assertHomogeneity(inverseTheme.colorActionNegativeFocus)
     }
-
-    func testColorsHomogeneityColorActionOnBgActionDisabled() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionDisabled)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionDisabledOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionDisabledOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionNegative() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionNegative)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryEnabled() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryEnabled)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryEnabledOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryEnabledOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryHover() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryHover)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryHoverOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryHoverOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryPressed() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryPressed)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryPressedOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryPressedOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryLoading() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryLoading)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryLoadingOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryLoadingOnBgEmphasized)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryFocus() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryFocus)
-    }
-
-    func testColorsHomogeneityColorActionOnBgActionPrimaryFocusOnBgEmphasized() throws {
-        assertHomogeneity(inverseTheme.colorActionOnBgActionPrimaryFocusOnBgEmphasized)
-    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryEnabled() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryEnabled)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryEnabledOnBgEmphasized() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryEnabledOnBgEmphasized)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryHover() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryHover)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryHoverOnBgEmphasized() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryHoverOnBgEmphasized)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryPressed() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryPressed)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryPressedOnBgEmphasized() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryPressedOnBgEmphasized)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryLoading() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryLoading)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryLoadingOnBgEmphasized() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryLoadingOnBgEmphasized)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryFocus() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryFocus)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorActionOnBgActionSecondaryFocusOnBgEmphasized() throws {
-//        assertHomogeneity(inverseTheme.colorActionOnBgActionSecondaryFocusOnBgEmphasized)
-//    }
 
     // MARK: Semantic token - Colors - Always
 
@@ -700,18 +464,6 @@ final class TestInverseThemeColors: XCTestCase {
     }
 
     // MARK: Semantic token - Colors - Decorative
-
-    func testColorsHomogeneityColorDecorativeBrandPrimary() throws {
-        assertHomogeneity(inverseTheme.colorDecorativePrimary)
-    }
-
-    func testColorsHomogeneityColorDecorativeSecondary() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeSecondary)
-    }
-
-    func testColorsHomogeneityColorDecorativeTertiary() throws {
-        assertHomogeneity(inverseTheme.colorDecorativeTertiary)
-    }
 
     func testColorsHomogeneityColorDecorativeNeutralMuted() throws {
         assertHomogeneity(inverseTheme.colorDecorativeNeutralMuted)
