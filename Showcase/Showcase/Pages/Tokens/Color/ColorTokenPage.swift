@@ -53,7 +53,6 @@ struct ColorTokenPage: View {
             Section { illustrationForAction() } header: { header("Action") }
             Section { illustrationForAlways() } header: { header("Always") }
             Section { illustrationForContent() } header: { header("Content") }
-            Section { illustrationForContentOnBackground() } header: { header("Content On Background") }
             Section { illustrationForBorder() } header: { header("Border") }
             Section { illustrationForeElevation() } header: { header("Elevation") }
             Section { illustrationForDecorative() } header: { header("Decorative") }
@@ -111,14 +110,6 @@ struct ColorTokenPage: View {
     private func illustrationForContent() -> some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Content.allCases, id: \.rawValue) { namedColorToken in
-                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
-            }
-        }
-    }
-
-    private func illustrationForContentOnBackground() -> some View {
-        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
-            ForEach(NamedColor.ContentOnBg.allCases, id: \.rawValue) { namedColorToken in
                 illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }

@@ -32,7 +32,6 @@ extension NamedColor {
         // case colorBorderStatusWarning
         // case colorBorderStatusNegative
         // case colorBorderStatusAccent
-        case colorBorderOnBgBrandPrimary
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
         // case colorBorderOnBgBrandSecondary
         // case colorBorderOnBgBrandTertiary
@@ -68,8 +67,6 @@ extension NamedColor {
 //                return theme.colorBorderStatusNegative
 //            case .colorBorderStatusAccent:
 //                return theme.colorBorderStatusAccent
-            case .colorBorderOnBgBrandPrimary:
-                return theme.colorBorderOnBgBrandPrimary
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorBorderOnBgBrandSecondary:
 //                return theme.colorBorderOnBgBrandSecondary

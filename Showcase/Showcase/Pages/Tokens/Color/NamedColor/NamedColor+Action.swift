@@ -25,7 +25,6 @@ extension NamedColor {
         case colorActionDisabled
         case colorActionDisabledOnBgEmphasized
         case colorActionVisited
-        case colorActionVistedOnBgEmphasized
         case colorActionPrimaryEnabled
         case colorActionPrimaryEnabledOnBgEmphasized
         case colorActionPrimaryHover
@@ -51,19 +50,6 @@ extension NamedColor {
         case colorActionNegativePressed
         case colorActionNegativeLoading
         case colorActionNegativeFocus
-        case colorActionOnBgActionDisabled
-        case colorActionOnBgActionDisabledOnBgEmphasized
-        case colorActionOnBgActionNegative
-        case colorActionOnBgActionPrimaryEnabled
-        case colorActionOnBgActionPrimaryEnabledOnBgEmphasized
-        case colorActionOnBgActionPrimaryHover
-        case colorActionOnBgActionPrimaryHoverOnBgEmphasized
-        case colorActionOnBgActionPrimaryPressed
-        case colorActionOnBgActionPrimaryPressedOnBgEmphasized
-        case colorActionOnBgActionPrimaryLoading
-        case colorActionOnBgActionPrimaryLoadingOnBgEmphasized
-        case colorActionOnBgActionPrimaryFocus
-        case colorActionOnBgActionPrimaryFocusOnBgEmphasized
         // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //        case colorActionOnBgActionSecondaryEnabled
 //        case colorActionOnBgActionSecondaryEnabledOnBgEmphasized
@@ -88,8 +74,7 @@ extension NamedColor {
                 return theme.colorActionDisabledOnBgEmphasized
             case .colorActionVisited:
                 return theme.colorActionVisited
-            case .colorActionVistedOnBgEmphasized:
-                return theme.colorActionVistedOnBgEmphasized
+
             case .colorActionPrimaryEnabled:
                 return theme.colorActionPrimaryEnabled
             case .colorActionPrimaryEnabledOnBgEmphasized:
@@ -141,32 +126,6 @@ extension NamedColor {
                 return theme.colorActionNegativeLoading
             case .colorActionNegativeFocus:
                 return theme.colorActionNegativeFocus
-            case .colorActionOnBgActionDisabled:
-                return theme.colorActionOnBgActionDisabled
-            case .colorActionOnBgActionDisabledOnBgEmphasized:
-                return theme.colorActionOnBgActionDisabledOnBgEmphasized
-            case .colorActionOnBgActionNegative:
-                return theme.colorActionOnBgActionNegative
-            case .colorActionOnBgActionPrimaryEnabled:
-                return theme.colorActionOnBgActionPrimaryEnabled
-            case .colorActionOnBgActionPrimaryEnabledOnBgEmphasized:
-                return theme.colorActionOnBgActionPrimaryEnabledOnBgEmphasized
-            case .colorActionOnBgActionPrimaryHover:
-                return theme.colorActionOnBgActionPrimaryHover
-            case .colorActionOnBgActionPrimaryHoverOnBgEmphasized:
-                return theme.colorActionOnBgActionPrimaryHoverOnBgEmphasized
-            case .colorActionOnBgActionPrimaryPressed:
-                return theme.colorActionOnBgActionPrimaryPressed
-            case .colorActionOnBgActionPrimaryPressedOnBgEmphasized:
-                return theme.colorActionOnBgActionPrimaryPressedOnBgEmphasized
-            case .colorActionOnBgActionPrimaryLoading:
-                return theme.colorActionOnBgActionPrimaryLoading
-            case .colorActionOnBgActionPrimaryLoadingOnBgEmphasized:
-                return theme.colorActionOnBgActionPrimaryLoadingOnBgEmphasized
-            case .colorActionOnBgActionPrimaryFocus:
-                return theme.colorActionOnBgActionPrimaryFocus
-            case .colorActionOnBgActionPrimaryFocusOnBgEmphasized:
-                return theme.colorActionOnBgActionPrimaryFocusOnBgEmphasized
             // NOTE: #124 - Following case(s) is / are not managed because not defined values!
 //            case .colorActionOnBgActionSecondaryEnabled:
 //                return theme.colorActionOnBgActionSecondaryEnabled

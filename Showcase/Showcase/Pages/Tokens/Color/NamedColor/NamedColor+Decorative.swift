@@ -19,9 +19,6 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Decorative: String, CaseIterable {
-        case colorDecorativePrimary
-        case colorDecorativeSecondary
-        case colorDecorativeTertiary
         case colorDecorativeNeutralMuted
         case colorDecorativeNeutralDefault
         case colorDecorativeNeutralEmphasized
@@ -52,12 +49,6 @@ extension NamedColor {
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorDecorativePrimary:
-                return theme.colorDecorativePrimary
-            case .colorDecorativeSecondary:
-                return theme.colorDecorativeSecondary
-            case .colorDecorativeTertiary:
-                return theme.colorDecorativeTertiary
             case .colorDecorativeNeutralMuted:
                 return theme.colorDecorativeNeutralMuted
             case .colorDecorativeNeutralDefault:
