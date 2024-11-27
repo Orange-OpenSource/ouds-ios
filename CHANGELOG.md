@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update `SpaceSemanticTokens` tokens (tokenator *20241127074206*))
 - [Library] Update `SizeSemanticTokens` with rename of tokens (tokenator *20241126134156*))
 - [Library] Update `ElevationSemanticTokens` (tokenator *20241126120657*)
 - [Library] Improve Multiple-based objects for tokenator values integration  ([#279](https://github.com/Orange-OpenSource/ouds-ios/issues/279))
