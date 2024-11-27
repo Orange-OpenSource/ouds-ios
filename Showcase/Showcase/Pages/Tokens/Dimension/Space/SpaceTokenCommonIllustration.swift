@@ -13,6 +13,7 @@
 
 import OUDS
 import OUDSTokensRaw
+import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - Internal constants
@@ -20,24 +21,9 @@ import SwiftUI
 private let kIllustrationHeight = 72.0
 private let kIllustrationWidth = 72.0
 
-import OUDSTokensSemantic
-protocol NamedSpaceToken {
-    // To get the right name
-    var name: String { get }
-
-    // To get the token value
-    func token(from theme: OUDSTheme) -> SpaceSemanticToken
-}
-
+// Internal view to display the space category with a header to
+// describe the category and a list of entries for each token in this category.
 struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where HeaderDescription: View, TokenIllustration: View {
-
-    init(namedTokens: [NamedSpaceToken],
-         @ViewBuilder header: @escaping () -> HeaderDescription,
-         @ViewBuilder illustration: @escaping (SpaceSemanticToken) -> TokenIllustration) {
-        self.namedTokens = namedTokens
-        self.header = header
-        self.illustration = illustration
-    }
 
     // MARK: Environment properties
 
@@ -48,6 +34,16 @@ struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where Head
     let namedTokens: [NamedSpaceToken]
     @ViewBuilder let header: () -> HeaderDescription
     @ViewBuilder let illustration: (_ token: SpaceSemanticToken) -> TokenIllustration
+
+    // MARK: Initializer
+
+    init(namedTokens: [NamedSpaceToken],
+         @ViewBuilder header: @escaping () -> HeaderDescription,
+         @ViewBuilder illustration: @escaping (SpaceSemanticToken) -> TokenIllustration) {
+        self.namedTokens = namedTokens
+        self.header = header
+        self.illustration = illustration
+    }
 
     // MARK: Body
 
@@ -62,6 +58,8 @@ struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where Head
     }
 }
 
+// Internal view to display the token with its name, its value
+// and an illustration.
 struct SpaceTokenEntry<TokenIllustration>: View where TokenIllustration: View {
 
     // MARK: Environment properties
@@ -95,7 +93,7 @@ struct SpaceTokenEntry<TokenIllustration>: View where TokenIllustration: View {
 
 
 /// Internal View used to illustrate all tokens based on
-/// `dimension`, the `orientation` of the blue rectangle illustrating
+/// `dimension`, the `padding` of the blue rectangle illustrating
 /// the dimension and an optional icon asset.
 struct SpaceCommonIllustration: View {
 

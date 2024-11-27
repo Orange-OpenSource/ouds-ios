@@ -85,3 +85,15 @@ struct SpaceTokenPage: View {
 // MARK: - Named Space
 
 enum NamedSpace { }
+
+/// Interface all Named space tokens should implement
+/// to provide a displayable name and the sementic token
+protocol NamedSpaceToken {
+    // To get the right name
+    var name: String { get }
+
+    // To get the token value
+    func token(from theme: OUDSTheme) -> SpaceSemanticToken
+}
+
+
