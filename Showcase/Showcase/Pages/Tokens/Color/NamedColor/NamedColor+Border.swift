@@ -24,17 +24,6 @@ extension NamedColor {
         case colorBorderFocus
         case colorBorderBrandPrimaryOnBgEmphasized
         case colorBorderBrandPrimary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorBorderBrandSecondary
-        // case colorBorderBrandTertiary
-        // case colorBorderStatusPositive
-        // case colorBorderStatusInfo
-        // case colorBorderStatusWarning
-        // case colorBorderStatusNegative
-        // case colorBorderStatusAccent
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorBorderOnBgBrandSecondary
-        // case colorBorderOnBgBrandTertiary
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
@@ -52,26 +41,6 @@ extension NamedColor {
                 return theme.colorBorderBrandPrimaryOnBgEmphasized
             case .colorBorderBrandPrimary:
                 return theme.colorBorderBrandPrimary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorBorderBrandSecondary:
-//                return theme.colorBorderBrandSecondary
-//            case .colorBorderBrandTertiary:
-//                return theme.colorBorderBrandTertiary
-//            case .colorBorderStatusPositive:
-//                return theme.colorBorderStatusPositive
-//            case .colorBorderStatusInfo:
-//                return theme.colorBorderStatusInfo
-//            case .colorBorderStatusWarning:
-//                return theme.colorBorderStatusWarning
-//            case .colorBorderStatusNegative:
-//                return theme.colorBorderStatusNegative
-//            case .colorBorderStatusAccent:
-//                return theme.colorBorderStatusAccent
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorBorderOnBgBrandSecondary:
-//                return theme.colorBorderOnBgBrandSecondary
-//            case .colorBorderOnBgBrandTertiary:
-//                return theme.colorBorderOnBgBrandTertiary
             }
         }
     }

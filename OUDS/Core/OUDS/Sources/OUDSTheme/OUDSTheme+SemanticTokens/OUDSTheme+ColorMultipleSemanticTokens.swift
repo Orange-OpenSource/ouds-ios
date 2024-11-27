@@ -217,26 +217,6 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     @objc open var colorActionNegativeFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionNegativeFocusLight, dark: colorActionNegativeFocusDark) }
 
-    @objc open var colorActionOnBgActionSecondaryEnabled: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryEnabled!")  }
-
-    @objc open var colorActionOnBgActionSecondaryEnabledOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryEnabledOnBgEmphasized!") }
-
-    @objc open var colorActionOnBgActionSecondaryHover: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryHover!") }
-
-    @objc open var colorActionOnBgActionSecondaryHoverOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryHoverOnBgEmphasized!") }
-
-    @objc open var colorActionOnBgActionSecondaryPressed: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryPressed!") }
-
-    @objc open var colorActionOnBgActionSecondaryPressedOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryPressedOnBgEmphasized!") }
-
-    @objc open var colorActionOnBgActionSecondaryLoading: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryLoading!") }
-
-    @objc open var colorActionOnBgActionSecondaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryLoadingOnBgEmphasized!") }
-
-    @objc open var colorActionOnBgActionSecondaryFocus: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryFocus!") }
-
-    @objc open var colorActionOnBgActionSecondaryFocusOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryFocusOnBgEmphasized!") }
-
     // MARK: Semantic token - Colors - Always
 
     @objc open var colorAlwaysBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }

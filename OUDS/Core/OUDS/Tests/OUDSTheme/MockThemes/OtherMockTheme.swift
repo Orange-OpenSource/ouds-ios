@@ -128,16 +128,6 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     override var colorBorderBrandTertiary: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
 
-    override var colorBorderStatusPositive: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
-
-    override var colorBorderStatusInfo: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
-
-    override var colorBorderStatusWarning: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
-
-    override var colorBorderStatusNegative: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
-
-    override var colorBorderStatusAccent: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
-
     // MARK: Semantic token - Colors - Action
 
     override var colorActionSelected: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }

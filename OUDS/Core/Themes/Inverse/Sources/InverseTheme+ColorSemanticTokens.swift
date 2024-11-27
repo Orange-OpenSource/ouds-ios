@@ -21,8 +21,6 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-// swiftlint:disable line_length
-
 /// Overrides some colors using values defined in extension of ``ColorRawTokens`` in this current module.
 /// Some tokens do not have values assigned in the design system, and must be overriden.
 extension InverseTheme {
@@ -127,16 +125,6 @@ extension InverseTheme {
 
     override public var colorBorderBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderBrandTertiary!") }
 
-    override public var colorBorderStatusPositive: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusPositive!") }
-
-    override public var colorBorderStatusInfo: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusInfo!") }
-
-    override public var colorBorderStatusWarning: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusWarning!") }
-
-    override public var colorBorderStatusNegative: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusNegative!") }
-
-    override public var colorBorderStatusAccent: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusAccent!") }
-
     // MARK: Semantic token - Colors - Action
 
     override public var colorActionSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
@@ -198,26 +186,6 @@ extension InverseTheme {
     override public var colorActionNegativeLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet800) }
 
     override public var colorActionNegativeFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet700) }
-
-    override public var colorActionOnBgActionSecondaryEnabled: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryEnabled!") }
-
-    override public var colorActionOnBgActionSecondaryEnabledOnBgEmphasized: MultipleColorSemanticTokens {  fatalError("🤖 No value defined for colorActionOnBgActionSecondaryEnabledOnBgEmphasized!") }
-
-    override public var colorActionOnBgActionSecondaryHover: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryHover!") }
-
-    override public var colorActionOnBgActionSecondaryHoverOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryHoverOnBgEmphasized!") }
-
-    override public var colorActionOnBgActionSecondaryPressed: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryPressed!") }
-
-    override public var colorActionOnBgActionSecondaryPressedOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryPressedOnBgEmphasized!") }
-
-    override public var colorActionOnBgActionSecondaryLoading: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryLoading!") }
-
-    override public var colorActionOnBgActionSecondaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryLoadingOnBgEmphasized!") }
-
-    override public var colorActionOnBgActionSecondaryFocus: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryFocus!") }
-
-    override public var colorActionOnBgActionSecondaryFocusOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryFocusOnBgEmphasized!") }
 
     // MARK: Semantic token - Colors - Elevation
 
@@ -423,4 +391,3 @@ extension InverseTheme {
 
     override public var colorChartSequentialAccent5Tint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun100) }
 }
-// swiftlint:enable line_length

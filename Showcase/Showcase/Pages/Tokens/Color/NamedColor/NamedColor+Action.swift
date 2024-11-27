@@ -50,17 +50,6 @@ extension NamedColor {
         case colorActionNegativePressed
         case colorActionNegativeLoading
         case colorActionNegativeFocus
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//        case colorActionOnBgActionSecondaryEnabled
-//        case colorActionOnBgActionSecondaryEnabledOnBgEmphasized
-//        case colorActionOnBgActionSecondaryHover
-//        case colorActionOnBgActionSecondaryHoverOnBgEmphasized
-//        case colorActionOnBgActionSecondaryPressed
-//        case colorActionOnBgActionSecondaryPressedOnBgEmphasized
-//        case colorActionOnBgActionSecondaryLoading
-//        case colorActionOnBgActionSecondaryLoadingOnBgEmphasized
-//        case colorActionOnBgActionSecondaryFocus
-//        case colorActionOnBgActionSecondaryFocusOnBgEmphasized
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
@@ -74,7 +63,6 @@ extension NamedColor {
                 return theme.colorActionDisabledOnBgEmphasized
             case .colorActionVisited:
                 return theme.colorActionVisited
-
             case .colorActionPrimaryEnabled:
                 return theme.colorActionPrimaryEnabled
             case .colorActionPrimaryEnabledOnBgEmphasized:
@@ -83,7 +71,6 @@ extension NamedColor {
                 return theme.colorActionPrimaryHover
             case .colorActionPrimaryHoverOnBgEmphasized:
                 return theme.colorActionPrimaryHoverOnBgEmphasized
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
             case .colorActionPrimaryPressed:
                 return theme.colorActionPrimaryPressed
             case .colorActionPrimaryPressedOnBgEmphasized:
@@ -126,27 +113,6 @@ extension NamedColor {
                 return theme.colorActionNegativeLoading
             case .colorActionNegativeFocus:
                 return theme.colorActionNegativeFocus
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorActionOnBgActionSecondaryEnabled:
-//                return theme.colorActionOnBgActionSecondaryEnabled
-//            case .colorActionOnBgActionSecondaryEnabledOnBgEmphasized:
-//                return theme.colorActionOnBgActionSecondaryEnabledOnBgEmphasized
-//            case .colorActionOnBgActionSecondaryHover:
-//                return theme.colorActionOnBgActionSecondaryHover
-//            case .colorActionOnBgActionSecondaryHoverOnBgEmphasized:
-//                return theme.colorActionOnBgActionSecondaryHoverOnBgEmphasized
-//            case .colorActionOnBgActionSecondaryPressed:
-//                return theme.colorActionOnBgActionSecondaryPressed
-//            case .colorActionOnBgActionSecondaryPressedOnBgEmphasized:
-//                return theme.colorActionOnBgActionSecondaryPressedOnBgEmphasized
-//            case .colorActionOnBgActionSecondaryLoading:
-//                return theme.colorActionOnBgActionSecondaryLoading
-//            case .colorActionOnBgActionSecondaryLoadingOnBgEmphasized:
-//                return theme.colorActionOnBgActionSecondaryLoadingOnBgEmphasized
-//            case .colorActionOnBgActionSecondaryFocus:
-//                return theme.colorActionOnBgActionSecondaryFocus
-//            case .colorActionOnBgActionSecondaryFocusOnBgEmphasized:
-//                return theme.colorActionOnBgActionSecondaryFocusOnBgEmphasized
             }
         }
     }

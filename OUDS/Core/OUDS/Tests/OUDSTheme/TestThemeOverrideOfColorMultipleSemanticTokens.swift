@@ -278,31 +278,6 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colorBorderBrandTertiary == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorBorderStatusPositive() throws {
-        XCTAssertNotEqual(inheritedTheme.colorBorderStatusPositive, abstractTheme.colorBorderStatusPositive)
-        XCTAssertTrue(inheritedTheme.colorBorderStatusPositive == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenColorBorderStatusInfo() throws {
-        XCTAssertNotEqual(inheritedTheme.colorBorderStatusInfo, abstractTheme.colorBorderStatusInfo)
-        XCTAssertTrue(inheritedTheme.colorBorderStatusInfo == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenColorBorderStatusWarning() throws {
-        XCTAssertNotEqual(inheritedTheme.colorBorderStatusWarning, abstractTheme.colorBorderStatusWarning)
-        XCTAssertTrue(inheritedTheme.colorBorderStatusWarning == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenColorBorderStatusNegative() throws {
-        XCTAssertNotEqual(inheritedTheme.colorBorderStatusNegative, abstractTheme.colorBorderStatusNegative)
-        XCTAssertTrue(inheritedTheme.colorBorderStatusNegative == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenColorBorderStatusAccent() throws {
-        XCTAssertNotEqual(inheritedTheme.colorBorderStatusAccent, abstractTheme.colorBorderStatusAccent)
-        XCTAssertTrue(inheritedTheme.colorBorderStatusAccent == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
-    }
-
     // MARK: Semantic token - Colors - Action
 
     func testInheritedThemeCanOverrideSemanticTokenColorActionSelected() throws {

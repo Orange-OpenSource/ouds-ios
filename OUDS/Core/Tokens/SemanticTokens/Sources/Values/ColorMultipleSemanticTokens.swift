@@ -148,16 +148,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorBorderBrandTertiary: MultipleColorSemanticTokens { get }
 
-    var colorBorderStatusPositive: MultipleColorSemanticTokens { get }
-
-    var colorBorderStatusInfo: MultipleColorSemanticTokens { get }
-
-    var colorBorderStatusWarning: MultipleColorSemanticTokens { get }
-
-    var colorBorderStatusNegative: MultipleColorSemanticTokens { get }
-
-    var colorBorderStatusAccent: MultipleColorSemanticTokens { get }
-
     // MARK: Semantic token - Colors - Action
 
     var colorActionSelected: MultipleColorSemanticTokens { get }
