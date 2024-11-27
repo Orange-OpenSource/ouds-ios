@@ -16,13 +16,15 @@ import OUDSTokensSemantic
 
 extension NamedSpace {
 
-    enum GapInline: String, CaseIterable {
+    enum GapInline: String, CaseIterable, NamedSpaceToken {
         case spaceColumnGapNone
         case spaceColumnGapShorter
         case spaceColumnGapShort
         case spaceColumnGapMedium
         case spaceColumnGapTall
         case spaceColumnGapTaller
+
+        var name: String { self.rawValue }
 
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {

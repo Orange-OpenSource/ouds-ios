@@ -12,276 +12,132 @@
 //
 
 import OUDS
+import OUDSTokensSemantic
 import SwiftUI
 
-struct GapInlineIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+// swiftlint:disable multiline_arguments
+struct GapInlineCategory: View {
 
     // MARK: Body
 
     var body: some View {
-
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-
+        SpaceTokenCategory(namedTokens: NamedSpace.GapInline.allCases) {
             SpaceHeaderDescription(
                 firstText: "app_tokens_dimension_space_header_text",
                 secondText: "app_tokens_dimension_space_header_text",
                 orientation: .horizontal)
-            .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.GapInline.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(for: namedSpaceToken)
-            }
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-
-        // MARK: Environment properties
-
-        @Environment(\.theme) private var theme
-
-        // MARK: Stored properties
-
-        let namedSpaceToken: NamedSpace.GapInline
-
-        // MARK: Initializer
-
-        init(for namedSpaceToken: NamedSpace.GapInline) {
-            self.namedSpaceToken = namedSpaceToken
-        }
-
-        // MARK: Body
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .center))
-            }
+            SpaceCommonIllustration(dimension: token, padding: .centerHorizontaly)
         }
     }
 }
 
-struct GapInlineWithIconIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+struct GapInlineWithIconCategory: View {
 
     // MARK: Body
 
     var body: some View {
-
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        SpaceTokenCategory(namedTokens: NamedSpace.GapInlineWithIcon.allCases) {
             SpaceHeaderDescription(
                 text: "app_tokens_dimension_space_header_text",
                 iconAsset: .icon,
-                orientation: .horizontal)
-            .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.GapInlineWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(for: namedSpaceToken)
-            }
+                paddings: .trailing)
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-
-        // MARK: Environment properties
-
-        @Environment(\.theme) private var theme
-
-        // MARK: Stored properties
-
-        let namedSpaceToken: NamedSpace.GapInlineWithIcon
-
-        // MARK: Initializer
-
-        init(for namedSpaceToken: NamedSpace.GapInlineWithIcon) {
-            self.namedSpaceToken = namedSpaceToken
-        }
-
-        // MARK: Body
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
-            }
+            SpaceCommonIllustration(dimension: token, padding: .leading( .icon))
         }
     }
 }
 
-struct GapInlineWithArrowIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+struct GapInlineWithArrowCategory: View {
 
     // MARK: Body
 
     var body: some View {
-
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        SpaceTokenCategory(namedTokens: NamedSpace.GapInlineWithArrow.allCases) {
             SpaceHeaderDescription(
                 text: "app_tokens_dimension_space_header_text",
                 iconAsset: .arrow,
-                orientation: .horizontal)
-            .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.GapInlineWithArrow.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(for: namedSpaceToken)
-            }
+                paddings: .trailing)
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-
-        // MARK: Environment properties
-
-        @Environment(\.theme) private var theme
-
-        // MARK: Stored properties
-
-        let namedSpaceToken: NamedSpace.GapInlineWithArrow
-
-        // MARK: Initializer
-
-        init(for namedSpaceToken: NamedSpace.GapInlineWithArrow) {
-            self.namedSpaceToken = namedSpaceToken
-        }
-
-        // MARK: Body
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
-            }
+            SpaceCommonIllustration(dimension: token, padding: .leading( .arrow))
         }
     }
 }
 
-struct GapStackIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+struct GapStackCategory: View {
 
     // MARK: Body
 
     var body: some View {
-
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-
+        SpaceTokenCategory(namedTokens: NamedSpace.GapStack.allCases) {
             SpaceHeaderDescription(
                 firstText: "app_tokens_dimension_space_header_text",
                 secondText: "app_tokens_dimension_space_header_text",
                 orientation: .verical)
-            .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.GapStack.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(for: namedSpaceToken)
-            }
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-
-        // MARK: Environment properties
-
-        @Environment(\.theme) private var theme
-
-        // MARK: Stored properties
-
-        let namedSpaceToken: NamedSpace.GapStack
-
-        // MARK: Initializer
-
-        init(for namedSpaceToken: NamedSpace.GapStack) {
-            self.namedSpaceToken = namedSpaceToken
-        }
-
-        // MARK: Body
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .vertical(position: .center))
-            }
+            SpaceCommonIllustration(dimension: token, padding: .centerVerticaly)
         }
     }
 }
 
-struct GapStackWithIconIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+struct GapStackWithIconCategory: View {
 
     // MARK: Body
 
     var body: some View {
-
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        SpaceTokenCategory(namedTokens: NamedSpace.GapStackWithIcon.allCases) {
             SpaceHeaderDescription(
                 text: "app_tokens_dimension_space_header_text",
                 iconAsset: .icon,
-                orientation: .verical)
-            .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.GapStackWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(for: namedSpaceToken)
-            }
+                paddings: .bottom)
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-
-        // MARK: Environment properties
-
-        @Environment(\.theme) private var theme
-
-        // MARK: Stored properties
-
-        let namedSpaceToken: NamedSpace.GapStackWithIcon
-
-        // MARK: Initializer
-
-        init(for namedSpaceToken: NamedSpace.GapStackWithIcon) {
-            self.namedSpaceToken = namedSpaceToken
-        }
-
-        // MARK: Body
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .vertical(position: .bottom), iconAsset: .icon)
-            }
+            SpaceCommonIllustration(dimension: token, padding: .bottom(.icon))
         }
     }
 }
+// swiftlint:enable multiline_arguments

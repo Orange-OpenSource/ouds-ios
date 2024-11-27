@@ -12,187 +12,143 @@
 //
 
 import OUDS
+import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: Padding illustrations
 
-struct PaddingInlineIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
+// swiftlint: disable multiline_arguments
+struct PaddingInlineCategory: View {
 
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        SpaceTokenCategory(namedTokens: NamedSpace.PaddingInline.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-                .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.PaddingInline.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(namedSpaceToken: namedSpaceToken)
-            }
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-        @Environment(\.theme) private var theme
-        let namedSpaceToken: NamedSpace.PaddingInline
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading))
-            }
+            SpaceCommonIllustration(dimension: token, padding: .leading(nil))
         }
     }
 }
 
-struct PaddingInlineWithIconIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+struct PaddingInlineWithIconCategory: View {
 
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0), iconAsset: .icon)
-                .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.PaddingInlineWithIcon.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(namedSpaceToken: namedSpaceToken)
-            }
+        SpaceTokenCategory(namedTokens: NamedSpace.PaddingInlineWithIcon.allCases) {
+            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", iconAsset: .icon, paddings: .leading)
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-        @Environment(\.theme) private var theme
-        let namedSpaceToken: NamedSpace.PaddingInlineWithIcon
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .icon)
-            }
+            SpaceCommonIllustration(dimension: token, padding: .leading(.icon))
         }
     }
 }
 
-struct PaddingInlineWithArrowIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+struct PaddingInlineWithArrowCategory: View {
 
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0), iconAsset: .arrow)
-                .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.PaddingInlineWithArrow.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(namedSpaceToken: namedSpaceToken)
-            }
+        SpaceTokenCategory(namedTokens: NamedSpace.PaddingInlineWithArrow.allCases) {
+            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", iconAsset: .arrow, paddings: .leading)
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-        @Environment(\.theme) private var theme
-        let namedSpaceToken: NamedSpace.PaddingInlineWithArrow
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .leading), iconAsset: .arrow)
-            }
+            SpaceCommonIllustration(dimension: token, padding: .leading(.arrow))
         }
     }
 }
 
-struct PaddingInsetIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+struct PaddingInsetCategory: View {
 
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        SpaceTokenCategory(namedTokens: NamedSpace.PaddingInset.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
-                .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.PaddingInset.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(namedSpaceToken: namedSpaceToken)
-            }
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-        @Environment(\.theme) private var theme
-        let namedSpaceToken: NamedSpace.PaddingInset
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpacePaddingInsetIllustration(dimension: token)
-            }
+            SpaceCommonIllustration(dimension: token, padding: .topLeading)
         }
     }
 }
 
 // MARK: Padding stack
 
-struct PaddingStackIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+struct PaddingStackCategory: View {
 
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        SpaceTokenCategory(namedTokens: NamedSpace.PaddingStack.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.PaddingStack.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(namedSpaceToken: namedSpaceToken)
-            }
+        } illustration: { token in
+            Illustration(token: token)
         }
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-        @Environment(\.theme) private var theme
-        let namedSpaceToken: NamedSpace.PaddingStack
-
+        let token: SpaceSemanticToken
         var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .vertical(position: .top))
-            }
+            SpaceCommonIllustration(dimension: token, padding: .top(nil))
         }
     }
 }
+
+struct PaddingStackWithIconCategory: View {
+
+    // MARK: Body
+
+    var body: some View {
+        SpaceTokenCategory(namedTokens: NamedSpace.PaddingStackWithIcon.allCases) {
+            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", iconAsset: .icon, paddings: .top)
+         } illustration: { token in
+            Illustration(token: token)
+        }
+    }
+
+    // MARK: Internal for UI testing
+
+    struct Illustration: View {
+        let token: SpaceSemanticToken
+        var body: some View {
+            SpaceCommonIllustration(dimension: token, padding: .top(.icon))
+        }
+    }
+}
+// swiftlint: enable multiline_arguments

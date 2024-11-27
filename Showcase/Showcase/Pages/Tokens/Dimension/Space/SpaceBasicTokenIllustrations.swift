@@ -12,64 +12,38 @@
 //
 
 import OUDS
+import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: Fixed Spaces
 
-struct FixedSapcesIllustrations: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
+struct FixedSapcesCategory: View {
 
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        // swiftlint:disable multiline_arguments
+        SpaceTokenCategory(namedTokens: NamedSpace.Fixed.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
-                .padding(.bottom, theme.spaceFixedMedium)
-
-            ForEach(NamedSpace.Fixed.allCases, id: \.rawValue) { namedSpaceToken in
-                Illustration(for: namedSpaceToken)
-            }
+        } illustration: { token in
+            Illustration(token: token)
         }
+        // swiftlint:enable multiline_arguments
     }
 
+    // MARK: Internal for UI testing
+
     struct Illustration: View {
-
-        // MARK: Environment properties
-
-        @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
-
-        // MARK: Stored properties
-
-        let namedSpaceToken: NamedSpace.Fixed
-
-        // MARK: Initializer
-
-        init(for namedSpaceToken: NamedSpace.Fixed) {
-            self.namedSpaceToken = namedSpaceToken
-        }
-
-        // MARK: Body
-
-        public var body: some View {
-            let token = namedSpaceToken.token(from: theme)
-            let name = namedSpaceToken.rawValue
-            let value = String(format: "%.2f (pt)", token)
-
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
-                SpaceCommonIllustration(dimension: token, orientation: .horizontal(position: .center))
-            }
+        let token: SpaceSemanticToken
+        var body: some View {
+            SpaceCommonIllustration(dimension: token, padding: .centerHorizontaly)
         }
     }
 }
 
 // MARK: Scaled Spaces
 
-struct ScaledSpacesIllustrations: View {
+struct ScaledSpacesCategory: View {
 
     // MARK: Environment properties
 

@@ -16,7 +16,7 @@ import OUDSTokensSemantic
 
 extension NamedSpace {
 
-    enum PaddingInlineWithArrow: String, CaseIterable {
+    enum PaddingInlineWithArrow: String, CaseIterable, NamedSpaceToken {
         case spacePaddingInlineWithArrowNone
         case spacePaddingInlineWithArrowShortest
         case spacePaddingInlineWithArrowShorter
@@ -25,6 +25,8 @@ extension NamedSpace {
         case spacePaddingInlineWithArrowTall
         case spacePaddingInlineWithArrowTaller
         case spacePaddingInlineWithArrowTallest
+
+        var name: String { self.rawValue }
 
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {

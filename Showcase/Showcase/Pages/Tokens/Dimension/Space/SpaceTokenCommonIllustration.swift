@@ -20,6 +20,80 @@ import SwiftUI
 private let kIllustrationHeight = 72.0
 private let kIllustrationWidth = 72.0
 
+import OUDSTokensSemantic
+protocol NamedSpaceToken {
+    // To get the right name
+    var name: String { get }
+
+    // To get the token value
+    func token(from theme: OUDSTheme) -> SpaceSemanticToken
+}
+
+struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where HeaderDescription: View, TokenIllustration: View {
+
+    init(namedTokens: [NamedSpaceToken],
+         @ViewBuilder header: @escaping () -> HeaderDescription,
+         @ViewBuilder illustration: @escaping (SpaceSemanticToken) -> TokenIllustration) {
+        self.namedTokens = namedTokens
+        self.header = header
+        self.illustration = illustration
+    }
+
+    // MARK: Environment properties
+
+    @Environment(\.theme) private var theme
+
+    // MARK: Stored Properties
+
+    let namedTokens: [NamedSpaceToken]
+    @ViewBuilder let header: () -> HeaderDescription
+    @ViewBuilder let illustration: (_ token: SpaceSemanticToken) -> TokenIllustration
+
+    // MARK: Body
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            header().padding(.bottom, theme.spaceFixedMedium)
+
+            ForEach(namedTokens, id: \.name) { namedSpaceToken in
+                SpaceTokenEntry(namedSpaceToken: namedSpaceToken, illustration: illustration)
+            }
+        }
+    }
+}
+
+struct SpaceTokenEntry<TokenIllustration>: View where TokenIllustration: View {
+
+    // MARK: Environment properties
+
+    @Environment(\.theme) private var theme
+
+    // MARK: Stored Properties
+
+    let namedSpaceToken: NamedSpaceToken
+    @ViewBuilder let illustration: (_ token: SpaceSemanticToken) -> TokenIllustration
+
+    // MARK: Initializer
+
+    init(namedSpaceToken: NamedSpaceToken, illustration: @escaping (SpaceSemanticToken) -> TokenIllustration) {
+        self.namedSpaceToken = namedSpaceToken
+        self.illustration = illustration
+    }
+
+    // MARK: Body
+
+    var body: some View {
+        let token = namedSpaceToken.token(from: theme)
+        let name = namedSpaceToken.name
+        let value = String(format: "%.2f (pt)", token)
+
+        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            illustration(token)
+        }
+    }
+}
+
+
 /// Internal View used to illustrate all tokens based on
 /// `dimension`, the `orientation` of the blue rectangle illustrating
 /// the dimension and an optional icon asset.
@@ -32,16 +106,23 @@ struct SpaceCommonIllustration: View {
 
     // MARK: Stored properties
 
+    enum Padding {
+        case top(SpaceIllustrationIcon.Asset?)
+        case bottom(SpaceIllustrationIcon.Asset)
+        case leading(SpaceIllustrationIcon.Asset?)
+        case centerVerticaly
+        case centerHorizontaly
+        case topLeading
+    }
+
     let dimension: DimensionRawToken
-    let orientation: SpaceIllustrationOrientation
-    let iconAsset: SpaceIllustrationIcon.Asset?
+    let padding: Self.Padding
 
     // MARK: Initializer
 
-    init(dimension: DimensionRawToken, orientation: SpaceIllustrationOrientation, iconAsset: SpaceIllustrationIcon.Asset? = nil) {
+    init(dimension: DimensionRawToken, padding: Self.Padding) {
         self.dimension = dimension
-        self.orientation = orientation
-        self.iconAsset = iconAsset
+        self.padding = padding
     }
 
     // MARK: Body
@@ -51,18 +132,34 @@ struct SpaceCommonIllustration: View {
             // Background color
             ShowcaseTokenIllustrationBackground()
 
-            // Illustration
-            switch orientation {
-            case .horizontal:
-                HStack(alignment: .center, spacing: 0) {
-                    SpaceIllustrationRectangle(orientation: orientation, dimension: dimension)
-                    SpaceIllustrationIcon(asset: iconAsset)
+            switch padding {
+            case .topLeading:  // ZSTack topleading
+                ShowcaseTokenIllustrationBackground()
+                    .padding(.top, dimension)
+                    .padding(.leading, dimension)
+                    .background(theme.colorAlwaysInfo.color(for: colorScheme))
+            case .leading(let asset): // ZStack alignment leading
+                HStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                    SpaceIllustrationRectangle(width: dimension)
+                    SpaceIllustrationIcon(asset: asset)
                 }
-
-            case .vertical:
-                VStack(alignment: .center, spacing: 0) {
-                    SpaceIllustrationIcon(asset: iconAsset)
-                    SpaceIllustrationRectangle(orientation: orientation, dimension: dimension)
+            case .bottom(let asset): // ZStack alignment bottom
+                VStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                    SpaceIllustrationIcon(asset: asset)
+                    SpaceIllustrationRectangle(height: dimension)
+                }
+            case .top(let asset): // ZStack alignment top
+                VStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                    SpaceIllustrationRectangle(height: dimension)
+                    SpaceIllustrationIcon(asset: asset)
+                }
+            case .centerVerticaly: // ZStack alignment center
+                VStack(alignment: .center) {
+                    SpaceIllustrationRectangle(height: dimension)
+                }
+            case .centerHorizontaly: // // ZStack alignment center
+                VStack(alignment: .center) {
+                    SpaceIllustrationRectangle(width: dimension)
                 }
             }
         }
@@ -72,23 +169,17 @@ struct SpaceCommonIllustration: View {
     // MARK: Private Helper
 
     private var zStackAlignment: Alignment {
-        switch orientation {
-        case .horizontal(let position):
-            switch position {
-            case .leading:
-                return .leading
-            case .center:
-                return .center
-            }
-        case .vertical(let position):
-            switch position {
-            case .top:
-                return .top
-            case .center:
-                return .center
-            case .bottom:
-                return .bottom
-            }
+        switch padding {
+        case .top:
+            Alignment.top
+        case .bottom:
+            Alignment.bottom
+        case .leading:
+            Alignment.leading
+        case .centerVerticaly, .centerHorizontaly:
+            Alignment.center
+        case .topLeading:
+            Alignment.topLeading
         }
     }
 }
@@ -110,37 +201,11 @@ struct SpaceScaledIllustration: View {
             ShowcaseTokenIllustrationBackground()
 
             // Illustration
-            SpaceIllustrationRectangle(orientation: .horizontal(position: .center), dimension: horizontalDimension)
+            SpaceIllustrationRectangle(width: horizontalDimension)
                 .opacity(0.5)
 
-            SpaceIllustrationRectangle(orientation: .vertical(position: .center), dimension: verticalDimension)
+            SpaceIllustrationRectangle(height: verticalDimension)
                 .opacity(0.5)
-        }
-        .frame(width: kIllustrationWidth, height: kIllustrationHeight, alignment: .center)
-    }
-}
-
-/// Internal specific view used to illustrate padding inset tokens.
-/// It is specific because there is only inset padding on the illustration.
-struct SpacePaddingInsetIllustration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Stored properties
-
-    let dimension: DimensionRawToken
-
-    // MARK: Body
-
-    var body: some View {
-        ZStack(alignment: .topLeading) {
-            ShowcaseTokenIllustrationBackground()
-                .padding(.top, dimension)
-                .padding(.leading, dimension)
-                .background(theme.colorAlwaysInfo.color(for: colorScheme))
         }
         .frame(width: kIllustrationWidth, height: kIllustrationHeight, alignment: .center)
     }
@@ -209,38 +274,27 @@ private struct SpaceIllustrationRectangle: View {
 
     // MARK: Storeed properties
 
-    let orientation: SpaceIllustrationOrientation
-    let dimension: DimensionRawToken
+    let width: CGFloat?
+    let height: CGFloat?
+
+    // MARK: Initializers
+
+    init(width: DimensionRawToken) {
+        self.height = nil
+        self.width = Double(width)
+    }
+    init(height: DimensionRawToken) {
+        self.height = Double(height)
+        self.width = nil
+    }
 
     // MARK: Body
 
     var body: some View {
-        switch orientation {
-        case .horizontal:
-            Rectangle()
-                .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
-                .frame(width: dimension)
-        case .vertical:
-            Rectangle()
-                .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
-                .frame(height: dimension)
-        }
+        Rectangle()
+            .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+            .frame(width: width, height: height)
     }
-}
-
-enum SpaceIllustrationOrientation {
-    enum HorizontalPosition {
-        case leading
-        case center
-    }
-    enum VerticalPosition {
-        case top
-        case center
-        case bottom
-    }
-
-    case horizontal(position: HorizontalPosition)
-    case vertical(position: VerticalPosition)
 }
 
 /// View used to display a header that discribes the token category.
@@ -258,39 +312,47 @@ struct SpaceHeaderDescription: View {
     private let secondText: LocalizedStringKey?
     private let layout: Self.Layout
 
-    enum Orientation {
+    enum TextsOrientation {
         case horizontal
         case verical
     }
 
+    enum AssetPadding {
+        case leading
+        case trailing
+        case top
+        case bottom
+    }
+
     private enum Layout {
-        case fixHorizontal(EdgeInsets)
-        case oriented(Orientation)
+        case text(EdgeInsets)
+        case asset(AssetPadding)
+        case texts(TextsOrientation)
     }
 
     // MARK: Initializers
 
-    init(firstText: LocalizedStringKey, secondText: LocalizedStringKey, orientation: Orientation) {
+    init(firstText: LocalizedStringKey, secondText: LocalizedStringKey, orientation: TextsOrientation) {
         self.firstText = firstText
         self.secondText = secondText
         self.iconAsset = nil
 
-        layout = .oriented(orientation)
+        layout = .texts(orientation)
     }
 
-    init(text: LocalizedStringKey, iconAsset: SpaceIllustrationIcon.Asset, orientation: Orientation) {
+    init(text: LocalizedStringKey, iconAsset: SpaceIllustrationIcon.Asset, paddings: AssetPadding) {
         self.firstText = text
         self.secondText = nil
         self.iconAsset = iconAsset
 
-        layout = .oriented(orientation)
+        layout = .asset(paddings)
     }
 
-    init(text: LocalizedStringKey, paddings: EdgeInsets, iconAsset: SpaceIllustrationIcon.Asset? = nil) {
-        self.iconAsset = iconAsset
+    init(text: LocalizedStringKey, paddings: EdgeInsets) {
         self.firstText = text
+        self.iconAsset = nil
         self.secondText = nil
-        self.layout = .fixHorizontal(paddings)
+        self.layout = .text(paddings)
     }
 
     // MARK: Body
@@ -306,22 +368,51 @@ struct SpaceHeaderDescription: View {
 
     @ViewBuilder private var content: some View {
         switch layout {
-        case .fixHorizontal(let paddings):
-            fixHorizontal(paddings)
-        case .oriented(let orientation):
-            switch orientation {
-            case .horizontal:
-                horizontal
-            case .verical:
-                vertical
+        case .text(let paddings):
+            text(paddings)
+        case .asset(let paddings):
+            asset(paddings)
+        case .texts(let orientation):
+            texts(orientation)
+        }
+    }
+
+    @ViewBuilder
+    private func texts(_ orientation: TextsOrientation) -> some View {
+        switch orientation {
+        case .horizontal:
+            HStack(spacing: theme.spaceFixedNone) {
+                Text(firstText)
+                    .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .typeBodyDefaultMedium(theme)
+
+                SpaceIllustrationRectangle(width: 8)
+
+                if let secondText {
+                    Text(secondText)
+                        .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                        .typeBodyDefaultMedium(theme)
+                }
+            }
+        case .verical:
+            VStack(spacing: theme.spaceFixedNone) {
+                Text(firstText)
+                    .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .typeBodyDefaultMedium(theme)
+
+                SpaceIllustrationRectangle(height: 8)
+
+                if let secondText {
+                    Text(secondText)
+                        .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                        .typeBodyDefaultMedium(theme)
+                }
             }
         }
     }
 
-    private func fixHorizontal(_ paddings: EdgeInsets) ->  some View {
-        HStack(spacing: theme.spaceFixedShorter) {
-            SpaceIllustrationIcon(asset: iconAsset)
-
+    private func text(_ paddings: EdgeInsets) -> some View {
+        HStack {
             Text(firstText)
                 .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
                 .typeBodyDefaultMedium(theme)
@@ -331,43 +422,48 @@ struct SpaceHeaderDescription: View {
         .background(theme.colorAlwaysInfo.color(for: colorScheme))
     }
 
-    private var horizontal: some View {
-        HStack(alignment: .center, spacing: theme.spaceFixedNone) {
-            if let iconAsset {
-                SpaceIllustrationIcon(asset: iconAsset)
-                SpaceIllustrationRectangle(orientation: .horizontal(position: .center), dimension: 8)
-            }
+    @ViewBuilder
+    private func asset(_ paddings: AssetPadding) -> some View {
+        switch paddings {
+        case .top, .bottom:
+            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                if let iconAsset, paddings == .top {
+                    VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                        SpaceIllustrationRectangle(height: 8)
+                        SpaceIllustrationIcon(asset: iconAsset)
+                    }
+                    .padding(.trailing, theme.spaceFixedShorter)
+                }
+                if let iconAsset, paddings == .bottom {
+                    SpaceIllustrationIcon(asset: iconAsset)
+                    SpaceIllustrationRectangle(height: 8)
+                }
 
-            Text(firstText)
-                .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
-                .typeBodyDefaultMedium(theme)
-
-            if let secondText {
-                SpaceIllustrationRectangle(orientation: .horizontal(position: .center), dimension: 8)
-                Text(secondText)
+                Text(firstText)
                     .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
-        }
-    }
+            .background(theme.colorBgEmphasized.color(for: colorScheme))
 
-    private var vertical: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            if let iconAsset {
-                SpaceIllustrationIcon(asset: iconAsset)
-                SpaceIllustrationRectangle(orientation: .vertical(position: .center), dimension: 8)
-            }
+        case .leading, .trailing:
+            HStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                if let iconAsset, paddings == .leading {
+                    HStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                        SpaceIllustrationRectangle(width: 8)
+                        SpaceIllustrationIcon(asset: iconAsset)
+                    }
+                    .padding(.trailing, theme.spaceFixedShorter)
+                }
+                if let iconAsset, paddings == .trailing {
+                    SpaceIllustrationIcon(asset: iconAsset)
+                    SpaceIllustrationRectangle(width: 8)
+                }
 
-            Text(firstText)
-                .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
-                .typeBodyDefaultMedium(theme)
-
-            if let secondText {
-                SpaceIllustrationRectangle(orientation: .vertical(position: .center), dimension: 8)
-                Text(secondText)
+                Text(firstText)
                     .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
+            .background(theme.colorBgEmphasized.color(for: colorScheme))
         }
     }
 }

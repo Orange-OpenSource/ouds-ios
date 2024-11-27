@@ -30,43 +30,45 @@ struct SpaceTokenPage: View {
     var body: some View {
         Group {
             // Basic Space Tokens
-            Section { ScaledSpacesIllustrations() } header: {
+            Section { ScaledSpacesCategory() } header: {
                 header("app_tokens_dimension_space_scaled_label")
             }
-            Section { FixedSapcesIllustrations() } header: {
+            Section { FixedSapcesCategory() } header: {
                 header("app_tokens_dimension_space_fixed_label")
             }
             // Padding Sapce Tokens
-            Section { PaddingInlineIllustration() } header: {
+            Section { PaddingInlineCategory() } header: {
                 header("app_tokens_dimension_space_paddingInline_label")
             }
-            Section { PaddingInlineWithIconIllustration() } header: {
+            Section { PaddingInlineWithIconCategory() } header: {
                 header("app_tokens_dimension_space_paddingInlineWithIcon_label")
             }
-            Section { PaddingInlineWithArrowIllustration() } header: {
+            Section { PaddingInlineWithArrowCategory() } header: {
                 header("app_tokens_dimension_space_paddingInlineWithArrow_label")
             }
-            Section { PaddingInsetIllustration() } header: {
+            Section { PaddingInsetCategory() } header: {
                 header("app_tokens_dimension_space_paddingInset_label")
             }
-            Section { PaddingStackIllustration() } header: {
+            Section { PaddingStackCategory() } header: {
                 header("app_tokens_dimension_space_paddingStack_label")
             }
-
+            Section { PaddingStackWithIconCategory() } header: {
+                header("app_tokens_dimension_space_paddingStackWithIcon_label")
+            }
             // Gap Space Tokens
-            Section { GapInlineIllustration() } header: {
+            Section { GapInlineCategory() } header: {
                 header("app_tokens_dimension_space_gapInline_label")
             }
-            Section { GapInlineWithIconIllustration() } header: {
+            Section { GapInlineWithIconCategory() } header: {
                 header("app_tokens_dimension_space_gapInlineWithIcon_label")
             }
-            Section { GapInlineWithArrowIllustration() } header: {
+            Section { GapInlineWithArrowCategory() } header: {
                 header("app_tokens_dimension_space_gapInlineWithArrow_label")
             }
-            Section { GapStackIllustration() } header: {
+            Section { GapStackCategory() } header: {
                 header("app_tokens_dimension_space_gapStack_label")
             }
-            Section { GapStackWithIconIllustration() } header: {
+            Section { GapStackWithIconCategory() } header: {
                 header("app_tokens_dimension_space_gapStackWithIcon_label")
             }
         }

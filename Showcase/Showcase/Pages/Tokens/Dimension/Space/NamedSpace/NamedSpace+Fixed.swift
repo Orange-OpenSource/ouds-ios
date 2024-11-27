@@ -13,10 +13,11 @@
 
 import OUDS
 import OUDSTokensSemantic
+import SwiftUI
 
 extension NamedSpace {
 
-    enum Fixed: String, CaseIterable {
+    enum Fixed: String, CaseIterable, NamedSpaceToken {
         case spaceFixedNone
         case spaceFixedSmash
         case spaceFixedShortest
@@ -29,6 +30,8 @@ extension NamedSpace {
         case spaceFixedSpacious
         case spaceFixedHuge
         case spaceFixedJumbo
+
+        var name: String { self.rawValue }
 
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
