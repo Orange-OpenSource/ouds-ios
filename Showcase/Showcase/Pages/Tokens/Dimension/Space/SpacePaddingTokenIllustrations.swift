@@ -17,7 +17,6 @@ import SwiftUI
 
 // MARK: Padding illustrations
 
-// swiftlint: disable multiline_arguments
 struct PaddingInlineCategory: View {
 
     // MARK: Body
@@ -151,4 +150,3 @@ struct PaddingStackWithIconCategory: View {
         }
     }
 }
-// swiftlint: enable multiline_arguments

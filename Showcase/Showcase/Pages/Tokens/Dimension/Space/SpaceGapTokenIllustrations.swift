@@ -15,7 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// swiftlint:disable multiline_arguments
 struct GapInlineCategory: View {
 
     // MARK: Body
@@ -140,4 +139,3 @@ struct GapStackWithIconCategory: View {
         }
     }
 }
-// swiftlint:enable multiline_arguments
