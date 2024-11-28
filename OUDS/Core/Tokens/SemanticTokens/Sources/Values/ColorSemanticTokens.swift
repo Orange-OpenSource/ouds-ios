@@ -491,13 +491,13 @@ public protocol ColorSemanticTokens {
 
     // MARK: - Semantic token - Colors - Gradient
     
-    var colorGradientSkeletonMiddleLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, colorc
+    var colorGradientSkeletonMiddleLight: ColorSemanticToken { get }
     
-    var colorGradientSkeletonMiddleOnBgEmphasizedLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, colorc
+    var colorGradientSkeletonMiddleOnBgEmphasizedLight: ColorSemanticToken { get }
     
-    var colorGradientSkeletonStartEndLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, colorc
+    var colorGradientSkeletonStartEndLight: ColorSemanticToken { get }
     
-    var colorGradientSkeletonStartEndOnBgEmphasizedLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, colorc
+    var colorGradientSkeletonStartEndOnBgEmphasizedLight: ColorSemanticToken { get }
     
     // MARK: - Dark values
 

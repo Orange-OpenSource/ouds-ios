@@ -509,6 +509,16 @@ public protocol ColorMultipleSemanticTokens {
     var colorChartSequentialAccent5Tint800: MultipleColorSemanticTokens { get }
 
     var colorChartSequentialAccent5Tint900: MultipleColorSemanticTokens { get }
+    
+    // MARK: - Semantic token - Colors - Gradient
+    
+    var colorGradientSkeletonMiddleLight: MultipleColorSemanticTokens { get }
+    
+    var colorGradientSkeletonMiddleOnBgEmphasizedLight: MultipleColorSemanticTokens { get }
+    
+    var colorGradientSkeletonStartEndLight: MultipleColorSemanticTokens { get }
+    
+    var colorGradientSkeletonStartEndOnBgEmphasizedLight: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs
