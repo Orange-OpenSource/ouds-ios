@@ -95,8 +95,6 @@ extension InverseTheme {
 
     override public var colorContentStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet600) }
 
-    override public var colorContentStatusAccent: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentStatusAccent!") }
-
     // MARK: Semantic token - Colors - Border
 
     override public var colorBorderDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }

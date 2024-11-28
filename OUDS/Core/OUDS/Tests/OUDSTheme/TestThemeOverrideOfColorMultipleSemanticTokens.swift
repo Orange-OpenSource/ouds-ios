@@ -211,11 +211,6 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colorContentStatusNegative == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorContentStatusAccent() throws {
-        XCTAssertNotEqual(inheritedTheme.colorContentStatusAccent, abstractTheme.colorContentStatusAccent)
-        XCTAssertTrue(inheritedTheme.colorContentStatusAccent == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
-    }
-
     // MARK: Semantic token - Colors - Content - On Action
 
     func testInheritedThemeCanOverrideSemanticTokenColorContentOnActionDisabled() throws {

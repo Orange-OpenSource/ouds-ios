@@ -40,8 +40,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     @objc open var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgEmphasizedLight, dark: colorBgEmphasizedDark) }
 
-    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBgBrandPrimary: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorBgBrandPrimary!") }
+    @objc open var colorBgBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgBrandPrimaryLight, dark: colorBgBrandPrimaryDark) }
 
     @objc open var colorBgStatusNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgStatusNeutralLight, dark: colorBgStatusNeutralDark) }
 
@@ -71,11 +70,9 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     @objc open var colorBgStatusNegativeEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgStatusNegativeEmphasizedLight, dark: colorBgStatusNegativeEmphasizedDark) }
 
-    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBgStatusAccentMuted: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorBgStatusAccentMuted!") }
+    @objc open var colorBgStatusAccentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgStatusAccentMutedLight, dark: colorBgStatusAccentMutedDark) }
 
-    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBgStatusAccentMutedOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorBgStatusAccentMutedOnBgEmphasized!") }
+    @objc open var colorBgStatusAccentMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgStatusAccentMutedOnBgEmphasizedLight, dark: colorBgStatusAccentMutedOnBgEmphasizedDark) }
 
     @objc open var colorBgStatusAccentEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgStatusAccentEmphasizedLight, dark: colorBgStatusAccentEmphasizedDark) }
 
@@ -93,8 +90,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     @objc open var colorContentDisabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentDisabledOnBgEmphasizedLight, dark: colorContentDisabledOnBgEmphasizedDark) }
 
-    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorContentBrandPrimary: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorContentBrandPrimary!") }
+    @objc open var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandPrimaryLight, dark: colorContentBrandPrimaryDark) }
 
     @objc open var colorContentBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandPrimaryOnBgEmphasizedLight, dark: colorContentBrandPrimaryOnBgEmphasizedDark) }
 
@@ -105,8 +101,6 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorContentStatusWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusWarningLight, dark: colorContentStatusWarningDark) }
 
     @objc open var colorContentStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusNegativeLight, dark: colorContentStatusNegativeDark) }
-
-    @objc open var colorContentStatusAccent: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentStatusAccent!") }
 
     @objc open var colorContentOnActionDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnActionDisabledLight, dark: colorContentOnActionDisabledDark) }
 
@@ -382,8 +376,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     @objc open var colorChartCategoricalNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalNeutralLight, dark: colorChartCategoricalNeutralDark) }
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable at this level, as un workaround add raw values
-    @objc open var colorChartCategoricalBrand: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorChartCategoricalBrand!") }
+    @objc open var colorChartCategoricalBrand: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalBrandLight, dark: colorChartCategoricalBrandDark) }
 
     @objc open var colorChartCategoricalPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalPositiveLight) }
 

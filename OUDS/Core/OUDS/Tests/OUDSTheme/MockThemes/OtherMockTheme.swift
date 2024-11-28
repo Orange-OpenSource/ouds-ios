@@ -98,8 +98,6 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     override var colorContentStatusNegative: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
 
-    override var colorContentStatusAccent: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
-
     // MARK: Semantic token - Colors - Border
 
     override var colorBorderDefault: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }

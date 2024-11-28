@@ -30,7 +30,6 @@ extension NamedColor {
         case colorContentStatusInfo
         case colorContentStatusWarning
         case colorContentStatusNegative
-        case colorContentStatusAccent
         case colorContentBrandPrimary
         case colorContentBrandPrimaryOnBgEmphasized
         case colorContentOnActionDisabled
@@ -85,8 +84,6 @@ extension NamedColor {
                 return theme.colorContentStatusWarning
             case .colorContentStatusNegative:
                 return theme.colorContentStatusNegative
-            case .colorContentStatusAccent:
-                return theme.colorContentStatusAccent
             case .colorContentBrandPrimary:
                 return theme.colorContentBrandPrimary
             case .colorContentBrandPrimaryOnBgEmphasized:

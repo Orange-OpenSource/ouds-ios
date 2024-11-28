@@ -83,6 +83,7 @@
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
+		515FF21A2CF8924F0057A8C5 /* NamedColor+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515FF2192CF8924F0057A8C5 /* NamedColor+Gradient.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
 		51BD76212C466FCF0033365D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		51BD76222C466FCF0033365D /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760D2C466FCF0033365D /* ComponentsPage.swift */; };
@@ -243,6 +244,7 @@
 		512364782C3D7B2D00572FD5 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		5123647A2C3D7B3500572FD5 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		515FF2192CF8924F0057A8C5 /* NamedColor+Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NamedColor+Gradient.swift"; path = "Showcase/Pages/Tokens/Color/NamedColor/NamedColor+Gradient.swift"; sourceTree = "<group>"; };
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		51BD760B2C466FCF0033365D /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		51BD760D2C466FCF0033365D /* ComponentsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 		07FDCD882C296A500009AA13 = {
 			isa = PBXGroup;
 			children = (
+				515FF2192CF8924F0057A8C5 /* NamedColor+Gradient.swift */,
 				07FDCDA32C296B170009AA13 /* 🛠 */,
 				51BD76202C466FCF0033365D /* Showcase */,
 				0740A9902C9873500069D24A /* ShowcaseTests */,
@@ -1010,6 +1013,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				515FF21A2CF8924F0057A8C5 /* NamedColor+Gradient.swift in Sources */,
 				07F75A3D2CC653BD0004F1AD /* NameSpace+PaddingInset.swift in Sources */,
 				075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */,
 				077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */,

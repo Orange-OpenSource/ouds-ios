@@ -48,20 +48,20 @@ extension NamedColor {
                 return theme.colorAlwaysInfo
             case .colorAlwaysAccent:
                 return theme.colorAlwaysAccent
+            case .colorAlwaysOnAccent:
+                return theme.colorAlwaysOnAccent
             case .colorAlwaysOnBlack:
                 return theme.colorAlwaysOnBlack
             case .colorAlwaysOnWhite:
                 return theme.colorAlwaysOnWhite
             case .colorAlwaysOnWarning:
                 return theme.colorAlwaysOnWarning
+            case .colorAlwaysOnInfo:
+                return theme.colorAlwaysOnInfo
             case .colorAlwaysOnNegative:
                 return theme.colorAlwaysOnNegative
             case .colorAlwaysOnPositive:
                 return theme.colorAlwaysOnPositive
-            case .colorAlwaysOnInfo:
-                return theme.colorAlwaysOnInfo
-            case .colorAlwaysOnAccent:
-                return theme.colorAlwaysOnAccent
             }
         }
     }

@@ -94,8 +94,6 @@ extension MockTheme {
 
     override open var colorContentStatusNegative: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
 
-    override open var colorContentStatusAccent: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-
     // MARK: Semantic token - Colors - Content - On Action
 
     override open var colorContentOnActionDisabled: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
