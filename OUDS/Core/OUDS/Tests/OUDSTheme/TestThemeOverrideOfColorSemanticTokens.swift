@@ -2219,12 +2219,12 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
     }
 
     func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonStartEndOnBgEmphasizedLight() throws {
-        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedLight, inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedLight)
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedLight, abstractTheme.colorGradientSkeletonStartEndOnBgEmphasizedLight)
         XCTAssertTrue(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedLight == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonStartEndOnBgEmphasizedDark() throws {
-        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedDark, inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedDark)
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedDark, abstractTheme.colorGradientSkeletonStartEndOnBgEmphasizedDark)
         XCTAssertTrue(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedDark == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
 }
