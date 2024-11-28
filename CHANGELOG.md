@@ -9,7 +9,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] Color some new semantic tokens `colorContentStatus*`,  `colorContentOnBrand*`, `colorContentOnStatus*`, `colorGradient*`, `colorBorder*`, `colorContentOnAction*`
-- [DemoApp] Update space screen to missing tokens and refactor for UI tests ([#275](https://github.com/Orange-OpenSource/ouds-ios/issues/275))
 - [Tool] Add UI tests in CI/CD pipelines ([#298](https://github.com/Orange-OpenSource/ouds-ios/issues/298))
 - [DemoApp] Add more UI tests on demo app ([#154](https://github.com/Orange-OpenSource/ouds-ios/issues/154))
 
@@ -17,6 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Update `GridRawTokens` tokens (tokenator *20241128161629*)
 - [DemoApp] Update color page 
+- [DemoApp] Update space tokens screen ([#275](https://github.com/Orange-OpenSource/ouds-ios/issues/275))
+- [DemoApp] Update color tokens screen 
 - [Library] Update `ColorSemanticTokens` tokens (tokenator *20241127112301*)
 - [Library] Update `SpaceSemanticTokens` tokens (tokenator *20241127074206*)
 - [Library] Update `SizeSemanticTokens` with rename of tokens (tokenator *20241126134156*)
