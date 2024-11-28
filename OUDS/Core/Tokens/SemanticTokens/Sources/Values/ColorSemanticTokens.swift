@@ -91,7 +91,7 @@ public protocol ColorSemanticTokens {
 
     var colorContentBrandPrimaryLight: ColorSemanticToken { get }
 
-    var colorContentBrandPrimaryOnBgEmphasizedLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    var colorContentBrandPrimaryOnBgEmphasizedLight: ColorSemanticToken { get }
     
     var colorContentStatusPositiveLight: ColorSemanticToken { get }
 
@@ -555,6 +555,8 @@ public protocol ColorSemanticTokens {
 
     var colorContentBrandPrimaryDark: ColorSemanticToken { get }
 
+    var colorContentBrandPrimaryOnBgEmphasizedDark: ColorSemanticToken { get }
+    
     var colorContentStatusPositiveDark: ColorSemanticToken { get }
 
     var colorContentStatusInfoDark: ColorSemanticToken { get }
@@ -621,7 +623,6 @@ public protocol ColorSemanticTokens {
     
     var colorContentOnStatusWarningMutedOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
         
-    // +++ colorCOntentOnBrand, colorCOntentOnStatus, colorCOntentStatus, colorCOntentBrand, colorCOntent.., colorElevation, colorGradien, , colroDecorative
     // MARK: Semantic token - Colors - Border
 
     var colorBorderDefaultDark: ColorSemanticToken { get }

@@ -28,6 +28,7 @@ extension NamedColor {
         case colorContentStatusInfo
         case colorContentStatusWarning
         case colorContentStatusNegative
+        case colorContentBrandPrimaryOnBgEmphasized
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
@@ -53,6 +54,8 @@ extension NamedColor {
                 return theme.colorContentStatusWarning
             case .colorContentStatusNegative:
                 return theme.colorContentStatusNegative
+            case .colorContentBrandPrimaryOnBgEmphasized:
+                return theme.colorContentBrandPrimaryOnBgEmphasized
             }
         }
     }
