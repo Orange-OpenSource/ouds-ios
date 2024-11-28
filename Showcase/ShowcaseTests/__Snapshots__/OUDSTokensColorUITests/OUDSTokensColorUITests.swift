@@ -66,7 +66,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         testElevationColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testDecorativeColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testChartColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testGradientColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .dark)
+        testGradientColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
     }
 
     // MARK: - Inverse Theme Light Mode Color Tests
@@ -110,7 +110,7 @@ final class OUDSTokensColorUITests: XCTestCase {
         testElevationColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testDecorativeColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testChartColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testGradientColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .dark)
+        testGradientColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
     }
 
     // MARK: - Helpers
