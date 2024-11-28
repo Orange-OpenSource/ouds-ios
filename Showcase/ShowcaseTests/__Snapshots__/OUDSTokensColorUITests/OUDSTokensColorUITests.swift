@@ -39,11 +39,12 @@ final class OUDSTokensColorUITests: XCTestCase {
         testActionColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
         testAlwaysColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
         testContentColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
-        testContentOnBgColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testTransparentColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
         testBorderColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
         testElevationColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
         testDecorativeColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
         testChartColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
+        testGradientColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .light, colorScheme: .light)
     }
 
     // MARK: - Orange Theme Dark Mode Color Tests
@@ -60,11 +61,12 @@ final class OUDSTokensColorUITests: XCTestCase {
         testActionColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testAlwaysColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testContentColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testContentOnBgColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testTransparentColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .light)
         testBorderColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testElevationColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testDecorativeColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testChartColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testGradientColors(using: colorPage, theme: OrangeTheme(), interfaceStyle: .dark, colorScheme: .dark)
     }
 
     // MARK: - Inverse Theme Light Mode Color Tests
@@ -81,11 +83,12 @@ final class OUDSTokensColorUITests: XCTestCase {
         testActionColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
         testAlwaysColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
         testContentColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
-        testContentOnBgColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testTransparentColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
         testBorderColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
         testElevationColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
         testDecorativeColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
         testChartColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
+        testGradientColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .light)
     }
 
     // MARK: - Inverse Theme Dark Mode Color Tests
@@ -102,11 +105,12 @@ final class OUDSTokensColorUITests: XCTestCase {
         testActionColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testAlwaysColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testContentColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
-        testContentOnBgColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testTransparentColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .light, colorScheme: .dark)
         testBorderColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testElevationColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testDecorativeColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
         testChartColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
+        testGradientColors(using: colorPage, theme: InverseTheme(), interfaceStyle: .dark, colorScheme: .dark)
     }
 
     // MARK: - Helpers
@@ -223,16 +227,44 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `ContentOnBg` category of the given theme.
+    /// This function tests colors for the `Transparent` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
     ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     ///   - colorScheme: The color scheme (light or dark) to be used for testing
-    @MainActor private func testContentOnBgColors(using colorPage: ColorTokenPage, theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle, colorScheme: ColorScheme) {
-        // Iterate through all background color cases defined in NamedColor.ContentOnBg
-        for color in NamedColor.ContentOnBg.allCases {
+    @MainActor private func testTransparentColors(using colorPage: ColorTokenPage, theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle, colorScheme: ColorScheme) {
+        // Iterate through all background color cases defined in NamedColor.Transparent
+        for color in NamedColor.Transparent.allCases {
+            // Retrieve the corresponding color token from the provided theme
+            let token = color.token(from: theme)
+
+            // Generate the illustration for the specified color token using the colorPage instance
+            let illustration = colorPage.illustration(for: token, name: color.rawValue)
+                .background(theme.colorBgPrimary.color(for: colorScheme))
+
+            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
+
+            // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
+            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+        }
+    }
+
+    /// This function tests colors for the `Gradient` category of the given theme.
+    /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
+    /// - Parameters:
+    ///   - colorPage: The ColorTokenPage instance used to generate illustrations for the colors.
+    ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    ///   - colorScheme: The color scheme (light or dark) to be used for testing
+    @MainActor private func testGradientColors(using colorPage: ColorTokenPage, theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle, colorScheme: ColorScheme) {
+        // Iterate through all background color cases defined in NamedColor.Gradient
+        for color in NamedColor.Gradient.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 

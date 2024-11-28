@@ -21,9 +21,6 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-// swiftlint:disable line_length
-// swiftlint:disable file_length
-
 /// Overrides some colors using values defined in extension of ``ColorRawTokens`` in this current module.
 /// Some tokens do not have values assigned in the design system, and must be overriden.
 extension InverseTheme {
@@ -39,10 +36,6 @@ extension InverseTheme {
     override public var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
 
     override public var colorBgBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
-
-    override public var colorBgBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBgBrandSecondary!") }
-
-    override public var colorBgBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBgBrandTertiary!") }
 
     override public var colorBgStatusNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray720) }
 
@@ -82,21 +75,17 @@ extension InverseTheme {
 
     override public var colorContentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
-    override public var colorContentContentDefaultOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
+    override public var colorContentDefaultOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
 
     override public var colorContentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
-    override public var colorContentContentMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    override public var colorContentMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
     override public var colorContentDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }
 
-    override public var colorContentContentDisabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override public var colorContentDisabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
     override public var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
-
-    override public var colorContentBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentBrandSecondary!") }
-
-    override public var colorContentBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentBrandTertiary!") }
 
     override public var colorContentStatusPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalMalachite500) }
 
@@ -105,46 +94,6 @@ extension InverseTheme {
     override public var colorContentStatusWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun500) }
 
     override public var colorContentStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet600) }
-
-    override public var colorContentStatusAccent: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentStatusAccent!") }
-
-    // MARK: Semantic token - Colors - Content - On Background
-
-    override public var colorContentOnBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens( ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorContentOnBgSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentOnBgSecondary!") }
-
-    override public var colorContentOnBgTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentOnBgTertiary!") }
-
-    override public var colorContentOnBgStatusPositiveMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
-
-    override public var colorContentOnBgStatusPositiveMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorContentOnBgStatusPositiveEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorContentOnBgStatusInfoMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
-
-    override public var colorContentOnBgStatusInfoMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
-
-    override public var colorContentOnBgStatusInfoEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorContentOnBgStatusWarningMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
-
-    override public var colorContentOnBgStatusWarningMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorContentOnBgStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorContentOnBgStatusNegativeMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
-
-    override public var colorContentOnBgStatusNegativeMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorContentOnBgStatusNegativeEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    override public var colorContentOnBgStatusAccentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
-
-    override public var colorContentOnBgStatusAccentMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorContentOnBgStatusAccentedEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
 
     // MARK: Semantic token - Colors - Border
 
@@ -162,26 +111,6 @@ extension InverseTheme {
 
     override public var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
-    override public var colorBorderBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderBrandSecondary!") }
-
-    override public var colorBorderBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderBrandTertiary!") }
-
-    override public var colorBorderStatusPositive: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusPositive!") }
-
-    override public var colorBorderStatusInfo: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusInfo!") }
-
-    override public var colorBorderStatusWarning: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusWarning!") }
-
-    override public var colorBorderStatusNegative: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusNegative!") }
-
-    override public var colorBorderStatusAccent: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusAccent!") }
-
-    override public var colorBorderOnBgBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorBorderOnBgBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderOnBgBrandSecondary!") }
-
-    override public var colorBorderOnBgBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderOnBgBrandTertiary!") }
-
     // MARK: Semantic token - Colors - Action
 
     override public var colorActionSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
@@ -193,8 +122,6 @@ extension InverseTheme {
     override public var colorActionDisabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
 
     override public var colorActionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst400) }
-
-    override public var colorActionVistedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst600) }
 
     override public var colorActionPrimaryEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
 
@@ -246,52 +173,6 @@ extension InverseTheme {
 
     override public var colorActionNegativeFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet700) }
 
-    override public var colorActionOnBgActionDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorActionOnBgActionDisabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    override public var colorActionOnBgActionNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    override public var colorActionOnBgActionPrimaryEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorActionOnBgActionPrimaryEnabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    override public var colorActionOnBgActionPrimaryHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorActionOnBgActionPrimaryHoverOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    override public var colorActionOnBgActionPrimaryPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorActionOnBgActionPrimaryPressedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    override public var colorActionOnBgActionPrimaryLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorActionOnBgActionPrimaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    override public var colorActionOnBgActionPrimaryFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    override public var colorActionOnBgActionPrimaryFocusOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    override public var colorActionOnBgActionSecondaryEnabled: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryEnabled!") }
-
-    override public var colorActionOnBgActionSecondaryEnabledOnBgEmphasized: MultipleColorSemanticTokens {  fatalError("🤖 No value defined for colorActionOnBgActionSecondaryEnabledOnBgEmphasized!") }
-
-    override public var colorActionOnBgActionSecondaryHover: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryHover!") }
-
-    override public var colorActionOnBgActionSecondaryHoverOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryHoverOnBgEmphasized!") }
-
-    override public var colorActionOnBgActionSecondaryPressed: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryPressed!") }
-
-    override public var colorActionOnBgActionSecondaryPressedOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryPressedOnBgEmphasized!") }
-
-    override public var colorActionOnBgActionSecondaryLoading: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryLoading!") }
-
-    override public var colorActionOnBgActionSecondaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryLoadingOnBgEmphasized!") }
-
-    override public var colorActionOnBgActionSecondaryFocus: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryFocus!") }
-
-    override public var colorActionOnBgActionSecondaryFocusOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorActionOnBgActionSecondaryFocusOnBgEmphasized!") }
-
     // MARK: Semantic token - Colors - Elevation
 
     override public var colorElevationRaised: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray800) }
@@ -321,12 +202,6 @@ extension InverseTheme {
     override public var colorElevationModal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
 
     // MARK: Semantic token - Colors - Decorative
-
-    override public var colorDecorativePrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
-
-    override public var colorDecorativeSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    override public var colorDecorativeTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
 
     override public var colorDecorativeNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
 
@@ -502,4 +377,3 @@ extension InverseTheme {
 
     override public var colorChartSequentialAccent5Tint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun100) }
 }
-// swiftlint:enable line_length

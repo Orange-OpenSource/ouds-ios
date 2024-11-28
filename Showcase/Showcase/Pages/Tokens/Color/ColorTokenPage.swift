@@ -53,11 +53,12 @@ struct ColorTokenPage: View {
             Section { illustrationForAction() } header: { header("Action") }
             Section { illustrationForAlways() } header: { header("Always") }
             Section { illustrationForContent() } header: { header("Content") }
-            Section { illustrationForContentOnBackground() } header: { header("Content On Background") }
+            Section { illustrationForTransparent() } header: { header("Transparent") }
             Section { illustrationForBorder() } header: { header("Border") }
-            Section { illustrationForeElevation() } header: { header("Elevation") }
+            Section { illustrationForElevation() } header: { header("Elevation") }
             Section { illustrationForDecorative() } header: { header("Decorative") }
             Section { illustrationForChart() } header: { header("Chart") }
+            Section { illustrationForGradient() } header: { header("Gradient") }
         }
         .padding(.horizontal, activeTheme.spaceFixedMedium)
     }
@@ -116,9 +117,9 @@ struct ColorTokenPage: View {
         }
     }
 
-    private func illustrationForContentOnBackground() -> some View {
+    private func illustrationForTransparent() -> some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
-            ForEach(NamedColor.ContentOnBg.allCases, id: \.rawValue) { namedColorToken in
+            ForEach(NamedColor.Transparent.allCases, id: \.rawValue) { namedColorToken in
                 illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
@@ -132,9 +133,17 @@ struct ColorTokenPage: View {
         }
     }
 
-    private func illustrationForeElevation() -> some View {
+    private func illustrationForElevation() -> some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
             ForEach(NamedColor.Elevation.allCases, id: \.rawValue) { namedColorToken in
+                illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
+            }
+        }
+    }
+
+    private func illustrationForGradient() -> some View {
+        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+            ForEach(NamedColor.Gradient.allCases, id: \.rawValue) { namedColorToken in
                 illustration(for: namedColorToken.token(from: activeTheme), name: namedColorToken.rawValue)
             }
         }
