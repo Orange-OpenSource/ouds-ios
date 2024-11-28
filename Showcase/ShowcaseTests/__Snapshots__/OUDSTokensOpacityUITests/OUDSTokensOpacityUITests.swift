@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSComponents
 import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
