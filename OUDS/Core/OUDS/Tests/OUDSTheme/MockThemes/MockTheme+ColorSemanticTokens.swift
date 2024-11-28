@@ -472,6 +472,16 @@ extension MockTheme {
 
     override open var colorChartSequentialAccent5Tint900: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
 
+    // MARK: - Semantic token - Colors - Gradient
+    
+    override open var colorGradientSkeletonMiddle: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    
+    override open var colorGradientSkeletonMiddleOnBgEmphasized: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    
+    override open var colorGradientSkeletonStartEnd: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    
+    override open var colorGradientSkeletonStartEndOnBgEmphasized: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    
     // MARK: - Color Tokens overridings
 
     // MARK: Semantic token - Colors - Background

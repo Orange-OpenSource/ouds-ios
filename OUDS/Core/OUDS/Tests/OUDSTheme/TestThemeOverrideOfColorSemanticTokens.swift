@@ -2186,6 +2186,47 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colorContentOnStatusWarningMutedOnBgEmphasizedDark == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
 
+    // MARK: - Semantic token - Colors - Gradient
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonMiddleLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonMiddleLight, abstractTheme.colorGradientSkeletonMiddleLight)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonMiddleLight == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonMiddleDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonMiddleDark, abstractTheme.colorGradientSkeletonMiddleDark)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonMiddleDark == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+  
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonMiddleOnBgEmphasizedLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonMiddleOnBgEmphasizedLight, abstractTheme.colorGradientSkeletonMiddleOnBgEmphasizedLight)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonMiddleOnBgEmphasizedLight == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonMiddleOnBgEmphasizedDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonMiddleOnBgEmphasizedDark, abstractTheme.colorGradientSkeletonMiddleOnBgEmphasizedDark)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonMiddleOnBgEmphasizedDark == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonStartEndLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEndLight, abstractTheme.colorGradientSkeletonStartEndLight)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonStartEndLight == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonStartEndDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEndDark, abstractTheme.colorGradientSkeletonStartEndDark)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonStartEndDark == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonStartEndOnBgEmphasizedLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedLight, inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedLight)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedLight == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonStartEndOnBgEmphasizedDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedDark, inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedDark)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasizedDark == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
 }
 
 // swiftlint:enable type_body_length

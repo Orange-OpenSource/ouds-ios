@@ -1753,6 +1753,28 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.colorChartSequentialAccent5Tint900Dark, abstractTheme.colorChartSequentialAccent5Tint900Dark)
         XCTAssertTrue(inheritedTheme.colorChartSequentialAccent5Tint900Dark == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
+    
+    // MARK: - Semantic token - Colors - Gradient
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonMiddle() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonMiddle, abstractTheme.colorGradientSkeletonMiddle)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonMiddle == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
+    }
+  
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonMiddleOnBgEmphasized() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonMiddleOnBgEmphasized, abstractTheme.colorGradientSkeletonMiddleOnBgEmphasized)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonMiddleOnBgEmphasized == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
+    }
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonStartEnd() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEnd, abstractTheme.colorGradientSkeletonStartEnd)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonStartEnd == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
+    }
+    
+    func testInheritedThemeCanOverrideSemanticTokenColorColorGradientSkeletonStartEndOnBgEmphasized() throws {
+        XCTAssertNotEqual(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasized, colorGradientSkeletonStartEndOnBgEmphasized.colorGradientSkeletonMiddle)
+        XCTAssertTrue(inheritedTheme.colorGradientSkeletonStartEndOnBgEmphasized == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
+    }
 }
 
 // swiftlint:enable type_body_length

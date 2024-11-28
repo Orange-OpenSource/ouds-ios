@@ -498,6 +498,16 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorChartSequentialAccent5Tint800: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartSequentialAccent5Tint800Light, dark: colorChartSequentialAccent5Tint800Dark) }
 
     @objc open var colorChartSequentialAccent5Tint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartSequentialAccent5Tint900Light, dark: colorChartSequentialAccent5Tint900Dark) }
+    
+    // MARK: - Semantic token - Colors - Gradient
+    
+    @objc open var colorGradientSkeletonMiddle: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorGradientSkeletonMiddleLight, dark: colorGradientSkeletonMiddleDark) }
+    
+    @objc open var colorGradientSkeletonMiddleOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorGradientSkeletonMiddleOnBgEmphasizedLight, dark: colorGradientSkeletonMiddleOnBgEmphasizedDark) }
+    
+    @objc open var colorGradientSkeletonStartEnd: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorGradientSkeletonMiddleOnBgEmphasizedLight, dark: colorGradientSkeletonMiddleOnBgEmphasizedDark) }
+    
+    @objc open var colorGradientSkeletonStartEndOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorGradientSkeletonStartEndOnBgEmphasizedLight, dark: colorGradientSkeletonStartEndOnBgEmphasizedDark) }
 }
 
 // swiftlint:enable line_length

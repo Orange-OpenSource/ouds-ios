@@ -122,7 +122,7 @@ public protocol ColorMultipleSemanticTokens {
     
     var colorContentOnActionDisabled: MultipleColorSemanticTokens { get }
 
-    var colorContentOnActionDisabledOnBgEmphasize: MultipleColorSemanticTokens { get }
+    var colorContentOnActionDisabledOnBgEmphasized: MultipleColorSemanticTokens { get }
     
     var colorContentOnActionNegative: MultipleColorSemanticTokens { get }
     
