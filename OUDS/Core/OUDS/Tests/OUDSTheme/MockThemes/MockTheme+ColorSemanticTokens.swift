@@ -605,11 +605,23 @@ extension MockTheme {
     override open var colorBorderFocusLight: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
     override open var colorBorderFocusDark: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
 
+    override open var colorBorderFocusInsetLight: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+    override open var colorBorderFocusInsetDark: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+
+    override open var colorBorderFocusInsetOnBgEmphasizedLight: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+    override open var colorBorderFocusInsetOnBgEmphasizedDark: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+
+    override open var colorBorderFocusOnBgEmphasizedLight: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+    override open var colorBorderFocusOnBgEmphasizedDark: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+
     override open var colorBorderBrandPrimaryOnBgEmphasizedLight: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
     override open var colorBorderBrandPrimaryOnBgEmphasizedDark: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
 
     override open var colorBorderBrandPrimaryLight: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
     override open var colorBorderBrandPrimaryDark: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+
+    override open var colorBorderOnBrandPrimaryLight: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+    override open var colorBorderOnBrandPrimaryDark: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
 
     // MARK: Semantic token - Colors - Action
 
