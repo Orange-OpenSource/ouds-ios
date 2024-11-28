@@ -12,6 +12,7 @@
 //
 
 // swiftlint:disable missing_docs
+// swiftlint:disable number_separator
 
 extension GridRawTokens {
     public static let gridColumnCount100: GridRawToken = 1
@@ -47,3 +48,4 @@ extension GridRawTokens {
 }
 
 // swiftlint:enable missing_docs
+// swiftlint:enable number_separator

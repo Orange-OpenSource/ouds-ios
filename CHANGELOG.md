@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update `GridRawTokens` tokens (tokenator *20241128161629*)
 - [DemoApp] Update color page 
 - [Library] Update `ColorSemanticTokens` tokens (tokenator *20241127112301*)
 - [Library] Update `SpaceSemanticTokens` tokens (tokenator *20241127074206*)
@@ -24,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- [Library] Grid raw tokens `gridMargin900`
 - [Library] Color semantic tokens `colorContentOnBg*`, `colorBorderOnBg*`, `colorBorderStatus*`, some `colorAction*OnBg*`, `colorDecorative{Primary,Secondary,Tertiary}`, `colorAlwaysOnBg*`, `colorBgBrand{Secondary,Tertiary}`, `colorContentBrand{Secondary,Tertiary}`, `colorBorderBrand{Secondary,Tertiary}`, `colorContentStatusAccent`, ...
 - [Library] Some space semantic tokens type aliases to help tokenator job (`SpacePaddingInlineSemanticToken`, `SpacePaddingBlockSemanticToken`, `SpaceGapInlineSemanticToken`, `SpaceGapStackSemanticToken`)
 - [Library] All dimension semantic tokens ([#308](https://github.com/Orange-OpenSource/ouds-ios/issues/308))
