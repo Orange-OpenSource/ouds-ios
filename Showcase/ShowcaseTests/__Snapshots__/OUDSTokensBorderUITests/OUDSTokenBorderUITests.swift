@@ -69,7 +69,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
         testBorderStyle(for: theme, in: interfaceStyle)
     }
 
-    // MARK: Private test functions for all border token category
+    // MARK: Private test functions for all properties of border token
 
     /// Tests all border width by capturing their snapshots.
     /// - Parameters:
