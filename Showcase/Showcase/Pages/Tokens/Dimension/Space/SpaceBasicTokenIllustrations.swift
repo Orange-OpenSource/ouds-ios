@@ -15,11 +15,10 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: Fixed Spaces
+// MARK: - Fixed Spaces Category
 
-struct FixedSapcesCategory: View {
+struct FixedSpacesCategory: View {
 
-    // MARK: Body
     let namedTokens: [NamedSpaceToken] = NamedSpace.Fixed.allCases
 
     var body: some View {
@@ -30,8 +29,6 @@ struct FixedSapcesCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -40,16 +37,12 @@ struct FixedSapcesCategory: View {
     }
 }
 
-// MARK: Scaled Spaces
+// MARK: - Scaled Spaces Category
 
 struct ScaledSpacesCategory: View {
 
-    // MARK: Environment properties
-
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
@@ -64,24 +57,16 @@ struct ScaledSpacesCategory: View {
 
     struct Illustration: View {
 
-        // MARK: Environment properties
-
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
         @Environment(\.verticalSizeClass) private var verticalSizeClass
 
-        // MARK: Stored property
-
         let namedSpaceToken: NamedSpace.Scaled
-
-        // MARK: Initializer
 
         init(for namedSpaceToken: NamedSpace.Scaled) {
             self.namedSpaceToken = namedSpaceToken
         }
-
-        // MARK: Body
 
         var body: some View {
             let token = namedSpaceToken.token(from: theme)

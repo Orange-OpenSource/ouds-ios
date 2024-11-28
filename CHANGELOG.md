@@ -14,9 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] Update `GridRawTokens` tokens (tokenator *20241128161629*)
-- [DemoApp] Update color page 
 - [DemoApp] Update space tokens screen ([#275](https://github.com/Orange-OpenSource/ouds-ios/issues/275))
+- [Library] Update `GridRawTokens` tokens (tokenator *20241128161629*)
 - [DemoApp] Update color tokens screen 
 - [Library] Update `ColorSemanticTokens` tokens (tokenator *20241127112301*)
 - [Library] Update `SpaceSemanticTokens` tokens (tokenator *20241127074206*)

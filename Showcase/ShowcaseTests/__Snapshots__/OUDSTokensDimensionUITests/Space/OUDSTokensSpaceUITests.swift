@@ -144,7 +144,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    FixedSapcesCategory.Illustration(token: token)
+                    FixedSpacesCategory.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }

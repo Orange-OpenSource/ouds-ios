@@ -16,16 +16,14 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
-struct SpaceTokenPage: View {
+// MARK: - Space Token Page
 
-    // MARK: Environment properties
+struct SpaceTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Body
 
     var body: some View {
         Group {
@@ -33,7 +31,7 @@ struct SpaceTokenPage: View {
             Section { ScaledSpacesCategory() } header: {
                 header("app_tokens_dimension_space_scaled_label")
             }
-            Section { FixedSapcesCategory() } header: {
+            Section { FixedSpacesCategory() } header: {
                 header("app_tokens_dimension_space_fixed_label")
             }
             // Padding Sapce Tokens
@@ -75,8 +73,6 @@ struct SpaceTokenPage: View {
         .padding(.horizontal, theme.spaceFixedMedium)
     }
 
-    // MARK: Common helpers
-
     private func header(_ text: LocalizedStringKey) -> some View {
         Text(text).showcaseSectionHeaderStyle()
     }
@@ -86,12 +82,9 @@ struct SpaceTokenPage: View {
 
 enum NamedSpace { }
 
-/// Interface all Named space tokens should implement
-/// to provide a displayable name and the sementic token
+/// Interface all `NamedSpace` tokens must implement  provide a displayable name and the sementic token
 protocol NamedSpaceToken {
-    // To get the right name
     var name: String { get }
 
-    // To get the token value
     func token(from theme: OUDSTheme) -> SpaceSemanticToken
 }

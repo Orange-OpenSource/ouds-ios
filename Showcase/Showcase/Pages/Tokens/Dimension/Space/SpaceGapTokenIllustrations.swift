@@ -15,9 +15,9 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-struct GapInlineCategory: View {
+// MARK: - Gap Inline Category
 
-    // MARK: Body
+struct GapInlineCategory: View {
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.GapInline.allCases) {
@@ -30,8 +30,6 @@ struct GapInlineCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -40,9 +38,9 @@ struct GapInlineCategory: View {
     }
 }
 
-struct GapInlineWithIconCategory: View {
+// MARK: - Gap Inline With Icon Category
 
-    // MARK: Body
+struct GapInlineWithIconCategory: View {
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.GapInlineWithIcon.allCases) {
@@ -55,8 +53,6 @@ struct GapInlineWithIconCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -65,9 +61,9 @@ struct GapInlineWithIconCategory: View {
     }
 }
 
-struct GapInlineWithArrowCategory: View {
+// MARK: - Gap Inline With Arrow Category
 
-    // MARK: Body
+struct GapInlineWithArrowCategory: View {
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.GapInlineWithArrow.allCases) {
@@ -80,8 +76,6 @@ struct GapInlineWithArrowCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -90,9 +84,9 @@ struct GapInlineWithArrowCategory: View {
     }
 }
 
-struct GapStackCategory: View {
+// MARK: - Gap Stack Category
 
-    // MARK: Body
+struct GapStackCategory: View {
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.GapStack.allCases) {
@@ -105,8 +99,6 @@ struct GapStackCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -115,9 +107,9 @@ struct GapStackCategory: View {
     }
 }
 
-struct GapStackWithIconCategory: View {
+// MARK: - Gap Stack With Icon Category
 
-    // MARK: Body
+struct GapStackWithIconCategory: View {
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.GapStackWithIcon.allCases) {
@@ -129,8 +121,6 @@ struct GapStackWithIconCategory: View {
             Illustration(token: token)
         }
     }
-
-    // MARK: Internal for UI testing
 
     struct Illustration: View {
         let token: SpaceSemanticToken

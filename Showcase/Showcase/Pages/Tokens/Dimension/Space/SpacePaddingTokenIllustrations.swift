@@ -15,11 +15,9 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: Padding illustrations
+// MARK: - Padding Inline Category
 
 struct PaddingInlineCategory: View {
-
-    // MARK: Body
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.PaddingInline.allCases) {
@@ -29,8 +27,6 @@ struct PaddingInlineCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -39,9 +35,9 @@ struct PaddingInlineCategory: View {
     }
 }
 
-struct PaddingInlineWithIconCategory: View {
+// MARK: - Padding Inline With Icon Category
 
-    // MARK: Body
+struct PaddingInlineWithIconCategory: View {
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.PaddingInlineWithIcon.allCases) {
@@ -51,8 +47,6 @@ struct PaddingInlineWithIconCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -61,9 +55,9 @@ struct PaddingInlineWithIconCategory: View {
     }
 }
 
-struct PaddingInlineWithArrowCategory: View {
+// MARK: - Padding Inline With Arrow Category
 
-    // MARK: Body
+struct PaddingInlineWithArrowCategory: View {
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.PaddingInlineWithArrow.allCases) {
@@ -73,8 +67,6 @@ struct PaddingInlineWithArrowCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -83,9 +75,9 @@ struct PaddingInlineWithArrowCategory: View {
     }
 }
 
-struct PaddingInsetCategory: View {
+// MARK: - Padding Inset Category
 
-    // MARK: Body
+struct PaddingInsetCategory: View {
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.PaddingInset.allCases) {
@@ -95,8 +87,6 @@ struct PaddingInsetCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -105,11 +95,9 @@ struct PaddingInsetCategory: View {
     }
 }
 
-// MARK: Padding stack
+// MARK: - Padding Stack Category
 
 struct PaddingStackCategory: View {
-
-    // MARK: Body
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.PaddingStack.allCases) {
@@ -119,8 +107,6 @@ struct PaddingStackCategory: View {
         }
     }
 
-    // MARK: Internal for UI testing
-
     struct Illustration: View {
         let token: SpaceSemanticToken
         var body: some View {
@@ -129,9 +115,9 @@ struct PaddingStackCategory: View {
     }
 }
 
-struct PaddingStackWithIconCategory: View {
+// MARK: - Padding Stack With Icon Category
 
-    // MARK: Body
+struct PaddingStackWithIconCategory: View {
 
     var body: some View {
         SpaceTokenCategory(namedTokens: NamedSpace.PaddingStackWithIcon.allCases) {
@@ -140,8 +126,6 @@ struct PaddingStackWithIconCategory: View {
             Illustration(token: token)
         }
     }
-
-    // MARK: Internal for UI testing
 
     struct Illustration: View {
         let token: SpaceSemanticToken

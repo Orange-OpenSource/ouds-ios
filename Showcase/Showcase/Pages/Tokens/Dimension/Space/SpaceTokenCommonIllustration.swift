@@ -21,21 +21,17 @@ import SwiftUI
 private let kIllustrationHeight = 72.0
 private let kIllustrationWidth = 72.0
 
-// Internal view to display the space category with a header to
-// describe the category and a list of entries for each token in this category.
+// MARK: - Space Token Category
+
+/// Internal `View` to display the space category with a header in order to describe the category
+/// and also a list of entries for each token in this category.
 struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where HeaderDescription: View, TokenIllustration: View {
 
-    // MARK: Environment properties
-
     @Environment(\.theme) private var theme
-
-    // MARK: Stored Properties
 
     let namedTokens: [NamedSpaceToken]
     @ViewBuilder let header: () -> HeaderDescription
     @ViewBuilder let illustration: (_ token: SpaceSemanticToken) -> TokenIllustration
-
-    // MARK: Initializer
 
     init(namedTokens: [NamedSpaceToken],
          @ViewBuilder header: @escaping () -> HeaderDescription,
@@ -44,8 +40,6 @@ struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where Head
         self.header = header
         self.illustration = illustration
     }
-
-    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
@@ -58,27 +52,20 @@ struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where Head
     }
 }
 
-// Internal view to display the token with its name, its value
-// and an illustration.
-struct SpaceTokenEntry<TokenIllustration>: View where TokenIllustration: View {
+// MARK: - Space Token Entry
 
-    // MARK: Environment properties
+/// Internal `View` to display the token with its name, its value and an illustration.
+struct SpaceTokenEntry<TokenIllustration>: View where TokenIllustration: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Stored Properties
-
     let namedSpaceToken: NamedSpaceToken
     @ViewBuilder let illustration: (_ token: SpaceSemanticToken) -> TokenIllustration
-
-    // MARK: Initializer
 
     init(namedSpaceToken: NamedSpaceToken, illustration: @escaping (SpaceSemanticToken) -> TokenIllustration) {
         self.namedSpaceToken = namedSpaceToken
         self.illustration = illustration
     }
-
-    // MARK: Body
 
     var body: some View {
         let token = namedSpaceToken.token(from: theme)
@@ -91,17 +78,13 @@ struct SpaceTokenEntry<TokenIllustration>: View where TokenIllustration: View {
     }
 }
 
-/// Internal View used to illustrate all tokens based on
-/// `dimension`, the `padding` of the blue rectangle illustrating
-/// the dimension and an optional icon asset.
-struct SpaceCommonIllustration: View {
+// MARK: - Space Common Illustration
 
-    // MARK: Environment properties
+/// Internal View used to illustrate all tokens based on `dimension`, the `padding` of the blue rectangle illustrating the dimension and an optional icon asset.
+struct SpaceCommonIllustration: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Stored properties
 
     enum Padding {
         case top(SpaceIllustrationIcon.Asset?)
@@ -115,14 +98,10 @@ struct SpaceCommonIllustration: View {
     let dimension: DimensionRawToken
     let padding: Self.Padding
 
-    // MARK: Initializer
-
     init(dimension: DimensionRawToken, padding: Self.Padding) {
         self.dimension = dimension
         self.padding = padding
     }
-
-    // MARK: Body
 
     var body: some View {
         ZStack(alignment: zStackAlignment) {
@@ -130,7 +109,7 @@ struct SpaceCommonIllustration: View {
             ShowcaseTokenIllustrationBackground()
 
             switch padding {
-            case .topLeading:  // ZSTack topleading
+            case .topLeading:  // ZStack topleading
                 ShowcaseTokenIllustrationBackground()
                     .padding(.top, dimension)
                     .padding(.leading, dimension)
@@ -163,8 +142,6 @@ struct SpaceCommonIllustration: View {
         .frame(width: kIllustrationWidth, height: kIllustrationHeight, alignment: .leading)
     }
 
-    // MARK: Private Helper
-
     private var zStackAlignment: Alignment {
         switch padding {
         case .top:
@@ -181,16 +158,14 @@ struct SpaceCommonIllustration: View {
     }
 }
 
-/// Internal specific view used to illustrate scaled tokens.
+// MARK: - Space Scaled Illustration
+
+/// Internal specific `View` used to illustrate scaled tokens.
 /// It is specific, because there are two (horizontal and vertical) dimensions.
 struct SpaceScaledIllustration: View {
 
-    // MARK: Stored properties
-
     let horizontalDimension: DimensionRawToken
     let verticalDimension: DimensionRawToken
-
-    // MARK: Body
 
     var body: some View {
         ZStack(alignment: .center) {
@@ -208,8 +183,9 @@ struct SpaceScaledIllustration: View {
     }
 }
 
-/// Private view used to display icon asset
-/// on token illustrations.
+// MARK: - Space Illustration Icon
+
+/// `View` used to display icon asset on token illustrations.
 struct SpaceIllustrationIcon: View {
 
     enum Asset {
@@ -235,16 +211,10 @@ struct SpaceIllustrationIcon: View {
         }
     }
 
-    // MARK: Environment properties
-
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Storeed properties
-
     let asset: Asset?
-
-    // MARK: Body
 
     var body: some View {
         if let asset {
@@ -260,32 +230,27 @@ struct SpaceIllustrationIcon: View {
     }
 }
 
+// MARK: - Space Illustration Rectangle
+
 /// View used to display a rectangle showing a padding according to
 /// the `dimmension` and the `orientation`.
 private struct SpaceIllustrationRectangle: View {
 
-    // MARK: Environment properties
-
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Storeed properties
-
     let width: CGFloat?
     let height: CGFloat?
-
-    // MARK: Initializers
 
     init(width: DimensionRawToken) {
         self.height = nil
         self.width = Double(width)
     }
+
     init(height: DimensionRawToken) {
         self.height = Double(height)
         self.width = nil
     }
-
-    // MARK: Body
 
     var body: some View {
         Rectangle()
@@ -294,15 +259,13 @@ private struct SpaceIllustrationRectangle: View {
     }
 }
 
-/// View used to display a header that discribes the token category.
-struct SpaceHeaderDescription: View {
+// MARK: - Space Header Description
 
-    // MARK: Environment properties
+/// `View` used to display a header that discribes the token category.
+struct SpaceHeaderDescription: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Stored properties
 
     private let iconAsset: SpaceIllustrationIcon.Asset?
     private let firstText: LocalizedStringKey
@@ -327,8 +290,6 @@ struct SpaceHeaderDescription: View {
         case texts(TextsOrientation)
     }
 
-    // MARK: Initializers
-
     init(firstText: LocalizedStringKey, secondText: LocalizedStringKey, orientation: TextsOrientation) {
         self.firstText = firstText
         self.secondText = secondText
@@ -352,16 +313,12 @@ struct SpaceHeaderDescription: View {
         self.layout = .text(paddings)
     }
 
-    // MARK: Body
-
     var body: some View {
         content
             .oudsBorder(style: theme.borderStyleDrag, width: theme.borderWidthThin, radius: theme.borderRadiusNone, color: theme.colorBorderEmphasizedOnBgEmphasized)
                 .padding(.all, theme.spaceFixedMedium)
                 .background(theme.colorBgEmphasized.color(for: colorScheme))
     }
-
-    // MARK: Private helpers
 
     @ViewBuilder private var content: some View {
         switch layout {
@@ -380,28 +337,28 @@ struct SpaceHeaderDescription: View {
         case .horizontal:
             HStack(spacing: theme.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(width: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
                 }
             }
         case .verical:
             VStack(spacing: theme.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(height: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
                 }
             }
@@ -411,7 +368,7 @@ struct SpaceHeaderDescription: View {
     private func text(_ paddings: EdgeInsets) -> some View {
         HStack {
             Text(firstText)
-                .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
                 .typeBodyDefaultMedium(theme)
         }
         .background(theme.colorBgEmphasized.color(for: colorScheme))
@@ -437,7 +394,7 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
             .background(theme.colorBgEmphasized.color(for: colorScheme))
@@ -457,7 +414,7 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
             .background(theme.colorBgEmphasized.color(for: colorScheme))
