@@ -25,98 +25,75 @@ import XCTest
 /// Tests the UI rendering of each **opacity token** using reference images
 final class OUDSTokensOpacityUITests: XCTestCase {
 
-    // MARK: Properties
-
-    private let inverseTheme = InverseTheme()
-    private let orangeTheme = OrangeTheme()
-    private let lightScheme: ColorScheme = .light
-    private let darkScheme: ColorScheme = .dark
-
     // MARK: - Orange Theme Light Mode Opacity Tests
 
     /// This function tests all opacity tokens in the `OrangeTheme` with the `light` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
+    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesOrangeThemeLight() {
-        for opacity in NamedOpacity.allCases {
-            // Use the `IllustrationOpacity` struct to test a single illustration
-            let illustration = OUDSThemeableView(theme: orangeTheme) {
-                OpacityTokenPage.IllustrationOpacity(opacityName: opacity)
-                    .background(self.orangeTheme.colorBgPrimary.color(for: self.lightScheme))
-            }
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(opacity.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
-        }
+        let theme = OrangeTheme()
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testOpacities(for: theme, in: interfaceStyle)
     }
 
-    // MARK: - Orange Theme Dark Mode Opacity Tests
+    // MARK: - Orange Theme Light Mode Opacity Tests
 
     /// This function tests all opacity tokens in the `OrangeTheme` with the `dark` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
+    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesOrangeThemeDark() {
-        for opacity in NamedOpacity.allCases {
-            // Use the `IllustrationOpacity` struct to test a single illustration
-            let illustration = OUDSThemeableView(theme: orangeTheme) {
-                OpacityTokenPage.IllustrationOpacity(opacityName: opacity)
-                    .background(self.orangeTheme.colorBgPrimary.color(for: self.darkScheme))
-            }
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(opacity.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
-        }
+        let theme = OrangeTheme()
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testOpacities(for: theme, in: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Light Mode Opacity Tests
 
     /// This function tests all opacity tokens in the `InverseTheme` with the `light` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
+    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesInverseThemeLight() {
-        for opacity in NamedOpacity.allCases {
-            // Use the `IllustrationOpacity` struct to test a single illustration
-            let illustration = OUDSThemeableView(theme: inverseTheme) {
-                OpacityTokenPage.IllustrationOpacity(opacityName: opacity)
-                    .background(self.inverseTheme.colorBgPrimary.color(for: self.lightScheme))
-            }
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(opacity.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
-        }
+        let theme = InverseTheme()
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testOpacities(for: theme, in: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Dark Mode Opacity Tests
 
     /// This function tests all opacity tokens in the `InverseTheme` with the `dark` color scheme.
     /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the opacity, theme, and color scheme.
+    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
     @MainActor func testAllOpacitiesInverseThemeDark() {
-        for opacity in NamedOpacity.allCases {
-            // Use the `IllustrationOpacity` struct to test a single illustration
-            let illustration = OUDSThemeableView(theme: inverseTheme) {
-                OpacityTokenPage.IllustrationOpacity(opacityName: opacity)
-                    .background(self.inverseTheme.colorBgPrimary.color(for: self.darkScheme))
+        let theme = InverseTheme()
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testOpacities(for: theme, in: interfaceStyle)
+    }
+
+    // MARK: Private test functions for all properties of opacity token
+
+    /// Tests all opacity properties by capturing their snapshots.
+    /// - Parameters:
+    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testOpacities(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
+
+        // Iterate through all named tokens
+        for namedToken in NamedOpacity.allCases {
+            // Use the `IllustrationWidth` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: theme) {
+                OpacityTokenPage.IllustrationOpacity(opacityName: namedToken)
+                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(opacity.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
+            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
+
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 }

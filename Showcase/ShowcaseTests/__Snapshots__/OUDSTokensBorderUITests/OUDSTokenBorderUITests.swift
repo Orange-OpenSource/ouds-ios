@@ -71,7 +71,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     // MARK: Private test functions for all properties of border token
 
-    /// Tests all border width by capturing their snapshots.
+    /// Tests all border width properties by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
@@ -97,7 +97,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
         }
     }
 
-    /// Tests all border radius by capturing their snapshots.
+    /// Tests all border radius properties by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
@@ -123,7 +123,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
         }
     }
 
-    /// Tests all border style by capturing their snapshots.
+    /// Tests all border style properties by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.

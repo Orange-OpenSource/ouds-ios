@@ -32,7 +32,7 @@ final class OUDSTokensElevationUITests: XCTestCase {
     @MainActor func testAllElevationsOrangeThemeLight() {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
-        testElevation(for: theme, in: interfaceStyle)
+        testElevations(for: theme, in: interfaceStyle)
     }
 
     // MARK: - Orange Theme Dark Mode Elevation Tests
@@ -43,7 +43,7 @@ final class OUDSTokensElevationUITests: XCTestCase {
     @MainActor func testAllElevationsOrangeThemeDark() {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testElevation(for: theme, in: interfaceStyle)
+        testElevations(for: theme, in: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Light Mode Elevation Tests
@@ -54,7 +54,7 @@ final class OUDSTokensElevationUITests: XCTestCase {
     @MainActor func testAllElevationsInverseThemeLight() {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
-        testElevation(for: theme, in: interfaceStyle)
+        testElevations(for: theme, in: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Dark Mode Elevation Tests
@@ -65,16 +65,16 @@ final class OUDSTokensElevationUITests: XCTestCase {
     @MainActor func testAllElevationsInverseThemeDark() {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testElevation(for: theme, in: interfaceStyle)
+        testElevations(for: theme, in: interfaceStyle)
     }
 
     // MARK: Private test functions for all properties of elevation token
 
-    /// Tests all elevations width by capturing their snapshots.
+    /// Tests all elevation properties by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testElevation(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor private func testElevations(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
         // Iterate through all named tokens
         for namedToken in NamedElevation.allCases {
