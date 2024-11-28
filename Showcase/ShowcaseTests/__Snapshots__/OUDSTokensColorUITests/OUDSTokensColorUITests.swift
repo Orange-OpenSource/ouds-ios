@@ -235,7 +235,7 @@ final class OUDSTokensColorUITests: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testTransparentColors(using colorPage: ColorTokenPage, theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle, colorScheme: ColorScheme) {
-        // Iterate through all background color cases defined in NamedColor.Content
+        // Iterate through all background color cases defined in NamedColor.Transparent
         for color in NamedColor.Transparent.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
@@ -263,7 +263,7 @@ final class OUDSTokensColorUITests: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testGradientColors(using colorPage: ColorTokenPage, theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle, colorScheme: ColorScheme) {
-        // Iterate through all background color cases defined in NamedColor.Content
+        // Iterate through all background color cases defined in NamedColor.Gradient
         for color in NamedColor.Gradient.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)

@@ -96,6 +96,7 @@
 		51BD762A2C466FCF0033365D /* Showcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* Showcase.swift */; };
 		51BD762B2C466FCF0033365D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
 		51E3FF0B2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */; };
+		51ED41052CF8AF2C007AB814 /* NamedColor+Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515FF2192CF8924F0057A8C5 /* NamedColor+Gradient.swift */; };
 		51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */; };
 		6D17A2182CCBE50700C00512 /* OUDSTypographyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A2172CCBE50700C00512 /* OUDSTypographyUITests.swift */; };
 		6D17A21A2CCBE74C00C00512 /* OUDSTokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A2192CCBE74C00C00512 /* OUDSTokensElevationUITests.swift */; };
@@ -958,6 +959,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51ED41052CF8AF2C007AB814 /* NamedColor+Gradient.swift in Sources */,
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
 				6DED17F02CD25CB000584BC9 /* TokenElement.swift in Sources */,
 				6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */,
