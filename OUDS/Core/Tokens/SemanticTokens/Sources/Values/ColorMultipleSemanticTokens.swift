@@ -58,10 +58,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorBgBrandPrimary: MultipleColorSemanticTokens { get }
 
-    var colorBgBrandSecondary: MultipleColorSemanticTokens { get }
-
-    var colorBgBrandTertiary: MultipleColorSemanticTokens { get }
-
     var colorBgStatusNeutral: MultipleColorSemanticTokens { get }
 
     var colorBgStatusNeutralOnBgEmphasized: MultipleColorSemanticTokens { get }
@@ -140,14 +136,18 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorBorderFocus: MultipleColorSemanticTokens { get }
 
+    var colorBorderFocusInset: MultipleColorSemanticTokens { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorBorderFocusInsetOnBgEmphasized: MultipleColorSemanticTokens { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorBorderFocusOnBgEmphasized: MultipleColorSemanticTokens { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
     var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { get }
 
     var colorBorderBrandPrimary: MultipleColorSemanticTokens { get }
 
-    var colorBorderBrandSecondary: MultipleColorSemanticTokens { get }
-
-    var colorBorderBrandTertiary: MultipleColorSemanticTokens { get }
-
+    var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
     // MARK: Semantic token - Colors - Action
 
     var colorActionSelected: MultipleColorSemanticTokens { get }
@@ -221,27 +221,27 @@ public protocol ColorMultipleSemanticTokens {
     var colorAlwaysWarning: MultipleColorSemanticTokens { get }
 
     var colorAlwaysNegative: MultipleColorSemanticTokens { get }
-
+        
     var colorAlwaysPositive: MultipleColorSemanticTokens { get }
 
     var colorAlwaysInfo: MultipleColorSemanticTokens { get }
 
     var colorAlwaysAccent: MultipleColorSemanticTokens { get }
 
-    var colorAlwaysOnBgBlack: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnBgWhite: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnBgWarning: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnBgNegative: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnBgPositive: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnBgInfo: MultipleColorSemanticTokens { get }
-
-    var colorAlwaysOnBgAccent: MultipleColorSemanticTokens { get }
-
+    var colorAlwaysOnAccent: MultipleColorSemanticTokens { get }
+    
+    var colorAlwaysOnBlack: MultipleColorSemanticTokens { get }
+    
+    var colorAlwaysOnInfo: MultipleColorSemanticTokens { get }
+    
+    var colorAlwaysOnNegative: MultipleColorSemanticTokens { get }
+    
+    var colorAlwaysOnPositive: MultipleColorSemanticTokens { get }
+    
+    var colorAlwaysOnWarning: MultipleColorSemanticTokens { get }
+    
+    var colorAlwaysOnWhite: MultipleColorSemanticTokens { get }
+    
     // MARK: Semantic token - Colors - Transparent
 
     var colorTransparentDefault: MultipleColorSemanticTokens { get }

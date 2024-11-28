@@ -59,16 +59,6 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colorBgBrandPrimary)
     }
 
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBgBrandSecondary() throws {
-//        assertHomogeneity(inverseTheme.colorBgBrandSecondary)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorBgBrandTertiary() throws {
-//        assertHomogeneity(inverseTheme.colorBgBrandTertiary)
-//    }
-
     func testColorsHomogeneityColorBackgroundStatusNeutral() throws {
         assertHomogeneity(inverseTheme.colorBgStatusNeutral)
     }
@@ -166,16 +156,6 @@ final class TestInverseThemeColors: XCTestCase {
     func testColorsHomogeneityColorContentBrandPrimary() throws {
         assertHomogeneity(inverseTheme.colorContentBrandPrimary)
     }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorContentBrandSecondary() throws {
-//        assertHomogeneity(inverseTheme.colorContentBrandSecondary)
-//    }
-
-    // In InverseTheme token not implemented yet
-//    func testColorsHomogeneityColorContentBrandTertiary() throws {
-//        assertHomogeneity(inverseTheme.colorContentBrandTertiary)
-//    }
 
     func testColorsHomogeneityColorContentStatusPositive() throws {
         assertHomogeneity(inverseTheme.colorContentStatusPositive)
@@ -373,34 +353,6 @@ final class TestInverseThemeColors: XCTestCase {
 
     func testColorsHomogeneityColorAlwaysAccent() throws {
         assertHomogeneity(inverseTheme.colorAlwaysAccent)
-    }
-
-    func testColorsHomogeneityColorAlwaysOnBgBlack() throws {
-        assertHomogeneity(inverseTheme.colorAlwaysOnBgBlack)
-    }
-
-    func testColorsHomogeneityColorAlwaysOnBgWhite() throws {
-        assertHomogeneity(inverseTheme.colorAlwaysOnBgWhite)
-    }
-
-    func testColorsHomogeneityColorAlwaysOnBgWarning() throws {
-        assertHomogeneity(inverseTheme.colorAlwaysOnBgWarning)
-    }
-
-    func testColorsHomogeneityColorAlwaysOnBgNegative() throws {
-        assertHomogeneity(inverseTheme.colorAlwaysOnBgNegative)
-    }
-
-    func testColorsHomogeneityColorAlwaysOnBgPositive() throws {
-        assertHomogeneity(inverseTheme.colorAlwaysOnBgPositive)
-    }
-
-    func testColorsHomogeneityColorAlwaysOnBgInfo() throws {
-        assertHomogeneity(inverseTheme.colorAlwaysOnBgInfo)
-    }
-
-    func testColorsHomogeneityColorAlwaysOnBgAccent() throws {
-        assertHomogeneity(inverseTheme.colorAlwaysOnBgAccent)
     }
 
     // MARK: Semantic token - Colors - Transparent

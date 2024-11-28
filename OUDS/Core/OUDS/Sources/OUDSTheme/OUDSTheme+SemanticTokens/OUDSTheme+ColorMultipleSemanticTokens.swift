@@ -26,6 +26,7 @@ import OUDSTokensSemantic
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// Some tokens do not have values assigned in the design system, and must be overriden.
 /// Some tokens must be overiden in `OrangeTheme` side because they rely on Orange brand colors.
+/// Helps to expose color semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension OUDSTheme: ColorMultipleSemanticTokens {
 
     // MARK: Semantic token - Colors - Background
@@ -34,17 +35,12 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     @objc open var colorBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgSecondaryLight, dark: colorBgSecondaryDark) }
 
-    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBgTertiary: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorBgTertiary!") }
-
+    @objc open var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgTertiaryLight, dark: colorBgTertiaryDark) }
+    
     @objc open var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgEmphasizedLight, dark: colorBgEmphasizedDark) }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorBgBrandPrimary: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorBgBrandPrimary!") }
-
-    @objc open var colorBgBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBgBrandSecondary!") }
-
-    @objc open var colorBgBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBgBrandTertiary!") }
 
     @objc open var colorBgStatusNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgStatusNeutralLight, dark: colorBgStatusNeutralDark) }
 
@@ -99,10 +95,6 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
     @objc open var colorContentBrandPrimary: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorContentBrandPrimary!") }
 
-    @objc open var colorContentBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentBrandSecondary!") }
-
-    @objc open var colorContentBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentBrandTertiary!") }
-
     @objc open var colorContentBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandPrimaryOnBgEmphasizedLight, dark: colorContentBrandPrimaryOnBgEmphasizedDark) }
 
     @objc open var colorContentStatusPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusPositiveLight, dark: colorContentStatusPositiveDark) }
@@ -133,10 +125,6 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable at this level, as un workaround add raw values
     @objc open var colorBorderBrandPrimary: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimary!") }
 
-    @objc open var colorBorderBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderBrandSecondary!") }
-
-    @objc open var colorBorderBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderBrandTertiary!") }
-
     @objc open var colorBorderStatusPositive: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusPositive!") }
 
     @objc open var colorBorderStatusInfo: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusInfo!") }
@@ -149,11 +137,9 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     // MARK: Semantic token - Colors - Action
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable at this level, as un workaround add raw values
-    @objc open var colorActionSelected: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorActionSelected!") }
+    @objc open var colorActionSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSelectedLight, dark: colorActionSelectedDark) }
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable at this level, as un workaround add raw values
-    @objc open var colorActionSelectedOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorActionSelectedOnBgEmphasized!") }
+    @objc open var colorActionSelectedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSelectedOnBgEmphasizedLight, dark: colorActionSelectedOnBgEmphasizedDark) }
 
     @objc open var colorActionDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionDisabledLight, dark: colorActionDisabledDark) }
 
@@ -171,17 +157,13 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     @objc open var colorActionPrimaryHoverOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryHoverOnBgEmphasizedLight, dark: colorActionPrimaryHoverOnBgEmphasizedDark) }
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable at this level, as un workaround add raw values
-    @objc open var colorActionPrimaryPressed: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorActionPrimaryPressed!") }
+    @objc open var colorActionPrimaryPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryPressedLight, dark: colorActionPrimaryPressedDark) }
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable at this level, as un workaround add raw values
-    @objc open var colorActionPrimaryPressedOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorActionPrimaryPressedOnBgEmphasized!") }
+    @objc open var colorActionPrimaryPressedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryPressedOnBgEmphasizedLight, dark: colorActionPrimaryPressedOnBgEmphasizedDark) }
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable à ce niveau, as un workaround add raw values
-    @objc open var colorActionPrimaryLoading: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoading!") }
+    @objc open var colorActionPrimaryLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryLoadingLight, dark: colorActionPrimaryLoadingDark) }
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable à ce niveau, as un workaround add raw values
-    @objc open var colorActionPrimaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoadingOnBgEmphasized!") }
+    @objc open var colorActionPrimaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryLoadingOnBgEmphasizedLight, dark: colorActionPrimaryLoadingOnBgEmphasizedDark) }
 
     @objc open var colorActionPrimaryFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryFocusLight, dark: colorActionPrimaryFocusDark) }
 
@@ -219,34 +201,34 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     // MARK: Semantic token - Colors - Always
 
-    @objc open var colorAlwaysBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
+    @objc open var colorAlwaysBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysBlackLight, dark: colorAlwaysBlackDark) }
 
-    @objc open var colorAlwaysWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
+    @objc open var colorAlwaysWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysWhiteLight, dark: colorAlwaysWhiteDark) }
 
-    @objc open var colorAlwaysWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun500) }
+    @objc open var colorAlwaysWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysWarningLight, dark: colorAlwaysWarningDark) }
 
-    @objc open var colorAlwaysNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    @objc open var colorAlwaysNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysNegativeLight, dark: colorAlwaysNegativeDark) }
+    
+    @objc open var colorAlwaysPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysPositiveLight, dark: colorAlwaysPositiveDark) }
 
-    @objc open var colorAlwaysPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalMalachite500) }
+    @objc open var colorAlwaysInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysInfoLight, dark: colorAlwaysInfoDark) }
 
-    @objc open var colorAlwaysInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
+    @objc open var colorAlwaysAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysAccentLight, dark: colorAlwaysAccentDark) }
 
-    @objc open var colorAlwaysAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun500) }
-
-    @objc open var colorAlwaysOnBgBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    @objc open var colorAlwaysOnBgWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    @objc open var colorAlwaysOnBgWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    @objc open var colorAlwaysOnBgNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
-
-    @objc open var colorAlwaysOnBgPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    @objc open var colorAlwaysOnBgInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
-    @objc open var colorAlwaysOnBgAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
-
+    @objc open var colorAlwaysOnAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnAccentLight, dark: colorAlwaysOnAccentDark) }
+        
+    @objc open var colorAlwaysOnBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnBlackLight, dark: colorAlwaysOnBlackDark) }
+    
+    @objc open var colorAlwaysOnInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnInfoLight, dark: colorAlwaysOnInfoDark) }
+    
+    @objc open var colorAlwaysOnNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnNegativeLight, dark: colorAlwaysOnNegativeDark) }
+    
+    @objc open var colorAlwaysOnPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnPositiveLight, dark: colorAlwaysOnPositiveDark) }
+    
+    @objc open var colorAlwaysOnWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnWarningLight, dark: colorAlwaysOnWarningDark) }
+    
+    @objc open var colorAlwaysOnWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnWhiteLight, dark: colorAlwaysOnWhiteDark) }
+    
     // MARK: Semantic token - Colors - Transparent
 
     @objc open var colorTransparentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack0) }

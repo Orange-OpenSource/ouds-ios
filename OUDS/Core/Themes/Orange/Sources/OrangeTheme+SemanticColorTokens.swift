@@ -61,8 +61,6 @@ extension OrangeTheme {
     override open var colorBgTertiaryDark: ColorSemanticToken {
         OrangeBrandColorRawTokens.colorWarmGray900 }
 
-    override open var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgTertiaryLight, dark: colorBgTertiaryDark) }
-
     // NOTE: Picked from OUDSTheme since tokenator update
     override open var colorBgBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
 

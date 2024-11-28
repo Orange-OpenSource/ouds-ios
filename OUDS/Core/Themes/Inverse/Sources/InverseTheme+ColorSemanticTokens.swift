@@ -37,10 +37,6 @@ extension InverseTheme {
 
     override public var colorBgBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
-    override public var colorBgBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBgBrandSecondary!") }
-
-    override public var colorBgBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBgBrandTertiary!") }
-
     override public var colorBgStatusNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray720) }
 
     override public var colorBgStatusNeutralOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray80) }
@@ -91,10 +87,6 @@ extension InverseTheme {
 
     override public var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
 
-    override public var colorContentBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentBrandSecondary!") }
-
-    override public var colorContentBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorContentBrandTertiary!") }
-
     override public var colorContentStatusPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalMalachite500) }
 
     override public var colorContentStatusInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
@@ -120,10 +112,6 @@ extension InverseTheme {
     override public var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange550) }
 
     override public var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
-
-    override public var colorBorderBrandSecondary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderBrandSecondary!") }
-
-    override public var colorBorderBrandTertiary: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderBrandTertiary!") }
 
     // MARK: Semantic token - Colors - Action
 

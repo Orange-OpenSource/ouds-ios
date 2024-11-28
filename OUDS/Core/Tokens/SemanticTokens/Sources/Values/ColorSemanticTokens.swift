@@ -91,6 +91,8 @@ public protocol ColorSemanticTokens {
 
     var colorContentBrandPrimaryLight: ColorSemanticToken { get }
 
+    var colorContentBrandPrimaryOnBgEmphasizedLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
     var colorContentStatusPositiveLight: ColorSemanticToken { get }
 
     var colorContentStatusInfoLight: ColorSemanticToken { get }
@@ -98,7 +100,65 @@ public protocol ColorSemanticTokens {
     var colorContentStatusWarningLight: ColorSemanticToken { get }
 
     var colorContentStatusNegativeLight: ColorSemanticToken { get }
+    
+    var colorContentOnActionDisabledLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
 
+    var colorContentOnActionDisabledOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionNegativeLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryEnabledLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryEnabledOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryFocusLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryFocusOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryHoverLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryHoverOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+
+    var colorContentOnActionPrimaryLoadingLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+        
+    var colorContentOnActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryPressedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryPressedOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnBrandPrimaryLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusAccentEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusAccentMutedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusAccentMutedOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusInfoEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusInfoMutedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusInfoMutedOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusNegativeEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusNegativeMutedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusNegativeMutedOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusPositiveEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusPositiveMutedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusPositiveMutedOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusWarningEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusWarningMutedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusWarningMutedOnBgEmphasizedLight: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+        
     // MARK: Semantic token - Colors - Border
 
     var colorBorderDefaultLight: ColorSemanticToken { get }
@@ -186,12 +246,26 @@ public protocol ColorSemanticTokens {
     var colorAlwaysWarningLight: ColorSemanticToken { get }
 
     var colorAlwaysNegativeLight: ColorSemanticToken { get }
-
+    
     var colorAlwaysPositiveLight: ColorSemanticToken { get }
 
     var colorAlwaysInfoLight: ColorSemanticToken { get }
 
     var colorAlwaysAccentLight: ColorSemanticToken { get }
+    
+    var colorAlwaysOnAccentLight: ColorSemanticToken { get }
+        
+    var colorAlwaysOnBlackLight: ColorSemanticToken { get }
+    
+    var colorAlwaysOnInfoLight: ColorSemanticToken { get }
+    
+    var colorAlwaysOnNegativeLight: ColorSemanticToken { get }
+    
+    var colorAlwaysOnPositiveLight: ColorSemanticToken { get }
+    
+    var colorAlwaysOnWarningLight: ColorSemanticToken { get }
+    
+    var colorAlwaysOnWhiteLight: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Transparent
 
@@ -407,6 +481,16 @@ public protocol ColorSemanticTokens {
 
     var colorChartSequentialAccent5Tint900Light: ColorSemanticToken { get }
 
+    // MARK: - Semantic token - Colors - Gradient
+    
+    var colorGradientSkeletonMiddleLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorGradientSkeletonMiddleOnBgEmphasizedLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorGradientSkeletonStartEndLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorGradientSkeletonStartEndOnBgEmphasizedLight: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
     // MARK: - Dark values
 
     // MARK: Semantic token - Colors - Background
@@ -479,6 +563,65 @@ public protocol ColorSemanticTokens {
 
     var colorContentStatusNegativeDark: ColorSemanticToken { get }
 
+    var colorContentOnActionDisabledDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+
+    var colorContentOnActionDisabledOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionNegativeDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryEnabledDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryEnabledOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryFocusDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryFocusOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryHoverDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryHoverOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+
+    var colorContentOnActionPrimaryLoadingDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+        
+    var colorContentOnActionPrimaryLoadingOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryPressedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnActionPrimaryPressedOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnBrandPrimaryDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusAccentEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusAccentMutedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusAccentMutedOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusInfoEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusInfoMutedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusInfoMutedOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusNegativeEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusNegativeMutedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusNegativeMutedOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusPositiveEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusPositiveMutedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusPositiveMutedOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusWarningEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusWarningMutedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorContentOnStatusWarningMutedOnBgEmphasizedDark: ColorSemanticToken { get }  // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+        
+    // +++ colorCOntentOnBrand, colorCOntentOnStatus, colorCOntentStatus, colorCOntentBrand, colorCOntent.., colorElevation, colorGradien, , colroDecorative
     // MARK: Semantic token - Colors - Border
 
     var colorBorderDefaultDark: ColorSemanticToken { get }
@@ -566,12 +709,26 @@ public protocol ColorSemanticTokens {
     var colorAlwaysWarningDark: ColorSemanticToken { get }
 
     var colorAlwaysNegativeDark: ColorSemanticToken { get }
-
+    
     var colorAlwaysPositiveDark: ColorSemanticToken { get }
 
     var colorAlwaysInfoDark: ColorSemanticToken { get }
 
     var colorAlwaysAccentDark: ColorSemanticToken { get }
+    
+    var colorAlwaysOnAccentDark: ColorSemanticToken { get }
+            
+    var colorAlwaysOnBlackDark: ColorSemanticToken { get }
+    
+    var colorAlwaysOnInfoDark: ColorSemanticToken { get }
+    
+    var colorAlwaysOnNegativeDark: ColorSemanticToken { get }
+    
+    var colorAlwaysOnPositiveDark: ColorSemanticToken { get }
+    
+    var colorAlwaysOnWarningDark: ColorSemanticToken { get }
+    
+    var colorAlwaysOnWhiteDark: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Transparent
 
@@ -786,6 +943,16 @@ public protocol ColorSemanticTokens {
     var colorChartSequentialAccent5Tint800Dark: ColorSemanticToken { get }
 
     var colorChartSequentialAccent5Tint900Dark: ColorSemanticToken { get }
+    
+    // MARK: - Semantic token - Colors - Gradient
+    
+    var colorGradientSkeletonMiddleDark: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorGradientSkeletonMiddleOnBgEmphasizedDark: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorGradientSkeletonStartEndDark: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    
+    var colorGradientSkeletonStartEndOnBgEmphasizedDark: ColorSemanticToken { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
 }
 
 // swiftlint:enable missing_docs
