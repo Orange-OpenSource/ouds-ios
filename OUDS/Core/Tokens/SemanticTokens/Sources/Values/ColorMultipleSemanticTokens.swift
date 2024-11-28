@@ -18,6 +18,7 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable identifier_name
 // swiftlint:disable line_length
+// swiftlint:disable file_length
 
 /// This is a group of semantic tokens for **colors** but using ``MultipleColorSemanticTokens``.
 ///
@@ -119,63 +120,63 @@ public protocol ColorMultipleSemanticTokens {
     var colorContentStatusNegative: MultipleColorSemanticTokens { get }
 
     var colorContentStatusAccent: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionDisabled: MultipleColorSemanticTokens { get }
 
     var colorContentOnActionDisabledOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionNegative: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionPrimaryEnabled: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionPrimaryEnabledOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionPrimaryFocus: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionPrimaryFocusOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionPrimaryHover: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionPrimaryHoverOnBgEmphasized: MultipleColorSemanticTokens { get }
 
     var colorContentOnActionPrimaryLoading: MultipleColorSemanticTokens { get }
-        
+
     var colorContentOnActionPrimaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionPrimaryPressed: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnActionPrimaryPressedOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnBrandPrimary: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusAccentEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusAccentMuted: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusAccentMutedOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusInfoEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusInfoMuted: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusInfoMutedOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusNegativeEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusNegativeMuted: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusNegativeMutedOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusPositiveEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusPositiveMuted: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusPositiveMutedOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusWarningEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusWarningMuted: MultipleColorSemanticTokens { get }
-    
+
     var colorContentOnStatusWarningMutedOnBgEmphasized: MultipleColorSemanticTokens { get }
 
     // MARK: Semantic token - Colors - Border
@@ -191,17 +192,17 @@ public protocol ColorMultipleSemanticTokens {
     var colorBorderFocus: MultipleColorSemanticTokens { get }
 
     var colorBorderFocusInset: MultipleColorSemanticTokens { get }
-    
+
     var colorBorderFocusInsetOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorBorderFocusOnBgEmphasized: MultipleColorSemanticTokens { get }
-    
+
     var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { get }
 
     var colorBorderBrandPrimary: MultipleColorSemanticTokens { get }
 
     var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { get }
-    
+
     // MARK: Semantic token - Colors - Action
 
     var colorActionSelected: MultipleColorSemanticTokens { get }
@@ -275,7 +276,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorAlwaysWarning: MultipleColorSemanticTokens { get }
 
     var colorAlwaysNegative: MultipleColorSemanticTokens { get }
-        
+
     var colorAlwaysPositive: MultipleColorSemanticTokens { get }
 
     var colorAlwaysInfo: MultipleColorSemanticTokens { get }
@@ -283,19 +284,19 @@ public protocol ColorMultipleSemanticTokens {
     var colorAlwaysAccent: MultipleColorSemanticTokens { get }
 
     var colorAlwaysOnAccent: MultipleColorSemanticTokens { get }
-    
+
     var colorAlwaysOnBlack: MultipleColorSemanticTokens { get }
-    
+
     var colorAlwaysOnInfo: MultipleColorSemanticTokens { get }
-    
+
     var colorAlwaysOnNegative: MultipleColorSemanticTokens { get }
-    
+
     var colorAlwaysOnPositive: MultipleColorSemanticTokens { get }
-    
+
     var colorAlwaysOnWarning: MultipleColorSemanticTokens { get }
-    
+
     var colorAlwaysOnWhite: MultipleColorSemanticTokens { get }
-    
+
     // MARK: Semantic token - Colors - Transparent
 
     var colorTransparentDefault: MultipleColorSemanticTokens { get }
@@ -509,16 +510,16 @@ public protocol ColorMultipleSemanticTokens {
     var colorChartSequentialAccent5Tint800: MultipleColorSemanticTokens { get }
 
     var colorChartSequentialAccent5Tint900: MultipleColorSemanticTokens { get }
-    
+
     // MARK: - Semantic token - Colors - Gradient
-    
-    var colorGradientSkeletonMiddleLight: MultipleColorSemanticTokens { get }
-    
-    var colorGradientSkeletonMiddleOnBgEmphasizedLight: MultipleColorSemanticTokens { get }
-    
-    var colorGradientSkeletonStartEndLight: MultipleColorSemanticTokens { get }
-    
-    var colorGradientSkeletonStartEndOnBgEmphasizedLight: MultipleColorSemanticTokens { get }
+
+    var colorGradientSkeletonMiddle: MultipleColorSemanticTokens { get }
+
+    var colorGradientSkeletonMiddleOnBgEmphasized: MultipleColorSemanticTokens { get }
+
+    var colorGradientSkeletonStartEnd: MultipleColorSemanticTokens { get }
+
+    var colorGradientSkeletonStartEndOnBgEmphasized: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

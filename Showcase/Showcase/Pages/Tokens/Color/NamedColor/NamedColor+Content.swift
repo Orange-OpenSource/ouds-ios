@@ -14,6 +14,9 @@
 import OUDS
 import OUDSTokensSemantic
 
+// swiftlint:disable identifier_name
+// swiftlint:disable function_body_length
+
 extension NamedColor {
 
     enum Content: String, CaseIterable {
@@ -59,7 +62,7 @@ extension NamedColor {
         case colorContentOnStatusWarningEmphasized
         case colorContentOnStatusWarningMuted
         case colorContentOnStatusWarningMutedOnBgEmphasized
-        
+
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorContentDefault:
@@ -146,8 +149,10 @@ extension NamedColor {
                 return theme.colorContentOnStatusWarningMuted
             case .colorContentOnStatusWarningMutedOnBgEmphasized:
                 return theme.colorContentOnStatusWarningMutedOnBgEmphasized
-
             }
         }
     }
 }
+
+// swiftlint:enable identifier_name
+// swiftlint:enable function_body_length

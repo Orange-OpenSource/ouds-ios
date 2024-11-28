@@ -21,6 +21,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 // swiftlint:disable identifier_name
+// swiftlint:disable file_length
 
 /// Defines wrapper objects for `ColorSemanticToken`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
@@ -36,7 +37,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgSecondaryLight, dark: colorBgSecondaryDark) }
 
     @objc open var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgTertiaryLight, dark: colorBgTertiaryDark) }
-    
+
     @objc open var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgEmphasizedLight, dark: colorBgEmphasizedDark) }
 
     // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
@@ -165,7 +166,6 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     @objc open var colorContentOnStatusWarningMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusWarningMutedOnBgEmphasizedLight, dark: colorContentOnStatusWarningMutedOnBgEmphasizedDark) }
 
-    
     // MARK: Semantic token - Colors - Border
 
     @objc open var colorBorderDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderDefaultLight, dark: colorBorderDefaultDark) }
@@ -177,7 +177,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorBorderEmphasizedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderEmphasizedOnBgEmphasizedLight, dark: colorBorderEmphasizedOnBgEmphasizedDark) }
 
     @objc open var colorBorderFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderFocusLight, dark: colorBorderFocusDark) }
-    
+
     @objc open var colorBorderFocusInset: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderFocusInsetLight, dark: colorBorderFocusInsetDark) }
 
     @objc open var colorBorderFocusInsetOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderFocusInsetOnBgEmphasizedLight, dark: colorBorderFocusInsetOnBgEmphasizedDark) }
@@ -263,7 +263,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorAlwaysWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysWarningLight, dark: colorAlwaysWarningDark) }
 
     @objc open var colorAlwaysNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysNegativeLight, dark: colorAlwaysNegativeDark) }
-    
+
     @objc open var colorAlwaysPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysPositiveLight, dark: colorAlwaysPositiveDark) }
 
     @objc open var colorAlwaysInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysInfoLight, dark: colorAlwaysInfoDark) }
@@ -271,19 +271,19 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorAlwaysAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysAccentLight, dark: colorAlwaysAccentDark) }
 
     @objc open var colorAlwaysOnAccent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnAccentLight, dark: colorAlwaysOnAccentDark) }
-        
+
     @objc open var colorAlwaysOnBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnBlackLight, dark: colorAlwaysOnBlackDark) }
-    
+
     @objc open var colorAlwaysOnInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnInfoLight, dark: colorAlwaysOnInfoDark) }
-    
+
     @objc open var colorAlwaysOnNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnNegativeLight, dark: colorAlwaysOnNegativeDark) }
-    
+
     @objc open var colorAlwaysOnPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnPositiveLight, dark: colorAlwaysOnPositiveDark) }
-    
+
     @objc open var colorAlwaysOnWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnWarningLight, dark: colorAlwaysOnWarningDark) }
-    
+
     @objc open var colorAlwaysOnWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnWhiteLight, dark: colorAlwaysOnWhiteDark) }
-    
+
     // MARK: Semantic token - Colors - Transparent
 
     @objc open var colorTransparentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack0) }
@@ -498,15 +498,15 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorChartSequentialAccent5Tint800: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartSequentialAccent5Tint800Light, dark: colorChartSequentialAccent5Tint800Dark) }
 
     @objc open var colorChartSequentialAccent5Tint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartSequentialAccent5Tint900Light, dark: colorChartSequentialAccent5Tint900Dark) }
-    
+
     // MARK: - Semantic token - Colors - Gradient
-    
+
     @objc open var colorGradientSkeletonMiddle: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorGradientSkeletonMiddleLight, dark: colorGradientSkeletonMiddleDark) }
-    
+
     @objc open var colorGradientSkeletonMiddleOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorGradientSkeletonMiddleOnBgEmphasizedLight, dark: colorGradientSkeletonMiddleOnBgEmphasizedDark) }
-    
+
     @objc open var colorGradientSkeletonStartEnd: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorGradientSkeletonMiddleOnBgEmphasizedLight, dark: colorGradientSkeletonMiddleOnBgEmphasizedDark) }
-    
+
     @objc open var colorGradientSkeletonStartEndOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorGradientSkeletonStartEndOnBgEmphasizedLight, dark: colorGradientSkeletonStartEndOnBgEmphasizedDark) }
 }
 
