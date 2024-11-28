@@ -145,7 +145,6 @@ struct Showcase: App {
 - ``BorderSemanticTokens``
 - ``ColorSemanticTokens``
 - ``ColorMultipleSemanticTokens``
-- ``DimensionSemanticTokens``
 - ``ElevationSemanticTokens``
 - ``ElevationCompositeSemanticTokens``
 - ``ElevationMultipleSemanticTokens``
