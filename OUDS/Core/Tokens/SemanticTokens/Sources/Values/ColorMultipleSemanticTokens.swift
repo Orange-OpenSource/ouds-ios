@@ -190,17 +190,17 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorBorderFocus: MultipleColorSemanticTokens { get }
 
-    var colorBorderFocusInset: MultipleColorSemanticTokens { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    var colorBorderFocusInset: MultipleColorSemanticTokens { get }
     
-    var colorBorderFocusInsetOnBgEmphasized: MultipleColorSemanticTokens { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    var colorBorderFocusInsetOnBgEmphasized: MultipleColorSemanticTokens { get }
     
-    var colorBorderFocusOnBgEmphasized: MultipleColorSemanticTokens { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    var colorBorderFocusOnBgEmphasized: MultipleColorSemanticTokens { get }
     
     var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { get }
 
     var colorBorderBrandPrimary: MultipleColorSemanticTokens { get }
 
-    var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { get } // @@@ TODO: Add in tests, demo app, color light/Dark, mock, etc
+    var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { get }
     
     // MARK: Semantic token - Colors - Action
 

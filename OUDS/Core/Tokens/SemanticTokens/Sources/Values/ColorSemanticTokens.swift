@@ -163,17 +163,25 @@ public protocol ColorSemanticTokens {
 
     var colorBorderDefaultLight: ColorSemanticToken { get }
 
-    var colorBorderDefaultOnBgEmphasizedLight: ColorSemanticToken { get }
+    var colorBorderDefaultOnBgEmphasizeLight: ColorSemanticToken { get }
 
     var colorBorderEmphasizedLight: ColorSemanticToken { get }
 
     var colorBorderEmphasizedOnBgEmphasizedLight: ColorSemanticToken { get }
 
-    var colorBorderFocusLight: ColorSemanticToken { get }
-
+    var colorBorderFocusLight: MultipleColorSemanticTokens { get }
+    
+    var colorBorderFocusInsetLight: MultipleColorSemanticTokens { get }
+    
+    var colorBorderFocusInsetOnBgEmphasizedLight: MultipleColorSemanticTokens { get }
+    
+    var colorBorderFocusOnBgEmphasizedLight: MultipleColorSemanticTokens { get }
+    
     var colorBorderBrandPrimaryOnBgEmphasizedLight: ColorSemanticToken { get }
+    
+    var colorBorderBrandPrimaryLight: MultipleColorSemanticTokens { get }
 
-    var colorBorderBrandPrimaryLight: ColorSemanticToken { get }
+    var colorBorderOnBrandPrimaryLight: MultipleColorSemanticTokens { get }
 
     // MARK: Semantic token - Colors - Action
 
@@ -633,11 +641,19 @@ public protocol ColorSemanticTokens {
 
     var colorBorderEmphasizedOnBgEmphasizedDark: ColorSemanticToken { get }
 
-    var colorBorderFocusDark: ColorSemanticToken { get }
-
+    var colorBorderFocusDark: MultipleColorSemanticTokens { get }
+    
+    var colorBorderFocusInsetDark: MultipleColorSemanticTokens { get }
+    
+    var colorBorderFocusInsetOnBgEmphasizedDark: MultipleColorSemanticTokens { get }
+    
+    var colorBorderFocusOnBgEmphasizedDark: MultipleColorSemanticTokens { get }
+    
     var colorBorderBrandPrimaryOnBgEmphasizedDark: ColorSemanticToken { get }
+    
+    var colorBorderBrandPrimaryDark: MultipleColorSemanticTokens { get }
 
-    var colorBorderBrandPrimaryDark: ColorSemanticToken { get }
+    var colorBorderOnBrandPrimaryDark: MultipleColorSemanticTokens { get }
 
     // MARK: Semantic token - Colors - Action
 

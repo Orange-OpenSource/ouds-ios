@@ -177,22 +177,18 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorBorderEmphasizedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderEmphasizedOnBgEmphasizedLight, dark: colorBorderEmphasizedOnBgEmphasizedDark) }
 
     @objc open var colorBorderFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderFocusLight, dark: colorBorderFocusDark) }
+    
+    @objc open var colorBorderFocusInset: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderFocusInsetLight, dark: colorBorderFocusInsetDark) }
 
-    // WARNING: #124 - Colors to use are part of Orange Theme so are not reachable at this level, as a workaround add raw values
-    @objc open var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimaryOnBgEmphasized!") }
+    @objc open var colorBorderFocusInsetOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderFocusInsetOnBgEmphasizedLight, dark: colorBorderFocusInsetOnBgEmphasizedDark) }
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable at this level, as un workaround add raw values
-    @objc open var colorBorderBrandPrimary: MultipleColorSemanticTokens { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimary!") }
+    @objc open var colorBorderFocusOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderFocusOnBgEmphasizedLight, dark: colorBorderFocusOnBgEmphasizedDark) }
 
-    @objc open var colorBorderStatusPositive: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusPositive!") }
+    @objc open var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandPrimaryOnBgEmphasizedLight, dark: colorBorderBrandPrimaryOnBgEmphasizedDark) }
 
-    @objc open var colorBorderStatusInfo: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusInfo!") }
+    @objc open var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandPrimaryLight, dark: colorBorderBrandPrimaryDark) }
 
-    @objc open var colorBorderStatusWarning: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusWarning!") }
-
-    @objc open var colorBorderStatusNegative: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusNegative!") }
-
-    @objc open var colorBorderStatusAccent: MultipleColorSemanticTokens { fatalError("🤖 No value defined for colorBorderStatusAccent!") }
+    @objc open var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderOnBrandPrimaryLight, dark: colorBorderOnBrandPrimaryDark) }
 
     // MARK: Semantic token - Colors - Action
 

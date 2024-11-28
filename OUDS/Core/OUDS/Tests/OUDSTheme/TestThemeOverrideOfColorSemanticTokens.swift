@@ -432,7 +432,36 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colorBorderFocusDark == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable at this level, as un workaround add raw values
+    func testInheritedThemeCanOverrideSemanticTokenColorBorderFocusInsetLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBorderFocusInsetLight, abstractTheme.colorBorderFocusInsetLight)
+        XCTAssertTrue(inheritedTheme.colorBorderFocusInsetLight == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBorderFocusInsetDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBorderFocusInsetDark, abstractTheme.colorBorderFocusInsetDark)
+        XCTAssertTrue(inheritedTheme.colorBorderFocusInsetDark == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBorderFocusInsetOnBgEmphasizedLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBorderFocusInsetOnBgEmphasizedLight, abstractTheme.colorBorderFocusInsetOnBgEmphasizedLight)
+        XCTAssertTrue(inheritedTheme.colorBorderFocusInsetOnBgEmphasizedLight == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBorderFocusInsetOnBgEmphasizedDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBorderFocusInsetOnBgEmphasizedDark, abstractTheme.colorBorderFocusInsetOnBgEmphasizedDark)
+        XCTAssertTrue(inheritedTheme.colorBorderFocusInsetOnBgEmphasizedDark == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBorderFocusOnBgEmphasizedLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBorderFocusOnBgEmphasizedLight, abstractTheme.colorBorderFocusOnBgEmphasizedLight)
+        XCTAssertTrue(inheritedTheme.colorBorderFocusOnBgEmphasizedLight == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBorderFocusOnBgEmphasizedDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBorderFocusOnBgEmphasizedDark, abstractTheme.colorBorderFocusOnBgEmphasizedDark)
+        XCTAssertTrue(inheritedTheme.colorBorderFocusOnBgEmphasizedDark == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+
     func testInheritedThemeCanOverrideSemanticTokenColorBorderBrandPrimaryOnBgEmphasizedLight() throws {
         XCTAssertNotEqual(inheritedTheme.colorBorderBrandPrimaryOnBgEmphasizedLight, abstractTheme.colorBorderBrandPrimaryOnBgEmphasizedLight)
         XCTAssertTrue(inheritedTheme.colorBorderBrandPrimaryOnBgEmphasizedLight == OtherMockTheme.otherMockThemeSemanticColorToken)
@@ -443,7 +472,6 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colorBorderBrandPrimaryOnBgEmphasizedDark == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
 
-    // WARNING: #124 - Colors to use sont part of Orange Theme so sont not reachable at this level, as un workaround add raw values
     func testInheritedThemeCanOverrideSemanticTokenColorBorderBrandPrimaryLight() throws {
         XCTAssertNotEqual(inheritedTheme.colorBorderBrandPrimaryLight, abstractTheme.colorBorderBrandPrimaryLight)
         XCTAssertTrue(inheritedTheme.colorBorderBrandPrimaryLight == OtherMockTheme.otherMockThemeSemanticColorToken)
@@ -452,6 +480,16 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
     func testInheritedThemeCanOverrideSemanticTokenColorBorderBrandPrimaryDark() throws {
         XCTAssertNotEqual(inheritedTheme.colorBorderBrandPrimaryDark, abstractTheme.colorBorderBrandPrimaryDark)
         XCTAssertTrue(inheritedTheme.colorBorderBrandPrimaryDark == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBorderOnBrandPrimaryLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBorderOnBrandPrimaryLight, abstractTheme.colorBorderOnBrandPrimaryLight)
+        XCTAssertTrue(inheritedTheme.colorBorderOnBrandPrimaryLight == OtherMockTheme.otherMockThemeSemanticColorToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenColorBorderOnBrandPrimaryDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorBorderOnBrandPrimaryDark, abstractTheme.colorBorderOnBrandPrimaryDark)
+        XCTAssertTrue(inheritedTheme.colorBorderOnBrandPrimaryDark == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
 
     // MARK: Semantic token - Colors - Action
