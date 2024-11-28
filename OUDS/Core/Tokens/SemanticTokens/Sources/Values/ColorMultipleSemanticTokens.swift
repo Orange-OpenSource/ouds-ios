@@ -108,10 +108,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentBrandPrimary: MultipleColorSemanticTokens { get }
 
-    var colorContentBrandSecondary: MultipleColorSemanticTokens { get }
-
-    var colorContentBrandTertiary: MultipleColorSemanticTokens { get }
-
     var colorContentBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { get }
 
     var colorContentStatusPositive: MultipleColorSemanticTokens { get }
