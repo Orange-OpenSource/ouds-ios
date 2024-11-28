@@ -112,23 +112,23 @@ struct SizeTokenPage: View {
         let namedTypography = namedSize.namedTypography
         let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)
 
-        HStack {
-            Image("ic_token")
-                .resizable()
-                .renderingMode(.template)
-                .foregroundColor(activeTheme.colorAlwaysInfo.color(for: activeColorScheme))
-                .frame(width: token, height: token, alignment: .center)
-                .accessibilityHidden(true)
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            HStack(alignment: .center, spacing: theme.spaceFixedShorter) {
+                Image(decorative: "ic_token")
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+                    .frame(width: token, height: token, alignment: .center)
 
-            VStack(alignment: .leading) {
-                illustration(for: namedTypography, in: activeTheme)
-                    .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
-                Text(value)
-                    .typeBodyDefaultMedium(activeTheme)
-                    .foregroundStyle(activeTheme.colorContentMuted.color(for: activeColorScheme))
+                illustration(for: namedTypography, in: theme)
+                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
             }
-            .accessibilityElement(children: .combine)
+
+            Text(value)
+                .typeBodyDefaultMedium(theme)
+                .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
         }
+        .accessibilityElement(children: .combine)
     }
 
     // MARK: Common helpers
