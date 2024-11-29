@@ -53,11 +53,6 @@ final class TestThemeOverrideOfGridSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.gridExtraCompactColumnGap == MockTheme.mockThemeGridRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenGridIOSExtraCompactColumnCount() throws {
-        XCTAssertNotEqual(inheritedTheme.gridExtraCompactColumnCount, abstractTheme.gridExtraCompactColumnCount)
-        XCTAssertTrue(inheritedTheme.gridExtraCompactColumnCount == MockTheme.mockThemeGridRawToken)
-    }
-
     func testInheritedThemeCanOverrideSemanticTokenGridIOSCompactMinWidth() throws {
         XCTAssertNotEqual(inheritedTheme.gridCompactMinWidth, abstractTheme.gridCompactMinWidth)
         XCTAssertTrue(inheritedTheme.gridCompactMinWidth == MockTheme.mockThemeGridRawToken)
@@ -78,11 +73,6 @@ final class TestThemeOverrideOfGridSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.gridCompactColumnGap == MockTheme.mockThemeGridRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenGridIOSCompactColumnCount() throws {
-        XCTAssertNotEqual(inheritedTheme.gridCompactColumnCount, abstractTheme.gridCompactColumnCount)
-        XCTAssertTrue(inheritedTheme.gridCompactColumnCount == MockTheme.mockThemeGridRawToken)
-    }
-
     func testInheritedThemeCanOverrideSemanticTokenGridIOSRegularMinWidth() throws {
         XCTAssertNotEqual(inheritedTheme.gridRegularMinWidth, abstractTheme.gridRegularMinWidth)
         XCTAssertTrue(inheritedTheme.gridRegularMinWidth == MockTheme.mockThemeGridRawToken)
@@ -101,11 +91,6 @@ final class TestThemeOverrideOfGridSemanticTokens: XCTestCase {
     func testInheritedThemeCanOverrideSemanticTokenGridIOSRegularColumnGap() throws {
         XCTAssertNotEqual(inheritedTheme.gridRegularColumnGap, abstractTheme.gridRegularColumnGap)
         XCTAssertTrue(inheritedTheme.gridRegularColumnGap == MockTheme.mockThemeGridRawToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenGridIOSRegularColumnCount() throws {
-        XCTAssertNotEqual(inheritedTheme.gridRegularColumnCount, abstractTheme.gridRegularColumnCount)
-        XCTAssertTrue(inheritedTheme.gridRegularColumnCount == MockTheme.mockThemeGridRawToken)
     }
 }
 

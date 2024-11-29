@@ -23,17 +23,14 @@ extension MockTheme {
     override open var gridExtraCompactMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
     override open var gridExtraCompactMargin: GridSemanticToken { Self.mockThemeGridRawToken }
     override open var gridExtraCompactColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridExtraCompactColumnCount: GridSemanticToken { Self.mockThemeGridRawToken }
 
     override open var gridCompactMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
     override open var gridCompactMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
     override open var gridCompactMargin: GridSemanticToken { Self.mockThemeGridRawToken }
     override open var gridCompactColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridCompactColumnCount: GridSemanticToken { Self.mockThemeGridRawToken }
 
     override open var gridRegularMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
     override open var gridRegularMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
     override open var gridRegularMargin: GridSemanticToken { Self.mockThemeGridRawToken }
     override open var gridRegularColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridRegularColumnCount: GridSemanticToken { Self.mockThemeGridRawToken }
 }

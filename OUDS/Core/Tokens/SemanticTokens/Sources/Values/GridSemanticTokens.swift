@@ -30,7 +30,6 @@ public protocol GridSemanticTokens {
     var gridExtraCompactMaxWidth: GridSemanticToken { get }
     var gridExtraCompactMargin: GridSemanticToken { get }
     var gridExtraCompactColumnGap: GridSemanticToken { get }
-    var gridExtraCompactColumnCount: GridSemanticToken { get }
 
     // MARK: Semantic token - Grid - iOS Compact
 
@@ -38,7 +37,6 @@ public protocol GridSemanticTokens {
     var gridCompactMaxWidth: GridSemanticToken { get }
     var gridCompactMargin: GridSemanticToken { get }
     var gridCompactColumnGap: GridSemanticToken { get }
-    var gridCompactColumnCount: GridSemanticToken { get }
 
     // MARK: Semantic token - Grid - iOS Regular
 
@@ -46,7 +44,6 @@ public protocol GridSemanticTokens {
     var gridRegularMaxWidth: GridSemanticToken { get }
     var gridRegularMargin: GridSemanticToken { get }
     var gridRegularColumnGap: GridSemanticToken { get }
-    var gridRegularColumnCount: GridSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
