@@ -13,7 +13,6 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 - Create a branch named `prepare-release` to prepare the new release for OUDS iOS version X.Y.Z.
 
     ```shell
-    # For example in CLI
     git checkout -b prepare-release develop
     ```
 
@@ -143,30 +142,26 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 - Optionally check `Set as a pre-release` and click `Publish release`.<br /><br />
 <!-- TODO Section about annoucement -->
 <!--
-### Announce the new release on FoODS
+### Announce the new release on "Design Community" teams
 
-- Go to [Teams - FoODS: ODS Mobile iOS]
+- Go to [Teams - Design Community: PR05 - 📱 iOS]
 
 - Post a message with screenshots of new elements to announce the release.
 
-    As Microsoft Teams does not support pasting Markdown, open the text below in a Markdown editor that produces rich text, copy the rich text and paste it to Microsoft Teams. Finally edit the message to display the emojis and add newlines wherever needed.
+Title should be like "🍂 OUDS v0.7.0 available!"
 
+And message body like:
+"  🎉 find out what's new, see the release annoucement on GitHub (https://github.com/Orange-OpenSource/ouds-ios/discussions/325).
+You can get the release and its artifacts also online (https://github.com/Orange-OpenSource/ouds-ios/releases/tag/0.7.0).
 
-    > (rocket) Release X.Y.Z is available!
-    >
-    > **New components**
-    >- C8
-    >- C9
-    >
-    >**New module**
-    >- M1
-    >
-    >(page) [Release note](https://github.com/Orange-OpenSource/ouds-ios/releases/tag/X.Y.Z)
-    >
-    >(phone) [Demo app]("http://oran.ge/dsapp")
-    >
+The wiki is still updated (https://github.com/Orange-OpenSource/ouds-ios/wiki) and also the online technical documentation (https://ios.unified-design-system.orange.com/)
+
+Fun facts:
+
+🧪 This version contains 1,848 tests: 1,820 unit tests (60% coverage) and 28 UI tests, (44% coverage)
+🧮 The OUDS Swift Package (sources and tests) has13,170 lines of Swift code according to cloc
+🌟 The package provides about 379 core raw tokens, 22 Orange raw tokens and 1,195 core semantic tokens"
 -->
-
 - Do not forget to update the documentation using `uploadWebDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact, or if you want just download the sources from GitHub on *gh-pages* branch. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (doccarchive) (_Right click on catalog > Export_), compress all these files in one ZIP archive (GitHub consider them as empty so won't accept them for upload) and upload as artifact. In few words, put in release artifacts all the doccarchives in a ZIP in one side, and the HTML merged version in the other side.
 
 - Clone the [wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) (available at https://github.com/Orange-OpenSource/ouds-ios.wiki.git), compress its content as ZIP, and place the ZIP in release artifacts
