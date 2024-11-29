@@ -565,13 +565,12 @@ Please, get the new build from *TestFlight* app, or contact the project maintain
 @B3nz01d - Benoît SUZANNE - Product Owner
 @pylapp - Pierre-Yves LAPERSONNE - iOS developer
 @ludovic35 - Ludovic PINEL - iOS developer
-@Tayebsed93 - Tayeb SEDRAIA - iOS developer and accessibility expert
 @TonyAntonyHello - Anton ASTAFEV - designer
 @mccart77 - Stephen McCARTHY - designer
 @MaximeTonnerre - Maxime TONNERRE - designer
 -->
 cc @B3nz01d (product owner)
-cc @pylapp @ludovic35 @Tayebsed93 (dev team)
+cc @pylapp @ludovic35 (dev team)
 cc @TonyAntonyHello @mccart77 @MaximeTonnerre (design team)
 
 _This is an automated message sent with love thanks to *Fastlane* from our CI/CD pipeline 🤘_
