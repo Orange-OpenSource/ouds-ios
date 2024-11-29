@@ -15,36 +15,17 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// ଘ( ･ω･)_/ﾟ･:*:･｡☆
-// [File to generate by the tokenator]
-// WARNING: Not synchronized anymore with the Figjam / Figma by developers team
-// Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
-
-/// Defines basic values common to all themes for `GridSemanticTokens`.
-/// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: GridSemanticTokens {
-
-    // MARK: Semantic token - Grid - iOS Extra compact
-
-    @objc open var gridExtraCompactMinWidth: GridExtraCompactSemanticToken { GridRawTokens.gridMinWidthExtraCompact }
-    @objc open var gridExtraCompactMaxWidth: GridExtraCompactSemanticToken { GridRawTokens.gridMaxWidthExtraCompact }
-    @objc open var gridExtraCompactMargin: GridExtraCompactSemanticToken { GridRawTokens.gridMargin100 }
-    @objc open var gridExtraCompactColumnGap: GridExtraCompactSemanticToken { GridRawTokens.gridColumnGap100 }
-    @objc open var gridExtraCompactColumnCount: GridExtraCompactSemanticToken { GridRawTokens.gridColumnCount400 }
-
-    // MARK: Semantic token - Grid - iOS Compact
-
-    @objc open var gridCompactMinWidth: GridCompactSemanticToken { GridRawTokens.gridMinWidthCompact }
-    @objc open var gridCompactMaxWidth: GridCompactSemanticToken { GridRawTokens.gridMaxWidthCompact }
-    @objc open var gridCompactMargin: GridCompactSemanticToken { GridRawTokens.gridMargin300 }
-    @objc open var gridCompactColumnGap: GridCompactSemanticToken { GridRawTokens.gridColumnGap200 }
-    @objc open var gridCompactColumnCount: GridCompactSemanticToken { GridRawTokens.gridColumnCount400 }
-
-    // MARK: Semantic token - Grid - iOS Regular
-
-    @objc open var gridRegularMinWidth: GridRegularSemanticToken { GridRawTokens.gridMinWidthRegular }
-    @objc open var gridRegularMaxWidth: GridRegularSemanticToken { GridRawTokens.gridMaxWidthRegular }
-    @objc open var gridRegularMargin: GridRegularSemanticToken { GridRawTokens.gridMargin500 }
-    @objc open var gridRegularColumnGap: GridRegularSemanticToken { GridRawTokens.gridColumnGap400 }
-    @objc open var gridRegularColumnCount: GridRegularSemanticToken { GridRawTokens.gridColumnCount600 }
+    @objc open var gridCompactColumnGap: GridRawToken { GridRawTokens.gridColumnGap100 }
+    @objc open var gridCompactMargin: GridRawToken { GridRawTokens.gridMargin300 }
+    @objc open var gridCompactMaxWidth: GridRawToken { GridRawTokens.gridMaxWidthIosCompact }
+    @objc open var gridCompactMinWidth: GridRawToken { GridRawTokens.gridMinWidthIosCompact }
+    @objc open var gridExtraCompactColumnGap: GridRawToken { GridRawTokens.gridColumnGap100 }
+    @objc open var gridExtraCompactMargin: GridRawToken { GridRawTokens.gridMargin100 }
+    @objc open var gridExtraCompactMaxWidth: GridRawToken { GridRawTokens.gridMaxWidthIosExtraCompact }
+    @objc open var gridExtraCompactMinWidth: GridRawToken { GridRawTokens.gridMinWidthIosExtraCompact }
+    @objc open var gridRegularColumnGap: GridRawToken { GridRawTokens.gridColumnGap400 }
+    @objc open var gridRegularMargin: GridRawToken { GridRawTokens.gridMargin500 }
+    @objc open var gridRegularMaxWidth: GridRawToken { GridRawTokens.gridMaxWidthIosRegular }
+    @objc open var gridRegularMinWidth: GridRawToken { GridRawTokens.gridMinWidthIosRegular }
 }
