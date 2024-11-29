@@ -81,7 +81,7 @@ struct ShowcaseTokenCode: View {
                     Image("ic_copy")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colorContentOnBgStatusPositiveMuted.color(for: colorScheme))
+                        .foregroundColor(theme.colorBgStatusPositiveMuted.color(for: colorScheme))
                         .frame(width: 24, height: 24)
                         .padding(.trailing, theme.spacePaddingInlineMedium)
                         .alignmentGuide(.firstTextBaseline) { $0[.bottom] * 0.7 }
