@@ -33,8 +33,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         // Testing for different types of spacing for light mode
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
-        testScaledSpaces(theme: theme, interfaceStyle: interfaceStyle)
-        testFixedSpacing(theme: theme, interfaceStyle: interfaceStyle)
+        testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
+        testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
@@ -57,8 +57,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         // Testing for different types of spacing for dark mode
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testScaledSpaces(theme: theme, interfaceStyle: interfaceStyle)
-        testFixedSpacing(theme: theme, interfaceStyle: interfaceStyle)
+        testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
+        testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
@@ -80,8 +80,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     @MainActor func testAllSpaceInverseThemeLight() {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
-        testScaledSpaces(theme: theme, interfaceStyle: interfaceStyle)
-        testFixedSpacing(theme: theme, interfaceStyle: interfaceStyle)
+        testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
+        testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
@@ -103,8 +103,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     @MainActor func testAllSpaceInverseThemeDark() {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testScaledSpaces(theme: theme, interfaceStyle: interfaceStyle)
-        testFixedSpacing(theme: theme, interfaceStyle: interfaceStyle)
+        testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
+        testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
@@ -124,13 +124,13 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testScaledSpaces(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor private func testScaledProperty(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
         // Iterate through all background color cases defined in NamedSpace.Scaled
         for namedToken in NamedSpace.Scaled.allCases {
             // Generate the illustration for the specified space token
             let illustration = OUDSThemeableView(theme: theme) {
-                ScaledSpacesCategory.Illustration(for: namedToken)
+                ScaledSpaceProperty.Illustration(for: namedToken)
                     .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
@@ -150,14 +150,14 @@ final class OUDSTokensSpaceUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testFixedSpacing(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor private func testFixedProperty(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedSpace.PaddingInline
         for namedToken in NamedSpace.Fixed.allCases {
 
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    FixedSpacesCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    FixedSpaceProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -183,8 +183,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.PaddingInline.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    PaddingInlineCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    PaddingInlineProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -211,8 +211,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.PaddingInlineWithIcon.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    PaddingInlineWithIconCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    PaddingInlineWithIconProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -239,8 +239,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.PaddingInlineWithArrow.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    PaddingInlineWithArrowCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    PaddingInlineWithArrowProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -267,8 +267,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.PaddingInset.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    PaddingInsetCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    PaddingInsetProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -295,8 +295,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.PaddingStack.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    PaddingStackCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    PaddingStackProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -323,8 +323,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    PaddingStackWithIconCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    PaddingStackWithIconProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -351,8 +351,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.GapInline.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    GapInlineCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    GapInlineProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -379,8 +379,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.GapInlineWithIcon.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    GapInlineWithIconCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    GapInlineWithIconProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -407,8 +407,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.GapInlineWithArrow.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    GapInlineWithArrowCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    GapInlineWithArrowProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -435,8 +435,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.GapStack.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    GapStackCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    GapStackProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -463,8 +463,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
-                    GapStackWithIconCategory.Illustration(token: token)
+                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
+                    GapStackWithIconProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }

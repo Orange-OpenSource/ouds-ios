@@ -19,13 +19,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Update `GridSemanticTokens` tokens (tokenator *20241129080807*)
 - [Library] Types `GridExtraCompactSemanticToken`, `GridCompactSemanticToken` and `GridRegularSemanticToken` replaced by `GridSemanticToken` to make tokenator updates integration easier 
+- [DemoApp] Reactor UI test to use theme in environment ([#299](https://github.com/Orange-OpenSource/ouds-ios/issues/299))
 - [DemoApp] Update space tokens screen ([#275](https://github.com/Orange-OpenSource/ouds-ios/issues/275))
 - [Library] Update `GridRawTokens` tokens (tokenator *20241128161629*)
 - [DemoApp] Update color tokens screen 
 - [Library] Update `ColorSemanticTokens` tokens (tokenator *20241127112301*)
 - [Library] Update `SpaceSemanticTokens` tokens (tokenator *20241127074206*)
 - [Library] Update `SizeSemanticTokens` with rename of tokens (tokenator *20241126134156*)
-- [DemoApp] Reactor UI test to use theme in environment ([#299](https://github.com/Orange-OpenSource/ouds-ios/issues/299))
 - [Library] Update `ElevationSemanticTokens` (tokenator *20241126120657*)
 - [Library] Improve Multiple-based objects for tokenator values integration ([#279](https://github.com/Orange-OpenSource/ouds-ios/issues/279))
 - [Tool] Use `macos-15` runner for GitHub Actions builds ([#296](https://github.com/Orange-OpenSource/ouds-ios/issues/296))

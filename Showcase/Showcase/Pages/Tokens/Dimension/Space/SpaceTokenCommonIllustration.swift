@@ -21,11 +21,12 @@ import SwiftUI
 private let kIllustrationHeight = 72.0
 private let kIllustrationWidth = 72.0
 
-// MARK: - Space Token Category
+// MARK: - Space Token Property
 
-/// Internal `View` to display the space category with a header in order to describe the category
-/// and also a list of entries for each token in this category.
-struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where HeaderDescription: View, TokenIllustration: View {
+/// Internal `View` to display a property for the space token category. It desplays:
+/// - a header to describe the property of space token
+/// - a list of entries for each variant of this token property
+struct SpaceTokenProperty<HeaderDescription, TokenIllustration>: View where HeaderDescription: View, TokenIllustration: View {
 
     @Environment(\.theme) private var theme
 
@@ -46,7 +47,7 @@ struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where Head
             header().padding(.bottom, theme.spaceFixedMedium)
 
             ForEach(namedTokens, id: \.name) { namedSpaceToken in
-                SpaceTokenEntry(namedSpaceToken: namedSpaceToken, illustration: illustration)
+                SpaceTokenVariant(namedSpaceToken: namedSpaceToken, illustration: illustration)
             }
         }
     }
@@ -55,7 +56,7 @@ struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where Head
 // MARK: - Space Token Entry
 
 /// Internal `View` to display the token with its name, its value and an illustration.
-struct SpaceTokenEntry<TokenIllustration>: View where TokenIllustration: View {
+struct SpaceTokenVariant<TokenIllustration>: View where TokenIllustration: View {
 
     @Environment(\.theme) private var theme
 

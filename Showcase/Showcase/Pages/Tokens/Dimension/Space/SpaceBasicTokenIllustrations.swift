@@ -15,14 +15,14 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Fixed Spaces Category
+// MARK: - Fixed property of space token category
 
-struct FixedSpacesCategory: View {
+struct FixedSpaceProperty: View {
 
     let namedTokens: [NamedSpaceToken] = NamedSpace.Fixed.allCases
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: namedTokens) {
+        SpaceTokenProperty(namedTokens: namedTokens) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
         } illustration: { token in
             Illustration(token: token)
@@ -37,9 +37,9 @@ struct FixedSpacesCategory: View {
     }
 }
 
-// MARK: - Scaled Spaces Category
+// MARK: - Scaled property of space token category
 
-struct ScaledSpacesCategory: View {
+struct ScaledSpaceProperty: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
