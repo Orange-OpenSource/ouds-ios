@@ -27,6 +27,9 @@ struct SpaceTokenPage: View {
 
     var body: some View {
         Group {
+            Section {
+                ShowcaseTokenCode(code: "theme.spaceScaledMedium.dimension(for: horizontalSizeClass ?? .regular)")
+            }
             // Basic Space Tokens
             Section { ScaledSpacesCategory() } header: {
                 header("app_tokens_dimension_space_scaled_label")

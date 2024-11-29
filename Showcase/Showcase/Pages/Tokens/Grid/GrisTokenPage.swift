@@ -41,6 +41,10 @@ struct GridTokenPage: View {
                     .background(theme.colorBgEmphasized.color(for: colorScheme))
             }
 
+            Section {
+                ShowcaseTokenCode(code: "theme.gridColumnCount(for: horizontalSizeClass)")
+            }
+
             Section { illustrationForGridTokens() } header: {
                 Text(horizontalSizeClass.rawValue)
                     .showcaseSectionHeaderStyle()

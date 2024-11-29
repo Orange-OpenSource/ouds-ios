@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DemoApp] Add code sample for tokens usages in token pages ([#283](https://github.com/Orange-OpenSource/ouds-ios/issues/283))
 - [Library] Color some new semantic tokens `colorContentStatus*`,  `colorContentOnBrand*`, `colorContentOnStatus*`, `colorGradient*`, `colorBorder*`, `colorContentOnAction*`
 - [Tool] Add UI tests in CI/CD pipelines ([#298](https://github.com/Orange-OpenSource/ouds-ios/issues/298))
 - [DemoApp] Add more UI tests on demo app ([#154](https://github.com/Orange-OpenSource/ouds-ios/issues/154))

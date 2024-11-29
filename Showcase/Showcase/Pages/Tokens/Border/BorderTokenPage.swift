@@ -46,9 +46,13 @@ struct BorderTokenPage: View {
     }
 
     // MARK: Body
-
     var body: some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedMedium) {
+            Section {
+                VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+                    ShowcaseTokenCode(code: "theme.borderWidthDefault")
+                }
+            }
             Section {
                 VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
                     ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in

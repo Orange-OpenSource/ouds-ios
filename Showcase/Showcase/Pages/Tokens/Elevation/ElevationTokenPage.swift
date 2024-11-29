@@ -51,6 +51,11 @@ struct ElevationTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+            Section {
+                ShowcaseTokenCode(code: "theme.elevationNone.elevation(for: colorScheme)")
+            }
+            Spacer()
+                .frame(height: activeTheme.spaceFixedMedium)
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 illustration(for: elevationName)
             }

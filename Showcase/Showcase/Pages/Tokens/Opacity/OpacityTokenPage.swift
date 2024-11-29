@@ -51,6 +51,11 @@ struct OpacityTokenPage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+            Section {
+                ShowcaseTokenCode(code: "theme.opacityTransparent")
+            }
+            Spacer()
+                .frame(height: activeTheme.spaceFixedMedium)
             ForEach(NamedOpacity.allCases, id: \.rawValue) { opmacityName in
                 illustration(for: opmacityName)
             }
