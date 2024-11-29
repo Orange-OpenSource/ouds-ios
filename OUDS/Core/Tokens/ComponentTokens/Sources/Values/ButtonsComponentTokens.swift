@@ -25,7 +25,7 @@ public protocol ButtonsComponentTokens {
      2. Maybe a composite tokens should be defined and used to gather all these atomic semantic tokens
      */
 
-    var buttonInternalSpacing: SpacePaddingInlineSemanticToken { get }
+    var buttonInternalSpacing: SpaceSemanticToken { get }
 
     var buttonBorderStyle: BorderStyleSemanticToken { get }
     var buttonBorderColor: ColorSemanticToken { get }
@@ -38,7 +38,7 @@ public protocol ButtonsComponentTokens {
     var buttonWidth: SizeSemanticToken { get }
     var buttonHeight: SizeSemanticToken { get }
 
-    var buttonTypography: MultipleTypographyTokens { get }
+    var buttonTypography: MultipleTypographyCompositeRawTokens { get }
 }
 
 // swiftlint:enable missing_docs

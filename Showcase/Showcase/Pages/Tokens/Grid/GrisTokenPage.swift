@@ -41,6 +41,10 @@ struct GridTokenPage: View {
                     .background(theme.colorBgEmphasized.color(for: colorScheme))
             }
 
+            Section {
+                ShowcaseTokenCode(code: "theme.gridColumnCount(for: horizontalSizeClass)")
+            }
+
             Section { illustrationForGridTokens() } header: {
                 Text(horizontalSizeClass.rawValue)
                     .showcaseSectionHeaderStyle()
@@ -75,7 +79,6 @@ private enum NamedGrid: String, CaseIterable {
     case gridMaxWidth
     case gridMargin
     case gridColumnGap
-    case gridColumnCount
 
     @MainActor
     func token(from theme: OUDSTheme, for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
@@ -88,8 +91,6 @@ private enum NamedGrid: String, CaseIterable {
             return theme.gridMargin(for: sizeClass)
         case .gridColumnGap:
             return theme.gridColumnGap(for: sizeClass)
-        case .gridColumnCount:
-            return theme.gridColumnCount(for: sizeClass)
         }
     }
 }

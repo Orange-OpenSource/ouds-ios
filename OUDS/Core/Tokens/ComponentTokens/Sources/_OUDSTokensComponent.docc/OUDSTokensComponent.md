@@ -14,6 +14,3 @@ We don't have any *component token* implemented yet.
 ## Topics
 
 ### Group
-
-- ``FormsTextInputComponentTokens``
-

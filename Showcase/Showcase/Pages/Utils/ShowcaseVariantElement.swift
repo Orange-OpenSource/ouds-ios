@@ -31,12 +31,19 @@ struct ShowcaseVariantElement: View {
             NavigationLink {
                 ShowcaseElementPage(element: element)
             } label: {
-                Text(LocalizedStringKey(element.name))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
-                    .padding(.vertical, theme.spaceFixedShorter)
+                HStack {
+                    Text(LocalizedStringKey(element.name))
+                        .typeHeadingMedium(theme)
+                        .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                        .padding(.vertical, theme.spaceFixedShorter)
+                        .padding(.leading, theme.spaceFixedMedium)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(theme.colorContentDefault.color(for: colorScheme))
+                        .padding(.trailing, theme.spaceFixedMedium)
+                        .accessibilityHidden(true)
+                }
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
     }
 }

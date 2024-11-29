@@ -126,7 +126,7 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            device = "iPhone 15 Pro"
+            device = "iPhone 16 Pro"
             scan(scheme: "ShowcaseTests",
                 device: device,
                 skip_build: true
@@ -552,7 +552,7 @@ platform :ios do
                 comment_to_upload=<<-EOF
 📣 **New TestFlight ALPHA upload available** 🚀
 
-Please, get the new build from *TestFlight* app, or contact the project maintainers if you don't have access.
+Please, get the new build from *TestFlight* app, or contact the project maintainers (@ludovic35 or @pylapp) to get access.
 
 - Display name: **#{build_display_name}**
 - Version: **#{build_version}**
@@ -566,11 +566,15 @@ Please, get the new build from *TestFlight* app, or contact the project maintain
 @pylapp - Pierre-Yves LAPERSONNE - iOS developer
 @ludovic35 - Ludovic PINEL - iOS developer
 @Tayebsed93 - Tayeb SEDRAIA - iOS developer and accessibility expert
+@TonyAntonyHello - Anton ASTAFEV - designer
 @mccart77 - Stephen McCARTHY - designer
+@MaximeTonnerre - Maxime TONNERRE - designer
 -->
-cc @B3nz01d @pylapp @ludovic35 @Tayebsed93 @mccart77
+cc @B3nz01d (product owner)
+cc @pylapp @ludovic35 @Tayebsed93 (dev team)
+cc @TonyAntonyHello @mccart77 @MaximeTonnerre (design team)
 
-_This is an automated message sent with love and *Fastlane* from our CI/CD pipeline 🤘_
+_This is an automated message sent with love thanks to *Fastlane* from our CI/CD pipeline 🤘_
 EOF
 
                 uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/issues/#{issue_number}/comments")

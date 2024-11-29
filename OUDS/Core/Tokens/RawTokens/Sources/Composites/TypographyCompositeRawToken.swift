@@ -13,11 +13,13 @@
 
 import OUDSFoundations
 
-/// An operator to make for example comparisons between `TypographyCompositeRawToken`
+/// An operator to make for example comparisons between ``TypographyCompositeRawToken``
 infix operator <|
 
-/// Composite raw tokens are here to pack a set of specific values according to the global design system tool.
-/// Here a *typography* is finaly defined by some specific values.
+/// In the *Figma* global design system, composite tokens are defined for typography-related things.
+/// Composite tokens are tokens defined in *Figma* by other tokens.
+/// Here a *typography* thing is caracterized by a *font size*, a *line height*, a *font weight* and *letter spacig* values.
+/// All these elements are *raw tokens*, and together define a *composite raw token* for *typography* thing.
 public struct TypographyCompositeRawToken: Equatable, Sendable {
 
     // Font family is not included here because this is the only thing which can vary

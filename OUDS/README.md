@@ -223,7 +223,7 @@ extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in comp
 extension OrangeCustomTheme { // For ColorSemanticTokens using anywhere
 
     override var colorBgPrimary: ColorSemanticToken { 
-        MultipleColorTokens(light: ColorRawTokens.ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.ColorRawTokens.colorFunctionalSun800)
+        MultipleColorSemanticTokens(light: ColorRawTokens.ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.ColorRawTokens.colorFunctionalSun800)
     }
 }
 ```

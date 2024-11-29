@@ -19,13 +19,9 @@ extension NamedColor {
     enum Background: String, CaseIterable {
         case colorBgPrimary
         case colorBgSecondary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorBgTertiary
+        case colorBgTertiary
         case colorBgEmphasized
         case colorBgBrandPrimary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorBgBrandSecondary
-        // case colorBgBrandTertiary
         case colorBgStatusNeutral
         case colorBgStatusNeutralOnBgEmphasized
         case colorBgStatusPositiveMuted
@@ -44,24 +40,18 @@ extension NamedColor {
         case colorBgStatusAccentMutedOnBgEmphasized
         case colorBgStatusAccentEmphasized
 
-        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorBgPrimary:
                 return theme.colorBgPrimary
             case .colorBgSecondary:
                 return theme.colorBgSecondary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorBgTertiary:
-//                return theme.colorBgTertiary
+            case .colorBgTertiary:
+                return theme.colorBgTertiary
             case .colorBgEmphasized:
                 return theme.colorBgEmphasized
             case .colorBgBrandPrimary:
                 return theme.colorBgBrandPrimary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorBgBrandSecondary:
-//                return theme.colorBgBrandSecondary
-//            case .colorBgBrandTertiary:
-//                return theme.colorBgBrandTertiary
             case .colorBgStatusNeutral:
                 return theme.colorBgStatusNeutral
             case .colorBgStatusNeutralOnBgEmphasized:

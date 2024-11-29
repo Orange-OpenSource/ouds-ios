@@ -81,20 +81,4 @@ extension OUDSTheme {
             fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
-
-    /// The column count of a grid.
-    /// - Parameter sizeClass: The current interface size class
-    /// - Returns `GridRawToken`: The column count according to viewports / size classes.
-    public final func gridColumnCount(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
-        switch sizeClass {
-        case .extraCompact:
-            return gridExtraCompactColumnCount
-        case .compact:
-            return gridCompactColumnCount
-        case .regular:
-            return gridRegularColumnCount
-        @unknown default:
-            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
-        }
-    }
 }

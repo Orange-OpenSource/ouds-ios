@@ -11,16 +11,14 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-// ଘ( ･ω･)_/ﾟ･:*:･｡☆
-// [File to generate with the tokenator with Figma able to output composites and tokenatoer able to manage them]
+// [File not generated with the tokenator]
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
 
-/// Extracted in a separated file because the  *Figma* JSON to Swift, i.e. the *tokenator* parser is not able to process such composite tokens, and the *Figma* tool is not able to.
-///
-/// **Beware, may result in desynchronization between generated raw tokens values and theses composite raw tokens**
+/// Extracted in a separated file because *Figma* is not able to manage *composite tokens*, even if the design team tinkered them in this tool.
+/// So *Figma* cannot output such *composite tokens* to its JSON file, and then *tokenator* cannot process things which do not exist.
 extension TypographyRawTokens {
 
     // MARK: Primitive token - Typography - Composite

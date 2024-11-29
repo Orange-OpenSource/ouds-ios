@@ -22,22 +22,13 @@ extension NamedColor {
         case colorBorderEmphasized
         case colorBorderEmphasizedOnBgEmphasized
         case colorBorderFocus
+        case colorBorderFocusInset
+        case colorBorderFocusInsetOnBgEmphasized
         case colorBorderBrandPrimaryOnBgEmphasized
         case colorBorderBrandPrimary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorBorderBrandSecondary
-        // case colorBorderBrandTertiary
-        // case colorBorderStatusPositive
-        // case colorBorderStatusInfo
-        // case colorBorderStatusWarning
-        // case colorBorderStatusNegative
-        // case colorBorderStatusAccent
-        case colorBorderOnBgBrandPrimary
-        // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-        // case colorBorderOnBgBrandSecondary
-        // case colorBorderOnBgBrandTertiary
+        case colorBorderOnBrandPrimary
 
-        func token(from theme: OUDSTheme) -> ColorSemanticToken {
+        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorBorderDefault:
                 return theme.colorBorderDefault
@@ -49,32 +40,16 @@ extension NamedColor {
                 return theme.colorBorderEmphasizedOnBgEmphasized
             case .colorBorderFocus:
                 return theme.colorBorderFocus
+            case .colorBorderFocusInset:
+                return theme.colorBorderFocusInset
+            case .colorBorderFocusInsetOnBgEmphasized:
+                return theme.colorBorderFocusInsetOnBgEmphasized
             case .colorBorderBrandPrimaryOnBgEmphasized:
                 return theme.colorBorderBrandPrimaryOnBgEmphasized
             case .colorBorderBrandPrimary:
                 return theme.colorBorderBrandPrimary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorBorderBrandSecondary:
-//                return theme.colorBorderBrandSecondary
-//            case .colorBorderBrandTertiary:
-//                return theme.colorBorderBrandTertiary
-//            case .colorBorderStatusPositive:
-//                return theme.colorBorderStatusPositive
-//            case .colorBorderStatusInfo:
-//                return theme.colorBorderStatusInfo
-//            case .colorBorderStatusWarning:
-//                return theme.colorBorderStatusWarning
-//            case .colorBorderStatusNegative:
-//                return theme.colorBorderStatusNegative
-//            case .colorBorderStatusAccent:
-//                return theme.colorBorderStatusAccent
-            case .colorBorderOnBgBrandPrimary:
-                return theme.colorBorderOnBgBrandPrimary
-            // NOTE: #124 - Following case(s) is / are not managed because not defined values!
-//            case .colorBorderOnBgBrandSecondary:
-//                return theme.colorBorderOnBgBrandSecondary
-//            case .colorBorderOnBgBrandTertiary:
-//                return theme.colorBorderOnBgBrandTertiary
+            case .colorBorderOnBrandPrimary:
+                return theme.colorBorderOnBrandPrimary
             }
         }
     }
