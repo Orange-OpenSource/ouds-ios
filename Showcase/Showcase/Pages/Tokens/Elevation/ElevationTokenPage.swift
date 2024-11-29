@@ -54,7 +54,7 @@ struct ElevationTokenPage: View {
             let name = namedElevation.rawValue
             let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: theme, colorScheme: colorScheme) {
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 Rectangle()
                     .frame(width: theme.sizeIconDecorativeTallest, height: theme.sizeIconDecorativeTallest)
                     .foregroundColor(theme.colorBgSecondary.color(for: colorScheme))

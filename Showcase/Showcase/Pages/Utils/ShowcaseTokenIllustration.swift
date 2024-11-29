@@ -30,8 +30,6 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
 
     init(tokenName: String,
          tokenValue: String? = nil,
-         forceTo theme: OUDSTheme? = nil,
-         colorScheme: ColorScheme? = nil,
          tokenIllustration: @escaping () -> TokenIllustration) {
         self.tokenIllustration = tokenIllustration
         self.tokenName = tokenName

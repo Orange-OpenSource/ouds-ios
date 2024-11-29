@@ -53,7 +53,7 @@ struct OpacityTokenPage: View {
             let name = opacityName.rawValue
             let value = String(format: "%.2f", token)
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: theme, colorScheme: colorScheme) {
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Image(decorative: "ic_union")
                         .resizable()
