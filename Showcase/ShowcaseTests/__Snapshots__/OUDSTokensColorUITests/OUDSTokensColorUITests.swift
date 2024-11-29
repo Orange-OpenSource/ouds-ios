@@ -111,7 +111,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testBackgroundColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedColor.Background
         for color in NamedColor.Background.allCases {
@@ -128,10 +127,11 @@ final class OUDSTokensColorUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -140,7 +140,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testActionColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedColor.Action
         for color in NamedColor.Action.allCases {
@@ -157,10 +156,11 @@ final class OUDSTokensColorUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -169,7 +169,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testAlwaysColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedColor.Always
         for color in NamedColor.Always.allCases {
@@ -186,10 +185,11 @@ final class OUDSTokensColorUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -198,7 +198,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testContentColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedColor.Content
         for color in NamedColor.Content.allCases {
@@ -215,10 +214,11 @@ final class OUDSTokensColorUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -227,7 +227,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testBorderColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedColor.Border
         for color in NamedColor.Border.allCases {
@@ -244,10 +243,11 @@ final class OUDSTokensColorUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -256,7 +256,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testElevationColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedColor.Elevation
         for color in NamedColor.Elevation.allCases {
@@ -273,10 +272,11 @@ final class OUDSTokensColorUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -285,7 +285,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testDecorativeColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedColor.Decorative
         for color in NamedColor.Decorative.allCases {
@@ -302,10 +301,11 @@ final class OUDSTokensColorUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -314,7 +314,6 @@ final class OUDSTokensColorUITests: XCTestCase {
     /// - Parameters:
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    ///   - colorScheme: The color scheme (light or dark) to be used for testing
     @MainActor private func testChartColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedColor.Chart
         for color in NamedColor.Chart.allCases {
@@ -331,10 +330,11 @@ final class OUDSTokensColorUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(color.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 }
