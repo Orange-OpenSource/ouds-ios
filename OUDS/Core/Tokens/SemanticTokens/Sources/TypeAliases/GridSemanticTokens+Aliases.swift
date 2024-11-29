@@ -13,11 +13,6 @@
 
 import OUDSTokensRaw
 
-/// Basically a grid semantic token for iOS Extra Compact values is a grid raw token, to keep grammar clean and clear with design system grammar.
-public typealias GridExtraCompactSemanticToken = GridRawToken
-
-/// Basically a grid semantic token for iOS Compact values is a grid raw token, to keep grammar clean and clear with design system grammar.
-public typealias GridCompactSemanticToken = GridRawToken
-
-/// Basically a grid semantic token for iOS Regular values is a grid raw token, to keep grammar clean and clear with design system grammar.
-public typealias GridRegularSemanticToken = GridRawToken
+/// Basically a grid semantic token, for iOS Extra Compact, Compact or Regular values, is a `GridRawToken`.
+/// This word is used to keep grammar clean and clear with design system grammar.
+public typealias GridSemanticToken = GridRawToken

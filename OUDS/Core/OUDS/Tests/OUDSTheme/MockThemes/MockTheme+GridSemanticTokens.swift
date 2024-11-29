@@ -19,21 +19,21 @@ extension MockTheme {
 
     static let mockThemeGridRawToken: GridRawToken = 3_630
 
-    override open var gridExtraCompactMinWidth: GridExtraCompactSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridExtraCompactMaxWidth: GridExtraCompactSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridExtraCompactMargin: GridExtraCompactSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridExtraCompactColumnGap: GridExtraCompactSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridExtraCompactColumnCount: GridExtraCompactSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridExtraCompactMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridExtraCompactMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridExtraCompactMargin: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridExtraCompactColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridExtraCompactColumnCount: GridSemanticToken { Self.mockThemeGridRawToken }
 
-    override open var gridCompactMinWidth: GridCompactSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridCompactMaxWidth: GridCompactSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridCompactMargin: GridCompactSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridCompactColumnGap: GridCompactSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridCompactColumnCount: GridCompactSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridCompactMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridCompactMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridCompactMargin: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridCompactColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridCompactColumnCount: GridSemanticToken { Self.mockThemeGridRawToken }
 
-    override open var gridRegularMinWidth: GridRegularSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridRegularMaxWidth: GridRegularSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridRegularMargin: GridRegularSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridRegularColumnGap: GridRegularSemanticToken { Self.mockThemeGridRawToken }
-    override open var gridRegularColumnCount: GridRegularSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridRegularMinWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridRegularMaxWidth: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridRegularMargin: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridRegularColumnGap: GridSemanticToken { Self.mockThemeGridRawToken }
+    override open var gridRegularColumnCount: GridSemanticToken { Self.mockThemeGridRawToken }
 }

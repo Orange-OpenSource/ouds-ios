@@ -26,27 +26,27 @@ public protocol GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Extra compact
 
-    var gridExtraCompactMinWidth: GridExtraCompactSemanticToken { get }
-    var gridExtraCompactMaxWidth: GridExtraCompactSemanticToken { get }
-    var gridExtraCompactMargin: GridExtraCompactSemanticToken { get }
-    var gridExtraCompactColumnGap: GridExtraCompactSemanticToken { get }
-    var gridExtraCompactColumnCount: GridExtraCompactSemanticToken { get }
+    var gridExtraCompactMinWidth: GridSemanticToken { get }
+    var gridExtraCompactMaxWidth: GridSemanticToken { get }
+    var gridExtraCompactMargin: GridSemanticToken { get }
+    var gridExtraCompactColumnGap: GridSemanticToken { get }
+    var gridExtraCompactColumnCount: GridSemanticToken { get }
 
     // MARK: Semantic token - Grid - iOS Compact
 
-    var gridCompactMinWidth: GridCompactSemanticToken { get }
-    var gridCompactMaxWidth: GridCompactSemanticToken { get }
-    var gridCompactMargin: GridCompactSemanticToken { get }
-    var gridCompactColumnGap: GridCompactSemanticToken { get }
-    var gridCompactColumnCount: GridCompactSemanticToken { get }
+    var gridCompactMinWidth: GridSemanticToken { get }
+    var gridCompactMaxWidth: GridSemanticToken { get }
+    var gridCompactMargin: GridSemanticToken { get }
+    var gridCompactColumnGap: GridSemanticToken { get }
+    var gridCompactColumnCount: GridSemanticToken { get }
 
     // MARK: Semantic token - Grid - iOS Regular
 
-    var gridRegularMinWidth: GridRegularSemanticToken { get }
-    var gridRegularMaxWidth: GridRegularSemanticToken { get }
-    var gridRegularMargin: GridRegularSemanticToken { get }
-    var gridRegularColumnGap: GridRegularSemanticToken { get }
-    var gridRegularColumnCount: GridRegularSemanticToken { get }
+    var gridRegularMinWidth: GridSemanticToken { get }
+    var gridRegularMaxWidth: GridSemanticToken { get }
+    var gridRegularMargin: GridSemanticToken { get }
+    var gridRegularColumnGap: GridSemanticToken { get }
+    var gridRegularColumnCount: GridSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

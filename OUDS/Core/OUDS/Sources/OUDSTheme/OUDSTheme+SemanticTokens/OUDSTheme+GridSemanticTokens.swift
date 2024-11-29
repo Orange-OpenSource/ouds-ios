@@ -26,25 +26,25 @@ extension OUDSTheme: GridSemanticTokens {
 
     // MARK: Semantic token - Grid - iOS Extra compact
 
-    @objc open var gridExtraCompactMinWidth: GridExtraCompactSemanticToken { GridRawTokens.gridMinWidthExtraCompact }
-    @objc open var gridExtraCompactMaxWidth: GridExtraCompactSemanticToken { GridRawTokens.gridMaxWidthExtraCompact }
-    @objc open var gridExtraCompactMargin: GridExtraCompactSemanticToken { GridRawTokens.gridMargin100 }
-    @objc open var gridExtraCompactColumnGap: GridExtraCompactSemanticToken { GridRawTokens.gridColumnGap100 }
-    @objc open var gridExtraCompactColumnCount: GridExtraCompactSemanticToken { GridRawTokens.gridColumnCount400 }
+    @objc open var gridExtraCompactMinWidth: GridSemanticToken { GridRawTokens.gridMinWidthExtraCompact }
+    @objc open var gridExtraCompactMaxWidth: GridSemanticToken { GridRawTokens.gridMaxWidthExtraCompact }
+    @objc open var gridExtraCompactMargin: GridSemanticToken { GridRawTokens.gridMargin100 }
+    @objc open var gridExtraCompactColumnGap: GridSemanticToken { GridRawTokens.gridColumnGap100 }
+    @objc open var gridExtraCompactColumnCount: GridSemanticToken { GridRawTokens.gridColumnCount400 }
 
     // MARK: Semantic token - Grid - iOS Compact
 
-    @objc open var gridCompactMinWidth: GridCompactSemanticToken { GridRawTokens.gridMinWidthCompact }
-    @objc open var gridCompactMaxWidth: GridCompactSemanticToken { GridRawTokens.gridMaxWidthCompact }
-    @objc open var gridCompactMargin: GridCompactSemanticToken { GridRawTokens.gridMargin300 }
-    @objc open var gridCompactColumnGap: GridCompactSemanticToken { GridRawTokens.gridColumnGap200 }
-    @objc open var gridCompactColumnCount: GridCompactSemanticToken { GridRawTokens.gridColumnCount400 }
+    @objc open var gridCompactMinWidth: GridSemanticToken { GridRawTokens.gridMinWidthCompact }
+    @objc open var gridCompactMaxWidth: GridSemanticToken { GridRawTokens.gridMaxWidthCompact }
+    @objc open var gridCompactMargin: GridSemanticToken { GridRawTokens.gridMargin300 }
+    @objc open var gridCompactColumnGap: GridSemanticToken { GridRawTokens.gridColumnGap200 }
+    @objc open var gridCompactColumnCount: GridSemanticToken { GridRawTokens.gridColumnCount400 }
 
     // MARK: Semantic token - Grid - iOS Regular
 
-    @objc open var gridRegularMinWidth: GridRegularSemanticToken { GridRawTokens.gridMinWidthRegular }
-    @objc open var gridRegularMaxWidth: GridRegularSemanticToken { GridRawTokens.gridMaxWidthRegular }
-    @objc open var gridRegularMargin: GridRegularSemanticToken { GridRawTokens.gridMargin500 }
-    @objc open var gridRegularColumnGap: GridRegularSemanticToken { GridRawTokens.gridColumnGap400 }
-    @objc open var gridRegularColumnCount: GridRegularSemanticToken { GridRawTokens.gridColumnCount600 }
+    @objc open var gridRegularMinWidth: GridSemanticToken { GridRawTokens.gridMinWidthRegular }
+    @objc open var gridRegularMaxWidth: GridSemanticToken { GridRawTokens.gridMaxWidthRegular }
+    @objc open var gridRegularMargin: GridSemanticToken { GridRawTokens.gridMargin500 }
+    @objc open var gridRegularColumnGap: GridSemanticToken { GridRawTokens.gridColumnGap400 }
+    @objc open var gridRegularColumnCount: GridSemanticToken { GridRawTokens.gridColumnCount600 }
 }
