@@ -24,15 +24,6 @@ import XCTest
 /// Tests the UI rendering of each **space token** using reference images
 final class OUDSTokensSpaceUITests: XCTestCase {
 
-    // MARK: Properties
-
-    private let inverseTheme = InverseTheme()
-    private let orangeTheme = OrangeTheme()
-    private let lightScheme: ColorScheme = .light
-    private let lightInterfaceStyle: UIUserInterfaceStyle = .light
-    private let darkScheme: ColorScheme = .dark
-    private let darkInterfaceStyle: UIUserInterfaceStyle = .dark
-
     // MARK: - Orange Theme Light Mode Space Tests
 
     /// This function tests all dimension tokens in the `OrangeTheme` with both the `light` color schemes.
@@ -51,6 +42,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testGapInline(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testGapStack(theme: theme, interfaceStyle: interfaceStyle)
         testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
@@ -73,6 +66,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testGapInline(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testGapStack(theme: theme, interfaceStyle: interfaceStyle)
         testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
@@ -94,6 +89,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testGapInline(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testGapStack(theme: theme, interfaceStyle: interfaceStyle)
         testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
@@ -115,6 +112,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testGapInline(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
+        testGapInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testGapStack(theme: theme, interfaceStyle: interfaceStyle)
         testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
@@ -131,7 +130,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         for namedToken in NamedSpace.Scaled.allCases {
             // Generate the illustration for the specified space token
             let illustration = OUDSThemeableView(theme: theme) {
-                IllustrationScaled(namedSpaceToken: namedToken)
+                ScaledSpacesCategory.Illustration(for: namedToken)
                     .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
@@ -139,10 +138,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.rawValue)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -166,10 +166,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -192,10 +193,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -219,10 +221,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -246,10 +249,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -273,10 +277,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -300,10 +305,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -327,10 +333,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -354,14 +361,71 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
-    /// Tests all gap inline `GapStack` spaces by capturing their snapshots.
+    /// Tests all `GapInlineWithIcon` spaces by capturing their snapshots.
+    /// - Parameters:
+    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testGapInlineWithIcon(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+
+        // Iterate through all background color cases defined in NamedSpace.GapInline
+        for namedToken in NamedSpace.GapInlineWithIcon.allCases {
+            // Generate the illustration for the specified space token using the spacePage instance
+            let illustration = OUDSThemeableView(theme: theme) {
+                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
+                    GapInlineWithIconCategory.Illustration(token: token)
+                }
+                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            }
+
+            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
+
+            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
+
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        }
+    }
+
+    /// Tests all `GapInlineWithArrow` spaces by capturing their snapshots.
+    /// - Parameters:
+    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testGapInlineWithArrow(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+
+        // Iterate through all background color cases defined in NamedSpace.GapInline
+        for namedToken in NamedSpace.GapInlineWithArrow.allCases {
+            // Generate the illustration for the specified space token using the spacePage instance
+            let illustration = OUDSThemeableView(theme: theme) {
+                SpaceTokenEntry(namedSpaceToken: namedToken) { token in
+                    GapInlineWithArrowCategory.Illustration(token: token)
+                }
+                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            }
+
+            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
+
+            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
+
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        }
+    }
+
+    /// Tests all `GapStack` spaces by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
@@ -381,10 +445,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
@@ -408,10 +473,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let snapshotName = "\(theme.name)_\(namedToken.name)_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: snapshotName)
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 }
