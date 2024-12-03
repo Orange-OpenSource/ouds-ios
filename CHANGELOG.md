@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - [Library] Elevation semantic tokens `elevationBlurOverlayDefault`, `elevationBlurOverlayEmphasized`, `elevationXOverlayDefault`, `elevationXOverlayEmphasized`, `elevationYOverlayDefault`, `elevationYOverlayEmphasized`, `elevationColorOverlayDefaultLight`, `elevationColorOverlayEmphasizedLight`, `elevationColorOverlayDefaultDark`, `elevationColorOverlayEmphasizedDark`
+### Added
+
+- [DemoApp] Prepare new architecture to add components illustration ([#328](https://github.com/Orange-OpenSource/ouds-ios/issues/328))
 
 ## [0.7.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.6.0...0.7.0) - 2024-11-29
 
