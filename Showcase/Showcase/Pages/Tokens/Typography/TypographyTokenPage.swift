@@ -26,7 +26,7 @@ struct TypographyTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             Section {
-                ShowcaseTokenCode(code: "theme.typeBodyStrongLarge(theme)")
+                ShowcaseCode(code: "theme.typeBodyStrongLarge(theme)")
             }
 
             Spacer()

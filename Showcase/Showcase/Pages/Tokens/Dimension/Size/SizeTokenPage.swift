@@ -22,7 +22,7 @@ struct SizeTokenPage: View {
     var body: some View {
         Group {
             Section {
-                ShowcaseTokenCode(code: "theme.sizeIconWithHeadingXLargeShort.dimension(for: horizontalSizeClass ?? .regular)")
+                ShowcaseCode(code: "theme.sizeIconWithHeadingXLargeShort.dimension(for: horizontalSizeClass ?? .regular)")
             }
             Section {
                 ForEach(NamedSize.IconDecorative.allCases, id: \.rawValue) { namedSize in
