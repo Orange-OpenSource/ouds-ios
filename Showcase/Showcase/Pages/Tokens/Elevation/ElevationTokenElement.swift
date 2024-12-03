@@ -13,16 +13,18 @@
 
 import SwiftUI
 
-struct ElevationTokenElement: TokenElement {
+struct ElevationTokenElement: ShowcaseElement {
     let name: String
     let imageName: String
-    let description: String
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_elevation_label"
         imageName = "ic_layers"
-        description = "app_tokens_elevation_description_text"
-        pageDescription = AnyView(ElevationTokenPage())
+        pageDescription = AnyView(ShowcaseElementPage(
+            name: name,
+            imageName: imageName,
+            description: "app_tokens_elevation_description_text",
+            illustration: AnyView(ElevationTokenPage())))
     }
 }

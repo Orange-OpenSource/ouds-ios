@@ -13,8 +13,41 @@
 
 import SwiftUI
 
+struct ButtonPage: View {
+
+    // MARK: Stored properties
+
+    let configuration = ButtonConfigurationModel()
+
+    // MARK: Body
+
+    var body: some View {
+        ComponentPage(
+            configuration: configuration,
+            componentView: componentView,
+            configurationView: configurationView
+        )
+    }
+
+    // MARK: Private helpers
+
+    @ViewBuilder
+    private func componentView(configuration: ComponentConfiguration) -> some View {
+        if let model = configuration as? ButtonConfigurationModel {
+            ButtonIllustration(model: model)
+        }
+    }
+
+    @ViewBuilder
+    private func configurationView(configuration: ComponentConfiguration) -> some View {
+        if let model = configuration as? ButtonConfigurationModel {
+            ButtonConfiguration(model: model)
+        }
+    }
+}
+
 /// The model shared between `ButtonPageConfiguration` view and `ButtonPageComponent` view.
-class ButtonPageConfigurationModel: ComponentConfiguration, ObservableObject {
+class ButtonConfigurationModel: ComponentConfiguration, ObservableObject {
     var description: String {
         "This is a short diecriotion of Button"
     }
@@ -40,7 +73,7 @@ class ButtonPageConfigurationModel: ComponentConfiguration, ObservableObject {
 }
 
 /// The component illustration according toi the configuration.
-struct ButtonPageComponent: View {
+struct ButtonIllustration: View {
 
     // MARK: Environment properties
 
@@ -49,7 +82,7 @@ struct ButtonPageComponent: View {
 
     // MARK: Stored properties
 
-    @StateObject var model: ButtonPageConfigurationModel
+    @StateObject var model: ButtonConfigurationModel
 
     // MARK: Body
 
@@ -76,7 +109,7 @@ struct ButtonPageComponent: View {
     }
 }
 
-struct ButtonPageConfiguration: View {
+struct ButtonConfiguration: View {
 
     // MARK: Environment properties
 
@@ -84,7 +117,7 @@ struct ButtonPageConfiguration: View {
 
     // MARK: Stored properties
 
-    @StateObject var model: ButtonPageConfigurationModel
+    @StateObject var model: ButtonConfigurationModel
 
     // MARK: Body
 

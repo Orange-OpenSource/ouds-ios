@@ -13,18 +13,20 @@
 
 import SwiftUI
 
-struct GridTokenElement: ShowcaseElement {
+struct ButtonElement: ShowcaseElement {
     let name: String
     let imageName: String
     let pageDescription: AnyView
 
     init() {
-        name = "app_tokens_grid_label"
-        imageName = "ic_grid"
+        name = "app_tokens_border_label"
+        imageName = "ic_border"
         pageDescription = AnyView(ShowcaseElementPage(
-            name: name,
-            imageName: imageName,
-            description: "app_tokens_grid_description_text",
-            illustration: AnyView(GridTokenPage())))
+                name: name,
+                imageName: nil,
+                description: "app_tokens_border_description_text",
+                illustration: AnyView(ButtonPage())
+            )
+        )
     }
 }

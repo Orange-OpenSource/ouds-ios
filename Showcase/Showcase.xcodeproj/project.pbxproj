@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0708222B2CFF554100570EC7 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708222A2CFF554100570EC7 /* ButtonElement.swift */; };
+		0708222C2CFF554100570EC7 /* ButtonElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0708222A2CFF554100570EC7 /* ButtonElement.swift */; };
 		070C35622C75EB1C0029C6A8 /* OUDS in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35612C75EB1C0029C6A8 /* OUDS */; };
 		070C35642C773A0D0029C6A8 /* OUDSThemesInverse in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35632C773A0D0029C6A8 /* OUDSThemesInverse */; };
 		070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35652C7762B90029C6A8 /* OUDSModules */; };
@@ -33,7 +35,6 @@
 		073543162CA17275001187EA /* ShowcaseElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543152CA17275001187EA /* ShowcaseElement.swift */; };
 		073543182CA172CA001187EA /* TypographyTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543172CA172CA001187EA /* TypographyTokenElement.swift */; };
 		0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735431A2CA18C48001187EA /* TypographyTokenPage.swift */; };
-		0735432A2CA192F9001187EA /* TokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543222CA192F9001187EA /* TokenElement.swift */; };
 		0740A99A2C9874670069D24A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0740A9992C9874670069D24A /* SnapshotTesting */; };
 		0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* Snapshot.swift */; };
 		0747947A2CAE882A0033C2D8 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074794792CAE882A0033C2D8 /* EmptyState.swift */; };
@@ -91,10 +92,6 @@
 		07F0AFDC2CFDB8BD00D334DD /* ButtonPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFDA2CFDB8BD00D334DD /* ButtonPage.swift */; };
 		07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */; };
 		07F0AFDF2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */; };
-		07F0AFE12CFE02CA00D334DD /* ComponenentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFE02CFE02CA00D334DD /* ComponenentEntry.swift */; };
-		07F0AFE22CFE02CA00D334DD /* ComponenentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFE02CFE02CA00D334DD /* ComponenentEntry.swift */; };
-		07F0AFE42CFE043E00D334DD /* ButtonComponentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFE32CFE043E00D334DD /* ButtonComponentEntry.swift */; };
-		07F0AFE52CFE043E00D334DD /* ButtonComponentEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFE32CFE043E00D334DD /* ButtonComponentEntry.swift */; };
 		07F0AFE82CFE0FBD00D334DD /* ShowcaseConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFE72CFE0FBD00D334DD /* ShowcaseConfiguration.swift */; };
 		07F0AFE92CFE0FBD00D334DD /* ShowcaseConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFE72CFE0FBD00D334DD /* ShowcaseConfiguration.swift */; };
 		07F0FA8A2CC935FF000F166F /* NameSpace+PaddingInlineWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0FA892CC935FF000F166F /* NameSpace+PaddingInlineWithIcon.swift */; };
@@ -173,7 +170,6 @@
 		6DED17ED2CD23D5200584BC9 /* ShowcaseElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */; };
 		6DED17EE2CD23E5400584BC9 /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
 		6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */; };
-		6DED17F02CD25CB000584BC9 /* TokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543222CA192F9001187EA /* TokenElement.swift */; };
 		6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF427D2CA41325000BD03E /* OpacityTokenElement.swift */; };
 		6DFC208B2CDE669500F2EC33 /* AccessibilityStatementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */; };
 		6DFC20B52CE3AF1500F2EC33 /* boosted-grid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */; };
@@ -200,6 +196,7 @@
 /* Begin PBXFileReference section */
 		0707B6402C2C3C0400A911E7 /* .github */ = {isa = PBXFileReference; lastKnownFileType = folder; name = .github; path = ../.github; sourceTree = "<group>"; };
 		0707B6432C2C569500A911E7 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
+		0708222A2CFF554100570EC7 /* ButtonElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonElement.swift; sourceTree = "<group>"; };
 		070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridTokenElement.swift; sourceTree = "<group>"; };
 		070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrisTokenPage.swift; sourceTree = "<group>"; };
 		0722151B2CF616B100B4E031 /* NameSpace+PaddingStackWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+PaddingStackWithIcon.swift"; sourceTree = "<group>"; };
@@ -208,7 +205,6 @@
 		073543152CA17275001187EA /* ShowcaseElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseElement.swift; sourceTree = "<group>"; };
 		073543172CA172CA001187EA /* TypographyTokenElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyTokenElement.swift; sourceTree = "<group>"; };
 		0735431A2CA18C48001187EA /* TypographyTokenPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyTokenPage.swift; sourceTree = "<group>"; };
-		073543222CA192F9001187EA /* TokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenElement.swift; sourceTree = "<group>"; };
 		073EC3212CB3DC9300B2ADB4 /* SpacingTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenElement.swift; sourceTree = "<group>"; };
 		073EC3222CB3DC9300B2ADB4 /* SpacingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenPage.swift; sourceTree = "<group>"; };
 		074008222C942810006B8729 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
@@ -262,8 +258,6 @@
 		07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentPage.swift; sourceTree = "<group>"; };
 		07F0AFDA2CFDB8BD00D334DD /* ButtonPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPage.swift; sourceTree = "<group>"; };
 		07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
-		07F0AFE02CFE02CA00D334DD /* ComponenentEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponenentEntry.swift; sourceTree = "<group>"; };
-		07F0AFE32CFE043E00D334DD /* ButtonComponentEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponentEntry.swift; sourceTree = "<group>"; };
 		07F0AFE72CFE0FBD00D334DD /* ShowcaseConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseConfiguration.swift; sourceTree = "<group>"; };
 		07F0FA892CC935FF000F166F /* NameSpace+PaddingInlineWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+PaddingInlineWithIcon.swift"; sourceTree = "<group>"; };
 		07F0FA8B2CC9408C000F166F /* NameSpace+PaddingInlineWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+PaddingInlineWithArrow.swift"; sourceTree = "<group>"; };
@@ -353,6 +347,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0708222D2CFF617000570EC7 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				073543152CA17275001187EA /* ShowcaseElement.swift */,
+				51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */,
+				51BD760F2C466FCF0033365D /* ShowcaseElementsPage.swift */,
+				077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		0708222E2CFF61D300570EC7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */,
+				075C71342CEB9BD200B93FC3 /* ShowcaseTokkenIllustrationBackground.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		070DF8B02CDD07F20043D558 /* Grid */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,13 +389,8 @@
 			isa = PBXGroup;
 			children = (
 				0735430F2CA15440001187EA /* Cards */,
-				51BD760F2C466FCF0033365D /* ShowcaseElementsPage.swift */,
+				0708222D2CFF617000570EC7 /* Elements */,
 				07F7533A2CC785620007450D /* ShowcaseSectionHeaderStyle.swift */,
-				51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */,
-				073543152CA17275001187EA /* ShowcaseElement.swift */,
-				077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */,
-				075114E72CB81F0E00B8B759 /* ShowcaseTokenIllustration.swift */,
-				075C71342CEB9BD200B93FC3 /* ShowcaseTokkenIllustrationBackground.swift */,
 				6DCC57E12CEB984D000F35F8 /* ShowcaseCode.swift */,
 				07F0AFE72CFE0FBD00D334DD /* ShowcaseConfiguration.swift */,
 			);
@@ -566,7 +575,7 @@
 			isa = PBXGroup;
 			children = (
 				07F0AFDA2CFDB8BD00D334DD /* ButtonPage.swift */,
-				07F0AFE32CFE043E00D334DD /* ButtonComponentEntry.swift */,
+				0708222A2CFF554100570EC7 /* ButtonElement.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -575,7 +584,6 @@
 			isa = PBXGroup;
 			children = (
 				07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */,
-				07F0AFE02CFE02CA00D334DD /* ComponenentEntry.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -677,6 +685,7 @@
 		51BD76102C466FCF0033365D /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
+				0708222E2CFF61D300570EC7 /* Utils */,
 				07CF42832CA45DA9000BD03E /* Border */,
 				075114DD2CB7FD7E00B8B759 /* Color */,
 				077CCE562CB426090059CC28 /* Dimension */,
@@ -684,7 +693,6 @@
 				070DF8B02CDD07F20043D558 /* Grid */,
 				07CF427C2CA412F5000BD03E /* Opacity */,
 				073543192CA17388001187EA /* Typography */,
-				073543222CA192F9001187EA /* TokenElement.swift */,
 				07CF426A2CA30728000BD03E /* TokensPage.swift */,
 			);
 			path = Tokens;
@@ -1038,7 +1046,6 @@
 				51ED41052CF8AF2C007AB814 /* NamedColor+Gradient.swift in Sources */,
 				6D43136D2CEF400D004E6886 /* ShowcaseCode.swift in Sources */,
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
-				6DED17F02CD25CB000584BC9 /* TokenElement.swift in Sources */,
 				6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */,
 				07F0AFDC2CFDB8BD00D334DD /* ButtonPage.swift in Sources */,
 				6DED17EE2CD23E5400584BC9 /* CardIllustration.swift in Sources */,
@@ -1084,17 +1091,16 @@
 				6D17A21A2CCBE74C00C00512 /* OUDSTokensElevationUITests.swift in Sources */,
 				6DED17E92CD1143500584BC9 /* OUDSTokensSizeUITests.swift in Sources */,
 				6D17A22A2CCBEF6700C00512 /* OUDSTokensColorUITests.swift in Sources */,
-				07F0AFE42CFE043E00D334DD /* ButtonComponentEntry.swift in Sources */,
 				6DE5F47D2CC696120008E774 /* ThemeSelection.swift in Sources */,
 				6D8F9C552CC1616E0078A10E /* TypographyTokenPage.swift in Sources */,
 				6D8F9C542CC160660078A10E /* SpaceTokenPage.swift in Sources */,
 				6D8F9C532CC160580078A10E /* SizeTokenPage.swift in Sources */,
+				0708222B2CFF554100570EC7 /* ButtonElement.swift in Sources */,
 				6D8F9C522CC15F960078A10E /* ElevationTokenPage.swift in Sources */,
 				6D8F9C502CC14EBF0078A10E /* OpacityTokenPage.swift in Sources */,
 				6D3E872C2CCBE0A300AEB105 /* OUDSTokenBorderUITests.swift in Sources */,
 				6D8F9C4F2CBFDC8B0078A10E /* EmptyState.swift in Sources */,
 				6D17A21C2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift in Sources */,
-				07F0AFE12CFE02CA00D334DD /* ComponenentEntry.swift in Sources */,
 				6D2465902CBEAEE40023E359 /* ShowcaseTokenIllustration.swift in Sources */,
 				6D24658E2CBEAC750023E359 /* BorderTokenPage.swift in Sources */,
 				0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */,
@@ -1117,7 +1123,6 @@
 				0765B4982CC15A4000E69359 /* NamedColor+Always.swift in Sources */,
 				07A8E92D2CE7AB82005B19E6 /* NameSpace+GapStackWithIcon.swift in Sources */,
 				07F75A392CC6462D0004F1AD /* NamedSpace+Fixed.swift in Sources */,
-				07F0AFE52CFE043E00D334DD /* ButtonComponentEntry.swift in Sources */,
 				07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */,
 				07F0AFE92CFE0FBD00D334DD /* ShowcaseConfiguration.swift in Sources */,
 				07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */,
@@ -1132,7 +1137,6 @@
 				0765B4A42CC15C3E00E69359 /* NamedColor+Chart.swift in Sources */,
 				07CF42792CA3F4BE000BD03E /* ElevationTokenPage.swift in Sources */,
 				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
-				0735432A2CA192F9001187EA /* TokenElement.swift in Sources */,
 				07F7533B2CC785620007450D /* ShowcaseSectionHeaderStyle.swift in Sources */,
 				07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
 				073543182CA172CA001187EA /* TypographyTokenElement.swift in Sources */,
@@ -1157,6 +1161,7 @@
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
 				0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */,
 				07A8E9232CE63607005B19E6 /* NameSpace+GapInlineWithIcon.swift in Sources */,
+				0708222C2CFF554100570EC7 /* ButtonElement.swift in Sources */,
 				0784B2782CCBDD8900299C10 /* NamedTypography+Illustration.swift in Sources */,
 				077CCE572CB426090059CC28 /* SpaceTokenElement.swift in Sources */,
 				0735431B2CA18C48001187EA /* TypographyTokenPage.swift in Sources */,
@@ -1173,7 +1178,6 @@
 				075C71392CECC50F00B93FC3 /* SpaceBasicTokenIllustrations.swift in Sources */,
 				0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */,
 				51BD762A2C466FCF0033365D /* Showcase.swift in Sources */,
-				07F0AFE22CFE02CA00D334DD /* ComponenentEntry.swift in Sources */,
 				0765B49E2CC15B7E00E69359 /* NamedColor+Decorative.swift in Sources */,
 				07F75A432CC654050004F1AD /* NameSpace+PaddingStack.swift in Sources */,
 				0784B2762CCBD9C300299C10 /* NamedTypography.swift in Sources */,

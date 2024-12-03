@@ -13,21 +13,24 @@
 
 import SwiftUI
 
-struct DimensionTokenElement: TokenElement {
+struct DimensionTokenElement: ShowcaseElement {
+
     let name: String
     let imageName: String
-    let description: String
     let pageDescription: AnyView
 
-    let variants: [TokenElement] = [
-        SizeTokenElement(),
-        SpaceTokenElement(),
-    ]
-
     init() {
+        let variants: [TokenElement] = [
+            SizeTokenElement(),
+            SpaceTokenElement(),
+        ]
+
         name = "app_tokens_dimension_label"
         imageName = "ic_dimension"
-        description = "app_tokens_dimension_description_text"
-        pageDescription = AnyView(ShowcaseVariantElement(elements: variants))
+        pageDescription = AnyView(ShowcaseElementPage(
+            name: name,
+            imageName: imageName,
+            description: "app_tokens_dimension_description_text",
+            illustration: AnyView(ShowcaseVariantElement(elements: variants))))
     }
 }

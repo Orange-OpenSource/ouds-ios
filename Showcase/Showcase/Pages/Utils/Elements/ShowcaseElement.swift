@@ -13,4 +13,13 @@
 
 import SwiftUI
 
-typealias TokenElement = ShowcaseElement
+@MainActor
+protocol ShowcaseElement {
+    var name: String { get }
+    var imageName: String { get }
+    var pageDescription: AnyView { get }
+}
+
+extension ShowcaseElement {
+    var id: String { name }
+}
