@@ -13,20 +13,17 @@
 
 import SwiftUI
 
-struct TokensPage: View {
-
-    let tokenElements: [TokenElement] = [
-        BorderTokenElement(),
-        ColorTokenElement(),
-        DimensionTokenElement(),
-        ElevationTokenElement(),
-        GridTokenElement(),
-        OpacityTokenElement(),
-        TypographyTokenElement(),
-    ]
-
-    var body: some View {
-        ShowcaseElementsPage(elements: tokenElements)
-            .oudsNavigationTitle("app_bottomBar_tokens_label")
+// swiftlint:disable force_cast
+@MainActor
+let kButtonEntry = ComponentEntity(
+    name: "Button",
+    imageName: "ic_token",
+    configuration: ButtonPageConfigurationModel(),
+    componentView: { model in
+        AnyView(ButtonPageComponent(model: model as! ButtonPageConfigurationModel))
+    },
+    configurationView: { model in
+        AnyView(ButtonPageConfiguration(model: model as! ButtonPageConfigurationModel))
     }
-}
+)
+// swiftlint:enable force_cast

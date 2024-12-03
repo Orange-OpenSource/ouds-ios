@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-struct ShowcaseTokenCode: View {
+struct ShowcaseCode: View {
 
     // MARK: Environment properties
 
@@ -25,7 +25,7 @@ struct ShowcaseTokenCode: View {
     // MARK: Stored properties
 
     @State private var isCodeVisible = false
-    var code: String
+    let code: String
 
     // MARK: Body
 

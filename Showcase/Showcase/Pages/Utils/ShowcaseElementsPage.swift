@@ -45,7 +45,6 @@ struct ShowcaseElementsPage: View {
                 }
                 .padding(.all, theme.spaceFixedMedium)
                 .navigationbarMenuForThemeSelection()
-                .oudsNavigationTitle("app_bottomBar_tokens_label")
             }
             .background(theme.colorBgPrimary.color(for: colorScheme))
         }

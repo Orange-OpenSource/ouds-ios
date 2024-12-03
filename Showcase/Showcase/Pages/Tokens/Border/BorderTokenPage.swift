@@ -50,7 +50,7 @@ struct BorderTokenPage: View {
         VStack(alignment: .leading, spacing: activeTheme.spaceFixedMedium) {
             Section {
                 VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
-                    ShowcaseTokenCode(code: "theme.borderWidthDefault")
+                    ShowcaseCode(code: "theme.borderWidthDefault")
                 }
             }
             Section {
