@@ -13,16 +13,18 @@
 
 import SwiftUI
 
-struct SpaceTokenElement: TokenElement {
+struct SpaceTokenElement: ShowcaseElement {
     let name: String
     let imageName: String
-    let description: String
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_dimension_space_label"
         imageName = "ic_dimension"
-        description = "app_tokens_dimension_space_description_text"
-        pageDescription = AnyView(SpaceTokenPage())
+        pageDescription = AnyView(ShowcaseElementPage(
+            name: name,
+            imageName: imageName,
+            description: "app_tokens_dimension_space_description_text",
+            illustration: AnyView(SpaceTokenPage())))
     }
 }

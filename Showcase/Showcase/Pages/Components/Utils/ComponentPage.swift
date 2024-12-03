@@ -15,39 +15,46 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-struct ComponentPage: View {
+/// The common protocol used to define the configuration of each component.
+
+protocol ComponentConfiguration {
+    var code: String { get }
+}
+
+/// Used to create an area with `Component` updated according to the `configuration`
+/// modified by user using elements presented in `Configuration` view.
+struct ComponentConfigurationView<Component, Configuration>: View where Component: View, Configuration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 
-    let entry: ComponentEntity
+    /// The configuration shared between configuration view and component illustration view.
+    let configuration: ComponentConfiguration
+
+    /// The illustration displaying the component according to the configuration.
+    @ViewBuilder
+    let componentView: (_ configuration: ComponentConfiguration) -> Component
+
+    /// The view used to change the configuration.
+    @ViewBuilder
+    let configurationView: (_ configuration: ComponentConfiguration) -> Configuration
 
     // MARK: Body
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
-                Text(entry.configuration.description)
-                    .typeBodyDefaultLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
-                    .background(theme.colorContentOnBrandPrimary.color(for: colorScheme))
-                    .padding(.top, theme.spaceFixedMedium)
-                    .padding(.horizontal, theme.spaceFixedMedium)
+        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+            componentView(configuration)
+            // No padding here, the component erea keep all the frame horizontaly
 
-                entry.componentView(entry.configuration)
-                // No padding here, the component erea keep all the frame horizontaly
-
-                ShowcaseConfiguration {
-                    entry.configurationView(entry.configuration)
-                }
-                .padding(.horizontal, theme.spaceFixedMedium)
-
-                ShowcaseCode(code: entry.configuration.code)
-                    .padding(.horizontal, theme.spaceFixedMedium)
+            ShowcaseConfiguration {
+                configurationView(configuration)
             }
-            .padding(.bottom, theme.spaceFixedMedium)
+            .padding(.horizontal, theme.spaceFixedMedium)
+
+            ShowcaseCode(code: configuration.code)
+                .padding(.horizontal, theme.spaceFixedMedium)
         }
+        .padding(.bottom, theme.spaceFixedMedium)
     }
 }

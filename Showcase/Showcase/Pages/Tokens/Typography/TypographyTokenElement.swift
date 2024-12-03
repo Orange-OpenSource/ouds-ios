@@ -13,16 +13,18 @@
 
 import SwiftUI
 
-struct TypographyTokenElement: TokenElement {
+struct TypographyTokenElement: ShowcaseElement {
     let name: String
     let imageName: String
-    let description: String
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_typography_label"
         imageName = "ic_typography"
-        description = "app_tokens_typography_description_text"
-        pageDescription = AnyView(TypographyTokenPage())
+        pageDescription = AnyView(ShowcaseElementPage(
+            name: name,
+            imageName: imageName,
+            description: "app_tokens_typography_description_text",
+            illustration: AnyView(TypographyTokenPage())))
     }
 }
