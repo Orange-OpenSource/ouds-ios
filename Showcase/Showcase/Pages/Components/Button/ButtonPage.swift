@@ -22,7 +22,7 @@ struct ButtonPage: View {
     // MARK: Body
 
     var body: some View {
-        ComponentPage(
+        ComponentConfigurationView(
             configuration: configuration,
             componentView: componentView,
             configurationView: configurationView
