@@ -20,7 +20,7 @@ struct DimensionTokenElement: ShowcaseElement {
     let pageDescription: AnyView
 
     init() {
-        let variants: [TokenElement] = [
+        let variants: [ShowcaseElement] = [
             SizeTokenElement(),
             SpaceTokenElement(),
         ]

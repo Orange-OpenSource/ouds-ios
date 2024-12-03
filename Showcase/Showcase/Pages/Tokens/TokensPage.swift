@@ -15,7 +15,7 @@ import SwiftUI
 
 struct TokensPage: View {
 
-    let tokenElements: [TokenElement] = [
+    let tokenElements: [ShowcaseElement] = [
         BorderTokenElement(),
         ColorTokenElement(),
         DimensionTokenElement(),
