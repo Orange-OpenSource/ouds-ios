@@ -11,22 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import OUDS
-import OUDSComponents
-import SwiftUI
+import Foundation
 
-struct ComponentsPage: View {
-
-//    let componentElements: [ShowcaseElement] = [
-//        ButtonElement()
-//    ]
-
-    var body: some View {
-        NavigationView {
-            EmptyState()
-            //        ShowcaseElementsPage(elements: componentElements)
-                .oudsNavigationTitle("app_bottomBar_components_label")
-        }
-        .navigationViewStyle(.stack)
-    }
-}
+typealias ComponentElement = ShowcaseElement

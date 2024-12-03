@@ -11,22 +11,19 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import OUDS
-import OUDSComponents
 import SwiftUI
 
-struct ComponentsPage: View {
-
-//    let componentElements: [ShowcaseElement] = [
-//        ButtonElement()
-//    ]
-
-    var body: some View {
-        NavigationView {
-            EmptyState()
-            //        ShowcaseElementsPage(elements: componentElements)
-                .oudsNavigationTitle("app_bottomBar_components_label")
-        }
-        .navigationViewStyle(.stack)
+// swiftlint:disable force_cast
+@MainActor
+let kButtonEntry = ComponentEntity(
+    name: "Button",
+    imageName: "ic_token",
+    configuration: ButtonPageConfigurationModel(),
+    componentView: { model in
+        AnyView(ButtonPageComponent(model: model as! ButtonPageConfigurationModel))
+    },
+    configurationView: { model in
+        AnyView(ButtonPageConfiguration(model: model as! ButtonPageConfigurationModel))
     }
-}
+)
+// swiftlint:enable force_cast
