@@ -72,7 +72,6 @@ extension MockTheme {
     override open var elevationColorDragLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override open var elevationColorDragDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override open var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
-    override open var elevationColorOverlayEmphasizedLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override open var elevationColorOverlayEmphasizedDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override open var elevationColorStickyDefaultLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override open var elevationColorStickyDefaultDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
