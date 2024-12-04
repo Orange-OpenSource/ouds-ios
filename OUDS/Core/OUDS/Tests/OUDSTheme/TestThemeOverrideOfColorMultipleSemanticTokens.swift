@@ -641,9 +641,9 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
 
     // MARK: Semantic token - Colors - Transparent
 
-    func testInheritedThemeCanOverrideSemanticTokenColorTransparentDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.colorTransparentDefault, abstractTheme.colorTransparentDefault)
-        XCTAssertTrue(inheritedTheme.colorTransparentDefault == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
+    func testInheritedThemeCanOverrideSemanticTokencolorOpacityDefault() throws {
+        XCTAssertNotEqual(inheritedTheme.colorOpacityDefault, abstractTheme.colorOpacityDefault)
+        XCTAssertTrue(inheritedTheme.colorOpacityDefault == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
     }
 
     // MARK: Semantic token - Colors - Elevation

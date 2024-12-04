@@ -24,45 +24,4 @@ public enum ColorRawTokens {
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the tokenator, the values have been added in the Values folder
     // This trick helps also to write documentation for these tokens as the tokenator cannot generate documentation
-
-    /// Applies to a color in its hexadecimal representation the given `opacity`
-    /// - Parameters:
-    ///    - opacity: The opacity effect to apply
-    ///    - hexColor: The String color to update
-    /// - Returns: The new color, as a `String`, update with the given `OpacityRawToken` value
-    static func apply(opacity: OpacityRawToken, on hexColor: String) -> String {
-        // TODO: Improve this algorithm too much naive
-        // Values picked from https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-        if opacity == OpacityRawTokens.opacity0 {
-            return hexColor + "00"
-        }
-        if opacity == OpacityRawTokens.opacity100 {
-            return hexColor + "0A"
-        }
-        if opacity == OpacityRawTokens.opacity200 {
-            return hexColor + "14"
-        }
-        if opacity == OpacityRawTokens.opacity300 {
-            return hexColor + "29"
-        }
-        if opacity == OpacityRawTokens.opacity400 {
-            return hexColor + "3D"
-        }
-        if opacity == OpacityRawTokens.opacity500 {
-            return hexColor + "52"
-        }
-        if opacity == OpacityRawTokens.opacity600 {
-            return hexColor + "7A"
-        }
-        if opacity == OpacityRawTokens.opacity700 {
-            return hexColor + "A3"
-        }
-        if opacity == OpacityRawTokens.opacity800 {
-            return hexColor + "E0"
-        }
-        if opacity == OpacityRawTokens.opacity900 {
-            return hexColor + "FF"
-        }
-        return hexColor
-    }
 }

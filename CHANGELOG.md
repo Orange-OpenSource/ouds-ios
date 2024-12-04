@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Library] Update `ElevationSemanticTokens` tokens (tokenator *20241204111249*)
+- [Library] Rename any `colorTransparent*` color semantic tokens to `colorOpacity*`
+- [Library] Update `ElevationSemanticTokens` and `ColorRawTokens` tokens (tokenator *20241204111249*)
 
 ### Removed
 

@@ -280,7 +280,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     // MARK: Semantic token - Colors - Transparent
 
-    @objc open var colorTransparentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack0) }
+    @objc open var colorOpacityDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorOpacityBlack0) }
 
     // MARK: Semantic token - Colors - Elevation
 

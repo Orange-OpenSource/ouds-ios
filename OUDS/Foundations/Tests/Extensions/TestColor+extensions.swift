@@ -38,13 +38,13 @@ final class TestColor_extensions: XCTestCase {
         XCTAssertTrue(malachite500.rgba!.blue == 90, "Value is instead '\(malachite500.rgba!.blue)'")
 
         // Color with transparency
-        let colorTransparentWhite500 = Color(hexadecimalCode: "#FFFFFF52")!
-        XCTAssertTrue(colorTransparentWhite500.rgba!.red == 255, "Value is instead '\(colorTransparentWhite500.rgba!.red)'")
-        XCTAssertTrue(colorTransparentWhite500.rgba!.green == 255, "Value is instead '\(colorTransparentWhite500.rgba!.green)'")
-        XCTAssertTrue(colorTransparentWhite500.rgba!.blue == 255, "Value is instead '\(colorTransparentWhite500.rgba!.blue)'")
-        XCTAssertTrue(colorTransparentWhite500.rgba!.alpha == 82, "Value is instead '\(colorTransparentWhite500.rgba!.alpha)'")
+        let colorOpacityWhite500 = Color(hexadecimalCode: "#FFFFFF52")!
+        XCTAssertTrue(colorOpacityWhite500.rgba!.red == 255, "Value is instead '\(colorOpacityWhite500.rgba!.red)'")
+        XCTAssertTrue(colorOpacityWhite500.rgba!.green == 255, "Value is instead '\(colorOpacityWhite500.rgba!.green)'")
+        XCTAssertTrue(colorOpacityWhite500.rgba!.blue == 255, "Value is instead '\(colorOpacityWhite500.rgba!.blue)'")
+        XCTAssertTrue(colorOpacityWhite500.rgba!.alpha == 82, "Value is instead '\(colorOpacityWhite500.rgba!.alpha)'")
         /*
-         colorTransparentWhite500 is white with opacity500.
+         colorOpacityWhite500 is white with opacity500.
          In base 16, white is #FFFFFF and opacity500 adds 52 suffix.
          FF in base 16 is 255 in base 10, and 52 in base 16 is 82 in base 10.
          So, #FFFFFF52 is RGBA(255, 255, 255, 82)

@@ -25,8 +25,8 @@ import SwiftUI
 /// ```swift
 ///         // Assuming in Figma with have a elevation semantic token elevationNone,
 ///         // with values depending to color scheme. These values are defined as elevation raw tokens.
-///         let elevationBottom_0 = ElevationCompositeRawToken(x: elevationX0, y: elevationY0, blur: elevationBlur0, color: ColorRawTokens.colorTransparentBlack0)
-///         let elevationBottom_1_100 = ElevationCompositeRawToken(x: elevationX0, y: elevationY100, blur: elevationBlur200, color: ColorRawTokens.colorTransparentBlack100)
+///         let elevationBottom_0 = ElevationCompositeRawToken(x: elevationX0, y: elevationY0, blur: elevationBlur0, color: ColorRawTokens.colorOpacityBlack0)
+///         let elevationBottom_1_100 = ElevationCompositeRawToken(x: elevationX0, y: elevationY100, blur: elevationBlur200, color: ColorRawTokens.colorOpacityBlack100)
 ///
 ///         // Then the develoment team declares an "higher" level elevation semantic token
 ///         // inside ElevationCompositeSemanticTokens protocol,
