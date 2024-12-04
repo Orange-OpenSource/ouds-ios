@@ -54,11 +54,10 @@ extension MockTheme {
 
     // MARK: Semantic token - Elevation - Color (Multiples)
 
+    override open var elevationColorDefault: MultipleColorSemanticTokens { Self.mockThemeElevationMultipleColorSemanticToken }
     override open var elevationColorNone: MultipleColorSemanticTokens { Self.mockThemeElevationMultipleColorSemanticToken }
     override open var elevationColorRaised: MultipleColorSemanticTokens { Self.mockThemeElevationMultipleColorSemanticToken }
     override open var elevationColorDrag: MultipleColorSemanticTokens { Self.mockThemeElevationMultipleColorSemanticToken }
-    override open var elevationColorOverlayDefault: MultipleColorSemanticTokens { Self.mockThemeElevationMultipleColorSemanticToken }
-    override open var elevationColorOverlayEmphasized: MultipleColorSemanticTokens { Self.mockThemeElevationMultipleColorSemanticToken }
     override open var elevationColorStickyDefault: MultipleColorSemanticTokens { Self.mockThemeElevationMultipleColorSemanticToken }
     override open var elevationColorStickyEmphasized: MultipleColorSemanticTokens { Self.mockThemeElevationMultipleColorSemanticToken }
     override open var elevationColorStickyNavigationScrolled: MultipleColorSemanticTokens { Self.mockThemeElevationMultipleColorSemanticToken }

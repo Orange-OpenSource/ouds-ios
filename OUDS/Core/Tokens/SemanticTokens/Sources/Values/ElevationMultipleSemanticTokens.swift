@@ -47,11 +47,10 @@
 ///
 public protocol ElevationMultipleSemanticTokens {
 
+    var elevationColorDefault: MultipleColorSemanticTokens { get }
     var elevationColorNone: MultipleColorSemanticTokens { get }
     var elevationColorRaised: MultipleColorSemanticTokens { get }
     var elevationColorDrag: MultipleColorSemanticTokens { get }
-    var elevationColorOverlayDefault: MultipleColorSemanticTokens { get }
-    var elevationColorOverlayEmphasized: MultipleColorSemanticTokens { get }
     var elevationColorStickyDefault: MultipleColorSemanticTokens { get }
     var elevationColorStickyEmphasized: MultipleColorSemanticTokens { get }
     var elevationColorStickyNavigationScrolled: MultipleColorSemanticTokens { get }
