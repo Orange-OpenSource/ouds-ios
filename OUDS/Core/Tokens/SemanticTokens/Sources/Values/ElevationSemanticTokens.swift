@@ -52,7 +52,6 @@ public protocol ElevationSemanticTokens {
     var elevationBlurNone: ElevationBlurSemanticToken { get }
     var elevationBlurRaised: ElevationBlurSemanticToken { get }
     var elevationBlurDrag: ElevationBlurSemanticToken { get }
-    var elevationBlurOverlayEmphasized: ElevationBlurSemanticToken { get }
     var elevationBlurStickyDefault: ElevationBlurSemanticToken { get }
     var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { get }
     var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { get }
