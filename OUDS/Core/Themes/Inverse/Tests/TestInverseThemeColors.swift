@@ -357,8 +357,8 @@ final class TestInverseThemeColors: XCTestCase {
 
     // MARK: Semantic token - Colors - Transparent
 
-    func testColorsHomogeneityColorTransparentDefault() throws {
-        assertHomogeneity(inverseTheme.colorTransparentDefault)
+    func testColorsHomogeneitycolorOpacityDefault() throws {
+        assertHomogeneity(inverseTheme.colorOpacityDefault)
     }
 
     // MARK: Semantic token - Colors - Elevation

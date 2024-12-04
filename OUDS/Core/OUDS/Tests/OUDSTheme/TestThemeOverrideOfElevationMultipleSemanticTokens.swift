@@ -36,6 +36,11 @@ final class TestThemeOverrideOfElevationMultipleSemanticTokens: XCTestCase {
 
     // MARK: - Semantic token - Elevation - Colors
 
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorDefault() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorDefault, abstractTheme.elevationColorDefault)
+        XCTAssertTrue(inheritedTheme.elevationColorDefault.isEqual(MockTheme.mockThemeElevationMultipleColorSemanticToken))
+    }
+
     func testInheritedThemeCanOverrideSemanticTokenElevationColorNone() throws {
         XCTAssertNotEqual(inheritedTheme.elevationColorNone, abstractTheme.elevationColorNone)
         XCTAssertTrue(inheritedTheme.elevationColorNone.isEqual(MockTheme.mockThemeElevationMultipleColorSemanticToken))
@@ -51,14 +56,9 @@ final class TestThemeOverrideOfElevationMultipleSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.elevationColorDrag.isEqual(MockTheme.mockThemeElevationMultipleColorSemanticToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorOverlayDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorOverlayDefault, abstractTheme.elevationColorOverlayDefault)
-        XCTAssertTrue(inheritedTheme.elevationColorOverlayDefault.isEqual(MockTheme.mockThemeElevationMultipleColorSemanticToken))
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenElevationColorOverlayEmphasized() throws {
-        XCTAssertNotEqual(inheritedTheme.elevationColorOverlayEmphasized, abstractTheme.elevationColorOverlayEmphasized)
-        XCTAssertTrue(inheritedTheme.elevationColorOverlayEmphasized.isEqual(MockTheme.mockThemeElevationMultipleColorSemanticToken))
+    func testInheritedThemeCanOverrideSemanticTokenElevationColorEmphasized() throws {
+        XCTAssertNotEqual(inheritedTheme.elevationColorEmphasized, abstractTheme.elevationColorEmphasized)
+        XCTAssertTrue(inheritedTheme.elevationColorEmphasized.isEqual(MockTheme.mockThemeElevationMultipleColorSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyDefault() throws {

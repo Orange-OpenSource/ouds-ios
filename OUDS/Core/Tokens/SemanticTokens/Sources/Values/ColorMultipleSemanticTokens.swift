@@ -297,7 +297,7 @@ public protocol ColorMultipleSemanticTokens {
 
     // MARK: Semantic token - Colors - Transparent
 
-    var colorTransparentDefault: MultipleColorSemanticTokens { get }
+    var colorOpacityDefault: MultipleColorSemanticTokens { get }
 
     // MARK: Semantic token - Colors - Elevation
 

@@ -278,7 +278,7 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     // MARK: Semantic token - Colors - Transparent
 
-    override var colorTransparentDefault: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
+    override var colorOpacityDefault: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
 
     // MARK: Semantic token - Colors - Elevation
 
@@ -760,8 +760,8 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     // MARK: Semantic token - Colors - Transparent
 
-    override var colorTransparentDefaultLight: ColorSemanticToken { Self.otherMockThemeSemanticColorToken }
-    override var colorTransparentDefaultDark: ColorSemanticToken { Self.otherMockThemeSemanticColorToken }
+    override var colorOpacityDefaultLight: ColorSemanticToken { Self.otherMockThemeSemanticColorToken }
+    override var colorOpacityDefaultDark: ColorSemanticToken { Self.otherMockThemeSemanticColorToken }
 
     // MARK: Semantic token - Colors - Elevation
 

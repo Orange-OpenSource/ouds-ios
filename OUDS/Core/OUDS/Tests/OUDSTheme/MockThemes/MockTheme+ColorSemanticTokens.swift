@@ -272,7 +272,7 @@ extension MockTheme {
 
     // MARK: Semantic token - Colors - Transparent
 
-    override open var colorTransparentDefault: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override open var colorOpacityDefault: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
 
     // MARK: Semantic token - Colors - Elevation
 
@@ -754,8 +754,8 @@ extension MockTheme {
 
     // MARK: Semantic token - Colors - Transparent
 
-    override open var colorTransparentDefaultLight: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
-    override open var colorTransparentDefaultDark: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+    override open var colorOpacityDefaultLight: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
+    override open var colorOpacityDefaultDark: ColorSemanticToken { Self.mockThemeSemanticColorTokens }
 
     // MARK: Semantic token - Colors - Elevation
 

@@ -28,7 +28,7 @@ extension ColorRawTokens { // In a separated file
 
     public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
     public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E"
-    public static let colorTransparentBlack0: ColorRawToken = apply(opacity: OpacityRawTokens.opacity0, on: colorFunctionalBlack)
+    public static let colorOpacityBlack0: ColorRawToken = "#00000000"
     ...
 }
 

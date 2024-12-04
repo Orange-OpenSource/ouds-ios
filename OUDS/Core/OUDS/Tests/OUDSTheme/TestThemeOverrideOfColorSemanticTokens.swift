@@ -888,14 +888,14 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
 
     // MARK: Semantic token - Colors - Transparent
 
-    func testInheritedThemeCanOverrideSemanticTokenColorTransparentDefaultLight() throws {
-        XCTAssertNotEqual(inheritedTheme.colorTransparentDefaultLight, abstractTheme.colorTransparentDefaultLight)
-        XCTAssertTrue(inheritedTheme.colorTransparentDefaultLight == OtherMockTheme.otherMockThemeSemanticColorToken)
+    func testInheritedThemeCanOverrideSemanticTokencolorOpacityDefaultLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colorOpacityDefaultLight, abstractTheme.colorOpacityDefaultLight)
+        XCTAssertTrue(inheritedTheme.colorOpacityDefaultLight == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorTransparentDefaultDark() throws {
-        XCTAssertNotEqual(inheritedTheme.colorTransparentDefaultDark, abstractTheme.colorTransparentDefaultDark)
-        XCTAssertTrue(inheritedTheme.colorTransparentDefaultDark == OtherMockTheme.otherMockThemeSemanticColorToken)
+    func testInheritedThemeCanOverrideSemanticTokencolorOpacityDefaultDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colorOpacityDefaultDark, abstractTheme.colorOpacityDefaultDark)
+        XCTAssertTrue(inheritedTheme.colorOpacityDefaultDark == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
 
     // MARK: Semantic token - Colors - Elevation

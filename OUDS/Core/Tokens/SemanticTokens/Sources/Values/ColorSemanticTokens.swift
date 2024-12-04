@@ -275,7 +275,7 @@ public protocol ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Transparent
 
-    var colorTransparentDefaultLight: ColorSemanticToken { get }
+    var colorOpacityDefaultLight: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Elevation
 
@@ -747,7 +747,7 @@ public protocol ColorSemanticTokens {
 
     // MARK: Semantic token - Colors - Transparent
 
-    var colorTransparentDefaultDark: ColorSemanticToken { get }
+    var colorOpacityDefaultDark: ColorSemanticToken { get }
 
     // MARK: Semantic token - Colors - Elevation
 

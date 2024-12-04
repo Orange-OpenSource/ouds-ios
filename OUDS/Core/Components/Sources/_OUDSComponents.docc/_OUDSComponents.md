@@ -24,10 +24,10 @@ myView.shadow(elevation: theme.elevationDragLight)
 
 // And in the theme this "elevationDragLight" has been defined for example like:
 @objc open var elevationDragLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_500 }
-ColorRawTokens.colorTransparentBlack400)
+ColorRawTokens.colorOpacityBlack400)
 
 // And if you look deeper, the raw token "elevationBottom_3_500" can be like:
-public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack500)
+public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorOpacityBlack500)
 
 // Blur will be used to compute the radius value
 ```

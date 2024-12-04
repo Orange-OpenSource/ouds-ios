@@ -118,7 +118,7 @@ public enum ColorRawTokens { }
 extension ColorRawTokens { // Gathers all color raw tokens, use enums for namespace optimization with static let
 
     public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
-    public static let colorTransparentBlack0: ColorRawToken = apply(opacity: OpacityRawTokens.opacity0, on: colorFunctionalBlack)
+    public static let colorOpacityBlack0: ColorRawToken = "#00000000"
     ...
 }
 

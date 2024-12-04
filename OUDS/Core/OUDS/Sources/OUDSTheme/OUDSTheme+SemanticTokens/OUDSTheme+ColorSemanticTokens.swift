@@ -21,8 +21,8 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OUDSTheme: ColorSemanticTokens {
-    @objc open var colorTransparentDefaultLight: ColorSemanticToken { ColorRawTokens.colorTransparentBlack0 }
-    @objc open var colorTransparentDefaultDark: ColorSemanticToken { ColorRawTokens.colorTransparentBlack0 }
+    @objc open var colorOpacityDefaultLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
+    @objc open var colorOpacityDefaultDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     @objc open var colorActionDisabledLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray400 }
     @objc open var colorActionDisabledOnBgEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray400 }
     @objc open var colorActionNegativeEnabledLight: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet600 }
