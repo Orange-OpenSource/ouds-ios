@@ -39,7 +39,6 @@ extension MockTheme {
     override open var elevationYNone: ElevationYSemanticToken { Self.mockThemeElevationYRawToken }
     override open var elevationYRaised: ElevationYSemanticToken { Self.mockThemeElevationYRawToken }
     override open var elevationYDrag: ElevationYSemanticToken { Self.mockThemeElevationYRawToken }
-    override open var elevationYOverlayDefault: ElevationYSemanticToken { Self.mockThemeElevationYRawToken }
     override open var elevationYOverlayEmphasized: ElevationYSemanticToken { Self.mockThemeElevationYRawToken }
     override open var elevationYStickyDefault: ElevationYSemanticToken { Self.mockThemeElevationYRawToken }
     override open var elevationYStickyEmphasized: ElevationYSemanticToken { Self.mockThemeElevationYRawToken }

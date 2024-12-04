@@ -40,7 +40,6 @@ public protocol ElevationSemanticTokens {
     var elevationYNone: ElevationYSemanticToken { get }
     var elevationYRaised: ElevationYSemanticToken { get }
     var elevationYDrag: ElevationYSemanticToken { get }
-    var elevationYOverlayDefault: ElevationYSemanticToken { get }
     var elevationYOverlayEmphasized: ElevationYSemanticToken { get }
     var elevationYStickyDefault: ElevationYSemanticToken { get }
     var elevationYStickyEmphasized: ElevationYSemanticToken { get }
