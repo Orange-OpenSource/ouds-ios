@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.7.0...develop)
 
+### Removed
+
+- [Library] Elevation semenatic token `elevationBlurOverlayDefault`
+
 ## [0.7.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.6.0...0.7.0) - 2024-11-29
 
 ### Added

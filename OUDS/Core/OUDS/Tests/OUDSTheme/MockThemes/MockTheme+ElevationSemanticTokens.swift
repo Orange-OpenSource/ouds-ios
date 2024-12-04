@@ -52,7 +52,6 @@ extension MockTheme {
     override open var elevationBlurNone: ElevationBlurSemanticToken { Self.mockThemeElevationBlurRawToken }
     override open var elevationBlurRaised: ElevationBlurSemanticToken { Self.mockThemeElevationBlurRawToken }
     override open var elevationBlurDrag: ElevationBlurSemanticToken { Self.mockThemeElevationBlurRawToken }
-    override open var elevationBlurOverlayDefault: ElevationBlurSemanticToken { Self.mockThemeElevationBlurRawToken }
     override open var elevationBlurOverlayEmphasized: ElevationBlurSemanticToken { Self.mockThemeElevationBlurRawToken }
     override open var elevationBlurStickyDefault: ElevationBlurSemanticToken { Self.mockThemeElevationBlurRawToken }
     override open var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { Self.mockThemeElevationBlurRawToken }
