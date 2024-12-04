@@ -65,6 +65,8 @@ extension MockTheme {
 
     // MARK: Semantic token - Elevation - Color (semantic tokens)
 
+    override open var elevationColorDefaultLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
+    override open var elevationColorDefaultDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override open var elevationColorNoneLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override open var elevationColorNoneDark: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }
     override open var elevationColorRaisedLight: ElevationColorSemanticToken { Self.mockThemeElevationColorRawToken }

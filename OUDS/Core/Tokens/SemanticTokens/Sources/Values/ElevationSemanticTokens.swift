@@ -55,6 +55,8 @@ public protocol ElevationSemanticTokens {
 
     // MARK: Semantic token - Elevation - Color
 
+    var elevationColorDefaultLight: ElevationColorSemanticToken { get }
+    var elevationColorDefaultDark: ElevationColorSemanticToken { get }
     var elevationColorNoneLight: ElevationColorSemanticToken { get }
     var elevationColorNoneDark: ElevationColorSemanticToken { get }
     var elevationColorRaisedLight: ElevationColorSemanticToken { get }
