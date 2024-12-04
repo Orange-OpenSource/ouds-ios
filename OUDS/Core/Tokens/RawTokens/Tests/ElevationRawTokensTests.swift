@@ -29,7 +29,7 @@ final class ElevationRawTokensTests: XCTestCase {
 
     func testRadiusComputation() throws {
         // Given
-        var token = ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorOpacityBlack500)
+        var token = ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorOpacityBlack200)
         // When
         var radius = token.radius
         // Then
@@ -43,21 +43,21 @@ final class ElevationRawTokensTests: XCTestCase {
         XCTAssertTrue(radius == 0.5)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 3, blur: 2, color: ColorRawTokens.colorOpacityBlack300)
+        token = ElevationCompositeRawToken(x: 0, y: 3, blur: 2, color: ColorRawTokens.colorOpacityBlack160)
         // When
         radius = token.radius
         // Then
         XCTAssertTrue(radius == 1)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorOpacityBlack500)
+        token = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorOpacityBlack200)
         // When
         radius = token.radius
         // Then
         XCTAssertTrue(radius == 2)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, color: ColorRawTokens.colorOpacityBlack300)
+        token = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, color: ColorRawTokens.colorOpacityBlack160)
         // When
         radius = token.radius
         // Then

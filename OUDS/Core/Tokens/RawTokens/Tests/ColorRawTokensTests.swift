@@ -262,189 +262,189 @@ final class ColorRawTokensTests: XCTestCase {
 
     // MARK: - Primitive token - Colors - Opacity black
 
-    func testColorOpacityBlack0LighterThanTransparentBlack40() throws {
+    func testColorOpacityBlack0DarkerThanTransparentBlack40() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack0, ColorRawTokens.colorOpacityBlack40)
     }
 
-    func testColorOpacityBlack40LighterThanTransparentBlack80() throws {
+    func testColorOpacityBlack40DarkerThanTransparentBlack80() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack40, ColorRawTokens.colorOpacityBlack80)
     }
 
-    func testColorOpacityBlack80LighterThanTransparentBlack120() throws {
+    func testColorOpacityBlack80DarkerThanTransparentBlack120() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack80, ColorRawTokens.colorOpacityBlack120)
     }
 
-    func testColorOpacityBlack120LighterThanTransparentBlack160() throws {
+    func testColorOpacityBlack120DarkerThanTransparentBlack160() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack120, ColorRawTokens.colorOpacityBlack160)
     }
 
-    func testColorOpacityBlack160LighterThanTransparentBlack200() throws {
+    func testColorOpacityBlack160DarkerThanTransparentBlack200() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack160, ColorRawTokens.colorOpacityBlack200)
     }
 
-    func testColorOpacityBlack200LighterThanTransparentBlack240() throws {
+    func testColorOpacityBlack200DarkerThanTransparentBlack240() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack200, ColorRawTokens.colorOpacityBlack240)
     }
 
-    func testColorOpacityBlack240LighterThanTransparentBlack280() throws {
+    func testColorOpacityBlack240DarkerThanTransparentBlack280() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack240, ColorRawTokens.colorOpacityBlack280)
     }
 
-    func testColorOpacityBlack280LighterThanTransparentBlack320() throws {
+    func testColorOpacityBlack280DarkerThanTransparentBlack320() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack280, ColorRawTokens.colorOpacityBlack320)
     }
 
-    func testColorOpacityBlack320LighterThanTransparentBlack360() throws {
+    func testColorOpacityBlack320DarkerThanTransparentBlack360() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack320, ColorRawTokens.colorOpacityBlack360)
     }
 
-    func testColorOpacityBlack360LighterThanTransparentBlack400() throws {
+    func testColorOpacityBlack360DarkerThanTransparentBlack400() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack360, ColorRawTokens.colorOpacityBlack400)
     }
 
-    func testColorOpacityBlack400LighterThanTransparentBlack440() throws {
+    func testColorOpacityBlack400DarkerThanTransparentBlack440() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack400, ColorRawTokens.colorOpacityBlack440)
     }
 
-    func testColorOpacityBlack440LighterThanTransparentBlack480() throws {
+    func testColorOpacityBlack440DarkerThanTransparentBlack480() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack440, ColorRawTokens.colorOpacityBlack480)
     }
 
-    func testColorOpacityBlack480LighterThanTransparentBlack520() throws {
+    func testColorOpacityBlack480DarkerThanTransparentBlack520() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack480, ColorRawTokens.colorOpacityBlack520)
     }
 
-    func testColorOpacityBlack520LighterThanTransparentBlack560() throws {
+    func testColorOpacityBlack520DarkerThanTransparentBlack560() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack520, ColorRawTokens.colorOpacityBlack560)
     }
 
-    func testColorOpacityBlack560LighterThanTransparentBlack600() throws {
+    func testColorOpacityBlack560DarkerThanTransparentBlack600() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack560, ColorRawTokens.colorOpacityBlack600)
     }
 
-    func testColorOpacityBlack600LighterThanTransparentBlack640() throws {
+    func testColorOpacityBlack600DarkerThanTransparentBlack640() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack600, ColorRawTokens.colorOpacityBlack640)
     }
 
-    func testColorOpacityBlack640LighterThanTransparentBlack680() throws {
+    func testColorOpacityBlack640DarkerThanTransparentBlack680() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack640, ColorRawTokens.colorOpacityBlack680)
     }
 
-    func testColorOpacityBlack680LighterThanTransparentBlack720() throws {
+    func testColorOpacityBlack680DarkerThanTransparentBlack720() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack680, ColorRawTokens.colorOpacityBlack720)
     }
 
-    func testColorOpacityBlack720LighterThanTransparentBlack760() throws {
+    func testColorOpacityBlack720DarkerThanTransparentBlack760() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack720, ColorRawTokens.colorOpacityBlack760)
     }
 
-    func testColorOpacityBlack760LighterThanTransparentBlack800() throws {
+    func testColorOpacityBlack760DarkerThanTransparentBlack800() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack760, ColorRawTokens.colorOpacityBlack800)
     }
 
-    func testColorOpacityBlack800LighterThanTransparentBlack840() throws {
+    func testColorOpacityBlack800DarkerThanTransparentBlack840() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack800, ColorRawTokens.colorOpacityBlack840)
     }
 
-    func testColorOpacityBlack880LighterThanTransparentBlack920() throws {
+    func testColorOpacityBlack880DarkerThanTransparentBlack920() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack880, ColorRawTokens.colorOpacityBlack920)
     }
 
-    func testColorOpacityBlack920LighterThanTransparentBlack960() throws {
+    func testColorOpacityBlack920DarkerThanTransparentBlack960() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityBlack920, ColorRawTokens.colorOpacityBlack960)
     }
 
     // MARK: - Primitive token - Colors - Opacity White
 
-    func testColorOpacityWhite0LighterThanTransparentWhite40() throws {
+    func testColorOpacityWhite0DarkerThanTransparentWhite40() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite0, ColorRawTokens.colorOpacityWhite40)
     }
 
-    func testColorOpacityWhite40LighterThanTransparentWhite80() throws {
+    func testColorOpacityWhite40DarkerThanTransparentWhite80() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite40, ColorRawTokens.colorOpacityWhite80)
     }
 
-    func testColorOpacityWhite80LighterThanTransparentWhite120() throws {
+    func testColorOpacityWhite80DarkerThanTransparentWhite120() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite80, ColorRawTokens.colorOpacityWhite120)
     }
 
-    func testColorOpacityWhite120LighterThanTransparentWhite160() throws {
+    func testColorOpacityWhite120DarkerThanTransparentWhite160() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite120, ColorRawTokens.colorOpacityWhite160)
     }
 
-    func testColorOpacityWhite160LighterThanTransparentWhite200() throws {
+    func testColorOpacityWhite160DarkerThanTransparentWhite200() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite160, ColorRawTokens.colorOpacityWhite200)
     }
 
-    func testColorOpacityWhite200LighterThanTransparentWhite240() throws {
+    func testColorOpacityWhite200DarkerThanTransparentWhite240() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite200, ColorRawTokens.colorOpacityWhite240)
     }
 
-    func testColorOpacityWhite240LighterThanTransparentWhite280() throws {
+    func testColorOpacityWhite240DarkerThanTransparentWhite280() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite240, ColorRawTokens.colorOpacityWhite280)
     }
 
-    func testColorOpacityWhite280LighterThanTransparentWhite320() throws {
+    func testColorOpacityWhite280DarkerThanTransparentWhite320() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite280, ColorRawTokens.colorOpacityWhite320)
     }
 
-    func testColorOpacityWhite320LighterThanTransparentWhite360() throws {
+    func testColorOpacityWhite320DarkerThanTransparentWhite360() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite320, ColorRawTokens.colorOpacityWhite360)
     }
 
-    func testColorOpacityWhite360LighterThanTransparentWhite400() throws {
+    func testColorOpacityWhite360DarkerThanTransparentWhite400() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite360, ColorRawTokens.colorOpacityWhite400)
     }
 
-    func testColorOpacityWhite400LighterThanTransparentWhite440() throws {
+    func testColorOpacityWhite400DarkerThanTransparentWhite440() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite400, ColorRawTokens.colorOpacityWhite440)
     }
 
-    func testColorOpacityWhite440LighterThanTransparentWhite480() throws {
+    func testColorOpacityWhite440DarkerThanTransparentWhite480() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite440, ColorRawTokens.colorOpacityWhite480)
     }
 
-    func testColorOpacityWhite480LighterThanTransparentWhite520() throws {
+    func testColorOpacityWhite480DarkerThanTransparentWhite520() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite480, ColorRawTokens.colorOpacityWhite520)
     }
 
-    func testColorOpacityWhite520LighterThanTransparentWhite560() throws {
+    func testColorOpacityWhite520DarkerThanTransparentWhite560() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite520, ColorRawTokens.colorOpacityWhite560)
     }
 
-    func testColorOpacityWhite560LighterThanTransparentWhite600() throws {
+    func testColorOpacityWhite560DarkerThanTransparentWhite600() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite560, ColorRawTokens.colorOpacityWhite600)
     }
 
-    func testColorOpacityWhite600LighterThanTransparentWhite640() throws {
+    func testColorOpacityWhite600DarkerThanTransparentWhite640() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite600, ColorRawTokens.colorOpacityWhite640)
     }
 
-    func testColorOpacityWhite640LighterThanTransparentWhite680() throws {
+    func testColorOpacityWhite640DarkerThanTransparentWhite680() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite640, ColorRawTokens.colorOpacityWhite680)
     }
 
-    func testColorOpacityWhite680LighterThanTransparentWhite720() throws {
+    func testColorOpacityWhite680DarkerThanTransparentWhite720() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite680, ColorRawTokens.colorOpacityWhite720)
     }
 
-    func testColorOpacityWhite720LighterThanTransparentWhite760() throws {
+    func testColorOpacityWhite720DarkerThanTransparentWhite760() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite720, ColorRawTokens.colorOpacityWhite760)
     }
 
-    func testColorOpacityWhite760LighterThanTransparentWhite800() throws {
+    func testColorOpacityWhite760DarkerThanTransparentWhite800() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite760, ColorRawTokens.colorOpacityWhite800)
     }
 
-    func testColorOpacityWhite800LighterThanTransparentWhite840() throws {
+    func testColorOpacityWhite800DarkerThanTransparentWhite840() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite800, ColorRawTokens.colorOpacityWhite840)
     }
 
-    func testColorOpacityWhite880LighterThanTransparentWhite920() throws {
+    func testColorOpacityWhite880DarkerThanTransparentWhite920() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite880, ColorRawTokens.colorOpacityWhite920)
     }
 
-    func testColorOpacityWhite920LighterThanTransparentWhite960() throws {
+    func testColorOpacityWhite920DarkerThanTransparentWhite960() throws {
         XCTAssertColorDarkerThan(ColorRawTokens.colorOpacityWhite920, ColorRawTokens.colorOpacityWhite960)
     }
 
