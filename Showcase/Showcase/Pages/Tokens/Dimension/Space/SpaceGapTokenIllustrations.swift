@@ -15,12 +15,12 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Gap Inline Category
+// MARK: - Gap Inline property
 
-struct GapInlineCategory: View {
+struct GapInlineProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapInline.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.GapInline.allCases) {
             SpaceHeaderDescription(
                 firstText: "app_tokens_dimension_space_header_text",
                 secondText: "app_tokens_dimension_space_header_text",
@@ -38,12 +38,12 @@ struct GapInlineCategory: View {
     }
 }
 
-// MARK: - Gap Inline With Icon Category
+// MARK: - Gap Inline With Icon property
 
-struct GapInlineWithIconCategory: View {
+struct GapInlineWithIconProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapInlineWithIcon.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.GapInlineWithIcon.allCases) {
             SpaceHeaderDescription(
                 text: "app_tokens_dimension_space_header_text",
                 iconAsset: .icon,
@@ -61,12 +61,12 @@ struct GapInlineWithIconCategory: View {
     }
 }
 
-// MARK: - Gap Inline With Arrow Category
+// MARK: - Gap Inline With Arrow property
 
-struct GapInlineWithArrowCategory: View {
+struct GapInlineWithArrowProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapInlineWithArrow.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.GapInlineWithArrow.allCases) {
             SpaceHeaderDescription(
                 text: "app_tokens_dimension_space_header_text",
                 iconAsset: .arrow,
@@ -84,12 +84,12 @@ struct GapInlineWithArrowCategory: View {
     }
 }
 
-// MARK: - Gap Stack Category
+// MARK: - Gap Stack property
 
-struct GapStackCategory: View {
+struct GapStackProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapStack.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.GapStack.allCases) {
             SpaceHeaderDescription(
                 firstText: "app_tokens_dimension_space_header_text",
                 secondText: "app_tokens_dimension_space_header_text",
@@ -107,12 +107,12 @@ struct GapStackCategory: View {
     }
 }
 
-// MARK: - Gap Stack With Icon Category
+// MARK: - Gap Stack With Icon property
 
-struct GapStackWithIconCategory: View {
+struct GapStackWithIconProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapStackWithIcon.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.GapStackWithIcon.allCases) {
             SpaceHeaderDescription(
                 text: "app_tokens_dimension_space_header_text",
                 iconAsset: .icon,

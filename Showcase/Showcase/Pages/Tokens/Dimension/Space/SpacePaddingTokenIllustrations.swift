@@ -15,12 +15,12 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Padding Inline Category
+// MARK: - Padding Inline property
 
-struct PaddingInlineCategory: View {
+struct PaddingInlineProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.PaddingInline.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.PaddingInline.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
         } illustration: { token in
             Illustration(token: token)
@@ -35,12 +35,12 @@ struct PaddingInlineCategory: View {
     }
 }
 
-// MARK: - Padding Inline With Icon Category
+// MARK: - Padding Inline With Icon property
 
-struct PaddingInlineWithIconCategory: View {
+struct PaddingInlineWithIconProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.PaddingInlineWithIcon.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.PaddingInlineWithIcon.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", iconAsset: .icon, paddings: .leading)
         } illustration: { token in
             Illustration(token: token)
@@ -55,12 +55,12 @@ struct PaddingInlineWithIconCategory: View {
     }
 }
 
-// MARK: - Padding Inline With Arrow Category
+// MARK: - Padding Inline With Arrow property
 
-struct PaddingInlineWithArrowCategory: View {
+struct PaddingInlineWithArrowProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.PaddingInlineWithArrow.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.PaddingInlineWithArrow.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", iconAsset: .arrow, paddings: .leading)
         } illustration: { token in
             Illustration(token: token)
@@ -75,12 +75,12 @@ struct PaddingInlineWithArrowCategory: View {
     }
 }
 
-// MARK: - Padding Inset Category
+// MARK: - Padding Inset property
 
-struct PaddingInsetCategory: View {
+struct PaddingInsetProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.PaddingInset.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.PaddingInset.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
         } illustration: { token in
             Illustration(token: token)
@@ -95,12 +95,12 @@ struct PaddingInsetCategory: View {
     }
 }
 
-// MARK: - Padding Stack Category
+// MARK: - Padding Stack property
 
-struct PaddingStackCategory: View {
+struct PaddingStackProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.PaddingStack.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.PaddingStack.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
         } illustration: { token in
             Illustration(token: token)
@@ -115,12 +115,12 @@ struct PaddingStackCategory: View {
     }
 }
 
-// MARK: - Padding Stack With Icon Category
+// MARK: - Padding Stack With Icon property
 
-struct PaddingStackWithIconCategory: View {
+struct PaddingStackWithIconProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.PaddingStackWithIcon.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.PaddingStackWithIcon.allCases) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", iconAsset: .icon, paddings: .top)
          } illustration: { token in
             Illustration(token: token)
