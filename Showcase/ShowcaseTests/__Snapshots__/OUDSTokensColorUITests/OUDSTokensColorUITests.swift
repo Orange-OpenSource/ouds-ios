@@ -26,7 +26,7 @@ final class OUDSTokensColorUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Color Tests
 
-    /// This function tests all color tokens in the `OrangeTheme` with both the `light` color schemes.
+    /// This function tests all color tokens in the `OrangeTheme` with the `light` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsOrangeThemeLight() {
@@ -46,7 +46,7 @@ final class OUDSTokensColorUITests: XCTestCase {
 
     // MARK: - Orange Theme Dark Mode Color Tests
 
-    /// This function tests all color tokens in the `OrangeTheme` with both the `dark` color schemes.
+    /// This function tests all color tokens in the `OrangeTheme` with the `dark` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsOrangeThemeDark() {
@@ -66,7 +66,7 @@ final class OUDSTokensColorUITests: XCTestCase {
 
     // MARK: - Inverse Theme Light Mode Color Tests
 
-    /// This function tests all color tokens in the `InverseTheme` with both the `light` color schemes.
+    /// This function tests all color tokens in the `InverseTheme` with the `light` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsInverseThemeLight() {
@@ -86,7 +86,7 @@ final class OUDSTokensColorUITests: XCTestCase {
 
     // MARK: - Inverse Theme Dark Mode Color Tests
 
-    /// This function tests all color tokens in the `InverseTheme` with both the `dark` color schemes.
+    /// This function tests all color tokens in the `InverseTheme` with the `dark` color schemes.
     /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
     /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
     @MainActor func testAllColorsInverseThemeDark() {

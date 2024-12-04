@@ -73,7 +73,7 @@ struct SizeTokenPage: View {
     private func header(_ text: LocalizedStringKey) -> some View {
         Text(text).showcaseSectionHeaderStyle()
     }
-    
+
     struct IllustrationIconWithLabel: View {
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme

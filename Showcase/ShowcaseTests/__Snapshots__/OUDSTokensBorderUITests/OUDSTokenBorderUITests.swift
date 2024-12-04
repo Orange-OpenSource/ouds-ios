@@ -24,8 +24,8 @@ import XCTest
 /// Tests the UI rendering of each **border token** using reference images
 final class OUDSTokensBorderUITests: XCTestCase {
 
-    /// This function tests all border tokens in the `OrangeTheme` with both the `light` color schemes.
-    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
+    /// This function tests all border tokens in the `OrangeTheme` with the `light` color schemes.
+    /// It iterates through all `NamedBorderWidth`, `NamedBorderRafius`, and`NamedBorderStyle` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllBorderOrangeThemeLight() {
         let theme = OrangeTheme()
@@ -35,7 +35,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
         testBorderStyle(for: theme, in: interfaceStyle)
     }
 
-    /// This function tests all border tokens in the `OrangeTheme` with both the `dark` color schemes.
+    /// This function tests all border tokens in the `OrangeTheme` with  the `dark` color schemes.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllBorderOrangeThemeDark() {
@@ -46,7 +46,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
         testBorderStyle(for: theme, in: interfaceStyle)
     }
 
-    /// This function tests all border tokens in the `InverseTheme` with both the `light` color schemes.
+    /// This function tests all border tokens in the `InverseTheme` with the `light` color schemes.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllBorderInverseThemeLight() {
@@ -57,7 +57,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
         testBorderStyle(for: theme, in: interfaceStyle)
     }
 
-    /// This function tests all border tokens in the `InverseTheme` with both the `dark` color schemes.
+    /// This function tests all border tokens in the `InverseTheme` with the `dark` color schemes.
     /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllBorderInverseThemeDark() {

@@ -72,7 +72,7 @@ final class OUDSTokensElevationUITests: XCTestCase {
 
     /// Tests all elevation properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme` or `InverseTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testElevations(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 

@@ -26,8 +26,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Space Tests
 
-    /// This function tests all dimension tokens in the `OrangeTheme` with both the `light` color schemes.
-    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
+    /// This function tests all dimension tokens in the `OrangeTheme` with  the `light` color schemes.
+    /// It iterates through all `NamedSpace` cases, rendering each illustration in a `UIHostingController`
     /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
     @MainActor func testAllSpacesOrangeThemeLight() {
         // Testing for different types of spacing for light mode
