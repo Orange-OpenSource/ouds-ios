@@ -61,7 +61,6 @@ public protocol ElevationSemanticTokens {
     var elevationColorRaisedDark: ElevationColorSemanticToken { get }
     var elevationColorDragLight: ElevationColorSemanticToken { get }
     var elevationColorDragDark: ElevationColorSemanticToken { get }
-    var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { get }
     var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { get }
     var elevationColorOverlayEmphasizedLight: ElevationColorSemanticToken { get }
     var elevationColorOverlayEmphasizedDark: ElevationColorSemanticToken { get }
