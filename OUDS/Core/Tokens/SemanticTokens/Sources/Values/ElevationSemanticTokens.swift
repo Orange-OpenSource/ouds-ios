@@ -31,7 +31,6 @@ public protocol ElevationSemanticTokens {
     var elevationXNone: ElevationXSemanticToken { get }
     var elevationXRaised: ElevationXSemanticToken { get }
     var elevationXDrag: ElevationXSemanticToken { get }
-    var elevationXOverlayDefault: ElevationXSemanticToken { get }
     var elevationXOverlayEmphasized: ElevationXSemanticToken { get }
     var elevationXStickyDefault: ElevationXSemanticToken { get }
     var elevationXStickyEmphasized: ElevationXSemanticToken { get }
