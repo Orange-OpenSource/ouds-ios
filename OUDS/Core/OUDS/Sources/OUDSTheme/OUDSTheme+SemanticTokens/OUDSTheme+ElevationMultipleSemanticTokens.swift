@@ -23,12 +23,12 @@ import OUDSTokensSemantic
 /// These values can be overriden inside ``OUDSTheme`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 extension OUDSTheme: ElevationMultipleSemanticTokens {
 
-    @objc open var elevationColorDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack500) }
-    @objc open var elevationColorNone: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack0) }
-    @objc open var elevationColorOverlayDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack400) }
-    @objc open var elevationColorOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack300) }
-    @objc open var elevationColorRaised: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack500) }
-    @objc open var elevationColorStickyDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack300) }
-    @objc open var elevationColorStickyEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack300) }
-    @objc open var elevationColorStickyNavigationScrolled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorTransparentBlack300) }
+    @objc open var elevationColorDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorDefaultLight, dark: elevationColorDefaultDark) }
+    @objc open var elevationColorDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorDragLight, dark: elevationColorDragDark) }
+    @objc open var elevationColorEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorEmphasizedLight, dark: elevationColorEmphasizedDark) }
+    @objc open var elevationColorNone: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorNoneLight, dark: elevationColorNoneDark) }
+    @objc open var elevationColorRaised: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorRaisedLight, dark: elevationColorRaisedDark) }
+    @objc open var elevationColorStickyDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorStickyDefaultLight, dark: elevationColorStickyDefaultDark) }
+    @objc open var elevationColorStickyEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorStickyEmphasizedLight, dark: elevationColorStickyEmphasizedDark) }
+    @objc open var elevationColorStickyNavigationScrolled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorStickyNavigationScrolledLight, dark: elevationColorStickyNavigationScrolledDark) }
 }

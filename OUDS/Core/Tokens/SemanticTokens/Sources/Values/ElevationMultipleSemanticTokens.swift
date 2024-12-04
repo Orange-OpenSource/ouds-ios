@@ -51,6 +51,7 @@ public protocol ElevationMultipleSemanticTokens {
     var elevationColorNone: MultipleColorSemanticTokens { get }
     var elevationColorRaised: MultipleColorSemanticTokens { get }
     var elevationColorDrag: MultipleColorSemanticTokens { get }
+    var elevationColorEmphasized: MultipleColorSemanticTokens { get }
     var elevationColorStickyDefault: MultipleColorSemanticTokens { get }
     var elevationColorStickyEmphasized: MultipleColorSemanticTokens { get }
     var elevationColorStickyNavigationScrolled: MultipleColorSemanticTokens { get }
