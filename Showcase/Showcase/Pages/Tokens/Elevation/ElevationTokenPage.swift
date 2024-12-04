@@ -23,8 +23,6 @@ struct ElevationTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Body
-
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             Section {
@@ -40,8 +38,6 @@ struct ElevationTokenPage: View {
         .frame(maxWidth: .infinity)
         .padding(.horizontal, theme.spaceFixedMedium)
     }
-
-    // MARK: Helpers
 
     struct IllustrationElevation: View {
         @Environment(\.theme) private var theme

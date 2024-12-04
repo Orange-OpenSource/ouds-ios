@@ -128,8 +128,6 @@ struct ColorTokenPage: View {
         }
     }
 
-    // MARK: Common private helpers
-
     struct Illustration: View {
 
         @Environment(\.theme) private var theme

@@ -23,8 +23,6 @@ struct TypographyTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
-    // MARK: Body
-
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             Section {
@@ -40,8 +38,6 @@ struct TypographyTokenPage: View {
         .padding(.horizontal, theme.spaceFixedMedium)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
-
-    // MARK: Helpers
 
     struct IllustrationTypography: View {
         @Environment(\.theme) private var theme

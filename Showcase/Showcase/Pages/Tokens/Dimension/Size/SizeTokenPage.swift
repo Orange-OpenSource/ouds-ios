@@ -19,8 +19,6 @@ struct SizeTokenPage: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Body
-
     var body: some View {
         Group {
             Section {
@@ -43,8 +41,6 @@ struct SizeTokenPage: View {
         }
         .padding(.horizontal, theme.spaceFixedMedium)
     }
-
-    // MARK: Illustration icon decorative
 
     struct IllustrationIconDecorative: View {
         @Environment(\.theme) private var theme
@@ -74,8 +70,10 @@ struct SizeTokenPage: View {
         }
     }
 
-    // MARK: Illustration icon with label
-
+    private func header(_ text: LocalizedStringKey) -> some View {
+        Text(text).showcaseSectionHeaderStyle()
+    }
+    
     struct IllustrationIconWithLabel: View {
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
@@ -107,14 +105,6 @@ struct SizeTokenPage: View {
             }
         }
     }
-
-    // MARK: Common helpers
-
-    private func header(_ text: LocalizedStringKey) -> some View {
-        Text(text).showcaseSectionHeaderStyle()
-    }
 }
-
-// MARK: - Named Size
 
 enum NamedSize { }

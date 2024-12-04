@@ -20,7 +20,6 @@ struct BorderTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Body
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
             Section {
@@ -70,7 +69,6 @@ struct BorderTokenPage: View {
         .padding(.horizontal, theme.spaceFixedMedium)
     }
 
-    // MARK: Private helpers
     struct RectangleBackground: View {
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
@@ -170,7 +168,6 @@ enum NamedBorderRadius: String, CaseIterable {
 }
 
 enum NamedBorderWidth: String, CaseIterable {
-
     case borderWidthNone
     case borderWidthDefault
     case borderWidthThin

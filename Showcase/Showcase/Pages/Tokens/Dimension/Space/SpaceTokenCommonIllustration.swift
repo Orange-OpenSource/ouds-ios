@@ -53,7 +53,7 @@ struct SpaceTokenProperty<HeaderDescription, TokenIllustration>: View where Head
     }
 }
 
-// MARK: - Space Token Entry
+// MARK: - Space Token Variant
 
 /// Internal `View` to display the token with its name, its value and an illustration.
 struct SpaceTokenVariant<TokenIllustration>: View where TokenIllustration: View {

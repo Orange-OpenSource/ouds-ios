@@ -22,8 +22,6 @@ struct OpacityTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Body
-
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             Section {
@@ -39,8 +37,6 @@ struct OpacityTokenPage: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, theme.spaceFixedMedium)
     }
-
-    // MARK: Helpers
 
     struct IllustrationOpacity: View {
         @Environment(\.theme) private var theme
