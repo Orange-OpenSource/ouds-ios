@@ -16,10 +16,10 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 
 extension OUDSTheme: OpacitySemanticTokens {
-    @objc open var opacityMedium: OpacitySemanticToken { OpacityRawTokens.opacity500 }
-    @objc open var opacityOpaque: OpacitySemanticToken { OpacityRawTokens.opacity900 }
-    @objc open var opacityStrong: OpacitySemanticToken { OpacityRawTokens.opacity700 }
-    @objc open var opacityTransparent: OpacitySemanticToken { OpacityRawTokens.opacity0 }
-    @objc open var opacityWeak: OpacitySemanticToken { OpacityRawTokens.opacity300 }
-    @objc open var opacityWeaker: OpacitySemanticToken { OpacityRawTokens.opacity100 }
+    @objc open var opacityInvisible: OpacitySemanticToken { OpacityRawTokens.opacity0 }
+    @objc open var opacityMedium: OpacitySemanticToken { OpacityRawTokens.opacity320 }
+    @objc open var opacityOpaque: OpacitySemanticToken { OpacityRawTokens.opacity1000 }
+    @objc open var opacityStrong: OpacitySemanticToken { OpacityRawTokens.opacity640 }
+    @objc open var opacityWeak: OpacitySemanticToken { OpacityRawTokens.opacity160 }
+    @objc open var opacityWeaker: OpacitySemanticToken { OpacityRawTokens.opacity40 }
 }
