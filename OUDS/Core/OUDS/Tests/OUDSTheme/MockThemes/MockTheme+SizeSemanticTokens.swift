@@ -140,7 +140,7 @@ extension MockTheme {
     override open var sizeIconDecorativeMd: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override open var sizeIconDecorativeLg: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override open var sizeIconDecorativeXl: SizeSemanticToken { Self.mockThemeSizeRawToken }
-    override open var sizeIconDecorative2Xl: SizeSemanticToken { Self.mockThemeSizeRawToken }
+    override open var sizeIconDecorative2xl: SizeSemanticToken { Self.mockThemeSizeRawToken }
 
     // MARK: - Semantic token - Sizing - Max width typography - Multiples
 

@@ -348,9 +348,9 @@ final class TestThemeOverrideOfSizeSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.sizeIconDecorativeXl == MockTheme.mockThemeSizeRawToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconDecorative2Xl() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconDecorative2Xl, abstractTheme.sizeIconDecorative2Xl)
-        XCTAssertTrue(inheritedTheme.sizeIconDecorative2Xl == MockTheme.mockThemeSizeRawToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconDecorative2xl() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconDecorative2xl, abstractTheme.sizeIconDecorative2xl)
+        XCTAssertTrue(inheritedTheme.sizeIconDecorative2xl == MockTheme.mockThemeSizeRawToken)
     }
 
     // MARK: - Semantic token - Sizing - Max width

@@ -22,7 +22,7 @@ extension NamedSize {
         case sizeIconDecorativeMd
         case sizeIconDecorativeLg
         case sizeIconDecorativeXl
-        case sizeIconDecorative2Xl
+        case sizeIconDecorative2xl
 
         func token(from theme: OUDSTheme) -> SizeSemanticToken {
             switch self {
@@ -38,8 +38,8 @@ extension NamedSize {
                 return theme.sizeIconDecorativeLg
             case .sizeIconDecorativeXl:
                 return theme.sizeIconDecorativeXl
-            case .sizeIconDecorative2Xl:
-                return theme.sizeIconDecorative2Xl
+            case .sizeIconDecorative2xl:
+                return theme.sizeIconDecorative2xl
             }
         }
     }
