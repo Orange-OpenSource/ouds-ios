@@ -14,6 +14,8 @@
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+/// Overrides **all** the space semantic tokens (from its super class, i.e. `OUDSTheme` so as to test overriding of them (unit tests)
+/// and to act like smoke tests with crashing tests if some tokens disappeared.
 extension MockTheme {
 
     static let mockThemeSpaceRawToken: DimensionRawToken = 911
