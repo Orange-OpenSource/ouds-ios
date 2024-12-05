@@ -11,21 +11,22 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import OUDS
-import OUDSComponents
 import SwiftUI
 
-struct ComponentsPage: View {
+struct ButtonElement: ShowcaseElement {
+    let name: String
+    let imageName: String
+    let pageDescription: AnyView
 
-//    let componentElements: [ShowcaseElement] = [
-//        ButtonElement()
-//    ]
-
-    var body: some View {
-        NavigationView {
-            EmptyState()
-            //        ShowcaseElementsPage(elements: componentElements)
-                .oudsNavigationTitle("app_bottomBar_components_label")
-        }
+    init() {
+        name = "app_tokens_border_label"
+        imageName = "ic_border"
+        pageDescription = AnyView(ShowcaseElementPage(
+                name: name,
+                imageName: nil,
+                description: "app_tokens_border_description_text",
+                illustration: AnyView(ButtonPage())
+            )
+        )
     }
 }

@@ -15,6 +15,8 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
+/// Used to list all elements in the main screen of the application
+/// (enumerate tokens and components)
 struct ShowcaseElementsPage: View {
 
     @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
@@ -33,7 +35,7 @@ struct ShowcaseElementsPage: View {
                 LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaceFixedShortest) {
                     ForEach(elements, id: \.id) { element in
                         NavigationLink {
-                            ShowcaseElementPage(element: element)
+                            element.pageDescription
                         } label: {
                             Card(
                                 title: Text(LocalizedStringKey(element.name)),
@@ -45,7 +47,6 @@ struct ShowcaseElementsPage: View {
                 }
                 .padding(.all, theme.spaceFixedMedium)
                 .navigationbarMenuForThemeSelection()
-                .oudsNavigationTitle("app_bottomBar_tokens_label")
             }
             .background(theme.colorBgPrimary.color(for: colorScheme))
         }

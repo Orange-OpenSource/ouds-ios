@@ -13,16 +13,18 @@
 
 import SwiftUI
 
-struct OpacityTokenElement: TokenElement {
+struct OpacityTokenElement: ShowcaseElement {
     let name: String
     let imageName: String
-    let description: String
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_opacity_label"
         imageName = "ic_filter_effects"
-        description = "app_tokens_opacity_description_text"
-        pageDescription = AnyView(OpacityTokenPage())
+        pageDescription = AnyView(ShowcaseElementPage(
+            name: name,
+            imageName: imageName,
+            description: "app_tokens_opacity_description_text",
+            illustration: AnyView(OpacityTokenPage())))
     }
 }

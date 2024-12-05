@@ -29,7 +29,7 @@ struct ShowcaseVariantElement: View {
     var body: some View {
         ForEach(elements, id: \.id) { element in
             NavigationLink {
-                ShowcaseElementPage(element: element)
+                element.pageDescription
             } label: {
                 HStack {
                     Text(LocalizedStringKey(element.name))
