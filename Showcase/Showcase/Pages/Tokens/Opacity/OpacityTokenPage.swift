@@ -25,7 +25,7 @@ struct OpacityTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             Section {
-                ShowcaseCode(code: "theme.opacityTransparent")
+                ShowcaseCode(code: "theme.opacityInvisible")
             }
 
             Spacer() .frame(height: theme.spaceFixedMedium)
@@ -78,7 +78,7 @@ struct OpacityTokenPage: View {
 // MARK: - Named Opacity
 
 enum NamedOpacity: String, CaseIterable {
-    case opacityTransparent
+    case opacityInvisible
     case opacityWeaker
     case opacityWeak
     case opacityMedium
@@ -87,8 +87,8 @@ enum NamedOpacity: String, CaseIterable {
 
     func token(from theme: OUDSTheme) -> OpacitySemanticToken {
         switch self {
-        case .opacityTransparent:
-            return theme.opacityTransparent
+        case .opacityInvisible:
+            return theme.opacityInvisible
         case .opacityWeaker:
             return theme.opacityWeaker
         case .opacityWeak:
