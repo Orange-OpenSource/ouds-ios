@@ -110,13 +110,13 @@ struct SomeView: View {
 
     var body: some View {
         Rectangle()
-            .frame(width: theme.sizeIconDecorativeTallest, height: theme.sizeIconDecorativeTallest)
+            .frame(width: theme.sizeIconDecorative2Xl, height: theme.sizeIconDecorativeXl)
             .foregroundColor(theme.colorBgSecondary.color(for: colorScheme))
             .shadow(elevation: theme.elevationRaised.elevation(for: colorScheme))
             .padding(.bottom, theme.spaceFixedNone)
     }
 /*
-    - The theme provides size semantic tokens "sizeIconDecorativeTallest" and "sizeIconDecorativeTallest"
+    - The theme provides size semantic tokens "sizeIconDecorative2Xl" and "sizeIconDecorativeXl"
     - The theme provides a color semantic token "colorBgSecondary" with values for light and dark scheme, and you can use the color(for:) helper
     - The theme provides an elevation semantic token "elevationRaised" with values for compact and regualr size classes, and you can use the elevation(for:) helper
     - The theme provides a space semantic token "spaceFixedNone" usable as is

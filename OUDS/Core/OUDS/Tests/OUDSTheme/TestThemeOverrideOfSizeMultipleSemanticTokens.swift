@@ -36,9 +36,9 @@ final class TestThemeOverrideOfSizeMultipleSemanticTokens: XCTestCase {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeShort() throws {
-        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXlargeSizeShort, abstractTheme.sizeIconWithHeadingXlargeSizeShort)
-        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXlargeSizeShort == MockTheme.mockThemeSizeCompositeToken)
+    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeSm() throws {
+        XCTAssertNotEqual(inheritedTheme.sizeIconWithHeadingXlargeSizeSm, abstractTheme.sizeIconWithHeadingXlargeSizeSm)
+        XCTAssertTrue(inheritedTheme.sizeIconWithHeadingXlargeSizeSm == MockTheme.mockThemeSizeCompositeToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeMedium() throws {

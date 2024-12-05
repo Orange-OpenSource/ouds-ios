@@ -27,33 +27,33 @@ extension OUDSTheme: SizeMultipleSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    @objc open var sizeIconWithHeadingXlargeSizeShort: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingXlargeSizeShortMobile, regular: sizeIconWithHeadingXlargeSizeShortTablet) }
-    @objc open var sizeIconWithHeadingXlargeSizeMedium: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingXlargeSizeMediumMobile, regular: sizeIconWithHeadingXlargeSizeMediumTablet) }
-    @objc open var sizeIconWithHeadingXlargeSizeTall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingXlargeSizeTallMobile, regular: sizeIconWithHeadingXlargeSizeTallTablet) }
+    @objc open var sizeIconWithHeadingXlargeSizeSm: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingXlargeSizeSmMobile, regular: sizeIconWithHeadingXlargeSizeSmTablet) }
+    @objc open var sizeIconWithHeadingXlargeSizeMd: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingXlargeSizeMdMobile, regular: sizeIconWithHeadingXlargeSizeMdTablet) }
+    @objc open var sizeIconWithHeadingXlargeSizeLg: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingXlargeSizeLgMobile, regular: sizeIconWithHeadingXlargeSizeLgTablet) }
 
-    @objc open var sizeIconWithHeadingLargeSizeShort: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingLargeSizeShortMobile, regular: sizeIconWithHeadingLargeSizeShortTablet) }
-    @objc open var sizeIconWithHeadingLargeSizeMedium: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingLargeSizeMediumMobile, regular: sizeIconWithHeadingLargeSizeMediumTablet) }
-    @objc open var sizeIconWithHeadingLargeSizeTall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingLargeSizeTallMobile, regular: sizeIconWithHeadingLargeSizeTallTablet) }
+    @objc open var sizeIconWithHeadingLargeSizeSm: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingLargeSizeSmMobile, regular: sizeIconWithHeadingLargeSizeSmTablet) }
+    @objc open var sizeIconWithHeadingLargeSizeMd: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingLargeSizeMdMobile, regular: sizeIconWithHeadingLargeSizeMdTablet) }
+    @objc open var sizeIconWithHeadingLargeSizeLg: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingLargeSizeLgMobile, regular: sizeIconWithHeadingLargeSizeLgTablet) }
 
-    @objc open var sizeIconWithHeadingMediumSizeShort: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingMediumSizeShortMobile, regular: sizeIconWithHeadingMediumSizeShortTablet) }
-    @objc open var sizeIconWithHeadingMediumSizeMedium: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingMediumSizeMediumMobile, regular: sizeIconWithHeadingMediumSizeMediumTablet) }
-    @objc open var sizeIconWithHeadingMediumSizeTall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingMediumSizeTallMobile, regular: sizeIconWithHeadingMediumSizeTallTablet) }
+    @objc open var sizeIconWithHeadingMediumSizeSm: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingMediumSizeSmMobile, regular: sizeIconWithHeadingMediumSizeSmTablet) }
+    @objc open var sizeIconWithHeadingMediumSizeMd: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingMediumSizeMdMobile, regular: sizeIconWithHeadingMediumSizeMdTablet) }
+    @objc open var sizeIconWithHeadingMediumSizeLg: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingMediumSizeLgMobile, regular: sizeIconWithHeadingMediumSizeLgTablet) }
 
-    @objc open var sizeIconWithHeadingSmallSizeShort: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingSmallSizeShortMobile, regular: sizeIconWithHeadingSmallSizeShortTablet) }
-    @objc open var sizeIconWithHeadingSmallSizeMedium: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingSmallSizeMediumMobile, regular: sizeIconWithHeadingSmallSizeMediumTablet) }
-    @objc open var sizeIconWithHeadingSmallSizeTall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingSmallSizeTallMobile, regular: sizeIconWithHeadingSmallSizeTallTablet) }
+    @objc open var sizeIconWithHeadingSmallSizeSm: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingSmallSizeSmMobile, regular: sizeIconWithHeadingSmallSizeSmTablet) }
+    @objc open var sizeIconWithHeadingSmallSizeMd: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingSmallSizeMdMobile, regular: sizeIconWithHeadingSmallSizeMdTablet) }
+    @objc open var sizeIconWithHeadingSmallSizeLg: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithHeadingSmallSizeLgMobile, regular: sizeIconWithHeadingSmallSizeLgTablet) }
 
-    @objc open var sizeIconWithBodyLargeSizeShort: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyLargeSizeShortMobile, regular: sizeIconWithBodyLargeSizeShortTablet) }
-    @objc open var sizeIconWithBodyLargeSizeMedium: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyLargeSizeMediumMobile, regular: sizeIconWithBodyLargeSizeMediumTablet) }
-    @objc open var sizeIconWithBodyLargeSizeTall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyLargeSizeTallMobile, regular: sizeIconWithBodyLargeSizeTallTablet) }
+    @objc open var sizeIconWithBodyLargeSizeSm: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyLargeSizeSmMobile, regular: sizeIconWithBodyLargeSizeSmTablet) }
+    @objc open var sizeIconWithBodyLargeSizeMd: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyLargeSizeMdMobile, regular: sizeIconWithBodyLargeSizeMdTablet) }
+    @objc open var sizeIconWithBodyLargeSizeLg: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyLargeSizeLgMobile, regular: sizeIconWithBodyLargeSizeLgTablet) }
 
-    @objc open var sizeIconWithBodyMediumSizeShort: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyMediumSizeShortMobile, regular: sizeIconWithBodyMediumSizeShortTablet) }
-    @objc open var sizeIconWithBodyMediumSizeMedium: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyMediumSizeMediumMobile, regular: sizeIconWithBodyMediumSizeMediumTablet) }
-    @objc open var sizeIconWithBodyMediumSizeTall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyMediumSizeTallMobile, regular: sizeIconWithBodyMediumSizeTallTablet) }
+    @objc open var sizeIconWithBodyMediumSizeSm: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyMediumSizeSmMobile, regular: sizeIconWithBodyMediumSizeSmTablet) }
+    @objc open var sizeIconWithBodyMediumSizeMd: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyMediumSizeMdMobile, regular: sizeIconWithBodyMediumSizeMdTablet) }
+    @objc open var sizeIconWithBodyMediumSizeLg: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodyMediumSizeLgMobile, regular: sizeIconWithBodyMediumSizeLgTablet) }
 
-    @objc open var sizeIconWithBodySmallSizeShort: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodySmallSizeShortMobile, regular: sizeIconWithBodySmallSizeShortTablet) }
-    @objc open var sizeIconWithBodySmallSizeMedium: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodySmallSizeMediumMobile, regular: sizeIconWithBodySmallSizeMediumTablet) }
-    @objc open var sizeIconWithBodySmallSizeTall: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodySmallSizeTallMobile, regular: sizeIconWithBodySmallSizeTallTablet) }
+    @objc open var sizeIconWithBodySmallSizeSm: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodySmallSizeSmMobile, regular: sizeIconWithBodySmallSizeSmTablet) }
+    @objc open var sizeIconWithBodySmallSizeMd: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodySmallSizeMdMobile, regular: sizeIconWithBodySmallSizeMdTablet) }
+    @objc open var sizeIconWithBodySmallSizeLg: MultipleSizeSemanticTokens { MultipleSizeSemanticTokens(compact: sizeIconWithBodySmallSizeLgMobile, regular: sizeIconWithBodySmallSizeLgTablet) }
 
     // MARK: - Semantic token - Sizing - Max width typography
 

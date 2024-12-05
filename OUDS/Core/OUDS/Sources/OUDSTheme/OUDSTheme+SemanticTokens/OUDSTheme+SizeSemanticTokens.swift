@@ -15,8 +15,6 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// swiftlint:disable identifier_name
-
 extension OUDSTheme: SizeSemanticTokens {
     @objc open var sizeIconDecorative2xl: SizeSemanticToken { DimensionRawTokens.dimension900 }
     @objc open var sizeIconDecorative2xs: SizeSemanticToken { DimensionRawTokens.dimension200 }
@@ -102,5 +100,3 @@ extension OUDSTheme: SizeSemanticTokens {
     @objc open var sizeMaxWidthTypeHeadingXlargeMobile: SizeSemanticToken { DimensionRawTokens.dimension9000 }
     @objc open var sizeMaxWidthTypeHeadingXlargeTablet: SizeSemanticToken { DimensionRawTokens.dimension9000 }
 }
-
-// swiftlint:enable identifier_name
