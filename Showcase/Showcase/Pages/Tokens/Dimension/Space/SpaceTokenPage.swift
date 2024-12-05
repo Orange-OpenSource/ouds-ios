@@ -41,12 +41,6 @@ struct SpaceTokenPage: View {
             Section { PaddingInlineProperty() } header: {
                 header("app_tokens_dimension_space_paddingInline_label")
             }
-            Section { PaddingInlineWithIconProperty() } header: {
-                header("app_tokens_dimension_space_paddingInlineWithIcon_label")
-            }
-            Section { PaddingInlineWithArrowProperty() } header: {
-                header("app_tokens_dimension_space_paddingInlineWithArrow_label")
-            }
             Section { PaddingInsetProperty() } header: {
                 header("app_tokens_dimension_space_paddingInset_label")
             }

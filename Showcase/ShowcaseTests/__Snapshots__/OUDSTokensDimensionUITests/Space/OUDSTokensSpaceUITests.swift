@@ -36,8 +36,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
@@ -60,8 +58,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
@@ -106,8 +102,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
@@ -185,62 +179,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     PaddingInlineProperty.Illustration(token: token)
-                }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
-        }
-    }
-
-    /// Tests all padding inline with icon `PaddingInlineWithIcon` spaces by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testPaddingInlineWithIcon(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
-        // Iterate through all background color cases defined in NamedSpace.PaddingInlineWithIcon
-        for namedToken in NamedSpace.PaddingInlineWithIcon.allCases {
-            // Generate the illustration for the specified space token using the spacePage instance
-            let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    PaddingInlineWithIconProperty.Illustration(token: token)
-                }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
-        }
-    }
-
-    /// Tests all padding inline with arrow `PaddingInlineWithArrow`  with arrow spaces by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testPaddingInlineWithArrow(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
-        /// Iterate through all background color cases defined in NamedSpace.PaddingInlineWithArrow
-        for namedToken in NamedSpace.PaddingInlineWithArrow.allCases {
-            // Generate the illustration for the specified space token using the spacePage instance
-            let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    PaddingInlineWithArrowProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }

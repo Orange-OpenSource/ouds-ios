@@ -35,46 +35,6 @@ struct PaddingInlineProperty: View {
     }
 }
 
-// MARK: - Padding Inline With Icon property
-
-struct PaddingInlineWithIconProperty: View {
-
-    var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.PaddingInlineWithIcon.allCases) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", iconAsset: .icon, paddings: .leading)
-        } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .leading(.icon))
-        }
-    }
-}
-
-// MARK: - Padding Inline With Arrow property
-
-struct PaddingInlineWithArrowProperty: View {
-
-    var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.PaddingInlineWithArrow.allCases) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", iconAsset: .arrow, paddings: .leading)
-        } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .leading(.arrow))
-        }
-    }
-}
-
 // MARK: - Padding Inset property
 
 struct PaddingInsetProperty: View {

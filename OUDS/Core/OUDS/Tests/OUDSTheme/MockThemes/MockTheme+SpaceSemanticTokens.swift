@@ -80,24 +80,6 @@ extension MockTheme {
     override open var spacePaddingInlineTaller: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override open var spacePaddingInlineTallest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
-    override open var spacePaddingInlineWithIconNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithIconShortest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithIconShorter: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithIconShort: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithIconMedium: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithIconTall: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithIconTaller: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithIconTallest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-
-    override open var spacePaddingInlineWithArrowNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithArrowShortest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithArrowShorter: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithArrowShort: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithArrowMedium: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithArrowTall: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithArrowTaller: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-    override open var spacePaddingInlineWithArrowTallest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
-
     // MARK: Semantic token - Padding - Padding stack
 
     override open var spacePaddingBlockNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }

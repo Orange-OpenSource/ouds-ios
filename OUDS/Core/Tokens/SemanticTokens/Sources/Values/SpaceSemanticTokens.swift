@@ -70,24 +70,6 @@ public protocol SpaceSemanticTokens {
     var spacePaddingInlineTaller: SpaceSemanticToken { get }
     var spacePaddingInlineTallest: SpaceSemanticToken { get }
 
-    var spacePaddingInlineWithIconNone: SpaceSemanticToken { get }
-    var spacePaddingInlineWithIconShortest: SpaceSemanticToken { get }
-    var spacePaddingInlineWithIconShorter: SpaceSemanticToken { get }
-    var spacePaddingInlineWithIconShort: SpaceSemanticToken { get }
-    var spacePaddingInlineWithIconMedium: SpaceSemanticToken { get }
-    var spacePaddingInlineWithIconTall: SpaceSemanticToken { get }
-    var spacePaddingInlineWithIconTaller: SpaceSemanticToken { get }
-    var spacePaddingInlineWithIconTallest: SpaceSemanticToken { get }
-
-    var spacePaddingInlineWithArrowNone: SpaceSemanticToken { get }
-    var spacePaddingInlineWithArrowShortest: SpaceSemanticToken { get }
-    var spacePaddingInlineWithArrowShorter: SpaceSemanticToken { get }
-    var spacePaddingInlineWithArrowShort: SpaceSemanticToken { get }
-    var spacePaddingInlineWithArrowMedium: SpaceSemanticToken { get }
-    var spacePaddingInlineWithArrowTall: SpaceSemanticToken { get }
-    var spacePaddingInlineWithArrowTaller: SpaceSemanticToken { get }
-    var spacePaddingInlineWithArrowTallest: SpaceSemanticToken { get }
-
     // MARK: Semantic token - Spacing - Padding - Padding stack
 
     var spacePaddingBlockNone: SpaceSemanticToken { get }
