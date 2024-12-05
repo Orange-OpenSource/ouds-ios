@@ -17,7 +17,7 @@ struct ButtonPage: View {
 
     // MARK: Stored properties
 
-    let configuration = ButtonConfigurationModel()
+    private let configuration = ButtonConfigurationModel()
 
     // MARK: Body
 
@@ -32,14 +32,14 @@ struct ButtonPage: View {
     // MARK: Private helpers
 
     @ViewBuilder
-    private func componentView(configuration: ComponentConfiguration) -> some View {
+    private func componentView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? ButtonConfigurationModel {
             ButtonIllustration(model: model)
         }
     }
 
     @ViewBuilder
-    private func configurationView(configuration: ComponentConfiguration) -> some View {
+    private func configurationView(with configuration: ComponentConfiguration) -> some View {
         if let model = configuration as? ButtonConfigurationModel {
             ButtonConfiguration(model: model)
         }
@@ -47,9 +47,9 @@ struct ButtonPage: View {
 }
 
 /// The model shared between `ButtonPageConfiguration` view and `ButtonPageComponent` view.
-class ButtonConfigurationModel: ComponentConfiguration, ObservableObject {
+final class ButtonConfigurationModel: ComponentConfiguration, ObservableObject {
     var description: String {
-        "This is a short diecriotion of Button"
+        "This is a short description of Button"
     }
 
     var code: String { """
@@ -72,7 +72,7 @@ class ButtonConfigurationModel: ComponentConfiguration, ObservableObject {
     deinit { }
 }
 
-/// The component illustration according toi the configuration.
+/// The component illustration according to the configuration.
 struct ButtonIllustration: View {
 
     // MARK: Environment properties

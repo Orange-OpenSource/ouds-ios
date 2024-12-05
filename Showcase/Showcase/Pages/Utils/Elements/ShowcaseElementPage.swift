@@ -15,9 +15,9 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Used to present the element in same layout with :
-/// - a text for the description,
-/// - an optional image to illustrate the element,
+/// Used to present the element in same layout with:
+/// - a text for the description
+/// - an optional image to illustrate the element
 /// - a name as title of the page
 /// - illustration to present all aspects of the element
 struct ShowcaseElementPage: View {

@@ -15,7 +15,7 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-/// Used to list all elements in the main screen of the application.
+/// Used to list all elements in the main screen of the application
 /// (enumerate tokens and components)
 struct ShowcaseElementsPage: View {
 
