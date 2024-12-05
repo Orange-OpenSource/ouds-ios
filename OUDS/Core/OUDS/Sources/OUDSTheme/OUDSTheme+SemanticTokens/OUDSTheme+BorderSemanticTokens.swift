@@ -24,8 +24,8 @@ extension OUDSTheme: BorderSemanticTokens {
     @objc open var borderStyleDefault: BorderStyleSemanticToken { BorderRawTokens.borderStyleSolid }
     @objc open var borderStyleDrag: BorderStyleSemanticToken { BorderRawTokens.borderStyleDashed }
     @objc open var borderWidthDefault: BorderWidthSemanticToken { BorderRawTokens.borderWidth25 }
-    @objc open var borderWidthFocus: BorderWidthSemanticToken { BorderRawTokens.borderWidth50 }
-    @objc open var borderWidthFocusInset: BorderWidthSemanticToken { BorderRawTokens.borderWidth100 }
+    @objc open var borderWidthFocus: BorderWidthSemanticToken { BorderRawTokens.borderWidth125 }
+    @objc open var borderWidthFocusInset: BorderWidthSemanticToken { BorderRawTokens.borderWidth50 }
     @objc open var borderWidthMedium: BorderWidthSemanticToken { BorderRawTokens.borderWidth50 }
     @objc open var borderWidthNone: BorderWidthSemanticToken { BorderRawTokens.borderWidth0 }
     @objc open var borderWidthThick: BorderWidthSemanticToken { BorderRawTokens.borderWidth75 }
