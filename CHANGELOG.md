@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Rename `opacityTransparent` opacity semantic token to `opacityInvisible`
+- [Library] Update `OpacitySemanticTokens` and `OpacityRawTokens` tokens (tokenator *20241204110957*)
 - [Library] Update `OrangeBrandColorRawTokens` tokens (tokenator *20241204111119*)
 - [Library] Update `SizeSemanticTokens` tokens (tokenator *20241204110236*)
 - [Library] Rename any `sizeIcon**` size semantic tokens applying "T-shirt sizes" template

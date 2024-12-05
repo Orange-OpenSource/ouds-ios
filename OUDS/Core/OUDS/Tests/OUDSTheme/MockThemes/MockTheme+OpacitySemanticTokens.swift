@@ -19,7 +19,7 @@ extension MockTheme {
 
     static let mockThemeOpacityRawToken: OpacityRawToken = 713
 
-    override open var opacityTransparent: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override open var opacityInvisible: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
     override open var opacityWeaker: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
     override open var opacityWeak: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
     override open var opacityMedium: OpacitySemanticToken { Self.mockThemeOpacityRawToken }

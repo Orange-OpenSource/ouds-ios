@@ -97,7 +97,7 @@ struct ShowcaseCode: View {
         .accessibilityHint("app_tokens_code_copy_button_a11y")
         .overlay(
             Rectangle()
-                .opacity(theme.opacityTransparent)
+                .opacity(theme.opacityInvisible)
                 .frame(minWidth: 40, maxWidth: .infinity, alignment: .leading)
                 .oudsBorder(style: theme.borderStyleDefault,
                             width: theme.borderWidthThin,

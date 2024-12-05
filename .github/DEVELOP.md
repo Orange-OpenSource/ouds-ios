@@ -161,7 +161,7 @@ Any interface modifications require regenerating the illustrations using the too
 The snapshot tool fetched the reference image to compare it against the current screen and detected no differences, resulting in a success
 
 5. Run the snapshot test (failure):
-    - We will deliberately change the image by setting the `OpacityOpaque` token to `OpacityTransparent` in class `OpacityTokenPage.swift`
+    - We will deliberately change the image by setting the `OpacityOpaque` token to `OpacityInvisible` in class `OpacityTokenPage.swift`
 
       <img width="561" alt="IntentionalTokenModification" src="https://github.com/user-attachments/assets/1d138b7b-2998-40b7-bf39-d9a597ced6c0">
     - Test result failure :
