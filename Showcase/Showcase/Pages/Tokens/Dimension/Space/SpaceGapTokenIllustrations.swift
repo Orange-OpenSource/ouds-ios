@@ -38,52 +38,6 @@ struct GapInlineProperty: View {
     }
 }
 
-// MARK: - Gap Inline With Icon property
-
-struct GapInlineWithIconProperty: View {
-
-    var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.GapInlineWithIcon.allCases) {
-            SpaceHeaderDescription(
-                text: "app_tokens_dimension_space_header_text",
-                iconAsset: .icon,
-                paddings: .trailing)
-        } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .leading( .icon))
-        }
-    }
-}
-
-// MARK: - Gap Inline With Arrow property
-
-struct GapInlineWithArrowProperty: View {
-
-    var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.GapInlineWithArrow.allCases) {
-            SpaceHeaderDescription(
-                text: "app_tokens_dimension_space_header_text",
-                iconAsset: .arrow,
-                paddings: .trailing)
-        } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .leading( .arrow))
-        }
-    }
-}
-
 // MARK: - Gap Stack property
 
 struct GapStackProperty: View {
@@ -103,29 +57,6 @@ struct GapStackProperty: View {
         let token: SpaceSemanticToken
         var body: some View {
             SpaceCommonIllustration(dimension: token, padding: .centerVerticaly)
-        }
-    }
-}
-
-// MARK: - Gap Stack With Icon property
-
-struct GapStackWithIconProperty: View {
-
-    var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.GapStackWithIcon.allCases) {
-            SpaceHeaderDescription(
-                text: "app_tokens_dimension_space_header_text",
-                iconAsset: .icon,
-                paddings: .bottom)
-        } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .bottom(.icon))
         }
     }
 }

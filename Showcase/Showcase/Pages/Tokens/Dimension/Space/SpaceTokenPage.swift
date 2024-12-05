@@ -47,24 +47,12 @@ struct SpaceTokenPage: View {
             Section { PaddingStackProperty() } header: {
                 header("app_tokens_dimension_space_paddingStack_label")
             }
-            Section { PaddingStackWithIconProperty() } header: {
-                header("app_tokens_dimension_space_paddingStackWithIcon_label")
-            }
             // Gap Space Tokens
             Section { GapInlineProperty() } header: {
                 header("app_tokens_dimension_space_gapInline_label")
             }
-            Section { GapInlineWithIconProperty() } header: {
-                header("app_tokens_dimension_space_gapInlineWithIcon_label")
-            }
-            Section { GapInlineWithArrowProperty() } header: {
-                header("app_tokens_dimension_space_gapInlineWithArrow_label")
-            }
             Section { GapStackProperty() } header: {
                 header("app_tokens_dimension_space_gapStack_label")
-            }
-            Section { GapStackWithIconProperty() } header: {
-                header("app_tokens_dimension_space_gapStackWithIcon_label")
             }
         }
         .padding(.horizontal, theme.spaceFixedMedium)

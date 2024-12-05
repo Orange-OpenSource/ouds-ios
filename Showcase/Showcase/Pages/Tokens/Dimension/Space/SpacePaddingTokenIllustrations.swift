@@ -74,23 +74,3 @@ struct PaddingStackProperty: View {
         }
     }
 }
-
-// MARK: - Padding Stack With Icon property
-
-struct PaddingStackWithIconProperty: View {
-
-    var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.PaddingStackWithIcon.allCases) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", iconAsset: .icon, paddings: .top)
-         } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .top(.icon))
-        }
-    }
-}

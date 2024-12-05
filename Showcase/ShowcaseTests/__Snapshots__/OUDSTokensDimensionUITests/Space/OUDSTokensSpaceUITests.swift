@@ -38,12 +38,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testGapInline(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testGapStack(theme: theme, interfaceStyle: interfaceStyle)
-        testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Orange Theme Dark Mode Space Tests
@@ -60,12 +56,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testGapInline(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testGapStack(theme: theme, interfaceStyle: interfaceStyle)
-        testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Light Mode Space Tests
@@ -79,16 +71,10 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
         testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testGapInline(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testGapStack(theme: theme, interfaceStyle: interfaceStyle)
-        testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Dark Mode Space Tests
@@ -104,12 +90,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
         testGapInline(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInlineWithIcon(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInlineWithArrow(theme: theme, interfaceStyle: interfaceStyle)
         testGapStack(theme: theme, interfaceStyle: interfaceStyle)
-        testGapStackWithIcon(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Helper Functions
@@ -251,34 +233,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         }
     }
 
-    /// Tests all padding stack `PaddingStackWithIcon` spaces by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testPaddingStackWithIcon(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Iterate through all background color cases defined in NamedSpace.PaddingStack
-        for namedToken in NamedSpace.PaddingStackWithIcon.allCases {
-
-            // Generate the illustration for the specified space token using the spacePage instance
-            let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    PaddingStackWithIconProperty.Illustration(token: token)
-                }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
-        }
-    }
-
     /// Tests all gap inline `GapInline` spaces by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
@@ -307,62 +261,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         }
     }
 
-    /// Tests all `GapInlineWithIcon` spaces by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testGapInlineWithIcon(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
-        // Iterate through all background color cases defined in NamedSpace.GapInline
-        for namedToken in NamedSpace.GapInlineWithIcon.allCases {
-            // Generate the illustration for the specified space token using the spacePage instance
-            let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    GapInlineWithIconProperty.Illustration(token: token)
-                }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
-        }
-    }
-
-    /// Tests all `GapInlineWithArrow` spaces by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testGapInlineWithArrow(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-
-        // Iterate through all background color cases defined in NamedSpace.GapInline
-        for namedToken in NamedSpace.GapInlineWithArrow.allCases {
-            // Generate the illustration for the specified space token using the spacePage instance
-            let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    GapInlineWithArrowProperty.Illustration(token: token)
-                }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
-        }
-    }
-
     /// Tests all `GapStack` spaces by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
@@ -375,34 +273,6 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     GapStackProperty.Illustration(token: token)
-                }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = namedToken.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
-        }
-    }
-
-    /// Tests all gap inline `GapStackWithIcon` spaces by capturing their snapshots.
-    /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testGapStackWithIcon(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Iterate through all background color cases defined in NamedSpace.GapInline
-        for namedToken in NamedSpace.GapStackWithIcon.allCases {
-
-            // Generate the illustration for the specified space token using the spacePage instance
-            let illustration = OUDSThemeableView(theme: theme) {
-                SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    GapStackWithIconProperty.Illustration(token: token)
                 }
                 .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }

@@ -63,30 +63,30 @@ public protocol SpaceSemanticTokens {
     // MARK: Semantic token - Spacing - Padding - Padding inline
 
     var spacePaddingInlineNone: SpaceSemanticToken { get }
+    var spacePaddingInlineSmash: SpaceSemanticToken { get }
+    var spacePaddingInlineShortest: SpaceSemanticToken { get }
     var spacePaddingInlineShorter: SpaceSemanticToken { get }
     var spacePaddingInlineShort: SpaceSemanticToken { get }
     var spacePaddingInlineMedium: SpaceSemanticToken { get }
     var spacePaddingInlineTall: SpaceSemanticToken { get }
     var spacePaddingInlineTaller: SpaceSemanticToken { get }
     var spacePaddingInlineTallest: SpaceSemanticToken { get }
+    var spacePaddingInlineSpacious: SpaceSemanticToken { get }
+    var spacePaddingInlineHuge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding stack
 
     var spacePaddingBlockNone: SpaceSemanticToken { get }
+    var spacePaddingBlockSmash: SpaceSemanticToken { get }
+    var spacePaddingBlockShortest: SpaceSemanticToken { get }
     var spacePaddingBlockShorter: SpaceSemanticToken { get }
     var spacePaddingBlockShort: SpaceSemanticToken { get }
     var spacePaddingBlockMedium: SpaceSemanticToken { get }
     var spacePaddingBlockTall: SpaceSemanticToken { get }
     var spacePaddingBlockTaller: SpaceSemanticToken { get }
     var spacePaddingBlockTallest: SpaceSemanticToken { get }
-
-    var spacePaddingBlockWithIconNone: SpaceSemanticToken { get }
-    var spacePaddingBlockWithIconShortest: SpaceSemanticToken { get }
-    var spacePaddingBlockWithIconShorter: SpaceSemanticToken { get }
-    var spacePaddingBlockWithIconShort: SpaceSemanticToken { get }
-    var spacePaddingBlockWithIconMedium: SpaceSemanticToken { get }
-    var spacePaddingBlockWithIconTall: SpaceSemanticToken { get }
-    var spacePaddingBlockWithIconTaller: SpaceSemanticToken { get }
+    var spacePaddingBlockSpacious: SpaceSemanticToken { get }
+    var spacePaddingBlockHuge: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Padding inset
 
@@ -104,41 +104,24 @@ public protocol SpaceSemanticTokens {
     // MARK: Semantic token - Spacing - Padding - Gap inline
 
     var spaceColumnGapNone: SpaceSemanticToken { get }
+    var spaceColumnGapSmash: SpaceSemanticToken { get }
+    var spaceColumnGapShortest: SpaceSemanticToken { get }
     var spaceColumnGapShorter: SpaceSemanticToken { get }
     var spaceColumnGapShort: SpaceSemanticToken { get }
     var spaceColumnGapMedium: SpaceSemanticToken { get }
     var spaceColumnGapTall: SpaceSemanticToken { get }
     var spaceColumnGapTaller: SpaceSemanticToken { get }
-
-    var spaceColumnGapWithIconNone: SpaceSemanticToken { get }
-    var spaceColumnGapWithIconShortest: SpaceSemanticToken { get }
-    var spaceColumnGapWithIconShorter: SpaceSemanticToken { get }
-    var spaceColumnGapWithIconShort: SpaceSemanticToken { get }
-    var spaceColumnGapWithIconMedium: SpaceSemanticToken { get }
-    var spaceColumnGapWithIconTall: SpaceSemanticToken { get }
-
-    var spaceColumnGapWithArrowNone: SpaceSemanticToken { get }
-    var spaceColumnGapWithArrowShortest: SpaceSemanticToken { get }
-    var spaceColumnGapWithArrowShorter: SpaceSemanticToken { get }
-    var spaceColumnGapWithArrowShort: SpaceSemanticToken { get }
-    var spaceColumnGapWithArrowMedium: SpaceSemanticToken { get }
-    var spaceColumnGapWithArrowTall: SpaceSemanticToken { get }
+    var spaceColumnGapTallest: SpaceSemanticToken { get }
 
     // MARK: Semantic token - Spacing - Padding - Gap stack
 
     var spaceRowGapNone: SpaceSemanticToken { get }
+    var spaceRowGapSmash: SpaceSemanticToken { get }
     var spaceRowGapShortest: SpaceSemanticToken { get }
     var spaceRowGapShorter: SpaceSemanticToken { get }
     var spaceRowGapShort: SpaceSemanticToken { get }
     var spaceRowGapMedium: SpaceSemanticToken { get }
     var spaceRowGapTall: SpaceSemanticToken { get }
-
-    var spaceRowGapWithIconNone: SpaceSemanticToken { get }
-    var spaceRowGapWithIconShortest: SpaceSemanticToken { get }
-    var spaceRowGapWithIconShorter: SpaceSemanticToken { get }
-    var spaceRowGapWithIconShort: SpaceSemanticToken { get }
-    var spaceRowGapWithIconMedium: SpaceSemanticToken { get }
-    var spaceRowGapWithIconTall: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
