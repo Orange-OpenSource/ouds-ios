@@ -15,6 +15,8 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+/// Overrides **all** the opacity semantic tokens (from its super class, i.e. `OUDSTheme` so as to test overriding of them (unit tests)
+/// and to act like smoke tests with crashing tests if some tokens disappeared.
 extension MockTheme {
 
     static let mockThemeOpacityRawToken: OpacityRawToken = 713
