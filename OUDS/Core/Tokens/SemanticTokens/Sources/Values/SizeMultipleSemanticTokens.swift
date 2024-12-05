@@ -26,6 +26,8 @@
 /// These tokens are updated by the *tokenator*.
 /// Then they are gathered and wrapped so as to be used easily thanks to this ``MultipleSizeSemanticTokens`` which must be updated manually.
 ///
+/// Each token declared in this protocol must have its version *Mobile* and *Tablet* deczlre in ``SizeSemanticTokens`` protocol in order to define ``MultipleSizeSemanticTokens`` for each pair of them.
+///
 /// In few words:
 /// ```swift
 ///         // Some sizing raw tokens, defined by the tokenator (in DimensionRawTokens+Values.swift)
@@ -34,16 +36,16 @@
 ///
 ///         // The sizing semantic tokens using them,
 ///         // declared (in SizeSemanticTokens.swift) and defined (in OUDSTheme+SizeSemanticTokens.swift) by the tokenator
-///         var sizeIconWithHeadingXlargeSizeShortMobile: SizeSemanticToken { DimensionRawTokens.dimension550 }
-///         var sizeIconWithHeadingXlargeSizeShortTablet: SizeSemanticToken { DimensionRawTokens.dimension650 }
+///         var sizeIconWithHeadingXlargeSizeSmMobile: SizeSemanticToken { DimensionRawTokens.dimension550 }
+///         var sizeIconWithHeadingXlargeSizeSmTablet: SizeSemanticToken { DimensionRawTokens.dimension650 }
 ///
 ///         // The 'higher level' size semantic tokens wrapping them and exposed to users,
 ///         // declared (in SizeMultipleSemanticTokens.swift) and defined (in OUDSTheme+SizeMultipleSemanticTokens.swift) manualy
-///         var sizeIconWithHeadingXlargeSizeShort: MultipleSizeSemanticTokens {
-///             MultipleSizeSemanticTokens(compact: sizeIconWithHeadingXlargeSizeShortMobile, regular: sizeIconWithHeadingXlargeSizeShortTablet)
+///         var sizeIconWithHeadingXlargeSizeSm: MultipleSizeSemanticTokens {
+///             MultipleSizeSemanticTokens(compact: sizeIconWithHeadingXlargeSizeSmMobile, regular: sizeIconWithHeadingXlargeSizeSmTablet)
 ///         }
 ///
-///         // Thus users can in their components use sizeIconWithHeadingXlargeSizeShort as defined in their design system
+///         // Thus users can in their components use sizeIconWithHeadingXlargeSizeSm as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
 /// ```
 /// 
@@ -51,33 +53,33 @@ public protocol SizeMultipleSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    var sizeIconWithHeadingXlargeSizeShort: MultipleSizeSemanticTokens { get }
-    var sizeIconWithHeadingXlargeSizeMedium: MultipleSizeSemanticTokens { get }
-    var sizeIconWithHeadingXlargeSizeTall: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingXlargeSizeSm: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingXlargeSizeMd: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingXlargeSizeLg: MultipleSizeSemanticTokens { get }
 
-    var sizeIconWithHeadingLargeSizeShort: MultipleSizeSemanticTokens { get }
-    var sizeIconWithHeadingLargeSizeMedium: MultipleSizeSemanticTokens { get }
-    var sizeIconWithHeadingLargeSizeTall: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingLargeSizeSm: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingLargeSizeMd: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingLargeSizeLg: MultipleSizeSemanticTokens { get }
 
-    var sizeIconWithHeadingMediumSizeShort: MultipleSizeSemanticTokens { get }
-    var sizeIconWithHeadingMediumSizeMedium: MultipleSizeSemanticTokens { get }
-    var sizeIconWithHeadingMediumSizeTall: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingMediumSizeSm: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingMediumSizeMd: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingMediumSizeLg: MultipleSizeSemanticTokens { get }
 
-    var sizeIconWithHeadingSmallSizeShort: MultipleSizeSemanticTokens { get }
-    var sizeIconWithHeadingSmallSizeMedium: MultipleSizeSemanticTokens { get }
-    var sizeIconWithHeadingSmallSizeTall: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingSmallSizeSm: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingSmallSizeMd: MultipleSizeSemanticTokens { get }
+    var sizeIconWithHeadingSmallSizeLg: MultipleSizeSemanticTokens { get }
 
-    var sizeIconWithBodyLargeSizeShort: MultipleSizeSemanticTokens { get }
-    var sizeIconWithBodyLargeSizeMedium: MultipleSizeSemanticTokens { get }
-    var sizeIconWithBodyLargeSizeTall: MultipleSizeSemanticTokens { get }
+    var sizeIconWithBodyLargeSizeSm: MultipleSizeSemanticTokens { get }
+    var sizeIconWithBodyLargeSizeMd: MultipleSizeSemanticTokens { get }
+    var sizeIconWithBodyLargeSizeLg: MultipleSizeSemanticTokens { get }
 
-    var sizeIconWithBodyMediumSizeShort: MultipleSizeSemanticTokens { get }
-    var sizeIconWithBodyMediumSizeMedium: MultipleSizeSemanticTokens { get }
-    var sizeIconWithBodyMediumSizeTall: MultipleSizeSemanticTokens { get }
+    var sizeIconWithBodyMediumSizeSm: MultipleSizeSemanticTokens { get }
+    var sizeIconWithBodyMediumSizeMd: MultipleSizeSemanticTokens { get }
+    var sizeIconWithBodyMediumSizeLg: MultipleSizeSemanticTokens { get }
 
-    var sizeIconWithBodySmallSizeShort: MultipleSizeSemanticTokens { get }
-    var sizeIconWithBodySmallSizeMedium: MultipleSizeSemanticTokens { get }
-    var sizeIconWithBodySmallSizeTall: MultipleSizeSemanticTokens { get }
+    var sizeIconWithBodySmallSizeSm: MultipleSizeSemanticTokens { get }
+    var sizeIconWithBodySmallSizeMd: MultipleSizeSemanticTokens { get }
+    var sizeIconWithBodySmallSizeLg: MultipleSizeSemanticTokens { get }
 
     // MARK: - Semantic token - Sizing - Max width typography
 
