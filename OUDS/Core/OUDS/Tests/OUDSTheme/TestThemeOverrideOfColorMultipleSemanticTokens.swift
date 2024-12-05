@@ -38,7 +38,7 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
     }
 
     // MARK: - Tests
-    
+
     // MARK: - Color - Opacity - Invisible
 
     func testInheritedThemeCanOverrideSemanticTokenColorOpacityInvisibleBlack() throws {
@@ -880,7 +880,6 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.colorRepositoryWarningLowest, abstractTheme.colorRepositoryWarningLowest)
         XCTAssertTrue(inheritedTheme.colorRepositoryWarningLowest == OtherMockTheme.otherMockThemeMultipleColorSemanticTokens)
     }
-
 }
 
 // swiftlint:enable type_body_length

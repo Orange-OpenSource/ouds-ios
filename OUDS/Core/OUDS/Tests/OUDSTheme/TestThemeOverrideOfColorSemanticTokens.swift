@@ -27,17 +27,17 @@ import XCTest
 /// **These tests checks if any _colors semantic tokens_ can be surcharged by a child theme**
 /// **Also, it can help to find removed or renamed tokens by having tests no more compilable**
 final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
-    
+
     private var abstractTheme: OUDSTheme!
     private var inheritedTheme: OUDSTheme!
-    
+
     override func setUp() async throws {
         abstractTheme = MockTheme()
         inheritedTheme = OtherMockTheme()
     }
-    
+
     // MARK: - Tests
- 
+
     // MARK: - Color semantic tokens - Light and dark
 
     func testInheritedThemeCanOverrideSemanticTokenColorOpacityInvisibleBlackLight() throws {
@@ -1722,7 +1722,6 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.colorRepositoryWarningLowestDark, abstractTheme.colorRepositoryWarningLowestDark)
         XCTAssertTrue(inheritedTheme.colorRepositoryWarningLowestDark == OtherMockTheme.otherMockThemeSemanticColorToken)
     }
-
 }
 
 // swiftlint:enable type_body_length

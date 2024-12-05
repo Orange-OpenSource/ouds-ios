@@ -16,9 +16,7 @@
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
-// swiftlint:disable identifier_name
 // swiftlint:disable line_length
-// swiftlint:disable file_length
 
 /// This is a group of semantic tokens for **colors** but using ``MultipleColorSemanticTokens``.
 ///
@@ -48,13 +46,13 @@
 public protocol ColorMultipleSemanticTokens {
 
     // MARK: - Color - Opacity - Invisible
-    
+
     var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { get }
 
     var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Action
-    
+
     var colorActionDisabled: MultipleColorSemanticTokens { get }
 
     var colorActionEnabled: MultipleColorSemanticTokens { get }
@@ -94,7 +92,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorActionVisited: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Always
-    
+
     var colorAlwaysBlack: MultipleColorSemanticTokens { get }
 
     var colorAlwaysOnBlack: MultipleColorSemanticTokens { get }
@@ -104,7 +102,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorAlwaysWhite: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Background
-    
+
     var colorBgEmphasized: MultipleColorSemanticTokens { get }
 
     var colorBgPrimary: MultipleColorSemanticTokens { get }
@@ -114,7 +112,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorBgTertiary: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Border
-    
+
     var colorBorderBrandPrimary: MultipleColorSemanticTokens { get }
 
     var colorBorderDefault: MultipleColorSemanticTokens { get }
@@ -128,7 +126,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Content
-    
+
     var colorContentBrandPrimary: MultipleColorSemanticTokens { get }
 
     var colorContentDefault: MultipleColorSemanticTokens { get }
@@ -172,7 +170,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorContentStatusWarning: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Overlay
-    
+
     var colorOverlayDefault: MultipleColorSemanticTokens { get }
 
     var colorOverlayDrag: MultipleColorSemanticTokens { get }
@@ -182,7 +180,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorOverlayModal: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Surface
-    
+
     var colorSurfaceBrandPrimary: MultipleColorSemanticTokens { get }
 
     var colorSurfaceStatusAccentEmphasized: MultipleColorSemanticTokens { get }
@@ -210,7 +208,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Decorative
-    
+
     var colorDecorativeAccent1Default: MultipleColorSemanticTokens { get }
 
     var colorDecorativeAccent1Emphasized: MultipleColorSemanticTokens { get }
@@ -272,7 +270,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorDecorativeSkinTint900: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Chart
-    
+
     var colorChartCategoricalTier1: MultipleColorSemanticTokens { get }
 
     var colorChartCategoricalTier2: MultipleColorSemanticTokens { get }
@@ -308,7 +306,7 @@ public protocol ColorMultipleSemanticTokens {
     var colorChartNeutral: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Repository
-    
+
     var colorRepositoryAccentDefault: MultipleColorSemanticTokens { get }
 
     var colorRepositoryAccentHighest: MultipleColorSemanticTokens { get }
@@ -399,5 +397,4 @@ public protocol ColorMultipleSemanticTokens {
 }
 
 // swiftlint:enable missing_docs
-// swiftlint:enable identifier_name
 // swiftlint:enable line_length

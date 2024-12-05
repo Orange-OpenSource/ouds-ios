@@ -20,8 +20,6 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable line_length
-// swiftlint:disable identifier_name
-// swiftlint:disable file_length
 
 /// Defines wrapper objects for `ColorSemanticToken`.
 /// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
@@ -29,7 +27,7 @@ import OUDSTokensSemantic
 /// Some tokens must be overiden in `OrangeTheme` side because they rely on Orange brand colors.
 /// Helps to expose color semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension OUDSTheme: ColorMultipleSemanticTokens {
-    
+
     // MARK: - Color - Opacity - Invisible
 
     @objc open var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleBlackLight, dark: colorOpacityInvisibleBlackDark) }
@@ -37,7 +35,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleWhiteLight, dark: colorOpacityInvisibleWhiteDark) }
 
     // MARK: - Color - Action
-    
+
     @objc open var colorActionDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionDisabledLight, dark: colorActionDisabledDark) }
 
     @objc open var colorActionEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionEnabledLight, dark: colorActionEnabledDark) }
@@ -77,7 +75,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorActionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionVisitedLight, dark: colorActionVisitedDark) }
 
     // MARK: - Color - Always
-    
+
     @objc open var colorAlwaysBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysBlackLight, dark: colorAlwaysBlackDark) }
 
     @objc open var colorAlwaysOnBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysOnBlackLight, dark: colorAlwaysOnBlackDark) }
@@ -87,7 +85,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorAlwaysWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorAlwaysWhiteLight, dark: colorAlwaysWhiteDark) }
 
     // MARK: - Color - Background
-    
+
     @objc open var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgEmphasizedLight, dark: colorBgEmphasizedDark) }
 
     @objc open var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
@@ -97,7 +95,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgTertiaryLight, dark: colorBgTertiaryDark) }
 
     // MARK: - Color - Border
-    
+
     @objc open var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandPrimaryLight, dark: colorBorderBrandPrimaryDark) }
 
     @objc open var colorBorderDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderDefaultLight, dark: colorBorderDefaultDark) }
@@ -111,7 +109,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderOnBrandPrimaryLight, dark: colorBorderOnBrandPrimaryDark) }
 
     // MARK: - Color - Content
-    
+
     @objc open var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandPrimaryLight, dark: colorContentBrandPrimaryDark) }
 
     @objc open var colorContentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentDefaultLight, dark: colorContentDefaultDark) }
@@ -155,7 +153,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorContentStatusWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentStatusWarningLight, dark: colorContentStatusWarningDark) }
 
     // MARK: - Color - Overlay
-    
+
     @objc open var colorOverlayDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDefaultLight, dark: colorOverlayDefaultDark) }
 
     @objc open var colorOverlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayDragLight, dark: colorOverlayDragDark) }
@@ -165,7 +163,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorOverlayModal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOverlayModalLight, dark: colorOverlayModalDark) }
 
     // MARK: - Color - Surface
-    
+
     @objc open var colorSurfaceBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceBrandPrimaryLight, dark: colorSurfaceBrandPrimaryDark) }
 
     @objc open var colorSurfaceStatusAccentEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusAccentEmphasizedLight, dark: colorSurfaceStatusAccentEmphasizedDark) }
@@ -193,7 +191,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorSurfaceStatusWarningMutedLight, dark: colorSurfaceStatusWarningMutedDark) }
 
     // MARK: - Color - Decorative
-    
+
     @objc open var colorDecorativeAccent1Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorDecorativeAccent1DefaultLight, dark: colorDecorativeAccent1DefaultDark) }
 
     @objc open var colorDecorativeAccent1Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorDecorativeAccent1EmphasizedLight, dark: colorDecorativeAccent1EmphasizedDark) }
@@ -255,7 +253,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorDecorativeSkinTint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorDecorativeSkinTint900Light, dark: colorDecorativeSkinTint900Dark) }
 
     // MARK: - Color - Chart
-    
+
     @objc open var colorChartCategoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier1Light, dark: colorChartCategoricalTier1Dark) }
 
     @objc open var colorChartCategoricalTier2: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier2Light, dark: colorChartCategoricalTier2Dark) }
@@ -291,7 +289,7 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
     @objc open var colorChartNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartNeutralLight, dark: colorChartNeutralDark) }
 
     // MARK: - Color - Repository
-    
+
     @objc open var colorRepositoryAccentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentDefaultLight, dark: colorRepositoryAccentDefaultDark) }
 
     @objc open var colorRepositoryAccentHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentHighestLight, dark: colorRepositoryAccentHighestDark) }
@@ -382,4 +380,3 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 }
 
 // swiftlint:enable line_length
-// swiftlint:enable identifier_name

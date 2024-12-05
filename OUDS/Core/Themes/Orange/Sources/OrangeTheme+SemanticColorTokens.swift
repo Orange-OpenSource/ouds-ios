@@ -50,61 +50,62 @@ import OUDSTokensSemantic
 /// In few words, we need to keep isolated tokens and brand colors, provide kind of abstract architecture with isolated and overridable themes, but face troubles with *Figma* design kit having conception issues and producing JSON not reflecting the reality making *tokenator* unable to build the expected Swift code.
 /// We get uncompilable code for color tokens update and need to make the merge manualy.
 extension OrangeTheme {
- 
+
     // NOTE: Picked from OUDSTheme since tokenator update
     // Define here because using raw tokens not defined in OUDSTheme module
-    
+
     override open var colorActionLoadingLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-    
+
     override open var colorActionPressedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-    
+
     override open var colorActionSelectedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-    
+
     override open var colorActionLoadingDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorActionPressedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorActionSelectedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorBgTertiaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
- 
+
     override open var colorBgTertiaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
-    
+
     override open var colorBorderBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
+
     override open var colorBorderBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorContentBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-    
+
     override open var colorContentBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorSurfaceBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorSurfaceBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorSurfaceStatusAccentMutedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
-    
+
     override open var colorDecorativeBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorDecorativeBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorChartHighlightLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-    
+
     override open var colorChartHighlightDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorRepositoryAccentHighestLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
-    
+
     override open var colorRepositoryAccentLowestLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
-    
+
     override open var colorRepositoryAccentHighestDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
-    
+
     override open var colorRepositoryAccentLowestDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
-    
+
     override open var colorRepositoryPrimaryDefaultLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-    
+
     override open var colorRepositoryPrimaryLowLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-    
+
     override open var colorRepositoryPrimaryDefaultDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-    
+
     override open var colorRepositoryPrimaryLowDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 }
 
