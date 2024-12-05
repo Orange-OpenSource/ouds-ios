@@ -25,6 +25,8 @@
 /// Thus the "real" color semantic tokens are declared in ``SpaceSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).
 /// These tokens are updated by the *tokenator*. Then they are gathered and wrapped so as to be used easily thanks to this ``SpaceMultipleSemanticTokens`` which must be updated manually.
 ///
+/// Each token declared in this protocol must have its version *Mobile* and *Tablet* declared in ``SpaceSemanticTokens`` protocol in order to define ``MultipleSpaceSemanticTokens`` for each pair of them.
+///
 /// In few words:
 /// ```swift
 ///         // Some spacing raw tokens, defined by the tokenator (in DimensionRawTokens+Values.swift)

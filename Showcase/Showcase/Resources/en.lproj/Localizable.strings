@@ -45,11 +45,8 @@
 "app_tokens_dimension_space_scaled_label" = "Scaled";
 "app_tokens_dimension_space_fixed_label" = "Fixed";
 "app_tokens_dimension_space_paddingInline_label" = "Padding inline";
-"app_tokens_dimension_space_paddingInlineWithIcon_label" = "Padding inline with icon";
-"app_tokens_dimension_space_paddingInlineWithArrow_label" = "Padding inline with arrow";
 "app_tokens_dimension_space_paddingInset_label" = "Padding inset";
 "app_tokens_dimension_space_paddingStack_label" = "Padding stack";
-"app_tokens_dimension_space_paddingStackWithIcon_label" = "Padding stack with icon";
 "app_tokens_dimension_space_gapInline_label" = "Gap inline";
 "app_tokens_dimension_space_gapInlineWithIcon_label" = "Gap inline with icon";
 "app_tokens_dimension_space_gapInlineWithArrow_label" = "Gap inline with arrow";
