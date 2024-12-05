@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update `OrangeBrandColorRawTokens` tokens (tokenator *20241204111119*)
 - [Library] Update `SizeSemanticTokens` tokens (tokenator *20241204110236*)
 - [Library] Rename any `sizeIcon**` size semantic tokens applying "T-shirt sizes" template
 - [Library] Update `ElevationSemanticTokens` and `ColorRawTokens` tokens (tokenator *20241204111249*)
