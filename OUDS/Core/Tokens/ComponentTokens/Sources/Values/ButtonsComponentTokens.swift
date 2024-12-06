@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
@@ -19,26 +20,70 @@ import OUDSTokensSemantic
 /// **Warning: This is a draft component **
 public protocol ButtonsComponentTokens {
 
-    /*
-     NOTE:
-     1. Maybe composite tokens for border can be useful to define several types of buttons
-     2. Maybe a composite tokens should be defined and used to gather all these atomic semantic tokens
-     */
-
-    var buttonInternalSpacing: SpaceSemanticToken { get }
-
-    var buttonBorderStyle: BorderStyleSemanticToken { get }
-    var buttonBorderColor: ColorSemanticToken { get }
-    var buttonBorderWidth: BorderWidthSemanticToken { get }
+    // MARK: Border
+    var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
+    var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
+    var buttonBorderWidthMinimal: BorderWidthSemanticToken { get }
+    var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { get }
     var buttonBorderRadius: BorderRadiusSemanticToken { get }
 
-    var buttonForegroundColor: ColorSemanticToken { get }
-    var buttonBackgroundColor: ColorSemanticToken { get }
+    // MARK: Spacings
+    var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { get }
+    var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { get }
+    var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { get }
+    var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { get }
+    var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { get }
+    var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { get }
+    var buttonSpacePaddingBlock: SpaceSemanticToken { get }
+    var buttonSpaceInsetIconAlone: SpaceSemanticToken { get }
+    var buttonSpaceColumnGapIcon: SpaceSemanticToken { get }
+    var buttonSpaceColumnGapArrow: SpaceSemanticToken { get }
 
-    var buttonWidth: SizeSemanticToken { get }
-    var buttonHeight: SizeSemanticToken { get }
+    // MARK: Size
+    var buttonSizeIcon: SizeSemanticToken { get }
+    var buttonSizeIconOnly: SizeSemanticToken { get }
+    var buttonSizeLoader: SizeSemanticToken { get }
+    var buttonSizeMaxHeight: DimensionRawToken { get }
+    var buttonSizeMinHeight: DimensionRawToken { get }
+    var buttonSizeMinWidth: DimensionRawToken { get }
 
-    var buttonTypography: MultipleTypographyCompositeRawTokens { get }
+    // MARK: Color
+    var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { get }
+    var buttonColorBgDefaultHover: MultipleColorSemanticTokens { get }
+    var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { get }
+    var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { get }
+    var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { get }
+    var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { get }
+    var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens { get }
+    var buttonColorBgMinimalHover: MultipleColorSemanticTokens { get }
+    var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { get }
+    var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens { get }
+    var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { get }
+    var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { get }
+    var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { get }
+    var buttonColorContentDefaultHover: MultipleColorSemanticTokens { get }
+    var buttonColorContentDefaultPressed: MultipleColorSemanticTokens { get }
+    var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens { get }
+    var buttonColorContentDefaultLoading: MultipleColorSemanticTokens { get }
+    var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { get }
+    var buttonColorContentMinimalEnabled: MultipleColorSemanticTokens { get }
+    var buttonColorContentMinimalHover: MultipleColorSemanticTokens { get }
+    var buttonColorContentMinimalPressed: MultipleColorSemanticTokens { get }
+    var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens { get }
+    var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { get }
+    var buttonColorContentMinimalFocus: MultipleColorSemanticTokens { get }
+    var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { get }
+    var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { get }
+    var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { get }
+    var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { get }
+    var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { get }
+    var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { get }
+    var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { get }
+    var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { get }
+    var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { get }
+    var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { get }
+    var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { get }
+    var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

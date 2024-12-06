@@ -19,14 +19,15 @@ struct ButtonElement: ShowcaseElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_tokens_border_label"
+        name = "app_components_button_label"
         imageName = "ic_border"
         pageDescription = AnyView(ShowcaseElementPage(
                 name: name,
                 imageName: nil,
-                description: "app_tokens_border_description_text",
+                description: "app_components_button_description_text",
                 illustration: AnyView(ButtonPage())
             )
         )
     }
 }
+

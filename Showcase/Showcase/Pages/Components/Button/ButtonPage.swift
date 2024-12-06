@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSComponents
 import SwiftUI
 
 struct ButtonPage: View {
@@ -73,6 +74,7 @@ class ButtonConfigurationModel: ComponentConfiguration, ObservableObject {
 }
 
 /// The component illustration according toi the configuration.
+
 struct ButtonIllustration: View {
 
     // MARK: Environment properties
@@ -86,27 +88,65 @@ struct ButtonIllustration: View {
 
     // MARK: Body
 
+    // swiftlint:disable accessibility_label_for_image
     var body: some View {
         VStack(alignment: .center) {
 
-            HStack(alignment: .center) {
-                Spacer()
+            VStack {
+                Text("Icon").font(.title)
+                HStack(alignment: .center, spacing: 20) {
 
-                Button {
-                } label: {
-                    Text(model.text)
+                    OOUDSButton(hierarchy: .default, icon: Image(systemName: "photo.on.rectangle"))
+                        .disabled(!model.enabled)
+                    OOUDSButton(hierarchy: .strong, icon: Image(systemName: "photo.on.rectangle"))
+                        .disabled(!model.enabled)
+                    OOUDSButton(hierarchy: .minimal, icon: Image(systemName: "photo.on.rectangle"))
+                        .disabled(!model.enabled)
+                    OOUDSButton(hierarchy: .negative, icon: Image(systemName: "photo.on.rectangle"))
+                        .disabled(!model.enabled)
                 }
-                .padding(.vertical, 8)
-                .padding(.horizontal, 16)
-                .background(.orange)
-                .disabled(!model.enabled)
+            }
+            .padding(.all, theme.spaceFixedMedium)
 
-                Spacer()
+            VStack {
+                Text("Text").font(.title)
+                HStack(alignment: .center) {
+                    Spacer()
+
+                    VStack{
+                        OOUDSButton(hierarchy: .default, text: model.text)
+                        OOUDSButton(hierarchy: .strong, text: model.text)
+                        OOUDSButton(hierarchy: .minimal, text: model.text)
+                        OOUDSButton(hierarchy: .negative, text: model.text)
+                    }
+                    .disabled(!model.enabled)
+
+                    Spacer()
+                }
+            }
+            .padding(.all, theme.spaceFixedMedium)
+
+            VStack {
+                Text("Icon et Text").font(.title)
+
+                HStack(alignment: .center) {
+                    Spacer()
+                    VStack{
+                        OOUDSButton(hierarchy: .default, icon: Image(systemName: "photo.on.rectangle"), text: model.text)
+                        OOUDSButton(hierarchy: .strong, icon: Image(systemName: "photo.on.rectangle"), text: model.text)
+                        OOUDSButton(hierarchy: .minimal, icon: Image(systemName: "photo.on.rectangle"), text: model.text)
+                        OOUDSButton(hierarchy: .negative, icon: Image(systemName: "photo.on.rectangle"), text: model.text)
+                    }
+                    .disabled(!model.enabled)
+
+                    Spacer()
+                }
             }
             .padding(.all, theme.spaceFixedMedium)
         }
         .background(theme.colorBgSecondary.color(for: colorScheme))
     }
+    // swiftlint:enable accessibility_label_for_image
 }
 
 struct ButtonConfiguration: View {
