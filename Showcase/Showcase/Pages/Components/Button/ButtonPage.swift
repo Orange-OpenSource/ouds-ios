@@ -11,7 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSComponents
 import SwiftUI
+
+// MARK: Button page
 
 struct ButtonPage: View {
 
@@ -46,34 +49,31 @@ struct ButtonPage: View {
     }
 }
 
-/// The model shared between `ButtonPageConfiguration` view and `ButtonPageComponent` view.
-final class ButtonConfigurationModel: ComponentConfiguration, ObservableObject {
-    var description: String {
-        "This is a short description of Button"
-    }
+// MARK: Button component illustration
 
-    var code: String { """
-        Button {
-        } label: {
-            Text(\(text))
+struct ButtonIllustration: View {
+
+    // MARK: Environment properties
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: Stored properties
+
+    let model: ButtonConfigurationModel
+
+    // MARK: Body
+
+    var body: some View {
+        VStack(alignment: .center) {
+            ButtonDemo(model: model)
+            ButtonDemo(model: model).colorScheme(colorScheme == .dark ? .light : .dark)
+            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
         }
-        .disable(\(enabled ? "false" : "true"))
-        """
     }
-
-    @Published var text: String = "Hello"
-    @Published var enabled: Bool = true
-
-    init(text: String = "Hello", enabled: Bool = true) {
-        self.text = text
-        self.enabled = enabled
-    }
-
-    deinit { }
 }
 
-/// The component illustration according to the configuration.
-struct ButtonIllustration: View {
+private struct ButtonDemo: View {
 
     // MARK: Environment properties
 
@@ -84,47 +84,26 @@ struct ButtonIllustration: View {
 
     @StateObject var model: ButtonConfigurationModel
 
-    // MARK: Body
-
     var body: some View {
-        VStack(alignment: .center) {
+        HStack(alignment: .center) {
+            Spacer()
 
-            HStack(alignment: .center) {
-                Spacer()
-
-                Button {
-                } label: {
-                    Text(model.text)
-                }
-                .padding(.vertical, 8)
-                .padding(.horizontal, 16)
-                .background(.orange)
-                .disabled(!model.enabled)
-
-                Spacer()
+            // swiftlint:disable accessibility_label_for_image
+            switch model.layout {
+            case .iconOnly:
+                OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart")) {}
+            case .textOnly:
+                OOUDSButton(hierarchy: model.hierarchy, text: "app_components_button_label") {}
+            case .iconAndText:
+                OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), text: "app_components_button_label") {}
             }
-            .padding(.all, theme.spaces.spaceFixedMedium)
+
+            // swiftlint:enable accessibility_label_for_image
+
+            Spacer()
         }
+        .disabled(!model.enabled)
+        .padding(.all, theme.spaces.spaceFixedMedium)
         .background(theme.colors.colorBgSecondary.color(for: colorScheme))
-    }
-}
-
-struct ButtonConfiguration: View {
-
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
-
-    // MARK: Stored properties
-
-    @StateObject var model: ButtonConfigurationModel
-
-    // MARK: Body
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("Enabled", isOn: $model.enabled)
-            TextField("Button text", text: $model.text)
-        }
     }
 }

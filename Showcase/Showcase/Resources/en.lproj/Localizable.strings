@@ -11,9 +11,15 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-// MARK: - Common
-"app_common_viewCodeExample_label_a11y" = "Toggle code visibility";
+// MARK: Common
+
+"app_common_customize_label" = "Customize";
+"app_common_showCode_text" = "View token code example";
+"app_common_showCode_text_a11y" = "Toggle code visibility";
+"app_common_showCode_copy_a11y" = "Copy code to clipboard";
 "app_common_copyCode_a11y" = "Copy code";
+"app_common_enabled_label" = "Enabled";
+
 
 // MARK: - bottomBar
 
@@ -82,3 +88,15 @@
 
 "app_component_emptyContent_text" = "No content";
 "app_component_emptyContent_description_text" = "This content is under construction and will be available very soon";
+
+
+// MARK: Components: button
+"app_components_button_label" = "Button";
+"app_components_button_description_text" = "Buttons allow users to make choices or perform an action. They have multiple styles for various needs.";
+"app_components_button_hierarchy_label" = "Hierarchy";
+"app_components_button_style_label" = "Style";
+"app_components_button_layout_label" = "Layout";
+"app_components_button_textOnlyLayout_label" = "Text only";
+"app_components_button_iconAndTextLayout_label" = "Icon + text";
+"app_components_button_iconOnlyLayout_label" = "Icon only";
+"app_components_button_icon_a11y" = "Icon";

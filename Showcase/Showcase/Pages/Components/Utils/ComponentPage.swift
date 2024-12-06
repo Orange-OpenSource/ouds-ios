@@ -17,8 +17,17 @@ import SwiftUI
 
 /// The common protocol used to define the configuration of each component.
 
-protocol ComponentConfiguration {
-    var code: String { get }
+open class ComponentConfiguration: ObservableObject {
+    @Published var code: String = ""
+
+    init() {
+        self.updateCode()
+    }
+
+    deinit {}
+
+    // Overwride this function and update code when configuration changed
+    func updateCode() {}
 }
 
 /// Used to create an area with `Component` updated according to the `configuration`
@@ -30,7 +39,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     // MARK: Stored properties
 
     /// The configuration shared between configuration view and component illustration view.
-    let configuration: ComponentConfiguration
+    @ObservedObject var configuration: ComponentConfiguration
 
     /// The illustration displaying the component according to the configuration.
     @ViewBuilder

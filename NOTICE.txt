@@ -24,6 +24,10 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./Showcase/Showcase/Resources/Assets.xcassets/ic_token.imageset/ic_token.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/ic_component_atom.imageset/ic_component_atom.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/ic_info.imageset/ic_info.svg
+./Showcase/Showcase/Resources/Assets.xcassets/ic_heart.imageset/ic_heart.svg
+
+./Showcase/Showcase/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button_dark.svg
+./Showcase/Showcase/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button_light.svg
 
 ./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_empty_screen.imageset/il_empty_screen.svg
 ./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
