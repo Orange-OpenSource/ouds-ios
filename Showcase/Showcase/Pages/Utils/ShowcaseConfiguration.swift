@@ -19,6 +19,7 @@ struct ShowcaseConfiguration<Configuration>: View where Configuration: View {
     // MARK: Environment properties
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 
@@ -28,16 +29,20 @@ struct ShowcaseConfiguration<Configuration>: View where Configuration: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Text("Configuration")
-                .typeHeadingMedium(theme)
-                .frame(maxWidth: .infinity, alignment: .leading)
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                Text("app_common_customize_label")
+                    .typeHeadingMedium(theme)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.all, theme.spaces.spaceFixedShort)
 
-            Divider()
+                Divider()
+            }
+            .background(theme.colors.colorBgSecondary.color(for: colorScheme))
 
             configuration()
+                .padding(.all, theme.spaces.spaceFixedMedium)
         }
-        .padding(.all, theme.spaces.spaceFixedMedium)
         .oudsBorder(style: theme.borders.borderStyleDefault,
                     width: theme.borders.borderWidthThin,
                     radius: theme.borders.borderRadiusMedium,
