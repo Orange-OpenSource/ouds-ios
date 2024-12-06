@@ -24,8 +24,15 @@ struct ShowcaseCode: View {
 
     // MARK: Stored properties
 
-    @State private var isCodeVisible = false
-    let code: String
+    @State private var isCodeVisible: Bool
+    private let code: String
+
+    // MARK: Initializer
+
+    init(code: String, isCodeVisible: Bool = false) {
+        self.isCodeVisible = isCodeVisible
+        self.code = code
+    }
 
     // MARK: Body
 
@@ -44,7 +51,7 @@ struct ShowcaseCode: View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             Button(action: toggle) {
                 HStack {
-                    Text("app_tokens_code_title_label")
+                    Text("app_common_showCode_text")
                         .typeBodyStrongLarge(theme)
                         .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
                         .padding(.vertical, theme.spacePaddingInlineShort)
@@ -55,7 +62,7 @@ struct ShowcaseCode: View {
                         .foregroundColor(theme.colorSurfaceBrandPrimary.color(for: colorScheme))
                         .frame(width: 20, height: 20)
                         .padding(.trailing, theme.spacePaddingInlineMedium)
-                        .accessibilityLabel("app_tokens_code_visibility_button_a11y")
+                        .accessibilityLabel("app_common_showCode_text_a11y")
                 }
             }
             .buttonStyle(PlainButtonStyle())
@@ -85,7 +92,7 @@ struct ShowcaseCode: View {
                         .frame(width: 24, height: 24)
                         .padding(.trailing, theme.spacePaddingInlineMedium)
                         .alignmentGuide(.firstTextBaseline) { $0[.bottom] * 0.7 }
-                        .accessibilityLabel("app_tokens_code_copy_button_a11y")
+                        .accessibilityLabel("app_common_showCode_copy_a11y")
                 }
             })
         }
@@ -94,7 +101,7 @@ struct ShowcaseCode: View {
         .padding(.leading, theme.spacePaddingInlineMedium)
         .background(theme.colorBgSecondary.color(for: colorScheme))
         .accessibilityElement(children: .combine)
-        .accessibilityHint("app_tokens_code_copy_button_a11y")
+        .accessibilityHint("app_common_showCode_copy_a11y")
         .overlay(
             Rectangle()
                 .opacity(theme.opacityInvisible)
