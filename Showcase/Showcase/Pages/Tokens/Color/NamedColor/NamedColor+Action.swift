@@ -20,102 +20,66 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Action: String, CaseIterable {
-        case colorActionSelected
-        case colorActionSelectedOnBgEmphasized
         case colorActionDisabled
-        case colorActionDisabledOnBgEmphasized
-        case colorActionVisited
-        case colorActionVisitedOnBgEmphasized
-        case colorActionPrimaryEnabled
-        case colorActionPrimaryEnabledOnBgEmphasized
-        case colorActionPrimaryHover
-        case colorActionPrimaryHoverOnBgEmphasized
-        case colorActionPrimaryPressed
-        case colorActionPrimaryPressedOnBgEmphasized
-        case colorActionPrimaryLoading
-        case colorActionPrimaryLoadingOnBgEmphasized
-        case colorActionPrimaryFocus
-        case colorActionPrimaryFocusOnBgEmphasized
-        case colorActionSecondaryEnabled
-        case colorActionSecondaryEnabledOnBgEmphasized
-        case colorActionSecondaryHover
-        case colorActionSecondaryHoverOnBgEmphasized
-        case colorActionSecondaryPressed
-        case colorActionSecondaryPressedOnBgEmphasized
-        case colorActionSecondaryLoading
-        case colorActionSecondaryLoadingOnBgEmphasized
-        case colorActionSecondaryFocus
-        case colorActionSecondaryFocusOnBgEmphasized
+        case colorActionEnabled
+        case colorActionFocus
+        case colorActionHighlighted
+        case colorActionHover
+        case colorActionLoading
         case colorActionNegativeEnabled
-        case colorActionNegativeHover
-        case colorActionNegativePressed
-        case colorActionNegativeLoading
         case colorActionNegativeFocus
+        case colorActionNegativeHover
+        case colorActionNegativeLoading
+        case colorActionNegativePressed
+        case colorActionPressed
+        case colorActionSelected
+        case colorActionSupportEnabled
+        case colorActionSupportFocus
+        case colorActionSupportHover
+        case colorActionSupportLoading
+        case colorActionSupportPressed
+        case colorActionVisited
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorActionSelected:
-                return theme.colorActionSelected
-            case .colorActionSelectedOnBgEmphasized:
-                return theme.colorActionSelectedOnBgEmphasized
             case .colorActionDisabled:
                 return theme.colorActionDisabled
-            case .colorActionDisabledOnBgEmphasized:
-                return theme.colorActionDisabledOnBgEmphasized
-            case .colorActionVisited:
-                return theme.colorActionVisited
-            case .colorActionVisitedOnBgEmphasized:
-                return theme.colorActionVisitedOnBgEmphasized
-            case .colorActionPrimaryEnabled:
-                return theme.colorActionPrimaryEnabled
-            case .colorActionPrimaryEnabledOnBgEmphasized:
-                return theme.colorActionPrimaryEnabledOnBgEmphasized
-            case .colorActionPrimaryHover:
-                return theme.colorActionPrimaryHover
-            case .colorActionPrimaryHoverOnBgEmphasized:
-                return theme.colorActionPrimaryHoverOnBgEmphasized
-            case .colorActionPrimaryPressed:
-                return theme.colorActionPrimaryPressed
-            case .colorActionPrimaryPressedOnBgEmphasized:
-                return theme.colorActionPrimaryPressedOnBgEmphasized
-            case .colorActionPrimaryLoading:
-                return theme.colorActionPrimaryLoading
-            case .colorActionPrimaryLoadingOnBgEmphasized:
-                return theme.colorActionPrimaryLoadingOnBgEmphasized
-            case .colorActionPrimaryFocus:
-                return theme.colorActionPrimaryFocus
-            case .colorActionPrimaryFocusOnBgEmphasized:
-                return theme.colorActionPrimaryFocusOnBgEmphasized
-            case .colorActionSecondaryEnabled:
-                return theme.colorActionSecondaryEnabled
-            case .colorActionSecondaryEnabledOnBgEmphasized:
-                return theme.colorActionSecondaryEnabledOnBgEmphasized
-            case .colorActionSecondaryHover:
-                return theme.colorActionSecondaryHover
-            case .colorActionSecondaryHoverOnBgEmphasized:
-                return theme.colorActionSecondaryHoverOnBgEmphasized
-            case .colorActionSecondaryPressed:
-                return theme.colorActionSecondaryPressed
-            case .colorActionSecondaryPressedOnBgEmphasized:
-                return theme.colorActionSecondaryPressedOnBgEmphasized
-            case .colorActionSecondaryLoading:
-                return theme.colorActionSecondaryLoading
-            case .colorActionSecondaryLoadingOnBgEmphasized:
-                return theme.colorActionSecondaryLoadingOnBgEmphasized
-            case .colorActionSecondaryFocus:
-                return theme.colorActionSecondaryFocus
-            case .colorActionSecondaryFocusOnBgEmphasized:
-                return theme.colorActionSecondaryFocusOnBgEmphasized
+            case .colorActionEnabled:
+                return theme.colorActionEnabled
+            case .colorActionFocus:
+                return theme.colorActionFocus
+            case .colorActionHighlighted:
+                return theme.colorActionHighlighted
+            case .colorActionHover:
+                return theme.colorActionHover
+            case .colorActionLoading:
+                return theme.colorActionLoading
             case .colorActionNegativeEnabled:
                 return theme.colorActionNegativeEnabled
-            case .colorActionNegativeHover:
-                return theme.colorActionNegativeHover
-            case .colorActionNegativePressed:
-                return theme.colorActionNegativePressed
-            case .colorActionNegativeLoading:
-                return theme.colorActionNegativeLoading
             case .colorActionNegativeFocus:
                 return theme.colorActionNegativeFocus
+            case .colorActionNegativeHover:
+                return theme.colorActionNegativeHover
+            case .colorActionNegativeLoading:
+                return theme.colorActionNegativeLoading
+            case .colorActionNegativePressed:
+                return theme.colorActionNegativePressed
+            case .colorActionPressed:
+                return theme.colorActionPressed
+            case .colorActionSelected:
+                return theme.colorActionSelected
+            case .colorActionSupportEnabled:
+                return theme.colorActionSupportEnabled
+            case .colorActionSupportFocus:
+                return theme.colorActionSupportFocus
+            case .colorActionSupportHover:
+                return theme.colorActionSupportHover
+            case .colorActionSupportLoading:
+                return theme.colorActionSupportLoading
+            case .colorActionSupportPressed:
+                return theme.colorActionSupportPressed
+            case .colorActionVisited:
+                return theme.colorActionVisited
             }
         }
     }

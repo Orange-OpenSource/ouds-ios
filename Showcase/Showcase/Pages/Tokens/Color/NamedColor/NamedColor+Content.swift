@@ -20,71 +20,71 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Content: String, CaseIterable {
-        case brandPrimary
-        case defaultContent
-        case disabled
-        case muted
-        case onActionDisabled
-        case onActionEnabled
-        case onActionFocus
-        case onActionHighlighted
-        case onActionHover
-        case onActionLoading
-        case onActionNegative
-        case onActionPressed
-        case onBrandPrimary
-        case onOverlayEmphasized
-        case onStatusEmphasized
-        case onStatusEmphasizedNeutral
-        case onStatusMuted
-        case statusInfo
-        case statusNegative
-        case statusPositive
-        case statusWarning
+        case colorContentBrandPrimary
+        case colorContentDefault
+        case colorContentDisabled
+        case colorContentMuted
+        case colorContentOnActionDisabled
+        case colorContentOnActionEnabled
+        case colorContentOnActionFocus
+        case colorContentOnActionHighlighted
+        case colorContentOnActionHover
+        case colorContentOnActionLoading
+        case colorContentOnActionNegative
+        case colorContentOnActionPressed
+        case colorContentOnBrandPrimary
+        case colorContentOnOverlayEmphasized
+        case colorContentOnStatusEmphasized
+        case colorContentOnStatusEmphasizedNeutral
+        case colorContentOnStatusMuted
+        case colorContentStatusInfo
+        case colorContentStatusNegative
+        case colorContentStatusPositive
+        case colorContentStatusWarning
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .brandPrimary:
+            case .colorContentBrandPrimary:
                 return theme.colorContentBrandPrimary
-            case .defaultContent:
+            case .colorContentDefault:
                 return theme.colorContentDefault
-            case .disabled:
+            case .colorContentDisabled:
                 return theme.colorContentDisabled
-            case .muted:
+            case .colorContentMuted:
                 return theme.colorContentMuted
-            case .onActionDisabled:
+            case .colorContentOnActionDisabled:
                 return theme.colorContentOnActionDisabled
-            case .onActionEnabled:
+            case .colorContentOnActionEnabled:
                 return theme.colorContentOnActionEnabled
-            case .onActionFocus:
+            case .colorContentOnActionFocus:
                 return theme.colorContentOnActionFocus
-            case .onActionHighlighted:
+            case .colorContentOnActionHighlighted:
                 return theme.colorContentOnActionHighlighted
-            case .onActionHover:
+            case .colorContentOnActionHover:
                 return theme.colorContentOnActionHover
-            case .onActionLoading:
+            case .colorContentOnActionLoading:
                 return theme.colorContentOnActionLoading
-            case .onActionNegative:
+            case .colorContentOnActionNegative:
                 return theme.colorContentOnActionNegative
-            case .onActionPressed:
+            case .colorContentOnActionPressed:
                 return theme.colorContentOnActionPressed
-            case .onBrandPrimary:
+            case .colorContentOnBrandPrimary:
                 return theme.colorContentOnBrandPrimary
-            case .onOverlayEmphasized:
+            case .colorContentOnOverlayEmphasized:
                 return theme.colorContentOnOverlayEmphasized
-            case .onStatusEmphasized:
+            case .colorContentOnStatusEmphasized:
                 return theme.colorContentOnStatusEmphasized
-            case .onStatusEmphasizedNeutral:
+            case .colorContentOnStatusEmphasizedNeutral:
                 return theme.colorContentOnStatusEmphasizedNeutral
-            case .onStatusMuted:
+            case .colorContentOnStatusMuted:
                 return theme.colorContentOnStatusMuted
-            case .statusInfo:
+            case .colorContentStatusInfo:
                 return theme.colorContentStatusInfo
-            case .statusNegative:
+            case .colorContentStatusNegative:
                 return theme.colorContentStatusNegative
-            case .statusPositive:
+            case .colorContentStatusPositive:
                 return theme.colorContentStatusPositive
-            case .statusWarning:
+            case .colorContentStatusWarning:
                 return theme.colorContentStatusWarning
             }
         }
