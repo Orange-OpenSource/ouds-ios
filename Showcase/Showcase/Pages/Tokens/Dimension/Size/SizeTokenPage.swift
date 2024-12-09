@@ -62,7 +62,7 @@ struct SizeTokenPage: View {
                     Image("ic_token")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+                        .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
                         .frame(width: token, height: token, alignment: .center)
                         .accessibilityHidden(true)
                 }
@@ -90,7 +90,7 @@ struct SizeTokenPage: View {
                 Image("ic_token")
                     .resizable()
                     .renderingMode(.template)
-                    .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+                    .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
                     .frame(width: token, height: token, alignment: .center)
                     .accessibilityHidden(true)
 

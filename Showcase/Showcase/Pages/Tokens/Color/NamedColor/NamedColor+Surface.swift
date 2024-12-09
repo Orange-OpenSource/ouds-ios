@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 
 extension NamedColor {
-    
+
     enum Surface: String, CaseIterable {
         case colorSurfaceBrandPrimary
         case colorSurfaceStatusAccentEmphasized
@@ -62,5 +62,4 @@ extension NamedColor {
             }
         }
     }
-
 }

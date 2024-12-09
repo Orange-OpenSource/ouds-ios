@@ -14,8 +14,10 @@
 import OUDS
 import OUDSTokensSemantic
 
+// swiftlint:disable function_body_length
+
 extension NamedColor {
-    
+
     enum Repository: String, CaseIterable {
         case colorRepositoryAccentDefault
         case colorRepositoryAccentHighest
@@ -156,3 +158,5 @@ extension NamedColor {
         }
     }
 }
+
+// swiftlint:enable function_body_length

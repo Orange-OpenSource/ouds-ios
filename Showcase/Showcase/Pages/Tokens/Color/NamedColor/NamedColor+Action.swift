@@ -14,9 +14,6 @@
 import OUDS
 import OUDSTokensSemantic
 
-// swiftlint:disable identifier_name
-// swiftlint:disable function_body_length
-
 extension NamedColor {
 
     enum Action: String, CaseIterable {
@@ -84,6 +81,3 @@ extension NamedColor {
         }
     }
 }
-
-// swiftlint:enable identifier_name
-// swiftlint:enable function_body_length

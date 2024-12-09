@@ -14,8 +14,6 @@
 import OUDS
 import OUDSTokensSemantic
 
-// swiftlint:disable function_body_length
-
 extension NamedColor {
 
     enum Chart: String, CaseIterable {
@@ -77,5 +75,3 @@ extension NamedColor {
         }
     }
 }
-
-// swiftlint:enable function_body_length

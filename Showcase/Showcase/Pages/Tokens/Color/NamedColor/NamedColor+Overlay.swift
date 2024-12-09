@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 
 extension NamedColor {
-    
+
     enum Overlay: String, CaseIterable {
         case colorOverlayDefault
         case colorOverlayDrag
