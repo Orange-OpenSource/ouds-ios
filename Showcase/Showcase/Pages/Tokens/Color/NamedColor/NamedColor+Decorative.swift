@@ -19,27 +19,27 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Decorative: String, CaseIterable {
+        case colorDecorativeAccent1Default
+        case colorDecorativeAccent1Emphasized
+        case colorDecorativeAccent1Muted
+        case colorDecorativeAccent2Default
+        case colorDecorativeAccent2Emphasized
+        case colorDecorativeAccent2Muted
+        case colorDecorativeAccent3Default
+        case colorDecorativeAccent3Emphasized
+        case colorDecorativeAccent3Muted
+        case colorDecorativeAccent4Default
+        case colorDecorativeAccent4Emphasized
+        case colorDecorativeAccent4Muted
+        case colorDecorativeAccent5Default
+        case colorDecorativeAccent5Emphasized
+        case colorDecorativeAccent5Muted
         case colorDecorativeBrandPrimary
         case colorDecorativeBrandSecondary
         case colorDecorativeBrandTertiary
-        case colorDecorativeNeutralMuted
         case colorDecorativeNeutralDefault
         case colorDecorativeNeutralEmphasized
-        case colorDecorativeAccent1Muted
-        case colorDecorativeAccent1Default
-        case colorDecorativeAccent1Emphasized
-        case colorDecorativeAccent2Muted
-        case colorDecorativeAccent2Default
-        case colorDecorativeAccent2Emphasized
-        case colorDecorativeAccent3Muted
-        case colorDecorativeAccent3Default
-        case colorDecorativeAccent3Emphasized
-        case colorDecorativeAccent4Muted
-        case colorDecorativeAccent4Default
-        case colorDecorativeAccent4Emphasized
-        case colorDecorativeAccent5Muted
-        case colorDecorativeAccent5Default
-        case colorDecorativeAccent5Emphasized
+        case colorDecorativeNeutralMuted
         case colorDecorativeSkinTint100
         case colorDecorativeSkinTint200
         case colorDecorativeSkinTint300
@@ -52,48 +52,48 @@ extension NamedColor {
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
+            case .colorDecorativeAccent1Default:
+                return theme.colorDecorativeAccent1Default
+            case .colorDecorativeAccent1Emphasized:
+                return theme.colorDecorativeAccent1Emphasized
+            case .colorDecorativeAccent1Muted:
+                return theme.colorDecorativeAccent1Muted
+            case .colorDecorativeAccent2Default:
+                return theme.colorDecorativeAccent2Default
+            case .colorDecorativeAccent2Emphasized:
+                return theme.colorDecorativeAccent2Emphasized
+            case .colorDecorativeAccent2Muted:
+                return theme.colorDecorativeAccent2Muted
+            case .colorDecorativeAccent3Default:
+                return theme.colorDecorativeAccent3Default
+            case .colorDecorativeAccent3Emphasized:
+                return theme.colorDecorativeAccent3Emphasized
+            case .colorDecorativeAccent3Muted:
+                return theme.colorDecorativeAccent3Muted
+            case .colorDecorativeAccent4Default:
+                return theme.colorDecorativeAccent4Default
+            case .colorDecorativeAccent4Emphasized:
+                return theme.colorDecorativeAccent4Emphasized
+            case .colorDecorativeAccent4Muted:
+                return theme.colorDecorativeAccent4Muted
+            case .colorDecorativeAccent5Default:
+                return theme.colorDecorativeAccent5Default
+            case .colorDecorativeAccent5Emphasized:
+                return theme.colorDecorativeAccent5Emphasized
+            case .colorDecorativeAccent5Muted:
+                return theme.colorDecorativeAccent5Muted
             case .colorDecorativeBrandPrimary:
                 return theme.colorDecorativeBrandPrimary
             case .colorDecorativeBrandSecondary:
                 return theme.colorDecorativeBrandSecondary
             case .colorDecorativeBrandTertiary:
                 return theme.colorDecorativeBrandTertiary
-            case .colorDecorativeNeutralMuted:
-                return theme.colorDecorativeNeutralMuted
             case .colorDecorativeNeutralDefault:
                 return theme.colorDecorativeNeutralDefault
             case .colorDecorativeNeutralEmphasized:
                 return theme.colorDecorativeNeutralEmphasized
-            case .colorDecorativeAccent1Muted:
-                return theme.colorDecorativeAccent1Muted
-            case .colorDecorativeAccent1Default:
-                return theme.colorDecorativeAccent1Default
-            case .colorDecorativeAccent1Emphasized:
-                return theme.colorDecorativeAccent1Emphasized
-            case .colorDecorativeAccent2Muted:
-                return theme.colorDecorativeAccent2Muted
-            case .colorDecorativeAccent2Default:
-                return theme.colorDecorativeAccent2Default
-            case .colorDecorativeAccent2Emphasized:
-                return theme.colorDecorativeAccent2Emphasized
-            case .colorDecorativeAccent3Muted:
-                return theme.colorDecorativeAccent3Muted
-            case .colorDecorativeAccent3Default:
-                return theme.colorDecorativeAccent3Default
-            case .colorDecorativeAccent3Emphasized:
-                return theme.colorDecorativeAccent3Emphasized
-            case .colorDecorativeAccent4Muted:
-                return theme.colorDecorativeAccent4Muted
-            case .colorDecorativeAccent4Default:
-                return theme.colorDecorativeAccent4Default
-            case .colorDecorativeAccent4Emphasized:
-                return theme.colorDecorativeAccent4Emphasized
-            case .colorDecorativeAccent5Muted:
-                return theme.colorDecorativeAccent5Muted
-            case .colorDecorativeAccent5Default:
-                return theme.colorDecorativeAccent5Default
-            case .colorDecorativeAccent5Emphasized:
-                return theme.colorDecorativeAccent5Emphasized
+            case .colorDecorativeNeutralMuted:
+                return theme.colorDecorativeNeutralMuted
             case .colorDecorativeSkinTint100:
                 return theme.colorDecorativeSkinTint100
             case .colorDecorativeSkinTint200:

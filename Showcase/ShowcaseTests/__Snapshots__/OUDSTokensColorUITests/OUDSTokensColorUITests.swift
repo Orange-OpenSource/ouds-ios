@@ -34,14 +34,17 @@ final class OUDSTokensColorUITests: XCTestCase {
         let interfaceStyle = UIUserInterfaceStyle.light
 
         // Test all color sections individually for light mode
-        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testActionColors(theme: theme, interfaceStyle: interfaceStyle)
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
-        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
+        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        testElevationColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testChartColors(theme: theme, interfaceStyle: interfaceStyle)
+        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
+        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
+        testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
+        testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
+        testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle)
+        testSurfaceColors(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Orange Theme Dark Mode Color Tests
@@ -54,14 +57,17 @@ final class OUDSTokensColorUITests: XCTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
 
         // Test all color sections individually for dark mode
-        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testActionColors(theme: theme, interfaceStyle: interfaceStyle)
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
-        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
+        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        testElevationColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testChartColors(theme: theme, interfaceStyle: interfaceStyle)
+        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
+        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
+        testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
+        testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
+        testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle)
+        testSurfaceColors(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Light Mode Color Tests
@@ -74,14 +80,17 @@ final class OUDSTokensColorUITests: XCTestCase {
         let interfaceStyle = UIUserInterfaceStyle.light
 
         // Test all color sections individually for light mode
-        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testActionColors(theme: theme, interfaceStyle: interfaceStyle)
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
-        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
+        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        testElevationColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testChartColors(theme: theme, interfaceStyle: interfaceStyle)
+        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
+        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
+        testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
+        testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
+        testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle)
+        testSurfaceColors(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Dark Mode Color Tests
@@ -94,14 +103,17 @@ final class OUDSTokensColorUITests: XCTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
 
         // Test all color sections individually for dark interfaceStyle
-        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testActionColors(theme: theme, interfaceStyle: interfaceStyle)
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
-        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
+        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
         testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        testElevationColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
         testChartColors(theme: theme, interfaceStyle: interfaceStyle)
+        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
+        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
+        testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
+        testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
+        testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle)
+        testSurfaceColors(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Helpers
@@ -251,35 +263,6 @@ final class OUDSTokensColorUITests: XCTestCase {
         }
     }
 
-    /// This function tests colors for the `Elevation` category of the given theme.
-    /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
-    /// - Parameters:
-    ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testElevationColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Iterate through all background color cases defined in NamedColor.Elevation
-        for color in NamedColor.Elevation.allCases {
-            // Retrieve the corresponding color token from the provided theme
-            let token = color.token(from: theme)
-
-            // Generate the illustration for the specified color token
-            let illustration = OUDSThemeableView(theme: theme) {
-                ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
-            }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
-            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-            let name = color.rawValue
-
-            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
-        }
-    }
-
     /// This function tests colors for the `Decorative` category of the given theme.
     /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
     /// - Parameters:
@@ -317,6 +300,122 @@ final class OUDSTokensColorUITests: XCTestCase {
     @MainActor private func testChartColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedColor.Chart
         for color in NamedColor.Chart.allCases {
+            // Retrieve the corresponding color token from the provided theme
+            let token = color.token(from: theme)
+
+            // Generate the illustration for the specified color token
+            let illustration = OUDSThemeableView(theme: theme) {
+                ColorTokenPage.Illustration(token: token, name: color.rawValue)
+                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            }
+
+            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
+
+            // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
+
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        }
+    }
+
+    /// This function tests colors for the `Opacity` category of the given theme.
+    /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
+    /// - Parameters:
+    ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testOpacityColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Iterate through all background color cases defined in NamedColor.Chart
+        for color in NamedColor.Opacity.allCases {
+            // Retrieve the corresponding color token from the provided theme
+            let token = color.token(from: theme)
+
+            // Generate the illustration for the specified color token
+            let illustration = OUDSThemeableView(theme: theme) {
+                ColorTokenPage.Illustration(token: token, name: color.rawValue)
+                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            }
+
+            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
+
+            // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
+
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        }
+    }
+
+    /// This function tests colors for the `Overlay` category of the given theme.
+    /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
+    /// - Parameters:
+    ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testOverlayColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Iterate through all background color cases defined in NamedColor.Chart
+        for color in NamedColor.Overlay.allCases {
+            // Retrieve the corresponding color token from the provided theme
+            let token = color.token(from: theme)
+
+            // Generate the illustration for the specified color token
+            let illustration = OUDSThemeableView(theme: theme) {
+                ColorTokenPage.Illustration(token: token, name: color.rawValue)
+                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            }
+
+            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
+
+            // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
+
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        }
+    }
+
+    /// This function tests colors for the `Repository` category of the given theme.
+    /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
+    /// - Parameters:
+    ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testRepositoryColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Iterate through all background color cases defined in NamedColor.Chart
+        for color in NamedColor.Repository.allCases {
+            // Retrieve the corresponding color token from the provided theme
+            let token = color.token(from: theme)
+
+            // Generate the illustration for the specified color token
+            let illustration = OUDSThemeableView(theme: theme) {
+                ColorTokenPage.Illustration(token: token, name: color.rawValue)
+                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            }
+
+            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
+            let hostingVC = UIHostingController(rootView: illustration)
+
+            // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = color.rawValue
+
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        }
+    }
+
+    /// This function tests colors for the `Surface` category of the given theme.
+    /// It captures snapshots for each background color in the specified theme and interfaceStyle (light or dark).
+    /// - Parameters:
+    ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testSurfaceColors(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+        // Iterate through all background color cases defined in NamedColor.Chart
+        for color in NamedColor.Surface.allCases {
             // Retrieve the corresponding color token from the provided theme
             let token = color.token(from: theme)
 

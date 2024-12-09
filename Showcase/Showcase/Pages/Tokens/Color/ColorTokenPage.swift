@@ -28,16 +28,17 @@ struct ColorTokenPage: View {
             Section {
                 ShowcaseCode(code: "theme.colorBgPrimary.color(for: colorScheme)")
             }
-            Section { illustrationForBackground() } header: { header("Background") }
             Section { illustrationForAction() } header: { header("Action") }
             Section { illustrationForAlways() } header: { header("Always") }
-            Section { illustrationForContent() } header: { header("Content") }
-            Section { illustrationForTransparent() } header: { header("Transparent") }
+            Section { illustrationForBackground() } header: { header("Background") }
             Section { illustrationForBorder() } header: { header("Border") }
-            Section { illustrationForElevation() } header: { header("Elevation") }
-            Section { illustrationForDecorative() } header: { header("Decorative") }
             Section { illustrationForChart() } header: { header("Chart") }
-            Section { illustrationForGradient() } header: { header("Gradient") }
+            Section { illustrationForContent() } header: { header("Content") }
+            Section { illustrationForDecorative() } header: { header("Decorative") }
+            Section { illustrationForOpacity() } header: { header("Opacity") }
+            Section { illustrationForOverlay() } header: { header("Overlay") }
+            Section { illustrationForRepository() } header: { header("Repository") }
+            Section { illustrationForSurface() } header: { header("Surface") }
         }
         .padding(.horizontal, theme.spaceFixedMedium)
     }
@@ -96,14 +97,6 @@ struct ColorTokenPage: View {
         }
     }
 
-    private func illustrationForTransparent() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedColor.Transparent.allCases, id: \.rawValue) { namedColorToken in
-                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
-            }
-        }
-    }
-
     private func illustrationForDecorative() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
             ForEach(NamedColor.Decorative.allCases, id: \.rawValue) { namedColorToken in
@@ -112,17 +105,33 @@ struct ColorTokenPage: View {
         }
     }
 
-    private func illustrationForElevation() -> some View {
+    private func illustrationForOverlay() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedColor.Elevation.allCases, id: \.rawValue) { namedColorToken in
+            ForEach(NamedColor.Overlay.allCases, id: \.rawValue) { namedColorToken in
                 Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }
     }
 
-    private func illustrationForGradient() -> some View {
+    private func illustrationForSurface() -> some View {
         VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            ForEach(NamedColor.Gradient.allCases, id: \.rawValue) { namedColorToken in
+            ForEach(NamedColor.Surface.allCases, id: \.rawValue) { namedColorToken in
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+            }
+        }
+    }
+
+    private func illustrationForOpacity() -> some View {
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            ForEach(NamedColor.Opacity.allCases, id: \.rawValue) { namedColorToken in
+                Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
+            }
+        }
+    }
+
+    private func illustrationForRepository() -> some View {
+        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            ForEach(NamedColor.Repository.allCases, id: \.rawValue) { namedColorToken in
                 Illustration(token: namedColorToken.token(from: theme), name: namedColorToken.rawValue)
             }
         }

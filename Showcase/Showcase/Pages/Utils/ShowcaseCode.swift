@@ -52,7 +52,7 @@ struct ShowcaseCode: View {
                         .resizable()
                         .renderingMode(.template)
                         .rotationEffect(Angle.degrees(isCodeVisible ? 0 : 180))
-                        .foregroundColor(theme.colorBgBrandPrimary.color(for: colorScheme))
+                        .foregroundColor(theme.colorSurfaceBrandPrimary.color(for: colorScheme))
                         .frame(width: 20, height: 20)
                         .padding(.trailing, theme.spacePaddingInlineMedium)
                         .accessibilityLabel("app_tokens_code_visibility_button_a11y")
@@ -81,7 +81,7 @@ struct ShowcaseCode: View {
                     Image("ic_copy")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colorBgStatusPositiveMuted.color(for: colorScheme))
+                        .foregroundColor(theme.colorSurfaceStatusPositiveMuted.color(for: colorScheme))
                         .frame(width: 24, height: 24)
                         .padding(.trailing, theme.spacePaddingInlineMedium)
                         .alignmentGuide(.firstTextBaseline) { $0[.bottom] * 0.7 }
