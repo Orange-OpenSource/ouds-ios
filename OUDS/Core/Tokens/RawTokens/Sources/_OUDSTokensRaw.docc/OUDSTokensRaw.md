@@ -42,7 +42,7 @@ extension String {
 ## Architecture
 
 The *Composites* folder contains some _composite class_ defined to match the objects available in *Figma*.
-In fact the design system implementations should expose pack of values so as to gather several tokens in one object. For exemple `ElevationCompositeRawToken` can be used for predefined elevations / box shadows effects, and `FontCompositeRawToken` can be used for predefined typography.
+In fact the design system implementations should expose pack of values so as to gather several tokens in one object. For exemple `ElevationCompositeRawToken` can be used for predefined elevations / box shadows effects, and `FontCompositeRawToken` can be used for predefined typography / fonts.
 All such *composites* instances are defined in seperated files. In fact *tokenator* cannot generate such tokens as they are not defined in its JSON file to process because *Figma* is not able to manage *composite tokens*, even if tinkered by the design team. These tokens are updated manualy by the development team.
 
 The *Declarations* folder contains all the Swift `enum` objects which will gather the raw tokens.
