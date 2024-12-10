@@ -47,8 +47,8 @@ struct TypographyModifier: ViewModifier {
         horizontalSizeClass == .regular || verticalSizeClass == .regular
     }
 
-    /// Returns the `TypographyCompositeRawToken` to apply depending to the layour mode
-    private var adaptiveTypography: TypographyCompositeRawToken {
+    /// Returns the `FontCompositeRawToken` to apply depending to the layour mode
+    private var adaptiveTypography: FontCompositeRawToken {
         isCompactMode ? typography.compact : typography.regular
     }
 

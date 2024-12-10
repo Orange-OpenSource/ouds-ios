@@ -13,14 +13,14 @@
 
 import OUDSFoundations
 
-/// An operator to make for example comparisons between ``TypographyCompositeRawToken``
+/// An operator to make for example comparisons between ``FontCompositeRawToken``
 infix operator <|
 
 /// In the *Figma* global design system, composite tokens are defined for typography-related things.
 /// Composite tokens are tokens defined in *Figma* by other tokens.
 /// Here a *typography* thing is caracterized by a *font size*, a *line height*, a *font weight* and *letter spacig* values.
 /// All these elements are *raw tokens*, and together define a *composite raw token* for *typography* thing.
-public struct TypographyCompositeRawToken: Equatable, Sendable {
+public struct FontCompositeRawToken: Equatable, Sendable {
 
     // Font family is not included here because this is the only thing which can vary
 
@@ -42,7 +42,7 @@ public struct TypographyCompositeRawToken: Equatable, Sendable {
     ///    - lhs: The typography composite token we expect to be smaller than `rhs`
     ///    - rhs: The typography composite token we expect to be bigger than `lhs`
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
-    static func <| (lhs: TypographyCompositeRawToken, rhs: TypographyCompositeRawToken) -> Bool {
+    static func <| (lhs: FontCompositeRawToken, rhs: FontCompositeRawToken) -> Bool {
         lhs.size < rhs.size
         && lhs.lineHeight <= rhs.lineHeight
         && lhs.weight <= rhs.weight

@@ -14,7 +14,7 @@
 import OUDSTokensRaw
 import SwiftUICore
 
-/// Kind of semantic tokens which will wrap a combination of `TypographyCompositeRawToken` depending to size classes.
+/// Kind of semantic tokens which will wrap a combination of `FontCompositeRawToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
 /// If a typography token exists with its value depending to the size class, it must be packed in such ``MultipleTypographyCompositeRawTokens``.
@@ -22,8 +22,8 @@ import SwiftUICore
 /// ```swift
 ///         // Assuming in Figma with have a typography semantic token typeDisplayLarge,
 ///         // with values depending to size class. These values are defined as typography composite raw tokens.
-///         let typeBold850 = TypographyCompositeRawToken(size: fontSize850, lineHeight: fontLineHeight1050, weight: fontWeight700, letterSpacing: fontLetterSpacing850)
-///         let typeBold1450 = TypographyCompositeRawToken(size: fontSize1450, lineHeight: fontLineHeight1850, weight: fontWeight700, letterSpacing: fontLetterSpacing1450)
+///         let typeBold850 = FontCompositeRawToken(size: fontSize850, lineHeight: fontLineHeight1050, weight: fontWeight700, letterSpacing: fontLetterSpacing850)
+///         let typeBold1450 = FontCompositeRawToken(size: fontSize1450, lineHeight: fontLineHeight1850, weight: fontWeight700, letterSpacing: fontLetterSpacing1450)
 ///
 ///         // Then the develoment team declares an "higher" level typography semantic token
 ///         // inside TypographyCompositeSemanticTokens protocol,
@@ -46,23 +46,23 @@ import SwiftUICore
 public final class MultipleTypographyCompositeRawTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
-    public let compact: TypographyCompositeRawToken
+    public let compact: FontCompositeRawToken
 
     /// For **regular** and **medium** viewports
-    public let regular: TypographyCompositeRawToken
+    public let regular: FontCompositeRawToken
 
     /// Initializes a new typography composite semantic token.
-    /// - Parameter unique: The `TypographyCompositeRawToken` to apply for both in *compact* and *regular* modes
-    public init(_ unique: TypographyCompositeRawToken) {
+    /// - Parameter unique: The `FontCompositeRawToken` to apply for both in *compact* and *regular* modes
+    public init(_ unique: FontCompositeRawToken) {
         self.compact = unique
         self.regular = unique
     }
 
     /// Initializes a new typography composite semantic token.
     /// - Parameters:
-    ///    - compact: The `TypographyCompositeRawToken` to apply if device in *compact* mode
-    ///    - regular: The `TypographyCompositeRawToken` to apply if device in *regular* mode
-    public init(compact: TypographyCompositeRawToken, regular: TypographyCompositeRawToken) {
+    ///    - compact: The `FontCompositeRawToken` to apply if device in *compact* mode
+    ///    - regular: The `FontCompositeRawToken` to apply if device in *regular* mode
+    public init(compact: FontCompositeRawToken, regular: FontCompositeRawToken) {
         self.compact = compact
         self.regular = regular
     }
@@ -79,8 +79,8 @@ public final class MultipleTypographyCompositeRawTokens: NSObject, Sendable {
 
     /// Returns the composite raw token of typography to use according to the `userInterfaceSizeClass` (i.e. `compact` or `regular`)
     /// - Parameter userInterfaceSizeClass: The user interface size class
-    /// - Returns: The composite raw token to use (of type `TypographyCompositeRawToken`)
-    public func typographyToken(for userInterfaceSizeClass: UserInterfaceSizeClass) -> TypographyCompositeRawToken {
+    /// - Returns: The composite raw token to use (of type `FontCompositeRawToken`)
+    public func typographyToken(for userInterfaceSizeClass: UserInterfaceSizeClass) -> FontCompositeRawToken {
         userInterfaceSizeClass == .compact ? compact : regular
     }
 }
