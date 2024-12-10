@@ -15,9 +15,9 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Typography Token Page
+// MARK: - Font Token Page
 
-struct TypographyTokenPage: View {
+struct FontTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -31,8 +31,8 @@ struct TypographyTokenPage: View {
 
             Spacer()
 
-            ForEach(NamedFont.allCases, id: \.rawValue) { typographyName in
-                IllustrationFont(namedFont: typographyName)
+            ForEach(NamedFont.allCases, id: \.rawValue) { fontName in
+                IllustrationFont(namedFont: fontName)
             }
         }
         .padding(.horizontal, theme.spaceFixedMedium)
