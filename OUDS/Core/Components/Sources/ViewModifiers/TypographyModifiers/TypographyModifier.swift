@@ -26,7 +26,7 @@ import SwiftUI
 struct TypographyModifier: ViewModifier {
 
     /// The name of a possible custom font family, or `nil` if the font is use is _system font_
-    let customFontFamily: TypographyFontFamilyRawToken?
+    let customFontFamily: FontFamilyRawToken?
     /// The typography to apply for *compact* or *regular* modes
     let typography: MultipleTypographyCompositeRawTokens
 

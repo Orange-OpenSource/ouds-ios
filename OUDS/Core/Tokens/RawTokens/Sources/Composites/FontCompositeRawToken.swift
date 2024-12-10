@@ -25,16 +25,16 @@ public struct FontCompositeRawToken: Equatable, Sendable {
     // Font family is not included here because this is the only thing which can vary
 
     /// The font size to apply for the texts
-    public let size: TypographyFontSizeRawToken
+    public let size: FontSizeRawToken
 
     /// The line height to apply on texts
-    public let lineHeight: TypographyFontLineHeightRawToken
+    public let lineHeight: FontLineHeightRawToken
 
     /// The font weight to associate with the font family
-    public let weight: TypographyFontWeightRawToken
+    public let weight: FontWeightRawToken
 
     /// The font letter spacing to associated with the font family
-    public let letterSpacing: TypographyFontLetterSpacingRawToken
+    public let letterSpacing: FontLetterSpacingRawToken
 
     /// Operator which will return `true` if `lhs` is smaller than `rhs`.
     /// By "smaller" we mean smaller `size` and smaller or equal `lineHeight`, `weight` and `letterSpacing`

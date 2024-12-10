@@ -35,8 +35,8 @@
 /// In few words:
 /// ```swift
 ///         // Some font size raw tokens, defined by the tokenator (in FontRawTokens+Values.swift)
-///         public static let fontSize850: TypographyFontSizeRawToken = 40
-///         public static let fontSize1450: TypographyFontSizeRawToken = 64
+///         public static let fontSize850: FontSizeRawToken = 40
+///         public static let fontSize1450: FontSizeRawToken = 64
 ///
 ///         // The font size semantic tokens using them
 ///         // declared (in TypographyMultipleSemanticTokens.swift) and defined (in OUDSTheme+TypographySemanticTokens.swift) by the tokenator

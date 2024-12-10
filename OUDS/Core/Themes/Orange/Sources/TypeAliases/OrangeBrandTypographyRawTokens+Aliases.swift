@@ -13,5 +13,5 @@
 
 import OUDSTokensRaw
 
-/// An `OrangeBrandTypographyRawToken` is just a  TypographyFontFamilyRawToken` type
-public typealias OrangeBrandTypographyRawToken = TypographyFontFamilyRawToken
+/// An `OrangeBrandTypographyRawToken` is just a  FontFamilyRawToken` type
+public typealias OrangeBrandTypographyRawToken = FontFamilyRawToken
