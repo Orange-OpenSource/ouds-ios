@@ -24,8 +24,8 @@ import OUDSTokensRaw
 ///         // its value can vary if compact or regular modes.
 ///         // They can be declared in protocol TypographySemanticTokens,
 ///         // and defined automaticaly in OUDSTheme+TypographySemanticTokens extension
-///         var fontLineHeightLabelXLargeMobile: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
-///         var fontLineHeightLabelXLargeTablet: TypographyFontLineHeightSemanticToken { TypographyRawTokens.fontLineHeight450 }
+///         var fontLineHeightLabelXLargeMobile: TypographyFontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
+///         var fontLineHeightLabelXLargeTablet: TypographyFontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
 ///
 ///         // Then the develoment team declares an "higher" level line height semantic token for fontLineHeightLabelXLarge
 ///         // inside TypographyMultipleSemanticTokens protocol,

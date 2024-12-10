@@ -19,7 +19,7 @@
 
 /// Extracted in a separated file because *Figma* is not able to manage *composite tokens*, even if the design team tinkered them in this tool.
 /// So *Figma* cannot output such *composite tokens* to its JSON file, and then *tokenator* cannot process things which do not exist.
-extension TypographyRawTokens {
+extension FontRawTokens {
 
     // MARK: Primitive token - Typography - Composite
 

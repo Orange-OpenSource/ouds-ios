@@ -34,14 +34,14 @@
 /// 
 /// In few words:
 /// ```swift
-///         // Some font size raw tokens, defined by the tokenator (in TypographyRawTokens+Values.swift)
+///         // Some font size raw tokens, defined by the tokenator (in FontRawTokens+Values.swift)
 ///         public static let fontSize850: TypographyFontSizeRawToken = 40
 ///         public static let fontSize1450: TypographyFontSizeRawToken = 64
 ///
 ///         // The font size semantic tokens using them
 ///         // declared (in TypographyMultipleSemanticTokens.swift) and defined (in OUDSTheme+TypographySemanticTokens.swift) by the tokenator
-///         var fontSizeDisplayLargeMobile: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize850 }
-///         var fontSizeDisplayLargeTablet: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize1450 }
+///         var fontSizeDisplayLargeMobile: TypographyFontSizeSemanticToken { FontRawTokens.fontSize850 }
+///         var fontSizeDisplayLargeTablet: TypographyFontSizeSemanticToken { FontRawTokens.fontSize1450 }
 ///
 ///         // The 'higher level' typography semantic tokens wrapping them and exposed to users
 ///         // declared (in this TypographyMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+TypographyMultipleSemanticTokens.swift)

@@ -24,8 +24,8 @@ import OUDSTokensRaw
 ///         // its value can vary if compact or regular modes.
 ///         // They can be declared in protocol TypographySemanticTokens,
 ///         // and defined automaticaly in OUDSTheme+TypographySemanticTokens extension
-///         var fontSizeBodySmallMobile: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize150 }
-///         var fontSizeBodySmallTablet: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize150 }
+///         var fontSizeBodySmallMobile: TypographyFontSizeSemanticToken { FontRawTokens.fontSize150 }
+///         var fontSizeBodySmallTablet: TypographyFontSizeSemanticToken { FontRawTokens.fontSize150 }
 ///
 ///         // Then the develoment team declares an "higher" level font size semantic token for fontSizeBodySmall
 ///         // inside TypographyMultipleSemanticTokens protocol,

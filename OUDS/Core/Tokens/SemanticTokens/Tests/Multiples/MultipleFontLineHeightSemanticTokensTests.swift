@@ -23,7 +23,7 @@ final class MultipleFontLineHeightSemanticTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for light and dark modes
     func testInitWithOneValue() {
-        let unique: TypographyFontLineHeightSemanticToken = TypographyRawTokens.fontLineHeight250
+        let unique: TypographyFontLineHeightSemanticToken = FontRawTokens.fontLineHeight250
         let token = MultipleFontLineHeightSemanticTokens(unique)
 
         XCTAssertTrue(token.compact == unique)
@@ -32,8 +32,8 @@ final class MultipleFontLineHeightSemanticTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined with two assigned non nil values
     func testInitWithTwoValues() {
-        let compact: TypographyFontLineHeightSemanticToken = TypographyRawTokens.fontLineHeight450
-        let regular: TypographyFontLineHeightSemanticToken = TypographyRawTokens.fontLineHeight550
+        let compact: TypographyFontLineHeightSemanticToken = FontRawTokens.fontLineHeight450
+        let regular: TypographyFontLineHeightSemanticToken = FontRawTokens.fontLineHeight550
         let token = MultipleFontLineHeightSemanticTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)
@@ -43,11 +43,11 @@ final class MultipleFontLineHeightSemanticTokensTests: XCTestCase {
     /// Tests comparisons between two `MultipleFontLineHeightSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight450)
-        let second = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight650, regular: TypographyRawTokens.fontLineHeight550)
-        let third = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight550)
-        let fourth = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight650, regular: TypographyRawTokens.fontLineHeight750)
-        let fifth = MultipleFontLineHeightSemanticTokens(compact: TypographyRawTokens.fontLineHeight450, regular: TypographyRawTokens.fontLineHeight450)
+        let first = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.fontLineHeight450, regular: FontRawTokens.fontLineHeight450)
+        let second = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.fontLineHeight650, regular: FontRawTokens.fontLineHeight550)
+        let third = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.fontLineHeight450, regular: FontRawTokens.fontLineHeight550)
+        let fourth = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.fontLineHeight650, regular: FontRawTokens.fontLineHeight750)
+        let fifth = MultipleFontLineHeightSemanticTokens(compact: FontRawTokens.fontLineHeight450, regular: FontRawTokens.fontLineHeight450)
         let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))

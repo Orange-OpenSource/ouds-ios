@@ -43,7 +43,7 @@ The _theme_ contains lots of `MultipleTypographyCompositeRawTokens` listing all 
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "typeDisplayMedium":
 @objc open var typeDisplayMedium: MultipleTypographyCompositeRawTokens { 
-MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeBold750, regular: TypographyRawTokens.typeBold1050) 
+MultipleTypographyCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
 }
 
 // And here are the raw tokebs definitions:

@@ -79,7 +79,7 @@ extension YourCustomTheme {
     override public var colorBgPrimary: ColorSemanticToken { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray880) }
     
     // Override some fonts semantic tokens
-    public var fontFamily: TypographyFontFamilySemanticToken { TypographyRawTokens.fontFamilySystemSFPro }
+    public var fontFamily: TypographyFontFamilySemanticToken { FontRawTokens.fontFamilySystemSFPro }
     public var fontFamilyBody: TypographyFontFamilySemanticToken { MyOwnFontRawTokens.someFontBody }
 
     // Etc.
@@ -88,7 +88,7 @@ extension YourCustomTheme {
 
 You can defined your own set of raw tokens, for example:
 ```
-public typealias MyOwnTypographyRawTokens = TypographyRawTokens // Refer to type TypographyRawTokens for consistency, declared in OUDSTokensRaw
+public typealias MyOwnTypographyRawTokens = FontRawTokens // Refer to type FontRawTokens for consistency, declared in OUDSTokensRaw
 
 public enum MyOwnFontRawTokens {
 

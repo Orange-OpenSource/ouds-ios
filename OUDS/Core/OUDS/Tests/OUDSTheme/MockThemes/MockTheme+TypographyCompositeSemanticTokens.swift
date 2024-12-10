@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
 extension MockTheme {
 
-    static let mockThemeMultipleTypographyCompositeRawTokens = MultipleTypographyCompositeRawTokens(TypographyRawTokens.typeBold1850)
+    static let mockThemeMultipleTypographyCompositeRawTokens = MultipleTypographyCompositeRawTokens(FontRawTokens.typeBold1850)
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 

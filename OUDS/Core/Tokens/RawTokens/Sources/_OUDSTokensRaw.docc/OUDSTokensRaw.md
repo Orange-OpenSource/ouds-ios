@@ -96,4 +96,4 @@ If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so 
 - ``ElevationRawTokens``
 - ``GridRawTokens``
 - ``OpacityRawTokens``
-- ``TypographyRawTokens``
+- ``FontRawTokens``

@@ -70,7 +70,7 @@ struct TypographyModifier: ViewModifier {
         }
     }
 
-    // TODO: #51 - Call lineSpacing() and tracking() functions when values usable in TypographyRawTokens
+    // TODO: #51 - Call lineSpacing() and tracking() functions when values usable in FontRawTokens
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
     /// depending to the current `MultipleTypographyCompositeRawTokens`.
     /// **Does not apply _letter spacing_ nor _line height_ because raw tokens values are not usable!**

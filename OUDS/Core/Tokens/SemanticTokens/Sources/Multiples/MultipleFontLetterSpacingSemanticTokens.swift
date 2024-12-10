@@ -26,8 +26,8 @@ import OUDSTokensRaw
 ///         // its value can vary if comapct or regular modes.
 ///         // They can be declared in protocol TypographySemanticTokens,
 ///         // and defined automaticaly in OUDSTheme+TypographySemanticTokens extension
-///         var fontLetterSpacingDisplayMediumMobile: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing750 }
-///         var fontLetterSpacingDisplayMediumTablet: TypographyFontLetterSpacingSemanticToken { TypographyRawTokens.fontLetterSpacing1050 }
+///         var fontLetterSpacingDisplayMediumMobile: TypographyFontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing750 }
+///         var fontLetterSpacingDisplayMediumTablet: TypographyFontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing1050 }
 ///
 ///         // Then the develoment team declares an "higher" level font letter spacing semantic token for fontLetterSpacingDisplayMedium
 ///         // inside TypographyMultipleSemanticTokens protocol,

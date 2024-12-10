@@ -18,7 +18,7 @@
 // swiftlint:disable missing_docs
 
 /// Extracted in a separated file to help the *Figma* JSON to Swift parser to generate files to include easily.
-extension TypographyRawTokens {
+extension FontRawTokens {
 
     // MARK: Primitive token - Typography - Font family
 

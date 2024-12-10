@@ -29,11 +29,11 @@ import SwiftUICore
 ///         // inside TypographyCompositeSemanticTokens protocol,
 ///         // and defined inside OUDSTheme+TypographyCompositeSemanticTokens extension
 ///         var typeDisplayLarge: MultipleTypographyCompositeRawTokens {
-///             MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold1450)
+///             MultipleTypographyCompositeRawTokens(compact: FontRawTokens.typeBold850, regular: FontRawTokens.typeBold1450)
 ///         }
 ///
 ///         // If the same typography is used whatever the size class is
-///         var typeDisplayLarge: MultipleTypographyCompositeRawTokens { MultipleTypographyCompositeRawTokens(TypographyRawTokens.typeBold650) }
+///         var typeDisplayLarge: MultipleTypographyCompositeRawTokens { MultipleTypographyCompositeRawTokens(FontRawTokens.typeBold650) }
 ///
 ///         // The theme exposes both generated elevation semantic tokens and "crafted" higher level elevation semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
