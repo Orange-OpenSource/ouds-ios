@@ -49,6 +49,10 @@ brew install swiftlint
 # For SwiftFormat (at least 0.52.4)
 brew install swiftformat
 # or `brew reinstall swiftformat` to get updates if old version installed
+
+# For xcodes (at least 1.5.0)
+brew install xcodesorg/made/xcodes
+# or `brew reinstall xcodesorg/made/xcodes` to get updates if old version installed
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
