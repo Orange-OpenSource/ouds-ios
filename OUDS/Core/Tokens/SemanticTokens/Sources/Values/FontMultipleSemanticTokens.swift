@@ -18,11 +18,11 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **typography** but using ``MultipleFontLetterSpacingSemanticTokens`` for *letter spacings*,
+/// This is a group of semantic tokens for **fonts** but using ``MultipleFontLetterSpacingSemanticTokens`` for *letter spacings*,
 /// ``MultipleFontLineHeightSemanticTokens`` for *line heights* and ``MultipleFontSizeSemanticTokens`` for *font sizes*.
 ///
 /// In fact these ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightSemanticTokens`` and  ``MultipleFontSizeSemanticTokens`` classes will help users
-/// (i.e. developers) to handle one semantic token for typography things depending to size class (wether it could be compact / mobile or regular / tablet).
+/// (i.e. developers) to handle one semantic token for font things depending to size class (wether it could be compact / mobile or regular / tablet).
 /// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide
 /// such ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightSemanticTokens`` and ``MultipleFontSizeSemanticTokens`` tokens.
 /// Thus the "real" letter spacing, line height and font size tokens are declared in ``FontSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).
@@ -40,10 +40,10 @@
 ///
 ///         // The font size semantic tokens using them
 ///         // declared (in FontMultipleSemanticTokens.swift) and defined (in OUDSTheme+FontSemanticTokens.swift) by the tokenator
-///         var fontSizeDisplayLargeMobile: TypographyFontSizeSemanticToken { FontRawTokens.fontSize850 }
-///         var fontSizeDisplayLargeTablet: TypographyFontSizeSemanticToken { FontRawTokens.fontSize1450 }
+///         var fontSizeDisplayLargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize850 }
+///         var fontSizeDisplayLargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize1450 }
 ///
-///         // The 'higher level' typography semantic tokens wrapping them and exposed to users
+///         // The 'higher level' font semantic tokens wrapping them and exposed to users
 ///         // declared (in this FontMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+FontMultipleSemanticTokens.swift)
 ///         var fontSizeDisplayLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeDisplayLargeMobile, regular: fontSizeDisplayLargeTablet) }
 ///

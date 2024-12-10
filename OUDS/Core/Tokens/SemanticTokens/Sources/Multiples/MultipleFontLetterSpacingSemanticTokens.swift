@@ -26,8 +26,8 @@ import OUDSTokensRaw
 ///         // its value can vary if comapct or regular modes.
 ///         // They can be declared in protocol FontSemanticTokens,
 ///         // and defined automaticaly in OUDSTheme+FontSemanticTokens extension
-///         var fontLetterSpacingDisplayMediumMobile: TypographyFontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing750 }
-///         var fontLetterSpacingDisplayMediumTablet: TypographyFontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing1050 }
+///         var fontLetterSpacingDisplayMediumMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing750 }
+///         var fontLetterSpacingDisplayMediumTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing1050 }
 ///
 ///         // Then the develoment team declares an "higher" level font letter spacing semantic token for fontLetterSpacingDisplayMedium
 ///         // inside FontMultipleSemanticTokens protocol,
@@ -52,7 +52,7 @@ public final class MultipleFontLetterSpacingSemanticTokens: NSObject, Sendable {
     public let regular: FontLetterSpacingSemanticToken
 
     /// Initializes a new multiple font token with the same value for both *compact* and *regular* size classes
-    /// - Parameter value: The `TypographyFontLetterSpacingSemanticToken` to apply if device in *compact* mode
+    /// - Parameter value: The `FontLetterSpacingSemanticToken` to apply if device in *compact* mode
     public init(_ value: FontLetterSpacingSemanticToken) {
         self.compact = value
         self.regular = value
@@ -60,8 +60,8 @@ public final class MultipleFontLetterSpacingSemanticTokens: NSObject, Sendable {
 
     /// Initializes a new multiple font token.
     /// - Parameters:
-    ///    - compact: The `TypographyFontLetterSpacingSemanticToken` to apply if device in *compact* mode
-    ///    - regular: The `TypographyFontLetterSpacingSemanticToken` to apply if device in *regular* mode
+    ///    - compact: The `FontLetterSpacingSemanticToken` to apply if device in *compact* mode
+    ///    - regular: The `FontLetterSpacingSemanticToken` to apply if device in *regular* mode
     public init(compact: FontLetterSpacingSemanticToken, regular: FontLetterSpacingSemanticToken) {
         self.compact = compact
         self.regular = regular

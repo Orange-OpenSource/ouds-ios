@@ -38,7 +38,7 @@ open class OUDSTheme: @unchecked Sendable {
 
     /// Defines a basic kind of abstract theme to subclass then.
     /// - Parameters:
-    ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `TypographyFontFamilySemanticToken` you want to apply
+    ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(customFontFamily: FontFamilySemanticToken?) {
         self.customFontFamily = customFontFamily
     }

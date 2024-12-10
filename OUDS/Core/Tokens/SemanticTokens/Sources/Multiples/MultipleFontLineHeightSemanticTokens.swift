@@ -14,7 +14,7 @@
 import Foundation
 import OUDSTokensRaw
 
-/// Kind of semantic tokens which will wrap a combination of ``TypographyFontLineHeightSemanticToken`` depending to size classes.
+/// Kind of semantic tokens which will wrap a combination of ``yFontLineHeightSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
 /// If a font line height token exists with its value depending to the size class, it must be packed in such ``MultipleFontLineHeightSemanticTokens`
 ///
@@ -24,8 +24,8 @@ import OUDSTokensRaw
 ///         // its value can vary if compact or regular modes.
 ///         // They can be declared in protocol FontSemanticTokens,
 ///         // and defined automaticaly in OUDSTheme+FontSemanticTokens extension
-///         var fontLineHeightLabelXLargeMobile: TypographyFontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
-///         var fontLineHeightLabelXLargeTablet: TypographyFontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
+///         var fontLineHeightLabelXLargeMobile: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
+///         var fontLineHeightLabelXLargeTablet: FontLineHeightSemanticToken { FontRawTokens.fontLineHeight450 }
 ///
 ///         // Then the develoment team declares an "higher" level line height semantic token for fontLineHeightLabelXLarge
 ///         // inside FontMultipleSemanticTokens protocol,
@@ -50,7 +50,7 @@ public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
     public let regular: FontLineHeightSemanticToken
 
     /// Initializes a new multiple font token with the same value for both *compact* and *regular* size classes
-    /// - Parameter value: The `TypographyFontLineHeightSemanticToken` to apply if device in *compact* mode
+    /// - Parameter value: The `FontLineHeightSemanticToken` to apply if device in *compact* mode
     public init(_ value: FontLineHeightSemanticToken) {
         self.compact = value
         self.regular = value
@@ -58,8 +58,8 @@ public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
 
     /// Initializes a new multiple font token.
     /// - Parameters:
-    ///    - compact: The `TypographyFontLineHeightSemanticToken` to apply if device in *compact* mode
-    ///    - regular: The `TypographyFontLineHeightSemanticToken` to apply if device in *regular* mode
+    ///    - compact: The `FontLineHeightSemanticToken` to apply if device in *compact* mode
+    ///    - regular: The `FontLineHeightSemanticToken` to apply if device in *regular* mode
     public init(compact: FontLineHeightSemanticToken, regular: FontLineHeightSemanticToken) {
         self.compact = compact
         self.regular = regular

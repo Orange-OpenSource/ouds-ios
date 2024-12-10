@@ -17,12 +17,12 @@
 
 // swiftlint:disable missing_docs
 
-/// This is a group of semantic tokens for **typography**.
-/// It defines all typography semantic tokens a theme must have
+/// This is a group of semantic tokens for **font**.
+/// It defines all font semantic tokens a theme must have
 /// (``FontFamilySemanticToken``, ``FontWeightSemanticToken``, ``FontSizeSemanticToken``, ``FontLineHeightSemanticToken``).
 /// However the composite tokens (here the ones gathering each type of semantic token here) are defined in ``FontCompositeSemanticTokens`` because the *tokenator*
 /// is not able to generate them yet, and they must be defined elsewhere to not be deleted.
-/// Any typography semantic token must be declared there (except ``FontCompositeSemanticTokens``).
+/// Any font semantic token must be declared there (except ``FontCompositeSemanticTokens``).
 public protocol FontSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Family

@@ -16,10 +16,10 @@ import OUDSFoundations
 /// An operator to make for example comparisons between ``FontCompositeRawToken``
 infix operator <|
 
-/// In the *Figma* global design system, composite tokens are defined for typography-related things.
+/// In the *Figma* global design system, composite tokens are defined for font-related things.
 /// Composite tokens are tokens defined in *Figma* by other tokens.
-/// Here a *typography* thing is caracterized by a *font size*, a *line height*, a *font weight* and *letter spacig* values.
-/// All these elements are *raw tokens*, and together define a *composite raw token* for *typography* thing.
+/// Here a *font* thing is caracterized by a *font size*, a *line height*, a *font weight* and *letter spacing* values.
+/// All these elements are *raw tokens*, and together define a *composite raw token* for *font* thing.
 public struct FontCompositeRawToken: Equatable, Sendable {
 
     // Font family is not included here because this is the only thing which can vary
@@ -39,8 +39,8 @@ public struct FontCompositeRawToken: Equatable, Sendable {
     /// Operator which will return `true` if `lhs` is smaller than `rhs`.
     /// By "smaller" we mean smaller `size` and smaller or equal `lineHeight`, `weight` and `letterSpacing`
     /// - Parameters:
-    ///    - lhs: The typography composite token we expect to be smaller than `rhs`
-    ///    - rhs: The typography composite token we expect to be bigger than `lhs`
+    ///    - lhs: The font composite token we expect to be smaller than `rhs`
+    ///    - rhs: The font composite token we expect to be bigger than `lhs`
     /// - Returns Bool: `true` if `lhs` smaller than `rhs`, `false` otherwise
     static func <| (lhs: FontCompositeRawToken, rhs: FontCompositeRawToken) -> Bool {
         lhs.size < rhs.size

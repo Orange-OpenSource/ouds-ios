@@ -21,7 +21,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// Tests the UI rendering of each **typography token** using reference images
+/// Tests the UI rendering of each **font token** using reference images
 final class OUDSTokensTypographyUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Typography Tests

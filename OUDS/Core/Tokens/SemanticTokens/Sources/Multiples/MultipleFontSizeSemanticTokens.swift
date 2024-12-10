@@ -14,7 +14,7 @@
 import Foundation
 import OUDSTokensRaw
 
-/// Kind of semantic tokens which will wrap a combination of ``TypographyFontSizeSemanticToken`` depending to size classes.
+/// Kind of semantic tokens which will wrap a combination of ``FontSizeSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from Figma inside one object.
 /// If a font size exists with its value depending to the size class, it must be packed in such ``MultipleFontSizeSemanticTokens``.
 ///
@@ -24,8 +24,8 @@ import OUDSTokensRaw
 ///         // its value can vary if compact or regular modes.
 ///         // They can be declared in protocol FontSemanticTokens,
 ///         // and defined automaticaly in OUDSTheme+FontSemanticTokens extension
-///         var fontSizeBodySmallMobile: TypographyFontSizeSemanticToken { FontRawTokens.fontSize150 }
-///         var fontSizeBodySmallTablet: TypographyFontSizeSemanticToken { FontRawTokens.fontSize150 }
+///         var fontSizeBodySmallMobile: FontSizeSemanticToken { FontRawTokens.fontSize150 }
+///         var fontSizeBodySmallTablet: FontSizeSemanticToken { FontRawTokens.fontSize150 }
 ///
 ///         // Then the develoment team declares an "higher" level font size semantic token for fontSizeBodySmall
 ///         // inside FontMultipleSemanticTokens protocol,
@@ -48,7 +48,7 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
     public let regular: FontSizeSemanticToken
 
     /// Initializes a new multiple font token with the same value for both *compact* and *regular* size classes
-    /// - Parameter value: The `TypographyFontSizeSemanticToken` to apply if device in *compact* mode
+    /// - Parameter value: The `FontSizeSemanticToken` to apply if device in *compact* mode
     public init(_ value: FontSizeSemanticToken) {
         self.compact = value
         self.regular = value
@@ -56,8 +56,8 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
 
     /// Initializes a new multiple font token.
     /// - Parameters:
-    ///    - compact: The `TypographyFontSizeSemanticToken` to apply if device in *compact* mode
-    ///    - regular: The `TypographyFontSizeSemanticToken` to apply if device in *regular* mode
+    ///    - compact: The `FontSizeSemanticToken` to apply if device in *compact* mode
+    ///    - regular: The `FontSizeSemanticToken` to apply if device in *regular* mode
     public init(compact: FontSizeSemanticToken, regular: FontSizeSemanticToken) {
         self.compact = compact
         self.regular = regular

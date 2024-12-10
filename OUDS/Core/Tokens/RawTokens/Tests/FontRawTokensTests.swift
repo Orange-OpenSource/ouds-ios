@@ -17,9 +17,9 @@ import XCTest
 // swiftlint:disable type_body_length
 // swiftlint:disable required_deinit
 
-/// The aim of this tests class is to look for regressions in **typography raw tokens**.
+/// The aim of this tests class is to look for regressions in **font raw tokens**.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
-/// In the semantics of **typography raw tokens**, there will be some unchanged things like relationships between tokens.
+/// In the semantics of **font raw tokens**, there will be some unchanged things like relationships between tokens.
 /// Some of these tokens are also strongly based on their raw tvalues (like font family names) and must be tested.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
 final class FontRawTokensTests: XCTestCase {
@@ -28,43 +28,43 @@ final class FontRawTokensTests: XCTestCase {
 
     // Just to ensure the font families in tokens are the ones in system with the same name
 
-    func testTypographyRawTokenFontFamilyBrandDefault() throws {
+    func testFontRawTokenFontFamilyBrandDefault() throws {
         XCTAssertEqual(FontRawTokens.fontFamilyBrandDefault, "Helvetica Neue")
     }
 
-    func testTypographyRawTokenFontFamilyBrandTV() throws {
+    func testFontRawTokenFontFamilyBrandTV() throws {
         XCTAssertEqual(FontRawTokens.fontFamilyBrandTV, "Helvetica Neue LT")
     }
 
-    func testTypographyRawTokenFontFamilySystemArial() throws {
+    func testFontRawTokenFontFamilySystemArial() throws {
         XCTAssertEqual(FontRawTokens.fontFamilySystemArial, "Arial")
     }
 
-    func testTypographyRawTokenFontFamilySystemHelvetica() throws {
+    func testFontRawTokenFontFamilySystemHelvetica() throws {
         XCTAssertEqual(FontRawTokens.fontFamilySystemHelvetica, "Helvetica")
     }
 
-    func testTypographyRawTokenFontFamilySystemNotoSans() throws {
+    func testFontRawTokenFontFamilySystemNotoSans() throws {
         XCTAssertEqual(FontRawTokens.fontFamilySystemNotoSans, "Noto sans")
     }
 
-    func testTypographyRawTokenFontFamilySystemSFProText() throws {
+    func testFontRawTokenFontFamilySystemSFProText() throws {
         XCTAssertEqual(FontRawTokens.fontFamilySystemSFPro, "SF Pro")
     }
 
-    func testTypographyRawTokenFontFamilySystemRoboto() throws {
+    func testFontRawTokenFontFamilySystemRoboto() throws {
         XCTAssertEqual(FontRawTokens.fontFamilySystemRoboto, "Roboto")
     }
 
-    func testTypographyRawTokenFontFamilyMonospaceMenlo() throws {
+    func testFontRawTokenFontFamilyMonospaceMenlo() throws {
         XCTAssertEqual(FontRawTokens.fontFamilyMonospaceMenlo, "Menlo")
     }
 
-    func testTypographyRawTokenFontFamilyMonospaceMonaco() throws {
+    func testFontRawTokenFontFamilyMonospaceMonaco() throws {
         XCTAssertEqual(FontRawTokens.fontFamilyMonospaceMonaco, "Monaco")
     }
 
-    func testTypographyRawTokenFontFamilyCourrierNew() throws {
+    func testFontRawTokenFontFamilyCourrierNew() throws {
         XCTAssertEqual(FontRawTokens.fontFamilyMonospaceCourierNew, "Courier New")
     }
 

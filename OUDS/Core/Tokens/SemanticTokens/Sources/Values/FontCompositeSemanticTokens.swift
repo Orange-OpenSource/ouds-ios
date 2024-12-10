@@ -17,11 +17,11 @@
 
 // swiftlint:disable missing_docs
 
-/// This is a group of semantic tokens for **typography**, but only **composite tokens** in the end.
+/// This is a group of semantic tokens for **fonts**, but only **composite tokens** in the end.
 /// There are splitted and not declared in ``FontSemanticTokens`` as the *tokenator* tool parsing *Figma* JSON to Swift code is not able to manage them.
 /// Thus we need to declare them in another file to prevent them to be erased.
 ///
-/// It defines all composite typography semantic tokens a theme must have, i.e. tokens including properties for font family, font weight, font size or line height for example.
+/// It defines all composite font semantic tokens a theme must have, i.e. tokens including properties for font family, font weight, font size or line height for example.
 ///
 /// This protocol makes themes able to provide and override `FontCompositeRawToken` gathered in ``MultipleFontCompositeRawTokens`` instances.
 /// This `FontCompositeRawToken` is not managed by tokenator yet as it is composed by several properties.

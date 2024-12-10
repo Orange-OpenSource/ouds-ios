@@ -79,8 +79,8 @@ extension YourCustomTheme {
     override public var colorBgPrimary: ColorSemanticToken { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray880) }
     
     // Override some fonts semantic tokens
-    public var fontFamily: TypographyFontFamilySemanticToken { FontRawTokens.fontFamilySystemSFPro }
-    public var fontFamilyBody: TypographyFontFamilySemanticToken { MyOwnFontRawTokens.someFontBody }
+    public var fontFamily: FontFamilySemanticToken { FontRawTokens.fontFamilySystemSFPro }
+    public var fontFamilyBody: FontFamilySemanticToken { MyOwnFontRawTokens.someFontBody }
 
     // Etc.
 }
