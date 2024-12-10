@@ -22,25 +22,25 @@ import OUDSTokensSemantic
 
 /// Overrides some color tokens using values available in ``OrangeBrandColorRawTokens``.
 /// In fact the *tokenator* is not able to do the magic needed using the JSON file produced by *Figma*.
-/// Some color tokens are not isolated by theme in *Figma*, thus the abstract ``OUDSTheme`` faces issues by defining tokens with raw tokens not defined in ``ColorRawTokens`` but in ``OrangeBrandColorRawTokens``. Thus when the ``OUDSTheme``has its colors tokens updated, a manual update must be done to replace unknown tokens by `fatalError` (i.e. must be overriden somewhere somehow) in that file and in this ``OrangeTheme`` files tokens must be overriden and manualy updated with the expected values.
+/// Some color tokens are not isolated by theme in *Figma*, thus the abstract ``OUDSTheme`` faces issues by defining tokens with raw tokens not defined in ``OrangeBrandColorRawTokens`` but in ``OrangeBrandColorRawTokens``. Thus when the ``OUDSTheme``has its colors tokens updated, a manual update must be done to replace unknown tokens by `fatalError` (i.e. must be overriden somewhere somehow) in that file and in this ``OrangeTheme`` files tokens must be overriden and manualy updated with the expected values.
 ///
 ///     // For example, in OUDSTheme colors:
 ///
-///     // This token can be defined because uses colorFunctionalDarkGray400 defined in ColorRawTokens, that's ok
-///     @objc open var colorActionPrimaryHoverLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray400 }
+///     // This token can be defined because uses colorFunctionalDarkGray400 defined in OrangeBrandColorRawTokens, that's ok
+///     override open var colorActionPrimaryHoverLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorFunctionalDarkGray400 }
 ///
-///     // This token does not compile because colorOrange500 is in OrangeBrandColorRawTokens and not ColorRawTokens
+///     // This token does not compile because colorOrange500 is in OrangeBrandOrangeBrandColorRawTokens and not OrangeBrandColorRawTokens
 ///     // but Figma cannot manage them so the JSON is wrong and the tokenator cannot guess the trick
-///     @objc open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorOrange500 }
+///     override open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 ///
 ///     // So it must be replaced by to prevent themes to use bad tokens
 ///     // and ensure they will be defined somewhere somehow
-///     @objc open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoadingOnBgEmphasizedLight!") }
+///     override open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPrimaryLoadingOnBgEmphasizedLight!") }
 ///
 ///     // And in OrangeTheme colors:
 ///
 ///     // Token must be overriden
-///     override open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+///     override open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandOrangeBrandColorRawTokens.colorOrange500 }
 ///
 ///     // And use the suitable reference in the multiple if existing
 ///     override open var colorActionPrimaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryLoadingOnBgEmphasizedLight, dark: ...) }
@@ -51,150 +51,62 @@ import OUDSTokensSemantic
 /// We get uncompilable code for color tokens update and need to make the merge manualy.
 extension OrangeTheme {
 
-    // MARK: Semantic token - Colors - Background
-
     // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBgTertiaryLight: ColorSemanticToken {
-        OrangeBrandColorRawTokens.colorWarmGray100 }
+    // Define here because using raw tokens not defined in OUDSTheme module
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBgTertiaryDark: ColorSemanticToken {
-        OrangeBrandColorRawTokens.colorWarmGray900 }
+    override open var colorActionLoadingLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBgBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
+    override open var colorActionPressedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBgBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-
-    override open var colorBgBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgBrandPrimaryLight, dark: colorBgBrandPrimaryDark) }
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBgStatusAccentMutedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBgStatusAccentMutedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
-
-    override open var colorBgStatusAccentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgStatusAccentMutedLight, dark: colorBgStatusAccentMutedDark) }
-
-    override open var colorBgStatusAccentMutedOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
-
-    override open var colorBgStatusAccentMutedOnBgEmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
-
-    override open var colorBgStatusAccentMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgStatusAccentMutedOnBgEmphasizedLight, dark: colorBgStatusAccentMutedOnBgEmphasizedDark) }
-
-    // MARK: Semantic token - Colors - Content
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorContentBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorContentBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-
-    override open var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandPrimaryLight, dark: colorContentBrandPrimaryDark) }
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorContentBrandPrimaryOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorContentBrandPrimaryOnBgEmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-
-    override open var colorContentBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentBrandPrimaryOnBgEmphasizedLight, dark: colorContentBrandPrimaryOnBgEmphasizedDark) }
-
-    // MARK: Semantic token - Colors - Border
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBorderBrandPrimaryOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBorderBrandPrimaryOnBgEmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-
-    override open var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandPrimaryOnBgEmphasizedLight, dark: colorBorderBrandPrimaryOnBgEmphasizedDark) }
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBorderBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorBorderBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-
-    override open var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBorderBrandPrimaryLight, dark: colorBorderBrandPrimaryDark) }
-
-    // MARK: Semantic token - Colors - Action
-
-    // NOTE: Picked from OUDSTheme since tokenator update
     override open var colorActionSelectedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
+    override open var colorActionLoadingDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+
+    override open var colorActionPressedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+
     override open var colorActionSelectedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 
-    override open var colorActionSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionSelectedLight, dark: colorActionSelectedDark) }
+    override open var colorBgTertiaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorActionSelectedOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    override open var colorBgTertiaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorActionSelectedOnBgEmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    override open var colorBorderBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
 
-    override open var colorActionSelectedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override open var colorBorderBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorActionPrimaryPressedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
+    override open var colorContentBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
 
-    override open var colorActionPrimaryPressedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    override open var colorContentBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 
-    override open var colorActionPrimaryPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryPressedLight, dark: colorActionPrimaryPressedDark) }
+    override open var colorSurfaceBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorActionPrimaryPressedOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    override open var colorSurfaceBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorActionPrimaryPressedOnBgEmphasizedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    override open var colorSurfaceStatusAccentMutedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
 
-    override open var colorActionPrimaryPressedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryPressedOnBgEmphasizedLight, dark: colorActionPrimaryPressedOnBgEmphasizedDark) }
+    override open var colorDecorativeBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorActionPrimaryLoadingLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
+    override open var colorDecorativeBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorActionPrimaryLoadingDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    override open var colorChartHighlightLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
 
-    override open var colorActionPrimaryLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryLoadingLight, dark: colorActionPrimaryLoadingDark) }
+    override open var colorChartHighlightDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorRawToken { OrangeBrandColorRawTokens.colorOrange500 }
+    override open var colorRepositoryAccentHighestLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorActionPrimaryLoadingOnBgEmphasizedDark: ColorRawToken { OrangeBrandColorRawTokens.colorOrange500 }
+    override open var colorRepositoryAccentLowestLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
 
-    override open var colorActionPrimaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryLoadingOnBgEmphasizedLight, dark: colorActionPrimaryLoadingOnBgEmphasizedDark) }
+    override open var colorRepositoryAccentHighestDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
 
-    override open var colorActionPrimaryFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalDarkGray400, dark: ColorRawTokens.colorFunctionalLightGray400) }
+    override open var colorRepositoryAccentLowestDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
 
-    override open var colorActionPrimaryFocusOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override open var colorRepositoryPrimaryDefaultLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
 
-    // MARK: Semantic token - Colors - Decorative
+    override open var colorRepositoryPrimaryLowLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorDecorativeBrandPrimaryLight: ColorRawToken { OrangeBrandColorRawTokens.colorOrange500 }
+    override open var colorRepositoryPrimaryDefaultDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
 
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorDecorativeBrandPrimaryDark: ColorRawToken { OrangeBrandColorRawTokens.colorOrange500 }
-
-    override open var colorDecorativeBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorDecorativeBrandPrimaryLight, dark: colorDecorativeBrandPrimaryDark) }
-
-    override open var colorDecorativeBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorDecorativeBrandSecondaryLight, dark: colorDecorativeBrandSecondaryDark) }
-
-    override open var colorDecorativeBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorDecorativeBrandTertiaryLight, dark: colorDecorativeBrandTertiaryDark) }
-
-    // MARK: Semantic token - Colors - Chart
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorChartCategoricalBrandLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
-
-    // NOTE: Picked from OUDSTheme since tokenator update
-    override open var colorChartCategoricalBrandDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
-
-    override open var colorChartCategoricalBrand: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalBrandLight, dark: colorChartCategoricalBrandDark) }
+    override open var colorRepositoryPrimaryLowDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 }
 
 // swiftlint:enable line_length

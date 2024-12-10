@@ -114,7 +114,7 @@ struct SpaceCommonIllustration: View {
                 ShowcaseTokenIllustrationBackground()
                     .padding(.top, dimension)
                     .padding(.leading, dimension)
-                    .background(theme.colorAlwaysInfo.color(for: colorScheme))
+                    .background(theme.colorContentStatusInfo.color(for: colorScheme))
             case .leading(let asset): // ZStack alignment leading
                 HStack(alignment: .center, spacing: theme.spaceFixedNone) {
                     SpaceIllustrationRectangle(width: dimension)
@@ -223,7 +223,7 @@ struct SpaceIllustrationIcon: View {
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+                .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
                 .padding(.horizontal, asset.extraPadding)
                 .padding(.vertical, asset.extraPadding)
                 .frame(width: 24)
@@ -255,7 +255,7 @@ private struct SpaceIllustrationRectangle: View {
 
     var body: some View {
         Rectangle()
-            .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+            .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
             .frame(width: width, height: height)
     }
 }
@@ -316,7 +316,7 @@ struct SpaceHeaderDescription: View {
 
     var body: some View {
         content
-            .oudsBorder(style: theme.borderStyleDrag, width: theme.borderWidthThin, radius: theme.borderRadiusNone, color: theme.colorBorderEmphasizedOnBgEmphasized)
+            .oudsBorder(style: theme.borderStyleDrag, width: theme.borderWidthThin, radius: theme.borderRadiusNone, color: theme.colorBgEmphasized)
                 .padding(.all, theme.spaceFixedMedium)
                 .background(theme.colorBgEmphasized.color(for: colorScheme))
     }
@@ -338,28 +338,28 @@ struct SpaceHeaderDescription: View {
         case .horizontal:
             HStack(spacing: theme.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(width: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
                 }
             }
         case .verical:
             VStack(spacing: theme.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(height: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
                 }
             }
@@ -369,12 +369,12 @@ struct SpaceHeaderDescription: View {
     private func text(_ paddings: EdgeInsets) -> some View {
         HStack {
             Text(firstText)
-                .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
                 .typeBodyDefaultMedium(theme)
         }
         .background(theme.colorBgEmphasized.color(for: colorScheme))
         .padding(paddings)
-        .background(theme.colorAlwaysInfo.color(for: colorScheme))
+        .background(theme.colorContentStatusInfo.color(for: colorScheme))
     }
 
     @ViewBuilder
@@ -395,7 +395,7 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colorContentOnStatusEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
             .background(theme.colorBgEmphasized.color(for: colorScheme))
@@ -415,7 +415,7 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colorContentOnStatusEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
             .background(theme.colorBgEmphasized.color(for: colorScheme))

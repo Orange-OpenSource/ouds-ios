@@ -25,355 +25,331 @@ import OUDSTokensSemantic
 /// Some tokens do not have values assigned in the design system, and must be overriden.
 extension InverseTheme {
 
-    // MARK: Semantic token - Colors - Background
+    override public var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityInvisibleBlackDark) }
 
-    override public var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray880) }
+    override public var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityInvisibleWhiteDark) }
 
-    override public var colorBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray720) }
+    override public var colorActionDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionDisabledDark) }
 
-    override public var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorWarmGray900) }
+    override public var colorActionEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionEnabledDark) }
 
-    override public var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
+    override public var colorActionFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionFocusDark) }
 
-    override public var colorBgBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override public var colorActionHighlighted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionHighlightedDark) }
 
-    override public var colorBgStatusNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray720) }
+    override public var colorActionHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionHoverDark) }
 
-    override public var colorBgStatusNeutralOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray80) }
+    override public var colorActionLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionLoadingDark) }
 
-    override public var colorBgStatusPositiveMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalMalachite100) }
+    override public var colorActionNegativeEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionNegativeEnabledDark) }
 
-    override public var colorBgStatusPositiveMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalMalachite100) }
+    override public var colorActionNegativeFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionNegativeFocusDark) }
 
-    override public var colorBgStatusPositiveEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalMalachite500) }
+    override public var colorActionNegativeHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionNegativeHoverDark) }
 
-    override public var colorBgStatusInfoMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDodgerBlue900) }
+    override public var colorActionNegativeLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionNegativeLoadingDark) }
 
-    override public var colorBgStatusInfoMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDodgerBlue100) }
+    override public var colorActionNegativePressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionNegativePressedDark) }
 
-    override public var colorBgStatusInfoEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
+    override public var colorActionPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionPressedDark) }
 
-    override public var colorBgStatusWarningMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun900) }
+    override public var colorActionSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionSelectedDark) }
 
-    override public var colorBgStatusWarningMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun100) }
+    override public var colorActionSupportEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionSupportEnabledDark) }
 
-    override public var colorBgStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun500) }
+    override public var colorActionSupportFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionSupportFocusDark) }
 
-    override public var colorBgStatusNegativeMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet900) }
+    override public var colorActionSupportHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionSupportHoverDark) }
 
-    override public var colorBgStatusNegativeMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet100) }
+    override public var colorActionSupportLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionSupportLoadingDark) }
 
-    override public var colorBgStatusNegativeEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    override public var colorActionSupportPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionSupportPressedDark) }
 
-    override public var colorBgStatusAccentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorWarmGray900) }
+    override public var colorActionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionVisitedDark) }
 
-    override public var colorBgStatusAccentMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorWarmGray100) }
+    override public var colorAlwaysBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorAlwaysBlackDark) }
 
-    override public var colorBgStatusAccentEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun500) }
+    override public var colorAlwaysOnBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorAlwaysOnBlackDark) }
 
-    // MARK: Semantic token - Colors - Content
+    override public var colorAlwaysOnWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorAlwaysOnWhiteDark) }
 
-    override public var colorContentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    override public var colorAlwaysWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorAlwaysWhiteDark) }
 
-    override public var colorContentDefaultOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
+    override public var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBgEmphasizedDark) }
 
-    override public var colorContentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override public var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBgPrimaryDark) }
 
-    override public var colorContentMutedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    override public var colorBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBgSecondaryDark) }
 
-    override public var colorContentDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    override public var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBgTertiaryDark) }
 
-    override public var colorContentDisabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override public var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBorderBrandPrimaryDark) }
 
-    override public var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override public var colorBorderDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBorderDefaultDark) }
 
-    override public var colorContentStatusPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalMalachite500) }
+    override public var colorBorderEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBorderEmphasizedDark) }
 
-    override public var colorContentStatusInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDodgerBlue500) }
+    override public var colorBorderFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBorderFocusDark) }
 
-    override public var colorContentStatusWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun500) }
+    override public var colorBorderFocusInset: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBorderFocusInsetDark) }
 
-    override public var colorContentStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    override public var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBorderOnBrandPrimaryDark) }
 
-    // MARK: Semantic token - Colors - Border
+    override public var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentBrandPrimaryDark) }
 
-    override public var colorBorderDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    override public var colorContentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentDefaultDark) }
 
-    override public var colorBorderDefaultOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override public var colorContentDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentDisabledDark) }
 
-    override public var colorBorderEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    override public var colorContentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentMutedDark) }
 
-    override public var colorBorderEmphasizedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
+    override public var colorContentOnActionDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionDisabledDark) }
 
-    override public var colorBorderFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray880) }
+    override public var colorContentOnActionEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionEnabledDark) }
 
-    override public var colorBorderBrandPrimaryOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange550) }
+    override public var colorContentOnActionFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionFocusDark) }
 
-    override public var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override public var colorContentOnActionHighlighted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionHighlightedDark) }
 
-    // MARK: Semantic token - Colors - Action
+    override public var colorContentOnActionHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionHoverDark) }
 
-    override public var colorActionSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override public var colorContentOnActionLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionLoadingDark) }
 
-    override public var colorActionSelectedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange550) }
+    override public var colorContentOnActionNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionNegativeDark) }
 
-    override public var colorActionDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    override public var colorContentOnActionPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionPressedDark) }
 
-    override public var colorActionDisabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override public var colorContentOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnBrandPrimaryDark) }
 
-    override public var colorActionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst400) }
+    override public var colorContentOnOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnOverlayEmphasizedDark) }
 
-    override public var colorActionPrimaryEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    override public var colorContentOnStatusEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnStatusEmphasizedDark) }
 
-    override public var colorActionPrimaryEnabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalBlack) }
+    override public var colorContentOnStatusEmphasizedNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnStatusEmphasizedNeutralDark) }
 
-    override public var colorActionPrimaryHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override public var colorContentOnStatusMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnStatusMutedDark) }
 
-    override public var colorActionPrimaryHoverOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    override public var colorContentStatusInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentStatusInfoDark) }
 
-    override public var colorActionPrimaryPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override public var colorContentStatusNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentStatusNegativeDark) }
 
-    override public var colorActionPrimaryPressedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange550) }
+    override public var colorContentStatusPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentStatusPositiveDark) }
 
-    override public var colorActionPrimaryLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override public var colorContentStatusWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentStatusWarningDark) }
 
-    override public var colorActionPrimaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange550) }
+    override public var colorOverlayDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOverlayDefaultDark) }
 
-    override public var colorActionPrimaryFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override public var colorOverlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOverlayDragDark) }
 
-    override public var colorActionPrimaryFocusOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray400) }
+    override public var colorOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOverlayEmphasizedDark) }
 
-    override public var colorActionSecondaryEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    override public var colorOverlayModal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOverlayModalDark) }
 
-    override public var colorActionSecondaryEnabledOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray80) }
+    override public var colorSurfaceBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceBrandPrimaryDark) }
 
-    override public var colorActionSecondaryHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    override public var colorSurfaceStatusAccentEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusAccentEmphasizedDark) }
 
-    override public var colorActionSecondaryHoverOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    override public var colorSurfaceStatusAccentMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusAccentMutedDark) }
 
-    override public var colorActionSecondaryPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    override public var colorSurfaceStatusInfoEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusInfoEmphasizedDark) }
 
-    override public var colorActionSecondaryPressedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    override public var colorSurfaceStatusInfoMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusInfoMutedDark) }
 
-    override public var colorActionSecondaryLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    override public var colorSurfaceStatusNegativeEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusNegativeEmphasizedDark) }
 
-    override public var colorActionSecondaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    override public var colorSurfaceStatusNegativeMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusNegativeMutedDark) }
 
-    override public var colorActionSecondaryFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    override public var colorSurfaceStatusNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusNeutralEmphasizedDark) }
 
-    override public var colorActionSecondaryFocusOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    override public var colorSurfaceStatusNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusNeutralMutedDark) }
 
-    override public var colorActionNegativeEnabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    override public var colorSurfaceStatusPositiveEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusPositiveEmphasizedDark) }
 
-    override public var colorActionNegativeHover: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet700) }
+    override public var colorSurfaceStatusPositiveMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusPositiveMutedDark) }
 
-    override public var colorActionNegativePressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet800) }
+    override public var colorSurfaceStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusWarningEmphasizedDark) }
 
-    override public var colorActionNegativeLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet800) }
+    override public var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusWarningMutedDark) }
 
-    override public var colorActionNegativeFocus: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet700) }
+    override public var colorDecorativeAccent1Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent1DefaultDark) }
 
-    // MARK: Semantic token - Colors - Elevation
+    override public var colorDecorativeAccent1Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent1EmphasizedDark) }
 
-    override public var colorElevationRaised: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray800) }
+    override public var colorDecorativeAccent1Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent1MutedDark) }
 
-    override public var colorElevationRaisedOnBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    override public var colorDecorativeAccent2Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent2DefaultDark) }
 
-    override public var colorElevationRaisedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
+    override public var colorDecorativeAccent2Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent2EmphasizedDark) }
 
-    override public var colorElevationDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray720) }
+    override public var colorDecorativeAccent2Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent2MutedDark) }
 
-    override public var colorElevationDragOnBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray480) }
+    override public var colorDecorativeAccent3Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent3DefaultDark) }
 
-    override public var colorElevationDragOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray80) }
+    override public var colorDecorativeAccent3Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent3EmphasizedDark) }
 
-    override public var colorElevationOverlayDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray720) }
+    override public var colorDecorativeAccent3Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent3MutedDark) }
 
-    override public var colorElevationOverlayDefaultOnBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray560) }
+    override public var colorDecorativeAccent4Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent4DefaultDark) }
 
-    override public var colorElevationOverlayDefaultOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalWhite) }
+    override public var colorDecorativeAccent4Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent4EmphasizedDark) }
 
-    override public var colorElevationOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray80) }
+    override public var colorDecorativeAccent4Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent4MutedDark) }
 
-    override public var colorElevationOverlayEmphasizedOnBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray80) }
+    override public var colorDecorativeAccent5Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent5DefaultDark) }
 
-    override public var colorElevationOverlayEmphasizedOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    override public var colorDecorativeAccent5Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent5EmphasizedDark) }
 
-    override public var colorElevationModal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    override public var colorDecorativeAccent5Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent5MutedDark) }
 
-    // MARK: Semantic token - Colors - Decorative
+    override public var colorDecorativeBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeBrandPrimaryDark) }
 
-    override public var colorDecorativeNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    override public var colorDecorativeBrandSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeBrandSecondaryDark) }
 
-    override public var colorDecorativeNeutralDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray400) }
+    override public var colorDecorativeBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeBrandTertiaryDark) }
 
-    override public var colorDecorativeNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalLightGray160) }
+    override public var colorDecorativeNeutralDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeNeutralDefaultDark) }
 
-    override public var colorDecorativeAccent1Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald200) }
+    override public var colorDecorativeNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeNeutralEmphasizedDark) }
 
-    override public var colorDecorativeAccent1Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald500) }
+    override public var colorDecorativeNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeNeutralMutedDark) }
 
-    override public var colorDecorativeAccent1Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald700) }
+    override public var colorDecorativeSkinTint100: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint100Dark) }
 
-    override public var colorDecorativeAccent2Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky200) }
+    override public var colorDecorativeSkinTint200: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint200Dark) }
 
-    override public var colorDecorativeAccent2Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky400) }
+    override public var colorDecorativeSkinTint300: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint300Dark) }
 
-    override public var colorDecorativeAccent2Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky700) }
+    override public var colorDecorativeSkinTint400: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint400Dark) }
 
-    override public var colorDecorativeAccent3Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun200) }
+    override public var colorDecorativeSkinTint500: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint500Dark) }
 
-    override public var colorDecorativeAccent3Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun500) }
+    override public var colorDecorativeSkinTint600: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint600Dark) }
 
-    override public var colorDecorativeAccent3Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmber500) }
+    override public var colorDecorativeSkinTint700: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint700Dark) }
 
-    override public var colorDecorativeAccent4Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst200) }
+    override public var colorDecorativeSkinTint800: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint800Dark) }
 
-    override public var colorDecorativeAccent4Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst400) }
+    override public var colorDecorativeSkinTint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint900Dark) }
 
-    override public var colorDecorativeAccent4Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst800) }
+    override public var colorChartCategoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier1Dark) }
 
-    override public var colorDecorativeAccent5Muted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink100) }
+    override public var colorChartCategoricalTier2: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier2Dark) }
 
-    override public var colorDecorativeAccent5Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink200) }
+    override public var colorChartCategoricalTier3: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier3Dark) }
 
-    override public var colorDecorativeAccent5Emphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink300) }
+    override public var colorChartCategoricalTier4: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier4Dark) }
 
-    override public var colorDecorativeSkinTint100: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeDeepPeach100) }
+    override public var colorChartCategoricalTier5: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier5Dark) }
 
-    override public var colorDecorativeSkinTint200: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeDeepPeach200) }
+    override public var colorChartCategoricalTier6: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier6Dark) }
 
-    override public var colorDecorativeSkinTint300: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeDeepPeach300) }
+    override public var colorChartCategoricalTier7: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier7Dark) }
 
-    override public var colorDecorativeSkinTint400: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeDeepPeach400) }
+    override public var colorChartCategoricalTier8: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier8Dark) }
 
-    override public var colorDecorativeSkinTint500: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeDeepPeach500) }
+    override public var colorChartCategoricalTier9: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier9Dark) }
 
-    override public var colorDecorativeSkinTint600: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeDeepPeach600) }
+    override public var colorChartCategoricalTier10: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier10Dark) }
 
-    override public var colorDecorativeSkinTint700: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeDeepPeach700) }
+    override public var colorChartFunctionalInformation: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartFunctionalInformationDark) }
 
-    override public var colorDecorativeSkinTint800: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeDeepPeach800) }
+    override public var colorChartFunctionalNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartFunctionalNegativeDark) }
 
-    override public var colorDecorativeSkinTint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeDeepPeach900) }
+    override public var colorChartFunctionalPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartFunctionalPositiveDark) }
 
-    // MARK: Semantic token - Colors - Chart
+    override public var colorChartFunctionalWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartFunctionalWarningDark) }
 
-    override public var colorChartCategoricalNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray640) }
+    override public var colorChartGridlines: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartGridlinesDark) }
 
-    override public var colorChartCategoricalBrand: MultipleColorSemanticTokens { MultipleColorSemanticTokens(OrangeBrandColorRawTokens.colorOrange500) }
+    override public var colorChartHighlight: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartHighlightDark) }
 
-    override public var colorChartCategoricalPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalMalachite500) }
+    override public var colorChartNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartNeutralDark) }
 
-    override public var colorChartCategoricalNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalScarlet600) }
+    override public var colorRepositoryAccentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryAccentDefaultDark) }
 
-    override public var colorChartCategoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst500) }
+    override public var colorRepositoryAccentHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryAccentHighestDark) }
 
-    override public var colorChartCategoricalTier2: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink400) }
+    override public var colorRepositoryAccentLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryAccentLowDark) }
 
-    override public var colorChartCategoricalTier3: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald600) }
+    override public var colorRepositoryAccentLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryAccentLowestDark) }
 
-    override public var colorChartCategoricalTier4: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky200) }
+    override public var colorRepositoryInfoDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryInfoDefaultDark) }
 
-    override public var colorChartCategoricalTier5: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmber700) }
+    override public var colorRepositoryInfoHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryInfoHighestDark) }
 
-    override public var colorChartCategoricalTier6: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst600) }
+    override public var colorRepositoryInfoLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryInfoLowDark) }
 
-    override public var colorChartCategoricalTier7: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink600) }
+    override public var colorRepositoryInfoLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryInfoLowestDark) }
 
-    override public var colorChartCategoricalTier8: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald400) }
+    override public var colorRepositoryNegativeDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNegativeDefaultDark) }
 
-    override public var colorChartCategoricalTier9: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky500) }
+    override public var colorRepositoryNegativeHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNegativeHighDark) }
 
-    override public var colorChartCategoricalTier10: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmber300) }
+    override public var colorRepositoryNegativeHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNegativeHigherDark) }
 
-    override public var colorChartSequentialAccent1Tint100: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky900) }
+    override public var colorRepositoryNegativeHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNegativeHighestDark) }
 
-    override public var colorChartSequentialAccent1Tint200: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky800) }
+    override public var colorRepositoryNegativeLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNegativeLowDark) }
 
-    override public var colorChartSequentialAccent1Tint300: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky700) }
+    override public var colorRepositoryNegativeLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNegativeLowerDark) }
 
-    override public var colorChartSequentialAccent1Tint400: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky600) }
+    override public var colorRepositoryNegativeLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNegativeLowestDark) }
 
-    override public var colorChartSequentialAccent1Tint500: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky500) }
+    override public var colorRepositoryNeutralEmphasizedBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNeutralEmphasizedBlackDark) }
 
-    override public  var colorChartSequentialAccent1Tint600: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky400) }
+    override public var colorRepositoryNeutralEmphasizedHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNeutralEmphasizedHighDark) }
 
-    override public var colorChartSequentialAccent1Tint700: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky300) }
+    override public var colorRepositoryNeutralEmphasizedHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNeutralEmphasizedHigherDark) }
 
-    override public var colorChartSequentialAccent1Tint800: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky200) }
+    override public var colorRepositoryNeutralEmphasizedHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNeutralEmphasizedHighestDark) }
 
-    override public var colorChartSequentialAccent1Tint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeSky100) }
+    override public var colorRepositoryNeutralEmphasizedMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNeutralEmphasizedMediumDark) }
 
-    override public var colorChartSequentialAccent2Tint100: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald900) }
+    override public var colorRepositoryNeutralMutedLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNeutralMutedLowerDark) }
 
-    override public var colorChartSequentialAccent2Tint200: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald800) }
+    override public var colorRepositoryNeutralMutedLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNeutralMutedLowestDark) }
 
-    override public var colorChartSequentialAccent2Tint300: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald700) }
+    override public var colorRepositoryNeutralMutedWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryNeutralMutedWhiteDark) }
 
-    override public var colorChartSequentialAccent2Tint400: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald600) }
+    override public var colorRepositoryOpacityBlackHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityBlackHigherDark) }
 
-    override public var colorChartSequentialAccent2Tint500: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald500) }
+    override public var colorRepositoryOpacityBlackHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityBlackHighestDark) }
 
-    override public var colorChartSequentialAccent2Tint600: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald400) }
+    override public var colorRepositoryOpacityBlackLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityBlackLowDark) }
 
-    override public var colorChartSequentialAccent2Tint700: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald300) }
+    override public var colorRepositoryOpacityBlackLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityBlackLowerDark) }
 
-    override public var colorChartSequentialAccent2Tint800: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald200) }
+    override public var colorRepositoryOpacityBlackLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityBlackLowestDark) }
 
-    override public var colorChartSequentialAccent2Tint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeEmerald100) }
+    override public var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityBlackMediumDark) }
 
-    override public var colorChartSequentialAccent3Tint100: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink900) }
+    override public var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityBlackTransparentDark) }
 
-    override public var colorChartSequentialAccent3Tint200: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink800) }
+    override public var colorRepositoryOpacityInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityInfoDark) }
 
-    override public var colorChartSequentialAccent3Tint300: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink700) }
+    override public var colorRepositoryOpacityNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityNegativeDark) }
 
-    override public var colorChartSequentialAccent3Tint400: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink600) }
+    override public var colorRepositoryOpacityPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityPositiveDark) }
 
-    override public var colorChartSequentialAccent3Tint500: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink500) }
+    override public var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWarningDark) }
 
-    override public var colorChartSequentialAccent3Tint600: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink400) }
+    override public var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryPositiveDefaultDark) }
 
-    override public var colorChartSequentialAccent3Tint700: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink300) }
+    override public var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryPositiveHighestDark) }
 
-    override public var colorChartSequentialAccent3Tint800: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink200) }
+    override public var colorRepositoryPositiveLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryPositiveLowDark) }
 
-    override public var colorChartSequentialAccent3Tint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeShockingPink100) }
+    override public var colorRepositoryPositiveLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryPositiveLowestDark) }
 
-    override public var colorChartSequentialAccent4Tint100: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst900) }
+    override public var colorRepositoryPrimaryDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryPrimaryDefaultDark) }
 
-    override public var colorChartSequentialAccent4Tint200: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst800) }
+    override public var colorRepositoryPrimaryLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryPrimaryLowDark) }
 
-    override public var colorChartSequentialAccent4Tint300: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst700) }
+    override public var colorRepositoryWarningDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryWarningDefaultDark) }
 
-    override public var colorChartSequentialAccent4Tint400: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst600) }
+    override public var colorRepositoryWarningHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryWarningHighestDark) }
 
-    override public var colorChartSequentialAccent4Tint500: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst500) }
+    override public var colorRepositoryWarningLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryWarningLowDark) }
 
-    override public var colorChartSequentialAccent4Tint600: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst400) }
-
-    override public var colorChartSequentialAccent4Tint700: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst300) }
-
-    override public var colorChartSequentialAccent4Tint800: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst200) }
-
-    override public var colorChartSequentialAccent4Tint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorDecorativeAmethyst100) }
-
-    override public var colorChartSequentialAccent5Tint100: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun900) }
-
-    override public var colorChartSequentialAccent5Tint200: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun800) }
-
-    override public var colorChartSequentialAccent5Tint300: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun700) }
-
-    override public var colorChartSequentialAccent5Tint400: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun600) }
-
-    override public var colorChartSequentialAccent5Tint500: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun500) }
-
-    override public var colorChartSequentialAccent5Tint600: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun400) }
-
-    override public var colorChartSequentialAccent5Tint700: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun300) }
-
-    override public var colorChartSequentialAccent5Tint800: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun200) }
-
-    override public var colorChartSequentialAccent5Tint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalSun100) }
+    override public var colorRepositoryWarningLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryWarningLowestDark) }
 }
