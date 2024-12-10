@@ -24,7 +24,7 @@ import XCTest
 /// 
 /// **These tests checks if any _typography composite semantic tokens_ can be surcharged by a child theme**
 /// **Also, it can help to find removed or renamed tokens by having tests no more compilable**
-final class TestThemeOverrideOfTypographyCompositeSemanticTokens: XCTestCase {
+final class TestThemeOverrideOfFontCompositeSemanticTokens: XCTestCase {
 
     private var abstractTheme: OUDSTheme!
     private var inheritedTheme: OUDSTheme!

@@ -26,8 +26,8 @@ import SwiftUICore
 ///         let typeBold1450 = FontCompositeRawToken(size: fontSize1450, lineHeight: fontLineHeight1850, weight: fontWeight700, letterSpacing: fontLetterSpacing1450)
 ///
 ///         // Then the develoment team declares an "higher" level typography semantic token
-///         // inside TypographyCompositeSemanticTokens protocol,
-///         // and defined inside OUDSTheme+TypographyCompositeSemanticTokens extension
+///         // inside FontCompositeSemanticTokens protocol,
+///         // and defined inside OUDSTheme+FontCompositeSemanticTokens extension
 ///         var typeDisplayLarge: MultipleFontCompositeRawTokens {
 ///             MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold850, regular: FontRawTokens.typeBold1450)
 ///         }
