@@ -18,8 +18,9 @@ import OUDSTokensSemantic
 import SwiftUI
 
 // swiftlint:disable line_length
+
 /// A `ViewModifier` which will make possible to get the horizontal and vertical classes as `@Environment` values
-/// so as to define the viewport and use finaly the suitable `MultipleTypographyCompositeRawTokens`.
+/// so as to define the viewport and use finaly the suitable `MultipleFontCompositeRawTokens`.
 /// In fact _Swift extension_ does not allow to have such stored properties, and we don't want to use *UIKit* `UIScreen.main.traitCollection` to get values
 /// which may be out of date.
 /// For more details about layouts, see [the Apple documentation about devices dimensions](https://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-size-classes)
@@ -28,7 +29,7 @@ struct TypographyModifier: ViewModifier {
     /// The name of a possible custom font family, or `nil` if the font is use is _system font_
     let customFontFamily: FontFamilyRawToken?
     /// The typography to apply for *compact* or *regular* modes
-    let typography: MultipleTypographyCompositeRawTokens
+    let typography: MultipleFontCompositeRawTokens
 
     /// To get programatically and on the fly the horizontal layout size
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -72,7 +73,7 @@ struct TypographyModifier: ViewModifier {
 
     // TODO: #51 - Call lineSpacing() and tracking() functions when values usable in FontRawTokens
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
-    /// depending to the current `MultipleTypographyCompositeRawTokens`.
+    /// depending to the current `MultipleFontCompositeRawTokens`.
     /// **Does not apply _letter spacing_ nor _line height_ because raw tokens values are not usable!**
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {

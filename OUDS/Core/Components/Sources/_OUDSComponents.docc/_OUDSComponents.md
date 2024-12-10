@@ -36,14 +36,14 @@ public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: 0, y: 4,
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleTypographyCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/MultipleTypographyCompositeRawTokens). defined in the [`OUDSTkensSemantic` `TypographySemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/typographysemantictokens/).
+With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/MultipleFontCompositeRawTokens). defined in the [`OUDSTkensSemantic` `TypographySemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/typographysemantictokens/).
 
-The _theme_ contains lots of `MultipleTypographyCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
+The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
 ```swift
 // Here is a definition of a semantic token inside the theme for typography "typeDisplayMedium":
-@objc open var typeDisplayMedium: MultipleTypographyCompositeRawTokens { 
-MultipleTypographyCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
+@objc open var typeDisplayMedium: MultipleFontCompositeRawTokens { 
+MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold750, regular: FontRawTokens.typeBold1050) 
 }
 
 // And here are the raw tokebs definitions:

@@ -23,47 +23,47 @@
 ///
 /// It defines all composite typography semantic tokens a theme must have, i.e. tokens including properties for font family, font weight, font size or line height for example.
 ///
-/// This protocol makes themes able to provide and override `FontCompositeRawToken` gathered in ``MultipleTypographyCompositeRawTokens`` instances.
+/// This protocol makes themes able to provide and override `FontCompositeRawToken` gathered in ``MultipleFontCompositeRawTokens`` instances.
 /// This `FontCompositeRawToken` is not managed by tokenator yet as it is composed by several properties.
 public protocol TypographyCompositeSemanticTokens {
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
-    var typeDisplayLarge: MultipleTypographyCompositeRawTokens { get }
-    var typeDisplayMedium: MultipleTypographyCompositeRawTokens { get }
-    var typeDisplaySmall: MultipleTypographyCompositeRawTokens { get }
+    var typeDisplayLarge: MultipleFontCompositeRawTokens { get }
+    var typeDisplayMedium: MultipleFontCompositeRawTokens { get }
+    var typeDisplaySmall: MultipleFontCompositeRawTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Heading
 
-    var typeHeadingXLarge: MultipleTypographyCompositeRawTokens { get }
-    var typeHeadingLarge: MultipleTypographyCompositeRawTokens { get }
-    var typeHeadingMedium: MultipleTypographyCompositeRawTokens { get }
-    var typeHeadingSmall: MultipleTypographyCompositeRawTokens { get }
+    var typeHeadingXLarge: MultipleFontCompositeRawTokens { get }
+    var typeHeadingLarge: MultipleFontCompositeRawTokens { get }
+    var typeHeadingMedium: MultipleFontCompositeRawTokens { get }
+    var typeHeadingSmall: MultipleFontCompositeRawTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Body
 
-    var typeBodyDefaultLarge: MultipleTypographyCompositeRawTokens { get }
-    var typeBodyDefaultMedium: MultipleTypographyCompositeRawTokens { get }
-    var typeBodyDefaultSmall: MultipleTypographyCompositeRawTokens { get }
-    var typeBodyStrongLarge: MultipleTypographyCompositeRawTokens { get }
-    var typeBodyStrongMedium: MultipleTypographyCompositeRawTokens { get }
-    var typeBodyStrongSmall: MultipleTypographyCompositeRawTokens { get }
+    var typeBodyDefaultLarge: MultipleFontCompositeRawTokens { get }
+    var typeBodyDefaultMedium: MultipleFontCompositeRawTokens { get }
+    var typeBodyDefaultSmall: MultipleFontCompositeRawTokens { get }
+    var typeBodyStrongLarge: MultipleFontCompositeRawTokens { get }
+    var typeBodyStrongMedium: MultipleFontCompositeRawTokens { get }
+    var typeBodyStrongSmall: MultipleFontCompositeRawTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    var typeLabelDefaultXLarge: MultipleTypographyCompositeRawTokens { get }
-    var typeLabelDefaultLarge: MultipleTypographyCompositeRawTokens { get }
-    var typeLabelDefaultMedium: MultipleTypographyCompositeRawTokens { get }
-    var typeLabelDefaultSmall: MultipleTypographyCompositeRawTokens { get }
-    var typeLabelStrongXLarge: MultipleTypographyCompositeRawTokens { get }
-    var typeLabelStrongLarge: MultipleTypographyCompositeRawTokens { get }
-    var typeLabelStrongMedium: MultipleTypographyCompositeRawTokens { get }
-    var typeLabelStrongSmall: MultipleTypographyCompositeRawTokens { get }
+    var typeLabelDefaultXLarge: MultipleFontCompositeRawTokens { get }
+    var typeLabelDefaultLarge: MultipleFontCompositeRawTokens { get }
+    var typeLabelDefaultMedium: MultipleFontCompositeRawTokens { get }
+    var typeLabelDefaultSmall: MultipleFontCompositeRawTokens { get }
+    var typeLabelStrongXLarge: MultipleFontCompositeRawTokens { get }
+    var typeLabelStrongLarge: MultipleFontCompositeRawTokens { get }
+    var typeLabelStrongMedium: MultipleFontCompositeRawTokens { get }
+    var typeLabelStrongSmall: MultipleFontCompositeRawTokens { get }
 
     // MARK: - Semantic tokens - Typography - Composites - Code
 
-    var typeCodeMedium: MultipleTypographyCompositeRawTokens { get }
-    var typeCodeSmall: MultipleTypographyCompositeRawTokens { get }
+    var typeCodeMedium: MultipleFontCompositeRawTokens { get }
+    var typeCodeSmall: MultipleFontCompositeRawTokens { get }
 }
 
 // swiftlint:enable missing_docs
