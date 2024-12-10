@@ -16,21 +16,21 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// The aim of this tests class is to look for regressions in **Orange brand typography raw tokens**.
+/// The aim of this tests class is to look for regressions in **Orange brand font raw tokens**.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
-/// In the semantics of **typography raw tokens**, there will be some unchanged things like relationships between tokens.
+/// In the semantics of **font raw tokens**, there will be some unchanged things like relationships between tokens.
 /// Some of these tokens are also strongly based on their raw tvalues (like font family names) and must be tested.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
-final class OrangeBrandTypographyRawTokensTests: XCTestCase {
+final class OrangeBrandFontRawTokensTests: XCTestCase {
 
     // MARK: Primitive token - Colors - Orange - Brand
 
-    func testTypographyRawTokenFontFamilyBrand() throws {
-        XCTAssertEqual(OrangeBrandTypographyRawTokens.fontFamilyBrand, "Helvetica Neue")
+    func testFontRawTokenFontFamilyBrand() throws {
+        XCTAssertEqual(OrangeBrandFontRawTokens.fontFamilyBrand, "Helvetica Neue")
     }
 
-    func testTypographyRawTokenFontFamilyTV() throws {
-        XCTAssertEqual(OrangeBrandTypographyRawTokens.fontFamilyTV, "Helvetica Neue LT")
+    func testFontRawTokenFontFamilyTV() throws {
+        XCTAssertEqual(OrangeBrandFontRawTokens.fontFamilyTV, "Helvetica Neue LT")
     }
 }
 

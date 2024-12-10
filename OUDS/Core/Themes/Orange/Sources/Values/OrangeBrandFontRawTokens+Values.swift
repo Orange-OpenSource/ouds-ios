@@ -18,14 +18,14 @@
 
 // swiftlint:disable missing_docs
 
-extension OrangeBrandTypographyRawTokens {
+extension OrangeBrandFontRawTokens {
 
     // MARK: Primitive token - Typography - Font family
 
     // WARNING: Raw values, do not use as is, ensure fonts are available
 
-    public static let fontFamilyBrand: OrangeBrandTypographyRawToken = "Helvetica Neue"
-    public static let fontFamilyTV: OrangeBrandTypographyRawToken = "Helvetica Neue LT"
+    public static let fontFamilyBrand: OrangeBrandFontRawToken = "Helvetica Neue"
+    public static let fontFamilyTV: OrangeBrandFontRawToken = "Helvetica Neue LT"
 }
 
 // swiftlint:enable missing_docs

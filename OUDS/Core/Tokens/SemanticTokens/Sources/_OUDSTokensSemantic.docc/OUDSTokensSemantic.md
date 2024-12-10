@@ -68,7 +68,7 @@ In a nutshell, declare the tokens somewhere in protocols, and define theme in th
 
 ### How to add semantic tokens
 
-First, you need to define which from family this semantic comes. We have today 9 families: *border*, *color*, *dimension*, *elevation*, *grid*, *opacity*, *sizing*, *spacing* and *typography*.
+First, you need to define which from family this semantic comes. We have today 9 families: *border*, *color*, *dimension*, *elevation*, *grid*, *opacity*, *sizing*, *spacing* and *font*.
 
 If your token is not from one of these groups, maybe you should redesign your token or create a new family. To do that, you will have to create a dedicated Swift `protocol`, with a useful name, and declare as a `var` the semantic token. If you already know the family, just update the matching files.
 
@@ -92,7 +92,7 @@ If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so 
 
 The *tokenator* is not able today to generate composites tokens, i.e. tokens which contain by definition several properties.
 For example, *elevation semantic token* dedicated to bow shadows are composed by several properties (x, y, blur, shadow).
-*Typography semantic token* can be token containing several properties too (weght, size, spacinf, font family).
+*Font semantic token* can be token containing several properties too (weght, size, spacinf, font family).
 These are considered as *composite tokens*. They are defined in dedicated protocols and files.
 Thus when the *tokenator* generates tokens without managing composites, the file can still be used as is with generated tokens, and the composites are not erased.
 
@@ -153,6 +153,6 @@ struct Showcase: App {
 - ``SizeSemanticTokens``
 - ``SizeMultipleSemanticTokens``
 - ``SpaceSemanticTokens``
-- ``TypographySemanticTokens``
-- ``TypographyCompositeSemanticTokens``
-- ``TypographyMultipleSemanticTokens``
+- ``FontSemanticTokens``
+- ``FontCompositeSemanticTokens``
+- ``FontMultipleSemanticTokens``

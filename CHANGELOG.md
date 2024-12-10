@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Rename `Typography*` tokens and elements to `Font*` ([#322](https://github.com/Orange-OpenSource/ouds-ios/issues/322))
 - [Library] Update `ColorSemanticTokens` (tokenator *20241204111709*)
 - [Library] Update `SpaceSemanticTokens` (tokenator *20241204110127*)
 - [Library] Rename `opacityTransparent` opacity semantic token to `opacityInvisible`

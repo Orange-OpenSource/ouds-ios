@@ -18,40 +18,40 @@
 // swiftlint:disable missing_docs
 // swiftlint:disable line_length
 
-/// This is a group of semantic tokens for **typography** but using ``MultipleFontLetterSpacingSemanticTokens`` for *letter spacings*,
+/// This is a group of semantic tokens for **fonts** but using ``MultipleFontLetterSpacingSemanticTokens`` for *letter spacings*,
 /// ``MultipleFontLineHeightSemanticTokens`` for *line heights* and ``MultipleFontSizeSemanticTokens`` for *font sizes*.
 ///
 /// In fact these ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightSemanticTokens`` and  ``MultipleFontSizeSemanticTokens`` classes will help users
-/// (i.e. developers) to handle one semantic token for typography things depending to size class (wether it could be compact / mobile or regular / tablet).
+/// (i.e. developers) to handle one semantic token for font things depending to size class (wether it could be compact / mobile or regular / tablet).
 /// Because *Figma* is not able to manage pair of values for one token, and its produced JSON does not reflect this mecanism, the *tokenator* cannot provide
 /// such ``MultipleFontLetterSpacingSemanticTokens``, ``MultipleFontLineHeightSemanticTokens`` and ``MultipleFontSizeSemanticTokens`` tokens.
-/// Thus the "real" letter spacing, line height and font size tokens are declared in ``TypographySemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).
+/// Thus the "real" letter spacing, line height and font size tokens are declared in ``FontSemanticTokens`` protocol and defined inside `OUDSTheme` (to be overridable then by subthemes).
 /// These tokens are updated by the *tokenator*.
-/// Then they are gathered and wrapped so as to be used easily thanks to this ``TypographyMultipleSemanticTokens`` which must be updated manually.
+/// Then they are gathered and wrapped so as to be used easily thanks to this ``FontMultipleSemanticTokens`` which must be updated manually.
 ///
-/// However the composite tokens (here the ones gathering each type of semantic token here) are defined in ``TypographyCompositeSemanticTokens`` because the *tokenator*
+/// However the composite tokens (here the ones gathering each type of semantic token here) are defined in ``FontCompositeSemanticTokens`` because the *tokenator*
 /// is not able to generate them yet, and they must be defined elsewhere to not be deleted.
 /// 
 /// In few words:
 /// ```swift
-///         // Some font size raw tokens, defined by the tokenator (in TypographyRawTokens+Values.swift)
-///         public static let fontSize850: TypographyFontSizeRawToken = 40
-///         public static let fontSize1450: TypographyFontSizeRawToken = 64
+///         // Some font size raw tokens, defined by the tokenator (in FontRawTokens+Values.swift)
+///         public static let fontSize850: FontSizeRawToken = 40
+///         public static let fontSize1450: FontSizeRawToken = 64
 ///
 ///         // The font size semantic tokens using them
-///         // declared (in TypographyMultipleSemanticTokens.swift) and defined (in OUDSTheme+TypographySemanticTokens.swift) by the tokenator
-///         var fontSizeDisplayLargeMobile: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize850 }
-///         var fontSizeDisplayLargeTablet: TypographyFontSizeSemanticToken { TypographyRawTokens.fontSize1450 }
+///         // declared (in FontMultipleSemanticTokens.swift) and defined (in OUDSTheme+FontSemanticTokens.swift) by the tokenator
+///         var fontSizeDisplayLargeMobile: FontSizeSemanticToken { FontRawTokens.fontSize850 }
+///         var fontSizeDisplayLargeTablet: FontSizeSemanticToken { FontRawTokens.fontSize1450 }
 ///
-///         // The 'higher level' typography semantic tokens wrapping them and exposed to users
-///         // declared (in this TypographyMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+TypographyMultipleSemanticTokens.swift)
+///         // The 'higher level' font semantic tokens wrapping them and exposed to users
+///         // declared (in this FontMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+FontMultipleSemanticTokens.swift)
 ///         var fontSizeDisplayLarge: MultipleFontSizeSemanticTokens { MultipleFontSizeSemanticTokens(compact: fontSizeDisplayLargeMobile, regular: fontSizeDisplayLargeTablet) }
 ///
 ///         // Thus users can in their components use elevationColorNone as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
 /// ```
 /// 
-public protocol TypographyMultipleSemanticTokens {
+public protocol FontMultipleSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Size
 

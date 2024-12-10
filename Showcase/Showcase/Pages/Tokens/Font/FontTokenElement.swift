@@ -13,7 +13,7 @@
 
 import SwiftUI
 
-struct TypographyTokenElement: ShowcaseElement {
+struct FontTokenElement: ShowcaseElement {
     let name: String
     let imageName: String
     let pageDescription: AnyView
@@ -25,6 +25,6 @@ struct TypographyTokenElement: ShowcaseElement {
             name: name,
             imageName: imageName,
             description: "app_tokens_typography_description_text",
-            illustration: AnyView(TypographyTokenPage())))
+            illustration: AnyView(FontTokenPage())))
     }
 }

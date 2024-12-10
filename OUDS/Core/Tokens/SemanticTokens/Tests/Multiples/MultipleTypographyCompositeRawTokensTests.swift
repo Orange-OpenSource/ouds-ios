@@ -16,15 +16,14 @@ import OUDSTokensSemantic
 import XCTest
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_name
 
-/// To ensure the `MultipleTypographyCompositeRawTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
-final class MultipleTypographyCompositeRawTokensTests: XCTestCase {
+/// To ensure the `MultipleFontCompositeRawTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+final class MultipleFontCompositeRawTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for compact and regular size classes
     func testInitWithOneValue() {
-        let unique = TypographyRawTokens.typeBold550
-        let token = MultipleTypographyCompositeRawTokens(unique)
+        let unique = FontRawTokens.typeBold550
+        let token = MultipleFontCompositeRawTokens(unique)
 
         XCTAssertTrue(token.compact == unique)
         XCTAssertTrue(token.regular == unique)
@@ -32,22 +31,22 @@ final class MultipleTypographyCompositeRawTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined
     func testInitWithTwoValues() {
-        let compact = TypographyRawTokens.typeRegular150
-        let regular = TypographyRawTokens.typeBold550
-        let token = MultipleTypographyCompositeRawTokens(compact: compact, regular: regular)
+        let compact = FontRawTokens.typeRegular150
+        let regular = FontRawTokens.typeBold550
+        let token = MultipleFontCompositeRawTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)
         XCTAssertTrue(token.regular == regular)
     }
 
-    /// Tests comparisons between two `MultipleTypographyCompositeRawTokens` to ensure tokens are considered as equal
+    /// Tests comparisons between two `MultipleFontCompositeRawTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold550)
-        let second = MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold750)
-        let third = MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold750)
-        let fourth = MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeBold850, regular: TypographyRawTokens.typeBold550)
-        let fifth = MultipleTypographyCompositeRawTokens(compact: TypographyRawTokens.typeRegular150, regular: TypographyRawTokens.typeBold550)
+        let first = MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeBold550)
+        let second = MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold850, regular: FontRawTokens.typeBold750)
+        let third = MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeBold750)
+        let fourth = MultipleFontCompositeRawTokens(compact: FontRawTokens.typeBold850, regular: FontRawTokens.typeBold550)
+        let fifth = MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeBold550)
         let sixth = MultipleSizeSemanticTokens(compact: 0, regular: 0)
 
         XCTAssertTrue(first.isEqual(first))
@@ -60,4 +59,3 @@ final class MultipleTypographyCompositeRawTokensTests: XCTestCase {
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_name

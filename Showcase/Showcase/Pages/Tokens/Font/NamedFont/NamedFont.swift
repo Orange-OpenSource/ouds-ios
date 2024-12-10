@@ -15,9 +15,9 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Named Typography
+// MARK: - Named Font
 
-enum NamedTypography: String, CaseIterable {
+enum NamedFont: String, CaseIterable {
     case displayLarge
     case displayMedium
     case displaySmall
@@ -44,7 +44,7 @@ enum NamedTypography: String, CaseIterable {
 
     // MARK: - Token Values
 
-    func token(from theme: OUDSTheme) -> MultipleTypographyCompositeRawTokens {
+    func token(from theme: OUDSTheme) -> MultipleFontCompositeRawTokens {
         switch self {
         case .displayLarge:
             return theme.typeDisplayLarge

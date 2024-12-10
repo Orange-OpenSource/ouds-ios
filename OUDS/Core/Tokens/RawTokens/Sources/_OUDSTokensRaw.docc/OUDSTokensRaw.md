@@ -42,7 +42,7 @@ extension String {
 ## Architecture
 
 The *Composites* folder contains some _composite class_ defined to match the objects available in *Figma*.
-In fact the design system implementations should expose pack of values so as to gather several tokens in one object. For exemple `ElevationCompositeRawToken` can be used for predefined elevations / box shadows effects, and `TypographyCompositeRawToken` can be used for predefined typography.
+In fact the design system implementations should expose pack of values so as to gather several tokens in one object. For exemple `ElevationCompositeRawToken` can be used for predefined elevations / box shadows effects, and `FontCompositeRawToken` can be used for predefined typography / fonts.
 All such *composites* instances are defined in seperated files. In fact *tokenator* cannot generate such tokens as they are not defined in its JSON file to process because *Figma* is not able to manage *composite tokens*, even if tinkered by the design team. These tokens are updated manualy by the development team.
 
 The *Declarations* folder contains all the Swift `enum` objects which will gather the raw tokens.
@@ -60,7 +60,7 @@ In a nutshell, place the generated values somewhere, and the types and objects e
 
 ### How to add raw tokens
 
-First, you need to define from which family this semantic comes. We have today up to 7 families: *border*, *color*, *dimension*, *elevation*, *grid*, *opacity* and *typography*.
+First, you need to define from which family this semantic comes. We have today up to 7 families: *border*, *color*, *dimension*, *elevation*, *grid*, *opacity* and *font*.
 If your token is not from one of these groups, maybe you should redesign your token or create a new family. To do that, you will have to create a dedicated Swift `enum`, with a useful name, and declare as a `static let` the raw tokens in an `extension`. If you already know the family, just update the matching files.
 
 If you need to define Swift `typealias`, update the suitable file in the *TypeAliases* folder.
@@ -96,4 +96,4 @@ If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so 
 - ``ElevationRawTokens``
 - ``GridRawTokens``
 - ``OpacityRawTokens``
-- ``TypographyRawTokens``
+- ``FontRawTokens``

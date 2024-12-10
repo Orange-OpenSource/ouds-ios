@@ -14,3 +14,4 @@ It embeds also in its target the brand colors which are not shared not exposed i
 
 - ``OrangeTheme``
 - ``OrangeBrandColorRawTokens``
+- ``OrangeBrandFontRawTokens``

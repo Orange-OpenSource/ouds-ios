@@ -203,12 +203,12 @@ class OrangeCustomTheme: OrangeTheme { }
 
 extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in component FormsTextInputComponent
 
-    override public var ftiTitleFontWeight: TypographyFontWeightSemanticToken { fontWeightLabelStrong }
-    override public var ftiTitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelXLarge }
+    override public var ftiTitleFontWeight: FontWeightSemanticToken { fontWeightLabelStrong }
+    override public var ftiTitleFontSize: FontSizeSemanticToken { fontSizeLabelXLarge }
     override public var ftiTitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
 
-    override public var ftiSubtitleFontWeight: TypographyFontWeightSemanticToken { fontWeightBodyDefault }
-    override public var ftiSubtitleFontSize: TypographyFontSizeSemanticToken { fontSizeLabelMedium }
+    override public var ftiSubtitleFontWeight: FontWeightSemanticToken { fontWeightBodyDefault }
+    override public var ftiSubtitleFontSize: FontSizeSemanticToken { fontSizeLabelMedium }
     override public var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
 
     override public var ftiBackgroundColor: ColorSemanticToken { colorBgrimary }

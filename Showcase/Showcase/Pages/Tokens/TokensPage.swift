@@ -22,7 +22,7 @@ struct TokensPage: View {
         ElevationTokenElement(),
         GridTokenElement(),
         OpacityTokenElement(),
-        TypographyTokenElement(),
+        FontTokenElement(),
     ]
 
     var body: some View {

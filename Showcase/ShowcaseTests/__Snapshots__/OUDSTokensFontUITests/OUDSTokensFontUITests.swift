@@ -21,66 +21,66 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// Tests the UI rendering of each **typography token** using reference images
-final class OUDSTokensTypographyUITests: XCTestCase {
+/// Tests the UI rendering of each **font token** using reference images
+final class OUDSTokensFontUITests: XCTestCase {
 
     // MARK: - Orange Theme Light Mode Typography Tests
 
-    /// This function tests all typography tokens in the `OrangeTheme` with the `light` color scheme.
-    /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme and horizontalSizeClass.
-    @MainActor func testAllTypographiesOrangeThemeLight() {
+    /// This function tests all font tokens in the `OrangeTheme` with the `light` color scheme.
+    /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme and horizontalSizeClass.
+    @MainActor func testAllFontsOrangeThemeLight() {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
-        testAllTypographies(for: theme, in: interfaceStyle)
+        testAllFonts(for: theme, in: interfaceStyle)
     }
 
     // MARK: - Orange Theme Dark Mode Typography Tests
 
-    /// This function tests all typography tokens in the `OrangeTheme` with the `dark` color scheme.
-    /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme horizontalSizeClass.
-    @MainActor func testAllTypographiesOrangeThemeDark() {
+    /// This function tests all font tokens in the `OrangeTheme` with the `dark` color scheme.
+    /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme horizontalSizeClass.
+    @MainActor func testAllFontsOrangeThemeDark() {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllTypographies(for: theme, in: interfaceStyle)
+        testAllFonts(for: theme, in: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Light Mode Typography Tests
 
-    /// This function tests all typography tokens in the `InverseTheme` with the `light` color scheme.
-    /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme and horizontalSizeClass
-    @MainActor func testAllTypographiesInverseThemeLight() {
+    /// This function tests all font tokens in the `InverseTheme` with the `light` color scheme.
+    /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme and horizontalSizeClass
+    @MainActor func testAllFontsInverseThemeLight() {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
-        testAllTypographies(for: theme, in: interfaceStyle)
+        testAllFonts(for: theme, in: interfaceStyle)
     }
 
     // MARK: - Inverse Theme Dark Mode Typography Tests
 
-    /// This function tests all typography tokens in the `InverseTheme` with the `dark` color scheme.
-    /// It iterates through all `NamedTypography` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the typography, theme, color scheme and horizontalSizeClass.
-    @MainActor func testAllTypographiesInverseThemeDark() {
+    /// This function tests all font tokens in the `InverseTheme` with the `dark` color scheme.
+    /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme and horizontalSizeClass.
+    @MainActor func testAllFontsInverseThemeDark() {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllTypographies(for: theme, in: interfaceStyle)
+        testAllFonts(for: theme, in: interfaceStyle)
     }
 
     // MARK: Private test functions for all typography properties of typography token
 
-    /// Tests all typgraphy properties by capturing their snapshots.
+    /// Tests all fonts properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme` or `InverseTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testAllTypographies(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor private func testAllFonts(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
         // Iterate through all named tokens
-        for namedToken in NamedTypography.allCases {
+        for namedToken in NamedFont.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                TypographyTokenPage.IllustrationTypography(namedTypography: namedToken)
+                FontTokenPage.IllustrationFont(namedFont: namedToken)
                     .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 

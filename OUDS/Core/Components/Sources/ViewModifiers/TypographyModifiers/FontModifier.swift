@@ -14,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` which will apply the system `Font` in a component `View` using a `MultipleTypographyCompositeRawTokens`
+/// A `ViewModifier` which will apply the system `Font` in a component `View` using a `MultipleFontCompositeRawTokens`
 /// Note that `FontModifier` use default system font but nothing for others fonts embeded in device
 struct FontModifier: ViewModifier {
 
@@ -22,7 +22,7 @@ struct FontModifier: ViewModifier {
 
     // TODO: How to manage other fonts on device?
 
-    let token: MultipleTypographyCompositeRawTokens
+    let token: MultipleFontCompositeRawTokens
 
     /// The size of the font to apply
     private var fontSize: CGFloat {
