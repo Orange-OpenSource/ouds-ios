@@ -14,7 +14,7 @@
 import Foundation
 import OUDSTokensRaw
 
-/// Kind of semantic tokens which will wrap a combination of ``yFontLineHeightSemanticToken`` depending to size classes.
+/// Kind of semantic tokens which will wrap a combination of ``FontLineHeightSemanticToken`` depending to size classes.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
 /// If a font line height token exists with its value depending to the size class, it must be packed in such ``MultipleFontLineHeightSemanticTokens`
 ///
