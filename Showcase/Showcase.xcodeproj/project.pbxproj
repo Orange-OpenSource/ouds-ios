@@ -85,6 +85,7 @@
 		07F75A412CC653EB0004F1AD /* NameSpace+GapStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A402CC653EB0004F1AD /* NameSpace+GapStack.swift */; };
 		07F75A432CC654050004F1AD /* NameSpace+PaddingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A422CC654050004F1AD /* NameSpace+PaddingStack.swift */; };
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
+		51089F5A2D089B770028E857 /* OUDSTokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A2172CCBE50700C00512 /* OUDSTokensFontUITests.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
@@ -116,7 +117,6 @@
 		51BD762A2C466FCF0033365D /* Showcase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* Showcase.swift */; };
 		51BD762B2C466FCF0033365D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
 		51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */; };
-		6D17A2182CCBE50700C00512 /* OUDSTypographyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A2172CCBE50700C00512 /* OUDSTypographyUITests.swift */; };
 		6D17A21A2CCBE74C00C00512 /* OUDSTokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A2192CCBE74C00C00512 /* OUDSTokensElevationUITests.swift */; };
 		6D17A21C2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A21B2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift */; };
 		6D17A22A2CCBEF6700C00512 /* OUDSTokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A2292CCBEF6700C00512 /* OUDSTokensColorUITests.swift */; };
@@ -286,7 +286,7 @@
 		51BD761E2C466FCF0033365D /* Showcase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Showcase.swift; sourceTree = "<group>"; };
 		51BD761F2C466FCF0033365D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		51E3FF0A2CAFD9AE00F1BC59 /* ShowcaseElementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseElementPage.swift; sourceTree = "<group>"; };
-		6D17A2172CCBE50700C00512 /* OUDSTypographyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTypographyUITests.swift; path = ShowcaseTests/__Snapshots__/OUDSTokensTypographyUITests/OUDSTypographyUITests.swift; sourceTree = SOURCE_ROOT; };
+		6D17A2172CCBE50700C00512 /* OUDSTokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensFontUITests.swift; path = ShowcaseTests/__Snapshots__/OUDSTokensFontUITests/OUDSTokensFontUITests.swift; sourceTree = SOURCE_ROOT; };
 		6D17A2192CCBE74C00C00512 /* OUDSTokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensElevationUITests.swift; path = ShowcaseTests/__Snapshots__/OUDSTokensElevationUITests/OUDSTokensElevationUITests.swift; sourceTree = SOURCE_ROOT; };
 		6D17A21B2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensOpacityUITests.swift; path = ShowcaseTests/__Snapshots__/OUDSTokensOpacityUITests/OUDSTokensOpacityUITests.swift; sourceTree = SOURCE_ROOT; };
 		6D17A2292CCBEF6700C00512 /* OUDSTokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensColorUITests.swift; path = ShowcaseTests/__Snapshots__/OUDSTokensColorUITests/OUDSTokensColorUITests.swift; sourceTree = SOURCE_ROOT; };
@@ -419,7 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				6D17A2242CCBEF1100C00512 /* OUDSTokensColorUITests */,
-				6D8F9BE42CBFC2F70078A10E /* OUDSTokensTypographyUITests */,
+				6D8F9BE42CBFC2F70078A10E /* OUDSTokensFontUITests */,
 				6D8F9B9B2CBFB8830078A10E /* OUDSTokensDimensionUITests */,
 				6D8F9B722CBED90D0078A10E /* OUDSTokensElevationUITests */,
 				6D8F9B392CBECBB80078A10E /* OUDSTokensOpacityUITests */,
@@ -751,7 +751,8 @@
 			children = (
 				6D17A2292CCBEF6700C00512 /* OUDSTokensColorUITests.swift */,
 			);
-			path = OUDSTokensColorUITests;
+			name = OUDSTokensColorUITests;
+			path = __Snapshots__/OUDSTokensColorUITests;
 			sourceTree = "<group>";
 		};
 		6D2465892CBEAB4C0023E359 /* OUDSTokensBorderUITests */ = {
@@ -759,7 +760,8 @@
 			children = (
 				6D3E872B2CCBE0A300AEB105 /* OUDSTokenBorderUITests.swift */,
 			);
-			path = OUDSTokensBorderUITests;
+			name = OUDSTokensBorderUITests;
+			path = __Snapshots__/OUDSTokensBorderUITests;
 			sourceTree = "<group>";
 		};
 		6D8F9B392CBECBB80078A10E /* OUDSTokensOpacityUITests */ = {
@@ -767,7 +769,8 @@
 			children = (
 				6D17A21B2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift */,
 			);
-			path = OUDSTokensOpacityUITests;
+			name = OUDSTokensOpacityUITests;
+			path = __Snapshots__/OUDSTokensOpacityUITests;
 			sourceTree = "<group>";
 		};
 		6D8F9B722CBED90D0078A10E /* OUDSTokensElevationUITests */ = {
@@ -775,7 +778,8 @@
 			children = (
 				6D17A2192CCBE74C00C00512 /* OUDSTokensElevationUITests.swift */,
 			);
-			path = OUDSTokensElevationUITests;
+			name = OUDSTokensElevationUITests;
+			path = __Snapshots__/OUDSTokensElevationUITests;
 			sourceTree = "<group>";
 		};
 		6D8F9B9B2CBFB8830078A10E /* OUDSTokensDimensionUITests */ = {
@@ -784,15 +788,17 @@
 				6DED17E82CD1143500584BC9 /* OUDSTokensSizeUITests.swift */,
 				6DED17EA2CD114AD00584BC9 /* OUDSTokensSpaceUITests.swift */,
 			);
-			path = OUDSTokensDimensionUITests;
+			name = OUDSTokensDimensionUITests;
+			path = __Snapshots__/OUDSTokensDimensionUITests;
 			sourceTree = "<group>";
 		};
-		6D8F9BE42CBFC2F70078A10E /* OUDSTokensTypographyUITests */ = {
+		6D8F9BE42CBFC2F70078A10E /* OUDSTokensFontUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6D17A2172CCBE50700C00512 /* OUDSTypographyUITests.swift */,
+				6D17A2172CCBE50700C00512 /* OUDSTokensFontUITests.swift */,
 			);
-			path = OUDSTokensTypographyUITests;
+			name = OUDSTokensFontUITests;
+			path = __Snapshots__/OUDSTokensFontUITests;
 			sourceTree = "<group>";
 		};
 		6DFC20892CDE664400F2EC33 /* AccessibilityStatement */ = {
@@ -1035,6 +1041,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51089F5A2D089B770028E857 /* OUDSTokensFontUITests.swift in Sources */,
 				6D43136D2CEF400D004E6886 /* ShowcaseCode.swift in Sources */,
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
 				6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */,
@@ -1074,7 +1081,6 @@
 				6D17A2332CCBF12B00C00512 /* NamedColor+Decorative.swift in Sources */,
 				07F0AFD82CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
 				6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */,
-				6D17A2182CCBE50700C00512 /* OUDSTypographyUITests.swift in Sources */,
 				07CAE7682CEE20A600D6C5D1 /* SpaceTokenCommonIllustration.swift in Sources */,
 				6D17A21A2CCBE74C00C00512 /* OUDSTokensElevationUITests.swift in Sources */,
 				6DED17E92CD1143500584BC9 /* OUDSTokensSizeUITests.swift in Sources */,

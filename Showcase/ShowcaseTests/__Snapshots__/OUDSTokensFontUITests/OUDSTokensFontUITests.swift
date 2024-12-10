@@ -80,7 +80,7 @@ final class OUDSTokensFontUITests: XCTestCase {
         for namedToken in NamedFont.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                TypographyTokenPage.IllustrationFont(namedFont: namedToken)
+                FontTokenPage.IllustrationFont(namedFont: namedToken)
                     .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
