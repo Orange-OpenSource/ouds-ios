@@ -2,7 +2,7 @@ name: Token Update Request
 description: Please fill out the following details for your token update request.
 title: "[Token Update] "
 labels: ["📀 token", "🔍 triage"]
-assignees: ["ludovic35", "pylapp", "Tayebsed93"]
+assignees: ["ludovic35", "pylapp"]
 body:
   - type: checkboxes
     attributes:

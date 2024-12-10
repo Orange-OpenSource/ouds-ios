@@ -85,7 +85,7 @@ Removed:
 Fixed:
 - [Library] Fix some typos in documentation ([#89](#89))
 
-// Add in co authors anyone working on the commits being merged, add the ones who contributed (copy-paste if too lazy)
+// Add in co authors anyone working on the commits being merged, add the ones who contributed (copy-paste if too lazy, use the ones you need)
 Co-authored-by: Julien Déramond <julien.deramond@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
