@@ -54,7 +54,7 @@
 		077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
 		0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */; };
 		0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */; };
-		0784B2762CCBD9C300299C10 /* NamedTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2752CCBD9C300299C10 /* NamedTypography.swift */; };
+		0784B2762CCBD9C300299C10 /* NamedFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2752CCBD9C300299C10 /* NamedFont.swift */; };
 		0784B2782CCBDD8900299C10 /* NamedTypography+Illustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2772CCBDD8900299C10 /* NamedTypography+Illustration.swift */; };
 		07CAE7682CEE20A600D6C5D1 /* SpaceTokenCommonIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71322CEB743300B93FC3 /* SpaceTokenCommonIllustration.swift */; };
 		07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C713A2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift */; };
@@ -139,7 +139,7 @@
 		6D8F9C532CC160580078A10E /* SizeTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */; };
 		6D8F9C542CC160660078A10E /* SpaceTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE522CB426090059CC28 /* SpaceTokenPage.swift */; };
 		6D8F9C552CC1616E0078A10E /* TypographyTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735431A2CA18C48001187EA /* TypographyTokenPage.swift */; };
-		6DB260D92CD0E65F0091F72E /* NamedTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2752CCBD9C300299C10 /* NamedTypography.swift */; };
+		6DB260D92CD0E65F0091F72E /* NamedFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2752CCBD9C300299C10 /* NamedFont.swift */; };
 		6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */; };
 		6DB260DB2CD0EFD90091F72E /* NamedSize+IconWithTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */; };
 		6DB260DC2CD0F0000091F72E /* ShowcaseSectionHeaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F7533A2CC785620007450D /* ShowcaseSectionHeaderStyle.swift */; };
@@ -226,7 +226,7 @@
 		077CCE5B2CB431C50059CC28 /* ShowcaseVariantElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowcaseVariantElement.swift; sourceTree = "<group>"; };
 		0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconWithTypography.swift"; sourceTree = "<group>"; };
 		0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconDecorative.swift"; sourceTree = "<group>"; };
-		0784B2752CCBD9C300299C10 /* NamedTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedTypography.swift; sourceTree = "<group>"; };
+		0784B2752CCBD9C300299C10 /* NamedFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedFont.swift; sourceTree = "<group>"; };
 		0784B2772CCBDD8900299C10 /* NamedTypography+Illustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedTypography+Illustration.swift"; sourceTree = "<group>"; };
 		07A8E9222CE63606005B19E6 /* NameSpace+GapInlineWithIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+GapInlineWithIcon.swift"; sourceTree = "<group>"; };
 		07A8E92A2CE7A51C005B19E6 /* NameSpace+GapInlineWithArrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameSpace+GapInlineWithArrow.swift"; sourceTree = "<group>"; };
@@ -515,7 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				0784B2772CCBDD8900299C10 /* NamedTypography+Illustration.swift */,
-				0784B2752CCBD9C300299C10 /* NamedTypography.swift */,
+				0784B2752CCBD9C300299C10 /* NamedFont.swift */,
 			);
 			path = NamedTypography;
 			sourceTree = "<group>";
@@ -1060,7 +1060,7 @@
 				6DB260DC2CD0F0000091F72E /* ShowcaseSectionHeaderStyle.swift in Sources */,
 				6DB260DB2CD0EFD90091F72E /* NamedSize+IconWithTypography.swift in Sources */,
 				6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */,
-				6DB260D92CD0E65F0091F72E /* NamedTypography.swift in Sources */,
+				6DB260D92CD0E65F0091F72E /* NamedFont.swift in Sources */,
 				6D17A2352CCF8DC300C00512 /* NamedColor.swift in Sources */,
 				6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */,
 				6D17A22D2CCBF12B00C00512 /* NamedColor+Always.swift in Sources */,
@@ -1161,7 +1161,7 @@
 				51BD762A2C466FCF0033365D /* Showcase.swift in Sources */,
 				0765B49E2CC15B7E00E69359 /* NamedColor+Decorative.swift in Sources */,
 				07F75A432CC654050004F1AD /* NameSpace+PaddingStack.swift in Sources */,
-				0784B2762CCBD9C300299C10 /* NamedTypography.swift in Sources */,
+				0784B2762CCBD9C300299C10 /* NamedFont.swift in Sources */,
 				0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */,
 				075C71332CEB743300B93FC3 /* SpaceTokenCommonIllustration.swift in Sources */,
 			);

@@ -21,15 +21,15 @@ import SwiftUI
 
 /// A `ViewModifier` which will make possible to get the horizontal and vertical classes as `@Environment` values
 /// so as to define the viewport and use finaly the suitable `MultipleFontCompositeRawTokens`.
-/// In fact _Swift extension_ does not allow to have such stored properties, and we don't want to use *UIKit* `UIScreen.main.traitCollection` to get values
-/// which may be out of date.
+/// In fact _Swift extension_ does not allow to have such stored properties, and we don't want to use *UIKit* `UIScreen.main.traitCollection` to get values which may be out of date.
+///  In few words, contains the font elements to apply a defined typography dependning to size classes and categories.
 /// For more details about layouts, see [the Apple documentation about devices dimensions](https://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-size-classes)
 struct TypographyModifier: ViewModifier {
 
     /// The name of a possible custom font family, or `nil` if the font is use is _system font_
     let customFontFamily: FontFamilyRawToken?
     /// The typography to apply for *compact* or *regular* modes
-    let typography: MultipleFontCompositeRawTokens
+    let font: MultipleFontCompositeRawTokens
 
     /// To get programatically and on the fly the horizontal layout size
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
@@ -49,25 +49,25 @@ struct TypographyModifier: ViewModifier {
     }
 
     /// Returns the `FontCompositeRawToken` to apply depending to the layour mode
-    private var adaptiveTypography: FontCompositeRawToken {
-        isCompactMode ? typography.compact : typography.regular
+    private var adaptiveFont: FontCompositeRawToken {
+        isCompactMode ? font.compact : font.regular
     }
 
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
-    private func adaptiveFont() -> Font {
+    private func adaptiveTypography() -> Font {
         // Retrieves the base font size from the adaptive typography settings
-        let fontSize = adaptiveTypography.size
+        let fontSize = adaptiveFont.size
         // Adjusts the font size dynamically based on the user's accessibility settings
         // using UIFontMetrics to scale the font size, ensuring Dynamic Type support
         let scaledFontSize = UIFontMetrics.default.scaledValue(for: fontSize)
 
         if let fontFamilyName = customFontFamily {
-            let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveTypography.weight.fontWeight)")
-            let customFont: Font = .custom(composedFontFamily, size: adaptiveTypography.size)
+            let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveFont.weight.fontWeight)")
+            let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
             return customFont
         } else {
             // Apply the system font with weight, responsive to Dynamic Type
-            return .system(size: scaledFontSize, weight: adaptiveTypography.weight.fontWeight, design: .default)
+            return .system(size: scaledFontSize, weight: adaptiveFont.weight.fontWeight, design: .default)
         }
     }
 
@@ -78,14 +78,14 @@ struct TypographyModifier: ViewModifier {
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
             content
-                .font(adaptiveFont())
+                .font(adaptiveTypography())
                 .minimumScaleFactor(0.5) /// Ensures text remains readable by allowing scaling down
                 .onChange(of: sizeCategory) { _ in } /// Triggers view update when Dynamic Type size changes
 //                .lineSpacing(adaptiveTypography.lineHeight)
 //                .tracking(adaptiveTypography.letterSpacing)
         } else { // tracking() and kerning() only available for iOS 16+
             content
-                .font(adaptiveFont())
+                .font(adaptiveTypography())
                 .minimumScaleFactor(0.5) /// Ensures text remains readable by allowing scaling down
                 .onChange(of: sizeCategory) { _ in } /// Triggers view update when Dynamic Type size changes
 //                .lineSpacing(adaptiveTypography.lineHeight)

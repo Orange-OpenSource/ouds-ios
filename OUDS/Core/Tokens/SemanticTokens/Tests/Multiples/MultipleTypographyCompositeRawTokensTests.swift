@@ -16,7 +16,6 @@ import OUDSTokensSemantic
 import XCTest
 
 // swiftlint:disable required_deinit
-// swiftlint:disable type_name
 
 /// To ensure the `MultipleFontCompositeRawTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
 final class MultipleFontCompositeRawTokensTests: XCTestCase {
@@ -60,4 +59,3 @@ final class MultipleFontCompositeRawTokensTests: XCTestCase {
 }
 
 // swiftlint:enable required_deinit
-// swiftlint:enable type_name

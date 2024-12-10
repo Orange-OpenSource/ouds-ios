@@ -17,7 +17,6 @@ import XCTest
 // swiftlint:disable type_body_length
 // swiftlint:disable required_deinit
 // swiftlint:disable implicitly_unwrapped_optional
-// swiftlint:disable type_name
 // swiftlint:disable file_length
 
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
@@ -605,4 +604,3 @@ final class TestThemeOverrideOfFontSemanticTokens: XCTestCase {
 // swiftlint:enable required_deinit
 // swiftlint:enable implicitly_unwrapped_optional
 // swiftlint:enable type_body_length
-// swiftlint:enable type_name

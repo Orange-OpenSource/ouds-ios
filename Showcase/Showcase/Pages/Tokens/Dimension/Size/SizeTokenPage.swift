@@ -83,7 +83,7 @@ struct SizeTokenPage: View {
 
         var body: some View {
             let token = namedSize.token(fot: theme, userInterfaceSizeClass: horizontalSizeClass ?? .regular)
-            let namedTypography = namedSize.namedTypography
+            let namedFont = namedSize.namedFont
             let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)
 
             HStack {
@@ -95,7 +95,7 @@ struct SizeTokenPage: View {
                     .accessibilityHidden(true)
 
                 VStack(alignment: .leading) {
-                    illustration(for: namedTypography, in: theme)
+                    illustration(for: namedFont, in: theme)
                         .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
                     Text(value)
                         .typeBodyDefaultMedium(theme)

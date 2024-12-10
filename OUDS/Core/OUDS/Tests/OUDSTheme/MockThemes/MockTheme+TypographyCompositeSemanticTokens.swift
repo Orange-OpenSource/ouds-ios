@@ -14,9 +14,7 @@
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// swiftlint:disable identifier_name
-
-/// Overrides **all** the typography  compositesemantic tokens (from its super class, i.e. `OUDSTheme` so as to test overriding of them (unit tests)
+/// Overrides **all** the font  composite semantic tokens (from its super class, i.e. `OUDSTheme` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
 extension MockTheme {
 
@@ -60,5 +58,3 @@ extension MockTheme {
     override open var typeCodeMedium: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
     override open var typeCodeSmall: MultipleFontCompositeRawTokens { Self.mockThemeMultipleFontCompositeRawTokens }
 }
-
-// swiftlint:enable identifier_name

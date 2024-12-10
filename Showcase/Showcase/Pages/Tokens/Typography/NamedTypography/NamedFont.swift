@@ -15,9 +15,9 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Named Typography
+// MARK: - Named Font
 
-enum NamedTypography: String, CaseIterable {
+enum NamedFont: String, CaseIterable {
     case displayLarge
     case displayMedium
     case displaySmall

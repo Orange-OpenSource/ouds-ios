@@ -21,7 +21,7 @@ import XCTest
 /// In the semantics of **font raw tokens**, there will be some unchanged things like relationships between tokens.
 /// Some of these tokens are also strongly based on their raw tvalues (like font family names) and must be tested.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
-final class OrangeBrandTypographyRawTokensTests: XCTestCase {
+final class OrangeBrandFontRawTokensTests: XCTestCase {
 
     // MARK: Primitive token - Colors - Orange - Brand
 

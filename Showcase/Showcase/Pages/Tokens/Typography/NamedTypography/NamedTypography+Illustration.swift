@@ -21,54 +21,54 @@ import SwiftUI
 extension View {
 
     @ViewBuilder
-    func illustration(for namedTypography: NamedTypography, in theme: OUDSTheme) -> some View {
-        switch namedTypography {
+    func illustration(for namedFont: NamedFont, in theme: OUDSTheme) -> some View {
+        switch namedFont {
         case .displayLarge:
-            Text(namedTypography.rawValue.camelCase).typeDisplayLarge(theme)
+            Text(namedFont.rawValue.camelCase).typeDisplayLarge(theme)
         case .displayMedium:
-            Text(namedTypography.rawValue.camelCase).typeDisplayMedium(theme)
+            Text(namedFont.rawValue.camelCase).typeDisplayMedium(theme)
         case .displaySmall:
-            Text(namedTypography.rawValue.camelCase).typeDisplaySmall(theme)
+            Text(namedFont.rawValue.camelCase).typeDisplaySmall(theme)
         case .headingXLarge:
-            Text(namedTypography.rawValue.camelCase).typeHeadingXLarge(theme)
+            Text(namedFont.rawValue.camelCase).typeHeadingXLarge(theme)
         case .headingLarge:
-            Text(namedTypography.rawValue.camelCase).typeHeadingLarge(theme)
+            Text(namedFont.rawValue.camelCase).typeHeadingLarge(theme)
         case .headingMedium:
-            Text(namedTypography.rawValue.camelCase).typeHeadingMedium(theme)
+            Text(namedFont.rawValue.camelCase).typeHeadingMedium(theme)
         case .headingSmall:
-            Text(namedTypography.rawValue.camelCase).typeHeadingSmall(theme)
+            Text(namedFont.rawValue.camelCase).typeHeadingSmall(theme)
         case .bodyDefaultLarge:
-            Text(namedTypography.rawValue.camelCase).typeBodyDefaultLarge(theme)
+            Text(namedFont.rawValue.camelCase).typeBodyDefaultLarge(theme)
         case .bodyDefaultMedium:
-            Text(namedTypography.rawValue.camelCase).typeBodyDefaultMedium(theme)
+            Text(namedFont.rawValue.camelCase).typeBodyDefaultMedium(theme)
         case .bodyDefaultSmall:
-            Text(namedTypography.rawValue.camelCase).typeBodyDefaultSmall(theme)
+            Text(namedFont.rawValue.camelCase).typeBodyDefaultSmall(theme)
         case .bodyStrongLarge:
-            Text(namedTypography.rawValue.camelCase).typeBodyStrongLarge(theme)
+            Text(namedFont.rawValue.camelCase).typeBodyStrongLarge(theme)
         case .bodyStrongMedium:
-            Text(namedTypography.rawValue.camelCase).typeBodyStrongMedium(theme)
+            Text(namedFont.rawValue.camelCase).typeBodyStrongMedium(theme)
         case .bodyStrongSmall:
-            Text(namedTypography.rawValue.camelCase).typeBodyStrongSmall(theme)
+            Text(namedFont.rawValue.camelCase).typeBodyStrongSmall(theme)
         case .labelDefaultXLarge:
-            Text(namedTypography.rawValue.camelCase).typeLabelDefaultXLarge(theme)
+            Text(namedFont.rawValue.camelCase).typeLabelDefaultXLarge(theme)
         case .labelDefaultLarge:
-            Text(namedTypography.rawValue.camelCase).typeLabelDefaultLarge(theme)
+            Text(namedFont.rawValue.camelCase).typeLabelDefaultLarge(theme)
         case .labelDefaultMedium:
-            Text(namedTypography.rawValue.camelCase).typeLabelDefaultMedium(theme)
+            Text(namedFont.rawValue.camelCase).typeLabelDefaultMedium(theme)
         case .labelDefaultSmall:
-            Text(namedTypography.rawValue.camelCase).typeLabelDefaultSmall(theme)
+            Text(namedFont.rawValue.camelCase).typeLabelDefaultSmall(theme)
         case .labelStrongXLarge:
-            Text(namedTypography.rawValue.camelCase).typeLabelStrongXLarge(theme)
+            Text(namedFont.rawValue.camelCase).typeLabelStrongXLarge(theme)
         case .labelStrongLarge:
-            Text(namedTypography.rawValue.camelCase).typeLabelStrongLarge(theme)
+            Text(namedFont.rawValue.camelCase).typeLabelStrongLarge(theme)
         case .labelStrongMedium:
-            Text(namedTypography.rawValue.camelCase).typeLabelStrongMedium(theme)
+            Text(namedFont.rawValue.camelCase).typeLabelStrongMedium(theme)
         case .labelStrongSmall:
-            Text(namedTypography.rawValue.camelCase).typeLabelStrongSmall(theme)
+            Text(namedFont.rawValue.camelCase).typeLabelStrongSmall(theme)
         case .codeSmall:
-            Text(namedTypography.rawValue.camelCase).typeCodeMedium(theme)
+            Text(namedFont.rawValue.camelCase).typeCodeMedium(theme)
         case .codeMedium:
-            Text(namedTypography.rawValue.camelCase).typeCodeMedium(theme)
+            Text(namedFont.rawValue.camelCase).typeCodeMedium(theme)
         }
     }
 }

@@ -88,11 +88,11 @@ extension YourCustomTheme {
 
 You can defined your own set of raw tokens, for example:
 ```
-public typealias MyOwnTypographyRawTokens = FontRawTokens // Refer to type FontRawTokens for consistency, declared in OUDSTokensRaw
+public typealias MyOwnFontRawTokens = FontRawTokens // Refer to type FontRawTokens for consistency, declared in OUDSTokensRaw
 
 public enum MyOwnFontRawTokens {
 
-    public static let someFontBody: MyOwnTypographyRawTokens = "Arial"
+    public static let someFontBody: MyOwnFontRawTokens = "Arial"
     
 }
 ```

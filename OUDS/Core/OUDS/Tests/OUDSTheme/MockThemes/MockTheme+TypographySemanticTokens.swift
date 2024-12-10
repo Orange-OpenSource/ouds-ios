@@ -14,9 +14,7 @@
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// swiftlint:disable identifier_name
-
-/// Overrides **all** the typography semantic tokens (from its super class, i.e. `OUDSTheme` so as to test overriding of them (unit tests)
+/// Overrides **all** the font semantic tokens (from its super class, i.e. `OUDSTheme` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
 extension MockTheme {
 
@@ -216,5 +214,3 @@ extension MockTheme {
     override open var fontLetterSpacingCodeSmallMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
     override open var fontLetterSpacingCodeSmallTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
 }
-
-// swiftlint:enable identifier_name

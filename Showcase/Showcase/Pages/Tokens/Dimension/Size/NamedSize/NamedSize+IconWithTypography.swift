@@ -54,7 +54,7 @@ extension NamedSize {
         case sizeIconWithLabelSmallSizeMd
         case sizeIconWithLabelSmallSizeLg
 
-        var namedTypography: NamedTypography {
+        var namedFont: NamedFont {
             switch self {
             case .sizeIconWithHeadingXlargeShort:
                 return .headingXLarge
