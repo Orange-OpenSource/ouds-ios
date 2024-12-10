@@ -23,7 +23,7 @@ final class MultipleFontLineHeightSemanticTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for light and dark modes
     func testInitWithOneValue() {
-        let unique: TypographyFontLineHeightSemanticToken = FontRawTokens.fontLineHeight250
+        let unique: FontLineHeightSemanticToken = FontRawTokens.fontLineHeight250
         let token = MultipleFontLineHeightSemanticTokens(unique)
 
         XCTAssertTrue(token.compact == unique)
@@ -32,8 +32,8 @@ final class MultipleFontLineHeightSemanticTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined with two assigned non nil values
     func testInitWithTwoValues() {
-        let compact: TypographyFontLineHeightSemanticToken = FontRawTokens.fontLineHeight450
-        let regular: TypographyFontLineHeightSemanticToken = FontRawTokens.fontLineHeight550
+        let compact: FontLineHeightSemanticToken = FontRawTokens.fontLineHeight450
+        let regular: FontLineHeightSemanticToken = FontRawTokens.fontLineHeight550
         let token = MultipleFontLineHeightSemanticTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)

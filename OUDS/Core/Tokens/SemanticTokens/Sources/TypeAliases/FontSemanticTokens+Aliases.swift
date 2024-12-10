@@ -14,16 +14,16 @@
 import OUDSTokensRaw
 
 /// The global design system tools uses verbs of semantic token for font family, which is basically a raw token for font family
-public typealias TypographyFontFamilySemanticToken = FontFamilyRawToken
+public typealias FontFamilySemanticToken = FontFamilyRawToken
 
 /// The global design system tools uses verbs of semantic token for font weight, which is basically a raw token for font weight
-public typealias TypographyFontWeightSemanticToken = FontWeightRawToken
+public typealias FontWeightSemanticToken = FontWeightRawToken
 
 /// The global design system tools uses verbs of semantic token for font size, which is basically a raw token for font size
-public typealias TypographyFontSizeSemanticToken = FontSizeRawToken
+public typealias FontSizeSemanticToken = FontSizeRawToken
 
 /// The global design system tools uses verbs of semantic token for font line height, which is basically a raw token for font line height
-public typealias TypographyFontLineHeightSemanticToken = FontLineHeightRawToken
+public typealias FontLineHeightSemanticToken = FontLineHeightRawToken
 
 /// The global design system tools uses verbs of semantic token for font letter spacing, which is basically a raw token for font letter spacing
-public typealias TypographyFontLetterSpacingSemanticToken = FontLetterSpacingRawToken
+public typealias FontLetterSpacingSemanticToken = FontLetterSpacingRawToken

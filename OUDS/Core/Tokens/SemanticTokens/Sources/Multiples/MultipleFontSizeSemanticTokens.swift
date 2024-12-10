@@ -42,14 +42,14 @@ import OUDSTokensRaw
 public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
-    public let compact: TypographyFontSizeSemanticToken
+    public let compact: FontSizeSemanticToken
 
     /// For **regular** and **medium** viewports
-    public let regular: TypographyFontSizeSemanticToken
+    public let regular: FontSizeSemanticToken
 
     /// Initializes a new multiple font token with the same value for both *compact* and *regular* size classes
     /// - Parameter value: The `TypographyFontSizeSemanticToken` to apply if device in *compact* mode
-    public init(_ value: TypographyFontSizeSemanticToken) {
+    public init(_ value: FontSizeSemanticToken) {
         self.compact = value
         self.regular = value
     }
@@ -58,7 +58,7 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
     /// - Parameters:
     ///    - compact: The `TypographyFontSizeSemanticToken` to apply if device in *compact* mode
     ///    - regular: The `TypographyFontSizeSemanticToken` to apply if device in *regular* mode
-    public init(compact: TypographyFontSizeSemanticToken, regular: TypographyFontSizeSemanticToken) {
+    public init(compact: FontSizeSemanticToken, regular: FontSizeSemanticToken) {
         self.compact = compact
         self.regular = regular
     }

@@ -44,14 +44,14 @@ import OUDSTokensRaw
 public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
-    public let compact: TypographyFontLineHeightSemanticToken
+    public let compact: FontLineHeightSemanticToken
 
     /// For **regular** and **medium** viewports
-    public let regular: TypographyFontLineHeightSemanticToken
+    public let regular: FontLineHeightSemanticToken
 
     /// Initializes a new multiple font token with the same value for both *compact* and *regular* size classes
     /// - Parameter value: The `TypographyFontLineHeightSemanticToken` to apply if device in *compact* mode
-    public init(_ value: TypographyFontLineHeightSemanticToken) {
+    public init(_ value: FontLineHeightSemanticToken) {
         self.compact = value
         self.regular = value
     }
@@ -60,7 +60,7 @@ public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
     /// - Parameters:
     ///    - compact: The `TypographyFontLineHeightSemanticToken` to apply if device in *compact* mode
     ///    - regular: The `TypographyFontLineHeightSemanticToken` to apply if device in *regular* mode
-    public init(compact: TypographyFontLineHeightSemanticToken, regular: TypographyFontLineHeightSemanticToken) {
+    public init(compact: FontLineHeightSemanticToken, regular: FontLineHeightSemanticToken) {
         self.compact = compact
         self.regular = regular
     }

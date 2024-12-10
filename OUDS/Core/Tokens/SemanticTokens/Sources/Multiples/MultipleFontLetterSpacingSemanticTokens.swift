@@ -46,14 +46,14 @@ import OUDSTokensRaw
 public final class MultipleFontLetterSpacingSemanticTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
-    public let compact: TypographyFontLetterSpacingSemanticToken
+    public let compact: FontLetterSpacingSemanticToken
 
     /// For **regular** and **medium** viewports
-    public let regular: TypographyFontLetterSpacingSemanticToken
+    public let regular: FontLetterSpacingSemanticToken
 
     /// Initializes a new multiple font token with the same value for both *compact* and *regular* size classes
     /// - Parameter value: The `TypographyFontLetterSpacingSemanticToken` to apply if device in *compact* mode
-    public init(_ value: TypographyFontLetterSpacingSemanticToken) {
+    public init(_ value: FontLetterSpacingSemanticToken) {
         self.compact = value
         self.regular = value
     }
@@ -62,7 +62,7 @@ public final class MultipleFontLetterSpacingSemanticTokens: NSObject, Sendable {
     /// - Parameters:
     ///    - compact: The `TypographyFontLetterSpacingSemanticToken` to apply if device in *compact* mode
     ///    - regular: The `TypographyFontLetterSpacingSemanticToken` to apply if device in *regular* mode
-    public init(compact: TypographyFontLetterSpacingSemanticToken, regular: TypographyFontLetterSpacingSemanticToken) {
+    public init(compact: FontLetterSpacingSemanticToken, regular: FontLetterSpacingSemanticToken) {
         self.compact = compact
         self.regular = regular
     }

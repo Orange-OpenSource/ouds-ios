@@ -22,7 +22,7 @@ final class MultipleFontSizeSemanticTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for light and dark modes
     func testInitWithOneValue() {
-        let unique: TypographyFontSizeSemanticToken = FontRawTokens.fontSize150
+        let unique: FontSizeSemanticToken = FontRawTokens.fontSize150
         let token = MultipleFontSizeSemanticTokens(unique)
 
         XCTAssertTrue(token.compact == unique)
@@ -31,8 +31,8 @@ final class MultipleFontSizeSemanticTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined with two assigned non nil values
     func testInitWithTwoValues() {
-        let compact: TypographyFontSizeSemanticToken = FontRawTokens.fontSize150
-        let regular: TypographyFontSizeSemanticToken = FontRawTokens.fontSize550
+        let compact: FontSizeSemanticToken = FontRawTokens.fontSize150
+        let regular: FontSizeSemanticToken = FontRawTokens.fontSize550
         let token = MultipleFontSizeSemanticTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)

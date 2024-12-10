@@ -23,7 +23,7 @@ final class MultipleFontLetterSpacingSemanticTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for light and dark modes
     func testInitWithOneValue() {
-        let unique: TypographyFontLetterSpacingSemanticToken = FontRawTokens.fontLetterSpacing250
+        let unique: FontLetterSpacingSemanticToken = FontRawTokens.fontLetterSpacing250
         let token = MultipleFontLetterSpacingSemanticTokens(unique)
 
         XCTAssertTrue(token.compact == unique)
@@ -32,8 +32,8 @@ final class MultipleFontLetterSpacingSemanticTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined with two assigned non nil values
     func testInitWithTwoValues() {
-        let compact: TypographyFontLetterSpacingSemanticToken = FontRawTokens.fontLetterSpacing300
-        let regular: TypographyFontLetterSpacingSemanticToken = FontRawTokens.fontLetterSpacing650
+        let compact: FontLetterSpacingSemanticToken = FontRawTokens.fontLetterSpacing300
+        let regular: FontLetterSpacingSemanticToken = FontRawTokens.fontLetterSpacing650
         let token = MultipleFontLetterSpacingSemanticTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)

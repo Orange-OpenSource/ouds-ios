@@ -31,24 +31,24 @@ extension MockTheme {
 
     // MARK: Semantic token - Typography - Font - Family
 
-    override open var fontFamily: TypographyFontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
-    override open var fontFamilyDisplay: TypographyFontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
-    override open var fontFamilyHeading: TypographyFontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
-    override open var fontFamilyBody: TypographyFontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
-    override open var fontFamilyLabel: TypographyFontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
-    override open var fontFamilyCode: TypographyFontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override open var fontFamily: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override open var fontFamilyDisplay: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override open var fontFamilyHeading: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override open var fontFamilyBody: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override open var fontFamilyLabel: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override open var fontFamilyCode: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
 
     // MARK: Semantic token - Typography - Font - Weight
 
-    override open var fontWeightDefault: TypographyFontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override open var fontWeightCode: TypographyFontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override open var fontWeightStrong: TypographyFontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override open var fontWeightDisplay: TypographyFontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override open var fontWeightHeading: TypographyFontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override open var fontWeightBodyDefault: TypographyFontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override open var fontWeightBodyStrong: TypographyFontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override open var fontWeightLabelDefault: TypographyFontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override open var fontWeightLabelStrong: TypographyFontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override open var fontWeightDefault: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override open var fontWeightCode: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override open var fontWeightStrong: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override open var fontWeightDisplay: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override open var fontWeightHeading: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override open var fontWeightBodyDefault: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override open var fontWeightBodyStrong: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override open var fontWeightLabelDefault: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override open var fontWeightLabelStrong: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
 
     // MARK: - Semantic token - Typography - Multiples
 
@@ -183,38 +183,38 @@ extension MockTheme {
 
     // MARK: - Semantic token - Typography - Font - Letter spacing
 
-    override open var fontLetterSpacingDisplayLargeMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingDisplayLargeTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingDisplayMediumMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingDisplayMediumTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingDisplaySmallMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingDisplaySmallTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingHeadingXLargeMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingHeadingXLargeTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingHeadingLargeMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingHeadingLargeTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingHeadingMediumMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingHeadingMediumTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingHeadingSmallMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingHeadingSmallTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingBodyLargeMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingBodyLargeTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingBodyMediumMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingBodyMediumTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingBodySmallMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingBodySmallTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingLabelXLargeMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingLabelXLargeTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingLabelLargeMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingLabelLargeTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingLabelMediumMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingLabelMediumTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingLabelSmallMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingLabelSmallTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingCodeMediumMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingCodeMediumTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingCodeSmallMobile: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
-    override open var fontLetterSpacingCodeSmallTablet: TypographyFontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingDisplayLargeMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingDisplayLargeTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingDisplayMediumMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingDisplayMediumTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingDisplaySmallMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingDisplaySmallTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingHeadingXLargeMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingHeadingXLargeTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingHeadingLargeMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingHeadingLargeTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingHeadingMediumMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingHeadingMediumTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingHeadingSmallMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingHeadingSmallTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingBodyLargeMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingBodyLargeTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingBodyMediumMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingBodyMediumTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingBodySmallMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingBodySmallTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingLabelXLargeMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingLabelXLargeTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingLabelLargeMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingLabelLargeTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingLabelMediumMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingLabelMediumTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingLabelSmallMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingLabelSmallTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingCodeMediumMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingCodeMediumTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingCodeSmallMobile: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
+    override open var fontLetterSpacingCodeSmallTablet: FontLetterSpacingSemanticToken { Self.mockThemeFontLetterSpacingRawToken }
 }
 
 // swiftlint:enable identifier_name

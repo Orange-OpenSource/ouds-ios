@@ -28,7 +28,7 @@ import OUDSTokensSemantic
 open class OUDSTheme: @unchecked Sendable {
 
     /// A theme can have a custom font which is not the system font
-    public let customFontFamily: TypographyFontFamilySemanticToken?
+    public let customFontFamily: FontFamilySemanticToken?
 
     /// Defines a basic kind of abstract theme to subclass then.
     /// No custom font family will be used.
@@ -39,7 +39,7 @@ open class OUDSTheme: @unchecked Sendable {
     /// Defines a basic kind of abstract theme to subclass then.
     /// - Parameters:
     ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `TypographyFontFamilySemanticToken` you want to apply
-    public init(customFontFamily: TypographyFontFamilySemanticToken?) {
+    public init(customFontFamily: FontFamilySemanticToken?) {
         self.customFontFamily = customFontFamily
     }
 
