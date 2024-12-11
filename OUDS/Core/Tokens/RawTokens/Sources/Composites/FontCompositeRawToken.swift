@@ -37,7 +37,12 @@ public struct FontCompositeRawToken: Equatable, Sendable {
     public let letterSpacing: FontLetterSpacingRawToken
 
     /// Operator which will return `true` if `lhs` is smaller than `rhs`.
-    /// By "smaller" we mean smaller `size` and smaller or equal `lineHeight`, `weight` and `letterSpacing`
+    /// By "smaller" we mean smaller `size` and smaller or equal `lineHeight` and `weight`.
+    ///
+    /// `letterSpacing` is not managed here because these values are, in fact, computed in Figma side
+    /// and can vary a lot because depend to two factors and the result can increase and decrease even if
+    /// these composite tokens are bigger or not. In few words, this property is not trustable.
+    /// 
     /// - Parameters:
     ///    - lhs: The font composite token we expect to be smaller than `rhs`
     ///    - rhs: The font composite token we expect to be bigger than `lhs`
@@ -46,6 +51,5 @@ public struct FontCompositeRawToken: Equatable, Sendable {
         lhs.size < rhs.size
         && lhs.lineHeight <= rhs.lineHeight
         && lhs.weight <= rhs.weight
-        && lhs.letterSpacing <= rhs.letterSpacing
     }
 }
