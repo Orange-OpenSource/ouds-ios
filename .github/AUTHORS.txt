@@ -10,4 +10,4 @@
 
 # Please keep the list sorted.
 
-Orange
+Orange SA
