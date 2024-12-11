@@ -127,7 +127,7 @@ private struct ButtonSkeletonModifier: ViewModifier {
     @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
-        content.overlay(theme.colorGradientSkeletonMiddle.color(for: colorScheme)) // TODO: 💠_indicator/skeleton/color/bg
+        content.overlay(theme.colorContentDefault.color(for: colorScheme)) // TODO: 💠_indicator/skeleton/color/bg
     }
 }
 
@@ -181,11 +181,11 @@ private struct ButtonLoadingModifier: ViewModifier {
         case .default:
             theme.buttonColorContentDefaultLoading.color(for: colorScheme)
         case .strong:
-            theme.colorActionPrimaryLoading.color(for: colorScheme) // TODO: colorActionLoading
+            theme.colorContentOnActionLoading.color(for: colorScheme)
         case .minimal:
             theme.buttonColorContentMinimalLoading.color(for: colorScheme)
         case .negative:
-            theme.colorActionNegativeLoading.color(for: colorScheme)
+            theme.colorContentOnActionNegative.color(for: colorScheme)
         }
     }
 }
@@ -231,22 +231,22 @@ private struct ButtonForegroundModifier: ViewModifier {
         case .default:
             theme.buttonColorContentDefaultHover
         case .strong:
-            theme.colorActionPrimaryHover // colorActionHover
+            theme.colorContentOnActionHover
         case .minimal:
             theme.buttonColorContentMinimalHover
         case .negative:
-            theme.colorActionNegativeHover
+            theme.colorContentOnActionNegative
         }
     }
 
     private var pressedToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            theme.buttonColorContentDefaultEnabled
+            theme.buttonColorContentDefaultPressed
         case .strong:
-            theme.buttonColorBgDefaultEnabled
+            theme.colorContentOnActionPressed
         case .minimal:
-            theme.buttonColorContentMinimalEnabled
+            theme.buttonColorContentDefaultPressed
         case .negative:
             theme.colorContentOnActionNegative
         }
@@ -257,11 +257,11 @@ private struct ButtonForegroundModifier: ViewModifier {
         case .default:
             theme.buttonColorContentDefaultEnabled
         case .strong:
-            theme.buttonColorBgDefaultEnabled // colorContentOnActionEnabled
+            theme.colorContentOnActionEnabled
         case .minimal:
             theme.buttonColorContentMinimalEnabled
         case .negative:
-            theme.colorContentOnActionDisabled // colorContentOnActionNegative
+            theme.colorContentOnActionNegative
         }
     }
     private var disabledToken: MultipleColorSemanticTokens {
@@ -330,7 +330,7 @@ private struct ButtonBackgroundModifier: ViewModifier {
         case .default:
             theme.buttonColorBgDefaultEnabled
         case .strong:
-            theme.colorActionDisabled // TODO colorActionEnabled
+            theme.colorActionEnabled
         case .minimal:
             theme.buttonColorBgMinimalEnabled
         case .negative:
@@ -356,11 +356,11 @@ private struct ButtonBackgroundModifier: ViewModifier {
         case .default:
             theme.buttonColorBgDefaultHover
         case .strong:
-            theme.colorContentOnActionPrimaryHover // theme.colorContentOnActionHover
+            theme.colorActionHover
         case .minimal:
             theme.buttonColorBgMinimalHover
         case .negative:
-            theme.colorContentOnActionNegative
+            theme.colorActionNegativeHover
         }
     }
 }
@@ -385,7 +385,7 @@ private struct ButtonBorderModifier: ViewModifier {
             content
                 .oudsBorder(
                     style: theme.borderStyleDefault,
-                    width: theme.borderWidthDefault,
+                    width: defaultWidth,
                     radius: theme.buttonBorderRadius,
                     color: defaultColor)
         case .strong:
