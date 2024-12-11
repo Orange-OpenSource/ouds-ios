@@ -26,7 +26,7 @@ extension OUDSTheme: FontSemanticTokens {
 
     // MARK: Semantic token - Typography - Font - Family
 
-    @objc open var fontFamily: FontFamilySemanticToken { FontRawTokens.fontFamilySystemSFPro }
+    @objc open var fontFamily: FontFamilySemanticToken { FontRawTokens.fontFamilySystemSfPro }
     @objc open var fontFamilyDisplay: FontFamilySemanticToken { fontFamily }
     @objc open var fontFamilyHeading: FontFamilySemanticToken { fontFamily }
     @objc open var fontFamilyBody: FontFamilySemanticToken { fontFamily }
