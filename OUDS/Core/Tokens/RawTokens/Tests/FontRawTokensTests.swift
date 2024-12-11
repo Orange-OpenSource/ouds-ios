@@ -14,7 +14,6 @@
 @testable import OUDSTokensRaw
 import XCTest
 
-// swiftlint:disable type_body_length
 // swiftlint:disable required_deinit
 
 /// The aim of this tests class is to look for regressions in **font raw tokens**.
@@ -28,44 +27,12 @@ final class FontRawTokensTests: XCTestCase {
 
     // Just to ensure the font families in tokens are the ones in system with the same name
 
-    func testFontRawTokenFontFamilyBrandDefault() throws {
-        XCTAssertEqual(FontRawTokens.fontFamilyBrandDefault, "Helvetica Neue")
-    }
-
-    func testFontRawTokenFontFamilyBrandTV() throws {
-        XCTAssertEqual(FontRawTokens.fontFamilyBrandTV, "Helvetica Neue LT")
-    }
-
-    func testFontRawTokenFontFamilySystemArial() throws {
-        XCTAssertEqual(FontRawTokens.fontFamilySystemArial, "Arial")
-    }
-
-    func testFontRawTokenFontFamilySystemHelvetica() throws {
-        XCTAssertEqual(FontRawTokens.fontFamilySystemHelvetica, "Helvetica")
-    }
-
-    func testFontRawTokenFontFamilySystemNotoSans() throws {
-        XCTAssertEqual(FontRawTokens.fontFamilySystemNotoSans, "Noto sans")
-    }
-
-    func testFontRawTokenFontFamilySystemSFProText() throws {
-        XCTAssertEqual(FontRawTokens.fontFamilySystemSFPro, "SF Pro")
-    }
-
-    func testFontRawTokenFontFamilySystemRoboto() throws {
-        XCTAssertEqual(FontRawTokens.fontFamilySystemRoboto, "Roboto")
-    }
-
     func testFontRawTokenFontFamilyMonospaceMenlo() throws {
         XCTAssertEqual(FontRawTokens.fontFamilyMonospaceMenlo, "Menlo")
     }
 
-    func testFontRawTokenFontFamilyMonospaceMonaco() throws {
-        XCTAssertEqual(FontRawTokens.fontFamilyMonospaceMonaco, "Monaco")
-    }
-
-    func testFontRawTokenFontFamilyCourrierNew() throws {
-        XCTAssertEqual(FontRawTokens.fontFamilyMonospaceCourierNew, "Courier New")
+    func testFontRawTokenFontFamilySystemSfPro() throws {
+        XCTAssertEqual(FontRawTokens.fontFamilySystemSfPro, "SF Pro")
     }
 
     // MARK: - Primitive token - Typography - Font size
@@ -261,10 +228,7 @@ final class FontRawTokensTests: XCTestCase {
     // MARK: - Primitive token - Typography - Font family
 
     func testFontRawTokensFontFamiliesAreAllDifferent() throws {
-        XCTAssertNotEqual(FontRawTokens.fontFamilyBrandDefault, FontRawTokens.fontFamilySystemArial)
-        XCTAssertNotEqual(FontRawTokens.fontFamilySystemArial, FontRawTokens.fontFamilySystemHelvetica)
-        XCTAssertNotEqual(FontRawTokens.fontFamilySystemHelvetica, FontRawTokens.fontFamilyMonospaceMenlo)
-        XCTAssertNotEqual(FontRawTokens.fontFamilyMonospaceMenlo, FontRawTokens.fontFamilyMonospaceCourierNew)
+        XCTAssertNotEqual(FontRawTokens.fontFamilyMonospaceMenlo, FontRawTokens.fontFamilySystemSfPro)
     }
 
     // MARK: - Primitive token - Typography - Font weight
@@ -384,5 +348,5 @@ final class FontRawTokensTests: XCTestCase {
         XCTAssertTrue(FontRawTokens.typeBold1450 <| FontRawTokens.typeBold1850)
     }
 }
-// swiftlint:enable type_body_length
+
 // swiftlint:enable required_deinit
