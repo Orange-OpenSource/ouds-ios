@@ -32,18 +32,39 @@ public struct OOUDSButton: View {
 
     // MARK: Initializers
 
+    /// Create a button with text and icon
+    /// - Parameters:
+    ///    - hierarchy: the hierarchy of the button
+    ///    - icon: an image shoud contains an icon
+    ///    - text: the text
+    ///    - style: the style of the button (normal or loading)
+    ///    - action: The action to perform when the user triggers the button
     public init(hierarchy: Hierarchy, icon: Image, text: String, style: Style = .normal, action: @escaping () -> Void) {
         self.type = .textAndIcon(text: text, icon: icon)
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
     }
+
+    /// Create a button with an icon
+    /// - Parameters:
+    ///    - hierarchy: the hierarchy of the button
+    ///    - icon: an image shoud contains an icon
+    ///    - style: the style of the button (normal or loading)
+    ///    - action: The action to perform when the user triggers the button
     public init(hierarchy: Hierarchy, icon: Image, style: Style = .normal, action: @escaping () -> Void) {
         self.type = .icon(icon)
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
     }
+
+    /// Create a button with a text
+    /// - Parameters:
+    ///    - hierarchy: the hierarchy of the button
+    ///    - text: the text of the button
+    ///    - style: the style of the button (normal or loading)
+    ///    - action: The action to perform when the user triggers the button
     public init(hierarchy: Hierarchy, text: String, style: Style = .normal, action: @escaping () -> Void) {
         self.type = .text(text)
         self.hierarchy = hierarchy
