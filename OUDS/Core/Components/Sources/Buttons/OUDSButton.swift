@@ -19,6 +19,7 @@ public struct OOUDSButton: View {
 
     private let type: `Type`
     private let hierarchy: Hierarchy
+    private let style: Style
     private let action: () -> Void
 
     private enum `Type`{
@@ -27,22 +28,26 @@ public struct OOUDSButton: View {
         case textAndIcon(text: String, icon: Image)
     }
     public typealias Hierarchy = OUDSButtonStyle.Hierarchy
+    public typealias Style = OUDSButtonStyle.Style
 
     // MARK: Initializers
 
-    public init(hierarchy: Hierarchy, icon: Image, text: String, action: @escaping () -> Void) {
+    public init(hierarchy: Hierarchy, icon: Image, text: String, style: Style = .normal, action: @escaping () -> Void) {
         self.type = .textAndIcon(text: text, icon: icon)
         self.hierarchy = hierarchy
+        self.style = style
         self.action = action
     }
-    public init(hierarchy: Hierarchy, icon: Image, action: @escaping () -> Void) {
+    public init(hierarchy: Hierarchy, icon: Image, style: Style = .normal, action: @escaping () -> Void) {
         self.type = .icon(icon)
         self.hierarchy = hierarchy
+        self.style = style
         self.action = action
     }
-    public init(hierarchy: Hierarchy, text: String, action: @escaping () -> Void) {
+    public init(hierarchy: Hierarchy, text: String, style: Style = .normal, action: @escaping () -> Void) {
         self.type = .text(text)
         self.hierarchy = hierarchy
+        self.style = style
         self.action = action
     }
 
@@ -59,7 +64,7 @@ public struct OOUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon)
             }
         }
-        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy))
+        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, style: style))
     }
 }
 

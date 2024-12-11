@@ -30,6 +30,9 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     @Published var hierarchy: OUDSButtonStyle.Hierarchy {
         didSet { updateCode() }
     }
+    @Published var style: OUDSButtonStyle.Style {
+        didSet { updateCode() }
+    }
 
     // MARK: Initializer
 
@@ -37,6 +40,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         self.enabled = true
         self.layout = .textOnly
         self.hierarchy = .default
+        self.style = .normal
     }
 
     deinit { }
@@ -89,10 +93,30 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
     var id: String { description }
 }
 
+// MARK: Button Layout
+
+extension OUDSButtonStyle.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+
+    nonisolated(unsafe) public static let allCases: [OUDSButtonStyle.Style] = [.normal, .loading, skeleton]
+
+    public var description: String {
+        switch self {
+        case .normal:
+            "Normal"
+        case .skeleton:
+            "Skeleton"
+        case .loading:
+            "Loading"
+        }
+    }
+
+    var id: String { description }
+}
+
 // MARK: Button Hierarchy extension
 
-extension OUDSButtonStyle.Hierarchy: @retroactive @preconcurrency CaseIterable, @retroactive CustomStringConvertible {
-    @MainActor public static let allCases: [OUDSButtonStyle.Hierarchy] = [.default, .strong, .minimal, .negative]
+extension OUDSButtonStyle.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    nonisolated(unsafe) public static let allCases: [OUDSButtonStyle.Hierarchy] = [.default, .strong, .minimal, .negative]
 
     // Note: Not localized because it is a technical name
     public var description: String {
@@ -133,24 +157,36 @@ struct ButtonConfiguration: View {
                 .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
 
             VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_layout_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_layout_label", selection: $model.layout) {
-                    ForEach(ButtonLayout.allCases, id: \.id) { layout in
-                        Text(LocalizedStringKey(layout.description)).tag(layout)
-                    }
-                }
-                .pickerStyle(.segmented)
-            }
-
-            VStack(alignment: .leading) {
                 Text(LocalizedStringKey("app_components_button_hierarchy_label"))
                     .typeHeadingMedium(theme)
                     .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
                 Picker("app_components_button_hierarchy_label", selection: $model.hierarchy) {
                     ForEach(OUDSButtonStyle.Hierarchy.allCases, id: \.id) { hierarchy in
                         Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
+                    }
+                }
+                .pickerStyle(.segmented)
+            }
+
+            VStack(alignment: .leading) {
+                Text(LocalizedStringKey("app_components_button_style_label"))
+                    .typeHeadingMedium(theme)
+                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                Picker("app_components_button_style_label", selection: $model.style) {
+                    ForEach(OUDSButtonStyle.Style.allCases, id: \.id) { style in
+                        Text(LocalizedStringKey(style.description)).tag(style)
+                    }
+                }
+                .pickerStyle(.segmented)
+            }
+
+            VStack(alignment: .leading) {
+                Text(LocalizedStringKey("app_components_button_layout_label"))
+                    .typeHeadingMedium(theme)
+                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                Picker("app_components_button_layout_label", selection: $model.layout) {
+                    ForEach(ButtonLayout.allCases, id: \.id) { layout in
+                        Text(LocalizedStringKey(layout.description)).tag(layout)
                     }
                 }
                 .pickerStyle(.segmented)

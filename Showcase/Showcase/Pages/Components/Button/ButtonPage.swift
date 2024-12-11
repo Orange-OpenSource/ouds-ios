@@ -91,11 +91,11 @@ private struct ButtonDemo: View {
             // swiftlint:disable accessibility_label_for_image
             switch model.layout {
             case .iconOnly:
-                OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart")) {}
+                OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), style: model.style) {}
             case .textOnly:
-                OOUDSButton(hierarchy: model.hierarchy, text: "app_components_button_label") {}
+                OOUDSButton(hierarchy: model.hierarchy, text: "app_components_button_label", style: model.style) {}
             case .iconAndText:
-                OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), text: "app_components_button_label") {}
+                OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), text: "app_components_button_label", style: model.style) {}
             }
 
             // swiftlint:enable accessibility_label_for_image

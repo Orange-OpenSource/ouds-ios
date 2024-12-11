@@ -13,6 +13,7 @@
 
 import SwiftUI
 
+@available(macOS 10.15, *)
 extension Color {
 
     /// `Color` extension to get a `Color` from its hexadecimal string representation.
