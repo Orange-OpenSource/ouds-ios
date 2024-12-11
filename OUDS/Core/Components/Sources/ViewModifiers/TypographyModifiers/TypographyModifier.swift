@@ -71,24 +71,29 @@ struct TypographyModifier: ViewModifier {
         }
     }
 
-    // TODO: #51 - Call lineSpacing() and tracking() functions when values usable in FontRawTokens
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
     /// depending to the current `MultipleFontCompositeRawTokens`.
-    /// **Does not apply _letter spacing_ nor _line height_ because raw tokens values are not usable!**
+    /// **Does not apply _letter spacing_ nor _line height_ yet!**
+    /// See:
+    /// - https://github.com/Orange-OpenSource/ouds-ios/issues/347
+    /// - https://github.com/Orange-OpenSource/ouds-ios/issues/348
     func body(content: Content) -> some View {
+        // `tracking()` and `kerning()` only available for iOS 16+
+        // `minimumScaleFactor()` ensures text remains readable by allowing scaling down
+        // `.onChange(of: sizeCategory) { _ in }` triggers view update when Dynamic Type size changes
         if #available(iOS 16.0, *) {
             content
                 .font(adaptiveTypography())
-                .minimumScaleFactor(0.5) /// Ensures text remains readable by allowing scaling down
-                .onChange(of: sizeCategory) { _ in } /// Triggers view update when Dynamic Type size changes
-//                .lineSpacing(adaptiveTypography.lineHeight)
-//                .tracking(adaptiveTypography.letterSpacing)
-        } else { // tracking() and kerning() only available for iOS 16+
+                .minimumScaleFactor(0.5)
+                .onChange(of: sizeCategory) { _ in }
+                // Apply .lineSpacing() with expected value (see #348)
+                // Apply .tracking() or .kerning() (ese #347)
+        } else {
             content
                 .font(adaptiveTypography())
-                .minimumScaleFactor(0.5) /// Ensures text remains readable by allowing scaling down
-                .onChange(of: sizeCategory) { _ in } /// Triggers view update when Dynamic Type size changes
-//                .lineSpacing(adaptiveTypography.lineHeight)
+                .minimumScaleFactor(0.5)
+                .onChange(of: sizeCategory) { _ in }
+                // Apply .lineSpacing() with expected value (see #348)
         }
     }
 }
