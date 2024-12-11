@@ -12,8 +12,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Tool] Migrate from `xcode_install` to `xcodes` in Fastfile, freeze Xcode version (16.0)
 - [Library] Update `FontRawTokens` (tokenator *20241211101443*)
+- [Tool] Migrate from `xcode_install` to `xcodes` in Fastfile, freeze Xcode version (16.0)
 - [Library] Rename `Typography*` tokens and elements to `Font*` ([#322](https://github.com/Orange-OpenSource/ouds-ios/issues/322))
 - [Library] Update `ColorSemanticTokens` (tokenator *20241204111709*)
 - [Library] Update `SpaceSemanticTokens` (tokenator *20241204110127*)
