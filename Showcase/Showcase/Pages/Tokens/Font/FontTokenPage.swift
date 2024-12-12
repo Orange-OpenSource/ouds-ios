@@ -58,7 +58,7 @@ struct FontTokenPage: View {
                     + Text("weight (\(token.weight)), ")
                     + Text("size (\(token.size, specifier: "%.2f")), ")
                     + Text("lineHeight (\(token.lineHeight, specifier: "%.2f")), ")
-                    + Text("letterSpacing \(token.letterSpacing, specifier: "%.2f"))")
+                    + Text("letterSpacing (\(token.letterSpacing, specifier: "%.2f"))")
                 }
                 .typeBodyDefaultMedium(theme)
                 .fixedSize(horizontal: false, vertical: true)
