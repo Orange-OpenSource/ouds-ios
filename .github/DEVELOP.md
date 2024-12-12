@@ -350,7 +350,7 @@ We use _SwiftLint_ in this project so as to be sure the source code follows defi
 You must run _SwiftLint_ in CLI or using _Xcode_ to be sure you don't keep and submit warnings.
 **In most of cases you must fix warnings, or explain why in your commtis and pull request comments you choose to disable them.**
 
-Today, only in very few cases some SwiftLint warnings are disabled:
+Today, only in very few cases some _SwiftLint_ warnings are disabled at files level:
 - in tests classes
 - in files containing tokens which will be generated
 
@@ -366,6 +366,8 @@ The warnings which can be disabled for test classes files and mocks files:
 - *line_length*: because of length of tokens names
 - *file_length*: because of the amount of tokens to test
 - *type_body_length*: because we can have a lot of tests to do
+- *function_body_length*: because we can have function with a lot of assertions
+- *force_try*: because we can need tod efine some configuration variable we are sure they work (like regxp)
 - *required_deinit*: because we do not need to manage init and deinit of test classe
 - *implicitly_unwrapped_optional*: because for declaration of themes to test we bang!
 
