@@ -53,6 +53,16 @@ extension XCTestCase {
         XCTAssertLessThan(leftBrightness, rightBrightness, "Right color is not darker than the left color", file: (file), line: line)
     }
 
+    /// Asserts if the given `String` matches the given `pattern` regular expression
+    /// - Parameters:
+    ///    - value: The String to test
+    ///    - pattern: The regular expression to apply
+    public func XCTAssertMatches(_ value: String, regexp pattern: NSRegularExpression, file: StaticString = #file, line: UInt = #line) {
+        let range = NSRange(location: 0, length: value.utf16.count)
+        let match = pattern.firstMatch(in: value, options: [], range: range) != nil
+        XCTAssertTrue(match)
+    }
+
     // MARK: - Helpers
 
     private func hexadecimalStringToInt(_ value: String) -> Int {
