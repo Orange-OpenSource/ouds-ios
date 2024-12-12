@@ -358,6 +358,20 @@ extension OUDSTheme: ColorMultipleSemanticTokens {
 
     @objc open var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWarningLight, dark: colorRepositoryOpacityWarningDark) }
 
+    @objc open var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHighLight, dark: colorRepositoryOpacityWhiteHighDark) }
+
+    @objc open var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHigherLight, dark: colorRepositoryOpacityWhiteHigherDark) }
+
+    @objc open var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHighestLight, dark: colorRepositoryOpacityWhiteHighestDark) }
+
+    @objc open var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteLowLight, dark: colorRepositoryOpacityWhiteLowDark) }
+
+    @objc open var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteLowerLight, dark: colorRepositoryOpacityWhiteLowerDark) }
+
+    @objc open var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteLowestLight, dark: colorRepositoryOpacityWhiteLowestDark) }
+
+    @objc open var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteTransparentLight, dark: colorRepositoryOpacityWhiteTransparentDark) }
+
     @objc open var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveDefaultLight, dark: colorRepositoryPositiveDefaultDark) }
 
     @objc open var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveHighestLight, dark: colorRepositoryPositiveHighestDark) }

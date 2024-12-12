@@ -375,6 +375,20 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { get }
 
+    var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { get }
+
     var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { get }
 
     var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { get }

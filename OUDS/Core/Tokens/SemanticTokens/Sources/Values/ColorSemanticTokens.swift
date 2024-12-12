@@ -509,6 +509,27 @@ public protocol ColorSemanticTokens {
     var colorRepositoryOpacityWarningLight: ColorSemanticToken { get }
     var colorRepositoryOpacityWarningDark: ColorSemanticToken { get }
 
+    var colorRepositoryOpacityWhiteHighLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteHighDark: ColorSemanticToken { get }
+
+    var colorRepositoryOpacityWhiteHigherLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteHigherDark: ColorSemanticToken { get }
+
+    var colorRepositoryOpacityWhiteHighestLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteHighestDark: ColorSemanticToken { get }
+
+    var colorRepositoryOpacityWhiteLowLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteLowDark: ColorSemanticToken { get }
+
+    var colorRepositoryOpacityWhiteLowerLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteLowerDark: ColorSemanticToken { get }
+
+    var colorRepositoryOpacityWhiteLowestLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteLowestDark: ColorSemanticToken { get }
+
+    var colorRepositoryOpacityWhiteTransparentLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteTransparentDark: ColorSemanticToken { get }
+
     var colorRepositoryPositiveDefaultLight: ColorSemanticToken { get }
     var colorRepositoryPositiveDefaultDark: ColorSemanticToken { get }
 

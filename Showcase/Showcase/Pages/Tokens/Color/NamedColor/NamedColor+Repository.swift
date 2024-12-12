@@ -53,6 +53,13 @@ extension NamedColor {
         case colorRepositoryOpacityNegative
         case colorRepositoryOpacityPositive
         case colorRepositoryOpacityWarning
+        case colorRepositoryOpacityWhiteHigh
+        case colorRepositoryOpacityWhiteHigher
+        case colorRepositoryOpacityWhiteHighest
+        case colorRepositoryOpacityWhiteLow
+        case colorRepositoryOpacityWhiteLower
+        case colorRepositoryOpacityWhiteLowest
+        case colorRepositoryOpacityWhiteTransparent
         case colorRepositoryPositiveDefault
         case colorRepositoryPositiveHighest
         case colorRepositoryPositiveLow
@@ -134,6 +141,20 @@ extension NamedColor {
                 return theme.colorRepositoryOpacityPositive
             case .colorRepositoryOpacityWarning:
                 return theme.colorRepositoryOpacityWarning
+            case .colorRepositoryOpacityWhiteHigh:
+                return theme.colorRepositoryOpacityWhiteHigh
+            case .colorRepositoryOpacityWhiteHigher:
+                return theme.colorRepositoryOpacityWhiteHigher
+            case .colorRepositoryOpacityWhiteHighest:
+                return theme.colorRepositoryOpacityWhiteHighest
+            case .colorRepositoryOpacityWhiteLow:
+                return theme.colorRepositoryOpacityWhiteLow
+            case .colorRepositoryOpacityWhiteLower:
+                return theme.colorRepositoryOpacityWhiteLower
+            case .colorRepositoryOpacityWhiteLowest:
+                return theme.colorRepositoryOpacityWhiteLowest
+            case .colorRepositoryOpacityWhiteTransparent:
+                return theme.colorRepositoryOpacityWhiteTransparent
             case .colorRepositoryPositiveDefault:
                 return theme.colorRepositoryPositiveDefault
             case .colorRepositoryPositiveHighest:

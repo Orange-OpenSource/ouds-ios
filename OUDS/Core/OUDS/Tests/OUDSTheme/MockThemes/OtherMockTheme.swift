@@ -607,6 +607,13 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
     override public var colorRepositoryOpacityNegative: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
     override public var colorRepositoryOpacityPositive: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
     override public var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
+    override public var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
+    override public var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
+    override public var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
+    override public var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
+    override public var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
+    override public var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
+    override public var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
     override public var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
     override public var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }
     override public var colorRepositoryPositiveLow: MultipleColorSemanticTokens { Self.otherMockThemeMultipleColorSemanticTokens }

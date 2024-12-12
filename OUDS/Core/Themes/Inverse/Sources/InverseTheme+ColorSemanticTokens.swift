@@ -333,6 +333,20 @@ extension InverseTheme {
 
     override public var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWarningDark) }
 
+    override open var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteHighDark) }
+
+    override open var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteHigherDark) }
+
+    override open var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteHighestDark) }
+
+    override open var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteLowDark) }
+
+    override open var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteLowerDark) }
+
+    override open var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteLowestDark) }
+
+    override open var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteTransparentDark) }
+
     override public var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryPositiveDefaultDark) }
 
     override public var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryPositiveHighestDark) }

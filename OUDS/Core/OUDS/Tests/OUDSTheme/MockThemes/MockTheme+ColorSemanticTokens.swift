@@ -605,6 +605,13 @@ extension MockTheme {
     override open var colorRepositoryOpacityNegative: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override open var colorRepositoryOpacityPositive: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override open var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override open var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override open var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override open var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override open var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override open var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override open var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override open var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override open var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override open var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override open var colorRepositoryPositiveLow: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }

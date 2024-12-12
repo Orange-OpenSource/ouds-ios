@@ -31,6 +31,7 @@ final class TestInverseThemeColors: XCTestCase {
         inverseTheme = InverseTheme()
     }
 
+    /// Ensure the `InverseTheme` has the same value for light and dark color schemes (supposed to be dark)
     private func assertHomogeneity(_ value: MultipleColorSemanticTokens) {
         XCTAssertEqual(value.light, value.dark)
     }
@@ -671,6 +672,34 @@ final class TestInverseThemeColors: XCTestCase {
 
     func testColorsHomogeneityColorRepositoryOpacityWarning() throws {
         assertHomogeneity(inverseTheme.colorRepositoryOpacityWarning)
+    }
+
+    func testColorsHomogeneityColorRepositoryOpacityWhiteHigh() throws {
+        assertHomogeneity(inverseTheme.colorRepositoryOpacityWhiteHigh)
+    }
+
+    func testColorsHomogeneityColorRepositoryOpacityWhiteHigher() throws {
+        assertHomogeneity(inverseTheme.colorRepositoryOpacityWhiteHigher)
+    }
+
+    func testColorsHomogeneityColorRepositoryOpacityWhiteHighest() throws {
+        assertHomogeneity(inverseTheme.colorRepositoryOpacityWhiteHighest)
+    }
+
+    func testColorsHomogeneityColorRepositoryOpacityWhiteLow() throws {
+        assertHomogeneity(inverseTheme.colorRepositoryOpacityWhiteLow)
+    }
+
+    func testColorsHomogeneityColorRepositoryOpacityWhiteLower() throws {
+        assertHomogeneity(inverseTheme.colorRepositoryOpacityWhiteLower)
+    }
+
+    func testColorsHomogeneityColorRepositoryOpacityWhiteLowest() throws {
+        assertHomogeneity(inverseTheme.colorRepositoryOpacityWhiteLowest)
+    }
+
+    func testColorsHomogeneityColorRepositoryOpacityWhiteLowTransparent() throws {
+        assertHomogeneity(inverseTheme.colorRepositoryOpacityWhiteTransparent)
     }
 
     func testColorsHomogeneityColorRepositoryPositiveDefault() throws {
