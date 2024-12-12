@@ -30,7 +30,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     @Published var hierarchy: OUDSButtonStyle.Hierarchy {
         didSet { updateCode() }
     }
-    @Published var style: OUDSButtonStyle.Style {
+    @Published var state: OUDSButtonStyle.ButtonState {
         didSet { updateCode() }
     }
 
@@ -40,12 +40,20 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         self.enabled = true
         self.layout = .textOnly
         self.hierarchy = .default
-        self.style = .normal
+        self.state = .normal
     }
 
     deinit { }
 
     // MARK: ComponentConfiguration
+
+    private var disableCode: String {
+        if case .normal = state {
+            ".disable(\(enabled ? "false" : "true"))"
+        } else {
+            ""
+        }
+    }
 
     override func updateCode() {
 
@@ -53,20 +61,20 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
             """
-          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), text: \"Button\")) {}
-          .disable(\(enabled ? "false" : "true"))
+          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), text: \"Button\", state: \(state.description.lowercased())) {}
+          \(disableCode))
           """
         case .iconOnly:
             code =
             """
-          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\")) {}
-          .disable(\(enabled ? "false" : "true"))
+          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\"), state: \(state.description.lowercased()) {}
+          \(disableCode))
           """
         case .iconAndText:
             code =
             """
-          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\", text: \"Button\")) {}
-          .disable(\(enabled ? "false" : "true"))
+          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\", text: \"Button\"), state: \(state.description.lowercased()) {}
+          \(disableCode))
           """
         }
     }
@@ -95,9 +103,9 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
 
 // MARK: Button Layout
 
-extension OUDSButtonStyle.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSButtonStyle.ButtonState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSButtonStyle.Style] = [.normal, .loading, skeleton]
+    nonisolated(unsafe) public static let allCases: [OUDSButtonStyle.ButtonState] = [.normal, .loading, skeleton]
 
     public var description: String {
         switch self {
@@ -155,6 +163,7 @@ struct ButtonConfiguration: View {
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                .disabled(model.state != .normal)
 
             VStack(alignment: .leading) {
                 Text(LocalizedStringKey("app_components_button_hierarchy_label"))
@@ -169,12 +178,12 @@ struct ButtonConfiguration: View {
             }
 
             VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_style_label"))
+                Text(LocalizedStringKey("app_components_button_state_label"))
                     .typeHeadingMedium(theme)
                     .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_style_label", selection: $model.style) {
-                    ForEach(OUDSButtonStyle.Style.allCases, id: \.id) { style in
-                        Text(LocalizedStringKey(style.description)).tag(style)
+                Picker("app_components_button_state_label", selection: $model.state) {
+                    ForEach(OUDSButtonStyle.ButtonState.allCases, id: \.id) { state in
+                        Text(LocalizedStringKey(state.description)).tag(state)
                     }
                 }
                 .pickerStyle(.segmented)

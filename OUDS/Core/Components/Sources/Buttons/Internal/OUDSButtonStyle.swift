@@ -36,11 +36,6 @@ import SwiftUI
 ///
 public struct OUDSButtonStyle: ButtonStyle {
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.isEnabled) private var isEnable
-    @Environment(\.buttonOnColoredSurface) private var buttonOnColoredSurface
-
     /// Represents the hierarchy of an OUDS button
     public enum Hierarchy {
         /// Default button is used for action
@@ -53,165 +48,55 @@ public struct OUDSButtonStyle: ButtonStyle {
         case negative
     }
 
-    /// Defines the style of the button
-    public enum Style {
-        /// The normal style, the button coumd be in prossed, hover, disabled or enabled state
+    /// Defines the state of the button
+    public enum ButtonState {
+        /// The normal state, the button coumd be in prossed, hover, disabled or enabled internal state
         case normal
 
-        /// The loading style means a loading action is in progress, sometimes just after user tapped on button
+        /// The loading state means a loading action is in progress, sometimes just after user tapped on button
         case loading
 
-        /// The skeleton style can be apply on the button when the screen is loadind data for the first time
+        /// The skeleton state can be apply on the button when the screen is loadind data for the first time
         case skeleton
     }
 
     // MARK: Stored Properties
 
-    private let style: Style
+    @Environment(\.isEnabled) private var isEnable
+    private let state: ButtonState
     private let hierarchy: Hierarchy
     @State private var isHover: Bool
 
     // MARK: Initializer
 
-    /// Initialize the Button style for the `hierarchy`
-    /// of `OUDSButton` and the `style` to apply.
+    /// Initialize the `OUDSButtonStyle` for the `hierarchy`
+    /// in the `state` of the `OUDSButton`.
+    ///
     ///  - Parameters:
     ///     - hierarchy: The button hierarchy
-    ///     - style: The design style
-    public init(hierarchy: Hierarchy, style: Style) {
+    ///     - state: The current stete of the button
+    public init(hierarchy: Hierarchy, state: ButtonState) {
         self.hierarchy = hierarchy
-        self.style = style
+        self.state = state
         self.isHover = false
     }
 
     // MARK: Body
 
     public func makeBody(configuration: Configuration) -> some View {
-        switch style {
+        switch state {
         case .normal:
             configuration.label
                 .onHover { isHover in
                     self.isHover = isHover
                 }
-                .modifier(GeneralViewModifier(hierarchy: hierarchy, isEnabled: isEnable, isHover: isHover, isPressed: configuration.isPressed))
+                .modifier(ButtonViewModifier(hierarchy: hierarchy, isEnabled: isEnable, isHover: isHover, isPressed: configuration.isPressed))
         case .loading:
             configuration.label
-                .modifier(ButtonLoadingModifier(hierarchy: hierarchy))
-                .modifier(GeneralViewModifier(hierarchy: hierarchy, isEnabled: true, isHover: false, isPressed: false))
+                .modifier(ButtonLoadingContentModifier(hierarchy: hierarchy))
+                .modifier(ButtonViewModifier(hierarchy: hierarchy, isEnabled: true, isHover: false, isPressed: false))
         case .skeleton:
             configuration.label.modifier(ButtonSkeletonModifier())
-        }
-    }
-}
-
-enum ButtonState {
-    case enabled, hover, pressed, disabled, loading
-}
-
-// MARK: - General modifier
-
-///  This modifier has in charge to apply foreground, background colors
-/// and add a border (width, radius and color) associated to the hierarchy
-/// and according to the state (computed with `isEnabled`, `isPreessed` and `isHover` flags)
-private struct GeneralViewModifier: ViewModifier {
-
-    let hierarchy: OUDSButtonStyle.Hierarchy
-    let isEnabled: Bool
-    let isHover: Bool
-    let isPressed: Bool
-
-    func body(content: Content) -> some View {
-        content
-            .modifier(ButtonBorderModifier(hierarchy: hierarchy, state: state))
-            .modifier(ButtonForegroundModifier(hierarchy: hierarchy, state: state))
-            .modifier(ButtonBackgroundModifier(hierarchy: hierarchy, state: state))
-    }
-
-    private var state: ButtonState {
-        if !isEnabled {
-            return .disabled
-        }
-
-        if isPressed {
-            return .pressed
-        }
-
-        if isHover {
-            return .hover
-        }
-
-        return .enabled
-    }
-}
-
-// MARK: - Skeleton Modifier
-
-/// Only used to apply the skeleton styl (grey rectangle over all)
-private struct ButtonSkeletonModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
-    func body(content: Content) -> some View {
-        content.overlay(theme.colorContentDefault.color(for: colorScheme)) // TODO: 💠_indicator/skeleton/color/bg
-    }
-}
-
-// MARK: - Loading modifiers
-
-private struct LoagingIndicator: View {
-
-    @State private var isAnimating = false
-    let color: Color
-
-    var body: some View {
-        Circle()
-            .trim(from: 0, to: 0.7)
-            .stroke(color, lineWidth: 3)
-            .rotationEffect(.degrees(isAnimating ? 360 : 0))
-            .onAppear {
-                withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
-                    self.isAnimating.toggle()
-                }
-            }
-    }
-}
-
-/// Used to add a Progress indicator instead of conent (Text, Icon)
-/// As the button must keepp the size of the content, the indicator is
-/// added as overlay on top, and the content is hidden applying an opacity.
-private struct ButtonLoadingModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Stored Properties
-
-    let hierarchy: OUDSButtonStyle.Hierarchy
-
-    // MARK: Body
-
-    func body(content: Content) -> some View {
-        content
-            .opacity(0)
-            .overlay {
-                LoagingIndicator(color: color)
-                    .padding(.vertical, theme.buttonSpacePaddingBlock)
-            }
-    }
-
-    // MARK: Private helper
-
-    private var color: Color {
-        switch hierarchy {
-        case .default:
-            theme.buttonColorContentDefaultLoading.color(for: colorScheme)
-        case .strong:
-            theme.colorContentOnActionLoading.color(for: colorScheme)
-        case .minimal:
-            theme.buttonColorContentMinimalLoading.color(for: colorScheme)
-        case .negative:
-            theme.colorContentOnActionNegative.color(for: colorScheme)
         }
     }
 }

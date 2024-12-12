@@ -16,7 +16,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Used to apply the right forgeround color associated to the hierarchy and style
+/// Used to apply the right forgeround color associated to the hierarchy and state
 struct ButtonForegroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
@@ -26,7 +26,7 @@ struct ButtonForegroundModifier: ViewModifier {
     // MARK: Stored Properties
 
     let hierarchy: OUDSButtonStyle.Hierarchy
-    let state: ButtonState
+    let state: InternalButtonState
 
     // MARK: Body
 

@@ -19,7 +19,7 @@ public struct OOUDSButton: View {
 
     private let type: `Type`
     private let hierarchy: Hierarchy
-    private let style: Style
+    private let state: ButtonState
     private let action: () -> Void
 
     private enum `Type`{
@@ -28,7 +28,7 @@ public struct OOUDSButton: View {
         case textAndIcon(text: String, icon: Image)
     }
     public typealias Hierarchy = OUDSButtonStyle.Hierarchy
-    public typealias Style = OUDSButtonStyle.Style
+    public typealias ButtonState = OUDSButtonStyle.ButtonState
 
     // MARK: Initializers
 
@@ -37,12 +37,12 @@ public struct OOUDSButton: View {
     ///    - hierarchy: the hierarchy of the button
     ///    - icon: an image shoud contains an icon
     ///    - text: the text
-    ///    - style: the style of the button (normal or loading)
+    ///    - state: the current state of the button (normal or loading/skeleton)
     ///    - action: The action to perform when the user triggers the button
-    public init(hierarchy: Hierarchy, icon: Image, text: String, style: Style = .normal, action: @escaping () -> Void) {
+    public init(hierarchy: Hierarchy, icon: Image, text: String, state: ButtonState = .normal, action: @escaping () -> Void) {
         self.type = .textAndIcon(text: text, icon: icon)
         self.hierarchy = hierarchy
-        self.style = style
+        self.state = state
         self.action = action
     }
 
@@ -50,12 +50,12 @@ public struct OOUDSButton: View {
     /// - Parameters:
     ///    - hierarchy: the hierarchy of the button
     ///    - icon: an image shoud contains an icon
-    ///    - style: the style of the button (normal or loading)
+    ///    - state: the current state of the button (normal or loading/skeleton)
     ///    - action: The action to perform when the user triggers the button
-    public init(hierarchy: Hierarchy, icon: Image, style: Style = .normal, action: @escaping () -> Void) {
+    public init(hierarchy: Hierarchy, icon: Image, state: ButtonState = .normal, action: @escaping () -> Void) {
         self.type = .icon(icon)
         self.hierarchy = hierarchy
-        self.style = style
+        self.state = state
         self.action = action
     }
 
@@ -63,12 +63,12 @@ public struct OOUDSButton: View {
     /// - Parameters:
     ///    - hierarchy: the hierarchy of the button
     ///    - text: the text of the button
-    ///    - style: the style of the button (normal or loading)
+    ///    - state: the current state of the button (normal or loading/skeleton)
     ///    - action: The action to perform when the user triggers the button
-    public init(hierarchy: Hierarchy, text: String, style: Style = .normal, action: @escaping () -> Void) {
+    public init(hierarchy: Hierarchy, text: String, state: ButtonState = .normal, action: @escaping () -> Void) {
         self.type = .text(text)
         self.hierarchy = hierarchy
-        self.style = style
+        self.state = state
         self.action = action
     }
 
@@ -85,7 +85,7 @@ public struct OOUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon)
             }
         }
-        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, style: style))
+        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, state: state))
     }
 }
 

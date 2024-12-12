@@ -348,12 +348,6 @@ extension OUDSColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackMediumLight, dark: colorRepositoryOpacityBlackMediumDark) }
 
-    // TODO: LPL
-    @objc open var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHigherLight, dark: colorRepositoryOpacityWhiteHigherDark) }
-
-    // TODO: LPL
-    @objc open var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHighLight, dark: colorRepositoryOpacityWhiteHighDark) }
-
     @objc open var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackTransparentLight, dark: colorRepositoryOpacityBlackTransparentDark) }
 
     @objc open var colorRepositoryOpacityInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityInfoLight, dark: colorRepositoryOpacityInfoDark) }

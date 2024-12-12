@@ -112,7 +112,7 @@ extension OUDSTheme: ButtonsComponentTokens {
     public var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
     public var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
     public var buttonColorContentStrongPressedMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigh } 
+    public var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigh }
     public var buttonColorContentStrongLoadingMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
     public var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
 
