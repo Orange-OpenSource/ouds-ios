@@ -92,13 +92,13 @@ extension OUDSTheme: FontSemanticTokens {
     @objc open var fontSizeLabelMedium: FontSizeSemanticToken { FontRawTokens.fontSize200 }
     @objc open var fontSizeLabelSmall: FontSizeSemanticToken { FontRawTokens.fontSize150 }
     @objc open var fontSizeLabelXlarge: FontSizeSemanticToken { FontRawTokens.fontSize300 }
-    @objc open var fontWeightBodyDefault: FontWeightSemanticToken { FontRawTokens.fontWeightDefault }
-    @objc open var fontWeightBodyStrong: FontWeightSemanticToken { FontRawTokens.fontWeightStrong }
+    @objc open var fontWeightBodyDefault: FontWeightSemanticToken { fontWeightDefault }
+    @objc open var fontWeightBodyStrong: FontWeightSemanticToken { fontWeightStrong }
     @objc open var fontWeightCode: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
-    @objc open var fontWeightDisplay: FontWeightSemanticToken { FontRawTokens.fontWeightStrong }
-    @objc open var fontWeightHeading: FontWeightSemanticToken { FontRawTokens.fontWeightStrong }
-    @objc open var fontWeightLabelDefault: FontWeightSemanticToken { FontRawTokens.fontWeightDefault }
-    @objc open var fontWeightLabelStrong: FontWeightSemanticToken { FontRawTokens.fontWeightStrong }
+    @objc open var fontWeightDisplay: FontWeightSemanticToken { fontWeightStrong }
+    @objc open var fontWeightHeading: FontWeightSemanticToken { fontWeightStrong }
+    @objc open var fontWeightLabelDefault: FontWeightSemanticToken { fontWeightDefault }
+    @objc open var fontWeightLabelStrong: FontWeightSemanticToken { fontWeightStrong }
     @objc open var fontWeightDefault: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
     @objc open var fontWeightStrong: FontWeightSemanticToken { FontRawTokens.fontWeight700 }
 }

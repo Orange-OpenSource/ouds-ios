@@ -58,57 +58,39 @@ public protocol FontMultipleSemanticTokens {
     var fontSizeDisplayLarge: MultipleFontSizeSemanticTokens { get }
     var fontSizeDisplayMedium: MultipleFontSizeSemanticTokens { get }
     var fontSizeDisplaySmall: MultipleFontSizeSemanticTokens { get }
-    var fontSizeHeadingXLarge: MultipleFontSizeSemanticTokens { get }
+    var fontSizeHeadingXlarge: MultipleFontSizeSemanticTokens { get }
     var fontSizeHeadingLarge: MultipleFontSizeSemanticTokens { get }
     var fontSizeHeadingMedium: MultipleFontSizeSemanticTokens { get }
     var fontSizeHeadingSmall: MultipleFontSizeSemanticTokens { get }
     var fontSizeBodyLarge: MultipleFontSizeSemanticTokens { get }
     var fontSizeBodyMedium: MultipleFontSizeSemanticTokens { get }
     var fontSizeBodySmall: MultipleFontSizeSemanticTokens { get }
-    var fontSizeLabelXLarge: MultipleFontSizeSemanticTokens { get }
-    var fontSizeLabelLarge: MultipleFontSizeSemanticTokens { get }
-    var fontSizeLabelMedium: MultipleFontSizeSemanticTokens { get }
-    var fontSizeLabelSmall: MultipleFontSizeSemanticTokens { get }
-    var fontSizeCodeMedium: MultipleFontSizeSemanticTokens { get }
-    var fontSizeCodeSmall: MultipleFontSizeSemanticTokens { get }
 
     // MARK: - Semantic token - Typography - Font - Line height
 
     var fontLineHeightDisplayLarge: MultipleFontLineHeightSemanticTokens { get }
     var fontLineHeightDisplayMedium: MultipleFontLineHeightSemanticTokens { get }
     var fontLineHeightDisplaySmall: MultipleFontLineHeightSemanticTokens { get }
-    var fontLineHeightHeadingXLarge: MultipleFontLineHeightSemanticTokens { get }
+    var fontLineHeightHeadingXlarge: MultipleFontLineHeightSemanticTokens { get }
     var fontLineHeightHeadingLarge: MultipleFontLineHeightSemanticTokens { get }
     var fontLineHeightHeadingMedium: MultipleFontLineHeightSemanticTokens { get }
     var fontLineHeightHeadingSmall: MultipleFontLineHeightSemanticTokens { get }
     var fontLineHeightBodyLarge: MultipleFontLineHeightSemanticTokens { get }
     var fontLineHeightBodyMedium: MultipleFontLineHeightSemanticTokens { get }
     var fontLineHeightBodySmall: MultipleFontLineHeightSemanticTokens { get }
-    var fontLineHeightLabelXLarge: MultipleFontLineHeightSemanticTokens { get }
-    var fontLineHeightLabelLarge: MultipleFontLineHeightSemanticTokens { get }
-    var fontLineHeightLabelMedium: MultipleFontLineHeightSemanticTokens { get }
-    var fontLineHeightLabelSmall: MultipleFontLineHeightSemanticTokens { get }
-    var fontLineHeightCodeMedium: MultipleFontLineHeightSemanticTokens { get }
-    var fontLineHeightCodeSmall: MultipleFontLineHeightSemanticTokens { get }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing
 
     var fontLetterSpacingDisplayLarge: MultipleFontLetterSpacingSemanticTokens { get }
     var fontLetterSpacingDisplayMedium: MultipleFontLetterSpacingSemanticTokens { get }
     var fontLetterSpacingDisplaySmall: MultipleFontLetterSpacingSemanticTokens { get }
-    var fontLetterSpacingHeadingXLarge: MultipleFontLetterSpacingSemanticTokens { get }
+    var fontLetterSpacingHeadingXlarge: MultipleFontLetterSpacingSemanticTokens { get }
     var fontLetterSpacingHeadingLarge: MultipleFontLetterSpacingSemanticTokens { get }
     var fontLetterSpacingHeadingMedium: MultipleFontLetterSpacingSemanticTokens { get }
     var fontLetterSpacingHeadingSmall: MultipleFontLetterSpacingSemanticTokens { get }
     var fontLetterSpacingBodyLarge: MultipleFontLetterSpacingSemanticTokens { get }
     var fontLetterSpacingBodyMedium: MultipleFontLetterSpacingSemanticTokens { get }
     var fontLetterSpacingBodySmall: MultipleFontLetterSpacingSemanticTokens { get }
-    var fontLetterSpacingLabelXLarge: MultipleFontLetterSpacingSemanticTokens { get }
-    var fontLetterSpacingLabelLarge: MultipleFontLetterSpacingSemanticTokens { get }
-    var fontLetterSpacingLabelMedium: MultipleFontLetterSpacingSemanticTokens { get }
-    var fontLetterSpacingLabelSmall: MultipleFontLetterSpacingSemanticTokens { get }
-    var fontLetterSpacingCodeMedium: MultipleFontLetterSpacingSemanticTokens { get }
-    var fontLetterSpacingCodeSmall: MultipleFontLetterSpacingSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs
