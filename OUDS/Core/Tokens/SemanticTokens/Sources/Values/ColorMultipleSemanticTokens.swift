@@ -372,6 +372,10 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { get }
 
+    var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { get }
+
     var colorRepositoryOpacityInfo: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityNegative: MultipleColorSemanticTokens { get }

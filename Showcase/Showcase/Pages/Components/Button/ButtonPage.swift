@@ -66,9 +66,10 @@ struct ButtonIllustration: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            ButtonDemo(model: model)
-            ButtonDemo(model: model).colorScheme(colorScheme == .dark ? .light : .dark)
+            ButtonDemo(model: model, coloredBackgound: false)
             // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+            ButtonDemo(model: model, coloredBackgound: false).colorScheme(colorScheme == .dark ? .light : .dark)
+            ButtonDemo(model: model, coloredBackgound: true)
         }
     }
 }
@@ -83,6 +84,7 @@ private struct ButtonDemo: View {
     // MARK: Stored properties
 
     @StateObject var model: ButtonConfigurationModel
+    let coloredBackgound: Bool
 
     var body: some View {
         HStack(alignment: .center) {
@@ -104,6 +106,15 @@ private struct ButtonDemo: View {
         }
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .background(theme.colors.colorBgSecondary.color(for: colorScheme))
+        .background(background)
+        .environment(\.buttonOnColoredSurface, coloredBackgound)
+    }
+
+    private var background: Color {
+        if coloredBackgound {
+            theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme)
+        } else {
+            theme.colors.colorBgSecondary.color(for: colorScheme)
+        }
     }
 }

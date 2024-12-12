@@ -73,6 +73,7 @@ public protocol ButtonComponentTokens {
     var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens { get }
     var buttonColorBgStrongLoadingMono: MultipleColorSemanticTokens { get }
     var buttonColorBgStrongPressedMono: MultipleColorSemanticTokens { get }
+
     var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { get }
     var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens { get }
     var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { get }
