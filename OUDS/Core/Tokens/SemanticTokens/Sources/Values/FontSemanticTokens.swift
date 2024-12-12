@@ -28,11 +28,6 @@ public protocol FontSemanticTokens {
     // MARK: - Semantic token - Typography - Font - Family
 
     var fontFamily: FontFamilySemanticToken { get }
-    var fontFamilyDisplay: FontFamilySemanticToken { get }
-    var fontFamilyHeading: FontFamilySemanticToken { get }
-    var fontFamilyBody: FontFamilySemanticToken { get }
-    var fontFamilyLabel: FontFamilySemanticToken { get }
-    var fontFamilyCode: FontFamilySemanticToken { get }
 
     // MARK: - Semantic token - Typography - Font - Weight
 
@@ -54,8 +49,8 @@ public protocol FontSemanticTokens {
     var fontSizeDisplayMediumTablet: FontSizeSemanticToken { get }
     var fontSizeDisplaySmallMobile: FontSizeSemanticToken { get }
     var fontSizeDisplaySmallTablet: FontSizeSemanticToken { get }
-    var fontSizeHeadingXLargeMobile: FontSizeSemanticToken { get }
-    var fontSizeHeadingXLargeTablet: FontSizeSemanticToken { get }
+    var fontSizeHeadingXlargeMobile: FontSizeSemanticToken { get }
+    var fontSizeHeadingXlargeTablet: FontSizeSemanticToken { get }
     var fontSizeHeadingLargeMobile: FontSizeSemanticToken { get }
     var fontSizeHeadingLargeTablet: FontSizeSemanticToken { get }
     var fontSizeHeadingMediumMobile: FontSizeSemanticToken { get }
@@ -68,18 +63,11 @@ public protocol FontSemanticTokens {
     var fontSizeBodyMediumTablet: FontSizeSemanticToken { get }
     var fontSizeBodySmallMobile: FontSizeSemanticToken { get }
     var fontSizeBodySmallTablet: FontSizeSemanticToken { get }
-    var fontSizeLabelXLargeMobile: FontSizeSemanticToken { get }
-    var fontSizeLabelXLargeTablet: FontSizeSemanticToken { get }
-    var fontSizeLabelLargeMobile: FontSizeSemanticToken { get }
-    var fontSizeLabelLargeTablet: FontSizeSemanticToken { get }
-    var fontSizeLabelMediumMobile: FontSizeSemanticToken { get }
-    var fontSizeLabelMediumTablet: FontSizeSemanticToken { get }
-    var fontSizeLabelSmallMobile: FontSizeSemanticToken { get }
-    var fontSizeLabelSmallTablet: FontSizeSemanticToken { get }
-    var fontSizeCodeMediumMobile: FontSizeSemanticToken { get }
-    var fontSizeCodeMediumTablet: FontSizeSemanticToken { get }
-    var fontSizeCodeSmallMobile: FontSizeSemanticToken { get }
-    var fontSizeCodeSmallTablet: FontSizeSemanticToken { get }
+    var fontSizeLabelXlarge: FontSizeSemanticToken { get }
+    var fontSizeLabelLarge: FontSizeSemanticToken { get }
+    var fontSizeLabelMedium: FontSizeSemanticToken { get }
+    var fontSizeLabelSmall: FontSizeSemanticToken { get }
+    var fontSizeCodeMedium: FontSizeSemanticToken { get }
 
     // MARK: - Semantic token - Typography - Font - Line height
 
@@ -89,8 +77,8 @@ public protocol FontSemanticTokens {
     var fontLineHeightDisplayMediumTablet: FontLineHeightSemanticToken { get }
     var fontLineHeightDisplaySmallMobile: FontLineHeightSemanticToken { get }
     var fontLineHeightDisplaySmallTablet: FontLineHeightSemanticToken { get }
-    var fontLineHeightHeadingXLargeMobile: FontLineHeightSemanticToken { get }
-    var fontLineHeightHeadingXLargeTablet: FontLineHeightSemanticToken { get }
+    var fontLineHeightHeadingXlargeMobile: FontLineHeightSemanticToken { get }
+    var fontLineHeightHeadingXlargeTablet: FontLineHeightSemanticToken { get }
     var fontLineHeightHeadingLargeMobile: FontLineHeightSemanticToken { get }
     var fontLineHeightHeadingLargeTablet: FontLineHeightSemanticToken { get }
     var fontLineHeightHeadingMediumMobile: FontLineHeightSemanticToken { get }
@@ -103,18 +91,11 @@ public protocol FontSemanticTokens {
     var fontLineHeightBodyMediumTablet: FontLineHeightSemanticToken { get }
     var fontLineHeightBodySmallMobile: FontLineHeightSemanticToken { get }
     var fontLineHeightBodySmallTablet: FontLineHeightSemanticToken { get }
-    var fontLineHeightLabelXLargeMobile: FontLineHeightSemanticToken { get }
-    var fontLineHeightLabelXLargeTablet: FontLineHeightSemanticToken { get }
-    var fontLineHeightLabelLargeMobile: FontLineHeightSemanticToken { get }
-    var fontLineHeightLabelLargeTablet: FontLineHeightSemanticToken { get }
-    var fontLineHeightLabelMediumMobile: FontLineHeightSemanticToken { get }
-    var fontLineHeightLabelMediumTablet: FontLineHeightSemanticToken { get }
-    var fontLineHeightLabelSmallMobile: FontLineHeightSemanticToken { get }
-    var fontLineHeightLabelSmallTablet: FontLineHeightSemanticToken { get }
-    var fontLineHeightCodeMediumMobile: FontLineHeightSemanticToken { get }
-    var fontLineHeightCodeMediumTablet: FontLineHeightSemanticToken { get }
-    var fontLineHeightCodeSmallMobile: FontLineHeightSemanticToken { get }
-    var fontLineHeightCodeSmallTablet: FontLineHeightSemanticToken { get }
+    var fontLineHeightLabelXlarge: FontLineHeightSemanticToken { get }
+    var fontLineHeightLabelLarge: FontLineHeightSemanticToken { get }
+    var fontLineHeightLabelMedium: FontLineHeightSemanticToken { get }
+    var fontLineHeightLabelSmall: FontLineHeightSemanticToken { get }
+    var fontLineHeightCodeMedium: FontLineHeightSemanticToken { get }
 
     // MARK: - Semantic token - Typography - Font - Letter spacing
 
@@ -124,8 +105,8 @@ public protocol FontSemanticTokens {
     var fontLetterSpacingDisplayMediumTablet: FontLetterSpacingSemanticToken { get }
     var fontLetterSpacingDisplaySmallMobile: FontLetterSpacingSemanticToken { get }
     var fontLetterSpacingDisplaySmallTablet: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingHeadingXLargeMobile: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingHeadingXLargeTablet: FontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingHeadingXlargeMobile: FontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingHeadingXlargeTablet: FontLetterSpacingSemanticToken { get }
     var fontLetterSpacingHeadingLargeMobile: FontLetterSpacingSemanticToken { get }
     var fontLetterSpacingHeadingLargeTablet: FontLetterSpacingSemanticToken { get }
     var fontLetterSpacingHeadingMediumMobile: FontLetterSpacingSemanticToken { get }
@@ -138,18 +119,11 @@ public protocol FontSemanticTokens {
     var fontLetterSpacingBodyMediumTablet: FontLetterSpacingSemanticToken { get }
     var fontLetterSpacingBodySmallMobile: FontLetterSpacingSemanticToken { get }
     var fontLetterSpacingBodySmallTablet: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingLabelXLargeMobile: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingLabelXLargeTablet: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingLabelLargeMobile: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingLabelLargeTablet: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingLabelMediumMobile: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingLabelMediumTablet: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingLabelSmallMobile: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingLabelSmallTablet: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingCodeMediumMobile: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingCodeMediumTablet: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingCodeSmallMobile: FontLetterSpacingSemanticToken { get }
-    var fontLetterSpacingCodeSmallTablet: FontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelXlarge: FontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelLarge: FontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelMedium: FontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingLabelSmall: FontLetterSpacingSemanticToken { get }
+    var fontLetterSpacingCodeMedium: FontLetterSpacingSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

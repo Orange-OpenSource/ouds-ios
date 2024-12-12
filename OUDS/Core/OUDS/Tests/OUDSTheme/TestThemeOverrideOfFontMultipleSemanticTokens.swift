@@ -51,9 +51,9 @@ final class TestThemeOverrideOfFontMultipleSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.fontSizeDisplaySmall == MockTheme.mockThemeMultipleFontSizeTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenFontSizeHeadingXLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.fontSizeHeadingXLarge, abstractTheme.fontSizeHeadingXLarge)
-        XCTAssertTrue(inheritedTheme.fontSizeHeadingXLarge == MockTheme.mockThemeMultipleFontSizeTokens)
+    func testInheritedThemeCanOverrideSemanticTokenFontSizeHeadingXlarge() throws {
+        XCTAssertNotEqual(inheritedTheme.fontSizeHeadingXlarge, abstractTheme.fontSizeHeadingXlarge)
+        XCTAssertTrue(inheritedTheme.fontSizeHeadingXlarge == MockTheme.mockThemeMultipleFontSizeTokens)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenFontSizeHeadingLarge() throws {
@@ -86,36 +86,6 @@ final class TestThemeOverrideOfFontMultipleSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.fontSizeBodySmall == MockTheme.mockThemeMultipleFontSizeTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenFontSizeLabelXLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.fontSizeLabelXLarge, abstractTheme.fontSizeLabelXLarge)
-        XCTAssertTrue(inheritedTheme.fontSizeLabelXLarge == MockTheme.mockThemeMultipleFontSizeTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontSizeLabelLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.fontSizeLabelLarge, abstractTheme.fontSizeLabelLarge)
-        XCTAssertTrue(inheritedTheme.fontSizeLabelLarge == MockTheme.mockThemeMultipleFontSizeTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontSizeLabelMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.fontSizeLabelMedium, abstractTheme.fontSizeLabelMedium)
-        XCTAssertTrue(inheritedTheme.fontSizeLabelMedium == MockTheme.mockThemeMultipleFontSizeTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontSizeLabelSmall() throws {
-        XCTAssertNotEqual(inheritedTheme.fontSizeLabelSmall, abstractTheme.fontSizeLabelSmall)
-        XCTAssertTrue(inheritedTheme.fontSizeLabelSmall == MockTheme.mockThemeMultipleFontSizeTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontSizeCodeMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.fontSizeCodeMedium, abstractTheme.fontSizeCodeMedium)
-        XCTAssertTrue(inheritedTheme.fontSizeCodeMedium == MockTheme.mockThemeMultipleFontSizeTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontSizeCodeSmall() throws {
-        XCTAssertNotEqual(inheritedTheme.fontSizeCodeSmall, abstractTheme.fontSizeCodeSmall)
-        XCTAssertTrue(inheritedTheme.fontSizeCodeSmall == MockTheme.mockThemeMultipleFontSizeTokens)
-    }
-
     // MARK: - Semantic token - Typography - Font - Letter spacing
 
     func testInheritedThemeCanOverrideSemanticTokenfontLetterSpacingDisplayLarge() throws {
@@ -133,9 +103,9 @@ final class TestThemeOverrideOfFontMultipleSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.fontLetterSpacingDisplaySmall == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingHeadingXLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLetterSpacingHeadingXLarge, abstractTheme.fontLetterSpacingHeadingXLarge)
-        XCTAssertTrue(inheritedTheme.fontLetterSpacingHeadingXLarge == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
+    func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingHeadingXlarge() throws {
+        XCTAssertNotEqual(inheritedTheme.fontLetterSpacingHeadingXlarge, abstractTheme.fontLetterSpacingHeadingXlarge)
+        XCTAssertTrue(inheritedTheme.fontLetterSpacingHeadingXlarge == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingHeadingLarge() throws {
@@ -168,36 +138,6 @@ final class TestThemeOverrideOfFontMultipleSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.fontLetterSpacingBodySmall == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingLabelXLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLetterSpacingLabelXLarge, abstractTheme.fontLetterSpacingLabelXLarge)
-        XCTAssertTrue(inheritedTheme.fontLetterSpacingLabelXLarge == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingLabelLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLetterSpacingLabelLarge, abstractTheme.fontLetterSpacingLabelLarge)
-        XCTAssertTrue(inheritedTheme.fontLetterSpacingLabelLarge == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingLabelMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLetterSpacingLabelMedium, abstractTheme.fontLetterSpacingLabelMedium)
-        XCTAssertTrue(inheritedTheme.fontLetterSpacingLabelMedium == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingLabelSmall() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLetterSpacingLabelSmall, abstractTheme.fontLetterSpacingLabelSmall)
-        XCTAssertTrue(inheritedTheme.fontLetterSpacingLabelSmall == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingCodeMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLetterSpacingCodeMedium, abstractTheme.fontLetterSpacingCodeMedium)
-        XCTAssertTrue(inheritedTheme.fontLetterSpacingCodeMedium == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLetterSpacingCodeSmall() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLetterSpacingCodeSmall, abstractTheme.fontLetterSpacingCodeSmall)
-        XCTAssertTrue(inheritedTheme.fontLetterSpacingCodeSmall == MockTheme.mockThemeMultipleFontLetterSpacingTokens)
-    }
-
     // MARK: - Semantic token - Typography - Font - Line height
 
     func testInheritedThemeCanOverrideSemanticTokenFontLineHeightDisplayLarge() throws {
@@ -215,9 +155,9 @@ final class TestThemeOverrideOfFontMultipleSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.fontLineHeightDisplaySmall == MockTheme.mockThemeMultipleFontLineHeightTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenFontLineHeightHeadingXLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLineHeightHeadingXLarge, abstractTheme.fontLineHeightHeadingXLarge)
-        XCTAssertTrue(inheritedTheme.fontLineHeightHeadingXLarge == MockTheme.mockThemeMultipleFontLineHeightTokens)
+    func testInheritedThemeCanOverrideSemanticTokenFontLineHeightHeadingXlarge() throws {
+        XCTAssertNotEqual(inheritedTheme.fontLineHeightHeadingXlarge, abstractTheme.fontLineHeightHeadingXlarge)
+        XCTAssertTrue(inheritedTheme.fontLineHeightHeadingXlarge == MockTheme.mockThemeMultipleFontLineHeightTokens)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenFontLineHeightHeadingLarge() throws {
@@ -248,36 +188,6 @@ final class TestThemeOverrideOfFontMultipleSemanticTokens: XCTestCase {
     func testInheritedThemeCanOverrideSemanticTokenFontLineHeightBodySmall() throws {
         XCTAssertNotEqual(inheritedTheme.fontLineHeightBodySmall, abstractTheme.fontLineHeightBodySmall)
         XCTAssertTrue(inheritedTheme.fontLineHeightBodySmall == MockTheme.mockThemeMultipleFontLineHeightTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLineHeightLabelXLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLineHeightLabelXLarge, abstractTheme.fontLineHeightLabelXLarge)
-        XCTAssertTrue(inheritedTheme.fontLineHeightLabelXLarge == MockTheme.mockThemeMultipleFontLineHeightTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLineHeightLabelLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLineHeightLabelLarge, abstractTheme.fontLineHeightLabelLarge)
-        XCTAssertTrue(inheritedTheme.fontLineHeightLabelLarge == MockTheme.mockThemeMultipleFontLineHeightTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLineHeightLabelMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLineHeightLabelMedium, abstractTheme.fontLineHeightLabelMedium)
-        XCTAssertTrue(inheritedTheme.fontLineHeightLabelMedium == MockTheme.mockThemeMultipleFontLineHeightTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLineHeightLabelSmall() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLineHeightLabelSmall, abstractTheme.fontLineHeightLabelSmall)
-        XCTAssertTrue(inheritedTheme.fontLineHeightLabelSmall == MockTheme.mockThemeMultipleFontLineHeightTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLineHeightCodeMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLineHeightCodeMedium, abstractTheme.fontLineHeightCodeMedium)
-        XCTAssertTrue(inheritedTheme.fontLineHeightCodeMedium == MockTheme.mockThemeMultipleFontLineHeightTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenFontLineHeightCodeSmall() throws {
-        XCTAssertNotEqual(inheritedTheme.fontLineHeightCodeSmall, abstractTheme.fontLineHeightCodeSmall)
-        XCTAssertTrue(inheritedTheme.fontLineHeightCodeSmall == MockTheme.mockThemeMultipleFontLineHeightTokens)
     }
 }
 
