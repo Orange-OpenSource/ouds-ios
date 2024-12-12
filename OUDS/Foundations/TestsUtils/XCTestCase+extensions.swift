@@ -20,7 +20,7 @@ extension XCTestCase {
 
     /// Checks if `value` is between `min` and `max`
     public func XCTAssertBetween(min: Double, _ value: Double, max: Double, file: StaticString = #file, line: UInt = #line) {
-        XCTAssertTrue(min <= value && value <= max)
+        XCTAssertTrue(min <= value && value <= max, "\(value) not between \(min) and \(max)")
     }
 
     /// Checks if the `value` is a multiple of `factor`
