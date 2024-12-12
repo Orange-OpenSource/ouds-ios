@@ -384,10 +384,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { get }
 
-    var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { get }
-
-    var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { get }
-
     var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { get }

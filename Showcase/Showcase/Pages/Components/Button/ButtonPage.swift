@@ -89,18 +89,22 @@ private struct ButtonDemo: View {
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-
-            // swiftlint:disable accessibility_label_for_image
-            switch model.layout {
-            case .iconOnly:
-                OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), style: model.style) {}
-            case .textOnly:
-                OOUDSButton(hierarchy: model.hierarchy, text: "app_components_button_label", style: model.style) {}
-            case .iconAndText:
-                OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), text: "app_components_button_label", style: model.style) {}
+            // It is not allowed to place a Negative bnutton on colored surface
+            if model.hierarchy == .negative,
+               coloredBackgound == true {
+                Text("app_components_button_negative_hierary_notAllowed_text")
+            } else {
+                // swiftlint:disable accessibility_label_for_image
+                switch model.layout {
+                case .iconOnly:
+                    OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), state: model.state) {}
+                case .textOnly:
+                    OOUDSButton(hierarchy: model.hierarchy, text: "app_components_button_label", state: model.state) {}
+                case .iconAndText:
+                    OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), text: "app_components_button_label", state: model.state) {}
+                }
+                // swiftlint:enable accessibility_label_for_image
             }
-
-            // swiftlint:enable accessibility_label_for_image
 
             Spacer()
         }
