@@ -20,12 +20,27 @@ import XCTest
 // swiftlint:disable function_body_length
 
 /// The aim of this tests class is to look for regressions in **font raw tokens**.
+///
 /// Indeed, each generation of Swift code by the *tokenator* may break theses tests because there are new values.
 /// In the semantics of **font raw tokens**, there will be some unchanged things like relationships between tokens.
 /// Some of these tokens are also strongly based on their raw values (like font family names) and must be tested.
 /// Some tokens must noe be nul, or must be factor of some values. Or grater or lower than others.
 /// Tokens must be all different.
-/// Thus this tests class checks these conditions.
+///
+/// Here are some rules to follow:
+/// - font family tokens values must be the expected ones
+/// - font letter spacing should be between 0.5 and 1.5
+/// - the higher the font line height token is, the higher the value is
+/// - the higher the font size token is, the higher the value is
+/// - the higher the font weight token is, the higher the value is
+/// - font size must not be nul
+/// - all font size tokens must be different
+/// - font line height values are factor of 4
+/// - font line height must not be nul
+/// - all font line height tokens must be different
+/// - font weight values are factor of 50
+/// - font weight must not be nul
+/// - all font weight tokens must be different
 final class FontRawTokensTests: XCTestCase {
 
     /// By looking all the values, it appears all line height raw tokens are factor of 4
@@ -33,6 +48,12 @@ final class FontRawTokensTests: XCTestCase {
 
     /// By looking all the values, it appears all line height raw tokens are factor of 50
     private static let fontWeightBase: Int = 50
+
+    /// Supposed minimal value for font letter spacing
+    private static let fontLetterSpacingMinValue: Double = -1.5
+
+    /// Supposed maximal value for font letter spacing
+    private static let fontLetterSpacingMaxValue: Double = 0.5
 
     // MARK: - Primitive token - Typography - Font family
 
@@ -46,14 +67,6 @@ final class FontRawTokensTests: XCTestCase {
 
     func testFontRawTokensFontFamilyAreAllDifferent() throws {
         XCTAssertNotEqual(FontRawTokens.fontFamilySystemSfPro, FontRawTokens.fontFamilyMonospaceMenlo)
-    }
-
-    func testFontRawTokensFontFamilyMonospaceMenloNotEmpty() throws {
-        XCTAssertNotEqual(FontRawTokens.fontFamilyMonospaceMenlo, "")
-    }
-
-    func testFontRawTokensFontFamilySystemSfProNotEmpty() throws {
-        XCTAssertNotEqual(FontRawTokens.fontFamilySystemSfPro, "")
     }
 
     // MARK: - Primitive token - Typography - Font size
@@ -733,6 +746,26 @@ final class FontRawTokensTests: XCTestCase {
         XCTAssertGreaterThan(FontRawTokens.fontLetterSpacing1450, FontRawTokens.fontLetterSpacing1850)
     }
 
+    func testFontRawTokensFontLetterSpacingAreInSuitableRange() {
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing150, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing175, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing200, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing250, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing300, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing350, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing450, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing550, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing650, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing750, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing850, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing950, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1050, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1150, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1250, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1450, max: Self.fontLetterSpacingMaxValue)
+        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1850, max: Self.fontLetterSpacingMaxValue)
+    }
+
     /*
      Ensure tokens will never be 0 (except fontLetterSpacing350)
      */
@@ -902,6 +935,46 @@ final class FontRawTokensTests: XCTestCase {
     }
 
     /*
+     Comparisons between tokens one by one
+     */
+
+    func testFontRawTokensWeight100LessThanFontWeight200() throws {
+        XCTAssertLessThan(FontRawTokens.fontWeight100, FontRawTokens.fontWeight200)
+    }
+
+    func testFontRawTokensWeight200LessThanFontWeight300() throws {
+        XCTAssertLessThan(FontRawTokens.fontWeight200, FontRawTokens.fontWeight300)
+    }
+
+    func testFontRawTokensWeight300LessThanFontWeight400() throws {
+        XCTAssertLessThan(FontRawTokens.fontWeight300, FontRawTokens.fontWeight400)
+    }
+
+    func testFontRawTokensWeight400LessThanFontWeight500() throws {
+        XCTAssertLessThan(FontRawTokens.fontWeight400, FontRawTokens.fontWeight500)
+    }
+
+    func testFontRawTokensWeight500LessThanFontWeight600() throws {
+        XCTAssertLessThan(FontRawTokens.fontWeight500, FontRawTokens.fontWeight600)
+    }
+
+    func testFontRawTokensWeight600LessThanFontWeight700() throws {
+        XCTAssertLessThan(FontRawTokens.fontWeight600, FontRawTokens.fontWeight700)
+    }
+
+    func testFontRawTokensWeight700LessThanFontWeight800() throws {
+        XCTAssertLessThan(FontRawTokens.fontWeight700, FontRawTokens.fontWeight800)
+    }
+
+    func testFontRawTokensWeight800LessThanFontWeight900() throws {
+        XCTAssertLessThan(FontRawTokens.fontWeight800, FontRawTokens.fontWeight900)
+    }
+
+    func testFontRawTokensWeight900LessThanFontWeight950() throws {
+        XCTAssertLessThan(FontRawTokens.fontWeight900, FontRawTokens.fontWeight950)
+    }
+
+    /*
      Ensure all tokens are different
      */
 
@@ -1018,6 +1091,242 @@ final class FontRawTokensTests: XCTestCase {
 
     func testFontRawTokensTypeBold1450LessThanTypeBold1850() throws {
         XCTAssertTrue(FontRawTokens.typeBold1450 <| FontRawTokens.typeBold1850)
+    }
+
+    /*
+     Ensure all tokens are different
+     */
+
+    func testFontRawTokensCompositesAreAllDifferent() throws {
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeRegular175)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeRegular200)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeRegular250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold150)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold175)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold200)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold300)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold350)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeRegular150, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeRegular200)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeRegular250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold150)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold175)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold200)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold300)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold350)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeRegular175, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeRegular250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold150)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold175)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold200)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold300)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold350)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeRegular200, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold150)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold175)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold200)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold300)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold350)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeRegular250, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold175)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold200)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold250)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold300)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold350)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold150, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold200)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold250)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold300)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold350)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold175, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold250)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold300)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold350)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold200, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold300)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold350)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold250, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold350)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold300, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold450)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold350, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold550)
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold450, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold550, FontRawTokens.typeBold650)
+        XCTAssertNotEqual(FontRawTokens.typeBold550, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeBold550, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold550, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold550, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold550, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold550, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold550, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold550, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold650, FontRawTokens.typeBold750)
+        XCTAssertNotEqual(FontRawTokens.typeBold650, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold650, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold650, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold650, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold650, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold650, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold650, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold750, FontRawTokens.typeBold850)
+        XCTAssertNotEqual(FontRawTokens.typeBold750, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold750, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold750, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold750, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold750, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold750, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold850, FontRawTokens.typeBold950)
+        XCTAssertNotEqual(FontRawTokens.typeBold850, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold850, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold850, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold850, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold850, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold950, FontRawTokens.typeBold1050)
+        XCTAssertNotEqual(FontRawTokens.typeBold950, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold950, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold950, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold950, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold1050, FontRawTokens.typeBold1150)
+        XCTAssertNotEqual(FontRawTokens.typeBold1050, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold1050, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold1050, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold1150, FontRawTokens.typeBold1250)
+        XCTAssertNotEqual(FontRawTokens.typeBold1150, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold1150, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold1250, FontRawTokens.typeBold1450)
+        XCTAssertNotEqual(FontRawTokens.typeBold1250, FontRawTokens.typeBold1850)
+
+        XCTAssertNotEqual(FontRawTokens.typeBold1450, FontRawTokens.typeBold1850)
     }
 }
 
