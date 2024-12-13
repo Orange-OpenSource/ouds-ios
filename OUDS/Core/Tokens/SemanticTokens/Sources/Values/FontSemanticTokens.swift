@@ -31,13 +31,13 @@ public protocol FontSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Weight
 
-    var fontWeightDefault: FontWeightSemanticToken { get }
     var fontWeightCode: FontWeightSemanticToken { get }
+    var fontWeightDefault: FontWeightSemanticToken { get }
     var fontWeightStrong: FontWeightSemanticToken { get }
-    var fontWeightDisplay: FontWeightSemanticToken { get }
-    var fontWeightHeading: FontWeightSemanticToken { get }
     var fontWeightBodyDefault: FontWeightSemanticToken { get }
     var fontWeightBodyStrong: FontWeightSemanticToken { get }
+    var fontWeightDisplay: FontWeightSemanticToken { get }
+    var fontWeightHeading: FontWeightSemanticToken { get }
     var fontWeightLabelDefault: FontWeightSemanticToken { get }
     var fontWeightLabelStrong: FontWeightSemanticToken { get }
 
