@@ -28,28 +28,28 @@ import OUDSTokensSemantic
 open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
-        self.init(customFont: nil)
+        self.init(fontFamily: nil)
     }
 
     /// For ``OtherMockTheme``
     init(colors: AllColorSemanticTokens) {
-        super.init(borders: MockThemeBorderSemanticTokensWrapper(),
-                   opacities: MockThemeOpacitySemanticTokensWrapper(),
-                   colors: colors,
+        super.init(colors: colors,
+                   borders: MockThemeBorderSemanticTokensWrapper(),
                    elevations: MockThemeElevationSemanticTokensWrapper(),
+                   fontFamily: nil,
                    fonts: MockThemeFontSemanticTokensWrapper(),
                    grids: MockThemeGridSemanticTokensWrapper(),
-                   customFontFamily: nil)
+                   opacities: MockThemeOpacitySemanticTokensWrapper())
     }
 
-    init(customFont: String?) {
-        super.init(borders: MockThemeBorderSemanticTokensWrapper(),
-                   opacities: MockThemeOpacitySemanticTokensWrapper(),
-                   colors: MockThemeColorSemanticTokensWrapper(),
+    init(fontFamily: String?) {
+        super.init(colors: MockThemeColorSemanticTokensWrapper(),
+                   borders: MockThemeBorderSemanticTokensWrapper(),
                    elevations: MockThemeElevationSemanticTokensWrapper(),
+                   fontFamily: fontFamily,
                    fonts: MockThemeFontSemanticTokensWrapper(),
                    grids: MockThemeGridSemanticTokensWrapper(),
-                   customFontFamily: customFont)
+                   opacities: MockThemeOpacitySemanticTokensWrapper())
     }
 
     deinit { }

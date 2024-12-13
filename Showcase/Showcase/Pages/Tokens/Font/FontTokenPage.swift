@@ -54,7 +54,7 @@ struct FontTokenPage: View {
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
                 Group {
-                    Text("family (\(theme.customFontFamily ?? "system")), ")
+                    Text("family (\(theme.fontFamily ?? "system")), ")
                     + Text("weight (\(token.weight)), ")
                     + Text("size (\(token.size, specifier: "%.2f")), ")
                     + Text("lineHeight (\(token.lineHeight, specifier: "%.2f")), ")

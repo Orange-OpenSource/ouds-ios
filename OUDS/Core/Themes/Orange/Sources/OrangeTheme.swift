@@ -36,24 +36,24 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations
     /// - Parameters:
-    ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
-    ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
+    ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`
-    override public init(borders: AllBorderSemanticTokens,
-                         opacities: AllOpacitySemanticTokens,
-                         colors: AllColorSemanticTokens,
+    ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
+    override public init(colors: AllColorSemanticTokens,
+                         borders: AllBorderSemanticTokens,
                          elevations: AllElevationSemanticTokens,
                          fonts: AllFontSemanticTokens,
-                         grids: AllGridSemanticTokens) {
-        super.init(borders: borders,
-                   opacities: opacities,
-                   colors: colors,
+                         grids: AllGridSemanticTokens,
+                         opacities: AllOpacitySemanticTokens) {
+        super.init(colors: colors,
+                   borders: borders,
                    elevations: elevations,
                    fonts: fonts,
-                   grids: grids)
+                   grids: grids,
+                   opacities: opacities)
     }
 
     deinit { }

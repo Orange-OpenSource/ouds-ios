@@ -53,7 +53,7 @@ public static let typeBold1050 = FontCompositeRawToken(size: fontSize1050, lineH
 ```
 
 However the _theme_ must know which _font family_ to apply, and this font family can be a _custom one_ or the _system one_.
-Thus, we let the users define the font family they want by overriding the `customFontFamily` property. This value will be used to compute the typography, if not defined the systme font will be used.
+Thus, we let the users define the font family they want by overriding the `fontFamily` property. This value will be used to compute the typography, if not defined the systme font will be used.
 
 Thus, if you want to apply a specific typography to a `View`, supposing you defined previously the semantic tokens, just call the method you want and gives as parameter the theme (to get the custom font if defined):
 

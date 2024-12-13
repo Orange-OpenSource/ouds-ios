@@ -29,17 +29,17 @@ open class OUDSTheme: @unchecked Sendable {
 
     // MARK: - Properties
 
-    /// All border semantic tokens exposed in one object
-    public let borders: AllBorderSemanticTokens
-
-    /// All opacity semantic tokens exposed in one object
-    public let opacities: AllOpacitySemanticTokens
-
     /// All color semantic tokens exposed in one object
     public let colors: AllColorSemanticTokens
 
+    /// All border semantic tokens exposed in one object
+    public let borders: AllBorderSemanticTokens
+
     /// All elevation semantic tokens exposed in one object
     public let elevations: AllElevationSemanticTokens
+
+    /// A theme can have a custom font which is not the system font
+    public let fontFamily: FontFamilySemanticToken?
 
     /// All font semantic tokens exposed in one object
     public let fonts: AllFontSemanticTokens
@@ -47,58 +47,58 @@ open class OUDSTheme: @unchecked Sendable {
     /// All grid semantic tokens exposed in one object
     public let grids: AllGridSemanticTokens
 
-    /// A theme can have a custom font which is not the system font
-    public let customFontFamily: FontFamilySemanticToken?
+    /// All opacity semantic tokens exposed in one object
+    public let opacities: AllOpacitySemanticTokens
 
     // MARK: - Initializers
 
     /// Defines a basic kind of abstract theme to subclass then.
     /// No custom font family will be used.
     /// - Parameters:
-    ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensWrapper`
-    ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensWrapper`
     ///    - colors: An object providing all the color semantic tokens, by default `OUDSColorSemanticTokensWrapper`
+    ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensWrapper`
     ///    - elevations: An object providing all the elevation semantic tokens, by default `OUDSElevationSemanticTokensWrapper`
     ///    - fonts: An object providing all the font semantic tokens, by default `OUDSFontSemanticTokensWrapper`
     ///    - grids: An object providing all the grid semantic tokens, by default `OUDSGridSemanticTokensWrapper`
-    public init(borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
-                opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
-                colors: AllColorSemanticTokens = OUDSColorSemanticTokensWrapper(),
+    ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensWrapper`
+    public init(colors: AllColorSemanticTokens = OUDSColorSemanticTokensWrapper(),
+                borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
                 elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensWrapper(),
                 fonts: AllFontSemanticTokens = OUDSFontSemanticTokensWrapper(),
-                grids: AllGridSemanticTokens = OUDSGridSemanticTokensWrapper()) {
-        self.borders = borders
-        self.opacities = opacities
+                grids: AllGridSemanticTokens = OUDSGridSemanticTokensWrapper(),
+                opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper()) {
         self.colors = colors
+        self.borders = borders
         self.elevations = elevations
+        fontFamily = nil
         self.fonts = fonts
         self.grids = grids
-        customFontFamily = nil
+        self.opacities = opacities
     }
 
     /// Defines a basic kind of abstract theme to subclass then.
     /// - Parameters:
-    ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
-    ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
+    ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`
+    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`
-    ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
-    public init(borders: AllBorderSemanticTokens,
-                opacities: AllOpacitySemanticTokens,
-                colors: AllColorSemanticTokens,
+    ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
+    public init(colors: AllColorSemanticTokens,
+                borders: AllBorderSemanticTokens,
                 elevations: AllElevationSemanticTokens,
+                fontFamily: FontFamilySemanticToken?,
                 fonts: AllFontSemanticTokens,
                 grids: AllGridSemanticTokens,
-                customFontFamily: FontFamilySemanticToken?) {
-        self.borders = borders
-        self.opacities = opacities
+                opacities: AllOpacitySemanticTokens) {
         self.colors = colors
+        self.borders = borders
         self.elevations = elevations
+        self.fontFamily = fontFamily
         self.fonts = fonts
         self.grids = grids
-        self.customFontFamily = customFontFamily
+        self.opacities = opacities
     }
 
     deinit { }
