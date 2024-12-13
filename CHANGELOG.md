@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Update `FontSemanticTokens` (tokenator *20241213075501*)
 - [Library] Update `FontSemanticTokens` (tokenator *20241211115813*)
 - [Library] Update `FontRawTokens` (tokenator *20241211101443*)
 - [Tool] Migrate from `xcode_install` to `xcodes` in Fastfile, freeze Xcode version (16.0)
