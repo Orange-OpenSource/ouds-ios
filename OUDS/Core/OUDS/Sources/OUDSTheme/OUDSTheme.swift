@@ -41,6 +41,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All elevation semantic tokens exposed in one object
     public let elevations: AllElevationSemanticTokens
 
+    /// All font semantic tokens exposed in one object
+    public let fonts: AllFontSemanticTokens
+
     /// A theme can have a custom font which is not the system font
     public let customFontFamily: FontFamilySemanticToken?
 
@@ -53,14 +56,17 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensWrapper`
     ///    - colors: An object providing all the color semantic tokens, by default `OUDSColorSemanticTokensWrapper`
     ///    - elevations: An object providing all the elevation semantic tokens, by default `OUDSElevationSemanticTokensWrapper`
+    ///    - fonts: An object providing all the font semantic tokens, by default `OUDSFontSemanticTokensWrapper`
     public init(borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
                 opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
                 colors: AllColorSemanticTokens = OUDSColorSemanticTokensWrapper(),
-                elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensWrapper()) {
+                elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensWrapper(),
+                fonts: AllFontSemanticTokens = OUDSFontSemanticTokensWrapper()) {
         self.borders = borders
         self.opacities = opacities
         self.colors = colors
         self.elevations = elevations
+        self.fonts = fonts
         customFontFamily = nil
     }
 
@@ -70,16 +76,19 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`
+    ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`
     ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(borders: AllBorderSemanticTokens,
                 opacities: AllOpacitySemanticTokens,
                 colors: AllColorSemanticTokens,
                 elevations: AllElevationSemanticTokens,
+                fonts: AllFontSemanticTokens,
                 customFontFamily: FontFamilySemanticToken?) {
         self.borders = borders
         self.opacities = opacities
         self.colors = colors
         self.elevations = elevations
+        self.fonts = fonts
         self.customFontFamily = customFontFamily
     }
 

@@ -47,51 +47,51 @@ enum NamedFont: String, CaseIterable {
     func token(from theme: OUDSTheme) -> MultipleFontCompositeRawTokens {
         switch self {
         case .displayLarge:
-            return theme.typeDisplayLarge
+            return theme.fonts.typeDisplayLarge
         case .displayMedium:
-            return theme.typeDisplayMedium
+            return theme.fonts.typeDisplayMedium
         case .displaySmall:
-            return theme.typeDisplaySmall
+            return theme.fonts.typeDisplaySmall
         case .headingXLarge:
-            return theme.typeHeadingXLarge
+            return theme.fonts.typeHeadingXLarge
         case .headingLarge:
-            return theme.typeHeadingLarge
+            return theme.fonts.typeHeadingLarge
         case .headingMedium:
-            return theme.typeHeadingMedium
+            return theme.fonts.typeHeadingMedium
         case .headingSmall:
-            return theme.typeHeadingSmall
+            return theme.fonts.typeHeadingSmall
         case .bodyDefaultLarge:
-            return theme.typeBodyDefaultLarge
+            return theme.fonts.typeBodyDefaultLarge
         case .bodyDefaultMedium:
-            return theme.typeBodyDefaultMedium
+            return theme.fonts.typeBodyDefaultMedium
         case .bodyDefaultSmall:
-            return theme.typeBodyDefaultSmall
+            return theme.fonts.typeBodyDefaultSmall
         case .bodyStrongLarge:
-            return theme.typeBodyStrongLarge
+            return theme.fonts.typeBodyStrongLarge
         case .bodyStrongMedium:
-            return theme.typeBodyStrongMedium
+            return theme.fonts.typeBodyStrongMedium
         case .bodyStrongSmall:
-            return theme.typeBodyStrongSmall
+            return theme.fonts.typeBodyStrongSmall
         case .labelDefaultXLarge:
-            return theme.typeLabelDefaultXLarge
+            return theme.fonts.typeLabelDefaultXLarge
         case .labelDefaultLarge:
-            return theme.typeLabelDefaultLarge
+            return theme.fonts.typeLabelDefaultLarge
         case .labelDefaultMedium:
-            return theme.typeLabelDefaultMedium
+            return theme.fonts.typeLabelDefaultMedium
         case .labelDefaultSmall:
-            return theme.typeLabelDefaultSmall
+            return theme.fonts.typeLabelDefaultSmall
         case .labelStrongXLarge:
-            return theme.typeLabelStrongXLarge
+            return theme.fonts.typeLabelStrongXLarge
         case .labelStrongLarge:
-            return theme.typeLabelStrongLarge
+            return theme.fonts.typeLabelStrongLarge
         case .labelStrongMedium:
-            return theme.typeLabelStrongMedium
+            return theme.fonts.typeLabelStrongMedium
         case .labelStrongSmall:
-            return theme.typeLabelStrongSmall
+            return theme.fonts.typeLabelStrongSmall
         case .codeSmall:
-            return theme.typeCodeSmall
+            return theme.fonts.typeCodeSmall
         case .codeMedium:
-            return theme.typeCodeMedium
+            return theme.fonts.typeCodeMedium
         }
     }
 }

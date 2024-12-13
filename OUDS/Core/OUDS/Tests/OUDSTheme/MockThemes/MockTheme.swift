@@ -35,6 +35,7 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
                    opacities: MockThemeOpacitySemanticTokensWrapper(),
                    colors: colors,
                    elevations: MockThemeElevationSemanticTokensWrapper(),
+                   fonts: MockThemeFontSemanticTokensWrapper(),
                    customFontFamily: nil)
     }
 
@@ -43,6 +44,7 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
                    opacities: MockThemeOpacitySemanticTokensWrapper(),
                    colors: MockThemeColorSemanticTokensWrapper(),
                    elevations: MockThemeElevationSemanticTokensWrapper(),
+                   fonts: MockThemeFontSemanticTokensWrapper(),
                    customFontFamily: customFont)
     }
 
