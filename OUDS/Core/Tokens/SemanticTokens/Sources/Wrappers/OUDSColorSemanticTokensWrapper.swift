@@ -23,7 +23,7 @@ open class OUDSColorSemanticTokensWrapper {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorSemanticTokens and ColorMultipleTokens are not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ColorSemanticTokens.swift
+    // the implemention of ColorSemanticTokens and ColorMultipleSemanticTokens are not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ColorSemanticTokens.swift
     // and OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ColorMultipleSemanticTokens.swift
     // This declaration of OUDSColorSemanticTokensWrapper is here to allow to write documentation.
 }

@@ -22,17 +22,19 @@ import OUDSTokensSemantic
 /// - ``MockThemeBorderSemanticTokensWrapper`` for borders
 /// - ``MockThemeOpacitySemanticTokensWrapper`` for opacities
 /// - ``MockThemeColorSemanticTokensWrapper`` for colors
+/// - ``MockThemeElevationSemanticTokensWrapper`` for elevations
 open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
         self.init(customFont: nil)
     }
 
-    // For `OtherMockTheme`
+    /// For ``OtherMockTheme``
     init(colors: AllColorSemanticTokens) {
         super.init(borders: MockThemeBorderSemanticTokensWrapper(),
                    opacities: MockThemeOpacitySemanticTokensWrapper(),
                    colors: colors,
+                   elevations: MockThemeElevationSemanticTokensWrapper(),
                    customFontFamily: nil)
     }
 
@@ -40,6 +42,7 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
         super.init(borders: MockThemeBorderSemanticTokensWrapper(),
                    opacities: MockThemeOpacitySemanticTokensWrapper(),
                    colors: MockThemeColorSemanticTokensWrapper(),
+                   elevations: MockThemeElevationSemanticTokensWrapper(),
                    customFontFamily: customFont)
     }
 

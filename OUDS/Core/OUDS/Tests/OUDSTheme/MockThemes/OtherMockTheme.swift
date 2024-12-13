@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: MIT
 // 
 // This software is distributed under the MIT license,
-// the text of which is available at https://publicsource.org/license/MIT/
+// the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
 // 
 // Authors: See CONTRIBUTORS.txt

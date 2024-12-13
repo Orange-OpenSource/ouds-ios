@@ -30,13 +30,16 @@ open class OUDSTheme: @unchecked Sendable {
     // MARK: - Properties
 
     /// All border semantic tokens exposed in one object
-    public let borders: BorderSemanticTokens
+    public let borders: AllBorderSemanticTokens
 
     /// All opacity semantic tokens exposed in one object
-    public let opacities: OpacitySemanticTokens
+    public let opacities: AllOpacitySemanticTokens
 
     /// All color semantic tokens exposed in one object
     public let colors: AllColorSemanticTokens
+
+    /// All elevation semantic tokens exposed in one object
+    public let elevations: AllElevationSemanticTokens
 
     /// A theme can have a custom font which is not the system font
     public let customFontFamily: FontFamilySemanticToken?
@@ -49,12 +52,15 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensWrapper`
     ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensWrapper`
     ///    - colors: An object providing all the color semantic tokens, by default `OUDSColorSemanticTokensWrapper`
-    public init(borders: BorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
-                opacities: OpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
-                colors: AllColorSemanticTokens = OUDSColorSemanticTokensWrapper()) {
+    ///    - elevations: An object providing all the elevation semantic tokens, by default `OUDSElevationSemanticTokensWrapper`
+    public init(borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
+                opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
+                colors: AllColorSemanticTokens = OUDSColorSemanticTokensWrapper(),
+                elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensWrapper()) {
         self.borders = borders
         self.opacities = opacities
         self.colors = colors
+        self.elevations = elevations
         customFontFamily = nil
     }
 
@@ -63,14 +69,17 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
     ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
+    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`
     ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
-    public init(borders: BorderSemanticTokens,
-                opacities: OpacitySemanticTokens,
+    public init(borders: AllBorderSemanticTokens,
+                opacities: AllOpacitySemanticTokens,
                 colors: AllColorSemanticTokens,
+                elevations: AllElevationSemanticTokens,
                 customFontFamily: FontFamilySemanticToken?) {
         self.borders = borders
         self.opacities = opacities
         self.colors = colors
+        self.elevations = elevations
         self.customFontFamily = customFontFamily
     }
 

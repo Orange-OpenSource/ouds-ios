@@ -39,12 +39,15 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
     ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
-    override public init(borders: BorderSemanticTokens,
-                         opacities: OpacitySemanticTokens,
-                         colors: AllColorSemanticTokens) {
+    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`
+    override public init(borders: AllBorderSemanticTokens,
+                         opacities: AllOpacitySemanticTokens,
+                         colors: AllColorSemanticTokens,
+                         elevations: AllElevationSemanticTokens) {
         super.init(borders: borders,
                    opacities: opacities,
-                   colors: colors)
+                   colors: colors,
+                   elevations: elevations)
     }
 
     deinit { }

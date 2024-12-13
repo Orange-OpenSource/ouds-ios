@@ -18,7 +18,7 @@ import XCTest
 // swiftlint:disable required_deinit
 // swiftlint:disable implicitly_unwrapped_optional
 
-/// `InverseTheme` is a quite particular theme with "inverse" color palette. Is it neuther a light mode theme nor a dark mode theme.
+/// `InverseTheme` is a quite particular theme with "inverse" color palette. Is it neither a light mode theme nor a dark mode theme.
 /// This "inverse" mode as colors which, for a given semantic token, has the same value for both light and dark mode.
 final class TestInverseThemeElevationColors: XCTestCase {
 
@@ -29,14 +29,14 @@ final class TestInverseThemeElevationColors: XCTestCase {
     }
 
     func testElevationColorsEquality() throws {
-        XCTAssertEqual(inverseTheme.elevationColorDefault.light, inverseTheme.elevationColorDefault.dark)
-        XCTAssertEqual(inverseTheme.elevationColorNone.light, inverseTheme.elevationColorNone.dark)
-        XCTAssertEqual(inverseTheme.elevationColorRaised.light, inverseTheme.elevationColorRaised.dark)
-        XCTAssertEqual(inverseTheme.elevationColorDrag.light, inverseTheme.elevationColorDrag.dark)
-        XCTAssertEqual(inverseTheme.elevationColorEmphasized.light, inverseTheme.elevationColorEmphasized.dark)
-        XCTAssertEqual(inverseTheme.elevationColorStickyDefault.light, inverseTheme.elevationColorStickyDefault.dark)
-        XCTAssertEqual(inverseTheme.elevationColorStickyEmphasized.light, inverseTheme.elevationColorStickyEmphasized.dark)
-        XCTAssertEqual(inverseTheme.elevationColorStickyNavigationScrolled.light, inverseTheme.elevationColorStickyNavigationScrolled.dark)
+        XCTAssertEqual(inverseTheme.elevations.elevationColorDefault.light, inverseTheme.elevations.elevationColorDefault.dark)
+        XCTAssertEqual(inverseTheme.elevations.elevationColorNone.light, inverseTheme.elevations.elevationColorNone.dark)
+        XCTAssertEqual(inverseTheme.elevations.elevationColorRaised.light, inverseTheme.elevations.elevationColorRaised.dark)
+        XCTAssertEqual(inverseTheme.elevations.elevationColorDrag.light, inverseTheme.elevations.elevationColorDrag.dark)
+        XCTAssertEqual(inverseTheme.elevations.elevationColorEmphasized.light, inverseTheme.elevations.elevationColorEmphasized.dark)
+        XCTAssertEqual(inverseTheme.elevations.elevationColorStickyDefault.light, inverseTheme.elevations.elevationColorStickyDefault.dark)
+        XCTAssertEqual(inverseTheme.elevations.elevationColorStickyEmphasized.light, inverseTheme.elevations.elevationColorStickyEmphasized.dark)
+        XCTAssertEqual(inverseTheme.elevations.elevationColorStickyNavigationScrolled.light, inverseTheme.elevations.elevationColorStickyNavigationScrolled.dark)
     }
 }
 
