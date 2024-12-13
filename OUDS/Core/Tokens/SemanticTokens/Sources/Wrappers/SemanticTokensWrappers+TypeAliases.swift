@@ -45,3 +45,8 @@ public typealias AllFontSemanticTokens = FontSemanticTokens & FontCompositeSeman
 /// It helps in the end to define a wrapper for all the semantic tokens of size, multiple or not, generated or not.
 /// For example ``OUDSSizeSemanticTokensWrapper`` matches this type alias.
 public typealias AllSizeSemanticTokens = SizeSemanticTokens & SizeMultipleSemanticTokens
+
+/// A type alias which merges  ``SpaceSemanticTokens`` and ``SpaceMultipleSemanticTokens``.
+/// It helps in the end to define a wrapper for all the semantic tokens of space, multiple or not, generated or not.
+/// For example ``OUDSSpaceSemanticTokensWrapper`` matches this type alias.
+public typealias AllSpaceSemanticTokens = SpaceSemanticTokens & SpaceMultipleSemanticTokens

@@ -20,21 +20,21 @@ struct EmptyState: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .center, spacing: theme.spaceFixedMedium) {
+            VStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
                 Image("il_empty_screen")
                     .accessibilityHidden(true)
                     .frame(width: 160, height: 160, alignment: .center)
 
-                VStack(alignment: .center, spacing: theme.spaceFixedShorter) {
+                VStack(alignment: .center, spacing: theme.spaces.spaceFixedShorter) {
                     Text("app_component_emptyContent_text")
                         .typeHeadingMedium(theme)
                     Text("app_component_emptyContent_description_text")
                         .typeBodyDefaultSmall(theme)
                 }
-                .padding(.vertical, theme.spaceFixedMedium)
+                .padding(.vertical, theme.spaces.spaceFixedMedium)
             }
-            .padding(.top, theme.spaceFixedJumbo)
-            .padding(.horizontal, theme.spaceFixedMedium)
+            .padding(.top, theme.spaces.spaceFixedJumbo)
+            .padding(.horizontal, theme.spaces.spaceFixedMedium)
         }
     }
 }

@@ -103,7 +103,7 @@ struct ButtonIllustration: View {
 
                 Spacer()
             }
-            .padding(.all, theme.spaceFixedMedium)
+            .padding(.all, theme.spaces.spaceFixedMedium)
         }
         .background(theme.colors.colorBgSecondary.color(for: colorScheme))
     }
@@ -122,7 +122,7 @@ struct ButtonConfiguration: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Toggle("Enabled", isOn: $model.enabled)
             TextField("Button text", text: $model.text)
         }

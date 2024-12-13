@@ -43,18 +43,18 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             componentView(configuration)
             // No padding here, the component erea keep all the frame horizontaly
 
             ShowcaseConfiguration {
                 configurationView(configuration)
             }
-            .padding(.horizontal, theme.spaceFixedMedium)
+            .padding(.horizontal, theme.spaces.spaceFixedMedium)
 
             ShowcaseCode(code: configuration.code)
-                .padding(.horizontal, theme.spaceFixedMedium)
+                .padding(.horizontal, theme.spaces.spaceFixedMedium)
         }
-        .padding(.bottom, theme.spaceFixedMedium)
+        .padding(.bottom, theme.spaces.spaceFixedMedium)
     }
 }

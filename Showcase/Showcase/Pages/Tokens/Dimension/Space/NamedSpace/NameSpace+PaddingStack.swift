@@ -30,19 +30,19 @@ extension NamedSpace {
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
             case .spacePaddingBlockNone:
-                return theme.spacePaddingBlockNone
+                return theme.spaces.spacePaddingBlockNone
             case .spacePaddingBlockShorter:
-                return theme.spacePaddingBlockShorter
+                return theme.spaces.spacePaddingBlockShorter
             case .spacePaddingBlockShort:
-                return theme.spacePaddingBlockShort
+                return theme.spaces.spacePaddingBlockShort
             case .spacePaddingBlockMedium:
-                return theme.spacePaddingBlockMedium
+                return theme.spaces.spacePaddingBlockMedium
             case .spacePaddingBlockTall:
-                return theme.spacePaddingBlockTall
+                return theme.spaces.spacePaddingBlockTall
             case .spacePaddingBlockTaller:
-                return theme.spacePaddingBlockTaller
+                return theme.spaces.spacePaddingBlockTaller
             case .spacePaddingBlockTallest:
-                return theme.spacePaddingBlockTallest
+                return theme.spaces.spacePaddingBlockTallest
             }
         }
     }

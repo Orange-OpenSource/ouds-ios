@@ -27,6 +27,7 @@ import OUDSTokensSemantic
 /// - ``MockThemeGridSemanticTokensWrapper`` for grids
 /// - ``MockThemeOpacitySemanticTokensWrapper`` for opacities
 /// - ``MockThemeSizeSemanticTokensWrapper`` for sizes
+/// - ``MockThemeSpaceSemanticTokensWrapper`` for spaces
 open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
@@ -42,7 +43,8 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
                    fonts: MockThemeFontSemanticTokensWrapper(),
                    grids: MockThemeGridSemanticTokensWrapper(),
                    opacities: MockThemeOpacitySemanticTokensWrapper(),
-                   sizes: MockThemeSizeSemanticTokensWrapper())
+                   sizes: MockThemeSizeSemanticTokensWrapper(),
+                   spaces: MockThemeSpaceSemanticTokensWrapper())
     }
 
     init(fontFamily: String?) {
@@ -53,7 +55,8 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
                    fonts: MockThemeFontSemanticTokensWrapper(),
                    grids: MockThemeGridSemanticTokensWrapper(),
                    opacities: MockThemeOpacitySemanticTokensWrapper(),
-                   sizes: MockThemeSizeSemanticTokensWrapper())
+                   sizes: MockThemeSizeSemanticTokensWrapper(),
+                   spaces: MockThemeSpaceSemanticTokensWrapper())
     }
 
     deinit { }

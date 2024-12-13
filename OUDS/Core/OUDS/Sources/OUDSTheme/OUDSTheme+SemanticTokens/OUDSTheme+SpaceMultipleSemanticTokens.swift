@@ -19,9 +19,9 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-/// Defines wrapper objects for space semantic tokens (i.e. in the end ``DimensionRawToken`).
-/// These values can be overriden inside ``OUDSTheme`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
-extension OUDSTheme: SpaceMultipleSemanticTokens {
+/// Defines wrapper objects for space semantic tokens (i.e. in the end ``DimensionRawToken``).
+/// These values can be overriden inside ``OUDSSpaceSemanticTokensWrapper`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+extension OUDSSpaceSemanticTokensWrapper: SpaceMultipleSemanticTokens {
 
     // MARK: Semantic token - Spacing - Layout fluid
 

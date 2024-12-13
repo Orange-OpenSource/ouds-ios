@@ -45,14 +45,16 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OUDSFontSemanticTokensWrapper`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`, default set to `OUDSGridSemanticTokensWrapper`
     ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation, default set to `OUDSOpacitySemanticTokensWrapper`
-    ///    - sizes: An object providing all the opacity semantic tokens, as `AllSizeSemanticTokens` implementation, default set to `OUDSSizeSemanticTokensWrapper`
+    ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation, default set to `OUDSSizeSemanticTokensWrapper`
+    ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokens` implementation, default set to `OUDSSpaceSemanticTokensWrapper`
     override public init(colors: AllColorSemanticTokens = OrangeThemeColorSemanticTokensWrapper(),
                          borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
                          elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensWrapper(),
                          fonts: AllFontSemanticTokens = OUDSFontSemanticTokensWrapper(),
                          grids: AllGridSemanticTokens = OUDSGridSemanticTokensWrapper(),
                          opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
-                         sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensWrapper()) {
+                         sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensWrapper(),
+                         spaces: AllSpaceSemanticTokens = OUDSSpaceSemanticTokensWrapper()) {
         OUDSLogger.debug("Init of OrangeTheme")
         super.init(colors: colors,
                    borders: borders,
@@ -60,7 +62,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
-                   sizes: sizes)
+                   sizes: sizes,
+                   spaces: spaces)
     }
 
     deinit { }

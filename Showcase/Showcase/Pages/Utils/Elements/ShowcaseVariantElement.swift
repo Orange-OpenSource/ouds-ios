@@ -35,12 +35,12 @@ struct ShowcaseVariantElement: View {
                     Text(LocalizedStringKey(element.name))
                         .typeHeadingMedium(theme)
                         .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                        .padding(.vertical, theme.spaceFixedShorter)
-                        .padding(.leading, theme.spaceFixedMedium)
+                        .padding(.vertical, theme.spaces.spaceFixedShorter)
+                        .padding(.leading, theme.spaces.spaceFixedMedium)
                     Spacer()
                     Image(systemName: "chevron.right")
                         .foregroundColor(theme.colors.colorContentDefault.color(for: colorScheme))
-                        .padding(.trailing, theme.spaceFixedMedium)
+                        .padding(.trailing, theme.spaces.spaceFixedMedium)
                         .accessibilityHidden(true)
                 }
             }

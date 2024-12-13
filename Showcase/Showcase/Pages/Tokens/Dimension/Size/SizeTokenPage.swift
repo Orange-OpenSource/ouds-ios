@@ -39,7 +39,7 @@ struct SizeTokenPage: View {
                 header("app_tokens_dimension_size_iconWithLabel_label")
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct IllustrationIconDecorative: View {

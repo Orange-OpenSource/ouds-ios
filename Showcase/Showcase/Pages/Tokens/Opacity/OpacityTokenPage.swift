@@ -23,19 +23,19 @@ struct OpacityTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
                 ShowcaseCode(code: "theme.opacities.opacityInvisible")
             }
 
-            Spacer() .frame(height: theme.spaceFixedMedium)
+            Spacer() .frame(height: theme.spaces.spaceFixedMedium)
 
             ForEach(NamedOpacity.allCases, id: \.rawValue) { opacityName in
                 IllustrationOpacity(opacityName: opacityName)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct IllustrationOpacity: View {

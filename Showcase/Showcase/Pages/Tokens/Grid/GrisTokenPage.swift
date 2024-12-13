@@ -26,7 +26,7 @@ struct GridTokenPage: View {
 
     var body: some View {
         Group {
-            VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                 Image(decorative: "il_tokens_grid_column_margin")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -50,13 +50,13 @@ struct GridTokenPage: View {
                     .showcaseSectionHeaderStyle()
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     // MARK: Private helpers
 
     private func illustrationForGridTokens() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             ForEach(NamedGrid.allCases, id: \.rawValue) { namedGrid in
                 illustration(for: namedGrid)
             }

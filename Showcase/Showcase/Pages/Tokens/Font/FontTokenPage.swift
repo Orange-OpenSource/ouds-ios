@@ -24,7 +24,7 @@ struct FontTokenPage: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
                 ShowcaseCode(code: "theme.typeBodyStrongLarge(theme)")
             }
@@ -35,7 +35,7 @@ struct FontTokenPage: View {
                 IllustrationFont(namedFont: fontName)
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 
@@ -49,7 +49,7 @@ struct FontTokenPage: View {
         var body: some View {
             let token = namedFont.token(from: theme).fontToken(for: horizontalSizeClass ?? .regular)
 
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 illustration(for: namedFont, in: theme)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
@@ -65,7 +65,7 @@ struct FontTokenPage: View {
                 .foregroundStyle(theme.colors.colorContentMuted.color(for: colorScheme))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, theme.spaceFixedShorter)
+            .padding(.vertical, theme.spaces.spaceFixedShorter)
             .accessibilityElement(children: .combine)
         }
     }

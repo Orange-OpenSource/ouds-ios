@@ -37,7 +37,7 @@ struct ShowcaseElementPage: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                 if let imageName {
                     CardIllustration(icon: Image(imageName))
                         .accessibilityHidden(true)
@@ -46,23 +46,23 @@ struct ShowcaseElementPage: View {
                 Text(LocalizedStringKey(description))
                     .typeBodyDefaultLarge(theme)
                     .accessibilityFocused($requestFocus)
-                    .padding(.horizontal, theme.spaceFixedMedium)
+                    .padding(.horizontal, theme.spaces.spaceFixedMedium)
             }
             .listRowInsets(EdgeInsets())
             .listRowSeparator(Visibility.hidden)
-            .padding(.horizontal, theme.spaceFixedNone)
-            .padding(.bottom, theme.spaceFixedMedium)
+            .padding(.horizontal, theme.spaces.spaceFixedNone)
+            .padding(.bottom, theme.spaces.spaceFixedMedium)
             .background(theme.colors.colorBgPrimary.color(for: colorScheme))
 
             illustration
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
-                .padding(.bottom, theme.spaceFixedMedium)
+                .padding(.bottom, theme.spaces.spaceFixedMedium)
                 .background(theme.colors.colorBgPrimary.color(for: colorScheme))
         }
         .listStyle(.plain)
-        .padding(.top, theme.spaceFixedNone)
-        .padding(.horizontal, theme.spaceFixedNone)
+        .padding(.top, theme.spaces.spaceFixedNone)
+        .padding(.horizontal, theme.spaces.spaceFixedNone)
         .background(theme.colors.colorBgPrimary.color(for: colorScheme))
         .navigationTitle(LocalizedStringKey(name))
         .navigationbarMenuForThemeSelection()

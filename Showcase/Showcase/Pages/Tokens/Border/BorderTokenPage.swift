@@ -21,14 +21,14 @@ struct BorderTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ShowcaseCode(code: "theme.borders.borderWidthDefault")
                 }
             }
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
                         IllustrationWidth(namedWidth: namedWidth)
                     }
@@ -41,7 +41,7 @@ struct BorderTokenPage: View {
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ForEach(NamedBorderRadius.allCases, id: \.rawValue) { namedRadius in
                         IllustrationRadius(namedRadius: namedRadius)
                     }
@@ -54,7 +54,7 @@ struct BorderTokenPage: View {
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ForEach(NamedBorderStyle.allCases, id: \.rawValue) { namedStyle in
                         IllustrationStyle(namedStyle: namedStyle)
                     }
@@ -66,7 +66,7 @@ struct BorderTokenPage: View {
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct RectangleBackground: View {

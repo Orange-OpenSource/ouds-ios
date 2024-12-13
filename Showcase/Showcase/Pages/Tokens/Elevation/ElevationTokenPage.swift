@@ -24,19 +24,19 @@ struct ElevationTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
                 ShowcaseCode(code: "theme.elevations.elevationNone.elevation(for: colorScheme)")
             }
 
-            Spacer().frame(height: theme.spaceFixedMedium)
+            Spacer().frame(height: theme.spaces.spaceFixedMedium)
 
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 IllustrationElevation(namedElevation: elevationName)
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct IllustrationElevation: View {

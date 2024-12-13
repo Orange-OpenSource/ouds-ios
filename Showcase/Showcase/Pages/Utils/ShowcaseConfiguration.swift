@@ -28,7 +28,7 @@ struct ShowcaseConfiguration<Configuration>: View where Configuration: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Text("Configuration")
                 .typeHeadingMedium(theme)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -37,7 +37,7 @@ struct ShowcaseConfiguration<Configuration>: View where Configuration: View {
 
             configuration()
         }
-        .padding(.all, theme.spaceFixedMedium)
+        .padding(.all, theme.spaces.spaceFixedMedium)
         .oudsBorder(style: theme.borders.borderStyleDefault,
                     width: theme.borders.borderWidthThin,
                     radius: theme.borders.borderRadiusMedium,
