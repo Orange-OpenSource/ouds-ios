@@ -29,8 +29,11 @@ open class OUDSTheme: @unchecked Sendable {
 
     // MARK: - Properties
 
-    /// All semantic tokens of border exposed in one object
+    /// All border semantic tokens exposed in one object
     public let borders: BorderSemanticTokens
+
+    /// All opacity semantic tokens exposed in one object
+    public let opacities: OpacitySemanticTokens
 
     /// A theme can have a custom font which is not the system font
     public let customFontFamily: FontFamilySemanticToken?
@@ -41,19 +44,25 @@ open class OUDSTheme: @unchecked Sendable {
     /// No custom font family will be used.
     /// - Parameters:
     ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensWrapper`
-    public init(borders: BorderSemanticTokens = OUDSBorderSemanticTokensWrapper()) {
+    ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensWrapper`
+    public init(borders: BorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
+                opacities: OpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper()) {
         self.borders = borders
+        self.opacities = opacities
         customFontFamily = nil
     }
 
     /// Defines a basic kind of abstract theme to subclass then.
     /// - Parameters:
     ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
+    ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
     ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(borders: BorderSemanticTokens,
+                opacities: OpacitySemanticTokens,
                 customFontFamily: FontFamilySemanticToken?) {
-        self.customFontFamily = customFontFamily
         self.borders = borders
+        self.opacities = opacities
+        self.customFontFamily = customFontFamily
     }
 
     deinit { }

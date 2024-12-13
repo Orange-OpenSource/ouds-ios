@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: MIT
 // 
 // This software is distributed under the MIT license,
-// the text of which is available at https://opensource.org/license/MIT/
+// the text of which is available at https://publicsource.org/license/MIT/
 // or see the "LICENSE" file for more details.
 // 
 // Authors: See CONTRIBUTORS.txt
@@ -15,16 +15,20 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-/// Overrides **all** the opacity semantic tokens (from its super class, i.e. `OUDSTheme` so as to test overriding of them (unit tests)
+// swiftlint:disable required_deinit
+
+/// Overrides **all** the opacity semantic tokens (from its super class, i.e. `OUDSOpacitySemanticTokensWrapper`) so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-extension MockTheme {
+final class MockThemeOpacitySemanticTokensWrapper: OUDSOpacitySemanticTokensWrapper {
 
     static let mockThemeOpacityRawToken: OpacityRawToken = 713
 
-    override open var opacityInvisible: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override open var opacityWeaker: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override open var opacityWeak: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override open var opacityMedium: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override open var opacityStrong: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
-    override open var opacityOpaque: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override public var opacityInvisible: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override public var opacityWeaker: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override public var opacityWeak: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override public var opacityMedium: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override public var opacityStrong: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
+    override public var opacityOpaque: OpacitySemanticToken { Self.mockThemeOpacityRawToken }
 }
+
+// swiftlint:enable required_deinit

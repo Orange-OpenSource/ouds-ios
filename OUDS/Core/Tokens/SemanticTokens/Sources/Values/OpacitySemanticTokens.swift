@@ -19,7 +19,7 @@
 
 /// This is a group of semantic tokens for **opacity.**
 /// It defines all ``OpacitySemanticToken`` a theme must have.
-/// Any opacity semantic token must be declared there.
+/// Any opacity semantic token must be declared there as wrappers like ``OUDSOpacitySemanticTokensWrapper`` will then expose them through `OUDSTheme`.
 public protocol OpacitySemanticTokens {
 
     // MARK: Semantic token - Opacity

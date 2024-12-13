@@ -28,7 +28,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations
     /// - Parameters:
     ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
-    override public init(borders: BorderSemanticTokens) {
+    ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
+    override public init(borders: BorderSemanticTokens,
+                         opacities: OpacitySemanticTokens) {
         super.init(borders: borders)
     }
 

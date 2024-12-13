@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-/// A class which wraps all ``BorderSemanticTokens`` and expose them.
+/// A class which wraps all **border semantic tokens** and expose them.
 /// This wrapper should be integrated as a ``BorderSemanticTokens`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
 open class OUDSBorderSemanticTokensWrapper {
@@ -24,5 +24,5 @@ open class OUDSBorderSemanticTokensWrapper {
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of BorderSemanticTokens is not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+BorderSemanticTokens.swift
-    // This declaration of BorderSemanticTokensWrapper is here to allow to write documentation.
+    // This declaration of OUDSBorderSemanticTokensWrapper is here to allow to write documentation.
 }

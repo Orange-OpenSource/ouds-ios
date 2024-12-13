@@ -20,6 +20,7 @@ import OUDSTokensSemantic
 ///
 /// Uses its own tokens wrappers for tests:
 /// - ``MockThemeBorderSemanticTokensWrapper`` for borders
+/// - ``MockThemeOpacitySemanticTokensWrapper`` for opacities
 open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
@@ -28,6 +29,7 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     init(customFont: String?) {
         super.init(borders: MockThemeBorderSemanticTokensWrapper(),
+                   opacities: MockThemeOpacitySemanticTokensWrapper(),
                    customFontFamily: customFont)
     }
 
