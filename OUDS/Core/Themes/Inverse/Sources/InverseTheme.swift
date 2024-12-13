@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSFoundations
 import OUDSThemesOrange
 import OUDSTokensSemantic
 
@@ -22,6 +23,7 @@ public final class InverseTheme: OrangeTheme, @unchecked Sendable {
 
     /// Initializes the `InverseTheme`
     override public init() {
+        OUDSLogger.debug("Init of InverseTheme")
         super.init(colors: InverseThemeColorSemanticTokensWrapper())
     }
 

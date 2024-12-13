@@ -50,6 +50,13 @@ open class OUDSTheme: @unchecked Sendable {
     /// All opacity semantic tokens exposed in one object
     public let opacities: AllOpacitySemanticTokens
 
+    /// All size semantic tokens exposed in one object
+    public let sizes: AllSizeSemanticTokens
+
+    // TODO: Add space tokens
+
+    // TODO: Add components tokens
+
     // MARK: - Initializers
 
     /// Defines a basic kind of abstract theme to subclass then.
@@ -61,12 +68,14 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - fonts: An object providing all the font semantic tokens, by default `OUDSFontSemanticTokensWrapper`
     ///    - grids: An object providing all the grid semantic tokens, by default `OUDSGridSemanticTokensWrapper`
     ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensWrapper`
+    ///    - sizes: An object providing all the size semantic tokens, by default `OUDSSizeSemanticTokensWrapper`
     public init(colors: AllColorSemanticTokens = OUDSColorSemanticTokensWrapper(),
                 borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
                 elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensWrapper(),
                 fonts: AllFontSemanticTokens = OUDSFontSemanticTokensWrapper(),
                 grids: AllGridSemanticTokens = OUDSGridSemanticTokensWrapper(),
-                opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper()) {
+                opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
+                sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensWrapper()) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations
@@ -74,6 +83,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.fonts = fonts
         self.grids = grids
         self.opacities = opacities
+        self.sizes = sizes
     }
 
     /// Defines a basic kind of abstract theme to subclass then.
@@ -84,14 +94,16 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`
-    ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
+    ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokens` implementation
+    ///    - sizes: An object providing all the opacity semantic tokens, as `AllSizeSemanticTokens` implementation
     public init(colors: AllColorSemanticTokens,
                 borders: AllBorderSemanticTokens,
                 elevations: AllElevationSemanticTokens,
                 fontFamily: FontFamilySemanticToken?,
                 fonts: AllFontSemanticTokens,
                 grids: AllGridSemanticTokens,
-                opacities: AllOpacitySemanticTokens) {
+                opacities: AllOpacitySemanticTokens,
+                sizes: AllSizeSemanticTokens) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations
@@ -99,6 +111,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.fonts = fonts
         self.grids = grids
         self.opacities = opacities
+        self.sizes = sizes
     }
 
     deinit { }

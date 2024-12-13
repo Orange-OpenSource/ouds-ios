@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSFoundations
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
@@ -52,6 +53,10 @@ import OUDSTokensSemantic
 open class OrangeThemeColorSemanticTokensWrapper: OUDSColorSemanticTokensWrapper {
 
     // MARK: - Init
+
+    override public init() {
+        OUDSLogger.debug("Init of OrangeThemeColorSemanticTokensWrapper")
+    }
 
     deinit { }
 
