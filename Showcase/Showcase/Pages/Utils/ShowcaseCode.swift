@@ -99,9 +99,9 @@ struct ShowcaseCode: View {
             Rectangle()
                 .opacity(theme.opacityInvisible)
                 .frame(minWidth: 40, maxWidth: .infinity, alignment: .leading)
-                .oudsBorder(style: theme.borderStyleDefault,
-                            width: theme.borderWidthThin,
-                            radius: theme.borderRadiusDefault,
+                .oudsBorder(style: theme.borders.borderStyleDefault,
+                            width: theme.borders.borderWidthThin,
+                            radius: theme.borders.borderRadiusDefault,
                             color: theme.colorBorderDefault)
         )
     }

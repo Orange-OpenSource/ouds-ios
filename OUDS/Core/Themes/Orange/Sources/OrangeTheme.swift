@@ -12,12 +12,25 @@
 //
 
 import OUDS
+import OUDSTokensSemantic
 
-/// This is an override of the default basic ``OUDSTheme` and should be seen as the default theme for the OUDS library.
-/// It can overrides any properties from its superclass, and can be derived too.
+/// This is an override of the default basic ``OUDSTheme`` and should be seen as the default theme for the OUDS library.
+/// It can override any properties from its superclass, and can be derived too.
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
-    deinit { }
+    // MARK: - Initializers
 
-    // For clarity reasons, please override OUDSTheme properties in extensions
+    /// Initializes the `OrangeTheme`
+    public init() {
+        super.init()
+    }
+
+    /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations
+    /// - Parameters:
+    ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
+    override public init(borders: BorderSemanticTokens) {
+        super.init(borders: borders)
+    }
+
+    deinit { }
 }

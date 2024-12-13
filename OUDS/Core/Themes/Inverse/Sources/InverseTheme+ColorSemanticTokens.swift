@@ -23,11 +23,16 @@ import OUDSTokensSemantic
 
 /// Overrides some colors using values defined in extension of ``ColorRawTokens`` in this current module.
 /// Some tokens do not have values assigned in the design system, and must be overriden.
+/// Ensures the colors are always the "dark mode" colors.
 extension InverseTheme {
+
+    // MARK: - Color - Opacity - Invisible
 
     override public var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityInvisibleBlackDark) }
 
     override public var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityInvisibleWhiteDark) }
+
+    // MARK: - Color - Action
 
     override public var colorActionDisabled: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionDisabledDark) }
 
@@ -67,6 +72,8 @@ extension InverseTheme {
 
     override public var colorActionVisited: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorActionVisitedDark) }
 
+    // MARK: - Color - Always
+
     override public var colorAlwaysBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorAlwaysBlackDark) }
 
     override public var colorAlwaysOnBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorAlwaysOnBlackDark) }
@@ -75,6 +82,8 @@ extension InverseTheme {
 
     override public var colorAlwaysWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorAlwaysWhiteDark) }
 
+    // MARK: - Color - Background
+
     override public var colorBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBgEmphasizedDark) }
 
     override public var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBgPrimaryDark) }
@@ -82,6 +91,8 @@ extension InverseTheme {
     override public var colorBgSecondary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBgSecondaryDark) }
 
     override public var colorBgTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBgTertiaryDark) }
+
+    // MARK: - Color - Border
 
     override public var colorBorderBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBorderBrandPrimaryDark) }
 
@@ -94,6 +105,8 @@ extension InverseTheme {
     override public var colorBorderFocusInset: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBorderFocusInsetDark) }
 
     override public var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorBorderOnBrandPrimaryDark) }
+
+    // MARK: - Color - Content
 
     override public var colorContentBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentBrandPrimaryDark) }
 
@@ -137,6 +150,8 @@ extension InverseTheme {
 
     override public var colorContentStatusWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentStatusWarningDark) }
 
+    // MARK: - Color - Overlay
+
     override public var colorOverlayDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOverlayDefaultDark) }
 
     override public var colorOverlayDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOverlayDragDark) }
@@ -144,6 +159,8 @@ extension InverseTheme {
     override public var colorOverlayEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOverlayEmphasizedDark) }
 
     override public var colorOverlayModal: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOverlayModalDark) }
+
+    // MARK: - Color - Surface
 
     override public var colorSurfaceBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceBrandPrimaryDark) }
 
@@ -170,6 +187,8 @@ extension InverseTheme {
     override public var colorSurfaceStatusWarningEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusWarningEmphasizedDark) }
 
     override public var colorSurfaceStatusWarningMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorSurfaceStatusWarningMutedDark) }
+
+    // MARK: - Color - Decorative
 
     override public var colorDecorativeAccent1Default: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeAccent1DefaultDark) }
 
@@ -231,6 +250,8 @@ extension InverseTheme {
 
     override public var colorDecorativeSkinTint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint900Dark) }
 
+    // MARK: - Color - Chart
+
     override public var colorChartCategoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier1Dark) }
 
     override public var colorChartCategoricalTier2: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier2Dark) }
@@ -264,6 +285,8 @@ extension InverseTheme {
     override public var colorChartHighlight: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartHighlightDark) }
 
     override public var colorChartNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartNeutralDark) }
+
+    // MARK: - Color - Repository
 
     override public var colorRepositoryAccentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryAccentDefaultDark) }
 
@@ -333,19 +356,19 @@ extension InverseTheme {
 
     override public var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWarningDark) }
 
-    override open var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteHighDark) }
+    override public var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteHighDark) }
 
-    override open var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteHigherDark) }
+    override public var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteHigherDark) }
 
-    override open var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteHighestDark) }
+    override public var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteHighestDark) }
 
-    override open var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteLowDark) }
+    override public var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteLowDark) }
 
-    override open var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteLowerDark) }
+    override public var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteLowerDark) }
 
-    override open var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteLowestDark) }
+    override public var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteLowestDark) }
 
-    override open var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteTransparentDark) }
+    override public var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryOpacityWhiteTransparentDark) }
 
     override public var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorRepositoryPositiveDefaultDark) }
 

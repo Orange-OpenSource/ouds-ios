@@ -20,30 +20,41 @@ import OUDSTokensSemantic
 /// Any properties of an overridable theme should be defined so as to provide defaults values.
 /// We allow this theme to be derivated and be overriden.
 ///
-/// `OUDSTheme` can be seen as a kind of "abstract class" in _object oriented paradigm_.
+/// ``OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_.
 ///
 /// Because `OUDSTheme` is not a *final* class, its type cannot be seen as `Sendable`, that is the reason why this conformity is unchecked.
 ///
 /// **Warning: You are not supposed to use this abstract default theme directly. Please prefer `OrangeTheme` instead**
 open class OUDSTheme: @unchecked Sendable {
 
+    // MARK: - Properties
+
+    /// All semantic tokens of border exposed in one object
+    public let borders: BorderSemanticTokens
+
     /// A theme can have a custom font which is not the system font
     public let customFontFamily: FontFamilySemanticToken?
 
+    // MARK: - Initializers
+
     /// Defines a basic kind of abstract theme to subclass then.
     /// No custom font family will be used.
-    public convenience init() {
-        self.init(customFontFamily: nil)
+    /// - Parameters:
+    ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensWrapper`
+    public init(borders: BorderSemanticTokens = OUDSBorderSemanticTokensWrapper()) {
+        self.borders = borders
+        customFontFamily = nil
     }
 
     /// Defines a basic kind of abstract theme to subclass then.
     /// - Parameters:
+    ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
     ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
-    public init(customFontFamily: FontFamilySemanticToken?) {
+    public init(borders: BorderSemanticTokens,
+                customFontFamily: FontFamilySemanticToken?) {
         self.customFontFamily = customFontFamily
+        self.borders = borders
     }
 
     deinit { }
-
-    // Please refer to extensions for properties, it will be more clear
 }

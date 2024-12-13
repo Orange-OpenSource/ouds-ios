@@ -15,7 +15,11 @@ import Foundation
 import OUDS
 import OUDSTokensSemantic
 
-/// A mock theme for tests
+/// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
+/// *open* to allow some derivative mock themes like ``OtherMockTheme``.
+///
+/// Uses its own tokens wrappers for tests:
+/// - ``MockThemeBorderSemanticTokensWrapper`` for borders
 open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
@@ -23,10 +27,9 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
     }
 
     init(customFont: String?) {
-        super.init(customFontFamily: customFont)
+        super.init(borders: MockThemeBorderSemanticTokensWrapper(),
+                   customFontFamily: customFont)
     }
 
     deinit { }
-
-    // Please refer to extensions
 }

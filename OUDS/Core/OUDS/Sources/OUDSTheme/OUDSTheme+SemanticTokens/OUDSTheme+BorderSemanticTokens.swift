@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-extension OUDSTheme: BorderSemanticTokens {
+extension OUDSBorderSemanticTokensWrapper: BorderSemanticTokens {
     @objc open var borderRadiusDefault: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }
     @objc open var borderRadiusMedium: BorderRadiusSemanticToken { BorderRawTokens.borderRadius150 }
     @objc open var borderRadiusNone: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }

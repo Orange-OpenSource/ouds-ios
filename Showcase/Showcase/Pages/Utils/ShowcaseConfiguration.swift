@@ -38,9 +38,9 @@ struct ShowcaseConfiguration<Configuration>: View where Configuration: View {
             configuration()
         }
         .padding(.all, theme.spaceFixedMedium)
-        .oudsBorder(style: theme.borderStyleDefault,
-                    width: theme.borderWidthThin,
-                    radius: theme.borderRadiusMedium,
+        .oudsBorder(style: theme.borders.borderStyleDefault,
+                    width: theme.borders.borderWidthThin,
+                    radius: theme.borders.borderRadiusMedium,
                     color: theme.colorBorderDefault)
     }
 }

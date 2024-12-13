@@ -153,9 +153,9 @@ struct ColorTokenPage: View {
                     .fill(colorRawToken.color)
                     .frame(width: 64, height: 64)
                     .oudsBorder(
-                        style: theme.borderStyleDefault,
-                        width: theme.borderWidthThin,
-                        radius: theme.borderRadiusNone,
+                        style: theme.borders.borderStyleDefault,
+                        width: theme.borders.borderWidthThin,
+                        radius: theme.borders.borderRadiusNone,
                         color: theme.colorBorderDefault
                     )
             }

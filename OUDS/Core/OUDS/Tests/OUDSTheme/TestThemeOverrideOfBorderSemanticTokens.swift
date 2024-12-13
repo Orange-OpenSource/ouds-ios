@@ -36,82 +36,82 @@ final class TestThemeOverrideOfBorderSemanticTokens: XCTestCase {
     // MARK: - Semantic token - Border - Width
 
     func testInheritedThemeCanOverrideSemanticTokenBorderWidthNone() throws {
-        XCTAssertNotEqual(inheritedTheme.borderWidthNone, abstractTheme.borderWidthNone)
-        XCTAssertTrue(inheritedTheme.borderWidthNone == MockTheme.mockThemeBorderWidthRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderWidthNone, abstractTheme.borders.borderWidthNone)
+        XCTAssertTrue(inheritedTheme.borders.borderWidthNone == MockThemeBorderSemanticTokensWrapper.mockThemeBorderWidthRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderWidthDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.borderWidthDefault, abstractTheme.borderWidthDefault)
-        XCTAssertTrue(inheritedTheme.borderWidthDefault == MockTheme.mockThemeBorderWidthRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderWidthDefault, abstractTheme.borders.borderWidthDefault)
+        XCTAssertTrue(inheritedTheme.borders.borderWidthDefault == MockThemeBorderSemanticTokensWrapper.mockThemeBorderWidthRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderWidthThin() throws {
-        XCTAssertNotEqual(inheritedTheme.borderWidthThin, abstractTheme.borderWidthThin)
-        XCTAssertTrue(inheritedTheme.borderWidthThin == MockTheme.mockThemeBorderWidthRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderWidthThin, abstractTheme.borders.borderWidthThin)
+        XCTAssertTrue(inheritedTheme.borders.borderWidthThin == MockThemeBorderSemanticTokensWrapper.mockThemeBorderWidthRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderWidthMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.borderWidthMedium, abstractTheme.borderWidthMedium)
-        XCTAssertTrue(inheritedTheme.borderWidthMedium == MockTheme.mockThemeBorderWidthRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderWidthMedium, abstractTheme.borders.borderWidthMedium)
+        XCTAssertTrue(inheritedTheme.borders.borderWidthMedium == MockThemeBorderSemanticTokensWrapper.mockThemeBorderWidthRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderWidthThick() throws {
-        XCTAssertNotEqual(inheritedTheme.borderWidthThick, abstractTheme.borderWidthThick)
-        XCTAssertTrue(inheritedTheme.borderWidthThick == MockTheme.mockThemeBorderWidthRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderWidthThick, abstractTheme.borders.borderWidthThick)
+        XCTAssertTrue(inheritedTheme.borders.borderWidthThick == MockThemeBorderSemanticTokensWrapper.mockThemeBorderWidthRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderWidthThicker() throws {
-        XCTAssertNotEqual(inheritedTheme.borderWidthThicker, abstractTheme.borderWidthThicker)
-        XCTAssertTrue(inheritedTheme.borderWidthThicker == MockTheme.mockThemeBorderWidthRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderWidthThicker, abstractTheme.borders.borderWidthThicker)
+        XCTAssertTrue(inheritedTheme.borders.borderWidthThicker == MockThemeBorderSemanticTokensWrapper.mockThemeBorderWidthRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderWidthFocus() throws {
-        XCTAssertNotEqual(inheritedTheme.borderWidthFocus, abstractTheme.borderWidthFocus)
-        XCTAssertTrue(inheritedTheme.borderWidthFocus == MockTheme.mockThemeBorderWidthRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderWidthFocus, abstractTheme.borders.borderWidthFocus)
+        XCTAssertTrue(inheritedTheme.borders.borderWidthFocus == MockThemeBorderSemanticTokensWrapper.mockThemeBorderWidthRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderWidthFocusInset() throws {
-        XCTAssertNotEqual(inheritedTheme.borderWidthFocusInset, abstractTheme.borderWidthFocusInset)
-        XCTAssertTrue(inheritedTheme.borderWidthFocusInset == MockTheme.mockThemeBorderWidthRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderWidthFocusInset, abstractTheme.borders.borderWidthFocusInset)
+        XCTAssertTrue(inheritedTheme.borders.borderWidthFocusInset == MockThemeBorderSemanticTokensWrapper.mockThemeBorderWidthRawToken)
     }
 
     // MARK: - Semantic token - Border - Radius
 
     func testInheritedThemeCanOverrideSemanticTokenBorderRadiusNone() throws {
-        XCTAssertNotEqual(inheritedTheme.borderRadiusNone, abstractTheme.borderRadiusNone)
-        XCTAssertTrue(inheritedTheme.borderRadiusNone == MockTheme.mockThemeBorderRadiusRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderRadiusNone, abstractTheme.borders.borderRadiusNone)
+        XCTAssertTrue(inheritedTheme.borders.borderRadiusNone == MockThemeBorderSemanticTokensWrapper.mockThemeBorderRadiusRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderRadiusDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.borderRadiusDefault, abstractTheme.borderRadiusDefault)
-        XCTAssertTrue(inheritedTheme.borderRadiusDefault == MockTheme.mockThemeBorderRadiusRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderRadiusDefault, abstractTheme.borders.borderRadiusDefault)
+        XCTAssertTrue(inheritedTheme.borders.borderRadiusDefault == MockThemeBorderSemanticTokensWrapper.mockThemeBorderRadiusRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderRadiusShort() throws {
-        XCTAssertNotEqual(inheritedTheme.borderRadiusShort, abstractTheme.borderRadiusShort)
-        XCTAssertTrue(inheritedTheme.borderRadiusShort == MockTheme.mockThemeBorderRadiusRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderRadiusShort, abstractTheme.borders.borderRadiusShort)
+        XCTAssertTrue(inheritedTheme.borders.borderRadiusShort == MockThemeBorderSemanticTokensWrapper.mockThemeBorderRadiusRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderRadiusMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.borderRadiusMedium, abstractTheme.borderRadiusMedium)
-        XCTAssertTrue(inheritedTheme.borderRadiusMedium == MockTheme.mockThemeBorderRadiusRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderRadiusMedium, abstractTheme.borders.borderRadiusMedium)
+        XCTAssertTrue(inheritedTheme.borders.borderRadiusMedium == MockThemeBorderSemanticTokensWrapper.mockThemeBorderRadiusRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderRadiusTall() throws {
-        XCTAssertNotEqual(inheritedTheme.borderRadiusTall, abstractTheme.borderRadiusTall)
-        XCTAssertTrue(inheritedTheme.borderRadiusTall == MockTheme.mockThemeBorderRadiusRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderRadiusTall, abstractTheme.borders.borderRadiusTall)
+        XCTAssertTrue(inheritedTheme.borders.borderRadiusTall == MockThemeBorderSemanticTokensWrapper.mockThemeBorderRadiusRawToken)
     }
 
     // MARK: - Semantic token - Border - Style
 
     func testInheritedThemeCanOverrideSemanticTokenBorderStyleDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.borderStyleDefault, abstractTheme.borderStyleDefault)
-        XCTAssertTrue(inheritedTheme.borderStyleDefault == MockTheme.mockThemeBorderStyleRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderStyleDefault, abstractTheme.borders.borderStyleDefault)
+        XCTAssertTrue(inheritedTheme.borders.borderStyleDefault == MockThemeBorderSemanticTokensWrapper.mockThemeBorderStyleRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenBorderStyleDrag() throws {
-        XCTAssertNotEqual(inheritedTheme.borderStyleDrag, abstractTheme.borderStyleDrag)
-        XCTAssertTrue(inheritedTheme.borderStyleDrag == MockTheme.mockThemeBorderStyleRawToken)
+        XCTAssertNotEqual(inheritedTheme.borders.borderStyleDrag, abstractTheme.borders.borderStyleDrag)
+        XCTAssertTrue(inheritedTheme.borders.borderStyleDrag == MockThemeBorderSemanticTokensWrapper.mockThemeBorderStyleRawToken)
     }
 }
 
