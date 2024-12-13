@@ -41,16 +41,19 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`
+    ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`
     override public init(borders: AllBorderSemanticTokens,
                          opacities: AllOpacitySemanticTokens,
                          colors: AllColorSemanticTokens,
                          elevations: AllElevationSemanticTokens,
-                         fonts: AllFontSemanticTokens) {
+                         fonts: AllFontSemanticTokens,
+                         grids: AllGridSemanticTokens) {
         super.init(borders: borders,
                    opacities: opacities,
                    colors: colors,
                    elevations: elevations,
-                   fonts: fonts)
+                   fonts: fonts,
+                   grids: grids)
     }
 
     deinit { }

@@ -12,7 +12,7 @@
 //
 
 /// A class which wraps all **opacity semantic tokens** and expose them.
-/// This wrapper should be integrated as a ``OpacitySemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This wrapper should be integrated as a ``AllOpacitySemanticTokens`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users.
 open class OUDSOpacitySemanticTokensWrapper {
 

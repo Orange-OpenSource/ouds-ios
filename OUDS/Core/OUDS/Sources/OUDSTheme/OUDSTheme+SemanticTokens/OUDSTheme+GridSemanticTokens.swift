@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-extension OUDSTheme: GridSemanticTokens {
+extension OUDSGridSemanticTokensWrapper: GridSemanticTokens {
     @objc open var gridCompactColumnGap: GridSemanticToken { GridRawTokens.gridColumnGap100 }
     @objc open var gridCompactMargin: GridSemanticToken { GridRawTokens.gridMargin300 }
     @objc open var gridCompactMaxWidth: GridSemanticToken { GridRawTokens.gridMaxWidthCompact }

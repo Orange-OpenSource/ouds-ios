@@ -13,23 +13,30 @@
 
 /// A type alias only for ``BorderSemanticTokens`` so as to keep consistency with other type aliases
 /// merging several protocols
+/// For example ``OUDSBorderSemanticTokensWrapper`` matches this type alias.
 public typealias AllBorderSemanticTokens = BorderSemanticTokens
 
 /// A type alias only for ``OpacitySemanticTokens`` so as to keep consistency with other type aliases
-/// merging several protocols
+/// merging several protocols.
+/// For example ``OUDSOpacitySemanticTokensWrapper`` matches this type alias.
 public typealias AllOpacitySemanticTokens = OpacitySemanticTokens
+
+/// A type alias only for ``GridSemanticTokens`` so as to keep consistency with other type aliases
+/// merging several protocols.
+/// For example ``OUDGridSemanticTokensWrapper`` matches this type alias.
+public typealias AllGridSemanticTokens = GridSemanticTokens
 
 /// A type alias which merges  ``ColorSemanticTokens`` and ``ColorMultipleSemanticTokens``.
 /// It helps in the end to define a wrapper for all the semantic tokens of colors, multiple or not, generated or not.
-/// For example ``OUDSColorSemanticTokensWrapper`` uses this type alias.
+/// For example ``OUDSColorSemanticTokensWrapper`` matches this type alias.
 public typealias AllColorSemanticTokens = ColorSemanticTokens & ColorMultipleSemanticTokens
 
 /// A type alias which merges  ``ElevationSemanticTokens``, ``ElevationCompositeSemanticTokens`` and ``ElevationMultipleSemanticTokens``.
 /// It helps in the end to define a wrapper for all the semantic tokens of elevations, multiple or not, generated or not.
-/// For example ``OUDSElevationSemanticTokensWrapper`` uses this type alias.
+/// For example ``OUDSElevationSemanticTokensWrapper`` matches this type alias.
 public typealias AllElevationSemanticTokens = ElevationSemanticTokens & ElevationCompositeSemanticTokens & ElevationMultipleSemanticTokens
 
 /// A type alias which merges  ``FontSemanticTokens``, ``FontCompositeSemanticTokens`` and ``FontMultipleSemanticTokens``.
 /// It helps in the end to define a wrapper for all the semantic tokens of fonts, multiple, composite, or not, generated or not.
-/// For example ``OUDSFontSemanticTokensWrapper`` uses this type alias.
+/// For example ``OUDSFontSemanticTokensWrapper`` matches this type alias.
 public typealias AllFontSemanticTokens = FontSemanticTokens & FontCompositeSemanticTokens & FontMultipleSemanticTokens
