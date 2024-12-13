@@ -26,7 +26,7 @@ struct ColorTokenPage: View {
     var body: some View {
         Group {
             Section {
-                ShowcaseCode(code: "theme.colorBgPrimary.color(for: colorScheme)")
+                ShowcaseCode(code: "theme.colors.colorBgPrimary.color(for: colorScheme)")
             }
             Section { illustrationForAction() } header: { header("Action") }
             Section { illustrationForAlways() } header: { header("Always") }
@@ -156,7 +156,7 @@ struct ColorTokenPage: View {
                         style: theme.borders.borderStyleDefault,
                         width: theme.borders.borderWidthThin,
                         radius: theme.borders.borderRadiusNone,
-                        color: theme.colorBorderDefault
+                        color: theme.colors.colorBorderDefault
                     )
             }
         }

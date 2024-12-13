@@ -48,7 +48,7 @@ struct ShowcaseElementsPage: View {
                 .padding(.all, theme.spaceFixedMedium)
                 .navigationbarMenuForThemeSelection()
             }
-            .background(theme.colorBgPrimary.color(for: colorScheme))
+            .background(theme.colors.colorBgPrimary.color(for: colorScheme))
         }
         .navigationViewStyle(.stack)
     }

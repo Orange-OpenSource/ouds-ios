@@ -12,6 +12,7 @@
 //
 
 import OUDSThemesOrange
+import OUDSTokensSemantic
 
 /// This is an override of the default basic `OrangeTheme` with some inverted colors.
 /// It can overrides any properties from its superclass, and can be derived too.
@@ -21,7 +22,7 @@ public final class InverseTheme: OrangeTheme, @unchecked Sendable {
 
     /// Initializes the `InverseTheme`
     override public init() {
-        super.init()
+        super.init(colors: InverseThemeColorSemanticTokensWrapper())
     }
 
     deinit { }

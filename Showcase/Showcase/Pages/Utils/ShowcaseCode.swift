@@ -46,13 +46,13 @@ struct ShowcaseCode: View {
                 HStack {
                     Text("app_tokens_code_title_label")
                         .typeBodyStrongLarge(theme)
-                        .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                         .padding(.vertical, theme.spacePaddingInlineShort)
                     Image("ic_chevron-up")
                         .resizable()
                         .renderingMode(.template)
                         .rotationEffect(Angle.degrees(isCodeVisible ? 0 : 180))
-                        .foregroundColor(theme.colorSurfaceBrandPrimary.color(for: colorScheme))
+                        .foregroundColor(theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme))
                         .frame(width: 20, height: 20)
                         .padding(.trailing, theme.spacePaddingInlineMedium)
                         .accessibilityLabel("app_tokens_code_visibility_button_a11y")
@@ -68,7 +68,7 @@ struct ShowcaseCode: View {
         HStack(alignment: .firstTextBaseline, spacing: theme.spacePaddingBlockMedium) {
             Text(code)
                 .font(.system(.body, design: .monospaced))
-                .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .padding(.vertical, theme.spacePaddingInlineShort)
 
             Button(action: {
@@ -81,7 +81,7 @@ struct ShowcaseCode: View {
                     Image("ic_copy")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colorSurfaceStatusPositiveMuted.color(for: colorScheme))
+                        .foregroundColor(theme.colors.colorSurfaceStatusPositiveMuted.color(for: colorScheme))
                         .frame(width: 24, height: 24)
                         .padding(.trailing, theme.spacePaddingInlineMedium)
                         .alignmentGuide(.firstTextBaseline) { $0[.bottom] * 0.7 }
@@ -92,7 +92,7 @@ struct ShowcaseCode: View {
         .frame(minWidth: 72, maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spacePaddingInlineShort)
         .padding(.leading, theme.spacePaddingInlineMedium)
-        .background(theme.colorBgSecondary.color(for: colorScheme))
+        .background(theme.colors.colorBgSecondary.color(for: colorScheme))
         .accessibilityElement(children: .combine)
         .accessibilityHint("app_tokens_code_copy_button_a11y")
         .overlay(
@@ -102,7 +102,7 @@ struct ShowcaseCode: View {
                 .oudsBorder(style: theme.borders.borderStyleDefault,
                             width: theme.borders.borderWidthThin,
                             radius: theme.borders.borderRadiusDefault,
-                            color: theme.colorBorderDefault)
+                            color: theme.colors.colorBorderDefault)
         )
     }
 

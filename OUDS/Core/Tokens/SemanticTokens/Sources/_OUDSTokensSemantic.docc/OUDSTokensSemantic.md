@@ -111,7 +111,7 @@ struct SomeView: View {
     var body: some View {
         Rectangle()
             .frame(width: theme.sizeIconDecorative2Xl, height: theme.sizeIconDecorativeXl)
-            .foregroundColor(theme.colorBgSecondary.color(for: colorScheme))
+            .foregroundColor(theme.colors.colorBgSecondary.color(for: colorScheme))
             .shadow(elevation: theme.elevationRaised.elevation(for: colorScheme))
             .padding(.bottom, theme.spaceFixedNone)
     }

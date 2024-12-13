@@ -25,13 +25,13 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorBgEmphasized:
-                return theme.colorBgEmphasized
+                return theme.colors.colorBgEmphasized
             case .colorBgPrimary:
-                return theme.colorBgPrimary
+                return theme.colors.colorBgPrimary
             case .colorBgSecondary:
-                return theme.colorBgSecondary
+                return theme.colors.colorBgSecondary
             case .colorBgTertiary:
-                return theme.colorBgTertiary
+                return theme.colors.colorBgTertiary
             }
         }
     }

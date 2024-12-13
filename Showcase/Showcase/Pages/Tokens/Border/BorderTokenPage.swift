@@ -37,7 +37,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("app_tokens_border_width_label")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
 
             Section {
@@ -50,7 +50,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("app_tokens_border_radius_label")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
 
             Section {
@@ -63,7 +63,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("app_tokens_border_style_label")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
         }
         .padding(.horizontal, theme.spaceFixedMedium)
@@ -75,7 +75,7 @@ struct BorderTokenPage: View {
 
         var body: some View {
             Rectangle()
-                .fill(theme.colorBgSecondary.color(for: colorScheme))
+                .fill(theme.colors.colorBgSecondary.color(for: colorScheme))
                 .frame(width: 64, height: 64)
         }
     }
@@ -96,7 +96,7 @@ struct BorderTokenPage: View {
                     .oudsBorder(style: theme.borders.borderStyleDefault,
                                 width: token,
                                 radius: theme.borders.borderRadiusNone,
-                                color: theme.colorBorderDefault)
+                                color: theme.colors.colorBorderDefault)
             }
         }
     }
@@ -117,7 +117,7 @@ struct BorderTokenPage: View {
                     .oudsBorder(style: theme.borders.borderStyleDefault,
                                 width: theme.borders.borderWidthDefault,
                                 radius: token,
-                                color: theme.colorBorderDefault)
+                                color: theme.colors.colorBorderDefault)
             }
         }
     }
@@ -138,7 +138,7 @@ struct BorderTokenPage: View {
                     .oudsBorder(style: token,
                                 width: theme.borders.borderWidthDefault,
                                 radius: theme.borders.borderRadiusNone,
-                                color: theme.colorBorderDefault)
+                                color: theme.colors.colorBorderDefault)
             }
         }
     }

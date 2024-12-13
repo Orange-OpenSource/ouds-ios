@@ -21,15 +21,25 @@ import OUDSTokensSemantic
 /// Uses its own tokens wrappers for tests:
 /// - ``MockThemeBorderSemanticTokensWrapper`` for borders
 /// - ``MockThemeOpacitySemanticTokensWrapper`` for opacities
+/// - ``MockThemeColorSemanticTokensWrapper`` for colors
 open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
         self.init(customFont: nil)
     }
 
+    // For `OtherMockTheme`
+    init(colors: AllColorSemanticTokens) {
+        super.init(borders: MockThemeBorderSemanticTokensWrapper(),
+                   opacities: MockThemeOpacitySemanticTokensWrapper(),
+                   colors: colors,
+                   customFontFamily: nil)
+    }
+
     init(customFont: String?) {
         super.init(borders: MockThemeBorderSemanticTokensWrapper(),
                    opacities: MockThemeOpacitySemanticTokensWrapper(),
+                   colors: MockThemeColorSemanticTokensWrapper(),
                    customFontFamily: customFont)
     }
 

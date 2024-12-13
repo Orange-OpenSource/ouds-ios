@@ -30,15 +30,15 @@ struct GridTokenPage: View {
                 Image(decorative: "il_tokens_grid_column_margin")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .background(theme.colorBgEmphasized.color(for: colorScheme))
+                    .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
                 Image(decorative: "il_tokens_grid_min_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .background(theme.colorBgEmphasized.color(for: colorScheme))
+                    .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
                 Image(decorative: "il_tokens_grid_max_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .background(theme.colorBgEmphasized.color(for: colorScheme))
+                    .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
             }
 
             Section {

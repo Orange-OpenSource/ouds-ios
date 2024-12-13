@@ -81,7 +81,7 @@ final class OUDSTokensOpacityUITests: XCTestCase {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
                 OpacityTokenPage.IllustrationOpacity(opacityName: namedToken)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the element in a UIHostingController for snapshot testing

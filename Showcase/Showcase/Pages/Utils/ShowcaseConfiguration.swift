@@ -41,6 +41,6 @@ struct ShowcaseConfiguration<Configuration>: View where Configuration: View {
         .oudsBorder(style: theme.borders.borderStyleDefault,
                     width: theme.borders.borderWidthThin,
                     radius: theme.borders.borderRadiusMedium,
-                    color: theme.colorBorderDefault)
+                    color: theme.colors.colorBorderDefault)
     }
 }

@@ -81,7 +81,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
                 BorderTokenPage.IllustrationWidth(namedWidth: namedToken)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
@@ -107,7 +107,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
                 BorderTokenPage.IllustrationRadius(namedRadius: namedToken)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
@@ -133,7 +133,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
                 BorderTokenPage.IllustrationStyle(namedStyle: namedToken)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the element in a UIHostingController for snapshot testing

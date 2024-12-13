@@ -105,7 +105,7 @@ struct ButtonIllustration: View {
             }
             .padding(.all, theme.spaceFixedMedium)
         }
-        .background(theme.colorBgSecondary.color(for: colorScheme))
+        .background(theme.colors.colorBgSecondary.color(for: colorScheme))
     }
 }
 

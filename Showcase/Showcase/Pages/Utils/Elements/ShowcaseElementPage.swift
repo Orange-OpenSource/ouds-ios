@@ -52,18 +52,18 @@ struct ShowcaseElementPage: View {
             .listRowSeparator(Visibility.hidden)
             .padding(.horizontal, theme.spaceFixedNone)
             .padding(.bottom, theme.spaceFixedMedium)
-            .background(theme.colorBgPrimary.color(for: colorScheme))
+            .background(theme.colors.colorBgPrimary.color(for: colorScheme))
 
             illustration
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
                 .padding(.bottom, theme.spaceFixedMedium)
-                .background(theme.colorBgPrimary.color(for: colorScheme))
+                .background(theme.colors.colorBgPrimary.color(for: colorScheme))
         }
         .listStyle(.plain)
         .padding(.top, theme.spaceFixedNone)
         .padding(.horizontal, theme.spaceFixedNone)
-        .background(theme.colorBgPrimary.color(for: colorScheme))
+        .background(theme.colors.colorBgPrimary.color(for: colorScheme))
         .navigationTitle(LocalizedStringKey(name))
         .navigationbarMenuForThemeSelection()
         .oudsRequestAccessibleFocus(_requestFocus)

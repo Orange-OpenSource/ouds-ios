@@ -35,6 +35,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All opacity semantic tokens exposed in one object
     public let opacities: OpacitySemanticTokens
 
+    /// All color semantic tokens exposed in one object
+    public let colors: AllColorSemanticTokens
+
     /// A theme can have a custom font which is not the system font
     public let customFontFamily: FontFamilySemanticToken?
 
@@ -45,10 +48,13 @@ open class OUDSTheme: @unchecked Sendable {
     /// - Parameters:
     ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensWrapper`
     ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensWrapper`
+    ///    - colors: An object providing all the color semantic tokens, by default `OUDSColorSemanticTokensWrapper`
     public init(borders: BorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
-                opacities: OpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper()) {
+                opacities: OpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
+                colors: AllColorSemanticTokens = OUDSColorSemanticTokensWrapper()) {
         self.borders = borders
         self.opacities = opacities
+        self.colors = colors
         customFontFamily = nil
     }
 
@@ -56,12 +62,15 @@ open class OUDSTheme: @unchecked Sendable {
     /// - Parameters:
     ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
     ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
+    ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
     ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(borders: BorderSemanticTokens,
                 opacities: OpacitySemanticTokens,
+                colors: AllColorSemanticTokens,
                 customFontFamily: FontFamilySemanticToken?) {
         self.borders = borders
         self.opacities = opacities
+        self.colors = colors
         self.customFontFamily = customFontFamily
     }
 

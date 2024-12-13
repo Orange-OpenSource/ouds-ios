@@ -132,7 +132,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -161,7 +161,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -190,7 +190,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -219,7 +219,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -248,7 +248,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -277,7 +277,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -306,7 +306,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -335,7 +335,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -364,7 +364,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -393,7 +393,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -422,7 +422,7 @@ final class OUDSTokensColorUITests: XCTestCase {
             // Generate the illustration for the specified color token
             let illustration = OUDSThemeableView(theme: theme) {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing

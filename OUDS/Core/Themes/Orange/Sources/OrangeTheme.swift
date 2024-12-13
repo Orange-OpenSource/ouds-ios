@@ -14,24 +14,37 @@
 import OUDS
 import OUDSTokensSemantic
 
-/// This is an override of the default basic ``OUDSTheme`` and should be seen as the default theme for the OUDS library.
+/// This is an override of the default basic ``OUDSTheme`` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
+/// The `InverseTheme` inherits from this `OrangeTheme`.
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     // MARK: - Initializers
 
-    /// Initializes the `OrangeTheme`
+    /// Initializes the `OrangeTheme` with its `OrangeThemeColorSemanticTokensWrapper` for colors token management
     public init() {
-        super.init()
+        super.init(colors: OrangeThemeColorSemanticTokensWrapper())
+    }
+
+    /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations.
+    /// This constructor is mainly used by `InverseTheme`.
+    /// - Parameters:
+    ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
+    public init(colors: AllColorSemanticTokens) {
+        super.init(colors: colors)
     }
 
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations
     /// - Parameters:
     ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
     ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation
+    ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
     override public init(borders: BorderSemanticTokens,
-                         opacities: OpacitySemanticTokens) {
-        super.init(borders: borders)
+                         opacities: OpacitySemanticTokens,
+                         colors: AllColorSemanticTokens) {
+        super.init(borders: borders,
+                   opacities: opacities,
+                   colors: colors)
     }
 
     deinit { }

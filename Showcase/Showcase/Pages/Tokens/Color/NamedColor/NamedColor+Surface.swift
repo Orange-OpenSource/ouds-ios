@@ -34,31 +34,31 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorSurfaceBrandPrimary:
-                return theme.colorSurfaceBrandPrimary
+                return theme.colors.colorSurfaceBrandPrimary
             case .colorSurfaceStatusAccentEmphasized:
-                return theme.colorSurfaceStatusAccentEmphasized
+                return theme.colors.colorSurfaceStatusAccentEmphasized
             case .colorSurfaceStatusAccentMuted:
-                return theme.colorSurfaceStatusAccentMuted
+                return theme.colors.colorSurfaceStatusAccentMuted
             case .colorSurfaceStatusInfoEmphasized:
-                return theme.colorSurfaceStatusInfoEmphasized
+                return theme.colors.colorSurfaceStatusInfoEmphasized
             case .colorSurfaceStatusInfoMuted:
-                return theme.colorSurfaceStatusInfoMuted
+                return theme.colors.colorSurfaceStatusInfoMuted
             case .colorSurfaceStatusNegativeEmphasized:
-                return theme.colorSurfaceStatusNegativeEmphasized
+                return theme.colors.colorSurfaceStatusNegativeEmphasized
             case .colorSurfaceStatusNegativeMuted:
-                return theme.colorSurfaceStatusNegativeMuted
+                return theme.colors.colorSurfaceStatusNegativeMuted
             case .colorSurfaceStatusNeutralEmphasized:
-                return theme.colorSurfaceStatusNeutralEmphasized
+                return theme.colors.colorSurfaceStatusNeutralEmphasized
             case .colorSurfaceStatusNeutralMuted:
-                return theme.colorSurfaceStatusNeutralMuted
+                return theme.colors.colorSurfaceStatusNeutralMuted
             case .colorSurfaceStatusPositiveEmphasized:
-                return theme.colorSurfaceStatusPositiveEmphasized
+                return theme.colors.colorSurfaceStatusPositiveEmphasized
             case .colorSurfaceStatusPositiveMuted:
-                return theme.colorSurfaceStatusPositiveMuted
+                return theme.colors.colorSurfaceStatusPositiveMuted
             case .colorSurfaceStatusWarningEmphasized:
-                return theme.colorSurfaceStatusWarningEmphasized
+                return theme.colors.colorSurfaceStatusWarningEmphasized
             case .colorSurfaceStatusWarningMuted:
-                return theme.colorSurfaceStatusWarningMuted
+                return theme.colors.colorSurfaceStatusWarningMuted
             }
         }
     }

@@ -85,7 +85,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
                 SizeTokenPage.IllustrationIconDecorative(namedSize: namedToken)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
@@ -111,7 +111,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
                 SizeTokenPage.IllustrationIconWithLabel(namedSize: namedToken)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
