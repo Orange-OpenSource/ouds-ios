@@ -1,5 +1,18 @@
 # OUDS Swift Package
 
+- [Summary](#summary)
+- [Exposed SPM modules](#exposed-spm-modules)
+- [Modules](#modules)
+- [Core](#core)
+  * [Components](#components)
+  * [Themes](#themes)
+  * [Tokens](#components)
+  * [Component tokens](#component-tokens)  
+  * [Semantic tokens](#semantic-tokens)
+  * [Raw tokens](#raw-tokens)
+- [Foundations](#foundations)
+- [Structure](#structure)
+  
 ## Summary
 
 This is the _Swift package_ for the iOS library of *Orange Unified Design System*.
@@ -96,3 +109,30 @@ We also choose to add in _extension_ all the tokens values in a separated file s
 ## Foundations
 
 _Foundations_ contain some extensions and objects shared between any higher levels of the library.
+
+## Structure
+
+Here are some explainations about the structure of the directory:
+- Core: contains components, OUDS, themes and tokens modules 
+- Core/Components: contains components and also helpers and view modifiers for them
+- Core/OUDS/OUDSTheme: contains the definition of the abstract theme with generated code and also unit tests
+- Core/OUDS/OUDSTheme/OUDSTheme+SemanticTokens: contains all the semantic tokens values, generated or not
+- Core/Themes: contains the themes definitions exposed through OUDS
+- Core/Themes/Inverse: contains the definition of the inverse theme, and tests
+- Core/Themes/Orangee: contains the definition of the Orange theme, and tests
+- Core/Themes/Orange/Declarations: contains declaration of raw tokens dedicated to Orange theme
+- Core/Themes/Orange/TypeAliases: contains declaration of type aliases for raw tokens dedicated to Orange theme
+- Core/Themes/Orange/Values: contains definitions of raw tokens dedicated to Orange theme, generated or not
+- Core/Tokens/ComponentTokens: contains components tokens
+- Core/Tokens/RawTokens: contains declarations of raw tokens, and tests
+- Core/Tokens/RawTokens/Composites: contains declarations of composite raw tokens
+- Core/Tokens/RawTokens/Declarations: contains declarations of not-composite raw tokens
+- Core/Tokens/RawTokens/TypeAliases: contains declarations of typealiases for raw tokens
+- Core/Tokens/RawTokens/Values: contains definitions of raw tokens, generated or not, composites or not
+- Core/Tokens/SemanticTokens: contains declarations of semantic tokens, and tests
+- Core/Tokens/SemanticTokens/Multiples: contains declarations of multiple semantic tokens
+- Core/Tokens/SemanticTokens/TypeAliases: contains declarations of typealiases for semantic tokens tokens
+- Core/Tokens/SemanticTokens/Values: contains declarations of raw tokens, generated or not, composites, multiple or not
+- Core/Tokens/SemanticTokens/Wrappers: contains definitions of wrappers or tokens
+- Foundations: contains helpers, low level objects and utilities and tests
+- Modules: contains modules and tests
