@@ -10,7 +10,7 @@ The catalog of all components provided by OUDS. It contains also `View` extensio
 
 Some helpers are provided through this module.
 
-### Apply shadow effect
+### Apply a specific shadow effect (elevation tokens)
 
 The unified design system implemented by OUDS iOS library allows to apply *elevation effets* on a `View`, i.e. a shadow under the component.
 Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a _spread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
@@ -29,7 +29,7 @@ public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: 0, y: 4,
 // Blur will be used to compute the radius value
 ```
 
-### Apply a specific typography
+### Apply a specific typography (font tokens)
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
@@ -62,6 +62,24 @@ myView.typeBodyDefaultSmall(theme)
 myView.typeLabelStrongXLarge(theme)
 
 // Etc.
+```
+
+### Apply a specific border (border tokens)
+
+This module exposes the helper `oudsBorder(style:width:radius:color)` so as to apply border semantic tokens on a view in order to define a border effect.
+The helper is available through `View`, and tokens through the wrapper of the theme.
+
+```swift
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        SomeView()
+        .oudsBorder(
+             style: theme.borders.borderStyleDefault,
+             width: theme.borders.borderWidthThin,
+             radius: theme.borders.borderRadiusNone,
+             color: theme.colors.colorBorderDefault)
+     }
 ```
 
 ## Topics

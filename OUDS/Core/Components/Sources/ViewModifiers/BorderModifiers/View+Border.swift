@@ -17,7 +17,20 @@ import SwiftUI
 extension View {
 
     /// Modifies the current `View` to apply a border.
-    /// 
+    ///
+    /// ```swift
+    ///     @Environment(\.theme) private var theme
+    ///
+    ///    var body: some View {
+    ///        SomeView()
+    ///        .oudsBorder(
+    ///             style: theme.borders.borderStyleDefault,
+    ///             width: theme.borders.borderWidthThin,
+    ///             radius: theme.borders.borderRadiusNone,
+    ///             color: theme.colors.colorBorderDefault)
+    ///     }
+    /// ```
+    ///
     /// - Parameters
     ///     - style: The style to apply on the component
     ///     - width: The width of the border

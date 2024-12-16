@@ -25,6 +25,24 @@
 ///
 /// This protocol makes themes able to provide and override `FontCompositeRawToken` gathered in ``MultipleFontCompositeRawTokens`` instances.
 /// This `FontCompositeRawToken` is not managed by tokenator yet as it is composed by several properties.
+///
+/// This ``FontCompositeSemanticTokens`` protocol contains a set of ``MultipleFontCompositeRawTokens``.
+/// They can be applied to views and components using the helpers provided through `View`, loading four the the font famoly to use:
+///
+/// ```swift
+///      @Environment(\.theme) var theme
+///
+///      // Apply theme.fonts.typeDisplayLarge
+///      Text("Foo bar wizz").typeDisplayLarge(theme)
+///
+///      // Apply theme.fonts.typeHeadingMedium
+///      Text("Foo bar wizz").typeHeadingMedium(theme)
+///
+///      // Apply theme.fonts.typeBodyDefaultSmall
+///      Text("Foo bar wizz").typeBodyDefaultSmall(theme)
+///
+///      // Etc.
+/// ```
 public protocol FontCompositeSemanticTokens {
 
     // MARK: - Semantic tokens - Typography - Composites - Display

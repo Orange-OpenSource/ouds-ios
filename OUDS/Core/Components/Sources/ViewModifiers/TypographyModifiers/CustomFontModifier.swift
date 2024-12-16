@@ -14,8 +14,8 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` applying a custom font on a `View`
-/// Note that `CustomFontModifier` expects to lad a custom external font and not any font embeded in the device.
+/// A `ViewModifier` applying a custom font on a `View`.
+/// Note that `CustomFontModifier` expects to load a custom external font and not any font embeded in the device.
 struct CustomFontModifier: ViewModifier {
 
     // MARK: - Properties
