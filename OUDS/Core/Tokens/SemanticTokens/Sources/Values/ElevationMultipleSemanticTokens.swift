@@ -29,8 +29,8 @@
 /// In few words:
 /// ```swift
 ///         // Some color raw tokens, defined by the tokenator (in ColorRawTokens+Values.swift)
-///         public static let colorDecorativeAmber100: ColorRawToken = "#FFF0CC"
-///         public static let colorDecorativeAmber200: ColorRawToken = "#FFE199"
+///         public static let colorDecorativeAmber100: ColorRawToken = "#FFF0CC00"
+///         public static let colorDecorativeAmber200: ColorRawToken = "#FFE199FF"
 ///
 ///         // The elevation color semantic tokens using them
 ///         // declared (in ElevationSemanticTokens.swift) and defined (in OUDSTheme+ElevationSemanticTokens.swift) by the tokenator

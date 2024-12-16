@@ -12,11 +12,11 @@ In other words, this ``OrangeTheme`` is bsaed on the abstract `OUDSTheme`, uses 
 
 ## How to use the theme
 
-You can use ``OrangeTheme`` directly. To use the ``OrangeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``OrangeTheme``. Keep in mind the themes are *Swift objects* and can be heavy, so you maye use only ns instance as singleton and not store any properties.
+You can use ``OrangeTheme`` directly. To use the ``OrangeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``OrangeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you maye use only as instance as singleton and not store any properties.
 
 ```swift
 import OUDS                 // To get OUDSThemeableView
-
+import OUDSThemeOrange      // To get OrangeTheme
 import SwiftUI
 
 @main
@@ -40,12 +40,7 @@ import SwiftUI
 struct SomeView: View {
 
     // Get OUDS environment variable for theme thanks to themeable view
-    @Environment(\.theme) private var theme
-
-    // Get OUDS environment variable for size class
-    @Environment(\.oudsHorizontalSizeClass) private var sizeClass
-    
-    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.theme) var theme
     
     var body: some View {
         
@@ -82,6 +77,8 @@ You will have to override the tokens wrapper you need. To do that, make a subcla
 ```swift
 import OUDSTokensSemantic           // To use semantic tokens if needed
 import OUDSTokensRaw                // To use raw tokens if needed
+
+// Token wrapper for spaces
 
 class YourAppThemeSpaceTokensWrapper: OUDSSpaceSemanticTokensWrapper {
     override var spaceFixedMedium: SpaceSemanticToken {

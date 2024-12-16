@@ -15,9 +15,35 @@ import OUDS
 import OUDSFoundations
 import OUDSTokensSemantic
 
-/// This is an override of the default basic ``OUDSTheme`` and **must be seen as the default theme for the OUDS library**.
+/// This is an override of the default basic `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
 /// The `InverseTheme` inherits from this `OrangeTheme`.
+///
+/// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environement variable.
+///
+/// ```swift
+///     import OUDS                 // To get OUDSThemeableView
+///     import OUDSThemeOrange      // To get OrangeTheme
+///     import SwiftUI
+///
+///     @main
+///     struct YourApp: App {
+///         var body: some Scene {
+///             WindowGroup {
+///                 OUDSThemeableView(theme: OrangeTheme()) {
+///                     // Your root view
+///                 }
+///             }
+///         }
+///     }
+/// ```
+///
+/// Then get it:
+/// ```swift
+///     import OUDS
+///
+///     @Environment(\.theme) var theme
+/// ```
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     // MARK: - Initializers

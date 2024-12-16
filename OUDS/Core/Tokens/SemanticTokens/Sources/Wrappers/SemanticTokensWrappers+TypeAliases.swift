@@ -23,7 +23,7 @@ public typealias AllOpacitySemanticTokens = OpacitySemanticTokens
 
 /// A type alias only for ``GridSemanticTokens`` so as to keep consistency with other type aliases
 /// merging several protocols.
-/// For example ``OUDGridSemanticTokensWrapper`` matches this type alias.
+/// For example ``OUDSGridSemanticTokensWrapper`` matches this type alias.
 public typealias AllGridSemanticTokens = GridSemanticTokens
 
 /// A type alias which merges  ``ColorSemanticTokens`` and ``ColorMultipleSemanticTokens``.

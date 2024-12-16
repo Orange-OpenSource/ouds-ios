@@ -46,54 +46,137 @@ It is quite simple, you have to follow several steps.
 
 You will have to create a _Swift class_ which will inherit from `OrangeTheme` or `OUDSTheme`.
 You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes. We do not recommend to use directly the `OUDSTheme` as is.
-Then, you should override the _semantic tokens_ and _components tokens_ you want ; we recommend to use _Swift extensions_ for clarity reasons.
+Then, you should override the _semantic tokens_ and _components tokens_ you want using the wrappers ; we recommend to use _Swift extensions_ for clarity reasons.
 If your theme needs to define its own _raw tokens_, you can also define them using a `enum` and the _raw tokens types_.
 
-First, use the suitable imports:
+### By subclassing
+
+You may want to define your own theme, thus you can override the `OrangeTheme` with your own class or just override the wrappers.
+
+You will have to override the tokens wrapper you need. To do that, make a subclass of the wrapper you target:
+- spaces tokens are `OUDSSpaceSemanticTokensWrapper`
+- sizes tokens are in `OUDSSizeSemanticTokensWrapper`
+- colors tokens are all defined in `OrangeThemeColorSemanticTokensWrapper`
+- borders tokens are in `OUDSBorderSemanticTokensWrapper`
+- elevations tokens are in `OUDSElevationSemanticTokensWrapper`
+- opacity tokens are in `OUDSOpacitySemanticTokensWrapper`
+- grid tokens are in `OUDSGridSemanticTokensWrapper`
+- font tokens are in `OUDSFontSemanticTokensWrapper`
+
+Find bellow some example
+
 ```swift
-import OUDS                 // To get OUDSTheme
-import OUDSTokensRaw        // To get raw tokens
-import OUDSTokensSemantic   // To get semantic tokens
-import OUDSTokensComponent  // To get component tokens
-import OUDSThemesOrange     // To override OrangeTheme (which is default theme)
-```
+import OUDSTokensSemantic           // To use semantic tokens if needed
+import OUDSTokensRaw                // To use raw tokens if needed
 
-Then, declare the class:
-```
-// If you jsut want to make a subtheme with some changes
-final class YourCustomTheme: OrangeTheme { }
+// Token wrapper for spaces
 
-// Or for white label themes or themes with more configurations not that much related to OrangeTheme, choose the one you want
-final class YourCustomTheme: OUDSTheme { }
-```
+class YourAppThemeSpaceTokensWrapper: OUDSSpaceSemanticTokensWrapper {
+    override var spaceFixedMedium: SpaceSemanticToken {
+        DimensionRawTokens.dimension400
+    }
+    override var spaceScaledShort: MultipleSpaceSemanticTokens {
+        MultipleSpaceSemanticTokens(compact: spaceFixedJumbo, regular: spaceFixedJumbo)
+    }
+}
 
-And define the theme by overriding the values you want:
+// Token wrapper for sizes
 
-```
-extension YourCustomTheme {
+class YourAppThemeSizeTokensWrapper: OUDSSizeSemanticTokensWrapper {
+    override var sizeIconDecorative2xl: SizeSemanticToken {
+        DimensionRawTokens.dimension300
+    }
+    override var sizeIconDecorativeMd: SizeSemanticToken {
+        DimensionRawTokens.dimension900
+    }
+}
 
-    // Override components tokens
-    // Not define dyet
-    
-    // Override colors semantic tokens
-    override public var colorBgPrimary: ColorSemanticToken { MultipleColorSemanticTokens(ColorRawTokens.colorFunctionalDarkGray880) }
-    
-    // Override some fonts semantic tokens
-    public var fontFamily: FontFamilySemanticToken { FontRawTokens.fontFamilySystemSFPro }
-    public var fontFamilyBody: FontFamilySemanticToken { MyOwnFontRawTokens.someFontBody }
+// Token wrapper for colors
 
-    // Etc.
+class YourAppThemeColorTokensWrapper: OrangeThemeColorSemanticTokensWrapper {
+    override var colorBgSecondary: MultipleColorSemanticTokens {
+        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
+    }
+    override var colorActionEnabled: MultipleColorSemanticTokens {
+        MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeShockingPink100, dark: ColorRawTokens.colorFunctionalScarlet600)
+    }
+}
+
+// Token wrapper for border
+
+class YourAppThemeBorderTokensWrapper: OUDSBorderSemanticTokensWrapper {
+    override var borderStyleDefault: BorderStyleSemanticToken {
+        BorderRawTokens.borderStyleDashed
+    }
+    override var borderWidthMedium: BorderWidthSemanticToken {
+        BorderRawTokens.borderWidth100
+    }
+    override var borderRadiusTall: BorderRadiusSemanticToken {
+        BorderRawTokens.borderRadius800
+    }
+}
+
+// Token wrapper for elevation
+
+class YourAppThemeElevationTokensWrapper: OUDSElevationSemanticTokensWrapper {
+    override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
+        ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_4_600)
+    }
+}
+
+// Token wrapper for opacity
+
+class YourAppThemeOpacityTokensWrapper: OUDSOpacitySemanticTokensWrapper {
+    override var opacityStrong: OpacitySemanticToken {
+        OpacityRawTokens.opacity920
+    }
+}
+
+// Token wrapper for grid
+
+class YourAppThemeGridTokensWrapper: OUDSGridSemanticTokensWrapper {
+    override var gridExtraCompactColumnGap: GridSemanticToken {
+        GridRawTokens.gridColumnGap200
+    }
+    override var gridCompactColumnGap: GridSemanticToken {
+        GridRawTokens.gridColumnGap200
+    }
+    override var gridRegularColumnGap: GridSemanticToken {
+        GridRawTokens.gridColumnGap200
+    }
+}
+
+// Token wrapper for font
+
+class YourAppThemeFontTokensWrapper: OUDSFontSemanticTokensWrapper {
+    override var typeDisplayLarge: MultipleFontCompositeRawTokens {
+        MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
+    }
+    override var typeCodeMedium: MultipleFontCompositeRawTokens {
+        MultipleFontCompositeRawTokens(FontRawTokens.typeBold300)
+    }
 }
 ```
 
-You can defined your own set of raw tokens, for example:
-```
-public typealias MyOwnFontRawTokens = FontRawTokens // Refer to type FontRawTokens for consistency, declared in OUDSTokensRaw
+Then define your own them class and assign the wrappers:
 
-public enum MyOwnFontRawTokens {
+```swift
+import OUDS
+import OUDSThemesOrange             // To get OrangeTheme
 
-    public static let someFontBody: MyOwnFontRawTokens = "Arial"
+// Define your theme
+class YourAppTheme: OrangeTheme {
     
+    override init() {
+        super.init(colors: YourAppThemeColorTokensWrapper(),
+                   borders: YourAppThemeBorderTokensWrapper(),
+                   elevations: YourAppThemeElevationTokensWrapper(),
+                   fonts: YourAppThemeFontTokensWrapper(),
+                   grids: YourAppThemeGridTokensWrapper(),
+                   opacities: YourAppThemeOpacityTokensWrapper(),
+                   sizes: YourAppThemeSizeTokensWrapper(),
+                   spaces: YourAppThemeSpaceTokensWrapper())
+    }
 }
 ```
 
@@ -106,10 +189,22 @@ import OUDS // To get ``OUDSThemeableView``
 struct MyAppRootView: View {
 
     var body: some View {
-        OUDSThemeableView(theme: YourCustomTheme()) {
+        OUDSThemeableView(theme: YourAppTheme()) {
             // ...
         }
     }
+}
+```
+
+You can define your own set of raw tokens, and asign them in the semantic tokens you override as values, for example:
+
+```
+public typealias MyOwnFontRawTokens = FontRawTokens // Refer to type FontRawTokens for consistency, declared in OUDSTokensRaw
+
+public enum MyOwnFontRawTokens {
+
+    public static let someFontBody: MyOwnFontRawTokens = "Arial"
+    
 }
 ```
 

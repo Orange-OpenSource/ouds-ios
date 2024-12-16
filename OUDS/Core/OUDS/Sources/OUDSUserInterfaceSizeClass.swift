@@ -69,6 +69,12 @@ extension EnvironmentValues {
 ///
 /// See: https://developer.apple.com/design/human-interface-guidelines/layout#iOS-iPadOS-device-size-classes
 /// Remark: This enum is defined as a string to easily display its raw value.
+///
+/// To use it:
+/// ```swift
+///     @Environment(\.oudsHorizontalSizeClass) var horizontalSizeClass
+///     @Environment(\.oudsVerticalSizeClass) var verticalSizeClass
+/// ```
 public enum OUDSUserInterfaceSizeClass: String, Sendable {
     case extraCompact = "Extra Compact"
     case compact = "Compact"
