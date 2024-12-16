@@ -15,7 +15,40 @@ import OUDSFoundations
 
 /// A class which wraps all **space semantic tokens**, *multiple* or not, and expose them.
 /// This wrapper should be integrated as a ``AllSpaceSemanticTokens`` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users.
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
+///
+/// ```swift
+///     // Define your own wrapper for space semantic tokens
+///     class CustomSpaceTokensWrapper: OUDSSpaceSemanticTokensWrapper {
+///
+///         // Then override the space semantic tokens you want, using the dimension raw tokens available
+///
+///         override var spaceFixedMedium: SpaceSemanticToken {
+///             DimensionRawTokens.dimension400
+///         }
+///
+///         override var spaceScaledShort: MultipleSpaceSemanticTokens {
+///             MultipleSpaceSemanticTokens(compact: spaceFixedJumbo, regular: spaceFixedJumbo)
+///         }
+/// }
+/// ```
+///
+/// Then, you can give this `CustomSpaceTokensWrapper` to your own theme implementation:
+///
+/// ```swift
+/// class LocalTheme: OrangeTheme {
+///
+///     override init() {
+///         super.init(spaces: CustomSpaceTokensWrapper(),
+///     }
+/// }
+/// ```
+///
+/// or to an already existing theme for example:
+///
+/// ```swift
+///     OrangeTheme(spaces: CustomSpaceTokensWrapper())
+/// ```
 open class OUDSSpaceSemanticTokensWrapper {
 
     /// Intializes the wrapper

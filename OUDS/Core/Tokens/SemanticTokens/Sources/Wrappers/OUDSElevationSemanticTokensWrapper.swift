@@ -15,7 +15,36 @@ import OUDSFoundations
 
 /// A class which wraps all **elevation semantic tokens**, *multiple*, *composite* or not, and expose them.
 /// This wrapper should be integrated as a ``AllElevationSemanticTokens`` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users.
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
+///
+/// ```swift
+///     // Define your own wrapper for elevation semantic tokens
+///     class CustomElevationTokensWrapper: OUDSElevationSemanticTokensWrapper {
+///
+///         // Then override the elevation semantic tokens you want, using the elevation raw tokens available
+///
+///         override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
+///             ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_4_600)
+///         }
+/// }
+/// ```
+///
+/// Then, you can give this `CustomElevationTokensWrapper` to your own theme implementation:
+///
+/// ```swift
+/// class LocalTheme: OrangeTheme {
+///
+///     override init() {
+///         super.init(elevations: CustomElevationTokensWrapper(),
+///     }
+/// }
+/// ```
+///
+/// or to an already existing theme for example:
+///
+/// ```swift
+///     OrangeTheme(elevations: CustomElevationTokensWrapper())
+/// ```
 open class OUDSElevationSemanticTokensWrapper {
 
     /// Intializes the wrapper

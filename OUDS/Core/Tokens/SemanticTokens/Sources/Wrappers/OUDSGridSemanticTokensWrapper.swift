@@ -15,7 +15,44 @@ import OUDSFoundations
 
 /// A class which wraps all **grid semantic tokens** and expose them.
 /// This wrapper should be integrated as a ``AllGridSemanticTokens`` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users.
+/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
+///
+/// ```swift
+///     // Define your own wrapper for grid semantic tokens
+///     class CustomGridTokensWrapper: OUDSGridSemanticTokensWrapper {
+///
+///         // Then override the grid semantic tokens you want, using the grid raw tokens available
+///
+///         override var gridExtraCompactColumnGap: GridSemanticToken {
+///             GridRawTokens.gridColumnGap200
+///         }
+///         
+///         override var gridCompactColumnGap: GridSemanticToken {
+///             GridRawTokens.gridColumnGap200
+///         }
+///
+///         override var gridRegularColumnGap: GridSemanticToken {
+///             GridRawTokens.gridColumnGap200
+///         }
+/// }
+/// ```
+///
+/// Then, you can give this `CustomGridTokensWrapper` to your own theme implementation:
+///
+/// ```swift
+/// class LocalTheme: OrangeTheme {
+///
+///     override init() {
+///         super.init(grids: CustomGridTokensWrapper(),
+///     }
+/// }
+/// ```
+///
+/// or to an already existing theme for example:
+///
+/// ```swift
+///     OrangeTheme(grids: CustomGridTokensWrapper())
+/// ```
 open class OUDSGridSemanticTokensWrapper {
 
     /// Intializes the wrapper
