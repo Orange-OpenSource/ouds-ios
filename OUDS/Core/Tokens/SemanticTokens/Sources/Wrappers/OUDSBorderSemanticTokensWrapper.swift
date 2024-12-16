@@ -52,14 +52,14 @@ import OUDSFoundations
 ///     OrangeTheme(borders: CustomBorderTokensWrapper())
 /// ```
 open class OUDSBorderSemanticTokensWrapper {
-    
+
     /// Intializes the wrapper
     public init() {
         OUDSLogger.debug("Init of OUDSBorderSemanticTokensWrapper")
     }
-    
+
     deinit{ }
-    
+
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of BorderSemanticTokens is not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+BorderSemanticTokens.swift
