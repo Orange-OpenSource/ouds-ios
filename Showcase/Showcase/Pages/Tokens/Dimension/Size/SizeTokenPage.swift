@@ -39,7 +39,7 @@ struct SizeTokenPage: View {
                 header("app_tokens_dimension_size_iconWithLabel_label")
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct IllustrationIconDecorative: View {
@@ -56,13 +56,13 @@ struct SizeTokenPage: View {
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Rectangle()
-                        .fill(theme.colorBgEmphasized.color(for: colorScheme))
+                        .fill(theme.colors.colorBgEmphasized.color(for: colorScheme))
                         .frame(width: 82, height: 82, alignment: .center)
 
                     Image("ic_token")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
+                        .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
                         .frame(width: token, height: token, alignment: .center)
                         .accessibilityHidden(true)
                 }
@@ -90,16 +90,16 @@ struct SizeTokenPage: View {
                 Image("ic_token")
                     .resizable()
                     .renderingMode(.template)
-                    .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
+                    .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
                     .frame(width: token, height: token, alignment: .center)
                     .accessibilityHidden(true)
 
                 VStack(alignment: .leading) {
                     illustration(for: namedFont, in: theme)
-                        .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                     Text(value)
                         .typeBodyDefaultMedium(theme)
-                        .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentMuted.color(for: colorScheme))
                 }
                 .accessibilityElement(children: .combine)
             }

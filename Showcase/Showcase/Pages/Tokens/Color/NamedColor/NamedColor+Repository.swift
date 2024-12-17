@@ -74,107 +74,107 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorRepositoryAccentDefault:
-                return theme.colorRepositoryAccentDefault
+                return theme.colors.colorRepositoryAccentDefault
             case .colorRepositoryAccentHighest:
-                return theme.colorRepositoryAccentHighest
+                return theme.colors.colorRepositoryAccentHighest
             case .colorRepositoryAccentLow:
-                return theme.colorRepositoryAccentLow
+                return theme.colors.colorRepositoryAccentLow
             case .colorRepositoryAccentLowest:
-                return theme.colorRepositoryAccentLowest
+                return theme.colors.colorRepositoryAccentLowest
             case .colorRepositoryInfoDefault:
-                return theme.colorRepositoryInfoDefault
+                return theme.colors.colorRepositoryInfoDefault
             case .colorRepositoryInfoHighest:
-                return theme.colorRepositoryInfoHighest
+                return theme.colors.colorRepositoryInfoHighest
             case .colorRepositoryInfoLow:
-                return theme.colorRepositoryInfoLow
+                return theme.colors.colorRepositoryInfoLow
             case .colorRepositoryInfoLowest:
-                return theme.colorRepositoryInfoLowest
+                return theme.colors.colorRepositoryInfoLowest
             case .colorRepositoryNegativeDefault:
-                return theme.colorRepositoryNegativeDefault
+                return theme.colors.colorRepositoryNegativeDefault
             case .colorRepositoryNegativeHigh:
-                return theme.colorRepositoryNegativeHigh
+                return theme.colors.colorRepositoryNegativeHigh
             case .colorRepositoryNegativeHigher:
-                return theme.colorRepositoryNegativeHigher
+                return theme.colors.colorRepositoryNegativeHigher
             case .colorRepositoryNegativeHighest:
-                return theme.colorRepositoryNegativeHighest
+                return theme.colors.colorRepositoryNegativeHighest
             case .colorRepositoryNegativeLow:
-                return theme.colorRepositoryNegativeLow
+                return theme.colors.colorRepositoryNegativeLow
             case .colorRepositoryNegativeLower:
-                return theme.colorRepositoryNegativeLower
+                return theme.colors.colorRepositoryNegativeLower
             case .colorRepositoryNegativeLowest:
-                return theme.colorRepositoryNegativeLowest
+                return theme.colors.colorRepositoryNegativeLowest
             case .colorRepositoryNeutralEmphasizedBlack:
-                return theme.colorRepositoryNeutralEmphasizedBlack
+                return theme.colors.colorRepositoryNeutralEmphasizedBlack
             case .colorRepositoryNeutralEmphasizedHigh:
-                return theme.colorRepositoryNeutralEmphasizedHigh
+                return theme.colors.colorRepositoryNeutralEmphasizedHigh
             case .colorRepositoryNeutralEmphasizedHigher:
-                return theme.colorRepositoryNeutralEmphasizedHigher
+                return theme.colors.colorRepositoryNeutralEmphasizedHigher
             case .colorRepositoryNeutralEmphasizedHighest:
-                return theme.colorRepositoryNeutralEmphasizedHighest
+                return theme.colors.colorRepositoryNeutralEmphasizedHighest
             case .colorRepositoryNeutralEmphasizedMedium:
-                return theme.colorRepositoryNeutralEmphasizedMedium
+                return theme.colors.colorRepositoryNeutralEmphasizedMedium
             case .colorRepositoryNeutralMutedLower:
-                return theme.colorRepositoryNeutralMutedLower
+                return theme.colors.colorRepositoryNeutralMutedLower
             case .colorRepositoryNeutralMutedLowest:
-                return theme.colorRepositoryNeutralMutedLowest
+                return theme.colors.colorRepositoryNeutralMutedLowest
             case .colorRepositoryNeutralMutedWhite:
-                return theme.colorRepositoryNeutralMutedWhite
+                return theme.colors.colorRepositoryNeutralMutedWhite
             case .colorRepositoryOpacityBlackHigher:
-                return theme.colorRepositoryOpacityBlackHigher
+                return theme.colors.colorRepositoryOpacityBlackHigher
             case .colorRepositoryOpacityBlackHighest:
-                return theme.colorRepositoryOpacityBlackHighest
+                return theme.colors.colorRepositoryOpacityBlackHighest
             case .colorRepositoryOpacityBlackLow:
-                return theme.colorRepositoryOpacityBlackLow
+                return theme.colors.colorRepositoryOpacityBlackLow
             case .colorRepositoryOpacityBlackLower:
-                return theme.colorRepositoryOpacityBlackLower
+                return theme.colors.colorRepositoryOpacityBlackLower
             case .colorRepositoryOpacityBlackLowest:
-                return theme.colorRepositoryOpacityBlackLowest
+                return theme.colors.colorRepositoryOpacityBlackLowest
             case .colorRepositoryOpacityBlackMedium:
-                return theme.colorRepositoryOpacityBlackMedium
+                return theme.colors.colorRepositoryOpacityBlackMedium
             case .colorRepositoryOpacityBlackTransparent:
-                return theme.colorRepositoryOpacityBlackTransparent
+                return theme.colors.colorRepositoryOpacityBlackTransparent
             case .colorRepositoryOpacityInfo:
-                return theme.colorRepositoryOpacityInfo
+                return theme.colors.colorRepositoryOpacityInfo
             case .colorRepositoryOpacityNegative:
-                return theme.colorRepositoryOpacityNegative
+                return theme.colors.colorRepositoryOpacityNegative
             case .colorRepositoryOpacityPositive:
-                return theme.colorRepositoryOpacityPositive
+                return theme.colors.colorRepositoryOpacityPositive
             case .colorRepositoryOpacityWarning:
-                return theme.colorRepositoryOpacityWarning
+                return theme.colors.colorRepositoryOpacityWarning
             case .colorRepositoryOpacityWhiteHigh:
-                return theme.colorRepositoryOpacityWhiteHigh
+                return theme.colors.colorRepositoryOpacityWhiteHigh
             case .colorRepositoryOpacityWhiteHigher:
-                return theme.colorRepositoryOpacityWhiteHigher
+                return theme.colors.colorRepositoryOpacityWhiteHigher
             case .colorRepositoryOpacityWhiteHighest:
-                return theme.colorRepositoryOpacityWhiteHighest
+                return theme.colors.colorRepositoryOpacityWhiteHighest
             case .colorRepositoryOpacityWhiteLow:
-                return theme.colorRepositoryOpacityWhiteLow
+                return theme.colors.colorRepositoryOpacityWhiteLow
             case .colorRepositoryOpacityWhiteLower:
-                return theme.colorRepositoryOpacityWhiteLower
+                return theme.colors.colorRepositoryOpacityWhiteLower
             case .colorRepositoryOpacityWhiteLowest:
-                return theme.colorRepositoryOpacityWhiteLowest
+                return theme.colors.colorRepositoryOpacityWhiteLowest
             case .colorRepositoryOpacityWhiteTransparent:
-                return theme.colorRepositoryOpacityWhiteTransparent
+                return theme.colors.colorRepositoryOpacityWhiteTransparent
             case .colorRepositoryPositiveDefault:
-                return theme.colorRepositoryPositiveDefault
+                return theme.colors.colorRepositoryPositiveDefault
             case .colorRepositoryPositiveHighest:
-                return theme.colorRepositoryPositiveHighest
+                return theme.colors.colorRepositoryPositiveHighest
             case .colorRepositoryPositiveLow:
-                return theme.colorRepositoryPositiveLow
+                return theme.colors.colorRepositoryPositiveLow
             case .colorRepositoryPositiveLowest:
-                return theme.colorRepositoryPositiveLowest
+                return theme.colors.colorRepositoryPositiveLowest
             case .colorRepositoryPrimaryDefault:
-                return theme.colorRepositoryPrimaryDefault
+                return theme.colors.colorRepositoryPrimaryDefault
             case .colorRepositoryPrimaryLow:
-                return theme.colorRepositoryPrimaryLow
+                return theme.colors.colorRepositoryPrimaryLow
             case .colorRepositoryWarningDefault:
-                return theme.colorRepositoryWarningDefault
+                return theme.colors.colorRepositoryWarningDefault
             case .colorRepositoryWarningHighest:
-                return theme.colorRepositoryWarningHighest
+                return theme.colors.colorRepositoryWarningHighest
             case .colorRepositoryWarningLow:
-                return theme.colorRepositoryWarningLow
+                return theme.colors.colorRepositoryWarningLow
             case .colorRepositoryWarningLowest:
-                return theme.colorRepositoryWarningLowest
+                return theme.colors.colorRepositoryWarningLowest
             }
         }
     }

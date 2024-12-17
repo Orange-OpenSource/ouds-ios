@@ -45,9 +45,9 @@ struct ScaledSpaceProperty: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 4, leading: 8, bottom: 0, trailing: 0))
-                .padding(.bottom, theme.spaceFixedMedium)
+                .padding(.bottom, theme.spaces.spaceFixedMedium)
 
             ForEach(NamedSpace.Scaled.allCases, id: \.rawValue) { namedSpaceToken in
                 Illustration(for: namedSpaceToken)

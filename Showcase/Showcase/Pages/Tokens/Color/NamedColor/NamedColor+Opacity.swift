@@ -23,9 +23,9 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorOpacityInvisibleBlack:
-                return theme.colorOpacityInvisibleBlack
+                return theme.colors.colorOpacityInvisibleBlack
             case .colorOpacityInvisibleWhite:
-                return theme.colorOpacityInvisibleWhite
+                return theme.colors.colorOpacityInvisibleWhite
             }
         }
     }

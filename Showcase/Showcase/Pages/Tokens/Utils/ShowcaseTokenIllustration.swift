@@ -40,23 +40,23 @@ struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustratio
 
     var body: some View {
 
-        HStack(alignment: .top, spacing: theme.spaceFixedMedium) {
+        HStack(alignment: .top, spacing: theme.spaces.spaceFixedMedium) {
 
             tokenIllustration()
 
             VStack(alignment: .leading) {
                 Text(tokenName)
                     .typeBodyStrongLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 if let tokenValue {
                     Text(tokenValue)
                         .typeBodyDefaultMedium(theme)
-                        .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentMuted.color(for: colorScheme))
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .accessibilityElement(children: .combine)
         }
-        .padding(.vertical, theme.spaceFixedShorter)
+        .padding(.vertical, theme.spaces.spaceFixedShorter)
     }
 }

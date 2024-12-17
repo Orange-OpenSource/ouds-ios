@@ -23,6 +23,6 @@ struct ShowcaseTokenIllustrationBackground: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        Rectangle().fill(theme.colorBgEmphasized.color(for: colorScheme))
+        Rectangle().fill(theme.colors.colorBgEmphasized.color(for: colorScheme))
     }
 }

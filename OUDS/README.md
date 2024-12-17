@@ -1,13 +1,26 @@
 # OUDS Swift Package
 
+- [Summary](#summary)
+- [Exposed SPM modules](#exposed-spm-modules)
+- [Modules](#modules)
+- [Core](#core)
+  * [Components](#components)
+  * [Themes](#themes)
+  * [Tokens](#components)
+  * [Component tokens](#component-tokens)  
+  * [Semantic tokens](#semantic-tokens)
+  * [Raw tokens](#raw-tokens)
+- [Foundations](#foundations)
+- [Structure](#structure)
+  
 ## Summary
 
 This is the _Swift package_ for the iOS library of *Orange Unified Design System*.
-It contains modules, components, themes, and tokens (of components,s emantic and raw) defined by the design team in charge of a unified design.
+It contains modules, components, themes, and tokens (of components, semantic and raw) defined by the design team in charge of a unified design.
 
 ## Exposed SPM modules
 
-This _Swift package_ exposes up to 10 _products_ as _libraries_:
+This _Swift package_ exposes up to 9 _products_ as _libraries_:
 1. `OUDSModules` containing OUDS modules with features ;
 2. `OUDSComponents` containing all components embeded also inside _modules_ ;
 3. `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_;
@@ -20,26 +33,32 @@ This _Swift package_ exposes up to 10 _products_ as _libraries_:
 
 Feel free to read [this Swift documentation](https://docs.swift.org/package-manager/PackageDescription/PackageDescription.html) if you are not used to _SPM_.
 
+## Modules
+
+A _module_ can be seen as a set of features and components to fill a need.
+There is not module yet.
+
 ## Core
 
 ### Components
 
-_Components_ are defined here and can be integrated in applications.
+_Components_ are defined here and can be integrated in views.
+Components use *semantic tokens* can be be integrated in *modules*.
 
 ### Themes
 
-_Themes_ are applications of specific values for _components tokens_ and _semantic tokens_.
-A _theme_ contains any relevant _semantic tokens_ and _component tokens_ which can be sued for components rendering.
+_Themes_ are applications of specific values for _components tokens_ and _semantic tokens_ sung _raw tokens_.
+A _theme_ contains any relevant _semantic tokens_ and _component tokens_ which can be used for components rendering.
 A _theme_ has also _raw tokens_ associated to primitive types so as to give to _components_, written with _SwiftUI_, the needed values in the suitable type. A _theme_ can add for itself any new _tokens_.
 
 This library exposes today up to two themes:
-1. `OrangeTheme` which can be seen as the default _theme_ ;
-2. `InverseTheme` for other use cases.
+1. `OrangeTheme` which can be seen as the default _theme_
+2. `InverseTheme` for very particumar use cases.
 
-They both are based on an `OUDSTheme` defining default values.
+The `OUDSTheme` must be seen as a kind of abstract theme.
 
-_Themes_ car defined thanks to `open class` in Swift. It allows inheritance and derivation.
-_Themes_ have Swift _extensions_ so as to get the _tokens_ to define. These tokens are overriden thanks to `@objc open` combination so as to make possible to override these values in extensions (thanks to `@objc`) and from objects outside the module (thanks to `open`). Thus we can split values and responsabilities in different _Swift Package Manager targets_ and keep overriding and inheritance possible?
+_Themes_ are defined with `open class` in Swift. It allows inheritance and derivation.
+_Themes_ have Swift _extensions_ so as to get the _tokens_ to define. These tokens are overriden thanks to `@objc open` combination so as to make possible to override these values in extensions (thanks to `@objc`) and from objects outside the module (thanks to `open`). Thus we can split values and responsabilities in different _Swift Package Manager targets_ and keep overriding and inheritance possible.
 
 ### Tokens
 
@@ -65,49 +84,15 @@ These _tokens_ can be used to apply some style and configuration values to _comp
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ to get their style values.
 
-❗**More details coming soon.**❗
-
 #### Semantic tokens
 
 These _tokens_ can be used mainly for _component tokens_ to apply some style and configuration values.
 They can be seen as an high level of usage with functional meanings.
-Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we onlyhave to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
-In addition, there are hundreds of _semantics tokens_ and we needed to add them to the abstract root theme using extensions for clarity reasons to prevent to have a _Swift class_ with thousands of lines. Each _raw token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
+
+Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
+In addition, there are hundreds of _semantics tokens_ and we needed to add them to the abstract root theme using extensions for clarity reasons to prevent to have a _Swift class_ with thousands of lines. Each _semantic token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement through providers. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
 That is the reason why tokens are exposed as `@objc open` to be available and oveeridable anywhere. 
-To keep the same semantics as the ones used in our specifications, _typealias_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are available for those who want to make their own theme.
-
-Example with `ColorSemanticTokens``:
-
-```swift
-// Declare the semantic tokens
-protocol ColorSemanticTokens {
-
-    var colorBgPrimary: ColorSemanticToken { get }
-    var colorBgSecondary: ColorSemanticToken { get }
-    var colorBgTertiary: ColorSemanticToken { get }
-    // ...
-}
-
-// Define the semantic tokens exposed through the theme
-extension OUDSTheme: ColorSemanticTokens {
-
-    // Color is available in the module of OUDSTheme
-    @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-
-    // If the semantic token refers to a raw token not stored in the OUDSTheme module, override later and throw error because unxpected state if used
-    @objc open var colorBgSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgSecondary!") }
-
-    // Possible to have tokens not defined in lwoer level must only in themes implementation, throw error if used because unexpected state
-    @objc open var colorBgTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgTertiary!") }
-}
-
-// Add missing values
-extension OrangeTheme: ColorSemanticTokens {
-
-    // Define value value with the accessible token 
-    @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
-}
-```
+To keep the same semantics as the ones used in our specifications, _typealias_ are used so as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are available for those who want to make their own theme.
 
 #### Raw tokens
 
@@ -121,137 +106,33 @@ Using more simple and primitive types will help also to test the library. With a
 
 We also choose to add in _extension_ all the tokens values in a separated file so as to help the *Figma*-JSON-to-Swift parser to build files to copy and past easily in the project and keeping all the other objects.
 
-Example for `ColorRawTokens`:
-
-```swift
-// Define types for color raw tokens
-public typealias ColorRawToken = String
-
-public enum ColorRawTokens { }
-
-extension ColorRawTokens { // Gathers all color raw tokens
-
-    public static let colorFunctionalWhite: ColorRawToken = "#FFFFFF"
-    public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4E"
-    public static let colorOpacityBlack0: ColorRawToken = "#00000000"
-    ...
-}
-
-extension String {
-    public var color: Color {
-        Color(hexadecimalCode: self)
-    }
-}
-```
-
 ## Foundations
 
 _Foundations_ contain some extensions and objects shared between any higher levels of the library.
 
-## Modules
+## Structure
 
-A _module_ can be seen as a set of features and components to fill a need.
-There is not module yet.
-
-## How to use components
-
-Import the module of components, and use the component you want:
-
-```swift
-import OUDSComponents // To get the components
-
-struct YourView: View {
-
-    @State private var writtenText: String = ""
-
-    var body: some View {
-        OUDSFormsTextInput(placeholder: "Some placeholder to display", value: $writtenText)
-    }
-}
-```
-
-Of course you must use in your root view the `OUDSThemeableView` with the suitable theme:
-
-```swift
-    // The theme can be OrangeTheme or your own
-    OUDSThemeableView(theme: theTheme) {
-        
-    }
-``` 
-
-## How to create your own theme
-
-It is quite simple, you have to follow several steps.
-
-First, create a _Swift class_ which will inherit from `OrangeTheme` or `OUDSTheme`.
-You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes.
-Then, you should override the _semantic tokens_ and _components tokens_ you want ; we recommend to use _Swift extensions_ for clarity reasons.
-If your theme needs to define its own _raw tokens_, you can also define them using a `enum` and the _raw tokens types_.
-
-For example:
-
-```swift
-import Foundation
-import SwiftUI
-import OUDSTokensRaw        // To get raw tpkens
-import OUDSTokensSemantic   // To get semantic tokens
-import OUDSTokensComponent  // To get component tokens
-import OUDSThemesOrange     // To override OrangeTheme (which is default theme)
-
-// Can be for example a country theme
-class OrangeCustomTheme: OrangeTheme { }
-
-extension OrangeCustomTheme { // For FormsTextInputComponentTokens, used in component FormsTextInputComponent
-
-    override public var ftiTitleFontWeight: FontWeightSemanticToken { fontWeightLabelStrong }
-    override public var ftiTitleFontSize: FontSizeSemanticToken { fontSizeLabelXLarge }
-    override public var ftiTitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
-
-    override public var ftiSubtitleFontWeight: FontWeightSemanticToken { fontWeightBodyDefault }
-    override public var ftiSubtitleFontSize: FontSizeSemanticToken { fontSizeLabelMedium }
-    override public var ftiSubtitleColor: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
-
-    override public var ftiBackgroundColor: ColorSemanticToken { colorBgrimary }
-
-    override public var ftiBorderColor: ColorSemanticToken { colorBorderEmphasized }
-
-    override public var ftiBorderStyle: BorderStyleSemanticToken { borderStyleDrag }
-
-    override public var ftiBorderWidth: BorderWidthSemanticToken { borderWidthThick }
-}
-
-extension OrangeCustomTheme { // For ColorSemanticTokens using anywhere
-
-    override var colorBgPrimary: ColorSemanticToken { 
-        MultipleColorSemanticTokens(light: ColorRawTokens.ColorRawTokens.colorFunctionalSun500, dark: ColorRawTokens.ColorRawTokens.colorFunctionalSun800)
-    }
-}
-```
-
-And your own theme colors _raw tokens_:
-
-```swift
-
-public typealias MyThemeColorRawToken = ColorRawToken // Refer to type ColorRawToken for consistency
-
-public enum MyThemeColorRawTokens {
-
-    public static let someAwesomeThemeExclusiveColor: MyThemeColorRawToken = "#12345600"
-    
-}
-```
-
-The for your root view:
-
-```swift
-import SwiftUI
-import OUDS  // To get OUDSThemeableView
-
-struct MyAppRootView: View {
-
-    var body: some View {
-        OUDSThemeableView(theme: OrangeCustomTheme()) {
-            // ...
-        }
-    }
-}
+Here are some explainations about the structure of the directory:
+- Core: contains components, OUDS, themes and tokens modules 
+- Core/Components: contains components and also helpers and view modifiers for them
+- Core/OUDS/OUDSTheme: contains the definition of the abstract theme with generated code and also unit tests
+- Core/OUDS/OUDSTheme/OUDSTheme+SemanticTokens: contains all the semantic tokens values, generated or not
+- Core/Themes: contains the themes definitions exposed through OUDS
+- Core/Themes/Inverse: contains the definition of the inverse theme, and tests
+- Core/Themes/Orangee: contains the definition of the Orange theme, and tests
+- Core/Themes/Orange/Declarations: contains declaration of raw tokens dedicated to Orange theme
+- Core/Themes/Orange/TypeAliases: contains declaration of type aliases for raw tokens dedicated to Orange theme
+- Core/Themes/Orange/Values: contains definitions of raw tokens dedicated to Orange theme, generated or not
+- Core/Tokens/ComponentTokens: contains components tokens
+- Core/Tokens/RawTokens: contains declarations of raw tokens, and tests
+- Core/Tokens/RawTokens/Composites: contains declarations of composite raw tokens
+- Core/Tokens/RawTokens/Declarations: contains declarations of not-composite raw tokens
+- Core/Tokens/RawTokens/TypeAliases: contains declarations of typealiases for raw tokens
+- Core/Tokens/RawTokens/Values: contains definitions of raw tokens, generated or not, composites or not
+- Core/Tokens/SemanticTokens: contains declarations of semantic tokens, and tests
+- Core/Tokens/SemanticTokens/Multiples: contains declarations of multiple semantic tokens
+- Core/Tokens/SemanticTokens/TypeAliases: contains declarations of typealiases for semantic tokens tokens
+- Core/Tokens/SemanticTokens/Values: contains declarations of raw tokens, generated or not, composites, multiple or not
+- Core/Tokens/SemanticTokens/Providers: contains definitions of providers of tokens
+- Foundations: contains helpers, low level objects and utilities and tests
+- Modules: contains modules and tests

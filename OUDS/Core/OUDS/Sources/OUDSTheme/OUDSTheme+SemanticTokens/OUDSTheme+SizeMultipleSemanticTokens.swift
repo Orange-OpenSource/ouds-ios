@@ -21,9 +21,9 @@ import OUDSTokensSemantic
 // WARNING: Not synchronized anymore with the Figjam / Figma by developers team
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
-/// Defines wrapper objects for size semantic tokens (i.e. in the end ``DimensionRawToken``).
-/// These values can be overriden inside ``OUDSTheme`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
-extension OUDSTheme: SizeMultipleSemanticTokens {
+/// Defines provider objects for size semantic tokens (i.e. in the end `DimensionRawTokens`).
+/// These values can be overriden inside ``OUDSSizeSemanticTokensProvider`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+extension OUDSSizeSemanticTokensProvider: SizeMultipleSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 

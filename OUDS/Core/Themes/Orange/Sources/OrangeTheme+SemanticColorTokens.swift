@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSFoundations
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
@@ -22,16 +23,16 @@ import OUDSTokensSemantic
 
 /// Overrides some color tokens using values available in ``OrangeBrandColorRawTokens``.
 /// In fact the *tokenator* is not able to do the magic needed using the JSON file produced by *Figma*.
-/// Some color tokens are not isolated by theme in *Figma*, thus the abstract ``OUDSTheme`` faces issues by defining tokens with raw tokens not defined in ``OrangeBrandColorRawTokens`` but in ``OrangeBrandColorRawTokens``. Thus when the ``OUDSTheme``has its colors tokens updated, a manual update must be done to replace unknown tokens by `fatalError` (i.e. must be overriden somewhere somehow) in that file and in this ``OrangeTheme`` files tokens must be overriden and manualy updated with the expected values.
+/// Some color tokens are not isolated by theme in *Figma*, thus the abstract `OUDSColorSemanticTokensProvider` in `OUDS` module faces issues by defining tokens with raw tokens not defined in `ColorRawTokens` but in ``OrangeBrandColorRawTokens``. Thus when the `OUDSColorSemanticTokensProvider` has its colors tokens updated, a manual update must be done to replace unknown tokens by `fatalError` (i.e. must be overriden somewhere somehow) in that file and in this ``OrangeTheme`` file tokens must be overriden and manualy updated with the expected values.
 ///
 ///     // For example, in OUDSTheme colors:
 ///
-///     // This token can be defined because uses colorFunctionalDarkGray400 defined in OrangeBrandColorRawTokens, that's ok
-///     override open var colorActionPrimaryHoverLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorFunctionalDarkGray400 }
+///     // This token can be defined because uses colorFunctionalDarkGray400 defined in ColorRawTokens, that's ok
+///     override open var colorActionPrimaryHoverLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray400 }
 ///
-///     // This token does not compile because colorOrange500 is in OrangeBrandOrangeBrandColorRawTokens and not OrangeBrandColorRawTokens
+///     // This token does not compile because colorOrange500 is in OrangeBrandColorRawTokens and not ColorRawTokens
 ///     // but Figma cannot manage them so the JSON is wrong and the tokenator cannot guess the trick
-///     override open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+///     override open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorOrange500 }
 ///
 ///     // So it must be replaced by to prevent themes to use bad tokens
 ///     // and ensure they will be defined somewhere somehow
@@ -40,7 +41,7 @@ import OUDSTokensSemantic
 ///     // And in OrangeTheme colors:
 ///
 ///     // Token must be overriden
-///     override open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandOrangeBrandColorRawTokens.colorOrange500 }
+///     override open var colorActionPrimaryLoadingOnBgEmphasizedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
 ///
 ///     // And use the suitable reference in the multiple if existing
 ///     override open var colorActionPrimaryLoadingOnBgEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorActionPrimaryLoadingOnBgEmphasizedLight, dark: ...) }
@@ -49,7 +50,17 @@ import OUDSTokensSemantic
 ///
 /// In few words, we need to keep isolated tokens and brand colors, provide kind of abstract architecture with isolated and overridable themes, but face troubles with *Figma* design kit having conception issues and producing JSON not reflecting the reality making *tokenator* unable to build the expected Swift code.
 /// We get uncompilable code for color tokens update and need to make the merge manualy.
-extension OrangeTheme {
+open class OrangeThemeColorSemanticTokensProvider: OUDSColorSemanticTokensProvider {
+
+    // MARK: - Init
+
+    override public init() {
+        OUDSLogger.debug("Init of OrangeThemeColorSemanticTokensProvider")
+    }
+
+    deinit { }
+
+    // MARK: - Overrides
 
     // NOTE: Picked from OUDSTheme since tokenator update
     // Define here because using raw tokens not defined in OUDSTheme module

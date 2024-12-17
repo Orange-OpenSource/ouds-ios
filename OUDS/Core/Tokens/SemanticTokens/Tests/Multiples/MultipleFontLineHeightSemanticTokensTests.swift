@@ -18,7 +18,7 @@ import XCTest
 // swiftlint:disable required_deinit
 // swiftlint:disable type_name
 
-/// To ensure the `MultipleFontLineHeightSemanticTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+/// To ensure the `MultipleFontLineHeightSemanticTokens` is tested as a provider of semantic tokens for compact and regular size classes.
 final class MultipleFontLineHeightSemanticTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for light and dark modes

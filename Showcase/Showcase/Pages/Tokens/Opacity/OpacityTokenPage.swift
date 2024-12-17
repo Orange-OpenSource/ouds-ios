@@ -23,19 +23,19 @@ struct OpacityTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                ShowcaseCode(code: "theme.opacityInvisible")
+                ShowcaseCode(code: "theme.opacities.opacityInvisible")
             }
 
-            Spacer() .frame(height: theme.spaceFixedMedium)
+            Spacer() .frame(height: theme.spaces.spaceFixedMedium)
 
             ForEach(NamedOpacity.allCases, id: \.rawValue) { opacityName in
                 IllustrationOpacity(opacityName: opacityName)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct IllustrationOpacity: View {
@@ -54,18 +54,18 @@ struct OpacityTokenPage: View {
                     Image(decorative: "ic_union")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
+                        .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
                         .frame(width: 48, height: 48)
                         .accessibilityHidden(true)
 
                     Rectangle()
-                        .fill(theme.colorBgEmphasized.color(for: colorScheme))
+                        .fill(theme.colors.colorBgEmphasized.color(for: colorScheme))
                         .opacity(token)
                         .frame(width: 48, height: 48)
-                        .oudsBorder(style: theme.borderStyleDefault,
-                                    width: theme.borderWidthThin,
-                                    radius: theme.borderRadiusNone,
-                                    color: theme.colorBorderEmphasized)
+                        .oudsBorder(style: theme.borders.borderStyleDefault,
+                                    width: theme.borders.borderWidthThin,
+                                    radius: theme.borders.borderRadiusNone,
+                                    color: theme.colors.colorBorderEmphasized)
                         .padding(.top, 24)
                         .padding(.leading, 24)
                 }
@@ -88,17 +88,17 @@ enum NamedOpacity: String, CaseIterable {
     func token(from theme: OUDSTheme) -> OpacitySemanticToken {
         switch self {
         case .opacityInvisible:
-            return theme.opacityInvisible
+            return theme.opacities.opacityInvisible
         case .opacityWeaker:
-            return theme.opacityWeaker
+            return theme.opacities.opacityWeaker
         case .opacityWeak:
-            return theme.opacityWeak
+            return theme.opacities.opacityWeak
         case .opacityMedium:
-            return theme.opacityMedium
+            return theme.opacities.opacityMedium
         case .opacityStrong:
-            return theme.opacityStrong
+            return theme.opacities.opacityStrong
         case .opacityOpaque:
-            return theme.opacityOpaque
+            return theme.opacities.opacityOpaque
         }
     }
 }

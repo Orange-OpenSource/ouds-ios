@@ -18,65 +18,121 @@ extension OUDSTheme {
 
     // MARK: Semantic Grid token - Helper
 
-    /// The min column width of a grid.
+    /// The min column width of a grid based on the given size class.
+    ///
+    /// ```swift
+    ///     struct YourView: View {
+    ///
+    ///         @Environment(\.theme) var theme
+    ///         @Environment(\.oudsHorizontalSizeClass) var sizeClass
+    ///         // Or also @Environment(\.oudsVerticalSizeClass) var sizeClass
+    ///
+    ///         func someFunc() -> GridRawToken {
+    ///             theme.gridMinWidth(for: sizeClass)
+    ///         }
+    ///     }
+    /// ```
+    ///
     /// - Parameter sizeClass: The current interface size class
     /// - Returns `GridRawToken`: The minimal width according to viewports / size classes.
     public final func gridMinWidth(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch sizeClass {
         case .extraCompact:
-            return gridExtraCompactMinWidth
+            return grids.gridExtraCompactMinWidth
         case .compact:
-            return gridCompactMinWidth
+            return grids.gridCompactMinWidth
         case .regular:
-            return gridRegularMinWidth
+            return grids.gridRegularMinWidth
         @unknown default:
             fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
-    /// The max column width of a grid.
+    /// The max column width of a grid based on the given size class.
+    ///
+    /// ```swift
+    ///     struct YourView: View {
+    ///
+    ///         @Environment(\.theme) var theme
+    ///         @Environment(\.oudsHorizontalSizeClass) var sizeClass
+    ///         // Or also @Environment(\.oudsVerticalSizeClass) var sizeClass
+    ///
+    ///         func someFunc() -> GridRawToken {
+    ///             theme.gridMaxWidth(for: sizeClass)
+    ///         }
+    ///     }
+    /// ```
+    /// 
     /// - Parameter sizeClass: The current interface size class
     /// - Returns `GridRawToken`: The maximal width according to viewports / size classes.
     public final func gridMaxWidth(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch sizeClass {
         case .extraCompact:
-            return gridExtraCompactMaxWidth
+            return grids.gridExtraCompactMaxWidth
         case .compact:
-            return gridCompactMaxWidth
+            return grids.gridCompactMaxWidth
         case .regular:
-            return gridRegularMaxWidth
+            return grids.gridRegularMaxWidth
         @unknown default:
             fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
-    /// The margin of a grid.
+    /// The margin of a grid based on the given size class.
+    ///
+    /// ```swift
+    ///     struct YourView: View {
+    ///
+    ///         @Environment(\.theme) var theme
+    ///         @Environment(\.oudsHorizontalSizeClass) var sizeClass
+    ///         // Or also @Environment(\.oudsVerticalSizeClass) var sizeClass
+    ///
+    ///         func someFunc() -> GridRawToken {
+    ///             theme.gridMargin(for: sizeClass)
+    ///         }
+    ///     }
+    /// ```
+    ///
     /// - Parameter sizeClass: The current interface size class
     /// - Returns `GridRawToken`: The margin according to viewports / size classes.
     public final func gridMargin(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch sizeClass {
         case .extraCompact:
-            return gridExtraCompactMargin
+            return grids.gridExtraCompactMargin
         case .compact:
-            return gridCompactMargin
+            return grids.gridCompactMargin
         case .regular:
-            return gridRegularMargin
+            return grids.gridRegularMargin
         @unknown default:
             fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
-    /// The column gap of a grid.
+    /// The column gap of a grid based on the given size class.
+    ///
+    /// ```swift
+    ///     struct YourView: View {
+    ///
+    ///         @Environment(\.theme) var theme
+    ///         @Environment(\.oudsHorizontalSizeClass) var sizeClass
+    ///         // Or also @Environment(\.oudsVerticalSizeClass) var sizeClass
+    ///
+    ///         func someFunc() -> GridRawToken {
+    ///             theme.gridColumnGap(for: sizeClass)
+    ///         }
+    ///     }
+    /// ```
+    ///
     /// - Parameter sizeClass: The current interface size class
     /// - Returns `GridRawToken`: The column gap according to viewports / size classes.
     public final func gridColumnGap(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch sizeClass {
         case .extraCompact:
-            return gridExtraCompactColumnGap
+            return grids.gridExtraCompactColumnGap
         case .compact:
-            return gridCompactColumnGap
+            return grids.gridCompactColumnGap
         case .regular:
-            return gridRegularColumnGap
+            return grids.gridRegularColumnGap
         @unknown default:
             fatalError("🤖 Raw token unavailable for \(sizeClass)!")
         }

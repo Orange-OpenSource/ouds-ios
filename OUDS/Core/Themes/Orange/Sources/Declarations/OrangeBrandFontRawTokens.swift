@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-/// This enum helps to add new **font raw tokens** exclusive to this theme.
+/// This enum helps to add new **font raw tokens** exclusive to this ``OrangeTheme``
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
 public enum OrangeBrandFontRawTokens {

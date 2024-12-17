@@ -28,12 +28,12 @@ final class TestThemeOverrideOfThemeProperties: XCTestCase {
 
     override func setUp() async throws {
         abstractTheme = OUDSTheme()
-        inheritedTheme = MockTheme(customFont: "Mr R08øT")
+        inheritedTheme = MockTheme(fontFamily: "Mr R08øT")
     }
 
-    func testInheritedThemeCanOverrideCustomFontFamily() throws {
-        XCTAssertNotEqual(inheritedTheme.customFontFamily, abstractTheme.customFontFamily)
-        XCTAssertTrue(inheritedTheme.customFontFamily == "Mr R08øT")
+    func testInheritedThemeCanOverrideFontFamily() throws {
+        XCTAssertNotEqual(inheritedTheme.fontFamily, abstractTheme.fontFamily)
+        XCTAssertTrue(inheritedTheme.fontFamily == "Mr R08øT")
     }
 }
 

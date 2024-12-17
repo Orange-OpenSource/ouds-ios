@@ -14,7 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` which will apply the system `Font` in a component `View` using a `MultipleFontCompositeRawTokens`
+/// A `ViewModifier` which will apply the system `Font` in a component `View` using a `MultipleFontCompositeRawTokens`.
 /// Note that `FontModifier` use default system font but nothing for others fonts embeded in device
 struct FontModifier: ViewModifier {
 

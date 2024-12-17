@@ -30,7 +30,7 @@ struct ShowcaseCode: View {
     // MARK: Body
 
     var body: some View {
-        VStack(spacing: theme.spaceFixedNone) {
+        VStack(spacing: theme.spaces.spaceFixedNone) {
             toggleButtonSection()
             if isCodeVisible {
                 codeTokenDisplayCodeSection()
@@ -41,35 +41,35 @@ struct ShowcaseCode: View {
     // MARK: Private helpers
 
     private func toggleButtonSection() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Button(action: toggle) {
                 HStack {
                     Text("app_tokens_code_title_label")
                         .typeBodyStrongLarge(theme)
-                        .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
-                        .padding(.vertical, theme.spacePaddingInlineShort)
+                        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                        .padding(.vertical, theme.spaces.spacePaddingInlineShort)
                     Image("ic_chevron-up")
                         .resizable()
                         .renderingMode(.template)
                         .rotationEffect(Angle.degrees(isCodeVisible ? 0 : 180))
-                        .foregroundColor(theme.colorSurfaceBrandPrimary.color(for: colorScheme))
+                        .foregroundColor(theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme))
                         .frame(width: 20, height: 20)
-                        .padding(.trailing, theme.spacePaddingInlineMedium)
+                        .padding(.trailing, theme.spaces.spacePaddingInlineMedium)
                         .accessibilityLabel("app_tokens_code_visibility_button_a11y")
                 }
             }
             .buttonStyle(PlainButtonStyle())
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.bottom, theme.spacePaddingBlockShort)
+        .padding(.bottom, theme.spaces.spacePaddingBlockShort)
     }
 
     private func codeTokenDisplayCodeSection() -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: theme.spacePaddingBlockMedium) {
+        HStack(alignment: .firstTextBaseline, spacing: theme.spaces.spacePaddingBlockMedium) {
             Text(code)
                 .font(.system(.body, design: .monospaced))
-                .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
-                .padding(.vertical, theme.spacePaddingInlineShort)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .padding(.vertical, theme.spaces.spacePaddingInlineShort)
 
             Button(action: {
                 UIPasteboard.general.string = code
@@ -81,28 +81,28 @@ struct ShowcaseCode: View {
                     Image("ic_copy")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colorSurfaceStatusPositiveMuted.color(for: colorScheme))
+                        .foregroundColor(theme.colors.colorSurfaceStatusPositiveMuted.color(for: colorScheme))
                         .frame(width: 24, height: 24)
-                        .padding(.trailing, theme.spacePaddingInlineMedium)
+                        .padding(.trailing, theme.spaces.spacePaddingInlineMedium)
                         .alignmentGuide(.firstTextBaseline) { $0[.bottom] * 0.7 }
                         .accessibilityLabel("app_tokens_code_copy_button_a11y")
                 }
             })
         }
         .frame(minWidth: 72, maxWidth: .infinity, alignment: .leading)
-        .padding(.vertical, theme.spacePaddingInlineShort)
-        .padding(.leading, theme.spacePaddingInlineMedium)
-        .background(theme.colorBgSecondary.color(for: colorScheme))
+        .padding(.vertical, theme.spaces.spacePaddingInlineShort)
+        .padding(.leading, theme.spaces.spacePaddingInlineMedium)
+        .background(theme.colors.colorBgSecondary.color(for: colorScheme))
         .accessibilityElement(children: .combine)
         .accessibilityHint("app_tokens_code_copy_button_a11y")
         .overlay(
             Rectangle()
-                .opacity(theme.opacityInvisible)
+                .opacity(theme.opacities.opacityInvisible)
                 .frame(minWidth: 40, maxWidth: .infinity, alignment: .leading)
-                .oudsBorder(style: theme.borderStyleDefault,
-                            width: theme.borderWidthThin,
-                            radius: theme.borderRadiusDefault,
-                            color: theme.colorBorderDefault)
+                .oudsBorder(style: theme.borders.borderStyleDefault,
+                            width: theme.borders.borderWidthThin,
+                            radius: theme.borders.borderRadiusDefault,
+                            color: theme.colors.colorBorderDefault)
         )
     }
 

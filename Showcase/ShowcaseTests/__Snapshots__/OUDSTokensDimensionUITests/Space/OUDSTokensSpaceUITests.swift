@@ -107,7 +107,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
             // Generate the illustration for the specified space token
             let illustration = OUDSThemeableView(theme: theme) {
                 ScaledSpaceProperty.Illustration(for: namedToken)
-                    .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -135,7 +135,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     FixedSpaceProperty.Illustration(token: token)
                 }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -162,7 +162,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     PaddingInlineProperty.Illustration(token: token)
                 }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -190,7 +190,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     PaddingInsetProperty.Illustration(token: token)
                 }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -218,7 +218,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     PaddingStackProperty.Illustration(token: token)
                 }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -246,7 +246,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     GapInlineProperty.Illustration(token: token)
                 }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing
@@ -274,7 +274,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
                     GapStackProperty.Illustration(token: token)
                 }
-                .background(theme.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
             // Encapsulate the generated illustration in a UIHostingController for snapshot testing

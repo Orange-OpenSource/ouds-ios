@@ -21,12 +21,12 @@ import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 
-/// Defines wrapper objects for `ColorSemanticToken`.
-/// These values can be overriden inside `OUDSTheme` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// Defines provider objects for `ColorSemanticTokens` so as to pack them as light and dark mode colors.
+/// These values can be overriden inside `OUDSColorSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// Some tokens do not have values assigned in the design system, and must be overriden.
-/// Some tokens must be overiden in `OrangeTheme` side because they rely on Orange brand colors.
+/// Some tokens must be overriden in `OrangeTheme` side because they rely on Orange brand colors.
 /// Helps to expose color semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
-extension OUDSTheme: ColorMultipleSemanticTokens {
+extension OUDSColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     // MARK: - Color - Opacity - Invisible
 

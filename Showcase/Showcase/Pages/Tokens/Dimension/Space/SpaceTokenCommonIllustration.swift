@@ -43,8 +43,8 @@ struct SpaceTokenProperty<HeaderDescription, TokenIllustration>: View where Head
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            header().padding(.bottom, theme.spaceFixedMedium)
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            header().padding(.bottom, theme.spaces.spaceFixedMedium)
 
             ForEach(namedTokens, id: \.name) { namedSpaceToken in
                 SpaceTokenVariant(namedSpaceToken: namedSpaceToken, illustration: illustration)
@@ -114,19 +114,19 @@ struct SpaceCommonIllustration: View {
                 ShowcaseTokenIllustrationBackground()
                     .padding(.top, dimension)
                     .padding(.leading, dimension)
-                    .background(theme.colorContentStatusInfo.color(for: colorScheme))
+                    .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
             case .leading(let asset): // ZStack alignment leading
-                HStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationRectangle(width: dimension)
                     SpaceIllustrationIcon(asset: asset)
                 }
             case .bottom(let asset): // ZStack alignment bottom
-                VStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationIcon(asset: asset)
                     SpaceIllustrationRectangle(height: dimension)
                 }
             case .top(let asset): // ZStack alignment top
-                VStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationRectangle(height: dimension)
                     SpaceIllustrationIcon(asset: asset)
                 }
@@ -223,7 +223,7 @@ struct SpaceIllustrationIcon: View {
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
+                .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
                 .padding(.horizontal, asset.extraPadding)
                 .padding(.vertical, asset.extraPadding)
                 .frame(width: 24)
@@ -255,7 +255,7 @@ private struct SpaceIllustrationRectangle: View {
 
     var body: some View {
         Rectangle()
-            .foregroundColor(theme.colorContentStatusInfo.color(for: colorScheme))
+            .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
             .frame(width: width, height: height)
     }
 }
@@ -316,9 +316,9 @@ struct SpaceHeaderDescription: View {
 
     var body: some View {
         content
-            .oudsBorder(style: theme.borderStyleDrag, width: theme.borderWidthThin, radius: theme.borderRadiusNone, color: theme.colorBgEmphasized)
-                .padding(.all, theme.spaceFixedMedium)
-                .background(theme.colorBgEmphasized.color(for: colorScheme))
+            .oudsBorder(style: theme.borders.borderStyleDrag, width: theme.borders.borderWidthThin, radius: theme.borders.borderRadiusNone, color: theme.colors.colorBgEmphasized)
+                .padding(.all, theme.spaces.spaceFixedMedium)
+                .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
     }
 
     @ViewBuilder private var content: some View {
@@ -336,30 +336,30 @@ struct SpaceHeaderDescription: View {
     private func texts(_ orientation: TextsOrientation) -> some View {
         switch orientation {
         case .horizontal:
-            HStack(spacing: theme.spaceFixedNone) {
+            HStack(spacing: theme.spaces.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(width: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
                 }
             }
         case .verical:
-            VStack(spacing: theme.spaceFixedNone) {
+            VStack(spacing: theme.spaces.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(height: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
                 }
             }
@@ -369,25 +369,25 @@ struct SpaceHeaderDescription: View {
     private func text(_ paddings: EdgeInsets) -> some View {
         HStack {
             Text(firstText)
-                .foregroundStyle(theme.colorContentOnOverlayEmphasized.color(for: colorScheme))
+                .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                 .typeBodyDefaultMedium(theme)
         }
-        .background(theme.colorBgEmphasized.color(for: colorScheme))
+        .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
         .padding(paddings)
-        .background(theme.colorContentStatusInfo.color(for: colorScheme))
+        .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
     }
 
     @ViewBuilder
     private func asset(_ paddings: AssetPadding) -> some View {
         switch paddings {
         case .top, .bottom:
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 if let iconAsset, paddings == .top {
-                    VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                    VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                         SpaceIllustrationRectangle(height: 8)
                         SpaceIllustrationIcon(asset: iconAsset)
                     }
-                    .padding(.trailing, theme.spaceFixedShorter)
+                    .padding(.trailing, theme.spaces.spaceFixedShorter)
                 }
                 if let iconAsset, paddings == .bottom {
                     SpaceIllustrationIcon(asset: iconAsset)
@@ -395,19 +395,19 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentOnStatusEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentOnStatusEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
-            .background(theme.colorBgEmphasized.color(for: colorScheme))
+            .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
 
         case .leading, .trailing:
-            HStack(alignment: .center, spacing: theme.spaceFixedNone) {
+            HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                 if let iconAsset, paddings == .leading {
-                    HStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                    HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                         SpaceIllustrationRectangle(width: 8)
                         SpaceIllustrationIcon(asset: iconAsset)
                     }
-                    .padding(.trailing, theme.spaceFixedShorter)
+                    .padding(.trailing, theme.spaces.spaceFixedShorter)
                 }
                 if let iconAsset, paddings == .trailing {
                     SpaceIllustrationIcon(asset: iconAsset)
@@ -415,10 +415,10 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentOnStatusEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentOnStatusEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
-            .background(theme.colorBgEmphasized.color(for: colorScheme))
+            .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
         }
     }
 }

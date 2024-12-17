@@ -24,7 +24,7 @@ struct FontTokenPage: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
                 ShowcaseCode(code: "theme.typeBodyStrongLarge(theme)")
             }
@@ -35,7 +35,7 @@ struct FontTokenPage: View {
                 IllustrationFont(namedFont: fontName)
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 
@@ -49,12 +49,12 @@ struct FontTokenPage: View {
         var body: some View {
             let token = namedFont.token(from: theme).fontToken(for: horizontalSizeClass ?? .regular)
 
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 illustration(for: namedFont, in: theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
                 Group {
-                    Text("family (\(theme.customFontFamily ?? "system")), ")
+                    Text("family (\(theme.fontFamily ?? "system")), ")
                     + Text("weight (\(token.weight)), ")
                     + Text("size (\(token.size, specifier: "%.2f")), ")
                     + Text("lineHeight (\(token.lineHeight, specifier: "%.2f")), ")
@@ -62,10 +62,10 @@ struct FontTokenPage: View {
                 }
                 .typeBodyDefaultMedium(theme)
                 .fixedSize(horizontal: false, vertical: true)
-                .foregroundStyle(theme.colorContentMuted.color(for: colorScheme))
+                .foregroundStyle(theme.colors.colorContentMuted.color(for: colorScheme))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.vertical, theme.spaceFixedShorter)
+            .padding(.vertical, theme.spaces.spaceFixedShorter)
             .accessibilityElement(children: .combine)
         }
     }

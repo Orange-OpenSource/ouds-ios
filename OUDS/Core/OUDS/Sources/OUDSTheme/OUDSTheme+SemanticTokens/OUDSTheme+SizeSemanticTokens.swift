@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-extension OUDSTheme: SizeSemanticTokens {
+extension OUDSSizeSemanticTokensProvider: SizeSemanticTokens {
     @objc open var sizeIconDecorative2xl: SizeSemanticToken { DimensionRawTokens.dimension900 }
     @objc open var sizeIconDecorative2xs: SizeSemanticToken { DimensionRawTokens.dimension200 }
     @objc open var sizeIconDecorativeLg: SizeSemanticToken { DimensionRawTokens.dimension600 }

@@ -17,7 +17,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the `MultipleFontCompositeRawTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+/// To ensure the `MultipleFontCompositeRawTokens` is tested as a provider of semantic tokens for compact and regular size classes.
 final class MultipleFontCompositeRawTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for compact and regular size classes

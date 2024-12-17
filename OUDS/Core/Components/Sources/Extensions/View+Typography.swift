@@ -23,7 +23,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeDisplayLarge(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeDisplayLarge))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeDisplayLarge))
     }
 
     /// Modifies the current `View` to apply a *display medium* typography.
@@ -31,7 +31,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeDisplayMedium(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeDisplayMedium))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeDisplayMedium))
     }
 
     /// Modifies the current `View` to apply a *display small* typography.
@@ -39,7 +39,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeDisplaySmall(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeDisplaySmall))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeDisplaySmall))
     }
 
     /// Modifies the current `View` to apply a *heading x large* typography.
@@ -47,7 +47,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeHeadingXLarge(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeHeadingXLarge))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeHeadingXLarge))
     }
 
     /// Modifies the current `View` to apply a *heading large* typography.
@@ -55,7 +55,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeHeadingLarge(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeHeadingLarge))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeHeadingLarge))
     }
 
     /// Modifies the current `View` to apply a *heading medium* typography.
@@ -63,7 +63,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeHeadingMedium(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeHeadingMedium))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeHeadingMedium))
     }
 
     /// Modifies the current `View` to apply a *heading small* typography.
@@ -71,7 +71,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeHeadingSmall(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeHeadingSmall))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeHeadingSmall))
     }
 
     /// Modifies the current `View` to apply a *body default large* typography.
@@ -79,7 +79,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeBodyDefaultLarge(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeBodyDefaultLarge))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultLarge))
     }
 
     /// Modifies the current `View` to apply a *body default medium* typography.
@@ -87,7 +87,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeBodyDefaultMedium(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeBodyDefaultMedium))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultMedium))
     }
 
     /// Modifies the current `View` to apply a *body default small* typography.
@@ -95,7 +95,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeBodyDefaultSmall(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeBodyDefaultSmall))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultSmall))
     }
 
     /// Modifies the current `View` to apply a *body strong large* typography.
@@ -103,7 +103,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeBodyStrongLarge(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeBodyStrongLarge))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyStrongLarge))
     }
 
     /// Modifies the current `View` to apply a *body strong medium* typography.
@@ -111,7 +111,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeBodyStrongMedium(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeBodyStrongMedium))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyStrongMedium))
     }
 
     /// Modifies the current `View` to apply a *body strong small* typography.
@@ -119,7 +119,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeBodyStrongSmall(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeBodyStrongSmall))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyStrongSmall))
     }
 
     /// Modifies the current `View` to apply a *label default x large* typography.
@@ -127,7 +127,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeLabelDefaultXLarge(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeLabelDefaultXLarge))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeLabelDefaultXLarge))
     }
 
     /// Modifies the current `View` to apply a *label default large* typography.
@@ -135,7 +135,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeLabelDefaultLarge(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeBodyDefaultLarge))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultLarge))
     }
 
     /// Modifies the current `View` to apply a *label default medium* typography.
@@ -143,7 +143,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeLabelDefaultMedium(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeBodyDefaultMedium))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultMedium))
     }
 
     /// Modifies the current `View` to apply a *label default small* typography.
@@ -151,7 +151,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeLabelDefaultSmall(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeBodyDefaultSmall))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeBodyDefaultSmall))
     }
 
     /// Modifies the current `View` to apply a *label strong x large* typography.
@@ -159,7 +159,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeLabelStrongXLarge(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeLabelStrongXLarge))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeLabelStrongXLarge))
     }
 
     /// Modifies the current `View` to apply a *label strong large* typography.
@@ -167,7 +167,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeLabelStrongLarge(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeLabelStrongLarge))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeLabelStrongLarge))
     }
 
     /// Modifies the current `View` to apply a *label strong medium* typography.
@@ -175,7 +175,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeLabelStrongMedium(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeLabelStrongMedium))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeLabelStrongMedium))
     }
 
     /// Modifies the current `View` to apply a *label strong small* typography.
@@ -183,7 +183,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeLabelStrongSmall(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeLabelStrongSmall))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeLabelStrongSmall))
     }
 
     /// Modifies the current `View` to apply a *code medium* typography.
@@ -191,7 +191,7 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeCodeMedium(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeCodeMedium))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeCodeMedium))
     }
 
     /// Modifies the current `View` to apply a *code small* typography.
@@ -199,6 +199,6 @@ extension View {
     /// - Parameter theme: The current `OUDSTheme` to use to load the current font family and the suitable font semantic token.
     /// - Returns some View: The current `View` but with new typography applied
     public func typeCodeSmall(_ theme: OUDSTheme) -> some View {
-        self.modifier(TypographyModifier(customFontFamily: theme.customFontFamily, font: theme.typeCodeSmall))
+        self.modifier(TypographyModifier(fontFamily: theme.fontFamily, font: theme.fonts.typeCodeSmall))
     }
 }

@@ -19,7 +19,7 @@
 
 /// This is a group of semantic tokens for **borders**.
 /// It defines all ``BorderWidthSemanticToken``, ``BorderRadiusSemanticToken`` and ``BorderStyleSemanticToken`` a theme must have.
-/// Any border semantic token must be declared there.
+/// Any border semantic token must be declared there as providers like ``OUDSBorderSemanticTokensProvider`` will then expose them through `OUDSTheme`.
 public protocol BorderSemanticTokens {
 
     // MARK: - Semantic token - Border - Width

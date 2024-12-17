@@ -32,7 +32,7 @@ struct ShowcaseElementsPage: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaceFixedShortest) {
+                LazyVGrid(columns: [GridItem(.flexible(), alignment: .topLeading)], spacing: theme.spaces.spaceFixedShortest) {
                     ForEach(elements, id: \.id) { element in
                         NavigationLink {
                             element.pageDescription
@@ -45,10 +45,10 @@ struct ShowcaseElementsPage: View {
                         }
                     }
                 }
-                .padding(.all, theme.spaceFixedMedium)
+                .padding(.all, theme.spaces.spaceFixedMedium)
                 .navigationbarMenuForThemeSelection()
             }
-            .background(theme.colorBgPrimary.color(for: colorScheme))
+            .background(theme.colors.colorBgPrimary.color(for: colorScheme))
         }
         .navigationViewStyle(.stack)
     }

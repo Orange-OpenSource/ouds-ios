@@ -21,14 +21,14 @@ struct BorderTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-                    ShowcaseCode(code: "theme.borderWidthDefault")
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                    ShowcaseCode(code: "theme.borders.borderWidthDefault")
                 }
             }
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
                         IllustrationWidth(namedWidth: namedWidth)
                     }
@@ -37,11 +37,11 @@ struct BorderTokenPage: View {
             } header: {
                 Text("app_tokens_border_width_label")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ForEach(NamedBorderRadius.allCases, id: \.rawValue) { namedRadius in
                         IllustrationRadius(namedRadius: namedRadius)
                     }
@@ -50,11 +50,11 @@ struct BorderTokenPage: View {
             } header: {
                 Text("app_tokens_border_radius_label")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
 
             Section {
-                VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ForEach(NamedBorderStyle.allCases, id: \.rawValue) { namedStyle in
                         IllustrationStyle(namedStyle: namedStyle)
                     }
@@ -63,10 +63,10 @@ struct BorderTokenPage: View {
             } header: {
                 Text("app_tokens_border_style_label")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct RectangleBackground: View {
@@ -75,7 +75,7 @@ struct BorderTokenPage: View {
 
         var body: some View {
             Rectangle()
-                .fill(theme.colorBgSecondary.color(for: colorScheme))
+                .fill(theme.colors.colorBgSecondary.color(for: colorScheme))
                 .frame(width: 64, height: 64)
         }
     }
@@ -93,10 +93,10 @@ struct BorderTokenPage: View {
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
-                    .oudsBorder(style: theme.borderStyleDefault,
+                    .oudsBorder(style: theme.borders.borderStyleDefault,
                                 width: token,
-                                radius: theme.borderRadiusNone,
-                                color: theme.colorBorderDefault)
+                                radius: theme.borders.borderRadiusNone,
+                                color: theme.colors.colorBorderDefault)
             }
         }
     }
@@ -114,10 +114,10 @@ struct BorderTokenPage: View {
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
-                    .oudsBorder(style: theme.borderStyleDefault,
-                                width: theme.borderWidthDefault,
+                    .oudsBorder(style: theme.borders.borderStyleDefault,
+                                width: theme.borders.borderWidthDefault,
                                 radius: token,
-                                color: theme.colorBorderDefault)
+                                color: theme.colors.colorBorderDefault)
             }
         }
     }
@@ -136,9 +136,9 @@ struct BorderTokenPage: View {
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
                     .oudsBorder(style: token,
-                                width: theme.borderWidthDefault,
-                                radius: theme.borderRadiusNone,
-                                color: theme.colorBorderDefault)
+                                width: theme.borders.borderWidthDefault,
+                                radius: theme.borders.borderRadiusNone,
+                                color: theme.colors.colorBorderDefault)
             }
         }
     }
@@ -154,15 +154,15 @@ enum NamedBorderRadius: String, CaseIterable {
     func token(from theme: OUDSTheme) -> BorderRadiusSemanticToken {
         switch self {
         case .borderRadiusNone:
-            return theme.borderRadiusNone
+            return theme.borders.borderRadiusNone
         case .borderRadiusDefault:
-            return theme.borderRadiusDefault
+            return theme.borders.borderRadiusDefault
         case .borderRadiusShort:
-            return theme.borderRadiusShort
+            return theme.borders.borderRadiusShort
         case .borderRadiusMedium:
-            return theme.borderRadiusMedium
+            return theme.borders.borderRadiusMedium
         case .borderRadiusTall:
-            return theme.borderRadiusTall
+            return theme.borders.borderRadiusTall
         }
     }
 }
@@ -180,21 +180,21 @@ enum NamedBorderWidth: String, CaseIterable {
     func token(from theme: OUDSTheme) -> BorderWidthSemanticToken {
         switch self {
         case .borderWidthNone:
-            return theme.borderWidthNone
+            return theme.borders.borderWidthNone
         case .borderWidthDefault:
-            return theme.borderWidthDefault
+            return theme.borders.borderWidthDefault
         case .borderWidthThin:
-            return theme.borderWidthThin
+            return theme.borders.borderWidthThin
         case .borderWidthMedium:
-            return theme.borderWidthMedium
+            return theme.borders.borderWidthMedium
         case .borderWidthThick:
-            return theme.borderWidthThick
+            return theme.borders.borderWidthThick
         case .borderWidthThicker:
-            return theme.borderWidthThicker
+            return theme.borders.borderWidthThicker
         case .borderWidthFocus:
-            return theme.borderWidthFocus
+            return theme.borders.borderWidthFocus
         case .borderWidthFocusInset:
-            return theme.borderWidthFocusInset
+            return theme.borders.borderWidthFocusInset
         }
     }
 }
@@ -206,9 +206,9 @@ enum NamedBorderStyle: String, CaseIterable {
     func token(from theme: OUDSTheme) -> BorderStyleSemanticToken {
         switch self {
         case .borderStyleDefault:
-            return theme.borderStyleDefault
+            return theme.borders.borderStyleDefault
         case .borderStyleDrag:
-            return theme.borderStyleDrag
+            return theme.borders.borderStyleDrag
         }
     }
 }

@@ -4,7 +4,7 @@
 // SPDX-License-Identifier: MIT
 // 
 // This software is distributed under the MIT license,
-// the text of which is available at https://publicsource.org/license/MIT/
+// the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
 // 
 // Authors: See CONTRIBUTORS.txt
@@ -17,11 +17,24 @@ import OUDSTokensSemantic
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
 // swiftlint:disable identifier_name
+// swiftlint:disable type_name
+
+// MARK: - Other Mock Theme
+
+final class OtherMockTheme: MockTheme, @unchecked Sendable {
+
+    public init() {
+        super.init(colors: OtherMockThemeColorSemanticTokensProvider())
+    }
+}
+
+// MARK: - Other Mock Theme Color Semantic Tokens Provider
 
 /// Some color semantic tokens may be not implemented, making fatalError() be triggered at `OUDSTheme` level and tests crash.
+/// `OrangeTheme` is not accessible here.
 /// Thus we use another mock theme to make comparisons with `MockTheme` and ensure overriding property of tokens is still working.
 /// This case of not implemented token only happens with color tokens.  (╯° °）╯︵ ┻━┻
-final class OtherMockTheme: MockTheme, @unchecked Sendable {
+open class OtherMockThemeColorSemanticTokensProvider: MockThemeColorSemanticTokensProvider {
 
     static let otherMockThemeMultipleColorSemanticTokens = MultipleColorSemanticTokens("#FF0000")
     static let otherMockThemeSemanticColorToken: ColorSemanticToken = "#00FF00"
@@ -629,3 +642,4 @@ final class OtherMockTheme: MockTheme, @unchecked Sendable {
 // swiftlint:enable required_deinit
 // swiftlint:enable type_body_length
 // swiftlint:enable identifier_name
+// swiftlint:enable type_name

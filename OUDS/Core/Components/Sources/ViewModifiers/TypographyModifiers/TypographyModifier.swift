@@ -27,7 +27,7 @@ import SwiftUI
 struct TypographyModifier: ViewModifier {
 
     /// The name of a possible custom font family, or `nil` if the font is use is _system font_
-    let customFontFamily: FontFamilyRawToken?
+    let fontFamily: FontFamilyRawToken?
     /// The typography to apply for *compact* or *regular* modes, i.e. font tokens
     let font: MultipleFontCompositeRawTokens
 
@@ -61,7 +61,7 @@ struct TypographyModifier: ViewModifier {
         // using UIFontMetrics to scale the font size, ensuring Dynamic Type support
         let scaledFontSize = UIFontMetrics.default.scaledValue(for: fontSize)
 
-        if let fontFamilyName = customFontFamily {
+        if let fontFamilyName = fontFamily {
             let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveFont.weight.fontWeight)")
             let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
             return customFont

@@ -33,25 +33,25 @@ extension NamedSpace {
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
             case .spaceInsetNone:
-                return theme.spaceInsetNone
+                return theme.spaces.spaceInsetNone
             case .spaceInsetSmash:
-                return theme.spaceInsetSmash
+                return theme.spaces.spaceInsetSmash
             case .spaceInsetShortest:
-                return theme.spaceInsetShortest
+                return theme.spaces.spaceInsetShortest
             case .spaceInsetShorter:
-                return theme.spaceInsetShorter
+                return theme.spaces.spaceInsetShorter
             case .spaceInsetShort:
-                return theme.spaceInsetShort
+                return theme.spaces.spaceInsetShort
             case .spaceInsetMedium:
-                return theme.spaceInsetMedium
+                return theme.spaces.spaceInsetMedium
             case .spaceInsetTall:
-                return theme.spaceInsetTall
+                return theme.spaces.spaceInsetTall
             case .spaceInsetTaller:
-                return theme.spaceInsetTaller
+                return theme.spaces.spaceInsetTaller
             case .spaceInsetTallest:
-                return theme.spaceInsetTallest
+                return theme.spaces.spaceInsetTallest
             case .spaceInsetSpacious:
-                return theme.spaceInsetSpacious
+                return theme.spaces.spaceInsetSpacious
             }
         }
     }

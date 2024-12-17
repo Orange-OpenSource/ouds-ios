@@ -24,19 +24,19 @@ struct ElevationTokenPage: View {
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                ShowcaseCode(code: "theme.elevationNone.elevation(for: colorScheme)")
+                ShowcaseCode(code: "theme.elevations.elevationNone.elevation(for: colorScheme)")
             }
 
-            Spacer().frame(height: theme.spaceFixedMedium)
+            Spacer().frame(height: theme.spaces.spaceFixedMedium)
 
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
                 IllustrationElevation(namedElevation: elevationName)
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     struct IllustrationElevation: View {
@@ -52,8 +52,8 @@ struct ElevationTokenPage: View {
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 Rectangle()
-                    .frame(width: theme.sizeIconDecorative2xl, height: theme.sizeIconDecorative2xl)
-                    .foregroundColor(theme.colorBgSecondary.color(for: colorScheme))
+                    .frame(width: theme.sizes.sizeIconDecorative2xl, height: theme.sizes.sizeIconDecorative2xl)
+                    .foregroundColor(theme.colors.colorBgSecondary.color(for: colorScheme))
                     .shadow(elevation: token)
                     .padding(.bottom, 2)
             }
@@ -76,21 +76,21 @@ enum NamedElevation: String, CaseIterable {
     func token(from theme: OUDSTheme) -> ElevationCompositeSemanticToken {
         switch self {
         case .elevationNone:
-            return theme.elevationNone
+            return theme.elevations.elevationNone
         case .elevationRaised:
-            return theme.elevationRaised
+            return theme.elevations.elevationRaised
         case .elevationStickyNavigationScrolled:
-            return theme.elevationStickyNavigationScrolled
+            return theme.elevations.elevationStickyNavigationScrolled
         case .elevationOverlayDefault:
-            return theme.elevationOverlayDefault
+            return theme.elevations.elevationOverlayDefault
         case .elevationStickyDefault:
-            return theme.elevationStickyDefault
+            return theme.elevations.elevationStickyDefault
         case .elevationStickyEmphasized:
-            return theme.elevationStickyEmphasized
+            return theme.elevations.elevationStickyEmphasized
         case .elevationDrag:
-            return theme.elevationDrag
+            return theme.elevations.elevationDrag
         case .elevationOverlayEmphasized:
-            return theme.elevationOverlayEmphasized
+            return theme.elevations.elevationOverlayEmphasized
         }
     }
 }

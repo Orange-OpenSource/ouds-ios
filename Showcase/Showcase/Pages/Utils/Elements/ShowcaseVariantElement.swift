@@ -34,13 +34,13 @@ struct ShowcaseVariantElement: View {
                 HStack {
                     Text(LocalizedStringKey(element.name))
                         .typeHeadingMedium(theme)
-                        .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
-                        .padding(.vertical, theme.spaceFixedShorter)
-                        .padding(.leading, theme.spaceFixedMedium)
+                        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                        .padding(.vertical, theme.spaces.spaceFixedShorter)
+                        .padding(.leading, theme.spaces.spaceFixedMedium)
                     Spacer()
                     Image(systemName: "chevron.right")
-                        .foregroundColor(theme.colorContentDefault.color(for: colorScheme))
-                        .padding(.trailing, theme.spaceFixedMedium)
+                        .foregroundColor(theme.colors.colorContentDefault.color(for: colorScheme))
+                        .padding(.trailing, theme.spaces.spaceFixedMedium)
                         .accessibilityHidden(true)
                 }
             }

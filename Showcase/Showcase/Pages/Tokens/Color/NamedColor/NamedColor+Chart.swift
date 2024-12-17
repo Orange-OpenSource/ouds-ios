@@ -38,39 +38,39 @@ extension NamedColor {
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
             case .colorChartCategoricalTier1:
-                return theme.colorChartCategoricalTier1
+                return theme.colors.colorChartCategoricalTier1
             case .colorChartCategoricalTier2:
-                return theme.colorChartCategoricalTier2
+                return theme.colors.colorChartCategoricalTier2
             case .colorChartCategoricalTier3:
-                return theme.colorChartCategoricalTier3
+                return theme.colors.colorChartCategoricalTier3
             case .colorChartCategoricalTier4:
-                return theme.colorChartCategoricalTier4
+                return theme.colors.colorChartCategoricalTier4
             case .colorChartCategoricalTier5:
-                return theme.colorChartCategoricalTier5
+                return theme.colors.colorChartCategoricalTier5
             case .colorChartCategoricalTier6:
-                return theme.colorChartCategoricalTier6
+                return theme.colors.colorChartCategoricalTier6
             case .colorChartCategoricalTier7:
-                return theme.colorChartCategoricalTier7
+                return theme.colors.colorChartCategoricalTier7
             case .colorChartCategoricalTier8:
-                return theme.colorChartCategoricalTier8
+                return theme.colors.colorChartCategoricalTier8
             case .colorChartCategoricalTier9:
-                return theme.colorChartCategoricalTier9
+                return theme.colors.colorChartCategoricalTier9
             case .colorChartCategoricalTier10:
-                return theme.colorChartCategoricalTier10
+                return theme.colors.colorChartCategoricalTier10
             case .colorChartFunctionalInformation:
-                return theme.colorChartFunctionalInformation
+                return theme.colors.colorChartFunctionalInformation
             case .colorChartFunctionalNegative:
-                return theme.colorChartFunctionalNegative
+                return theme.colors.colorChartFunctionalNegative
             case .colorChartFunctionalPositive:
-                return theme.colorChartFunctionalPositive
+                return theme.colors.colorChartFunctionalPositive
             case .colorChartFunctionalWarning:
-                return theme.colorChartFunctionalWarning
+                return theme.colors.colorChartFunctionalWarning
             case .colorChartGridlines:
-                return theme.colorChartGridlines
+                return theme.colors.colorChartGridlines
             case .colorChartHighlight:
-                return theme.colorChartHighlight
+                return theme.colors.colorChartHighlight
             case .colorChartNeutral:
-                return theme.colorChartNeutral
+                return theme.colors.colorChartNeutral
             }
         }
     }
