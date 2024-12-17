@@ -17,14 +17,14 @@ You can [refer to the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/5
 You should use one (or several) of the following imports for your needs, which are basically _Swift Package_ products.
 
 ```swift
-import OUDS   // If you want to define your theme or use OUDSThemeableView
+import OUDS // If you want to define your theme or use OUDSThemeableView
 import OUDSModules // To use modules
-import OUDSComponents   // To use components
+import OUDSComponents // To use components
 import OUDSThemeOrange // To use the default theme
 import OUDSThemeInverse // To use the inverse theme
-import OUDSTokensComponent   // If you need to override or use directly components tokens
-import OUDSTokenSemantic// If you need to override or use directly semantic tokens
-import OUDSTokensRaw    // If you need to override or use directly raw tokens
+import OUDSTokensComponent // If you need to override or use directly components tokens
+import OUDSTokenSemantic // If you need to override or use directly semantic tokens
+import OUDSTokensRaw // If you need to override or use directly raw tokens
 ```
 
 ### Chose your theme
