@@ -64,7 +64,7 @@ You can enrich the ``OrangeTheme`` by subclassing it or by overriding some token
 
 You may want to define your own theme, thus you can override the ``OrangeTheme`` with your own class or just override the providers.
 
-You will have to override the tokens wrapper you need. To do that, make a subclass of the wrapper you target:
+You will have to override the tokens provider you need. To do that, make a subclass of the provider you target:
 - spaces tokens are `OUDSSpaceSemanticTokensProvider`
 - sizes tokens are in `OUDSSizeSemanticTokensProvider`
 - colors tokens are all defined in `OrangeThemeColorSemanticTokensProvider`
@@ -78,7 +78,7 @@ You will have to override the tokens wrapper you need. To do that, make a subcla
 import OUDSTokensSemantic           // To use semantic tokens if needed
 import OUDSTokensRaw                // To use raw tokens if needed
 
-// Token wrapper for spaces
+// Token provider for spaces
 
 class YourAppThemeSpaceTokensProvider: OUDSSpaceSemanticTokensProvider {
     override var spaceFixedMedium: SpaceSemanticToken {
@@ -89,7 +89,7 @@ class YourAppThemeSpaceTokensProvider: OUDSSpaceSemanticTokensProvider {
     }
 }
 
-// Token wrapper for sizes
+// Token provider for sizes
 
 class YourAppThemeSizeTokensProvider: OUDSSizeSemanticTokensProvider {
     override var sizeIconDecorative2xl: SizeSemanticToken {
@@ -100,7 +100,7 @@ class YourAppThemeSizeTokensProvider: OUDSSizeSemanticTokensProvider {
     }
 }
 
-// Token wrapper for colors
+// Token provider for colors
 
 class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
     override var colorBgSecondary: MultipleColorSemanticTokens {
@@ -111,7 +111,7 @@ class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
     }
 }
 
-// Token wrapper for border
+// Token provider for border
 
 class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
     override var borderStyleDefault: BorderStyleSemanticToken {
@@ -125,7 +125,7 @@ class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
     }
 }
 
-// Token wrapper for elevation
+// Token provider for elevation
 
 class YourAppThemeElevationTokensProvider: OUDSElevationSemanticTokensProvider {
     override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
@@ -133,7 +133,7 @@ class YourAppThemeElevationTokensProvider: OUDSElevationSemanticTokensProvider {
     }
 }
 
-// Token wrapper for opacity
+// Token provider for opacity
 
 class YourAppThemeOpacityTokensProvider: OUDSOpacitySemanticTokensProvider {
     override var opacityStrong: OpacitySemanticToken {
@@ -141,7 +141,7 @@ class YourAppThemeOpacityTokensProvider: OUDSOpacitySemanticTokensProvider {
     }
 }
 
-// Token wrapper for grid
+// Token provider for grid
 
 class YourAppThemeGridTokensProvider: OUDSGridSemanticTokensProvider {
     override var gridExtraCompactColumnGap: GridSemanticToken {
@@ -155,7 +155,7 @@ class YourAppThemeGridTokensProvider: OUDSGridSemanticTokensProvider {
     }
 }
 
-// Token wrapper for font
+// Token provider for font
 
 class YourAppThemeFontTokensProvider: OUDSFontSemanticTokensProvider {
     override var typeDisplayLarge: MultipleFontCompositeRawTokens {
@@ -209,7 +209,7 @@ struct YourApp: App {
 
 ### By overriding
 
-Quite simple and similar to the previous solution, but give only the wrapper to the ``OrangeTheme``.
+Quite simple and similar to the previous solution, but give only the provider to the ``OrangeTheme``.
 
 For example for colors:
 

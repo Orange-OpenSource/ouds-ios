@@ -14,11 +14,11 @@
 import OUDSFoundations
 
 /// A class which wraps all **border semantic tokens** and expose them.
-/// This wrapper should be integrated as a ``AllBorderSemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a ``AllBorderSemanticTokens`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift
-///     // Define your own wrapper for border semantic tokens
+///     // Define your own provider for border semantic tokens
 ///     class CustomBorderTokensProvider: OUDSBorderSemanticTokensProvider {
 ///
 ///         // Then override the border semantic tokens you want, using the border raw tokens available
@@ -53,7 +53,7 @@ import OUDSFoundations
 /// ```
 open class OUDSBorderSemanticTokensProvider {
 
-    /// Intializes the wrapper
+    /// Intializes the provider
     public init() {
         OUDSLogger.debug("Init of OUDSBorderSemanticTokensProvider")
     }

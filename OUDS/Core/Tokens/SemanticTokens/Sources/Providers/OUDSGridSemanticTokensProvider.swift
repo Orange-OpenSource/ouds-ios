@@ -14,11 +14,11 @@
 import OUDSFoundations
 
 /// A class which wraps all **grid semantic tokens** and expose them.
-/// This wrapper should be integrated as a ``AllGridSemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a ``AllGridSemanticTokens`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift
-///     // Define your own wrapper for grid semantic tokens
+///     // Define your own provider for grid semantic tokens
 ///     class CustomGridTokensProvider: OUDSGridSemanticTokensProvider {
 ///
 ///         // Then override the grid semantic tokens you want, using the grid raw tokens available
@@ -55,7 +55,7 @@ import OUDSFoundations
 /// ```
 open class OUDSGridSemanticTokensProvider {
 
-    /// Intializes the wrapper
+    /// Intializes the provider
     public init() {
         OUDSLogger.debug("Init of OUDSGridSemanticTokensProvider")
     }

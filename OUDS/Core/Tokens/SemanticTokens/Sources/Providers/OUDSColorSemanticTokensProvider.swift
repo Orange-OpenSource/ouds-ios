@@ -14,11 +14,11 @@
 import OUDSFoundations
 
 /// A class which wraps all **color semantic tokens**, *multiple* or not, and expose them.
-/// This wrapper should be integrated as a ``AllColorSemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a ``AllColorSemanticTokens`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift
-///     // Define your own wrapper for color semantic tokens
+///     // Define your own provider for color semantic tokens
 ///     class CustomColorTokensProviderr: OUDSColorSemanticTokensProvider {
 ///
 ///         // Then override the color semantic tokens you want, using the color raw tokens available
@@ -51,7 +51,7 @@ import OUDSFoundations
 /// ```
 open class OUDSColorSemanticTokensProvider {
 
-    /// Intializes the wrapper
+    /// Intializes the provider
     public init() {
         OUDSLogger.debug("Init of OUDSColorSemanticTokensProvider")
     }

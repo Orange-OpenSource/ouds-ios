@@ -17,7 +17,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the `MultipleColorRawToken` is tested as a wrapper of semantic tokens for light and dark color schemes.
+/// To ensure the `MultipleColorRawToken` is tested as a provider of semantic tokens for light and dark color schemes.
 final class MultipleColorRawTokenTests: XCTestCase {
 
     /// Tests if the unique value is applied for light and dark modes

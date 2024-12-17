@@ -14,11 +14,11 @@
 import OUDSFoundations
 
 /// A class which wraps all **opacity semantic tokens** and expose them.
-/// This wrapper should be integrated as a ``AllOpacitySemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a ``AllOpacitySemanticTokens`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift
-///     // Define your own wrapper for opacity semantic tokens
+///     // Define your own provider for opacity semantic tokens
 ///     class CustomOpacityTokensProvider: OUDSOpacitySemanticTokensProvider {
 ///
 ///         // Then override the opacity semantic tokens you want, using the opacity raw tokens available
@@ -47,7 +47,7 @@ import OUDSFoundations
 /// ```
 open class OUDSOpacitySemanticTokensProvider {
 
-    /// Intializes the wrapper
+    /// Intializes the provider
     public init() {
         OUDSLogger.debug("Init of OUDSOpacitySemanticTokensProvider")
     }

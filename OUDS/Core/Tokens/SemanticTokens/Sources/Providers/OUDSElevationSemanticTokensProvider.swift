@@ -14,11 +14,11 @@
 import OUDSFoundations
 
 /// A class which wraps all **elevation semantic tokens**, *multiple*, *composite* or not, and expose them.
-/// This wrapper should be integrated as a ``AllElevationSemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a ``AllElevationSemanticTokens`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift
-///     // Define your own wrapper for elevation semantic tokens
+///     // Define your own provider for elevation semantic tokens
 ///     class CustomElevationTokensProvider: OUDSElevationSemanticTokensProvider {
 ///
 ///         // Then override the elevation semantic tokens you want, using the elevation raw tokens available
@@ -47,7 +47,7 @@ import OUDSFoundations
 /// ```
 open class OUDSElevationSemanticTokensProvider {
 
-    /// Intializes the wrapper
+    /// Intializes the provider
     public init() {
         OUDSLogger.debug("Init of OUDSElevationSemanticTokensProvider")
     }

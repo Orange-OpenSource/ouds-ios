@@ -27,26 +27,26 @@ public typealias AllOpacitySemanticTokens = OpacitySemanticTokens
 public typealias AllGridSemanticTokens = GridSemanticTokens
 
 /// A type alias which merges  ``ColorSemanticTokens`` and ``ColorMultipleSemanticTokens``.
-/// It helps in the end to define a wrapper for all the semantic tokens of colors, multiple or not, generated or not.
+/// It helps in the end to define a provider for all the semantic tokens of colors, multiple or not, generated or not.
 /// For example ``OUDSColorSemanticTokensProvider`` matches this type alias.
 public typealias AllColorSemanticTokens = ColorSemanticTokens & ColorMultipleSemanticTokens
 
 /// A type alias which merges  ``ElevationSemanticTokens``, ``ElevationCompositeSemanticTokens`` and ``ElevationMultipleSemanticTokens``.
-/// It helps in the end to define a wrapper for all the semantic tokens of elevations, multiple or not, generated or not.
+/// It helps in the end to define a provider for all the semantic tokens of elevations, multiple or not, generated or not.
 /// For example ``OUDSElevationSemanticTokensProvider`` matches this type alias.
 public typealias AllElevationSemanticTokens = ElevationSemanticTokens & ElevationCompositeSemanticTokens & ElevationMultipleSemanticTokens
 
 /// A type alias which merges  ``FontSemanticTokens``, ``FontCompositeSemanticTokens`` and ``FontMultipleSemanticTokens``.
-/// It helps in the end to define a wrapper for all the semantic tokens of fonts, multiple, composite, or not, generated or not.
+/// It helps in the end to define a provider for all the semantic tokens of fonts, multiple, composite, or not, generated or not.
 /// For example ``OUDSFontSemanticTokensProvider`` matches this type alias.
 public typealias AllFontSemanticTokens = FontSemanticTokens & FontCompositeSemanticTokens & FontMultipleSemanticTokens
 
 /// A type alias which merges  ``SizeSemanticTokens`` and ``SizeMultipleSemanticTokens``.
-/// It helps in the end to define a wrapper for all the semantic tokens of size, multiple or not, generated or not.
+/// It helps in the end to define a provider for all the semantic tokens of size, multiple or not, generated or not.
 /// For example ``OUDSSizeSemanticTokensProvider`` matches this type alias.
 public typealias AllSizeSemanticTokens = SizeSemanticTokens & SizeMultipleSemanticTokens
 
 /// A type alias which merges  ``SpaceSemanticTokens`` and ``SpaceMultipleSemanticTokens``.
-/// It helps in the end to define a wrapper for all the semantic tokens of space, multiple or not, generated or not.
+/// It helps in the end to define a provider for all the semantic tokens of space, multiple or not, generated or not.
 /// For example ``OUDSSpaceSemanticTokensProvider`` matches this type alias.
 public typealias AllSpaceSemanticTokens = SpaceSemanticTokens & SpaceMultipleSemanticTokens

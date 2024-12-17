@@ -26,10 +26,10 @@ protocol ColorSemanticTokens {
     // ...
 }
 
-// Ensure you have a wrapper
+// Ensure you have a provider
 open class OUDSColorSemanticTokensProvider { }
 
-// Define the semantic tokens to expose through the theme thanks to the wrapper
+// Define the semantic tokens to expose through the theme thanks to the provider
 extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
 
     // Color is available in the module of OUDSTheme
@@ -75,10 +75,10 @@ public protocol ColorMultipleSemanticTokens { ... }
 // These protoocols are merged in type aliase
 public typealias AllColorSemanticTokens = ColorSemanticTokens & ColorMultipleSemanticTokens
 
-// For example, the wrapper for the colors basically is:
+// For example, the provider for the colors basically is:
 open class OUDSColorSemanticTokensProvider { ... }
 
-// The wrapper is composed by protocols containing tokens
+// The provider is composed by protocols containing tokens
 extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorOpacityInvisibleBlackLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     @objc open var colorOpacityInvisibleWhiteLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
@@ -87,12 +87,12 @@ extension OUDSColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleBlackLight, dark: colorOpacityInvisibleBlackDark) }
 }
 
-// The "abstract" object of theme expose the wrapper through this subset of protocols
+// The "abstract" object of theme expose the provider through this subset of protocols
 open class OUDSTheme: @unchecked Sendable {
     public let colors: AllColorSemanticTokens
 }
 
-// And finaly, the default theme, which can be subclassed, exposes the tokens through the wrapper
+// And finaly, the default theme, which can be subclassed, exposes the tokens through the provider
 open class OrangeTheme: OUDSTheme, @unchecked Sendable { ... }
 
 theme.colors.colorOpacityInvisibleBlack

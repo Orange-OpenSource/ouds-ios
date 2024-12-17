@@ -14,11 +14,11 @@
 import OUDSFoundations
 
 /// A class which wraps all **size semantic tokens**, *multiple* or not, and expose them.
-/// This wrapper should be integrated as a ``AllSizeSemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a ``AllSizeSemanticTokens`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift
-///     // Define your own wrapper for size semantic tokens
+///     // Define your own provider for size semantic tokens
 ///     class CustomSizeTokensProvider: OUDSSizeSemanticTokensProvider {
 ///
 ///         // Then override the size semantic tokens you want, using the dimension raw tokens available
@@ -51,7 +51,7 @@ import OUDSFoundations
 /// ```
 open class OUDSSizeSemanticTokensProvider {
 
-    /// Intializes the wrapper
+    /// Intializes the provider
     public init() {
         OUDSLogger.debug("Init of OUDSSizeSemanticTokensProvider")
     }

@@ -14,11 +14,11 @@
 import OUDSFoundations
 
 /// A class which wraps all **font semantic tokens**, *multiple*, *composite* or not, and expose them.
-/// This wrapper should be integrated as a ``AllFontSemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a ``AllFontSemanticTokens`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift
-///     // Define your own wrapper for font semantic tokens
+///     // Define your own provider for font semantic tokens
 ///     class CustomFontTokensProvider: OUDSFontSemanticTokensProvider {
 ///
 ///         // Then override the font semantic tokens you want, using the font raw tokens available
@@ -51,7 +51,7 @@ import OUDSFoundations
 /// ```
 open class OUDSFontSemanticTokensProvider {
 
-    /// Intializes the wrapper
+    /// Intializes the provider
     public init() {
         OUDSLogger.debug("Init of OUDSFontSemanticTokensProvider")
     }
