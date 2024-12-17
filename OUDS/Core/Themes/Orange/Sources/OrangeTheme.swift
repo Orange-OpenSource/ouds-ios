@@ -70,7 +70,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`, default set to `OUDSElevationSemanticTokensProvider`
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OUDSFontSemanticTokensProvider`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`, default set to `OUDSGridSemanticTokensProvider`
-    ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation, default set to `OUDSOpacitySemanticTokensWrapper`
+    ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation, default set to `OUDSOpacitySemanticTokensProvider`
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation, default set to `OUDSSizeSemanticTokensWrapper`
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokens` implementation, default set to `OUDSSpaceSemanticTokensWrapper`
     override public init(colors: AllColorSemanticTokens = OrangeThemeColorSemanticTokensWrapper(),
@@ -78,7 +78,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensProvider(),
                          fonts: AllFontSemanticTokens = OUDSFontSemanticTokensProvider(),
                          grids: AllGridSemanticTokens = OUDSGridSemanticTokensProvider(),
-                         opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
+                         opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensProvider(),
                          sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensWrapper(),
                          spaces: AllSpaceSemanticTokens = OUDSSpaceSemanticTokensWrapper()) {
         OUDSLogger.debug("Init of OrangeTheme")

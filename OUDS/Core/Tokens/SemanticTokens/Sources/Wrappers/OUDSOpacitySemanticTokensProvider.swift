@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for opacity semantic tokens
-///     class CustomOpacityTokensWrapper: OUDSOpacitySemanticTokensWrapper {
+///     class CustomOpacityTokensWrapper: OUDSOpacitySemanticTokensProvider {
 ///
 ///         // Then override the opacity semantic tokens you want, using the opacity raw tokens available
 ///
@@ -45,11 +45,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(opacities: CustomOpacityTokensWrapper())
 /// ```
-open class OUDSOpacitySemanticTokensWrapper {
+open class OUDSOpacitySemanticTokensProvider {
 
     /// Intializes the wrapper
     public init() {
-        OUDSLogger.debug("Init of OUDSOpacitySemanticTokensWrapper")
+        OUDSLogger.debug("Init of OUDSOpacitySemanticTokensProvider")
     }
 
     deinit{ }

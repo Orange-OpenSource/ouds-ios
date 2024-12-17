@@ -18,7 +18,7 @@ public typealias AllBorderSemanticTokens = BorderSemanticTokens
 
 /// A type alias only for ``OpacitySemanticTokens`` so as to keep consistency with other type aliases
 /// merging several protocols.
-/// For example ``OUDSOpacitySemanticTokensWrapper`` matches this type alias.
+/// For example ``OUDSOpacitySemanticTokensProvider`` matches this type alias.
 public typealias AllOpacitySemanticTokens = OpacitySemanticTokens
 
 /// A type alias only for ``GridSemanticTokens`` so as to keep consistency with other type aliases
