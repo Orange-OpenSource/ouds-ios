@@ -45,9 +45,9 @@ struct ButtonForegroundModifier: ViewModifier {
         case .pressed:
             pressedToken.color(for: colorScheme)
         case .loading:
-            loadingToken
-                .color(for: colorScheme)
-                .opacity(0)
+            // Hide the content because it is replaced by the loading indicator.
+            // However the content is nedded to get the size the button in loading state.
+            Color.clear.opacity(0)
         case .disabled:
             disabledToken.color(for: colorScheme)
         }
@@ -63,7 +63,6 @@ struct ButtonForegroundModifier: ViewModifier {
             onColoredSurface ? theme.buttonColorContentMinimalEnabledMono : theme.buttonColorContentMinimalEnabled
         case .negative:
             theme.colorContentOnActionNegative
-//            theme.colorContentOnActionNegativeEnabled TODO:
         }
     }
 
@@ -76,8 +75,7 @@ struct ButtonForegroundModifier: ViewModifier {
         case .minimal:
             onColoredSurface ? theme.buttonColorContentMinimalHoverMono : theme.buttonColorContentMinimalHover
         case .negative:
-            onColoredSurface ? theme.colorContentOnActionNegative : theme.colorContentOnActionNegative
-//            theme.colorContentOnActionNegativeHover TODO:
+            theme.colorContentOnActionNegative
         }
     }
 
@@ -91,21 +89,6 @@ struct ButtonForegroundModifier: ViewModifier {
             onColoredSurface ? theme.buttonColorContentDefaultPressedMono : theme.buttonColorContentDefaultPressed
         case .negative:
             theme.colorContentOnActionNegative
-//            theme.colorContentOnActionNegativePressed TODO:
-        }
-    }
-
-    private var loadingToken: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .default:
-            onColoredSurface ? theme.buttonColorContentDefaultLoadingMono : theme.buttonColorContentDefaultLoading
-        case .strong:
-            onColoredSurface ? theme.buttonColorContentStrongLoadingMono : theme.colorContentOnActionEnabled
-        case .minimal:
-            onColoredSurface ? theme.buttonColorContentMinimalLoadingMono : theme.buttonColorContentMinimalLoading
-        case .negative:
-            theme.colorContentOnActionNegative
-//            theme.colorContentOnActionNegativeLoading TODO:
         }
     }
 

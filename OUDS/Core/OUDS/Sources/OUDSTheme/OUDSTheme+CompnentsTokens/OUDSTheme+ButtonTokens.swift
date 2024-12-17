@@ -52,7 +52,7 @@ extension OUDSTheme: ButtonsComponentTokens {
     public var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
     public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
     public var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
+    public var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
     public var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
 
     // MARK: Background Color Minimal

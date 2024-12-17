@@ -88,7 +88,6 @@ struct ButtonLoadingContentModifier: ViewModifier {
             onColoredSurface ? theme.buttonColorContentMinimalLoadingMono : theme.buttonColorContentMinimalLoading
         case .negative:
             theme.colorContentOnActionNegative
-            // theme.colorContentOnActionNegativeLoading // TODO:
         }
     }
 }
