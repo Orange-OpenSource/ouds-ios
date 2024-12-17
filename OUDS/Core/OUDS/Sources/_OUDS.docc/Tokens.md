@@ -148,4 +148,4 @@ You can refer to the *OUDSTokensRaw* documentation or [get it online](https://io
 
 ### For semantic tokens
 
-You can refer to the *OUDSTokensSemantic* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/). [The wiki provides details](https://github.com/Orange-OpenSource/ouds-ios/wiki/0-%E2%80%90-How-to-update-tokens) also.
+You can refer to the *OUDSTokensSemantic* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/). [The wiki provides details](https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens) also.
