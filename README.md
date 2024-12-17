@@ -15,6 +15,7 @@
 ## Table of contents
 
 - [Status](#status)
+- [OUDS](#ouds)
 - [Content](#content)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
@@ -41,6 +42,10 @@ This repository contains the OUDS iOS library that provides Orange iOS component
 You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/), and also the [whole design system](https://unified-design-system.orange.com/).
 
 Documentation is powered by [GitHub Pages](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
+
+## OUDS
+
+OUDS means "Orange Unified Design System". This is a new design system, again, but _unified_, trying to merge all requirements of Orange brands and affiliates so as to provide a unique design system, unified across all platforms and for all countries, companies, users and apps. Guidelines for TV, Android, iOS and web environments will be merged in a "cohesive" approach, and any Orange-related softwares including brand apps like Parnasse and Sosh, *Orange Innovation Cup* apps and Orange countries and affiliates app will use this project in the future. The project is open source and topics like accessibility and ecodesign are also managed. It should replace internal frameworks and also [ODS](https://github.com/Orange-OpenSource/ods-ios) in the near future.
 
 ## Bugs and feature requests
 
