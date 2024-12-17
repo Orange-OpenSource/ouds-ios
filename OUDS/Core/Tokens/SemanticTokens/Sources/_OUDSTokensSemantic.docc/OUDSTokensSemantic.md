@@ -27,10 +27,10 @@ protocol ColorSemanticTokens {
 }
 
 // Ensure you have a wrapper
-open class OUDSColorSemanticTokensWrapper { }
+open class OUDSColorSemanticTokensProvider { }
 
 // Define the semantic tokens to expose through the theme thanks to the wrapper
-extension OUDSColorSemanticTokensWrapper: ColorSemanticTokens {
+extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
 
     // Color is available in the module of OUDSTheme
     @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
@@ -76,14 +76,14 @@ public protocol ColorMultipleSemanticTokens { ... }
 public typealias AllColorSemanticTokens = ColorSemanticTokens & ColorMultipleSemanticTokens
 
 // For example, the wrapper for the colors basically is:
-open class OUDSColorSemanticTokensWrapper { ... }
+open class OUDSColorSemanticTokensProvider { ... }
 
 // The wrapper is composed by protocols containing tokens
-extension OUDSColorSemanticTokensWrapper: ColorSemanticTokens {
+extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorOpacityInvisibleBlackLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     @objc open var colorOpacityInvisibleWhiteLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
 }
-extension OUDSColorSemanticTokensWrapper: ColorMultipleSemanticTokens {
+extension OUDSColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleBlackLight, dark: colorOpacityInvisibleBlackDark) }
 }
 

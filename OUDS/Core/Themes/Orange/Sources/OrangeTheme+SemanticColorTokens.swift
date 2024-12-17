@@ -23,7 +23,7 @@ import OUDSTokensSemantic
 
 /// Overrides some color tokens using values available in ``OrangeBrandColorRawTokens``.
 /// In fact the *tokenator* is not able to do the magic needed using the JSON file produced by *Figma*.
-/// Some color tokens are not isolated by theme in *Figma*, thus the abstract `OUDSColorSemanticTokensWrapper` in `OUDS` module faces issues by defining tokens with raw tokens not defined in `ColorRawTokens` but in ``OrangeBrandColorRawTokens``. Thus when the `OUDSColorSemanticTokensWrapper` has its colors tokens updated, a manual update must be done to replace unknown tokens by `fatalError` (i.e. must be overriden somewhere somehow) in that file and in this ``OrangeTheme`` file tokens must be overriden and manualy updated with the expected values.
+/// Some color tokens are not isolated by theme in *Figma*, thus the abstract `OUDSColorSemanticTokensProvider` in `OUDS` module faces issues by defining tokens with raw tokens not defined in `ColorRawTokens` but in ``OrangeBrandColorRawTokens``. Thus when the `OUDSColorSemanticTokensProvider` has its colors tokens updated, a manual update must be done to replace unknown tokens by `fatalError` (i.e. must be overriden somewhere somehow) in that file and in this ``OrangeTheme`` file tokens must be overriden and manualy updated with the expected values.
 ///
 ///     // For example, in OUDSTheme colors:
 ///
@@ -50,7 +50,7 @@ import OUDSTokensSemantic
 ///
 /// In few words, we need to keep isolated tokens and brand colors, provide kind of abstract architecture with isolated and overridable themes, but face troubles with *Figma* design kit having conception issues and producing JSON not reflecting the reality making *tokenator* unable to build the expected Swift code.
 /// We get uncompilable code for color tokens update and need to make the merge manualy.
-open class OrangeThemeColorSemanticTokensWrapper: OUDSColorSemanticTokensWrapper {
+open class OrangeThemeColorSemanticTokensWrapper: OUDSColorSemanticTokensProvider {
 
     // MARK: - Init
 

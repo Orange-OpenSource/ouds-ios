@@ -63,7 +63,7 @@ open class OUDSTheme: @unchecked Sendable {
     /// Defines a basic kind of abstract theme to subclass then.
     /// No custom font family will be used.
     /// - Parameters:
-    ///    - colors: An object providing all the color semantic tokens, by default `OUDSColorSemanticTokensWrapper`
+    ///    - colors: An object providing all the color semantic tokens, by default `OUDSColorSemanticTokensProvider`
     ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensProvider`
     ///    - elevations: An object providing all the elevation semantic tokens, by default `OUDSElevationSemanticTokensWrapper`
     ///    - fonts: An object providing all the font semantic tokens, by default `OUDSFontSemanticTokensWrapper`
@@ -71,7 +71,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensWrapper`
     ///    - sizes: An object providing all the size semantic tokens, by default `OUDSSizeSemanticTokensWrapper`
     ///    - spaces: An object providing all the space semantic tokens, by default `OUDSSpaceSemanticTokensWrapper`
-    public init(colors: AllColorSemanticTokens = OUDSColorSemanticTokensWrapper(),
+    public init(colors: AllColorSemanticTokens = OUDSColorSemanticTokensProvider(),
                 borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensProvider(),
                 elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensWrapper(),
                 fonts: AllFontSemanticTokens = OUDSFontSemanticTokensWrapper(),

@@ -53,7 +53,7 @@ protocol ColorSemanticTokens {
 }
 
 // Define the semantic tokens exposed through the theme
-extension OUDSColorSemanticTokensWrapper: ColorSemanticTokens {
+extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
 
     // Color is available in the module of OUDSTheme
     @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
@@ -66,7 +66,7 @@ extension OUDSColorSemanticTokensWrapper: ColorSemanticTokens {
 }
 
 // Add missing values
-extension OrangeColorSemanticTokensWrapper: OUDSColorSemanticTokensWrapper {
+extension OrangeColorSemanticTokensWrapper: OUDSColorSemanticTokensProvider {
 
     // Define value value with the accessible token 
     @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }

@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for color semantic tokens
-///     class CustomColorTokensWrapper: OUDSColorSemanticTokensWrapper {
+///     class CustomColorTokensWrapper: OUDSColorSemanticTokensProvider {
 ///
 ///         // Then override the color semantic tokens you want, using the color raw tokens available
 ///
@@ -49,11 +49,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(colors: CustomColorTokensWrapper())
 /// ```
-open class OUDSColorSemanticTokensWrapper {
+open class OUDSColorSemanticTokensProvider {
 
     /// Intializes the wrapper
     public init() {
-        OUDSLogger.debug("Init of OUDSColorSemanticTokensWrapper")
+        OUDSLogger.debug("Init of OUDSColorSemanticTokensProvider")
     }
 
     deinit{ }
@@ -62,5 +62,5 @@ open class OUDSColorSemanticTokensWrapper {
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of ColorSemanticTokens and ColorMultipleSemanticTokens are not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ColorSemanticTokens.swift
     // and OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ColorMultipleSemanticTokens.swift
-    // This declaration of OUDSColorSemanticTokensWrapper is here to allow to write documentation.
+    // This declaration of OUDSColorSemanticTokensProvider is here to allow to write documentation.
 }
