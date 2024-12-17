@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for size semantic tokens
-///     class CustomSizeTokensWrapper: OUDSSizeSemanticTokensProvider {
+///     class CustomSizeTokensProvider: OUDSSizeSemanticTokensProvider {
 ///
 ///         // Then override the size semantic tokens you want, using the dimension raw tokens available
 ///
@@ -33,13 +33,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomSizeTokensWrapper` to your own theme implementation:
+/// Then, you can give this `CustomSizeTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(sizes: CustomSizeTokensWrapper(),
+///         super.init(sizes: CustomSizeTokensProvider(),
 ///     }
 /// }
 /// ```
@@ -47,7 +47,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(sizes: CustomSizeTokensWrapper())
+///     OrangeTheme(sizes: CustomSizeTokensProvider())
 /// ```
 open class OUDSSizeSemanticTokensProvider {
 

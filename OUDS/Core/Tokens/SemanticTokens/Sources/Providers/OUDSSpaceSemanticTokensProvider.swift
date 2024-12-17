@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for space semantic tokens
-///     class CustomSpaceTokensWrapper: OUDSSpaceSemanticTokensProvider {
+///     class CustomSpaceTokensProvider: OUDSSpaceSemanticTokensProvider {
 ///
 ///         // Then override the space semantic tokens you want, using the dimension raw tokens available
 ///
@@ -33,13 +33,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomSpaceTokensWrapper` to your own theme implementation:
+/// Then, you can give this `CustomSpaceTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(spaces: CustomSpaceTokensWrapper(),
+///         super.init(spaces: CustomSpaceTokensProvider(),
 ///     }
 /// }
 /// ```
@@ -47,7 +47,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(spaces: CustomSpaceTokensWrapper())
+///     OrangeTheme(spaces: CustomSpaceTokenProvider())
 /// ```
 open class OUDSSpaceSemanticTokensProvider {
 

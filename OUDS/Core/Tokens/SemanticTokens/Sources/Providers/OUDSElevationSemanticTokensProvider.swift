@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for elevation semantic tokens
-///     class CustomElevationTokensWrapper: OUDSElevationSemanticTokensProvider {
+///     class CustomElevationTokensProvider: OUDSElevationSemanticTokensProvider {
 ///
 ///         // Then override the elevation semantic tokens you want, using the elevation raw tokens available
 ///
@@ -29,13 +29,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomElevationTokensWrapper` to your own theme implementation:
+/// Then, you can give this `CustomElevationTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(elevations: CustomElevationTokensWrapper(),
+///         super.init(elevations: CustomElevationTokensProvider(),
 ///     }
 /// }
 /// ```
@@ -43,7 +43,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(elevations: CustomElevationTokensWrapper())
+///     OrangeTheme(elevations: CustomElevationTokensProvider())
 /// ```
 open class OUDSElevationSemanticTokensProvider {
 

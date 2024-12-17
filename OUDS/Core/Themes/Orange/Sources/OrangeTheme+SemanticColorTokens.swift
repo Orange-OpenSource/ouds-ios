@@ -50,12 +50,12 @@ import OUDSTokensSemantic
 ///
 /// In few words, we need to keep isolated tokens and brand colors, provide kind of abstract architecture with isolated and overridable themes, but face troubles with *Figma* design kit having conception issues and producing JSON not reflecting the reality making *tokenator* unable to build the expected Swift code.
 /// We get uncompilable code for color tokens update and need to make the merge manualy.
-open class OrangeThemeColorSemanticTokensWrapper: OUDSColorSemanticTokensProvider {
+open class OrangeThemeColorSemanticTokensProvider: OUDSColorSemanticTokensProvider {
 
     // MARK: - Init
 
     override public init() {
-        OUDSLogger.debug("Init of OrangeThemeColorSemanticTokensWrapper")
+        OUDSLogger.debug("Init of OrangeThemeColorSemanticTokensProvider")
     }
 
     deinit { }

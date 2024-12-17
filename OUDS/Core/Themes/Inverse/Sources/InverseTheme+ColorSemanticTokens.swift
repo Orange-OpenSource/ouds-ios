@@ -23,13 +23,13 @@ import OUDSTokensSemantic
 /// Overrides some colors using  semantic tokens of `ColorSemanticTokens`.
 /// Some tokens do not have values assigned in the design system, and must be overriden.
 /// Ensures the colors are always the "dark mode" colors.
-/// In few words, uses the tokens which are all defined in ``OrangeThemeColorSemanticTokensWrapper`` and overrides them.
-final class InverseThemeColorSemanticTokensWrapper: OrangeThemeColorSemanticTokensWrapper {
+/// In few words, uses the tokens which are all defined in ``OrangeThemeColorSemanticTokensProvider`` and overrides them.
+final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensProvider {
 
     // MARK: - Init
 
     override init() {
-        OUDSLogger.debug("Init of InverseThemeColorSemanticTokensWrapper")
+        OUDSLogger.debug("Init of InverseThemeColorSemanticTokensProvider")
     }
 
     deinit { }

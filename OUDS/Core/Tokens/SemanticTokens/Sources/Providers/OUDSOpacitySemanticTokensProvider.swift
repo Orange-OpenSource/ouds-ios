@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for opacity semantic tokens
-///     class CustomOpacityTokensWrapper: OUDSOpacitySemanticTokensProvider {
+///     class CustomOpacityTokensProvider: OUDSOpacitySemanticTokensProvider {
 ///
 ///         // Then override the opacity semantic tokens you want, using the opacity raw tokens available
 ///
@@ -29,13 +29,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomGridTokensWrapper` to your own theme implementation:
+/// Then, you can give this `CustomGridTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(opacities: CustomOpacityTokensWrapper(),
+///         super.init(opacities: CustomOpacityTokensProvider(),
 ///     }
 /// }
 /// ```
@@ -43,7 +43,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(opacities: CustomOpacityTokensWrapper())
+///     OrangeTheme(opacities: CustomOpacityTokensProvider())
 /// ```
 open class OUDSOpacitySemanticTokensProvider {
 

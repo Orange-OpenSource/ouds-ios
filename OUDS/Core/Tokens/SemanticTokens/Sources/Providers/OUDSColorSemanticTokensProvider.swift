@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for color semantic tokens
-///     class CustomColorTokensWrapper: OUDSColorSemanticTokensProvider {
+///     class CustomColorTokensProviderr: OUDSColorSemanticTokensProvider {
 ///
 ///         // Then override the color semantic tokens you want, using the color raw tokens available
 ///
@@ -33,13 +33,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomColorTokensWrapper` to your own theme implementation:
+/// Then, you can give this `CustomColorTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(colors: CustomColorTokensWrapper(),
+///         super.init(colors: CustomColorTokensProvider(),
 ///     }
 /// }
 /// ```
@@ -47,7 +47,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(colors: CustomColorTokensWrapper())
+///     OrangeTheme(colors: CustomColorTokensProvider())
 /// ```
 open class OUDSColorSemanticTokensProvider {
 

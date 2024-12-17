@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for border semantic tokens
-///     class CustomBorderTokensWrapper: OUDSBorderSemanticTokensProvider {
+///     class CustomBorderTokensProvider: OUDSBorderSemanticTokensProvider {
 ///
 ///         // Then override the border semantic tokens you want, using the border raw tokens available
 ///
@@ -35,13 +35,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomBorderTokensWrapper` to your own theme implementation:
+/// Then, you can give this `CustomBorderTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(borders: CustomBorderTokensWrapper(),
+///         super.init(borders: CustomBorderTokensProvider(),
 ///     }
 /// }
 /// ```
@@ -49,7 +49,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(borders: CustomBorderTokensWrapper())
+///     OrangeTheme(borders: CustomBorderTokensProvider())
 /// ```
 open class OUDSBorderSemanticTokensProvider {
 

@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for font semantic tokens
-///     class CustomFontTokensWrapper: OUDSFontSemanticTokensProvider {
+///     class CustomFontTokensProvider: OUDSFontSemanticTokensProvider {
 ///
 ///         // Then override the font semantic tokens you want, using the font raw tokens available
 ///
@@ -33,13 +33,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomColorTokensWrapper` to your own theme implementation:
+/// Then, you can give this `CustomColorTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(fonts: CustomFontTokensWrapper(),
+///         super.init(fonts: CustomFontTokensProvider(),
 ///     }
 /// }
 /// ```
@@ -47,7 +47,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(fonts: CustomFontTokensWrapper())
+///     OrangeTheme(fonts: CustomFontTokensProvider())
 /// ```
 open class OUDSFontSemanticTokensProvider {
 

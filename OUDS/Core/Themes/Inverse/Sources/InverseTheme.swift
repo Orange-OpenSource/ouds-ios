@@ -51,7 +51,7 @@ public final class InverseTheme: OrangeTheme, @unchecked Sendable {
     /// Initializes the `InverseTheme`
     override public init() {
         OUDSLogger.debug("Init of InverseTheme")
-        super.init(colors: InverseThemeColorSemanticTokensWrapper())
+        super.init(colors: InverseThemeColorSemanticTokensProvider())
     }
 
     deinit { }

@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for grid semantic tokens
-///     class CustomGridTokensWrapper: OUDSGridSemanticTokensProvider {
+///     class CustomGridTokensProvider: OUDSGridSemanticTokensProvider {
 ///
 ///         // Then override the grid semantic tokens you want, using the grid raw tokens available
 ///
@@ -37,13 +37,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomGridTokensWrapper` to your own theme implementation:
+/// Then, you can give this `CustomGridTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(grids: CustomGridTokensWrapper(),
+///         super.init(grids: CustomGridTokensProvider(),
 ///     }
 /// }
 /// ```
@@ -51,7 +51,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(grids: CustomGridTokensWrapper())
+///     OrangeTheme(grids: CustomGridTokensProvider())
 /// ```
 open class OUDSGridSemanticTokensProvider {
 
