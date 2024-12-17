@@ -22,8 +22,8 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 /// Defines wrapper objects for font semantic tokens but "multiple", i.e. tokens with values depending to size classes or color schemes.
-/// These values can be overriden inside `OUDSFontSemanticTokensWrapper` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
-extension OUDSFontSemanticTokensWrapper: FontMultipleSemanticTokens {
+/// These values can be overriden inside `OUDSFontSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+extension OUDSFontSemanticTokensProvider: FontMultipleSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Size
 

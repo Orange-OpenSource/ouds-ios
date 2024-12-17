@@ -72,7 +72,7 @@ You will have to override the tokens wrapper you need. To do that, make a subcla
 - elevations tokens are in `OUDSElevationSemanticTokensProvider`
 - opacity tokens are in `OUDSOpacitySemanticTokensWrapper`
 - grid tokens are in `OUDSGridSemanticTokensWrapper`
-- font tokens are in `OUDSFontSemanticTokensWrapper`
+- font tokens are in `OUDSFontSemanticTokensProvider`
 
 ```swift
 import OUDSTokensSemantic           // To use semantic tokens if needed
@@ -157,7 +157,7 @@ class YourAppThemeGridTokensWrapper: OUDSGridSemanticTokensWrapper {
 
 // Token wrapper for font
 
-class YourAppThemeFontTokensWrapper: OUDSFontSemanticTokensWrapper {
+class YourAppThemeFontTokensWrapper: OUDSFontSemanticTokensProvider {
     override var typeDisplayLarge: MultipleFontCompositeRawTokens {
         MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
     }

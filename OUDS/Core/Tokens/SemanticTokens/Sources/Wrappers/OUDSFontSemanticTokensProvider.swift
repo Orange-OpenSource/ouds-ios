@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for font semantic tokens
-///     class CustomFontTokensWrapper: OUDSFontSemanticTokensWrapper {
+///     class CustomFontTokensWrapper: OUDSFontSemanticTokensProvider {
 ///
 ///         // Then override the font semantic tokens you want, using the font raw tokens available
 ///
@@ -49,11 +49,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(fonts: CustomFontTokensWrapper())
 /// ```
-open class OUDSFontSemanticTokensWrapper {
+open class OUDSFontSemanticTokensProvider {
 
     /// Intializes the wrapper
     public init() {
-        OUDSLogger.debug("Init of OUDSFontSemanticTokensWrapper")
+        OUDSLogger.debug("Init of OUDSFontSemanticTokensProvider")
     }
 
     deinit{ }
@@ -64,5 +64,5 @@ open class OUDSFontSemanticTokensWrapper {
     // but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+FontSemanticTokens.swift,
     // in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+FontCompositeSemanticTokens.swift,
     // and in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+FontMultipleSemanticTokens.swift.
-    // This declaration of OUDSFontSemanticTokensWrapper is here to allow to write documentation.
+    // This declaration of OUDSFontSemanticTokensProvider is here to allow to write documentation.
 }

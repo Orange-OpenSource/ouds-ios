@@ -22,10 +22,10 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 /// Defines basic values common to all themes for `FontCompositeSemanticToken`.
-/// These values can be overriden inside ``OUDSFontSemanticTokensWrapper`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+/// These values can be overriden inside ``OUDSFontSemanticTokensProvider`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// The aim of this extensions is to make relationships between all composite semantic tokens for typography / fonts and associated composite raw tokens.
 /// The *tokenator* is not able to provide code for such "composite" objects because the *Figma* tool itself cannot manage that and does not output anything in its JSON to process.
-extension OUDSFontSemanticTokensWrapper: FontCompositeSemanticTokens {
+extension OUDSFontSemanticTokensProvider: FontCompositeSemanticTokens {
 
     // MARK: - Semantic tokens - Typography - Composites - Display
 
