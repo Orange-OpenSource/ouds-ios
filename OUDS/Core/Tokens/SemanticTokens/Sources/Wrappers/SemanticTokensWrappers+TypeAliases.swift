@@ -33,7 +33,7 @@ public typealias AllColorSemanticTokens = ColorSemanticTokens & ColorMultipleSem
 
 /// A type alias which merges  ``ElevationSemanticTokens``, ``ElevationCompositeSemanticTokens`` and ``ElevationMultipleSemanticTokens``.
 /// It helps in the end to define a wrapper for all the semantic tokens of elevations, multiple or not, generated or not.
-/// For example ``OUDSElevationSemanticTokensWrapper`` matches this type alias.
+/// For example ``OUDSElevationSemanticTokensProvider`` matches this type alias.
 public typealias AllElevationSemanticTokens = ElevationSemanticTokens & ElevationCompositeSemanticTokens & ElevationMultipleSemanticTokens
 
 /// A type alias which merges  ``FontSemanticTokens``, ``FontCompositeSemanticTokens`` and ``FontMultipleSemanticTokens``.

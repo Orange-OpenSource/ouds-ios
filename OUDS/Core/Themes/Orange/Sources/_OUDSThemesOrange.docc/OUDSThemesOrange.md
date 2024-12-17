@@ -69,7 +69,7 @@ You will have to override the tokens wrapper you need. To do that, make a subcla
 - sizes tokens are in `OUDSSizeSemanticTokensWrapper`
 - colors tokens are all defined in `OrangeThemeColorSemanticTokensWrapper`
 - borders tokens are in `OUDSBorderSemanticTokensProvider`
-- elevations tokens are in `OUDSElevationSemanticTokensWrapper`
+- elevations tokens are in `OUDSElevationSemanticTokensProvider`
 - opacity tokens are in `OUDSOpacitySemanticTokensWrapper`
 - grid tokens are in `OUDSGridSemanticTokensWrapper`
 - font tokens are in `OUDSFontSemanticTokensWrapper`
@@ -127,7 +127,7 @@ class YourAppThemeBorderTokensWrapper: OUDSBorderSemanticTokensProvider {
 
 // Token wrapper for elevation
 
-class YourAppThemeElevationTokensWrapper: OUDSElevationSemanticTokensWrapper {
+class YourAppThemeElevationTokensWrapper: OUDSElevationSemanticTokensProvider {
     override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
         ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_4_600)
     }

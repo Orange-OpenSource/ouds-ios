@@ -22,8 +22,8 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 /// Defines wrapper objects for elevation color semantic  tokens using ``MultipleColorSemanticTokens`` so as to exposed colors for light and dark color schemes.
-/// These values can be overriden inside `OUDSElevationSemanticTokensWrapper` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
-extension OUDSElevationSemanticTokensWrapper: ElevationMultipleSemanticTokens {
+/// These values can be overriden inside `OUDSElevationSemanticTokensProvider` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+extension OUDSElevationSemanticTokensProvider: ElevationMultipleSemanticTokens {
 
     @objc open var elevationColorDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorDefaultLight, dark: elevationColorDefaultDark) }
     @objc open var elevationColorDrag: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: elevationColorDragLight, dark: elevationColorDragDark) }

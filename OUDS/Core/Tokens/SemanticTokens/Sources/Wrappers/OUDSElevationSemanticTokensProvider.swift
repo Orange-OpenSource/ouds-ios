@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for elevation semantic tokens
-///     class CustomElevationTokensWrapper: OUDSElevationSemanticTokensWrapper {
+///     class CustomElevationTokensWrapper: OUDSElevationSemanticTokensProvider {
 ///
 ///         // Then override the elevation semantic tokens you want, using the elevation raw tokens available
 ///
@@ -45,11 +45,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(elevations: CustomElevationTokensWrapper())
 /// ```
-open class OUDSElevationSemanticTokensWrapper {
+open class OUDSElevationSemanticTokensProvider {
 
     /// Intializes the wrapper
     public init() {
-        OUDSLogger.debug("Init of OUDSElevationSemanticTokensWrapper")
+        OUDSLogger.debug("Init of OUDSElevationSemanticTokensProvider")
     }
 
     deinit{ }
@@ -60,5 +60,5 @@ open class OUDSElevationSemanticTokensWrapper {
     // but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ElevationSemanticTokens.swift,
     // in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ElevationCompositeSemanticTokens.swift,
     // and in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ElevationMultipleSemanticTokens.swift.
-    // This declaration of OUDSElevationSemanticTokensWrapper is here to allow to write documentation.
+    // This declaration of OUDSElevationSemanticTokensProvider is here to allow to write documentation.
 }
