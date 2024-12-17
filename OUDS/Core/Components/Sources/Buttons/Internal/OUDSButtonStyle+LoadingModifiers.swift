@@ -25,7 +25,7 @@ struct ButtonSkeletonModifier: ViewModifier {
     @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
-        content.overlay(theme.colorContentDefault.color(for: colorScheme)) // TODO: 💠_indicator/skeleton/color/bg
+        content.overlay(theme.colors.colorContentDefault.color(for: colorScheme)) // TODO: 💠_indicator/skeleton/color/bg
     }
 }
 
@@ -83,11 +83,11 @@ struct ButtonLoadingContentModifier: ViewModifier {
         case .default:
             onColoredSurface ? theme.buttonColorContentDefaultLoadingMono : theme.buttonColorContentDefaultLoading
         case .strong:
-            onColoredSurface ? theme.buttonColorContentStrongLoadingMono : theme.colorContentOnActionLoading
+            onColoredSurface ? theme.buttonColorContentStrongLoadingMono : theme.colors.colorContentOnActionLoading
         case .minimal:
             onColoredSurface ? theme.buttonColorContentMinimalLoadingMono : theme.buttonColorContentMinimalLoading
         case .negative:
-            theme.colorContentOnActionNegative
+            theme.colors.colorContentOnActionNegative
         }
     }
 }

@@ -58,11 +58,11 @@ struct ButtonForegroundModifier: ViewModifier {
         case .default:
             onColoredSurface ? theme.buttonColorContentDefaultEnabledMono : theme.buttonColorContentDefaultEnabled
         case .strong:
-            onColoredSurface ? theme.buttonColorContentStrongEnabledMono : theme.colorContentOnActionEnabled
+            onColoredSurface ? theme.buttonColorContentStrongEnabledMono : theme.colors.colorContentOnActionEnabled
         case .minimal:
             onColoredSurface ? theme.buttonColorContentMinimalEnabledMono : theme.buttonColorContentMinimalEnabled
         case .negative:
-            theme.colorContentOnActionNegative
+            theme.colors.colorContentOnActionNegative
         }
     }
 
@@ -71,11 +71,11 @@ struct ButtonForegroundModifier: ViewModifier {
         case .default:
             onColoredSurface ? theme.buttonColorContentDefaultHoverMono : theme.buttonColorContentDefaultHover
         case .strong:
-            onColoredSurface ? theme.buttonColorContentStrongHoverMono : theme.colorContentOnActionHover
+            onColoredSurface ? theme.buttonColorContentStrongHoverMono : theme.colors.colorContentOnActionHover
         case .minimal:
             onColoredSurface ? theme.buttonColorContentMinimalHoverMono : theme.buttonColorContentMinimalHover
         case .negative:
-            theme.colorContentOnActionNegative
+            theme.colors.colorContentOnActionNegative
         }
     }
 
@@ -84,11 +84,11 @@ struct ButtonForegroundModifier: ViewModifier {
         case .default:
             onColoredSurface ? theme.buttonColorContentDefaultPressedMono : theme.buttonColorContentDefaultPressed
         case .strong:
-            onColoredSurface ? theme.buttonColorContentStrongPressedMono : theme.colorContentOnActionPressed
+            onColoredSurface ? theme.buttonColorContentStrongPressedMono : theme.colors.colorContentOnActionPressed
         case .minimal:
             onColoredSurface ? theme.buttonColorContentDefaultPressedMono : theme.buttonColorContentDefaultPressed
         case .negative:
-            theme.colorContentOnActionNegative
+            theme.colors.colorContentOnActionNegative
         }
     }
 
@@ -97,11 +97,11 @@ struct ButtonForegroundModifier: ViewModifier {
         case .default:
             onColoredSurface ? theme.buttonColorContentDefaultDisabledMono : theme.buttonColorContentDefaultDisabled
         case .strong:
-            onColoredSurface ? theme.buttonColorContentStrongDisabledMono : theme.colorContentOnActionDisabled
+            onColoredSurface ? theme.buttonColorContentStrongDisabledMono : theme.colors.colorContentOnActionDisabled
         case .minimal:
             onColoredSurface ? theme.buttonColorContentMinimalDisabledMono : theme.buttonColorContentMinimalDisabled
         case .negative:
-            theme.colorContentOnActionDisabled
+            theme.colors.colorContentOnActionDisabled
         }
     }
 }
