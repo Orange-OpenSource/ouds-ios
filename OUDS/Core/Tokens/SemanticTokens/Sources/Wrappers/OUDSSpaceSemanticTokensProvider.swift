@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for space semantic tokens
-///     class CustomSpaceTokensWrapper: OUDSSpaceSemanticTokensWrapper {
+///     class CustomSpaceTokensWrapper: OUDSSpaceSemanticTokensProvider {
 ///
 ///         // Then override the space semantic tokens you want, using the dimension raw tokens available
 ///
@@ -49,11 +49,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(spaces: CustomSpaceTokensWrapper())
 /// ```
-open class OUDSSpaceSemanticTokensWrapper {
+open class OUDSSpaceSemanticTokensProvider {
 
     /// Intializes the wrapper
     public init() {
-        OUDSLogger.debug("Init of OUDSSpaceSemanticTokensWrapper")
+        OUDSLogger.debug("Init of OUDSSpaceSemanticTokensProvider")
     }
 
     deinit{ }
@@ -63,5 +63,5 @@ open class OUDSSpaceSemanticTokensWrapper {
     // the implemention of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
     // but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+SpaceSemanticTokens.swift
     // and in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+SpaceMultipleSemanticTokens.swift.
-    // This declaration of OUDSSpaceSemanticTokensWrapper is here to allow to write documentation.
+    // This declaration of OUDSSpaceSemanticTokensProvider is here to allow to write documentation.
 }

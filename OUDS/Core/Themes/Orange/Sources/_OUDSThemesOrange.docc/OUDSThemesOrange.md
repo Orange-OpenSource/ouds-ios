@@ -65,7 +65,7 @@ You can enrich the ``OrangeTheme`` by subclassing it or by overriding some token
 You may want to define your own theme, thus you can override the ``OrangeTheme`` with your own class or just override the wrappers.
 
 You will have to override the tokens wrapper you need. To do that, make a subclass of the wrapper you target:
-- spaces tokens are `OUDSSpaceSemanticTokensWrapper`
+- spaces tokens are `OUDSSpaceSemanticTokensProvider`
 - sizes tokens are in `OUDSSizeSemanticTokensProvider`
 - colors tokens are all defined in `OrangeThemeColorSemanticTokensWrapper`
 - borders tokens are in `OUDSBorderSemanticTokensProvider`
@@ -80,7 +80,7 @@ import OUDSTokensRaw                // To use raw tokens if needed
 
 // Token wrapper for spaces
 
-class YourAppThemeSpaceTokensWrapper: OUDSSpaceSemanticTokensWrapper {
+class YourAppThemeSpaceTokensWrapper: OUDSSpaceSemanticTokensProvider {
     override var spaceFixedMedium: SpaceSemanticToken {
         DimensionRawTokens.dimension400
     }

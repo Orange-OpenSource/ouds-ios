@@ -48,5 +48,5 @@ public typealias AllSizeSemanticTokens = SizeSemanticTokens & SizeMultipleSemant
 
 /// A type alias which merges  ``SpaceSemanticTokens`` and ``SpaceMultipleSemanticTokens``.
 /// It helps in the end to define a wrapper for all the semantic tokens of space, multiple or not, generated or not.
-/// For example ``OUDSSpaceSemanticTokensWrapper`` matches this type alias.
+/// For example ``OUDSSpaceSemanticTokensProvider`` matches this type alias.
 public typealias AllSpaceSemanticTokens = SpaceSemanticTokens & SpaceMultipleSemanticTokens

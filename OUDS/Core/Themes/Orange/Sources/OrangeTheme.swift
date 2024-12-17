@@ -72,7 +72,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`, default set to `OUDSGridSemanticTokensProvider`
     ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation, default set to `OUDSOpacitySemanticTokensProvider`
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation, default set to `OUDSSizeSemanticTokensProvider`
-    ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokens` implementation, default set to `OUDSSpaceSemanticTokensWrapper`
+    ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokens` implementation, default set to `OUDSSpaceSemanticTokensProvider`
     override public init(colors: AllColorSemanticTokens = OrangeThemeColorSemanticTokensWrapper(),
                          borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensProvider(),
@@ -80,7 +80,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          grids: AllGridSemanticTokens = OUDSGridSemanticTokensProvider(),
                          opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensProvider(),
                          sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensProvider(),
-                         spaces: AllSpaceSemanticTokens = OUDSSpaceSemanticTokensWrapper()) {
+                         spaces: AllSpaceSemanticTokens = OUDSSpaceSemanticTokensProvider()) {
         OUDSLogger.debug("Init of OrangeTheme")
         super.init(colors: colors,
                    borders: borders,

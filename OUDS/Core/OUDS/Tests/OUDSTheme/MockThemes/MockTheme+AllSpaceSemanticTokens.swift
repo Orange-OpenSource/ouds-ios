@@ -16,9 +16,9 @@ import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
 
-/// Overrides **all** the space semantic tokens (from its super class, i.e. `OUDSSpaceSemanticTokensWrapper` so as to test overriding of them (unit tests)
+/// Overrides **all** the space semantic tokens (from its super class, i.e. `OUDSSpaceSemanticTokensProvider` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-final class MockThemeSpaceSemanticTokensWrapper: OUDSSpaceSemanticTokensWrapper {
+final class MockThemeSpaceSemanticTokensWrapper: OUDSSpaceSemanticTokensProvider {
 
     static let mockThemeSpaceRawToken: DimensionRawToken = 911
     static let mockThemeSpaceSemanticToken = MultipleSpaceSemanticTokens(compact: 1, regular: 151)
