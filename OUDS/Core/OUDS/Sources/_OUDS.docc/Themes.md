@@ -55,7 +55,7 @@ You may want to define your own theme, thus you can override the `OrangeTheme` w
 
 You will have to override the tokens wrapper you need. To do that, make a subclass of the wrapper you target:
 - spaces tokens are `OUDSSpaceSemanticTokensWrapper`
-- sizes tokens are in `OUDSSizeSemanticTokensWrapper`
+- sizes tokens are in `OUDSSizeSemanticTokensProvider`
 - colors tokens are all defined in `OrangeThemeColorSemanticTokensWrapper`
 - borders tokens are in `OUDSBorderSemanticTokensProvider`
 - elevations tokens are in `OUDSElevationSemanticTokensProvider`
@@ -82,7 +82,7 @@ class YourAppThemeSpaceTokensWrapper: OUDSSpaceSemanticTokensWrapper {
 
 // Token wrapper for sizes
 
-class YourAppThemeSizeTokensWrapper: OUDSSizeSemanticTokensWrapper {
+class YourAppThemeSizeTokensWrapper: OUDSSizeSemanticTokensProvider {
     override var sizeIconDecorative2xl: SizeSemanticToken {
         DimensionRawTokens.dimension300
     }

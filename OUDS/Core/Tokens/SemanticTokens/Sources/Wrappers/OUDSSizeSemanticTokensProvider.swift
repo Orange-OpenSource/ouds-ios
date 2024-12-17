@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for size semantic tokens
-///     class CustomSizeTokensWrapper: OUDSSizeSemanticTokensWrapper {
+///     class CustomSizeTokensWrapper: OUDSSizeSemanticTokensProvider {
 ///
 ///         // Then override the size semantic tokens you want, using the dimension raw tokens available
 ///
@@ -49,11 +49,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(sizes: CustomSizeTokensWrapper())
 /// ```
-open class OUDSSizeSemanticTokensWrapper {
+open class OUDSSizeSemanticTokensProvider {
 
     /// Intializes the wrapper
     public init() {
-        OUDSLogger.debug("Init of OUDSSizeSemanticTokensWrapper")
+        OUDSLogger.debug("Init of OUDSSizeSemanticTokensProvider")
     }
 
     deinit{ }
@@ -63,5 +63,5 @@ open class OUDSSizeSemanticTokensWrapper {
     // the implemention of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
     // but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+SizeSemanticTokens.swift
     // and in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+SizeMultipleSemanticTokens.swift.
-    // This declaration of OUDSSizeSemanticTokensWrapper is here to allow to write documentation.
+    // This declaration of OUDSSizeSemanticTokensProvider is here to allow to write documentation.
 }

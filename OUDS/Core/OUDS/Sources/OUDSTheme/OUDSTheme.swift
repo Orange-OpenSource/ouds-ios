@@ -69,7 +69,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - fonts: An object providing all the font semantic tokens, by default `OUDSFontSemanticTokensProvider`
     ///    - grids: An object providing all the grid semantic tokens, by default `OUDSGridSemanticTokensProvider`
     ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensProvider`
-    ///    - sizes: An object providing all the size semantic tokens, by default `OUDSSizeSemanticTokensWrapper`
+    ///    - sizes: An object providing all the size semantic tokens, by default `OUDSSizeSemanticTokensProvider`
     ///    - spaces: An object providing all the space semantic tokens, by default `OUDSSpaceSemanticTokensWrapper`
     public init(colors: AllColorSemanticTokens = OUDSColorSemanticTokensProvider(),
                 borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensProvider(),
@@ -77,7 +77,7 @@ open class OUDSTheme: @unchecked Sendable {
                 fonts: AllFontSemanticTokens = OUDSFontSemanticTokensProvider(),
                 grids: AllGridSemanticTokens = OUDSGridSemanticTokensProvider(),
                 opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensProvider(),
-                sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensWrapper(),
+                sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensProvider(),
                 spaces: AllSpaceSemanticTokens = OUDSSpaceSemanticTokensWrapper()) {
         self.colors = colors
         self.borders = borders
