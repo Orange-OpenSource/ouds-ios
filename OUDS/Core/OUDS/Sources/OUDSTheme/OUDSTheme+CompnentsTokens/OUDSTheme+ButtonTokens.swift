@@ -18,146 +18,146 @@ import OUDSTokensSemantic
 extension OUDSTheme: ButtonsComponentTokens {
 
     // MARK: Space
-    public var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spacePaddingInlineSpacious }
-    public var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spacePaddingInlineSpacious }
-    public var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spacePaddingInlineHuge }
-    public var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spacePaddingInlineTaller }
-    public var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { spacePaddingInlineTall }
-    public var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { spacePaddingInlineTall }
-    public var buttonSpacePaddingBlock: SpaceSemanticToken { spacePaddingBlockMedium }
-    public var buttonSpaceInsetIconAlone: SpaceSemanticToken { spaceInsetMedium }
-    public var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaceColumnGapShort }
-    public var buttonSpaceColumnGapArrow: SpaceSemanticToken { spaceColumnGapShorter }
+    public var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+    public var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+    public var buttonSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInlineHuge }
+    public var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineTaller }
+    public var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    public var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
+    public var buttonSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMedium }
+    public var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapShort }
+    public var buttonSpaceColumnGapArrow: SpaceSemanticToken { spaces.spaceColumnGapShorter }
 
     // MARK: Size
-    public var buttonSizeIcon: SizeSemanticToken { sizeIconWithLabelLargeSizeXs }
-    public var buttonSizeIconOnly: SizeSemanticToken { sizeIconWithLabelLargeSizeSm }
-    public var buttonSizeLoader: SizeSemanticToken { sizeIconWithLabelLargeSizeXs }
+    public var buttonSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    public var buttonSizeIconOnly: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
+    public var buttonSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     public var buttonSizeMaxHeight: DimensionRawToken { DimensionRawTokens.dimension600 }
     public var buttonSizeMinHeight: DimensionRawToken { DimensionRawTokens.dimension600 }
     public var buttonSizeMinWidth: DimensionRawToken { DimensionRawTokens.dimension600 }
 
     // MARK: Font
-    public var buttonFont: OUDSTokensSemantic.MultipleFontCompositeRawTokens { typeLabelStrongLarge }
+    public var buttonFont: OUDSTokensSemantic.MultipleFontCompositeRawTokens { fonts.typeLabelStrongLarge }
 
     // MARK: Background Color Default
-    public var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgDefaultHover: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
+    public var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
 
-    public var buttonColorBgDefaultEnabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
-    public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
-    public var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
-    public var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
+    public var buttonColorBgDefaultEnabledMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    public var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    public var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
 
     // MARK: Background Color Minimal
-    public var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgMinimalHover: MultipleColorSemanticTokens { colorActionSupportHover }
-    public var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { colorActionSupportPressed }
-    public var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { colorActionSupportLoading }
-    public var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { colorActionSupportFocus }
+    public var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgMinimalHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
+    public var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
+    public var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
+    public var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
 
-    public var buttonColorBgMinimalEnabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgMinimalHoverMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
-    public var buttonColorBgMinimalPressedMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
-    public var buttonColorBgMinimalDisabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBgMinimalLoadingMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
-    public var buttonColorBgMinimalFocusMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
+    public var buttonColorBgMinimalEnabledMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgMinimalHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    public var buttonColorBgMinimalPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    public var buttonColorBgMinimalDisabledMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBgMinimalLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    public var buttonColorBgMinimalFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
 
     // MARK: Background Color Strong
-    public var buttonColorBgStrongEnabledMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
-    public var buttonColorBgStrongPressedMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
-    public var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackMedium }
-    public var buttonColorBgStrongLoadingMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
-    public var buttonColorBgStrongFocusMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
+    public var buttonColorBgStrongEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    public var buttonColorBgStrongPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    public var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    public var buttonColorBgStrongLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
+    public var buttonColorBgStrongFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
 
     // MARK: Content Color Default
-    public var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { colorActionEnabled }
-    public var buttonColorContentDefaultHover: MultipleColorSemanticTokens { colorActionHover }
-    public var buttonColorContentDefaultPressed: MultipleColorSemanticTokens { colorActionPressed }
-    public var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens { colorActionDisabled }
-    public var buttonColorContentDefaultLoading: MultipleColorSemanticTokens { colorActionLoading }
-    public var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { colorActionFocus }
+    public var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    public var buttonColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    public var buttonColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    public var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+    public var buttonColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
+    public var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
 
-    public var buttonColorContentDefaultEnabledMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorContentDefaultHoverMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
-    public var buttonColorContentDefaultPressedMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorContentDefaultDisabledMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackMedium }
-    public var buttonColorContentDefaultLoadingMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorContentDefaultFocusMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
+    public var buttonColorContentDefaultEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorContentDefaultHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    public var buttonColorContentDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorContentDefaultDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    public var buttonColorContentDefaultLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorContentDefaultFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
 
     // MARK: Content Color Minimal
-    public var buttonColorContentMinimalEnabled: MultipleColorSemanticTokens { colorActionEnabled }
-    public var buttonColorContentMinimalHover: MultipleColorSemanticTokens { colorActionHover }
-    public var buttonColorContentMinimalPressed: MultipleColorSemanticTokens { colorActionPressed }
-    public var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens { colorActionDisabled }
-    public var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { colorActionLoading }
-    public var buttonColorContentMinimalFocus: MultipleColorSemanticTokens { colorActionFocus }
+    public var buttonColorContentMinimalEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    public var buttonColorContentMinimalHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    public var buttonColorContentMinimalPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    public var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+    public var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
+    public var buttonColorContentMinimalFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
 
-    public var buttonColorContentMinimalEnabledMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorContentMinimalHoverMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
-    public var buttonColorContentMinimalPressedMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackMedium }
-    public var buttonColorContentMinimalLoadingMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorContentMinimalFocusMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
+    public var buttonColorContentMinimalEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorContentMinimalHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    public var buttonColorContentMinimalPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    public var buttonColorContentMinimalLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorContentMinimalFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
 
     // MARK: Content Color Strong
-    public var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
-    public var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
-    public var buttonColorContentStrongPressedMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigh }
-    public var buttonColorContentStrongLoadingMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens { colorRepositoryNeutralMutedWhite }
+    public var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    public var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
+    public var buttonColorContentStrongPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigh }
+    public var buttonColorContentStrongLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
 
     // MARK: Border width
-    public var buttonBorderWidthDefault: BorderWidthSemanticToken { borderWidthDefault }
-    public var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borderWidthMedium }
-    public var buttonBorderWidthMinimal: BorderWidthSemanticToken { borderWidthNone }
-    public var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { borderWidthNone }
-    public var buttonBorderRadius: BorderRadiusSemanticToken { borderRadiusNone }
+    public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
+    public var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
+    public var buttonBorderWidthMinimal: BorderWidthSemanticToken { borders.borderWidthNone }
+    public var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { borders.borderWidthNone }
+    public var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusNone }
 
     // MARK: Border Color Default
-    public var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { colorActionEnabled }
-    public var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { colorActionHover }
-    public var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { colorActionPressed }
-    public var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colorActionDisabled }
-    public var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { colorActionLoading }
-    public var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colorActionFocus }
+    public var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    public var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    public var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    public var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+    public var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
+    public var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
 
-    public var buttonColorBorderDefaultEnabledMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorBorderDefaultHoverMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderDefaultPressedMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderDefaultDisabledMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackMedium }
-    public var buttonColorBorderDefaultLoadingMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderDefaultFocusMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
+    public var buttonColorBorderDefaultEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
+    public var buttonColorBorderDefaultHoverMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderDefaultPressedMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderDefaultDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    public var buttonColorBorderDefaultLoadingMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderDefaultFocusMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
 
     // MARK: Border Color Minimal
-    public var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalHover: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
 
-    public var buttonColorBorderMinimalEnabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalHoverMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalPressedMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalDisabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalLoadingMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderMinimalFocusMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalEnabledMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalHoverMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalPressedMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalDisabledMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalLoadingMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderMinimalFocusMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
 
     // MARK: Border Color Strong
-    public var buttonColorBorderStrongEnabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderStrongHoverMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderStrongPressedMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderStrongDisabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderStrongLoadingMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
-    public var buttonColorBorderStrongFocusMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
+    public var buttonColorBorderStrongEnabledMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderStrongHoverMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderStrongPressedMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderStrongDisabledMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderStrongLoadingMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
+    public var buttonColorBorderStrongFocusMono: MultipleColorSemanticTokens { colors.colorOpacityInvisibleBlack }
 }

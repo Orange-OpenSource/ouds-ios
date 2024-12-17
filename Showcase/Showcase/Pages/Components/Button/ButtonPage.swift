@@ -110,8 +110,7 @@ private struct ButtonDemo: View {
         }
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .background(background)
-        .environment(\.buttonOnColoredSurface, coloredBackgound)
+        .background(backgroundColor)
     }
 
     private var backgroundColor: Color {
