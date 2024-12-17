@@ -68,7 +68,7 @@ You will have to override the tokens wrapper you need. To do that, make a subcla
 - spaces tokens are `OUDSSpaceSemanticTokensWrapper`
 - sizes tokens are in `OUDSSizeSemanticTokensWrapper`
 - colors tokens are all defined in `OrangeThemeColorSemanticTokensWrapper`
-- borders tokens are in `OUDSBorderSemanticTokensWrapper`
+- borders tokens are in `OUDSBorderSemanticTokensProvider`
 - elevations tokens are in `OUDSElevationSemanticTokensWrapper`
 - opacity tokens are in `OUDSOpacitySemanticTokensWrapper`
 - grid tokens are in `OUDSGridSemanticTokensWrapper`
@@ -113,7 +113,7 @@ class YourAppThemeColorTokensWrapper: OrangeThemeColorSemanticTokensWrapper {
 
 // Token wrapper for border
 
-class YourAppThemeBorderTokensWrapper: OUDSBorderSemanticTokensWrapper {
+class YourAppThemeBorderTokensWrapper: OUDSBorderSemanticTokensProvider {
     override var borderStyleDefault: BorderStyleSemanticToken {
         BorderRawTokens.borderStyleDashed
     }

@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own wrapper for border semantic tokens
-///     class CustomBorderTokensWrapper: OUDSBorderSemanticTokensWrapper {
+///     class CustomBorderTokensWrapper: OUDSBorderSemanticTokensProvider {
 ///
 ///         // Then override the border semantic tokens you want, using the border raw tokens available
 ///
@@ -51,11 +51,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(borders: CustomBorderTokensWrapper())
 /// ```
-open class OUDSBorderSemanticTokensWrapper {
+open class OUDSBorderSemanticTokensProvider {
 
     /// Intializes the wrapper
     public init() {
-        OUDSLogger.debug("Init of OUDSBorderSemanticTokensWrapper")
+        OUDSLogger.debug("Init of OUDSBorderSemanticTokensProvider")
     }
 
     deinit{ }
@@ -63,5 +63,5 @@ open class OUDSBorderSemanticTokensWrapper {
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of BorderSemanticTokens is not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+BorderSemanticTokens.swift
-    // This declaration of OUDSBorderSemanticTokensWrapper is here to allow to write documentation.
+    // This declaration of OUDSBorderSemanticTokensProvider is here to allow to write documentation.
 }

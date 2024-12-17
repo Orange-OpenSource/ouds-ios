@@ -13,7 +13,7 @@
 
 /// A type alias only for ``BorderSemanticTokens`` so as to keep consistency with other type aliases
 /// merging several protocols
-/// For example ``OUDSBorderSemanticTokensWrapper`` matches this type alias.
+/// For example ``OUDSBorderSemanticTokensProvider`` matches this type alias.
 public typealias AllBorderSemanticTokens = BorderSemanticTokens
 
 /// A type alias only for ``OpacitySemanticTokens`` so as to keep consistency with other type aliases

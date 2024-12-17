@@ -64,7 +64,7 @@ open class OUDSTheme: @unchecked Sendable {
     /// No custom font family will be used.
     /// - Parameters:
     ///    - colors: An object providing all the color semantic tokens, by default `OUDSColorSemanticTokensWrapper`
-    ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensWrapper`
+    ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensProvider`
     ///    - elevations: An object providing all the elevation semantic tokens, by default `OUDSElevationSemanticTokensWrapper`
     ///    - fonts: An object providing all the font semantic tokens, by default `OUDSFontSemanticTokensWrapper`
     ///    - grids: An object providing all the grid semantic tokens, by default `OUDSGridSemanticTokensWrapper`
@@ -72,7 +72,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - sizes: An object providing all the size semantic tokens, by default `OUDSSizeSemanticTokensWrapper`
     ///    - spaces: An object providing all the space semantic tokens, by default `OUDSSpaceSemanticTokensWrapper`
     public init(colors: AllColorSemanticTokens = OUDSColorSemanticTokensWrapper(),
-                borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
+                borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensProvider(),
                 elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensWrapper(),
                 fonts: AllFontSemanticTokens = OUDSFontSemanticTokensWrapper(),
                 grids: AllGridSemanticTokens = OUDSGridSemanticTokensWrapper(),

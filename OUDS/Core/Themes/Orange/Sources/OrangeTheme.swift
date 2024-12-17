@@ -66,7 +66,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations
     /// - Parameters:
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to `OrangeThemeColorSemanticTokensWrapper`
-    ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation, default set to `OUDSBorderSemanticTokensWrapper`
+    ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation, default set to `OUDSBorderSemanticTokensProvider`
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`, default set to `OUDSElevationSemanticTokensWrapper`
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OUDSFontSemanticTokensWrapper`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`, default set to `OUDSGridSemanticTokensWrapper`
@@ -74,7 +74,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation, default set to `OUDSSizeSemanticTokensWrapper`
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokens` implementation, default set to `OUDSSpaceSemanticTokensWrapper`
     override public init(colors: AllColorSemanticTokens = OrangeThemeColorSemanticTokensWrapper(),
-                         borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensWrapper(),
+                         borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensWrapper(),
                          fonts: AllFontSemanticTokens = OUDSFontSemanticTokensWrapper(),
                          grids: AllGridSemanticTokens = OUDSGridSemanticTokensWrapper(),
