@@ -41,8 +41,6 @@ import SwiftUI
 ///
 /// ```
 ///
-/// ![Default Button with Icon only.](button_icon_only_default.jpg)
-///
 /// ## States
 ///
 /// Three states are available:

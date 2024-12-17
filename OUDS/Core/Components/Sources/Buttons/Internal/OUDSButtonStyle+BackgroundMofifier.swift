@@ -93,7 +93,7 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var loadingToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            onColoredSurface ? theme.buttonColorBgDefaultLoadingMono : theme.buttonColorBgDefaultLoadingMono
+            onColoredSurface ? theme.buttonColorBgDefaultLoadingMono : theme.buttonColorBgDefaultLoading
         case .strong:
             onColoredSurface ? theme.buttonColorBgStrongLoadingMono : theme.colorActionLoading
         case .minimal:
