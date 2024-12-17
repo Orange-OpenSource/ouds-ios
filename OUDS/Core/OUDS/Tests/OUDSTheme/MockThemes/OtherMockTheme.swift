@@ -17,6 +17,7 @@ import OUDSTokensSemantic
 // swiftlint:disable file_length
 // swiftlint:disable type_body_length
 // swiftlint:disable identifier_name
+// swiftlint:disable type_name
 
 // MARK: - Other Mock Theme
 
@@ -641,3 +642,4 @@ open class OtherMockThemeColorSemanticTokensProvider: MockThemeColorSemanticToke
 // swiftlint:enable required_deinit
 // swiftlint:enable type_body_length
 // swiftlint:enable identifier_name
+// swiftlint:enable type_name
