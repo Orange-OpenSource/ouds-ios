@@ -35,32 +35,32 @@ final class TestThemeOverrideOfOpacitySemanticTokens: XCTestCase {
 
     func testInheritedThemeCanOverrideSemanticTokenOpacityInvisible() throws {
         XCTAssertNotEqual(inheritedTheme.opacities.opacityInvisible, abstractTheme.opacities.opacityInvisible)
-        XCTAssertTrue(inheritedTheme.opacities.opacityInvisible == MockThemeOpacitySemanticTokensWrapper.mockThemeOpacityRawToken)
+        XCTAssertTrue(inheritedTheme.opacities.opacityInvisible == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenOpacityWeaker() throws {
         XCTAssertNotEqual(inheritedTheme.opacities.opacityWeaker, abstractTheme.opacities.opacityWeaker)
-        XCTAssertTrue(inheritedTheme.opacities.opacityWeaker == MockThemeOpacitySemanticTokensWrapper.mockThemeOpacityRawToken)
+        XCTAssertTrue(inheritedTheme.opacities.opacityWeaker == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenOpacityWeak() throws {
         XCTAssertNotEqual(inheritedTheme.opacities.opacityWeak, abstractTheme.opacities.opacityWeak)
-        XCTAssertTrue(inheritedTheme.opacities.opacityWeak == MockThemeOpacitySemanticTokensWrapper.mockThemeOpacityRawToken)
+        XCTAssertTrue(inheritedTheme.opacities.opacityWeak == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenOpacityMedium() throws {
         XCTAssertNotEqual(inheritedTheme.opacities.opacityMedium, abstractTheme.opacities.opacityMedium)
-        XCTAssertTrue(inheritedTheme.opacities.opacityMedium == MockThemeOpacitySemanticTokensWrapper.mockThemeOpacityRawToken)
+        XCTAssertTrue(inheritedTheme.opacities.opacityMedium == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenOpacityEmphasized() throws {
         XCTAssertNotEqual(inheritedTheme.opacities.opacityStrong, abstractTheme.opacities.opacityStrong)
-        XCTAssertTrue(inheritedTheme.opacities.opacityStrong == MockThemeOpacitySemanticTokensWrapper.mockThemeOpacityRawToken)
+        XCTAssertTrue(inheritedTheme.opacities.opacityStrong == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenOpacityOpaque() throws {
         XCTAssertNotEqual(inheritedTheme.opacities.opacityOpaque, abstractTheme.opacities.opacityOpaque)
-        XCTAssertTrue(inheritedTheme.opacities.opacityOpaque == MockThemeOpacitySemanticTokensWrapper.mockThemeOpacityRawToken)
+        XCTAssertTrue(inheritedTheme.opacities.opacityOpaque == MockThemeOpacitySemanticTokensProvider.mockThemeOpacityRawToken)
     }
 }
 

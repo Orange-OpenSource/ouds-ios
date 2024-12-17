@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 /// Overrides **all** the grid semantic tokens (from its super class, i.e. `OUDSGridSemanticTokensProvider` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-final class MockThemeGridSemanticTokensWrapper: OUDSGridSemanticTokensProvider {
+final class MockThemeGridSemanticTokensProvider: OUDSGridSemanticTokensProvider {
 
     static let mockThemeGridRawToken: GridRawToken = 3_630
 

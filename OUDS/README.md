@@ -90,7 +90,7 @@ These _tokens_ can be used mainly for _component tokens_ to apply some style and
 They can be seen as an high level of usage with functional meanings.
 
 Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition.
-In addition, there are hundreds of _semantics tokens_ and we needed to add them to the abstract root theme using extensions for clarity reasons to prevent to have a _Swift class_ with thousands of lines. Each _semantic token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement through wrappers. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
+In addition, there are hundreds of _semantics tokens_ and we needed to add them to the abstract root theme using extensions for clarity reasons to prevent to have a _Swift class_ with thousands of lines. Each _semantic token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement through providers. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
 That is the reason why tokens are exposed as `@objc open` to be available and oveeridable anywhere. 
 To keep the same semantics as the ones used in our specifications, _typealias_ are used so as to make the links to _primitive types_ and our logic of _tokens_. These type aliases are available for those who want to make their own theme.
 
@@ -133,6 +133,6 @@ Here are some explainations about the structure of the directory:
 - Core/Tokens/SemanticTokens/Multiples: contains declarations of multiple semantic tokens
 - Core/Tokens/SemanticTokens/TypeAliases: contains declarations of typealiases for semantic tokens tokens
 - Core/Tokens/SemanticTokens/Values: contains declarations of raw tokens, generated or not, composites, multiple or not
-- Core/Tokens/SemanticTokens/Wrappers: contains definitions of wrappers or tokens
+- Core/Tokens/SemanticTokens/Providers: contains definitions of providers of tokens
 - Foundations: contains helpers, low level objects and utilities and tests
 - Modules: contains modules and tests

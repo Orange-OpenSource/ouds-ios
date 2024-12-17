@@ -18,16 +18,16 @@ import OUDSTokensSemantic
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
 /// *open* to allow some derivative mock themes like ``OtherMockTheme``.
 ///
-/// Uses its own tokens wrappers for tests:
-/// - ``MockThemeBorderSemanticTokensWrapper`` for borders
-/// - ``MockThemeOpacitySemanticTokensWrapper`` for opacities
-/// - ``MockThemeColorSemanticTokensWrapper`` for colors
-/// - ``MockThemeElevationSemanticTokensWrapper`` for elevations
-/// - ``MockThemeFontSemanticTokensWrapper`` for fonts
-/// - ``MockThemeGridSemanticTokensWrapper`` for grids
-/// - ``MockThemeOpacitySemanticTokensWrapper`` for opacities
-/// - ``MockThemeSizeSemanticTokensWrapper`` for sizes
-/// - ``MockThemeSpaceSemanticTokensWrapper`` for spaces
+/// Uses its own tokens providers for tests:
+/// - ``MockThemeBorderSemanticTokensProvider`` for borders
+/// - ``MockThemeOpacitySemanticTokensProvider`` for opacities
+/// - ``MockThemeColorSemanticTokensProvider`` for colors
+/// - ``MockThemeElevationSemanticTokensProvider`` for elevations
+/// - ``MockThemeFontSemanticTokensProvider`` for fonts
+/// - ``MockThemeGridSemanticTokensProvider`` for grids
+/// - ``MockThemeOpacitySemanticTokensProvider`` for opacities
+/// - ``MockThemeSizeSemanticTokensProvider`` for sizes
+/// - ``MockThemeSpaceSemanticTokensprovider`` for spaces
 open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
@@ -37,26 +37,26 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
     /// For ``OtherMockTheme``
     init(colors: AllColorSemanticTokens) {
         super.init(colors: colors,
-                   borders: MockThemeBorderSemanticTokensWrapper(),
-                   elevations: MockThemeElevationSemanticTokensWrapper(),
+                   borders: MockThemeBorderSemanticTokensProvider(),
+                   elevations: MockThemeElevationSemanticTokensProvider(),
                    fontFamily: nil,
-                   fonts: MockThemeFontSemanticTokensWrapper(),
-                   grids: MockThemeGridSemanticTokensWrapper(),
-                   opacities: MockThemeOpacitySemanticTokensWrapper(),
-                   sizes: MockThemeSizeSemanticTokensWrapper(),
-                   spaces: MockThemeSpaceSemanticTokensWrapper())
+                   fonts: MockThemeFontSemanticTokensProvider(),
+                   grids: MockThemeGridSemanticTokensProvider(),
+                   opacities: MockThemeOpacitySemanticTokensProvider(),
+                   sizes: MockThemeSizeSemanticTokensProvider(),
+                   spaces: MockThemeSpaceSemanticTokensProvider())
     }
 
     init(fontFamily: String?) {
-        super.init(colors: MockThemeColorSemanticTokensWrapper(),
-                   borders: MockThemeBorderSemanticTokensWrapper(),
-                   elevations: MockThemeElevationSemanticTokensWrapper(),
+        super.init(colors: MockThemeColorSemanticTokensProvider(),
+                   borders: MockThemeBorderSemanticTokensProvider(),
+                   elevations: MockThemeElevationSemanticTokensProvider(),
                    fontFamily: fontFamily,
-                   fonts: MockThemeFontSemanticTokensWrapper(),
-                   grids: MockThemeGridSemanticTokensWrapper(),
-                   opacities: MockThemeOpacitySemanticTokensWrapper(),
-                   sizes: MockThemeSizeSemanticTokensWrapper(),
-                   spaces: MockThemeSpaceSemanticTokensWrapper())
+                   fonts: MockThemeFontSemanticTokensProvider(),
+                   grids: MockThemeGridSemanticTokensProvider(),
+                   opacities: MockThemeOpacitySemanticTokensProvider(),
+                   sizes: MockThemeSizeSemanticTokensProvider(),
+                   spaces: MockThemeSpaceSemanticTokensProvider())
     }
 
     deinit { }

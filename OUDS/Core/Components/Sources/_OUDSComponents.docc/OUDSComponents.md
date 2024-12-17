@@ -67,7 +67,7 @@ myView.typeLabelStrongXLarge(theme)
 ### Apply a specific border (border tokens)
 
 This module exposes the helper `oudsBorder(style:width:radius:color)` so as to apply border semantic tokens on a view in order to define a border effect.
-The helper is available through `View`, and tokens through the wrapper of the theme.
+The helper is available through `View`, and tokens through the provider of the theme.
 
 ```swift
     @Environment(\.theme) private var theme

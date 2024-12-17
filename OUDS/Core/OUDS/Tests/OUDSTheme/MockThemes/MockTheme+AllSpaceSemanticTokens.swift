@@ -18,7 +18,7 @@ import OUDSTokensSemantic
 
 /// Overrides **all** the space semantic tokens (from its super class, i.e. `OUDSSpaceSemanticTokensProvider` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-final class MockThemeSpaceSemanticTokensWrapper: OUDSSpaceSemanticTokensProvider {
+final class MockThemeSpaceSemanticTokensProvider: OUDSSpaceSemanticTokensProvider {
 
     static let mockThemeSpaceRawToken: DimensionRawToken = 911
     static let mockThemeSpaceSemanticToken = MultipleSpaceSemanticTokens(compact: 1, regular: 151)

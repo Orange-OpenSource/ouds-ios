@@ -38,52 +38,52 @@ final class TestThemeOverrideOfSpaceMultipleSemanticTokens: XCTestCase {
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledNone() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledNone, abstractTheme.spaces.spaceScaledNone)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledNone.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledNone.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledSmash() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledSmash, abstractTheme.spaces.spaceScaledSmash)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledSmash.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledSmash.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledShortest() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledShortest, abstractTheme.spaces.spaceScaledShortest)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledShortest.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledShortest.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledShorter() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledShorter, abstractTheme.spaces.spaceScaledShorter)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledShorter.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledShorter.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledShort() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledShort, abstractTheme.spaces.spaceScaledShort)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledShort.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledShort.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledMedium() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledMedium, abstractTheme.spaces.spaceScaledMedium)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledMedium.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledMedium.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledTall() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledTall, abstractTheme.spaces.spaceScaledTall)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledTall.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledTall.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledTaller() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledTaller, abstractTheme.spaces.spaceScaledTaller)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledTaller.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledTaller.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledTallest() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledTallest, abstractTheme.spaces.spaceScaledTallest)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledTallest.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledTallest.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSpaceScaledSpacious() throws {
         XCTAssertNotEqual(inheritedTheme.spaces.spaceScaledSpacious, abstractTheme.spaces.spaceScaledSpacious)
-        XCTAssertTrue(inheritedTheme.spaces.spaceScaledSpacious.isEqual(MockThemeSpaceSemanticTokensWrapper.mockThemeSpaceSemanticToken))
+        XCTAssertTrue(inheritedTheme.spaces.spaceScaledSpacious.isEqual(MockThemeSpaceSemanticTokensProvider.mockThemeSpaceSemanticToken))
     }
 }
 

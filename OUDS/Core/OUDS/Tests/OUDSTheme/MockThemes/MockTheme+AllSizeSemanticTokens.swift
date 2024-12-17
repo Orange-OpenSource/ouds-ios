@@ -18,7 +18,7 @@ import OUDSTokensSemantic
 
 /// Overrides **all** the size semantic tokens (from its super class, i.e. `OUDSSizeSemanticTokensProvider` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-final class MockThemeSizeSemanticTokensWrapper: OUDSSizeSemanticTokensProvider {
+final class MockThemeSizeSemanticTokensProvider: OUDSSizeSemanticTokensProvider {
 
     static let mockThemeSizeRawToken: DimensionRawToken = 118_000
     static let mockThemeSizeCompositeToken = MultipleSizeSemanticTokens(compact: 1, regular: 151)

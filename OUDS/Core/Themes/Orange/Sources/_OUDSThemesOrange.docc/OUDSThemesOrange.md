@@ -62,12 +62,12 @@ You can enrich the ``OrangeTheme`` by subclassing it or by overriding some token
 
 ### By subclassing
 
-You may want to define your own theme, thus you can override the ``OrangeTheme`` with your own class or just override the wrappers.
+You may want to define your own theme, thus you can override the ``OrangeTheme`` with your own class or just override the providers.
 
 You will have to override the tokens wrapper you need. To do that, make a subclass of the wrapper you target:
 - spaces tokens are `OUDSSpaceSemanticTokensProvider`
 - sizes tokens are in `OUDSSizeSemanticTokensProvider`
-- colors tokens are all defined in `OrangeThemeColorSemanticTokensWrapper`
+- colors tokens are all defined in `OrangeThemeColorSemanticTokensProvider`
 - borders tokens are in `OUDSBorderSemanticTokensProvider`
 - elevations tokens are in `OUDSElevationSemanticTokensProvider`
 - opacity tokens are in `OUDSOpacitySemanticTokensProvider`
@@ -80,7 +80,7 @@ import OUDSTokensRaw                // To use raw tokens if needed
 
 // Token wrapper for spaces
 
-class YourAppThemeSpaceTokensWrapper: OUDSSpaceSemanticTokensProvider {
+class YourAppThemeSpaceTokensProvider: OUDSSpaceSemanticTokensProvider {
     override var spaceFixedMedium: SpaceSemanticToken {
         DimensionRawTokens.dimension400
     }
@@ -91,7 +91,7 @@ class YourAppThemeSpaceTokensWrapper: OUDSSpaceSemanticTokensProvider {
 
 // Token wrapper for sizes
 
-class YourAppThemeSizeTokensWrapper: OUDSSizeSemanticTokensProvider {
+class YourAppThemeSizeTokensProvider: OUDSSizeSemanticTokensProvider {
     override var sizeIconDecorative2xl: SizeSemanticToken {
         DimensionRawTokens.dimension300
     }
@@ -102,7 +102,7 @@ class YourAppThemeSizeTokensWrapper: OUDSSizeSemanticTokensProvider {
 
 // Token wrapper for colors
 
-class YourAppThemeColorTokensWrapper: OrangeThemeColorSemanticTokensWrapper {
+class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
     override var colorBgSecondary: MultipleColorSemanticTokens {
         MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
     }
@@ -113,7 +113,7 @@ class YourAppThemeColorTokensWrapper: OrangeThemeColorSemanticTokensWrapper {
 
 // Token wrapper for border
 
-class YourAppThemeBorderTokensWrapper: OUDSBorderSemanticTokensProvider {
+class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
     override var borderStyleDefault: BorderStyleSemanticToken {
         BorderRawTokens.borderStyleDashed
     }
@@ -127,7 +127,7 @@ class YourAppThemeBorderTokensWrapper: OUDSBorderSemanticTokensProvider {
 
 // Token wrapper for elevation
 
-class YourAppThemeElevationTokensWrapper: OUDSElevationSemanticTokensProvider {
+class YourAppThemeElevationTokensProvider: OUDSElevationSemanticTokensProvider {
     override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
         ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_4_600)
     }
@@ -135,7 +135,7 @@ class YourAppThemeElevationTokensWrapper: OUDSElevationSemanticTokensProvider {
 
 // Token wrapper for opacity
 
-class YourAppThemeOpacityTokensWrapper: OUDSOpacitySemanticTokensProvider {
+class YourAppThemeOpacityTokensProvider: OUDSOpacitySemanticTokensProvider {
     override var opacityStrong: OpacitySemanticToken {
         OpacityRawTokens.opacity920
     }
@@ -143,7 +143,7 @@ class YourAppThemeOpacityTokensWrapper: OUDSOpacitySemanticTokensProvider {
 
 // Token wrapper for grid
 
-class YourAppThemeGridTokensWrapper: OUDSGridSemanticTokensProvider {
+class YourAppThemeGridTokensProvider: OUDSGridSemanticTokensProvider {
     override var gridExtraCompactColumnGap: GridSemanticToken {
         GridRawTokens.gridColumnGap200
     }
@@ -157,7 +157,7 @@ class YourAppThemeGridTokensWrapper: OUDSGridSemanticTokensProvider {
 
 // Token wrapper for font
 
-class YourAppThemeFontTokensWrapper: OUDSFontSemanticTokensProvider {
+class YourAppThemeFontTokensProvider: OUDSFontSemanticTokensProvider {
     override var typeDisplayLarge: MultipleFontCompositeRawTokens {
         MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
     }
@@ -167,7 +167,7 @@ class YourAppThemeFontTokensWrapper: OUDSFontSemanticTokensProvider {
 }
 ```
 
-Then define your own them class and assign the wrappers:
+Then define your own them class and assign the providers:
 
 ```swift
 import OUDS
@@ -177,14 +177,14 @@ import OUDSThemesOrange             // To get OrangeTheme
 class YourAppTheme: OrangeTheme {
     
     override init() {
-        super.init(colors: YourAppThemeColorTokensWrapper(),
-                   borders: YourAppThemeBorderTokensWrapper(),
-                   elevations: YourAppThemeElevationTokensWrapper(),
-                   fonts: YourAppThemeFontTokensWrapper(),
-                   grids: YourAppThemeGridTokensWrapper(),
-                   opacities: YourAppThemeOpacityTokensWrapper(),
-                   sizes: YourAppThemeSizeTokensWrapper(),
-                   spaces: YourAppThemeSpaceTokensWrapper())
+        super.init(colors: YourAppThemeColorTokensProvider(),
+                   borders: YourAppThemeBorderTokensProvider(),
+                   elevations: YourAppThemeElevationTokensProvider(),
+                   fonts: YourAppThemeFontTokensProvider(),
+                   grids: YourAppThemeGridTokensProvider(),
+                   opacities: YourAppThemeOpacityTokensProvider(),
+                   sizes: YourAppThemeSizeTokensProvider(),
+                   spaces: YourAppThemeSpaceTokensProvider())
     }
 }
 ```
@@ -214,13 +214,13 @@ Quite simple and similar to the previous solution, but give only the wrapper to 
 For example for colors:
 
 ```swift
-import OUDS                         // To get OUDSThemeableView
+import OUDS // To get OUDSThemeableView
 
 @main
 struct YourApp: App {
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: OrangeTheme(colors: YourAppThemeColorTokensWrapper())) {
+            OUDSThemeableView(theme: OrangeTheme(colors: YourAppThemeColorTokensProvider())) {
                 // Your root view
             }
         }

@@ -7,7 +7,7 @@ They can be seen as an high level of usage with functional meanings.
 
 If we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition. In fact, semantic tokens are here to bring meaning, semantic, between raw values and components.
 
-In addition, there are hundreds of _semantics tokens_ which must be exposed in the end through the theme. Each _semantic token_ "family" is declared in its dedicated _Swift protocol_. This protocol is then used for the tokens wrappers embeded inside the theme.
+In addition, there are hundreds of _semantics tokens_ which must be exposed in the end through the theme. Each _semantic token_ "family" is declared in its dedicated _Swift protocol_. This protocol is then used for the tokens providers embeded inside the theme.
 
 Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes to override properties declared in _protocols_ and defined in _extensions_.
 That is the reason why tokens are exposed as `@objc open` to be available and overridable anywhere. 
@@ -62,9 +62,9 @@ The *TypeAliases* folder contains all the *typealias* values used for the semant
 Indeed these aliases are here to bring clarity and meanings in the library, and also to help users (i.e. developers) to know what kind of objects they handle with the same vocabulary as the one used in *Figma*, and in general, in the whole design system. They can be seen as a light level of abstraction with meanings, without having to define real types with `struct` or `class`.
 Type aliases here point to raw tokens aliases, thus by transition they point to real types.
 
-The *Values* folder contains all the semantic tokens declarations through protocols. These protocols will be then implemented by the wrappers in higher level (i.e. theme level in *OUDS* product or theme products).
+The *Values* folder contains all the semantic tokens declarations through protocols. These protocols will be then implemented by the providers in higher level (i.e. theme level in *OUDS* product or theme products).
 
-The *Wrappers* folder contains the _Swift class_ used for wrappers. We do not want to store all the semantic and component tokens in the theme, and the use of wrappers will ilprove the developer experience. It will wrap all tokens by "family" and should expose them through the suitable protocols.
+The *Providers* folder contains the _Swift class_ used for providers. We do not want to store all the semantic and component tokens in the theme, and the use of providers will ilprove the developer experience. It will wrap all tokens by "family" and should expose them through the suitable protocols.
 Type aliases are also defined to merge protocols for the same tokens groups. Thus the `OUDSTheme` will contain wrapers expsoed and use through a subset of protocols.
 
 ```swift
@@ -137,7 +137,7 @@ Thus when the *tokenator* generates tokens without managing composites, the file
 
 ## How to use semantic tokens
 
-In fact, the semantic tokens are declared and gathered in _Swift protocol_ so as to force any theme to implement them, and also to allow any theme to expose such properties wathever the implementation of the theme is, across wrappers.
+In fact, the semantic tokens are declared and gathered in _Swift protocol_ so as to force any theme to implement them, and also to allow any theme to expose such properties wathever the implementation of the theme is, across providers.
 Because *semantic tokens* have for values *raw tokens*, and these *raw tokens* have for values primitive types, and all these tokens are declared with *type aliases* refering all together, you can handle a *semantic token* directly in your view because the final value will be used.
 Thus, get the theme and call the needed property with some helpers.
 

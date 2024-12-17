@@ -46,17 +46,17 @@ It is quite simple, you have to follow several steps.
 
 You will have to create a _Swift class_ which will inherit from `OrangeTheme` or `OUDSTheme`.
 You can see `OrangeTheme` as more specified and less abtract as `OUDSTheme` which is the base of all themes. We do not recommend to use directly the `OUDSTheme` as is.
-Then, you should override the _semantic tokens_ and _components tokens_ you want using the wrappers ; we recommend to use _Swift extensions_ for clarity reasons.
+Then, you should override the _semantic tokens_ and _components tokens_ you want using the providers ; we recommend to use _Swift extensions_ for clarity reasons.
 If your theme needs to define its own _raw tokens_, you can also define them using a `enum` and the _raw tokens types_.
 
 ### By subclassing
 
-You may want to define your own theme, thus you can override the `OrangeTheme` with your own class or just override the wrappers.
+You may want to define your own theme, thus you can override the `OrangeTheme` with your own class or just override the providers.
 
-You will have to override the tokens wrapper you need. To do that, make a subclass of the wrapper you target:
+You will have to override the tokens provider you need. To do that, make a subclass of the provider you target:
 - spaces tokens are `OUDSSpaceSemanticTokensProvider`
 - sizes tokens are in `OUDSSizeSemanticTokensProvider`
-- colors tokens are all defined in `OrangeThemeColorSemanticTokensWrapper`
+- colors tokens are all defined in `OrangeThemeColorSemanticTokensProvider`
 - borders tokens are in `OUDSBorderSemanticTokensProvider`
 - elevations tokens are in `OUDSElevationSemanticTokensProvider`
 - opacity tokens are in `OUDSOpacitySemanticTokensProvider`
@@ -69,9 +69,9 @@ Find bellow some example
 import OUDSTokensSemantic           // To use semantic tokens if needed
 import OUDSTokensRaw                // To use raw tokens if needed
 
-// Token wrapper for spaces
+// Token provider for spaces
 
-class YourAppThemeSpaceTokensWrapper: OUDSSpaceSemanticTokensProvider {
+class YourAppThemeSpaceTokensProvider: OUDSSpaceSemanticTokensProvider {
     override var spaceFixedMedium: SpaceSemanticToken {
         DimensionRawTokens.dimension400
     }
@@ -80,9 +80,9 @@ class YourAppThemeSpaceTokensWrapper: OUDSSpaceSemanticTokensProvider {
     }
 }
 
-// Token wrapper for sizes
+// Token provider for sizes
 
-class YourAppThemeSizeTokensWrapper: OUDSSizeSemanticTokensProvider {
+class YourAppThemeSizeTokensProvider: OUDSSizeSemanticTokensProvider {
     override var sizeIconDecorative2xl: SizeSemanticToken {
         DimensionRawTokens.dimension300
     }
@@ -91,9 +91,9 @@ class YourAppThemeSizeTokensWrapper: OUDSSizeSemanticTokensProvider {
     }
 }
 
-// Token wrapper for colors
+// Token provider for colors
 
-class YourAppThemeColorTokensWrapper: OrangeThemeColorSemanticTokensWrapper {
+class YourAppThemeColorTokensProvider: OrangeThemeColorSemanticTokensProvider {
     override var colorBgSecondary: MultipleColorSemanticTokens {
         MultipleColorSemanticTokens(light: ColorRawTokens.colorDecorativeAmber500, dark: OrangeBrandColorRawTokens.colorOrange900)
     }
@@ -102,9 +102,9 @@ class YourAppThemeColorTokensWrapper: OrangeThemeColorSemanticTokensWrapper {
     }
 }
 
-// Token wrapper for border
+// Token provider for border
 
-class YourAppThemeBorderTokensWrapper: OUDSBorderSemanticTokensProvider {
+class YourAppThemeBorderTokensProvider: OUDSBorderSemanticTokensProvider {
     override var borderStyleDefault: BorderStyleSemanticToken {
         BorderRawTokens.borderStyleDashed
     }
@@ -116,25 +116,25 @@ class YourAppThemeBorderTokensWrapper: OUDSBorderSemanticTokensProvider {
     }
 }
 
-// Token wrapper for elevation
+// Token provider for elevation
 
-class YourAppThemeElevationTokensWrapper: OUDSElevationSemanticTokensProvider {
+class YourAppThemeElevationTokensProvider: OUDSElevationSemanticTokensProvider {
     override var elevationStickyEmphasized: ElevationCompositeSemanticToken {
         ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_4_600)
     }
 }
 
-// Token wrapper for opacity
+// Token provider for opacity
 
-class YourAppThemeOpacityTokensWrapper: OUDSOpacitySemanticTokensProvider {
+class YourAppThemeOpacityTokensProvider: OUDSOpacitySemanticTokensProvider {
     override var opacityStrong: OpacitySemanticToken {
         OpacityRawTokens.opacity920
     }
 }
 
-// Token wrapper for grid
+// Token provider for grid
 
-class YourAppThemeGridTokensWrapper: OUDSGridSemanticTokensProvider {
+class YourAppThemeGridTokensProvider: OUDSGridSemanticTokensProvider {
     override var gridExtraCompactColumnGap: GridSemanticToken {
         GridRawTokens.gridColumnGap200
     }
@@ -146,9 +146,9 @@ class YourAppThemeGridTokensWrapper: OUDSGridSemanticTokensProvider {
     }
 }
 
-// Token wrapper for font
+// Token provider for font
 
-class YourAppThemeFontTokensWrapper: OUDSFontSemanticTokensProvider {
+class YourAppThemeFontTokensProvider: OUDSFontSemanticTokensProvider {
     override var typeDisplayLarge: MultipleFontCompositeRawTokens {
         MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
     }
@@ -158,7 +158,7 @@ class YourAppThemeFontTokensWrapper: OUDSFontSemanticTokensProvider {
 }
 ```
 
-Then define your own them class and assign the wrappers:
+Then define your own them class and assign the providers:
 
 ```swift
 import OUDS
@@ -168,14 +168,14 @@ import OUDSThemesOrange             // To get OrangeTheme
 class YourAppTheme: OrangeTheme {
     
     override init() {
-        super.init(colors: YourAppThemeColorTokensWrapper(),
-                   borders: YourAppThemeBorderTokensWrapper(),
-                   elevations: YourAppThemeElevationTokensWrapper(),
-                   fonts: YourAppThemeFontTokensWrapper(),
-                   grids: YourAppThemeGridTokensWrapper(),
-                   opacities: YourAppThemeOpacityTokensWrapper(),
-                   sizes: YourAppThemeSizeTokensWrapper(),
-                   spaces: YourAppThemeSpaceTokensWrapper())
+        super.init(colors: YourAppThemeColorTokensProvider(),
+                   borders: YourAppThemeBorderTokensProvider(),
+                   elevations: YourAppThemeElevationTokensProvider(),
+                   fonts: YourAppThemeFontTokensProvider(),
+                   grids: YourAppThemeGridTokensProvider(),
+                   opacities: YourAppThemeOpacityTokensProvider(),
+                   sizes: YourAppThemeSizeTokensProvider(),
+                   spaces: YourAppThemeSpaceTokensProvider())
     }
 }
 ```

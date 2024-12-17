@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 /// Overrides **all** the opacity semantic tokens (from its super class, i.e. `OUDSOpacitySemanticTokensProvider`) so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-final class MockThemeOpacitySemanticTokensWrapper: OUDSOpacitySemanticTokensProvider {
+final class MockThemeOpacitySemanticTokensProvider: OUDSOpacitySemanticTokensProvider {
 
     static let mockThemeOpacityRawToken: OpacityRawToken = 713
 

@@ -23,17 +23,17 @@ import OUDSTokensSemantic
 final class OtherMockTheme: MockTheme, @unchecked Sendable {
 
     public init() {
-        super.init(colors: OtherMockThemeColorSemanticTokensWrapper())
+        super.init(colors: OtherMockThemeColorSemanticTokensProvider())
     }
 }
 
-// MARK: - Other Mock Theme Color Semantic Tokens Wrapper
+// MARK: - Other Mock Theme Color Semantic Tokens Provider
 
 /// Some color semantic tokens may be not implemented, making fatalError() be triggered at `OUDSTheme` level and tests crash.
 /// `OrangeTheme` is not accessible here.
 /// Thus we use another mock theme to make comparisons with `MockTheme` and ensure overriding property of tokens is still working.
 /// This case of not implemented token only happens with color tokens.  (╯° °）╯︵ ┻━┻
-open class OtherMockThemeColorSemanticTokensWrapper: MockThemeColorSemanticTokensWrapper {
+open class OtherMockThemeColorSemanticTokensProvider: MockThemeColorSemanticTokensProvider {
 
     static let otherMockThemeMultipleColorSemanticTokens = MultipleColorSemanticTokens("#FF0000")
     static let otherMockThemeSemanticColorToken: ColorSemanticToken = "#00FF00"

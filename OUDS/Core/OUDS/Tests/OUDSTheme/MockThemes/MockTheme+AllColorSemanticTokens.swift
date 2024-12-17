@@ -21,8 +21,8 @@ import OUDSTokensSemantic
 
 /// Overrides **all** the color semantic tokens (from its super class, i.e. `OUDSColorSemanticTokensProvider`) so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-/// This ``MockThemeColorSemanticTokensWrapper`` will be asigned in ``MockTheme`` as an ``AllColorSemanticTokens`` implementation.
-open class MockThemeColorSemanticTokensWrapper: OUDSColorSemanticTokensProvider {
+/// This ``MockThemeColorSemanticTokensProvider`` will be asigned in ``MockTheme`` as an ``AllColorSemanticTokens`` implementation.
+open class MockThemeColorSemanticTokensProvider: OUDSColorSemanticTokensProvider {
 
     static let mockThemeMultipleColorSemanticTokens = MultipleColorSemanticTokens("#68489D")
     static let mockThemeSemanticColorTokens: ColorSemanticToken = "#68489D"

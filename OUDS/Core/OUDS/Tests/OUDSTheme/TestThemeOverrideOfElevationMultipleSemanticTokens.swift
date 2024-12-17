@@ -39,42 +39,42 @@ final class TestThemeOverrideOfElevationMultipleSemanticTokens: XCTestCase {
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorDefault() throws {
         XCTAssertNotEqual(inheritedTheme.elevations.elevationColorDefault, abstractTheme.elevations.elevationColorDefault)
-        XCTAssertTrue(inheritedTheme.elevations.elevationColorDefault.isEqual(MockThemeElevationSemanticTokensWrapper.mockThemeElevationMultipleColorSemanticToken))
+        XCTAssertTrue(inheritedTheme.elevations.elevationColorDefault.isEqual(MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorNone() throws {
         XCTAssertNotEqual(inheritedTheme.elevations.elevationColorNone, abstractTheme.elevations.elevationColorNone)
-        XCTAssertTrue(inheritedTheme.elevations.elevationColorNone.isEqual(MockThemeElevationSemanticTokensWrapper.mockThemeElevationMultipleColorSemanticToken))
+        XCTAssertTrue(inheritedTheme.elevations.elevationColorNone.isEqual(MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorRaised() throws {
         XCTAssertNotEqual(inheritedTheme.elevations.elevationColorRaised, abstractTheme.elevations.elevationColorRaised)
-        XCTAssertTrue(inheritedTheme.elevations.elevationColorRaised.isEqual(MockThemeElevationSemanticTokensWrapper.mockThemeElevationMultipleColorSemanticToken))
+        XCTAssertTrue(inheritedTheme.elevations.elevationColorRaised.isEqual(MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorDrag() throws {
         XCTAssertNotEqual(inheritedTheme.elevations.elevationColorDrag, abstractTheme.elevations.elevationColorDrag)
-        XCTAssertTrue(inheritedTheme.elevations.elevationColorDrag.isEqual(MockThemeElevationSemanticTokensWrapper.mockThemeElevationMultipleColorSemanticToken))
+        XCTAssertTrue(inheritedTheme.elevations.elevationColorDrag.isEqual(MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorEmphasized() throws {
         XCTAssertNotEqual(inheritedTheme.elevations.elevationColorEmphasized, abstractTheme.elevations.elevationColorEmphasized)
-        XCTAssertTrue(inheritedTheme.elevations.elevationColorEmphasized.isEqual(MockThemeElevationSemanticTokensWrapper.mockThemeElevationMultipleColorSemanticToken))
+        XCTAssertTrue(inheritedTheme.elevations.elevationColorEmphasized.isEqual(MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyDefault() throws {
         XCTAssertNotEqual(inheritedTheme.elevations.elevationColorStickyDefault, abstractTheme.elevations.elevationColorStickyDefault)
-        XCTAssertTrue(inheritedTheme.elevations.elevationColorStickyDefault.isEqual(MockThemeElevationSemanticTokensWrapper.mockThemeElevationMultipleColorSemanticToken))
+        XCTAssertTrue(inheritedTheme.elevations.elevationColorStickyDefault.isEqual(MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyEmphasized() throws {
         XCTAssertNotEqual(inheritedTheme.elevations.elevationColorStickyEmphasized, abstractTheme.elevations.elevationColorStickyEmphasized)
-        XCTAssertTrue(inheritedTheme.elevations.elevationColorStickyEmphasized.isEqual(MockThemeElevationSemanticTokensWrapper.mockThemeElevationMultipleColorSemanticToken))
+        XCTAssertTrue(inheritedTheme.elevations.elevationColorStickyEmphasized.isEqual(MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken))
     }
 
     func testInheritedThemeCanOverrideSemanticTokenElevationColorStickyNavigationScrolled() throws {
         XCTAssertNotEqual(inheritedTheme.elevations.elevationColorStickyNavigationScrolled, abstractTheme.elevations.elevationColorStickyNavigationScrolled)
-        XCTAssertTrue(inheritedTheme.elevations.elevationColorStickyNavigationScrolled.isEqual(MockThemeElevationSemanticTokensWrapper.mockThemeElevationMultipleColorSemanticToken))
+        XCTAssertTrue(inheritedTheme.elevations.elevationColorStickyNavigationScrolled.isEqual(MockThemeElevationSemanticTokensProvider.mockThemeElevationMultipleColorSemanticToken))
     }
 }
 
