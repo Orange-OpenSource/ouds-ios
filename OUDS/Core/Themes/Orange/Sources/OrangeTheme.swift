@@ -69,7 +69,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation, default set to `OUDSBorderSemanticTokensProvider`
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`, default set to `OUDSElevationSemanticTokensProvider`
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OUDSFontSemanticTokensProvider`
-    ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`, default set to `OUDSGridSemanticTokensWrapper`
+    ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`, default set to `OUDSGridSemanticTokensProvider`
     ///    - opacities: An object providing all the opacity semantic tokens, as `OpacitySemanticTokens` implementation, default set to `OUDSOpacitySemanticTokensWrapper`
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation, default set to `OUDSSizeSemanticTokensWrapper`
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokens` implementation, default set to `OUDSSpaceSemanticTokensWrapper`
@@ -77,7 +77,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensProvider(),
                          fonts: AllFontSemanticTokens = OUDSFontSemanticTokensProvider(),
-                         grids: AllGridSemanticTokens = OUDSGridSemanticTokensWrapper(),
+                         grids: AllGridSemanticTokens = OUDSGridSemanticTokensProvider(),
                          opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
                          sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensWrapper(),
                          spaces: AllSpaceSemanticTokens = OUDSSpaceSemanticTokensWrapper()) {

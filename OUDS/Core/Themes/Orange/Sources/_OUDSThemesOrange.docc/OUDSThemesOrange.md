@@ -71,7 +71,7 @@ You will have to override the tokens wrapper you need. To do that, make a subcla
 - borders tokens are in `OUDSBorderSemanticTokensProvider`
 - elevations tokens are in `OUDSElevationSemanticTokensProvider`
 - opacity tokens are in `OUDSOpacitySemanticTokensWrapper`
-- grid tokens are in `OUDSGridSemanticTokensWrapper`
+- grid tokens are in `OUDSGridSemanticTokensProvider`
 - font tokens are in `OUDSFontSemanticTokensProvider`
 
 ```swift
@@ -143,7 +143,7 @@ class YourAppThemeOpacityTokensWrapper: OUDSOpacitySemanticTokensWrapper {
 
 // Token wrapper for grid
 
-class YourAppThemeGridTokensWrapper: OUDSGridSemanticTokensWrapper {
+class YourAppThemeGridTokensWrapper: OUDSGridSemanticTokensProvider {
     override var gridExtraCompactColumnGap: GridSemanticToken {
         GridRawTokens.gridColumnGap200
     }

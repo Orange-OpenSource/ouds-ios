@@ -67,7 +67,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensProvider`
     ///    - elevations: An object providing all the elevation semantic tokens, by default `OUDSElevationSemanticTokensProvider`
     ///    - fonts: An object providing all the font semantic tokens, by default `OUDSFontSemanticTokensProvider`
-    ///    - grids: An object providing all the grid semantic tokens, by default `OUDSGridSemanticTokensWrapper`
+    ///    - grids: An object providing all the grid semantic tokens, by default `OUDSGridSemanticTokensProvider`
     ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensWrapper`
     ///    - sizes: An object providing all the size semantic tokens, by default `OUDSSizeSemanticTokensWrapper`
     ///    - spaces: An object providing all the space semantic tokens, by default `OUDSSpaceSemanticTokensWrapper`
@@ -75,7 +75,7 @@ open class OUDSTheme: @unchecked Sendable {
                 borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensProvider(),
                 elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensProvider(),
                 fonts: AllFontSemanticTokens = OUDSFontSemanticTokensProvider(),
-                grids: AllGridSemanticTokens = OUDSGridSemanticTokensWrapper(),
+                grids: AllGridSemanticTokens = OUDSGridSemanticTokensProvider(),
                 opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensWrapper(),
                 sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensWrapper(),
                 spaces: AllSpaceSemanticTokens = OUDSSpaceSemanticTokensWrapper()) {
