@@ -54,23 +54,22 @@ private struct LoagingIndicator: View {
 }
 
 /// Used to add a Progress indicator instead of conent (Text, Icon)
-/// As the button must keepp the size of the content, the indicator is
+/// As the button must keep the size of the content, the indicator is
 /// added as overlay on top, and the content is hidden applying an opacity.
 struct ButtonLoadingContentModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.buttonOnColoredSurface) private var buttonOnColoredSurface
 
     // MARK: Stored Properties
 
     let hierarchy: OUDSButtonStyle.Hierarchy
+    let onColoredSurface: Bool
 
     // MARK: Body
 
     func body(content: Content) -> some View {
         content
-            .opacity(0)
             .overlay {
                 LoagingIndicator(color: colorToken.color(for: colorScheme))
                     .padding(.vertical, theme.buttonSpacePaddingBlock)
@@ -82,13 +81,14 @@ struct ButtonLoadingContentModifier: ViewModifier {
     private var colorToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            buttonOnColoredSurface ? theme.buttonColorContentDefaultLoadingMono : theme.buttonColorContentDefaultLoading
+            onColoredSurface ? theme.buttonColorContentDefaultLoadingMono : theme.buttonColorContentDefaultLoading
         case .strong:
-            buttonOnColoredSurface ? theme.buttonColorContentStrongLoadingMono : theme.colorContentOnActionLoading
+            onColoredSurface ? theme.buttonColorContentStrongLoadingMono : theme.colorContentOnActionLoading
         case .minimal:
-            buttonOnColoredSurface ? theme.buttonColorContentMinimalLoadingMono : theme.buttonColorContentMinimalLoading
+            onColoredSurface ? theme.buttonColorContentMinimalLoadingMono : theme.buttonColorContentMinimalLoading
         case .negative:
             theme.colorContentOnActionNegative
+            // theme.colorContentOnActionNegativeLoading // TODO:
         }
     }
 }
