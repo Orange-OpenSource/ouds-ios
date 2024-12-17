@@ -13,13 +13,57 @@
 
 import SwiftUI
 
-public struct OOUDSButton: View {
+/// The `OUDSButton` propose layout with text only, icon only or text and icon.
+///
+/// ## Hierarchies
+///
+/// Four hieraries are proposed for all layouts:
+///
+/// - **default**: Default buttons are used for actions which are not mandatory or essential for the user.
+///
+/// - **strong**: The Strong "call for action" on the page should be singular and prominent, limited to one per view.
+/// It should be reserved for the most critical action, such as "Next," "Save," "Submit," etc.
+///
+/// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
+///
+/// - **negative**: Negative buttons should be used sparingly to warn of a destructive action, for example, delete or remove, typically
+/// resulting in the opening of a confirmation dialog.
+///
+/// ```
+///     // Icon only with default hierarchy
+///     OUDSButton(hierarchy: .default, icon: Image("ic_heart")) {}
+///
+///     // Text only with negative hierarchy
+///     OUDSButton(hierarchy: .negative, text: "Delete") {}
+///
+///     // Text and icon with strong hierarchy
+///     OUDSButton(hierarchy: .strong, icon: Image("ic_heart"), text: "Validate") {}
+///
+/// ```
+///
+/// ![Default Button with Icon only.](button_icon_only_default.jpg)
+///
+/// ## States
+///
+/// Three states are available:
+///
+/// - **normal**: used in the normal usage of button. The style of the button change for folowing states disabled, pressed, hovered or normal (i.e. enabled)
+/// - **skeleton**: used when screen if presenting and probably loading data for the first time.
+/// - **loading**: used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
+///
+/// ## Colored Surface
+///
+/// If button is placed on colored surface, the default colors (content, background and border) must be adapted.
+/// **Remark: Today it is not allowed to placed a Negative button on a coloed surface.
+///
+public struct OUDSButton: View {
 
     // MARK: Stored Properties
 
     private let type: `Type`
     private let hierarchy: Hierarchy
     private let state: ButtonState
+    private let onColoredSurface: Bool
     private let action: () -> Void
 
     private enum `Type`{
@@ -32,44 +76,51 @@ public struct OOUDSButton: View {
 
     // MARK: Initializers
 
-    /// Create a button with text and icon
+    /// Create a button with text and icon.
     /// - Parameters:
-    ///    - hierarchy: the hierarchy of the button
-    ///    - icon: an image shoud contains an icon
-    ///    - text: the text
-    ///    - state: the current state of the button (normal or loading/skeleton)
+    ///    - icon: An image shoud contains an icon
+    ///    - text: The text
+    ///    - hierarchy: The hierarchy of the button
+    ///    - state: The current state of the button (normal or loading/skeleton
+    ///    - onColoredSurface: true if the button is placed on colored surface, false otherwise
     ///    - action: The action to perform when the user triggers the button
-    public init(hierarchy: Hierarchy, icon: Image, text: String, state: ButtonState = .normal, action: @escaping () -> Void) {
+    public init(icon: Image, text: String, hierarchy: Hierarchy, state: ButtonState, onColoredSurface: Bool = false, action: @escaping () -> Void) {
         self.type = .textAndIcon(text: text, icon: icon)
         self.hierarchy = hierarchy
         self.state = state
         self.action = action
+        self.onColoredSurface = onColoredSurface
     }
 
-    /// Create a button with an icon
+    /// Create a button with an icon.
+    ///
     /// - Parameters:
-    ///    - hierarchy: the hierarchy of the button
-    ///    - icon: an image shoud contains an icon
-    ///    - state: the current state of the button (normal or loading/skeleton)
+    ///    - icon: An image shoud contains an icon
+    ///    - hierarchy: The hierarchy of the button
+    ///    - state: The current state of the button (normal or loading/skeleton)
+    ///    - onColoredSurface: true if the button is placed on colored surface, false otherwise
     ///    - action: The action to perform when the user triggers the button
-    public init(hierarchy: Hierarchy, icon: Image, state: ButtonState = .normal, action: @escaping () -> Void) {
+    public init(icon: Image, hierarchy: Hierarchy, state: ButtonState, onColoredSurface: Bool = false, action: @escaping () -> Void) {
         self.type = .icon(icon)
         self.hierarchy = hierarchy
         self.state = state
         self.action = action
+        self.onColoredSurface = onColoredSurface
     }
 
     /// Create a button with a text
     /// - Parameters:
-    ///    - hierarchy: the hierarchy of the button
-    ///    - text: the text of the button
-    ///    - state: the current state of the button (normal or loading/skeleton)
+    ///    - text: The text of the button
+    ///    - hierarchy: The hierarchy of the button
+    ///    - state: The current state of the button (normal or loading/skeleton)
+    ///    - onColoredSurface: true if the button is placed on colored surface, false otherwise
     ///    - action: The action to perform when the user triggers the button
-    public init(hierarchy: Hierarchy, text: String, state: ButtonState = .normal, action: @escaping () -> Void) {
+    public init(text: String, hierarchy: Hierarchy, state: ButtonState, onColoredSurface: Bool = false, action: @escaping () -> Void) {
         self.type = .text(text)
         self.hierarchy = hierarchy
         self.state = state
         self.action = action
+        self.onColoredSurface = onColoredSurface
     }
 
     // MARK: Body
@@ -85,7 +136,7 @@ public struct OOUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon)
             }
         }
-        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, state: state))
+        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, state: state, onColoredSurface: onColoredSurface))
     }
 }
 

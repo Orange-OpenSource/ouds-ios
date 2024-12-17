@@ -97,11 +97,11 @@ private struct ButtonDemo: View {
                 // swiftlint:disable accessibility_label_for_image
                 switch model.layout {
                 case .iconOnly:
-                    OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), state: model.state) {}
+                    OUDSButton(icon: Image("ic_heart"), hierarchy: model.hierarchy, state: model.state, onColoredSurface: coloredBackgound) {}
                 case .textOnly:
-                    OOUDSButton(hierarchy: model.hierarchy, text: "app_components_button_label", state: model.state) {}
+                    OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, state: model.state, onColoredSurface: coloredBackgound) {}
                 case .iconAndText:
-                    OOUDSButton(hierarchy: model.hierarchy, icon: Image("ic_heart"), text: "app_components_button_label", state: model.state) {}
+                    OUDSButton(icon: Image("ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, state: model.state, onColoredSurface: coloredBackgound) {}
                 }
                 // swiftlint:enable accessibility_label_for_image
             }
@@ -114,7 +114,7 @@ private struct ButtonDemo: View {
         .environment(\.buttonOnColoredSurface, coloredBackgound)
     }
 
-    private var background: Color {
+    private var backgroundColor: Color {
         if coloredBackgound {
             theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme)
         } else {

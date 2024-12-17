@@ -15,6 +15,13 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+extension OUDSButton {
+
+    func buttonStyle(state: ButtonState, hierarchy: Hierarchy, onColoredSurface: Bool = false) -> some View {
+        self.buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, state: state, onColoredSurface: onColoredSurface))
+    }
+}
+
 /// Used to apply the right style on a `OUDSButton` according to the `hierarchy`
 /// and the `style`.
 ///
@@ -65,6 +72,7 @@ public struct OUDSButtonStyle: ButtonStyle {
     @Environment(\.isEnabled) private var isEnable
     private let state: ButtonState
     private let hierarchy: Hierarchy
+    private let onColoredSurface: Bool
     @State private var isHover: Bool
 
     // MARK: Initializer
@@ -75,10 +83,12 @@ public struct OUDSButtonStyle: ButtonStyle {
     ///  - Parameters:
     ///     - hierarchy: The button hierarchy
     ///     - state: The current stete of the button
-    public init(hierarchy: Hierarchy, state: ButtonState) {
+    ///     - onColoredSurface: true if the button is placed on colored surface, false otherwise
+    public init(hierarchy: Hierarchy, state: ButtonState, onColoredSurface: Bool) {
         self.hierarchy = hierarchy
         self.state = state
         self.isHover = false
+        self.onColoredSurface = onColoredSurface
     }
 
     // MARK: Body
@@ -90,13 +100,30 @@ public struct OUDSButtonStyle: ButtonStyle {
                 .onHover { isHover in
                     self.isHover = isHover
                 }
-                .modifier(ButtonViewModifier(hierarchy: hierarchy, isEnabled: isEnable, isHover: isHover, isPressed: configuration.isPressed))
+                .modifier(ButtonViewModifier(hierarchy: hierarchy, state: internalState(isPressed: configuration.isPressed), onColoredSurface: onColoredSurface))
         case .loading:
             configuration.label
-                .modifier(ButtonLoadingContentModifier(hierarchy: hierarchy))
-                .modifier(ButtonViewModifier(hierarchy: hierarchy, isEnabled: true, isHover: false, isPressed: false))
+                .modifier(ButtonViewModifier(hierarchy: hierarchy, state: .loading, onColoredSurface: onColoredSurface))
+                .modifier(ButtonLoadingContentModifier(hierarchy: hierarchy, onColoredSurface: onColoredSurface))
         case .skeleton:
-            configuration.label.modifier(ButtonSkeletonModifier())
+            configuration.label
+                .modifier(ButtonSkeletonModifier())
         }
+    }
+
+    func internalState(isPressed: Bool) -> InternalButtonState {
+        if !isEnable {
+            return .disabled
+        }
+
+        if isPressed {
+            return .pressed
+        }
+
+        if isHover {
+            return .hover
+        }
+
+        return .enabled
     }
 }

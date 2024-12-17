@@ -21,81 +21,102 @@ struct ButtonForegroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.buttonOnColoredSurface) private var buttonOnColoredSurface
 
     // MARK: Stored Properties
 
     let hierarchy: OUDSButtonStyle.Hierarchy
     let state: InternalButtonState
+    let onColoredSurface: Bool
 
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.foregroundStyle(colorToken.color(for: colorScheme))
+        content.foregroundStyle(colorToken)
     }
 
     // MARK: Private helpers
 
-    private var colorToken: MultipleColorSemanticTokens {
+    private var colorToken: Color {
         switch state {
-        case .enabled, .loading:
-            return token
+        case .enabled:
+            enabledToken.color(for: colorScheme)
         case .hover:
-            return hoverToken
+            hoverToken.color(for: colorScheme)
         case .pressed:
-            return pressedToken
+            pressedToken.color(for: colorScheme)
+        case .loading:
+            loadingToken
+                .color(for: colorScheme)
+                .opacity(0)
         case .disabled:
-            return disabledToken
+            disabledToken.color(for: colorScheme)
+        }
+    }
+
+    private var enabledToken: MultipleColorSemanticTokens {
+        switch hierarchy {
+        case .default:
+            onColoredSurface ? theme.buttonColorContentDefaultEnabledMono : theme.buttonColorContentDefaultEnabled
+        case .strong:
+            onColoredSurface ? theme.buttonColorContentStrongEnabledMono : theme.colorContentOnActionEnabled
+        case .minimal:
+            onColoredSurface ? theme.buttonColorContentMinimalEnabledMono : theme.buttonColorContentMinimalEnabled
+        case .negative:
+            theme.colorContentOnActionNegative
+//            theme.colorContentOnActionNegativeEnabled TODO:
         }
     }
 
     private var hoverToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            buttonOnColoredSurface ? theme.buttonColorContentDefaultHoverMono : theme.buttonColorContentDefaultHover
+            onColoredSurface ? theme.buttonColorContentDefaultHoverMono : theme.buttonColorContentDefaultHover
         case .strong:
-            buttonOnColoredSurface ? theme.buttonColorContentStrongHoverMono : theme.colorContentOnActionHover
+            onColoredSurface ? theme.buttonColorContentStrongHoverMono : theme.colorContentOnActionHover
         case .minimal:
-            buttonOnColoredSurface ? theme.buttonColorContentMinimalHoverMono : theme.buttonColorContentMinimalHover
+            onColoredSurface ? theme.buttonColorContentMinimalHoverMono : theme.buttonColorContentMinimalHover
         case .negative:
-            buttonOnColoredSurface ? theme.colorContentOnActionNegative : theme.colorContentOnActionNegative
+            onColoredSurface ? theme.colorContentOnActionNegative : theme.colorContentOnActionNegative
+//            theme.colorContentOnActionNegativeHover TODO:
         }
     }
 
     private var pressedToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            buttonOnColoredSurface ? theme.buttonColorContentDefaultPressedMono : theme.buttonColorContentDefaultPressed
+            onColoredSurface ? theme.buttonColorContentDefaultPressedMono : theme.buttonColorContentDefaultPressed
         case .strong:
-            buttonOnColoredSurface ? theme.buttonColorContentStrongPressedMono : theme.colorContentOnActionPressed
+            onColoredSurface ? theme.buttonColorContentStrongPressedMono : theme.colorContentOnActionPressed
         case .minimal:
-            buttonOnColoredSurface ? theme.buttonColorContentDefaultPressedMono : theme.buttonColorContentDefaultPressed
+            onColoredSurface ? theme.buttonColorContentDefaultPressedMono : theme.buttonColorContentDefaultPressed
         case .negative:
             theme.colorContentOnActionNegative
+//            theme.colorContentOnActionNegativePressed TODO:
         }
     }
 
-    private var token: MultipleColorSemanticTokens {
+    private var loadingToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            buttonOnColoredSurface ? theme.buttonColorContentDefaultEnabledMono : theme.buttonColorContentDefaultEnabled
+            onColoredSurface ? theme.buttonColorContentDefaultLoadingMono : theme.buttonColorContentDefaultLoading
         case .strong:
-            buttonOnColoredSurface ? theme.colorContentOnActionEnabled : theme.buttonColorContentStrongEnabledMono
+            onColoredSurface ? theme.buttonColorContentStrongLoadingMono : theme.colorContentOnActionEnabled
         case .minimal:
-            buttonOnColoredSurface ? theme.buttonColorContentMinimalEnabledMono : theme.buttonColorContentMinimalEnabled
+            onColoredSurface ? theme.buttonColorContentMinimalLoadingMono : theme.buttonColorContentMinimalLoading
         case .negative:
             theme.colorContentOnActionNegative
+//            theme.colorContentOnActionNegativeLoading TODO:
         }
     }
 
     private var disabledToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            buttonOnColoredSurface ? theme.buttonColorContentDefaultDisabledMono : theme.buttonColorContentDefaultDisabled
+            onColoredSurface ? theme.buttonColorContentDefaultDisabledMono : theme.buttonColorContentDefaultDisabled
         case .strong:
-            buttonOnColoredSurface ? theme.buttonColorContentStrongDisabledMono : theme.colorContentOnActionDisabled
+            onColoredSurface ? theme.buttonColorContentStrongDisabledMono : theme.colorContentOnActionDisabled
         case .minimal:
-            buttonOnColoredSurface ? theme.buttonColorContentMinimalDisabledMono : theme.buttonColorContentMinimalDisabled
+            onColoredSurface ? theme.buttonColorContentMinimalDisabledMono : theme.buttonColorContentMinimalDisabled
         case .negative:
             theme.colorContentOnActionDisabled
         }

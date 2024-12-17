@@ -20,12 +20,12 @@ import SwiftUI
 struct ButtonBorderModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
-    @Environment(\.buttonOnColoredSurface) private var buttonOnColoredSurface
 
     // MARK: Stored Properties
 
     let hierarchy: OUDSButtonStyle.Hierarchy
     let state: InternalButtonState
+    let onColoredSurface: Bool
 
     // MARK: Body
 
@@ -39,7 +39,7 @@ struct ButtonBorderModifier: ViewModifier {
                     radius: theme.buttonBorderRadius,
                     color: defaultColor)
         case .strong:
-            if buttonOnColoredSurface {
+            if onColoredSurface {
                 content
                     .oudsBorder(
                         style: theme.borderStyleDefault,
@@ -72,25 +72,25 @@ struct ButtonBorderModifier: ViewModifier {
             return theme.buttonBorderWidthDefaultInteraction
         case .pressed:
             return theme.buttonBorderWidthDefaultInteraction
-        case .disabled:
-            return theme.buttonBorderWidthDefault
         case .loading:
             return theme.buttonBorderWidthDefaultInteraction
+        case .disabled:
+            return theme.buttonBorderWidthDefault
         }
     }
 
     private var defaultColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            buttonOnColoredSurface ? theme.buttonColorBorderDefaultEnabledMono : theme.buttonColorBorderDefaultEnabled
+            onColoredSurface ? theme.buttonColorBorderDefaultEnabledMono : theme.buttonColorBorderDefaultEnabled
         case .hover:
-            buttonOnColoredSurface ? theme.buttonColorBorderDefaultHoverMono : theme.buttonColorBorderDefaultHover
+            onColoredSurface ? theme.buttonColorBorderDefaultHoverMono : theme.buttonColorBorderDefaultHover
         case .pressed:
-            buttonOnColoredSurface ? theme.buttonColorBorderDefaultPressedMono : theme.buttonColorBorderDefaultPressed
-        case .disabled:
-            buttonOnColoredSurface ? theme.buttonColorBorderDefaultDisabledMono : theme.buttonColorBorderDefaultDisabled
+            onColoredSurface ? theme.buttonColorBorderDefaultPressedMono : theme.buttonColorBorderDefaultPressed
         case .loading:
-            buttonOnColoredSurface ? theme.buttonColorBorderDefaultLoadingMono : theme.buttonColorBorderDefaultLoading
+            onColoredSurface ? theme.buttonColorBorderDefaultLoadingMono : theme.buttonColorBorderDefaultLoading
+        case .disabled:
+            onColoredSurface ? theme.buttonColorBorderDefaultDisabledMono : theme.buttonColorBorderDefaultDisabled
         }
     }
 
@@ -103,9 +103,9 @@ struct ButtonBorderModifier: ViewModifier {
             return theme.buttonBorderWidthMinimalInteraction
         case .pressed:
             return theme.buttonBorderWidthMinimalInteraction
-        case .disabled:
-            return theme.buttonBorderWidthMinimalInteraction
         case .loading:
+            return theme.buttonBorderWidthMinimalInteraction
+        case .disabled:
             return theme.buttonBorderWidthMinimalInteraction
         }
     }
@@ -113,15 +113,15 @@ struct ButtonBorderModifier: ViewModifier {
     private var minimalColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            buttonOnColoredSurface ? theme.buttonColorBorderMinimalEnabledMono : theme.buttonColorBorderMinimalEnabled
+            onColoredSurface ? theme.buttonColorBorderMinimalEnabledMono : theme.buttonColorBorderMinimalEnabled
         case .hover:
-            buttonOnColoredSurface ? theme.buttonColorBorderMinimalHoverMono : theme.buttonColorBorderMinimalHover
+            onColoredSurface ? theme.buttonColorBorderMinimalHoverMono : theme.buttonColorBorderMinimalHover
         case .pressed:
-            buttonOnColoredSurface ? theme.buttonColorBorderMinimalPressedMono : theme.buttonColorBorderMinimalPressed
-        case .disabled:
-            buttonOnColoredSurface ? theme.buttonColorBorderMinimalDisabledMono : theme.buttonColorBorderMinimalDisabled
+            onColoredSurface ? theme.buttonColorBorderMinimalPressedMono : theme.buttonColorBorderMinimalPressed
         case .loading:
-            buttonOnColoredSurface ? theme.buttonColorBorderMinimalLoadingMono : theme.buttonColorBorderMinimalLoading
+            onColoredSurface ? theme.buttonColorBorderMinimalLoadingMono : theme.buttonColorBorderMinimalLoading
+        case .disabled:
+            onColoredSurface ? theme.buttonColorBorderMinimalDisabledMono : theme.buttonColorBorderMinimalDisabled
         }
     }
 
@@ -134,10 +134,10 @@ struct ButtonBorderModifier: ViewModifier {
             theme.buttonColorBorderStrongHoverMono
         case .pressed:
             theme.buttonColorBorderStrongPressedMono
-        case .disabled:
-            theme.buttonColorBorderStrongDisabledMono
         case .loading:
             theme.buttonColorBorderStrongLoadingMono
+        case .disabled:
+            theme.buttonColorBorderStrongDisabledMono
         }
     }
 }

@@ -51,7 +51,7 @@ extension OUDSTheme: ButtonsComponentTokens {
     public var buttonColorBgDefaultEnabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
     public var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
     public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
-    public var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens { colorRepositoryOpacityWhiteHigher }
+    public var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
     public var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
     public var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackHigher }
 
@@ -132,11 +132,11 @@ extension OUDSTheme: ButtonsComponentTokens {
     public var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colorActionFocus }
 
     public var buttonColorBorderDefaultEnabledMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack }
-    public var buttonColorBorderDefaultHoverMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack } // TODO: colorActionHoverMono
-    public var buttonColorBorderDefaultPressedMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack } // TODO: colorActionHoverMono
+    public var buttonColorBorderDefaultHoverMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
+    public var buttonColorBorderDefaultPressedMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
     public var buttonColorBorderDefaultDisabledMono: MultipleColorSemanticTokens { colorRepositoryOpacityBlackMedium }
-    public var buttonColorBorderDefaultLoadingMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack } // TODO: colorActionHoverMono
-    public var buttonColorBorderDefaultFocusMono: MultipleColorSemanticTokens { colorRepositoryNeutralEmphasizedBlack } // TODO: colorActionHoverMono
+    public var buttonColorBorderDefaultLoadingMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
+    public var buttonColorBorderDefaultFocusMono: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
 
     // MARK: Border Color Minimal
     public var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens { colorOpacityInvisibleBlack }
