@@ -7,6 +7,10 @@ Please take a moment to review this document in order to make the contribution p
 Following these guidelines helps to communicate that you respect the time of the developers managing and developing this Open Source project.
 In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
 
+You should also have a look on the wiki if you are looking for information about how the project is managed, the releases and tests done, and how to do some actions.
+[The wiki define the way to work anyone must agree](https://github.com/Orange-OpenSource/ouds-ios/wiki).
+[The Code of Conduct](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
+
 ## Using the Issue Tracker
 
 The [issue tracker](https://github.com/Orange-OpenSource/ouds-ios/issues) is the preferred channel for [bug reports](#bug-reports), [feature requests](#feature-requests) and [submitting pull requests](#pull-requests), but please respect the following restrictions:
@@ -112,7 +116,7 @@ Adhering to the following process is the best way to get your work included in t
 
 7. [Open a Pull Request](https://help.github.com/articles/about-pull-requests/) with a clear title and description against the `develop` branch.
 
-**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](LICENSE).
+**IMPORTANT**: By submitting a patch, you agree to allow the project owners to license your work under the terms of the [MIT License](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/LICENSE).
 
 Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on `develop` branch: if any prerequisites are not futfilled in the pull request ticket the merge won't be done. 
 
