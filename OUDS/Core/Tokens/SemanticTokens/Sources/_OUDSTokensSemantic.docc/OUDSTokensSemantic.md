@@ -35,23 +35,25 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
     @objc open var colorBgTertiary: ColorSemanticToken { colorBgSecondary }
 }
+
+// An instance of OrangeThemeColorSemanticTokensProvider will be assigned to OUDSTheme as AllColorSemanticTokensProvider
 ```
 
 ## Architecture
 
-The *Multiples* folder contains some _composite class_ defined to pack double values for dedicated needs, like size classes management (_regular_ or _compact_ device modes), and also for color schemes management (_light_ and _dark_ modes).
+The *Multiples* objects are _composite class_ defined to pack double values for dedicated needs, like size classes management (_regular_ or _compact_ device modes), and also for color schemes management (_light_ and _dark_ modes).
 Such *composites* are not the same as the ones defined in the *Figma* design system, they are just utilities to handle tuple of values, without the syntax of tuples and with some helper functions.
 
 We would like to define one class for all combinations of things depending to light and dark modes, and another for regular and compact modes. However, it implies to use _Swift generics_ and it is not compatible with Objective-C runtime (we use through `@objc` keyword).
 
-The *TypeAliases* folder contains all the *typealias* values used for the semantic tokens.
+There are also several *typealias* values used for the semantic tokens.
 Indeed these aliases are here to bring clarity and meanings in the library, and also to help users (i.e. developers) to know what kind of objects they handle with the same vocabulary as the one used in *Figma*, and in general, in the whole design system. They can be seen as a light level of abstraction with meanings, without having to define real types with `struct` or `class`.
 Type aliases here point to raw tokens aliases, thus by transition they point to real types.
 
-The *Values* folder contains all the semantic tokens declarations through protocols. These protocols will be then implemented by the providers in higher level (i.e. theme level in *OUDS* product or theme products).
+The semantic tokens are declared through protocols. These protocols will be then implemented by the providers in higher level (i.e. theme level like *OrangeTheme*).
 
-The *Providers* folder contains the _Swift class_ used for providers. We do not want to store all the semantic and component tokens in the theme, and the use of providers will ilprove the developer experience. It will wrap all tokens by "family" and should expose them through the suitable protocols.
-Type aliases are also defined to merge protocols for the same tokens groups. Thus the `OUDSTheme` will contain wrapers expsoed and use through a subset of protocols.
+The tokens providers are _Swift class_ used to wrap semantic tokens definitions by implementing the protocols. We do not want to store all the semantic and component tokens in the theme, and the use of providers will improve the developer experience. It will wrap all tokens by "family" and should expose them through the suitable protocols.
+Type aliases are also defined to merge protocols for the same tokens groups. Thus the `OUDSTheme` will contain wrappers exposed and use through a subset of protocols.
 
 ```swift
 // Colors are declared in two protocols: the "simple" and the "multiple"
@@ -68,12 +70,14 @@ open class OrangeThemeColorSemanticTokensProvider { ... }
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorOpacityInvisibleBlackLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     @objc open var colorOpacityInvisibleWhiteLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
+    ...
 }
 extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleBlackLight, dark: colorOpacityInvisibleBlackDark) }
+    ...
 }
 
-// The "abstract" object of theme expose the provider through this subset of protocols
+// The "abstract" object of theme exposes the provider through this subset of protocols
 open class OUDSTheme: @unchecked Sendable {
     public let colors: AllColorSemanticTokensProvider
 }
@@ -81,7 +85,7 @@ open class OUDSTheme: @unchecked Sendable {
 // And finaly, the default theme, which can be subclassed, exposes the tokens through the provider
 open class OrangeTheme: OUDSTheme, @unchecked Sendable { ... }
 
-theme.colors.colorOpacityInvisibleBlack
+// e.g.: theme.colors.colorOpacityInvisibleBlack
 ```
 
 ## Semantic tokens management
@@ -102,24 +106,30 @@ Please, respect the nomenclature of the files, e.g. for a new family "Awesome se
 ### How to update or remove semantic tokens
 
 Quite simple, find the semantic token you want to update or remove, and update or remove it.
+
 But beware, if you change the name of the property or if you move it from a `protocol` to another, or if you remove the token, you must keep retrocompatibility as much as possible so as to avoid to break any public API. Keep also the CHANGELOG and/or the release updated with some BREAKING CHANGE notification, and also the Git history clean.
 
-If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let yout users know the variables have been changed.
+If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let your users know the variables have been changed.
 
 ### About tests of tokens
 
 When semantic tokens have been added, removed or renamed, unit tests must be updated.
 
 We do not test the semantic tokens values as they are, because these values will be generated and keeping up to date the unit tests may be time wasting.
-But for each semantic tokens we check if a subtheme can override the token, i.e. update the `MockTheme` by overring the property with a fake value, then compare it to the `OUDSTheme` or `OtherMockTheme` containing a default value. If you have defined also composite objects, add unit tests to check if they do their job.
+But for each semantic tokens we check if a subtheme can override the token using derived tokens providers. If you have defined also composite objects, add unit tests to check if they do their job.
 
 ### Some note about composites
 
 The *tokenator* is not able today to generate composites tokens, i.e. tokens which contain by definition several properties.
+
 For example, *elevation semantic token* dedicated to box shadows are composed by several properties (x, y, blur, shadow).
 *Font semantic token* can be token containing several properties too (weight, size, spacing, font family).
 These are considered as *composite tokens*. They are defined in dedicated protocols and files.
 Thus when the *tokenator* generates tokens without managing composites, the file can still be used as is with generated tokens, and the composites are not erased.
+
+### Particular cases with semantic tokens
+
+There are some semantic tokens of colors which must not be overridable ; this is a rule defined in the design system kit. These tokens are all `colorRepository*` tokens. They are only defined at once.
 
 ## How to use semantic tokens
 

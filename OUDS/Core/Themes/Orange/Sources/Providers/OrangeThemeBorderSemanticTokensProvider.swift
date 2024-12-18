@@ -14,7 +14,7 @@
 import OUDSFoundations
 
 /// A class which wraps all **border semantic tokens** and expose them.
-/// This provider should be integrated as a ``AllBorderSemanticTokensProvider`` implementation inside some `OUDSTheme` so as to provide
+/// This provider should be integrated as a `AllBorderSemanticTokensProvider` implementation inside some `OUDSTheme` so as to provide
 /// all tokens to the users. It helps also users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift

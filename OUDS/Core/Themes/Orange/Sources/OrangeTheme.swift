@@ -53,7 +53,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations
     /// - Parameters:
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to ``OrangeThemeColorSemanticTokensProvider``
-    ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to ``OUDSBorderSemanticTokensProvider``
+    ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to ``OrangeThemeBorderSemanticTokensProvider``
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`, default set to ``OrangeThemeElevationSemanticTokensProvider``
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to ``OrangeThemeFontSemanticTokensProvider``
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to ``OrangeThemeGridSemanticTokensProvider``

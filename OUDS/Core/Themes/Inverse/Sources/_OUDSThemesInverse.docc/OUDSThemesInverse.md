@@ -10,11 +10,11 @@ The aim of the theme is to provide a particular set of colors for dedicated appl
 
 ## How to use the theme
 
-You can use ``InverseTheme`` directly. You will have to use the `OUDSThemeableView` for your root view and give it an instance of ``InverseTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you maye use only as instance as singleton and not store any properties.
+You can use ``InverseTheme`` directly. You will have to use the `OUDSThemeableView` for your root view and give it an instance of ``InverseTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.
 
 ```swift
-import OUDS                 // To get OUDSThemeableView
-import OUDSThemeInverse     // To get Inverseheme
+import OUDS // To get OUDSThemeableView
+import OUDSThemeInverse // To get Inverseheme
 import SwiftUI
 
 @main
@@ -29,10 +29,10 @@ struct YourApp: App {
 }
 ```
 
-Then, in your views, you can simply use the theme through an environement variable to get the tokens:
+Then, in your views, you can simply use the theme through an environment variable to get the tokens:
 
 ```swift
-import OUDS                 // To get the theme environment variable
+import OUDS // To get the theme environment variable
 import SwiftUI
 
 struct SomeView: View {

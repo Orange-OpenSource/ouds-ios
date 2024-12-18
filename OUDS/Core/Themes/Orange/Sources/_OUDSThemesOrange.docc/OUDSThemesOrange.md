@@ -1,22 +1,21 @@
 # ``OUDSThemesOrange``
 
-The Orange theme overrides some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDS library.
+The Orange theme overrides some tokens from the basic `OUDSTheme` and should be seen as the default theme for the OUDS library with the Orange brand colors for example.
 
 ## Overview
 
-It defines its own colors and override the semantic tokens to use the right colors.
-This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries.
-It embeds also in its target the brand colors which are not shared nor exposed in lower level targets.
+This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries. The `InverseTheme` is based on it.
+It embeds also in its target the brand colors which are not shared nor exposed in lower level targets or outside any module not depending to it.
 
-In other words, this ``OrangeTheme`` is bsaed on the abstract `OUDSTheme`, uses all the *Orange Unified Design System* kit and brings the Orange brand colors and assets.
+In other words, this ``OrangeTheme`` is based on the abstract `OUDSTheme`, uses all the *Orange Unified Design System* kit and brings the Orange brand colors and assets.
 
 ## How to use the theme
 
-You can use ``OrangeTheme`` directly. To use the ``OrangeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``OrangeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you maye use only as instance as singleton and not store any properties.
+You can use ``OrangeTheme`` directly. To use the ``OrangeTheme`` without further modifications, you will have to use the `OUDSThemeableView` for your root view and give it an instance of ``OrangeTheme``. Keep in mind the themes are *Swift class objects* and can be heavy, so you may use only as instance as singleton and not store any properties.
 
 ```swift
-import OUDS                 // To get OUDSThemeableView
-import OUDSThemeOrange      // To get OrangeTheme
+import OUDS // To get OUDSThemeableView
+import OUDSThemeOrange // To get OrangeTheme
 import SwiftUI
 
 @main
@@ -31,10 +30,10 @@ struct YourApp: App {
 }
 ```
 
-Then, in your views, you can simply use the theme through an environement variable to get the tokens:
+Then, in your views, you can simply use the theme through an environment variable to get the tokens:
 
 ```swift
-import OUDS                 // To get the theme environment variable
+import OUDS // To get the theme environment variable
 import SwiftUI
 
 struct SomeView: View {
@@ -64,7 +63,7 @@ You can enrich the ``OrangeTheme`` by subclassing it or by overriding some token
 
 You may want to define your own theme, thus you can override the ``OrangeTheme`` with your own class or just override the providers.
 
-You will have to override the tokens provider you need. To do that, make a subclass of the provider you target:
+You will have to consider the tokens provider you need:
 - spaces tokens are `OrangeThemeSpaceSemanticTokensProvider`
 - sizes tokens are in `OrangeThemeSizeSemanticTokensProvider`
 - colors tokens are all defined in `OrangeThemeColorSemanticTokensProvider`
@@ -75,8 +74,8 @@ You will have to override the tokens provider you need. To do that, make a subcl
 - font tokens are in `OrangeThemeFontSemanticTokensProvider`
 
 ```swift
-import OUDSTokensSemantic           // To use semantic tokens if needed
-import OUDSTokensRaw                // To use raw tokens if needed
+import OUDSTokensSemantic // To use semantic tokens if needed
+import OUDSTokensRaw // To use raw tokens if needed
 
 // Token provider for spaces
 
@@ -167,11 +166,10 @@ class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
 }
 ```
 
-Then define your own them class and assign the providers:
+Then define your own theme class and assign the providers:
 
 ```swift
-import OUDS
-import OUDSThemesOrange             // To get OrangeTheme
+import OUDSThemesOrange // To get OrangeTheme
 
 // Define your theme
 class YourAppTheme: OrangeTheme {
@@ -192,8 +190,8 @@ class YourAppTheme: OrangeTheme {
 Then add the theme:
 
 ```swift
-import OUDS                         // To get OUDSThemeableView
-import OUDSThemesOrange             // To get OrangeTheme
+import OUDS  // To get OUDSThemeableView
+import OUDSThemesOrange // To get OrangeTheme
 
 @main
 struct YourApp: App {
