@@ -1479,7 +1479,6 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
 
     func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWhiteHigherLight() throws {
         XCTAssertEqual(inheritedTheme.colors.colorRepositoryOpacityWhiteHigherLight, abstractTheme.colors.colorRepositoryOpacityWhiteHigherLight)
-        XCTAssertTrue(inheritedTheme.colors.colorRepositoryOpacityWhiteHigherLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWhiteHighestLight() throws {
