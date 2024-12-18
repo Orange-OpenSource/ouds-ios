@@ -25,7 +25,7 @@ extension OUDSTheme: ButtonsComponentTokens {
     public var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { spaces.spacePaddingInlineTall }
     public var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { spaces.spacePaddingInlineTall }
     public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    public var buttonSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMedium }
+    public var buttonSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMedium }
     public var buttonSpaceColumnGapIcon: SpaceSemanticToken { spaces.spaceColumnGapShort }
     public var buttonSpaceColumnGapArrow: SpaceSemanticToken { spaces.spaceColumnGapShorter }
 
@@ -119,6 +119,7 @@ extension OUDSTheme: ButtonsComponentTokens {
     // MARK: Border width
     public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
     public var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
+    public var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthMedium } // TODO: a verifier
     public var buttonBorderWidthMinimal: BorderWidthSemanticToken { borders.borderWidthNone }
     public var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { borders.borderWidthNone }
     public var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusNone }

@@ -159,16 +159,16 @@ struct ButtonConfiguration: View {
     // MARK: Body
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(model.state != .normal)
 
             VStack(alignment: .leading) {
                 Text(LocalizedStringKey("app_components_button_hierarchy_label"))
                     .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 Picker("app_components_button_hierarchy_label", selection: $model.hierarchy) {
                     ForEach(OUDSButtonStyle.Hierarchy.allCases, id: \.id) { hierarchy in
                         Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
@@ -180,7 +180,7 @@ struct ButtonConfiguration: View {
             VStack(alignment: .leading) {
                 Text(LocalizedStringKey("app_components_button_state_label"))
                     .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 Picker("app_components_button_state_label", selection: $model.state) {
                     ForEach(OUDSButtonStyle.ButtonState.allCases, id: \.id) { state in
                         Text(LocalizedStringKey(state.description)).tag(state)
@@ -192,7 +192,7 @@ struct ButtonConfiguration: View {
             VStack(alignment: .leading) {
                 Text(LocalizedStringKey("app_components_button_layout_label"))
                     .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colorContentDefault.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 Picker("app_components_button_layout_label", selection: $model.layout) {
                     ForEach(ButtonLayout.allCases, id: \.id) { layout in
                         Text(LocalizedStringKey(layout.description)).tag(layout)
