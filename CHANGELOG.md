@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Update `fastlane` gem from v2.225.0 to v2.226.0
 - [Library] Update `FontSemanticTokens` (tokenator *20241213075501*)
 - [Library] Update `FontSemanticTokens` (tokenator *20241211115813*)
 - [Library] Update `FontRawTokens` (tokenator *20241211101443*)
