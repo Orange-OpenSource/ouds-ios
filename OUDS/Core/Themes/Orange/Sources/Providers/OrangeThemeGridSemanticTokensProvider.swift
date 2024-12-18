@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own provider for grid semantic tokens
-///     class CustomGridTokensProvider: OUDSGridSemanticTokensProvider {
+///     class CustomGridTokensProvider: OrangeThemeGridSemanticTokensProvider {
 ///
 ///         // Then override the grid semantic tokens you want, using the grid raw tokens available
 ///
@@ -53,17 +53,17 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(grids: CustomGridTokensProvider())
 /// ```
-open class OUDSGridSemanticTokensProvider {
+open class OrangeThemeGridSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OUDSGridSemanticTokensProvider")
+        OUDSLogger.debug("Init of OrangeThemeGridSemanticTokensProvider")
     }
 
     deinit{ }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of GridSemanticTokens is not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+GridSemanticTokens.swift
-    // This declaration of OUDSGridSemanticTokensProvider is here to allow to write documentation.
+    // the implemention of GridSemanticTokens is not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+GridSemanticTokens.swift
+    // This declaration of OrangeThemeGridSemanticTokensProvider is here to allow to write documentation.
 }

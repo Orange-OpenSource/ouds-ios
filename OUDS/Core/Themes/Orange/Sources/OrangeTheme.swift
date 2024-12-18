@@ -69,7 +69,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to `OUDSBorderSemanticTokensProvider``
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`, default set to `OrangeThemeElevationSemanticTokensProvider`
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OrangeThemeFontSemanticTokensProvider`
-    ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to `OUDSGridSemanticTokensProvider`
+    ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to `OrangeThemeGridSemanticTokensProvider`
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation, default set to `OUDSOpacitySemanticTokensProvider`
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokensProvider` implementation, default set to `OUDSSizeSemanticTokensProvider`
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation, default set to `OUDSSpaceSemanticTokensProvider`
@@ -77,7 +77,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokensProvider = OrangeThemeElevationSemanticTokensProvider(),
                          fonts: AllFontSemanticTokensProvider = OrangeThemeFontSemanticTokensProvider(),
-                         grids: AllGridSemanticTokensProvider = OUDSGridSemanticTokensProvider(),
+                         grids: AllGridSemanticTokensProvider = OrangeThemeGridSemanticTokensProvider(),
                          opacities: AllOpacitySemanticTokensProvider = OUDSOpacitySemanticTokensProvider(),
                          sizes: AllSizeSemanticTokensProvider = OUDSSizeSemanticTokensProvider(),
                          spaces: AllSpaceSemanticTokensProvider = OUDSSpaceSemanticTokensProvider()) {
