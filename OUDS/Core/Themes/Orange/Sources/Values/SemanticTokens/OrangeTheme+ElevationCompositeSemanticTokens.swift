@@ -20,12 +20,11 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 /// Defines basic values common to all themes for `ElevationCompositeSemanticTokens``.
-/// These values can be overriden inside ``OUDSElevationSemanticTokensProvider`` subclasses (in extensions or not, in the same module or not) t
-/// hanks to the `@objc open` combination.
+/// These values can be overriden inside ``OrangeThemeElevationSemanticTokensProvider`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
 /// The aim of this extension is to make relationships between all semantic tokens for elevations and associated raw tokens.
 /// The *tokenator* is not able to provide code for such "composite" objects because the *Figma* tool itself cannot manage that and does not output anything in its JSON to process.
 /// It defines in fact box shadows effects.
-extension OUDSElevationSemanticTokensProvider: ElevationCompositeSemanticTokens {
+extension OrangeThemeElevationSemanticTokensProvider: ElevationCompositeSemanticTokens {
 
     // MARK: Semantic token - Elevation - Box shadow
 

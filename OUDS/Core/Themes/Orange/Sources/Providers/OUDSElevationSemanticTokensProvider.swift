@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own provider for elevation semantic tokens
-///     class CustomElevationTokensProvider: OUDSElevationSemanticTokensProvider {
+///     class CustomElevationTokensProvider: OrangeThemeElevationSemanticTokensProvider {
 ///
 ///         // Then override the elevation semantic tokens you want, using the elevation raw tokens available
 ///
@@ -45,11 +45,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(elevations: CustomElevationTokensProvider())
 /// ```
-open class OUDSElevationSemanticTokensProvider {
+open class OrangeThemeElevationSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OUDSElevationSemanticTokensProvider")
+        OUDSLogger.debug("Init of OrangeThemeElevationSemanticTokensProvider")
     }
 
     deinit{ }
@@ -57,8 +57,8 @@ open class OUDSElevationSemanticTokensProvider {
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of ElevationSemanticTokens, ElevationCompositeSemanticTokens, ElevationMultipleSemanticTokens are not here
-    // but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ElevationSemanticTokens.swift,
-    // in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ElevationCompositeSemanticTokens.swift,
-    // and in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ElevationMultipleSemanticTokens.swift.
-    // This declaration of OUDSElevationSemanticTokensProvider is here to allow to write documentation.
+    // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationSemanticTokens.swift,
+    // in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationCompositeSemanticTokens.swift,
+    // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationMultipleSemanticTokens.swift,
+    // This declaration of OrangeThemeElevationSemanticTokensProvider is here to allow to write documentation.
 }

@@ -17,7 +17,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable identifier_name
 
-extension OUDSElevationSemanticTokensProvider: ElevationSemanticTokens {
+extension OrangeThemeElevationSemanticTokensProvider: ElevationSemanticTokens {
     @objc open var elevationBlurDefault: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur300 }
     @objc open var elevationBlurDrag: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur400 }
     @objc open var elevationBlurEmphasized: ElevationBlurSemanticToken { ElevationRawTokens.elevationBlur600 }
