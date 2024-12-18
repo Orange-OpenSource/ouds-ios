@@ -15,6 +15,8 @@ import OUDS
 import OUDSFoundations
 import OUDSTokensSemantic
 
+// swiftlint:disable line_length
+
 /// This is an override of the default basic `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
 /// The `InverseTheme` inherits from this `OrangeTheme`.
@@ -52,8 +54,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     /// - Parameters:
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to ``OrangeThemeColorSemanticTokensProvider``
     ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to ``OUDSBorderSemanticTokensProvider``
-    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`, default set to `OrangeThemeElevationSemanticTokensProvider``
-    ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OrangeThemeFontSemanticTokensProvider``
+    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`, default set to ``OrangeThemeElevationSemanticTokensProvider``
+    ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to ``OrangeThemeFontSemanticTokensProvider``
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to ``OrangeThemeGridSemanticTokensProvider``
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation, default set to ``OrangeThemeOpacitySemanticTokensProvider``
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokensProvider` implementation, default set to ``OrangeThemeSizeSemanticTokensProvider``
@@ -79,3 +81,5 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     deinit { }
 }
+
+// swiftlint:enable line_length

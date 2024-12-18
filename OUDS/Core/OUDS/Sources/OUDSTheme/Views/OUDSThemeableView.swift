@@ -24,6 +24,7 @@ private struct ThemeEnvironmentKey: EnvironmentKey {
 
 extension EnvironmentValues {
 
+    // swiftlint:disable force_unwrapping
     /// The `OUDSTheme` instance exposed as en environment values across the library
     public var theme: OUDSTheme {
         get {
@@ -33,6 +34,7 @@ extension EnvironmentValues {
             self[ThemeEnvironmentKey.self] = newValue
         }
     }
+    // swiftlint:enable force_unwrapping
 }
 
 // MARK: - Themeable View

@@ -13,6 +13,8 @@
 
 import OUDSFoundations
 
+// swiftlint:disable type_name
+
 /// A class which wraps all **elevation semantic tokens**, *multiple*, *composite* or not, and expose them.
 /// This provider should be integrated as a ``AllElevationSemanticTokensProvider`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -62,3 +64,5 @@ open class OrangeThemeElevationSemanticTokensProvider {
     // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ElevationMultipleSemanticTokens.swift,
     // This declaration of OrangeThemeElevationSemanticTokensProvider is here to allow to write documentation.
 }
+
+// swiftlint:enable type_name
