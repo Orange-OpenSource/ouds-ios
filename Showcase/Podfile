@@ -16,7 +16,7 @@ use_frameworks!
 platform :ios, '15.0'
 
 target 'Showcase' do
-  pod 'SwiftLint', '0.57.0'
+  pod 'SwiftLint', '0.57.1'
   pod 'SwiftFormat/CLI', '0.55.3'
 end
 
