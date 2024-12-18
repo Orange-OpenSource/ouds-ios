@@ -28,7 +28,7 @@ public typealias AllGridSemanticTokensProvider = GridSemanticTokens
 
 /// A type alias which merges  ``ColorSemanticTokens`` and ``ColorMultipleSemanticTokens``.
 /// It helps in the end to define a provider for all the semantic tokens of colors, multiple or not, generated or not.
-/// For example ``OUDSColorSemanticTokensProvider`` matches this type alias.
+/// For example ``OrangeThemeColorSemanticTokensProvider`` matches this type alias.
 public typealias AllColorSemanticTokensProvider = ColorSemanticTokens & ColorMultipleSemanticTokens
 
 /// A type alias which merges  ``ElevationSemanticTokens``, ``ElevationCompositeSemanticTokens`` and ``ElevationMultipleSemanticTokens``.

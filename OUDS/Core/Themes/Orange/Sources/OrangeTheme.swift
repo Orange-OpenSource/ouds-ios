@@ -65,8 +65,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations
     /// - Parameters:
-    ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to `OrangeThemeColorSemanticTokensProvider`
-    ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to `OUDSBorderSemanticTokensProvider`
+    ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to ``OrangeThemeColorSemanticTokensProvider``
+    ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to `OUDSBorderSemanticTokensProvider``
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`, default set to `OUDSElevationSemanticTokensProvider`
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OUDSFontSemanticTokensProvider`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to `OUDSGridSemanticTokensProvider`
@@ -74,7 +74,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokensProvider` implementation, default set to `OUDSSizeSemanticTokensProvider`
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation, default set to `OUDSSpaceSemanticTokensProvider`
     override public init(colors: AllColorSemanticTokensProvider = OrangeThemeColorSemanticTokensProvider(),
-                         borders: AllBorderSemanticTokensProvider = OUDSBorderSemanticTokensProvider(),
+                         borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokensProvider = OUDSElevationSemanticTokensProvider(),
                          fonts: AllFontSemanticTokensProvider = OUDSFontSemanticTokensProvider(),
                          grids: AllGridSemanticTokensProvider = OUDSGridSemanticTokensProvider(),

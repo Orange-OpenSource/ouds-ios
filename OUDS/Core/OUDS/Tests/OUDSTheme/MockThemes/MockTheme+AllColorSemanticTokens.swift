@@ -19,10 +19,10 @@ import OUDSTokensSemantic
 // swiftlint:disable required_deinit
 // swiftlint:disable type_body_length
 
-/// Overrides **all** the color semantic tokens (from its super class, i.e. `OUDSColorSemanticTokensProvider`) so as to test overriding of them (unit tests)
+/// Overrides **all** the color semantic tokens (from its super class, i.e. `OrangeThemeColorSemanticTokensProvider`) so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
 /// This ``MockThemeColorSemanticTokensProvider`` will be asigned in ``MockTheme`` as an ``AllColorSemanticTokens`` implementation.
-open class MockThemeColorSemanticTokensProvider: OUDSColorSemanticTokensProvider {
+open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensProvider {
 
     static let mockThemeMultipleColorSemanticTokens = MultipleColorSemanticTokens("#68489D")
     static let mockThemeSemanticColorTokens: ColorSemanticToken = "#68489D"

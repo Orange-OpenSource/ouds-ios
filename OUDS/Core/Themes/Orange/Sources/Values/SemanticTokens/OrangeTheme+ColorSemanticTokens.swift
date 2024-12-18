@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable identifier_name
 
-extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
+extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorOpacityInvisibleBlackLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     @objc open var colorOpacityInvisibleWhiteLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
     @objc open var colorOpacityInvisibleBlackDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
@@ -29,7 +29,7 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorActionFocusLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack680 }
     @objc open var colorActionHighlightedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorActionHoverLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack680 }
-    @objc open var colorActionLoadingLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionLoadingLight!") }
+    @objc open var colorActionLoadingLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
     @objc open var colorActionNegativeEnabledLight: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet600 }
     @objc open var colorActionNegativeFocusLight: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet700 }
     @objc open var colorActionNegativeHoverLight: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet700 }
@@ -40,8 +40,8 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorActionNegativeHoverDark: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet200 }
     @objc open var colorActionNegativeLoadingDark: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet100 }
     @objc open var colorActionNegativePressedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet100 }
-    @objc open var colorActionPressedLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPressedLight!") }
-    @objc open var colorActionSelectedLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionSelectedLight!") }
+    @objc open var colorActionPressedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
+    @objc open var colorActionSelectedLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
     @objc open var colorActionSupportEnabledLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack40 }
     @objc open var colorActionSupportFocusLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack80 }
     @objc open var colorActionSupportHoverLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack80 }
@@ -58,9 +58,9 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorActionFocusDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite640 }
     @objc open var colorActionHighlightedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
     @objc open var colorActionHoverDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite640 }
-    @objc open var colorActionLoadingDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionLoadingDark!") }
-    @objc open var colorActionPressedDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionPressedDark!") }
-    @objc open var colorActionSelectedDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorActionSelectedDark!") }
+    @objc open var colorActionLoadingDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    @objc open var colorActionPressedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    @objc open var colorActionSelectedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorActionVisitedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst400 }
     @objc open var colorAlwaysBlackLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorAlwaysOnBlackLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
@@ -73,24 +73,24 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorBgEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
     @objc open var colorBgPrimaryLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorBgSecondaryLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray80 }
-    @objc open var colorBgTertiaryLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgTertiaryLight!") }
+    @objc open var colorBgTertiaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
     @objc open var colorBgEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray640 }
     @objc open var colorBgPrimaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
     @objc open var colorBgSecondaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray800 }
-    @objc open var colorBgTertiaryDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgTertiaryDark!") }
-    @objc open var colorBorderBrandPrimaryLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimaryLight!") }
+    @objc open var colorBgTertiaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
+    @objc open var colorBorderBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
     @objc open var colorBorderDefaultLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack200 }
     @objc open var colorBorderEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorBorderFocusLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorBorderFocusInsetLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorBorderOnBrandPrimaryLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorBorderOnBrandPrimaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    @objc open var colorBorderBrandPrimaryDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBorderBrandPrimaryDark!") }
+    @objc open var colorBorderBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorBorderDefaultDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
     @objc open var colorBorderEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite920 }
     @objc open var colorBorderFocusDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
     @objc open var colorBorderFocusInsetDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
-    @objc open var colorContentBrandPrimaryLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorContentBrandPrimaryLight!") }
+    @objc open var colorContentBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
     @objc open var colorContentDefaultLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentDisabledLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack200 }
     @objc open var colorContentMutedLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack680 }
@@ -128,7 +128,7 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorContentStatusNegativeDark: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet600 }
     @objc open var colorContentStatusPositiveDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
     @objc open var colorContentStatusWarningDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    @objc open var colorContentBrandPrimaryDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorContentBrandPrimaryDark!") }
+    @objc open var colorContentBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorContentDefaultDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
     @objc open var colorContentDisabledDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
     @objc open var colorContentMutedDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite640 }
@@ -140,12 +140,12 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorOverlayDragDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
     @objc open var colorOverlayEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
     @objc open var colorOverlayModalDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray640 }
-    @objc open var colorSurfaceBrandPrimaryLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorSurfaceBrandPrimaryLight!") }
-    @objc open var colorSurfaceBrandPrimaryDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorSurfaceBrandPrimaryDark!") }
+    @objc open var colorSurfaceBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    @objc open var colorSurfaceBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorSurfaceStatusAccentEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
     @objc open var colorSurfaceStatusAccentMutedLight: ColorSemanticToken { ColorRawTokens.colorOpacitySun }
     @objc open var colorSurfaceStatusAccentEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun300 }
-    @objc open var colorSurfaceStatusAccentMutedDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorSurfaceStatusAccentMutedDark!") }
+    @objc open var colorSurfaceStatusAccentMutedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
     @objc open var colorSurfaceStatusInfoEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
     @objc open var colorSurfaceStatusInfoMutedLight: ColorSemanticToken { ColorRawTokens.colorOpacityDodgerBlue }
     @objc open var colorSurfaceStatusInfoEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue300 }
@@ -196,10 +196,10 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorDecorativeAccent5DefaultDark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink200 }
     @objc open var colorDecorativeAccent5EmphasizedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink300 }
     @objc open var colorDecorativeAccent5MutedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink100 }
-    @objc open var colorDecorativeBrandPrimaryLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorDecorativeBrandPrimaryLight!") }
+    @objc open var colorDecorativeBrandPrimaryLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorDecorativeBrandSecondaryLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorDecorativeBrandTertiaryLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    @objc open var colorDecorativeBrandPrimaryDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorDecorativeBrandPrimaryDark!") }
+    @objc open var colorDecorativeBrandPrimaryDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorDecorativeBrandSecondaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
     @objc open var colorDecorativeBrandTertiaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
     @objc open var colorDecorativeNeutralDefaultLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray400 }
@@ -255,7 +255,7 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorChartFunctionalPositiveDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite600 }
     @objc open var colorChartFunctionalWarningDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
     @objc open var colorChartGridlinesLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray400 }
-    @objc open var colorChartHighlightLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorChartHighlightLight!") }
+    @objc open var colorChartHighlightLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
     @objc open var colorChartNeutralLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray880 }
     @objc open var colorChartSequentialAccent1Tint100Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky100 }
     @objc open var colorChartSequentialAccent1Tint200Light: ColorSemanticToken { ColorRawTokens.colorDecorativeSky200 }
@@ -348,16 +348,16 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorChartSequentialAccent5Tint800Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber200 }
     @objc open var colorChartSequentialAccent5Tint900Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber100 }
     @objc open var colorChartGridlinesDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray240 }
-    @objc open var colorChartHighlightDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorChartHighlightDark!") }
+    @objc open var colorChartHighlightDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorChartNeutralDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray960 }
     @objc open var colorRepositoryAccentDefaultLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    @objc open var colorRepositoryAccentHighestLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorRepositoryAccentHighestLight!") }
+    @objc open var colorRepositoryAccentHighestLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
     @objc open var colorRepositoryAccentLowLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun300 }
-    @objc open var colorRepositoryAccentLowestLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorRepositoryAccentLowestLight!") }
+    @objc open var colorRepositoryAccentLowestLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
     @objc open var colorRepositoryAccentDefaultDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
-    @objc open var colorRepositoryAccentHighestDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorRepositoryAccentHighestDark!") }
+    @objc open var colorRepositoryAccentHighestDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray900 }
     @objc open var colorRepositoryAccentLowDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun300 }
-    @objc open var colorRepositoryAccentLowestDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorRepositoryAccentLowestDark!") }
+    @objc open var colorRepositoryAccentLowestDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorWarmGray100 }
     @objc open var colorRepositoryInfoDefaultLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
     @objc open var colorRepositoryInfoHighestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue900 }
     @objc open var colorRepositoryInfoLowLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue300 }
@@ -440,10 +440,10 @@ extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorRepositoryPositiveHighestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite900 }
     @objc open var colorRepositoryPositiveLowDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite300 }
     @objc open var colorRepositoryPositiveLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite100 }
-    @objc open var colorRepositoryPrimaryDefaultLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorRepositoryPrimaryDefaultLight!") }
-    @objc open var colorRepositoryPrimaryLowLight: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorRepositoryPrimaryLowLight!") }
-    @objc open var colorRepositoryPrimaryDefaultDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorRepositoryPrimaryDefaultDark!") }
-    @objc open var colorRepositoryPrimaryLowDark: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorRepositoryPrimaryLowDark!") }
+    @objc open var colorRepositoryPrimaryDefaultLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
+    @objc open var colorRepositoryPrimaryLowLight: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
+    @objc open var colorRepositoryPrimaryDefaultDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange550 }
+    @objc open var colorRepositoryPrimaryLowDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorRepositoryWarningDefaultLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
     @objc open var colorRepositoryWarningHighestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun900 }
     @objc open var colorRepositoryWarningLowLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun300 }

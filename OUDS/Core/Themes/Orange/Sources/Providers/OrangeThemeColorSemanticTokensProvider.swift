@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own provider for color semantic tokens
-///     class CustomColorTokensProviderr: OUDSColorSemanticTokensProvider {
+///     class CustomColorTokensProviderr: OrangeThemeColorSemanticTokensProvider {
 ///
 ///         // Then override the color semantic tokens you want, using the color raw tokens available
 ///
@@ -49,18 +49,18 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(colors: CustomColorTokensProvider())
 /// ```
-open class OUDSColorSemanticTokensProvider {
+open class OrangeThemeColorSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OUDSColorSemanticTokensProvider")
+        OUDSLogger.debug("Init of OrangeThemeColorSemanticTokensProvider")
     }
 
     deinit{ }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of ColorSemanticTokens and ColorMultipleSemanticTokens are not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ColorSemanticTokens.swift
-    // and OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+ColorMultipleSemanticTokens.swift
-    // This declaration of OUDSColorSemanticTokensProvider is here to allow to write documentation.
+    // the implemention of ColorSemanticTokens and ColorMultipleSemanticTokens are not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ColorMultipleSemanticTokens.swift and
+    // Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+ColorSemanticTokens.swift
+    // This declaration of OrangeThemeColorSemanticTokensProvider is here to allow to write documentation.
 }

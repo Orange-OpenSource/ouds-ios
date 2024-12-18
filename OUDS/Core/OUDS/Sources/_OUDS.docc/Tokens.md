@@ -53,20 +53,10 @@ protocol ColorSemanticTokens {
 }
 
 // Define the semantic tokens exposed through the theme
-extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
+extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 
     // Color is available in the module of OUDSTheme
     @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-
-    // If the semantic token refers to a raw token not stored in the OUDSTheme module, override later and throw error because unxpected state if used
-    @objc open var colorBgSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgSecondary!") }
-
-    // Possible to have tokens not defined in lower level but only in themes implementation, throw error if used because unexpected state
-    @objc open var colorBgTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgTertiary!") }
-}
-
-// Add missing values
-extension OrangeColorSemanticTokensProvider: OUDSColorSemanticTokensProvider {
 
     // Define value value with the accessible token 
     @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }

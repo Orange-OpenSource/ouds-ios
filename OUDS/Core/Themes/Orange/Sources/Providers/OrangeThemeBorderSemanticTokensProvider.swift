@@ -14,12 +14,12 @@
 import OUDSFoundations
 
 /// A class which wraps all **border semantic tokens** and expose them.
-/// This provider should be integrated as a ``AllBorderSemanticTokensProvider`` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
+/// This provider should be integrated as a ``AllBorderSemanticTokensProvider`` implementation inside some `OUDSTheme` so as to provide
+/// all tokens to the users. It helps also users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift
-///     // Define your own provider for border semantic tokens
-///     class CustomBorderTokensProvider: OUDSBorderSemanticTokensProvider {
+///     // Define your own provider for border semantic tokens if needed
+///     class CustomBorderTokensProvider: OrangeThemeBorderSemanticTokensProvider {
 ///
 ///         // Then override the border semantic tokens you want, using the border raw tokens available
 ///
@@ -51,17 +51,17 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(borders: CustomBorderTokensProvider())
 /// ```
-open class OUDSBorderSemanticTokensProvider {
+open class OrangeThemeBorderSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OUDSBorderSemanticTokensProvider")
+        OUDSLogger.debug("Init of OrangeThemeBorderSemanticTokensProvider")
     }
 
     deinit{ }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BorderSemanticTokens is not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+BorderSemanticTokens.swift
-    // This declaration of OUDSBorderSemanticTokensProvider is here to allow to write documentation.
+    // the implemention of BorderSemanticTokens is not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+BorderSemanticTokens.swift
+    // This declaration of OrangeThemeBorderSemanticTokensProvider is here to allow to write documentation.
 }

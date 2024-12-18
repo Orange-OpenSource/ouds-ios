@@ -27,25 +27,11 @@ protocol ColorSemanticTokens {
 }
 
 // Ensure you have a provider
-open class OUDSColorSemanticTokensProvider { }
+open class OrangeThemeColorSemanticTokensProvider { }
 
 // Define the semantic tokens to expose through the theme thanks to the provider
-extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
-
-    // Color is available in the module of OUDSTheme
+extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorBgPrimary: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-
-    // If the semantic token refers to a raw token not stored in the OUDSTheme module, override later and throw error because unxpected state if used
-    @objc open var colorBgSecondary: ColorSemanticToken { fatalError("🤖 Raw token unavailable for colorBgSecondary!") }
-
-    // Possible to have tokens not defined in lower level but only in themes implementation, throw error if used because unexpected state
-    @objc open var colorBgTertiary: ColorSemanticToken { fatalError("🤖 No value defined for colorBgTertiary!") }
-}
-
-// Add missing values
-extension OrangeTheme: ColorSemanticTokens {
-
-    // Define value value with the accessible token 
     @objc open var colorBgSecondary: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange200 }
     @objc open var colorBgTertiary: ColorSemanticToken { colorBgSecondary }
 }
@@ -76,14 +62,14 @@ public protocol ColorMultipleSemanticTokens { ... }
 public typealias AllColorSemanticTokensprovider = ColorSemanticTokens & ColorMultipleSemanticTokens
 
 // For example, the provider for the colors basically is:
-open class OUDSColorSemanticTokensProvider { ... }
+open class OrangeThemeColorSemanticTokensProvider { ... }
 
 // The provider is composed by protocols containing tokens
-extension OUDSColorSemanticTokensProvider: ColorSemanticTokens {
+extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorOpacityInvisibleBlackLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     @objc open var colorOpacityInvisibleWhiteLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
 }
-extension OUDSColorSemanticTokensProvider: ColorMultipleSemanticTokens {
+extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleBlackLight, dark: colorOpacityInvisibleBlackDark) }
 }
 
