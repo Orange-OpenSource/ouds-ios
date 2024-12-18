@@ -14,7 +14,7 @@
 import OUDSFoundations
 
 /// A class which wraps all **font semantic tokens**, *multiple*, *composite* or not, and expose them.
-/// This provider should be integrated as a ``AllFontSemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a ``AllFontSemanticTokensProvider`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift

@@ -35,7 +35,7 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
     }
 
     /// For ``OtherMockTheme``
-    init(colors: AllColorSemanticTokens) {
+    init(colors: AllColorSemanticTokensProvider) {
         super.init(colors: colors,
                    borders: MockThemeBorderSemanticTokensProvider(),
                    elevations: MockThemeElevationSemanticTokensProvider(),

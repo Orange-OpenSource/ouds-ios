@@ -73,7 +73,7 @@ public protocol ColorSemanticToken { ... }
 public protocol ColorMultipleSemanticTokens { ... }
 
 // These protoocols are merged in type aliase
-public typealias AllColorSemanticTokens = ColorSemanticTokens & ColorMultipleSemanticTokens
+public typealias AllColorSemanticTokensprovider = ColorSemanticTokens & ColorMultipleSemanticTokens
 
 // For example, the provider for the colors basically is:
 open class OUDSColorSemanticTokensProvider { ... }
@@ -89,7 +89,7 @@ extension OUDSColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
 // The "abstract" object of theme expose the provider through this subset of protocols
 open class OUDSTheme: @unchecked Sendable {
-    public let colors: AllColorSemanticTokens
+    public let colors: AllColorSemanticTokensProvider
 }
 
 // And finaly, the default theme, which can be subclassed, exposes the tokens through the provider

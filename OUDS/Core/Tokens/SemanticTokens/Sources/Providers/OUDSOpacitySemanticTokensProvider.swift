@@ -14,7 +14,7 @@
 import OUDSFoundations
 
 /// A class which wraps all **opacity semantic tokens** and expose them.
-/// This provider should be integrated as a ``AllOpacitySemanticTokens`` implementation inside `OUDSTheme` so as to provide
+/// This provider should be integrated as a ``AllOpacitySemanticTokensProvider`` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 ///
 /// ```swift
