@@ -290,107 +290,107 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     // MARK: - Color - Repository
 
-    @objc open var colorRepositoryAccentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentDefaultLight, dark: colorRepositoryAccentDefaultDark) }
+    @objc public final var colorRepositoryAccentDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentDefaultLight, dark: colorRepositoryAccentDefaultDark) }
 
-    @objc open var colorRepositoryAccentHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentHighestLight, dark: colorRepositoryAccentHighestDark) }
+    @objc public final var colorRepositoryAccentHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentHighestLight, dark: colorRepositoryAccentHighestDark) }
 
-    @objc open var colorRepositoryAccentLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentLowLight, dark: colorRepositoryAccentLowDark) }
+    @objc public final var colorRepositoryAccentLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentLowLight, dark: colorRepositoryAccentLowDark) }
 
-    @objc open var colorRepositoryAccentLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentLowestLight, dark: colorRepositoryAccentLowestDark) }
+    @objc public final var colorRepositoryAccentLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryAccentLowestLight, dark: colorRepositoryAccentLowestDark) }
 
-    @objc open var colorRepositoryInfoDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryInfoDefaultLight, dark: colorRepositoryInfoDefaultDark) }
+    @objc public final var colorRepositoryInfoDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryInfoDefaultLight, dark: colorRepositoryInfoDefaultDark) }
 
-    @objc open var colorRepositoryInfoHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryInfoHighestLight, dark: colorRepositoryInfoHighestDark) }
+    @objc public final var colorRepositoryInfoHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryInfoHighestLight, dark: colorRepositoryInfoHighestDark) }
 
-    @objc open var colorRepositoryInfoLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryInfoLowLight, dark: colorRepositoryInfoLowDark) }
+    @objc public final var colorRepositoryInfoLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryInfoLowLight, dark: colorRepositoryInfoLowDark) }
 
-    @objc open var colorRepositoryInfoLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryInfoLowestLight, dark: colorRepositoryInfoLowestDark) }
+    @objc public final var colorRepositoryInfoLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryInfoLowestLight, dark: colorRepositoryInfoLowestDark) }
 
-    @objc open var colorRepositoryNegativeDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeDefaultLight, dark: colorRepositoryNegativeDefaultDark) }
+    @objc public final var colorRepositoryNegativeDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeDefaultLight, dark: colorRepositoryNegativeDefaultDark) }
 
-    @objc open var colorRepositoryNegativeHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeHighLight, dark: colorRepositoryNegativeHighDark) }
+    @objc public final var colorRepositoryNegativeHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeHighLight, dark: colorRepositoryNegativeHighDark) }
 
-    @objc open var colorRepositoryNegativeHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeHigherLight, dark: colorRepositoryNegativeHigherDark) }
+    @objc public final var colorRepositoryNegativeHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeHigherLight, dark: colorRepositoryNegativeHigherDark) }
 
-    @objc open var colorRepositoryNegativeHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeHighestLight, dark: colorRepositoryNegativeHighestDark) }
+    @objc public final var colorRepositoryNegativeHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeHighestLight, dark: colorRepositoryNegativeHighestDark) }
 
-    @objc open var colorRepositoryNegativeLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeLowLight, dark: colorRepositoryNegativeLowDark) }
+    @objc public final var colorRepositoryNegativeLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeLowLight, dark: colorRepositoryNegativeLowDark) }
 
-    @objc open var colorRepositoryNegativeLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeLowerLight, dark: colorRepositoryNegativeLowerDark) }
+    @objc public final var colorRepositoryNegativeLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeLowerLight, dark: colorRepositoryNegativeLowerDark) }
 
-    @objc open var colorRepositoryNegativeLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeLowestLight, dark: colorRepositoryNegativeLowestDark) }
+    @objc public final var colorRepositoryNegativeLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNegativeLowestLight, dark: colorRepositoryNegativeLowestDark) }
 
-    @objc open var colorRepositoryNeutralEmphasizedBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedBlackLight, dark: colorRepositoryNeutralEmphasizedBlackDark) }
+    @objc public final var colorRepositoryNeutralEmphasizedBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedBlackLight, dark: colorRepositoryNeutralEmphasizedBlackDark) }
 
-    @objc open var colorRepositoryNeutralEmphasizedHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedHighLight, dark: colorRepositoryNeutralEmphasizedHighDark) }
+    @objc public final var colorRepositoryNeutralEmphasizedHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedHighLight, dark: colorRepositoryNeutralEmphasizedHighDark) }
 
-    @objc open var colorRepositoryNeutralEmphasizedHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedHigherLight, dark: colorRepositoryNeutralEmphasizedHigherDark) }
+    @objc public final var colorRepositoryNeutralEmphasizedHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedHigherLight, dark: colorRepositoryNeutralEmphasizedHigherDark) }
 
-    @objc open var colorRepositoryNeutralEmphasizedHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedHighestLight, dark: colorRepositoryNeutralEmphasizedHighestDark) }
+    @objc public final var colorRepositoryNeutralEmphasizedHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedHighestLight, dark: colorRepositoryNeutralEmphasizedHighestDark) }
 
-    @objc open var colorRepositoryNeutralEmphasizedMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedMediumLight, dark: colorRepositoryNeutralEmphasizedMediumDark) }
+    @objc public final var colorRepositoryNeutralEmphasizedMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralEmphasizedMediumLight, dark: colorRepositoryNeutralEmphasizedMediumDark) }
 
-    @objc open var colorRepositoryNeutralMutedLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralMutedLowerLight, dark: colorRepositoryNeutralMutedLowerDark) }
+    @objc public final var colorRepositoryNeutralMutedLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralMutedLowerLight, dark: colorRepositoryNeutralMutedLowerDark) }
 
-    @objc open var colorRepositoryNeutralMutedLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralMutedLowestLight, dark: colorRepositoryNeutralMutedLowestDark) }
+    @objc public final var colorRepositoryNeutralMutedLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralMutedLowestLight, dark: colorRepositoryNeutralMutedLowestDark) }
 
-    @objc open var colorRepositoryNeutralMutedWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralMutedWhiteLight, dark: colorRepositoryNeutralMutedWhiteDark) }
+    @objc public final var colorRepositoryNeutralMutedWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryNeutralMutedWhiteLight, dark: colorRepositoryNeutralMutedWhiteDark) }
 
-    @objc open var colorRepositoryOpacityBlackHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackHigherLight, dark: colorRepositoryOpacityBlackHigherDark) }
+    @objc public final var colorRepositoryOpacityBlackHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackHigherLight, dark: colorRepositoryOpacityBlackHigherDark) }
 
-    @objc open var colorRepositoryOpacityBlackHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackHighestLight, dark: colorRepositoryOpacityBlackHighestDark) }
+    @objc public final var colorRepositoryOpacityBlackHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackHighestLight, dark: colorRepositoryOpacityBlackHighestDark) }
 
-    @objc open var colorRepositoryOpacityBlackLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackLowLight, dark: colorRepositoryOpacityBlackLowDark) }
+    @objc public final var colorRepositoryOpacityBlackLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackLowLight, dark: colorRepositoryOpacityBlackLowDark) }
 
-    @objc open var colorRepositoryOpacityBlackLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackLowerLight, dark: colorRepositoryOpacityBlackLowerDark) }
+    @objc public final var colorRepositoryOpacityBlackLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackLowerLight, dark: colorRepositoryOpacityBlackLowerDark) }
 
-    @objc open var colorRepositoryOpacityBlackLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackLowestLight, dark: colorRepositoryOpacityBlackLowestDark) }
+    @objc public final var colorRepositoryOpacityBlackLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackLowestLight, dark: colorRepositoryOpacityBlackLowestDark) }
 
-    @objc open var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackMediumLight, dark: colorRepositoryOpacityBlackMediumDark) }
+    @objc public final var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackMediumLight, dark: colorRepositoryOpacityBlackMediumDark) }
 
-    @objc open var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackTransparentLight, dark: colorRepositoryOpacityBlackTransparentDark) }
+    @objc public final var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackTransparentLight, dark: colorRepositoryOpacityBlackTransparentDark) }
 
-    @objc open var colorRepositoryOpacityInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityInfoLight, dark: colorRepositoryOpacityInfoDark) }
+    @objc public final var colorRepositoryOpacityInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityInfoLight, dark: colorRepositoryOpacityInfoDark) }
 
-    @objc open var colorRepositoryOpacityNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityNegativeLight, dark: colorRepositoryOpacityNegativeDark) }
+    @objc public final var colorRepositoryOpacityNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityNegativeLight, dark: colorRepositoryOpacityNegativeDark) }
 
-    @objc open var colorRepositoryOpacityPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityPositiveLight, dark: colorRepositoryOpacityPositiveDark) }
+    @objc public final var colorRepositoryOpacityPositive: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityPositiveLight, dark: colorRepositoryOpacityPositiveDark) }
 
-    @objc open var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWarningLight, dark: colorRepositoryOpacityWarningDark) }
+    @objc public final var colorRepositoryOpacityWarning: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWarningLight, dark: colorRepositoryOpacityWarningDark) }
 
-    @objc open var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHighLight, dark: colorRepositoryOpacityWhiteHighDark) }
+    @objc public final var colorRepositoryOpacityWhiteHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHighLight, dark: colorRepositoryOpacityWhiteHighDark) }
 
-    @objc open var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHigherLight, dark: colorRepositoryOpacityWhiteHigherDark) }
+    @objc public final var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHigherLight, dark: colorRepositoryOpacityWhiteHigherDark) }
 
-    @objc open var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHighestLight, dark: colorRepositoryOpacityWhiteHighestDark) }
+    @objc public final var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHighestLight, dark: colorRepositoryOpacityWhiteHighestDark) }
 
-    @objc open var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteLowLight, dark: colorRepositoryOpacityWhiteLowDark) }
+    @objc public final var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteLowLight, dark: colorRepositoryOpacityWhiteLowDark) }
 
-    @objc open var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteLowerLight, dark: colorRepositoryOpacityWhiteLowerDark) }
+    @objc public final var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteLowerLight, dark: colorRepositoryOpacityWhiteLowerDark) }
 
-    @objc open var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteLowestLight, dark: colorRepositoryOpacityWhiteLowestDark) }
+    @objc public final var colorRepositoryOpacityWhiteLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteLowestLight, dark: colorRepositoryOpacityWhiteLowestDark) }
 
-    @objc open var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteTransparentLight, dark: colorRepositoryOpacityWhiteTransparentDark) }
+    @objc public final var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteTransparentLight, dark: colorRepositoryOpacityWhiteTransparentDark) }
 
-    @objc open var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveDefaultLight, dark: colorRepositoryPositiveDefaultDark) }
+    @objc public final var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveDefaultLight, dark: colorRepositoryPositiveDefaultDark) }
 
-    @objc open var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveHighestLight, dark: colorRepositoryPositiveHighestDark) }
+    @objc public final var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveHighestLight, dark: colorRepositoryPositiveHighestDark) }
 
-    @objc open var colorRepositoryPositiveLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveLowLight, dark: colorRepositoryPositiveLowDark) }
+    @objc public final var colorRepositoryPositiveLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveLowLight, dark: colorRepositoryPositiveLowDark) }
 
-    @objc open var colorRepositoryPositiveLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveLowestLight, dark: colorRepositoryPositiveLowestDark) }
+    @objc public final var colorRepositoryPositiveLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPositiveLowestLight, dark: colorRepositoryPositiveLowestDark) }
 
-    @objc open var colorRepositoryPrimaryDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPrimaryDefaultLight, dark: colorRepositoryPrimaryDefaultDark) }
+    @objc public final var colorRepositoryPrimaryDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPrimaryDefaultLight, dark: colorRepositoryPrimaryDefaultDark) }
 
-    @objc open var colorRepositoryPrimaryLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPrimaryLowLight, dark: colorRepositoryPrimaryLowDark) }
+    @objc public final var colorRepositoryPrimaryLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryPrimaryLowLight, dark: colorRepositoryPrimaryLowDark) }
 
-    @objc open var colorRepositoryWarningDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryWarningDefaultLight, dark: colorRepositoryWarningDefaultDark) }
+    @objc public final var colorRepositoryWarningDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryWarningDefaultLight, dark: colorRepositoryWarningDefaultDark) }
 
-    @objc open var colorRepositoryWarningHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryWarningHighestLight, dark: colorRepositoryWarningHighestDark) }
+    @objc public final var colorRepositoryWarningHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryWarningHighestLight, dark: colorRepositoryWarningHighestDark) }
 
-    @objc open var colorRepositoryWarningLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryWarningLowLight, dark: colorRepositoryWarningLowDark) }
+    @objc public final var colorRepositoryWarningLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryWarningLowLight, dark: colorRepositoryWarningLowDark) }
 
-    @objc open var colorRepositoryWarningLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryWarningLowestLight, dark: colorRepositoryWarningLowestDark) }
+    @objc public final var colorRepositoryWarningLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryWarningLowestLight, dark: colorRepositoryWarningLowestDark) }
 }
 
 // swiftlint:enable line_length
