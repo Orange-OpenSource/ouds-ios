@@ -30,31 +30,31 @@ open class OUDSTheme: @unchecked Sendable {
     // MARK: - Properties
 
     /// All color semantic tokens exposed in one object
-    public let colors: AllColorSemanticTokens
+    public let colors: AllColorSemanticTokensProvider
 
     /// All border semantic tokens exposed in one object
-    public let borders: AllBorderSemanticTokens
+    public let borders: AllBorderSemanticTokensProvider
 
     /// All elevation semantic tokens exposed in one object
-    public let elevations: AllElevationSemanticTokens
+    public let elevations: AllElevationSemanticTokensProvider
 
     /// A theme can have a custom font which is not the system font
     public let fontFamily: FontFamilySemanticToken?
 
     /// All font semantic tokens exposed in one object
-    public let fonts: AllFontSemanticTokens
+    public let fonts: AllFontSemanticTokensProvider
 
     /// All grid semantic tokens exposed in one object
-    public let grids: AllGridSemanticTokens
+    public let grids: AllGridSemanticTokensProvider
 
     /// All opacity semantic tokens exposed in one object
-    public let opacities: AllOpacitySemanticTokens
+    public let opacities: AllOpacitySemanticTokensProvider
 
     /// All size semantic tokens exposed in one object
-    public let sizes: AllSizeSemanticTokens
+    public let sizes: AllSizeSemanticTokensProvider
 
     /// All size semantic tokens exposed in one object
-    public let spaces: AllSpaceSemanticTokens
+    public let spaces: AllSpaceSemanticTokensProvider
 
     // TODO: Add components tokens
 
@@ -63,22 +63,22 @@ open class OUDSTheme: @unchecked Sendable {
     /// Defines a basic kind of abstract theme to subclass then.
     /// No custom font family will be used.
     /// - Parameters:
-    ///    - colors: An object providing all the color semantic tokens, by default `OUDSColorSemanticTokensProvider`
-    ///    - borders: An object providing all the border semantic tokens, by default `OUDSBorderSemanticTokensProvider`
-    ///    - elevations: An object providing all the elevation semantic tokens, by default `OUDSElevationSemanticTokensProvider`
-    ///    - fonts: An object providing all the font semantic tokens, by default `OUDSFontSemanticTokensProvider`
-    ///    - grids: An object providing all the grid semantic tokens, by default `OUDSGridSemanticTokensProvider`
-    ///    - opacities: An object providing all the opacity semantic tokens, by default `OUDSOpacitySemanticTokensProvider`
-    ///    - sizes: An object providing all the size semantic tokens, by default `OUDSSizeSemanticTokensProvider`
-    ///    - spaces: An object providing all the space semantic tokens, by default `OUDSSpaceSemanticTokensProvider`
-    public init(colors: AllColorSemanticTokens = OUDSColorSemanticTokensProvider(),
-                borders: AllBorderSemanticTokens = OUDSBorderSemanticTokensProvider(),
-                elevations: AllElevationSemanticTokens = OUDSElevationSemanticTokensProvider(),
-                fonts: AllFontSemanticTokens = OUDSFontSemanticTokensProvider(),
-                grids: AllGridSemanticTokens = OUDSGridSemanticTokensProvider(),
-                opacities: AllOpacitySemanticTokens = OUDSOpacitySemanticTokensProvider(),
-                sizes: AllSizeSemanticTokens = OUDSSizeSemanticTokensProvider(),
-                spaces: AllSpaceSemanticTokens = OUDSSpaceSemanticTokensProvider()) {
+    ///    - colors: An object providing all the color semantic tokens
+    ///    - borders: An object providing all the border semantic tokens
+    ///    - elevations: An object providing all the elevation semantic tokens
+    ///    - fonts: An object providing all the font semantic tokens
+    ///    - grids: An object providing all the grid semantic tokens
+    ///    - opacities: An object providing all the opacity semantic tokens
+    ///    - sizes: An object providing all the size semantic tokens
+    ///    - spaces: An object providing all the space semantic tokens
+    public init(colors: AllColorSemanticTokensProvider,
+                borders: AllBorderSemanticTokensProvider,
+                elevations: AllElevationSemanticTokensProvider,
+                fonts: AllFontSemanticTokensProvider,
+                grids: AllGridSemanticTokensProvider,
+                opacities: AllOpacitySemanticTokensProvider,
+                sizes: AllSizeSemanticTokensProvider,
+                spaces: AllSpaceSemanticTokensProvider) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations
@@ -93,23 +93,23 @@ open class OUDSTheme: @unchecked Sendable {
     /// Defines a basic kind of abstract theme to subclass then.
     /// - Parameters:
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
-    ///    - borders: An object providing all the border semantic tokens, as `BorderSemanticTokens` implementation
-    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokens`
+    ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation
+    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`
-    ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokens` implementation
+    ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation
-    ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokens` implementation
-    public init(colors: AllColorSemanticTokens,
-                borders: AllBorderSemanticTokens,
-                elevations: AllElevationSemanticTokens,
+    ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation
+    public init(colors: AllColorSemanticTokensProvider,
+                borders: AllBorderSemanticTokensProvider,
+                elevations: AllElevationSemanticTokensProvider,
                 fontFamily: FontFamilySemanticToken?,
-                fonts: AllFontSemanticTokens,
-                grids: AllGridSemanticTokens,
-                opacities: AllOpacitySemanticTokens,
-                sizes: AllSizeSemanticTokens,
-                spaces: AllSpaceSemanticTokens) {
+                fonts: AllFontSemanticTokensProvider,
+                grids: AllGridSemanticTokensProvider,
+                opacities: AllOpacitySemanticTokensProvider,
+                sizes: AllSizeSemanticTokensProvider,
+                spaces: AllSpaceSemanticTokensProvider) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations

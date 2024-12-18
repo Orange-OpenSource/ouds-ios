@@ -41,20 +41,17 @@ extension String {
 
 ## Architecture
 
-The *Composites* folder contains some _composite class_ defined to match the objects available in *Figma*.
+There are several _composite class_ defined to match the objects available in *Figma*.
 In fact the design system implementations should expose pack of values so as to gather several tokens in one object. For exemple ``ElevationCompositeRawToken`` can be used for predefined elevations / box shadows effects, and ``FontCompositeRawToken`` can be used for predefined typography / fonts.
 All such *composites* instances are defined in seperated files. In fact *tokenator* cannot generate such tokens as they are not defined in its JSON file to process because *Figma* is not able to manage *composite tokens*, even if tinkered by the design team. These tokens are updated manualy by the development team.
 
-The *Declarations* folder contains all the Swift `enum` objects which will gather the raw tokens.
+The raw tokens groups are decalred in `enum` objects which will gather the raw tokens in extensions.
 In fact, raw tokens are defined as `static let` _stored properties_, an adding them in an `enum` is more optimized for namespaces reasons. Thus all `public enum` gathering raw tokens are defined there.
 
-The *TypeAliases* folder contains all the *typealias* values used for the raw tokens.
+There are also *typealias* values used for the raw tokens.
 Indeed these aliases are here to bring clarity and meanings in the library, and also to help users (i.e. developers) to know what kind of objects they handle with the same vocabulary as the one used in *Figma*, and in general, in the whole design system. They can be seen as a light level of abstraction with meanings, without having to define real types with `struct` or `class`.
 
-The *Values* folder is maybe the hotter one.
-In fact all the raw tokens values are defined there, and if the tokenator generates files, these files must be stored there. It contains only pure raw tokens Swift values, without any type aliases definitions or objects declarations. Generated values are placed in _+Values_ files, and composite raw tokens are in _+Composites_. Only composites are updated manualy by the development team.
-
-In a nutshell, place the generated values somewhere, and the types and objects elsewhere.
+The raw tokens values are defined in extensions of `enum` in dedicated files for the tokenator. It contains only pure raw tokens Swift values, without any type aliases definitions or objects declarations. Non-composite raw tokens are geenrated by the *tokenator* but not the composites. Fee free [to submit an issue if you spot some bugs](https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml).
 
 ## Raw tokens management
 

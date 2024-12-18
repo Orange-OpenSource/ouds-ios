@@ -17,6 +17,7 @@
 - [Status](#status)
 - [OUDS](#ouds)
 - [Content](#content)
+- [Import the library](#import-the-library)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
@@ -41,7 +42,43 @@ This repository contains the OUDS iOS library that provides Orange iOS component
 
 You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/), and also the [whole design system](https://unified-design-system.orange.com/).
 
-Documentation is powered by [GitHub Pages](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
+Details about the project are also [available in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki).
+
+## Import the library
+
+Add in *Xcode* the Swift package dependency `https://github.com/Orange-OpenSource/ouds-ios`.
+
+Then add in your project the modules you need within:
+- `OUDSModules` containing OUDS modules with features
+- `OUDSComponents` containing all components embeded also inside _modules_
+- `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_
+- `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_
+- `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_
+- `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_
+- `OUDSTokensSemantic` providing _semantic tokens_ 
+- `OUDSTokensRaw` providing _raw tokens_
+- `OUDSFoundations` providing low level and utils objects.
+
+You must define the theme you use in your app root view:
+
+```swift
+import OUDS  // To get OUDSThemeableView
+import OUDSThemeOrange // To get OrangeTheme
+import SwiftUI
+
+@main
+struct YourApp: App {
+    var body: some Scene {
+       WindowGroup {
+          OUDSThemeableView(theme: OrangeTheme()) {
+                // Your root view
+          }
+       }
+    }
+}
+```
+
+Then get the current thme using `@Environment(\.theme) var theme` and use it! You can also use the moudles and the components exposed by the library.
 
 ## OUDS
 
