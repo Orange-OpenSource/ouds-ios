@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Update `SwiftLint` pod from v0.57.0 to v0.57.1
 - [Tool] Update `SwiftFormat/CLI` pod from v0.54.6 to v0.55.3
 - [Tool] Update `fastlane` gem from v2.225.0 to v2.226.0
 - [Library] Update `FontSemanticTokens` (tokenator *20241213075501*)
