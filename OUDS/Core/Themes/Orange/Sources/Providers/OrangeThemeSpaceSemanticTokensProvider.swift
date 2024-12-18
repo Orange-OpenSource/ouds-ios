@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own provider for space semantic tokens
-///     class CustomSpaceTokensProvider: OUDSSpaceSemanticTokensProvider {
+///     class CustomSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
 ///
 ///         // Then override the space semantic tokens you want, using the dimension raw tokens available
 ///
@@ -49,11 +49,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(spaces: CustomSpaceTokenProvider())
 /// ```
-open class OUDSSpaceSemanticTokensProvider {
+open class OrangeThemeSpaceSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OUDSSpaceSemanticTokensProvider")
+        OUDSLogger.debug("Init of OrangeThemeSpaceSemanticTokensProvider")
     }
 
     deinit{ }
@@ -61,7 +61,7 @@ open class OUDSSpaceSemanticTokensProvider {
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of SpaceSemanticTokens and SpaceMultipleSemanticTokens are not here
-    // but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+SpaceSemanticTokens.swift
-    // and in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+SpaceMultipleSemanticTokens.swift.
-    // This declaration of OUDSSpaceSemanticTokensProvider is here to allow to write documentation.
+    // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+SpaceSemanticTokens.swift
+    // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+SpaceMultipleSemanticTokens.swift
+    // This declaration of OrangeThemeSpaceSemanticTokensProvider is here to allow to write documentation.
 }

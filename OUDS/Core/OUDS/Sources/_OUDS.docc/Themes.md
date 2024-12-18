@@ -54,7 +54,7 @@ If your theme needs to define its own _raw tokens_, you can also define them usi
 You may want to define your own theme, thus you can override the `OrangeTheme` with your own class or just override the providers.
 
 You will have to override the tokens provider you need. To do that, make a subclass of the provider you target:
-- spaces tokens are `OUDSSpaceSemanticTokensProvider`
+- spaces tokens are `OrangeThemeSpaceSemanticTokensProvider`
 - sizes tokens are in `OrangeThemeSizeSemanticTokensProvider`
 - colors tokens are all defined in `OrangeThemeColorSemanticTokensProvider`
 - borders tokens are in `OUDSBorderSemanticTokensProvider`
@@ -71,7 +71,7 @@ import OUDSTokensRaw                // To use raw tokens if needed
 
 // Token provider for spaces
 
-class YourAppThemeSpaceTokensProvider: OUDSSpaceSemanticTokensProvider {
+class YourAppThemeSpaceTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
     override var spaceFixedMedium: SpaceSemanticToken {
         DimensionRawTokens.dimension400
     }

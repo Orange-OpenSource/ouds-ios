@@ -18,7 +18,8 @@ import SwiftUI
 
 private struct ThemeEnvironmentKey: EnvironmentKey {
 
-    static let defaultValue = OUDSTheme()
+    /// ``OUDSTheme`` is kind of abstract, no instance can be done because of providers to define at theme levels
+    static let defaultValue: OUDSTheme? = nil
 }
 
 extension EnvironmentValues {
@@ -26,7 +27,7 @@ extension EnvironmentValues {
     /// The `OUDSTheme` instance exposed as en environment values across the library
     public var theme: OUDSTheme {
         get {
-            self[ThemeEnvironmentKey.self]
+            self[ThemeEnvironmentKey.self]!
         }
         set {
             self[ThemeEnvironmentKey.self] = newValue

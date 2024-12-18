@@ -48,5 +48,5 @@ public typealias AllSizeSemanticTokensProvider = SizeSemanticTokens & SizeMultip
 
 /// A type alias which merges  ``SpaceSemanticTokens`` and ``SpaceMultipleSemanticTokens``.
 /// It helps in the end to define a provider for all the semantic tokens of space, multiple or not, generated or not.
-/// For example ``OUDSSpaceSemanticTokensProvider`` matches this type alias.
+/// For example ``OrangeThemeSpaceSemanticTokensProvider`` matches this type alias.
 public typealias AllSpaceSemanticTokensProvider = SpaceSemanticTokens & SpaceMultipleSemanticTokens

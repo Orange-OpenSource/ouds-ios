@@ -20,8 +20,8 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 /// Defines provider objects for space semantic tokens (i.e. in the end `DimensionRawTokens`).
-/// These values can be overriden inside ``OUDSSpaceSemanticTokensProvider`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
-extension OUDSSpaceSemanticTokensProvider: SpaceMultipleSemanticTokens {
+/// These values can be overriden inside ``OrangeThemeSpaceSemanticTokensProvider`` subclasses (in extensions or not, in the same module or not) thanks to the `@objc open` combination.
+extension OrangeThemeSpaceSemanticTokensProvider: SpaceMultipleSemanticTokens {
 
     // MARK: Semantic token - Spacing - Layout fluid
 

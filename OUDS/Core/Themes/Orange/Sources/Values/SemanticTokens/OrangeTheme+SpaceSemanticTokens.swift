@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-extension OUDSSpaceSemanticTokensProvider: SpaceSemanticTokens {
+extension OrangeThemeSpaceSemanticTokensProvider: SpaceSemanticTokens {
     @objc open var spaceColumnGapMedium: SpaceSemanticToken { DimensionRawTokens.dimension150 }
     @objc open var spaceColumnGapNone: SpaceSemanticToken { DimensionRawTokens.dimension0 }
     @objc open var spaceColumnGapShort: SpaceSemanticToken { DimensionRawTokens.dimension100 }
