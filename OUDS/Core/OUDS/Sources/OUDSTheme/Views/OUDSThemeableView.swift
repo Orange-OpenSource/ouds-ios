@@ -24,15 +24,23 @@ private struct ThemeEnvironmentKey: EnvironmentKey {
 
 extension EnvironmentValues {
 
-    // swiftlint:disable force_unwrapping
-    /// The `OUDSTheme` instance exposed as en environment values across the library
-    public var theme: OUDSTheme {
+    // swiftlint:disable strict_fileprivate
+    /// The `OUDSTheme` instance exposed as en environment values across the library.
+    /// Because at the level of the package we don't have any existing theme, this instance is optional
+    fileprivate var _theme: OUDSTheme? {
         get {
-            self[ThemeEnvironmentKey.self]!
+            self[ThemeEnvironmentKey.self]
         }
         set {
             self[ThemeEnvironmentKey.self] = newValue
         }
+    }
+    // swiftlint:enable strict_fileprivate
+
+    // swiftlint:disable force_unwrapping
+    /// The `OUDSTheme` applied to the application
+    public var theme: OUDSTheme {
+        _theme!
     }
     // swiftlint:enable force_unwrapping
 }
@@ -71,7 +79,7 @@ public struct OUDSThemeableView<Content>: View where Content: View {
 
     public var body: some View {
         content()
-            .environment(\.theme, theme)
+            .environment(\._theme, theme)
             .modifier(UserInterfaceSizeClassModifier())
     }
 }
