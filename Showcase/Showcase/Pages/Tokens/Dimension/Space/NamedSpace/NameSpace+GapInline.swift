@@ -29,17 +29,17 @@ extension NamedSpace {
         func token(from theme: OUDSTheme) -> SpaceSemanticToken {
             switch self {
             case .spaceColumnGapNone:
-                return theme.spaceColumnGapNone
+                return theme.spaces.spaceColumnGapNone
             case .spaceColumnGapShorter:
-                return theme.spaceColumnGapShorter
+                return theme.spaces.spaceColumnGapShorter
             case .spaceColumnGapShort:
-                return theme.spaceColumnGapShort
+                return theme.spaces.spaceColumnGapShort
             case .spaceColumnGapMedium:
-                return theme.spaceColumnGapMedium
+                return theme.spaces.spaceColumnGapMedium
             case .spaceColumnGapTall:
-                return theme.spaceColumnGapTall
+                return theme.spaces.spaceColumnGapTall
             case .spaceColumnGapTaller:
-                return theme.spaceColumnGapTaller
+                return theme.spaces.spaceColumnGapTaller
             }
         }
     }

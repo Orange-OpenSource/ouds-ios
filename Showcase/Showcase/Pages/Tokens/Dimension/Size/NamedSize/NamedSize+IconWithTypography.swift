@@ -39,22 +39,22 @@ extension NamedSize {
         case sizeIconWithBodySmallShort
         case sizeIconWithBodySmallMedium
         case sizeIconWithBodySmallTall
-        case sizeIconWithLabelXlargeSizeShort
-        case sizeIconWithLabelXlargeSizeMedium
-        case sizeIconWithLabelXlargeSizeTall
-        case sizeIconWithLabelLargeSizeShorter
-        case sizeIconWithLabelLargeSizeShort
-        case sizeIconWithLabelLargeSizeMedium
-        case sizeIconWithLabelLargeSizeTall
-        case sizeIconWithLabelLargeSizeTaller
-        case sizeIconWithLabelMediumSizeShort
-        case sizeIconWithLabelMediumSizeMedium
-        case sizeIconWithLabelMediumSizeTall
-        case sizeIconWithLabelSmallSizeShort
-        case sizeIconWithLabelSmallSizeMedium
-        case sizeIconWithLabelSmallSizeTall
+        case sizeIconWithLabelXlargeSizeSm
+        case sizeIconWithLabelXlargeSizeMd
+        case sizeIconWithLabelXlargeSizeLg
+        case sizeIconWithLabelLargeSizeXs
+        case sizeIconWithLabelLargeSizeSm
+        case sizeIconWithLabelLargeSizeMd
+        case sizeIconWithLabelLargeSizeLg
+        case sizeIconWithLabelLargeSizeXl
+        case sizeIconWithLabelMediumSizeSm
+        case sizeIconWithLabelMediumSizeMd
+        case sizeIconWithLabelMediumSizeLg
+        case sizeIconWithLabelSmallSizeSm
+        case sizeIconWithLabelSmallSizeMd
+        case sizeIconWithLabelSmallSizeLg
 
-        var namedTypography: NamedTypography {
+        var namedFont: NamedFont {
             switch self {
             case .sizeIconWithHeadingXlargeShort:
                 return .headingXLarge
@@ -98,33 +98,33 @@ extension NamedSize {
                 return .bodyDefaultSmall
             case .sizeIconWithBodySmallTall:
                 return .bodyDefaultSmall
-            case .sizeIconWithLabelXlargeSizeShort:
+            case .sizeIconWithLabelXlargeSizeSm:
                 return .labelDefaultXLarge
-            case .sizeIconWithLabelXlargeSizeMedium:
+            case .sizeIconWithLabelXlargeSizeMd:
                 return .labelDefaultXLarge
-            case .sizeIconWithLabelXlargeSizeTall:
+            case .sizeIconWithLabelXlargeSizeLg:
                 return .labelDefaultXLarge
-            case .sizeIconWithLabelLargeSizeShorter:
+            case .sizeIconWithLabelLargeSizeXs:
                 return .labelDefaultXLarge
-            case .sizeIconWithLabelLargeSizeShort:
+            case .sizeIconWithLabelLargeSizeSm:
                 return .labelDefaultLarge
-            case .sizeIconWithLabelLargeSizeMedium:
+            case .sizeIconWithLabelLargeSizeMd:
                 return .labelDefaultLarge
-            case .sizeIconWithLabelLargeSizeTall:
+            case .sizeIconWithLabelLargeSizeLg:
                 return .labelDefaultLarge
-            case .sizeIconWithLabelLargeSizeTaller:
+            case .sizeIconWithLabelLargeSizeXl:
                 return .labelDefaultLarge
-            case .sizeIconWithLabelMediumSizeShort:
+            case .sizeIconWithLabelMediumSizeSm:
                 return .labelDefaultMedium
-            case .sizeIconWithLabelMediumSizeMedium:
+            case .sizeIconWithLabelMediumSizeMd:
                 return .labelDefaultMedium
-            case .sizeIconWithLabelMediumSizeTall:
+            case .sizeIconWithLabelMediumSizeLg:
                 return .labelDefaultMedium
-            case .sizeIconWithLabelSmallSizeShort:
+            case .sizeIconWithLabelSmallSizeSm:
                 return .labelDefaultSmall
-            case .sizeIconWithLabelSmallSizeMedium:
+            case .sizeIconWithLabelSmallSizeMd:
                 return .labelDefaultSmall
-            case .sizeIconWithLabelSmallSizeTall:
+            case .sizeIconWithLabelSmallSizeLg:
                 return .labelDefaultSmall
             }
         }
@@ -133,75 +133,75 @@ extension NamedSize {
         func token(fot theme: OUDSTheme, userInterfaceSizeClass: UserInterfaceSizeClass) -> SizeSemanticToken {
             switch self {
             case .sizeIconWithHeadingXlargeShort:
-                return theme.sizeIconWithHeadingXlargeSizeShort.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingXlargeSizeSm.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingXlargeMedium:
-                return theme.sizeIconWithHeadingXlargeSizeMedium.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingXlargeSizeMd.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingXlargeTall:
-                return theme.sizeIconWithHeadingXlargeSizeTall.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingXlargeSizeLg.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingLargeShort:
-                return theme.sizeIconWithHeadingLargeSizeShort.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingLargeSizeSm.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingLargeMedium:
-                return theme.sizeIconWithHeadingLargeSizeMedium.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingLargeSizeMd.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingLargeTall:
-                return theme.sizeIconWithHeadingLargeSizeTall.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingLargeSizeLg.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingMediumShort:
-                return theme.sizeIconWithHeadingMediumSizeShort.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingMediumSizeSm.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingMediumMedium:
-                return theme.sizeIconWithHeadingMediumSizeMedium.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingMediumSizeMd.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingMediumTall:
-                return theme.sizeIconWithHeadingMediumSizeTall.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingMediumSizeLg.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingSmallShort:
-                return theme.sizeIconWithHeadingSmallSizeShort.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingSmallSizeSm.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingSmallMedium:
-                return theme.sizeIconWithHeadingSmallSizeMedium.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingSmallSizeMd.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithHeadingSmallTall:
-                return theme.sizeIconWithHeadingSmallSizeTall.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithHeadingSmallSizeLg.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithBodyLargeShort:
-                return theme.sizeIconWithBodyLargeSizeShort.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithBodyLargeSizeSm.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithBodyLargeMedium:
-                return theme.sizeIconWithBodyLargeSizeMedium.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithBodyLargeSizeMd.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithBodyLargeTall:
-                return theme.sizeIconWithBodyLargeSizeTall.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithBodyLargeSizeLg.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithBodyMediumShort:
-                return theme.sizeIconWithBodyMediumSizeShort.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithBodyMediumSizeSm.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithBodyMediumMedium:
-                return theme.sizeIconWithBodyMediumSizeMedium.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithBodyMediumSizeMd.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithBodyMediumTall:
-                return theme.sizeIconWithBodyMediumSizeTall.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithBodyMediumSizeLg.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithBodySmallShort:
-                return theme.sizeIconWithBodySmallSizeShort.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithBodySmallSizeSm.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithBodySmallMedium:
-                return theme.sizeIconWithBodySmallSizeMedium.dimension(for: userInterfaceSizeClass)
+                return theme.sizes.sizeIconWithBodySmallSizeMd.dimension(for: userInterfaceSizeClass)
             case .sizeIconWithBodySmallTall:
-                return theme.sizeIconWithBodySmallSizeTall.dimension(for: userInterfaceSizeClass)
-            case .sizeIconWithLabelXlargeSizeShort:
-                return theme.sizeIconWithLabelXlargeSizeShort
-            case .sizeIconWithLabelXlargeSizeMedium:
-                return theme.sizeIconWithLabelXlargeSizeMedium
-            case .sizeIconWithLabelXlargeSizeTall:
-                return theme.sizeIconWithLabelXlargeSizeTall
-            case .sizeIconWithLabelLargeSizeShorter:
-                return theme.sizeIconWithLabelLargeSizeShorter
-            case .sizeIconWithLabelLargeSizeShort:
-                return theme.sizeIconWithLabelLargeSizeShort
-            case .sizeIconWithLabelLargeSizeMedium:
-                return theme.sizeIconWithLabelLargeSizeMedium
-            case .sizeIconWithLabelLargeSizeTall:
-                return theme.sizeIconWithLabelLargeSizeTall
-            case .sizeIconWithLabelLargeSizeTaller:
-                return theme.sizeIconWithLabelLargeSizeTaller
-            case .sizeIconWithLabelMediumSizeShort:
-                return theme.sizeIconWithLabelMediumSizeShort
-            case .sizeIconWithLabelMediumSizeMedium:
-                return theme.sizeIconWithLabelMediumSizeMedium
-            case .sizeIconWithLabelMediumSizeTall:
-                return theme.sizeIconWithLabelMediumSizeTall
-            case .sizeIconWithLabelSmallSizeShort:
-                return theme.sizeIconWithLabelSmallSizeShort
-            case .sizeIconWithLabelSmallSizeMedium:
-                return theme.sizeIconWithLabelSmallSizeMedium
-            case .sizeIconWithLabelSmallSizeTall:
-                return theme.sizeIconWithLabelSmallSizeTall
+                return theme.sizes.sizeIconWithBodySmallSizeLg.dimension(for: userInterfaceSizeClass)
+            case .sizeIconWithLabelXlargeSizeSm:
+                return theme.sizes.sizeIconWithLabelXlargeSizeSm
+            case .sizeIconWithLabelXlargeSizeMd:
+                return theme.sizes.sizeIconWithLabelXlargeSizeMd
+            case .sizeIconWithLabelXlargeSizeLg:
+                return theme.sizes.sizeIconWithLabelXlargeSizeLg
+            case .sizeIconWithLabelLargeSizeXs:
+                return theme.sizes.sizeIconWithLabelLargeSizeXs
+            case .sizeIconWithLabelLargeSizeSm:
+                return theme.sizes.sizeIconWithLabelLargeSizeSm
+            case .sizeIconWithLabelLargeSizeMd:
+                return theme.sizes.sizeIconWithLabelLargeSizeMd
+            case .sizeIconWithLabelLargeSizeLg:
+                return theme.sizes.sizeIconWithLabelLargeSizeLg
+            case .sizeIconWithLabelLargeSizeXl:
+                return theme.sizes.sizeIconWithLabelLargeSizeXl
+            case .sizeIconWithLabelMediumSizeSm:
+                return theme.sizes.sizeIconWithLabelMediumSizeSm
+            case .sizeIconWithLabelMediumSizeMd:
+                return theme.sizes.sizeIconWithLabelMediumSizeMd
+            case .sizeIconWithLabelMediumSizeLg:
+                return theme.sizes.sizeIconWithLabelMediumSizeLg
+            case .sizeIconWithLabelSmallSizeSm:
+                return theme.sizes.sizeIconWithLabelSmallSizeSm
+            case .sizeIconWithLabelSmallSizeMd:
+                return theme.sizes.sizeIconWithLabelSmallSizeMd
+            case .sizeIconWithLabelSmallSizeLg:
+                return theme.sizes.sizeIconWithLabelSmallSizeLg
             }
         }
         // swiftlint:enable function_body_length

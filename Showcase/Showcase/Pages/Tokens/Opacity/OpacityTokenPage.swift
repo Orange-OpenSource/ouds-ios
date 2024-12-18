@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSComponents
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -23,75 +22,55 @@ struct OpacityTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force  for this `View` whatever the environnement `theme` is (for UI tests purposes)
-    private let forcedTheme: OUDSTheme?
-    /// A `ColorScheme` to force  for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
-    private let forcedColorScheme: ColorScheme?
-
-    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
-        self.forcedTheme = theme
-        self.forcedColorScheme = colorScheme
-    }
-
-    /// Computed property for colorScheme
-    /// Returns `forcedColorScheme` if available, otherwise falls back to the environment `colorScheme`
-    /// If neither is available, the default system `colorScheme` will be applied.
-    var activeColorScheme: ColorScheme {
-        forcedColorScheme ?? colorScheme
-    }
-
-    /// Computed property for theme
-    /// Returns `forcedTheme` if available, otherwise falls back to the environment `theme`
-    /// If neither is available, the default `theme` will be applied.
-    var activeTheme: OUDSTheme {
-        forcedTheme ?? theme
-    }
-
-    // MARK: Body
-
     var body: some View {
-        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                ShowcaseTokenCode(code: "theme.opacityTransparent")
+                ShowcaseCode(code: "theme.opacities.opacityInvisible")
             }
-            Spacer()
-                .frame(height: activeTheme.spaceFixedMedium)
-            ForEach(NamedOpacity.allCases, id: \.rawValue) { opmacityName in
-                illustration(for: opmacityName)
+
+            Spacer() .frame(height: theme.spaces.spaceFixedMedium)
+
+            ForEach(NamedOpacity.allCases, id: \.rawValue) { opacityName in
+                IllustrationOpacity(opacityName: opacityName)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, activeTheme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
-    // MARK: Helpers
+    struct IllustrationOpacity: View {
+        @Environment(\.theme) private var theme
+        @Environment(\.colorScheme) private var colorScheme
 
-    func illustration(for opacityName: NamedOpacity) -> some View {
-        let token = opacityName.token(from: activeTheme)
-        let name = opacityName.rawValue
-        let value = String(format: "%.2f", token)
+        let opacityName: NamedOpacity
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
-            ZStack {
-                Image(decorative: "ic_union")
-                    .resizable()
-                    .renderingMode(.template)
-                    .foregroundColor(activeTheme.colorContentStatusInfo.color(for: activeColorScheme))
-                    .frame(width: 48, height: 48)
-                    .accessibilityHidden(true)
+        var body: some View {
+            let token = opacityName.token(from: theme)
+            let name = opacityName.rawValue
+            let value = String(format: "%.2f", token)
 
-                Rectangle()
-                    .fill(activeTheme.colorBgEmphasized.color(for: activeColorScheme))
-                    .opacity(token)
-                    .frame(width: 48, height: 48)
-                    .oudsBorder(style: activeTheme.borderStyleDefault,
-                                width: activeTheme.borderWidthThin,
-                                radius: activeTheme.borderRadiusNone,
-                                color: activeTheme.colorBorderEmphasized)
-                    .padding(.top, 24)
-                    .padding(.leading, 24)
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                ZStack {
+                    Image(decorative: "ic_union")
+                        .resizable()
+                        .renderingMode(.template)
+                        .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
+                        .frame(width: 48, height: 48)
+                        .accessibilityHidden(true)
+
+                    Rectangle()
+                        .fill(theme.colors.colorBgEmphasized.color(for: colorScheme))
+                        .opacity(token)
+                        .frame(width: 48, height: 48)
+                        .oudsBorder(style: theme.borders.borderStyleDefault,
+                                    width: theme.borders.borderWidthThin,
+                                    radius: theme.borders.borderRadiusNone,
+                                    color: theme.colors.colorBorderEmphasized)
+                        .padding(.top, 24)
+                        .padding(.leading, 24)
+                }
+                .frame(width: 64, height: 64, alignment: .leading)
             }
-            .frame(width: 64, height: 64, alignment: .leading)
         }
     }
 }
@@ -99,7 +78,7 @@ struct OpacityTokenPage: View {
 // MARK: - Named Opacity
 
 enum NamedOpacity: String, CaseIterable {
-    case opacityTransparent
+    case opacityInvisible
     case opacityWeaker
     case opacityWeak
     case opacityMedium
@@ -108,18 +87,18 @@ enum NamedOpacity: String, CaseIterable {
 
     func token(from theme: OUDSTheme) -> OpacitySemanticToken {
         switch self {
-        case .opacityTransparent:
-            return theme.opacityTransparent
+        case .opacityInvisible:
+            return theme.opacities.opacityInvisible
         case .opacityWeaker:
-            return theme.opacityWeaker
+            return theme.opacities.opacityWeaker
         case .opacityWeak:
-            return theme.opacityWeak
+            return theme.opacities.opacityWeak
         case .opacityMedium:
-            return theme.opacityMedium
+            return theme.opacities.opacityMedium
         case .opacityStrong:
-            return theme.opacityStrong
+            return theme.opacities.opacityStrong
         case .opacityOpaque:
-            return theme.opacityOpaque
+            return theme.opacities.opacityOpaque
         }
     }
 }

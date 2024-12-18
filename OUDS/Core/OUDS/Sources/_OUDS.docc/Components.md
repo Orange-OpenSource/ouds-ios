@@ -1,8 +1,10 @@
 # Components
   
-_Components_ are defined in the `OUDSComponents` target and can be integrated in applications.
+_Components_ are the `View` objects you can add in the views of your apps, like buttons, links, cards etc.
 
-❗**More details coming soon.**❗
+*There is not component yet*
+
+❗More details coming soon❗
 
 ## How to use components
 
@@ -12,7 +14,7 @@ Import the target of components, and use the component you want:
 import OUDSComponents // To get the components
 ```
 
-Of course you must use in your root view the <doc:/OUDS/OUDSThemeableView> with the suitable theme:
+Of course you must use in your root view the <doc:/OUDS/OUDSThemeableView> with the suitable theme to asign it in environement variable so as to allow components to laod their tokens:
 
 ```swift
     // The theme can be OrangeTheme or your own

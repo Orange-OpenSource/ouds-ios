@@ -23,60 +23,40 @@ struct ElevationTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force for this `View` whatever the environnement `theme` is (for UI tests purposes)
-    private let forcedTheme: OUDSTheme?
-    /// A `ColorScheme` to force for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
-    private let forcedColorScheme: ColorScheme?
-
-    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
-        forcedTheme = theme
-        forcedColorScheme = colorScheme
-    }
-
-    /// Computed property for colorScheme
-    /// Returns `forcedColorScheme` if available, otherwise falls back to the environment `colorScheme`
-    /// If neither is available, the default system `colorScheme` will be applied.
-    var activeColorScheme: ColorScheme {
-        forcedColorScheme ?? colorScheme
-    }
-
-    /// Computed property for theme
-    /// Returns `forcedTheme` if available, otherwise falls back to the environment `theme`
-    /// If neither is available, the default `theme` will be applied.
-    var activeTheme: OUDSTheme {
-        forcedTheme ?? theme
-    }
-
-    // MARK: Body
-
     var body: some View {
-        VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                ShowcaseTokenCode(code: "theme.elevationNone.elevation(for: colorScheme)")
+                ShowcaseCode(code: "theme.elevations.elevationNone.elevation(for: colorScheme)")
             }
-            Spacer()
-                .frame(height: activeTheme.spaceFixedMedium)
+
+            Spacer().frame(height: theme.spaces.spaceFixedMedium)
+
             ForEach(NamedElevation.allCases, id: \.rawValue) { elevationName in
-                illustration(for: elevationName)
+                IllustrationElevation(namedElevation: elevationName)
             }
         }
         .frame(maxWidth: .infinity)
-        .padding(.horizontal, activeTheme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
-    // MARK: Helpers
+    struct IllustrationElevation: View {
+        @Environment(\.theme) private var theme
+        @Environment(\.colorScheme) private var colorScheme
 
-    func illustration(for namedElevation: NamedElevation) -> some View {
-        let token = namedElevation.token(from: activeTheme).elevation(for: activeColorScheme)
-        let name = namedElevation.rawValue
-        let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)
+        let namedElevation: NamedElevation
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
-            Rectangle()
-                .frame(width: activeTheme.sizeIconDecorativeTallest, height: activeTheme.sizeIconDecorativeTallest)
-                .foregroundColor(activeTheme.colorBgSecondary.color(for: activeColorScheme))
-                .shadow(elevation: token)
-                .padding(.bottom, 2)
+        var body: some View {
+            let token = namedElevation.token(from: theme).elevation(for: colorScheme)
+            let name = namedElevation.rawValue
+            let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                Rectangle()
+                    .frame(width: theme.sizes.sizeIconDecorative2xl, height: theme.sizes.sizeIconDecorative2xl)
+                    .foregroundColor(theme.colors.colorBgSecondary.color(for: colorScheme))
+                    .shadow(elevation: token)
+                    .padding(.bottom, 2)
+            }
         }
     }
 }
@@ -96,21 +76,21 @@ enum NamedElevation: String, CaseIterable {
     func token(from theme: OUDSTheme) -> ElevationCompositeSemanticToken {
         switch self {
         case .elevationNone:
-            return theme.elevationNone
+            return theme.elevations.elevationNone
         case .elevationRaised:
-            return theme.elevationRaised
+            return theme.elevations.elevationRaised
         case .elevationStickyNavigationScrolled:
-            return theme.elevationStickyNavigationScrolled
+            return theme.elevations.elevationStickyNavigationScrolled
         case .elevationOverlayDefault:
-            return theme.elevationOverlayDefault
+            return theme.elevations.elevationOverlayDefault
         case .elevationStickyDefault:
-            return theme.elevationStickyDefault
+            return theme.elevations.elevationStickyDefault
         case .elevationStickyEmphasized:
-            return theme.elevationStickyEmphasized
+            return theme.elevations.elevationStickyEmphasized
         case .elevationDrag:
-            return theme.elevationDrag
+            return theme.elevations.elevationDrag
         case .elevationOverlayEmphasized:
-            return theme.elevationOverlayEmphasized
+            return theme.elevations.elevationOverlayEmphasized
         }
     }
 }

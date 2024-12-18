@@ -28,53 +28,37 @@ struct SpaceTokenPage: View {
     var body: some View {
         Group {
             Section {
-                ShowcaseTokenCode(code: "theme.spaceScaledMedium.dimension(for: horizontalSizeClass ?? .regular)")
+                ShowcaseCode(code: "theme.spaceScaledMedium.dimension(for: horizontalSizeClass ?? .regular)")
             }
             // Basic Space Tokens
-            Section { ScaledSpacesCategory() } header: {
+            Section { ScaledSpaceProperty() } header: {
                 header("app_tokens_dimension_space_scaled_label")
             }
-            Section { FixedSpacesCategory() } header: {
+            Section { FixedSpaceProperty() } header: {
                 header("app_tokens_dimension_space_fixed_label")
             }
             // Padding Sapce Tokens
-            Section { PaddingInlineCategory() } header: {
+            Section { PaddingInlineProperty() } header: {
                 header("app_tokens_dimension_space_paddingInline_label")
             }
-            Section { PaddingInlineWithIconCategory() } header: {
-                header("app_tokens_dimension_space_paddingInlineWithIcon_label")
-            }
-            Section { PaddingInlineWithArrowCategory() } header: {
-                header("app_tokens_dimension_space_paddingInlineWithArrow_label")
-            }
-            Section { PaddingInsetCategory() } header: {
+            Section { PaddingInsetProperty() } header: {
                 header("app_tokens_dimension_space_paddingInset_label")
             }
-            Section { PaddingStackCategory() } header: {
+            Section { PaddingStackProperty() } header: {
                 header("app_tokens_dimension_space_paddingStack_label")
             }
-            Section { PaddingStackWithIconCategory() } header: {
-                header("app_tokens_dimension_space_paddingStackWithIcon_label")
-            }
             // Gap Space Tokens
-            Section { GapInlineCategory() } header: {
+            Section { GapInlineProperty() } header: {
                 header("app_tokens_dimension_space_gapInline_label")
             }
-            Section { GapInlineWithIconCategory() } header: {
-                header("app_tokens_dimension_space_gapInlineWithIcon_label")
-            }
-            Section { GapInlineWithArrowCategory() } header: {
-                header("app_tokens_dimension_space_gapInlineWithArrow_label")
-            }
-            Section { GapStackCategory() } header: {
+            Section { GapStackProperty() } header: {
                 header("app_tokens_dimension_space_gapStack_label")
             }
-            Section { GapStackWithIconCategory() } header: {
-                header("app_tokens_dimension_space_gapStackWithIcon_label")
-            }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
+
+    // MARK: Common helpers
 
     private func header(_ text: LocalizedStringKey) -> some View {
         Text(text).showcaseSectionHeaderStyle()

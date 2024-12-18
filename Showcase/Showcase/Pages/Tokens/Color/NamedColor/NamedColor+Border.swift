@@ -17,39 +17,27 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Border: String, CaseIterable {
+        case colorBorderBrandPrimary
         case colorBorderDefault
-        case colorBorderDefaultOnBgEmphasized
         case colorBorderEmphasized
-        case colorBorderEmphasizedOnBgEmphasized
         case colorBorderFocus
         case colorBorderFocusInset
-        case colorBorderFocusInsetOnBgEmphasized
-        case colorBorderBrandPrimaryOnBgEmphasized
-        case colorBorderBrandPrimary
         case colorBorderOnBrandPrimary
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorBorderDefault:
-                return theme.colorBorderDefault
-            case .colorBorderDefaultOnBgEmphasized:
-                return theme.colorBorderDefaultOnBgEmphasized
-            case .colorBorderEmphasized:
-                return theme.colorBorderEmphasized
-            case .colorBorderEmphasizedOnBgEmphasized:
-                return theme.colorBorderEmphasizedOnBgEmphasized
-            case .colorBorderFocus:
-                return theme.colorBorderFocus
-            case .colorBorderFocusInset:
-                return theme.colorBorderFocusInset
-            case .colorBorderFocusInsetOnBgEmphasized:
-                return theme.colorBorderFocusInsetOnBgEmphasized
-            case .colorBorderBrandPrimaryOnBgEmphasized:
-                return theme.colorBorderBrandPrimaryOnBgEmphasized
             case .colorBorderBrandPrimary:
-                return theme.colorBorderBrandPrimary
+                return theme.colors.colorBorderBrandPrimary
+            case .colorBorderDefault:
+                return theme.colors.colorBorderDefault
+            case .colorBorderEmphasized:
+                return theme.colors.colorBorderEmphasized
+            case .colorBorderFocus:
+                return theme.colors.colorBorderFocus
+            case .colorBorderFocusInset:
+                return theme.colors.colorBorderFocusInset
             case .colorBorderOnBrandPrimary:
-                return theme.colorBorderOnBrandPrimary
+                return theme.colors.colorBorderOnBrandPrimary
             }
         }
     }

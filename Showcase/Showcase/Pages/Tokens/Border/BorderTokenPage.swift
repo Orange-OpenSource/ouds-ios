@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSComponents
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -21,127 +20,126 @@ struct BorderTokenPage: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    /// A theme to force for this `View` whatever the environnement `theme` is (for UI tests purposes)
-    private let forcedTheme: OUDSTheme?
-    /// A `ColorScheme` to force for this `View` whatever the environnement `colorScheme` is (for UI tests purposes)
-    private let forcedColorScheme: ColorScheme?
-
-    init(forceTo theme: OUDSTheme? = nil, colorScheme: ColorScheme? = nil) {
-        forcedTheme = theme
-        forcedColorScheme = colorScheme
-    }
-
-    /// Computed property for colorScheme
-    /// Returns `forcedColorScheme` if available, otherwise falls back to the environment `colorScheme`
-    /// If neither is available, the default system `colorScheme` will be applied.
-    var activeColorScheme: ColorScheme {
-        forcedColorScheme ?? colorScheme
-    }
-
-    /// Computed property for theme
-    /// Returns `forcedTheme` if available, otherwise falls back to the environment `theme`
-    /// If neither is available, the default `theme` will be applied.
-    var activeTheme: OUDSTheme {
-        forcedTheme ?? theme
-    }
-
-    // MARK: Body
     var body: some View {
-        VStack(alignment: .leading, spacing: activeTheme.spaceFixedMedium) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Section {
-                VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
-                    ShowcaseTokenCode(code: "theme.borderWidthDefault")
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                    ShowcaseCode(code: "theme.borders.borderWidthDefault")
                 }
             }
             Section {
-                VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ForEach(NamedBorderWidth.allCases, id: \.rawValue) { namedWidth in
-                        illustration(for: namedWidth)
+                        IllustrationWidth(namedWidth: namedWidth)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
                 Text("app_tokens_border_width_label")
-                    .typeHeadingLarge(activeTheme)
-                    .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
+                    .typeHeadingLarge(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
 
             Section {
-                VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ForEach(NamedBorderRadius.allCases, id: \.rawValue) { namedRadius in
-                        illustration(for: namedRadius)
+                        IllustrationRadius(namedRadius: namedRadius)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
                 Text("app_tokens_border_radius_label")
-                    .typeHeadingLarge(activeTheme)
-                    .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
+                    .typeHeadingLarge(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
 
             Section {
-                VStack(alignment: .leading, spacing: activeTheme.spaceFixedNone) {
+                VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                     ForEach(NamedBorderStyle.allCases, id: \.rawValue) { namedStyle in
-                        illustration(for: namedStyle)
+                        IllustrationStyle(namedStyle: namedStyle)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
             } header: {
                 Text("app_tokens_border_style_label")
-                    .typeHeadingLarge(activeTheme)
-                    .foregroundStyle(activeTheme.colorContentDefault.color(for: activeColorScheme))
+                    .typeHeadingLarge(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
             }
         }
-        .padding(.horizontal, activeTheme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
-    // MARK: Private helpers
+    struct RectangleBackground: View {
+        @Environment(\.theme) private var theme
+        @Environment(\.colorScheme) private var colorScheme
 
-    private var rectangle: some View {
-        Rectangle()
-            .fill(activeTheme.colorBgSecondary.color(for: activeColorScheme))
-            .frame(width: 64, height: 64)
-    }
-
-    func illustration(for namedWidth: NamedBorderWidth) -> some View {
-        let token = namedWidth.token(from: activeTheme)
-        let name = namedWidth.rawValue
-        let value = String(format: "(%.0f) pt", token)
-
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
-            rectangle
-                .oudsBorder(style: activeTheme.borderStyleDefault,
-                            width: token,
-                            radius: activeTheme.borderRadiusNone,
-                            color: activeTheme.colorBorderDefault)
+        var body: some View {
+            Rectangle()
+                .fill(theme.colors.colorBgSecondary.color(for: colorScheme))
+                .frame(width: 64, height: 64)
         }
     }
 
-    func illustration(for namedRadius: NamedBorderRadius) -> some View {
-        let token = namedRadius.token(from: activeTheme)
-        let name = namedRadius.rawValue
-        let value = String(format: "(%.0f) pt", token)
+    struct IllustrationWidth: View {
+        @Environment(\.theme) private var theme
+        @Environment(\.colorScheme) private var colorScheme
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
-            rectangle
-                .oudsBorder(style: activeTheme.borderStyleDefault,
-                            width: activeTheme.borderWidthDefault,
-                            radius: token,
-                            color: activeTheme.colorBorderDefault)
+        let namedWidth: NamedBorderWidth
+
+        var body: some View {
+            let token = namedWidth.token(from: theme)
+            let name = namedWidth.rawValue
+            let value = String(format: "(%.0f) pt", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                RectangleBackground()
+                    .oudsBorder(style: theme.borders.borderStyleDefault,
+                                width: token,
+                                radius: theme.borders.borderRadiusNone,
+                                color: theme.colors.colorBorderDefault)
+            }
         }
     }
 
-    func illustration(for namedStyle: NamedBorderStyle) -> some View {
-        let token = namedStyle.token(from: activeTheme)
-        let name = namedStyle.rawValue
-        let value = token
+    struct IllustrationRadius: View {
+        @Environment(\.theme) private var theme
+        @Environment(\.colorScheme) private var colorScheme
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value, forceTo: activeTheme, colorScheme: activeColorScheme) {
-            rectangle
-                .oudsBorder(style: token,
-                            width: activeTheme.borderWidthDefault,
-                            radius: activeTheme.borderRadiusNone,
-                            color: activeTheme.colorBorderDefault)
+        let namedRadius: NamedBorderRadius
+
+        var body: some View {
+            let token = namedRadius.token(from: theme)
+            let name = namedRadius.rawValue
+            let value = String(format: "(%.0f) pt", token)
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                RectangleBackground()
+                    .oudsBorder(style: theme.borders.borderStyleDefault,
+                                width: theme.borders.borderWidthDefault,
+                                radius: token,
+                                color: theme.colors.colorBorderDefault)
+            }
+        }
+    }
+
+    struct IllustrationStyle: View {
+        @Environment(\.theme) private var theme
+        @Environment(\.colorScheme) private var colorScheme
+
+        let namedStyle: NamedBorderStyle
+
+        var body: some View {
+            let token = namedStyle.token(from: theme)
+            let name = namedStyle.rawValue
+            let value = token
+
+            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+                RectangleBackground()
+                    .oudsBorder(style: token,
+                                width: theme.borders.borderWidthDefault,
+                                radius: theme.borders.borderRadiusNone,
+                                color: theme.colors.colorBorderDefault)
+            }
         }
     }
 }
@@ -156,21 +154,20 @@ enum NamedBorderRadius: String, CaseIterable {
     func token(from theme: OUDSTheme) -> BorderRadiusSemanticToken {
         switch self {
         case .borderRadiusNone:
-            return theme.borderRadiusNone
+            return theme.borders.borderRadiusNone
         case .borderRadiusDefault:
-            return theme.borderRadiusDefault
+            return theme.borders.borderRadiusDefault
         case .borderRadiusShort:
-            return theme.borderRadiusShort
+            return theme.borders.borderRadiusShort
         case .borderRadiusMedium:
-            return theme.borderRadiusMedium
+            return theme.borders.borderRadiusMedium
         case .borderRadiusTall:
-            return theme.borderRadiusTall
+            return theme.borders.borderRadiusTall
         }
     }
 }
 
 enum NamedBorderWidth: String, CaseIterable {
-
     case borderWidthNone
     case borderWidthDefault
     case borderWidthThin
@@ -183,21 +180,21 @@ enum NamedBorderWidth: String, CaseIterable {
     func token(from theme: OUDSTheme) -> BorderWidthSemanticToken {
         switch self {
         case .borderWidthNone:
-            return theme.borderWidthNone
+            return theme.borders.borderWidthNone
         case .borderWidthDefault:
-            return theme.borderWidthDefault
+            return theme.borders.borderWidthDefault
         case .borderWidthThin:
-            return theme.borderWidthThin
+            return theme.borders.borderWidthThin
         case .borderWidthMedium:
-            return theme.borderWidthMedium
+            return theme.borders.borderWidthMedium
         case .borderWidthThick:
-            return theme.borderWidthThick
+            return theme.borders.borderWidthThick
         case .borderWidthThicker:
-            return theme.borderWidthThicker
+            return theme.borders.borderWidthThicker
         case .borderWidthFocus:
-            return theme.borderWidthFocus
+            return theme.borders.borderWidthFocus
         case .borderWidthFocusInset:
-            return theme.borderWidthFocusInset
+            return theme.borders.borderWidthFocusInset
         }
     }
 }
@@ -209,9 +206,9 @@ enum NamedBorderStyle: String, CaseIterable {
     func token(from theme: OUDSTheme) -> BorderStyleSemanticToken {
         switch self {
         case .borderStyleDefault:
-            return theme.borderStyleDefault
+            return theme.borders.borderStyleDefault
         case .borderStyleDrag:
-            return theme.borderStyleDrag
+            return theme.borders.borderStyleDrag
         }
     }
 }

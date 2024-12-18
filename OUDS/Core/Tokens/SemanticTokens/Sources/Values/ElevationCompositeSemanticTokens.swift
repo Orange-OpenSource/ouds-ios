@@ -25,6 +25,21 @@
 /// This protocol makes themes able to provide and override ``ElevationCompositeSemanticToken``.
 /// ``ElevationCompositeSemanticToken`` refers to ``MultipleElevationCompositeRawTokens``, which contains for light and dark color schemes `ElevationCompositeRawToken`.
 /// This `ElevationCompositeRawToken` is not managed by tokenator yet as it is composed by three properties.
+///
+/// This ``ElevationCompositeSemanticTokens`` protocol contains a set of ``ElevationCompositeSemanticToken``.
+/// They can be applied to views and components using `shadow(elevation:)` and `elevation(for:)`:
+///
+/// ```swift
+///      @Environment(\.theme) var theme
+///      @Environment(\.colorScheme) var colorScheme
+///
+///     // Given you want to apply the elevation token "elevationRaised"
+///     var body: some View {
+///         Rectangle()
+///             .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
+///         // Or use .light or .dark instead of elevation(for:)
+///     }
+/// ```
 public protocol ElevationCompositeSemanticTokens {
 
     var elevationNone: ElevationCompositeSemanticToken { get }

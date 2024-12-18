@@ -49,6 +49,10 @@ brew install swiftlint
 # For SwiftFormat (at least 0.52.4)
 brew install swiftformat
 # or `brew reinstall swiftformat` to get updates if old version installed
+
+# For xcodes (at least 1.5.0)
+brew install xcodesorg/made/xcodes
+# or `brew reinstall xcodesorg/made/xcodes` to get updates if old version installed
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
@@ -161,7 +165,7 @@ Any interface modifications require regenerating the illustrations using the too
 The snapshot tool fetched the reference image to compare it against the current screen and detected no differences, resulting in a success
 
 5. Run the snapshot test (failure):
-    - We will deliberately change the image by setting the `OpacityOpaque` token to `OpacityTransparent` in class `OpacityTokenPage.swift`
+    - We will deliberately change the image by setting the `OpacityOpaque` token to `OpacityInvisible` in class `OpacityTokenPage.swift`
 
       <img width="561" alt="IntentionalTokenModification" src="https://github.com/user-attachments/assets/1d138b7b-2998-40b7-bf39-d9a597ced6c0">
     - Test result failure :
@@ -300,6 +304,13 @@ chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#2
 ``` 
 
 i.e. precise the tokens updated, the *tokenator* generation timestamp and the pull request number.
+If you know what is the design kit revision, add it in the commit body, like:
+
+```text
+chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#225)
+
+Design kit token library V.24.12.18
+``` 
 
 ### About release note and changelog
 
@@ -346,7 +357,7 @@ We use _SwiftLint_ in this project so as to be sure the source code follows defi
 You must run _SwiftLint_ in CLI or using _Xcode_ to be sure you don't keep and submit warnings.
 **In most of cases you must fix warnings, or explain why in your commtis and pull request comments you choose to disable them.**
 
-Today, only in very few cases some SwiftLint warnings are disabled:
+Today, only in very few cases some _SwiftLint_ warnings are disabled at files level:
 - in tests classes
 - in files containing tokens which will be generated
 
@@ -362,6 +373,8 @@ The warnings which can be disabled for test classes files and mocks files:
 - *line_length*: because of length of tokens names
 - *file_length*: because of the amount of tokens to test
 - *type_body_length*: because we can have a lot of tests to do
+- *function_body_length*: because we can have function with a lot of assertions
+- *force_try*: because we can need tod efine some configuration variable we are sure they work (like regxp)
 - *required_deinit*: because we do not need to manage init and deinit of test classe
 - *implicitly_unwrapped_optional*: because for declaration of themes to test we bang!
 

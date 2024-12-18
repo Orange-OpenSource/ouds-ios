@@ -20,7 +20,14 @@ extension XCTestCase {
 
     /// Checks if `value` is between `min` and `max`
     public func XCTAssertBetween(min: Double, _ value: Double, max: Double, file: StaticString = #file, line: UInt = #line) {
-        XCTAssertTrue(min <= value && value <= max)
+        XCTAssertTrue(min <= value && value <= max, "\(value) not between \(min) and \(max)")
+    }
+
+    /// Checks if the `value` is a multiple of `factor`
+    public func XCTAssertMultipleOf(_ value: Int, factor: Int, file: StaticString = #file, line: UInt = #line) {
+        let remaining = value % factor
+        // If multiple, remaining will be 0 OR between 0 and factor if value less than factor
+        XCTAssertTrue(remaining == 0 || remaining < factor, "Current value: \(value) % \(factor) = \(remaining)")
     }
 
     /// Checks if the `value` is a multiple of `factor`
@@ -44,6 +51,16 @@ extension XCTestCase {
         let leftBrightness = hexadecimalStringToInt(left)
         let rightBrightness = hexadecimalStringToInt(right)
         XCTAssertLessThan(leftBrightness, rightBrightness, "Right color is not darker than the left color", file: (file), line: line)
+    }
+
+    /// Asserts if the given `String` matches the given `pattern` regular expression
+    /// - Parameters:
+    ///    - value: The String to test
+    ///    - pattern: The regular expression to apply
+    public func XCTAssertMatches(_ value: String, regexp pattern: NSRegularExpression, file: StaticString = #file, line: UInt = #line) {
+        let range = NSRange(location: 0, length: value.utf16.count)
+        let match = pattern.firstMatch(in: value, options: [], range: range) != nil
+        XCTAssertTrue(match)
     }
 
     // MARK: - Helpers

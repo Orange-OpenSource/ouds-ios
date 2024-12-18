@@ -17,47 +17,61 @@ import SwiftUI
 import XCTest
 
 // swiftlint:disable required_deinit
+// swiftlint:disable type_body_length
+// swiftlint:disable function_body_length
+// swiftlint:disable file_length
 
 /// The aim of this tests class is to look for regressions in **elevation raw tokens**.
+///
 /// Because these values will be at least generated through an external tool, is it not mandatory and relevant to test each token values.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
 /// However, in the semantics of **elevation raw tokens**, there will be some unchanged things like relationships between tokens.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
+///
+/// Here are some rules to follow:
+/// - elevation blur must not be negative value
+/// - elevation Y must not be negative value
+/// - blur values must be all different
+/// - Y values must be all different
+/// - the "bigger" the blur token is, the higher the value is
+/// - the "bigger" the Y token is, the higher the value is
+/// - all composites must be different
+/// - elevations in a same "category" must have darker and darker colors
 final class ElevationRawTokensTests: XCTestCase {
 
     // MARK: - Computed properties
 
     func testRadiusComputation() throws {
         // Given
-        var token = ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorTransparentBlack500)
+        var token = ElevationCompositeRawToken(x: 0, y: 0, blur: 0, color: ColorRawTokens.colorOpacityBlack200)
         // When
         var radius = token.radius
         // Then
         XCTAssertTrue(radius == 0)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 2, blur: 1, color: ColorRawTokens.colorTransparentBlack400)
+        token = ElevationCompositeRawToken(x: 0, y: 2, blur: 1, color: ColorRawTokens.colorOpacityBlack400)
         // When
         radius = token.radius
         // Then
         XCTAssertTrue(radius == 0.5)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 3, blur: 2, color: ColorRawTokens.colorTransparentBlack300)
+        token = ElevationCompositeRawToken(x: 0, y: 3, blur: 2, color: ColorRawTokens.colorOpacityBlack160)
         // When
         radius = token.radius
         // Then
         XCTAssertTrue(radius == 1)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorTransparentBlack500)
+        token = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorOpacityBlack200)
         // When
         radius = token.radius
         // Then
         XCTAssertTrue(radius == 2)
 
         // Given
-        token = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, color: ColorRawTokens.colorTransparentBlack300)
+        token = ElevationCompositeRawToken(x: 0, y: 12, blur: 12, color: ColorRawTokens.colorOpacityBlack160)
         // When
         radius = token.radius
         // Then
@@ -66,8 +80,16 @@ final class ElevationRawTokensTests: XCTestCase {
 
     // MARK: - Primitive token - Elevation - Y
 
+    func testElevationYRawToken100NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationY100 >= 0)
+    }
+
     func testElevationYRawToken0LessThanY100() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationY0, ElevationRawTokens.elevationY100)
+    }
+
+    func testElevationYRawToken200NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationY200 >= 0)
     }
 
     func testElevationYRawToken100LessThanY200() throws {
@@ -78,46 +100,153 @@ final class ElevationRawTokensTests: XCTestCase {
         XCTAssertLessThan(ElevationRawTokens.elevationY200, ElevationRawTokens.elevationY300)
     }
 
+    func testElevationYRawToken300NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationY300 >= 0)
+    }
+
     func testElevationYRawToken300LessThanY400() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationY300, ElevationRawTokens.elevationY400)
+    }
+
+    func testElevationYRawToken400NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationY400 >= 0)
     }
 
     func testElevationYRawToken400LessThanY500() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationY400, ElevationRawTokens.elevationY500)
     }
 
+    func testElevationYRawToken500NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationY500 >= 0)
+    }
+
     func testElevationYRawToken500LessThanY600() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationY500, ElevationRawTokens.elevationY600)
     }
 
+    func testElevationYRawToken600NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationY600 >= 0)
+    }
+
+    func testNonEqualityForElevationY() throws {
+        XCTAssertNotEqual(ElevationRawTokens.elevationY100, ElevationRawTokens.elevationY200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY100, ElevationRawTokens.elevationY300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY100, ElevationRawTokens.elevationY400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY100, ElevationRawTokens.elevationY500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY100, ElevationRawTokens.elevationY600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationY200, ElevationRawTokens.elevationY300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY200, ElevationRawTokens.elevationY400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY200, ElevationRawTokens.elevationY500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY200, ElevationRawTokens.elevationY600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationY300, ElevationRawTokens.elevationY400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY300, ElevationRawTokens.elevationY500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY300, ElevationRawTokens.elevationY600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationY400, ElevationRawTokens.elevationY500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationY400, ElevationRawTokens.elevationY600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationY500, ElevationRawTokens.elevationY600)
+    }
+
     // MARK: - Primitive token - Elevation - Blur
+
+    func testElevationBlurRawToken0NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationBlur0 >= 0)
+    }
 
     func testElevationBlurRawToken0LessThanBlur100() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationBlur0, ElevationRawTokens.elevationBlur100)
+    }
+
+    func testElevationBlurRawToken100NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationBlur100 >= 0)
     }
 
     func testElevationBlurRawToken100LessThanBlur200() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationBlur100, ElevationRawTokens.elevationBlur200)
     }
 
+    func testElevationBlurRawToken200NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationBlur200 >= 0)
+    }
+
     func testElevationBlurRawToken200LessThanBlur300() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationBlur200, ElevationRawTokens.elevationBlur300)
+    }
+
+    func testElevationBlurRawToken300NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationBlur300 >= 0)
     }
 
     func testElevationBlurRawToken300LessThanBlur400() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationBlur300, ElevationRawTokens.elevationBlur400)
     }
 
+    func testElevationBlurRawToken400NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationBlur400 >= 0)
+    }
+
     func testElevationBlurRawToken400LessThanBlur500() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationBlur400, ElevationRawTokens.elevationBlur500)
+    }
+
+    func testElevationBlurRawToken500NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationBlur500 >= 0)
     }
 
     func testElevationBlurRawToken500LessThanBlur600() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationBlur500, ElevationRawTokens.elevationBlur600)
     }
 
+    func testElevationBlurRawToken600NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationBlur600 >= 0)
+    }
+
     func testElevationBlurRawToken600LessThanBlur700() throws {
         XCTAssertLessThan(ElevationRawTokens.elevationBlur600, ElevationRawTokens.elevationBlur700)
+    }
+
+    func testElevationBlurRawToken700NotNegativeValue() throws {
+        XCTAssertTrue(ElevationRawTokens.elevationBlur700 >= 0)
+    }
+
+    func testNonEqualityForElevationBlurs() throws {
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur0, ElevationRawTokens.elevationBlur100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur0, ElevationRawTokens.elevationBlur200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur0, ElevationRawTokens.elevationBlur300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur0, ElevationRawTokens.elevationBlur400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur0, ElevationRawTokens.elevationBlur500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur0, ElevationRawTokens.elevationBlur600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur0, ElevationRawTokens.elevationBlur700)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur100, ElevationRawTokens.elevationBlur200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur100, ElevationRawTokens.elevationBlur300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur100, ElevationRawTokens.elevationBlur400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur100, ElevationRawTokens.elevationBlur500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur100, ElevationRawTokens.elevationBlur600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur100, ElevationRawTokens.elevationBlur700)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur200, ElevationRawTokens.elevationBlur300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur200, ElevationRawTokens.elevationBlur400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur200, ElevationRawTokens.elevationBlur500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur200, ElevationRawTokens.elevationBlur600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur200, ElevationRawTokens.elevationBlur700)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur300, ElevationRawTokens.elevationBlur400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur300, ElevationRawTokens.elevationBlur500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur300, ElevationRawTokens.elevationBlur600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur300, ElevationRawTokens.elevationBlur700)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur400, ElevationRawTokens.elevationBlur500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur400, ElevationRawTokens.elevationBlur600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur400, ElevationRawTokens.elevationBlur700)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur500, ElevationRawTokens.elevationBlur600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur500, ElevationRawTokens.elevationBlur700)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBlur600, ElevationRawTokens.elevationBlur700)
     }
 
     // MARK: - Primitive token - Elevation - Box Shadow
@@ -342,6 +471,698 @@ final class ElevationRawTokensTests: XCTestCase {
         assertCompositeLowerThan(ElevationRawTokens.elevationBottom_5_500, ElevationRawTokens.elevationBottom_6_500)
     }
 
+    func testNonEqualityForElevationComposites() throws {
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_1_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_1_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_1_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_1_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_1_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_1_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_2_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_2_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_2_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_0, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_1_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_1_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_1_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_1_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_1_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_2_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_2_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_2_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_100, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_1_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_1_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_1_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_1_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_2_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_2_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_2_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_200, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_1_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_1_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_1_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_2_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_2_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_2_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_300, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_1_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_1_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_2_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_2_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_2_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_400, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_1_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_2_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_2_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_2_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_500, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_2_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_2_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_2_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_1_600, ElevationRawTokens.elevationBottom_5_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_2_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_2_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_100, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_2_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_200, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_2_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_300, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_2_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_400, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_2_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_500, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_3_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_2_600, ElevationRawTokens.elevationBottom_5_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_3_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_100, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_3_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_200, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_3_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_300, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_3_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_400, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_3_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_500, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_4_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_3_600, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_4_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_100, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_4_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_200, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_4_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_300, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_4_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_400, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_4_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_500, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_5_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_4_600, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_5_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_100, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_5_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_200, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_300, ElevationRawTokens.elevationBottom_5_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_300, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_300, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_300, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_300, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_300, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_300, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_300, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_300, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_400, ElevationRawTokens.elevationBottom_5_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_400, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_400, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_400, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_400, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_400, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_400, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_400, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_500, ElevationRawTokens.elevationBottom_5_600)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_500, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_500, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_500, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_500, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_500, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_500, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_600, ElevationRawTokens.elevationBottom_6_100)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_600, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_600, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_600, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_600, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_5_600, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_100, ElevationRawTokens.elevationBottom_6_200)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_100, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_100, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_100, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_100, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_200, ElevationRawTokens.elevationBottom_6_300)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_200, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_200, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_200, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_300, ElevationRawTokens.elevationBottom_6_400)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_300, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_300, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_400, ElevationRawTokens.elevationBottom_6_500)
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_400, ElevationRawTokens.elevationBottom_6_600)
+
+        XCTAssertNotEqual(ElevationRawTokens.elevationBottom_6_500, ElevationRawTokens.elevationBottom_6_600)
+    }
+
     // MARK: - Helpers
 
     func assertCompositeLowerThan(_ left: ElevationCompositeRawToken, _ right: ElevationCompositeRawToken) {
@@ -351,3 +1172,5 @@ final class ElevationRawTokensTests: XCTestCase {
 }
 
 // swiftlint:enable required_deinit
+// swiftlint:enable type_body_length
+// swiftlint:enable function_body_length

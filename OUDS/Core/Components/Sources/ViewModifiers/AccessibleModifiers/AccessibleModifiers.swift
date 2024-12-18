@@ -38,7 +38,7 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
 
 // MARK: - Request Accessible Focus Modifier
 
-/// `ViewModifier` to apply on a a `View` so as to request the focus after a given time.
+/// `ViewModifier` to apply on a `View` so as to request the focus after a given time.
 struct RequestAccessibleFocusModifier: ViewModifier {
 
     /// Flag to listen saying wether or not the `View` got the focus
@@ -58,6 +58,18 @@ struct RequestAccessibleFocusModifier: ViewModifier {
 
 // MARK: - Accessibility Focusable
 
+/// Value to use as a `AccessibilityFocusState` to request focus.
+///
+/// ```swift
+///     // In your view, add the following property
+///     @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
+///
+///     var body: some View {
+///         SomeView()
+///         .accessibilityFocused($requestFocus, equals: .some(id: element.id))
+///         .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
+///     }
+/// ```
 public enum AccessibilityFocusable: Hashable {
     case none
     case some(id: String)

@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSComponents
 import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
@@ -25,218 +24,127 @@ import XCTest
 /// Tests the UI rendering of each **border token** using reference images
 final class OUDSTokensBorderUITests: XCTestCase {
 
-    // MARK: - Properties
+    /// This function tests all border tokens in the `OrangeTheme` with the `light` color schemes.
+    /// It iterates through all `NamedBorderWidth`, `NamedBorderRafius`, and`NamedBorderStyle` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
+    @MainActor func testAllBorderOrangeThemeLight() {
+        let theme = OrangeTheme()
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testBorderWidth(for: theme, in: interfaceStyle)
+        testBorderRadius(for: theme, in: interfaceStyle)
+        testBorderStyle(for: theme, in: interfaceStyle)
+    }
 
-    private let inverseTheme = InverseTheme()
-    private let orangeTheme = OrangeTheme()
-    private let lightScheme: ColorScheme = .light
-    private let darkScheme: ColorScheme = .dark
+    /// This function tests all border tokens in the `OrangeTheme` with  the `dark` color schemes.
+    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
+    @MainActor func testAllBorderOrangeThemeDark() {
+        let theme = OrangeTheme()
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testBorderWidth(for: theme, in: interfaceStyle)
+        testBorderRadius(for: theme, in: interfaceStyle)
+        testBorderStyle(for: theme, in: interfaceStyle)
+    }
 
-    // MARK: - Orange Theme Light Mode Border Tests
+    /// This function tests all border tokens in the `InverseTheme` with the `light` color schemes.
+    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
+    @MainActor func testAllBorderInverseThemeLight() {
+        let theme = InverseTheme()
+        let interfaceStyle = UIUserInterfaceStyle.light
+        testBorderWidth(for: theme, in: interfaceStyle)
+        testBorderRadius(for: theme, in: interfaceStyle)
+        testBorderStyle(for: theme, in: interfaceStyle)
+    }
 
-    /// This function tests all border tokens in the `OrangeTheme` with the `light` color scheme.
-    /// It iterates through all `NamedBorder` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
-    @MainActor func testAllBordersOrangeThemeLight() {
-        // Create an instance of the page with a forced OrangeTheme and light color scheme
-        let borderPage = BorderTokenPage(forceTo: orangeTheme, colorScheme: lightScheme)
+    /// This function tests all border tokens in the `InverseTheme` with the `dark` color schemes.
+    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
+    /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
+    @MainActor func testAllBorderInverseThemeDark() {
+        let theme = InverseTheme()
+        let interfaceStyle = UIUserInterfaceStyle.dark
+        testBorderWidth(for: theme, in: interfaceStyle)
+        testBorderRadius(for: theme, in: interfaceStyle)
+        testBorderStyle(for: theme, in: interfaceStyle)
+    }
 
-        // Section Width
-        for borderWidth in NamedBorderWidth.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderWidth)
-                .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
+    // MARK: Private test functions for all properties of border token
+
+    /// Tests all border width properties by capturing their snapshots.
+    /// - Parameters:
+    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testBorderWidth(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
+
+        // Iterate through all named tokens
+        for namedToken in NamedBorderWidth.allCases {
+            // Use the `IllustrationWidth` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: theme) {
+                BorderTokenPage.IllustrationWidth(namedWidth: namedToken)
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderWidth.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
-        }
+            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
-        // Section Radius
-        for borderRadius in NamedBorderRadius.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderRadius)
-                .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderRadius.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
-        }
-
-        // Section Style
-        for borderStyle in NamedBorderStyle.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderStyle)
-                .background(orangeTheme.colorBgPrimary.color(for: lightScheme))
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderStyle.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
-    // MARK: - Orange Theme Dark Mode Border Tests
+    /// Tests all border radius properties by capturing their snapshots.
+    /// - Parameters:
+    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testBorderRadius(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
-    /// This function tests all border tokens in the `OrangeTheme` with the `dark` color scheme.
-    /// It iterates through all `NamedBorder` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
-    @MainActor func testAllBordersOrangeThemeDark() {
-        // Create an instance of the page with a forced OrangeTheme and dark color scheme
-        let borderPage = BorderTokenPage(forceTo: orangeTheme, colorScheme: darkScheme)
-
-        // Section Width
-        for borderWidth in NamedBorderWidth.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderWidth)
-                .background(orangeTheme.colorBgPrimary.color(for: darkScheme))
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderWidth.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
-        }
-
-        // Section Radius
-        for borderRadius in NamedBorderRadius.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderRadius)
-                .background(orangeTheme.colorBgPrimary.color(for: darkScheme))
+        // Iterate through all named tokens
+        for namedToken in NamedBorderRadius.allCases {
+            // Use the `IllustrationWidth` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: theme) {
+                BorderTokenPage.IllustrationRadius(namedRadius: namedToken)
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderRadius.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
-        }
+            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
-        // Section Style
-        for borderStyle in NamedBorderStyle.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderStyle)
-                .background(orangeTheme.colorBgPrimary.color(for: darkScheme))
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderStyle.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 
-    // MARK: - Inverse Theme Light Mode Border Tests
+    /// Tests all border style properties by capturing their snapshots.
+    /// - Parameters:
+    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
+    @MainActor private func testBorderStyle(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
-    /// This function tests all border tokens in the `InverseTheme` with the `light` color scheme.
-    /// It iterates through all `NamedBorder` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
-    @MainActor func testAllBordersInverseThemeLight() {
-        // Create an instance of the page with a forced InverseTheme and light color scheme
-        let borderPage = BorderTokenPage(forceTo: inverseTheme, colorScheme: lightScheme)
-
-        // Section Width
-        for borderWidth in NamedBorderWidth.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderWidth)
-                .background(inverseTheme.colorBgPrimary.color(for: lightScheme))
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderWidth.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
-        }
-
-        // Section Radius
-        for borderRadius in NamedBorderRadius.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderRadius)
-                .background(inverseTheme.colorBgPrimary.color(for: lightScheme))
+        // Iterate through all named tokens
+        for namedToken in NamedBorderStyle.allCases {
+            // Use the `IllustrationWidth` struct to test a single illustration
+            let illustration = OUDSThemeableView(theme: theme) {
+                BorderTokenPage.IllustrationStyle(namedStyle: namedToken)
+                    .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+            }
 
             // Encapsulate the element in a UIHostingController for snapshot testing
             let hostingVC = UIHostingController(rootView: illustration)
 
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderRadius.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
-        }
+            // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
+            let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
+            let name = namedToken.rawValue
 
-        // Section Style
-        for borderStyle in NamedBorderStyle.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderStyle)
-                .background(inverseTheme.colorBgPrimary.color(for: lightScheme))
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderStyle.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .light)), named: snapshotName)
-        }
-    }
-
-    // MARK: - Inverse Theme Dark Mode Border Tests
-
-    /// This function tests all border tokens in the `InverseTheme` with the `dark` color scheme.
-    /// It iterates through all `NamedElevation` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the border, theme, and color scheme.
-    @MainActor func testAllBordersInverseThemeDark() {
-        /// Create an instance of the page with a forced InverseTheme and dark color scheme
-        let borderPage = BorderTokenPage(forceTo: inverseTheme, colorScheme: darkScheme)
-
-        // Section Width
-        for borderWidth in NamedBorderWidth.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderWidth)
-                .background(inverseTheme.colorBgPrimary.color(for: darkScheme))
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderWidth.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
-        }
-
-        // Section Radius
-        for borderRadius in NamedBorderRadius.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderRadius)
-                .background(inverseTheme.colorBgPrimary.color(for: darkScheme))
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderRadius.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
-        }
-
-        // Section Style
-        for borderStyle in NamedBorderStyle.allCases {
-            // Use the `illustration(for:)` method to test a single illustration
-            let illustration = borderPage.illustration(for: borderStyle)
-                .background(inverseTheme.colorBgPrimary.color(for: darkScheme))
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
-            // Capture the snapshot of the illustration with the correct theme and color scheme
-            let snapshotName = "\(borderStyle.rawValue)"
-            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: .dark)), named: snapshotName)
+            // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
+            assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
         }
     }
 }

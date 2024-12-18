@@ -16,30 +16,30 @@ import OUDSTokensSemantic
 
 extension NamedSize {
     enum IconDecorative: String, CaseIterable {
-        case sizeIconDecorativeShortest
-        case sizeIconDecorativeShorter
-        case sizeIconDecorativeShort
-        case sizeIconDecorativeMedium
-        case sizeIconDecorativeTall
-        case sizeIconDecorativeTaller
-        case sizeIconDecorativeTallest
+        case sizeIconDecorative2xs
+        case sizeIconDecorativeXs
+        case sizeIconDecorativeSm
+        case sizeIconDecorativeMd
+        case sizeIconDecorativeLg
+        case sizeIconDecorativeXl
+        case sizeIconDecorative2xl
 
         func token(from theme: OUDSTheme) -> SizeSemanticToken {
             switch self {
-            case .sizeIconDecorativeShortest:
-                return theme.sizeIconDecorativeShortest
-            case .sizeIconDecorativeShorter:
-                return theme.sizeIconDecorativeShorter
-            case .sizeIconDecorativeShort:
-                return theme.sizeIconDecorativeShort
-            case .sizeIconDecorativeMedium:
-                return theme.sizeIconDecorativeMedium
-            case .sizeIconDecorativeTall:
-                return theme.sizeIconDecorativeTall
-            case .sizeIconDecorativeTaller:
-                return theme.sizeIconDecorativeTaller
-            case .sizeIconDecorativeTallest:
-                return theme.sizeIconDecorativeTallest
+            case .sizeIconDecorative2xs:
+                return theme.sizes.sizeIconDecorative2xs
+            case .sizeIconDecorativeXs:
+                return theme.sizes.sizeIconDecorativeXs
+            case .sizeIconDecorativeSm:
+                return theme.sizes.sizeIconDecorativeSm
+            case .sizeIconDecorativeMd:
+                return theme.sizes.sizeIconDecorativeMd
+            case .sizeIconDecorativeLg:
+                return theme.sizes.sizeIconDecorativeLg
+            case .sizeIconDecorativeXl:
+                return theme.sizes.sizeIconDecorativeXl
+            case .sizeIconDecorative2xl:
+                return theme.sizes.sizeIconDecorative2xl
             }
         }
     }

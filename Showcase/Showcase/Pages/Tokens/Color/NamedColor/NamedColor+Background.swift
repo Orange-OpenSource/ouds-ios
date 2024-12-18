@@ -17,75 +17,21 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Background: String, CaseIterable {
+        case colorBgEmphasized
         case colorBgPrimary
         case colorBgSecondary
         case colorBgTertiary
-        case colorBgEmphasized
-        case colorBgBrandPrimary
-        case colorBgStatusNeutral
-        case colorBgStatusNeutralOnBgEmphasized
-        case colorBgStatusPositiveMuted
-        case colorBgStatusPositiveMutedOnBgEmphasized
-        case colorBgStatusPositiveEmphasized
-        case colorBgStatusInfoMuted
-        case colorBgStatusInfoMutedOnBgEmphasized
-        case colorBgStatusInfoEmphasized
-        case colorBgStatusWarningMuted
-        case colorBgStatusWarningMutedOnBgEmphasized
-        case colorBgStatusWarningEmphasized
-        case colorBgStatusNegativeMuted
-        case colorBgStatusNegativeMutedOnBgEmphasized
-        case colorBgStatusNegativeEmphasized
-        case colorBgStatusAccentMuted
-        case colorBgStatusAccentMutedOnBgEmphasized
-        case colorBgStatusAccentEmphasized
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
-            case .colorBgPrimary:
-                return theme.colorBgPrimary
-            case .colorBgSecondary:
-                return theme.colorBgSecondary
-            case .colorBgTertiary:
-                return theme.colorBgTertiary
             case .colorBgEmphasized:
-                return theme.colorBgEmphasized
-            case .colorBgBrandPrimary:
-                return theme.colorBgBrandPrimary
-            case .colorBgStatusNeutral:
-                return theme.colorBgStatusNeutral
-            case .colorBgStatusNeutralOnBgEmphasized:
-                return theme.colorBgStatusNeutralOnBgEmphasized
-            case .colorBgStatusPositiveMuted:
-                return theme.colorBgStatusPositiveMuted
-            case .colorBgStatusPositiveMutedOnBgEmphasized:
-                return theme.colorBgStatusPositiveMutedOnBgEmphasized
-            case .colorBgStatusPositiveEmphasized:
-                return theme.colorBgStatusPositiveEmphasized
-            case .colorBgStatusInfoMuted:
-                return theme.colorBgStatusInfoMuted
-            case .colorBgStatusInfoMutedOnBgEmphasized:
-                return theme.colorBgStatusInfoMutedOnBgEmphasized
-            case .colorBgStatusInfoEmphasized:
-                return theme.colorBgStatusInfoEmphasized
-            case .colorBgStatusWarningMuted:
-                return theme.colorBgStatusWarningMuted
-            case .colorBgStatusWarningMutedOnBgEmphasized:
-                return theme.colorBgStatusWarningMutedOnBgEmphasized
-            case .colorBgStatusWarningEmphasized:
-                return theme.colorBgStatusWarningEmphasized
-            case .colorBgStatusNegativeMuted:
-                return theme.colorBgStatusNegativeMuted
-            case .colorBgStatusNegativeMutedOnBgEmphasized:
-                return theme.colorBgStatusNegativeMutedOnBgEmphasized
-            case .colorBgStatusNegativeEmphasized:
-                return theme.colorBgStatusNegativeEmphasized
-            case .colorBgStatusAccentMuted:
-                return theme.colorBgStatusAccentMuted
-            case .colorBgStatusAccentMutedOnBgEmphasized:
-                return theme.colorBgStatusAccentMutedOnBgEmphasized
-            case .colorBgStatusAccentEmphasized:
-                return theme.colorBgStatusAccentEmphasized
+                return theme.colors.colorBgEmphasized
+            case .colorBgPrimary:
+                return theme.colors.colorBgPrimary
+            case .colorBgSecondary:
+                return theme.colors.colorBgSecondary
+            case .colorBgTertiary:
+                return theme.colors.colorBgTertiary
             }
         }
     }

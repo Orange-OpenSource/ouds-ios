@@ -38,7 +38,7 @@ public protocol ButtonsComponentTokens {
     var buttonWidth: SizeSemanticToken { get }
     var buttonHeight: SizeSemanticToken { get }
 
-    var buttonTypography: MultipleTypographyCompositeRawTokens { get }
+    var buttonFont: MultipleFontCompositeRawTokens { get }
 }
 
 // swiftlint:enable missing_docs

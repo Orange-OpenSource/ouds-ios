@@ -4,6 +4,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.8.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.7.0...0.8.0) - 2024-12-18
+
+### Added
+
+- [Library] New architecture with tokens provider ([#79](https://github.com/Orange-OpenSource/ouds-ios/issues/79))
+- [DemoApp] Prepare new architecture to add components illustration ([#328](https://github.com/Orange-OpenSource/ouds-ios/issues/328))
+
+### Changed
+
+- [Tool] Update `net-http` gem from 0.5.0 to 0.6.0
+- [Tool] Update `SwiftLint` pod from v0.57.0 to v0.57.1
+- [Tool] Update `SwiftFormat/CLI` pod from v0.54.6 to v0.55.3
+- [Tool] Update `fastlane` gem from v2.225.0 to v2.226.0
+- [Library] Update `FontSemanticTokens` (tokenator *20241213075501*)
+- [Library] Update `FontSemanticTokens` (tokenator *20241211115813*)
+- [Library] Update `FontRawTokens` (tokenator *20241211101443*)
+- [Tool] Migrate from `xcode_install` to `xcodes` in Fastfile, freeze Xcode version (16.0)
+- [Library] Rename `Typography*` tokens and elements to `Font*` ([#322](https://github.com/Orange-OpenSource/ouds-ios/issues/322))
+- [Library] Update `ColorSemanticTokens` (tokenator *20241204111709*)
+- [Library] Update `SpaceSemanticTokens` (tokenator *20241204110127*)
+- [Library] Rename `opacityTransparent` opacity semantic token to `opacityInvisible`
+- [Library] Update `OpacitySemanticTokens` and `OpacityRawTokens` tokens (tokenator *20241204110957*)
+- [Library] Update `OrangeBrandColorRawTokens` tokens (tokenator *20241204111119*)
+- [Library] Update `SizeSemanticTokens` tokens (tokenator *20241204110236*)
+- [Library] Rename any `sizeIcon**` size semantic tokens applying "T-shirt sizes" template
+- [Library] Update `ElevationSemanticTokens` and `ColorRawTokens` tokens (tokenator *20241204111249*)
+- [Library] Rename any `colorTransparent*` color semantic tokens to `colorOpacity*`
+- [DemoApp] Reactor UI test to use theme in environment ([#299](https://github.com/Orange-OpenSource/ouds-ios/issues/299))
+
+### Removed
+
+- [Library] Font raw tokens `fontFamilyBrandDefault`, `fontFamilyBrandTV`, `fontFamilySystemArial`, `fontFamilySystemHelvetica`, `fontFamilySystemNotoSans`, `fontFamilySystemSFPro`, `fontFamilySystemRoboto`, `fontFamilyMonospaceMonaco`, `fontFamilyMonospaceCourierNew`, `fontFamilySystemArial`
+- [Library] Space semantic tokens `*WithIcon*`, `*WithArrow*` 
+- [Library] Elevation semantic tokens `elevationBlurOverlayDefault`, `elevationBlurOverlayEmphasized`, `elevationXOverlayDefault`, `elevationXOverlayEmphasized`, `elevationYOverlayDefault`, `elevationYOverlayEmphasized`, `elevationColorOverlayDefaultLight`, `elevationColorOverlayEmphasizedLight`, `elevationColorOverlayDefaultDark`, `elevationColorOverlayEmphasizedDark`
+
 ## [0.7.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.6.0...0.7.0) - 2024-11-29
 
 ### Added
@@ -15,9 +50,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DemoApp] Update space tokens screen ([#275](https://github.com/Orange-OpenSource/ouds-ios/issues/275))
+- [Library] Update `BorderRawTokens` and `BorderSemanticTokens` tokens (tokenator *20241204110708*)
 - [Library] Update `GridSemanticTokens` tokens (tokenator *20241129080807*)
 - [Library] Types `GridExtraCompactSemanticToken`, `GridCompactSemanticToken` and `GridRegularSemanticToken` replaced by `GridSemanticToken` to make tokenator updates integration easier 
-- [DemoApp] Update space tokens screen ([#275](https://github.com/Orange-OpenSource/ouds-ios/issues/275))
 - [Library] Update `GridRawTokens` tokens (tokenator *20241128161629*)
 - [DemoApp] Update color tokens screen 
 - [Library] Update `ColorSemanticTokens` tokens (tokenator *20241127112301*)

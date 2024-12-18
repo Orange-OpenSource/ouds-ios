@@ -36,6 +36,7 @@ extension BorderRawTokens {
     public static let borderWidth50: BorderWidthRawToken = borderBase * 0.5 // 2
     public static let borderWidth75: BorderWidthRawToken = borderBase * 0.75 // 3
     public static let borderWidth100: BorderWidthRawToken = borderBase * 1 // 4
+    public static let borderWidth125: BorderWidthRawToken = borderBase * 1.25 // 5
     public static let borderWidth150: BorderWidthRawToken = borderBase * 1.5 // 6
     public static let borderWidth200: BorderWidthRawToken = borderBase * 2 // 8
 }

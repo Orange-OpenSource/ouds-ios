@@ -14,14 +14,14 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` applying a custom font on a `View`
-/// Note that `CustomFontModifier` expects to lad a custom external font and not any font embeded in the device.
+/// A `ViewModifier` applying a custom font on a `View`.
+/// Note that `CustomFontModifier` expects to load a custom external font and not any font embeded in the device.
 struct CustomFontModifier: ViewModifier {
 
     // MARK: - Properties
 
-    /// The typography style to apply
-    let token: MultipleTypographyCompositeRawTokens
+    /// The font style to apply
+    let token: MultipleFontCompositeRawTokens
 
     /// The name of the custom font family, should be registered previously in the app, like "Luciole".
     let fontFamilyName: String

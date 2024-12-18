@@ -15,17 +15,18 @@ import SwiftUI
 
 struct TokensPage: View {
 
-    let tokenElements: [TokenElement] = [
+    let tokenElements: [ShowcaseElement] = [
         BorderTokenElement(),
         ColorTokenElement(),
         DimensionTokenElement(),
         ElevationTokenElement(),
         GridTokenElement(),
         OpacityTokenElement(),
-        TypographyTokenElement(),
+        FontTokenElement(),
     ]
 
     var body: some View {
         ShowcaseElementsPage(elements: tokenElements)
+            .oudsNavigationTitle("app_bottomBar_tokens_label")
     }
 }

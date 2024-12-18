@@ -17,7 +17,7 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the `MultipleSpaceSemanticTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+/// To ensure the `MultipleSpaceSemanticTokens` is tested as a provider of semantic tokens for compact and regular size classes.
 final class MultipleSpaceSemanticTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined

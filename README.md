@@ -15,7 +15,9 @@
 ## Table of contents
 
 - [Status](#status)
+- [OUDS](#ouds)
 - [Content](#content)
+- [Import the library](#import-the-library)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
@@ -40,7 +42,47 @@ This repository contains the OUDS iOS library that provides Orange iOS component
 
 You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/), and also the [whole design system](https://unified-design-system.orange.com/).
 
-Documentation is powered by [GitHub Pages](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
+Details about the project are also [available in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki).
+
+## Import the library
+
+Add in *Xcode* the Swift package dependency `https://github.com/Orange-OpenSource/ouds-ios`.
+
+Then add in your project the modules you need within:
+- `OUDSModules` containing OUDS modules with features
+- `OUDSComponents` containing all components embeded also inside _modules_
+- `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_
+- `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_
+- `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_
+- `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_
+- `OUDSTokensSemantic` providing _semantic tokens_ 
+- `OUDSTokensRaw` providing _raw tokens_
+- `OUDSFoundations` providing low level and utils objects.
+
+You must define the theme you use in your app root view:
+
+```swift
+import OUDS  // To get OUDSThemeableView
+import OUDSThemeOrange // To get OrangeTheme
+import SwiftUI
+
+@main
+struct YourApp: App {
+    var body: some Scene {
+       WindowGroup {
+          OUDSThemeableView(theme: OrangeTheme()) {
+                // Your root view
+          }
+       }
+    }
+}
+```
+
+Then get the current thme using `@Environment(\.theme) var theme` and use it! You can also use the moudles and the components exposed by the library.
+
+## OUDS
+
+OUDS means "Orange Unified Design System". This is a new design system, again, but _unified_, trying to merge all requirements of Orange brands and affiliates so as to provide a unique design system, unified across all platforms and for all countries, companies, users and apps. Guidelines for TV, Android, iOS and web environments will be merged in a "cohesive" approach, and any Orange-related softwares including brand apps like Parnasse and Sosh, *Orange Innovation Cup* apps and Orange countries and affiliates app will use this project in the future. The project is open source and topics like accessibility and ecodesign are also managed. It should replace internal frameworks and also [ODS](https://github.com/Orange-OpenSource/ods-ios) in the near future.
 
 ## Bugs and feature requests
 

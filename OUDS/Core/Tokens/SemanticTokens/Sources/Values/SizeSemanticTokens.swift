@@ -16,7 +16,6 @@
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
-// swiftlint:disable identifier_name
 
 /// This is a group of semantic tokens for **sizing**.
 /// It defines all ``SizeSemanticToken`` a theme must have.
@@ -25,54 +24,54 @@ public protocol SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    var sizeIconWithHeadingXlargeSizeShortMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeShortTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeTallMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingXlargeSizeTallTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingXlargeSizeSmMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingXlargeSizeSmTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingXlargeSizeMdMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingXlargeSizeMdTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingXlargeSizeLgMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingXlargeSizeLgTablet: SizeSemanticToken { get }
 
-    var sizeIconWithHeadingLargeSizeShortMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeShortTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeTallMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingLargeSizeTallTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingLargeSizeSmMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingLargeSizeSmTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingLargeSizeMdMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingLargeSizeMdTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingLargeSizeLgMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingLargeSizeLgTablet: SizeSemanticToken { get }
 
-    var sizeIconWithHeadingMediumSizeShortMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeShortTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeTallMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingMediumSizeTallTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingMediumSizeSmMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingMediumSizeSmTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingMediumSizeMdMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingMediumSizeMdTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingMediumSizeLgMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingMediumSizeLgTablet: SizeSemanticToken { get }
 
-    var sizeIconWithHeadingSmallSizeShortMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeShortTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeTallMobile: SizeSemanticToken { get }
-    var sizeIconWithHeadingSmallSizeTallTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingSmallSizeSmMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingSmallSizeSmTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingSmallSizeMdMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingSmallSizeMdTablet: SizeSemanticToken { get }
+    var sizeIconWithHeadingSmallSizeLgMobile: SizeSemanticToken { get }
+    var sizeIconWithHeadingSmallSizeLgTablet: SizeSemanticToken { get }
 
-    var sizeIconWithBodyLargeSizeShortMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeShortTablet: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeTallMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyLargeSizeTallTablet: SizeSemanticToken { get }
+    var sizeIconWithBodyLargeSizeSmMobile: SizeSemanticToken { get }
+    var sizeIconWithBodyLargeSizeSmTablet: SizeSemanticToken { get }
+    var sizeIconWithBodyLargeSizeMdMobile: SizeSemanticToken { get }
+    var sizeIconWithBodyLargeSizeMdTablet: SizeSemanticToken { get }
+    var sizeIconWithBodyLargeSizeLgMobile: SizeSemanticToken { get }
+    var sizeIconWithBodyLargeSizeLgTablet: SizeSemanticToken { get }
 
-    var sizeIconWithBodyMediumSizeShortMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeShortTablet: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeTallMobile: SizeSemanticToken { get }
-    var sizeIconWithBodyMediumSizeTallTablet: SizeSemanticToken { get }
+    var sizeIconWithBodyMediumSizeSmMobile: SizeSemanticToken { get }
+    var sizeIconWithBodyMediumSizeSmTablet: SizeSemanticToken { get }
+    var sizeIconWithBodyMediumSizeMdMobile: SizeSemanticToken { get }
+    var sizeIconWithBodyMediumSizeMdTablet: SizeSemanticToken { get }
+    var sizeIconWithBodyMediumSizeLgMobile: SizeSemanticToken { get }
+    var sizeIconWithBodyMediumSizeLgTablet: SizeSemanticToken { get }
 
-    var sizeIconWithBodySmallSizeShortMobile: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeShortTablet: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeMediumMobile: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeMediumTablet: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeTallMobile: SizeSemanticToken { get }
-    var sizeIconWithBodySmallSizeTallTablet: SizeSemanticToken { get }
+    var sizeIconWithBodySmallSizeSmMobile: SizeSemanticToken { get }
+    var sizeIconWithBodySmallSizeSmTablet: SizeSemanticToken { get }
+    var sizeIconWithBodySmallSizeMdMobile: SizeSemanticToken { get }
+    var sizeIconWithBodySmallSizeMdTablet: SizeSemanticToken { get }
+    var sizeIconWithBodySmallSizeLgMobile: SizeSemanticToken { get }
+    var sizeIconWithBodySmallSizeLgTablet: SizeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Max width typography
 
@@ -101,34 +100,33 @@ public protocol SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    var sizeIconWithLabelXlargeSizeShort: SizeSemanticToken { get }
-    var sizeIconWithLabelXlargeSizeMedium: SizeSemanticToken { get }
-    var sizeIconWithLabelXlargeSizeTall: SizeSemanticToken { get }
+    var sizeIconWithLabelXlargeSizeSm: SizeSemanticToken { get }
+    var sizeIconWithLabelXlargeSizeMd: SizeSemanticToken { get }
+    var sizeIconWithLabelXlargeSizeLg: SizeSemanticToken { get }
 
-    var sizeIconWithLabelLargeSizeShorter: SizeSemanticToken { get }
-    var sizeIconWithLabelLargeSizeShort: SizeSemanticToken { get }
-    var sizeIconWithLabelLargeSizeMedium: SizeSemanticToken { get }
-    var sizeIconWithLabelLargeSizeTall: SizeSemanticToken { get }
-    var sizeIconWithLabelLargeSizeTaller: SizeSemanticToken { get }
+    var sizeIconWithLabelLargeSizeXs: SizeSemanticToken { get }
+    var sizeIconWithLabelLargeSizeSm: SizeSemanticToken { get }
+    var sizeIconWithLabelLargeSizeMd: SizeSemanticToken { get }
+    var sizeIconWithLabelLargeSizeLg: SizeSemanticToken { get }
+    var sizeIconWithLabelLargeSizeXl: SizeSemanticToken { get }
 
-    var sizeIconWithLabelMediumSizeShort: SizeSemanticToken { get }
-    var sizeIconWithLabelMediumSizeMedium: SizeSemanticToken { get }
-    var sizeIconWithLabelMediumSizeTall: SizeSemanticToken { get }
+    var sizeIconWithLabelMediumSizeSm: SizeSemanticToken { get }
+    var sizeIconWithLabelMediumSizeMd: SizeSemanticToken { get }
+    var sizeIconWithLabelMediumSizeLg: SizeSemanticToken { get }
 
-    var sizeIconWithLabelSmallSizeShort: SizeSemanticToken { get }
-    var sizeIconWithLabelSmallSizeMedium: SizeSemanticToken { get }
-    var sizeIconWithLabelSmallSizeTall: SizeSemanticToken { get }
+    var sizeIconWithLabelSmallSizeSm: SizeSemanticToken { get }
+    var sizeIconWithLabelSmallSizeMd: SizeSemanticToken { get }
+    var sizeIconWithLabelSmallSizeLg: SizeSemanticToken { get }
 
     // MARK: - Semantic token - Sizing - Icon decorative
 
-    var sizeIconDecorativeShortest: SizeSemanticToken { get }
-    var sizeIconDecorativeShorter: SizeSemanticToken { get }
-    var sizeIconDecorativeShort: SizeSemanticToken { get }
-    var sizeIconDecorativeMedium: SizeSemanticToken { get }
-    var sizeIconDecorativeTall: SizeSemanticToken { get }
-    var sizeIconDecorativeTaller: SizeSemanticToken { get }
-    var sizeIconDecorativeTallest: SizeSemanticToken { get }
+    var sizeIconDecorative2xs: SizeSemanticToken { get }
+    var sizeIconDecorativeXs: SizeSemanticToken { get }
+    var sizeIconDecorativeSm: SizeSemanticToken { get }
+    var sizeIconDecorativeMd: SizeSemanticToken { get }
+    var sizeIconDecorativeLg: SizeSemanticToken { get }
+    var sizeIconDecorativeXl: SizeSemanticToken { get }
+    var sizeIconDecorative2xl: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
-// swiftlint:enable identifier_name

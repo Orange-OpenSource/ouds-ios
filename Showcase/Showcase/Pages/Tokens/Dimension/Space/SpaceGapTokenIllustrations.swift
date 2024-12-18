@@ -15,12 +15,12 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Gap Inline Category
+// MARK: - Gap Inline property
 
-struct GapInlineCategory: View {
+struct GapInlineProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapInline.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.GapInline.allCases) {
             SpaceHeaderDescription(
                 firstText: "app_tokens_dimension_space_header_text",
                 secondText: "app_tokens_dimension_space_header_text",
@@ -38,58 +38,12 @@ struct GapInlineCategory: View {
     }
 }
 
-// MARK: - Gap Inline With Icon Category
+// MARK: - Gap Stack property
 
-struct GapInlineWithIconCategory: View {
-
-    var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapInlineWithIcon.allCases) {
-            SpaceHeaderDescription(
-                text: "app_tokens_dimension_space_header_text",
-                iconAsset: .icon,
-                paddings: .trailing)
-        } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .leading( .icon))
-        }
-    }
-}
-
-// MARK: - Gap Inline With Arrow Category
-
-struct GapInlineWithArrowCategory: View {
+struct GapStackProperty: View {
 
     var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapInlineWithArrow.allCases) {
-            SpaceHeaderDescription(
-                text: "app_tokens_dimension_space_header_text",
-                iconAsset: .arrow,
-                paddings: .trailing)
-        } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .leading( .arrow))
-        }
-    }
-}
-
-// MARK: - Gap Stack Category
-
-struct GapStackCategory: View {
-
-    var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapStack.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.GapStack.allCases) {
             SpaceHeaderDescription(
                 firstText: "app_tokens_dimension_space_header_text",
                 secondText: "app_tokens_dimension_space_header_text",
@@ -103,29 +57,6 @@ struct GapStackCategory: View {
         let token: SpaceSemanticToken
         var body: some View {
             SpaceCommonIllustration(dimension: token, padding: .centerVerticaly)
-        }
-    }
-}
-
-// MARK: - Gap Stack With Icon Category
-
-struct GapStackWithIconCategory: View {
-
-    var body: some View {
-        SpaceTokenCategory(namedTokens: NamedSpace.GapStackWithIcon.allCases) {
-            SpaceHeaderDescription(
-                text: "app_tokens_dimension_space_header_text",
-                iconAsset: .icon,
-                paddings: .bottom)
-        } illustration: { token in
-            Illustration(token: token)
-        }
-    }
-
-    struct Illustration: View {
-        let token: SpaceSemanticToken
-        var body: some View {
-            SpaceCommonIllustration(dimension: token, padding: .bottom(.icon))
         }
     }
 }

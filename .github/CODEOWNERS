@@ -18,8 +18,8 @@
 
 /.github/ @pylapp
 
-/OUDS/ @pylapp @ludovic35 @Tayebsed93
-/Showcase/ @pylapp @ludovic35 @Tayebsed93
+/OUDS/ @pylapp @ludovic35
+/Showcase/ @pylapp @ludovic35
 
 /docs_release/ @pylapp @ludovic35
 
@@ -33,7 +33,7 @@
 
 .swiftlint.yml @pylapp @ludovic35
 
-CHANGELOG.md @ludovic35 @pylapp @Tayebsed93
+CHANGELOG.md @ludovic35 @pylapp
 
 Gemfile @pylapp @ludovic35
 Gemfile.lock @pylapp @ludovic35

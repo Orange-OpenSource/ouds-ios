@@ -26,23 +26,23 @@ struct GridTokenPage: View {
 
     var body: some View {
         Group {
-            VStack(alignment: .leading, spacing: theme.spaceFixedMedium) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
                 Image(decorative: "il_tokens_grid_column_margin")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .background(theme.colorBgEmphasized.color(for: colorScheme))
+                    .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
                 Image(decorative: "il_tokens_grid_min_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .background(theme.colorBgEmphasized.color(for: colorScheme))
+                    .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
                 Image(decorative: "il_tokens_grid_max_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .background(theme.colorBgEmphasized.color(for: colorScheme))
+                    .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
             }
 
             Section {
-                ShowcaseTokenCode(code: "theme.gridColumnCount(for: horizontalSizeClass)")
+                ShowcaseCode(code: "theme.gridColumnCount(for: horizontalSizeClass)")
             }
 
             Section { illustrationForGridTokens() } header: {
@@ -50,13 +50,13 @@ struct GridTokenPage: View {
                     .showcaseSectionHeaderStyle()
             }
         }
-        .padding(.horizontal, theme.spaceFixedMedium)
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
     // MARK: Private helpers
 
     private func illustrationForGridTokens() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             ForEach(NamedGrid.allCases, id: \.rawValue) { namedGrid in
                 illustration(for: namedGrid)
             }

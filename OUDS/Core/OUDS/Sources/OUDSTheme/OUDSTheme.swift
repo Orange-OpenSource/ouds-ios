@@ -20,30 +20,106 @@ import OUDSTokensSemantic
 /// Any properties of an overridable theme should be defined so as to provide defaults values.
 /// We allow this theme to be derivated and be overriden.
 ///
-/// `OUDSTheme` can be seen as a kind of "abstract class" in _object oriented paradigm_.
+/// ``OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_.
 ///
 /// Because `OUDSTheme` is not a *final* class, its type cannot be seen as `Sendable`, that is the reason why this conformity is unchecked.
 ///
 /// **Warning: You are not supposed to use this abstract default theme directly. Please prefer `OrangeTheme` instead**
 open class OUDSTheme: @unchecked Sendable {
 
+    // MARK: - Properties
+
+    /// All color semantic tokens exposed in one object
+    public let colors: AllColorSemanticTokensProvider
+
+    /// All border semantic tokens exposed in one object
+    public let borders: AllBorderSemanticTokensProvider
+
+    /// All elevation semantic tokens exposed in one object
+    public let elevations: AllElevationSemanticTokensProvider
+
     /// A theme can have a custom font which is not the system font
-    public let customFontFamily: TypographyFontFamilySemanticToken?
+    public let fontFamily: FontFamilySemanticToken?
+
+    /// All font semantic tokens exposed in one object
+    public let fonts: AllFontSemanticTokensProvider
+
+    /// All grid semantic tokens exposed in one object
+    public let grids: AllGridSemanticTokensProvider
+
+    /// All opacity semantic tokens exposed in one object
+    public let opacities: AllOpacitySemanticTokensProvider
+
+    /// All size semantic tokens exposed in one object
+    public let sizes: AllSizeSemanticTokensProvider
+
+    /// All size semantic tokens exposed in one object
+    public let spaces: AllSpaceSemanticTokensProvider
+
+    // TODO: Add components tokens
+
+    // MARK: - Initializers
 
     /// Defines a basic kind of abstract theme to subclass then.
     /// No custom font family will be used.
-    public convenience init() {
-        self.init(customFontFamily: nil)
+    /// - Parameters:
+    ///    - colors: An object providing all the color semantic tokens
+    ///    - borders: An object providing all the border semantic tokens
+    ///    - elevations: An object providing all the elevation semantic tokens
+    ///    - fonts: An object providing all the font semantic tokens
+    ///    - grids: An object providing all the grid semantic tokens
+    ///    - opacities: An object providing all the opacity semantic tokens
+    ///    - sizes: An object providing all the size semantic tokens
+    ///    - spaces: An object providing all the space semantic tokens
+    public init(colors: AllColorSemanticTokensProvider,
+                borders: AllBorderSemanticTokensProvider,
+                elevations: AllElevationSemanticTokensProvider,
+                fonts: AllFontSemanticTokensProvider,
+                grids: AllGridSemanticTokensProvider,
+                opacities: AllOpacitySemanticTokensProvider,
+                sizes: AllSizeSemanticTokensProvider,
+                spaces: AllSpaceSemanticTokensProvider) {
+        self.colors = colors
+        self.borders = borders
+        self.elevations = elevations
+        fontFamily = nil
+        self.fonts = fonts
+        self.grids = grids
+        self.opacities = opacities
+        self.sizes = sizes
+        self.spaces = spaces
     }
 
     /// Defines a basic kind of abstract theme to subclass then.
     /// - Parameters:
-    ///    - customFontFamily: Set `nil` if system font to use, otherwise use the `TypographyFontFamilySemanticToken` you want to apply
-    public init(customFontFamily: TypographyFontFamilySemanticToken?) {
-        self.customFontFamily = customFontFamily
+    ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
+    ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation
+    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`
+    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
+    ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`
+    ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`
+    ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation
+    ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation
+    ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation
+    public init(colors: AllColorSemanticTokensProvider,
+                borders: AllBorderSemanticTokensProvider,
+                elevations: AllElevationSemanticTokensProvider,
+                fontFamily: FontFamilySemanticToken?,
+                fonts: AllFontSemanticTokensProvider,
+                grids: AllGridSemanticTokensProvider,
+                opacities: AllOpacitySemanticTokensProvider,
+                sizes: AllSizeSemanticTokensProvider,
+                spaces: AllSpaceSemanticTokensProvider) {
+        self.colors = colors
+        self.borders = borders
+        self.elevations = elevations
+        self.fontFamily = fontFamily
+        self.fonts = fonts
+        self.grids = grids
+        self.opacities = opacities
+        self.sizes = sizes
+        self.spaces = spaces
     }
 
     deinit { }
-
-    // Please refer to extensions for properties, it will be more clear
 }

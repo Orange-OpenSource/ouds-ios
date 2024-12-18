@@ -2,7 +2,7 @@ name: Report a bug
 description: Tell us about a bug or issue you may have identified in OUDS iOS.
 title: "[Bug] "
 labels: ["🐞 bug", "🔍 triage"]
-assignees: ["ludovic35", "pylapp", "Tayebsed93"]
+assignees: ["ludovic35", "pylapp"]
 body:
   - type: checkboxes
     attributes:

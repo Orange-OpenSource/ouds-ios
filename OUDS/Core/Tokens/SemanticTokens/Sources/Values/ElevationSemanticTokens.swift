@@ -31,8 +31,6 @@ public protocol ElevationSemanticTokens {
     var elevationXNone: ElevationXSemanticToken { get }
     var elevationXRaised: ElevationXSemanticToken { get }
     var elevationXDrag: ElevationXSemanticToken { get }
-    var elevationXOverlayDefault: ElevationXSemanticToken { get }
-    var elevationXOverlayEmphasized: ElevationXSemanticToken { get }
     var elevationXStickyDefault: ElevationXSemanticToken { get }
     var elevationXStickyEmphasized: ElevationXSemanticToken { get }
     var elevationXStickyNavigationScrolled: ElevationXSemanticToken { get }
@@ -42,8 +40,6 @@ public protocol ElevationSemanticTokens {
     var elevationYNone: ElevationYSemanticToken { get }
     var elevationYRaised: ElevationYSemanticToken { get }
     var elevationYDrag: ElevationYSemanticToken { get }
-    var elevationYOverlayDefault: ElevationYSemanticToken { get }
-    var elevationYOverlayEmphasized: ElevationYSemanticToken { get }
     var elevationYStickyDefault: ElevationYSemanticToken { get }
     var elevationYStickyEmphasized: ElevationYSemanticToken { get }
     var elevationYStickyNavigationScrolled: ElevationYSemanticToken { get }
@@ -53,24 +49,22 @@ public protocol ElevationSemanticTokens {
     var elevationBlurNone: ElevationBlurSemanticToken { get }
     var elevationBlurRaised: ElevationBlurSemanticToken { get }
     var elevationBlurDrag: ElevationBlurSemanticToken { get }
-    var elevationBlurOverlayDefault: ElevationBlurSemanticToken { get }
-    var elevationBlurOverlayEmphasized: ElevationBlurSemanticToken { get }
     var elevationBlurStickyDefault: ElevationBlurSemanticToken { get }
     var elevationBlurStickyEmphasized: ElevationBlurSemanticToken { get }
     var elevationBlurStickyNavigationScrolled: ElevationBlurSemanticToken { get }
 
     // MARK: Semantic token - Elevation - Color
 
+    var elevationColorDefaultLight: ElevationColorSemanticToken { get }
+    var elevationColorDefaultDark: ElevationColorSemanticToken { get }
     var elevationColorNoneLight: ElevationColorSemanticToken { get }
     var elevationColorNoneDark: ElevationColorSemanticToken { get }
     var elevationColorRaisedLight: ElevationColorSemanticToken { get }
     var elevationColorRaisedDark: ElevationColorSemanticToken { get }
     var elevationColorDragLight: ElevationColorSemanticToken { get }
     var elevationColorDragDark: ElevationColorSemanticToken { get }
-    var elevationColorOverlayDefaultLight: ElevationColorSemanticToken { get }
-    var elevationColorOverlayDefaultDark: ElevationColorSemanticToken { get }
-    var elevationColorOverlayEmphasizedLight: ElevationColorSemanticToken { get }
-    var elevationColorOverlayEmphasizedDark: ElevationColorSemanticToken { get }
+    var elevationColorEmphasizedLight: ElevationColorSemanticToken { get }
+    var elevationColorEmphasizedDark: ElevationColorSemanticToken { get }
     var elevationColorStickyDefaultLight: ElevationColorSemanticToken { get }
     var elevationColorStickyDefaultDark: ElevationColorSemanticToken { get }
     var elevationColorStickyEmphasizedLight: ElevationColorSemanticToken { get }

@@ -21,11 +21,12 @@ import SwiftUI
 private let kIllustrationHeight = 72.0
 private let kIllustrationWidth = 72.0
 
-// MARK: - Space Token Category
+// MARK: - Space Token Property
 
-/// Internal `View` to display the space category with a header in order to describe the category
-/// and also a list of entries for each token in this category.
-struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where HeaderDescription: View, TokenIllustration: View {
+/// Internal `View` to display a property for the space token category. It desplays:
+/// - a header to describe the property of space token
+/// - a list of entries for each variant of this token property
+struct SpaceTokenProperty<HeaderDescription, TokenIllustration>: View where HeaderDescription: View, TokenIllustration: View {
 
     @Environment(\.theme) private var theme
 
@@ -42,20 +43,20 @@ struct SpaceTokenCategory<HeaderDescription, TokenIllustration>: View where Head
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
-            header().padding(.bottom, theme.spaceFixedMedium)
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            header().padding(.bottom, theme.spaces.spaceFixedMedium)
 
             ForEach(namedTokens, id: \.name) { namedSpaceToken in
-                SpaceTokenEntry(namedSpaceToken: namedSpaceToken, illustration: illustration)
+                SpaceTokenVariant(namedSpaceToken: namedSpaceToken, illustration: illustration)
             }
         }
     }
 }
 
-// MARK: - Space Token Entry
+// MARK: - Space Token Variant
 
 /// Internal `View` to display the token with its name, its value and an illustration.
-struct SpaceTokenEntry<TokenIllustration>: View where TokenIllustration: View {
+struct SpaceTokenVariant<TokenIllustration>: View where TokenIllustration: View {
 
     @Environment(\.theme) private var theme
 
@@ -113,19 +114,19 @@ struct SpaceCommonIllustration: View {
                 ShowcaseTokenIllustrationBackground()
                     .padding(.top, dimension)
                     .padding(.leading, dimension)
-                    .background(theme.colorAlwaysInfo.color(for: colorScheme))
+                    .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
             case .leading(let asset): // ZStack alignment leading
-                HStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationRectangle(width: dimension)
                     SpaceIllustrationIcon(asset: asset)
                 }
             case .bottom(let asset): // ZStack alignment bottom
-                VStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationIcon(asset: asset)
                     SpaceIllustrationRectangle(height: dimension)
                 }
             case .top(let asset): // ZStack alignment top
-                VStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationRectangle(height: dimension)
                     SpaceIllustrationIcon(asset: asset)
                 }
@@ -222,7 +223,7 @@ struct SpaceIllustrationIcon: View {
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+                .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
                 .padding(.horizontal, asset.extraPadding)
                 .padding(.vertical, asset.extraPadding)
                 .frame(width: 24)
@@ -254,7 +255,7 @@ private struct SpaceIllustrationRectangle: View {
 
     var body: some View {
         Rectangle()
-            .foregroundColor(theme.colorAlwaysInfo.color(for: colorScheme))
+            .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
             .frame(width: width, height: height)
     }
 }
@@ -315,9 +316,9 @@ struct SpaceHeaderDescription: View {
 
     var body: some View {
         content
-            .oudsBorder(style: theme.borderStyleDrag, width: theme.borderWidthThin, radius: theme.borderRadiusNone, color: theme.colorBorderEmphasizedOnBgEmphasized)
-                .padding(.all, theme.spaceFixedMedium)
-                .background(theme.colorBgEmphasized.color(for: colorScheme))
+            .oudsBorder(style: theme.borders.borderStyleDrag, width: theme.borders.borderWidthThin, radius: theme.borders.borderRadiusNone, color: theme.colors.colorBgEmphasized)
+                .padding(.all, theme.spaces.spaceFixedMedium)
+                .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
     }
 
     @ViewBuilder private var content: some View {
@@ -335,30 +336,30 @@ struct SpaceHeaderDescription: View {
     private func texts(_ orientation: TextsOrientation) -> some View {
         switch orientation {
         case .horizontal:
-            HStack(spacing: theme.spaceFixedNone) {
+            HStack(spacing: theme.spaces.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(width: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
                 }
             }
         case .verical:
-            VStack(spacing: theme.spaceFixedNone) {
+            VStack(spacing: theme.spaces.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
 
                 SpaceIllustrationRectangle(height: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
                 }
             }
@@ -368,25 +369,25 @@ struct SpaceHeaderDescription: View {
     private func text(_ paddings: EdgeInsets) -> some View {
         HStack {
             Text(firstText)
-                .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
                 .typeBodyDefaultMedium(theme)
         }
-        .background(theme.colorBgEmphasized.color(for: colorScheme))
+        .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
         .padding(paddings)
-        .background(theme.colorAlwaysInfo.color(for: colorScheme))
+        .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
     }
 
     @ViewBuilder
     private func asset(_ paddings: AssetPadding) -> some View {
         switch paddings {
         case .top, .bottom:
-            VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 if let iconAsset, paddings == .top {
-                    VStack(alignment: .leading, spacing: theme.spaceFixedNone) {
+                    VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                         SpaceIllustrationRectangle(height: 8)
                         SpaceIllustrationIcon(asset: iconAsset)
                     }
-                    .padding(.trailing, theme.spaceFixedShorter)
+                    .padding(.trailing, theme.spaces.spaceFixedShorter)
                 }
                 if let iconAsset, paddings == .bottom {
                     SpaceIllustrationIcon(asset: iconAsset)
@@ -394,19 +395,19 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentOnStatusEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
-            .background(theme.colorBgEmphasized.color(for: colorScheme))
+            .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
 
         case .leading, .trailing:
-            HStack(alignment: .center, spacing: theme.spaceFixedNone) {
+            HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                 if let iconAsset, paddings == .leading {
-                    HStack(alignment: .center, spacing: theme.spaceFixedNone) {
+                    HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                         SpaceIllustrationRectangle(width: 8)
                         SpaceIllustrationIcon(asset: iconAsset)
                     }
-                    .padding(.trailing, theme.spaceFixedShorter)
+                    .padding(.trailing, theme.spaces.spaceFixedShorter)
                 }
                 if let iconAsset, paddings == .trailing {
                     SpaceIllustrationIcon(asset: iconAsset)
@@ -414,10 +415,10 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colorContentDefaultOnBgEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentOnStatusEmphasized.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
-            .background(theme.colorBgEmphasized.color(for: colorScheme))
+            .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
         }
     }
 }

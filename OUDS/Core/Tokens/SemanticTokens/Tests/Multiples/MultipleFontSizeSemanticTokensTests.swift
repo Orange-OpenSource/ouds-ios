@@ -17,12 +17,12 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// To ensure the `MultipleFontSizeSemanticTokens` is tested as a wrapper of semantic tokens for compact and regular size classes.
+/// To ensure the `MultipleFontSizeSemanticTokens` is tested as a provider of semantic tokens for compact and regular size classes.
 final class MultipleFontSizeSemanticTokensTests: XCTestCase {
 
     /// Tests if the unique value is applied for light and dark modes
     func testInitWithOneValue() {
-        let unique: TypographyFontSizeSemanticToken = TypographyRawTokens.fontSize150
+        let unique: FontSizeSemanticToken = FontRawTokens.fontSize150
         let token = MultipleFontSizeSemanticTokens(unique)
 
         XCTAssertTrue(token.compact == unique)
@@ -31,8 +31,8 @@ final class MultipleFontSizeSemanticTokensTests: XCTestCase {
 
     /// Tests if compact and regular values are preserved when defined with two assigned non nil values
     func testInitWithTwoValues() {
-        let compact: TypographyFontSizeSemanticToken = TypographyRawTokens.fontSize150
-        let regular: TypographyFontSizeSemanticToken = TypographyRawTokens.fontSize550
+        let compact: FontSizeSemanticToken = FontRawTokens.fontSize150
+        let regular: FontSizeSemanticToken = FontRawTokens.fontSize550
         let token = MultipleFontSizeSemanticTokens(compact: compact, regular: regular)
 
         XCTAssertTrue(token.compact == compact)
@@ -42,11 +42,11 @@ final class MultipleFontSizeSemanticTokensTests: XCTestCase {
     /// Tests comparisons between two `MultipleFontSizeSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     func testIsEqual() {
-        let first = MultipleFontSizeSemanticTokens(compact: TypographyRawTokens.fontSize200, regular: TypographyRawTokens.fontSize450)
-        let second = MultipleFontSizeSemanticTokens(compact: TypographyRawTokens.fontSize550, regular: TypographyRawTokens.fontSize950)
-        let third = MultipleFontSizeSemanticTokens(compact: TypographyRawTokens.fontSize200, regular: TypographyRawTokens.fontSize950)
-        let fourth = MultipleFontSizeSemanticTokens(compact: TypographyRawTokens.fontSize550, regular: TypographyRawTokens.fontSize450)
-        let fifth = MultipleFontSizeSemanticTokens(compact: TypographyRawTokens.fontSize200, regular: TypographyRawTokens.fontSize450)
+        let first = MultipleFontSizeSemanticTokens(compact: FontRawTokens.fontSize200, regular: FontRawTokens.fontSize450)
+        let second = MultipleFontSizeSemanticTokens(compact: FontRawTokens.fontSize550, regular: FontRawTokens.fontSize950)
+        let third = MultipleFontSizeSemanticTokens(compact: FontRawTokens.fontSize200, regular: FontRawTokens.fontSize950)
+        let fourth = MultipleFontSizeSemanticTokens(compact: FontRawTokens.fontSize550, regular: FontRawTokens.fontSize450)
+        let fifth = MultipleFontSizeSemanticTokens(compact: FontRawTokens.fontSize200, regular: FontRawTokens.fontSize450)
         let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
         XCTAssertTrue(first.isEqual(first))

@@ -14,16 +14,4 @@
 import OUDS
 import OUDSTokensSemantic
 
-enum NamedColor {
-
-    enum Transparent: String, CaseIterable {
-        case colorTransparentDefault
-
-        func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
-            switch self {
-            case .colorTransparentDefault:
-                return theme.colorTransparentDefault
-            }
-        }
-    }
-}
+enum NamedColor { }
