@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own provider for font semantic tokens
-///     class CustomFontTokensProvider: OUDSFontSemanticTokensProvider {
+///     class CustomFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
 ///
 ///         // Then override the font semantic tokens you want, using the font raw tokens available
 ///
@@ -49,11 +49,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(fonts: CustomFontTokensProvider())
 /// ```
-open class OUDSFontSemanticTokensProvider {
+open class OrangeThemeFontSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OUDSFontSemanticTokensProvider")
+        OUDSLogger.debug("Init of OrangeThemeFontSemanticTokensProvider")
     }
 
     deinit{ }
@@ -61,8 +61,8 @@ open class OUDSFontSemanticTokensProvider {
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens are not here
-    // but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+FontSemanticTokens.swift,
-    // in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+FontCompositeSemanticTokens.swift,
-    // and in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+FontMultipleSemanticTokens.swift.
+    // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+FontSemanticTokens.swift,
+    // in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+FontCompositeSemanticTokens.swift,
+    // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+FontMultipleSemanticTokens.swift,
     // This declaration of OUDSFontSemanticTokensProvider is here to allow to write documentation.
 }

@@ -38,7 +38,7 @@ public typealias AllElevationSemanticTokensProvider = ElevationSemanticTokens & 
 
 /// A type alias which merges  ``FontSemanticTokens``, ``FontCompositeSemanticTokens`` and ``FontMultipleSemanticTokens``.
 /// It helps in the end to define a provider for all the semantic tokens of fonts, multiple, composite, or not, generated or not.
-/// For example ``OUDSFontSemanticTokensProvider`` matches this type alias.
+/// For example ``OrangeThemeFontSemanticTokensProvider`` matches this type alias.
 public typealias AllFontSemanticTokensProvider = FontSemanticTokens & FontCompositeSemanticTokens & FontMultipleSemanticTokens
 
 /// A type alias which merges  ``SizeSemanticTokens`` and ``SizeMultipleSemanticTokens``.

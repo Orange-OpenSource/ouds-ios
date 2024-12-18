@@ -72,7 +72,7 @@ You will have to override the tokens provider you need. To do that, make a subcl
 - elevations tokens are in `OrangeThemeElevationSemanticTokensProvider`
 - opacity tokens are in `OUDSOpacitySemanticTokensProvider`
 - grid tokens are in `OUDSGridSemanticTokensProvider`
-- font tokens are in `OUDSFontSemanticTokensProvider`
+- font tokens are in `OrangeThemeFontSemanticTokensProvider`
 
 ```swift
 import OUDSTokensSemantic           // To use semantic tokens if needed
@@ -157,7 +157,7 @@ class YourAppThemeGridTokensProvider: OUDSGridSemanticTokensProvider {
 
 // Token provider for font
 
-class YourAppThemeFontTokensProvider: OUDSFontSemanticTokensProvider {
+class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
     override var typeDisplayLarge: MultipleFontCompositeRawTokens {
         MultipleFontCompositeRawTokens(compact: FontRawTokens.typeRegular150, regular: FontRawTokens.typeRegular150)
     }

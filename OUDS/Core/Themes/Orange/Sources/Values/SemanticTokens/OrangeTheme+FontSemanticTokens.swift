@@ -15,7 +15,7 @@ import Foundation
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-extension OUDSFontSemanticTokensProvider: FontSemanticTokens {
+extension OrangeThemeFontSemanticTokensProvider: FontSemanticTokens {
     @objc open var fontFamily: FontFamilySemanticToken { FontRawTokens.fontFamilySystemSfPro }
     @objc open var fontLetterSpacingBodyLargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }
     @objc open var fontLetterSpacingBodyLargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }

@@ -68,7 +68,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to ``OrangeThemeColorSemanticTokensProvider``
     ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to `OUDSBorderSemanticTokensProvider``
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`, default set to `OrangeThemeElevationSemanticTokensProvider`
-    ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OUDSFontSemanticTokensProvider`
+    ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OrangeThemeFontSemanticTokensProvider`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to `OUDSGridSemanticTokensProvider`
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation, default set to `OUDSOpacitySemanticTokensProvider`
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokensProvider` implementation, default set to `OUDSSizeSemanticTokensProvider`
@@ -76,7 +76,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     override public init(colors: AllColorSemanticTokensProvider = OrangeThemeColorSemanticTokensProvider(),
                          borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokensProvider = OrangeThemeElevationSemanticTokensProvider(),
-                         fonts: AllFontSemanticTokensProvider = OUDSFontSemanticTokensProvider(),
+                         fonts: AllFontSemanticTokensProvider = OrangeThemeFontSemanticTokensProvider(),
                          grids: AllGridSemanticTokensProvider = OUDSGridSemanticTokensProvider(),
                          opacities: AllOpacitySemanticTokensProvider = OUDSOpacitySemanticTokensProvider(),
                          sizes: AllSizeSemanticTokensProvider = OUDSSizeSemanticTokensProvider(),

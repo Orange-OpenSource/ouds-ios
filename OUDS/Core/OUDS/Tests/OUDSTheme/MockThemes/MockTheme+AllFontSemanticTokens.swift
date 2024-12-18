@@ -17,9 +17,9 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 // swiftlint:disable required_deinit
 
-/// Overrides **all** the font semantic tokens, both simple, multiple and composites (from its super class, i.e. `OUDSFontSemanticTokensProvider` so as to test overriding of them (unit tests)
+/// Overrides **all** the font semantic tokens, both simple, multiple and composites (from its super class, i.e. `OrangeThemeFontSemanticTokensProvider` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-final class MockThemeFontSemanticTokensProvider: OUDSFontSemanticTokensProvider {
+final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensProvider {
 
     // MARK: Semantic tokens - Not composites
 
