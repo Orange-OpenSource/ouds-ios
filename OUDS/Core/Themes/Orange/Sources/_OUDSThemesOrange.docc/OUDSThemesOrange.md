@@ -70,7 +70,7 @@ You will have to override the tokens provider you need. To do that, make a subcl
 - colors tokens are all defined in `OrangeThemeColorSemanticTokensProvider`
 - borders tokens are in `OUDSBorderSemanticTokensProvider`
 - elevations tokens are in `OrangeThemeElevationSemanticTokensProvider`
-- opacity tokens are in `OUDSOpacitySemanticTokensProvider`
+- opacity tokens are in `OrangeThemeOpacitySemanticTokensProvider`
 - grid tokens are in `OrangeThemeGridSemanticTokensProvider`
 - font tokens are in `OrangeThemeFontSemanticTokensProvider`
 
@@ -135,7 +135,7 @@ class YourAppThemeElevationTokensProvider: OrangeThemeElevationSemanticTokensPro
 
 // Token provider for opacity
 
-class YourAppThemeOpacityTokensProvider: OUDSOpacitySemanticTokensProvider {
+class YourAppThemeOpacityTokensProvider: OrangeThemeOpacitySemanticTokensProvider {
     override var opacityStrong: OpacitySemanticToken {
         OpacityRawTokens.opacity920
     }

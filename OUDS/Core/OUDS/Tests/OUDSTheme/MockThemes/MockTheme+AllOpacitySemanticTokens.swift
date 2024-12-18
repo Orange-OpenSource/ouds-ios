@@ -17,9 +17,9 @@ import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
 
-/// Overrides **all** the opacity semantic tokens (from its super class, i.e. `OUDSOpacitySemanticTokensProvider`) so as to test overriding of them (unit tests)
+/// Overrides **all** the opacity semantic tokens (from its super class, i.e. `OrangeThemeOpacitySemanticTokensProvider`) so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-final class MockThemeOpacitySemanticTokensProvider: OUDSOpacitySemanticTokensProvider {
+final class MockThemeOpacitySemanticTokensProvider: OrangeThemeOpacitySemanticTokensProvider {
 
     static let mockThemeOpacityRawToken: OpacityRawToken = 713
 

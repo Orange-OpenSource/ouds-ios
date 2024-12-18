@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own provider for opacity semantic tokens
-///     class CustomOpacityTokensProvider: OUDSOpacitySemanticTokensProvider {
+///     class CustomOpacityTokensProvider: OrangeThemeOpacitySemanticTokensProvider {
 ///
 ///         // Then override the opacity semantic tokens you want, using the opacity raw tokens available
 ///
@@ -45,17 +45,17 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(opacities: CustomOpacityTokensProvider())
 /// ```
-open class OUDSOpacitySemanticTokensProvider {
+open class OrangeThemeOpacitySemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OUDSOpacitySemanticTokensProvider")
+        OUDSLogger.debug("Init of OrangeThemeOpacitySemanticTokensProvider")
     }
 
     deinit{ }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BorderSemanticTokens is not here but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+OpacitySemanticTokens.swift
-    // This declaration of OUDSOpacitySemanticTokens is here to allow to write documentation.
+    // the implemention of OpacitySemanticTokensProvider is not here but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+OpacitySemanticTokens.swift
+    // This declaration of OrangeThemeOpacitySemanticTokensProvider is here to allow to write documentation.
 }
