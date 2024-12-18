@@ -52,13 +52,13 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.
 
-- Review and merge this pull request on GitHub.<br /><br />
+- Review and merge this pull request on GitHub using squash and merge commits strategy.<br /><br />
 
 ## Release
 
-- Create a new pull request named `Release X.Y.Z` on GitHub to merge `develop` into `main`.
+- Create a new pull request named `Release X.Y.Z` on GitHub to merge `develop` into `main`. You can add in the description the CHANGELOG for this new version. Thus GitHub will automatically make the links and display the PR in the mentioned issues.
 
-- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits**, i.e. "create a merge commit". Rebase should be used to align feature branches with default one, and squash should be used when needed for work branches. The _merge commit_ can be defined so as to bring details about the merge and make links automatically with GitHub issues. To do that, you can copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed.
+- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits**, i.e. "create a merge commit". Rebase should be used to align feature branches with default one, and squash should be used when needed for work branches. The _merge commit_ can be defined so as to bring details about the merge and make links automatically with GitHub issues. To do that, you can copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed. **Remember, do not squash nor rebase but only merge commit**/
 
 Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/98640b4b63037c2780128f41ceba5b896763b94f)):
 
@@ -95,7 +95,7 @@ Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
 
 You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds-ios/commit/5ce9b68aa03304fef91fc45ef43a379b4f22f98b) for example.
 
-- Generate documentation: from Xcode build the doc, export each doccarchive, then rnu the script ; it will update online version and generate a ZIP file in _/tmp_
+- Generate documentation: from Xcode build the doc, export each doccarchive, then run the script ; it will update online version and generate a ZIP file in _/tmp_
     ```shell
     ./uploadWebDoc.sh --libversion=X.Y.Z --usegit
     # --usegit means updating GitHub Pages branch
@@ -136,37 +136,16 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
     <!-- ![Create tag](images/github_release_02.png) -->
 
 - Add release notes and verify using the preview tab.
+<!-- TODO Check with git-cliff release note generation and vTag prefix -->    
+- Optionally check `Set as a pre-release` and click `Publish release`. You can also create a disucssion from this release.
 
-    <!-- TODO Check with git-cliff release note generation and vTag prefix -->
-
-- Optionally check `Set as a pre-release` and click `Publish release`.<br /><br />
-<!-- TODO Section about annoucement -->
-<!--
-### Announce the new release on "Design Community" teams
-
-- Go to [Teams - Design Community: PR05 - 📱 iOS]
-
-- Post a message with screenshots of new elements to announce the release.
-
-Title should be like "🍂 OUDS v0.7.0 available!"
-
-And message body like:
-"  🎉 find out what's new, see the release annoucement on GitHub (https://github.com/Orange-OpenSource/ouds-ios/discussions/325).
-You can get the release and its artifacts also online (https://github.com/Orange-OpenSource/ouds-ios/releases/tag/0.7.0).
-
-The wiki is still updated (https://github.com/Orange-OpenSource/ouds-ios/wiki) and also the online technical documentation (https://ios.unified-design-system.orange.com/)
-
-Fun facts:
-
-🧪 This version contains 1,848 tests: 1,820 unit tests (60% coverage) and 28 UI tests, (44% coverage)
-🧮 The OUDS Swift Package (sources and tests) has13,170 lines of Swift code according to cloc
-🌟 The package provides about 379 core raw tokens, 22 Orange raw tokens and 1,195 core semantic tokens"
--->
 - Do not forget to update the documentation using `uploadWebDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact, or if you want just download the sources from GitHub on *gh-pages* branch. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (doccarchive) (_Right click on catalog > Export_), compress all these files in one ZIP archive (GitHub consider them as empty so won't accept them for upload) and upload as artifact. In few words, put in release artifacts all the doccarchives in a ZIP in one side, and the HTML merged version in the other side.
 
 - Clone the [wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) (available at https://github.com/Orange-OpenSource/ouds-ios.wiki.git), compress its content as ZIP, and place the ZIP in release artifacts
 
 - From the GitLab CI pipeline job which made the production release, get the artifacts and put it in the release.
+
+- You can close the previous release dicussion, lock and unpin it. You should also pin the new discussion for the release, and add in comments the sprint number and the app details in production mode. [This is an excemple of a release discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/358) and [a detailed comment](https://github.com/Orange-OpenSource/ouds-ios/discussions/358#discussioncomment-11608399).
 
 ## Prepare Next Release
 
@@ -184,8 +163,8 @@ Fun facts:
     - Update in Xcode the version of Showcase target to U.V.W (the new version you suppose it will be) and increment build number
     - Commit your modifications
     - Push them to the repository
-    - Create a new pull request named `Update release U.V.W` on GitHub to merge your branch into `develop`.
-    - Review and merge this pull request on GitHub.<br /><br />
+    - Create a new pull request named `Update release U.V.W` on GitHub to merge your branch into `develop` 
+    - Review and merge this pull request on GitHub **using merge + squash strategy**<br /><br />
 
 ## About documentation
 
