@@ -150,7 +150,7 @@ private struct ButtonIcon: View {
 
     var body: some View {
         IconForButton(icon: icon)
-            .padding(.all, theme.buttonSpaceInsetIconAlone)
+            .padding(.all, theme.buttonSpaceInsetIconOnly)
             .frame(minWidth: theme.buttonSizeMinWidth, minHeight: theme.buttonSizeMinHeight, maxHeight: theme.buttonSizeMaxHeight, alignment: .center)
     }
 }

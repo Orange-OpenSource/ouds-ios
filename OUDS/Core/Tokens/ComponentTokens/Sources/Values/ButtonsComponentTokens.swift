@@ -27,7 +27,7 @@ public protocol ButtonsComponentTokens {
     var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken { get }
     var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken { get }
     var buttonSpacePaddingBlock: SpaceSemanticToken { get }
-    var buttonSpaceInsetIconAlone: SpaceSemanticToken { get }
+    var buttonSpaceInsetIconOnly: SpaceSemanticToken { get }
     var buttonSpaceColumnGapIcon: SpaceSemanticToken { get }
     var buttonSpaceColumnGapArrow: SpaceSemanticToken { get }
 

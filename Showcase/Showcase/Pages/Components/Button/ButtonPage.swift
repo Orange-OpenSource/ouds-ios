@@ -115,7 +115,7 @@ private struct ButtonDemo: View {
 
     private var backgroundColor: Color {
         if coloredBackgound {
-            theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme)
+            theme.colors.colorSurfaceStatusInfoEmphasized.color(for: colorScheme)
         } else {
             theme.colors.colorBgSecondary.color(for: colorScheme)
         }
