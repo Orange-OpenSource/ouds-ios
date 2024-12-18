@@ -16,9 +16,9 @@ import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
 
-/// Overrides **all** the size semantic tokens (from its super class, i.e. `OUDSSizeSemanticTokensProvider` so as to test overriding of them (unit tests)
+/// Overrides **all** the size semantic tokens (from its super class, i.e. `OrangeThemeSizeSemanticTokensProvider` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
-final class MockThemeSizeSemanticTokensProvider: OUDSSizeSemanticTokensProvider {
+final class MockThemeSizeSemanticTokensProvider: OrangeThemeSizeSemanticTokensProvider {
 
     static let mockThemeSizeRawToken: DimensionRawToken = 118_000
     static let mockThemeSizeCompositeToken = MultipleSizeSemanticTokens(compact: 1, regular: 151)

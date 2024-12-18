@@ -71,7 +71,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to `OrangeThemeFontSemanticTokensProvider`
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to `OrangeThemeGridSemanticTokensProvider`
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation, default set to `OrangeThemeOpacitySemanticTokensProvider`
-    ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokensProvider` implementation, default set to `OUDSSizeSemanticTokensProvider`
+    ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokensProvider` implementation, default set to `OrangeThemeSizeSemanticTokensProvider`
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation, default set to `OUDSSpaceSemanticTokensProvider`
     override public init(colors: AllColorSemanticTokensProvider = OrangeThemeColorSemanticTokensProvider(),
                          borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
@@ -79,7 +79,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          fonts: AllFontSemanticTokensProvider = OrangeThemeFontSemanticTokensProvider(),
                          grids: AllGridSemanticTokensProvider = OrangeThemeGridSemanticTokensProvider(),
                          opacities: AllOpacitySemanticTokensProvider = OrangeThemeOpacitySemanticTokensProvider(),
-                         sizes: AllSizeSemanticTokensProvider = OUDSSizeSemanticTokensProvider(),
+                         sizes: AllSizeSemanticTokensProvider = OrangeThemeSizeSemanticTokensProvider(),
                          spaces: AllSpaceSemanticTokensProvider = OUDSSpaceSemanticTokensProvider()) {
         OUDSLogger.debug("Init of OrangeTheme")
         super.init(colors: colors,

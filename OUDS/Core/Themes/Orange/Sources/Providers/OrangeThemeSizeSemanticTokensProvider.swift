@@ -19,7 +19,7 @@ import OUDSFoundations
 ///
 /// ```swift
 ///     // Define your own provider for size semantic tokens
-///     class CustomSizeTokensProvider: OUDSSizeSemanticTokensProvider {
+///     class CustomSizeTokensProvider: OrangeThemeSizeSemanticTokensProvider {
 ///
 ///         // Then override the size semantic tokens you want, using the dimension raw tokens available
 ///
@@ -49,11 +49,11 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(sizes: CustomSizeTokensProvider())
 /// ```
-open class OUDSSizeSemanticTokensProvider {
+open class OrangeThemeSizeSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OUDSSizeSemanticTokensProvider")
+        OUDSLogger.debug("Init of OrangeThemeSizeSemanticTokensProvider")
     }
 
     deinit{ }
@@ -61,7 +61,7 @@ open class OUDSSizeSemanticTokensProvider {
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
     // the implemention of SizeSemanticTokens and SizeMultipleSemanticTokens are not here
-    // but in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+SizeSemanticTokens.swift
-    // and in OUDS/OUDSTheme/OUDSTheme+SemanticTokens/OUDSTheme+SizeMultipleSemanticTokens.swift.
-    // This declaration of OUDSSizeSemanticTokensProvider is here to allow to write documentation.
+    // but in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+SizeSemanticTokens.swift
+    // and in Core/Themes/Orange/Values/SemanticTokens/OrangeTheme+SizeMultipleSemanticTokens.swift
+    // This declaration of OrangeThemeSizeSemanticTokensProvider is here to allow to write documentation.
 }
