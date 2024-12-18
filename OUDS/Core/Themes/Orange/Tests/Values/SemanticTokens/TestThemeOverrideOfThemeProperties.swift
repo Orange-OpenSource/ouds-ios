@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSThemesOrange
 import XCTest
 
 // swiftlint:disable required_deinit
@@ -27,7 +28,7 @@ final class TestThemeOverrideOfThemeProperties: XCTestCase {
     private var inheritedTheme: OUDSTheme!
 
     override func setUp() async throws {
-        abstractTheme = OUDSTheme()
+        abstractTheme = OrangeTheme()
         inheritedTheme = MockTheme(fontFamily: "Mr R08øT")
     }
 

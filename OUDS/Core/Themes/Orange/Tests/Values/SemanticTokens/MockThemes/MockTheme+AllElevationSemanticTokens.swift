@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSThemesOrange
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
@@ -19,7 +20,7 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 // swiftlint:disable line_length
 
-/// Overrides **all** the elevation semantic tokens, both simple, multiple and composites (from its super class, i.e. `OrangeThemeElevationSemanticTokensProvider` so as to test overriding of them (unit tests)
+/// Overrides **all** the elevation semantic tokens, both simple, multiple and composites (from its super class, i.e. ``OrangeThemeElevationSemanticTokensProvider`` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
 /// This ``MockThemeElevationSemanticTokensProvider`` will be asigned in ``MockTheme`` as an ``AllElevationSemanticTokensProvider`` implementation.
 final class MockThemeElevationSemanticTokensProvider: OrangeThemeElevationSemanticTokensProvider {

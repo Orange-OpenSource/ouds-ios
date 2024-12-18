@@ -12,12 +12,13 @@
 //
 
 import Foundation
+import OUDSThemesOrange
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
 
-/// Overrides **all** the grid semantic tokens (from its super class, i.e. `OrangeThemeGridSemanticTokensProvider` so as to test overriding of them (unit tests)
+/// Overrides **all** the grid semantic tokens (from its super class, i.e. ``OrangeThemeGridSemanticTokensProvider`` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
 final class MockThemeGridSemanticTokensProvider: OrangeThemeGridSemanticTokensProvider {
 

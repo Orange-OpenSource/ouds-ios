@@ -11,12 +11,13 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSThemesOrange
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // swiftlint:disable required_deinit
 
-/// Overrides **all** the space semantic tokens (from its super class, i.e. `OrangeThemeSpaceSemanticTokensProvider` so as to test overriding of them (unit tests)
+/// Overrides **all** the space semantic tokens (from its super class, i.e. ``OrangeThemeSpaceSemanticTokensProvider`` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
 final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokensProvider {
 

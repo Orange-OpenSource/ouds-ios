@@ -11,13 +11,14 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSThemesOrange
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // swiftlint:disable line_length
 // swiftlint:disable required_deinit
 
-/// Overrides **all** the font semantic tokens, both simple, multiple and composites (from its super class, i.e. `OrangeThemeFontSemanticTokensProvider` so as to test overriding of them (unit tests)
+/// Overrides **all** the font semantic tokens, both simple, multiple and composites (from its super class, i.e. ``OrangeThemeFontSemanticTokensProvider`` so as to test overriding of them (unit tests)
 /// and to act like smoke tests with crashing tests if some tokens disappeared.
 final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensProvider {
 
