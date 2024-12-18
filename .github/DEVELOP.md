@@ -304,6 +304,13 @@ chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#2
 ``` 
 
 i.e. precise the tokens updated, the *tokenator* generation timestamp and the pull request number.
+If you know what is the design kit revision, add it in the commit body, like:
+
+```text
+chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#225)
+
+Design kit token library V.24.12.18
+``` 
 
 ### About release note and changelog
 
