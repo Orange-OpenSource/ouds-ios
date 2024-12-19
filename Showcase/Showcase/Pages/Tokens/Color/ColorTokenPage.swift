@@ -26,7 +26,7 @@ struct ColorTokenPage: View {
     var body: some View {
         Group {
             Section {
-                ShowcaseCode(code: "theme.colors.colorBgPrimary.color(for: colorScheme)")
+                ShowcaseCode(code: "theme.colors.colorBgPrimary.color(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
             Section { illustrationForAction() } header: { header("Action") }
             Section { illustrationForAlways() } header: { header("Always") }
