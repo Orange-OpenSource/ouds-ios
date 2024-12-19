@@ -42,7 +42,7 @@ struct GridTokenPage: View {
             }
 
             Section {
-                ShowcaseCode(code: "theme.gridColumnCount(for: horizontalSizeClass)")
+                ShowcaseCode(code: "theme.gridColumnCount(for: horizontalSizeClass)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
             Section { illustrationForGridTokens() } header: {

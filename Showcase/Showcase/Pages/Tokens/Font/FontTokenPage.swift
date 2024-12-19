@@ -26,7 +26,7 @@ struct FontTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                ShowcaseCode(code: "theme.typeBodyStrongLarge(theme)")
+                ShowcaseCode(code: "theme.typeBodyStrongLarge(theme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
             Spacer()
