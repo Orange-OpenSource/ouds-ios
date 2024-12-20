@@ -96,7 +96,7 @@ struct BorderTokenPage: View {
                     .oudsBorder(style: theme.borders.borderStyleDefault,
                                 width: token,
                                 radius: theme.borders.borderRadiusNone,
-                                color: theme.colors.colorBorderDefault)
+                                color: theme.colors.colorBorderFocus)
             }
         }
     }
@@ -117,7 +117,7 @@ struct BorderTokenPage: View {
                     .oudsBorder(style: theme.borders.borderStyleDefault,
                                 width: theme.borders.borderWidthDefault,
                                 radius: token,
-                                color: theme.colors.colorBorderDefault)
+                                color: theme.colors.colorBorderFocus)
             }
         }
     }
@@ -138,7 +138,7 @@ struct BorderTokenPage: View {
                     .oudsBorder(style: token,
                                 width: theme.borders.borderWidthDefault,
                                 radius: theme.borders.borderRadiusNone,
-                                color: theme.colors.colorBorderDefault)
+                                color: theme.colors.colorBorderFocus)
             }
         }
     }

@@ -15,23 +15,32 @@ import SwiftUI
 
 struct CardIllustration: View {
 
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: Stored properties
+
     let icon: Image
+
+    // MARK: Body
 
     var body: some View {
         HStack {
             Spacer()
             icon
                 .resizable()
+                .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 88, height: 88, alignment: .center)
                 .clipped()
             Spacer()
         }
         .padding(.vertical, 53)
-        .background(.black)
         .accessibilityElement(children: .combine)
         .accessibilityRemoveTraits(.isImage)
         .accessibilityHidden(true)
+        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+        .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
     }
 }
 

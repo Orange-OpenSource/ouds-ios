@@ -114,7 +114,7 @@ struct SpaceCommonIllustration: View {
                 ShowcaseTokenIllustrationBackground()
                     .padding(.top, dimension)
                     .padding(.leading, dimension)
-                    .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
+                    .background(theme.colors.colorChartFunctionalInformation.color(for: colorScheme))
             case .leading(let asset): // ZStack alignment leading
                 HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationRectangle(width: dimension)
@@ -223,7 +223,7 @@ struct SpaceIllustrationIcon: View {
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
+                .foregroundColor(theme.colors.colorChartFunctionalInformation.color(for: colorScheme))
                 .padding(.horizontal, asset.extraPadding)
                 .padding(.vertical, asset.extraPadding)
                 .frame(width: 24)
@@ -255,7 +255,7 @@ private struct SpaceIllustrationRectangle: View {
 
     var body: some View {
         Rectangle()
-            .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
+            .foregroundColor(theme.colors.colorChartFunctionalInformation.color(for: colorScheme))
             .frame(width: width, height: height)
     }
 }
@@ -317,8 +317,8 @@ struct SpaceHeaderDescription: View {
     var body: some View {
         content
             .oudsBorder(style: theme.borders.borderStyleDrag, width: theme.borders.borderWidthThin, radius: theme.borders.borderRadiusNone, color: theme.colors.colorBgEmphasized)
-                .padding(.all, theme.spaces.spaceFixedMedium)
-                .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
+            .padding(.all, theme.spaces.spaceFixedMedium)
+            .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
     }
 
     @ViewBuilder private var content: some View {
@@ -336,31 +336,35 @@ struct SpaceHeaderDescription: View {
     private func texts(_ orientation: TextsOrientation) -> some View {
         switch orientation {
         case .horizontal:
-            HStack(spacing: theme.spaces.spaceFixedNone) {
+            HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(width: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         case .verical:
-            VStack(spacing: theme.spaces.spaceFixedNone) {
+            VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                 Text(firstText)
-                    .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
                 SpaceIllustrationRectangle(height: 8)
 
                 if let secondText {
                     Text(secondText)
-                        .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
+                        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                         .typeBodyDefaultMedium(theme)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
         }
@@ -368,13 +372,16 @@ struct SpaceHeaderDescription: View {
 
     private func text(_ paddings: EdgeInsets) -> some View {
         HStack {
-            Text(firstText)
-                .foregroundStyle(theme.colors.colorContentOnOverlayEmphasized.color(for: colorScheme))
-                .typeBodyDefaultMedium(theme)
+            VStack {
+                Text(firstText)
+                    .typeBodyDefaultMedium(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                    .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
+            }
+            .background(Color(UIColor.systemBackground))
         }
-        .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
         .padding(paddings)
-        .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
+        .background(theme.colors.colorChartFunctionalInformation.color(for: colorScheme))
     }
 
     @ViewBuilder
@@ -395,10 +402,9 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colors.colorContentOnStatusEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
-            .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
 
         case .leading, .trailing:
             HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
@@ -415,10 +421,9 @@ struct SpaceHeaderDescription: View {
                 }
 
                 Text(firstText)
-                    .foregroundStyle(theme.colors.colorContentOnStatusEmphasized.color(for: colorScheme))
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
             }
-            .background(theme.colors.colorBgEmphasized.color(for: colorScheme))
         }
     }
 }

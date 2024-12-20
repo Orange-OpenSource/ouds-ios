@@ -11,43 +11,36 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSComponents
 import SwiftUI
 
 // MARK: - Card
 
 struct Card: View {
 
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: Stored properties
+
     let title: Text
     let icon: Image
 
-    @Environment(\.theme) private var theme
+    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             CardIllustration(icon: icon)
             title
-                .typeBodyDefaultMedium(theme)
+                .typeHeadingMedium(theme)
                 .multilineTextAlignment(.leading)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 16)
+                .padding(.horizontal, theme.spaces.spaceFixedMedium)
+                .padding(.vertical, theme.spaces.spaceFixedMedium)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
         }
-        .foregroundColor(.primary)
-        .background(Color.cardBackground)
-        .cornerRadius(10)
-        .shadow(radius: 4)
+        .background(theme.colors.colorBgPrimary.color(for: colorScheme))
+        .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
         .padding(.all, 4)
-    }
-}
-
-// MARK: - Previews
-
-#Preview {
-    ScrollView {
-        VStack {
-            Card(title: Text("Border"), icon: Image("ic_border", bundle: .main))
-            Card(title: Text("Typography"), icon: Image("ic_typography", bundle: .main))
-        }
-        .padding(.horizontal, 16)
     }
 }
