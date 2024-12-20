@@ -52,7 +52,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
             }
             .padding(.horizontal, theme.spaces.spaceFixedMedium)
 
-            ShowcaseCode(code: configuration.code)
+            ShowcaseCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
                 .padding(.horizontal, theme.spaces.spaceFixedMedium)
         }
         .padding(.bottom, theme.spaces.spaceFixedMedium)

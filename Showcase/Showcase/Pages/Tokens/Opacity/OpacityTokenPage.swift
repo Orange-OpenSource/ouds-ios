@@ -25,7 +25,7 @@ struct OpacityTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                ShowcaseCode(code: "theme.opacities.opacityInvisible")
+                ShowcaseCode(code: "theme.opacities.opacityInvisible", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
             Spacer() .frame(height: theme.spaces.spaceFixedMedium)
