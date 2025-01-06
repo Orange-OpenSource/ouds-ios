@@ -67,6 +67,7 @@ extension EnvironmentValues {
 ///         YourRootView()
 ///     }
 ///
+/// - Since: 0.8.0
 public struct OUDSThemeableView<Content>: View where Content: View {
 
     private let theme: OUDSTheme

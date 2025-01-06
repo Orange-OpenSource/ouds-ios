@@ -51,6 +51,8 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(borders: CustomBorderTokensProvider())
 /// ```
+///
+/// - Since: 0.8.0
 open class OrangeThemeBorderSemanticTokensProvider {
 
     /// Intializes the provider

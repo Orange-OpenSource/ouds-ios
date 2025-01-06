@@ -20,6 +20,8 @@
 /// This is a group of semantic tokens for **opacity.**
 /// It defines all ``OpacitySemanticToken`` a theme must have.
 /// Any opacity semantic token must be declared there as providers like `OrangeThemeOpacitySemanticTokensProvider` will then expose them through `OUDSTheme`.
+///
+/// - Since: 0.8.0
 public protocol OpacitySemanticTokens {
 
     // MARK: Semantic token - Opacity

@@ -40,6 +40,8 @@
 ///         // Or use .light or .dark instead of elevation(for:)
 ///     }
 /// ```
+///
+/// - Since: 0.8.0
 public protocol ElevationCompositeSemanticTokens {
 
     var elevationNone: ElevationCompositeSemanticToken { get }

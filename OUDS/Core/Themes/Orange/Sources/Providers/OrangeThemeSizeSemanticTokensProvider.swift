@@ -49,6 +49,8 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(sizes: CustomSizeTokensProvider())
 /// ```
+///
+/// - Since: 0.8.0
 open class OrangeThemeSizeSemanticTokensProvider {
 
     /// Intializes the provider

@@ -40,7 +40,8 @@ import OUDSTokensRaw
 ///         // The theme exposes both generated font line height semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
-/// 
+///
+/// - Since: 0.8.0
 public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports

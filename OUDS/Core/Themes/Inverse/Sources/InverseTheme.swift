@@ -43,7 +43,8 @@ import OUDSTokensSemantic
 ///
 ///     @Environment(\.theme) var theme
 /// ```
-/// 
+///
+/// - Since: 0.8.0
 public final class InverseTheme: OrangeTheme, @unchecked Sendable {
 
     // MARK: - Initializers

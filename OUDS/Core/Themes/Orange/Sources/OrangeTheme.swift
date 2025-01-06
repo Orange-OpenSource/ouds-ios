@@ -46,6 +46,8 @@ import OUDSTokensSemantic
 ///
 ///     @Environment(\.theme) var theme
 /// ```
+///
+/// - Since: 0.8.0
 open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
     // MARK: - Initializers

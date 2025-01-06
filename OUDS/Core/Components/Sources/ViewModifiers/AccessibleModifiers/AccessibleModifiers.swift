@@ -70,6 +70,8 @@ struct RequestAccessibleFocusModifier: ViewModifier {
 ///         .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
 ///     }
 /// ```
+///
+/// - Since: 0.8.0
 public enum AccessibilityFocusable: Hashable {
     case none
     case some(id: String)

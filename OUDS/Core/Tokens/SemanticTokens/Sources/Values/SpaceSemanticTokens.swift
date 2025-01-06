@@ -20,6 +20,8 @@
 /// This is a group of semantic tokens for **spacing**.
 /// It defines all ``SpaceSemanticToken`` a theme must have.
 /// Any space semantic token must be declared there.
+///
+/// - Since: 0.8.0
 public protocol SpaceSemanticTokens {
 
     // MARK: Semantic token - Spacing - Scaled

@@ -49,6 +49,8 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(spaces: CustomSpaceTokenProvider())
 /// ```
+///
+/// - Since: 0.8.0
 open class OrangeThemeSpaceSemanticTokensProvider {
 
     /// Intializes the provider
