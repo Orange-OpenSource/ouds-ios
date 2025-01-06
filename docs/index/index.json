@@ -13949,6 +13949,67 @@
                                 "type": "groupMarker"
                             },
                             {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledmedium",
+                                "title": "var spaceScaledMedium: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescalednone",
+                                "title": "var spaceScaledNone: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledshort",
+                                "title": "var spaceScaledShort: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledshorter",
+                                "title": "var spaceScaledShorter: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledshortest",
+                                "title": "var spaceScaledShortest: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledsmash",
+                                "title": "var spaceScaledSmash: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledspacious",
+                                "title": "var spaceScaledSpacious: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledtall",
+                                "title": "var spaceScaledTall: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledtaller",
+                                "title": "var spaceScaledTaller: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledtallest",
+                                "title": "var spaceScaledTallest: MultipleSpaceSemanticTokens",
+                                "type": "property"
+                            }
+                        ],
+                        "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens",
+                        "title": "SpaceMultipleSemanticTokens",
+                        "type": "protocol"
+                    },
+                    {
+                        "children": [
+                            {
+                                "title": "Instance Properties",
+                                "type": "groupMarker"
+                            },
+                            {
                                 "path": "/documentation/oudstokenssemantic/fontsemantictokens/fontfamily",
                                 "title": "var fontFamily: FontFamilySemanticToken",
                                 "type": "property"
@@ -15040,71 +15101,6 @@
                         "path": "/documentation/oudstokenssemantic/multiplespacesemantictokens",
                         "title": "MultipleSpaceSemanticTokens",
                         "type": "class"
-                    },
-                    {
-                        "title": "Protocols",
-                        "type": "groupMarker"
-                    },
-                    {
-                        "children": [
-                            {
-                                "title": "Instance Properties",
-                                "type": "groupMarker"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledmedium",
-                                "title": "var spaceScaledMedium: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescalednone",
-                                "title": "var spaceScaledNone: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledshort",
-                                "title": "var spaceScaledShort: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledshorter",
-                                "title": "var spaceScaledShorter: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledshortest",
-                                "title": "var spaceScaledShortest: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledsmash",
-                                "title": "var spaceScaledSmash: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledspacious",
-                                "title": "var spaceScaledSpacious: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledtall",
-                                "title": "var spaceScaledTall: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledtaller",
-                                "title": "var spaceScaledTaller: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens/spacescaledtallest",
-                                "title": "var spaceScaledTallest: MultipleSpaceSemanticTokens",
-                                "type": "property"
-                            }
-                        ],
-                        "path": "/documentation/oudstokenssemantic/spacemultiplesemantictokens",
-                        "title": "SpaceMultipleSemanticTokens",
-                        "type": "protocol"
                     },
                     {
                         "title": "Type Aliases",
