@@ -53,6 +53,8 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(grids: CustomGridTokensProvider())
 /// ```
+///
+/// - Since: 0.8.0
 open class OrangeThemeGridSemanticTokensProvider {
 
     /// Intializes the provider

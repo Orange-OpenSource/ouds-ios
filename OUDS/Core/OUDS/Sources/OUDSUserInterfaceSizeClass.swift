@@ -75,6 +75,8 @@ extension EnvironmentValues {
 ///     @Environment(\.oudsHorizontalSizeClass) var horizontalSizeClass
 ///     @Environment(\.oudsVerticalSizeClass) var verticalSizeClass
 /// ```
+///
+/// - Since: 0.8.0
 public enum OUDSUserInterfaceSizeClass: String, Sendable {
     case extraCompact = "Extra Compact"
     case compact = "Compact"

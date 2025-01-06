@@ -47,6 +47,8 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(elevations: CustomElevationTokensProvider())
 /// ```
+///
+/// - Since: 0.8.0
 open class OrangeThemeElevationSemanticTokensProvider {
 
     /// Intializes the provider

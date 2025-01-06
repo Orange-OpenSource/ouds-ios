@@ -45,7 +45,8 @@
 ///         // Thus users can in their components use spaceScaledNone as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
 /// ```
-/// 
+///
+/// - Since: 0.8.0
 public protocol SpaceMultipleSemanticTokens {
 
     // MARK: Semantic token - Spacing - Scaled

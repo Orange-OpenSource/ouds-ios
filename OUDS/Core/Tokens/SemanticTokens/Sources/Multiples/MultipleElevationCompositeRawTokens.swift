@@ -48,6 +48,8 @@ import SwiftUI
 /// The case of this `MultipleElevationCompositeRawTokens` is quite particular because in fact it contains `MultipleElevationCompositeRawTokens` (i.e. raw tokens) instead of semantic tokens.
 /// In fact only the *color* of the elevation effect vary depending to the color scheme,
 /// but in the *Figma* kit this is composite raw tokens which are defined for ligh and dark mode as only one token.
+///
+/// - Since: 0.8.0
 public final class MultipleElevationCompositeRawTokens: NSObject, Sendable {
 
     /// For **light** mode scheme

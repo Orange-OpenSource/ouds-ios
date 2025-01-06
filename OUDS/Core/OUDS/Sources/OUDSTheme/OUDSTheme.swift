@@ -25,6 +25,8 @@ import OUDSTokensSemantic
 /// Because `OUDSTheme` is not a *final* class, its type cannot be seen as `Sendable`, that is the reason why this conformity is unchecked.
 ///
 /// **Warning: You are not supposed to use this abstract default theme directly. Please prefer `OrangeTheme` instead**
+///
+/// - Since: 0.8.0
 open class OUDSTheme: @unchecked Sendable {
 
     // MARK: - Properties

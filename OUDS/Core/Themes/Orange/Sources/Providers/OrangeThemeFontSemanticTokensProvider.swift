@@ -49,6 +49,8 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(fonts: CustomFontTokensProvider())
 /// ```
+///
+/// - Since: 0.8.0
 open class OrangeThemeFontSemanticTokensProvider {
 
     /// Intializes the provider

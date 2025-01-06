@@ -23,6 +23,8 @@
 /// It defines all ``ColorSemanticToken``  a theme must have.
 /// These tokens are then gathered inside ``MultipleColorSemanticTokens`` defined in ``ColorMultipleSemanticTokens``.
 /// Any color semantic token must be declared there (except ``MultipleColorSemanticTokens``)
+///
+/// - Since: 0.8.0
 public protocol ColorSemanticTokens {
 
     // MARK: - Color - Opacity - Invisible

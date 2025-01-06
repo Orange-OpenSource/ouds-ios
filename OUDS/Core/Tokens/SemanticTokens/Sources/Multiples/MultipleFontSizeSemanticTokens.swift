@@ -38,7 +38,8 @@ import OUDSTokensRaw
 ///         // The theme exposes both generated font size semantic tokens and "crafted" higher level color semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
-/// 
+///
+/// - Since: 0.8.0
 public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
 
     /// For **extra-compact** and **compact** viewports
