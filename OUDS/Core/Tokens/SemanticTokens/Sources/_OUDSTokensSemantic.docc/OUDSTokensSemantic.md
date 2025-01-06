@@ -189,6 +189,7 @@ struct Showcase: App {
 - ``SizeSemanticTokens``
 - ``SizeMultipleSemanticTokens``
 - ``SpaceSemanticTokens``
+- ``SpaceMultipleSemanticTokens``
 - ``FontSemanticTokens``
 - ``FontCompositeSemanticTokens``
 - ``FontMultipleSemanticTokens``
