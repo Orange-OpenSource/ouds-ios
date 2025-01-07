@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-//
+// 
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-//
+// 
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
 import OUDS
@@ -71,7 +71,7 @@ struct SpaceTokenVariant<TokenIllustration>: View where TokenIllustration: View 
     var body: some View {
         let token = namedSpaceToken.token(from: theme)
         let name = namedSpaceToken.name
-        let value = String(format: "%.2f pt", token)
+        let value = String(format: "%.2f (pt)", token)
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             illustration(token)
@@ -350,19 +350,16 @@ struct SpaceHeaderDescription: View {
     }
 
     private func text(_ paddings: EdgeInsets) -> some View {
-        HStack(spacing: 0) {
-            SpaceIllustrationRectangle(width: paddings.leading)
-            VStack(spacing: 0) {
-                SpaceIllustrationRectangle(height: paddings.top)
-
+        HStack {
+            VStack {
                 Text(firstText)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                     .typeBodyDefaultMedium(theme)
-
-                SpaceIllustrationRectangle(height: paddings.bottom)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                    .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
             }
-            SpaceIllustrationRectangle(width: paddings.trailing)
+            .background(Color(UIColor.systemBackground))
         }
+        .padding(paddings)
+        .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
     }
 }
