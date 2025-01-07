@@ -39,8 +39,8 @@ struct Card: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
         }
-        .background(theme.colors.colorBgPrimary.color(for: colorScheme))
-        .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
+        .background(theme.colors.colorBgPrimary.color(for: colorScheme)
+            .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme)))
         .padding(.all, 4)
     }
 }

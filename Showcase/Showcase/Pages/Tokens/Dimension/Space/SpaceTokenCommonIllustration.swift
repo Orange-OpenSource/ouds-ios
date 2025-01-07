@@ -114,7 +114,7 @@ struct SpaceCommonIllustration: View {
                 ShowcaseTokenIllustrationBackground()
                     .padding(.top, dimension)
                     .padding(.leading, dimension)
-                    .background(theme.colors.colorChartFunctionalInformation.color(for: colorScheme))
+                    .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
             case .leading(let asset): // ZStack alignment leading
                 HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationRectangle(width: dimension)
@@ -223,7 +223,7 @@ struct SpaceIllustrationIcon: View {
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
-                .foregroundColor(theme.colors.colorChartFunctionalInformation.color(for: colorScheme))
+                .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
                 .padding(.horizontal, asset.extraPadding)
                 .padding(.vertical, asset.extraPadding)
                 .frame(width: 24)
@@ -255,7 +255,7 @@ private struct SpaceIllustrationRectangle: View {
 
     var body: some View {
         Rectangle()
-            .foregroundColor(theme.colors.colorChartFunctionalInformation.color(for: colorScheme))
+            .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
             .frame(width: width, height: height)
     }
 }
@@ -360,6 +360,6 @@ struct SpaceHeaderDescription: View {
             .background(Color(UIColor.systemBackground))
         }
         .padding(paddings)
-        .background(theme.colors.colorChartFunctionalInformation.color(for: colorScheme))
+        .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
     }
 }
