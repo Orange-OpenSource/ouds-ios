@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
 import OUDSComponents
 import SwiftUI
 
@@ -66,10 +67,33 @@ struct ButtonIllustration: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            ButtonDemo(model: model, coloredBackgound: false)
+            ButtonDemo(model: model, coloredSurface: false)
             // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            ButtonDemo(model: model, coloredBackgound: false).colorScheme(colorScheme == .dark ? .light : .dark)
-            ButtonDemo(model: model, coloredBackgound: true)
+            ButtonDemo(model: model, coloredSurface: false)
+                .colorScheme(colorScheme == .dark ? .light : .dark)
+            ButtonDemo(model: model, coloredSurface: true)
+        }
+    }
+}
+
+private struct BackgroundModifier: ViewModifier {
+
+    // MARK: Environment properties
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: Stored properties
+
+    let coloredSurface: Bool
+
+    // MARK: Body
+
+    func body(content: Content) -> some View {
+        if coloredSurface {
+            content.oudsColoredSurface(color: theme.colors.colorSurfaceStatusInfoEmphasized.color(for: colorScheme))
+        } else {
+            content.background(theme.colors.colorBgSecondary.color(for: colorScheme))
         }
     }
 }
@@ -84,24 +108,25 @@ private struct ButtonDemo: View {
     // MARK: Stored properties
 
     @StateObject var model: ButtonConfigurationModel
-    let coloredBackgound: Bool
+    let coloredSurface: Bool
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
+
             // It is not allowed to place a Negative bnutton on colored surface
             if model.hierarchy == .negative,
-               coloredBackgound == true {
+               coloredSurface == true {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
                 // swiftlint:disable accessibility_label_for_image
                 switch model.layout {
                 case .iconOnly:
-                    OUDSButton(icon: Image("ic_heart"), hierarchy: model.hierarchy, state: model.state, onColoredSurface: coloredBackgound) {}
+                    OUDSButton(icon: Image("ic_heart"), hierarchy: model.hierarchy, state: model.state) {}
                 case .textOnly:
-                    OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, state: model.state, onColoredSurface: coloredBackgound) {}
+                    OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, state: model.state) {}
                 case .iconAndText:
-                    OUDSButton(icon: Image("ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, state: model.state, onColoredSurface: coloredBackgound) {}
+                    OUDSButton(icon: Image("ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, state: model.state) {}
                 }
                 // swiftlint:enable accessibility_label_for_image
             }
@@ -110,14 +135,6 @@ private struct ButtonDemo: View {
         }
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .background(backgroundColor)
-    }
-
-    private var backgroundColor: Color {
-        if coloredBackgound {
-            theme.colors.colorSurfaceStatusInfoEmphasized.color(for: colorScheme)
-        } else {
-            theme.colors.colorBgSecondary.color(for: colorScheme)
-        }
+        .modifier(BackgroundModifier(coloredSurface: coloredSurface))
     }
 }

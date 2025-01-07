@@ -61,7 +61,6 @@ public struct OUDSButton: View {
     private let type: `Type`
     private let hierarchy: Hierarchy
     private let state: ButtonState
-    private let onColoredSurface: Bool
     private let action: () -> Void
 
     private enum `Type`{
@@ -69,8 +68,30 @@ public struct OUDSButton: View {
         case icon(Image)
         case textAndIcon(text: String, icon: Image)
     }
-    public typealias Hierarchy = OUDSButtonStyle.Hierarchy
-    public typealias ButtonState = OUDSButtonStyle.ButtonState
+
+    /// Represents the hierarchy of an OUDS button
+    public enum Hierarchy {
+        /// Default button is used for action
+        case `default`
+        /// Strong button on the page should be singular and prominent
+        case strong
+        /// Minimal button for actions that are considered less crucial
+        case minimal
+        /// Negative button used for destructive action
+        case negative
+    }
+
+    /// Defines the state of the button
+    public enum ButtonState {
+        /// The normal state, the button coumd be in prossed, hover, disabled or enabled internal state
+        case normal
+
+        /// The loading state means a loading action is in progress, sometimes just after user tapped on button
+        case loading
+
+        /// The skeleton state can be apply on the button when the screen is loadind data for the first time
+        case skeleton
+    }
 
     // MARK: Initializers
 
@@ -80,14 +101,12 @@ public struct OUDSButton: View {
     ///    - text: The text
     ///    - hierarchy: The hierarchy of the button
     ///    - state: The current state of the button (normal or loading/skeleton
-    ///    - onColoredSurface: true if the button is placed on colored surface, false otherwise
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, text: String, hierarchy: Hierarchy, state: ButtonState, onColoredSurface: Bool = false, action: @escaping () -> Void) {
+    public init(icon: Image, text: String, hierarchy: Hierarchy, state: ButtonState, action: @escaping () -> Void) {
         self.type = .textAndIcon(text: text, icon: icon)
         self.hierarchy = hierarchy
         self.state = state
         self.action = action
-        self.onColoredSurface = onColoredSurface
     }
 
     /// Create a button with an icon.
@@ -96,14 +115,12 @@ public struct OUDSButton: View {
     ///    - icon: An image shoud contains an icon
     ///    - hierarchy: The hierarchy of the button
     ///    - state: The current state of the button (normal or loading/skeleton)
-    ///    - onColoredSurface: true if the button is placed on colored surface, false otherwise
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, hierarchy: Hierarchy, state: ButtonState, onColoredSurface: Bool = false, action: @escaping () -> Void) {
+    public init(icon: Image, hierarchy: Hierarchy, state: ButtonState, action: @escaping () -> Void) {
         self.type = .icon(icon)
         self.hierarchy = hierarchy
         self.state = state
         self.action = action
-        self.onColoredSurface = onColoredSurface
     }
 
     /// Create a button with a text
@@ -111,14 +128,12 @@ public struct OUDSButton: View {
     ///    - text: The text of the button
     ///    - hierarchy: The hierarchy of the button
     ///    - state: The current state of the button (normal or loading/skeleton)
-    ///    - onColoredSurface: true if the button is placed on colored surface, false otherwise
     ///    - action: The action to perform when the user triggers the button
-    public init(text: String, hierarchy: Hierarchy, state: ButtonState, onColoredSurface: Bool = false, action: @escaping () -> Void) {
+    public init(text: String, hierarchy: Hierarchy, state: ButtonState, action: @escaping () -> Void) {
         self.type = .text(text)
         self.hierarchy = hierarchy
         self.state = state
         self.action = action
-        self.onColoredSurface = onColoredSurface
     }
 
     // MARK: Body
@@ -134,7 +149,7 @@ public struct OUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon)
             }
         }
-        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, state: state, onColoredSurface: onColoredSurface))
+        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, state: state))
     }
 }
 

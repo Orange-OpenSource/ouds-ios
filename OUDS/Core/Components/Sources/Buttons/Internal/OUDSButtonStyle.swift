@@ -15,13 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-extension OUDSButton {
-
-    func buttonStyle(state: ButtonState, hierarchy: Hierarchy, onColoredSurface: Bool = false) -> some View {
-        self.buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, state: state, onColoredSurface: onColoredSurface))
-    }
-}
-
 /// Used to apply the right style on a `OUDSButton` according to the `hierarchy`
 /// and the `style`.
 ///
@@ -41,38 +34,13 @@ extension OUDSButton {
 /// - skeleton: the style used when screen if presenting and probably loading data for the first time.
 /// - loading: the style used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
-public struct OUDSButtonStyle: ButtonStyle {
-
-    /// Represents the hierarchy of an OUDS button
-    public enum Hierarchy {
-        /// Default button is used for action
-        case `default`
-        /// Strong button on the page should be singular and prominent
-        case strong
-        /// Minimal button for actions that are considered less crucial
-        case minimal
-        /// Negative button used for destructive action
-        case negative
-    }
-
-    /// Defines the state of the button
-    public enum ButtonState {
-        /// The normal state, the button coumd be in prossed, hover, disabled or enabled internal state
-        case normal
-
-        /// The loading state means a loading action is in progress, sometimes just after user tapped on button
-        case loading
-
-        /// The skeleton state can be apply on the button when the screen is loadind data for the first time
-        case skeleton
-    }
+struct OUDSButtonStyle: ButtonStyle {
 
     // MARK: Stored Properties
 
     @Environment(\.isEnabled) private var isEnable
-    private let state: ButtonState
-    private let hierarchy: Hierarchy
-    private let onColoredSurface: Bool
+    private let state: OUDSButton.ButtonState
+    private let hierarchy: OUDSButton.Hierarchy
     @State private var isHover: Bool
 
     // MARK: Initializer
@@ -83,12 +51,10 @@ public struct OUDSButtonStyle: ButtonStyle {
     ///  - Parameters:
     ///     - hierarchy: The button hierarchy
     ///     - state: The current stete of the button
-    ///     - onColoredSurface: true if the button is placed on colored surface, false otherwise
-    public init(hierarchy: Hierarchy, state: ButtonState, onColoredSurface: Bool) {
+    public init(hierarchy: OUDSButton.Hierarchy, state: OUDSButton.ButtonState) {
         self.hierarchy = hierarchy
         self.state = state
         self.isHover = false
-        self.onColoredSurface = onColoredSurface
     }
 
     // MARK: Body
@@ -100,11 +66,11 @@ public struct OUDSButtonStyle: ButtonStyle {
                 .onHover { isHover in
                     self.isHover = isHover
                 }
-                .modifier(ButtonViewModifier(hierarchy: hierarchy, state: internalState(isPressed: configuration.isPressed), onColoredSurface: onColoredSurface))
+                .modifier(ButtonViewModifier(hierarchy: hierarchy, state: internalState(isPressed: configuration.isPressed)))
         case .loading:
             configuration.label
-                .modifier(ButtonViewModifier(hierarchy: hierarchy, state: .loading, onColoredSurface: onColoredSurface))
-                .modifier(ButtonLoadingContentModifier(hierarchy: hierarchy, onColoredSurface: onColoredSurface))
+                .modifier(ButtonViewModifier(hierarchy: hierarchy, state: .loading))
+                .modifier(ButtonLoadingContentModifier(hierarchy: hierarchy))
         case .skeleton:
             configuration.label
                 .modifier(ButtonSkeletonModifier())

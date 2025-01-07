@@ -27,10 +27,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
     }
-    @Published var hierarchy: OUDSButtonStyle.Hierarchy {
+    @Published var hierarchy: OUDSButton.Hierarchy {
         didSet { updateCode() }
     }
-    @Published var state: OUDSButtonStyle.ButtonState {
+    @Published var state: OUDSButton.ButtonState {
         didSet { updateCode() }
     }
 
@@ -103,9 +103,9 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
 
 // MARK: Button Layout
 
-extension OUDSButtonStyle.ButtonState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSButton.ButtonState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSButtonStyle.ButtonState] = [.normal, .loading, skeleton]
+    nonisolated(unsafe) public static let allCases: [OUDSButton.ButtonState] = [.normal, .loading, skeleton]
 
     public var description: String {
         switch self {
@@ -123,8 +123,8 @@ extension OUDSButtonStyle.ButtonState: @retroactive CaseIterable, @retroactive C
 
 // MARK: Button Hierarchy extension
 
-extension OUDSButtonStyle.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static let allCases: [OUDSButtonStyle.Hierarchy] = [.default, .strong, .minimal, .negative]
+extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    nonisolated(unsafe) public static let allCases: [OUDSButton.Hierarchy] = [.default, .strong, .minimal, .negative]
 
     // Note: Not localized because it is a technical name
     public var description: String {
@@ -170,7 +170,7 @@ struct ButtonConfiguration: View {
                     .typeHeadingMedium(theme)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 Picker("app_components_button_hierarchy_label", selection: $model.hierarchy) {
-                    ForEach(OUDSButtonStyle.Hierarchy.allCases, id: \.id) { hierarchy in
+                    ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
                         Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
                     }
                 }
@@ -182,7 +182,7 @@ struct ButtonConfiguration: View {
                     .typeHeadingMedium(theme)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 Picker("app_components_button_state_label", selection: $model.state) {
-                    ForEach(OUDSButtonStyle.ButtonState.allCases, id: \.id) { state in
+                    ForEach(OUDSButton.ButtonState.allCases, id: \.id) { state in
                         Text(LocalizedStringKey(state.description)).tag(state)
                     }
                 }

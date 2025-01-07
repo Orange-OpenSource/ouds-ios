@@ -30,16 +30,15 @@ struct ButtonViewModifier: ViewModifier {
 
     // MARK: Stored Properties
 
-    let hierarchy: OUDSButtonStyle.Hierarchy
+    let hierarchy: OUDSButton.Hierarchy
     let state: InternalButtonState
-    let onColoredSurface: Bool
 
     // MARK: Body
 
     func body(content: Content) -> some View {
         content
-            .modifier(ButtonBorderModifier(hierarchy: hierarchy, state: state, onColoredSurface: onColoredSurface))
-            .modifier(ButtonForegroundModifier(hierarchy: hierarchy, state: state, onColoredSurface: onColoredSurface))
-            .modifier(ButtonBackgroundModifier(hierarchy: hierarchy, state: state, onColoredSurface: onColoredSurface))
+            .modifier(ButtonBorderModifier(hierarchy: hierarchy, state: state))
+            .modifier(ButtonForegroundModifier(hierarchy: hierarchy, state: state))
+            .modifier(ButtonBackgroundModifier(hierarchy: hierarchy, state: state))
     }
 }

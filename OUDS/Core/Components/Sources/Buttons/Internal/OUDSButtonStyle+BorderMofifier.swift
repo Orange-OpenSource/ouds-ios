@@ -20,12 +20,12 @@ import SwiftUI
 struct ButtonBorderModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
+    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
     // MARK: Stored Properties
 
-    let hierarchy: OUDSButtonStyle.Hierarchy
+    let hierarchy: OUDSButton.Hierarchy
     let state: InternalButtonState
-    let onColoredSurface: Bool
 
     // MARK: Body
 
