@@ -19,10 +19,11 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for buttons components like `OUDSButton`.
-///
+/// Declares all component tokens for buttons components like `OUDSButton`
+/// Use for tokens providers like `OrangeThemeButtonComponentTokensProvider`.
+/// 
 /// - Since: 0.10.0
-public protocol ButtonsComponentTokens {
+public protocol ButtonComponentTokens {
 
     // MARK: - Size
 

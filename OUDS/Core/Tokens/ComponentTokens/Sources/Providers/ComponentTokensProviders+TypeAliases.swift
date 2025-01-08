@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-/// A type alias only for ``ButtonsComponentTokens`` so as to keep consistency with other type aliases
+/// A type alias only for ``ButtonComponentTokens`` so as to keep consistency with other type aliases
 /// merging several protocols.
 /// For example `OrangeThemeButtonComponentTokensProvider` matches this type alias.
-public typealias AllButtonComponentTokens = ButtonsComponentTokens
+public typealias AllButtonComponentTokensProvider = ButtonComponentTokens

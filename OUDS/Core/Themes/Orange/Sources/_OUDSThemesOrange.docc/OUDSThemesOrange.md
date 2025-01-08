@@ -74,8 +74,11 @@ You will have to consider the tokens provider you need:
 - font tokens are in `OrangeThemeFontSemanticTokensProvider`
 
 ```swift
+import OUDSTokensComponent // To use component tokens if needed
 import OUDSTokensSemantic // To use semantic tokens if needed
 import OUDSTokensRaw // To use raw tokens if needed
+
+// MAKR: - For semantic tokens
 
 // Token provider for spaces
 
@@ -164,6 +167,17 @@ class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
         MultipleFontCompositeRawTokens(FontRawTokens.typeBold300)
     }
 }
+
+// MARK: - And also for components tokens
+
+class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentTokensProvider {
+    override public var buttonSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
+    override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
+    override public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    override public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+}
+
 ```
 
 Then define your own theme class and assign the providers:
@@ -182,7 +196,8 @@ class YourAppTheme: OrangeTheme {
                    grids: YourAppThemeGridTokensProvider(),
                    opacities: YourAppThemeOpacityTokensProvider(),
                    sizes: YourAppThemeSizeTokensProvider(),
-                   spaces: YourAppThemeSpaceTokensProvider())
+                   spaces: YourAppThemeSpaceTokensProvider(),
+                   button: YourAppThemeButtonComponentTokensProvider())
     }
 }
 ```
@@ -218,7 +233,9 @@ import OUDS // To get OUDSThemeableView
 struct YourApp: App {
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: OrangeTheme(colors: YourAppThemeColorTokensProvider())) {
+            OUDSThemeableView(theme: 
+                OrangeTheme(colors: YourAppThemeColorTokensProvider(),
+                            button: YourAppThemeButtonComponentTokensProvider())) {
                 // Your root view
             }
         }

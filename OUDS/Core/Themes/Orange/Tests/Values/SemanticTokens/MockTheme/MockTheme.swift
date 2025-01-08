@@ -28,6 +28,8 @@ import OUDSTokensSemantic
 /// - ``MockThemeOpacitySemanticTokensProvider`` for opacities
 /// - ``MockThemeSizeSemanticTokensProvider`` for sizes
 /// - ``MockThemeSpaceSemanticTokensprovider`` for spaces
+///
+/// And also components token providers (``MockThemeButtonComponentTokenProvider``)
 open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {

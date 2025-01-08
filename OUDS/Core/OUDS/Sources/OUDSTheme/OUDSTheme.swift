@@ -62,7 +62,7 @@ open class OUDSTheme: @unchecked Sendable {
     // MARK: - Component tokens
 
     /// All components tokens related to button components like `OUDSButton`
-    public let button: AllButtonComponentTokens
+    public let button: AllButtonComponentTokensProvider
 
     // MARK: - Initializers
 
@@ -86,7 +86,7 @@ open class OUDSTheme: @unchecked Sendable {
                 opacities: AllOpacitySemanticTokensProvider,
                 sizes: AllSizeSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider,
-                button: AllButtonComponentTokens) {
+                button: AllButtonComponentTokensProvider) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations
@@ -120,7 +120,7 @@ open class OUDSTheme: @unchecked Sendable {
                 opacities: AllOpacitySemanticTokensProvider,
                 sizes: AllSizeSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider,
-                button: AllButtonComponentTokens) {
+                button: AllButtonComponentTokensProvider) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations

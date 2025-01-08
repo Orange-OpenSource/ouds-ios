@@ -72,7 +72,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          opacities: AllOpacitySemanticTokensProvider = OrangeThemeOpacitySemanticTokensProvider(),
                          sizes: AllSizeSemanticTokensProvider = OrangeThemeSizeSemanticTokensProvider(),
                          spaces: AllSpaceSemanticTokensProvider = OrangeThemeSpaceSemanticTokensProvider(),
-                         button: AllButtonComponentTokens) {
+                         button: AllButtonComponentTokensProvider) {
         OUDSLogger.debug("Init of OrangeTheme")
         super.init(colors: colors,
                    borders: borders,
@@ -86,7 +86,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     }
 
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations.
-    /// Uses the given tokens of sizes, borders, colors and spaces to define the `AllButtonComponentTokens` to use (here `OrangeThemeButtonComponentTokensProvider`)
+    /// Uses the given tokens of sizes, borders, colors and spaces to define the `AllButtonComponentTokensProvider` to use (using `OrangeThemeButtonComponentTokensProvider`)
     /// - Parameters:
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to ``OrangeThemeColorSemanticTokensProvider``
     ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to ``OrangeThemeBorderSemanticTokensProvider``
