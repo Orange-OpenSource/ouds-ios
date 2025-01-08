@@ -30,7 +30,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     @Published var hierarchy: OUDSButton.Hierarchy {
         didSet { updateCode() }
     }
-    @Published var state: OUDSButton.ButtonState {
+    @Published var style: OUDSButton.Style {
         didSet { updateCode() }
     }
 
@@ -40,7 +40,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         self.enabled = true
         self.layout = .textOnly
         self.hierarchy = .default
-        self.state = .normal
+        self.style = .`default`
     }
 
     deinit { }
@@ -48,7 +48,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     // MARK: ComponentConfiguration
 
     private var disableCode: String {
-        if case .normal = state {
+        if case .`default` = style {
             ".disable(\(enabled ? "false" : "true"))"
         } else {
             ""
@@ -61,19 +61,19 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
             """
-          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), text: \"Button\", state: \(state.description.lowercased())) {}
+          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), text: \"Button\", style: \(style.description.lowercased())) {}
           \(disableCode))
           """
         case .iconOnly:
             code =
             """
-          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\"), state: \(state.description.lowercased()) {}
+          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\"), style: \(style.description.lowercased()) {}
           \(disableCode))
           """
         case .iconAndText:
             code =
             """
-          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\", text: \"Button\"), state: \(state.description.lowercased()) {}
+          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\", text: \"Button\"), style: \(style.description.lowercased()) {}
           \(disableCode))
           """
         }
@@ -103,14 +103,14 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
 
 // MARK: Button Layout
 
-extension OUDSButton.ButtonState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSButton.ButtonState] = [.normal, .loading]
+    nonisolated(unsafe) public static let allCases: [OUDSButton.Style] = [.`default`, .loading]
 
     public var description: String {
         switch self {
-        case .normal:
-            "Normal"
+        case .`default`:
+            "Default"
         case .loading:
             "Loading"
         }
@@ -161,7 +161,7 @@ struct ButtonConfiguration: View {
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.state != .normal)
+                .disabled(model.style != .`default`)
 
             VStack(alignment: .leading) {
                 Text(LocalizedStringKey("app_components_button_hierarchy_label"))
@@ -176,12 +176,12 @@ struct ButtonConfiguration: View {
             }
 
             VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_state_label"))
+                Text(LocalizedStringKey("app_components_button_style_label"))
                     .typeHeadingMedium(theme)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_state_label", selection: $model.state) {
-                    ForEach(OUDSButton.ButtonState.allCases, id: \.id) { state in
-                        Text(LocalizedStringKey(state.description)).tag(state)
+                Picker("app_components_button_style_label", selection: $model.style) {
+                    ForEach(OUDSButton.Style.allCases, id: \.id) { style in
+                        Text(LocalizedStringKey(style.description)).tag(style)
                     }
                 }
                 .pickerStyle(.segmented)

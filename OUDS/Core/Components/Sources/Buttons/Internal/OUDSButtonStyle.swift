@@ -38,7 +38,7 @@ struct OUDSButtonStyle: ButtonStyle {
     // MARK: Stored Properties
 
     @Environment(\.isEnabled) private var isEnable
-    private let state: OUDSButton.ButtonState
+    private let style: OUDSButton.Style
     private let hierarchy: OUDSButton.Hierarchy
     @State private var isHover: Bool
 
@@ -48,19 +48,19 @@ struct OUDSButtonStyle: ButtonStyle {
     /// in the `state` of the `OUDSButton`.
     ///
     ///  - Parameters:
-    ///     - hierarchy: The button hierarchy
-    ///     - state: The current stete of the button
-    public init(hierarchy: OUDSButton.Hierarchy, state: OUDSButton.ButtonState) {
+    ///    - hierarchy: The button hierarchy
+    ///    - style: The button style
+    public init(hierarchy: OUDSButton.Hierarchy, style: OUDSButton.Style) {
         self.hierarchy = hierarchy
-        self.state = state
+        self.style = style
         self.isHover = false
     }
 
     // MARK: Body
 
     public func makeBody(configuration: Configuration) -> some View {
-        switch state {
-        case .normal:
+        switch style {
+        case .default:
             configuration.label
                 .onHover { isHover in
                     self.isHover = isHover

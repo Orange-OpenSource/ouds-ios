@@ -95,7 +95,7 @@
 "app_components_button_description_text" = "Buttons allow users to make choices or perform an action. They have multiple styles for various needs.";
 "app_components_button_negative_hierary_notAllowed_text" = "Not allowed on colored surface";
 "app_components_button_hierarchy_label" = "Hierarchy";
-"app_components_button_state_label" = "State";
+"app_components_button_style_label" = "Style";
 "app_components_button_layout_label" = "Layout";
 "app_components_button_textOnlyLayout_label" = "Text only";
 "app_components_button_iconAndTextLayout_label" = "Icon + text";

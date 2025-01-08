@@ -13,6 +13,7 @@
 
 import SwiftUI
 
+// swiftlint:disable line_length
 /// The `OUDSButton` propose layout with text only, icon only or text and icon.
 ///
 /// ## Hierarchies
@@ -26,8 +27,8 @@ import SwiftUI
 ///
 /// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
 ///
-/// - **negative**: Negative buttons should be used sparingly to warn of a destructive action, for example, delete or remove, typically
-/// resulting in the opening of a confirmation dialog.
+/// - **negative**: Negative buttons should be used sparingly to warn of a destructive action, for example, delete or remove, typically resulting in the opening of a confirmation dialog.
+///    A button with [OUDSButton.Hierarchy.Negative] hierarchy is not allowed as a direct or indirect child of an [OUDSColoredSurface].
 ///
 /// ```
 ///     // Icon only with default hierarchy
@@ -41,25 +42,27 @@ import SwiftUI
 ///
 /// ```
 ///
-/// ## States
+/// ## Styles
 ///
-/// Three states are available:
+/// Two style are available:
 ///
-/// - **normal**: used in the normal usage of button. The style of the button change for folowing states disabled, pressed, hovered or normal (i.e. enabled)
+/// - **default**: used in the normal usage of button. The aspect of the button changes for following states disabled, pressed, hovered or normal (i.e. enabled)
 /// - **loading**: used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
 /// ## Colored Surface
 ///
-/// If button is placed on colored surface, the default colors (content, background and border) must be adapted.
-/// **Remark: Today it is not allowed to placed a Negative button on a coloed surface.
+/// If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
 ///
+/// **Remark: Today it is not allowed to placed a Negative button on a colored surface.
+///
+// swiftlint:enable line_length
 public struct OUDSButton: View {
 
     // MARK: Stored Properties
 
     private let type: `Type`
     private let hierarchy: Hierarchy
-    private let state: ButtonState
+    private let style: Style
     private let action: () -> Void
 
     private enum `Type`{
@@ -80,12 +83,12 @@ public struct OUDSButton: View {
         case negative
     }
 
-    /// Defines the state of the button
-    public enum ButtonState {
-        /// The normal state, the button coumd be in prossed, hover, disabled or enabled internal state
-        case normal
+    /// Defines the style of the button
+    public enum Style {
+        /// The default style, the button coumd be in prossed, hover, disabled or enabled internal state
+        case `default`
 
-        /// The loading state means a loading action is in progress, sometimes just after user tapped on button
+        /// The loading style means a loading action is in progress, sometimes just after user tapped on button
         case loading
     }
 
@@ -95,13 +98,13 @@ public struct OUDSButton: View {
     /// - Parameters:
     ///    - icon: An image shoud contains an icon
     ///    - text: The text
-    ///    - hierarchy: The hierarchy of the button
-    ///    - state: The current state of the button (normal or loading)
+    ///    - hierarchy: The button hierarchy
+    ///    - style: The button style
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, text: String, hierarchy: Hierarchy, state: ButtonState, action: @escaping () -> Void) {
+    public init(icon: Image, text: String, hierarchy: Hierarchy, style: Style, action: @escaping () -> Void) {
         self.type = .textAndIcon(text: text, icon: icon)
         self.hierarchy = hierarchy
-        self.state = state
+        self.style = style
         self.action = action
     }
 
@@ -109,26 +112,26 @@ public struct OUDSButton: View {
     ///
     /// - Parameters:
     ///    - icon: An image shoud contains an icon
-    ///    - hierarchy: The hierarchy of the button
-    ///    - state: The current state of the button (normal or loading)
+    ///    - hierarchy: The button hierarchy
+    ///    - style: The button style
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, hierarchy: Hierarchy, state: ButtonState, action: @escaping () -> Void) {
+    public init(icon: Image, hierarchy: Hierarchy, style: Style, action: @escaping () -> Void) {
         self.type = .icon(icon)
         self.hierarchy = hierarchy
-        self.state = state
+        self.style = style
         self.action = action
     }
 
     /// Create a button with a text
     /// - Parameters:
     ///    - text: The text of the button
-    ///    - hierarchy: The hierarchy of the button
-    ///    - state: The current state of the button (normal or loading)
+    ///    - hierarchy: The button hierarchy
+    ///    - style: The button style
     ///    - action: The action to perform when the user triggers the button
-    public init(text: String, hierarchy: Hierarchy, state: ButtonState, action: @escaping () -> Void) {
+    public init(text: String, hierarchy: Hierarchy, style: Style, action: @escaping () -> Void) {
         self.type = .text(text)
         self.hierarchy = hierarchy
-        self.state = state
+        self.style = style
         self.action = action
     }
 
@@ -145,7 +148,7 @@ public struct OUDSButton: View {
                 ButtonTextAndIcon(text: text, icon: icon)
             }
         }
-        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, state: state))
+        .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, style: style))
     }
 }
 
