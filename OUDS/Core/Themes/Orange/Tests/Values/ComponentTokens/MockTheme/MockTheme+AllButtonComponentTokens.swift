@@ -21,6 +21,8 @@ import OUDSTokensSemantic
 
 final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTokensProvider {
 
+    // MARK: - Mocks and setup
+
     static let mockThemeButtonSize: DimensionRawToken = 118
     static let mockThemeButtonRadius: BorderRadiusRawToken = 712
     static let mockThemeButtonColor = MultipleColorSemanticTokens("#00FF00")
@@ -32,9 +34,13 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
         super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
     }
 
+    // MARK: - Button component tokens
+
     override public var buttonSizeMaxHeight: SizeSemanticToken { Self.mockThemeButtonSize }
     override public var buttonBorderRadius: BorderRadiusSemanticToken { Self.mockThemeButtonRadius }
     override public var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens { Self.mockThemeButtonColor }
+    // ...
+
 }
 
 // swiftlint:enable required_deinit

@@ -19,15 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// - Since: 0.10.0
-public protocol ButtonsComponentTokensRequirements {
-    var sizes: AllSizeSemanticTokensProvider { get }
-    var borders: AllBorderSemanticTokensProvider { get }
-    var colors: AllColorSemanticTokensProvider { get }
-    var spaces: AllSpaceSemanticTokensProvider { get }
-}
-
-/// This is a component tokens list for buttons like `OUDSButton`.
+/// Declares all component tokens for buttons components like `OUDSButton`.
 ///
 /// - Since: 0.10.0
 public protocol ButtonsComponentTokens {

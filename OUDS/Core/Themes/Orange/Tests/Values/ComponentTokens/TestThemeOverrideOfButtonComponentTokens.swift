@@ -42,6 +42,8 @@ final class TestThemeOverrideOfButtonComponentTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.button.buttonColorBgDefaultFocusMono, abstractTheme.button.buttonColorBgDefaultFocusMono)
         XCTAssertTrue(inheritedTheme.button.buttonColorBgDefaultFocusMono == MockThemeButtonComponentTokenProvider.mockThemeButtonColor)
     }
+
+    // ...
 }
 
 // swiftlint:enable required_deinit

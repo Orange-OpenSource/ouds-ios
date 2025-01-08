@@ -61,9 +61,7 @@ open class OUDSTheme: @unchecked Sendable {
 
     // MARK: - Component tokens
 
-    // TODO: Wrap all components tokens provider inside one dedicated wrapper?
-
-    /// All components tokens related to `OUDSButton`
+    /// All components tokens related to button components like `OUDSButton`
     public let button: AllButtonComponentTokens
 
     // MARK: - Initializers
@@ -79,7 +77,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - opacities: An object providing all the opacity semantic tokens
     ///    - sizes: An object providing all the size semantic tokens
     ///    - spaces: An object providing all the space semantic tokens
-    ///    - button: An object providing all the component tokens for an `OUDSButton`
+    ///    - button: An object providing all the component tokens for buttons
     public init(colors: AllColorSemanticTokensProvider,
                 borders: AllBorderSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,
@@ -112,7 +110,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation
-    ///    - button: An object providing all the component tokens for an `OUDSButton`
+    ///    - button: An object providing all the component tokens for buttons
     public init(colors: AllColorSemanticTokensProvider,
                 borders: AllBorderSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,

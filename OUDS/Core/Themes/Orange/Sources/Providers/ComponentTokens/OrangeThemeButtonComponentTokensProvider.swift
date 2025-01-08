@@ -12,21 +12,37 @@
 //
 
 import OUDSFoundations
-import OUDSTokensComponent
 import OUDSTokensSemantic
 
-/// Defines a provider of component tokens for `OUDSButton`.
-/// Implements `ButtonsComponentTokensRequirements` so as to be forced to get the needed semantic token providers
-/// to be able to use them later for definition of `ButtonsComponentTokens`
+/// Defines a provider of component tokens for button objects like `OUDSButton`.
+/// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
+/// Custom themes can use subclass of ``OrangeThemeButtonComponentTokensProvider`` and apply the provider they need.
+/// It implements also the protocol `ButtonsComponentTokens` sp as to expose the component tokens for buttons through any `OUDSTheme`.
+/// Button components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), borders
+/// (from `AllBorderSemanticTokensProvider`), colors (from `AllColorSemanticTokensProvider`) and
+/// spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// - Since: 0.10.0
-open class OrangeThemeButtonComponentTokensProvider: ButtonsComponentTokensRequirements {
+open class OrangeThemeButtonComponentTokensProvider {
 
-    public var sizes: AllSizeSemanticTokensProvider
-    public var borders: AllBorderSemanticTokensProvider
-    public var colors: AllColorSemanticTokensProvider
-    public var spaces: AllSpaceSemanticTokensProvider
+    /// Provider of size semantic tokens to use for button sizes
+    public let sizes: AllSizeSemanticTokensProvider
 
+    /// Provider of border semantic tokens to use for button borders
+    public let borders: AllBorderSemanticTokensProvider
+
+    /// Provider of color semantic tokens to use for button colors
+    public let colors: AllColorSemanticTokensProvider
+
+    /// Provider of spaces semantic tokens to use for button spaces
+    public let spaces: AllSpaceSemanticTokensProvider
+
+    /// Defines a provider of component tokens dedicated to `OUDSButton`
+    /// - Parameters:
+    ///    - sizes: Provider for size semantic tokens
+    ///    - borders: Provider for border semantic tokens
+    ///    - colors: Provider for color semantic tokens
+    ///    - spaces: Provider for space semantic tokens
     public init(sizes: AllSizeSemanticTokensProvider,
                 borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
@@ -38,5 +54,5 @@ open class OrangeThemeButtonComponentTokensProvider: ButtonsComponentTokensRequi
         self.spaces = spaces
     }
 
-    deinit{ }
+    deinit { }
 }
