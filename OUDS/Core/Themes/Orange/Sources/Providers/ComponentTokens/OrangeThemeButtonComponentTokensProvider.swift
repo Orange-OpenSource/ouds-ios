@@ -22,7 +22,6 @@ import OUDSTokensSemantic
 /// Custom themes can use subclass of ``OrangeThemeButtonComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `ButtonComponentTokens` so as to expose the component tokens for *buttons* through any `OUDSTheme`.
 /// *Button* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), borders
-/// (from `AllBorderSemanticTokensProvider`), colors (from `AllColorSemanticTokensProvider`) and
 /// spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// ```swift

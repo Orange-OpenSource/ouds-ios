@@ -16,6 +16,9 @@ import OUDSTokensComponent
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
+// ଘ( ･ω･)_/ﾟ･:*:･｡☆
+// [File to generate and update with the tokenator]
+
 extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var buttonSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
