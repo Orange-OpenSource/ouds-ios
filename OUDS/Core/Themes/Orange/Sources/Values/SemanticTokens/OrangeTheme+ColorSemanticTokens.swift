@@ -18,10 +18,12 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
-    @objc open var colorOpacityInvisibleBlackLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
-    @objc open var colorOpacityInvisibleWhiteLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
-    @objc open var colorOpacityInvisibleBlackDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
-    @objc open var colorOpacityInvisibleWhiteDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
+    @objc open var colorOpacityLowerLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack80 }
+    @objc open var colorOpacityLowestLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack40 }
+    @objc open var colorOpacityTransparentLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
+    @objc open var colorOpacityLowerDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite80 }
+    @objc open var colorOpacityLowestDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite40 }
+    @objc open var colorOpacityTransparentDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
     @objc open var colorActionDisabledLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack200 }
     @objc open var colorActionEnabledLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorActionFocusLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack680 }
@@ -98,7 +100,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorContentOnActionHighlightedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorContentOnActionHoverLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorContentOnActionLoadingLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
-    @objc open var colorContentOnActionNegativeLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorContentOnActionPressedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorContentOnActionDisabledDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnActionEnabledDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
@@ -106,17 +107,16 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorContentOnActionHighlightedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnActionHoverDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnActionLoadingDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    @objc open var colorContentOnActionNegativeDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnActionPressedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnBrandPrimaryLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnBrandPrimaryDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnOverlayEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorContentOnOverlayEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnStatusEmphasizedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    @objc open var colorContentOnStatusEmphasizedNeutralLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+    @objc open var colorContentOnStatusEmphasizedAltLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorContentOnStatusMutedLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnStatusEmphasizedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    @objc open var colorContentOnStatusEmphasizedNeutralDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
+    @objc open var colorContentOnStatusEmphasizedAltDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorContentOnStatusMutedDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
     @objc open var colorContentStatusInfoLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
     @objc open var colorContentStatusNegativeLight: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet600 }
@@ -224,6 +224,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorDecorativeSkinTint700Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach700 }
     @objc open var colorDecorativeSkinTint800Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach800 }
     @objc open var colorDecorativeSkinTint900Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeDeepPeach900 }
+    @objc open var colorChartBorderLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+    @objc open var colorChartBorderContrastLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorChartCategoricalTier1Light: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst600 }
     @objc open var colorChartCategoricalTier2Light: ColorSemanticToken { ColorRawTokens.colorDecorativeEmerald600 }
     @objc open var colorChartCategoricalTier3Light: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink700 }
@@ -345,6 +347,8 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorChartSequentialAccent5Tint700Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber300 }
     @objc open var colorChartSequentialAccent5Tint800Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber200 }
     @objc open var colorChartSequentialAccent5Tint900Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber100 }
+    @objc open var colorChartBorderDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray880 }
+    @objc open var colorChartBorderContrastDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorChartGridlinesDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDarkGray240 }
     @objc open var colorChartHighlightDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorChartNeutralDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray960 }
