@@ -8,8 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Rename color semantic tokens `colorContentOnStatusEmphasizedNeutral*` to `colorContentOnStatusEmphasizedAlt*`
 - [Library] Rename color semantic tokens `colorOpacityInvisibleBlack*` to `colorOpacityTransparent*`
-- [Library] Update `OrangeTheme` `ColorSemanticTokens` and `SizeSemanticTokens` (tokenator *20250108083200*, tokens *v24.12.17*)
+- [Library] Update color tokens and size tokens (tokenator *20250108083200*, tokens *v24.12.17*, tokens *v24.12.18*)
 - [Library] Add details about API versions in documentation ([#374](https://github.com/Orange-OpenSource/ouds-ios/issues/374))
 - [DemoApp] Update show code text ([#361](https://github.com/Orange-OpenSource/ouds-ios/issues/361))
 

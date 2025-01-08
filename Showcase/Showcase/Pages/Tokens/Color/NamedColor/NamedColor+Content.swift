@@ -31,7 +31,7 @@ extension NamedColor {
         case colorContentOnBrandPrimary
         case colorContentOnOverlayEmphasized
         case colorContentOnStatusEmphasized
-        case colorContentOnStatusEmphasizedNeutral
+        case colorContentOnStatusEmphasizedAlt
         case colorContentOnStatusMuted
         case colorContentStatusInfo
         case colorContentStatusNegative
@@ -68,8 +68,8 @@ extension NamedColor {
                 return theme.colors.colorContentOnOverlayEmphasized
             case .colorContentOnStatusEmphasized:
                 return theme.colors.colorContentOnStatusEmphasized
-            case .colorContentOnStatusEmphasizedNeutral:
-                return theme.colors.colorContentOnStatusEmphasizedNeutral
+            case .colorContentOnStatusEmphasizedAlt:
+                return theme.colors.colorContentOnStatusEmphasizedAlt
             case .colorContentOnStatusMuted:
                 return theme.colors.colorContentOnStatusMuted
             case .colorContentStatusInfo:

@@ -240,8 +240,8 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colors.colorContentOnStatusEmphasized)
     }
 
-    func testColorsHomogeneityColorContentOnStatusEmphasizedNeutral() throws {
-        assertHomogeneity(inverseTheme.colors.colorContentOnStatusEmphasizedNeutral)
+    func testColorsHomogeneityColorContentOnStatusEmphasizedAlt() throws {
+        assertHomogeneity(inverseTheme.colors.colorContentOnStatusEmphasizedAlt)
     }
 
     func testColorsHomogeneityColorContentOnStatusMuted() throws {

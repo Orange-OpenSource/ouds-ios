@@ -144,7 +144,7 @@ final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTok
 
     override public var colorContentOnStatusEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnStatusEmphasizedDark) }
 
-    override public var colorContentOnStatusEmphasizedNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnStatusEmphasizedNeutralDark) }
+    override public var colorContentOnStatusEmphasizedAlt: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnStatusEmphasizedAltDark) }
 
     override public var colorContentOnStatusMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnStatusMutedDark) }
 

@@ -496,9 +496,9 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colors.colorContentOnStatusEmphasizedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorContentOnStatusEmphasizedNeutralLight() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorContentOnStatusEmphasizedNeutralLight, abstractTheme.colors.colorContentOnStatusEmphasizedNeutralLight)
-        XCTAssertTrue(inheritedTheme.colors.colorContentOnStatusEmphasizedNeutralLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    func testInheritedThemeCanOverrideSemanticTokenColorContentOnStatusEmphasizedAltLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colors.colorContentOnStatusEmphasizedAltLight, abstractTheme.colors.colorContentOnStatusEmphasizedAltLight)
+        XCTAssertTrue(inheritedTheme.colors.colorContentOnStatusEmphasizedAltLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenColorContentOnStatusMutedLight() throws {
@@ -511,9 +511,9 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colors.colorContentOnStatusEmphasizedDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorContentOnStatusEmphasizedNeutralDark() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorContentOnStatusEmphasizedNeutralDark, abstractTheme.colors.colorContentOnStatusEmphasizedNeutralDark)
-        XCTAssertTrue(inheritedTheme.colors.colorContentOnStatusEmphasizedNeutralDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    func testInheritedThemeCanOverrideSemanticTokenColorContentOnStatusEmphasizedAltDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colors.colorContentOnStatusEmphasizedAltDark, abstractTheme.colors.colorContentOnStatusEmphasizedAltDark)
+        XCTAssertTrue(inheritedTheme.colors.colorContentOnStatusEmphasizedAltDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenColorContentOnStatusMutedDark() throws {
