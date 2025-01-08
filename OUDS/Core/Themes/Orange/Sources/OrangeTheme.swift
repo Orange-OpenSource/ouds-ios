@@ -13,6 +13,7 @@
 
 import OUDS
 import OUDSFoundations
+import OUDSTokensComponent
 import OUDSTokensSemantic
 
 // swiftlint:disable line_length
@@ -62,6 +63,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation, default set to ``OrangeThemeOpacitySemanticTokensProvider``
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokensProvider` implementation, default set to ``OrangeThemeSizeSemanticTokensProvider``
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation, default set to ``OrangeThemeSpaceSemanticTokensProvider``
+    ///    - button: An object providing all the component tokens for an `OUDSButton`
     override public init(colors: AllColorSemanticTokensProvider = OrangeThemeColorSemanticTokensProvider(),
                          borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokensProvider = OrangeThemeElevationSemanticTokensProvider(),
@@ -69,7 +71,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          grids: AllGridSemanticTokensProvider = OrangeThemeGridSemanticTokensProvider(),
                          opacities: AllOpacitySemanticTokensProvider = OrangeThemeOpacitySemanticTokensProvider(),
                          sizes: AllSizeSemanticTokensProvider = OrangeThemeSizeSemanticTokensProvider(),
-                         spaces: AllSpaceSemanticTokensProvider = OrangeThemeSpaceSemanticTokensProvider()) {
+                         spaces: AllSpaceSemanticTokensProvider = OrangeThemeSpaceSemanticTokensProvider(),
+                         button: AllButtonComponentTokens) {
         OUDSLogger.debug("Init of OrangeTheme")
         super.init(colors: colors,
                    borders: borders,
@@ -78,7 +81,39 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    grids: grids,
                    opacities: opacities,
                    sizes: sizes,
-                   spaces: spaces)
+                   spaces: spaces,
+                   button: button)
+    }
+
+    /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations.
+    /// Uses the given tokens of sizes, borders, colors and spaces to define the `AllButtonComponentTokens` to use (here `OrangeThemeButtonComponentTokensProvider`)
+    /// - Parameters:
+    ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to ``OrangeThemeColorSemanticTokensProvider``
+    ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to ``OrangeThemeBorderSemanticTokensProvider``
+    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`, default set to ``OrangeThemeElevationSemanticTokensProvider``
+    ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to ``OrangeThemeFontSemanticTokensProvider``
+    ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to ``OrangeThemeGridSemanticTokensProvider``
+    ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation, default set to ``OrangeThemeOpacitySemanticTokensProvider``
+    ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokensProvider` implementation, default set to ``OrangeThemeSizeSemanticTokensProvider``
+    ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation, default set to ``OrangeThemeSpaceSemanticTokensProvider``
+    public init(colors: AllColorSemanticTokensProvider = OrangeThemeColorSemanticTokensProvider(),
+                borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
+                elevations: AllElevationSemanticTokensProvider = OrangeThemeElevationSemanticTokensProvider(),
+                fonts: AllFontSemanticTokensProvider = OrangeThemeFontSemanticTokensProvider(),
+                grids: AllGridSemanticTokensProvider = OrangeThemeGridSemanticTokensProvider(),
+                opacities: AllOpacitySemanticTokensProvider = OrangeThemeOpacitySemanticTokensProvider(),
+                sizes: AllSizeSemanticTokensProvider = OrangeThemeSizeSemanticTokensProvider(),
+                spaces: AllSpaceSemanticTokensProvider = OrangeThemeSpaceSemanticTokensProvider()) {
+        OUDSLogger.debug("Init of OrangeTheme")
+        super.init(colors: colors,
+                   borders: borders,
+                   elevations: elevations,
+                   fonts: fonts,
+                   grids: grids,
+                   opacities: opacities,
+                   sizes: sizes,
+                   spaces: spaces,
+                   button: OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
     }
 
     deinit { }
