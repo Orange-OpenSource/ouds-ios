@@ -29,6 +29,10 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
 
     // MARK: - Color semantic tokens - Light and dark
 
+    override public var colorOpacityLowestLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorOpacityLowestDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorOpacityLowerLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorOpacityLowerDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorOpacityTransparentLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorOpacityTransparentDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
@@ -254,6 +258,8 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorDecorativeSkinTint800Dark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorDecorativeSkinTint900Dark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
+    override public var colorChartBorderLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorChartBorderContrastLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartCategoricalTier1Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartCategoricalTier2Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartCategoricalTier3Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -265,6 +271,8 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorChartCategoricalTier9Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartCategoricalTier10Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
+    override public var colorChartBorderDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorChartBorderContrastDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartCategoricalTier1Dark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartCategoricalTier2Dark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartCategoricalTier3Dark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -291,6 +299,12 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorChartNeutralLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     // MARK: - Color semantic tokens - Multiples
+
+    // MARK: - Color - Opacity
+
+    override public var colorOpacityLowest: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorOpacityLower: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorOpacityTransparent: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
 
     // MARK: - Color - Action
 

@@ -43,7 +43,7 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
     // MARK: - Color - Opacity
 
     func testInheritedThemeCanOverrideSemanticTokenColorOpacityLowest() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityLower, abstractTheme.colors.colorOpacityLowest)
+        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityLowest, abstractTheme.colors.colorOpacityLowest)
         XCTAssertTrue(inheritedTheme.colors.colorOpacityLowest == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
