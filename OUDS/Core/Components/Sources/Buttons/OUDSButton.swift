@@ -58,6 +58,7 @@ import SwiftUI
 public struct OUDSButton: View {
 
     // MARK: Stored Properties
+    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
     private let type: `Type`
     private let hierarchy: Hierarchy
@@ -137,6 +138,12 @@ public struct OUDSButton: View {
     // MARK: Body
 
     public var body: some View {
+        // A button with negative] hierarchy is not allowed on a clored surface
+        // Test is done here because onColoredSurface is environment variable which is not accessible in init.
+        if onColoredSurface, hierarchy == .negative {
+            fatalError("An OUDSButton with OUDSButton.Hierarchy.Negative hierarchy has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
+        }
+
         Button(action: action) {
             switch type {
             case let .icon(icon):

@@ -115,8 +115,7 @@ private struct ButtonDemo: View {
             Spacer()
 
             // It is not allowed to place a Negative bnutton on colored surface
-            if model.hierarchy == .negative,
-               coloredSurface == true {
+            if model.hierarchy == .negative, coloredSurface == true {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
                 // swiftlint:disable accessibility_label_for_image
