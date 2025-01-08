@@ -129,10 +129,12 @@ final class MockThemeSizeSemanticTokensProvider: OrangeThemeSizeSemanticTokensPr
     override public var sizeIconWithLabelLargeSizeLg: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override public var sizeIconWithLabelLargeSizeXl: SizeSemanticToken { Self.mockThemeSizeRawToken }
 
+    override public var sizeIconWithLabelMediumSizeXs: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override public var sizeIconWithLabelMediumSizeSm: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override public var sizeIconWithLabelMediumSizeMd: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override public var sizeIconWithLabelMediumSizeLg: SizeSemanticToken { Self.mockThemeSizeRawToken }
 
+    override public var sizeIconWithLabelSmallSizeXs: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override public var sizeIconWithLabelSmallSizeSm: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override public var sizeIconWithLabelSmallSizeMd: SizeSemanticToken { Self.mockThemeSizeRawToken }
     override public var sizeIconWithLabelSmallSizeLg: SizeSemanticToken { Self.mockThemeSizeRawToken }
