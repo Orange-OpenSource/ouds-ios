@@ -136,8 +136,6 @@ final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTok
 
     override public var colorContentOnActionLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionLoadingDark) }
 
-    override public var colorContentOnActionNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionNegativeDark) }
-
     override public var colorContentOnActionPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnActionPressedDark) }
 
     override public var colorContentOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorContentOnBrandPrimaryDark) }

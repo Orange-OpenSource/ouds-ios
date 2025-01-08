@@ -27,7 +27,6 @@ extension NamedColor {
         case colorContentOnActionHighlighted
         case colorContentOnActionHover
         case colorContentOnActionLoading
-        case colorContentOnActionNegative
         case colorContentOnActionPressed
         case colorContentOnBrandPrimary
         case colorContentOnOverlayEmphasized
@@ -61,8 +60,6 @@ extension NamedColor {
                 return theme.colors.colorContentOnActionHover
             case .colorContentOnActionLoading:
                 return theme.colors.colorContentOnActionLoading
-            case .colorContentOnActionNegative:
-                return theme.colors.colorContentOnActionNegative
             case .colorContentOnActionPressed:
                 return theme.colors.colorContentOnActionPressed
             case .colorContentOnBrandPrimary:

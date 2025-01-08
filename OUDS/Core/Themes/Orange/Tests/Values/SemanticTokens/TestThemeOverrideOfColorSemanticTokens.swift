@@ -431,11 +431,6 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colors.colorContentOnActionLoadingLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorContentOnActionNegativeLight() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorContentOnActionNegativeLight, abstractTheme.colors.colorContentOnActionNegativeLight)
-        XCTAssertTrue(inheritedTheme.colors.colorContentOnActionNegativeLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
     func testInheritedThemeCanOverrideSemanticTokenColorContentOnActionPressedLight() throws {
         XCTAssertNotEqual(inheritedTheme.colors.colorContentOnActionPressedLight, abstractTheme.colors.colorContentOnActionPressedLight)
         XCTAssertTrue(inheritedTheme.colors.colorContentOnActionPressedLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
@@ -469,11 +464,6 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
     func testInheritedThemeCanOverrideSemanticTokenColorContentOnActionLoadingDark() throws {
         XCTAssertNotEqual(inheritedTheme.colors.colorContentOnActionLoadingDark, abstractTheme.colors.colorContentOnActionLoadingDark)
         XCTAssertTrue(inheritedTheme.colors.colorContentOnActionLoadingDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenColorContentOnActionNegativeDark() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorContentOnActionNegativeDark, abstractTheme.colors.colorContentOnActionNegativeDark)
-        XCTAssertTrue(inheritedTheme.colors.colorContentOnActionNegativeDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenColorContentOnActionPressedDark() throws {

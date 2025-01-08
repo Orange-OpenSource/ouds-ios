@@ -146,8 +146,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentOnActionLoading: MultipleColorSemanticTokens { get }
 
-    var colorContentOnActionNegative: MultipleColorSemanticTokens { get }
-
     var colorContentOnActionPressed: MultipleColorSemanticTokens { get }
 
     var colorContentOnBrandPrimary: MultipleColorSemanticTokens { get }

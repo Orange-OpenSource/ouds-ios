@@ -128,8 +128,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorContentOnActionLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnActionLoadingLight, dark: colorContentOnActionLoadingDark) }
 
-    @objc open var colorContentOnActionNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnActionNegativeLight, dark: colorContentOnActionNegativeDark) }
-
     @objc open var colorContentOnActionPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnActionPressedLight, dark: colorContentOnActionPressedDark) }
 
     @objc open var colorContentOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandPrimaryLight, dark: colorContentOnBrandPrimaryDark) }

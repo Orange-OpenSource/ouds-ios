@@ -171,9 +171,6 @@ public protocol ColorSemanticTokens {
     var colorContentOnActionLoadingLight: ColorSemanticToken { get }
     var colorContentOnActionLoadingDark: ColorSemanticToken { get }
 
-    var colorContentOnActionNegativeLight: ColorSemanticToken { get }
-    var colorContentOnActionNegativeDark: ColorSemanticToken { get }
-
     var colorContentOnActionPressedLight: ColorSemanticToken { get }
     var colorContentOnActionPressedDark: ColorSemanticToken { get }
 

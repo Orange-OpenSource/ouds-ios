@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-- [Library] `colorOpacityInvisibleWhite*` color semantic tokens
+- [Library] `colorOpacityInvisibleWhite*`, `colorContentOnActionNegative*` color semantic tokens
 
 ## [0.8.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.7.0...0.8.0) - 2024-12-18
 
