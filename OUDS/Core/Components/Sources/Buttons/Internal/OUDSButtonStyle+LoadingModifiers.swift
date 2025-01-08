@@ -59,7 +59,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
         content
             .overlay {
                 LoagingIndicator(color: colorToken.color(for: colorScheme))
-                    .padding(.vertical, theme.buttonSpacePaddingBlock)
+                    .padding(.vertical, theme.button.buttonSpacePaddingBlock)
             }
     }
 
@@ -68,11 +68,11 @@ struct ButtonLoadingContentModifier: ViewModifier {
     private var colorToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            onColoredSurface ? theme.buttonColorContentDefaultLoadingMono : theme.buttonColorContentDefaultLoading
+            onColoredSurface ? theme.button.buttonColorContentDefaultLoadingMono : theme.button.buttonColorContentDefaultLoading
         case .strong:
-            onColoredSurface ? theme.buttonColorContentStrongLoadingMono : theme.colors.colorContentOnActionLoading
+            onColoredSurface ? theme.button.buttonColorContentStrongLoadingMono : theme.colors.colorContentOnActionLoading
         case .minimal:
-            onColoredSurface ? theme.buttonColorContentMinimalLoadingMono : theme.buttonColorContentMinimalLoading
+            onColoredSurface ? theme.button.buttonColorContentMinimalLoadingMono : theme.button.buttonColorContentMinimalLoading
         case .negative:
             theme.colors.colorContentOnStatusEmphasizedAlt
         }

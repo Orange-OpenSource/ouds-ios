@@ -169,9 +169,9 @@ private struct ButtonIcon: View {
     // MARK: Body
 
     var body: some View {
-        ScaledIcon(icon: icon, size: theme.buttonSizeIconOnly)
-            .padding(.all, theme.buttonSpaceInsetIconOnly)
-            .frame(minWidth: theme.buttonSizeMinWidth, minHeight: theme.buttonSizeMinHeight)
+        ScaledIcon(icon: icon, size: theme.button.buttonSizeIconOnly)
+            .padding(.all, theme.button.buttonSpaceInsetIconOnly)
+            .frame(minWidth: theme.button.buttonSizeMinWidth, minHeight: theme.button.buttonSizeMinHeight)
     }
 }
 
@@ -187,9 +187,9 @@ private struct ButtonText: View {
 
     var body: some View {
         TextForButton(text: text)
-            .padding(.vertical, theme.buttonSpacePaddingBlock)
-            .padding(.horizontal, theme.buttonSpacePaddingInlineIconNone)
-            .frame(minWidth: theme.buttonSizeMinWidth, minHeight: theme.buttonSizeMinHeight, alignment: .center)
+            .padding(.vertical, theme.button.buttonSpacePaddingBlock)
+            .padding(.horizontal, theme.button.buttonSpacePaddingInlineIconNone)
+            .frame(minWidth: theme.button.buttonSizeMinWidth, minHeight: theme.button.buttonSizeMinHeight, alignment: .center)
     }
 }
 
@@ -205,14 +205,14 @@ private struct ButtonTextAndIcon: View {
     // MARK: Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.buttonSpaceColumnGapIcon) {
-            FixedIcon(icon: icon, size: theme.buttonSizeIcon)
+        HStack(alignment: .center, spacing: theme.button.buttonSpaceColumnGapIcon) {
+            FixedIcon(icon: icon, size: theme.button.buttonSizeIcon)
             TextForButton(text: text)
         }
-        .padding(.vertical, theme.buttonSpacePaddingBlock)
-        .padding(.leading, theme.buttonSpacePaddingInlineIconStart)
-        .padding(.trailing, theme.buttonSpacePaddingInlineEndIconStart)
-        .frame(minWidth: theme.buttonSizeMinWidth, minHeight: theme.buttonSizeMinHeight, alignment: .center)
+        .padding(.vertical, theme.button.buttonSpacePaddingBlock)
+        .padding(.leading, theme.button.buttonSpacePaddingInlineIconStart)
+        .padding(.trailing, theme.button.buttonSpacePaddingInlineEndIconStart)
+        .frame(minWidth: theme.button.buttonSizeMinWidth, minHeight: theme.button.buttonSizeMinHeight, alignment: .center)
     }
 }
 
