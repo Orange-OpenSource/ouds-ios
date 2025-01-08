@@ -27,10 +27,10 @@ open class OrangeThemeButtonComponentTokensProvider: ButtonsComponentTokensRequi
     public var colors: AllColorSemanticTokensProvider
     public var spaces: AllSpaceSemanticTokensProvider
 
-    init(sizes: AllSizeSemanticTokensProvider,
-         borders: AllBorderSemanticTokensProvider,
-         colors: AllColorSemanticTokensProvider,
-         spaces: AllSpaceSemanticTokensProvider) {
+    public init(sizes: AllSizeSemanticTokensProvider,
+                borders: AllBorderSemanticTokensProvider,
+                colors: AllColorSemanticTokensProvider,
+                spaces: AllSpaceSemanticTokensProvider) {
         OUDSLogger.debug("Init of OrangeThemeButtonComponentTokensProvider")
         self.sizes = sizes
         self.borders = borders

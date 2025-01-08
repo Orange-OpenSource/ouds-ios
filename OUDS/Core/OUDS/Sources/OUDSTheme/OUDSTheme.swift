@@ -62,7 +62,7 @@ open class OUDSTheme: @unchecked Sendable {
     // MARK: - Component tokens
 
     // TODO: Wrap all components tokens provider inside one dedicated wrapper?
-    
+
     /// All components tokens related to `OUDSButton`
     public let button: AllButtonComponentTokens
 
