@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-/// Provider of component tokens for buttons are embeded in `OUDSTheme` as both `ButtonsComponentTokens` and`ButtonsComponentTokensRequirements`
-///  to force users to implement these two protocols so as to be able to use semantic tokens providers
-public typealias AllButtonComponentTokens = ButtonsComponentTokens & ButtonsComponentTokensRequirements
+/// A type alias only for ``ButtonsComponentTokens`` so as to keep consistency with other type aliases
+/// merging several protocols.
+/// For example `OrangeThemeButtonComponentTokensProvider` matches this type alias.
+public typealias AllButtonComponentTokens = ButtonsComponentTokens
