@@ -105,14 +105,12 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
 
 extension OUDSButton.ButtonState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static let allCases: [OUDSButton.ButtonState] = [.normal, .loading, skeleton]
+    nonisolated(unsafe) public static let allCases: [OUDSButton.ButtonState] = [.normal, .loading]
 
     public var description: String {
         switch self {
         case .normal:
             "Normal"
-        case .skeleton:
-            "Skeleton"
         case .loading:
             "Loading"
         }

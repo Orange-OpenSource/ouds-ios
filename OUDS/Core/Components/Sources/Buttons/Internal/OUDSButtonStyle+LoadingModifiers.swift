@@ -16,19 +16,6 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: Skeleton Modifier
-
-/// Only used to apply the skeleton style (grey rectangle over all)
-struct ButtonSkeletonModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
-    func body(content: Content) -> some View {
-        content.overlay(theme.colors.colorContentDefault.color(for: colorScheme)) // TODO: 💠_indicator/skeleton/color/bg
-    }
-}
-
 // MARK: Loading modifier
 
 private struct LoagingIndicator: View {

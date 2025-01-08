@@ -46,7 +46,6 @@ import SwiftUI
 /// Three states are available:
 ///
 /// - **normal**: used in the normal usage of button. The style of the button change for folowing states disabled, pressed, hovered or normal (i.e. enabled)
-/// - **skeleton**: used when screen if presenting and probably loading data for the first time.
 /// - **loading**: used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
 /// ## Colored Surface
@@ -88,9 +87,6 @@ public struct OUDSButton: View {
 
         /// The loading state means a loading action is in progress, sometimes just after user tapped on button
         case loading
-
-        /// The skeleton state can be apply on the button when the screen is loadind data for the first time
-        case skeleton
     }
 
     // MARK: Initializers
@@ -100,7 +96,7 @@ public struct OUDSButton: View {
     ///    - icon: An image shoud contains an icon
     ///    - text: The text
     ///    - hierarchy: The hierarchy of the button
-    ///    - state: The current state of the button (normal or loading/skeleton
+    ///    - state: The current state of the button (normal or loading)
     ///    - action: The action to perform when the user triggers the button
     public init(icon: Image, text: String, hierarchy: Hierarchy, state: ButtonState, action: @escaping () -> Void) {
         self.type = .textAndIcon(text: text, icon: icon)
@@ -114,7 +110,7 @@ public struct OUDSButton: View {
     /// - Parameters:
     ///    - icon: An image shoud contains an icon
     ///    - hierarchy: The hierarchy of the button
-    ///    - state: The current state of the button (normal or loading/skeleton)
+    ///    - state: The current state of the button (normal or loading)
     ///    - action: The action to perform when the user triggers the button
     public init(icon: Image, hierarchy: Hierarchy, state: ButtonState, action: @escaping () -> Void) {
         self.type = .icon(icon)
@@ -127,7 +123,7 @@ public struct OUDSButton: View {
     /// - Parameters:
     ///    - text: The text of the button
     ///    - hierarchy: The hierarchy of the button
-    ///    - state: The current state of the button (normal or loading/skeleton)
+    ///    - state: The current state of the button (normal or loading)
     ///    - action: The action to perform when the user triggers the button
     public init(text: String, hierarchy: Hierarchy, state: ButtonState, action: @escaping () -> Void) {
         self.type = .text(text)

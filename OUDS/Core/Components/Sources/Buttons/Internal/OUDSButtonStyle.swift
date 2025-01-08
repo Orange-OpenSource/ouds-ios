@@ -31,7 +31,6 @@ import SwiftUI
 ///
 /// Three styles are available:
 /// - normal: is the normal state of a button which can be disabled, pressed, hovered or normal (i.e. enabled)
-/// - skeleton: the style used when screen if presenting and probably loading data for the first time.
 /// - loading: the style used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
 struct OUDSButtonStyle: ButtonStyle {
@@ -71,9 +70,6 @@ struct OUDSButtonStyle: ButtonStyle {
             configuration.label
                 .modifier(ButtonViewModifier(hierarchy: hierarchy, state: .loading))
                 .modifier(ButtonLoadingContentModifier(hierarchy: hierarchy))
-        case .skeleton:
-            configuration.label
-                .modifier(ButtonSkeletonModifier())
         }
     }
 
