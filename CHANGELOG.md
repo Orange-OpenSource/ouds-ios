@@ -29,12 +29,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DemoApp] Update colors and some refactoring ([#354](https://github.com/Orange-OpenSource/ouds-ios/issues/354))
 - [Library] Rename color semantic tokens `colorContentOnStatusEmphasizedNeutral*` to `colorContentOnStatusEmphasizedAlt*`
 - [Library] Rename color semantic tokens `colorOpacityInvisibleBlack*` to `colorOpacityTransparent*`
 - [Library] Update color tokens and size tokens (tokenator *20250108083200*, tokens *v24.12.17*, tokens *v24.12.18*)
 - [Library] Add details about API versions in documentation ([#374](https://github.com/Orange-OpenSource/ouds-ios/issues/374))  
 - [Library] Add details about API versions in documentation ([#374](https://github.com/Orange-OpenSource/ouds-ios/issues/374))
 - [DemoApp] Update colors and some refactoring ([#354](https://github.com/Orange-OpenSource/ouds-ios/issues/354)) 
+- [Library] Add details about API versions in documentation ([#374](https://github.com/Orange-OpenSource/ouds-ios/issues/374)) 
 - [Library] Change stroke style for `BorderModifier`
 - [DemoApp] Update colors and some refactoring ([#354](https://github.com/Orange-OpenSource/ouds-ios/issues/354))
 - [Library] Add details about API versions in documentation ([#374](https://github.com/Orange-OpenSource/ouds-ios/issues/374)) 
