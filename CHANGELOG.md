@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.8.0...develop)
 
+### Added
+
+- [Library] Color semantic tokens `colorOpacityLowest*`, `colorOpacityLower*`, `colorChartBorder*` and `colorChartBorderContrast*`
+
 ### Changed
 
 - [Library] Rename color semantic tokens `colorContentOnStatusEmphasizedNeutral*` to `colorContentOnStatusEmphasizedAlt*`

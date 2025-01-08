@@ -36,9 +36,13 @@ final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTok
 
     // MARK: - Overrides
 
-    // MARK: - Color - Opacity - Invisible
+    // MARK: - Color - Opacity
 
-    override public var colorOpacityTransparentDark: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityTransparentDark) }
+    override public var colorOpacityLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityLowestDark) }
+
+    override public var colorOpacityLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityLowerDark) }
+
+    override public var colorOpacityTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityTransparentDark) }
 
     // MARK: - Color - Action
 
@@ -257,6 +261,10 @@ final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTok
     override public var colorDecorativeSkinTint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint900Dark) }
 
     // MARK: - Color - Chart
+
+    override public var colorChartBorder: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartBorderDark) }
+
+    override public var colorChartBorderContrast: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartBorderContrastDark) }
 
     override public var colorChartCategoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier1Dark) }
 

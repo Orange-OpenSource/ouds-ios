@@ -46,7 +46,11 @@
 /// - Since: 0.8.0
 public protocol ColorMultipleSemanticTokens {
 
-    // MARK: - Color - Opacity - Transparent
+    // MARK: - Color - Opacity
+
+    var colorOpacityLowest: MultipleColorSemanticTokens { get }
+
+    var colorOpacityLower: MultipleColorSemanticTokens { get }
 
     var colorOpacityTransparent: MultipleColorSemanticTokens { get }
 
@@ -267,6 +271,10 @@ public protocol ColorMultipleSemanticTokens {
     var colorDecorativeSkinTint900: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Chart
+
+    var colorChartBorder: MultipleColorSemanticTokens { get }
+
+    var colorChartBorderContrast: MultipleColorSemanticTokens { get }
 
     var colorChartCategoricalTier1: MultipleColorSemanticTokens { get }
 

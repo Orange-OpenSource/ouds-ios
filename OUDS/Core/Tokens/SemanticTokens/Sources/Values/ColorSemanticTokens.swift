@@ -27,7 +27,13 @@
 /// - Since: 0.8.0
 public protocol ColorSemanticTokens {
 
-    // MARK: - Color - Opacity - Invisible
+    // MARK: - Color - Opacity
+
+    var colorOpacityLowestLight: ColorSemanticToken { get }
+    var colorOpacityLowestDark: ColorSemanticToken { get }
+
+    var colorOpacityLowerLight: ColorSemanticToken { get }
+    var colorOpacityLowerDark: ColorSemanticToken { get }
 
     var colorOpacityTransparentLight: ColorSemanticToken { get }
     var colorOpacityTransparentDark: ColorSemanticToken { get }
@@ -349,6 +355,12 @@ public protocol ColorSemanticTokens {
     var colorDecorativeSkinTint900Dark: ColorSemanticToken { get }
 
     // MARK: - Color - Chart
+
+    var colorChartBorderLight: ColorSemanticToken { get }
+    var colorChartBorderDark: ColorSemanticToken { get }
+
+    var colorChartBorderContrastLight: ColorSemanticToken { get }
+    var colorChartBorderContrastDark: ColorSemanticToken { get }
 
     var colorChartCategoricalTier1Light: ColorSemanticToken { get }
     var colorChartCategoricalTier1Dark: ColorSemanticToken { get }

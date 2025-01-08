@@ -38,8 +38,16 @@ final class TestInverseThemeColors: XCTestCase {
 
     // MARK: - Test cases
 
+    func testColorsHomogeneityColorOpacityLowest() throws {
+        assertHomogeneity(inverseTheme.colors.colorOpacityLowest)
+    }
+
+    func testColorsHomogeneityColorOpacityLower() throws {
+        assertHomogeneity(inverseTheme.colors.colorOpacityLower)
+    }
+
     func testColorsHomogeneityColorOpacityTransparent() throws {
-        assertHomogeneity(inverseTheme.colors.colorOpacityTransparentDark)
+        assertHomogeneity(inverseTheme.colors.colorOpacityTransparent)
     }
 
     // MARK: - Color - Action
@@ -459,6 +467,14 @@ final class TestInverseThemeColors: XCTestCase {
     }
 
     // MARK: - Color - Chart
+
+    func testColorsHomogeneityColorChartBorder() throws {
+        assertHomogeneity(inverseTheme.colors.colorChartBorder)
+    }
+
+    func testColorsHomogeneityColorChartBorderContrast() throws {
+        assertHomogeneity(inverseTheme.colors.colorChartBorderContrast)
+    }
 
     func testColorsHomogeneityColorChartCategoricalTier1() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier1)

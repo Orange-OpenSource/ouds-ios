@@ -418,6 +418,8 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
 
     // MARK: - Color - Chart
 
+    override public var colorChartBorder: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorChartBorderContrast: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorChartCategoricalTier1: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorChartCategoricalTier2: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorChartCategoricalTier3: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
