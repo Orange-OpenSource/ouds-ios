@@ -12,10 +12,7 @@
 //
 
 import Foundation
-<<<<<<< HEAD
 import OUDSFoundations
-=======
->>>>>>> 6ce7cb53a (refactor: architecture for components tokens)
 import OUDSTokensComponent
 import OUDSTokensSemantic
 
