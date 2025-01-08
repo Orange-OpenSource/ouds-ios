@@ -91,7 +91,7 @@ private struct BackgroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if coloredSurface {
-            content.oudsColoredSurface(color: theme.colors.colorSurfaceStatusInfoEmphasized.color(for: colorScheme))
+            content.oudsColoredSurface(color: theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme))
         } else {
             content.background(theme.colors.colorBgSecondary.color(for: colorScheme))
         }
@@ -122,11 +122,11 @@ private struct ButtonDemo: View {
                 // swiftlint:disable accessibility_label_for_image
                 switch model.layout {
                 case .iconOnly:
-                    OUDSButton(icon: Image("ic_heart"), hierarchy: model.hierarchy, state: model.state) {}
+                    OUDSButton(icon: Image("ic_heart"), hierarchy: model.hierarchy, style: model.style) {}
                 case .textOnly:
-                    OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, state: model.state) {}
+                    OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
                 case .iconAndText:
-                    OUDSButton(icon: Image("ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, state: model.state) {}
+                    OUDSButton(icon: Image("ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
                 }
                 // swiftlint:enable accessibility_label_for_image
             }

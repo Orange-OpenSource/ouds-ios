@@ -13,7 +13,6 @@
 
 import SwiftUI
 
-// swiftlint:disable line_length
 /// The `OUDSButton` propose layout with text only, icon only or text and icon.
 ///
 /// ## Hierarchies
@@ -27,8 +26,9 @@ import SwiftUI
 ///
 /// - **minimal**: Minimal buttons are commonly used for actions that are considered less crucial. They can be used independently or together with a strong button.
 ///
-/// - **negative**: Negative buttons should be used sparingly to warn of a destructive action, for example, delete or remove, typically resulting in the opening of a confirmation dialog.
-///    A button with [OUDSButton.Hierarchy.Negative] hierarchy is not allowed as a direct or indirect child of an [OUDSColoredSurface].
+/// - **negative**: Negative buttons should be used sparingly to warn of a destructive action,
+/// for example, delete or remove, typically resulting in the opening of a confirmation dialog.
+/// A button with [OUDSButton.Hierarchy.Negative] hierarchy is not allowed as a direct or indirect child of an [OUDSColoredSurface].
 ///
 /// ```
 ///     // Icon only with default hierarchy
@@ -55,7 +55,6 @@ import SwiftUI
 ///
 /// **Remark: Today it is not allowed to placed a Negative button on a colored surface.
 ///
-// swiftlint:enable line_length
 public struct OUDSButton: View {
 
     // MARK: Stored Properties
@@ -163,9 +162,9 @@ private struct ButtonIcon: View {
     // MARK: Body
 
     var body: some View {
-        IconForButton(icon: icon)
+        ScaledIcon(icon: icon, size: theme.buttonSizeIconOnly)
             .padding(.all, theme.buttonSpaceInsetIconOnly)
-            .frame(minWidth: theme.buttonSizeMinWidth, minHeight: theme.buttonSizeMinHeight, maxHeight: theme.buttonSizeMaxHeight, alignment: .center)
+            .frame(minWidth: theme.buttonSizeMinWidth, minHeight: theme.buttonSizeMinHeight)
     }
 }
 
@@ -183,6 +182,7 @@ private struct ButtonText: View {
         TextForButton(text: text)
             .padding(.vertical, theme.buttonSpacePaddingBlock)
             .padding(.horizontal, theme.buttonSpacePaddingInlineIconNone)
+            .frame(minWidth: theme.buttonSizeMinWidth, minHeight: theme.buttonSizeMinHeight, alignment: .center)
     }
 }
 
@@ -199,18 +199,43 @@ private struct ButtonTextAndIcon: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.buttonSpaceColumnGapIcon) {
-            IconForButton(icon: icon)
+            FixedIcon(icon: icon, size: theme.buttonSizeIcon)
             TextForButton(text: text)
         }
         .padding(.vertical, theme.buttonSpacePaddingBlock)
         .padding(.leading, theme.buttonSpacePaddingInlineIconStart)
         .padding(.trailing, theme.buttonSpacePaddingInlineEndIconStart)
+        .frame(minWidth: theme.buttonSizeMinWidth, minHeight: theme.buttonSizeMinHeight, alignment: .center)
+    }
+}
+
+private struct ScaledIcon: View {
+
+    @Environment(\.theme) private var theme
+
+    // MARK: Stored Properties
+    let icon: Image
+    @ScaledMetric var size: CGFloat
+
+    var body: some View {
+        IconForButton(icon: icon)
+            .frame(width: size, height: size, alignment: .center)
+    }
+}
+
+private struct FixedIcon: View {
+
+    // MARK: Stored Properties
+    let icon: Image
+    let size: CGFloat
+
+    var body: some View {
+        IconForButton(icon: icon)
+            .frame(width: size, height: size, alignment: .center)
     }
 }
 
 private struct IconForButton: View {
-
-    @Environment(\.theme) private var theme
 
     // MARK: Stored Properties
 
@@ -222,7 +247,6 @@ private struct IconForButton: View {
         icon
             .resizable()
             .renderingMode(.template)
-            .frame(width: theme.buttonSizeIcon, height: theme.buttonSizeIcon, alignment: .center)
     }
 }
 
@@ -237,6 +261,8 @@ private struct TextForButton: View {
     // MARK: Body
 
     var body: some View {
-        Text(LocalizedStringKey(text)).typeLabelStrongLarge(theme)
+        Text(LocalizedStringKey(text))
+            .typeLabelStrongLarge(theme)
+            .multilineTextAlignment(.center)
     }
 }
