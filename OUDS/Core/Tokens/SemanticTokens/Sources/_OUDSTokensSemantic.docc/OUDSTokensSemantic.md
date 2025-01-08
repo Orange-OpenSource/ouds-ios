@@ -68,12 +68,12 @@ open class OrangeThemeColorSemanticTokensProvider { ... }
 
 // The provider is composed by protocols containing tokens
 extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
-    @objc open var colorOpacityInvisibleBlackLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
-    @objc open var colorOpacityInvisibleWhiteLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
+    @objc open var colorOpacityTransparentLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
+    @objc open var colorOpacityTransparentDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
     ...
 }
 extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
-    @objc open var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleBlackLight, dark: colorOpacityInvisibleBlackDark) }
+    @objc open var colorOpacityTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityTransparentLight, dark: colorOpacityTransparentDark) }
     ...
 }
 

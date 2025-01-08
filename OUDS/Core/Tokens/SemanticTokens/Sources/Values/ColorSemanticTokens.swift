@@ -29,11 +29,8 @@ public protocol ColorSemanticTokens {
 
     // MARK: - Color - Opacity - Invisible
 
-    var colorOpacityInvisibleBlackLight: ColorSemanticToken { get }
-    var colorOpacityInvisibleBlackDark: ColorSemanticToken { get }
-
-    var colorOpacityInvisibleWhiteLight: ColorSemanticToken { get }
-    var colorOpacityInvisibleWhiteDark: ColorSemanticToken { get }
+    var colorOpacityTransparentLight: ColorSemanticToken { get }
+    var colorOpacityTransparentDark: ColorSemanticToken { get }
 
     // MARK: - Color - Action
 

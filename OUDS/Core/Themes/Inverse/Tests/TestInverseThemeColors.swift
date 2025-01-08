@@ -38,12 +38,8 @@ final class TestInverseThemeColors: XCTestCase {
 
     // MARK: - Test cases
 
-    func testColorsHomogeneityColorOpacityInvisibleBlack() throws {
-        assertHomogeneity(inverseTheme.colors.colorOpacityInvisibleBlack)
-    }
-
-    func testColorsHomogeneityColorOpacityInvisibleWhite() throws {
-        assertHomogeneity(inverseTheme.colors.colorOpacityInvisibleWhite)
+    func testColorsHomogeneityColorOpacityTransparent() throws {
+        assertHomogeneity(inverseTheme.colors.colorOpacityTransparentDark)
     }
 
     // MARK: - Color - Action

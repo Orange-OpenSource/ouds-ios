@@ -29,11 +29,8 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
 
     // MARK: - Color semantic tokens - Light and dark
 
-    override public var colorOpacityInvisibleBlackLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOpacityInvisibleBlackDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-
-    override public var colorOpacityInvisibleWhiteLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorOpacityInvisibleWhiteDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorOpacityTransparentLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorOpacityTransparentDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     override public var colorActionDisabledLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorActionEnabledLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -296,11 +293,6 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorChartNeutralLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     // MARK: - Color semantic tokens - Multiples
-
-    // MARK: - Color - Opacity - Invisible
-
-    override public var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-    override public var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
 
     // MARK: - Color - Action
 

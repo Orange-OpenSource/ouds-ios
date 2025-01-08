@@ -40,16 +40,11 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
 
     // MARK: - Tests
 
-    // MARK: - Color - Opacity - Invisible
+    // MARK: - Color - Opacity - Transparent
 
-    func testInheritedThemeCanOverrideSemanticTokenColorOpacityInvisibleBlack() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityInvisibleBlack, abstractTheme.colors.colorOpacityInvisibleBlack)
-        XCTAssertTrue(inheritedTheme.colors.colorOpacityInvisibleBlack == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenColorOpacityInvisibleWhite() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityInvisibleWhite, abstractTheme.colors.colorOpacityInvisibleWhite)
-        XCTAssertTrue(inheritedTheme.colors.colorOpacityInvisibleWhite == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorOpacityTransparent() throws {
+        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityTransparent abstractTheme.colors.colorOpacityTransparent)
+        XCTAssertTrue(inheritedTheme.colors.colorOpacityTransparent == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     // MARK: - Color - Action

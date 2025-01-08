@@ -38,9 +38,7 @@ final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTok
 
     // MARK: - Color - Opacity - Invisible
 
-    override public var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityInvisibleBlackDark) }
-
-    override public var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityInvisibleWhiteDark) }
+    override public var colorOpacityTransparentDark: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorOpacityTransparentDark) }
 
     // MARK: - Color - Action
 

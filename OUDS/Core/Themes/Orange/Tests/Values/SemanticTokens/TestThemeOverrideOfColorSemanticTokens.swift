@@ -41,24 +41,14 @@ final class TestThemeOverrideOfColorSemanticTokens: XCTestCase {
 
     // MARK: - Color semantic tokens - Light and dark
 
-    func testInheritedThemeCanOverrideSemanticTokenColorOpacityInvisibleBlackLight() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityInvisibleBlackLight, abstractTheme.colors.colorOpacityInvisibleBlackLight)
-        XCTAssertTrue(inheritedTheme.colors.colorOpacityInvisibleBlackLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    func testInheritedThemeCanOverrideSemanticTokenColorOpacityTransparentLight() throws {
+        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityTransparentLight, abstractTheme.colors.colorOpacityTransparentLight)
+        XCTAssertTrue(inheritedTheme.colors.colorOpacityTransparentLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorOpacityInvisibleBlackDark() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityInvisibleBlackDark, abstractTheme.colors.colorOpacityInvisibleBlackDark)
-        XCTAssertTrue(inheritedTheme.colors.colorOpacityInvisibleBlackDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenColorOpacityInvisibleWhiteLight() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityInvisibleWhiteLight, abstractTheme.colors.colorOpacityInvisibleWhiteLight)
-        XCTAssertTrue(inheritedTheme.colors.colorOpacityInvisibleWhiteLight == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
-    }
-
-    func testInheritedThemeCanOverrideSemanticTokenColorOpacityInvisibleWhiteDark() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityInvisibleWhiteDark, abstractTheme.colors.colorOpacityInvisibleWhiteDark)
-        XCTAssertTrue(inheritedTheme.colors.colorOpacityInvisibleWhiteDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
+    func testInheritedThemeCanOverrideSemanticTokenColorOpacityTransparentDark() throws {
+        XCTAssertNotEqual(inheritedTheme.colors.colorOpacityTransparentDark, abstractTheme.colors.colorOpacityTransparentDark)
+        XCTAssertTrue(inheritedTheme.colors.colorOpacityTransparentDark == MockThemeColorSemanticTokensProvider.mockThemeSemanticColorToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenColorActionDisabledLight() throws {

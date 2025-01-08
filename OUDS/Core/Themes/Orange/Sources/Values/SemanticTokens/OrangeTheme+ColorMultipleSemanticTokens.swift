@@ -30,9 +30,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     // MARK: - Color - Opacity - Invisible
 
-    @objc open var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleBlackLight, dark: colorOpacityInvisibleBlackDark) }
-
-    @objc open var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleWhiteLight, dark: colorOpacityInvisibleWhiteDark) }
+    @objc open var colorOpacityTransparentBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityTransparentLight, dark: colorOpacityTransparentDark) }
 
     // MARK: - Color - Action
 

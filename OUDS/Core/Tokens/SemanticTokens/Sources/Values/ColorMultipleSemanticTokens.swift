@@ -46,11 +46,9 @@
 /// - Since: 0.8.0
 public protocol ColorMultipleSemanticTokens {
 
-    // MARK: - Color - Opacity - Invisible
+    // MARK: - Color - Opacity - Transparent
 
-    var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { get }
-
-    var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { get }
+    var colorOpacityTransparent: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Action
 
