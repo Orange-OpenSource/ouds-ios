@@ -17,6 +17,8 @@ import OUDSTokensSemantic
 extension NamedColor {
 
     enum Chart: String, CaseIterable {
+        case colorChartBorder
+        case colorChartBorderContrast
         case colorChartCategoricalTier1
         case colorChartCategoricalTier2
         case colorChartCategoricalTier3
@@ -37,6 +39,10 @@ extension NamedColor {
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
+            case .colorChartBorder:
+                return theme.colors.colorChartBorder
+            case .colorChartBorderContrast:
+                return theme.colors.colorChartBorderContrast
             case .colorChartCategoricalTier1:
                 return theme.colors.colorChartCategoricalTier1
             case .colorChartCategoricalTier2:

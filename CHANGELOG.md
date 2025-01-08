@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Size semantic tokens `sizeIconWithLabelMediumSizeXs` and `sizeIconWithLabelSmallSizeXs`
 - [Library] Color semantic tokens `colorOpacityLowest*`, `colorOpacityLower*`, `colorChartBorder*` and `colorChartBorderContrast*`
 
 ### Changed
