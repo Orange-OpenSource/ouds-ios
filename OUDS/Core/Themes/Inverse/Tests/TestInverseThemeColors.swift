@@ -38,12 +38,16 @@ final class TestInverseThemeColors: XCTestCase {
 
     // MARK: - Test cases
 
-    func testColorsHomogeneityColorOpacityInvisibleBlack() throws {
-        assertHomogeneity(inverseTheme.colors.colorOpacityInvisibleBlack)
+    func testColorsHomogeneityColorOpacityLowest() throws {
+        assertHomogeneity(inverseTheme.colors.colorOpacityLowest)
     }
 
-    func testColorsHomogeneityColorOpacityInvisibleWhite() throws {
-        assertHomogeneity(inverseTheme.colors.colorOpacityInvisibleWhite)
+    func testColorsHomogeneityColorOpacityLower() throws {
+        assertHomogeneity(inverseTheme.colors.colorOpacityLower)
+    }
+
+    func testColorsHomogeneityColorOpacityTransparent() throws {
+        assertHomogeneity(inverseTheme.colors.colorOpacityTransparent)
     }
 
     // MARK: - Color - Action
@@ -228,10 +232,6 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colors.colorContentOnActionLoading)
     }
 
-    func testColorsHomogeneityColorContentOnActionNegative() throws {
-        assertHomogeneity(inverseTheme.colors.colorContentOnActionNegative)
-    }
-
     func testColorsHomogeneityColorContentOnActionPressed() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnActionPressed)
     }
@@ -248,8 +248,8 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colors.colorContentOnStatusEmphasized)
     }
 
-    func testColorsHomogeneityColorContentOnStatusEmphasizedNeutral() throws {
-        assertHomogeneity(inverseTheme.colors.colorContentOnStatusEmphasizedNeutral)
+    func testColorsHomogeneityColorContentOnStatusEmphasizedAlt() throws {
+        assertHomogeneity(inverseTheme.colors.colorContentOnStatusEmphasizedAlt)
     }
 
     func testColorsHomogeneityColorContentOnStatusMuted() throws {
@@ -467,6 +467,14 @@ final class TestInverseThemeColors: XCTestCase {
     }
 
     // MARK: - Color - Chart
+
+    func testColorsHomogeneityColorChartBorder() throws {
+        assertHomogeneity(inverseTheme.colors.colorChartBorder)
+    }
+
+    func testColorsHomogeneityColorChartBorderContrast() throws {
+        assertHomogeneity(inverseTheme.colors.colorChartBorderContrast)
+    }
 
     func testColorsHomogeneityColorChartCategoricalTier1() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier1)

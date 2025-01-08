@@ -112,10 +112,12 @@ public protocol SizeSemanticTokens {
     var sizeIconWithLabelLargeSizeLg: SizeSemanticToken { get }
     var sizeIconWithLabelLargeSizeXl: SizeSemanticToken { get }
 
+    var sizeIconWithLabelMediumSizeXs: SizeSemanticToken { get }
     var sizeIconWithLabelMediumSizeSm: SizeSemanticToken { get }
     var sizeIconWithLabelMediumSizeMd: SizeSemanticToken { get }
     var sizeIconWithLabelMediumSizeLg: SizeSemanticToken { get }
 
+    var sizeIconWithLabelSmallSizeXs: SizeSemanticToken { get }
     var sizeIconWithLabelSmallSizeSm: SizeSemanticToken { get }
     var sizeIconWithLabelSmallSizeMd: SizeSemanticToken { get }
     var sizeIconWithLabelSmallSizeLg: SizeSemanticToken { get }

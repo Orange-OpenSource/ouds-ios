@@ -73,9 +73,11 @@ extension OrangeThemeSizeSemanticTokensProvider: SizeSemanticTokens {
     @objc open var sizeIconWithLabelMediumSizeLg: SizeSemanticToken { DimensionRawTokens.dimension300 }
     @objc open var sizeIconWithLabelMediumSizeMd: SizeSemanticToken { DimensionRawTokens.dimension250 }
     @objc open var sizeIconWithLabelMediumSizeSm: SizeSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var sizeIconWithLabelMediumSizeXs: SizeSemanticToken { DimensionRawTokens.dimension150 }
     @objc open var sizeIconWithLabelSmallSizeLg: SizeSemanticToken { DimensionRawTokens.dimension250 }
     @objc open var sizeIconWithLabelSmallSizeMd: SizeSemanticToken { DimensionRawTokens.dimension200 }
     @objc open var sizeIconWithLabelSmallSizeSm: SizeSemanticToken { DimensionRawTokens.dimension150 }
+    @objc open var sizeIconWithLabelSmallSizeXs: SizeSemanticToken { DimensionRawTokens.dimension100 }
     @objc open var sizeIconWithLabelXlargeSizeLg: SizeSemanticToken { DimensionRawTokens.dimension550 }
     @objc open var sizeIconWithLabelXlargeSizeMd: SizeSemanticToken { DimensionRawTokens.dimension500 }
     @objc open var sizeIconWithLabelXlargeSizeSm: SizeSemanticToken { DimensionRawTokens.dimension400 }

@@ -27,12 +27,11 @@ extension NamedColor {
         case colorContentOnActionHighlighted
         case colorContentOnActionHover
         case colorContentOnActionLoading
-        case colorContentOnActionNegative
         case colorContentOnActionPressed
         case colorContentOnBrandPrimary
         case colorContentOnOverlayEmphasized
         case colorContentOnStatusEmphasized
-        case colorContentOnStatusEmphasizedNeutral
+        case colorContentOnStatusEmphasizedAlt
         case colorContentOnStatusMuted
         case colorContentStatusInfo
         case colorContentStatusNegative
@@ -61,8 +60,6 @@ extension NamedColor {
                 return theme.colors.colorContentOnActionHover
             case .colorContentOnActionLoading:
                 return theme.colors.colorContentOnActionLoading
-            case .colorContentOnActionNegative:
-                return theme.colors.colorContentOnActionNegative
             case .colorContentOnActionPressed:
                 return theme.colors.colorContentOnActionPressed
             case .colorContentOnBrandPrimary:
@@ -71,8 +68,8 @@ extension NamedColor {
                 return theme.colors.colorContentOnOverlayEmphasized
             case .colorContentOnStatusEmphasized:
                 return theme.colors.colorContentOnStatusEmphasized
-            case .colorContentOnStatusEmphasizedNeutral:
-                return theme.colors.colorContentOnStatusEmphasizedNeutral
+            case .colorContentOnStatusEmphasizedAlt:
+                return theme.colors.colorContentOnStatusEmphasizedAlt
             case .colorContentOnStatusMuted:
                 return theme.colors.colorContentOnStatusMuted
             case .colorContentStatusInfo:

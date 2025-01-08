@@ -28,11 +28,13 @@ import OUDSTokensSemantic
 /// Helps to expose color semantic tokens with two values to use depending to the color scheme (*Figma* cannot manage such tokens and generate them).
 extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
-    // MARK: - Color - Opacity - Invisible
+    // MARK: - Color - Opacity
 
-    @objc open var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleBlackLight, dark: colorOpacityInvisibleBlackDark) }
+    @objc open var colorOpacityLowest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityLowestLight, dark: colorOpacityLowestDark) }
 
-    @objc open var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityInvisibleWhiteLight, dark: colorOpacityInvisibleWhiteDark) }
+    @objc open var colorOpacityLower: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityLowerLight, dark: colorOpacityLowerDark) }
+
+    @objc open var colorOpacityTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorOpacityTransparentLight, dark: colorOpacityTransparentDark) }
 
     // MARK: - Color - Action
 
@@ -130,8 +132,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorContentOnActionLoading: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnActionLoadingLight, dark: colorContentOnActionLoadingDark) }
 
-    @objc open var colorContentOnActionNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnActionNegativeLight, dark: colorContentOnActionNegativeDark) }
-
     @objc open var colorContentOnActionPressed: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnActionPressedLight, dark: colorContentOnActionPressedDark) }
 
     @objc open var colorContentOnBrandPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnBrandPrimaryLight, dark: colorContentOnBrandPrimaryDark) }
@@ -140,7 +140,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc open var colorContentOnStatusEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusEmphasizedLight, dark: colorContentOnStatusEmphasizedDark) }
 
-    @objc open var colorContentOnStatusEmphasizedNeutral: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusEmphasizedNeutralLight, dark: colorContentOnStatusEmphasizedNeutralDark) }
+    @objc open var colorContentOnStatusEmphasizedAlt: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusEmphasizedAltLight, dark: colorContentOnStatusEmphasizedAltDark) }
 
     @objc open var colorContentOnStatusMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorContentOnStatusMutedLight, dark: colorContentOnStatusMutedDark) }
 
@@ -253,6 +253,10 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc open var colorDecorativeSkinTint900: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorDecorativeSkinTint900Light, dark: colorDecorativeSkinTint900Dark) }
 
     // MARK: - Color - Chart
+
+    @objc open var colorChartBorder: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartBorderLight, dark: colorChartBorderDark) }
+
+    @objc open var colorChartBorderContrast: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartBorderContrastLight, dark: colorChartBorderContrastDark) }
 
     @objc open var colorChartCategoricalTier1: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorChartCategoricalTier1Light, dark: colorChartCategoricalTier1Dark) }
 
