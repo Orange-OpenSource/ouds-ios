@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSTokensComponent
 import OUDSTokensSemantic
 
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
@@ -29,7 +30,7 @@ import OUDSTokensSemantic
 /// - Since: 0.8.0
 open class OUDSTheme: @unchecked Sendable {
 
-    // MARK: - Properties
+    // MARK: - Semantic tokens
 
     /// All color semantic tokens exposed in one object
     public let colors: AllColorSemanticTokensProvider
@@ -58,7 +59,10 @@ open class OUDSTheme: @unchecked Sendable {
     /// All size semantic tokens exposed in one object
     public let spaces: AllSpaceSemanticTokensProvider
 
-    // TODO: Add components tokens
+    // MARK: - Component tokens
+
+    /// All components tokens related to button components like `OUDSButton`
+    public let button: AllButtonComponentTokensProvider
 
     // MARK: - Initializers
 
@@ -73,6 +77,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - opacities: An object providing all the opacity semantic tokens
     ///    - sizes: An object providing all the size semantic tokens
     ///    - spaces: An object providing all the space semantic tokens
+    ///    - button: An object providing all the component tokens for buttons
     public init(colors: AllColorSemanticTokensProvider,
                 borders: AllBorderSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,
@@ -80,7 +85,8 @@ open class OUDSTheme: @unchecked Sendable {
                 grids: AllGridSemanticTokensProvider,
                 opacities: AllOpacitySemanticTokensProvider,
                 sizes: AllSizeSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider) {
+                spaces: AllSpaceSemanticTokensProvider,
+                button: AllButtonComponentTokensProvider) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations
@@ -90,6 +96,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.opacities = opacities
         self.sizes = sizes
         self.spaces = spaces
+        self.button = button
     }
 
     /// Defines a basic kind of abstract theme to subclass then.
@@ -103,6 +110,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation
+    ///    - button: An object providing all the component tokens for buttons
     public init(colors: AllColorSemanticTokensProvider,
                 borders: AllBorderSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,
@@ -111,7 +119,8 @@ open class OUDSTheme: @unchecked Sendable {
                 grids: AllGridSemanticTokensProvider,
                 opacities: AllOpacitySemanticTokensProvider,
                 sizes: AllSizeSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider) {
+                spaces: AllSpaceSemanticTokensProvider,
+                button: AllButtonComponentTokensProvider) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations
@@ -121,6 +130,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.opacities = opacities
         self.sizes = sizes
         self.spaces = spaces
+        self.button = button
     }
 
     deinit { }

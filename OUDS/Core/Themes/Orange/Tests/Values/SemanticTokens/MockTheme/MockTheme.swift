@@ -28,6 +28,8 @@ import OUDSTokensSemantic
 /// - ``MockThemeOpacitySemanticTokensProvider`` for opacities
 /// - ``MockThemeSizeSemanticTokensProvider`` for sizes
 /// - ``MockThemeSpaceSemanticTokensprovider`` for spaces
+///
+/// And also components token providers (``MockThemeButtonComponentTokenProvider``)
 open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
@@ -36,27 +38,36 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
 
     /// For ``OtherMockTheme``
     init(colors: AllColorSemanticTokensProvider) {
+        let sizes = MockThemeSizeSemanticTokensProvider()
+        let borders = MockThemeBorderSemanticTokensProvider()
+        let spaces = MockThemeSpaceSemanticTokensProvider()
         super.init(colors: colors,
-                   borders: MockThemeBorderSemanticTokensProvider(),
+                   borders: borders,
                    elevations: MockThemeElevationSemanticTokensProvider(),
                    fontFamily: nil,
                    fonts: MockThemeFontSemanticTokensProvider(),
                    grids: MockThemeGridSemanticTokensProvider(),
                    opacities: MockThemeOpacitySemanticTokensProvider(),
-                   sizes: MockThemeSizeSemanticTokensProvider(),
-                   spaces: MockThemeSpaceSemanticTokensProvider())
+                   sizes: sizes,
+                   spaces: spaces,
+                   button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
     }
 
     init(fontFamily: String?) {
-        super.init(colors: MockThemeColorSemanticTokensProvider(),
-                   borders: MockThemeBorderSemanticTokensProvider(),
+        let colors = MockThemeColorSemanticTokensProvider()
+        let sizes = MockThemeSizeSemanticTokensProvider()
+        let borders = MockThemeBorderSemanticTokensProvider()
+        let spaces = MockThemeSpaceSemanticTokensProvider()
+        super.init(colors: colors,
+                   borders: borders,
                    elevations: MockThemeElevationSemanticTokensProvider(),
                    fontFamily: fontFamily,
                    fonts: MockThemeFontSemanticTokensProvider(),
                    grids: MockThemeGridSemanticTokensProvider(),
                    opacities: MockThemeOpacitySemanticTokensProvider(),
-                   sizes: MockThemeSizeSemanticTokensProvider(),
-                   spaces: MockThemeSpaceSemanticTokensProvider())
+                   sizes: sizes,
+                   spaces: spaces,
+                   button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
     }
 
     deinit { }
