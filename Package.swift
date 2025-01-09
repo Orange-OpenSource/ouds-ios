@@ -90,14 +90,14 @@ let package = Package(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],
             path: "OUDS/Core/Tokens/ComponentTokens/Sources"),
-        .testTarget(
-            name: "OUDSTokensComponent-Tests",
-            dependencies: ["OUDSTokensComponent"],
-            path: "OUDS/Core/Tokens/ComponentTokens/Tests"),
         .target(
             name: "OUDSTokensSemantic",
             dependencies: ["OUDSTokensRaw"],
             path: "OUDS/Core/Tokens/SemanticTokens/Sources"),
+        .testTarget(
+            name: "OUDSTokensSemantic-Tests",
+            dependencies: ["OUDSTokensSemantic"],
+            path: "OUDS/Core/Tokens/SemanticTokens/Tests"),
         .target(
             name: "OUDSTokensRaw",
             dependencies: ["OUDSFoundations"],
