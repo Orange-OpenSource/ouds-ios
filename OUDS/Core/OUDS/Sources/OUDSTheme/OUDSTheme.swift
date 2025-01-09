@@ -62,12 +62,16 @@ open class OUDSTheme: @unchecked Sendable {
     public let spaces: AllSpaceSemanticTokensProvider
 
     // MARK: - Component tokens
+    // TODO: Maybe wrap in another object, or use var to avoid to have such massive it? Or setter?
 
     /// All components tokens related to button components like `OUDSButton`
     public let button: AllButtonComponentTokensProvider
 
     /// All components tokens related to link components like `OUDSLink`
     public let link: AllLinkComponentTokensProvider
+
+    /// All components tokens related to select components like `OUDSSelect`
+    public let select: AllSelectComponentTokensProvider
 
     // MARK: - Initializers
 
@@ -84,6 +88,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation
     ///    - button: An object providing all the component tokens for buttons
     ///    - link: An object providing all the component tokens for links
+    ///    - select: An object providing all the component tokens for select
     public init(colors: AllColorSemanticTokensProvider,
                 borders: AllBorderSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,
@@ -94,7 +99,8 @@ open class OUDSTheme: @unchecked Sendable {
                 sizes: AllSizeSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider,
                 button: AllButtonComponentTokensProvider,
-                link: AllLinkComponentTokensProvider) {
+                link: AllLinkComponentTokensProvider,
+                select: AllSelectComponentTokensProvider) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations
@@ -106,6 +112,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.spaces = spaces
         self.button = button
         self.link = link
+        self.select = select
     }
 
     deinit { }

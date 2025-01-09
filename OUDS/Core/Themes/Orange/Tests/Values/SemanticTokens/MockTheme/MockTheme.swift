@@ -28,7 +28,7 @@ import OUDSTokensSemantic
 /// - ``MockThemeSizeSemanticTokensProvider`` for sizes
 /// - ``MockThemeSpaceSemanticTokensprovider`` for spaces
 ///
-/// And also components token providers : ``MockThemeButtonComponentTokenProvider``, ``MockThemeLinkComponentTokenProvider``
+/// And also components token providers...
 final class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
@@ -50,7 +50,8 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-                   link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces))
+                   link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   select: MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces))
     }
 
     deinit { }
