@@ -124,3 +124,4 @@ struct Showcase: App {
 ### Group
 
 - ``ButtonComponentTokens``
+- ``LinkComponentTokens``
