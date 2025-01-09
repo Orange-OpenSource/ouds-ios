@@ -26,7 +26,7 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     static let mockThemeButtonSize: DimensionRawToken = 118
     static let mockThemeButtonSpace: DimensionRawToken = 218
     static let mockThemeButtonRadius: BorderRadiusRawToken = 712
-    static let mockThemeButtonWidth: BorderRadiusRawToken = 000
+    static let mockThemeButtonWidth: BorderRadiusRawToken = 1_312
     static let mockThemeButtonColor = MultipleColorSemanticTokens("#00FF00")
 
     override public init(sizes: AllSizeSemanticTokensProvider,

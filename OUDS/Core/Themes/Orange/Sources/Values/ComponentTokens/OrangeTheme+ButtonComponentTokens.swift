@@ -11,6 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import Foundation
+import OUDSTokensComponent
+import OUDSTokensRaw
 import OUDSTokensSemantic
 
 extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {

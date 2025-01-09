@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] Button component tokens
+- [Library] Button component tokens (tokenator *20250109124012*)
 - [Library] Size semantic tokens `sizeIconWithLabelMediumSizeXs` and `sizeIconWithLabelSmallSizeXs`
 - [Library] Color semantic tokens `colorOpacityLowest*`, `colorOpacityLower*`, `colorChartBorder*` and `colorChartBorderContrast*`
 
