@@ -1,12 +1,12 @@
 # ``OUDSTokensComponent``
 
-These _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) are defined for components and refer to semantic tokens or raw tokens.
+These _tokens_ are defined for components and refer to semantic tokens or raw tokens.
 They can be seen as a kind of bridge between components and in the end primitive values of the design kit.
 
 ## Overview
 
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
-_Components_ use _component tokens_ exposed through the _theme_ thanls to token providers to get their style values.
+_Components_ use _component tokens_ exposed through the _theme_ thanks to token providers to get their style values.
 
 Components tokens are defined and gathered inside _Swift protocol_ so as to be exposed then through implementation of `OUDSTheme` thanks to dedicated tokens providers.
 Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in _protocols_ and defined in _extensions_.

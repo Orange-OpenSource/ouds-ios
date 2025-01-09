@@ -1,6 +1,6 @@
 # ``OUDSThemesInverse``
 
-This theme overrides the [Orange theme](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/) for some colors so as to bring an "inverse"-colored experience.
+This theme overrides the *Orange theme* for some colors so as to bring an "inverse"-colored experience.
 
 ## Overview
 
