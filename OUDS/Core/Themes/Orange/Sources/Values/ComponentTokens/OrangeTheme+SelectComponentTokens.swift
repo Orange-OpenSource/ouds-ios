@@ -1,0 +1,54 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import Foundation
+import OUDSTokensComponent
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+extension OrangeThemeSelectComponentTokensProvider: SelectComponentTokens {
+    @objc open var selectSizeMaxHeightContainerIcon: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var selectSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var selectSizeMinHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var selectSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var selectSizeMinWidthIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var selectColorBgDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc open var selectColorBgEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc open var selectColorBgFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
+    @objc open var selectColorBgHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
+    @objc open var selectColorBgLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
+    @objc open var selectColorBgPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
+    @objc open var selectColorBorderDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+    @objc open var selectColorBorderEnabled: MultipleColorSemanticTokens { colors.colorActionSelected }
+    @objc open var selectColorBorderHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    @objc open var selectColorBorderLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
+    @objc open var selectColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc open var selectColorContentDisabled: MultipleColorSemanticTokens { colors.colorContentDisabled }
+    @objc open var selectColorContentEnabled: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var selectColorContentFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var selectColorContentHelperTextDisabled: MultipleColorSemanticTokens { colors.colorContentDisabled }
+    @objc open var selectColorContentHelperTextEnabled: MultipleColorSemanticTokens { colors.colorContentMuted }
+    @objc open var selectColorContentHelperTextFocus: MultipleColorSemanticTokens { colors.colorContentMuted }
+    @objc open var selectColorContentHelperTextHover: MultipleColorSemanticTokens { colors.colorContentMuted }
+    @objc open var selectColorContentHelperTextLoading: MultipleColorSemanticTokens { colors.colorContentMuted }
+    @objc open var selectColorContentHelperTextPressed: MultipleColorSemanticTokens { colors.colorContentMuted }
+    @objc open var selectColorContentHover: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var selectColorContentLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var selectColorContentPressed: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var selectSizeCheckBox: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
+    @objc open var selectSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeMd }
+    @objc open var selectSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
+    @objc open var selectSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapTall }
+    @objc open var selectSpacePaddingInset: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var selectSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
+}

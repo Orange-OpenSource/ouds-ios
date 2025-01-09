@@ -66,6 +66,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation, default set to ``OrangeThemeSpaceSemanticTokensProvider``
     ///    - button: An object providing all the component tokens for an `OUDSButton`
     ///    - link: An object providing all the component tokens for an `OUDSLink`
+    ///    - select: An object providing all the component tokens for an `OUDSSelect`
     override public init(colors: AllColorSemanticTokensProvider = OrangeThemeColorSemanticTokensProvider(),
                          borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokensProvider = OrangeThemeElevationSemanticTokensProvider(),
@@ -76,7 +77,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          sizes: AllSizeSemanticTokensProvider = OrangeThemeSizeSemanticTokensProvider(),
                          spaces: AllSpaceSemanticTokensProvider = OrangeThemeSpaceSemanticTokensProvider(),
                          button: AllButtonComponentTokensProvider,
-                         link: AllLinkComponentTokensProvider) {
+                         link: AllLinkComponentTokensProvider,
+                         select: AllSelectComponentTokensProvider) {
         OUDSLogger.debug("Init of OrangeTheme")
         super.init(colors: colors,
                    borders: borders,
@@ -88,7 +90,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    button: button,
-                   link: link)
+                   link: link,
+                   select: select)
     }
 
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations.
@@ -123,7 +126,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    sizes: sizes,
                    spaces: spaces,
                    button: OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-                   link: OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+                   link: OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   select: OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
     }
 
     deinit { }

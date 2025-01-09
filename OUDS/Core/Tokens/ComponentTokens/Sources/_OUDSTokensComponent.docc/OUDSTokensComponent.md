@@ -125,3 +125,4 @@ struct Showcase: App {
 
 - ``ButtonComponentTokens``
 - ``LinkComponentTokens``
+- ``SelectComponentTokens``
