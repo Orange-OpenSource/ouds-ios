@@ -54,13 +54,13 @@
                                 "type": "groupMarker"
                             },
                             {
-                                "path": "/documentation/ouds/oudstheme/init(colors:borders:elevations:fontfamily:fonts:grids:opacities:sizes:spaces:)",
-                                "title": "init(colors: AllColorSemanticTokensProvider, borders: AllBorderSemanticTokensProvider, elevations: AllElevationSemanticTokensProvider, fontFamily: FontFamilySemanticToken?, fonts: AllFontSemanticTokensProvider, grids: AllGridSemanticTokensProvider, opacities: AllOpacitySemanticTokensProvider, sizes: AllSizeSemanticTokensProvider, spaces: AllSpaceSemanticTokensProvider)",
+                                "path": "/documentation/ouds/oudstheme/init(colors:borders:elevations:fontfamily:fonts:grids:opacities:sizes:spaces:button:)",
+                                "title": "init(colors: AllColorSemanticTokensProvider, borders: AllBorderSemanticTokensProvider, elevations: AllElevationSemanticTokensProvider, fontFamily: FontFamilySemanticToken?, fonts: AllFontSemanticTokensProvider, grids: AllGridSemanticTokensProvider, opacities: AllOpacitySemanticTokensProvider, sizes: AllSizeSemanticTokensProvider, spaces: AllSpaceSemanticTokensProvider, button: AllButtonComponentTokensProvider)",
                                 "type": "init"
                             },
                             {
-                                "path": "/documentation/ouds/oudstheme/init(colors:borders:elevations:fonts:grids:opacities:sizes:spaces:)",
-                                "title": "init(colors: AllColorSemanticTokensProvider, borders: AllBorderSemanticTokensProvider, elevations: AllElevationSemanticTokensProvider, fonts: AllFontSemanticTokensProvider, grids: AllGridSemanticTokensProvider, opacities: AllOpacitySemanticTokensProvider, sizes: AllSizeSemanticTokensProvider, spaces: AllSpaceSemanticTokensProvider)",
+                                "path": "/documentation/ouds/oudstheme/init(colors:borders:elevations:fonts:grids:opacities:sizes:spaces:button:)",
+                                "title": "init(colors: AllColorSemanticTokensProvider, borders: AllBorderSemanticTokensProvider, elevations: AllElevationSemanticTokensProvider, fonts: AllFontSemanticTokensProvider, grids: AllGridSemanticTokensProvider, opacities: AllOpacitySemanticTokensProvider, sizes: AllSizeSemanticTokensProvider, spaces: AllSpaceSemanticTokensProvider, button: AllButtonComponentTokensProvider)",
                                 "type": "init"
                             },
                             {
@@ -70,6 +70,11 @@
                             {
                                 "path": "/documentation/ouds/oudstheme/borders",
                                 "title": "let borders: AllBorderSemanticTokensProvider",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudstheme/button",
+                                "title": "let button: AllButtonComponentTokensProvider",
                                 "type": "property"
                             },
                             {
@@ -3912,7 +3917,7 @@
             {
                 "children": [
                     {
-                        "title": "Protocols",
+                        "title": "Group",
                         "type": "groupMarker"
                     },
                     {
@@ -3922,59 +3927,578 @@
                                 "type": "groupMarker"
                             },
                             {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttonbackgroundcolor",
-                                "title": "var buttonBackgroundColor: ColorSemanticToken",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttonbordercolor",
-                                "title": "var buttonBorderColor: ColorSemanticToken",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttonborderradius",
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonborderradius",
                                 "title": "var buttonBorderRadius: BorderRadiusSemanticToken",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttonborderstyle",
-                                "title": "var buttonBorderStyle: BorderStyleSemanticToken",
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonborderwidthdefault",
+                                "title": "var buttonBorderWidthDefault: BorderWidthSemanticToken",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttonborderwidth",
-                                "title": "var buttonBorderWidth: BorderWidthSemanticToken",
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonborderwidthdefaultinteraction",
+                                "title": "var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttonfont",
-                                "title": "var buttonFont: MultipleFontCompositeRawTokens",
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonborderwidthdefaultinteractionmono",
+                                "title": "var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttonforegroundcolor",
-                                "title": "var buttonForegroundColor: ColorSemanticToken",
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonborderwidthminimal",
+                                "title": "var buttonBorderWidthMinimal: BorderWidthSemanticToken",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttonheight",
-                                "title": "var buttonHeight: SizeSemanticToken",
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonborderwidthminimalinteraction",
+                                "title": "var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttoninternalspacing",
-                                "title": "var buttonInternalSpacing: SpaceSemanticToken",
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultdisabled",
+                                "title": "var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenscomponent/buttonscomponenttokens/buttonwidth",
-                                "title": "var buttonWidth: SizeSemanticToken",
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultdisabledmono",
+                                "title": "var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultenabled",
+                                "title": "var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultenabledmono",
+                                "title": "var buttonColorBgDefaultEnabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultfocus",
+                                "title": "var buttonColorBgDefaultFocus: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultfocusmono",
+                                "title": "var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaulthover",
+                                "title": "var buttonColorBgDefaultHover: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaulthovermono",
+                                "title": "var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultloading",
+                                "title": "var buttonColorBgDefaultLoading: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultloadingmono",
+                                "title": "var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultpressed",
+                                "title": "var buttonColorBgDefaultPressed: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgdefaultpressedmono",
+                                "title": "var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimaldisabled",
+                                "title": "var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimaldisabledmono",
+                                "title": "var buttonColorBgMinimalDisabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalenabled",
+                                "title": "var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalenabledmono",
+                                "title": "var buttonColorBgMinimalEnabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalfocus",
+                                "title": "var buttonColorBgMinimalFocus: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalfocusmono",
+                                "title": "var buttonColorBgMinimalFocusMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalhover",
+                                "title": "var buttonColorBgMinimalHover: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalhovermono",
+                                "title": "var buttonColorBgMinimalHoverMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalloading",
+                                "title": "var buttonColorBgMinimalLoading: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalloadingmono",
+                                "title": "var buttonColorBgMinimalLoadingMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalpressed",
+                                "title": "var buttonColorBgMinimalPressed: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgminimalpressedmono",
+                                "title": "var buttonColorBgMinimalPressedMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgstrongdisabledmono",
+                                "title": "var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgstrongenabledmono",
+                                "title": "var buttonColorBgStrongEnabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgstrongfocusmono",
+                                "title": "var buttonColorBgStrongFocusMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgstronghovermono",
+                                "title": "var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgstrongloadingmono",
+                                "title": "var buttonColorBgStrongLoadingMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorbgstrongpressedmono",
+                                "title": "var buttonColorBgStrongPressedMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultdisabled",
+                                "title": "var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultdisabledmono",
+                                "title": "var buttonColorBorderDefaultDisabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultenabled",
+                                "title": "var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultenabledmono",
+                                "title": "var buttonColorBorderDefaultEnabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultfocus",
+                                "title": "var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultfocusmono",
+                                "title": "var buttonColorBorderDefaultFocusMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaulthover",
+                                "title": "var buttonColorBorderDefaultHover: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaulthovermono",
+                                "title": "var buttonColorBorderDefaultHoverMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultloading",
+                                "title": "var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultloadingmono",
+                                "title": "var buttonColorBorderDefaultLoadingMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultpressed",
+                                "title": "var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderdefaultpressedmono",
+                                "title": "var buttonColorBorderDefaultPressedMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimaldisabled",
+                                "title": "var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimaldisabledmono",
+                                "title": "var buttonColorBorderMinimalDisabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalenabled",
+                                "title": "var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalenabledmono",
+                                "title": "var buttonColorBorderMinimalEnabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalfocus",
+                                "title": "var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalfocusmono",
+                                "title": "var buttonColorBorderMinimalFocusMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalhover",
+                                "title": "var buttonColorBorderMinimalHover: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalhovermono",
+                                "title": "var buttonColorBorderMinimalHoverMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalloading",
+                                "title": "var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalloadingmono",
+                                "title": "var buttonColorBorderMinimalLoadingMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalpressed",
+                                "title": "var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderminimalpressedmono",
+                                "title": "var buttonColorBorderMinimalPressedMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderstrongdisabledmono",
+                                "title": "var buttonColorBorderStrongDisabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderstrongenabledmono",
+                                "title": "var buttonColorBorderStrongEnabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderstrongfocusmono",
+                                "title": "var buttonColorBorderStrongFocusMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderstronghovermono",
+                                "title": "var buttonColorBorderStrongHoverMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderstrongloadingmono",
+                                "title": "var buttonColorBorderStrongLoadingMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorborderstrongpressedmono",
+                                "title": "var buttonColorBorderStrongPressedMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultdisabled",
+                                "title": "var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultdisabledmono",
+                                "title": "var buttonColorContentDefaultDisabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultenabled",
+                                "title": "var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultenabledmono",
+                                "title": "var buttonColorContentDefaultEnabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultfocus",
+                                "title": "var buttonColorContentDefaultFocus: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultfocusmono",
+                                "title": "var buttonColorContentDefaultFocusMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaulthover",
+                                "title": "var buttonColorContentDefaultHover: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaulthovermono",
+                                "title": "var buttonColorContentDefaultHoverMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultloading",
+                                "title": "var buttonColorContentDefaultLoading: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultloadingmono",
+                                "title": "var buttonColorContentDefaultLoadingMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultpressed",
+                                "title": "var buttonColorContentDefaultPressed: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentdefaultpressedmono",
+                                "title": "var buttonColorContentDefaultPressedMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimaldisabled",
+                                "title": "var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimaldisabledmono",
+                                "title": "var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalenabled",
+                                "title": "var buttonColorContentMinimalEnabled: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalenabledmono",
+                                "title": "var buttonColorContentMinimalEnabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalfocus",
+                                "title": "var buttonColorContentMinimalFocus: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalfocusmono",
+                                "title": "var buttonColorContentMinimalFocusMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalhover",
+                                "title": "var buttonColorContentMinimalHover: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalhovermono",
+                                "title": "var buttonColorContentMinimalHoverMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalloading",
+                                "title": "var buttonColorContentMinimalLoading: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalloadingmono",
+                                "title": "var buttonColorContentMinimalLoadingMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalpressed",
+                                "title": "var buttonColorContentMinimalPressed: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentminimalpressedmono",
+                                "title": "var buttonColorContentMinimalPressedMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentstrongdisabledmono",
+                                "title": "var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentstrongenabledmono",
+                                "title": "var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentstrongfocusmono",
+                                "title": "var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentstronghovermono",
+                                "title": "var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentstrongloadingmono",
+                                "title": "var buttonColorContentStrongLoadingMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttoncolorcontentstrongpressedmono",
+                                "title": "var buttonColorContentStrongPressedMono: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonsizeicon",
+                                "title": "var buttonSizeIcon: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonsizeicononly",
+                                "title": "var buttonSizeIconOnly: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonsizeloader",
+                                "title": "var buttonSizeLoader: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonsizemaxheight",
+                                "title": "var buttonSizeMaxHeight: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonsizeminheight",
+                                "title": "var buttonSizeMinHeight: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonsizeminwidth",
+                                "title": "var buttonSizeMinWidth: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspacecolumngaparrow",
+                                "title": "var buttonSpaceColumnGapArrow: SpaceSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspacecolumngapicon",
+                                "title": "var buttonSpaceColumnGapIcon: SpaceSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspaceinseticononly",
+                                "title": "var buttonSpaceInsetIconOnly: SpaceSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspacepaddingblock",
+                                "title": "var buttonSpacePaddingBlock: SpaceSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspacepaddinginlinearrowend",
+                                "title": "var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspacepaddinginlinearrowstart",
+                                "title": "var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspacepaddinginlineendiconstart",
+                                "title": "var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspacepaddinginlineiconnone",
+                                "title": "var buttonSpacePaddingInlineIconNone: SpaceSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspacepaddinginlineiconstart",
+                                "title": "var buttonSpacePaddingInlineIconStart: SpaceSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/buttoncomponenttokens/buttonspacepaddinginlinestarticonend",
+                                "title": "var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken",
                                 "type": "property"
                             }
                         ],
-                        "path": "/documentation/oudstokenscomponent/buttonscomponenttokens",
-                        "title": "ButtonsComponentTokens",
+                        "path": "/documentation/oudstokenscomponent/buttoncomponenttokens",
+                        "title": "ButtonComponentTokens",
                         "type": "protocol"
+                    },
+                    {
+                        "title": "Type Aliases",
+                        "type": "groupMarker"
+                    },
+                    {
+                        "path": "/documentation/oudstokenscomponent/allbuttoncomponenttokensprovider",
+                        "title": "AllButtonComponentTokensProvider",
+                        "type": "typealias"
                     }
                 ],
                 "path": "/documentation/oudstokenscomponent",
@@ -4195,6 +4719,11 @@
                             {
                                 "path": "/documentation/oudsthemesorange/orangetheme/init(colors:borders:elevations:fonts:grids:opacities:sizes:spaces:)",
                                 "title": "init(colors: AllColorSemanticTokensProvider, borders: AllBorderSemanticTokensProvider, elevations: AllElevationSemanticTokensProvider, fonts: AllFontSemanticTokensProvider, grids: AllGridSemanticTokensProvider, opacities: AllOpacitySemanticTokensProvider, sizes: AllSizeSemanticTokensProvider, spaces: AllSpaceSemanticTokensProvider)",
+                                "type": "init"
+                            },
+                            {
+                                "path": "/documentation/oudsthemesorange/orangetheme/init(colors:borders:elevations:fonts:grids:opacities:sizes:spaces:button:)",
+                                "title": "init(colors: AllColorSemanticTokensProvider, borders: AllBorderSemanticTokensProvider, elevations: AllElevationSemanticTokensProvider, fonts: AllFontSemanticTokensProvider, grids: AllGridSemanticTokensProvider, opacities: AllOpacitySemanticTokensProvider, sizes: AllSizeSemanticTokensProvider, spaces: AllSpaceSemanticTokensProvider, button: AllButtonComponentTokensProvider)",
                                 "type": "init"
                             }
                         ],
@@ -4442,6 +4971,621 @@
                         ],
                         "path": "/documentation/oudsthemesorange/orangethemebordersemantictokensprovider",
                         "title": "OrangeThemeBorderSemanticTokensProvider",
+                        "type": "class"
+                    },
+                    {
+                        "children": [
+                            {
+                                "title": "Initializers",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/init(sizes:borders:colors:spaces:)",
+                                "title": "init(sizes: AllSizeSemanticTokensProvider, borders: AllBorderSemanticTokensProvider, colors: AllColorSemanticTokensProvider, spaces: AllSpaceSemanticTokensProvider)",
+                                "type": "init"
+                            },
+                            {
+                                "title": "Instance Properties",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/borders",
+                                "title": "let borders: AllBorderSemanticTokensProvider",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/colors",
+                                "title": "let colors: AllColorSemanticTokensProvider",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/sizes",
+                                "title": "let sizes: AllSizeSemanticTokensProvider",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/spaces",
+                                "title": "let spaces: AllSpaceSemanticTokensProvider",
+                                "type": "property"
+                            },
+                            {
+                                "title": "Default Implementations",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "title": "Instance Properties",
+                                        "type": "groupMarker"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonborderradius",
+                                        "title": "var buttonBorderRadius: BorderRadiusSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonborderwidthdefault",
+                                        "title": "var buttonBorderWidthDefault: BorderWidthSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonborderwidthdefaultinteraction",
+                                        "title": "var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonborderwidthdefaultinteractionmono",
+                                        "title": "var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonborderwidthminimal",
+                                        "title": "var buttonBorderWidthMinimal: BorderWidthSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonborderwidthminimalinteraction",
+                                        "title": "var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultdisabled",
+                                        "title": "var buttonColorBgDefaultDisabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultdisabledmono",
+                                        "title": "var buttonColorBgDefaultDisabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultenabled",
+                                        "title": "var buttonColorBgDefaultEnabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultenabledmono",
+                                        "title": "var buttonColorBgDefaultEnabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultfocus",
+                                        "title": "var buttonColorBgDefaultFocus: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultfocusmono",
+                                        "title": "var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaulthover",
+                                        "title": "var buttonColorBgDefaultHover: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaulthovermono",
+                                        "title": "var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultloading",
+                                        "title": "var buttonColorBgDefaultLoading: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultloadingmono",
+                                        "title": "var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultpressed",
+                                        "title": "var buttonColorBgDefaultPressed: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgdefaultpressedmono",
+                                        "title": "var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimaldisabled",
+                                        "title": "var buttonColorBgMinimalDisabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimaldisabledmono",
+                                        "title": "var buttonColorBgMinimalDisabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalenabled",
+                                        "title": "var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalenabledmono",
+                                        "title": "var buttonColorBgMinimalEnabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalfocus",
+                                        "title": "var buttonColorBgMinimalFocus: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalfocusmono",
+                                        "title": "var buttonColorBgMinimalFocusMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalhover",
+                                        "title": "var buttonColorBgMinimalHover: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalhovermono",
+                                        "title": "var buttonColorBgMinimalHoverMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalloading",
+                                        "title": "var buttonColorBgMinimalLoading: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalloadingmono",
+                                        "title": "var buttonColorBgMinimalLoadingMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalpressed",
+                                        "title": "var buttonColorBgMinimalPressed: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgminimalpressedmono",
+                                        "title": "var buttonColorBgMinimalPressedMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgstrongdisabledmono",
+                                        "title": "var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgstrongenabledmono",
+                                        "title": "var buttonColorBgStrongEnabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgstrongfocusmono",
+                                        "title": "var buttonColorBgStrongFocusMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgstronghovermono",
+                                        "title": "var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgstrongloadingmono",
+                                        "title": "var buttonColorBgStrongLoadingMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorbgstrongpressedmono",
+                                        "title": "var buttonColorBgStrongPressedMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultdisabled",
+                                        "title": "var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultdisabledmono",
+                                        "title": "var buttonColorBorderDefaultDisabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultenabled",
+                                        "title": "var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultenabledmono",
+                                        "title": "var buttonColorBorderDefaultEnabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultfocus",
+                                        "title": "var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultfocusmono",
+                                        "title": "var buttonColorBorderDefaultFocusMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaulthover",
+                                        "title": "var buttonColorBorderDefaultHover: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaulthovermono",
+                                        "title": "var buttonColorBorderDefaultHoverMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultloading",
+                                        "title": "var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultloadingmono",
+                                        "title": "var buttonColorBorderDefaultLoadingMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultpressed",
+                                        "title": "var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderdefaultpressedmono",
+                                        "title": "var buttonColorBorderDefaultPressedMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimaldisabled",
+                                        "title": "var buttonColorBorderMinimalDisabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimaldisabledmono",
+                                        "title": "var buttonColorBorderMinimalDisabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalenabled",
+                                        "title": "var buttonColorBorderMinimalEnabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalenabledmono",
+                                        "title": "var buttonColorBorderMinimalEnabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalfocus",
+                                        "title": "var buttonColorBorderMinimalFocus: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalfocusmono",
+                                        "title": "var buttonColorBorderMinimalFocusMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalhover",
+                                        "title": "var buttonColorBorderMinimalHover: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalhovermono",
+                                        "title": "var buttonColorBorderMinimalHoverMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalloading",
+                                        "title": "var buttonColorBorderMinimalLoading: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalloadingmono",
+                                        "title": "var buttonColorBorderMinimalLoadingMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalpressed",
+                                        "title": "var buttonColorBorderMinimalPressed: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderminimalpressedmono",
+                                        "title": "var buttonColorBorderMinimalPressedMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderstrongdisabledmono",
+                                        "title": "var buttonColorBorderStrongDisabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderstrongenabledmono",
+                                        "title": "var buttonColorBorderStrongEnabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderstrongfocusmono",
+                                        "title": "var buttonColorBorderStrongFocusMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderstronghovermono",
+                                        "title": "var buttonColorBorderStrongHoverMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderstrongloadingmono",
+                                        "title": "var buttonColorBorderStrongLoadingMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorborderstrongpressedmono",
+                                        "title": "var buttonColorBorderStrongPressedMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultdisabled",
+                                        "title": "var buttonColorContentDefaultDisabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultdisabledmono",
+                                        "title": "var buttonColorContentDefaultDisabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultenabled",
+                                        "title": "var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultenabledmono",
+                                        "title": "var buttonColorContentDefaultEnabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultfocus",
+                                        "title": "var buttonColorContentDefaultFocus: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultfocusmono",
+                                        "title": "var buttonColorContentDefaultFocusMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaulthover",
+                                        "title": "var buttonColorContentDefaultHover: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaulthovermono",
+                                        "title": "var buttonColorContentDefaultHoverMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultloading",
+                                        "title": "var buttonColorContentDefaultLoading: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultloadingmono",
+                                        "title": "var buttonColorContentDefaultLoadingMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultpressed",
+                                        "title": "var buttonColorContentDefaultPressed: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentdefaultpressedmono",
+                                        "title": "var buttonColorContentDefaultPressedMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimaldisabled",
+                                        "title": "var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimaldisabledmono",
+                                        "title": "var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalenabled",
+                                        "title": "var buttonColorContentMinimalEnabled: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalenabledmono",
+                                        "title": "var buttonColorContentMinimalEnabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalfocus",
+                                        "title": "var buttonColorContentMinimalFocus: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalfocusmono",
+                                        "title": "var buttonColorContentMinimalFocusMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalhover",
+                                        "title": "var buttonColorContentMinimalHover: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalhovermono",
+                                        "title": "var buttonColorContentMinimalHoverMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalloading",
+                                        "title": "var buttonColorContentMinimalLoading: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalloadingmono",
+                                        "title": "var buttonColorContentMinimalLoadingMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalpressed",
+                                        "title": "var buttonColorContentMinimalPressed: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentminimalpressedmono",
+                                        "title": "var buttonColorContentMinimalPressedMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentstrongdisabledmono",
+                                        "title": "var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentstrongenabledmono",
+                                        "title": "var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentstrongfocusmono",
+                                        "title": "var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentstronghovermono",
+                                        "title": "var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentstrongloadingmono",
+                                        "title": "var buttonColorContentStrongLoadingMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncolorcontentstrongpressedmono",
+                                        "title": "var buttonColorContentStrongPressedMono: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonsizeicon",
+                                        "title": "var buttonSizeIcon: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonsizeicononly",
+                                        "title": "var buttonSizeIconOnly: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonsizeloader",
+                                        "title": "var buttonSizeLoader: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonsizemaxheight",
+                                        "title": "var buttonSizeMaxHeight: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonsizeminheight",
+                                        "title": "var buttonSizeMinHeight: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonsizeminwidth",
+                                        "title": "var buttonSizeMinWidth: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspacecolumngaparrow",
+                                        "title": "var buttonSpaceColumnGapArrow: SpaceSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspacecolumngapicon",
+                                        "title": "var buttonSpaceColumnGapIcon: SpaceSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspaceinseticononly",
+                                        "title": "var buttonSpaceInsetIconOnly: SpaceSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspacepaddingblock",
+                                        "title": "var buttonSpacePaddingBlock: SpaceSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspacepaddinginlinearrowend",
+                                        "title": "var buttonSpacePaddingInlineArrowEnd: SpaceSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspacepaddinginlinearrowstart",
+                                        "title": "var buttonSpacePaddingInlineArrowStart: SpaceSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspacepaddinginlineendiconstart",
+                                        "title": "var buttonSpacePaddingInlineEndIconStart: SpaceSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspacepaddinginlineiconnone",
+                                        "title": "var buttonSpacePaddingInlineIconNone: SpaceSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspacepaddinginlineiconstart",
+                                        "title": "var buttonSpacePaddingInlineIconStart: SpaceSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttonspacepaddinginlinestarticonend",
+                                        "title": "var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken",
+                                        "type": "property"
+                                    }
+                                ],
+                                "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider/buttoncomponenttokens-implementations",
+                                "title": "ButtonComponentTokens Implementations",
+                                "type": "symbol"
+                            }
+                        ],
+                        "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider",
+                        "title": "OrangeThemeButtonComponentTokensProvider",
                         "type": "class"
                     },
                     {
@@ -5085,6 +6229,16 @@
                                         "type": "property"
                                     },
                                     {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorchartborder",
+                                        "title": "var colorChartBorder: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorchartbordercontrast",
+                                        "title": "var colorChartBorderContrast: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
                                         "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorchartcategoricaltier1",
                                         "title": "var colorChartCategoricalTier1: MultipleColorSemanticTokens",
                                         "type": "property"
@@ -5220,11 +6374,6 @@
                                         "type": "property"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonactionnegative",
-                                        "title": "var colorContentOnActionNegative: MultipleColorSemanticTokens",
-                                        "type": "property"
-                                    },
-                                    {
                                         "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonactionpressed",
                                         "title": "var colorContentOnActionPressed: MultipleColorSemanticTokens",
                                         "type": "property"
@@ -5245,8 +6394,8 @@
                                         "type": "property"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonstatusemphasizedneutral",
-                                        "title": "var colorContentOnStatusEmphasizedNeutral: MultipleColorSemanticTokens",
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonstatusemphasizedalt",
+                                        "title": "var colorContentOnStatusEmphasizedAlt: MultipleColorSemanticTokens",
                                         "type": "property"
                                     },
                                     {
@@ -5425,13 +6574,18 @@
                                         "type": "property"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacityinvisibleblack",
-                                        "title": "var colorOpacityInvisibleBlack: MultipleColorSemanticTokens",
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacitylower",
+                                        "title": "var colorOpacityLower: MultipleColorSemanticTokens",
                                         "type": "property"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacityinvisiblewhite",
-                                        "title": "var colorOpacityInvisibleWhite: MultipleColorSemanticTokens",
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacitylowest",
+                                        "title": "var colorOpacityLowest: MultipleColorSemanticTokens",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacitytransparent",
+                                        "title": "var colorOpacityTransparent: MultipleColorSemanticTokens",
                                         "type": "property"
                                     },
                                     {
@@ -6116,6 +7270,26 @@
                                         "type": "property"
                                     },
                                     {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorchartbordercontrastdark",
+                                        "title": "var colorChartBorderContrastDark: ColorSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorchartbordercontrastlight",
+                                        "title": "var colorChartBorderContrastLight: ColorSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorchartborderdark",
+                                        "title": "var colorChartBorderDark: ColorSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorchartborderlight",
+                                        "title": "var colorChartBorderLight: ColorSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
                                         "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorchartcategoricaltier10dark",
                                         "title": "var colorChartCategoricalTier10Dark: ColorSemanticToken",
                                         "type": "property"
@@ -6386,16 +7560,6 @@
                                         "type": "property"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonactionnegativedark",
-                                        "title": "var colorContentOnActionNegativeDark: ColorSemanticToken",
-                                        "type": "property"
-                                    },
-                                    {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonactionnegativelight",
-                                        "title": "var colorContentOnActionNegativeLight: ColorSemanticToken",
-                                        "type": "property"
-                                    },
-                                    {
                                         "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonactionpresseddark",
                                         "title": "var colorContentOnActionPressedDark: ColorSemanticToken",
                                         "type": "property"
@@ -6426,6 +7590,16 @@
                                         "type": "property"
                                     },
                                     {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonstatusemphasizedaltdark",
+                                        "title": "var colorContentOnStatusEmphasizedAltDark: ColorSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonstatusemphasizedaltlight",
+                                        "title": "var colorContentOnStatusEmphasizedAltLight: ColorSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
                                         "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonstatusemphasizeddark",
                                         "title": "var colorContentOnStatusEmphasizedDark: ColorSemanticToken",
                                         "type": "property"
@@ -6433,16 +7607,6 @@
                                     {
                                         "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonstatusemphasizedlight",
                                         "title": "var colorContentOnStatusEmphasizedLight: ColorSemanticToken",
-                                        "type": "property"
-                                    },
-                                    {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonstatusemphasizedneutraldark",
-                                        "title": "var colorContentOnStatusEmphasizedNeutralDark: ColorSemanticToken",
-                                        "type": "property"
-                                    },
-                                    {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/colorcontentonstatusemphasizedneutrallight",
-                                        "title": "var colorContentOnStatusEmphasizedNeutralLight: ColorSemanticToken",
                                         "type": "property"
                                     },
                                     {
@@ -6796,23 +7960,33 @@
                                         "type": "property"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacityinvisibleblackdark",
-                                        "title": "var colorOpacityInvisibleBlackDark: ColorSemanticToken",
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacitylowerdark",
+                                        "title": "var colorOpacityLowerDark: ColorSemanticToken",
                                         "type": "property"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacityinvisibleblacklight",
-                                        "title": "var colorOpacityInvisibleBlackLight: ColorSemanticToken",
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacitylowerlight",
+                                        "title": "var colorOpacityLowerLight: ColorSemanticToken",
                                         "type": "property"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacityinvisiblewhitedark",
-                                        "title": "var colorOpacityInvisibleWhiteDark: ColorSemanticToken",
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacitylowestdark",
+                                        "title": "var colorOpacityLowestDark: ColorSemanticToken",
                                         "type": "property"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacityinvisiblewhitelight",
-                                        "title": "var colorOpacityInvisibleWhiteLight: ColorSemanticToken",
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacitylowestlight",
+                                        "title": "var colorOpacityLowestLight: ColorSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacitytransparentdark",
+                                        "title": "var colorOpacityTransparentDark: ColorSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecolorsemantictokensprovider/coloropacitytransparentlight",
+                                        "title": "var colorOpacityTransparentLight: ColorSemanticToken",
                                         "type": "property"
                                     },
                                     {
@@ -9210,6 +10384,11 @@
                                         "type": "property"
                                     },
                                     {
+                                        "path": "/documentation/oudsthemesorange/orangethemesizesemantictokensprovider/sizeiconwithlabelmediumsizexs",
+                                        "title": "var sizeIconWithLabelMediumSizeXs: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
                                         "path": "/documentation/oudsthemesorange/orangethemesizesemantictokensprovider/sizeiconwithlabelsmallsizelg",
                                         "title": "var sizeIconWithLabelSmallSizeLg: SizeSemanticToken",
                                         "type": "property"
@@ -9222,6 +10401,11 @@
                                     {
                                         "path": "/documentation/oudsthemesorange/orangethemesizesemantictokensprovider/sizeiconwithlabelsmallsizesm",
                                         "title": "var sizeIconWithLabelSmallSizeSm: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemesizesemantictokensprovider/sizeiconwithlabelsmallsizexs",
+                                        "title": "var sizeIconWithLabelSmallSizeXs: SizeSemanticToken",
                                         "type": "property"
                                     },
                                     {
@@ -10294,6 +11478,26 @@
                                 "type": "property"
                             },
                             {
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorchartbordercontrastdark",
+                                "title": "var colorChartBorderContrastDark: ColorSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorchartbordercontrastlight",
+                                "title": "var colorChartBorderContrastLight: ColorSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorchartborderdark",
+                                "title": "var colorChartBorderDark: ColorSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorchartborderlight",
+                                "title": "var colorChartBorderLight: ColorSemanticToken",
+                                "type": "property"
+                            },
+                            {
                                 "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorchartcategoricaltier10dark",
                                 "title": "var colorChartCategoricalTier10Dark: ColorSemanticToken",
                                 "type": "property"
@@ -10564,16 +11768,6 @@
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorcontentonactionnegativedark",
-                                "title": "var colorContentOnActionNegativeDark: ColorSemanticToken",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorcontentonactionnegativelight",
-                                "title": "var colorContentOnActionNegativeLight: ColorSemanticToken",
-                                "type": "property"
-                            },
-                            {
                                 "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorcontentonactionpresseddark",
                                 "title": "var colorContentOnActionPressedDark: ColorSemanticToken",
                                 "type": "property"
@@ -10604,6 +11798,16 @@
                                 "type": "property"
                             },
                             {
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorcontentonstatusemphasizedaltdark",
+                                "title": "var colorContentOnStatusEmphasizedAltDark: ColorSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorcontentonstatusemphasizedaltlight",
+                                "title": "var colorContentOnStatusEmphasizedAltLight: ColorSemanticToken",
+                                "type": "property"
+                            },
+                            {
                                 "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorcontentonstatusemphasizeddark",
                                 "title": "var colorContentOnStatusEmphasizedDark: ColorSemanticToken",
                                 "type": "property"
@@ -10611,16 +11815,6 @@
                             {
                                 "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorcontentonstatusemphasizedlight",
                                 "title": "var colorContentOnStatusEmphasizedLight: ColorSemanticToken",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorcontentonstatusemphasizedneutraldark",
-                                "title": "var colorContentOnStatusEmphasizedNeutralDark: ColorSemanticToken",
-                                "type": "property"
-                            },
-                            {
-                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/colorcontentonstatusemphasizedneutrallight",
-                                "title": "var colorContentOnStatusEmphasizedNeutralLight: ColorSemanticToken",
                                 "type": "property"
                             },
                             {
@@ -10974,23 +12168,33 @@
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacityinvisibleblackdark",
-                                "title": "var colorOpacityInvisibleBlackDark: ColorSemanticToken",
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacitylowerdark",
+                                "title": "var colorOpacityLowerDark: ColorSemanticToken",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacityinvisibleblacklight",
-                                "title": "var colorOpacityInvisibleBlackLight: ColorSemanticToken",
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacitylowerlight",
+                                "title": "var colorOpacityLowerLight: ColorSemanticToken",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacityinvisiblewhitedark",
-                                "title": "var colorOpacityInvisibleWhiteDark: ColorSemanticToken",
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacitylowestdark",
+                                "title": "var colorOpacityLowestDark: ColorSemanticToken",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacityinvisiblewhitelight",
-                                "title": "var colorOpacityInvisibleWhiteLight: ColorSemanticToken",
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacitylowestlight",
+                                "title": "var colorOpacityLowestLight: ColorSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacitytransparentdark",
+                                "title": "var colorOpacityTransparentDark: ColorSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/colorsemantictokens/coloropacitytransparentlight",
+                                "title": "var colorOpacityTransparentLight: ColorSemanticToken",
                                 "type": "property"
                             },
                             {
@@ -11850,6 +13054,16 @@
                                 "type": "property"
                             },
                             {
+                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/colorchartborder",
+                                "title": "var colorChartBorder: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/colorchartbordercontrast",
+                                "title": "var colorChartBorderContrast: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
                                 "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/colorchartcategoricaltier1",
                                 "title": "var colorChartCategoricalTier1: MultipleColorSemanticTokens",
                                 "type": "property"
@@ -11985,11 +13199,6 @@
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/colorcontentonactionnegative",
-                                "title": "var colorContentOnActionNegative: MultipleColorSemanticTokens",
-                                "type": "property"
-                            },
-                            {
                                 "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/colorcontentonactionpressed",
                                 "title": "var colorContentOnActionPressed: MultipleColorSemanticTokens",
                                 "type": "property"
@@ -12010,8 +13219,8 @@
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/colorcontentonstatusemphasizedneutral",
-                                "title": "var colorContentOnStatusEmphasizedNeutral: MultipleColorSemanticTokens",
+                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/colorcontentonstatusemphasizedalt",
+                                "title": "var colorContentOnStatusEmphasizedAlt: MultipleColorSemanticTokens",
                                 "type": "property"
                             },
                             {
@@ -12190,13 +13399,18 @@
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/coloropacityinvisibleblack",
-                                "title": "var colorOpacityInvisibleBlack: MultipleColorSemanticTokens",
+                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/coloropacitylower",
+                                "title": "var colorOpacityLower: MultipleColorSemanticTokens",
                                 "type": "property"
                             },
                             {
-                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/coloropacityinvisiblewhite",
-                                "title": "var colorOpacityInvisibleWhite: MultipleColorSemanticTokens",
+                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/coloropacitylowest",
+                                "title": "var colorOpacityLowest: MultipleColorSemanticTokens",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/colormultiplesemantictokens/coloropacitytransparent",
+                                "title": "var colorOpacityTransparent: MultipleColorSemanticTokens",
                                 "type": "property"
                             },
                             {
@@ -13231,6 +14445,11 @@
                                 "type": "property"
                             },
                             {
+                                "path": "/documentation/oudstokenssemantic/sizesemantictokens/sizeiconwithlabelmediumsizexs",
+                                "title": "var sizeIconWithLabelMediumSizeXs: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
                                 "path": "/documentation/oudstokenssemantic/sizesemantictokens/sizeiconwithlabelsmallsizelg",
                                 "title": "var sizeIconWithLabelSmallSizeLg: SizeSemanticToken",
                                 "type": "property"
@@ -13243,6 +14462,11 @@
                             {
                                 "path": "/documentation/oudstokenssemantic/sizesemantictokens/sizeiconwithlabelsmallsizesm",
                                 "title": "var sizeIconWithLabelSmallSizeSm: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenssemantic/sizesemantictokens/sizeiconwithlabelsmallsizexs",
+                                "title": "var sizeIconWithLabelSmallSizeXs: SizeSemanticToken",
                                 "type": "property"
                             },
                             {
