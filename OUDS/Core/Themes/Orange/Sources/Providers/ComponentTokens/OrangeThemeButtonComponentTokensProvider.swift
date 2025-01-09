@@ -69,7 +69,7 @@ import OUDSTokensSemantic
 ///     OrangeTheme(button: CustomButtonComponentTokensProvider())
 /// ```
 ///
-/// - Since: 0.10.0
+/// - Since: 0.9.0
 open class OrangeThemeButtonComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for button sizes

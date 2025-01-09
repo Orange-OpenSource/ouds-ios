@@ -22,7 +22,7 @@ import OUDSTokensSemantic
 /// Declares all component tokens for buttons components like `OUDSButton`
 /// Use for tokens providers like `OrangeThemeButtonComponentTokensProvider`.
 /// 
-/// - Since: 0.10.0
+/// - Since: 0.9.0
 public protocol ButtonComponentTokens {
 
     // MARK: - Size
