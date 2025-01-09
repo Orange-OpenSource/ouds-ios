@@ -20,6 +20,8 @@ infix operator <|
 /// Composite tokens are tokens defined in *Figma* by other tokens.
 /// Here a *font* thing is caracterized by a *font size*, a *line height*, a *font weight* and *letter spacing* values.
 /// All these elements are *raw tokens*, and together define a *composite raw token* for *font* thing.
+/// 
+/// - Since: 0.8.0
 public struct FontCompositeRawToken: Equatable, Sendable {
 
     // Font family is not included here because this is the only thing which can vary

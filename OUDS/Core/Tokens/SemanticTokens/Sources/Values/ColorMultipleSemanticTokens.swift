@@ -42,14 +42,17 @@
 ///         // Thus users can in their components use colorBgPrimary as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
 /// ```
-/// 
+///
+/// - Since: 0.8.0
 public protocol ColorMultipleSemanticTokens {
 
-    // MARK: - Color - Opacity - Invisible
+    // MARK: - Color - Opacity
 
-    var colorOpacityInvisibleBlack: MultipleColorSemanticTokens { get }
+    var colorOpacityLowest: MultipleColorSemanticTokens { get }
 
-    var colorOpacityInvisibleWhite: MultipleColorSemanticTokens { get }
+    var colorOpacityLower: MultipleColorSemanticTokens { get }
+
+    var colorOpacityTransparent: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Action
 
@@ -147,8 +150,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentOnActionLoading: MultipleColorSemanticTokens { get }
 
-    var colorContentOnActionNegative: MultipleColorSemanticTokens { get }
-
     var colorContentOnActionPressed: MultipleColorSemanticTokens { get }
 
     var colorContentOnBrandPrimary: MultipleColorSemanticTokens { get }
@@ -157,7 +158,7 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorContentOnStatusEmphasized: MultipleColorSemanticTokens { get }
 
-    var colorContentOnStatusEmphasizedNeutral: MultipleColorSemanticTokens { get }
+    var colorContentOnStatusEmphasizedAlt: MultipleColorSemanticTokens { get }
 
     var colorContentOnStatusMuted: MultipleColorSemanticTokens { get }
 
@@ -270,6 +271,10 @@ public protocol ColorMultipleSemanticTokens {
     var colorDecorativeSkinTint900: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Chart
+
+    var colorChartBorder: MultipleColorSemanticTokens { get }
+
+    var colorChartBorderContrast: MultipleColorSemanticTokens { get }
 
     var colorChartCategoricalTier1: MultipleColorSemanticTokens { get }
 

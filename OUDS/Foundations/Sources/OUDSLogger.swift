@@ -14,7 +14,9 @@
 import Foundation
 import os
 
-/// The `os.Logger` wrapper used in the *OUDS iOS* library so as to logs things in standard output or elswhere.
+/// The `os.Logger` wrapper used in the *OUDS iOS* library so as to logs things in standard output or elsewhere.
+///
+/// - Since: 0.8.0
 public struct OUDSLogger {
 
     private init() {}

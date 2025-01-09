@@ -43,6 +43,8 @@
 ///
 ///      // Etc.
 /// ```
+///
+/// - Since: 0.8.0
 public protocol FontCompositeSemanticTokens {
 
     // MARK: - Semantic tokens - Typography - Composites - Display

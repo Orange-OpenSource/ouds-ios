@@ -16,9 +16,11 @@
 /// ``ColorRawTokens`` are tokens to use to define *colors* of components thants to ``ColorRawToken`` type. Some of these colors are "raw", and others have transparancy effects.
 /// This enum contains also the shared colors, i.e. colors exposed to any theme. Some colors related to the Orange brand are defined elswhere in `OrangeBrandColorRawTokens`.
 ///
-/// Primitive types such as  ``String` must be used to as to allow to use `@objc` keywords in extensions for overriding.
+/// Primitive types such as  `String` must be used to as to allow to use `@objc` keywords in extensions for overriding.
 /// Such tokens are packed in a _Swift enum_ so as to gather them in one object with the suitable namespace and avoid to have just constants in nothing else
 ///  (i.e. publicly accessible from everywhere). More optimized than _struct_.
+///
+/// - Since: 0.8.0
 public enum ColorRawTokens {
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆

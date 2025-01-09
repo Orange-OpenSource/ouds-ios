@@ -287,6 +287,11 @@ final class TestThemeOverrideOfSizeSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.sizes.sizeIconWithLabelLargeSizeXl == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
+    func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelMediumSizeXs() throws {
+        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithLabelMediumSizeXs, abstractTheme.sizes.sizeIconWithLabelMediumSizeXs)
+        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithLabelMediumSizeXs == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
     func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelMediumSizeSm() throws {
         XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithLabelMediumSizeSm, abstractTheme.sizes.sizeIconWithLabelMediumSizeSm)
         XCTAssertTrue(inheritedTheme.sizes.sizeIconWithLabelMediumSizeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
@@ -300,6 +305,11 @@ final class TestThemeOverrideOfSizeSemanticTokens: XCTestCase {
     func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelMediumSizeLg() throws {
         XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithLabelMediumSizeLg, abstractTheme.sizes.sizeIconWithLabelMediumSizeLg)
         XCTAssertTrue(inheritedTheme.sizes.sizeIconWithLabelMediumSizeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
+    }
+
+    func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelSmallSizeXs() throws {
+        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithLabelSmallSizeXs, abstractTheme.sizes.sizeIconWithLabelSmallSizeXs)
+        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithLabelSmallSizeXs == MockThemeSizeSemanticTokensProvider.mockThemeSizeRawToken)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenSizeWithLabelSmallSizeSm() throws {

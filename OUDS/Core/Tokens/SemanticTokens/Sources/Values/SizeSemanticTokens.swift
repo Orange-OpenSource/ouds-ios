@@ -20,6 +20,8 @@
 /// This is a group of semantic tokens for **sizing**.
 /// It defines all ``SizeSemanticToken`` a theme must have.
 /// Any size semantic token must be declared there.
+///
+/// - Since: 0.8.0
 public protocol SizeSemanticTokens {
 
     // MARK: - Semantic token - Sizing - Icon with typography
@@ -110,10 +112,12 @@ public protocol SizeSemanticTokens {
     var sizeIconWithLabelLargeSizeLg: SizeSemanticToken { get }
     var sizeIconWithLabelLargeSizeXl: SizeSemanticToken { get }
 
+    var sizeIconWithLabelMediumSizeXs: SizeSemanticToken { get }
     var sizeIconWithLabelMediumSizeSm: SizeSemanticToken { get }
     var sizeIconWithLabelMediumSizeMd: SizeSemanticToken { get }
     var sizeIconWithLabelMediumSizeLg: SizeSemanticToken { get }
 
+    var sizeIconWithLabelSmallSizeXs: SizeSemanticToken { get }
     var sizeIconWithLabelSmallSizeSm: SizeSemanticToken { get }
     var sizeIconWithLabelSmallSizeMd: SizeSemanticToken { get }
     var sizeIconWithLabelSmallSizeLg: SizeSemanticToken { get }

@@ -18,6 +18,8 @@ import Foundation
 /// Here an *elevation* is caracterized by *X and Y offsets*, a *radius* for the shadow and a *color* to apply on that shadow.
 /// All these elements are *raw tokens*, and together define a *composite raw token* for *elevation* effect.
 /// It is defined as a `final class` and `NSObject` so as to be shared through `@objc` with extensions and protocols within modules.
+///
+/// - Since: 0.8.0
 public final class ElevationCompositeRawToken: NSObject, Sendable { // NSObject for @objc compatibility
 
     /// The X offset for the elevation

@@ -23,6 +23,8 @@
 /// However the composite tokens (here the ones gathering each type of semantic token here) are defined in ``FontCompositeSemanticTokens`` because the *tokenator*
 /// is not able to generate them yet, and they must be defined elsewhere to not be deleted.
 /// Any font semantic token must be declared there (except ``FontCompositeSemanticTokens``).
+///
+/// - Since: 0.8.0
 public protocol FontSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Family

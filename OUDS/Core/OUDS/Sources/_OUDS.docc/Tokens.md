@@ -23,7 +23,44 @@ flowchart TD
 
 ## Component tokens
 
-No _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) are defined for components yet.
+### What they are
+
+These _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)) are defined for components and refer to semantic tokens or raw tokens.
+They can be seen as a kind of bridge between components and in the end primitive values of the design kit.
+
+Components tokens are defined and gathered inside _Swift protocol_ so as to be exposed then through implementation of `OUDSTheme` thanks to dedicated tokens providers. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in _protocols_ and defined in _extensions_.
+That is the reason why tokens are exposed as `@objc open` to be available and overridable anywhere. 
+
+```swift
+// Declare some component tokens for buttons with properties they must apply
+public protocol ButtonComponentTokens {
+    var buttonSizeMaxHeight: SizeSemanticToken { get }
+    var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
+    var buttonBorderRadius: BorderRadiusSemanticToken { get }
+    var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
+    var buttonSpacePaddingBlock: SpaceSemanticToken { get }
+}
+
+// There is an existing provider for such tokens
+open class OrangeThemeButtonComponentTokensProvider { }
+
+// Define the components tokens exposed through the theme thanks to provider
+extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
+
+    // Raw tokens can be used
+
+    @objc open var buttonSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    
+    // And also semantic tokens
+
+    @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
+    @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
+    @objc open var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
+    @objc open var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
+}
+
+// This provider is then exposed through OUDSTheme as an AllButtonComponentTokensProvider
+```
 
 ## Semantic tokens
 
@@ -32,7 +69,11 @@ No _tokens_ ([OUDSTokensComponent](https://ios.unified-design-system.orange.com/
 These _tokens_ ([OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/)) can be used mainly for _component tokens_ to apply some style and configuration values.
 They can be seen as an high level of usage with functional meanings.
 
-A semantic token points to a raw token, and is used by components. A semantic token brings meanings, higher level notions. For example, a raw token can be a "red color", and a semantic token pointing to it can be a "danger information color". Semantic tokens are used by components tokens and shared definition of themes. They are splitted in kind of families, i.e. borders, colors, spacings, elevations, sizings, opacities, grids and fonts. For some of theses tokens, like for borders, subfamilies can be defined likes width, radius and style. Finally, any of these semantic tokens is associated to a raw value which will be - in the end - applied to *SwiftUI* views inside components. *Type aliases* will help to make a simple match between any semantic tokens and raw tokens. Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition, only their rendering.
+A semantic token points to a raw token, and is used by components. 
+A semantic token brings meanings, higher level notions. For example, a raw token can be a "red color", and a semantic token pointing to it can be a "danger information color". 
+Semantic tokens are used by components tokens and shared definition of themes. They are splitted in kind of families, i.e. borders, colors, spacings, elevations, sizings, opacities, grids and fonts. For some of theses tokens, like for borders, subfamilies can be defined likes width, radius and style. 
+Finally, any of these semantic tokens is associated to a raw value which will be - in the end - applied to *SwiftUI* views inside components. *Type aliases* will help to make a simple match between any semantic tokens and raw tokens. 
+Thus if we need for example to change a warning color, supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition, only their rendering.
 
 Each _semantic token_ "family" is then declared in its dedicated _Swift protocol_ any root theme must implement through *tokens providers*. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in _protocols_ and defined in _extensions_.
 That is the reason why tokens are exposed as `@objc open` to be available and overridable anywhere. 

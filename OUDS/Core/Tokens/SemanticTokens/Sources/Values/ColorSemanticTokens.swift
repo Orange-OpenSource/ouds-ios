@@ -23,15 +23,20 @@
 /// It defines all ``ColorSemanticToken``  a theme must have.
 /// These tokens are then gathered inside ``MultipleColorSemanticTokens`` defined in ``ColorMultipleSemanticTokens``.
 /// Any color semantic token must be declared there (except ``MultipleColorSemanticTokens``)
+///
+/// - Since: 0.8.0
 public protocol ColorSemanticTokens {
 
-    // MARK: - Color - Opacity - Invisible
+    // MARK: - Color - Opacity
 
-    var colorOpacityInvisibleBlackLight: ColorSemanticToken { get }
-    var colorOpacityInvisibleBlackDark: ColorSemanticToken { get }
+    var colorOpacityLowestLight: ColorSemanticToken { get }
+    var colorOpacityLowestDark: ColorSemanticToken { get }
 
-    var colorOpacityInvisibleWhiteLight: ColorSemanticToken { get }
-    var colorOpacityInvisibleWhiteDark: ColorSemanticToken { get }
+    var colorOpacityLowerLight: ColorSemanticToken { get }
+    var colorOpacityLowerDark: ColorSemanticToken { get }
+
+    var colorOpacityTransparentLight: ColorSemanticToken { get }
+    var colorOpacityTransparentDark: ColorSemanticToken { get }
 
     // MARK: - Color - Action
 
@@ -172,9 +177,6 @@ public protocol ColorSemanticTokens {
     var colorContentOnActionLoadingLight: ColorSemanticToken { get }
     var colorContentOnActionLoadingDark: ColorSemanticToken { get }
 
-    var colorContentOnActionNegativeLight: ColorSemanticToken { get }
-    var colorContentOnActionNegativeDark: ColorSemanticToken { get }
-
     var colorContentOnActionPressedLight: ColorSemanticToken { get }
     var colorContentOnActionPressedDark: ColorSemanticToken { get }
 
@@ -187,8 +189,8 @@ public protocol ColorSemanticTokens {
     var colorContentOnStatusEmphasizedLight: ColorSemanticToken { get }
     var colorContentOnStatusEmphasizedDark: ColorSemanticToken { get }
 
-    var colorContentOnStatusEmphasizedNeutralLight: ColorSemanticToken { get }
-    var colorContentOnStatusEmphasizedNeutralDark: ColorSemanticToken { get }
+    var colorContentOnStatusEmphasizedAltLight: ColorSemanticToken { get }
+    var colorContentOnStatusEmphasizedAltDark: ColorSemanticToken { get }
 
     var colorContentOnStatusMutedLight: ColorSemanticToken { get }
     var colorContentOnStatusMutedDark: ColorSemanticToken { get }
@@ -353,6 +355,12 @@ public protocol ColorSemanticTokens {
     var colorDecorativeSkinTint900Dark: ColorSemanticToken { get }
 
     // MARK: - Color - Chart
+
+    var colorChartBorderLight: ColorSemanticToken { get }
+    var colorChartBorderDark: ColorSemanticToken { get }
+
+    var colorChartBorderContrastLight: ColorSemanticToken { get }
+    var colorChartBorderContrastDark: ColorSemanticToken { get }
 
     var colorChartCategoricalTier1Light: ColorSemanticToken { get }
     var colorChartCategoricalTier1Dark: ColorSemanticToken { get }

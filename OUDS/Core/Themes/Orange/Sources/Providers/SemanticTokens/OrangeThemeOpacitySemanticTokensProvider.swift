@@ -45,6 +45,8 @@ import OUDSFoundations
 /// ```swift
 ///     OrangeTheme(opacities: CustomOpacityTokensProvider())
 /// ```
+///
+/// - Since: 0.8.0
 open class OrangeThemeOpacitySemanticTokensProvider {
 
     /// Intializes the provider

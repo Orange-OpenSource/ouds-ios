@@ -47,9 +47,11 @@ extension NamedSize {
         case sizeIconWithLabelLargeSizeMd
         case sizeIconWithLabelLargeSizeLg
         case sizeIconWithLabelLargeSizeXl
+        case sizeIconWithLabelMediumSizeXs
         case sizeIconWithLabelMediumSizeSm
         case sizeIconWithLabelMediumSizeMd
         case sizeIconWithLabelMediumSizeLg
+        case sizeIconWithLabelSmallSizeXs
         case sizeIconWithLabelSmallSizeSm
         case sizeIconWithLabelSmallSizeMd
         case sizeIconWithLabelSmallSizeLg
@@ -114,12 +116,16 @@ extension NamedSize {
                 return .labelDefaultLarge
             case .sizeIconWithLabelLargeSizeXl:
                 return .labelDefaultLarge
+            case .sizeIconWithLabelMediumSizeXs:
+                return .labelDefaultMedium
             case .sizeIconWithLabelMediumSizeSm:
                 return .labelDefaultMedium
             case .sizeIconWithLabelMediumSizeMd:
                 return .labelDefaultMedium
             case .sizeIconWithLabelMediumSizeLg:
                 return .labelDefaultMedium
+            case .sizeIconWithLabelSmallSizeXs:
+                return .labelDefaultSmall
             case .sizeIconWithLabelSmallSizeSm:
                 return .labelDefaultSmall
             case .sizeIconWithLabelSmallSizeMd:
@@ -190,12 +196,16 @@ extension NamedSize {
                 return theme.sizes.sizeIconWithLabelLargeSizeLg
             case .sizeIconWithLabelLargeSizeXl:
                 return theme.sizes.sizeIconWithLabelLargeSizeXl
+            case .sizeIconWithLabelMediumSizeXs:
+                return theme.sizes.sizeIconWithLabelMediumSizeXs
             case .sizeIconWithLabelMediumSizeSm:
                 return theme.sizes.sizeIconWithLabelMediumSizeSm
             case .sizeIconWithLabelMediumSizeMd:
                 return theme.sizes.sizeIconWithLabelMediumSizeMd
             case .sizeIconWithLabelMediumSizeLg:
                 return theme.sizes.sizeIconWithLabelMediumSizeLg
+            case .sizeIconWithLabelSmallSizeXs:
+                return theme.sizes.sizeIconWithLabelSmallSizeXs
             case .sizeIconWithLabelSmallSizeSm:
                 return theme.sizes.sizeIconWithLabelSmallSizeSm
             case .sizeIconWithLabelSmallSizeMd:
