@@ -1,34 +1,26 @@
-//
-// Software Name: OUDS iOS
-// SPDX-FileCopyrightText: Copyright (c) Orange SA
-// SPDX-License-Identifier: MIT
-//
+// 
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-//
+// 
 // Authors: See CONTRIBUTORS.txt
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
-//
+// 
 
-import Foundation
-import OUDSTokensComponent
-import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// ଘ( ･ω･)_/ﾟ･:*:･｡☆
-// [File to generate and update with the tokenator]
+// swiftlint:disable identifier_name
 
 extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
-    @objc open var buttonSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var buttonSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var buttonSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var buttonSizeMaxHeight: SizeSemanticToken { sizes.dimension600 }
+    @objc open var buttonSizeMinHeight: SizeSemanticToken { sizes.dimension600 }
+    @objc open var buttonSizeMinWidth: SizeSemanticToken { sizes.dimension600 }
     @objc open var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusNone }
-    @objc open var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
-    @objc open var buttonBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
-    @objc open var buttonBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { borders.borderWidthNone }
-    @objc open var buttonBorderWidthMinimal: BorderWidthSemanticToken { borders.borderWidthNone }
-    @objc open var buttonBorderWidthMinimalInteraction: BorderWidthSemanticToken { borders.borderWidthNone }
+    @objc open var buttonBorderWidthDefault: BorderWidthRawToken { borders.borderWidthDefault }
+    @objc open var buttonBorderWidthDefaultInteraction: BorderWidthRawToken { borders.borderWidthMedium }
+    @objc open var buttonBorderWidthDefaultInteractionMono: BorderWidthRawToken { borders.borderWidthNone }
+    @objc open var buttonBorderWidthMinimal: BorderWidthRawToken { borders.borderWidthNone }
+    @objc open var buttonBorderWidthMinimalInteraction: BorderWidthRawToken { borders.borderWidthNone }
     @objc open var buttonColorBgDefaultFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
     @objc open var buttonColorBgDefaultHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
     @objc open var buttonColorBgDefaultLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
@@ -37,7 +29,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonColorBgMinimalHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
     @objc open var buttonColorBgMinimalLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
     @objc open var buttonColorBgMinimalPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigher }
-    @objc open var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium}
+    @objc open var buttonColorBgStrongDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
     @objc open var buttonColorBgStrongEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
     @objc open var buttonColorBgStrongFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
     @objc open var buttonColorBgStrongHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
@@ -51,13 +43,13 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonColorContentDefaultHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
     @objc open var buttonColorContentDefaultLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
     @objc open var buttonColorContentDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
-    @objc open var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium}
+    @objc open var buttonColorContentMinimalDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
     @objc open var buttonColorContentMinimalEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
     @objc open var buttonColorContentMinimalFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
     @objc open var buttonColorContentMinimalHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
     @objc open var buttonColorContentMinimalLoadingMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
     @objc open var buttonColorContentMinimalPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
-    @objc open var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigh}
+    @objc open var buttonColorContentStrongDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityWhiteHigh }
     @objc open var buttonColorContentStrongEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
     @objc open var buttonColorContentStrongFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
     @objc open var buttonColorContentStrongHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
@@ -75,17 +67,17 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonColorBgMinimalDisabledMono: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     @objc open var buttonColorBgMinimalEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     @objc open var buttonColorBgMinimalEnabledMono: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    @objc open var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus}
+    @objc open var buttonColorBgMinimalFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
     @objc open var buttonColorBgMinimalHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
     @objc open var buttonColorBgMinimalLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
     @objc open var buttonColorBgMinimalPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
     @objc open var buttonColorBorderDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     @objc open var buttonColorBorderDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
-    @objc open var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus}
+    @objc open var buttonColorBorderDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     @objc open var buttonColorBorderDefaultFocusMono: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     @objc open var buttonColorBorderDefaultHover: MultipleColorSemanticTokens { colors.colorActionHover }
     @objc open var buttonColorBorderDefaultHoverMono: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    @objc open var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading}
+    @objc open var buttonColorBorderDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
     @objc open var buttonColorBorderDefaultLoadingMono: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
     @objc open var buttonColorBorderDefaultPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     @objc open var buttonColorBorderDefaultPressedMono: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
@@ -111,13 +103,13 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     @objc open var buttonColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     @objc open var buttonColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    @objc open var buttonColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading}
+    @objc open var buttonColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
     @objc open var buttonColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     @objc open var buttonColorContentMinimalDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     @objc open var buttonColorContentMinimalEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     @objc open var buttonColorContentMinimalFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     @objc open var buttonColorContentMinimalHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    @objc open var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { colors.colorActionLoading}
+    @objc open var buttonColorContentMinimalLoading: MultipleColorSemanticTokens { colors.colorActionLoading }
     @objc open var buttonColorContentMinimalPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     @objc open var buttonSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     @objc open var buttonSizeIconOnly: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
@@ -133,3 +125,5 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
     @objc open var buttonSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineTaller }
     @objc open var buttonSpacePaddingInlineStartIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
 }
+
+// swiftlint:enable identifier_name
