@@ -16,7 +16,6 @@ import OUDS
 import OUDSTokensSemantic
 
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
-/// *open* to allow some derivative mock themes like ``OtherMockTheme``.
 ///
 /// Uses its own tokens providers for tests:
 /// - ``MockThemeBorderSemanticTokensProvider`` for borders
@@ -29,28 +28,11 @@ import OUDSTokensSemantic
 /// - ``MockThemeSizeSemanticTokensProvider`` for sizes
 /// - ``MockThemeSpaceSemanticTokensprovider`` for spaces
 ///
-/// And also components token providers (``MockThemeButtonComponentTokenProvider``)
-open class MockTheme: OUDSTheme, @unchecked Sendable {
+/// And also components token providers : ``MockThemeButtonComponentTokenProvider``, ``MockThemeLinkComponentTokenProvider``
+final class MockTheme: OUDSTheme, @unchecked Sendable {
 
     convenience init() {
         self.init(fontFamily: nil)
-    }
-
-    /// For ``OtherMockTheme``
-    init(colors: AllColorSemanticTokensProvider) {
-        let sizes = MockThemeSizeSemanticTokensProvider()
-        let borders = MockThemeBorderSemanticTokensProvider()
-        let spaces = MockThemeSpaceSemanticTokensProvider()
-        super.init(colors: colors,
-                   borders: borders,
-                   elevations: MockThemeElevationSemanticTokensProvider(),
-                   fontFamily: nil,
-                   fonts: MockThemeFontSemanticTokensProvider(),
-                   grids: MockThemeGridSemanticTokensProvider(),
-                   opacities: MockThemeOpacitySemanticTokensProvider(),
-                   sizes: sizes,
-                   spaces: spaces,
-                   button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
     }
 
     init(fontFamily: String?) {
@@ -67,7 +49,8 @@ open class MockTheme: OUDSTheme, @unchecked Sendable {
                    opacities: MockThemeOpacitySemanticTokensProvider(),
                    sizes: sizes,
                    spaces: spaces,
-                   button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
+                   button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+                   link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces))
     }
 
     deinit { }

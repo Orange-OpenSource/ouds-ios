@@ -58,31 +58,37 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to ``OrangeThemeColorSemanticTokensProvider``
     ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to ``OrangeThemeBorderSemanticTokensProvider``
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`, default set to ``OrangeThemeElevationSemanticTokensProvider``
+    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to ``OrangeThemeFontSemanticTokensProvider``
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to ``OrangeThemeGridSemanticTokensProvider``
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation, default set to ``OrangeThemeOpacitySemanticTokensProvider``
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokensProvider` implementation, default set to ``OrangeThemeSizeSemanticTokensProvider``
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation, default set to ``OrangeThemeSpaceSemanticTokensProvider``
     ///    - button: An object providing all the component tokens for an `OUDSButton`
+    ///    - link: An object providing all the component tokens for an `OUDSLink`
     override public init(colors: AllColorSemanticTokensProvider = OrangeThemeColorSemanticTokensProvider(),
                          borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokensProvider = OrangeThemeElevationSemanticTokensProvider(),
+                         fontFamily: FontFamilySemanticToken? = nil,
                          fonts: AllFontSemanticTokensProvider = OrangeThemeFontSemanticTokensProvider(),
                          grids: AllGridSemanticTokensProvider = OrangeThemeGridSemanticTokensProvider(),
                          opacities: AllOpacitySemanticTokensProvider = OrangeThemeOpacitySemanticTokensProvider(),
                          sizes: AllSizeSemanticTokensProvider = OrangeThemeSizeSemanticTokensProvider(),
                          spaces: AllSpaceSemanticTokensProvider = OrangeThemeSpaceSemanticTokensProvider(),
-                         button: AllButtonComponentTokensProvider) {
+                         button: AllButtonComponentTokensProvider,
+                         link: AllLinkComponentTokensProvider) {
         OUDSLogger.debug("Init of OrangeTheme")
         super.init(colors: colors,
                    borders: borders,
                    elevations: elevations,
+                   fontFamily: fontFamily,
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
                    sizes: sizes,
                    spaces: spaces,
-                   button: button)
+                   button: button,
+                   link: link)
     }
 
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations.
@@ -91,6 +97,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation, default set to ``OrangeThemeColorSemanticTokensProvider``
     ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation, default set to ``OrangeThemeBorderSemanticTokensProvider``
     ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`, default set to ``OrangeThemeElevationSemanticTokensProvider``
+    ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`, default set to ``OrangeThemeFontSemanticTokensProvider``
     ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokensProvider`, default set to ``OrangeThemeGridSemanticTokensProvider``
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation, default set to ``OrangeThemeOpacitySemanticTokensProvider``
@@ -99,6 +106,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     public init(colors: AllColorSemanticTokensProvider = OrangeThemeColorSemanticTokensProvider(),
                 borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
                 elevations: AllElevationSemanticTokensProvider = OrangeThemeElevationSemanticTokensProvider(),
+                fontFamily: FontFamilySemanticToken? = nil,
                 fonts: AllFontSemanticTokensProvider = OrangeThemeFontSemanticTokensProvider(),
                 grids: AllGridSemanticTokensProvider = OrangeThemeGridSemanticTokensProvider(),
                 opacities: AllOpacitySemanticTokensProvider = OrangeThemeOpacitySemanticTokensProvider(),
@@ -108,12 +116,14 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         super.init(colors: colors,
                    borders: borders,
                    elevations: elevations,
+                   fontFamily: fontFamily,
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
                    sizes: sizes,
                    spaces: spaces,
-                   button: OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
+                   button: OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+                   link: OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
     }
 
     deinit { }
