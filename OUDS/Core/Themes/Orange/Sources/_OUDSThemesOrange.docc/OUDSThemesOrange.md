@@ -178,9 +178,10 @@ class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentToken
     override public var buttonSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingInlineSpacious }
 }
 
+// Etc.
 ```
 
-Then define your own theme class and assign the providers:
+Then define your own theme class and assign the providers, but beware, do not forget some providers as it will crash:
 
 ```swift
 import OUDSThemesOrange // To get OrangeTheme
@@ -189,15 +190,20 @@ import OUDSThemesOrange // To get OrangeTheme
 class YourAppTheme: OrangeTheme {
     
     override init() {
-        super.init(colors: YourAppThemeColorTokensProvider(),
-                   borders: YourAppThemeBorderTokensProvider(),
-                   elevations: YourAppThemeElevationTokensProvider(),
-                   fonts: YourAppThemeFontTokensProvider(),
-                   grids: YourAppThemeGridTokensProvider(),
-                   opacities: YourAppThemeOpacityTokensProvider(),
-                   sizes: YourAppThemeSizeTokensProvider(),
-                   spaces: YourAppThemeSpaceTokensProvider(),
-                   button: YourAppThemeButtonComponentTokensProvider())
+        let providers: TokensProviders = [
+            YourAppThemeColorTokensProvider(),
+            YourAppThemeBorderTokensProvider(),
+            YourAppThemeElevationTokensProvider(),
+            YourAppThemeFontTokensProvider(),
+            YourAppThemeGridTokensProvider(),
+            YourAppThemeOpacityTokensProvider(),
+            YourAppThemeSizeTokensProvider(),
+            YourAppThemeSpaceTokensProvider(),
+            YourAppThemeButtonComponentTokensProvider(),
+            // Etc.
+        ]
+
+        super.init(tokensProviders: providers)
     }
 }
 ```
@@ -206,13 +212,12 @@ Then add the theme:
 
 ```swift
 import OUDS  // To get OUDSThemeableView
-import OUDSThemesOrange // To get OrangeTheme
 
 @main
 struct YourApp: App {
     var body: some Scene {
         WindowGroup {
-            OUDSThemeableView(theme: OrangeTheme()) {
+            OUDSThemeableView(theme: YourAppTheme()) {
                 // Your root view
             }
         }
@@ -222,9 +227,10 @@ struct YourApp: App {
 
 ### By overriding
 
-Quite simple and similar to the previous solution, but give only the provider to the ``OrangeTheme``.
+Quite simple and similar to the previous solution, but give only the providers to the ``OrangeTheme``.
+But beware, in all cases if will crash is some providers are missing.
+Ensure you add **all** the expected providers. You can mix your own providers and those from Orange theme.
 
-For example for colors:
 
 ```swift
 import OUDS // To get OUDSThemeableView
@@ -234,8 +240,7 @@ struct YourApp: App {
     var body: some Scene {
         WindowGroup {
             OUDSThemeableView(theme: 
-                OrangeTheme(colors: YourAppThemeColorTokensProvider(),
-                            button: YourAppThemeButtonComponentTokensProvider())) {
+                OrangeTheme(tokensProviders: ...)) { 
                 // Your root view
             }
         }

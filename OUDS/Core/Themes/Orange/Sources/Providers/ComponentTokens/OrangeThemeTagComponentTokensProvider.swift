@@ -11,16 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import OUDSFoundations
 import OUDSTokensSemantic
 
-/// A class which wraps all **component  tokens of tag** for tag objects like `OUDSTag`.
+/// A class which wraps all **component  tokens of tag** for *tag* objects like `OUDSTag`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllTagComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeTagComponentTokensProvider`` and apply the provider they need.
-/// It implements also the protocol `TagComponentTokens` so as to expose the component tokens for tags through any `OUDSTheme`.
-/// Tags components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`).
+/// It implements also the protocol `TagComponentTokens` so as to expose the component tokens for *tags* through any `OUDSTheme`.
+/// *Tags* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for tag component tokens
@@ -48,7 +49,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tag: CustomTagComponentTokensProvider())
+///         super.init(tokensProviders: [ CustomTagComponentTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -56,11 +57,11 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tag: CustomTagComponentTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomTagComponentTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.9.0
-open class OrangeThemeTagComponentTokensProvider {
+open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
 
     /// Provider of color semantic tokens to use for link colors
     public let colors: AllColorSemanticTokensProvider

@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Select component tokens ([#386](https://github.com/Orange-OpenSource/ouds-ios/issues/386))
 - [Library] Link component tokens ([#384](https://github.com/Orange-OpenSource/ouds-ios/issues/384))
 
+### Changed
+
+- [Library] Theme initialization flow ([#393](https://github.com/Orange-OpenSource/ouds-ios/issues/393))
+
 ## [0.9.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.8.0...0.9.0) - 2025-01-09
 
 ### Added

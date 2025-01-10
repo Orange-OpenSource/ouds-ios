@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import OUDSFoundations
 
 /// A class which wraps all **opacity semantic tokens** and expose them.
@@ -29,13 +30,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomGridTokensProvider` to your own theme implementation:
+/// Then, you can give this `CustomOpacityTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(opacities: CustomOpacityTokensProvider(),
+///         super.init(tokensProviders: [ CustomOpacityTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -43,11 +44,11 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(opacities: CustomOpacityTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomOpacityTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0
-open class OrangeThemeOpacitySemanticTokensProvider {
+open class OrangeThemeOpacitySemanticTokensProvider: AllOpacitySemanticTokensProvider {
 
     /// Intializes the provider
     public init() {

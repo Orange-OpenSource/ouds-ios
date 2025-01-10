@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
 import OUDSFoundations
 
 /// A class which wraps all **border semantic tokens** and expose them.
@@ -41,7 +42,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(borders: CustomBorderTokensProvider(),
+///         super.init(tokensProviders: [ CustomBorderTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -49,11 +50,11 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(borders: CustomBorderTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomBorderTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0
-open class OrangeThemeBorderSemanticTokensProvider {
+open class OrangeThemeBorderSemanticTokensProvider: AllBorderSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
