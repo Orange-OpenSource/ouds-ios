@@ -66,7 +66,7 @@ struct GridTokenPage: View {
     private func illustration(for namedGrid: NamedGrid) -> some View {
         let token = namedGrid.token(from: theme, for: horizontalSizeClass)
         let name = namedGrid.rawValue
-        let value = String(format: "%.2f pt", token)
+        let value = String(format: "%.0f pt", token)
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             EmptyView()
