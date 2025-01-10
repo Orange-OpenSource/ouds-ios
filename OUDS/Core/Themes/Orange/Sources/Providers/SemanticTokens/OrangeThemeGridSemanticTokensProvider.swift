@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
 import OUDSFoundations
 
 /// A class which wraps all **grid semantic tokens** and expose them.
@@ -55,7 +56,7 @@ import OUDSFoundations
 /// ```
 ///
 /// - Since: 0.8.0
-open class OrangeThemeGridSemanticTokensProvider {
+open class OrangeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {

@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import OUDSFoundations
 import OUDSTokensSemantic
 
@@ -62,7 +63,7 @@ import OUDSTokensSemantic
 /// ```
 ///
 /// - Since: 0.9.0
-open class OrangeThemeSkeletonComponentTokensProvider {
+open class OrangeThemeSkeletonComponentTokensProvider: AllSkeletonComponentTokensProvider {
 
     /// Provider of color semantic tokens to use for link colors
     public let colors: AllColorSemanticTokensProvider

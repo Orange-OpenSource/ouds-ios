@@ -15,15 +15,13 @@ import Foundation
 import OUDSTokensComponent
 import OUDSTokensSemantic
 
-// swiftlint:disable function_default_parameter_at_end
-
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
 /// A Swift `class` has been used so as to allow to easily override some attributes and have inheritance, without having for developers
 /// to implement all tokens.
 /// Any properties of an overridable theme should be defined so as to provide defaults values.
 /// We allow this theme to be derivated and be overriden.
 ///
-/// ``OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_.
+/// ``OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_, or *theme contract*.
 ///
 /// Because `OUDSTheme` is not a *final* class, its type cannot be seen as `Sendable`, that is the reason why this conformity is unchecked.
 ///
@@ -62,7 +60,6 @@ open class OUDSTheme: @unchecked Sendable {
     public let spaces: AllSpaceSemanticTokensProvider
 
     // MARK: - Component tokens
-    // TODO: Maybe wrap in another object, or use var to avoid to have such massive it? Or setter?
 
     /// All components tokens related to button components like `OUDSButton`
     public let button: AllButtonComponentTokensProvider
@@ -82,52 +79,37 @@ open class OUDSTheme: @unchecked Sendable {
     // MARK: - Initializers
 
     /// Defines a basic kind of abstract theme to subclass then.
+    /// Verifies using ``TokensProviders`` if some semantic or component tokens providers are missing.
+    ///
     /// - Parameters:
-    ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
-    ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation
-    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`
+    ///    - tokensProviders: All the semantic and component tokens providers
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
-    ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`
-    ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`
-    ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation
-    ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation
-    ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation
-    ///    - button: An object providing all the component tokens for button component
-    ///    - link: An object providing all the component tokens for links component
-    ///    - select: An object providing all the component tokens for select component
-    ///    - skeleton: An object providing all the component tokens for skeleton component
-    ///    - tag: An object providing all the component tokens for tag component
-    public init(colors: AllColorSemanticTokensProvider,
-                borders: AllBorderSemanticTokensProvider,
-                elevations: AllElevationSemanticTokensProvider,
-                fontFamily: FontFamilySemanticToken? = nil,
-                fonts: AllFontSemanticTokensProvider,
-                grids: AllGridSemanticTokensProvider,
-                opacities: AllOpacitySemanticTokensProvider,
-                sizes: AllSizeSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider,
-                button: AllButtonComponentTokensProvider,
-                link: AllLinkComponentTokensProvider,
-                select: AllSelectComponentTokensProvider,
-                skeleton: AllSkeletonComponentTokensProvider,
-                tag: AllTagComponentTokensProvider) {
-        self.colors = colors
-        self.borders = borders
-        self.elevations = elevations
+    public init(tokensProviders: TokensProviders,
+                fontFamily: FontFamilySemanticToken? = nil) {
+
+        // Assert we have all the exxpected tokens providers
+        tokensProviders.verify()
+
+        // Load semantic tokens providers
+        colors = tokensProviders.get()
+        borders = tokensProviders.get()
+        elevations = tokensProviders.get()
+        fonts = tokensProviders.get()
+        grids = tokensProviders.get()
+        opacities = tokensProviders.get()
+        sizes = tokensProviders.get()
+        spaces = tokensProviders.get()
+
+        // Load component tokens providers
+        button = tokensProviders.get()
+        link = tokensProviders.get()
+        select = tokensProviders.get()
+        skeleton = tokensProviders.get()
+        tag = tokensProviders.get()
+
+        // Load other configuration elements
         self.fontFamily = fontFamily
-        self.fonts = fonts
-        self.grids = grids
-        self.opacities = opacities
-        self.sizes = sizes
-        self.spaces = spaces
-        self.button = button
-        self.link = link
-        self.select = select
-        self.skeleton = skeleton
-        self.tag = tag
     }
 
     deinit { }
 }
-
-// swiftlint:enable function_default_parameter_at_end

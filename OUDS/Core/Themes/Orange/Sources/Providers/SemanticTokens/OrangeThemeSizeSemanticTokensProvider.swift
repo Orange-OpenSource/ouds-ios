@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
 import OUDSFoundations
 
 /// A class which wraps all **size semantic tokens**, *multiple* or not, and expose them.
@@ -51,7 +52,7 @@ import OUDSFoundations
 /// ```
 ///
 /// - Since: 0.8.0
-open class OrangeThemeSizeSemanticTokensProvider {
+open class OrangeThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
