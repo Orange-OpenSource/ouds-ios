@@ -73,8 +73,11 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to select components like `OUDSSelect`
     public let select: AllSelectComponentTokensProvider
 
-    /// All components tokens related to skeleotn components like `OUDSSkeleton`
+    /// All components tokens related to skeleto components like `OUDSSkeleton`
     public let skeleton: AllSkeletonComponentTokensProvider
+
+    /// All components tokens related to tags components like `OUDSTag`
+    public let tag: AllTagComponentTokensProvider
 
     // MARK: - Initializers
 
@@ -93,6 +96,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - link: An object providing all the component tokens for links component
     ///    - select: An object providing all the component tokens for select component
     ///    - skeleton: An object providing all the component tokens for skeleton component
+    ///    - tag: An object providing all the component tokens for tag component
     public init(colors: AllColorSemanticTokensProvider,
                 borders: AllBorderSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,
@@ -105,7 +109,8 @@ open class OUDSTheme: @unchecked Sendable {
                 button: AllButtonComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
                 select: AllSelectComponentTokensProvider,
-                skeleton: AllSkeletonComponentTokensProvider) {
+                skeleton: AllSkeletonComponentTokensProvider,
+                tag: AllTagComponentTokensProvider) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations
@@ -119,6 +124,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.link = link
         self.select = select
         self.skeleton = skeleton
+        self.tag = tag
     }
 
     deinit { }
