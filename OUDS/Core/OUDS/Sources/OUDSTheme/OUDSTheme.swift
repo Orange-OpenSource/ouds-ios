@@ -73,6 +73,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to select components like `OUDSSelect`
     public let select: AllSelectComponentTokensProvider
 
+    /// All components tokens related to skeleotn components like `OUDSSkeleton`
+    public let skeleton: AllSkeletonComponentTokensProvider
+
     // MARK: - Initializers
 
     /// Defines a basic kind of abstract theme to subclass then.
@@ -86,9 +89,10 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation
     ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation
     ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation
-    ///    - button: An object providing all the component tokens for buttons
-    ///    - link: An object providing all the component tokens for links
-    ///    - select: An object providing all the component tokens for select
+    ///    - button: An object providing all the component tokens for button component
+    ///    - link: An object providing all the component tokens for links component
+    ///    - select: An object providing all the component tokens for select component
+    ///    - skeleton: An object providing all the component tokens for skeleton component
     public init(colors: AllColorSemanticTokensProvider,
                 borders: AllBorderSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,
@@ -100,7 +104,8 @@ open class OUDSTheme: @unchecked Sendable {
                 spaces: AllSpaceSemanticTokensProvider,
                 button: AllButtonComponentTokensProvider,
                 link: AllLinkComponentTokensProvider,
-                select: AllSelectComponentTokensProvider) {
+                select: AllSelectComponentTokensProvider,
+                skeleton: AllSkeletonComponentTokensProvider) {
         self.colors = colors
         self.borders = borders
         self.elevations = elevations
@@ -113,6 +118,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.button = button
         self.link = link
         self.select = select
+        self.skeleton = skeleton
     }
 
     deinit { }

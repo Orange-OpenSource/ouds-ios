@@ -25,3 +25,8 @@ public typealias AllLinkComponentTokensProvider = LinkComponentTokens
 /// merging several protocols.
 /// For example `OrangeThemeSelectComponentTokensProvider` matches this type alias.
 public typealias AllSelectComponentTokensProvider = SelectComponentTokens
+
+/// A type alias only for ``SkeletonComponentTokens`` so as to keep consistency with other type aliases
+/// merging several protocols.
+/// For example `OrangeThemeSkeletonComponentTokensProvider` matches this type alias.
+public typealias AllSkeletonComponentTokensProvider = SkeletonComponentTokens
