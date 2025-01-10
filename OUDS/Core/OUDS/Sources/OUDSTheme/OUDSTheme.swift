@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSFoundations
 import OUDSTokensComponent
 import OUDSTokensSemantic
 
@@ -87,8 +88,11 @@ open class OUDSTheme: @unchecked Sendable {
     public init(tokensProviders: TokensProviders,
                 fontFamily: FontFamilySemanticToken? = nil) {
 
-        // Assert we have all the exxpected tokens providers
-        tokensProviders.verify()
+        // Check if we have all the exxpected tokens providers
+        let missingProviders = tokensProviders.missingProviders()
+        if !missingProviders.isEmpty {
+            OUDSLogger.error("Some token providers are missing: '\(missingProviders)'")
+        }
 
         // Load semantic tokens providers
         colors = tokensProviders.get()
