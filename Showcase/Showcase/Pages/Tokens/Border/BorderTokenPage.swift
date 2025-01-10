@@ -89,7 +89,7 @@ struct BorderTokenPage: View {
         var body: some View {
             let token = namedWidth.token(from: theme)
             let name = namedWidth.rawValue
-            let value = String(format: "(%.0f) pt", token)
+            let value = String(format: "%.0f pt", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
@@ -110,7 +110,7 @@ struct BorderTokenPage: View {
         var body: some View {
             let token = namedRadius.token(from: theme)
             let name = namedRadius.rawValue
-            let value = String(format: "(%.0f) pt", token)
+            let value = String(format: "%.0f pt", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()

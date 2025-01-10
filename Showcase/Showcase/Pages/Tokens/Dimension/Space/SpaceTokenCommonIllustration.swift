@@ -71,7 +71,7 @@ struct SpaceTokenVariant<TokenIllustration>: View where TokenIllustration: View 
     var body: some View {
         let token = namedSpaceToken.token(from: theme)
         let name = namedSpaceToken.name
-        let value = String(format: "%.2f (pt)", token)
+        let value = String(format: "%.2f pt", token)
 
         return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
             illustration(token)

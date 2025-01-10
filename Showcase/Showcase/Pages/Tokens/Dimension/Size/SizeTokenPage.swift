@@ -53,7 +53,7 @@ struct SizeTokenPage: View {
         var body: some View {
             let token = namedSize.token(from: theme)
             let name = namedSize.rawValue
-            let value = String(format: "(%.0f) pt", token)
+            let value = String(format: "%.0f pt", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
@@ -86,7 +86,7 @@ struct SizeTokenPage: View {
         var body: some View {
             let token = namedSize.token(fot: theme, userInterfaceSizeClass: horizontalSizeClass ?? .regular)
             let namedFont = namedSize.namedFont
-            let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)
+            let value = String(format: "\(namedSize.rawValue) (%.0f pt)", token)
 
             HStack {
                 Image("ic_token")
