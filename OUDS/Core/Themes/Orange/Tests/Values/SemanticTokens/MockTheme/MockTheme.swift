@@ -40,20 +40,22 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
         let sizes = MockThemeSizeSemanticTokensProvider()
         let borders = MockThemeBorderSemanticTokensProvider()
         let spaces = MockThemeSpaceSemanticTokensProvider()
-        super.init(colors: colors,
-                   borders: borders,
-                   elevations: MockThemeElevationSemanticTokensProvider(),
-                   fontFamily: fontFamily,
-                   fonts: MockThemeFontSemanticTokensProvider(),
-                   grids: MockThemeGridSemanticTokensProvider(),
-                   opacities: MockThemeOpacitySemanticTokensProvider(),
-                   sizes: sizes,
-                   spaces: spaces,
-                   button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-                   link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   select: MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   skeleton: MockThemeSkeletonComponentTokenProvider(colors: colors),
-                   tag: MockThemeTagComponentTokenProvider(colors: colors))
+        let providers: TokensProviders = [
+            colors,
+            borders,
+            MockThemeElevationSemanticTokensProvider(),
+            MockThemeFontSemanticTokensProvider(),
+            MockThemeGridSemanticTokensProvider(),
+            MockThemeOpacitySemanticTokensProvider(),
+            sizes,
+            spaces,
+            MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+            MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+            MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+            MockThemeSkeletonComponentTokenProvider(colors: colors),
+            MockThemeTagComponentTokenProvider(colors: colors),
+        ]
+        super.init(tokensProviders: providers, fontFamily: fontFamily)
     }
 
     deinit { }
