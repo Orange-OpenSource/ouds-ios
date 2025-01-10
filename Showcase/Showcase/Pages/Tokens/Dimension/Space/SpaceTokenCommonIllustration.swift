@@ -350,16 +350,19 @@ struct SpaceHeaderDescription: View {
     }
 
     private func text(_ paddings: EdgeInsets) -> some View {
-        HStack {
-            VStack {
+        HStack(spacing: 0) {
+            SpaceIllustrationRectangle(width: paddings.leading)
+            VStack(spacing: 0) {
+                SpaceIllustrationRectangle(height: paddings.top)
+
                 Text(firstText)
-                    .typeBodyDefaultMedium(theme)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                    .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
+                    .typeBodyDefaultMedium(theme)
+
+                SpaceIllustrationRectangle(height: paddings.bottom)
             }
-            .background(Color(UIColor.systemBackground))
+            SpaceIllustrationRectangle(width: paddings.trailing)
         }
-        .padding(paddings)
-        .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
     }
 }
