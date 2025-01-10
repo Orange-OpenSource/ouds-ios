@@ -78,7 +78,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          spaces: AllSpaceSemanticTokensProvider = OrangeThemeSpaceSemanticTokensProvider(),
                          button: AllButtonComponentTokensProvider,
                          link: AllLinkComponentTokensProvider,
-                         select: AllSelectComponentTokensProvider) {
+                         select: AllSelectComponentTokensProvider,
+                         skeleton: AllSkeletonComponentTokensProvider) {
         OUDSLogger.debug("Init of OrangeTheme")
         super.init(colors: colors,
                    borders: borders,
@@ -91,7 +92,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    button: button,
                    link: link,
-                   select: select)
+                   select: select,
+                   skeleton: skeleton)
     }
 
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations.
@@ -127,7 +129,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    spaces: spaces,
                    button: OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    link: OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   select: OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+                   select: OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   skeleton: OrangeThemeSkeletonComponentTokensProvider(colors: colors))
     }
 
     deinit { }
