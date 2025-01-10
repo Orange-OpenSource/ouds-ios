@@ -53,7 +53,7 @@ struct SizeTokenPage: View {
         var body: some View {
             let token = namedSize.token(from: theme)
             let name = namedSize.rawValue
-            let value = String(format: "%.0f pt", token)
+            let value = String(format: "%.2f pt", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
