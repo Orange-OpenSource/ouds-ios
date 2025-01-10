@@ -34,13 +34,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomColorTokensProvider` to your own theme implementation:
+/// Then, you can give this `CustomFontTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(fonts: CustomFontTokensProvider(),
+///         super.init(tokensProviders: [ CustomFontTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -48,7 +48,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(fonts: CustomFontTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomFontTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0

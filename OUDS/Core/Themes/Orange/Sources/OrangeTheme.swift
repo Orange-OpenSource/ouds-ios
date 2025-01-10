@@ -39,6 +39,39 @@ import OUDSTokensSemantic
 ///     }
 /// ```
 ///
+/// You can also use some tokens providers defined in your side, but they must match the same type as the one used on the themes (see `OUDSTheme`).
+/// For example:
+///
+/// ```swift
+///
+///    // Use some already defined providers
+///    let borders = OrangeThemeBorderSemanticTokensProvider()
+///    let sizes = OrangeThemeSizeSemanticTokensProvider()
+///    let spaces = OrangeThemeSpaceSemanticTokensProvider()
+///
+///    // For example, use your own provider of color semantic tokens
+///    // It must inherit from OrangeThemeBorderSemanticTokensProvider (which is instance of AllColorSemanticTokensProvider) or directly from AllColorSemanticTokensProvider
+///    let colors = YourOwnColorSemanticTokensProvider()
+///
+///    let allTheNeededTokensProviders: TokensProviders = [
+///         // List all the needed tokens providers
+///         // Do not miss any of them as it will crash
+///
+///         OrangeThemeElevationSemanticTokensProvider(),
+///         OrangeThemeFontSemanticTokensProvider(),
+///         colors,
+///         borders,
+///         sizes,
+///         spaces,
+///         OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+///
+///         // Etc.
+///    ]
+///
+///    let yourOwnOrangeTheme = OrangeTheme(tokensProviders: allTheNeededTokensProviders)
+///
+/// ```
+///
 /// Then get it:
 /// ```swift
 ///     import OUDS

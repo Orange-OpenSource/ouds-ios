@@ -44,7 +44,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(grids: CustomGridTokensProvider(),
+///         super.init(tokensProviders: [ CustomGridTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -52,7 +52,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(grids: CustomGridTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomGridTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0

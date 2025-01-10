@@ -17,13 +17,13 @@ import OUDSTokensSemantic
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of skeleton** for skeleton objects like `OUDSSkeleton`.
+/// A class which wraps all **component  tokens of skeleton** for *skeleton* objects like `OUDSSkeleton`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllSkeletonComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeSkeletonComponentTokensProvider`` and apply the provider they need.
-/// It implements also the protocol `SkeletonComponentTokens` so as to expose the component tokens for links through any `OUDSTheme`.
-/// Skeleton components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`).
+/// It implements also the protocol `SkeletonComponentTokens` so as to expose the component tokens for *skeleton* through any `OUDSTheme`.
+/// *Skeleton* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for skeleton component tokens
@@ -51,7 +51,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(skeleton: CustomSkeletonComponentTokensProvider())
+///         super.init(tokensProviders: [ CustomSkeletonComponentTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -59,7 +59,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(skeleton: CustomSkeletonComponentTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomSkeletonComponentTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.9.0

@@ -38,7 +38,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(elevations: CustomElevationTokensProvider(),
+///         super.init(tokensProviders: [ CustomElevationTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -46,7 +46,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(elevations: CustomElevationTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomElevationTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0

@@ -17,7 +17,7 @@ import OUDSTokensSemantic
 
 // MARK: - Tokens Providers Wrapper
 
-/// TODO
+/// A set of `TokenProvider` to give to theme (in ``OUDSTheme`` init) to as to extract individually the providers
 public typealias TokensProviders = [TokensProvider]
 
 extension Array where Element == TokensProvider {
@@ -33,7 +33,8 @@ extension Array where Element == TokensProvider {
 
     // swiftlint:disable cyclomatic_complexity
     // Mandatory to disable cyclomatic_complexity, lot of checks...
-    /// Checks if some tokens providers are missing and return their names
+    /// Checks if some tokens providers are missing and return their names in case of.
+    /// - Returns: Empty array if no missing provider, otherwise the name of the providers not found in this ``TokensProviders``
     public func missingProviders() -> [String] {
         var missingProviders = [String]()
 
@@ -93,6 +94,7 @@ extension Array where Element == TokensProvider {
             missingProviders.append("AllTagComponentTokensProvider")
         }
 
+        // NOTE: Add new component tokens providers here if mandatory
         return missingProviders
     }
     // swiftlint:enable cyclomatic_complexity
@@ -104,48 +106,50 @@ extension Array where Element == TokensProvider {
 
 // MARK: - Root
 
-/// TODO
+/// Protocol to add to any semantic or component tokens provider so as to be gather with all providers and given to the theme for initialization
 public protocol TokensProvider { }
 
 // MARK: - Semantic tokens providers
 
-/// TODO
+/// Something which provides all semantic tokens of border
 public protocol AllBorderSemanticTokensProvider: TokensProvider, BorderSemanticTokens { }
 
-/// TODO
+/// Something which provides all semantic tokens of colors
 public protocol AllColorSemanticTokensProvider: TokensProvider, ColorSemanticTokens, ColorMultipleSemanticTokens { }
 
-/// TODO
+/// Something which provides all semantic tokens of elevation
 public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens, ElevationMultipleSemanticTokens { }
 
-/// TODO
+/// Something which provides all semantic tokens of font
 public protocol AllFontSemanticTokensProvider: TokensProvider, FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens { }
 
-/// TODO
+/// Something which provides all semantic tokens of grid
 public protocol AllGridSemanticTokensProvider: TokensProvider, GridSemanticTokens { }
 
-/// TODO
+/// Something which provides all semantic tokens of opacity
 public protocol AllOpacitySemanticTokensProvider: TokensProvider, OpacitySemanticTokens { }
 
-/// TODO
+/// Something which provides all semantic tokens of size
 public protocol AllSizeSemanticTokensProvider: TokensProvider, SizeSemanticTokens, SizeMultipleSemanticTokens { }
 
-/// TODO
+/// Something which provides all semantic tokens of space
 public protocol AllSpaceSemanticTokensProvider: TokensProvider, SpaceSemanticTokens, SpaceMultipleSemanticTokens { }
 
 // MARK: - Component tokens providers
 
-/// TODO
+/// Something which provides all component tokens of button
 public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens { }
 
-/// TODO
+/// Something which provides all component tokens of link
 public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens { }
 
-/// TODO
+/// Something which provides all component tokens of select
 public protocol AllSelectComponentTokensProvider: TokensProvider, SelectComponentTokens { }
 
-/// TODO
+/// Something which provides all component tokens of skeleton
 public protocol AllSkeletonComponentTokensProvider: TokensProvider, SkeletonComponentTokens { }
 
-/// TODO
+/// Something which provides all component tokens of tag
 public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentTokens { }
+
+// NOTE: Add new definitions of protocols here

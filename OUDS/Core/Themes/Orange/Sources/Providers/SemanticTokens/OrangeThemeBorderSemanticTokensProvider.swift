@@ -42,7 +42,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(borders: CustomBorderTokensProvider(),
+///         super.init(tokensProviders: [ CustomBorderTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -50,7 +50,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(borders: CustomBorderTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomBorderTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0

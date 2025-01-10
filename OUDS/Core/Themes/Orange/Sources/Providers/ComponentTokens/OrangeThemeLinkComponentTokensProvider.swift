@@ -15,13 +15,13 @@ import OUDS
 import OUDSFoundations
 import OUDSTokensSemantic
 
-/// A class which wraps all **component  tokens of links** for link objects like `OUDSLink`.
+/// A class which wraps all **component  tokens of links** for *link* objects like `OUDSLink`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllLinkComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeLinkComponentTokensProvider`` and apply the provider they need.
-/// It implements also the protocol `LinkComponentTokens` so as to expose the component tokens for links through any `OUDSTheme`.
-/// Link components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
+/// It implements also the protocol `LinkComponentTokens` so as to expose the component tokens for *links* through any `OUDSTheme`.
+/// *Link* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
 /// colors (from `AllColorSemanticTokensProvider`) and spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// ```swift
@@ -54,7 +54,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(link: CustomLinkComponentTokensProvider(),
+///         super.init(tokensProviders: [ CustomLinkComponentTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -62,7 +62,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(link: CustomLinkComponentTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomLinkComponentTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.9.0

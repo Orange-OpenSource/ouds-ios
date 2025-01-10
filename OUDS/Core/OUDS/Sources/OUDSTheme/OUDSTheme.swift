@@ -21,12 +21,16 @@ import OUDSTokensSemantic
 /// to implement all tokens.
 /// Any properties of an overridable theme should be defined so as to provide defaults values.
 /// We allow this theme to be derivated and be overriden.
-///
 /// ``OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_, or *theme contract*.
-///
 /// Because `OUDSTheme` is not a *final* class, its type cannot be seen as `Sendable`, that is the reason why this conformity is unchecked.
 ///
 /// **Warning: You are not supposed to use this abstract default theme directly. Please prefer `OrangeTheme` instead**
+/// Prefer theme like `OrangeTheme`.
+///
+/// Any theme is handled as ``OUDSTheme``.
+/// It contains plenty of *tokens provider* for semantic tokens and component tokens.
+/// These providers are given to the theme in its initialize using ``TokensProviders``.
+/// Theme can have also non-provider properties like *font family* to apply.
 ///
 /// - Since: 0.8.0
 open class OUDSTheme: @unchecked Sendable {
@@ -77,10 +81,13 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to tags components like `OUDSTag`
     public let tag: AllTagComponentTokensProvider
 
+    // NOTE: Add new component tokens provider here
+
     // MARK: - Initializers
 
     /// Defines a basic kind of abstract theme to subclass then.
     /// Verifies using ``TokensProviders`` if some semantic or component tokens providers are missing.
+    /// If so, errors are logged and *fatalError* is triggered because unexpected behavior.
     ///
     /// - Parameters:
     ///    - tokensProviders: All the semantic and component tokens providers
@@ -110,6 +117,7 @@ open class OUDSTheme: @unchecked Sendable {
         select = tokensProviders.get()
         skeleton = tokensProviders.get()
         tag = tokensProviders.get()
+        // NOTE: Add new component tokens provider here
 
         // Load other configuration elements
         self.fontFamily = fontFamily
