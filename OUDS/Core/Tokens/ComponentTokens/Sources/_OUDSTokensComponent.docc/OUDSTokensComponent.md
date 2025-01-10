@@ -127,3 +127,4 @@ struct Showcase: App {
 - ``LinkComponentTokens``
 - ``SelectComponentTokens``
 - ``SkeletonComponentTokens``
+- ``TagComponentTokens``

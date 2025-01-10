@@ -67,6 +67,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - button: An object providing all the component tokens for an `OUDSButton`
     ///    - link: An object providing all the component tokens for an `OUDSLink`
     ///    - select: An object providing all the component tokens for an `OUDSSelect`
+    ///    - tag: An object providing all the component tokens for an `OUDSTag`
     override public init(colors: AllColorSemanticTokensProvider = OrangeThemeColorSemanticTokensProvider(),
                          borders: AllBorderSemanticTokensProvider = OrangeThemeBorderSemanticTokensProvider(),
                          elevations: AllElevationSemanticTokensProvider = OrangeThemeElevationSemanticTokensProvider(),
@@ -79,7 +80,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          button: AllButtonComponentTokensProvider,
                          link: AllLinkComponentTokensProvider,
                          select: AllSelectComponentTokensProvider,
-                         skeleton: AllSkeletonComponentTokensProvider) {
+                         skeleton: AllSkeletonComponentTokensProvider,
+                         tag: AllTagComponentTokensProvider) {
         OUDSLogger.debug("Init of OrangeTheme")
         super.init(colors: colors,
                    borders: borders,
@@ -93,7 +95,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    button: button,
                    link: link,
                    select: select,
-                   skeleton: skeleton)
+                   skeleton: skeleton,
+                   tag: tag)
     }
 
     /// Initializes the `OrangeTheme` and lets children classes to user their own tokens implementations.
@@ -130,7 +133,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    button: OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    link: OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
                    select: OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   skeleton: OrangeThemeSkeletonComponentTokensProvider(colors: colors))
+                   skeleton: OrangeThemeSkeletonComponentTokensProvider(colors: colors),
+                   tag: OrangeThemeTagComponentTokensProvider(colors: colors))
     }
 
     deinit { }
