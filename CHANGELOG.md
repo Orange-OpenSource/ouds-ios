@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DemoApp] Update size screen ([#354](https://github.com/Orange-OpenSource/ouds-ios/issues/284))
 - [Library] Change stroke style for `BorderModifier`
 - [DemoApp] Update colors and some refactoring ([#354](https://github.com/Orange-OpenSource/ouds-ios/issues/354))
 - [Library] Theme initialization flow ([#393](https://github.com/Orange-OpenSource/ouds-ios/issues/393))
