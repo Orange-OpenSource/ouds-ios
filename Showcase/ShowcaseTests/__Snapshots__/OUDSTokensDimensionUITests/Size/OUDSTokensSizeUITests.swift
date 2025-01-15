@@ -110,7 +110,7 @@ final class OUDSTokensSizeUITests: XCTestCase {
         for namedToken in NamedSize.IconWithTypography.allCases {
             // Use the `IllustrationWidth` struct to test a single illustration
             let illustration = OUDSThemeableView(theme: theme) {
-                SizeTokenPage.IllustrationIconWithLabel(namedSize: namedToken)
+                SizeTokenPage.IllustrationIconWithTypography(namedSize: namedToken)
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 

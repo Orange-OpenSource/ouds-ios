@@ -61,7 +61,7 @@
 
 "app_tokens_dimension_size_label" = "Size";
 "app_tokens_dimension_size_description_text" = "Size refers to the specific measurements used to define the dimensions of UI elements within the design system.";
-"app_tokens_dimension_size_iconWithLabel_label" = "Icon with text";
+"app_tokens_dimension_size_iconWith_label" = "Icon with";
 "app_tokens_dimension_size_iconDecorative_label" = "Icon decorative";
 
 "app_tokens_elevation_label" = "Elevation";
