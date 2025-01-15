@@ -20,8 +20,6 @@ import SwiftUI
 struct FontTokenPage: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {

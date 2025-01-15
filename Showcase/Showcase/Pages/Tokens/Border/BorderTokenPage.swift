@@ -82,7 +82,6 @@ struct BorderTokenPage: View {
 
     struct IllustrationWidth: View {
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
 
         let namedWidth: NamedBorderWidth
 
@@ -103,7 +102,6 @@ struct BorderTokenPage: View {
 
     struct IllustrationRadius: View {
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
 
         let namedRadius: NamedBorderRadius
 
@@ -124,7 +122,6 @@ struct BorderTokenPage: View {
 
     struct IllustrationStyle: View {
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
 
         let namedStyle: NamedBorderStyle
 

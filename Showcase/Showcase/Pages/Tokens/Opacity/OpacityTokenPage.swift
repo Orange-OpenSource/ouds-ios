@@ -20,7 +20,6 @@ import SwiftUI
 struct OpacityTokenPage: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {

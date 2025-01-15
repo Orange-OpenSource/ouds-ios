@@ -42,7 +42,6 @@ struct FixedSpaceProperty: View {
 struct ScaledSpaceProperty: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
@@ -58,7 +57,6 @@ struct ScaledSpaceProperty: View {
     struct Illustration: View {
 
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
         @Environment(\.verticalSizeClass) private var verticalSizeClass
 
