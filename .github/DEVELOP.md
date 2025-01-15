@@ -272,25 +272,25 @@ You can add also ! after the keyword to say a breaking change occurs, and also a
 #### Chain of responsability
 
 We can add metafields picked from [this good guideline](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n525) in the commit messages.
-
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
+You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 
-For example, given a commit to fix the issue n°42, with Foo FOO and Bar BAR as commit authors, with Wizz WIZZ as source code reviewer, and John DOE as accessibility / PO / design reviewer, the commit should be like:
-
+For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
 ```text
-fix: title of your commit (#42)
+refactor: update some things colors and design of the demo app (#123) (#4562)
 
-Some details about the fix you propose
+Some things have been refactored to make incredible things.
 
-Co-authored-by: Foo FOO <foo email>
-Co-authored-by: Bar BAR <bar email>
-
-Reviewed-by: Wizz WIZZ <wizz email>
-
-Acked-by: John DOE <john email>
-
-Signed-off-by: Foo FOO <foo email>
-Signed-off-by: Bar BAR <bar email>
+Tested-by: Iman Assabah <benoit.suzanne@orange.com>
+Tested-by: Anton Astafev <anton.astafev@orange.com>
+Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
+Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
+Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
+Acked-by: Julien Déramond <julien.deramond@orange.com>
+Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
+Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
+Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 ```
 
 #### Integration of tokenator updates

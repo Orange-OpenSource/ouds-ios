@@ -139,11 +139,66 @@ fix: title of your commit (#43)
 
 Some details about the fix you propose
 
+Co-authored-by: Author firstname and lastname <author email>
+Signed-off-by: Author firstname and lastname <first author email>
+```
+
+If the commut embeds work of several authors, use the *Co-authored-by* tag (in use in GitHub):
+
+```text
+fix: title of your commit (#43)
+
+Some details about the fix you propose
+
 Co-authored-by: First author firstname and lastname <first author email>
 Co-authored-by: Second author firstname and lastname <second author email>
-
 Signed-off-by: First author firstname and lastname <first author email>
 Signed-off-by: Second author firstname and lastname <second author email>
+```
+
+If the feature has been reviewed by the product owner, the designers and the accessibility experts, you can mention them in the commit message using the appropriate
+[*Tested-by*](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n525) tag.
+It can help to find who reviewed, in alpha builds, the evolutions. Thus, the message for the merge commit should be like:
+
+```text
+fix: title of your commit (#43)
+
+Some details about the fix you propose
+
+Tested-by: Tester firstname and lastname <tester emai>
+Co-authored-by: First author firstname and lastname <first author email>
+Co-authored-by: Second author firstname and lastname <second author email>
+Signed-off-by: First author firstname and lastname <first author email>
+Signed-off-by: Second author firstname and lastname <second author email>
+```
+
+Do not forget also to add, in the merge commit, who reviewed the source code evolutions using the [*Reviewed-by*](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n525) tag, like:
+
+```text
+fix: title of your commit (#43)
+
+Some details about the fix you propose
+
+Reviewed-by: Reviewer firstname and lastname <reviewer emai>
+Signed-off-by: Author firstname and lastname <first author email>
+```
+
+For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
+```text
+refactor: update some things colors and design of the demo app (#123) (#4562)
+
+Some things have been refactored to make incredible things.
+
+Tested-by: Iman Assabah <benoit.suzanne@orange.com>
+Tested-by: Anton Astafev <anton.astafev@orange.com>
+Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
+Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
+Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
+Acked-by: Julien Déramond <julien.deramond@orange.com>
+Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
+Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
+Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 ```
 
 ## Review workflow
