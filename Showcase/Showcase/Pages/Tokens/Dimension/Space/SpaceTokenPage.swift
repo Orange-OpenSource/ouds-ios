@@ -21,9 +21,6 @@ import SwiftUI
 struct SpaceTokenPage: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.verticalSizeClass) private var verticalSizeClass
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         Group {

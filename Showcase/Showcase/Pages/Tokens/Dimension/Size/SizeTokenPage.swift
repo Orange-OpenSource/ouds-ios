@@ -25,8 +25,10 @@ struct SizeTokenPage: View {
                 ShowcaseCode(code: "theme.sizeIconWithHeadingXLargeShort.dimension(for: horizontalSizeClass ?? .regular)", titleText: "app_tokens_common_viewCodeExample_label")
             }
             Section {
-                ForEach(NamedSize.IconDecorative.allCases, id: \.rawValue) { namedSize in
-                    IllustrationIconDecorative(namedSize: namedSize)
+                VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
+                    ForEach(NamedSize.IconDecorative.allCases, id: \.rawValue) { namedSize in
+                        IllustrationIconDecorative(namedSize: namedSize)
+                    }
                 }
             } header: {
                 header("app_tokens_dimension_size_iconDecorative_label")
@@ -51,12 +53,12 @@ struct SizeTokenPage: View {
         var body: some View {
             let token = namedSize.token(from: theme)
             let name = namedSize.rawValue
-            let value = String(format: "(%.0f) pt", token)
+            let value = String(format: "%.2f pt", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Rectangle()
-                        .fill(theme.colors.colorBgEmphasized.color(for: colorScheme))
+                        .fill(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
                         .frame(width: 82, height: 82, alignment: .center)
 
                     Image("ic_token")
@@ -84,7 +86,7 @@ struct SizeTokenPage: View {
         var body: some View {
             let token = namedSize.token(fot: theme, userInterfaceSizeClass: horizontalSizeClass ?? .regular)
             let namedFont = namedSize.namedFont
-            let value = String(format: "\(namedSize.rawValue) (%.0f) pt", token)
+            let value = String(format: "\(namedSize.rawValue) (%.0f pt)", token)
 
             HStack {
                 Image("ic_token")

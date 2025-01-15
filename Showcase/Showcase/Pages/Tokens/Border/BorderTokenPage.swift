@@ -82,49 +82,46 @@ struct BorderTokenPage: View {
 
     struct IllustrationWidth: View {
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
 
         let namedWidth: NamedBorderWidth
 
         var body: some View {
             let token = namedWidth.token(from: theme)
             let name = namedWidth.rawValue
-            let value = String(format: "(%.0f) pt", token)
+            let value = String(format: "%.2f pt", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
                     .oudsBorder(style: theme.borders.borderStyleDefault,
                                 width: token,
                                 radius: theme.borders.borderRadiusNone,
-                                color: theme.colors.colorBorderDefault)
+                                color: theme.colors.colorBorderFocus)
             }
         }
     }
 
     struct IllustrationRadius: View {
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
 
         let namedRadius: NamedBorderRadius
 
         var body: some View {
             let token = namedRadius.token(from: theme)
             let name = namedRadius.rawValue
-            let value = String(format: "(%.0f) pt", token)
+            let value = String(format: "%.2f pt", token)
 
             ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
                     .oudsBorder(style: theme.borders.borderStyleDefault,
                                 width: theme.borders.borderWidthDefault,
                                 radius: token,
-                                color: theme.colors.colorBorderDefault)
+                                color: theme.colors.colorBorderFocus)
             }
         }
     }
 
     struct IllustrationStyle: View {
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
 
         let namedStyle: NamedBorderStyle
 
@@ -138,7 +135,7 @@ struct BorderTokenPage: View {
                     .oudsBorder(style: token,
                                 width: theme.borders.borderWidthDefault,
                                 radius: theme.borders.borderRadiusNone,
-                                color: theme.colors.colorBorderDefault)
+                                color: theme.colors.colorBorderFocus)
             }
         }
     }

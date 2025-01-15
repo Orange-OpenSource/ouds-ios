@@ -38,11 +38,3 @@ struct AccessibilityStatementPage: View {
         }
     }
 }
-
-// MARK: - Previews
-
-struct AccessibilityStatementPage_Previews: PreviewProvider {
-    static var previews: some View {
-        AccessibilityStatementPage()
-    }
-}

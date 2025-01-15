@@ -20,7 +20,6 @@ import SwiftUI
 struct OpacityTokenPage: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
@@ -59,13 +58,13 @@ struct OpacityTokenPage: View {
                         .accessibilityHidden(true)
 
                     Rectangle()
-                        .fill(theme.colors.colorBgEmphasized.color(for: colorScheme))
+                        .fill(theme.colors.colorOverlayEmphasized.color(for: colorScheme))
                         .opacity(token)
                         .frame(width: 48, height: 48)
                         .oudsBorder(style: theme.borders.borderStyleDefault,
                                     width: theme.borders.borderWidthThin,
                                     radius: theme.borders.borderRadiusNone,
-                                    color: theme.colors.colorBorderEmphasized)
+                                    color: theme.colors.colorBorderDefault)
                         .padding(.top, 24)
                         .padding(.leading, 24)
                 }

@@ -66,15 +66,17 @@ struct ShowcaseCode: View {
     }
 
     private func codeTokenDisplayCodeSection() -> some View {
-        HStack(alignment: .firstTextBaseline, spacing: theme.spaces.spacePaddingBlockMedium) {
+        HStack(alignment: .firstTextBaseline, spacing: theme.spaces.spacePaddingBlockNone) {
             Text(code)
                 .font(.system(.body, design: .monospaced))
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .padding(.vertical, theme.spaces.spacePaddingInlineShort)
 
-            Button(action: {
+            Spacer(minLength: theme.spaces.spacePaddingBlockMedium)
+
+            Button {
                 UIPasteboard.general.string = code
-            }, label: {
+            } label: {
                 ZStack {
                     Color.clear
                         .frame(width: 44, height: 44)
@@ -82,13 +84,12 @@ struct ShowcaseCode: View {
                     Image("ic_copy")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colors.colorSurfaceStatusPositiveMuted.color(for: colorScheme))
+                        .foregroundColor(theme.colors.colorContentDefault.color(for: colorScheme))
                         .frame(width: 24, height: 24)
-                        .padding(.trailing, theme.spaces.spacePaddingInlineMedium)
                         .alignmentGuide(.firstTextBaseline) { $0[.bottom] * 0.7 }
                         .accessibilityLabel("app_common_copyCode_a11y")
                 }
-            })
+            }
         }
         .frame(minWidth: 72, maxWidth: .infinity, alignment: .leading)
         .padding(.vertical, theme.spaces.spacePaddingInlineShort)

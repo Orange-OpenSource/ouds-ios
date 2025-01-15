@@ -42,7 +42,6 @@ struct FixedSpaceProperty: View {
 struct ScaledSpaceProperty: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
@@ -58,7 +57,6 @@ struct ScaledSpaceProperty: View {
     struct Illustration: View {
 
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
         @Environment(\.verticalSizeClass) private var verticalSizeClass
 
@@ -73,7 +71,7 @@ struct ScaledSpaceProperty: View {
             let name = namedSpaceToken.rawValue
             let horizontalDimensionRawToken = token.dimension(for: horizontalSizeClass ?? .regular)
             let verticalDimensionRawToken = token.dimension(for: verticalSizeClass ?? .regular)
-            let value = String(format: "horizontal %@ (%.0f pt)\nvertical %@ (%.0f pt)",
+            let value = String(format: "horizontal %@ (%.2f pt)\nvertical %@ (%.2f pt)",
                                horizontalSizeClass == .regular ? "regular" : "compact",
                                horizontalDimensionRawToken,
                                verticalSizeClass == .regular ? "regular" : "compact",
