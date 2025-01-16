@@ -99,7 +99,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         case .minimal:
             onColoredSurface ? theme.button.buttonColorBgMinimalLoadingMono : theme.button.buttonColorBgMinimalLoading
         case .negative:
-            theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeLoading
         }
     }
 
