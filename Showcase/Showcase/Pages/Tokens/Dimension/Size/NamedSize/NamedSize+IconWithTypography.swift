@@ -15,10 +15,6 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUICore
 
-protocol Tokenable {
-    func token(for theme: OUDSTheme, userInterfaceSizeClass: UserInterfaceSizeClass) -> SizeSemanticToken
-}
-
 extension NamedSize {
     enum IconWithTypography: String, CaseIterable {
 
