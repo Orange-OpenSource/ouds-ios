@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Used to apply the right style on a `OUDSButton` according to the `hierarchy`
+/// Used to apply the right style on an ``OUDSButton`` according to the `hierarchy`
 /// and the `style`.
 ///
 /// Four hierarchies are proposed:
@@ -29,25 +29,27 @@ import SwiftUI
 /// - negative: Negative buttons should be used sparingly to warn of a destructive action, for example, delete or remove, typically
 /// resulting in the opening of a confirmation dialog.
 ///
-/// Three styles are available:
+/// Two styles are available:
 /// - normal: is the normal state of a button which can be disabled, pressed, hovered or normal (i.e. enabled)
 /// - loading: the style used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
 struct OUDSButtonStyle: ButtonStyle {
 
+    @Environment(\.isEnabled) private var isEnabled
+
+    @State private var isHover: Bool
+
     // MARK: Stored Properties
 
-    @Environment(\.isEnabled) private var isEnable
-    private let style: OUDSButton.Style
     private let hierarchy: OUDSButton.Hierarchy
-    @State private var isHover: Bool
+    private let style: OUDSButton.Style
 
     // MARK: Initializer
 
     /// Initialize the `OUDSButtonStyle` for the `hierarchy`
     /// in the `state` of the `OUDSButton`.
     ///
-    ///  - Parameters:
+    /// - Parameters:
     ///    - hierarchy: The button hierarchy
     ///    - style: The button style
     public init(hierarchy: OUDSButton.Hierarchy, style: OUDSButton.Style) {
@@ -73,8 +75,8 @@ struct OUDSButtonStyle: ButtonStyle {
         }
     }
 
-    func internalState(isPressed: Bool) -> InternalButtonState {
-        if !isEnable {
+    private func internalState(isPressed: Bool) -> InternalButtonState {
+        if !isEnabled {
             return .disabled
         }
 

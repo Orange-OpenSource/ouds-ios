@@ -14,9 +14,9 @@
 import OUDSComponents
 import SwiftUI
 
-// MARK: Button Configuration Model
+// MARK: - Button Configuration Model
 
-// The model shared between `ButtonPageConfiguration` view and `ButtonPageComponent` views.
+/// The model shared between `ButtonPageConfiguration` view and `ButtonPageComponent` view.
 final class ButtonConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
@@ -24,12 +24,15 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     @Published var enabled: Bool = true {
         didSet { updateCode() }
     }
+
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
     }
+
     @Published var hierarchy: OUDSButton.Hierarchy {
         didSet { updateCode() }
     }
+
     @Published var style: OUDSButton.Style {
         didSet { updateCode() }
     }
@@ -45,7 +48,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     deinit { }
 
-    // MARK: ComponentConfiguration
+    // MARK: Component Configuration
 
     private var disableCode: String {
         if case .`default` = style {
@@ -56,7 +59,6 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     override func updateCode() {
-
         switch layout {
         case .textOnly:
             code =
@@ -80,7 +82,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: Button Layout
+// MARK: - Button Layout
 
 enum ButtonLayout: CaseIterable, CustomStringConvertible {
     case textOnly
@@ -101,7 +103,7 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
     var id: String { description }
 }
 
-// MARK: Button Layout
+// MARK: Button style extension
 
 extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
@@ -119,7 +121,7 @@ extension OUDSButton.Style: @retroactive CaseIterable, @retroactive CustomString
     var id: String { description }
 }
 
-// MARK: Button Hierarchy extension
+// MARK: Button hierarchy extension
 
 extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomStringConvertible {
     nonisolated(unsafe) public static let allCases: [OUDSButton.Hierarchy] = [.default, .strong, .minimal, .negative]
@@ -141,20 +143,14 @@ extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomSt
     var id: String { description }
 }
 
-// MARK: Button Confoguration View
+// MARK: - Button Configuration View
 
 struct ButtonConfiguration: View {
-
-    // MARK: Environment properties
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Stored properties
-
     @StateObject var model: ButtonConfigurationModel
-
-    // MARK: Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {

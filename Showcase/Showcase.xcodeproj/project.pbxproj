@@ -244,10 +244,6 @@
 		077CCE542CB426090059CC28 /* DimensionTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimensionTokenElement.swift; sourceTree = "<group>"; };
 		0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconWithTypography.swift"; sourceTree = "<group>"; };
 		0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconDecorative.swift"; sourceTree = "<group>"; };
-		0784B2752CCBD9C300299C10 /* NamedFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedFont.swift; sourceTree = "<group>"; };
-		0784B2772CCBDD8900299C10 /* View+Illustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Illustration.swift"; sourceTree = "<group>"; };
-		0784B2752CCBD9C300299C10 /* NamedTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedTypography.swift; sourceTree = "<group>"; };
-		0784B2772CCBDD8900299C10 /* NamedTypography+Illustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedTypography+Illustration.swift"; sourceTree = "<group>"; };
 		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07CF426A2CA30728000BD03E /* TokensPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensPage.swift; sourceTree = "<group>"; };
 		07CF42712CA31AC3000BD03E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };

@@ -15,16 +15,15 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The internal state used by modifiers to handle all
-///  states of the button.
+/// The internal state used by modifiers to handle all states of the button.
 enum InternalButtonState {
     case enabled, hover, pressed, loading, disabled
 }
 
-// MARK: - General modifier
+// MARK: - Button View Modifier
 
-/// This modifier has in charge to :
-/// - compute the internal state based on `isEnabled`, `isPreessed` and `isHover` flags
+/// This modifier has in charge to:
+/// - compute the internal state based on `isEnabled`, `isPressed` and `isHover` flags
 /// - apply foreground, background colors and add a border (width, radius and color) associated to the hierarchy and according to the internal state
 struct ButtonViewModifier: ViewModifier {
 

@@ -61,9 +61,8 @@ struct ButtonBorderModifier: ViewModifier {
         }
     }
 
-    // MARK: Private helpers
-
     // MARK: Default hierarchy
+
     private var defaultWidth: BorderWidthSemanticToken {
         switch state {
         case .enabled:
@@ -95,6 +94,7 @@ struct ButtonBorderModifier: ViewModifier {
     }
 
     // MARK: Minimal hierarchy
+
     private var minimalWidth: BorderWidthSemanticToken {
         switch state {
         case .enabled:
@@ -126,6 +126,7 @@ struct ButtonBorderModifier: ViewModifier {
     }
 
     // MARK: Strong hierarchy
+
     private var strongColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:

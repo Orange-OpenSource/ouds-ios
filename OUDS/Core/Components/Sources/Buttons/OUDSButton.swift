@@ -17,7 +17,7 @@ import SwiftUI
 ///
 /// ## Hierarchies
 ///
-/// Four hieraries are proposed for all layouts:
+/// Four hierarchies are proposed for all layouts:
 ///
 /// - **default**: Default buttons are used for actions which are not mandatory or essential for the user.
 ///
@@ -28,9 +28,9 @@ import SwiftUI
 ///
 /// - **negative**: Negative buttons should be used sparingly to warn of a destructive action,
 /// for example, delete or remove, typically resulting in the opening of a confirmation dialog.
-/// A button with [OUDSButton.Hierarchy.Negative] hierarchy is not allowed as a direct or indirect child of an [OUDSColoredSurface].
+/// A button with `OUDSButton.Hierarchy.Negative` hierarchy is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
 ///
-/// ```
+/// ```swift
 ///     // Icon only with default hierarchy
 ///     OUDSButton(hierarchy: .default, icon: Image("ic_heart")) {}
 ///
@@ -39,7 +39,6 @@ import SwiftUI
 ///
 ///     // Text and icon with strong hierarchy
 ///     OUDSButton(hierarchy: .strong, icon: Image("ic_heart"), text: "Validate") {}
-///
 /// ```
 ///
 /// ## Styles
@@ -53,8 +52,9 @@ import SwiftUI
 ///
 /// If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
 ///
-/// **Remark: Today it is not allowed to placed a Negative button on a colored surface.
-///
+/// **Remark: Today it is not allowed to place a Negative button on a colored surface.**
+/// 
+/// - Since: 0.10.0
 public struct OUDSButton: View {
 
     // MARK: Stored Properties

@@ -16,14 +16,15 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: Loading modifier
+// MARK: - Loading indicator
 
 private struct LoagingIndicator: View {
 
     // MARK: Stored Properties
 
-    @State private var isAnimating = false
     let color: Color
+
+    @State private var isAnimating = false
 
     // MARK: Body
 
@@ -40,7 +41,9 @@ private struct LoagingIndicator: View {
     }
 }
 
-/// Used to add a Progress indicator instead of conent (Text, Icon)
+// MARK: - Button Loading Content Modifier
+
+/// Used to add a progress indicator instead of content (Text, Icon)
 /// As the button must keep the size of the content, the indicator is
 /// added as overlay on top, and the content is hidden applying an opacity.
 struct ButtonLoadingContentModifier: ViewModifier {

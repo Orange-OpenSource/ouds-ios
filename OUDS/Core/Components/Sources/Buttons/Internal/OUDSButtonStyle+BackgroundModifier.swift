@@ -31,27 +31,27 @@ struct ButtonBackgroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.background(colorToken.color(for: colorScheme))
+        content.background(appliedColor.color(for: colorScheme))
     }
 
     // MARK: Private helpers
 
-    private var colorToken: MultipleColorSemanticTokens {
+    private var appliedColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            return enabledToken
+            return enabledColor
         case .hover:
-            return hoverToken
+            return hoverColor
         case .pressed:
-            return pressedToken
+            return pressedColor
         case .loading:
-            return loadingToken
+            return loadingColor
         case .disabled:
-            return disbledToken
+            return disabledColor
         }
     }
 
-    private var enabledToken: MultipleColorSemanticTokens {
+    private var enabledColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
             onColoredSurface ? theme.button.buttonColorBgDefaultEnabledMono : theme.button.buttonColorBgDefaultEnabled
@@ -64,7 +64,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var hoverToken: MultipleColorSemanticTokens {
+    private var hoverColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
             onColoredSurface ? theme.button.buttonColorBgDefaultHoverMono : theme.button.buttonColorBgDefaultHover
@@ -77,7 +77,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var pressedToken: MultipleColorSemanticTokens {
+    private var pressedColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
             onColoredSurface ? theme.button.buttonColorBgDefaultPressedMono : theme.button.buttonColorBgDefaultPressed
@@ -90,7 +90,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var loadingToken: MultipleColorSemanticTokens {
+    private var loadingColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
             onColoredSurface ? theme.button.buttonColorBgDefaultLoadingMono : theme.button.buttonColorBgDefaultLoading
@@ -103,7 +103,7 @@ struct ButtonBackgroundModifier: ViewModifier {
         }
     }
 
-    private var disbledToken: MultipleColorSemanticTokens {
+    private var disabledColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
             onColoredSurface ? theme.button.buttonColorBgDefaultDisabledMono : theme.button.buttonColorBgDefaultDisabled

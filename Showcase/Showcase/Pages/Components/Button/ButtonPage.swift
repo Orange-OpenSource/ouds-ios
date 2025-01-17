@@ -19,11 +19,7 @@ import SwiftUI
 
 struct ButtonPage: View {
 
-    // MARK: Stored properties
-
     private let configuration = ButtonConfigurationModel()
-
-    // MARK: Body
 
     var body: some View {
         ComponentConfigurationView(
@@ -32,8 +28,6 @@ struct ButtonPage: View {
             configurationView: configurationView
         )
     }
-
-    // MARK: Private helpers
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
@@ -50,20 +44,13 @@ struct ButtonPage: View {
     }
 }
 
-// MARK: Button component illustration
+// MARK: Button Illustration
 
 struct ButtonIllustration: View {
 
-    // MARK: Environment properties
-
-    @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Stored properties
-
     let model: ButtonConfigurationModel
-
-    // MARK: Body
 
     var body: some View {
         VStack(alignment: .center) {
@@ -76,18 +63,14 @@ struct ButtonIllustration: View {
     }
 }
 
-private struct BackgroundModifier: ViewModifier {
+// MARK: - Backgroud Modifier
 
-    // MARK: Environment properties
+private struct BackgroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Stored properties
-
     let coloredSurface: Bool
-
-    // MARK: Body
 
     func body(content: Content) -> some View {
         if coloredSurface {
@@ -98,14 +81,11 @@ private struct BackgroundModifier: ViewModifier {
     }
 }
 
+// MARK: - Button Demo
+
 private struct ButtonDemo: View {
 
-    // MARK: Environment properties
-
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Stored properties
 
     @StateObject var model: ButtonConfigurationModel
     let coloredSurface: Bool
@@ -118,16 +98,14 @@ private struct ButtonDemo: View {
             if model.hierarchy == .negative, coloredSurface == true {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
-                // swiftlint:disable accessibility_label_for_image
                 switch model.layout {
                 case .iconOnly:
-                    OUDSButton(icon: Image("ic_heart"), hierarchy: model.hierarchy, style: model.style) {}
+                    OUDSButton(icon: Image(decorative: "ic_heart"), hierarchy: model.hierarchy, style: model.style) {}
                 case .textOnly:
                     OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
                 case .iconAndText:
-                    OUDSButton(icon: Image("ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
+                    OUDSButton(icon: Image(decorative: "ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
                 }
-                // swiftlint:enable accessibility_label_for_image
             }
 
             Spacer()

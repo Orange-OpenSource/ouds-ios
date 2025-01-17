@@ -16,7 +16,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Used to apply the right forgeround color associated to the hierarchy and state
+/// Used to apply the right forground color associated to the hierarchy and state
 struct ButtonForegroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
@@ -31,29 +31,29 @@ struct ButtonForegroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.foregroundStyle(colorToken)
+        content.foregroundStyle(appliedColor)
     }
 
     // MARK: Private helpers
 
-    private var colorToken: Color {
+    private var appliedColor: Color {
         switch state {
         case .enabled:
-            enabledToken.color(for: colorScheme)
+            enabledColor.color(for: colorScheme)
         case .hover:
-            hoverToken.color(for: colorScheme)
+            hoverColor.color(for: colorScheme)
         case .pressed:
-            pressedToken.color(for: colorScheme)
+            pressedColor.color(for: colorScheme)
         case .loading:
             // Hide the content because it is replaced by the loading indicator.
-            // However the content is nedded to get the size the button in loading state.
+            // However the content is needed to get the size of the button in loading state.
             Color.clear.opacity(0)
         case .disabled:
-            disabledToken.color(for: colorScheme)
+            disabledColor.color(for: colorScheme)
         }
     }
 
-    private var enabledToken: MultipleColorSemanticTokens {
+    private var enabledColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
             onColoredSurface ? theme.button.buttonColorContentDefaultEnabledMono : theme.button.buttonColorContentDefaultEnabled
@@ -66,7 +66,7 @@ struct ButtonForegroundModifier: ViewModifier {
         }
     }
 
-    private var hoverToken: MultipleColorSemanticTokens {
+    private var hoverColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
             onColoredSurface ? theme.button.buttonColorContentDefaultHoverMono : theme.button.buttonColorContentDefaultHover
@@ -79,7 +79,7 @@ struct ButtonForegroundModifier: ViewModifier {
         }
     }
 
-    private var pressedToken: MultipleColorSemanticTokens {
+    private var pressedColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
             onColoredSurface ? theme.button.buttonColorContentDefaultPressedMono : theme.button.buttonColorContentDefaultPressed
@@ -92,7 +92,7 @@ struct ButtonForegroundModifier: ViewModifier {
         }
     }
 
-    private var disabledToken: MultipleColorSemanticTokens {
+    private var disabledColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
             onColoredSurface ? theme.button.buttonColorContentDefaultDisabledMono : theme.button.buttonColorContentDefaultDisabled

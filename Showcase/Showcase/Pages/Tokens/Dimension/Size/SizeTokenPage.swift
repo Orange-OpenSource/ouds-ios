@@ -117,8 +117,6 @@ struct SizeTokenPage: View {
     private struct IllustrationSizeIconByTypographyCategory: View {
 
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
-        @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
         let category: NamedSize.SizeIconByTypographyCategory
 

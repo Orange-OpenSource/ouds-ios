@@ -16,13 +16,16 @@ import SwiftUI
 /// Used to define if a content is used on a colored surface.
 ///
 /// It applies the `color` to the background and set the `oudsOnColoredSurface`
-/// environment variable to true. This variable is usefull, for example, to change
+/// environment variable to *true*. This variable is usefull, for example, to change
 /// the style of a component according to its environment.
 ///
+/// ```swift
 ///   OUDSColoredSurface(color: .green) {
 ///      OUDSButton(icon: Image("ic_heart"), hierarchy: .strong, state: .nomal) {}
 ///   }
+/// ```
 ///
+/// - Since: 0.10.0
 public struct OUDSColoredSurface<Content>: View where Content: View {
 
     // MARK: Stored Properties
@@ -37,7 +40,6 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
     /// - Parameters:
     ///     - color: The color applied as background on the content view
     ///     - content: The content view builder
-    ///
     public init(color: Color, @ViewBuilder content: @escaping () -> Content) {
         self.color = color
         self.content = content
@@ -53,7 +55,8 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
 }
 
 extension View {
-    /// Helper to set the current view on colored surface based on `OUDSColoredSurface`.
+
+    /// Helper to set the current view on colored surface based on ``OUDSColoredSurface``.
     ///
     /// - Parameter color: The color applied as background on the current view.
     public func oudsColoredSurface(color: Color) -> some View {
@@ -71,8 +74,9 @@ private struct ColoredSurfaceClassEnvironmentKey: EnvironmentKey {
 }
 
 extension EnvironmentValues {
-    /// Updated by the `OUDSColoredSurface`, the value tells you if the current view is
-    /// on a colored surface.
+
+    /// Updated by the ``OUDSColoredSurface``, the value tells if the current view is
+    /// on a colored surface or not.
     public var oudsOnColoredSurface: Bool {
         get {
             self[ColoredSurfaceClassEnvironmentKey.self]
