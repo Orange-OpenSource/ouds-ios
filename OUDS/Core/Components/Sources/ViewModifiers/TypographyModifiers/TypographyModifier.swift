@@ -84,16 +84,16 @@ struct TypographyModifier: ViewModifier {
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
     /// depending to the current `MultipleFontCompositeRawTokens`.
     func body(content: Content) -> some View {
-        // `tracking()` and `kerning()` only available for iOS 16+
+        // `tracking()` only available for iOS 16+
         // `minimumScaleFactor()` ensures text remains readable by allowing scaling down
         // `.onChange(of: sizeCategory) { _ in }` triggers view update when Dynamic Type size changes
         if #available(iOS 16.0, *) {
             content
                 .font(adaptiveTypography)
                 .lineSpacing(adaptiveLineHeight)
+                .tracking(adaptiveFont.letterSpacing)
                 .minimumScaleFactor(0.5)
                 .onChange(of: sizeCategory) { _ in }
-                // Apply .tracking() or .kerning() (see #347)
         } else {
             content
                 .font(adaptiveTypography)
