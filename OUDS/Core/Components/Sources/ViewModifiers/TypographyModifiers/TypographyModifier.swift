@@ -28,13 +28,16 @@ struct TypographyModifier: ViewModifier {
 
     /// The name of a possible custom font family, or `nil` if the font is use is _system font_
     let fontFamily: FontFamilyRawToken?
+
     /// The typography to apply for *compact* or *regular* modes, i.e. font tokens
     let font: MultipleFontCompositeRawTokens
 
     /// To get programatically and on the fly the horizontal layout size
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
     /// To get programatically and on the fly the vertical layout size
     @Environment(\.verticalSizeClass) private var verticalSizeClass
+
     /// Environment variable to observe Dynamic Type changes in accessibility settings
     @Environment(\.sizeCategory) private var sizeCategory
 
@@ -54,13 +57,7 @@ struct TypographyModifier: ViewModifier {
     }
 
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
-    private func adaptiveTypography() -> Font {
-        // Retrieves the base font size from the adaptive typography settings
-        let fontSize = adaptiveFont.size
-        // Adjusts the font size dynamically based on the user's accessibility settings
-        // using UIFontMetrics to scale the font size, ensuring Dynamic Type support
-        let scaledFontSize = UIFontMetrics.default.scaledValue(for: fontSize)
-
+    private var adaptiveTypography: Font {
         if let fontFamilyName = fontFamily {
             let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveFont.weight.fontWeight)")
             let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
@@ -71,29 +68,38 @@ struct TypographyModifier: ViewModifier {
         }
     }
 
+    /// Computes the line spacing value to apply on the typography.
+    /// Difference between the line height tokenand  line height of computed font to apply depending the the scaled font size.
+    /// The line spacing token cannot be used as is.
+    private var adaptiveLineHeight: CGFloat {
+        adaptiveFont.lineHeight - UIFont.systemFont(ofSize: scaledFontSize).lineHeight
+    }
+
+    /// Adjusts the font size dynamically based on the user's accessibility settings
+    /// using UIFontMetrics to scale the font size, ensuring Dynamic Type support
+    private var scaledFontSize: CGFloat {
+        UIFontMetrics.default.scaledValue(for: adaptiveFont.size)
+    }
+
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
     /// depending to the current `MultipleFontCompositeRawTokens`.
-    /// **Does not apply _letter spacing_ nor _line height_ yet!**
-    /// See:
-    /// - https://github.com/Orange-OpenSource/ouds-ios/issues/347
-    /// - https://github.com/Orange-OpenSource/ouds-ios/issues/348
     func body(content: Content) -> some View {
         // `tracking()` and `kerning()` only available for iOS 16+
         // `minimumScaleFactor()` ensures text remains readable by allowing scaling down
         // `.onChange(of: sizeCategory) { _ in }` triggers view update when Dynamic Type size changes
         if #available(iOS 16.0, *) {
             content
-                .font(adaptiveTypography())
+                .font(adaptiveTypography)
+                .lineSpacing(adaptiveLineHeight)
                 .minimumScaleFactor(0.5)
                 .onChange(of: sizeCategory) { _ in }
-                // Apply .lineSpacing() with expected value (see #348)
-                // Apply .tracking() or .kerning() (ese #347)
+                // Apply .tracking() or .kerning() (see #347)
         } else {
             content
-                .font(adaptiveTypography())
+                .font(adaptiveTypography)
+                .lineSpacing(adaptiveLineHeight)
                 .minimumScaleFactor(0.5)
                 .onChange(of: sizeCategory) { _ in }
-                // Apply .lineSpacing() with expected value (see #348)
         }
     }
 }

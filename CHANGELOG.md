@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Apply line height in typographygit status
 - [Library] Tag component tokens ([#390](https://github.com/Orange-OpenSource/ouds-ios/issues/390))
 - [Library] Skeleton component tokens ([#388](https://github.com/Orange-OpenSource/ouds-ios/issues/388))
 - [Library] Select component tokens ([#386](https://github.com/Orange-OpenSource/ouds-ios/issues/386))
