@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -26,18 +26,28 @@ private struct LoagingIndicator: View {
 
     @State private var isAnimating = false
 
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
+
     // MARK: Body
 
     var body: some View {
+        if reduceMotion {
+            circleView()
+        } else {
+            circleView()
+                .rotationEffect(.degrees(isAnimating ? 360 : 0))
+                .onAppear {
+                    withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
+                        self.isAnimating.toggle()
+                    }
+                }
+        }
+    }
+
+    private func circleView() -> some View {
         Circle()
             .trim(from: 0, to: 0.7)
             .stroke(color, lineWidth: 3)
-            .rotationEffect(.degrees(isAnimating ? 360 : 0))
-            .onAppear {
-                withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
-                    self.isAnimating.toggle()
-                }
-            }
     }
 }
 
