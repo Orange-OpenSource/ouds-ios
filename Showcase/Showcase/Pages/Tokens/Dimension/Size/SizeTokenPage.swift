@@ -15,13 +15,11 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Size Token Page
+
 struct SizeTokenPage: View {
 
-    // MARK: Stored properties
-
     @Environment(\.theme) private var theme
-
-    // MARK: Body
 
     var body: some View {
         Group {
@@ -51,7 +49,7 @@ struct SizeTokenPage: View {
         .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 
-    // MARK: Illustrations
+    // MARK: Illustration Icon Decorative
 
     struct IllustrationIconDecorative: View {
         @Environment(\.theme) private var theme
@@ -81,6 +79,8 @@ struct SizeTokenPage: View {
         }
     }
 
+    // MARK: Illustration Icon With Typography
+
     struct IllustrationIconWithTypography: View {
 
         // MARK: Stored properties
@@ -90,8 +90,6 @@ struct SizeTokenPage: View {
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
         let namedSize: NamedSize.IconWithTypography
-
-        // MARK: Body
 
         var body: some View {
             let token = namedSize.token(for: theme, userInterfaceSizeClass: horizontalSizeClass ?? .regular)
@@ -114,19 +112,15 @@ struct SizeTokenPage: View {
         }
     }
 
-    // MARK: Private helpers
+    // MARK: Illustration Size Icon By Typography Category
 
     private struct IllustrationSizeIconByTypographyCategory: View {
-
-        // MARK: Stored properties
 
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
         let category: NamedSize.SizeIconByTypographyCategory
-
-        // MARK: Body
 
         var body: some View {
             if let lastSize = category.sizes.last {
@@ -140,9 +134,10 @@ struct SizeTokenPage: View {
             }
         }
     }
-    private struct TypographyCategoryHeader: View {
 
-        // MARK: Stored properties
+    // MARK: Typography Category Header
+
+    private struct TypographyCategoryHeader: View {
 
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
@@ -151,7 +146,9 @@ struct SizeTokenPage: View {
         let namedFont: NamedFont
         let namedSize: NamedSize.IconWithTypography
 
-        // MARK: Body
+        private var size: CGFloat {
+            namedSize.token(for: theme, userInterfaceSizeClass: self.horizontalSizeClass ?? .regular)
+        }
 
         var body: some View {
             HStack(alignment: .center, spacing: theme.spaces.spaceFixedShort) {
@@ -171,17 +168,13 @@ struct SizeTokenPage: View {
             .padding(.all, theme.spaces.spaceFixedMedium)
             .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
         }
-
-        private var size: CGFloat {
-            namedSize.token(for: theme, userInterfaceSizeClass: self.horizontalSizeClass ?? .regular)
-        }
     }
-
-    // MARK: Private helpers
 
     private func sectionHeader(_ text: LocalizedStringKey) -> some View {
         Text(text).showcaseSectionHeaderStyle()
     }
 }
+
+// MARK: - Named Size
 
 enum NamedSize { }
