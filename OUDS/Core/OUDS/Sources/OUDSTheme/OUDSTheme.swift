@@ -94,13 +94,13 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(tokensProviders: TokensProviders,
                 fontFamily: FontFamilySemanticToken? = nil) {
-        
+
         // Check if we have all the exxpected tokens providers
         let missingProviders = tokensProviders.missingProviders()
         if !missingProviders.isEmpty {
             OUDSLogger.error("Some token providers are missing: '\(missingProviders)'")
         }
-        
+
         // Load semantic tokens providers
         colors = tokensProviders.get()
         borders = tokensProviders.get()
@@ -110,7 +110,7 @@ open class OUDSTheme: @unchecked Sendable {
         opacities = tokensProviders.get()
         sizes = tokensProviders.get()
         spaces = tokensProviders.get()
-        
+
         // Load component tokens providers
         button = tokensProviders.get()
         link = tokensProviders.get()
@@ -118,7 +118,7 @@ open class OUDSTheme: @unchecked Sendable {
         skeleton = tokensProviders.get()
         tag = tokensProviders.get()
         // NOTE: Add new component tokens provider here
-        
+
         // Load other configuration elements
         self.fontFamily = fontFamily
     }
