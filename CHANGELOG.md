@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Button component ([#159](https://github.com/Orange-OpenSource/ouds-ios/issues/159))
 - [Library] Apply letter spacing in typography ([#347](https://github.com/Orange-OpenSource/ouds-ios/issues/347))
 - [Library] Apply line height in typography ([#348](https://github.com/Orange-OpenSource/ouds-ios/issues/348))
 - [Library] Tag component tokens ([#390](https://github.com/Orange-OpenSource/ouds-ios/issues/390))
