@@ -220,7 +220,7 @@ extension NamedSize {
                     .sizeIconWithLabelLargeSizeSm,
                     .sizeIconWithLabelMediumSizeSm,
                     .sizeIconWithLabelSmallSizeSm:
-                "Size Samll"
+                "Size Small"
             case .sizeIconWithHeadingXlargeSizeMd,
                     .sizeIconWithHeadingLargeSizeMd,
                     .sizeIconWithHeadingMediumSizeMd,
