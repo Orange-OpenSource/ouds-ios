@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ShowcaseVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ShowcaseVersionString[];
+FOUNDATION_EXPORT double Pods_DesignToolboxVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_DesignToolboxVersionString[];
 
