@@ -22,22 +22,22 @@ import XCTest
 
 // swiftlint:disable required_deinit
 
-/// Tests the UI rendering of each **color token** using reference images
+/// Tests the UI Button rendering of each parameter of `OUDSButton`.
 final class OUDSButtonUITests: XCTestCase {
-
-    // MARK: - Orange Theme Light Mode Color Tests
 
     /// This function tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllButtonsOrangeThemeLight() {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
     /// This function tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllButtonsOrangeThemeDark() {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// This function tests all buttons configuration in the `InverseTheme` with the `light` color schemes.
@@ -45,12 +45,14 @@ final class OUDSButtonUITests: XCTestCase {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
     /// This function tests all buttons configuration in the `InverseTheme` with the `dark` color schemes.
     @MainActor func testAllButtonsInverseThemeDark() {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
+        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Helpers
@@ -88,26 +90,23 @@ final class OUDSButtonUITests: XCTestCase {
     ///   - theme: The theme (OUDSTheme) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testAllButtonsOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        // Iterate through all background color cases defined in NamedColor.Background
-        for hierarchy in OUDSButton.Hierarchy.allCases {
+        // Skip test for negative hierarchy because it is not allowed on colored surface
+        for hierarchy in OUDSButton.Hierarchy.allCases where hierarchy != .negative {
             for style in OUDSButton.Style.allCases {
                 for layout in ButtonTest.Layout.allCases {
-                    // Skip test for negative hierarchy because it is not allowed
-                    // on colored surface
-                    if hierarchy != .negative {
-                        testButton(theme: theme, interfaceStyle: interfaceStyle, layout: layout, hierarchy: hierarchy, style: style, disabled: false, onColoredSurface: true)
-                        testButton(theme: theme, interfaceStyle: interfaceStyle, layout: layout, hierarchy: hierarchy, style: style, disabled: true, onColoredSurface: true)
-                    }
+                    testButton(theme: theme, interfaceStyle: interfaceStyle, layout: layout, hierarchy: hierarchy, style: style, disabled: false, onColoredSurface: true)
+                    testButton(theme: theme, interfaceStyle: interfaceStyle, layout: layout, hierarchy: hierarchy, style: style, disabled: true, onColoredSurface: true)
                 }
             }
         }
     }
 
+    // swiftlint:disable multiline_parameters
     /// This function tests button according to all parameters of the configutation available on a `OUDButton`
     /// for the given theme and color schemes and on a colored surface or not.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    test_<themeName>_<colorScheme>_<onColoreSurface>_<layout>_<hierarchy>_<style>_<disabled>
+    ///    test_<themeName>_<colorScheme>.<coloreSurface>_<layout>_<hierarchy>_<style>_<disabled>
     ///
     /// /!\ It does not text the hover and pressed states.
     ///
@@ -135,17 +134,26 @@ final class OUDSButtonUITests: XCTestCase {
         let hostingVC = UIHostingController(rootView: illustration)
 
         // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>_<coloreSurfacePatern><layout>_<hierarchy>_<style><disapledPatern> where:
+        // test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<hierarchy>_<style><disapledPatern> where:
         // - `coloredSurfacePatern` is empty if not on colored surface
         // - `disabledPatern` is empty if not disabled
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let coloredSurfacePatern = onColoredSurface ? "onColoredSurface_" : ""
-        let disabledPatern = disabled ? "_disabled" : ""
-        let name = "\(coloredSurfacePatern)\(layout.rawValue)_\(hierarchy.description)_\(style.description)\(disabledPatern)"
+        let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
+        let disabledPatern = disabled ? "_Disabled" : ""
+        let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(hierarchy.description)_\(style.description)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
     }
+    // swiftlint:enable multiline_parameters
+}
+
+extension String {
+    // swiftlint:disable strict_fileprivate
+    fileprivate var camelCase: String {
+        self.prefix(1).capitalized + self.dropFirst()
+    }
+    // swiftlint:enable strict_fileprivate
 }
 
 struct ButtonTest: View {
@@ -176,11 +184,10 @@ struct ButtonTest: View {
         case .text:
             OUDSButton(text: "Button", hierarchy: hierarchy, style: style) {}
         case .textAndIcon:
-            OUDSButton(icon: Image(systemName: "heart"), hierarchy: hierarchy, style: style) {}
+            OUDSButton(icon: Image(decorative: "ic_heart"), text: "Button", hierarchy: hierarchy, style: style) {}
         case .icon:
-            OUDSButton(icon: Image(systemName: "heart"), text: "Button", hierarchy: hierarchy, style: style) {}
+            OUDSButton(icon: Image(decorative: "ic_heart"), hierarchy: hierarchy, style: style) {}
         }
     }
 }
-
 // swiftlint:enable required_deinit

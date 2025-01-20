@@ -85,7 +85,7 @@ public struct OUDSButton: View {
 
     /// Defines the style of the button
     public enum Style {
-        /// The default style, the button coumd be in prossed, hover, disabled or enabled internal state
+        /// The default style, the button could be in prossed, hover, disabled or enabled internal state
         case `default`
 
         /// The loading style means a loading action is in progress, sometimes just after user tapped on button
