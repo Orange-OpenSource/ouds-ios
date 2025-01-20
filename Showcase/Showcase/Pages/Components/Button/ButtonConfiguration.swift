@@ -63,19 +63,19 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
             """
-          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), text: \"Button\", style: \(style.description.lowercased())) {}
+          OOUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased())) {}
           \(disableCode))
           """
         case .iconOnly:
             code =
             """
-          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\"), style: \(style.description.lowercased()) {}
+          OOUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
           \(disableCode))
           """
         case .iconAndText:
             code =
             """
-          OOUDSButton(hierarchy: .\(hierarchy.description.lowercased()), icon: Image(\"ic_heart\", text: \"Button\"), style: \(style.description.lowercased()) {}
+          OOUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
           \(disableCode))
           """
         }
@@ -86,17 +86,17 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
 enum ButtonLayout: CaseIterable, CustomStringConvertible {
     case textOnly
-    case iconOnly
     case iconAndText
+    case iconOnly
 
     var description: String {
         switch self {
-        case .iconOnly:
-            "app_components_button_iconOnlyLayout_label"
         case .textOnly:
             "app_components_button_textOnlyLayout_label"
         case .iconAndText:
             "app_components_button_iconAndTextLayout_label"
+        case .iconOnly:
+            "app_components_button_iconOnlyLayout_label"
         }
     }
 
