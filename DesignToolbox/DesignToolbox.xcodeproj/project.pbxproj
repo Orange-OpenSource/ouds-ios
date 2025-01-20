@@ -894,7 +894,7 @@
 			packageProductDependencies = (
 				0740A9992C9874670069D24A /* SnapshotTesting */,
 			);
-			productName = "DesignToolboxTests";
+			productName = DesignToolboxTests;
 			productReference = 0740A98F2C9873500069D24A /* DesignToolboxSnapshotsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};

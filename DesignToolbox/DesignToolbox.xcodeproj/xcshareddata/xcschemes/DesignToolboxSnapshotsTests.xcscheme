@@ -17,6 +17,9 @@
             reference = "container:DesignToolboxSnapshotsTests.xctestplan"
             default = "YES">
          </TestPlanReference>
+         <TestPlanReference
+            reference = "container:DesignToolboxSnapshots.xctestplan">
+         </TestPlanReference>
       </TestPlans>
       <Testables>
          <TestableReference
