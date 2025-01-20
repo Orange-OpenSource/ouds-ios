@@ -18,9 +18,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [DemoApp] Update size screen ([#284](https://github.com/Orange-OpenSource/ouds-ios/issues/284))
+- [DesignToolbox] Rename demo app "Showcase" to "DesignToolbox" ([#85](https://github.com/Orange-OpenSource/ouds-ios/issues/85))
+- [DesignToolbox] Update size screen ([#284](https://github.com/Orange-OpenSource/ouds-ios/issues/284))
 - [Library] Change stroke style for `BorderModifier`
-- [DemoApp] Update colors and some refactoring ([#354](https://github.com/Orange-OpenSource/ouds-ios/issues/354))
+- [DesignToolbox] Update colors and some refactoring ([#354](https://github.com/Orange-OpenSource/ouds-ios/issues/354))
 - [Library] Theme initialization flow ([#393](https://github.com/Orange-OpenSource/ouds-ios/issues/393))
 
 ## [0.9.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.8.0...0.9.0) - 2025-01-09
@@ -37,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Rename color semantic tokens `colorOpacityInvisibleBlack*` to `colorOpacityTransparent*`
 - [Library] Update color tokens and size tokens (tokenator *20250108083200*, tokens *v24.12.17*, tokens *v24.12.18*)
 - [Library] Add details about API versions in documentation ([#374](https://github.com/Orange-OpenSource/ouds-ios/issues/374)) 
-- [DemoApp] Update show code text ([#361](https://github.com/Orange-OpenSource/ouds-ios/issues/361))
+- [DesignToolbox] Update show code text ([#361](https://github.com/Orange-OpenSource/ouds-ios/issues/361))
 
 ### Removed
 
@@ -48,7 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] New architecture with tokens provider ([#79](https://github.com/Orange-OpenSource/ouds-ios/issues/79))
-- [DemoApp] Prepare new architecture to add components illustration ([#328](https://github.com/Orange-OpenSource/ouds-ios/issues/328))
+- [DesignToolbox] Prepare new architecture to add components illustration ([#328](https://github.com/Orange-OpenSource/ouds-ios/issues/328))
 
 ### Changed
 
@@ -70,7 +71,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Rename any `sizeIcon**` size semantic tokens applying "T-shirt sizes" template
 - [Library] Update `ElevationSemanticTokens` and `ColorRawTokens` tokens (tokenator *20241204111249*)
 - [Library] Rename any `colorTransparent*` color semantic tokens to `colorOpacity*`
-- [DemoApp] Reactor UI test to use theme in environment ([#299](https://github.com/Orange-OpenSource/ouds-ios/issues/299))
+- [DesignToolbox] Reactor UI test to use theme in environment ([#299](https://github.com/Orange-OpenSource/ouds-ios/issues/299))
 
 ### Removed
 
@@ -82,19 +83,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [DemoApp] Add code sample for tokens usages in token pages ([#283](https://github.com/Orange-OpenSource/ouds-ios/issues/283))
+- [DesignToolbox] Add code sample for tokens usages in token pages ([#283](https://github.com/Orange-OpenSource/ouds-ios/issues/283))
 - [Library] Color some new semantic tokens `colorContentStatus*`,  `colorContentOnBrand*`, `colorContentOnStatus*`, `colorGradient*`, `colorBorder*`, `colorContentOnAction*`
 - [Tool] Add UI tests in CI/CD pipelines ([#298](https://github.com/Orange-OpenSource/ouds-ios/issues/298))
-- [DemoApp] Add more UI tests on demo app ([#154](https://github.com/Orange-OpenSource/ouds-ios/issues/154))
+- [DesignToolbox] Add more UI tests on demo app ([#154](https://github.com/Orange-OpenSource/ouds-ios/issues/154))
 
 ### Changed
 
-- [DemoApp] Update space tokens screen ([#275](https://github.com/Orange-OpenSource/ouds-ios/issues/275))
+- [DesignToolbox] Update space tokens screen ([#275](https://github.com/Orange-OpenSource/ouds-ios/issues/275))
 - [Library] Update `BorderRawTokens` and `BorderSemanticTokens` tokens (tokenator *20241204110708*)
 - [Library] Update `GridSemanticTokens` tokens (tokenator *20241129080807*)
 - [Library] Types `GridExtraCompactSemanticToken`, `GridCompactSemanticToken` and `GridRegularSemanticToken` replaced by `GridSemanticToken` to make tokenator updates integration easier 
 - [Library] Update `GridRawTokens` tokens (tokenator *20241128161629*)
-- [DemoApp] Update color tokens screen 
+- [DesignToolbox] Update color tokens screen 
 - [Library] Update `ColorSemanticTokens` tokens (tokenator *20241127112301*)
 - [Library] Update `SpaceSemanticTokens` tokens (tokenator *20241127074206*)
 - [Library] Update `SizeSemanticTokens` with rename of tokens (tokenator *20241126134156*)
@@ -112,15 +113,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [DemoApp] Fix VoiceOver issue with element grouping in presentation tokens and update accessibility statement ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/285))
+- [DesignToolbox] Fix VoiceOver issue with element grouping in presentation tokens and update accessibility statement ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/285))
 - [Library] Warning issues for DocC catalogs ([#293](https://github.com/Orange-OpenSource/ouds-ios/issues/293))
 
 ## [0.6.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.5.0...0.6.0) - 2024-11-15
 
 ### Added
 
-- [DemoApp] Update color screen to add a border on color illustration square ([#280](https://github.com/Orange-OpenSource/ouds-ios/issues/280))
-- [DemoApp] Add grid tokens screen in demo app ([#151](https://github.com/Orange-OpenSource/ouds-ios/issues/151))
+- [DesignToolbox] Update color screen to add a border on color illustration square ([#280](https://github.com/Orange-OpenSource/ouds-ios/issues/280))
+- [DesignToolbox] Add grid tokens screen in demo app ([#151](https://github.com/Orange-OpenSource/ouds-ios/issues/151))
 - [Tool] GitHub Action to run SwiftLint for *main* and *develop* branches
 
 ### Changed
@@ -130,23 +131,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Tool] Update `json` gem from 2.7.2 to 2.8.2 ([#286](https://github.com/Orange-OpenSource/ouds-ios/issues/286))
 - [Tool] Update `swiftformat/cli` from 0.54.3 to 0.54.6 ([#286](https://github.com/Orange-OpenSource/ouds-ios/issues/286))
 - [Tool] Update `Fastlane` from 2.223.1 to 2.225.0 ([#286](https://github.com/Orange-OpenSource/ouds-ios/issues/286))
-- [DemoApp] Update accessibility statement usage and instructions ([#278](https://github.com/Orange-OpenSource/ouds-ios/issues/278))
+- [DesignToolbox] Update accessibility statement usage and instructions ([#278](https://github.com/Orange-OpenSource/ouds-ios/issues/278))
 
 ### Fixed
 
-- [DemoApp] Add missing accessibility label for images ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/212))
-- [DemoApp] Fix text sizes when dynamic type is used (a11y) ([#247](https://github.com/Orange-OpenSource/ouds-ios/issues/247))
+- [DesignToolbox] Add missing accessibility label for images ([#212](https://github.com/Orange-OpenSource/ouds-ios/issues/212))
+- [DesignToolbox] Fix text sizes when dynamic type is used (a11y) ([#247](https://github.com/Orange-OpenSource/ouds-ios/issues/247))
 
 ## [0.5.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.4.1...0.5.0) - 2024-10-31
 
 ### Added
 
-- [DemoApp] App icons for debug, alpha, beta and production releases ([#140](https://github.com/Orange-OpenSource/ouds-ios/issues/140))
+- [DesignToolbox] App icons for debug, alpha, beta and production releases ([#140](https://github.com/Orange-OpenSource/ouds-ios/issues/140))
 - [Tool] GitHub Actions workflow for CI/CD ([#256](https://github.com/Orange-OpenSource/ouds-ios/issues/256))
-- [DemoApp] Add new tokens in size tokens page ([#245](https://github.com/Orange-OpenSource/ouds-ios/issues/245))
+- [DesignToolbox] Add new tokens in size tokens page ([#245](https://github.com/Orange-OpenSource/ouds-ios/issues/245))
 - [Library] Semantic token `borderWidthFocusInset` (value of `borderWidth100`) ([#207](https://github.com/Orange-OpenSource/ouds-ios/issues/207), [#241](https://github.com/Orange-OpenSource/ouds-ios/issues/241))
 - [Library] Semantic token `fontWeightCode` ([#242](https://github.com/Orange-OpenSource/ouds-ios/issues/242))
-- [DemoApp] Update space tokens screen with all categories ([#178](https://github.com/Orange-OpenSource/ouds-ios/issues/178))
+- [DesignToolbox] Update space tokens screen with all categories ([#178](https://github.com/Orange-OpenSource/ouds-ios/issues/178))
 
 ### Changed
 
@@ -184,9 +185,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [DemoApp] Update typography screen to use right color on token name ([#213](https://github.com/Orange-OpenSource/ouds-ios/issues/213))
-- [DemoApp] Remove duplicated section in color page for content on background values ([#236](https://github.com/Orange-OpenSource/ouds-ios/issues/236))
-- [DemoApp] Hide from Voice Over decorative image in theme selector (a11y)
+- [DesignToolbox] Update typography screen to use right color on token name ([#213](https://github.com/Orange-OpenSource/ouds-ios/issues/213))
+- [DesignToolbox] Remove duplicated section in color page for content on background values ([#236](https://github.com/Orange-OpenSource/ouds-ios/issues/236))
+- [DesignToolbox] Hide from Voice Over decorative image in theme selector (a11y)
 
 ### Security
 
@@ -196,21 +197,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [DemoApp] App crash on color token page opening ([#215](https://github.com/Orange-OpenSource/ouds-ios/issues/215))
+- [DesignToolbox] App crash on color token page opening ([#215](https://github.com/Orange-OpenSource/ouds-ios/issues/215))
 
 ## [0.4.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.3.0...0.4.0) - 2024-10-18
 
 ### Added
 
-- [DemoApp] Update opacity screen with new design ([#200](https://github.com/Orange-OpenSource/ouds-ios/issues/200))
-- [DemoApp] Add color tokens screen in demo app ([#152](https://github.com/Orange-OpenSource/ouds-ios/issues/152))
+- [DesignToolbox] Update opacity screen with new design ([#200](https://github.com/Orange-OpenSource/ouds-ios/issues/200))
+- [DesignToolbox] Add color tokens screen in demo app ([#152](https://github.com/Orange-OpenSource/ouds-ios/issues/152))
 - [Library] Add semantic tokens `spacePaddingInlineTallest`, `spacePaddingBlockTallest`, `spaceColumnGapTaller`, `spaceColumnGapWithArrowShortest`, `spaceRowGapShortest` (Figjam final synchronization of October 16th)
 - [Library] Add semantic color tokens ([#124](https://github.com/Orange-OpenSource/ouds-ios/issues/124))
-- [DemoApp] Fix some design issues and mutualize some UI elements ([#189](https://github.com/Orange-OpenSource/ouds-ios/issues/189))
-- [DemoApp] Add sizing tokens screen in demo app ([#150](https://github.com/Orange-OpenSource/ouds-ios/issues/150))
-- [DemoApp] Add spacing tokens screen in demo app ([#149](https://github.com/Orange-OpenSource/ouds-ios/issues/149))
+- [DesignToolbox] Fix some design issues and mutualize some UI elements ([#189](https://github.com/Orange-OpenSource/ouds-ios/issues/189))
+- [DesignToolbox] Add sizing tokens screen in demo app ([#150](https://github.com/Orange-OpenSource/ouds-ios/issues/150))
+- [DesignToolbox] Add spacing tokens screen in demo app ([#149](https://github.com/Orange-OpenSource/ouds-ios/issues/149))
 - [Library] Add color semantic tokens `colorContentTransparentDefault`, `colorBorderTransparentDefault` and `colorBackgroundTransparentDefault` (October 8th) ([#177](https://github.com/Orange-OpenSource/ouds-ios/issues/177))
-- [DemoApp] On opacity screen, add a border around the view showing the opacity ([#157](https://github.com/Orange-OpenSource/ouds-ios/issues/157))
+- [DesignToolbox] On opacity screen, add a border around the view showing the opacity ([#157](https://github.com/Orange-OpenSource/ouds-ios/issues/157))
 
 ### Changed
 
@@ -218,7 +219,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Update of semantic grid tokens `gridExtraCompactColumnCount`, `gridCompactColumnGap`, `gridRegularColumnGap` (Figjam final synchronization of October 16th)
 - [Library] Update of semantic elevation token `elevationStickyNavigationScrolled` (Figjam final synchronization of October 16th)
 - [Library] Update of semantic color tokens, semantic sizing tokens (Figjam final synchronization of October 16th)
-- [Library/DemoApp] Updates SwiftLint rules, fix linter warnings ([#143](https://github.com/Orange-OpenSource/ouds-ios/issues/143))
+- [Library/DesignToolbox] Updates SwiftLint rules, fix linter warnings ([#143](https://github.com/Orange-OpenSource/ouds-ios/issues/143))
 - [Tool] Update the templates for GitHub issues
 - [Tool] Improve script for documentation generation ([#168](https://github.com/Orange-OpenSource/ouds-ios/issues/168))
 - [Library] Rename raw brand-specific color tokens in Orange theme (no use of "brand" word) ([#179](https://github.com/Orange-OpenSource/ouds-ios/issues/179))
@@ -255,7 +256,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Add color semantic tokens `colorBackgroundStatusNeutral`, some `OnBackgroundEmphasized`, `colorBackgroundAction`, `colorBackgroundAlways`, `colorContent` variants
 - [Library] Add typography semantic tokens for font letter spacing
-- [DemoApp] Create token section (Border, Typography, Elevation, Opacity) ([#120](https://github.com/Orange-OpenSource/ouds-ios/issues/120))
+- [DesignToolbox] Create token section (Border, Typography, Elevation, Opacity) ([#120](https://github.com/Orange-OpenSource/ouds-ios/issues/120))
 - [Library] Unit tests for multiple tokens
 - [Library] Add color semantic composite tokens embeding light and dark modes values
 - [Library] Add spacing semantic tokens "huge" and "jumbo"
@@ -307,7 +308,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Tests] Add UI regression tests using snapshot comparisons with *swift-snapshot-testing* tool ([#78](https://github.com/Orange-OpenSource/ouds-ios/issues/78))
-- [DemoApp] Display fake components for elevation rendering tests
+- [DesignToolbox] Display fake components for elevation rendering tests
 - [Library] A theme can now override the custom font family
 - [Tests] Add more unit tests for theme overriding and raw tokens controls
 - [Library] Add and update raw and semantic grid tokens ([#40](https://github.com/Orange-OpenSource/ouds-ios/issues/40))
@@ -322,11 +323,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - [Library] Split raws, semantics and components tokens definitions and also values, composites and type aliases
-- [Showcase] Improve Fastlane alpha build notifications
+- [DesignToolbox] Improve Fastlane alpha build notifications
 - [Library] Do not store blur value in elevation semantic tokens
 - [Library] Change type aliases for X and Y offsets of elevations tokens
 - [Library] Update border semantic tokens values ([#106](https://github.com/Orange-OpenSource/ouds-ios/issues/106))
-- [Showcase] Add fake components for demo and tokens tests
+- [DesignToolbox] Add fake components for demo and tokens tests
 - [Library] Remove spread value for elevation tokens
 - [Library] Remove paragraph spacing tokens for typography
 - [Library] Term "fluid" has been replaced by "adaptable" in spacing semantic tokens
@@ -387,10 +388,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Add raw tokens and semantic tokens for border ([#30](https://github.com/Orange-OpenSource/ouds-ios/issues/30))
 - [Library] Define Swift Package architecture of library and tokens (raw and semantic) ([#33](https://github.com/Orange-OpenSource/ouds-ios/issues/33))
 - [Library] Define Swift Package library for OUDS ([#46](https://github.com/Orange-OpenSource/ouds-ios/issues/46))
-- [Showcase] Publication of comment on issues about new alpha build upload on TestFlight ([#56](https://github.com/Orange-OpenSource/ouds-ios/issues/56))
-- [Showcase] Distribute demo app development version ([#12](https://github.com/Orange-OpenSource/ouds-ios/issues/12)) 
-- [Showcase] Distribute demo app for feature validation ([#13](https://github.com/Orange-OpenSource/ouds-ios/issues/13))
-- [Showcase] Create the basic architecture of the demo application ([#6](https://github.com/Orange-OpenSource/ouds-ios/issues/6))
+- [DesignToolbox] Publication of comment on issues about new alpha build upload on TestFlight ([#56](https://github.com/Orange-OpenSource/ouds-ios/issues/56))
+- [DesignToolbox] Distribute demo app development version ([#12](https://github.com/Orange-OpenSource/ouds-ios/issues/12)) 
+- [DesignToolbox] Distribute demo app for feature validation ([#13](https://github.com/Orange-OpenSource/ouds-ios/issues/13))
+- [DesignToolbox] Create the basic architecture of the demo application ([#6](https://github.com/Orange-OpenSource/ouds-ios/issues/6))
 
 ### Changed
 
