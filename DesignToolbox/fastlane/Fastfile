@@ -44,6 +44,9 @@ MATTERMOST_HOOK_BOT_ICON_URL = ENV["OUDS_MATTERMOST_HOOK_BOT_ICON_URL"]
 # GitHub
 # ------
 
+# Repository of OUDS iOS
+GITHUB_ORG_REPO = "Orange-OpenSource/ouds-ios"
+
 # Fine grained personal access token with enough permissions for the suitable GitHub project
 GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
 
@@ -56,6 +59,10 @@ IOS_APP_COMMIT_SHA = ENV['IOS_APP_COMMIT_SHA']
 OUDS_WORKSPACE = "DesignToolbox.xcworkspace"
 OUDS_PROJECT = "DesignToolbox.xcodeproj"
 OUDS_SCHEME = "DesignToolbox"
+OUDS_TEST_SCHEME = "DesignToolbox"
+OUDS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
+OUDS_PROJECT_NAME = "DesignToolBox" # Root for Info.plist, etc.
+OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
 
 # Lanes
 # ------
@@ -99,7 +106,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             device = "iPhone 14"
-            scan(scheme: "DesignToolbox",
+            scan(scheme: OUDS_TEST_SCHEME,
                 device: device,
                 skip_build: true)
 
@@ -130,7 +137,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             device = "iPhone 16 Pro"
-            scan(scheme: "DesignToolboxSnapshotsTests",
+            scan(scheme: OUDS_SNAPSHOTS_TEST_SCHEME,
                 device: device,
                 skip_build: true
             )
@@ -180,7 +187,7 @@ platform :ios do
           clean_install: true
         )
 
-        Dir.chdir "../DesignToolbox/Resources/Assets.xcassets" do
+        Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
         end
@@ -211,23 +218,23 @@ platform :ios do
             raise "Bad prerequisites error - missing pipeline variable"
         end
 
-        Dir.chdir "../DesignToolbox/Resources/Assets.xcassets" do
+        Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconAlpha.appiconset AppIconRelease.appiconset"
         end
 
         # CFBundleVersion and CFBundleShortVersionString must follow rules with integers and periods, should not change them
         # But still possible to change CFBundleDisplayName
-        new_display_name = "Design System Toolbox ALPHA (#{issues_numbers})"
+        new_display_name = "#{OUDS_APP_DISPLAY_NAME} ALPHA (#{issues_numbers})"
         puts "ℹ️ New display name version will be: '#{new_display_name}'"
-        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
-        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildType", value: "ALPHA")
-        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
-        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildDetails", value: "#{issues_numbers}")
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "ALPHA")
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails", value: "#{issues_numbers}")
 
-        build_and_upload(isAlpha: true, upload: true)
+        build_and_upload(isAlpha: true, upload: true, issues: issues_numbers)
     end
 
     # ------------------------------------------------------------
@@ -236,18 +243,18 @@ platform :ios do
     desc "BUILD & UPLOAD TO TESTFLIGHT BETA APP"
     lane :beta do |params|
         puts "👉 Beta (commit hash = '#{params[:commitHash]}')"
-        Dir.chdir "../DesignToolbox/Resources/Assets.xcassets" do
+        Dir.chdir "../#{OUDS_PROJECT_NAME}/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconBeta.appiconset AppIconRelease.appiconset"
         end
 
-        new_display_name = "Design System Toolbox (BETA)"
+        new_display_name = "#{OUDS_APP_DISPLAY_NAME} (BETA)"
         puts "ℹ️ New display name version will be: '#{new_display_name}'"
-        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
-        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildType", value: "BETA")
-        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "BETA")
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
         
         build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
     end
@@ -260,12 +267,12 @@ platform :ios do
         puts "👉 Prod"
         update_build_number
 
-        new_display_name = "Design System Toolbox"
+        new_display_name = "#{OUDS_APP_DISPLAY_NAME}"
         puts "ℹ️ New display name version will be: '#{new_display_name}'"
-        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
-        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildType", value: "PROD")
+        set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "PROD")
         
         build
         if params[:upload]
@@ -286,7 +293,7 @@ platform :ios do
             puts "👉 Build and upload (alpha)"
             update_build_number
             build
-            upload(type: "alpha")
+            upload(type: "alpha", issues_numbers: params[:issues_numbers])
             public_github_notifications_build_details
 
         else # Beta case (not production too), detailSymbol should be here commit hash
@@ -331,7 +338,7 @@ platform :ios do
         begin
             update_app_identifier(
                 xcodeproj: "#{OUDS_PROJECT}",
-                plist_path: "DesignToolbox/Info.plist",
+                plist_path: "#{OUDS_PROJECT_NAME}/Info.plist",
                 app_identifier: CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
             )
 
@@ -399,8 +406,13 @@ platform :ios do
 
             uploadType = params[:type]
             if uploadType != nil && uploadType.to_s.empty? == false
+                issues_numbers = params[:issues_numbers]
                 puts "ℹ️ Upload type: '#{uploadType}'"
-                news = "Warning: this is #{uploadType} build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+                if uploadType == "alpha"
+                    news = "Warning: this is alpha build for issues #{issues_numbers}\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+                else
+                    news = "Warning: this is #{uploadType} build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+                end
             else
                 puts "ℹ️ Upload type seems to be production"
                 news = read_current_release_notes
@@ -489,7 +501,7 @@ platform :ios do
             # Check if given tag exists yet
             puts "ℹ️ Check if '#{tag}' exists yet"
 
-            uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/tags")
+            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/tags")
             response = Net::HTTP.get(uri)
             tags = JSON.parse(response)
 
@@ -499,7 +511,7 @@ platform :ios do
             else
                 puts "ℹ️ Commit SHA to tag is '#{IOS_APP_COMMIT_SHA}'"
 
-                uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/git/refs")
+                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/git/refs")
                 http = Net::HTTP.new(uri.host, uri.port)
                 http.use_ssl = true
                 
@@ -536,15 +548,15 @@ platform :ios do
     def public_github_notifications_build_details
         build_version = get_app_version
         build_number = get_build_number(xcodeproj: OUDS_PROJECT)
-        build_display_name = get_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "CFBundleDisplayName")
-        build_type = get_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildType")
-        build_tag = get_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildTag")
-        build_details = get_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildDetails")
+        build_display_name = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "CFBundleDisplayName")
+        build_type = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType")
+        build_tag = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildTag")
+        build_details = get_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildDetails")
         
         build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
         
         build_issues_numbers.each do |issue_number|
-            uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/issues/#{issue_number}")
+            uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/issues/#{issue_number}")
             response = Net::HTTP.get(uri)
             issue = JSON.parse(response)
         
@@ -580,7 +592,7 @@ cc @MaximeTonnerre @mccart77 @iassab @TonyAntonyHello (design team)
 _This is an automated message sent with love thanks to *Fastlane* from our CI/CD pipeline 🤘_
 EOF
 
-                uri = URI("https://api.github.com/repos/Orange-OpenSource/ouds-ios/issues/#{issue_number}/comments")
+                uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/issues/#{issue_number}/comments")
                 http = Net::HTTP.new(uri.host, uri.port)
                 http.use_ssl = true
           
