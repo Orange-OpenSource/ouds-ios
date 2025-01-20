@@ -280,6 +280,7 @@
 		07FDCDB62C296C370009AA13 /* .gitleaks.toml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitleaks.toml; path = ../.gitleaks.toml; sourceTree = "<group>"; };
 		07FDCDB72C296C370009AA13 /* .swiftformat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .swiftformat; path = ../.swiftformat; sourceTree = "<group>"; };
 		07FDCDB82C296C370009AA13 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		51040C1E2D3EA11800BE5F62 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
 		512364782C3D7B2D00572FD5 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		5123647A2C3D7B3500572FD5 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
@@ -733,6 +734,7 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				51040C1E2D3EA11800BE5F62 /* String+extension.swift */,
 				51BD761C2C466FCF0033365D /* WebView.swift */,
 				51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */,
 			);
