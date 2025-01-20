@@ -1,0 +1,33 @@
+{
+  "originHash" : "37157bb82d55cf8fef2178d1e02e303f55f01b545bfb15038a1dd61301498d2b",
+  "pins" : [
+    {
+      "identity" : "accessibility-statement-lib-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git",
+      "state" : {
+        "revision" : "480bf4629b951e459308379030f1ca0ce28a0987",
+        "version" : "1.3.0"
+      }
+    },
+    {
+      "identity" : "swift-snapshot-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
+      "state" : {
+        "revision" : "42a086182681cf661f5c47c9b7dc3931de18c6d7",
+        "version" : "1.17.6"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax",
+      "state" : {
+        "revision" : "515f79b522918f83483068d99c68daeb5116342d",
+        "version" : "600.0.0-prerelease-2024-09-04"
+      }
+    }
+  ],
+  "version" : 3
+}
