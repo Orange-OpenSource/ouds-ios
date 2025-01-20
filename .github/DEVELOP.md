@@ -143,6 +143,8 @@ Any interface modifications require regenerating the illustrations using the too
 
 **Note today because the showcase app is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the showcase app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
 
+The device under tests is a **simulator of iPhone 16 Pro, in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode**.
+
 #### How to use to use swift-snapshot-testing library
 
 1. Locate where are the reference images:
