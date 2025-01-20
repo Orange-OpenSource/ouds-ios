@@ -29,7 +29,7 @@ struct ShowcaseElementPage: View {
     // MARK: Stored Properties
 
     let name: String
-    let imageName: String?
+    let image: Image?
     let description: String
     let illustration: AnyView
 
@@ -38,8 +38,8 @@ struct ShowcaseElementPage: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-                if let imageName {
-                    CardIllustration(icon: Image(imageName))
+                if let image {
+                    CardIllustration(icon: image)
                         .accessibilityHidden(true)
                 }
 

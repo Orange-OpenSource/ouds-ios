@@ -16,7 +16,7 @@ import SwiftUI
 @MainActor
 protocol ShowcaseElement {
     var name: String { get }
-    var imageName: String { get }
+    var image: Image { get }
     var pageDescription: AnyView { get }
 }
 

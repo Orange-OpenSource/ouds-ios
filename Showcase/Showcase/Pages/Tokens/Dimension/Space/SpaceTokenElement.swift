@@ -15,15 +15,15 @@ import SwiftUI
 
 struct SpaceTokenElement: ShowcaseElement {
     let name: String
-    let imageName: String
+    let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_dimension_space_label"
-        imageName = "ic_dimension"
+        image = Image(decorative: "ic_dimension").renderingMode(.template)
         pageDescription = AnyView(ShowcaseElementPage(
             name: name,
-            imageName: imageName,
+            image: Image(decorative: "ic_dimension").renderingMode(.template),
             description: "app_tokens_dimension_space_description_text",
             illustration: AnyView(SpaceTokenPage())))
     }

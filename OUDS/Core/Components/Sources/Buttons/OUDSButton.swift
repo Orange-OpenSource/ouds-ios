@@ -53,7 +53,9 @@ import SwiftUI
 /// If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
 ///
 /// **Remark: Today it is not allowed to place a Negative button on a colored surface.**
-/// 
+///
+/// **Design documentation:** https://unified-design-system.orange.com/472794e18/p/48a788-button
+///
 /// - Since: 0.10.0
 public struct OUDSButton: View {
 

@@ -15,15 +15,15 @@ import SwiftUI
 
 struct ButtonElement: ShowcaseElement {
     let name: String
-    let imageName: String
+    let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_components_button_label"
-        imageName = "il_component_button"
+        image = Image(decorative: "il_component_button").renderingMode(.original)
         pageDescription = AnyView(ShowcaseElementPage(
                 name: name,
-                imageName: nil,
+                image: nil,
                 description: "app_components_button_description_text",
                 illustration: AnyView(ButtonPage())
             )
