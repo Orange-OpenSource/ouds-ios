@@ -1,8 +1,8 @@
 {
   "configurations" : [
     {
-      "id" : "D42E26CC-AA05-4E91-9495-DDB680E99EF8",
-      "name" : "OUDS Library TestPlan custom configuration",
+      "id" : "3397060C-267A-4449-B22F-DBDC24388298",
+      "name" : "Configuration 1",
       "options" : {
 
       }
@@ -15,13 +15,6 @@
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "OUDSFoundations-Tests",
-        "name" : "OUDSFoundations-Tests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:..",
         "identifier" : "OUDSThemesInverse-Tests",
         "name" : "OUDSThemesInverse-Tests"
       }
@@ -29,8 +22,8 @@
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "OUDSThemesOrange-Tests",
-        "name" : "OUDSThemesOrange-Tests"
+        "identifier" : "OUDSFoundations-Tests",
+        "name" : "OUDSFoundations-Tests"
       }
     },
     {
@@ -38,6 +31,13 @@
         "containerPath" : "container:..",
         "identifier" : "OUDSTokensRaw-Tests",
         "name" : "OUDSTokensRaw-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "OUDSThemesOrange-Tests",
+        "name" : "OUDSThemesOrange-Tests"
       }
     },
     {

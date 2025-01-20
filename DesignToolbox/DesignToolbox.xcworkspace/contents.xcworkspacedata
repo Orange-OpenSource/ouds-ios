@@ -2,16 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "container:../OUDS/OUDS Library.xctestplan">
+   </FileRef>
+   <FileRef
       location = "group:..">
    </FileRef>
    <FileRef
       location = "group:DesignToolbox.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../OUDS/OUDS Library TestPlan.xctestplan">
-   </FileRef>
-   <FileRef
-      location = "group:DesignToolboxUITestPlan.xctestplan">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1540"
+   LastUpgradeVersion = "1600"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "07FDCD902C296A500009AA13"
-               BuildableName = "OUDS Showcase.app"
-               BlueprintName = "Showcase"
-               ReferencedContainer = "container:Showcase.xcodeproj">
+               BuildableName = "Design System Toolbox.app"
+               BlueprintName = "DesignToolbox"
+               ReferencedContainer = "container:DesignToolbox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -30,11 +30,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:../OUDS/OUDS Library TestPlan.xctestplan"
+            reference = "container:../OUDS/OUDS Library.xctestplan"
             default = "YES">
-         </TestPlanReference>
-         <TestPlanReference
-            reference = "container:DesignToolboxUITestPlan.xctestplan">
          </TestPlanReference>
       </TestPlans>
    </TestAction>
@@ -53,9 +50,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07FDCD902C296A500009AA13"
-            BuildableName = "OUDS Showcase.app"
-            BlueprintName = "Showcase"
-            ReferencedContainer = "container:Showcase.xcodeproj">
+            BuildableName = "Design System Toolbox.app"
+            BlueprintName = "DesignToolbox"
+            ReferencedContainer = "container:DesignToolbox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -70,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "07FDCD902C296A500009AA13"
-            BuildableName = "OUDS Showcase.app"
-            BlueprintName = "Showcase"
-            ReferencedContainer = "container:Showcase.xcodeproj">
+            BuildableName = "Design System Toolbox.app"
+            BlueprintName = "DesignToolbox"
+            ReferencedContainer = "container:DesignToolbox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
