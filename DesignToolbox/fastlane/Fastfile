@@ -130,7 +130,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             device = "iPhone 16 Pro"
-            scan(scheme: "DesignToolboxTests",
+            scan(scheme: "DesignToolboxSnapshotsTests",
                 device: device,
                 skip_build: true
             )
