@@ -1,7 +1,7 @@
 # Developer guide
 
 - [Technical preconditions](#technical-preconditions)
-- [Build showcase demo app](#build-showcase-demo-app)
+- [Build Design System Toolbox](#build-design-system-toolbox)
 - [Documentation](#documentation)
 - [Run tests](#run-tests)
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
@@ -21,7 +21,7 @@
 ## Technical preconditions
 
 You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
-You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use at different levels (SDK, showcase app, projects).
+You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, projects).
 Have a look on the locks file to know which versions we are using (*Podfile*, *Podfile.lock*, *Packages.swift*, *Package.resolved*, *Gemfile*, *Gemfile.lock*).
 
 If some tools are missing, pick the suitable command line below and check versions:
@@ -80,14 +80,14 @@ We use also for our GitLab CI runners **Xcode 16**, we suggest you use this vers
 
 **Xcode 16** and **Swift 6** are used for this project. You must use this configuration.
 
-## Build showcase demo app
+## Build Design System Toolbox
 
 To build the demo application follow those steps:
 
-1. `cd Showcase`
+1. `cd DesignToolbox`
 2. `bundle exec pod install`
-3. Open *Showcase.xcworkspace*
-4. Select *Showcase* scheme
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolbox* scheme
 5. Build and run the Application on your device ou simulator
 
 ## Documentation
@@ -106,10 +106,10 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 
 To run these unit tests follow some steps:
 
-1. `cd Showcase`
+1. `cd DesignToolbox`
 2. `bundle exec pod install`
-3. Open *Showcase.xcworkspace*
-4. Select *Showcase* scheme
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolbox* scheme
 5. Run tests (Product -> Test)
 
 Unit tests care have been implemented for several reasons. 
@@ -127,10 +127,10 @@ Finally, we ensure our themes can override any semantic tokens. Themes are in fa
 
 To run these UI tests follow some steps:
 
-1. `cd Showcase`
+1. `cd DesignToolbox`
 2. `bundle exec pod install`
-3. Open *Showcase.xcworkspace*
-4. Select *ShowcaseTests* scheme
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolboxTests* scheme
 5. Select *iPhone 16 Pro* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
@@ -141,7 +141,7 @@ Such tests here are used to as to be sure the look and feel of any components an
 
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
-**Note today because the showcase app is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the showcase app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
+**Note today because the demo app (Design System Toolbox) is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the demo app app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
 
 The device under tests is a **simulator of iPhone 16 Pro, in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode**.
 
@@ -150,12 +150,12 @@ The device under tests is a **simulator of iPhone 16 Pro, in portrait mode, with
 1. Locate where are the reference images:
     - In the Package directory, you will find the reference screenshots for the Orange and Inverse themes (Light/Dark), which will serve as comparison baselines.
     ```text
-    OUDS -> Showcase -> ShowcaseTests -> __Snapshots__
+    OUDS -> DesignToolbox -> DesignToolboxTests -> __Snapshots__
     ```
 2. Navigate to the project :
     - Open your project in Xcode and go to a directory containing tests (e.g. here *OUDSTokensOpacityUITests*):
     ```shell
-    Showcase -> ShowcaseTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
+    DesignToolbox -> DesignToolboxTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
     ```
 3. Open a test file (e.g. here *OUDSTokensOpacityUITests*):
     - Open the file `OUDSTokensOpacityUITests.swift`.
@@ -183,8 +183,8 @@ The snapshot tool fetched the reference image to compare it against the current 
 
     - In Xcode go to :
 
-    ```shell
-    ShowcaseTests -> ShowcaseTests/ShowcaseTests
+    ```text
+    DesignToolboxTests -> DesignToolboxTests/DesignToolboxTests
     ```
 
     <img width="1206" alt="TestResult_Failed_testAllOpacitiesOrangeThemeLight" src="https://github.com/user-attachments/assets/1793df83-ffc1-4226-8be2-fbd7e2b71deb">
@@ -207,15 +207,15 @@ The project contains several custom build phases so as to automatize several ste
 
 1. _SwiftLint_ will run the linter on the sources
 
-Note that sources headers are defined in *IDETemplateMacros.plist* inside *Showcase/Showcase.xcworkspace/xcshareddata*
+Note that sources headers are defined in *IDETemplateMacros.plist* inside *DesignToolbox/DesignToolbox.xcworkspace/xcshareddata*
 
 ## Targets
 
 The Xcode project contains two targets:
 
-1. _Showcase_ for the demo application
+1. _DesignToolbox_ for the demo application
 2. _Periphery_ to look for dead code in the source code
-3. _ShowcaseTests_ for UI tests in demo app
+3. _DesignToolboxTests_ for UI tests in demo app
 
 ## Certificates, profiles and identifiers
 
