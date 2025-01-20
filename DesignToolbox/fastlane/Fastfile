@@ -53,9 +53,9 @@ IOS_APP_COMMIT_SHA = ENV['IOS_APP_COMMIT_SHA']
 # Project configuration
 # ---------------------
 
-OUDS_WORKSPACE = "Showcase.xcworkspace"
-OUDS_PROJECT = "Showcase.xcodeproj"
-OUDS_SCHEME = "Showcase"
+OUDS_WORKSPACE = "DesignToolbox.xcworkspace"
+OUDS_PROJECT = "DesignToolbox.xcodeproj"
+OUDS_SCHEME = "DesignToolbox"
 
 # Lanes
 # ------
@@ -99,7 +99,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             device = "iPhone 14"
-            scan(scheme: "Showcase",
+            scan(scheme: "DesignToolbox",
                 device: device,
                 skip_build: true)
 
@@ -130,7 +130,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             device = "iPhone 16 Pro"
-            scan(scheme: "ShowcaseTests",
+            scan(scheme: "DesignToolboxTests",
                 device: device,
                 skip_build: true
             )
@@ -180,7 +180,7 @@ platform :ios do
           clean_install: true
         )
 
-        Dir.chdir "../Showcase/Resources/Assets.xcassets" do
+        Dir.chdir "../DesignToolbox/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconDebug.appiconset AppIconRelease.appiconset"
         end
@@ -211,21 +211,21 @@ platform :ios do
             raise "Bad prerequisites error - missing pipeline variable"
         end
 
-        Dir.chdir "../Showcase/Resources/Assets.xcassets" do
+        Dir.chdir "../DesignToolbox/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconAlpha.appiconset AppIconRelease.appiconset"
         end
 
         # CFBundleVersion and CFBundleShortVersionString must follow rules with integers and periods, should not change them
         # But still possible to change CFBundleDisplayName
-        new_display_name = "OUDS Showcase ALPHA (#{issues_numbers})"
+        new_display_name = "Design System Toolbox ALPHA (#{issues_numbers})"
         puts "ℹ️ New display name version will be: '#{new_display_name}'"
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
+        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "ALPHA")
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildDetails", value: "#{issues_numbers}")
+        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildType", value: "ALPHA")
+        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
+        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildDetails", value: "#{issues_numbers}")
 
         build_and_upload(isAlpha: true, upload: true)
     end
@@ -236,18 +236,18 @@ platform :ios do
     desc "BUILD & UPLOAD TO TESTFLIGHT BETA APP"
     lane :beta do |params|
         puts "👉 Beta (commit hash = '#{params[:commitHash]}')"
-        Dir.chdir "../Showcase/Resources/Assets.xcassets" do
+        Dir.chdir "../DesignToolbox/Resources/Assets.xcassets" do
             sh "rm -Rf AppIconRelease.appiconset"
             sh "cp -R AppIconBeta.appiconset AppIconRelease.appiconset"
         end
 
-        new_display_name = "OUDS Showcase (BETA)"
+        new_display_name = "Design System Toolbox (BETA)"
         puts "ℹ️ New display name version will be: '#{new_display_name}'"
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
+        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "BETA")
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
+        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildType", value: "BETA")
+        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildTag", value: "#{params[:commitHash][0,7]}".strip)
         
         build_and_upload(isAlpha: false, upload: true, detailSymbol: params[:commitHash])
     end
@@ -260,12 +260,12 @@ platform :ios do
         puts "👉 Prod"
         update_build_number
 
-        new_display_name = "OUDS Showcase"
+        new_display_name = "Design System Toolbox"
         puts "ℹ️ New display name version will be: '#{new_display_name}'"
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
+        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "CFBundleDisplayName", value: new_display_name)
 
         # Details for the GUI in the app
-        set_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType", value: "PROD")
+        set_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildType", value: "PROD")
         
         build
         if params[:upload]
@@ -331,7 +331,7 @@ platform :ios do
         begin
             update_app_identifier(
                 xcodeproj: "#{OUDS_PROJECT}",
-                plist_path: "Showcase/Info.plist",
+                plist_path: "DesignToolbox/Info.plist",
                 app_identifier: CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
             )
 
@@ -536,10 +536,10 @@ platform :ios do
     def public_github_notifications_build_details
         build_version = get_app_version
         build_number = get_build_number(xcodeproj: OUDS_PROJECT)
-        build_display_name = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "CFBundleDisplayName")
-        build_type = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildType")
-        build_tag = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildTag")
-        build_details = get_info_plist_value(path: "#{Dir.pwd}/../Showcase/Info.plist", key: "OUDSBuildDetails")
+        build_display_name = get_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "CFBundleDisplayName")
+        build_type = get_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildType")
+        build_tag = get_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildTag")
+        build_details = get_info_plist_value(path: "#{Dir.pwd}/../DesignToolbox/Info.plist", key: "OUDSBuildDetails")
         
         build_issues_numbers = build_details.scan(/\d+/).map(&:to_i)
         
