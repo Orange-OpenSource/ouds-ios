@@ -14,11 +14,8 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:DesignToolboxSnapshotsTests.xctestplan"
+            reference = "container:DesignToolboxSnapshots.xctestplan"
             default = "YES">
-         </TestPlanReference>
-         <TestPlanReference
-            reference = "container:DesignToolboxSnapshots.xctestplan">
          </TestPlanReference>
       </TestPlans>
       <Testables>
