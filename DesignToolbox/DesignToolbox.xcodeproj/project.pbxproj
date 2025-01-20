@@ -1065,7 +1065,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Periphery action to look for dead code\nperiphery scan --strict --workspace Showcase.xcworkspace --schemes Showcase --targets Showcase --format xcode\n";
+			shellScript = "# Periphery action to look for dead code\nperiphery scan --strict --workspace DesignToolbox.xcworkspace --schemes DesignToolbox --targets DesignToolbox --format xcode\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
