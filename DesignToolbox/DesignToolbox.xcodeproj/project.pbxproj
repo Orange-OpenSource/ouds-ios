@@ -1116,7 +1116,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml Showcase/*\n    swiftlint --config ../.swiftlint.yml OUDS/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
+			shellScript = "if which \"swiftlint\" >/dev/null; then\n    swiftlint --config ../.swiftlint.yml DesignToolbox/*\n    swiftlint --config ../.swiftlint.yml OUDS/*\nelse\n    echo \"warning: SwiftLint not installed, download from CocoaPods (see https://github.com/realm/SwiftLint)\"\nfi\n";
 		};
 		2A5B2E6765E57E6A6B13CBA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
