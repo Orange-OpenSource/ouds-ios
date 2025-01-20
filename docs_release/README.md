@@ -73,11 +73,11 @@ See below the full CHANGELOG details.
 // And copy/paste changelog without #
 Added:
 - [Tests] Add UI regression tests using snapshot comparisons with *swift-snapshot-testing* tool ([#78](#78))
-- [DemoApp] Display fake components for elevation rendering tests
+- [DesignToolbox] Display fake components for elevation rendering tests
 
 Changed:
 - [Library] Split raws, semantics and components tokens definitions and also values, composites and type aliases
-- [Showcase] Improve Fastlane alpha build notifications
+- [DesignToolbox] Improve Fastlane alpha build notifications
 
 Removed:
 - [Library] Remove Z Index tokens for elevations ([#109](#109))
@@ -160,7 +160,7 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
     \## [Unreleased]\(https://github.com/Orange-OpenSource/ouds-ios/compare/X.Y.Z...develop)
     ```
     
-    - Update in Xcode the version of Showcase target to U.V.W (the new version you suppose it will be) and increment build number
+    - Update in Xcode the version of DesignToolbox target to U.V.W (the new version you suppose it will be) and increment build number
     - Commit your modifications
     - Push them to the repository
     - Create a new pull request named `Update release U.V.W` on GitHub to merge your branch into `develop` 
