@@ -22,17 +22,17 @@ strict: true
 
 included:
 - OUDS
-- Showcase
+- DesignToolbox
 
 # ========
 # Excluded
 # ========
 
 excluded:
-- Showcase/Showcase/Info.plist
-- Showcase/Showcase/Resources
-- Showcase/Pods
-- Showcase/DerivedData
+- DesignToolbox/DesignToolbox/Info.plist
+- DesignToolbox/DesignToolbox/Resources
+- DesignToolbox/Pods
+- DesignToolbox/DerivedData
 
 # ==============
 # Disabled rules
