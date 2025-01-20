@@ -130,7 +130,7 @@ To run these UI tests follow some steps:
 1. `cd DesignToolbox`
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
-4. Select *DesignToolboxTests* scheme
+4. Select *DesignToolboxSnapshotsTests* scheme
 5. Select *iPhone 16 Pro* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
@@ -150,12 +150,12 @@ The device under tests is a **simulator of iPhone 16 Pro, in portrait mode, with
 1. Locate where are the reference images:
     - In the Package directory, you will find the reference screenshots for the Orange and Inverse themes (Light/Dark), which will serve as comparison baselines.
     ```text
-    OUDS -> DesignToolbox -> DesignToolboxTests -> __Snapshots__
+    OUDS -> DesignToolbox -> DesignToolboxSnapshotsTests -> __Snapshots__
     ```
 2. Navigate to the project :
     - Open your project in Xcode and go to a directory containing tests (e.g. here *OUDSTokensOpacityUITests*):
     ```shell
-    DesignToolbox -> DesignToolboxTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
+    DesignToolbox -> DesignToolboxSnapshotsTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
     ```
 3. Open a test file (e.g. here *OUDSTokensOpacityUITests*):
     - Open the file `OUDSTokensOpacityUITests.swift`.
@@ -184,7 +184,7 @@ The snapshot tool fetched the reference image to compare it against the current 
     - In Xcode go to :
 
     ```text
-    DesignToolboxTests -> DesignToolboxTests/DesignToolboxTests
+    DesignToolboxSnapshotsTests -> DesignToolboxSnapshotsTests/DesignToolboxSnapshotsTests
     ```
 
     <img width="1206" alt="TestResult_Failed_testAllOpacitiesOrangeThemeLight" src="https://github.com/user-attachments/assets/1793df83-ffc1-4226-8be2-fbd7e2b71deb">
@@ -215,7 +215,7 @@ The Xcode project contains two targets:
 
 1. _DesignToolbox_ for the demo application
 2. _Periphery_ to look for dead code in the source code
-3. _DesignToolboxTests_ for UI tests in demo app
+3. _DesignToolboxSnapshotsTests_ for UI tests in demo app
 
 ## Certificates, profiles and identifiers
 
