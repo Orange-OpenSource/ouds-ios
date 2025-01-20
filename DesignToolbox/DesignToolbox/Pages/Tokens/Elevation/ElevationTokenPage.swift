@@ -25,7 +25,7 @@ struct ElevationTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                ShowcaseCode(code: "theme.elevations.elevationNone.elevation(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.elevations.elevationNone.elevation(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
             Spacer().frame(height: theme.spaces.spaceFixedMedium)
@@ -49,7 +49,7 @@ struct ElevationTokenPage: View {
             let name = namedElevation.rawValue
             let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 Rectangle()
                     .frame(width: theme.sizes.sizeIconDecorative2xl, height: theme.sizes.sizeIconDecorative2xl)
                     .foregroundColor(theme.colors.colorBgSecondary.color(for: colorScheme))

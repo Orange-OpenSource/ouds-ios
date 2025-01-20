@@ -25,7 +25,7 @@ struct ColorTokenPage: View {
     var body: some View {
         Group {
             Section {
-                ShowcaseCode(code: "theme.colors.colorBgPrimary.color(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.colors.colorBgPrimary.color(for: colorScheme)", titleText: "app_tokens_common_viewCodeExample_label")
             }
             Section { illustrationForAction() } header: { header("Action") }
             Section { illustrationForAlways() } header: { header("Always") }
@@ -45,7 +45,7 @@ struct ColorTokenPage: View {
     // MARK: Private helpers
 
     private func header(_ text: String) -> some View {
-        Text(text).showcaseSectionHeaderStyle()
+        Text(text).designToolboxSectionHeaderStyle()
     }
 
     private func illustrationForBackground() -> some View {
@@ -147,7 +147,7 @@ struct ColorTokenPage: View {
         var body: some View {
             let colorRawToken = colorScheme == .dark ? token.dark : token.light
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: colorRawToken) {
                 Rectangle()
                     .fill(colorRawToken.color)
                     .frame(width: 64, height: 64)

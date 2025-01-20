@@ -24,7 +24,7 @@ struct SizeTokenPage: View {
     var body: some View {
         Group {
             Section {
-                ShowcaseCode(code: "theme.sizeIconWithHeadingXLargeShort.dimension(for: horizontalSizeClass ?? .regular)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.sizeIconWithHeadingXLargeShort.dimension(for: horizontalSizeClass ?? .regular)", titleText: "app_tokens_common_viewCodeExample_label")
             }
             Section {
                 VStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
@@ -62,7 +62,7 @@ struct SizeTokenPage: View {
             let name = namedSize.rawValue
             let value = String(format: "%.2f pt", token)
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Rectangle()
                         .fill(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
@@ -96,7 +96,7 @@ struct SizeTokenPage: View {
             let name = namedSize.sizeDescription
             let value = String(format: "%.2f pt", token)
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Rectangle()
                         .fill(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
@@ -169,7 +169,7 @@ struct SizeTokenPage: View {
     }
 
     private func sectionHeader(_ text: LocalizedStringKey) -> some View {
-        Text(text).showcaseSectionHeaderStyle()
+        Text(text).designToolboxSectionHeaderStyle()
     }
 }
 

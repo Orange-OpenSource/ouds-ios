@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-struct ShowcaseTokenIllustrationBackground: View {
+struct DesignToolboxTokenIllustrationBackground: View {
 
     // MARK: Environment properties
 

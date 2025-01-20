@@ -73,7 +73,7 @@ struct SpaceTokenVariant<TokenIllustration>: View where TokenIllustration: View 
         let name = namedSpaceToken.name
         let value = String(format: "%.2f pt", token)
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+        return DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
             illustration(token)
         }
     }
@@ -107,11 +107,11 @@ struct SpaceCommonIllustration: View {
     var body: some View {
         ZStack(alignment: zStackAlignment) {
             // Background color
-            ShowcaseTokenIllustrationBackground()
+            DesignToolboxTokenIllustrationBackground()
 
             switch padding {
             case .topLeading:  // ZStack topleading
-                ShowcaseTokenIllustrationBackground()
+                DesignToolboxTokenIllustrationBackground()
                     .padding(.top, dimension)
                     .padding(.leading, dimension)
                     .background(theme.colors.colorContentStatusInfo.color(for: colorScheme))
@@ -171,7 +171,7 @@ struct SpaceScaledIllustration: View {
     var body: some View {
         ZStack(alignment: .center) {
             // Background color
-            ShowcaseTokenIllustrationBackground()
+            DesignToolboxTokenIllustrationBackground()
 
             // Illustration
             SpaceIllustrationRectangle(width: horizontalDimension)

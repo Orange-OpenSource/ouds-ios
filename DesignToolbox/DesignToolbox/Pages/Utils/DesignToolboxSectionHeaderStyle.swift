@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-struct ShowcaseSectionHeaderModifier: ViewModifier {
+struct DesignToolboxSectionHeaderModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
 
@@ -27,7 +27,7 @@ struct ShowcaseSectionHeaderModifier: ViewModifier {
 }
 
 extension Text {
-    func showcaseSectionHeaderStyle() -> some View {
-        self.modifier(ShowcaseSectionHeaderModifier())
+    func designToolboxSectionHeaderStyle() -> some View {
+        self.modifier(DesignToolboxSectionHeaderModifier())
     }
 }

@@ -42,12 +42,12 @@ struct GridTokenPage: View {
             }
 
             Section {
-                ShowcaseCode(code: "theme.gridColumnCount(for: horizontalSizeClass)", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.gridColumnCount(for: horizontalSizeClass)", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
             Section { illustrationForGridTokens() } header: {
                 Text(horizontalSizeClass.rawValue)
-                    .showcaseSectionHeaderStyle()
+                    .designToolboxSectionHeaderStyle()
             }
         }
         .padding(.horizontal, theme.spaces.spaceFixedMedium)
@@ -68,7 +68,7 @@ struct GridTokenPage: View {
         let name = namedGrid.rawValue
         let value = String(format: "%.2f pt", token)
 
-        return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+        return DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
             EmptyView()
         }
     }

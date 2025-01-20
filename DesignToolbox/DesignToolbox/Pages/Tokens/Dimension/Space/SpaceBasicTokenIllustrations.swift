@@ -77,7 +77,7 @@ struct ScaledSpaceProperty: View {
                                verticalSizeClass == .regular ? "regular" : "compact",
                                verticalDimensionRawToken)
 
-            return ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            return DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 SpaceScaledIllustration(horizontalDimension: horizontalDimensionRawToken, verticalDimension: verticalDimensionRawToken)
             }
         }

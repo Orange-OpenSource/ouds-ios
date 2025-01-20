@@ -56,12 +56,12 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
             componentView(configuration)
             // No padding here, the component erea keep all the frame horizontaly
 
-            ShowcaseConfiguration {
+            DesignToolboxConfiguration {
                 configurationView(configuration)
             }
             .padding(.horizontal, theme.spaces.spaceFixedMedium)
 
-            ShowcaseCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
+            DesignToolboxCode(code: configuration.code, titleText: "app_components_common_viewCodeExample_label")
                 .padding(.horizontal, theme.spaces.spaceFixedMedium)
         }
         .padding(.bottom, theme.spaces.spaceFixedMedium)

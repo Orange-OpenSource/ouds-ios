@@ -24,7 +24,7 @@ struct BorderTokenPage: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Section {
                 VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                    ShowcaseCode(code: "theme.borders.borderWidthDefault", titleText: "app_tokens_common_viewCodeExample_label")
+                    DesignToolboxCode(code: "theme.borders.borderWidthDefault", titleText: "app_tokens_common_viewCodeExample_label")
                 }
             }
             Section {
@@ -90,7 +90,7 @@ struct BorderTokenPage: View {
             let name = namedWidth.rawValue
             let value = String(format: "%.2f pt", token)
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
                     .oudsBorder(style: theme.borders.borderStyleDefault,
                                 width: token,
@@ -110,7 +110,7 @@ struct BorderTokenPage: View {
             let name = namedRadius.rawValue
             let value = String(format: "%.2f pt", token)
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
                     .oudsBorder(style: theme.borders.borderStyleDefault,
                                 width: theme.borders.borderWidthDefault,
@@ -130,7 +130,7 @@ struct BorderTokenPage: View {
             let name = namedStyle.rawValue
             let value = token
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 RectangleBackground()
                     .oudsBorder(style: token,
                                 width: theme.borders.borderWidthDefault,

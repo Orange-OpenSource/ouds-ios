@@ -13,15 +13,20 @@
 
 import SwiftUI
 
-struct GridTokenElement: ShowcaseElement {
+struct GridTokenElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_grid_label"
+<<<<<<< HEAD
         image = Image(decorative: "ic_grid").renderingMode(.template)
         pageDescription = AnyView(ShowcaseElementPage(
+=======
+        imageName = "ic_grid"
+        pageDescription = AnyView(DesignToolboxElementPage(
+>>>>>>> 23cfdd7ca (refactor: objects and files of demo app (#85))
             name: name,
             image: Image(decorative: "ic_grid").renderingMode(.template),
             description: "app_tokens_grid_description_text",

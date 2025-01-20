@@ -15,14 +15,14 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-struct ShowcaseVariantElement: View {
+struct DesignToolboxVariantElement: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 
-    let elements: [ShowcaseElement]
+    let elements: [DesignToolboxElement]
 
     // MARK: Body
 

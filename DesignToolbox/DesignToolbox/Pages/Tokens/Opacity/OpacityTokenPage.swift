@@ -24,7 +24,7 @@ struct OpacityTokenPage: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Section {
-                ShowcaseCode(code: "theme.opacities.opacityInvisible", titleText: "app_tokens_common_viewCodeExample_label")
+                DesignToolboxCode(code: "theme.opacities.opacityInvisible", titleText: "app_tokens_common_viewCodeExample_label")
             }
 
             Spacer() .frame(height: theme.spaces.spaceFixedMedium)
@@ -48,7 +48,7 @@ struct OpacityTokenPage: View {
             let name = opacityName.rawValue
             let value = String(format: "%.2f", token)
 
-            ShowcaseTokenIllustration(tokenName: name, tokenValue: value) {
+            DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 ZStack {
                     Image(decorative: "ic_union")
                         .resizable()

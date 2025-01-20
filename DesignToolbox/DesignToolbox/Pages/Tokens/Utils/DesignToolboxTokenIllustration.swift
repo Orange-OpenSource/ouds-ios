@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-struct ShowcaseTokenIllustration<TokenIllustration>: View where TokenIllustration: View {
+struct DesignToolboxTokenIllustration<TokenIllustration>: View where TokenIllustration: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme

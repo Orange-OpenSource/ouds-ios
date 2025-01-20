@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-struct ShowcaseCode: View {
+struct DesignToolboxCode: View {
 
     // MARK: Environment properties
 

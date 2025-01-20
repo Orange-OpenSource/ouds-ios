@@ -15,7 +15,7 @@ import OUDS
 import SwiftUI
 
 @main
-struct Showcase: App {
+struct DesignToolbox: App {
     @StateObject var themeProvider = ThemeProvider()
 
     var body: some Scene {

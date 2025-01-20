@@ -13,15 +13,20 @@
 
 import SwiftUI
 
-struct ElevationTokenElement: ShowcaseElement {
+struct ElevationTokenElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_elevation_label"
+<<<<<<< HEAD
         image = Image(decorative: "ic_layers").renderingMode(.template)
         pageDescription = AnyView(ShowcaseElementPage(
+=======
+        imageName = "ic_layers"
+        pageDescription = AnyView(DesignToolboxElementPage(
+>>>>>>> 23cfdd7ca (refactor: objects and files of demo app (#85))
             name: name,
             image: Image(decorative: "ic_layers").renderingMode(.template),
             description: "app_tokens_elevation_description_text",

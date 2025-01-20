@@ -161,7 +161,7 @@ struct SomeView: View {
 
 // Do not forget in your app to use the `OUDSThemeableView` for your theme, e.g. `OrangeTheme`
 @main
-struct Showcase: App {
+struct DesignToolbox: App {
 
     var body: some Scene {
         WindowGroup {

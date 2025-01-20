@@ -13,20 +13,13 @@
 
 import SwiftUI
 
-struct TokensPage: View {
+@MainActor
+protocol DesignToolboxElement {
+    var name: String { get }
+    var imageName: String { get }
+    var pageDescription: AnyView { get }
+}
 
-    let tokenElements: [DesignToolboxElement] = [
-        BorderTokenElement(),
-        ColorTokenElement(),
-        DimensionTokenElement(),
-        ElevationTokenElement(),
-        GridTokenElement(),
-        OpacityTokenElement(),
-        FontTokenElement(),
-    ]
-
-    var body: some View {
-        DesignToolboxElementsPage(elements: tokenElements)
-            .oudsNavigationTitle("app_bottomBar_tokens_label")
-    }
+extension DesignToolboxElement {
+    var id: String { name }
 }
