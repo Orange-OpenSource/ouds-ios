@@ -15,15 +15,15 @@ import SwiftUI
 
 struct ElevationTokenElement: ShowcaseElement {
     let name: String
-    let imageName: String
+    let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_elevation_label"
-        imageName = "ic_layers"
+        image = Image(decorative: "ic_layers").renderingMode(.template)
         pageDescription = AnyView(ShowcaseElementPage(
             name: name,
-            imageName: imageName,
+            image: Image(decorative: "ic_layers").renderingMode(.template),
             description: "app_tokens_elevation_description_text",
             illustration: AnyView(ElevationTokenPage())))
     }

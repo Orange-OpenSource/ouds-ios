@@ -15,15 +15,15 @@ import SwiftUI
 
 struct OpacityTokenElement: ShowcaseElement {
     let name: String
-    let imageName: String
+    let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_opacity_label"
-        imageName = "ic_filter_effects"
+        image = Image(decorative: "ic_filter_effects").renderingMode(.template)
         pageDescription = AnyView(ShowcaseElementPage(
             name: name,
-            imageName: imageName,
+            image: Image(decorative: "ic_filter_effects").renderingMode(.template),
             description: "app_tokens_opacity_description_text",
             illustration: AnyView(OpacityTokenPage())))
     }

@@ -15,15 +15,15 @@ import SwiftUI
 
 struct GridTokenElement: ShowcaseElement {
     let name: String
-    let imageName: String
+    let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_grid_label"
-        imageName = "ic_grid"
+        image = Image(decorative: "ic_grid").renderingMode(.template)
         pageDescription = AnyView(ShowcaseElementPage(
             name: name,
-            imageName: imageName,
+            image: Image(decorative: "ic_grid").renderingMode(.template),
             description: "app_tokens_grid_description_text",
             illustration: AnyView(GridTokenPage())))
     }

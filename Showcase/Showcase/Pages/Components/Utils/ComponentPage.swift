@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -17,8 +17,17 @@ import SwiftUI
 
 /// The common protocol used to define the configuration of each component.
 
-protocol ComponentConfiguration {
-    var code: String { get }
+open class ComponentConfiguration: ObservableObject {
+    @Published var code: String = ""
+
+    init() {
+        self.updateCode()
+    }
+
+    deinit {}
+
+    // Overwride this function and update code when configuration changed
+    func updateCode() {}
 }
 
 /// Used to create an area with `Component` updated according to the `configuration`
@@ -30,7 +39,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     // MARK: Stored properties
 
     /// The configuration shared between configuration view and component illustration view.
-    let configuration: ComponentConfiguration
+    @ObservedObject var configuration: ComponentConfiguration
 
     /// The illustration displaying the component according to the configuration.
     @ViewBuilder

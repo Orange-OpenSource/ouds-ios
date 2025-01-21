@@ -29,7 +29,6 @@ struct CardIllustration: View {
             Spacer()
             icon
                 .resizable()
-                .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 88, height: 88, alignment: .center)
                 .clipped()

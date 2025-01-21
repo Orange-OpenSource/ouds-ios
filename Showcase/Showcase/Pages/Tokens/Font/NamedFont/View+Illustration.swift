@@ -72,11 +72,3 @@ extension View {
         }
     }
 }
-
-extension String {
-    // swiftlint:disable strict_fileprivate
-    fileprivate var camelCase: String {
-        self.prefix(1).capitalized + self.dropFirst()
-    }
-    // swiftlint:enable strict_fileprivate
-}

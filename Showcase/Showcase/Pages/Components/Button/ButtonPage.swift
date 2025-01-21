@@ -11,15 +11,15 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
+import OUDSComponents
 import SwiftUI
+
+// MARK: Button page
 
 struct ButtonPage: View {
 
-    // MARK: Stored properties
-
     private let configuration = ButtonConfigurationModel()
-
-    // MARK: Body
 
     var body: some View {
         ComponentConfigurationView(
@@ -28,8 +28,6 @@ struct ButtonPage: View {
             configurationView: configurationView
         )
     }
-
-    // MARK: Private helpers
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
@@ -46,85 +44,74 @@ struct ButtonPage: View {
     }
 }
 
-/// The model shared between `ButtonPageConfiguration` view and `ButtonPageComponent` view.
-final class ButtonConfigurationModel: ComponentConfiguration, ObservableObject {
-    var description: String {
-        "This is a short description of Button"
-    }
+// MARK: Button Illustration
 
-    var code: String { """
-        Button {
-        } label: {
-            Text(\(text))
-        }
-        .disable(\(enabled ? "false" : "true"))
-        """
-    }
-
-    @Published var text: String = "Hello"
-    @Published var enabled: Bool = true
-
-    init(text: String = "Hello", enabled: Bool = true) {
-        self.text = text
-        self.enabled = enabled
-    }
-
-    deinit { }
-}
-
-/// The component illustration according to the configuration.
 struct ButtonIllustration: View {
 
-    // MARK: Environment properties
+    @Environment(\.colorScheme) private var colorScheme
+
+    let model: ButtonConfigurationModel
+
+    var body: some View {
+        VStack(alignment: .center) {
+            ButtonDemo(model: model, coloredSurface: false)
+            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+            ButtonDemo(model: model, coloredSurface: false)
+                .colorScheme(colorScheme == .dark ? .light : .dark)
+            ButtonDemo(model: model, coloredSurface: true)
+        }
+    }
+}
+
+// MARK: - Backgroud Modifier
+
+private struct BackgroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: Stored properties
+    let coloredSurface: Bool
 
-    @StateObject var model: ButtonConfigurationModel
-
-    // MARK: Body
-
-    var body: some View {
-        VStack(alignment: .center) {
-
-            HStack(alignment: .center) {
-                Spacer()
-
-                Button {
-                } label: {
-                    Text(model.text)
-                }
-                .padding(.vertical, 8)
-                .padding(.horizontal, 16)
-                .background(.orange)
-                .disabled(!model.enabled)
-
-                Spacer()
-            }
-            .padding(.all, theme.spaces.spaceFixedMedium)
+    func body(content: Content) -> some View {
+        if coloredSurface {
+            content.oudsColoredSurface(color: theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme))
+        } else {
+            content.background(theme.colors.colorBgSecondary.color(for: colorScheme))
         }
-        .background(theme.colors.colorBgSecondary.color(for: colorScheme))
     }
 }
 
-struct ButtonConfiguration: View {
+// MARK: - Button Demo
 
-    // MARK: Environment properties
+private struct ButtonDemo: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Stored properties
-
     @StateObject var model: ButtonConfigurationModel
-
-    // MARK: Body
+    let coloredSurface: Bool
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("Enabled", isOn: $model.enabled)
-            TextField("Button text", text: $model.text)
+        HStack(alignment: .center) {
+            Spacer()
+
+            // It is not allowed to place a Negative bnutton on colored surface
+            if model.hierarchy == .negative, coloredSurface == true {
+                Text("app_components_button_negative_hierary_notAllowed_text")
+            } else {
+                switch model.layout {
+                case .iconOnly:
+                    OUDSButton(icon: Image(decorative: "ic_heart"), hierarchy: model.hierarchy, style: model.style) {}
+                case .textOnly:
+                    OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
+                case .iconAndText:
+                    OUDSButton(icon: Image(decorative: "ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
+                }
+            }
+
+            Spacer()
         }
+        .disabled(!model.enabled)
+        .padding(.all, theme.spaces.spaceFixedMedium)
+        .modifier(BackgroundModifier(coloredSurface: coloredSurface))
     }
 }

@@ -15,15 +15,15 @@ import SwiftUI
 
 struct FontTokenElement: ShowcaseElement {
     let name: String
-    let imageName: String
+    let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_typography_label"
-        imageName = "ic_typography"
+        image = Image(decorative: "ic_typography").renderingMode(.template)
         pageDescription = AnyView(ShowcaseElementPage(
             name: name,
-            imageName: imageName,
+            image: Image(decorative: "ic_typography").renderingMode(.template),
             description: "app_tokens_typography_description_text",
             illustration: AnyView(FontTokenPage())))
     }

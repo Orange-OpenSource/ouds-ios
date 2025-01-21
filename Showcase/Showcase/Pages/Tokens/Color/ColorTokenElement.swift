@@ -15,15 +15,15 @@ import SwiftUI
 
 struct ColorTokenElement: ShowcaseElement {
     let name: String
-    let imageName: String
+    let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_tokens_color_label"
-        imageName = "ic_palette"
+        image = Image(decorative: "ic_palette").renderingMode(.template)
         pageDescription = AnyView(ShowcaseElementPage(
             name: name,
-            imageName: imageName,
+            image: Image(decorative: "ic_palette").renderingMode(.template),
             description: "app_tokens_color_description_text",
             illustration: AnyView(ColorTokenPage())))
     }
