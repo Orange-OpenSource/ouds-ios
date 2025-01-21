@@ -15,7 +15,7 @@ import SwiftUI
 
 // MARK: - OUDS Button
 
-/// The ``OUDSButton`` proposes layout with text only, icon only or text and icon.
+/// The ``OUDSButton`` proposes layout with text only, icon only or text with icon.
 ///
 /// ## Hierarchies
 ///
@@ -32,15 +32,17 @@ import SwiftUI
 /// for example, delete or remove, typically resulting in the opening of a confirmation dialog.
 /// A button with `OUDSButton.Hierarchy.Negative` hierarchy is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
 ///
+/// ## Code samples
+///
 /// ```swift
 ///     // Icon only with default hierarchy
-///     OUDSButton(hierarchy: .default, icon: Image("ic_heart")) {}
+///     OUDSButton(hierarchy: .default, icon: Image("ic_heart")) { /* the action to process */ }
 ///
 ///     // Text only with negative hierarchy
-///     OUDSButton(hierarchy: .negative, text: "Delete") {}
+///     OUDSButton(hierarchy: .negative, text: "Delete") { /* the action to process */ }
 ///
 ///     // Text and icon with strong hierarchy
-///     OUDSButton(hierarchy: .strong, icon: Image("ic_heart"), text: "Validate") {}
+///     OUDSButton(hierarchy: .strong, icon: Image("ic_heart"), text: "Validate") { /* the action to process */ }
 /// ```
 ///
 /// ## Styles
@@ -56,7 +58,9 @@ import SwiftUI
 ///
 /// **Remark: Today it is not allowed to place a Negative button on a colored surface.**
 ///
-/// **Design documentation:** https://unified-design-system.orange.com/472794e18/p/48a788-button
+/// ## Design documentation
+///
+/// See [unified-design-system.orange.com/472794e18/p/48a788-button](https://unified-design-system.orange.com/472794e18/p/48a788-button)
 ///
 /// - Since: 0.10.0
 public struct OUDSButton: View {
@@ -76,7 +80,7 @@ public struct OUDSButton: View {
         case textAndIcon(text: String, icon: Image)
     }
 
-    /// Represents the hierarchy of an OUDS button
+    /// Represents the hierarchy of an OUDS button, i.e. a kind of type
     public enum Hierarchy {
         /// Default button is used for action
         case `default`
@@ -88,7 +92,7 @@ public struct OUDSButton: View {
         case negative
     }
 
-    /// Defines the style of the button
+    /// Defines the style of the button, e.g. loading or not
     public enum Style {
         /// The default style, the button could be in prossed, hover, disabled or enabled internal state
         case `default`
@@ -114,7 +118,7 @@ public struct OUDSButton: View {
         self.action = action
     }
 
-    /// Create a button with an icon.
+    /// Create a button with an icon only.
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
@@ -128,7 +132,7 @@ public struct OUDSButton: View {
         self.action = action
     }
 
-    /// Create a button with a text.
+    /// Create a button with a text only.
     ///
     /// - Parameters:
     ///    - text: The text of the button to display

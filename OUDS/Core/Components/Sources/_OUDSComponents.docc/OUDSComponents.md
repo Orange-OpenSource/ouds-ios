@@ -25,8 +25,6 @@ A button with `OUDSButton.Hierarchy.Negative` hierarchy is not allowed as a dire
 
 ## Customize components
 
-Some helpers are provided through this module.
-
 ### Apply a specific shadow effect (elevation tokens)
 
 The unified design system implemented by OUDS iOS library allows to apply *elevation effets* on a `View`, i.e. a shadow under the component.
