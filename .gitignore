@@ -20,15 +20,15 @@
 /Brewfile.lock.json
 
 # Produced by CocoaPods
-/Showcase/Pods/
+/DesignToolbox/Pods/
 
 # Produced by Xcode
-/Showcase/Showcase.xcodeproj/xcuserdata/
-/Showcase/Showcase.xcworkspace/xcuserdata/
+/DesignToolbox/DesignToolbox.xcodeproj/xcuserdata/
+/DesignToolbox/DesignToolbox.xcworkspace/xcuserdata/
 /DerivedData/
 
 # Produced by Fastlane
-/Showcase/build/
+/DesignToolbox/build/
 
 # Produced by Swift Package Manager
 /.swiftpm/xcode/xcshareddata/
