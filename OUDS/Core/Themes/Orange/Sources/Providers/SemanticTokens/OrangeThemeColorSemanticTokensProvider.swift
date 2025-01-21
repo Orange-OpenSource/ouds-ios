@@ -56,7 +56,7 @@ open class OrangeThemeColorSemanticTokensProvider: AllColorSemanticTokensProvide
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeColorSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeColorSemanticTokensProvider")
     }
 
     deinit{ }

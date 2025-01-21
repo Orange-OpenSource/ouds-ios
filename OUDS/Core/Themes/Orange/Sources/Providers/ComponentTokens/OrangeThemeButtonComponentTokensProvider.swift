@@ -94,7 +94,7 @@ open class OrangeThemeButtonComponentTokensProvider: AllButtonComponentTokensPro
                 borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider) {
-        OUDSLogger.debug("Init of OrangeThemeButtonComponentTokensProvider")
+        OL.debug("Init of OrangeThemeButtonComponentTokensProvider")
         self.sizes = sizes
         self.borders = borders
         self.colors = colors

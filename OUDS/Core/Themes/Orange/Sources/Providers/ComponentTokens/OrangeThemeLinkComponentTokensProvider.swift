@@ -85,7 +85,7 @@ open class OrangeThemeLinkComponentTokensProvider: AllLinkComponentTokensProvide
     public init(sizes: AllSizeSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider) {
-        OUDSLogger.debug("Init of OrangeThemeLinkComponentTokensProvider")
+        OL.debug("Init of OrangeThemeLinkComponentTokensProvider")
         self.sizes = sizes
         self.colors = colors
         self.spaces = spaces

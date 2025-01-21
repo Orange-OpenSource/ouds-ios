@@ -52,7 +52,7 @@ open class OrangeThemeOpacitySemanticTokensProvider: AllOpacitySemanticTokensPro
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeOpacitySemanticTokensProvider")
+        OL.debug("Init of OrangeThemeOpacitySemanticTokensProvider")
     }
 
     deinit{ }

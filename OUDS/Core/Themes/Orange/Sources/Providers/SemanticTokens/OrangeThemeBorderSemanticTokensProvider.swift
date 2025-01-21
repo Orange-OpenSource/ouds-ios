@@ -58,7 +58,7 @@ open class OrangeThemeBorderSemanticTokensProvider: AllBorderSemanticTokensProvi
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeBorderSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeBorderSemanticTokensProvider")
     }
 
     deinit{ }

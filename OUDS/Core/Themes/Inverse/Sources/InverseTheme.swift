@@ -52,7 +52,7 @@ public final class InverseTheme: OrangeTheme, @unchecked Sendable {
 
     /// Initializes the `InverseTheme`
     public init() {
-        OUDSLogger.debug("Init of InverseTheme")
+        OL.debug("Init of InverseTheme")
         super.init(colors: InverseThemeColorSemanticTokensProvider(),
                    fontFamily: nil)
     }

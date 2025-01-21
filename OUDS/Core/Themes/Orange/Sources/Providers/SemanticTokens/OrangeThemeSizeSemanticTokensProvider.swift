@@ -56,7 +56,7 @@ open class OrangeThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider 
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeSizeSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeSizeSemanticTokensProvider")
     }
 
     deinit{ }

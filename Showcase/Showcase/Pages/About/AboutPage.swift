@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
 import SwiftUI
 
 struct AboutPage: View {
@@ -24,10 +25,10 @@ struct AboutPage: View {
 
     init() {
         guard let privacyNoticeUrl = Bundle.main.url(forResource: "about_privacy_policy", withExtension: "html") else {
-            fatalError("Unable to find about_privacy_policy.html in resources")
+            OL.fatal("Unable to find about_privacy_policy.html in resources")
         }
         guard let legalInformationUrl = Bundle.main.url(forResource: "about_legal_information", withExtension: "html") else {
-            fatalError("Unable to find about_legal_information.html in resources")
+            OL.fatal("Unable to find about_legal_information.html in resources")
         }
 
         self.privacyPolicyUrl = privacyNoticeUrl

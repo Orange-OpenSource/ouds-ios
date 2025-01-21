@@ -85,7 +85,7 @@ open class OrangeThemeSelectComponentTokensProvider: AllSelectComponentTokensPro
     public init(sizes: AllSizeSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider) {
-        OUDSLogger.debug("Init of OrangeThemeSelectComponentTokensProvider")
+        OL.debug("Init of OrangeThemeSelectComponentTokensProvider")
         self.sizes = sizes
         self.colors = colors
         self.spaces = spaces

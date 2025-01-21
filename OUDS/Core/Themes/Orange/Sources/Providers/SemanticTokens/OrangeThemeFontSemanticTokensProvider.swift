@@ -56,7 +56,7 @@ open class OrangeThemeFontSemanticTokensProvider: AllFontSemanticTokensProvider 
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeFontSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeFontSemanticTokensProvider")
     }
 
     deinit{ }

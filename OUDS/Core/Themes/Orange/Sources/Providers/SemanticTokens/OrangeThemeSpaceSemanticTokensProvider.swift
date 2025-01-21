@@ -56,7 +56,7 @@ open class OrangeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvide
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeSpaceSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeSpaceSemanticTokensProvider")
     }
 
     deinit{ }

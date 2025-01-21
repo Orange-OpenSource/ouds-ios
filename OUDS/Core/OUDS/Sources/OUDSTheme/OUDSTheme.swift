@@ -98,7 +98,7 @@ open class OUDSTheme: @unchecked Sendable {
         // Check if we have all the exxpected tokens providers
         let missingProviders = tokensProviders.missingProviders()
         if !missingProviders.isEmpty {
-            OUDSLogger.error("Some token providers are missing: '\(missingProviders)'")
+            OL.error("Some token providers are missing: '\(missingProviders)'")
         }
 
         // Load semantic tokens providers

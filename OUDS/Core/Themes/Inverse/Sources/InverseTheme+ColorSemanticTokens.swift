@@ -29,7 +29,7 @@ final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTok
     // MARK: - Init
 
     override init() {
-        OUDSLogger.debug("Init of InverseThemeColorSemanticTokensProvider")
+        OL.debug("Init of InverseThemeColorSemanticTokensProvider")
     }
 
     deinit { }

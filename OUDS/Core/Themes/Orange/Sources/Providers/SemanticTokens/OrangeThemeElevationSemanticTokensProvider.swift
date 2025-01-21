@@ -54,7 +54,7 @@ open class OrangeThemeElevationSemanticTokensProvider: AllElevationSemanticToken
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeElevationSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeElevationSemanticTokensProvider")
     }
 
     deinit{ }

@@ -12,6 +12,7 @@
 //
 
 import DeclarationAccessibility
+import OUDSFoundations
 import SwiftUI
 
 struct AccessibilityStatementPage: View {
@@ -24,7 +25,7 @@ struct AccessibilityStatementPage: View {
 
     init() {
         guard let detailsPageURL = Bundle.main.url(forResource: "accessibility_detail", withExtension: "html") else {
-            fatalError("Unable to find accessibility_detail.html in resources")
+            OL.fatal("Unable to find accessibility_detail.html in resources")
         }
 
         self.detailsPageURL = detailsPageURL

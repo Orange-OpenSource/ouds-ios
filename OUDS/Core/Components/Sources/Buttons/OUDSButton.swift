@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSFoundations
 import SwiftUI
 
 // MARK: - OUDS Button
@@ -152,7 +153,7 @@ public struct OUDSButton: View {
         // A button with negative hierarchy is not allowed on a colored surface
         // Test is done here because onColoredSurface is environment variable which is not accessible in init.
         if onColoredSurface, hierarchy == .negative {
-            fatalError("An OUDSButton with OUDSButton.Hierarchy.Negative hierarchy has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
+            OL.fatal("An OUDSButton with OUDSButton.Hierarchy.Negative hierarchy has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
         }
 
         Button(action: action) {

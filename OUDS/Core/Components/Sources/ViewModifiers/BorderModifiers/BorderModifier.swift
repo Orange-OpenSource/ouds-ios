@@ -51,7 +51,7 @@ struct BorderModifier: ViewModifier {
         self.radius = radius
         self.color = color
         if style != "solid" && style != "dashed" && style != "dotted" {
-            OUDSLogger.error("Unmanaged style: '\(style)'!")
+            OL.error("Unmanaged style: '\(style)'!")
         }
     }
 

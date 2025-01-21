@@ -69,7 +69,7 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
     /// Defines a provider of component tokens dedicated to `OUDSTag`
     /// - Parameter colors: Provider for color semantic tokens
     public init(colors: AllColorSemanticTokensProvider) {
-        OUDSLogger.debug("Init of OrangeThemeTagComponentTokensProvider")
+        OL.debug("Init of OrangeThemeTagComponentTokensProvider")
         self.colors = colors
     }
 

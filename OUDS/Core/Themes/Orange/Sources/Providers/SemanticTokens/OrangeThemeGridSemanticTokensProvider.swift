@@ -60,7 +60,7 @@ open class OrangeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvider 
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeGridSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeGridSemanticTokensProvider")
     }
 
     deinit{ }

@@ -28,7 +28,7 @@ extension Array where Element == TokensProvider {
                 return castedItem
             }
         }
-        fatalError("Tokens provider of type '\(T.self)' not found!")
+        OL.fatal("Tokens provider of type '\(T.self)' not found!")
     }
 
     // swiftlint:disable cyclomatic_complexity
