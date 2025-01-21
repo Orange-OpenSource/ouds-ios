@@ -211,8 +211,6 @@
 		073543102CA154DE001187EA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		073543122CA1676C001187EA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		073543152CA17275001187EA /* DesignToolboxElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElement.swift; sourceTree = "<group>"; };
-		073EC3212CB3DC9300B2ADB4 /* SpacingTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenElement.swift; sourceTree = "<group>"; };
-		073EC3222CB3DC9300B2ADB4 /* SpacingTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacingTokenPage.swift; sourceTree = "<group>"; };
 		074008222C942810006B8729 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
 		0740A9872C9833670069D24A /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
 		0740A9882C9833670069D24A /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
@@ -490,15 +488,6 @@
 			path = NamedColor;
 			sourceTree = "<group>";
 		};
-		077CCE502CB4254B0059CC28 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				073EC3222CB3DC9300B2ADB4 /* SpacingTokenPage.swift */,
-				073EC3212CB3DC9300B2ADB4 /* SpacingTokenElement.swift */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		077CCE532CB426090059CC28 /* Space */ = {
 			isa = PBXGroup;
 			children = (
@@ -606,7 +595,6 @@
 				07FDCD922C296A500009AA13 /* Products */,
 				AFD4931269C94655071502F6 /* Pods */,
 				6E90D400B72B50FE406E8DFC /* Frameworks */,
-				077CCE502CB4254B0059CC28 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
