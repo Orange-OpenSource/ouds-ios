@@ -63,19 +63,19 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
             """
-          OOUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased())) {}
+          OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased())) {}
           \(disableCode))
           """
         case .iconOnly:
             code =
             """
-          OOUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
+          OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
           \(disableCode))
           """
         case .iconAndText:
             code =
             """
-          OOUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
+          OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
           \(disableCode))
           """
         }
