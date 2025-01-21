@@ -13,7 +13,9 @@
 
 import SwiftUI
 
-/// The `OUDSButton` propose layout with text only, icon only or text and icon.
+// MARK: - OUDS Button
+
+/// The ``OUDSButton`` proposes layout with text only, icon only or text and icon.
 ///
 /// ## Hierarchies
 ///
@@ -60,6 +62,7 @@ import SwiftUI
 public struct OUDSButton: View {
 
     // MARK: Stored Properties
+
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
     private let type: `Type`
@@ -67,7 +70,7 @@ public struct OUDSButton: View {
     private let style: Style
     private let action: () -> Void
 
-    private enum `Type`{
+    private enum `Type` {
         case text(String)
         case icon(Image)
         case textAndIcon(text: String, icon: Image)
@@ -97,9 +100,10 @@ public struct OUDSButton: View {
     // MARK: Initializers
 
     /// Create a button with text and icon.
+    ///
     /// - Parameters:
-    ///    - icon: An image shoud contains an icon
-    ///    - text: The text
+    ///    - icon: An image which shoud contains an icon
+    ///    - text: The text to display in the button
     ///    - hierarchy: The button hierarchy
     ///    - style: The button style
     ///    - action: The action to perform when the user triggers the button
@@ -113,7 +117,7 @@ public struct OUDSButton: View {
     /// Create a button with an icon.
     ///
     /// - Parameters:
-    ///    - icon: An image shoud contains an icon
+    ///    - icon: An image which shoud contains an icon
     ///    - hierarchy: The button hierarchy
     ///    - style: The button style
     ///    - action: The action to perform when the user triggers the button
@@ -124,9 +128,10 @@ public struct OUDSButton: View {
         self.action = action
     }
 
-    /// Create a button with a text
+    /// Create a button with a text.
+    ///
     /// - Parameters:
-    ///    - text: The text of the button
+    ///    - text: The text of the button to display
     ///    - hierarchy: The button hierarchy
     ///    - style: The button style
     ///    - action: The action to perform when the user triggers the button
@@ -140,7 +145,7 @@ public struct OUDSButton: View {
     // MARK: Body
 
     public var body: some View {
-        // A button with negative] hierarchy is not allowed on a clored surface
+        // A button with negative hierarchy is not allowed on a colored surface
         // Test is done here because onColoredSurface is environment variable which is not accessible in init.
         if onColoredSurface, hierarchy == .negative {
             fatalError("An OUDSButton with OUDSButton.Hierarchy.Negative hierarchy has been detected as a direct or indirect child of an OUDSColoredSurface, which is not allowed.")
@@ -160,15 +165,13 @@ public struct OUDSButton: View {
     }
 }
 
+// MARK: - Button Icon
+
 private struct ButtonIcon: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Stored Properties
-
     let icon: Image
-
-    // MARK: Body
 
     var body: some View {
         ScaledIcon(icon: icon, size: theme.button.buttonSizeIconOnly)
@@ -177,15 +180,13 @@ private struct ButtonIcon: View {
     }
 }
 
+// MARK: - Button Text
+
 private struct ButtonText: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Stored Properties
-
     let text: String
-
-    // MARK: Body
 
     var body: some View {
         TextForButton(text: text)
@@ -195,16 +196,14 @@ private struct ButtonText: View {
     }
 }
 
+// MARK: - Button Text And Icon
+
 private struct ButtonTextAndIcon: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Stored Properties
-
     let text: String
     let icon: Image
-
-    // MARK: Body
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.button.buttonSpaceColumnGapIcon) {
@@ -218,11 +217,12 @@ private struct ButtonTextAndIcon: View {
     }
 }
 
+// MARK: - Scaled Icon
+
 private struct ScaledIcon: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Stored Properties
     let icon: Image
     @ScaledMetric var size: CGFloat
 
@@ -232,9 +232,10 @@ private struct ScaledIcon: View {
     }
 }
 
+// MARK: - Fixed Icon
+
 private struct FixedIcon: View {
 
-    // MARK: Stored Properties
     let icon: Image
     let size: CGFloat
 
@@ -244,13 +245,11 @@ private struct FixedIcon: View {
     }
 }
 
+// MARK: - Icon For Button
+
 private struct IconForButton: View {
 
-    // MARK: Stored Properties
-
     let icon: Image
-
-    // MARK: Body
 
     var body: some View {
         icon
@@ -259,15 +258,13 @@ private struct IconForButton: View {
     }
 }
 
+// MARK: - Text For Button
+
 private struct TextForButton: View {
 
     @Environment(\.theme) private var theme
 
-    // MARK: Stored Properties
-
     let text: String
-
-    // MARK: Body
 
     var body: some View {
         Text(LocalizedStringKey(text))
