@@ -61,7 +61,7 @@ OUDS_PROJECT = "DesignToolbox.xcodeproj"
 OUDS_SCHEME = "DesignToolbox"
 OUDS_TEST_SCHEME = "DesignToolbox"
 OUDS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
-OUDS_PROJECT_NAME = "DesignToolBox" # Root for Info.plist, etc.
+OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
 
 # Lanes
