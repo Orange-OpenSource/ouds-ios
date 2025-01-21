@@ -17,25 +17,12 @@ import SwiftUI
 
 struct ComponentsPage: View {
 
-<<<<<<< HEAD
-    let componentElements: [ShowcaseElement] = [
+    let componentElements: [DesignToolboxElement] = [
         ButtonElement()
     ]
 
     var body: some View {
-        ShowcaseElementsPage(elements: componentElements)
+        DesignToolboxElementsPage(elements: componentElements)
             .oudsNavigationTitle("app_bottomBar_components_label")
-=======
-//    let componentElements: [DesignToolboxElement] = [
-//        ButtonElement()
-//    ]
-
-    var body: some View {
-        NavigationView {
-            EmptyState()
-            //        DesignToolboxElementsPage(elements: componentElements)
-                .oudsNavigationTitle("app_bottomBar_components_label")
-        }
->>>>>>> 23cfdd7ca (refactor: objects and files of demo app (#85))
     }
 }

@@ -21,19 +21,13 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconBeta.appiconset/UDSDemo-B_SQR.png
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconRelease.appiconset/Unified_App_IOS_SQR.png
 
-<<<<<<< HEAD
-./Showcase/Showcase/Resources/Assets.xcassets/ic_token.imageset/ic_token.svg
-./Showcase/Showcase/Resources/Assets.xcassets/ic_component_atom.imageset/ic_component_atom.svg
-./Showcase/Showcase/Resources/Assets.xcassets/ic_info.imageset/ic_info.svg
-./Showcase/Showcase/Resources/Assets.xcassets/ic_heart.imageset/ic_heart.svg
-
-./Showcase/Showcase/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button_dark.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button_light.svg
-=======
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_token.imageset/ic_token.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_component_atom.imageset/ic_component_atom.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_info.imageset/ic_info.svg
->>>>>>> 4a2ce37a1 (refactor: update NOTICE (#85))
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_heart.imageset/ic_heart.svg
+
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button_light.svg
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_empty_screen.imageset/il_empty_screen.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png

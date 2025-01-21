@@ -19,15 +19,9 @@ struct ButtonElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-<<<<<<< HEAD
         name = "app_components_button_label"
         image = Image(decorative: "il_component_button").renderingMode(.original)
-        pageDescription = AnyView(ShowcaseElementPage(
-=======
-        name = "app_tokens_border_label"
-        imageName = "ic_border"
         pageDescription = AnyView(DesignToolboxElementPage(
->>>>>>> 23cfdd7ca (refactor: objects and files of demo app (#85))
                 name: name,
                 image: nil,
                 description: "app_components_button_description_text",

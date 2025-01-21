@@ -20,13 +20,8 @@ struct SizeTokenElement: DesignToolboxElement {
 
     init() {
         name = "app_tokens_dimension_size_label"
-<<<<<<< HEAD
         image = Image(decorative: "ic_dimension").renderingMode(.template)
-        pageDescription = AnyView(ShowcaseElementPage(
-=======
-        imageName = "ic_dimension"
         pageDescription = AnyView(DesignToolboxElementPage(
->>>>>>> 23cfdd7ca (refactor: objects and files of demo app (#85))
             name: name,
             image: Image(decorative: "ic_dimension").renderingMode(.template),
             description: "app_tokens_dimension_size_description_text",

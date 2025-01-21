@@ -20,13 +20,8 @@ struct OpacityTokenElement: DesignToolboxElement {
 
     init() {
         name = "app_tokens_opacity_label"
-<<<<<<< HEAD
         image = Image(decorative: "ic_filter_effects").renderingMode(.template)
-        pageDescription = AnyView(ShowcaseElementPage(
-=======
-        imageName = "ic_filter_effects"
         pageDescription = AnyView(DesignToolboxElementPage(
->>>>>>> 23cfdd7ca (refactor: objects and files of demo app (#85))
             name: name,
             image: Image(decorative: "ic_filter_effects").renderingMode(.template),
             description: "app_tokens_opacity_description_text",
