@@ -60,7 +60,6 @@
 		077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
 		0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */; };
 		0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */; };
-		07C7F4AD2D391B440037E211 /* OUDSComponentButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C7F4AC2D391B440037E211 /* OUDSComponentButtonUITests.swift */; };
 		07CAE7682CEE20A600D6C5D1 /* SpaceTokenCommonIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71322CEB743300B93FC3 /* SpaceTokenCommonIllustration.swift */; };
 		07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C713A2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift */; };
 		07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71362CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift */; };
@@ -110,6 +109,14 @@
 		51952A722D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */; };
 		51952A742D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
 		51952A752D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */; };
+		51952A7C2D3FA1510068B807 /* OUDSTokensBorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A7B2D3FA1490068B807 /* OUDSTokensBorderUITests.swift */; };
+		51952A7F2D3FA17E0068B807 /* OUDSTokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A7E2D3FA1770068B807 /* OUDSTokensColorUITests.swift */; };
+		51952A832D3FA1AC0068B807 /* OUDSTokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A822D3FA1A70068B807 /* OUDSTokensSizeUITests.swift */; };
+		51952A862D3FA1DB0068B807 /* OUDSTokensSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A852D3FA1D60068B807 /* OUDSTokensSpaceUITests.swift */; };
+		51952A892D3FA20D0068B807 /* OUDSTokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A882D3FA2060068B807 /* OUDSTokensElevationUITests.swift */; };
+		51952A8C2D3FA22A0068B807 /* OUDSTokensFontUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A8B2D3FA2280068B807 /* OUDSTokensFontUITests.swift */; };
+		51952A8F2D3FA24C0068B807 /* OUDSTokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A8E2D3FA2490068B807 /* OUDSTokensOpacityUITests.swift */; };
+		51952A922D3FA2720068B807 /* OUDSComponentButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51952A912D3FA26B0068B807 /* OUDSComponentButtonUITests.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
 		51BD76212C466FCF0033365D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		51BD76242C466FCF0033365D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76122C466FCF0033365D /* Preview Assets.xcassets */; };
@@ -120,9 +127,6 @@
 		51BD762A2C466FCF0033365D /* DesignToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* DesignToolbox.swift */; };
 		51BD762B2C466FCF0033365D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
 		51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */; };
-		6D17A21A2CCBE74C00C00512 /* OUDSTokensElevationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A2192CCBE74C00C00512 /* OUDSTokensElevationUITests.swift */; };
-		6D17A21C2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A21B2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift */; };
-		6D17A22A2CCBEF6700C00512 /* OUDSTokensColorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D17A2292CCBEF6700C00512 /* OUDSTokensColorUITests.swift */; };
 		6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */; };
 		6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4952CC159F600E69359 /* NamedColor+Action.swift */; };
 		6D17A22D2CCBF12B00C00512 /* NamedColor+Always.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4972CC15A4000E69359 /* NamedColor+Always.swift */; };
@@ -133,7 +137,6 @@
 		6D17A2332CCBF12B00C00512 /* NamedColor+Decorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B49D2CC15B7E00E69359 /* NamedColor+Decorative.swift */; };
 		6D17A2352CCF8DC300C00512 /* NamedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4A52CC15C9D00E69359 /* NamedColor.swift */; };
 		6D24658E2CBEAC750023E359 /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
-		6D3E872C2CCBE0A300AEB105 /* OUDSTokenBorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3E872B2CCBE0A300AEB105 /* OUDSTokenBorderUITests.swift */; };
 		6D43136D2CEF400D004E6886 /* DesignToolboxCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */; };
 		6D8F9C4F2CBFDC8B0078A10E /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074794792CAE882A0033C2D8 /* EmptyState.swift */; };
 		6D8F9C502CC14EBF0078A10E /* OpacityTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF427E2CA41325000BD03E /* OpacityTokenPage.swift */; };
@@ -152,8 +155,6 @@
 		6DB260E42CD0F0520091F72E /* NameSpace+GapStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A402CC653EB0004F1AD /* NameSpace+GapStack.swift */; };
 		6DCC57E22CEB984D000F35F8 /* DesignToolboxCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */; };
 		6DE5F47D2CC696120008E774 /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
-		6DED17E92CD1143500584BC9 /* OUDSTokensSizeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DED17E82CD1143500584BC9 /* OUDSTokensSizeUITests.swift */; };
-		6DED17EB2CD114AD00584BC9 /* OUDSTokensSpaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DED17EA2CD114AD00584BC9 /* OUDSTokensSpaceUITests.swift */; };
 		6DED17EC2CD23D3A00584BC9 /* DesignToolboxElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543152CA17275001187EA /* DesignToolboxElement.swift */; };
 		6DED17ED2CD23D5200584BC9 /* DesignToolboxElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */; };
 		6DED17EE2CD23E5400584BC9 /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
@@ -229,7 +230,6 @@
 		077CCE5B2CB431C50059CC28 /* DesignToolboxVariantElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxVariantElement.swift; sourceTree = "<group>"; };
 		0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconWithTypography.swift"; sourceTree = "<group>"; };
 		0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconDecorative.swift"; sourceTree = "<group>"; };
-		07C7F4AC2D391B440037E211 /* OUDSComponentButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSComponentButtonUITests.swift; path = OUDSComponentButtonUITests/OUDSComponentButtonUITests.swift; sourceTree = "<group>"; };
 		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07CF426A2CA30728000BD03E /* TokensPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensPage.swift; sourceTree = "<group>"; };
 		07CF42712CA31AC3000BD03E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -270,6 +270,14 @@
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTokenIllustration.swift; sourceTree = "<group>"; };
 		51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTokenIllustrationBackground.swift; sourceTree = "<group>"; };
+		51952A7B2D3FA1490068B807 /* OUDSTokensBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensBorderUITests.swift; sourceTree = "<group>"; };
+		51952A7E2D3FA1770068B807 /* OUDSTokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensColorUITests.swift; sourceTree = "<group>"; };
+		51952A822D3FA1A70068B807 /* OUDSTokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensSizeUITests.swift; sourceTree = "<group>"; };
+		51952A852D3FA1D60068B807 /* OUDSTokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensSpaceUITests.swift; sourceTree = "<group>"; };
+		51952A882D3FA2060068B807 /* OUDSTokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensElevationUITests.swift; sourceTree = "<group>"; };
+		51952A8B2D3FA2280068B807 /* OUDSTokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensFontUITests.swift; sourceTree = "<group>"; };
+		51952A8E2D3FA2490068B807 /* OUDSTokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensOpacityUITests.swift; sourceTree = "<group>"; };
+		51952A912D3FA26B0068B807 /* OUDSComponentButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSComponentButtonUITests.swift; sourceTree = "<group>"; };
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		51BD760B2C466FCF0033365D /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementsPage.swift; sourceTree = "<group>"; };
@@ -281,14 +289,7 @@
 		51BD761E2C466FCF0033365D /* DesignToolbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolbox.swift; sourceTree = "<group>"; };
 		51BD761F2C466FCF0033365D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementPage.swift; sourceTree = "<group>"; };
-		6D17A2172CCBE50700C00512 /* OUDSTokensFontUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensFontUITests.swift; path = DesignToolboxSnapshotsTests/__Snapshots__/OUDSTokensFontUITests/OUDSTokensFontUITests.swift; sourceTree = SOURCE_ROOT; };
-		6D17A2192CCBE74C00C00512 /* OUDSTokensElevationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensElevationUITests.swift; path = DesignToolboxSnapshotsTests/__Snapshots__/OUDSTokensElevationUITests/OUDSTokensElevationUITests.swift; sourceTree = SOURCE_ROOT; };
-		6D17A21B2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensOpacityUITests.swift; path = DesignToolboxSnapshotsTests/__Snapshots__/OUDSTokensOpacityUITests/OUDSTokensOpacityUITests.swift; sourceTree = SOURCE_ROOT; };
-		6D17A2292CCBEF6700C00512 /* OUDSTokensColorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensColorUITests.swift; path = "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/DesignToolbox/DesignToolboxSnapshotsTests/__Snapshots__/OUDSTokensColorUITests/OUDSTokensColorUITests.swift"; sourceTree = "<absolute>"; };
-		6D3E872B2CCBE0A300AEB105 /* OUDSTokenBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokenBorderUITests.swift; path = DesignToolboxSnapshotsTests/__Snapshots__/OUDSTokensBorderUITests/OUDSTokenBorderUITests.swift; sourceTree = SOURCE_ROOT; };
 		6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxCode.swift; sourceTree = "<group>"; };
-		6DED17E82CD1143500584BC9 /* OUDSTokensSizeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensSizeUITests.swift; path = DesignToolboxSnapshotsTests/__Snapshots__/OUDSTokensDimensionUITests/Size/OUDSTokensSizeUITests.swift; sourceTree = SOURCE_ROOT; };
-		6DED17EA2CD114AD00584BC9 /* OUDSTokensSpaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OUDSTokensSpaceUITests.swift; path = DesignToolboxSnapshotsTests/__Snapshots__/OUDSTokensDimensionUITests/Space/OUDSTokensSpaceUITests.swift; sourceTree = SOURCE_ROOT; };
 		6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityStatementPage.swift; sourceTree = "<group>"; };
 		6DFC20B02CE3AF1500F2EC33 /* boosted-grid.min.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "boosted-grid.min.css"; sourceTree = "<group>"; };
 		6DFC20B12CE3AF1500F2EC33 /* favicon.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = favicon.ico; sourceTree = "<group>"; };
@@ -406,8 +407,7 @@
 		0740A9902C9873500069D24A /* DesignToolboxSnapshotsTests */ = {
 			isa = PBXGroup;
 			children = (
-				51FD2D362D3E992B00E7703D /* Tokens */,
-				07C7F4AB2D391AE00037E211 /* Components */,
+				51952A782D3FA0FB0068B807 /* __Snapshots__ */,
 				074008212C9427F8006B8729 /* Snapshots */,
 			);
 			path = DesignToolboxSnapshotsTests;
@@ -511,15 +511,6 @@
 				0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */,
 			);
 			path = NamedSize;
-			sourceTree = "<group>";
-		};
-		07C7F4AB2D391AE00037E211 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				07C7F4AC2D391B440037E211 /* OUDSComponentButtonUITests.swift */,
-			);
-			name = Components;
-			path = __Snapshots__/Components;
 			sourceTree = "<group>";
 		};
 		07CF42752CA3F461000BD03E /* Elevation */ = {
@@ -650,6 +641,101 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		51952A782D3FA0FB0068B807 /* __Snapshots__ */ = {
+			isa = PBXGroup;
+			children = (
+				51952A902D3FA25F0068B807 /* Components */,
+				51952A792D3FA1260068B807 /* Tokens */,
+			);
+			path = __Snapshots__;
+			sourceTree = "<group>";
+		};
+		51952A792D3FA1260068B807 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				51952A8D2D3FA23F0068B807 /* OUDSTokensOpacityUITests */,
+				51952A8A2D3FA2210068B807 /* OUDSTokensFontUITests */,
+				51952A872D3FA1FA0068B807 /* OUDSTokensElevationUITests */,
+				51952A802D3FA1920068B807 /* OUDSTokensDimensionUITests */,
+				51952A7D2D3FA1680068B807 /* OUDSTokensColorUITests */,
+				51952A7A2D3FA1370068B807 /* OUDSTokensBorderUITests */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		51952A7A2D3FA1370068B807 /* OUDSTokensBorderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				51952A7B2D3FA1490068B807 /* OUDSTokensBorderUITests.swift */,
+			);
+			path = OUDSTokensBorderUITests;
+			sourceTree = "<group>";
+		};
+		51952A7D2D3FA1680068B807 /* OUDSTokensColorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				51952A7E2D3FA1770068B807 /* OUDSTokensColorUITests.swift */,
+			);
+			path = OUDSTokensColorUITests;
+			sourceTree = "<group>";
+		};
+		51952A802D3FA1920068B807 /* OUDSTokensDimensionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				51952A842D3FA1B80068B807 /* Space */,
+				51952A812D3FA19A0068B807 /* Size */,
+			);
+			path = OUDSTokensDimensionUITests;
+			sourceTree = "<group>";
+		};
+		51952A812D3FA19A0068B807 /* Size */ = {
+			isa = PBXGroup;
+			children = (
+				51952A822D3FA1A70068B807 /* OUDSTokensSizeUITests.swift */,
+			);
+			path = Size;
+			sourceTree = "<group>";
+		};
+		51952A842D3FA1B80068B807 /* Space */ = {
+			isa = PBXGroup;
+			children = (
+				51952A852D3FA1D60068B807 /* OUDSTokensSpaceUITests.swift */,
+			);
+			path = Space;
+			sourceTree = "<group>";
+		};
+		51952A872D3FA1FA0068B807 /* OUDSTokensElevationUITests */ = {
+			isa = PBXGroup;
+			children = (
+				51952A882D3FA2060068B807 /* OUDSTokensElevationUITests.swift */,
+			);
+			path = OUDSTokensElevationUITests;
+			sourceTree = "<group>";
+		};
+		51952A8A2D3FA2210068B807 /* OUDSTokensFontUITests */ = {
+			isa = PBXGroup;
+			children = (
+				51952A8B2D3FA2280068B807 /* OUDSTokensFontUITests.swift */,
+			);
+			path = OUDSTokensFontUITests;
+			sourceTree = "<group>";
+		};
+		51952A8D2D3FA23F0068B807 /* OUDSTokensOpacityUITests */ = {
+			isa = PBXGroup;
+			children = (
+				51952A8E2D3FA2490068B807 /* OUDSTokensOpacityUITests.swift */,
+			);
+			path = OUDSTokensOpacityUITests;
+			sourceTree = "<group>";
+		};
+		51952A902D3FA25F0068B807 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51952A912D3FA26B0068B807 /* OUDSComponentButtonUITests.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		51BD760C2C466FCF0033365D /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,70 +826,6 @@
 				51BD761F2C466FCF0033365D /* MainView.swift */,
 			);
 			path = DesignToolbox;
-			sourceTree = "<group>";
-		};
-		51FD2D362D3E992B00E7703D /* Tokens */ = {
-			isa = PBXGroup;
-			children = (
-				6D17A2242CCBEF1100C00512 /* OUDSTokensColorUITests */,
-				6D8F9BE42CBFC2F70078A10E /* OUDSTokensTypographyUITests */,
-				6D8F9B9B2CBFB8830078A10E /* OUDSTokensDimensionUITests */,
-				6D8F9B722CBED90D0078A10E /* OUDSTokensElevationUITests */,
-				6D8F9B392CBECBB80078A10E /* OUDSTokensOpacityUITests */,
-				6D2465892CBEAB4C0023E359 /* OUDSTokensBorderUITests */,
-			);
-			name = Tokens;
-			path = __Snapshots__/Tokens;
-			sourceTree = "<group>";
-		};
-		6D17A2242CCBEF1100C00512 /* OUDSTokensColorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6D17A2292CCBEF6700C00512 /* OUDSTokensColorUITests.swift */,
-			);
-			path = OUDSTokensColorUITests;
-			sourceTree = "<group>";
-		};
-		6D2465892CBEAB4C0023E359 /* OUDSTokensBorderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6D3E872B2CCBE0A300AEB105 /* OUDSTokenBorderUITests.swift */,
-			);
-			path = OUDSTokensBorderUITests;
-			sourceTree = "<group>";
-		};
-		6D8F9B392CBECBB80078A10E /* OUDSTokensOpacityUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6D17A21B2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift */,
-			);
-			path = OUDSTokensOpacityUITests;
-			sourceTree = "<group>";
-		};
-		6D8F9B722CBED90D0078A10E /* OUDSTokensElevationUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6D17A2192CCBE74C00C00512 /* OUDSTokensElevationUITests.swift */,
-			);
-			path = OUDSTokensElevationUITests;
-			sourceTree = "<group>";
-		};
-		6D8F9B9B2CBFB8830078A10E /* OUDSTokensDimensionUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6DED17E82CD1143500584BC9 /* OUDSTokensSizeUITests.swift */,
-				6DED17EA2CD114AD00584BC9 /* OUDSTokensSpaceUITests.swift */,
-			);
-			path = OUDSTokensDimensionUITests;
-			sourceTree = "<group>";
-		};
-		6D8F9BE42CBFC2F70078A10E /* OUDSTokensTypographyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6D17A2172CCBE50700C00512 /* OUDSTokensFontUITests.swift */,
-			);
-			name = OUDSTokensTypographyUITests;
-			path = OUDSTokensFontUITests;
 			sourceTree = "<group>";
 		};
 		6DFC20892CDE664400F2EC33 /* AccessibilityStatement */ = {
@@ -1051,6 +1073,8 @@
 			files = (
 				6D43136D2CEF400D004E6886 /* DesignToolboxCode.swift in Sources */,
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
+				51952A922D3FA2720068B807 /* OUDSComponentButtonUITests.swift in Sources */,
+				51952A7C2D3FA1510068B807 /* OUDSTokensBorderUITests.swift in Sources */,
 				6DED17EF2CD25B2200584BC9 /* SizeTokenElement.swift in Sources */,
 				6DED17EE2CD23E5400584BC9 /* CardIllustration.swift in Sources */,
 				6DED17ED2CD23D5200584BC9 /* DesignToolboxElementPage.swift in Sources */,
@@ -1060,21 +1084,21 @@
 				6DB260E02CD0F0520091F72E /* NameSpace+PaddingInline.swift in Sources */,
 				072141192D02F52A00B7B9C6 /* ButtonPage.swift in Sources */,
 				0721411B2D02F52A00B7B9C6 /* ButtonElement.swift in Sources */,
-				07C7F4AD2D391B440037E211 /* OUDSComponentButtonUITests.swift in Sources */,
 				6DB260E12CD0F0520091F72E /* NameSpace+PaddingInset.swift in Sources */,
 				51952A752D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				6DB260E22CD0F0520091F72E /* NameSpace+PaddingStack.swift in Sources */,
 				6DB260E32CD0F0520091F72E /* NameSpace+GapInline.swift in Sources */,
-				6DED17EB2CD114AD00584BC9 /* OUDSTokensSpaceUITests.swift in Sources */,
 				6DB260E42CD0F0520091F72E /* NameSpace+GapStack.swift in Sources */,
 				6DB260DD2CD0F01F0091F72E /* NamedSpace+Scaled.swift in Sources */,
 				6DB260DC2CD0F0000091F72E /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				6DB260DB2CD0EFD90091F72E /* NamedSize+IconWithTypography.swift in Sources */,
 				6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */,
+				51952A8C2D3FA22A0068B807 /* OUDSTokensFontUITests.swift in Sources */,
 				6D17A2352CCF8DC300C00512 /* NamedColor.swift in Sources */,
 				6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */,
 				6D17A22D2CCBF12B00C00512 /* NamedColor+Always.swift in Sources */,
 				07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */,
+				51952A7F2D3FA17E0068B807 /* OUDSTokensColorUITests.swift in Sources */,
 				07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */,
 				07CAE76B2CEE20B200D6C5D1 /* SpaceBasicTokenIllustrations.swift in Sources */,
 				6D17A22E2CCBF12B00C00512 /* NamedColor+Background.swift in Sources */,
@@ -1082,24 +1106,23 @@
 				6D17A2302CCBF12B00C00512 /* NamedColor+Chart.swift in Sources */,
 				6D17A2312CCBF12B00C00512 /* NamedColor+Content.swift in Sources */,
 				6D17A2332CCBF12B00C00512 /* NamedColor+Decorative.swift in Sources */,
+				51952A862D3FA1DB0068B807 /* OUDSTokensSpaceUITests.swift in Sources */,
+				51952A832D3FA1AC0068B807 /* OUDSTokensSizeUITests.swift in Sources */,
 				51952A712D3F9D720068B807 /* DesignToolboxTokenIllustration.swift in Sources */,
+				51952A892D3FA20D0068B807 /* OUDSTokensElevationUITests.swift in Sources */,
 				07F0AFD82CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
 				6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */,
 				07CAE7682CEE20A600D6C5D1 /* SpaceTokenCommonIllustration.swift in Sources */,
-				6D17A21A2CCBE74C00C00512 /* OUDSTokensElevationUITests.swift in Sources */,
-				6DED17E92CD1143500584BC9 /* OUDSTokensSizeUITests.swift in Sources */,
-				6D17A22A2CCBEF6700C00512 /* OUDSTokensColorUITests.swift in Sources */,
 				6DE5F47D2CC696120008E774 /* ThemeSelection.swift in Sources */,
 				6D8F9C542CC160660078A10E /* SpaceTokenPage.swift in Sources */,
 				07D7E1982D035566006472EB /* ButtonConfiguration.swift in Sources */,
 				6D8F9C532CC160580078A10E /* SizeTokenPage.swift in Sources */,
 				6D8F9C522CC15F960078A10E /* ElevationTokenPage.swift in Sources */,
 				6D8F9C502CC14EBF0078A10E /* OpacityTokenPage.swift in Sources */,
-				6D3E872C2CCBE0A300AEB105 /* OUDSTokenBorderUITests.swift in Sources */,
 				6D8F9C4F2CBFDC8B0078A10E /* EmptyState.swift in Sources */,
-				6D17A21C2CCBE7E200C00512 /* OUDSTokensOpacityUITests.swift in Sources */,
 				6D24658E2CBEAC750023E359 /* BorderTokenPage.swift in Sources */,
 				0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */,
+				51952A8F2D3FA24C0068B807 /* OUDSTokensOpacityUITests.swift in Sources */,
 				07F0AFDF2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
