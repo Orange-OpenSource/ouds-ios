@@ -14,7 +14,7 @@
 import OUDS
 import SwiftUI
 
-struct ShowcaseConfiguration<Configuration>: View where Configuration: View {
+struct DesignToolboxConfiguration<Configuration>: View where Configuration: View {
 
     // MARK: Environment properties
 

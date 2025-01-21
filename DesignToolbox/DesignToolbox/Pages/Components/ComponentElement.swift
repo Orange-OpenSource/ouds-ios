@@ -13,4 +13,4 @@
 
 import Foundation
 
-typealias ComponentElement = ShowcaseElement
+typealias ComponentElement = DesignToolboxElement

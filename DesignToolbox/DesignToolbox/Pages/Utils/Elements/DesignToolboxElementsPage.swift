@@ -39,7 +39,7 @@ struct DesignToolboxElementsPage: View {
                         } label: {
                             Card(
                                 title: Text(LocalizedStringKey(element.name)),
-                                icon: Image(decorative: element.imageName))
+                                icon: element.image)
                             .accessibilityFocused($requestFocus, equals: .some(id: element.id))
                             .oudsRequestAccessibleFocus(_requestFocus, for: .some(id: elements[0].id))
                         }
