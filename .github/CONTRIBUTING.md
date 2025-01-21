@@ -165,7 +165,7 @@ fix: title of your commit (#43)
 
 Some details about the fix you propose
 
-Tested-by: Tester firstname and lastname <tester emai>
+Tested-by: Tester firstname and lastname <tester email>
 Co-authored-by: First author firstname and lastname <first author email>
 Co-authored-by: Second author firstname and lastname <second author email>
 Signed-off-by: First author firstname and lastname <first author email>
@@ -179,7 +179,7 @@ fix: title of your commit (#43)
 
 Some details about the fix you propose
 
-Reviewed-by: Reviewer firstname and lastname <reviewer emai>
+Reviewed-by: Reviewer firstname and lastname <reviewer email>
 Signed-off-by: Author firstname and lastname <first author email>
 ```
 
