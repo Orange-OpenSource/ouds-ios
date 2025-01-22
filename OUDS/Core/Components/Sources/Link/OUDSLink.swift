@@ -26,7 +26,7 @@ public struct OUDSLink: View {
 
     // MARK: Stored Properties
 
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
+    @Environment(\.theme) private var theme
 
     private let layout: Layout
     private let text: String
@@ -46,7 +46,7 @@ public struct OUDSLink: View {
     public enum Layout {
         case arrow(OUDSLink.Arrow)
         case textOnly
-        case textAndIcon(Image)
+        case iconAndText(Image)
     }
 
     /// Create a button with text and icon.
@@ -58,7 +58,7 @@ public struct OUDSLink: View {
     ///   - action: The action to perform when the user triggers the button
     public init(text: String, icon: Image? = nil, size: Size = .medium, action: @escaping () -> Void) {
         if let icon {
-            layout = .textAndIcon(icon)
+            layout = .iconAndText(icon)
         } else {
             layout = .textOnly
         }
@@ -88,50 +88,50 @@ public struct OUDSLink: View {
     // MARK: Body
 
     public var body: some View {
-        Button( action: action, label: label)
-            .buttonStyle(OUDSLinktyle(layout: layout, size: size))
-    }
-
-    @ViewBuilder
-    private func label() -> some View {
-        switch layout {
-        case .arrow:
-            Label {
-                Text(text)
-            } icon: {
-                Image(decorative: "ic_form_chevron_left", bundle: Bundle.oudsComponents)
-            }
-        case .textOnly:
-            Label {
-                Text(text)
-            } icon: {
-                EmptyView()
-            }
-        case .textAndIcon(let icon):
-            Label {
-                Text(text)
-            } icon: {
-                icon
+        Button(action: action) {
+            switch layout {
+            case .arrow:
+                Label {
+                    Text(text)
+                } icon: {
+                    Image(decorative: "ic_form_chevron_left", bundle: Bundle.oudsComponents)
+                        .renderingMode(.template)
+                }
+            case .textOnly:
+                Label {
+                    Text(text)
+                } icon: {
+                    EmptyView()
+                }
+            case .iconAndText(let icon):
+                Label {
+                    Text(text)
+                } icon: {
+                    icon.renderingMode(.template)
+                }
             }
         }
+        .buttonStyle(OUDSLinkStyle(layout: layout, size: size))
+        .padding(.horizontal, theme.link.linkSpacePaddingInline)
+        .padding(.vertical, theme.link.linkSpacePaddingBlock)
+        .frame(minWidth: minWidth, minHeight: minHeight)
     }
-}
 
-// MARK: - Link Text With Arrow
+    private var minWidth: Double {
+        switch size {
+        case .small:
+            theme.link.linkSizeMinWidthSmall
+        case .medium:
+            theme.link.linkSizeMinWidthMedium
+        }
+    }
 
-private struct LinkTextWithArrow: View {
-
-    @Environment(\.theme) private var theme
-
-    let text: String
-
-    // TODO: Add right design according to state
-    var body: some View {
-        Text(LocalizedStringKey(text))
-            .typeLabelStrongLarge(theme)
-            .multilineTextAlignment(.center)
-            .padding(.vertical, theme.button.buttonSpacePaddingBlock)
-            .padding(.horizontal, theme.button.buttonSpacePaddingInlineIconNone)
-            .frame(minWidth: theme.button.buttonSizeMinWidth, minHeight: theme.button.buttonSizeMinHeight, alignment: .center)
+    private var minHeight: Double {
+        switch size {
+        case .small:
+            theme.link.linkSizeMinHeightSmall
+        case .medium:
+            theme.link.linkSizeMinHeightMedium
+        }
     }
 }

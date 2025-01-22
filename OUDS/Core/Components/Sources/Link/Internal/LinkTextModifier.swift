@@ -14,22 +14,21 @@
 import SwiftUI
 
 struct LinkTextModifier: ViewModifier {
-    let state: InternalLinkState
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    let size: OUDSLink.Size
 
     func body(content: Content) -> some View {
-        if #available(iOS 16.0, *) {
-            content.underline(underlineActive, pattern: .solid)
-        } else {
-            content
+        Group {
+            switch size {
+            case .small:
+                content.typeLabelStrongMedium(theme)
+            case .medium:
+                content.typeLabelStrongLarge(theme)
+            }
         }
-    }
-
-    var underlineActive: Bool {
-        switch state {
-        case .enabled, .disabled:
-            return false
-        case .hover, .pressed:
-            return true
-        }
+        .multilineTextAlignment(.center)
     }
 }

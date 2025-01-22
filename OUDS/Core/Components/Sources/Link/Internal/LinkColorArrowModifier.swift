@@ -16,7 +16,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-struct LinkArrowModifier: ViewModifier {
+struct LinkColorArrowModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -25,24 +25,12 @@ struct LinkArrowModifier: ViewModifier {
     // MARK: Stored Properties
 
     let state: InternalLinkState
-    let arrow: OUDSLink.Arrow
 
     func body(content: Content) -> some View {
-        content
-            .rotationEffect(rotationAngle)
-            .foregroundStyle(appliedColor)
+        content.foregroundStyle(appliedColor)
     }
 
     // MARK: Private helpers
-
-    private var rotationAngle: Angle {
-        switch arrow {
-        case .back:
-            return Angle.degrees(0)
-        case .next:
-            return Angle.degrees(180)
-        }
-    }
 
     private var appliedColor: Color {
         switch state {

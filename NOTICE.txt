@@ -8,10 +8,13 @@ in whole or part of, in any medium, except as required for reasonable and custom
 and reproducing the content of the NOTICE and DOCUMENTATION files.
 Any use or displaying shall constitute an infringement under intellectual property laws of France and international conventions.
 
+# Docs
 ./docs_release/docs_assets/apple-touch-icon.png
 ./docs_release/docs_assets/favicon-16x16.png
 ./docs_release/docs_assets/favicon-32x32.png
 ./docs_release/docs_assets/favicon.ico
+
+# DesignToolbox
 
 ./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/favicon.ico
 ./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/orange-logo.svg
@@ -50,5 +53,8 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_vector.imageset/ic_vector.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
+
+# OUDSComponents
+./OUDS/Core/Components/Sources/Resources/Media.xcassets/ic_form_chevron_left.imageset/ic_form_chevron_leftt.svg
 
 End of the parts list under Orange SA Copyright
