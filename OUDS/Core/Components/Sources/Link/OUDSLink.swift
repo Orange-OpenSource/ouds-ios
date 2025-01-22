@@ -34,16 +34,16 @@ public struct OUDSLink: View {
     private let action: () -> Void
 
     /// Represents the size of an OUDS link.
-    enum Size {
+    public enum Size {
         case small, medium
     }
 
     /// Represents the arrow of an OUDS link.
-    enum Arrow {
+    public enum Arrow {
         case back, next
     }
 
-    enum Layout {
+    public enum Layout {
         case arrow(OUDSLink.Arrow)
         case textOnly
         case textAndIcon(Image)
@@ -56,7 +56,7 @@ public struct OUDSLink: View {
     ///   - icon: Icon displayed in the link
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the button
-    init(text: String, icon: Image?, size: Size = .medium, action: @escaping () -> Void) {
+    public init(text: String, icon: Image? = nil, size: Size = .medium, action: @escaping () -> Void) {
         if let icon {
             layout = .textAndIcon(icon)
         } else {
@@ -78,7 +78,7 @@ public struct OUDSLink: View {
     ///   When `OudsLink.Arrow.Next`, the arrow is displayed after the text.
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the button
-    init(text: String, arrow: Arrow, size: Size = .medium, action: @escaping () -> Void) {
+    public init(text: String, arrow: Arrow, size: Size = .medium, action: @escaping () -> Void) {
         layout = .arrow(arrow)
         self.text = text
         self.size = size

@@ -17,9 +17,9 @@ import SwiftUI
 
 // MARK: Button page
 
-struct ButtonPage: View {
+struct LinkPage: View {
 
-    private let configuration = ButtonConfigurationModel()
+    private let configuration = LinkConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(
@@ -31,35 +31,34 @@ struct ButtonPage: View {
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ButtonConfigurationModel {
-            ButtonIllustration(model: model)
+        if let model = configuration as? LinkConfigurationModel {
+            LinkIllustration(model: model)
         }
     }
 
     @ViewBuilder
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ButtonConfigurationModel {
-            ButtonConfiguration(model: model)
+        if let model = configuration as? LinkConfigurationModel {
+            LinkConfiguration(model: model)
         }
     }
 }
 
-// MARK: Button Illustration
+// MARK: Link Illustration
 
-struct ButtonIllustration: View {
+struct LinkIllustration: View {
 
     @Environment(\.colorScheme) private var colorScheme
-    @ObservedObject var model: ButtonConfigurationModel
+    @StateObject var model: LinkConfigurationModel
 
     var body: some View {
         VStack(alignment: .center) {
             if model.onColoredSurface {
-                ButtonDemo(model: model)
+                LinkDemo(model: model)
             } else {
-                ButtonDemo(model: model)
-                // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-                ButtonDemo(model: model)
+                LinkDemo(model: model)
                     .colorScheme(colorScheme == .dark ? .light : .dark)
+                LinkDemo(model: model)
             }
         }
     }
@@ -67,28 +66,24 @@ struct ButtonIllustration: View {
 
 // MARK: - Button Demo
 
-private struct ButtonDemo: View {
+private struct LinkDemo: View {
 
     @Environment(\.theme) private var theme
-
-    @StateObject var model: ButtonConfigurationModel
+    @StateObject var model: LinkConfigurationModel
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
 
-            // It is not allowed to place a Negative bnutton on colored surface
-            if model.hierarchy == .negative, model.onColoredSurface {
-                Text("app_components_button_negative_hierary_notAllowed_text")
-            } else {
-                switch model.layout {
-                case .iconOnly:
-                    OUDSButton(icon: Image(decorative: "ic_heart"), hierarchy: model.hierarchy, style: model.style) {}
-                case .textOnly:
-                    OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
-                case .iconAndText:
-                    OUDSButton(icon: Image(decorative: "ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
-                }
+            switch model.layout {
+            case .textOnly:
+                OUDSLink(text: "Link", size: model.size) {}
+            case .iconAndText:
+                OUDSLink(text: "Link", icon: Image(decorative: "ic_heart"), size: model.size) {}
+            case .arrowBack:
+                OUDSLink(text: "Link", arrow: .back, size: model.size) {}
+            case .arrowNext:
+                OUDSLink(text: "Link", arrow: .next, size: model.size) {}
             }
 
             Spacer()

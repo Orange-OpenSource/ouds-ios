@@ -39,17 +39,25 @@
 
 "app_tokens_common_viewCodeExample_label" = "View token code example";
 
+// MARK: Token: Dimension Border
+
 "app_tokens_border_label" = "Border";
 "app_tokens_border_width_label" = "Width";
 "app_tokens_border_radius_label" = "Radius";
 "app_tokens_border_style_label" = "Style";
 "app_tokens_border_description_text" = "Borders are used for the stroke colours on components and also for the colours of divider lines for components like tables.";
 
+// MARK: Token: Dimension Color
+
 "app_tokens_color_label" = "Color";
 "app_tokens_color_description_text" = "Colour reinforces our brand identity and ensures consistency across all product experiences. The semantic tokens described are the onse you should use when building a mobile app.";
 
+// MARK: Token: Dimension
+
 "app_tokens_dimension_label" = "Dimension";
 "app_tokens_dimension_description_text" = "Dimension provides standard sizing and spacing to ensure visual consistency across the UI.";
+
+// MARK: Token: Dimension space
 
 "app_tokens_dimension_space_label" = "Space";
 "app_tokens_dimension_space_description_text" = "Space refers to the measurements used to define the spacing between UI elements.";
@@ -65,19 +73,29 @@
 "app_tokens_dimension_space_gapStack_label" = "Gap stack";
 "app_tokens_dimension_space_gapStackWithIcon_label" = "Gap stack with icon";
 
+// MARK: Token: Dimension size
+
 "app_tokens_dimension_size_label" = "Size";
 "app_tokens_dimension_size_description_text" = "Size refers to the specific measurements used to define the dimensions of UI elements within the design system.";
 "app_tokens_dimension_size_iconWith_label" = "Icon with";
 "app_tokens_dimension_size_iconDecorative_label" = "Icon decorative";
 
+// MARK: Token: Elevation
+
 "app_tokens_elevation_label" = "Elevation";
 "app_tokens_elevation_description_text" = "Shadows are used to give the impression of distance or elevation between surfaces, which adds depth to our designs.";
+
+// MARK: Token: Grid
 
 "app_tokens_grid_label" = "Grid";
 "app_tokens_grid_description_text" = "Grids are used to position content and create consistent page layouts";
 
+// MARK: Token: Opacity
+
 "app_tokens_opacity_label" = "Opacity";
 "app_tokens_opacity_description_text" = "Opacity can help distinguish foreground elements from background elements, making content easier to read and important actions more noticeable.";
+
+// MARK: Token: Typography
 
 "app_tokens_typography_label" = "Font";
 "app_tokens_typography_description_text" = "Font is our system of fonts and text styles. They enhance communication and reinforce the brand style.";
@@ -85,19 +103,28 @@
 // MARK: - Component Screen
 
 "app_components_common_viewCodeExample_label" = "View component code example";
-
 "app_component_emptyContent_text" = "No content";
 "app_component_emptyContent_description_text" = "This content is under construction and will be available very soon";
 
+"app_components_common_layout_label" = "Layout";
+"app_components_common_textOnlyLayout_label" = "Text only";
+"app_components_common_iconAndTextLayout_label" = "Icon + text";
+"app_components_common_style_label" = "Style";
+"app_components_common_onColoredBackground_label" = "On colored background";
 
-// MARK: Components: button
+// MARK: Components: Button
+
 "app_components_button_label" = "Button";
 "app_components_button_description_text" = "Buttons allow users to make choices or perform an action. They have multiple styles for various needs.";
 "app_components_button_negative_hierary_notAllowed_text" = "Not allowed on colored surface";
 "app_components_button_hierarchy_label" = "Hierarchy";
-"app_components_button_style_label" = "Style";
-"app_components_button_layout_label" = "Layout";
-"app_components_button_textOnlyLayout_label" = "Text only";
-"app_components_button_iconAndTextLayout_label" = "Icon + text";
 "app_components_button_iconOnlyLayout_label" = "Icon only";
 "app_components_button_icon_a11y" = "Icon";
+
+// MARK: Components: Link
+
+"app_components_link_label" = "Link";
+"app_components_link_description_text" = "Links direct users to other resources or sections, whether internal (within the same application) or external (to a website or document).";
+"app_components_link_arrowBack_label" = "Arrow back";
+"app_components_link_arrowNext_label" = "Arrow next";
+"app_components_link_size_label" = "Size";

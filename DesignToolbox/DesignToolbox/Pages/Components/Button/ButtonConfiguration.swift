@@ -25,6 +25,10 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var onColoredSurface: Bool = true {
+        didSet { updateCode() }
+    }
+
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
     }
@@ -92,9 +96,9 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
     var description: String {
         switch self {
         case .textOnly:
-            "app_components_button_textOnlyLayout_label"
+            "app_components_common_textOnlyLayout_label"
         case .iconAndText:
-            "app_components_button_iconAndTextLayout_label"
+            "app_components_common_iconAndTextLayout_label"
         case .iconOnly:
             "app_components_button_iconOnlyLayout_label"
         }
@@ -159,6 +163,10 @@ struct ButtonConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(model.style != .`default`)
 
+            Toggle("app_components_common_onColoredBackground_label", isOn: $model.onColoredSurface)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+
             VStack(alignment: .leading) {
                 Text(LocalizedStringKey("app_components_button_hierarchy_label"))
                     .typeHeadingMedium(theme)
@@ -172,10 +180,10 @@ struct ButtonConfiguration: View {
             }
 
             VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_style_label"))
+                Text(LocalizedStringKey("app_components_common_style_label"))
                     .typeHeadingMedium(theme)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_style_label", selection: $model.style) {
+                Picker("app_components_common_style_label", selection: $model.style) {
                     ForEach(OUDSButton.Style.allCases, id: \.id) { style in
                         Text(LocalizedStringKey(style.description)).tag(style)
                     }
@@ -184,10 +192,10 @@ struct ButtonConfiguration: View {
             }
 
             VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_layout_label"))
+                Text(LocalizedStringKey("app_components_common_layout_label"))
                     .typeHeadingMedium(theme)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_layout_label", selection: $model.layout) {
+                Picker("app_components_common_layout_label", selection: $model.layout) {
                     ForEach(ButtonLayout.allCases, id: \.id) { layout in
                         Text(LocalizedStringKey(layout.description)).tag(layout)
                     }
