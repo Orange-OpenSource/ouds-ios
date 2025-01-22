@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "ic_form_chevron_leftt.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
