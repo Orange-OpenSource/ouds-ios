@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] List item component tokens ([#414](https://github.com/Orange-OpenSource/ouds-ios/issues/414))
 - [Library] Switch component tokens ([#412](https://github.com/Orange-OpenSource/ouds-ios/issues/412))
 - [Library] Color semantic tokens `colorRepositoryOpacityBlack{High,Soft}*`, `colorRepositoryOpacityWhiteMedium*`, `colorRepositoryPositiveHighDark*` (token library v0.3.0)
+- [Library] Checkbox component ([#264](https://github.com/Orange-OpenSource/ouds-ios/issues/264))
 - [Library] Button component ([#159](https://github.com/Orange-OpenSource/ouds-ios/issues/159))
 - [Library] Apply letter spacing in typography ([#347](https://github.com/Orange-OpenSource/ouds-ios/issues/347))
 - [Library] Apply line height in typography ([#348](https://github.com/Orange-OpenSource/ouds-ios/issues/348))
