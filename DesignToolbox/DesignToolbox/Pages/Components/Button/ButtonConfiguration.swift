@@ -62,25 +62,36 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         }
     }
 
+    private var coloredSurfaceCodeModifier: String {
+        if onColoredSurface {
+            return ".oudsColoredSurface(color: Color.orange)"
+        } else {
+            return ""
+        }
+    }
+
     override func updateCode() {
         switch layout {
         case .textOnly:
             code =
             """
           OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased())) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         case .iconOnly:
             code =
             """
           OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         case .iconAndText:
             code =
             """
           OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         }
     }

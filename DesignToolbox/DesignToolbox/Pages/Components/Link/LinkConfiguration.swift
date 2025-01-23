@@ -50,6 +50,14 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
+    private var coloredSurfaceCodeModifier: String {
+        if onColoredSurface {
+            return ".oudsColoredSurface(color: Color.orange)"
+        } else {
+            return ""
+        }
+    }
+
     private var disableCode: String {
         ".disable(\(enabled ? "false" : "true"))"
     }
@@ -60,25 +68,29 @@ final class LinkConfigurationModel: ComponentConfiguration {
             code =
             """
           OUDSLink(text: \"Link\", size: \(size.description.lowercased())) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         case .iconAndText:
             code =
             """
           OUDSLink(text: \"Link\", icon: Image(\"ic_heart\"), size: \(size.description.lowercased())) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         case .arrowNext:
             code =
             """
           OUDSLink(text: \"Link\", arrow: .next, size: \(size.description.lowercased())) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         case .arrowBack:
             code =
             """
           OUDSLink(text: \"Link\", arrow: .back, size: \(size.description.lowercased())) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         }
     }

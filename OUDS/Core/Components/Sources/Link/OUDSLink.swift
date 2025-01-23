@@ -96,6 +96,7 @@ public struct OUDSLink: View {
                 } icon: {
                     Image(decorative: "ic_form_chevron_left", bundle: Bundle.oudsComponents)
                         .renderingMode(.template)
+                        .resizable()
                 }
             case .textOnly:
                 Label {
@@ -107,7 +108,9 @@ public struct OUDSLink: View {
                 Label {
                     Text(text)
                 } icon: {
-                    icon.renderingMode(.template)
+                    icon
+                        .renderingMode(.template)
+                        .resizable()
                 }
             }
         }

@@ -19,6 +19,8 @@ struct LinkTextModifier: ViewModifier {
     @Environment(\.colorScheme) private var colorScheme
 
     let size: OUDSLink.Size
+    let layout: OUDSLink.Layout
+    let state: InternalLinkState
 
     func body(content: Content) -> some View {
         Group {
@@ -30,5 +32,61 @@ struct LinkTextModifier: ViewModifier {
             }
         }
         .multilineTextAlignment(.center)
+        .modifier(LinkUnderlineModifier(layout: layout, state: state))
+    }
+}
+
+struct LinkUnderlineModifier: ViewModifier {
+
+    let layout: OUDSLink.Layout
+    let state: InternalLinkState
+
+    @State private var textWidth: CGFloat = 0
+
+    func body(content: Content) -> some View {
+        if #available(iOS 16.0, *) {
+            content.underline(underlineActive, pattern: .solid)
+        } else {
+            if underlineActive {
+                VStack(spacing: 0) {
+                    content
+                        .readSize { size in
+                            textWidth = size.width
+                        }
+                    Rectangle().frame(width: textWidth, height: 1)
+                }
+            } else {
+                content
+            }
+        }
+    }
+
+    private var underlineActive: Bool {
+        switch layout {
+        case .arrow:
+            return state == .hover || state == .pressed
+        case .textOnly:
+            return true
+        case .iconAndText:
+            return state == .hover || state == .pressed
+        }
+    }
+}
+
+private struct SizePreferenceKey: @preconcurrency PreferenceKey {
+    @MainActor static var defaultValue: CGSize = .zero
+
+    static func reduce(value _: inout CGSize, nextValue _: () -> CGSize) {}
+}
+
+extension View {
+    fileprivate func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
+        background(
+            GeometryReader { geometryProxy in
+                Color.clear
+                    .preference(key: SizePreferenceKey.self, value: geometryProxy.size)
+            }
+        )
+        .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
     }
 }

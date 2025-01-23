@@ -46,13 +46,12 @@ struct OUDSLinkStyle: ButtonStyle {
                     .labelStyle(LinkArrayLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, arrow: arrow))
             case .textOnly:
                 configuration.label
-                    .modifier(LinkColorContentModifier(state: internalState(isPressed: configuration.isPressed)))
+                    .labelStyle(LinkIconAndTextLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, layout: layout))
             case .iconAndText:
                 configuration.label
-                    .labelStyle(LinkIconAndTextLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size))
+                    .labelStyle(LinkIconAndTextLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, layout: layout))
             }
         }
-        .modifier(LinkTextModifier(size: size))
         .onHover { isHover in
             self.isHover = isHover
         }
@@ -92,14 +91,18 @@ private struct LinkArrayLabelStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
         HStack(spacing: spacing) {
             if arrow == .back {
-                configuration.icon.modifier(LinkColorArrowModifier(state: state))
+                configuration.icon
+                    .modifier(LinkSizeIconModifier(size: size))
+                    .modifier(LinkColorArrowModifier(state: state))
             }
 
             configuration.title
+                .modifier(LinkTextModifier(size: size, layout: .arrow(arrow), state: state))
                 .modifier(LinkColorContentModifier(state: state))
 
             if arrow == .next {
                 configuration.icon
+                    .modifier(LinkSizeIconModifier(size: size))
                     .modifier(LinkColorArrowModifier(state: state))
                     .rotationEffect(.degrees(180))
             }
@@ -121,13 +124,14 @@ private struct LinkIconAndTextLabelStyle: LabelStyle {
 
     let state: InternalLinkState
     let size: OUDSLink.Size
+    let layout: OUDSLink.Layout
 
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(spacing: spacing) {
-            configuration.icon
-            configuration.title
+            configuration.icon.modifier(LinkSizeIconModifier(size: size))
+            configuration.title.modifier(LinkTextModifier(size: size, layout: layout, state: state))
         }
         .modifier(LinkColorContentModifier(state: state))
     }
