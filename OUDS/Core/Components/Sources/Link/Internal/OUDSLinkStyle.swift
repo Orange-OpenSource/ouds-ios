@@ -23,7 +23,11 @@ enum InternalLinkState {
 
 struct OUDSLinkStyle: ButtonStyle {
 
+    // MARK: stored properties
+
+    @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
+
     @State private var isHover: Bool
     let layout: OUDSLink.Layout
     let size: OUDSLink.Size
@@ -55,6 +59,9 @@ struct OUDSLinkStyle: ButtonStyle {
         .onHover { isHover in
             self.isHover = isHover
         }
+        .padding(.horizontal, theme.link.linkSpacePaddingInline)
+        .padding(.vertical, theme.link.linkSpacePaddingBlock)
+        .frame(minWidth: minWidth, minHeight: minHeight)
     }
 
     // MARK: Private Helpers
@@ -73,6 +80,24 @@ struct OUDSLinkStyle: ButtonStyle {
         }
 
         return .enabled
+    }
+
+    private var minWidth: Double {
+        switch size {
+        case .small:
+            theme.link.linkSizeMinWidthSmall
+        case .medium:
+            theme.link.linkSizeMinWidthMedium
+        }
+    }
+
+    private var minHeight: Double {
+        switch size {
+        case .small:
+            theme.link.linkSizeMinHeightSmall
+        case .medium:
+            theme.link.linkSizeMinHeightMedium
+        }
     }
 }
 
