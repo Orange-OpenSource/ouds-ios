@@ -24,6 +24,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Update colors and some refactoring ([#354](https://github.com/Orange-OpenSource/ouds-ios/issues/354))
 - [Library] Theme initialization flow ([#393](https://github.com/Orange-OpenSource/ouds-ios/issues/393))
 
+### Fixed
+
+- [DesignToolbox] Add missing illustrations for Button screen ([#403](https://github.com/Orange-OpenSource/ouds-ios/issues/403))
+
 ## [0.9.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.8.0...0.9.0) - 2025-01-09
 
 ### Added
