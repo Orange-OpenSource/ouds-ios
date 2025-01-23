@@ -144,7 +144,7 @@ final class OUDSLinkUITests: XCTestCase {
         let name = "\(coloredSurfacePatern)\(layout.debugDescription)_\(size.description)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-        assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, record: true, testName: testName)
     }
 }
 
@@ -205,8 +205,6 @@ extension LinkLayout: CustomDebugStringConvertible {
             "ArrowNext"
         }
     }
-    
-
 }
 
 // swiftlint:enable required_deinit
