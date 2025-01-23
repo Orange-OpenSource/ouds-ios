@@ -38,10 +38,9 @@ struct LinkTextModifier: ViewModifier {
 
 struct LinkUnderlineModifier: ViewModifier {
 
+    @State private var textWidth: CGFloat = 0
     let layout: OUDSLink.Layout
     let state: InternalLinkState
-
-    @State private var textWidth: CGFloat = 0
 
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
@@ -79,6 +78,7 @@ private struct SizePreferenceKey: @preconcurrency PreferenceKey {
     static func reduce(value _: inout CGSize, nextValue _: () -> CGSize) {}
 }
 
+// swiftlint:disable strict_fileprivate
 extension View {
     fileprivate func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
         background(
@@ -90,3 +90,4 @@ extension View {
         .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
     }
 }
+// swiftlint:enable strict_fileprivate
