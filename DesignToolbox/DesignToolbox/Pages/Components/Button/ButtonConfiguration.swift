@@ -63,11 +63,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     }
 
     private var coloredSurfaceCodeModifier: String {
-        if onColoredSurface {
-            return ".oudsColoredSurface(color: Color.orange)"
-        } else {
-            return ""
-        }
+        onColoredSurface ? ".oudsColoredSurface(color: Color.orange)" : ""
     }
 
     override func updateCode() {

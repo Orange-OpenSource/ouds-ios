@@ -40,10 +40,10 @@ final class LinkConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        self.onColoredSurface = false
-        self.enabled = true
-        self.layout = .textOnly
-        self.size = .medium
+        onColoredSurface = false
+        enabled = true
+        layout = .textOnly
+        size = .medium
     }
 
     deinit { }
@@ -51,11 +51,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     private var coloredSurfaceCodeModifier: String {
-        if onColoredSurface {
-            return ".oudsColoredSurface(color: Color.orange)"
-        } else {
-            return ""
-        }
+        onColoredSurface ? ".oudsColoredSurface(color: Color.orange)" : ""
     }
 
     private var disableCode: String {
@@ -96,7 +92,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - Button Layout
+// MARK: - Link Layout
 
 enum LinkLayout: CaseIterable, CustomStringConvertible {
     case textOnly
@@ -120,7 +116,7 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
     var id: String { description }
 }
 
-// MARK: Button style extension
+// MARK: Link size extension
 
 extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
     nonisolated(unsafe) public static let allCases: [OUDSLink.Size] = [.medium, .small]

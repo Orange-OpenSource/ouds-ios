@@ -77,7 +77,7 @@ private struct ButtonDemo: View {
         HStack(alignment: .center) {
             Spacer()
 
-            // It is not allowed to place a Negative bnutton on colored surface
+            // It is not allowed to place a Negative button on colored surface
             if model.hierarchy == .negative, model.onColoredSurface {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
@@ -95,6 +95,6 @@ private struct ButtonDemo: View {
         }
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
+        .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
     }
 }

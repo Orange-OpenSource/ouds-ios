@@ -90,6 +90,6 @@ private struct LinkDemo: View {
         }
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
+        .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
     }
 }
