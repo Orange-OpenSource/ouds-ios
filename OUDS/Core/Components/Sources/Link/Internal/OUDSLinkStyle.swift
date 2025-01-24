@@ -47,7 +47,7 @@ struct OUDSLinkStyle: ButtonStyle {
             switch layout {
             case .arrow(let arrow):
                 configuration.label
-                    .labelStyle(LinkArrayLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, arrow: arrow))
+                    .labelStyle(LinkArrowLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, arrow: arrow))
             case .textOnly:
                 configuration.label
                     .labelStyle(LinkIconAndTextLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, layout: layout))
@@ -83,25 +83,15 @@ struct OUDSLinkStyle: ButtonStyle {
     }
 
     private var minWidth: Double {
-        switch size {
-        case .small:
-            theme.link.linkSizeMinWidthSmall
-        case .medium:
-            theme.link.linkSizeMinWidthMedium
-        }
+        size == .small ? theme.link.linkSizeMinWidthSmall : theme.link.linkSizeMinWidthMedium
     }
 
     private var minHeight: Double {
-        switch size {
-        case .small:
-            theme.link.linkSizeMinHeightSmall
-        case .medium:
-            theme.link.linkSizeMinHeightMedium
-        }
+        size == .small ? theme.link.linkSizeMinHeightSmall : theme.link.linkSizeMinHeightMedium
     }
 }
 
-private struct LinkArrayLabelStyle: LabelStyle {
+private struct LinkArrowLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -114,7 +104,7 @@ private struct LinkArrayLabelStyle: LabelStyle {
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        HStack(spacing: spacing) {
+        HStack(alignment: alignment, spacing: spacing) {
             if arrow == .back {
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
@@ -138,6 +128,10 @@ private struct LinkArrayLabelStyle: LabelStyle {
 
     private var spacing: Double {
         size == .small ? theme.link.linkSpaceColumnGapArrowSmall : theme.link.linkSpaceColumnGapArrowMedium
+    }
+
+    private var alignment: VerticalAlignment {
+        arrow == .back ? .center : .bottom
     }
 }
 

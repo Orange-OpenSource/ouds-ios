@@ -54,7 +54,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
 
-# OUDSComponents
+# OUDS/OUDSComponents
 ./OUDS/Core/Components/Sources/Resources/Media.xcassets/ic_form_chevron_left.imageset/ic_form_chevron_leftt.svg
 
 End of the parts list under Orange SA Copyright

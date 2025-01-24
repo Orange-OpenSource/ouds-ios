@@ -29,6 +29,8 @@ final class LinkConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var longText: Bool
+
     @Published var layout: LinkLayout {
         didSet { updateCode() }
     }
@@ -42,6 +44,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     override init() {
         onColoredSurface = false
         enabled = true
+        longText = false
         layout = .textOnly
         size = .medium
     }
@@ -149,6 +152,10 @@ struct LinkConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
             Toggle("app_components_common_onColoredBackground_label", isOn: $model.onColoredSurface)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+
+            Toggle("app_components_common_longText_label", isOn: $model.longText)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 

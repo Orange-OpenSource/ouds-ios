@@ -116,7 +116,7 @@ public struct OUDSLink: View {
             switch layout {
             case .arrow:
                 Label {
-                    Text(text)
+                    Text(LocalizedStringKey(text))
                 } icon: {
                     Image(decorative: "ic_form_chevron_left", bundle: Bundle.oudsComponents)
                         .renderingMode(.template)
@@ -124,13 +124,13 @@ public struct OUDSLink: View {
                 }
             case .textOnly:
                 Label {
-                    Text(text)
+                    Text(LocalizedStringKey(text))
                 } icon: {
                     EmptyView()
                 }
             case .iconAndText(let icon):
                 Label {
-                    Text(text)
+                    Text(LocalizedStringKey(text))
                 } icon: {
                     icon
                         .renderingMode(.template)

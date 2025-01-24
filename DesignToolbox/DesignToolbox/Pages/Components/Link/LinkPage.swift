@@ -77,13 +77,13 @@ private struct LinkDemo: View {
 
             switch model.layout {
             case .textOnly:
-                OUDSLink(text: "Link", size: model.size) {}
+                OUDSLink(text: text, size: model.size) {}
             case .iconAndText:
-                OUDSLink(text: "Link", icon: Image(decorative: "ic_heart"), size: model.size) {}
+                OUDSLink(text: text, icon: Image(decorative: "ic_heart"), size: model.size) {}
             case .arrowBack:
-                OUDSLink(text: "Link", arrow: .back, size: model.size) {}
+                OUDSLink(text: text, arrow: .back, size: model.size) {}
             case .arrowNext:
-                OUDSLink(text: "Link", arrow: .next, size: model.size) {}
+                OUDSLink(text: text, arrow: .next, size: model.size) {}
             }
 
             Spacer()
@@ -91,5 +91,9 @@ private struct LinkDemo: View {
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
+    }
+
+    var text: String {
+        model.longText ? "app_components_link_longText_label" : "app_components_link_label"
     }
 }

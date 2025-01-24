@@ -31,7 +31,7 @@ struct LinkTextModifier: ViewModifier {
                 content.typeLabelStrongLarge(theme)
             }
         }
-        .multilineTextAlignment(.center)
+        .multilineTextAlignment(.leading)
         .modifier(LinkUnderlineModifier(layout: layout, state: state))
     }
 }

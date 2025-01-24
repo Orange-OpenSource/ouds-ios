@@ -21,13 +21,15 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var enabled: Bool = true {
+    @Published var enabled: Bool {
         didSet { updateCode() }
     }
 
-    @Published var onColoredSurface: Bool = true {
+    @Published var onColoredSurface: Bool {
         didSet { updateCode() }
     }
+
+    @Published var longText: Bool
 
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
@@ -44,10 +46,12 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        self.enabled = true
-        self.layout = .textOnly
-        self.hierarchy = .default
-        self.style = .`default`
+        enabled = true
+        onColoredSurface = false
+        longText = false
+        layout = .textOnly
+        hierarchy = .default
+        style = .`default`
     }
 
     deinit { }
@@ -173,6 +177,11 @@ struct ButtonConfiguration: View {
             Toggle("app_components_common_onColoredBackground_label", isOn: $model.onColoredSurface)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+
+            Toggle("app_components_common_longText_label", isOn: $model.longText)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .disabled(model.layout == .iconOnly)
 
             VStack(alignment: .leading) {
                 Text(LocalizedStringKey("app_components_button_hierarchy_label"))

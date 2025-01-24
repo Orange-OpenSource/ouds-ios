@@ -85,9 +85,9 @@ private struct ButtonDemo: View {
                 case .iconOnly:
                     OUDSButton(icon: Image(decorative: "ic_heart"), hierarchy: model.hierarchy, style: model.style) {}
                 case .textOnly:
-                    OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
+                    OUDSButton(text: text, hierarchy: model.hierarchy, style: model.style) {}
                 case .iconAndText:
-                    OUDSButton(icon: Image(decorative: "ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
+                    OUDSButton(icon: Image(decorative: "ic_heart"), text: text, hierarchy: model.hierarchy, style: model.style) {}
                 }
             }
 
@@ -96,5 +96,9 @@ private struct ButtonDemo: View {
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
+    }
+
+    private var text: String {
+        model.longText ? "app_components_button_longText_label" : "app_components_button_label"
     }
 }
