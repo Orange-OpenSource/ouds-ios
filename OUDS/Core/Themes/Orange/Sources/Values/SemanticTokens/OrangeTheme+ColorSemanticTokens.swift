@@ -404,6 +404,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryOpacityBlackLowLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack200 }
     @objc public final var colorRepositoryOpacityBlackLowerLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack80 }
     @objc public final var colorRepositoryOpacityBlackLowestLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack40 }
+    @objc public final var colorRepositoryOpacityBlackMediumLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack440 }
     @objc public final var colorRepositoryOpacityBlackSoftLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack280 }
     @objc public final var colorRepositoryOpacityBlackTransparentLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     @objc public final var colorRepositoryOpacityBlackHighDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack520 }
@@ -412,6 +413,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryOpacityBlackLowDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack200 }
     @objc public final var colorRepositoryOpacityBlackLowerDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack80 }
     @objc public final var colorRepositoryOpacityBlackLowestDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack40 }
+    @objc public final var colorRepositoryOpacityBlackMediumDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack440 }
     @objc public final var colorRepositoryOpacityBlackSoftDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack280 }
     @objc public final var colorRepositoryOpacityBlackTransparentDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     @objc public final var colorRepositoryOpacityInfoLight: ColorSemanticToken { ColorRawTokens.colorOpacityDodgerBlue }
