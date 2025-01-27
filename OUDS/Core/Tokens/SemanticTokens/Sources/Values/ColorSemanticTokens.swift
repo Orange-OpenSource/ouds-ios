@@ -392,8 +392,8 @@ public protocol ColorSemanticTokens {
     var colorChartCategoricalTier10Light: ColorSemanticToken { get }
     var colorChartCategoricalTier10Dark: ColorSemanticToken { get }
 
-    var colorChartFunctionalInformationLight: ColorSemanticToken { get }
-    var colorChartFunctionalInformationDark: ColorSemanticToken { get }
+    var colorChartFunctionalInfoLight: ColorSemanticToken { get }
+    var colorChartFunctionalInfoDark: ColorSemanticToken { get }
 
     var colorChartFunctionalNegativeLight: ColorSemanticToken { get }
     var colorChartFunctionalNegativeDark: ColorSemanticToken { get }
@@ -484,6 +484,9 @@ public protocol ColorSemanticTokens {
     var colorRepositoryNeutralMutedWhiteLight: ColorSemanticToken { get }
     var colorRepositoryNeutralMutedWhiteDark: ColorSemanticToken { get }
 
+    var colorRepositoryOpacityBlackHighLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackHighDark: ColorSemanticToken { get }
+
     var colorRepositoryOpacityBlackHigherLight: ColorSemanticToken { get }
     var colorRepositoryOpacityBlackHigherDark: ColorSemanticToken { get }
 
@@ -499,8 +502,8 @@ public protocol ColorSemanticTokens {
     var colorRepositoryOpacityBlackLowestLight: ColorSemanticToken { get }
     var colorRepositoryOpacityBlackLowestDark: ColorSemanticToken { get }
 
-    var colorRepositoryOpacityBlackMediumLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackMediumDark: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackSoftLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityBlackSoftDark: ColorSemanticToken { get }
 
     var colorRepositoryOpacityBlackTransparentLight: ColorSemanticToken { get }
     var colorRepositoryOpacityBlackTransparentDark: ColorSemanticToken { get }
@@ -526,6 +529,9 @@ public protocol ColorSemanticTokens {
     var colorRepositoryOpacityWhiteHighestLight: ColorSemanticToken { get }
     var colorRepositoryOpacityWhiteHighestDark: ColorSemanticToken { get }
 
+    var colorRepositoryOpacityWhiteMediumLight: ColorSemanticToken { get }
+    var colorRepositoryOpacityWhiteMediumDark: ColorSemanticToken { get }
+
     var colorRepositoryOpacityWhiteLowLight: ColorSemanticToken { get }
     var colorRepositoryOpacityWhiteLowDark: ColorSemanticToken { get }
 
@@ -540,6 +546,9 @@ public protocol ColorSemanticTokens {
 
     var colorRepositoryPositiveDefaultLight: ColorSemanticToken { get }
     var colorRepositoryPositiveDefaultDark: ColorSemanticToken { get }
+
+    var colorRepositoryPositiveHighLight: ColorSemanticToken { get }
+    var colorRepositoryPositiveHighDark: ColorSemanticToken { get }
 
     var colorRepositoryPositiveHighestLight: ColorSemanticToken { get }
     var colorRepositoryPositiveHighestDark: ColorSemanticToken { get }

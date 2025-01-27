@@ -29,7 +29,7 @@ extension NamedColor {
         case colorChartCategoricalTier8
         case colorChartCategoricalTier9
         case colorChartCategoricalTier10
-        case colorChartFunctionalInformation
+        case colorChartFunctionalInfo
         case colorChartFunctionalNegative
         case colorChartFunctionalPositive
         case colorChartFunctionalWarning
@@ -63,8 +63,8 @@ extension NamedColor {
                 return theme.colors.colorChartCategoricalTier9
             case .colorChartCategoricalTier10:
                 return theme.colors.colorChartCategoricalTier10
-            case .colorChartFunctionalInformation:
-                return theme.colors.colorChartFunctionalInformation
+            case .colorChartFunctionalInfo:
+                return theme.colors.colorChartFunctionalInfo
             case .colorChartFunctionalNegative:
                 return theme.colors.colorChartFunctionalNegative
             case .colorChartFunctionalPositive:

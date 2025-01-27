@@ -516,8 +516,8 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier10)
     }
 
-    func testColorsHomogeneityColorChartFunctionalInformation() throws {
-        assertHomogeneity(inverseTheme.colors.colorChartFunctionalInformation)
+    func testColorsHomogeneityColorChartFunctionalInfo() throws {
+        assertHomogeneity(inverseTheme.colors.colorChartFunctionalInfo)
     }
 
     func testColorsHomogeneityColorChartFunctionalNegative() throws {
@@ -638,6 +638,10 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNeutralMutedWhite)
     }
 
+    func testColorsHomogeneityColorRepositoryOpacityBlackHigh() throws {
+        assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackHigh)
+    }
+
     func testColorsHomogeneityColorRepositoryOpacityBlackHigher() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackHigher)
     }
@@ -658,8 +662,8 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackLowest)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackMedium() throws {
-        assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackMedium)
+    func testColorsHomogeneityColorRepositoryOpacityBlackSoft() throws {
+        assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackSoft)
     }
 
     func testColorsHomogeneityColorRepositoryOpacityBlackTransparent() throws {
@@ -694,6 +698,10 @@ final class TestInverseThemeColors: XCTestCase {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteHighest)
     }
 
+    func testColorsHomogeneityColorRepositoryOpacityWhiteMedium() throws {
+        assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteMedium)
+    }
+
     func testColorsHomogeneityColorRepositoryOpacityWhiteLow() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteLow)
     }
@@ -712,6 +720,10 @@ final class TestInverseThemeColors: XCTestCase {
 
     func testColorsHomogeneityColorRepositoryPositiveDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryPositiveDefault)
+    }
+
+    func testColorsHomogeneityColorRepositoryPositiveHigh() throws {
+        assertHomogeneity(inverseTheme.colors.colorRepositoryPositiveHigh)
     }
 
     func testColorsHomogeneityColorRepositoryPositiveHighest() throws {

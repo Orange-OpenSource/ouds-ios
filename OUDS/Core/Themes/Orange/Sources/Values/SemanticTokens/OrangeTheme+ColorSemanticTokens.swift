@@ -63,7 +63,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorActionSelectedDark: ColorSemanticToken { OrangeBrandColorRawTokens.colorOrange500 }
     @objc open var colorActionVisitedDark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmethyst400 }
     @objc open var colorAlwaysBlackLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
-    @objc open var colorAlwaysOnBlackLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+    @objc open var colorAlwaysOnBlackLight: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
     @objc open var colorAlwaysOnWhiteLight: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
     @objc open var colorAlwaysWhiteLight: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
     @objc open var colorAlwaysBlackDark: ColorSemanticToken { ColorRawTokens.colorFunctionalBlack }
@@ -246,11 +246,11 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc open var colorChartCategoricalTier8Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeShockingPink400 }
     @objc open var colorChartCategoricalTier9Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeAmber300 }
     @objc open var colorChartCategoricalTier10Dark: ColorSemanticToken { ColorRawTokens.colorDecorativeSky500 }
-    @objc open var colorChartFunctionalInformationLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue600 }
+    @objc open var colorChartFunctionalInfoLight: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue600 }
     @objc open var colorChartFunctionalNegativeLight: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet600 }
     @objc open var colorChartFunctionalPositiveLight: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite700 }
     @objc open var colorChartFunctionalWarningLight: ColorSemanticToken { ColorRawTokens.colorFunctionalSun700 }
-    @objc open var colorChartFunctionalInformationDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
+    @objc open var colorChartFunctionalInfoDark: ColorSemanticToken { ColorRawTokens.colorFunctionalDodgerBlue500 }
     @objc open var colorChartFunctionalNegativeDark: ColorSemanticToken { ColorRawTokens.colorFunctionalScarlet400 }
     @objc open var colorChartFunctionalPositiveDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite600 }
     @objc open var colorChartFunctionalWarningDark: ColorSemanticToken { ColorRawTokens.colorFunctionalSun500 }
@@ -398,19 +398,21 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryNeutralMutedLowerDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray160 }
     @objc public final var colorRepositoryNeutralMutedLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalLightGray80 }
     @objc public final var colorRepositoryNeutralMutedWhiteDark: ColorSemanticToken { ColorRawTokens.colorFunctionalWhite }
+    @objc public final var colorRepositoryOpacityBlackHighLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack520 }
     @objc public final var colorRepositoryOpacityBlackHigherLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack680 }
     @objc public final var colorRepositoryOpacityBlackHighestLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack840 }
     @objc public final var colorRepositoryOpacityBlackLowLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack200 }
     @objc public final var colorRepositoryOpacityBlackLowerLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack80 }
     @objc public final var colorRepositoryOpacityBlackLowestLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack40 }
-    @objc public final var colorRepositoryOpacityBlackMediumLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack280 }
+    @objc public final var colorRepositoryOpacityBlackSoftLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack280 }
     @objc public final var colorRepositoryOpacityBlackTransparentLight: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
+    @objc public final var colorRepositoryOpacityBlackHighDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack520 }
     @objc public final var colorRepositoryOpacityBlackHigherDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack680 }
     @objc public final var colorRepositoryOpacityBlackHighestDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack840 }
     @objc public final var colorRepositoryOpacityBlackLowDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack200 }
     @objc public final var colorRepositoryOpacityBlackLowerDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack80 }
     @objc public final var colorRepositoryOpacityBlackLowestDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack40 }
-    @objc public final var colorRepositoryOpacityBlackMediumDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack280 }
+    @objc public final var colorRepositoryOpacityBlackSoftDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack280 }
     @objc public final var colorRepositoryOpacityBlackTransparentDark: ColorSemanticToken { ColorRawTokens.colorOpacityBlack0 }
     @objc public final var colorRepositoryOpacityInfoLight: ColorSemanticToken { ColorRawTokens.colorOpacityDodgerBlue }
     @objc public final var colorRepositoryOpacityNegativeLight: ColorSemanticToken { ColorRawTokens.colorOpacityScarlet }
@@ -422,6 +424,7 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryOpacityWhiteLowLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
     @objc public final var colorRepositoryOpacityWhiteLowerLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite80 }
     @objc public final var colorRepositoryOpacityWhiteLowestLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite40 }
+    @objc public final var colorRepositoryOpacityWhiteMediumLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite560 }
     @objc public final var colorRepositoryOpacityWhiteTransparentLight: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
     @objc public final var colorRepositoryOpacityWhiteHighDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite640 }
     @objc public final var colorRepositoryOpacityWhiteHigherDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite800 }
@@ -429,16 +432,19 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
     @objc public final var colorRepositoryOpacityWhiteLowDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite200 }
     @objc public final var colorRepositoryOpacityWhiteLowerDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite80 }
     @objc public final var colorRepositoryOpacityWhiteLowestDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite40 }
+    @objc public final var colorRepositoryOpacityWhiteMediumDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite560 }
     @objc public final var colorRepositoryOpacityWhiteTransparentDark: ColorSemanticToken { ColorRawTokens.colorOpacityWhite0 }
     @objc public final var colorRepositoryOpacityInfoDark: ColorSemanticToken { ColorRawTokens.colorOpacityDodgerBlue }
     @objc public final var colorRepositoryOpacityNegativeDark: ColorSemanticToken { ColorRawTokens.colorOpacityScarlet }
     @objc public final var colorRepositoryOpacityPositiveDark: ColorSemanticToken { ColorRawTokens.colorOpacityMalachite }
     @objc public final var colorRepositoryOpacityWarningDark: ColorSemanticToken { ColorRawTokens.colorOpacitySun }
     @objc public final var colorRepositoryPositiveDefaultLight: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
+    @objc public final var colorRepositoryPositiveHighLight: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite600 }
     @objc public final var colorRepositoryPositiveHighestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite900 }
     @objc public final var colorRepositoryPositiveLowLight: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite300 }
     @objc public final var colorRepositoryPositiveLowestLight: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite100 }
     @objc public final var colorRepositoryPositiveDefaultDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite500 }
+    @objc public final var colorRepositoryPositiveHighDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite600 }
     @objc public final var colorRepositoryPositiveHighestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite900 }
     @objc public final var colorRepositoryPositiveLowDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite300 }
     @objc public final var colorRepositoryPositiveLowestDark: ColorSemanticToken { ColorRawTokens.colorFunctionalMalachite100 }

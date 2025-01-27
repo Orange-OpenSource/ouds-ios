@@ -21,7 +21,7 @@ extension OrangeThemeLinkComponentTokensProvider: LinkComponentTokens {
     @objc open var linkSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
     @objc open var linkSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var linkSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
-    @objc open var linkColorContentDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
+    @objc open var linkColorContentDisabledMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackSoft }
     @objc open var linkColorContentEnabledMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
     @objc open var linkColorContentFocusMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
     @objc open var linkColorContentHoverMono: MultipleColorSemanticTokens { colors.colorRepositoryNeutralEmphasizedBlack }
