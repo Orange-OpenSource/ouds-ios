@@ -284,12 +284,12 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorChartCategoricalTier9Dark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartCategoricalTier10Dark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
-    override public var colorChartFunctionalInformationLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorChartFunctionalInfoLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartFunctionalNegativeLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartFunctionalPositiveLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartFunctionalWarningLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
-    override public var colorChartFunctionalInformationDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorChartFunctionalInfoDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartFunctionalNegativeDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartFunctionalPositiveDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorChartFunctionalWarningDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -444,7 +444,7 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorChartCategoricalTier8: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorChartCategoricalTier9: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorChartCategoricalTier10: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-    override public var colorChartFunctionalInformation: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorChartFunctionalInfo: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorChartFunctionalNegative: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorChartFunctionalPositive: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorChartFunctionalWarning: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Color semantic tokens `colorRepositoryOpacityBlack{High,Soft}*`, `colorRepositoryOpacityWhiteMedium*`, `colorRepositoryPositiveHighDark*` (token library v0.3.0)
 - [Library] Button component ([#159](https://github.com/Orange-OpenSource/ouds-ios/issues/159))
 - [Library] Apply letter spacing in typography ([#347](https://github.com/Orange-OpenSource/ouds-ios/issues/347))
 - [Library] Apply line height in typography ([#348](https://github.com/Orange-OpenSource/ouds-ios/issues/348))
@@ -18,6 +19,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Value for `colorRepositoryOpacityBlackMedium*` (token library v0.3.0)
+- [Library] Rename button component token `buttonSizeMaxHeight` to `buttonSizeMaxHeightIconOnly` (token library v0.3.0)
+- [Library] Rename color semantic tokens `colorChartFunctionalInformation*` to `colorChartFunctionalInfo*` (token library v0.3.0)
 - [DesignToolbox] Rename demo app "Showcase" to "DesignToolbox" ([#85](https://github.com/Orange-OpenSource/ouds-ios/issues/85))
 - [DesignToolbox] Update size screen ([#284](https://github.com/Orange-OpenSource/ouds-ios/issues/284))
 - [Library] Change stroke style for `BorderModifier`

@@ -171,7 +171,7 @@ class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
 // MARK: - And also for components tokens
 
 class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentTokensProvider {
-    override public var buttonSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    override public var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
     override public var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
     override public var buttonBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusMedium }
     override public var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigher }
