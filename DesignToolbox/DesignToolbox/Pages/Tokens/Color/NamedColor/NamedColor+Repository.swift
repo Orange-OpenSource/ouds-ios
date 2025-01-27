@@ -42,11 +42,13 @@ extension NamedColor {
         case colorRepositoryNeutralMutedLower
         case colorRepositoryNeutralMutedLowest
         case colorRepositoryNeutralMutedWhite
+        case colorRepositoryOpacityBlackHigh
         case colorRepositoryOpacityBlackHigher
         case colorRepositoryOpacityBlackHighest
         case colorRepositoryOpacityBlackLow
         case colorRepositoryOpacityBlackLower
         case colorRepositoryOpacityBlackLowest
+        case colorRepositoryOpacityBlackSoft
         case colorRepositoryOpacityBlackMedium
         case colorRepositoryOpacityBlackTransparent
         case colorRepositoryOpacityInfo
@@ -56,11 +58,13 @@ extension NamedColor {
         case colorRepositoryOpacityWhiteHigh
         case colorRepositoryOpacityWhiteHigher
         case colorRepositoryOpacityWhiteHighest
+        case colorRepositoryOpacityWhiteMedium
         case colorRepositoryOpacityWhiteLow
         case colorRepositoryOpacityWhiteLower
         case colorRepositoryOpacityWhiteLowest
         case colorRepositoryOpacityWhiteTransparent
         case colorRepositoryPositiveDefault
+        case colorRepositoryPositiveHigh
         case colorRepositoryPositiveHighest
         case colorRepositoryPositiveLow
         case colorRepositoryPositiveLowest
@@ -119,6 +123,8 @@ extension NamedColor {
                 return theme.colors.colorRepositoryNeutralMutedLowest
             case .colorRepositoryNeutralMutedWhite:
                 return theme.colors.colorRepositoryNeutralMutedWhite
+            case .colorRepositoryOpacityBlackHigh:
+                return theme.colors.colorRepositoryOpacityBlackHigh
             case .colorRepositoryOpacityBlackHigher:
                 return theme.colors.colorRepositoryOpacityBlackHigher
             case .colorRepositoryOpacityBlackHighest:
@@ -129,6 +135,8 @@ extension NamedColor {
                 return theme.colors.colorRepositoryOpacityBlackLower
             case .colorRepositoryOpacityBlackLowest:
                 return theme.colors.colorRepositoryOpacityBlackLowest
+            case .colorRepositoryOpacityBlackSoft:
+                return theme.colors.colorRepositoryOpacityBlackSoft
             case .colorRepositoryOpacityBlackMedium:
                 return theme.colors.colorRepositoryOpacityBlackMedium
             case .colorRepositoryOpacityBlackTransparent:
@@ -147,6 +155,8 @@ extension NamedColor {
                 return theme.colors.colorRepositoryOpacityWhiteHigher
             case .colorRepositoryOpacityWhiteHighest:
                 return theme.colors.colorRepositoryOpacityWhiteHighest
+            case .colorRepositoryOpacityWhiteMedium:
+                return theme.colors.colorRepositoryOpacityWhiteMedium
             case .colorRepositoryOpacityWhiteLow:
                 return theme.colors.colorRepositoryOpacityWhiteLow
             case .colorRepositoryOpacityWhiteLower:
@@ -157,6 +167,8 @@ extension NamedColor {
                 return theme.colors.colorRepositoryOpacityWhiteTransparent
             case .colorRepositoryPositiveDefault:
                 return theme.colors.colorRepositoryPositiveDefault
+            case .colorRepositoryPositiveHigh:
+                return theme.colors.colorRepositoryPositiveHigh
             case .colorRepositoryPositiveHighest:
                 return theme.colors.colorRepositoryPositiveHighest
             case .colorRepositoryPositiveLow:

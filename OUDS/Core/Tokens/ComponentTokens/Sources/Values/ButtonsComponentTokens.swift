@@ -28,7 +28,7 @@ public protocol ButtonComponentTokens {
 
     // MARK: - Size
 
-    var buttonSizeMaxHeight: SizeSemanticToken { get }
+    var buttonSizeMaxHeightIconOnly: SizeSemanticToken { get }
     var buttonSizeMinHeight: SizeSemanticToken { get }
     var buttonSizeMinWidth: SizeSemanticToken { get }
     var buttonSizeIcon: SizeSemanticToken { get }
