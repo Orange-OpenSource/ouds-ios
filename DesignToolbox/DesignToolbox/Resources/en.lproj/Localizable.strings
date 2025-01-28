@@ -129,3 +129,7 @@
 "app_components_link_arrowBack_label" = "Back";
 "app_components_link_arrowNext_label" = "Next";
 "app_components_link_size_label" = "Size";
+
+// MARK: Components: Switch
+"app_components_switch_label" = "Switch";
+"app_components_switch_description_text" = "A switch is a component that allows the user to toggle between two states, typically \"on\" and \"off\". It is often represented as a button or a slider that changes position or color to indicate the current state. Switches are used to enable or disable features, options, or settings in an intuitive and visual manner.";
