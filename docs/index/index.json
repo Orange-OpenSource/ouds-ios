@@ -63,6 +63,11 @@
                                 "type": "groupMarker"
                             },
                             {
+                                "path": "/documentation/ouds/oudstheme/badge",
+                                "title": "let badge: AllBadgeComponentTokensProvider",
+                                "type": "property"
+                            },
+                            {
                                 "path": "/documentation/ouds/oudstheme/borders",
                                 "title": "let borders: AllBorderSemanticTokensProvider",
                                 "type": "property"
@@ -80,6 +85,11 @@
                             {
                                 "path": "/documentation/ouds/oudstheme/button",
                                 "title": "let button: AllButtonComponentTokensProvider",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/ouds/oudstheme/checkradio",
+                                "title": "let checkRadio: AllCheckRadioComponentTokensProvider",
                                 "type": "property"
                             },
                             {
@@ -196,6 +206,11 @@
                         "type": "groupMarker"
                     },
                     {
+                        "path": "/documentation/ouds/allbadgecomponenttokensprovider",
+                        "title": "AllBadgeComponentTokensProvider",
+                        "type": "protocol"
+                    },
+                    {
                         "path": "/documentation/ouds/allbordersemantictokensprovider",
                         "title": "AllBorderSemanticTokensProvider",
                         "type": "protocol"
@@ -213,6 +228,11 @@
                     {
                         "path": "/documentation/ouds/allbuttoncomponenttokensprovider",
                         "title": "AllButtonComponentTokensProvider",
+                        "type": "protocol"
+                    },
+                    {
+                        "path": "/documentation/ouds/allcheckradiocomponenttokensprovider",
+                        "title": "AllCheckRadioComponentTokensProvider",
                         "type": "protocol"
                     },
                     {
@@ -21550,6 +21570,52 @@
                                 "type": "groupMarker"
                             },
                             {
+                                "path": "/documentation/oudstokenscomponent/badgecomponenttokens/badgenotificationminwidthl",
+                                "title": "var badgeNotificationMinWidthL: DimensionRawToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/badgecomponenttokens/badgenotificationminwidthm",
+                                "title": "var badgeNotificationMinWidthM: DimensionRawToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/badgecomponenttokens/badgenotificationminwidths",
+                                "title": "var badgeNotificationMinWidthS: DimensionRawToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/badgecomponenttokens/badgesizel",
+                                "title": "var badgeSizeL: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/badgecomponenttokens/badgesizem",
+                                "title": "var badgeSizeM: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/badgecomponenttokens/badgesizes",
+                                "title": "var badgeSizeS: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/badgecomponenttokens/badgesizexs",
+                                "title": "var badgeSizeXs: SizeSemanticToken",
+                                "type": "property"
+                            }
+                        ],
+                        "path": "/documentation/oudstokenscomponent/badgecomponenttokens",
+                        "title": "BadgeComponentTokens",
+                        "type": "protocol"
+                    },
+                    {
+                        "children": [
+                            {
+                                "title": "Instance Properties",
+                                "type": "groupMarker"
+                            },
+                            {
                                 "path": "/documentation/oudstokenscomponent/bulletlistcomponenttokens/bulletlistcolorcontentenabled",
                                 "title": "var bulletListColorContentEnabled: MultipleColorSemanticTokens",
                                 "type": "property"
@@ -22279,6 +22345,42 @@
                         ],
                         "path": "/documentation/oudstokenscomponent/buttoncomponenttokens",
                         "title": "ButtonComponentTokens",
+                        "type": "protocol"
+                    },
+                    {
+                        "children": [
+                            {
+                                "title": "Instance Properties",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosize",
+                                "title": "var checkRadioSize: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosizemaxheightassetscontainer",
+                                "title": "var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosizemaxheightselectoronly",
+                                "title": "var checkRadioSizeMaxHeightSelectorOnly: DimensionRawToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosizeminheightselectoronly",
+                                "title": "var checkRadioSizeMinHeightSelectorOnly: DimensionRawToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosizeminwidthselectoronly",
+                                "title": "var checkRadioSizeMinWidthSelectorOnly: DimensionRawToken",
+                                "type": "property"
+                            }
+                        ],
+                        "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens",
+                        "title": "CheckRadioComponentTokens",
                         "type": "protocol"
                     },
                     {
@@ -23452,6 +23554,81 @@
                                 "type": "groupMarker"
                             },
                             {
+                                "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/init(sizes:)",
+                                "title": "init(sizes: AllSizeSemanticTokensProvider)",
+                                "type": "init"
+                            },
+                            {
+                                "title": "Instance Properties",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/sizes",
+                                "title": "let sizes: AllSizeSemanticTokensProvider",
+                                "type": "property"
+                            },
+                            {
+                                "title": "Default Implementations",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "title": "Instance Properties",
+                                        "type": "groupMarker"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/badgenotificationminwidthl",
+                                        "title": "var badgeNotificationMinWidthL: DimensionRawToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/badgenotificationminwidthm",
+                                        "title": "var badgeNotificationMinWidthM: DimensionRawToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/badgenotificationminwidths",
+                                        "title": "var badgeNotificationMinWidthS: DimensionRawToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/badgesizel",
+                                        "title": "var badgeSizeL: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/badgesizem",
+                                        "title": "var badgeSizeM: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/badgesizes",
+                                        "title": "var badgeSizeS: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/badgesizexs",
+                                        "title": "var badgeSizeXs: SizeSemanticToken",
+                                        "type": "property"
+                                    }
+                                ],
+                                "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider/badgecomponenttokens-implementations",
+                                "title": "BadgeComponentTokens Implementations",
+                                "type": "symbol"
+                            }
+                        ],
+                        "path": "/documentation/oudsthemesorange/orangethemebadgecomponenttokensprovider",
+                        "title": "OrangeThemeBadgeComponentTokensProvider",
+                        "type": "class"
+                    },
+                    {
+                        "children": [
+                            {
+                                "title": "Initializers",
+                                "type": "groupMarker"
+                            },
+                            {
                                 "path": "/documentation/oudsthemesorange/orangethemebordersemantictokensprovider/init()",
                                 "title": "init()",
                                 "type": "init"
@@ -24409,6 +24586,71 @@
                         ],
                         "path": "/documentation/oudsthemesorange/orangethemebuttoncomponenttokensprovider",
                         "title": "OrangeThemeButtonComponentTokensProvider",
+                        "type": "class"
+                    },
+                    {
+                        "children": [
+                            {
+                                "title": "Initializers",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/init(sizes:)",
+                                "title": "init(sizes: AllSizeSemanticTokensProvider)",
+                                "type": "init"
+                            },
+                            {
+                                "title": "Instance Properties",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/sizes",
+                                "title": "let sizes: AllSizeSemanticTokensProvider",
+                                "type": "property"
+                            },
+                            {
+                                "title": "Default Implementations",
+                                "type": "groupMarker"
+                            },
+                            {
+                                "children": [
+                                    {
+                                        "title": "Instance Properties",
+                                        "type": "groupMarker"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosize",
+                                        "title": "var checkRadioSize: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosizemaxheightassetscontainer",
+                                        "title": "var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosizemaxheightselectoronly",
+                                        "title": "var checkRadioSizeMaxHeightSelectorOnly: DimensionRawToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosizeminheightselectoronly",
+                                        "title": "var checkRadioSizeMinHeightSelectorOnly: DimensionRawToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosizeminwidthselectoronly",
+                                        "title": "var checkRadioSizeMinWidthSelectorOnly: DimensionRawToken",
+                                        "type": "property"
+                                    }
+                                ],
+                                "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiocomponenttokens-implementations",
+                                "title": "CheckRadioComponentTokens Implementations",
+                                "type": "symbol"
+                            }
+                        ],
+                        "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider",
+                        "title": "OrangeThemeCheckRadioComponentTokensProvider",
                         "type": "class"
                     },
                     {
