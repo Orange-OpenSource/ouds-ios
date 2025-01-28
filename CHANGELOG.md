@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Value for color raw token `colorFunctionalScarlet600` (token library v0.4.0)
 - [Library] Value for `colorRepositoryOpacityBlackMedium*` (token library v0.3.0)
 - [Library] Rename button component token `buttonSizeMaxHeight` to `buttonSizeMaxHeightIconOnly` (token library v0.3.0)
 - [Library] Rename color semantic tokens `colorChartFunctionalInformation*` to `colorChartFunctionalInfo*` (token library v0.3.0)
