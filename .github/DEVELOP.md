@@ -357,15 +357,16 @@ Remember _Gitleaks_ is also used in GitHub project side thanks to the [dedicated
 
 We use _SwiftLint_ in this project so as to be sure the source code follows defined guidelines for the syntax and other points.
 You must run _SwiftLint_ in CLI or using _Xcode_ to be sure you don't keep and submit warnings.
-**In most of cases you must fix warnings, or explain why in your commtis and pull request comments you choose to disable them.**
+**In most of cases you must fix warnings, or explain why in your commits and pull request comments you choose to disable them.**
 
-Today, only in very few cases some _SwiftLint_ warnings are disabled at files level:
+Today, only in very few cases some _SwiftLint_ warnings are disabled at files (or lower) level:
 - in tests classes
 - in files containing tokens which will be generated
+- in tokens providers
 
 The warnings which can be disabled for token files: 
 - *missing_docs*: because tokens will be generated without documentation by the tokenator
-- *identifier_name*: because the name of the tokens are defined in *Figma* and strongly related to the design system
+- *identifier_name*: because the name of the tokens are defined in *Figma* and strongly related to the design system, and in they can be long
 - *line_length*: because tokens definition can take a lot of place
 - *file_length*: because the files containing declarations or definitions of tokens can be very long
 
