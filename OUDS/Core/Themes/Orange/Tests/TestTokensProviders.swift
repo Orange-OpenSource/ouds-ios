@@ -46,6 +46,7 @@ final class TestTokensProviders: XCTestCase {
         assertMissingTokensProviderIsFound(byType: AllSwitchComponentTokensProvider.self, "AllSwitchComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllListItemComponentTokensProvider.self, "AllListItemComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllChipComponentTokensProvider.self, "AllChipComponentTokensProvider")
+        assertMissingTokensProviderIsFound(byType: AllBreadcrumbComponentTokensProvider.self, "AllBreadcrumbComponentTokensProvider")
 
         // NOTE: Add tests for new component tokens provider here
     }
@@ -93,6 +94,7 @@ final class TestTokensProviders: XCTestCase {
             OrangeThemeSwitchComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+            OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
 
             // NOTE: Add new component tokens providers here
         ]
