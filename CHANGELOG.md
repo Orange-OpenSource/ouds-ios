@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Chip component tokens ([#415](https://github.com/Orange-OpenSource/ouds-ios/issues/415))
 - [Library] List item component tokens ([#414](https://github.com/Orange-OpenSource/ouds-ios/issues/414))
 - [Library] Switch component tokens ([#412](https://github.com/Orange-OpenSource/ouds-ios/issues/412))
 - [Library] Color semantic tokens `colorRepositoryOpacityBlack{High,Soft}*`, `colorRepositoryOpacityWhiteMedium*`, `colorRepositoryPositiveHighDark*` (token library v0.3.0)

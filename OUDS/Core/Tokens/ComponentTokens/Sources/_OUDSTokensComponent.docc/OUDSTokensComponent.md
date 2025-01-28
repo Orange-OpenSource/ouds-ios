@@ -124,6 +124,7 @@ struct DesignToolbox: App {
 ### Group
 
 - ``ButtonComponentTokens``
+- ``ChipComponentTokens``
 - ``LinkComponentTokens``
 - ``ListItemComponentTokens``
 - ``SelectComponentTokens``
