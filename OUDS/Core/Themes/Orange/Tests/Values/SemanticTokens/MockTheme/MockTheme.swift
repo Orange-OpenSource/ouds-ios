@@ -61,6 +61,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
             MockThemeBulletListComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
             MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
             MockThemeBadgeComponentTokenProvider(sizes: sizes),
+            MockThemeCheckRadioComponentTokenProvider(sizes: sizes),
 
             // NOTE: Add here new component tokens provider
         ]
