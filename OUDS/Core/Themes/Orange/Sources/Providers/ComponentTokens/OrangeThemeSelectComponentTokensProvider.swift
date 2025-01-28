@@ -29,7 +29,7 @@ import OUDSTokensSemantic
 ///     // by inheriting from existing provider
 ///     class CustomSelectComponentTokensProvider: OrangeThemeSelectComponentTokensProvider {
 ///
-///         // Then override the button component tokens you want.
+///         // Then override the select component tokens you want.
 ///
 ///         override var selectSizeMaxHeightContainerIcon: SizeSemanticToken { DimensionRawTokens.dimension600 }
 ///

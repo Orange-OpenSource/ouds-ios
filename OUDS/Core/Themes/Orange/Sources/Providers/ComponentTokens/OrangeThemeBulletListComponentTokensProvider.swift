@@ -21,7 +21,7 @@ import OUDSTokensSemantic
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllBulletListComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// Custom themes can use subclass of ``OrangeThemeBulletLsitComponentTokensProvider`` and apply the provider they need.
+/// Custom themes can use subclass of ``OrangeThemeBulletListComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `BulletListComponentTokens` so as to expose the component tokens for *bullet list* through any `OUDSTheme`.
 /// *Bullet list* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
 /// colors (from `AllColorSemanticTokensProvider`) and spaces (from `AllSpaceSemanticTokensProvider`).
