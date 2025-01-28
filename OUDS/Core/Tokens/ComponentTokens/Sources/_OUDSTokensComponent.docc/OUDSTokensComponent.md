@@ -125,6 +125,7 @@ struct DesignToolbox: App {
 
 - ``ButtonComponentTokens``
 - ``LinkComponentTokens``
+- ``ListItemComponentTokens``
 - ``SelectComponentTokens``
 - ``SkeletonComponentTokens``
 - ``SwitchComponentTokens``
