@@ -54,6 +54,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
             MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
             MockThemeSkeletonComponentTokenProvider(colors: colors),
             MockThemeTagComponentTokenProvider(colors: colors),
+            MockThemeSwitchComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
         ]
         super.init(tokensProviders: providers, fontFamily: fontFamily)
     }
