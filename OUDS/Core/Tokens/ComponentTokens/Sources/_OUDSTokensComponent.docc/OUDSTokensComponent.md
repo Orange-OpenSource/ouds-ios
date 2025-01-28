@@ -102,6 +102,7 @@ struct DesignToolbox: App {
 - ``BulletListComponentTokens``
 - ``BreadcrumbComponentTokens``
 - ``ButtonComponentTokens``
+- ``CheckRadioComponentTokens``
 - ``ChipComponentTokens``
 - ``InputTextComponentTokens``
 - ``LinkComponentTokens``
