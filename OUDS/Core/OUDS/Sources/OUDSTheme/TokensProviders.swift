@@ -15,6 +15,59 @@ import OUDSFoundations
 import OUDSTokensComponent
 import OUDSTokensSemantic
 
+// MARK: - Root
+
+/// Protocol to add to any semantic or component tokens provider so as to be gather with all providers and given to the theme for initialization
+public protocol TokensProvider { }
+
+// MARK: - Semantic tokens providers
+
+/// Something which provides all semantic tokens of border
+public protocol AllBorderSemanticTokensProvider: TokensProvider, BorderSemanticTokens { }
+
+/// Something which provides all semantic tokens of colors
+public protocol AllColorSemanticTokensProvider: TokensProvider, ColorSemanticTokens, ColorMultipleSemanticTokens { }
+
+/// Something which provides all semantic tokens of elevation
+public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens, ElevationMultipleSemanticTokens { }
+
+/// Something which provides all semantic tokens of font
+public protocol AllFontSemanticTokensProvider: TokensProvider, FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens { }
+
+/// Something which provides all semantic tokens of grid
+public protocol AllGridSemanticTokensProvider: TokensProvider, GridSemanticTokens { }
+
+/// Something which provides all semantic tokens of opacity
+public protocol AllOpacitySemanticTokensProvider: TokensProvider, OpacitySemanticTokens { }
+
+/// Something which provides all semantic tokens of size
+public protocol AllSizeSemanticTokensProvider: TokensProvider, SizeSemanticTokens, SizeMultipleSemanticTokens { }
+
+/// Something which provides all semantic tokens of space
+public protocol AllSpaceSemanticTokensProvider: TokensProvider, SpaceSemanticTokens, SpaceMultipleSemanticTokens { }
+
+// MARK: - Component tokens providers
+
+/// Something which provides all component tokens of button
+public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens { }
+
+/// Something which provides all component tokens of link
+public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens { }
+
+/// Something which provides all component tokens of select
+public protocol AllSelectComponentTokensProvider: TokensProvider, SelectComponentTokens { }
+
+/// Something which provides all component tokens of skeleton
+public protocol AllSkeletonComponentTokensProvider: TokensProvider, SkeletonComponentTokens { }
+
+/// Something which provides all component tokens of tag
+public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentTokens { }
+
+/// Something which provides all component tokens of switch / toggle
+public protocol AllSwitchComponentTokensProvider: TokensProvider, SwitchComponentTokens { }
+
+// NOTE: Add new definitions of protocols here
+
 // MARK: - Tokens Providers Wrapper
 
 /// A set of `TokenProvider` to give to theme (in ``OUDSTheme`` init) to as to extract individually the providers
@@ -94,6 +147,10 @@ extension Array where Element == TokensProvider {
             missingProviders.append("AllTagComponentTokensProvider")
         }
 
+        if !assertAvailability(of: AllSwitchComponentTokensProvider.self) {
+            missingProviders.append("AllSwitchComponentTokensProvider")
+        }
+
         // NOTE: Add new component tokens providers here if mandatory
         return missingProviders
     }
@@ -103,53 +160,3 @@ extension Array where Element == TokensProvider {
         self.contains(where: { provider in provider is T })
     }
 }
-
-// MARK: - Root
-
-/// Protocol to add to any semantic or component tokens provider so as to be gather with all providers and given to the theme for initialization
-public protocol TokensProvider { }
-
-// MARK: - Semantic tokens providers
-
-/// Something which provides all semantic tokens of border
-public protocol AllBorderSemanticTokensProvider: TokensProvider, BorderSemanticTokens { }
-
-/// Something which provides all semantic tokens of colors
-public protocol AllColorSemanticTokensProvider: TokensProvider, ColorSemanticTokens, ColorMultipleSemanticTokens { }
-
-/// Something which provides all semantic tokens of elevation
-public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens, ElevationMultipleSemanticTokens { }
-
-/// Something which provides all semantic tokens of font
-public protocol AllFontSemanticTokensProvider: TokensProvider, FontSemanticTokens, FontCompositeSemanticTokens, FontMultipleSemanticTokens { }
-
-/// Something which provides all semantic tokens of grid
-public protocol AllGridSemanticTokensProvider: TokensProvider, GridSemanticTokens { }
-
-/// Something which provides all semantic tokens of opacity
-public protocol AllOpacitySemanticTokensProvider: TokensProvider, OpacitySemanticTokens { }
-
-/// Something which provides all semantic tokens of size
-public protocol AllSizeSemanticTokensProvider: TokensProvider, SizeSemanticTokens, SizeMultipleSemanticTokens { }
-
-/// Something which provides all semantic tokens of space
-public protocol AllSpaceSemanticTokensProvider: TokensProvider, SpaceSemanticTokens, SpaceMultipleSemanticTokens { }
-
-// MARK: - Component tokens providers
-
-/// Something which provides all component tokens of button
-public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens { }
-
-/// Something which provides all component tokens of link
-public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens { }
-
-/// Something which provides all component tokens of select
-public protocol AllSelectComponentTokensProvider: TokensProvider, SelectComponentTokens { }
-
-/// Something which provides all component tokens of skeleton
-public protocol AllSkeletonComponentTokensProvider: TokensProvider, SkeletonComponentTokens { }
-
-/// Something which provides all component tokens of tag
-public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentTokens { }
-
-// NOTE: Add new definitions of protocols here

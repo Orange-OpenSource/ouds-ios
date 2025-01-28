@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Switch component tokens ([#412](https://github.com/Orange-OpenSource/ouds-ios/issues/412))
 - [Library] Color semantic tokens `colorRepositoryOpacityBlack{High,Soft}*`, `colorRepositoryOpacityWhiteMedium*`, `colorRepositoryPositiveHighDark*` (token library v0.3.0)
 - [Library] Button component ([#159](https://github.com/Orange-OpenSource/ouds-ios/issues/159))
 - [Library] Apply letter spacing in typography ([#347](https://github.com/Orange-OpenSource/ouds-ios/issues/347))

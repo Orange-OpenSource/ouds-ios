@@ -81,6 +81,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to tags components like `OUDSTag`
     public let tag: AllTagComponentTokensProvider
 
+    /// All components tokens related to switch / toggle components like `OUDSSwitch`
+    public let `switch`: AllSwitchComponentTokensProvider
+
     // NOTE: Add new component tokens provider here
 
     // MARK: - Initializers
@@ -117,6 +120,7 @@ open class OUDSTheme: @unchecked Sendable {
         select = tokensProviders.get()
         skeleton = tokensProviders.get()
         tag = tokensProviders.get()
+        `switch` = tokensProviders.get()
         // NOTE: Add new component tokens provider here
 
         // Load other configuration elements

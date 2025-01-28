@@ -43,6 +43,9 @@ final class TestTokensProviders: XCTestCase {
         assertMissingTokensProviderIsFound(byType: AllSelectComponentTokensProvider.self, "AllSelectComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllSkeletonComponentTokensProvider.self, "AllSkeletonComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllTagComponentTokensProvider.self, "AllTagComponentTokensProvider")
+        assertMissingTokensProviderIsFound(byType: AllSwitchComponentTokensProvider.self, "AllSwitchComponentTokensProvider")
+
+        // NOTE: Add tests for new component tokens provider here
     }
 
     // MARK: - Helper
@@ -85,6 +88,7 @@ final class TestTokensProviders: XCTestCase {
             OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeSkeletonComponentTokensProvider(colors: colors),
             OrangeThemeTagComponentTokensProvider(colors: colors),
+            OrangeThemeSwitchComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
         ]
 
         // But remove the one we don't want

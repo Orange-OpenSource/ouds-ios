@@ -127,4 +127,5 @@ struct DesignToolbox: App {
 - ``LinkComponentTokens``
 - ``SelectComponentTokens``
 - ``SkeletonComponentTokens``
+- ``SwitchComponentTokens``
 - ``TagComponentTokens``
