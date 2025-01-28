@@ -29,7 +29,7 @@ import OUDSTokensSemantic
 ///     // by inheriting from existing provider
 ///     class CustomLinkComponentTokensProvider: OrangeThemeLinkComponentTokensProvider {
 ///
-///         // Then override the button component tokens you want.
+///         // Then override the link component tokens you want.
 ///
 ///         override var linkSizeMinHeightMedium: SizeSemanticToken { DimensionRawTokens.dimension600 }
 ///
