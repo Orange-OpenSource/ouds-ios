@@ -116,7 +116,7 @@ extension ColorRawTokens {
     public static let colorFunctionalScarlet300: ColorRawToken = "#FF8081FF"
     public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4EFF"
     public static let colorFunctionalScarlet500: ColorRawToken = "#FF1A1BFF"
-    public static let colorFunctionalScarlet600: ColorRawToken = "#EA0305FF"
+    public static let colorFunctionalScarlet600: ColorRawToken = "#DB0002FF"
     public static let colorFunctionalScarlet700: ColorRawToken = "#B20002FF"
     public static let colorFunctionalScarlet800: ColorRawToken = "#800001FF"
     public static let colorFunctionalScarlet900: ColorRawToken = "#4D0001FF"
