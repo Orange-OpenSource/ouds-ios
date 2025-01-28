@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Breadcrumb component tokens ([#416](https://github.com/Orange-OpenSource/ouds-ios/issues/416))
 - [Library] Chip component tokens ([#415](https://github.com/Orange-OpenSource/ouds-ios/issues/415))
 - [Library] List item component tokens ([#414](https://github.com/Orange-OpenSource/ouds-ios/issues/414))
 - [Library] Switch component tokens ([#412](https://github.com/Orange-OpenSource/ouds-ios/issues/412))

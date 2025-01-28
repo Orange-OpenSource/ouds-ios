@@ -123,6 +123,7 @@ struct DesignToolbox: App {
 
 ### Group
 
+- ``BreadcrumbComponentTokens``
 - ``ButtonComponentTokens``
 - ``ChipComponentTokens``
 - ``LinkComponentTokens``

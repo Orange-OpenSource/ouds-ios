@@ -72,6 +72,9 @@ public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComp
 /// Something which provides all component tokens of chip
 public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTokens { }
 
+/// Something which provides all component tokens of breadcrumb
+public protocol AllBreadcrumbComponentTokensProvider: TokensProvider, BreadcrumbComponentTokens { }
+
 // NOTE: Add new definitions of protocols here
 
 // MARK: - Tokens Providers Wrapper
@@ -90,6 +93,7 @@ extension Array where Element == TokensProvider {
         OL.fatal("Tokens provider of type '\(T.self)' not found!")
     }
 
+    // swiftlint:disable function_body_length
     // swiftlint:disable cyclomatic_complexity
     // Mandatory to disable cyclomatic_complexity, lot of checks...
     /// Checks if some tokens providers are missing and return their names in case of.
@@ -165,10 +169,15 @@ extension Array where Element == TokensProvider {
             missingProviders.append("AllChipComponentTokensProvider")
         }
 
+        if !assertAvailability(of: AllBreadcrumbComponentTokensProvider.self) {
+            missingProviders.append("AllBreadcrumbComponentTokensProvider")
+        }
+
         // NOTE: Add new component tokens providers here if mandatory
         return missingProviders
     }
     // swiftlint:enable cyclomatic_complexity
+    // swiftlint:enable function_body_length
 
     private func assertAvailability<T>(of type: T.Type) -> Bool {
         self.contains(where: { provider in provider is T })
