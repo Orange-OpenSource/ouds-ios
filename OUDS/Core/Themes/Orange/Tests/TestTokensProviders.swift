@@ -49,6 +49,7 @@ final class TestTokensProviders: XCTestCase {
         assertMissingTokensProviderIsFound(byType: AllBreadcrumbComponentTokensProvider.self, "AllBreadcrumbComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllBulletListComponentTokensProvider.self, "AllBulletListComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllInputTextComponentTokensProvider.self, "AllInputTextComponentTokensProvider")
+        assertMissingTokensProviderIsFound(byType: AllBadgeComponentTokensProvider.self, "AllBadgeComponentTokensProvider")
 
         // NOTE: Add tests for new component tokens provider here
     }
@@ -99,6 +100,7 @@ final class TestTokensProviders: XCTestCase {
             OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeBadgeComponentTokensProvider(sizes: sizes),
 
             // NOTE: Add new component tokens providers here
         ]

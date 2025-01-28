@@ -60,6 +60,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
             MockThemeBreadcrumbComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
             MockThemeBulletListComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
             MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+            MockThemeBadgeComponentTokenProvider(sizes: sizes),
 
             // NOTE: Add here new component tokens provider
         ]

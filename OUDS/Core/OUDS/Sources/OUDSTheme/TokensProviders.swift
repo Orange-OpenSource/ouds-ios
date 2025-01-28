@@ -81,6 +81,9 @@ public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletList
 /// Something which provides all component tokens of input text
 public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextComponentTokens { }
 
+/// Something which provides all component tokens of badge
+public protocol AllBadgeComponentTokensProvider: TokensProvider, BadgeComponentTokens { }
+
 // NOTE: Add new definitions of protocols here
 
 // MARK: - Tokens Providers Wrapper
@@ -185,6 +188,10 @@ extension Array where Element == TokensProvider {
 
         if !assertAvailability(of: AllInputTextComponentTokensProvider.self) {
             missingProviders.append("AllInputTextComponentTokensProvider")
+        }
+
+        if !assertAvailability(of: AllBadgeComponentTokensProvider.self) {
+            missingProviders.append("AllBadgeComponentTokensProvider")
         }
 
         // NOTE: Add new component tokens providers here if mandatory
