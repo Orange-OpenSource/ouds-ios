@@ -1,5 +1,15 @@
 # Contributing to OUDS iOS
 
+- [Using the Issue Tracker](#using-the-issue-tracker)
+- [Issues and Labels](#issues-and-labels)
+- [Bug Reports](#bug-reports)
+- [Feature Requests](#feature-requests)
+- [Pull Requests](#pull-requests)
+- [Code Guidelines](#code-guidelines)
+- [Commits Style](#commits-style)
+- [Review Workflow](#review-workflow)
+- [License](#license)
+
 Looking to contribute something OUDS iOS? **Here's how you can help.**
 
 Please take a moment to review this document in order to make the contribution process easy for everyone involved.
@@ -66,7 +76,7 @@ Example:
 
 Feature requests are welcome. But take a moment to find out whether your idea fits with the scope and aims of the project. It's up to _you_ to make a strong case to convince the project's developers of the merits of this feature. Please provide as much detail and context as possible.
 
-## Pull requests
+## Pull Requests
 
 Good pull requests (patches, improvements, new features) are a fantastic help. They should remain focused in scope and avoid containing unrelated commits.
 
@@ -106,6 +116,7 @@ Adhering to the following process is the best way to get your work included in t
 
    ```bash
    git pull [--rebase] upstream develop
+   # Or use also 'git rebase' command
    ```
 
 6. Push your topic branch up to your fork:
@@ -122,11 +133,12 @@ Note that a ruleset based [on task-list-completed tool](https://github.com/marke
 
 ## Code Guidelines
 
-### Checking Coding Style
-
 Format your code before committing to ensure your changes follow our coding standards.
+Linters and formatters are configured for the project.
+Keep documentation and tests updated.
+Respect the architecture of the project, and [refer to the wiki if needed](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture).
 
-## Commits style
+## Commits Style
 
 Try as best as possible to apply [conventional commits rules](https://www.conventionalcommits.org/en/v1.0.0/).
 Keep in mind to have your commits well prefixed, and with the issue number between parenthesis at the end.
@@ -199,6 +211,16 @@ Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+```
+
+Finaly, if you want to note somewhere you used *generative AI* tool, you can add the field "Assisted-by" in your commit with the model in use and in parenthsies some commercial name.
+
+```text
+feat: add thousands of tokens (#666))
+
+Add thousands of tokens and hundreds of tests.
+
+Assisted-by: GPT-4o-mini (Dinootoo)
 ```
 
 ## Review workflow
