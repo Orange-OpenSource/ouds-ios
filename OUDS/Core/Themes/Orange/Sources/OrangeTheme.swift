@@ -98,6 +98,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let spaces = OrangeThemeSpaceSemanticTokensProvider()
 
         let tokensProviders: TokensProviders = [
+
+            // Semantic tokens
+
             colors,
             borders,
             OrangeThemeElevationSemanticTokensProvider(),
@@ -106,6 +109,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeOpacitySemanticTokensProvider(),
             sizes,
             spaces,
+
+            // Component tokens
+
             OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
             OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
@@ -116,6 +122,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
             OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+
+            // NOTE: Add here new component tokens providers
         ]
 
         super.init(tokensProviders: tokensProviders, fontFamily: fontFamily)
@@ -132,6 +141,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let spaces = OrangeThemeSpaceSemanticTokensProvider()
 
         let tokensProviders: TokensProviders = [
+
+            // Semantic tokens
+
             colors,
             borders,
             OrangeThemeElevationSemanticTokensProvider(),
@@ -140,6 +152,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeOpacitySemanticTokensProvider(),
             sizes,
             spaces,
+
+            // Component tokens
+
             OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
             OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
@@ -150,6 +165,9 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
             OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+
+            // NOTE: Add here new component tokens providers
         ]
 
         self.init(tokensProviders: tokensProviders, fontFamily: fontFamily)
