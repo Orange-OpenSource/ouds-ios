@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Checkbox and radio button component tokens ([#421](https://github.com/Orange-OpenSource/ouds-ios/issues/421))
 - [Library] Badge component tokens (partial implementation) ([#420](https://github.com/Orange-OpenSource/ouds-ios/issues/420))
 - [Library] Input text component tokens ([#418](https://github.com/Orange-OpenSource/ouds-ios/issues/418))
 - [Library] Bullet list component tokens ([#417](https://github.com/Orange-OpenSource/ouds-ios/issues/417))

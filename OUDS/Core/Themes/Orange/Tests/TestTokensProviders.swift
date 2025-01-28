@@ -50,6 +50,7 @@ final class TestTokensProviders: XCTestCase {
         assertMissingTokensProviderIsFound(byType: AllBulletListComponentTokensProvider.self, "AllBulletListComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllInputTextComponentTokensProvider.self, "AllInputTextComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllBadgeComponentTokensProvider.self, "AllBadgeComponentTokensProvider")
+        assertMissingTokensProviderIsFound(byType: AllCheckRadioComponentTokensProvider.self, "AllCheckRadioComponentTokensProvider")
 
         // NOTE: Add tests for new component tokens provider here
     }
@@ -101,6 +102,7 @@ final class TestTokensProviders: XCTestCase {
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBadgeComponentTokensProvider(sizes: sizes),
+            OrangeThemeCheckRadioComponentTokensProvider(sizes: sizes),
 
             // NOTE: Add new component tokens providers here
         ]
