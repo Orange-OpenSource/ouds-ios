@@ -73,38 +73,6 @@ Then choose the tokens you want within:
 * ``GridRawTokens`` for grids
 * ``OpacityRawTokens`` for opacities
 
-### How to add raw tokens
-
-First, you need to define from which family this semantic comes. We have today up to 7 families: *border*, *color*, *dimension*, *elevation*, *grid*, *opacity* and *font*.
-If your token is not from one of these groups, maybe you should redesign your token or create a new family. To do that, you will have to create a dedicated Swift `enum`, with a useful name, and declare as a `static let` the raw tokens in an `extension`. If you already know the family, just update the matching files.
-
-If you need to define Swift `typealias`, update the suitable file in the *TypeAliases* folder.
-
-Please, respect the nomenclature of the files, e.g. for a new family "Awesome raw" tokens:
-- declaration of raw tokens family must be `AwesomeRawTokens.swift`
-- generated values must be in `AwesomeRawTokens+Values.swift`
-- composite tokens must be in `AwesomeRawTokens+Composites.swift`
-- type aliases must be in `AwesomeRawTokens+Aliases.swift`
-- composites objects types must be defined in `AwesomeCompositeRawTokens.swift`
-
-*Composites* here are notions from the *Figjam*, a bit, but *Figma* is not able to manage such gorup of raw tokens. This it cannot output composite raw tokens in the JSON for the parser. 
-As a consequence the composites are defined in a folder, and their values in the *Values* folder in dedicated files.
-It may imply some synchornization issues between the raw tokens and the composite tokens using them, but we don't have any solution yet.
-
-### How to update or remove raw tokens
-
-Quite simple, find the raw token you want to update or remove, and update or remove it.
-But beware, if you change the name of the property or if you move it from an `enum` to another, or if you remove the token, you must keep retrocompatibility as much as possible so as to avoid to break any public API. Keep also the CHANGELOG and/or the release updated with some BREAKING CHANGE notification, and also the Git history clean.
-
-If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let yout users know the variables have been changed.
-
-### About tests of tokens
-
-When raw tokens have been added, removed or renamed, unit tests must be updated.
-
-We do not test the raw tokens values as they are, because these values will be generated and keeping up to date the unit tests may be time wasting.
-But we can however test the relationships between tokens and some properties like format of data, range of values, if values are factor of others, if colors are dark and darker, if values are bigger and bigger, etc.
-
 ## Topics
 
 ### Group

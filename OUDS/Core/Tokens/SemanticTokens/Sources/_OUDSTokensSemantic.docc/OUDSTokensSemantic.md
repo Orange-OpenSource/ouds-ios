@@ -90,34 +90,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable { ... }
 
 ## Semantic tokens management
 
-### How to add semantic tokens
-
-First, you need to define which from family this semantic comes. We have today 8 families: *border*, *color*, *elevation*, *grid*, *opacity*, *sizing*, *spacing* and *font*.
-
-If your token is not from one of these groups, maybe you should redesign your token or create a new family. To do that, you will have to create a dedicated Swift `protocol`, with a useful name, and declare as a `var` the semantic token. If you already know the family, just update the matching files.
-
-If you need to define Swift `typealias`, update the suitable file in the *TypeAliases* folder. If you think users may handle your tokens with tuples, or pack of tokens, you can add your own *composite* object.
-
-Please, respect the nomenclature of the files, e.g. for a new family "Awesome semantic" tokens:
-- values must be in `AwesomeSemanticTokens.swift`
-- type aliases must be in `AwesomeSemanticTokens+Aliases.swift`
-- mutiple objects must be in `MultipleAwesomeTokens.swift`
-
-### How to update or remove semantic tokens
-
-Quite simple, find the semantic token you want to update or remove, and update or remove it.
-
-But beware, if you change the name of the property or if you move it from a `protocol` to another, or if you remove the token, you must keep retrocompatibility as much as possible so as to avoid to break any public API. Keep also the CHANGELOG and/or the release updated with some BREAKING CHANGE notification, and also the Git history clean.
-
-If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let your users know the variables have been changed.
-
-### About tests of tokens
-
-When semantic tokens have been added, removed or renamed, unit tests must be updated.
-
-We do not test the semantic tokens values as they are, because these values will be generated and keeping up to date the unit tests may be time wasting.
-But for each semantic tokens we check if a subtheme can override the token using derived tokens providers. If you have defined also composite objects, add unit tests to check if they do their job.
-
 ### Some note about composites
 
 The *tokenator* is not able today to generate composites tokens, i.e. tokens which contain by definition several properties.

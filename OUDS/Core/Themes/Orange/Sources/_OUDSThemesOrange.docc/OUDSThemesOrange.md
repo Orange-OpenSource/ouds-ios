@@ -59,11 +59,11 @@ struct SomeView: View {
 
 You can enrich the ``OrangeTheme`` by subclassing it or by overriding some tokens.
 
-### By subclassing
+### By using your own theme and subclassing existing token providers
 
 You may want to define your own theme, thus you can override the ``OrangeTheme`` with your own class or just override the providers.
 
-You will have to consider the tokens provider you need:
+You will have to consider the semantic tokens providers you need:
 - spaces tokens are `OrangeThemeSpaceSemanticTokensProvider`
 - sizes tokens are in `OrangeThemeSizeSemanticTokensProvider`
 - colors tokens are all defined in `OrangeThemeColorSemanticTokensProvider`
@@ -72,6 +72,11 @@ You will have to consider the tokens provider you need:
 - opacity tokens are in `OrangeThemeOpacitySemanticTokensProvider`
 - grid tokens are in `OrangeThemeGridSemanticTokensProvider`
 - font tokens are in `OrangeThemeFontSemanticTokensProvider`
+
+You can also override the component tokens providers you need.
+Have a look [on the documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/) to know which one you need to update.
+
+Example for semantic tokens providers:
 
 ```swift
 import OUDSTokensComponent // To use component tokens if needed
@@ -191,6 +196,8 @@ class YourAppTheme: OrangeTheme {
     
     override init() {
         let providers: TokensProviders = [
+            // Semantic tokens providers
+
             YourAppThemeColorTokensProvider(),
             YourAppThemeBorderTokensProvider(),
             YourAppThemeElevationTokensProvider(),
@@ -199,7 +206,11 @@ class YourAppTheme: OrangeTheme {
             YourAppThemeOpacityTokensProvider(),
             YourAppThemeSizeTokensProvider(),
             YourAppThemeSpaceTokensProvider(),
+
+            // Component tokens providers
+
             YourAppThemeButtonComponentTokensProvider(),
+
             // Etc.
         ]
 
@@ -225,7 +236,7 @@ struct YourApp: App {
 }
 ```
 
-### By overriding
+### By overriding only existing tokens providers
 
 Quite simple and similar to the previous solution, but give only the providers to the ``OrangeTheme``.
 But beware, in all cases if will crash is some providers are missing.
