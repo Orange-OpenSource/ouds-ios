@@ -69,6 +69,9 @@ public protocol AllSwitchComponentTokensProvider: TokensProvider, SwitchComponen
 /// Something which provides all component tokens of list item
 public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens { }
 
+/// Something which provides all component tokens of chip
+public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTokens { }
+
 // NOTE: Add new definitions of protocols here
 
 // MARK: - Tokens Providers Wrapper
@@ -156,6 +159,10 @@ extension Array where Element == TokensProvider {
 
         if !assertAvailability(of: AllListItemComponentTokensProvider.self) {
             missingProviders.append("AllListItemComponentTokensProvider")
+        }
+
+        if !assertAvailability(of: AllChipComponentTokensProvider.self) {
+            missingProviders.append("AllChipComponentTokensProvider")
         }
 
         // NOTE: Add new component tokens providers here if mandatory

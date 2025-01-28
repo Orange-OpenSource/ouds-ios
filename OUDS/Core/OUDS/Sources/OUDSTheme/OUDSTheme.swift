@@ -87,6 +87,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to list item components like `OUDSListItem`
     public let listItem: AllListItemComponentTokensProvider
 
+    /// All components tokens related to chip components like `OUDSChip`
+    public let chip: AllChipComponentTokensProvider
+
     // NOTE: Add new component tokens provider here
 
     // MARK: - Initializers
@@ -125,6 +128,7 @@ open class OUDSTheme: @unchecked Sendable {
         tag = tokensProviders.get()
         `switch` = tokensProviders.get()
         listItem = tokensProviders.get()
+        chip = tokensProviders.get()
         // NOTE: Add new component tokens provider here
 
         // Load other configuration elements
