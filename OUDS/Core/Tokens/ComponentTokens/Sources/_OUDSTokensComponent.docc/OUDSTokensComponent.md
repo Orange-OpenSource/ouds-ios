@@ -98,6 +98,7 @@ struct DesignToolbox: App {
 
 ### Group
 
+- ``BadgeComponentTokens``
 - ``BulletListComponentTokens``
 - ``BreadcrumbComponentTokens``
 - ``ButtonComponentTokens``

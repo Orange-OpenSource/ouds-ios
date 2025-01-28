@@ -123,6 +123,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeBadgeComponentTokensProvider(sizes: sizes),
 
             // NOTE: Add here new component tokens providers
         ]
@@ -166,6 +167,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeBadgeComponentTokensProvider(sizes: sizes),
 
             // NOTE: Add here new component tokens providers
         ]
