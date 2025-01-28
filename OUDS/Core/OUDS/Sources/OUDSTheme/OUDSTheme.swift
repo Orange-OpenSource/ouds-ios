@@ -93,6 +93,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to breadcrumb components like `OUDSBreadcrumb`
     public let breadcrumb: AllBreadcrumbComponentTokensProvider
 
+    /// All components tokens related to bullet list components like `OUDSBulletList`
+    public let bulletList: AllBulletListComponentTokensProvider
+
     // NOTE: Add new component tokens provider here
 
     // MARK: - Initializers
@@ -133,6 +136,7 @@ open class OUDSTheme: @unchecked Sendable {
         listItem = tokensProviders.get()
         chip = tokensProviders.get()
         breadcrumb = tokensProviders.get()
+        bulletList = tokensProviders.get()
 
         // NOTE: Add new component tokens provider here
 

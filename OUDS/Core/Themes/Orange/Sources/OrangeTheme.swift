@@ -115,6 +115,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
             OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
         ]
 
         super.init(tokensProviders: tokensProviders, fontFamily: fontFamily)
@@ -148,6 +149,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
             OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
         ]
 
         self.init(tokensProviders: tokensProviders, fontFamily: fontFamily)

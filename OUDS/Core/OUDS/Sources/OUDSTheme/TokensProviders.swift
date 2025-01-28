@@ -75,6 +75,9 @@ public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTok
 /// Something which provides all component tokens of breadcrumb
 public protocol AllBreadcrumbComponentTokensProvider: TokensProvider, BreadcrumbComponentTokens { }
 
+/// Something which provides all component tokens of bullet list
+public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletListComponentTokens { }
+
 // NOTE: Add new definitions of protocols here
 
 // MARK: - Tokens Providers Wrapper
@@ -171,6 +174,10 @@ extension Array where Element == TokensProvider {
 
         if !assertAvailability(of: AllBreadcrumbComponentTokensProvider.self) {
             missingProviders.append("AllBreadcrumbComponentTokensProvider")
+        }
+
+        if !assertAvailability(of: AllBulletListComponentTokensProvider.self) {
+            missingProviders.append("AllBulletListComponentTokensProvider")
         }
 
         // NOTE: Add new component tokens providers here if mandatory
