@@ -30,7 +30,7 @@ import OUDSTokensSemantic
 ///     // by inheriting from existing provider
 ///     class CustomChipComponentTokensProvider: OrangeThemeChipComponentTokensProvider {
 ///
-///         // Then override the button component tokens you want.
+///         // Then override the chip component tokens you want.
 ///
 ///         override var chipSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension500 }
 ///
