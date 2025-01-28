@@ -11,6 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
+import OUDSTokensComponent
+import OUDSTokensRaw
 import SwiftUI
 
 /// The internal state used by modifiers to handle all states of the button.
@@ -60,27 +63,27 @@ struct SwitchButtonModifier: ViewModifier {
 
     // MARK: Stored properties
 
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
     let internalState: InternalSwitchState
     let isOn: Bool
 
     // MARK: Body
-
     func body(content: Content) -> some View {
-        HStack(alignment: .center, spacing: 10) {
-            HStack(alignment: .center, spacing: 10) {
+        HStack(alignment: .center) {
+            HStack(alignment: .center) {
                 cursor
             }
-            .padding(10)
             .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
-            .background(Constants.inputSwitchColorCursor)
-            .cornerRadius(Constants.borderRadiusPill)
-            .shadow(color: Constants.elevationColorRaised, radius: Constants.elevationBlurRaised / 2, x: Constants.elevationXRaised, y: Constants.elevationYRaised)
+            .background(corsorColor)
+            .clipShape(Capsule())
+            .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
         }
         .padding(.horizontal, spacePadding)
-        .padding(.vertical, 0)
-        .frame(width: Constants.inputSwitchSizeWidthTrack, height: Constants.inputSwitchSizeHeightTrack, alignment: cursorHorizontalAlignment)
+        .frame(width: trackrWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
         .background(trackColor)
-        .cornerRadius(Constants.borderRadiusPill)
+        .clipShape(Capsule())
     }
 
     // MARK: Private Helpers
@@ -95,7 +98,12 @@ struct SwitchButtonModifier: ViewModifier {
     }
 
     private var cursorHeight: Double {
+        // TODO: Use token
         isOn ? Constants.inputSwitchSizeWidthCursorTrue : Constants.inputSwitchSizeWidthCursorFalse
+    }
+
+    private var corsorColor: Color {
+        theme.switch.switchColorCursor.color(for: colorScheme)
     }
 
     private var cursorHorizontalAlignment: Alignment {
@@ -103,39 +111,43 @@ struct SwitchButtonModifier: ViewModifier {
     }
 
     private var spacePadding: Double {
-        isOn ? Constants.inputSwitchSpacePaddingInlineTrue : Constants.inputSwitchSpacePaddingInlineFalse
+        isOn ? theme.switch.switchSpacePaddingInlineTrue : theme.switch.switchSpacePaddingInlineFalse
     }
 
     private var trackColor: Color {
-        isOn ? .green : .gray
+        (isOn ? theme.switch.switchColorTrackTrue : theme.switch.switchColorTrackFalse)
+            .color(for: colorScheme)
+    }
+    private var trackrWidth: Double {
+        Constants.inputSwitchSizeWidthTrack
+    }
+
+    private var trackHeight: Double {
+        // TODO: use token
+        Constants.inputSwitchSizeHeightTrack
     }
 
     @ViewBuilder
     private var cursor: some View {
-        switch internalState {
-        case .enabled, .disabled, .hover:
-            Image(decorative: "Tick")
-        default:
-            Circle().fill(Color.white)
+        if isOn {
+            switch internalState {
+            case .enabled, .disabled, .hover:
+                // TODO: when, Link is merged, use right asset in ouds bundle not in main
+                Image(decorative: "Tick")
+                    .renderingMode(.template)
+                    .foregroundStyle(theme.switch.switchColorCheck.color(for: colorScheme))
+            default:
+                EmptyView()
+            }
         }
     }
 }
 
 // swiftlint:disable convenience_type
 struct Constants {
-    static let inputSwitchColorTrackTrue = Color(red: 0.24, green: 0.89, blue: 0.35)
-    static let borderRadiusPill: CGFloat = 2_000.0
     static let inputSwitchSizeWidthTrack: CGFloat = 56
     static let inputSwitchSizeHeightTrack: CGFloat = 32
-    static let inputSwitchSpacePaddingInlineTrue: CGFloat = 4
-    static let inputSwitchColorCursor: Color = .white
     static let inputSwitchSizeWidthCursorTrue: CGFloat = 24
-    static let elevationXRaised: CGFloat = 0
-    static let elevationYRaised: CGFloat = 1
-    static let elevationBlurRaised: CGFloat = 2
-    static let elevationColorRaised: Color = .black.opacity(0.32)
-    static let inputSwitchColorTrackFalse: Color = .black.opacity(0.44)
-    static let inputSwitchSpacePaddingInlineFalse: CGFloat = 8
     static let inputSwitchSizeWidthCursorFalse: CGFloat = 16
     static let inputSwitchSizeWidthCursorPressed: CGFloat = 32
 }

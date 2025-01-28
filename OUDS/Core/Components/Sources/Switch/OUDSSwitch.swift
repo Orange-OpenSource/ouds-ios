@@ -36,14 +36,17 @@ public struct OUDSSwitch: View {
 
     // MARK: Initializers
 
-    /// Create a switch with text and icon.
+    /// Creates a switch with no label.
     ///
     /// - Parameters:
+    ///   - isOn: A binding to a property that determines whether the switch is on
+    ///     or off.
     public init(isOn: Binding<Bool>) {
         self.isOn = isOn
     }
 
     // MARK: Body
+
     public var body: some View {
         Button {
             isOn.wrappedValue.toggle()
@@ -52,16 +55,4 @@ public struct OUDSSwitch: View {
         }
         .buttonStyle(SwitchButtonStyle(isOn: isOn.wrappedValue))
     }
-}
-
-struct SwitchTest: View {
-    @State var isOn: Bool
-
-    var body: some View {
-        OUDSSwitch(isOn: $isOn)
-    }
-}
-
-#Preview {
-    SwitchTest(isOn: true)
 }
