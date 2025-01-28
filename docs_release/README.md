@@ -45,11 +45,6 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
     git push origin prepare-release
     ```
 
-    <!-- TODO Add reference and mention to documentaiton build -->
-    <!-- Please see [DEVELOP.md](../.github/DEVELOP.md#documentation) to get more information about how to build and verify the documentation. -->
-
-    <!-- Once the Jekyll server is started, the documentation for version X.Y.Z should be available at http://127.0.0.1:4000/ods-ios/X.Y.Z/. -->
-
 - Create a new pull request named `Prepare release X.Y.Z` on GitHub to merge your branch into `develop`.
 
 - Review and merge this pull request on GitHub using squash and merge commits strategy.<br /><br />
