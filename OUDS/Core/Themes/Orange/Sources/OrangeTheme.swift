@@ -112,6 +112,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeSkeletonComponentTokensProvider(colors: colors),
             OrangeThemeTagComponentTokensProvider(colors: colors),
             OrangeThemeSwitchComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
         ]
 
         super.init(tokensProviders: tokensProviders, fontFamily: fontFamily)
@@ -142,6 +143,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeSkeletonComponentTokensProvider(colors: colors),
             OrangeThemeTagComponentTokensProvider(colors: colors),
             OrangeThemeSwitchComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
         ]
 
         self.init(tokensProviders: tokensProviders, fontFamily: fontFamily)

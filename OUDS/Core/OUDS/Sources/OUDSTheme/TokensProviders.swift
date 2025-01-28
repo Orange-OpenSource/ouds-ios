@@ -66,6 +66,9 @@ public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentToken
 /// Something which provides all component tokens of switch / toggle
 public protocol AllSwitchComponentTokensProvider: TokensProvider, SwitchComponentTokens { }
 
+/// Something which provides all component tokens of list item
+public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens { }
+
 // NOTE: Add new definitions of protocols here
 
 // MARK: - Tokens Providers Wrapper
@@ -149,6 +152,10 @@ extension Array where Element == TokensProvider {
 
         if !assertAvailability(of: AllSwitchComponentTokensProvider.self) {
             missingProviders.append("AllSwitchComponentTokensProvider")
+        }
+
+        if !assertAvailability(of: AllListItemComponentTokensProvider.self) {
+            missingProviders.append("AllListItemComponentTokensProvider")
         }
 
         // NOTE: Add new component tokens providers here if mandatory

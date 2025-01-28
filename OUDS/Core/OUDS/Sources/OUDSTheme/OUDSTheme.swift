@@ -84,6 +84,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to switch / toggle components like `OUDSSwitch`
     public let `switch`: AllSwitchComponentTokensProvider
 
+    /// All components tokens related to list item components like `OUDSListItem`
+    public let listItem: AllListItemComponentTokensProvider
+
     // NOTE: Add new component tokens provider here
 
     // MARK: - Initializers
@@ -121,6 +124,7 @@ open class OUDSTheme: @unchecked Sendable {
         skeleton = tokensProviders.get()
         tag = tokensProviders.get()
         `switch` = tokensProviders.get()
+        listItem = tokensProviders.get()
         // NOTE: Add new component tokens provider here
 
         // Load other configuration elements
