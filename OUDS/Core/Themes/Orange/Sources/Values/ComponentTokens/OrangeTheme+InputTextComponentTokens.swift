@@ -1,0 +1,46 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import Foundation
+import OUDSTokensComponent
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+// swiftlint:disable identifier_name
+
+extension OrangeThemeInputTextComponentTokensProvider: InputTextComponentTokens {
+    @objc open var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
+    @objc open var inputTextSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension1600 }
+    @objc open var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
+    @objc open var inputTextColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
+    @objc open var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
+    @objc open var inputTextColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
+    @objc open var inputTextColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
+    @objc open var inputTextColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
+    @objc open var inputTextColorContentDefaultDisabled: MultipleColorSemanticTokens { colors.colorContentDisabled }
+    @objc open var inputTextColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var inputTextColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var inputTextColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var inputTextColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var inputTextSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
+    @objc open var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
+    @objc open var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+    @objc open var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
+    @objc open var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+    @objc open var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShortest }
+    @objc open var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+}
+
+// swiftlint:enable identifier_name

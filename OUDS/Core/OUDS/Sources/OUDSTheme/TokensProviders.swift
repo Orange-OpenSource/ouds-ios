@@ -78,6 +78,9 @@ public protocol AllBreadcrumbComponentTokensProvider: TokensProvider, Breadcrumb
 /// Something which provides all component tokens of bullet list
 public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletListComponentTokens { }
 
+/// Something which provides all component tokens of input text
+public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextComponentTokens { }
+
 // NOTE: Add new definitions of protocols here
 
 // MARK: - Tokens Providers Wrapper
@@ -178,6 +181,10 @@ extension Array where Element == TokensProvider {
 
         if !assertAvailability(of: AllBulletListComponentTokensProvider.self) {
             missingProviders.append("AllBulletListComponentTokensProvider")
+        }
+
+        if !assertAvailability(of: AllInputTextComponentTokensProvider.self) {
+            missingProviders.append("AllInputTextComponentTokensProvider")
         }
 
         // NOTE: Add new component tokens providers here if mandatory
