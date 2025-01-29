@@ -4,6 +4,11 @@ _Raw tokens_ are smallest _tokens_ possible. They are associated to raw values a
 
 ## Overview
 
+<!-- NOTE: Do not forget to update tokens version -->
+```
+🧱 Tokens version: v0.4.0
+```
+
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than Swift `struct` or `class` objects. Keeping primitive types helps today to expose objects using Objective-C runtime.
 
 So we expose also in higher level some properties so as to convert when needed some of these types to `SwiftUI` types (like `Font.Weight` and `Color`).
