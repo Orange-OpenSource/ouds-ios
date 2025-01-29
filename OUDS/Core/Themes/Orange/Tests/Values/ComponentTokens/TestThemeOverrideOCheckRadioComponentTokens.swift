@@ -57,6 +57,8 @@ final class TestThemeOverrideOfCheckRadioComponentTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeMaxHeightAssetsContainer, abstractTheme.checkRadio.checkRadioSizeMaxHeightAssetsContainer)
         XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeMaxHeightAssetsContainer == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioDimension)
     }
+
+    // TODO: #264 - Add missing unit tests for new components tokens
 }
 
 // swiftlint:enable required_deinit

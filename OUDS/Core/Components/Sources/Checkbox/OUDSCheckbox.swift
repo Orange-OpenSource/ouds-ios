@@ -46,7 +46,6 @@ public struct OUDSCheckbox: View {
     /// All the combinations of options to define the checbkox component
     private enum `Type`{
         case selectorOnly
-        case dividedSelectorOnly
         case label(String)
         case dividedLabel(String)
         case labelAndIcon(String, Image)
@@ -78,6 +77,10 @@ public struct OUDSCheckbox: View {
 
         /// The checbkox is in an undeterminate state, i.e. preselected for example, but is related to an error situation
         case errorUndeterminate
+
+        var isError: Bool {
+            self == .errorSelected || self == .errorUnselected || self == .errorUndeterminate
+        }
     }
 
     // MARK: - Style
@@ -118,7 +121,7 @@ public struct OUDSCheckbox: View {
                 style: Style,
                 divider: Bool = false,
                 action: @escaping () -> Void) {
-        type = divider ? .dividedSelectorOnly : .selectorOnly
+        type = .selectorOnly
         layout = .selectorOnly
         self.status = status
         self.style = style
@@ -228,6 +231,13 @@ public struct OUDSCheckbox: View {
     // MARK: - Body
 
     public var body: some View {
-        Text("Hello world!")
+        switch type {
+        case .selectorOnly:
+            CheckboxSelector(status: status, action: action)
+                .modifier(OUDSCheckboxStyle(status: status))
+        // TODO: #264 - Implment other cases
+        default:
+            Text("Not implemented yet")
+        }
     }
 }

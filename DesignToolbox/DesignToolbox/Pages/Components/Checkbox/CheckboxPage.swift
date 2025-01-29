@@ -23,8 +23,18 @@ import SwiftUI
 struct CheckboxPage: View {
 
     var body: some View {
-        OUDSCheckbox(status: .undeterminate, style: .default) {
-            OL.log("Design Toolbox - Checkbox - Tapped")
-        }
+
+        // Enabled
+        OUDSCheckbox(status: .selected, style: .default) { print("@@@ high level tap") }
+        OUDSCheckbox(status: .unselected, style: .default) { }
+        OUDSCheckbox(status: .undeterminate, style: .default) { }
+        OUDSCheckbox(status: .errorSelected, style: .default) { }
+        OUDSCheckbox(status: .errorUnselected, style: .default) { }
+        OUDSCheckbox(status: .errorUndeterminate, style: .default) { }
+
+        // Disabled
+        OUDSCheckbox(status: .selected, style: .default) { }.disabled(true)
+        OUDSCheckbox(status: .unselected, style: .default) { }.disabled(true)
+        OUDSCheckbox(status: .undeterminate, style: .default) { }.disabled(true)
     }
 }

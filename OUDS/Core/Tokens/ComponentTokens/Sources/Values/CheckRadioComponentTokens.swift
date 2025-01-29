@@ -28,14 +28,37 @@ public protocol CheckRadioComponentTokens {
 
     // MARK: - Sizes
 
-    var checkRadioSize: SizeSemanticToken { get }
+    var checkRadioSizeSelector: SizeSemanticToken { get }
 
     // MARK: - Dimensions
 
-    var checkRadioSizeMinHeightSelectorOnly: DimensionRawToken { get }
-    var checkRadioSizeMinWidthSelectorOnly: DimensionRawToken { get }
-    var checkRadioSizeMaxHeightSelectorOnly: DimensionRawToken { get }
-    var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken { get }
+    // TODO: #264 - These tokens are missing in tokenator side (JSON troubles)
+
+    var checkRadioSizeMinHeightSelectorOnly: SizeSemanticToken { get }
+    var checkRadioSizeMinWidthSelectorOnly: SizeSemanticToken { get }
+    var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken { get }
+    var checkRadioSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
+
+    // TODO: #264 - These tokens are missing in tokenator side as not defined yet
+
+    var checkRadioSelectorBorderRadius: BorderRadiusSemanticToken { get }
+
+    var checkRadioSelectorBorderWidthEnabled: BorderWidthSemanticToken { get }
+    var checkRadioSelectorBorderWidthHover: BorderWidthSemanticToken { get }
+    var checkRadioSelectorBorderWidthPressed: BorderWidthSemanticToken { get }
+    var checkRadioSelectorBorderWidthDisabled: BorderWidthSemanticToken { get }
+
+    var checkRadioSelectorColorEnabledSelected: MultipleColorSemanticTokens { get }
+    var checkRadioSelectorColorEnabledUnselected: MultipleColorSemanticTokens { get }
+    var checkRadioSelectorColorEnabledError: MultipleColorSemanticTokens { get }
+
+    var checkRadioSelectorColorHover: MultipleColorSemanticTokens { get }
+    var checkRadioSelectorColorHoverError: MultipleColorSemanticTokens { get }
+
+    var checkRadioSelectorColorPressed: MultipleColorSemanticTokens { get }
+    var checkRadioSelectorColorPressedError: MultipleColorSemanticTokens { get }
+
+    var checkRadioSelectorColorDisabled: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs

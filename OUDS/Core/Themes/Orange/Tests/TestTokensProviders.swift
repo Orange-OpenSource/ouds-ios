@@ -102,7 +102,7 @@ final class TestTokensProviders: XCTestCase {
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBadgeComponentTokensProvider(sizes: sizes),
-            OrangeThemeCheckRadioComponentTokensProvider(sizes: sizes),
+            OrangeThemeCheckRadioComponentTokensProvider(sizes: sizes, borders: borders, colors: colors),
 
             // NOTE: Add new component tokens providers here
         ]

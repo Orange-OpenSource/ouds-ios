@@ -17,6 +17,8 @@ import OUDSTokensSemantic
 
 // swiftlint:disable type_name
 
+// TODO: #264 - Update doc with other semantic tokens (borders, colors)
+
 /// A class which wraps all **component  tokens of check radio** for *radio button* and *checkboxes* objects
 /// like `OUDSRadioButton` or `OUDSCheckbox`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -73,11 +75,24 @@ open class OrangeThemeCheckRadioComponentTokensProvider: AllCheckRadioComponentT
     /// Provider of size semantic tokens to use for check / radio sizes
     public let sizes: AllSizeSemanticTokensProvider
 
+    /// Provider of color semantic tokens to use for check / radio colors
+    public let borders: AllBorderSemanticTokensProvider
+
+    /// Provider of color semantic tokens to use for check / radio colors
+    public let colors: AllColorSemanticTokensProvider
+
     /// Defines a provider of component tokens dedicated to `OUDSChip`
-    /// - Parameter sizes: Provider for size semantic tokens
-    public init(sizes: AllSizeSemanticTokensProvider) {
+    /// - Parameters:
+    ///    - sizes: Provider for size semantic tokens
+    ///    - borders: Provider for border semantic tokens
+    ///    - colors: Provider for color semantic tokens
+    public init(sizes: AllSizeSemanticTokensProvider,
+                borders: AllBorderSemanticTokensProvider,
+                colors: AllColorSemanticTokensProvider) {
         OL.debug("Init of OrangeThemeCheckRadioComponentTokensProvider")
         self.sizes = sizes
+        self.borders = borders
+        self.colors = colors
     }
 
     deinit { }

@@ -49,4 +49,11 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
 
+./OUDS/Core/Components/Sources/Resources/Media.xcasssets/Checkbox/ic_comp_checkbox_selected_bold.imageset/ic_comp_checkbox_selected_bold.svg
+./OUDS/Core/Components/Sources/Resources/Media.xcasssets/Checkbox/ic_comp_checkbox_selected.imageset/ic_comp_checkbox_selected.svg
+./OUDS/Core/Components/Sources/Resources/Media.xcasssets/Checkbox/ic_comp_checkbox_undeterminate_bold.imageset/ic_comp_checkbox_undeterminate_bold.svg
+./OUDS/Core/Components/Sources/Resources/Media.xcasssets/Checkbox/ic_comp_checkbox_undeterminate.imageset/ic_comp_checkbox_undeterminate.svg
+./OUDS/Core/Components/Sources/Resources/Media.xcasssets/Checkbox/ic_comp_checkbox_unselected_bold.imageset/ic_comp_checkbox_unselected_bold.svg
+./OUDS/Core/Components/Sources/Resources/Media.xcasssets/Checkbox/ic_comp_checkbox_unselected.imageset/ic_comp_checkbox_unselected.svg
+
 End of the parts list under Orange SA Copyright
