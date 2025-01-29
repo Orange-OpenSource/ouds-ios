@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Link component ([#400](https://github.com/Orange-OpenSource/ouds-ios/issues/400))
 - [Library] Checkbox and radio button component tokens ([#421](https://github.com/Orange-OpenSource/ouds-ios/issues/421))
 - [Library] Badge component tokens (partial implementation) ([#420](https://github.com/Orange-OpenSource/ouds-ios/issues/420))
 - [Library] Input text component tokens ([#418](https://github.com/Orange-OpenSource/ouds-ios/issues/418))
@@ -19,7 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] List item component tokens ([#414](https://github.com/Orange-OpenSource/ouds-ios/issues/414))
 - [Library] Switch component tokens ([#412](https://github.com/Orange-OpenSource/ouds-ios/issues/412))
 - [Library] Color semantic tokens `colorRepositoryOpacityBlack{High,Soft}*`, `colorRepositoryOpacityWhiteMedium*`, `colorRepositoryPositiveHighDark*` (token library v0.3.0)
-- [Library] Link component ([#400](https://github.com/Orange-OpenSource/ouds-ios/issues/400))
 - [Library] Button component ([#159](https://github.com/Orange-OpenSource/ouds-ios/issues/159))
 - [Library] Apply letter spacing in typography ([#347](https://github.com/Orange-OpenSource/ouds-ios/issues/347))
 - [Library] Apply line height in typography ([#348](https://github.com/Orange-OpenSource/ouds-ios/issues/348))
