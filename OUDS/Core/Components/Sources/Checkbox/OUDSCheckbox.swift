@@ -16,6 +16,8 @@ import SwiftUI
 
 // MARK: - OUDS Checbkox
 
+// TODO: #264 - Update documentation
+
 /// The ``OUDSChebckbox`` proposes...
 ///
 /// ## Hierarchies
@@ -32,7 +34,7 @@ import SwiftUI
 public struct OUDSCheckbox: View {
 
     // MARK: - Properties
-    
+
     private let type: `Type`
     private let layout: Layout
     private let status: Status
@@ -40,7 +42,7 @@ public struct OUDSCheckbox: View {
     private let action: () -> Void
 
     // MARK: - Type
-    
+
     /// All the combinations of options to define the checbkox component
     private enum `Type`{
         case selectorOnly
@@ -77,7 +79,7 @@ public struct OUDSCheckbox: View {
         /// The checbkox is in an undeterminate state, i.e. preselected for example, but is related to an error situation
         case errorUndeterminate
     }
-    
+
     // MARK: - Style
 
     /// Defines the state of the checkbox, e.g. loading or not, for the style
@@ -90,19 +92,19 @@ public struct OUDSCheckbox: View {
     }
 
     // MARK: - Layout
-    
+
     /// Defines the layout of the checbkox, i.e. only a selector, default layout or inverse layout
     public enum Layout {
         /// Only a selector to display
         case selectorOnly
-        
+
         /// Default layout, i.e. leading checkbox, trailing icon
         case `default`
-        
+
         /// Invzrse layout, i.e. leading icon, trailing checkbox
         case inverse
     }
-    
+
     // MARK: - Initializers
 
     /// Create a checkbox with only a selector
@@ -122,7 +124,7 @@ public struct OUDSCheckbox: View {
         self.style = style
         self.action = action
     }
-    
+
     /// Create a checkbox with a label
     ///
     /// - Parameters:
@@ -162,7 +164,7 @@ public struct OUDSCheckbox: View {
                 layout: Layout = .default,
                 divider: Bool = false,
                 action: @escaping () -> Void) {
-        type = divider ? .dividedLabelAndIcon(label, icon): .labelAndIcon(label, icon)
+        type = divider ? .dividedLabelAndIcon(label, icon) : .labelAndIcon(label, icon)
         self.status = status
         self.layout = layout
         self.style = style
@@ -222,9 +224,9 @@ public struct OUDSCheckbox: View {
         self.style = style
         self.action = action
     }
-    
+
     // MARK: - Body
-    
+
     public var body: some View {
         Text("Hello world!")
     }

@@ -13,17 +13,18 @@
 
 import OUDS
 import OUDSComponents
+import OUDSFoundations
 import SwiftUI
 
-struct ComponentsPage: View {
+// MARK: Checkbox page
 
-    let componentElements: [DesignToolboxElement] = [
-        ButtonElement(),
-        CheckboxElement(),
-    ]
+// TODO: #264 - Update page
+
+struct CheckboxPage: View {
 
     var body: some View {
-        DesignToolboxElementsPage(elements: componentElements)
-            .oudsNavigationTitle("app_bottomBar_components_label")
+        OUDSCheckbox(status: .undeterminate, style: .default) {
+            OL.log("Design Toolbox - Checkbox - Tapped")
+        }
     }
 }

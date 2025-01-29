@@ -89,8 +89,8 @@
 "app_component_emptyContent_text" = "No content";
 "app_component_emptyContent_description_text" = "This content is under construction and will be available very soon";
 
+// MARK: - Components - Button
 
-// MARK: Components: button
 "app_components_button_label" = "Button";
 "app_components_button_description_text" = "Buttons allow users to make choices or perform an action. They have multiple styles for various needs.";
 "app_components_button_negative_hierary_notAllowed_text" = "Not allowed on colored surface";
@@ -101,3 +101,8 @@
 "app_components_button_iconAndTextLayout_label" = "Icon + text";
 "app_components_button_iconOnlyLayout_label" = "Icon only";
 "app_components_button_icon_a11y" = "Icon";
+
+// MARK: - Components - Checkbox
+
+"app_components_checkbox_label" = "Checkbox";
+"app_components_checkbox_description_text" = "Checkbox allow users to make choices or perform an action. They have multiple styles for various needs.";

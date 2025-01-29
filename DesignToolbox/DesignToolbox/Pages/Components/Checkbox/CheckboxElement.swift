@@ -13,19 +13,19 @@
 
 import SwiftUI
 
-struct ButtonElement: DesignToolboxElement {
+struct CheckboxElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_button_label" // TODO: #284 - Update wording
-        image = Image(decorative: "il_component_button").renderingMode(.original) // TODO: #284 - Update image
+        name = "app_components_checkbox_label"
+        image = Image(decorative: "il_component_checkbox").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
                 name: name,
                 image: nil,
-                description: "app_components_button_description_text", // TODO: #284 - Update wording
-                illustration: AnyView(ButtonPage())
+                description: "app_components_checkbox_description_text",
+                illustration: AnyView(CheckboxPage())
             )
         )
     }
