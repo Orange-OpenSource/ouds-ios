@@ -30,7 +30,7 @@ import SwiftUI
 ///
 /// ## Navigation layout
 ///
-/// This layout is used to navigatate backward or forward.
+/// This layout is used to navigate backward or forward.
 ///
 /// ```swift
 ///     // Navigate to next page with link in a small size
@@ -75,7 +75,7 @@ public struct OUDSLink: View {
 
     // MARK: Initializers
 
-    /// Create a button with text and icon.
+    /// Create a link with text and icon.
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
@@ -118,7 +118,7 @@ public struct OUDSLink: View {
                 Label {
                     Text(LocalizedStringKey(text))
                 } icon: {
-                    Image(decorative: "ic_form_chevron_left", bundle: Bundle.oudsComponents)
+                    Image(decorative: "ic_form_chevron_left", bundle: Bundle.OUDSComponents)
                         .renderingMode(.template)
                         .resizable()
                 }

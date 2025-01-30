@@ -93,7 +93,7 @@ private struct LinkDemo: View {
         .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
     }
 
-    var text: String {
+    private var text: String {
         model.longText ? "app_components_link_longText_label" : "app_components_link_label"
     }
 }

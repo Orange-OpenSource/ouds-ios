@@ -67,7 +67,7 @@ final class OUDSLinkUITests: XCTestCase {
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
     /// It iterates through all link `layouts`, for all `sizes`
-    /// in enable and disabled states.
+    /// in enabled and disabled states.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
@@ -87,7 +87,7 @@ final class OUDSLinkUITests: XCTestCase {
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
     /// It iterates through all link `layout`, for all `size`
-    /// in enable and disbled state.
+    /// in enabled and disbled state.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme) from which to retrieve color tokens.
@@ -116,7 +116,7 @@ final class OUDSLinkUITests: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - layout: the layout of the link
     ///   - size: the size of the link
-    ///   - disabled: the disbled flag
+    ///   - disabled: the disabled flag
     ///   - onColoredSurface: a flag to know if link is on a colored surface or not
     @MainActor private func testLink(theme: OUDSTheme,
                                      interfaceStyle: UIUserInterfaceStyle,
@@ -147,6 +147,7 @@ final class OUDSLinkUITests: XCTestCase {
         assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
     }
 }
+// swiftlint:enable required_deinit
 
 // MARK: - Link Test
 
@@ -206,5 +207,3 @@ extension LinkLayout: CustomDebugStringConvertible {
         }
     }
 }
-
-// swiftlint:enable required_deinit

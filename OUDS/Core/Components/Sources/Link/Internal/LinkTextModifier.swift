@@ -36,7 +36,7 @@ struct LinkTextModifier: ViewModifier {
     }
 }
 
-struct LinkUnderlineModifier: ViewModifier {
+private struct LinkUnderlineModifier: ViewModifier {
 
     @State private var textWidth: CGFloat = 0
     let layout: OUDSLink.Layout
@@ -80,6 +80,10 @@ private struct SizePreferenceKey: @preconcurrency PreferenceKey {
 
 // swiftlint:disable strict_fileprivate
 extension View {
+
+    /// Use to read the size of the current view (usefull to read the width of text)
+    /// - Parameter:
+    ///     - onChange: Called when the size change
     fileprivate func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
         background(
             GeometryReader { geometryProxy in

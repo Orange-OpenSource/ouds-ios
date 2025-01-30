@@ -55,7 +55,7 @@ struct OUDSButtonStyle: ButtonStyle {
     public init(hierarchy: OUDSButton.Hierarchy, style: OUDSButton.Style) {
         self.hierarchy = hierarchy
         self.style = style
-        self.isHover = false
+        isHover = false
     }
 
     // MARK: Body

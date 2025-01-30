@@ -15,5 +15,5 @@ import Foundation
 
 extension Bundle {
     /// The ouds bundle, useful to find resources
-    public static let oudsComponents = Bundle.module
+    public static let OUDSComponents = Bundle.module
 }

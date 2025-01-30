@@ -97,13 +97,13 @@ final class LinkConfigurationModel: ComponentConfiguration {
 
 // MARK: - Link Layout
 
-public enum LinkLayout: CaseIterable, CustomStringConvertible {
+enum LinkLayout: CaseIterable, CustomStringConvertible {
     case textOnly
     case iconAndText
     case arrowBack
     case arrowNext
 
-    public var description: String {
+    var description: String {
         switch self {
         case .textOnly:
             "app_components_common_textOnlyLayout_label"

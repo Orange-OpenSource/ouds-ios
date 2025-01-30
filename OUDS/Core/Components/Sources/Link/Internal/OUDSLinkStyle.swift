@@ -21,9 +21,11 @@ enum InternalLinkState {
     case enabled, hover, pressed, disabled
 }
 
+// MARK: - Link LabelStyle
+
 struct OUDSLinkStyle: ButtonStyle {
 
-    // MARK: stored properties
+    // MARK: Stored properties
 
     @Environment(\.theme) private var theme
     @Environment(\.isEnabled) private var isEnabled
@@ -35,9 +37,9 @@ struct OUDSLinkStyle: ButtonStyle {
     // MARK: Initializer
 
     public init(layout: OUDSLink.Layout, size: OUDSLink.Size) {
-        self.isHover = false
         self.layout = layout
         self.size = size
+        isHover = false
     }
 
     // MARK: Body
@@ -91,6 +93,8 @@ struct OUDSLinkStyle: ButtonStyle {
     }
 }
 
+// MARK: - Link Array Label Style
+
 private struct LinkArrowLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
@@ -134,6 +138,8 @@ private struct LinkArrowLabelStyle: LabelStyle {
         arrow == .back ? .center : .bottom
     }
 }
+
+// MARK: - Link Icon And Text Label LabelStyle
 
 private struct LinkIconAndTextLabelStyle: LabelStyle {
 

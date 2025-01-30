@@ -67,7 +67,7 @@ final class OUDSComponentButtonUITests: XCTestCase {
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
     /// It iterates through all button `hierarchy`, for all `style` with *textOnly, textAndIcon and iconOnly* layouts
-    /// in enable and disabled states.
+    /// in enabled and disabled states.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
@@ -116,7 +116,7 @@ final class OUDSComponentButtonUITests: XCTestCase {
     ///   - interfaceStyle: The user interface style (light or dark)
     ///   - layout: the layout of the button
     ///   - hierarchy; the hierarchy of the button
-    ///   - disabled: the disbled flag
+    ///   - disabled: the disabled flag
     ///   - onColoredSurface: a flag to know if button is on a colored surface or not
     @MainActor private func testButton(theme: OUDSTheme,
                                        interfaceStyle: UIUserInterfaceStyle,
