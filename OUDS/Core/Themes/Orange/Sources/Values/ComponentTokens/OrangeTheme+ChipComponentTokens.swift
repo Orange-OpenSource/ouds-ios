@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
     @objc open var chipSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
-    @objc open var chipBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusTall }
+    @objc open var chipBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusPill }
     @objc open var chipBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
     @objc open var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
     @objc open var chipColorBgDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
