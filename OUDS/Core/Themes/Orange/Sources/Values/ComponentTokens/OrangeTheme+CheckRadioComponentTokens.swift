@@ -16,15 +16,10 @@ import OUDSTokensComponent
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// ଘ( ･ω･)_/ﾟ･:*:･｡☆
-// [File to generate with the tokenator]
-// Values are not the expected ones, manual fixes have been added
-// Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
-
 extension OrangeThemeCheckRadioComponentTokensProvider: CheckRadioComponentTokens {
-    @objc open var checkRadioSize: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
-    @objc open var checkRadioSizeMinHeightSelectorOnly: DimensionRawToken { DimensionRawTokens.dimension600 }
-    @objc open var checkRadioSizeMinWidthSelectorOnly: DimensionRawToken { DimensionRawTokens.dimension600 }
-    @objc open var checkRadioSizeMaxHeightSelectorOnly: DimensionRawToken { DimensionRawTokens.dimension600 }
-    @objc open var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken { DimensionRawTokens.dimension1200 }
+    @objc open var checkRadioSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1200 }
+    @objc open var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var checkRadioSizeMinHeightSelectorOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var checkRadioSizeMinWidthSelectorOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var checkRadioSizeSelector: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
 }

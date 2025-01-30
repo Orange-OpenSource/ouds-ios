@@ -28,14 +28,14 @@ public protocol CheckRadioComponentTokens {
 
     // MARK: - Sizes
 
-    var checkRadioSize: SizeSemanticToken { get }
+    var checkRadioSizeSelector: SizeSemanticToken { get }
 
     // MARK: - Dimensions
 
-    var checkRadioSizeMinHeightSelectorOnly: DimensionRawToken { get }
-    var checkRadioSizeMinWidthSelectorOnly: DimensionRawToken { get }
-    var checkRadioSizeMaxHeightSelectorOnly: DimensionRawToken { get }
-    var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken { get }
+    var checkRadioSizeMinHeightSelectorOnly: SizeSemanticToken { get }
+    var checkRadioSizeMinWidthSelectorOnly: SizeSemanticToken { get }
+    var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken { get }
+    var checkRadioSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

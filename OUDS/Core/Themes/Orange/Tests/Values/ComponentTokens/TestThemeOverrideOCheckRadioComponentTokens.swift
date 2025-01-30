@@ -32,30 +32,30 @@ final class TestThemeOverrideOfCheckRadioComponentTokens: XCTestCase {
     // MARK: - Sizes
 
     func testInheritedThemeCanOverrideCheckRadioComponentTokenSize() throws {
-        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSize, abstractTheme.checkRadio.checkRadioSize)
-        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSize == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioSize)
+        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeSelector, abstractTheme.checkRadio.checkRadioSizeSelector)
+        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeSelector == MockThemeCheckRadioComponentTokenProvider.mockThemecheckRadioSize)
     }
 
     // MARK: - Dimensions
 
     func testInheritedThemeCanOverrideCheckRadioComponentTokenSizeMinHeightSelectorOnly() throws {
-        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeMinHeightSelectorOnly, abstractTheme.checkRadio.checkRadioSizeMinHeightSelectorOnly)
-        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeMinHeightSelectorOnly == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioDimension)
+        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeSelectorMinHeightSelectorOnly, abstractTheme.checkRadio.checkRadioSizeSelectorMinHeightSelectorOnly)
+        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeSelectorMinHeightSelectorOnly == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioDimension)
     }
 
     func testInheritedThemeCanOverrideCheckRadioComponentTokenSizeMinWidthSelectorOnly() throws {
-        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeMinWidthSelectorOnly, abstractTheme.checkRadio.checkRadioSizeMinWidthSelectorOnly)
-        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeMinWidthSelectorOnly == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioDimension)
+        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeSelectorMinWidthSelectorOnly, abstractTheme.checkRadio.checkRadioSizeSelectorMinWidthSelectorOnly)
+        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeSelectorMinWidthSelectorOnly == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioDimension)
     }
 
     func testInheritedThemeCanOverrideCheckRadioComponentTokenSizeMaxHeightSelectorOnly() throws {
-        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeMaxHeightSelectorOnly, abstractTheme.checkRadio.checkRadioSizeMaxHeightSelectorOnly)
-        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeMaxHeightSelectorOnly == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioDimension)
+        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeSelectorMaxHeightSelectorOnly, abstractTheme.checkRadio.checkRadioSizeSelectorMaxHeightSelectorOnly)
+        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeSelectorMaxHeightSelectorOnly == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioDimension)
     }
 
     func testInheritedThemeCanOverrideCheckRadioComponentTokenSizeMaxHeightAssetsContainer() throws {
-        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeMaxHeightAssetsContainer, abstractTheme.checkRadio.checkRadioSizeMaxHeightAssetsContainer)
-        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeMaxHeightAssetsContainer == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioDimension)
+        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeSelectorMaxHeightAssetsContainer, abstractTheme.checkRadio.checkRadioSizeSelectorMaxHeightAssetsContainer)
+        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeSelectorMaxHeightAssetsContainer == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioDimension)
     }
 }
 
