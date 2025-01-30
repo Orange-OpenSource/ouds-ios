@@ -34,7 +34,7 @@ final class MockThemeCheckRadioComponentTokenProvider: OrangeThemeCheckRadioComp
 
     // MARK: - Badge component tokens
 
-    override public var checkRadioSize: SizeSemanticToken { Self.mockThemeCheckRadioSize }
+    override public var checkRadioSizeSelector: SizeSemanticToken { Self.mockThemeCheckRadioSize }
     override public var checkRadioSizeMinHeightSelectorOnly: DimensionRawToken { Self.mockThemeCheckRadioDimension }
     override public var checkRadioSizeMinWidthSelectorOnly: DimensionRawToken { Self.mockThemeCheckRadioDimension }
     override public var checkRadioSizeMaxHeightSelectorOnly: DimensionRawToken { Self.mockThemeCheckRadioDimension }
