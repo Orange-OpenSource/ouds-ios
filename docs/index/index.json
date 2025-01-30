@@ -22354,28 +22354,28 @@
                                 "type": "groupMarker"
                             },
                             {
-                                "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosize",
-                                "title": "var checkRadioSize: SizeSemanticToken",
-                                "type": "property"
-                            },
-                            {
                                 "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosizemaxheightassetscontainer",
-                                "title": "var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken",
+                                "title": "var checkRadioSizeMaxHeightAssetsContainer: SizeSemanticToken",
                                 "type": "property"
                             },
                             {
                                 "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosizemaxheightselectoronly",
-                                "title": "var checkRadioSizeMaxHeightSelectorOnly: DimensionRawToken",
+                                "title": "var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken",
                                 "type": "property"
                             },
                             {
                                 "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosizeminheightselectoronly",
-                                "title": "var checkRadioSizeMinHeightSelectorOnly: DimensionRawToken",
+                                "title": "var checkRadioSizeMinHeightSelectorOnly: SizeSemanticToken",
                                 "type": "property"
                             },
                             {
                                 "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosizeminwidthselectoronly",
-                                "title": "var checkRadioSizeMinWidthSelectorOnly: DimensionRawToken",
+                                "title": "var checkRadioSizeMinWidthSelectorOnly: SizeSemanticToken",
+                                "type": "property"
+                            },
+                            {
+                                "path": "/documentation/oudstokenscomponent/checkradiocomponenttokens/checkradiosizeselector",
+                                "title": "var checkRadioSizeSelector: SizeSemanticToken",
                                 "type": "property"
                             }
                         ],
@@ -24619,28 +24619,28 @@
                                         "type": "groupMarker"
                                     },
                                     {
-                                        "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosize",
-                                        "title": "var checkRadioSize: SizeSemanticToken",
-                                        "type": "property"
-                                    },
-                                    {
                                         "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosizemaxheightassetscontainer",
-                                        "title": "var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken",
+                                        "title": "var checkRadioSizeMaxHeightAssetsContainer: SizeSemanticToken",
                                         "type": "property"
                                     },
                                     {
                                         "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosizemaxheightselectoronly",
-                                        "title": "var checkRadioSizeMaxHeightSelectorOnly: DimensionRawToken",
+                                        "title": "var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken",
                                         "type": "property"
                                     },
                                     {
                                         "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosizeminheightselectoronly",
-                                        "title": "var checkRadioSizeMinHeightSelectorOnly: DimensionRawToken",
+                                        "title": "var checkRadioSizeMinHeightSelectorOnly: SizeSemanticToken",
                                         "type": "property"
                                     },
                                     {
                                         "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosizeminwidthselectoronly",
-                                        "title": "var checkRadioSizeMinWidthSelectorOnly: DimensionRawToken",
+                                        "title": "var checkRadioSizeMinWidthSelectorOnly: SizeSemanticToken",
+                                        "type": "property"
+                                    },
+                                    {
+                                        "path": "/documentation/oudsthemesorange/orangethemecheckradiocomponenttokensprovider/checkradiosizeselector",
+                                        "title": "var checkRadioSizeSelector: SizeSemanticToken",
                                         "type": "property"
                                     }
                                 ],
