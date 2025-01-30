@@ -12,54 +12,10 @@
 //
 
 import OUDS
-import OUDSTokensComponent
-import OUDSTokensRaw
+import OUDSTokensSemantic
 import SwiftUI
 
-/// The internal state used by modifiers to handle all states of the button.
-enum InternalSwitchState {
-    case enabled, hover, pressed, disabled
-}
-
-/// Just here to catch the isPressed state on the button
-struct SwitchButtonStyle: ButtonStyle {
-
-    // MARK: Stored properties
-
-    @Environment(\.isEnabled) private var isEnabled
-    @State private var isHover: Bool = false
-    let isOn: Bool
-
-    // MARK: Body
-
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .onHover { isHover in
-                self.isHover = isHover
-            }
-            .modifier(SwitchButtonModifier(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn))
-    }
-
-    // MARK: Private Helpers
-
-    private func internalState(isPressed: Bool) -> InternalSwitchState {
-        if !isEnabled {
-            return .disabled
-        }
-
-        if isPressed {
-            return .pressed
-        }
-
-        if isHover {
-            return .hover
-        }
-
-        return .enabled
-    }
-}
-
-struct SwitchButtonModifier: ViewModifier {
+struct OUDSSwitchButton: View {
 
     // MARK: Stored properties
 
@@ -70,13 +26,14 @@ struct SwitchButtonModifier: ViewModifier {
     let isOn: Bool
 
     // MARK: Body
-    func body(content: Content) -> some View {
+
+    var body: some View {
         HStack(alignment: .center) {
             HStack(alignment: .center) {
                 cursor
             }
             .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
-            .background(corsorColor)
+            .background(corsorBackgroundColor)
             .clipShape(Capsule())
             .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
         }
@@ -102,7 +59,7 @@ struct SwitchButtonModifier: ViewModifier {
         isOn ? Constants.inputSwitchSizeWidthCursorTrue : Constants.inputSwitchSizeWidthCursorFalse
     }
 
-    private var corsorColor: Color {
+    private var corsorBackgroundColor: Color {
         theme.switch.switchColorCursor.color(for: colorScheme)
     }
 
@@ -115,9 +72,17 @@ struct SwitchButtonModifier: ViewModifier {
     }
 
     private var trackColor: Color {
-        (isOn ? theme.switch.switchColorTrackTrue : theme.switch.switchColorTrackFalse)
-            .color(for: colorScheme)
+        switch internalState {
+        case .enabled:
+            return (isOn ? theme.switch.switchColorTrackTrue : theme.switch.switchColorTrackFalse)
+                .color(for: colorScheme)
+        case .hover, .pressed:
+            return (isOn ? theme.switch.switchColorTrackTrueInteraction : theme.switch.switchColorTrackFalseInteraction).color(for: colorScheme)
+        case .disabled:
+            return theme.colors.colorActionDisabled.color(for: colorScheme)
+        }
     }
+
     private var trackrWidth: Double {
         Constants.inputSwitchSizeWidthTrack
     }
@@ -135,20 +100,18 @@ struct SwitchButtonModifier: ViewModifier {
                 // TODO: when, Link is merged, use right asset in ouds bundle not in main
                 Image(decorative: "Tick")
                     .renderingMode(.template)
-                    .foregroundStyle(theme.switch.switchColorCheck.color(for: colorScheme))
+                    .foregroundStyle(cursorColor)
             default:
                 EmptyView()
             }
         }
     }
+    private var cursorColor: Color {
+        switch internalState {
+        case .enabled, .hover, .pressed:
+            return theme.switch.switchColorCheck.color(for: colorScheme)
+        case .disabled:
+            return theme.colors.colorActionDisabled.color(for: colorScheme)
+        }
+    }
 }
-
-// swiftlint:disable convenience_type
-struct Constants {
-    static let inputSwitchSizeWidthTrack: CGFloat = 56
-    static let inputSwitchSizeHeightTrack: CGFloat = 32
-    static let inputSwitchSizeWidthCursorTrue: CGFloat = 24
-    static let inputSwitchSizeWidthCursorFalse: CGFloat = 16
-    static let inputSwitchSizeWidthCursorPressed: CGFloat = 32
-}
-// swiftlint:enable convenience_type

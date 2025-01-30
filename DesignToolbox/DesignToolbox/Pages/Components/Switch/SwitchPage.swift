@@ -49,15 +49,14 @@ struct SwitchPage: View {
 struct SwitchIllustration: View {
 
     @Environment(\.colorScheme) private var colorScheme
-
     let model: SwitchConfigurationModel
 
     var body: some View {
         VStack(alignment: .center) {
             // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
             SwitchDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
             SwitchDemo(model: model)
+                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }
@@ -66,27 +65,38 @@ struct SwitchIllustration: View {
 
 private struct SwitchDemo: View {
 
-    @Environment(\.theme) private var theme
+    // MARK: Stored properties
 
+    @Environment(\.theme) private var theme
     @StateObject var model: SwitchConfigurationModel
     @State var isOn: Bool = true
 
+    // MARK: Body
+
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
-
-            switch model.layout {
-            case .iconOnly:
-                OUDSSwitch(isOn: $isOn)
-            case .textOnly:
-                OUDSSwitch(isOn: $isOn)
-            case .iconAndText:
-                OUDSSwitch(isOn: $isOn)
+        Group {
+            if model.switchOnly {
+                HStack(alignment: .center) {
+                    Spacer()
+                    OUDSSwitch(isOn: $isOn)
+                        .disabled(!model.enabled)
+                    Spacer()
+                }
+            } else {
+                OUDSSwitch(isOn: $isOn, label: "Label", helperText: helperText, icon: icon, onError: model.onError, divider: model.divider)
+                    .disabled(!model.enabled)
             }
-
-            Spacer()
         }
-        .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
+        .designToolboxBackground(onColoredSurface: false)
+    }
+
+    // MARK: Private helpers
+
+    private var helperText: String? {
+        model.helperText ? "Helper Text" : nil
+    }
+    private var icon: Image? {
+        model.icon ? Image(decorative: "ic_heart") : nil
     }
 }

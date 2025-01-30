@@ -25,15 +25,21 @@ final class SwitchConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var layout: SwitchLayout {
-        didSet { updateCode() }
-    }
+    @Published var switchOnly: Bool
+    @Published var helperText: Bool
+    @Published var icon: Bool
+    @Published var onError: Bool
+    @Published var divider: Bool
 
     // MARK: Initializer
 
     override init() {
-        self.enabled = true
-        self.layout = .textOnly
+       enabled = true
+       switchOnly = false
+       helperText = true
+       icon = true
+       onError = false
+       divider = true
     }
 
     deinit { }
@@ -45,48 +51,12 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     }
 
     override func updateCode() {
-        switch layout {
-        case .textOnly:
-            code =
+        code =
             """
           OUDSSwitch(isOn: $isOn)
           \(disableCode))
           """
-        case .iconOnly:
-            code =
-            """
-          OUDSSwitch(isOn: $isOn)
-          \(disableCode))
-          """
-        case .iconAndText:
-            code =
-            """
-          OUDSSwitch(isOn: $isOn)
-          \(disableCode))
-          """
-        }
     }
-}
-
-// MARK: - Switch Layout
-
-enum SwitchLayout: CaseIterable, CustomStringConvertible {
-    case textOnly
-    case iconAndText
-    case iconOnly
-
-    var description: String {
-        switch self {
-        case .textOnly:
-            "app_components_button_textOnlyLayout_label"
-        case .iconAndText:
-            "app_components_button_iconAndTextLayout_label"
-        case .iconOnly:
-            "app_components_button_iconOnlyLayout_label"
-        }
-    }
-
-    var id: String { description }
 }
 
 // MARK: - Switch Configuration View
@@ -104,17 +74,29 @@ struct SwitchConfiguration: View {
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_layout_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_layout_label", selection: $model.layout) {
-                    ForEach(SwitchLayout.allCases, id: \.id) { layout in
-                        Text(LocalizedStringKey(layout.description)).tag(layout)
-                    }
-                }
-                .pickerStyle(.segmented)
-            }
+            Toggle("switch only", isOn: $model.switchOnly)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+
+            Toggle("Helper Text", isOn: $model.helperText)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .disabled(model.switchOnly)
+
+            Toggle("Icon", isOn: $model.icon)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .disabled(model.switchOnly)
+
+            Toggle("Divider", isOn: $model.divider)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .disabled(model.switchOnly)
+
+            Toggle("On error", isOn: $model.onError)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .disabled(model.switchOnly)
         }
     }
 }

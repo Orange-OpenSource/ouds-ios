@@ -32,7 +32,14 @@ import SwiftUI
 public struct OUDSSwitch: View {
 
     // MARK: Stored Properties
-    var isOn: Binding<Bool>
+
+    private var isOn: Binding<Bool>
+    private let layout: Layout
+
+    private enum Layout {
+        case labeled(OUDSSwitchLabel.Label)
+        case nested
+    }
 
     // MARK: Initializers
 
@@ -43,16 +50,48 @@ public struct OUDSSwitch: View {
     ///     or off.
     public init(isOn: Binding<Bool>) {
         self.isOn = isOn
+        self.layout = .nested
+    }
+
+    /// Creates a switch with label and optional helper text.
+    ///
+    /// - Parameters:
+    ///   - isOn: A binding to a property that determines whether the switch is on
+    ///     or off.
+    ///   - label: The main label of the switch.
+    ///   - helperText: An additonal helper text.
+    ///   - icon: An optional icon
+    ///   - onError: It the option is on error
+    ///   - divider: If true a divider is added at the bottom of the view.
+    public init(isOn: Binding<Bool>, label: String, helperText: String? = nil, icon: Image? = nil, onError: Bool = false, divider: Bool = false) {
+        self.isOn = isOn
+        self.layout = .labeled(.init(label: label, helperText: helperText, icon: icon, onError: onError, divider: divider))
     }
 
     // MARK: Body
 
     public var body: some View {
-        Button {
-            isOn.wrappedValue.toggle()
-        } label: {
-            Text("")
+        switch layout {
+        case .labeled(let label):
+            Button("") {
+                isOn.wrappedValue.toggle()
+            }
+            .buttonStyle(OUDSSwitchLabeledStyle(isOn: isOn.wrappedValue, label: label))
+        case .nested:
+            Button("") {
+                isOn.wrappedValue.toggle()
+            }
+            .buttonStyle(OUDSSwitchNestedStyle(isOn: isOn.wrappedValue))
         }
-        .buttonStyle(SwitchButtonStyle(isOn: isOn.wrappedValue))
     }
 }
+
+// swiftlint:disable convenience_type
+struct Constants {
+    static let inputSwitchSizeWidthTrack: CGFloat = 56
+    static let inputSwitchSizeHeightTrack: CGFloat = 32
+    static let inputSwitchSizeWidthCursorTrue: CGFloat = 24
+    static let inputSwitchSizeWidthCursorFalse: CGFloat = 16
+    static let inputSwitchSizeWidthCursorPressed: CGFloat = 32
+}
+// swiftlint:enable convenience_type
