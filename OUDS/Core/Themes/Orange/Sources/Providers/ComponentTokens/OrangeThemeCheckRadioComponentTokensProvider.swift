@@ -35,7 +35,7 @@ import OUDSTokensSemantic
 ///
 ///         // Then override the radio / check component tokens you want.
 ///
-///         override var checkRadioSize: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
+///         override var checkRadioSizeSelector: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
 ///
 ///         override var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken { DimensionRawTokens.dimension1000 }
 ///

@@ -32,8 +32,8 @@ final class TestThemeOverrideOfCheckRadioComponentTokens: XCTestCase {
     // MARK: - Sizes
 
     func testInheritedThemeCanOverrideCheckRadioComponentTokenSize() throws {
-        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSize, abstractTheme.checkRadio.checkRadioSize)
-        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSize == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioSize)
+        XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioSizeSelector, abstractTheme.checkRadio.checkRadioSizeSelector)
+        XCTAssertTrue(inheritedTheme.checkRadio.checkRadioSizeSelector == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioSize)
     }
 
     // MARK: - Dimensions
