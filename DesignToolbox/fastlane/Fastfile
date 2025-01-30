@@ -293,7 +293,7 @@ platform :ios do
             puts "👉 Build and upload (alpha)"
             update_build_number
             build
-            upload(type: "alpha", issues_numbers: params[:issues_numbers])
+            upload(type: "alpha", issues_numbers: params[:issues])
             public_github_notifications_build_details
 
         else # Beta case (not production too), detailSymbol should be here commit hash
@@ -409,7 +409,7 @@ platform :ios do
                 issues_numbers = params[:issues_numbers]
                 puts "ℹ️ Upload type: '#{uploadType}'"
                 if uploadType == "alpha"
-                    news = "Warning: this is alpha build for issues #{issues_numbers}\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
+                    news = "Warning: this is alpha build for issues '#{issues_numbers}'\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
                 else
                     news = "Warning: this is #{uploadType} build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
                 end
