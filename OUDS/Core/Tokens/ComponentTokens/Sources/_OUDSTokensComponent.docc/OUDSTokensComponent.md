@@ -5,6 +5,11 @@ They can be seen as a kind of bridge between components and in the end primitive
 
 ## Overview
 
+<!-- NOTE: Do not forget to update tokens version -->
+```
+🧱 Tokens version: v0.4.1
+```
+
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.
 _Components_ use _component tokens_ exposed through the _theme_ thanks to token providers to get their style values.
 
@@ -17,7 +22,7 @@ Example with ``ButtonComponentTokens``:
 ```swift
 // Declare some component tokens for buttons with properties they must apply
 public protocol ButtonComponentTokens {
-    var buttonSizeMaxHeight: SizeSemanticToken { get }
+    var buttonSizeMaxHeightIconOnly: SizeSemanticToken { get }
     var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
     var buttonBorderRadius: BorderRadiusSemanticToken { get }
     var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
@@ -32,7 +37,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
     // Raw tokens can be used
 
-    @objc open var buttonSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
     
     // And also semantic tokens
 
@@ -44,31 +49,6 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
 // This provider is then exposed through OUDSTheme as an AllButtonComponentTokensProvider
 ```
-
-## Component tokens management
-
-### How to add component tokens
-
-First, you need to define which from family this semantic comes, such tokens are strongly related to components.
-
-If your token is not from one of the existing groups, maybe you should redesign your token or create a new family.
-To do that, you will have to create a dedicated Swift `protocol`, with a useful name, and declare as a `var` the component token.
-If you already know the family, just update the matching files.
-
-### How to update or remove component tokens
-
-Quite simple, find the component token you want to update or remove, and update or remove it.
-
-But beware, if you change the name of the property or if you move it from a `protocol` to another, or if you remove the token, you must keep retrocompatibility as much as possible so as to avoid to break any public API. Keep also the CHANGELOG and/or the release updated with some BREAKING CHANGE notification, and also the Git history clean.
-
-If you update the value, keep also the CHANGELOG and/or RELEASE NOTE updated so as to let your users know the variables have been changed.
-
-### About tests of tokens
-
-When component tokens have been added, removed or renamed, unit tests must be updated.
-
-We do not test the component tokens values as they are, because these values will be generated and keeping up to date the unit tests may be time wasting.
-But for each component tokens we check if a subtheme can override the token using derived tokens providers.
 
 ## How to use component tokens
 
@@ -106,7 +86,7 @@ struct SomeView: View {
 
 // Do not forget in your app to use the `OUDSThemeableView` for your theme, e.g. `OrangeTheme`
 @main
-struct Showcase: App {
+struct DesignToolbox: App {
 
     var body: some Scene {
         WindowGroup {
@@ -123,4 +103,16 @@ struct Showcase: App {
 
 ### Group
 
+- ``BadgeComponentTokens``
+- ``BulletListComponentTokens``
+- ``BreadcrumbComponentTokens``
 - ``ButtonComponentTokens``
+- ``CheckRadioComponentTokens``
+- ``ChipComponentTokens``
+- ``InputTextComponentTokens``
+- ``LinkComponentTokens``
+- ``ListItemComponentTokens``
+- ``SelectComponentTokens``
+- ``SkeletonComponentTokens``
+- ``SwitchComponentTokens``
+- ``TagComponentTokens``

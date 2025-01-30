@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSFoundations
 import OUDSTokensComponent
 import OUDSTokensSemantic
 
@@ -20,12 +21,16 @@ import OUDSTokensSemantic
 /// to implement all tokens.
 /// Any properties of an overridable theme should be defined so as to provide defaults values.
 /// We allow this theme to be derivated and be overriden.
-///
-/// ``OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_.
-///
+/// ``OUDSTheme`` can be seen as a kind of "abstract class" in _object oriented paradigm_, or *theme contract*.
 /// Because `OUDSTheme` is not a *final* class, its type cannot be seen as `Sendable`, that is the reason why this conformity is unchecked.
 ///
 /// **Warning: You are not supposed to use this abstract default theme directly. Please prefer `OrangeTheme` instead**
+/// Prefer theme like `OrangeTheme`.
+///
+/// Any theme is handled as ``OUDSTheme``.
+/// It contains plenty of *tokens provider* for semantic tokens and component tokens.
+/// These providers are given to the theme in its initialize using ``TokensProviders``.
+/// Theme can have also non-provider properties like *font family* to apply.
 ///
 /// - Since: 0.8.0
 open class OUDSTheme: @unchecked Sendable {
@@ -64,73 +69,91 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to button components like `OUDSButton`
     public let button: AllButtonComponentTokensProvider
 
+    /// All components tokens related to link components like `OUDSLink`
+    public let link: AllLinkComponentTokensProvider
+
+    /// All components tokens related to select components like `OUDSSelect`
+    public let select: AllSelectComponentTokensProvider
+
+    /// All components tokens related to skeleto components like `OUDSSkeleton`
+    public let skeleton: AllSkeletonComponentTokensProvider
+
+    /// All components tokens related to tags components like `OUDSTag`
+    public let tag: AllTagComponentTokensProvider
+
+    /// All components tokens related to switch / toggle components like `OUDSSwitch`
+    public let `switch`: AllSwitchComponentTokensProvider
+
+    /// All components tokens related to list item components like `OUDSListItem`
+    public let listItem: AllListItemComponentTokensProvider
+
+    /// All components tokens related to chip components like `OUDSChip`
+    public let chip: AllChipComponentTokensProvider
+
+    /// All components tokens related to breadcrumb components like `OUDSBreadcrumb`
+    public let breadcrumb: AllBreadcrumbComponentTokensProvider
+
+    /// All components tokens related to bullet list components like `OUDSBulletList`
+    public let bulletList: AllBulletListComponentTokensProvider
+
+    /// All components tokens related to bullet list components like `OUDSInputText`
+    public let inputText: AllInputTextComponentTokensProvider
+
+    /// All components tokens related to badge components like `OUDSBadge`
+    public let badge: AllBadgeComponentTokensProvider
+
+    /// All components tokens related to radio button and checbkxoes components like `OUDSRadioButton` and `OUDSCheckboxe`
+    public let checkRadio: AllCheckRadioComponentTokensProvider
+
+    // NOTE: Add new component tokens provider here
+
     // MARK: - Initializers
 
     /// Defines a basic kind of abstract theme to subclass then.
-    /// No custom font family will be used.
+    /// Verifies using ``TokensProviders`` if some semantic or component tokens providers are missing.
+    /// If so, errors are logged and *fatalError* is triggered because unexpected behavior.
+    ///
     /// - Parameters:
-    ///    - colors: An object providing all the color semantic tokens
-    ///    - borders: An object providing all the border semantic tokens
-    ///    - elevations: An object providing all the elevation semantic tokens
-    ///    - fonts: An object providing all the font semantic tokens
-    ///    - grids: An object providing all the grid semantic tokens
-    ///    - opacities: An object providing all the opacity semantic tokens
-    ///    - sizes: An object providing all the size semantic tokens
-    ///    - spaces: An object providing all the space semantic tokens
-    ///    - button: An object providing all the component tokens for buttons
-    public init(colors: AllColorSemanticTokensProvider,
-                borders: AllBorderSemanticTokensProvider,
-                elevations: AllElevationSemanticTokensProvider,
-                fonts: AllFontSemanticTokensProvider,
-                grids: AllGridSemanticTokensProvider,
-                opacities: AllOpacitySemanticTokensProvider,
-                sizes: AllSizeSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider,
-                button: AllButtonComponentTokensProvider) {
-        self.colors = colors
-        self.borders = borders
-        self.elevations = elevations
-        fontFamily = nil
-        self.fonts = fonts
-        self.grids = grids
-        self.opacities = opacities
-        self.sizes = sizes
-        self.spaces = spaces
-        self.button = button
-    }
-
-    /// Defines a basic kind of abstract theme to subclass then.
-    /// - Parameters:
-    ///    - colors: An object providing all the color semantic tokens, as `AllColorSemanticTokens` implementation
-    ///    - borders: An object providing all the border semantic tokens, as `AllBorderSemanticTokensProvider` implementation
-    ///    - elevations: An object providing all the elevation semantic tokens, by default `AllElevationSemanticTokensProvider`
+    ///    - tokensProviders: All the semantic and component tokens providers
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
-    ///    - fonts: An object providing all the font semantic tokens, by default `AllFontemanticTokens`
-    ///    - grids: An object providing all the grid semantic tokens, by default `AllGridSemanticTokens`
-    ///    - opacities: An object providing all the opacity semantic tokens, as `AllOpacitySemanticTokensProvider` implementation
-    ///    - sizes: An object providing all the size semantic tokens, as `AllSizeSemanticTokens` implementation
-    ///    - spaces: An object providing all the space semantic tokens, as `AllSpaceSemanticTokensProvider` implementation
-    ///    - button: An object providing all the component tokens for buttons
-    public init(colors: AllColorSemanticTokensProvider,
-                borders: AllBorderSemanticTokensProvider,
-                elevations: AllElevationSemanticTokensProvider,
-                fontFamily: FontFamilySemanticToken?,
-                fonts: AllFontSemanticTokensProvider,
-                grids: AllGridSemanticTokensProvider,
-                opacities: AllOpacitySemanticTokensProvider,
-                sizes: AllSizeSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider,
-                button: AllButtonComponentTokensProvider) {
-        self.colors = colors
-        self.borders = borders
-        self.elevations = elevations
+    public init(tokensProviders: TokensProviders,
+                fontFamily: FontFamilySemanticToken? = nil) {
+
+        // Check if we have all the exxpected tokens providers
+        let missingProviders = tokensProviders.missingProviders()
+        if !missingProviders.isEmpty {
+            OL.error("Some token providers are missing: '\(missingProviders)'")
+        }
+
+        // Load semantic tokens providers
+        colors = tokensProviders.get()
+        borders = tokensProviders.get()
+        elevations = tokensProviders.get()
+        fonts = tokensProviders.get()
+        grids = tokensProviders.get()
+        opacities = tokensProviders.get()
+        sizes = tokensProviders.get()
+        spaces = tokensProviders.get()
+
+        // Load component tokens providers
+        button = tokensProviders.get()
+        link = tokensProviders.get()
+        select = tokensProviders.get()
+        skeleton = tokensProviders.get()
+        tag = tokensProviders.get()
+        `switch` = tokensProviders.get()
+        listItem = tokensProviders.get()
+        chip = tokensProviders.get()
+        breadcrumb = tokensProviders.get()
+        bulletList = tokensProviders.get()
+        inputText = tokensProviders.get()
+        badge = tokensProviders.get()
+        checkRadio = tokensProviders.get()
+
+        // NOTE: Add new component tokens provider here
+
+        // Load other configuration elements
         self.fontFamily = fontFamily
-        self.fonts = fonts
-        self.grids = grids
-        self.opacities = opacities
-        self.sizes = sizes
-        self.spaces = spaces
-        self.button = button
     }
 
     deinit { }

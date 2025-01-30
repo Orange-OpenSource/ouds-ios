@@ -30,9 +30,9 @@ final class TestThemeOverrideOfButtonComponentTokens: XCTestCase {
         inheritedTheme = MockTheme()
     }
 
-    func testInheritedThemeCanOverrideButtonComponentTokenButtonSizeMaxHeight() throws {
-        XCTAssertNotEqual(inheritedTheme.button.buttonSizeMaxHeight, abstractTheme.button.buttonSizeMaxHeight)
-        XCTAssertTrue(inheritedTheme.button.buttonSizeMaxHeight == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
+    func testInheritedThemeCanOverrideButtonComponentTokenButtonSizeMaxHeightIconOnly() throws {
+        XCTAssertNotEqual(inheritedTheme.button.buttonSizeMaxHeightIconOnly, abstractTheme.button.buttonSizeMaxHeightIconOnly)
+        XCTAssertTrue(inheritedTheme.button.buttonSizeMaxHeightIconOnly == MockThemeButtonComponentTokenProvider.mockThemeButtonSize)
     }
 
     func testInheritedThemeCanOverrideButtonComponentTokenButtonSizeMinHeight() throws {

@@ -635,9 +635,9 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.colors.colorChartCategoricalTier10 == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenColorChartFunctionalInformation() throws {
-        XCTAssertNotEqual(inheritedTheme.colors.colorChartFunctionalInformation, abstractTheme.colors.colorChartFunctionalInformation)
-        XCTAssertTrue(inheritedTheme.colors.colorChartFunctionalInformation == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
+    func testInheritedThemeCanOverrideSemanticTokenColorChartFunctionalInfo() throws {
+        XCTAssertNotEqual(inheritedTheme.colors.colorChartFunctionalInfo, abstractTheme.colors.colorChartFunctionalInfo)
+        XCTAssertTrue(inheritedTheme.colors.colorChartFunctionalInfo == MockThemeColorSemanticTokensProvider.mockThemeMultipleColorSemanticTokens)
     }
 
     func testInheritedThemeCanOverrideSemanticTokenColorChartFunctionalNegative() throws {
@@ -767,6 +767,10 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
         XCTAssertEqual(inheritedTheme.colors.colorRepositoryNeutralMutedWhite, abstractTheme.colors.colorRepositoryNeutralMutedWhite)
     }
 
+    func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityBlackHigh() throws {
+        XCTAssertEqual(inheritedTheme.colors.colorRepositoryOpacityBlackHigh, abstractTheme.colors.colorRepositoryOpacityBlackHigh)
+    }
+
     func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityBlackHigher() throws {
         XCTAssertEqual(inheritedTheme.colors.colorRepositoryOpacityBlackHigher, abstractTheme.colors.colorRepositoryOpacityBlackHigher)
     }
@@ -789,6 +793,10 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
 
     func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityBlackMedium() throws {
         XCTAssertEqual(inheritedTheme.colors.colorRepositoryOpacityBlackMedium, abstractTheme.colors.colorRepositoryOpacityBlackMedium)
+    }
+
+    func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityBlackSoft() throws {
+        XCTAssertEqual(inheritedTheme.colors.colorRepositoryOpacityBlackSoft, abstractTheme.colors.colorRepositoryOpacityBlackSoft)
     }
 
     func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityBlackTransparent() throws {
@@ -827,6 +835,10 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
         XCTAssertEqual(inheritedTheme.colors.colorRepositoryOpacityWhiteLow, abstractTheme.colors.colorRepositoryOpacityWhiteLow)
     }
 
+    func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWhiteMedium() throws {
+        XCTAssertEqual(inheritedTheme.colors.colorRepositoryOpacityWhiteMedium, abstractTheme.colors.colorRepositoryOpacityWhiteMedium)
+    }
+
     func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWhiteLower() throws {
         XCTAssertEqual(inheritedTheme.colors.colorRepositoryOpacityWhiteLower, abstractTheme.colors.colorRepositoryOpacityWhiteLower)
     }
@@ -841,6 +853,10 @@ final class TestThemeOverrideOfColorMultipleSemanticTokens: XCTestCase {
 
     func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryPositiveDefault() throws {
         XCTAssertEqual(inheritedTheme.colors.colorRepositoryPositiveDefault, abstractTheme.colors.colorRepositoryPositiveDefault)
+    }
+
+    func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryPositiveHigh() throws {
+        XCTAssertEqual(inheritedTheme.colors.colorRepositoryPositiveHigh, abstractTheme.colors.colorRepositoryPositiveHigh)
     }
 
     func testInheritedThemeCanNotOverrideSemanticTokenColorRepositoryPositiveHighest() throws {

@@ -55,7 +55,7 @@ jobs:
 
       - name: Build demo app
         run: |
-          cd Showcase
+          cd DesignToolbox
           bundle exec fastlane buildDebugApp
 
   # Test the library with unit tests
@@ -80,7 +80,7 @@ jobs:
 
       - name: Run unit tests on demo app
         run: |
-          cd Showcase
+          cd DesignToolbox
           bundle exec pod install
           bundle exec fastlane ios test
 
@@ -106,7 +106,7 @@ jobs:
 
       - name: Run UI-based unit tests on demo app
         run: |
-          cd Showcase
+          cd DesignToolbox
           bundle exec pod install
           bundle exec fastlane test_ui
         continue-on-error: true # See https://github.com/Orange-OpenSource/ouds-ios/issues/305

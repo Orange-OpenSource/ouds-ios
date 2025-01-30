@@ -167,7 +167,7 @@ class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
 }
 ```
 
-Then define your own theme class and assign the providers:
+Then define your own theme class and assign the providers, but beware, do not forget some providers as it will crash:
 
 ```swift
 import OUDSThemesOrange // To get OrangeTheme
@@ -176,18 +176,21 @@ import OUDSThemesOrange // To get OrangeTheme
 class YourAppTheme: OrangeTheme {
     
     override init() {
-        super.init(colors: YourAppThemeColorTokensProvider(),
-                   borders: YourAppThemeBorderTokensProvider(),
-                   elevations: YourAppThemeElevationTokensProvider(),
-                   fonts: YourAppThemeFontTokensProvider(),
-                   grids: YourAppThemeGridTokensProvider(),
-                   opacities: YourAppThemeOpacityTokensProvider(),
-                   sizes: YourAppThemeSizeTokensProvider(),
-                   spaces: YourAppThemeSpaceTokensProvider())
-    }
+        let providers: TokensProviders = [
+            YourAppThemeColorTokensProvider(),
+            YourAppThemeBorderTokensProvider(),
+            YourAppThemeElevationTokensProvider(),
+            YourAppThemeFontTokensProvider(),
+            YourAppThemeGridTokensProvider(),
+            YourAppThemeOpacityTokensProvider(),
+            YourAppThemeSizeTokensProvider(),
+            YourAppThemeSpaceTokensProvider(),
+            YourAppThemeButtonComponentTokensProvider(),
+            // Etc.
+        ]
 
-    // You can use also availale tokens providers in OrangeTheme module
-    // You are not forced to define all providers as the OrangeTheme initializer as default ones
+        super.init(tokensProviders: providers)
+    }
 }
 ```
 

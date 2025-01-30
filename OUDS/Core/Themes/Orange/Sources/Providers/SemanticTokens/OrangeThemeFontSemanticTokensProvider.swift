@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
 import OUDSFoundations
 
 /// A class which wraps all **font semantic tokens**, *multiple*, *composite* or not, and expose them.
@@ -33,13 +34,13 @@ import OUDSFoundations
 /// }
 /// ```
 ///
-/// Then, you can give this `CustomColorTokensProvider` to your own theme implementation:
+/// Then, you can give this `CustomFontTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(fonts: CustomFontTokensProvider(),
+///         super.init(tokensProviders: [ CustomFontTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -47,15 +48,15 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(fonts: CustomFontTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomFontTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0
-open class OrangeThemeFontSemanticTokensProvider {
+open class OrangeThemeFontSemanticTokensProvider: AllFontSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeFontSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeFontSemanticTokensProvider")
     }
 
     deinit{ }

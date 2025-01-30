@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSFoundations
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
@@ -44,7 +45,7 @@ extension OUDSTheme {
         case .regular:
             return grids.gridRegularMinWidth
         @unknown default:
-            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
+            OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
@@ -74,7 +75,7 @@ extension OUDSTheme {
         case .regular:
             return grids.gridRegularMaxWidth
         @unknown default:
-            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
+            OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
@@ -104,7 +105,7 @@ extension OUDSTheme {
         case .regular:
             return grids.gridRegularMargin
         @unknown default:
-            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
+            OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 
@@ -134,7 +135,7 @@ extension OUDSTheme {
         case .regular:
             return grids.gridRegularColumnGap
         @unknown default:
-            fatalError("🤖 Raw token unavailable for \(sizeClass)!")
+            OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
     }
 }

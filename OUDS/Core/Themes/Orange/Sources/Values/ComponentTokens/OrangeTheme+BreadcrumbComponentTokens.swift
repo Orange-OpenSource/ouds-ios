@@ -1,0 +1,36 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import Foundation
+import OUDSTokensComponent
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+extension OrangeThemeBreadcrumbComponentTokensProvider: BreadcrumbComponentTokens {
+    @objc open var breadcrumbSizeMinHeightMedium: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var breadcrumbSizeMinHeightSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    @objc open var breadcrumbSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var breadcrumbSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
+    @objc open var breadcrumbColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    @objc open var breadcrumbColorContentFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
+    @objc open var breadcrumbColorContentHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    @objc open var breadcrumbColorContentPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc open var breadcrumbSizeIconMedium: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    @objc open var breadcrumbSizeIconSmall: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
+    @objc open var breadcrumbSpaceColumnGapArrowMedium: SpaceSemanticToken { spaces.spaceColumnGapShorter }
+    @objc open var breadcrumbSpaceColumnGapArrowSmall: SpaceSemanticToken { spaces.spaceColumnGapShortest }
+    @objc open var breadcrumbSpaceColumnGapLevelsMedium: SpaceSemanticToken { spaces.spaceColumnGapShort }
+    @objc open var breadcrumbSpaceColumnGapLevelsSmall: SpaceSemanticToken { spaces.spaceColumnGapShorter }
+    @objc open var breadcrumbSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
+    @objc open var breadcrumbSpacePaddingInline: SpaceSemanticToken { spaces.spacePaddingInlineNone }
+}

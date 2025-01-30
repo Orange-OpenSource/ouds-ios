@@ -3,24 +3,16 @@
 <p align="center">
   OUDS iOS provides Orange iOS components to developers and a demo application.
   <br>
-  <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?assignees=pylapp&labels=%F0%9F%90%9E%20bug%2C%F0%9F%94%8D+triage&template=bug_report.yml&title=[Bug]%3A+Bug+Summary">Report bug</a>
+  <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=bug_report.yml" title="Open an issue on GitHub">Report bug</a>
   ·
-  <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?assignees=pylapp&labels=feature%2C%F0%9F%94%8D%20triage&template=feature_request.yml&title=[feature]%3A+">Request feature</a>
+  <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=feature_request.yml title="Open an issue on GitHub">Request feature</a>
   ·
-  <a href="https://ios.unified-design-system.orange.com/">Online documentation</a>
-·
-  <a href="https://github.com/Orange-OpenSource/ouds-ios/wiki">Wiki</a>
+  <a href="https://ios.unified-design-system.orange.com/" title="Swift library technical documentation on GitHub Pages">Swift documentation</a>
+  ·
+  <a href="https://github.com/Orange-OpenSource/ouds-ios/wiki" title="Swift library wiki">Wiki</a>
+  ·
+  <a href="https://unified-design-system.orange.com/" title="Design system global website">Design system</a>
 </p>
-
-## Table of contents
-
-- [Status](#status)
-- [Content](#content)
-- [OUDS](#ouds)
-- [Import the library](#import-the-library)
-- [Bugs and feature requests](#bugs-and-feature-requests)
-- [Contributing](#contributing)
-- [Copyright and license](#copyright-and-license)
 
 ## Status
 
@@ -44,51 +36,23 @@ You can find the [detailed technical documentation online](https://ios.unified-d
 
 Details about the project are also [available in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki).
 
-**⚠️ This release should not be used as is. This is only an incremental version of OUDS iOS library.**
+You can find the [available API online on the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
+
+```
+⚠️ This release should not be used as is. 
+⚠️ This is only an incremental version of OUDS iOS library.
+```
 
 ## OUDS
 
-OUDS means "Orange Unified Design System".
+OUDS means *Orange Unified Design System*.
+
 This is a new design system, again, but _unified_, trying to merge all requirements of Orange brands and affiliates so as to provide a unique design system, unified across all platforms and for all countries, companies, users and apps.
 Guidelines for TV, Android, iOS and web environments will be merged in a "cohesive" approach, and any Orange-related softwares including brand apps like *Parnasse* and *Sosh*, *Orange Innovation Cup* apps and Orange countries and affiliates app will use this project in the future.
-The project is open source and topics like accessibility and ecodesign are also managed.
+
+The project is open source and topics like accessibility and ecodesign should be also managed.
+
 It should replace internal frameworks and also [ODS](https://github.com/Orange-OpenSource/ods-ios) in the near future.
-
-## Import the library
-
-Add in *Xcode* the Swift package dependency `https://github.com/Orange-OpenSource/ouds-ios`.
-
-Then add in your project the modules you need within:
-- `OUDSModules` containing OUDS modules with features
-- `OUDSComponents` containing all components embeded also inside _modules_
-- `OUDSThemesInverseTheme` providing a _theme_ with inverted colors for _components_
-- `OUDSThemesOrangeTheme` providing the default _Orange_ theme defining style for _components_
-- `OUDS` providing basic objects and low layer of responsabilities to help to implement _themes_
-- `OUDSTokensComponent` providing _component tokens_ for _components_ to add in applications and _modules_
-- `OUDSTokensSemantic` providing _semantic tokens_ 
-- `OUDSTokensRaw` providing _raw tokens_
-- `OUDSFoundations` providing low level and utils objects.
-
-You must define the theme you use in your app root view:
-
-```swift
-import OUDS  // To get OUDSThemeableView
-import OUDSThemeOrange // To get OrangeTheme
-import SwiftUI
-
-@main
-struct YourApp: App {
-    var body: some Scene {
-       WindowGroup {
-          OUDSThemeableView(theme: OrangeTheme()) {
-                // Your root view
-          }
-       }
-    }
-}
-```
-
-Then get the current thme using `@Environment(\.theme) var theme` and use it! You can also use the moudles and the components exposed by the library.
 
 ## Bugs and feature requests
 

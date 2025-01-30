@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
 import OUDSFoundations
 
 // swiftlint:disable type_name
@@ -37,7 +38,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(elevations: CustomElevationTokensProvider(),
+///         super.init(tokensProviders: [ CustomElevationTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -45,15 +46,15 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(elevations: CustomElevationTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomElevationTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0
-open class OrangeThemeElevationSemanticTokensProvider {
+open class OrangeThemeElevationSemanticTokensProvider: AllElevationSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeElevationSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeElevationSemanticTokensProvider")
     }
 
     deinit{ }

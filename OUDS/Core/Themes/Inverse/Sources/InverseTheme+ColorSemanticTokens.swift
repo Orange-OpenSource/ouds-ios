@@ -29,7 +29,7 @@ final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTok
     // MARK: - Init
 
     override init() {
-        OUDSLogger.debug("Init of InverseThemeColorSemanticTokensProvider")
+        OL.debug("Init of InverseThemeColorSemanticTokensProvider")
     }
 
     deinit { }
@@ -286,7 +286,7 @@ final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTok
 
     override public var colorChartCategoricalTier10: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartCategoricalTier10Dark) }
 
-    override public var colorChartFunctionalInformation: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartFunctionalInformationDark) }
+    override public var colorChartFunctionalInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartFunctionalInfoDark) }
 
     override public var colorChartFunctionalNegative: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorChartFunctionalNegativeDark) }
 

@@ -14,6 +14,9 @@
 import Foundation
 import os
 
+/// To keep code smaller :-p
+public typealias OL = OUDSLogger
+
 /// The `os.Logger` wrapper used in the *OUDS iOS* library so as to logs things in standard output or elsewhere.
 ///
 /// - Since: 0.8.0
@@ -57,6 +60,12 @@ public struct OUDSLogger {
     /// Logs the message with a "error" prefix and the `error` method of the `os.Logger`
     /// - Parameter message: The message to log after the prefix
     public static func error(_ message: String) {
-        logger.error("\(prefix):error: 💥 \(message)")
+        logger.error("\(prefix):error: ‼️ \(message)")
+    }
+
+    /// Triggers a `fatalError` signal with the given message
+    /// - Parameter message: The message to log after the prefix
+    public static func fatal(_ message: String) -> Never {
+        fatalError("\(prefix):fatal: 💥 \(message)")
     }
 }

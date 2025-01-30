@@ -30,7 +30,7 @@ extension String {
     /// - Returns String: The full name of the font to use (e.g. "Menlo-Bold" or "Menlo-Italic")
     public func compose(withFont weight: String) -> String {
         guard !self.isEmpty else {
-            OUDSLogger.error("No font family to compose with weight")
+            OL.error("No font family to compose with weight")
             return self
         }
         if !weight.isEmpty {

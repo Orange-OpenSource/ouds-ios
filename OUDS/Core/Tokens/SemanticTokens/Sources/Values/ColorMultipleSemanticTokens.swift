@@ -296,7 +296,7 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorChartCategoricalTier10: MultipleColorSemanticTokens { get }
 
-    var colorChartFunctionalInformation: MultipleColorSemanticTokens { get }
+    var colorChartFunctionalInfo: MultipleColorSemanticTokens { get }
 
     var colorChartFunctionalNegative: MultipleColorSemanticTokens { get }
 
@@ -358,6 +358,8 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorRepositoryNeutralMutedWhite: MultipleColorSemanticTokens { get }
 
+    var colorRepositoryOpacityBlackHigh: MultipleColorSemanticTokens { get }
+
     var colorRepositoryOpacityBlackHigher: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityBlackHighest: MultipleColorSemanticTokens { get }
@@ -369,6 +371,8 @@ public protocol ColorMultipleSemanticTokens {
     var colorRepositoryOpacityBlackLowest: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityBlackSoft: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { get }
 
@@ -386,6 +390,8 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { get }
 
+    var colorRepositoryOpacityWhiteMedium: MultipleColorSemanticTokens { get }
+
     var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityWhiteLower: MultipleColorSemanticTokens { get }
@@ -395,6 +401,8 @@ public protocol ColorMultipleSemanticTokens {
     var colorRepositoryOpacityWhiteTransparent: MultipleColorSemanticTokens { get }
 
     var colorRepositoryPositiveDefault: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryPositiveHigh: MultipleColorSemanticTokens { get }
 
     var colorRepositoryPositiveHighest: MultipleColorSemanticTokens { get }
 

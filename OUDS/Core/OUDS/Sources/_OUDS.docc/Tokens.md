@@ -34,7 +34,7 @@ That is the reason why tokens are exposed as `@objc open` to be available and ov
 ```swift
 // Declare some component tokens for buttons with properties they must apply
 public protocol ButtonComponentTokens {
-    var buttonSizeMaxHeight: SizeSemanticToken { get }
+    var buttonSizeMaxHeightIconOnly: SizeSemanticToken { get }
     var buttonBorderWidthDefault: BorderWidthSemanticToken { get }
     var buttonBorderRadius: BorderRadiusSemanticToken { get }
     var buttonColorBgDefaultPressedMono: MultipleColorSemanticTokens { get }
@@ -49,7 +49,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 
     // Raw tokens can be used
 
-    @objc open var buttonSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
     
     // And also semantic tokens
 
