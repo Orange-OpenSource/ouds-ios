@@ -320,8 +320,19 @@ Tokens library v0.4.1
 
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-We do not generate yet `RELEASE_NOTE.md` file using the Git history and [git cliff](https://git-cliff.org/) tool.
+We can generate a `RELEASE_NOTE.md` file using the Git history and [git cliff](https://git-cliff.org/) tool.
 Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/52-%E2%80%90-About-changelog,-release-notes-and-hooks)
+
+To generate a release note:
+
+```shell
+# Install git-cliff
+brew install git-cliff
+
+# Run the command
+# where X is the starting tag and Y the ending tag
+git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
+```
 
 ## Use of Gitleaks
 
