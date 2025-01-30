@@ -1,7 +1,7 @@
 # Developer guide
 
 - [Technical preconditions](#technical-preconditions)
-- [Build showcase demo app](#build-showcase-demo-app)
+- [Build Design System Toolbox](#build-design-system-toolbox)
 - [Documentation](#documentation)
 - [Run tests](#run-tests)
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
@@ -21,7 +21,7 @@
 ## Technical preconditions
 
 You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
-You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use at different levels (SDK, showcase app, projects).
+You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, projects).
 Have a look on the locks file to know which versions we are using (*Podfile*, *Podfile.lock*, *Packages.swift*, *Package.resolved*, *Gemfile*, *Gemfile.lock*).
 
 If some tools are missing, pick the suitable command line below and check versions:
@@ -80,14 +80,14 @@ We use also for our GitLab CI runners **Xcode 16**, we suggest you use this vers
 
 **Xcode 16** and **Swift 6** are used for this project. You must use this configuration.
 
-## Build showcase demo app
+## Build Design System Toolbox
 
 To build the demo application follow those steps:
 
-1. `cd Showcase`
+1. `cd DesignToolbox`
 2. `bundle exec pod install`
-3. Open *Showcase.xcworkspace*
-4. Select *Showcase* scheme
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolbox* scheme
 5. Build and run the Application on your device ou simulator
 
 ## Documentation
@@ -106,10 +106,10 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 
 To run these unit tests follow some steps:
 
-1. `cd Showcase`
+1. `cd DesignToolbox`
 2. `bundle exec pod install`
-3. Open *Showcase.xcworkspace*
-4. Select *Showcase* scheme
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolbox* scheme
 5. Run tests (Product -> Test)
 
 Unit tests care have been implemented for several reasons. 
@@ -127,10 +127,10 @@ Finally, we ensure our themes can override any semantic tokens. Themes are in fa
 
 To run these UI tests follow some steps:
 
-1. `cd Showcase`
+1. `cd DesignToolbox`
 2. `bundle exec pod install`
-3. Open *Showcase.xcworkspace*
-4. Select *ShowcaseTests* scheme
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolboxSnapshotsTests* scheme
 5. Select *iPhone 16 Pro* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
@@ -141,19 +141,21 @@ Such tests here are used to as to be sure the look and feel of any components an
 
 Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
 
-**Note today because the showcase app is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the showcase app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
+**Note today because the demo app (Design System Toolbox) is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the demo app app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
+
+The device under tests is a **simulator of iPhone 16 Pro, in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode**.
 
 #### How to use to use swift-snapshot-testing library
 
 1. Locate where are the reference images:
     - In the Package directory, you will find the reference screenshots for the Orange and Inverse themes (Light/Dark), which will serve as comparison baselines.
     ```text
-    OUDS -> Showcase -> ShowcaseTests -> __Snapshots__
+    OUDS -> DesignToolbox -> DesignToolboxSnapshotsTests -> __Snapshots__
     ```
 2. Navigate to the project :
     - Open your project in Xcode and go to a directory containing tests (e.g. here *OUDSTokensOpacityUITests*):
     ```shell
-    Showcase -> ShowcaseTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
+    DesignToolbox -> DesignToolboxSnapshotsTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
     ```
 3. Open a test file (e.g. here *OUDSTokensOpacityUITests*):
     - Open the file `OUDSTokensOpacityUITests.swift`.
@@ -181,8 +183,8 @@ The snapshot tool fetched the reference image to compare it against the current 
 
     - In Xcode go to :
 
-    ```shell
-    ShowcaseTests -> ShowcaseTests/ShowcaseTests
+    ```text
+    DesignToolboxSnapshotsTests -> DesignToolboxSnapshotsTests/DesignToolboxSnapshotsTests
     ```
 
     <img width="1206" alt="TestResult_Failed_testAllOpacitiesOrangeThemeLight" src="https://github.com/user-attachments/assets/1793df83-ffc1-4226-8be2-fbd7e2b71deb">
@@ -205,15 +207,15 @@ The project contains several custom build phases so as to automatize several ste
 
 1. _SwiftLint_ will run the linter on the sources
 
-Note that sources headers are defined in *IDETemplateMacros.plist* inside *Showcase/Showcase.xcworkspace/xcshareddata*
+Note that sources headers are defined in *IDETemplateMacros.plist* inside *DesignToolbox/DesignToolbox.xcworkspace/xcshareddata*
 
 ## Targets
 
 The Xcode project contains two targets:
 
-1. _Showcase_ for the demo application
+1. _DesignToolbox_ for the demo application
 2. _Periphery_ to look for dead code in the source code
-3. _ShowcaseTests_ for UI tests in demo app
+3. _DesignToolboxSnapshotsTests_ for UI tests in demo app
 
 ## Certificates, profiles and identifiers
 
@@ -272,25 +274,25 @@ You can add also ! after the keyword to say a breaking change occurs, and also a
 #### Chain of responsability
 
 We can add metafields picked from [this good guideline](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n525) in the commit messages.
-
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
+You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 
-For example, given a commit to fix the issue n°42, with Foo FOO and Bar BAR as commit authors, with Wizz WIZZ as source code reviewer, and John DOE as accessibility / PO / design reviewer, the commit should be like:
-
+For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
 ```text
-fix: title of your commit (#42)
+refactor: update some things colors and design of the demo app (#123) (#4562)
 
-Some details about the fix you propose
+Some things have been refactored to make incredible things.
 
-Co-authored-by: Foo FOO <foo email>
-Co-authored-by: Bar BAR <bar email>
-
-Reviewed-by: Wizz WIZZ <wizz email>
-
-Acked-by: John DOE <john email>
-
-Signed-off-by: Foo FOO <foo email>
-Signed-off-by: Bar BAR <bar email>
+Tested-by: Iman Assabah <benoit.suzanne@orange.com>
+Tested-by: Anton Astafev <anton.astafev@orange.com>
+Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
+Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
+Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
+Acked-by: Julien Déramond <julien.deramond@orange.com>
+Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
+Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
+Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
+Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 ```
 
 #### Integration of tokenator updates
@@ -304,12 +306,12 @@ chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#2
 ``` 
 
 i.e. precise the tokens updated, the *tokenator* generation timestamp and the pull request number.
-If you know what is the design kit revision, add it in the commit body, like:
 
+If you know what is the token library version, add it in the commit body, like:
 ```text
 chore(🤖): update `OpacityRawTokens` (tokenator generation 20241021134644) (#225)
 
-Design kit token library V.24.12.18
+Tokens library v0.4.1
 ``` 
 
 ### About release note and changelog
@@ -355,15 +357,16 @@ Remember _Gitleaks_ is also used in GitHub project side thanks to the [dedicated
 
 We use _SwiftLint_ in this project so as to be sure the source code follows defined guidelines for the syntax and other points.
 You must run _SwiftLint_ in CLI or using _Xcode_ to be sure you don't keep and submit warnings.
-**In most of cases you must fix warnings, or explain why in your commtis and pull request comments you choose to disable them.**
+**In most of cases you must fix warnings, or explain why in your commits and pull request comments you choose to disable them.**
 
-Today, only in very few cases some _SwiftLint_ warnings are disabled at files level:
+Today, only in very few cases some _SwiftLint_ warnings are disabled at files (or lower) level:
 - in tests classes
 - in files containing tokens which will be generated
+- in tokens providers
 
 The warnings which can be disabled for token files: 
 - *missing_docs*: because tokens will be generated without documentation by the tokenator
-- *identifier_name*: because the name of the tokens are defined in *Figma* and strongly related to the design system
+- *identifier_name*: because the name of the tokens are defined in *Figma* and strongly related to the design system, and in they can be long
 - *line_length*: because tokens definition can take a lot of place
 - *file_length*: because the files containing declarations or definitions of tokens can be very long
 

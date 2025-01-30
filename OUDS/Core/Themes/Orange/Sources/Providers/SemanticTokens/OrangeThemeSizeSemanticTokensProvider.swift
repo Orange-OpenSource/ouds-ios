@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
 import OUDSFoundations
 
 /// A class which wraps all **size semantic tokens**, *multiple* or not, and expose them.
@@ -39,7 +40,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(sizes: CustomSizeTokensProvider(),
+///         super.init(sizes: tokensProviders: [ CustomSizeTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -47,15 +48,15 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(sizes: CustomSizeTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomSizeeTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0
-open class OrangeThemeSizeSemanticTokensProvider {
+open class OrangeThemeSizeSemanticTokensProvider: AllSizeSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeSizeSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeSizeSemanticTokensProvider")
     }
 
     deinit{ }

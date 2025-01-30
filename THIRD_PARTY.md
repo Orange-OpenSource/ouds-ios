@@ -9,7 +9,7 @@ For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *
 
 ## In OUDS library 
 
-## In Showcase demo app
+## In Design System Toolbox
 
 #### DeclarationAccessibility
 

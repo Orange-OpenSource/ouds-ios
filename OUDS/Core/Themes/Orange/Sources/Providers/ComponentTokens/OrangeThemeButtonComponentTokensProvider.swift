@@ -11,17 +11,17 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import OUDSFoundations
 import OUDSTokensSemantic
 
-/// A class which wraps all **component  tokens of buttons** for button objects like `OUDSButton`.
+/// A class which wraps all **component  tokens of buttons** for *button* objects like `OUDSButton`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllButtonComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeButtonComponentTokensProvider`` and apply the provider they need.
-/// It implements also the protocol `ButtonComponentTokens` so as to expose the component tokens for buttons through any `OUDSTheme`.
-/// Button components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), borders
-/// (from `AllBorderSemanticTokensProvider`), colors (from `AllColorSemanticTokensProvider`) and
+/// It implements also the protocol `ButtonComponentTokens` so as to expose the component tokens for *buttons* through any `OUDSTheme`.
+/// *Button* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`), borders
 /// spaces (from `AllSpaceSemanticTokensProvider`).
 ///
 /// ```swift
@@ -31,7 +31,7 @@ import OUDSTokensSemantic
 ///
 ///         // Then override the button component tokens you want.
 ///
-///         override var buttonSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
+///         override var buttonSizeMaxHeightIconOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
 ///
 ///         override var buttonBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthThicker }
 ///
@@ -58,7 +58,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(button: CustomButtonComponentTokensProvider(),
+///         super.init(tokensProviders: [ CustomButtonComponentTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -66,11 +66,11 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(button: CustomButtonComponentTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomButtonComponentTokensProvider(), ... ])
 /// ```
 ///
-/// - Since: 0.10.0
-open class OrangeThemeButtonComponentTokensProvider {
+/// - Since: 0.9.0
+open class OrangeThemeButtonComponentTokensProvider: AllButtonComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for button sizes
     public let sizes: AllSizeSemanticTokensProvider
@@ -94,7 +94,7 @@ open class OrangeThemeButtonComponentTokensProvider {
                 borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 spaces: AllSpaceSemanticTokensProvider) {
-        OUDSLogger.debug("Init of OrangeThemeButtonComponentTokensProvider")
+        OL.debug("Init of OrangeThemeButtonComponentTokensProvider")
         self.sizes = sizes
         self.borders = borders
         self.colors = colors

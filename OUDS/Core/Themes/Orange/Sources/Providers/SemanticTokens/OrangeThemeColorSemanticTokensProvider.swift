@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
 import OUDSFoundations
 
 /// A class which wraps all **color semantic tokens**, *multiple* or not, and expose them.
@@ -39,7 +40,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(colors: CustomColorTokensProvider(),
+///         super.init(tokensProviders: [ CustomColorTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -47,15 +48,15 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(colors: CustomColorTokensProvider())
+///     OrangeTheme(tokensProviders: [ CustomColorTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0
-open class OrangeThemeColorSemanticTokensProvider {
+open class OrangeThemeColorSemanticTokensProvider: AllColorSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeColorSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeColorSemanticTokensProvider")
     }
 
     deinit{ }

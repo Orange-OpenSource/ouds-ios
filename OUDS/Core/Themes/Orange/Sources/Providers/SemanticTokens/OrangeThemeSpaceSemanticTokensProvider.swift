@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDS
 import OUDSFoundations
 
 /// A class which wraps all **space semantic tokens**, *multiple* or not, and expose them.
@@ -39,7 +40,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(spaces: CustomSpaceTokensProvider(),
+///         super.init(tokensProviders: [ CustomSpaceTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -47,15 +48,15 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(spaces: CustomSpaceTokenProvider())
+///     OrangeTheme(tokensProviders: [ CustomSpaceTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.8.0
-open class OrangeThemeSpaceSemanticTokensProvider {
+open class OrangeThemeSpaceSemanticTokensProvider: AllSpaceSemanticTokensProvider {
 
     /// Intializes the provider
     public init() {
-        OUDSLogger.debug("Init of OrangeThemeSpaceSemanticTokensProvider")
+        OL.debug("Init of OrangeThemeSpaceSemanticTokensProvider")
     }
 
     deinit{ }

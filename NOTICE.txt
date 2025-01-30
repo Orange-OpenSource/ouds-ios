@@ -13,36 +13,40 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./docs_release/docs_assets/favicon-32x32.png
 ./docs_release/docs_assets/favicon.ico
 
-./Showcase/Showcase/Resources/accessibilityStatement/favicon.ico
-./Showcase/Showcase/Resources/accessibilityStatement/orange-logo.svg
+./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/favicon.ico
+./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/orange-logo.svg
 
-./Showcase/Showcase/Resources/Assets.xcassets/AppIconDebug.appiconset/UDSDemo-DEBUG_SQR.png
-./Showcase/Showcase/Resources/Assets.xcassets/AppIconAlpha.appiconset/UDSDemo-A_SQR.png
-./Showcase/Showcase/Resources/Assets.xcassets/AppIconBeta.appiconset/UDSDemo-B_SQR.png
-./Showcase/Showcase/Resources/Assets.xcassets/AppIconRelease.appiconset/Unified_App_IOS_SQR.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconDebug.appiconset/UDSDemo-DEBUG_SQR.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconAlpha.appiconset/UDSDemo-A_SQR.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconBeta.appiconset/UDSDemo-B_SQR.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/AppIconRelease.appiconset/Unified_App_IOS_SQR.png
 
-./Showcase/Showcase/Resources/Assets.xcassets/ic_token.imageset/ic_token.svg
-./Showcase/Showcase/Resources/Assets.xcassets/ic_component_atom.imageset/ic_component_atom.svg
-./Showcase/Showcase/Resources/Assets.xcassets/ic_info.imageset/ic_info.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_token.imageset/ic_token.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_component_atom.imageset/ic_component_atom.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_info.imageset/ic_info.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/ic_heart.imageset/ic_heart.svg
 
-./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_empty_screen.imageset/il_empty_screen.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
-./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
-./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.png
-./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width_dark.png
-./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width.png
-./Showcase/Showcase/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width_dark.png
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_chevron-down.imageset/ic_chevron-down.png
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_chevron-up.imageset/ic_chevron-up.png
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_copy.imageset/ic_copy.png
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_border.imageset/ic_border.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_dimension.imageset/ic_dimension.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_filter_effects.imageset/ic_filter_effects.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_grid.imageset/ic_grid.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_layers.imageset/ic_layers.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_palette.imageset/ic_palette.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_vector.imageset/ic_vector.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
-./Showcase/Showcase/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button.svg
+
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_empty_screen.imageset/il_empty_screen.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin_dark.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_max_width.imageset/il_tokens_grid_max_width_dark.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_min_width.imageset/il_tokens_grid_min_width_dark.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_chevron-down.imageset/ic_chevron-down.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_chevron-up.imageset/ic_chevron-up.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_copy.imageset/ic_copy.png
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_border.imageset/ic_border.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_dimension.imageset/ic_dimension.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_filter_effects.imageset/ic_filter_effects.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_grid.imageset/ic_grid.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_layers.imageset/ic_layers.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_palette.imageset/ic_palette.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_vector.imageset/ic_vector.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
 
 End of the parts list under Orange SA Copyright

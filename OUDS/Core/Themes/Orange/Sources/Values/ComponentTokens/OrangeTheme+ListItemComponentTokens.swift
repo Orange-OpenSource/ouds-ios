@@ -1,0 +1,32 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import Foundation
+import OUDSTokensComponent
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+extension OrangeThemeListItemComponentTokensProvider: ListItemComponentTokens {
+    @objc open var listItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension650 }
+    @objc open var listItemSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension1400 }
+    @objc open var listItemColorBgFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
+    @objc open var listItemColorBgHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
+    @objc open var listItemColorBgLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
+    @objc open var listItemColorBgPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
+    @objc open var listItemColorContentLoader: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var listItemSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeMd }
+    @objc open var listItemSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
+    @objc open var listItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapTall }
+    @objc open var listItemSpaceInset: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var listItemSpaceRowGap: SpaceSemanticToken { spaces.spaceRowGapNone }
+}
