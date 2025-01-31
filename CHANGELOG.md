@@ -6,11 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.10.0...develop)
 
+### Added
+
+- [Library] Link component ([#400](https://github.com/Orange-OpenSource/ouds-ios/issues/400))
+
 ## [0.10.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.9.0...0.10.0) - 2025-01-30
 
 ### Added
 
-- [Library] Link component ([#400](https://github.com/Orange-OpenSource/ouds-ios/issues/400))
 - [Library] Checkbox and radio button component tokens ([#421](https://github.com/Orange-OpenSource/ouds-ios/issues/421))
 - [Library] Badge component tokens (partial implementation) ([#420](https://github.com/Orange-OpenSource/ouds-ios/issues/420))
 - [Library] Input text component tokens ([#418](https://github.com/Orange-OpenSource/ouds-ios/issues/418))
