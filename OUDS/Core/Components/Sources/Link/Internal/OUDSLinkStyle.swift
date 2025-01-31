@@ -16,12 +16,14 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Internal Link State
+
 /// The internal state used by modifiers to handle all states of the button.
 enum InternalLinkState {
     case enabled, hover, pressed, disabled
 }
 
-// MARK: - Link LabelStyle
+// MARK: - Link Style
 
 struct OUDSLinkStyle: ButtonStyle {
 
@@ -93,7 +95,7 @@ struct OUDSLinkStyle: ButtonStyle {
     }
 }
 
-// MARK: - Link Array Label Style
+// MARK: - Link Arrow Label Style
 
 private struct LinkArrowLabelStyle: LabelStyle {
 
@@ -104,8 +106,6 @@ private struct LinkArrowLabelStyle: LabelStyle {
     let state: InternalLinkState
     let size: OUDSLink.Size
     let arrow: OUDSLink.Arrow
-
-    // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(alignment: alignment, spacing: spacing) {
@@ -128,8 +128,6 @@ private struct LinkArrowLabelStyle: LabelStyle {
         }
     }
 
-    // MARK: Private Helpers
-
     private var spacing: Double {
         size == .small ? theme.link.linkSpaceColumnGapArrowSmall : theme.link.linkSpaceColumnGapArrowMedium
     }
@@ -139,7 +137,7 @@ private struct LinkArrowLabelStyle: LabelStyle {
     }
 }
 
-// MARK: - Link Icon And Text Label LabelStyle
+// MARK: - Link Icon And Text Label Label Style
 
 private struct LinkIconAndTextLabelStyle: LabelStyle {
 
@@ -151,8 +149,6 @@ private struct LinkIconAndTextLabelStyle: LabelStyle {
     let size: OUDSLink.Size
     let layout: OUDSLink.Layout
 
-    // MARK: Body
-
     func makeBody(configuration: Configuration) -> some View {
         HStack(spacing: spacing) {
             configuration.icon.modifier(LinkSizeIconModifier(size: size))
@@ -160,8 +156,6 @@ private struct LinkIconAndTextLabelStyle: LabelStyle {
         }
         .modifier(LinkColorContentModifier(state: state))
     }
-
-    // MARK: Private Helpers
 
     private var spacing: Double {
         size == .small ? theme.link.linkSpaceColumnGapIconSmall : theme.link.linkSpaceColumnGapIconMedium

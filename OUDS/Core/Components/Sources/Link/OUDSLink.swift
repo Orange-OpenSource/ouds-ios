@@ -47,7 +47,7 @@ import SwiftUI
 /// ## Design documentation
 /// [unified-design-system.orange.com/472794e18/p/73c701-components](https://unified-design-system.orange.com/472794e18/p/73c701-components)
 ///
-/// - Since: 0.10.0
+/// - Since: 0.11.0
 public struct OUDSLink: View {
 
     // MARK: Stored Properties
