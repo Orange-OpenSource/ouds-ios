@@ -18,9 +18,23 @@ A button with `OUDSButton.Hierarchy.Negative` hierarchy is not allowed as a dire
 
      // Text only with negative hierarchy
      OUDSButton(hierarchy: .negative, text: "Delete") {}
+```
 
-     // Text and icon with strong hierarchy
-     OUDSButton(hierarchy: .strong, icon: Image("ic_heart"), text: "Validate") {}
+### Links
+
+The ``OUDSLink`` proposes layout with text only or text with icon.
+It also proposes layout to navigate forward or backward.
+The link can be displayed in `small` or `medium` size.
+
+```swift
+    // Text only in small size
+    OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
+
+    // Text and icon in medium size
+    OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .medium) { /* the action to process */ }
+
+    // Navigate to previous page with link in a medium size
+    OUDSLink(text: "Back", arrow: .back, size: .medium) { /* the action to process */ }
 ```
 
 ## Customize components
@@ -102,3 +116,4 @@ The helper is available through `View`, and tokens through the provider of the t
 ### Group
 
 - ``OUDSButton``
+- ``OUDSLink``
