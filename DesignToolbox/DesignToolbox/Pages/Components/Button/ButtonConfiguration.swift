@@ -183,40 +183,22 @@ struct ButtonConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(model.layout == .iconOnly)
 
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_hierarchy_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_hierarchy_label", selection: $model.hierarchy) {
-                    ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
-                        Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
-                    }
+            DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label", selection: $model.hierarchy) {
+                ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
+                    Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
                 }
-                .pickerStyle(.segmented)
             }
 
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_common_style_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_common_style_label", selection: $model.style) {
-                    ForEach(OUDSButton.Style.allCases, id: \.id) { style in
-                        Text(LocalizedStringKey(style.description)).tag(style)
-                    }
+            DesignToolboxChoicePicker(title: "app_components_common_style_label", selection: $model.style) {
+                ForEach(OUDSButton.Style.allCases, id: \.id) { style in
+                    Text(LocalizedStringKey(style.description)).tag(style)
                 }
-                .pickerStyle(.segmented)
             }
 
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_common_layout_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_common_layout_label", selection: $model.layout) {
-                    ForEach(ButtonLayout.allCases, id: \.id) { layout in
-                        Text(LocalizedStringKey(layout.description)).tag(layout)
-                    }
+            DesignToolboxChoicePicker(title: "app_components_common_layout_label", selection: $model.layout) {
+                ForEach(ButtonLayout.allCases, id: \.id) { layout in
+                    Text(LocalizedStringKey(layout.description)).tag(layout)
                 }
-                .pickerStyle(.segmented)
             }
         }
     }

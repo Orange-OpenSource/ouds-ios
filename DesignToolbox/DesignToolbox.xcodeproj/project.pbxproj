@@ -63,6 +63,8 @@
 		077CCE592CB426090059CC28 /* DimensionTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077CCE542CB426090059CC28 /* DimensionTokenElement.swift */; };
 		0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */; };
 		0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */; };
+		07AB45872D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
+		07AB45882D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
 		07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */; };
 		07B3CCB22D40E34700DBB10A /* LinkElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAF2D40E34700DBB10A /* LinkElement.swift */; };
 		07B3CCB32D40E34700DBB10A /* LinkPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB02D40E34700DBB10A /* LinkPage.swift */; };
@@ -254,6 +256,7 @@
 		077CCE5B2CB431C50059CC28 /* DesignToolboxVariantElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxVariantElement.swift; sourceTree = "<group>"; };
 		0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconWithTypography.swift"; sourceTree = "<group>"; };
 		0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconDecorative.swift"; sourceTree = "<group>"; };
+		07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxChoicePicker.swift; sourceTree = "<group>"; };
 		07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkConfiguration.swift; sourceTree = "<group>"; };
 		07B3CCAF2D40E34700DBB10A /* LinkElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkElement.swift; sourceTree = "<group>"; };
 		07B3CCB02D40E34700DBB10A /* LinkPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPage.swift; sourceTree = "<group>"; };
@@ -408,6 +411,7 @@
 				0735430F2CA15440001187EA /* Cards */,
 				0708222D2CFF617000570EC7 /* Elements */,
 				07F7533A2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift */,
+				07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */,
 				6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */,
 				07F0AFE72CFE0FBD00D334DD /* DesignToolboxConfiguration.swift */,
 				07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredBackgroundModifier.swift */,
@@ -1105,6 +1109,7 @@
 				51952A962D3FA32E0068B807 /* View+Illustration.swift in Sources */,
 				51952A972D3FA32E0068B807 /* FontTokenElement.swift in Sources */,
 				51952A982D3FA32E0068B807 /* FontTokenPage.swift in Sources */,
+				07AB45872D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */,
 				51952A992D3FA32E0068B807 /* BorderTokenElement.swift in Sources */,
 				51952A9A2D3FA32E0068B807 /* NamedColor+Opacity.swift in Sources */,
 				51952A9B2D3FA32E0068B807 /* NamedColor+Overlay.swift in Sources */,
@@ -1217,6 +1222,7 @@
 				075114E12CB7FDC200B8B759 /* ColorTokenPage.swift in Sources */,
 				07F7533B2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				07F0AFDE2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
+				07AB45882D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */,
 				07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */,
 				07B3CCB22D40E34700DBB10A /* LinkElement.swift in Sources */,
 				07B3CCB32D40E34700DBB10A /* LinkPage.swift in Sources */,

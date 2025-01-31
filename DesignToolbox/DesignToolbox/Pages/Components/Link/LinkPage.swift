@@ -57,8 +57,7 @@ struct LinkIllustration: View {
                 LinkDemo(model: model)
             } else {
                 LinkDemo(model: model)
-                    .colorScheme(colorScheme == .dark ? .light : .dark)
-                LinkDemo(model: model)
+                LinkDemo(model: model).colorScheme(colorScheme == .dark ? .light : .dark)
             }
         }
     }

@@ -159,28 +159,16 @@ struct LinkConfiguration: View {
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_link_size_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_link_size_label", selection: $model.size) {
-                    ForEach(OUDSLink.Size.allCases, id: \.id) { size in
-                        Text(LocalizedStringKey(size.description)).tag(size)
-                    }
+            DesignToolboxChoicePicker(title: "app_components_link_size_label", selection: $model.size) {
+                ForEach(OUDSLink.Size.allCases, id: \.id) { size in
+                    Text(LocalizedStringKey(size.description)).tag(size)
                 }
-                .pickerStyle(.segmented)
             }
 
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_common_layout_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_common_layout_label", selection: $model.layout) {
-                    ForEach(LinkLayout.allCases, id: \.id) { layout in
-                        Text(LocalizedStringKey(layout.description)).tag(layout)
-                    }
+            DesignToolboxChoicePicker(title: "app_components_common_layout_label", selection: $model.layout) {
+                ForEach(LinkLayout.allCases, id: \.id) { layout in
+                    Text(LocalizedStringKey(layout.description)).tag(layout)
                 }
-                .pickerStyle(.segmented)
             }
         }
     }
