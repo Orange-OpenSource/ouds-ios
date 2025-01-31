@@ -21,9 +21,15 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var enabled: Bool = true {
+    @Published var enabled: Bool {
         didSet { updateCode() }
     }
+
+    @Published var onColoredSurface: Bool {
+        didSet { updateCode() }
+    }
+
+    @Published var longText: Bool
 
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
@@ -40,10 +46,12 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        self.enabled = true
-        self.layout = .textOnly
-        self.hierarchy = .default
-        self.style = .`default`
+        enabled = true
+        onColoredSurface = false
+        longText = false
+        layout = .textOnly
+        hierarchy = .default
+        style = .`default`
     }
 
     deinit { }
@@ -58,25 +66,32 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         }
     }
 
+    private var coloredSurfaceCodeModifier: String {
+        onColoredSurface ? ".oudsColoredSurface(color: Color.orange)" : ""
+    }
+
     override func updateCode() {
         switch layout {
         case .textOnly:
             code =
             """
           OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased())) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         case .iconOnly:
             code =
             """
           OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         case .iconAndText:
             code =
             """
           OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
-          \(disableCode))
+          \(disableCode)
+          \(coloredSurfaceCodeModifier)
           """
         }
     }
@@ -92,9 +107,9 @@ enum ButtonLayout: CaseIterable, CustomStringConvertible {
     var description: String {
         switch self {
         case .textOnly:
-            "app_components_button_textOnlyLayout_label"
+            "app_components_common_textOnlyLayout_label"
         case .iconAndText:
-            "app_components_button_iconAndTextLayout_label"
+            "app_components_common_iconAndTextLayout_label"
         case .iconOnly:
             "app_components_button_iconOnlyLayout_label"
         }
@@ -159,40 +174,31 @@ struct ButtonConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(model.style != .`default`)
 
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_hierarchy_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_hierarchy_label", selection: $model.hierarchy) {
-                    ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
-                        Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
-                    }
+            Toggle("app_components_common_onColoredBackground_label", isOn: $model.onColoredSurface)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+
+            Toggle("app_components_common_longText_label", isOn: $model.longText)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .disabled(model.layout == .iconOnly)
+
+            DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label", selection: $model.hierarchy) {
+                ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
+                    Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
                 }
-                .pickerStyle(.segmented)
             }
 
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_style_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_style_label", selection: $model.style) {
-                    ForEach(OUDSButton.Style.allCases, id: \.id) { style in
-                        Text(LocalizedStringKey(style.description)).tag(style)
-                    }
+            DesignToolboxChoicePicker(title: "app_components_common_style_label", selection: $model.style) {
+                ForEach(OUDSButton.Style.allCases, id: \.id) { style in
+                    Text(LocalizedStringKey(style.description)).tag(style)
                 }
-                .pickerStyle(.segmented)
             }
 
-            VStack(alignment: .leading) {
-                Text(LocalizedStringKey("app_components_button_layout_label"))
-                    .typeHeadingMedium(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                Picker("app_components_button_layout_label", selection: $model.layout) {
-                    ForEach(ButtonLayout.allCases, id: \.id) { layout in
-                        Text(LocalizedStringKey(layout.description)).tag(layout)
-                    }
+            DesignToolboxChoicePicker(title: "app_components_common_layout_label", selection: $model.layout) {
+                ForEach(ButtonLayout.allCases, id: \.id) { layout in
+                    Text(LocalizedStringKey(layout.description)).tag(layout)
                 }
-                .pickerStyle(.segmented)
             }
         }
     }

@@ -49,34 +49,18 @@ struct ButtonPage: View {
 struct ButtonIllustration: View {
 
     @Environment(\.colorScheme) private var colorScheme
-
-    let model: ButtonConfigurationModel
+    @ObservedObject var model: ButtonConfigurationModel
 
     var body: some View {
         VStack(alignment: .center) {
-            ButtonDemo(model: model, coloredSurface: false)
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            ButtonDemo(model: model, coloredSurface: false)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
-            ButtonDemo(model: model, coloredSurface: true)
-        }
-    }
-}
-
-// MARK: - Backgroud Modifier
-
-private struct BackgroundModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
-    let coloredSurface: Bool
-
-    func body(content: Content) -> some View {
-        if coloredSurface {
-            content.oudsColoredSurface(color: theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme))
-        } else {
-            content.background(theme.colors.colorBgSecondary.color(for: colorScheme))
+            if model.onColoredSurface {
+                ButtonDemo(model: model)
+            } else {
+                ButtonDemo(model: model)
+                // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+                ButtonDemo(model: model)
+                    .colorScheme(colorScheme == .dark ? .light : .dark)
+            }
         }
     }
 }
@@ -88,23 +72,22 @@ private struct ButtonDemo: View {
     @Environment(\.theme) private var theme
 
     @StateObject var model: ButtonConfigurationModel
-    let coloredSurface: Bool
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
 
-            // It is not allowed to place a Negative bnutton on colored surface
-            if model.hierarchy == .negative, coloredSurface == true {
+            // It is not allowed to place a Negative button on colored surface
+            if model.hierarchy == .negative, model.onColoredSurface {
                 Text("app_components_button_negative_hierary_notAllowed_text")
             } else {
                 switch model.layout {
                 case .iconOnly:
                     OUDSButton(icon: Image(decorative: "ic_heart"), hierarchy: model.hierarchy, style: model.style) {}
                 case .textOnly:
-                    OUDSButton(text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
+                    OUDSButton(text: text, hierarchy: model.hierarchy, style: model.style) {}
                 case .iconAndText:
-                    OUDSButton(icon: Image(decorative: "ic_heart"), text: "app_components_button_label", hierarchy: model.hierarchy, style: model.style) {}
+                    OUDSButton(icon: Image(decorative: "ic_heart"), text: text, hierarchy: model.hierarchy, style: model.style) {}
                 }
             }
 
@@ -112,6 +95,10 @@ private struct ButtonDemo: View {
         }
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(BackgroundModifier(coloredSurface: coloredSurface))
+        .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
+    }
+
+    private var text: String {
+        model.longText ? "app_components_button_longText_label" : "app_components_button_label"
     }
 }

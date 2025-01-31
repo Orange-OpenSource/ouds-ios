@@ -18,7 +18,8 @@ import SwiftUI
 struct ComponentsPage: View {
 
     let componentElements: [DesignToolboxElement] = [
-        ButtonElement()
+        ButtonElement(),
+        LinkElement(),
     ]
 
     var body: some View {
