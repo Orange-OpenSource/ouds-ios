@@ -58,12 +58,12 @@ struct OUDSLinkStyle: ButtonStyle {
                     .labelStyle(LinkIconAndTextLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, layout: layout))
             }
         }
-        .onHover { isHover in
-            self.isHover = isHover
-        }
         .padding(.horizontal, theme.link.linkSpacePaddingInline)
         .padding(.vertical, theme.link.linkSpacePaddingBlock)
         .frame(minWidth: minWidth, minHeight: minHeight)
+        .onHover { isHover in
+            self.isHover = isHover
+        }
     }
 
     // MARK: Private Helpers
