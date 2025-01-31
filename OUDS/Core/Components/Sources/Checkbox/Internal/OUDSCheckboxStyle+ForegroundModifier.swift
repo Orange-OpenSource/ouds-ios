@@ -17,15 +17,16 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` to apply to the selector of the ``OUDSCheckboxComponent`` inside its ``OUDSCheckboxStyle``.
-/// Uses the given ``OUDSCheckbox.Status`` and ``InternalCheckboxState`` to use the suitable tokens for foreground style
+/// A `ViewModifier` to apply to the ``OUDSCheckbox.Item`` of the ``OUDSCheckboxComponent``.
+/// Uses the given ``OUDSCheckbox.Status`` and `` OUDSCheckbox.State`` to use the suitable tokens for foreground style
 /// like the colors to apply.
-struct CheckboxSelectorForegroundModifier: ViewModifier {
+struct CheckboxForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
     let status: OUDSCheckbox.Status
-    let state: InternalCheckboxState
+    let state: OUDSCheckbox.State
+    let item: OUDSCheckbox.Item
 
     // MARK: - Environment
 
@@ -54,32 +55,71 @@ struct CheckboxSelectorForegroundModifier: ViewModifier {
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
-        switch status {
-        case .selected, .undeterminate:
-            return theme.colors.colorActionSelected
-        case .unselected:
-            return theme.colors.colorActionEnabled
-        case .errorSelected, .errorUnselected, .errorUndeterminate:
-            return theme.colors.colorActionNegativeEnabled
+        if item == .checkbox {
+            switch status {
+            case .selected, .undeterminate:
+                return theme.colors.colorActionSelected
+            case .unselected:
+                return theme.colors.colorActionEnabled
+            case .errorSelected, .errorUnselected, .errorUndeterminate:
+                return theme.colors.colorActionNegativeEnabled
+            }
         }
+
+        if item == .label {
+            return state == .disabled ? disabledColor : theme.colors.colorContentDefault
+        }
+
+        if item == .helper {
+            return state == .disabled ? disabledColor : theme.colors.colorContentMuted
+        }
+
+        OL.warning("Item of OUDSCheckbox not managed to compute enabled color in foreground modifier O_ô")
+        return theme.colors.colorActionEnabled
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        switch status {
-        case .selected, .unselected, .undeterminate:
-            return theme.colors.colorActionHover
-        case .errorSelected, .errorUnselected, .errorUndeterminate:
-            return theme.colors.colorActionNegativeHover
+        if item == .checkbox {
+            switch status {
+            case .selected, .unselected, .undeterminate:
+                return theme.colors.colorActionHover
+            case .errorSelected, .errorUnselected, .errorUndeterminate:
+                return theme.colors.colorActionNegativeHover
+            }
         }
+
+        if item == .label {
+            return state == .disabled ? disabledColor : theme.colors.colorContentDefault
+        }
+
+        if item == .helper {
+            return state == .disabled ? disabledColor : theme.colors.colorContentMuted
+        }
+
+        OL.warning("Item of OUDSCheckbox not managed to compute hover color in foreground modifier O_ô")
+        return theme.colors.colorActionEnabled
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        switch status {
-        case .selected, .unselected, .undeterminate:
-            return theme.colors.colorActionPressed
-        case .errorSelected, .errorUnselected, .errorUndeterminate:
-            return theme.colors.colorActionNegativePressed
+        if item == .checkbox {
+            switch status {
+            case .selected, .unselected, .undeterminate:
+                return theme.colors.colorActionPressed
+            case .errorSelected, .errorUnselected, .errorUndeterminate:
+                return theme.colors.colorActionNegativePressed
+            }
         }
+
+        if item == .label {
+            return state == .disabled ? disabledColor : theme.colors.colorContentDefault
+        }
+
+        if item == .helper {
+            return state == .disabled ? disabledColor : theme.colors.colorContentMuted
+        }
+
+        OL.warning("Item of OUDSCheckbox not managed to compute pressed color in foreground modifier O_ô")
+        return theme.colors.colorActionEnabled
     }
 
     private var disabledColor: MultipleColorSemanticTokens {

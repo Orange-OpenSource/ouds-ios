@@ -20,21 +20,78 @@ import SwiftUI
 
 // TODO: #264 - Update page
 
+// swiftlint:disable accessibility_label_for_image
 struct CheckboxPage: View {
 
     var body: some View {
 
-        // Enabled
-        OUDSCheckbox(status: .selected, style: .default) { print("@@@ high level tap") }
-        OUDSCheckbox(status: .unselected, style: .default) { }
-        OUDSCheckbox(status: .undeterminate, style: .default) { }
-        OUDSCheckbox(status: .errorSelected, style: .default) { }
-        OUDSCheckbox(status: .errorUnselected, style: .default) { }
-        OUDSCheckbox(status: .errorUndeterminate, style: .default) { }
+        VStack(spacing: 2) {
 
-        // Disabled
-        OUDSCheckbox(status: .selected, style: .default) { }.disabled(true)
-        OUDSCheckbox(status: .unselected, style: .default) { }.disabled(true)
-        OUDSCheckbox(status: .undeterminate, style: .default) { }.disabled(true)
+            // Enabled
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .selected, style: .default) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .unselected, style: .default) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .undeterminate, style: .default) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .errorSelected, style: .default) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .errorUnselected, style: .default) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .errorUndeterminate, style: .default) { }
+
+            // Disabled
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .selected, style: .default) { }.disabled(true)
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .unselected, style: .default) { }.disabled(true)
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .undeterminate, style: .default) { }.disabled(true)
+
+            // Enabled
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .selected, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .unselected, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .undeterminate, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .errorSelected, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .errorUnselected, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .errorUndeterminate, style: .default) { }
+
+            // Disabled
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .selected, style: .default) { }.disabled(true)
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .unselected, style: .default) { }.disabled(true)
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .undeterminate, style: .default) { }.disabled(true)
+
+            // Enabled
+            OUDSCheckbox(label: "Hello", helper: "World", status: .selected, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", status: .unselected, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", status: .undeterminate, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", status: .errorSelected, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", status: .errorUnselected, style: .default) { }
+            OUDSCheckbox(label: "Hello", helper: "World", status: .errorUndeterminate, style: .default) { }
+
+            // Disabled
+            OUDSCheckbox(label: "Hello", helper: "World", status: .selected, style: .default) { }.disabled(true)
+            OUDSCheckbox(label: "Hello", helper: "World", status: .unselected, style: .default) { }.disabled(true)
+            OUDSCheckbox(label: "Hello", helper: "World", status: .undeterminate, style: .default) { }.disabled(true)
+
+            // Enabled
+            OUDSCheckbox(label: "Hello world", status: .selected, style: .default) { }
+            OUDSCheckbox(label: "Hello world", status: .unselected, style: .default) { }
+            OUDSCheckbox(label: "Hello world", status: .undeterminate, style: .default) { }
+            OUDSCheckbox(label: "Hello world", status: .errorSelected, style: .default) { }
+            OUDSCheckbox(label: "Hello world", status: .errorUnselected, style: .default) { }
+            OUDSCheckbox(label: "Hello world", status: .errorUndeterminate, style: .default) { }
+
+            // Disabled
+            OUDSCheckbox(label: "Hello world", status: .selected, style: .default) { }.disabled(true)
+            OUDSCheckbox(label: "Hello world", status: .unselected, style: .default) { }.disabled(true)
+            OUDSCheckbox(label: "Hello world", status: .undeterminate, style: .default) { }.disabled(true)
+
+            // Enabled
+            OUDSCheckbox(status: .selected, style: .default) { print("@@@ high level tap") }
+            OUDSCheckbox(status: .unselected, style: .default) { }
+            OUDSCheckbox(status: .undeterminate, style: .default) { }
+            OUDSCheckbox(status: .errorSelected, style: .default) { }
+            OUDSCheckbox(status: .errorUnselected, style: .default) { }
+            OUDSCheckbox(status: .errorUndeterminate, style: .default) { }
+
+            // Disabled
+            OUDSCheckbox(status: .selected, style: .default) { }.disabled(true)
+            OUDSCheckbox(status: .unselected, style: .default) { }.disabled(true)
+            OUDSCheckbox(status: .undeterminate, style: .default) { }.disabled(true)
+        }
     }
 }
+// swiftlint:enable accessibility_label_for_image

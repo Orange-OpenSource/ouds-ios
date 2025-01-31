@@ -15,24 +15,15 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// TODO: #254 - Add more details in doc
-/// Used to apply the right style on an ``OUDSCheckbox`` according to the its states like ``OUDSCheckbox.Status``
-///
-/// Six statuses are managed:
-/// - selected: the checkbox is filled by the user
-/// - unselected: the checkbox is empty
-/// - undeterminate: the checkbox is prefilled
-/// - errorSelected: the checkbox is filled by the user, and is in error state
-/// - errorUnselected: the checkbox is empty, and is in error state
-/// - errorUndeterminate: the checkbox is prefilled, and is in error state
-///
-/// Three component states are managed: *enabled*, *hover* and *pressed*.
-///
+/// Used to apply the right style on an ``OUDSCheckbox`` according to the its states like ``OUDSCheckbox.Status`` and ``OUDSCheckbox.Layout``.
+/// It provides also the ``OUDSCheckbox.State`` for the embeded `ViewModifier` soa s to define the look and feel
+/// Four component states are managed: *enabled*, *disabled*, *hover* and *pressed*.
 struct OUDSCheckboxStyle: ViewModifier {
 
     // MARK: - Properties
 
     private let status: OUDSCheckbox.Status
+    private let item: OUDSCheckbox.Item
     @State private var isHover: Bool
     @State private var isPressed: Bool
 
@@ -44,9 +35,12 @@ struct OUDSCheckboxStyle: ViewModifier {
 
     /// Initialize the `OUDSCheckboxStyle`.
     ///
-    /// - Parameter status: The checkbox status
-    public init(status: OUDSCheckbox.Status) {
+    /// - Parameters:
+    ///    - status: The checkbox status
+    ///    - item: The object on which style must be applied
+    public init(status: OUDSCheckbox.Status, item: OUDSCheckbox.Item) {
         self.status = status
+        self.item = item
         isHover = false
         isPressed = false
     }
@@ -59,12 +53,14 @@ struct OUDSCheckboxStyle: ViewModifier {
                 self.isHover = isHover
             }
             .changeOnTap(isTapped: $isPressed)
-            .modifier(CheckboxViewModifier(status: status, state: internalState(isPressed: isPressed)))
+            .modifier(CheckboxViewModifier(status: status,
+                                           state: internalState(isPressed: isPressed),
+                                           item: item))
     }
 
     // MARK: - Helpers
 
-    private func internalState(isPressed: Bool) -> InternalCheckboxState {
+    private func internalState(isPressed: Bool) -> OUDSCheckbox.State {
         if !isEnabled {
             return .disabled
         }

@@ -41,6 +41,8 @@ public struct OUDSCheckbox: View {
     private let style: Style
     private let action: () -> Void
 
+    @Environment(\.theme) private var theme
+
     // MARK: - Type
 
     /// All the combinations of options to define the checbkox component
@@ -54,6 +56,31 @@ public struct OUDSCheckbox: View {
         case dividedLabelAndHelper(label: String, helper: String)
         case labelAndHelperAndIcon(label: String, helper: String, icon: Image)
         case dividedLabelAndHelperAndIcon(label: String, helper: String, icon: Image)
+    }
+
+    // MARK: - State
+
+    /// The internal state used by modifiers to handle all states of  the component
+    enum State {
+        case enabled
+        case hover
+        case pressed
+        case disabled
+        case readOnly
+        // .loading not managed yet, for next version
+        // .focus not managed as not such customizable
+        // .skeleton not managed as dedicated view in the end
+    }
+
+    // MARK: - Component
+
+    /// The objects we can find inside this component
+    enum Item {
+        case checkbox
+        case label
+        case helper
+        case image
+        case divider
     }
 
     // MARK: - Status
@@ -148,6 +175,10 @@ public struct OUDSCheckbox: View {
         self.layout = layout
         self.style = style
         self.action = action
+
+        if label.isEmpty {
+            OL.warning("Label for OUDSCheckbox is empty, is it expected?")
+        }
     }
 
     /// Create a checkbox with a label and an icon
@@ -172,6 +203,10 @@ public struct OUDSCheckbox: View {
         self.layout = layout
         self.style = style
         self.action = action
+
+        if label.isEmpty {
+            OL.warning("Label for OUDSCheckbox is empty, is it expected?")
+        }
     }
 
     /// Create a checkbox with a label and an helper text
@@ -198,6 +233,14 @@ public struct OUDSCheckbox: View {
         self.status = status
         self.style = style
         self.action = action
+
+        if label.isEmpty {
+            OL.warning("Label for OUDSCheckbox is empty, is it expected?")
+        }
+
+        if helper.isEmpty {
+            OL.warning("Helper for OUDSCheckbox is empty, is it expected?")
+        }
     }
 
     /// Create a checkbox with a label, an helper text and an icon
@@ -226,16 +269,37 @@ public struct OUDSCheckbox: View {
         self.status = status
         self.style = style
         self.action = action
+
+        if label.isEmpty {
+            OL.warning("Label for OUDSCheckbox is empty, is it expected?")
+        }
+
+        if helper.isEmpty {
+            OL.warning("Helper for OUDSCheckbox is empty, is it expected?")
+        }
     }
 
     // MARK: - Body
 
     public var body: some View {
+        body(for: type)
+            .padding(theme.listItem.listItemSpaceInset)
+    }
+
+    @ViewBuilder
+    private func body(for type: `Type`) -> some View {
         switch type {
         case .selectorOnly:
-            CheckboxSelector(status: status, action: action)
-                .modifier(OUDSCheckboxStyle(status: status))
-        // TODO: #264 - Implment other cases
+            Checkbox(status: status, action: action)
+        case .label(let label):
+            Checkbox(label: label, status: status, action: action)
+        case let .labelAndHelper(label, helper):
+            Checkbox(label: label, helper: helper, status: status, action: action)
+        case let .labelAndHelperAndIcon(label: label, helper: helper, icon: icon):
+            Checkbox(label: label, helper: helper, icon: icon, status: status, action: action)
+        case let .labelAndIcon(label, icon):
+            Checkbox(label: label, icon: icon, status: status, action: action)
+        // TODO: #264 - Implement other cases
         default:
             Text("Not implemented yet")
         }

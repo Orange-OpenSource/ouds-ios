@@ -23,7 +23,7 @@ struct CheckboxSelectorBackgroundModifier: ViewModifier {
     // MARK: - Properties
 
     let status: OUDSCheckbox.Status
-    let state: InternalCheckboxState
+    let state: OUDSCheckbox.State
 
     // MARK: - Environment
 

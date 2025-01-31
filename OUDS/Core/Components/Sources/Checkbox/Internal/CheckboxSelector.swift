@@ -13,24 +13,10 @@
 
 import SwiftUI
 
-/// The checkbox component with only the selector
+/// The square with the tick or not, i.e. the checkbox selector depending to the given ``OUDSCheckbox.Status``
 struct CheckboxSelector: View {
 
-    let status: OUDSCheckbox.Status
-    let action: () -> Void
-
-    var body: some View {
-        SelectorBox(status: status)
-            .accessibilityAddTraits(.isButton)
-            .onTapGesture {
-                action()
-            }
-    }
-}
-
-/// The square with the tick or not, i.e. the checkbox selector depending to the given `OUDSCheckbox.Status`
-private struct SelectorBox: View {
-
+    let isAlone: Bool
     let status: OUDSCheckbox.Status
 
     @Environment(\.theme) private var theme
@@ -41,14 +27,9 @@ private struct SelectorBox: View {
             tickImage(name: "checkmark")
         } else if status == .undeterminate || status == .errorUndeterminate {
             tickImage(name: "minus")
-        } else {
+        } else { // .unselected and .errorUnselected cases
             Color.clear
-                .frame(minWidth: theme.checkRadio.checkRadioSizeMinWidthSelectorOnly,
-                       maxWidth: theme.checkRadio.checkRadioSizeMinWidthSelectorOnly, // TODO: #264 - No token for maw width!
-                       minHeight: theme.checkRadio.checkRadioSizeMinHeightSelectorOnly,
-                       maxHeight: theme.checkRadio.checkRadioSizeMaxHeightSelectorOnly)
-                .padding(4)
-                .modifier(OUDSCheckboxStyle(status: status))
+                .modifier(SelectorFrameModifier(isAlone: isAlone))
         }
     }
 
@@ -56,12 +37,31 @@ private struct SelectorBox: View {
         Image(systemName: name)
             .resizable()
             .scaledToFit()
-            .frame(minWidth: theme.checkRadio.checkRadioSizeMinWidthSelectorOnly,
-                   maxWidth: theme.checkRadio.checkRadioSizeMinWidthSelectorOnly, // TODO: #264 - No token for maw width!
-                   minHeight: theme.checkRadio.checkRadioSizeMinHeightSelectorOnly,
-                   maxHeight: theme.checkRadio.checkRadioSizeMaxHeightSelectorOnly)
-            .padding(4)
-            .modifier(OUDSCheckboxStyle(status: status))
+            .modifier(SelectorFrameModifier(isAlone: isAlone))
             .accessibilityHidden(true)
+    }
+}
+
+/// `ViewModifier` for the checbkox slector to define the tokens to use depending to if the checkkox is alone or not
+private struct SelectorFrameModifier: ViewModifier {
+
+    let isAlone: Bool
+    @Environment(\.theme) private var theme
+
+    // TODO: #264 - Ensure the rules for min/xax height/width are the good ones in Figma
+    func body(content: Content) -> some View {
+        content
+            .frame(width: theme.listItem.listItemSizeIcon,
+                   height: theme.listItem.listItemSizeIcon)
+//        if isAlone {
+//            content
+//                .frame(minWidth: theme.checkRadio.checkRadioSizeMinWidthSelectorOnly,
+//                       minHeight: theme.checkRadio.checkRadioSizeMinHeightSelectorOnly,
+//                       maxHeight: theme.checkRadio.checkRadioSizeMaxHeightSelectorOnly)
+//        } else {
+//            content
+//                .frame(minHeight: theme.listItem.listItemSizeIcon,
+//                       maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer)
+//        }
     }
 }

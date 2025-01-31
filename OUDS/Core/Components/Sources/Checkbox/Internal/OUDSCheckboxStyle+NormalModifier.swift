@@ -15,21 +15,27 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// `ViewModifier` which has iin charge to apply styles for foreground, background and border elements
-/// associated to the given ``OUDSCheckbox.Status`` and ``InternalCheckboxState`` of the ``ODUSCheckbox``
+/// `ViewModifier` which has in charge to apply styles for foreground, background and border elements for example.
+/// The applied styles are based on the  given ``OUDSCheckbox.Status``, ``OUDSCheckbox.State`` and ``OUDSCheckbox.Layout`` of the ``ODUSCheckbox``.
 struct CheckboxViewModifier: ViewModifier {
 
     // MARK: - Properties
 
     let status: OUDSCheckbox.Status
-    let state: InternalCheckboxState
+    let state: OUDSCheckbox.State
+    let item: OUDSCheckbox.Item
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content
-            .modifier(CheckboxSelectorBorderModifier(status: status, state: state))
-            .modifier(CheckboxSelectorForegroundModifier(status: status, state: state))
-            .modifier(CheckboxSelectorBackgroundModifier(status: status, state: state))
+        if item == .checkbox {
+            content
+                .modifier(CheckboxSelectorBorderModifier(status: status, state: state))
+                .modifier(CheckboxForegroundModifier(status: status, state: state, item: item))
+                .modifier(CheckboxSelectorBackgroundModifier(status: status, state: state))
+        } else {
+            content
+                .modifier(CheckboxForegroundModifier(status: status, state: state, item: item))
+        }
     }
 }
