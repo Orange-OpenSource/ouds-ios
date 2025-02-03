@@ -24,14 +24,14 @@ struct Checkbox: View {
     private let icon: Image?
     private let isInversed: Bool
     private let hasDivider: Bool
-    private let status: OUDSCheckbox.Status
+    @Binding private var status: OUDSCheckbox.Status
     private let action: () -> Void
 
     @Environment(\.theme) private var theme
 
     // MARK: - Initializers
 
-    init(status: OUDSCheckbox.Status,
+    init(status: Binding<OUDSCheckbox.Status>,
          action: @escaping () -> Void) {
         selectorOnly = true
         label = nil
@@ -39,13 +39,13 @@ struct Checkbox: View {
         icon = nil
         isInversed = false
         hasDivider = false
-        self.status = status
+        self._status = status
         self.action = action
     }
 
     init(label: String,
          isInversed: Bool,
-         status: OUDSCheckbox.Status,
+         status: Binding<OUDSCheckbox.Status>,
          hasDivider: Bool = false,
          action: @escaping () -> Void) {
         selectorOnly = false
@@ -54,14 +54,14 @@ struct Checkbox: View {
         icon = nil
         self.isInversed = isInversed
         self.hasDivider = hasDivider
-        self.status = status
+        self._status = status
         self.action = action
     }
 
     init(label: String,
          helper: String,
          isInversed: Bool,
-         status: OUDSCheckbox.Status,
+         status: Binding<OUDSCheckbox.Status>,
          hasDivider: Bool = false,
          action: @escaping () -> Void) {
         selectorOnly = false
@@ -70,14 +70,14 @@ struct Checkbox: View {
         icon = nil
         self.isInversed = isInversed
         self.hasDivider = hasDivider
-        self.status = status
+        self._status = status
         self.action = action
     }
 
     init(label: String,
          icon: Image,
          isInversed: Bool,
-         status: OUDSCheckbox.Status,
+         status: Binding<OUDSCheckbox.Status>,
          hasDivider: Bool = false,
          action: @escaping () -> Void) {
         selectorOnly = false
@@ -86,7 +86,7 @@ struct Checkbox: View {
         self.icon = icon
         self.isInversed = isInversed
         self.hasDivider = hasDivider
-        self.status = status
+        self._status = status
         self.action = action
     }
 
@@ -94,7 +94,7 @@ struct Checkbox: View {
          helper: String,
          icon: Image,
          isInversed: Bool,
-         status: OUDSCheckbox.Status,
+         status: Binding<OUDSCheckbox.Status>,
          hasDivider: Bool = false,
          action: @escaping () -> Void) {
         selectorOnly = false
@@ -103,7 +103,7 @@ struct Checkbox: View {
         self.icon = icon
         self.isInversed = isInversed
         self.hasDivider = hasDivider
-        self.status = status
+        self._status = status
         self.action = action
     }
 
@@ -115,10 +115,19 @@ struct Checkbox: View {
             .frame(minWidth: theme.listItem.listItemSizeMinWidth,
                    minHeight: theme.listItem.listItemSizeMinHeight)
             .accessibilityAddTraits(.isButton)
-            .onTapGesture {
-                action()
-            }
             .border(Color.black, width: 1) // NOTE: #264 - Debug
+    }
+
+    /// To factorize the management of tap gestures for any items of the checkbox component
+    private func handleTap() {
+        print("@@@ tzp")
+        toggleState()
+        action()
+    }
+
+    /// Changes the state of the checkbox
+    private func toggleState() {
+        self.status = status.next()
     }
 
     // MARK: - Layouts
@@ -136,7 +145,7 @@ struct Checkbox: View {
         CheckboxSelector(isAlone: true, status: status)
             .accessibilityAddTraits(.isButton)
             .onTapGesture {
-                action()
+                handleTap()
             }
             .modifier(OUDSCheckboxStyle(status: status, item: .checkbox))
     }
@@ -161,6 +170,9 @@ struct Checkbox: View {
                 }
             }
         }
+        .accessibilityAddTraits(.isButton)
+        .background(Color.pink)
+        .onTapGesture { handleTap() }
     }
 
     private func selector() -> some View {
@@ -169,6 +181,7 @@ struct Checkbox: View {
     }
 
     // swiftlint:disable force_unwrapping
+    // swiftlint:disable accessibility_trait_for_button
     @ViewBuilder
     private func texts() -> some View {
         if let helper {
@@ -176,18 +189,22 @@ struct Checkbox: View {
                 Text(label!)
                     .typeLabelDefaultLarge(theme)
                     .modifier(OUDSCheckboxStyle(status: status, item: .label))
+                    .onTapGesture { handleTap() }
 
                 Text(helper)
                     .typeLabelDefaultMedium(theme)
                     .modifier(OUDSCheckboxStyle(status: status, item: .helper))
+                    .onTapGesture { handleTap() }
             }
         } else {
             Text(label!)
                 .typeLabelDefaultLarge(theme)
                 .modifier(OUDSCheckboxStyle(status: status, item: .label))
+                .onTapGesture { handleTap() }
         }
     }
     // swiftlint:enable force_unwrapping
+    // swiftlint:enable accessibility_trait_for_button
 
     // swiftlint:disable force_unwrapping
     @ViewBuilder

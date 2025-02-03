@@ -37,7 +37,7 @@ public struct OUDSCheckbox: View {
 
     private let type: `Type`
     private let layout: Layout
-    private let status: Status
+    @Binding private var status: Status
     private let style: Style
     private let action: () -> Void
 
@@ -86,7 +86,7 @@ public struct OUDSCheckbox: View {
     // MARK: - Status
 
     /// Represents the status of a checkbox i.e. a kind of type or status
-    public enum Status {
+    public enum Status: CaseIterable {
         /// The checkbox is selected
         case selected
 
@@ -107,6 +107,15 @@ public struct OUDSCheckbox: View {
 
         var isError: Bool {
             self == .errorSelected || self == .errorUnselected || self == .errorUndeterminate
+        }
+
+        func next() -> Status { // TODO: #264 - Unit tests
+            let allStates = Self.allCases
+            if let currentIndex = allStates.firstIndex(of: self) {
+                return allStates[(currentIndex + 1) % allStates.count]
+            } else {
+                return self
+            }
         }
     }
 
@@ -144,13 +153,13 @@ public struct OUDSCheckbox: View {
     ///    - style: The checkbox style
     ///    - divider: Flag to rise if a divider must be placed under the component, `false` by default
     ///    - action: The action to perform when the user change the checkbox value
-    public init(status: Status,
+    public init(status: Binding<Status>,
                 style: Style,
                 divider: Bool = false,
                 action: @escaping () -> Void) {
         type = .selectorOnly
         layout = .selectorOnly
-        self.status = status
+        self._status = status
         self.style = style
         self.action = action
     }
@@ -165,13 +174,13 @@ public struct OUDSCheckbox: View {
     ///    - divider: Flag to rise if a divider must be placed under the component, `false` by default
     ///    - action: The action to perform when the user change the checkbox value
     public init(label: String,
-                status: Status,
+                status: Binding<Status>,
                 style: Style,
                 layout: Layout = .default,
                 divider: Bool = false,
                 action: @escaping () -> Void) {
         type = divider ? .dividedLabel(label) : .label(label)
-        self.status = status
+        self._status = status
         self.layout = layout
         self.style = style
         self.action = action
@@ -193,13 +202,13 @@ public struct OUDSCheckbox: View {
     ///    - action: The action to perform when the user change the checkbox value
     public init(label: String,
                 icon: Image,
-                status: Status,
+                status: Binding<Status>,
                 style: Style,
                 layout: Layout = .default,
                 divider: Bool = false,
                 action: @escaping () -> Void) {
         type = divider ? .dividedLabelAndIcon(label, icon) : .labelAndIcon(label, icon)
-        self.status = status
+        self._status = status
         self.layout = layout
         self.style = style
         self.action = action
@@ -221,7 +230,7 @@ public struct OUDSCheckbox: View {
     ///    - action: The action to perform when the user change the checkbox value
     public init(label: String,
                 helper: String,
-                status: Status,
+                status: Binding<Status>,
                 style: Style,
                 layout: Layout = .default,
                 divider: Bool = false,
@@ -230,7 +239,7 @@ public struct OUDSCheckbox: View {
         ? .dividedLabelAndHelper(label: label, helper: helper)
         : .labelAndHelper(label: label, helper: helper)
         self.layout = layout
-        self.status = status
+        self._status = status
         self.style = style
         self.action = action
 
@@ -257,7 +266,7 @@ public struct OUDSCheckbox: View {
     public init(label: String,
                 helper: String,
                 icon: Image,
-                status: Status,
+                status: Binding<Status>,
                 style: Style,
                 layout: Layout = .default,
                 divider: Bool = false,
@@ -266,7 +275,7 @@ public struct OUDSCheckbox: View {
         ? .dividedLabelAndHelperAndIcon(label: label, helper: helper, icon: icon)
         : .labelAndHelperAndIcon(label: label, helper: helper, icon: icon)
         self.layout = layout
-        self.status = status
+        self._status = status
         self.style = style
         self.action = action
 
@@ -290,15 +299,15 @@ public struct OUDSCheckbox: View {
     private func body(for type: `Type`) -> some View {
         switch type {
         case .selectorOnly:
-            Checkbox(status: status, action: action)
+            Checkbox(status: $status, action: action)
         case .label(let label):
-            Checkbox(label: label, isInversed: layout == .inverse, status: status, action: action)
+            Checkbox(label: label, isInversed: layout == .inverse, status: $status, action: action)
         case let .labelAndHelper(label, helper):
-            Checkbox(label: label, helper: helper, isInversed: layout == .inverse, status: status, action: action)
+            Checkbox(label: label, helper: helper, isInversed: layout == .inverse, status: $status, action: action)
         case let .labelAndHelperAndIcon(label: label, helper: helper, icon: icon):
-            Checkbox(label: label, helper: helper, icon: icon, isInversed: layout == .inverse, status: status, action: action)
+            Checkbox(label: label, helper: helper, icon: icon, isInversed: layout == .inverse, status: $status, action: action)
         case let .labelAndIcon(label, icon):
-            Checkbox(label: label, icon: icon, isInversed: layout == .inverse, status: status, action: action)
+            Checkbox(label: label, icon: icon, isInversed: layout == .inverse, status: $status, action: action)
         // TODO: #264 - Implement other cases (divider)
         default:
             Text("Not implemented yet")
