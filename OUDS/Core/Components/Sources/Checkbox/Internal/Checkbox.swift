@@ -22,6 +22,7 @@ struct Checkbox: View {
     private let label: String?
     private let helper: String?
     private let icon: Image?
+    private let isInversed: Bool
     private let hasDivider: Bool
     private let status: OUDSCheckbox.Status
     private let action: () -> Void
@@ -36,12 +37,14 @@ struct Checkbox: View {
         label = nil
         helper = nil
         icon = nil
+        isInversed = false
         hasDivider = false
         self.status = status
         self.action = action
     }
 
     init(label: String,
+         isInversed: Bool,
          status: OUDSCheckbox.Status,
          hasDivider: Bool = false,
          action: @escaping () -> Void) {
@@ -49,6 +52,7 @@ struct Checkbox: View {
         self.label = label
         helper = nil
         icon = nil
+        self.isInversed = isInversed
         self.hasDivider = hasDivider
         self.status = status
         self.action = action
@@ -56,6 +60,7 @@ struct Checkbox: View {
 
     init(label: String,
          helper: String,
+         isInversed: Bool,
          status: OUDSCheckbox.Status,
          hasDivider: Bool = false,
          action: @escaping () -> Void) {
@@ -63,6 +68,7 @@ struct Checkbox: View {
         self.label = label
         self.helper = helper
         icon = nil
+        self.isInversed = isInversed
         self.hasDivider = hasDivider
         self.status = status
         self.action = action
@@ -70,6 +76,7 @@ struct Checkbox: View {
 
     init(label: String,
          icon: Image,
+         isInversed: Bool,
          status: OUDSCheckbox.Status,
          hasDivider: Bool = false,
          action: @escaping () -> Void) {
@@ -77,6 +84,7 @@ struct Checkbox: View {
         self.label = label
         helper = nil
         self.icon = icon
+        self.isInversed = isInversed
         self.hasDivider = hasDivider
         self.status = status
         self.action = action
@@ -85,6 +93,7 @@ struct Checkbox: View {
     init(label: String,
          helper: String,
          icon: Image,
+         isInversed: Bool,
          status: OUDSCheckbox.Status,
          hasDivider: Bool = false,
          action: @escaping () -> Void) {
@@ -92,6 +101,7 @@ struct Checkbox: View {
         self.label = label
         self.helper = helper
         self.icon = icon
+        self.isInversed = isInversed
         self.hasDivider = hasDivider
         self.status = status
         self.action = action
@@ -132,36 +142,59 @@ struct Checkbox: View {
     }
 
     // We are sure here label can be uwnrapped because of precondition above (selectorOnly)
-    // swiftlint:disable force_unwrapping
+    @ViewBuilder
     private func defaultLayout() -> some View {
         HStack(spacing: theme.listItem.listItemSpaceColumnGap) {
-            CheckboxSelector(isAlone: false, status: status)
-                .modifier(OUDSCheckboxStyle(status: status, item: .checkbox))
-
-            if let helper {
-                VStack(spacing: theme.listItem.listItemSpaceRowGap) {
-                    Text(label!)
-                        .typeLabelDefaultLarge(theme)
-                        .modifier(OUDSCheckboxStyle(status: status, item: .label))
-
-                    Text(helper)
-                        .typeLabelDefaultMedium(theme)
-                        .modifier(OUDSCheckboxStyle(status: status, item: .helper))
+            if isInversed {
+                if icon != nil {
+                    Spacer()
+                    image()
                 }
+                texts()
+                selector()
             } else {
+                selector()
+                texts()
+                if icon != nil {
+                    Spacer()
+                    image()
+                }
+            }
+        }
+    }
+
+    private func selector() -> some View {
+        CheckboxSelector(isAlone: false, status: status)
+            .modifier(OUDSCheckboxStyle(status: status, item: .checkbox))
+    }
+
+    // swiftlint:disable force_unwrapping
+    @ViewBuilder
+    private func texts() -> some View {
+        if let helper {
+            VStack(spacing: theme.listItem.listItemSpaceRowGap) {
                 Text(label!)
                     .typeLabelDefaultLarge(theme)
                     .modifier(OUDSCheckboxStyle(status: status, item: .label))
-            }
 
-            if let icon {
-                Spacer()
-
-                icon
-                    .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer)
-                    .accessibilityHidden(true)
+                Text(helper)
+                    .typeLabelDefaultMedium(theme)
+                    .modifier(OUDSCheckboxStyle(status: status, item: .helper))
             }
+        } else {
+            Text(label!)
+                .typeLabelDefaultLarge(theme)
+                .modifier(OUDSCheckboxStyle(status: status, item: .label))
         }
+    }
+    // swiftlint:enable force_unwrapping
+
+    // swiftlint:disable force_unwrapping
+    @ViewBuilder
+    private func image() -> some View {
+        icon!
+        .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer)
+        .accessibilityHidden(true)
     }
     // swiftlint:enable force_unwrapping
 }

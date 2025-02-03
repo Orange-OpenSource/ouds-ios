@@ -21,11 +21,38 @@ import SwiftUI
 // TODO: #264 - Update page
 
 // swiftlint:disable accessibility_label_for_image
+// swiftlint:disable closure_body_length
 struct CheckboxPage: View {
 
     var body: some View {
 
         VStack(spacing: 2) {
+
+            // Enabled
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .selected, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .unselected, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .undeterminate, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .errorSelected, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .errorUnselected, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .errorUndeterminate, style: .default, layout: .inverse) { }
+
+            // Disabled
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .selected, style: .default, layout: .inverse) { }.disabled(true)
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .unselected, style: .default, layout: .inverse) { }.disabled(true)
+            OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .undeterminate, style: .default, layout: .inverse) { }.disabled(true)
+
+            // Enabled
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .selected, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .unselected, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .undeterminate, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .errorSelected, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .errorUnselected, style: .default, layout: .inverse) { }
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .errorUndeterminate, style: .default, layout: .inverse) { }
+
+            // Disabled
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .selected, style: .default, layout: .inverse) { }.disabled(true)
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .unselected, style: .default, layout: .inverse) { }.disabled(true)
+            OUDSCheckbox(label: "Hello", helper: "World", icon: Image(systemName: "heart"), status: .undeterminate, style: .default, layout: .inverse) { }.disabled(true)
 
             // Enabled
             OUDSCheckbox(label: "Hello world", icon: Image(systemName: "heart"), status: .selected, style: .default) { }
@@ -95,3 +122,4 @@ struct CheckboxPage: View {
     }
 }
 // swiftlint:enable accessibility_label_for_image
+// swiftlint:enable closure_body_length

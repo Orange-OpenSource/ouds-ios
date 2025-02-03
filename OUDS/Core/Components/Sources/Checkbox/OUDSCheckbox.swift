@@ -292,14 +292,14 @@ public struct OUDSCheckbox: View {
         case .selectorOnly:
             Checkbox(status: status, action: action)
         case .label(let label):
-            Checkbox(label: label, status: status, action: action)
+            Checkbox(label: label, isInversed: layout == .inverse, status: status, action: action)
         case let .labelAndHelper(label, helper):
-            Checkbox(label: label, helper: helper, status: status, action: action)
+            Checkbox(label: label, helper: helper, isInversed: layout == .inverse, status: status, action: action)
         case let .labelAndHelperAndIcon(label: label, helper: helper, icon: icon):
-            Checkbox(label: label, helper: helper, icon: icon, status: status, action: action)
+            Checkbox(label: label, helper: helper, icon: icon, isInversed: layout == .inverse, status: status, action: action)
         case let .labelAndIcon(label, icon):
-            Checkbox(label: label, icon: icon, status: status, action: action)
-        // TODO: #264 - Implement other cases
+            Checkbox(label: label, icon: icon, isInversed: layout == .inverse, status: status, action: action)
+        // TODO: #264 - Implement other cases (divider)
         default:
             Text("Not implemented yet")
         }
