@@ -197,18 +197,7 @@ struct ButtonConfiguration: View {
             }
 
             if model.layout == .iconAndText || model.layout == .textOnly {
-                VStack(alignment: .leading) {
-                    Text(LocalizedStringKey("app_component_common_userText_label"))
-                        .typeHeadingMedium(theme)
-                        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-
-                    TextField(text: $model.text) {
-                        Text("app_component_common_userText_prompt")
-                    }
-                }
-                .accessibilityElement(children: .combine)
-                .accessibilityLabel(Text("app_component_common_userText_prompt"))
-                .accessibilityValue(model.text)
+                DesignToolboxTextField(text: $model.text, prompt: "app_component_common_userText_prompt")
             }
         }
     }

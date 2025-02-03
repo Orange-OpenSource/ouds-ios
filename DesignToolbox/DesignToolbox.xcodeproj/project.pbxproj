@@ -65,6 +65,8 @@
 		0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */; };
 		07AB45872D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
 		07AB45882D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
+		07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
+		07AB458B2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
 		07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */; };
 		07B3CCB22D40E34700DBB10A /* LinkElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAF2D40E34700DBB10A /* LinkElement.swift */; };
 		07B3CCB32D40E34700DBB10A /* LinkPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB02D40E34700DBB10A /* LinkPage.swift */; };
@@ -257,6 +259,7 @@
 		0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconWithTypography.swift"; sourceTree = "<group>"; };
 		0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconDecorative.swift"; sourceTree = "<group>"; };
 		07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxChoicePicker.swift; sourceTree = "<group>"; };
+		07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTextField.swift; sourceTree = "<group>"; };
 		07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkConfiguration.swift; sourceTree = "<group>"; };
 		07B3CCAF2D40E34700DBB10A /* LinkElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkElement.swift; sourceTree = "<group>"; };
 		07B3CCB02D40E34700DBB10A /* LinkPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPage.swift; sourceTree = "<group>"; };
@@ -415,6 +418,7 @@
 				6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */,
 				07F0AFE72CFE0FBD00D334DD /* DesignToolboxConfiguration.swift */,
 				07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredBackgroundModifier.swift */,
+				07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1145,6 +1149,7 @@
 				6DB260DC2CD0F0000091F72E /* DesignToolboxSectionHeaderStyle.swift in Sources */,
 				6DB260DB2CD0EFD90091F72E /* NamedSize+IconWithTypography.swift in Sources */,
 				6DB260DA2CD0EF9D0091F72E /* NamedSize+IconDecorative.swift in Sources */,
+				07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
 				51952A8C2D3FA22A0068B807 /* OUDSTokensFontUITests.swift in Sources */,
 				6D17A2352CCF8DC300C00512 /* NamedColor.swift in Sources */,
 				6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */,
@@ -1190,6 +1195,7 @@
 			files = (
 				51952A672D3F9B9E0068B807 /* DesignToolboxConfiguration.swift in Sources */,
 				51952A682D3F9B9E0068B807 /* NamedColor+Opacity.swift in Sources */,
+				07AB458B2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
 				51952A692D3F9B9E0068B807 /* NamedColor+Overlay.swift in Sources */,
 				51952A6A2D3F9B9E0068B807 /* NamedColor+Repository.swift in Sources */,
 				51952A6B2D3F9B9E0068B807 /* NamedColor+Surface.swift in Sources */,

@@ -125,7 +125,6 @@
 // MARK: Components: Link
 
 "app_components_link_label" = "Link";
-"app_components_link_longText_label" = "This is an example of link with a chevron";
 "app_components_link_description_text" = "Links direct users to other resources or sections, whether internal (within the same application) or external (to a website or document).";
 "app_components_link_arrowBack_label" = "Back";
 "app_components_link_arrowNext_label" = "Next";
