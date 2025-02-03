@@ -423,15 +423,15 @@
 		073543142CA17244001187EA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				079475A22D5103B30081980A /* DesignToolboxBackgroundModifier.swift */,
 				0735430F2CA15440001187EA /* Cards */,
 				0708222D2CFF617000570EC7 /* Elements */,
-				07F7533A2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift */,
+				079475A22D5103B30081980A /* DesignToolboxBackgroundModifier.swift */,
 				07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */,
 				6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */,
 				07F0AFE72CFE0FBD00D334DD /* DesignToolboxConfiguration.swift */,
 				07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredBackgroundModifier.swift */,
 				07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */,
+				07F7533A2CC785620007450D /* DesignToolboxSectionHeaderStyle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
