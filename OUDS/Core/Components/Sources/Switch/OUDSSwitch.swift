@@ -16,19 +16,27 @@ import SwiftUI
 
 // MARK: - OUDS Button
 
-/// The ``OUDSSwitch`` proposes layout with text only, icon only or text with icon.
-///
+/// The ``OUDSSwitch`` proposes a layout as a nested element.
+/// It also propose a more complex layout with text, icon and divider. For this layout,
+/// if switch is in form it is possible to set it in error state.
 ///
 /// ## Code samples
-///
 /// ```swift
+///     // Switch as nested element (with no text)
+///     OUDSSwitch(isOn $isOn)
+///
+///     // Text, icon and divider
+///     OUDSSwtcih(isOn $isOn, label: "Allow notifications", icon: Image("ic_heart"), divider: true)
+///
+///     // Text, icon and divider with error in form
+///     OUDSSwtcih(isOn $isOn, label: "Allow notifications", icon: Image("ic_heart"), onError: true, divider: true)
 /// ```
 ///
 /// ## Design documentation
 ///
-/// See
+/// See [#TODO]
 ///
-/// - Since: 0.10.0
+/// - Since: 0.11.0
 public struct OUDSSwitch: View {
 
     // MARK: Stored Properties
@@ -53,7 +61,7 @@ public struct OUDSSwitch: View {
         self.layout = .nested
     }
 
-    /// Creates a switch with label and optional helper text.
+    /// Creates a switch with label and optional helper text, icon, divider.
     ///
     /// - Parameters:
     ///   - isOn: A binding to a property that determines whether the switch is on
