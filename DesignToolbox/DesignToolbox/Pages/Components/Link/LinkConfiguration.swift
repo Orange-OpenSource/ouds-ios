@@ -29,7 +29,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var longText: Bool
+    @Published var text: String
 
     @Published var layout: LinkLayout {
         didSet { updateCode() }
@@ -44,7 +44,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     override init() {
         onColoredSurface = false
         enabled = true
-        longText = false
+        text = String(localized: "app_components_link_label")
         layout = .textOnly
         size = .medium
     }
@@ -155,10 +155,6 @@ struct LinkConfiguration: View {
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("app_components_common_longText_label", isOn: $model.longText)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-
             DesignToolboxChoicePicker(title: "app_components_link_size_label", selection: $model.size) {
                 ForEach(OUDSLink.Size.allCases, id: \.id) { size in
                     Text(LocalizedStringKey(size.description)).tag(size)
@@ -170,6 +166,8 @@ struct LinkConfiguration: View {
                     Text(LocalizedStringKey(layout.description)).tag(layout)
                 }
             }
+
+            DesignToolboxTextField(text: $model.text, prompt: "app_component_common_userText_prompt")
         }
     }
 }

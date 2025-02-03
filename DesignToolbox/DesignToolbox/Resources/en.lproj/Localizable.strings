@@ -105,18 +105,17 @@
 "app_components_common_viewCodeExample_label" = "View component code example";
 "app_component_emptyContent_text" = "No content";
 "app_component_emptyContent_description_text" = "This content is under construction and will be available very soon";
-
+"app_component_common_userText_prompt" = "Enter a text";
+"app_component_common_userText_label" = "Text";
 "app_components_common_layout_label" = "Layout";
 "app_components_common_textOnlyLayout_label" = "Text only";
 "app_components_common_iconAndTextLayout_label" = "Icon + text";
 "app_components_common_style_label" = "Style";
 "app_components_common_onColoredBackground_label" = "On colored background";
-"app_components_common_longText_label" = "Long text";
 
 // MARK: Components: Button
 
 "app_components_button_label" = "Button";
-"app_components_button_longText_label" = "Button with long text";
 "app_components_button_description_text" = "Buttons allow users to make choices or perform an action. They have multiple styles for various needs.";
 "app_components_button_negative_hierary_notAllowed_text" = "Not allowed on colored surface";
 "app_components_button_hierarchy_label" = "Hierarchy";
@@ -126,7 +125,6 @@
 // MARK: Components: Link
 
 "app_components_link_label" = "Link";
-"app_components_link_longText_label" = "This is an example of link with a chevron";
 "app_components_link_description_text" = "Links direct users to other resources or sections, whether internal (within the same application) or external (to a website or document).";
 "app_components_link_arrowBack_label" = "Back";
 "app_components_link_arrowNext_label" = "Next";

@@ -29,7 +29,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var longText: Bool
+    @Published var text: String
 
     @Published var layout: ButtonLayout {
         didSet { updateCode() }
@@ -48,7 +48,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
     override init() {
         enabled = true
         onColoredSurface = false
-        longText = false
+        text = String(localized: "app_components_button_label")
         layout = .textOnly
         hierarchy = .default
         style = .`default`
@@ -178,11 +178,6 @@ struct ButtonConfiguration: View {
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("app_components_common_longText_label", isOn: $model.longText)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.layout == .iconOnly)
-
             DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label", selection: $model.hierarchy) {
                 ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
                     Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
@@ -199,6 +194,10 @@ struct ButtonConfiguration: View {
                 ForEach(ButtonLayout.allCases, id: \.id) { layout in
                     Text(LocalizedStringKey(layout.description)).tag(layout)
                 }
+            }
+
+            if model.layout == .iconAndText || model.layout == .textOnly {
+                DesignToolboxTextField(text: $model.text, prompt: "app_component_common_userText_prompt")
             }
         }
     }
