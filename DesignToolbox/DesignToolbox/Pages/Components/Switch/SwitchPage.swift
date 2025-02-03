@@ -83,7 +83,7 @@ private struct SwitchDemo: View {
                     Spacer()
                 }
             } else {
-                OUDSSwitch(isOn: $isOn, label: "Label", helperText: helperText, icon: icon, onError: model.onError, divider: model.divider)
+                OUDSSwitch(isOn: $isOn, label: "app_components_switch_label_text", helperText: helperText, icon: icon, onError: model.onError, divider: model.divider)
                     .disabled(!model.enabled)
             }
         }
@@ -94,7 +94,7 @@ private struct SwitchDemo: View {
     // MARK: Private helpers
 
     private var helperText: String? {
-        model.helperText ? "Helper Text" : nil
+        model.helperText ? "app_components_switch_helperText_text" : nil
     }
     private var icon: Image? {
         model.icon ? Image(decorative: "ic_heart") : nil

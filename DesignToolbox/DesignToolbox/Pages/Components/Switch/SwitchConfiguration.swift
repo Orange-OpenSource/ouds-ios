@@ -21,15 +21,24 @@ final class SwitchConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var enabled: Bool = true {
+    @Published var enabled: Bool {
         didSet { updateCode() }
     }
-
-    @Published var switchOnly: Bool
-    @Published var helperText: Bool
-    @Published var icon: Bool
-    @Published var onError: Bool
-    @Published var divider: Bool
+    @Published var switchOnly: Bool {
+        didSet { updateCode() }
+    }
+    @Published var helperText: Bool {
+        didSet { updateCode() }
+    }
+    @Published var icon: Bool {
+        didSet { updateCode() }
+    }
+    @Published var onError: Bool {
+        didSet { updateCode() }
+    }
+    @Published var divider: Bool {
+        didSet { updateCode() }
+    }
 
     // MARK: Initializer
 
@@ -46,16 +55,53 @@ final class SwitchConfigurationModel: ComponentConfiguration {
 
     // MARK: Component Configuration
 
+    override func updateCode() {
+        if switchOnly {
+            code =
+              """
+            OUDSSwitch(isOn: $isOn)
+            \(disableCode))
+            """
+        } else {
+            code =
+              """
+            OUDSSwitch(isOn: $isOn, label: \"Label\"\(helperTextPatern)\(iconPatern)\(onErrorPatern)\(dividerPatern))
+            \(disableCode))
+            """
+        }
+    }
+
     private var disableCode: String {
         ".disable(\(enabled ? "false" : "true"))"
     }
 
-    override func updateCode() {
-        code =
-            """
-          OUDSSwitch(isOn: $isOn)
-          \(disableCode))
-          """
+    private var helperTextPatern: String {
+        if helperText {
+            return ",helperText: \(String(localized: "app_components_switch_helperText_text"))"
+        } else {
+            return ""
+        }
+    }
+    private var iconPatern: String {
+        if icon {
+            return ", Image(decorative: \"ic_heart\")"
+        } else {
+            return ""
+        }
+    }
+    private var onErrorPatern: String {
+        if onError {
+            return ", onError: true"
+        } else {
+            return ""
+        }
+    }
+    private var dividerPatern: String {
+        if onError {
+            return ", divider: true"
+        } else {
+            return ""
+        }
     }
 }
 
@@ -74,26 +120,26 @@ struct SwitchConfiguration: View {
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("switch only", isOn: $model.switchOnly)
+            Toggle("app_components_switch_switchOnly_label", isOn: $model.switchOnly)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("Helper Text", isOn: $model.helperText)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.switchOnly)
-
-            Toggle("Icon", isOn: $model.icon)
+            Toggle("app_components_common_helperText_label", isOn: $model.helperText)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(model.switchOnly)
 
-            Toggle("Divider", isOn: $model.divider)
+            Toggle("app_components_common_icon_label", isOn: $model.icon)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(model.switchOnly)
 
-            Toggle("On error", isOn: $model.onError)
+            Toggle("app_components_common_divider_label", isOn: $model.divider)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .disabled(model.switchOnly)
+
+            Toggle("app_components_common_onError_label", isOn: $model.onError)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(model.switchOnly)
