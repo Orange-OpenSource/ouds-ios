@@ -22,7 +22,7 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
 
     let selectorState: OUDSCheckbox.SelectorState
     let items: OUDSCheckboxLabel.Items
-    let isInverse: Bool
+    let isInversed: Bool
 
     @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled
@@ -32,11 +32,24 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
-        // TODO: #264 - Inverse layout
         HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
-            OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: items.onError)
+            if isInversed {
+                OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
+                                  items: items,
+                                  isInversed: true)
 
-            OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed), items: items)
+                OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
+                                           selectorState: selectorState,
+                                           isError: items.isError)
+            } else {
+                OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
+                                           selectorState: selectorState,
+                                           isError: items.isError)
+
+                OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
+                                  items: items,
+                                  isInversed: false)
+            }
         }
         .padding(.all, theme.listItem.listItemSpaceInset)
         .oudsDivider(show: items.divider)
@@ -56,7 +69,7 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
             theme.select.selectColorBgHover.color(for: colorScheme)
         case .pressed:
             theme.select.selectColorBgPressed.color(for: colorScheme)
-        case .disabled, .readOnly:
+        case .disabled:
             theme.select.selectColorBgDisabled.color(for: colorScheme)
         }
     }

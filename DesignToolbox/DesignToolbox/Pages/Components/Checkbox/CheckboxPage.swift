@@ -65,27 +65,27 @@ struct CheckboxIllustration: View {
 
 private struct CheckboxDemo: View {
 
-    @State var selectorState: OUDSCheckbox.SelectorState = .undeterminate
     @StateObject var model: CheckboxConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         Group {
-            if model.selectorOnly {
+            if model.layout == .selectorOnly {
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSCheckbox(selectorState: $selectorState)
-                        .disabled(!model.enabled)
+                    OUDSCheckbox(selectorState: $model.selectorState)
+                        .disabled(!model.isEnabled)
                     Spacer()
                 }
             } else {
-                OUDSCheckbox(selectorState: $selectorState,
+                OUDSCheckbox(selectorState: $model.selectorState,
                              label: "app_components_checkbox_label_text",
                              helperText: helperText,
                              icon: icon,
-                             onError: model.onError,
+                             isInversed: model.layout == CheckboxConfigurationModel.DesignToolboxCheckboxLayout.inverse,
+                             isError: model.isError && model.isEnabled,
                              divider: model.divider)
-                    .disabled(!model.enabled)
+                .disabled(!model.isEnabled)
             }
         }
         .padding(.all, theme.spaces.spaceFixedMedium)

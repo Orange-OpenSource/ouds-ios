@@ -23,11 +23,8 @@ enum OUDSInternalCheckboxState {
     /// The component is being pressed
     case pressed
 
-    /// The user cannot interacrt with the component
+    /// The user cannot interart with the component. Also "read only" cases.
     case disabled
-
-    /// The component is kind of disabled, but there a another functional meaning
-    case readOnly
 
     // .loading not managed yet, for next version
     // .focus not managed as not that much customizable

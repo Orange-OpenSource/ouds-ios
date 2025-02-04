@@ -69,7 +69,7 @@ private struct CheckboxSelectorButtonForegroundModifier: ViewModifier {
             return hoverColor.color(for: colorScheme)
         case .pressed:
             return pressedColor.color(for: colorScheme)
-        case .disabled, .readOnly:
+        case .disabled:
             return disabledColor.color(for: colorScheme)
         }
     }
@@ -177,7 +177,7 @@ private struct CheckboxSelectorButtonBorderModifier: ViewModifier {
             return hoverColor
         case .pressed:
             return pressedColor
-        case .disabled, .readOnly:
+        case .disabled:
             return disabledColor
         }
     }
@@ -227,7 +227,7 @@ private struct CheckboxSelectorButtonBorderModifier: ViewModifier {
             return theme.checkRadio.checkRadioSelectorBorderWidthHover
         case .pressed:
             return theme.checkRadio.checkRadioSelectorBorderWidthPressed
-        case .disabled, .readOnly:
+        case .disabled:
             return theme.checkRadio.checkRadioSelectorBorderWidthDisabled
         default:
             return theme.checkRadio.checkRadioSelectorBorderWidthEnabled
