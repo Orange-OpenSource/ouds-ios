@@ -49,8 +49,6 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    // TODO: #264 - Read only
-
     // MARK: - Internal types
 
     enum DesignToolboxCheckboxLayout: CaseIterable, CustomStringConvertible { // OUDSCheckbox.Layouy is not accessible
@@ -93,13 +91,13 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         if layout == .selectorOnly {
             code =
               """
-            OUDSCheckbox(selectorState: $state\(isErrorPattern))
+            OUDSCheckbox(state: $state\(isErrorPattern))
             \(disableCode))
             """
         } else {
             code =
               """
-            OUDSCheckbox(selectorState: $state, label: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(dividerPatern))
+            OUDSCheckbox(state: $state, label: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(dividerPatern))
             \(disableCode))
             """
         }

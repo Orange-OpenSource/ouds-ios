@@ -37,6 +37,26 @@ The link can be displayed in `small` or `medium` size.
     OUDSLink(text: "Back", arrow: .back, size: .medium) { /* the action to process */ }
 ```
 
+### Checkbox
+
+The ``OUDSCheckbox`` proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
+
+```swift
+     // A simple checkbox, nested, selected
+     OUDSCheckbox(state: $state)
+
+     // A leading checkbox with a label
+     OUDSCheckbox(state: $state, label: "Hello world")
+
+     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
+     OUDSCheckbox(state: $state,
+                  label: "We live in a fabled world",
+                  helperText: "Of dreaming boys and wide-eyed girls",
+                  icon: Image(decorative: "ic_heart"),
+                  isError: true,
+                  divider: true)
+```
+
 ## Customize components
 
 ### Apply a specific shadow effect (elevation tokens)

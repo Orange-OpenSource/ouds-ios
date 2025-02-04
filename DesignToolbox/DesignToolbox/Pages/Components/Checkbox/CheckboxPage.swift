@@ -77,12 +77,12 @@ private struct CheckboxDemo: View {
             if model.layout == .selectorOnly {
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSCheckbox(selectorState: $model.selectorState)
+                    OUDSCheckbox(state: $model.selectorState)
                         .disabled(!model.isEnabled)
                     Spacer()
                 }
             } else {
-                OUDSCheckbox(selectorState: $model.selectorState,
+                OUDSCheckbox(state: $model.selectorState,
                              label: "app_components_checkbox_label_text",
                              helperText: helperText,
                              icon: icon,

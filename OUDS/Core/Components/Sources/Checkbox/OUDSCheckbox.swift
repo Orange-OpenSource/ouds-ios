@@ -16,23 +16,70 @@ import SwiftUI
 
 // MARK: - OUDS Checkbox
 
-/// The ``OUDSCheckbox`` proposes a layout as a nested element.
-/// It also proposes a more complex layout with text, icon and divider.
+/// The ``OUDSCheckbox`` proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
+///
+/// ## Layouts
+///
+/// The component can be rendered as three different layouts:
+///
+/// - **selector only**: the component is nested, only its selector is displayed and nothing else, a pure checkbox
+/// - **default**: the component has a leading selector, a label and optional helper texts, and an optional trailing decorative icon
+/// - **inverse**: like the *default* layout but with a trailing checkbox seelctor and a leading optional image
+///
+/// These layours cannot be managed as they are by the user, but are defined according to what type of data are given to the component initializers.
+///
+/// ## Selector states
+///
+/// The checkbox selector has three available states:
+/// - **selected**: the checkbox is filled with a tick, the user has made the action to select the checkbox
+/// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
+/// - **undeterminate**: mike a prefilled or preticked checkbox, the user did not do anything on it yet
 ///
 /// ## Code samples
 ///
-/// TODO: #254 Add code samples
+/// ```swift
+///     // Supposing we have an undeterminate state checkbox
+///     @Published var state: OUDSCheckbox.SelectorState  = .undeterminate
+///
+///     // A simple checkbox, nested, selected.
+///     // The nested layout will be used here.
+///     OUDSCheckbox(state: $state)
+///
+///     // A leading checkbox with a label
+///     // The default layout will be used here.
+///     OUDSCheckbox(state: $state, label: "Hello world")
+///
+///     // A leading checkbox with a label, and an helper text.
+///     // The default layout will be used here.
+///     OUDSCheckbox(state: $state, label: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///
+///     // A trailing checkbox with a label, an helper text and an icon.
+///     // The inverse layout will be used here.
+///     OUDSCheckbox(state: $state,
+///                  label: "We live in a fabled world",
+///                  helperText: "Of dreaming boys and wide-eyed girls",
+///                  icon: Image(decorative: "ic_heart"))
+///
+///     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error.
+///     // The inverse layout will be used here.
+///     OUDSCheckbox(state: $state,
+///                  label: "Rescue from this world!",
+///                  helperText: "Put your hand in mine",
+///                  icon: Image(decorative: "ic_heart"),
+///                  isError: true,
+///                  divider: true)
+/// ```
 ///
 /// ## Design documentation
 ///
-/// See [#TODO]
+/// See [unified-design-system.orange.com/472794e18/p/23f1c1-checkbox](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
 ///
 /// - Since: 0.11.0
 public struct OUDSCheckbox: View {
 
     // MARK: - Properties
 
-    @Binding private var selectorState: SelectorState
+    @Binding private var state: SelectorState
     private let layout: Layout
 
     // MARK: - State
@@ -47,6 +94,7 @@ public struct OUDSCheckbox: View {
         /// The checkbox is like prefilled, preticked, the user does not select it yet but is not empty
         case undeterminate //  (╯° °)╯︵ ┻━┻
 
+        /// Changes the value to the next one.
         public mutating func toggle () {
             switch self {
             case .selected:
@@ -80,31 +128,31 @@ public struct OUDSCheckbox: View {
     /// Creates a checkbox with no label.
     ///
     /// - Parameters:
-    ///    - selectorState: A binding to a property that determines wether the selector is ticked, unticked or preticked.
+    ///    - state: A binding to a property that determines wether the selector is ticked, unticked or preticked.
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
-    public init(selectorState: Binding<SelectorState>, isError: Bool = false) {
-        self._selectorState = selectorState
+    public init(state: Binding<SelectorState>, isError: Bool = false) {
+        self._state = state
         self.layout = .selectorOnly(isError)
     }
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
     /// - Parameters:
-    ///   - selectorState: A binding to a property that determines wether the selector is ticked, unticker or preticked.
+    ///   - state: A binding to a property that determines wether the selector is ticked, unticker or preticked.
     ///   - label: The main label of the switch.
     ///   - helperText: An additonal helper text.
     ///   - icon: An optional icon
     ///   - isInversed: `True` of the checkbox selector must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - divider: If `true` a divider is added at the bottom of the view.
-    public init(selectorState: Binding<SelectorState>,
+    public init(state: Binding<SelectorState>,
                 label: String,
                 helperText: String? = nil,
                 icon: Image? = nil,
                 isInversed: Bool = false,
                 isError: Bool = false,
                 divider: Bool = false) {
-        self._selectorState = selectorState
+        self._state = state
         if isInversed {
             self.layout = .inverse(.init(label: label, helperText: helperText, icon: icon, isError: isError, divider: divider))
         } else {
@@ -118,19 +166,19 @@ public struct OUDSCheckbox: View {
         switch layout {
         case .default(let label):
             Button("") {
-                $selectorState.wrappedValue.toggle()
+                $state.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue, items: label, isInversed: false))
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $state.wrappedValue, items: label, isInversed: false))
         case .inverse(let label):
             Button("") {
-                $selectorState.wrappedValue.toggle()
+                $state.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue, items: label, isInversed: true))
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $state.wrappedValue, items: label, isInversed: true))
         case .selectorOnly(let isError):
             Button("") {
-                $selectorState.wrappedValue.toggle()
+                $state.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: $selectorState.wrappedValue, isError: isError))
+            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: $state.wrappedValue, isError: isError))
         }
     }
 }
