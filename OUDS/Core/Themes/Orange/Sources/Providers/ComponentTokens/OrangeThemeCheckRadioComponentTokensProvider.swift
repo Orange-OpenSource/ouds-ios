@@ -17,6 +17,8 @@ import OUDSTokensSemantic
 
 // swiftlint:disable type_name
 
+// TODO: #264 - Update doc with other semantic tokens (borders, colors)
+
 /// A class which wraps all **component  tokens of check radio** for *radio button* and *checkboxes* objects
 /// like `OUDSRadioButton` or `OUDSCheckbox`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -35,7 +37,7 @@ import OUDSTokensSemantic
 ///
 ///         // Then override the radio / check component tokens you want.
 ///
-///         override var checkRadioSizeSelector: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
+///         override var checkRadioSize: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
 ///
 ///         override var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken { DimensionRawTokens.dimension1000 }
 ///

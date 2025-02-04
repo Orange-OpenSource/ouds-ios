@@ -12,41 +12,37 @@
 //
 
 import OUDS
+import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The selector of the chebckox
+/// The selector of the chebckox.
+/// Its content depends to the ``OUDSInternalCheckboxState`` and the ``OUDSCheckbox.SelectorState`` also.
 struct OUDSCheckboxSelectorButton: View {
 
     // MARK: - Properties
 
-    let internalState: InternalCheckboxState
-    let isSelected: OUDSCheckbox.State
+    let internalState: OUDSInternalCheckboxState
+    let selectorState: OUDSCheckbox.SelectorState
+    let isError: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
-    /*
-     HStack(alignment: .center) {
-         HStack(alignment: .center) {
-             cursor
-         }
-         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
-         .background(corsorBackgroundColor)
-         .clipShape(Capsule())
-         .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
-     }
-     .padding(.horizontal, spacePadding)
-     .frame(width: trackrWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
-     .background(trackColor)
-     .clipShape(Capsule())
-     */
     var body: some View {
-        if isSelected == .selected {
+        selector()
+            .modifier(OUDSCheckboxSelectorButtonStyle(state: internalState, selectorState: selectorState, isError: isError))
+    }
+
+    // MARK: - Selector
+
+    @ViewBuilder
+    private func selector() -> some View {
+        if selectorState == .selected {
             tickImage(name: "checkmark")
-        } else if isSelected == .undeterminate {
+        } else if selectorState == .undeterminate {
             tickImage(name: "minus")
         } else { // .unselected
             Color.clear
@@ -62,6 +58,8 @@ struct OUDSCheckboxSelectorButton: View {
             .accessibilityHidden(true)
     }
 }
+
+// MARK: - Selector Frame Modifier
 
 private struct SelectorFrameModifier: ViewModifier {
 

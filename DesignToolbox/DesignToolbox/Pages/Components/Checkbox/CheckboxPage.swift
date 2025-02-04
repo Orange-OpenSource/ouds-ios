@@ -65,7 +65,7 @@ struct CheckboxIllustration: View {
 
 private struct CheckboxDemo: View {
 
-    @State var isSelected: OUDSCheckbox.State = .undeterminate
+    @State var selectorState: OUDSCheckbox.SelectorState = .undeterminate
     @StateObject var model: CheckboxConfigurationModel
     @Environment(\.theme) private var theme
 
@@ -74,12 +74,12 @@ private struct CheckboxDemo: View {
             if model.selectorOnly {
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSCheckbox(isSelected: $isSelected)
+                    OUDSCheckbox(selectorState: $selectorState)
                         .disabled(!model.enabled)
                     Spacer()
                 }
             } else {
-                OUDSCheckbox(isSelected: $isSelected,
+                OUDSCheckbox(selectorState: $selectorState,
                              label: "app_components_checkbox_label_text",
                              helperText: helperText,
                              icon: icon,

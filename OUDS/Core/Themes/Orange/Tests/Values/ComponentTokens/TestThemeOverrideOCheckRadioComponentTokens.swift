@@ -206,6 +206,8 @@ final class TestThemeOverrideOfCheckRadioComponentTokens: XCTestCase {
         XCTAssertNotEqual(inheritedTheme.checkRadio.checkRadioColorContentAssetSelected, abstractTheme.checkRadio.checkRadioColorContentAssetSelected)
         XCTAssertTrue(inheritedTheme.checkRadio.checkRadioColorContentAssetSelected == MockThemeCheckRadioComponentTokenProvider.mockThemeCheckRadioColor)
     }
+
+    // TODO: #264 - Add missing unit tests for new components tokens
 }
 
 // swiftlint:enable required_deinit
