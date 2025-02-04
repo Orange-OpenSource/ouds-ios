@@ -20,15 +20,14 @@ struct OUDSCheckboxNestedStyle: ButtonStyle {
 
     // MARK: - Properties
 
-    let isOn: Bool // TODO: #264 - Manage three states
-
+    let isSelected: OUDSCheckbox.State
     @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
-        OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn)
+        OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), isSelected: isSelected)
             .onHover { isHover in
                 self.isHover = isHover
             }

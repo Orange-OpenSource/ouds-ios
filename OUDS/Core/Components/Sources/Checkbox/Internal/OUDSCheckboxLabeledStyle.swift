@@ -33,7 +33,7 @@ enum InternalCheckboxState {
 
 struct OUDSCheckboxLabeledStyle: ButtonStyle {
 
-    let isOn: Bool // TODO: #264 - Manage the three states
+    let isSelected: OUDSCheckbox.State
     let label: OUDSCheckboxLabel.Label
     let inverse: Bool
 
@@ -45,8 +45,9 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
+        // TODO: #264 - Inverse layout
         HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
-            OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn)
+            OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), isSelected: isSelected)
 
             OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed), label: label)
         }

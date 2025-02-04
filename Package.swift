@@ -71,6 +71,10 @@ let package = Package(
             dependencies: ["OUDSTokensComponent", "OUDS"],
             path: "OUDS/Core/Components/Sources",
             resources: [.process("Resources/")]),
+        .testTarget(
+            name: "OUDSComponents-Tests",
+            dependencies: ["OUDSComponents"],
+            path: "OUDS/Core/Components/Tests"),
         .target(
             name: "OUDSThemesInverse",
             dependencies: ["OUDSThemesOrange"],

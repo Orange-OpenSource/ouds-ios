@@ -32,38 +32,68 @@ public struct OUDSCheckbox: View {
 
     // MARK: - Properties
 
-    private var isOn: Binding<Bool> // TODO: #264 Add management of three states
+    private var isSelected: Binding<State>
     private let layout: Layout
+
+    // MARK: - State
+
+    public enum State {
+        /// The checkbox selector is filled, a tick is inside, the user selected it
+        case selected
+
+        /// The checkbox selector is emoty, not tick inside,
+        case unselected
+
+        /// The checkbox is like prefilled, preticked, the user does not select it yet but is not empty
+        case undeterminate //  (╯° °)╯︵ ┻━┻
+
+        public mutating func toggle () {
+            switch self {
+            case .selected:
+                self = .unselected
+            case .unselected:
+                self = .selected
+            case .undeterminate:
+                self = .selected
+            }
+        }
+    }
 
     // MARK: - Layout
 
+    /// The three avaialble layouts for this component
     private enum Layout {
-        case `default`(OUDSCheckboxLabel.Label)
-        case inverse(OUDSCheckboxLabel.Label)
+        /// Displays only the checkbox selectpr
         case selectorOnly
+
+        /// Checkbox selector in leading position, icon in trailing position, like LTR mode
+        case `default`(OUDSCheckboxLabel.Label)
+
+        /// Icon in leading position, checkbox seelctor in trailing position, like RTL mode
+        case inverse(OUDSCheckboxLabel.Label)
     }
 
     // MARK: - Initializers
 
     /// Creates a checkbox with no label.
     ///
-    /// - Parameter isOn: A binding to a property that determines wether the selector is ticked, unticked or preticked.
-    public init(isOn: Binding<Bool>) {
-        self.isOn = isOn
+    /// - Parameter isSelected: A binding to a property that determines wether the selector is ticked, unticked or preticked.
+    public init(isSelected: Binding<State>) {
+        self.isSelected = isSelected
         self.layout = .selectorOnly
     }
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
     /// - Parameters:
-    ///   - isOn: A binding to a property that determines wether the selector is ticked, unticker or preticked.
+    ///   - isSelected: A binding to a property that determines wether the selector is ticked, unticker or preticked.
     ///   - label: The main label of the switch.
     ///   - helperText: An additonal helper text.
     ///   - icon: An optional icon
     ///   - onError: It the option is on error
     ///   - divider: If true a divider is added at the bottom of the view.
-    public init(isOn: Binding<Bool>, label: String, helperText: String? = nil, icon: Image? = nil, onError: Bool = false, divider: Bool = false) {
-        self.isOn = isOn
+    public init(isSelected: Binding<State>, label: String, helperText: String? = nil, icon: Image? = nil, onError: Bool = false, divider: Bool = false) {
+        self.isSelected = isSelected
         self.layout = .default(.init(label: label, helperText: helperText, icon: icon, onError: onError, divider: divider))
     }
 
@@ -73,19 +103,19 @@ public struct OUDSCheckbox: View {
         switch layout {
         case .default(let label):
             Button("") {
-                isOn.wrappedValue.toggle()
+                isSelected.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(isOn: isOn.wrappedValue, label: label, inverse: false))
+            .buttonStyle(OUDSCheckboxLabeledStyle(isSelected: isSelected.wrappedValue, label: label, inverse: false))
         case .inverse(let label):
             Button("") {
-                isOn.wrappedValue.toggle()
+                isSelected.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(isOn: isOn.wrappedValue, label: label, inverse: true))
+            .buttonStyle(OUDSCheckboxLabeledStyle(isSelected: isSelected.wrappedValue, label: label, inverse: true))
         case .selectorOnly:
             Button("") {
-                isOn.wrappedValue.toggle()
+                isSelected.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxNestedStyle(isOn: isOn.wrappedValue))
+            .buttonStyle(OUDSCheckboxNestedStyle(isSelected: isSelected.wrappedValue))
         }
     }
 }
