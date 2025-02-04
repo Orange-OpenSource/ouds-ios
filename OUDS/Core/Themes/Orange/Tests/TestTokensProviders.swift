@@ -80,6 +80,7 @@ final class TestTokensProviders: XCTestCase {
         let sizes = OrangeThemeSizeSemanticTokensProvider()
         let spaces = OrangeThemeSpaceSemanticTokensProvider()
         let colors = OrangeThemeColorSemanticTokensProvider()
+        let opacities = OrangeThemeOpacitySemanticTokensProvider()
 
         let allTokensProviders: TokensProviders = [
             colors,
@@ -87,7 +88,7 @@ final class TestTokensProviders: XCTestCase {
             OrangeThemeElevationSemanticTokensProvider(),
             OrangeThemeFontSemanticTokensProvider(),
             OrangeThemeGridSemanticTokensProvider(),
-            OrangeThemeOpacitySemanticTokensProvider(),
+            opacities,
             sizes,
             spaces,
             OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
@@ -102,7 +103,7 @@ final class TestTokensProviders: XCTestCase {
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBadgeComponentTokensProvider(sizes: sizes),
-            OrangeThemeCheckRadioComponentTokensProvider(sizes: sizes),
+            OrangeThemeCheckRadioComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
 
             // NOTE: Add new component tokens providers here
         ]

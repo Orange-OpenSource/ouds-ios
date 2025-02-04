@@ -19,6 +19,7 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
+// swiftlint:disable identifier_name
 
 /// Declares all component tokens for radio button and checkboxes components like `OUDSRadioButton` and `OUDSCheckbox`.
 /// Use for tokens providers like `OrangeThemeCheckRadioComponentTokensProvider`.
@@ -28,14 +29,50 @@ public protocol CheckRadioComponentTokens {
 
     // MARK: - Sizes
 
-    var checkRadioSizeSelector: SizeSemanticToken { get }
-
-    // MARK: - Dimensions
-
+    var checkRadioSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
+    var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken { get }
     var checkRadioSizeMinHeightSelectorOnly: SizeSemanticToken { get }
     var checkRadioSizeMinWidthSelectorOnly: SizeSemanticToken { get }
-    var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken { get }
-    var checkRadioSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
+    var checkRadioSizeCheckInnerAsset: SizeSemanticToken { get }
+    var checkRadioSizeRadioInnerCircle: SizeSemanticToken { get }
+    var checkRadioSizeSelector: SizeSemanticToken { get }
+
+    // MARK: - Borders
+
+    var checkRadioBorderRadiusCheckbox: BorderRadiusSemanticToken { get }
+    var checkRadioBorderWidthSelected: BorderWidthSemanticToken { get }
+    var checkRadioBorderWidthSelectedFocus: BorderWidthSemanticToken { get }
+    var checkRadioBorderWidthSelectedHover: BorderWidthSemanticToken { get }
+    var checkRadioBorderWidthSelectedPressed: BorderWidthSemanticToken { get }
+    var checkRadioBorderWidthUnselected: BorderWidthSemanticToken { get }
+    var checkRadioBorderWidthUnselectedFocus: BorderWidthSemanticToken { get }
+    var checkRadioBorderWidthUnselectedHover: BorderWidthSemanticToken { get }
+    var checkRadioBorderWidthUnselectedPressed: BorderWidthSemanticToken { get }
+
+    // MARK: - Opacities
+
+    var checkRadioOpacitySelectorBgSelected: OpacitySemanticToken { get }
+    var checkRadioOpacitySelectorBgSelectedFocus: OpacitySemanticToken { get }
+    var checkRadioOpacitySelectorBgSelectedHover: OpacitySemanticToken { get }
+    var checkRadioOpacitySelectorBgSelectedPressed: OpacitySemanticToken { get }
+    var checkRadioOpacitySelectorBgUnselected: OpacitySemanticToken { get }
+    var checkRadioOpacitySelectorBgUnselectedFocus: OpacitySemanticToken { get }
+    var checkRadioOpacitySelectorBgUnselectedHover: OpacitySemanticToken { get }
+    var checkRadioOpacitySelectorBgUnselectedPressed: OpacitySemanticToken { get }
+
+    // MARK: - Colors
+
+    var checkRadioColorContentAssetDisabled: MultipleColorSemanticTokens { get }
+    var checkRadioColorContentAssetEnabled: MultipleColorSemanticTokens { get }
+    var checkRadioColorContentAssetErrorEnabled: MultipleColorSemanticTokens { get }
+    var checkRadioColorContentAssetErrorFocus: MultipleColorSemanticTokens { get }
+    var checkRadioColorContentAssetErrorHover: MultipleColorSemanticTokens { get }
+    var checkRadioColorContentAssetErrorPressed: MultipleColorSemanticTokens { get }
+    var checkRadioColorContentAssetFocus: MultipleColorSemanticTokens { get }
+    var checkRadioColorContentAssetHover: MultipleColorSemanticTokens { get }
+    var checkRadioColorContentAssetPressed: MultipleColorSemanticTokens { get }
+    var checkRadioColorContentAssetSelected: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs
+// swiftlint:enable identifier_name

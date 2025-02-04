@@ -73,11 +73,30 @@ open class OrangeThemeCheckRadioComponentTokensProvider: AllCheckRadioComponentT
     /// Provider of size semantic tokens to use for check / radio sizes
     public let sizes: AllSizeSemanticTokensProvider
 
-    /// Defines a provider of component tokens dedicated to `OUDSChip`
-    /// - Parameter sizes: Provider for size semantic tokens
-    public init(sizes: AllSizeSemanticTokensProvider) {
+    /// Provider of border semantic tokens to use for check / radio borders
+    public let borders: AllBorderSemanticTokensProvider
+
+    /// Provider of color semantic tokens to use for check / radio colors
+    public let colors: AllColorSemanticTokensProvider
+
+    /// Provider of opacity semantic tokens to use for check / radio opacities
+    public let opacities: AllOpacitySemanticTokensProvider
+
+    /// Defines a provider of component tokens dedicated to `OUDSCheckbox` and `OUDSRadioButton`
+    /// - Parameters:
+    ///    - sizes: Provider for size semantic tokens
+    ///    - borders: Provider for border semantic tokens
+    ///    - colors: Provider for color semantic tokens
+    ///    - opacities: Provider for opacitiy semantic tokens
+    public init(sizes: AllSizeSemanticTokensProvider,
+                borders: AllBorderSemanticTokensProvider,
+                colors: AllColorSemanticTokensProvider,
+                opacities: AllOpacitySemanticTokensProvider) {
         OL.debug("Init of OrangeThemeCheckRadioComponentTokensProvider")
         self.sizes = sizes
+        self.borders = borders
+        self.colors = colors
+        self.opacities = opacities
     }
 
     deinit { }
