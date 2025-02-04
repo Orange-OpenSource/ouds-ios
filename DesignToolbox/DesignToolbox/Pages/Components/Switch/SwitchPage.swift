@@ -85,8 +85,8 @@ private struct SwitchDemo: View {
             } else {
                 OUDSSwitch(
                     isOn: $isOn,
-                    label: "app_components_switch_label_text",
-                    helperText: helperText,
+                    label: model.labelContent,
+                    helperText: helperTextContent,
                     icon: icon,
                     onError: model.onError,
                     divider: model.divider,
@@ -100,8 +100,8 @@ private struct SwitchDemo: View {
 
     // MARK: Private helpers
 
-    private var helperText: String? {
-        model.helperText ? "app_components_switch_helperText_text" : nil
+    private var helperTextContent: String? {
+        model.helperText ? model.helperTextContent : nil
     }
     private var icon: Image? {
         model.icon ? Image(decorative: "ic_heart") : nil

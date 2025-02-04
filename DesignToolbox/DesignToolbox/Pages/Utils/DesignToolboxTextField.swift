@@ -22,10 +22,17 @@ struct DesignToolboxTextField: View {
 
     let text: Binding<String>
     let prompt: String
+    let title: String
+
+    init(text: Binding<String>, prompt: String, title: String = "app_component_common_userText_label") {
+        self.title = title
+        self.text = text
+        self.prompt = prompt
+    }
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("app_component_common_userText_label")
+            Text(LocalizedStringKey(title))
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 

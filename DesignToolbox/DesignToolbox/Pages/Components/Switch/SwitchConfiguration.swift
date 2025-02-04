@@ -42,6 +42,8 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     @Published var orientation: OUDSSwitch.Orientation {
         didSet { updateCode() }
     }
+    @Published var labelContent: String
+    @Published var helperTextContent: String
 
     // MARK: Initializer
 
@@ -53,6 +55,8 @@ final class SwitchConfigurationModel: ComponentConfiguration {
         onError = false
         divider = true
         orientation = .default
+        labelContent = String(localized: "app_components_switch_label_text")
+        helperTextContent = String(localized: "app_components_switch_helperText_text")
     }
 
     deinit { }
@@ -136,12 +140,6 @@ struct SwitchConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
             if !model.switchOnly {
-                DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.orientation) {
-                    ForEach(OUDSSwitch.Orientation.allCases, id: \.id) { orientation in
-                        Text(LocalizedStringKey(orientation.description)).tag(orientation)
-                    }
-                }
-
                 Toggle("app_components_common_helperText_label", isOn: $model.helperText)
                     .typeHeadingMedium(theme)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
@@ -157,6 +155,19 @@ struct SwitchConfiguration: View {
                 Toggle("app_components_common_onError_label", isOn: $model.onError)
                     .typeHeadingMedium(theme)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+
+                DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.orientation) {
+                    ForEach(OUDSSwitch.Orientation.allCases, id: \.id) { orientation in
+                        Text(LocalizedStringKey(orientation.description)).tag(orientation)
+                    }
+                }
+
+                DisclosureGroup("Edit texts") {
+                    DesignToolboxTextField(text: $model.labelContent, prompt: "app_component_common_userText_prompt", title: "app_components_switch_label_text")
+                    if model.helperText {
+                        DesignToolboxTextField(text: $model.helperTextContent, prompt: "app_component_common_userText_prompt", title: "app_components_common_helperText_label")
+                    }
+                }
             }
         }
     }
