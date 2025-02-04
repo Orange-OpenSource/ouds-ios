@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "originHash" : "4958997d028ec0467bfc12b899aa509b9b9301311c84850262a1935095ba73d5",
+=======
+  "originHash" : "2607da8610cd896469838f47a63558192b1b0c03641b836042ba28782dedbab2",
+>>>>>>> 48c1a0756 (chore: stack items to top for long texts dispay (#264))
   "pins" : [
     {
       "identity" : "accessibility-statement-lib-ios",

@@ -42,7 +42,7 @@ struct OUDSCheckboxLabel: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(spacing: theme.listItem.listItemSpaceColumnGap) {
+        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
             if isInversed {
                 icon()
                 texts()
@@ -76,11 +76,16 @@ struct OUDSCheckboxLabel: View {
     @ViewBuilder
     private func icon() -> some View {
         if let icon = items.icon {
-            icon
-                .resizable()
-                .renderingMode(.template)
-                .foregroundStyle(iconColor)
-                .frame(width: theme.listItem.listItemSizeIcon, height: theme.listItem.listItemSizeIcon)
+            HStack(alignment: .center, spacing: 0) {
+                icon
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundStyle(iconColor)
+                    .frame(width: theme.listItem.listItemSizeIcon,
+                           height: theme.listItem.listItemSizeIcon)
+            }
+            .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer,
+                   alignment: .center)
         }
     }
 

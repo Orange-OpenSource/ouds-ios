@@ -32,24 +32,27 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
-        HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
-            if isInversed {
-                OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
-                                  items: items,
-                                  isInversed: true)
+        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
+            HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
+                if isInversed {
+                    OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
+                                      items: items,
+                                      isInversed: true)
 
-                OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
-                                           selectorState: selectorState,
-                                           isError: items.isError)
-            } else {
-                OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
-                                           selectorState: selectorState,
-                                           isError: items.isError)
+                    OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
+                                               selectorState: selectorState,
+                                               isError: items.isError)
+                } else {
+                    OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
+                                               selectorState: selectorState,
+                                               isError: items.isError)
 
-                OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
-                                  items: items,
-                                  isInversed: false)
-            }
+                    OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
+                                      items: items,
+                                      isInversed: false)
+                }
+            }.frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer,
+                    alignment: .center)
         }
         .padding(.all, theme.listItem.listItemSpaceInset)
         .oudsDivider(show: items.divider)
