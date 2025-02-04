@@ -36,12 +36,14 @@ struct OUDSSwitchLabeledStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
-            HStack(alignment: .center, spacing: 0) {
-                OUDSSwitchButton(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn)
+            switch label.orientation {
+            case .default:
+                toggle(isPressed: configuration.isPressed)
+                label(isPressed: configuration.isPressed)
+            case .inverse:
+                label(isPressed: configuration.isPressed)
+                toggle(isPressed: configuration.isPressed)
             }
-            .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer, alignment: .center)
-
-            OUDSSwitchLabel(internalState: internalState(isPressed: configuration.isPressed), label: label)
         }
         .padding(.all, theme.listItem.listItemSpaceInset)
         .oudsDivider(show: label.divider)
@@ -49,6 +51,17 @@ struct OUDSSwitchLabeledStyle: ButtonStyle {
         .onHover { isHover in
             self.isHover = isHover
         }
+    }
+
+    private func toggle(isPressed: Bool) -> some View {
+        HStack(alignment: .center, spacing: 0) {
+            OUDSSwitchButton(internalState: internalState(isPressed: isPressed), isOn: isOn)
+        }
+        .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer, alignment: .center)
+    }
+
+    private func label(isPressed: Bool) -> some View {
+        OUDSSwitchLabel(internalState: internalState(isPressed: isPressed), label: label)
     }
 
     // MARK: Private Helpers

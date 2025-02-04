@@ -83,7 +83,14 @@ private struct SwitchDemo: View {
                     Spacer()
                 }
             } else {
-                OUDSSwitch(isOn: $isOn, label: "app_components_switch_label_text", helperText: helperText, icon: icon, onError: model.onError, divider: model.divider)
+                OUDSSwitch(
+                    isOn: $isOn,
+                    label: "app_components_switch_label_text",
+                    helperText: helperText,
+                    icon: icon,
+                    onError: model.onError,
+                    divider: model.divider,
+                    orientation: model.orientation)
                     .disabled(!model.enabled)
             }
         }

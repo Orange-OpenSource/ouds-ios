@@ -28,6 +28,7 @@ struct OUDSSwitchLabel: View {
         let icon: Image?
         let onError: Bool
         let divider: Bool
+        let orientation: OUDSSwitch.Orientation
     }
 
     let internalState: InternalSwitchState
@@ -37,33 +38,50 @@ struct OUDSSwitchLabel: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
-            VStack(alignment: .leading, spacing: 0) {
-                Text(LocalizedStringKey(label.label))
-                    .typeLabelDefaultLarge(theme)
-                    .multilineTextAlignment(.leading)
-                    .foregroundStyle(labelColor)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-
-                if let helperText = label.helperText {
-                    Text(LocalizedStringKey(helperText))
-                        .typeLabelDefaultMedium(theme)
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(helperTextColor)
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-
-            if let icon = label.icon {
-                HStack(alignment: .center, spacing: 0) {
-                    icon
-                        .resizable()
-                        .renderingMode(.template)
-                        .foregroundStyle(iconColor)
-                        .frame(width: theme.listItem.listItemSizeIcon, height: theme.listItem.listItemSizeIcon)
-                }
-                .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer, alignment: .center)
+            switch label.orientation {
+            case .default:
+                texts
+                icon
+            case .inverse:
+                icon
+                texts
             }
         }
+    }
+
+    // MARK: Private helpers
+
+    @ViewBuilder
+    private var icon: some View {
+        if let icon = label.icon {
+            HStack(alignment: .center, spacing: 0) {
+                icon
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundStyle(iconColor)
+                    .frame(width: theme.listItem.listItemSizeIcon, height: theme.listItem.listItemSizeIcon)
+            }
+            .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer, alignment: .center)
+        }
+    }
+
+    @ViewBuilder
+    private var texts: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(LocalizedStringKey(label.label))
+                .typeLabelDefaultLarge(theme)
+                .multilineTextAlignment(.leading)
+                .foregroundStyle(labelColor)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            if let helperText = label.helperText {
+                Text(LocalizedStringKey(helperText))
+                    .typeLabelDefaultMedium(theme)
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(helperTextColor)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private var labelColor: Color {

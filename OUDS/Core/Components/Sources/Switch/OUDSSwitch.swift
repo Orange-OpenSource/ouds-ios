@@ -49,6 +49,12 @@ public struct OUDSSwitch: View {
         case nested
     }
 
+    /// Used to define the orientation of the Layout
+    public enum Orientation {
+        case `default`
+        case inverse
+    }
+
     // MARK: Initializers
 
     /// Creates a switch with no label.
@@ -61,6 +67,7 @@ public struct OUDSSwitch: View {
         self.layout = .nested
     }
 
+    // swiftlint:disable line_length
     /// Creates a switch with label and optional helper text, icon, divider.
     ///
     /// - Parameters:
@@ -71,10 +78,12 @@ public struct OUDSSwitch: View {
     ///   - icon: An optional icon
     ///   - onError: It the option is on error
     ///   - divider: If true a divider is added at the bottom of the view.
-    public init(isOn: Binding<Bool>, label: String, helperText: String? = nil, icon: Image? = nil, onError: Bool = false, divider: Bool = false) {
+    ///   - orientation: Specify the orientation of the layout. If Default the switch at the leading position, if inverse it is on trailing.
+    public init(isOn: Binding<Bool>, label: String, helperText: String? = nil, icon: Image? = nil, onError: Bool = false, divider: Bool = false, orientation: Orientation = .default) {
         self.isOn = isOn
-        self.layout = .labeled(.init(label: label, helperText: helperText, icon: icon, onError: onError, divider: divider))
+        self.layout = .labeled(.init(label: label, helperText: helperText, icon: icon, onError: onError, divider: divider, orientation: orientation))
     }
+    // swiftlint:enable line_length
 
     // MARK: Body
 

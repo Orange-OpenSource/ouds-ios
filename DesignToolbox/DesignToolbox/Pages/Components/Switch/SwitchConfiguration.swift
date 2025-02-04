@@ -39,16 +39,20 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     @Published var divider: Bool {
         didSet { updateCode() }
     }
+    @Published var orientation: OUDSSwitch.Orientation {
+        didSet { updateCode() }
+    }
 
     // MARK: Initializer
 
     override init() {
-       enabled = true
-       switchOnly = false
-       helperText = true
-       icon = true
-       onError = false
-       divider = true
+        enabled = true
+        switchOnly = false
+        helperText = true
+        icon = true
+        onError = false
+        divider = true
+        orientation = .default
     }
 
     deinit { }
@@ -65,7 +69,7 @@ final class SwitchConfigurationModel: ComponentConfiguration {
         } else {
             code =
               """
-            OUDSSwitch(isOn: $isOn, label: \"Label\"\(helperTextPatern)\(iconPatern)\(onErrorPatern)\(dividerPatern))
+            OUDSSwitch(isOn: $isOn, label: \"Label\"\(helperTextPatern)\(iconPatern)\(onErrorPatern)\(dividerPatern)\(orienationPatern)
             \(disableCode))
             """
         }
@@ -103,6 +107,13 @@ final class SwitchConfigurationModel: ComponentConfiguration {
             return ""
         }
     }
+    private var orienationPatern: String {
+        if onError {
+            return ", orientation: \(orientation.description)"
+        } else {
+            return ""
+        }
+    }
 }
 
 // MARK: - Switch Configuration View
@@ -124,25 +135,47 @@ struct SwitchConfiguration: View {
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("app_components_common_helperText_label", isOn: $model.helperText)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.switchOnly)
+            if !model.switchOnly {
+                DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.orientation) {
+                    ForEach(OUDSSwitch.Orientation.allCases, id: \.id) { orientation in
+                        Text(LocalizedStringKey(orientation.description)).tag(orientation)
+                    }
+                }
 
-            Toggle("app_components_common_icon_label", isOn: $model.icon)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.switchOnly)
+                Toggle("app_components_common_helperText_label", isOn: $model.helperText)
+                    .typeHeadingMedium(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("app_components_common_divider_label", isOn: $model.divider)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.switchOnly)
+                Toggle("app_components_common_icon_label", isOn: $model.icon)
+                    .typeHeadingMedium(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("app_components_common_onError_label", isOn: $model.onError)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.switchOnly)
+                Toggle("app_components_common_divider_label", isOn: $model.divider)
+                    .typeHeadingMedium(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+
+                Toggle("app_components_common_onError_label", isOn: $model.onError)
+                    .typeHeadingMedium(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+            }
         }
     }
+}
+
+// MARK: Switch Layout Orientation extension
+
+extension OUDSSwitch.Orientation: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    nonisolated(unsafe) public static let allCases: [OUDSSwitch.Orientation] = [.default, .inverse]
+
+    // Note: Not localized because it is a technical name
+    public var description: String {
+        switch self {
+        case .default:
+            "Default"
+        case .inverse:
+            "Inverse"
+        }
+    }
+
+    var id: String { description }
 }

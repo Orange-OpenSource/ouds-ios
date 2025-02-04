@@ -116,6 +116,7 @@
 "app_components_common_icon_label" = "Icon";
 "app_components_common_divider_label" = "Divider";
 "app_components_common_onError_label" = "On error";
+"app_components_common_orientation_label" = "Orientation";
 
 // MARK: Components: Button
 
