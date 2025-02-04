@@ -21,11 +21,15 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
 
     // MARK: - Properties
 
-    @Published var enabled: Bool {
+    @Published var isEnabled: Bool {
         didSet { updateCode() }
     }
 
-    @Published var selectorOnly: Bool {
+    @Published var selectorState: OUDSCheckbox.SelectorState {
+        didSet { updateCode() }
+    }
+
+    @Published var layout: DesignToolboxCheckboxLayout {
         didSet { updateCode() }
     }
 
@@ -37,7 +41,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var onError: Bool {
+    @Published var isError: Bool {
         didSet { updateCode() }
     }
 
@@ -47,44 +51,67 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
 
     // TODO: #264 - Read only
 
+    // MARK: - Internal types
+
+    enum DesignToolboxCheckboxLayout: CaseIterable, CustomStringConvertible { // OUDSCheckbox.Layouy is not accessible
+        case selectorOnly
+        case `default`
+        case inverse
+
+        // No l10n, tehchnical names
+        var description: String {
+            switch self {
+            case .selectorOnly:
+                "Checkbox only"
+            case .default:
+                "Left action"
+            case .inverse:
+                "Right action"
+            }
+        }
+
+        var id: String { description }
+    }
+
     // MARK: - Initializer
 
     override init() {
-       enabled = true
-       selectorOnly = false
-       helperText = true
-       icon = true
-       onError = false
-       divider = true
+        isEnabled = true
+        selectorState = .selected
+        layout = .selectorOnly
+        helperText = true
+        icon = true
+        isError = false
+        divider = true
     }
 
     deinit { }
 
     // MARK: - Component Configuration
 
-    override func updateCode() { // TODO: #264 Update code samples
-        if selectorOnly {
+    override func updateCode() {
+        if layout == .selectorOnly {
             code =
               """
-            OUDSCheckbox(isOn: $isOn)
+            OUDSCheckbox(selectorState: $state\(isErrorPattern))
             \(disableCode))
             """
         } else {
             code =
               """
-            OUDSCheckbox(isOn: $isOn, label: \"Label\"\(helperTextPatern)\(iconPatern)\(onErrorPatern)\(dividerPatern))
+            OUDSCheckbox(selectorState: $state, label: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(dividerPatern))
             \(disableCode))
             """
         }
     }
 
     private var disableCode: String {
-        ".disable(\(enabled ? "false" : "true"))"
+        ".disable(\(isEnabled ? "false" : "true"))"
     }
 
     private var helperTextPatern: String {
         if helperText {
-            return ",helperText: \(String(localized: "app_components_checkbox_helperText_text"))"
+            return ", helperText: \"\(String(localized: "app_components_checkbox_helperText_text"))\""
         } else {
             return ""
         }
@@ -92,26 +119,26 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
 
     private var iconPatern: String {
         if icon {
-            return ", Image(decorative: \"ic_heart\")"
+            return ", icon: Image(decorative: \"ic_heart\")"
         } else {
             return ""
         }
     }
 
-    private var onErrorPatern: String {
-        if onError {
-            return ", onError: true"
+    private var isInversedPattern: String {
+        layout == .inverse ? ", isInversed: true" : ""
+    }
+
+    private var isErrorPattern: String {
+        if isError && isEnabled {
+            return ", isError: true"
         } else {
             return ""
         }
     }
 
     private var dividerPatern: String {
-        if onError {
-            return ", divider: true"
-        } else {
-            return ""
-        }
+        divider ? ", divider: true" : ""
     }
 }
 
@@ -126,33 +153,61 @@ struct CheckboxConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_common_enabled_label", isOn: $model.enabled)
+            Toggle("app_common_enabled_label", isOn: $model.isEnabled)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("app_components_checkbox_switchOnly_label", isOn: $model.selectorOnly)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.selectorState) {
+                ForEach(OUDSCheckbox.SelectorState.allCases, id: \.id) { state in
+                    Text(LocalizedStringKey(state.description)).tag(state)
+                }
+            }
 
-            Toggle("app_components_checkbox_helperText_label", isOn: $model.helperText)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.selectorOnly)
+            DesignToolboxChoicePicker(title: "app_components_checkbox_layout_label", selection: $model.layout) {
+                ForEach(CheckboxConfigurationModel.DesignToolboxCheckboxLayout.allCases, id: \.id) { layout in
+                    Text(LocalizedStringKey(layout.description)).tag(layout)
+                }
+            }
 
             Toggle("app_components_common_icon_label", isOn: $model.icon)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.selectorOnly)
+                .disabled(model.layout == .selectorOnly)
 
             Toggle("app_components_common_divider_label", isOn: $model.divider)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.selectorOnly)
+                .disabled(model.layout == .selectorOnly)
 
-            Toggle("app_components_common_onError_label", isOn: $model.onError)
+            Toggle("app_components_checkbox_helperText_label", isOn: $model.helperText)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.selectorOnly)
+                .disabled(model.layout == .selectorOnly)
+
+            Toggle("app_components_common_onError_label", isOn: $model.isError)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .disabled(!model.isEnabled)
         }
     }
+}
+
+// MARK: - Checkbox selector state extension
+
+extension OUDSCheckbox.SelectorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    nonisolated(unsafe) public static var allCases: [OUDSCheckbox.SelectorState] = [.selected, .unselected, .undeterminate]
+
+    // No l10n, tehchnical names
+    public var description: String {
+        switch self {
+        case .selected:
+            "Selected"
+        case .unselected:
+            "Unselected"
+        case .undeterminate:
+            "Undeterminate"
+        }
+    }
+
+    var id: String { description }
 }

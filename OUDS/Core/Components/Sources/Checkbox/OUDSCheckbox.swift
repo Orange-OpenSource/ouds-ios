@@ -32,7 +32,7 @@ public struct OUDSCheckbox: View {
 
     // MARK: - Properties
 
-    private var selectorState: Binding<SelectorState>
+    @Binding private var selectorState: SelectorState
     private let layout: Layout
 
     // MARK: - State
@@ -81,10 +81,10 @@ public struct OUDSCheckbox: View {
     ///
     /// - Parameters:
     ///    - selectorState: A binding to a property that determines wether the selector is ticked, unticked or preticked.
-    ///    - onError: True if the look and feel of the component must reflect an error state, default set to `false`
-    public init(selectorState: Binding<SelectorState>, onError: Bool = false) {
-        self.selectorState = selectorState
-        self.layout = .selectorOnly(onError)
+    ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
+    public init(selectorState: Binding<SelectorState>, isError: Bool = false) {
+        self._selectorState = selectorState
+        self.layout = .selectorOnly(isError)
     }
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
@@ -94,16 +94,22 @@ public struct OUDSCheckbox: View {
     ///   - label: The main label of the switch.
     ///   - helperText: An additonal helper text.
     ///   - icon: An optional icon
-    ///   - onError: True if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - divider: If true a divider is added at the bottom of the view.
+    ///   - isInversed: `True` of the checkbox selector must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - divider: If `true` a divider is added at the bottom of the view.
     public init(selectorState: Binding<SelectorState>,
                 label: String,
                 helperText: String? = nil,
                 icon: Image? = nil,
-                onError: Bool = false,
+                isInversed: Bool = false,
+                isError: Bool = false,
                 divider: Bool = false) {
-        self.selectorState = selectorState
-        self.layout = .default(.init(label: label, helperText: helperText, icon: icon, onError: onError, divider: divider))
+        self._selectorState = selectorState
+        if isInversed {
+            self.layout = .inverse(.init(label: label, helperText: helperText, icon: icon, isError: isError, divider: divider))
+        } else {
+            self.layout = .default(.init(label: label, helperText: helperText, icon: icon, isError: isError, divider: divider))
+        }
     }
 
     // MARK: Body
@@ -112,19 +118,19 @@ public struct OUDSCheckbox: View {
         switch layout {
         case .default(let label):
             Button("") {
-                selectorState.wrappedValue.toggle()
+                $selectorState.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: selectorState.wrappedValue, items: label, isInverse: false))
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue, items: label, isInversed: false))
         case .inverse(let label):
             Button("") {
-                selectorState.wrappedValue.toggle()
+                $selectorState.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: selectorState.wrappedValue, items: label, isInverse: true))
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue, items: label, isInversed: true))
         case .selectorOnly(let isError):
             Button("") {
-                selectorState.wrappedValue.toggle()
+                $selectorState.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: selectorState.wrappedValue, isError: isError))
+            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: $selectorState.wrappedValue, isError: isError))
         }
     }
 }

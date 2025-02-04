@@ -23,6 +23,7 @@ struct OUDSCheckboxLabel: View {
 
     let internalState: OUDSInternalCheckboxState
     let items: Items
+    let isInversed: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -34,7 +35,7 @@ struct OUDSCheckboxLabel: View {
         let label: String
         let helperText: String?
         let icon: Image?
-        let onError: Bool
+        let isError: Bool
         let divider: Bool
     }
 
@@ -42,29 +43,44 @@ struct OUDSCheckboxLabel: View {
 
     var body: some View {
         HStack(spacing: theme.listItem.listItemSpaceColumnGap) {
-            VStack(alignment: .leading, spacing: 0) {
-                Text(LocalizedStringKey(items.label))
-                    .typeLabelDefaultLarge(theme)
+            if isInversed {
+                icon()
+                texts()
+            } else {
+                texts()
+                icon()
+            }
+        }
+    }
+
+    // MARK: Items
+
+    private func texts() -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(LocalizedStringKey(items.label))
+                .typeLabelDefaultLarge(theme)
+                .multilineTextAlignment(.leading)
+                .foregroundStyle(labelColor)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            if let helperText = items.helperText {
+                Text(LocalizedStringKey(helperText))
+                    .typeLabelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .foregroundStyle(labelColor)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-
-                if let helperText = items.helperText {
-                    Text(LocalizedStringKey(helperText))
-                        .typeLabelDefaultMedium(theme)
-                        .multilineTextAlignment(.leading)
-                        .foregroundStyle(helperTextColor)
-                }
+                    .foregroundStyle(helperTextColor)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
 
-            if let icon = items.icon {
-                icon
-                    .resizable()
-                    .renderingMode(.template)
-                    .foregroundStyle(iconColor)
-                    .frame(width: theme.listItem.listItemSizeIcon, height: theme.listItem.listItemSizeIcon)
-            }
+    @ViewBuilder
+    private func icon() -> some View {
+        if let icon = items.icon {
+            icon
+                .resizable()
+                .renderingMode(.template)
+                .foregroundStyle(iconColor)
+                .frame(width: theme.listItem.listItemSizeIcon, height: theme.listItem.listItemSizeIcon)
         }
     }
 
@@ -73,9 +89,9 @@ struct OUDSCheckboxLabel: View {
     private var labelColor: Color {
         switch internalState {
         case .enabled, .pressed, .hover:
-            (items.onError ? theme.colors.colorContentStatusNegative : theme.colors.colorContentDefault)
+            (items.isError ? theme.colors.colorContentStatusNegative : theme.colors.colorContentDefault)
                 .color(for: colorScheme)
-        case .disabled, .readOnly:
+        case .disabled:
             theme.colors.colorContentDisabled.color(for: colorScheme)
         }
     }
@@ -84,7 +100,7 @@ struct OUDSCheckboxLabel: View {
         switch internalState {
         case .enabled, .pressed, .hover:
             theme.colors.colorContentDefault.color(for: colorScheme)
-        case .disabled, .readOnly:
+        case .disabled:
             theme.colors.colorContentDisabled.color(for: colorScheme)
         }
     }
@@ -93,7 +109,7 @@ struct OUDSCheckboxLabel: View {
         switch internalState {
         case .enabled, .pressed, .hover:
             theme.colors.colorContentMuted.color(for: colorScheme)
-        case .disabled, .readOnly:
+        case .disabled:
             theme.colors.colorContentDisabled.color(for: colorScheme)
         }
     }

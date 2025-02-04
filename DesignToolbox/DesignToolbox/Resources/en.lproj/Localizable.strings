@@ -157,3 +157,5 @@
 "app_components_checkbox_switchOnly_label" = "Checkbox only";
 "app_components_checkbox_helperText_text" = "Helper Text";
 "app_components_checkbox_helperText_label" = "Helper Text";
+"app_components_checkbox_selection_label" = "Selection";
+"app_components_checkbox_layout_label" = "Layout";
