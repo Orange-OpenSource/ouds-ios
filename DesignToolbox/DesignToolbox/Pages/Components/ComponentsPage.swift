@@ -21,6 +21,7 @@ struct ComponentsPage: View {
         ButtonElement(),
         LinkElement(),
         SwitchElement(),
+        CheckboxElement(),
     ]
 
     var body: some View {
