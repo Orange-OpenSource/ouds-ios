@@ -40,6 +40,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
         let sizes = MockThemeSizeSemanticTokensProvider()
         let borders = MockThemeBorderSemanticTokensProvider()
         let spaces = MockThemeSpaceSemanticTokensProvider()
+        let opacities = MockThemeOpacitySemanticTokensProvider()
         let providers: TokensProviders = [
             colors,
             borders,
@@ -61,7 +62,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
             MockThemeBulletListComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
             MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
             MockThemeBadgeComponentTokenProvider(sizes: sizes),
-            MockThemeCheckRadioComponentTokenProvider(sizes: sizes),
+            MockThemeCheckRadioComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
 
             // NOTE: Add here new component tokens provider
         ]
