@@ -117,3 +117,5 @@ The helper is available through `View`, and tokens through the provider of the t
 
 - ``OUDSButton``
 - ``OUDSLink``
+- ``OUDSSwitch``
+- ``OUDSCheckbox``
