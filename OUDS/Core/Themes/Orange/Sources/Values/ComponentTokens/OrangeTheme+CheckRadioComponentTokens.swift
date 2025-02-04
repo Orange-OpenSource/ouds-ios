@@ -16,8 +16,6 @@ import OUDSTokensComponent
 import OUDSTokensRaw
 import OUDSTokensSemantic
 
-// swiftlint:disable identifier_name
-
 extension OrangeThemeCheckRadioComponentTokensProvider: CheckRadioComponentTokens {
     @objc open var checkRadioSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1200 }
     @objc open var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
@@ -54,5 +52,3 @@ extension OrangeThemeCheckRadioComponentTokensProvider: CheckRadioComponentToken
     @objc open var checkRadioColorContentAssetSelected: MultipleColorSemanticTokens { colors.colorActionSelected }
     @objc open var checkRadioSizeSelector: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
 }
-
-// swiftlint:enable identifier_name
