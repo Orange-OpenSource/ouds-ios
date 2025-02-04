@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "il_component_checkbox.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -56,7 +56,23 @@ if switch is in form it is possible to set it in error state.
 
 ### Checkbox
 
-TODO: #264 - Add doc
+The ``OUDSCheckbox`` proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
+
+```swift
+     // A simple checkbox, nested, selected
+     OUDSCheckbox(state: $state)
+
+     // A leading checkbox with a label
+     OUDSCheckbox(state: $state, label: "Hello world")
+
+     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
+     OUDSCheckbox(state: $state,
+                  label: "We live in a fabled world",
+                  helperText: "Of dreaming boys and wide-eyed girls",
+                  icon: Image(decorative: "ic_heart"),
+                  isError: true,
+                  divider: true)
+```
 
 ## Customize components
 

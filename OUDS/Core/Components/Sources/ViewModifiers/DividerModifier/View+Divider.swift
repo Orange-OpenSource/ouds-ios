@@ -23,11 +23,8 @@ extension View {
     ///        SomeView()
     ///           .oudsDivider(show: true)
     /// ```
-    /// - Parameter show: if true the divider is displayed, else there is no divider.
-    ///
-    /// - Returns: The current `View` but with a divider below.
-    ///
-    /// - Since: 0.11.0
+    /// - Parameter show: if `true` the divider is displayed, else there is no divider.
+    /// - Returns some View: The current `View` but with a divider bellow.
     public func oudsDivider(show: Bool = true) -> some View {
         self.modifier(DividerModifier(show: show))
     }
