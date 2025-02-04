@@ -54,6 +54,10 @@ if switch is in form it is possible to set it in error state.
     OUDSSwtcih(isOn $isOn, label: "Allow notifications", icon: Image("ic_heart"), onError: true, divider: true)
 ```
 
+### Checkbox
+
+TODO: #264 - Add doc
+
 ## Customize components
 
 ### Apply a specific shadow effect (elevation tokens)
@@ -134,3 +138,5 @@ The helper is available through `View`, and tokens through the provider of the t
 
 - ``OUDSButton``
 - ``OUDSLink``
+- ``OUDSSwitch``
+- ``OUDSCheckbox``
