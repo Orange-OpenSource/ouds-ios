@@ -146,7 +146,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
 
 struct CheckboxConfiguration: View {
 
-    @StateObject var model: CheckboxConfigurationModel
+    @ObservedObject var model: CheckboxConfigurationModel
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
