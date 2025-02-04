@@ -19,7 +19,11 @@ import SwiftUI
 
 struct CheckboxPage: View {
 
-    private let configuration = CheckboxConfigurationModel()
+    @StateObject private var configuration: CheckboxConfigurationModel
+
+    init() {
+        _configuration = StateObject(wrappedValue: CheckboxConfigurationModel())
+    }
 
     var body: some View {
         ComponentConfigurationView(
@@ -65,7 +69,7 @@ struct CheckboxIllustration: View {
 
 private struct CheckboxDemo: View {
 
-    @StateObject var model: CheckboxConfigurationModel
+    @ObservedObject var model: CheckboxConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
