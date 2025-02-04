@@ -35,8 +35,11 @@ struct OUDSSwitchLabeledStyle: ButtonStyle {
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
-            OUDSSwitchButton(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn)
+        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
+            HStack(alignment: .center, spacing: 0) {
+                OUDSSwitchButton(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn)
+            }
+            .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer, alignment: .center)
 
             OUDSSwitchLabel(internalState: internalState(isPressed: configuration.isPressed), label: label)
         }

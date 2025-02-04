@@ -36,7 +36,7 @@ struct OUDSSwitchLabel: View {
     // MARK: Body
 
     var body: some View {
-        HStack(spacing: theme.listItem.listItemSpaceColumnGap) {
+        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
             VStack(alignment: .leading, spacing: 0) {
                 Text(LocalizedStringKey(label.label))
                     .typeLabelDefaultLarge(theme)
@@ -54,11 +54,14 @@ struct OUDSSwitchLabel: View {
             .frame(maxWidth: .infinity, alignment: .leading)
 
             if let icon = label.icon {
-                icon
-                    .resizable()
-                    .renderingMode(.template)
-                    .foregroundStyle(iconColor)
-                    .frame(width: theme.listItem.listItemSizeIcon, height: theme.listItem.listItemSizeIcon)
+                HStack(alignment: .center, spacing: 0) {
+                    icon
+                        .resizable()
+                        .renderingMode(.template)
+                        .foregroundStyle(iconColor)
+                        .frame(width: theme.listItem.listItemSizeIcon, height: theme.listItem.listItemSizeIcon)
+                }
+                .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer, alignment: .center)
             }
         }
     }
