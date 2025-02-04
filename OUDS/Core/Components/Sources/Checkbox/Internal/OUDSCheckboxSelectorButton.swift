@@ -21,15 +21,55 @@ struct OUDSCheckboxSelectorButton: View {
     // MARK: - Properties
 
     let internalState: InternalCheckboxState
-    let isOn: Bool // TODO: #264 Manage the three states
+    let isSelected: OUDSCheckbox.State
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
+    /*
+     HStack(alignment: .center) {
+         HStack(alignment: .center) {
+             cursor
+         }
+         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
+         .background(corsorBackgroundColor)
+         .clipShape(Capsule())
+         .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
+     }
+     .padding(.horizontal, spacePadding)
+     .frame(width: trackrWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
+     .background(trackColor)
+     .clipShape(Capsule())
+     */
     var body: some View {
-        // TODO: #264 Add selector
-        Text("[ ]")
+        if isSelected == .selected {
+            tickImage(name: "checkmark")
+        } else if isSelected == .undeterminate {
+            tickImage(name: "minus")
+        } else { // .unselected
+            Color.clear
+                .modifier(SelectorFrameModifier())
+        }
+    }
+
+    private func tickImage(name: String) -> some View {
+        Image(systemName: name)
+            .resizable()
+            .scaledToFit()
+            .modifier(SelectorFrameModifier())
+            .accessibilityHidden(true)
+    }
+}
+
+private struct SelectorFrameModifier: ViewModifier {
+
+    @Environment(\.theme) private var theme
+
+    func body(content: Content) -> some View {
+        content
+            .frame(width: theme.listItem.listItemSizeIcon,
+                   height: theme.listItem.listItemSizeIcon)
     }
 }
