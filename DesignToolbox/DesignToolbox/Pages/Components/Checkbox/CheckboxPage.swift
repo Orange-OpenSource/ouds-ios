@@ -83,8 +83,8 @@ private struct CheckboxDemo: View {
                 }
             } else {
                 OUDSCheckbox(state: $model.selectorState,
-                             label: "app_components_checkbox_label_text",
-                             helperText: helperText,
+                             label: model.labelContent,
+                             helperText: helperTextContent,
                              icon: icon,
                              isInversed: model.layout == CheckboxConfigurationModel.DesignToolboxCheckboxLayout.inverse,
                              isError: model.isError && model.isEnabled,
@@ -96,8 +96,8 @@ private struct CheckboxDemo: View {
         .designToolboxBackground(onColoredSurface: false)
     }
 
-    private var helperText: String? {
-        model.helperText ? "app_components_checkbox_helperText_text" : nil
+    private var helperTextContent: String? {
+        model.helperText ? model.helperTextContent : nil
     }
 
     private var icon: Image? {
