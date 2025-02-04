@@ -49,6 +49,10 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var labelContent: String
+
+    @Published var helperTextContent: String
+
     // MARK: - Internal types
 
     enum DesignToolboxCheckboxLayout: CaseIterable, CustomStringConvertible { // OUDSCheckbox.Layouy is not accessible
@@ -81,6 +85,8 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         icon = true
         isError = false
         divider = true
+        labelContent = String(localized: "app_components_checkbox_label_text")
+        helperTextContent = String(localized: "app_components_checkbox_helperText_text")
     }
 
     deinit { }
@@ -186,6 +192,17 @@ struct CheckboxConfiguration: View {
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(!model.isEnabled)
+
+            DisclosureGroup("Edit texts") {
+                DesignToolboxTextField(text: $model.labelContent,
+                                       prompt: "app_component_common_userText_prompt",
+                                       title: "app_components_switch_label_text")
+                if model.helperText {
+                    DesignToolboxTextField(text: $model.helperTextContent,
+                                           prompt: "app_component_common_userText_prompt",
+                                           title: "app_components_common_helperText_label")
+                }
+            }
         }
     }
 }
