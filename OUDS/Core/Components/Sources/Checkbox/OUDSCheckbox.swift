@@ -32,12 +32,12 @@ public struct OUDSCheckbox: View {
 
     // MARK: - Properties
 
-    private var isSelected: Binding<State>
+    private var selectorState: Binding<SelectorState>
     private let layout: Layout
 
     // MARK: - State
 
-    public enum State {
+    public enum SelectorState {
         /// The checkbox selector is filled, a tick is inside, the user selected it
         case selected
 
@@ -61,39 +61,48 @@ public struct OUDSCheckbox: View {
 
     // MARK: - Layout
 
-    /// The three avaialble layouts for this component
+    /// The three available layouts for this component
     private enum Layout {
-        /// Displays only the checkbox selectpr
-        case selectorOnly
+        /// Displays only the checkbox selector, wiht a flag saying if there is an error context
+        case selectorOnly(Bool)
 
-        /// Checkbox selector in leading position, icon in trailing position, like LTR mode
-        case `default`(OUDSCheckboxLabel.Label)
+        /// Checkbox selector in leading position, icon in trailing position, like LTR mode.
+        /// Details are defined in the ``OUDSCheckboxLabel.Items``.
+        case `default`(OUDSCheckboxLabel.Items)
 
-        /// Icon in leading position, checkbox seelctor in trailing position, like RTL mode
-        case inverse(OUDSCheckboxLabel.Label)
+        /// Icon in leading position, checkbox selector in trailing position, like RTL mode
+        /// Details are defined in the ``OUDSCheckboxLabel.Items``.
+        case inverse(OUDSCheckboxLabel.Items)
     }
 
     // MARK: - Initializers
 
     /// Creates a checkbox with no label.
     ///
-    /// - Parameter isSelected: A binding to a property that determines wether the selector is ticked, unticked or preticked.
-    public init(isSelected: Binding<State>) {
-        self.isSelected = isSelected
-        self.layout = .selectorOnly
+    /// - Parameters:
+    ///    - selectorState: A binding to a property that determines wether the selector is ticked, unticked or preticked.
+    ///    - onError: True if the look and feel of the component must reflect an error state, default set to `false`
+    public init(selectorState: Binding<SelectorState>, onError: Bool = false) {
+        self.selectorState = selectorState
+        self.layout = .selectorOnly(onError)
     }
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
     ///
     /// - Parameters:
-    ///   - isSelected: A binding to a property that determines wether the selector is ticked, unticker or preticked.
+    ///   - selectorState: A binding to a property that determines wether the selector is ticked, unticker or preticked.
     ///   - label: The main label of the switch.
     ///   - helperText: An additonal helper text.
     ///   - icon: An optional icon
-    ///   - onError: It the option is on error
+    ///   - onError: True if the look and feel of the component must reflect an error state, default set to `false`
     ///   - divider: If true a divider is added at the bottom of the view.
-    public init(isSelected: Binding<State>, label: String, helperText: String? = nil, icon: Image? = nil, onError: Bool = false, divider: Bool = false) {
-        self.isSelected = isSelected
+    public init(selectorState: Binding<SelectorState>,
+                label: String,
+                helperText: String? = nil,
+                icon: Image? = nil,
+                onError: Bool = false,
+                divider: Bool = false) {
+        self.selectorState = selectorState
         self.layout = .default(.init(label: label, helperText: helperText, icon: icon, onError: onError, divider: divider))
     }
 
@@ -103,19 +112,19 @@ public struct OUDSCheckbox: View {
         switch layout {
         case .default(let label):
             Button("") {
-                isSelected.wrappedValue.toggle()
+                selectorState.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(isSelected: isSelected.wrappedValue, label: label, inverse: false))
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: selectorState.wrappedValue, items: label, isInverse: false))
         case .inverse(let label):
             Button("") {
-                isSelected.wrappedValue.toggle()
+                selectorState.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(isSelected: isSelected.wrappedValue, label: label, inverse: true))
-        case .selectorOnly:
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: selectorState.wrappedValue, items: label, isInverse: true))
+        case .selectorOnly(let isError):
             Button("") {
-                isSelected.wrappedValue.toggle()
+                selectorState.wrappedValue.toggle()
             }
-            .buttonStyle(OUDSCheckboxNestedStyle(isSelected: isSelected.wrappedValue))
+            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: selectorState.wrappedValue, isError: isError))
         }
     }
 }

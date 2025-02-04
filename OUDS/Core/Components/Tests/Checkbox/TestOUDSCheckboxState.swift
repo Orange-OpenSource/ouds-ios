@@ -25,17 +25,17 @@ final class TestOUDSCheckboxState: XCTestCase {
     /// An undterminate  checkbox must be toggled to a selected checkbox.
     func testToggle() {
 
-        var selectedState = OUDSCheckbox.State.selected
+        var selectedState = OUDSCheckbox.SelectorState.selected
         selectedState.toggle()
-        XCTAssertTrue(selectedState == OUDSCheckbox.State.unselected)
+        XCTAssertTrue(selectedState == OUDSCheckbox.SelectorState.unselected)
 
-        var unselectedState = OUDSCheckbox.State.unselected
+        var unselectedState = OUDSCheckbox.SelectorState.unselected
         unselectedState.toggle()
-        XCTAssertTrue(unselectedState == OUDSCheckbox.State.selected)
+        XCTAssertTrue(unselectedState == OUDSCheckbox.SelectorState.selected)
 
-        var undeterminateState = OUDSCheckbox.State.undeterminate
+        var undeterminateState = OUDSCheckbox.SelectorState.undeterminate
         undeterminateState.toggle()
-        XCTAssertTrue(undeterminateState == OUDSCheckbox.State.selected)
+        XCTAssertTrue(undeterminateState == OUDSCheckbox.SelectorState.selected)
     }
 }
 

@@ -15,20 +15,22 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The trailing part of the checkbox component, i.e. all the views without the selector, i.e. texts and images
+/// The trailing part of the checkbox component, i.e. all the views without the selector, i.e. texts and images.
+/// Can be considered as a rich label for the associated checkbox.
 struct OUDSCheckboxLabel: View {
 
     // MARK: - Properties
 
-    let internalState: InternalCheckboxState
-    let label: Label
+    let internalState: OUDSInternalCheckboxState
+    let items: Items
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // MARK: - Item
+    // MARK: - Layout label
 
-    struct Label {
+    /// Any relevant data for the *default* and *inverse* layouts of the checkbox component
+    struct Items {
         let label: String
         let helperText: String?
         let icon: Image?
@@ -41,13 +43,13 @@ struct OUDSCheckboxLabel: View {
     var body: some View {
         HStack(spacing: theme.listItem.listItemSpaceColumnGap) {
             VStack(alignment: .leading, spacing: 0) {
-                Text(LocalizedStringKey(label.label))
+                Text(LocalizedStringKey(items.label))
                     .typeLabelDefaultLarge(theme)
                     .multilineTextAlignment(.leading)
                     .foregroundStyle(labelColor)
                     .frame(maxWidth: .infinity, alignment: .leading)
 
-                if let helperText = label.helperText {
+                if let helperText = items.helperText {
                     Text(LocalizedStringKey(helperText))
                         .typeLabelDefaultMedium(theme)
                         .multilineTextAlignment(.leading)
@@ -56,7 +58,7 @@ struct OUDSCheckboxLabel: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let icon = label.icon {
+            if let icon = items.icon {
                 icon
                     .resizable()
                     .renderingMode(.template)
@@ -71,7 +73,7 @@ struct OUDSCheckboxLabel: View {
     private var labelColor: Color {
         switch internalState {
         case .enabled, .pressed, .hover:
-            (label.onError ? theme.colors.colorContentStatusNegative : theme.colors.colorContentDefault)
+            (items.onError ? theme.colors.colorContentStatusNegative : theme.colors.colorContentDefault)
                 .color(for: colorScheme)
         case .disabled, .readOnly:
             theme.colors.colorContentDisabled.color(for: colorScheme)

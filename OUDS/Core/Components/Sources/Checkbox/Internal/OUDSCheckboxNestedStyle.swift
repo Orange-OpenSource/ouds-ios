@@ -15,19 +15,21 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Just here to catch the isPressed state on the button
+/// The *selector only*  layout for the ``OUDSCheckbox`` component.
 struct OUDSCheckboxNestedStyle: ButtonStyle {
 
     // MARK: - Properties
 
-    let isSelected: OUDSCheckbox.State
+    let selectorState: OUDSCheckbox.SelectorState
+    let isError: Bool
+
     @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
-        OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), isSelected: isSelected)
+        OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
             .onHover { isHover in
                 self.isHover = isHover
             }
@@ -35,7 +37,7 @@ struct OUDSCheckboxNestedStyle: ButtonStyle {
 
     // MARK: - Helpers
 
-    private func internalState(isPressed: Bool) -> InternalCheckboxState {
+    private func internalState(isPressed: Bool) -> OUDSInternalCheckboxState {
         if !isEnabled {
             return .disabled
         }

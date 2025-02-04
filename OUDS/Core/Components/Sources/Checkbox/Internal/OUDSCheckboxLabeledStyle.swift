@@ -15,27 +15,14 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Internal Checkbox State
-
-/// The internal state used by modifiers to handle all states of the button.
-enum InternalCheckboxState {
-    case enabled
-    case hover
-    case pressed
-    case disabled
-    case readOnly
-    // .loading not managed yet, for next version
-    // .focus not managed as not that much customizable
-    // .skeleton not managed as dedicated view in the end
-}
-
 // MARK: - Checkbox Labeled Style
 
+/// The *default* or *inverse* layout for the ``OUDSCheckbox`` component.
 struct OUDSCheckboxLabeledStyle: ButtonStyle {
 
-    let isSelected: OUDSCheckbox.State
-    let label: OUDSCheckboxLabel.Label
-    let inverse: Bool
+    let selectorState: OUDSCheckbox.SelectorState
+    let items: OUDSCheckboxLabel.Items
+    let isInverse: Bool
 
     @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled
@@ -47,12 +34,12 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         // TODO: #264 - Inverse layout
         HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
-            OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), isSelected: isSelected)
+            OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: items.onError)
 
-            OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed), label: label)
+            OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed), items: items)
         }
         .padding(.all, theme.listItem.listItemSpaceInset)
-        .oudsDivider(show: label.divider)
+        .oudsDivider(show: items.divider)
         .background(backgroundColor(state: internalState(isPressed: configuration.isPressed)))
         .onHover { isHover in
             self.isHover = isHover
@@ -61,7 +48,7 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
 
     // MARK: - Helpers
 
-    func backgroundColor(state: InternalCheckboxState) -> Color {
+    func backgroundColor(state: OUDSInternalCheckboxState) -> Color {
         switch state {
         case .enabled:
             theme.select.selectColorBgEnabled.color(for: colorScheme)
@@ -74,7 +61,7 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
         }
     }
 
-    private func internalState(isPressed: Bool) -> InternalCheckboxState {
+    private func internalState(isPressed: Bool) -> OUDSInternalCheckboxState {
         if !isEnabled {
             return .disabled
         }

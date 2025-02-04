@@ -1,0 +1,35 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+// 
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+// 
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+//
+
+/// The internal state used by modifiers to handle all states of the component.
+enum OUDSInternalCheckboxState {
+
+    /// User can interaact with the component
+    case enabled
+
+    /// The component is hovered, e.g. with an a11y hardware or a mouse
+    case hover
+
+    /// The component is being pressed
+    case pressed
+
+    /// The user cannot interacrt with the component
+    case disabled
+
+    /// The component is kind of disabled, but there a another functional meaning
+    case readOnly
+
+    // .loading not managed yet, for next version
+    // .focus not managed as not that much customizable
+    // .skeleton not managed as dedicated view in the end
+}
