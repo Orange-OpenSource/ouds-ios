@@ -129,3 +129,13 @@
 "app_components_link_arrowBack_label" = "Back";
 "app_components_link_arrowNext_label" = "Next";
 "app_components_link_size_label" = "Size";
+
+// MARK: Components - Checkbox
+
+// TODO: #264 - Update wording
+"app_components_checkbox_label" = "Checkbox";
+"app_components_checkbox_description_text" = "A checkbox is a component that allows the user to toggle between two or three states, typically \"on\", \"off\" or \"unknown\". It is often represented as a square whichc an be ticked or not and color to indicate the current state. Checkboxes are used to select things like features, options, or settings in an intuitive and visual manner.";
+"app_components_checkbox_label_text" = "Label";
+"app_components_checkbox_switchOnly_label" = "Checkbox only";
+"app_components_checkbox_helperText_text" = "Helper Text";
+"app_components_checkbox_helperText_label" = "Helper Text";

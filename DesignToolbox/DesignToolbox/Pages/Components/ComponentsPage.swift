@@ -20,6 +20,7 @@ struct ComponentsPage: View {
     let componentElements: [DesignToolboxElement] = [
         ButtonElement(),
         LinkElement(),
+        CheckboxElement(),
     ]
 
     var body: some View {
