@@ -22,6 +22,7 @@ struct OUDSCheckboxNestedStyle: ButtonStyle {
 
     let selectorState: OUDSCheckbox.SelectorState
     let isError: Bool
+    let isReadOnly: Bool
 
     @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled
@@ -38,6 +39,10 @@ struct OUDSCheckboxNestedStyle: ButtonStyle {
     // MARK: - Helpers
 
     private func internalState(isPressed: Bool) -> OUDSInternalCheckboxState {
+        if isReadOnly {
+            return .readOnly
+        }
+
         if !isEnabled {
             return .disabled
         }

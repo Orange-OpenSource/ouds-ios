@@ -77,8 +77,10 @@ private struct CheckboxDemo: View {
             if model.layout == .selectorOnly {
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSCheckbox(state: $model.selectorState)
-                        .disabled(!model.isEnabled)
+                    OUDSCheckbox(state: $model.selectorState,
+                                 isError: model.isError && model.status == CheckboxConfigurationModel.DesignToolboxCheckboxStatus.enabled,
+                                 isReadOnly: model.status == CheckboxConfigurationModel.DesignToolboxCheckboxStatus.readOnly)
+                    .disabled(isDisabled())
                     Spacer()
                 }
             } else {
@@ -87,9 +89,10 @@ private struct CheckboxDemo: View {
                              helperText: helperTextContent,
                              icon: icon,
                              isInversed: model.layout == CheckboxConfigurationModel.DesignToolboxCheckboxLayout.inverse,
-                             isError: model.isError && model.isEnabled,
+                             isError: model.isError && model.status == CheckboxConfigurationModel.DesignToolboxCheckboxStatus.enabled,
+                             isReadOnly: model.status == CheckboxConfigurationModel.DesignToolboxCheckboxStatus.readOnly,
                              divider: model.divider)
-                .disabled(!model.isEnabled)
+                .disabled(isDisabled())
             }
         }
         .padding(.all, theme.spaces.spaceFixedMedium)
@@ -102,5 +105,9 @@ private struct CheckboxDemo: View {
 
     private var icon: Image? {
         model.icon ? Image(decorative: "ic_heart") : nil
+    }
+
+    private func isDisabled() -> Bool {
+        model.status == CheckboxConfigurationModel.DesignToolboxCheckboxStatus.disabled
     }
 }

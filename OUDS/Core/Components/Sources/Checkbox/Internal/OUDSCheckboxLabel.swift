@@ -93,7 +93,7 @@ struct OUDSCheckboxLabel: View {
 
     private var labelColor: Color {
         switch internalState {
-        case .enabled, .pressed, .hover:
+        case .enabled, .pressed, .hover, .readOnly:
             (items.isError ? theme.colors.colorContentStatusNegative : theme.colors.colorContentDefault)
                 .color(for: colorScheme)
         case .disabled:
@@ -103,7 +103,7 @@ struct OUDSCheckboxLabel: View {
 
     private var iconColor: Color {
         switch internalState {
-        case .enabled, .pressed, .hover:
+        case .enabled, .pressed, .hover, .readOnly:
             theme.colors.colorContentDefault.color(for: colorScheme)
         case .disabled:
             theme.colors.colorContentDisabled.color(for: colorScheme)
@@ -112,7 +112,7 @@ struct OUDSCheckboxLabel: View {
 
     private var helperTextColor: Color {
         switch internalState {
-        case .enabled, .pressed, .hover:
+        case .enabled, .pressed, .hover, .readOnly:
             theme.colors.colorContentMuted.color(for: colorScheme)
         case .disabled:
             theme.colors.colorContentDisabled.color(for: colorScheme)

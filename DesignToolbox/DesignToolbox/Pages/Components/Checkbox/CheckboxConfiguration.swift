@@ -21,7 +21,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
 
     // MARK: - Properties
 
-    @Published var isEnabled: Bool {
+    @Published var status: DesignToolboxCheckboxStatus {
         didSet { updateCode() }
     }
 
@@ -55,7 +55,27 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
 
     // MARK: - Internal types
 
-    enum DesignToolboxCheckboxLayout: CaseIterable, CustomStringConvertible { // OUDSCheckbox.Layouy is not accessible
+    enum DesignToolboxCheckboxStatus: CaseIterable, CustomStringConvertible { // CheckboxInternalState is not accessible
+        case enabled
+        case disabled
+        case readOnly
+
+        // No l10n, tehchnical names
+        var description: String {
+            switch self {
+            case .enabled:
+                "Enabled"
+            case .disabled:
+                "Disabled"
+            case .readOnly:
+                "Read only"
+            }
+        }
+
+        var id: String { description }
+    }
+
+    enum DesignToolboxCheckboxLayout: CaseIterable, CustomStringConvertible { // OUDSCheckbox.Layout is not accessible
         case selectorOnly
         case `default`
         case inverse
@@ -78,7 +98,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        isEnabled = true
+        status = .enabled
         selectorState = .selected
         layout = .selectorOnly
         helperText = true
@@ -110,7 +130,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     }
 
     private var disableCode: String {
-        ".disable(\(isEnabled ? "false" : "true"))"
+        ".disable(\(status != .enabled ? "false" : "true"))"
     }
 
     private var helperTextPatern: String {
@@ -134,7 +154,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     }
 
     private var isErrorPattern: String {
-        if isError && isEnabled {
+        if isError && status == .enabled {
             return ", isError: true"
         } else {
             return ""
@@ -157,9 +177,11 @@ struct CheckboxConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_common_enabled_label", isOn: $model.isEnabled)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+            DesignToolboxChoicePicker(title: "app_common_enabled_label", selection: $model.status) {
+                ForEach(CheckboxConfigurationModel.DesignToolboxCheckboxStatus.allCases, id: \.id) { state in
+                    Text(LocalizedStringKey(state.description)).tag(state)
+                }
+            }
 
             DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.selectorState) {
                 ForEach(OUDSCheckbox.SelectorState.allCases, id: \.id) { state in
@@ -191,7 +213,7 @@ struct CheckboxConfiguration: View {
             Toggle("app_components_common_onError_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(!model.isEnabled)
+                .disabled(model.status != .enabled)
 
             DisclosureGroup("Edit texts") {
                 DesignToolboxTextField(text: $model.labelContent,

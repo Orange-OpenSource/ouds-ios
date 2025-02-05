@@ -23,6 +23,7 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
     let selectorState: OUDSCheckbox.SelectorState
     let items: OUDSCheckboxLabel.Items
     let isInversed: Bool
+    let isReadOnly: Bool
 
     @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled
@@ -72,12 +73,16 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
             theme.select.selectColorBgHover.color(for: colorScheme)
         case .pressed:
             theme.select.selectColorBgPressed.color(for: colorScheme)
-        case .disabled:
+        case .disabled, .readOnly:
             theme.select.selectColorBgDisabled.color(for: colorScheme)
         }
     }
 
     private func internalState(isPressed: Bool) -> OUDSInternalCheckboxState {
+        if isReadOnly {
+            return .readOnly
+        }
+
         if !isEnabled {
             return .disabled
         }
