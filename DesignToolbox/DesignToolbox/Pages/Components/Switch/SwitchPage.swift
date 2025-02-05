@@ -85,7 +85,7 @@ private struct SwitchDemo: View {
             } else {
                 OUDSSwitch(
                     isOn: $isOn,
-                    label: model.labelContent,
+                    labelText: model.labelTextContent,
                     helperText: helperTextContent,
                     icon: icon,
                     onError: model.onError,

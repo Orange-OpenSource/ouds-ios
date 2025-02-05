@@ -73,15 +73,15 @@ public struct OUDSSwitch: View {
     /// - Parameters:
     ///   - isOn: A binding to a property that determines whether the switch is on
     ///     or off.
-    ///   - label: The main label of the switch.
+    ///   - labelText: The main label text of the switch.
     ///   - helperText: An additonal helper text.
     ///   - icon: An optional icon
     ///   - onError: It the option is on error
     ///   - divider: If true a divider is added at the bottom of the view.
     ///   - orientation: Specify the orientation of the layout. If Default the switch at the leading position, if inverse it is on trailing.
-    public init(isOn: Binding<Bool>, label: String, helperText: String? = nil, icon: Image? = nil, onError: Bool = false, divider: Bool = false, orientation: Orientation = .default) {
+    public init(isOn: Binding<Bool>, labelText: String, helperText: String? = nil, icon: Image? = nil, onError: Bool = false, divider: Bool = false, orientation: Orientation = .default) {
         self.isOn = isOn
-        self.layout = .labeled(.init(label: label, helperText: helperText, icon: icon, onError: onError, divider: divider, orientation: orientation))
+        self.layout = .labeled(.init(labelText: labelText, helperText: helperText, icon: icon, onError: onError, divider: divider, orientation: orientation))
     }
     // swiftlint:enable line_length
 

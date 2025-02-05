@@ -42,7 +42,7 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     @Published var orientation: OUDSSwitch.Orientation {
         didSet { updateCode() }
     }
-    @Published var labelContent: String
+    @Published var labelTextContent: String
     @Published var helperTextContent: String
 
     // MARK: Initializer
@@ -55,7 +55,7 @@ final class SwitchConfigurationModel: ComponentConfiguration {
         onError = false
         divider = true
         orientation = .default
-        labelContent = String(localized: "app_components_switch_label_text")
+        labelTextContent = String(localized: "app_components_switch_labelText_text")
         helperTextContent = String(localized: "app_components_switch_helperText_text")
     }
 
@@ -85,7 +85,7 @@ final class SwitchConfigurationModel: ComponentConfiguration {
 
     private var helperTextPatern: String {
         if helperText {
-            return ",helperText: \(String(localized: "app_components_switch_helperText_text"))"
+            return ", helperText: \(String(localized: "app_components_switch_helperText_text"))"
         } else {
             return ""
         }
@@ -163,7 +163,7 @@ struct SwitchConfiguration: View {
                 }
 
                 DisclosureGroup("app_components_common_editContent_label") {
-                    DesignToolboxTextField(text: $model.labelContent, prompt: "app_components_common_userText_prompt", title: "app_components_switch_label_text")
+                    DesignToolboxTextField(text: $model.labelTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_switch_labelText_label")
                     if model.helperText {
                         DesignToolboxTextField(text: $model.helperTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_helperText_label")
                     }

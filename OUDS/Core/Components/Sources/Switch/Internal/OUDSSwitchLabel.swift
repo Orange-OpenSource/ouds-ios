@@ -23,7 +23,7 @@ struct OUDSSwitchLabel: View {
     @Environment(\.colorScheme) private var colorScheme
 
     struct Label {
-        let label: String
+        let labelText: String
         let helperText: String?
         let icon: Image?
         let onError: Bool
@@ -68,7 +68,7 @@ struct OUDSSwitchLabel: View {
     @ViewBuilder
     private var texts: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(LocalizedStringKey(label.label))
+            Text(LocalizedStringKey(label.labelText))
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(labelColor)
