@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Switch component ([#405](https://github.com/Orange-OpenSource/ouds-ios/issues/405))
 - [DesignToolbox] Add text field in component configuration to customize text ([#436](https://github.com/Orange-OpenSource/ouds-ios/issues/436))
 - [Library] Link component ([#400](https://github.com/Orange-OpenSource/ouds-ios/issues/400))
 

@@ -37,6 +37,23 @@ The link can be displayed in `small` or `medium` size.
     OUDSLink(text: "Back", arrow: .back, size: .medium) { /* the action to process */ }
 ```
 
+### Switch
+
+The ``OUDSSwitch`` proposes a layout as a nested element.
+It also propose a more complex layout with text, icon and divider. For this layout,
+if switch is in form it is possible to set it in error state. 
+
+```swift
+    // Switch as nested element (with no text)
+    OUDSSwitch(isOn $isOn)
+
+    // Text, icon and divider
+    OUDSSwtcih(isOn $isOn, label: "Allow notifications", icon: Image("ic_heart"), divider: true)
+
+    // Text, icon and divider with error in form
+    OUDSSwtcih(isOn $isOn, label: "Allow notifications", icon: Image("ic_heart"), onError: true, divider: true)
+```
+
 ## Customize components
 
 ### Apply a specific shadow effect (elevation tokens)
