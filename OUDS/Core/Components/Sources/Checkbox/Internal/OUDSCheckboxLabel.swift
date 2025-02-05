@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -60,7 +61,7 @@ struct OUDSCheckboxLabel: View {
             Text(LocalizedStringKey(items.label))
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
-                .foregroundStyle(labelColor)
+                .foregroundStyle(labelTextColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             if let helperText = items.helperText {
@@ -91,13 +92,26 @@ struct OUDSCheckboxLabel: View {
 
     // MARK: - Colors
 
-    private var labelColor: Color {
-        switch internalState {
-        case .enabled, .pressed, .hover, .readOnly:
-            (items.isError ? theme.colors.colorContentStatusNegative : theme.colors.colorContentDefault)
-                .color(for: colorScheme)
-        case .disabled:
-            theme.colors.colorContentDisabled.color(for: colorScheme)
+    private var labelTextColor: Color {
+        if items.isError {
+            switch internalState {
+            case .enabled:
+                return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
+            case .hover:
+                return theme.colors.colorActionNegativeHover.color(for: colorScheme)
+            case .pressed:
+                return theme.colors.colorActionNegativePressed.color(for: colorScheme)
+            case .readOnly, .disabled:
+                OL.fatal("An OUDSCheckbox with a disabled state and an error situation has been detected, which is not allowed."
+                             + " Only non-error situation are allowed to have a disabled state.")
+            }
+        } else {
+            switch internalState {
+            case .enabled, .hover, .pressed, .readOnly:
+                return theme.colors.colorContentDefault.color(for: colorScheme)
+            case .disabled:
+                return theme.colors.colorContentDisabled.color(for: colorScheme)
+            }
         }
     }
 

@@ -56,6 +56,34 @@ struct OUDSCheckboxSelectorButton: View {
             .scaledToFit()
             .modifier(SelectorFrameModifier())
             .accessibilityHidden(true)
+            .foregroundColor(appliedColor.color(for: colorScheme))
+    }
+
+    private var appliedColor: MultipleColorSemanticTokens {
+        if isError {
+            switch internalState {
+            case .enabled:
+                return theme.checkRadio.checkRadioColorContentAssetErrorEnabled
+            case .hover:
+                return theme.checkRadio.checkRadioColorContentAssetErrorHover
+            case .pressed:
+                return theme.checkRadio.checkRadioColorContentAssetErrorPressed
+            case .disabled, .readOnly:
+                OL.fatal("An OUDSCheckbox with a disabled state and an error situation has been detected, which is not allowed"
+                         + " Only non-error situation are allowed to have a disabled state.")
+            }
+        } else {
+            switch internalState {
+            case .enabled:
+                return theme.checkRadio.checkRadioColorContentAssetSelected
+            case .hover:
+                return theme.checkRadio.checkRadioColorContentAssetHover
+            case .pressed:
+                return theme.checkRadio.checkRadioColorContentAssetPressed
+            case .disabled, .readOnly:
+                return theme.checkRadio.checkRadioColorContentAssetDisabled
+            }
+        }
     }
 }
 

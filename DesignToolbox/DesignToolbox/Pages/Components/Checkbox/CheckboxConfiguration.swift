@@ -53,6 +53,10 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
 
     @Published var helperTextContent: String
 
+    private var isReadOnly: Bool {
+        status == .readOnly
+    }
+
     // MARK: - Internal types
 
     enum DesignToolboxCheckboxStatus: CaseIterable, CustomStringConvertible { // CheckboxInternalState is not accessible
@@ -123,7 +127,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         } else {
             code =
               """
-            OUDSCheckbox(state: $state, label: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(dividerPatern))
+            OUDSCheckbox(state: $state, label: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
             \(disableCode))
             """
         }
@@ -154,8 +158,16 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     }
 
     private var isErrorPattern: String {
-        if isError && status == .enabled {
+        if isError && status == .enabled && !isReadOnly {
             return ", isError: true"
+        } else {
+            return ""
+        }
+    }
+
+    private var isReadOnlyPattern: String {
+        if isReadOnly && !isError {
+            return ", isReadOnly: true"
         } else {
             return ""
         }

@@ -35,6 +35,14 @@ import SwiftUI
 /// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
 /// - **undeterminate**: mike a prefilled or preticked checkbox, the user did not do anything on it yet
 ///
+/// ## Particular cases
+///
+/// An ``OUDSCheckbox`` can be related to an error situation, for example troubles for a formular.
+/// A dedicated look and feel is implemented for that if the `isError` flag is risen.
+/// In addition, the ``OUDSCheckbox`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
+/// as disabled.
+/// However the design kit does not manage the case where the component is both in read only mode and in an error context, this is forbidden by design.
+///
 /// ## Code samples
 ///
 /// ```swift
@@ -132,6 +140,7 @@ public struct OUDSCheckbox: View {
     // MARK: - Initializers
 
     /// Creates a checkbox with no label.
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
     ///    - state: A binding to a property that determines wether the selector is ticked, unticked or preticked.
@@ -140,11 +149,15 @@ public struct OUDSCheckbox: View {
     public init(state: Binding<SelectorState>,
                 isError: Bool = false,
                 isReadOnly: Bool = false) {
+        if isError && isReadOnly {
+            OL.fatal("It is forbidden by design to have an OUDSCheckbox in an error context and in read only mode")
+        }
         self._state = state
         self.layout = .selectorOnly(isError, isReadOnly)
     }
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
     ///   - state: A binding to a property that determines wether the selector is ticked, unticker or preticked.
@@ -163,6 +176,9 @@ public struct OUDSCheckbox: View {
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 divider: Bool = false) {
+        if isError && isReadOnly {
+            OL.fatal("It is forbidden by design to have an OUDSCheckbox in an error context and in read only mode")
+        }
         self._state = state
         if isInversed {
             self.layout = .inverse(.init(label: label,
