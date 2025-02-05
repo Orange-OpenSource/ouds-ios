@@ -15,13 +15,15 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// A `ViewModifier` which will apply a specific divider under a `View` using color semantic token.
+
+/// - Since: 0.11.0
 public struct DividerModifier: ViewModifier {
 
     // MARK: - Stored properties
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    let show: Bool
+    private let show: Bool
 
     // MARK: - Initializer
 

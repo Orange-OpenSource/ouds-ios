@@ -16,17 +16,18 @@ import SwiftUI
 
 extension View {
 
-    /// Modifies the current `View` to apply a divider under.
+    /// Modifies the current `View` to apply a divider below.
     ///
     /// ```swift
     ///    var body: some View {
     ///        SomeView()
-    ///           .divider()
+    ///           .oudsDivider(show: true)
     /// ```
-    /// - Parameter:
-    ///   - show: if true the divider is displayed, else there is no divider.
+    /// - Parameter show: if true the divider is displayed, else there is no divider.
     ///
-    /// - Returns some View: The current `View` but with a divider under.
+    /// - Returns: The current `View` but with a divider below.
+    ///
+    /// - Since: 0.11.0
     public func oudsDivider(show: Bool = true) -> some View {
         self.modifier(DividerModifier(show: show))
     }

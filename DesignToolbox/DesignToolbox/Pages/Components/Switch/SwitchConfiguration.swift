@@ -16,7 +16,7 @@ import SwiftUI
 
 // MARK: - Switch Configuration Model
 
-/// The model shared between `SwitchPageConfiguration` view and `SwitchPageComponent` view.
+/// The model shared between `SwitchConfiguration` view and `SwitchIllustration` view.
 final class SwitchConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
