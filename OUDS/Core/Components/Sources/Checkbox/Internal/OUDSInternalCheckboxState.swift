@@ -23,10 +23,12 @@ enum OUDSInternalCheckboxState {
     /// The component is being pressed
     case pressed
 
-    /// The user cannot interart with the component. Also "read only" cases.
+    /// The user cannot interart with the component.
     case disabled
 
-    // .loading not managed yet, for next version
+    /// The component is not disabled but user cannoit interact with it still. Almost enabled.
+    case readOnly
+
     // .focus not managed as not that much customizable
     // .skeleton not managed as dedicated view in the end
 }

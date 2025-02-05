@@ -45,9 +45,13 @@ import SwiftUI
 ///     // The nested layout will be used here.
 ///     OUDSCheckbox(state: $state)
 ///
-///     // A leading checkbox with a label
+///     // A leading checkbox with a label.
 ///     // The default layout will be used here.
 ///     OUDSCheckbox(state: $state, label: "Hello world")
+///
+///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
+///     // The default layout will be used here.
+///     OUDSCheckbox(state: $state, label: "Hello world", isReadOnly: true)
 ///
 ///     // A leading checkbox with a label, and an helper text.
 ///     // The default layout will be used here.
@@ -111,16 +115,18 @@ public struct OUDSCheckbox: View {
 
     /// The three available layouts for this component
     private enum Layout {
-        /// Displays only the checkbox selector, wiht a flag saying if there is an error context
-        case selectorOnly(Bool)
+        /// Displays only the checkbox selector, with a first flag saying if there is an error context and a second is in read only mode
+        case selectorOnly(Bool, Bool)
 
         /// Checkbox selector in leading position, icon in trailing position, like LTR mode.
         /// Details are defined in the ``OUDSCheckboxLabel.Items``.
-        case `default`(OUDSCheckboxLabel.Items)
+        /// Contains a flag saying if read only mode or not.
+        case `default`(OUDSCheckboxLabel.Items, Bool)
 
         /// Icon in leading position, checkbox selector in trailing position, like RTL mode
         /// Details are defined in the ``OUDSCheckboxLabel.Items``.
-        case inverse(OUDSCheckboxLabel.Items)
+        /// Contains a flag saying if read only mode or not.
+        case inverse(OUDSCheckboxLabel.Items, Bool)
     }
 
     // MARK: - Initializers
@@ -130,9 +136,12 @@ public struct OUDSCheckbox: View {
     /// - Parameters:
     ///    - state: A binding to a property that determines wether the selector is ticked, unticked or preticked.
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
-    public init(state: Binding<SelectorState>, isError: Bool = false) {
+    ///    - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
+    public init(state: Binding<SelectorState>,
+                isError: Bool = false,
+                isReadOnly: Bool = false) {
         self._state = state
-        self.layout = .selectorOnly(isError)
+        self.layout = .selectorOnly(isError, isReadOnly)
     }
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
@@ -144,6 +153,7 @@ public struct OUDSCheckbox: View {
     ///   - icon: An optional icon
     ///   - isInversed: `True` of the checkbox selector must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - divider: If `true` a divider is added at the bottom of the view.
     public init(state: Binding<SelectorState>,
                 label: String,
@@ -151,12 +161,23 @@ public struct OUDSCheckbox: View {
                 icon: Image? = nil,
                 isInversed: Bool = false,
                 isError: Bool = false,
+                isReadOnly: Bool = false,
                 divider: Bool = false) {
         self._state = state
         if isInversed {
-            self.layout = .inverse(.init(label: label, helperText: helperText, icon: icon, isError: isError, divider: divider))
+            self.layout = .inverse(.init(label: label,
+                                         helperText: helperText,
+                                         icon: icon,
+                                         isError: isError,
+                                         divider: divider),
+                                   isReadOnly)
         } else {
-            self.layout = .default(.init(label: label, helperText: helperText, icon: icon, isError: isError, divider: divider))
+            self.layout = .default(.init(label: label,
+                                         helperText: helperText,
+                                         icon: icon,
+                                         isError: isError,
+                                         divider: divider),
+                                   isReadOnly)
         }
     }
 
@@ -164,21 +185,27 @@ public struct OUDSCheckbox: View {
 
     public var body: some View {
         switch layout {
-        case .default(let label):
+        case let .default(label, isReadOnly):
             Button("") {
-                $state.wrappedValue.toggle()
+                if !isReadOnly {
+                    $state.wrappedValue.toggle()
+                }
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $state.wrappedValue, items: label, isInversed: false))
-        case .inverse(let label):
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $state.wrappedValue, items: label, isInversed: false, isReadOnly: isReadOnly))
+        case let .inverse(label, isReadOnly):
             Button("") {
-                $state.wrappedValue.toggle()
+                if !isReadOnly {
+                    $state.wrappedValue.toggle()
+                }
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $state.wrappedValue, items: label, isInversed: true))
-        case .selectorOnly(let isError):
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $state.wrappedValue, items: label, isInversed: true, isReadOnly: isReadOnly))
+        case let .selectorOnly(isError, isReadOnly):
             Button("") {
-                $state.wrappedValue.toggle()
+                if !isReadOnly {
+                    $state.wrappedValue.toggle()
+                }
             }
-            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: $state.wrappedValue, isError: isError))
+            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: $state.wrappedValue, isError: isError, isReadOnly: isReadOnly))
         }
     }
 }
