@@ -9,12 +9,19 @@ and reproducing the content of the NOTICE and DOCUMENTATION files.
 Any use or displaying shall constitute an infringement under intellectual property laws of France and international conventions.
 
 # Docs
+
 ./docs_release/docs_assets/apple-touch-icon.png
 ./docs_release/docs_assets/favicon-16x16.png
 ./docs_release/docs_assets/favicon-32x32.png
 ./docs_release/docs_assets/favicon.ico
 
-# DesignToolbox
+# OUDS / OUDSComponents
+
+./OUDS/Core/Components/Sources/Resources/Media.xcassets/Link/ic_form_chevron_left.imageset/ic_form_chevron_left.svg
+./OUDS/Core/Components/Sources/Resources/Media.xcassets/Checkbox/ic_form_tick.imageset/ic_form_tick.svg
+./OUDS/Core/Components/Sources/Resources/Media.xcassets/Checkbox/ic_form_dash.imageset/ic_form_dash.svg
+
+# Design Toolbox
 
 ./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/favicon.ico
 ./DesignToolbox/DesignToolbox/Resources/accessibilityStatement/orange-logo.svg
@@ -53,8 +60,5 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_vector.imageset/ic_vector.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
-
-# OUDS/OUDSComponents
-./OUDS/Core/Components/Sources/Resources/Media.xcassets/ic_form_chevron_left.imageset/ic_form_chevron_left.svg
 
 End of the parts list under Orange SA Copyright
