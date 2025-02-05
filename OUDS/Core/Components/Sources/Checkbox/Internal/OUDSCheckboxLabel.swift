@@ -42,7 +42,7 @@ struct OUDSCheckboxLabel: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
+        HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
             if isInversed {
                 icon()
                 texts()
