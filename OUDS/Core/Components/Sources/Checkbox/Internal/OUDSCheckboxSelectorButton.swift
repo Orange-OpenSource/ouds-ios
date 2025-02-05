@@ -41,9 +41,9 @@ struct OUDSCheckboxSelectorButton: View {
     @ViewBuilder
     private func selector() -> some View {
         if selectorState == .selected {
-            tickImage(name: "checkmark")
+            tickImage(name: "ic_form_tick")
         } else if selectorState == .undeterminate {
-            tickImage(name: "minus")
+            tickImage(name: "ic_form_dash")
         } else { // .unselected
             Color.clear
                 .modifier(SelectorFrameModifier())
@@ -51,7 +51,7 @@ struct OUDSCheckboxSelectorButton: View {
     }
 
     private func tickImage(name: String) -> some View {
-        Image(systemName: name)
+        Image(decorative: name, bundle: Bundle.OUDSComponents)
             .resizable()
             .scaledToFit()
             .modifier(SelectorFrameModifier())
