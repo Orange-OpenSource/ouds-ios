@@ -127,7 +127,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         } else {
             code =
               """
-            OUDSCheckbox(state: $state, label: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+            OUDSCheckbox(state: $state, labelText: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
             \(disableCode))
             """
         }

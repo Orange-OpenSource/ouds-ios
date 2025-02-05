@@ -85,7 +85,7 @@ private struct CheckboxDemo: View {
                 }
             } else {
                 OUDSCheckbox(state: $model.selectorState,
-                             label: model.labelContent,
+                             labelText: model.labelContent,
                              helperText: helperTextContent,
                              icon: icon,
                              isInversed: model.layout == CheckboxConfigurationModel.DesignToolboxCheckboxLayout.inverse,
