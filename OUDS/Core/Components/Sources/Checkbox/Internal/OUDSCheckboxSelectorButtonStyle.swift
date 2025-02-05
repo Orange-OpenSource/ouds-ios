@@ -35,7 +35,7 @@ struct OUDSCheckboxSelectorButtonStyle: ViewModifier {
         content
             .modifier(CheckboxSelectorButtonBorderModifier(state: state, selectorState: selectorState, isError: isError))
             .modifier(CheckboxSelectorButtonForegroundModifier(state: state, selectorState: selectorState, isError: isError))
-            .modifier(CheckboxSelectorButtonBackgroundModifier(state: state, selectorState: selectorState))
+            .modifier(CheckboxSelectorButtonBackgroundModifier(state: state, selectorState: selectorState, isError: isError))
     }
 }
 
@@ -112,6 +112,7 @@ private struct CheckboxSelectorButtonBackgroundModifier: ViewModifier {
 
     let state: OUDSInternalCheckboxState
     let selectorState: OUDSCheckbox.SelectorState
+    let isError: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -127,12 +128,95 @@ private struct CheckboxSelectorButtonBackgroundModifier: ViewModifier {
 
     private var appliedColor: Color {
         switch state {
+        case .enabled:
+            return enabledColor
         case .hover:
-            return theme.listItem.listItemColorBgHover.color(for: colorScheme)
+            return hoverColor
         case .pressed:
-            return theme.listItem.listItemColorBgPressed.color(for: colorScheme)
-        default:
-            return Color.clear
+            return pressedColor
+        case .disabled:
+            return disabledColor
+        }
+    }
+
+    private var enabledColor: Color {
+        if isError {
+            switch selectorState {
+            case .selected, .undeterminate:
+                return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelected)
+            case .unselected:
+                return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselected)
+            }
+        } else {
+            switch selectorState {
+            case .selected, .undeterminate:
+                return theme.colors.colorActionSelected.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelected)
+            case .unselected:
+                return theme.colors.colorActionEnabled.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselected)
+            }
+        }
+    }
+
+    private var hoverColor: Color {
+        if isError {
+            switch selectorState {
+            case .selected, .undeterminate:
+                return theme.colors.colorActionNegativeHover.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelectedHover)
+            case .unselected:
+                return theme.colors.colorActionNegativeHover.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselectedHover)
+            }
+        } else {
+            switch selectorState {
+            case .selected, .undeterminate:
+                return theme.colors.colorActionHover.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelectedHover)
+            case .unselected:
+                return theme.colors.colorActionHover.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselectedHover)
+            }
+        }
+    }
+
+    private var pressedColor: Color {
+        if isError {
+            switch selectorState {
+            case .selected, .undeterminate:
+                return theme.colors.colorActionNegativePressed.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelectedPressed)
+            case .unselected:
+                return theme.colors.colorActionNegativePressed.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselectedPressed)
+            }
+        } else {
+            switch selectorState {
+            case .selected, .undeterminate:
+                return theme.colors.colorActionPressed.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelectedPressed)
+            case .unselected:
+                return theme.colors.colorActionPressed.color(for: colorScheme)
+                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselectedPressed)
+            }
+        }
+    }
+
+    private var disabledColor: Color {
+        guard !isError else {
+            OL.fatal("An OUDSCheckbox with a disabled state and an error situation has been detected, which is not allowed."
+                     + " Only non-error situation are allowed to have a disabled state.")
+        }
+        switch selectorState {
+        case .selected, .undeterminate:
+            return theme.colors.colorActionDisabled.color(for: colorScheme)
+                .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelected)
+        case .unselected:
+            return theme.colors.colorActionDisabled.color(for: colorScheme)
+                .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselected)
         }
     }
 }
@@ -223,20 +307,56 @@ private struct CheckboxSelectorButtonBorderModifier: ViewModifier {
 
     private var appliedBorderWidth: CGFloat {
         switch state {
+        case .enabled:
+            return enabledWidth
         case .hover:
-            return theme.checkRadio.checkRadioSelectorBorderWidthHover
+            return hoverWidth
         case .pressed:
-            return theme.checkRadio.checkRadioSelectorBorderWidthPressed
+            return pressedWidth
         case .disabled:
-            return theme.checkRadio.checkRadioSelectorBorderWidthDisabled
-        default:
-            return theme.checkRadio.checkRadioSelectorBorderWidthEnabled
+            return disabledWidth
+        }
+    }
+
+    private var enabledWidth: CGFloat {
+        switch selectorState {
+        case .selected, .undeterminate:
+            return theme.checkRadio.checkRadioBorderWidthSelected
+        case .unselected:
+            return theme.checkRadio.checkRadioBorderWidthUnselected
+        }
+    }
+
+    private var hoverWidth: CGFloat {
+        switch selectorState {
+        case .selected, .undeterminate:
+            return theme.checkRadio.checkRadioBorderWidthSelectedHover
+        case .unselected:
+            return theme.checkRadio.checkRadioBorderWidthUnselectedHover
+        }
+    }
+
+    private var pressedWidth: CGFloat {
+        switch selectorState {
+        case .selected, .undeterminate:
+            return theme.checkRadio.checkRadioBorderWidthSelectedPressed
+        case .unselected:
+            return theme.checkRadio.checkRadioBorderWidthUnselectedPressed
+        }
+    }
+
+    private var disabledWidth: CGFloat {
+        switch selectorState {
+        case .selected, .undeterminate:
+            return theme.checkRadio.checkRadioBorderWidthSelected
+        case .unselected:
+            return theme.checkRadio.checkRadioBorderWidthUnselected
         }
     }
 
     // MARK: - Border radius
 
     private var appliedBorderRadius: CGFloat {
-        theme.checkRadio.checkRadioSelectorBorderRadius
+        theme.checkRadio.checkRadioBorderRadiusCheckbox
     }
 }
