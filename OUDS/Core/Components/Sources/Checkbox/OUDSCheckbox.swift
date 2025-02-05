@@ -55,27 +55,27 @@ import SwiftUI
 ///
 ///     // A leading checkbox with a label.
 ///     // The default layout will be used here.
-///     OUDSCheckbox(state: $state, label: "Hello world")
+///     OUDSCheckbox(state: $state, labelText: "Hello world")
 ///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSCheckbox(state: $state, label: "Hello world", isReadOnly: true)
+///     OUDSCheckbox(state: $state, labelText: "Hello world", isReadOnly: true)
 ///
 ///     // A leading checkbox with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSCheckbox(state: $state, label: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     OUDSCheckbox(state: $state, labelText: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, an helper text and an icon.
 ///     // The inverse layout will be used here.
 ///     OUDSCheckbox(state: $state,
-///                  label: "We live in a fabled world",
+///                  labelText: "We live in a fabled world",
 ///                  helperText: "Of dreaming boys and wide-eyed girls",
 ///                  icon: Image(decorative: "ic_heart"))
 ///
 ///     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
 ///     OUDSCheckbox(state: $state,
-///                  label: "Rescue from this world!",
+///                  labelText: "Rescue from this world!",
 ///                  helperText: "Put your hand in mine",
 ///                  icon: Image(decorative: "ic_heart"),
 ///                  isError: true,
@@ -161,7 +161,7 @@ public struct OUDSCheckbox: View {
     ///
     /// - Parameters:
     ///   - state: A binding to a property that determines wether the selector is ticked, unticker or preticked.
-    ///   - label: The main label of the switch.
+    ///   - labelText: The main label text of the switch.
     ///   - helperText: An additonal helper text.
     ///   - icon: An optional icon
     ///   - isInversed: `True` of the checkbox selector must be in trailing position,` false` otherwise. Default to `false`
@@ -169,7 +169,7 @@ public struct OUDSCheckbox: View {
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - divider: If `true` a divider is added at the bottom of the view.
     public init(state: Binding<SelectorState>,
-                label: String,
+                labelText: String,
                 helperText: String? = nil,
                 icon: Image? = nil,
                 isInversed: Bool = false,
@@ -181,14 +181,14 @@ public struct OUDSCheckbox: View {
         }
         self._state = state
         if isInversed {
-            self.layout = .inverse(.init(label: label,
+            self.layout = .inverse(.init(label: labelText,
                                          helperText: helperText,
                                          icon: icon,
                                          isError: isError,
                                          divider: divider),
                                    isReadOnly)
         } else {
-            self.layout = .default(.init(label: label,
+            self.layout = .default(.init(label: labelText,
                                          helperText: helperText,
                                          icon: icon,
                                          isError: isError,

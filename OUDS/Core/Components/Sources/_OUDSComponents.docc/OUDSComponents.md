@@ -50,7 +50,7 @@ The ``OUDSCheckbox`` proposes layout to add in your views some checkboxes compon
 
      // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
      OUDSCheckbox(state: $state,
-                  label: "We live in a fabled world",
+                  labelText: "We live in a fabled world",
                   helperText: "Of dreaming boys and wide-eyed girls",
                   icon: Image(decorative: "ic_heart"),
                   isError: true,
