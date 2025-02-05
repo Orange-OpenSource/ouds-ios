@@ -162,10 +162,10 @@ struct SwitchConfiguration: View {
                     }
                 }
 
-                DisclosureGroup("Edit texts") {
-                    DesignToolboxTextField(text: $model.labelContent, prompt: "app_component_common_userText_prompt", title: "app_components_switch_label_text")
+                DisclosureGroup("app_components_common_editContent_label") {
+                    DesignToolboxTextField(text: $model.labelContent, prompt: "app_components_common_userText_prompt", title: "app_components_switch_label_text")
                     if model.helperText {
-                        DesignToolboxTextField(text: $model.helperTextContent, prompt: "app_component_common_userText_prompt", title: "app_components_common_helperText_label")
+                        DesignToolboxTextField(text: $model.helperTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_helperText_label")
                     }
                 }
             }

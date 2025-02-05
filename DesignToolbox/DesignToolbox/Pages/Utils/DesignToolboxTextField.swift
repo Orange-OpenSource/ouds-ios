@@ -24,7 +24,7 @@ struct DesignToolboxTextField: View {
     let prompt: String
     let title: String
 
-    init(text: Binding<String>, prompt: String, title: String = "app_component_common_userText_label") {
+    init(text: Binding<String>, prompt: String, title: String = "app_components_common_userText_label") {
         self.title = title
         self.text = text
         self.prompt = prompt

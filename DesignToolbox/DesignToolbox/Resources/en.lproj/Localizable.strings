@@ -103,10 +103,8 @@
 // MARK: - Component Screen
 
 "app_components_common_viewCodeExample_label" = "View component code example";
-"app_component_emptyContent_text" = "No content";
-"app_component_emptyContent_description_text" = "This content is under construction and will be available very soon";
-"app_component_common_userText_prompt" = "Enter a text";
-"app_component_common_userText_label" = "Text";
+"app_components_common_userText_prompt" = "Enter a text";
+"app_components_common_userText_label" = "Text";
 "app_components_common_layout_label" = "Layout";
 "app_components_common_textOnlyLayout_label" = "Text only";
 "app_components_common_iconAndTextLayout_label" = "Icon + text";
@@ -117,6 +115,12 @@
 "app_components_common_divider_label" = "Divider";
 "app_components_common_onError_label" = "On error";
 "app_components_common_orientation_label" = "Orientation";
+"app_components_common_editContent_label" = "Edit content";
+
+// MARK: Components: Empty state
+
+"app_components_emptyContent_text" = "No content";
+"app_components_emptyContent_description_text" = "This content is under construction and will be available very soon";
 
 // MARK: Components: Button
 

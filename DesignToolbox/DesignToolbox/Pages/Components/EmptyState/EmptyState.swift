@@ -26,9 +26,9 @@ struct EmptyState: View {
                     .frame(width: 160, height: 160, alignment: .center)
 
                 VStack(alignment: .center, spacing: theme.spaces.spaceFixedShorter) {
-                    Text("app_component_emptyContent_text")
+                    Text("app_components_emptyContent_text")
                         .typeHeadingMedium(theme)
-                    Text("app_component_emptyContent_description_text")
+                    Text("app_components_emptyContent_description_text")
                         .typeBodyDefaultSmall(theme)
                 }
                 .padding(.vertical, theme.spaces.spaceFixedMedium)
