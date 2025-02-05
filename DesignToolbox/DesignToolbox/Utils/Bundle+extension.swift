@@ -67,6 +67,10 @@ extension Bundle {
         return "\(type)\(tag)"
     }
 
+    var tokensLibraryVersion: String {
+        "Tokens version: 0.5.0"
+    }
+
     // MARK: Private Implementation
 
     private func string(forInfoDictionaryKey key: String) -> String? {

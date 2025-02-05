@@ -62,7 +62,8 @@ struct AboutPage: View {
                 }
 
                 // TODO: Only for debug purposes, should be displayed in another way
-                Text("Version: \(Bundle.main.marketingVersion)")
+                Text("\(Bundle.main.tokensLibraryVersion)")
+                Text("App version: \(Bundle.main.marketingVersion)")
                 Text("Build number: \(Bundle.main.buildNumber)")
                 Text("Build type: \(Bundle.main.fullBuildType)")
                 if let buildDetails = Bundle.main.buildDetails {
