@@ -69,7 +69,7 @@ struct OUDSCheckboxSelectorButton: View {
             case .pressed:
                 return theme.checkRadio.checkRadioColorContentAssetErrorPressed
             case .disabled, .readOnly:
-                OL.fatal("An OUDSCheckbox with a disabled state and an error situation has been detected, which is not allowed"
+                OL.fatal("An OUDSCheckbox with a disabled or read only state and an error situation has been detected, which is not allowed"
                          + " Only non-error situation are allowed to have a disabled state.")
             }
         } else {
