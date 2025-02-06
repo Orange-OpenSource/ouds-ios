@@ -57,7 +57,7 @@ struct OUDSCheckboxLabel: View {
     // MARK: Items
 
     private func texts() -> some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: theme.listItem.listItemSpaceRowGap) {
             Text(LocalizedStringKey(items.label))
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
