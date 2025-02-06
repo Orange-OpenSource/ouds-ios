@@ -134,7 +134,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     }
 
     private var disableCode: String {
-        ".disable(\(status != .enabled ? "false" : "true"))"
+        ".disable(\(status == .disabled ? "true" : "false"))"
     }
 
     private var helperTextPatern: String {

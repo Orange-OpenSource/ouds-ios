@@ -70,6 +70,7 @@ import SwiftUI
 ///     OUDSCheckbox(state: $state,
 ///                  labelText: "We live in a fabled world",
 ///                  helperText: "Of dreaming boys and wide-eyed girls",
+///                  isInversed: true,
 ///                  icon: Image(decorative: "ic_heart"))
 ///
 ///     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error.
@@ -78,6 +79,7 @@ import SwiftUI
 ///                  labelText: "Rescue from this world!",
 ///                  helperText: "Put your hand in mine",
 ///                  icon: Image(decorative: "ic_heart"),
+///                  isInversed: true,
 ///                  isError: true,
 ///                  divider: true)
 /// ```
