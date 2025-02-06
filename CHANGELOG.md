@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DesignToolbox] French support
 - [Library] Checkbox component ([#264](https://github.com/Orange-OpenSource/ouds-ios/issues/264))
 - [Tool] Add with a script the token library version in documentation and Design Toolbox ([#425](https://github.com/Orange-OpenSource/ouds-ios/issues/425))
 - [DesignToolbox] Add text field in component configuration to customize text ([#436](https://github.com/Orange-OpenSource/ouds-ios/issues/436))
