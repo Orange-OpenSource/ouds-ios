@@ -91,8 +91,9 @@ public struct OUDSCheckbox: View {
 
     // MARK: - Properties
 
-    @Binding private var state: SelectorState
     private let layout: Layout
+    @Binding var selectorState: SelectorState
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - State
 
@@ -152,7 +153,7 @@ public struct OUDSCheckbox: View {
         if isError && isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSCheckbox in an error context and in read only mode")
         }
-        self._state = state
+        self._selectorState = state
         self.layout = .selectorOnly(isError, isReadOnly)
     }
 
@@ -179,7 +180,7 @@ public struct OUDSCheckbox: View {
         if isError && isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSCheckbox in an error context and in read only mode")
         }
-        self._state = state
+        self._selectorState = state
         if isInversed {
             self.layout = .inverse(.init(label: labelText,
                                          helperText: helperText,
@@ -204,24 +205,35 @@ public struct OUDSCheckbox: View {
         case let .default(label, isReadOnly):
             Button("") {
                 if !isReadOnly {
-                    $state.wrappedValue.toggle()
+                    $selectorState.wrappedValue.toggle()
                 }
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $state.wrappedValue, items: label, isInversed: false, isReadOnly: isReadOnly))
+            .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled, labelText: label.label, helperText: label.helperText))
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue,
+                                                  items: label,
+                                                  isInversed: false,
+                                                  isReadOnly: isReadOnly))
         case let .inverse(label, isReadOnly):
             Button("") {
                 if !isReadOnly {
-                    $state.wrappedValue.toggle()
+                    $selectorState.wrappedValue.toggle()
                 }
             }
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $state.wrappedValue, items: label, isInversed: true, isReadOnly: isReadOnly))
+            .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled, labelText: label.label, helperText: label.helperText))
+            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue,
+                                                  items: label,
+                                                  isInversed: true,
+                                                  isReadOnly: isReadOnly))
         case let .selectorOnly(isError, isReadOnly):
             Button("") {
                 if !isReadOnly {
-                    $state.wrappedValue.toggle()
+                    $selectorState.wrappedValue.toggle()
                 }
             }
-            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: $state.wrappedValue, isError: isError, isReadOnly: isReadOnly))
+            .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled))
+            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: $selectorState.wrappedValue,
+                                                 isError: isError,
+                                                 isReadOnly: isReadOnly))
         }
     }
 }
