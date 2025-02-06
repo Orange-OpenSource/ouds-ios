@@ -33,11 +33,11 @@ struct OUDSCheckboxLabel: View {
 
     /// Any relevant data for the *default* and *inverse* layouts of the checkbox component
     struct Items {
-        let label: String
+        let labelText: String
         let helperText: String?
         let icon: Image?
         let isError: Bool
-        let divider: Bool
+        let hasDivider: Bool
     }
 
     // MARK: - Body
@@ -58,7 +58,7 @@ struct OUDSCheckboxLabel: View {
 
     private func texts() -> some View {
         VStack(alignment: .leading, spacing: theme.listItem.listItemSpaceRowGap) {
-            Text(LocalizedStringKey(items.label))
+            Text(LocalizedStringKey(items.labelText))
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(labelTextColor)

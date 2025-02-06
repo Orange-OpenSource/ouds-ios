@@ -56,7 +56,7 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
                     alignment: .center)
         }
         .padding(.all, theme.listItem.listItemSpaceInset)
-        .oudsDivider(show: items.divider)
+        .oudsDivider(show: items.hasDivider)
         .background(backgroundColor(state: internalState(isPressed: configuration.isPressed)))
         .onHover { isHover in
             self.isHover = isHover

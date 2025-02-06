@@ -184,18 +184,18 @@ public struct OUDSCheckbox: View {
         }
         self._selectorState = state
         if isInversed {
-            self.layout = .inverse(.init(label: labelText,
+            self.layout = .inverse(.init(labelText: labelText,
                                          helperText: helperText,
                                          icon: icon,
                                          isError: isError,
-                                         divider: divider),
+                                         hasDivider: divider),
                                    isReadOnly)
         } else {
-            self.layout = .default(.init(label: labelText,
+            self.layout = .default(.init(labelText: labelText,
                                          helperText: helperText,
                                          icon: icon,
                                          isError: isError,
-                                         divider: divider),
+                                         hasDivider: divider),
                                    isReadOnly)
         }
     }
@@ -210,7 +210,7 @@ public struct OUDSCheckbox: View {
                     $selectorState.wrappedValue.toggle()
                 }
             }
-            .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled, labelText: label.label, helperText: label.helperText))
+            .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled, labelText: label.labelText, helperText: label.helperText))
             .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue,
                                                   items: label,
                                                   isInversed: false,
@@ -221,7 +221,7 @@ public struct OUDSCheckbox: View {
                     $selectorState.wrappedValue.toggle()
                 }
             }
-            .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled, labelText: label.label, helperText: label.helperText))
+            .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled, labelText: label.labelText, helperText: label.helperText))
             .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue,
                                                   items: label,
                                                   isInversed: true,
