@@ -3,6 +3,16 @@
     {
       "filename" : "il_component_checkbox.svg",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "il_component_checkbox_dark.svg",
+      "idiom" : "universal"
     }
   ],
   "info" : {
