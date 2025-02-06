@@ -207,30 +207,29 @@ struct CheckboxConfiguration: View {
                 }
             }
 
-            Toggle("app_components_common_icon_label", isOn: $model.icon)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.layout == .selectorOnly)
+            if model.layout != .selectorOnly {
+                Toggle("app_components_common_icon_label", isOn: $model.icon)
+                    .typeHeadingMedium(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("app_components_common_divider_label", isOn: $model.divider)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.layout == .selectorOnly)
+                Toggle("app_components_common_divider_label", isOn: $model.divider)
+                    .typeHeadingMedium(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
-            Toggle("app_components_checkbox_helperText_label", isOn: $model.helperText)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(model.layout == .selectorOnly)
+                Toggle("app_components_checkbox_helperText_label", isOn: $model.helperText)
+                    .typeHeadingMedium(theme)
+                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+            }
 
             Toggle("app_components_common_onError_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(model.status != .enabled)
 
-            DisclosureGroup("Edit texts") {
+            DisclosureGroup("app_components_common_editContent_label") {
                 DesignToolboxTextField(text: $model.labelContent,
                                        prompt: "app_component_common_userText_prompt",
-                                       title: "app_components_switch_label_text")
+                                       title: "app_components_common_labelText_label")
                 if model.helperText {
                     DesignToolboxTextField(text: $model.helperTextContent,
                                            prompt: "app_component_common_userText_prompt",
