@@ -22,14 +22,34 @@ import SwiftUI
 ///
 /// ## Code samples
 /// ```swift
+///     // Supposing we have a switch in on state
+///     @Published var isOn: Bool  = false
+///
 ///     // Switch as nested element (with no text)
 ///     OUDSSwitch(isOn $isOn)
 ///
-///     // Text, icon and divider
-///     OUDSSwtcih(isOn $isOn, label: "Allow notifications", icon: Image("ic_heart"), divider: true)
+///     // A leading switch with a label, an helper text and an icon.
+///     // The default layout will be used here.
+///     OUDSSwtcih(isOn $isOn,
+///                  label: "Allow notifications",
+///                  icon: Image("ic_heart"))
 ///
-///     // Text, icon and divider with error in form
-///     OUDSSwtcih(isOn $isOn, label: "Allow notifications", icon: Image("ic_heart"), onError: true, divider: true)
+///     // A leading switch with a label, an helper text, an icon, a divider and is about an error.
+///     // The default layout will be used here.
+///     OUDSSwtcih(isOn $isOn,
+///                  label: "Allow notifications",
+///                  icon: Image("ic_heart"),
+///                  onError: true,
+///                  divider: true)
+///
+///     // A leading switch with a label, an helper text, an icon, a divider and is about an error.
+///     // The inverse layout will be used here.
+///     OUDSSwtcih(isOn $isOn,
+///                  label: "Allow notifications",
+///                  icon: Image("ic_heart"),
+///                  onError: true,
+///                  divider: true,
+///                  orientation: .inverse)
 /// ```
 ///
 /// ## Design documentation
@@ -44,14 +64,20 @@ public struct OUDSSwitch: View {
     private var isOn: Binding<Bool>
     private let layout: Layout
 
+    /// The two available layouts for this component
     private enum Layout {
-        case labeled(OUDSSwitchLabel.Label)
-        case nested
+        /// Switch selector with labled elements
+        /// Details are defined in the ``OUDSSwitchLabel.Items``.
+        case labeled(OUDSSwitchLabel.Items)
+        /// Displays only the switch selector
+        case selectorOnly
     }
 
     /// Used to define the orientation of the Layout
     public enum Orientation {
+        // Switch selector in leading position, icon in trailing position, like LTR mode.
         case `default`
+        /// Icon in leading position, switch selector in trailing position, like RTL mode
         case inverse
     }
 
@@ -64,10 +90,9 @@ public struct OUDSSwitch: View {
     ///     or off.
     public init(isOn: Binding<Bool>) {
         self.isOn = isOn
-        self.layout = .nested
+        self.layout = .selectorOnly
     }
 
-    // swiftlint:disable line_length
     /// Creates a switch with label and optional helper text, icon, divider.
     ///
     /// - Parameters:
@@ -79,24 +104,33 @@ public struct OUDSSwitch: View {
     ///   - onError: It the option is on error
     ///   - divider: If true a divider is added at the bottom of the view.
     ///   - orientation: Specify the orientation of the layout. If Default the switch at the leading position, if inverse it is on trailing.
-    public init(isOn: Binding<Bool>, labelText: String, helperText: String? = nil, icon: Image? = nil, onError: Bool = false, divider: Bool = false, orientation: Orientation = .default) {
+    public init(isOn: Binding<Bool>,
+                labelText: String,
+                helperText: String? = nil,
+                icon: Image? = nil,
+                onError: Bool = false,
+                divider: Bool = false,
+                orientation: Orientation = .default) {
         self.isOn = isOn
         self.layout = .labeled(.init(labelText: labelText, helperText: helperText, icon: icon, onError: onError, divider: divider, orientation: orientation))
     }
-    // swiftlint:enable line_length
 
     // MARK: Body
 
     public var body: some View {
         switch layout {
-        case .labeled(let label):
+        case .labeled(let items):
             Button("") {
-                isOn.wrappedValue.toggle()
+                withAnimation(.easeInOut) {
+                    isOn.wrappedValue.toggle()
+                }
             }
-            .buttonStyle(OUDSSwitchLabeledStyle(isOn: isOn.wrappedValue, label: label))
-        case .nested:
+            .buttonStyle(OUDSSwitchLabeledStyle(isOn: isOn.wrappedValue, items: items))
+        case .selectorOnly:
             Button("") {
-                isOn.wrappedValue.toggle()
+                withAnimation(.easeInOut) {
+                    isOn.wrappedValue.toggle()
+                }
             }
             .buttonStyle(OUDSSwitchNestedStyle(isOn: isOn.wrappedValue))
         }

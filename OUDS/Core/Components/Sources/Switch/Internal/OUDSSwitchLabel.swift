@@ -22,7 +22,7 @@ struct OUDSSwitchLabel: View {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    struct Label {
+    struct Items {
         let labelText: String
         let helperText: String?
         let icon: Image?
@@ -32,13 +32,13 @@ struct OUDSSwitchLabel: View {
     }
 
     let internalState: InternalSwitchState
-    let label: Label
+    let items: Items
 
     // MARK: Body
 
     var body: some View {
         HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
-            switch label.orientation {
+            switch items.orientation {
             case .default:
                 texts
                 icon
@@ -53,7 +53,7 @@ struct OUDSSwitchLabel: View {
 
     @ViewBuilder
     private var icon: some View {
-        if let icon = label.icon {
+        if let icon = items.icon {
             HStack(alignment: .center, spacing: 0) {
                 icon
                     .resizable()
@@ -68,26 +68,28 @@ struct OUDSSwitchLabel: View {
     @ViewBuilder
     private var texts: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(LocalizedStringKey(label.labelText))
+            Spacer()
+            Text(LocalizedStringKey(items.labelText))
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
-                .foregroundStyle(labelColor)
+                .foregroundStyle(labelTextColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let helperText = label.helperText {
+            if let helperText = items.helperText {
                 Text(LocalizedStringKey(helperText))
                     .typeLabelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
                     .foregroundStyle(helperTextColor)
             }
+            Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    private var labelColor: Color {
+    private var labelTextColor: Color {
         switch internalState {
         case .enabled, .pressed, .hover:
-            (label.onError ? theme.colors.colorContentStatusNegative : theme.colors.colorContentDefault)
+            (items.onError ? theme.colors.colorContentStatusNegative : theme.colors.colorContentDefault)
                 .color(for: colorScheme)
         case .disabled:
             theme.colors.colorContentDisabled.color(for: colorScheme)

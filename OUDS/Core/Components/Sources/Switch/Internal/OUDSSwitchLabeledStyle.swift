@@ -30,13 +30,13 @@ struct OUDSSwitchLabeledStyle: ButtonStyle {
     @State private var isHover: Bool = false
 
     let isOn: Bool
-    let label: OUDSSwitchLabel.Label
+    let items: OUDSSwitchLabel.Items
 
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
-            switch label.orientation {
+            switch items.orientation {
             case .default:
                 toggle(isPressed: configuration.isPressed)
                 label(isPressed: configuration.isPressed)
@@ -46,7 +46,7 @@ struct OUDSSwitchLabeledStyle: ButtonStyle {
             }
         }
         .padding(.all, theme.listItem.listItemSpaceInset)
-        .oudsDivider(show: label.divider)
+        .oudsDivider(show: items.divider)
         .background(backgroundColor(state: internalState(isPressed: configuration.isPressed)))
         .onHover { isHover in
             self.isHover = isHover
@@ -61,7 +61,7 @@ struct OUDSSwitchLabeledStyle: ButtonStyle {
     }
 
     private func label(isPressed: Bool) -> some View {
-        OUDSSwitchLabel(internalState: internalState(isPressed: isPressed), label: label)
+        OUDSSwitchLabel(internalState: internalState(isPressed: isPressed), items: items)
     }
 
     // MARK: Private Helpers

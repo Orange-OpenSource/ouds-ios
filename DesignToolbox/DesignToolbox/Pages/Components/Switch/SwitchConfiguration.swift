@@ -163,7 +163,7 @@ struct SwitchConfiguration: View {
                 }
 
                 DisclosureGroup("app_components_common_editContent_label") {
-                    DesignToolboxTextField(text: $model.labelTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_switch_labelText_label")
+                    DesignToolboxTextField(text: $model.labelTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_labelText_label")
                     if model.helperText {
                         DesignToolboxTextField(text: $model.helperTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_helperText_label")
                     }

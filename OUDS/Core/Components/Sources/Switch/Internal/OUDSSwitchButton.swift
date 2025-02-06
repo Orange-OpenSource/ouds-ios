@@ -38,7 +38,7 @@ struct OUDSSwitchButton: View {
             .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
         }
         .padding(.horizontal, spacePadding)
-        .frame(width: trackrWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
+        .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
         .background(trackColor)
         .clipShape(Capsule())
     }
@@ -83,7 +83,7 @@ struct OUDSSwitchButton: View {
         }
     }
 
-    private var trackrWidth: Double {
+    private var trackWidth: Double {
         Constants.inputSwitchSizeWidthTrack
     }
 
