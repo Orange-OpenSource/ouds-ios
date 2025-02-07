@@ -12,6 +12,7 @@
 //
 
 // swiftlint:disable missing_docs
+// swiftlint:disable number_separator
 
 extension BorderRawTokens {
     public static let borderBase: Double = 4
@@ -27,6 +28,7 @@ extension BorderRawTokens {
     public static let borderRadius500: BorderRadiusRawToken = borderBase * 5 // 20
     public static let borderRadius600: BorderRadiusRawToken = borderBase * 6 // 24
     public static let borderRadius800: BorderRadiusRawToken = borderBase * 8 // 32
+    public static let borderRadius9999: BorderRadiusRawToken = 2000
     public static let borderStyleDashed: BorderStyleRawToken = "dashed"
     public static let borderStyleDotted: BorderStyleRawToken = "dotted"
     public static let borderStyleNone: BorderStyleRawToken = "none"
@@ -42,3 +44,4 @@ extension BorderRawTokens {
 }
 
 // swiftlint:enable missing_docs
+// swiftlint:enable number_separator
