@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Border raw and semantic tokens to have border pill (tokens library v0.5.0)
 - [Library] Checkbox and radio button component tokens (tokens library v0.5.0)
 
 ## [0.10.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.9.0...0.10.0) - 2025-01-30
