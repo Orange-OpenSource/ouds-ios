@@ -19,6 +19,7 @@ extension OrangeThemeBorderSemanticTokensProvider: BorderSemanticTokens {
     @objc open var borderRadiusDefault: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }
     @objc open var borderRadiusMedium: BorderRadiusSemanticToken { BorderRawTokens.borderRadius150 }
     @objc open var borderRadiusNone: BorderRadiusSemanticToken { BorderRawTokens.borderRadius0 }
+    @objc open var borderRadiusPill: BorderRadiusSemanticToken { BorderRawTokens.borderRadius9999 }
     @objc open var borderRadiusShort: BorderRadiusSemanticToken { BorderRawTokens.borderRadius75 }
     @objc open var borderRadiusTall: BorderRadiusSemanticToken { BorderRawTokens.borderRadius300 }
     @objc open var borderStyleDefault: BorderStyleSemanticToken { BorderRawTokens.borderStyleSolid }
