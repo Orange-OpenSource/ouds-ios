@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 
 extension OrangeThemeCheckRadioComponentTokensProvider: CheckRadioComponentTokens {
     @objc open var checkRadioSizeMaxHeightAssetsContainer: SizeSemanticToken { DimensionRawTokens.dimension1200 }
-      @objc open var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var checkRadioSizeMaxHeightSelectorOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var checkRadioSizeMinHeightSelectorOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var checkRadioSizeMinWidthSelectorOnly: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var checkRadioBorderRadiusCheckbox: BorderRadiusSemanticToken { borders.borderRadiusDefault }

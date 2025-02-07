@@ -16,7 +16,7 @@ import SwiftUI
 
 // MARK: - Checkbox Configuration Model
 
-/// The model shared between `CheckboxPageConfiguration` view and `SwitchPageComponent` view.
+/// The model shared between `CheckboxConfiguration` view and `CheckboxPage` view.
 final class CheckboxConfigurationModel: ComponentConfiguration {
 
     // MARK: - Properties
@@ -49,7 +49,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var labelContent: String
+    @Published var labelTextContent: String
 
     @Published var helperTextContent: String
 
@@ -104,12 +104,12 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     override init() {
         status = .enabled
         selectorState = .selected
-        layout = .selectorOnly
+        layout = .default
         helperText = true
         icon = true
         isError = false
         divider = true
-        labelContent = String(localized: "app_components_checkbox_label_text")
+        labelTextContent = String(localized: "app_components_checkbox_label_text")
         helperTextContent = String(localized: "app_components_checkbox_helperText_text")
     }
 
@@ -227,7 +227,7 @@ struct CheckboxConfiguration: View {
                 .disabled(model.status != .enabled)
 
             DisclosureGroup("app_components_common_editContent_label") {
-                DesignToolboxTextField(text: $model.labelContent,
+                DesignToolboxTextField(text: $model.labelTextContent,
                                        prompt: "app_component_common_userText_prompt",
                                        title: "app_components_common_labelText_label")
                 if model.helperText {

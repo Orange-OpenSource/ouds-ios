@@ -65,7 +65,7 @@ struct CheckboxIllustration: View {
     }
 }
 
-// MARK: - Switch Demo
+// MARK: - Checkbox Demo
 
 private struct CheckboxDemo: View {
 
@@ -78,19 +78,19 @@ private struct CheckboxDemo: View {
                 HStack(alignment: .center) {
                     Spacer()
                     OUDSCheckbox(state: $model.selectorState,
-                                 isError: model.isError && model.status == CheckboxConfigurationModel.DesignToolboxCheckboxStatus.enabled,
-                                 isReadOnly: model.status == CheckboxConfigurationModel.DesignToolboxCheckboxStatus.readOnly)
+                                 isError: model.isError && model.status == .enabled,
+                                 isReadOnly: model.status == .readOnly)
                     .disabled(isDisabled())
                     Spacer()
                 }
             } else {
                 OUDSCheckbox(state: $model.selectorState,
-                             labelText: model.labelContent,
+                             labelText: model.labelTextContent,
                              helperText: helperTextContent,
                              icon: icon,
-                             isInversed: model.layout == CheckboxConfigurationModel.DesignToolboxCheckboxLayout.inverse,
-                             isError: model.isError && model.status == CheckboxConfigurationModel.DesignToolboxCheckboxStatus.enabled,
-                             isReadOnly: model.status == CheckboxConfigurationModel.DesignToolboxCheckboxStatus.readOnly,
+                             isInversed: model.layout == .inverse,
+                             isError: model.isError && model.status == .enabled,
+                             isReadOnly: model.status == .readOnly,
                              divider: model.divider)
                 .disabled(isDisabled())
             }

@@ -19,7 +19,7 @@ extension Bundle {
     /// The OUDS bundle, useful to find resources
     public static let OUDSComponents = Bundle.module
 
-    /// Loads thefirst  preferred localization from main Bundle or if not defined the english one
+    /// Loads the first  preferred localization from main Bundle or if not defined the english one
     public static var preferredLocalization: String {
         guard let firstPreferredLocalization = Bundle.main.preferredLocalizations.first else {
             OL.warning("Not able to find first preferred localization!")

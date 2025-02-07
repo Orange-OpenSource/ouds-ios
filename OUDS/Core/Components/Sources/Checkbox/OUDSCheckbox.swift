@@ -82,6 +82,16 @@ import SwiftUI
 ///                  isInversed: true,
 ///                  isError: true,
 ///                  divider: true)
+///
+///     // A leading checkbox with a label, but disabled.
+///     // The default layout will be used here.
+///     OUDSCheckbox(state: $state, labelText: "Hello world")
+///         .disabled(true)
+///
+///     // Never disable a read only or an error-related checkbox as it will crash
+///     // This is forbidden by design!
+///     OUDSCheckbox(state: $state, labelText: "Hello world", isError: true).disabled(true) // fatal error
+///     OUDSCheckbox(state: $state, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
@@ -144,6 +154,8 @@ public struct OUDSCheckbox: View {
 
     /// Creates a checkbox with no label.
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    /// **The design system does not allow to have both an error situation and a disabled component.**
+    /// **The design system does not allow to have both a read only and a disabled component.**
     ///
     /// - Parameters:
     ///    - state: A binding to a property that determines wether the selector is ticked, unticked or preticked.
@@ -161,6 +173,8 @@ public struct OUDSCheckbox: View {
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    /// **The design system does not allow to have both an error situation and a disabled component.**
+    /// **The design system does not allow to have both a read only and a disabled component.**
     ///
     /// - Parameters:
     ///   - state: A binding to a property that determines wether the selector is ticked, unticker or preticked.
