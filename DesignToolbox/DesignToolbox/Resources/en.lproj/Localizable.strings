@@ -132,7 +132,7 @@
 // MARK: Components - Checkbox
 
 "app_components_checkbox_label" = "Checkbox";
-"app_components_checkbox_description_text" = "A checkbox is a component that allows the user to toggle between two or three states, typically \"on\", \"off\" or \"undeterminate\". It is often represented as a square which can be ticked or not, and the square may vary with different colors and border widths to indicate the current state. Checkboxes are used to select things like features, options, or settings in an intuitive and visual manner.";
+"app_components_checkbox_description_text" = "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action.";
 "app_components_checkbox_label_text" = "Label";
 "app_components_checkbox_switchOnly_label" = "Checkbox only";
 "app_components_checkbox_helperText_text" = "Helper Text";

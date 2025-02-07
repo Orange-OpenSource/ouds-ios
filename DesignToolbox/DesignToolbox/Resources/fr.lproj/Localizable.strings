@@ -150,7 +150,7 @@
 // MARK: Components - Checkbox
 
 "app_components_checkbox_label" = "Case à cocher";
-"app_components_checkbox_description_text" = "Une case à cocher est un composant qui permet à l'utilisateur de basculer entre deux ou trois états, généralement 'activé', 'désactivé' ou 'indéterminé'. Elle est souvent représentée par un carré qui peut être coché ou non, et le carré peut varier avec différentes couleurs et largeurs de bord pour indiquer l'état actuel. Les cases à cocher sont utilisées pour sélectionner des éléments comme des fonctionnalités, options ou paramètres de manière intuitive et visuelle.";
+"app_components_checkbox_description_text" = "Les cases à cocher permettent aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action.";
 "app_components_checkbox_label_text" = "Étiquette";
 "app_components_checkbox_switchOnly_label" = "Case à cocher uniquement";
 "app_components_checkbox_helperText_text" = "Texte d'aide";
