@@ -451,7 +451,7 @@ platform :ios do
             build_number = get_build_number(xcodeproj: OUDS_PROJECT)
             puts "ℹ️ App build number: '#{build_number}'"
 
-            curl -F '\'file=@build/oudsApp.xcarchive\' #{UPLOAD_STORE_URL}'
+            sh "curl -F 'file=@build/oudsApp.xcarchive' '#{UPLOAD_STORE_URL}'"
 
             publish_mattermost_notification("📦 ✅ @here The upload to store has been done successfully (version = '#{version}', build number = '#{build_number}')")
             rescue => error
