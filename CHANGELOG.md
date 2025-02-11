@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Tool] Upload the IPA of DesignToolbox to the publication store ([#451](https://github.com/Orange-OpenSource/ouds-ios/issues/451))
 - [Tool] Add with a script the token library version in documentation and Design Toolbox ([#425](https://github.com/Orange-OpenSource/ouds-ios/issues/425))
 - [DesignToolbox] Add text field in component configuration to customize text ([#436](https://github.com/Orange-OpenSource/ouds-ios/issues/436))
 - [Library] Link component ([#400](https://github.com/Orange-OpenSource/ouds-ios/issues/400))
