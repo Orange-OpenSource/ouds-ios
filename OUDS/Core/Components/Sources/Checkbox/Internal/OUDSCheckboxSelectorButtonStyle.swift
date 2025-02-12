@@ -26,7 +26,7 @@ struct OUDSCheckboxSelectorButtonStyle: ViewModifier {
     // MARK: - Properties
 
     let state: OUDSInternalCheckboxState
-    let selectorState: OUDSCheckbox.SelectorState
+    let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
     // MARK: - Body
@@ -46,7 +46,7 @@ private struct CheckboxSelectorButtonForegroundModifier: ViewModifier {
     // MARK: - Properties
 
     let state: OUDSInternalCheckboxState
-    let selectorState: OUDSCheckbox.SelectorState
+    let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -111,7 +111,7 @@ private struct CheckboxSelectorButtonBackgroundModifier: ViewModifier {
     // MARK: - Properties
 
     let state: OUDSInternalCheckboxState
-    let selectorState: OUDSCheckbox.SelectorState
+    let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -228,7 +228,7 @@ private struct CheckboxSelectorButtonBorderModifier: ViewModifier {
     // MARK: - Properties
 
     let state: OUDSInternalCheckboxState
-    let selectorState: OUDSCheckbox.SelectorState
+    let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
     @Environment(\.theme) private var theme

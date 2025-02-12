@@ -20,7 +20,7 @@ struct OUDSCheckboxNestedStyle: ButtonStyle {
 
     // MARK: - Properties
 
-    let selectorState: OUDSCheckbox.SelectorState
+    let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
     let isReadOnly: Bool
 

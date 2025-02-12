@@ -20,7 +20,7 @@ import SwiftUI
 /// The *default* or *inverse* layout for the ``OUDSCheckbox`` component.
 struct OUDSCheckboxLabeledStyle: ButtonStyle {
 
-    let selectorState: OUDSCheckbox.SelectorState
+    let selectorState: OUDSCheckboxSelectorState
     let items: OUDSCheckboxLabel.Items
     let isInversed: Bool
     let isReadOnly: Bool

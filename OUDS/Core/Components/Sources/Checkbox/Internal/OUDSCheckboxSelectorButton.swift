@@ -23,7 +23,7 @@ struct OUDSCheckboxSelectorButton: View {
     // MARK: - Properties
 
     let internalState: OUDSInternalCheckboxState
-    let selectorState: OUDSCheckbox.SelectorState
+    let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
     @Environment(\.theme) private var theme

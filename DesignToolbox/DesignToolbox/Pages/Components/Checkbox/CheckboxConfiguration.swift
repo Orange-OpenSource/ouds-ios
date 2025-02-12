@@ -25,7 +25,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var selectorState: OUDSCheckbox.SelectorState {
+    @Published var selectorState: OUDSCheckboxSelectorState {
         didSet { updateCode() }
     }
 
@@ -196,7 +196,7 @@ struct CheckboxConfiguration: View {
             }
 
             DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.selectorState) {
-                ForEach(OUDSCheckbox.SelectorState.allCases, id: \.id) { state in
+                ForEach(OUDSCheckboxSelectorState.allCases, id: \.id) { state in
                     Text(LocalizedStringKey(state.description)).tag(state)
                 }
             }
@@ -242,8 +242,8 @@ struct CheckboxConfiguration: View {
 
 // MARK: - Checkbox selector state extension
 
-extension OUDSCheckbox.SelectorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static var allCases: [OUDSCheckbox.SelectorState] = [.selected, .unselected, .undeterminate]
+extension OUDSCheckboxSelectorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    nonisolated(unsafe) public static var allCases: [OUDSCheckboxSelectorState] = [.selected, .unselected, .undeterminate]
 
     // No l10n, tehchnical names
     public var description: String {
