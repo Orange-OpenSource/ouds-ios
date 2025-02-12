@@ -237,18 +237,11 @@ private struct CheckboxSelectorButtonBorderModifier: ViewModifier {
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        // oudsBorder(style:width:radius:color) doubles the borders with O_ô
         content
-            .background(
-                Rectangle()
-                    .fill(Color.clear)
-                    .overlay(
-                        Rectangle()
-                            .stroke(appliedColor.color(for: colorScheme), lineWidth: appliedBorderWidth)
-                            .cornerRadius(appliedBorderRadius)
-                    )
-            )
-            .cornerRadius(appliedBorderRadius)
+            .oudsBorder(style: theme.borders.borderStyleDefault,
+                        width: appliedBorderWidth,
+                        radius: appliedBorderRadius,
+                        color: appliedColor)
     }
 
     // MARK: - Colors
