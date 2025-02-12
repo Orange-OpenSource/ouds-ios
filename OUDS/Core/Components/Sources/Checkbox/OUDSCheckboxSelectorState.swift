@@ -23,7 +23,7 @@ public enum OUDSCheckboxSelectorState {
     case undeterminate //  (╯° °)╯︵ ┻━┻
 
     /// Changes the value to the next one.
-    mutating func toggle () {
+    public mutating func toggle () {
         switch self {
         case .selected:
             self = .unselected

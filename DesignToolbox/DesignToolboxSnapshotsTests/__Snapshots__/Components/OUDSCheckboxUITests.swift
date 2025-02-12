@@ -71,7 +71,7 @@ final class OUDSCheckboxUITests: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testAllCheckboxes(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for selectorState in OUDSCheckbox.SelectorState.allCases {
+        for selectorState in OUDSCheckboxSelectorState.allCases {
             for someLayout in availableLayouts(isError: false, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -89,7 +89,7 @@ final class OUDSCheckboxUITests: XCTestCase {
             }
         }
 
-        for selectorState in OUDSCheckbox.SelectorState.allCases {
+        for selectorState in OUDSCheckboxSelectorState.allCases {
             for someLayout in availableLayouts(isError: true, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -100,7 +100,7 @@ final class OUDSCheckboxUITests: XCTestCase {
             }
         }
 
-        for selectorState in OUDSCheckbox.SelectorState.allCases {
+        for selectorState in OUDSCheckboxSelectorState.allCases {
             for someLayout in availableLayouts(isError: false, isReadOnly: true) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -122,7 +122,7 @@ final class OUDSCheckboxUITests: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testAllCheckboxesOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for selectorState in OUDSCheckbox.SelectorState.allCases {
+        for selectorState in OUDSCheckboxSelectorState.allCases {
             for someLayout in availableLayouts(isError: false, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -140,7 +140,7 @@ final class OUDSCheckboxUITests: XCTestCase {
             }
         }
 
-        for selectorState in OUDSCheckbox.SelectorState.allCases {
+        for selectorState in OUDSCheckboxSelectorState.allCases {
             for someLayout in availableLayouts(isError: true, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -151,7 +151,7 @@ final class OUDSCheckboxUITests: XCTestCase {
             }
         }
 
-        for selectorState in OUDSCheckbox.SelectorState.allCases {
+        for selectorState in OUDSCheckboxSelectorState.allCases {
             for someLayout in availableLayouts(isError: false, isReadOnly: true) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -181,7 +181,7 @@ final class OUDSCheckboxUITests: XCTestCase {
     @MainActor private func testCheckbox(theme: OUDSTheme,
                                          interfaceStyle: UIUserInterfaceStyle,
                                          layout: CheckboxTest.Layout,
-                                         selectorState: OUDSCheckbox.SelectorState,
+                                         selectorState: OUDSCheckboxSelectorState,
                                          isDisabled: Bool,
                                          onColoredSurface: Bool = false) {
         // Generate the illustration for the specified configuration
@@ -266,9 +266,9 @@ private struct CheckboxTest: View {
             switch self {
             case let .selectorOnly(isError, isReadOnly):
                 return "layout-selectorOnly-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")"
-            case let .default(labelText, helperText, icon, isError, hasDivider, isReadOnly):
+            case let .default(_, helperText, icon, isError, hasDivider, isReadOnly):
                     return "layout-default-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
-            case let .inverse(labelText, helperText, icon, isError, hasDivider, isReadOnly):
+            case let .inverse(_, helperText, icon, isError, hasDivider, isReadOnly):
                     return "layout-inverse-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
         }
@@ -279,7 +279,7 @@ private struct CheckboxTest: View {
     @Environment(\.colorScheme) private var colorScheme
 
     let layout: Layout
-    let selectorState: OUDSCheckbox.SelectorState
+    let selectorState: OUDSCheckboxSelectorState
     let isDisabled: Bool
     let onColoredSurface: Bool
 
@@ -291,40 +291,41 @@ private struct CheckboxTest: View {
         }
     }
 
+    @ViewBuilder
     func checkbox() -> some View {
         switch layout {
         case let .selectorOnly(isError, isReadOnly):
-            OUDSCheckbox(state: .constant(selectorState),
-                         isError: isError,
-                         isReadOnly: isReadOnly)
+            OUDSCheckboxOnly(state: .constant(selectorState),
+                             isError: isError,
+                             isReadOnly: isReadOnly)
             .disabled(isDisabled)
         case let .default(labelText, helperText, icon, isError, hasDivider, isReadOnly):
-            OUDSCheckbox(state: .constant(selectorState),
-                         labelText: labelText,
-                         helperText: helperText,
-                         icon: icon,
-                         isInversed: false,
-                         isError: isError,
-                         isReadOnly: isReadOnly,
-                         divider: hasDivider)
+            OUDSCheckboxControlItem(state: .constant(selectorState),
+                                    labelText: labelText,
+                                    helperText: helperText,
+                                    icon: icon,
+                                    isInversed: false,
+                                    isError: isError,
+                                    isReadOnly: isReadOnly,
+                                    hasDivider: hasDivider)
             .disabled(isDisabled)
         case let .inverse(labelText, helperText, icon, isError, hasDivider, isReadOnly):
-            OUDSCheckbox(state: .constant(selectorState),
-                         labelText: labelText,
-                         helperText: helperText,
-                         icon: icon,
-                         isInversed: true,
-                         isError: isError,
-                         isReadOnly: isReadOnly,
-                         divider: hasDivider)
+            OUDSCheckboxControlItem(state: .constant(selectorState),
+                                    labelText: labelText,
+                                    helperText: helperText,
+                                    icon: icon,
+                                    isInversed: true,
+                                    isError: isError,
+                                    isReadOnly: isReadOnly,
+                                    hasDivider: hasDivider)
             .disabled(isDisabled)
         }
     }
 }
 
-// MARK: - extension OUDSCheckbox.SelectorState
+// MARK: - extension OUDSCheckboxSelectorState
 
-extension OUDSCheckbox.SelectorState {
+extension OUDSCheckboxSelectorState {
     var name: String {
         switch self {
         case .selected:
