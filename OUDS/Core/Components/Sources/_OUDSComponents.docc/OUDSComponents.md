@@ -39,24 +39,24 @@ The link can be displayed in `small` or `medium` size.
 
 ### Checkbox
 
-The ``OUDSCheckbox`` proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one.
+The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one. 
 
 ```swift
-     // A simple checkbox, nested, selected
-     OUDSCheckbox(state: $state)
+     // A simple checkbox, with only a selector
+     OUDSCheckboxOnly(state: $state)
 
      // A leading checkbox with a label
-     OUDSCheckbox(state: $state, label: "Hello world")
+     OUDSCheckboxControlItem(state: $state, label: "Hello world")
 
      // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
-    // with an inverse layout
-     OUDSCheckbox(state: $state,
-                  labelText: "We live in a fabled world",
-                  helperText: "Of dreaming boys and wide-eyed girls",
-                  icon: Image(decorative: "ic_heart"),
-                  isInversed: true,
-                  isError: true,
-                  divider: true)
+     // with an inverse layout
+     OUDSCheckboxControlItem(state: $state,
+                             labelText: "We live in a fabled world",
+                             helperText: "Of dreaming boys and wide-eyed girls",
+                             icon: Image(decorative: "ic_heart"),
+                             isInversed: true,
+                             isError: true,
+                             hasDivider: true)
 ```
 
 ## Customize components
@@ -139,4 +139,5 @@ The helper is available through `View`, and tokens through the provider of the t
 
 - ``OUDSButton``
 - ``OUDSLink``
-- ``OUDSCheckbox``
+- ``OUDSCheckboxOnly``
+- ``OUDSCheckboxControlItem``
