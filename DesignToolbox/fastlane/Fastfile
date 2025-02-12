@@ -450,7 +450,9 @@ platform :ios do
             build_number = get_build_number(xcodeproj: OUDS_PROJECT)
             puts "ℹ️ App build number: '#{build_number}'"
 
-            sh "curl -F 'file=@build/oudsApp.zip' '#{UPLOAD_STORE_URL}'"
+            # Escape spaces for upload
+            sh "cp ../build/Design\\ System\\ Toolbox.ipa ../build/Design_System_Toolbox.ipa"
+            sh "curl -F 'file=@../build/Design_System_Toolbox.ipa' #{UPLOAD_STORE_URL}"
 
             publish_mattermost_notification("📦 ✅ @here The upload to store has been done successfully (version = '#{version}', build number = '#{build_number}')")
         rescue => error
