@@ -35,7 +35,6 @@ APPLE_KEY_CONTENT = ENV["OUDS_APPLE_KEY_CONTENT"]
 DEVELOPER_APP_IDENTIFIER = ENV["OUDS_DEVELOPER_BUNDLE_IDENTIFIER"]
 
 # Upload To Store
-# ---------------
 UPLOAD_STORE_URL = ENV["OUDS_UPLOAD_STORE_URL"]
 
 # Notifications and hooks
@@ -454,7 +453,7 @@ platform :ios do
             sh "curl -F 'file=@build/oudsApp.xcarchive' '#{UPLOAD_STORE_URL}'"
 
             publish_mattermost_notification("📦 ✅ @here The upload to store has been done successfully (version = '#{version}', build number = '#{build_number}')")
-            rescue => error
+        rescue => error
             publish_mattermost_notification("📦 🚨 @channel Some issue occurred during the upload step (:upload_2_store)")
             raise error
         end
