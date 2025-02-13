@@ -51,47 +51,47 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an undeterminate state checkbox
-///     @Published var state: OUDSCheckbox.SelectorState  = .undeterminate
+///     @Published var state: OUDSCheckboxSelectorState  = .undeterminate
 ///
 ///     // A leading checkbox with a label.
 ///     // The default layout will be used here.
-///     OUDSCheckbox(state: $state, labelText: "Hello world")
+///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world")
 ///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSCheckbox(state: $state, labelText: "Hello world", isReadOnly: true)
+///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world", isReadOnly: true)
 ///
 ///     // A leading checkbox with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSCheckbox(state: $state, labelText: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     OUDSCheckboxControlItem(state: $state, labelText: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, an helper text and an icon.
 ///     // The inverse layout will be used here.
-///     OUDSCheckbox(state: $state,
-///                  labelText: "We live in a fabled world",
-///                  helperText: "Of dreaming boys and wide-eyed girls",
-///                  isInversed: true,
-///                  icon: Image(decorative: "ic_heart"))
+///     OUDSCheckboxControlItem(state: $state,
+///                             labelText: "We live in a fabled world",
+///                             helperText: "Of dreaming boys and wide-eyed girls",
+///                             isInversed: true,
+///                             icon: Image(decorative: "ic_heart"))
 ///
 ///     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
-///     OUDSCheckbox(state: $state,
-///                  labelText: "Rescue from this world!",
-///                  helperText: "Put your hand in mine",
-///                  icon: Image(decorative: "ic_heart"),
-///                  isInversed: true,
-///                  isError: true,
-///                  divider: true)
+///     OUDSCheckboxControlItem(state: $state,
+///                             labelText: "Rescue from this world!",
+///                             helperText: "Put your hand in mine",
+///                             icon: Image(decorative: "ic_heart"),
+///                             isInversed: true,
+///                             isError: true,
+///                             divider: true)
 ///
 ///     // A leading checkbox with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSCheckbox(state: $state, labelText: "Hello world")
+///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world")
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckbox(state: $state, labelText: "Hello world", isError: true).disabled(true) // fatal error
-///     OUDSCheckbox(state: $state, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world", isError: true).disabled(true) // fatal error
+///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
@@ -149,13 +149,13 @@ public struct OUDSCheckboxControlItem: View {
     // MARK: Body
 
     public var body: some View {
-        OUDSCheckbox(state: $selectorState,
-                     labelText: labelText,
-                     helperText: helperText,
-                     icon: icon,
-                     isInversed: isInversed,
-                     isError: isError,
-                     isReadOnly: isReadOnly,
-                     hasDivider: hasDivider)
+        Checkbox(state: $selectorState,
+                 labelText: labelText,
+                 helperText: helperText,
+                 icon: icon,
+                 isInversed: isInversed,
+                 isError: isError,
+                 isReadOnly: isReadOnly,
+                 hasDivider: hasDivider)
     }
 }

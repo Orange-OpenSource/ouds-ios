@@ -79,7 +79,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         var id: String { description }
     }
 
-    enum DesignToolboxCheckboxLayout: CaseIterable, CustomStringConvertible { // OUDSCheckbox.Layout is not accessible
+    enum DesignToolboxCheckboxLayout: CaseIterable, CustomStringConvertible { // Checkbox.Layout is not accessible
         case selectorOnly
         case `default`
         case inverse
@@ -121,13 +121,13 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         if layout == .selectorOnly {
             code =
               """
-            OUDSCheckbox(state: $state\(isErrorPattern))
+            OUDSCheckboxOnly(state: $state\(isErrorPattern))
             \(disableCode))
             """
         } else {
             code =
               """
-            OUDSCheckbox(state: $state, labelText: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+            OUDSCheckboxControlItem(state: $state, labelText: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
             \(disableCode))
             """
         }

@@ -17,12 +17,12 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// The selector of the chebckox.
-/// Its content depends to the ``OUDSInternalCheckboxState`` and the ``OUDSCheckbox.SelectorState`` also.
-struct OUDSCheckboxSelectorButton: View {
+/// Its content depends to the ``InternalCheckboxState`` and the ``OUDSCheckboxSelectorState`` also.
+struct CheckboxSelectorButton: View {
 
     // MARK: - Properties
 
-    let internalState: OUDSInternalCheckboxState
+    let internalState: CheckboxInternalState
     let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
@@ -33,7 +33,7 @@ struct OUDSCheckboxSelectorButton: View {
 
     var body: some View {
         selector()
-            .modifier(OUDSCheckboxSelectorButtonStyle(state: internalState, selectorState: selectorState, isError: isError))
+            .modifier(CheckboxSelectorButtonStyle(state: internalState, selectorState: selectorState, isError: isError))
     }
 
     // MARK: - Selector
@@ -69,7 +69,7 @@ struct OUDSCheckboxSelectorButton: View {
             case .pressed:
                 return theme.checkRadio.checkRadioColorContentAssetErrorPressed
             case .disabled, .readOnly:
-                OL.fatal("An OUDSCheckbox with a disabled or read only state and an error situation has been detected, which is not allowed"
+                OL.fatal("An OUDS Checkbox with a disabled or read only state and an error situation has been detected, which is not allowed"
                          + " Only non-error situation are allowed to have a disabled state.")
             }
         } else {

@@ -16,12 +16,12 @@ import SwiftUI
 
 // MARK: - OUDS Checkbox
 
-/// The ``OUDSCheckbox`` proposes layout to add in views some checkboxes components, even if this type of component is not iOS-native one.
+/// The ``Checkbox`` proposes layout to add in views some checkboxes components, even if this type of component is not iOS-native one.
 /// This was the first implemention of the component as it was on *Figma* specifications.
 /// To split API ad match the new speicifcations this object is no more public and is used  behing public components like ``OUDSCheckboxOnly``
 /// and ``OUDSCheckboxControlItem``.
 /// This object helps also to handle easily *pressed* and *hover* states and a11y features like Voice Over vocalization.
-struct OUDSCheckbox: View {
+struct Checkbox: View {
 
     // MARK: - Properties
 
@@ -37,14 +37,14 @@ struct OUDSCheckbox: View {
         case selectorOnly(Bool, Bool)
 
         /// Checkbox selector in leading position, icon in trailing position, like LTR mode.
-        /// Details are defined in the ``OUDSCheckboxLabel.Items``.
+        /// Details are defined in the ``CheckboxLabel.Items``.
         /// Contains a flag saying if read only mode or not.
-        case `default`(OUDSCheckboxLabel.Items, Bool)
+        case `default`(CheckboxLabel.Items, Bool)
 
         /// Icon in leading position, checkbox selector in trailing position, like RTL mode
-        /// Details are defined in the ``OUDSCheckboxLabel.Items``.
+        /// Details are defined in the ``CheckboxLabel.Items``.
         /// Contains a flag saying if read only mode or not.
-        case inverse(OUDSCheckboxLabel.Items, Bool)
+        case inverse(CheckboxLabel.Items, Bool)
     }
 
     // MARK: - Initializers
@@ -61,7 +61,7 @@ struct OUDSCheckbox: View {
          isError: Bool = false,
          isReadOnly: Bool = false) {
         if isError && isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDSCheckbox in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an OUDS Checkbox in an error context and in read only mode")
         }
         self._selectorState = state
         self.layout = .selectorOnly(isError, isReadOnly)
@@ -90,11 +90,11 @@ struct OUDSCheckbox: View {
          hasDivider: Bool = false) {
 
         if isError && isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDSCheckbox in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an OUDS Checkbox in an error context and in read only mode")
         }
 
         if let helperText, helperText.isEmpty {
-            OL.warning("Helper text given to OUDSCheckboxControlItem is defined but empty, is it expected? Prefer sue of `nil` value instead")
+            OL.warning("Helper text given to an OUDS Checkbox is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         self._selectorState = state
@@ -126,10 +126,10 @@ struct OUDSCheckbox: View {
                 }
             }
             .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled, labelText: label.labelText, helperText: label.helperText))
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue,
-                                                  items: label,
-                                                  isInversed: false,
-                                                  isReadOnly: isReadOnly))
+            .buttonStyle(CheckboxLabeledStyle(selectorState: $selectorState.wrappedValue,
+                                              items: label,
+                                              isInversed: false,
+                                              isReadOnly: isReadOnly))
         case let .inverse(label, isReadOnly):
             Button("") {
                 if !isReadOnly {
@@ -137,10 +137,10 @@ struct OUDSCheckbox: View {
                 }
             }
             .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled, labelText: label.labelText, helperText: label.helperText))
-            .buttonStyle(OUDSCheckboxLabeledStyle(selectorState: $selectorState.wrappedValue,
-                                                  items: label,
-                                                  isInversed: true,
-                                                  isReadOnly: isReadOnly))
+            .buttonStyle(CheckboxLabeledStyle(selectorState: $selectorState.wrappedValue,
+                                              items: label,
+                                              isInversed: true,
+                                              isReadOnly: isReadOnly))
         case let .selectorOnly(isError, isReadOnly):
             Button("") {
                 if !isReadOnly {
@@ -148,9 +148,9 @@ struct OUDSCheckbox: View {
                 }
             }
             .accessibilityLabel(a11yLabel(isReadOnly: isReadOnly, isEnabled: isEnabled))
-            .buttonStyle(OUDSCheckboxNestedStyle(selectorState: $selectorState.wrappedValue,
-                                                 isError: isError,
-                                                 isReadOnly: isReadOnly))
+            .buttonStyle(CheckboxSelectorOnlyStyle(selectorState: $selectorState.wrappedValue,
+                                                   isError: isError,
+                                                   isReadOnly: isReadOnly))
         }
     }
 

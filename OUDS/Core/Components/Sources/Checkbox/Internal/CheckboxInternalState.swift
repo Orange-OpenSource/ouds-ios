@@ -12,7 +12,7 @@
 //
 
 /// The internal state used by modifiers to handle all states of the component.
-enum OUDSInternalCheckboxState {
+enum CheckboxInternalState {
 
     /// User can interaact with the component
     case enabled

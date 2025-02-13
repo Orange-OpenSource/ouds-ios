@@ -24,7 +24,7 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSCheckbox` for each parameter
+/// Tests the UI rendering of the `OUDSCheckboxOnly` and `OUDSCheckboxControlItem` for each parameter
 final class OUDSCheckboxUITests: XCTestCase {
 
     /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
@@ -65,7 +65,7 @@ final class OUDSCheckboxUITests: XCTestCase {
     ///
     /// **/!\ It does not text the hover and pressed states.**
     ///
-    /// It iterates through all button `OUDSCheckbox.SelectorState`, for all combinations of layouts in enabled and disabled state.
+    /// It iterates through all button `OUDSCheckboxSelectorState`, for all combinations of layouts in enabled and disabled state.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
@@ -116,7 +116,7 @@ final class OUDSCheckboxUITests: XCTestCase {
     ///
     /// **/!\ It does not text the hover and pressed states.**
     ///
-    /// It iterates through all button `OUDSCheckbox.SelectorState`, for all combinations of layouts in enabled and disabled state.
+    /// It iterates through all button `OUDSCheckboxSelectorState`, for all combinations of layouts in enabled and disabled state.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
@@ -163,8 +163,8 @@ final class OUDSCheckboxUITests: XCTestCase {
         }
     }
 
-    /// This function tests checkbox according to all parameters of the configutation available on a `OUDSCheckbox`
-    /// for the given theme and color schemes and on a colored surface or not.
+    /// This function tests checkbox according to all parameters of the configuration available on a `OUDSCheckboxOnly`
+    /// of `OUDSCheckboxControlItem` for the given theme and color schemes and on a colored surface or not.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
     ///    "test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<selectorState>_<disabledPatern>"
@@ -242,10 +242,10 @@ final class OUDSCheckboxUITests: XCTestCase {
 
 // MARK: - Checkbox Test
 
-/// The test object which will define the `OUDSCheckbox` object to test
+/// The test object which will define the `OUDSCheckboxOnly` or `OUDSCheckboxControlItem`object to test
 private struct CheckboxTest: View {
 
-    enum Layout { // OUDSCheckbox.Layout is private, not accessible here
+    enum Layout { // Checkbox.Layout is private, not accessible here
         case selectorOnly(isError: Bool,
                           isReadOnly: Bool)
         case `default`(labelText: String,

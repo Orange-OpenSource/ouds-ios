@@ -15,8 +15,8 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The *selector only*  layout for the ``OUDSCheckbox`` component.
-struct OUDSCheckboxNestedStyle: ButtonStyle {
+/// The *selector only*  layout for the ``OUDSCheckboxOnly`` component.
+struct CheckboxSelectorOnlyStyle: ButtonStyle {
 
     // MARK: - Properties
 
@@ -30,7 +30,7 @@ struct OUDSCheckboxNestedStyle: ButtonStyle {
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
-        OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
+        CheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
             .onHover { isHover in
                 self.isHover = isHover
             }
@@ -38,7 +38,7 @@ struct OUDSCheckboxNestedStyle: ButtonStyle {
 
     // MARK: - Helpers
 
-    private func internalState(isPressed: Bool) -> OUDSInternalCheckboxState {
+    private func internalState(isPressed: Bool) -> CheckboxInternalState {
         if isReadOnly {
             return .readOnly
         }

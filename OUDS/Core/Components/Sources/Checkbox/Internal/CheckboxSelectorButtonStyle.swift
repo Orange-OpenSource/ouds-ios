@@ -18,14 +18,14 @@ import SwiftUI
 
 // MARK: - Checkbox Selector Button Style
 
-/// A `ViewModier` to apply to the ``OUDSCheckbox`` selector component.
-/// It will define the look and feel of the selector depending to the ``OUDSInternalCheckboxState``,
-/// the ``OUDSCheckbox.SelectorState`` and if there is an error context or not.
-struct OUDSCheckboxSelectorButtonStyle: ViewModifier {
+/// A `ViewModier` to apply to the ``Checkbox`` selector component.
+/// It will define the look and feel of the selector depending to the ``InternalCheckboxState``,
+/// the ``OUDSCheckboxSelectorState`` and if there is an error context or not.
+struct CheckboxSelectorButtonStyle: ViewModifier {
 
     // MARK: - Properties
 
-    let state: OUDSInternalCheckboxState
+    let state: CheckboxInternalState
     let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
@@ -45,7 +45,7 @@ private struct CheckboxSelectorButtonForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: OUDSInternalCheckboxState
+    let state: CheckboxInternalState
     let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
@@ -97,7 +97,7 @@ private struct CheckboxSelectorButtonForegroundModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDSCheckbox with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
@@ -110,7 +110,7 @@ private struct CheckboxSelectorButtonBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: OUDSInternalCheckboxState
+    let state: CheckboxInternalState
     let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
@@ -207,7 +207,7 @@ private struct CheckboxSelectorButtonBackgroundModifier: ViewModifier {
 
     private var disabledColor: Color {
         guard !isError else {
-            OL.fatal("An OUDSCheckbox with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         switch selectorState {
@@ -227,7 +227,7 @@ private struct CheckboxSelectorButtonBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: OUDSInternalCheckboxState
+    let state: CheckboxInternalState
     let selectorState: OUDSCheckboxSelectorState
     let isError: Bool
 
@@ -290,7 +290,7 @@ private struct CheckboxSelectorButtonBorderModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDSCheckbox with a disabled state and an error situation has been detected, which is not allowed"
+            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed"
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled

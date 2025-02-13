@@ -17,11 +17,11 @@ import SwiftUI
 
 // MARK: - Checkbox Labeled Style
 
-/// The *default* or *inverse* layout for the ``OUDSCheckbox`` component.
-struct OUDSCheckboxLabeledStyle: ButtonStyle {
+/// The *default* or *inverse* layout for the ``OUDSCheckboxControlItem`` component.
+struct CheckboxLabeledStyle: ButtonStyle {
 
     let selectorState: OUDSCheckboxSelectorState
-    let items: OUDSCheckboxLabel.Items
+    let items: CheckboxLabel.Items
     let isInversed: Bool
     let isReadOnly: Bool
 
@@ -36,24 +36,25 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
         HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
             HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
                 if isInversed {
-                    OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
-                                      items: items,
-                                      isInversed: true)
+                    CheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
+                                  items: items,
+                                  isInversed: true)
 
-                    OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
-                                               selectorState: selectorState,
-                                               isError: items.isError)
+                    CheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
+                                           selectorState: selectorState,
+                                           isError: items.isError)
                 } else {
-                    OUDSCheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
-                                               selectorState: selectorState,
-                                               isError: items.isError)
+                    CheckboxSelectorButton(internalState: internalState(isPressed: configuration.isPressed),
+                                           selectorState: selectorState,
+                                           isError: items.isError)
 
-                    OUDSCheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
-                                      items: items,
-                                      isInversed: false)
+                    CheckboxLabel(internalState: internalState(isPressed: configuration.isPressed),
+                                  items: items,
+                                  isInversed: false)
                 }
-            }.frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer,
-                    alignment: .center)
+            }
+            .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer,
+                   alignment: .center)
         }
         .padding(.all, theme.listItem.listItemSpaceInset)
         .oudsDivider(show: items.hasDivider)
@@ -65,7 +66,7 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
 
     // MARK: - Helpers
 
-    func backgroundColor(state: OUDSInternalCheckboxState) -> Color {
+    func backgroundColor(state: CheckboxInternalState) -> Color {
         switch state {
         case .enabled:
             theme.select.selectColorBgEnabled.color(for: colorScheme)
@@ -78,7 +79,7 @@ struct OUDSCheckboxLabeledStyle: ButtonStyle {
         }
     }
 
-    private func internalState(isPressed: Bool) -> OUDSInternalCheckboxState {
+    private func internalState(isPressed: Bool) -> CheckboxInternalState {
         if isReadOnly {
             return .readOnly
         }

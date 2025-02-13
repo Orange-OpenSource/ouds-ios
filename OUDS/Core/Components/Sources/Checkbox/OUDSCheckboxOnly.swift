@@ -43,21 +43,21 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an undeterminate state checkbox
-///     @Published var state: OUDSCheckbox.SelectorState  = .undeterminate
+///     @Published var state: OUDSCheckboxSelectorState  = .undeterminate
 ///
 ///     // A simple checkbox, no error, not in read only mode
-///     OUDSCheckbox(state: $state)
+///     OUDSCheckboxOnly(state: $state)
 ///
 ///     // A simple checkbox, but is an error context
-///     OUDSCheckbox(state: $state, isError: true)
+///     OUDSCheckboxOnly(state: $state, isError: true)
 ///
 ///     // A simple checkbox, but in read only mode
-///     OUDSCheckbox(state: $state, isReadOnly: true)
+///     OUDSCheckboxOnly(state: $state, isReadOnly: true)
 ///
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckbox(state: $state, isError: true).disabled(true) // fatal error
-///     OUDSCheckbox(state: $state, isReadyOnly: true).disabled(true) // fatal error
+///     OUDSCheckboxOnly(state: $state, isError: true).disabled(true) // fatal error
+///     OUDSCheckboxOnly(state: $state, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
@@ -95,6 +95,6 @@ public struct OUDSCheckboxOnly: View {
     // MARK: Body
 
     public var body: some View {
-        OUDSCheckbox(state: $selectorState, isError: isError, isReadOnly: isReadOnly)
+        Checkbox(state: $selectorState, isError: isError, isReadOnly: isReadOnly)
     }
 }
