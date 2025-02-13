@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-// MARK: Common
+// MARK: - Common
 
 "app_common_customize_label" = "Personnaliser";
 "app_common_showCode_text" = "Voir l'exemple de code du token";
@@ -38,7 +38,7 @@
 
 "app_tokens_common_viewCodeExample_label" = "Voir l'exemple de code du token";
 
-// MARK: Token: Dimension Border
+// MARK: - Token - Dimension Border
 
 "app_tokens_border_label" = "Bordure";
 "app_tokens_border_width_label" = "Largeur";
@@ -46,17 +46,17 @@
 "app_tokens_border_style_label" = "Style";
 "app_tokens_border_description_text" = "Les bordures sont utilisées pour les couleurs de contour sur les composants et aussi pour les couleurs des lignes de séparation pour des composants comme les tableaux.";
 
-// MARK: Token: Dimension Color
+// MARK: - Token - Dimension Color
 
 "app_tokens_color_label" = "Couleur";
 "app_tokens_color_description_text" = "La couleur renforce notre identité de marque et assure la cohérence à travers toutes les expériences produit. Les tokens sémantiques décrits sont ceux que vous devez utiliser lors de la création d'une application mobile.";
 
-// MARK: Token: Dimension
+// MARK: - Token - Dimension
 
 "app_tokens_dimension_label" = "Dimension";
 "app_tokens_dimension_description_text" = "La dimension fournit des tailles et des espacements standard pour assurer la cohérence visuelle à travers l'interface utilisateur.";
 
-// MARK: Token: Dimension space
+// MARK: - Token - Dimension
 
 "app_tokens_dimension_space_label" = "Espace";
 "app_tokens_dimension_space_description_text" = "L'espace fait référence aux mesures utilisées pour définir l'espacement entre les éléments de l'interface utilisateur.";
@@ -72,29 +72,29 @@
 "app_tokens_dimension_space_gapStack_label" = "Espace empilé";
 "app_tokens_dimension_space_gapStackWithIcon_label" = "Espace empilé avec icône";
 
-// MARK: Token: Dimension size
+// MARK: - Token - Dimension size
 
 "app_tokens_dimension_size_label" = "Taille";
 "app_tokens_dimension_size_description_text" = "La taille fait référence aux mesures spécifiques utilisées pour définir les dimensions des éléments de l'interface utilisateur dans le système de design.";
 "app_tokens_dimension_size_iconWith_label" = "Icône avec";
 "app_tokens_dimension_size_iconDecorative_label" = "Icône décorative";
 
-// MARK: Token: Elevation
+// MARK: - Token - Elevation
 
 "app_tokens_elevation_label" = "Élévation";
 "app_tokens_elevation_description_text" = "Les ombres sont utilisées pour donner l'impression de distance ou d'élévation entre les surfaces, ce qui ajoute de la profondeur à nos designs.";
 
-// MARK: Token: Grid
+// MARK: - Token - Grid
 
 "app_tokens_grid_label" = "Grille";
 "app_tokens_grid_description_text" = "Les grilles sont utilisées pour positionner le contenu et créer des mises en page de page cohérentes.";
 
-// MARK: Token: Opacity
+// MARK: - Token - Opacity
 
 "app_tokens_opacity_label" = "Opacité";
 "app_tokens_opacity_description_text" = "L'opacité peut aider à distinguer les éléments de premier plan des éléments d'arrière-plan, rendant le contenu plus facile à lire et les actions importantes plus visibles.";
 
-// MARK: Token: Typography
+// MARK: - Token - Typography
 
 "app_tokens_typography_label" = "Typographie";
 "app_tokens_typography_description_text" = "La typographie est notre système de polices et de styles de texte. Ils améliorent la communication et renforcent le style de la marque.";
@@ -102,6 +102,8 @@
 // MARK: - Component Screen
 
 "app_components_common_viewCodeExample_label" = "Voir l'exemple de code du composant";
+"app_component_emptyContent_text" = "Pas de contenu content";
+"app_component_emptyContent_description_text" = "Ce contenu est en cours de préparation et sera disponible très prochainement";
 "app_components_common_userText_prompt" = "Entrez un texte";
 "app_components_common_userText_label" = "Texte";
 "app_components_common_layout_label" = "Mise en page";
@@ -117,12 +119,12 @@
 "app_components_common_orientation_label" = "Orientation";
 "app_components_common_editContent_label" = "Modifier le contenu";
 
-// MARK: Components: Empty state
+// MARK: - Components - Empty state
 
 "app_components_emptyContent_text" = "Aucun contenu";
 "app_components_emptyContent_description_text" = "Ce contenu est en construction et sera disponible très bientôt.";
 
-// MARK: Components: Button
+// MARK: - Components - Button
 
 "app_components_button_label" = "Bouton";
 "app_components_button_description_text" = "Les boutons permettent aux utilisateurs de faire des choix ou d'effectuer une action. Ils ont plusieurs styles pour divers besoins.";
@@ -131,7 +133,7 @@
 "app_components_button_iconOnlyLayout_label" = "Icône uniquement";
 "app_components_button_icon_a11y" = "Icône";
 
-// MARK: Components: Link
+// MARK: - Components - Link
 
 "app_components_link_label" = "Lien";
 "app_components_link_description_text" = "Les liens dirigent les utilisateurs vers d'autres ressources ou sections, qu'elles soient internes (dans la même application) ou externes (vers un site web ou un document).";
@@ -139,15 +141,7 @@
 "app_components_link_arrowNext_label" = "Suivant";
 "app_components_link_size_label" = "Taille";
 
-// MARK: Components: Switch
-
-"app_components_switch_label" = "Interrupteur";
-"app_components_switch_description_text" = "Un interrupteur est un composant qui permet à l'utilisateur de basculer entre deux états, généralement 'activé' et 'désactivé'. Il est souvent représenté comme un bouton ou un curseur qui change de position ou de couleur pour indiquer l'état actuel. Les interrupteurs sont utilisés pour activer ou désactiver des fonctionnalités, options ou paramètres de manière intuitive et visuelle.";
-"app_components_switch_switchOnly_label" = "Interrupteur uniquement";
-"app_components_switch_labelText_text" = "Texte d'étiquette";
-"app_components_switch_helperText_text" = "Texte d'aide";
-
-// MARK: Components - Checkbox
+// MARK: - Components - Checkbox
 
 "app_components_checkbox_label" = "Case à cocher";
 "app_components_checkbox_description_text" = "Les cases à cocher permettent aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action.";
@@ -157,3 +151,11 @@
 "app_components_checkbox_helperText_label" = "Texte d'aide";
 "app_components_checkbox_selection_label" = "Sélection";
 "app_components_checkbox_layout_label" = "Mise en page";
+
+// MARK: - Components - Switch
+
+"app_components_switch_label" = "Interrupteur";
+"app_components_switch_description_text" = "Un interrupteur est un composant qui permet à l'utilisateur de basculer entre deux états, généralement 'activé' et 'désactivé'. Il est souvent représenté comme un bouton ou un curseur qui change de position ou de couleur pour indiquer l'état actuel. Les interrupteurs sont utilisés pour activer ou désactiver des fonctionnalités, options ou paramètres de manière intuitive et visuelle.";
+"app_components_switch_switchOnly_label" = "Interrupteur uniquement";
+"app_components_switch_labelText_text" = "Texte d'étiquette";
+"app_components_switch_helperText_text" = "Texte d'aide";
