@@ -118,6 +118,7 @@
 "app_components_common_onError_label" = "En cas d'erreur";
 "app_components_common_orientation_label" = "Orientation";
 "app_components_common_editContent_label" = "Modifier le contenu";
+"app_components_common_readOnly_label" = "Lecture seule";
 
 // MARK: - Components - Empty state
 
@@ -151,6 +152,8 @@
 "app_components_checkbox_helperText_label" = "Texte d'aide";
 "app_components_checkbox_selection_label" = "Sélection";
 "app_components_checkbox_layout_label" = "Mise en page";
+"app_components_checkbox_controlItem_label" = "Case à cocher avec items";
+"app_components_checkbox_controlItem_description_text" = "Les cases à cocher permettent aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action.";
 
 // MARK: - Components - Switch
 

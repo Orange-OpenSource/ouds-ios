@@ -239,23 +239,3 @@ struct CheckboxConfiguration: View {
         }
     }
 }
-
-// MARK: - Checkbox selector state extension
-
-extension OUDSCheckboxSelectorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static var allCases: [OUDSCheckboxSelectorState] = [.selected, .unselected, .undeterminate]
-
-    // No l10n, tehchnical names
-    public var description: String {
-        switch self {
-        case .selected:
-            "Selected"
-        case .unselected:
-            "Unselected"
-        case .undeterminate:
-            "Undeterminate"
-        }
-    }
-
-    var id: String { description }
-}

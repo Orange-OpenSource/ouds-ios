@@ -1,0 +1,135 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import OUDS
+import OUDSFoundations
+import OUDSTokensSemantic
+import SwiftUI
+
+/// The trailing part of the selector component, i.e. all the views without the selector, i.e. texts and images.
+/// Can be considered as a rich label for the associated selector (checkbox, radio, switch).
+struct ControlItemLabel: View {
+
+    // MARK: Stored properties
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    struct LayoutData {
+        let labelText: String
+        let helperText: String?
+        let icon: Image?
+        let isError: Bool
+        let isReadOnly: Bool
+        let hasDivider: Bool
+        let orientation: ControlItem.Orientation
+    }
+
+    let internalState: ControlItemInternalState
+    let layoutData: LayoutData
+
+    // MARK: - Body
+
+    var body: some View {
+        HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
+            if layoutData.orientation == .inverse {
+                icon()
+                texts()
+            } else {
+                texts()
+                icon()
+            }
+        }
+    }
+
+    // MARK: - Layout Items
+
+    private func texts() -> some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Spacer()
+            Text(LocalizedStringKey(layoutData.labelText))
+                .typeLabelDefaultLarge(theme)
+                .multilineTextAlignment(.leading)
+                .foregroundStyle(labelTextColor)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+            if let helperText = layoutData.helperText {
+                Text(LocalizedStringKey(helperText))
+                    .typeLabelDefaultMedium(theme)
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(helperTextColor)
+            }
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    @ViewBuilder
+    private func icon() -> some View {
+        if let icon = layoutData.icon {
+            HStack(alignment: .center, spacing: 0) {
+                icon
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundStyle(iconColor)
+                    .frame(width: theme.listItem.listItemSizeIcon,
+                           height: theme.listItem.listItemSizeIcon)
+            }
+            .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer,
+                   alignment: .center)
+        }
+    }
+
+    // MARK: - Colors
+
+    private var labelTextColor: Color {
+        if layoutData.isError {
+            switch internalState {
+            case .enabled:
+                return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
+            case .hover:
+                return theme.colors.colorActionNegativeHover.color(for: colorScheme)
+            case .pressed:
+                return theme.colors.colorActionNegativePressed.color(for: colorScheme)
+            case .readOnly, .disabled:
+                OL.fatal("A selector (checkbox, switch, radio) with a disabled or read only and an error situation has been detected, which is not allowed."
+                             + " Only non-error situation are allowed to have a disabled state.")
+            }
+        } else {
+            switch internalState {
+            case .enabled, .hover, .pressed, .readOnly:
+                return theme.colors.colorContentDefault.color(for: colorScheme)
+            case .disabled:
+                return theme.colors.colorContentDisabled.color(for: colorScheme)
+            }
+        }
+    }
+
+    private var iconColor: Color {
+        switch internalState {
+        case .enabled, .pressed, .hover, .readOnly:
+            theme.colors.colorContentDefault.color(for: colorScheme)
+        case .disabled:
+            theme.colors.colorContentDisabled.color(for: colorScheme)
+        }
+    }
+
+    private var helperTextColor: Color {
+        switch internalState {
+        case .enabled, .pressed, .hover, .readOnly:
+            theme.colors.colorContentMuted.color(for: colorScheme)
+        case .disabled:
+            theme.colors.colorContentDisabled.color(for: colorScheme)
+        }
+    }
+}

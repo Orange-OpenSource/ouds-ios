@@ -78,8 +78,7 @@ private struct CheckboxDemo: View {
                 HStack(alignment: .center) {
                     Spacer()
                     OUDSCheckboxOnly(state: $model.selectorState,
-                                     isError: model.isError && model.status == .enabled,
-                                     isReadOnly: model.status == .readOnly)
+                                     isError: model.isError && model.status == .enabled)
                     .disabled(isDisabled())
                     Spacer()
                 }

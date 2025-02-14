@@ -118,6 +118,8 @@
 "app_components_common_onError_label" = "If error";
 "app_components_common_orientation_label" = "Orientation";
 "app_components_common_editContent_label" = "Modify content";
+"app_components_common_readOnly_label" = "Read only";
+
 
 // MARK: - Components - Empty state
 
@@ -151,6 +153,9 @@
 "app_components_checkbox_helperText_label" = "Helper Text";
 "app_components_checkbox_selection_label" = "Selection";
 "app_components_checkbox_layout_label" = "Layout";
+"app_components_checkbox_controlItem_label" = "Checkbox Control Item";
+"app_components_checkbox_controlItem_description_text" = "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action.";
+
 
 // MARK: - Components - Switch
 
