@@ -41,7 +41,7 @@ struct ControlItemLabel: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
+        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
             if layoutData.orientation == .inverse {
                 icon()
                 texts()
