@@ -33,7 +33,7 @@ struct ControlItemStyle: ButtonStyle {
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
+        HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
             switch layoutData.orientation {
             case .default:
                 selector(isPressed: configuration.isPressed)

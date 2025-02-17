@@ -44,7 +44,7 @@ struct ControlItemLabel: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
+        HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
             if layoutData.orientation == .inverse {
                 icon()
                 texts()
@@ -58,8 +58,7 @@ struct ControlItemLabel: View {
     // MARK: - Layout Items
 
     private func texts() -> some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Spacer()
+        VStack(alignment: .leading) {
             Text(LocalizedStringKey(layoutData.labelText))
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
@@ -72,7 +71,6 @@ struct ControlItemLabel: View {
                     .multilineTextAlignment(.leading)
                     .foregroundStyle(helperTextColor)
             }
-            Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }

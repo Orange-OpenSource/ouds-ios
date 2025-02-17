@@ -11,6 +11,9 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
+import OUDSComponents
+import OUDSThemesOrange
 import SwiftUI
 
 struct CheckboxElements: DesignToolboxElement {
@@ -24,7 +27,7 @@ struct CheckboxElements: DesignToolboxElement {
             CheckboxItemElement(),
         ]
 
-        name = "app_components_checkbox_switchOnly_label"
+        name = "app_components_checkbox_label"
         image = Image(decorative: "il_component_checkbox").renderingMode(.template)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

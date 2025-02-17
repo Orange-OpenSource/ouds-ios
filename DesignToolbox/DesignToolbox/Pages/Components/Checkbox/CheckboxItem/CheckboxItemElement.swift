@@ -23,7 +23,7 @@ struct CheckboxItemElement: DesignToolboxElement {
         image = Image(decorative: "il_component_checkbox_controlItem").renderingMode(.template)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_checkbox_controlItem").renderingMode(.template),
+            image: nil,
             description: "app_components_checkbox_controlItem_description_text",
             illustration: AnyView(CheckboxItemPage())))
     }

@@ -24,7 +24,7 @@ extension OrangeThemeListItemComponentTokensProvider: ListItemComponentTokens {
     @objc open var listItemColorBgLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
     @objc open var listItemColorBgPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
     @objc open var listItemColorContentLoader: MultipleColorSemanticTokens { colors.colorContentDefault }
-    @objc open var listItemSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeMd }
+    @objc open var listItemSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
     @objc open var listItemSizeLoader: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeSm }
     @objc open var listItemSpaceColumnGap: SpaceSemanticToken { spaces.spaceColumnGapTall }
     @objc open var listItemSpaceInset: SpaceSemanticToken { spaces.spaceInsetMedium }
