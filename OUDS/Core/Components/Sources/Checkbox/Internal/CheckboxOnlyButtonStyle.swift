@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The *selector only*  layout for the ``OUDSCheckboxOnly`` component.
+/// The *selector only*  layout for the ``OUDSCheckbox`` component.
 struct CheckboxOnlyButtonStyle: ButtonStyle {
 
     // MARK: - Properties

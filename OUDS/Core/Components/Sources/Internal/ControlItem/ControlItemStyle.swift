@@ -15,20 +15,20 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The layout for the ``ControlItem`` component as butonStyle to compute the internal state  ``ControlItemInternalState`` used by :
+/// The layout for the ``ControlItem`` component as SwiftUI `ButtonStyle` to compute the internal state  ``ControlItemInternalState`` used by :
 /// - the selector according to ``ControlItem.SelectorType`` to apply right tokens
 /// - the label described by ``ControlItemLabel.LayoutData`` to apply right tokens on texts and icon
 struct ControlItemStyle: ButtonStyle {
 
     // MARK: Stored properties
 
+    let selectorType: ControlItem.SelectorType
+    let layoutData: ControlItemLabel.LayoutData
+
+    @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @State private var isHover: Bool = false
-
-    let selectorType: ControlItem.SelectorType
-    let layoutData: ControlItemLabel.LayoutData
 
     // MARK: Body
 
@@ -71,7 +71,7 @@ struct ControlItemStyle: ButtonStyle {
         ControlItemLabel(internalState: internalState(isPressed: isPressed), layoutData: layoutData)
     }
 
-    // MARK: Private Helpers
+    // MARK: - Helpers
 
     private var containerAssetMaxHeight: CGFloat {
         switch selectorType {

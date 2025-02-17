@@ -43,20 +43,20 @@ The library proposes layout to add in your views some checkboxes components, eve
 
 ```swift
      // A simple checkbox, with only a selector
-     OUDSCheckboxOnly(state: $state)
+     OUDSCheckbox(state: $state)
 
      // A leading checkbox with a label
-     OUDSCheckboxControlItem(state: $state, label: "Hello world")
+     OUDSCheckboxItem(state: $state, label: "Hello world")
 
      // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
      // with an inverse layout
-     OUDSCheckboxControlItem(state: $state,
-                             labelText: "We live in a fabled world",
-                             helperText: "Of dreaming boys and wide-eyed girls",
-                             icon: Image(decorative: "ic_heart"),
-                             isInversed: true,
-                             isError: true,
-                             hasDivider: true)
+     OUDSCheckboxItem(state: $state,
+                      labelText: "We live in a fabled world",
+                      helperText: "Of dreaming boys and wide-eyed girls",
+                      icon: Image(decorative: "ic_heart"),
+                      isInversed: true,
+                      isError: true,
+                      hasDivider: true)
 ```
 
 ## Customize components
@@ -139,5 +139,5 @@ The helper is available through `View`, and tokens through the provider of the t
 
 - ``OUDSButton``
 - ``OUDSLink``
-- ``OUDSCheckboxOnly``
-- ``OUDSCheckboxControlItem``
+- ``OUDSCheckbox``
+- ``OUDSCheckboxItem``

@@ -79,7 +79,7 @@ final class CheckboxControlItemV2ConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSCheckboxControlItem(state: $state, labelText: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSCheckboxItem(state: $state, labelText: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }

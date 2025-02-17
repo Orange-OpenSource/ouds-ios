@@ -73,14 +73,14 @@ private struct CheckboxControlItemV2Demo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxControlItemV2(state: $model.selectorState,
-                                  labelText: model.labelTextContent,
-                                  helperText: helperTextContent,
-                                  icon: icon,
-                                  isInversed: model.layoutOrientation == .inverse,
-                                  isError: model.isError,
-                                  isReadOnly: model.isReadOnly,
-                                  hasDivider: model.divider)
+        OUDSCheckboxItem(state: $model.selectorState,
+                         labelText: model.labelTextContent,
+                         helperText: helperTextContent,
+                         icon: icon,
+                         isInversed: model.layoutOrientation == .inverse,
+                         isError: model.isError,
+                         isReadOnly: model.isReadOnly,
+                         hasDivider: model.divider)
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .designToolboxBackground(onColoredSurface: false)

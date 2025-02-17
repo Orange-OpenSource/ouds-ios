@@ -24,7 +24,7 @@ import XCTest
 
 // MARK: - Test Cases
 
-/// Tests the UI rendering of the `OUDSCheckboxOnly` and `OUDSCheckboxControlItem` for each parameter
+/// Tests the UI rendering of the `OUDSCheckbox` and `OUDSCheckboxItem` for each parameter
 final class OUDSCheckboxUITests: XCTestCase {
 
     /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
@@ -163,8 +163,8 @@ final class OUDSCheckboxUITests: XCTestCase {
         }
     }
 
-    /// This function tests checkbox according to all parameters of the configuration available on a `OUDSCheckboxOnly`
-    /// of `OUDSCheckboxControlItem` for the given theme and color schemes and on a colored surface or not.
+    /// This function tests checkbox according to all parameters of the configuration available on a `OUDSCheckbox`
+    /// of `OUDSCheckboxItem` for the given theme and color schemes and on a colored surface or not.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
     ///    "test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<selectorState>_<disabledPatern>"
@@ -242,7 +242,7 @@ final class OUDSCheckboxUITests: XCTestCase {
 
 // MARK: - Checkbox Test
 
-/// The test object which will define the `OUDSCheckboxOnly` or `OUDSCheckboxControlItem`object to test
+/// The test object which will define the `OUDSCheckbox` or `OUDSCheckboxItem`object to test
 private struct CheckboxTest: View {
 
     enum Layout { // Checkbox.Layout is private, not accessible here
@@ -295,29 +295,29 @@ private struct CheckboxTest: View {
     func checkbox() -> some View {
         switch layout {
         case let .selectorOnly(isError, isReadOnly):
-            OUDSCheckboxOnly(state: .constant(selectorState),
-                             isError: isError,
-                             isReadOnly: isReadOnly)
+            OUDSCheckbox(state: .constant(selectorState),
+                         isError: isError,
+                         isReadOnly: isReadOnly)
             .disabled(isDisabled)
         case let .default(labelText, helperText, icon, isError, hasDivider, isReadOnly):
-            OUDSCheckboxControlItem(state: .constant(selectorState),
-                                    labelText: labelText,
-                                    helperText: helperText,
-                                    icon: icon,
-                                    isInversed: false,
-                                    isError: isError,
-                                    isReadOnly: isReadOnly,
-                                    hasDivider: hasDivider)
+            OUDSCheckboxItem(state: .constant(selectorState),
+                             labelText: labelText,
+                             helperText: helperText,
+                             icon: icon,
+                             isInversed: false,
+                             isError: isError,
+                             isReadOnly: isReadOnly,
+                             hasDivider: hasDivider)
             .disabled(isDisabled)
         case let .inverse(labelText, helperText, icon, isError, hasDivider, isReadOnly):
-            OUDSCheckboxControlItem(state: .constant(selectorState),
-                                    labelText: labelText,
-                                    helperText: helperText,
-                                    icon: icon,
-                                    isInversed: true,
-                                    isError: isError,
-                                    isReadOnly: isReadOnly,
-                                    hasDivider: hasDivider)
+            OUDSCheckboxItem(state: .constant(selectorState),
+                             labelText: labelText,
+                             helperText: helperText,
+                             icon: icon,
+                             isInversed: true,
+                             isError: isError,
+                             isReadOnly: isReadOnly,
+                             hasDivider: hasDivider)
             .disabled(isDisabled)
         }
     }

@@ -14,11 +14,9 @@
 import OUDSFoundations
 import SwiftUI
 
-/// ## Design documentation
-///
-/// See [#TODO]
-///
-/// - Since: 0.11.0
+/// Modelizes the layout for a checkbox, radio buton or switch with additional components like labels, icons and dividers.
+/// This `View` is not exposed publicly as it is not possible to define such variable / customizable component on *Figma* side.
+/// This internal component displays the selector and defines the layout as a SwiftUI button.
 struct ControlItem: View {
 
     // MARK: Stored Properties
@@ -26,9 +24,11 @@ struct ControlItem: View {
     private let selectorType: SelectorType
     private let layoutData: ControlItemLabel.LayoutData
 
+    // MARK: Enums
+
     /// Used to define the selector to be displayed
     enum SelectorType {
-        /// Selector is a switch (i.e SwiftUI.Toggle)
+        /// Selector is a switch (i.e `SwiftUI.Toggle`)
         case `switch`(Binding<Bool>)
         /// Selector is a radio button
         case radioButton(Binding<Bool>)
@@ -38,25 +38,25 @@ struct ControlItem: View {
 
     /// Used to define the orientation of the Layout
     enum Orientation {
-        ///  Selector in leading position, icon in trailing position, like LTR mode.
+        /// Selector in leading position, icon in trailing position, like LTR mode.
         case `default`
         /// Icon in leading position, selector in trailing position, like RTL mode
         case inverse
     }
 
-    // MARK: Initializers
+    // MARK: Initializer
 
-    /// Creates a switch with label and optional helper text, icon, divider.
+    /// Creates a control item with label and optional helper text, icon, divider.
     ///
     /// - Parameters:
     ///   - selectorType: The type of selector the `ContolItem` should display.
     ///   - labelText: The main label text of the switch.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
-    ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - isReadOnly: `true` if component is in read only mode, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    ///   - orientation: Specify the orientation of the layout. If Default the switch at the leading position, if inverse it is on trailing.
+    ///   - orientation: Specify the orientation of the layout. If `default` the selector is at the leading position, if `inverse` it is on trailing.
     init(selectorType: SelectorType,
          labelText: String,
          helperText: String? = nil,
@@ -66,7 +66,13 @@ struct ControlItem: View {
          divider: Bool = false,
          orientation: Self.Orientation = .default) {
         self.selectorType = selectorType
-        self.layoutData = .init(labelText: labelText, helperText: helperText, icon: icon, isError: onError, isReadOnly: isReadOnly, hasDivider: divider, orientation: orientation)
+        self.layoutData = .init(labelText: labelText,
+                                helperText: helperText,
+                                icon: icon,
+                                isError: onError,
+                                isReadOnly: isReadOnly,
+                                hasDivider: divider,
+                                orientation: orientation)
     }
 
     // MARK: Body

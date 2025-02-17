@@ -17,14 +17,14 @@ import SwiftUI
 // MARK: - OUDS Checkbox
 
 /// The ``OUDSCheckbox`` proposes layout to add in your views a lonely checkbox, without labels, texts nor icons checkboxes components
-/// If you want to use a checkbox with additional texts and icon, prefer instead ``OUDSCheckboxControlItem``.
+/// If you want to use a checkbox with additional texts and icon, prefer instead ``OUDSCheckboxItem``.
 ///
 /// ## Selector states
 ///
 /// The checkbox selector has three available states:
 /// - **selected**: the checkbox is filled with a tick, the user has made the action to select the checkbox
 /// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
-/// - **undeterminate**: mike a prefilled or preticked checkbox, the user did not do anything on it yet
+/// - **undeterminate**: like a prefilled or preticked checkbox, the user did not do anything on it yet
 ///
 /// ## Particular cases
 ///
@@ -58,27 +58,27 @@ import SwiftUI
 ///
 /// See [unified-design-system.orange.com/472794e18/p/23f1c1-checkbox](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
 ///
-/// - Since: 0.11.0
+/// - Since: 0.12.0
 public struct OUDSCheckbox: View {
 
     // MARK: - Properties
 
+    private let isError: Bool
+
     @Binding var selectorState: OUDSCheckboxSelectorState
     @Environment(\.isEnabled) private var isEnabled
-    private let isError: Bool
 
     // MARK: - Initializers
 
-    /// Creates a checkbox with no label.
+    /// Creates a checkbox with only a selector.
     ///
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
     ///    - state: A binding to a property that determines wether the selector is ticked, unticked or preticked.
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
-    public init(
-        state: Binding<OUDSCheckboxSelectorState>,
-        isError: Bool = false) {
+    public init(state: Binding<OUDSCheckboxSelectorState>,
+                isError: Bool = false) {
             self._selectorState = state
             self.isError = isError
         }
@@ -94,8 +94,7 @@ public struct OUDSCheckbox: View {
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state
-    /// - Parameters:
-    ///    - isEnabled: True if component is enabled, false otherwise
+    /// - Parameter isEnabled: True if component is enabled, false otherwise
     private func a11yLabel(isEnabled: Bool) -> String {
         let selectorDescription: String = selectorState.a11yDescription.localized()
         let stateDescription = isEnabled ?

@@ -26,6 +26,6 @@ enum ControlItemInternalState {
     /// The user cannot interart with the component.
     case disabled
 
-    /// The component is not disabled but user cannoit interact with it still. Almost enabled.
-    case readOnly
+    /// The component is not disabled but user cannot interact with it still. Almost enabled.
+    case readOnly // (╯°□°）╯︵ ┻━┻
 }

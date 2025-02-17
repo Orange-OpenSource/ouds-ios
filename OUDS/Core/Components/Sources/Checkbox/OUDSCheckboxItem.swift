@@ -14,9 +14,9 @@
 import OUDSFoundations
 import SwiftUI
 
-// MARK: - OUDS Checkbox
+// MARK: - OUDS Checkbox Item
 
-/// The ``OUDSCheckboxControlItem`` proposes layouts to add in your views some checkboxes components.
+/// The ``OUDSCheckboxItem`` proposes layouts to add in your views some checkboxes components.
 ///
 /// ## Layouts
 ///
@@ -25,7 +25,7 @@ import SwiftUI
 /// - **default**: the component has a leading selector, a label and optional helper texts, and an optional trailing decorative icon
 /// - **inverse**: like the *default* layout but with a trailing checkbox seelctor and a leading optional image
 ///
-/// If you want to use a checkbox with only the selector, prefer instead ``OUDSCheckboxOnly``.
+/// If you want to use a checkbox with only the selector, prefer instead ``OUDSCheckbox``.
 ///
 /// ## Selector states
 ///
@@ -36,9 +36,9 @@ import SwiftUI
 ///
 /// ## Particular cases
 ///
-/// An ``OUDSCheckboxControlItem`` can be related to an error situation, for example troubles for a formular.
+/// An ``OUDSCheckboxItem`` can be related to an error situation, for example troubles for a formular.
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
-/// In addition, the ``OUDSCheckboxControlItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
+/// In addition, the ``OUDSCheckboxItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 ///
 /// ## Forbidden by design
@@ -55,51 +55,51 @@ import SwiftUI
 ///
 ///     // A leading checkbox with a label.
 ///     // The default layout will be used here.
-///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world")
+///     OUDSCheckboxItem(state: $state, labelText: "Hello world")
 ///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world", isReadOnly: true)
+///     OUDSCheckboxItem(state: $state, labelText: "Hello world", isReadOnly: true)
 ///
 ///     // A leading checkbox with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSCheckboxControlItem(state: $state, labelText: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     OUDSCheckboxItem(state: $state, labelText: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, an helper text and an icon.
 ///     // The inverse layout will be used here.
-///     OUDSCheckboxControlItem(state: $state,
-///                             labelText: "We live in a fabled world",
-///                             helperText: "Of dreaming boys and wide-eyed girls",
-///                             isInversed: true,
-///                             icon: Image(decorative: "ic_heart"))
+///     OUDSCheckboxItem(state: $state,
+///                      labelText: "We live in a fabled world",
+///                      helperText: "Of dreaming boys and wide-eyed girls",
+///                      isInversed: true,
+///                      icon: Image(decorative: "ic_heart"))
 ///
 ///     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
-///     OUDSCheckboxControlItem(state: $state,
-///                             labelText: "Rescue from this world!",
-///                             helperText: "Put your hand in mine",
-///                             icon: Image(decorative: "ic_heart"),
-///                             isInversed: true,
-///                             isError: true,
-///                             divider: true)
+///     OUDSCheckboxItem(state: $state,
+///                      labelText: "Rescue from this world!",
+///                      helperText: "Put your hand in mine",
+///                      icon: Image(decorative: "ic_heart"),
+///                      isInversed: true,
+///                      isError: true,
+///                      divider: true)
 ///
 ///     // A leading checkbox with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world")
+///     OUDSCheckboxItem(state: $state, labelText: "Hello world")
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world", isError: true).disabled(true) // fatal error
-///     OUDSCheckboxControlItem(state: $state, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSCheckboxItem(state: $state, labelText: "Hello world", isError: true).disabled(true) // fatal error
+///     OUDSCheckboxItem(state: $state, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
 ///
 /// See [unified-design-system.orange.com/472794e18/p/23f1c1-checkbox](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
 ///
-/// - Since: 0.11.0
-public struct OUDSCheckboxControlItemV2: View {
+/// - Since: 0.12.0
+public struct OUDSCheckboxItem: View {
 
     // MARK: - Properties
 

@@ -102,7 +102,7 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to badge components like `OUDSBadge`
     public let badge: AllBadgeComponentTokensProvider
 
-    /// All components tokens related to radio button and checbkxoes components like `OUDSCheckboxOnly` and `OUDSCheckboxControlItem`
+    /// All components tokens related to radio button and checbkxoes components like `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkRadio: AllCheckRadioComponentTokensProvider
 
     // NOTE: Add new component tokens provider here

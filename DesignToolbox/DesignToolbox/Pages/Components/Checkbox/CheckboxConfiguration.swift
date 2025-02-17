@@ -121,13 +121,13 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         if layout == .selectorOnly {
             code =
               """
-            OUDSCheckboxOnly(state: $state\(isErrorPattern))
+            OUDSCheckbox(state: $state\(isErrorPattern))
             \(disableCode))
             """
         } else {
             code =
               """
-            OUDSCheckboxControlItem(state: $state, labelText: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+                        OUDSCheckbox(state: $state, labelText: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
             \(disableCode))
             """
         }

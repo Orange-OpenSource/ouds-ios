@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Checkbox Selector Button Style
+// MARK: - Checkbox Selector Style
 
 /// A `ViewModier` to apply to the ``CheckboxSelector`` component.
 /// It will define the look and feel of the selector depending to the ``ControlItemInternalState``,

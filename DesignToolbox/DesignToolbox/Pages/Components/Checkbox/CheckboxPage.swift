@@ -77,20 +77,20 @@ private struct CheckboxDemo: View {
             if model.layout == .selectorOnly {
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSCheckboxOnly(state: $model.selectorState,
-                                     isError: model.isError && model.status == .enabled)
+                    OUDSCheckbox(state: $model.selectorState,
+                                 isError: model.isError && model.status == .enabled)
                     .disabled(isDisabled())
                     Spacer()
                 }
             } else {
-                OUDSCheckboxControlItem(state: $model.selectorState,
-                                        labelText: model.labelTextContent,
-                                        helperText: helperTextContent,
-                                        icon: icon,
-                                        isInversed: model.layout == .inverse,
-                                        isError: model.isError && model.status == .enabled,
-                                        isReadOnly: model.status == .readOnly,
-                                        hasDivider: model.divider)
+                OUDSCheckboxItem(state: $model.selectorState,
+                                 labelText: model.labelTextContent,
+                                 helperText: helperTextContent,
+                                 icon: icon,
+                                 isInversed: model.layout == .inverse,
+                                 isError: model.isError && model.status == .enabled,
+                                 isReadOnly: model.status == .readOnly,
+                                 hasDivider: model.divider)
                 .disabled(isDisabled())
             }
         }

@@ -20,7 +20,7 @@ import OUDSTokensSemantic
 // TODO: #264 - Update doc with other semantic tokens (borders, colors)
 
 /// A class which wraps all **component  tokens of check radio** for *radio button* and *checkboxes* objects
-/// like `OUDSCheckboxOnly` and `OUDSCheckboxControlItem`.
+/// like `OUDSCheckbox` and `OUDSCheckboxItem`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
 /// This provider should be integrated as a `AllCheckRadioComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
@@ -84,7 +84,7 @@ open class OrangeThemeCheckRadioComponentTokensProvider: AllCheckRadioComponentT
     /// Provider of opacity semantic tokens to use for check / radio opacities
     public let opacities: AllOpacitySemanticTokensProvider
 
-    /// Defines a provider of component tokens dedicated to `OUDSCheckboxOnly` and `OUDSCheckboxControlItem`
+    /// Defines a provider of component tokens dedicated to `OUDSCheckbox` and `OUDSCheckboxItem`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens
     ///    - borders: Provider for border semantic tokens
