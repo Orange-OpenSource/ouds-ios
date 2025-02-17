@@ -39,12 +39,12 @@ extension GridRawTokens {
     public static let gridMargin1100: GridRawToken = DimensionRawTokens.dimensionBase * 14 // 56
     public static let gridMargin1700: GridRawToken = DimensionRawTokens.dimensionBase * 20 // 80
     public static let gridMargin2500: GridRawToken = DimensionRawTokens.dimensionBase * 28 // 112
+    public static let gridMaxWidthRegular: GridRawToken = 1336
     public static let gridMaxWidthCompact: GridRawToken = 852
     public static let gridMaxWidthExtraCompact: GridRawToken = 389
-    public static let gridMaxWidthRegular: GridRawToken = 1336
+    public static let gridMinWidthRegular: GridRawToken = 736
     public static let gridMinWidthCompact: GridRawToken = 390
     public static let gridMinWidthExtraCompact: GridRawToken = 320
-    public static let gridMinWidthRegular: GridRawToken = 736
 }
 
 // swiftlint:enable missing_docs

@@ -29,10 +29,10 @@ extension BorderRawTokens {
     public static let borderRadius600: BorderRadiusRawToken = borderBase * 6 // 24
     public static let borderRadius800: BorderRadiusRawToken = borderBase * 8 // 32
     public static let borderRadius9999: BorderRadiusRawToken = 2000
-    public static let borderStyleDashed: BorderStyleRawToken = "dashed"
-    public static let borderStyleDotted: BorderStyleRawToken = "dotted"
-    public static let borderStyleNone: BorderStyleRawToken = "none"
-    public static let borderStyleSolid: BorderStyleRawToken = "solid"
+    public static let borderStyleNone: BorderStyleRawToken = none
+    public static let borderStyleDotted: BorderStyleRawToken = dotted
+    public static let borderStyleDashed: BorderStyleRawToken = dashed
+    public static let borderStyleSolid: BorderStyleRawToken = solid
     public static let borderWidth0: BorderWidthRawToken = borderBase * 0 // 0
     public static let borderWidth25: BorderWidthRawToken = borderBase * 0.25 // 1
     public static let borderWidth50: BorderWidthRawToken = borderBase * 0.5 // 2

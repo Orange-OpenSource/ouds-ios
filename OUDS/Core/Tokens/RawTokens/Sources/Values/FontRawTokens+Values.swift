@@ -14,8 +14,8 @@
 // swiftlint:disable missing_docs
 
 extension FontRawTokens {
-    public static let fontFamilyMonospaceMenlo: FontFamilyRawToken = "Menlo"
-    public static let fontFamilySystemSfPro: FontFamilyRawToken = "SF Pro"
+    public static let fontFamilyMonospaceMenlo: FontFamilyRawToken = Menlo
+    public static let fontFamilySystemSfPro: FontFamilyRawToken = SF Pro
     public static let fontLetterSpacing150: FontLetterSpacingRawToken = 0.18
     public static let fontLetterSpacing175: FontLetterSpacingRawToken = 0.19
     public static let fontLetterSpacing200: FontLetterSpacingRawToken = 0.17
