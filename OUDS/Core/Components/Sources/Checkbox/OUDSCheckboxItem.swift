@@ -103,9 +103,10 @@ public struct OUDSCheckboxItem: View {
 
     // MARK: - Properties
 
-    @Environment(\.isEnabled) private var isEnabled
-    @Binding private var selectorState: OUDSCheckboxSelectorState
     private let layoutData: ControlItemLabel.LayoutData
+    @Binding private var selectorState: OUDSCheckboxSelectorState
+
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Initializers
 

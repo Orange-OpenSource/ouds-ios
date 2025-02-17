@@ -14,10 +14,10 @@
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Checkbox Configuration Model
+// MARK: - Checkbox Item Configuration Model
 
-/// The model shared between `CheckboxConfiguration` view and `CheckboxPage` view.
-final class CheckboxControlItemV2ConfigurationModel: ComponentConfiguration {
+/// The model shared between `CheckboxItemConfiguration` view and `CheckboxItemPage` view.
+final class CheckboxItemConfigurationModel: ComponentConfiguration {
 
     // MARK: - Properties
 
@@ -113,11 +113,11 @@ final class CheckboxControlItemV2ConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - Checkbox Configuration View
+// MARK: - Checkbox Item Configuration View
 
-struct CheckboxControlItemV2Configuration: View {
+struct CheckboxItemConfiguration: View {
 
-    @ObservedObject var model: CheckboxControlItemV2ConfigurationModel
+    @ObservedObject var model: CheckboxItemConfigurationModel
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -174,7 +174,10 @@ struct CheckboxControlItemV2Configuration: View {
     }
 }
 
-enum DesignToolboxLayoutOrientation: CaseIterable, CustomStringConvertible { // is not accessible
+// MARK: - Design Toolbox Layout Orientation
+
+// ControlItem layout orientation is not accessible
+enum DesignToolboxLayoutOrientation: CaseIterable, CustomStringConvertible {
     case `default`
     case inverse
 
@@ -191,7 +194,7 @@ enum DesignToolboxLayoutOrientation: CaseIterable, CustomStringConvertible { // 
     var id: String { description }
 }
 
-// MARK: - Checkbox selector state extension
+// MARK: - OUDS Checkbox Selector State extension
 
 extension OUDSCheckboxSelectorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
     nonisolated(unsafe) public static var allCases: [OUDSCheckboxSelectorState] = [.selected, .unselected, .undeterminate]

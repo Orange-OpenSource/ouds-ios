@@ -15,14 +15,14 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Checkbox page
+// MARK: - Checkbox Page
 
-struct CheckboxOnlyV2Page: View {
+struct CheckboxPage: View {
 
-    @StateObject private var configuration: CheckboxOnlyV2ConfigurationModel
+    @StateObject private var configuration: CheckboxConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: CheckboxOnlyV2ConfigurationModel())
+        _configuration = StateObject(wrappedValue: CheckboxConfigurationModel())
     }
 
     var body: some View {
@@ -35,31 +35,31 @@ struct CheckboxOnlyV2Page: View {
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxOnlyV2ConfigurationModel {
-            CheckboxOnlyV2Illustration(model: model)
+        if let model = configuration as? CheckboxConfigurationModel {
+            CheckboxIllustration(model: model)
         }
     }
 
     @ViewBuilder
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxOnlyV2ConfigurationModel {
-            CheckboxOnlyV2Configuration(model: model)
+        if let model = configuration as? CheckboxConfigurationModel {
+            CheckboxConfiguration(model: model)
         }
     }
 }
 
 // MARK: - Checkbox Illustration
 
-struct CheckboxOnlyV2Illustration: View {
+struct CheckboxIllustration: View {
 
-    let model: CheckboxOnlyV2ConfigurationModel
+    let model: CheckboxConfigurationModel
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .center) {
             // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            CheckboxOnlyV2Demo(model: model)
-            CheckboxOnlyV2Demo(model: model)
+            CheckboxDemo(model: model)
+            CheckboxDemo(model: model)
                 .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
@@ -67,9 +67,9 @@ struct CheckboxOnlyV2Illustration: View {
 
 // MARK: - Checkbox Demo
 
-private struct CheckboxOnlyV2Demo: View {
+private struct CheckboxDemo: View {
 
-    @ObservedObject var model: CheckboxOnlyV2ConfigurationModel
+    @ObservedObject var model: CheckboxConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {

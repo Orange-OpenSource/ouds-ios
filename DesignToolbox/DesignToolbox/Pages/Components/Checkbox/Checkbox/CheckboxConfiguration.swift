@@ -17,7 +17,7 @@ import SwiftUI
 // MARK: - Checkbox Configuration Model
 
 /// The model shared between `CheckboxConfiguration` view and `CheckboxPage` view.
-final class CheckboxOnlyV2ConfigurationModel: ComponentConfiguration {
+final class CheckboxConfigurationModel: ComponentConfiguration {
 
     // MARK: - Properties
 
@@ -47,7 +47,7 @@ final class CheckboxOnlyV2ConfigurationModel: ComponentConfiguration {
 
     override func updateCode() {
         code =
-            """
+          """
           OUDSCheckbox(state: $state\(isErrorPattern))
           \(disableCode)
           """
@@ -68,9 +68,9 @@ final class CheckboxOnlyV2ConfigurationModel: ComponentConfiguration {
 
 // MARK: - Checkbox Configuration View
 
-struct CheckboxOnlyV2Configuration: View {
+struct CheckboxConfiguration: View {
 
-    @ObservedObject var model: CheckboxOnlyV2ConfigurationModel
+    @ObservedObject var model: CheckboxConfigurationModel
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -95,25 +95,3 @@ struct CheckboxOnlyV2Configuration: View {
         }
     }
 }
-
-// MARK: - Checkbox selector state extension
-
-// TODO: Add whe remove from Checkbox
-
-// extension OUDSCheckboxSelectorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-//    nonisolated(unsafe) public static var allCases: [OUDSCheckboxSelectorState] = [.selected, .unselected, .undeterminate]
-//
-//    // No l10n, tehchnical names
-//    public var description: String {
-//        switch self {
-//        case .selected:
-//            "Selected"
-//        case .unselected:
-//            "Unselected"
-//        case .undeterminate:
-//            "Undeterminate"
-//        }
-//    }
-//
-//    var id: String { description }
-// }

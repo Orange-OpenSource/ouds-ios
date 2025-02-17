@@ -296,8 +296,7 @@ private struct CheckboxTest: View {
         switch layout {
         case let .selectorOnly(isError, isReadOnly):
             OUDSCheckbox(state: .constant(selectorState),
-                         isError: isError,
-                         isReadOnly: isReadOnly)
+                         isError: isError)
             .disabled(isDisabled)
         case let .default(labelText, helperText, icon, isError, hasDivider, isReadOnly):
             OUDSCheckboxItem(state: .constant(selectorState),

@@ -15,14 +15,14 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Checkbox page
+// MARK: - Checkbox Item Page
 
-struct CheckboxControlItemV2Page: View {
+struct CheckboxItemPage: View {
 
-    @StateObject private var configuration: CheckboxControlItemV2ConfigurationModel
+    @StateObject private var configuration: CheckboxItemConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: CheckboxControlItemV2ConfigurationModel())
+        _configuration = StateObject(wrappedValue: CheckboxItemConfigurationModel())
     }
 
     var body: some View {
@@ -35,41 +35,41 @@ struct CheckboxControlItemV2Page: View {
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxControlItemV2ConfigurationModel {
-            CheckboxControlItemV2Illustration(model: model)
+        if let model = configuration as? CheckboxItemConfigurationModel {
+            CheckboxItemIllustration(model: model)
         }
     }
 
     @ViewBuilder
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxControlItemV2ConfigurationModel {
-            CheckboxControlItemV2Configuration(model: model)
+        if let model = configuration as? CheckboxItemConfigurationModel {
+            CheckboxItemConfiguration(model: model)
         }
     }
 }
 
-// MARK: - Checkbox Illustration
+// MARK: - Checkbox Item Illustration
 
-struct CheckboxControlItemV2Illustration: View {
+private struct CheckboxItemIllustration: View {
 
-    let model: CheckboxControlItemV2ConfigurationModel
+    let model: CheckboxItemConfigurationModel
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .center) {
             // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            CheckboxControlItemV2Demo(model: model)
-            CheckboxControlItemV2Demo(model: model)
+            CheckboxItemDemo(model: model)
+            CheckboxItemDemo(model: model)
                 .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }
 
-// MARK: - Checkbox Demo
+// MARK: - Checkbox Item Demo
 
-private struct CheckboxControlItemV2Demo: View {
+private struct CheckboxItemDemo: View {
 
-    @ObservedObject var model: CheckboxControlItemV2ConfigurationModel
+    @ObservedObject var model: CheckboxItemConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {

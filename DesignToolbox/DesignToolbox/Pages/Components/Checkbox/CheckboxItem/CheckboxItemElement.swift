@@ -13,7 +13,7 @@
 
 import SwiftUI
 
-struct CheckboxControlItemV2Element: DesignToolboxElement {
+struct CheckboxItemElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
@@ -25,6 +25,6 @@ struct CheckboxControlItemV2Element: DesignToolboxElement {
             name: name,
             image: Image(decorative: "il_component_checkbox_controlItem").renderingMode(.template),
             description: "app_components_checkbox_controlItem_description_text",
-            illustration: AnyView(CheckboxControlItemV2Page())))
+            illustration: AnyView(CheckboxItemPage())))
     }
 }
