@@ -55,9 +55,11 @@ struct ControlItemStyle: ButtonStyle {
         HStack(alignment: .center, spacing: 0) {
             switch selectorType {
             case .switch:
+                // TODO: #405 - Add switch selector
                 Text("TODO: Add switch selector here")
 //                OUDSSwitchSelector(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
             case .radioButton:
+                // TODO: #266 - Add radio selector
                 Text("TODO: Add radio selector here")
 //                OUDSRadioButtonSelector(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
             case .checkBox(let binding):
@@ -76,7 +78,7 @@ struct ControlItemStyle: ButtonStyle {
     private var containerAssetMaxHeight: CGFloat {
         switch selectorType {
         case .switch:
-            // TODO: Adjust for switch
+            // TODO: #405 - Adjust for switch
             theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer
         case .radioButton, .checkBox:
             theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer
