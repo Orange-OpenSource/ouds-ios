@@ -17,7 +17,7 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 
 extension OrangeThemeSkeletonComponentTokensProvider: SkeletonComponentTokens {
-    @objc open var skeletonColorBg: MultipleColorSemanticTokens { colors.colorOpacityLowest }
     @objc open var skeletonColorGradientMiddle: MultipleColorSemanticTokens { colors.colorOpacityLower }
     @objc open var skeletonColorGradientStartEnd: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc open var skeletonColorBg: MultipleColorSemanticTokens { colors.colorOpacityLowest }
 }

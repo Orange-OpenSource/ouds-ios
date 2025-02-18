@@ -19,6 +19,7 @@ import OUDSTokensSemantic
 extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
     @objc open var chipSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
+<<<<<<< HEAD
     @objc open var chipBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusTall }
     @objc open var chipBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
     @objc open var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
@@ -31,21 +32,38 @@ extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipColorBorderEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     @objc open var chipColorBorderHover: MultipleColorSemanticTokens { colors.colorActionHover }
     @objc open var chipColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+=======
+    @objc open var chipSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var chipBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
+    @objc open var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc open var chipBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc open var chipBorderRadiusPill: BorderRadiusSemanticToken { borders.borderRadiusPill }
+    @objc open var chipColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    @objc open var chipColorContentHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    @objc open var chipColorContentPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc open var chipColorContentDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+    @objc open var chipColorContentFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
+    @objc open var chipColorBgEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc open var chipColorBgHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc open var chipColorBgPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc open var chipColorBgDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc open var chipColorBgFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
+    @objc open var chipColorBorderEnabled: MultipleColorSemanticTokens { colors.colorBorderDefault }
+    @objc open var chipColorBorderHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    @objc open var chipColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc open var chipColorBorderDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+>>>>>>> 4505fe428 (refactor(🤖): partial integration of tokens version 0.6.0 (#458))
     @objc open var chipColorBorderSelected: MultipleColorSemanticTokens { colors.colorActionSelected }
-    @objc open var chipColorContentDisabled: MultipleColorSemanticTokens { colors.colorContentDisabled }
-    @objc open var chipColorContentEnabled: MultipleColorSemanticTokens { colors.colorContentDefault }
-    @objc open var chipColorContentFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
-    @objc open var chipColorContentHover: MultipleColorSemanticTokens { colors.colorContentDefault }
-    @objc open var chipColorContentPressed: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var chipColorBorderFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     @objc open var chipSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
-    @objc open var chipSpaceColumnGapColumnGap: SpaceSemanticToken { spaces.spaceColumnGapShorter }
-    @objc open var chipSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMedium }
-    @objc open var chipSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    @objc open var chipSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
-    @objc open var chipSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    @objc open var chipSpacePaddingInlineLabelStart: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    @objc open var chipSpacePaddingInlineLabelEnd: SpaceSemanticToken { spaces.spacePaddingInlineTall }
     @objc open var chipSpacePaddingInlineIconOnly: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
     @objc open var chipSpacePaddingInlineIconStart: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
-    @objc open var chipSpacePaddingInlineLabelEnd: SpaceSemanticToken { spaces.spacePaddingInlineTall }
-    @objc open var chipSpacePaddingInlineLabelStart: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    @objc open var chipSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+    @objc open var chipSpacePaddingInlineIconNone: SpaceSemanticToken { spaces.spacePaddingInlineTall }
+    @objc open var chipSpaceInsetIconOnly: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var chipSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
+    @objc open var chipSpaceColumnGapColumnGap: SpaceSemanticToken { spaces.spaceColumnGapShorter }
     @objc open var chipSpacePaddingStackPaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockShorter }
 }

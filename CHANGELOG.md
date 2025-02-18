@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [DesignToolbox] French support
 - [Library] Checkbox component ([#264](https://github.com/Orange-OpenSource/ouds-ios/issues/264))
+- [Library] `ControlItem` component tokens (tokens library v0.6.0)
+- [Tool] Upload the IPA of DesignToolbox to the publication store ([#451](https://github.com/Orange-OpenSource/ouds-ios/issues/451))
 - [Tool] Add with a script the token library version in documentation and Design Toolbox ([#425](https://github.com/Orange-OpenSource/ouds-ios/issues/425))
 - [DesignToolbox] Add text field in component configuration to customize text ([#436](https://github.com/Orange-OpenSource/ouds-ios/issues/436))
 - [Library] Link component ([#400](https://github.com/Orange-OpenSource/ouds-ios/issues/400))
@@ -17,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - [Library] Checkbox and radio button component tokens (tokens library v0.5.0)
+- [Library] `Badge`, `Breadcrumb`, `BulletList`, `Button`, `Checkbox`, `InputText`, `Link`, `Skeleton`, `Switch` component tokens (tokens library v0.6.0)
 
 ## [0.10.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.9.0...0.10.0) - 2025-01-30
 
