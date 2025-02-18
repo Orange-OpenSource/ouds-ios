@@ -143,10 +143,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -175,10 +175,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -207,10 +207,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -239,10 +239,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -271,10 +271,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -303,10 +303,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -335,10 +335,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -367,10 +367,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -399,10 +399,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -431,10 +431,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 
@@ -463,10 +463,10 @@ final class OUDSTokensColorUITests: XCTestCase {
             let name = color.rawValue
 
             // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-            assertSnapshot(of: hostingVC,
-                           as: .image(precision: 0.5, perceptualPrecision: 0.5, traits: UITraitCollection(userInterfaceStyle: interfaceStyle)),
-                           named: name,
-                           testName: testName)
+            assertIllustration(illustration,
+                               on: interfaceStyle,
+                               named: name,
+                               testName: testName)
         }
     }
 }
