@@ -690,79 +690,15 @@
 		51952A792D3FA1260068B807 /* Tokens */ = {
 			isa = PBXGroup;
 			children = (
-				51952A8D2D3FA23F0068B807 /* OUDSTokensOpacityUITests */,
-				51952A8A2D3FA2210068B807 /* OUDSTokensFontUITests */,
-				51952A872D3FA1FA0068B807 /* OUDSTokensElevationUITests */,
-				51952A802D3FA1920068B807 /* OUDSTokensDimensionUITests */,
-				51952A7D2D3FA1680068B807 /* OUDSTokensColorUITests */,
-				51952A7A2D3FA1370068B807 /* OUDSTokensBorderUITests */,
-			);
-			path = Tokens;
-			sourceTree = "<group>";
-		};
-		51952A7A2D3FA1370068B807 /* OUDSTokensBorderUITests */ = {
-			isa = PBXGroup;
-			children = (
-				51952A7B2D3FA1490068B807 /* OUDSTokensBorderUITests.swift */,
-			);
-			path = OUDSTokensBorderUITests;
-			sourceTree = "<group>";
-		};
-		51952A7D2D3FA1680068B807 /* OUDSTokensColorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				51952A7E2D3FA1770068B807 /* OUDSTokensColorUITests.swift */,
-			);
-			path = OUDSTokensColorUITests;
-			sourceTree = "<group>";
-		};
-		51952A802D3FA1920068B807 /* OUDSTokensDimensionUITests */ = {
-			isa = PBXGroup;
-			children = (
-				51952A842D3FA1B80068B807 /* Space */,
-				51952A812D3FA19A0068B807 /* Size */,
-			);
-			path = OUDSTokensDimensionUITests;
-			sourceTree = "<group>";
-		};
-		51952A812D3FA19A0068B807 /* Size */ = {
-			isa = PBXGroup;
-			children = (
-				51952A822D3FA1A70068B807 /* OUDSTokensSizeUITests.swift */,
-			);
-			path = Size;
-			sourceTree = "<group>";
-		};
-		51952A842D3FA1B80068B807 /* Space */ = {
-			isa = PBXGroup;
-			children = (
-				51952A852D3FA1D60068B807 /* OUDSTokensSpaceUITests.swift */,
-			);
-			path = Space;
-			sourceTree = "<group>";
-		};
-		51952A872D3FA1FA0068B807 /* OUDSTokensElevationUITests */ = {
-			isa = PBXGroup;
-			children = (
 				51952A882D3FA2060068B807 /* OUDSTokensElevationUITests.swift */,
-			);
-			path = OUDSTokensElevationUITests;
-			sourceTree = "<group>";
-		};
-		51952A8A2D3FA2210068B807 /* OUDSTokensFontUITests */ = {
-			isa = PBXGroup;
-			children = (
+				51952A822D3FA1A70068B807 /* OUDSTokensSizeUITests.swift */,
+				51952A852D3FA1D60068B807 /* OUDSTokensSpaceUITests.swift */,
+				51952A7B2D3FA1490068B807 /* OUDSTokensBorderUITests.swift */,
+				51952A8E2D3FA2490068B807 /* OUDSTokensOpacityUITests.swift */,
+				51952A7E2D3FA1770068B807 /* OUDSTokensColorUITests.swift */,
 				51952A8B2D3FA2280068B807 /* OUDSTokensFontUITests.swift */,
 			);
-			path = OUDSTokensFontUITests;
-			sourceTree = "<group>";
-		};
-		51952A8D2D3FA23F0068B807 /* OUDSTokensOpacityUITests */ = {
-			isa = PBXGroup;
-			children = (
-				51952A8E2D3FA2490068B807 /* OUDSTokensOpacityUITests.swift */,
-			);
-			path = OUDSTokensOpacityUITests;
+			path = Tokens;
 			sourceTree = "<group>";
 		};
 		51952A902D3FA25F0068B807 /* Components */ = {
