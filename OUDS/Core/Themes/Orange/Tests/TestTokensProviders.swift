@@ -50,7 +50,8 @@ final class TestTokensProviders: XCTestCase {
         assertMissingTokensProviderIsFound(byType: AllBulletListComponentTokensProvider.self, "AllBulletListComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllInputTextComponentTokensProvider.self, "AllInputTextComponentTokensProvider")
         assertMissingTokensProviderIsFound(byType: AllBadgeComponentTokensProvider.self, "AllBadgeComponentTokensProvider")
-        assertMissingTokensProviderIsFound(byType: AllCheckRadioComponentTokensProvider.self, "AllCheckRadioComponentTokensProvider")
+        assertMissingTokensProviderIsFound(byType: AllCheckboxComponentTokensProvider.self, "AllCheckboxComponentTokensProvider")
+        assertMissingTokensProviderIsFound(byType: AllCheckboxComponentTokensProvider.self, "AllCheckboxComponentTokensProvider")
 
         // NOTE: Add tests for new component tokens provider here
     }
@@ -99,11 +100,12 @@ final class TestTokensProviders: XCTestCase {
             OrangeThemeSwitchComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-            OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, spaces: spaces),
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBadgeComponentTokensProvider(sizes: sizes),
-            OrangeThemeCheckRadioComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
+            OrangeThemeControlItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
 
             // NOTE: Add new component tokens providers here
         ]

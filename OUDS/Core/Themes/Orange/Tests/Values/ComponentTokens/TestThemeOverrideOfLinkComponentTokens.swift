@@ -28,19 +28,21 @@ final class TestThemeOverrideOfLinkComponentTokens: XCTestCase {
         inheritedTheme = MockTheme()
     }
 
+    // MARK: - Sizes
+
     func testInheritedThemeCanOverrideLinkComponentTokenSizeMinHeightMedium() throws {
         XCTAssertNotEqual(inheritedTheme.link.linkSizeMinHeightMedium, abstractTheme.link.linkSizeMinHeightMedium)
         XCTAssertTrue(inheritedTheme.link.linkSizeMinHeightMedium == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
     }
 
-    func testInheritedThemeCanOverrideLinkComponentTokenSizeMinHeightSmall() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkSizeMinHeightSmall, abstractTheme.link.linkSizeMinHeightSmall)
-        XCTAssertTrue(inheritedTheme.link.linkSizeMinHeightSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
-    }
-
     func testInheritedThemeCanOverrideLinkComponentTokenSizeMinWidthMedium() throws {
         XCTAssertNotEqual(inheritedTheme.link.linkSizeMinWidthMedium, abstractTheme.link.linkSizeMinWidthMedium)
         XCTAssertTrue(inheritedTheme.link.linkSizeMinWidthMedium == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
+    }
+
+    func testInheritedThemeCanOverrideLinkComponentTokenSizeMinHeightSmall() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkSizeMinHeightSmall, abstractTheme.link.linkSizeMinHeightSmall)
+        XCTAssertTrue(inheritedTheme.link.linkSizeMinHeightSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
     }
 
     func testInheritedThemeCanOverrideLinkComponentTokenSizeMinWidthSmall() throws {
@@ -58,19 +60,11 @@ final class TestThemeOverrideOfLinkComponentTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.link.linkSizeIconSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSize)
     }
 
-    func testInheritedThemeCanOverrideLinkComponentTokenColorContentDisabledMono() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkColorContentDisabledMono, abstractTheme.link.linkColorContentDisabledMono)
-        XCTAssertTrue(inheritedTheme.link.linkColorContentDisabledMono == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
-    }
+    // MARK: - Colors
 
     func testInheritedThemeCanOverrideLinkComponentTokenColorContentEnabledMono() throws {
         XCTAssertNotEqual(inheritedTheme.link.linkColorContentEnabledMono, abstractTheme.link.linkColorContentEnabledMono)
         XCTAssertTrue(inheritedTheme.link.linkColorContentEnabledMono == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
-    }
-
-    func testInheritedThemeCanOverrideLinkComponentTokenColorContentFocusMono() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkColorContentFocusMono, abstractTheme.link.linkColorContentFocusMono)
-        XCTAssertTrue(inheritedTheme.link.linkColorContentFocusMono == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
     func testInheritedThemeCanOverrideLinkComponentTokenColorContentHoverMono() throws {
@@ -83,34 +77,19 @@ final class TestThemeOverrideOfLinkComponentTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.link.linkColorContentPressedMono == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
-    func testInheritedThemeCanOverrideLinkComponentTokenColorArrowEnabled() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkColorArrowEnabled, abstractTheme.link.linkColorArrowEnabled)
-        XCTAssertTrue(inheritedTheme.link.linkColorArrowEnabled == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+    func testInheritedThemeCanOverrideLinkComponentTokenColorContentFocusMono() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkColorContentFocusMono, abstractTheme.link.linkColorContentFocusMono)
+        XCTAssertTrue(inheritedTheme.link.linkColorContentFocusMono == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
-    func testInheritedThemeCanOverrideLinkComponentTokenColorArrowFocus() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkColorArrowFocus, abstractTheme.link.linkColorArrowFocus)
-        XCTAssertTrue(inheritedTheme.link.linkColorArrowFocus == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
-    }
-
-    func testInheritedThemeCanOverrideLinkComponentTokenColorArrowHover() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkColorArrowHover, abstractTheme.link.linkColorArrowHover)
-        XCTAssertTrue(inheritedTheme.link.linkColorArrowHover == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
-    }
-
-    func testInheritedThemeCanOverrideLinkComponentTokenColorArrowPressed() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkColorArrowPressed, abstractTheme.link.linkColorArrowPressed)
-        XCTAssertTrue(inheritedTheme.link.linkColorArrowPressed == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+    func testInheritedThemeCanOverrideLinkComponentTokenColorContentDisabledMono() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkColorContentDisabledMono, abstractTheme.link.linkColorContentDisabledMono)
+        XCTAssertTrue(inheritedTheme.link.linkColorContentDisabledMono == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
     func testInheritedThemeCanOverrideLinkComponentTokenColorContentEnabled() throws {
         XCTAssertNotEqual(inheritedTheme.link.linkColorContentEnabled, abstractTheme.link.linkColorContentEnabled)
         XCTAssertTrue(inheritedTheme.link.linkColorContentEnabled == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
-    }
-
-    func testInheritedThemeCanOverrideLinkComponentTokenColorContentFocus() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkColorContentFocus, abstractTheme.link.linkColorContentFocus)
-        XCTAssertTrue(inheritedTheme.link.linkColorContentFocus == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
     func testInheritedThemeCanOverrideLinkComponentTokenColorContentHover() throws {
@@ -123,14 +102,41 @@ final class TestThemeOverrideOfLinkComponentTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.link.linkColorContentPressed == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
-    func testInheritedThemeCanOverrideLinkComponentTokenSpaceColumnGapArrowMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkSpaceColumnGapArrowMedium, abstractTheme.link.linkSpaceColumnGapArrowMedium)
-        XCTAssertTrue(inheritedTheme.link.linkSpaceColumnGapArrowMedium == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
+    func testInheritedThemeCanOverrideLinkComponentTokenColorContentFocus() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkColorContentFocus, abstractTheme.link.linkColorContentFocus)
+        XCTAssertTrue(inheritedTheme.link.linkColorContentFocus == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
     }
 
-    func testInheritedThemeCanOverrideLinkComponentTokenSpaceColumnGapArrowSmall() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkSpaceColumnGapArrowSmall, abstractTheme.link.linkSpaceColumnGapArrowSmall)
-        XCTAssertTrue(inheritedTheme.link.linkSpaceColumnGapArrowSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
+    func testInheritedThemeCanOverrideLinkComponentTokenColorArrowEnabled() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkColorArrowEnabled, abstractTheme.link.linkColorArrowEnabled)
+        XCTAssertTrue(inheritedTheme.link.linkColorArrowEnabled == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+    }
+
+    func testInheritedThemeCanOverrideLinkComponentTokenColorArrowHover() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkColorArrowHover, abstractTheme.link.linkColorArrowHover)
+        XCTAssertTrue(inheritedTheme.link.linkColorArrowHover == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+    }
+
+    func testInheritedThemeCanOverrideLinkComponentTokenColorArrowPressed() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkColorArrowPressed, abstractTheme.link.linkColorArrowPressed)
+        XCTAssertTrue(inheritedTheme.link.linkColorArrowPressed == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+    }
+
+    func testInheritedThemeCanOverrideLinkComponentTokenColorArrowFocus() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkColorArrowFocus, abstractTheme.link.linkColorArrowFocus)
+        XCTAssertTrue(inheritedTheme.link.linkColorArrowFocus == MockThemeLinkComponentTokenProvider.mockThemeLinkColor)
+    }
+
+    // MARK: - Spaces
+
+    func testInheritedThemeCanOverrideLinkComponentTokenSpacePaddingInline() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkSpacePaddingInline, abstractTheme.link.linkSpacePaddingInline)
+        XCTAssertTrue(inheritedTheme.link.linkSpacePaddingInline == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
+    }
+
+    func testInheritedThemeCanOverrideLinkComponentTokenSpacePaddingBlock() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkSpacePaddingBlock, abstractTheme.link.linkSpacePaddingBlock)
+        XCTAssertTrue(inheritedTheme.link.linkSpacePaddingBlock == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
     }
 
     func testInheritedThemeCanOverrideLinkComponentTokenSpaceColumnGapIconMedium() throws {
@@ -143,14 +149,14 @@ final class TestThemeOverrideOfLinkComponentTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.link.linkSpaceColumnGapIconSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
     }
 
-    func testInheritedThemeCanOverrideLinkComponentTokenSpacePaddingBlock() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkSpacePaddingBlock, abstractTheme.link.linkSpacePaddingBlock)
-        XCTAssertTrue(inheritedTheme.link.linkSpacePaddingBlock == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
+    func testInheritedThemeCanOverrideLinkComponentTokenSpaceColumnGapArrowMedium() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkSpaceColumnGapArrowMedium, abstractTheme.link.linkSpaceColumnGapArrowMedium)
+        XCTAssertTrue(inheritedTheme.link.linkSpaceColumnGapArrowMedium == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
     }
 
-    func testInheritedThemeCanOverrideLinkComponentTokenSpacePaddingInline() throws {
-        XCTAssertNotEqual(inheritedTheme.link.linkSpacePaddingInline, abstractTheme.link.linkSpacePaddingInline)
-        XCTAssertTrue(inheritedTheme.link.linkSpacePaddingInline == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
+    func testInheritedThemeCanOverrideLinkComponentTokenSpaceColumnGapArrowSmall() throws {
+        XCTAssertNotEqual(inheritedTheme.link.linkSpaceColumnGapArrowSmall, abstractTheme.link.linkSpaceColumnGapArrowSmall)
+        XCTAssertTrue(inheritedTheme.link.linkSpaceColumnGapArrowSmall == MockThemeLinkComponentTokenProvider.mockThemeLinkSpace)
     }
 }
 
