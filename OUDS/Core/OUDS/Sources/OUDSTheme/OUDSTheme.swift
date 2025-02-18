@@ -102,8 +102,11 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to badge components like `OUDSBadge`
     public let badge: AllBadgeComponentTokensProvider
 
-    /// All components tokens related to radio button and checbkxoes components like `OUDSRadioButton` and `OUDSCheckboxe`
-    public let checkRadio: AllCheckRadioComponentTokensProvider
+    /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButton` and `OUDSCheckboxItem`
+    public let controlItem: AllControlItemComponentTokensProvider
+
+    /// All components tokens related to radio button and checbkxoes components like `OUDSRadioButton`, `OUDSCheckbox` and `OUDSCheckboxItem`
+    public let checkbox: AllCheckboxComponentTokensProvider
 
     // NOTE: Add new component tokens provider here
 
@@ -148,7 +151,8 @@ open class OUDSTheme: @unchecked Sendable {
         bulletList = tokensProviders.get()
         inputText = tokensProviders.get()
         badge = tokensProviders.get()
-        checkRadio = tokensProviders.get()
+        controlItem = tokensProviders.get()
+        checkbox = tokensProviders.get()
 
         // NOTE: Add new component tokens provider here
 

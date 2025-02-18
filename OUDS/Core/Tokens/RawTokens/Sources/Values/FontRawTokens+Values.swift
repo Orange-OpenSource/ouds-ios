@@ -63,8 +63,8 @@ extension FontRawTokens {
     public static let fontLetterSpacing1250: FontLetterSpacingRawToken = -0.7
     public static let fontLetterSpacing1450: FontLetterSpacingRawToken = -0.96
     public static let fontLetterSpacing1850: FontLetterSpacingRawToken = -1.08
-    public static let fontFamilySystemSfPro: FontFamilyRawToken = SF Pro
-    public static let fontFamilyMonospaceMenlo: FontFamilyRawToken = Menlo
+    public static let fontFamilySystemSfPro: FontFamilyRawToken = "SF Pro"
+    public static let fontFamilyMonospaceMenlo: FontFamilyRawToken = "Menlo"
     public static let fontWeight100: FontWeightRawToken = 100
     public static let fontWeight200: FontWeightRawToken = 200
     public static let fontWeight300: FontWeightRawToken = 300

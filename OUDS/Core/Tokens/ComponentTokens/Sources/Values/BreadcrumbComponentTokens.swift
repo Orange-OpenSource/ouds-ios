@@ -25,30 +25,14 @@ import OUDSTokensSemantic
 /// - Since: 0.10.0
 public protocol BreadcrumbComponentTokens {
 
-    // MARK: - Sizes
-
-    var breadcrumbSizeMinHeightMedium: SizeSemanticToken { get }
-    var breadcrumbSizeMinHeightSmall: SizeSemanticToken { get }
-    var breadcrumbSizeMinWidthMedium: SizeSemanticToken { get }
-    var breadcrumbSizeMinWidthSmall: SizeSemanticToken { get }
-    var breadcrumbSizeIconMedium: SizeSemanticToken { get }
-    var breadcrumbSizeIconSmall: SizeSemanticToken { get }
-
-    // MARK: - Colors
-
-    var breadcrumbColorContentEnabled: MultipleColorSemanticTokens { get }
-    var breadcrumbColorContentFocus: MultipleColorSemanticTokens { get }
-    var breadcrumbColorContentHover: MultipleColorSemanticTokens { get }
-    var breadcrumbColorContentPressed: MultipleColorSemanticTokens { get }
-
     // MARK: - Spaces
 
-    var breadcrumbSpaceColumnGapArrowMedium: SpaceSemanticToken { get }
-    var breadcrumbSpaceColumnGapArrowSmall: SpaceSemanticToken { get }
-    var breadcrumbSpaceColumnGapLevelsMedium: SpaceSemanticToken { get }
-    var breadcrumbSpaceColumnGapLevelsSmall: SpaceSemanticToken { get }
-    var breadcrumbSpacePaddingBlock: SpaceSemanticToken { get }
-    var breadcrumbSpacePaddingInline: SpaceSemanticToken { get }
+    var breadcrumbSpaceColumnGapArrow: SpaceSemanticToken { get }
+    var breadcrumbSpaceColumnGapLevels: SpaceSemanticToken { get }
+
+    // MARK: - Sizes
+
+    var breadcrumbSizeArrow: SizeSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

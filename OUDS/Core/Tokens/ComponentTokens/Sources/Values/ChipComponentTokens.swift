@@ -29,60 +29,46 @@ public protocol ChipComponentTokens {
 
     var chipSizeMaxHeight: SizeSemanticToken { get }
     var chipSizeMinHeight: SizeSemanticToken { get }
+    var chipSizeMinWidth: SizeSemanticToken { get }
     var chipSizeIcon: SizeSemanticToken { get }
 
     // MARK: - Borders
 
-    var chipBorderRadiusPill: BorderRadiusSemanticToken { get }
     var chipBorderWidthDefault: BorderWidthSemanticToken { get }
     var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
-    var chipBorderWidthDefaultInteractionMono: BorderWidthSemanticToken { get }
+    var chipBorderWidthSelected: BorderWidthSemanticToken { get }
+    var chipBorderRadiusPill: BorderRadiusSemanticToken { get }
 
     // MARK: - Colors
 
-    var chipColorBgDisabled: MultipleColorSemanticTokens { get }
-    var chipColorBgDisabledMono: MultipleColorSemanticTokens { get }
+    var chipColorContentEnabled: MultipleColorSemanticTokens { get }
+    var chipColorContentHover: MultipleColorSemanticTokens { get }
+    var chipColorContentPressed: MultipleColorSemanticTokens { get }
+    var chipColorContentDisabled: MultipleColorSemanticTokens { get }
+    var chipColorContentFocus: MultipleColorSemanticTokens { get }
     var chipColorBgEnabled: MultipleColorSemanticTokens { get }
-    var chipColorBgEnabledMono: MultipleColorSemanticTokens { get }
-    var chipColorBgFocus: MultipleColorSemanticTokens { get }
-    var chipColorBgFocusMono: MultipleColorSemanticTokens { get }
     var chipColorBgHover: MultipleColorSemanticTokens { get }
-    var chipColorBgHoverMono: MultipleColorSemanticTokens { get }
     var chipColorBgPressed: MultipleColorSemanticTokens { get }
-    var chipColorBgPressedMono: MultipleColorSemanticTokens { get }
-    var chipColorBorderDisabled: MultipleColorSemanticTokens { get }
-    var chipColorBorderDisabledMono: MultipleColorSemanticTokens { get }
+    var chipColorBgDisabled: MultipleColorSemanticTokens { get }
+    var chipColorBgFocus: MultipleColorSemanticTokens { get }
     var chipColorBorderEnabled: MultipleColorSemanticTokens { get }
-    var chipColorBorderEnabledMono: MultipleColorSemanticTokens { get }
     var chipColorBorderHover: MultipleColorSemanticTokens { get }
-    var chipColorBorderHoverMono: MultipleColorSemanticTokens { get }
     var chipColorBorderPressed: MultipleColorSemanticTokens { get }
-    var chipColorBorderPressedMono: MultipleColorSemanticTokens { get }
+    var chipColorBorderDisabled: MultipleColorSemanticTokens { get }
     var chipColorBorderSelected: MultipleColorSemanticTokens { get }
     var chipColorBorderFocus: MultipleColorSemanticTokens { get }
-    var chipColorBorderFocusMono: MultipleColorSemanticTokens { get }
-    var chipColorContentDisabled: MultipleColorSemanticTokens { get }
-    var chipColorContentDisabledMono: MultipleColorSemanticTokens { get }
-    var chipColorContentEnabled: MultipleColorSemanticTokens { get }
-    var chipColorContentEnabledMono: MultipleColorSemanticTokens { get }
-    var chipColorContentFocus: MultipleColorSemanticTokens { get }
-    var chipColorContentFocusMono: MultipleColorSemanticTokens { get }
-    var chipColorContentHover: MultipleColorSemanticTokens { get }
-    var chipColorContentHoverMono: MultipleColorSemanticTokens { get }
-    var chipColorContentPressed: MultipleColorSemanticTokens { get }
-    var chipColorContentPressedMono: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 
-    var chipSpaceColumnGapColumnGap: SpaceSemanticToken { get }
-    var chipSpaceInsetIconOnly: SpaceSemanticToken { get }
-    var chipSpacePaddingBlock: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineIconEnd: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineIconNone: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineLabelStart: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineLabelEnd: SpaceSemanticToken { get }
     var chipSpacePaddingInlineIconOnly: SpaceSemanticToken { get }
     var chipSpacePaddingInlineIconStart: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineLabelEnd: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineLabelStart: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineIconEnd: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineIconNone: SpaceSemanticToken { get }
+    var chipSpaceInsetIconOnly: SpaceSemanticToken { get }
+    var chipSpacePaddingBlock: SpaceSemanticToken { get }
+    var chipSpaceColumnGapColumnGap: SpaceSemanticToken { get }
     var chipSpacePaddingStackPaddingBlock: SpaceSemanticToken { get }
 }
 

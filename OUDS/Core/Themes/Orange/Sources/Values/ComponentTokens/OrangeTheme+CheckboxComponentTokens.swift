@@ -20,7 +20,7 @@ extension OrangeThemeCheckboxComponentTokensProvider: CheckboxComponentTokens {
     @objc open var checkboxSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var checkboxSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var checkboxSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
-    @objc open var checkboxSizeIndicatorInnerIcon: SizeSemanticToken { DimensionRawTokens.dimension5xs }
+    @objc open var checkboxSizeIndicatorInnerIcon: SizeSemanticToken { DimensionRawTokens.dimension200 }
     @objc open var checkboxBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusDefault }
     @objc open var checkboxBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthMedium }
     @objc open var checkboxBorderWidthSelectedHover: BorderWidthSemanticToken { borders.borderWidthMedium }

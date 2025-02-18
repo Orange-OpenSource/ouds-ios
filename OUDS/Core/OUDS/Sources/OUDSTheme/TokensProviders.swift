@@ -84,8 +84,11 @@ public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextCo
 /// Something which provides all component tokens of badge
 public protocol AllBadgeComponentTokensProvider: TokensProvider, BadgeComponentTokens { }
 
+/// Something which provides all component tokens for control-item-layout-based components
+public protocol AllControlItemComponentTokensProvider: TokensProvider, ControlItemComponentTokens { }
+
 /// Something which provides all component tokens of checkboxes and radio buttons
-public protocol AllCheckRadioComponentTokensProvider: TokensProvider, CheckRadioComponentTokens { }
+public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComponentTokens { }
 
 // NOTE: Add new definitions of protocols here
 
@@ -197,8 +200,12 @@ extension Array where Element == TokensProvider {
             missingProviders.append("AllBadgeComponentTokensProvider")
         }
 
-        if !assertAvailability(of: AllCheckRadioComponentTokensProvider.self) {
-            missingProviders.append("AllCheckRadioComponentTokensProvider")
+        if !assertAvailability(of: AllCheckboxComponentTokensProvider.self) {
+            missingProviders.append("AllCheckboxComponentTokensProvider")
+        }
+
+        if !assertAvailability(of: AllControlItemComponentTokensProvider.self) {
+            missingProviders.append("AllControlItemComponentTokensProvider")
         }
 
         // NOTE: Add new component tokens providers here if mandatory

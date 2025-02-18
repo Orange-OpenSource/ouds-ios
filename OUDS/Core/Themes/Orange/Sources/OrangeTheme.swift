@@ -121,11 +121,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeSwitchComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-            OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, spaces: spaces),
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBadgeComponentTokensProvider(sizes: sizes),
-            OrangeThemeCheckRadioComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
+            OrangeThemeControlItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
 
             // NOTE: Add here new component tokens providers
         ]
@@ -167,11 +168,12 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             OrangeThemeSwitchComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-            OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, spaces: spaces),
             OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
             OrangeThemeBadgeComponentTokensProvider(sizes: sizes),
-            OrangeThemeCheckRadioComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
+            OrangeThemeControlItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces),
+            OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
 
             // NOTE: Add here new component tokens providers
         ]
