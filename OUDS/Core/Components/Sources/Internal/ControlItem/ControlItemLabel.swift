@@ -83,10 +83,10 @@ struct ControlItemLabel: View {
                     .resizable()
                     .renderingMode(.template)
                     .foregroundStyle(iconColor)
-                    .frame(width: theme.listItem.listItemSizeIcon,
-                           height: theme.listItem.listItemSizeIcon)
+                    .frame(width: theme.controlItem.controlItemSizeIcon,
+                           height: theme.controlItem.controlItemSizeIcon)
             }
-            .frame(maxHeight: theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer,
+            .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer,
                    alignment: .center)
         }
     }

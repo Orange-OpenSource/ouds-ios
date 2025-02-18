@@ -64,6 +64,8 @@ struct ControlItemStyle: ButtonStyle {
 //                OUDSRadioButtonSelector(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
             case .checkBox(let binding):
                 CheckboxSelector(internalState: internalState(isPressed: isPressed), selectorState: binding.wrappedValue, isError: layoutData.isError)
+                    .frame(width: theme.checkbox.checkboxSizeIndicator,
+                           height: theme.checkbox.checkboxSizeIndicator)
             }
         }
         .frame(maxHeight: containerAssetMaxHeight, alignment: .center)
@@ -79,9 +81,9 @@ struct ControlItemStyle: ButtonStyle {
         switch selectorType {
         case .switch:
             // TODO: #405 - Adjust for switch
-            theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer
+            theme.controlItem.controlItemSizeMaxHeightAssetsContainer
         case .radioButton, .checkBox:
-            theme.checkRadio.checkRadioSizeMaxHeightAssetsContainer
+            theme.controlItem.controlItemSizeMaxHeightAssetsContainer
         }
     }
 

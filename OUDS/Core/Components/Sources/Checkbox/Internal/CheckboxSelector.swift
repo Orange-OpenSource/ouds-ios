@@ -63,11 +63,11 @@ struct CheckboxSelector: View {
         if isError {
             switch internalState {
             case .enabled:
-                return theme.checkRadio.checkRadioColorContentAssetErrorEnabled
+                return theme.checkbox.checkboxColorContentErrorEnabled
             case .hover:
-                return theme.checkRadio.checkRadioColorContentAssetErrorHover
+                return theme.checkbox.checkboxColorContentErrorHover
             case .pressed:
-                return theme.checkRadio.checkRadioColorContentAssetErrorPressed
+                return theme.checkbox.checkboxColorContentErrorPressed
             case .disabled, .readOnly:
                 OL.fatal("An OUDS Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
                          + " Only non-error situation are allowed to have a disabled state / read only mode.")
@@ -75,13 +75,13 @@ struct CheckboxSelector: View {
         } else {
             switch internalState {
             case .enabled:
-                return theme.checkRadio.checkRadioColorContentAssetSelected
+                return theme.checkbox.checkboxColorContentSelected
             case .hover:
-                return theme.checkRadio.checkRadioColorContentAssetHover
+                return theme.checkbox.checkboxColorContentHover
             case .pressed:
-                return theme.checkRadio.checkRadioColorContentAssetPressed
+                return theme.checkbox.checkboxColorContentPressed
             case .disabled, .readOnly:
-                return theme.checkRadio.checkRadioColorContentAssetDisabled
+                return theme.checkbox.checkboxColorContentDisabled
             }
         }
     }
@@ -95,7 +95,7 @@ private struct SelectorFrameModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(width: theme.listItem.listItemSizeIcon,
-                   height: theme.listItem.listItemSizeIcon)
+            .frame(width: theme.checkbox.checkboxSizeIndicatorInnerIcon,
+                   height: theme.checkbox.checkboxSizeIndicatorInnerIcon)
     }
 }

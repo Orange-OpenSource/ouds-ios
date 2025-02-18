@@ -12,6 +12,8 @@
 //
 
 /// A checkbox selector has three available states: `selected`, `unselected` and `undeterminate`
+///
+/// - Since: 0.12.0
 public enum OUDSCheckboxSelectorState {
     /// The checkbox selector is filled, a tick is inside, the user selected it
     case selected

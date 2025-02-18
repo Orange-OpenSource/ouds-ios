@@ -34,29 +34,6 @@ public protocol ChipComponentTokens {
 
     // MARK: - Borders
 
-<<<<<<< HEAD
-    var chipBorderRadius: BorderRadiusSemanticToken { get }
-    var chipBorderWidthDefault: BorderWidthSemanticToken { get }
-    var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
-
-    // MARK: - Colors
-
-    var chipColorBgDisabled: MultipleColorSemanticTokens { get }
-    var chipColorBgEnabled: MultipleColorSemanticTokens { get }
-    var chipColorBgFocus: MultipleColorSemanticTokens { get }
-    var chipColorBgHover: MultipleColorSemanticTokens { get }
-    var chipColorBgPressed: MultipleColorSemanticTokens { get }
-    var chipColorBorderDisabled: MultipleColorSemanticTokens { get }
-    var chipColorBorderEnabled: MultipleColorSemanticTokens { get }
-    var chipColorBorderHover: MultipleColorSemanticTokens { get }
-    var chipColorBorderPressed: MultipleColorSemanticTokens { get }
-    var chipColorBorderSelected: MultipleColorSemanticTokens { get }
-    var chipColorContentDisabled: MultipleColorSemanticTokens { get }
-    var chipColorContentEnabled: MultipleColorSemanticTokens { get }
-    var chipColorContentFocus: MultipleColorSemanticTokens { get }
-    var chipColorContentHover: MultipleColorSemanticTokens { get }
-    var chipColorContentPressed: MultipleColorSemanticTokens { get }
-=======
     var chipBorderWidthDefault: BorderWidthSemanticToken { get }
     var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
     var chipBorderWidthSelected: BorderWidthSemanticToken { get }
@@ -80,7 +57,6 @@ public protocol ChipComponentTokens {
     var chipColorBorderDisabled: MultipleColorSemanticTokens { get }
     var chipColorBorderSelected: MultipleColorSemanticTokens { get }
     var chipColorBorderFocus: MultipleColorSemanticTokens { get }
->>>>>>> 4505fe428 (refactor(🤖): partial integration of tokens version 0.6.0 (#458))
 
     // MARK: - Spaces
 

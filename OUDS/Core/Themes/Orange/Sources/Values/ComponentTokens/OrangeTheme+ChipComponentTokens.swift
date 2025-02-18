@@ -19,20 +19,6 @@ import OUDSTokensSemantic
 extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
     @objc open var chipSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
-<<<<<<< HEAD
-    @objc open var chipBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusTall }
-    @objc open var chipBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
-    @objc open var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
-    @objc open var chipColorBgDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    @objc open var chipColorBgEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    @objc open var chipColorBgFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    @objc open var chipColorBgHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    @objc open var chipColorBgPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    @objc open var chipColorBorderDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
-    @objc open var chipColorBorderEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
-    @objc open var chipColorBorderHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    @objc open var chipColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
-=======
     @objc open var chipSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var chipBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
     @objc open var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
@@ -52,7 +38,6 @@ extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipColorBorderHover: MultipleColorSemanticTokens { colors.colorActionHover }
     @objc open var chipColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     @objc open var chipColorBorderDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
->>>>>>> 4505fe428 (refactor(🤖): partial integration of tokens version 0.6.0 (#458))
     @objc open var chipColorBorderSelected: MultipleColorSemanticTokens { colors.colorActionSelected }
     @objc open var chipColorBorderFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
     @objc open var chipSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }

@@ -25,11 +25,14 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
 
     @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.theme) private var theme
 
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
         CheckboxSelector(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
+            .frame(width: theme.checkbox.checkboxSizeIndicator,
+                   height: theme.checkbox.checkboxSizeIndicator)
             .onHover { isHover in
                 self.isHover = isHover
             }

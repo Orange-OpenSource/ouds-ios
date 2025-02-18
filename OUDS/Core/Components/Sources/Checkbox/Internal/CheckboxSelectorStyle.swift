@@ -144,19 +144,19 @@ private struct CheckboxSelectorBackgroundModifier: ViewModifier {
             switch selectorState {
             case .selected, .undeterminate:
                 return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelected)
+                    .opacity(theme.checkbox.checkboxOpacityBgSelected)
             case .unselected:
                 return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselected)
+                    .opacity(theme.checkbox.checkboxOpacityBgUnselected)
             }
         } else {
             switch selectorState {
             case .selected, .undeterminate:
                 return theme.colors.colorActionSelected.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelected)
+                    .opacity(theme.checkbox.checkboxOpacityBgSelected)
             case .unselected:
                 return theme.colors.colorActionEnabled.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselected)
+                    .opacity(theme.checkbox.checkboxOpacityBgUnselected)
             }
         }
     }
@@ -166,19 +166,19 @@ private struct CheckboxSelectorBackgroundModifier: ViewModifier {
             switch selectorState {
             case .selected, .undeterminate:
                 return theme.colors.colorActionNegativeHover.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelectedHover)
+                    .opacity(theme.checkbox.checkboxOpacityBgSelectedHover)
             case .unselected:
                 return theme.colors.colorActionNegativeHover.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselectedHover)
+                    .opacity(theme.checkbox.checkboxOpacityBgUnselectedHover)
             }
         } else {
             switch selectorState {
             case .selected, .undeterminate:
                 return theme.colors.colorActionHover.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelectedHover)
+                    .opacity(theme.checkbox.checkboxOpacityBgSelectedHover)
             case .unselected:
                 return theme.colors.colorActionHover.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselectedHover)
+                    .opacity(theme.checkbox.checkboxOpacityBgUnselectedHover)
             }
         }
     }
@@ -188,19 +188,19 @@ private struct CheckboxSelectorBackgroundModifier: ViewModifier {
             switch selectorState {
             case .selected, .undeterminate:
                 return theme.colors.colorActionNegativePressed.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelectedPressed)
+                    .opacity(theme.checkbox.checkboxOpacityBgSelectedPressed)
             case .unselected:
                 return theme.colors.colorActionNegativePressed.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselectedPressed)
+                    .opacity(theme.checkbox.checkboxOpacityBgUnselectedPressed)
             }
         } else {
             switch selectorState {
             case .selected, .undeterminate:
                 return theme.colors.colorActionPressed.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelectedPressed)
+                    .opacity(theme.checkbox.checkboxOpacityBgSelectedPressed)
             case .unselected:
                 return theme.colors.colorActionPressed.color(for: colorScheme)
-                    .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselectedPressed)
+                    .opacity(theme.checkbox.checkboxOpacityBgUnselectedPressed)
             }
         }
     }
@@ -213,10 +213,10 @@ private struct CheckboxSelectorBackgroundModifier: ViewModifier {
         switch selectorState {
         case .selected, .undeterminate:
             return theme.colors.colorActionDisabled.color(for: colorScheme)
-                .opacity(theme.checkRadio.checkRadioOpacitySelectorBgSelected)
+                .opacity(theme.checkbox.checkboxOpacityBgSelected)
         case .unselected:
             return theme.colors.colorActionDisabled.color(for: colorScheme)
-                .opacity(theme.checkRadio.checkRadioOpacitySelectorBgUnselected)
+                .opacity(theme.checkbox.checkboxOpacityBgUnselected)
         }
     }
 }
@@ -314,42 +314,42 @@ private struct CheckboxSelectorBorderModifier: ViewModifier {
     private var enabledWidth: CGFloat {
         switch selectorState {
         case .selected, .undeterminate:
-            return theme.checkRadio.checkRadioBorderWidthSelected
+            return theme.checkbox.checkboxBorderWidthSelected
         case .unselected:
-            return theme.checkRadio.checkRadioBorderWidthUnselected
+            return theme.checkbox.checkboxBorderWidthUnselected
         }
     }
 
     private var hoverWidth: CGFloat {
         switch selectorState {
         case .selected, .undeterminate:
-            return theme.checkRadio.checkRadioBorderWidthSelectedHover
+            return theme.checkbox.checkboxBorderWidthSelectedHover
         case .unselected:
-            return theme.checkRadio.checkRadioBorderWidthUnselectedHover
+            return theme.checkbox.checkboxBorderWidthUnselectedHover
         }
     }
 
     private var pressedWidth: CGFloat {
         switch selectorState {
         case .selected, .undeterminate:
-            return theme.checkRadio.checkRadioBorderWidthSelectedPressed
+            return theme.checkbox.checkboxBorderWidthSelectedPressed
         case .unselected:
-            return theme.checkRadio.checkRadioBorderWidthUnselectedPressed
+            return theme.checkbox.checkboxBorderWidthUnselectedPressed
         }
     }
 
     private var disabledWidth: CGFloat {
         switch selectorState {
         case .selected, .undeterminate:
-            return theme.checkRadio.checkRadioBorderWidthSelected
+            return theme.checkbox.checkboxBorderWidthSelected
         case .unselected:
-            return theme.checkRadio.checkRadioBorderWidthUnselected
+            return theme.checkbox.checkboxBorderWidthUnselected
         }
     }
 
     // MARK: - Border radius
 
     private var appliedBorderRadius: CGFloat {
-        theme.checkRadio.checkRadioBorderRadiusCheckbox
+        theme.checkbox.checkboxBorderRadius
     }
 }
