@@ -135,9 +135,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
             let name = color.rawValue
@@ -166,9 +163,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
@@ -199,9 +193,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
             let name = color.rawValue
@@ -230,9 +221,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
@@ -263,9 +251,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
             let name = color.rawValue
@@ -294,9 +279,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
@@ -327,9 +309,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
             let name = color.rawValue
@@ -358,9 +337,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
@@ -391,9 +367,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
             let name = color.rawValue
@@ -423,9 +396,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
             let name = color.rawValue
@@ -454,9 +424,6 @@ final class OUDSTokensColorUITests: XCTestCase {
                 ColorTokenPage.Illustration(token: token, name: color.rawValue)
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
-
-            // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current interfaceStyle (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"

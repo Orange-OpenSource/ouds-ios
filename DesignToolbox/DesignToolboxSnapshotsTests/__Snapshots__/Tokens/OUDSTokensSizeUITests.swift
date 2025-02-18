@@ -88,9 +88,6 @@ final class OUDSTokensSizeUITests: XCTestCase {
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
 
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
-
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
             let name = namedToken.rawValue
@@ -116,9 +113,6 @@ final class OUDSTokensSizeUITests: XCTestCase {
                 SizeTokenPage.IllustrationIconWithTypography(namedSize: namedToken)
                     .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
-
-            // Encapsulate the element in a UIHostingController for snapshot testing
-            let hostingVC = UIHostingController(rootView: illustration)
 
             // Create a unique snapshot name based on the current mode (light or dark) and the color's raw value
             let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
