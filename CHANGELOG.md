@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Apply new naming conventions ([#453](https://github.com/Orange-OpenSource/ouds-ios/issues/453))
 - [Library] `Badge`, `Breadcrumb`, `BulletList`, `Button`, `Checkbox`, `InputText`, `Link`, `Skeleton`, `Switch` component tokens (tokens library v0.6.0)
 
 ## [0.10.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.9.0...0.10.0) - 2025-01-30

@@ -13,14 +13,20 @@
 
 import SwiftUI
 
+// MARK: - Link Text Modifier
+
 struct LinkTextModifier: ViewModifier {
+
+    // MARK: - Properties
+
+    let size: OUDSLink.Size
+    let layout: OUDSLink.Layout
+    let state: LinkInternalState
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    let size: OUDSLink.Size
-    let layout: OUDSLink.Layout
-    let state: InternalLinkState
+    // MARK: - Body
 
     func body(content: Content) -> some View {
         Group {
@@ -36,11 +42,13 @@ struct LinkTextModifier: ViewModifier {
     }
 }
 
+// MARK: - Link Underline Modifier
+
 private struct LinkUnderlineModifier: ViewModifier {
 
     @State private var textWidth: CGFloat = 0
     let layout: OUDSLink.Layout
-    let state: InternalLinkState
+    let state: LinkInternalState
 
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
@@ -72,6 +80,8 @@ private struct LinkUnderlineModifier: ViewModifier {
     }
 }
 
+// MARK: - Sizes management
+
 private struct SizePreferenceKey: @preconcurrency PreferenceKey {
     @MainActor static var defaultValue: CGSize = .zero
 
@@ -82,8 +92,7 @@ private struct SizePreferenceKey: @preconcurrency PreferenceKey {
 extension View {
 
     /// Use to read the size of the current view (usefull to read the width of text)
-    /// - Parameter:
-    ///     - onChange: Called when the size change
+    /// - Parameter onChange: Called when the size changes
     fileprivate func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
         background(
             GeometryReader { geometryProxy in

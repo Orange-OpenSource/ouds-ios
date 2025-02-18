@@ -75,7 +75,7 @@ struct OUDSButtonStyle: ButtonStyle {
         }
     }
 
-    private func internalState(isPressed: Bool) -> InternalButtonState {
+    private func internalState(isPressed: Bool) -> ButtonInternalState {
         if !isEnabled {
             return .disabled
         }

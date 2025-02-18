@@ -15,13 +15,19 @@ import SwiftUI
 
 struct LinkSizeIconModifier: ViewModifier {
 
+    // MARK: - Properties
+
+    let size: OUDSLink.Size
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    let size: OUDSLink.Size
+
+    // MARK: - Body
 
     func body(content: Content) -> some View {
         content.frame(width: width, height: height)
     }
+
+    // MARK: - Helpers
 
     private var width: Double {
         switch size {
@@ -31,6 +37,7 @@ struct LinkSizeIconModifier: ViewModifier {
             theme.link.linkSizeIconMedium
         }
     }
+
     private var height: Double {
         switch size {
         case .small:
