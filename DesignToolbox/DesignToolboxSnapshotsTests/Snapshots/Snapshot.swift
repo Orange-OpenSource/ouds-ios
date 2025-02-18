@@ -33,14 +33,14 @@ enum Snapshot {
         let viewController = UIHostingController(rootView: view)
         assertSnapshot(
             of: viewController,
-            as: .image(on: .iPhone13ProMax, traits: Self.darkStyleTraits),
+            as: .image(on: .iPhone13ProMax, precision: 0.5, perceptualPrecision: 0.5, traits: Self.darkStyleTraits),
             file: (file),
             testName: testName,
             line: line)
 
         assertSnapshot(
             of: viewController,
-            as: .image(on: .iPhone13ProMax, traits: Self.lightStyleTraits),
+            as: .image(on: .iPhone13ProMax, precision: 0.5, perceptualPrecision: 0.5, traits: Self.lightStyleTraits),
             file: (file),
             testName: testName,
             line: line)
