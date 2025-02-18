@@ -1,0 +1,52 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import Foundation
+import OUDSTokensComponent
+import OUDSTokensRaw
+import OUDSTokensSemantic
+
+extension OrangeThemeCheckboxComponentTokensProvider: CheckboxComponentTokens {
+    @objc open var checkboxSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var checkboxSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var checkboxSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension600 }
+    @objc open var checkboxSizeIndicatorInnerIcon: SizeSemanticToken { DimensionRawTokens.dimension5xs }
+    @objc open var checkboxBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusDefault }
+    @objc open var checkboxBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc open var checkboxBorderWidthSelectedHover: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc open var checkboxBorderWidthSelectedPressed: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc open var checkboxBorderWidthSelectedFocus: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc open var checkboxBorderWidthUnselected: BorderWidthSemanticToken { borders.borderWidthThin }
+    @objc open var checkboxBorderWidthUnselectedHover: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc open var checkboxBorderWidthUnselectedPressed: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc open var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { borders.borderWidthMedium }
+    @objc open var checkboxOpacityBgSelected: OpacitySemanticToken { opacities.opacityInvisible }
+    @objc open var checkboxOpacityBgUnselected: OpacitySemanticToken { opacities.opacityInvisible }
+    @objc open var checkboxOpacityBgSelectedHover: OpacitySemanticToken { opacities.opacityInvisible }
+    @objc open var checkboxOpacityBgUnselectedHover: OpacitySemanticToken { opacities.opacityInvisible }
+    @objc open var checkboxOpacityBgSelectedPressed: OpacitySemanticToken { opacities.opacityInvisible }
+    @objc open var checkboxOpacityBgUnselectedPressed: OpacitySemanticToken { opacities.opacityInvisible }
+    @objc open var checkboxOpacityBgSelectedFocus: OpacitySemanticToken { opacities.opacityInvisible }
+    @objc open var checkboxOpacityBgUnselectedFocus: OpacitySemanticToken { opacities.opacityInvisible }
+    @objc open var checkboxSizeIndicator: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
+    @objc open var checkboxColorContentSelected: MultipleColorSemanticTokens { colors.colorActionSelected }
+    @objc open var checkboxColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
+    @objc open var checkboxColorContentHover: MultipleColorSemanticTokens { colors.colorActionHover }
+    @objc open var checkboxColorContentPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
+    @objc open var checkboxColorContentDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
+    @objc open var checkboxColorContentFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
+    @objc open var checkboxColorContentErrorEnabled: MultipleColorSemanticTokens { colors.colorActionNegativeEnabled }
+    @objc open var checkboxColorContentErrorHover: MultipleColorSemanticTokens { colors.colorActionNegativeHover }
+    @objc open var checkboxColorContentErrorPressed: MultipleColorSemanticTokens { colors.colorActionNegativePressed }
+    @objc open var checkboxColorContentErrorFocus: MultipleColorSemanticTokens { colors.colorActionNegativeFocus }
+}
