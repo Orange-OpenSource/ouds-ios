@@ -34,7 +34,6 @@ enum Snapshot {
         assertSnapshot(
             of: viewController,
             as: .image(on: .iPhone13ProMax, traits: Self.darkStyleTraits),
-            timeout: 30,
             file: (file),
             testName: testName,
             line: line)
@@ -42,7 +41,6 @@ enum Snapshot {
         assertSnapshot(
             of: viewController,
             as: .image(on: .iPhone13ProMax, traits: Self.lightStyleTraits),
-            timeout: 30,
             file: (file),
             testName: testName,
             line: line)
