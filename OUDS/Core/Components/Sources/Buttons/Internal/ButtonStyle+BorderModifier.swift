@@ -25,7 +25,7 @@ struct ButtonBorderModifier: ViewModifier {
     // MARK: Stored Properties
 
     let hierarchy: OUDSButton.Hierarchy
-    let state: InternalButtonState
+    let state: ButtonInternalState
 
     // MARK: Body
 

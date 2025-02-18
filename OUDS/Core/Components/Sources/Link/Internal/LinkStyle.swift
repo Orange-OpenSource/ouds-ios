@@ -16,16 +16,16 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Internal Link State
+// MARK: - Link Internal State
 
-/// The internal state used by modifiers to handle all states of the button.
-enum InternalLinkState {
+/// The internal state used by modifiers to handle all states of the link.
+enum LinkInternalState {
     case enabled, hover, pressed, disabled
 }
 
 // MARK: - Link Style
 
-struct OUDSLinkStyle: ButtonStyle {
+struct LinkStyle: ButtonStyle {
 
     // MARK: Stored properties
 
@@ -68,9 +68,9 @@ struct OUDSLinkStyle: ButtonStyle {
         }
     }
 
-    // MARK: Private Helpers
+    // MARK: Helpers
 
-    private func internalState(isPressed: Bool) -> InternalLinkState {
+    private func internalState(isPressed: Bool) -> LinkInternalState {
         if !isEnabled {
             return .disabled
         }
@@ -103,7 +103,7 @@ private struct LinkArrowLabelStyle: LabelStyle {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
-    let state: InternalLinkState
+    let state: LinkInternalState
     let size: OUDSLink.Size
     let arrow: OUDSLink.Arrow
 
@@ -145,7 +145,7 @@ private struct LinkIconAndTextLabelStyle: LabelStyle {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
-    let state: InternalLinkState
+    let state: LinkInternalState
     let size: OUDSLink.Size
     let layout: OUDSLink.Layout
 

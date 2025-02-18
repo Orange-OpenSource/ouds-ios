@@ -16,9 +16,50 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Button Loading Content Modifier
+
+/// Used to add a progress indicator instead of content (Text, Icon)
+/// As the button must keep the size of the content, the indicator is
+/// added as overlay on top, and the content is hidden applying an opacity.
+struct ButtonLoadingContentModifier: ViewModifier {
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
+
+    // MARK: Stored Properties
+
+    let hierarchy: OUDSButton.Hierarchy
+
+    // MARK: Body
+
+    func body(content: Content) -> some View {
+        content
+            .overlay {
+                LoadingIndicator(color: colorToken.color(for: colorScheme))
+                    .padding(.vertical, theme.button.buttonSpacePaddingBlock)
+            }
+    }
+
+    // MARK: Private helper
+
+    private var colorToken: MultipleColorSemanticTokens {
+        switch hierarchy {
+        case .default:
+            onColoredSurface ? theme.button.buttonColorContentDefaultLoadingMono : theme.button.buttonColorContentDefaultLoading
+        case .strong:
+            onColoredSurface ? theme.button.buttonColorContentStrongLoadingMono : theme.colors.colorContentOnActionLoading
+        case .minimal:
+            onColoredSurface ? theme.button.buttonColorContentMinimalLoadingMono : theme.button.buttonColorContentMinimalLoading
+        case .negative:
+            theme.colors.colorContentOnStatusEmphasizedAlt
+        }
+    }
+}
+
 // MARK: - Loading indicator
 
-private struct LoagingIndicator: View {
+private struct LoadingIndicator: View {
 
     // MARK: Stored Properties
 
@@ -48,46 +89,5 @@ private struct LoagingIndicator: View {
         Circle()
             .trim(from: 0, to: 0.7)
             .stroke(color, lineWidth: 3)
-    }
-}
-
-// MARK: - Button Loading Content Modifier
-
-/// Used to add a progress indicator instead of content (Text, Icon)
-/// As the button must keep the size of the content, the indicator is
-/// added as overlay on top, and the content is hidden applying an opacity.
-struct ButtonLoadingContentModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
-
-    // MARK: Stored Properties
-
-    let hierarchy: OUDSButton.Hierarchy
-
-    // MARK: Body
-
-    func body(content: Content) -> some View {
-        content
-            .overlay {
-                LoagingIndicator(color: colorToken.color(for: colorScheme))
-                    .padding(.vertical, theme.button.buttonSpacePaddingBlock)
-            }
-    }
-
-    // MARK: Private helper
-
-    private var colorToken: MultipleColorSemanticTokens {
-        switch hierarchy {
-        case .default:
-            onColoredSurface ? theme.button.buttonColorContentDefaultLoadingMono : theme.button.buttonColorContentDefaultLoading
-        case .strong:
-            onColoredSurface ? theme.button.buttonColorContentStrongLoadingMono : theme.colors.colorContentOnActionLoading
-        case .minimal:
-            onColoredSurface ? theme.button.buttonColorContentMinimalLoadingMono : theme.button.buttonColorContentMinimalLoading
-        case .negative:
-            theme.colors.colorContentOnStatusEmphasizedAlt
-        }
     }
 }

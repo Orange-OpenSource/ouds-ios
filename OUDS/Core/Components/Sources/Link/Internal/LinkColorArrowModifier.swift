@@ -18,19 +18,21 @@ import SwiftUI
 
 struct LinkColorArrowModifier: ViewModifier {
 
+    // MARK: - Proeprties
+
+    let state: LinkInternalState
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
-    // MARK: Stored Properties
-
-    let state: InternalLinkState
+    // MARK: - Body
 
     func body(content: Content) -> some View {
         content.foregroundStyle(appliedColor)
     }
 
-    // MARK: Private helpers
+    // MARK: - Helpers
 
     private var appliedColor: Color {
         switch state {

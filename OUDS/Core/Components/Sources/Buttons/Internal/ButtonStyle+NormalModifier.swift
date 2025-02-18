@@ -15,8 +15,10 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Button Internal State
+
 /// The internal state used by modifiers to handle all states of the button.
-enum InternalButtonState {
+enum ButtonInternalState {
     case enabled, hover, pressed, loading, disabled
 }
 
@@ -30,7 +32,7 @@ struct ButtonViewModifier: ViewModifier {
     // MARK: Stored Properties
 
     let hierarchy: OUDSButton.Hierarchy
-    let state: InternalButtonState
+    let state: ButtonInternalState
 
     // MARK: Body
 
