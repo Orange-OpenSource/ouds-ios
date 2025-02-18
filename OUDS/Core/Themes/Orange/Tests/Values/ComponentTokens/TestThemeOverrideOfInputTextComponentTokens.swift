@@ -31,31 +31,21 @@ final class TestThemeOverrideOfInputTextComponentTokens: XCTestCase {
 
     // MARK: - Sizes
 
-    func testInheritedThemeCanOverrideInputTextComponentTokenSizeMaxWidth() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextSizeMaxWidth, abstractTheme.inputText.inputTextSizeMaxWidth)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextSizeMaxWidth == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSize)
-    }
-
     func testInheritedThemeCanOverrideInputTextComponentTokenSizeMinWidth() throws {
         XCTAssertNotEqual(inheritedTheme.inputText.inputTextSizeMinWidth, abstractTheme.inputText.inputTextSizeMinWidth)
         XCTAssertTrue(inheritedTheme.inputText.inputTextSizeMinWidth == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSize)
     }
 
-    // MARK: - Colors
-
-    func testInheritedThemeCanOverrideInputTextComponentTokenColorBgDefaultDisabled() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorBgDefaultDisabled, abstractTheme.inputText.inputTextColorBgDefaultDisabled)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextColorBgDefaultDisabled == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
+    func testInheritedThemeCanOverrideInputTextComponentTokenSizeMaxWidth() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextSizeMaxWidth, abstractTheme.inputText.inputTextSizeMaxWidth)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextSizeMaxWidth == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSize)
     }
+
+    // MARK: - Colors
 
     func testInheritedThemeCanOverrideInputTextComponentTokenColorBgDefaultEnabled() throws {
         XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorBgDefaultEnabled, abstractTheme.inputText.inputTextColorBgDefaultEnabled)
         XCTAssertTrue(inheritedTheme.inputText.inputTextColorBgDefaultEnabled == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
-    }
-
-    func testInheritedThemeCanOverrideInputTextComponentTokenColorBgDefaultFocus() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorBgDefaultFocus, abstractTheme.inputText.inputTextColorBgDefaultFocus)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextColorBgDefaultFocus == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
     }
 
     func testInheritedThemeCanOverrideInputTextComponentTokenColorBgDefaultHover() throws {
@@ -63,19 +53,24 @@ final class TestThemeOverrideOfInputTextComponentTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.inputText.inputTextColorBgDefaultHover == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
     }
 
-    func testInheritedThemeCanOverrideInputTextComponentTokenColorBgDefaultLoading() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorBgDefaultLoading, abstractTheme.inputText.inputTextColorBgDefaultLoading)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextColorBgDefaultLoading == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
-    }
-
     func testInheritedThemeCanOverrideInputTextComponentTokenColorBgDefaultPressed() throws {
         XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorBgDefaultPressed, abstractTheme.inputText.inputTextColorBgDefaultPressed)
         XCTAssertTrue(inheritedTheme.inputText.inputTextColorBgDefaultPressed == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
     }
 
-    func testInheritedThemeCanOverrideInputTextComponentTokenColorContentDefaultDisabled() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorContentDefaultDisabled, abstractTheme.inputText.inputTextColorContentDefaultDisabled)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextColorContentDefaultDisabled == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
+    func testInheritedThemeCanOverrideInputTextComponentTokenColorBgDefaultLoading() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorBgDefaultLoading, abstractTheme.inputText.inputTextColorBgDefaultLoading)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextColorBgDefaultLoading == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
+    }
+
+    func testInheritedThemeCanOverrideInputTextComponentTokenColorBgDefaultDisabled() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorBgDefaultDisabled, abstractTheme.inputText.inputTextColorBgDefaultDisabled)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextColorBgDefaultDisabled == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
+    }
+
+    func testInheritedThemeCanOverrideInputTextComponentTokenColorBgDefaultFocus() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorBgDefaultFocus, abstractTheme.inputText.inputTextColorBgDefaultFocus)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextColorBgDefaultFocus == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
     }
 
     func testInheritedThemeCanOverrideInputTextComponentTokenColorContentDefaultEnabled() throws {
@@ -83,14 +78,14 @@ final class TestThemeOverrideOfInputTextComponentTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.inputText.inputTextColorContentDefaultEnabled == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
     }
 
-    func testInheritedThemeCanOverrideInputTextComponentTokenColorContentDefaultFocus() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorContentDefaultFocus, abstractTheme.inputText.inputTextColorContentDefaultFocus)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextColorContentDefaultFocus == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
-    }
-
     func testInheritedThemeCanOverrideInputTextComponentTokenColorContentDefaultHover() throws {
         XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorContentDefaultHover, abstractTheme.inputText.inputTextColorContentDefaultHover)
         XCTAssertTrue(inheritedTheme.inputText.inputTextColorContentDefaultHover == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
+    }
+
+    func testInheritedThemeCanOverrideInputTextComponentTokenColorContentDefaultPressed() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorContentDefaultPressed, abstractTheme.inputText.inputTextColorContentDefaultPressed)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextColorContentDefaultPressed == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
     }
 
     func testInheritedThemeCanOverrideInputTextComponentTokenColorContentDefaultLoading() throws {
@@ -98,9 +93,14 @@ final class TestThemeOverrideOfInputTextComponentTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.inputText.inputTextColorContentDefaultLoading == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
     }
 
-    func testInheritedThemeCanOverrideInputTextComponentTokenColorContentDefaultPressed() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorContentDefaultPressed, abstractTheme.inputText.inputTextColorContentDefaultPressed)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextColorContentDefaultPressed == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
+    func testInheritedThemeCanOverrideInputTextComponentTokenColorContentDefaultDisabled() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorContentDefaultDisabled, abstractTheme.inputText.inputTextColorContentDefaultDisabled)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextColorContentDefaultDisabled == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
+    }
+
+    func testInheritedThemeCanOverrideInputTextComponentTokenColorContentDefaultFocus() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextColorContentDefaultFocus, abstractTheme.inputText.inputTextColorContentDefaultFocus)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextColorContentDefaultFocus == MockThemeInputTextComponentTokenProvider.mockThemeInputTextColor)
     }
 
     // MARK: - Spaces
@@ -115,19 +115,19 @@ final class TestThemeOverrideOfInputTextComponentTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.inputText.inputTextSpacePaddingBlock == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSpace)
     }
 
-    func testInheritedThemeCanOverrideInputTextComponentTokenSpacePaddingInlineContainerEnd() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextSpacePaddingInlineContainerEnd, abstractTheme.inputText.inputTextSpacePaddingInlineContainerEnd)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextSpacePaddingInlineContainerEnd == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSpace)
-    }
-
     func testInheritedThemeCanOverrideInputTextComponentTokenSpacePaddingInlineContainerStart() throws {
         XCTAssertNotEqual(inheritedTheme.inputText.inputTextSpacePaddingInlineContainerStart, abstractTheme.inputText.inputTextSpacePaddingInlineContainerStart)
         XCTAssertTrue(inheritedTheme.inputText.inputTextSpacePaddingInlineContainerStart == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSpace)
     }
 
-    func testInheritedThemeCanOverrideInputTextComponentTokenSpacePaddingInlineIconEnd() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextSpacePaddingInlineIconEnd, abstractTheme.inputText.inputTextSpacePaddingInlineIconEnd)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextSpacePaddingInlineIconEnd == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSpace)
+    func testInheritedThemeCanOverrideInputTextComponentTokenSpacePaddingInlineContainerEnd() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextSpacePaddingInlineContainerEnd, abstractTheme.inputText.inputTextSpacePaddingInlineContainerEnd)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextSpacePaddingInlineContainerEnd == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSpace)
+    }
+
+    func testInheritedThemeCanOverrideInputTextComponentTokenSpacePaddingInlineTextEnd() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextSpacePaddingInlineTextEnd, abstractTheme.inputText.inputTextSpacePaddingInlineTextEnd)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextSpacePaddingInlineTextEnd == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSpace)
     }
 
     func testInheritedThemeCanOverrideInputTextComponentTokenSpacePaddingInlinePrefixTextEnd() throws {
@@ -140,9 +140,9 @@ final class TestThemeOverrideOfInputTextComponentTokens: XCTestCase {
         XCTAssertTrue(inheritedTheme.inputText.inputTextSpacePaddingInlineSuffixTextEnd == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSpace)
     }
 
-    func testInheritedThemeCanOverrideInputTextComponentTokenSpacePaddingInlineTextEnd() throws {
-        XCTAssertNotEqual(inheritedTheme.inputText.inputTextSpacePaddingInlineTextEnd, abstractTheme.inputText.inputTextSpacePaddingInlineTextEnd)
-        XCTAssertTrue(inheritedTheme.inputText.inputTextSpacePaddingInlineTextEnd == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSpace)
+    func testInheritedThemeCanOverrideInputTextComponentTokenSpacePaddingInlineIconEnd() throws {
+        XCTAssertNotEqual(inheritedTheme.inputText.inputTextSpacePaddingInlineIconEnd, abstractTheme.inputText.inputTextSpacePaddingInlineIconEnd)
+        XCTAssertTrue(inheritedTheme.inputText.inputTextSpacePaddingInlineIconEnd == MockThemeInputTextComponentTokenProvider.mockThemeInputTextSpace)
     }
 }
 

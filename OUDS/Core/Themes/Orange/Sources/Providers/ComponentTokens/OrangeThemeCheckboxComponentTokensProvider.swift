@@ -17,46 +17,50 @@ import OUDSTokensSemantic
 
 // swiftlint:disable type_name
 
-/// A class which wraps all **component  tokens of check radio** for *radio button* and *checkboxes* objects
-/// like `OUDSRadioButton` or `OUDSCheckbox`.
+/// A class which wraps all **component  tokens of checkbox and radio button** for *radio button* and *checkboxes* objects
+/// like `OUDSRadioButton`, `OUDSCheckbox` and `OUDSCheckboxItem`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
-/// This provider should be integrated as a `AllCheckRadioComponentTokensProvider` implementation inside `OUDSTheme` so as to provide
-/// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
-/// Custom themes can use subclass of ``OrangeThemeCheckRadioComponentTokensProvider`` and apply the provider they need.
-/// It implements also the protocol `CheckRadioComponentTokens` so as to expose the component tokens for *radio button*
-/// and *checkboxes* through any `OUDSTheme`.
-/// *Radio button* and *checkboxes* components tokens are defined with raw and semantic tokens of sizes (from `AllSizeSemanticTokensProvider`),
-/// and dimensions (`DimensionRawTokens`). These components share the same type of tokens which are all gather here.
+/// This provider should be integrated as a `AllCheckboxComponentTokensProvider` implementation inside `OUDSTheme` so as to provide all tokens to the users.
+/// It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
+/// Custom themes can use subclass of ``OrangeThemeCheckboxComponentTokensProvider`` and apply the provider they need.
+/// It implements also the protocol `CheckboxComponentTokens` so as to expose the component tokens for *radio button* and *checkboxes* through any `OUDSTheme`.
+/// *Radio button* and *checkboxes* components tokens are defined with raw and semantic tokens of sizes (from `SizeSemanticToken`), opacities (`OpacitySemanticToken`),
+/// borders (`BorderRadiusSemanticToken`, `BorderWidthSemanticToken`) and colors (`MultipleColorSemanticTokens`).
+/// These components share the same type of tokens which are all gather edhere.
 ///
 /// ```swift
-///     // Define your own provider for radio / check component tokens
+///     // Define your own provider for radio / checkbox component tokens
 ///     // by inheriting from existing provider
-///     class CustomCheckRadioComponentTokensProvider: OrangeThemeCheckRadioComponentTokensProvider {
+///     class CustomCheckboxComponentTokensProvider: OrangeThemeCheckboxComponentTokensProvider {
 ///
-///         // Then override the radio / check component tokens you want.
+///         // Then override the radio / checkbox component tokens you want.
 ///
-///         override var checkRadioSizeSelector: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
+///         override var checkboxSizeMinWidth: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
 ///
-///         override var checkRadioSizeMaxHeightAssetsContainer: DimensionRawToken { DimensionRawTokens.dimension1000 }
+///         override var checkboxBorderWidthSelected: BorderWidthSemanticToken { borders.borderWidthThin }
+///
+///         override var checkboxOpacityBgUnselectedFocus: OpacitySemanticToken { opacities.opacityStrong }
+///
+///         override var checkboxColorContentErrorPressed: MultipleColorSemanticTokens { colors.colorBgPrimary }
 ///
 ///         // ...
 ///     }
 ///
 ///     // Or define your own provider from scratch
-///     class CustomCheckRadioComponentTokensProvider: CheckRadioComponentTokens {
+///     class CustomCheckboxComponentTokensProvider: CheckboxComponentTokens {
 ///
 ///         // And implement hunders of tokens.
 ///         // You are allowed to give semantic tokens providers if you want to define values.
 ///     }
 /// ```
 ///
-/// Then, you can give this `CustomCheckRadioComponentTokensProvider` to your own theme implementation:
+/// Then, you can give this `CustomCheckboxComponentTokensProvider` to your own theme implementation:
 ///
 /// ```swift
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomCheckRadioComponentTokensProvider(), ... ])
+///         super.init(tokensProviders: [ CustomCheckboxComponentTokensProvider(), ... ])
 ///     }
 /// }
 /// ```
@@ -64,11 +68,11 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomCheckRadioComponentTokensProvider(), ... ])
+///     OrangeTheme(tokensProviders: [ CustomCheckboxComponentTokensProvider(), ... ])
 /// ```
 ///
 /// - Since: 0.10.0
-open class OrangeThemeCheckRadioComponentTokensProvider: AllCheckRadioComponentTokensProvider {
+open class OrangeThemeCheckboxComponentTokensProvider: AllCheckboxComponentTokensProvider {
 
     /// Provider of size semantic tokens to use for check / radio sizes
     public let sizes: AllSizeSemanticTokensProvider
@@ -92,7 +96,7 @@ open class OrangeThemeCheckRadioComponentTokensProvider: AllCheckRadioComponentT
                 borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
                 opacities: AllOpacitySemanticTokensProvider) {
-        OL.debug("Init of OrangeThemeCheckRadioComponentTokensProvider")
+        OL.debug("Init of OrangeThemeCheckboxComponentTokensProvider")
         self.sizes = sizes
         self.borders = borders
         self.colors = colors
@@ -103,8 +107,8 @@ open class OrangeThemeCheckRadioComponentTokensProvider: AllCheckRadioComponentT
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of CheckRadioComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+CheckRadioComponentTokens.swift
-    // This declaration of OrangeThemeCheckRadioComponentTokensProvider is here also to allow to write documentation.
+    // the implemention of CheckboxComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+CheckboxComponentTokens.swift
+    // This declaration of OrangeThemeCheckboxComponentTokensProvider is here also to allow to write documentation.
 }
 
 // swiftlint:enable type_name
