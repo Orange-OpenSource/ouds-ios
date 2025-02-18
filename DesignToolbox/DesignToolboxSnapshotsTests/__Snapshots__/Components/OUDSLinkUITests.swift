@@ -131,9 +131,6 @@ final class OUDSLinkUITests: XCTestCase {
                 .disabled(disabled)
         }
 
-        // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-        let hostingVC = UIHostingController(rootView: illustration)
-
         // Create a unique snapshot name based on the current configuration :
         // test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<size><disabledPatern> where:
         // - `coloredSurfacePatern` is empty if not on colored surface
@@ -144,7 +141,10 @@ final class OUDSLinkUITests: XCTestCase {
         let name = "\(coloredSurfacePatern)\(layout.debugDescription)_\(size.description)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-        assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
     }
 }
 // swiftlint:enable required_deinit

@@ -36,7 +36,6 @@
 		07304A6C2D429F9F009320BA /* LinkPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB02D40E34700DBB10A /* LinkPage.swift */; };
 		073543112CA154DE001187EA /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543102CA154DE001187EA /* Card.swift */; };
 		0740A99A2C9874670069D24A /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 0740A9992C9874670069D24A /* SnapshotTesting */; };
-		0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* Snapshot.swift */; };
 		0747947A2CAE882A0033C2D8 /* EmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074794792CAE882A0033C2D8 /* EmptyState.swift */; };
 		075114DB2CB7D28D00B8B759 /* SizeTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */; };
 		075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */; };
@@ -103,6 +102,7 @@
 		07F75A432CC654050004F1AD /* NameSpace+PaddingStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F75A422CC654050004F1AD /* NameSpace+PaddingStack.swift */; };
 		51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */; };
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
+		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
@@ -222,7 +222,7 @@
 		07304A4A2D427146009320BA /* OUDSLinkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSLinkUITests.swift; sourceTree = "<group>"; };
 		073543102CA154DE001187EA /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		073543152CA17275001187EA /* DesignToolboxElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElement.swift; sourceTree = "<group>"; };
-		074008222C942810006B8729 /* Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshot.swift; sourceTree = "<group>"; };
+		074008222C942810006B8729 /* XCTestCase+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Snapshot.swift"; sourceTree = "<group>"; };
 		0740A9872C9833670069D24A /* Appfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = "<group>"; };
 		0740A9882C9833670069D24A /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
 		0740A9892C9833670069D24A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = fastlane/README.md; sourceTree = "<group>"; };
@@ -423,14 +423,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		074008212C9427F8006B8729 /* Snapshots */ = {
-			isa = PBXGroup;
-			children = (
-				074008222C942810006B8729 /* Snapshot.swift */,
-			);
-			path = Snapshots;
-			sourceTree = "<group>";
-		};
 		0740A98A2C98337C0069D24A /* fastlane */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,7 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				51952A782D3FA0FB0068B807 /* __Snapshots__ */,
-				074008212C9427F8006B8729 /* Snapshots */,
+				074008222C942810006B8729 /* XCTestCase+Snapshot.swift */,
 			);
 			path = DesignToolboxSnapshotsTests;
 			sourceTree = "<group>";
@@ -1043,6 +1035,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */,
 				51952AA52D3FA3440068B807 /* Card.swift in Sources */,
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
@@ -1119,7 +1112,6 @@
 				07304A4B2D427146009320BA /* OUDSLinkUITests.swift in Sources */,
 				6D8F9C4F2CBFDC8B0078A10E /* EmptyState.swift in Sources */,
 				6D24658E2CBEAC750023E359 /* BorderTokenPage.swift in Sources */,
-				0740A99B2C9874E70069D24A /* Snapshot.swift in Sources */,
 				51952A8F2D3FA24C0068B807 /* OUDSTokensOpacityUITests.swift in Sources */,
 				07F0AFDF2CFDD1FD00D334DD /* ComponentsPage.swift in Sources */,
 			);
@@ -1553,7 +1545,7 @@
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
 			requirement = {
 				kind = exactVersion;
-				version = 1.17.6;
+				version = 1.18.1;
 			};
 		};
 		6DFC20C32CE3D9AE00F2EC33 /* XCRemoteSwiftPackageReference "accessibility-statement-lib-ios" */ = {

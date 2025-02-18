@@ -87,7 +87,7 @@ final class OUDSComponentButtonUITests: XCTestCase {
     /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
     ///
     /// It iterates through all button `hierarchy`, for all `style` with* textOnly, textAndIcon and iconOnly layouts*
-    /// in enable and disbled state.
+    /// in enabled and disabled state.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme) from which to retrieve color tokens.
@@ -131,9 +131,6 @@ final class OUDSComponentButtonUITests: XCTestCase {
                 .disabled(disabled)
         }
 
-        // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-        let hostingVC = UIHostingController(rootView: illustration)
-
         // Create a unique snapshot name based on the current configuration :
         // test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<hierarchy>_<style><disapledPatern> where:
         // - `coloredSurfacePatern` is empty if not on colored surface
@@ -144,7 +141,10 @@ final class OUDSComponentButtonUITests: XCTestCase {
         let name = "\(coloredSurfacePatern)\(layout.rawValue.camelCase)_\(hierarchy.description)_\(OUDSButton.Style.default.description)\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-        assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
     }
 }
 
