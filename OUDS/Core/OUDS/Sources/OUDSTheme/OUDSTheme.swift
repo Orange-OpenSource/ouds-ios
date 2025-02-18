@@ -105,7 +105,7 @@ open class OUDSTheme: @unchecked Sendable {
     /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButton` and `OUDSCheckboxItem`
     public let controlItem: AllControlItemComponentTokensProvider
 
-    /// All components tokens related to radio button and checbkxoes components like `OUDSRadioButton`, `OUDSCheckbox` and `OUDSCheckboxItem`
+    /// All components tokens related to radio button and checkboxes components like `OUDSRadioButton`, `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
 
     // NOTE: Add new component tokens provider here

@@ -68,7 +68,7 @@ extension Bundle {
     }
 
     var tokensLibraryVersion: String {
-        "Tokens versions (components, semantic, raw): 0.6.0 / 0.5.0 / 0.5.0"
+        "Tokens version: 0.6.0"
     }
 
     // MARK: Private Implementation
