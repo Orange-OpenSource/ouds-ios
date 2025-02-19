@@ -14,9 +14,7 @@
 import OUDSTokensRaw
 import Testing
 import TestsUtils
-import XCTest
 
-// swiftlint:disable required_deinit
 // swiftlint:disable type_body_length
 // swiftlint:disable function_body_length
 // swiftlint:disable file_length
@@ -33,7 +31,7 @@ import XCTest
 /// - dimension value must be a factor of `DimensionRawTokens.borderBase`
 /// - dimension values must be all different
 /// - the "bigger" the dimension token is, the higher the value is
-final class DimensionRawTokensTests: XCTestCase {
+struct DimensionRawTokensTests {
 
     @Test
     func dimensionRawToken0NotNegativeValue() throws {
@@ -45,7 +43,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension0 < DimensionRawTokens.dimension25)
     }
 
-    func testDimensionRawToken0MultipleOfBase() throws {
+    @Test func dimensionRawToken0MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension0, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -59,7 +57,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension25 < DimensionRawTokens.dimension50)
     }
 
-    func testDimensionRawToken25MultipleOfBase() throws {
+    @Test func dimensionRawToken25MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension25, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -73,7 +71,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension50 < DimensionRawTokens.dimension75)
     }
 
-    func testDimensionRawToken50MultipleOfBase() throws {
+    @Test func dimensionRawToken50MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension50, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -87,7 +85,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension75 < DimensionRawTokens.dimension100)
     }
 
-    func testDimensionRawToken75MultipleOfBase() throws {
+    @Test func dimensionRawToken75MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension75, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -101,7 +99,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension100 < DimensionRawTokens.dimension125)
     }
 
-    func testDimensionRawToken100MultipleOfBase() throws {
+    @Test func dimensionRawToken100MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension100, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -115,7 +113,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension125 < DimensionRawTokens.dimension150)
     }
 
-    func testDimensionRawToken125MultipleOfBase() throws {
+    @Test func dimensionRawToken125MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension125, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -129,7 +127,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension150 < DimensionRawTokens.dimension200)
     }
 
-    func testDimensionRawToken150MultipleOfBase() throws {
+    @Test func dimensionRawToken150MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension150, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -143,7 +141,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension200 < DimensionRawTokens.dimension250)
     }
 
-    func testDimensionRawToken200MultipleOfBase() throws {
+    @Test func dimensionRawToken200MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension200, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -157,7 +155,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension250 < DimensionRawTokens.dimension300)
     }
 
-    func testDimensionRawToken250MultipleOfBase() throws {
+    @Test func dimensionRawToken250MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension250, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -171,7 +169,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension300 < DimensionRawTokens.dimension350)
     }
 
-    func testDimensionRawToken300MultipleOfBase() throws {
+    @Test func dimensionRawToken300MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension300, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -185,7 +183,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension350 < DimensionRawTokens.dimension400)
     }
 
-    func testDimensionRawToken350MultipleOfBase() throws {
+    @Test func dimensionRawToken350MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension350, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -199,7 +197,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension400 < DimensionRawTokens.dimension450)
     }
 
-    func testDimensionRawToken400MultipleOfBase() throws {
+    @Test func dimensionRawToken400MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension400, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -213,7 +211,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension450 < DimensionRawTokens.dimension500)
     }
 
-    func testDimensionRawToken450MultipleOfBase() throws {
+    @Test func dimensionRawToken450MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension450, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -227,7 +225,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension500 < DimensionRawTokens.dimension550)
     }
 
-    func testDimensionRawToken500MultipleOfBase() throws {
+    @Test func dimensionRawToken500MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension500, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -241,7 +239,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension550 < DimensionRawTokens.dimension600)
     }
 
-    func testDimensionRawToken550MultipleOfBase() throws {
+    @Test func dimensionRawToken550MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension550, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -255,7 +253,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension600 < DimensionRawTokens.dimension650)
     }
 
-    func testDimensionRawToken600MultipleOfBase() throws {
+    @Test func dimensionRawToken600MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension600, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -269,7 +267,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension650 < DimensionRawTokens.dimension700)
     }
 
-    func testDimensionRawToken650MultipleOfBase() throws {
+    @Test func dimensionRawToken650MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension650, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -283,7 +281,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension700 < DimensionRawTokens.dimension750)
     }
 
-    func testDimensionRawToken700MultipleOfBase() throws {
+    @Test func dimensionRawToken700MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension700, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -297,7 +295,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension750 < DimensionRawTokens.dimension800)
     }
 
-    func testDimensionRawToken750MultipleOfBase() throws {
+    @Test func dimensionRawToken750MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension750, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -311,7 +309,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension800 < DimensionRawTokens.dimension850)
     }
 
-    func testDimensionRawToken800MultipleOfBase() throws {
+    @Test func dimensionRawToken800MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension800, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -325,7 +323,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension850 < DimensionRawTokens.dimension900)
     }
 
-    func testDimensionRawToken850MultipleOfBase() throws {
+    @Test func dimensionRawToken850MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension850, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -339,7 +337,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension900 < DimensionRawTokens.dimension1000)
     }
 
-    func testDimensionRawToken900MultipleOfBase() throws {
+    @Test func dimensionRawToken900MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension900, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -353,7 +351,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension1000 < DimensionRawTokens.dimension1200)
     }
 
-    func testDimensionRawToken1000MultipleOfBase() throws {
+    @Test func dimensionRawToken1000MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1000, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -367,7 +365,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension1200 < DimensionRawTokens.dimension1400)
     }
 
-    func testDimensionRawToken1200MultipleOfBase() throws {
+    @Test func dimensionRawToken1200MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1200, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -381,7 +379,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension1400 < DimensionRawTokens.dimension1600)
     }
 
-    func testDimensionRawToken1400MultipleOfBase() throws {
+    @Test func dimensionRawToken1400MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1400, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -395,7 +393,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension1600 < DimensionRawTokens.dimension1800)
     }
 
-    func testDimensionRawToken1600MultipleOfBase() throws {
+    @Test func dimensionRawToken1600MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1600, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -409,7 +407,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension1800 < DimensionRawTokens.dimension2000)
     }
 
-    func testDimensionRawToken1800MultipleOfBase() throws {
+    @Test func dimensionRawToken1800MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1800, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -423,7 +421,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension2000 < DimensionRawTokens.dimension3000)
     }
 
-    func testDimensionRawToken2000MultipleOfBase() throws {
+    @Test func dimensionRawToken2000MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension2000, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -437,7 +435,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension3000 < DimensionRawTokens.dimension4000)
     }
 
-    func testDimensionRawToken3000MultipleOfBase() throws {
+    @Test func dimensionRawToken3000MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension3000, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -451,7 +449,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension4000 < DimensionRawTokens.dimension5000)
     }
 
-    func testDimensionRawToken4000MultipleOfBase() throws {
+    @Test func dimensionRawToken4000MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension4000, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -465,7 +463,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension5000 < DimensionRawTokens.dimension6000)
     }
 
-    func testDimensionRawToken5000MultipleOfBase() throws {
+    @Test func dimensionRawToken5000MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension5000, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -479,7 +477,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension6000 < DimensionRawTokens.dimension7000)
     }
 
-    func testDimensionRawToken6000MultipleOfBase() throws {
+    @Test func dimensionRawToken6000MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension6000, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -493,7 +491,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension7000 < DimensionRawTokens.dimension9000)
     }
 
-    func testDimensionRawToken7000MultipleOfBase() throws {
+    @Test func dimensionRawToken7000MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension7000, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -507,7 +505,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension9000 < DimensionRawTokens.dimension11000)
     }
 
-    func testDimensionRawToken9000MultipleOfBase() throws {
+    @Test func dimensionRawToken9000MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension9000, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -516,7 +514,7 @@ final class DimensionRawTokensTests: XCTestCase {
         #expect(DimensionRawTokens.dimension11000 >= 0)
     }
 
-    func testDimensionRawToken11000MultipleOfBase() throws {
+    @Test func dimensionRawToken11000MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension11000, factor: DimensionRawTokens.dimensionBase)
     }
 
@@ -1153,6 +1151,5 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 }
 
-// swiftlint:enable required_deinit
 // swiftlint:enable type_body_length
 // swiftlint:enable function_body_length
