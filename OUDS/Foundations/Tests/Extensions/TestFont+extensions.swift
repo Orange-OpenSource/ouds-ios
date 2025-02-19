@@ -14,35 +14,31 @@
 import Foundation
 import OUDSFoundations
 import SwiftUI
-import XCTest
-
-// swiftlint:disable required_deinit
+import Testing
 
 /// Class to test `Font` extensions related to `SwiftUI`
-final class TestFont_SwiftUI: XCTestCase {
+struct TestFont_SwiftUI {
 
     /// Tests description values of font weight
-    func testFontWeightDescription() throws {
-        XCTAssertTrue(Font.Weight.ultraLight.description == "Ultra-Light")
-        XCTAssertTrue(Font.Weight.thin.description == "Thin")
-        XCTAssertTrue(Font.Weight.light.description == "Light")
-        XCTAssertTrue(Font.Weight.regular.description == "Regular")
-        XCTAssertTrue(Font.Weight.medium.description == "Medium")
-        XCTAssertTrue(Font.Weight.semibold.description == "Semi-Bold")
-        XCTAssertTrue(Font.Weight.bold.description == "Bold")
-        XCTAssertTrue(Font.Weight.heavy.description == "Heavy")
-        XCTAssertTrue(Font.Weight.black.description == "Black")
+    @Test func fntWeightDescription() throws {
+        #expect(Font.Weight.ultraLight.description == "Ultra-Light")
+        #expect(Font.Weight.thin.description == "Thin")
+        #expect(Font.Weight.light.description == "Light")
+        #expect(Font.Weight.regular.description == "Regular")
+        #expect(Font.Weight.medium.description == "Medium")
+        #expect(Font.Weight.semibold.description == "Semi-Bold")
+        #expect(Font.Weight.bold.description == "Bold")
+        #expect(Font.Weight.heavy.description == "Heavy")
+        #expect(Font.Weight.black.description == "Black")
 
-        XCTAssertTrue("\(Font.Weight.ultraLight)" == "Ultra-Light")
-        XCTAssertTrue("\(Font.Weight.thin)" == "Thin")
-        XCTAssertTrue("\(Font.Weight.light)" == "Light")
-        XCTAssertTrue("\(Font.Weight.regular)" == "Regular")
-        XCTAssertTrue("\(Font.Weight.medium)" == "Medium")
-        XCTAssertTrue("\(Font.Weight.semibold)" == "Semi-Bold")
-        XCTAssertTrue("\(Font.Weight.bold)" == "Bold")
-        XCTAssertTrue("\(Font.Weight.heavy)" == "Heavy")
-        XCTAssertTrue("\(Font.Weight.black)" == "Black")
+        #expect("\(Font.Weight.ultraLight)" == "Ultra-Light")
+        #expect("\(Font.Weight.thin)" == "Thin")
+        #expect("\(Font.Weight.light)" == "Light")
+        #expect("\(Font.Weight.regular)" == "Regular")
+        #expect("\(Font.Weight.medium)" == "Medium")
+        #expect("\(Font.Weight.semibold)" == "Semi-Bold")
+        #expect("\(Font.Weight.bold)" == "Bold")
+        #expect("\(Font.Weight.heavy)" == "Heavy")
+        #expect("\(Font.Weight.black)" == "Black")
     }
 }
-
-// swiftlint:enable required_deinit

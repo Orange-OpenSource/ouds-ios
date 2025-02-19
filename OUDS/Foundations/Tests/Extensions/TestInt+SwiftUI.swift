@@ -14,53 +14,49 @@
 import Foundation
 import OUDSFoundations
 import SwiftUI
-import XCTest
+import Testing
 
-// swiftlint:disable required_deinit
-
-/// Class to test `Int` extensions related to `SwiftUI`
-final class TestInt_SwiftUI: XCTestCase {
+/// Struct to test `Int` extensions related to `SwiftUI`
+struct TestInt_SwiftUI {
 
     /// Tests values of font weight
+    @Test
     func testFontWeightValues() throws {
-
         // Expected values
-        XCTAssertTrue(0.fontWeight == Font.Weight.thin)
-        XCTAssertTrue(1.fontWeight == Font.Weight.thin)
-        XCTAssertTrue(99.fontWeight == Font.Weight.thin)
-        XCTAssertTrue(100.fontWeight == Font.Weight.thin)
+        #expect(0.fontWeight == Font.Weight.thin)
+        #expect(1.fontWeight == Font.Weight.thin)
+        #expect(99.fontWeight == Font.Weight.thin)
+        #expect(100.fontWeight == Font.Weight.thin)
 
-        XCTAssertTrue(101.fontWeight == Font.Weight.ultraLight)
-        XCTAssertTrue(200.fontWeight == Font.Weight.ultraLight)
+        #expect(101.fontWeight == Font.Weight.ultraLight)
+        #expect(200.fontWeight == Font.Weight.ultraLight)
 
-        XCTAssertTrue(201.fontWeight == Font.Weight.light)
-        XCTAssertTrue(300.fontWeight == Font.Weight.light)
+        #expect(201.fontWeight == Font.Weight.light)
+        #expect(300.fontWeight == Font.Weight.light)
 
-        XCTAssertTrue(301.fontWeight == Font.Weight.regular)
-        XCTAssertTrue(400.fontWeight == Font.Weight.regular)
+        #expect(301.fontWeight == Font.Weight.regular)
+        #expect(400.fontWeight == Font.Weight.regular)
 
-        XCTAssertTrue(401.fontWeight == Font.Weight.medium)
-        XCTAssertTrue(500.fontWeight == Font.Weight.medium)
+        #expect(401.fontWeight == Font.Weight.medium)
+        #expect(500.fontWeight == Font.Weight.medium)
 
-        XCTAssertTrue(501.fontWeight == Font.Weight.semibold)
-        XCTAssertTrue(600.fontWeight == Font.Weight.semibold)
+        #expect(501.fontWeight == Font.Weight.semibold)
+        #expect(600.fontWeight == Font.Weight.semibold)
 
-        XCTAssertTrue(601.fontWeight == Font.Weight.bold)
-        XCTAssertTrue(700.fontWeight == Font.Weight.bold)
+        #expect(601.fontWeight == Font.Weight.bold)
+        #expect(700.fontWeight == Font.Weight.bold)
 
-        XCTAssertTrue(701.fontWeight == Font.Weight.black)
-        XCTAssertTrue(800.fontWeight == Font.Weight.black)
-        XCTAssertTrue(801.fontWeight == Font.Weight.black)
-        XCTAssertTrue(900.fontWeight == Font.Weight.black)
-        XCTAssertTrue(901.fontWeight == Font.Weight.black)
-        XCTAssertTrue(950.fontWeight == Font.Weight.black)
+        #expect(701.fontWeight == Font.Weight.black)
+        #expect(800.fontWeight == Font.Weight.black)
+        #expect(801.fontWeight == Font.Weight.black)
+        #expect(900.fontWeight == Font.Weight.black)
+        #expect(901.fontWeight == Font.Weight.black)
+        #expect(950.fontWeight == Font.Weight.black)
 
-        XCTAssertTrue(951.fontWeight == Font.Weight.regular)
+        #expect(951.fontWeight == Font.Weight.regular)
 
         // Other default cases
-        XCTAssertTrue(1_000.fontWeight == Font.Weight.regular)
-        XCTAssertTrue((-1).fontWeight == Font.Weight.regular)
+        #expect(1_000.fontWeight == Font.Weight.regular)
+        #expect((-1).fontWeight == Font.Weight.regular)
     }
 }
-
-// swiftlint:enable required_deinit

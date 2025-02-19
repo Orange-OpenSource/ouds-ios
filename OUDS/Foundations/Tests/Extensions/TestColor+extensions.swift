@@ -13,36 +13,35 @@
 
 import OUDSFoundations
 import SwiftUI
-import XCTest
+import Testing
 
-// swiftlint:disable required_deinit
 // swiftlint:disable force_unwrapping
 
 /// To test some extensions of `SwiftUI.Color`
-final class TestColor_extensions: XCTestCase {
+struct TestColor_extensions {
 
-    func testInitWithHexadecimalValue() throws {
+    @Test func initWithHexadecimalValue() throws {
 
         // White
         let pureWhite = Color(hexadecimalCode: "#FFFFFF")!
-        XCTAssertEqual(pureWhite, Color.white)
+        #expect(pureWhite == Color.white)
 
         // Black
         let pureBlack = Color(hexadecimalCode: "#000000")!
-        XCTAssertEqual(pureBlack, Color.black)
+        #expect(pureBlack == Color.black)
 
         // Color form palette
         let malachite500 = Color(hexadecimalCode: "#3DE35A")!
-        XCTAssertTrue(malachite500.rgba!.red == 61, "Value is instead '\(malachite500.rgba!.red)'")
-        XCTAssertTrue(malachite500.rgba!.green == 227, "Value is instead '\(malachite500.rgba!.green)'")
-        XCTAssertTrue(malachite500.rgba!.blue == 90, "Value is instead '\(malachite500.rgba!.blue)'")
+        #expect(malachite500.rgba!.red == 61, "Value is instead '\(malachite500.rgba!.red)'")
+        #expect(malachite500.rgba!.green == 227, "Value is instead '\(malachite500.rgba!.green)'")
+        #expect(malachite500.rgba!.blue == 90, "Value is instead '\(malachite500.rgba!.blue)'")
 
         // Color with transparency
         let colorOpacityWhite500 = Color(hexadecimalCode: "#FFFFFF52")!
-        XCTAssertTrue(colorOpacityWhite500.rgba!.red == 255, "Value is instead '\(colorOpacityWhite500.rgba!.red)'")
-        XCTAssertTrue(colorOpacityWhite500.rgba!.green == 255, "Value is instead '\(colorOpacityWhite500.rgba!.green)'")
-        XCTAssertTrue(colorOpacityWhite500.rgba!.blue == 255, "Value is instead '\(colorOpacityWhite500.rgba!.blue)'")
-        XCTAssertTrue(colorOpacityWhite500.rgba!.alpha == 82, "Value is instead '\(colorOpacityWhite500.rgba!.alpha)'")
+        #expect(colorOpacityWhite500.rgba!.red == 255, "Value is instead '\(colorOpacityWhite500.rgba!.red)'")
+        #expect(colorOpacityWhite500.rgba!.green == 255, "Value is instead '\(colorOpacityWhite500.rgba!.green)'")
+        #expect(colorOpacityWhite500.rgba!.blue == 255, "Value is instead '\(colorOpacityWhite500.rgba!.blue)'")
+        #expect(colorOpacityWhite500.rgba!.alpha == 82, "Value is instead '\(colorOpacityWhite500.rgba!.alpha)'")
         /*
          colorOpacityWhite500 is white with opacity500.
          In base 16, white is #FFFFFF and opacity500 adds 52 suffix.
@@ -67,5 +66,4 @@ extension Color {
 }
 // swiftlint:enable large_tuple
 
-// swiftlint:enable required_deinit
 // swiftlint:enable force_unwrapping
