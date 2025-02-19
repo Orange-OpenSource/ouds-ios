@@ -1,0 +1,1299 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+
+    },
+    "App version: %@" : {
+
+    },
+    "app_about_accessibilityStatement_label" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accessibility statement"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Déclaration d'accessibilité"
+          }
+        }
+      }
+    },
+    "app_about_legalInformation_label" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legal informationa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informations légales"
+          }
+        }
+      }
+    },
+    "app_about_privacyPolicy_label" : {
+      "comment" : "About screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy policy"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Politique de confidentialité"
+          }
+        }
+      }
+    },
+    "app_bottomBar_about_label" : {
+      "comment" : "Bottom bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À propos"
+          }
+        }
+      }
+    },
+    "app_bottomBar_components_label" : {
+      "comment" : "Bottom bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Components"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Composants"
+          }
+        }
+      }
+    },
+    "app_bottomBar_tokens_label" : {
+      "comment" : "Bottom bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tokens"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tokens"
+          }
+        }
+      }
+    },
+    "app_common_copyCode_a11y" : {
+      "comment" : "Common (a11y)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy code"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copier le code"
+          }
+        }
+      }
+    },
+    "app_common_customize_label" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Customize"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personnaliser"
+          }
+        }
+      }
+    },
+    "app_common_enabled_label" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enabled"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activé"
+          }
+        }
+      }
+    },
+    "app_common_showCode_copy_a11y" : {
+      "comment" : "Common (a11y)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copy code to clipboard"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copier le code dans le presse-papiers"
+          }
+        }
+      }
+    },
+    "app_common_showCode_text" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View token code example"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir l'exemple de code du token"
+          }
+        }
+      }
+    },
+    "app_common_showCode_text_a11y" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toggle code visibility"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basculer la visibilité du code"
+          }
+        }
+      }
+    },
+    "app_component_common_userText_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte"
+          }
+        }
+      }
+    },
+    "app_component_common_userText_prompt" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez un texte"
+          }
+        }
+      }
+    },
+    "app_component_emptyContent_description_text" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This content is under construction and will be available very soon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce contenu est en cours de préparation et sera disponible très prochainement"
+          }
+        }
+      }
+    },
+    "app_component_emptyContent_text" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No content"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas de contenu"
+          }
+        }
+      }
+    },
+    "app_components_button_description_text" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buttons allow users to make choices or perform an action. They have multiple styles for various needs."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les boutons permettent aux utilisateurs de faire des choix ou d'effectuer une action. Ils ont plusieurs styles pour divers besoins."
+          }
+        }
+      }
+    },
+    "app_components_button_hierarchy_label" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hierarchy"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hiérarchie"
+          }
+        }
+      }
+    },
+    "app_components_button_icon_a11y" : {
+      "comment" : "Component - Button (a11y)",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône"
+          }
+        }
+      }
+    },
+    "app_components_button_iconOnlyLayout_label" : {
+      "comment" : "Component - Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône uniquement"
+          }
+        }
+      }
+    },
+    "app_components_button_label" : {
+      "comment" : "Component - Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bouton"
+          }
+        }
+      }
+    },
+    "app_components_button_negative_hierary_notAllowed_text" : {
+      "comment" : "Component - Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not allowed on colored surface"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non autorisé sur surface colorée"
+          }
+        }
+      }
+    },
+    "app_components_common_iconAndTextLayout_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon + text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône + texte"
+          }
+        }
+      }
+    },
+    "app_components_common_layout_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mise en page"
+          }
+        }
+      }
+    },
+    "app_components_common_onColoredBackground_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On colored background"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sur fond coloré"
+          }
+        }
+      }
+    },
+    "app_components_common_style_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Style"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Style"
+          }
+        }
+      }
+    },
+    "app_components_common_textOnlyLayout_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte uniquement"
+          }
+        }
+      }
+    },
+    "app_components_common_viewCodeExample_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View component code example"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir l'exemple de code du composant"
+          }
+        }
+      }
+    },
+    "app_components_link_arrowBack_label" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Back"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retour"
+          }
+        }
+      }
+    },
+    "app_components_link_arrowNext_label" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suivant"
+          }
+        }
+      }
+    },
+    "app_components_link_description_text" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Links direct users to other resources or sections, whether internal (within the same application) or external (to a website or document)."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les liens dirigent les utilisateurs vers d'autres ressources ou sections, qu'elles soient internes (dans la même application) ou externes (vers un site web ou un document)."
+          }
+        }
+      }
+    },
+    "app_components_link_label" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Link"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lien"
+          }
+        }
+      }
+    },
+    "app_components_link_size_label" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taille"
+          }
+        }
+      }
+    },
+    "app_tokens_border_description_text" : {
+      "comment" : "Tokens - Border",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borders are used for the stroke colours on components and also for the colours of divider lines for components like tables."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les bordures sont utilisées pour les couleurs de contour sur les composants et aussi pour les couleurs des lignes de séparation pour des composants comme les tableaux."
+          }
+        }
+      }
+    },
+    "app_tokens_border_label" : {
+      "comment" : "Tokens - Border",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Border"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bordure"
+          }
+        }
+      }
+    },
+    "app_tokens_border_radius_label" : {
+      "comment" : "Tokens - Border",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radius"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rayon"
+          }
+        }
+      }
+    },
+    "app_tokens_border_style_label" : {
+      "comment" : "Tokens - Border",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Style"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Style"
+          }
+        }
+      }
+    },
+    "app_tokens_border_width_label" : {
+      "comment" : "Tokens - Border",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Width"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Largeur"
+          }
+        }
+      }
+    },
+    "app_tokens_color_description_text" : {
+      "comment" : "Tokens - Color",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colour reinforces our brand identity and ensures consistency across all product experiences. The semantic tokens described are the onse you should use when building a mobile app."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La couleur renforce notre identité de marque et assure la cohérence à travers toutes les expériences produit. Les tokens sémantiques décrits sont ceux que vous devez utiliser lors de la création d'une application mobile."
+          }
+        }
+      }
+    },
+    "app_tokens_color_label" : {
+      "comment" : "Tokens - Color",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur"
+          }
+        }
+      }
+    },
+    "app_tokens_common_viewCodeExample_label" : {
+      "comment" : "Token screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View token code example"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir l'exemple de code du token"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_description_text" : {
+      "comment" : "Token - Dimension",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimension provides standard sizing and spacing to ensure visual consistency across the UI."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La dimension fournit des tailles et des espacements standard pour assurer la cohérence visuelle à travers l'interface utilisateur."
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_label" : {
+      "comment" : "Token - Dimension",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimension"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimension"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_size_description_text" : {
+      "comment" : "Token - Dimension - Size",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size refers to the specific measurements used to define the dimensions of UI elements within the design system."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La taille fait référence aux mesures spécifiques utilisées pour définir les dimensions des éléments de l'interface utilisateur dans le système de design."
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_size_iconDecorative_label" : {
+      "comment" : "Token - Dimension - Size",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon decorative"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône avec"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_size_iconWith_label" : {
+      "comment" : "Token - Dimension - Size",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon with"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône décorative"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_size_label" : {
+      "comment" : "Token - Dimension - Size",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Size"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taille"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_description_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space refers to the measurements used to define the spacing between UI elements."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'espace fait référence aux mesures utilisées pour définir l'espacement entre les éléments de l'interface utilisateur."
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_fixed_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixed"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fixe"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_gapInline_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap inline"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espace en ligne"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_gapInlineWithArrow_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap inline with arrow"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espace en ligne avec flèche"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_gapInlineWithIcon_label" : {
+      "comment" : "Token - Dimension - Space - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap inline with icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espace en ligne avec icône"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_gapStack_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap stack"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espace empilé"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_gapStackWithIcon_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap stack with icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espace empilé avec icône"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_header_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leverage agile frameworks to provide a robust synopsis for high-level overviews."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tirez parti des frameworks agiles pour fournir un synopsis robuste pour des aperçus de haut niveau."
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Space"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espace"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_paddingInline_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding inline"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rembourrage en ligne"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_paddingInset_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding inset"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rembourrage intérieur"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_paddingStack_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding stack"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rembourrage empilé"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_scaled_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scaled"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Échelonné"
+          }
+        }
+      }
+    },
+    "app_tokens_elevation_description_text" : {
+      "comment" : "Token - Elevation",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shadows are used to give the impression of distance or elevation between surfaces, which adds depth to our designs."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les ombres sont utilisées pour donner l'impression de distance ou d'élévation entre les surfaces, ce qui ajoute de la profondeur à nos designs."
+          }
+        }
+      }
+    },
+    "app_tokens_elevation_label" : {
+      "comment" : "Token - Elevation",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elevation"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Élévation"
+          }
+        }
+      }
+    },
+    "app_tokens_grid_description_text" : {
+      "comment" : "Token - Grid",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grids are used to position content and create consistent page layouts"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les grilles sont utilisées pour positionner le contenu et créer des mises en page de page cohérentes."
+          }
+        }
+      }
+    },
+    "app_tokens_grid_label" : {
+      "comment" : "Token - Grid",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grid"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grille"
+          }
+        }
+      }
+    },
+    "app_tokens_opacity_description_text" : {
+      "comment" : "Token - Opacity",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opacity can help distinguish foreground elements from background elements, making content easier to read and important actions more noticeable."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'opacité peut aider à distinguer les éléments de premier plan des éléments d'arrière-plan, rendant le contenu plus facile à lire et les actions importantes plus visibles."
+          }
+        }
+      }
+    },
+    "app_tokens_opacity_label" : {
+      "comment" : "Token - Opacity",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opacity"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opacité"
+          }
+        }
+      }
+    },
+    "app_tokens_typography_description_text" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Font is our system of fonts and text styles. They enhance communication and reinforce the brand style."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La typographie est notre système de polices et de styles de texte. Ils améliorent la communication et renforcent le style de la marque."
+          }
+        }
+      }
+    },
+    "app_tokens_typography_label" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Font"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Typographie"
+          }
+        }
+      }
+    },
+    "app_topBar_theme_button_a11y" : {
+      "comment" : "Top bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Change theme"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changer le thème"
+          }
+        }
+      }
+    },
+    "app_topBar_theme_button_hint_a11y" : {
+      "comment" : "Top bar",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap to change the theme of the app"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez pour changer le thème de l'application"
+          }
+        }
+      }
+    },
+    "Build details (GitHub): %@" : {
+
+    },
+    "Build number: %@" : {
+
+    },
+    "Build type: %@" : {
+
+    },
+    "Configuration" : {
+
+    },
+    "family (%@), " : {
+
+    },
+    "letterSpacing (%.2f)" : {
+
+    },
+    "lineHeight (%.2f), " : {
+
+    },
+    "size (%.2f), " : {
+
+    },
+    "weight (%lld), " : {
+
+    }
+  },
+  "version" : "1.0"
+}
