@@ -11,10 +11,16 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-extension String {
+import Foundation
 
-    /// Returns `self` but with first letter capitalized
-    public var camelCase: String {
-        self.prefix(1).capitalized + self.dropFirst()
+extension Bundle {
+
+    /// Returns the fist preferred localization according to `Bundle.main`, or at least, "en"
+    static var preferredLocalization: String {
+        guard let firstPreferredLocalization = Bundle.main.preferredLocalizations.first else {
+            OL.warning("Not able to find first preferred localization!")
+            return "en"
+        }
+        return firstPreferredLocalization
     }
 }
