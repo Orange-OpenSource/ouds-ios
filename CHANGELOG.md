@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [DesignToolbox] French support
 - [Library] `ControlItem` component tokens (tokens library v0.6.0)
 - [Tool] Upload the IPA of DesignToolbox to the publication store ([#451](https://github.com/Orange-OpenSource/ouds-ios/issues/451))
 - [Tool] Add with a script the token library version in documentation and Design Toolbox ([#425](https://github.com/Orange-OpenSource/ouds-ios/issues/425))
@@ -16,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Move legacy Localizable.strings file to new Apple strings catalogs ([#454](https://github.com/Orange-OpenSource/ouds-ios/issues/454))
 - [Tool] Change precision and perception of UI tests to make them pass on Apple Silicon SoC ([#305](https://github.com/Orange-OpenSource/ouds-ios/issues/305))
 - [DesignToolbox] Reorganise snapshots files for tests of tokens ([#432](https://github.com/Orange-OpenSource/ouds-ios/issues/432))
 - [Library] Apply new naming conventions ([#453](https://github.com/Orange-OpenSource/ouds-ios/issues/453))
