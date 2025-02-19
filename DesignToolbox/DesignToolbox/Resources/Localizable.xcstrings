@@ -115,7 +115,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Legal informationa"
+            "value" : "Legal information"
           }
         },
         "fr" : {
@@ -311,6 +311,12 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuration"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Configuration"
@@ -1308,6 +1314,24 @@
         }
       }
     },
+    "app_tokens_typography_familyAttribute" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "family (%@), "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "family (%@), "
+          }
+        }
+      }
+    },
     "app_tokens_typography_label" : {
       "comment" : "Token - Typography",
       "extractionState" : "manual",
@@ -1322,6 +1346,78 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Typographie"
+          }
+        }
+      }
+    },
+    "app_tokens_typography_letterSpacingAttribute" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "letterSpacing (%.2f)"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "letterSpacing (%.2f)"
+          }
+        }
+      }
+    },
+    "app_tokens_typography_lineHeightAttribute" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lineHeight (%.2f), "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "lineHeight (%.2f), "
+          }
+        }
+      }
+    },
+    "app_tokens_typography_sizeAttribute" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "size (%.2f), "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "size (%.2f), "
+          }
+        }
+      }
+    },
+    "app_tokens_typography_weightAttribute" : {
+      "comment" : "Token - Typography",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "weight (%lld), "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "weight (%lld), "
           }
         }
       }
@@ -1361,21 +1457,6 @@
           }
         }
       }
-    },
-    "family (%@), " : {
-
-    },
-    "letterSpacing (%.2f)" : {
-
-    },
-    "lineHeight (%.2f), " : {
-
-    },
-    "size (%.2f), " : {
-
-    },
-    "weight (%lld), " : {
-
     }
   },
   "version" : "1.0"

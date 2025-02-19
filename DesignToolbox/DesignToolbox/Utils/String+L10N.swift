@@ -51,6 +51,24 @@ extension String {
         String(format: lhs.localized(), rhs)
     }
 
+    /// Just an operator to inject as `Double` one argument in a localizable
+    /// - Parameters:
+    ///    - lhs: The localizable value to update
+    ///    - rhs: The value as Double to inject in `lhs`
+    /// - Returns String: The final result
+    static func <- (lhs: String, rhs: Double) -> String {
+        String(format: lhs.localized(), rhs)
+    }
+
+    /// Just an operator to inject as `Int` one argument in a localizable
+    /// - Parameters:
+    ///    - lhs: The localizable value to update
+    ///    - rhs: The value as Int to inject in `lhs`
+    /// - Returns String: The final result
+    static func <- (lhs: String, rhs: Int) -> String {
+        String(format: lhs.localized(), rhs)
+    }
+
     /// Just an operator to inject as `String` array some arguments in a localizable
     /// - Parameters:
     ///    - lhs: The localizable value to update

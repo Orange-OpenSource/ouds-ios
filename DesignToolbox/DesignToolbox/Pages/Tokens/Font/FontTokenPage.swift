@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -37,26 +38,31 @@ struct FontTokenPage: View {
         .navigationTitle(LocalizedStringKey("app_tokens_typography_label"))
     }
 
+    // MARK: - Illustration Font
+
     struct IllustrationFont: View {
+
+        let namedFont: NamedFont
+
+        private var token: FontCompositeRawToken {
+            namedFont.token(from: theme).fontToken(for: horizontalSizeClass ?? .regular)
+        }
+
         @Environment(\.theme) private var theme
         @Environment(\.colorScheme) private var colorScheme
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
-        let namedFont: NamedFont
-
         var body: some View {
-            let token = namedFont.token(from: theme).fontToken(for: horizontalSizeClass ?? .regular)
-
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 illustration(for: namedFont, in: theme)
                     .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
                 Group {
-                    Text("family (\(theme.fontFamily ?? "system")), ")
-                    + Text("weight (\(token.weight)), ")
-                    + Text("size (\(token.size, specifier: "%.2f")), ")
-                    + Text("lineHeight (\(token.lineHeight, specifier: "%.2f")), ")
-                    + Text("letterSpacing (\(token.letterSpacing, specifier: "%.2f"))")
+                    Text(familyText)
+                    + Text(weightText)
+                    + Text(sizeText)
+                    + Text(lineHeightText)
+                    + Text(letterSpacingText)
                 }
                 .typeBodyDefaultMedium(theme)
                 .fixedSize(horizontal: false, vertical: true)
@@ -65,6 +71,26 @@ struct FontTokenPage: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.vertical, theme.spaces.spaceFixedShorter)
             .accessibilityElement(children: .combine)
+        }
+
+        private var familyText: String {
+            "app_tokens_typography_familyAttribute" <- "\(theme.fontFamily ?? "system")"
+        }
+
+        private var weightText: String {
+            "app_tokens_typography_weightAttribute" <- token.weight
+        }
+
+        private var sizeText: String {
+            "app_tokens_typography_sizeAttribute" <- token.size
+        }
+
+        private var lineHeightText: String {
+            "app_tokens_typography_lineHeightAttribute" <- token.lineHeight
+        }
+
+        private var letterSpacingText: String {
+            "app_tokens_typography_letterSpacingAttribute" <- token.letterSpacing
         }
     }
 }
