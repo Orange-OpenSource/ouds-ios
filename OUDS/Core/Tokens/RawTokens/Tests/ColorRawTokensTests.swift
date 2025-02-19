@@ -12,6 +12,7 @@
 //
 
 import OUDSTokensRaw
+import Testing
 import TestsUtils
 import XCTest
 
@@ -1348,7 +1349,7 @@ final class ColorRawTokensTests: XCTestCase {
     // MARK: - Compare all colors
 
     /// Compare all colors to ensure they are all unique
-    func testColorRawTokensAreAllDifferent() throws {
+    @Test func colorRawTokensAreAllDifferent() throws {
 
         //  (ノಠ益ಠ)ノ彡┻━┻ Failed to have efficient, nice and good solution with GenAI tool (GPT-4o-mini)
 
@@ -1599,7 +1600,7 @@ final class ColorRawTokensTests: XCTestCase {
 
         for colorArray in allColors {
             for color in colorArray {
-                XCTAssertTrue(uniqueColors.insert(color).inserted, "The color raw token value '\(color)' is not unique, some duplicate(s) can be defined!")
+                #expect(uniqueColors.insert(color).inserted, "The color raw token value '\(color)' is not unique, some duplicate(s) can be defined!")
             }
         }
     }
