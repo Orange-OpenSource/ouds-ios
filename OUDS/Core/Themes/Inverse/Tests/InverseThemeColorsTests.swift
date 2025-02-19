@@ -21,7 +21,7 @@ import Testing
 
 /// `InverseTheme` is a quite particular theme with "inverse" color palette. It is neither a light mode theme nor a dark mode theme.
 /// This "inverse" mode as colors which, for a given semantic token, has the same value for both light and dark mode.
-struct TestInverseThemeColors {
+struct InverseThemeColorsTests {
 
     private var inverseTheme: OUDSTheme
 
