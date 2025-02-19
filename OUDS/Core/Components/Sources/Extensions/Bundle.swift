@@ -12,9 +12,10 @@
 //
 
 import Foundation
+import OUDSFoundations
 
 extension Bundle {
 
-    /// The OUDS bundle, useful to find resources
+    /// The OUDS bundle, useful to find resources dedicated to components
     public static let OUDSComponents = Bundle.module
 }

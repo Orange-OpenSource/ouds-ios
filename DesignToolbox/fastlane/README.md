@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 UPDATE BUILD NUMBER WITH TIMESTAMP
 
+### ios check_missing_translations
+
+```sh
+[bundle exec] fastlane ios check_missing_translations
+```
+
+CHECK MISSING TRANSLATIONS
+
 ### ios test
 
 ```sh
