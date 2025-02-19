@@ -12,10 +12,9 @@
 //
 
 import OUDSTokensRaw
+import Testing
 import TestsUtils
-import XCTest
 
-// swiftlint:disable required_deinit
 // swiftlint:disable type_body_length
 // swiftlint:disable function_body_length
 // swiftlint:disable file_length
@@ -30,7 +29,7 @@ import XCTest
 /// - the higher the opacity token is, the higher its value is
 /// - all opacity tokens must be different
 /// - all opacity tokens must be between 0 and 1
-final class OpacityRawTokensTests: XCTestCase {
+struct OpacityRawTokensTests {
 
     // MARK: - Settings
 
@@ -42,529 +41,528 @@ final class OpacityRawTokensTests: XCTestCase {
 
     // MARK: - Tests
 
-    func testOpacityRawToken0LessThan400() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity0, OpacityRawTokens.opacity40)
+    @Test func opacityRawToken0LessThan400() throws {
+        #expect(OpacityRawTokens.opacity0 < OpacityRawTokens.opacity40)
     }
 
-    func testOpacityRawToken0Between0and1() throws {
+    @Test func opacityRawToken0Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity0, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken40LessThan80() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity40, OpacityRawTokens.opacity80)
+    @Test func opacityRawToken40LessThan80() throws {
+        #expect(OpacityRawTokens.opacity40 < OpacityRawTokens.opacity80)
     }
 
-    func testOpacityRawToken40Between0and1() throws {
+    @Test func opacityRawToken40Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity40, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken80LessThan120() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity80, OpacityRawTokens.opacity120)
+    @Test func opacityRawToken80LessThan120() throws {
+        #expect(OpacityRawTokens.opacity80 < OpacityRawTokens.opacity120)
     }
 
-    func testOpacityRawToken80Between0and1() throws {
+    @Test func opacityRawToken80Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity80, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken120LessThan160() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity120, OpacityRawTokens.opacity160)
+    @Test func opacityRawToken120LessThan160() throws {
+        #expect(OpacityRawTokens.opacity120 < OpacityRawTokens.opacity160)
     }
 
-    func testOpacityRawToken120Between0and1() throws {
+    @Test func opacityRawToken120Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity120, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken160LessThan200() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity160, OpacityRawTokens.opacity200)
+    @Test func opacityRawToken160LessThan200() throws {
+        #expect(OpacityRawTokens.opacity160 < OpacityRawTokens.opacity200)
     }
 
-    func testOpacityRawToken160Between0and1() throws {
+    @Test func opacityRawToken160Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity160, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken200LessThan240() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity200, OpacityRawTokens.opacity240)
+    @Test func opacityRawToken200LessThan240() throws {
+        #expect(OpacityRawTokens.opacity200 < OpacityRawTokens.opacity240)
     }
 
-    func testOpacityRawToken200Between0and1() throws {
+    @Test func opacityRawToken200Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity200, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken240LessThan280() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity240, OpacityRawTokens.opacity280)
+    @Test func opacityRawToken240LessThan280() throws {
+        #expect(OpacityRawTokens.opacity240 < OpacityRawTokens.opacity280)
     }
 
-    func testOpacityRawToken240Between0and1() throws {
+    @Test func opacityRawToken240Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity240, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken280LessThan320() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity280, OpacityRawTokens.opacity320)
+    @Test func opacityRawToken280LessThan320() throws {
+        #expect(OpacityRawTokens.opacity280 < OpacityRawTokens.opacity320)
     }
 
-    func testOpacityRawToken280Between0and1() throws {
+    @Test func opacityRawToken280Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity280, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken320LessThan360() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity320, OpacityRawTokens.opacity360)
+    @Test func opacityRawToken320LessThan360() throws {
+        #expect(OpacityRawTokens.opacity320 < OpacityRawTokens.opacity360)
     }
 
-    func testOpacityRawToken320Between0and1() throws {
+    @Test func opacityRawToken320Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity320, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken360LessThan400() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity360, OpacityRawTokens.opacity400)
+    @Test func opacityRawToken360LessThan400() throws {
+        #expect(OpacityRawTokens.opacity360 < OpacityRawTokens.opacity400)
     }
 
-    func testOpacityRawToken360Between0and1() throws {
+    @Test func opacityRawToken360Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity360, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken400LessThan440() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity400, OpacityRawTokens.opacity440)
+    @Test func opacityRawToken400LessThan440() throws {
+        #expect(OpacityRawTokens.opacity400 < OpacityRawTokens.opacity440)
     }
 
-    func testOpacityRawToken400Between0and1() throws {
+    @Test func opacityRawToken400Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity400, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken440LessThan840() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity440, OpacityRawTokens.opacity480)
+    @Test func opacityRawToken440LessThan840() throws {
+        #expect(OpacityRawTokens.opacity440 < OpacityRawTokens.opacity480)
     }
 
-    func testOpacityRawToken440Between0and1() throws {
+    @Test func opacityRawToken440Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity440, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken480LessThan520() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity480, OpacityRawTokens.opacity520)
+    @Test func opacityRawToken480LessThan520() throws {
+        #expect(OpacityRawTokens.opacity480 < OpacityRawTokens.opacity520)
     }
 
-    func testOpacityRawToken480Between0and1() throws {
+    @Test func opacityRawToken480Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity480, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken520LessThan560() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity520, OpacityRawTokens.opacity560)
+    @Test func opacityRawToken520LessThan560() throws {
+        #expect(OpacityRawTokens.opacity520 < OpacityRawTokens.opacity560)
     }
 
-    func testOpacityRawToken520Between0and1() throws {
+    @Test func opacityRawToken520Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity520, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken560LessThan600() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity560, OpacityRawTokens.opacity600)
+    @Test func opacityRawToken560LessThan600() throws {
+        #expect(OpacityRawTokens.opacity560 < OpacityRawTokens.opacity600)
     }
 
-    func testOpacityRawToken560Between0and1() throws {
+    @Test func opacityRawToken560Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity560, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken600LessThan640() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity600, OpacityRawTokens.opacity640)
+    @Test func opacityRawToken600LessThan640() throws {
+        #expect(OpacityRawTokens.opacity600 < OpacityRawTokens.opacity640)
     }
 
-    func testOpacityRawToken600Between0and1() throws {
+    @Test func opacityRawToken600Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity600, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken640LessThan680() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity640, OpacityRawTokens.opacity680)
+    @Test func opacityRawToken640LessThan680() throws {
+        #expect(OpacityRawTokens.opacity640 < OpacityRawTokens.opacity680)
     }
 
-    func testOpacityRawToken640Between0and1() throws {
+    @Test func opacityRawToken640Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity640, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken680LessThan720() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity680, OpacityRawTokens.opacity720)
+    @Test func opacityRawToken680LessThan720() throws {
+        #expect(OpacityRawTokens.opacity680 < OpacityRawTokens.opacity720)
     }
 
-    func testOpacityRawToken680Between0and1() throws {
+    @Test func opacityRawToken680Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity680, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken720LessThan760() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity720, OpacityRawTokens.opacity760)
+    @Test func opacityRawToken720LessThan760() throws {
+        #expect(OpacityRawTokens.opacity720 < OpacityRawTokens.opacity760)
     }
 
-    func testOpacityRawToken720Between0and1() throws {
+    @Test func opacityRawToken720Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity720, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken760LessThan800() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity760, OpacityRawTokens.opacity800)
+    @Test func opacityRawToken760LessThan800() throws {
+        #expect(OpacityRawTokens.opacity760 < OpacityRawTokens.opacity800)
     }
 
-    func testOpacityRawToken760Between0and1() throws {
+    @Test func opacityRawToken760Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity760, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken800LessThan880() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity800, OpacityRawTokens.opacity880)
+    @Test func opacityRawToken800LessThan880() throws {
+        #expect(OpacityRawTokens.opacity800 < OpacityRawTokens.opacity880)
     }
 
-    func testOpacityRawToken800Between0and1() throws {
+    @Test func opacityRawToken800Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity800, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken880LessThan920() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity880, OpacityRawTokens.opacity920)
+    @Test func opacityRawToken880LessThan920() throws {
+        #expect(OpacityRawTokens.opacity880 < OpacityRawTokens.opacity920)
     }
 
-    func testOpacityRawToken880etween0and1() throws {
+    @Test func opacityRawToken880Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity880, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken920LessThan960() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity920, OpacityRawTokens.opacity960)
+    @Test func opacityRawToken920LessThan960() throws {
+        #expect(OpacityRawTokens.opacity920 < OpacityRawTokens.opacity960)
     }
 
-    func testOpacityRawToken920Between0and1() throws {
+    @Test func opacityRawToken920Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity920, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken960LessThan1000() throws {
-        XCTAssertLessThan(OpacityRawTokens.opacity960, OpacityRawTokens.opacity1000)
+    @Test func opacityRawToken960LessThan1000() throws {
+        #expect(OpacityRawTokens.opacity960 < OpacityRawTokens.opacity1000)
     }
 
-    func testOpacityRawToken960Between0and1() throws {
+    @Test func opacityRawToken960Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity960, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testOpacityRawToken1000Between0and1() throws {
+    @Test func opacityRawToken1000Between0and1() throws {
         TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity1000, max: Self.opacityRawTokenMaxValue)
     }
 
-    func testNonEqualityForOpacities() throws {
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity40)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity80)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity120)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity160)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity200)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity240)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity280)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity320)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity360)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity0, OpacityRawTokens.opacity1000)
+    @Test func nonEqualityForOpacities() throws {
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity40)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity80)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity120)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity160)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity200)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity240)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity280)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity320)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity360)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity0 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity80)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity120)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity160)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity200)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity240)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity280)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity320)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity360)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity40, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity80)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity120)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity160)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity200)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity240)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity280)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity320)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity360)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity40 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity120)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity160)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity200)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity240)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity280)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity320)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity360)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity80, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity120)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity160)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity200)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity240)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity280)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity320)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity360)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity80 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity160)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity200)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity240)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity280)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity320)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity360)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity120, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity160)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity200)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity240)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity280)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity320)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity360)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity120 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity200)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity240)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity280)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity320)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity360)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity160, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity200)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity240)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity280)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity320)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity360)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity160 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity240)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity280)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity320)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity360)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity200, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity240)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity280)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity320)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity360)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity200 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity280)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity320)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity360)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity240, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity280)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity320)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity360)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity240 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity320)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity360)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity280, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity320)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity360)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity280 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity360)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity320, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity360)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity320 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity400)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity360, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity400)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity360 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity440)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity400, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity440)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity400 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity480)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity440, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity480)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity440 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity520)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity480, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity520)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity480 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity560)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity520, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity560)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity520 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity600)
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity560, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity600)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity560 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity600, OpacityRawTokens.opacity640)
-        XCTAssertNotEqual(OpacityRawTokens.opacity600, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity600, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity600, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity600, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity600, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity600, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity600, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity600, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity600 != OpacityRawTokens.opacity640)
+        #expect(OpacityRawTokens.opacity600 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity600 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity600 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity600 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity600 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity600 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity600 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity600 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity640, OpacityRawTokens.opacity680)
-        XCTAssertNotEqual(OpacityRawTokens.opacity640, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity640, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity640, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity640, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity640, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity640, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity640, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity640 != OpacityRawTokens.opacity680)
+        #expect(OpacityRawTokens.opacity640 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity640 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity640 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity640 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity640 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity640 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity640 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity680, OpacityRawTokens.opacity720)
-        XCTAssertNotEqual(OpacityRawTokens.opacity680, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity680, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity680, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity680, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity680, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity680, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity680 != OpacityRawTokens.opacity720)
+        #expect(OpacityRawTokens.opacity680 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity680 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity680 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity680 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity680 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity680 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity720, OpacityRawTokens.opacity760)
-        XCTAssertNotEqual(OpacityRawTokens.opacity720, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity720, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity720, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity720, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity720, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity720 != OpacityRawTokens.opacity760)
+        #expect(OpacityRawTokens.opacity720 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity720 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity720 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity720 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity720 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity760, OpacityRawTokens.opacity800)
-        XCTAssertNotEqual(OpacityRawTokens.opacity760, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity760, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity760, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity760, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity760 != OpacityRawTokens.opacity800)
+        #expect(OpacityRawTokens.opacity760 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity760 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity760 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity760 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity800, OpacityRawTokens.opacity880)
-        XCTAssertNotEqual(OpacityRawTokens.opacity800, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity800, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity800, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity800 != OpacityRawTokens.opacity880)
+        #expect(OpacityRawTokens.opacity800 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity800 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity800 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity880, OpacityRawTokens.opacity920)
-        XCTAssertNotEqual(OpacityRawTokens.opacity880, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity880, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity880 != OpacityRawTokens.opacity920)
+        #expect(OpacityRawTokens.opacity880 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity880 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity920, OpacityRawTokens.opacity960)
-        XCTAssertNotEqual(OpacityRawTokens.opacity920, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity920 != OpacityRawTokens.opacity960)
+        #expect(OpacityRawTokens.opacity920 != OpacityRawTokens.opacity1000)
 
-        XCTAssertNotEqual(OpacityRawTokens.opacity960, OpacityRawTokens.opacity1000)
+        #expect(OpacityRawTokens.opacity960 != OpacityRawTokens.opacity1000)
     }
 }
 
-// swiftlint:enable required_deinit
 // swiftlint:enable type_body_length
 // swiftlint:enable function_body_length

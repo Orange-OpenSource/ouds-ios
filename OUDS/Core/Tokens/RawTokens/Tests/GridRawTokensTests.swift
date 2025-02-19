@@ -187,7 +187,7 @@ struct GridRawTokensTests {
         TestsUtils.assertMultipleOf(GridRawTokens.gridMargin2500, factor: DimensionRawTokens.dimensionBase)
     }
 
-    func testNonEqualityForGridMargins() throws {
+    @Test func nonEqualityForGridMargins() throws {
         #expect(GridRawTokens.gridMargin100 != GridRawTokens.gridMargin300)
         #expect(GridRawTokens.gridMargin100 != GridRawTokens.gridMargin400)
         #expect(GridRawTokens.gridMargin100 != GridRawTokens.gridMargin500)
@@ -325,7 +325,7 @@ struct GridRawTokensTests {
         TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap800, factor: DimensionRawTokens.dimensionBase)
     }
 
-    func testNonEqualityForGridColumnGaps() throws {
+    @Test func nonEqualityForGridColumnGaps() throws {
         #expect(GridRawTokens.gridColumnGap10 != GridRawTokens.gridColumnGap100)
         #expect(GridRawTokens.gridColumnGap10 != GridRawTokens.gridColumnGap200)
         #expect(GridRawTokens.gridColumnGap10 != GridRawTokens.gridColumnGap300)
@@ -404,7 +404,7 @@ struct GridRawTokensTests {
         #expect(GridRawTokens.gridColumnCount1000 < GridRawTokens.gridColumnCount1200)
     }
 
-    func testNonEqualityForGridColumnCounts() throws {
+    @Test func nonEqualityForGridColumnCounts() throws {
         #expect(GridRawTokens.gridColumnCount100 != GridRawTokens.gridColumnCount200)
         #expect(GridRawTokens.gridColumnCount100 != GridRawTokens.gridColumnCount400)
         #expect(GridRawTokens.gridColumnCount100 != GridRawTokens.gridColumnCount600)
