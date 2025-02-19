@@ -14,9 +14,7 @@
 @testable import OUDSTokensRaw
 import Testing
 import TestsUtils
-import XCTest
 
-// swiftlint:disable required_deinit
 // swiftlint:disable type_body_length
 // swiftlint:disable file_length
 // swiftlint:disable function_body_length
@@ -43,7 +41,7 @@ import XCTest
 /// - font weight values are factor of 50
 /// - font weight must not be nul
 /// - all font weight tokens must be different
-final class FontRawTokensTests: XCTestCase {
+struct FontRawTokensTests {
 
     /// By looking all the values, it appears all line height raw tokens are factor of 4
     private static let fontLineHeightBase: Double = 4
@@ -557,63 +555,63 @@ final class FontRawTokensTests: XCTestCase {
      Check if factors are the same
      */
 
-    func testFontRawTokenLineHeight250MultipleOfBase() throws {
+    @Test func fontRawTokenLineHeight250MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight250, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenLineHeight350MultipleOfBase() throws {
+    @Test func fontRawTokenLineHeight350MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight350, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenLineHeight450MultipleOfBase() throws {
+    @Test func fontRawTokenLineHeight450MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight450, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenLineHeight550MultipleOfBase() throws {
+    @Test func fontRawTokenLineHeight550MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight550, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenLineHeight650MultipleOfBase() throws {
+    @Test func fontRawTokenLineHeight650MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight650, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenLineHeight750MultipleOfBase() throws {
+    @Test func fontRawTokenLineHeight750MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight750, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenLineHeight850MultipleOfBase() throws {
+    @Test func fontRawTokenLineHeight850MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight850, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenFontLineHeight950MultipleOfBase() throws {
+    @Test func fontRawTokenFontLineHeight950MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight950, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenFontLineHeight1050MultipleOfBase() throws {
+    @Test func fontRawTokenFontLineHeight1050MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1050, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenFontLineHeight1150MultipleOfBase() throws {
+    @Test func fontRawTokenFontLineHeight1150MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1150, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenFontLineHeight1250MultipleOfBase() throws {
+    @Test func fontRawTokenFontLineHeight1250MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1250, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenFontLineHeight1350MultipleOfBase() throws {
+    @Test func fontRawTokenFontLineHeight1350MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1350, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenFontLineHeight1450MultipleOfBase() throws {
+    @Test func fontRawTokenFontLineHeight1450MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1450, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenFontLineHeight1850MultipleOfBase() throws {
+    @Test func fontRawTokenFontLineHeight1850MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1850, factor: Self.fontLineHeightBase)
     }
 
-    func testFontRawTokenFontLineHeight2050MultipleOfBase() throws {
+    @Test func fontRawTokenFontLineHeight2050MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight2050, factor: Self.fontLineHeightBase)
     }
 
@@ -827,7 +825,7 @@ final class FontRawTokensTests: XCTestCase {
         #expect(FontRawTokens.fontLetterSpacing1450 > FontRawTokens.fontLetterSpacing1850)
     }
 
-    func testFontRawTokensFontLetterSpacingAreInSuitableRange() {
+    @Test func fontRawTokensFontLetterSpacingAreInSuitableRange() {
         TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing150, max: Self.fontLetterSpacingMaxValue)
         TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing175, max: Self.fontLetterSpacingMaxValue)
         TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing200, max: Self.fontLetterSpacingMaxValue)
@@ -1002,43 +1000,43 @@ final class FontRawTokensTests: XCTestCase {
      Check if factors are the same
      */
 
-    func testFontRawTokenFontWeight100MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight100MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight100, factor: Self.fontWeightBase)
     }
 
-    func testFontRawTokenFontWeight200MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight200MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight200, factor: Self.fontWeightBase)
     }
 
-    func testFontRawTokenFontWeight300MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight300MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight300, factor: Self.fontWeightBase)
     }
 
-    func testFontRawTokenFontWeight400MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight400MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight400, factor: Self.fontWeightBase)
     }
 
-    func testFontRawTokenFontWeight500MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight500MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight500, factor: Self.fontWeightBase)
     }
 
-    func testFontRawTokenFontWeight600MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight600MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight600, factor: Self.fontWeightBase)
     }
 
-    func testFontRawTokenFontWeight700MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight700MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight700, factor: Self.fontWeightBase)
     }
 
-    func testFontRawTokenFontWeight800MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight800MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight800, factor: Self.fontWeightBase)
     }
 
-    func testFontRawTokenFontWeight900MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight900MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight900, factor: Self.fontWeightBase)
     }
 
-    func testFontRawTokenFontWeight950MultipleOfBase() throws {
+    @Test func fontRawTokenFontWeight950MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(FontRawTokens.fontWeight950, factor: Self.fontWeightBase)
     }
 
@@ -1135,80 +1133,80 @@ final class FontRawTokensTests: XCTestCase {
 
     // MARK: - Primitive token - Typography - Composite
 
-    func testFontRawTokensTypeRegular150LessThanTypeRegular175() throws {
-        XCTAssertTrue(FontRawTokens.typeRegular150 <| FontRawTokens.typeRegular175)
+    @Test func fontRawTokensTypeRegular150LessThanTypeRegular175() throws {
+        #expect(FontRawTokens.typeRegular150 <| FontRawTokens.typeRegular175)
     }
 
-    func testFontRawTokensTypeRegular175LessThanTypeRegular200() throws {
-        XCTAssertTrue(FontRawTokens.typeRegular175 <| FontRawTokens.typeRegular200)
+    @Test func fontRawTokensTypeRegular175LessThanTypeRegular200() throws {
+        #expect(FontRawTokens.typeRegular175 <| FontRawTokens.typeRegular200)
     }
 
-    func testFontRawTokensTypeRegular200LessThanTypeRegular250() throws {
-        XCTAssertTrue(FontRawTokens.typeRegular200 <| FontRawTokens.typeRegular250)
+    @Test func fontRawTokensTypeRegular200LessThanTypeRegular250() throws {
+        #expect(FontRawTokens.typeRegular200 <| FontRawTokens.typeRegular250)
     }
 
-    func testFontRawTokensTypeBold150LessThanTypeBold175() throws {
-        XCTAssertTrue(FontRawTokens.typeBold150 <| FontRawTokens.typeBold175)
+    @Test func fontRawTokensTypeBold150LessThanTypeBold175() throws {
+        #expect(FontRawTokens.typeBold150 <| FontRawTokens.typeBold175)
     }
 
-    func testFontRawTokensTypeBold175LessThanTypeBold200() throws {
-        XCTAssertTrue(FontRawTokens.typeBold175 <| FontRawTokens.typeBold200)
+    @Test func fontRawTokensTypeBold175LessThanTypeBold200() throws {
+        #expect(FontRawTokens.typeBold175 <| FontRawTokens.typeBold200)
     }
 
-    func testFontRawTokensTypeBold200LessThanTypeBold250() throws {
-        XCTAssertTrue(FontRawTokens.typeBold200 <| FontRawTokens.typeBold250)
+    @Test func fontRawTokensTypeBold200LessThanTypeBold250() throws {
+        #expect(FontRawTokens.typeBold200 <| FontRawTokens.typeBold250)
     }
 
-    func testFontRawTokensTypeBold250LessThanTypeBold300() throws {
-        XCTAssertTrue(FontRawTokens.typeBold250 <| FontRawTokens.typeBold300)
+    @Test func fontRawTokensTypeBold250LessThanTypeBold300() throws {
+        #expect(FontRawTokens.typeBold250 <| FontRawTokens.typeBold300)
     }
 
-    func testFontRawTokensTypeBold300LessThanTypeBold350() throws {
-        XCTAssertTrue(FontRawTokens.typeBold300 <| FontRawTokens.typeBold350)
+    @Test func fontRawTokensTypeBold300LessThanTypeBold350() throws {
+        #expect(FontRawTokens.typeBold300 <| FontRawTokens.typeBold350)
     }
 
-    func testFontRawTokensTypeBold350LessThanTypeBold450() throws {
-        XCTAssertTrue(FontRawTokens.typeBold350 <| FontRawTokens.typeBold450)
+    @Test func fontRawTokensTypeBold350LessThanTypeBold450() throws {
+        #expect(FontRawTokens.typeBold350 <| FontRawTokens.typeBold450)
     }
 
-    func testFontRawTokensTypeBold450LessThanTypeBold550() throws {
-        XCTAssertTrue(FontRawTokens.typeBold450 <| FontRawTokens.typeBold550)
+    @Test func fontRawTokensTypeBold450LessThanTypeBold550() throws {
+        #expect(FontRawTokens.typeBold450 <| FontRawTokens.typeBold550)
     }
 
-    func testFontRawTokensTypeBold550LessThanTypeBold650() throws {
-        XCTAssertTrue(FontRawTokens.typeBold550 <| FontRawTokens.typeBold650)
+    @Test func fontRawTokensTypeBold550LessThanTypeBold650() throws {
+        #expect(FontRawTokens.typeBold550 <| FontRawTokens.typeBold650)
     }
 
-    func testFontRawTokensTypeBold650LessThanTypeBold750() throws {
-        XCTAssertTrue(FontRawTokens.typeBold650 <| FontRawTokens.typeBold750)
+    @Test func fontRawTokensTypeBold650LessThanTypeBold750() throws {
+        #expect(FontRawTokens.typeBold650 <| FontRawTokens.typeBold750)
     }
 
-    func testFontRawTokensTypeBold750LessThanTypeBold850() throws {
-        XCTAssertTrue(FontRawTokens.typeBold750 <| FontRawTokens.typeBold850)
+    @Test func fontRawTokensTypeBold750LessThanTypeBold850() throws {
+        #expect(FontRawTokens.typeBold750 <| FontRawTokens.typeBold850)
     }
 
-    func testFontRawTokensTypeBold850LessThanTypeBold950() throws {
-        XCTAssertTrue(FontRawTokens.typeBold850 <| FontRawTokens.typeBold950)
+    @Test func fontRawTokensTypeBold850LessThanTypeBold950() throws {
+        #expect(FontRawTokens.typeBold850 <| FontRawTokens.typeBold950)
     }
 
-    func testFontRawTokensTypeBold950LessThanTypeBold1050() throws {
-        XCTAssertTrue(FontRawTokens.typeBold950 <| FontRawTokens.typeBold1050)
+    @Test func fontRawTokensTypeBold950LessThanTypeBold1050() throws {
+        #expect(FontRawTokens.typeBold950 <| FontRawTokens.typeBold1050)
     }
 
-    func testFontRawTokensTypeBold1050LessThanTypeBold1150() throws {
-        XCTAssertTrue(FontRawTokens.typeBold1050 <| FontRawTokens.typeBold1150)
+    @Test func fontRawTokensTypeBold1050LessThanTypeBold1150() throws {
+        #expect(FontRawTokens.typeBold1050 <| FontRawTokens.typeBold1150)
     }
 
-    func testFontRawTokensTypeBold1150LessThanTypeBold1250() throws {
-        XCTAssertTrue(FontRawTokens.typeBold1150 <| FontRawTokens.typeBold1250)
+    @Test func fontRawTokensTypeBold1150LessThanTypeBold1250() throws {
+        #expect(FontRawTokens.typeBold1150 <| FontRawTokens.typeBold1250)
     }
 
-    func testFontRawTokensTypeBold1250LessThanTypeBold1450() throws {
-        XCTAssertTrue(FontRawTokens.typeBold1250 <| FontRawTokens.typeBold1450)
+    @Test func fontRawTokensTypeBold1250LessThanTypeBold1450() throws {
+        #expect(FontRawTokens.typeBold1250 <| FontRawTokens.typeBold1450)
     }
 
-    func testFontRawTokensTypeBold1450LessThanTypeBold1850() throws {
-        XCTAssertTrue(FontRawTokens.typeBold1450 <| FontRawTokens.typeBold1850)
+    @Test func fontRawTokensTypeBold1450LessThanTypeBold1850() throws {
+        #expect(FontRawTokens.typeBold1450 <| FontRawTokens.typeBold1850)
     }
 
     /*
@@ -1449,6 +1447,5 @@ final class FontRawTokensTests: XCTestCase {
     }
 }
 
-// swiftlint:enable required_deinit
 // swiftlint:enable type_body_length
 // swiftlint:enable function_body_length
