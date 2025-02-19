@@ -13,6 +13,7 @@
 
 import OUDSTokensRaw
 import Testing
+import TestsUtils
 import XCTest
 
 // swiftlint:disable required_deinit
@@ -45,7 +46,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken0MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension0, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension0, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -59,7 +60,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken25MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension25, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension25, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -73,7 +74,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken50MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension50, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension50, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -87,7 +88,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken75MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension75, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension75, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -101,7 +102,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken100MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension100, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension100, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -115,7 +116,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken125MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension125, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension125, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -129,7 +130,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken150MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension150, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension150, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -143,7 +144,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken200MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension200, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension200, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -157,7 +158,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken250MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension250, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension250, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -171,7 +172,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken300MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension300, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension300, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -185,7 +186,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken350MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension350, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension350, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -199,7 +200,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken400MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension400, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension400, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -213,7 +214,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken450MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension450, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension450, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -227,7 +228,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken500MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension500, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension500, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -241,7 +242,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken550MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension550, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension550, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -255,7 +256,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken600MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension600, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension600, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -269,7 +270,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken650MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension650, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension650, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -283,7 +284,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken700MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension700, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension700, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -297,7 +298,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken750MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension750, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension750, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -311,7 +312,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken800MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension800, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension800, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -325,7 +326,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken850MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension850, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension850, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -339,7 +340,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken900MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension900, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension900, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -353,7 +354,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken1000MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension1000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1000, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -367,7 +368,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken1200MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension1200, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1200, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -381,7 +382,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken1400MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension1400, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1400, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -395,7 +396,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken1600MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension1600, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1600, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -409,7 +410,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken1800MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension1800, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1800, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -423,7 +424,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken2000MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension2000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension2000, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -437,7 +438,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken3000MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension3000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension3000, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -451,7 +452,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken4000MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension4000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension4000, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -465,7 +466,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken5000MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension5000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension5000, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -479,7 +480,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken6000MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension6000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension6000, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -493,7 +494,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken7000MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension7000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension7000, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -507,7 +508,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken9000MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension9000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension9000, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -516,7 +517,7 @@ final class DimensionRawTokensTests: XCTestCase {
     }
 
     func testDimensionRawToken11000MultipleOfBase() throws {
-        XCTAssertMultipleOf(DimensionRawTokens.dimension11000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension11000, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test

@@ -13,9 +13,8 @@
 
 import OUDSTokensRaw
 import Testing
-import XCTest
+import TestsUtils
 
-// swiftlint:disable required_deinit
 // swiftlint:disable function_body_length
 // swiftlint:disable type_body_length
 
@@ -37,7 +36,7 @@ import XCTest
 /// - border style values must have be all different
 /// - the "bigger" the border width token is, the higher the value is
 /// - the "bigger" the border radius token is, the higher the value is
-final class BorderRawTokensTests: XCTestCase {
+struct BorderRawTokensTests {
 
     // MARK: - Primitive token - Border - Width
 
@@ -49,20 +48,20 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderWidth0 < BorderRawTokens.borderWidth25)
     }
 
-    func testBorderWidthRawToken0MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth0, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken0MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth0, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderWidthRawToken25NotNegativeValue() throws {
         #expect(BorderRawTokens.borderWidth25 >= 0)
     }
 
-    func testBorderWidthRawToken25LessThan50() throws {
+    @Test func borderWidthRawToken25LessThan50() throws {
         #expect(BorderRawTokens.borderWidth25 < BorderRawTokens.borderWidth50)
     }
 
-    func testBorderWidthRawToken25MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth25, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken25MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth25, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderWidthRawToken50NotNegativeValue() throws {
@@ -74,7 +73,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     @Test func borderWidthRawToken50MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth50, factor: BorderRawTokens.borderBase)
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth50, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderWidthRawToken75NotNegativeValue() throws {
@@ -85,8 +84,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderWidth75 < BorderRawTokens.borderWidth100)
     }
 
-    func testBorderWidthRawToken75MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth75, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken75MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth75, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderWidthRawToken100NotNegativeValue() throws {
@@ -97,8 +96,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderWidth100 < BorderRawTokens.borderWidth125)
     }
 
-    func testBorderWidthRawToken100MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth100, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken100MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth100, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderWidthRawToken125NotNegativeValue() throws {
@@ -110,7 +109,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     @Test func borderWidthRawToken125MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth125, factor: BorderRawTokens.borderBase)
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth125, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderWidthRawToken150NotNegativeValue() throws {
@@ -122,15 +121,15 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     @Test func borderWidthRawToken150MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth150, factor: BorderRawTokens.borderBase)
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth150, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderWidthRawToken200NotNegativeValue() throws {
         #expect(BorderRawTokens.borderWidth200 >= 0)
     }
 
-    func testBorderWidthRawToken200MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth200, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken200MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth200, factor: BorderRawTokens.borderBase)
     }
 
     /// Border width raw tokens must be different
@@ -174,8 +173,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderRadius0 < BorderRawTokens.borderRadius25)
     }
 
-    func testBorderRadiusRawToken0MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius0, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken0MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius0, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken25NotNegativeValue() throws {
@@ -183,11 +182,11 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     @Test func borderRadiusRawToken25LessThan50() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius50)
+        #expect(BorderRawTokens.borderRadius25 < BorderRawTokens.borderRadius50)
     }
 
-    func testBorderRadiusRawToken25MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius25, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken25MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius25, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken50NotNegativeValue() throws {
@@ -198,8 +197,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderRadius50 < BorderRawTokens.borderRadius75)
     }
 
-    func testBorderRadiusRawToken50MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius50, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken50MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius50, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken75NotNegativeValue() throws {
@@ -210,8 +209,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderRadius75 < BorderRawTokens.borderRadius100)
     }
 
-    func testBorderRadiusRawToken75MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius75, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken75MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius75, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken100NotNegativeValue() throws {
@@ -222,8 +221,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderRadius100 < BorderRawTokens.borderRadius150)
     }
 
-    func testBorderRadiusRawToken100MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius100, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken100MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius100, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken150NotNegativeValue() throws {
@@ -234,8 +233,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderRadius150 < BorderRawTokens.borderRadius200)
     }
 
-    func testBorderRadiusRawToken150MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius150, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken150MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius150, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken200NotNegativeValue() throws {
@@ -247,7 +246,7 @@ final class BorderRawTokensTests: XCTestCase {
     }
 
     @Test func borderRadiusRawToken200MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius200, factor: BorderRawTokens.borderBase)
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius200, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken300NotNegativeValue() throws {
@@ -258,8 +257,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderRadius300 < BorderRawTokens.borderRadius400)
     }
 
-    func testBorderRadiusRawToken300MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius300, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken300MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius300, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken400NotNegativeValue() throws {
@@ -270,8 +269,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderRadius400 < BorderRawTokens.borderRadius500)
     }
 
-    func testBorderRadiusRawToken400MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius400, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken400MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius400, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken500NotNegativeValue() throws {
@@ -282,8 +281,8 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderRadius500 < BorderRawTokens.borderRadius600)
     }
 
-    func testBorderRadiusRawToken500MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius500, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken500MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius500, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken600NotNegativeValue() throws {
@@ -294,16 +293,16 @@ final class BorderRawTokensTests: XCTestCase {
         #expect(BorderRawTokens.borderRadius600 < BorderRawTokens.borderRadius800)
     }
 
-    func testBorderRadiusRawToken600MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius600, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken600MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius600, factor: BorderRawTokens.borderBase)
     }
 
     @Test func borderRadiusRawToken800NotNegativeValue() throws {
         #expect(BorderRawTokens.borderRadius800 >= 0)
     }
 
-    func testBorderRadiusRawToken800MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius800, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken800MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius800, factor: BorderRawTokens.borderBase)
     }
 
     /// Border radius raw tokens must be different
@@ -417,6 +416,5 @@ final class BorderRawTokensTests: XCTestCase {
     }
 }
 
-// swiftlint:enable required_deinit
 // swiftlint:enable function_body_length
 // swiftlint:enable type_body_length

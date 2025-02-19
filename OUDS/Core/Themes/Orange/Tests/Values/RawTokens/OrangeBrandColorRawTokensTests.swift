@@ -42,157 +42,157 @@ final class OrangeBrandColorRawTokensTests: XCTestCase {
     // MARK: Primitive token - Colors - Orange - Orange
 
     func testOrangeBrandColorRawTokenColorOrange50LighterThanOrange100() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange50, OrangeBrandColorRawTokens.colorOrange100)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange50, OrangeBrandColorRawTokens.colorOrange100)
     }
 
     func testOrangeBrandColorRawTokenColorOrange100LighterThanOrange200() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange100, OrangeBrandColorRawTokens.colorOrange200)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange100, OrangeBrandColorRawTokens.colorOrange200)
     }
 
     func testOrangeBrandColorRawTokenColorOrange200LighterThanOrange300() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange200, OrangeBrandColorRawTokens.colorOrange300)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange200, OrangeBrandColorRawTokens.colorOrange300)
     }
 
     func testOrangeBrandColorRawTokenColorOrange300LighterThanOrange400() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange300, OrangeBrandColorRawTokens.colorOrange400)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange300, OrangeBrandColorRawTokens.colorOrange400)
     }
 
     func testOrangeBrandColorRawTokenColorOrange400LighterThanOrange500() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange400, OrangeBrandColorRawTokens.colorOrange500)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange400, OrangeBrandColorRawTokens.colorOrange500)
     }
 
     func testOrangeBrandColorRawTokenColorOrange500LighterThanOrange550() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange500, OrangeBrandColorRawTokens.colorOrange550)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange500, OrangeBrandColorRawTokens.colorOrange550)
     }
 
     func testOrangeBrandColorRawTokenColorOrange550LighterThanOrange600() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange550, OrangeBrandColorRawTokens.colorOrange600)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange550, OrangeBrandColorRawTokens.colorOrange600)
     }
 
     func testOrangeBrandColorRawTokenColorOrange600LighterThanOrange700() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange600, OrangeBrandColorRawTokens.colorOrange700)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange600, OrangeBrandColorRawTokens.colorOrange700)
     }
 
     func testOrangeBrandColorRawTokenColorOrange700LighterThanOrange800() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange700, OrangeBrandColorRawTokens.colorOrange800)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange700, OrangeBrandColorRawTokens.colorOrange800)
     }
 
     func testOrangeBrandColorRawTokenColorOrange800LighterThanOrange900() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorOrange800, OrangeBrandColorRawTokens.colorOrange900)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorOrange800, OrangeBrandColorRawTokens.colorOrange900)
     }
 
     func testOrangeBrandColorRawTokenColorOrange50Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange50, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange50, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange100Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange100, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange100, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange200Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange200, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange200, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange300Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange300, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange300, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange400Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange400, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange400, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange500Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange500, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange500, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange550Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange550, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange550, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange600Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange600, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange600, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange700Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange700, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange700, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange800Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange800, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange800, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorOrange900Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorOrange900, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorOrange900, regexp: Self.colorFormat)
     }
 
     // MARK: Primitive token - Colors - Orange - Brand - Warm gray
 
     func testOrangeBrandColorRawTokenColorWarmGray100LighterThanWarmGray200() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray100, OrangeBrandColorRawTokens.colorWarmGray200)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray100, OrangeBrandColorRawTokens.colorWarmGray200)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray200LighterThanWarmGray300() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray200, OrangeBrandColorRawTokens.colorWarmGray300)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray200, OrangeBrandColorRawTokens.colorWarmGray300)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray300LighterThanWarmGray400() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray300, OrangeBrandColorRawTokens.colorWarmGray400)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray300, OrangeBrandColorRawTokens.colorWarmGray400)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray400LighterThanWarmGray500() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray400, OrangeBrandColorRawTokens.colorWarmGray500)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray400, OrangeBrandColorRawTokens.colorWarmGray500)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray500LighterThanWarmGray600() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray500, OrangeBrandColorRawTokens.colorWarmGray600)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray500, OrangeBrandColorRawTokens.colorWarmGray600)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray600LighterThanWarmGray700() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray600, OrangeBrandColorRawTokens.colorWarmGray700)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray600, OrangeBrandColorRawTokens.colorWarmGray700)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray700LighterThanWarmGray800() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray700, OrangeBrandColorRawTokens.colorWarmGray800)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray700, OrangeBrandColorRawTokens.colorWarmGray800)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray800LighterThanWarmGray900() throws {
-        XCTAssertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray800, OrangeBrandColorRawTokens.colorWarmGray900)
+        TestsUtils.assertColorLighterThan(OrangeBrandColorRawTokens.colorWarmGray800, OrangeBrandColorRawTokens.colorWarmGray900)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray100Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorWarmGray100, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorWarmGray100, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray200Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorWarmGray200, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorWarmGray200, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray300Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorWarmGray300, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorWarmGray300, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray400Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorWarmGray400, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorWarmGray400, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray500Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorWarmGray500, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorWarmGray500, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray600Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorWarmGray600, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorWarmGray600, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray700Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorWarmGray700, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorWarmGray700, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray800Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorWarmGray800, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorWarmGray800, regexp: Self.colorFormat)
     }
 
     func testOrangeBrandColorRawTokenColorWarmGray900Format() throws {
-        XCTAssertMatches(OrangeBrandColorRawTokens.colorWarmGray900, regexp: Self.colorFormat)
+        TestsUtils.assertMatches(OrangeBrandColorRawTokens.colorWarmGray900, regexp: Self.colorFormat)
     }
 
     // MARK: - Compare all colors

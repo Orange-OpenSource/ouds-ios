@@ -15,6 +15,7 @@ import OUDSFoundations
 import OUDSTokensRaw
 import SwiftUI
 import Testing
+import TestsUtils
 import XCTest
 
 // swiftlint:disable required_deinit
@@ -253,123 +254,123 @@ final class ElevationRawTokensTests: XCTestCase {
     // MARK: - Primitive token - Elevation - Box Shadow
 
     func testElevationBottom_1_100ColorDarkerThan_1_200() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_1_100.color, ElevationRawTokens.elevationBottom_1_200.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_1_100.color, ElevationRawTokens.elevationBottom_1_200.color)
     }
 
     func testElevationBottom_1_200ColorDarkerThan_1_300() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_1_200.color, ElevationRawTokens.elevationBottom_1_300.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_1_200.color, ElevationRawTokens.elevationBottom_1_300.color)
     }
 
     func testElevationBottom_1_300ColorDarkerThan_1_400() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_1_300.color, ElevationRawTokens.elevationBottom_1_400.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_1_300.color, ElevationRawTokens.elevationBottom_1_400.color)
     }
 
     func testElevationBottom_1_400ColorDarkerThan_1_500() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_1_400.color, ElevationRawTokens.elevationBottom_1_500.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_1_400.color, ElevationRawTokens.elevationBottom_1_500.color)
     }
 
     func testElevationBottom_1_500ColorDarkerThan_1_600() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_1_500.color, ElevationRawTokens.elevationBottom_1_600.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_1_500.color, ElevationRawTokens.elevationBottom_1_600.color)
     }
 
     func testElevationBottom_2_100ColorDarkerThan_2_200() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_2_100.color, ElevationRawTokens.elevationBottom_2_200.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_2_100.color, ElevationRawTokens.elevationBottom_2_200.color)
     }
 
     func testElevationBottom_2_200ColorDarkerThan_2_300() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_2_200.color, ElevationRawTokens.elevationBottom_2_300.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_2_200.color, ElevationRawTokens.elevationBottom_2_300.color)
     }
 
     func testElevationBottom_2_300ColorDarkerThan_2_400() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_2_300.color, ElevationRawTokens.elevationBottom_2_400.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_2_300.color, ElevationRawTokens.elevationBottom_2_400.color)
     }
 
     func testElevationBottom_2_400ColorDarkerThan_2_500() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_2_400.color, ElevationRawTokens.elevationBottom_2_500.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_2_400.color, ElevationRawTokens.elevationBottom_2_500.color)
     }
 
     func testElevationBottom_2_500ColorDarkerThan_2_600() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_2_500.color, ElevationRawTokens.elevationBottom_2_600.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_2_500.color, ElevationRawTokens.elevationBottom_2_600.color)
     }
 
     func testElevationBottom_3_100ColorDarkerThan_3_200() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_3_100.color, ElevationRawTokens.elevationBottom_3_200.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_3_100.color, ElevationRawTokens.elevationBottom_3_200.color)
     }
 
     func testElevationBottom_3_200ColorDarkerThan_3_300() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_3_200.color, ElevationRawTokens.elevationBottom_3_300.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_3_200.color, ElevationRawTokens.elevationBottom_3_300.color)
     }
 
     func testElevationBottom_3_300ColorDarkerThan_3_400() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_3_300.color, ElevationRawTokens.elevationBottom_3_400.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_3_300.color, ElevationRawTokens.elevationBottom_3_400.color)
     }
 
     func testElevationBottom_3_400ColorDarkerThan_3_500() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_3_400.color, ElevationRawTokens.elevationBottom_3_500.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_3_400.color, ElevationRawTokens.elevationBottom_3_500.color)
     }
 
     func testElevationBottom_3_500ColorDarkerThan_3_600() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_3_500.color, ElevationRawTokens.elevationBottom_3_600.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_3_500.color, ElevationRawTokens.elevationBottom_3_600.color)
     }
 
     func testElevationBottom_4_100ColorDarkerThan_4_200() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_4_100.color, ElevationRawTokens.elevationBottom_4_200.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_4_100.color, ElevationRawTokens.elevationBottom_4_200.color)
     }
 
     func testElevationBottom_4_200ColorDarkerThan_4_300() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_4_200.color, ElevationRawTokens.elevationBottom_4_300.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_4_200.color, ElevationRawTokens.elevationBottom_4_300.color)
     }
 
     func testElevationBottom_4_300ColorDarkerThan_4_400() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_4_300.color, ElevationRawTokens.elevationBottom_4_400.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_4_300.color, ElevationRawTokens.elevationBottom_4_400.color)
     }
 
     func testElevationBottom_4_400ColorDarkerThan_4_500() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_4_400.color, ElevationRawTokens.elevationBottom_4_500.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_4_400.color, ElevationRawTokens.elevationBottom_4_500.color)
     }
 
     func testElevationBottom_4_500ColorDarkerThan_4_600() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_4_500.color, ElevationRawTokens.elevationBottom_4_600.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_4_500.color, ElevationRawTokens.elevationBottom_4_600.color)
     }
 
     func testElevationBottom_5_100ColorDarkerThan_5_200() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_100.color, ElevationRawTokens.elevationBottom_5_200.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_100.color, ElevationRawTokens.elevationBottom_5_200.color)
     }
 
     func testElevationBottom_5_200ColorDarkerThan_5_300() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_200.color, ElevationRawTokens.elevationBottom_5_300.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_200.color, ElevationRawTokens.elevationBottom_5_300.color)
     }
 
     func testElevationBottom_5_300ColorDarkerThan_5_400() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_300.color, ElevationRawTokens.elevationBottom_5_400.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_300.color, ElevationRawTokens.elevationBottom_5_400.color)
     }
 
     func testElevationBottom_5_400ColorDarkerThan_5_500() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_400.color, ElevationRawTokens.elevationBottom_5_500.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_400.color, ElevationRawTokens.elevationBottom_5_500.color)
     }
 
     func testElevationBottom_5_500ColorDarkerThan_5_600() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_500.color, ElevationRawTokens.elevationBottom_5_600.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_500.color, ElevationRawTokens.elevationBottom_5_600.color)
     }
 
     func testElevationBottom_5_100ColorDarkerThan_6_200() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_100.color, ElevationRawTokens.elevationBottom_6_200.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_100.color, ElevationRawTokens.elevationBottom_6_200.color)
     }
 
     func testElevationBottom_5_200ColorDarkerThan_6_300() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_200.color, ElevationRawTokens.elevationBottom_6_300.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_200.color, ElevationRawTokens.elevationBottom_6_300.color)
     }
 
     func testElevationBottom_5_300ColorDarkerThan_6_400() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_300.color, ElevationRawTokens.elevationBottom_6_400.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_300.color, ElevationRawTokens.elevationBottom_6_400.color)
     }
 
     func testElevationBottom_5_400ColorDarkerThan_6_500() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_400.color, ElevationRawTokens.elevationBottom_6_500.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_400.color, ElevationRawTokens.elevationBottom_6_500.color)
     }
 
     func testElevationBottom_5_500ColorDarkerThan_6_600() throws {
-        XCTAssertColorDarkerThan(ElevationRawTokens.elevationBottom_5_500.color, ElevationRawTokens.elevationBottom_6_600.color)
+        TestsUtils.assertColorDarkerThan(ElevationRawTokens.elevationBottom_5_500.color, ElevationRawTokens.elevationBottom_6_600.color)
     }
 
     func testCompositeBottom_1_100_LowerThan_2_100() throws {

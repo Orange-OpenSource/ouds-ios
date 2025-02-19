@@ -12,6 +12,7 @@
 //
 
 import OUDSTokensRaw
+import TestsUtils
 import XCTest
 
 // swiftlint:disable required_deinit
@@ -80,7 +81,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin100MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin100, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin100, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridMargin300GreaterThan0() throws {
@@ -92,7 +93,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin300MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin300, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin300, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridMargin400GreaterThan0() throws {
@@ -104,7 +105,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin400MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin400, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin400, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridMargin500GreaterThan0() throws {
@@ -116,7 +117,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin500MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin500, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin500, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridMargin600GreaterThan0() throws {
@@ -128,7 +129,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin600MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin600, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin600, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridMargin700GreaterThan0() throws {
@@ -140,7 +141,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin700MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin700, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin700, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridMargin1000GreaterThan0() throws {
@@ -152,7 +153,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin1000MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin1000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin1000, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridMargin1100GreaterThan0() throws {
@@ -164,7 +165,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin1100MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin1000, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin1000, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridMargin1700GreaterThan0() throws {
@@ -176,7 +177,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin1700MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin1700, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin1700, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridMargin250GreaterThan0() throws {
@@ -184,7 +185,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenMargin2500MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridMargin2500, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridMargin2500, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testNonEqualityForGridMargins() throws {
@@ -254,7 +255,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenColumnGap10MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridColumnGap10, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap10, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridColumnGap100GreaterThan0() throws {
@@ -266,7 +267,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenColumnGap100MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridColumnGap100, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap100, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridColumnGap200GreaterThan0() throws {
@@ -278,7 +279,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenColumnGap200MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridColumnGap200, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap200, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridColumnGap300GreaterThan0() throws {
@@ -290,7 +291,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenColumnGap300MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridColumnGap300, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap300, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridColumnGap400GreaterThan0() throws {
@@ -302,7 +303,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenColumnGap400MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridColumnGap400, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap400, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridColumnGap600GreaterThan0() throws {
@@ -314,7 +315,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenColumnGap600MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridColumnGap600, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap600, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testGridRawTokenGridColumnGap800GreaterThan0() throws {
@@ -322,7 +323,7 @@ final class GridRawTokensTests: XCTestCase {
     }
 
     func testGridRawTokenColumnGap800MultipleOfBase() throws {
-        XCTAssertMultipleOf(GridRawTokens.gridColumnGap800, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(GridRawTokens.gridColumnGap800, factor: DimensionRawTokens.dimensionBase)
     }
 
     func testNonEqualityForGridColumnGaps() throws {

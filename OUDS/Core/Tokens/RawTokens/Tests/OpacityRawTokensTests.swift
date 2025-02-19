@@ -12,6 +12,7 @@
 //
 
 import OUDSTokensRaw
+import TestsUtils
 import XCTest
 
 // swiftlint:disable required_deinit
@@ -46,7 +47,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken0Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity0, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity0, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken40LessThan80() throws {
@@ -54,7 +55,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken40Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity40, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity40, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken80LessThan120() throws {
@@ -62,7 +63,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken80Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity80, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity80, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken120LessThan160() throws {
@@ -70,7 +71,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken120Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity120, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity120, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken160LessThan200() throws {
@@ -78,7 +79,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken160Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity160, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity160, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken200LessThan240() throws {
@@ -86,7 +87,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken200Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity200, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity200, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken240LessThan280() throws {
@@ -94,7 +95,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken240Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity240, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity240, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken280LessThan320() throws {
@@ -102,7 +103,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken280Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity280, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity280, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken320LessThan360() throws {
@@ -110,7 +111,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken320Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity320, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity320, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken360LessThan400() throws {
@@ -118,7 +119,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken360Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity360, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity360, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken400LessThan440() throws {
@@ -126,7 +127,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken400Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity400, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity400, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken440LessThan840() throws {
@@ -134,7 +135,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken440Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity440, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity440, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken480LessThan520() throws {
@@ -142,7 +143,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken480Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity480, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity480, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken520LessThan560() throws {
@@ -150,7 +151,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken520Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity520, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity520, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken560LessThan600() throws {
@@ -158,7 +159,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken560Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity560, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity560, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken600LessThan640() throws {
@@ -166,7 +167,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken600Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity600, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity600, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken640LessThan680() throws {
@@ -174,7 +175,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken640Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity640, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity640, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken680LessThan720() throws {
@@ -182,7 +183,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken680Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity680, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity680, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken720LessThan760() throws {
@@ -190,7 +191,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken720Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity720, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity720, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken760LessThan800() throws {
@@ -198,7 +199,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken760Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity760, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity760, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken800LessThan880() throws {
@@ -206,7 +207,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken800Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity800, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity800, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken880LessThan920() throws {
@@ -214,7 +215,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken880etween0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity880, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity880, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken920LessThan960() throws {
@@ -222,7 +223,7 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken920Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity920, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity920, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken960LessThan1000() throws {
@@ -230,11 +231,11 @@ final class OpacityRawTokensTests: XCTestCase {
     }
 
     func testOpacityRawToken960Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity960, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity960, max: Self.opacityRawTokenMaxValue)
     }
 
     func testOpacityRawToken1000Between0and1() throws {
-        XCTAssertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity1000, max: Self.opacityRawTokenMaxValue)
+        TestsUtils.assertBetween(min: Self.opacityRawTokenMinValue, OpacityRawTokens.opacity1000, max: Self.opacityRawTokenMaxValue)
     }
 
     func testNonEqualityForOpacities() throws {

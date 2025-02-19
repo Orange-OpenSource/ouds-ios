@@ -13,6 +13,7 @@
 
 @testable import OUDSTokensRaw
 import Testing
+import TestsUtils
 import XCTest
 
 // swiftlint:disable required_deinit
@@ -557,63 +558,63 @@ final class FontRawTokensTests: XCTestCase {
      */
 
     func testFontRawTokenLineHeight250MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight250, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight250, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenLineHeight350MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight350, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight350, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenLineHeight450MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight450, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight450, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenLineHeight550MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight550, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight550, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenLineHeight650MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight650, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight650, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenLineHeight750MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight750, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight750, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenLineHeight850MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight850, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight850, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenFontLineHeight950MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight950, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight950, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenFontLineHeight1050MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight1050, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1050, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenFontLineHeight1150MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight1150, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1150, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenFontLineHeight1250MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight1250, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1250, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenFontLineHeight1350MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight1350, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1350, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenFontLineHeight1450MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight1450, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1450, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenFontLineHeight1850MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight1850, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight1850, factor: Self.fontLineHeightBase)
     }
 
     func testFontRawTokenFontLineHeight2050MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontLineHeight2050, factor: Self.fontLineHeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontLineHeight2050, factor: Self.fontLineHeightBase)
     }
 
     /*
@@ -827,23 +828,23 @@ final class FontRawTokensTests: XCTestCase {
     }
 
     func testFontRawTokensFontLetterSpacingAreInSuitableRange() {
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing150, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing175, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing200, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing250, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing300, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing350, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing450, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing550, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing650, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing750, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing850, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing950, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1050, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1150, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1250, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1450, max: Self.fontLetterSpacingMaxValue)
-        XCTAssertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1850, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing150, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing175, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing200, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing250, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing300, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing350, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing450, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing550, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing650, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing750, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing850, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing950, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1050, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1150, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1250, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1450, max: Self.fontLetterSpacingMaxValue)
+        TestsUtils.assertBetween(min: Self.fontLetterSpacingMinValue, FontRawTokens.fontLetterSpacing1850, max: Self.fontLetterSpacingMaxValue)
     }
 
     /*
@@ -1002,43 +1003,43 @@ final class FontRawTokensTests: XCTestCase {
      */
 
     func testFontRawTokenFontWeight100MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight100, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight100, factor: Self.fontWeightBase)
     }
 
     func testFontRawTokenFontWeight200MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight200, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight200, factor: Self.fontWeightBase)
     }
 
     func testFontRawTokenFontWeight300MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight300, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight300, factor: Self.fontWeightBase)
     }
 
     func testFontRawTokenFontWeight400MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight400, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight400, factor: Self.fontWeightBase)
     }
 
     func testFontRawTokenFontWeight500MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight500, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight500, factor: Self.fontWeightBase)
     }
 
     func testFontRawTokenFontWeight600MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight600, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight600, factor: Self.fontWeightBase)
     }
 
     func testFontRawTokenFontWeight700MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight700, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight700, factor: Self.fontWeightBase)
     }
 
     func testFontRawTokenFontWeight800MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight800, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight800, factor: Self.fontWeightBase)
     }
 
     func testFontRawTokenFontWeight900MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight900, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight900, factor: Self.fontWeightBase)
     }
 
     func testFontRawTokenFontWeight950MultipleOfBase() throws {
-        XCTAssertMultipleOf(FontRawTokens.fontWeight950, factor: Self.fontWeightBase)
+        TestsUtils.assertMultipleOf(FontRawTokens.fontWeight950, factor: Self.fontWeightBase)
     }
 
     /*
