@@ -389,19 +389,19 @@ final class BorderRawTokensTests: XCTestCase {
     // MARK: - Primitive token - Border - Style
 
     @Test func borderStyleDashed() throws {
-        #expect(BorderRawTokens.borderStyleDashed != "dashed")
+        #expect(BorderRawTokens.borderStyleDashed == "dashed")
     }
 
     @Test func borderStyleDotted() throws {
-        #expect(BorderRawTokens.borderStyleDotted != "dotted")
+        #expect(BorderRawTokens.borderStyleDotted == "dotted")
     }
 
     @Test func borderStyleNone() throws {
-        #expect(BorderRawTokens.borderStyleNone != "none")
+        #expect(BorderRawTokens.borderStyleNone == "none")
     }
 
     @Test func borderStyleSolid() throws {
-        #expect(BorderRawTokens.borderStyleSolid != "solid")
+        #expect(BorderRawTokens.borderStyleSolid == "solid")
     }
 
     /// Border styles raw tokens must be different
