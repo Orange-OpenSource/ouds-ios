@@ -14,758 +14,757 @@
 import OUDS
 import OUDSThemesInverse
 import OUDSTokensSemantic
-import XCTest
+import Testing
 
-// swiftlint:disable required_deinit
-// swiftlint:disable implicitly_unwrapped_optional
 // swiftlint:disable type_body_length
 // swiftlint:disable file_length
 
-/// `InverseTheme` is a quite particular theme with "inverse" color palette. Is it neuther a light mode theme nor a dark mode theme.
+/// `InverseTheme` is a quite particular theme with "inverse" color palette. It is neither a light mode theme nor a dark mode theme.
 /// This "inverse" mode as colors which, for a given semantic token, has the same value for both light and dark mode.
-final class TestInverseThemeColors: XCTestCase {
+struct TestInverseThemeColors {
 
-    private var inverseTheme: OUDSTheme!
+    private var inverseTheme: OUDSTheme
 
-    override func setUp() async throws {
+    init() {
         inverseTheme = InverseTheme()
     }
 
+    // MARK: - Helpers
+
     /// Ensure the `InverseTheme` has the same value for light and dark color schemes (supposed to be dark)
     private func assertHomogeneity(_ value: MultipleColorSemanticTokens) {
-        XCTAssertEqual(value.light, value.dark)
+        #expect(value.light == value.dark)
     }
 
     // MARK: - Test cases
 
-    func testColorsHomogeneityColorOpacityLowest() throws {
+    @Test func colorsHomogeneityColorOpacityLowest() throws {
         assertHomogeneity(inverseTheme.colors.colorOpacityLowest)
     }
 
-    func testColorsHomogeneityColorOpacityLower() throws {
+    @Test func colorsHomogeneityColorOpacityLower() throws {
         assertHomogeneity(inverseTheme.colors.colorOpacityLower)
     }
 
-    func testColorsHomogeneityColorOpacityTransparent() throws {
+    @Test func colorsHomogeneityColorOpacityTransparent() throws {
         assertHomogeneity(inverseTheme.colors.colorOpacityTransparent)
     }
 
     // MARK: - Color - Action
 
-    func testColorsHomogeneityColorActionDisabled() throws {
+    @Test func colorsHomogeneityColorActionDisabled() throws {
         assertHomogeneity(inverseTheme.colors.colorActionDisabled)
     }
 
-    func testColorsHomogeneityColorActionEnabled() throws {
+    @Test func colorsHomogeneityColorActionEnabled() throws {
         assertHomogeneity(inverseTheme.colors.colorActionEnabled)
     }
 
-    func testColorsHomogeneityColorActionFocus() throws {
+    @Test func colorsHomogeneityColorActionFocus() throws {
         assertHomogeneity(inverseTheme.colors.colorActionFocus)
     }
 
-    func testColorsHomogeneityColorActionHighlighted() throws {
+    @Test func colorsHomogeneityColorActionHighlighted() throws {
         assertHomogeneity(inverseTheme.colors.colorActionHighlighted)
     }
 
-    func testColorsHomogeneityColorActionHover() throws {
+    @Test func colorsHomogeneityColorActionHover() throws {
         assertHomogeneity(inverseTheme.colors.colorActionHover)
     }
 
-    func testColorsHomogeneityColorActionLoading() throws {
+    @Test func colorsHomogeneityColorActionLoading() throws {
         assertHomogeneity(inverseTheme.colors.colorActionLoading)
     }
 
-    func testColorsHomogeneityColorActionNegativeEnabled() throws {
+    @Test func colorsHomogeneityColorActionNegativeEnabled() throws {
         assertHomogeneity(inverseTheme.colors.colorActionNegativeEnabled)
     }
 
-    func testColorsHomogeneityColorActionNegativeFocus() throws {
+    @Test func colorsHomogeneityColorActionNegativeFocus() throws {
         assertHomogeneity(inverseTheme.colors.colorActionNegativeFocus)
     }
 
-    func testColorsHomogeneityColorActionNegativeHover() throws {
+    @Test func colorsHomogeneityColorActionNegativeHover() throws {
         assertHomogeneity(inverseTheme.colors.colorActionNegativeHover)
     }
 
-    func testColorsHomogeneityColorActionNegativeLoading() throws {
+    @Test func colorsHomogeneityColorActionNegativeLoading() throws {
         assertHomogeneity(inverseTheme.colors.colorActionNegativeLoading)
     }
 
-    func testColorsHomogeneityColorActionNegativePressed() throws {
+    @Test func colorsHomogeneityColorActionNegativePressed() throws {
         assertHomogeneity(inverseTheme.colors.colorActionNegativePressed)
     }
 
-    func testColorsHomogeneityColorActionPressed() throws {
+    @Test func colorsHomogeneityColorActionPressed() throws {
         assertHomogeneity(inverseTheme.colors.colorActionPressed)
     }
 
-    func testColorsHomogeneityColorActionSelected() throws {
+    @Test func colorsHomogeneityColorActionSelected() throws {
         assertHomogeneity(inverseTheme.colors.colorActionSelected)
     }
 
-    func testColorsHomogeneityColorActionSupportEnabled() throws {
+    @Test func colorsHomogeneityColorActionSupportEnabled() throws {
         assertHomogeneity(inverseTheme.colors.colorActionSupportEnabled)
     }
 
-    func testColorsHomogeneityColorActionSupportFocus() throws {
+    @Test func colorsHomogeneityColorActionSupportFocus() throws {
         assertHomogeneity(inverseTheme.colors.colorActionSupportFocus)
     }
 
-    func testColorsHomogeneityColorActionSupportHover() throws {
+    @Test func colorsHomogeneityColorActionSupportHover() throws {
         assertHomogeneity(inverseTheme.colors.colorActionSupportHover)
     }
 
-    func testColorsHomogeneityColorActionSupportLoading() throws {
+    @Test func colorsHomogeneityColorActionSupportLoading() throws {
         assertHomogeneity(inverseTheme.colors.colorActionSupportLoading)
     }
 
-    func testColorsHomogeneityColorActionSupportPressed() throws {
+    @Test func colorsHomogeneityColorActionSupportPressed() throws {
         assertHomogeneity(inverseTheme.colors.colorActionSupportPressed)
     }
 
-    func testColorsHomogeneityColorActionVisited() throws {
+    @Test func colorsHomogeneityColorActionVisited() throws {
         assertHomogeneity(inverseTheme.colors.colorActionVisited)
     }
 
     // MARK: - Color - Always
 
-    func testColorsHomogeneityColorAlwaysBlack() throws {
+    @Test func colorsHomogeneityColorAlwaysBlack() throws {
         assertHomogeneity(inverseTheme.colors.colorAlwaysBlack)
     }
 
-    func testColorsHomogeneityColorAlwaysOnBlack() throws {
+    @Test func colorsHomogeneityColorAlwaysOnBlack() throws {
         assertHomogeneity(inverseTheme.colors.colorAlwaysOnBlack)
     }
 
-    func testColorsHomogeneityColorAlwaysOnWhite() throws {
+    @Test func colorsHomogeneityColorAlwaysOnWhite() throws {
         assertHomogeneity(inverseTheme.colors.colorAlwaysOnWhite)
     }
 
-    func testColorsHomogeneityColorAlwaysWhite() throws {
+    @Test func colorsHomogeneityColorAlwaysWhite() throws {
         assertHomogeneity(inverseTheme.colors.colorAlwaysWhite)
     }
 
     // MARK: - Color - Background
 
-    func testColorsHomogeneityColorBgEmphasized() throws {
+    @Test func colorsHomogeneityColorBgEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorBgEmphasized)
     }
 
-    func testColorsHomogeneityColorBgPrimary() throws {
+    @Test func colorsHomogeneityColorBgPrimary() throws {
         assertHomogeneity(inverseTheme.colors.colorBgPrimary)
     }
 
-    func testColorsHomogeneityColorBgSecondary() throws {
+    @Test func colorsHomogeneityColorBgSecondary() throws {
         assertHomogeneity(inverseTheme.colors.colorBgSecondary)
     }
 
-    func testColorsHomogeneityColorBgTertiary() throws {
+    @Test func colorsHomogeneityColorBgTertiary() throws {
         assertHomogeneity(inverseTheme.colors.colorBgTertiary)
     }
 
     // MARK: - Color - Border
 
-    func testColorsHomogeneityColorBorderBrandPrimary() throws {
+    @Test func colorsHomogeneityColorBorderBrandPrimary() throws {
         assertHomogeneity(inverseTheme.colors.colorBorderBrandPrimary)
     }
 
-    func testColorsHomogeneityColorBorderDefault() throws {
+    @Test func colorsHomogeneityColorBorderDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorBorderDefault)
     }
 
-    func testColorsHomogeneityColorBorderEmphasized() throws {
+    @Test func colorsHomogeneityColorBorderEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorBorderEmphasized)
     }
 
-    func testColorsHomogeneityColorBorderFocus() throws {
+    @Test func colorsHomogeneityColorBorderFocus() throws {
         assertHomogeneity(inverseTheme.colors.colorBorderFocus)
     }
 
-    func testColorsHomogeneityColorBorderFocusInset() throws {
+    @Test func colorsHomogeneityColorBorderFocusInset() throws {
         assertHomogeneity(inverseTheme.colors.colorBorderFocusInset)
     }
 
-    func testColorsHomogeneityColorBorderOnBrandPrimary() throws {
+    @Test func colorsHomogeneityColorBorderOnBrandPrimary() throws {
         assertHomogeneity(inverseTheme.colors.colorBorderOnBrandPrimary)
     }
 
     // MARK: - Color - Content
 
-    func testColorsHomogeneityColorContentBrandPrimary() throws {
+    @Test func colorsHomogeneityColorContentBrandPrimary() throws {
         assertHomogeneity(inverseTheme.colors.colorContentBrandPrimary)
     }
 
-    func testColorsHomogeneityColorContentDefault() throws {
+    @Test func colorsHomogeneityColorContentDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorContentDefault)
     }
 
-    func testColorsHomogeneityColorContentDisabled() throws {
+    @Test func colorsHomogeneityColorContentDisabled() throws {
         assertHomogeneity(inverseTheme.colors.colorContentDisabled)
     }
 
-    func testColorsHomogeneityColorContentMuted() throws {
+    @Test func colorsHomogeneityColorContentMuted() throws {
         assertHomogeneity(inverseTheme.colors.colorContentMuted)
     }
 
-    func testColorsHomogeneityColorContentOnActionDisabled() throws {
+    @Test func colorsHomogeneityColorContentOnActionDisabled() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnActionDisabled)
     }
 
-    func testColorsHomogeneityColorContentOnActionEnabled() throws {
+    @Test func colorsHomogeneityColorContentOnActionEnabled() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnActionEnabled)
     }
 
-    func testColorsHomogeneityColorContentOnActionFocus() throws {
+    @Test func colorsHomogeneityColorContentOnActionFocus() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnActionFocus)
     }
 
-    func testColorsHomogeneityColorContentOnActionHighlighted() throws {
+    @Test func colorsHomogeneityColorContentOnActionHighlighted() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnActionHighlighted)
     }
 
-    func testColorsHomogeneityColorContentOnActionHover() throws {
+    @Test func colorsHomogeneityColorContentOnActionHover() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnActionHover)
     }
 
-    func testColorsHomogeneityColorContentOnActionLoading() throws {
+    @Test func colorsHomogeneityColorContentOnActionLoading() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnActionLoading)
     }
 
-    func testColorsHomogeneityColorContentOnActionPressed() throws {
+    @Test func colorsHomogeneityColorContentOnActionPressed() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnActionPressed)
     }
 
-    func testColorsHomogeneityColorContentOnBrandPrimary() throws {
+    @Test func colorsHomogeneityColorContentOnBrandPrimary() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnBrandPrimary)
     }
 
-    func testColorsHomogeneityColorContentOnOverlayEmphasized() throws {
+    @Test func colorsHomogeneityColorContentOnOverlayEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnOverlayEmphasized)
     }
 
-    func testColorsHomogeneityColorContentOnStatusEmphasized() throws {
+    @Test func colorsHomogeneityColorContentOnStatusEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnStatusEmphasized)
     }
 
-    func testColorsHomogeneityColorContentOnStatusEmphasizedAlt() throws {
+    @Test func colorsHomogeneityColorContentOnStatusEmphasizedAlt() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnStatusEmphasizedAlt)
     }
 
-    func testColorsHomogeneityColorContentOnStatusMuted() throws {
+    @Test func colorsHomogeneityColorContentOnStatusMuted() throws {
         assertHomogeneity(inverseTheme.colors.colorContentOnStatusMuted)
     }
 
-    func testColorsHomogeneityColorContentStatusInfo() throws {
+    @Test func colorsHomogeneityColorContentStatusInfo() throws {
         assertHomogeneity(inverseTheme.colors.colorContentStatusInfo)
     }
 
-    func testColorsHomogeneityColorContentStatusNegative() throws {
+    @Test func colorsHomogeneityColorContentStatusNegative() throws {
         assertHomogeneity(inverseTheme.colors.colorContentStatusNegative)
     }
 
-    func testColorsHomogeneityColorContentStatusPositive() throws {
+    @Test func colorsHomogeneityColorContentStatusPositive() throws {
         assertHomogeneity(inverseTheme.colors.colorContentStatusPositive)
     }
 
-    func testColorsHomogeneityColorContentStatusWarning() throws {
+    @Test func colorsHomogeneityColorContentStatusWarning() throws {
         assertHomogeneity(inverseTheme.colors.colorContentStatusWarning)
     }
 
     // MARK: - Color - Overlay
 
-    func testColorsHomogeneityColorOverlayDefault() throws {
+    @Test func colorsHomogeneityColorOverlayDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorOverlayDefault)
     }
 
-    func testColorsHomogeneityColorOverlayDrag() throws {
+    @Test func colorsHomogeneityColorOverlayDrag() throws {
         assertHomogeneity(inverseTheme.colors.colorOverlayDrag)
     }
 
-    func testColorsHomogeneityColorOverlayEmphasized() throws {
+    @Test func colorsHomogeneityColorOverlayEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorOverlayEmphasized)
     }
 
-    func testColorsHomogeneityColorOverlayModal() throws {
+    @Test func colorsHomogeneityColorOverlayModal() throws {
         assertHomogeneity(inverseTheme.colors.colorOverlayModal)
     }
 
     // MARK: - Color - Surface
 
-    func testColorsHomogeneityColorSurfaceBrandPrimary() throws {
+    @Test func colorsHomogeneityColorSurfaceBrandPrimary() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceBrandPrimary)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusAccentEmphasized() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusAccentEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusAccentEmphasized)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusAccentMuted() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusAccentMuted() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusAccentMuted)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusInfoEmphasized() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusInfoEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusInfoEmphasized)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusInfoMuted() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusInfoMuted() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusInfoMuted)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusNegativeEmphasized() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusNegativeEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusNegativeEmphasized)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusNegativeMuted() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusNegativeMuted() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusNegativeMuted)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusNeutralEmphasized() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusNeutralEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusNeutralEmphasized)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusNeutralMuted() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusNeutralMuted() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusNeutralMuted)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusPositiveEmphasized() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusPositiveEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusPositiveEmphasized)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusPositiveMuted() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusPositiveMuted() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusPositiveMuted)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusWarningEmphasized() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusWarningEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusWarningEmphasized)
     }
 
-    func testColorsHomogeneityColorSurfaceStatusWarningMuted() throws {
+    @Test func colorsHomogeneityColorSurfaceStatusWarningMuted() throws {
         assertHomogeneity(inverseTheme.colors.colorSurfaceStatusWarningMuted)
     }
 
     // MARK: - Color - Decorative
 
-    func testColorsHomogeneityColorDecorativeAccent1Default() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent1Default() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent1Default)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent1Emphasized() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent1Emphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent1Emphasized)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent1Muted() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent1Muted() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent1Muted)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent2Default() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent2Default() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent2Default)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent2Emphasized() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent2Emphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent2Emphasized)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent2Muted() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent2Muted() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent2Muted)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent3Default() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent3Default() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent3Default)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent3Emphasized() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent3Emphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent3Emphasized)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent3Muted() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent3Muted() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent3Muted)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent4Default() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent4Default() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent4Default)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent4Emphasized() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent4Emphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent4Emphasized)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent4Muted() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent4Muted() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent4Muted)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent5Default() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent5Default() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent5Default)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent5Emphasized() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent5Emphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent5Emphasized)
     }
 
-    func testColorsHomogeneityColorDecorativeAccent5Muted() throws {
+    @Test func colorsHomogeneityColorDecorativeAccent5Muted() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeAccent5Muted)
     }
 
-    func testColorsHomogeneityColorDecorativeBrandPrimary() throws {
+    @Test func colorsHomogeneityColorDecorativeBrandPrimary() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeBrandPrimary)
     }
 
-    func testColorsHomogeneityColorDecorativeBrandSecondary() throws {
+    @Test func colorsHomogeneityColorDecorativeBrandSecondary() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeBrandSecondary)
     }
 
-    func testColorsHomogeneityColorDecorativeBrandTertiary() throws {
+    @Test func colorsHomogeneityColorDecorativeBrandTertiary() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeBrandTertiary)
     }
 
-    func testColorsHomogeneityColorDecorativeNeutralDefault() throws {
+    @Test func colorsHomogeneityColorDecorativeNeutralDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralDefault)
     }
 
-    func testColorsHomogeneityColorDecorativeNeutralEmphasized() throws {
+    @Test func colorsHomogeneityColorDecorativeNeutralEmphasized() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralEmphasized)
     }
 
-    func testColorsHomogeneityColorDecorativeNeutralMuted() throws {
+    @Test func colorsHomogeneityColorDecorativeNeutralMuted() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMuted)
     }
 
-    func testColorsHomogeneityColorDecorativeSkinTint100() throws {
+    @Test func colorsHomogeneityColorDecorativeSkinTint100() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint100)
     }
 
-    func testColorsHomogeneityColorDecorativeSkinTint200() throws {
+    @Test func colorsHomogeneityColorDecorativeSkinTint200() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint200)
     }
 
-    func testColorsHomogeneityColorDecorativeSkinTint300() throws {
+    @Test func colorsHomogeneityColorDecorativeSkinTint300() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint300)
     }
 
-    func testColorsHomogeneityColorDecorativeSkinTint400() throws {
+    @Test func colorsHomogeneityColorDecorativeSkinTint400() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint400)
     }
 
-    func testColorsHomogeneityColorDecorativeSkinTint500() throws {
+    @Test func colorsHomogeneityColorDecorativeSkinTint500() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint500)
     }
 
-    func testColorsHomogeneityColorDecorativeSkinTint600() throws {
+    @Test func colorsHomogeneityColorDecorativeSkinTint600() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint600)
     }
 
-    func testColorsHomogeneityColorDecorativeSkinTint700() throws {
+    @Test func colorsHomogeneityColorDecorativeSkinTint700() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint700)
     }
 
-    func testColorsHomogeneityColorDecorativeSkinTint800() throws {
+    @Test func colorsHomogeneityColorDecorativeSkinTint800() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint800)
     }
 
-    func testColorsHomogeneityColorDecorativeSkinTint900() throws {
+    @Test func colorsHomogeneityColorDecorativeSkinTint900() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint900)
     }
 
     // MARK: - Color - Chart
 
-    func testColorsHomogeneityColorChartBorder() throws {
+    @Test func colorsHomogeneityColorChartBorder() throws {
         assertHomogeneity(inverseTheme.colors.colorChartBorder)
     }
 
-    func testColorsHomogeneityColorChartBorderContrast() throws {
+    @Test func colorsHomogeneityColorChartBorderContrast() throws {
         assertHomogeneity(inverseTheme.colors.colorChartBorderContrast)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier1() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier1() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier1)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier2() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier2() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier2)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier3() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier3() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier3)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier4() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier4() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier4)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier5() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier5() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier5)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier6() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier6() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier6)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier7() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier7() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier7)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier8() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier8() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier8)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier9() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier9() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier9)
     }
 
-    func testColorsHomogeneityColorChartCategoricalTier10() throws {
+    @Test func colorsHomogeneityColorChartCategoricalTier10() throws {
         assertHomogeneity(inverseTheme.colors.colorChartCategoricalTier10)
     }
 
-    func testColorsHomogeneityColorChartFunctionalInfo() throws {
+    @Test func colorsHomogeneityColorChartFunctionalInfo() throws {
         assertHomogeneity(inverseTheme.colors.colorChartFunctionalInfo)
     }
 
-    func testColorsHomogeneityColorChartFunctionalNegative() throws {
+    @Test func colorsHomogeneityColorChartFunctionalNegative() throws {
         assertHomogeneity(inverseTheme.colors.colorChartFunctionalNegative)
     }
 
-    func testColorsHomogeneityColorChartFunctionalPositive() throws {
+    @Test func colorsHomogeneityColorChartFunctionalPositive() throws {
         assertHomogeneity(inverseTheme.colors.colorChartFunctionalPositive)
     }
 
-    func testColorsHomogeneityColorChartFunctionalWarning() throws {
+    @Test func colorsHomogeneityColorChartFunctionalWarning() throws {
         assertHomogeneity(inverseTheme.colors.colorChartFunctionalWarning)
     }
 
-    func testColorsHomogeneityColorChartGridlines() throws {
+    @Test func colorsHomogeneityColorChartGridlines() throws {
         assertHomogeneity(inverseTheme.colors.colorChartGridlines)
     }
 
-    func testColorsHomogeneityColorChartHighlight() throws {
+    @Test func colorsHomogeneityColorChartHighlight() throws {
         assertHomogeneity(inverseTheme.colors.colorChartHighlight)
     }
 
-    func testColorsHomogeneityColorChartNeutral() throws {
+    @Test func colorsHomogeneityColorChartNeutral() throws {
         assertHomogeneity(inverseTheme.colors.colorChartNeutral)
     }
 
     // MARK: - Color - Repository
 
-    func testColorsHomogeneityColorRepositoryAccentDefault() throws {
+    @Test func colorsHomogeneityColorRepositoryAccentDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryAccentDefault)
     }
 
-    func testColorsHomogeneityColorRepositoryAccentHighest() throws {
+    @Test func colorsHomogeneityColorRepositoryAccentHighest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryAccentHighest)
     }
 
-    func testColorsHomogeneityColorRepositoryAccentLow() throws {
+    @Test func colorsHomogeneityColorRepositoryAccentLow() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryAccentLow)
     }
 
-    func testColorsHomogeneityColorRepositoryAccentLowest() throws {
+    @Test func colorsHomogeneityColorRepositoryAccentLowest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryAccentLowest)
     }
 
-    func testColorsHomogeneityColorRepositoryInfoDefault() throws {
+    @Test func colorsHomogeneityColorRepositoryInfoDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryInfoDefault)
     }
 
-    func testColorsHomogeneityColorRepositoryInfoHighest() throws {
+    @Test func colorsHomogeneityColorRepositoryInfoHighest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryInfoHighest)
     }
 
-    func testColorsHomogeneityColorRepositoryInfoLow() throws {
+    @Test func colorsHomogeneityColorRepositoryInfoLow() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryInfoLow)
     }
 
-    func testColorsHomogeneityColorRepositoryInfoLowest() throws {
+    @Test func colorsHomogeneityColorRepositoryInfoLowest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryInfoLowest)
     }
 
-    func testColorsHomogeneityColorRepositoryNegativeDefault() throws {
+    @Test func colorsHomogeneityColorRepositoryNegativeDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNegativeDefault)
     }
 
-    func testColorsHomogeneityColorRepositoryNegativeHigh() throws {
+    @Test func colorsHomogeneityColorRepositoryNegativeHigh() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNegativeHigh)
     }
 
-    func testColorsHomogeneityColorRepositoryNegativeHigher() throws {
+    @Test func colorsHomogeneityColorRepositoryNegativeHigher() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNegativeHigher)
     }
 
-    func testColorsHomogeneityColorRepositoryNegativeHighest() throws {
+    @Test func colorsHomogeneityColorRepositoryNegativeHighest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNegativeHighest)
     }
 
-    func testColorsHomogeneityColorRepositoryNegativeLow() throws {
+    @Test func colorsHomogeneityColorRepositoryNegativeLow() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNegativeLow)
     }
 
-    func testColorsHomogeneityColorRepositoryNegativeLower() throws {
+    @Test func colorsHomogeneityColorRepositoryNegativeLower() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNegativeLower)
     }
 
-    func testColorsHomogeneityColorRepositoryNegativeLowest() throws {
+    @Test func colorsHomogeneityColorRepositoryNegativeLowest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNegativeLowest)
     }
 
-    func testColorsHomogeneityColorRepositoryNeutralEmphasizedBlack() throws {
+    @Test func colorsHomogeneityColorRepositoryNeutralEmphasizedBlack() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNeutralEmphasizedBlack)
     }
 
-    func testColorsHomogeneityColorRepositoryNeutralEmphasizedHigh() throws {
+    @Test func colorsHomogeneityColorRepositoryNeutralEmphasizedHigh() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNeutralEmphasizedHigh)
     }
 
-    func testColorsHomogeneityColorRepositoryNeutralEmphasizedHigher() throws {
+    @Test func colorsHomogeneityColorRepositoryNeutralEmphasizedHigher() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNeutralEmphasizedHigher)
     }
 
-    func testColorsHomogeneityColorRepositoryNeutralEmphasizedHighest() throws {
+    @Test func colorsHomogeneityColorRepositoryNeutralEmphasizedHighest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNeutralEmphasizedHighest)
     }
 
-    func testColorsHomogeneityColorRepositoryNeutralEmphasizedMedium() throws {
+    @Test func colorsHomogeneityColorRepositoryNeutralEmphasizedMedium() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNeutralEmphasizedMedium)
     }
 
-    func testColorsHomogeneityColorRepositoryNeutralMutedLower() throws {
+    @Test func colorsHomogeneityColorRepositoryNeutralMutedLower() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNeutralMutedLower)
     }
 
-    func testColorsHomogeneityColorRepositoryNeutralMutedLowest() throws {
+    @Test func colorsHomogeneityColorRepositoryNeutralMutedLowest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNeutralMutedLowest)
     }
 
-    func testColorsHomogeneityColorRepositoryNeutralMutedWhite() throws {
+    @Test func colorsHomogeneityColorRepositoryNeutralMutedWhite() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryNeutralMutedWhite)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackHigh() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackHigh() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackHigh)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackHigher() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackHigher() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackHigher)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackHighest() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackHighest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackHighest)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackLow() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackLow() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackLow)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackLower() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackLower() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackLower)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackLowest() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackLowest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackLowest)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackMedium() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackMedium() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackMedium)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackSoft() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackSoft() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackSoft)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityBlackTransparent() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackTransparent() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackTransparent)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityInfo() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityInfo() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityInfo)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityNegative() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityNegative() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityNegative)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityPositive() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityPositive() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityPositive)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityWarning() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityWarning() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWarning)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityWhiteHigh() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityWhiteHigh() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteHigh)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityWhiteHigher() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityWhiteHigher() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteHigher)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityWhiteHighest() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityWhiteHighest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteHighest)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityWhiteMedium() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityWhiteMedium() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteMedium)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityWhiteLow() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityWhiteLow() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteLow)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityWhiteLower() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityWhiteLower() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteLower)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityWhiteLowest() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityWhiteLowest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteLowest)
     }
 
-    func testColorsHomogeneityColorRepositoryOpacityWhiteLowTransparent() throws {
+    @Test func colorsHomogeneityColorRepositoryOpacityWhiteLowTransparent() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityWhiteTransparent)
     }
 
-    func testColorsHomogeneityColorRepositoryPositiveDefault() throws {
+    @Test func colorsHomogeneityColorRepositoryPositiveDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryPositiveDefault)
     }
 
-    func testColorsHomogeneityColorRepositoryPositiveHigh() throws {
+    @Test func colorsHomogeneityColorRepositoryPositiveHigh() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryPositiveHigh)
     }
 
-    func testColorsHomogeneityColorRepositoryPositiveHighest() throws {
+    @Test func colorsHomogeneityColorRepositoryPositiveHighest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryPositiveHighest)
     }
 
-    func testColorsHomogeneityColorRepositoryPositiveLow() throws {
+    @Test func colorsHomogeneityColorRepositoryPositiveLow() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryPositiveLow)
     }
 
-    func testColorsHomogeneityColorRepositoryPositiveLowest() throws {
+    @Test func colorsHomogeneityColorRepositoryPositiveLowest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryPositiveLowest)
     }
 
-    func testColorsHomogeneityColorRepositoryPrimaryDefault() throws {
+    @Test func colorsHomogeneityColorRepositoryPrimaryDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryPrimaryDefault)
     }
 
-    func testColorsHomogeneityColorRepositoryPrimaryLow() throws {
+    @Test func colorsHomogeneityColorRepositoryPrimaryLow() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryPrimaryLow)
     }
 
-    func testColorsHomogeneityColorRepositoryWarningDefault() throws {
+    @Test func colorsHomogeneityColorRepositoryWarningDefault() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryWarningDefault)
     }
 
-    func testColorsHomogeneityColorRepositoryWarningHighest() throws {
+    @Test func colorsHomogeneityColorRepositoryWarningHighest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryWarningHighest)
     }
 
-    func testColorsHomogeneityColorRepositoryWarningLow() throws {
+    @Test func colorsHomogeneityColorRepositoryWarningLow() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryWarningLow)
     }
 
-    func testColorsHomogeneityColorRepositoryWarningLowest() throws {
+    @Test func colorsHomogeneityColorRepositoryWarningLowest() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryWarningLowest)
     }
 }
-// swiftlint:enable required_deinit
-// swiftlint:enable implicitly_unwrapped_optional
+
 // swiftlint:enable type_body_length
