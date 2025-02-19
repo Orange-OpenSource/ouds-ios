@@ -2,10 +2,21 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
-
-    },
-    "App version: %@" : {
-
+      "comment" : "About screen",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
     },
     "app_about_accessibilityStatement_label" : {
       "comment" : "About screen",
@@ -21,6 +32,78 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Déclaration d'accessibilité"
+          }
+        }
+      }
+    },
+    "app_about_details_appVersion" : {
+      "comment" : "About screen - App details",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App version: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version de l’app : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_buildNumber" : {
+      "comment" : "About screen - App details",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Build number: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numéro du build : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_buildType" : {
+      "comment" : "About screen - App details",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Build type: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type de build : %@"
+          }
+        }
+      }
+    },
+    "app_about_details_githubBuildDetails" : {
+      "comment" : "About screen - App details",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Build details (GitHub): %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détails du build (GItHub) : %@"
           }
         }
       }
@@ -219,6 +302,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Basculer la visibilité du code"
+          }
+        }
+      }
+    },
+    "app_component_common_configuration" : {
+      "comment" : "Component screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuration"
           }
         }
       }
@@ -1266,18 +1361,6 @@
           }
         }
       }
-    },
-    "Build details (GitHub): %@" : {
-
-    },
-    "Build number: %@" : {
-
-    },
-    "Build type: %@" : {
-
-    },
-    "Configuration" : {
-
     },
     "family (%@), " : {
 

@@ -104,6 +104,7 @@
 		510A9CD02C5679A300430620 /* OUDSComponents in Frameworks */ = {isa = PBXBuildFile; productRef = 510A9CCF2C5679A300430620 /* OUDSComponents */; };
 		510AF27A2D64DA72002A2731 /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074008222C942810006B8729 /* XCTestCase+Snapshot.swift */; };
 		5122E0282D65D18E00CD2857 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5122E0272D65D18E00CD2857 /* Localizable.xcstrings */; };
+		5122E02A2D65E7AC00CD2857 /* String+L10N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+L10N.swift */; };
 		512364792C3D7B2D00572FD5 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 512364782C3D7B2D00572FD5 /* Podfile.lock */; };
 		5123647B2C3D7B3500572FD5 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 5123647A2C3D7B3500572FD5 /* Gemfile.lock */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
@@ -302,6 +303,7 @@
 		5122E0252D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_legal_information.html; sourceTree = "<group>"; };
 		5122E0262D65D13400CD2857 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		5122E0272D65D18E00CD2857 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		5122E0292D65E7AC00CD2857 /* String+L10N.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+L10N.swift"; sourceTree = "<group>"; };
 		512364782C3D7B2D00572FD5 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		5123647A2C3D7B3500572FD5 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
@@ -776,6 +778,7 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5122E0292D65E7AC00CD2857 /* String+L10N.swift */,
 				51BD761C2C466FCF0033365D /* WebView.swift */,
 				51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */,
 			);
@@ -1185,6 +1188,7 @@
 				0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */,
 				077CCE572CB426090059CC28 /* SpaceTokenElement.swift in Sources */,
 				07F75A412CC653EB0004F1AD /* NameSpace+GapStack.swift in Sources */,
+				5122E02A2D65E7AC00CD2857 /* String+L10N.swift in Sources */,
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
