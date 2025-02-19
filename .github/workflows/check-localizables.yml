@@ -37,16 +37,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3'
+      - name: Clone SwiftPolyglot
+        run: git clone https://github.com/appdecostudio/SwiftPolyglot.git --branch=1.1.0 ../SwiftPolyglot
 
-      - name: Install Fastlane
+      - name: Validate translations
         run: |
-          bundle install
+          swift build --package-path ../SwiftPolyglot --configuration release
+          swift run --package-path ../SwiftPolyglot swiftpolyglot en fr --error-on-missing
 
-      - name: Check if missing translations
-        run: |
-          cd DesignToolbox
-          bundle exec fastlane check_missing_translations

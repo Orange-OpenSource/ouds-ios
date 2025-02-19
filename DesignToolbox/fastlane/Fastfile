@@ -97,24 +97,6 @@ platform :ios do
 
     # TODO Add lane for add_credentials_appsplus (cf github.com/Orange-OpenSource/ods-ios)
 
-    # --------------------------
-    # CHECK MISSING TRANSLATIONS
-    # --------------------------
-    desc "CHECK MISSING TRANSLATIONS"
-    lane :check_missing_translations do
-        puts "👉 Check missing translations with SwiftPolyglot"
-
-        toolVersion = "1.1.0"
-        toolRepoLocation = "../SwiftPolyglot"
-        locales = "en fr"
-
-        sh "[ -d #{toolRepoLocation} ] && rm -r #{toolRepoLocation} || true"  # Remove older work
-        sh "git clone -b #{toolVersion} https://github.com/appdecostudio/SwiftPolyglot.git #{toolRepoLocation}"
-        sh "swift build --package-path #{toolRepoLocation} --configuration release"
-        sh "swift run --package-path #{toolRepoLocation} swiftpolyglot #{locales} --error-on-missing"
-        sh "[ -d #{toolRepoLocation} ] && rm -r #{toolRepoLocation} || true"  # Ensure place is clean
-    end
-
     # ---------
     # RUN TESTS
     # ---------
