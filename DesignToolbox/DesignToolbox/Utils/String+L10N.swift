@@ -20,27 +20,9 @@ infix operator <-
 
 // MARK: - String extension
 
-// swiftlint:disable identifier_name
 extension String {
 
     // MARK: - Sugar
-
-    /// Ensures the string you handle has been localized,
-    /// e.g. when you store the string as `String` and not implicitly as `LocalizedString` (like done in `View`, sometimes the cast fails).
-    /// Could also bring some fun in the source code, remember to keep it clear of course.
-    /// ʕ•́ᴥ•̀ʔっ You should not use that.
-    var 🌐: String {
-        localized()
-    }
-
-    /// A prefix operator to return the localized string of the given `String` seen as a wording key.
-    /// Could also bring some sequins in the source code 💫, remember to keep it clear of course.
-    /// ʕ•́ᴥ•̀ʔっ You should not use that.
-    /// - Parameter wordingKey: Some key expected in your localizables
-    /// - Returns String: The localized string value
-    static prefix func °° (_ wordingKey: String) -> String {
-        wordingKey.localized()
-    }
 
     /// Just an operator to inject as `String` one argument in a localizable
     /// - Parameters:
@@ -108,4 +90,3 @@ extension String {
         String(format: localized(), arguments: arguments)
     }
 }
-// swiftlint:enable identifier_name
