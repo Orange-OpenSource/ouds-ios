@@ -17,7 +17,7 @@ import SwiftUI
 import Testing
 
 /// Struct to test `String` extensions related to `SwiftUI`
-struct TestString_SwiftUI {
+struct StringSwiftUITests {
 
     /// Tests the font family values created using a font family name and a weight
     @Test

@@ -18,7 +18,7 @@ import Testing
 // swiftlint:disable force_unwrapping
 
 /// To test some extensions of `SwiftUI.Color`
-struct TestColor_extensions {
+struct ColorExtensionsTests {
 
     @Test func initWithHexadecimalValue() throws {
 

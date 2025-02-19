@@ -17,7 +17,7 @@ import SwiftUI
 import Testing
 
 /// Struct to test `Int` extensions related to `SwiftUI`
-struct TestInt_SwiftUI {
+struct IntSwiftUITests {
 
     /// Tests values of font weight
     @Test

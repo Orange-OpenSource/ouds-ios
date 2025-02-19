@@ -17,10 +17,10 @@ import SwiftUI
 import Testing
 
 /// Class to test `Font` extensions related to `SwiftUI`
-struct TestFont_SwiftUI {
+struct FontSwiftUITests {
 
     /// Tests description values of font weight
-    @Test func fntWeightDescription() throws {
+    @Test func fontWeightDescription() throws {
         #expect(Font.Weight.ultraLight.description == "Ultra-Light")
         #expect(Font.Weight.thin.description == "Thin")
         #expect(Font.Weight.light.description == "Light")
