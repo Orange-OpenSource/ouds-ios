@@ -402,9 +402,11 @@ Do not forget if possible to enable the warnings in the end of the file to reduc
 
 We use *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
-This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml), and makes build, unit tests and UI tests. Keep in mind we may have [some troubles with UI tests](https://github.com/Orange-OpenSource/ouds-ios/issues/305).
+This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml), and makes build, unit tests and UI tests.
 
 We have also a *gitleaks* workflow making some scans on the code to look fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml).
+
+A dedicated workflow has been defined so as to run checks on localizables to find is some wording is missing (thanks to [SwiftPolyglot](https://github.com/appdecostudio/SwiftPolyglot)).
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
