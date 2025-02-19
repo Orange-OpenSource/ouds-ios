@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] MAdd SwiftPolyglot in CI/CD to check missing localizables ([#454](https://github.com/Orange-OpenSource/ouds-ios/issues/454))
 - [Tool] Move legacy Localizable.strings file to new Apple strings catalogs ([#454](https://github.com/Orange-OpenSource/ouds-ios/issues/454))
 - [Tool] Change precision and perception of UI tests to make them pass on Apple Silicon SoC ([#305](https://github.com/Orange-OpenSource/ouds-ios/issues/305))
 - [DesignToolbox] Reorganise snapshots files for tests of tokens ([#432](https://github.com/Orange-OpenSource/ouds-ios/issues/432))
