@@ -297,7 +297,7 @@ platform :ios do
             puts "👉 Build and upload (alpha)"
             update_build_number
             build
-            upload(type: "alpha", issues_numbers: params[:issues])
+            upload_2_testflight(type: "alpha", issues_numbers: params[:issues])
             public_github_notifications_build_details
 
         else # Beta case (not production too), detailSymbol should be here commit hash
@@ -320,7 +320,7 @@ platform :ios do
                 puts "ℹ️ Upload to TestFlight requested"
                 # If already uploaded, prevents to upload again
                 if tag_testflight_upload(detailSymbol)
-                    upload(type: "beta")
+                    upload_2_testflight(type: "beta")
                 else
                     puts "ℹ️ Nothing new to build today, a TestFlight tag for commit '#{detailSymbol}' already exists"
                     publish_mattermost_notification("⚙️ 🤔 Nothing new to build today, a TestFlight tag for commit '#{detailSymbol}' already exists")
