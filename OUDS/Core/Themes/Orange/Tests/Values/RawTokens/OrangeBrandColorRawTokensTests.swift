@@ -11,9 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import Foundation
 import OUDSThemesOrange
-import TestsUtils
 import Testing
+import TestsUtils
 
 // swiftlint:disable type_body_length
 // swiftlint:disable force_try
