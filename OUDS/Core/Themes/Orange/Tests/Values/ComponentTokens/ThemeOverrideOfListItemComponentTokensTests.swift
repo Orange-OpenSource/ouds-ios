@@ -17,7 +17,7 @@ import Testing
 
 // swiftlint:disable type_name
 
-struct TestThemeOverrideOfListItemComponentTokens {
+struct ThemeOverrideOfListItemComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
     private var inheritedTheme: OUDSTheme
