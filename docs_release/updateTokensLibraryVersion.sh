@@ -20,10 +20,52 @@ set -euo pipefail
 TEMPLATE_TO_LOOK_FOR="Tokens version: "
 
 FILES_TO_PROCESS=(
+
+     # For Design Toolbox app
     "../DesignToolbox/DesignToolbox/Utils/Bundle+extension.swift"
+
+    # For generated documentation
     "../OUDS/Core/Tokens/ComponentTokens/Sources/_OUDSTokensComponent.docc/OUDSTokensComponent.md"
     "../OUDS/Core/Tokens/RawTokens/Sources/_OUDSTokensRaw.docc/OUDSTokensRaw.md"
     "../OUDS/Core/Tokens/SemanticTokens/Sources/_OUDSTokensSemantic.docc/OUDSTokensSemantic.md"
+
+    # For raw tokens generated files (common)
+	"../OUDS/Core/Tokens/RawTokens/Sources/Values/BorderRawTokens+Values.swift"
+	"../OUDS/Core/Tokens/RawTokens/Sources/Values/ColorRawTokens+Values.swift"
+	"../OUDS/Core/Tokens/RawTokens/Sources/Values/DimensionRawTokens+Values.swift"
+	"../OUDS/Core/Tokens/RawTokens/Sources/Values/ElevationRawTokens+Values.swift"
+	"../OUDS/Core/Tokens/RawTokens/Sources/Values/FontRawTokens+Values.swift"
+	"../OUDS/Core/Tokens/RawTokens/Sources/Values/GridRawTokens+Values.swift"
+	"../OUDS/Core/Tokens/RawTokens/Sources/Values/OpacityRawTokens+Values.swift"
+
+    # For raw tokens generated files (Orange theme)
+	"../OUDS/Core/Themes/Orange/Sources/Values/RawTokens/OrangeBrandColorRawTokens+Values.swift"
+
+    # For semantic tokens generated files
+	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+BorderSemanticTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ColorSemanticTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ElevationSemanticTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+FontSemanticTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+GridSemanticTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+OpacitySemanticTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+SizeSemanticTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+SpaceSemanticTokens.swift"
+
+    # For component tokens generated files
+    "../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BadgeComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BreadcrumbComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BulletListComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ButtonComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+CheckboxComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ChipComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ControlItemComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+InputTextComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+LinkComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ListItemComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SelectComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SkeletonComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SwitchComponentTokens.swift"
+	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+TagComponentTokens.swift"
 )
 
 # Errors
