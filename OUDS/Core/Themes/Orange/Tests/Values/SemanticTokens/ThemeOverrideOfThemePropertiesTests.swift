@@ -13,7 +13,7 @@
 
 import OUDS
 import OUDSThemesOrange
-import XCTest
+import Testing
 
 // swiftlint:disable required_deinit
 // swiftlint:disable implicitly_unwrapped_optional
@@ -22,19 +22,19 @@ import XCTest
 /// In fact the `OUDSTheme` object is a class, which can be seen as an _asbtract class_, exposing through its extensions and protocols some properties.
 /// These properties should be overridable by subclasses like the `OrangeTheme` default theme.
 /// **These tests checks if any _non token properties_ can be surcharged by a child theme**
-final class TestThemeOverrideOfThemeProperties: XCTestCase {
+struct ThemeOverrideOfThemePropertiesTests {
 
-    private var abstractTheme: OUDSTheme!
-    private var inheritedTheme: OUDSTheme!
+    private var abstractTheme: OUDSTheme
+    private var inheritedTheme: OUDSTheme
 
-    override func setUp() async throws {
+    init() {
         abstractTheme = OrangeTheme()
         inheritedTheme = MockTheme(fontFamily: "Mr R08øT")
     }
 
-    func testInheritedThemeCanOverrideFontFamily() throws {
-        XCTAssertNotEqual(inheritedTheme.fontFamily, abstractTheme.fontFamily)
-        XCTAssertTrue(inheritedTheme.fontFamily == "Mr R08øT")
+    @Test func inheritedThemeCanOverrideFontFamily() throws {
+        #expect(inheritedTheme.fontFamily != abstractTheme.fontFamily)
+        #expect(inheritedTheme.fontFamily == "Mr R08øT")
     }
 }
 
