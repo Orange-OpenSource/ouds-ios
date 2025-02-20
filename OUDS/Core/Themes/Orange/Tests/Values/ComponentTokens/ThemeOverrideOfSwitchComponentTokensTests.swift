@@ -15,6 +15,8 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable type_name
+
 struct ThemeOverrideOfSwitchComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
@@ -76,3 +78,5 @@ struct ThemeOverrideOfSwitchComponentTokensTests {
         #expect(inheritedTheme.switch.switchSize == MockThemeSwitchComponentTokenProvider.mockThemeSwitchSize)
     }
 }
+
+// swiftlint:disable type_name

@@ -15,6 +15,8 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable type_name
+
 struct ThemeOverrideOfSelectComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
@@ -199,3 +201,5 @@ struct ThemeOverrideOfSelectComponentTokensTests {
         #expect(inheritedTheme.select.selectSpaceRowGap == MockThemeSelectComponentTokenProvider.mockThemeSelectSpace)
     }
 }
+
+// swiftlint:enable type_name

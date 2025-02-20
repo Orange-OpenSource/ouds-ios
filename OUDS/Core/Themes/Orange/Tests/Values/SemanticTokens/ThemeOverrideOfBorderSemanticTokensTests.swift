@@ -117,5 +117,4 @@ struct ThemeOverrideOfBorderSemanticTokensTests {
         #expect(inheritedTheme.borders.borderStyleDrag != abstractTheme.borders.borderStyleDrag)
         #expect(inheritedTheme.borders.borderStyleDrag == MockThemeBorderSemanticTokensProvider.mockThemeBorderStyleRawToken)
     }
-
 }

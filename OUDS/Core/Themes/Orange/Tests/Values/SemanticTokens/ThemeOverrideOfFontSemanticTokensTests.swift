@@ -25,10 +25,10 @@ import Testing
 /// **Also, it can help to find removed or renamed tokens by having tests no more compilable**
 struct ThemeOverrideOfFontSemanticTokensTests {
 
-    private var abstractTheme: OUDSTheme!
-    private var inheritedTheme: OUDSTheme!
+    private var abstractTheme: OUDSTheme
+    private var inheritedTheme: OUDSTheme
 
-    override func setUp() async throws {
+    init() {
         abstractTheme = OrangeTheme()
         inheritedTheme = MockTheme()
     }

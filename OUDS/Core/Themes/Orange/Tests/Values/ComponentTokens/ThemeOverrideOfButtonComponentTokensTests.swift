@@ -15,11 +15,14 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable type_body_length
+// swiftlint:disable type_name
+
 struct ThemeOverrideOfButtonComponentTokensTests {
-    
+
     private var abstractTheme: OUDSTheme
     private var inheritedTheme: OUDSTheme
-    
+
     init(){
         abstractTheme = OrangeTheme()
         inheritedTheme = MockTheme()
@@ -377,3 +380,6 @@ struct ThemeOverrideOfButtonComponentTokensTests {
         #expect(inheritedTheme.button.buttonSpacePaddingInlineStartIconEnd == MockThemeButtonComponentTokenProvider.mockThemeButtonSpace)
     }
 }
+
+// swiftlint:enable type_body_length
+// swiftlint:enable type_name

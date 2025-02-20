@@ -15,8 +15,6 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
-// swiftlint:disable required_deinit
-// swiftlint:disable implicitly_unwrapped_optional
 // swiftlint:disable type_name
 
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
@@ -193,6 +191,4 @@ struct ThemeOverrideOfFontMultipleSemanticTokensTests {
 
 }
 
-// swiftlint:enable required_deinit
-// swiftlint:enable implicitly_unwrapped_optional
 // swiftlint:enable type_name

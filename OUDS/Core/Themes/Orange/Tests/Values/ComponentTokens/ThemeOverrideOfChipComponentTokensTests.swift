@@ -202,5 +202,4 @@ struct ThemeOverrideOfChipComponentTokensTests {
         #expect(inheritedTheme.chip.chipSpacePaddingStackPaddingBlock != abstractTheme.chip.chipSpacePaddingStackPaddingBlock)
         #expect(inheritedTheme.chip.chipSpacePaddingStackPaddingBlock == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
-
 }

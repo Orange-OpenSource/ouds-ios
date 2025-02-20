@@ -92,7 +92,6 @@ struct ThemeOverrideOfListItemComponentTokensTests {
         #expect(inheritedTheme.listItem.listItemSpaceRowGap != abstractTheme.listItem.listItemSpaceRowGap)
         #expect(inheritedTheme.listItem.listItemSpaceRowGap == MockThemeListItemComponentTokenProvider.mockThemeListItemSpace)
     }
-
 }
 
 // swiftlint:enable type_name
