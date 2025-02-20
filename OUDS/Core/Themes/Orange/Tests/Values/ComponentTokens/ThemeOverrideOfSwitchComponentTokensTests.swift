@@ -79,4 +79,4 @@ struct ThemeOverrideOfSwitchComponentTokensTests {
     }
 }
 
-// swiftlint:disable type_name
+// swiftlint:enable type_name

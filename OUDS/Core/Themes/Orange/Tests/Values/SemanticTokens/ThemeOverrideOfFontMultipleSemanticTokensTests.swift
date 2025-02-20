@@ -188,7 +188,6 @@ struct ThemeOverrideOfFontMultipleSemanticTokensTests {
         #expect(inheritedTheme.fonts.fontLineHeightBodySmall != abstractTheme.fonts.fontLineHeightBodySmall)
         #expect(inheritedTheme.fonts.fontLineHeightBodySmall == MockThemeFontSemanticTokensProvider.mockThemeMultipleFontLineHeightTokens)
     }
-
 }
 
 // swiftlint:enable type_name
