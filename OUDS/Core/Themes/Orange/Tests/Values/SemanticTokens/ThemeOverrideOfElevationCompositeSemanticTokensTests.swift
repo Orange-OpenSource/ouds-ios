@@ -13,10 +13,8 @@
 
 import OUDS
 import OUDSThemesOrange
-import XCTest
+import Testing
 
-// swiftlint:disable required_deinit
-// swiftlint:disable implicitly_unwrapped_optional
 // swiftlint:disable type_name
 
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
@@ -25,57 +23,55 @@ import XCTest
 ///
 /// **These tests checks if any _elevation composite semantic tokens_ can be surcharged by a child theme**
 /// **Also, it can help to find removed or renamed tokens by having tests no more compilable**
-final class TestThemeOverrideOfElevationCompositeSemanticTokens: XCTestCase {
+struct ThemeOverrideOfElevationCompositeSemanticTokensTests {
 
-    private var abstractTheme: OUDSTheme!
-    private var inheritedTheme: OUDSTheme!
+    private var abstractTheme: OUDSTheme
+    private var inheritedTheme: OUDSTheme
 
-    override func setUp() async throws {
+    init() {
         abstractTheme = OrangeTheme()
         inheritedTheme = MockTheme()
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeNone() throws {
-        XCTAssertNotEqual(inheritedTheme.elevations.elevationNone, abstractTheme.elevations.elevationNone)
-        XCTAssertTrue(inheritedTheme.elevations.elevationNone == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeNone() throws {
+        #expect(inheritedTheme.elevations.elevationNone != abstractTheme.elevations.elevationNone)
+        #expect(inheritedTheme.elevations.elevationNone == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeRaised() throws {
-        XCTAssertNotEqual(inheritedTheme.elevations.elevationRaised, abstractTheme.elevations.elevationRaised)
-        XCTAssertTrue(inheritedTheme.elevations.elevationRaised == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeRaised() throws {
+        #expect(inheritedTheme.elevations.elevationRaised != abstractTheme.elevations.elevationRaised)
+        #expect(inheritedTheme.elevations.elevationRaised == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeDrag() throws {
-        XCTAssertNotEqual(inheritedTheme.elevations.elevationDrag, abstractTheme.elevations.elevationDrag)
-        XCTAssertTrue(inheritedTheme.elevations.elevationDrag == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeDrag() throws {
+        #expect(inheritedTheme.elevations.elevationDrag != abstractTheme.elevations.elevationDrag)
+        #expect(inheritedTheme.elevations.elevationDrag == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.elevations.elevationOverlayDefault, abstractTheme.elevations.elevationOverlayDefault)
-        XCTAssertTrue(inheritedTheme.elevations.elevationOverlayDefault == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayDefault() throws {
+        #expect(inheritedTheme.elevations.elevationOverlayDefault != abstractTheme.elevations.elevationOverlayDefault)
+        #expect(inheritedTheme.elevations.elevationOverlayDefault == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayEmphasized() throws {
-        XCTAssertNotEqual(inheritedTheme.elevations.elevationOverlayEmphasized, abstractTheme.elevations.elevationOverlayEmphasized)
-        XCTAssertTrue(inheritedTheme.elevations.elevationOverlayEmphasized == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeOverlayEmphasized() throws {
+        #expect(inheritedTheme.elevations.elevationOverlayEmphasized != abstractTheme.elevations.elevationOverlayEmphasized)
+        #expect(inheritedTheme.elevations.elevationOverlayEmphasized == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyDefault() throws {
-        XCTAssertNotEqual(inheritedTheme.elevations.elevationStickyDefault, abstractTheme.elevations.elevationStickyDefault)
-        XCTAssertTrue(inheritedTheme.elevations.elevationStickyDefault == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeStickyDefault() throws {
+        #expect(inheritedTheme.elevations.elevationStickyDefault != abstractTheme.elevations.elevationStickyDefault)
+        #expect(inheritedTheme.elevations.elevationStickyDefault == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyEmphasized() throws {
-        XCTAssertNotEqual(inheritedTheme.elevations.elevationStickyEmphasized, abstractTheme.elevations.elevationStickyEmphasized)
-        XCTAssertTrue(inheritedTheme.elevations.elevationStickyEmphasized == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeStickyEmphasized() throws {
+        #expect(inheritedTheme.elevations.elevationStickyEmphasized != abstractTheme.elevations.elevationStickyEmphasized)
+        #expect(inheritedTheme.elevations.elevationStickyEmphasized == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenElevationCompositeStickyNavigationScrolled() throws {
-        XCTAssertNotEqual(inheritedTheme.elevations.elevationStickyNavigationScrolled, abstractTheme.elevations.elevationStickyNavigationScrolled)
-        XCTAssertTrue(inheritedTheme.elevations.elevationStickyNavigationScrolled == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenElevationCompositeStickyNavigationScrolled() throws {
+        #expect(inheritedTheme.elevations.elevationStickyNavigationScrolled != abstractTheme.elevations.elevationStickyNavigationScrolled)
+        #expect(inheritedTheme.elevations.elevationStickyNavigationScrolled == MockThemeElevationSemanticTokensProvider.mockThemeElevationCompositeSemanticToken)
     }
 }
 
-// swiftlint:enable required_deinit
-// swiftlint:enable implicitly_unwrapped_optional
 // swiftlint:enable type_name
