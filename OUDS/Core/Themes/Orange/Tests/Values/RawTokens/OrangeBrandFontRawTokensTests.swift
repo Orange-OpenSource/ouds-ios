@@ -12,26 +12,22 @@
 //
 
 import OUDSThemesOrange
-import XCTest
-
-// swiftlint:disable required_deinit
+import Testing
 
 /// The aim of this tests class is to look for regressions in **Orange brand font raw tokens**.
 /// Indeed, each future generation of Swift code may break theses tests because there are new values.
 /// In the semantics of **font raw tokens**, there will be some unchanged things like relationships between tokens.
 /// Some of these tokens are also strongly based on their raw tvalues (like font family names) and must be tested.
 /// Thus this tests class just checks if such relationships are still here whatever the values at the end.
-final class OrangeBrandFontRawTokensTests: XCTestCase {
+struct OrangeBrandFontRawTokensTests {
 
     // MARK: Primitive token - Colors - Orange - Brand
 
-    func testFontRawTokenFontFamilyBrand() throws {
-        XCTAssertEqual(OrangeBrandFontRawTokens.fontFamilyBrand, "Helvetica Neue")
+    @Test func fontRawTokenFontFamilyBrand() throws {
+        #expect(OrangeBrandFontRawTokens.fontFamilyBrand == "Helvetica Neue")
     }
 
-    func testFontRawTokenFontFamilyTV() throws {
-        XCTAssertEqual(OrangeBrandFontRawTokens.fontFamilyTV, "Helvetica Neue LT")
+    @Test func fontRawTokenFontFamilyTV() throws {
+        #expect(OrangeBrandFontRawTokens.fontFamilyTV == "Helvetica Neue LT")
     }
 }
-
-// swiftlint:enable required_deinit
