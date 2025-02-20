@@ -81,7 +81,7 @@ Fixed:
 - [Library] Fix some typos in documentation ([#89](#89))
 
 // Add in co authors anyone working on the commits being merged, add the ones who contributed (copy-paste if too lazy, use the ones you need)
-Co-authored-by: Julien Déramond <julien.deramond@orange.com>
+Co-authored-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
@@ -103,17 +103,20 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 - Or use _Fastlane_ command:
     ```shell
     # Variables for application signing
-    export OUDS_DEVELOPER_APP_IDENTIFIER=<your_app_identifier>
+    export OUDS_DEVELOPER_BUNDLE_IDENTIFIER=<your_app_identifier>
     export OUDS_FASTLANE_APPLE_ID=<your_apple_email_address>
     export OUDS_DEVELOPER_PORTAL_TEAM_ID=<your_developer_portal_team_ID>
     
-    # Variables to Upload to TestFlight
+    # Variables for upload to TestFlight
     export OUDS_APPLE_KEY_ID = <your_key_ID>
     export OUDS_APPLE_ISSUER_ID = <your_issuer_ID>
     export OUDS_APPLE_KEY_CONTENT = <your_key_content>
     
+    # Variables for internal portal upload (for in the end App Store)
+    export OUDS_UPLOAD_STORE_URL = <URL_wih_details_for_upload>
+
     bundle exec fastlane prod upload:true
-    # set "upload" to true if you want to upload app to TestFlight, false otherwise.
+    # set "upload" to true if you want to upload app to internal portal, false otherwise.
     ```
 
 ### Publish release to GitHub

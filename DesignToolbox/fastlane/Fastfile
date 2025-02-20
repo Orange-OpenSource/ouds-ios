@@ -34,7 +34,7 @@ APPLE_KEY_CONTENT = ENV["OUDS_APPLE_KEY_CONTENT"]
 # Bundle identifier of the app
 DEVELOPER_APP_IDENTIFIER = ENV["OUDS_DEVELOPER_BUNDLE_IDENTIFIER"]
 
-# Upload To Store
+# URL for internal portal to upload to App Store
 UPLOAD_STORE_URL = ENV["OUDS_UPLOAD_STORE_URL"]
 
 # Notifications and hooks
