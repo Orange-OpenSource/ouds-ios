@@ -18,7 +18,7 @@ import XCTest
 // swiftlint:disable required_deinit
 // swiftlint:disable implicitly_unwrapped_optional
 
-final class TestThemeOverrideOfLinkComponentTokens: XCTestCase {
+final class ThemeOverrideOfLinkComponentTokensTests: XCTestCase {
 
     private var abstractTheme: OUDSTheme!
     private var inheritedTheme: OUDSTheme!

@@ -13,89 +13,86 @@
 
 import OUDS
 import OUDSThemesOrange
-import XCTest
+import Testing
 
-// swiftlint:disable required_deinit
-// swiftlint:disable implicitly_unwrapped_optional
 // swiftlint:disable type_name
 
-final class TestThemeOverrideOfListItemComponentTokens: XCTestCase {
+struct TestThemeOverrideOfListItemComponentTokens {
 
-    private var abstractTheme: OUDSTheme!
-    private var inheritedTheme: OUDSTheme!
+    private var abstractTheme: OUDSTheme
+    private var inheritedTheme: OUDSTheme
 
-    override func setUp() async throws {
+    init() {
         abstractTheme = OrangeTheme()
         inheritedTheme = MockTheme()
     }
 
     // MARK: - Colors
 
-    func testInheritedThemeCanOverrideListItemComponentTokenSizeMinHeight() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemSizeMinHeight, abstractTheme.listItem.listItemSizeMinHeight)
-        XCTAssertTrue(inheritedTheme.listItem.listItemSizeMinHeight == MockThemeListItemComponentTokenProvider.mockThemeListItemSize)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenSizeMinHeight() throws {
+        #expect(inheritedTheme.listItem.listItemSizeMinHeight != abstractTheme.listItem.listItemSizeMinHeight)
+        #expect(inheritedTheme.listItem.listItemSizeMinHeight == MockThemeListItemComponentTokenProvider.mockThemeListItemSize)
     }
 
-    func testInheritedThemeCanOverrideListItemComponentTokenSizeMinWidth() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemSizeMinWidth, abstractTheme.listItem.listItemSizeMinWidth)
-        XCTAssertTrue(inheritedTheme.listItem.listItemSizeMinWidth == MockThemeListItemComponentTokenProvider.mockThemeListItemSize)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenSizeMinWidth() throws {
+        #expect(inheritedTheme.listItem.listItemSizeMinWidth != abstractTheme.listItem.listItemSizeMinWidth)
+        #expect(inheritedTheme.listItem.listItemSizeMinWidth == MockThemeListItemComponentTokenProvider.mockThemeListItemSize)
     }
 
-    func testInheritedThemeCanOverrideListItemComponentTokenColorBgFocus() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemColorBgFocus, abstractTheme.listItem.listItemColorBgFocus)
-        XCTAssertTrue(inheritedTheme.listItem.listItemColorBgFocus == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenColorBgFocus() throws {
+        #expect(inheritedTheme.listItem.listItemColorBgFocus != abstractTheme.listItem.listItemColorBgFocus)
+        #expect(inheritedTheme.listItem.listItemColorBgFocus == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
     }
 
-    func testInheritedThemeCanOverrideListItemComponentTokenColorBgHover() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemColorBgHover, abstractTheme.listItem.listItemColorBgHover)
-        XCTAssertTrue(inheritedTheme.listItem.listItemColorBgHover == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenColorBgHover() throws {
+        #expect(inheritedTheme.listItem.listItemColorBgHover != abstractTheme.listItem.listItemColorBgHover)
+        #expect(inheritedTheme.listItem.listItemColorBgHover == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
     }
 
-    func testInheritedThemeCanOverrideListItemComponentTokenColorBgLoading() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemColorBgLoading, abstractTheme.listItem.listItemColorBgLoading)
-        XCTAssertTrue(inheritedTheme.listItem.listItemColorBgLoading == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenColorBgLoading() throws {
+        #expect(inheritedTheme.listItem.listItemColorBgLoading != abstractTheme.listItem.listItemColorBgLoading)
+        #expect(inheritedTheme.listItem.listItemColorBgLoading == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
     }
 
-    func testInheritedThemeCanOverrideListItemComponentTokenColorBgPressed() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemColorBgPressed, abstractTheme.listItem.listItemColorBgPressed)
-        XCTAssertTrue(inheritedTheme.listItem.listItemColorBgPressed == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenColorBgPressed() throws {
+        #expect(inheritedTheme.listItem.listItemColorBgPressed != abstractTheme.listItem.listItemColorBgPressed)
+        #expect(inheritedTheme.listItem.listItemColorBgPressed == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
     }
 
-    func testInheritedThemeCanOverrideListItemComponentTokenColorContentLoader() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemColorContentLoader, abstractTheme.listItem.listItemColorContentLoader)
-        XCTAssertTrue(inheritedTheme.listItem.listItemColorContentLoader == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenColorContentLoader() throws {
+        #expect(inheritedTheme.listItem.listItemColorContentLoader != abstractTheme.listItem.listItemColorContentLoader)
+        #expect(inheritedTheme.listItem.listItemColorContentLoader == MockThemeListItemComponentTokenProvider.mockThemeListItemColor)
     }
 
     // MARK: - Sizes
 
-    func testInheritedThemeCanOverrideListItemComponentTokenSizeIcon() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemSizeIcon, abstractTheme.listItem.listItemSizeIcon)
-        XCTAssertTrue(inheritedTheme.listItem.listItemSizeIcon == MockThemeListItemComponentTokenProvider.mockThemeListItemSize)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenSizeIcon() throws {
+        #expect(inheritedTheme.listItem.listItemSizeIcon != abstractTheme.listItem.listItemSizeIcon)
+        #expect(inheritedTheme.listItem.listItemSizeIcon == MockThemeListItemComponentTokenProvider.mockThemeListItemSize)
     }
 
-    func testInheritedThemeCanOverrideListItemComponentTokenSizeLoader() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemSizeLoader, abstractTheme.listItem.listItemSizeLoader)
-        XCTAssertTrue(inheritedTheme.listItem.listItemSizeLoader == MockThemeListItemComponentTokenProvider.mockThemeListItemSize)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenSizeLoader() throws {
+        #expect(inheritedTheme.listItem.listItemSizeLoader != abstractTheme.listItem.listItemSizeLoader)
+        #expect(inheritedTheme.listItem.listItemSizeLoader == MockThemeListItemComponentTokenProvider.mockThemeListItemSize)
     }
 
     // MARK: - Spaces
 
-    func testInheritedThemeCanOverrideListItemComponentTokenSpaceColumnGap() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemSpaceColumnGap, abstractTheme.listItem.listItemSpaceColumnGap)
-        XCTAssertTrue(inheritedTheme.listItem.listItemSpaceColumnGap == MockThemeListItemComponentTokenProvider.mockThemeListItemSpace)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenSpaceColumnGap() throws {
+        #expect(inheritedTheme.listItem.listItemSpaceColumnGap != abstractTheme.listItem.listItemSpaceColumnGap)
+        #expect(inheritedTheme.listItem.listItemSpaceColumnGap == MockThemeListItemComponentTokenProvider.mockThemeListItemSpace)
     }
 
-    func testInheritedThemeCanOverrideListItemComponentTokenSpaceInset() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemSpaceInset, abstractTheme.listItem.listItemSpaceInset)
-        XCTAssertTrue(inheritedTheme.listItem.listItemSpaceInset == MockThemeListItemComponentTokenProvider.mockThemeListItemSpace)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenSpaceInset() throws {
+        #expect(inheritedTheme.listItem.listItemSpaceInset != abstractTheme.listItem.listItemSpaceInset)
+        #expect(inheritedTheme.listItem.listItemSpaceInset == MockThemeListItemComponentTokenProvider.mockThemeListItemSpace)
     }
 
-    func testInheritedThemeCanOverrideListItemComponentTokenSpaceRowGap() throws {
-        XCTAssertNotEqual(inheritedTheme.listItem.listItemSpaceRowGap, abstractTheme.listItem.listItemSpaceRowGap)
-        XCTAssertTrue(inheritedTheme.listItem.listItemSpaceRowGap == MockThemeListItemComponentTokenProvider.mockThemeListItemSpace)
+    @Test func inheritedThemeCanOverrideListItemComponentTokenSpaceRowGap() throws {
+        #expect(inheritedTheme.listItem.listItemSpaceRowGap != abstractTheme.listItem.listItemSpaceRowGap)
+        #expect(inheritedTheme.listItem.listItemSpaceRowGap == MockThemeListItemComponentTokenProvider.mockThemeListItemSpace)
     }
+
 }
 
-// swiftlint:enable required_deinit
-// swiftlint:enable implicitly_unwrapped_optional
 // swiftlint:enable type_name
