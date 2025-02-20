@@ -13,7 +13,7 @@
 
 import OUDS
 import OUDSThemesOrange
-import XCTest
+import Testing
 
 // swiftlint:disable required_deinit
 // swiftlint:disable implicitly_unwrapped_optional

@@ -14,16 +14,14 @@
 import OUDS
 import OUDSThemesOrange
 import OUDSTokensSemantic
-import XCTest
-
-// swiftlint:disable required_deinit
+import Testing
 
 /// Allows to test the `TokensProviders` ad helper functions checking wether a provider is missing or not
-final class TestTokensProviders: XCTestCase {
+struct TokensProvidersTests {
 
     // MARK: - Tests cases
 
-    func testMissingTokensProviderAreFound() {
+    @Test func missingTokensProviderAreFound() {
 
         // Semantic tokens providers
 
@@ -68,8 +66,8 @@ final class TestTokensProviders: XCTestCase {
         let missingProviders = tokensProviders.missingProviders() // The function to test
 
         // Then
-        XCTAssertTrue(missingProviders.count == 1)
-        XCTAssertEqual(missingProviders[0], debugName)
+        #expect(missingProviders.count == 1)
+        #expect(missingProviders[0] == debugName)
     }
 
     /// Forges all the providers of tokens the theme must have (don't care about implementation, jut just type)
@@ -114,5 +112,3 @@ final class TestTokensProviders: XCTestCase {
         return allTokensProviders.filter { p in !(p is T) }
     }
 }
-
-// swiftlint:enable required_deinit
