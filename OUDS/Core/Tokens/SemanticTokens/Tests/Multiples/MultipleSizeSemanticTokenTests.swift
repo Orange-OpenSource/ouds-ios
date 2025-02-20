@@ -12,35 +12,33 @@
 //
 
 import OUDSTokensSemantic
-import XCTest
-
-// swiftlint:disable required_deinit
+import Testing
 
 /// To ensure the `MultipleSizeSemanticTokens` is tested as a provider of semantic tokens for compact and regular size classes.
-final class MultipleSizeSemanticTokensTests: XCTestCase {
+struct MultipleSizeSemanticTokensTests {
 
     /// Tests if compact and regular values are preserved when defined
-    func testInitWithOneValues() {
+    @Test func initWithOneValues() {
         let unique: SizeSemanticToken = 888
         let token = MultipleSizeSemanticTokens(unique)
 
-        XCTAssertTrue(token.compact == unique)
-        XCTAssertTrue(token.regular == unique)
+        #expect(token.compact == unique)
+        #expect(token.regular == unique)
     }
 
     /// Tests if compact and regular values are preserved when defined
-    func testInitTwoValues() {
+    @Test func initTwoValues() {
         let compact: SizeSemanticToken = 123
         let regular: SizeSemanticToken = 456
         let token = MultipleSizeSemanticTokens(compact: compact, regular: regular)
 
-        XCTAssertTrue(token.compact == compact)
-        XCTAssertTrue(token.regular == regular)
+        #expect(token.compact == compact)
+        #expect(token.regular == regular)
     }
 
     /// Tests comparisons between two `MultipleSizeSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
-    func testIsEqual() {
+    @Test func isEqual() {
         let first = MultipleSizeSemanticTokens(compact: 12, regular: 34)
         let second = MultipleSizeSemanticTokens(compact: 56, regular: 78)
         let third = MultipleSizeSemanticTokens(compact: 12, regular: 78)
@@ -48,13 +46,11 @@ final class MultipleSizeSemanticTokensTests: XCTestCase {
         let fifth = MultipleSizeSemanticTokens(compact: 12, regular: 34)
         let sixth = MultipleColorSemanticTokens("#000000")
 
-        XCTAssertTrue(first.isEqual(first))
-        XCTAssertFalse(first.isEqual(second))
-        XCTAssertFalse(first.isEqual(third))
-        XCTAssertFalse(first.isEqual(fourth))
-        XCTAssertTrue(first.isEqual(fifth))
-        XCTAssertFalse(first.isEqual(sixth))
+        #expect(first.isEqual(first))
+        #expect(!first.isEqual(second))
+        #expect(!first.isEqual(third))
+        #expect(!first.isEqual(fourth))
+        #expect(first.isEqual(fifth))
+        #expect(!first.isEqual(sixth))
     }
 }
-
-// swiftlint:enable required_deinit

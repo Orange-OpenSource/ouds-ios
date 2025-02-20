@@ -56,7 +56,7 @@ struct DesignToolboxCode: View {
                         .foregroundColor(theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme))
                         .frame(width: 20, height: 20)
                         .padding(.trailing, theme.spaces.spacePaddingInlineMedium)
-                        .accessibilityLabel("app_common_viewCodeExample_label_a11y")
+                        .accessibilityLabel("app_common_showCode_text_a11y")
                 }
             }
             .buttonStyle(PlainButtonStyle())

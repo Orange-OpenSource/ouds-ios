@@ -29,7 +29,7 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Text("Configuration")
+            Text("app_component_common_configuration")
                 .typeHeadingMedium(theme)
                 .frame(maxWidth: .infinity, alignment: .leading)
 

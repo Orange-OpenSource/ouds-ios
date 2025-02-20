@@ -13,26 +13,24 @@
 
 import OUDSTokensRaw
 import OUDSTokensSemantic
-import XCTest
-
-// swiftlint:disable required_deinit
+import Testing
 
 /// To ensure the `MultipleSpaceSemanticTokens` is tested as a provider of semantic tokens for compact and regular size classes.
-final class MultipleSpaceSemanticTokensTests: XCTestCase {
+struct MultipleSpaceSemanticTokensTests {
 
     /// Tests if compact and regular values are preserved when defined
-    func testInit() {
+    @Test func initToken() {
         let compact: DimensionRawToken = 123
         let regular: DimensionRawToken = 456
         let token = MultipleSpaceSemanticTokens(compact: compact, regular: regular)
 
-        XCTAssertTrue(token.compact == compact)
-        XCTAssertTrue(token.regular == regular)
+        #expect(token.compact == compact)
+        #expect(token.regular == regular)
     }
 
     /// Tests comparisons between two `MultipleSpaceSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
-    func testIsEqual() {
+    @Test func isEqual() {
         let first = MultipleSpaceSemanticTokens(compact: 12, regular: 34)
         let second = MultipleSpaceSemanticTokens(compact: 56, regular: 78)
         let third = MultipleSpaceSemanticTokens(compact: 12, regular: 78)
@@ -40,12 +38,11 @@ final class MultipleSpaceSemanticTokensTests: XCTestCase {
         let fifth = MultipleSpaceSemanticTokens(compact: 12, regular: 34)
         let sixth = MultipleSizeSemanticTokens(compact: 0, regular: 00)
 
-        XCTAssertTrue(first.isEqual(first))
-        XCTAssertFalse(first.isEqual(second))
-        XCTAssertFalse(first.isEqual(third))
-        XCTAssertFalse(first.isEqual(fourth))
-        XCTAssertTrue(first.isEqual(fifth))
-        XCTAssertFalse(first.isEqual(sixth))
+        #expect(first.isEqual(first))
+        #expect(!first.isEqual(second))
+        #expect(!first.isEqual(third))
+        #expect(!first.isEqual(fourth))
+        #expect(first.isEqual(fifth))
+        #expect(!first.isEqual(sixth))
     }
 }
-// swiftlint:enable required_deinit

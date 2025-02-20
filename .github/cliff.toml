@@ -1,0 +1,81 @@
+#
+# Software Name: OUDS iOS
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# git-cliff ~ configuration file
+# https://git-cliff.org/docs/configuration
+
+[changelog]
+# changelog header
+header = """
+# What's new\n
+```
+🧱 Tokens version: v.
+```
+"""
+# template for the changelog body
+# https://keats.github.io/tera/docs/#introduction
+body = """
+{% for group, commits in commits | group_by(attribute="group") %}
+    ## {{ group | upper_first }}
+    {% for commit in commits %}
+        - {{ commit.message | upper_first }} ({{ commit.id }})\
+    {% endfor %}
+{% endfor %}\n
+"""
+# remove the leading and trailing whitespace from the templates
+trim = true
+
+[git]
+# parse the commits based on https://www.conventionalcommits.org
+conventional_commits = true
+# filter out the commits that are not conventional
+filter_unconventional = true
+# process each line of a commit as an individual commit
+split_commits = false
+# regex for parsing and grouping commits
+commit_parsers = [
+  { message = "^feat:", group = "🚀 Features" },
+  { message = "^fix:", group = "🐛 Fixes" },
+  { message = "^docs:", group = "📖 Docs" },
+  { message = "^chore:", group = "🧰 Chore" },
+  { message = "^refactor:", group = "🧰 Chore" },
+  { message = "^style:", group = "🧰 Chore" },
+  { message = "^test:", group = "🧰 Chore" },
+  { message = "^ci:", group = "🧰 Chore" },
+  { message = "^feat!:", group = "💥 Breaking changes" },
+  { message = "^fix!:", group = "💥 Breaking changes" },
+  { message = "^docs!:", group = "💥 Breaking changes" },
+  { message = "^chore!:", group = "💥 Breaking changes" },
+  { message = "^refactor!:", group = "💥 Breaking changes" },
+  { message = "^style!:", group = "💥 Breaking changes" },
+  { message = "^test!:", group = "💥 Breaking changes" },
+  { message = "^ci!:", group = "💥 Breaking changes" },
+  { message = "^.*", group = "🧰 Chore" },
+]
+commit_preprocessors = [
+    { pattern = '.*', replace_command = 'git show -s --format=%B $COMMIT_SHA' }
+]
+# protect breaking changes from being skipped due to matching a skipping commit_parser
+protect_breaking_commits = false
+# filter out the commits that are not matched by commit parsers
+filter_commits = true
+# regex for matching git tags
+tag_pattern = "v[0-9].*"
+# regex for skipping tags
+skip_tags = "v0.1.0-beta.1"
+# regex for ignoring tags
+ignore_tags = ""
+# sort the tags topologically
+topo_order = false
+# sort the commits inside sections by oldest/newest order
+sort_commits = "newest"

@@ -26,32 +26,17 @@ final class MockThemeBreadcrumbComponentTokenProvider: OrangeThemeBreadcrumbComp
 
     static let mockThemeBreadcrumbSize: DimensionRawToken = 118
     static let mockThemeBreadcrumbSpace: DimensionRawToken = 218
-    static let mockThemeBreadcrumbColor = MultipleColorSemanticTokens("#00FF00")
 
     override public init(sizes: AllSizeSemanticTokensProvider,
-                         colors: AllColorSemanticTokensProvider,
                          spaces: AllSpaceSemanticTokensProvider) {
-        super.init(sizes: sizes, colors: colors, spaces: spaces)
+        super.init(sizes: sizes, spaces: spaces)
     }
 
     // MARK: - Breadcrumb component tokens
 
-    override public var breadcrumbSizeMinHeightMedium: SizeSemanticToken { Self.mockThemeBreadcrumbSize }
-    override public var breadcrumbSizeMinHeightSmall: SizeSemanticToken { Self.mockThemeBreadcrumbSize }
-    override public var breadcrumbSizeMinWidthMedium: SizeSemanticToken { Self.mockThemeBreadcrumbSize }
-    override public var breadcrumbSizeMinWidthSmall: SizeSemanticToken { Self.mockThemeBreadcrumbSize }
-    override public var breadcrumbSizeIconMedium: SizeSemanticToken { Self.mockThemeBreadcrumbSize }
-    override public var breadcrumbSizeIconSmall: SizeSemanticToken { Self.mockThemeBreadcrumbSize }
-    override public var breadcrumbColorContentEnabled: MultipleColorSemanticTokens { Self.mockThemeBreadcrumbColor }
-    override public var breadcrumbColorContentFocus: MultipleColorSemanticTokens { Self.mockThemeBreadcrumbColor }
-    override public var breadcrumbColorContentHover: MultipleColorSemanticTokens { Self.mockThemeBreadcrumbColor }
-    override public var breadcrumbColorContentPressed: MultipleColorSemanticTokens { Self.mockThemeBreadcrumbColor }
-    override public var breadcrumbSpaceColumnGapArrowMedium: SpaceSemanticToken { Self.mockThemeBreadcrumbSpace }
-    override public var breadcrumbSpaceColumnGapArrowSmall: SpaceSemanticToken { Self.mockThemeBreadcrumbSpace }
-    override public var breadcrumbSpaceColumnGapLevelsMedium: SpaceSemanticToken { Self.mockThemeBreadcrumbSpace }
-    override public var breadcrumbSpaceColumnGapLevelsSmall: SpaceSemanticToken { Self.mockThemeBreadcrumbSpace }
-    override public var breadcrumbSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeBreadcrumbSpace }
-    override public var breadcrumbSpacePaddingInline: SpaceSemanticToken { Self.mockThemeBreadcrumbSpace }
+    override public var breadcrumbSpaceColumnGapArrow: SizeSemanticToken { Self.mockThemeBreadcrumbSpace }
+    override public var breadcrumbSpaceColumnGapLevels: SizeSemanticToken { Self.mockThemeBreadcrumbSpace }
+    override public var breadcrumbSizeArrow: SizeSemanticToken { Self.mockThemeBreadcrumbSize }
 }
 
 // swiftlint:enable required_deinit

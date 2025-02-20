@@ -34,30 +34,30 @@ final class MockThemeInputTextComponentTokenProvider: OrangeThemeInputTextCompon
         super.init(sizes: sizes, colors: colors, spaces: spaces)
     }
 
-    // MARK: - Inpout text component tokens
+    // MARK: - Input text component tokens
 
-    override public var inputTextSizeMaxWidth: SizeSemanticToken { Self.mockThemeInputTextSize }
     override public var inputTextSizeMinWidth: SizeSemanticToken { Self.mockThemeInputTextSize }
-    override public var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
+    override public var inputTextSizeMaxWidth: SizeSemanticToken { Self.mockThemeInputTextSize }
     override public var inputTextColorBgDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
-    override public var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
     override public var inputTextColorBgDefaultHover: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
-    override public var inputTextColorBgDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
     override public var inputTextColorBgDefaultPressed: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
-    override public var inputTextColorContentDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
+    override public var inputTextColorBgDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
+    override public var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
+    override public var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
     override public var inputTextColorContentDefaultEnabled: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
-    override public var inputTextColorContentDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
     override public var inputTextColorContentDefaultHover: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
-    override public var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
     override public var inputTextColorContentDefaultPressed: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
+    override public var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
+    override public var inputTextColorContentDefaultDisabled: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
+    override public var inputTextColorContentDefaultFocus: MultipleColorSemanticTokens { Self.mockThemeInputTextColor }
     override public var inputTextSpaceInsetIconAlone: SpaceSemanticToken { Self.mockThemeInputTextSpace }
     override public var inputTextSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeInputTextSpace }
-    override public var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { Self.mockThemeInputTextSpace }
     override public var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { Self.mockThemeInputTextSpace }
-    override public var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { Self.mockThemeInputTextSpace }
+    override public var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { Self.mockThemeInputTextSpace }
+    override public var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { Self.mockThemeInputTextSpace }
     override public var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { Self.mockThemeInputTextSpace }
     override public var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { Self.mockThemeInputTextSpace }
-    override public var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { Self.mockThemeInputTextSpace }
+    override public var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { Self.mockThemeInputTextSpace }
 }
 
 // swiftlint:enable required_deinit

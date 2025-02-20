@@ -12,9 +12,9 @@
 //
 
 import OUDSTokensRaw
-import XCTest
+import Testing
+import TestsUtils
 
-// swiftlint:disable required_deinit
 // swiftlint:disable function_body_length
 // swiftlint:disable type_body_length
 
@@ -36,386 +36,385 @@ import XCTest
 /// - border style values must have be all different
 /// - the "bigger" the border width token is, the higher the value is
 /// - the "bigger" the border radius token is, the higher the value is
-final class BorderRawTokensTests: XCTestCase {
+struct BorderRawTokensTests {
 
     // MARK: - Primitive token - Border - Width
 
-    func testBorderWidthRawToken0NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderWidth0 >= 0)
+    @Test func borderWidthRawToken0NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderWidth0 >= 0)
     }
 
-    func testBorderWidthRawToken0LessThan25() throws {
-        XCTAssertLessThan(BorderRawTokens.borderWidth0, BorderRawTokens.borderWidth25)
+    @Test func borderWidthRawToken0LessThan25() throws {
+        #expect(BorderRawTokens.borderWidth0 < BorderRawTokens.borderWidth25)
     }
 
-    func testBorderWidthRawToken0MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth0, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken0MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth0, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderWidthRawToken25NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderWidth25 >= 0)
+    @Test func borderWidthRawToken25NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderWidth25 >= 0)
     }
 
-    func testBorderWidthRawToken25LessThan50() throws {
-        XCTAssertLessThan(BorderRawTokens.borderWidth25, BorderRawTokens.borderWidth50)
+    @Test func borderWidthRawToken25LessThan50() throws {
+        #expect(BorderRawTokens.borderWidth25 < BorderRawTokens.borderWidth50)
     }
 
-    func testBorderWidthRawToken25MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth25, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken25MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth25, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderWidthRawToken50NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderWidth50 >= 0)
+    @Test func borderWidthRawToken50NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderWidth50 >= 0)
     }
 
-    func testBorderWidthRawToken50LessThan75() throws {
-        XCTAssertLessThan(BorderRawTokens.borderWidth50, BorderRawTokens.borderWidth75)
+    @Test func borderWidthRawToken50LessThan75() throws {
+        #expect(BorderRawTokens.borderWidth50 < BorderRawTokens.borderWidth75)
     }
 
-    func testBorderWidthRawToken50MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth50, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken50MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth50, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderWidthRawToken75NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderWidth75 >= 0)
+    @Test func borderWidthRawToken75NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderWidth75 >= 0)
     }
 
-    func testBorderWidthRawToken75LessThan100() throws {
-        XCTAssertLessThan(BorderRawTokens.borderWidth75, BorderRawTokens.borderWidth100)
+    @Test func borderWidthRawToken75LessThan100() throws {
+        #expect(BorderRawTokens.borderWidth75 < BorderRawTokens.borderWidth100)
     }
 
-    func testBorderWidthRawToken75MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth75, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken75MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth75, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderWidthRawToken100NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderWidth100 >= 0)
+    @Test func borderWidthRawToken100NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderWidth100 >= 0)
     }
 
-    func testBorderWidthRawToken100LessThan125() throws {
-        XCTAssertLessThan(BorderRawTokens.borderWidth100, BorderRawTokens.borderWidth125)
+    @Test func borderWidthRawToken100LessThan125() throws {
+        #expect(BorderRawTokens.borderWidth100 < BorderRawTokens.borderWidth125)
     }
 
-    func testBorderWidthRawToken100MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth100, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken100MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth100, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderWidthRawToken125NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderWidth125 >= 0)
+    @Test func borderWidthRawToken125NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderWidth125 >= 0)
     }
 
-    func testBorderWidthRawToken125LessThan150() throws {
-        XCTAssertLessThan(BorderRawTokens.borderWidth125, BorderRawTokens.borderWidth150)
+    @Test func borderWidthRawToken125LessThan150() throws {
+        #expect(BorderRawTokens.borderWidth125 < BorderRawTokens.borderWidth150)
     }
 
-    func testBorderWidthRawToken125MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth125, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken125MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth125, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderWidthRawToken150NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderWidth150 >= 0)
+    @Test func borderWidthRawToken150NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderWidth150 >= 0)
     }
 
-    func testBorderWidthRawToken150LessThan200() throws {
-        XCTAssertLessThan(BorderRawTokens.borderWidth150, BorderRawTokens.borderWidth200)
+    @Test func borderWidthRawToken150LessThan200() throws {
+        #expect(BorderRawTokens.borderWidth150 < BorderRawTokens.borderWidth200)
     }
 
-    func testBorderWidthRawToken150MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth150, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken150MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth150, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderWidthRawToken200NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderWidth200 >= 0)
+    @Test func borderWidthRawToken200NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderWidth200 >= 0)
     }
 
-    func testBorderWidthRawToken200MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderWidth200, factor: BorderRawTokens.borderBase)
+    @Test func borderWidthRawToken200MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderWidth200, factor: BorderRawTokens.borderBase)
     }
 
     /// Border width raw tokens must be different
-    func testNonEqualityForBorderWidths() throws {
-        XCTAssertNotEqual(BorderRawTokens.borderWidth0, BorderRawTokens.borderWidth25)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth0, BorderRawTokens.borderWidth50)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth0, BorderRawTokens.borderWidth75)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth0, BorderRawTokens.borderWidth100)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth0, BorderRawTokens.borderWidth125)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth0, BorderRawTokens.borderWidth150)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth0, BorderRawTokens.borderWidth200)
+    @Test func nonEqualityForBorderWidths() throws {
+        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth25)
+        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth50)
+        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth75)
+        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth100)
+        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth125)
+        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth150)
+        #expect(BorderRawTokens.borderWidth0 != BorderRawTokens.borderWidth200)
 
-        XCTAssertNotEqual(BorderRawTokens.borderWidth50, BorderRawTokens.borderWidth75)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth50, BorderRawTokens.borderWidth100)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth50, BorderRawTokens.borderWidth125)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth50, BorderRawTokens.borderWidth150)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth50, BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth75)
+        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth100)
+        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth125)
+        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth150)
+        #expect(BorderRawTokens.borderWidth50 != BorderRawTokens.borderWidth200)
 
-        XCTAssertNotEqual(BorderRawTokens.borderWidth75, BorderRawTokens.borderWidth100)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth75, BorderRawTokens.borderWidth125)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth75, BorderRawTokens.borderWidth150)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth75, BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.borderWidth75 != BorderRawTokens.borderWidth100)
+        #expect(BorderRawTokens.borderWidth75 != BorderRawTokens.borderWidth125)
+        #expect(BorderRawTokens.borderWidth75 != BorderRawTokens.borderWidth150)
+        #expect(BorderRawTokens.borderWidth75 != BorderRawTokens.borderWidth200)
 
-        XCTAssertNotEqual(BorderRawTokens.borderWidth100, BorderRawTokens.borderWidth125)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth100, BorderRawTokens.borderWidth150)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth100, BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.borderWidth100 != BorderRawTokens.borderWidth125)
+        #expect(BorderRawTokens.borderWidth100 != BorderRawTokens.borderWidth150)
+        #expect(BorderRawTokens.borderWidth100 != BorderRawTokens.borderWidth200)
 
-        XCTAssertNotEqual(BorderRawTokens.borderWidth125, BorderRawTokens.borderWidth150)
-        XCTAssertNotEqual(BorderRawTokens.borderWidth125, BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.borderWidth125 != BorderRawTokens.borderWidth150)
+        #expect(BorderRawTokens.borderWidth125 != BorderRawTokens.borderWidth200)
 
-        XCTAssertNotEqual(BorderRawTokens.borderWidth150, BorderRawTokens.borderWidth200)
+        #expect(BorderRawTokens.borderWidth150 != BorderRawTokens.borderWidth200)
     }
 
     // MARK: - Primitive token - Border - Radius
 
-    func testBorderRadiusRawToken0NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius0 >= 0)
+    @Test func borderRadiusRawToken0NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius0 >= 0)
     }
 
-    func testBorderRadiusRawToken0LessThan25() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius25)
+    @Test func borderRadiusRawToken0LessThan25() throws {
+        #expect(BorderRawTokens.borderRadius0 < BorderRawTokens.borderRadius25)
     }
 
-    func testBorderRadiusRawToken0MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius0, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken0MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius0, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken25NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius25 >= 0)
+    @Test func borderRadiusRawToken25NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius25 >= 0)
     }
 
-    func testBorderRadiusRawToken25LessThan50() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius50)
+    @Test func borderRadiusRawToken25LessThan50() throws {
+        #expect(BorderRawTokens.borderRadius25 < BorderRawTokens.borderRadius50)
     }
 
-    func testBorderRadiusRawToken25MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius25, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken25MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius25, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken50NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius50 >= 0)
+    @Test func borderRadiusRawToken50NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius50 >= 0)
     }
 
-    func testBorderRadiusRawToken50LessThan75() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius75)
+    @Test func borderRadiusRawToken50LessThan75() throws {
+        #expect(BorderRawTokens.borderRadius50 < BorderRawTokens.borderRadius75)
     }
 
-    func testBorderRadiusRawToken50MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius50, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken50MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius50, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken75NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius75 >= 0)
+    @Test func borderRadiusRawToken75NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius75 >= 0)
     }
 
-    func testBorderRadiusRawToken75LessThan100() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius75, BorderRawTokens.borderRadius100)
+    @Test func borderRadiusRawToken75LessThan100() throws {
+        #expect(BorderRawTokens.borderRadius75 < BorderRawTokens.borderRadius100)
     }
 
-    func testBorderRadiusRawToken75MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius75, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken75MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius75, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken100NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius100 >= 0)
+    @Test func borderRadiusRawToken100NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius100 >= 0)
     }
 
-    func testBorderRadiusRawToken100LessThan150() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius100, BorderRawTokens.borderRadius150)
+    @Test func borderRadiusRawToken100LessThan150() throws {
+        #expect(BorderRawTokens.borderRadius100 < BorderRawTokens.borderRadius150)
     }
 
-    func testBorderRadiusRawToken100MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius100, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken100MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius100, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken150NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius150 >= 0)
+    @Test func borderRadiusRawToken150NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius150 >= 0)
     }
 
-    func testBorderRadiusRawToken150LessThan200() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius150, BorderRawTokens.borderRadius200)
+    @Test func borderRadiusRawToken150LessThan200() throws {
+        #expect(BorderRawTokens.borderRadius150 < BorderRawTokens.borderRadius200)
     }
 
-    func testBorderRadiusRawToken150MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius150, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken150MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius150, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken200NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius200 >= 0)
+    @Test func borderRadiusRawToken200NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius200 >= 0)
     }
 
-    func testBorderRadiusRawToken200LessThan300() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius200, BorderRawTokens.borderRadius300)
+    @Test func borderRadiusRawToken200LessThan300() throws {
+        #expect(BorderRawTokens.borderRadius200 < BorderRawTokens.borderRadius300)
     }
 
-    func testBorderRadiusRawToken200MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius200, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken200MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius200, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken300NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius300 >= 0)
+    @Test func borderRadiusRawToken300NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius300 >= 0)
     }
 
-    func testBorderRadiusRawToken300LessThan400() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius300, BorderRawTokens.borderRadius400)
+    @Test func borderRadiusRawToken300LessThan400() throws {
+        #expect(BorderRawTokens.borderRadius300 < BorderRawTokens.borderRadius400)
     }
 
-    func testBorderRadiusRawToken300MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius300, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken300MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius300, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken400NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius400 >= 0)
+    @Test func borderRadiusRawToken400NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius400 >= 0)
     }
 
-    func testBorderRadiusRawToken400LessThan500() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius400, BorderRawTokens.borderRadius500)
+    @Test func borderRadiusRawToken400LessThan500() throws {
+        #expect(BorderRawTokens.borderRadius400 < BorderRawTokens.borderRadius500)
     }
 
-    func testBorderRadiusRawToken400MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius400, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken400MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius400, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken500NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius500 >= 0)
+    @Test func borderRadiusRawToken500NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius500 >= 0)
     }
 
-    func testBorderRadiusRawToken500LessThan600() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius500, BorderRawTokens.borderRadius600)
+    @Test func borderRadiusRawToken500LessThan600() throws {
+        #expect(BorderRawTokens.borderRadius500 < BorderRawTokens.borderRadius600)
     }
 
-    func testBorderRadiusRawToken500MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius500, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken500MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius500, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken600NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius600 >= 0)
+    @Test func borderRadiusRawToken600NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius600 >= 0)
     }
 
-    func testBorderRadiusRawToken600LessThan800() throws {
-        XCTAssertLessThan(BorderRawTokens.borderRadius600, BorderRawTokens.borderRadius800)
+    @Test func borderRadiusRawToken600LessThan800() throws {
+        #expect(BorderRawTokens.borderRadius600 < BorderRawTokens.borderRadius800)
     }
 
-    func testBorderRadiusRawToken600MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius600, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken600MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius600, factor: BorderRawTokens.borderBase)
     }
 
-    func testBorderRadiusRawToken800NotNegativeValue() throws {
-        XCTAssertTrue(BorderRawTokens.borderRadius800 >= 0)
+    @Test func borderRadiusRawToken800NotNegativeValue() throws {
+        #expect(BorderRawTokens.borderRadius800 >= 0)
     }
 
-    func testBorderRadiusRawToken800MultipleOfBase() throws {
-        XCTAssertMultipleOf(BorderRawTokens.borderRadius800, factor: BorderRawTokens.borderBase)
+    @Test func borderRadiusRawToken800MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(BorderRawTokens.borderRadius800, factor: BorderRawTokens.borderBase)
     }
 
-    /// Border rzdius raw tokens must be different
-    func testNonEqualityForBorderRadiuses() throws {
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius25)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius50)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius75)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius100)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius150)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius200)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius300)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius400)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius500)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius0, BorderRawTokens.borderRadius800)
+    /// Border radius raw tokens must be different
+    @Test func nonEqualityForBorderRadiuses() throws {
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius25)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius50)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius75)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius100)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius150)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius200)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius300)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius400)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius500)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius0 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius50)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius75)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius100)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius150)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius200)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius300)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius400)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius500)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius25, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius50)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius75)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius100)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius150)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius200)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius300)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius400)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius500)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius25 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius75)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius100)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius150)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius200)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius300)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius400)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius500)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius50, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius75)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius100)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius150)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius200)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius300)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius400)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius500)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius50 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius75, BorderRawTokens.borderRadius100)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius75, BorderRawTokens.borderRadius150)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius75, BorderRawTokens.borderRadius200)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius75, BorderRawTokens.borderRadius300)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius75, BorderRawTokens.borderRadius400)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius75, BorderRawTokens.borderRadius500)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius75, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius75, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius100)
+        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius150)
+        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius200)
+        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius300)
+        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius400)
+        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius500)
+        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius75 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius100, BorderRawTokens.borderRadius150)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius100, BorderRawTokens.borderRadius200)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius100, BorderRawTokens.borderRadius300)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius100, BorderRawTokens.borderRadius400)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius100, BorderRawTokens.borderRadius500)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius100, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius100, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius150)
+        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius200)
+        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius300)
+        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius400)
+        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius500)
+        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius100 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius150, BorderRawTokens.borderRadius200)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius150, BorderRawTokens.borderRadius300)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius150, BorderRawTokens.borderRadius400)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius150, BorderRawTokens.borderRadius500)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius150, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius150, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius200)
+        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius300)
+        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius400)
+        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius500)
+        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius150 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius200, BorderRawTokens.borderRadius300)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius200, BorderRawTokens.borderRadius400)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius200, BorderRawTokens.borderRadius500)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius200, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius200, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius300)
+        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius400)
+        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius500)
+        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius200 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius300, BorderRawTokens.borderRadius400)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius300, BorderRawTokens.borderRadius500)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius300, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius300, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius400)
+        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius500)
+        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius300 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius400, BorderRawTokens.borderRadius500)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius400, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius400, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius500)
+        #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius400 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius500, BorderRawTokens.borderRadius600)
-        XCTAssertNotEqual(BorderRawTokens.borderRadius500, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius500 != BorderRawTokens.borderRadius600)
+        #expect(BorderRawTokens.borderRadius500 != BorderRawTokens.borderRadius800)
 
-        XCTAssertNotEqual(BorderRawTokens.borderRadius600, BorderRawTokens.borderRadius800)
+        #expect(BorderRawTokens.borderRadius600 != BorderRawTokens.borderRadius800)
     }
 
     // MARK: - Primitive token - Border - Style
 
-    func testBorderStyleDashed() throws {
-        XCTAssertEqual(BorderRawTokens.borderStyleDashed, "dashed")
+    @Test func borderStyleDashed() throws {
+        #expect(BorderRawTokens.borderStyleDashed == "dashed")
     }
 
-    func testBorderStyleDotted() throws {
-        XCTAssertEqual(BorderRawTokens.borderStyleDotted, "dotted")
+    @Test func borderStyleDotted() throws {
+        #expect(BorderRawTokens.borderStyleDotted == "dotted")
     }
 
-    func testBorderStyleNone() throws {
-        XCTAssertEqual(BorderRawTokens.borderStyleNone, "none")
+    @Test func borderStyleNone() throws {
+        #expect(BorderRawTokens.borderStyleNone == "none")
     }
 
-    func testBorderStyleSolid() throws {
-        XCTAssertEqual(BorderRawTokens.borderStyleSolid, "solid")
+    @Test func borderStyleSolid() throws {
+        #expect(BorderRawTokens.borderStyleSolid == "solid")
     }
 
     /// Border styles raw tokens must be different
-    func testNonEqualityForBorderStyles() throws {
-        XCTAssertNotEqual(BorderRawTokens.borderStyleNone, BorderRawTokens.borderStyleSolid)
-        XCTAssertNotEqual(BorderRawTokens.borderStyleNone, BorderRawTokens.borderStyleDashed)
-        XCTAssertNotEqual(BorderRawTokens.borderStyleNone, BorderRawTokens.borderStyleDotted)
+    @Test func nonEqualityForBorderStyles() throws {
+        #expect(BorderRawTokens.borderStyleNone != BorderRawTokens.borderStyleSolid)
+        #expect(BorderRawTokens.borderStyleNone != BorderRawTokens.borderStyleDashed)
+        #expect(BorderRawTokens.borderStyleNone != BorderRawTokens.borderStyleDotted)
 
-        XCTAssertNotEqual(BorderRawTokens.borderStyleSolid, BorderRawTokens.borderStyleDashed)
-        XCTAssertNotEqual(BorderRawTokens.borderStyleSolid, BorderRawTokens.borderStyleDotted)
+        #expect(BorderRawTokens.borderStyleSolid != BorderRawTokens.borderStyleDashed)
+        #expect(BorderRawTokens.borderStyleSolid != BorderRawTokens.borderStyleDotted)
 
-        XCTAssertNotEqual(BorderRawTokens.borderStyleDashed, BorderRawTokens.borderStyleDotted)
+        #expect(BorderRawTokens.borderStyleDashed != BorderRawTokens.borderStyleDotted)
     }
 }
 
-// swiftlint:enable required_deinit
 // swiftlint:enable function_body_length
 // swiftlint:enable type_body_length

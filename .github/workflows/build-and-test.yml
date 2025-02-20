@@ -109,4 +109,3 @@ jobs:
           cd DesignToolbox
           bundle exec pod install
           bundle exec fastlane test_ui
-        continue-on-error: true # See https://github.com/Orange-OpenSource/ouds-ios/issues/305

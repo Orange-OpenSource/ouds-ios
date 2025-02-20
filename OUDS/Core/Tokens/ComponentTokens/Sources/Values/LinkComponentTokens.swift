@@ -25,39 +25,39 @@ import OUDSTokensSemantic
 /// - Since: 0.10.0
 public protocol LinkComponentTokens {
 
-    // MARK: - Size
+    // MARK: - Sizes
 
     var linkSizeMinHeightMedium: SizeSemanticToken { get }
-    var linkSizeMinHeightSmall: SizeSemanticToken { get }
     var linkSizeMinWidthMedium: SizeSemanticToken { get }
+    var linkSizeMinHeightSmall: SizeSemanticToken { get }
     var linkSizeMinWidthSmall: SizeSemanticToken { get }
     var linkSizeIconMedium: SizeSemanticToken { get }
     var linkSizeIconSmall: SizeSemanticToken { get }
 
-    // MARK: - Color
+    // MARK: - Colors
 
-    var linkColorContentDisabledMono: MultipleColorSemanticTokens { get }
     var linkColorContentEnabledMono: MultipleColorSemanticTokens { get }
-    var linkColorContentFocusMono: MultipleColorSemanticTokens { get }
     var linkColorContentHoverMono: MultipleColorSemanticTokens { get }
     var linkColorContentPressedMono: MultipleColorSemanticTokens { get }
-    var linkColorArrowEnabled: MultipleColorSemanticTokens { get }
-    var linkColorArrowFocus: MultipleColorSemanticTokens { get }
-    var linkColorArrowHover: MultipleColorSemanticTokens { get }
-    var linkColorArrowPressed: MultipleColorSemanticTokens { get }
+    var linkColorContentFocusMono: MultipleColorSemanticTokens { get }
+    var linkColorContentDisabledMono: MultipleColorSemanticTokens { get }
     var linkColorContentEnabled: MultipleColorSemanticTokens { get }
-    var linkColorContentFocus: MultipleColorSemanticTokens { get }
     var linkColorContentHover: MultipleColorSemanticTokens { get }
     var linkColorContentPressed: MultipleColorSemanticTokens { get }
+    var linkColorContentFocus: MultipleColorSemanticTokens { get }
+    var linkColorArrowEnabled: MultipleColorSemanticTokens { get }
+    var linkColorArrowHover: MultipleColorSemanticTokens { get }
+    var linkColorArrowPressed: MultipleColorSemanticTokens { get }
+    var linkColorArrowFocus: MultipleColorSemanticTokens { get }
 
-    // MARK: - Space
+    // MARK: - Spaces
 
-    var linkSpaceColumnGapArrowMedium: SpaceSemanticToken { get }
-    var linkSpaceColumnGapArrowSmall: SpaceSemanticToken { get }
+    var linkSpacePaddingInline: SpaceSemanticToken { get }
+    var linkSpacePaddingBlock: SpaceSemanticToken { get }
     var linkSpaceColumnGapIconMedium: SpaceSemanticToken { get }
     var linkSpaceColumnGapIconSmall: SpaceSemanticToken { get }
-    var linkSpacePaddingBlock: SpaceSemanticToken { get }
-    var linkSpacePaddingInline: SpaceSemanticToken { get }
+    var linkSpaceColumnGapArrowMedium: SpaceSemanticToken { get }
+    var linkSpaceColumnGapArrowSmall: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

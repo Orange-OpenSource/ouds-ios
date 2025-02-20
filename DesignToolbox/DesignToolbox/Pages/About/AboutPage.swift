@@ -62,11 +62,12 @@ struct AboutPage: View {
                 }
 
                 // TODO: Only for debug purposes, should be displayed in another way
-                Text("Version: \(Bundle.main.marketingVersion)")
-                Text("Build number: \(Bundle.main.buildNumber)")
-                Text("Build type: \(Bundle.main.fullBuildType)")
+                Text("\(Bundle.main.tokensLibraryVersion)")
+                Text("app_about_details_appVersion" <- Bundle.main.marketingVersion)
+                Text("app_about_details_buildNumber" <- Bundle.main.buildNumber)
+                Text("app_about_details_buildType" <- Bundle.main.fullBuildType)
                 if let buildDetails = Bundle.main.buildDetails {
-                    Text("Build details (GitHub): \(buildDetails)")
+                    Text("app_about_githubBuildDetails" <- buildDetails)
                 }
             }
             .navigationTitle("app_bottomBar_about_label")

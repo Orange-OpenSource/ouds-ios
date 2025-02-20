@@ -34,6 +34,9 @@ APPLE_KEY_CONTENT = ENV["OUDS_APPLE_KEY_CONTENT"]
 # Bundle identifier of the app
 DEVELOPER_APP_IDENTIFIER = ENV["OUDS_DEVELOPER_BUNDLE_IDENTIFIER"]
 
+# Upload To Store
+UPLOAD_STORE_URL = ENV["OUDS_UPLOAD_STORE_URL"]
+
 # Notifications and hooks
 # -----------------------
 
@@ -260,9 +263,9 @@ platform :ios do
     end
 
     # ------------------------------------------------------------
-    # BUILD & UPLOAD TO TESTFLIGHT PROD APP
+    # BUILD & UPLOAD TO STORE PROD APP
     # ------------------------------------------------------------
-    desc "BUILD & UPLOAD TO TESTFLIGHT (if set in options: upload) PROD APP"
+    desc "BUILD & UPLOAD TO STORE (if set in options: upload) PROD APP"
     lane :prod do |params|
         puts "👉 Prod"
         update_build_number
@@ -275,16 +278,17 @@ platform :ios do
         set_info_plist_value(path: "#{Dir.pwd}/../#{OUDS_PROJECT_NAME}/Info.plist", key: "OUDSBuildType", value: "PROD")
         
         build
+
         if params[:upload]
-            puts "Upload to TestFlight requested"
-            upload(type: "prod")
+            puts "Upload to store requested"
+            upload_2_store()
         else
-            puts "Upload to TestFlight not requested"
+            puts "Upload to store not requested"
         end
     end
 
     # -----------------------------------------------------------------------
-    # PRIVATE LANE BUILD & UPLOAD (ALPHA / BETA / PROD is set by main lane)
+    # PRIVATE LANE BUILD & UPLOAD (ALPHA / BETA is set by main lane)
     # -----------------------------------------------------------------------
     private_lane :build_and_upload do |params|
         isAlpha = params[:isAlpha]
@@ -324,7 +328,6 @@ platform :ios do
             else
                 puts "ℹ️ Upload to TestFlight not requested"
             end
-
         end
     end
 
@@ -381,10 +384,10 @@ platform :ios do
     end
 
     # --------------------------------------------------------------------------
-    # PRIVATE LANE UPLOAD TO TESTFLIGHT (ALPHA / BETA / PROD is set by main lane)
+    # PRIVATE LANE UPLOAD TO TESTFLIGHT (ALPHA / BETA is set by main lane)
     # ---------------------------------------------------------------------------
     desc "PRIVATE LANE UPLOAD TO TESTFLIGHT"
-    private_lane :upload do |params|
+    private_lane :upload_2_testflight do |params|
         puts "👉 Upload"
 
         begin
@@ -413,9 +416,6 @@ platform :ios do
                 else
                     news = "Warning: this is #{uploadType} build\n\n" + read_current_release_notes # Add details about build type in changelog for TestFlight
                 end
-            else
-                puts "ℹ️ Upload type seems to be production"
-                news = read_current_release_notes
             end
 
             upload_to_testflight(
@@ -435,7 +435,32 @@ platform :ios do
             raise error
         end
     end
-    
+
+    # ----------------------------
+    # PRIVATE LANE UPLOAD TO STORE
+    # ----------------------------
+    desc "PRIVATE LANE UPLOAD TO STORE"
+    private_lane :upload_2_store do |params|
+        puts "👉 Upload to store"
+
+        begin
+            version = get_app_version
+            puts "ℹ️ App version: '#{version}'"
+
+            build_number = get_build_number(xcodeproj: OUDS_PROJECT)
+            puts "ℹ️ App build number: '#{build_number}'"
+
+            # Escape spaces for upload
+            sh "cp ../build/Design\\ System\\ Toolbox.ipa ../build/Design_System_Toolbox.ipa"
+            sh "curl -F 'file=@../build/Design_System_Toolbox.ipa' #{UPLOAD_STORE_URL}"
+
+            publish_mattermost_notification("📦 ✅ @here The upload to store has been done successfully (version = '#{version}', build number = '#{build_number}')")
+        rescue => error
+            publish_mattermost_notification("📦 🚨 @channel Some issue occurred during the upload step (:upload_2_store)")
+            raise error
+        end
+    end
+
     # -------
     # Helpers
     # -------

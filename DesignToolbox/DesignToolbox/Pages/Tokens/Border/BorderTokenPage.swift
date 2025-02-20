@@ -147,6 +147,7 @@ enum NamedBorderRadius: String, CaseIterable {
     case borderRadiusShort
     case borderRadiusMedium
     case borderRadiusTall
+    case borderRadiusPill
 
     func token(from theme: OUDSTheme) -> BorderRadiusSemanticToken {
         switch self {
@@ -160,6 +161,8 @@ enum NamedBorderRadius: String, CaseIterable {
             return theme.borders.borderRadiusMedium
         case .borderRadiusTall:
             return theme.borders.borderRadiusTall
+        case .borderRadiusPill:
+            return theme.borders.borderRadiusPill
         }
     }
 }

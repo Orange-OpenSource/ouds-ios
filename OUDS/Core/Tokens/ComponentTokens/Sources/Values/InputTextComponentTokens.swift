@@ -28,34 +28,33 @@ public protocol InputTextComponentTokens {
 
     // MARK: - Sizes
 
-    var inputTextSizeMaxWidth: SizeSemanticToken { get }
     var inputTextSizeMinWidth: SizeSemanticToken { get }
+    var inputTextSizeMaxWidth: SizeSemanticToken { get }
 
     // MARK: - Colors
-
-    var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { get }
     var inputTextColorBgDefaultEnabled: MultipleColorSemanticTokens { get }
-    var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { get }
     var inputTextColorBgDefaultHover: MultipleColorSemanticTokens { get }
-    var inputTextColorBgDefaultLoading: MultipleColorSemanticTokens { get }
     var inputTextColorBgDefaultPressed: MultipleColorSemanticTokens { get }
-    var inputTextColorContentDefaultDisabled: MultipleColorSemanticTokens { get }
+    var inputTextColorBgDefaultLoading: MultipleColorSemanticTokens { get }
+    var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { get }
+    var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { get }
     var inputTextColorContentDefaultEnabled: MultipleColorSemanticTokens { get }
-    var inputTextColorContentDefaultFocus: MultipleColorSemanticTokens { get }
     var inputTextColorContentDefaultHover: MultipleColorSemanticTokens { get }
-    var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { get }
     var inputTextColorContentDefaultPressed: MultipleColorSemanticTokens { get }
+    var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { get }
+    var inputTextColorContentDefaultDisabled: MultipleColorSemanticTokens { get }
+    var inputTextColorContentDefaultFocus: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 
     var inputTextSpaceInsetIconAlone: SpaceSemanticToken { get }
     var inputTextSpacePaddingBlock: SpaceSemanticToken { get }
-    var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { get }
     var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { get }
-    var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { get }
+    var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { get }
+    var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { get }
     var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { get }
     var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { get }
-    var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { get }
+    var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

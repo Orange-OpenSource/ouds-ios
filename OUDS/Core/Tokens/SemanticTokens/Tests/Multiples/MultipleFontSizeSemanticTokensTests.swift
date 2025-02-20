@@ -13,35 +13,33 @@
 
 import OUDSTokensRaw
 import OUDSTokensSemantic
-import XCTest
-
-// swiftlint:disable required_deinit
+import Testing
 
 /// To ensure the `MultipleFontSizeSemanticTokens` is tested as a provider of semantic tokens for compact and regular size classes.
-final class MultipleFontSizeSemanticTokensTests: XCTestCase {
+struct MultipleFontSizeSemanticTokensTests {
 
     /// Tests if the unique value is applied for light and dark modes
-    func testInitWithOneValue() {
+    @Test func initWithOneValue() {
         let unique: FontSizeSemanticToken = FontRawTokens.fontSize150
         let token = MultipleFontSizeSemanticTokens(unique)
 
-        XCTAssertTrue(token.compact == unique)
-        XCTAssertTrue(token.regular == unique)
+        #expect(token.compact == unique)
+        #expect(token.regular == unique)
     }
 
     /// Tests if compact and regular values are preserved when defined with two assigned non nil values
-    func testInitWithTwoValues() {
+    @Test func initWithTwoValues() {
         let compact: FontSizeSemanticToken = FontRawTokens.fontSize150
         let regular: FontSizeSemanticToken = FontRawTokens.fontSize550
         let token = MultipleFontSizeSemanticTokens(compact: compact, regular: regular)
 
-        XCTAssertTrue(token.compact == compact)
-        XCTAssertTrue(token.regular == regular)
+        #expect(token.compact == compact)
+        #expect(token.regular == regular)
     }
 
     /// Tests comparisons between two `MultipleFontSizeSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
-    func testIsEqual() {
+    @Test func isEqual() {
         let first = MultipleFontSizeSemanticTokens(compact: FontRawTokens.fontSize200, regular: FontRawTokens.fontSize450)
         let second = MultipleFontSizeSemanticTokens(compact: FontRawTokens.fontSize550, regular: FontRawTokens.fontSize950)
         let third = MultipleFontSizeSemanticTokens(compact: FontRawTokens.fontSize200, regular: FontRawTokens.fontSize950)
@@ -49,13 +47,11 @@ final class MultipleFontSizeSemanticTokensTests: XCTestCase {
         let fifth = MultipleFontSizeSemanticTokens(compact: FontRawTokens.fontSize200, regular: FontRawTokens.fontSize450)
         let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
-        XCTAssertTrue(first.isEqual(first))
-        XCTAssertFalse(first.isEqual(second))
-        XCTAssertFalse(first.isEqual(third))
-        XCTAssertFalse(first.isEqual(fourth))
-        XCTAssertTrue(first.isEqual(fifth))
-        XCTAssertFalse(first.isEqual(sixth))
+        #expect(first.isEqual(first))
+        #expect(!first.isEqual(second))
+        #expect(!first.isEqual(third))
+        #expect(!first.isEqual(fourth))
+        #expect(first.isEqual(fifth))
+        #expect(!first.isEqual(sixth))
     }
 }
-
-// swiftlint:enable required_deinit

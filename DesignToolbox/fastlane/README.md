@@ -77,7 +77,7 @@ BUILD & UPLOAD TO TESTFLIGHT BETA APP
 [bundle exec] fastlane ios prod
 ```
 
-BUILD & UPLOAD TO TESTFLIGHT (if set in options: upload) PROD APP
+BUILD & UPLOAD TO STORE (if set in options: upload) PROD APP
 
 ----
 
