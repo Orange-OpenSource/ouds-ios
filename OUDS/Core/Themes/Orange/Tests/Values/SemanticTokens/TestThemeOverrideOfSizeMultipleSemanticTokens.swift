@@ -13,10 +13,8 @@
 
 import OUDS
 import OUDSThemesOrange
-import XCTest
+import Testing
 
-// swiftlint:disable required_deinit
-// swiftlint:disable implicitly_unwrapped_optional
 // swiftlint:disable type_name
 
 /// The architecture of _OUDS iOS_ _Swift package_ library is based on _object oriented paradigm_ and overriding of classes.
@@ -25,176 +23,174 @@ import XCTest
 ///
 /// **These tests checks if any _size multiple semantic tokens_ can be surcharged by a child theme**
 /// **Also, it can help to find removed or renamed tokens by having tests no more compilable**
-final class TestThemeOverrideOfSizeMultipleSemanticTokens: XCTestCase {
+struct ThemeOverrideOfSizeMultipleSemanticTokensTests {
 
-    private var abstractTheme: OUDSTheme!
-    private var inheritedTheme: OUDSTheme!
+    private var abstractTheme: OUDSTheme
+    private var inheritedTheme: OUDSTheme
 
-    override func setUp() async throws {
+    init() {
         abstractTheme = OrangeTheme()
         inheritedTheme = MockTheme()
     }
 
     // MARK: - Semantic token - Sizing - Icon with typography
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeSm() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeSm, abstractTheme.sizes.sizeIconWithHeadingXlargeSizeSm)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeSm() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeSm != abstractTheme.sizes.sizeIconWithHeadingXlargeSizeSm)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeMd() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeMd, abstractTheme.sizes.sizeIconWithHeadingXlargeSizeMd)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeMd == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeMd() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeMd != abstractTheme.sizes.sizeIconWithHeadingXlargeSizeMd)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeMd == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeLg() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeLg, abstractTheme.sizes.sizeIconWithHeadingXlargeSizeLg)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingXlargeSizeLg() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeLg != abstractTheme.sizes.sizeIconWithHeadingXlargeSizeLg)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingXlargeSizeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeShort() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeSm, abstractTheme.sizes.sizeIconWithHeadingLargeSizeSm)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeShort() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeSm != abstractTheme.sizes.sizeIconWithHeadingLargeSizeSm)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeMd, abstractTheme.sizes.sizeIconWithHeadingLargeSizeMd)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeMd == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeMedium() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeMd != abstractTheme.sizes.sizeIconWithHeadingLargeSizeMd)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeMd == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeTall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeLg, abstractTheme.sizes.sizeIconWithHeadingLargeSizeLg)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingLargeTall() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeLg != abstractTheme.sizes.sizeIconWithHeadingLargeSizeLg)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingLargeSizeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumShort() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeSm, abstractTheme.sizes.sizeIconWithHeadingMediumSizeSm)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumShort() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeSm != abstractTheme.sizes.sizeIconWithHeadingMediumSizeSm)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizIconWithHeadingMediumMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeMd, abstractTheme.sizes.sizeIconWithHeadingMediumSizeMd)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeMd == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizIconWithHeadingMediumMedium() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeMd != abstractTheme.sizes.sizeIconWithHeadingMediumSizeMd)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeMd == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumTall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeLg, abstractTheme.sizes.sizeIconWithHeadingMediumSizeLg)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingMediumTall() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeLg != abstractTheme.sizes.sizeIconWithHeadingMediumSizeLg)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingMediumSizeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallShort() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeSm, abstractTheme.sizes.sizeIconWithHeadingSmallSizeSm)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallShort() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeSm != abstractTheme.sizes.sizeIconWithHeadingSmallSizeSm)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeSm == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeMd, abstractTheme.sizes.sizeIconWithHeadingSmallSizeMd)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeMd == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallMedium() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeMd != abstractTheme.sizes.sizeIconWithHeadingSmallSizeMd)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeMd == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallTall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeLg, abstractTheme.sizes.sizeIconWithHeadingSmallSizeLg)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithHeadingSmallTall() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeLg != abstractTheme.sizes.sizeIconWithHeadingSmallSizeLg)
+        #expect(inheritedTheme.sizes.sizeIconWithHeadingSmallSizeLg == MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken)
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeShort() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithBodyLargeSizeSm, abstractTheme.sizes.sizeIconWithBodyLargeSizeSm)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithBodyLargeSizeSm.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeShort() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeSm != abstractTheme.sizes.sizeIconWithBodyLargeSizeSm)
+        #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeSm.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithBodyLargeSizeMd, abstractTheme.sizes.sizeIconWithBodyLargeSizeMd)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithBodyLargeSizeMd.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeMedium() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeMd != abstractTheme.sizes.sizeIconWithBodyLargeSizeMd)
+        #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeMd.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeTall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithBodyLargeSizeLg, abstractTheme.sizes.sizeIconWithBodyLargeSizeLg)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithBodyLargeSizeLg.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyLargeTall() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeLg != abstractTheme.sizes.sizeIconWithBodyLargeSizeLg)
+        #expect(inheritedTheme.sizes.sizeIconWithBodyLargeSizeLg.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumShort() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithBodyMediumSizeSm, abstractTheme.sizes.sizeIconWithBodyMediumSizeSm)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithBodyMediumSizeSm.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumShort() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeSm != abstractTheme.sizes.sizeIconWithBodyMediumSizeSm)
+        #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeSm.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithBodyMediumSizeMd, abstractTheme.sizes.sizeIconWithBodyMediumSizeMd)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithBodyMediumSizeMd.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumMedium() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeMd != abstractTheme.sizes.sizeIconWithBodyMediumSizeMd)
+        #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeMd.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumTall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithBodyMediumSizeLg, abstractTheme.sizes.sizeIconWithBodyMediumSizeLg)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithBodyMediumSizeLg.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodyMediumTall() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeLg != abstractTheme.sizes.sizeIconWithBodyMediumSizeLg)
+        #expect(inheritedTheme.sizes.sizeIconWithBodyMediumSizeLg.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallShort() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithBodySmallSizeSm, abstractTheme.sizes.sizeIconWithBodySmallSizeSm)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithBodySmallSizeSm.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallShort() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithBodySmallSizeSm != abstractTheme.sizes.sizeIconWithBodySmallSizeSm)
+        #expect(inheritedTheme.sizes.sizeIconWithBodySmallSizeSm.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithBodySmallSizeMd, abstractTheme.sizes.sizeIconWithBodySmallSizeMd)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithBodySmallSizeMd.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallMedium() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithBodySmallSizeMd != abstractTheme.sizes.sizeIconWithBodySmallSizeMd)
+        #expect(inheritedTheme.sizes.sizeIconWithBodySmallSizeMd.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallTall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeIconWithBodySmallSizeLg, abstractTheme.sizes.sizeIconWithBodySmallSizeLg)
-        XCTAssertTrue(inheritedTheme.sizes.sizeIconWithBodySmallSizeLg.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeIconWithBodySmallTall() throws {
+        #expect(inheritedTheme.sizes.sizeIconWithBodySmallSizeLg != abstractTheme.sizes.sizeIconWithBodySmallSizeLg)
+        #expect(inheritedTheme.sizes.sizeIconWithBodySmallSizeLg.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
     // MARK: - Semantic token - Sizing - Max width
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeDisplayLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeDisplayLarge, abstractTheme.sizes.sizeMaxWidthTypeDisplayLarge)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeDisplayLarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeDisplayLarge() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeDisplayLarge != abstractTheme.sizes.sizeMaxWidthTypeDisplayLarge)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeDisplayLarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeDisplayMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeDisplayMedium, abstractTheme.sizes.sizeMaxWidthTypeDisplayMedium)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeDisplayMedium.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeDisplayMedium() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeDisplayMedium != abstractTheme.sizes.sizeMaxWidthTypeDisplayMedium)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeDisplayMedium.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeDisplaySmall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeDisplaySmall, abstractTheme.sizes.sizeMaxWidthTypeDisplaySmall)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeDisplaySmall.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeDisplaySmall() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeDisplaySmall != abstractTheme.sizes.sizeMaxWidthTypeDisplaySmall)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeDisplaySmall.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeHeadingXlargeSize() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeHeadingXlarge, abstractTheme.sizes.sizeMaxWidthTypeHeadingXlarge)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeHeadingXlarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeHeadingXlargeSize() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeHeadingXlarge != abstractTheme.sizes.sizeMaxWidthTypeHeadingXlarge)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeHeadingXlarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeHeadingLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeHeadingLarge, abstractTheme.sizes.sizeMaxWidthTypeHeadingLarge)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeHeadingLarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeHeadingLarge() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeHeadingLarge != abstractTheme.sizes.sizeMaxWidthTypeHeadingLarge)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeHeadingLarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeHeadingMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeHeadingMedium, abstractTheme.sizes.sizeMaxWidthTypeHeadingMedium)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeHeadingMedium.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeHeadingMedium() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeHeadingMedium != abstractTheme.sizes.sizeMaxWidthTypeHeadingMedium)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeHeadingMedium.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeHeadingSmall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeHeadingSmall, abstractTheme.sizes.sizeMaxWidthTypeHeadingSmall)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeHeadingSmall.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeHeadingSmall() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeHeadingSmall != abstractTheme.sizes.sizeMaxWidthTypeHeadingSmall)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeHeadingSmall.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeBodyLarge() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeBodyLarge, abstractTheme.sizes.sizeMaxWidthTypeBodyLarge)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeBodyLarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeBodyLarge() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeBodyLarge != abstractTheme.sizes.sizeMaxWidthTypeBodyLarge)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeBodyLarge.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeBodyMedium() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeBodyMedium, abstractTheme.sizes.sizeMaxWidthTypeBodyMedium)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeBodyMedium.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeBodyMedium() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeBodyMedium != abstractTheme.sizes.sizeMaxWidthTypeBodyMedium)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeBodyMedium.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 
-    func testInheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeBodySmall() throws {
-        XCTAssertNotEqual(inheritedTheme.sizes.sizeMaxWidthTypeBodySmall, abstractTheme.sizes.sizeMaxWidthTypeBodySmall)
-        XCTAssertTrue(inheritedTheme.sizes.sizeMaxWidthTypeBodySmall.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
+    @Test func inheritedThemeCanOverrideSemanticTokenSizeMaxWidthTypeBodySmall() throws {
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeBodySmall != abstractTheme.sizes.sizeMaxWidthTypeBodySmall)
+        #expect(inheritedTheme.sizes.sizeMaxWidthTypeBodySmall.isEqual(MockThemeSizeSemanticTokensProvider.mockThemeSizeCompositeToken))
     }
 }
 
-// swiftlint:enable required_deinit
-// swiftlint:enable implicitly_unwrapped_optional
 // swiftlint:enable type_name
