@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.10.0...develop)
+## [0.11.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.10.0...0.11.0) - 2025-02-20
 
 ### Added
 
@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- [Tool] Move from XCTestCase to Swift Testing framework ([#340](https://github.com/Orange-OpenSource/ouds-ios/issues/340))
+- [Tool] Move from XCTest to Swift Testing framework ([#340](https://github.com/Orange-OpenSource/ouds-ios/issues/340))
 - [Tool] Add SwiftPolyglot in CI/CD to check missing localizables ([#454](https://github.com/Orange-OpenSource/ouds-ios/issues/454))
 - [Tool] Move legacy Localizable.strings file to new Apple strings catalogs ([#454](https://github.com/Orange-OpenSource/ouds-ios/issues/454))
 - [Tool] Change precision and perception of UI tests to make them pass on Apple Silicon SoC ([#305](https://github.com/Orange-OpenSource/ouds-ios/issues/305))
