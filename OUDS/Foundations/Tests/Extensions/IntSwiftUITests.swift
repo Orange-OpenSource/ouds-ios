@@ -21,7 +21,7 @@ struct IntSwiftUITests {
 
     /// Tests values of font weight
     @Test
-    func testFontWeightValues() throws {
+    func fontWeightValues() throws {
         // Expected values
         #expect(0.fontWeight == Font.Weight.thin)
         #expect(1.fontWeight == Font.Weight.thin)

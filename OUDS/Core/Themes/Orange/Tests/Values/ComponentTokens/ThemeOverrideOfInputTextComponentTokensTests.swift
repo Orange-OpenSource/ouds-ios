@@ -17,7 +17,7 @@ import Testing
 
 // swiftlint:disable type_name
 
-final class ThemeOverrideOfInputTextComponentTokensTests: XCTestCase {
+struct ThemeOverrideOfInputTextComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
     private var inheritedTheme: OUDSTheme

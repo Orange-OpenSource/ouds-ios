@@ -23,12 +23,12 @@ import Testing
 ///
 /// **These tests checks if any _size semantic tokens_ can be surcharged by a child theme**
 /// **Also, it can help to find removed or renamed tokens by having tests no more compilable**
-final class ThemeOverrideOfSizeSemanticTokensTests: XCTestCase {
+struct ThemeOverrideOfSizeSemanticTokensTests {
 
-    private var abstractTheme: OUDSTheme!
-    private var inheritedTheme: OUDSTheme!
+    private var abstractTheme: OUDSTheme
+    private var inheritedTheme: OUDSTheme
 
-    override func setUp() async throws {
+    init() {
         abstractTheme = OrangeTheme()
         inheritedTheme = MockTheme()
     }

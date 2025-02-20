@@ -21,7 +21,7 @@ struct StringSwiftUITests {
 
     /// Tests the font family values created using a font family name and a weight
     @Test
-    func testComposeWithFonts() throws {
+    func composeWithFonts() throws {
         var result: String
 
         // Expected values - use string description of Font.Weight

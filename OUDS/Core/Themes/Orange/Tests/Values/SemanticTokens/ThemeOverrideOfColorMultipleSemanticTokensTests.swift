@@ -26,7 +26,7 @@ import Testing
 ///
 /// **These tests checks if any _colors multiple semantic tokens_ can be surcharged by a child theme**
 /// **Also, it can help to find removed or renamed tokens by having tests no more compilable**
-final class ThemeOverrideOfColorMultipleSemanticTokensTests {
+struct ThemeOverrideOfColorMultipleSemanticTokensTests {
 
     private var abstractTheme: OUDSTheme
     private var inheritedTheme: OUDSTheme
