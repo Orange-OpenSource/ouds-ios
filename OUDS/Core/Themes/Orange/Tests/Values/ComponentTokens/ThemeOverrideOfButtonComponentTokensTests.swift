@@ -17,6 +17,7 @@ import Testing
 
 // swiftlint:disable type_body_length
 // swiftlint:disable file_length
+// swiftlint:disable type_name
 
 struct ThemeOverrideOfButtonComponentTokensTests {
 
@@ -590,3 +591,4 @@ struct ThemeOverrideOfButtonComponentTokensTests {
 }
 
 // swiftlint:enable type_body_length
+// swiftlint:enable type_name
