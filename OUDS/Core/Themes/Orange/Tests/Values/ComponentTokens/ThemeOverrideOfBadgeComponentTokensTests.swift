@@ -15,8 +15,6 @@ import OUDS
 import OUDSThemesOrange
 import Testing
 
-// swiftlint:disable implicitly_unwrapped_optional
-
 struct ThemeOverrideOfBadgeComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
@@ -66,5 +64,3 @@ struct ThemeOverrideOfBadgeComponentTokensTests {
         #expect(inheritedTheme.badge.badgeSizeXs == MockThemeBadgeComponentTokenProvider.mockThemeBadgeSize)
     }
 }
-
-// swiftlint:enable implicitly_unwrapped_optional

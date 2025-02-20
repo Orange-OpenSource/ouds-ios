@@ -23,12 +23,12 @@ struct ThemeOverrideOfButtonComponentTokensTests {
     private var abstractTheme: OUDSTheme
     private var inheritedTheme: OUDSTheme
     
-    init()
-    abstractTheme = OrangeTheme()
-    inheritedTheme = MockTheme()
-}
+    init(){
+        abstractTheme = OrangeTheme()
+        inheritedTheme = MockTheme()
+    }
 
-// MARK: - Sizes
+    // MARK: - Sizes
 
     @Test func inheritedThemeCanOverrideButtonComponentTokenButtonSizeMaxHeightIconOnly() throws {
         #expect(inheritedTheme.button.buttonSizeMaxHeightIconOnly != abstractTheme.button.buttonSizeMaxHeightIconOnly)
