@@ -17,7 +17,7 @@ import Testing
 
 // swiftlint:disable type_name
 
-struct ThemeOverrideOCheckboxComponentTokensTests {
+struct ThemeOverrideOfCheckboxComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
     private var inheritedTheme: OUDSTheme
