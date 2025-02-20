@@ -128,13 +128,13 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
     <!-- TODO Update screenshot -->
     <!-- ![Edit GitHub release](images/github_release_01.png) -->
 
-- Create a new tag X.Y.Z. **Warning, maybe git-cliff will need tag prefixed by v, so the documentation should be applied with this new rule**
+- Create a new tag X.Y.Z
 
     <!-- TODO Update screenshot -->
     <!-- ![Create tag](images/github_release_02.png) -->
 
 - Add release notes and verify using the preview tab.
-<!-- TODO Check with git-cliff release note generation and vTag prefix -->    
+    
 - Optionally check `Set as a pre-release` and click `Publish release`. You can also create a disucssion from this release.
 
 - Do not forget to update the documentation using `uploadWebDoc.sh` script. It will let a ZIP file of the documentation in */tmp* folder ; get this file and add it as release artifact, or if you want just download the sources from GitHub on *gh-pages* branch. You should also through Xcode build the documentation (_Product > Build Documentation_) and export each documentation catalog as documentation archive (doccarchive) (_Right click on catalog > Export_), compress all these files in one ZIP archive (GitHub consider them as empty so won't accept them for upload) and upload as artifact. In few words, put in release artifacts all the doccarchives in a ZIP in one side, and the HTML merged version in the other side.
@@ -142,6 +142,14 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 - Clone the [wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) (available at https://github.com/Orange-OpenSource/ouds-ios.wiki.git), compress its content as ZIP, and place the ZIP in release artifacts
 
 - From the GitLab CI pipeline job which made the production release, get the artifacts and put it in the release.
+
+- You can use if you want *git-cliff* to build the release not to copy/paste in the release description
+
+```shell
+# Where X is the previous tag and Y the new freshly created tag or HEAD
+# Run in main branch of course.
+git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
+```
 
 - You can close the previous release dicussion, lock and unpin it. You should also pin the new discussion for the release, and add in comments the sprint number and the app details in production mode. [This is an excemple of a release discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/358) and [a detailed comment](https://github.com/Orange-OpenSource/ouds-ios/discussions/358#discussioncomment-11608399).
 
