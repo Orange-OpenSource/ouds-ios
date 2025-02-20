@@ -101,3 +101,10 @@ Copyright 2020 Realm Inc.
 
 *SwiftLint* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/realm/SwiftLint).
+
+#### SwiftPolyglot
+
+Copyright 2024 App Deco Studio Inc.
+
+*SwiftPolyglot* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/appdecostudio/SwiftPolyglot).

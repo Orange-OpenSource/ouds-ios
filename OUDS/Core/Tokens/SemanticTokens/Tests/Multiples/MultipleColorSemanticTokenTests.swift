@@ -13,35 +13,33 @@
 
 import OUDSTokensRaw
 import OUDSTokensSemantic
-import XCTest
-
-// swiftlint:disable required_deinit
+import Testing
 
 /// To ensure the `MultipleColorRawToken` is tested as a provider of semantic tokens for light and dark color schemes.
-final class MultipleColorRawTokenTests: XCTestCase {
+struct MultipleColorRawTokenTests {
 
     /// Tests if the unique value is applied for light and dark modes
-    func testInitWithOneValue() {
+    @Test func initWithOneValue() {
         let unique: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
         let token = MultipleColorSemanticTokens(unique)
 
-        XCTAssertTrue(token.light == unique)
-        XCTAssertTrue(token.dark == unique)
+        #expect(token.light == unique)
+        #expect(token.dark == unique)
     }
 
     /// Tests if light and dark values are preserved when defined with two assigned non nil values
-    func testInitTwoNonNilValues() {
+    @Test func initTwoNonNilValues() {
         let light: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
         let dark: ColorRawToken = ColorRawTokens.colorFunctionalScarlet900
         let token = MultipleColorSemanticTokens(light: light, dark: dark)
 
-        XCTAssertTrue(token.light == light)
-        XCTAssertTrue(token.dark == dark)
+        #expect(token.light == light)
+        #expect(token.dark == dark)
     }
 
     /// Tests comparisons between two `MultipleColorRawToken` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
-    func testIsEqual() {
+    @Test func isEqual() {
         let first = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
         let second = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalSun100)
         let third = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalSun100)
@@ -49,13 +47,11 @@ final class MultipleColorRawTokenTests: XCTestCase {
         let fifth = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
         let sixth = MultipleSizeSemanticTokens(compact: 12, regular: 12)
 
-        XCTAssertTrue(first.isEqual(first))
-        XCTAssertFalse(first.isEqual(second))
-        XCTAssertFalse(first.isEqual(third))
-        XCTAssertFalse(first.isEqual(fourth))
-        XCTAssertTrue(first.isEqual(fifth))
-        XCTAssertFalse(first.isEqual(sixth))
+        #expect(first.isEqual(first))
+        #expect(!first.isEqual(second))
+        #expect(!first.isEqual(third))
+        #expect(!first.isEqual(fourth))
+        #expect(first.isEqual(fifth))
+        #expect(!first.isEqual(sixth))
     }
 }
-
-// swiftlint:enable required_deinit

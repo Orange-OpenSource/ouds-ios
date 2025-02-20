@@ -277,16 +277,18 @@ We can add metafields picked from [this good guideline](https://git.kernel.org/p
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
+For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime, Stephen, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
 ```text
 refactor: update some things colors and design of the demo app (#123) (#4562)
 
 Some things have been refactored to make incredible things.
 
-Tested-by: Iman Assabah <benoit.suzanne@orange.com>
+Tested-by: Iman Assabah <iman.assabah.ext@orange.com>
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
+Tested-by: Stephen McCarthy <stephen.mccarthy@orange.com>
+Tested-by: Pierre-Yves Ayoul <pierre-yves.ayoul@orange.com>
 Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Acked-by: Julien Déramond <julien.deramond@orange.com>
 Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
@@ -318,8 +320,19 @@ Tokens library v0.4.1
 
 We try also to apply [keep a changelog](https://keepachangelog.com/en/1.0.0/), and [semantic versioning](https://semver.org/spec/v2.0.0.html) both with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-We do not generate yet `RELEASE_NOTE.md` file using the Git history and [git cliff](https://git-cliff.org/) tool.
+We can generate a `RELEASE_NOTE.md` file using the Git history and [git cliff](https://git-cliff.org/) tool.
 Today we update the unique CHANGELOG manualy, but you can find [in the wiki more details about the use of git-cliff](https://github.com/Orange-OpenSource/ouds-ios/wiki/52-%E2%80%90-About-changelog,-release-notes-and-hooks)
+
+To generate a release note:
+
+```shell
+# Install git-cliff
+brew install git-cliff
+
+# Run the command
+# where X is the starting tag and Y the ending tag
+git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
+```
 
 ## Use of Gitleaks
 
@@ -389,9 +402,11 @@ Do not forget if possible to enable the warnings in the end of the file to reduc
 
 We use *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
-This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml), and makes build, unit tests and UI tests. Keep in mind we may have [some troubles with UI tests](https://github.com/Orange-OpenSource/ouds-ios/issues/305).
+This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml), and makes build, unit tests and UI tests.
 
 We have also a *gitleaks* workflow making some scans on the code to look fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml).
+
+A dedicated workflow has been defined so as to run checks on localizables to find is some wording is missing (thanks to [SwiftPolyglot](https://github.com/appdecostudio/SwiftPolyglot)).
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).

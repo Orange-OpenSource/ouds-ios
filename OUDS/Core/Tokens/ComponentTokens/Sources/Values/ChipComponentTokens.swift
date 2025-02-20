@@ -29,43 +29,46 @@ public protocol ChipComponentTokens {
 
     var chipSizeMaxHeight: SizeSemanticToken { get }
     var chipSizeMinHeight: SizeSemanticToken { get }
+    var chipSizeMinWidth: SizeSemanticToken { get }
     var chipSizeIcon: SizeSemanticToken { get }
 
     // MARK: - Borders
 
-    var chipBorderRadius: BorderRadiusSemanticToken { get }
     var chipBorderWidthDefault: BorderWidthSemanticToken { get }
     var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
+    var chipBorderWidthSelected: BorderWidthSemanticToken { get }
+    var chipBorderRadiusPill: BorderRadiusSemanticToken { get }
 
     // MARK: - Colors
 
-    var chipColorBgDisabled: MultipleColorSemanticTokens { get }
+    var chipColorContentEnabled: MultipleColorSemanticTokens { get }
+    var chipColorContentHover: MultipleColorSemanticTokens { get }
+    var chipColorContentPressed: MultipleColorSemanticTokens { get }
+    var chipColorContentDisabled: MultipleColorSemanticTokens { get }
+    var chipColorContentFocus: MultipleColorSemanticTokens { get }
     var chipColorBgEnabled: MultipleColorSemanticTokens { get }
-    var chipColorBgFocus: MultipleColorSemanticTokens { get }
     var chipColorBgHover: MultipleColorSemanticTokens { get }
     var chipColorBgPressed: MultipleColorSemanticTokens { get }
-    var chipColorBorderDisabled: MultipleColorSemanticTokens { get }
+    var chipColorBgDisabled: MultipleColorSemanticTokens { get }
+    var chipColorBgFocus: MultipleColorSemanticTokens { get }
     var chipColorBorderEnabled: MultipleColorSemanticTokens { get }
     var chipColorBorderHover: MultipleColorSemanticTokens { get }
     var chipColorBorderPressed: MultipleColorSemanticTokens { get }
+    var chipColorBorderDisabled: MultipleColorSemanticTokens { get }
     var chipColorBorderSelected: MultipleColorSemanticTokens { get }
-    var chipColorContentDisabled: MultipleColorSemanticTokens { get }
-    var chipColorContentEnabled: MultipleColorSemanticTokens { get }
-    var chipColorContentFocus: MultipleColorSemanticTokens { get }
-    var chipColorContentHover: MultipleColorSemanticTokens { get }
-    var chipColorContentPressed: MultipleColorSemanticTokens { get }
+    var chipColorBorderFocus: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 
-    var chipSpaceColumnGapColumnGap: SpaceSemanticToken { get }
-    var chipSpaceInsetIconOnly: SpaceSemanticToken { get }
-    var chipSpacePaddingBlock: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineIconEnd: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineIconNone: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineLabelStart: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineLabelEnd: SpaceSemanticToken { get }
     var chipSpacePaddingInlineIconOnly: SpaceSemanticToken { get }
     var chipSpacePaddingInlineIconStart: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineLabelEnd: SpaceSemanticToken { get }
-    var chipSpacePaddingInlineLabelStart: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineIconEnd: SpaceSemanticToken { get }
+    var chipSpacePaddingInlineIconNone: SpaceSemanticToken { get }
+    var chipSpaceInsetIconOnly: SpaceSemanticToken { get }
+    var chipSpacePaddingBlock: SpaceSemanticToken { get }
+    var chipSpaceColumnGapColumnGap: SpaceSemanticToken { get }
     var chipSpacePaddingStackPaddingBlock: SpaceSemanticToken { get }
 }
 

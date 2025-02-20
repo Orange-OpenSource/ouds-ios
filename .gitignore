@@ -29,6 +29,7 @@
 
 # Produced by Fastlane
 /DesignToolbox/build/
+/DesignToolbox/SwiftPolyglot/
 
 # Produced by Swift Package Manager
 /.swiftpm/xcode/xcshareddata/
