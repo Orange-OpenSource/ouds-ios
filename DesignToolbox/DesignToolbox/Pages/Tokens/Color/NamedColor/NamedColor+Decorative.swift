@@ -37,9 +37,6 @@ extension NamedColor {
         case colorDecorativeBrandPrimary
         case colorDecorativeBrandSecondary
         case colorDecorativeBrandTertiary
-        case colorDecorativeNeutralDefault
-        case colorDecorativeNeutralEmphasized
-        case colorDecorativeNeutralMuted
         case colorDecorativeSkinTint100
         case colorDecorativeSkinTint200
         case colorDecorativeSkinTint300
@@ -88,12 +85,6 @@ extension NamedColor {
                 return theme.colors.colorDecorativeBrandSecondary
             case .colorDecorativeBrandTertiary:
                 return theme.colors.colorDecorativeBrandTertiary
-            case .colorDecorativeNeutralDefault:
-                return theme.colors.colorDecorativeNeutralDefault
-            case .colorDecorativeNeutralEmphasized:
-                return theme.colors.colorDecorativeNeutralEmphasized
-            case .colorDecorativeNeutralMuted:
-                return theme.colors.colorDecorativeNeutralMuted
             case .colorDecorativeSkinTint100:
                 return theme.colors.colorDecorativeSkinTint100
             case .colorDecorativeSkinTint200:

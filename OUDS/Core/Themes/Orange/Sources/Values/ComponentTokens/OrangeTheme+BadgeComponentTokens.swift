@@ -23,8 +23,8 @@ extension OrangeThemeBadgeComponentTokensProvider: BadgeComponentTokens {
     @objc open var badgeNotificationMinWidthL: DimensionRawToken { DimensionRawTokens.dimension300 }
     @objc open var badgeNotificationMinWidthM: DimensionRawToken { DimensionRawTokens.dimension200 }
     @objc open var badgeNotificationMinWidthS: DimensionRawToken { DimensionRawTokens.dimension150 }
-    @objc open var badgeSizeL: SizeSemanticToken { DimensionRawTokens.dimension3xs }
-    @objc open var badgeSizeM: SizeSemanticToken { DimensionRawTokens.dimension5xs }
-    @objc open var badgeSizeS: SizeSemanticToken { DimensionRawTokens.dimension6xs }
-    @objc open var badgeSizeXs: SizeSemanticToken { DimensionRawTokens.dimension7xs }
+    @objc open var badgeSizeL: SizeSemanticToken { DimensionRawTokens.dimension300 }
+    @objc open var badgeSizeM: SizeSemanticToken { DimensionRawTokens.dimension200 }
+    @objc open var badgeSizeS: SizeSemanticToken { DimensionRawTokens.dimension150 }
+    @objc open var badgeSizeXs: SizeSemanticToken { DimensionRawTokens.dimension100 }
 }

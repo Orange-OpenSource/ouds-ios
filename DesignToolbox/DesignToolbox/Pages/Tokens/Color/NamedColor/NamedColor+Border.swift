@@ -23,6 +23,7 @@ extension NamedColor {
         case colorBorderFocus
         case colorBorderFocusInset
         case colorBorderOnBrandPrimary
+        case colorBorderMuted
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
@@ -38,6 +39,8 @@ extension NamedColor {
                 return theme.colors.colorBorderFocusInset
             case .colorBorderOnBrandPrimary:
                 return theme.colors.colorBorderOnBrandPrimary
+            case .colorBorderMuted:
+                return theme.colors.colorBorderMuted
             }
         }
     }

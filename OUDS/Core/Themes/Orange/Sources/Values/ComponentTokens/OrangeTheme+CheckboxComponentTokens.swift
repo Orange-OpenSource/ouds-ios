@@ -40,7 +40,7 @@ extension OrangeThemeCheckboxComponentTokensProvider: CheckboxComponentTokens {
     @objc open var checkboxOpacityBgUnselectedFocus: OpacitySemanticToken { opacities.opacityInvisible }
     @objc open var checkboxOpacityBgUnselectedHover: OpacitySemanticToken { opacities.opacityInvisible }
     @objc open var checkboxOpacityBgUnselectedPressed: OpacitySemanticToken { opacities.opacityInvisible }
-    @objc open var checkboxSizeIndicatorInnerIcon: SizeSemanticToken { DimensionRawTokens.dimension5xs }
+    @objc open var checkboxSizeIndicatorInnerIcon: SizeSemanticToken { DimensionRawTokens.dimension200 }
     @objc open var checkboxColorContentDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
     @objc open var checkboxColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
     @objc open var checkboxColorContentErrorEnabled: MultipleColorSemanticTokens { colors.colorActionNegativeEnabled }
