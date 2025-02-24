@@ -27,14 +27,14 @@ extension OrangeThemeBulletListComponentTokensProvider: BulletListComponentToken
     @objc open var bulletListSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension600 }
     @objc open var bulletListSizeMinWidthSmall: SizeSemanticToken { DimensionRawTokens.dimension550 }
     @objc open var bulletListColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
-    @objc open var bulletListSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    @objc open var bulletListSpaceColumnGapIconMedium: SpaceSemanticToken { spaces.spaceColumnGapShorter }
-    @objc open var bulletListSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spaceColumnGapShortest }
-    @objc open var bulletListSpacePaddingInlineStartIconSmall: SpaceSemanticToken { spaces.spacePaddingInlineShort }
-    @objc open var bulletListSpacePaddingInlineStartIconMedium: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
-    @objc open var bulletListSpacePaddingInlineEndNone: SpaceSemanticToken { spaces.spacePaddingInlineNone }
     @objc open var bulletListSizeIconMedium: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXs }
     @objc open var bulletListSizeIconSmall: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
+    @objc open var bulletListSpaceColumnGapIconMedium: SpaceSemanticToken { spaces.spaceColumnGapShorter }
+    @objc open var bulletListSpaceColumnGapIconSmall: SpaceSemanticToken { spaces.spaceColumnGapShortest }
+    @objc open var bulletListSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
+    @objc open var bulletListSpacePaddingInlineEndNone: SpaceSemanticToken { spaces.spacePaddingInlineNone }
+    @objc open var bulletListSpacePaddingInlineStartIconMedium: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+    @objc open var bulletListSpacePaddingInlineStartIconSmall: SpaceSemanticToken { spaces.spacePaddingInlineShort }
 }
 
 // swiftlint:enable identifier_name
