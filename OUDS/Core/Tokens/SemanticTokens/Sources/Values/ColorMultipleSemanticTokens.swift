@@ -62,6 +62,8 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorActionFocus: MultipleColorSemanticTokens { get }
 
+    var colorActionFocus2: MultipleColorSemanticTokens { get }
+
     var colorActionHighlighted: MultipleColorSemanticTokens { get }
 
     var colorActionHover: MultipleColorSemanticTokens { get }
@@ -128,11 +130,15 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { get }
 
+    var colorBorderMuted: MultipleColorSemanticTokens { get }
+
     // MARK: - Color - Content
 
     var colorContentBrandPrimary: MultipleColorSemanticTokens { get }
 
     var colorContentDefault: MultipleColorSemanticTokens { get }
+
+    var colorContentDefault2: MultipleColorSemanticTokens { get }
 
     var colorContentDisabled: MultipleColorSemanticTokens { get }
 
@@ -245,12 +251,6 @@ public protocol ColorMultipleSemanticTokens {
     var colorDecorativeBrandSecondary: MultipleColorSemanticTokens { get }
 
     var colorDecorativeBrandTertiary: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralDefault: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralEmphasized: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralMuted: MultipleColorSemanticTokens { get }
 
     var colorDecorativeSkinTint100: MultipleColorSemanticTokens { get }
 

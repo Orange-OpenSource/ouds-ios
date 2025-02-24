@@ -49,6 +49,9 @@ public protocol ColorSemanticTokens {
     var colorActionFocusLight: ColorSemanticToken { get }
     var colorActionFocusDark: ColorSemanticToken { get }
 
+    var colorActionFocus2Light: ColorSemanticToken { get }
+    var colorActionFocus2Dark: ColorSemanticToken { get }
+
     var colorActionHighlightedLight: ColorSemanticToken { get }
     var colorActionHighlightedDark: ColorSemanticToken { get }
 
@@ -145,6 +148,9 @@ public protocol ColorSemanticTokens {
     var colorBorderOnBrandPrimaryLight: ColorSemanticToken { get }
     var colorBorderOnBrandPrimaryDark: ColorSemanticToken { get }
 
+    var colorBorderMutedLight: ColorSemanticToken { get }
+    var colorBorderMutedDark: ColorSemanticToken { get }
+
     // MARK: - Color - Content
 
     var colorContentBrandPrimaryLight: ColorSemanticToken { get }
@@ -152,6 +158,9 @@ public protocol ColorSemanticTokens {
 
     var colorContentDefaultLight: ColorSemanticToken { get }
     var colorContentDefaultDark: ColorSemanticToken { get }
+
+    var colorContentDefault2Light: ColorSemanticToken { get }
+    var colorContentDefault2Dark: ColorSemanticToken { get }
 
     var colorContentDisabledLight: ColorSemanticToken { get }
     var colorContentDisabledDark: ColorSemanticToken { get }
@@ -317,15 +326,6 @@ public protocol ColorSemanticTokens {
 
     var colorDecorativeBrandTertiaryLight: ColorSemanticToken { get }
     var colorDecorativeBrandTertiaryDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralDefaultLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralDefaultDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralEmphasizedLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralEmphasizedDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralMutedLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedDark: ColorSemanticToken { get }
 
     var colorDecorativeSkinTint100Light: ColorSemanticToken { get }
     var colorDecorativeSkinTint100Dark: ColorSemanticToken { get }

@@ -20,6 +20,7 @@ extension NamedColor {
         case colorActionDisabled
         case colorActionEnabled
         case colorActionFocus
+        case colorActionFocus2
         case colorActionHighlighted
         case colorActionHover
         case colorActionLoading
@@ -45,6 +46,8 @@ extension NamedColor {
                 return theme.colors.colorActionEnabled
             case .colorActionFocus:
                 return theme.colors.colorActionFocus
+            case .colorActionFocus2:
+                return theme.colors.colorActionFocus2
             case .colorActionHighlighted:
                 return theme.colors.colorActionHighlighted
             case .colorActionHover:

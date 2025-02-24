@@ -19,6 +19,7 @@ extension NamedColor {
     enum Content: String, CaseIterable {
         case colorContentBrandPrimary
         case colorContentDefault
+        case colorContentDefault2
         case colorContentDisabled
         case colorContentMuted
         case colorContentOnActionDisabled
@@ -44,6 +45,8 @@ extension NamedColor {
                 return theme.colors.colorContentBrandPrimary
             case .colorContentDefault:
                 return theme.colors.colorContentDefault
+            case .colorContentDefault2:
+                return theme.colors.colorContentDefault2
             case .colorContentDisabled:
                 return theme.colors.colorContentDisabled
             case .colorContentMuted:
