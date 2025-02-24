@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.11.0...develop)
 
+### Added
+
+- [Library] `colorBorderMuted`, `colorActionFocus2`, `olorContentDefault2*` color semantic tokens (tokens library v0.6.0)
+
+### Removed
+
+- [Library] `colorDecorativeNeutralDefault**`, `colorDecorativeNeutralEmphasized*`, `colorDecorativeNeutralMuted*` color semantic tokens (tokens library v0.6.0)
+
 ## [0.11.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.10.0...0.11.0) - 2025-02-20
 
 ### Added

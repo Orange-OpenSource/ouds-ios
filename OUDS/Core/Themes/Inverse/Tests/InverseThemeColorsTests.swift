@@ -418,18 +418,6 @@ struct InverseThemeColorsTests {
         assertHomogeneity(inverseTheme.colors.colorDecorativeBrandTertiary)
     }
 
-    @Test func colorsHomogeneityColorDecorativeNeutralDefault() throws {
-        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralDefault)
-    }
-
-    @Test func colorsHomogeneityColorDecorativeNeutralEmphasized() throws {
-        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralEmphasized)
-    }
-
-    @Test func colorsHomogeneityColorDecorativeNeutralMuted() throws {
-        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMuted)
-    }
-
     @Test func colorsHomogeneityColorDecorativeSkinTint100() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint100)
     }
