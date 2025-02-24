@@ -318,15 +318,6 @@ public protocol ColorSemanticTokens {
     var colorDecorativeBrandTertiaryLight: ColorSemanticToken { get }
     var colorDecorativeBrandTertiaryDark: ColorSemanticToken { get }
 
-    var colorDecorativeNeutralDefaultLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralDefaultDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralEmphasizedLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralEmphasizedDark: ColorSemanticToken { get }
-
-    var colorDecorativeNeutralMutedLight: ColorSemanticToken { get }
-    var colorDecorativeNeutralMutedDark: ColorSemanticToken { get }
-
     var colorDecorativeSkinTint100Light: ColorSemanticToken { get }
     var colorDecorativeSkinTint100Dark: ColorSemanticToken { get }
 
