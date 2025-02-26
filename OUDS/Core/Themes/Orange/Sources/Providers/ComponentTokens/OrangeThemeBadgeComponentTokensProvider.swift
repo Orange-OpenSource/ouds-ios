@@ -52,7 +52,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomBadgeComponentTokensProvider(), ... ])
+///         super.init(badge: CustomBadgeComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -60,7 +60,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomBadgeComponentTokensProvider(), ... ])
+///     OrangeTheme(badge: CustomBadgeComponentTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0

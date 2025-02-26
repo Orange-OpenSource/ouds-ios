@@ -58,7 +58,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomButtonComponentTokensProvider(), ... ])
+///         super.init(button: CustomButtonComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -66,7 +66,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomButtonComponentTokensProvider(), ... ])
+///     OrangeTheme(button: CustomButtonComponentTokensProvider())
 /// ```
 ///
 /// - Since: 0.9.0

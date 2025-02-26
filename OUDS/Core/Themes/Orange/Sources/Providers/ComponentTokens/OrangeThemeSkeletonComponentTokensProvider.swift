@@ -51,7 +51,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomSkeletonComponentTokensProvider(), ... ])
+///         super.init(skeleton: CustomSkeletonComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -59,7 +59,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomSkeletonComponentTokensProvider(), ... ])
+///     OrangeTheme(skeleton: CustomSkeletonComponentTokensProvider())
 /// ```
 ///
 /// - Since: 0.9.0
