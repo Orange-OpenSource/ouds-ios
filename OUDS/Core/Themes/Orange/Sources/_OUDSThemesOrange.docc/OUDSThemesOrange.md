@@ -231,7 +231,7 @@ struct YourApp: App {
 ### By overriding only existing tokens providers
 
 Quite simple and similar to the previous solution, but give only the providers to the ``OrangeTheme``.
-But we recommnd tod efine your own theme for clariy reasons.
+But we recommend to define your own theme for clarity reasons.
 
 ```swift
 import OUDS // To get OUDSThemeableView
