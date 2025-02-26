@@ -56,7 +56,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomControlItemComponentTokensProvider(), ... ])
+///         super.init(controlItem: CustomControlItemComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -64,7 +64,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomControlItemComponentTokensProvider(), ... ])
+///     OrangeTheme(controlItem: CustomControlItemComponentTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0

@@ -60,7 +60,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomCheckboxComponentTokensProvider(), ... ])
+///         super.init(checkbox: CustomCheckboxComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -68,7 +68,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomCheckboxComponentTokensProvider(), ... ])
+///     OrangeTheme(checkbox: CustomCheckboxComponentTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0

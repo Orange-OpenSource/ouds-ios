@@ -55,7 +55,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomListItemComponentTokensProvider(), ... ])
+///         super.init(listItem: CustomListItemComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -63,7 +63,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomListItemComponentTokensProvider(), ... ])
+///     OrangeTheme(listItem: CustomListItemComponentTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0
