@@ -176,20 +176,15 @@ import OUDSThemesOrange // To get OrangeTheme
 class YourAppTheme: OrangeTheme {
     
     override init() {
-        let providers: TokensProviders = [
-            YourAppThemeColorTokensProvider(),
-            YourAppThemeBorderTokensProvider(),
-            YourAppThemeElevationTokensProvider(),
-            YourAppThemeFontTokensProvider(),
-            YourAppThemeGridTokensProvider(),
-            YourAppThemeOpacityTokensProvider(),
-            YourAppThemeSizeTokensProvider(),
-            YourAppThemeSpaceTokensProvider(),
-            YourAppThemeButtonComponentTokensProvider(),
-            // Etc.
-        ]
-
-        super.init(tokensProviders: providers)
+        super.init(colors: YourAppThemeColorTokensProvider(),
+                   borders: YourAppThemeBorderTokensProvider(),
+                   elevations: YourAppThemeElevationTokensProvider(),
+                   fonts: YourAppThemeFontTokensProvider(),
+                   grids: YourAppThemeGridTokensProvider(),
+                   opacities: YourAppThemeOpacityTokensProvider(),
+                   sizes: YourAppThemeSizeTokensProvider(),
+                   spaces: YourAppThemeSpaceTokensProvider(),
+                   button: YourAppThemeButtonComponentTokensProvider,
     }
 }
 ```

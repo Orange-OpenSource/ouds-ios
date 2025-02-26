@@ -56,7 +56,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomBulletListComponentTokensProvider(), ... ])
+///         super.init(bulletList: CustomBulletListComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -64,7 +64,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomBulletListComponentTokensProvider(), ... ])
+///     OrangeTheme(bulletList: CustomBulletListComponentTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0

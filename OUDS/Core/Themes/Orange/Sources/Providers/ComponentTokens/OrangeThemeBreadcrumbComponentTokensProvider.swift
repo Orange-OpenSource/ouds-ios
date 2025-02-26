@@ -53,7 +53,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomBreadcrumbComponentTokensProvider(), ... ])
+///         super.init(breadcrumb: CustomBreadcrumbComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -61,7 +61,7 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomBreadcrumbComponentTokensProvider(), ... ])
+///     OrangeTheme(breadcrumb: CustomBreadcrumbComponentTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0
