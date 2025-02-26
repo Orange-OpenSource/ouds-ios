@@ -37,37 +37,36 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
 
     init(fontFamily: String?) {
         let colors = MockThemeColorSemanticTokensProvider()
-        let sizes = MockThemeSizeSemanticTokensProvider()
         let borders = MockThemeBorderSemanticTokensProvider()
-        let spaces = MockThemeSpaceSemanticTokensProvider()
+        let elevations = MockThemeElevationSemanticTokensProvider()
+        let fonts = MockThemeFontSemanticTokensProvider()
+        let grids = MockThemeGridSemanticTokensProvider()
         let opacities = MockThemeOpacitySemanticTokensProvider()
-        let providers: TokensProviders = [
-            colors,
-            borders,
-            MockThemeElevationSemanticTokensProvider(),
-            MockThemeFontSemanticTokensProvider(),
-            MockThemeGridSemanticTokensProvider(),
-            MockThemeOpacitySemanticTokensProvider(),
-            sizes,
-            spaces,
-            MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-            MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-            MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-            MockThemeSkeletonComponentTokenProvider(colors: colors),
-            MockThemeTagComponentTokenProvider(colors: colors),
-            MockThemeSwitchComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-            MockThemeListItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-            MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-            MockThemeBreadcrumbComponentTokenProvider(sizes: sizes, spaces: spaces),
-            MockThemeBulletListComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-            MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-            MockThemeBadgeComponentTokenProvider(sizes: sizes),
-            MockThemeControlItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-            MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
-
-            // NOTE: Add here new component tokens provider
-        ]
-        super.init(tokensProviders: providers, fontFamily: fontFamily)
+        let sizes = MockThemeSizeSemanticTokensProvider()
+        let spaces = MockThemeSpaceSemanticTokensProvider()
+        super.init(colors: colors,
+                   borders: borders,
+                   elevations: elevations,
+                   fonts: fonts,
+                   grids: grids,
+                   opacities: opacities,
+                   sizes: sizes,
+                   spaces: spaces,
+                   button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+                   link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   select: MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   skeleton: MockThemeSkeletonComponentTokenProvider(colors: colors),
+                   tag: MockThemeTagComponentTokenProvider(colors: colors),
+                   switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+                   breadcrumb: MockThemeBreadcrumbComponentTokenProvider(sizes: sizes, spaces: spaces),
+                   bulletList: MockThemeBulletListComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   inputText: MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   badge: MockThemeBadgeComponentTokenProvider(sizes: sizes),
+                   controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
+                   fontFamily: fontFamily)
     }
 
     deinit { }
