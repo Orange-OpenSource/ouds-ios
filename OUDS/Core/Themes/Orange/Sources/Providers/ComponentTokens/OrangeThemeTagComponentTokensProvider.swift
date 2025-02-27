@@ -60,6 +60,17 @@ import OUDSTokensSemantic
 ///     OrangeTheme(tag: CustomTagComponentTokensProvider())
 /// ```
 ///
+/// It is also possible to use your own semantic tokens providers for this component tokens providers:
+///
+/// ```swift
+///     // Uses by default here:
+///     // - OrangeThemeColorSemanticTokensProvider for colors
+///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider()
+///
+///     // Or use your own color semantic tokens providers (or only some)
+///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider(
+///                                                 colors: CustomColorSemanticTokensProvider())
+/// ```
 /// - Since: 0.9.0
 open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
 
@@ -67,10 +78,11 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
     public let colors: AllColorSemanticTokensProvider
 
     /// Defines a provider of component tokens dedicated to `OUDSTag`
-    /// - Parameter colors: Provider for color semantic tokens
-    public init(colors: AllColorSemanticTokensProvider) {
+    /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+
+    public init(colors: AllColorSemanticTokensProvider?) {
         OL.debug("Init of OrangeThemeTagComponentTokensProvider")
-        self.colors = colors
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
     }
 
     deinit { }

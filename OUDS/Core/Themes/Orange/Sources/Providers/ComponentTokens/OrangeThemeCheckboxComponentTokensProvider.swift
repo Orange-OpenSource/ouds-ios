@@ -71,6 +71,23 @@ import OUDSTokensSemantic
 ///     OrangeTheme(checkbox: CustomCheckboxComponentTokensProvider())
 /// ```
 ///
+/// It is also possible to use your own semantic tokens providers for this component tokens providers:
+///
+/// ```swift
+///     // Uses by default here:
+///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeBorderSemanticTokensProvider for borders
+///     // - OrangeThemeColorSemanticTokensProvider for colors
+///     // - OrangeThemeOpacitySemanticTokensProvider for opacities
+///     let checkboxComponentTokensProvider = OrangeThemeCheckboxComponentTokensProvider()
+///
+///     // Or use your own size, border, color and opacity semantic tokens providers (or only some)
+///     let checkboxComponentTokensProvider = OrangeThemeCheckboxComponentTokensProvider(
+///                                                 sizes: CustomSizeSemanticTokensProvider(),
+///                                                 borders: CustomBorderSemanticTokensProvider(),
+///                                                 colors: CustomColorSemanticTokensProvider(),
+///                                                 opacities: CustomOpacitySemanticTokensProvider())
+/// ```
 /// - Since: 0.10.0
 open class OrangeThemeCheckboxComponentTokensProvider: AllCheckboxComponentTokensProvider {
 
@@ -88,19 +105,19 @@ open class OrangeThemeCheckboxComponentTokensProvider: AllCheckboxComponentToken
 
     /// Defines a provider of component tokens dedicated to `OUDSCheckbox` and `OUDSRadioButton`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens
-    ///    - borders: Provider for border semantic tokens
-    ///    - colors: Provider for color semantic tokens
-    ///    - opacities: Provider for opacitiy semantic tokens
-    public init(sizes: AllSizeSemanticTokensProvider,
-                borders: AllBorderSemanticTokensProvider,
-                colors: AllColorSemanticTokensProvider,
-                opacities: AllOpacitySemanticTokensProvider) {
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - opacities: Provider for opacitiy semantic tokens. If nil, a default one will be used (``OrangeThemeOpacitySemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider?,
+                borders: AllBorderSemanticTokensProvider?,
+                colors: AllColorSemanticTokensProvider?,
+                opacities: AllOpacitySemanticTokensProvider?) {
         OL.debug("Init of OrangeThemeCheckboxComponentTokensProvider")
-        self.sizes = sizes
-        self.borders = borders
-        self.colors = colors
-        self.opacities = opacities
+        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        self.opacities = (opacities ?? OrangeThemeOpacitySemanticTokensProvider())
     }
 
     deinit { }

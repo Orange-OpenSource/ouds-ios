@@ -67,6 +67,22 @@ import OUDSTokensSemantic
 ///     OrangeTheme(bulletList: CustomBulletListComponentTokensProvider())
 /// ```
 ///
+/// It is also possible to use your own semantic tokens providers for this component tokens providers:
+///
+/// ```swift
+///     // Uses by default here:
+///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeColorSemanticTokensProvider for colors
+///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     let bulletListComponentTokensProvider = OrangeThemeBulletListComponentTokensProvider()
+///
+///     // Or use your own size, color and space semantic tokens providers (or only some)
+///     let bulletListComponentTokensProvider = OrangeThemeBulletListComponentTokensProvider(
+///                                                 sizes: CustomSizeSemanticTokensProvider(),
+///                                                 colors: CustomColorSemanticTokensProvider
+///                                                 spaces: CustomSpaceSemanticTokensProvider())
+/// ```
+///
 /// - Since: 0.10.0
 open class OrangeThemeBulletListComponentTokensProvider: AllBulletListComponentTokensProvider {
 
@@ -81,16 +97,16 @@ open class OrangeThemeBulletListComponentTokensProvider: AllBulletListComponentT
 
     /// Defines a provider of component tokens dedicated to `OUDSLink`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens
-    ///    - colors: Provider for color semantic tokens
-    ///    - spaces: Provider for space semantic tokens
-    public init(sizes: AllSizeSemanticTokensProvider,
-                colors: AllColorSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider) {
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider?,
+                colors: AllColorSemanticTokensProvider?,
+                spaces: AllSpaceSemanticTokensProvider?) {
         OL.debug("Init of OrangeThemeBulletListComponentTokensProvider")
-        self.sizes = sizes
-        self.colors = colors
-        self.spaces = spaces
+        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
     deinit { }
