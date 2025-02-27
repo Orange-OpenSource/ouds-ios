@@ -189,6 +189,8 @@ class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentToken
 // Etc.
 ```
 
+You can instead of overriding existing semantic tokens provider implement your own provider but it will impy to implement maybe hundreds of tokens. Your own provider must match the suitable signature.
+
 Then define your own theme class and assign the providers you want to override. If some are missing, default implementation will be used.
 
 ```swift
@@ -207,6 +209,7 @@ class YourAppTheme: OrangeTheme {
                    sizes: YourAppThemeSizeTokensProvider(),
                    spaces: YourAppThemeSpaceTokensProvider(),
                    button: YourAppThemeButtonComponentTokensProvider,
+                   // Etc. ...
     }
 }
 ```
