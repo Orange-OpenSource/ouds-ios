@@ -65,6 +65,22 @@ import OUDSTokensSemantic
 ///     OrangeTheme(link: CustomLinkComponentTokensProvider())
 /// ```
 ///
+/// It is also possible to use your own semantic tokens providers for this component tokens providers:
+///
+/// ```swift
+///     // Uses by default here:
+///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeColorSemanticTokensProvider for colors
+///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     let linkComponentTokensProvider = OrangeThemeLinkComponentTokensProvider()
+///
+///     // Or use your own size, color and space semantic tokens providers (or only some)
+///     let linkComponentTokensProvider = OrangeThemeLinkComponentTokensProvider(
+///                                                 sizes: CustomSizeSemanticTokensProvider(),
+///                                                 colors: CustomColorSemanticTokensProvider(),
+///                                                 space: CustomSpaceSemanticTokensProvider())
+/// ```
+///
 /// - Since: 0.9.0
 open class OrangeThemeLinkComponentTokensProvider: AllLinkComponentTokensProvider {
 
@@ -79,16 +95,16 @@ open class OrangeThemeLinkComponentTokensProvider: AllLinkComponentTokensProvide
 
     /// Defines a provider of component tokens dedicated to `OUDSLink`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens
-    ///    - colors: Provider for color semantic tokens
-    ///    - spaces: Provider for space semantic tokens
-    public init(sizes: AllSizeSemanticTokensProvider,
-                colors: AllColorSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider) {
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                colors: AllColorSemanticTokensProvider? = nil,
+                spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeLinkComponentTokensProvider")
-        self.sizes = sizes
-        self.colors = colors
-        self.spaces = spaces
+        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
     deinit { }

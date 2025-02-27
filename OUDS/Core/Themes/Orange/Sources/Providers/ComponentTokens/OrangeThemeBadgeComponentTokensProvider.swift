@@ -63,6 +63,17 @@ import OUDSTokensSemantic
 ///     OrangeTheme(badge: CustomBadgeComponentTokensProvider())
 /// ```
 ///
+/// It is also possible to use your own semantic tokens providers for this component tokens providers:
+///
+/// ```swift
+///     // Uses by default here:
+///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider()
+///
+///     // Or use your own size semantic tokens provider
+///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider(sizes: CustomeSizeSemanticTokensProvider())
+/// ```
+///
 /// - Since: 0.10.0
 open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvider {
 
@@ -70,10 +81,10 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
     public let sizes: AllSizeSemanticTokensProvider
 
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
-    /// - Parameter sizes: Provider for size semantic tokens
-    public init(sizes: AllSizeSemanticTokensProvider) {
+    /// - Parameter sizes: Provider for size semantic tokens, if nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeBadgeComponentTokensProvider")
-        self.sizes = sizes
+        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
     }
 
     deinit { }

@@ -26,7 +26,7 @@ final class MockThemeSkeletonComponentTokenProvider: OrangeThemeSkeletonComponen
 
     static let mockThemeSkeletonColor = MultipleColorSemanticTokens("#00FF00")
 
-    override public init(colors: AllColorSemanticTokensProvider) {
+    override public init(colors: AllColorSemanticTokensProvider?) {
         super.init(colors: colors)
     }
 

@@ -30,10 +30,10 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     static let mockThemeChipSpace: DimensionRawToken = 218
     static let mockThemeChipColor = MultipleColorSemanticTokens("#00FF00")
 
-    override public init(sizes: AllSizeSemanticTokensProvider,
-                         borders: AllBorderSemanticTokensProvider,
-                         colors: AllColorSemanticTokensProvider,
-                         spaces: AllSpaceSemanticTokensProvider) {
+    override public init(sizes: AllSizeSemanticTokensProvider?,
+                         borders: AllBorderSemanticTokensProvider?,
+                         colors: AllColorSemanticTokensProvider?,
+                         spaces: AllSpaceSemanticTokensProvider?) {
         super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
     }
 
