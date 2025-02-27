@@ -107,10 +107,10 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider?,
-                borders: AllBorderSemanticTokensProvider?,
-                colors: AllColorSemanticTokensProvider?,
-                spaces: AllSpaceSemanticTokensProvider?) {
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                borders: AllBorderSemanticTokensProvider? = nil,
+                colors: AllColorSemanticTokensProvider? = nil,
+                spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeChipComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())

@@ -30,10 +30,10 @@ final class MockThemeCheckboxComponentTokenProvider: OrangeThemeCheckboxComponen
     static let mockThemeCheckboxOpacity: OpacitySemanticToken = 0.007
     static let mockThemeCheckboxColor = MultipleColorSemanticTokens("#FF0000")
 
-    override public init(sizes: AllSizeSemanticTokensProvider,
-                         borders: AllBorderSemanticTokensProvider,
-                         colors: AllColorSemanticTokensProvider,
-                         opacities: AllOpacitySemanticTokensProvider) {
+    override public init(sizes: AllSizeSemanticTokensProvider?,
+                         borders: AllBorderSemanticTokensProvider?,
+                         colors: AllColorSemanticTokensProvider?,
+                         opacities: AllOpacitySemanticTokensProvider?) {
         super.init(sizes: sizes,
                    borders: borders,
                    colors: colors,

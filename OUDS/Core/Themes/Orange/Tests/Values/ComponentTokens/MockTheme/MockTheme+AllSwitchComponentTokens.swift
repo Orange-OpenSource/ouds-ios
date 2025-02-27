@@ -28,9 +28,9 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
     static let mockThemeSwitchSpace: DimensionRawToken = 218
     static let mockThemeSwitchColor = MultipleColorSemanticTokens("#00FF00")
 
-    override public init(sizes: AllSizeSemanticTokensProvider,
-                         colors: AllColorSemanticTokensProvider,
-                         spaces: AllSpaceSemanticTokensProvider) {
+    override public init(sizes: AllSizeSemanticTokensProvider?,
+                         colors: AllColorSemanticTokensProvider?,
+                         spaces: AllSpaceSemanticTokensProvider?) {
         super.init(sizes: sizes, colors: colors, spaces: spaces)
     }
 

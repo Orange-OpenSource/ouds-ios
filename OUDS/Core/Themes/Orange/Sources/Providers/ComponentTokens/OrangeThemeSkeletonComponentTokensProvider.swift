@@ -82,7 +82,7 @@ open class OrangeThemeSkeletonComponentTokensProvider: AllSkeletonComponentToken
 
     /// Defines a provider of component tokens dedicated to `OUDSSkeleton`
     /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
-    public init(colors: AllColorSemanticTokensProvider?) {
+    public init(colors: AllColorSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeSkeletonComponentTokensProvider")
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
     }

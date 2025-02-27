@@ -109,10 +109,10 @@ open class OrangeThemeCheckboxComponentTokensProvider: AllCheckboxComponentToken
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - opacities: Provider for opacitiy semantic tokens. If nil, a default one will be used (``OrangeThemeOpacitySemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider?,
-                borders: AllBorderSemanticTokensProvider?,
-                colors: AllColorSemanticTokensProvider?,
-                opacities: AllOpacitySemanticTokensProvider?) {
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                borders: AllBorderSemanticTokensProvider? = nil,
+                colors: AllColorSemanticTokensProvider? = nil,
+                opacities: AllOpacitySemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeCheckboxComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())

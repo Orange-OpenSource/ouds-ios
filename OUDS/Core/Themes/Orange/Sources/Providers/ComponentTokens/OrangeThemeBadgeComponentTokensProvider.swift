@@ -82,7 +82,7 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
 
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
     /// - Parameter sizes: Provider for size semantic tokens, if nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider?) {
+    public init(sizes: AllSizeSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeBadgeComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
     }

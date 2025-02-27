@@ -99,9 +99,9 @@ open class OrangeThemeListItemComponentTokensProvider: AllListItemComponentToken
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider?,
-                colors: AllColorSemanticTokensProvider?,
-                spaces: AllSpaceSemanticTokensProvider?) {
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                colors: AllColorSemanticTokensProvider? = nil,
+                spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeListItemComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())

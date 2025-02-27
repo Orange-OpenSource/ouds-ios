@@ -27,8 +27,8 @@ final class MockThemeBreadcrumbComponentTokenProvider: OrangeThemeBreadcrumbComp
     static let mockThemeBreadcrumbSize: DimensionRawToken = 118
     static let mockThemeBreadcrumbSpace: DimensionRawToken = 218
 
-    override public init(sizes: AllSizeSemanticTokensProvider,
-                         spaces: AllSpaceSemanticTokensProvider) {
+    override public init(sizes: AllSizeSemanticTokensProvider?,
+                         spaces: AllSpaceSemanticTokensProvider?) {
         super.init(sizes: sizes, spaces: spaces)
     }
 
