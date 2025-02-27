@@ -69,6 +69,24 @@ import OUDSTokensSemantic
 ///     OrangeTheme(button: CustomButtonComponentTokensProvider())
 /// ```
 ///
+/// It is also possible to use your own semantic tokens providers for this component tokens providers:
+///
+/// ```swift
+///     // Uses by default here:
+///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeBorderSemanticTokensProvider for borders
+///     // - OrangeThemeColorSemanticTokensProvider for colors
+///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     let buttonComponentTokensProvider = OrangeThemeButtonComponentTokensProvider()
+///
+///     // Or use your own size, borders, colors and space semantic tokens providers (or only some)
+///     let buttonComponentTokensProvider = OrangeThemeButtonComponentTokensProvider(
+///                                                 sizes: CustomSizeSemanticTokensProvider(),
+///                                                 borders: CustomBorderSemanticTokensProvider
+///                                                 colors: CustomColorSemanticTokensProvider
+///                                                 spaces: CustomSpaceSemanticTokensProvider())
+/// ```
+///
 /// - Since: 0.9.0
 open class OrangeThemeButtonComponentTokensProvider: AllButtonComponentTokensProvider {
 
@@ -86,19 +104,19 @@ open class OrangeThemeButtonComponentTokensProvider: AllButtonComponentTokensPro
 
     /// Defines a provider of component tokens dedicated to `OUDSButton`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens
-    ///    - borders: Provider for border semantic tokens
-    ///    - colors: Provider for color semantic tokens
-    ///    - spaces: Provider for space semantic tokens
-    public init(sizes: AllSizeSemanticTokensProvider,
-                borders: AllBorderSemanticTokensProvider,
-                colors: AllColorSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider) {
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                borders: AllBorderSemanticTokensProvider? = nil,
+                colors: AllColorSemanticTokensProvider? = nil,
+                spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeButtonComponentTokensProvider")
-        self.sizes = sizes
-        self.borders = borders
-        self.colors = colors
-        self.spaces = spaces
+        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
     deinit { }

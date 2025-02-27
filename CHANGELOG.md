@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Initialization of component tokens providers
 - [Library] Initialization of themes
 
 ### Fixed

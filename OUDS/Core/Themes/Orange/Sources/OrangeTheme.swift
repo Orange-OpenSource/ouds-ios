@@ -54,10 +54,15 @@ import OUDSTokensSemantic
 ///    let colors = YourOwnColorSemanticTokensProvider()
 ///
 ///    // Some providers need other providers to use their tokens
-///    let button = OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+///    let button = OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
 ///
-///    // Define in the end your theme by overriding some providers
-///    let yourOwnOrangeTheme = OrangeTheme(colors: colors, borders: borders, sizes: sizes, spaces: spaces, button: button)
+///    // But you can also use the providers as they are without assigning semantic tokens providers
+///    // and just use the default ones
+///    let badge = OrangeThemeBadgeComponentTokensProvider()
+///
+///    // Define in the end your theme by overriding some providers.
+///    // YOu can override all providers, or only some, or just keep the theme as is.
+///    let yourOwnOrangeTheme = OrangeTheme(colors: colors, borders: borders, sizes: sizes, spaces: spaces, button: button, badge: badge)
 ///
 /// ```
 ///

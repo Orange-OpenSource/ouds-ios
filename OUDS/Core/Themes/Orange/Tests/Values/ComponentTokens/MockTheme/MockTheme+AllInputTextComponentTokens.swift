@@ -28,9 +28,9 @@ final class MockThemeInputTextComponentTokenProvider: OrangeThemeInputTextCompon
     static let mockThemeInputTextSpace: DimensionRawToken = 218
     static let mockThemeInputTextColor = MultipleColorSemanticTokens("#00FF00")
 
-    override public init(sizes: AllSizeSemanticTokensProvider,
-                         colors: AllColorSemanticTokensProvider,
-                         spaces: AllSpaceSemanticTokensProvider) {
+    override public init(sizes: AllSizeSemanticTokensProvider?,
+                         colors: AllColorSemanticTokensProvider?,
+                         spaces: AllSpaceSemanticTokensProvider?) {
         super.init(sizes: sizes, colors: colors, spaces: spaces)
     }
 
