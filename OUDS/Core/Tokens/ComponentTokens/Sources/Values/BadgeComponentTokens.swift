@@ -48,7 +48,7 @@ public protocol BadgeComponentTokens {
     var badgeSizeMinWidthSmall: SizeSemanticToken { get }
 
     // MARK: - Border
-    
+
     var badgeBorderRadiusPill: BorderRadiusSemanticToken { get }
 
     // MARK: - Spaces

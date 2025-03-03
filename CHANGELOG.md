@@ -6,11 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.11.0...develop)
 
+#### Added
+
+- [Library] `colorDecorativeNeutral*` color semantic tokens (tokens library v0.6.1)
+
 ### Changed
 
+- [Library] `Color` semantic tokens (tokens library v0.6.1)
+- [Library] `Badge`, `Chip` component tokens (tokens library v0.6.1)
 - [Library] Initialization of component tokens providers
 - [Library] Initialization of themes
-- [Library] `Badge`, `Chip` component tokens (tokens library v0.6.1)
 
 ### Fixed
 

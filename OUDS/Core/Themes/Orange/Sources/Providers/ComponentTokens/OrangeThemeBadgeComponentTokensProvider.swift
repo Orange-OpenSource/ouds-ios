@@ -85,10 +85,10 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
 
     /// Provider of border semantic tokens to use for badge borders
     public let borders: AllBorderSemanticTokensProvider
-    
+
     /// Provider of spaces semantic tokens to use for badge spaces
     public let spaces: AllSpaceSemanticTokensProvider
-    
+
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens, if nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
