@@ -715,6 +715,24 @@
         }
       }
     },
+    "app_components_common_helperText_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d’aide"
+          }
+        }
+      }
+    },
     "app_components_common_icon_label" : {
       "comment" : "Component - Checkbox",
       "localizations" : {
@@ -746,6 +764,24 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icône + texte"
+          }
+        }
+      }
+    },
+    "app_components_common_labelText_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
           }
         }
       }
