@@ -15,15 +15,8 @@
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "OUDSThemesInverse-Tests",
-        "name" : "OUDSThemesInverse-Tests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:..",
-        "identifier" : "OUDSFoundations-Tests",
-        "name" : "OUDSFoundations-Tests"
+        "identifier" : "OUDSComponents-Tests",
+        "name" : "OUDSComponents-Tests"
       }
     },
     {
@@ -36,8 +29,8 @@
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "OUDSTokensSemantic-Tests",
-        "name" : "OUDSTokensSemantic-Tests"
+        "identifier" : "OUDSThemesInverse-Tests",
+        "name" : "OUDSThemesInverse-Tests"
       }
     },
     {
@@ -45,6 +38,20 @@
         "containerPath" : "container:..",
         "identifier" : "OUDSThemesOrange-Tests",
         "name" : "OUDSThemesOrange-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "OUDSTokensSemantic-Tests",
+        "name" : "OUDSTokensSemantic-Tests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..",
+        "identifier" : "OUDSFoundations-Tests",
+        "name" : "OUDSFoundations-Tests"
       }
     }
   ],

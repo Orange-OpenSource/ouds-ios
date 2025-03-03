@@ -54,7 +54,7 @@ struct ComponentConfigurationView<Component, Configuration>: View where Componen
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             componentView(configuration)
-            // No padding here, the component erea keep all the frame horizontaly
+            // No padding here, the component area keeps all the frame horizontaly
 
             DesignToolboxConfiguration {
                 configurationView(configuration)
