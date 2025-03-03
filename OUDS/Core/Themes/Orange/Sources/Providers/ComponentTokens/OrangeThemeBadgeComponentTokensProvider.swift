@@ -70,21 +70,37 @@ import OUDSTokensSemantic
 ///     // - OrangeThemeSizeSemanticTokensProvider for sizes
 ///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider()
 ///
-///     // Or use your own size semantic tokens provider
-///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider(sizes: CustomeSizeSemanticTokensProvider())
+///     // Or use your own size, border and space semantic tokens provider
+///     let badgeComponentTokensProvider = OrangeThemeBadgeComponentTokensProvider(
+///                     sizes: CustomSizeSemanticTokensProvider(),
+///                     borders: CustomBorderSemanticTokensProvider(),
+///                     spaces: CustomSpaceSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0
 open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvider {
 
-    /// Provider of size semantic tokens to use for link sizes
+    /// Provider of size semantic tokens to use for badge sizes
     public let sizes: AllSizeSemanticTokensProvider
 
+    /// Provider of border semantic tokens to use for badge borders
+    public let borders: AllBorderSemanticTokensProvider
+    
+    /// Provider of spaces semantic tokens to use for badge spaces
+    public let spaces: AllSpaceSemanticTokensProvider
+    
     /// Defines a provider of component tokens dedicated to `OUDSBadge`
-    /// - Parameter sizes: Provider for size semantic tokens, if nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
-    public init(sizes: AllSizeSemanticTokensProvider? = nil) {
+    /// - Parameters:
+    ///    - sizes: Provider for size semantic tokens, if nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - borders: Provider for border semantic tokens, if nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                borders: AllBorderSemanticTokensProvider? = nil,
+                spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeBadgeComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
+        self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
     deinit { }

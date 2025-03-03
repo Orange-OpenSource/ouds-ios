@@ -26,18 +26,35 @@ import OUDSTokensSemantic
 /// - Since: 0.10.0
 public protocol BadgeComponentTokens {
 
-    // MARK: - Dimensions
-
-    var badgeNotificationMinWidthL: DimensionRawToken { get }
-    var badgeNotificationMinWidthM: DimensionRawToken { get }
-    var badgeNotificationMinWidthS: DimensionRawToken { get }
-
     // MARK: - Sizes
 
-    var badgeSizeL: SizeSemanticToken { get }
-    var badgeSizeM: SizeSemanticToken { get }
-    var badgeSizeS: SizeSemanticToken { get }
-    var badgeSizeXs: SizeSemanticToken { get }
+    var badgeSizeMaxHeightExtraSmall: SizeSemanticToken { get }
+    var badgeSizeMaxHeightLarge: SizeSemanticToken { get }
+    var badgeSizeMaxHeightMedium: SizeSemanticToken { get }
+    var badgeSizeMaxHeightSmall: SizeSemanticToken { get }
+    var badgeSizeMaxWidthExtraSmall: SizeSemanticToken { get }
+    var badgeSizeMaxWidthLargeCount: SizeSemanticToken { get }
+    var badgeSizeMaxWidthLargeDot: SizeSemanticToken { get }
+    var badgeSizeMaxWidthMediumCount: SizeSemanticToken { get }
+    var badgeSizeMaxWidthMediumDot: SizeSemanticToken { get }
+    var badgeSizeMaxWidthSmall: SizeSemanticToken { get }
+    var badgeSizeMinHeightExtraSmall: SizeSemanticToken { get }
+    var badgeSizeMinHeightLarge: SizeSemanticToken { get }
+    var badgeSizeMinHeightMedium: SizeSemanticToken { get }
+    var badgeSizeMinHeightSmall: SizeSemanticToken { get }
+    var badgeSizeMinWidthExtraSmall: SizeSemanticToken { get }
+    var badgeSizeMinWidthLarge: SizeSemanticToken { get }
+    var badgeSizeMinWidthMedium: SizeSemanticToken { get }
+    var badgeSizeMinWidthSmall: SizeSemanticToken { get }
+
+    // MARK: - Border
+    
+    var badgeBorderRadiusPill: BorderRadiusSemanticToken { get }
+
+    // MARK: - Spaces
+
+    var badgeSpacePaddingInlineLarge: SpaceSemanticToken { get }
+    var badgeSpacePaddingInlineMedium: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
