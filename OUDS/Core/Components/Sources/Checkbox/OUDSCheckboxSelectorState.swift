@@ -40,11 +40,11 @@ public enum OUDSCheckboxSelectorState {
     var a11yDescription: String {
         switch self {
         case .selected:
-            return "app_components_checkbox_selectorSelected_a11y"
+            return "core_checkbox_selector_selected_a11y"
         case .unselected:
-            return "app_components_checkbox_selectorUnselected_a11y"
+            return "core_checkbox_selector_undeterminate_a11y"
         case .undeterminate:
-            return "app_components_checkbox_selectorUndeterminate_a11y"
+            return "core_checkbox_selector_unselected_a11y"
         }
     }
 }

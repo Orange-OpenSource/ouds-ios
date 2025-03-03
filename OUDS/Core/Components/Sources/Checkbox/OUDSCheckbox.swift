@@ -98,8 +98,8 @@ public struct OUDSCheckbox: View {
     private func a11yLabel(isEnabled: Bool) -> String {
         let selectorDescription: String = selectorState.a11yDescription.localized()
         let stateDescription = isEnabled ?
-        "app_components_checkbox_componentEnabled_a11y".localized()
-        : "app_components_checkbox_componentDisabled_a11y".localized()
+        "core_checkbox_enabled_a11y".localized()
+        : "core_checkbox_disabled_a11y".localized()
 
         let result = "\(selectorDescription), \(stateDescription)"
         return result

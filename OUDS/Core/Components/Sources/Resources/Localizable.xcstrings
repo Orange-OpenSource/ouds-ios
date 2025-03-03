@@ -4,7 +4,7 @@
     "" : {
 
     },
-    "lib_components_checkbox_componentDisabled_a11y" : {
+    "core_checkbox_disabled_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -22,7 +22,7 @@
         }
       }
     },
-    "lib_components_checkbox_componentEnabled_a11y" : {
+    "core_checkbox_enabled_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -40,7 +40,7 @@
         }
       }
     },
-    "lib_components_checkbox_componentReadOnly_a11y" : {
+    "core_checkbox_readOnly_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -58,7 +58,7 @@
         }
       }
     },
-    "lib_components_checkbox_selectorSelected_a11y" : {
+    "core_checkbox_selector_selected_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -76,7 +76,7 @@
         }
       }
     },
-    "lib_components_checkbox_selectorUndeterminate_a11y" : {
+    "core_checkbox_selector_undeterminate_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -88,13 +88,13 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Undéterminé"
+            "state" : "needs_review",
+            "value" : "Non sélectionné"
           }
         }
       }
     },
-    "lib_components_checkbox_selectorUnselected_a11y" : {
+    "core_checkbox_selector_unselected_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -106,8 +106,8 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Non sélectionné"
+            "state" : "needs_review",
+            "value" : "Undéterminé"
           }
         }
       }

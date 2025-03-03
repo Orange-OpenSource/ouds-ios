@@ -171,10 +171,10 @@ public struct OUDSCheckboxItem: View {
     private func a11yLabel(isReadOnly: Bool, isEnabled: Bool, labelText: String? = nil, helperText: String? = nil) -> String {
         let selectorDescription: String = selectorState.a11yDescription.localized()
         let stateDescription: String = isReadOnly
-        ? "app_components_checkbox_componentReadOnly_a11y".localized()
+        ? "core_checkbox_readOnly_a11y".localized()
         : (isEnabled
-           ? "app_components_checkbox_componentEnabled_a11y".localized()
-           : "app_components_checkbox_componentDisabled_a11y".localized())
+           ? "core_checkbox_enabled_a11y".localized()
+           : "core_checkbox_disabled_a11y".localized())
         let result = "\(selectorDescription), \(stateDescription), \(labelText ?? ""), \(helperText ?? "")"
         return result
     }

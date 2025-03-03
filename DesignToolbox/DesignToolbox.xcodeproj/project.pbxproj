@@ -126,6 +126,7 @@
 		513442172D75B9E1000B5DE4 /* DesignToolboxBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513442152D75B9E1000B5DE4 /* DesignToolboxBackgroundModifier.swift */; };
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
+		514D02FC2D75F45F00622692 /* OUDSCheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */; };
 		519251EE2D020B8A003FD1F6 /* DesignToolboxElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543152CA17275001187EA /* DesignToolboxElement.swift */; };
 		519251EF2D020B8A003FD1F6 /* DesignToolboxElementPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */; };
 		519251F02D020BA6003FD1F6 /* DesignToolboxElementsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */; };
@@ -332,6 +333,7 @@
 		513442052D75B880000B5DE4 /* CheckboxElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxElements.swift; sourceTree = "<group>"; };
 		513442152D75B9E1000B5DE4 /* DesignToolboxBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxBackgroundModifier.swift; sourceTree = "<group>"; };
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSCheckboxUITests.swift; sourceTree = "<group>"; };
 		51952A702D3F9D710068B807 /* DesignToolboxTokenIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTokenIllustration.swift; sourceTree = "<group>"; };
 		51952A732D3F9D840068B807 /* DesignToolboxTokenIllustrationBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTokenIllustrationBackground.swift; sourceTree = "<group>"; };
 		51952A7B2D3FA1490068B807 /* OUDSTokensBorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensBorderUITests.swift; sourceTree = "<group>"; };
@@ -757,6 +759,7 @@
 			isa = PBXGroup;
 			children = (
 				51952A912D3FA26B0068B807 /* OUDSButtonUITests.swift */,
+				514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */,
 				07304A4A2D427146009320BA /* OUDSLinkUITests.swift */,
 			);
 			path = Components;
@@ -1144,6 +1147,7 @@
 				513442092D75B880000B5DE4 /* CheckboxItemPage.swift in Sources */,
 				5134420A2D75B880000B5DE4 /* CheckboxItemElement.swift in Sources */,
 				5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */,
+				514D02FC2D75F45F00622692 /* OUDSCheckboxUITests.swift in Sources */,
 				5134420C2D75B880000B5DE4 /* CheckboxElements.swift in Sources */,
 				5134420D2D75B880000B5DE4 /* CheckboxlItemConfiguration.swift in Sources */,
 				6DB260DD2CD0F01F0091F72E /* NamedSpace+Scaled.swift in Sources */,

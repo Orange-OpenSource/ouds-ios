@@ -25,7 +25,7 @@ import XCTest
 // MARK: - Test Cases
 
 /// Tests the UI rendering of the `OUDSButton` for each parameter
-final class OUDSComponentButtonUITests: XCTestCase {
+final class OUDSButtonUITests: XCTestCase {
 
     /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllButtonsOrangeThemeLight() {
