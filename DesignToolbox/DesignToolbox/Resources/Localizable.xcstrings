@@ -828,13 +828,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "If error"
+            "value" : "Error"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si erreur"
+            "value" : "Erreur"
           }
         }
       }

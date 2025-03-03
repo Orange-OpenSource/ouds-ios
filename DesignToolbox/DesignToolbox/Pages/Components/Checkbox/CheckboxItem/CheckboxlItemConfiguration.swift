@@ -53,9 +53,13 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var labelTextContent: String
+    @Published var labelTextContent: String {
+        didSet { updateCode() }
+    }
 
-    @Published var helperTextContent: String
+    @Published var helperTextContent: String {
+        didSet { updateCode() }
+    }
 
     // MARK: - Initializer
 
@@ -79,7 +83,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItem(state: $state, labelText: \"Label\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSCheckboxItem(state: $state, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
