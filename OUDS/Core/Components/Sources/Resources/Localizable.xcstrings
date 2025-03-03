@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "lib_components_checkbox_componentDisabled_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
@@ -108,6 +111,12 @@
           }
         }
       }
+    },
+    "TODO: Add radio selector here" : {
+
+    },
+    "TODO: Add switch selector here" : {
+
     }
   },
   "version" : "1.0"

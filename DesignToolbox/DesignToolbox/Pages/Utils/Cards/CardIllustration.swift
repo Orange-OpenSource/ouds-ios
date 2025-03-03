@@ -28,13 +28,9 @@ struct CardIllustration: View {
         HStack {
             Spacer()
             icon
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 88, height: 88, alignment: .center)
-                .clipped()
             Spacer()
         }
-        .padding(.vertical, 53)
+        .frame(height: 184, alignment: .center)
         .accessibilityElement(children: .combine)
         .accessibilityRemoveTraits(.isImage)
         .accessibilityHidden(true)

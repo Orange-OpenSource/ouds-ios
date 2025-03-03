@@ -504,6 +504,234 @@
         }
       }
     },
+    "app_components_checkbox_controlItem_description_text" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les cases à cocher permettent aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
+          }
+        }
+      }
+    },
+    "app_components_checkbox_controlItem_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Case à cocher enrichie"
+          }
+        }
+      }
+    },
+    "app_components_checkbox_description_text" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkboxes allows users to select one or multiple options from a list, toggle settings on or off, or confirm an action."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les cases à cocher permettent aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
+          }
+        }
+      }
+    },
+    "app_components_checkbox_helperText_label" : {
+      "comment" : "Component - Checkbox",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d’aide"
+          }
+        }
+      }
+    },
+    "app_components_checkbox_helperText_text" : {
+      "comment" : "Component - Checkbox",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d’aide"
+          }
+        }
+      }
+    },
+    "app_components_checkbox_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkboxes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cases à cocher"
+          }
+        }
+      }
+    },
+    "app_components_checkbox_label_text" : {
+      "comment" : "Component - Checkbox",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "app_components_checkbox_layout_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disposition"
+          }
+        }
+      }
+    },
+    "app_components_checkbox_selection_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélection"
+          }
+        }
+      }
+    },
+    "app_components_checkbox_selectorOnly_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selector only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Case à cocher seule"
+          }
+        }
+      }
+    },
+    "app_components_common_divider_label" : {
+      "comment" : "Component screen - Common",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur"
+          }
+        }
+      }
+    },
+    "app_components_common_editContent_label" : {
+      "comment" : "Component - Checkbox",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modify content"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier contenu"
+          }
+        }
+      }
+    },
+    "app_components_common_icon_label" : {
+      "comment" : "Component - Checkbox",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône"
+          }
+        }
+      }
+    },
     "app_components_common_iconAndTextLayout_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
@@ -554,6 +782,58 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sur fond coloré"
+          }
+        }
+      }
+    },
+    "app_components_common_onError_label" : {
+      "comment" : "Component screen - Common",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "If error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si erreur"
+          }
+        }
+      }
+    },
+    "app_components_common_orientation_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Orientation"
+          }
+        }
+      }
+    },
+    "app_components_common_readOnly_label" : {
+      "comment" : "Component screen - Common",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecture seule"
           }
         }
       }
