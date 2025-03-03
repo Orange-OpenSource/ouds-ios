@@ -6,12 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.11.0...develop)
 
-#### Added
-
-- [Library] `colorDecorativeNeutral*` color semantic tokens (tokens library v0.6.1)
 ### Added
 
 - [Library] Checkbox component ([#264](https://github.com/Orange-OpenSource/ouds-ios/issues/264))
+- [Library] `colorDecorativeNeutral*` color semantic tokens (tokens library v0.6.1)
 
 ### Changed
 
