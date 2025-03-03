@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "shouldTranslate" : false
     },
     "core_checkbox_disabled_a11y" : {
       "comment" : "Checkbox",
@@ -113,10 +113,10 @@
       }
     },
     "TODO: Add radio selector here" : {
-
+      "shouldTranslate" : false
     },
     "TODO: Add switch selector here" : {
-
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"
