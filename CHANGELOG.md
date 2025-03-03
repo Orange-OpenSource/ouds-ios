@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Library] Initialization of component tokens providers
 - [Library] Initialization of themes
-- [Library] `Badge` component tokens (tokens library v0.6.1)
+- [Library] `Badge`, `Chip` component tokens (tokens library v0.6.1)
 
 ### Fixed
 

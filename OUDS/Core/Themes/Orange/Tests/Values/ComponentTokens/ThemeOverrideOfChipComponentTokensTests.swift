@@ -197,9 +197,4 @@ struct ThemeOverrideOfChipComponentTokensTests {
         #expect(inheritedTheme.chip.chipSpaceColumnGapColumnGap != abstractTheme.chip.chipSpaceColumnGapColumnGap)
         #expect(inheritedTheme.chip.chipSpaceColumnGapColumnGap == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
     }
-
-    @Test func inheritedThemeCanOverrideChipComponentTokenSpacePaddingStackPaddingBlock() throws {
-        #expect(inheritedTheme.chip.chipSpacePaddingStackPaddingBlock != abstractTheme.chip.chipSpacePaddingStackPaddingBlock)
-        #expect(inheritedTheme.chip.chipSpacePaddingStackPaddingBlock == MockThemeChipComponentTokenProvider.mockThemeChipSpace)
-    }
 }
