@@ -35,7 +35,7 @@ import OUDSTokensSemantic
 ///
 ///         override var listItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension450 }
 ///
-///         override var listItemColorBgFocus: MultipleColorSemanticTokens { colors.colorDecorativeNeutralDefault }
+///         override var listItemColorBgFocus: MultipleColorSemanticTokens { colors.colorDecorativeAccent5Emphasized }
 ///
 ///         override var listItemSpaceInset: SpaceSemanticToken { spaces.spaceRowGapNone }
 ///         // ...

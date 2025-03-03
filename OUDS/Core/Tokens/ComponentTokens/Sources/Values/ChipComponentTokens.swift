@@ -69,7 +69,6 @@ public protocol ChipComponentTokens {
     var chipSpaceInsetIconOnly: SpaceSemanticToken { get }
     var chipSpacePaddingBlock: SpaceSemanticToken { get }
     var chipSpaceColumnGapColumnGap: SpaceSemanticToken { get }
-    var chipSpacePaddingStackPaddingBlock: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
