@@ -207,7 +207,10 @@ final class OUDSCheckboxUITests: XCTestCase {
         let name = "\(coloredSurfacePatern)\(layout.description.camelCase)_\(selectorState.name)_\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
-        assertSnapshot(of: hostingVC, as: .image(traits: UITraitCollection(userInterfaceStyle: interfaceStyle)), named: name, testName: testName)
+        assertIllustration(illustration,
+                           on: interfaceStyle,
+                           named: name,
+                           testName: testName)
     }
 
     // swiftlint:disable line_length
