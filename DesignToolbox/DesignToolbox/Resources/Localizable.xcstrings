@@ -198,6 +198,24 @@
         }
       }
     },
+    "app_common_configuration_label" : {
+      "comment" : "Component screen",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuration"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuration"
+          }
+        }
+      }
+    },
     "app_common_copyCode_a11y" : {
       "comment" : "Common (a11y)",
       "extractionState" : "manual",
@@ -306,62 +324,8 @@
         }
       }
     },
-    "app_component_common_configuration" : {
-      "comment" : "Component screen",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Configuration"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Configuration"
-          }
-        }
-      }
-    },
-    "app_component_common_userText_label" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte"
-          }
-        }
-      }
-    },
-    "app_component_common_userText_prompt" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enter a text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Entrez un texte"
-          }
-        }
-      }
-    },
     "app_component_emptyContent_description_text" : {
-      "comment" : "Component screen - Common",
+      "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -906,6 +870,42 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Texte uniquement"
+          }
+        }
+      }
+    },
+    "app_components_common_userText_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte"
+          }
+        }
+      }
+    },
+    "app_components_common_userText_prompt" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez un texte"
           }
         }
       }
