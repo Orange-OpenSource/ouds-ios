@@ -77,7 +77,7 @@ public struct OUDSButton: View {
 
     private enum `Type` {
         case text(String)
-        case icon(Image)
+        case icon(Image, String)
         case textAndIcon(text: String, icon: Image)
     }
 
@@ -123,11 +123,12 @@ public struct OUDSButton: View {
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
+    ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the button action
     ///    - hierarchy: The button hierarchy
     ///    - style: The button style
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, hierarchy: Hierarchy, style: Style, action: @escaping () -> Void) {
-        self.type = .icon(icon)
+    public init(icon: Image, accessibilityLabel: String, hierarchy: Hierarchy, style: Style, action: @escaping () -> Void) {
+        self.type = .icon(icon, accessibilityLabel)
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
@@ -158,7 +159,7 @@ public struct OUDSButton: View {
 
         Button(action: action) {
             switch type {
-            case let .icon(icon):
+            case let .icon(icon, _):
                 ButtonIcon(icon: icon)
             case let .text(text):
                 ButtonText(text: text)
@@ -167,6 +168,21 @@ public struct OUDSButton: View {
             }
         }
         .buttonStyle(OUDSButtonStyle(hierarchy: hierarchy, style: style))
+        .accessibilityLabel(accessibilityLabel)
+    }
+
+    /// Forges a string to vocalize with *Voice Over* describing the button style `loading`
+    /// or the text according to the button type. For iconOnly the `accessibilityLabel` is used,
+    /// else the button text is used.
+    private var accessibilityLabel: String {
+        if style == .loading {
+            return "core_button_loading_a11y"
+        } else {
+            switch type {
+            case .text(let text), .textAndIcon(let text, _), .icon(_, let text):
+                return text
+            }
+        }
     }
 }
 
