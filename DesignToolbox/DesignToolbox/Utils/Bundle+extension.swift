@@ -68,7 +68,7 @@ extension Bundle {
     }
 
     var tokensLibraryVersion: String {
-        "Tokens version: 0.6.1"
+        "Tokens version: 0.6.2"
     }
 
     // MARK: Private Implementation
