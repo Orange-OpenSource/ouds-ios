@@ -158,24 +158,22 @@ public struct OUDSCheckboxItem: View {
                 $selectorState.wrappedValue.toggle()
             }
         }
-        .accessibilityLabel(a11yLabel(isReadOnly: layoutData.isReadOnly, isEnabled: isEnabled, labelText: layoutData.labelText, helperText: layoutData.helperText))
+        .accessibilityLabel(a11yLabel(layoutData: layoutData))
         .buttonStyle(ControlItemStyle(selectorType: .checkBox($selectorState), layoutData: layoutData))
     }
 
-    /// Forges a string to vocalize with *Voice Over* describing the component state
-    /// - Parameters:
-    ///    - isReadOnly: True if component is in read only mode, false otherwise
-    ///    - isEnabled: True if component is enabled, false otherwise
-    ///    - labelText: The text of the label if any
-    ///    - helperText: The text of the helper if any
-    private func a11yLabel(isReadOnly: Bool, isEnabled: Bool, labelText: String? = nil, helperText: String? = nil) -> String {
+    /// Forges a string to vocalize with *Voice Over* describing the component state.
+    /// - Parameter layoutData: All data of the layout used to forge the string.
+    private func a11yLabel(layoutData: ControlItemLabel.LayoutData) -> String {
         let selectorDescription: String = selectorState.a11yDescription.localized()
-        let stateDescription: String = isReadOnly
+        let stateDescription: String = layoutData.isReadOnly
         ? "core_checkbox_readOnly_a11y".localized()
         : (isEnabled
            ? "core_checkbox_enabled_a11y".localized()
            : "core_checkbox_disabled_a11y".localized())
-        let result = "\(selectorDescription), \(stateDescription), \(labelText ?? ""), \(helperText ?? "")"
+        let errorDescription = layoutData.isError ? "core_checkbox_error_a11y".localized() : ""
+
+        let result = "\(selectorDescription), \(stateDescription), \(layoutData.labelText), \(layoutData.helperText ?? "") \(errorDescription)"
         return result
     }
 }
