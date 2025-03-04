@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Update `json` RubyGem from 2.9.0 to 2.10.1
 - [Tool] Update `SwiftFormat/CLI` pod from v0.55.3 to v0.55.5
 - [Tool] Update `SwiftLint` pod from v0.57.1 to v0.58.1
 - [Library] `Color` semantic tokens (tokens library v0.6.1)
@@ -25,6 +26,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Miscellaneous improvements ([#479](https://github.com/Orange-OpenSource/ouds-ios/issues/479))
 - [Library] Fixes for checkbox component ([#477](https://github.com/Orange-OpenSource/ouds-ios/issues/477))
 - [Library] Fix radius on button ([#472](https://github.com/Orange-OpenSource/ouds-ios/issues/472))
+
+### Security
+
+- [Tool] Update `uri` RubyGem to 0.13.2 (CVE-2025-27221) ([#6]https://github.com/Orange-OpenSource/ouds-ios/security/dependabot/6)
 
 ## [0.11.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.10.0...0.11.0) - 2025-02-20
 
