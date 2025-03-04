@@ -100,8 +100,9 @@ public struct OUDSCheckbox: View {
         let stateDescription = isEnabled ?
         "core_checkbox_enabled_a11y".localized()
         : "core_checkbox_disabled_a11y".localized()
+        let errorDescription = isError ? "core_checkbox_error_a11y".localized() : ""
 
-        let result = "\(selectorDescription), \(stateDescription)"
+        let result = "\(selectorDescription), \(stateDescription), \(errorDescription)"
         return result
     }
 }

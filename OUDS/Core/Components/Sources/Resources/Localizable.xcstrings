@@ -40,6 +40,24 @@
         }
       }
     },
+    "core_checkbox_error_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "is on errror"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "en erreur"
+          }
+        }
+      }
+    },
     "core_checkbox_readOnly_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
