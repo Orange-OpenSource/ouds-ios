@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Update `SwiftLint` pod from v0.57.1 to v0.58.1
 - [Library] `Color` semantic tokens (tokens library v0.6.1)
 - [Library] `Badge`, `Chip` component tokens (tokens library v0.6.1)
 - [Library] Initialization of component tokens providers
