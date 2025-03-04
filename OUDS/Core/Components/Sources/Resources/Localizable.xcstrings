@@ -1,8 +1,23 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
-      "shouldTranslate" : false
+    "core_button_loading_a11y" : {
+      "comment" : "Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement"
+          }
+        }
+      }
     },
     "core_checkbox_checked_a11y" : {
       "comment" : "Checkbox",
@@ -148,8 +163,13 @@
         }
       }
     },
+<<<<<<< HEAD
     "core_common_enabled_a11y" : {
       "comment" : "Common",
+=======
+    "lib_components_checkbox_componentEnabled_a11y" : {
+      "comment" : "Checkbox",
+>>>>>>> 8dfa077e0 (Add accessibility label)
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -172,6 +192,7 @@
         }
       }
     },
+<<<<<<< HEAD
     "core_common_onError_a11y" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -198,6 +219,10 @@
     },
     "core_common_selected_a11y" : {
       "comment" : "Common",
+=======
+    "lib_components_checkbox_componentReadOnly_a11y" : {
+      "comment" : "Checkbox",
+>>>>>>> 8dfa077e0 (Add accessibility label)
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -206,6 +231,21 @@
             "value" : "مُختار"
           }
         },
+<<<<<<< HEAD
+=======
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecture seule"
+          }
+        }
+      }
+    },
+    "lib_components_checkbox_selectorSelected_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+>>>>>>> 8dfa077e0 (Add accessibility label)
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -220,8 +260,13 @@
         }
       }
     },
+<<<<<<< HEAD
     "core_common_unselected_a11y" : {
       "comment" : "Common",
+=======
+    "lib_components_checkbox_selectorUndeterminate_a11y" : {
+      "comment" : "Checkbox",
+>>>>>>> 8dfa077e0 (Add accessibility label)
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -239,13 +284,18 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non sélectionné"
+            "value" : "Undéterminé"
           }
         }
       }
     },
+<<<<<<< HEAD
     "core_radio_hint_a11y" : {
       "comment" : "Radio",
+=======
+    "lib_components_checkbox_selectorUnselected_a11y" : {
+      "comment" : "Checkbox",
+>>>>>>> 8dfa077e0 (Add accessibility label)
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -263,6 +313,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
+<<<<<<< HEAD
             "value" : "Taper deux fois pour rendre %@"
           }
         }
@@ -294,6 +345,12 @@
     },
     "TODO: Add switch indicator here" : {
       "shouldTranslate" : false
+=======
+            "value" : "Non sélectionné"
+          }
+        }
+      }
+>>>>>>> 8dfa077e0 (Add accessibility label)
     }
   },
   "version" : "1.0"
