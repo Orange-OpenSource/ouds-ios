@@ -163,8 +163,7 @@ public struct OUDSCheckboxItem: View {
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.
-    /// - Parameters:
-    ///     - layoutData: All data of the layout used to forge the string.
+    /// - Parameter layoutData: All data of the layout used to forge the string.
     private func a11yLabel(layoutData: ControlItemLabel.LayoutData) -> String {
         let selectorDescription: String = selectorState.a11yDescription.localized()
         let stateDescription: String = layoutData.isReadOnly
