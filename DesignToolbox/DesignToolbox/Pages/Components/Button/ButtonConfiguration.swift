@@ -197,7 +197,7 @@ struct ButtonConfiguration: View {
             }
 
             if model.layout == .iconAndText || model.layout == .textOnly {
-                DesignToolboxTextField(text: $model.text, prompt: "app_components_common_userText_prompt".localized())
+                DesignToolboxTextField(text: $model.text, prompt: "app_component_common_userText_prompt")
             }
         }
     }
