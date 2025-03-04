@@ -21,5 +21,14 @@ gem 'json', '2.10.1'
 gem 'net-http', '0.6.0'
 gem 'xcode-install', '2.8.1'
 
+# Additional RubyGems to fix some issues or vulnerabilities
+
+# Embeded in net-http RubyGem without defined version
+# Solves CVE-2025-27221 (https://github.com/Orange-OpenSource/ouds-ios/security/dependabot/6)
+# Should be removed when net-http > 0.6.0 and CVE fixed
+gem 'uri', '1.0.3'
+
+# Magic
+
 plugins_path = File.join(File.dirname(__FILE__), 'DesignToolbox/fastlane', 'Pluginfile')
 eval_gemfile(plugins_path) if File.exist?(plugins_path)
