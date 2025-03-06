@@ -42,9 +42,7 @@ final class MockThemeBadgeComponentTokenProvider: OrangeThemeBadgeComponentToken
     override public var badgeSizeMaxHeightMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
     override public var badgeSizeMaxHeightSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
     override public var badgeSizeMaxWidthExtraSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMaxWidthLargeCount: SizeSemanticToken { Self.mockThemeBadgeSize }
     override public var badgeSizeMaxWidthLargeDot: SizeSemanticToken { Self.mockThemeBadgeSize }
-    override public var badgeSizeMaxWidthMediumCount: SizeSemanticToken { Self.mockThemeBadgeSize }
     override public var badgeSizeMaxWidthMediumDot: SizeSemanticToken { Self.mockThemeBadgeSize }
     override public var badgeSizeMaxWidthSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
     override public var badgeSizeMinHeightExtraSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
@@ -56,6 +54,7 @@ final class MockThemeBadgeComponentTokenProvider: OrangeThemeBadgeComponentToken
     override public var badgeSizeMinWidthMedium: SizeSemanticToken { Self.mockThemeBadgeSize }
     override public var badgeSizeMinWidthSmall: SizeSemanticToken { Self.mockThemeBadgeSize }
     override public var badgeBorderRadiusPill: BorderRadiusSemanticToken { Self.mockThemeBadgeBorderRadius }
+    override public var badgeSpaceRowGap: SpaceSemanticToken { Self.mockThemeBadgeSpace }
     override public var badgeSpacePaddingInlineLarge: SpaceSemanticToken { Self.mockThemeBadgeSpace }
     override public var badgeSpacePaddingInlineMedium: SpaceSemanticToken { Self.mockThemeBadgeSpace }
 }

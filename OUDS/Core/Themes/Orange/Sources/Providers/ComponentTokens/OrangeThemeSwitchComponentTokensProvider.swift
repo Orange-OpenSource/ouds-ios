@@ -33,7 +33,7 @@ import OUDSTokensSemantic
 ///
 ///         override var switchColorCursor: MultipleColorSemanticTokens { colors.colorRepositoryPositiveDefault }
 ///
-///         override var switchSpacePaddingInlineFalse: SpaceSemanticToken { spaces.spaceFixedShortest }
+///         override var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spaceFixedShortest }
 ///
 ///         override var switchSize: SizeSemanticToken { sizes.sizeIconWithLabelLargeSizeXl }
 ///         // ...

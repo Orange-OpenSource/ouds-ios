@@ -61,14 +61,14 @@ struct ThemeOverrideOfSwitchComponentTokensTests {
 
     // MARK: - Spaces
 
-    @Test func inheritedThemeCanOverrideSwitchComponentTokenSpacePaddingInlineFalse() throws {
-        #expect(inheritedTheme.switch.switchSpacePaddingInlineFalse != abstractTheme.switch.switchSpacePaddingInlineFalse)
-        #expect(inheritedTheme.switch.switchSpacePaddingInlineFalse == MockThemeSwitchComponentTokenProvider.mockThemeSwitchSpace)
+    @Test func inheritedThemeCanOverrideSwitchComponentTokenSpacePaddingInlineUnselected() throws {
+        #expect(inheritedTheme.switch.switchSpacePaddingInlineUnselected != abstractTheme.switch.switchSpacePaddingInlineUnselected)
+        #expect(inheritedTheme.switch.switchSpacePaddingInlineUnselected == MockThemeSwitchComponentTokenProvider.mockThemeSwitchSpace)
     }
 
-    @Test func inheritedThemeCanOverrideSwitchComponentTokenSpacePaddingInlineTrue() throws {
-        #expect(inheritedTheme.switch.switchSpacePaddingInlineTrue != abstractTheme.switch.switchSpacePaddingInlineTrue)
-        #expect(inheritedTheme.switch.switchSpacePaddingInlineTrue == MockThemeSwitchComponentTokenProvider.mockThemeSwitchSpace)
+    @Test func inheritedThemeCanOverrideSwitchComponentTokenSpacePaddingInlineSelected() throws {
+        #expect(inheritedTheme.switch.switchSpacePaddingInlineSelected != abstractTheme.switch.switchSpacePaddingInlineSelected)
+        #expect(inheritedTheme.switch.switchSpacePaddingInlineSelected == MockThemeSwitchComponentTokenProvider.mockThemeSwitchSpace)
     }
 
     // MARK: - Sizes
