@@ -181,7 +181,7 @@ private struct ButtonTest: View {
         case .textAndIcon:
             OUDSButton(icon: Image(decorative: "ic_heart"), text: "Button", hierarchy: hierarchy, style: style) {}
         case .icon:
-            OUDSButton(icon: Image(decorative: "ic_heart"), hierarchy: hierarchy, style: style) {}
+            OUDSButton(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Icon", hierarchy: hierarchy, style: style) {}
         }
     }
 }
