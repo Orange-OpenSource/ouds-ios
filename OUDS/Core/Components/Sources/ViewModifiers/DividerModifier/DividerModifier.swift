@@ -15,7 +15,7 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// A `ViewModifier` which will apply a specific divider under a `View` using color semantic token.
-
+///
 /// - Since: 0.12.0
 public struct DividerModifier: ViewModifier {
 

@@ -78,7 +78,7 @@ The helper is available through `View`, and tokens through the provider of the t
 
 ## Topics
 
-### Essentials
+### Components categories
 
 - <doc:Actions>
 - <doc:Navigation>
