@@ -2,63 +2,6 @@
 
 The catalog of all components provided by OUDS. It contains also `View` extensions and `ViewModifiers` to apply tokens and styles on components and higher-level views.
 
-## Overview
-
-### Buttons
-
-The ``OUDSButton`` propose layout with text only, icon only or text and icon. 
-Four hierarchies are proposed for all layouts: *default*, *strong*, *minimal* and *negative*.
-Two style are available: *default* and *loading*.
-If button is placed on colored surface using `OUDSColoredSurface`, the default colors (content, background and border) are automatically adjusted to switch to monochrom.
-A button with `OUDSButton.Hierarchy.Negative` hierarchy is not allowed as a direct or indirect child of an `OUDSColoredSurface`.
-
-```swift
-     // Icon only with default hierarchy
-     OUDSButton(hierarchy: .default, icon: Image("ic_heart")) {}
-
-     // Text only with negative hierarchy
-     OUDSButton(hierarchy: .negative, text: "Delete") {}
-```
-
-### Links
-
-The ``OUDSLink`` proposes layout with text only or text with icon.
-It also proposes layout to navigate forward or backward.
-The link can be displayed in `small` or `medium` size.
-
-```swift
-    // Text only in small size
-    OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
-
-    // Text and icon in medium size
-    OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .medium) { /* the action to process */ }
-
-    // Navigate to previous page with link in a medium size
-    OUDSLink(text: "Back", arrow: .back, size: .medium) { /* the action to process */ }
-```
-
-### Checkbox
-
-The library proposes layout to add in your views some checkboxes components, even if this type of component is not iOS-native one. 
-
-```swift
-     // A simple checkbox, with only a selector
-     OUDSCheckbox(state: $state)
-
-     // A leading checkbox with a label
-     OUDSCheckboxItem(state: $state, label: "Hello world")
-
-     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
-     // with an inverse layout
-     OUDSCheckboxItem(state: $state,
-                      labelText: "We live in a fabled world",
-                      helperText: "Of dreaming boys and wide-eyed girls",
-                      icon: Image(decorative: "ic_heart"),
-                      isInversed: true,
-                      isError: true,
-                      hasDivider: true)
-```
-
 ## Customize components
 
 ### Apply a specific shadow effect (elevation tokens)
@@ -135,9 +78,8 @@ The helper is available through `View`, and tokens through the provider of the t
 
 ## Topics
 
-### Group
+### Essentials
 
-- ``OUDSButton``
-- ``OUDSCheckbox``
-- ``OUDSCheckboxItem``
-- ``OUDSLink``
+- <doc:Actions>
+- <doc:Navigation>
+- <doc:Input>
