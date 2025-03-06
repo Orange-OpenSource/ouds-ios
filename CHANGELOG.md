@@ -52,6 +52,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Rename *selector* to *indicator* for control item absed components ([#496](https://github.com/Orange-OpenSource/ouds-ios/issues/496))
 - [Library] Checkbox component v2 ([#486](https://github.com/Orange-OpenSource/ouds-ios/issues/486))
 - [Library] Group components by category in documentation ([#484](https://github.com/Orange-OpenSource/ouds-ios/issues/484))
+- [Library] Add accessibility label to vocalize the IconOnly style ([#460](https://github.com/Orange-OpenSource/ouds-ios/issues/460))
 - [Tool] Update `json` RubyGem from 2.9.0 to 2.10.1
 - [Tool] Update `SwiftFormat/CLI` pod from v0.55.3 to v0.55.5
 - [Tool] Update `SwiftLint` pod from v0.57.1 to v0.58.1
