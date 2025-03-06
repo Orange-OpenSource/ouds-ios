@@ -17,6 +17,7 @@ import SwiftUI
 // MARK: - OUDS Checkbox Item
 
 /// The ``OUDSCheckboxItem`` proposes layouts to add in your views some checkboxes components.
+/// If you want to use a checkbox with only a selector, prefer instead ``OUDSCheckbox``.
 ///
 /// ## Layouts
 ///
@@ -24,8 +25,6 @@ import SwiftUI
 ///
 /// - **default**: the component has a leading selector, a label and optional helper texts, and an optional trailing decorative icon
 /// - **inverse**: like the *default* layout but with a trailing checkbox seelctor and a leading optional image
-///
-/// If you want to use a checkbox with only the selector, prefer instead ``OUDSCheckbox``.
 ///
 /// ## Selector states
 ///
