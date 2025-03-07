@@ -159,6 +159,7 @@ public struct OUDSCheckboxItem: View {
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(layoutData: layoutData))
+        .accessibilityValue(selectorState.a11yDescription.localized())
         .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, selectorState: selectorState))
         .buttonStyle(ControlItemStyle(selectorType: .checkBox($selectorState), layoutData: layoutData))
     }
@@ -166,12 +167,11 @@ public struct OUDSCheckboxItem: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     /// - Parameter layoutData: All data of the layout used to forge the string.
     private func a11yLabel(layoutData: ControlItemLabel.LayoutData) -> String {
-        let selectorDescription: String = selectorState.a11yDescription.localized()
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_checkbox_disabled_a11y".localized() : ""
         let errorDescription = layoutData.isError ? "core_checkbox_error_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(selectorDescription), \(stateDescription), \(layoutData.labelText), \(layoutData.helperText ?? "") \(errorDescription), \(checkboxA11yTrait)"
+        let result = "\(stateDescription), \(layoutData.labelText), \(layoutData.helperText ?? "") \(errorDescription), \(checkboxA11yTrait)"
         return result
     }
 
