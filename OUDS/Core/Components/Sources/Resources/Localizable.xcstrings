@@ -83,13 +83,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selected"
+            "value" : "Checked"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sélectionné"
+            "value" : "Coché"
           }
         }
       }
@@ -119,13 +119,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unselected"
+            "value" : "Unchecked"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non sélectionné"
+            "value" : "Non coché"
           }
         }
       }
