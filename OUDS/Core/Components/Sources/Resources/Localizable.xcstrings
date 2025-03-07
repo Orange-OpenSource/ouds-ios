@@ -130,6 +130,24 @@
         }
       }
     },
+    "core_checkbox_trait_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Case à cocher"
+          }
+        }
+      }
+    },
     "TODO: Add radio selector here" : {
       "shouldTranslate" : false
     },
