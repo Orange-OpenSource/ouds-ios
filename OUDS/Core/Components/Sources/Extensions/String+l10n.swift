@@ -14,6 +14,12 @@
 import Foundation
 import OUDSFoundations
 
+// MARK: - Operators
+
+infix operator <-
+
+// MARK: - String extension
+
 extension String {
 
     // swiftlint:disable nslocalizedstring_key
@@ -39,4 +45,21 @@ extension String {
         return NSLocalizedString(self, tableName: nil, bundle: languageBundle, value: "", comment: "")
     }
     // swiftlint:enable nslocalizedstring_key
+
+    /// Returns a localized String using `self` as wording key expected to be in localizables.
+    /// Will then inject as `String` the given `argument` inside the parameterized string.
+    /// - Parameter argument: The unique value to insert in the localized string with `self` as key
+    /// - Returns: The localized `String`
+    public func localized(with argument: CVarArg) -> String {
+        String(format: localized(), argument)
+    }
+
+    /// Just an operator to inject as `String` one argument in a localizable
+    /// - Parameters:
+    ///    - lhs: The localizable value to update
+    ///    - rhs: The value as String to inject in `lhs`
+    /// - Returns String: The final result
+    public static func <- (lhs: String, rhs: String) -> String {
+        String(format: lhs.localized(), rhs)
+    }
 }

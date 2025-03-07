@@ -89,20 +89,21 @@ public struct OUDSCheckbox: View {
         Button("") {
             $selectorState.wrappedValue.toggle()
         }
-        .accessibilityLabel(a11yLabel(isEnabled: isEnabled))
+        .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
+        .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
+        .accessibilityValue(selectorState.a11yDescription.localized())
+        .accessibilityHint(selectorState.a11yHint)
         .buttonStyle(CheckboxOnlyButtonStyle(selectorState: $selectorState.wrappedValue, isError: isError))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state
-    /// - Parameter isEnabled: True if component is enabled, false otherwise
-    private func a11yLabel(isEnabled: Bool) -> String {
-        let selectorDescription: String = selectorState.a11yDescription.localized()
-        let stateDescription = isEnabled ?
-        "core_checkbox_enabled_a11y".localized()
-        : "core_checkbox_disabled_a11y".localized()
+    /// - Parameter isDisabled: True if component is disabled, false otherwise
+    private func a11yLabel(isDisabled: Bool) -> String {
+        let stateDescription = isDisabled ? "core_checkbox_disabled_a11y".localized() : ""
         let errorDescription = isError ? "core_checkbox_error_a11y".localized() : ""
+        let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(selectorDescription), \(stateDescription), \(errorDescription)"
+        let result = "\(stateDescription) \(errorDescription) \(checkboxA11yTrait)"
         return result
     }
 }
