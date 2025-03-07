@@ -89,6 +89,7 @@ public struct OUDSCheckbox: View {
         Button("") {
             $selectorState.wrappedValue.toggle()
         }
+        .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
         .accessibilityHint(selectorState.a11yHint)
         .buttonStyle(CheckboxOnlyButtonStyle(selectorState: $selectorState.wrappedValue, isError: isError))
@@ -100,8 +101,9 @@ public struct OUDSCheckbox: View {
         let selectorDescription: String = selectorState.a11yDescription.localized()
         let stateDescription = isDisabled ? "core_checkbox_disabled_a11y".localized() : ""
         let errorDescription = isError ? "core_checkbox_error_a11y".localized() : ""
+        let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(selectorDescription), \(stateDescription), \(errorDescription)"
+        let result = "\(selectorDescription), \(stateDescription), \(errorDescription), \(checkboxA11yTrait)"
         return result
     }
 }
