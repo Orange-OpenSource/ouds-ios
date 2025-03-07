@@ -89,17 +89,16 @@ public struct OUDSCheckbox: View {
         Button("") {
             $selectorState.wrappedValue.toggle()
         }
-        .accessibilityLabel(a11yLabel(isEnabled: isEnabled))
+        .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
+        .accessibilityHint(selectorState.a11yHint)
         .buttonStyle(CheckboxOnlyButtonStyle(selectorState: $selectorState.wrappedValue, isError: isError))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state
-    /// - Parameter isEnabled: True if component is enabled, false otherwise
-    private func a11yLabel(isEnabled: Bool) -> String {
+    /// - Parameter isDisabled: True if component is disabled, false otherwise
+    private func a11yLabel(isDisabled: Bool) -> String {
         let selectorDescription: String = selectorState.a11yDescription.localized()
-        let stateDescription = isEnabled ?
-        "core_checkbox_enabled_a11y".localized()
-        : "core_checkbox_disabled_a11y".localized()
+        let stateDescription = isDisabled ? "core_checkbox_disabled_a11y".localized() : ""
         let errorDescription = isError ? "core_checkbox_error_a11y".localized() : ""
 
         let result = "\(selectorDescription), \(stateDescription), \(errorDescription)"
