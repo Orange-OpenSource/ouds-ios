@@ -58,20 +58,20 @@
         }
       }
     },
-    "core_checkbox_readOnly_a11y" : {
+    "core_checkbox_selector_hint_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Read only"
+            "value" : "Double-tap to toggle setting %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lecture seule"
+            "value" : "Taper deux fois pour rendre %@"
           }
         }
       }

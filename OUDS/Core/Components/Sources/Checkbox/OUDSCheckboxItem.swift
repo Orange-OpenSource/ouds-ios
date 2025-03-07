@@ -158,6 +158,7 @@ public struct OUDSCheckboxItem: View {
             }
         }
         .accessibilityLabel(a11yLabel(layoutData: layoutData))
+        .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, selectorState: selectorState))
         .buttonStyle(ControlItemStyle(selectorType: .checkBox($selectorState), layoutData: layoutData))
     }
 
@@ -165,14 +166,22 @@ public struct OUDSCheckboxItem: View {
     /// - Parameter layoutData: All data of the layout used to forge the string.
     private func a11yLabel(layoutData: ControlItemLabel.LayoutData) -> String {
         let selectorDescription: String = selectorState.a11yDescription.localized()
-        let stateDescription: String = layoutData.isReadOnly
-        ? "core_checkbox_readOnly_a11y".localized()
-        : (isEnabled
-           ? "core_checkbox_enabled_a11y".localized()
-           : "core_checkbox_disabled_a11y".localized())
+        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_checkbox_disabled_a11y".localized() : ""
         let errorDescription = layoutData.isError ? "core_checkbox_error_a11y".localized() : ""
 
         let result = "\(selectorDescription), \(stateDescription), \(layoutData.labelText), \(layoutData.helperText ?? "") \(errorDescription)"
         return result
+    }
+
+    /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
+    /// - Parameters:
+    ///    - isReadOnly: Flag saying wether or not the component is in *read only* mode
+    ///    - selectorState: To get the hint if component both not in *read only* mode and enabled
+    private func a11yHint(isReadOnly: Bool, selectorState: OUDSCheckboxSelectorState) -> String {
+        if isReadOnly || !isEnabled {
+            return ""
+        } else {
+            return selectorState.a11yHint
+        }
     }
 }
