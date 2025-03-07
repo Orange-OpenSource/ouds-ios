@@ -42,9 +42,9 @@ public enum OUDSCheckboxSelectorState {
         case .selected:
             return "core_checkbox_selector_selected_a11y"
         case .unselected:
-            return "core_checkbox_selector_undeterminate_a11y"
-        case .undeterminate:
             return "core_checkbox_selector_unselected_a11y"
+        case .undeterminate:
+            return "core_checkbox_selector_undeterminate_a11y"
         }
     }
 }
