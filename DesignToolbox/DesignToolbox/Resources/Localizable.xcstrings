@@ -1036,6 +1036,199 @@
         }
       }
     },
+    "app_components_radio_additionalLabelText_label" : {
+      "comment" : "Component - Radio",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Additional label text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Label supplémentaire"
+          }
+        }
+      }
+    },
+    "app_components_radio_additionalLabelText_text" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Additional label text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label supplémentaire"
+          }
+        }
+      }
+    },
+    "app_components_radio_controlItem_description_text" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radios allow users to select one option from a list."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les radios permettent aux utilisateurs de sélectionner une options dans une liste."
+          }
+        }
+      }
+    },
+    "app_components_radio_controlItem_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio enrichi"
+          }
+        }
+      }
+    },
+    "app_components_radio_description_text" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radios allows users to select an option from a list."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les radio permettent aux utilisateurs de sélectionner une option dans une liste."
+          }
+        }
+      }
+    },
+    "app_components_radio_helperText_label" : {
+      "comment" : "Component - Radio",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d’aide"
+          }
+        }
+      }
+    },
+    "app_components_radio_helperText_text" : {
+      "comment" : "Component - Radio",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d’aide"
+          }
+        }
+      }
+    },
+    "app_components_radio_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio"
+          }
+        }
+      }
+    },
+    "app_components_radio_label_text" : {
+      "comment" : "Component - Radio",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "app_components_radio_selection_label" : {
+      "comment" : "Component - Radio",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélection"
+          }
+        }
+      }
+    },
+    "app_components_radio_selectorOnly_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selector only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio seul"
+          }
+        }
+      }
+    },
     "app_tokens_border_description_text" : {
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
@@ -1791,6 +1984,9 @@
           }
         }
       }
+    },
+    "TODO" : {
+
     }
   },
   "version" : "1.0"
