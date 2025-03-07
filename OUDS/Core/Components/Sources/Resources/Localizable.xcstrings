@@ -107,7 +107,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non sélectionné"
+            "value" : "Indéterminé"
           }
         }
       }
@@ -125,7 +125,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Undéterminé"
+            "value" : "Non sélectionné"
           }
         }
       }
