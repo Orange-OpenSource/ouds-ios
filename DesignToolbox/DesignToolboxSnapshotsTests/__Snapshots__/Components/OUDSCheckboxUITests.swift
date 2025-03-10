@@ -194,9 +194,6 @@ final class OUDSCheckboxUITests: XCTestCase {
             .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
-        // Encapsulate the generated illustration in a UIHostingController for snapshot testing
-        let hostingVC = UIHostingController(rootView: illustration)
-
         // Create a unique snapshot name based on the current configuration :
         // test_<themeName>_<colorScheme>.<coloredSurfacePatern><layout>_<selectorState>_<disabledPatern> where:
         // - `coloredSurfacePatern` is empty if not on colored surface
@@ -297,6 +294,7 @@ private struct CheckboxTest: View {
         switch layout {
         case let .selectorOnly(isError):
             OUDSCheckbox(state: .constant(selectorState),
+                         accessibilityLabel: "Bazinga!",
                          isError: isError)
             .disabled(isDisabled)
         case let .default(labelText, helperText, icon, isError, hasDivider, isReadOnly):
