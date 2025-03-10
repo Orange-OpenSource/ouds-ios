@@ -73,7 +73,7 @@ private struct CheckboxItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItem(state: $model.selectorState,
+        OUDSCheckboxItem(selection: $model.selectorState,
                          labelText: model.labelTextContent,
                          helperText: helperTextContent,
                          icon: icon,
