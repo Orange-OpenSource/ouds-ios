@@ -42,9 +42,21 @@ public enum OUDSCheckboxSelectorState {
         case .selected:
             return "core_checkbox_selector_selected_a11y"
         case .unselected:
-            return "core_checkbox_selector_undeterminate_a11y"
-        case .undeterminate:
             return "core_checkbox_selector_unselected_a11y"
+        case .undeterminate:
+            return "core_checkbox_selector_undeterminate_a11y"
+        }
+    }
+
+    /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
+    var a11yHint: String {
+        switch self {
+        case .selected:
+            return "core_checkbox_selector_hint_a11y" <- "core_checkbox_selector_unselected_a11y".localized()
+        case .unselected:
+            return "core_checkbox_selector_hint_a11y" <- "core_checkbox_selector_selected_a11y".localized()
+        case .undeterminate:
+            return "core_checkbox_selector_hint_a11y" <- "core_checkbox_selector_selected_a11y".localized()
         }
     }
 }

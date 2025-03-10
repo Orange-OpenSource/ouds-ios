@@ -58,20 +58,20 @@
         }
       }
     },
-    "core_checkbox_readOnly_a11y" : {
+    "core_checkbox_selector_hint_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Read only"
+            "value" : "Double-tap to toggle setting %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lecture seule"
+            "value" : "Taper deux fois pour rendre %@"
           }
         }
       }
@@ -83,13 +83,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selected"
+            "value" : "Checked"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sélectionné"
+            "value" : "Coché"
           }
         }
       }
@@ -107,7 +107,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non sélectionné"
+            "value" : "Indéterminé"
           }
         }
       }
@@ -119,13 +119,31 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unselected"
+            "value" : "Unchecked"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Undéterminé"
+            "value" : "Non coché"
+          }
+        }
+      }
+    },
+    "core_checkbox_trait_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Case à cocher"
           }
         }
       }
