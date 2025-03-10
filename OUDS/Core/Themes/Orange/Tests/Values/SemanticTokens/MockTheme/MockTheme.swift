@@ -65,7 +65,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    inputText: MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    badge: MockThemeBadgeComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
                    controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, opacities: opacities),
+                   checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
                    fontFamily: fontFamily)
     }
 
