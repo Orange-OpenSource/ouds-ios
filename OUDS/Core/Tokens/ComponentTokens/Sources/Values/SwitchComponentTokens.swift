@@ -36,8 +36,8 @@ public protocol SwitchComponentTokens {
 
     // MARK: - Spaces
 
-    var switchSpacePaddingInlineFalse: SpaceSemanticToken { get }
-    var switchSpacePaddingInlineTrue: SpaceSemanticToken { get }
+    var switchSpacePaddingInlineUnselected: SpaceSemanticToken { get }
+    var switchSpacePaddingInlineSelected: SpaceSemanticToken { get }
 
     // MARK: - Sizes
 

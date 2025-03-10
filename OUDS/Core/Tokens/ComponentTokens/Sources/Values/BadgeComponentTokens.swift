@@ -33,9 +33,7 @@ public protocol BadgeComponentTokens {
     var badgeSizeMaxHeightMedium: SizeSemanticToken { get }
     var badgeSizeMaxHeightSmall: SizeSemanticToken { get }
     var badgeSizeMaxWidthExtraSmall: SizeSemanticToken { get }
-    var badgeSizeMaxWidthLargeCount: SizeSemanticToken { get }
     var badgeSizeMaxWidthLargeDot: SizeSemanticToken { get }
-    var badgeSizeMaxWidthMediumCount: SizeSemanticToken { get }
     var badgeSizeMaxWidthMediumDot: SizeSemanticToken { get }
     var badgeSizeMaxWidthSmall: SizeSemanticToken { get }
     var badgeSizeMinHeightExtraSmall: SizeSemanticToken { get }
@@ -53,6 +51,7 @@ public protocol BadgeComponentTokens {
 
     // MARK: - Spaces
 
+    var badgeSpaceRowGap: SpaceSemanticToken { get }
     var badgeSpacePaddingInlineLarge: SpaceSemanticToken { get }
     var badgeSpacePaddingInlineMedium: SpaceSemanticToken { get }
 }
