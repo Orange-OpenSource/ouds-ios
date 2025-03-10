@@ -40,6 +40,10 @@ import SwiftUI
 /// In addition, the ``OUDSCheckboxItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 ///
+/// ## Accessibility considerations
+///
+/// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom checkbox trait.
+///
 /// ## Forbidden by design
 ///
 /// **The design system does not allow to have both an error situation and a read only component.**

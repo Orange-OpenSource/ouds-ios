@@ -33,7 +33,13 @@ import SwiftUI
 /// In addition, the ``OUDSCheckbox`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 ///
-/// ## Case forbidden by design
+/// ## Accessibility considerations
+///
+/// Note also the component must be instanciated with a string parameter used as accessibility label.
+/// It is a good pratice (a least) to define a label for a component without text for accessibility reasons. This label will be vocalized by *Voice Over*.
+/// The vocalization tool will also use, after the label, a description of the component (if disabled, if error context), and a fake trait for checkbox.
+///
+/// ## Cases forbidden by design
 ///
 /// **The design system does not allow to have both an error situation and a disabled component.**
 ///
@@ -44,14 +50,14 @@ import SwiftUI
 ///     @Published var state: OUDSCheckboxSelectorState  = .undeterminate
 ///
 ///     // A simple checkbox, no error, not in read only mode
-///     OUDSCheckbox(state: $state)
+///     OUDSCheckbox(state: $state, accessibilityLabel: "The cake is a lie")
 ///
 ///     // A simple checkbox, but is an error context
-///     OUDSCheckbox(state: $state, isError: true)
+///     OUDSCheckbox(state: $state, accessibilityLabel: "The cake is a lie"), isError: true)
 ///
 ///     // Never disable an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckbox(state: $state, isError: true).disabled(true) // fatal error
+///     OUDSCheckbox(state: $state, accessibilityLabel: "The cake is a lie"), isError: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
@@ -64,6 +70,7 @@ public struct OUDSCheckbox: View {
     // MARK: - Properties
 
     private let isError: Bool
+    private let a11yLabel: String
 
     @Binding var selectorState: OUDSCheckboxSelectorState
     @Environment(\.isEnabled) private var isEnabled
@@ -76,12 +83,18 @@ public struct OUDSCheckbox: View {
     ///
     /// - Parameters:
     ///    - state: A binding to a property that determines wether the selector is ticked, unticked or preticked.
+    ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     public init(state: Binding<OUDSCheckboxSelectorState>,
+                accessibilityLabel: String,
                 isError: Bool = false) {
-            self._selectorState = state
-            self.isError = isError
+        if accessibilityLabel.isEmpty {
+            OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
+        self._selectorState = state
+        self.isError = isError
+        a11yLabel = accessibilityLabel
+    }
 
     // MARK: Body
 
@@ -103,7 +116,7 @@ public struct OUDSCheckbox: View {
         let errorDescription = isError ? "core_checkbox_error_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(stateDescription) \(errorDescription) \(checkboxA11yTrait)"
+        let result = "\(a11yLabel), \(stateDescription) \(errorDescription) \(checkboxA11yTrait)"
         return result
     }
 }
