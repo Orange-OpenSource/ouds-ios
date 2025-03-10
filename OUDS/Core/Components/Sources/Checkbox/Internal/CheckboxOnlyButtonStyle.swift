@@ -30,7 +30,6 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
-<<<<<<< HEAD
         ZStack {
             Color.clear
                 .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
@@ -46,12 +45,6 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
                     self.isHover = isHover
                 }
         }
-=======
-        CheckboxSelector(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
-            .onHover { isHover in
-                self.isHover = isHover
-            }
->>>>>>> aa3e14a1f (refactor: use new tokens lib (#489))
     }
 
     // MARK: - Helpers
