@@ -45,17 +45,17 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an undeterminate state checkbox
-///     @Published var state: OUDSCheckboxSelectorState  = .undeterminate
+///     @Published var selection: OUDSCheckboxSelectorState  = .undeterminate
 ///
 ///     // A simple checkbox, no error, not in read only mode
-///     OUDSCheckbox(state: $state, accessibilityLabel: "The cake is a lie")
+///     OUDSCheckbox(selection: $selection, accessibilityLabel: "The cake is a lie")
 ///
 ///     // A simple checkbox, but is an error context
-///     OUDSCheckbox(state: $state, accessibilityLabel: "The cake is a lie"), isError: true)
+///     OUDSCheckbox(selection: $selection, accessibilityLabel: "The cake is a lie"), isError: true)
 ///
 ///     // Never disable an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckbox(state: $state, accessibilityLabel: "The cake is a lie"), isError: true).disabled(true) // fatal error
+///     OUDSCheckbox(selection: $selection, accessibilityLabel: "The cake is a lie"), isError: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
@@ -70,7 +70,7 @@ public struct OUDSCheckbox: View {
     private let isError: Bool
     private let a11yLabel: String
 
-    @Binding var selectorState: OUDSCheckboxSelectorState
+    @Binding var selection: OUDSCheckboxSelectorState
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Initializers
@@ -80,16 +80,16 @@ public struct OUDSCheckbox: View {
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
-    ///    - state: A binding to a property that determines wether the selector is ticked, unticked or preticked.
+    ///    - selection: A binding to a property that determines wether the selector is ticked, unticked or preticked.
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
-    public init(state: Binding<OUDSCheckboxSelectorState>,
+    public init(selection: Binding<OUDSCheckboxSelectorState>,
                 accessibilityLabel: String,
                 isError: Bool = false) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
-        self._selectorState = state
+        _selection = selection
         self.isError = isError
         a11yLabel = accessibilityLabel
     }
@@ -98,13 +98,13 @@ public struct OUDSCheckbox: View {
 
     public var body: some View {
         Button("") {
-            $selectorState.wrappedValue.toggle()
+            $selection.wrappedValue.toggle()
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
-        .accessibilityValue(selectorState.a11yDescription.localized())
-        .accessibilityHint(selectorState.a11yHint)
-        .buttonStyle(CheckboxOnlyButtonStyle(selectorState: $selectorState.wrappedValue, isError: isError))
+        .accessibilityValue(selection.a11yDescription.localized())
+        .accessibilityHint(selection.a11yHint)
+        .buttonStyle(CheckboxOnlyButtonStyle(selectorState: $selection.wrappedValue, isError: isError))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state

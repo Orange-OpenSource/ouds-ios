@@ -54,23 +54,23 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an undeterminate state checkbox
-///     @Published var state: OUDSCheckboxSelectorState  = .undeterminate
+///     @Published var selection: OUDSCheckboxSelectorState  = .undeterminate
 ///
 ///     // A leading checkbox with a label.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(state: $state, labelText: "Hello world")
+///     OUDSCheckboxItem(selection: $selection, labelText: "Hello world")
 ///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(state: $state, labelText: "Hello world", isReadOnly: true)
+///     OUDSCheckboxItem(selection: $selection, labelText: "Hello world", isReadOnly: true)
 ///
 ///     // A leading checkbox with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(state: $state, labelText: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     OUDSCheckboxItem(selection: $selection, labelText: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, an helper text and an icon.
 ///     // The inverse layout will be used here.
-///     OUDSCheckboxItem(state: $state,
+///     OUDSCheckboxItem(selection: $selection,
 ///                      labelText: "We live in a fabled world",
 ///                      helperText: "Of dreaming boys and wide-eyed girls",
 ///                      isInversed: true,
@@ -78,7 +78,7 @@ import SwiftUI
 ///
 ///     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
-///     OUDSCheckboxItem(state: $state,
+///     OUDSCheckboxItem(selection: $selection,
 ///                      labelText: "Rescue from this world!",
 ///                      helperText: "Put your hand in mine",
 ///                      icon: Image(decorative: "ic_heart"),
@@ -88,13 +88,13 @@ import SwiftUI
 ///
 ///     // A leading checkbox with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(state: $state, labelText: "Hello world")
+///     OUDSCheckboxItem(selection: $selection, labelText: "Hello world")
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckboxItem(state: $state, labelText: "Hello world", isError: true).disabled(true) // fatal error
-///     OUDSCheckboxItem(state: $state, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSCheckboxItem(selection: $selection, labelText: "Hello world", isError: true).disabled(true) // fatal error
+///     OUDSCheckboxItem(selection: $selection, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
@@ -107,7 +107,7 @@ public struct OUDSCheckboxItem: View {
     // MARK: - Properties
 
     private let layoutData: ControlItemLabel.LayoutData
-    @Binding private var selectorState: OUDSCheckboxSelectorState
+    @Binding private var selection: OUDSCheckboxSelectorState
 
     @Environment(\.isEnabled) private var isEnabled
 
@@ -118,7 +118,7 @@ public struct OUDSCheckboxItem: View {
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
-    ///   - state: A binding to a property that determines wether the selector is ticked, unticker or preticked.
+    ///   - selection: A binding to a property that determines wether the selector is ticked, unticker or preticked.
     ///   - labelText: The main label text of the switch.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
@@ -126,7 +126,7 @@ public struct OUDSCheckboxItem: View {
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    public init(state: Binding<OUDSCheckboxSelectorState>,
+    public init(selection: Binding<OUDSCheckboxSelectorState>,
                 labelText: String,
                 helperText: String? = nil,
                 icon: Image? = nil,
@@ -142,7 +142,7 @@ public struct OUDSCheckboxItem: View {
             OL.warning("Helper text given to an OUDS Checkbox is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
-        self._selectorState = state
+        _selection = selection
         self.layoutData = .init(
             labelText: labelText,
             helperText: helperText,
@@ -158,14 +158,14 @@ public struct OUDSCheckboxItem: View {
     public var body: some View {
         Button("") {
             if !layoutData.isReadOnly {
-                $selectorState.wrappedValue.toggle()
+                $selection.wrappedValue.toggle()
             }
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(layoutData: layoutData))
-        .accessibilityValue(selectorState.a11yDescription.localized())
-        .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, selectorState: selectorState))
-        .buttonStyle(ControlItemStyle(selectorType: .checkBox($selectorState), layoutData: layoutData))
+        .accessibilityValue(selection.a11yDescription.localized())
+        .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, selectorState: selection))
+        .buttonStyle(ControlItemStyle(selectorType: .checkBox($selection), layoutData: layoutData))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.
