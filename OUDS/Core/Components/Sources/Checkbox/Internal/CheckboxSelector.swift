@@ -63,11 +63,11 @@ struct CheckboxSelector: View {
         if isError {
             switch internalState {
             case .enabled:
-                return theme.checkbox.checkboxColorContentErrorEnabled
+                return theme.colors.colorActionNegativeEnabled
             case .hover:
-                return theme.checkbox.checkboxColorContentErrorHover
+                return theme.colors.colorActionNegativeHover
             case .pressed:
-                return theme.checkbox.checkboxColorContentErrorPressed
+                return theme.colors.colorActionNegativePressed
             case .disabled, .readOnly:
                 OL.fatal("An OUDS Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
                          + " Only non-error situation are allowed to have a disabled state / read only mode.")
@@ -75,13 +75,13 @@ struct CheckboxSelector: View {
         } else {
             switch internalState {
             case .enabled:
-                return theme.checkbox.checkboxColorContentSelected
+                return theme.colors.colorActionSelected
             case .hover:
-                return theme.checkbox.checkboxColorContentHover
+                return theme.colors.colorActionHover
             case .pressed:
-                return theme.checkbox.checkboxColorContentPressed
+                return theme.colors.colorActionPressed
             case .disabled, .readOnly:
-                return theme.checkbox.checkboxColorContentDisabled
+                return theme.colors.colorActionDisabled
             }
         }
     }
@@ -95,7 +95,7 @@ private struct SelectorFrameModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .frame(width: theme.checkbox.checkboxSizeIndicatorInnerIcon,
-                   height: theme.checkbox.checkboxSizeIndicatorInnerIcon)
+            .frame(width: theme.checkbox.checkboxSizeIndicator,
+                   height: theme.checkbox.checkboxSizeIndicator)
     }
 }

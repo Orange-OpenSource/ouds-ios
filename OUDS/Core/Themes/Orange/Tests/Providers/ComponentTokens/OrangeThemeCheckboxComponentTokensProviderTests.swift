@@ -34,14 +34,6 @@ struct OrangeThemeCheckboxComponentTokensProviderTests {
     @Test func defaultBorderSemanticTokensProvider() throws {
         #expect(provider.borders is OrangeThemeBorderSemanticTokensProvider)
     }
-
-    @Test func defaultColorSemanticTokensProvider() throws {
-        #expect(provider.colors is OrangeThemeColorSemanticTokensProvider)
-    }
-
-    @Test func defaultOpacitySemanticTokensProvider() throws {
-        #expect(provider.opacities is OrangeThemeOpacitySemanticTokensProvider)
-    }
 }
 
 // swiftlint:enable type_name

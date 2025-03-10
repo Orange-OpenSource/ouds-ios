@@ -140,69 +140,15 @@ private struct CheckboxSelectorBackgroundModifier: ViewModifier {
     }
 
     private var enabledColor: Color {
-        if isError {
-            switch selectorState {
-            case .selected, .undeterminate:
-                return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgSelected)
-            case .unselected:
-                return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgUnselected)
-            }
-        } else {
-            switch selectorState {
-            case .selected, .undeterminate:
-                return theme.colors.colorActionSelected.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgSelected)
-            case .unselected:
-                return theme.colors.colorActionEnabled.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgUnselected)
-            }
-        }
+        Color.clear
     }
 
     private var hoverColor: Color {
-        if isError {
-            switch selectorState {
-            case .selected, .undeterminate:
-                return theme.colors.colorActionNegativeHover.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgSelectedHover)
-            case .unselected:
-                return theme.colors.colorActionNegativeHover.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgUnselectedHover)
-            }
-        } else {
-            switch selectorState {
-            case .selected, .undeterminate:
-                return theme.colors.colorActionHover.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgSelectedHover)
-            case .unselected:
-                return theme.colors.colorActionHover.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgUnselectedHover)
-            }
-        }
+        theme.controlItem.controlItemColorBgHover.color(for: colorScheme)
     }
 
     private var pressedColor: Color {
-        if isError {
-            switch selectorState {
-            case .selected, .undeterminate:
-                return theme.colors.colorActionNegativePressed.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgSelectedPressed)
-            case .unselected:
-                return theme.colors.colorActionNegativePressed.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgUnselectedPressed)
-            }
-        } else {
-            switch selectorState {
-            case .selected, .undeterminate:
-                return theme.colors.colorActionPressed.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgSelectedPressed)
-            case .unselected:
-                return theme.colors.colorActionPressed.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgUnselectedPressed)
-            }
-        }
+        theme.controlItem.controlItemColorBgPressed.color(for: colorScheme)
     }
 
     private var disabledColor: Color {
@@ -210,14 +156,7 @@ private struct CheckboxSelectorBackgroundModifier: ViewModifier {
             OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
                      + " Only non-error situation are allowed to have a disabled state.")
         }
-        switch selectorState {
-        case .selected, .undeterminate:
-            return theme.colors.colorActionDisabled.color(for: colorScheme)
-                .opacity(theme.checkbox.checkboxOpacityBgSelected)
-        case .unselected:
-            return theme.colors.colorActionDisabled.color(for: colorScheme)
-                .opacity(theme.checkbox.checkboxOpacityBgUnselected)
-        }
+        return Color.clear
     }
 }
 

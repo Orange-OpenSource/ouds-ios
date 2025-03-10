@@ -64,8 +64,6 @@ struct ControlItemStyle: ButtonStyle {
 //                OUDSRadioButtonSelector(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
             case .checkBox(let binding):
                 CheckboxSelector(internalState: internalState(isPressed: isPressed), selectorState: binding.wrappedValue, isError: layoutData.isError)
-                    .frame(width: theme.checkbox.checkboxSizeIndicator,
-                           height: theme.checkbox.checkboxSizeIndicator)
             }
         }
         .frame(maxHeight: containerAssetMaxHeight, alignment: .center)

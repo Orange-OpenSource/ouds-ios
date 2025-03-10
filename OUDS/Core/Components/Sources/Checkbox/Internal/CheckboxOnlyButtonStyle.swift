@@ -31,8 +31,6 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         CheckboxSelector(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
-            .frame(width: theme.checkbox.checkboxSizeIndicator,
-                   height: theme.checkbox.checkboxSizeIndicator)
             .onHover { isHover in
                 self.isHover = isHover
             }
