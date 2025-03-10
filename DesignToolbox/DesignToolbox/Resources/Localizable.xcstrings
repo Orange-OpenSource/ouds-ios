@@ -556,6 +556,24 @@
         }
       }
     },
+    "app_components_checkbox_hint_a11y" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a fake label used in the demo app"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un label bidon pour l’app de démo"
+          }
+        }
+      }
+    },
     "app_components_checkbox_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",

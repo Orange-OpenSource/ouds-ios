@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] A11Y improvements for checkbox ([#488](https://github.com/Orange-OpenSource/ouds-ios/issues/488))
 - [DesignToolbox] Miscellaneous improvements ([#479](https://github.com/Orange-OpenSource/ouds-ios/issues/479))
 - [Library] Fixes for checkbox component ([#477](https://github.com/Orange-OpenSource/ouds-ios/issues/477))
 - [Library] Fix radius on button ([#472](https://github.com/Orange-OpenSource/ouds-ios/issues/472))

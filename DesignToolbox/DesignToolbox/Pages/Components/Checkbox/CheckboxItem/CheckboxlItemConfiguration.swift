@@ -80,13 +80,15 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
 
     // MARK: - Component Configuration
 
+    // swiftlint:disable line_length
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItem(state: $state, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSCheckboxItem(selection: $selection, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
+    // swiftlint:enable line_length
 
     private var disableCode: String {
         ".disable(\(enabled ? "false" : "true"))"

@@ -48,7 +48,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-          OUDSCheckbox(state: $state\(isErrorPattern))
+          OUDSCheckbox(selection: $selection\(isErrorPattern))
           \(disableCode)
           """
     }
