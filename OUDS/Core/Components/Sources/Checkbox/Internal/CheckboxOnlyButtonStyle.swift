@@ -30,10 +30,18 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
-        CheckboxSelector(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
-            .onHover { isHover in
-                self.isHover = isHover
-            }
+        ZStack {
+            Color.clear
+                .frame(width: kMinimalTouchAreaWidth, height: kMinimalTouchAreaHeight)
+                .contentShape(Rectangle())
+
+            CheckboxSelector(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
+                .frame(width: theme.checkbox.checkboxSizeIndicator,
+                       height: theme.checkbox.checkboxSizeIndicator)
+                .onHover { isHover in
+                    self.isHover = isHover
+                }
+        }
     }
 
     // MARK: - Helpers
