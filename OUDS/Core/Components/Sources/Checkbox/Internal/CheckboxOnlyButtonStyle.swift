@@ -32,7 +32,10 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         ZStack {
             Color.clear
-                .frame(width: kMinimalTouchAreaWidth, height: kMinimalTouchAreaHeight)
+                .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
+                       maxWidth: theme.checkbox.checkboxSizeMinWidth,
+                       minHeight: theme.checkbox.checkboxSizeMinHeight,
+                       maxHeight: theme.checkbox.checkboxSizeMaxHeight)
                 .contentShape(Rectangle())
 
             CheckboxSelector(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
