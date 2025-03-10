@@ -293,12 +293,12 @@ private struct CheckboxTest: View {
     func checkbox() -> some View {
         switch layout {
         case let .selectorOnly(isError):
-            OUDSCheckbox(state: .constant(selectorState),
+            OUDSCheckbox(selection: .constant(selectorState),
                          accessibilityLabel: "Bazinga!",
                          isError: isError)
             .disabled(isDisabled)
         case let .default(labelText, helperText, icon, isError, hasDivider, isReadOnly):
-            OUDSCheckboxItem(state: .constant(selectorState),
+            OUDSCheckboxItem(selection: .constant(selectorState),
                              labelText: labelText,
                              helperText: helperText,
                              icon: icon,
@@ -308,7 +308,7 @@ private struct CheckboxTest: View {
                              hasDivider: hasDivider)
             .disabled(isDisabled)
         case let .inverse(labelText, helperText, icon, isError, hasDivider, isReadOnly):
-            OUDSCheckboxItem(state: .constant(selectorState),
+            OUDSCheckboxItem(selection: .constant(selectorState),
                              labelText: labelText,
                              helperText: helperText,
                              icon: icon,
