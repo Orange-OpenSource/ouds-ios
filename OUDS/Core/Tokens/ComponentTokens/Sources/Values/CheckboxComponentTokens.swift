@@ -20,8 +20,8 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for radio button and checkboxes components like `OUDSRadioButton` and `OUDSCheckbox`.
-/// Use for tokens providers like `OrangeThemeCheckboxComponentTokensProvider`.
+/// Declares all component tokens for checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`.
+/// Used for tokens providers like `OrangeThemeCheckboxComponentTokensProvider`.
 ///
 /// - Since: 0.10.0
 public protocol CheckboxComponentTokens {

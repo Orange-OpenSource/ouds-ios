@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `RadioButton` component tokens (tokens library v0.7.0)
 - [Library] Checkbox component ([#264](https://github.com/Orange-OpenSource/ouds-ios/issues/264))
 - [Library] `colorDecorativeNeutral*` color semantic tokens (tokens library v0.6.1)
 
