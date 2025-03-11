@@ -91,8 +91,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - opacities: All semantic tokens of opacity
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
-    ///    - button: All component tokens for button
-    ///    - link: All component tokens for link
+    ///    - button: All component tokens for button like `OUDSButton`
+    ///    - link: All component tokens for link like `OUDSLink`
     ///    - select: All component tokens for select
     ///    - skeleton: All component tokens for skeleton
     ///    - tag: All component tokens for tag
@@ -104,7 +104,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - inputText: All component tokens for input text
     ///    - badge: All component tokens for badge
     ///    - controlItem: All component tokens for control item
-    ///    - checkbox: All component tokens for checkbox
+    ///    - radioButton: All component tokens for radio buttons like `OUDSRadioButton` and `OUDSRadioButtonItem`
+    ///    - checkbox: All component tokens for checkbox like `OUDSCheckbox` and `OUDSCheckboxItem`
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     override public init(
         colors: AllColorSemanticTokensProvider? = nil,
@@ -129,6 +130,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         badge: AllBadgeComponentTokensProvider? = nil,
         controlItem: AllControlItemComponentTokensProvider? = nil,
         checkbox: AllCheckboxComponentTokensProvider? = nil,
+        radioButton: AllRadioButtonComponentTokensProvider? = nil,
         fontFamily: FontFamilySemanticToken? = nil) {
 
             let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
@@ -154,6 +156,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
             let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
             let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
+            let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
 
             super.init(colors: colors,
                        borders: borders,
@@ -177,6 +180,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                        badge: badge,
                        controlItem: controlItem,
                        checkbox: checkbox,
+                       radioButton: radioButton,
                        fontFamily: fontFamily)
         }
 
