@@ -75,8 +75,8 @@ private struct RadioDemo: View {
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-//            OUDSRadio(state: $model.selectorState, isError: model.isError)
-//                .disabled(!model.enabled)
+            OUDSRadio(isOn: $model.selection, isError: model.isError)
+                .disabled(!model.enabled)
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)

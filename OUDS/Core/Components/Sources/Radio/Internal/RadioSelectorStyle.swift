@@ -1,0 +1,289 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+//
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+//
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
+//
+
+import OUDS
+import OUDSFoundations
+import OUDSTokensSemantic
+import SwiftUI
+
+// MARK: - Radio Selector Style
+
+/// A `ViewModier` to apply to the ``RadioSelector`` component.
+/// It will define the look and feel of the selector depending to the ``ControlItemInternalState``,
+/// the ``Bool`` and if there is an error context or not.
+struct RadioSelectorStyle: ViewModifier {
+
+    // MARK: - Properties
+
+    let state: ControlItemInternalState
+    let isOn: Bool
+    let isError: Bool
+
+    // MARK: - Body
+
+    func body(content: Content) -> some View {
+        content
+            .modifier(RadioSelectorBorderModifier(state: state, isOn: isOn, isError: isError))
+            .modifier(RadioSelectorForegroundModifier(state: state, isOn: isOn, isError: isError))
+            .modifier(RadioSelectorBackgroundModifier(state: state, isOn: isOn, isError: isError))
+    }
+}
+
+// MARK: - Radio Selector Foreground Modifier
+
+private struct RadioSelectorForegroundModifier: ViewModifier {
+
+    // MARK: - Properties
+
+    let state: ControlItemInternalState
+    let isOn: Bool
+    let isError: Bool
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: - Body
+
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(appliedColor)
+    }
+
+    // MARK: - Colors
+
+    private var appliedColor: Color {
+        switch state {
+        case .enabled:
+            return enabledColor.color(for: colorScheme)
+        case .hover:
+            return hoverColor.color(for: colorScheme)
+        case .pressed:
+            return pressedColor.color(for: colorScheme)
+        case .disabled, .readOnly:
+            return disabledColor.color(for: colorScheme)
+        }
+    }
+
+    private var enabledColor: MultipleColorSemanticTokens {
+        if isError {
+            return theme.colors.colorActionNegativeEnabled
+        } else {
+            return isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+        }
+    }
+
+    private var hoverColor: MultipleColorSemanticTokens {
+        isError ? theme.colors.colorActionNegativeHover : theme.colors.colorActionHover
+    }
+
+    private var pressedColor: MultipleColorSemanticTokens {
+        isError ? theme.colors.colorActionNegativePressed : theme.colors.colorActionPressed
+    }
+
+    private var disabledColor: MultipleColorSemanticTokens {
+        guard !isError else {
+            OL.fatal("An OUDS Radio with a disabled state and an error situation has been detected, which is not allowed."
+                     + " Only non-error situation are allowed to have a disabled state.")
+        }
+        return theme.colors.colorActionDisabled
+    }
+}
+
+// MARK: - Radio Selector Background Modifier
+
+private struct RadioSelectorBackgroundModifier: ViewModifier {
+
+    // MARK: - Properties
+
+    let state: ControlItemInternalState
+    let isOn: Bool
+    let isError: Bool
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: - Body
+
+    func body(content: Content) -> some View {
+        content
+            .background(appliedColor)
+    }
+
+    // MARK: - Colors
+
+    private var appliedColor: Color {
+        switch state {
+        case .enabled:
+            return enabledColor
+        case .hover:
+            return hoverColor
+        case .pressed:
+            return pressedColor
+        case .disabled, .readOnly:
+            return disabledColor
+        }
+    }
+
+    private var enabledColor: Color {
+        if isError {
+            return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
+                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelected : theme.checkbox.checkboxOpacityBgUnselected)
+        } else {
+            if isOn {
+                return theme.colors.colorActionSelected.color(for: colorScheme)
+                    .opacity(theme.checkbox.checkboxOpacityBgSelected)
+            } else {
+                return theme.colors.colorActionEnabled.color(for: colorScheme)
+                    .opacity(theme.checkbox.checkboxOpacityBgUnselected)
+            }
+        }
+    }
+
+    private var hoverColor: Color {
+        if isError {
+            return theme.colors.colorActionNegativeHover.color(for: colorScheme)
+                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelectedHover : theme.checkbox.checkboxOpacityBgUnselectedHover)
+        } else {
+            return theme.colors.colorActionHover.color(for: colorScheme)
+                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelectedHover : theme.checkbox.checkboxOpacityBgUnselectedHover)
+        }
+    }
+
+    private var pressedColor: Color {
+        if isError {
+            return theme.colors.colorActionNegativePressed.color(for: colorScheme)
+                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelectedPressed : theme.checkbox.checkboxOpacityBgUnselectedPressed)
+        } else {
+            return theme.colors.colorActionPressed.color(for: colorScheme)
+                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelectedPressed : theme.checkbox.checkboxOpacityBgUnselectedPressed)
+        }
+    }
+
+    private var disabledColor: Color {
+        guard !isError else {
+            OL.fatal("An OUDS Radio with a disabled state and an error situation has been detected, which is not allowed."
+                     + " Only non-error situation are allowed to have a disabled state.")
+        }
+
+        return theme.colors.colorActionDisabled.color(for: colorScheme)
+            .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelected : theme.checkbox.checkboxOpacityBgUnselected)
+    }
+}
+
+// MARK: - Radio Selector Border Modifier
+
+private struct RadioSelectorBorderModifier: ViewModifier {
+
+    // MARK: - Properties
+
+    let state: ControlItemInternalState
+    let isOn: Bool
+    let isError: Bool
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: - Body
+
+    func body(content: Content) -> some View {
+        content
+            .oudsBorder(style: theme.borders.borderStyleDefault,
+                        width: appliedBorderWidth,
+                        radius: appliedBorderRadius,
+                        color: appliedColor)
+    }
+
+    // MARK: - Colors
+
+    private var appliedColor: MultipleColorSemanticTokens {
+        switch state {
+        case .enabled:
+            return enabledColor
+        case .hover:
+            return hoverColor
+        case .pressed:
+            return pressedColor
+        case .disabled, .readOnly:
+            return disabledColor
+        }
+    }
+
+    private var enabledColor: MultipleColorSemanticTokens {
+        if isError {
+            return theme.colors.colorActionNegativeEnabled
+        } else {
+            return isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+        }
+    }
+
+    private var hoverColor: MultipleColorSemanticTokens {
+        if isError {
+            return theme.colors.colorActionNegativeHover
+        } else {
+            return theme.colors.colorActionHover
+        }
+    }
+
+    private var pressedColor: MultipleColorSemanticTokens {
+        if isError {
+            return theme.colors.colorActionNegativePressed
+        } else {
+            return theme.colors.colorActionPressed
+        }
+    }
+
+    private var disabledColor: MultipleColorSemanticTokens {
+        guard !isError else {
+            OL.fatal("An OUDS Radio with a disabled state and an error situation has been detected, which is not allowed"
+                     + " Only non-error situation are allowed to have a disabled state.")
+        }
+        return theme.colors.colorActionDisabled
+    }
+
+    // MARK: - Border width
+
+    private var appliedBorderWidth: CGFloat {
+        switch state {
+        case .enabled:
+            return enabledWidth
+        case .hover:
+            return hoverWidth
+        case .pressed:
+            return pressedWidth
+        case .disabled, .readOnly:
+            return disabledWidth
+        }
+    }
+
+    private var enabledWidth: CGFloat {
+        isOn ? theme.checkbox.checkboxBorderWidthSelected : theme.checkbox.checkboxBorderWidthUnselected
+    }
+
+    private var hoverWidth: CGFloat {
+        isOn ? theme.checkbox.checkboxBorderWidthSelectedHover : theme.checkbox.checkboxBorderWidthUnselectedHover
+    }
+
+    private var pressedWidth: CGFloat {
+        isOn ? theme.checkbox.checkboxBorderWidthSelectedPressed : theme.checkbox.checkboxBorderWidthUnselectedPressed
+    }
+
+    private var disabledWidth: CGFloat {
+        isOn ? theme.checkbox.checkboxBorderWidthSelected : theme.checkbox.checkboxBorderWidthUnselected
+    }
+
+    // MARK: - Border radius
+
+    private var appliedBorderRadius: CGFloat {
+        theme.checkbox.checkboxBorderRadius
+    }
+}
