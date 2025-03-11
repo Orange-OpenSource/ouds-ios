@@ -33,7 +33,7 @@ final class MockThemeCheckboxComponentTokenProvider: OrangeThemeCheckboxComponen
         super.init(sizes: sizes, borders: borders)
     }
 
-    // MARK: - Badge component tokens
+    // MARK: - Radio button component tokens
 
     // MARK: - Sizes
 

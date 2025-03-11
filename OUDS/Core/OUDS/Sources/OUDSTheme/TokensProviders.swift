@@ -87,7 +87,10 @@ public protocol AllBadgeComponentTokensProvider: TokensProvider, BadgeComponentT
 /// Something which provides all component tokens for control-item-layout-based components
 public protocol AllControlItemComponentTokensProvider: TokensProvider, ControlItemComponentTokens { }
 
-/// Something which provides all component tokens of checkboxes and radio buttons
+/// Something which provides all component tokens of checkboxes
 public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComponentTokens { }
+
+/// Something which provides all component tokens of radio buttons
+public protocol AllRadioButtonComponentTokensProvider: TokensProvider, RadioButtonComponentTokens { }
 
 // NOTE: Add new definitions of protocols here
