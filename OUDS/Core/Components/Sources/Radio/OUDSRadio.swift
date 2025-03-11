@@ -26,27 +26,32 @@ import SwiftUI
 /// In addition, the ``OUDSRadio`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 ///
-/// ## Case forbidden by design
+/// ## Accessibility considerations
+///
+/// Note also the component must be instanciated with a string parameter used as accessibility label.
+/// It is a good pratice (at least) to define a label for a component without text for accessibility reasons. This label will be vocalized by *Voice Over*.
+/// The vocalization tool will also use, after the label, a description of the component (if disabled, if error context), and a fake trait for radio.
+///
+/// ## Cases forbidden by design
 ///
 /// **The design system does not allow to have both an error situation and a disabled component.**
 ///
 /// ## Code samples
 ///
 /// ```swift
-///     // Supposing radio is not selected
-///     @Published var isOn: Bool  = false
+///     // Supposing we have an unselected state
+///     @Published var selection: Bool = false
 ///
 ///     // A simple radio, no error, not in read only mode
-///     OUDSRadio(isOn: $isOn)
+///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie")
 ///
 ///     // A simple radio, but is an error context
-///     OUDSRadio(isOn: $isOn, isError: true)
+///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie"), isError: true)
 ///
-///     // Never disable an error-related radio as it will crash
+///     // Never disable an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSRadio(isOn: $isOn, isError: true).disabled(true) // fatal error
+///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie"), isError: true).disabled(true) // fatal error
 /// ```
-///
 /// ## Design documentation
 ///
 /// See [unified-design-system.orange.com/472794e18/p/23f1c1-radio](https://unified-design-system.orange.com/472794e18/p/23f1c1-radio)

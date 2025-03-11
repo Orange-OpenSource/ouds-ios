@@ -31,12 +31,11 @@ struct RadioOnlyButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         ZStack(alignment: .center) {
-            // TODO: Update with token
             Color.clear
-                .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
-                       maxWidth: theme.checkbox.checkboxSizeMinWidth,
-                       minHeight: theme.checkbox.checkboxSizeMinHeight,
-                       maxHeight: theme.checkbox.checkboxSizeMaxHeight)
+                .frame(minWidth: theme.radioButton.radioButtonSizeMinWidth,
+                       maxWidth: theme.radioButton.radioButtonSizeMinWidth,
+                       minHeight: theme.radioButton.radioButtonSizeMinHeight,
+                       maxHeight: theme.radioButton.radioButtonSizeMaxHeight)
                 .contentShape(Circle())
 
             RadioIndicator(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn, isError: isError)

@@ -139,11 +139,11 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
     }
 
     private var hoverColor: Color {
-        theme.controlItem.controlItemColorBgHover.color(for: colorScheme)
+        Color.clear
     }
 
     private var pressedColor: Color {
-        theme.controlItem.controlItemColorBgPressed.color(for: colorScheme)
+        Color.clear
     }
 
     private var disabledColor: Color {
@@ -241,24 +241,24 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     }
 
     private var enabledWidth: CGFloat {
-        isOn ? theme.checkbox.checkboxBorderWidthSelected : theme.checkbox.checkboxBorderWidthUnselected
+        isOn ? theme.radioButton.radioButtonBorderWidthSelected : theme.radioButton.radioButtonBorderWidthUnselected
     }
 
     private var hoverWidth: CGFloat {
-        isOn ? theme.checkbox.checkboxBorderWidthSelectedHover : theme.checkbox.checkboxBorderWidthUnselectedHover
+        isOn ? theme.radioButton.radioButtonBorderWidthSelectedHover : theme.radioButton.radioButtonBorderWidthUnselectedHover
     }
 
     private var pressedWidth: CGFloat {
-        isOn ? theme.checkbox.checkboxBorderWidthSelectedPressed : theme.checkbox.checkboxBorderWidthUnselectedPressed
+        isOn ? theme.radioButton.radioButtonBorderWidthSelectedPressed : theme.radioButton.radioButtonBorderWidthUnselectedPressed
     }
 
     private var disabledWidth: CGFloat {
-        isOn ? theme.checkbox.checkboxBorderWidthSelected : theme.checkbox.checkboxBorderWidthUnselected
+        isOn ? theme.radioButton.radioButtonBorderWidthSelected : theme.radioButton.radioButtonBorderWidthUnselected
     }
 
     // MARK: - Border radius
 
     private var appliedBorderRadius: CGFloat {
-        theme.checkbox.checkboxBorderRadius
+        theme.radioButton.radioButtonBorderRadius
     }
 }

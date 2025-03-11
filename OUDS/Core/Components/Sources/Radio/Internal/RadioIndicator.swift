@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The selector of the chebckox.
+/// The selector of the radio.
 /// Its content depends to the ``ControlItemInternalState`` and the isOn also.
 struct RadioIndicator: View {
 
@@ -33,8 +33,7 @@ struct RadioIndicator: View {
 
     var body: some View {
         indicator()
-            .frame(width: theme.checkbox.checkboxSizeIndicator,
-                   height: theme.checkbox.checkboxSizeIndicator)
+            .frame(width: theme.radioButton.radioButtonSizeIndicator, height: theme.radioButton.radioButtonSizeIndicator)
             .modifier(RadioIndicatorStyle(state: internalState, isOn: isOn, isError: isError))
     }
 
@@ -55,7 +54,6 @@ struct RadioIndicator: View {
             .resizable()
             .scaledToFit()
             .accessibilityHidden(true)
-            .foregroundColor(appliedColor.color(for: colorScheme))
     }
 
     private var appliedColor: MultipleColorSemanticTokens {
