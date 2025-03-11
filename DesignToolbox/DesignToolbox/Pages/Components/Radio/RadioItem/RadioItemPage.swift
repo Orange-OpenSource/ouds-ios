@@ -75,6 +75,7 @@ private struct RadioItemDemo: View {
     var body: some View {
         OUDSRadioItem(isOn: $model.selection,
                       labelText: model.labelTextContent,
+                      additionalLabelText: additionalLabelTextContent,
                       helperText: helperTextContent,
                       icon: icon,
                       isInversed: model.layoutOrientation == .inverse,
@@ -88,6 +89,10 @@ private struct RadioItemDemo: View {
 
     private var helperTextContent: String? {
         model.helperText ? model.helperTextContent : nil
+    }
+
+    private var additionalLabelTextContent: String? {
+        model.additionalLabelText ? model.additionalLabelTextContent : nil
     }
 
     private var icon: Image? {

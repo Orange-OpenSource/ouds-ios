@@ -187,18 +187,18 @@ struct RadioItemConfiguration: View {
                     prompt: "app_components_common_userText_prompt",
                     title: "app_components_common_labelText_label")
 
-                if model.helperText {
-                    DesignToolboxTextField(
-                        text: $model.helperTextContent,
-                        prompt: "app_components_common_userText_prompt",
-                        title: "app_components_common_helperText_label")
-                }
-
                 if model.additionalLabelText {
                     DesignToolboxTextField(
                         text: $model.additionalLabelTextContent,
                         prompt: "app_components_common_userText_prompt",
                         title: "app_components_radio_additionalLabelText_label")
+                }
+
+                if model.helperText {
+                    DesignToolboxTextField(
+                        text: $model.helperTextContent,
+                        prompt: "app_components_common_userText_prompt",
+                        title: "app_components_common_helperText_label")
                 }
             }
         }

@@ -120,6 +120,7 @@ public struct OUDSRadioItem: View {
     /// - Parameters:
     ///    - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - labelText: The main label text of the radio.
+    ///   - additionalLabelText: An additional label text of the radio.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - isInversed: `True` of the radio selector must be in trailing position,` false` otherwise. Default to `false`
@@ -128,6 +129,7 @@ public struct OUDSRadioItem: View {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     public init(isOn: Binding<Bool>,
                 labelText: String,
+                additionalLabelText: String? = nil,
                 helperText: String? = nil,
                 icon: Image? = nil,
                 isInversed: Bool = false,
@@ -146,6 +148,7 @@ public struct OUDSRadioItem: View {
 
         self.layoutData = .init(
             labelText: labelText,
+            additionalLabelText: additionalLabelText,
             helperText: helperText,
             icon: icon,
             isError: isError,

@@ -50,7 +50,8 @@ struct ControlItem: View {
     ///
     /// - Parameters:
     ///   - selectorType: The type of selector the `ContolItem` should display.
-    ///   - labelText: The main label text of the switch.
+    ///   - labelText: The main label text of the item.
+    ///   - additionalLabelText: An additional label text of the item.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
@@ -60,6 +61,7 @@ struct ControlItem: View {
     init(selectorType: SelectorType,
          labelText: String,
          helperText: String? = nil,
+         additionalLabelText: String? = nil,
          icon: Image? = nil,
          onError: Bool = false,
          isReadOnly: Bool = false,
@@ -67,6 +69,7 @@ struct ControlItem: View {
          orientation: Self.Orientation = .default) {
         self.selectorType = selectorType
         self.layoutData = .init(labelText: labelText,
+                                additionalLabelText: additionalLabelText,
                                 helperText: helperText,
                                 icon: icon,
                                 isError: onError,

@@ -33,6 +33,7 @@ struct ControlItemLabel: View {
     /// Gathers any details and content to add in the ``ControlItemLabel``
     struct LayoutData {
         let labelText: String
+        let additionalLabelText: String?
         let helperText: String?
         let icon: Image?
         let isError: Bool
@@ -64,6 +65,13 @@ struct ControlItemLabel: View {
                 .multilineTextAlignment(.leading)
                 .foregroundStyle(labelTextColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
+
+            if let additionalLabelText = layoutData.additionalLabelText {
+                Text(LocalizedStringKey(additionalLabelText))
+                    .typeLabelStrongMedium(theme)
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(additinoalLabelTextColor)
+            }
 
             if let helperText = layoutData.helperText {
                 Text(LocalizedStringKey(helperText))
@@ -132,5 +140,9 @@ struct ControlItemLabel: View {
         case .disabled:
             theme.colors.colorContentDisabled.color(for: colorScheme)
         }
+    }
+
+    private var additinoalLabelTextColor: Color {
+        theme.colors.colorContentDefault.color(for: colorScheme)
     }
 }

@@ -145,6 +145,7 @@ public struct OUDSCheckboxItem: View {
         _selection = selection
         self.layoutData = .init(
             labelText: labelText,
+            additionalLabelText: nil,
             helperText: helperText,
             icon: icon,
             isError: isError,
