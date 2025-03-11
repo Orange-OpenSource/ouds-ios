@@ -16,12 +16,12 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Radio Selector Style
+// MARK: - Radio Indicator Style
 
-/// A `ViewModier` to apply to the ``RadioSelector`` component.
-/// It will define the look and feel of the selector depending to the ``ControlItemInternalState``,
+/// A `ViewModier` to apply to the ``RadioIndicator`` component.
+/// It will define the look and feel of the indicator depending to the ``ControlItemInternalState``,
 /// the ``Bool`` and if there is an error context or not.
-struct RadioSelectorStyle: ViewModifier {
+struct RadioIndicatorStyle: ViewModifier {
 
     // MARK: - Properties
 
@@ -33,15 +33,15 @@ struct RadioSelectorStyle: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .modifier(RadioSelectorBorderModifier(state: state, isOn: isOn, isError: isError))
-            .modifier(RadioSelectorForegroundModifier(state: state, isOn: isOn, isError: isError))
-            .modifier(RadioSelectorBackgroundModifier(state: state, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorBorderModifier(state: state, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorForegroundModifier(state: state, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorBackgroundModifier(state: state, isOn: isOn, isError: isError))
     }
 }
 
 // MARK: - Radio Selector Foreground Modifier
 
-private struct RadioSelectorForegroundModifier: ViewModifier {
+private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
@@ -101,7 +101,7 @@ private struct RadioSelectorForegroundModifier: ViewModifier {
 
 // MARK: - Radio Selector Background Modifier
 
-private struct RadioSelectorBackgroundModifier: ViewModifier {
+private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
@@ -135,38 +135,15 @@ private struct RadioSelectorBackgroundModifier: ViewModifier {
     }
 
     private var enabledColor: Color {
-        if isError {
-            return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
-                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelected : theme.checkbox.checkboxOpacityBgUnselected)
-        } else {
-            if isOn {
-                return theme.colors.colorActionSelected.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgSelected)
-            } else {
-                return theme.colors.colorActionEnabled.color(for: colorScheme)
-                    .opacity(theme.checkbox.checkboxOpacityBgUnselected)
-            }
-        }
+        Color.clear
     }
 
     private var hoverColor: Color {
-        if isError {
-            return theme.colors.colorActionNegativeHover.color(for: colorScheme)
-                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelectedHover : theme.checkbox.checkboxOpacityBgUnselectedHover)
-        } else {
-            return theme.colors.colorActionHover.color(for: colorScheme)
-                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelectedHover : theme.checkbox.checkboxOpacityBgUnselectedHover)
-        }
+        theme.controlItem.controlItemColorBgHover.color(for: colorScheme)
     }
 
     private var pressedColor: Color {
-        if isError {
-            return theme.colors.colorActionNegativePressed.color(for: colorScheme)
-                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelectedPressed : theme.checkbox.checkboxOpacityBgUnselectedPressed)
-        } else {
-            return theme.colors.colorActionPressed.color(for: colorScheme)
-                .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelectedPressed : theme.checkbox.checkboxOpacityBgUnselectedPressed)
-        }
+        theme.controlItem.controlItemColorBgPressed.color(for: colorScheme)
     }
 
     private var disabledColor: Color {
@@ -174,15 +151,13 @@ private struct RadioSelectorBackgroundModifier: ViewModifier {
             OL.fatal("An OUDS Radio with a disabled state and an error situation has been detected, which is not allowed."
                      + " Only non-error situation are allowed to have a disabled state.")
         }
-
-        return theme.colors.colorActionDisabled.color(for: colorScheme)
-            .opacity(isOn ? theme.checkbox.checkboxOpacityBgSelected : theme.checkbox.checkboxOpacityBgUnselected)
+        return Color.clear
     }
 }
 
 // MARK: - Radio Selector Border Modifier
 
-private struct RadioSelectorBorderModifier: ViewModifier {
+private struct RadioIndicatorBorderModifier: ViewModifier {
 
     // MARK: - Properties
 

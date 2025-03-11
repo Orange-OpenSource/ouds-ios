@@ -18,7 +18,7 @@ import SwiftUI
 
 /// The selector of the chebckox.
 /// Its content depends to the ``ControlItemInternalState`` and the isOn also.
-struct RadioSelector: View {
+struct RadioIndicator: View {
 
     // MARK: - Properties
 
@@ -32,19 +32,20 @@ struct RadioSelector: View {
     // MARK: - Body
 
     var body: some View {
-        selector()
-            .modifier(RadioSelectorStyle(state: internalState, isOn: isOn, isError: isError))
+        indicator()
+            .frame(width: theme.checkbox.checkboxSizeIndicator,
+                   height: theme.checkbox.checkboxSizeIndicator)
+            .modifier(RadioIndicatorStyle(state: internalState, isOn: isOn, isError: isError))
     }
 
     // MARK: - Selector
 
     @ViewBuilder
-    private func selector() -> some View {
+    private func indicator() -> some View {
         if isOn {
             tickImage(name: "ic_radio_selected")
         } else {
             Color.clear
-                .modifier(SelectorFrameModifier())
         }
     }
 
@@ -53,7 +54,6 @@ struct RadioSelector: View {
             .renderingMode(.template)
             .resizable()
             .scaledToFit()
-            .modifier(SelectorFrameModifier())
             .accessibilityHidden(true)
             .foregroundColor(appliedColor.color(for: colorScheme))
     }
@@ -62,11 +62,11 @@ struct RadioSelector: View {
         if isError {
             switch internalState {
             case .enabled:
-                return theme.checkbox.checkboxColorContentErrorEnabled
+                return theme.colors.colorActionNegativeEnabled
             case .hover:
-                return theme.checkbox.checkboxColorContentErrorHover
+                return theme.colors.colorActionNegativeHover
             case .pressed:
-                return theme.checkbox.checkboxColorContentErrorPressed
+                return theme.colors.colorActionNegativePressed
             case .disabled, .readOnly:
                 OL.fatal("An OUDS Radio with a disabled state / read only mode and an error situation has been detected, which is not allowed"
                          + " Only non-error situation are allowed to have a disabled state / read only mode.")
@@ -74,27 +74,14 @@ struct RadioSelector: View {
         } else {
             switch internalState {
             case .enabled:
-                return theme.checkbox.checkboxColorContentSelected
+                return theme.colors.colorActionSelected
             case .hover:
-                return theme.checkbox.checkboxColorContentHover
+                return theme.colors.colorActionHover
             case .pressed:
-                return theme.checkbox.checkboxColorContentPressed
+                return theme.colors.colorActionPressed
             case .disabled, .readOnly:
-                return theme.checkbox.checkboxColorContentDisabled
+                return theme.colors.colorActionDisabled
             }
         }
-    }
-}
-
-// MARK: - Selector Frame Modifier
-
-private struct SelectorFrameModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-
-    func body(content: Content) -> some View {
-        content
-            .frame(width: theme.checkbox.checkboxSizeIndicatorInnerIcon,
-                   height: theme.checkbox.checkboxSizeIndicatorInnerIcon)
     }
 }
