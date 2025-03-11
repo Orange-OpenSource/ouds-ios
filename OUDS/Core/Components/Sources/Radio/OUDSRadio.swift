@@ -74,7 +74,7 @@ public struct OUDSRadio: View {
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
-    ///    - selction: A binding to a property that indicates whether the toggle is on or off.
+    ///    - isOn: A binding to a property that determines whether the toggle is on or off.
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     public init(isOn: Binding<Bool>,
@@ -83,7 +83,6 @@ public struct OUDSRadio: View {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSRadio should not have an empty accessibility label, think about your disabled users!")
         }
-
         _isOn = isOn
         self.accessibilityLabel = accessibilityLabel.localized()
         self.isError = isError

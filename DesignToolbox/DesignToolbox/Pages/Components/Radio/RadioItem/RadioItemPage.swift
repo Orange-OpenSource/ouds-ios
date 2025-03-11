@@ -73,15 +73,14 @@ private struct RadioItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        Text("TODO")
-//        OUDSRadioItem(state: $model.selectorState,
-//                         labelText: model.labelTextContent,
-//                         helperText: helperTextContent,
-//                         icon: icon,
-//                         isInversed: model.layoutOrientation == .inverse,
-//                         isError: model.isError,
-//                         isReadOnly: model.isReadOnly,
-//                         hasDivider: model.divider)
+        OUDSRadioItem(isOn: $model.selection,
+                      labelText: model.labelTextContent,
+                      helperText: helperTextContent,
+                      icon: icon,
+                      isInversed: model.layoutOrientation == .inverse,
+                      isError: model.isError,
+                      isReadOnly: model.isReadOnly,
+                      hasDivider: model.divider)
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .designToolboxBackground(onColoredSurface: false)

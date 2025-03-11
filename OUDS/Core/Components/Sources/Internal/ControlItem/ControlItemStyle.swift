@@ -58,10 +58,8 @@ struct ControlItemStyle: ButtonStyle {
                 // TODO: #405 - Add switch selector
                 Text("TODO: Add switch selector here")
 //                OUDSSwitchSelector(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
-            case .radioButton:
-                // TODO: #266 - Add radio selector
-                Text("TODO: Add radio selector here")
-//                OUDSRadioButtonSelector(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
+            case .radioButton(let binding):
+                RadioIndicator(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue, isError: layoutData.isError)
             case .checkBox(let binding):
                 CheckboxSelector(internalState: internalState(isPressed: isPressed), selectorState: binding.wrappedValue, isError: layoutData.isError)
             }

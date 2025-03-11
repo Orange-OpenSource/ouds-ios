@@ -119,7 +119,7 @@ public struct OUDSCheckboxItem: View {
     ///
     /// - Parameters:
     ///   - selection: A binding to a property that determines wether the selector is ticked, unticker or preticked.
-    ///   - labelText: The main label text of the switch.
+    ///   - labelText: The main label text of the checkbox.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - isInversed: `true` of the checkbox selector must be in trailing position,` false` otherwise. Default to `false`
