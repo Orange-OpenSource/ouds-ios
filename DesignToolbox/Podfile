@@ -16,7 +16,7 @@ use_frameworks!
 platform :ios, '15.0'
 
 target 'DesignToolbox' do
-  pod 'SwiftLint', '0.58.1'
+  pod 'SwiftLint', '0.58.2'
   pod 'SwiftFormat/CLI', '0.55.5'
 end
 
