@@ -101,11 +101,14 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to badge components like `OUDSBadge`
     public let badge: AllBadgeComponentTokensProvider
 
-    /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButton` and `OUDSCheckboxItem`
+    /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
     public let controlItem: AllControlItemComponentTokensProvider
 
-    /// All components tokens related to radio button and checkboxes components like `OUDSRadioButton`, `OUDSCheckbox` and `OUDSCheckboxItem`
+    /// All components tokens related to checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
+
+    /// All components tokens related to checkboxes components like `OUDSRadioButton` and `OUDSRadioButtonItem`
+    public let radioButton: AllRadioButtonComponentTokensProvider
 
     // NOTE: Add new component tokens provider here
 
@@ -136,6 +139,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - badge: All component tokens for badge
     ///    - controlItem: All component tokens for control item
     ///    - checkbox: All component tokens for checkbox
+    ///    - radioButton: All component tokens for radio buttons
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(colors: AllColorSemanticTokensProvider,
                 borders: AllBorderSemanticTokensProvider,
@@ -159,6 +163,7 @@ open class OUDSTheme: @unchecked Sendable {
                 badge: AllBadgeComponentTokensProvider,
                 controlItem: AllControlItemComponentTokensProvider,
                 checkbox: AllCheckboxComponentTokensProvider,
+                radioButton: AllRadioButtonComponentTokensProvider,
                 fontFamily: FontFamilySemanticToken? = nil) {
 
         // Save semantic tokens providers
@@ -186,6 +191,7 @@ open class OUDSTheme: @unchecked Sendable {
         self.badge = badge
         self.controlItem = controlItem
         self.checkbox = checkbox
+        self.radioButton = radioButton
         // NOTE: Add new component tokens provider here
 
         // Load other configuration elements
