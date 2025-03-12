@@ -29,9 +29,8 @@ import SwiftUI
 /// ## Selector states
 ///
 /// The radio selector has three available states:
-/// - **selected**: the radio is filled with a tick, the user has made the action to select the radio
-/// - **unselected**: the radio is empty, does not contain a tick, the user has made the action to unselect or did not select yet the radio
-/// - **undeterminate**: mike a prefilled or preticked radio, the user did not do anything on it yet
+/// - **selected**: the radio is filled with a filled circle, the user has made the action to select the radio
+/// - **unselected**: the radio is empty, does not contain anything, the user has made the action to unselect or did not select yet the radio
 ///
 /// ## Particular cases
 ///
@@ -39,6 +38,7 @@ import SwiftUI
 /// A dedicated look and feel is implemented for that if the `isError` flag is risen.
 /// In addition, the ``OUDSRadioItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
+/// The radio can be also outlined in some cases.
 ///
 /// ## Accessibility considerations
 ///
@@ -58,21 +58,30 @@ import SwiftUI
 ///
 ///     // A leading radio with a label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Hello world")
+///     OUDSRadioItem(isOn: $selection, labelText: "Brownies")
 ///
 ///     // A leading radio with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Hello world", isReadOnly: true)
+///     OUDSRadioItem(isOn: $selection, labelText: "Brownies", isReadOnly: true)
 ///
 ///     // A leading radio with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     OUDSRadioItem(isOn: $selection, labelText: "Brownies!", helperText: "15 mn")
+
+///     // A leading oulined radio with an additional label, an helper text
+///     // The default layout will be used here.
+///     OUDSRadioItem(isOn: $selection, labelText: "Brownies", additionalLabelText: "Cakes", helperText: "15 mn", outlined: true)
 ///
-///     // A trailing radio with a label, an helper text and an icon.
+///     // A leading radio with an additional label.
+///     // The default layout will be used here.
+///     OUDSRadioItem(isOn: $selection, labelText: "Brownies", additionalLabelText: "Cakes", helperText: "15 mn")
+///
+///     // A trailing radio with a label, an additonal label, an helper text and an icon.
 ///     // The inverse layout will be used here.
 ///     OUDSRadioItem(isOn: $selection,
-///                      labelText: "We live in a fabled world",
-///                      helperText: "Of dreaming boys and wide-eyed girls",
+///                      labelText: "We love cakes",
+///                      additionalLabelText: "with chocolate and hazelnuts",
+///                      helperText: "We love bownies",
 ///                      isInversed: true,
 ///                      icon: Image(decorative: "ic_heart"))
 ///
@@ -123,6 +132,7 @@ public struct OUDSRadioItem: View {
     ///   - additionalLabelText: An additional label text of the radio.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
+    ///   - isOutlined: Flag to get an outlined radio
     ///   - isInversed: `True` of the radio selector must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
@@ -132,6 +142,7 @@ public struct OUDSRadioItem: View {
                 additionalLabelText: String? = nil,
                 helperText: String? = nil,
                 icon: Image? = nil,
+                isOutlined: Bool = true,
                 isInversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
@@ -151,6 +162,7 @@ public struct OUDSRadioItem: View {
             additionalLabelText: additionalLabelText,
             helperText: helperText,
             icon: icon,
+            isOutlined: isOutlined,
             isError: isError,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
@@ -161,8 +173,10 @@ public struct OUDSRadioItem: View {
 
     public var body: some View {
         Button("") {
-            if !layoutData.isReadOnly {
-                $isOn.wrappedValue.toggle()
+            withAnimation(nil) {
+                if !layoutData.isReadOnly {
+                    $isOn.wrappedValue.toggle()
+                }
             }
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
@@ -184,7 +198,7 @@ public struct OUDSRadioItem: View {
         let errorDescription = layoutData.isError ? "core_radio_error_a11y".localized() : ""
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(stateDescription), \(layoutData.labelText), \(layoutData.helperText ?? "") \(errorDescription), \(radioA11yTrait)"
+        let result = "\(stateDescription), \(layoutData.labelText), \(layoutData.additionalLabelText ?? ""), \(layoutData.helperText ?? "") \(errorDescription), \(radioA11yTrait)"
         return result
     }
 

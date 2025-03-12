@@ -36,6 +36,7 @@ struct ControlItemLabel: View {
         let additionalLabelText: String?
         let helperText: String?
         let icon: Image?
+        let isOutlined: Bool
         let isError: Bool
         let isReadOnly: Bool
         let hasDivider: Bool
@@ -70,7 +71,7 @@ struct ControlItemLabel: View {
                 Text(LocalizedStringKey(additionalLabelText))
                     .typeLabelStrongMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .foregroundStyle(additinoalLabelTextColor)
+                    .foregroundStyle(additionalLabelTextColor)
             }
 
             if let helperText = layoutData.helperText {
@@ -142,7 +143,8 @@ struct ControlItemLabel: View {
         }
     }
 
-    private var additinoalLabelTextColor: Color {
-        theme.colors.colorContentDefault.color(for: colorScheme)
+    private var additionalLabelTextColor: Color {
+        (internalState == .disabled ? theme.colors.colorContentDisabled : theme.colors.colorContentDefault)
+        .color(for: colorScheme)
     }
 }

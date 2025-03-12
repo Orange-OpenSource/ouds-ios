@@ -148,6 +148,7 @@ public struct OUDSCheckboxItem: View {
             additionalLabelText: nil,
             helperText: helperText,
             icon: icon,
+            isOutlined: false,
             isError: isError,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,

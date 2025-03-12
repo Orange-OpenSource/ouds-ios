@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -36,22 +37,23 @@ struct ControlItemStyle: ButtonStyle {
         HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
             switch layoutData.orientation {
             case .default:
-                selector(isPressed: configuration.isPressed)
+                selectorContainer(isPressed: configuration.isPressed)
                 label(isPressed: configuration.isPressed)
             case .inverse:
                 label(isPressed: configuration.isPressed)
-                selector(isPressed: configuration.isPressed)
+                selectorContainer(isPressed: configuration.isPressed)
             }
         }
         .padding(.all, theme.listItem.listItemSpaceInset)
         .oudsDivider(show: layoutData.hasDivider)
         .background(backgroundColor(state: internalState(isPressed: configuration.isPressed)))
+        .modifier(ControlItemStyleOutlinedModifier(internalState: internalState(isPressed: configuration.isPressed), layoutData: layoutData, isOn: isOn))
         .onHover { isHover in
             self.isHover = isHover
         }
     }
 
-    private func selector(isPressed: Bool) -> some View {
+    private func selectorContainer(isPressed: Bool) -> some View {
         HStack(alignment: .center, spacing: 0) {
             switch selectorType {
             case .switch:
@@ -64,23 +66,11 @@ struct ControlItemStyle: ButtonStyle {
                 CheckboxSelector(internalState: internalState(isPressed: isPressed), selectorState: binding.wrappedValue, isError: layoutData.isError)
             }
         }
-        .frame(maxHeight: containerAssetMaxHeight, alignment: .center)
+        .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)
     }
 
     private func label(isPressed: Bool) -> some View {
         ControlItemLabel(internalState: internalState(isPressed: isPressed), layoutData: layoutData)
-    }
-
-    // MARK: - Helpers
-
-    private var containerAssetMaxHeight: CGFloat {
-        switch selectorType {
-        case .switch:
-            // TODO: #405 - Adjust for switch
-            theme.controlItem.controlItemSizeMaxHeightAssetsContainer
-        case .radioButton, .checkBox:
-            theme.controlItem.controlItemSizeMaxHeightAssetsContainer
-        }
     }
 
     private func backgroundColor(state: ControlItemInternalState) -> Color {
@@ -93,6 +83,15 @@ struct ControlItemStyle: ButtonStyle {
             theme.select.selectColorBgPressed.color(for: colorScheme)
         case .disabled, .readOnly:
             theme.select.selectColorBgDisabled.color(for: colorScheme)
+        }
+    }
+
+    private var isOn: Bool {
+        switch selectorType {
+        case .switch(let isOn), .radioButton(let isOn):
+            isOn.wrappedValue
+        case .checkBox(let selectionState):
+            selectionState.wrappedValue == .selected
         }
     }
 
