@@ -1178,6 +1178,24 @@
         }
       }
     },
+    "app_components_radio_outlined_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outlined"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encadré"
+          }
+        }
+      }
+    },
     "app_components_radio_selection_label" : {
       "comment" : "Component - Radio",
       "localizations" : {

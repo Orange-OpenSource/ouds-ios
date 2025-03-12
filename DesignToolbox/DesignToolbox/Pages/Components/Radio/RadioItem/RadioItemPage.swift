@@ -78,6 +78,7 @@ private struct RadioItemDemo: View {
                       additionalLabelText: additionalLabelTextContent,
                       helperText: helperTextContent,
                       icon: icon,
+                      isOutlined: model.outlined,
                       isInversed: model.layoutOrientation == .inverse,
                       isError: model.isError,
                       isReadOnly: model.isReadOnly,

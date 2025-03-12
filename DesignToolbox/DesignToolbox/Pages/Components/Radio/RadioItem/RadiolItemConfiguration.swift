@@ -49,6 +49,10 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var outlined: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var divider: Bool {
         didSet { updateCode() }
     }
@@ -72,9 +76,10 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        selection = false
+        selection = true
         isError = false
         isReadOnly = false
+        outlined = false
         enabled = true
         additionalLabelText = true
         helperText = true
@@ -93,7 +98,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSRadioItem(isOn: $isOn, labelText:\(labelTextContent)\(additionalLabelTextPatern)\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSRadioItem(isOn: $isOn, labelText:\(labelTextContent)\(additionalLabelTextPatern)\(helperTextPatern)\(iconPatern)\(outlinedPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
@@ -113,6 +118,10 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
 
     private var iconPatern: String {
         icon ? ", icon: Image(decorative: \"ic_heart\")" : ""
+    }
+
+    private var outlinedPatern: String {
+        outlined ? ", isOutlined: true" : ""
     }
 
     private var isInversedPattern: String {
@@ -173,6 +182,10 @@ struct RadioItemConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
             Toggle("app_components_common_icon_label", isOn: $model.icon)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+
+            Toggle("app_components_radio_outlined_label", isOn: $model.outlined)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
