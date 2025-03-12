@@ -76,7 +76,7 @@ private struct RadioDemo: View {
         HStack(alignment: .center) {
             Spacer()
             OUDSRadio(isOn: $model.selection,
-                      accessibilityLabel: "app_components_checkbox_hint_a11y".localized(),
+                      accessibilityLabel: "app_components_radio_hint_a11y",
                       isError: model.isError)
                 .disabled(!model.enabled)
             Spacer()

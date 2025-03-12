@@ -4,79 +4,7 @@
     "" : {
       "shouldTranslate" : false
     },
-    "core_checkbox_disabled_a11y" : {
-      "comment" : "Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Disabled"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Désactivé"
-          }
-        }
-      }
-    },
-    "core_checkbox_enabled_a11y" : {
-      "comment" : "Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enabled"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activé"
-          }
-        }
-      }
-    },
-    "core_checkbox_error_a11y" : {
-      "comment" : "Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "is on errror"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "en erreur"
-          }
-        }
-      }
-    },
-    "core_checkbox_selector_hint_a11y" : {
-      "comment" : "Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Double-tap to toggle setting %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Taper deux fois pour rendre %@"
-          }
-        }
-      }
-    },
-    "core_checkbox_selector_selected_a11y" : {
+    "core_checkbox_checked_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -94,38 +22,20 @@
         }
       }
     },
-    "core_checkbox_selector_undeterminate_a11y" : {
+    "core_checkbox_hint_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Undeterminate"
+            "value" : "Double-tap to toggle setting %@"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Indéterminé"
-          }
-        }
-      }
-    },
-    "core_checkbox_selector_unselected_a11y" : {
-      "comment" : "Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unchecked"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Non coché"
+            "value" : "Taper deux fois pour rendre %@"
           }
         }
       }
@@ -144,6 +54,132 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Case à cocher"
+          }
+        }
+      }
+    },
+    "core_checkbox_uncheked_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unchecked"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non coché"
+          }
+        }
+      }
+    },
+    "core_checkbox_undeterminate_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Undeterminate"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indéterminé"
+          }
+        }
+      }
+    },
+    "core_common_disabled_a11y" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disabled"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé"
+          }
+        }
+      }
+    },
+    "core_common_enabled_a11y" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enabled"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activé"
+          }
+        }
+      }
+    },
+    "core_common_onError_a11y" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "is on errror"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "en erreur"
+          }
+        }
+      }
+    },
+    "core_radio_hint_a11y" : {
+      "comment" : "Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle setting %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour rendre %@"
+          }
+        }
+      }
+    },
+    "core_radio_trait_a11y" : {
+      "comment" : "Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio bouton"
           }
         }
       }

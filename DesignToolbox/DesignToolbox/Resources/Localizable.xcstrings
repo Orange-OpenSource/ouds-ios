@@ -522,23 +522,6 @@
         }
       }
     },
-    "app_components_checkbox_helperText_label" : {
-      "comment" : "Component - Checkbox",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte d’aide"
-          }
-        }
-      }
-    },
     "app_components_checkbox_helperText_text" : {
       "comment" : "Component - Checkbox",
       "localizations" : {
@@ -1125,7 +1108,7 @@
         }
       }
     },
-    "app_components_radio_helperText_label" : {
+    "app_components_radio_helperText_text" : {
       "comment" : "Component - Radio",
       "localizations" : {
         "en" : {
@@ -1142,19 +1125,20 @@
         }
       }
     },
-    "app_components_radio_helperText_text" : {
+    "app_components_radio_hint_a11y" : {
       "comment" : "Component - Radio",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Helper text"
+            "value" : "This is a fake label used in the demo app"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texte d’aide"
+            "value" : "Ceci est un label bidon pour l’app de démo"
           }
         }
       }

@@ -173,8 +173,8 @@ public struct OUDSCheckboxItem: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     /// - Parameter layoutData: All data of the layout used to forge the string.
     private func a11yLabel(layoutData: ControlItemLabel.LayoutData) -> String {
-        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_checkbox_disabled_a11y".localized() : ""
-        let errorDescription = layoutData.isError ? "core_checkbox_error_a11y".localized() : ""
+        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
+        let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
         let result = "\(stateDescription), \(layoutData.labelText), \(layoutData.helperText ?? "") \(errorDescription), \(checkboxA11yTrait)"

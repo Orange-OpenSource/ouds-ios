@@ -159,7 +159,7 @@ struct RadioItemConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(!model.enabled || model.isError)
 
-            Toggle("app_components_radio_helperText_label", isOn: $model.helperText)
+            Toggle("app_components_common_helperText_label", isOn: $model.helperText)
                 .typeHeadingMedium(theme)
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 

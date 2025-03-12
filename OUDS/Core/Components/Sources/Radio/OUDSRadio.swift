@@ -103,8 +103,8 @@ public struct OUDSRadio: View {
 
     /// Forges a string to vocalize with *Voice Over* describing the component state
     private var a11yLabel: String {
-        let stateDescription = isEnabled ? "" : "core_radio_disabled_a11y".localized()
-        let errorDescription = isError ? "core_radio_error_a11y".localized() : ""
+        let stateDescription = isEnabled ? "" : "core_common_disabled_a11y".localized()
+        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
         let result = "\(accessibilityLabel), \(stateDescription) \(errorDescription) \(radioA11yTrait)"
@@ -113,16 +113,16 @@ public struct OUDSRadio: View {
 
     /// The text to vocalize with *Voice Over* for the state of the selector
     private var a11yValue: String {
-        _isOn.wrappedValue ? "core_checkbox_selector_selected_a11y" :
-            "core_checkbox_selector_unselected_a11y"
+        _isOn.wrappedValue ? "core_common_selected_a11y" :
+            "core_common_unselected_a11y"
     }
 
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
     private var a11yHint: String {
         if _isOn.wrappedValue {
-            return "core_checkbox_selector_hint_a11y" <- "core_checkbox_selector_unselected_a11y".localized()
+            return "core_radio_hint_a11y" <- "core_common_unselected_a11y".localized()
         } else {
-            return "core_checkbox_selector_hint_a11y" <- "core_checkbox_selector_selected_a11y".localized()
+            return "core_radio_hint_a11y" <- "core_common_selected_a11y".localized()
         }
     }
 }
