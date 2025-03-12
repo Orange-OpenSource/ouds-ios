@@ -89,21 +89,26 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     deinit { }
 
     // MARK: - Component Configuration
-
+    // swiftlint:disable line_length
     override func updateCode() {
         code =
           """
-        OUDSRadioItem(state: $state, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSRadioItem(isOn: $isOn, labelText:\(labelTextContent)\(additionalLabelTextPatern)\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
+    // swiftlint:enable line_length
 
     private var disableCode: String {
         ".disable(\(enabled ? "false" : "true"))"
     }
 
+    private var additionalLabelTextPatern: String {
+        helperText ? ", additionalLabelText: \"\(additionalLabelTextContent)\"" : ""
+    }
+
     private var helperTextPatern: String {
-        helperText ? ", helperText: \"\(helperTextContent)\")" : ""
+        helperText ? ", helperText: \"\(helperTextContent)\"" : ""
     }
 
     private var iconPatern: String {

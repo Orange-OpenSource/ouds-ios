@@ -48,7 +48,8 @@ final class RadioConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-          OUDSRadio(state: $state\(isErrorPattern))
+          @State var isOn: Bool = false
+          OUDSRadio(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isErrorPattern))
           \(disableCode)
           """
     }
