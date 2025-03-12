@@ -40,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+- [Tool] Update `json` RubyGem from 2.10.1 to 2.10.2 (CVE-2025-27788) ([#500](https://github.com/Orange-OpenSource/ouds-ios/pull/500))
 - [Tool] Update `uri` RubyGem to 1.0.3 (CVE-2025-27221) ([#6](https://github.com/Orange-OpenSource/ouds-ios/security/dependabot/6))
 
 ## [0.11.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.10.0...0.11.0) - 2025-02-20
