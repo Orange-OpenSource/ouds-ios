@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Update `fastlane` gem from v2.226.0 to v2.227.0
 - [Library] Split checkbox component API for two-values and three-values states ([#497](https://github.com/Orange-OpenSource/ouds-ios/issues/497))
 - [Library] Rename *selector* to *indicator* for control item absed components ([#496](https://github.com/Orange-OpenSource/ouds-ios/issues/496))
 - [Library] Checkbox component v2 ([#486](https://github.com/Orange-OpenSource/ouds-ios/issues/486))
