@@ -34,7 +34,7 @@ struct ControlItemStyle: ButtonStyle {
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
+        HStack(alignment: .top, spacing: theme.controlItem.controlItemSpaceColumnGap) {
             switch layoutData.orientation {
             case .default:
                 selectorContainer(isPressed: configuration.isPressed)
@@ -44,7 +44,7 @@ struct ControlItemStyle: ButtonStyle {
                 selectorContainer(isPressed: configuration.isPressed)
             }
         }
-        .padding(.all, theme.listItem.listItemSpaceInset)
+        .padding(.all, theme.controlItem.controlItemSpaceInset)
         .oudsDivider(show: layoutData.hasDivider)
         .background(backgroundColor(state: internalState(isPressed: configuration.isPressed)))
         .modifier(ControlItemStyleOutlinedModifier(internalState: internalState(isPressed: configuration.isPressed), layoutData: layoutData, isOn: isOn))
