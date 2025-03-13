@@ -79,9 +79,9 @@ import SwiftUI
 ///     // A trailing radio with a label, an additonal label, an helper text and an icon.
 ///     // The inverse layout will be used here.
 ///     OUDSRadioItem(isOn: $selection,
-///                      labelText: "We love cakes",
-///                      additionalLabelText: "with chocolate and hazelnuts",
-///                      helperText: "We love bownies",
+///                      labelText: "Brownies",
+///                      additionalLabelText: "Cake",
+///                      helperText: "Preparation: 15, cooking: 10 mn",
 ///                      isInversed: true,
 ///                      icon: Image(decorative: "ic_heart"))
 ///
