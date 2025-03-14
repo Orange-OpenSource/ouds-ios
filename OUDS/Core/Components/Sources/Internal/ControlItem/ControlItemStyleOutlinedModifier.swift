@@ -16,15 +16,20 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
+/// A `ViewModifier` to apply to `ControlItem` views so as to define an outline effect,
+/// i.e. draw kind of borders around the object.
+/// If this view modifier is used to draw an outline in an error context for a disabled component, a *faal error* will happen
+/// because this behaviour is forbidden by design.
 struct ControlItemStyleOutlinedModifier: ViewModifier {
 
     // MARK: Stored properties
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
     let internalState: ControlItemInternalState
     let layoutData: ControlItemLabel.LayoutData
     let isOn: Bool
+
+    @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
@@ -73,7 +78,7 @@ struct ControlItemStyleOutlinedModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticTokens? {
         guard !layoutData.isError else {
-            OL.fatal("An outlined ConttolItem  with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An outlined ControlItem with a disabled state and an error situation has been detected, which is not allowed."
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         return isOn ? theme.colors.colorActionDisabled : nil

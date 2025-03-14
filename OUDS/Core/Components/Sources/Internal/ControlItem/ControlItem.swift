@@ -54,7 +54,8 @@ struct ControlItem: View {
     ///   - additionalLabelText: An additional label text of the item.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
-    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - isOutlined: If the component has lines around it like kind of borders (`true`)
+    ///   - isOnError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: `true` if component is in read only mode, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///   - orientation: Specify the orientation of the layout. If `default` the selector is at the leading position, if `inverse` it is on trailing.
@@ -63,20 +64,20 @@ struct ControlItem: View {
          helperText: String? = nil,
          additionalLabelText: String? = nil,
          icon: Image? = nil,
-         outlined: Bool = false,
-         onError: Bool = false,
+         isOutlined: Bool = false,
+         isOnError: Bool = false,
          isReadOnly: Bool = false,
-         divider: Bool = false,
+         hasDivider: Bool = false,
          orientation: Self.Orientation = .default) {
         self.selectorType = selectorType
         self.layoutData = .init(labelText: labelText,
                                 additionalLabelText: additionalLabelText,
                                 helperText: helperText,
                                 icon: icon,
-                                isOutlined: outlined,
-                                isError: onError,
+                                isOutlined: isOutlined,
+                                isError: isOnError,
                                 isReadOnly: isReadOnly,
-                                hasDivider: divider,
+                                hasDivider: hasDivider,
                                 orientation: orientation)
     }
 

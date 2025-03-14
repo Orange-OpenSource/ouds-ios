@@ -50,7 +50,7 @@ struct RadioPage: View {
 
 // MARK: - Radio Illustration
 
-struct RadioIllustration: View {
+private struct RadioIllustration: View {
 
     let model: RadioConfigurationModel
     @Environment(\.colorScheme) private var colorScheme
@@ -76,7 +76,7 @@ private struct RadioDemo: View {
         HStack(alignment: .center) {
             Spacer()
             OUDSRadio(isOn: $model.selection,
-                      accessibilityLabel: "app_components_radio_hint_a11y",
+                      accessibilityLabel: "app_components_radio_hint_a11y".localized(), // No LocalizedStringKey tpe inference in the component
                       isError: model.isError)
                 .disabled(!model.enabled)
             Spacer()

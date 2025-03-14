@@ -23,8 +23,6 @@ import SwiftUI
 ///
 /// An ``OUDSRadio`` can be related to an error situation, for example troubles for a formular.
 /// A dedicated look-and-feel is implemented for that if the `isError` flag is risen.
-/// In addition, the ``OUDSRadio`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
-/// as disabled.
 ///
 /// ## Accessibility considerations
 ///
@@ -46,18 +44,19 @@ import SwiftUI
 ///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie")
 ///
 ///     // A simple radio, but is an error context
-///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie"), isError: true)
+///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie", isError: true)
 ///
-///     // Never disable an error-related checkbox as it will crash
+///     // Never disable an error-related radio button as it will crash
 ///     // This is forbidden by design!
-///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie"), isError: true).disabled(true) // fatal error
+///     OUDSRadio(isOn: $selection, accessibilityLabel: "The cake is a lie", isError: true).disabled(true) // fatal error
 /// ```
+///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com/472794e18/p/23f1c1-radio](https://unified-design-system.orange.com/472794e18/p/23f1c1-radio)
+/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
 ///
-/// - Since: 0.12.0
-public struct OUDSRadio: View {
+/// - Since: 0.13.0
+public struct OUDSRadio: View { // TODO: #266 - Update documentation hyperlink above
 
     // MARK: - Properties
 
@@ -69,7 +68,7 @@ public struct OUDSRadio: View {
 
     // MARK: - Initializers
 
-    /// Creates a radio with only a selector.
+    /// Creates a radio with only an indicator.
     ///
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
@@ -96,7 +95,7 @@ public struct OUDSRadio: View {
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)
-        .accessibilityValue(a11yValue)
+        .accessibilityValue(a11yValue.localized())
         .accessibilityHint(a11yHint)
         .buttonStyle(RadioOnlyButtonStyle(isOn: $isOn.wrappedValue, isError: isError))
     }
@@ -111,18 +110,13 @@ public struct OUDSRadio: View {
         return result
     }
 
-    /// The text to vocalize with *Voice Over* for the state of the selector
+    /// The text to vocalize with *Voice Over* for the state of the indicator
     private var a11yValue: String {
-        _isOn.wrappedValue ? "core_common_selected_a11y" :
-            "core_common_unselected_a11y"
+        _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
     }
 
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
     private var a11yHint: String {
-        if _isOn.wrappedValue {
-            return "core_radio_hint_a11y" <- "core_common_unselected_a11y".localized()
-        } else {
-            return "core_radio_hint_a11y" <- "core_common_selected_a11y".localized()
-        }
+        "core_radio_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
     }
 }

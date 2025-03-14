@@ -19,8 +19,7 @@ import SwiftUI
 // MARK: - Radio Indicator Style
 
 /// A `ViewModier` to apply to the ``RadioIndicator`` component.
-/// It will define the look and feel of the indicator depending to the ``ControlItemInternalState``,
-/// the ``Bool`` and if there is an error context or not.
+/// It will define the look and feel of the indicator depending to the ``ControlItemInternalState`` and some flags
 struct RadioIndicatorStyle: ViewModifier {
 
     // MARK: - Properties
@@ -92,14 +91,14 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDS Radio with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
     }
 }
 
-// MARK: - Radio Selector Background Modifier
+// MARK: - Radio Indicator Background Modifier
 
 private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
@@ -148,14 +147,14 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
     private var disabledColor: Color {
         guard !isError else {
-            OL.fatal("An OUDS Radio with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
     }
 }
 
-// MARK: - Radio Selector Border Modifier
+// MARK: - Radio Indicator Border Modifier
 
 private struct RadioIndicatorBorderModifier: ViewModifier {
 
@@ -219,7 +218,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDS Radio with a disabled state and an error situation has been detected, which is not allowed"
+            OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed"
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled

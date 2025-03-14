@@ -48,7 +48,6 @@ final class RadioConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-          @State var isOn: Bool = false
           OUDSRadio(isOn: $isOn, accessibilityLabel: "A label for accessibility"\(isErrorPattern))
           \(disableCode)
           """
@@ -59,11 +58,7 @@ final class RadioConfigurationModel: ComponentConfiguration {
     }
 
     private var isErrorPattern: String {
-        if isError && enabled {
-            return ", isError: true"
-        } else {
-            return ""
-        }
+        isError && enabled ? ", isError: true" : ""
     }
 }
 

@@ -17,18 +17,18 @@ import SwiftUI
 // MARK: - OUDS Radio Item
 
 /// The ``OUDSRadioItem`` proposes layouts to add in your views some radios components.
-/// If you want to use a radio with only a indicator, prefer instead ``OUDSRadio``.
+/// If you want to use a radio with only an indicator, prefer instead ``OUDSRadio``.
 ///
 /// ## Layouts
 ///
 /// The component can be rendered as two different layouts:
 ///
-/// - **default**: the component has a leading selector, a label and optional helper texts, and an optional trailing decorative icon
-/// - **inverse**: like the *default* layout but with a trailing radio seelctor and a leading optional image
+/// - **default**: the component has a leading indicator, a label and optional helper texts, and an optional trailing decorative icon
+/// - **inverse**: like the *default* layout but with a trailing radio indicator and a leading optional decorative icon
 ///
-/// ## Selector states
+/// ## Indicator states
 ///
-/// The radio selector has three available states:
+/// The radio indicator has two available states:
 /// - **selected**: the radio is filled with a filled circle, the user has made the action to select the radio
 /// - **unselected**: the radio is empty, does not contain anything, the user has made the action to unselect or did not select yet the radio
 ///
@@ -58,65 +58,65 @@ import SwiftUI
 ///
 ///     // A leading radio with a label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Brownies")
+///     OUDSRadioItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds")
 ///
 ///     // A leading radio with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Brownies", isReadOnly: true)
+///     OUDSRadioItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", isReadOnly: true)
 ///
 ///     // A leading radio with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Brownies!", helperText: "15 mn")
-
-///     // A leading oulined radio with an additional label, an helper text
+///     OUDSRadioItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", helperText: "The Beatles")
+///
+///     // A leading oulined radio with an additional label, an helper text.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Brownies", additionalLabelText: "Cakes", helperText: "15 mn", outlined: true)
+///     OUDSRadioItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", additionalLabelText: "The Beatles", helperText: "1967", outlined: true)
 ///
 ///     // A leading radio with an additional label.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Brownies", additionalLabelText: "Cakes", helperText: "15 mn")
+///     OUDSRadioItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", additionalLabelText: "The Beatles", helperText: "1967")
 ///
 ///     // A trailing radio with a label, an additonal label, an helper text and an icon.
 ///     // The inverse layout will be used here.
 ///     OUDSRadioItem(isOn: $selection,
-///                      labelText: "Brownies",
-///                      additionalLabelText: "Cake",
-///                      helperText: "Preparation: 15, cooking: 10 mn",
-///                      isInversed: true,
-///                      icon: Image(decorative: "ic_heart"))
+///                   labelText: "Lucy in the Sky with Diamonds",
+///                   additionalLabelText: "The Beatles",
+///                   helperText: "1967",
+///                   isInversed: true,
+///                   icon: Image(decorative: "ic_heart"))
 ///
 ///     // A trailing radio with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
 ///     OUDSRadioItem(isOn: $selection,
-///                      labelText: "Rescue from this world!",
-///                      helperText: "Put your hand in mine",
-///                      icon: Image(decorative: "ic_heart"),
-///                      isInversed: true,
-///                      isError: true,
-///                      divider: true)
+///                   labelText: "Rescue from this world!",
+///                   helperText: "Put your hand in mine",
+///                   icon: Image(decorative: "ic_heart"),
+///                   isInversed: true,
+///                   isError: true,
+///                   hasDivider: true)
 ///
 ///     // A leading radio with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Hello world")
+///     OUDSRadioItem(isOn: $selection, labelText: "Rescue from this world!")
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related radio as it will crash
 ///     // This is forbidden by design!
-///     OUDSRadioItem(isOn: $selection, labelText: "Hello world", isError: true).disabled(true) // fatal error
-///     OUDSRadioItem(isOn: $selection, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSRadioItem(isOn: $selection, labelText: "Kaboom!", isError: true).disabled(true) // fatal error
+///     OUDSRadioItem(isOn: $selection, labelText: "Kaboom!", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com/472794e18/p/23f1c1-radio](https://unified-design-system.orange.com/472794e18/p/23f1c1-radio)
+/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
 ///
-/// - Since: 0.12.0
-public struct OUDSRadioItem: View {
+/// - Since: 0.13.0
+public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperlink above
 
     // MARK: - Properties
 
-    private let layoutData: ControlItemLabel.LayoutData
     @Binding private var isOn: Bool
+    private let layoutData: ControlItemLabel.LayoutData
 
     @Environment(\.isEnabled) private var isEnabled
 
@@ -127,13 +127,13 @@ public struct OUDSRadioItem: View {
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
-    ///    - isOn: A binding to a property that determines whether the toggle is on or off.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - labelText: The main label text of the radio.
     ///   - additionalLabelText: An additional label text of the radio.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - isOutlined: Flag to get an outlined radio
-    ///   - isInversed: `True` of the radio selector must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isInversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
@@ -148,11 +148,15 @@ public struct OUDSRadioItem: View {
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false) {
         if isError && isReadOnly {
-            OL.fatal("It is forbidden by design to have an OUDS Radio in an error context and in read only mode")
+            OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
         }
 
         if let helperText, helperText.isEmpty {
-            OL.warning("Helper text given to an OUDS Radio is defined but empty, is it expected? Prefer use of `nil` value instead")
+            OL.warning("Helper text given to an OUDSRadioItem is defined but empty, is it expected? Prefer use of `nil` value instead")
+        }
+
+        if let additionalLabelText, additionalLabelText.isEmpty {
+            OL.warning("Additional label text given to an OUDSRadioitem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         _isOn = isOn
@@ -181,15 +185,14 @@ public struct OUDSRadioItem: View {
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)
-        .accessibilityValue(a11yValue)
+        .accessibilityValue(a11yValue.localized())
         .accessibilityHint(a11yHint)
         .buttonStyle(ControlItemStyle(selectorType: .radioButton($isOn), layoutData: layoutData))
     }
 
-    /// The text to vocalize with *Voice Over* for the state of the selector
+    /// The text to vocalize with *Voice Over* for the state of the indicator
     private var a11yValue: String {
-        _isOn.wrappedValue ? "core_common_selected_a11y" :
-            "core_commne_unselected_a11y"
+        _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.
@@ -207,11 +210,7 @@ public struct OUDSRadioItem: View {
         if layoutData.isReadOnly || !isEnabled {
             return ""
         } else {
-            if _isOn.wrappedValue {
-                return "core_radio_hint_a11y" <- "core_common_unselected_a11y".localized()
-            } else {
-                return "core_radio_hint_a11y" <- "core_common_selected_a11y".localized()
-            }
+            return "core_radio_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
         }
     }
 }

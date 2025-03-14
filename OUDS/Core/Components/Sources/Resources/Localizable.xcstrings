@@ -58,7 +58,7 @@
         }
       }
     },
-    "core_checkbox_uncheked_a11y" : {
+    "core_checkbox_unchecked_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -144,6 +144,42 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "en erreur"
+          }
+        }
+      }
+    },
+    "core_common_selected_a11y" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionné"
+          }
+        }
+      }
+    },
+    "core_common_unselected_a11y" : {
+      "comment" : "Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unselected"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non sélectionné"
           }
         }
       }

@@ -19,6 +19,7 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./OUDS/Core/Components/Sources/Resources/Media.xcassets/Link/ic_form_chevron_left.imageset/ic_form_chevron_left.svg
 ./OUDS/Core/Components/Sources/Resources/Media.xcassets/Checkbox/ic_form_tick.imageset/ic_form_tick.svg
 ./OUDS/Core/Components/Sources/Resources/Media.xcassets/Checkbox/ic_form_dash.imageset/ic_form_dash.svg
+./OUDS/Core/Components/Sources/Resources/Media.xcassets/Radio/ic_radio_selected.imageset/ic_radio_selected.svg
 
 # Design Toolbox
 
@@ -41,6 +42,8 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_link.imageset/il_component_link.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_checkbox.imageset/il_component_checkbox_dark.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_checkbox.imageset/il_component_checkbox.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_radio.imageset/il_component_radio.svg
+DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_radio.imageset/il_component_radio_dark.svg
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_empty_screen.imageset/il_empty_screen.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Illustrations/il_tokens_grid_column_margin.imageset/il_tokens_grid_column_margin.png
@@ -61,8 +64,5 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_vector.imageset/ic_vector.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_typography.imageset/ic_typography.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Tokens/ic_union.imageset/ic_union.svg
-
-# OUDS/OUDSComponents
-./OUDS/Core/Components/Sources/Resources/Media.xcassets/ic_form_chevron_left.imageset/ic_form_chevron_left.svg
 
 End of the parts list under Orange SA Copyright

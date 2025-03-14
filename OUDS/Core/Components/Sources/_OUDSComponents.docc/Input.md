@@ -14,7 +14,7 @@ You can use a simple checkbox without any labels and images.
 ```swift
      // A simple checkbox, with only a selector
      // The component must be instanciated with a string parameter used as accessibility label that will be
-     // vocalized by *Voice Over*. 
+     // vocalized by Voice Over. 
      OUDSCheckbox(state: $state, accessibilityLabel: "Select the element")
 ```
 
@@ -48,7 +48,7 @@ You can use a simple radio without any labels and images.
 ```swift
      // A simple radio, with only a selector
      // The component must be instanciated with a string parameter used as accessibility label that will 
-     // be vocalized by *Voice Over*. 
+     // be vocalized by Voice Over. 
      OUDSRadio(isOn: $selection, accessibilityLabel: "Select the element")
 ```
 
@@ -59,16 +59,16 @@ The selector can be leading or trailing.
 
 ```swift
      // A leading radio with a label
-     OUDSRadiotem(isOn: $selection, label: "Hello world")
+     OUDSRadiotem(isOn: $selection, label: "Lucy in the Sky with Diamonds")
 
      // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an
-     //  error with an inverse layout
-     OUDSCheckboxItem(isOn: $selection,
-                      labelText: "Bownies",
-                      additionalLabelText: "Cake family"
-                      helperText: "Preparation: 15 mn",
-                      icon: Image(decorative: "ic_heart"),
-                      isInversed: true,
-                      isError: true,
-                      hasDivider: true)
+     // error with an inverse layout
+     OUDSRadiotem(isOn: $selection,
+                  labelText: "Lucy in the Sky with Diamonds",
+                  additionalLabelText: "The Beatles"
+                  helperText: "1967",
+                  icon: Image(decorative: "ic_heart"),
+                  isInversed: true,
+                  isError: true,
+                  hasDivider: true)
 ```

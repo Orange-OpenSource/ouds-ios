@@ -98,7 +98,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSRadioItem(isOn: $isOn, labelText:\(labelTextContent)\(additionalLabelTextPatern)\(helperTextPatern)\(iconPatern)\(outlinedPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSRadioItem(isOn: $isOn, labelText: "\(labelTextContent)"\(additionalLabelTextPatern)\(helperTextPatern)\(iconPatern)\(outlinedPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
