@@ -47,13 +47,7 @@ struct ControlItemLabel: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.controlItem.controlItemSpaceColumnGap) {
-            if layoutData.orientation == .inverse {
-                icon()
-                texts()
-            } else {
-                texts()
-                icon()
-            }
+            texts()
         }
     }
 
@@ -84,22 +78,6 @@ struct ControlItemLabel: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    @ViewBuilder
-    private func icon() -> some View {
-        if let icon = layoutData.icon {
-            HStack(alignment: .center, spacing: 0) {
-                icon
-                    .resizable()
-                    .renderingMode(.template)
-                    .foregroundStyle(iconColor)
-                    .frame(width: theme.controlItem.controlItemSizeIcon,
-                           height: theme.controlItem.controlItemSizeIcon)
-            }
-            .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer,
-                   alignment: .center)
-        }
-    }
-
     // MARK: - Colors
 
     private var labelTextColor: Color {
@@ -122,15 +100,6 @@ struct ControlItemLabel: View {
             case .disabled:
                 return theme.colors.colorContentDisabled.color(for: colorScheme)
             }
-        }
-    }
-
-    private var iconColor: Color {
-        switch internalState {
-        case .enabled, .pressed, .hover, .readOnly:
-            theme.colors.colorContentDefault.color(for: colorScheme)
-        case .disabled:
-            theme.colors.colorContentDisabled.color(for: colorScheme)
         }
     }
 

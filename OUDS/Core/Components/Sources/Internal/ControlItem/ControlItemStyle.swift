@@ -31,6 +31,17 @@ struct ControlItemStyle: ButtonStyle {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    // MARK: Computed properties
+
+    private var isOn: Bool {
+        switch selectorType {
+        case .switch(let isOn), .radioButton(let isOn):
+            isOn.wrappedValue
+        case .checkBox(let selectionState):
+            selectionState.wrappedValue == .selected
+        }
+    }
+
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
@@ -38,9 +49,11 @@ struct ControlItemStyle: ButtonStyle {
             switch layoutData.orientation {
             case .default:
                 selectorContainer(isPressed: configuration.isPressed)
-                label(isPressed: configuration.isPressed)
+                labelContainer(isPressed: configuration.isPressed)
+                iconContainer(isPressed: configuration.isPressed)
             case .inverse:
-                label(isPressed: configuration.isPressed)
+                iconContainer(isPressed: configuration.isPressed)
+                labelContainer(isPressed: configuration.isPressed)
                 selectorContainer(isPressed: configuration.isPressed)
             }
         }
@@ -52,6 +65,8 @@ struct ControlItemStyle: ButtonStyle {
             self.isHover = isHover
         }
     }
+
+    // MARK: Containers
 
     private func selectorContainer(isPressed: Bool) -> some View {
         HStack(alignment: .center, spacing: 0) {
@@ -69,8 +84,35 @@ struct ControlItemStyle: ButtonStyle {
         .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)
     }
 
-    private func label(isPressed: Bool) -> some View {
+    private func labelContainer(isPressed: Bool) -> some View {
         ControlItemLabel(internalState: internalState(isPressed: isPressed), layoutData: layoutData)
+    }
+
+    @ViewBuilder
+    private func iconContainer(isPressed: Bool) -> some View {
+        if let icon = layoutData.icon {
+            HStack(alignment: .center, spacing: 0) {
+                icon
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundStyle(iconColor(state: internalState(isPressed: isPressed)))
+                    .frame(width: theme.controlItem.controlItemSizeIcon,
+                           height: theme.controlItem.controlItemSizeIcon)
+            }
+            .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer,
+                   alignment: .center)
+        }
+    }
+
+    // MARK: - Colors
+
+    private func iconColor(state: ControlItemInternalState) -> Color {
+        switch state {
+        case .enabled, .pressed, .hover, .readOnly:
+            theme.colors.colorContentDefault.color(for: colorScheme)
+        case .disabled:
+            theme.colors.colorContentDisabled.color(for: colorScheme)
+        }
     }
 
     private func backgroundColor(state: ControlItemInternalState) -> Color {
@@ -86,14 +128,7 @@ struct ControlItemStyle: ButtonStyle {
         }
     }
 
-    private var isOn: Bool {
-        switch selectorType {
-        case .switch(let isOn), .radioButton(let isOn):
-            isOn.wrappedValue
-        case .checkBox(let selectionState):
-            selectionState.wrappedValue == .selected
-        }
-    }
+    // MARK: Internal state management
 
     private func internalState(isPressed: Bool) -> ControlItemInternalState {
         if layoutData.isReadOnly {
