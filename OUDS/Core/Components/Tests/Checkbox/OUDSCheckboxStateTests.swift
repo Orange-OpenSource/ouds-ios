@@ -32,10 +32,10 @@ struct OUDSCheckboxStateTests {
         #expect(unselectedState == OUDSCheckboxIndicatorState.selected)
     }
 
-    /// An undeterminate checkbox must be toggled to a selected checkbox.
+    /// An indeterminate checkbox must be toggled to a selected checkbox.
     @Test func toogleUndetermibateMustGiveSelected() {
-        var undeterminateState = OUDSCheckboxIndicatorState.undeterminate
-        undeterminateState.toggle()
-        #expect(undeterminateState == OUDSCheckboxIndicatorState.selected)
+        var indeterminateState = OUDSCheckboxIndicatorState.indeterminate
+        indeterminateState.toggle()
+        #expect(indeterminateState == OUDSCheckboxIndicatorState.selected)
     }
 }

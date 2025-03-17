@@ -79,7 +79,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
             return theme.colors.colorActionNegativeEnabled
         } else {
             switch indicatorState {
-            case .selected, .undeterminate:
+            case .selected, .indeterminate:
                 return theme.colors.colorActionSelected
             case .unselected:
                 return theme.colors.colorActionEnabled
@@ -203,7 +203,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
             return theme.colors.colorActionNegativeEnabled
         } else {
             switch indicatorState {
-            case .selected, .undeterminate:
+            case .selected, .indeterminate:
                 return theme.colors.colorActionSelected
             case .unselected:
                 return theme.colors.colorActionEnabled
@@ -252,7 +252,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var enabledWidth: CGFloat {
         switch indicatorState {
-        case .selected, .undeterminate:
+        case .selected, .indeterminate:
             return theme.checkbox.checkboxBorderWidthSelected
         case .unselected:
             return theme.checkbox.checkboxBorderWidthUnselected
@@ -261,7 +261,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var hoverWidth: CGFloat {
         switch indicatorState {
-        case .selected, .undeterminate:
+        case .selected, .indeterminate:
             return theme.checkbox.checkboxBorderWidthSelectedHover
         case .unselected:
             return theme.checkbox.checkboxBorderWidthUnselectedHover
@@ -270,7 +270,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var pressedWidth: CGFloat {
         switch indicatorState {
-        case .selected, .undeterminate:
+        case .selected, .indeterminate:
             return theme.checkbox.checkboxBorderWidthSelectedPressed
         case .unselected:
             return theme.checkbox.checkboxBorderWidthUnselectedPressed
@@ -279,7 +279,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var disabledWidth: CGFloat {
         switch indicatorState {
-        case .selected, .undeterminate:
+        case .selected, .indeterminate:
             return theme.checkbox.checkboxBorderWidthSelected
         case .unselected:
             return theme.checkbox.checkboxBorderWidthUnselected

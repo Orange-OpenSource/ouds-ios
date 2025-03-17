@@ -31,7 +31,7 @@ import SwiftUI
 /// The checkbox indicator has three available states:
 /// - **selected**: the checkbox is filled with a tick, the user has made the action to select the checkbox
 /// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
-/// - **undeterminate**: mike a prefilled or preticked checkbox, the user did not do anything on it yet
+/// - **indeterminate**: mike a prefilled or preticked checkbox, the user did not do anything on it yet
 ///
 /// If you need a checkbox with only two states to manage use instead ``OUDSCheckboxItem``.
 ///
@@ -55,8 +55,8 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Supposing we have an undeterminate state checkbox
-///     @Published var selection: OUDSCheckboxIndicatorState  = .undeterminate
+///     // Supposing we have an indeterminate state checkbox
+///     @Published var selection: OUDSCheckboxIndicatorState = .indeterminate
 ///
 ///     // A leading checkbox with a label.
 ///     // The default layout will be used here.

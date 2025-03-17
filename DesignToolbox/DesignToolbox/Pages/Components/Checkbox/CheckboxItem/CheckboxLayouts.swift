@@ -36,7 +36,7 @@ enum DesignToolboxLayoutOrientation: CaseIterable, CustomStringConvertible {
 // MARK: - OUDS Checkbox Indicator State extension
 
 extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static var allCases: [OUDSCheckboxIndicatorState] = [.selected, .unselected, .undeterminate]
+    nonisolated(unsafe) public static var allCases: [OUDSCheckboxIndicatorState] = [.selected, .unselected, .indeterminate]
 
     // No l10n, tehchnical names
     public var description: String {
@@ -45,8 +45,8 @@ extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive Cu
             "Selected"
         case .unselected:
             "Unselected"
-        case .undeterminate:
-            "Undeterminate"
+        case .indeterminate:
+            "Indeterminate"
         }
     }
 

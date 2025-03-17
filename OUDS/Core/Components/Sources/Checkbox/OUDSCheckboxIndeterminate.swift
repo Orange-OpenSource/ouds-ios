@@ -24,7 +24,7 @@ import SwiftUI
 /// The checkbox indicator has three available states:
 /// - **selected**: the checkbox is filled with a tick, the user has made the action to select the checkbox
 /// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
-/// - **undeterminate**: like a prefilled or preticked checkbox, the user did not do anything on it yet
+/// - **indeterminate**: like a prefilled or preticked checkbox, the user did not do anything on it yet
 ///
 /// In you are looking for a checkbox with only two possible values, refer to ``OUDSCheckbox``.
 ///
@@ -46,8 +46,8 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Supposing we have an undeterminate state checkbox
-///     @Published var selection: OUDSCheckboxIndicatorState  = .undeterminate
+///     // Supposing we have an indeterminate state checkbox
+///     @Published var selection: OUDSCheckboxIndicatorState = .indeterminate
 ///
 ///     // A simple checkbox, no error, not in read only mode
 ///     OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "The cake is a lie")
