@@ -119,7 +119,7 @@ public struct OUDSCheckboxItem: View {
     ///
     /// - Parameters:
     ///   - selection: A binding to a property that determines wether the selector is ticked, unticker or preticked.
-    ///   - labelText: The main label text of the switch.
+    ///   - labelText: The main label text of the checkbox.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - isInversed: `true` of the checkbox selector must be in trailing position,` false` otherwise. Default to `false`
@@ -145,8 +145,10 @@ public struct OUDSCheckboxItem: View {
         _selection = selection
         self.layoutData = .init(
             labelText: labelText,
+            additionalLabelText: nil,
             helperText: helperText,
             icon: icon,
+            isOutlined: false,
             isError: isError,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
@@ -171,8 +173,8 @@ public struct OUDSCheckboxItem: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     /// - Parameter layoutData: All data of the layout used to forge the string.
     private func a11yLabel(layoutData: ControlItemLabel.LayoutData) -> String {
-        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_checkbox_disabled_a11y".localized() : ""
-        let errorDescription = layoutData.isError ? "core_checkbox_error_a11y".localized() : ""
+        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
+        let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
         let result = "\(stateDescription), \(layoutData.labelText), \(layoutData.helperText ?? "") \(errorDescription), \(checkboxA11yTrait)"

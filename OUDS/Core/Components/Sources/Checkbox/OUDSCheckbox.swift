@@ -110,8 +110,8 @@ public struct OUDSCheckbox: View {
     /// Forges a string to vocalize with *Voice Over* describing the component state
     /// - Parameter isDisabled: True if component is disabled, false otherwise
     private func a11yLabel(isDisabled: Bool) -> String {
-        let stateDescription = isDisabled ? "core_checkbox_disabled_a11y".localized() : ""
-        let errorDescription = isError ? "core_checkbox_error_a11y".localized() : ""
+        let stateDescription = isDisabled ? "core_common_disabled_a11y".localized() : ""
+        let errorDescription = isError ? "core_common_onError_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
         let result = "\(a11yLabel), \(stateDescription) \(errorDescription) \(checkboxA11yTrait)"

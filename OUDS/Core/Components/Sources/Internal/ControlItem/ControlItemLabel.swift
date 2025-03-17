@@ -33,8 +33,10 @@ struct ControlItemLabel: View {
     /// Gathers any details and content to add in the ``ControlItemLabel``
     struct LayoutData {
         let labelText: String
+        let additionalLabelText: String?
         let helperText: String?
         let icon: Image?
+        let isOutlined: Bool
         let isError: Bool
         let isReadOnly: Bool
         let hasDivider: Bool
@@ -44,14 +46,8 @@ struct ControlItemLabel: View {
     // MARK: - Body
 
     var body: some View {
-        HStack(alignment: .center, spacing: theme.listItem.listItemSpaceColumnGap) {
-            if layoutData.orientation == .inverse {
-                icon()
-                texts()
-            } else {
-                texts()
-                icon()
-            }
+        HStack(alignment: .center, spacing: theme.controlItem.controlItemSpaceColumnGap) {
+            texts()
         }
     }
 
@@ -65,6 +61,13 @@ struct ControlItemLabel: View {
                 .foregroundStyle(labelTextColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
+            if let additionalLabelText = layoutData.additionalLabelText {
+                Text(LocalizedStringKey(additionalLabelText))
+                    .typeLabelStrongMedium(theme)
+                    .multilineTextAlignment(.leading)
+                    .foregroundStyle(additionalLabelTextColor)
+            }
+
             if let helperText = layoutData.helperText {
                 Text(LocalizedStringKey(helperText))
                     .typeLabelDefaultMedium(theme)
@@ -73,22 +76,6 @@ struct ControlItemLabel: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-    }
-
-    @ViewBuilder
-    private func icon() -> some View {
-        if let icon = layoutData.icon {
-            HStack(alignment: .center, spacing: 0) {
-                icon
-                    .resizable()
-                    .renderingMode(.template)
-                    .foregroundStyle(iconColor)
-                    .frame(width: theme.controlItem.controlItemSizeIcon,
-                           height: theme.controlItem.controlItemSizeIcon)
-            }
-            .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer,
-                   alignment: .center)
-        }
     }
 
     // MARK: - Colors
@@ -116,15 +103,6 @@ struct ControlItemLabel: View {
         }
     }
 
-    private var iconColor: Color {
-        switch internalState {
-        case .enabled, .pressed, .hover, .readOnly:
-            theme.colors.colorContentDefault.color(for: colorScheme)
-        case .disabled:
-            theme.colors.colorContentDisabled.color(for: colorScheme)
-        }
-    }
-
     private var helperTextColor: Color {
         switch internalState {
         case .enabled, .pressed, .hover, .readOnly:
@@ -132,5 +110,10 @@ struct ControlItemLabel: View {
         case .disabled:
             theme.colors.colorContentDisabled.color(for: colorScheme)
         }
+    }
+
+    private var additionalLabelTextColor: Color {
+        (internalState == .disabled ? theme.colors.colorContentDisabled : theme.colors.colorContentDefault)
+        .color(for: colorScheme)
     }
 }

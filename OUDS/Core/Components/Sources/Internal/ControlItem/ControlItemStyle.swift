@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -30,58 +31,87 @@ struct ControlItemStyle: ButtonStyle {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
+    // MARK: Computed properties
+
+    private var isOn: Bool {
+        switch selectorType {
+        case .switch(let isOn), .radioButton(let isOn):
+            isOn.wrappedValue
+        case .checkBox(let selectionState):
+            selectionState.wrappedValue == .selected
+        }
+    }
+
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        HStack(alignment: .top, spacing: theme.listItem.listItemSpaceColumnGap) {
+        HStack(alignment: .top, spacing: theme.controlItem.controlItemSpaceColumnGap) {
             switch layoutData.orientation {
             case .default:
-                selector(isPressed: configuration.isPressed)
-                label(isPressed: configuration.isPressed)
+                selectorContainer(isPressed: configuration.isPressed)
+                labelContainer(isPressed: configuration.isPressed)
+                iconContainer(isPressed: configuration.isPressed)
             case .inverse:
-                label(isPressed: configuration.isPressed)
-                selector(isPressed: configuration.isPressed)
+                iconContainer(isPressed: configuration.isPressed)
+                labelContainer(isPressed: configuration.isPressed)
+                selectorContainer(isPressed: configuration.isPressed)
             }
         }
-        .padding(.all, theme.listItem.listItemSpaceInset)
+        .padding(.all, theme.controlItem.controlItemSpaceInset)
         .oudsDivider(show: layoutData.hasDivider)
         .background(backgroundColor(state: internalState(isPressed: configuration.isPressed)))
+        .modifier(ControlItemStyleOutlinedModifier(internalState: internalState(isPressed: configuration.isPressed), layoutData: layoutData, isOn: isOn))
         .onHover { isHover in
             self.isHover = isHover
         }
     }
 
-    private func selector(isPressed: Bool) -> some View {
+    // MARK: Containers
+
+    private func selectorContainer(isPressed: Bool) -> some View {
         HStack(alignment: .center, spacing: 0) {
             switch selectorType {
             case .switch:
                 // TODO: #405 - Add switch selector
                 Text("TODO: Add switch selector here")
 //                OUDSSwitchSelector(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
-            case .radioButton:
-                // TODO: #266 - Add radio selector
-                Text("TODO: Add radio selector here")
-//                OUDSRadioButtonSelector(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
+            case .radioButton(let binding):
+                RadioIndicator(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue, isError: layoutData.isError)
             case .checkBox(let binding):
                 CheckboxSelector(internalState: internalState(isPressed: isPressed), selectorState: binding.wrappedValue, isError: layoutData.isError)
             }
         }
-        .frame(maxHeight: containerAssetMaxHeight, alignment: .center)
+        .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)
     }
 
-    private func label(isPressed: Bool) -> some View {
+    private func labelContainer(isPressed: Bool) -> some View {
         ControlItemLabel(internalState: internalState(isPressed: isPressed), layoutData: layoutData)
     }
 
-    // MARK: - Helpers
+    @ViewBuilder
+    private func iconContainer(isPressed: Bool) -> some View {
+        if let icon = layoutData.icon {
+            HStack(alignment: .center, spacing: 0) {
+                icon
+                    .resizable()
+                    .renderingMode(.template)
+                    .foregroundStyle(iconColor(state: internalState(isPressed: isPressed)))
+                    .frame(width: theme.controlItem.controlItemSizeIcon,
+                           height: theme.controlItem.controlItemSizeIcon)
+            }
+            .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer,
+                   alignment: .center)
+        }
+    }
 
-    private var containerAssetMaxHeight: CGFloat {
-        switch selectorType {
-        case .switch:
-            // TODO: #405 - Adjust for switch
-            theme.controlItem.controlItemSizeMaxHeightAssetsContainer
-        case .radioButton, .checkBox:
-            theme.controlItem.controlItemSizeMaxHeightAssetsContainer
+    // MARK: - Colors
+
+    private func iconColor(state: ControlItemInternalState) -> Color {
+        switch state {
+        case .enabled, .pressed, .hover, .readOnly:
+            theme.colors.colorContentDefault.color(for: colorScheme)
+        case .disabled:
+            theme.colors.colorContentDisabled.color(for: colorScheme)
         }
     }
 
@@ -97,6 +127,8 @@ struct ControlItemStyle: ButtonStyle {
             theme.select.selectColorBgDisabled.color(for: colorScheme)
         }
     }
+
+    // MARK: Internal state management
 
     private func internalState(isPressed: Bool) -> ControlItemInternalState {
         if layoutData.isReadOnly {
