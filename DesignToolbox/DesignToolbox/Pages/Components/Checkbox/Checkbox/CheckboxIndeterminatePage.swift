@@ -15,15 +15,15 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Checkbox Page
+// MARK: - Checkbox Indeterminate Page
 
-/// Related to `OUDSCheckbox` (i.e. with 2 available values).
-struct CheckboxPage: View {
+/// Related to `OUDSCheckboxIndeterminate` (i.e. with 3 available values).
+struct CheckboxIndeterminatePage: View {
 
-    @StateObject private var configuration: CheckboxConfigurationModel
+    @StateObject private var configuration: CheckboxIndeterminateConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: CheckboxConfigurationModel())
+        _configuration = StateObject(wrappedValue: CheckboxIndeterminateConfigurationModel())
     }
 
     var body: some View {
@@ -36,49 +36,49 @@ struct CheckboxPage: View {
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxConfigurationModel {
-            CheckboxIllustration(model: model)
+        if let model = configuration as? CheckboxIndeterminateConfigurationModel {
+            CheckboxIndeterminateIllustration(model: model)
         }
     }
 
     @ViewBuilder
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxConfigurationModel {
-            CheckboxConfiguration(model: model)
+        if let model = configuration as? CheckboxIndeterminateConfigurationModel {
+            CheckboxIndeterminateConfiguration(model: model)
         }
     }
 }
 
-// MARK: - Checkbox Illustration
+// MARK: - Checkbox Indeterminate Illustration
 
-struct CheckboxIllustration: View {
+struct CheckboxIndeterminateIllustration: View {
 
-    let model: CheckboxConfigurationModel
+    let model: CheckboxIndeterminateConfigurationModel
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .center) {
             // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            CheckboxDemo(model: model)
-            CheckboxDemo(model: model)
+            CheckboxIndeterminateDemo(model: model)
+            CheckboxIndeterminateDemo(model: model)
                 .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }
 
-// MARK: - Checkbox Demo
+// MARK: - Checkbox Indeterminate Demo
 
-private struct CheckboxDemo: View {
+private struct CheckboxIndeterminateDemo: View {
 
-    @ObservedObject var model: CheckboxConfigurationModel
+    @ObservedObject var model: CheckboxIndeterminateConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-            OUDSCheckbox(isOn: $model.indicatorState,
-                         accessibilityLabel: "app_components_checkbox_hint_a11y".localized(), // No LocalizedStringKey inference in the component
-                         isError: model.isError)
+            OUDSCheckboxIndeterminate(selection: $model.indicatorState,
+                                      accessibilityLabel: "app_components_checkbox_hint_a11y".localized(), // No LocalizedStringKey inference in the component
+                                      isError: model.isError)
                 .disabled(!model.enabled)
             Spacer()
         }

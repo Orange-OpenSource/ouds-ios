@@ -16,9 +16,9 @@ import SwiftUI
 
 // MARK: - Checkbox Configuration Model
 
-/// The model shared between `CheckboxConfiguration` view and `CheckboxPage` view.
-/// Related to `OUDSCheckbox` (i.e. with 2 available values).
-final class CheckboxConfigurationModel: ComponentConfiguration {
+/// The model shared between `CheckboxIndeterminateConfiguration` view and `CheckboxIndeterminatePage` view.
+/// Related to `OUDSCheckboxIndeterminate` (i.e. with 3 available values).
+final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
 
     // MARK: Properties
 
@@ -26,7 +26,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var indicatorState: Bool {
+    @Published var indicatorState: OUDSCheckboxIndicatorState {
         didSet { updateCode() }
     }
 
@@ -37,7 +37,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     // MARK: Initializer
 
     override init() {
-        indicatorState = true
+        indicatorState = .selected
         isError = false
         enabled = true
     }
@@ -49,7 +49,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-          OUDSCheckbox(isOn: $isOn\(isErrorPattern))
+          OUDSCheckboxInterminate(selection: $selection\(isErrorPattern))
           \(disableCode)
           """
     }
@@ -67,11 +67,11 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - Checkbox Configuration View
+// MARK: - Checkbox Indeterminate Configuration View
 
-struct CheckboxConfiguration: View {
+struct CheckboxIndeterminateConfiguration: View {
 
-    @ObservedObject var model: CheckboxConfigurationModel
+    @ObservedObject var model: CheckboxIndeterminateConfigurationModel
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -88,10 +88,11 @@ struct CheckboxConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(!model.enabled)
 
-            Toggle("app_components_checkbox_selection_label", isOn: $model.indicatorState)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-                .disabled(!model.enabled)
+            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
+                ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
+                    Text(LocalizedStringKey(state.description)).tag(state)
+                }
+            }
         }
     }
 }

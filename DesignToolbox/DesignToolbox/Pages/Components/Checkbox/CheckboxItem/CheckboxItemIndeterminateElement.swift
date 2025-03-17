@@ -13,19 +13,19 @@
 
 import SwiftUI
 
-/// Related to `OUDSCheckbox` (i.e. with 2 available values).
-struct CheckboxElement: DesignToolboxElement {
+/// Related to `OUDSCheckboxItemIndeterminate` (i.e. with 3 available values).
+struct CheckboxItemIndeterminateElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_checkbox_twoStates_indicatorOnly_label"
-        image = Image(decorative: "il_component_checkbox").renderingMode(.template)
+        name = "app_components_checkbox_threeStates_controlItem_label"
+        image = Image(decorative: "il_component_checkbox_controlItem").renderingMode(.template)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,
-            description: "app_components_checkbox_description_text",
-            illustration: AnyView(CheckboxPage())))
+            description: "app_components_checkbox_controlItem_description_text",
+            illustration: AnyView(CheckboxItemIndeterminatePage())))
     }
 }

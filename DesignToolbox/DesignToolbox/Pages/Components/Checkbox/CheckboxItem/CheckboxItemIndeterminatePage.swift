@@ -15,14 +15,14 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Checkbox Item Page
+// MARK: - Checkbox Item Indeterminate Page
 
-struct CheckboxItemPage: View {
+struct CheckboxItemIndeterminatePage: View {
 
-    @StateObject private var configuration: CheckboxItemConfigurationModel
+    @StateObject private var configuration: CheckboxItemIndeterminateConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: CheckboxItemConfigurationModel())
+        _configuration = StateObject(wrappedValue: CheckboxItemIndeterminateConfigurationModel())
     }
 
     var body: some View {
@@ -35,52 +35,52 @@ struct CheckboxItemPage: View {
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxItemConfigurationModel {
-            CheckboxItemIllustration(model: model)
+        if let model = configuration as? CheckboxItemIndeterminateConfigurationModel {
+            CheckboxItemIndeterminateIllustration(model: model)
         }
     }
 
     @ViewBuilder
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? CheckboxItemConfigurationModel {
-            CheckboxItemConfiguration(model: model)
+        if let model = configuration as? CheckboxItemIndeterminateConfigurationModel {
+            CheckboxItemIndeterminateConfiguration(model: model)
         }
     }
 }
 
-// MARK: - Checkbox Item Illustration
+// MARK: - Checkbox Item Indeterminate Illustration
 
-private struct CheckboxItemIllustration: View {
+private struct CheckboxItemIndeterminateIllustration: View {
 
-    let model: CheckboxItemConfigurationModel
+    let model: CheckboxItemIndeterminateConfigurationModel
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .center) {
             // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            CheckboxItemDemo(model: model)
-            CheckboxItemDemo(model: model)
+            CheckboxItemIndeterminateDemo(model: model)
+            CheckboxItemIndeterminateDemo(model: model)
                 .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }
 
-// MARK: - Checkbox Item Demo
+// MARK: - Checkbox Item Indeterminate Demo
 
-private struct CheckboxItemDemo: View {
+private struct CheckboxItemIndeterminateDemo: View {
 
-    @ObservedObject var model: CheckboxItemConfigurationModel
+    @ObservedObject var model: CheckboxItemIndeterminateConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSCheckboxItem(isOn: $model.indicatorState,
-                         labelText: model.labelTextContent,
-                         helperText: helperTextContent,
-                         icon: icon,
-                         isInversed: model.layoutOrientation == .inverse,
-                         isError: model.isError,
-                         isReadOnly: model.isReadOnly,
-                         hasDivider: model.divider)
+        OUDSCheckboxItemIndeterminate(selection: $model.indicatorState,
+                                      labelText: model.labelTextContent,
+                                      helperText: helperTextContent,
+                                      icon: icon,
+                                      isInversed: model.layoutOrientation == .inverse,
+                                      isError: model.isError,
+                                      isReadOnly: model.isReadOnly,
+                                      hasDivider: model.divider)
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .designToolboxBackground(onColoredSurface: false)

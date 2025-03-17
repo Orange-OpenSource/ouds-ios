@@ -14,19 +14,21 @@
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Checkbox Item Configuration Model
+// swiftlint:disable type_name
 
-/// The model shared between `CheckboxItemConfiguration` view and `CheckboxItemPage` view.
-/// Related to `OUDSCheckboxItem` (i.e. with 2 available values).
-final class CheckboxItemConfigurationModel: ComponentConfiguration {
+// MARK: - Checkbox Item Indeterminate Configuration Model
 
-    // MARK: - Properties
+/// The model shared between `CheckboxItemIndeterminateConfiguration` view and `CheckboxItemIndeterminatePage` view.
+/// Related to `OUDSCheckboxItemIndeterminate` (i.e. with 3 available values).
+final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration {
+
+    // MARK: Properties
 
     @Published var enabled: Bool {
         didSet { updateCode() }
     }
 
-    @Published var indicatorState: Bool {
+    @Published var indicatorState: OUDSCheckboxIndicatorState {
         didSet { updateCode() }
     }
 
@@ -62,10 +64,10 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    // MARK: - Initializer
+    // MARK: Initializer
 
     override init() {
-        indicatorState = true
+        indicatorState = .selected
         isError = false
         isReadOnly = false
         enabled = true
@@ -79,15 +81,17 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
 
     deinit { }
 
-    // MARK: - Component Configuration
+    // MARK: Component Configuration
 
+    // swiftlint:disable line_length
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItem(isOn: $isOn, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSCheckboxItemIndeterminate(selection: $selection, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
+    // swiftlint:enable line_length
 
     private var disableCode: String {
         ".disable(\(enabled ? "false" : "true"))"
@@ -118,11 +122,11 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - Checkbox Item Configuration View
+// MARK: - Checkbox Item Indeterminate Configuration View
 
-struct CheckboxItemConfiguration: View {
+struct CheckboxItemIndeterminateConfiguration: View {
 
-    @ObservedObject var model: CheckboxItemConfigurationModel
+    @ObservedObject var model: CheckboxItemIndeterminateConfigurationModel
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -130,9 +134,11 @@ struct CheckboxItemConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
 
-            Toggle("app_components_checkbox_selection_label", isOn: $model.indicatorState)
-                .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
+                ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
+                    Text(LocalizedStringKey(state.description)).tag(state)
+                }
+            }
 
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
@@ -176,3 +182,5 @@ struct CheckboxItemConfiguration: View {
         }
     }
 }
+
+// swiftlint:enable type_name
