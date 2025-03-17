@@ -60,7 +60,7 @@ _Note: Please transform `- [ ]` into `- (NA)` in the description when things are
 - [ ] The evolution have been tested and the project builds for iPhones and iPads
 - [ ] Code review has been done by reviewers according to [CODEOWNERS file](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/CODEOWNERS)
 - [ ] Design review has been done
-- [ ] Accessibiltiy review has been done
+- [ ] Accessibility review has been done
 - [ ] Q/A team has tested the evolution
 - [ ] Documentation has been updated if relevant
 - [ ] Internal files have been updated if relevant (like CONTRIBUTING, DEVELOP, THIRD_PARTY, CONTRIBUTORS, NOTICE)
