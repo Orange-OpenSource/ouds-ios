@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Radio button component ([#266](https://github.com/Orange-OpenSource/ouds-ios/issues/266))
 - [Library] `RadioButton` component tokens (tokens library v0.7.0)
 - [Library] Checkbox component ([#264](https://github.com/Orange-OpenSource/ouds-ios/issues/264))
 - [Library] `colorDecorativeNeutral*` color semantic tokens (tokens library v0.6.1)
@@ -27,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - [DesignToolbox] Checkbox item displaying devider by default and should not ([#502](https://github.com/Orange-OpenSource/ouds-ios/issues/502))
+- [Library] Add `spaceRowGap` token between texts in `ControlItem` ([#499](https://github.com/Orange-OpenSource/ouds-ios/issues/499))
 - [Library] A11Y improvements for checkbox ([#488](https://github.com/Orange-OpenSource/ouds-ios/issues/488))
 - [DesignToolbox] Miscellaneous improvements ([#479](https://github.com/Orange-OpenSource/ouds-ios/issues/479))
 - [Library] Fixes for checkbox component ([#477](https://github.com/Orange-OpenSource/ouds-ios/issues/477))

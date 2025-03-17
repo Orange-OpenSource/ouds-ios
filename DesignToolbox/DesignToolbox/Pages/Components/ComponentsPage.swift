@@ -21,6 +21,7 @@ struct ComponentsPage: View {
         ButtonElement(),
         LinkElement(),
         CheckboxElements(),
+        RadioElements(),
     ]
 
     var body: some View {
