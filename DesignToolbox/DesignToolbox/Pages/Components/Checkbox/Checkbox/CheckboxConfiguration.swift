@@ -25,7 +25,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var selectorState: OUDSCheckboxSelectorState {
+    @Published var indicatorState: OUDSCheckboxIndicatorState {
         didSet { updateCode() }
     }
 
@@ -36,7 +36,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        selectorState = .selected
+        indicatorState = .selected
         isError = false
         enabled = true
     }
@@ -87,8 +87,8 @@ struct CheckboxConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(!model.enabled)
 
-            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.selectorState) {
-                ForEach(OUDSCheckboxSelectorState.allCases, id: \.id) { state in
+            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
+                ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
                     Text(LocalizedStringKey(state.description)).tag(state)
                 }
             }

@@ -110,7 +110,7 @@ import SwiftUI
 ///
 /// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
 ///
-/// - Since: 0.13.0
+/// - Since: 0.12.0
 public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperlink above
 
     // MARK: - Properties
@@ -187,7 +187,7 @@ public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperli
         .accessibilityLabel(a11yLabel)
         .accessibilityValue(a11yValue.localized())
         .accessibilityHint(a11yHint)
-        .buttonStyle(ControlItemStyle(selectorType: .radioButton($isOn), layoutData: layoutData))
+        .buttonStyle(ControlItemStyle(indicatorType: .radioButton($isOn), layoutData: layoutData))
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator

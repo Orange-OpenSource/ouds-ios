@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The *selector only*  layout for the ``OUDSRadio`` component.
+/// The *indicator only*  layout for the ``OUDSRadio`` component.
 struct RadioOnlyButtonStyle: ButtonStyle {
 
     // MARK: - Properties

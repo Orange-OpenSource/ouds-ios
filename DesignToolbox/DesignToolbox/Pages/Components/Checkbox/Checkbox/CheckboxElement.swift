@@ -19,7 +19,7 @@ struct CheckboxElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_checkbox_selectorOnly_label"
+        name = "app_components_checkbox_indicatorOnly_label"
         image = Image(decorative: "il_component_checkbox").renderingMode(.template)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

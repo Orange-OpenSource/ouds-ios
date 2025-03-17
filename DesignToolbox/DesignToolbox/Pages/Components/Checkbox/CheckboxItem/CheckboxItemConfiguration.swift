@@ -25,7 +25,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var selectorState: OUDSCheckboxSelectorState {
+    @Published var indicatorState: OUDSCheckboxIndicatorState {
         didSet { updateCode() }
     }
 
@@ -64,7 +64,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        selectorState = .selected
+        indicatorState = .selected
         isError = false
         isReadOnly = false
         enabled = true
@@ -131,8 +131,8 @@ struct CheckboxItemConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
 
-            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.selectorState) {
-                ForEach(OUDSCheckboxSelectorState.allCases, id: \.id) { state in
+            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
+                ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
                     Text(LocalizedStringKey(state.description)).tag(state)
                 }
             }
@@ -200,10 +200,10 @@ enum DesignToolboxLayoutOrientation: CaseIterable, CustomStringConvertible {
     var id: String { description }
 }
 
-// MARK: - OUDS Checkbox Selector State extension
+// MARK: - OUDS Checkbox Indicator State extension
 
-extension OUDSCheckboxSelectorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static var allCases: [OUDSCheckboxSelectorState] = [.selected, .unselected, .undeterminate]
+extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+    nonisolated(unsafe) public static var allCases: [OUDSCheckboxIndicatorState] = [.selected, .unselected, .undeterminate]
 
     // No l10n, tehchnical names
     public var description: String {
