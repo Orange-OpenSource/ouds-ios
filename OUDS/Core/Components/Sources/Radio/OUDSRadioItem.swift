@@ -187,7 +187,7 @@ public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperli
         .accessibilityLabel(a11yLabel)
         .accessibilityValue(a11yValue.localized())
         .accessibilityHint(a11yHint)
-        .buttonStyle(ControlItemStyle(selectorType: .radioButton($isOn), layoutData: layoutData))
+        .buttonStyle(ControlItemStyle(indicatorType: .radioButton($isOn), layoutData: layoutData))
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
