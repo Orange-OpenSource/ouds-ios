@@ -15,12 +15,12 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The *selector only*  layout for the ``OUDSCheckbox`` component.
+/// The *indicator only*  layout for the ``OUDSCheckbox`` component.
 struct CheckboxOnlyButtonStyle: ButtonStyle {
 
     // MARK: - Properties
 
-    let selectorState: OUDSCheckboxSelectorState
+    let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
     @State private var isHover: Bool = false
@@ -38,7 +38,7 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
                        maxHeight: theme.checkbox.checkboxSizeMaxHeight)
                 .contentShape(Rectangle())
 
-            CheckboxSelector(internalState: internalState(isPressed: configuration.isPressed), selectorState: selectorState, isError: isError)
+            CheckboxIndicator(internalState: internalState(isPressed: configuration.isPressed), indicatorState: indicatorState, isError: isError)
                 .frame(width: theme.checkbox.checkboxSizeIndicator,
                        height: theme.checkbox.checkboxSizeIndicator)
                 .onHover { isHover in

@@ -25,7 +25,7 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var selectorState: OUDSCheckboxSelectorState {
+    @Published var selectorState: OUDSCheckboxIndicatorState {
         didSet { updateCode() }
     }
 
@@ -88,7 +88,7 @@ struct CheckboxConfiguration: View {
                 .disabled(!model.enabled)
 
             DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.selectorState) {
-                ForEach(OUDSCheckboxSelectorState.allCases, id: \.id) { state in
+                ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
                     Text(LocalizedStringKey(state.description)).tag(state)
                 }
             }

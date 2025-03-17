@@ -16,37 +16,37 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Checkbox Selector Style
+// MARK: - Checkbox Indicator Style
 
-/// A `ViewModier` to apply to the ``CheckboxSelector`` component.
-/// It will define the look and feel of the selector depending to the ``ControlItemInternalState``,
-/// the ``OUDSCheckboxSelectorState`` and if there is an error context or not.
-struct CheckboxSelectorStyle: ViewModifier {
+/// A `ViewModier` to apply to the ``CheckboxIndicator`` component.
+/// It will define the look and feel of the indicator depending to the ``ControlItemInternalState``,
+/// the ``OUDSCheckboxIndicatorState`` and if there is an error context or not.
+struct CheckboxIndicatorStyle: ViewModifier {
 
     // MARK: - Properties
 
     let state: ControlItemInternalState
-    let selectorState: OUDSCheckboxSelectorState
+    let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
         content
-            .modifier(CheckboxSelectorBorderModifier(state: state, selectorState: selectorState, isError: isError))
-            .modifier(CheckboxSelectorForegroundModifier(state: state, selectorState: selectorState, isError: isError))
-            .modifier(CheckboxSelectorBackgroundModifier(state: state, selectorState: selectorState, isError: isError))
+            .modifier(CheckboxIndicatorBorderModifier(state: state, indicatorState: indicatorState, isError: isError))
+            .modifier(CheckboxIndicatorForegroundModifier(state: state, indicatorState: indicatorState, isError: isError))
+            .modifier(CheckboxIndicatorBackgroundModifier(state: state, indicatorState: indicatorState, isError: isError))
     }
 }
 
-// MARK: - Checkbox Selector Foreground Modifier
+// MARK: - Checkbox Indicator Foreground Modifier
 
-private struct CheckboxSelectorForegroundModifier: ViewModifier {
+private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
     let state: ControlItemInternalState
-    let selectorState: OUDSCheckboxSelectorState
+    let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -78,7 +78,7 @@ private struct CheckboxSelectorForegroundModifier: ViewModifier {
         if isError {
             return theme.colors.colorActionNegativeEnabled
         } else {
-            switch selectorState {
+            switch indicatorState {
             case .selected, .undeterminate:
                 return theme.colors.colorActionSelected
             case .unselected:
@@ -104,14 +104,14 @@ private struct CheckboxSelectorForegroundModifier: ViewModifier {
     }
 }
 
-// MARK: - Checkbox Selector Background Modifier
+// MARK: - Checkbox Indicator Background Modifier
 
-private struct CheckboxSelectorBackgroundModifier: ViewModifier {
+private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
     let state: ControlItemInternalState
-    let selectorState: OUDSCheckboxSelectorState
+    let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -160,14 +160,14 @@ private struct CheckboxSelectorBackgroundModifier: ViewModifier {
     }
 }
 
-// MARK: - Checkbox Selector Border Modifier
+// MARK: - Checkbox IndicIndicatorator Border Modifier
 
-private struct CheckboxSelectorBorderModifier: ViewModifier {
+private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
     let state: ControlItemInternalState
-    let selectorState: OUDSCheckboxSelectorState
+    let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -202,7 +202,7 @@ private struct CheckboxSelectorBorderModifier: ViewModifier {
         if isError {
             return theme.colors.colorActionNegativeEnabled
         } else {
-            switch selectorState {
+            switch indicatorState {
             case .selected, .undeterminate:
                 return theme.colors.colorActionSelected
             case .unselected:
@@ -251,7 +251,7 @@ private struct CheckboxSelectorBorderModifier: ViewModifier {
     }
 
     private var enabledWidth: CGFloat {
-        switch selectorState {
+        switch indicatorState {
         case .selected, .undeterminate:
             return theme.checkbox.checkboxBorderWidthSelected
         case .unselected:
@@ -260,7 +260,7 @@ private struct CheckboxSelectorBorderModifier: ViewModifier {
     }
 
     private var hoverWidth: CGFloat {
-        switch selectorState {
+        switch indicatorState {
         case .selected, .undeterminate:
             return theme.checkbox.checkboxBorderWidthSelectedHover
         case .unselected:
@@ -269,7 +269,7 @@ private struct CheckboxSelectorBorderModifier: ViewModifier {
     }
 
     private var pressedWidth: CGFloat {
-        switch selectorState {
+        switch indicatorState {
         case .selected, .undeterminate:
             return theme.checkbox.checkboxBorderWidthSelectedPressed
         case .unselected:
@@ -278,7 +278,7 @@ private struct CheckboxSelectorBorderModifier: ViewModifier {
     }
 
     private var disabledWidth: CGFloat {
-        switch selectorState {
+        switch indicatorState {
         case .selected, .undeterminate:
             return theme.checkbox.checkboxBorderWidthSelected
         case .unselected:

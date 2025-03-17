@@ -12,7 +12,7 @@ The library proposes layout to add in your views some checkboxes components, eve
 You can use a simple checkbox without any labels and images.
 
 ```swift
-     // A simple checkbox, with only a selector
+     // A simple checkbox, with only an indicator
      // The component must be instanciated with a string parameter used as accessibility label that will be
      // vocalized by Voice Over. 
      OUDSCheckbox(state: $state, accessibilityLabel: "Select the element")
@@ -21,7 +21,7 @@ You can use a simple checkbox without any labels and images.
 #### Checkbox item
 
 The library proposes also a checkbox which has in its layout some labels and icons.
-The selector can be leading or trailing.
+The indicator can be leading or trailing.
 
 ```swift
      // A leading checkbox with a label
@@ -46,7 +46,7 @@ The library proposes layout to add in your views some radio buttons components, 
 You can use a simple radio without any labels and images.
 
 ```swift
-     // A simple radio, with only a selector
+     // A simple radio, with only an indicator
      // The component must be instanciated with a string parameter used as accessibility label that will 
      // be vocalized by Voice Over. 
      OUDSRadio(isOn: $selection, accessibilityLabel: "Select the element")
@@ -55,7 +55,7 @@ You can use a simple radio without any labels and images.
 #### Radio item
 
 The library proposes also a radio which has in its layout some labels and icons.
-The selector can be leading or trailing.
+The indicator can be leading or trailing.
 
 ```swift
      // A leading radio with a label

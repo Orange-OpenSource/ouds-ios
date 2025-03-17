@@ -16,14 +16,14 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The selector of the chebckox.
-/// Its content depends to the ``ControlItemInternalState`` and the ``OUDSCheckboxSelectorState`` also.
+/// The indicator of the checkbox.
+/// Its content depends to the ``ControlItemInternalState`` and the ``OUDSCheckboxIndicatorState`` also.
 struct CheckboxSelector: View {
 
     // MARK: - Properties
 
     let internalState: ControlItemInternalState
-    let selectorState: OUDSCheckboxSelectorState
+    let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -33,20 +33,20 @@ struct CheckboxSelector: View {
 
     var body: some View {
         selector()
-            .modifier(CheckboxSelectorStyle(state: internalState, selectorState: selectorState, isError: isError))
+            .modifier(CheckboxSelectorStyle(state: internalState, indicatorState: indicatorState, isError: isError))
     }
 
     // MARK: - Selector
 
     @ViewBuilder
     private func selector() -> some View {
-        if selectorState == .selected {
+        if indicatorState == .selected {
             tickImage(name: "ic_form_tick")
-        } else if selectorState == .undeterminate {
+        } else if indicatorState == .undeterminate {
             tickImage(name: "ic_form_dash")
         } else { // .unselected
             Color.clear
-                .modifier(SelectorFrameModifier())
+                .modifier(IndicatorFrameModifier())
         }
     }
 
@@ -87,9 +87,9 @@ struct CheckboxSelector: View {
     }
 }
 
-// MARK: - Selector Frame Modifier
+// MARK: - Indicator Frame Modifier
 
-private struct SelectorFrameModifier: ViewModifier {
+private struct IndicatorFrameModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
 

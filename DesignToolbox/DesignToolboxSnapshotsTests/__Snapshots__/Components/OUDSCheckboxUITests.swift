@@ -72,7 +72,7 @@ final class OUDSCheckboxUITests: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testAllCheckboxes(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for selectorState in OUDSCheckboxSelectorState.allCases {
+        for selectorState in OUDSCheckboxIndicatorState.allCases {
             for someLayout in availableLayouts(isError: false, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -90,7 +90,7 @@ final class OUDSCheckboxUITests: XCTestCase {
             }
         }
 
-        for selectorState in OUDSCheckboxSelectorState.allCases {
+        for selectorState in OUDSCheckboxIndicatorState.allCases {
             for someLayout in availableLayouts(isError: true, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -101,7 +101,7 @@ final class OUDSCheckboxUITests: XCTestCase {
             }
         }
 
-        for selectorState in OUDSCheckboxSelectorState.allCases {
+        for selectorState in OUDSCheckboxIndicatorState.allCases {
             for someLayout in availableLayouts(isError: false, isReadOnly: true) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -123,7 +123,7 @@ final class OUDSCheckboxUITests: XCTestCase {
     ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testAllCheckboxesOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for selectorState in OUDSCheckboxSelectorState.allCases {
+        for selectorState in OUDSCheckboxIndicatorState.allCases {
             for someLayout in availableLayouts(isError: false, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -141,7 +141,7 @@ final class OUDSCheckboxUITests: XCTestCase {
             }
         }
 
-        for selectorState in OUDSCheckboxSelectorState.allCases {
+        for selectorState in OUDSCheckboxIndicatorState.allCases {
             for someLayout in availableLayouts(isError: true, isReadOnly: false) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -152,7 +152,7 @@ final class OUDSCheckboxUITests: XCTestCase {
             }
         }
 
-        for selectorState in OUDSCheckboxSelectorState.allCases {
+        for selectorState in OUDSCheckboxIndicatorState.allCases {
             for someLayout in availableLayouts(isError: false, isReadOnly: true) {
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
@@ -182,7 +182,7 @@ final class OUDSCheckboxUITests: XCTestCase {
     @MainActor private func testCheckbox(theme: OUDSTheme,
                                          interfaceStyle: UIUserInterfaceStyle,
                                          layout: CheckboxTest.Layout,
-                                         selectorState: OUDSCheckboxSelectorState,
+                                         selectorState: OUDSCheckboxIndicatorState,
                                          isDisabled: Bool,
                                          onColoredSurface: Bool = false) {
         // Generate the illustration for the specified configuration
@@ -277,7 +277,7 @@ private struct CheckboxTest: View {
     @Environment(\.colorScheme) private var colorScheme
 
     let layout: Layout
-    let selectorState: OUDSCheckboxSelectorState
+    let selectorState: OUDSCheckboxIndicatorState
     let isDisabled: Bool
     let onColoredSurface: Bool
 
@@ -323,7 +323,7 @@ private struct CheckboxTest: View {
 
 // MARK: - extension OUDSCheckboxSelectorState
 
-extension OUDSCheckboxSelectorState {
+extension OUDSCheckboxIndicatorState {
     var name: String {
         switch self {
         case .selected:

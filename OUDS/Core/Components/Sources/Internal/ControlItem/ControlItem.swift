@@ -33,7 +33,7 @@ struct ControlItem: View {
         /// Indicator is a radio button
         case radioButton(Binding<Bool>)
         /// Indicator is a checkbox
-        case checkBox(Binding<OUDSCheckboxSelectorState>)
+        case checkBox(Binding<OUDSCheckboxIndicatorState>)
     }
 
     /// Used to define the orientation of the Layout
