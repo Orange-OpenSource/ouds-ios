@@ -16,8 +16,8 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The trailing part of the  component, i.e. all the views without the selector, i.e. texts, icons and dividers.
-/// Can be considered as a rich label for the associated selector (checkbox, radio, switch).
+/// The trailing part of the  component, i.e. all the views without the indicator, i.e. texts, icons and dividers.
+/// Can be considered as a rich label for the associated indicator (checkbox, radio, switch).
 struct ControlItemLabel: View {
 
     // MARK: - Stored properties
@@ -90,7 +90,7 @@ struct ControlItemLabel: View {
             case .pressed:
                 return theme.colors.colorActionNegativePressed.color(for: colorScheme)
             case .readOnly, .disabled:
-                OL.fatal("A selector (checkbox, switch, radio) with a disabled state / in read only mode and an error situation has been detected, which is not allowed by design."
+                OL.fatal("An component (checkbox, switch, radio) with a disabled state / in read only mode and an error situation has been detected, which is not allowed by design."
                              + " Only non-error situation are allowed to have a disabled state or a read only mode.")
             }
         } else {

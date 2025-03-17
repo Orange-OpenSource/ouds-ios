@@ -17,13 +17,13 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// The layout for the ``ControlItem`` component as SwiftUI `ButtonStyle` to compute the internal state  ``ControlItemInternalState`` used by :
-/// - the selector according to ``ControlItem.SelectorType`` to apply right tokens
+/// - the indicatpr according to ``ControlItem.IndicatorType`` to apply right tokens
 /// - the label described by ``ControlItemLabel.LayoutData`` to apply right tokens on texts and icon
 struct ControlItemStyle: ButtonStyle {
 
     // MARK: Stored properties
 
-    let selectorType: ControlItem.SelectorType
+    let indicatorType: ControlItem.IndicatorType
     let layoutData: ControlItemLabel.LayoutData
 
     @State private var isHover: Bool = false
@@ -34,7 +34,7 @@ struct ControlItemStyle: ButtonStyle {
     // MARK: Computed properties
 
     private var isOn: Bool {
-        switch selectorType {
+        switch indicatorType {
         case .switch(let isOn), .radioButton(let isOn):
             isOn.wrappedValue
         case .checkBox(let selectionState):
@@ -48,13 +48,13 @@ struct ControlItemStyle: ButtonStyle {
         HStack(alignment: .top, spacing: theme.controlItem.controlItemSpaceColumnGap) {
             switch layoutData.orientation {
             case .default:
-                selectorContainer(isPressed: configuration.isPressed)
+                indicatorContainer(isPressed: configuration.isPressed)
                 labelContainer(isPressed: configuration.isPressed)
                 iconContainer(isPressed: configuration.isPressed)
             case .inverse:
                 iconContainer(isPressed: configuration.isPressed)
                 labelContainer(isPressed: configuration.isPressed)
-                selectorContainer(isPressed: configuration.isPressed)
+                indicatorContainer(isPressed: configuration.isPressed)
             }
         }
         .padding(.all, theme.controlItem.controlItemSpaceInset)
@@ -68,13 +68,13 @@ struct ControlItemStyle: ButtonStyle {
 
     // MARK: Containers
 
-    private func selectorContainer(isPressed: Bool) -> some View {
+    private func indicatorContainer(isPressed: Bool) -> some View {
         HStack(alignment: .center, spacing: 0) {
-            switch selectorType {
+            switch indicatorType {
             case .switch:
-                // TODO: #405 - Add switch selector
-                Text("TODO: Add switch selector here")
-//                OUDSSwitchSelector(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
+                // TODO: #405 - Add switch indicator
+                Text("TODO: Add switch indicator here")
+//                OUDSSwitchIndicator(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
             case .radioButton(let binding):
                 RadioIndicator(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue, isError: layoutData.isError)
             case .checkBox(let binding):

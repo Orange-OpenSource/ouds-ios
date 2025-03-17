@@ -14,25 +14,25 @@
 import OUDSFoundations
 import SwiftUI
 
-/// Modelizes the layout for a checkbox, radio buton or switch with additional components like labels, icons and dividers.
+/// Modelizes the layout for a checkbox, radio button or switch with additional components like labels, icons and dividers.
 /// This `View` is not exposed publicly as it is not possible to define such variable / customizable component on *Figma* side.
-/// This internal component displays the selector and defines the layout as a SwiftUI button.
+/// This internal component displays the indicator and defines the layout as a SwiftUI button.
 struct ControlItem: View {
 
     // MARK: Stored Properties
 
-    private let selectorType: SelectorType
+    private let indicatorType: IndicatorType
     private let layoutData: ControlItemLabel.LayoutData
 
     // MARK: Enums
 
-    /// Used to define the selector to be displayed
-    enum SelectorType {
-        /// Selector is a switch (i.e `SwiftUI.Toggle`)
+    /// Used to define the indicator to be displayed
+    enum IndicatorType {
+        /// Indicator is a switch (i.e `SwiftUI.Toggle`)
         case `switch`(Binding<Bool>)
-        /// Selector is a radio button
+        /// Indicator is a radio button
         case radioButton(Binding<Bool>)
-        /// Selector is a checkbox
+        /// Indicator is a checkbox
         case checkBox(Binding<OUDSCheckboxSelectorState>)
     }
 
@@ -49,7 +49,7 @@ struct ControlItem: View {
     /// Creates a control item with label and optional helper text, icon, divider.
     ///
     /// - Parameters:
-    ///   - selectorType: The type of selector the `ContolItem` should display.
+    ///   - indicatorType: The type of indicator the `ContolItem` should display.
     ///   - labelText: The main label text of the item.
     ///   - additionalLabelText: An additional label text of the item.
     ///   - helperText: An additonal helper text, should not be empty
@@ -59,7 +59,7 @@ struct ControlItem: View {
     ///   - isReadOnly: `true` if component is in read only mode, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///   - orientation: Specify the orientation of the layout. If `default` the selector is at the leading position, if `inverse` it is on trailing.
-    init(selectorType: SelectorType,
+    init(indicatorType: IndicatorType,
          labelText: String,
          helperText: String? = nil,
          additionalLabelText: String? = nil,
@@ -69,7 +69,7 @@ struct ControlItem: View {
          isReadOnly: Bool = false,
          hasDivider: Bool = false,
          orientation: Self.Orientation = .default) {
-        self.selectorType = selectorType
+        self.indicatorType = indicatorType
         self.layoutData = .init(labelText: labelText,
                                 additionalLabelText: additionalLabelText,
                                 helperText: helperText,
@@ -86,7 +86,7 @@ struct ControlItem: View {
     public var body: some View {
         Button("") {
             withAnimation(.easeInOut) {
-                switch selectorType {
+                switch indicatorType {
                 case .switch(let binding):
                     binding.wrappedValue.toggle()
                 case .radioButton(let binding):
@@ -96,6 +96,6 @@ struct ControlItem: View {
                 }
             }
         }
-        .buttonStyle(ControlItemStyle(selectorType: selectorType, layoutData: layoutData))
+        .buttonStyle(ControlItemStyle(selectorType: indicatorType, layoutData: layoutData))
     }
 }
