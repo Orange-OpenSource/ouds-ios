@@ -40,6 +40,24 @@
         }
       }
     },
+    "core_checkbox_indeterminate_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indéterminé"
+          }
+        }
+      }
+    },
     "core_checkbox_trait_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
@@ -72,24 +90,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Non coché"
-          }
-        }
-      }
-    },
-    "core_checkbox_undeterminate_a11y" : {
-      "comment" : "Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Undeterminate"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Indéterminé"
           }
         }
       }
@@ -221,7 +221,7 @@
       }
     },
     "TODO: Add switch indicator here" : {
-
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"

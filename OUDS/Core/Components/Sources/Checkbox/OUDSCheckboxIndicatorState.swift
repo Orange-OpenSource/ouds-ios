@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-/// A checkbox indicator has three available states: `selected`, `unselected` and `undeterminate`
+/// A checkbox indicator has three available states: `selected`, `unselected` and `indeterminate`
 ///
 /// - Since: 0.12.0
 public enum OUDSCheckboxIndicatorState {
@@ -22,7 +22,7 @@ public enum OUDSCheckboxIndicatorState {
     case unselected
 
     /// The checkbox indicator is like prefilled, preticked, the user does not select it yet but is not empty
-    case undeterminate //  (╯° °)╯︵ ┻━┻
+    case indeterminate //  (╯° °)╯︵ ┻━┻
 
     /// Changes the value to the next one.
     public mutating func toggle () {
@@ -31,7 +31,7 @@ public enum OUDSCheckboxIndicatorState {
             self = .unselected
         case .unselected:
             self = .selected
-        case .undeterminate:
+        case .indeterminate:
             self = .selected
         }
     }
@@ -43,8 +43,8 @@ public enum OUDSCheckboxIndicatorState {
             return "core_checkbox_checked_a11y"
         case .unselected:
             return "core_checkbox_unchecked_a11y"
-        case .undeterminate:
-            return "core_checkbox_undeterminate_a11y"
+        case .indeterminate:
+            return "core_checkbox_indeterminate_a11y"
         }
     }
 
@@ -55,7 +55,7 @@ public enum OUDSCheckboxIndicatorState {
             return "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
         case .unselected:
             return "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
-        case .undeterminate:
+        case .indeterminate:
             return "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
         }
     }

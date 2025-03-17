@@ -42,7 +42,7 @@ struct CheckboxIndicator: View {
     private func indicator() -> some View {
         if indicatorState == .selected {
             tickImage(name: "ic_form_tick")
-        } else if indicatorState == .undeterminate {
+        } else if indicatorState == .indeterminate {
             tickImage(name: "ic_form_dash")
         } else { // .unselected
             Color.clear
