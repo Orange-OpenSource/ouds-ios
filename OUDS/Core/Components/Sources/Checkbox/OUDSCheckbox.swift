@@ -19,9 +19,9 @@ import SwiftUI
 /// The ``OUDSCheckbox`` proposes layout to add in your views a lonely checkbox, without labels, texts nor icons checkboxes components
 /// If you want to use a checkbox with additional texts and icon, prefer instead ``OUDSCheckboxItem``.
 ///
-/// ## Selector states
+/// ## Indicator states
 ///
-/// The checkbox selector has three available states:
+/// The checkbox indcator has three available states:
 /// - **selected**: the checkbox is filled with a tick, the user has made the action to select the checkbox
 /// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
 /// - **undeterminate**: like a prefilled or preticked checkbox, the user did not do anything on it yet
@@ -45,7 +45,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an undeterminate state checkbox
-///     @Published var selection: OUDSCheckboxSelectorState  = .undeterminate
+///     @Published var selection: OUDSCheckboxIndicatorState  = .undeterminate
 ///
 ///     // A simple checkbox, no error, not in read only mode
 ///     OUDSCheckbox(selection: $selection, accessibilityLabel: "The cake is a lie")
@@ -70,20 +70,20 @@ public struct OUDSCheckbox: View {
     private let isError: Bool
     private let a11yLabel: String
 
-    @Binding var selection: OUDSCheckboxSelectorState
+    @Binding var selection: OUDSCheckboxIndicatorState
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Initializers
 
-    /// Creates a checkbox with only a selector.
+    /// Creates a checkbox with only an indicator.
     ///
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
-    ///    - selection: A binding to a property that determines wether the selector is ticked, unticked or preticked.
+    ///    - selection: A binding to a property that determines wether the indicator is ticked, unticked or preticked.
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
-    public init(selection: Binding<OUDSCheckboxSelectorState>,
+    public init(selection: Binding<OUDSCheckboxIndicatorState>,
                 accessibilityLabel: String,
                 isError: Bool = false) {
         if accessibilityLabel.isEmpty {
@@ -104,7 +104,7 @@ public struct OUDSCheckbox: View {
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
         .accessibilityValue(selection.a11yDescription.localized())
         .accessibilityHint(selection.a11yHint)
-        .buttonStyle(CheckboxOnlyButtonStyle(selectorState: $selection.wrappedValue, isError: isError))
+        .buttonStyle(CheckboxOnlyButtonStyle(indicatorState: $selection.wrappedValue, isError: isError))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state

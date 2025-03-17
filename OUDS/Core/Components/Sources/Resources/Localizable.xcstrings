@@ -220,8 +220,8 @@
         }
       }
     },
-    "TODO: Add switch selector here" : {
-      "shouldTranslate" : false
+    "TODO: Add switch indicator here" : {
+
     }
   },
   "version" : "1.0"

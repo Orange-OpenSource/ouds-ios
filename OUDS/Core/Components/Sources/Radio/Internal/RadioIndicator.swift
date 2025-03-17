@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The selector of the radio.
+/// The indicator of the radio.
 /// Its content depends mainly to the ``ControlItemInternalState`` and from flags also.
 struct RadioIndicator: View {
 
@@ -37,7 +37,7 @@ struct RadioIndicator: View {
             .modifier(RadioIndicatorStyle(state: internalState, isOn: isOn, isError: isError))
     }
 
-    // MARK: - Selector
+    // MARK: - Indicator
 
     @ViewBuilder
     private func indicator() -> some View {

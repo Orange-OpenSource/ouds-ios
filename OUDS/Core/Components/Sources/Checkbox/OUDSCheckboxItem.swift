@@ -17,18 +17,18 @@ import SwiftUI
 // MARK: - OUDS Checkbox Item
 
 /// The ``OUDSCheckboxItem`` proposes layouts to add in your views some checkboxes components.
-/// If you want to use a checkbox with only a selector, prefer instead ``OUDSCheckbox``.
+/// If you want to use a checkbox with only an indicator prefer instead ``OUDSCheckbox``.
 ///
 /// ## Layouts
 ///
 /// The component can be rendered as two different layouts:
 ///
-/// - **default**: the component has a leading selector, a label and optional helper texts, and an optional trailing decorative icon
-/// - **inverse**: like the *default* layout but with a trailing checkbox seelctor and a leading optional image
+/// - **default**: the component has a leading indicator, a label and optional helper texts, and an optional trailing decorative icon
+/// - **inverse**: like the *default* layout but with a trailing checkbox indicator and a leading optional image
 ///
-/// ## Selector states
+/// ## Indicator states
 ///
-/// The checkbox selector has three available states:
+/// The checkbox indicator has three available states:
 /// - **selected**: the checkbox is filled with a tick, the user has made the action to select the checkbox
 /// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
 /// - **undeterminate**: mike a prefilled or preticked checkbox, the user did not do anything on it yet
@@ -54,7 +54,7 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an undeterminate state checkbox
-///     @Published var selection: OUDSCheckboxSelectorState  = .undeterminate
+///     @Published var selection: OUDSCheckboxIndicatorState  = .undeterminate
 ///
 ///     // A leading checkbox with a label.
 ///     // The default layout will be used here.
@@ -107,7 +107,7 @@ public struct OUDSCheckboxItem: View {
     // MARK: - Properties
 
     private let layoutData: ControlItemLabel.LayoutData
-    @Binding private var selection: OUDSCheckboxSelectorState
+    @Binding private var selection: OUDSCheckboxIndicatorState
 
     @Environment(\.isEnabled) private var isEnabled
 
@@ -118,15 +118,15 @@ public struct OUDSCheckboxItem: View {
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
-    ///   - selection: A binding to a property that determines wether the selector is ticked, unticker or preticked.
+    ///   - selection: A binding to a property that determines wether the indicator is ticked, unticker or preticked.
     ///   - labelText: The main label text of the checkbox.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
-    ///   - isInversed: `true` of the checkbox selector must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isInversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
-    public init(selection: Binding<OUDSCheckboxSelectorState>,
+    public init(selection: Binding<OUDSCheckboxIndicatorState>,
                 labelText: String,
                 helperText: String? = nil,
                 icon: Image? = nil,
@@ -166,8 +166,8 @@ public struct OUDSCheckboxItem: View {
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(layoutData: layoutData))
         .accessibilityValue(selection.a11yDescription.localized())
-        .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, selectorState: selection))
-        .buttonStyle(ControlItemStyle(selectorType: .checkBox($selection), layoutData: layoutData))
+        .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, indicatorState: selection))
+        .buttonStyle(ControlItemStyle(indicatorType: .checkBox($selection), layoutData: layoutData))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.
@@ -184,12 +184,12 @@ public struct OUDSCheckboxItem: View {
     /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
     /// - Parameters:
     ///    - isReadOnly: Flag saying wether or not the component is in *read only* mode
-    ///    - selectorState: To get the hint if component both not in *read only* mode and enabled
-    private func a11yHint(isReadOnly: Bool, selectorState: OUDSCheckboxSelectorState) -> String {
+    ///    - indicatorState: To get the hint if component both not in *read only* mode and enabled
+    private func a11yHint(isReadOnly: Bool, indicatorState: OUDSCheckboxIndicatorState) -> String {
         if isReadOnly || !isEnabled {
             return ""
         } else {
-            return selectorState.a11yHint
+            return indicatorState.a11yHint
         }
     }
 }

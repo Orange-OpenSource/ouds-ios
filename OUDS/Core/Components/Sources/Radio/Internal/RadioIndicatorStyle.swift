@@ -38,7 +38,7 @@ struct RadioIndicatorStyle: ViewModifier {
     }
 }
 
-// MARK: - Radio Selector Foreground Modifier
+// MARK: - Radio Indicator Foreground Modifier
 
 private struct RadioIndicatorForegroundModifier: ViewModifier {
 

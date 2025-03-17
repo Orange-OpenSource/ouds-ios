@@ -16,14 +16,14 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The selector of the chebckox.
-/// Its content depends to the ``ControlItemInternalState`` and the ``OUDSCheckboxSelectorState`` also.
-struct CheckboxSelector: View {
+/// The indicator of the checkbox.
+/// Its content depends to the ``ControlItemInternalState`` and the ``OUDSCheckboxIndicatorState`` also.
+struct CheckboxIndicator: View {
 
     // MARK: - Properties
 
     let internalState: ControlItemInternalState
-    let selectorState: OUDSCheckboxSelectorState
+    let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -32,21 +32,21 @@ struct CheckboxSelector: View {
     // MARK: - Body
 
     var body: some View {
-        selector()
-            .modifier(CheckboxSelectorStyle(state: internalState, selectorState: selectorState, isError: isError))
+        indicator()
+            .modifier(CheckboxIndicatorStyle(state: internalState, indicatorState: indicatorState, isError: isError))
     }
 
-    // MARK: - Selector
+    // MARK: - Indicator
 
     @ViewBuilder
-    private func selector() -> some View {
-        if selectorState == .selected {
+    private func indicator() -> some View {
+        if indicatorState == .selected {
             tickImage(name: "ic_form_tick")
-        } else if selectorState == .undeterminate {
+        } else if indicatorState == .undeterminate {
             tickImage(name: "ic_form_dash")
         } else { // .unselected
             Color.clear
-                .modifier(SelectorFrameModifier())
+                .modifier(IndicatorFrameModifier())
         }
     }
 
@@ -54,7 +54,7 @@ struct CheckboxSelector: View {
         Image(decorative: name, bundle: Bundle.OUDSComponents)
             .resizable()
             .scaledToFit()
-            .modifier(SelectorFrameModifier())
+            .modifier(IndicatorFrameModifier())
             .accessibilityHidden(true)
             .foregroundColor(appliedColor.color(for: colorScheme))
     }
@@ -87,9 +87,9 @@ struct CheckboxSelector: View {
     }
 }
 
-// MARK: - Selector Frame Modifier
+// MARK: - Indicator Frame Modifier
 
-private struct SelectorFrameModifier: ViewModifier {
+private struct IndicatorFrameModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
 
