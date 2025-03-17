@@ -7,6 +7,7 @@
 - [Pull Requests](#pull-requests)
 - [Code Guidelines](#code-guidelines)
 - [Commits Style](#commits-style)
+- [Developer Certificate of Origin](#developer-certificate-of-origin)
 - [Review Workflow](#review-workflow)
 - [License](#license)
 
@@ -142,7 +143,7 @@ Respect the architecture of the project, and [refer to the wiki if needed](https
 
 Try as best as possible to apply [conventional commits rules](https://www.conventionalcommits.org/en/v1.0.0/).
 Keep in mind to have your commits well prefixed, and with the issue number between parenthesis at the end.
-If your commits embed contributions for other people, do not forget to [add them as co-authors](https://docs.github.com/fr/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors). All of you should also comply to DCO.
+If your commits embed contributions for other people, do not forget to [add them as co-authors](https://docs.github.com/fr/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors).
 
 For example, given a commit to fix the issue n°43, the commit should be like:
 
@@ -222,6 +223,13 @@ Add thousands of tokens and hundreds of tests.
 
 Assisted-by: GPT-4o-mini (Dinootoo)
 ```
+
+## Developer Certificate of Origin
+
+You may notice in the previous section the commits are signed-off.
+For external contributors the DCO (i.e. [Developer Certificate of Origin of Linux Foundation in its version 1.1](https://developercertificate.org/)) is required.
+For Orange contributors it is highly recommended and will be mandatory soon.
+You can refer to the documentation about [-s / --signoff](https://git-scm.com/docs/git-commit) options for your Git commands.
 
 ## Review workflow
 
