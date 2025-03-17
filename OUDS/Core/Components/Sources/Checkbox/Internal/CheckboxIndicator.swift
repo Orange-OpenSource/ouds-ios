@@ -18,7 +18,7 @@ import SwiftUI
 
 /// The indicator of the checkbox.
 /// Its content depends to the ``ControlItemInternalState`` and the ``OUDSCheckboxIndicatorState`` also.
-struct CheckboxSelector: View {
+struct CheckboxIndicator: View {
 
     // MARK: - Properties
 
@@ -32,14 +32,14 @@ struct CheckboxSelector: View {
     // MARK: - Body
 
     var body: some View {
-        selector()
-            .modifier(CheckboxSelectorStyle(state: internalState, indicatorState: indicatorState, isError: isError))
+        indicator()
+            .modifier(CheckboxIndicatorStyle(state: internalState, indicatorState: indicatorState, isError: isError))
     }
 
-    // MARK: - Selector
+    // MARK: - Indicator
 
     @ViewBuilder
-    private func selector() -> some View {
+    private func indicator() -> some View {
         if indicatorState == .selected {
             tickImage(name: "ic_form_tick")
         } else if indicatorState == .undeterminate {
@@ -54,7 +54,7 @@ struct CheckboxSelector: View {
         Image(decorative: name, bundle: Bundle.OUDSComponents)
             .resizable()
             .scaledToFit()
-            .modifier(SelectorFrameModifier())
+            .modifier(IndicatorFrameModifier())
             .accessibilityHidden(true)
             .foregroundColor(appliedColor.color(for: colorScheme))
     }

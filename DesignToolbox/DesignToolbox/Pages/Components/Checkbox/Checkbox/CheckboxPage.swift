@@ -75,7 +75,7 @@ private struct CheckboxDemo: View {
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-            OUDSCheckbox(selection: $model.selectorState,
+            OUDSCheckbox(selection: $model.indicatorState,
                          accessibilityLabel: "app_components_checkbox_hint_a11y".localized(), // No LocalizedStringKey inference in the component
                          isError: model.isError)
                 .disabled(!model.enabled)

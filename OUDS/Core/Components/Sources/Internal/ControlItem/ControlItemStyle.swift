@@ -78,7 +78,7 @@ struct ControlItemStyle: ButtonStyle {
             case .radioButton(let binding):
                 RadioIndicator(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue, isError: layoutData.isError)
             case .checkBox(let binding):
-                CheckboxSelector(internalState: internalState(isPressed: isPressed), selectorState: binding.wrappedValue, isError: layoutData.isError)
+                CheckboxIndicator(internalState: internalState(isPressed: isPressed), indicatorState: binding.wrappedValue, isError: layoutData.isError)
             }
         }
         .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)

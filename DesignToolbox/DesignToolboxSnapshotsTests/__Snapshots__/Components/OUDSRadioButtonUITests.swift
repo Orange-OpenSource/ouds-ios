@@ -168,7 +168,7 @@ final class OUDSRadioUITests: XCTestCase {
     /// or `OUDSRadioItem` for the given theme and color schemes and on a colored surface or not.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    "test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<selectorState>_<disabledPatern>"
+    ///    "test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<indicatorState>_<disabledPatern>"
     ///
     /// **/!\ It does not test the hover and pressed states.**
     ///
@@ -195,7 +195,7 @@ final class OUDSRadioUITests: XCTestCase {
         }
 
         // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<coloredSurfacePatern><layout>_<selectorState>_<disabledPatern> where:
+        // test_<themeName>_<colorScheme>.<coloredSurfacePatern><layout>_<indicatorState>_<disabledPatern> where:
         // - `coloredSurfacePatern` is empty if not on colored surface
         // - `disabledPatern` is empty if not disabled
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
@@ -277,7 +277,7 @@ private struct RadioTest: View {
         var description: String {
             switch self {
             case let .indicatorOnly(isError):
-                return "layout-selectorOnly-\(isError ? "error" : "")"
+                return "layout-indicatorOnly-\(isError ? "error" : "")"
             case let .default(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
                     return "layout-default-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
             case let .inverse(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):

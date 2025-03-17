@@ -38,9 +38,9 @@ struct ControlItem: View {
 
     /// Used to define the orientation of the Layout
     enum Orientation {
-        /// Selector in leading position, icon in trailing position, like LTR mode.
+        /// Indicator in leading position, icon in trailing position, like LTR mode.
         case `default`
-        /// Icon in leading position, selector in trailing position, like RTL mode
+        /// Icon in leading position, indicator in trailing position, like RTL mode
         case inverse
     }
 
@@ -58,7 +58,7 @@ struct ControlItem: View {
     ///   - isOnError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: `true` if component is in read only mode, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    ///   - orientation: Specify the orientation of the layout. If `default` the selector is at the leading position, if `inverse` it is on trailing.
+    ///   - orientation: Specify the orientation of the layout. If `default` the indicator is at the leading position, if `inverse` it is on trailing.
     init(indicatorType: IndicatorType,
          labelText: String,
          helperText: String? = nil,
@@ -96,6 +96,6 @@ struct ControlItem: View {
                 }
             }
         }
-        .buttonStyle(ControlItemStyle(selectorType: indicatorType, layoutData: layoutData))
+        .buttonStyle(ControlItemStyle(indicatorType: indicatorType, layoutData: layoutData))
     }
 }

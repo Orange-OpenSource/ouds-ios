@@ -11,7 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-/// A checkbox selector has three available states: `selected`, `unselected` and `undeterminate`
+/// A checkbox indicator has three available states: `selected`, `unselected` and `undeterminate`
 ///
 /// - Since: 0.12.0
 public enum OUDSCheckboxIndicatorState {
@@ -36,7 +36,7 @@ public enum OUDSCheckboxIndicatorState {
         }
     }
 
-    /// The text to vocalize with *Voice Over* for the state of the selector
+    /// The text to vocalize with *Voice Over* for the state of the indicator
     var a11yDescription: String {
         switch self {
         case .selected:
