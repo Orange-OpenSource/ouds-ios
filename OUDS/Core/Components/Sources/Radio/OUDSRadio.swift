@@ -55,7 +55,7 @@ import SwiftUI
 ///
 /// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
 ///
-/// - Since: 0.13.0
+/// - Since: 0.12.0
 public struct OUDSRadio: View { // TODO: #266 - Update documentation hyperlink above
 
     // MARK: - Properties
