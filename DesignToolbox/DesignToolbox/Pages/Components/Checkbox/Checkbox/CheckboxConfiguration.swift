@@ -17,15 +17,16 @@ import SwiftUI
 // MARK: - Checkbox Configuration Model
 
 /// The model shared between `CheckboxConfiguration` view and `CheckboxPage` view.
+/// Related to `OUDSCheckbox` (i.e. with 2 available values).
 final class CheckboxConfigurationModel: ComponentConfiguration {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     @Published var enabled: Bool {
         didSet { updateCode() }
     }
 
-    @Published var indicatorState: OUDSCheckboxIndicatorState {
+    @Published var indicatorState: Bool {
         didSet { updateCode() }
     }
 
@@ -33,22 +34,22 @@ final class CheckboxConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    // MARK: - Initializer
+    // MARK: Initializer
 
     override init() {
-        indicatorState = .selected
+        indicatorState = true
         isError = false
         enabled = true
     }
 
     deinit { }
 
-    // MARK: - Component Configuration
+    // MARK: Component Configuration
 
     override func updateCode() {
         code =
           """
-          OUDSCheckbox(selection: $selection\(isErrorPattern))
+          OUDSCheckbox(isOn: $isOn\(isErrorPattern))
           \(disableCode)
           """
     }
@@ -87,11 +88,10 @@ struct CheckboxConfiguration: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .disabled(!model.enabled)
 
-            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
-                ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
-                    Text(LocalizedStringKey(state.description)).tag(state)
-                }
-            }
+            Toggle("app_components_checkbox_selection_label", isOn: $model.indicatorState)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .disabled(!model.enabled)
         }
     }
 }

@@ -25,6 +25,8 @@ struct CheckboxElements: DesignToolboxElement {
         let variants: [DesignToolboxElement] = [
             CheckboxElement(),
             CheckboxItemElement(),
+            CheckboxIndeterminateElement(),
+            CheckboxItemIndeterminateElement(),
         ]
 
         name = "app_components_checkbox_label"

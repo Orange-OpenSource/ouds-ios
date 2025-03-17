@@ -17,6 +17,7 @@ import SwiftUI
 
 // MARK: - Checkbox Page
 
+/// Related to `OUDSCheckbox` (i.e. with 2 available values).
 struct CheckboxPage: View {
 
     @StateObject private var configuration: CheckboxConfigurationModel
@@ -75,7 +76,7 @@ private struct CheckboxDemo: View {
     var body: some View {
         HStack(alignment: .center) {
             Spacer()
-            OUDSCheckbox(selection: $model.indicatorState,
+            OUDSCheckbox(isOn: $model.indicatorState,
                          accessibilityLabel: "app_components_checkbox_hint_a11y".localized(), // No LocalizedStringKey inference in the component
                          isError: model.isError)
                 .disabled(!model.enabled)

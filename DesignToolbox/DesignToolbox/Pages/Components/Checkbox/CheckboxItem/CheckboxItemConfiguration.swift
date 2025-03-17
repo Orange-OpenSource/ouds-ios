@@ -17,6 +17,7 @@ import SwiftUI
 // MARK: - Checkbox Item Configuration Model
 
 /// The model shared between `CheckboxItemConfiguration` view and `CheckboxItemPage` view.
+/// Related to `OUDSCheckboxItem` (i.e. with 2 available values).
 final class CheckboxItemConfigurationModel: ComponentConfiguration {
 
     // MARK: - Properties
@@ -25,7 +26,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var indicatorState: OUDSCheckboxIndicatorState {
+    @Published var indicatorState: Bool {
         didSet { updateCode() }
     }
 
@@ -64,7 +65,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        indicatorState = .selected
+        indicatorState = true
         isError = false
         isReadOnly = false
         enabled = true
@@ -80,15 +81,13 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
 
     // MARK: - Component Configuration
 
-    // swiftlint:disable line_length
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItem(selection: $selection, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSCheckboxItem(isOn: $isOn, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
-    // swiftlint:enable line_length
 
     private var disableCode: String {
         ".disable(\(enabled ? "false" : "true"))"
@@ -131,11 +130,9 @@ struct CheckboxItemConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
 
-            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
-                ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
-                    Text(LocalizedStringKey(state.description)).tag(state)
-                }
-            }
+            Toggle("app_components_checkbox_selection_label", isOn: $model.indicatorState)
+                .typeHeadingMedium(theme)
+                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
 
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
@@ -178,44 +175,4 @@ struct CheckboxItemConfiguration: View {
             }
         }
     }
-}
-
-// MARK: - Design Toolbox Layout Orientation
-
-// ControlItem layout orientation is not accessible
-enum DesignToolboxLayoutOrientation: CaseIterable, CustomStringConvertible {
-    case `default`
-    case inverse
-
-    // No l10n, tehchnical names
-    var description: String {
-        switch self {
-        case .default:
-            "Left action"
-        case .inverse:
-            "Right action"
-        }
-    }
-
-    var id: String { description }
-}
-
-// MARK: - OUDS Checkbox Indicator State extension
-
-extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static var allCases: [OUDSCheckboxIndicatorState] = [.selected, .unselected, .undeterminate]
-
-    // No l10n, tehchnical names
-    public var description: String {
-        switch self {
-        case .selected:
-            "Selected"
-        case .unselected:
-            "Unselected"
-        case .undeterminate:
-            "Undeterminate"
-        }
-    }
-
-    var id: String { description }
 }

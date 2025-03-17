@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Split checkbox component API for two-values and three-values states ([#497](https://github.com/Orange-OpenSource/ouds-ios/issues/497))
 - [Library] Rename *selector* to *indicator* for control item absed components ([#496](https://github.com/Orange-OpenSource/ouds-ios/issues/496))
 - [Library] Checkbox component v2 ([#486](https://github.com/Orange-OpenSource/ouds-ios/issues/486))
 - [Library] Group components by category in documentation ([#484](https://github.com/Orange-OpenSource/ouds-ios/issues/484))

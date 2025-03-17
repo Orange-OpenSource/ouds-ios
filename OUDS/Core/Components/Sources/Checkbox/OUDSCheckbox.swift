@@ -16,15 +16,16 @@ import SwiftUI
 
 // MARK: - OUDS Checkbox
 
-/// The ``OUDSCheckbox`` proposes layout to add in your views a lonely checkbox, without labels, texts nor icons checkboxes components
+/// The ``OUDSCheckbox`` proposes layout to add in your views a lonely checkbox, without labels, texts nor icons components.
 /// If you want to use a checkbox with additional texts and icon, prefer instead ``OUDSCheckboxItem``.
 ///
 /// ## Indicator states
 ///
-/// The checkbox indcator has three available states:
+/// This checkbox indicator has two available states:
 /// - **selected**: the checkbox is filled with a tick, the user has made the action to select the checkbox
 /// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
-/// - **undeterminate**: like a prefilled or preticked checkbox, the user did not do anything on it yet
+///
+/// If you need to use a tri-state checkbox instead, refer to ``OUDSCheckboxIndeterminate``.
 ///
 /// ## Particular cases
 ///
@@ -44,18 +45,18 @@ import SwiftUI
 /// ## Code samples
 ///
 /// ```swift
-///     // Supposing we have an undeterminate state checkbox
-///     @Published var selection: OUDSCheckboxIndicatorState  = .undeterminate
+///     // Supposing we have a selected checkbox
+///     @Published var isOn: Bool = true
 ///
 ///     // A simple checkbox, no error, not in read only mode
-///     OUDSCheckbox(selection: $selection, accessibilityLabel: "The cake is a lie")
+///     OUDSCheckbox(isOn: $isOn, accessibilityLabel: "The cake is a lie")
 ///
 ///     // A simple checkbox, but is an error context
-///     OUDSCheckbox(selection: $selection, accessibilityLabel: "The cake is a lie"), isError: true)
+///     OUDSCheckbox(isOn: $isOn, accessibilityLabel: "The cake is a lie"), isError: true)
 ///
 ///     // Never disable an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckbox(selection: $selection, accessibilityLabel: "The cake is a lie"), isError: true).disabled(true) // fatal error
+///     OUDSCheckbox(isOn: $isOn, accessibilityLabel: "The cake is a lie"), isError: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
@@ -70,7 +71,12 @@ public struct OUDSCheckbox: View {
     private let isError: Bool
     private let a11yLabel: String
 
-    @Binding var selection: OUDSCheckboxIndicatorState
+    @Binding var isOn: Bool
+
+    private var convertedState: OUDSCheckboxIndicatorState {
+        isOn ? .selected : .unselected
+    }
+
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Initializers
@@ -80,16 +86,16 @@ public struct OUDSCheckbox: View {
     /// **The design system does not allow to have both an error situation and a disabled state for the component.**
     ///
     /// - Parameters:
-    ///    - selection: A binding to a property that determines wether the indicator is ticked, unticked or preticked.
+    ///    - isOn: A binding to a property that determines wether the indicator is ticked (selected) or not (not selected)
     ///    - accessibilityLabel: The accessibility label the component must have
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
-    public init(selection: Binding<OUDSCheckboxIndicatorState>,
+    public init(isOn: Binding<Bool>,
                 accessibilityLabel: String,
                 isError: Bool = false) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
-        _selection = selection
+        _isOn = isOn
         self.isError = isError
         a11yLabel = accessibilityLabel
     }
@@ -98,13 +104,27 @@ public struct OUDSCheckbox: View {
 
     public var body: some View {
         Button("") {
-            $selection.wrappedValue.toggle()
+            $isOn.wrappedValue.toggle()
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
-        .accessibilityValue(selection.a11yDescription.localized())
-        .accessibilityHint(selection.a11yHint)
-        .buttonStyle(CheckboxOnlyButtonStyle(indicatorState: $selection.wrappedValue, isError: isError))
+        .accessibilityValue(a11yValue())
+        .accessibilityHint(a11yHint())
+        .buttonStyle(CheckboxOnlyButtonStyle(indicatorState: convertedState, isError: isError))
+    }
+
+    // MARK: - A11Y helpers
+
+    /// Forges a string to vocalize with *Voice Over* describing the component value
+    private func a11yValue() -> String {
+        isOn ? "core_checkbox_checked_a11y".localized() : "core_checkbox_unchecked_a11y".localized()
+    }
+
+    /// Forges a string to vocalize with *Voice Over* describing the component hint
+    private func a11yHint() -> String {
+        isOn
+        ? "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
+        : "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state
