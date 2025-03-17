@@ -221,7 +221,7 @@
       }
     },
     "TODO: Add switch indicator here" : {
-
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"

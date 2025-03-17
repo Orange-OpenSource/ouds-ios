@@ -2,8 +2,8 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
-      "comment" : "About screen",
-      "extractionState" : "stale",
+      "comment" : "About screen - Tokens library version",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -525,7 +525,7 @@
     },
     "app_components_checkbox_helperText_text" : {
       "comment" : "Component - Checkbox",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -597,7 +597,7 @@
     },
     "app_components_checkbox_label_text" : {
       "comment" : "Component - Checkbox",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -723,7 +723,7 @@
     },
     "app_components_common_divider_label" : {
       "comment" : "Component screen - Common",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -741,7 +741,7 @@
     },
     "app_components_common_editContent_label" : {
       "comment" : "Component - Checkbox",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -777,7 +777,7 @@
     },
     "app_components_common_icon_label" : {
       "comment" : "Component - Checkbox",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -867,7 +867,7 @@
     },
     "app_components_common_onError_label" : {
       "comment" : "Component screen - Common",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -903,7 +903,7 @@
     },
     "app_components_common_readOnly_label" : {
       "comment" : "Component screen - Common",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1101,7 +1101,7 @@
     },
     "app_components_radio_additionalLabelText_label" : {
       "comment" : "Component - Radio",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1191,7 +1191,7 @@
     },
     "app_components_radio_helperText_text" : {
       "comment" : "Component - Radio",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1263,7 +1263,7 @@
     },
     "app_components_radio_label_text" : {
       "comment" : "Component - Radio",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1299,7 +1299,7 @@
     },
     "app_components_radio_selection_label" : {
       "comment" : "Component - Radio",
-      "extractionState" : "stale",
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
