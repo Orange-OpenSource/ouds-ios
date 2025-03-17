@@ -557,6 +557,24 @@
         }
       }
     },
+    "app_components_checkbox_indicatorOnly_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indicator only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Case à cocher seule"
+          }
+        }
+      }
+    },
     "app_components_checkbox_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
@@ -624,24 +642,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sélection"
-          }
-        }
-      }
-    },
-    "app_components_checkbox_selectorOnly_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selector only"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Case à cocher seule"
           }
         }
       }
@@ -1143,6 +1143,24 @@
         }
       }
     },
+    "app_components_radio_indicatorOnly_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indicator only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio seul"
+          }
+        }
+      }
+    },
     "app_components_radio_label" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
@@ -1209,24 +1227,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sélection"
-          }
-        }
-      }
-    },
-    "app_components_radio_selectorOnly_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selector only"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio seul"
           }
         }
       }
