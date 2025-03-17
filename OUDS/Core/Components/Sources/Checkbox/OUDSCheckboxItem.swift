@@ -122,10 +122,10 @@ public struct OUDSCheckboxItem: View {
     ///   - labelText: The main label text of the switch.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
-    ///   - isInversed: `True` of the checkbox selector must be in trailing position,` false` otherwise. Default to `false`
-    ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - isInversed: `true` of the checkbox selector must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     public init(selection: Binding<OUDSCheckboxSelectorState>,
                 labelText: String,
                 helperText: String? = nil,

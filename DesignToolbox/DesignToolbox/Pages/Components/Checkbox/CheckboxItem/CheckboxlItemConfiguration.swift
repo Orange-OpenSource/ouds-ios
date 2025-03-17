@@ -71,7 +71,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         helperText = true
         icon = true
         layoutOrientation = .default
-        divider = true
+        divider = false
         labelTextContent = String(localized: "app_components_checkbox_label_text")
         helperTextContent = String(localized: "app_components_checkbox_helperText_text")
     }
