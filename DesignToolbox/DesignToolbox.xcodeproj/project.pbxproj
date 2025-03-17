@@ -189,6 +189,7 @@
 		51BD76292C466FCF0033365D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761C2C466FCF0033365D /* WebView.swift */; };
 		51BD762A2C466FCF0033365D /* DesignToolbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761E2C466FCF0033365D /* DesignToolbox.swift */; };
 		51BD762B2C466FCF0033365D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD761F2C466FCF0033365D /* MainView.swift */; };
+		51D6D5832D883D50009CD879 /* OUDSRadioButtonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5822D883D50009CD879 /* OUDSRadioButtonUITests.swift */; };
 		51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */; };
 		6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */; };
 		6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4952CC159F600E69359 /* NamedColor+Action.swift */; };
@@ -374,6 +375,7 @@
 		51BD761C2C466FCF0033365D /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		51BD761E2C466FCF0033365D /* DesignToolbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolbox.swift; sourceTree = "<group>"; };
 		51BD761F2C466FCF0033365D /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		51D6D5822D883D50009CD879 /* OUDSRadioButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSRadioButtonUITests.swift; sourceTree = "<group>"; };
 		51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementPage.swift; sourceTree = "<group>"; };
 		6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxCode.swift; sourceTree = "<group>"; };
 		6DFC208A2CDE669500F2EC33 /* AccessibilityStatementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityStatementPage.swift; sourceTree = "<group>"; };
@@ -809,6 +811,7 @@
 		51952A902D3FA25F0068B807 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				51D6D5822D883D50009CD879 /* OUDSRadioButtonUITests.swift */,
 				51952A912D3FA26B0068B807 /* OUDSButtonUITests.swift */,
 				514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */,
 				07304A4A2D427146009320BA /* OUDSLinkUITests.swift */,
@@ -1159,6 +1162,7 @@
 				51952A942D3FA32E0068B807 /* DesignToolboxElementsPage.swift in Sources */,
 				51952A952D3FA32E0068B807 /* DesignToolboxVariantElement.swift in Sources */,
 				51952A962D3FA32E0068B807 /* View+Illustration.swift in Sources */,
+				51D6D5832D883D50009CD879 /* OUDSRadioButtonUITests.swift in Sources */,
 				51952A972D3FA32E0068B807 /* FontTokenElement.swift in Sources */,
 				0745C19A2D7A0823006B3A1F /* RaioItemElement.swift in Sources */,
 				0745C19B2D7A0823006B3A1F /* RadiolItemConfiguration.swift in Sources */,
