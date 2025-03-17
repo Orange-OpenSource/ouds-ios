@@ -32,5 +32,5 @@ body:
         - label: Documentations have been updated
         - label: Unit tests have been updated
         - label: UI tests have been updated
-        - label: Demo app have been updated
+        - label: Design System Toolbox has been updated
         - label: Retrocompatibility has been checked, or broken API have been flagged as deprecated with a workaround
