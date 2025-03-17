@@ -54,7 +54,7 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
             return .disabled
         }
 
-        if isPressedw {
+        if isPressed {
             return .pressed
         }
 

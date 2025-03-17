@@ -90,7 +90,7 @@ struct ControlItemLabel: View {
             case .pressed:
                 return theme.colors.colorActionNegativePressed.color(for: colorScheme)
             case .readOnly, .disabled:
-                OL.fatal("An component (checkbox, switch, radio) with a disabled state / in read only mode and an error situation has been detected, which is not allowed by design."
+                OL.fatal("An component (checkbox, switch, radio) with a disabled state / read only mode and an error situation has been detected, which is not allowed by design."
                              + " Only non-error situation are allowed to have a disabled state or a read only mode.")
             }
         } else {
