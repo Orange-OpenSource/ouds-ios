@@ -71,16 +71,16 @@ The indicator can be leading or trailing.
 
 ```swift
      // A leading radio with a label
-     OUDSRadiotem(isOn: $selection, label: "Lucy in the Sky with Diamonds")
+     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds")
 
      // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an
      // error with an inverse layout
-     OUDSRadiotem(isOn: $selection,
-                  labelText: "Lucy in the Sky with Diamonds",
-                  additionalLabelText: "The Beatles"
-                  helperText: "1967",
-                  icon: Image(decorative: "ic_heart"),
-                  isInversed: true,
-                  isError: true,
-                  hasDivider: true)
+     OUDSRadioItem(isOn: $selection,
+                   labelText: "Lucy in the Sky with Diamonds",
+                   additionalLabelText: "The Beatles"
+                   helperText: "1967",
+                   icon: Image(decorative: "ic_heart"),
+                   isInversed: true,
+                   isError: true,
+                   hasDivider: true)
 ```
