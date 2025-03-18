@@ -1,6 +1,7 @@
 # Contributing to OUDS iOS
 
 - [Using the Issue Tracker](#using-the-issue-tracker)
+- [Using the Discussion Tracker](#using-the-issue-tracker)
 - [Issues and Labels](#issues-and-labels)
 - [Bug Reports](#bug-reports)
 - [Feature Requests](#feature-requests)
@@ -31,6 +32,16 @@ The [issue tracker](https://github.com/Orange-OpenSource/ouds-ios/issues) is the
 - Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
 
 - Please **do not** post comments consisting solely of "+1" or ":thumbsup:". Use [GitHub's "reactions" feature](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) instead. We reserve the right to delete comments which violate this rule.
+
+## Using the Discussion Tracker
+
+The GitHub project provides a [discussion tracker](https://github.com/Orange-OpenSource/ouds-ios/discussions) with several sections.
+
+You may need to refer to the [Q&A section](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a) if you have questions in mind, or to [Ideas section](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/ideas) for discussions about technical things.
+
+If you found a discussion which interests you or fills your needs, feel free to use [GitHub's "reactions" feature](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) and bring useful comments. We reserve the right to delete comments which violate this rule.
+
+Keep in mind internal or sensitive discussions must be in internal tools, not public ones.
 
 ## Issues and Labels
 
