@@ -36,7 +36,7 @@
 
 [![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store "iOS 15 supports")
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
-[![Xcode 16](https://img.shields.io/badge/Xcode-16-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes)
+[![Xcode 16.2](https://img.shields.io/badge/Xcode-16.2-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_2-release-notes)
 
 ## Content
 
