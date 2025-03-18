@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Migration to Xcode 16.2 ([#258](https://github.com/Orange-OpenSource/ouds-ios/issues/258))
 - [Tool] Update `SwiftLint` pod from v0.58.1 to v0.58.2
 - [Tool] Update `fastlane` gem from v2.226.0 to v2.227.0
 - [Library] Split checkbox component API for two-values and three-values states ([#497](https://github.com/Orange-OpenSource/ouds-ios/issues/497))
