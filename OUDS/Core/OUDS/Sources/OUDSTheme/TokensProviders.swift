@@ -72,9 +72,6 @@ public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComp
 /// Something which provides all component tokens of chip
 public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTokens { }
 
-/// Something which provides all component tokens of breadcrumb
-public protocol AllBreadcrumbComponentTokensProvider: TokensProvider, BreadcrumbComponentTokens { }
-
 /// Something which provides all component tokens of bullet list
 public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletListComponentTokens { }
 

@@ -91,10 +91,6 @@ struct OrangeThemeTests {
         #expect(theme.chip is OrangeThemeChipComponentTokensProvider)
     }
 
-    @Test func defaultBreadcrumbComponentTokensProvider() throws {
-        #expect(theme.breadcrumb is OrangeThemeBreadcrumbComponentTokensProvider)
-    }
-
     @Test func defaultBulletListComponentTokensProvider() throws {
         #expect(theme.bulletList is OrangeThemeBulletListComponentTokensProvider)
     }
@@ -113,6 +109,10 @@ struct OrangeThemeTests {
 
     @Test func defaultCheckboxComponentTokensProvider() throws {
         #expect(theme.checkbox is OrangeThemeCheckboxComponentTokensProvider)
+    }
+
+    @Test func defaultRadioComponentTokensProvider() throws {
+        #expect(theme.radioButton is OrangeThemeRadioButtonComponentTokensProvider)
     }
 
     // NOTE: Add tests for new component tokens providers

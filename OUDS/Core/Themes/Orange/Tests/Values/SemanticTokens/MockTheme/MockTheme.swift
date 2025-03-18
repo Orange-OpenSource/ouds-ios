@@ -60,7 +60,6 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-                   breadcrumb: MockThemeBreadcrumbComponentTokenProvider(sizes: sizes, spaces: spaces),
                    bulletList: MockThemeBulletListComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    inputText: MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    badge: MockThemeBadgeComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
