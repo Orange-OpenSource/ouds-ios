@@ -64,9 +64,13 @@ The project is open source and topics like accessibility and ecodesign should be
 
 It should replace internal frameworks and also [ODS](https://github.com/Orange-OpenSource/ods-ios) in the near future.
 
-## Bugs and feature requests
+## Bugs, feature requests and discussions
 
 Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new/choose).
+
+If you want to share ideas or discuss about API, features, components or other topics, you should first open a new discussion.
+[Q&A](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a) is more dedicated for help, otherwise feel free to open or update a topic in [Ideas](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/ideas).
+Keep in mind internal or sensitive discussions must be in internal tools, not public ones.
 
 ## Contributing
 
