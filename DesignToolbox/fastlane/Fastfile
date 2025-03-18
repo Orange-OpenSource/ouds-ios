@@ -76,7 +76,7 @@ platform :ios do
 
     before_all do |lane, options|
         xcodes(
-            version: '16',
+            version: '16.2',
             select_for_current_build_only: true,
         )
     end
