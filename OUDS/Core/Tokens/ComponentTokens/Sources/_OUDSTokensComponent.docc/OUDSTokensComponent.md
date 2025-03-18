@@ -105,7 +105,6 @@ struct DesignToolbox: App {
 
 - ``BadgeComponentTokens``
 - ``BulletListComponentTokens``
-- ``BreadcrumbComponentTokens``
 - ``ButtonComponentTokens``
 - ``CheckboxComponentTokens``
 - ``ChipComponentTokens``

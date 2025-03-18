@@ -89,9 +89,6 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to chip components like `OUDSChip`
     public let chip: AllChipComponentTokensProvider
 
-    /// All components tokens related to breadcrumb components like `OUDSBreadcrumb`
-    public let breadcrumb: AllBreadcrumbComponentTokensProvider
-
     /// All components tokens related to bullet list components like `OUDSBulletList`
     public let bulletList: AllBulletListComponentTokensProvider
 
@@ -133,7 +130,6 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - switch: All component tokens for switch
     ///    - listItem: All component tokens for list item
     ///    - chip: All component tokens for chip
-    ///    - breadcrumb: All component tokens for breadcrumb
     ///    - bulletList: All component tokens for bullet list
     ///    - inputText: All component tokens for input text
     ///    - badge: All component tokens for badge
@@ -157,7 +153,6 @@ open class OUDSTheme: @unchecked Sendable {
                 switch: AllSwitchComponentTokensProvider,
                 listItem: AllListItemComponentTokensProvider,
                 chip: AllChipComponentTokensProvider,
-                breadcrumb: AllBreadcrumbComponentTokensProvider,
                 bulletList: AllBulletListComponentTokensProvider,
                 inputText: AllInputTextComponentTokensProvider,
                 badge: AllBadgeComponentTokensProvider,
@@ -185,7 +180,6 @@ open class OUDSTheme: @unchecked Sendable {
         self.`switch` = `switch`
         self.listItem = listItem
         self.chip = chip
-        self.breadcrumb = breadcrumb
         self.bulletList = bulletList
         self.inputText = inputText
         self.badge = badge

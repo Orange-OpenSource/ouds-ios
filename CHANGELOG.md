@@ -30,6 +30,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Initialization of component tokens providers
 - [Library] Initialization of themes
 
+### Removed
+
+- [Library] Breadcrumb component tokens
+
 ### Fixed
 
 - [DesignToolbox] Checkbox item displaying devider by default and should not ([#502](https://github.com/Orange-OpenSource/ouds-ios/issues/502))

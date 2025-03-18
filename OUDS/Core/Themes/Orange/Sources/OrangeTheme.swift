@@ -99,7 +99,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - switch: All component tokens for switch
     ///    - listItem: All component tokens for list item
     ///    - chip: All component tokens for chip
-    ///    - breadcrumb: All component tokens for breadcrumb
     ///    - bulletList: All component tokens for bullet list
     ///    - inputText: All component tokens for input text
     ///    - badge: All component tokens for badge
@@ -124,7 +123,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         switch: AllSwitchComponentTokensProvider? = nil,
         listItem: AllListItemComponentTokensProvider? = nil,
         chip: AllChipComponentTokensProvider? = nil,
-        breadcrumb: AllBreadcrumbComponentTokensProvider? = nil,
         bulletList: AllBulletListComponentTokensProvider? = nil,
         inputText: AllInputTextComponentTokensProvider? = nil,
         badge: AllBadgeComponentTokensProvider? = nil,
@@ -150,7 +148,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
             let listItem = (`listItem` ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
             let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
-            let breadcrumb = (breadcrumb ?? OrangeThemeBreadcrumbComponentTokensProvider(sizes: sizes, spaces: spaces))
             let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
             let inputText = (inputText ?? OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
             let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
@@ -174,7 +171,6 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                        switch: `switch`,
                        listItem: listItem,
                        chip: chip,
-                       breadcrumb: breadcrumb,
                        bulletList: bulletList,
                        inputText: inputText,
                        badge: badge,
