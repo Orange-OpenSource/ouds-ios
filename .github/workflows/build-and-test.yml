@@ -42,7 +42,7 @@ jobs:
 
       - name: Set up Xcode 16
         run: |
-          sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -65,9 +65,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Xcode 16
+      - name: Set up Xcode 16.2
         run: |
-          sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -91,9 +91,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Xcode 16
+      - name: Set up Xcode 16.2
         run: |
-          sudo xcode-select -s /Applications/Xcode_16.app/Contents/Developer
+          sudo xcode-select -s /Applications/Xcode_16.2.0.app/Contents/Developer
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
