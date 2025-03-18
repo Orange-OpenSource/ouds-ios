@@ -281,7 +281,7 @@ private struct RadioTest: View {
             case let .default(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
                     return "layout-default-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
             case let .inverse(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
-                    return "layout-inverse-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
+                    return "layout-inverse-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
         }
         // swiftlint:enable line_length

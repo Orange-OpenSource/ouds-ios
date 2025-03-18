@@ -76,7 +76,7 @@ platform :ios do
 
     before_all do |lane, options|
         xcodes(
-            version: '16',
+            version: '16.2',
             select_for_current_build_only: true,
         )
     end
@@ -108,7 +108,7 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            device = "iPhone 14"
+            device = "iPhone 16 Pro"
             scan(scheme: OUDS_TEST_SCHEME,
                 device: device,
                 skip_build: true)
