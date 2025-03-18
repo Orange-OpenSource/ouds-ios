@@ -76,9 +76,9 @@ rbenv global 3.3.5
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 16**, we suggest you use this version or newer if you want.
+We use also for our GitLab CI runners **Xcode 16.2**, we suggest you use this version or newer if you want.
 
-**Xcode 16** and **Swift 6** are used for this project. You must use this configuration.
+**Xcode 16.2** and **Swift 6** are used for this project. You must use this configuration.
 
 ## Build Design System Toolbox
 
