@@ -30,10 +30,10 @@ struct CheckboxElements: DesignToolboxElement {
         ]
 
         name = "app_components_checkbox_label"
-        image = Image(decorative: "il_component_checkbox").renderingMode(.template)
+        image = Image(decorative: "il_component_checkbox").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
-            image: Image(decorative: "il_component_checkbox").renderingMode(.template),
+            image: Image(decorative: "il_component_checkbox").renderingMode(.original),
             description: "app_components_checkbox_description_text",
             illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
     }

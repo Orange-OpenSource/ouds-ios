@@ -20,7 +20,7 @@ struct RadioElement: DesignToolboxElement {
 
     init() {
         name = "app_components_radio_selectorOnly_label"
-        image = Image(decorative: "il_component_radio").renderingMode(.template)
+        image = Image(decorative: "il_component_radio").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,
