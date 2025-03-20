@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.12.0...develop)
 
+### Changed
+
+- [Tool] Change name of IPA file to upload to store portal
+
 ### Fixed
 
 - [DesignToolbox] Update Checkbox and Radio button assets on the screen of component list ([#519](https://github.com/Orange-OpenSource/ouds-ios/issues/519))
