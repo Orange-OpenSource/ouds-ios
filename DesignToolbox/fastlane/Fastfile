@@ -451,8 +451,9 @@ platform :ios do
             puts "ℹ️ App build number: '#{build_number}'"
 
             # Escape spaces for upload
-            sh "cp ../build/Design\\ System\\ Toolbox.ipa ../build/Design_System_Toolbox.ipa"
-            sh "curl -F 'file=@../build/Design_System_Toolbox.ipa' #{UPLOAD_STORE_URL}"
+            ipa_new_name = "Design_System_Toolbox-#{build_number}.ipa"
+            sh "cp ../build/Design\\ System\\ Toolbox.ipa ../build/#{ipa_new_name}"
+            sh "curl -F 'file=@../build/#{ipa_new_name}' #{UPLOAD_STORE_URL}"
 
             publish_mattermost_notification("📦 ✅ @here The upload to store has been done successfully (version = '#{version}', build number = '#{build_number}')")
         rescue => error
