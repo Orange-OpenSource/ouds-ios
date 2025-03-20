@@ -56,7 +56,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomBulletListComponentTokensProvider(), ... ])
+///         super.init(bulletList: CustomBulletListComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -64,7 +64,23 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomBulletListComponentTokensProvider(), ... ])
+///     OrangeTheme(bulletList: CustomBulletListComponentTokensProvider())
+/// ```
+///
+/// It is also possible to use your own semantic tokens providers for this component tokens providers:
+///
+/// ```swift
+///     // Uses by default here:
+///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeColorSemanticTokensProvider for colors
+///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     let bulletListComponentTokensProvider = OrangeThemeBulletListComponentTokensProvider()
+///
+///     // Or use your own size, color and space semantic tokens providers (or only some)
+///     let bulletListComponentTokensProvider = OrangeThemeBulletListComponentTokensProvider(
+///                                                 sizes: CustomSizeSemanticTokensProvider(),
+///                                                 colors: CustomColorSemanticTokensProvider
+///                                                 spaces: CustomSpaceSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0
@@ -81,24 +97,24 @@ open class OrangeThemeBulletListComponentTokensProvider: AllBulletListComponentT
 
     /// Defines a provider of component tokens dedicated to `OUDSLink`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens
-    ///    - colors: Provider for color semantic tokens
-    ///    - spaces: Provider for space semantic tokens
-    public init(sizes: AllSizeSemanticTokensProvider,
-                colors: AllColorSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider) {
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                colors: AllColorSemanticTokensProvider? = nil,
+                spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeBulletListComponentTokensProvider")
-        self.sizes = sizes
-        self.colors = colors
-        self.spaces = spaces
+        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
     deinit { }
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator
-    // the implemention of BreadcrumbComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+BreadcrumbComponentTokens.swift
-    // This declaration of OrangeThemeBreadcrumbComponentTokensProvider is here also to allow to write documentation.
+    // the implemention of BulletListComponentTokens is not here but in Core/Themes/Orange/Values/ComponentTokens/OrangeTheme+BulletListComponentTokens.swift
+    // This declaration of OrangeThemeBulletListComponentTokensProvider is here also to allow to write documentation.
 }
 
 // swiftlint:enable type_name

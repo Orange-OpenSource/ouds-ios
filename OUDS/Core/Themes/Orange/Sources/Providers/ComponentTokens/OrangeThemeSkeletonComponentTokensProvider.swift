@@ -51,7 +51,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomSkeletonComponentTokensProvider(), ... ])
+///         super.init(skeleton: CustomSkeletonComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -59,7 +59,19 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomSkeletonComponentTokensProvider(), ... ])
+///     OrangeTheme(skeleton: CustomSkeletonComponentTokensProvider())
+/// ```
+///
+/// It is also possible to use your own semantic tokens providers for this component tokens providers:
+///
+/// ```swift
+///     // Uses by default here:
+///     // - OrangeThemeColorSemanticTokensProvider for colors
+///     let skeletonComponentTokensProvider = OrangeThemeSkeletonComponentTokensProvider()
+///
+///     // Or use your own color semantic tokens providers (or only some)
+///     let skeletonComponentTokensProvider = OrangeThemeSkeletonComponentTokensProvider(
+///                                                 colors: CustomColorSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.9.0
@@ -69,10 +81,10 @@ open class OrangeThemeSkeletonComponentTokensProvider: AllSkeletonComponentToken
     public let colors: AllColorSemanticTokensProvider
 
     /// Defines a provider of component tokens dedicated to `OUDSSkeleton`
-    /// - Parameter colors: Provider for color semantic tokens
-    public init(colors: AllColorSemanticTokensProvider) {
+    /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    public init(colors: AllColorSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeSkeletonComponentTokensProvider")
-        self.colors = colors
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
     }
 
     deinit { }

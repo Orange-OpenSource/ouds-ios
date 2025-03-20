@@ -28,9 +28,9 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
     static let mockThemeSwitchSpace: DimensionRawToken = 218
     static let mockThemeSwitchColor = MultipleColorSemanticTokens("#00FF00")
 
-    override public init(sizes: AllSizeSemanticTokensProvider,
-                         colors: AllColorSemanticTokensProvider,
-                         spaces: AllSpaceSemanticTokensProvider) {
+    override public init(sizes: AllSizeSemanticTokensProvider?,
+                         colors: AllColorSemanticTokensProvider?,
+                         spaces: AllSpaceSemanticTokensProvider?) {
         super.init(sizes: sizes, colors: colors, spaces: spaces)
     }
 
@@ -42,8 +42,8 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
     override public var switchColorTrackFalseInteraction: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
     override public var switchColorTrackTrue: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
     override public var switchColorTrackTrueInteraction: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }
-    override public var switchSpacePaddingInlineFalse: SpaceSemanticToken { Self.mockThemeSwitchSpace }
-    override public var switchSpacePaddingInlineTrue: SpaceSemanticToken { Self.mockThemeSwitchSpace }
+    override public var switchSpacePaddingInlineUnselected: SpaceSemanticToken { Self.mockThemeSwitchSpace }
+    override public var switchSpacePaddingInlineSelected: SpaceSemanticToken { Self.mockThemeSwitchSpace }
     override public var switchSize: SizeSemanticToken { Self.mockThemeSwitchSize }
 }
 

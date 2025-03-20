@@ -76,9 +76,9 @@ rbenv global 3.3.5
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 16**, we suggest you use this version or newer if you want.
+We use also for our GitLab CI runners **Xcode 16.2**, we suggest you use this version or newer if you want.
 
-**Xcode 16** and **Swift 6** are used for this project. You must use this configuration.
+**Xcode 16.2** and **Swift 6** are used for this project. You must use this configuration.
 
 ## Build Design System Toolbox
 
@@ -131,7 +131,7 @@ To run these UI tests follow some steps:
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
 4. Select *DesignToolboxSnapshotsTests* scheme
-5. Select *iPhone 16 Pro* simulator (the device used to tests and views rendering)
+5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
 6. Run tests (Product -> Test)
 
 Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
@@ -143,7 +143,7 @@ Any interface modifications require regenerating the illustrations using the too
 
 **Note today because the demo app (Design System Toolbox) is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the demo app app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
 
-The device under tests is a **simulator of iPhone 16 Pro, in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode**.
+The device under tests is a **simulator of iPhone 16 Pro (18.0), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode**.
 
 #### How to use to use swift-snapshot-testing library
 
@@ -277,7 +277,7 @@ We can add metafields picked from [this good guideline](https://git.kernel.org/p
 This is not mandatory (yet) but a good practice and quite interesting to know who reviewed and validated what.
 You must mention *co-authors* (*Co-authored-by*). You should add who are code reviewers (*Reviewed-by*), evolutions testers (*Tested-by*) and if needed ackers (*Acked-by*).
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime, Stephen, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
+For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime, Pierre-Yves and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Stephen:
 ```text
 refactor: update some things colors and design of the demo app (#123) (#4562)
 
@@ -287,10 +287,9 @@ Tested-by: Iman Assabah <iman.assabah.ext@orange.com>
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
-Tested-by: Stephen McCarthy <stephen.mccarthy@orange.com>
 Tested-by: Pierre-Yves Ayoul <pierre-yves.ayoul@orange.com>
 Reviewed-by: Ludovic Pinel <ludovic.pinel@orange.com>
-Acked-by: Julien Déramond <julien.deramond@orange.com>
+Acked-by: Stephen McCarthy <stephen.mccarthy@orange.com>
 Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Signed-off-by: Tayeb Sedraia <tayeb.sedraia@orange.com>

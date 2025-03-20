@@ -1,8 +1,101 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "lib_components_checkbox_componentDisabled_a11y" : {
+    "" : {
+      "shouldTranslate" : false
+    },
+    "core_checkbox_checked_a11y" : {
       "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checked"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coché"
+          }
+        }
+      }
+    },
+    "core_checkbox_hint_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle setting %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour rendre %@"
+          }
+        }
+      }
+    },
+    "core_checkbox_indeterminate_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indéterminé"
+          }
+        }
+      }
+    },
+    "core_checkbox_trait_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Case à cocher"
+          }
+        }
+      }
+    },
+    "core_checkbox_unchecked_a11y" : {
+      "comment" : "Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unchecked"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non coché"
+          }
+        }
+      }
+    },
+    "core_common_disabled_a11y" : {
+      "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -19,8 +112,8 @@
         }
       }
     },
-    "lib_components_checkbox_componentEnabled_a11y" : {
-      "comment" : "Checkbox",
+    "core_common_enabled_a11y" : {
+      "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -37,26 +130,26 @@
         }
       }
     },
-    "lib_components_checkbox_componentReadOnly_a11y" : {
-      "comment" : "Checkbox",
+    "core_common_onError_a11y" : {
+      "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Read only"
+            "value" : "is on errror"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lecture seule"
+            "value" : "en erreur"
           }
         }
       }
     },
-    "lib_components_checkbox_selectorSelected_a11y" : {
-      "comment" : "Checkbox",
+    "core_common_selected_a11y" : {
+      "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -73,26 +166,8 @@
         }
       }
     },
-    "lib_components_checkbox_selectorUndeterminate_a11y" : {
-      "comment" : "Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Undeterminate"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Undéterminé"
-          }
-        }
-      }
-    },
-    "lib_components_checkbox_selectorUnselected_a11y" : {
-      "comment" : "Checkbox",
+    "core_common_unselected_a11y" : {
+      "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
@@ -108,6 +183,45 @@
           }
         }
       }
+    },
+    "core_radio_hint_a11y" : {
+      "comment" : "Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle setting %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour rendre %@"
+          }
+        }
+      }
+    },
+    "core_radio_trait_a11y" : {
+      "comment" : "Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio bouton"
+          }
+        }
+      }
+    },
+    "TODO: Add switch indicator here" : {
+      "shouldTranslate" : false
     }
   },
   "version" : "1.0"

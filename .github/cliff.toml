@@ -19,7 +19,7 @@
 header = """
 # What's new\n
 ```
-🧱 Tokens version: v.
+🧱 Tokens version: 
 ```
 """
 # template for the changelog body

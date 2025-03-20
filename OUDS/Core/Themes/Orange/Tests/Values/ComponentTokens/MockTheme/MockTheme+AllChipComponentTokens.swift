@@ -30,10 +30,10 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     static let mockThemeChipSpace: DimensionRawToken = 218
     static let mockThemeChipColor = MultipleColorSemanticTokens("#00FF00")
 
-    override public init(sizes: AllSizeSemanticTokensProvider,
-                         borders: AllBorderSemanticTokensProvider,
-                         colors: AllColorSemanticTokensProvider,
-                         spaces: AllSpaceSemanticTokensProvider) {
+    override public init(sizes: AllSizeSemanticTokensProvider?,
+                         borders: AllBorderSemanticTokensProvider?,
+                         colors: AllColorSemanticTokensProvider?,
+                         spaces: AllSpaceSemanticTokensProvider?) {
         super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
     }
 
@@ -72,7 +72,6 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     override public var chipSpaceInsetIconOnly: SpaceSemanticToken { Self.mockThemeChipSpace }
     override public var chipSpacePaddingBlock: SpaceSemanticToken { Self.mockThemeChipSpace }
     override public var chipSpaceColumnGapColumnGap: SpaceSemanticToken { Self.mockThemeChipSpace }
-    override public var chipSpacePaddingStackPaddingBlock: SpaceSemanticToken { Self.mockThemeChipSpace }
 }
 
 // swiftlint:enable required_deinit

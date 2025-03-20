@@ -34,7 +34,7 @@ You can:
 2. Use the `InverseTheme` which is a special theme for dedicated use cases (like an extended dark mode)
 3. Implement your own theme (see [Themes details](https://ios.unified-design-system.orange.com/documentation/ouds/themes))
 
-### Apply your theme
+### Apply a theme
 
 You will need to use for your root view the [`OUDSThemeableView`](https://ios.unified-design-system.orange.com/documentation/ouds/oudsthemeableview/). [This page may help](https://ios.unified-design-system.orange.com/documentation/ouds/themes) also.
 
@@ -55,7 +55,7 @@ struct YourApp: App {
 }
 ```
 
-Then get the current appleid theme in your views and use the tokens you want:
+Then get the current applied theme in your views and use the tokens you want:
 ```swift
 import OUDS // To load the theme as environment variabme
 

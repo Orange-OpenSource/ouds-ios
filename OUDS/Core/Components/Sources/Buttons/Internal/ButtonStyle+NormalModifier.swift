@@ -38,8 +38,8 @@ struct ButtonViewModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .modifier(ButtonBorderModifier(hierarchy: hierarchy, state: state))
             .modifier(ButtonForegroundModifier(hierarchy: hierarchy, state: state))
             .modifier(ButtonBackgroundModifier(hierarchy: hierarchy, state: state))
+            .modifier(ButtonBorderModifier(hierarchy: hierarchy, state: state))
     }
 }
