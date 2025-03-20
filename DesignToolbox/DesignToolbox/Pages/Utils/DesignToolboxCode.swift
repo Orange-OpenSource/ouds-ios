@@ -79,7 +79,7 @@ struct DesignToolboxCode: View {
             } label: {
                 ZStack {
                     Color.clear
-                        .frame(width: 44, height: 44)
+                        .frame(width: kMinimalTouchAreaWidth, height: kMinimalTouchAreaHeight)
 
                     Image("ic_copy")
                         .resizable()

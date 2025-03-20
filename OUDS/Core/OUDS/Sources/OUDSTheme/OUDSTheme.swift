@@ -29,7 +29,6 @@ import OUDSTokensSemantic
 ///
 /// Any theme is handled as ``OUDSTheme``.
 /// It contains plenty of *tokens provider* for semantic tokens and component tokens.
-/// These providers are given to the theme in its initialize using ``TokensProviders``.
 /// Theme can have also non-provider properties like *font family* to apply.
 ///
 /// - Since: 0.8.0
@@ -90,9 +89,6 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to chip components like `OUDSChip`
     public let chip: AllChipComponentTokensProvider
 
-    /// All components tokens related to breadcrumb components like `OUDSBreadcrumb`
-    public let breadcrumb: AllBreadcrumbComponentTokensProvider
-
     /// All components tokens related to bullet list components like `OUDSBulletList`
     public let bulletList: AllBulletListComponentTokensProvider
 
@@ -102,58 +98,94 @@ open class OUDSTheme: @unchecked Sendable {
     /// All components tokens related to badge components like `OUDSBadge`
     public let badge: AllBadgeComponentTokensProvider
 
-    /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButton` and `OUDSCheckboxItem`
+    /// All component tokens related to control-item-layout-based components like `OUDSSwitch`, `OUDSRadioButtonItem` and `OUDSCheckboxItem`
     public let controlItem: AllControlItemComponentTokensProvider
 
-    /// All components tokens related to radio button and checkboxes components like `OUDSRadioButton`, `OUDSCheckbox` and `OUDSCheckboxItem`
+    /// All components tokens related to checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`
     public let checkbox: AllCheckboxComponentTokensProvider
+
+    /// All components tokens related to checkboxes components like `OUDSRadioButton` and `OUDSRadioButtonItem`
+    public let radioButton: AllRadioButtonComponentTokensProvider
 
     // NOTE: Add new component tokens provider here
 
     // MARK: - Initializers
 
-    /// Defines a basic kind of abstract theme to subclass then.
-    /// Verifies using ``TokensProviders`` if some semantic or component tokens providers are missing.
-    /// If so, errors are logged and *fatalError* is triggered because unexpected behavior.
+    /// Defines the theme to apply everywhere.
     ///
     /// - Parameters:
-    ///    - tokensProviders: All the semantic and component tokens providers
+    ///    - colors: All semantic tokens of colors
+    ///    - borders: All semantic tokens of borders
+    ///    - elevations: All semantic tokens of elevations
+    ///    - fonts: All semantic tokens of fonts
+    ///    - grids: All semantic tokens of grids
+    ///    - opacities: All semantic tokens of opacity
+    ///    - sizes: All semantic tokens of sizes
+    ///    - spaces: All semantic tokens of spaces
+    ///    - button: All component tokens for button
+    ///    - link: All component tokens for link
+    ///    - select: All component tokens for select
+    ///    - skeleton: All component tokens for skeleton
+    ///    - tag: All component tokens for tag
+    ///    - switch: All component tokens for switch
+    ///    - listItem: All component tokens for list item
+    ///    - chip: All component tokens for chip
+    ///    - bulletList: All component tokens for bullet list
+    ///    - inputText: All component tokens for input text
+    ///    - badge: All component tokens for badge
+    ///    - controlItem: All component tokens for control item
+    ///    - checkbox: All component tokens for checkbox
+    ///    - radioButton: All component tokens for radio buttons
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
-    public init(tokensProviders: TokensProviders,
+    public init(colors: AllColorSemanticTokensProvider,
+                borders: AllBorderSemanticTokensProvider,
+                elevations: AllElevationSemanticTokensProvider,
+                fonts: AllFontSemanticTokensProvider,
+                grids: AllGridSemanticTokensProvider,
+                opacities: AllOpacitySemanticTokensProvider,
+                sizes: AllSizeSemanticTokensProvider,
+                spaces: AllSpaceSemanticTokensProvider,
+                button: AllButtonComponentTokensProvider,
+                link: AllLinkComponentTokensProvider,
+                select: AllSelectComponentTokensProvider,
+                skeleton: AllSkeletonComponentTokensProvider,
+                tag: AllTagComponentTokensProvider,
+                switch: AllSwitchComponentTokensProvider,
+                listItem: AllListItemComponentTokensProvider,
+                chip: AllChipComponentTokensProvider,
+                bulletList: AllBulletListComponentTokensProvider,
+                inputText: AllInputTextComponentTokensProvider,
+                badge: AllBadgeComponentTokensProvider,
+                controlItem: AllControlItemComponentTokensProvider,
+                checkbox: AllCheckboxComponentTokensProvider,
+                radioButton: AllRadioButtonComponentTokensProvider,
                 fontFamily: FontFamilySemanticToken? = nil) {
 
-        // Check if we have all the exxpected tokens providers
-        let missingProviders = tokensProviders.missingProviders()
-        if !missingProviders.isEmpty {
-            OL.error("Some token providers are missing: '\(missingProviders)'")
-        }
+        // Save semantic tokens providers
+        self.colors = colors
+        self.borders = borders
+        self.elevations = elevations
+        self.fonts = fonts
+        self.grids = grids
+        self.opacities = opacities
+        self.sizes = sizes
+        self.spaces = spaces
 
-        // Load semantic tokens providers
-        colors = tokensProviders.get()
-        borders = tokensProviders.get()
-        elevations = tokensProviders.get()
-        fonts = tokensProviders.get()
-        grids = tokensProviders.get()
-        opacities = tokensProviders.get()
-        sizes = tokensProviders.get()
-        spaces = tokensProviders.get()
-
-        // Load component tokens providers
-        button = tokensProviders.get()
-        link = tokensProviders.get()
-        select = tokensProviders.get()
-        skeleton = tokensProviders.get()
-        tag = tokensProviders.get()
-        `switch` = tokensProviders.get()
-        listItem = tokensProviders.get()
-        chip = tokensProviders.get()
-        breadcrumb = tokensProviders.get()
-        bulletList = tokensProviders.get()
-        inputText = tokensProviders.get()
-        badge = tokensProviders.get()
-        controlItem = tokensProviders.get()
-        checkbox = tokensProviders.get()
-
+        // Save component tokens providers
+        self.button = button
+        self.link = link
+        self.select = select
+        self.skeleton = skeleton
+        self.tag = tag
+        self.`switch` = `switch`
+        self.listItem = listItem
+        self.chip = chip
+        self.bulletList = bulletList
+        self.inputText = inputText
+        self.badge = badge
+        self.controlItem = controlItem
+        self.checkbox = checkbox
+        self.radioButton = radioButton
         // NOTE: Add new component tokens provider here
 
         // Load other configuration elements

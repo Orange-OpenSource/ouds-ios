@@ -7,7 +7,7 @@ They can be seen as an high level of usage with functional meanings.
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧱 Tokens version: 0.6.0
+🧱 Tokens version: 0.7.0
 ```
 
 If we need for example to change a warning color for a button (which has its component tokens, see [OUDSTokensComponent](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/)), supposing this color is defined as a _semantic token_, we only have to change its assigned value and all components using the _semantic token_ won't be impacted in their definition. In fact, semantic tokens are here to bring meaning, semantic, between raw values and components.

@@ -34,7 +34,7 @@ APPLE_KEY_CONTENT = ENV["OUDS_APPLE_KEY_CONTENT"]
 # Bundle identifier of the app
 DEVELOPER_APP_IDENTIFIER = ENV["OUDS_DEVELOPER_BUNDLE_IDENTIFIER"]
 
-# Upload To Store
+# URL for internal portal to upload to App Store
 UPLOAD_STORE_URL = ENV["OUDS_UPLOAD_STORE_URL"]
 
 # Notifications and hooks
@@ -76,7 +76,7 @@ platform :ios do
 
     before_all do |lane, options|
         xcodes(
-            version: '16',
+            version: '16.2',
             select_for_current_build_only: true,
         )
     end
@@ -108,7 +108,7 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            device = "iPhone 14"
+            device = "iPhone 16 Pro (18.0)"
             scan(scheme: OUDS_TEST_SCHEME,
                 device: device,
                 skip_build: true)
@@ -139,7 +139,7 @@ platform :ios do
         # Check the available devices using `xcrun xctrace list devices`
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
-            device = "iPhone 16 Pro"
+            device = "iPhone 16 Pro (18.0)"
             scan(scheme: OUDS_SNAPSHOTS_TEST_SCHEME,
                 device: device,
                 skip_build: true

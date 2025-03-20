@@ -17,6 +17,7 @@ import Testing
 
 // swiftlint:disable type_name
 
+/// Ensures an inherited theme is able to override any component tokens of checkbox inherited from its superclass (here `OrangeTheme`).
 struct ThemeOverrideOfCheckboxComponentTokensTests {
 
     private var abstractTheme: OUDSTheme
@@ -44,9 +45,9 @@ struct ThemeOverrideOfCheckboxComponentTokensTests {
         #expect(inheritedTheme.checkbox.checkboxSizeMinHeight == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
     }
 
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenSizeIndicatorInnerIcon() throws {
-        #expect(inheritedTheme.checkbox.checkboxSizeIndicatorInnerIcon != abstractTheme.checkbox.checkboxSizeIndicatorInnerIcon)
-        #expect(inheritedTheme.checkbox.checkboxSizeIndicatorInnerIcon == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
+    @Test func inheritedThemeCanOverrideCheckboxComponentTokenSizeIndicator() throws {
+        #expect(inheritedTheme.checkbox.checkboxSizeIndicator != abstractTheme.checkbox.checkboxSizeIndicator)
+        #expect(inheritedTheme.checkbox.checkboxSizeIndicator == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
     }
 
     // MARK: - Borders
@@ -94,103 +95,6 @@ struct ThemeOverrideOfCheckboxComponentTokensTests {
     @Test func inheritedThemeCanOverrideCheckboxComponentTokenBorderWidthUnselectedFocus() throws {
         #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselectedFocus != abstractTheme.checkbox.checkboxBorderWidthUnselectedFocus)
         #expect(inheritedTheme.checkbox.checkboxBorderWidthUnselectedFocus == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxBorderWidth)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenOpacityBgSelected() throws {
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgSelected != abstractTheme.checkbox.checkboxOpacityBgSelected)
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgSelected == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxOpacity)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenOpacityBgUnselected() throws {
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgUnselected != abstractTheme.checkbox.checkboxOpacityBgUnselected)
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgUnselected == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxOpacity)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenOpacityBgSelectedHover() throws {
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgSelectedHover != abstractTheme.checkbox.checkboxOpacityBgSelectedHover)
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgSelectedHover == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxOpacity)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenOpacityBgUnselectedHover() throws {
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgUnselectedHover != abstractTheme.checkbox.checkboxOpacityBgUnselectedHover)
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgUnselectedHover == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxOpacity)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenOpacityBgSelectedPressed() throws {
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgSelectedPressed != abstractTheme.checkbox.checkboxOpacityBgSelectedPressed)
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgSelectedPressed == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxOpacity)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenOpacityBgUnselectedPressed() throws {
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgUnselectedPressed != abstractTheme.checkbox.checkboxOpacityBgUnselectedPressed)
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgUnselectedPressed == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxOpacity)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenOpacityBgSelectedFocus() throws {
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgSelectedFocus != abstractTheme.checkbox.checkboxOpacityBgSelectedFocus)
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgSelectedFocus == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxOpacity)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenOpacityBgUnselectedFocus() throws {
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgUnselectedFocus != abstractTheme.checkbox.checkboxOpacityBgUnselectedFocus)
-        #expect(inheritedTheme.checkbox.checkboxOpacityBgUnselectedFocus == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxOpacity)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenSizeIndicator() throws {
-        #expect(inheritedTheme.checkbox.checkboxSizeIndicator != abstractTheme.checkbox.checkboxSizeIndicator)
-        #expect(inheritedTheme.checkbox.checkboxSizeIndicator == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxSize)
-    }
-
-    // MARK: - Colors
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentSelected() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentSelected != abstractTheme.checkbox.checkboxColorContentSelected)
-        #expect(inheritedTheme.checkbox.checkboxColorContentSelected == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentEnabled() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentEnabled != abstractTheme.checkbox.checkboxColorContentEnabled)
-        #expect(inheritedTheme.checkbox.checkboxColorContentEnabled == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentHover() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentHover != abstractTheme.checkbox.checkboxColorContentHover)
-        #expect(inheritedTheme.checkbox.checkboxColorContentHover == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentPressed() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentPressed != abstractTheme.checkbox.checkboxColorContentPressed)
-        #expect(inheritedTheme.checkbox.checkboxColorContentPressed == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentDisabled() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentDisabled != abstractTheme.checkbox.checkboxColorContentDisabled)
-        #expect(inheritedTheme.checkbox.checkboxColorContentDisabled == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentFocus() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentFocus != abstractTheme.checkbox.checkboxColorContentFocus)
-        #expect(inheritedTheme.checkbox.checkboxColorContentFocus == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentErrorEnabled() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentErrorEnabled != abstractTheme.checkbox.checkboxColorContentErrorEnabled)
-        #expect(inheritedTheme.checkbox.checkboxColorContentErrorEnabled == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentErrorHover() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentErrorHover != abstractTheme.checkbox.checkboxColorContentErrorHover)
-        #expect(inheritedTheme.checkbox.checkboxColorContentErrorHover == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentErrorPressed() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentErrorPressed != abstractTheme.checkbox.checkboxColorContentErrorPressed)
-        #expect(inheritedTheme.checkbox.checkboxColorContentErrorPressed == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
-    }
-
-    @Test func inheritedThemeCanOverrideCheckboxComponentTokenColorContentErrorFocus() throws {
-        #expect(inheritedTheme.checkbox.checkboxColorContentErrorFocus != abstractTheme.checkbox.checkboxColorContentErrorFocus)
-        #expect(inheritedTheme.checkbox.checkboxColorContentErrorFocus == MockThemeCheckboxComponentTokenProvider.mockThemeCheckboxColor)
     }
 }
 

@@ -40,7 +40,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomFontTokensProvider(), ... ])
+///         super.init(fonts: CustomFontTokensProvider())
 ///     }
 /// }
 /// ```
@@ -48,7 +48,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomFontTokensProvider(), ... ])
+///     OrangeTheme(fonts: CustomFontTokensProvider())
 /// ```
 ///
 /// - Since: 0.8.0

@@ -4,6 +4,50 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.11.0...0.12.0) - 2025-03-20
+
+### Added
+
+- [Library] Radio button component ([#266](https://github.com/Orange-OpenSource/ouds-ios/issues/266))
+- [Library] `RadioButton` component tokens (tokens library v0.7.0)
+- [Library] Checkbox component ([#264](https://github.com/Orange-OpenSource/ouds-ios/issues/264))
+- [Library] `colorDecorativeNeutral*` color semantic tokens (tokens library v0.6.1)
+
+### Changed
+
+- [Tool] Migration to Xcode 16.2 ([#258](https://github.com/Orange-OpenSource/ouds-ios/issues/258))
+- [Tool] Update `SwiftLint` pod from v0.58.1 to v0.58.2
+- [Tool] Update `fastlane` gem from v2.226.0 to v2.227.0
+- [Library] Split checkbox component API for two-values and three-values states ([#497](https://github.com/Orange-OpenSource/ouds-ios/issues/497))
+- [Library] Rename *selector* to *indicator* for control item absed components ([#496](https://github.com/Orange-OpenSource/ouds-ios/issues/496))
+- [Library] Checkbox component v2 ([#486](https://github.com/Orange-OpenSource/ouds-ios/issues/486))
+- [Library] Group components by category in documentation ([#484](https://github.com/Orange-OpenSource/ouds-ios/issues/484))
+- [Tool] Update `json` RubyGem from 2.9.0 to 2.10.1
+- [Tool] Update `SwiftFormat/CLI` pod from v0.55.3 to v0.55.5
+- [Tool] Update `SwiftLint` pod from v0.57.1 to v0.58.1
+- [Library] `Color` semantic tokens (tokens library v0.6.1)
+- [Library] `Badge`, `Chip` component tokens (tokens library v0.6.1)
+- [Library] Initialization of component tokens providers
+- [Library] Initialization of themes
+
+### Removed
+
+- [Library] Breadcrumb component tokens
+
+### Fixed
+
+- [DesignToolbox] Checkbox item displaying devider by default and should not ([#502](https://github.com/Orange-OpenSource/ouds-ios/issues/502))
+- [Library] Add `spaceRowGap` token between texts in `ControlItem` ([#499](https://github.com/Orange-OpenSource/ouds-ios/issues/499))
+- [Library] A11Y improvements for checkbox ([#488](https://github.com/Orange-OpenSource/ouds-ios/issues/488))
+- [DesignToolbox] Miscellaneous improvements ([#479](https://github.com/Orange-OpenSource/ouds-ios/issues/479))
+- [Library] Fixes for checkbox component ([#477](https://github.com/Orange-OpenSource/ouds-ios/issues/477))
+- [Library] Fix radius on button ([#472](https://github.com/Orange-OpenSource/ouds-ios/issues/472))
+
+### Security
+
+- [Tool] Update `json` RubyGem from 2.10.1 to 2.10.2 (CVE-2025-27788) ([#500](https://github.com/Orange-OpenSource/ouds-ios/pull/500))
+- [Tool] Update `uri` RubyGem to 1.0.3 (CVE-2025-27221) ([#6](https://github.com/Orange-OpenSource/ouds-ios/security/dependabot/6))
+
 ## [0.11.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.10.0...0.11.0) - 2025-02-20
 
 ### Added

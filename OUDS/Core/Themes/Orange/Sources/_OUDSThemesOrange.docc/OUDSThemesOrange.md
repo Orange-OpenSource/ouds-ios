@@ -50,6 +50,9 @@ struct SomeView: View {
         // For elevations: theme.elevations
         // For opacities: theme.opacities
         // For colors: theme.colors
+        // For button configuration: theme.button
+        // For link configuration: theme.link
+        // Etc.
     }
 }
 
@@ -186,7 +189,9 @@ class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentToken
 // Etc.
 ```
 
-Then define your own theme class and assign the providers, but beware, do not forget some providers as it will crash:
+You can instead of overriding existing semantic tokens provider implement your own provider but it will impy to implement maybe hundreds of tokens. Your own provider must match the suitable signature.
+
+Then define your own theme class and assign the providers you want to override. If some are missing, default implementation will be used.
 
 ```swift
 import OUDSThemesOrange // To get OrangeTheme
@@ -195,26 +200,16 @@ import OUDSThemesOrange // To get OrangeTheme
 class YourAppTheme: OrangeTheme {
     
     override init() {
-        let providers: TokensProviders = [
-            // Semantic tokens providers
-
-            YourAppThemeColorTokensProvider(),
-            YourAppThemeBorderTokensProvider(),
-            YourAppThemeElevationTokensProvider(),
-            YourAppThemeFontTokensProvider(),
-            YourAppThemeGridTokensProvider(),
-            YourAppThemeOpacityTokensProvider(),
-            YourAppThemeSizeTokensProvider(),
-            YourAppThemeSpaceTokensProvider(),
-
-            // Component tokens providers
-
-            YourAppThemeButtonComponentTokensProvider(),
-
-            // Etc.
-        ]
-
-        super.init(tokensProviders: providers)
+        super.init(colors: YourAppThemeColorTokensProvider(),
+                   borders: YourAppThemeBorderTokensProvider(),
+                   elevations: YourAppThemeElevationTokensProvider(),
+                   fonts: YourAppThemeFontTokensProvider(),
+                   grids: YourAppThemeGridTokensProvider(),
+                   opacities: YourAppThemeOpacityTokensProvider(),
+                   sizes: YourAppThemeSizeTokensProvider(),
+                   spaces: YourAppThemeSpaceTokensProvider(),
+                   button: YourAppThemeButtonComponentTokensProvider,
+                   // Etc. ...
     }
 }
 ```
@@ -239,9 +234,7 @@ struct YourApp: App {
 ### By overriding only existing tokens providers
 
 Quite simple and similar to the previous solution, but give only the providers to the ``OrangeTheme``.
-But beware, in all cases if will crash is some providers are missing.
-Ensure you add **all** the expected providers. You can mix your own providers and those from Orange theme.
-
+But we recommend to define your own theme for clarity reasons.
 
 ```swift
 import OUDS // To get OUDSThemeableView
@@ -251,7 +244,7 @@ struct YourApp: App {
     var body: some Scene {
         WindowGroup {
             OUDSThemeableView(theme: 
-                OrangeTheme(tokensProviders: ...)) { 
+                OrangeTheme(colors: ..., spaces: ..., button: ...)) { 
                 // Your root view
             }
         }

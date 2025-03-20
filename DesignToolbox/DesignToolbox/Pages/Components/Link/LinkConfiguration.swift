@@ -167,7 +167,7 @@ struct LinkConfiguration: View {
                 }
             }
 
-            DesignToolboxTextField(text: $model.text, prompt: "app_component_common_userText_prompt")
+            DesignToolboxTextField(text: $model.text, prompt: "app_components_common_userText_prompt")
         }
     }
 }

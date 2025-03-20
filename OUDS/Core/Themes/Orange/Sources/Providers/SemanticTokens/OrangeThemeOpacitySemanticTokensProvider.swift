@@ -36,7 +36,7 @@ import OUDSFoundations
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomOpacityTokensProvider(), ... ])
+///         super.init(opacities: CustomOpacityTokensProvider())
 ///     }
 /// }
 /// ```
@@ -44,7 +44,7 @@ import OUDSFoundations
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomOpacityTokensProvider(), ... ])
+///     OrangeTheme(opacities: CustomOpacityTokensProvider())
 /// ```
 ///
 /// - Since: 0.8.0

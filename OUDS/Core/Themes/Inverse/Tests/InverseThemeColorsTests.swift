@@ -418,18 +418,6 @@ struct InverseThemeColorsTests {
         assertHomogeneity(inverseTheme.colors.colorDecorativeBrandTertiary)
     }
 
-    @Test func colorsHomogeneityColorDecorativeNeutralDefault() throws {
-        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralDefault)
-    }
-
-    @Test func colorsHomogeneityColorDecorativeNeutralEmphasized() throws {
-        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralEmphasized)
-    }
-
-    @Test func colorsHomogeneityColorDecorativeNeutralMuted() throws {
-        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMuted)
-    }
-
     @Test func colorsHomogeneityColorDecorativeSkinTint100() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint100)
     }
@@ -464,6 +452,50 @@ struct InverseThemeColorsTests {
 
     @Test func colorsHomogeneityColorDecorativeSkinTint900() throws {
         assertHomogeneity(inverseTheme.colors.colorDecorativeSkinTint900)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralEmphasizedHigher() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralEmphasizedHigher)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralEmphasizedLow() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralEmphasizedLow)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralEmphasizedLower() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralEmphasizedLower)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralEmphasizedLowest() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralEmphasizedLowest)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralMutedHigh() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMutedHigh)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralMutedHigher() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMutedHigher)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralMutedHighest() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMutedHighest)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralMutedLow() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMutedLow)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralMutedLower() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMutedLower)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralMutedLowest() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMutedLowest)
+    }
+
+    @Test func colorsHomogeneityColorDecorativeNeutralMutedMedium() throws {
+        assertHomogeneity(inverseTheme.colors.colorDecorativeNeutralMutedMedium)
     }
 
     // MARK: - Color - Chart

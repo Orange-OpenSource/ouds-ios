@@ -30,10 +30,10 @@ final class MockThemeButtonComponentTokenProvider: OrangeThemeButtonComponentTok
     static let mockThemeButtonWidth: BorderRadiusRawToken = 1_312
     static let mockThemeButtonColor = MultipleColorSemanticTokens("#00FF00")
 
-    override public init(sizes: AllSizeSemanticTokensProvider,
-                         borders: AllBorderSemanticTokensProvider,
-                         colors: AllColorSemanticTokensProvider,
-                         spaces: AllSpaceSemanticTokensProvider) {
+    override public init(sizes: AllSizeSemanticTokensProvider?,
+                         borders: AllBorderSemanticTokensProvider?,
+                         colors: AllColorSemanticTokensProvider?,
+                         spaces: AllSpaceSemanticTokensProvider?) {
         super.init(sizes: sizes, borders: borders, colors: colors, spaces: spaces)
     }
 

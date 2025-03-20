@@ -34,6 +34,7 @@ struct DesignToolboxVariantElement: View {
                 HStack {
                     Text(LocalizedStringKey(element.name))
                         .typeHeadingMedium(theme)
+                        .multilineTextAlignment(.leading)
                         .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                         .padding(.vertical, theme.spaces.spaceFixedShorter)
                         .padding(.leading, theme.spaces.spaceFixedMedium)

@@ -37,9 +37,6 @@ extension NamedColor {
         case colorDecorativeBrandPrimary
         case colorDecorativeBrandSecondary
         case colorDecorativeBrandTertiary
-        case colorDecorativeNeutralDefault
-        case colorDecorativeNeutralEmphasized
-        case colorDecorativeNeutralMuted
         case colorDecorativeSkinTint100
         case colorDecorativeSkinTint200
         case colorDecorativeSkinTint300
@@ -49,6 +46,17 @@ extension NamedColor {
         case colorDecorativeSkinTint700
         case colorDecorativeSkinTint800
         case colorDecorativeSkinTint900
+        case colorDecorativeNeutralEmphasizedHigher
+        case colorDecorativeNeutralEmphasizedLow
+        case colorDecorativeNeutralEmphasizedLower
+        case colorDecorativeNeutralEmphasizedLowest
+        case colorDecorativeNeutralMutedHigh
+        case colorDecorativeNeutralMutedHigher
+        case colorDecorativeNeutralMutedHighest
+        case colorDecorativeNeutralMutedLow
+        case colorDecorativeNeutralMutedLower
+        case colorDecorativeNeutralMutedLowest
+        case colorDecorativeNeutralMutedMedium
 
         func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
             switch self {
@@ -88,12 +96,6 @@ extension NamedColor {
                 return theme.colors.colorDecorativeBrandSecondary
             case .colorDecorativeBrandTertiary:
                 return theme.colors.colorDecorativeBrandTertiary
-            case .colorDecorativeNeutralDefault:
-                return theme.colors.colorDecorativeNeutralDefault
-            case .colorDecorativeNeutralEmphasized:
-                return theme.colors.colorDecorativeNeutralEmphasized
-            case .colorDecorativeNeutralMuted:
-                return theme.colors.colorDecorativeNeutralMuted
             case .colorDecorativeSkinTint100:
                 return theme.colors.colorDecorativeSkinTint100
             case .colorDecorativeSkinTint200:
@@ -112,6 +114,28 @@ extension NamedColor {
                 return theme.colors.colorDecorativeSkinTint800
             case .colorDecorativeSkinTint900:
                 return theme.colors.colorDecorativeSkinTint900
+            case .colorDecorativeNeutralEmphasizedHigher:
+                return theme.colors.colorDecorativeNeutralEmphasizedHigher
+            case .colorDecorativeNeutralEmphasizedLow:
+                return theme.colors.colorDecorativeNeutralEmphasizedLow
+            case .colorDecorativeNeutralEmphasizedLower:
+                return theme.colors.colorDecorativeNeutralEmphasizedLower
+            case .colorDecorativeNeutralEmphasizedLowest:
+                return theme.colors.colorDecorativeNeutralEmphasizedLowest
+            case .colorDecorativeNeutralMutedHigh:
+                return theme.colors.colorDecorativeNeutralMutedHigh
+            case .colorDecorativeNeutralMutedHigher:
+                return theme.colors.colorDecorativeNeutralMutedHigher
+            case .colorDecorativeNeutralMutedHighest:
+                return theme.colors.colorDecorativeNeutralMutedHighest
+            case .colorDecorativeNeutralMutedLow:
+                return theme.colors.colorDecorativeNeutralMutedLow
+            case .colorDecorativeNeutralMutedLower:
+                return theme.colors.colorDecorativeNeutralMutedLower
+            case .colorDecorativeNeutralMutedLowest:
+                return theme.colors.colorDecorativeNeutralMutedLowest
+            case .colorDecorativeNeutralMutedMedium:
+                return theme.colors.colorDecorativeNeutralMutedMedium
             }
         }
     }

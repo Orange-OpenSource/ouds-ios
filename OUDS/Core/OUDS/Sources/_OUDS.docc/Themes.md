@@ -61,6 +61,7 @@ If your theme needs to define its own _raw tokens_, you can also define them usi
 ### By subclassing
 
 You may want to define your own theme, thus you can override the `OrangeTheme` with your own class or just override the providers.
+For clarity reasons maybe you should define your own class inheriting from `OrangeTheme`, or, more difficult, from `OUDSTheme` but we do not recommand that.
 
 You must consider the tokens provider you need (to inherit from for overriding, or to use as is):
 - spaces tokens are `OrangeThemeSpaceSemanticTokensProvider`
@@ -167,7 +168,9 @@ class YourAppThemeFontTokensProvider: OrangeThemeFontSemanticTokensProvider {
 }
 ```
 
-Then define your own theme class and assign the providers, but beware, do not forget some providers as it will crash:
+You can instead of overriding existing semantic tokens provider implement your own provider but it will impy to implement maybe hundreds of tokens. Your own provider must match the suitable signature.
+
+Then define your own theme class and assign the providers. You can jsut use some custom providers and leave the others as they are.
 
 ```swift
 import OUDSThemesOrange // To get OrangeTheme
@@ -176,20 +179,17 @@ import OUDSThemesOrange // To get OrangeTheme
 class YourAppTheme: OrangeTheme {
     
     override init() {
-        let providers: TokensProviders = [
-            YourAppThemeColorTokensProvider(),
-            YourAppThemeBorderTokensProvider(),
-            YourAppThemeElevationTokensProvider(),
-            YourAppThemeFontTokensProvider(),
-            YourAppThemeGridTokensProvider(),
-            YourAppThemeOpacityTokensProvider(),
-            YourAppThemeSizeTokensProvider(),
-            YourAppThemeSpaceTokensProvider(),
-            YourAppThemeButtonComponentTokensProvider(),
-            // Etc.
-        ]
-
-        super.init(tokensProviders: providers)
+        super.init(colors: YourAppThemeColorTokensProvider(),
+                   borders: YourAppThemeBorderTokensProvider(),
+                   elevations: YourAppThemeElevationTokensProvider(),
+                   fonts: YourAppThemeFontTokensProvider(),
+                   grids: YourAppThemeGridTokensProvider(),
+                   opacities: YourAppThemeOpacityTokensProvider(),
+                   sizes: YourAppThemeSizeTokensProvider(),
+                   spaces: YourAppThemeSpaceTokensProvider(),
+                   button: YourAppThemeButtonComponentTokensProvider,
+                
+                    Etc...)
     }
 }
 ```

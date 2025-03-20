@@ -35,7 +35,7 @@ import OUDSTokensSemantic
 ///
 ///         override var listItemSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension450 }
 ///
-///         override var listItemColorBgFocus: MultipleColorSemanticTokens { colors.colorDecorativeNeutralDefault }
+///         override var listItemColorBgFocus: MultipleColorSemanticTokens { colors.colorDecorativeAccent5Emphasized }
 ///
 ///         override var listItemSpaceInset: SpaceSemanticToken { spaces.spaceRowGapNone }
 ///         // ...
@@ -55,7 +55,7 @@ import OUDSTokensSemantic
 /// class LocalTheme: OrangeTheme {
 ///
 ///     override init() {
-///         super.init(tokensProviders: [ CustomListItemComponentTokensProvider(), ... ])
+///         super.init(listItem: CustomListItemComponentTokensProvider())
 ///     }
 /// }
 /// ```
@@ -63,7 +63,23 @@ import OUDSTokensSemantic
 /// or to an already existing theme for example:
 ///
 /// ```swift
-///     OrangeTheme(tokensProviders: [ CustomListItemComponentTokensProvider(), ... ])
+///     OrangeTheme(listItem: CustomListItemComponentTokensProvider())
+/// ```
+///
+/// It is also possible to use your own semantic tokens providers for this component tokens providers:
+///
+/// ```swift
+///     // Uses by default here:
+///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeColorSemanticTokensProvider for colors
+///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
+///     let listItemComponentTokensProvider = OrangeThemeListItemComponentTokensProvider()
+///
+///     // Or use your own size, color and space semantic tokens providers (or only some)
+///     let listItemComponentTokensProvider = OrangeThemeListItemComponentTokensProvider(
+///                                                 sizes: CustomSizeSemanticTokensProvider(),
+///                                                 colors: CustomColorSemanticTokensProvider(),
+///                                                 space: CustomSpaceSemanticTokensProvider())
 /// ```
 ///
 /// - Since: 0.10.0
@@ -80,16 +96,16 @@ open class OrangeThemeListItemComponentTokensProvider: AllListItemComponentToken
 
     /// Defines a provider of component tokens dedicated to `OUDSListItem`
     /// - Parameters:
-    ///    - sizes: Provider for size semantic tokens
-    ///    - colors: Provider for color semantic tokens
-    ///    - spaces: Provider for space semantic tokens
-    public init(sizes: AllSizeSemanticTokensProvider,
-                colors: AllColorSemanticTokensProvider,
-                spaces: AllSpaceSemanticTokensProvider) {
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                colors: AllColorSemanticTokensProvider? = nil,
+                spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeListItemComponentTokensProvider")
-        self.sizes = sizes
-        self.colors = colors
-        self.spaces = spaces
+        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
     deinit { }

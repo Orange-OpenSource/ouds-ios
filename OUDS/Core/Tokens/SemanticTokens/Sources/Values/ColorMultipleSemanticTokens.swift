@@ -32,12 +32,12 @@
 ///
 ///         // The color semantic tokens using them
 ///         // declared (in ColorSemanticTokens.swift) and defined (in OUDSTheme+ColorSemanticTokens.swift) by the tokenator
-///         var colorBgPrimaryLight: ColorSemanticTokens { ColorRawTokens.colorDecorativeAmber100 }
+///         var colorBgPrimary: ColorSemanticTokens { ColorRawTokens.colorDecorativeAmber100 }
 ///         var colorBgPrimaryDark: ColorSemanticTokens { ColorRawTokens.colorDecorativeAmber200 }
 ///
 ///         // The 'higher level' color semantic tokens wrapping them and exposed to users
 ///         // declared (in this ColorMultipleSemanticTokens.swift) and defined manualy (in OUDSTheme+ColorMultipleSemanticTokens.swift)
-///         var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
+///         var colorBgPrimary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(: colorBgPrimaryLight, dark: colorBgPrimaryDark) }
 ///
 ///         // Thus users can in their components use colorBgPrimary as defined in their design system
 ///         // (even if they are still able to use 'lower level' semantic tokens but it is more error-prone)
@@ -125,6 +125,8 @@ public protocol ColorMultipleSemanticTokens {
     var colorBorderFocus: MultipleColorSemanticTokens { get }
 
     var colorBorderFocusInset: MultipleColorSemanticTokens { get }
+
+    var colorBorderMuted: MultipleColorSemanticTokens { get }
 
     var colorBorderOnBrandPrimary: MultipleColorSemanticTokens { get }
 
@@ -246,12 +248,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorDecorativeBrandTertiary: MultipleColorSemanticTokens { get }
 
-    var colorDecorativeNeutralDefault: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralEmphasized: MultipleColorSemanticTokens { get }
-
-    var colorDecorativeNeutralMuted: MultipleColorSemanticTokens { get }
-
     var colorDecorativeSkinTint100: MultipleColorSemanticTokens { get }
 
     var colorDecorativeSkinTint200: MultipleColorSemanticTokens { get }
@@ -269,6 +265,28 @@ public protocol ColorMultipleSemanticTokens {
     var colorDecorativeSkinTint800: MultipleColorSemanticTokens { get }
 
     var colorDecorativeSkinTint900: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralEmphasizedHigher: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralEmphasizedLow: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralEmphasizedLower: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralEmphasizedLowest: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralMutedHigh: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralMutedHigher: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralMutedHighest: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralMutedLow: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralMutedLower: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralMutedLowest: MultipleColorSemanticTokens { get }
+
+    var colorDecorativeNeutralMutedMedium: MultipleColorSemanticTokens { get }
 
     // MARK: - Color - Chart
 

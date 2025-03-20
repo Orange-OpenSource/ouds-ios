@@ -20,18 +20,3 @@ Of course you must use in your root view the <doc:/OUDS/OUDSThemeableView> with 
 ``` 
 
 You can get more details about _Components_ with the [OUDSComponents documentation](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/).
-
-## Available components
-
-### Button
-
-```swift
-     // Icon only with default hierarchy
-     OUDSButton(hierarchy: .default, icon: Image("ic_heart")) {}
-
-     // Text only with negative hierarchy
-     OUDSButton(hierarchy: .negative, text: "Delete") {}
-
-     // Text and icon with strong hierarchy
-     OUDSButton(hierarchy: .strong, icon: Image("ic_heart"), text: "Validate") {}
-```

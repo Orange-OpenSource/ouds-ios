@@ -53,7 +53,6 @@ FILES_TO_PROCESS=(
 
     # For component tokens generated files
     "../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BadgeComponentTokens.swift"
-	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BreadcrumbComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BulletListComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ButtonComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+CheckboxComponentTokens.swift"
@@ -62,6 +61,7 @@ FILES_TO_PROCESS=(
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+InputTextComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+LinkComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ListItemComponentTokens.swift"
+    "../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+RadioButtonComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SelectComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SkeletonComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SwitchComponentTokens.swift"

@@ -236,12 +236,6 @@ final class InverseThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTok
 
     override public var colorDecorativeBrandTertiary: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeBrandTertiaryDark) }
 
-    override public var colorDecorativeNeutralDefault: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeNeutralDefaultDark) }
-
-    override public var colorDecorativeNeutralEmphasized: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeNeutralEmphasizedDark) }
-
-    override public var colorDecorativeNeutralMuted: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeNeutralMutedDark) }
-
     override public var colorDecorativeSkinTint100: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint100Dark) }
 
     override public var colorDecorativeSkinTint200: MultipleColorSemanticTokens { MultipleColorSemanticTokens(colorDecorativeSkinTint200Dark) }

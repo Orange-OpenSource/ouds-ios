@@ -14,6 +14,16 @@
   <a href="https://unified-design-system.orange.com/" title="Design system global website">Design system</a>
 </p>
 
+<p align="center">
+<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/build-and-test.yml" title="Build and test status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/build-and-test.yml/badge.svg" alt="Build and test status"></a>
+&nbsp;
+<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/check-localizables.yml" title="Localization status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/check-localizables.yml/badge.svg" alt="Localization status"></a>
+&nbsp;
+<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks-action.yml" title="Gitleaks status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks-action.yml/badge.svg" alt="Gitleaks status"></a>
+&nbsp;
+<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
+</p>
+
 ## Status
 
 [![MIT license](https://img.shields.io/github/license/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/blob/main/LICENSE)
@@ -25,10 +35,8 @@
 [![Opened issues](https://img.shields.io/github/issues-raw/Orange-OpenSource/ouds-ios?style=for-the-badge)](https://github.com/Orange-OpenSource/ouds-ios/issues)
 
 [![iOS 15.0](https://img.shields.io/badge/iOS-15.0-FF1AB2?style=for-the-badge)](https://developer.apple.com/support/app-store "iOS 15 supports")
-[![Xcode 16](https://img.shields.io/badge/Xcode-16-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-16-release-notes)
-
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dswift-versions&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FOrange-OpenSource%2Fouds-ios%2Fbadge%3Ftype%3Dplatforms&style=for-the-badge)](https://swiftpackageindex.com/Orange-OpenSource/ouds-ios)
+[![Xcode 16.2](https://img.shields.io/badge/Xcode-16.2-blue?style=for-the-badge)](https://developer.apple.com/documentation/xcode-release-notes/xcode-16_2-release-notes)
 
 ## Content
 
@@ -56,9 +64,13 @@ The project is open source and topics like accessibility and ecodesign should be
 
 It should replace internal frameworks and also [ODS](https://github.com/Orange-OpenSource/ods-ios) in the near future.
 
-## Bugs and feature requests
+## Bugs, feature requests and discussions
 
 Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new/choose).
+
+If you want to share ideas or discuss about API, features, components or other topics, you should first open a new discussion.
+[Q&A](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a) is more dedicated for help, otherwise feel free to open or update a topic in [Ideas](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/ideas).
+Keep in mind internal or sensitive discussions must be in internal tools, not public ones.
 
 ## Contributing
 

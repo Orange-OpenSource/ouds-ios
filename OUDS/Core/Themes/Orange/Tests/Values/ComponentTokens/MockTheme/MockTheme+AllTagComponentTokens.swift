@@ -26,7 +26,7 @@ final class MockThemeTagComponentTokenProvider: OrangeThemeTagComponentTokensPro
 
     static let mockThemeTagColor = MultipleColorSemanticTokens("#00FF00")
 
-    override public init(colors: AllColorSemanticTokensProvider) {
+    override public init(colors: AllColorSemanticTokensProvider?) {
         super.init(colors: colors)
     }
 

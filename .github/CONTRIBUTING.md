@@ -1,12 +1,14 @@
 # Contributing to OUDS iOS
 
 - [Using the Issue Tracker](#using-the-issue-tracker)
+- [Using the Discussion Tracker](#using-the-issue-tracker)
 - [Issues and Labels](#issues-and-labels)
 - [Bug Reports](#bug-reports)
 - [Feature Requests](#feature-requests)
 - [Pull Requests](#pull-requests)
 - [Code Guidelines](#code-guidelines)
 - [Commits Style](#commits-style)
+- [Developer Certificate of Origin](#developer-certificate-of-origin)
 - [Review Workflow](#review-workflow)
 - [License](#license)
 
@@ -30,6 +32,16 @@ The [issue tracker](https://github.com/Orange-OpenSource/ouds-ios/issues) is the
 - Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
 
 - Please **do not** post comments consisting solely of "+1" or ":thumbsup:". Use [GitHub's "reactions" feature](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) instead. We reserve the right to delete comments which violate this rule.
+
+## Using the Discussion Tracker
+
+The GitHub project provides a [discussion tracker](https://github.com/Orange-OpenSource/ouds-ios/discussions) with several sections.
+
+You may need to refer to the [Q&A section](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a) if you have questions in mind, or to [Ideas section](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/ideas) for discussions about technical things.
+
+If you found a discussion which interests you or fills your needs, feel free to use [GitHub's "reactions" feature](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) and bring useful comments. We reserve the right to delete comments which violate this rule.
+
+Keep in mind internal or sensitive discussions must be in internal tools, not public ones.
 
 ## Issues and Labels
 
@@ -142,7 +154,7 @@ Respect the architecture of the project, and [refer to the wiki if needed](https
 
 Try as best as possible to apply [conventional commits rules](https://www.conventionalcommits.org/en/v1.0.0/).
 Keep in mind to have your commits well prefixed, and with the issue number between parenthesis at the end.
-If your commits embed contributions for other people, do not forget to [add them as co-authors](https://docs.github.com/fr/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors). All of you should also comply to DCO.
+If your commits embed contributions for other people, do not forget to [add them as co-authors](https://docs.github.com/fr/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors).
 
 For example, given a commit to fix the issue n°43, the commit should be like:
 
@@ -222,6 +234,13 @@ Add thousands of tokens and hundreds of tests.
 
 Assisted-by: GPT-4o-mini (Dinootoo)
 ```
+
+## Developer Certificate of Origin
+
+You may notice in the previous section the commits are signed-off.
+For external contributors the DCO (i.e. [Developer Certificate of Origin of Linux Foundation in its version 1.1](https://developercertificate.org/)) is required.
+For Orange contributors it is highly recommended and will be mandatory soon.
+You can refer to the documentation about [-s / --signoff](https://git-scm.com/docs/git-commit) options for your Git commands.
 
 ## Review workflow
 

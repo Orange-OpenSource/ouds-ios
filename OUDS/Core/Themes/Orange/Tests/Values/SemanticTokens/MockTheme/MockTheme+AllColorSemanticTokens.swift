@@ -231,13 +231,6 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorDecorativeBrandSecondaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorDecorativeBrandTertiaryDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
-    override public var colorDecorativeNeutralDefaultLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorDecorativeNeutralEmphasizedLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorDecorativeNeutralMutedLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorDecorativeNeutralDefaultDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorDecorativeNeutralEmphasizedDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-    override public var colorDecorativeNeutralMutedDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
-
     override public var colorDecorativeSkinTint100Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorDecorativeSkinTint200Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorDecorativeSkinTint300Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -247,6 +240,29 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorDecorativeSkinTint700Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorDecorativeSkinTint800Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorDecorativeSkinTint900Light: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+
+    override public var colorDecorativeNeutralEmphasizedHigherLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralEmphasizedHigherDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralEmphasizedLowLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralEmphasizedLowDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralEmphasizedLowerLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralEmphasizedLowerDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralEmphasizedLowestLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralEmphasizedLowestDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedHighLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedHighDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedHigherLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedHigherDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedHighestLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedHighestDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedLowLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedLowDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedLowerLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedLowerDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedLowestLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedLowestDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedMediumLight: ColorSemanticToken { Self.mockThemeSemanticColorToken }
+    override public var colorDecorativeNeutralMutedMediumDark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
 
     override public var colorDecorativeSkinTint100Dark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
     override public var colorDecorativeSkinTint200Dark: ColorSemanticToken { Self.mockThemeSemanticColorToken }
@@ -417,9 +433,6 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorDecorativeBrandPrimary: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorDecorativeBrandSecondary: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorDecorativeBrandTertiary: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-    override public var colorDecorativeNeutralDefault: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-    override public var colorDecorativeNeutralEmphasized: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
-    override public var colorDecorativeNeutralMuted: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorDecorativeSkinTint100: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorDecorativeSkinTint200: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorDecorativeSkinTint300: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
@@ -429,6 +442,17 @@ open class MockThemeColorSemanticTokensProvider: OrangeThemeColorSemanticTokensP
     override public var colorDecorativeSkinTint700: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorDecorativeSkinTint800: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
     override public var colorDecorativeSkinTint900: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralEmphasizedHigher: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralEmphasizedLow: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralEmphasizedLower: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralEmphasizedLowest: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralMutedHigh: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralMutedHigher: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralMutedHighest: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralMutedLow: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralMutedLower: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralMutedLowest: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
+    override public var colorDecorativeNeutralMutedMedium: MultipleColorSemanticTokens { Self.mockThemeMultipleColorSemanticTokens }
 
     // MARK: - Color - Chart
 

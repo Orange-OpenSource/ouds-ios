@@ -58,7 +58,9 @@ private struct LinkUnderlineModifier: ViewModifier {
                 VStack(spacing: 0) {
                     content
                         .readSize { size in
-                            textWidth = size.width
+                            Task { @MainActor in
+                                textWidth = size.width
+                            }
                         }
                     Rectangle().frame(width: textWidth, height: 1)
                 }
@@ -93,7 +95,7 @@ extension View {
 
     /// Use to read the size of the current view (usefull to read the width of text)
     /// - Parameter onChange: Called when the size changes
-    fileprivate func readSize(onChange: @escaping (CGSize) -> Void) -> some View {
+    fileprivate func readSize(onChange: @Sendable @escaping (CGSize) -> Void) -> some View {
         background(
             GeometryReader { geometryProxy in
                 Color.clear

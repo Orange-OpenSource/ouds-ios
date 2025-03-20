@@ -53,6 +53,7 @@ extension EnvironmentValues {
 ///
 /// To use this special `View` and apply the *theme*, you must wrap your app root view inside, like:
 ///
+/// ```swift
 ///     // Make imports
 ///     import OUDS // For OUDSThemeableView
 ///     import OUDSThemesOrange // For OrangeTheme
@@ -66,6 +67,7 @@ extension EnvironmentValues {
 ///     OUDSThemeableView(theme: YourCustomTheme()) {
 ///         YourRootView()
 ///     }
+/// ```
 ///
 /// - Since: 0.8.0
 public struct OUDSThemeableView<Content>: View where Content: View {

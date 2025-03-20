@@ -14,7 +14,7 @@ Orange is providing a full design system to build Orange mobile aplications. The
 *Orange Unified Design System* has been implemented in a code library exposed as a _Swift Package_ that provides:
 
 - a SwiftUI code library
-- a demo application named *Desgin System Toolbox* that can be launched to show the guidelines, components and modules (which will move outside the project in the future)
+- a demo application named *Design System Toolbox* that can be launched to show the guidelines, components and modules (which will move outside the project in the future)
 
 This demo app also shows how to use the library or to style existing components.
 Using these resources will allow you to create Orange branded applications faster and will inherit all the work that was done to make sure that all presented codes are fully tested regarding the brand, the ecodesign, the open source and the accessibility compliances.

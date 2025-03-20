@@ -20,55 +20,30 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for radio button and checkboxes components like `OUDSRadioButton` and `OUDSCheckbox`.
-/// Use for tokens providers like `OrangeThemeCheckboxComponentTokensProvider`.
+/// Declares all component tokens for checkboxes components like `OUDSCheckbox` and `OUDSCheckboxItem`.
+/// Used for tokens providers like `OrangeThemeCheckboxComponentTokensProvider`.
 ///
 /// - Since: 0.10.0
 public protocol CheckboxComponentTokens {
 
     // MARK: - Sizes
 
-    var checkboxSizeMinWidth: SizeSemanticToken { get }
     var checkboxSizeMaxHeight: SizeSemanticToken { get }
     var checkboxSizeMinHeight: SizeSemanticToken { get }
-    var checkboxSizeIndicatorInnerIcon: SizeSemanticToken { get }
+    var checkboxSizeMinWidth: SizeSemanticToken { get }
     var checkboxSizeIndicator: SizeSemanticToken { get }
 
     // MARK: - Borders
 
     var checkboxBorderRadius: BorderRadiusSemanticToken { get }
     var checkboxBorderWidthSelected: BorderWidthSemanticToken { get }
+    var checkboxBorderWidthSelectedFocus: BorderWidthSemanticToken { get }
     var checkboxBorderWidthSelectedHover: BorderWidthSemanticToken { get }
     var checkboxBorderWidthSelectedPressed: BorderWidthSemanticToken { get }
-    var checkboxBorderWidthSelectedFocus: BorderWidthSemanticToken { get }
     var checkboxBorderWidthUnselected: BorderWidthSemanticToken { get }
+    var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { get }
     var checkboxBorderWidthUnselectedHover: BorderWidthSemanticToken { get }
     var checkboxBorderWidthUnselectedPressed: BorderWidthSemanticToken { get }
-    var checkboxBorderWidthUnselectedFocus: BorderWidthSemanticToken { get }
-
-    // MARK: - Opacities
-
-    var checkboxOpacityBgSelected: OpacitySemanticToken { get }
-    var checkboxOpacityBgUnselected: OpacitySemanticToken { get }
-    var checkboxOpacityBgSelectedHover: OpacitySemanticToken { get }
-    var checkboxOpacityBgUnselectedHover: OpacitySemanticToken { get }
-    var checkboxOpacityBgSelectedPressed: OpacitySemanticToken { get }
-    var checkboxOpacityBgUnselectedPressed: OpacitySemanticToken { get }
-    var checkboxOpacityBgSelectedFocus: OpacitySemanticToken { get }
-    var checkboxOpacityBgUnselectedFocus: OpacitySemanticToken { get }
-
-    // MARK: - Colors
-
-    var checkboxColorContentSelected: MultipleColorSemanticTokens { get }
-    var checkboxColorContentEnabled: MultipleColorSemanticTokens { get }
-    var checkboxColorContentHover: MultipleColorSemanticTokens { get }
-    var checkboxColorContentPressed: MultipleColorSemanticTokens { get }
-    var checkboxColorContentDisabled: MultipleColorSemanticTokens { get }
-    var checkboxColorContentFocus: MultipleColorSemanticTokens { get }
-    var checkboxColorContentErrorEnabled: MultipleColorSemanticTokens { get }
-    var checkboxColorContentErrorHover: MultipleColorSemanticTokens { get }
-    var checkboxColorContentErrorPressed: MultipleColorSemanticTokens { get }
-    var checkboxColorContentErrorFocus: MultipleColorSemanticTokens { get }
 }
 
 // swiftlint:enable missing_docs
