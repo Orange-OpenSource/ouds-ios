@@ -22,6 +22,7 @@ struct ComponentsPage: View {
         LinkElement(),
         CheckboxElements(),
         RadioElements(),
+        SwitchElements(),
     ]
 
     var body: some View {
