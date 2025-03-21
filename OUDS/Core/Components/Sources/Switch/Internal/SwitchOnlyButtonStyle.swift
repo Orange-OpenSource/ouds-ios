@@ -31,7 +31,7 @@ struct SwitchOnlyButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         ZStack(alignment: .center) {
             Color.clear
-                .frame(width: theme.switch.switchSize, height: theme.switch.switchSize)
+                .frame(width: theme.switch.switchSizeWidthTrack, height: theme.switch.switchSizeHeightTrack)
                 .contentShape(Capsule())
 
             SwitchIndicator(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn)
@@ -43,7 +43,7 @@ struct SwitchOnlyButtonStyle: ButtonStyle {
 
     // MARK: - Helpers
 
-    private func internalState(isPressed: Bool) -> ControlItemInternalState {
+    private func internalState(isPressed: Bool) -> InteractionState {
         if !isEnabled {
             return .disabled
         }

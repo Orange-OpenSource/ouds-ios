@@ -375,6 +375,9 @@
           }
         }
       }
+    },
+    "TODO: Add switch indicator here" : {
+
     }
   },
   "version" : "1.0"

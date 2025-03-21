@@ -19,7 +19,7 @@ struct SwitchIndicator: View {
 
     // MARK: Stored properties
 
-    let internalState: ControlItemInternalState
+    let internalState: InteractionState
     let isOn: Bool
 
     @Environment(\.theme) private var theme
@@ -50,9 +50,9 @@ struct SwitchIndicator: View {
     private var trackColor: MultipleColorSemanticTokens {
         switch internalState {
         case .enabled:
-            return isOn ? theme.switch.switchColorTrackTrue : theme.switch.switchColorTrackFalse
+            return isOn ? theme.switch.switchColorTrackSelected : theme.switch.switchColorTrackUnselected
         case .hover, .pressed:
-            return isOn ? theme.switch.switchColorTrackTrueInteraction : theme.switch.switchColorTrackFalseInteraction
+            return isOn ? theme.switch.switchColorTrackSelectedInteraction : theme.switch.switchColorTrackUnselectedInteraction
         case .disabled, .readOnly:
             return theme.colors.colorActionDisabled
         }
@@ -71,7 +71,7 @@ struct Cursor: View {
 
     // MARK: Stored properties
 
-    let internalState: ControlItemInternalState
+    let internalState: InteractionState
     let isOn: Bool
 
     @Environment(\.theme) private var theme
@@ -86,7 +86,7 @@ struct Cursor: View {
         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
         .background(corsorBackgroundColor)
         .clipShape(Capsule())
-        .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
+        .oudsShadow(theme.elevations.elevationRaised)
     }
 
     // MARK: Private helpers

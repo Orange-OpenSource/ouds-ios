@@ -44,11 +44,7 @@
 		0745C1912D7A0596006B3A1F /* RadioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C18D2D7A0596006B3A1F /* RadioPage.swift */; };
 		0745C1922D7A0596006B3A1F /* RadioConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C18B2D7A0596006B3A1F /* RadioConfiguration.swift */; };
 		0745C1932D7A0596006B3A1F /* RadioElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C18C2D7A0596006B3A1F /* RadioElement.swift */; };
-		0745C1972D7A0823006B3A1F /* RaioItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1962D7A0823006B3A1F /* RaioItemElement.swift */; };
-		0745C1982D7A0823006B3A1F /* RadiolItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1952D7A0823006B3A1F /* RadiolItemConfiguration.swift */; };
 		0745C1992D7A0823006B3A1F /* RadioItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1942D7A0823006B3A1F /* RadioItemPage.swift */; };
-		0745C19A2D7A0823006B3A1F /* RaioItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1962D7A0823006B3A1F /* RaioItemElement.swift */; };
-		0745C19B2D7A0823006B3A1F /* RadiolItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1952D7A0823006B3A1F /* RadiolItemConfiguration.swift */; };
 		0745C19C2D7A0823006B3A1F /* RadioItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C1942D7A0823006B3A1F /* RadioItemPage.swift */; };
 		075114DB2CB7D28D00B8B759 /* SizeTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */; };
 		075114DC2CB7D28D00B8B759 /* SizeTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */; };
@@ -101,6 +97,24 @@
 		07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C713A2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift */; };
 		07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71362CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift */; };
 		07CAE76B2CEE20B200D6C5D1 /* SpaceBasicTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71382CECC50F00B93FC3 /* SpaceBasicTokenIllustrations.swift */; };
+		07CC9ADE2DB0F66E001BC929 /* RadioItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9ADD2DB0F66E001BC929 /* RadioItemElement.swift */; };
+		07CC9ADF2DB0F66E001BC929 /* RadioItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9ADC2DB0F66E001BC929 /* RadioItemConfiguration.swift */; };
+		07CC9AE02DB0F66E001BC929 /* RadioItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9ADD2DB0F66E001BC929 /* RadioItemElement.swift */; };
+		07CC9AE12DB0F66E001BC929 /* RadioItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9ADC2DB0F66E001BC929 /* RadioItemConfiguration.swift */; };
+		07CC9AEC2DB0F7DD001BC929 /* SwitchItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE82DB0F7DD001BC929 /* SwitchItemPage.swift */; };
+		07CC9AED2DB0F7DD001BC929 /* SwitchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE32DB0F7DD001BC929 /* SwitchElement.swift */; };
+		07CC9AEE2DB0F7DD001BC929 /* SwitchElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AEA2DB0F7DD001BC929 /* SwitchElements.swift */; };
+		07CC9AEF2DB0F7DD001BC929 /* SwitchItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE72DB0F7DD001BC929 /* SwitchItemElement.swift */; };
+		07CC9AF02DB0F7DD001BC929 /* SwitchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE42DB0F7DD001BC929 /* SwitchPage.swift */; };
+		07CC9AF12DB0F7DD001BC929 /* SwitchItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE62DB0F7DD001BC929 /* SwitchItemConfiguration.swift */; };
+		07CC9AF22DB0F7DD001BC929 /* SwitchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE22DB0F7DD001BC929 /* SwitchConfiguration.swift */; };
+		07CC9AF32DB0F7DD001BC929 /* SwitchItemPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE82DB0F7DD001BC929 /* SwitchItemPage.swift */; };
+		07CC9AF42DB0F7DD001BC929 /* SwitchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE32DB0F7DD001BC929 /* SwitchElement.swift */; };
+		07CC9AF52DB0F7DD001BC929 /* SwitchElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AEA2DB0F7DD001BC929 /* SwitchElements.swift */; };
+		07CC9AF62DB0F7DD001BC929 /* SwitchItemElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE72DB0F7DD001BC929 /* SwitchItemElement.swift */; };
+		07CC9AF72DB0F7DD001BC929 /* SwitchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE42DB0F7DD001BC929 /* SwitchPage.swift */; };
+		07CC9AF82DB0F7DD001BC929 /* SwitchItemConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE62DB0F7DD001BC929 /* SwitchItemConfiguration.swift */; };
+		07CC9AF92DB0F7DD001BC929 /* SwitchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CC9AE22DB0F7DD001BC929 /* SwitchConfiguration.swift */; };
 		07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		07CF42722CA31AC3000BD03E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CF42712CA31AC3000BD03E /* Assets.xcassets */; };
 		07CF42742CA3EC58000BD03E /* CardIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42732CA3EC58000BD03E /* CardIllustration.swift */; };
@@ -305,8 +319,6 @@
 		0745C18C2D7A0596006B3A1F /* RadioElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioElement.swift; sourceTree = "<group>"; };
 		0745C18D2D7A0596006B3A1F /* RadioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPage.swift; sourceTree = "<group>"; };
 		0745C1942D7A0823006B3A1F /* RadioItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioItemPage.swift; sourceTree = "<group>"; };
-		0745C1952D7A0823006B3A1F /* RadiolItemConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiolItemConfiguration.swift; sourceTree = "<group>"; };
-		0745C1962D7A0823006B3A1F /* RaioItemElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaioItemElement.swift; sourceTree = "<group>"; };
 		075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTokenElement.swift; sourceTree = "<group>"; };
 		075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTokenPage.swift; sourceTree = "<group>"; };
 		075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTokenElement.swift; sourceTree = "<group>"; };
@@ -350,6 +362,15 @@
 		07B3CCB02D40E34700DBB10A /* LinkPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPage.swift; sourceTree = "<group>"; };
 		07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredSurfaceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxColoredSurfaceModifier.swift; sourceTree = "<group>"; };
 		07C54EC02DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxDisclosureGroup.swift; sourceTree = "<group>"; };
+		07CC9ADC2DB0F66E001BC929 /* RadioItemConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioItemConfiguration.swift; sourceTree = "<group>"; };
+		07CC9ADD2DB0F66E001BC929 /* RadioItemElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioItemElement.swift; sourceTree = "<group>"; };
+		07CC9AE22DB0F7DD001BC929 /* SwitchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchConfiguration.swift; sourceTree = "<group>"; };
+		07CC9AE32DB0F7DD001BC929 /* SwitchElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchElement.swift; sourceTree = "<group>"; };
+		07CC9AE42DB0F7DD001BC929 /* SwitchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchPage.swift; sourceTree = "<group>"; };
+		07CC9AE62DB0F7DD001BC929 /* SwitchItemConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemConfiguration.swift; sourceTree = "<group>"; };
+		07CC9AE72DB0F7DD001BC929 /* SwitchItemElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemElement.swift; sourceTree = "<group>"; };
+		07CC9AE82DB0F7DD001BC929 /* SwitchItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItemPage.swift; sourceTree = "<group>"; };
+		07CC9AEA2DB0F7DD001BC929 /* SwitchElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchElements.swift; sourceTree = "<group>"; };
 		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07CF426A2CA30728000BD03E /* TokensPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensPage.swift; sourceTree = "<group>"; };
 		07CF42712CA31AC3000BD03E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -583,9 +604,9 @@
 		0745C1872D7A036D006B3A1F /* RadioItem */ = {
 			isa = PBXGroup;
 			children = (
+				07CC9ADC2DB0F66E001BC929 /* RadioItemConfiguration.swift */,
+				07CC9ADD2DB0F66E001BC929 /* RadioItemElement.swift */,
 				0745C1942D7A0823006B3A1F /* RadioItemPage.swift */,
-				0745C1952D7A0823006B3A1F /* RadiolItemConfiguration.swift */,
-				0745C1962D7A0823006B3A1F /* RaioItemElement.swift */,
 			);
 			path = RadioItem;
 			sourceTree = "<group>";
@@ -708,6 +729,36 @@
 				07B3CCB02D40E34700DBB10A /* LinkPage.swift */,
 			);
 			path = Link;
+			sourceTree = "<group>";
+		};
+		07CC9AE52DB0F7DD001BC929 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				07CC9AE22DB0F7DD001BC929 /* SwitchConfiguration.swift */,
+				07CC9AE32DB0F7DD001BC929 /* SwitchElement.swift */,
+				07CC9AE42DB0F7DD001BC929 /* SwitchPage.swift */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		07CC9AE92DB0F7DD001BC929 /* Switchitem */ = {
+			isa = PBXGroup;
+			children = (
+				07CC9AE62DB0F7DD001BC929 /* SwitchItemConfiguration.swift */,
+				07CC9AE72DB0F7DD001BC929 /* SwitchItemElement.swift */,
+				07CC9AE82DB0F7DD001BC929 /* SwitchItemPage.swift */,
+			);
+			path = Switchitem;
+			sourceTree = "<group>";
+		};
+		07CC9AEB2DB0F7DD001BC929 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				07CC9AE52DB0F7DD001BC929 /* Switch */,
+				07CC9AE92DB0F7DD001BC929 /* Switchitem */,
+				07CC9AEA2DB0F7DD001BC929 /* SwitchElements.swift */,
+			);
+			path = Switch;
 			sourceTree = "<group>";
 		};
 		07CF42752CA3F461000BD03E /* Elevation */ = {
@@ -934,6 +985,7 @@
 		51BD760E2C466FCF0033365D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				07CC9AEB2DB0F7DD001BC929 /* Switch */,
 				072141182D02F52A00B7B9C6 /* Button */,
 				513442062D75B880000B5DE4 /* Checkbox */,
 				07D3DBF02DA5084500D8A57F /* ColoredSurface */,
@@ -1270,8 +1322,6 @@
 				51952A962D3FA32E0068B807 /* View+Illustration.swift in Sources */,
 				51D6D5832D883D50009CD879 /* OUDSRadioButtonUITests.swift in Sources */,
 				51952A972D3FA32E0068B807 /* FontTokenElement.swift in Sources */,
-				0745C19A2D7A0823006B3A1F /* RaioItemElement.swift in Sources */,
-				0745C19B2D7A0823006B3A1F /* RadiolItemConfiguration.swift in Sources */,
 				518B26672DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */,
 				518B26682DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift in Sources */,
 				518B26692DAE9DE1003A6ED3 /* RadioPickerElement.swift in Sources */,
@@ -1297,6 +1347,8 @@
 				0745C1932D7A0596006B3A1F /* RadioElement.swift in Sources */,
 				51952A932D3FA2E30068B807 /* NamedFont.swift in Sources */,
 				6D43136D2CEF400D004E6886 /* DesignToolboxCode.swift in Sources */,
+				07CC9ADE2DB0F66E001BC929 /* RadioItemElement.swift in Sources */,
+				07CC9ADF2DB0F66E001BC929 /* RadioItemConfiguration.swift in Sources */,
 				51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */,
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
 				0745C18A2D7A03B8006B3A1F /* RadioElements.swift in Sources */,
@@ -1316,6 +1368,13 @@
 				51952A752D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				6DB260E22CD0F0520091F72E /* NameSpace+PaddingStack.swift in Sources */,
 				6DB260E32CD0F0520091F72E /* NameSpace+GapInline.swift in Sources */,
+				07CC9AEC2DB0F7DD001BC929 /* SwitchItemPage.swift in Sources */,
+				07CC9AED2DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
+				07CC9AEE2DB0F7DD001BC929 /* SwitchElements.swift in Sources */,
+				07CC9AEF2DB0F7DD001BC929 /* SwitchItemElement.swift in Sources */,
+				07CC9AF02DB0F7DD001BC929 /* SwitchPage.swift in Sources */,
+				07CC9AF12DB0F7DD001BC929 /* SwitchItemConfiguration.swift in Sources */,
+				07CC9AF22DB0F7DD001BC929 /* SwitchConfiguration.swift in Sources */,
 				6DB260E42CD0F0520091F72E /* NameSpace+GapStack.swift in Sources */,
 				513442072D75B880000B5DE4 /* CheckboxElement.swift in Sources */,
 				513442082D75B880000B5DE4 /* CheckboxPage.swift in Sources */,
@@ -1391,8 +1450,6 @@
 				51952A682D3F9B9E0068B807 /* NamedColor+Opacity.swift in Sources */,
 				51D6D5972D8881A6009CD879 /* CheckboxLayouts.swift in Sources */,
 				07AB458B2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */,
-				0745C1972D7A0823006B3A1F /* RaioItemElement.swift in Sources */,
-				0745C1982D7A0823006B3A1F /* RadiolItemConfiguration.swift in Sources */,
 				0745C1992D7A0823006B3A1F /* RadioItemPage.swift in Sources */,
 				51952A692D3F9B9E0068B807 /* NamedColor+Overlay.swift in Sources */,
 				51952A6A2D3F9B9E0068B807 /* NamedColor+Repository.swift in Sources */,
@@ -1472,6 +1529,13 @@
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
 				07F75A372CC644C80004F1AD /* NamedSpace+Scaled.swift in Sources */,
 				0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */,
+				07CC9AF32DB0F7DD001BC929 /* SwitchItemPage.swift in Sources */,
+				07CC9AF42DB0F7DD001BC929 /* SwitchElement.swift in Sources */,
+				07CC9AF52DB0F7DD001BC929 /* SwitchElements.swift in Sources */,
+				07CC9AF62DB0F7DD001BC929 /* SwitchItemElement.swift in Sources */,
+				07CC9AF72DB0F7DD001BC929 /* SwitchPage.swift in Sources */,
+				07CC9AF82DB0F7DD001BC929 /* SwitchItemConfiguration.swift in Sources */,
+				07CC9AF92DB0F7DD001BC929 /* SwitchConfiguration.swift in Sources */,
 				073543112CA154DE001187EA /* Card.swift in Sources */,
 				51BD76212C466FCF0033365D /* AboutPage.swift in Sources */,
 				075C71392CECC50F00B93FC3 /* SpaceBasicTokenIllustrations.swift in Sources */,
@@ -1495,6 +1559,8 @@
 				51D6D58E2D887F04009CD879 /* CheckboxItemIndeterminatePage.swift in Sources */,
 				513442142D75B880000B5DE4 /* CheckboxItemConfiguration.swift in Sources */,
 				0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */,
+				07CC9AE02DB0F66E001BC929 /* RadioItemElement.swift in Sources */,
+				07CC9AE12DB0F66E001BC929 /* RadioItemConfiguration.swift in Sources */,
 				075C71332CEB743300B93FC3 /* SpaceTokenCommonIllustration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
