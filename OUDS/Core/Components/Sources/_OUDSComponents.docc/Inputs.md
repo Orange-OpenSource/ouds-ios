@@ -118,4 +118,44 @@ Radio items can be embeded in a radio picker so as to let the users to select on
 
     // Here the picker is vertical
     OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
+
+### Switches
+
+#### Switch (only)
+
+The library proposes a new layout for the switch component. The native it not used anymore.
+You can use a simple switch without any labels and images.
+
+```swift
+    // A simple switch, with only an indicator
+    // The component must be instanciated with a string parameter used as accessibility label that will be
+    // vocalized by Voice Over. 
+
+    // The isOn parameter can have only two values: true (selected), false (unselected)
+    OUDSSwitch(isOn: $isOn, accessibilityLabel: "Select the element")
+```
+
+#### Switch item
+
+The library proposes also a switch which has in its layout some labels and icons.
+The indicator can be leading or trailing.
+
+```swift
+    // A leading checkbox with a label, with only two states
+    OUDSSwitchItem(isOn: $isOn, label: "Hello world")
+
+    // A leading switch with a label, an helper text, and exposing the state with selection binding
+    OUDSSwitchItem(isOn: $isOn, 
+                   labelText: "Dead Robot Zombie Cop",
+                   helperText: "from Outer Space II")
+
+    // A trailing switch with a label, an helper text, an icon, a divider and is about an error
+    // with an inverse layout, and exposing the state through isOn binding
+    OUDSSwitchItem(isOn: $isOn,
+                     labelText: "We live in a fabled world",
+                     helperText: "Of dreaming boys and wide-eyed girls",
+                     icon: Image(decorative: "ic_heart"),
+                     isInversed: true,
+                     isError: true,
+                     hasDivider: true)
 ```

@@ -37,7 +37,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+/// TODO: add url to design specification
 ///
 /// - Since: 0.12.0
 public struct OUDSSwitch: View { // TODO: #266 - Update documentation hyperlink above
@@ -56,8 +56,7 @@ public struct OUDSSwitch: View { // TODO: #266 - Update documentation hyperlink 
     /// - Parameters:
     ///    - isOn: A binding to a property that determines whether the toggle is on or off.
     ///    - accessibilityLabel: The accessibility label the component must have
-    public init(isOn: Binding<Bool>,
-                accessibilityLabel: String) {
+    public init(isOn: Binding<Bool>, accessibilityLabel: String) {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSSwitch should not have an empty accessibility label, think about your disabled users!")
         }
