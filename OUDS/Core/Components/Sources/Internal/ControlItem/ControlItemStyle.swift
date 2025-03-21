@@ -71,10 +71,8 @@ struct ControlItemStyle: ButtonStyle {
     private func indicatorContainer(isPressed: Bool) -> some View {
         HStack(alignment: .center, spacing: 0) {
             switch indicatorType {
-            case .switch:
-                // TODO: #405 - Add switch indicator
-                Text("TODO: Add switch indicator here")
-//                OUDSSwitchIndicator(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
+            case .switch(let binding):
+               SwitchIndicator(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
             case .radioButton(let binding):
                 RadioIndicator(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue, isError: layoutData.isError)
             case .checkBox(let binding):
