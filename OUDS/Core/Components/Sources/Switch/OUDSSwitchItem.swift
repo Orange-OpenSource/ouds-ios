@@ -129,20 +129,16 @@ public struct OUDSSwitchItem: View { // TODO: #266 - Update documentation hyperl
     /// - Parameters:
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - labelText: The main label text of the switch.
-    ///   - additionalLabelText: An additional label text of the switch.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
-    ///   - isOutlined: Flag to get an outlined switch
     ///   - isInversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     public init(isOn: Binding<Bool>,
                 labelText: String,
-                additionalLabelText: String? = nil,
                 helperText: String? = nil,
                 icon: Image? = nil,
-                isOutlined: Bool = true,
                 isInversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
@@ -155,18 +151,14 @@ public struct OUDSSwitchItem: View { // TODO: #266 - Update documentation hyperl
             OL.warning("Helper text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
-        if let additionalLabelText, additionalLabelText.isEmpty {
-            OL.warning("Additional label text given to an OUDSSwitchitem is defined but empty, is it expected? Prefer use of `nil` value instead")
-        }
-
         _isOn = isOn
 
         self.layoutData = .init(
             labelText: labelText,
-            additionalLabelText: additionalLabelText,
+            additionalLabelText: nil,
             helperText: helperText,
             icon: icon,
-            isOutlined: isOutlined,
+            isOutlined: false,
             isError: isError,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
