@@ -66,6 +66,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Color semantic tokens (tokens library v0.8.0) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
 - [Library] Control item component tokens (tokens library v0.8.0) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
 - [Tool] Change name of IPA file to upload to store portal
+### Added
+
+- [Library] Switch component ([#405](https://github.com/Orange-OpenSource/ouds-ios/issues/405))
 
 ### Removed
 
