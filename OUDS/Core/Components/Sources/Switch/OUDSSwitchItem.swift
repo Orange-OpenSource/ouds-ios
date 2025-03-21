@@ -108,7 +108,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+/// TODO: add url to design specification
 ///
 /// - Since: 0.12.0
 public struct OUDSSwitchItem: View { // TODO: #266 - Update documentation hyperlink above
