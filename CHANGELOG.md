@@ -6,9 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.12.0...develop)
 
+### Added
+
+- [Library] New switch component tokens ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
+
 ### Changed
 
+- [Library] `controlItemSizeMinWidth`, `colorSurfaceStatusAccentMutedLight` component tokens (tokens library v0.8.0) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
 - [Tool] Change name of IPA file to upload to store portal
+
+### Removed
+
+- [Library] `chipSizeMaxHeight`, `switchColorTrackFalse`, `switchColorTrackFalseInteraction`, `switchColorTrackTrue`, `switchColorTrackTrueInteraction`, `switchSize`  component tokens (tokens library v0.8.0) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
 
 ### Fixed
 

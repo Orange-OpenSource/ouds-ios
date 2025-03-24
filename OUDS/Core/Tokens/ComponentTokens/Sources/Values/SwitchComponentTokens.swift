@@ -29,10 +29,6 @@ public protocol SwitchComponentTokens {
 
     var switchColorCheck: MultipleColorSemanticTokens { get }
     var switchColorCursor: MultipleColorSemanticTokens { get }
-    var switchColorTrackFalse: MultipleColorSemanticTokens { get }
-    var switchColorTrackFalseInteraction: MultipleColorSemanticTokens { get }
-    var switchColorTrackTrue: MultipleColorSemanticTokens { get }
-    var switchColorTrackTrueInteraction: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 
