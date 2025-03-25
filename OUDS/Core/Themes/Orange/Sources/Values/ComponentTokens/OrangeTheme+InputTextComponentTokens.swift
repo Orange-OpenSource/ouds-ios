@@ -22,16 +22,6 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeThemeInputTextComponentTokensProvider: InputTextComponentTokens {
-    @objc open var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
-    @objc open var inputTextSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension1600 }
-    @objc open var inputTextSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMedium }
-    @objc open var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
-    @objc open var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
-    @objc open var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
-    @objc open var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
-    @objc open var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
-    @objc open var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShortest }
-    @objc open var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
     @objc open var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
     @objc open var inputTextColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
     @objc open var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
@@ -44,6 +34,16 @@ extension OrangeThemeInputTextComponentTokensProvider: InputTextComponentTokens 
     @objc open var inputTextColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorContentDefault }
     @objc open var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
     @objc open var inputTextColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorContentDefault }
+    @objc open var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
+    @objc open var inputTextSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension1600 }
+    @objc open var inputTextSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMedium }
+    @objc open var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
+    @objc open var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
+    @objc open var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+    @objc open var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
+    @objc open var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+    @objc open var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShortest }
+    @objc open var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
 }
 
 // swiftlint:enable identifier_name

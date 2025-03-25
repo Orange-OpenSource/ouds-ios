@@ -20,7 +20,11 @@ import OUDSTokensSemantic
 
 extension OrangeThemeFontSemanticTokensProvider: FontSemanticTokens {
     @objc open var fontFamilySystem: FontFamilySemanticToken { FontRawTokens.fontFamilySystemSfPro }
+    @objc open var fontFamilyBody: FontFamilySemanticToken { fontFamilySystem }
     @objc open var fontFamilyCode: FontFamilySemanticToken { FontRawTokens.fontFamilyMonospaceSfMono }
+    @objc open var fontFamilyDisplay: FontFamilySemanticToken { fontFamilySystem }
+    @objc open var fontFamilyHeading: FontFamilySemanticToken { fontFamilySystem }
+    @objc open var fontFamilyLabel: FontFamilySemanticToken { fontFamilySystem }
     @objc open var fontLetterSpacingBodyLargeMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }
     @objc open var fontLetterSpacingBodyLargeTablet: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing250 }
     @objc open var fontLetterSpacingBodyMediumMobile: FontLetterSpacingSemanticToken { FontRawTokens.fontLetterSpacing200 }
@@ -96,17 +100,13 @@ extension OrangeThemeFontSemanticTokensProvider: FontSemanticTokens {
     @objc open var fontSizeLabelMedium: FontSizeSemanticToken { FontRawTokens.fontSize200 }
     @objc open var fontSizeLabelSmall: FontSizeSemanticToken { FontRawTokens.fontSize150 }
     @objc open var fontSizeLabelXlarge: FontSizeSemanticToken { FontRawTokens.fontSize300 }
-    @objc open var fontWeightCode: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
-    @objc open var fontWeightSystemDefault: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
-    @objc open var fontWeightSystemStrong: FontWeightSemanticToken { FontRawTokens.fontWeight700 }
-    @objc open var fontFamilyBody: FontFamilySemanticToken { fontFamilySystem }
-    @objc open var fontFamilyDisplay: FontFamilySemanticToken { fontFamilySystem }
-    @objc open var fontFamilyHeading: FontFamilySemanticToken { fontFamilySystem }
-    @objc open var fontFamilyLabel: FontFamilySemanticToken { fontFamilySystem }
     @objc open var fontWeightBodyDefault: FontWeightSemanticToken { fontWeightSystemDefault }
     @objc open var fontWeightBodyStrong: FontWeightSemanticToken { fontWeightSystemStrong }
+    @objc open var fontWeightCode: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
     @objc open var fontWeightDisplay: FontWeightSemanticToken { fontWeightSystemStrong }
     @objc open var fontWeightHeading: FontWeightSemanticToken { fontWeightSystemStrong }
     @objc open var fontWeightLabelDefault: FontWeightSemanticToken { fontWeightSystemDefault }
     @objc open var fontWeightLabelStrong: FontWeightSemanticToken { fontWeightSystemStrong }
+    @objc open var fontWeightSystemDefault: FontWeightSemanticToken { FontRawTokens.fontWeight400 }
+    @objc open var fontWeightSystemStrong: FontWeightSemanticToken { FontRawTokens.fontWeight700 }
 }
