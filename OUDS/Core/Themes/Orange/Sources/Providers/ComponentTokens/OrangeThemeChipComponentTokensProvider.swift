@@ -32,7 +32,7 @@ import OUDSTokensSemantic
 ///
 ///         // Then override the chip component tokens you want.
 ///
-///         override var chipSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension500 }
+///         override var chipSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension500 }
 ///
 ///         override var chipBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthmediumt }
 ///

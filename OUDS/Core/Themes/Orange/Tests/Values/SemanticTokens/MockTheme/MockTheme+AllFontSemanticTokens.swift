@@ -44,9 +44,7 @@ final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensPr
 
     // MARK: Semantic token - Typography - Font - Weight
 
-    override public var fontWeightDefault: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightCode: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override public var fontWeightStrong: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightDisplay: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightHeading: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightBodyDefault: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }

@@ -100,7 +100,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com/472794e18/p/23f1c1-checkbox](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
 ///
 /// - Since: 0.12.0
 public struct OUDSCheckboxItem: View {

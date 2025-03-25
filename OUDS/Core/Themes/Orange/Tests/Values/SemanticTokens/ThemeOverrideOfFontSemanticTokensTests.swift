@@ -66,19 +66,9 @@ struct ThemeOverrideOfFontSemanticTokensTests {
     }
     // MARK: - Semantic token - Typography - Font - Weight
 
-    @Test func inheritedThemeCanOverrideSemanticTokenFontWeightDefault() throws {
-        #expect(inheritedTheme.fonts.fontWeightDefault != abstractTheme.fonts.fontWeightDefault)
-        #expect(inheritedTheme.fonts.fontWeightDefault == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
-    }
-
     @Test func inheritedThemeCanOverrideSemanticTokenFontWeightCode() throws {
         #expect(inheritedTheme.fonts.fontWeightCode != abstractTheme.fonts.fontWeightCode)
         #expect(inheritedTheme.fonts.fontWeightCode == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
-    }
-
-    @Test func inheritedThemeCanOverrideSemanticTokenFontWeightStrong() throws {
-        #expect(inheritedTheme.fonts.fontWeightStrong != abstractTheme.fonts.fontWeightStrong)
-        #expect(inheritedTheme.fonts.fontWeightStrong == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
     }
 
     @Test func inheritedThemeCanOverrideSemanticTokenFontWeightDisplay() throws {

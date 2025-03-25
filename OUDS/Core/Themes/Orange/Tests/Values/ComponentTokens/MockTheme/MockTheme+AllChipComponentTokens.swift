@@ -39,7 +39,6 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
 
     // MARK: - Chip component tokens
 
-    override public var chipSizeMaxHeight: SizeSemanticToken { Self.mockThemeChipSize }
     override public var chipSizeMinHeight: SizeSemanticToken { Self.mockThemeChipSize }
     override public var chipSizeMinWidth: SizeSemanticToken { Self.mockThemeChipSize }
     override public var chipSizeIcon: SizeSemanticToken { Self.mockThemeChipSize }
