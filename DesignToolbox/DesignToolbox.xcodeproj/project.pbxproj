@@ -83,6 +83,8 @@
 		0784B2712CCB86C500299C10 /* NamedSize+IconWithTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */; };
 		0784B2732CCB8CC800299C10 /* NamedSize+IconDecorative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */; };
 		0794FCD72D914DC400A9373A /* OUDSSwitchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0794FCD62D914DC400A9373A /* OUDSSwitchUITests.swift */; };
+		0794FCD92D9150DA00A9373A /* TestThemeableIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0794FCD82D9150DA00A9373A /* TestThemeableIllustration.swift */; };
+		0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */; };
 		07AB45872D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
 		07AB45882D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */; };
 		07AB458A2D50CB9B0001D237 /* DesignToolboxTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */; };
@@ -357,6 +359,8 @@
 		0784B26F2CCB86C500299C10 /* NamedSize+IconWithTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconWithTypography.swift"; sourceTree = "<group>"; };
 		0784B2722CCB8CC800299C10 /* NamedSize+IconDecorative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NamedSize+IconDecorative.swift"; sourceTree = "<group>"; };
 		0794FCD62D914DC400A9373A /* OUDSSwitchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSSwitchUITests.swift; sourceTree = "<group>"; };
+		0794FCD82D9150DA00A9373A /* TestThemeableIllustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestThemeableIllustration.swift; sourceTree = "<group>"; };
+		0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIUserInterfaceStyle+extension.swift"; sourceTree = "<group>"; };
 		07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxChoicePicker.swift; sourceTree = "<group>"; };
 		07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxTextField.swift; sourceTree = "<group>"; };
 		07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkConfiguration.swift; sourceTree = "<group>"; };
@@ -579,6 +583,8 @@
 			children = (
 				51952A782D3FA0FB0068B807 /* __Snapshots__ */,
 				074008222C942810006B8729 /* XCTestCase+Snapshot.swift */,
+				0794FCD82D9150DA00A9373A /* TestThemeableIllustration.swift */,
+				0794FCDA2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift */,
 			);
 			path = DesignToolboxSnapshotsTests;
 			sourceTree = "<group>";
@@ -1342,6 +1348,7 @@
 				51952AA02D3FA32E0068B807 /* DimensionTokenElement.swift in Sources */,
 				51952AA12D3FA32E0068B807 /* ElevationTokenElement.swift in Sources */,
 				51952AA22D3FA32E0068B807 /* GridTokenElement.swift in Sources */,
+				0794FCDB2D9155D900A9373A /* UIUserInterfaceStyle+extension.swift in Sources */,
 				51952AA32D3FA32E0068B807 /* GrisTokenPage.swift in Sources */,
 				51D6D5892D887E55009CD879 /* CheckboxItemIndeterminateElement.swift in Sources */,
 				51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */,
@@ -1353,6 +1360,7 @@
 				07CC9ADE2DB0F66E001BC929 /* RadioItemElement.swift in Sources */,
 				07CC9ADF2DB0F66E001BC929 /* RadioItemConfiguration.swift in Sources */,
 				51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */,
+				0794FCD92D9150DA00A9373A /* TestThemeableIllustration.swift in Sources */,
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
 				0745C18A2D7A03B8006B3A1F /* RadioElements.swift in Sources */,
 				51952A922D3FA2720068B807 /* OUDSButtonUITests.swift in Sources */,

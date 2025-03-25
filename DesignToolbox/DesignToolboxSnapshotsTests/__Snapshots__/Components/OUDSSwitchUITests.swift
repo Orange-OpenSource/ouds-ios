@@ -28,41 +28,37 @@ import XCTest
 /// Tests the UI rendering of the `OUDSSwitch` and `OUDSSwitchItem` for each parameter
 final class OUDSSwitchUITests: XCTestCase {
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `light` color schemes.
+    /// Tests all switches configuration in the `OrangeTheme` with the `light` color schemes.
     @MainActor func testAllSwitchesOrangeThemeLight() {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
-        testAllSwitchesOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
+    /// Tests all switches configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllSwitchesOrangeThemeDark() {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
-        testAllSwitchesOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all buttons configuration in the `InverseTheme` with the `light` color schemes.
+    /// Tests all switches configuration in the `InverseTheme` with the `light` color schemes.
     @MainActor func testAllSwitchesInverseThemeLight() {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
-        testAllSwitchesOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    /// Tests all buttons configuration in the `InverseTheme` with the `dark` color schemes.
+    /// Tests all switches configuration in the `InverseTheme` with the `dark` color schemes.
     @MainActor func testAllSwitchesInverseThemeDark() {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
-        testAllSwitchesOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Helpers
 
-    /// This function tests all radio buttons configuration for the given theme and color scheme on a standard surface.
+    /// This function tests all switches configuration for the given theme and color scheme on a standard surface.
     ///
     /// **/!\ It does not test the hover and pressed states.**
     ///
@@ -74,92 +70,37 @@ final class OUDSSwitchUITests: XCTestCase {
     @MainActor private func testAllSwitches(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         for indicatorState in [true, false] {
             for someLayout in availableLayouts(isError: false, isReadOnly: false) {
-                testSwitchButton(theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                layout: someLayout,
-                                indicatorState: indicatorState,
-                                isDisabled: false,
-                                onColoredSurface: false)
+                testSwitch(theme: theme,
+                           interfaceStyle: interfaceStyle,
+                           layout: someLayout,
+                           indicatorState: indicatorState,
+                           isDisabled: false)
 
-                testSwitchButton(theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                layout: someLayout,
-                                indicatorState: indicatorState,
-                                isDisabled: true,
-                                onColoredSurface: false)
+                testSwitch(theme: theme,
+                           interfaceStyle: interfaceStyle,
+                           layout: someLayout,
+                           indicatorState: indicatorState,
+                           isDisabled: true)
             }
         }
 
         for indicatorState in [true, false] {
             for someLayout in availableLayouts(isError: true, isReadOnly: false) {
-                testSwitchButton(theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                layout: someLayout,
-                                indicatorState: indicatorState,
-                                isDisabled: false,
-                                onColoredSurface: false)
+                testSwitch(theme: theme,
+                           interfaceStyle: interfaceStyle,
+                           layout: someLayout,
+                           indicatorState: indicatorState,
+                           isDisabled: false)
             }
         }
 
         for indicatorState in [true, false] {
             for someLayout in availableLayouts(isError: false, isReadOnly: true) {
-                testSwitchButton(theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                layout: someLayout,
-                                indicatorState: indicatorState,
-                                isDisabled: false,
-                                onColoredSurface: false)
-            }
-        }
-    }
-
-    /// This function tests all radio button configuration for the given theme and color schemes on a colored surface (the `colorSurfaceBrandPrimary` token)
-    ///
-    /// **/!\ It does not test the hover and pressed states.**
-    ///
-    /// It iterates through all combinations of layouts in enabled and disabled state.
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testAllSwitchesOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for indicatorState in [true, false] {
-            for someLayout in availableLayouts(isError: false, isReadOnly: false) {
-                testSwitchButton(theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                layout: someLayout,
-                                indicatorState: indicatorState,
-                                isDisabled: false,
-                                onColoredSurface: true)
-
-                testSwitchButton(theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                layout: someLayout,
-                                indicatorState: indicatorState,
-                                isDisabled: true,
-                                onColoredSurface: true)
-            }
-        }
-
-        for indicatorState in [true, false] {
-            for someLayout in availableLayouts(isError: true, isReadOnly: false) {
-                testSwitchButton(theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                layout: someLayout,
-                                indicatorState: indicatorState,
-                                isDisabled: false,
-                                onColoredSurface: true)
-            }
-        }
-
-        for indicatorState in [true, false] {
-            for someLayout in availableLayouts(isError: false, isReadOnly: true) {
-                testSwitchButton(theme: theme,
-                                interfaceStyle: interfaceStyle,
-                                layout: someLayout,
-                                indicatorState: indicatorState,
-                                isDisabled: false,
-                                onColoredSurface: true)
+                testSwitch(theme: theme,
+                           interfaceStyle: interfaceStyle,
+                           layout: someLayout,
+                           indicatorState: indicatorState,
+                           isDisabled: false)
             }
         }
     }
@@ -178,30 +119,25 @@ final class OUDSSwitchUITests: XCTestCase {
     ///   - layout: the layout of the radio button
     ///   - indicatorState: the indicator state of the radio button (`true` if selected, `false` if not)
     ///   - isDisabled: the disabled flag
-    ///   - onColoredSurface: a flag to know if button is on a colored surface or not
-    @MainActor private func testSwitchButton(theme: OUDSTheme,
-                                            interfaceStyle: UIUserInterfaceStyle,
-                                            layout: SwitchTest.Layout,
-                                            indicatorState: Bool,
-                                            isDisabled: Bool,
-                                            onColoredSurface: Bool = false) {
+    @MainActor private func testSwitch(theme: OUDSTheme,
+                                       interfaceStyle: UIUserInterfaceStyle,
+                                       layout: SwitchTest.Layout,
+                                       indicatorState: Bool,
+                                       isDisabled: Bool) {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             SwitchTest(layout: layout,
-                      indicatorState: indicatorState,
-                      isDisabled: isDisabled,
-                      onColoredSurface: onColoredSurface)
-            .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
+                       indicatorState: indicatorState,
+                       isDisabled: isDisabled)
+            .background(theme.colors.colorBgPrimary.color(for: interfaceStyle.colorScheme))
         }
 
         // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<coloredSurfacePatern><layout>_<indicatorState>_<disabledPatern> where:
-        // - `coloredSurfacePatern` is empty if not on colored surface
+        // test_<themeName>_<colorScheme>.<layout>_<indicatorState>_<disabledPatern> where:
         // - `disabledPatern` is empty if not disabled
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
         let disabledPatern = isDisabled ? "_Disabled" : ""
-        let name = "\(coloredSurfacePatern)\(layout.description.camelCase)_\(indicatorState ? "on" : "off")_\(disabledPatern)"
+        let name = "\(layout.description.camelCase)_\(indicatorState ? "on" : "off")_\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -213,37 +149,37 @@ final class OUDSSwitchUITests: XCTestCase {
     // swiftlint:disable line_length
     private func availableLayouts(isError: Bool, isReadOnly: Bool) -> [SwitchTest.Layout] {
         [
-            SwitchTest.Layout.indicatorOnly(isError: isError),
+            SwitchTest.Layout.indicatorOnly,
 
-            SwitchTest.Layout.default(labelText: "Takoyaki", additionalLabelText: nil, helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Takoyaki", additionalLabelText: nil, helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: nil, helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: nil, helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Kammthaar", additionalLabelText: nil, helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Kammthaar", additionalLabelText: nil, helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: nil, helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: nil, helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.default(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Takoyaki", helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Takoyaki", helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Kammthaar", helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Kammthaar", helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
 
-            SwitchTest.Layout.inverse(labelText: "Takoyaki", additionalLabelText: nil, helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Takoyaki", additionalLabelText: nil, helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: nil, helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: nil, helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Kammthaar", additionalLabelText: nil, helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Kammthaar", additionalLabelText: nil, helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: nil, helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: nil, helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            SwitchTest.Layout.inverse(labelText: "Patatas", additionalLabelText: "Patatata-patatata-patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Takoyaki", helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Takoyaki", helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Kammthaar", helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Kammthaar", helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            SwitchTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
         ]
     }
     // swiftlint:enable line_length
@@ -257,16 +193,14 @@ final class OUDSSwitchUITests: XCTestCase {
 private struct SwitchTest: View {
 
     enum Layout { // ControlItemLabel.LayoutData is not accessible, need to fake it here
-        case indicatorOnly(isError: Bool)
+        case indicatorOnly
         case `default`(labelText: String,
-                       additionalLabelText: String?,
                        helperText: String?,
                        icon: Image?,
                        isError: Bool,
                        hasDivider: Bool,
                        isReadOnly: Bool)
         case inverse(labelText: String,
-                     additionalLabelText: String?,
                      helperText: String?,
                      icon: Image?,
                      isError: Bool,
@@ -276,12 +210,12 @@ private struct SwitchTest: View {
         // swiftlint:disable line_length
         var description: String {
             switch self {
-            case let .indicatorOnly(isError):
-                return "layout-indicatorOnly-\(isError ? "error" : "")"
-            case let .default(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
-                    return "layout-default-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
-            case let .inverse(_, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
-                    return "layout-inverse-label-\(additionalLabelText != nil ? "withAdditional-" : "-")\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
+            case .indicatorOnly:
+                return "layout-indicatorOnly"
+            case let .default(_, helperText, icon, isError, hasDivider, isReadOnly):
+                return "layout-default-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly-" : "-")\(hasDivider ? "divider" : "")"
+            case let .inverse(_, helperText, icon, isError, hasDivider, isReadOnly):
+                return "layout-inverse-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
         }
         // swiftlint:enable line_length
@@ -293,45 +227,31 @@ private struct SwitchTest: View {
     let layout: Layout
     let indicatorState: Bool
     let isDisabled: Bool
-    let onColoredSurface: Bool
 
     var body: some View {
-        if onColoredSurface {
-            OUDSColoredSurface(color: theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme), content: radioButton)
-        } else {
-            radioButton()
-        }
-    }
-
-    @ViewBuilder
-    func radioButton() -> some View {
         switch layout {
-        case let .indicatorOnly(isError):
-            OUDSSwitch(isOn: .constant(indicatorState),
-                      accessibilityLabel: "Bazinga!",
-                      isError: isError)
-            .disabled(isDisabled)
-        case let .default(labelText, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
+        case .indicatorOnly:
+            OUDSSwitch(isOn: .constant(indicatorState), accessibilityLabel: "Bazinga!")
+                .disabled(isDisabled)
+        case let .default(labelText, helperText, icon, isError, hasDivider, isReadOnly):
             OUDSSwitchItem(isOn: .constant(indicatorState),
-                          labelText: labelText,
-                          additionalLabelText: additionalLabelText,
-                          helperText: helperText,
-                          icon: icon,
-                          isInversed: false,
-                          isError: isError,
-                          isReadOnly: isReadOnly,
-                          hasDivider: hasDivider)
+                           labelText: labelText,
+                           helperText: helperText,
+                           icon: icon,
+                           isInversed: false,
+                           isError: isError,
+                           isReadOnly: isReadOnly,
+                           hasDivider: hasDivider)
             .disabled(isDisabled)
-        case let .inverse(labelText, additionalLabelText, helperText, icon, isError, hasDivider, isReadOnly):
+        case let .inverse(labelText, helperText, icon, isError, hasDivider, isReadOnly):
             OUDSSwitchItem(isOn: .constant(indicatorState),
-                          labelText: labelText,
-                          additionalLabelText: additionalLabelText,
-                          helperText: helperText,
-                          icon: icon,
-                          isInversed: true,
-                          isError: isError,
-                          isReadOnly: isReadOnly,
-                          hasDivider: hasDivider)
+                           labelText: labelText,
+                           helperText: helperText,
+                           icon: icon,
+                           isInversed: true,
+                           isError: isError,
+                           isReadOnly: isReadOnly,
+                           hasDivider: hasDivider)
             .disabled(isDisabled)
         }
     }
