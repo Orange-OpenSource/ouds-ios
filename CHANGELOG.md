@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] New switch component tokens ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
+- [Library] New switch component tokens (opacity, borders) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
 
 ### Changed
 

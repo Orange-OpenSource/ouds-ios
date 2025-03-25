@@ -25,19 +25,41 @@ import OUDSTokensSemantic
 /// - Since: 0.10.0
 public protocol SwitchComponentTokens {
 
+    // MARK: - Sizes
+
+    var switchSizeHeightCursorSelected: SizeSemanticToken { get }
+    var switchSizeHeightCursorUnselected: SizeSemanticToken { get }
+    var switchSizeHeightTrack: SizeSemanticToken { get }
+    var switchSizeMaxHeight: SizeSemanticToken { get }
+    var switchSizeMinHeight: SizeSemanticToken { get }
+    var switchSizeMinWidth: SizeSemanticToken { get }
+    var switchSizeWidthCursorSelected: SizeSemanticToken { get }
+    var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { get }
+    var switchSizeWidthCursorUnselected: SizeSemanticToken { get }
+    var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken  { get }
+    var switchSizeWidthTrack: SizeSemanticToken { get }
+    
+    // MARK: - Borders
+    
+    var switchBorderRadius: BorderRadiusSemanticToken { get }
+
     // MARK: - Colors
 
-    var switchColorCheck: MultipleColorSemanticTokens { get }
     var switchColorCursor: MultipleColorSemanticTokens { get }
+    var switchColorTrackSelected: MultipleColorSemanticTokens { get }
+    var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { get }
+    var switchColorTrackUnselected: MultipleColorSemanticTokens { get }
+    var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { get }
+    var switchColorCheck: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
 
     var switchSpacePaddingInlineUnselected: SpaceSemanticToken { get }
     var switchSpacePaddingInlineSelected: SpaceSemanticToken { get }
-
-    // MARK: - Sizes
-
-    var switchSize: SizeSemanticToken { get }
+    
+    // MARK: - Opacities
+    
+    var switchOpacityCheck: OpacitySemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
