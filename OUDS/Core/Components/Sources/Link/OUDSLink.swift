@@ -45,7 +45,8 @@ import SwiftUI
 /// If link is placed on colored surface using `OUDSColoredSurface`, the default colors (content text and icon or arrow) are automatically adjusted to switch to monochrom.
 ///
 /// ## Design documentation
-/// [unified-design-system.orange.com/472794e18/p/73c701-components](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+///
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/31c33b-link)
 ///
 /// - Since: 0.11.0
 public struct OUDSLink: View {

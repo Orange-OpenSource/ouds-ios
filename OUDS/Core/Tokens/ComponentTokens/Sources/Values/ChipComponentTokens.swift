@@ -27,7 +27,6 @@ public protocol ChipComponentTokens {
 
     // MARK: - Sizes
 
-    var chipSizeMaxHeight: SizeSemanticToken { get }
     var chipSizeMinHeight: SizeSemanticToken { get }
     var chipSizeMinWidth: SizeSemanticToken { get }
     var chipSizeIcon: SizeSemanticToken { get }

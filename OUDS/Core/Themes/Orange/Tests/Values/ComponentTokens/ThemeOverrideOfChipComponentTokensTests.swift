@@ -27,11 +27,6 @@ struct ThemeOverrideOfChipComponentTokensTests {
 
     // MARK: - Sizes
 
-    @Test func inheritedThemeCanOverrideChipComponentTokenSizeMaxHeight() throws {
-        #expect(inheritedTheme.chip.chipSizeMaxHeight != abstractTheme.chip.chipSizeMaxHeight)
-        #expect(inheritedTheme.chip.chipSizeMaxHeight == MockThemeChipComponentTokenProvider.mockThemeChipSize)
-    }
-
     @Test func inheritedThemeCanOverrideChipComponentTokenSizeMinHeight() throws {
         #expect(inheritedTheme.chip.chipSizeMinHeight != abstractTheme.chip.chipSizeMinHeight)
         #expect(inheritedTheme.chip.chipSizeMinHeight == MockThemeChipComponentTokenProvider.mockThemeChipSize)

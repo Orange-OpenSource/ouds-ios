@@ -28,26 +28,31 @@ final class MockThemeFontSemanticTokensProvider: OrangeThemeFontSemanticTokensPr
     static let mockThemeFontWeightRawToken: FontWeightRawToken = 888
     static let mockThemeFontSizeRawToken: FontSizeRawToken = 666
     static let mockThemeFontLineHeightRawToken: FontLineHeightRawToken = 321
-    static let mockThemeFontLetterSpacingRawToken: FontLetterSpacingRawToken = 21_092_024
+    static let mockThemeFontLetterSpacingRawToken: FontLetterSpacingRawToken = 24_032_025
     static let mockThemeMultipleFontSizeTokens = MultipleFontSizeSemanticTokens(mockThemeFontSizeRawToken)
     static let mockThemeMultipleFontLineHeightTokens = MultipleFontLineHeightSemanticTokens(mockThemeFontLineHeightRawToken)
     static let mockThemeMultipleFontLetterSpacingTokens = MultipleFontLetterSpacingSemanticTokens(mockThemeFontLetterSpacingRawToken)
 
     // MARK: Semantic token - Typography - Font - Family
 
-    override public var fontFamily: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override public var fontFamilySystem: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override public var fontFamilyCode: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override public var fontFamilyBody: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override public var fontFamilyDisplay: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override public var fontFamilyHeading: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
+    override public var fontFamilyLabel: FontFamilySemanticToken { Self.mockThemeFontFamilyRawToken }
 
     // MARK: Semantic token - Typography - Font - Weight
 
-    override public var fontWeightDefault: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightCode: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
-    override public var fontWeightStrong: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightDisplay: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightHeading: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightBodyDefault: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightBodyStrong: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightLabelDefault: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
     override public var fontWeightLabelStrong: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override public var fontWeightSystemDefault: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
+    override public var fontWeightSystemStrong: FontWeightSemanticToken { Self.mockThemeFontWeightRawToken }
 
     // MARK: - Semantic token - Typography - Multiples
 
