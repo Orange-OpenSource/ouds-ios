@@ -24,18 +24,11 @@ struct SwitchOnlyButtonStyle: ButtonStyle {
 
     @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled
-    @Environment(\.theme) private var theme
 
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
-        ZStack(alignment: .center) {
-            Color.clear
-                .frame(width: theme.switch.switchSizeWidthTrack, height: theme.switch.switchSizeHeightTrack)
-                .contentShape(Capsule())
-
-            SwitchIndicator(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn)
-        }
+        SwitchIndicator(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn)
         .onHover { isHover in
             self.isHover = isHover
         }

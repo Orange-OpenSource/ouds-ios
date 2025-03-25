@@ -59,11 +59,11 @@ struct SwitchIndicator: View {
     }
 
     private var trackWidth: Double {
-        Constants.inputSwitchSizeWidthTrack // TODO: use right token
+        theme.switch.switchSizeWidthTrack
     }
 
     private var trackHeight: Double {
-        Constants.inputSwitchSizeHeightTrack // TODO: use right token
+        theme.switch.switchSizeHeightTrack
     }
 }
 
@@ -94,17 +94,14 @@ struct Cursor: View {
     private var cursorWidth: Double {
         switch internalState {
         case .pressed:
-            // TODO: Use token
-            Constants.inputSwitchSizeWidthCursorPressed
+            isOn ? theme.switch.switchSizeWidthCursorSelectedPressed : theme.switch.switchSizeWidthCursorUnselectedPressed
         case .disabled, .enabled, .hover, .readOnly:
-            // TODO: Use token
-            isOn ? Constants.inputSwitchSizeWidthCursorTrue : Constants.inputSwitchSizeWidthCursorFalse
+            isOn ? theme.switch.switchSizeWidthCursorSelected : theme.switch.switchSizeWidthCursorUnselected
         }
     }
 
     private var cursorHeight: Double {
-        // TODO: Use token
-        isOn ? Constants.inputSwitchSizeWidthCursorTrue : Constants.inputSwitchSizeWidthCursorFalse
+        isOn ? theme.switch.switchSizeHeightCursorSelected : theme.switch.switchSizeHeightCursorUnselected
     }
 
     private var corsorBackgroundColor: Color {
@@ -118,9 +115,6 @@ struct Cursor: View {
             case .enabled, .disabled, .hover:
                 Image(decorative: "ic_form_tick", bundle: Bundle.OUDSComponents)
                     .renderingMode(.template)
-                    .resizable()
-                    .scaledToFit()
-                    .accessibilityHidden(true)
                     .foregroundStyle(tickColor.color(for: colorScheme))
             default:
                 EmptyView()
@@ -136,12 +130,3 @@ struct Cursor: View {
         }
     }
 }
-// swiftlint:disable convenience_type
-struct Constants {
-    static let inputSwitchSizeWidthTrack: CGFloat = 56
-    static let inputSwitchSizeHeightTrack: CGFloat = 32
-    static let inputSwitchSizeWidthCursorTrue: CGFloat = 24
-    static let inputSwitchSizeWidthCursorFalse: CGFloat = 16
-    static let inputSwitchSizeWidthCursorPressed: CGFloat = 32
-}
-// swiftlint:enable convenience_type
