@@ -57,7 +57,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    select: MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    skeleton: MockThemeSkeletonComponentTokenProvider(colors: colors),
                    tag: MockThemeTagComponentTokenProvider(colors: colors),
-                   switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities),
                    listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    bulletList: MockThemeBulletListComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),

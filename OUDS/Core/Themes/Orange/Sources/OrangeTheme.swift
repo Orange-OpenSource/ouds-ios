@@ -145,7 +145,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
             let select = (select ?? OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
             let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
             let tag = (tag ?? OrangeThemeTagComponentTokensProvider(colors: colors))
-            let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+            let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities))
             let listItem = (`listItem` ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
             let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
             let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
