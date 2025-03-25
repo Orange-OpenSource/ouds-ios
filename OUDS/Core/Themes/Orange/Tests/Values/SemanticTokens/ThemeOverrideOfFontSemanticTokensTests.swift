@@ -35,11 +35,35 @@ struct ThemeOverrideOfFontSemanticTokensTests {
 
     // MARK: - Semantic token - Typography - Font - Family
 
-    @Test func inheritedThemeCanOverrideSemanticTokenFontFamily() throws {
-        #expect(inheritedTheme.fonts.fontFamily != abstractTheme.fonts.fontFamily)
-        #expect(inheritedTheme.fonts.fontFamily == MockThemeFontSemanticTokensProvider.mockThemeFontFamilyRawToken)
+    @Test func inheritedThemeCanOverrideSemanticTokenFontFamilySystem() throws {
+        #expect(inheritedTheme.fonts.fontFamilySystem != abstractTheme.fonts.fontFamilySystem)
+        #expect(inheritedTheme.fonts.fontFamilySystem == MockThemeFontSemanticTokensProvider.mockThemeFontFamilyRawToken)
     }
 
+    @Test func inheritedThemeCanOverrideSemanticTokenFontFamilyCode() throws {
+        #expect(inheritedTheme.fonts.fontFamilyCode != abstractTheme.fonts.fontFamilyCode)
+        #expect(inheritedTheme.fonts.fontFamilyCode == MockThemeFontSemanticTokensProvider.mockThemeFontFamilyRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenFontFamilyBody() throws {
+        #expect(inheritedTheme.fonts.fontFamilyBody != abstractTheme.fonts.fontFamilyBody)
+        #expect(inheritedTheme.fonts.fontFamilyBody == MockThemeFontSemanticTokensProvider.mockThemeFontFamilyRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenFontFamilyDisplay() throws {
+        #expect(inheritedTheme.fonts.fontFamilyDisplay != abstractTheme.fonts.fontFamilyDisplay)
+        #expect(inheritedTheme.fonts.fontFamilyDisplay == MockThemeFontSemanticTokensProvider.mockThemeFontFamilyRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenFontFamilyHeading() throws {
+        #expect(inheritedTheme.fonts.fontFamilyHeading != abstractTheme.fonts.fontFamilyHeading)
+        #expect(inheritedTheme.fonts.fontFamilyHeading == MockThemeFontSemanticTokensProvider.mockThemeFontFamilyRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenFontFamilyLabel() throws {
+        #expect(inheritedTheme.fonts.fontFamilyLabel != abstractTheme.fonts.fontFamilyLabel)
+        #expect(inheritedTheme.fonts.fontFamilyLabel == MockThemeFontSemanticTokensProvider.mockThemeFontFamilyRawToken)
+    }
     // MARK: - Semantic token - Typography - Font - Weight
 
     @Test func inheritedThemeCanOverrideSemanticTokenFontWeightDefault() throws {
@@ -85,6 +109,16 @@ struct ThemeOverrideOfFontSemanticTokensTests {
     @Test func inheritedThemeCanOverrideSemanticTokenFontWeightLabelStrong() throws {
         #expect(inheritedTheme.fonts.fontWeightLabelStrong != abstractTheme.fonts.fontWeightLabelStrong)
         #expect(inheritedTheme.fonts.fontWeightLabelStrong == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenFontWeightSystemDefault() throws {
+        #expect(inheritedTheme.fonts.fontWeightSystemDefault != abstractTheme.fonts.fontWeightSystemDefault)
+        #expect(inheritedTheme.fonts.fontWeightSystemDefault == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
+    }
+
+    @Test func inheritedThemeCanOverrideSemanticTokenFontWeightSystemStrong() throws {
+        #expect(inheritedTheme.fonts.fontWeightSystemStrong != abstractTheme.fonts.fontWeightSystemStrong)
+        #expect(inheritedTheme.fonts.fontWeightSystemStrong == MockThemeFontSemanticTokensProvider.mockThemeFontWeightRawToken)
     }
 
     // MARK: - Semantic token - Typography - Font - Size

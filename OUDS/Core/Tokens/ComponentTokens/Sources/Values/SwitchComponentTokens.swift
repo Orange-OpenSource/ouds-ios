@@ -38,9 +38,9 @@ public protocol SwitchComponentTokens {
     var switchSizeWidthCursorUnselected: SizeSemanticToken { get }
     var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken  { get }
     var switchSizeWidthTrack: SizeSemanticToken { get }
-    
+
     // MARK: - Borders
-    
+
     var switchBorderRadius: BorderRadiusSemanticToken { get }
 
     // MARK: - Colors
@@ -56,9 +56,9 @@ public protocol SwitchComponentTokens {
 
     var switchSpacePaddingInlineUnselected: SpaceSemanticToken { get }
     var switchSpacePaddingInlineSelected: SpaceSemanticToken { get }
-    
+
     // MARK: - Opacities
-    
+
     var switchOpacityCheck: OpacitySemanticToken { get }
 }
 

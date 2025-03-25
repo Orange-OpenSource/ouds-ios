@@ -102,7 +102,7 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
 
     /// Provider of opacities semantic tokens to use for switch spaces
     public let opacities: AllOpacitySemanticTokensProvider
-    
+
     /// Defines a provider of component tokens dedicated to `OUDSSwitch`
     /// - Parameters:
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)

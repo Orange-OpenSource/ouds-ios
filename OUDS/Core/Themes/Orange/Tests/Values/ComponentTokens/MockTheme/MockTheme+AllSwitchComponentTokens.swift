@@ -57,11 +57,11 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
     override public var switchSizeWidthCursorUnselected: SizeSemanticToken { Self.mockThemeSwitchSize }
     override public var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken  { Self.mockThemeSwitchSize }
     override public var switchSizeWidthTrack: SizeSemanticToken { Self.mockThemeSwitchSize }
-    
+
     // MARK: Borders
-    
+
     override public var switchBorderRadius: BorderRadiusSemanticToken { Self.mockThemeSwitchBorderRadius }
-    
+
     // MARK: Colors
 
     override public var switchColorCursor: MultipleColorSemanticTokens { Self.mockThemeSwitchColor }

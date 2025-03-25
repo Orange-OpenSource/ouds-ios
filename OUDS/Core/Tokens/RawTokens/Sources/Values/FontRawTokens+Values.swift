@@ -18,6 +18,7 @@
 
 extension FontRawTokens {
     public static let fontFamilyMonospaceMenlo: FontFamilyRawToken = "Menlo"
+    public static let fontFamilyMonospaceSfMono: FontFamilyRawToken = "SF Mono"
     public static let fontFamilySystemSfPro: FontFamilyRawToken = "SF Pro"
     public static let fontLetterSpacing150: FontLetterSpacingRawToken = 0.18
     public static let fontLetterSpacing175: FontLetterSpacingRawToken = 0.19
