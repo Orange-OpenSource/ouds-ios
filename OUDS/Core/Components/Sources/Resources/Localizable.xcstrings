@@ -8,6 +8,12 @@
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تم فحصه"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26,6 +32,12 @@
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرًا مزدوجًا لتبديل الإعداد %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -44,6 +56,12 @@
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير محدد"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -62,6 +80,12 @@
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مربع الاختيار"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -80,6 +104,12 @@
       "comment" : "Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير محدد"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -98,6 +128,12 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عاجز"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -116,6 +152,12 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مُمَكَّن"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -134,10 +176,16 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يوجد خطأ"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "is on errror"
+            "value" : "is on error"
           }
         },
         "fr" : {
@@ -152,6 +200,12 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مُختار"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -170,6 +224,12 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير محدد"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -188,6 +248,12 @@
       "comment" : "Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرًا مزدوجًا لتبديل الإعداد %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -206,6 +272,12 @@
       "comment" : "Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "زر الراديو"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
