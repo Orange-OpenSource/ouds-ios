@@ -49,6 +49,52 @@
         }
       }
     },
+    "app_about_appSettings_hint_a11y" : {
+      "comment" : "About screen - App settings",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر مرتين للانتقال إلى إعدادات التطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap twice to go to app settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez deux fois pour accéder aux paramètres de l'application"
+          }
+        }
+      }
+    },
+    "app_about_appSettings_label" : {
+      "comment" : "About screen - App settings",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "افتح إعدادات التطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open app settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir les paramètres de l'application"
+          }
+        }
+      }
+    },
     "app_about_details_appVersion" : {
       "comment" : "About screen - App details",
       "extractionState" : "manual",
