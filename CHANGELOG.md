@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignToolbox] Broken wording in radio button page
 - [DesignToolbox] Update Checkbox and Radio button assets on the screen of component list ([#519](https://github.com/Orange-OpenSource/ouds-ios/issues/519))
 
 ## [0.12.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.11.0...0.12.0) - 2025-03-20
