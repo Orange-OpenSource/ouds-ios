@@ -5,6 +5,12 @@
       "comment" : "About screen - Tokens library version",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -23,6 +29,12 @@
       "comment" : "About screen",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "بيان إمكانية الوصول"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -37,10 +49,62 @@
         }
       }
     },
+    "app_about_appSettings_hint_a11y" : {
+      "comment" : "About screen - App settings",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر مرتين للانتقال إلى إعدادات التطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tap twice to go to app settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez deux fois pour accéder aux paramètres de l'application"
+          }
+        }
+      }
+    },
+    "app_about_appSettings_label" : {
+      "comment" : "About screen - App settings",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "افتح إعدادات التطبيق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open app settings"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir les paramètres de l'application"
+          }
+        }
+      }
+    },
     "app_about_details_appVersion" : {
       "comment" : "About screen - App details",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إصدار التطبيق: %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -59,6 +123,12 @@
       "comment" : "About screen - App details",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "رقم البناء: %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -77,6 +147,12 @@
       "comment" : "About screen - App details",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نوع البناء: %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -95,6 +171,12 @@
       "comment" : "About screen - App details",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تفاصيل البناء (GitHub): %@"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -113,6 +195,12 @@
       "comment" : "About screen",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المعلومات القانونية"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -131,6 +219,12 @@
       "comment" : "About screen",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "سياسة الخصوصية"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -149,6 +243,12 @@
       "comment" : "Bottom bar",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عن"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -167,6 +267,12 @@
       "comment" : "Bottom bar",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عناصر"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -185,6 +291,12 @@
       "comment" : "Bottom bar",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الرموز"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -203,6 +315,12 @@
       "comment" : "Component screen",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "إعدادات"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -221,6 +339,12 @@
       "comment" : "Common (a11y)",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسخ الكود"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -239,6 +363,12 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تخصيص"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -257,6 +387,12 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مُمَكَّن"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -275,6 +411,12 @@
       "comment" : "Common (a11y)",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نسخ الكود إلى الحافظة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -293,6 +435,12 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عرض مثال رمز الرمز المميز"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -311,6 +459,12 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تبديل رؤية الكود"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -329,6 +483,12 @@
       "comment" : "Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا المحتوى قيد الإنشاء وسيكون متاحًا قريبًا جدًا"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -347,6 +507,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لا يوجد محتوى"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -365,6 +531,12 @@
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتيح الأزرار للمستخدمين اختيار ما يريدونه أو تنفيذ إجراء ما. وتتوفر بأنماط متعددة لتلبية احتياجات متنوعة."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -383,6 +555,12 @@
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تَسَلسُل"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -401,6 +579,12 @@
       "comment" : "Component - Button (a11y)",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "رمز"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -419,6 +603,12 @@
       "comment" : "Component - Button",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أيقونة فقط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -437,6 +627,12 @@
       "comment" : "Component - Button",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "زر"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -455,6 +651,12 @@
       "comment" : "Component - Button",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "غير مسموح به على الأسطح الملونة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -473,6 +675,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتيح مربعات الاختيار للمستخدمين تحديد خيار واحد أو خيارات متعددة من القائمة، أو تشغيل الإعدادات أو إيقاف تشغيلها، أو تأكيد إجراء ما."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -491,6 +699,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنصر مربع الاختيار"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -509,6 +723,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتيح مربعات الاختيار للمستخدمين تحديد خيار واحد أو خيارات متعددة من القائمة، أو تشغيل الإعدادات أو إيقاف تشغيلها، أو تأكيد إجراء ما."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -527,6 +747,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص مساعد"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -545,6 +771,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه علامة مزيفة مستخدمة في التطبيق التجريبي"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -563,6 +795,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مؤشر فقط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -581,6 +819,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مربعات الاختيار"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -599,6 +843,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ملصق"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -617,6 +867,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تَخطِيط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -635,6 +891,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختيار"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -653,6 +915,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنصر مربع الاختيار ثلاثي الحالات"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -671,6 +939,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مربع الاختيار الخاص بثلاث حالات فقط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -689,6 +963,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنصر مربع الاختيار الخاص بالحالتين"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -707,6 +987,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مربع الاختيار الخاص بالحالتين فقط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -725,6 +1011,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -743,6 +1035,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تعديل المحتوى"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -761,6 +1059,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "المساعد"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -779,6 +1083,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "رمز"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -797,6 +1107,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أيقونة + نص"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -815,6 +1131,12 @@
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ملصق"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -833,6 +1155,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تَخطِيط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -851,6 +1179,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "على خلفية ملونة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -869,6 +1203,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطأ"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -887,6 +1227,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تَخطِيط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -905,6 +1251,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "للقراءة فقط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -923,6 +1275,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أسلوب"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -941,6 +1299,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص فقط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -959,6 +1323,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -977,6 +1347,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل النص"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -995,6 +1371,12 @@
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عرض مثال على كود المكون"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1013,6 +1395,12 @@
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خلف"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1031,6 +1419,12 @@
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التالي"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1049,6 +1443,12 @@
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تؤدي الروابط إلى توجيه المستخدمين إلى موارد أو أقسام أخرى، سواء داخلية (ضمن نفس التطبيق) أو خارجية (إلى موقع ويب أو مستند)."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1067,6 +1467,12 @@
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "وصلة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1085,6 +1491,12 @@
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مقاس"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1103,6 +1515,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص الملصق الإضافي"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1121,6 +1539,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص الملصق الإضافي"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1139,6 +1563,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتيح أجهزة الراديو للمستخدمين اختيار خيار واحد من القائمة."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1157,6 +1587,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنصر الراديو"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1175,6 +1611,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتيح الراديو للمستخدمين اختيار خيار من القائمة."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1193,6 +1635,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص مساعد"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1211,6 +1659,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه علامة مزيفة مستخدمة في التطبيق التجريبي"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1229,6 +1683,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مؤشر فقط"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1247,6 +1707,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "راديو"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1265,6 +1731,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ملصق"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1283,6 +1755,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مخطط تفصيلي"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1301,6 +1779,12 @@
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختيار"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1319,6 +1803,12 @@
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم استخدام الحدود لألوان الخطوط على المكونات وكذلك لألوان خطوط التقسيم للمكونات مثل الجداول."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1337,6 +1827,12 @@
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حدود"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1355,6 +1851,12 @@
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نصف القطر"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1373,6 +1875,12 @@
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أسلوب"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1391,6 +1899,12 @@
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عرض"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1409,6 +1923,12 @@
       "comment" : "Tokens - Color",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يُعزز اللون هوية علامتنا التجارية ويضمن الاتساق في جميع تجارب المنتجات. الرموز الدلالية المذكورة هي ما يُنصح باستخدامه عند إنشاء تطبيق جوال."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1427,6 +1947,12 @@
       "comment" : "Tokens - Color",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لون"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1445,6 +1971,12 @@
       "comment" : "Token screen",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عرض مثال رمز الرمز المميز"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1463,6 +1995,12 @@
       "comment" : "Token - Dimension",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يوفر البعد أحجامًا ومسافات قياسية لضمان الاتساق البصري عبر واجهة المستخدم."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1481,6 +2019,12 @@
       "comment" : "Token - Dimension",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "البعد"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1499,6 +2043,12 @@
       "comment" : "Token - Dimension - Size",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يشير الحجم إلى القياسات المحددة المستخدمة لتحديد أبعاد عناصر واجهة المستخدم ضمن نظام التصميم."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1517,6 +2067,12 @@
       "comment" : "Token - Dimension - Size",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أيقونة زخرفية"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1535,6 +2091,12 @@
       "comment" : "Token - Dimension - Size",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أيقونة مع"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1553,6 +2115,12 @@
       "comment" : "Token - Dimension - Size",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مقاس"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1571,6 +2139,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تشير المساحة إلى القياسات المستخدمة لتحديد المسافة بين عناصر واجهة المستخدم."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1589,6 +2163,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مُثَبَّت"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1607,6 +2187,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فجوة مضمنة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1625,6 +2211,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الفجوة المتوازية مع السهم"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1643,6 +2235,12 @@
       "comment" : "Token - Dimension - Space - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فجوة متوازية مع الرمز"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1661,6 +2259,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "كومة الفجوة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1679,6 +2283,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "كومة الفجوة مع الرمز"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1697,6 +2307,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "استخدم الأطر المرنة لتوفير ملخص قوي للنظرات العامة عالية المستوى."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1715,6 +2331,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فضاء"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1733,6 +2355,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الحشو المضمن"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1751,6 +2379,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حشوة داخلية"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1769,6 +2403,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "كومة الحشو"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1787,6 +2427,12 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مقياس"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1805,6 +2451,12 @@
       "comment" : "Token - Elevation",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم استخدام الظلال لإعطاء انطباع بالمسافة أو الارتفاع بين الأسطح، مما يضيف عمقًا إلى تصميماتنا."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1823,6 +2475,12 @@
       "comment" : "Token - Elevation",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ارتفاع"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1841,6 +2499,12 @@
       "comment" : "Token - Grid",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم استخدام الشبكات لتحديد موضع المحتوى وإنشاء تخطيطات صفحات متسقة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1859,6 +2523,12 @@
       "comment" : "Token - Grid",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "شبكة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1877,6 +2547,12 @@
       "comment" : "Token - Opacity",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يمكن أن تساعد العتامة في التمييز بين عناصر المقدمة وعناصر الخلفية، مما يجعل المحتوى أسهل في القراءة والإجراءات المهمة أكثر وضوحًا."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1895,6 +2571,12 @@
       "comment" : "Token - Opacity",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "العتامة"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1913,6 +2595,12 @@
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الخط هو نظامنا من الخطوط وأنماط النصوص. يُحسّن هذا النظام التواصل ويُعزز أسلوب علامتنا التجارية."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1931,6 +2619,12 @@
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عائلة (%@)،"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1949,6 +2643,12 @@
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يصنع"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1967,6 +2667,12 @@
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تباعد الأحرف (%.2f)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1985,6 +2691,12 @@
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تباعد الأحرف (%.2f)"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2003,6 +2715,12 @@
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الحجم (%.2f)،"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2021,6 +2739,12 @@
       "comment" : "Token - Typography",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "الوزن (%lld)،"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2039,6 +2763,12 @@
       "comment" : "Top bar",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تغيير الموضوع"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2057,6 +2787,12 @@
       "comment" : "Top bar",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر لتغيير سمة التطبيق"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",

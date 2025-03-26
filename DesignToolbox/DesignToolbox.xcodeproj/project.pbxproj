@@ -381,6 +381,8 @@
 		51952A8E2D3FA2490068B807 /* OUDSTokensOpacityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSTokensOpacityUITests.swift; sourceTree = "<group>"; };
 		51952A912D3FA26B0068B807 /* OUDSButtonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSButtonUITests.swift; sourceTree = "<group>"; };
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		51B842BB2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_legal_information.html; sourceTree = "<group>"; };
+		51B842BC2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		51BD760B2C466FCF0033365D /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementsPage.swift; sourceTree = "<group>"; };
 		51BD76122C466FCF0033365D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -1068,6 +1070,7 @@
 				en,
 				Base,
 				fr,
+				ar,
 			);
 			mainGroup = 07FDCD882C296A500009AA13;
 			packageReferences = (
@@ -1412,6 +1415,7 @@
 			children = (
 				51BD76142C466FCF0033365D /* en */,
 				5122E0252D65D13400CD2857 /* fr */,
+				51B842BB2D93FF45000382F8 /* ar */,
 			);
 			name = about_legal_information.html;
 			sourceTree = "<group>";
@@ -1421,6 +1425,7 @@
 			children = (
 				51BD76162C466FCF0033365D /* en */,
 				5122E0262D65D13400CD2857 /* fr */,
+				51B842BC2D93FF45000382F8 /* ar */,
 			);
 			name = about_privacy_policy.html;
 			sourceTree = "<group>";
