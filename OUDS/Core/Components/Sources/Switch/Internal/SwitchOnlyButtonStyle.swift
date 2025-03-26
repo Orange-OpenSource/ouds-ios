@@ -28,10 +28,13 @@ struct SwitchOnlyButtonStyle: ButtonStyle {
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
-        SwitchIndicator(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn)
-        .onHover { isHover in
-            self.isHover = isHover
-        }
+        let state = internalState(isPressed: configuration.isPressed)
+        SwitchIndicator(internalState: state, isOn: isOn)
+            .onHover { isHover in
+                self.isHover = isHover
+            }
+            .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: configuration.isPressed)
+            .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: isHover)
     }
 
     // MARK: - Helpers
