@@ -28,4 +28,30 @@ enum ControlItemInternalState {
 
     /// The component is not disabled but user cannot interact with it still. Almost enabled.
     case readOnly // (╯°□°）╯︵ ┻━┻
+
+/// Create the state according to current states.
+/// - Parameters:
+///    - isEnabled: true if enabled, false otherwise (i.e. get for `isEnabled` environment)
+///    - isHover: true if a view is hoverd, false otherwise (i.e. get from `onHover`)
+///    - isPressed: true if pressed, false otherwise (i.e. get from `ButtonStyle.Configuration`)
+///    - isReadOnly: true if read only, false otherwise
+    init(isEnabled: Bool, isHover: Bool, isPressed: Bool, isReadOnly: Bool = false) {
+        if isReadOnly {
+            self = .readOnly
+        } else {
+            if !isEnabled {
+                self = .disabled
+            } else {
+                if isPressed {
+                    self = .pressed
+                } else {
+                    if isHover {
+                        self = .hover
+                    } else {
+                        self = .enabled
+                    }
+                }
+            }
+        }
+    }
 }
