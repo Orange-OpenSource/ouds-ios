@@ -20,7 +20,7 @@ import SwiftUI
 /// i.e. draw kind of borders around the object.
 /// If this view modifier is used to draw an outline in an error context for a disabled component, a *faal error* will happen
 /// because this behaviour is forbidden by design.
-struct ControlItemStyleOutlinedModifier: ViewModifier {
+struct ControlItemContentOutlinedModifier: ViewModifier {
 
     // MARK: Stored properties
 

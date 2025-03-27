@@ -32,8 +32,17 @@ struct CheckboxIndicator: View {
     // MARK: - Body
 
     var body: some View {
-        indicator()
-            .modifier(CheckboxIndicatorStyle(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
+        ZStack {
+            Color.clear
+                .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
+                       maxWidth: theme.checkbox.checkboxSizeMinWidth,
+                       minHeight: theme.checkbox.checkboxSizeMinHeight,
+                       maxHeight: theme.checkbox.checkboxSizeMaxHeight)
+                .contentShape(Rectangle())
+
+            indicator()
+                .modifier(CheckboxIndicatorModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
+        }
     }
 
     // MARK: - Indicator
@@ -46,7 +55,6 @@ struct CheckboxIndicator: View {
             tickImage(name: "ic_form_dash")
         } else { // .unselected
             Color.clear
-                .modifier(IndicatorFrameModifier())
         }
     }
 
@@ -54,7 +62,6 @@ struct CheckboxIndicator: View {
         Image(decorative: name, bundle: Bundle.OUDSComponents)
             .resizable()
             .scaledToFit()
-            .modifier(IndicatorFrameModifier())
             .accessibilityHidden(true)
             .foregroundColor(appliedColor.color(for: colorScheme))
     }
@@ -84,18 +91,5 @@ struct CheckboxIndicator: View {
                 return theme.colors.colorActionDisabled
             }
         }
-    }
-}
-
-// MARK: - Indicator Frame Modifier
-
-private struct IndicatorFrameModifier: ViewModifier {
-
-    @Environment(\.theme) private var theme
-
-    func body(content: Content) -> some View {
-        content
-            .frame(width: theme.checkbox.checkboxSizeIndicator,
-                   height: theme.checkbox.checkboxSizeIndicator)
     }
 }

@@ -16,37 +16,37 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Checkbox Indicator Style
+// MARK: - Radio Indicator Modifier
 
-/// A `ViewModier` to apply to the ``CheckboxIndicator`` component.
-/// It will define the look and feel of the indicator depending to the ``InteractionState``,
-/// the ``OUDSCheckboxIndicatorState`` and if there is an error context or not.
-struct CheckboxIndicatorStyle: ViewModifier {
+/// A `ViewModier` to apply to the ``RadioIndicator`` component.
+/// It will define the look and feel of the indicator depending to the ``InteractionState`` and some flags
+struct RadioIndicatorModifier: ViewModifier {
 
     // MARK: - Properties
 
     let interactionState: InteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
+    let isOn: Bool
     let isError: Bool
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
         content
-            .modifier(CheckboxIndicatorBorderModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
-            .modifier(CheckboxIndicatorForegroundModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
-            .modifier(CheckboxIndicatorBackgroundModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
+            .modifier(SizeFrameModifier())
+            .modifier(RadioIndicatorBorderModifier(interactionState: interactionState, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorForegroundModifier(interactionState: interactionState, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorBackgroundModifier(interactionState: interactionState, isOn: isOn, isError: isError))
     }
 }
 
-// MARK: - Checkbox Indicator Foreground Modifier
+// MARK: - Radio Indicator Foreground Modifier
 
-private struct CheckboxIndicatorForegroundModifier: ViewModifier {
+private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
     let interactionState: InteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
+    let isOn: Bool
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -78,12 +78,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
         if isError {
             return theme.colors.colorActionNegativeEnabled
         } else {
-            switch indicatorState {
-            case .selected, .indeterminate:
-                return theme.colors.colorActionSelected
-            case .unselected:
-                return theme.colors.colorActionEnabled
-            }
+            return isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
         }
     }
 
@@ -97,21 +92,21 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
     }
 }
 
-// MARK: - Checkbox Indicator Background Modifier
+// MARK: - Radio Indicator Background Modifier
 
-private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
+private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
     let interactionState: InteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
+    let isOn: Bool
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -144,30 +139,30 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     }
 
     private var hoverColor: Color {
-        theme.controlItem.controlItemColorBgHover.color(for: colorScheme)
+        Color.clear
     }
 
     private var pressedColor: Color {
-        theme.controlItem.controlItemColorBgPressed.color(for: colorScheme)
+        Color.clear
     }
 
     private var disabledColor: Color {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
+            OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
     }
 }
 
-// MARK: - Checkbox IndicIndicatorator Border Modifier
+// MARK: - Radio Indicator Border Modifier
 
-private struct CheckboxIndicatorBorderModifier: ViewModifier {
+private struct RadioIndicatorBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
     let interactionState: InteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
+    let isOn: Bool
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -202,12 +197,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
         if isError {
             return theme.colors.colorActionNegativeEnabled
         } else {
-            switch indicatorState {
-            case .selected, .indeterminate:
-                return theme.colors.colorActionSelected
-            case .unselected:
-                return theme.colors.colorActionEnabled
-            }
+            return isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
         }
     }
 
@@ -229,7 +219,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
-            OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed"
+            OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed"
                      + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
@@ -251,44 +241,37 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     }
 
     private var enabledWidth: CGFloat {
-        switch indicatorState {
-        case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelected
-        case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselected
-        }
+        isOn ? theme.radioButton.radioButtonBorderWidthSelected : theme.radioButton.radioButtonBorderWidthUnselected
     }
 
     private var hoverWidth: CGFloat {
-        switch indicatorState {
-        case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelectedHover
-        case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselectedHover
-        }
+        isOn ? theme.radioButton.radioButtonBorderWidthSelectedHover : theme.radioButton.radioButtonBorderWidthUnselectedHover
     }
 
     private var pressedWidth: CGFloat {
-        switch indicatorState {
-        case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelectedPressed
-        case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselectedPressed
-        }
+        isOn ? theme.radioButton.radioButtonBorderWidthSelectedPressed : theme.radioButton.radioButtonBorderWidthUnselectedPressed
     }
 
     private var disabledWidth: CGFloat {
-        switch indicatorState {
-        case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelected
-        case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselected
-        }
+        isOn ? theme.radioButton.radioButtonBorderWidthSelected : theme.radioButton.radioButtonBorderWidthUnselected
     }
 
     // MARK: - Border radius
 
     private var appliedBorderRadius: CGFloat {
-        theme.checkbox.checkboxBorderRadius
+        theme.radioButton.radioButtonBorderRadius
+    }
+}
+
+// MARK: - Indicator Frame Modifier
+
+private struct SizeFrameModifier: ViewModifier {
+
+    @Environment(\.theme) private var theme
+
+    func body(content: Content) -> some View {
+        content
+            .frame(width: theme.radioButton.radioButtonSizeIndicator,
+                   height: theme.radioButton.radioButtonSizeIndicator)
     }
 }

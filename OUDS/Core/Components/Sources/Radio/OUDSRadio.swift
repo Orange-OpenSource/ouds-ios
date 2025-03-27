@@ -90,14 +90,15 @@ public struct OUDSRadio: View { // TODO: #266 - Update documentation hyperlink a
     // MARK: Body
 
     public var body: some View {
-        Button("") {
+        InteractionButton {
             $isOn.wrappedValue.toggle()
+        } content: { interactionState in
+            RadioIndicator(interactionState: interactionState, isOn: isOn, isError: isError)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)
         .accessibilityValue(a11yValue.localized())
         .accessibilityHint(a11yHint)
-        .buttonStyle(RadioOnlyButtonStyle(isOn: $isOn.wrappedValue, isError: isError))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state

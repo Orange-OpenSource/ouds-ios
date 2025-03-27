@@ -99,14 +99,15 @@ public struct OUDSCheckboxIndeterminate: View {
     // MARK: Body
 
     public var body: some View {
-        Button("") {
+        InteractionButton {
             $selection.wrappedValue.toggle()
+        } content: { interactionState in
+            CheckboxIndicator(interactionState: interactionState, indicatorState: $selection.wrappedValue, isError: isError)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
         .accessibilityValue(selection.a11yDescription.localized())
         .accessibilityHint(selection.a11yHint)
-        .buttonStyle(CheckboxOnlyButtonStyle(indicatorState: $selection.wrappedValue, isError: isError))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state

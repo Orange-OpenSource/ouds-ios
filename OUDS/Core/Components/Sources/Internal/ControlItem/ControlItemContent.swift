@@ -16,7 +16,9 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The layout for the ``ControlItem`` component as SwiftUI `ButtonStyle` to compute the interaction state ``InteractionState`` used by :
+/// The content for the ``ControlItem`` component according to the interaction state ``InteractionState``.
+///
+/// This state is used by:
 /// - the indicator according to ``ControlItem.IndicatorType`` to apply right tokens
 /// - the label described by ``ControlItemLabel.LayoutData`` to apply right tokens on texts
 /// - the icon described by ``ControlItemLabel.LayoutData`` to apply right tokens on icon
@@ -51,7 +53,7 @@ struct ControlItemContent: View {
         .padding(.all, theme.controlItem.controlItemSpaceInset)
         .oudsDivider(show: layoutData.hasDivider)
         .background(backgroundColor)
-        .modifier(ControlItemStyleOutlinedModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
+        .modifier(ControlItemContentOutlinedModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
     }
 
     // MARK: Containers

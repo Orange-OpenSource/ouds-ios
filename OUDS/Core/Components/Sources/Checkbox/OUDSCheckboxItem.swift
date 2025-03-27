@@ -159,16 +159,11 @@ public struct OUDSCheckboxItem: View {
     // MARK: Body
 
     public var body: some View {
-        Button("") {
-            if !layoutData.isReadOnly {
-                $isOn.wrappedValue.toggle()
-            }
-        }
-        .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel(layoutData: layoutData))
-        .accessibilityValue(a11yValue())
-        .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, indicatorState: convertedState.wrappedValue))
-        .buttonStyle(ControlItemStyle(indicatorType: .checkBox(convertedState), layoutData: layoutData))
+        ControlItem(indicatorType: .checkBox(convertedState), layoutData: layoutData)
+            .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
+            .accessibilityLabel(a11yLabel(layoutData: layoutData))
+            .accessibilityValue(a11yValue())
+            .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, indicatorState: convertedState.wrappedValue))
     }
 
     // MARK: - computed value

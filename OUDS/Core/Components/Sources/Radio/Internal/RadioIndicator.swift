@@ -27,14 +27,21 @@ struct RadioIndicator: View {
     let isError: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
     var body: some View {
-        indicator()
-            .frame(width: theme.radioButton.radioButtonSizeIndicator, height: theme.radioButton.radioButtonSizeIndicator)
-            .modifier(RadioIndicatorStyle(interactionState: interactionState, isOn: isOn, isError: isError))
+        ZStack(alignment: .center) {
+            Color.clear
+                .frame(minWidth: theme.radioButton.radioButtonSizeMinWidth,
+                       maxWidth: theme.radioButton.radioButtonSizeMinWidth,
+                       minHeight: theme.radioButton.radioButtonSizeMinHeight,
+                       maxHeight: theme.radioButton.radioButtonSizeMaxHeight)
+                .contentShape(Circle())
+
+            indicator()
+                .modifier(RadioIndicatorModifier(interactionState: interactionState, isOn: isOn, isError: isError))
+        }
     }
 
     // MARK: - Indicator

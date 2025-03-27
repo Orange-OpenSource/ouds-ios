@@ -98,14 +98,15 @@ public struct OUDSCheckbox: View {
     // MARK: Body
 
     public var body: some View {
-        Button("") {
+        InteractionButton {
             $isOn.wrappedValue.toggle()
+        } content: { interactionState in
+            CheckboxIndicator(interactionState: interactionState, indicatorState: convertedState, isError: isError)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
         .accessibilityValue(a11yValue())
         .accessibilityHint(a11yHint())
-        .buttonStyle(CheckboxOnlyButtonStyle(indicatorState: convertedState, isError: isError))
     }
 
     // MARK: - Computed value
