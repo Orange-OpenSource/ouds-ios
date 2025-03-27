@@ -22,11 +22,11 @@ import OUDSTokensSemantic
 extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     @objc open var switchBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusPill }
     @objc open var switchColorCheck: MultipleColorSemanticTokens { colors.colorContentDefault }
-    @objc open var switchColorCursor: MultipleColorSemanticTokens { colors.colorRepositoryNeutralMutedWhite }
-    @objc open var switchColorTrackSelected: MultipleColorSemanticTokens { colors.colorRepositoryPositiveDefault }
-    @objc open var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { colors.colorRepositoryPositiveHigh }
-    @objc open var switchColorTrackUnselected: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackMedium }
-    @objc open var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { colors.colorRepositoryOpacityBlackHigh }
+    @objc open var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhiteLight, dark: colors.colorRepositoryNeutralEmphasizedHighestDark) }
+    @objc open var switchColorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefaultLight, dark: colors.colorRepositoryPositiveHighDark) }
+    @objc open var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHighLight, dark: colors.colorRepositoryPositiveLowDark) }
+    @objc open var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumLight, dark: colors.colorRepositoryOpacityWhiteHighDark) }
+    @objc open var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHighLight, dark: colors.colorRepositoryOpacityWhiteHigherDark) }
     @objc open var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
     @objc open var switchSizeHeightCursorSelected: SizeSemanticToken { DimensionRawTokens.dimension300 }
     @objc open var switchSizeHeightCursorUnselected: SizeSemanticToken { DimensionRawTokens.dimension200 }
