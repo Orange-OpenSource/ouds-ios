@@ -15,8 +15,10 @@ import SwiftUI
 
 struct ControlItemIcon: View {
 
+    // MARK: - Stored properties
+
+    let interactionState: InteractionState
     let icon: Image?
-    let internalState: ControlItemInternalState
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
@@ -40,7 +42,7 @@ struct ControlItemIcon: View {
     // MARK: - Colors
 
     private var iconColor: Color {
-        switch internalState {
+        switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
             theme.colors.colorContentDefault.color(for: colorScheme)
         case .disabled:

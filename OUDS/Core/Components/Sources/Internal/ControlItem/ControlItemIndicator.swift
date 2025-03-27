@@ -17,9 +17,9 @@ struct ControlItemIndicator: View {
 
     // MARK: - Stored properties
 
+    let interactionState: InteractionState
     let indicatorType: ControlItem.IndicatorType
     let layoutData: ControlItemLabel.LayoutData
-    let internalState: ControlItemInternalState
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -32,11 +32,11 @@ struct ControlItemIndicator: View {
             case .switch:
                 // TODO: #405 - Add switch indicator
                 Text("TODO: Add switch indicator here")
-//                OUDSSwitchIndicator(internalState: internalState(isPressed: isPressed), isOn: binding.wrappedValue)
+//                OUDSSwitchIndicator(InteractionState: InteractionState(isPressed: isPressed), isOn: binding.wrappedValue)
             case .radioButton(let binding):
-                RadioIndicator(internalState: internalState, isOn: binding.wrappedValue, isError: layoutData.isError)
+                RadioIndicator(interactionState: interactionState, isOn: binding.wrappedValue, isError: layoutData.isError)
             case .checkBox(let binding):
-                CheckboxIndicator(internalState: internalState, indicatorState: binding.wrappedValue, isError: layoutData.isError)
+                CheckboxIndicator(interactionState: interactionState, indicatorState: binding.wrappedValue, isError: layoutData.isError)
             }
         }
         .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)

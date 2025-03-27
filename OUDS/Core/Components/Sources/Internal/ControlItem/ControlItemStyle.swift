@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The layout for the ``ControlItem`` component as SwiftUI `ButtonStyle` to compute the internal state  ``ControlItemInternalState`` used by :
+/// The layout for the ``ControlItem`` component as SwiftUI `ButtonStyle` to compute the internal state  ``InteractionState`` used by :
 /// - the indicatpr according to ``ControlItem.IndicatorType`` to apply right tokens
 /// - the label described by ``ControlItemLabel.LayoutData`` to apply right tokens on texts and icon
 struct ControlItemStyle: ButtonStyle {
@@ -31,8 +31,8 @@ struct ControlItemStyle: ButtonStyle {
     // MARK: Body
 
     func makeBody(configuration: Configuration) -> some View {
-        let internalState = ControlItemInternalState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed, isReadOnly: layoutData.isReadOnly)
-        ControlItemContent(indicatorType: indicatorType, layoutData: layoutData, internalState: internalState)
+        let interactionState = InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed, isReadOnly: layoutData.isReadOnly)
+        ControlItemContent(interactionState: interactionState, indicatorType: indicatorType, layoutData: layoutData)
             .onHover { isHover in
                 self.isHover = isHover
             }

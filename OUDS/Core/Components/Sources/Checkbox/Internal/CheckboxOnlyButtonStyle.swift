@@ -30,6 +30,7 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
+        let interactionState = InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
         ZStack {
             Color.clear
                 .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
@@ -38,30 +39,12 @@ struct CheckboxOnlyButtonStyle: ButtonStyle {
                        maxHeight: theme.checkbox.checkboxSizeMaxHeight)
                 .contentShape(Rectangle())
 
-            CheckboxIndicator(internalState: internalState(isPressed: configuration.isPressed), indicatorState: indicatorState, isError: isError)
+            CheckboxIndicator(interactionState: interactionState, indicatorState: indicatorState, isError: isError)
                 .frame(width: theme.checkbox.checkboxSizeIndicator,
                        height: theme.checkbox.checkboxSizeIndicator)
                 .onHover { isHover in
                     self.isHover = isHover
                 }
         }
-    }
-
-    // MARK: - Helpers
-
-    private func internalState(isPressed: Bool) -> ControlItemInternalState {
-        if !isEnabled {
-            return .disabled
-        }
-
-        if isPressed {
-            return .pressed
-        }
-
-        if isHover {
-            return .hover
-        }
-
-        return .enabled
     }
 }

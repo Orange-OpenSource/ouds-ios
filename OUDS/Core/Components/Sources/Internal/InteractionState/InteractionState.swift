@@ -11,8 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-/// The internal state used by modifiers to handle all states of the indicator.
-enum ControlItemInternalState {
+/// The internal interaction state used by modifiers to handle all states of the indicator.
+enum InteractionState {
 
     /// User can interact with the component
     case enabled

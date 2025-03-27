@@ -17,12 +17,12 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// The indicator of the radio.
-/// Its content depends mainly to the ``ControlItemInternalState`` and from flags also.
+/// Its content depends mainly to the ``InteractionState`` and from flags also.
 struct RadioIndicator: View {
 
     // MARK: - Properties
 
-    let internalState: ControlItemInternalState
+    let interactionState: InteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -34,7 +34,7 @@ struct RadioIndicator: View {
     var body: some View {
         indicator()
             .frame(width: theme.radioButton.radioButtonSizeIndicator, height: theme.radioButton.radioButtonSizeIndicator)
-            .modifier(RadioIndicatorStyle(state: internalState, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorStyle(interactionState: interactionState, isOn: isOn, isError: isError))
     }
 
     // MARK: - Indicator
@@ -58,7 +58,7 @@ struct RadioIndicator: View {
 
     private var appliedColor: MultipleColorSemanticTokens {
         if isError {
-            switch internalState {
+            switch interactionState {
             case .enabled:
                 return theme.colors.colorActionNegativeEnabled
             case .hover:
@@ -70,7 +70,7 @@ struct RadioIndicator: View {
                          + " Only non-error situation are allowed to have a disabled state / read only mode.")
             }
         } else {
-            switch internalState {
+            switch interactionState {
             case .enabled:
                 return theme.colors.colorActionSelected
             case .hover:

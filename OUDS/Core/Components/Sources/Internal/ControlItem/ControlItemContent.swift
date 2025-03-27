@@ -16,16 +16,19 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The layout for the ``ControlItem`` component as SwiftUI `ButtonStyle` to compute the internal state  ``ControlItemInternalState`` used by :
-/// - the indicatpr according to ``ControlItem.IndicatorType`` to apply right tokens
-/// - the label described by ``ControlItemLabel.LayoutData`` to apply right tokens on texts and icon
+/// The layout for the ``ControlItem`` component as SwiftUI `ButtonStyle` to compute the interaction state ``InteractionState`` used by :
+/// - the indicator according to ``ControlItem.IndicatorType`` to apply right tokens
+/// - the label described by ``ControlItemLabel.LayoutData`` to apply right tokens on texts
+/// - the icon described by ``ControlItemLabel.LayoutData`` to apply right tokens on icon
+/// - the background modifier
+/// - the outlined modifier
 struct ControlItemContent: View {
 
     // MARK: Stored properties
 
+    let interactionState: InteractionState
     let indicatorType: ControlItem.IndicatorType
     let layoutData: ControlItemLabel.LayoutData
-    let internalState: ControlItemInternalState
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -48,21 +51,21 @@ struct ControlItemContent: View {
         .padding(.all, theme.controlItem.controlItemSpaceInset)
         .oudsDivider(show: layoutData.hasDivider)
         .background(backgroundColor)
-        .modifier(ControlItemStyleOutlinedModifier(internalState: internalState, layoutData: layoutData, isOn: isOn))
+        .modifier(ControlItemStyleOutlinedModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
     }
 
     // MARK: Containers
 
     private func indicatorContainer() -> some View {
-        ControlItemIndicator(indicatorType: indicatorType, layoutData: layoutData, internalState: internalState)
+        ControlItemIndicator(interactionState: interactionState, indicatorType: indicatorType, layoutData: layoutData)
     }
 
     private func labelContainer() -> some View {
-        ControlItemLabel(internalState: internalState, layoutData: layoutData)
+        ControlItemLabel(interactionState: interactionState, layoutData: layoutData)
     }
 
     private func iconContainer() -> some View {
-        ControlItemIcon(icon: layoutData.icon, internalState: internalState)
+        ControlItemIcon(interactionState: interactionState, icon: layoutData.icon)
     }
 
     // MARK: Computed properties
@@ -77,7 +80,7 @@ struct ControlItemContent: View {
     }
 
     private var backgroundColor: Color {
-        switch internalState {
+        switch interactionState {
         case .enabled:
             theme.select.selectColorBgEnabled.color(for: colorScheme)
         case .hover:

@@ -17,12 +17,12 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// The indicator of the checkbox.
-/// Its content depends to the ``ControlItemInternalState`` and the ``OUDSCheckboxIndicatorState`` also.
+/// Its content depends to the ``InteractionState`` and the ``OUDSCheckboxIndicatorState`` also.
 struct CheckboxIndicator: View {
 
     // MARK: - Properties
 
-    let internalState: ControlItemInternalState
+    let interactionState: InteractionState
     let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
@@ -33,7 +33,7 @@ struct CheckboxIndicator: View {
 
     var body: some View {
         indicator()
-            .modifier(CheckboxIndicatorStyle(state: internalState, indicatorState: indicatorState, isError: isError))
+            .modifier(CheckboxIndicatorStyle(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
     }
 
     // MARK: - Indicator
@@ -61,7 +61,7 @@ struct CheckboxIndicator: View {
 
     private var appliedColor: MultipleColorSemanticTokens {
         if isError {
-            switch internalState {
+            switch interactionState {
             case .enabled:
                 return theme.colors.colorActionNegativeEnabled
             case .hover:
@@ -73,7 +73,7 @@ struct CheckboxIndicator: View {
                          + " Only non-error situation are allowed to have a disabled state / read only mode.")
             }
         } else {
-            switch internalState {
+            switch interactionState {
             case .enabled:
                 return theme.colors.colorActionSelected
             case .hover:

@@ -24,7 +24,7 @@ struct ControlItemStyleOutlinedModifier: ViewModifier {
 
     // MARK: Stored properties
 
-    let internalState: ControlItemInternalState
+    let interactionState: InteractionState
     let layoutData: ControlItemLabel.LayoutData
     let isOn: Bool
 
@@ -48,7 +48,7 @@ struct ControlItemStyleOutlinedModifier: ViewModifier {
     // MARK: Private helpers
 
     private var borderColor: MultipleColorSemanticTokens? {
-        switch internalState {
+        switch interactionState {
         case .enabled:
             enabledColor
         case .pressed:

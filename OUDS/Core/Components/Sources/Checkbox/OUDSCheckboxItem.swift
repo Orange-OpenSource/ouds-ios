@@ -110,11 +110,6 @@ public struct OUDSCheckboxItem: View {
     private let layoutData: ControlItemLabel.LayoutData
 
     @Binding private var isOn: Bool
-
-    private var convertedState: Binding<OUDSCheckboxIndicatorState> {
-        Binding(get: { isOn ? .selected : .unselected }, set: { isOn = ($0 == .selected ? true : false) })
-    }
-
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Initializers
@@ -174,6 +169,12 @@ public struct OUDSCheckboxItem: View {
         .accessibilityValue(a11yValue())
         .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, indicatorState: convertedState.wrappedValue))
         .buttonStyle(ControlItemStyle(indicatorType: .checkBox(convertedState), layoutData: layoutData))
+    }
+
+    // MARK: - computed value
+
+    private var convertedState: Binding<OUDSCheckboxIndicatorState> {
+        Binding(get: { isOn ? .selected : .unselected }, set: { isOn = ($0 == .selected ? true : false) })
     }
 
     // MARK: - A11Y helpers

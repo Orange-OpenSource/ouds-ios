@@ -30,6 +30,7 @@ struct RadioOnlyButtonStyle: ButtonStyle {
     // MARK: - Body
 
     func makeBody(configuration: Configuration) -> some View {
+        let interactionState = InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
         ZStack(alignment: .center) {
             Color.clear
                 .frame(minWidth: theme.radioButton.radioButtonSizeMinWidth,
@@ -38,28 +39,10 @@ struct RadioOnlyButtonStyle: ButtonStyle {
                        maxHeight: theme.radioButton.radioButtonSizeMaxHeight)
                 .contentShape(Circle())
 
-            RadioIndicator(internalState: internalState(isPressed: configuration.isPressed), isOn: isOn, isError: isError)
+            RadioIndicator(interactionState: interactionState, isOn: isOn, isError: isError)
         }
         .onHover { isHover in
             self.isHover = isHover
         }
-    }
-
-    // MARK: - Helpers
-
-    private func internalState(isPressed: Bool) -> ControlItemInternalState {
-        if !isEnabled {
-            return .disabled
-        }
-
-        if isPressed {
-            return .pressed
-        }
-
-        if isHover {
-            return .hover
-        }
-
-        return .enabled
     }
 }

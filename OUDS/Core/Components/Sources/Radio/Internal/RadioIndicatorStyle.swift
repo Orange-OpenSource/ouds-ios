@@ -19,12 +19,12 @@ import SwiftUI
 // MARK: - Radio Indicator Style
 
 /// A `ViewModier` to apply to the ``RadioIndicator`` component.
-/// It will define the look and feel of the indicator depending to the ``ControlItemInternalState`` and some flags
+/// It will define the look and feel of the indicator depending to the ``InteractionState`` and some flags
 struct RadioIndicatorStyle: ViewModifier {
 
     // MARK: - Properties
 
-    let state: ControlItemInternalState
+    let interactionState: InteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -32,9 +32,9 @@ struct RadioIndicatorStyle: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .modifier(RadioIndicatorBorderModifier(state: state, isOn: isOn, isError: isError))
-            .modifier(RadioIndicatorForegroundModifier(state: state, isOn: isOn, isError: isError))
-            .modifier(RadioIndicatorBackgroundModifier(state: state, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorBorderModifier(interactionState: interactionState, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorForegroundModifier(interactionState: interactionState, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorBackgroundModifier(interactionState: interactionState, isOn: isOn, isError: isError))
     }
 }
 
@@ -44,7 +44,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: ControlItemInternalState
+    let interactionState: InteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -61,7 +61,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
     // MARK: - Colors
 
     private var appliedColor: Color {
-        switch state {
+        switch interactionState {
         case .enabled:
             return enabledColor.color(for: colorScheme)
         case .hover:
@@ -104,7 +104,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: ControlItemInternalState
+    let interactionState: InteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -121,7 +121,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
     // MARK: - Colors
 
     private var appliedColor: Color {
-        switch state {
+        switch interactionState {
         case .enabled:
             return enabledColor
         case .hover:
@@ -160,7 +160,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: ControlItemInternalState
+    let interactionState: InteractionState
     let isOn: Bool
     let isError: Bool
 
@@ -180,7 +180,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     // MARK: - Colors
 
     private var appliedColor: MultipleColorSemanticTokens {
-        switch state {
+        switch interactionState {
         case .enabled:
             return enabledColor
         case .hover:
@@ -227,7 +227,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     // MARK: - Border width
 
     private var appliedBorderWidth: CGFloat {
-        switch state {
+        switch interactionState {
         case .enabled:
             return enabledWidth
         case .hover:
