@@ -72,11 +72,6 @@ public struct OUDSCheckbox: View {
     private let a11yLabel: String
 
     @Binding var isOn: Bool
-
-    private var convertedState: OUDSCheckboxIndicatorState {
-        isOn ? .selected : .unselected
-    }
-
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Initializers
@@ -103,14 +98,21 @@ public struct OUDSCheckbox: View {
     // MARK: Body
 
     public var body: some View {
-        Button("") {
+        InteractionButton {
             $isOn.wrappedValue.toggle()
+        } content: { interactionState in
+            CheckboxIndicator(interactionState: interactionState, indicatorState: convertedState, isError: isError)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
         .accessibilityValue(a11yValue())
         .accessibilityHint(a11yHint())
-        .buttonStyle(CheckboxOnlyButtonStyle(indicatorState: convertedState, isError: isError))
+    }
+
+    // MARK: - Computed value
+
+    private var convertedState: OUDSCheckboxIndicatorState {
+        isOn ? .selected : .unselected
     }
 
     // MARK: - A11Y helpers

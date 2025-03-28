@@ -22,7 +22,7 @@ struct ControlItemLabel: View {
 
     // MARK: - Stored properties
 
-    let internalState: ControlItemInternalState
+    let interactionState: InteractionState
     let layoutData: LayoutData
 
     @Environment(\.theme) private var theme
@@ -82,7 +82,7 @@ struct ControlItemLabel: View {
 
     private var labelTextColor: Color {
         if layoutData.isError {
-            switch internalState {
+            switch interactionState {
             case .enabled:
                 return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
             case .hover:
@@ -94,7 +94,7 @@ struct ControlItemLabel: View {
                              + " Only non-error situation are allowed to have a disabled state or a read only mode.")
             }
         } else {
-            switch internalState {
+            switch interactionState {
             case .enabled, .hover, .pressed, .readOnly:
                 return theme.colors.colorContentDefault.color(for: colorScheme)
             case .disabled:
@@ -104,7 +104,7 @@ struct ControlItemLabel: View {
     }
 
     private var helperTextColor: Color {
-        switch internalState {
+        switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
             theme.colors.colorContentMuted.color(for: colorScheme)
         case .disabled:
@@ -113,7 +113,7 @@ struct ControlItemLabel: View {
     }
 
     private var additionalLabelTextColor: Color {
-        (internalState == .disabled ? theme.colors.colorContentDisabled : theme.colors.colorContentDefault)
+        (interactionState == .disabled ? theme.colors.colorContentDisabled : theme.colors.colorContentDefault)
         .color(for: colorScheme)
     }
 }

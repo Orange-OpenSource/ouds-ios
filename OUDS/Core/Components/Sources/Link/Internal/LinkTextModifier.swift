@@ -19,9 +19,9 @@ struct LinkTextModifier: ViewModifier {
 
     // MARK: - Properties
 
+    let interactionState: InteractionState
     let size: OUDSLink.Size
     let layout: OUDSLink.Layout
-    let state: LinkInternalState
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -38,7 +38,7 @@ struct LinkTextModifier: ViewModifier {
             }
         }
         .multilineTextAlignment(.leading)
-        .modifier(LinkUnderlineModifier(layout: layout, state: state))
+        .modifier(LinkUnderlineModifier(interactionState: interactionState, layout: layout))
     }
 }
 
@@ -46,9 +46,10 @@ struct LinkTextModifier: ViewModifier {
 
 private struct LinkUnderlineModifier: ViewModifier {
 
-    @State private var textWidth: CGFloat = 0
+    let interactionState: InteractionState
     let layout: OUDSLink.Layout
-    let state: LinkInternalState
+
+    @State private var textWidth: CGFloat = 0
 
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
@@ -73,11 +74,11 @@ private struct LinkUnderlineModifier: ViewModifier {
     private var underlineActive: Bool {
         switch layout {
         case .arrow:
-            return state == .hover || state == .pressed
+            return interactionState == .hover || interactionState == .pressed
         case .textOnly:
             return true
         case .iconAndText:
-            return state == .hover || state == .pressed
+            return interactionState == .hover || interactionState == .pressed
         }
     }
 }

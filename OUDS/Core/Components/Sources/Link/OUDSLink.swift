@@ -139,7 +139,7 @@ public struct OUDSLink: View {
                 }
             }
         }
-        .buttonStyle(LinkStyle(layout: layout, size: size))
+        .buttonStyle(LinkButtonStyle(layout: layout, size: size))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
     }

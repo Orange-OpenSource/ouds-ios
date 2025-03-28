@@ -110,11 +110,6 @@ public struct OUDSCheckboxItem: View {
     private let layoutData: ControlItemLabel.LayoutData
 
     @Binding private var isOn: Bool
-
-    private var convertedState: Binding<OUDSCheckboxIndicatorState> {
-        Binding(get: { isOn ? .selected : .unselected }, set: { isOn = ($0 == .selected ? true : false) })
-    }
-
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Initializers
@@ -164,16 +159,17 @@ public struct OUDSCheckboxItem: View {
     // MARK: Body
 
     public var body: some View {
-        Button("") {
-            if !layoutData.isReadOnly {
-                $isOn.wrappedValue.toggle()
-            }
-        }
-        .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel(layoutData: layoutData))
-        .accessibilityValue(a11yValue())
-        .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, indicatorState: convertedState.wrappedValue))
-        .buttonStyle(ControlItemStyle(indicatorType: .checkBox(convertedState), layoutData: layoutData))
+        ControlItem(indicatorType: .checkBox(convertedState), layoutData: layoutData)
+            .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
+            .accessibilityLabel(a11yLabel(layoutData: layoutData))
+            .accessibilityValue(a11yValue())
+            .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, indicatorState: convertedState.wrappedValue))
+    }
+
+    // MARK: - Computed value
+
+    private var convertedState: Binding<OUDSCheckboxIndicatorState> {
+        Binding(get: { isOn ? .selected : .unselected }, set: { isOn = ($0 == .selected ? true : false) })
     }
 
     // MARK: - A11Y helpers
