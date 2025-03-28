@@ -16,7 +16,7 @@ import SwiftUI
 
 /// Modelizes the layout for a checkbox, radio button or switch with additional components like labels, icons and dividers.
 /// This `View` is not exposed publicly as it is not possible to define such variable / customizable component on *Figma* side.
-/// This internal component displays the indicator and defines the layout as a SwiftUI button.
+/// This internal component displays the indicator and defines the layout as a SwiftUI button through the internal `InteractionButton`.
 struct ControlItem: View {
 
     // MARK: Stored Properties
@@ -44,7 +44,17 @@ struct ControlItem: View {
         case inverse
     }
 
-    // MARK: Initializer
+    // MARK: Initializers
+
+    /// Creates a control item with the layout data model
+    ///
+    /// - Parameters:
+    ///     - indicatorType: The type of indicator set in the control item
+    ///     - layoutData: The data of the layout
+    init(indicatorType: IndicatorType, layoutData: ControlItemLabel.LayoutData) {
+        self.indicatorType = indicatorType
+        self.layoutData = layoutData
+    }
 
     /// Creates a control item with label and optional helper text, icon, divider.
     ///
@@ -69,22 +79,22 @@ struct ControlItem: View {
          isReadOnly: Bool = false,
          hasDivider: Bool = false,
          orientation: Self.Orientation = .default) {
-        self.indicatorType = indicatorType
-        self.layoutData = .init(labelText: labelText,
-                                additionalLabelText: additionalLabelText,
-                                helperText: helperText,
-                                icon: icon,
-                                isOutlined: isOutlined,
-                                isError: isOnError,
-                                isReadOnly: isReadOnly,
-                                hasDivider: hasDivider,
-                                orientation: orientation)
+        self.init(indicatorType: indicatorType,
+                  layoutData: .init(labelText: labelText,
+                                    additionalLabelText: additionalLabelText,
+                                    helperText: helperText,
+                                    icon: icon,
+                                    isOutlined: isOutlined,
+                                    isError: isOnError,
+                                    isReadOnly: isReadOnly,
+                                    hasDivider: hasDivider,
+                                    orientation: orientation))
     }
 
     // MARK: Body
 
     public var body: some View {
-        Button("") {
+        InteractionButton(isReadOnly: layoutData.isReadOnly) {
             withAnimation(.easeInOut) {
                 switch indicatorType {
                 case .switch(let binding):
@@ -95,7 +105,8 @@ struct ControlItem: View {
                     binding.wrappedValue.toggle()
                 }
             }
+        } content: { interactionState in
+            ControlItemContent(interactionState: interactionState, indicatorType: indicatorType, layoutData: layoutData)
         }
-        .buttonStyle(ControlItemStyle(indicatorType: indicatorType, layoutData: layoutData))
     }
 }

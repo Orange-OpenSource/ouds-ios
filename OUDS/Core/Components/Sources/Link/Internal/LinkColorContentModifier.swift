@@ -20,7 +20,7 @@ struct LinkColorContentModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: LinkInternalState
+    let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -35,14 +35,14 @@ struct LinkColorContentModifier: ViewModifier {
     // MARK: - Helpers
 
     private var appliedColor: Color {
-        switch state {
+        switch interactionState {
         case .enabled:
             enabledColor.color(for: colorScheme)
         case .hover:
             hoverColor.color(for: colorScheme)
         case .pressed:
             pressedColor.color(for: colorScheme)
-        case .disabled:
+        case .disabled, .readOnly:
             disabledColor.color(for: colorScheme)
         }
     }

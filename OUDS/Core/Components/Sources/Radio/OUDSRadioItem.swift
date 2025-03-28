@@ -176,18 +176,11 @@ public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperli
     // MARK: Body
 
     public var body: some View {
-        Button("") {
-            withAnimation(nil) {
-                if !layoutData.isReadOnly {
-                    $isOn.wrappedValue.toggle()
-                }
-            }
-        }
-        .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel)
-        .accessibilityValue(a11yValue.localized())
-        .accessibilityHint(a11yHint)
-        .buttonStyle(ControlItemStyle(indicatorType: .radioButton($isOn), layoutData: layoutData))
+        ControlItem(indicatorType: .radioButton($isOn), layoutData: layoutData)
+            .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
+            .accessibilityLabel(a11yLabel)
+            .accessibilityValue(a11yValue.localized())
+            .accessibilityHint(a11yHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
