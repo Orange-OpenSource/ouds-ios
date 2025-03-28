@@ -45,6 +45,8 @@ struct DesignToolboxElementPage: View {
 
                 Text(LocalizedStringKey(description))
                     .typeBodyDefaultLarge(theme)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaces.spaceFixedMedium)
             }

@@ -18,7 +18,6 @@ import SwiftUI
 /// This is a container because the height of the frame can increase dynamically
 /// to a `maxHeight` fixed by a specific token.
 /// The indicator with a fixed size is centered in this frame.
-
 struct ControlItemIndicatorContainer: View {
 
     // MARK: - Stored properties
