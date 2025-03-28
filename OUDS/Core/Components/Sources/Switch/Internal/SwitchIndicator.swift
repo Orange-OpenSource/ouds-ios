@@ -116,6 +116,7 @@ struct Cursor: View {
                 Image(decorative: "ic_form_tick", bundle: Bundle.OUDSComponents)
                     .renderingMode(.template)
                     .foregroundStyle(tickColor.color(for: colorScheme))
+                    .opacity(theme.switch.switchOpacityCheck)
             default:
                 EmptyView()
             }
