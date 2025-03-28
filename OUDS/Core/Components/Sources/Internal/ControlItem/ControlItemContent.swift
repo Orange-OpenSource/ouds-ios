@@ -51,9 +51,8 @@ struct ControlItemContent: View {
             }
         }
         .padding(.all, theme.controlItem.controlItemSpaceInset)
-        .oudsDivider(show: layoutData.hasDivider)
         .background(backgroundColor)
-        .modifier(ControlItemContentOutlinedModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
+        .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
     }
 
     // MARK: Containers

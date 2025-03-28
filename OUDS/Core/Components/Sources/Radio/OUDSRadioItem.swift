@@ -137,6 +137,8 @@ public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperli
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///
+    /// **Remark: As divider and outline effect are not suppose to be displayed a the same time, the divider is not displayed if the outline effect is active.
     public init(isOn: Binding<Bool>,
                 labelText: String,
                 additionalLabelText: String? = nil,
