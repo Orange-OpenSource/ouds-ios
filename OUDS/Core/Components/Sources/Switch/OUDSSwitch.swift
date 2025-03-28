@@ -67,14 +67,15 @@ public struct OUDSSwitch: View { // TODO: #266 - Update documentation hyperlink 
     // MARK: Body
 
     public var body: some View {
-        Button("") {
+        InteractionButton {
             $isOn.wrappedValue.toggle()
+        } content: { interactionState in
+            SwitchIndicator(interactionState: interactionState, isOn: isOn)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)
         .accessibilityValue(a11yValue.localized())
         .accessibilityHint(a11yHint)
-        .buttonStyle(SwitchOnlyButtonStyle(isOn: $isOn.wrappedValue))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state

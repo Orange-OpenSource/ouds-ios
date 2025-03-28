@@ -15,11 +15,13 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
+/// The indicator of the switch.
+/// Its content depends mainly to the ``InteractionState`` and from flags also.
 struct SwitchIndicator: View {
 
     // MARK: Stored properties
 
-    let internalState: InteractionState
+    let interactionState: InteractionState
     let isOn: Bool
 
     @Environment(\.theme) private var theme
@@ -29,12 +31,13 @@ struct SwitchIndicator: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Cursor(internalState: internalState, isOn: isOn)
+            Cursor(interactionState: interactionState, isOn: isOn)
         }
         .padding(.horizontal, spacePadding)
         .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
         .background(trackColor.color(for: colorScheme))
         .clipShape(Capsule())
+        .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: trackWidth)
     }
 
     // MARK: Private Helpers
@@ -48,7 +51,7 @@ struct SwitchIndicator: View {
     }
 
     private var trackColor: MultipleColorSemanticTokens {
-        switch internalState {
+        switch interactionState {
         case .enabled:
             return isOn ? theme.switch.switchColorTrackSelected : theme.switch.switchColorTrackUnselected
         case .hover, .pressed:
@@ -71,7 +74,7 @@ struct Cursor: View {
 
     // MARK: Stored properties
 
-    let internalState: InteractionState
+    let interactionState: InteractionState
     let isOn: Bool
 
     @Environment(\.theme) private var theme
@@ -92,7 +95,7 @@ struct Cursor: View {
     // MARK: Private helpers
 
     private var cursorWidth: Double {
-        switch internalState {
+        switch interactionState {
         case .pressed:
             isOn ? theme.switch.switchSizeWidthCursorSelectedPressed : theme.switch.switchSizeWidthCursorUnselectedPressed
         case .disabled, .enabled, .hover, .readOnly:
@@ -111,7 +114,7 @@ struct Cursor: View {
     @ViewBuilder
     private var tick: some View {
         if isOn {
-            switch internalState {
+            switch interactionState {
             case .enabled, .disabled, .hover:
                 Image(decorative: "ic_form_tick", bundle: Bundle.OUDSComponents)
                     .renderingMode(.template)
@@ -123,7 +126,7 @@ struct Cursor: View {
         }
     }
     private var tickColor: MultipleColorSemanticTokens {
-        switch internalState {
+        switch interactionState {
         case .enabled, .hover, .pressed:
             return theme.switch.switchColorCheck
         case .disabled, .readOnly:
