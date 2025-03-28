@@ -35,7 +35,6 @@ final class OUDSCheckboxUITests: XCTestCase {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
-        testAllCheckboxesOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
@@ -43,7 +42,6 @@ final class OUDSCheckboxUITests: XCTestCase {
         let theme = OrangeTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
-        testAllCheckboxesOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all buttons configuration in the `InverseTheme` with the `light` color schemes.
@@ -51,7 +49,6 @@ final class OUDSCheckboxUITests: XCTestCase {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.light
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
-        testAllCheckboxesOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     /// Tests all buttons configuration in the `InverseTheme` with the `dark` color schemes.
@@ -59,7 +56,6 @@ final class OUDSCheckboxUITests: XCTestCase {
         let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
-        testAllCheckboxesOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Helpers
@@ -80,15 +76,13 @@ final class OUDSCheckboxUITests: XCTestCase {
                              interfaceStyle: interfaceStyle,
                              layout: someLayout,
                              indicatorState: indicatorState,
-                             isDisabled: false,
-                             onColoredSurface: false)
+                             isDisabled: false)
 
                 testCheckbox(theme: theme,
                              interfaceStyle: interfaceStyle,
                              layout: someLayout,
                              indicatorState: indicatorState,
-                             isDisabled: true,
-                             onColoredSurface: false)
+                             isDisabled: true)
             }
         }
 
@@ -98,8 +92,7 @@ final class OUDSCheckboxUITests: XCTestCase {
                              interfaceStyle: interfaceStyle,
                              layout: someLayout,
                              indicatorState: indicatorState,
-                             isDisabled: false,
-                             onColoredSurface: false)
+                             isDisabled: false)
             }
         }
 
@@ -109,68 +102,16 @@ final class OUDSCheckboxUITests: XCTestCase {
                              interfaceStyle: interfaceStyle,
                              layout: someLayout,
                              indicatorState: indicatorState,
-                             isDisabled: false,
-                             onColoredSurface: false)
-            }
-        }
-    }
-
-    /// This function tests all checkboxes configuration for the given theme and color schemes on a colored surface (the `colorSurfaceBrandPrimary` token)
-    ///
-    /// **/!\ It does not test the hover and pressed states.**
-    ///
-    /// It iterates through all  `OUDSCheckboxIndicatorState`, for all combinations of layouts in enabled and disabled state.
-    ///
-    /// - Parameters:
-    ///   - theme: The theme (`OUDSTheme`) from which to retrieve color tokens.
-    ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testAllCheckboxesOnColoredSurface(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
-        for indicatorState in OUDSCheckboxIndicatorState.allCases {
-            for someLayout in availableLayouts(isError: false, isReadOnly: false) {
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false,
-                             onColoredSurface: true)
-
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: true,
-                             onColoredSurface: true)
-            }
-        }
-
-        for indicatorState in OUDSCheckboxIndicatorState.allCases {
-            for someLayout in availableLayouts(isError: true, isReadOnly: false) {
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false,
-                             onColoredSurface: true)
-            }
-        }
-
-        for indicatorState in OUDSCheckboxIndicatorState.allCases {
-            for someLayout in availableLayouts(isError: false, isReadOnly: true) {
-                testCheckbox(theme: theme,
-                             interfaceStyle: interfaceStyle,
-                             layout: someLayout,
-                             indicatorState: indicatorState,
-                             isDisabled: false,
-                             onColoredSurface: true)
+                             isDisabled: false)
             }
         }
     }
 
     /// This function tests checkbox according to all parameters of the configuration available on a `OUDSCheckbox`
-    /// of `OUDSCheckboxItem` for the given theme and color schemes and on a colored surface or not.
+    /// of `OUDSCheckboxItem` for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
-    ///    "test_<themeName>_<colorScheme>.<coloreSurfacePatern><layout>_<indicatorState>_<disabledPatern>"
+    ///    "test_<themeName>_<colorScheme>.<layout>_<indicatorState>_<disabledPatern>"
     ///
     /// **/!\ It does not test the hover and pressed states.**
     ///
@@ -180,30 +121,25 @@ final class OUDSCheckboxUITests: XCTestCase {
     ///   - layout: the layout of the checkbox
     ///   - indicatorState: the indicator state of the checkbox
     ///   - isDisabled: the disabled flag
-    ///   - onColoredSurface: a flag to know if button is on a colored surface or not
     @MainActor private func testCheckbox(theme: OUDSTheme,
                                          interfaceStyle: UIUserInterfaceStyle,
                                          layout: CheckboxIndeterminateTest.Layout,
                                          indicatorState: OUDSCheckboxIndicatorState,
-                                         isDisabled: Bool,
-                                         onColoredSurface: Bool = false) {
+                                         isDisabled: Bool) {
         // Generate the illustration for the specified configuration
         let illustration = OUDSThemeableView(theme: theme) {
             CheckboxIndeterminateTest(layout: layout,
                                       indicatorState: indicatorState,
-                                      isDisabled: isDisabled,
-                                      onColoredSurface: onColoredSurface)
+                                      isDisabled: isDisabled)
             .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
         }
 
         // Create a unique snapshot name based on the current configuration :
-        // test_<themeName>_<colorScheme>.<coloredSurfacePatern><layout>_<indicatorState>_<disabledPatern> where:
-        // - `coloredSurfacePatern` is empty if not on colored surface
+        // test_<themeName>_<colorScheme>.<layout>_<indicatorState>_<disabledPatern> where:
         // - `disabledPatern` is empty if not disabled
         let testName = "test_\(theme.name)Theme_\(interfaceStyle == .light ? "Light" : "Dark")"
-        let coloredSurfacePatern = onColoredSurface ? "ColoredSurface_" : ""
         let disabledPatern = isDisabled ? "_Disabled" : ""
-        let name = "\(coloredSurfacePatern)\(layout.description.camelCase)_\(indicatorState.name)_\(disabledPatern)"
+        let name = "\(layout.description.camelCase)_\(indicatorState.name)_\(disabledPatern)"
 
         // Capture the snapshot of the illustration with the correct user interface style and save it with the snapshot name
         assertIllustration(illustration,
@@ -281,14 +217,9 @@ private struct CheckboxIndeterminateTest: View {
     let layout: Layout
     let indicatorState: OUDSCheckboxIndicatorState
     let isDisabled: Bool
-    let onColoredSurface: Bool
 
     var body: some View {
-        if onColoredSurface {
-            OUDSColoredSurface(color: theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme), content: checkbox)
-        } else {
-            checkbox()
-        }
+        checkbox()
     }
 
     @ViewBuilder
