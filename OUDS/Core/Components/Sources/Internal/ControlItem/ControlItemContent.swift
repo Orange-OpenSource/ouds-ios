@@ -51,7 +51,7 @@ struct ControlItemContent: View {
             }
         }
         .padding(.all, theme.controlItem.controlItemSpaceInset)
-        .oudsDivider(show: layoutData.hasDivider)
+        .oudsDivider(show: showDivider)
         .background(backgroundColor)
         .modifier(ControlItemContentOutlinedModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
     }
@@ -71,6 +71,11 @@ struct ControlItemContent: View {
     }
 
     // MARK: Computed properties
+
+    private var showDivider: Bool {
+        // The divider could be displayed only if it is requested and the item is not outlined
+        layoutData.hasDivider && !layoutData.isOutlined
+    }
 
     private var isOn: Bool {
         switch indicatorType {
