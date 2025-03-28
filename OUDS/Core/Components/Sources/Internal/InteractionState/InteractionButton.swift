@@ -16,7 +16,7 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// The butlon will compute the `InteractionState` to send it to the provided content builder.
+/// The button will compute the `InteractionState` to send it to the provided content builder.
 /// This state is computed by the `InteractinButtonStyle`.
 ///
 /// Remark: If the isReadOnly flag is true the action on the button is dropped.
@@ -26,6 +26,7 @@ struct InteractionButton<Content>: View where Content: View {
 
     private let isReadOnly: Bool
     private let action: () -> Void
+
     @ViewBuilder private let content: (InteractionState) -> Content
 
     // MARK: Initializer
@@ -50,7 +51,7 @@ struct InteractionButton<Content>: View where Content: View {
 
 /// The SwiftUI `ButtonStyle` to compute the interaction state ``InteractionState`` and send it to
 /// the provided content builder.
-/// To compute this state, some elements are needed
+/// To compute this state, some elements are needed:
 /// - the isHover flag get from the `onHover` added on the `content`
 /// - the isPressed flag get from `ButtonStyle.Configuration`
 /// - the isEnabled flag get from the `@Environement`
@@ -60,6 +61,7 @@ struct InteractinButtonStyle<Content>: ButtonStyle where Content: View {
     // MARK: Stored properties
 
     private let isReadOnly: Bool
+
     @ViewBuilder private let content: (InteractionState) -> Content
     @State private var isHover: Bool = false
     @Environment(\.isEnabled) private var isEnabled

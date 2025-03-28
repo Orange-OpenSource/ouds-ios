@@ -13,7 +13,13 @@
 
 import SwiftUI
 
-struct ControlItemIndicator: View {
+/// This is the indicator container of the ControlItem.
+///
+/// This is a container because the height of the frame can increase dynamically
+/// to a `maxHeight` fixed by a specific token.
+/// The indicator with a fixed size is centered in this frame.
+
+struct ControlItemIndicatorContainer: View {
 
     // MARK: - Stored properties
 
@@ -30,7 +36,6 @@ struct ControlItemIndicator: View {
         HStack(alignment: .center, spacing: 0) {
             switch indicatorType {
             case .switch:
-                // TODO: #405 - Add switch indicator
                 Text("TODO: Add switch indicator here")
 //                OUDSSwitchIndicator(InteractionState: InteractionState(isPressed: isPressed), isOn: binding.wrappedValue)
             case .radioButton(let binding):

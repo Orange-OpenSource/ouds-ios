@@ -13,12 +13,18 @@
 
 import SwiftUI
 
-struct ControlItemIcon: View {
+/// This is the icon container of the ControlItem.
+///
+/// This is a container because the height of the frame can increase dynamically
+/// to a `maxHeight` fixed by a specific token.
+/// The icon with a fixed size is centered in this frame.
+struct ControlItemIconContainer: View {
 
     // MARK: - Stored properties
 
     let interactionState: InteractionState
     let icon: Image?
+
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
@@ -31,11 +37,9 @@ struct ControlItemIcon: View {
                     .resizable()
                     .renderingMode(.template)
                     .foregroundStyle(iconColor)
-                    .frame(width: theme.controlItem.controlItemSizeIcon,
-                           height: theme.controlItem.controlItemSizeIcon)
+                    .frame(width: theme.controlItem.controlItemSizeIcon, height: theme.controlItem.controlItemSizeIcon)
             }
-            .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer,
-                   alignment: .center)
+            .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)
         }
     }
 

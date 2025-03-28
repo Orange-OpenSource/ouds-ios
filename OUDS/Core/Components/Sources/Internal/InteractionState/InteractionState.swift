@@ -23,7 +23,7 @@ enum InteractionState {
     /// The component is being pressed
     case pressed
 
-    /// The user cannot interart with the component.
+    /// The user cannot interact with the component.
     case disabled
 
     /// The component is not disabled but user cannot interact with it still. Almost enabled.

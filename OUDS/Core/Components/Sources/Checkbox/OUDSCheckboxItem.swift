@@ -166,7 +166,7 @@ public struct OUDSCheckboxItem: View {
             .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, indicatorState: convertedState.wrappedValue))
     }
 
-    // MARK: - computed value
+    // MARK: - Computed value
 
     private var convertedState: Binding<OUDSCheckboxIndicatorState> {
         Binding(get: { isOn ? .selected : .unselected }, set: { isOn = ($0 == .selected ? true : false) })

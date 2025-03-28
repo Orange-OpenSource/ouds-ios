@@ -59,7 +59,7 @@ struct ControlItemContent: View {
     // MARK: Containers
 
     private func indicatorContainer() -> some View {
-        ControlItemIndicator(interactionState: interactionState, indicatorType: indicatorType, layoutData: layoutData)
+        ControlItemIndicatorContainer(interactionState: interactionState, indicatorType: indicatorType, layoutData: layoutData)
     }
 
     private func labelContainer() -> some View {
@@ -67,7 +67,7 @@ struct ControlItemContent: View {
     }
 
     private func iconContainer() -> some View {
-        ControlItemIcon(interactionState: interactionState, icon: layoutData.icon)
+        ControlItemIconContainer(interactionState: interactionState, icon: layoutData.icon)
     }
 
     // MARK: Computed properties
