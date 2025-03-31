@@ -58,6 +58,8 @@ public struct OUDSLink: View {
     private let size: Size
     private let action: () -> Void
 
+    @Environment(\.layoutDirection) private var layoutDirection
+
     /// Represents the size of an `OUDSLink`.
     public enum Size {
         case small, medium
@@ -122,6 +124,7 @@ public struct OUDSLink: View {
                     Image(decorative: "ic_form_chevron_left", bundle: Bundle.OUDSComponents)
                         .renderingMode(.template)
                         .resizable()
+                        .scaleEffect(layoutDirection == .rightToLeft ? -1 : 1, anchor: .center)
                 }
             case .textOnly:
                 Label {
