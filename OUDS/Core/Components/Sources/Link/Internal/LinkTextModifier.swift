@@ -82,28 +82,3 @@ private struct LinkUnderlineModifier: ViewModifier {
         }
     }
 }
-
-// MARK: - Sizes management
-
-private struct SizePreferenceKey: @preconcurrency PreferenceKey {
-    @MainActor static var defaultValue: CGSize = .zero
-
-    static func reduce(value _: inout CGSize, nextValue _: () -> CGSize) {}
-}
-
-// swiftlint:disable strict_fileprivate
-extension View {
-
-    /// Use to read the size of the current view (usefull to read the width of text)
-    /// - Parameter onChange: Called when the size changes
-    fileprivate func readSize(onChange: @Sendable @escaping (CGSize) -> Void) -> some View {
-        background(
-            GeometryReader { geometryProxy in
-                Color.clear
-                    .preference(key: SizePreferenceKey.self, value: geometryProxy.size)
-            }
-        )
-        .onPreferenceChange(SizePreferenceKey.self, perform: onChange)
-    }
-}
-// swiftlint:enable strict_fileprivate

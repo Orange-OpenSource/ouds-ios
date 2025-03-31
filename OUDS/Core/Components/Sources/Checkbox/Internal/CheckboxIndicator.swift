@@ -32,17 +32,7 @@ struct CheckboxIndicator: View {
     // MARK: - Body
 
     var body: some View {
-        ZStack {
-            Color.clear
-                .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
-                       maxWidth: theme.checkbox.checkboxSizeMinWidth,
-                       minHeight: theme.checkbox.checkboxSizeMinHeight,
-                       maxHeight: theme.checkbox.checkboxSizeMaxHeight)
-                .contentShape(Rectangle())
-
-            indicator()
-                .modifier(CheckboxIndicatorModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
-        }
+        indicator().modifier(CheckboxIndicatorModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
     }
 
     // MARK: - Indicator

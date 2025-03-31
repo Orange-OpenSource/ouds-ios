@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensComponent
 import SwiftUI
 
 // MARK: - OUDS Radio
@@ -65,6 +66,7 @@ public struct OUDSRadio: View { // TODO: #266 - Update documentation hyperlink a
 
     @Binding var isOn: Bool
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.theme) private var theme
 
     // MARK: - Initializers
 
@@ -94,6 +96,9 @@ public struct OUDSRadio: View { // TODO: #266 - Update documentation hyperlink a
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             RadioIndicator(interactionState: interactionState, isOn: isOn, isError: isError)
+                .frame(minWidth: theme.radioButton.radioButtonSizeMinWidth,
+                       minHeight: theme.radioButton.radioButtonSizeMinHeight,
+                       maxHeight: theme.radioButton.radioButtonSizeMaxHeight)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)
