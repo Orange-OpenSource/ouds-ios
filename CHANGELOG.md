@@ -41,6 +41,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Chevron for link component pointing to bad direction in RTL mode ([#557](https://github.com/Orange-OpenSource/ouds-ios/issues/557))
 - [Library] Remove divider if outline effect is active in RadioItem component ([#564](https://github.com/Orange-OpenSource/ouds-ios/issues/564))
 - [DesignToolbox] In RTL mode code sample text not aligned on the left ([#554](https://github.com/Orange-OpenSource/ouds-ios/issues/554))
+- [Library] Remove extra pudding in ControlItem ([#572](https://github.com/Orange-OpenSource/ouds-ios/issues/572))
+- [Library] Adjust vertical alignment of text labels according to their height in ContolItem ([#55](https://github.com/Orange-OpenSource/ouds-ios/issues/550))
 - [DesignToolbox] In RTL mode code sample text not aligned on the left ([#554](https://github.com/Orange-OpenSource/ouds-ios/issues/554))
 - [DesignToolbox] Chevron for navigation link pointing to bad direction in RTL mode ([#553](https://github.com/Orange-OpenSource/ouds-ios/issues/553))
 - [DesignToolbox] Broken wording in radio button page
