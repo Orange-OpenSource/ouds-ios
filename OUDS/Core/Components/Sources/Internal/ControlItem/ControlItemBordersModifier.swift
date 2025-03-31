@@ -17,8 +17,8 @@ import OUDSTokensSemantic
 import SwiftUI
 
 /// A `ViewModifier` to apply to `ControlItem` views so as to define an outline effect, i.e. draw kind of borders around the object, or a divider.
-/// As they are not suppose to be displayed a the same time, even if it is requested the divider is not displayed if the outline effect is active.
-/// If this view modifier is used to draw an outline in an error context for a disabled component, a *faal error* will happen because this behaviour is forbidden by design.
+/// As they are not supposed to be displayed at the same time, even if it is requested the divider is not displayed if the outline effect is active.
+/// If this view modifier is used to draw an outline in an error context for a disabled component, a *fatal error* will happen because this behaviour is forbidden by design.
 struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Stored properties
