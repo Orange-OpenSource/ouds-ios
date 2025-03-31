@@ -12,18 +12,38 @@
 //
 
 import OUDSTokensRaw
+import OUDSTokensSemantic
 import SwiftUI
 
 extension View {
 
     /// Wraps the *SwiftUI* `shadow(color:radius:x:y)` method so as to use as `radius` value
-    /// the computed `radius` value of the given `ElevationCompositeRawToken`.
-    /// - Parameter elevation: The token to give for the shadow / elevation effect
+    /// the computed `radius` value of the  `MultipleElevationCompositeRawTokens` to use.
+    /// This token will be choosen from the color scheme in use.
+    ///
+    /// - Parameter elevation: The token to give for the shadow / elevation effect depending to the color scheme
     /// - Returns `View`: The current `View` with the shadow / elevation effect
-    public func shadow(elevation: ElevationCompositeRawToken) -> some View {
-        self.shadow(color: elevation.color.color,
-                    radius: elevation.radius,
-                    x: CGFloat(elevation.x),
-                    y: CGFloat(elevation.y))
+    public func shadow(elevation: MultipleElevationCompositeRawTokens) -> some View {
+        self.modifier(ColorSchemeBasedElevationViewModifier(elevation: elevation))
+    }
+}
+
+/// Depending to the current color scheme, will load the expected `ElevationCompositeRawToken` from the given
+/// `MultipleElevationCompositeRawTokens` object and applies its values to draw a shadow effect.
+private struct ColorSchemeBasedElevationViewModifier: ViewModifier {
+
+    let elevation: MultipleElevationCompositeRawTokens
+
+    private var colorSchemeBasedElevation: ElevationCompositeRawToken {
+        colorScheme == .light ? elevation.light : elevation.dark
+    }
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    func body(content: Content) -> some View {
+        content.shadow(color: colorSchemeBasedElevation.color.color,
+                       radius: colorSchemeBasedElevation.radius,
+                       x: CGFloat(colorSchemeBasedElevation.x),
+                       y: CGFloat(colorSchemeBasedElevation.y))
     }
 }

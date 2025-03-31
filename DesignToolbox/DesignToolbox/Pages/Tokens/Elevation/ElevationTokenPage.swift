@@ -39,15 +39,16 @@ struct ElevationTokenPage: View {
     }
 
     struct IllustrationElevation: View {
-        @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
 
         let namedElevation: NamedElevation
 
+        @Environment(\.theme) private var theme
+        @Environment(\.colorScheme) private var colorScheme
+
         var body: some View {
-            let token = namedElevation.token(from: theme).elevation(for: colorScheme)
+            let token = namedElevation.token(from: theme)
             let name = namedElevation.rawValue
-            let value = String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", token.x, token.y, token.radius, token.color)
+            let value = description(for: token)
 
             DesignToolboxTokenIllustration(tokenName: name, tokenValue: value) {
                 Rectangle()
@@ -56,6 +57,15 @@ struct ElevationTokenPage: View {
                     .shadow(elevation: token)
                     .padding(.bottom, 2)
             }
+        }
+
+        private func description(for token: ElevationCompositeSemanticToken) -> String {
+            let colorBasedToken = colorScheme == .light ? token.light : token.dark
+            let x = colorBasedToken.x
+            let y = colorBasedToken.y
+            let radius = colorBasedToken.radius
+            let color = colorBasedToken.color
+            return String(format: "x: %.2f, y: %.2f, radius: %.2f\nColor: %@", x, y, radius, color)
         }
     }
 }

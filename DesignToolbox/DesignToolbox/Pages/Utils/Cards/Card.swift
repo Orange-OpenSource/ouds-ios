@@ -40,7 +40,7 @@ struct Card: View {
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
         }
         .background(theme.colors.colorBgPrimary.color(for: colorScheme)
-            .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme)))
+            .shadow(elevation: theme.elevations.elevationRaised))
         .padding(.all, 4)
     }
 }

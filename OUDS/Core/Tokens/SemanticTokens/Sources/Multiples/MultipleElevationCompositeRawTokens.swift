@@ -83,13 +83,6 @@ public final class MultipleElevationCompositeRawTokens: NSObject, Sendable {
         guard let other = object as? MultipleElevationCompositeRawTokens else { return false }
         return self.light == other.light && self.dark == other.dark
     }
-
-    /// Returns the right elevation according to the `colorScheme`.
-    /// - Parameter colorScheme: The color scheme
-    /// - Returns: The `ElevationCompositeRawToken` to use depending to `colorScheme`
-    public func elevation(for colorScheme: ColorScheme) -> ElevationCompositeRawToken {
-        (colorScheme == .light ? light : dark)
-    }
 }
 
 // swiftlint:enable line_length
