@@ -19,6 +19,7 @@ struct DesignToolboxVariantElement: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: Stored properties
 
@@ -41,8 +42,9 @@ struct DesignToolboxVariantElement: View {
                     Spacer()
                     Image(systemName: "chevron.right")
                         .foregroundColor(theme.colors.colorContentDefault.color(for: colorScheme))
-                        .padding(.trailing, theme.spaces.spaceFixedMedium)
+                        .padding(layoutDirection == .rightToLeft ? .leading : .trailing, theme.spaces.spaceFixedMedium)
                         .accessibilityHidden(true)
+                        .scaleEffect(layoutDirection == .rightToLeft ? -1 : 1, anchor: .center)
                 }
             }
         }

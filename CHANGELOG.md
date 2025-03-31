@@ -24,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - [Library] Chevron for link component pointing to bad direction in RTL mode ([#557](https://github.com/Orange-OpenSource/ouds-ios/issues/557))
+- [DesignToolbox] In RTL mode code sample text not aligned on the left ([#554](https://github.com/Orange-OpenSource/ouds-ios/issues/554))
+- [DesignToolbox] Chevron for navigation link pointing to bad direction in RTL mode ([#553](https://github.com/Orange-OpenSource/ouds-ios/issues/553))
 - [DesignToolbox] Broken wording in radio button page
 - [DesignToolbox] Update Checkbox and Radio button assets on the screen of component list ([#519](https://github.com/Orange-OpenSource/ouds-ios/issues/519))
 

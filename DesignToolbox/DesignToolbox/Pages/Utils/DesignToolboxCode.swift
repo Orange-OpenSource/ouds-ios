@@ -17,16 +17,16 @@ import SwiftUI
 
 struct DesignToolboxCode: View {
 
-    // MARK: Environment properties
+    // MARK: Stored properties
+
+    let code: String
+    let titleText: LocalizedStringKey
+
+    @State private var isCodeVisible = false
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: Stored properties
-
-    @State private var isCodeVisible = false
-    let code: String
-    let titleText: LocalizedStringKey
+    @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: Body
 
@@ -71,6 +71,8 @@ struct DesignToolboxCode: View {
                 .font(.system(.body, design: .monospaced))
                 .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
                 .padding(.vertical, theme.spaces.spacePaddingInlineShort)
+                .multilineTextAlignment(layoutDirection == .rightToLeft ? .trailing : .leading)
+            // As the source code sample is written in english, keep text aligned on the left
 
             Spacer(minLength: theme.spaces.spacePaddingBlockMedium)
 
