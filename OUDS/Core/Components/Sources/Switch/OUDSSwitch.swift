@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensComponent
 import SwiftUI
 
 // MARK: - OUDS Switch
@@ -48,6 +49,7 @@ public struct OUDSSwitch: View { // TODO: #266 - Update documentation hyperlink 
 
     @Binding var isOn: Bool
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.theme) private var theme
 
     // MARK: - Initializers
 
@@ -71,6 +73,9 @@ public struct OUDSSwitch: View { // TODO: #266 - Update documentation hyperlink 
             $isOn.wrappedValue.toggle()
         } content: { interactionState in
             SwitchIndicator(interactionState: interactionState, isOn: isOn)
+                .frame(minWidth: theme.switch.switchSizeMinWidth,
+                       minHeight: theme.switch.switchSizeMinHeight,
+                       maxHeight: theme.switch.switchSizeMaxHeight)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel)

@@ -30,9 +30,7 @@ struct SwitchIndicator: View {
     // MARK: Body
 
     var body: some View {
-        HStack(alignment: .center) {
-            Cursor(interactionState: interactionState, isOn: isOn)
-        }
+        Cursor(interactionState: interactionState, isOn: isOn)
         .padding(.horizontal, spacePadding)
         .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
         .background(trackColor.color(for: colorScheme))
