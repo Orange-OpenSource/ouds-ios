@@ -53,7 +53,7 @@ struct OpacityTokenPage: View {
                     Image(decorative: "ic_union")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
+                        .oudsForegroundColor(theme.colors.colorContentStatusInfo)
                         .frame(width: 48, height: 48)
                         .accessibilityHidden(true)
 

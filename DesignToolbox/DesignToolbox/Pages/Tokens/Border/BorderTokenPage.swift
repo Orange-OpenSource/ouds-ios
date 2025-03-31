@@ -37,7 +37,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("app_tokens_border_width_label")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                    .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
 
             Section {
@@ -50,7 +50,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("app_tokens_border_radius_label")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                    .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
 
             Section {
@@ -63,7 +63,7 @@ struct BorderTokenPage: View {
             } header: {
                 Text("app_tokens_border_style_label")
                     .typeHeadingLarge(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                    .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
         }
         .padding(.horizontal, theme.spaces.spaceFixedMedium)

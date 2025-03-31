@@ -80,17 +80,17 @@ struct CheckboxConfiguration: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError)
 
             Toggle("app_components_common_onError_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled)
 
             Toggle("app_components_checkbox_selection_label", isOn: $model.indicatorState)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled)
         }
     }

@@ -15,6 +15,8 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 
+// MARK: - Extension of View
+
 extension View {
 
     /// Wraps the *SwiftUI* `shadow(color:radius:x:y)` method so as to use as `radius` value
@@ -27,6 +29,8 @@ extension View {
         self.modifier(ColorSchemeBasedElevationViewModifier(elevation: elevation))
     }
 }
+
+// MARK: - Color Scheme Based Elevation View Modifier
 
 /// Depending to the current color scheme, will load the expected `ElevationCompositeRawToken` from the given
 /// `MultipleElevationCompositeRawTokens` object and applies its values to draw a shadow effect.

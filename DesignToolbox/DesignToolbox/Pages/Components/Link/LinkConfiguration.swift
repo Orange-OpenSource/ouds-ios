@@ -149,11 +149,11 @@ struct LinkConfiguration: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             Toggle("app_components_common_onColoredBackground_label", isOn: $model.onColoredSurface)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             DesignToolboxChoicePicker(title: "app_components_link_size_label", selection: $model.size) {
                 ForEach(OUDSLink.Size.allCases, id: \.id) { size in

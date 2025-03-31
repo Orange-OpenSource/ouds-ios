@@ -121,6 +121,6 @@ struct ThemeSelectionButton: View {
                 .accessibilityLabel("app_topBar_theme_button_a11y")
                 .accessibilityHint("app_topBar_theme_button_hint_a11y")
         }
-        .foregroundColor(themeProvider.currentTheme.colors.colorContentBrandPrimary.color(for: colorScheme))
+        .oudsForegroundColor(themeProvider.currentTheme.colors.colorContentBrandPrimary)
     }
 }
