@@ -390,8 +390,6 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { get }
 
-    var colorRepositoryOpacityBlackSoft: MultipleColorSemanticTokens { get }
-
     var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityInfo: MultipleColorSemanticTokens { get }

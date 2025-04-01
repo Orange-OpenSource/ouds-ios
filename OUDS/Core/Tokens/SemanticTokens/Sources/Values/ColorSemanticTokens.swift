@@ -532,9 +532,6 @@ public protocol ColorSemanticTokens {
     var colorRepositoryOpacityBlackMediumLight: ColorSemanticToken { get }
     var colorRepositoryOpacityBlackMediumDark: ColorSemanticToken { get }
 
-    var colorRepositoryOpacityBlackSoftLight: ColorSemanticToken { get }
-    var colorRepositoryOpacityBlackSoftDark: ColorSemanticToken { get }
-
     var colorRepositoryOpacityBlackTransparentLight: ColorSemanticToken { get }
     var colorRepositoryOpacityBlackTransparentDark: ColorSemanticToken { get }
 

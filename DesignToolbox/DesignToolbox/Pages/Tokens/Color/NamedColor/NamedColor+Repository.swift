@@ -49,7 +49,6 @@ extension NamedColor {
         case colorRepositoryOpacityBlackLower
         case colorRepositoryOpacityBlackLowest
         case colorRepositoryOpacityBlackMedium
-        case colorRepositoryOpacityBlackSoft
         case colorRepositoryOpacityBlackTransparent
         case colorRepositoryOpacityInfo
         case colorRepositoryOpacityNegative
@@ -137,8 +136,6 @@ extension NamedColor {
                 return theme.colors.colorRepositoryOpacityBlackLowest
             case .colorRepositoryOpacityBlackMedium:
                 return theme.colors.colorRepositoryOpacityBlackMedium
-            case .colorRepositoryOpacityBlackSoft:
-                return theme.colors.colorRepositoryOpacityBlackSoft
             case .colorRepositoryOpacityBlackTransparent:
                 return theme.colors.colorRepositoryOpacityBlackTransparent
             case .colorRepositoryOpacityInfo:

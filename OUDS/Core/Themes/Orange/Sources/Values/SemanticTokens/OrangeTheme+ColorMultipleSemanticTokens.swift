@@ -372,8 +372,6 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public final var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackMediumLight, dark: colorRepositoryOpacityBlackMediumDark) }
 
-    @objc public final var colorRepositoryOpacityBlackSoft: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackSoftLight, dark: colorRepositoryOpacityBlackSoftDark) }
-
     @objc public final var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackTransparentLight, dark: colorRepositoryOpacityBlackTransparentDark) }
 
     @objc public final var colorRepositoryOpacityInfo: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityInfoLight, dark: colorRepositoryOpacityInfoDark) }
