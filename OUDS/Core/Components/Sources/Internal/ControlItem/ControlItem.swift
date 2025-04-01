@@ -51,6 +51,8 @@ struct ControlItem: View {
     /// - Parameters:
     ///     - indicatorType: The type of indicator set in the control item
     ///     - layoutData: The data of the layout
+    ///
+    /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     init(indicatorType: IndicatorType, layoutData: ControlItemLabel.LayoutData) {
         self.indicatorType = indicatorType
         self.layoutData = layoutData
@@ -69,6 +71,8 @@ struct ControlItem: View {
     ///   - isReadOnly: `true` if component is in read only mode, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///   - orientation: Specify the orientation of the layout. If `default` the indicator is at the leading position, if `inverse` it is on trailing.
+    ///
+    /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     init(indicatorType: IndicatorType,
          labelText: String,
          helperText: String? = nil,
