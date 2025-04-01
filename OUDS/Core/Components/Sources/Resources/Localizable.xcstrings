@@ -4,6 +4,30 @@
     "" : {
       "shouldTranslate" : false
     },
+    "core_button_loading_a11y" : {
+      "comment" : "Button",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تحميل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chargement"
+          }
+        }
+      }
+    },
     "core_checkbox_checked_a11y" : {
       "comment" : "Checkbox",
       "extractionState" : "manual",
@@ -239,7 +263,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non sélectionné"
+            "value" : "Undéterminé"
           }
         }
       }
