@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] `BulletList` component tokens (tokens library v0.9.0)
 - [Library] `Chip` component tokens (tokens library v0.9.0)
 - [Library] Remove UI test cases on colored surface for radio button and checkbox ([#523](https://github.com/Orange-OpenSource/ouds-ios/issues/523)) 
 - [Library] Rafactor the interal interation state used by radio and checkbox components ([#560](https://github.com/Orange-OpenSource/ouds-ios/issues/560)) 
