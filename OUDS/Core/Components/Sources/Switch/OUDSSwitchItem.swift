@@ -28,9 +28,7 @@ import SwiftUI
 ///
 /// ## Indicator states
 ///
-/// The switch indicator has two available states:
-/// - **selected**: the switch is filled with a filled circle, the user has made the action to select the switch
-/// - **unselected**: the switch is empty, does not contain anything, the user has made the action to unselect or did not select yet the switch
+/// The switch indicator has two available states set as a boolean property that determines whether the toggle is on or off.
 ///
 /// ## Particular cases
 ///
@@ -54,31 +52,31 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an unselected state
-///     @Published var selection: Bool = false
+///     @Published var isOn: Bool = false
 ///
 ///     // A leading switch with a label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds")
+///     OUDSSwitchItem(isOn: $isOn, labelText: "Lucy in the Sky with Diamonds")
 ///
 ///     // A leading switch with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", isReadOnly: true)
+///     OUDSSwitchItem(isOn: $isOn, labelText: "Lucy in the Sky with Diamonds", isReadOnly: true)
 ///
 ///     // A leading switch with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", helperText: "The Beatles")
+///     OUDSSwitchItem(isOn: $isOn, labelText: "Lucy in the Sky with Diamonds", helperText: "The Beatles")
 ///
-///     // A leading oulined switch with an additional label, an helper text.
+///     // A leading outlined switch with an additional label, an helper text.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", additionalLabelText: "The Beatles", helperText: "1967", outlined: true)
+///     OUDSSwitchItem(isOn: $isOn, labelText: "Lucy in the Sky with Diamonds", additionalLabelText: "The Beatles", helperText: "1967", outlined: true)
 ///
 ///     // A leading switch with an additional label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", additionalLabelText: "The Beatles", helperText: "1967")
+///     OUDSSwitchItem(isOn: $isOn, labelText: "Lucy in the Sky with Diamonds", additionalLabelText: "The Beatles", helperText: "1967")
 ///
 ///     // A trailing switch with a label, an additonal label, an helper text and an icon.
 ///     // The inverse layout will be used here.
-///     OUDSSwitchItem(isOn: $selection,
+///     OUDSSwitchItem(isOn: $isOn,
 ///                   labelText: "Lucy in the Sky with Diamonds",
 ///                   additionalLabelText: "The Beatles",
 ///                   helperText: "1967",
@@ -87,7 +85,7 @@ import SwiftUI
 ///
 ///     // A trailing switch with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
-///     OUDSSwitchItem(isOn: $selection,
+///     OUDSSwitchItem(isOn: $isOn,
 ///                   labelText: "Rescue from this world!",
 ///                   helperText: "Put your hand in mine",
 ///                   icon: Image(decorative: "ic_heart"),
@@ -97,21 +95,21 @@ import SwiftUI
 ///
 ///     // A leading switch with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $selection, labelText: "Rescue from this world!")
+///     OUDSSwitchItem(isOn: $isOn, labelText: "Rescue from this world!")
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related switch as it will crash
 ///     // This is forbidden by design!
-///     OUDSSwitchItem(isOn: $selection, labelText: "Kaboom!", isError: true).disabled(true) // fatal error
-///     OUDSSwitchItem(isOn: $selection, labelText: "Kaboom!", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSSwitchItem(isOn: $isOn, labelText: "Kaboom!", isError: true).disabled(true) // fatal error
+///     OUDSSwitchItem(isOn: $isOn, labelText: "Kaboom!", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
 ///
-/// TODO: add url to design specification
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/)
 ///
-/// - Since: 0.12.0
-public struct OUDSSwitchItem: View { // TODO: #266 - Update documentation hyperlink above
+/// - Since: 0.13.0
+public struct OUDSSwitchItem: View {
 
     // MARK: - Properties
 
@@ -170,10 +168,10 @@ public struct OUDSSwitchItem: View { // TODO: #266 - Update documentation hyperl
 
     public var body: some View {
         ControlItem(indicatorType: .switch($isOn), layoutData: layoutData)
-        .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel)
-        .accessibilityValue(a11yValue.localized())
-        .accessibilityHint(a11yHint)
+            .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
+            .accessibilityLabel(a11yLabel)
+            .accessibilityValue(a11yValue.localized())
+            .accessibilityHint(a11yHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator

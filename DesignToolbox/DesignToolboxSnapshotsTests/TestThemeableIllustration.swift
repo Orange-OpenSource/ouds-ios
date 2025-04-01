@@ -15,11 +15,10 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - TestThemeableIllustration
+// MARK: - Test Themeable Illustration
 
-/// The test object which will used to start test on a specific theme
+/// The test object will be used to start a test on a specific theme
 /// with a colored surface or not.
-
 struct TestThemeableIllustration<Content>: View where Content: View {
 
     let theme: OUDSTheme

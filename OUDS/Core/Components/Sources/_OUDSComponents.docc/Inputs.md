@@ -141,16 +141,16 @@ The library proposes also a switch which has in its layout some labels and icons
 The indicator can be leading or trailing.
 
 ```swift
-    // A leading checkbox with a label, with only two states
+    // A leading switch with a label and exposing the state through isOn binding
     OUDSSwitchItem(isOn: $isOn, label: "Hello world")
 
-    // A leading switch with a label, an helper text, and exposing the state with selection binding
+    // A leading switch with a label, an helper text
     OUDSSwitchItem(isOn: $isOn, 
                    labelText: "Dead Robot Zombie Cop",
                    helperText: "from Outer Space II")
 
     // A trailing switch with a label, an helper text, an icon, a divider and is about an error
-    // with an inverse layout, and exposing the state through isOn binding
+    // with an inverse layout
     OUDSSwitchItem(isOn: $isOn,
                      labelText: "We live in a fabled world",
                      helperText: "Of dreaming boys and wide-eyed girls",

@@ -30,24 +30,25 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Supposing we have an unselected state
-///     @Published var selection: Bool = false
+///     @Published var isOn: Bool = false
 ///
 ///     // A simple switch, no error, not in read only mode
-///     OUDSSwitch(isOn: $selection, accessibilityLabel: "The cake is a lie")
+///     OUDSSwitch(isOn: $isOn, accessibilityLabel: "The cake is a lie")
 /// ```
 ///
 /// ## Design documentation
 ///
-/// TODO: add url to design specification
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
 ///
-/// - Since: 0.12.0
-public struct OUDSSwitch: View { // TODO: #266 - Update documentation hyperlink above
+/// - Since: 0.13.0
+public struct OUDSSwitch: View {
 
     // MARK: - Properties
 
+    @Binding var isOn: Bool
+
     private let accessibilityLabel: String
 
-    @Binding var isOn: Bool
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
 

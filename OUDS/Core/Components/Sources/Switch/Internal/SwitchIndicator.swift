@@ -31,11 +31,11 @@ struct SwitchIndicator: View {
 
     var body: some View {
         Cursor(interactionState: interactionState, isOn: isOn)
-        .padding(.horizontal, spacePadding)
-        .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
-        .background(trackColor.color(for: colorScheme))
-        .clipShape(Capsule())
-        .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: trackWidth)
+            .padding(.horizontal, spacePadding)
+            .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
+            .background(trackColor.color(for: colorScheme))
+            .clipShape(Capsule())
+            .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: trackWidth)
     }
 
     // MARK: Private Helpers
@@ -68,7 +68,7 @@ struct SwitchIndicator: View {
     }
 }
 
-struct Cursor: View {
+private struct Cursor: View {
 
     // MARK: Stored properties
 
@@ -123,6 +123,7 @@ struct Cursor: View {
             }
         }
     }
+
     private var tickColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled, .hover, .pressed:
