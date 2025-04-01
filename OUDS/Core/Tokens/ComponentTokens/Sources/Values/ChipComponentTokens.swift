@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for tags components like `OUDSChip`
+/// Declares all component tokens for chips components like `OUDSChip`
 /// Use for tokens providers like `OrangeThemeChipComponentTokensProvider`.
 ///
 /// - Since: 0.10.0
@@ -36,6 +36,9 @@ public protocol ChipComponentTokens {
     var chipBorderWidthDefault: BorderWidthSemanticToken { get }
     var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
     var chipBorderWidthSelected: BorderWidthSemanticToken { get }
+    var chipBorderWidthSelectedInteraction: BorderWidthSemanticToken { get }
+    var chipBorderWidthUnselected: BorderWidthSemanticToken { get }
+    var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { get }
     var chipBorderRadiusPill: BorderRadiusSemanticToken { get }
 
     // MARK: - Colors
