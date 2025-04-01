@@ -60,18 +60,17 @@ struct SwitchConfiguration: View {
     @ObservedObject var model: SwitchConfigurationModel
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Toggle("app_components_switch_selection_label", isOn: $model.selection)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled)
 
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
         }
     }
 }

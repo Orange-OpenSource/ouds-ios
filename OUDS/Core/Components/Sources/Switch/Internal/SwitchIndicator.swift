@@ -25,7 +25,6 @@ struct SwitchIndicator: View {
     let isOn: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
@@ -33,7 +32,7 @@ struct SwitchIndicator: View {
         Cursor(interactionState: interactionState, isOn: isOn)
             .padding(.horizontal, spacePadding)
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
-            .background(trackColor.color(for: colorScheme))
+            .oudsBackground(trackColor)
             .clipShape(Capsule())
             .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: trackWidth)
     }
@@ -76,7 +75,6 @@ private struct Cursor: View {
     let isOn: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
@@ -85,7 +83,7 @@ private struct Cursor: View {
             tick
         }
         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
-        .background(corsorBackgroundColor)
+        .oudsBackground(corsorBackgroundColor)
         .clipShape(Capsule())
         .oudsShadow(theme.elevations.elevationRaised)
     }
@@ -105,8 +103,8 @@ private struct Cursor: View {
         isOn ? theme.switch.switchSizeHeightCursorSelected : theme.switch.switchSizeHeightCursorUnselected
     }
 
-    private var corsorBackgroundColor: Color {
-        theme.switch.switchColorCursor.color(for: colorScheme)
+    private var corsorBackgroundColor: MultipleColorSemanticTokens {
+        theme.switch.switchColorCursor
     }
 
     @ViewBuilder
@@ -116,7 +114,7 @@ private struct Cursor: View {
             case .enabled, .disabled, .hover:
                 Image(decorative: "ic_form_tick", bundle: Bundle.OUDSComponents)
                     .renderingMode(.template)
-                    .foregroundStyle(tickColor.color(for: colorScheme))
+                    .oudsForegroundStyle(tickColor)
                     .opacity(theme.switch.switchOpacityCheck)
             default:
                 EmptyView()
