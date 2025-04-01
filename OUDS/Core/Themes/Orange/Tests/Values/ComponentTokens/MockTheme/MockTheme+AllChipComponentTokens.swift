@@ -45,6 +45,9 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     override public var chipBorderWidthDefault: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
     override public var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
     override public var chipBorderWidthSelected: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
+    override public var chipBorderWidthSelectedInteraction: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
+    override public var chipBorderWidthUnselected: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
+    override public var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { Self.mockThemeChipBorderWidth }
     override public var chipBorderRadiusPill: BorderRadiusSemanticToken { Self.mockThemeChipBorderRadius }
     override public var chipColorContentEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorContentHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }

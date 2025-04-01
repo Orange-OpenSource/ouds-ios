@@ -59,6 +59,21 @@ struct ThemeOverrideOfChipComponentTokensTests {
         #expect(inheritedTheme.chip.chipBorderWidthSelected == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
     }
 
+    @Test func inheritedThemeCanOverrideChipComponentTokenBorderWidthSelectedInteraction() throws {
+        #expect(inheritedTheme.chip.chipBorderWidthSelectedInteraction != abstractTheme.chip.chipBorderWidthSelectedInteraction)
+        #expect(inheritedTheme.chip.chipBorderWidthSelectedInteraction == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
+    }
+
+    @Test func inheritedThemeCanOverrideChipComponentTokenBorderWidthUnselected() throws {
+        #expect(inheritedTheme.chip.chipBorderWidthUnselected != abstractTheme.chip.chipBorderWidthUnselected)
+        #expect(inheritedTheme.chip.chipBorderWidthUnselected == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
+    }
+
+    @Test func inheritedThemeCanOverrideChipComponentTokenBorderWidthUnselectedInteraction() throws {
+        #expect(inheritedTheme.chip.chipBorderWidthUnselectedInteraction != abstractTheme.chip.chipBorderWidthUnselectedInteraction)
+        #expect(inheritedTheme.chip.chipBorderWidthUnselectedInteraction == MockThemeChipComponentTokenProvider.mockThemeChipBorderWidth)
+    }
+
     @Test func inheritedThemeCanOverrideChipComponentTokenBorderRadiusPill() throws {
         #expect(inheritedTheme.chip.chipBorderRadiusPill != abstractTheme.chip.chipBorderRadiusPill)
         #expect(inheritedTheme.chip.chipBorderRadiusPill == MockThemeChipComponentTokenProvider.mockThemeChipBorderRadius)

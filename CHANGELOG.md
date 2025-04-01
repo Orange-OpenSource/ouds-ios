@@ -8,11 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `dimension1250` raw token of dimension (tokens library v0.9.0)
 - [Library] Support of arabic language ([#552](https://github.com/Orange-OpenSource/ouds-ios/issues/552))
 - [DesignToolbox] Support of arabic language ([#552](https://github.com/Orange-OpenSource/ouds-ios/issues/552))
 
 ### Changed
 
+- [Library] `Chip` component tokens (tokens library v0.9.0)
 - [Library] Remove UI test cases on colored surface for radio button and checkbox ([#523](https://github.com/Orange-OpenSource/ouds-ios/issues/523)) 
 - [Library] Rafactor the interal interation state used by radio and checkbox components ([#560](https://github.com/Orange-OpenSource/ouds-ios/issues/560)) 
 - [Library] Font family, font weight semantic tokens (tokens library v0.8.0) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))

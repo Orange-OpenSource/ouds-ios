@@ -36,6 +36,9 @@ public protocol ChipComponentTokens {
     var chipBorderWidthDefault: BorderWidthSemanticToken { get }
     var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
     var chipBorderWidthSelected: BorderWidthSemanticToken { get }
+    var chipBorderWidthSelectedInteraction: BorderWidthSemanticToken { get }
+    var chipBorderWidthUnselected: BorderWidthSemanticToken { get }
+    var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { get }
     var chipBorderRadiusPill: BorderRadiusSemanticToken { get }
 
     // MARK: - Colors
