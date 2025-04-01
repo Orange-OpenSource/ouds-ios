@@ -129,7 +129,6 @@ struct CheckboxItemIndeterminateConfiguration: View {
     @ObservedObject var model: CheckboxItemIndeterminateConfigurationModel
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {

@@ -25,7 +25,7 @@ extension View {
     public func oudsForegroundStyle(_ color: MultipleColorSemanticTokens) -> some View {
         self.modifier(ColorSchemeBasedForegroundStyle(color: color))
     }
-    
+
     /// Applies a **foreground color** on the current view by using the given tokens of colors.
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
@@ -33,13 +33,21 @@ extension View {
     public func oudsForegroundColor(_ color: MultipleColorSemanticTokens) -> some View {
         self.modifier(ColorSchemeBasedForegroundColor(color: color))
     }
-    
+
     /// Applies a **background** on the current view by using the given tokens of colors.
     /// Uses the current color scheme so as to load the suitable color to apply in the end
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
     public func oudsBackground(_ color: MultipleColorSemanticTokens) -> some View {
         self.modifier(ColorSchemeBasedBackgroundColor(color: color))
+    }
+
+    /// Applies an **accent color** on the current view by using the given tokens of colors.
+    /// Uses the current color scheme so as to load the suitable color to apply in the end
+    /// - Parameter color: The token from which the color to use must be extracted
+    /// - Returns: The modified `View`
+    public func oudsAccentColor(_ color: MultipleColorSemanticTokens) -> some View {
+        self.modifier(ColorSchemeBasedAccentColor(color: color))
     }
 }
 
@@ -48,17 +56,13 @@ extension View {
 /// Depending to the current color scheme, will load the expected `ColorSemanticToken` from the given
 /// `MultipleColorSemanticTokens` object and applies it as **foreground style** on the calling view.
 private struct ColorSchemeBasedForegroundStyle: ViewModifier {
-    
+
     let color: MultipleColorSemanticTokens
-        
-    private var colorSchemeBasedColor: ColorSemanticToken {
-        colorScheme == .light ? color.light : color.dark
-    }
 
     @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
-        content.foregroundStyle(colorSchemeBasedColor.color)
+        content.foregroundStyle(color.color(for: colorScheme))
     }
 }
 
@@ -67,17 +71,13 @@ private struct ColorSchemeBasedForegroundStyle: ViewModifier {
 /// Depending to the current color scheme, will load the expected `ColorSemanticToken` from the given
 /// `MultipleColorSemanticTokens` object and applies it as **foreground color** on the calling view.
 private struct ColorSchemeBasedForegroundColor: ViewModifier {
-    
+
     let color: MultipleColorSemanticTokens
-        
-    private var colorSchemeBasedColor: ColorSemanticToken {
-        colorScheme == .light ? color.light : color.dark
-    }
 
     @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
-        content.foregroundColor(colorSchemeBasedColor.color)
+        content.foregroundColor(color.color(for: colorScheme))
     }
 }
 
@@ -86,16 +86,27 @@ private struct ColorSchemeBasedForegroundColor: ViewModifier {
 /// Depending to the current color scheme, will load the expected `ColorSemanticToken` from the given
 /// `MultipleColorSemanticTokens` object and applies it as **background color** on the calling view.
 private struct ColorSchemeBasedBackgroundColor: ViewModifier {
-    
+
     let color: MultipleColorSemanticTokens
-        
-    private var colorSchemeBasedColor: ColorSemanticToken {
-        colorScheme == .light ? color.light : color.dark
-    }
 
     @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
-        content.background(colorSchemeBasedColor.color)
+        content.background(color.color(for: colorScheme))
+    }
+}
+
+// MARK: - Color Scheme Based Accent Color
+
+/// Depending to the current color scheme, will load the expected `ColorSemanticToken` from the given
+/// `MultipleColorSemanticTokens` object and applies it as **accent color** on the calling view.
+private struct ColorSchemeBasedAccentColor: ViewModifier {
+
+    let color: MultipleColorSemanticTokens
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    func body(content: Content) -> some View {
+        content.accentColor(color.color(for: colorScheme))
     }
 }

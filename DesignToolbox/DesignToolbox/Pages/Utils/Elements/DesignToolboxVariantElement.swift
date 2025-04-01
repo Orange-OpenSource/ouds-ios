@@ -18,7 +18,6 @@ import SwiftUI
 struct DesignToolboxVariantElement: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.layoutDirection) private var layoutDirection
 
     // MARK: Stored properties
@@ -36,12 +35,12 @@ struct DesignToolboxVariantElement: View {
                     Text(LocalizedStringKey(element.name))
                         .typeHeadingMedium(theme)
                         .multilineTextAlignment(.leading)
-                        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                        .oudsForegroundStyle(theme.colors.colorContentDefault)
                         .padding(.vertical, theme.spaces.spaceFixedShorter)
                         .padding(.leading, theme.spaces.spaceFixedMedium)
                     Spacer()
                     Image(systemName: "chevron.right")
-                        .foregroundColor(theme.colors.colorContentDefault.color(for: colorScheme))
+                        .oudsForegroundColor(theme.colors.colorContentDefault)
                         .padding(layoutDirection == .rightToLeft ? .leading : .trailing, theme.spaces.spaceFixedMedium)
                         .accessibilityHidden(true)
                         .scaleEffect(layoutDirection == .rightToLeft ? -1 : 1, anchor: .center)

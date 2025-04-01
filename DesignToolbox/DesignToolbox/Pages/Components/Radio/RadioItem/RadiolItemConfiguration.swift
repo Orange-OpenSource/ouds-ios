@@ -148,7 +148,6 @@ struct RadioItemConfiguration: View {
     @ObservedObject var model: RadioItemConfigurationModel
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // swiftlint:disable closure_body_length
     var body: some View {

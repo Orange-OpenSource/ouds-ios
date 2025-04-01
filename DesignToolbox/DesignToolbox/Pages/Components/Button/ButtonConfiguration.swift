@@ -163,7 +163,6 @@ extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomSt
 struct ButtonConfiguration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     @StateObject var model: ButtonConfigurationModel
 

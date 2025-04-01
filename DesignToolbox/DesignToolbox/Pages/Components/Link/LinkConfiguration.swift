@@ -141,7 +141,6 @@ extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringCon
 struct LinkConfiguration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     @StateObject var model: LinkConfigurationModel
 

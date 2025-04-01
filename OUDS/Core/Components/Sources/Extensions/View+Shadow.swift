@@ -25,7 +25,7 @@ extension View {
     ///
     /// - Parameter elevation: The token to give for the shadow / elevation effect depending to the color scheme
     /// - Returns `View`: The current `View` with the shadow / elevation effect
-    public func shadow(elevation: MultipleElevationCompositeRawTokens) -> some View {
+    public func oudsShadow(_ elevation: MultipleElevationCompositeRawTokens) -> some View {
         self.modifier(ColorSchemeBasedElevationViewModifier(elevation: elevation))
     }
 }
@@ -39,7 +39,7 @@ private struct ColorSchemeBasedElevationViewModifier: ViewModifier {
     let elevation: MultipleElevationCompositeRawTokens
 
     private var colorSchemeBasedElevation: ElevationCompositeRawToken {
-        colorScheme == .light ? elevation.light : elevation.dark
+        elevation.elevation(for: colorScheme)
     }
 
     @Environment(\.colorScheme) private var colorScheme

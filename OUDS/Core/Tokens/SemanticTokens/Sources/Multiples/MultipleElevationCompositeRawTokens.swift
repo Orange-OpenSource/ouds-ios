@@ -30,8 +30,8 @@ import SwiftUI
 ///
 ///         // Then the develoment team declares an "higher" level elevation semantic token
 ///         // inside ElevationCompositeSemanticTokens protocol,
-///         // and defined inside OUDSTheme+ElevationCompositeSemanticTokens extension
-///         // ElevationCompositeSemanticToken is a typealias for MultipleElevationCompositeRawTokens to keep same grammar as dsign kit
+///         // and defined inside OrangeTheme+ElevationCompositeSemanticTokens extension
+///         // ElevationCompositeSemanticToken is a typealias for MultipleElevationCompositeRawTokens to keep same grammar as design kit
 ///         var elevationNone: ElevationCompositeSemanticToken {
 ///             ElevationCompositeSemanticToken(light: elevationBottom_0, dark: elevationBottom_1_100)
 ///         }
@@ -40,9 +40,26 @@ import SwiftUI
 ///         var elevationNone: ElevationCompositeSemanticToken {
 ///             ElevationCompositeSemanticToken(elevationBottom_0)
 ///         }
+/// ```
 ///
+/// ```swift
 ///         // The theme exposes both generated elevation semantic tokens and "crafted" higher level elevation semantic tokens.
 ///         // It is recommended to use the higher level version as it is less error-prone.
+///
+///         @Environment(\.theme) var theme
+///         @Environment(\.colorScheme) var colorScheme
+///
+///         // Given you want to apply the elevation token "elevationRaised"
+///         var body: some View {
+///             // Apply the token of elevation for the shadow effect without managing yourself the color scheme
+///             Rectangle()
+///                 .shadow(elevation: theme.elevations.elevationRaised))
+///         }
+/// ```
+///
+/// ```swift
+///     // Or get the token depending to the color scheme and do whatever you want with
+///     theme.elevations.elevationRaised.elevation(for: colorScheme)
 /// ```
 ///
 /// The case of this `MultipleElevationCompositeRawTokens` is quite particular because in fact it contains `MultipleElevationCompositeRawTokens` (i.e. raw tokens) instead of semantic tokens.
@@ -82,6 +99,13 @@ public final class MultipleElevationCompositeRawTokens: NSObject, Sendable {
     override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleElevationCompositeRawTokens else { return false }
         return self.light == other.light && self.dark == other.dark
+    }
+
+    /// Returns the right elevation according to the `colorScheme`.
+    /// - Parameter colorScheme: The color scheme
+    /// - Returns: The `ElevationCompositeRawToken` to use depending to `colorScheme`
+    public func elevation(for colorScheme: ColorScheme) -> ElevationCompositeRawToken {
+        (colorScheme == .light ? light : dark)
     }
 }
 

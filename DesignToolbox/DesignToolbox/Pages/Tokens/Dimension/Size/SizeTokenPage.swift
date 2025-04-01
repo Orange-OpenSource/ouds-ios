@@ -139,7 +139,6 @@ struct SizeTokenPage: View {
     private struct TypographyCategoryHeader: View {
 
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
         let namedFont: NamedFont

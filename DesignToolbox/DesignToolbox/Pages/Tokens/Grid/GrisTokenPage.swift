@@ -20,7 +20,6 @@ struct GridTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsHorizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 

@@ -19,7 +19,6 @@ import SwiftUI
 struct Card: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 
@@ -39,8 +38,8 @@ struct Card: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
         }
-        .background(theme.colors.colorBgPrimary.color(for: colorScheme)
-            .shadow(elevation: theme.elevations.elevationRaised))
+        .oudsBackground(theme.colors.colorBgPrimary)
+        .oudsShadow(theme.elevations.elevationRaised)
         .padding(.all, 4)
     }
 }

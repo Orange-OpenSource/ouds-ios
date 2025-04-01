@@ -74,7 +74,6 @@ struct CheckboxConfiguration: View {
     @ObservedObject var model: CheckboxConfigurationModel
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {

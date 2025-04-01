@@ -106,7 +106,6 @@ extension View {
 struct ThemeSelectionButton: View {
 
     @EnvironmentObject private var themeProvider: ThemeProvider
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         Menu {

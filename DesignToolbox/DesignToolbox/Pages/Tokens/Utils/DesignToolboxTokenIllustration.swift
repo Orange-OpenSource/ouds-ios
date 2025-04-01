@@ -18,7 +18,6 @@ import SwiftUI
 struct DesignToolboxTokenIllustration<TokenIllustration>: View where TokenIllustration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 

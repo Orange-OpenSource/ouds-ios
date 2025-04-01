@@ -56,21 +56,21 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .foregroundColor(appliedColor)
+            .oudsForegroundColor(appliedColor)
     }
 
     // MARK: - Colors
 
-    private var appliedColor: Color {
+    private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return enabledColor.color(for: colorScheme)
+            return enabledColor
         case .hover:
-            return hoverColor.color(for: colorScheme)
+            return hoverColor
         case .pressed:
-            return pressedColor.color(for: colorScheme)
+            return pressedColor
         case .disabled, .readOnly:
-            return disabledColor.color(for: colorScheme)
+            return disabledColor
         }
     }
 

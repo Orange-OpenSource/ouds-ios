@@ -18,7 +18,6 @@ import SwiftUI
 struct DesignToolboxChoicePicker<Content, Selection>: View where Content: View, Selection: Hashable {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     let title: String
     let selection: Binding<Selection>
@@ -28,7 +27,7 @@ struct DesignToolboxChoicePicker<Content, Selection>: View where Content: View, 
         VStack(alignment: .leading) {
             Text(LocalizedStringKey(title))
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .accessibilityHidden(true)
 
             Picker(LocalizedStringKey(title), selection: selection) {

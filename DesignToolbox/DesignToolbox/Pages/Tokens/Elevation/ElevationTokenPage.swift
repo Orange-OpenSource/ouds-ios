@@ -54,7 +54,7 @@ struct ElevationTokenPage: View {
                 Rectangle()
                     .frame(width: theme.sizes.sizeIconDecorative2xl, height: theme.sizes.sizeIconDecorative2xl)
                     .oudsForegroundColor(theme.colors.colorBgSecondary)
-                    .shadow(elevation: token)
+                    .oudsShadow(token)
                     .padding(.bottom, 2)
             }
         }

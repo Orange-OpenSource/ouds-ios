@@ -11,7 +11,10 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSTokensSemantic
 import SwiftUI
+
+// MARK: - OUDS Colored Surface
 
 /// Used to define if a content is used on a colored surface.
 ///
@@ -54,6 +57,8 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
     }
 }
 
+// MARK: - Extension of View$
+
 extension View {
 
     /// Helper to set the current view on colored surface based on ``OUDSColoredSurface``.
@@ -63,6 +68,50 @@ extension View {
         self
             .background(color)
             .environment(\.oudsOnColoredSurface, true)
+    }
+
+    /// Helper to set the current view on colored surface based on ``OUDSColoredSurface``.
+    /// Applied colors will depend to current color scheme.
+    ///
+    /// - Parameter token: The tokens of colors applied as background on the current view.
+    public func oudsColoredSurface(colors token: MultipleColorSemanticTokens) -> some View {
+        self
+            .modifier(ColorSchemeBasedBackgroundColor(color: token))
+            .environment(\.oudsOnColoredSurface, true)
+    }
+}
+
+// MARK: - Color Scheme Based Background Color
+
+/// Depending to the current color scheme, will load the expected `ColorSemanticToken` from the given
+/// `MultipleColorSemanticTokens` object and applies it as **background** on the calling view.
+private struct ColorSchemeBasedBackgroundColor: ViewModifier {
+
+    let color: MultipleColorSemanticTokens
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    func body(content: Content) -> some View {
+        content.background(color.color(for: colorScheme))
+    }
+}
+
+// MARK: - Color Scheme Based Foreground Style
+
+/// Depending to the current color scheme, will load the expected `ColorSemanticToken` from the given
+/// `MultipleColorSemanticTokens` object and applies it as **foreground style** on the calling view.
+private struct ColorSchemeBasedForegroundStyle: ViewModifier {
+
+    let color: MultipleColorSemanticTokens
+
+    private var colorSchemeBasedColor: ColorSemanticToken {
+        colorScheme == .light ? color.light : color.dark
+    }
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    func body(content: Content) -> some View {
+        content.foregroundStyle(colorSchemeBasedColor.color)
     }
 }
 

@@ -85,7 +85,6 @@ struct SpaceTokenVariant<TokenIllustration>: View where TokenIllustration: View 
 struct SpaceCommonIllustration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     enum Padding {
         case top(SpaceIllustrationIcon.Asset?)
@@ -213,7 +212,6 @@ struct SpaceIllustrationIcon: View {
     }
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     let asset: Asset?
 
@@ -238,7 +236,6 @@ struct SpaceIllustrationIcon: View {
 private struct SpaceIllustrationRectangle: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     let width: CGFloat?
     let height: CGFloat?
@@ -266,7 +263,6 @@ private struct SpaceIllustrationRectangle: View {
 struct SpaceHeaderDescription: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     private let firstText: LocalizedStringKey
     private let secondText: LocalizedStringKey?
