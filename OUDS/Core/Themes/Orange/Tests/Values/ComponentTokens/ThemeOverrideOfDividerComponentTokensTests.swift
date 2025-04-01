@@ -11,24 +11,27 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDS
 import OUDSThemesOrange
 import Testing
 
 // swiftlint:disable type_name
 
-/// Check if the component tokens provider under testsh as the default semantic token providers with the expected types.
-struct OrangeThemeBulletListComponentTokensProviderTests {
+struct ThemeOverrideOfDividerComponentTokensTests {
 
-    private var provider: OrangeThemeBulletListComponentTokensProvider
+    private var abstractTheme: OUDSTheme
+    private var inheritedTheme: OUDSTheme
 
     init() {
-        provider = OrangeThemeBulletListComponentTokensProvider()
+        abstractTheme = OrangeTheme()
+        inheritedTheme = MockTheme()
     }
 
-    // MARK: - Tests
+    // MARK: - Borders
 
-    @Test func defaultSpaceSemanticTokensProvider() throws {
-        #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
+    @Test func inheritedThemeCanOverrideDividerComponentTokenBorderWidth() throws {
+        #expect(inheritedTheme.divider.dividerBorderWidth != abstractTheme.divider.dividerBorderWidth)
+        #expect(inheritedTheme.divider.dividerBorderWidth == MockThemeDividerComponentTokenProvider.mockThemeDividerBorderWidth)
     }
 }
 

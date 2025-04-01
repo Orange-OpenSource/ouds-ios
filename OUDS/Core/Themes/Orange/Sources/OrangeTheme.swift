@@ -83,101 +83,104 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     /// If a nil token provider is given, the default version associated fo the theme is used.
     ///
     /// - Parameters:
-    ///    - colors: All semantic tokens of colors
     ///    - borders: All semantic tokens of borders
+    ///    - colors: All semantic tokens of colors
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
     ///    - opacities: All semantic tokens of opacity
     ///    - sizes: All semantic tokens of sizes
     ///    - spaces: All semantic tokens of spaces
-    ///    - button: All component tokens for button like `OUDSButton`
-    ///    - link: All component tokens for link like `OUDSLink`
+    ///    - badge: All component tokens for badge
+    ///    - bulletList: All component tokens for bullet list
+    ///    - button: All component tokens for button
+    ///    - checkbox: All component tokens for checkbox
+    ///    - chip: All component tokens for chip
+    ///    - controlItem: All component tokens for control item
+    ///    - divider: All component tokens for divider
+    ///    - inputText: All component tokens for input text
+    ///    - link: All component tokens for link
+    ///    - listItem: All component tokens for list item
+    ///    - radioButton: All component tokens for radio buttons
     ///    - select: All component tokens for select
     ///    - skeleton: All component tokens for skeleton
-    ///    - tag: All component tokens for tag
     ///    - switch: All component tokens for switch
-    ///    - listItem: All component tokens for list item
-    ///    - chip: All component tokens for chip
-    ///    - bulletList: All component tokens for bullet list
-    ///    - inputText: All component tokens for input text
-    ///    - badge: All component tokens for badge
-    ///    - controlItem: All component tokens for control item
-    ///    - radioButton: All component tokens for radio buttons like `OUDSRadioButton` and `OUDSRadioButtonItem`
-    ///    - checkbox: All component tokens for checkbox like `OUDSCheckbox` and `OUDSCheckboxItem`
+    ///    - tag: All component tokens for tag
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
-    override public init(
-        colors: AllColorSemanticTokensProvider? = nil,
-        borders: AllBorderSemanticTokensProvider? = nil,
-        elevations: AllElevationSemanticTokensProvider? = nil,
-        fonts: AllFontSemanticTokensProvider? = nil,
-        grids: AllGridSemanticTokensProvider? = nil,
-        opacities: AllOpacitySemanticTokensProvider? = nil,
-        sizes: AllSizeSemanticTokensProvider? = nil,
-        spaces: AllSpaceSemanticTokensProvider? = nil,
-        button: AllButtonComponentTokensProvider? = nil,
-        link: AllLinkComponentTokensProvider? = nil,
-        select: AllSelectComponentTokensProvider? = nil,
-        skeleton: AllSkeletonComponentTokensProvider? = nil,
-        tag: AllTagComponentTokensProvider? = nil,
-        switch: AllSwitchComponentTokensProvider? = nil,
-        listItem: AllListItemComponentTokensProvider? = nil,
-        chip: AllChipComponentTokensProvider? = nil,
-        bulletList: AllBulletListComponentTokensProvider? = nil,
-        inputText: AllInputTextComponentTokensProvider? = nil,
-        badge: AllBadgeComponentTokensProvider? = nil,
-        controlItem: AllControlItemComponentTokensProvider? = nil,
-        checkbox: AllCheckboxComponentTokensProvider? = nil,
-        radioButton: AllRadioButtonComponentTokensProvider? = nil,
-        fontFamily: FontFamilySemanticToken? = nil) {
+    override public init(borders: AllBorderSemanticTokensProvider? = nil,
+                         colors: AllColorSemanticTokensProvider? = nil,
+                         elevations: AllElevationSemanticTokensProvider? = nil,
+                         fonts: AllFontSemanticTokensProvider? = nil,
+                         grids: AllGridSemanticTokensProvider? = nil,
+                         opacities: AllOpacitySemanticTokensProvider? = nil,
+                         sizes: AllSizeSemanticTokensProvider? = nil,
+                         spaces: AllSpaceSemanticTokensProvider? = nil,
+                         badge: AllBadgeComponentTokensProvider? = nil,
+                         bulletList: AllBulletListComponentTokensProvider? = nil,
+                         button: AllButtonComponentTokensProvider? = nil,
+                         checkbox: AllCheckboxComponentTokensProvider? = nil,
+                         chip: AllChipComponentTokensProvider? = nil,
+                         controlItem: AllControlItemComponentTokensProvider? = nil,
+                         divider: AllDividerComponentTokensProvider? = nil,
+                         inputText: AllInputTextComponentTokensProvider? = nil,
+                         listItem: AllListItemComponentTokensProvider? = nil,
+                         link: AllLinkComponentTokensProvider? = nil,
+                         radioButton: AllRadioButtonComponentTokensProvider? = nil,
+                         select: AllSelectComponentTokensProvider? = nil,
+                         skeleton: AllSkeletonComponentTokensProvider? = nil,
+                         switch: AllSwitchComponentTokensProvider? = nil,
+                         tag: AllTagComponentTokensProvider? = nil,
+                         fontFamily: FontFamilySemanticToken? = nil) {
 
-            let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
-            let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
-            let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
-            let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
-            let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
-            let opacities = (opacities ?? OrangeThemeOpacitySemanticTokensProvider())
-            let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
-            let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
+        let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
+        let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
+        let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
+        let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
+        let opacities = (opacities ?? OrangeThemeOpacitySemanticTokensProvider())
+        let sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        let spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
 
-            let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
-            let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-            let select = (select ?? OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-            let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
-            let tag = (tag ?? OrangeThemeTagComponentTokensProvider(colors: colors))
-            let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities))
-            let listItem = (`listItem` ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-            let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
-            let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-            let inputText = (inputText ?? OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-            let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
-            let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-            let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
-            let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
+        let badge = (badge ?? OrangeThemeBadgeComponentTokensProvider(sizes: sizes, borders: borders, spaces: spaces))
+        let button = (button ?? OrangeThemeButtonComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
+        let bulletList = (bulletList ?? OrangeThemeBulletListComponentTokensProvider(spaces: spaces))
+        let checkbox = (checkbox ?? OrangeThemeCheckboxComponentTokensProvider(sizes: sizes, borders: borders))
+        let chip = (chip ?? OrangeThemeChipComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces))
+        let controlItem = (controlItem ?? OrangeThemeControlItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
+        let inputText = (inputText ?? OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let listItem = (`listItem` ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
+        let select = (select ?? OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
+        let `switch` = (`switch` ?? OrangeThemeSwitchComponentTokensProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities))
+        let tag = (tag ?? OrangeThemeTagComponentTokensProvider(colors: colors))
 
-            super.init(colors: colors,
-                       borders: borders,
-                       elevations: elevations,
-                       fonts: fonts,
-                       grids: grids,
-                       opacities: opacities,
-                       sizes: sizes,
-                       spaces: spaces,
-                       button: button,
-                       link: link,
-                       select: select,
-                       skeleton: skeleton,
-                       tag: tag,
-                       switch: `switch`,
-                       listItem: listItem,
-                       chip: chip,
-                       bulletList: bulletList,
-                       inputText: inputText,
-                       badge: badge,
-                       controlItem: controlItem,
-                       checkbox: checkbox,
-                       radioButton: radioButton,
-                       fontFamily: fontFamily)
+        super.init(borders: borders,
+                   colors: colors,
+                   elevations: elevations,
+                   fonts: fonts,
+                   grids: grids,
+                   opacities: opacities,
+                   sizes: sizes,
+                   spaces: spaces,
+                   badge: badge,
+                   bulletList: bulletList,
+                   button: button,
+                   checkbox: checkbox,
+                   chip: chip,
+                   controlItem: controlItem,
+                   divider: divider,
+                   inputText: inputText,
+                   listItem: listItem,
+                   link: link,
+                   radioButton: radioButton,
+                   select: select,
+                   skeleton: skeleton,
+                   switch: `switch`,
+                   tag: tag,
+                   fontFamily: fontFamily)
         }
 
     deinit { }

@@ -19,21 +19,13 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for links components like `OUDSBulletList`
-/// Use for tokens providers like `OrangeThemeBulletListComponentTokensProvider`.
+/// Declares all component tokens for divider components like `OUDSDivider`
+/// Use for tokens providers like `OrangeThemeDividerComponentTokensProvider`.
 ///
-/// - Since: 0.10.0
-public protocol BulletListComponentTokens {
+/// - Since: 0.13.0
+public protocol DividerComponentTokens {
 
-    // MARK: - Spaces
-
-    var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { get }
-    var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { get }
-    var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { get }
-    var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { get }
-    var bulletListSpacePaddingInlineLevel0: SpaceSemanticToken { get }
-    var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { get }
-    var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { get }
+    var dividerBorderWidth: BorderWidthSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
