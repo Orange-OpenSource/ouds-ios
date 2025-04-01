@@ -11,6 +11,7 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+import OUDSTokensSemantic
 import SwiftUI
 
 /// This is the icon container of the ControlItem.
@@ -36,7 +37,7 @@ struct ControlItemIconContainer: View {
                 icon
                     .resizable()
                     .renderingMode(.template)
-                    .foregroundStyle(iconColor)
+                    .oudsForegroundStyle(iconColor)
                     .frame(width: theme.controlItem.controlItemSizeIcon, height: theme.controlItem.controlItemSizeIcon)
             }
             .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)
@@ -45,12 +46,12 @@ struct ControlItemIconContainer: View {
 
     // MARK: - Colors
 
-    private var iconColor: Color {
+    private var iconColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
-            theme.colors.colorContentDefault.color(for: colorScheme)
+            theme.colors.colorContentDefault
         case .disabled:
-            theme.colors.colorContentDisabled.color(for: colorScheme)
+            theme.colors.colorContentDisabled
         }
     }
 }

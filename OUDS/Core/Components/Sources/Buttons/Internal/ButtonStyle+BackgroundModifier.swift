@@ -31,7 +31,7 @@ struct ButtonBackgroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.background(appliedColor.color(for: colorScheme))
+        content.oudsBackground(appliedColor)
     }
 
     // MARK: Private helpers
