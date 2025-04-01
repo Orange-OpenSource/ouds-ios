@@ -32,7 +32,10 @@ struct CheckboxIndicator: View {
     // MARK: - Body
 
     var body: some View {
-        indicator().modifier(CheckboxIndicatorModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
+        indicator()
+            .modifier(CheckboxIndicatorModifier(interactionState: interactionState,
+                                                indicatorState: indicatorState,
+                                                isError: isError))
     }
 
     // MARK: - Indicator

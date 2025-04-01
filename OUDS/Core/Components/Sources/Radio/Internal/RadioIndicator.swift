@@ -31,7 +31,10 @@ struct RadioIndicator: View {
     // MARK: - Body
 
     var body: some View {
-        indicator().modifier(RadioIndicatorModifier(interactionState: interactionState, isOn: isOn, isError: isError))
+        indicator()
+            .modifier(RadioIndicatorModifier(interactionState: interactionState,
+                                             isOn: isOn,
+                                             isError: isError))
     }
 
     // MARK: - Indicator
