@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] `Divider` component tokens (tokens library v0.9.0)
 - [Library] `dimension1250` raw token of dimension (tokens library v0.9.0)
 - [Library] Support of arabic language ([#552](https://github.com/Orange-OpenSource/ouds-ios/issues/552))
 - [DesignToolbox] Support of arabic language ([#552](https://github.com/Orange-OpenSource/ouds-ios/issues/552))

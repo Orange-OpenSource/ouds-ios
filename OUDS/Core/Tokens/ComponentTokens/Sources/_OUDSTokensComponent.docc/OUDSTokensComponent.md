@@ -109,6 +109,7 @@ struct DesignToolbox: App {
 - ``CheckboxComponentTokens``
 - ``ChipComponentTokens``
 - ``ControlItemComponentTokens``
+- ``DividerComponentTokens``
 - ``InputTextComponentTokens``
 - ``LinkComponentTokens``
 - ``ListItemComponentTokens``
