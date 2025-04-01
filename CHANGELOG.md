@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Add accessibility label to vocalize the IconOnly button style ([#460](https://github.com/Orange-OpenSource/ouds-ios/issues/460))
 - [Library] Chevron for link component pointing to bad direction in RTL mode ([#557](https://github.com/Orange-OpenSource/ouds-ios/issues/557))
 - [Library] Remove divider if outline effect is active in RadioItem component ([#564](https://github.com/Orange-OpenSource/ouds-ios/issues/564))
 - [DesignToolbox] In RTL mode code sample text not aligned on the left ([#554](https://github.com/Orange-OpenSource/ouds-ios/issues/554))
