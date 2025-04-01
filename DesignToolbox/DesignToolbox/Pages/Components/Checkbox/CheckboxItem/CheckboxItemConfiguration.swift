@@ -125,41 +125,40 @@ struct CheckboxItemConfiguration: View {
     @ObservedObject var model: CheckboxItemConfigurationModel
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
 
             Toggle("app_components_checkbox_selection_label", isOn: $model.indicatorState)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
 
             Toggle("app_components_common_onError_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isReadOnly)
 
             Toggle("app_components_common_readOnly_label", isOn: $model.isReadOnly)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isError)
 
             Toggle("app_components_common_helperText_label", isOn: $model.helperText)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             Toggle("app_components_common_icon_label", isOn: $model.icon)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             Toggle("app_components_common_divider_label", isOn: $model.divider)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.layoutOrientation) {
                 ForEach(DesignToolboxLayoutOrientation.allCases, id: \.id) { orientation in

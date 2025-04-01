@@ -20,15 +20,14 @@ import SwiftUI
 struct DesignToolboxColoredBackgroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     let coloredSurface: Bool
 
     func body(content: Content) -> some View {
         if coloredSurface {
-            content.oudsColoredSurface(color: theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme))
+            content.oudsColoredSurface(colors: theme.colors.colorSurfaceBrandPrimary)
         } else {
-            content.background(theme.colors.colorBgSecondary.color(for: colorScheme))
+            content.oudsBackground(theme.colors.colorBgSecondary)
         }
     }
 }

@@ -18,7 +18,6 @@ import SwiftUI
 struct DesignToolboxTokenIllustration<TokenIllustration>: View where TokenIllustration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 
@@ -47,11 +46,11 @@ struct DesignToolboxTokenIllustration<TokenIllustration>: View where TokenIllust
             VStack(alignment: .leading) {
                 Text(tokenName)
                     .typeBodyStrongLarge(theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                    .oudsForegroundStyle(theme.colors.colorContentDefault)
                 if let tokenValue {
                     Text(tokenValue)
                         .typeBodyDefaultMedium(theme)
-                        .foregroundStyle(theme.colors.colorContentMuted.color(for: colorScheme))
+                        .oudsForegroundStyle(theme.colors.colorContentMuted)
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)

@@ -63,7 +63,7 @@ struct CheckboxIndicator: View {
             .resizable()
             .scaledToFit()
             .accessibilityHidden(true)
-            .foregroundColor(appliedColor.color(for: colorScheme))
+            .oudsForegroundColor(appliedColor)
     }
 
     private var appliedColor: MultipleColorSemanticTokens {

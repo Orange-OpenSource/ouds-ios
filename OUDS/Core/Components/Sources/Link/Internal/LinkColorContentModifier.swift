@@ -29,21 +29,21 @@ struct LinkColorContentModifier: ViewModifier {
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content.foregroundStyle(appliedColor)
+        content.oudsForegroundStyle(appliedColor)
     }
 
     // MARK: - Helpers
 
-    private var appliedColor: Color {
+    private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            enabledColor.color(for: colorScheme)
+            enabledColor
         case .hover:
-            hoverColor.color(for: colorScheme)
+            hoverColor
         case .pressed:
-            pressedColor.color(for: colorScheme)
+            pressedColor
         case .disabled, .readOnly:
-            disabledColor.color(for: colorScheme)
+            disabledColor
         }
     }
 

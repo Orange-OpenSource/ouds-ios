@@ -10,15 +10,14 @@ The unified design system implemented by OUDS iOS library allows to apply *eleva
 Because the design tool in use is _Figma_ which defines such shadow with a _blur_ and a _spread_ radiuses, and because _SwiftUI_ uses only its own _radius_ definition, an extension of `View` has been implemented to let users apply some effect using an [`ElevationCompositeSemanticToken`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/elevationcompositesemantictoken) from the [OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/) library thanks to the method `shadow(elevation: ElevationCompositeSemanticToken)`.
 
 ```swift
-// For example, apply the elevation effect "elevationDragLight" from your theme:
-myView.shadow(elevation: theme.elevationDragLight)
+// For example, apply the elevation effect "elevationDrag" from your theme:
+myView.oudsShadow(theme.elevations.elevationDrag)
 
-// And in the theme this "elevationDragLight" has been defined for example like:
-@objc open var elevationDragLight: ElevationCompositeSemanticToken { ElevationRawTokens.elevationBottom_3_500 }
-ColorRawTokens.colorOpacityBlack400)
+// And in the theme this "elevationDrag" has been defined for example like:
+@objc open var elevationDrag: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_500) }
 
 // And if you look deeper, the raw token "elevationBottom_3_500" can be like:
-public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: 0, y: 4, blur: 4, color: ColorRawTokens.colorOpacityBlack500)
+public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: elevationX0, y: elevationY300, blur: elevationBlur400, color: ColorRawTokens.colorOpacityBlack320)
 
 // Blur will be used to compute the radius value
 ```
@@ -74,6 +73,30 @@ The helper is available through `View`, and tokens through the provider of the t
              radius: theme.borders.borderRadiusNone,
              color: theme.colors.colorBorderDefault)
      }
+```
+
+### Apply specific colors
+
+Colors can be applied on view for background and foreground colors, foreground style or also accent color.
+Some helpers are available in the OUDS API to avoid to use the `color(for:ColorScheme)` method.
+
+```swift
+    // Given a color at theme.colors.colorBgPrimary
+    // This token can have light and dark declinations 
+
+    @Environment(\.theme) private var theme
+
+    // Apply a foreground style
+    someView.oudsForegroundStyle(theme.colors.colorBgPrimary)
+
+    // Apply a foreground color
+    someView.oudsForegroundColor(theme.colors.colorBgPrimary)
+
+    // Apply a background
+    someView.oudsBackground(theme.colors.colorBgPrimary)
+
+    // Apply an accent color
+    someView.oudsAccentColor(theme.colors.colorBgPrimary)
 ```
 
 ## Topics

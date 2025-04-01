@@ -163,7 +163,6 @@ extension OUDSButton.Hierarchy: @retroactive CaseIterable, @retroactive CustomSt
 struct ButtonConfiguration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     @StateObject var model: ButtonConfigurationModel
 
@@ -171,12 +170,12 @@ struct ButtonConfiguration: View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.style != .`default`)
 
             Toggle("app_components_common_onColoredBackground_label", isOn: $model.onColoredSurface)
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label", selection: $model.hierarchy) {
                 ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in

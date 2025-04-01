@@ -27,7 +27,7 @@
 /// This `ElevationCompositeRawToken` is not managed by tokenator yet as it is composed by three properties.
 ///
 /// This ``ElevationCompositeSemanticTokens`` protocol contains a set of ``ElevationCompositeSemanticToken``.
-/// They can be applied to views and components using `shadow(elevation:)` and `elevation(for:)`:
+/// They can be applied to views and components using `shadow(elevation:)` or `elevation(for:)`:
 ///
 /// ```swift
 ///      @Environment(\.theme) var theme
@@ -35,10 +35,15 @@
 ///
 ///     // Given you want to apply the elevation token "elevationRaised"
 ///     var body: some View {
+///         // Apply the token of elevation for the shadow effect without managing yourself the color scheme
 ///         Rectangle()
-///             .shadow(elevation: theme.elevations.elevationRaised.elevation(for: colorScheme))
-///         // Or use .light or .dark instead of elevation(for:)
+///             .shadow(elevation: theme.elevations.elevationRaised))
 ///     }
+/// ```
+///
+/// ```swift
+///     // Or get the token depending to the color scheme and do whatever you want with
+///     theme.elevations.elevationRaised.elevation(for: colorScheme)
 /// ```
 ///
 /// - Since: 0.8.0

@@ -51,7 +51,7 @@ struct ControlItemContent: View {
             }
         }
         .padding(.all, theme.controlItem.controlItemSpaceInset)
-        .background(backgroundColor)
+        .oudsBackground(backgroundColor)
         .modifier(ControlItemBordersModifier(interactionState: interactionState, layoutData: layoutData, isOn: isOn))
     }
 
@@ -80,16 +80,16 @@ struct ControlItemContent: View {
         }
     }
 
-    private var backgroundColor: Color {
+    private var backgroundColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            theme.select.selectColorBgEnabled.color(for: colorScheme)
+            theme.select.selectColorBgEnabled
         case .hover:
-            theme.select.selectColorBgHover.color(for: colorScheme)
+            theme.select.selectColorBgHover
         case .pressed:
-            theme.select.selectColorBgPressed.color(for: colorScheme)
+            theme.select.selectColorBgPressed
         case .disabled, .readOnly:
-            theme.select.selectColorBgDisabled.color(for: colorScheme)
+            theme.select.selectColorBgDisabled
         }
     }
 }
