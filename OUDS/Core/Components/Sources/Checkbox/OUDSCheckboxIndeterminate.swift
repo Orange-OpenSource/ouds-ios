@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensComponent
 import SwiftUI
 
 // MARK: - OUDS Checkbox Indeterminate
@@ -74,6 +75,7 @@ public struct OUDSCheckboxIndeterminate: View {
 
     @Binding var selection: OUDSCheckboxIndicatorState
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.theme) private var theme
 
     // MARK: - Initializers
 
@@ -103,6 +105,10 @@ public struct OUDSCheckboxIndeterminate: View {
             $selection.wrappedValue.toggle()
         } content: { interactionState in
             CheckboxIndicator(interactionState: interactionState, indicatorState: $selection.wrappedValue, isError: isError)
+                .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
+                       maxWidth: theme.checkbox.checkboxSizeMinWidth,
+                       minHeight: theme.checkbox.checkboxSizeMinHeight,
+                       maxHeight: theme.checkbox.checkboxSizeMaxHeight)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))

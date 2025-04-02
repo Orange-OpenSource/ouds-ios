@@ -31,17 +31,10 @@ struct RadioIndicator: View {
     // MARK: - Body
 
     var body: some View {
-        ZStack(alignment: .center) {
-            Color.clear
-                .frame(minWidth: theme.radioButton.radioButtonSizeMinWidth,
-                       maxWidth: theme.radioButton.radioButtonSizeMinWidth,
-                       minHeight: theme.radioButton.radioButtonSizeMinHeight,
-                       maxHeight: theme.radioButton.radioButtonSizeMaxHeight)
-                .contentShape(Circle())
-
-            indicator()
-                .modifier(RadioIndicatorModifier(interactionState: interactionState, isOn: isOn, isError: isError))
-        }
+        indicator()
+            .modifier(RadioIndicatorModifier(interactionState: interactionState,
+                                             isOn: isOn,
+                                             isError: isError))
     }
 
     // MARK: - Indicator

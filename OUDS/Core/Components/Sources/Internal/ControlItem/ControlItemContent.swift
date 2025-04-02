@@ -32,13 +32,14 @@ struct ControlItemContent: View {
     let indicatorType: ControlItem.IndicatorType
     let layoutData: ControlItemLabel.LayoutData
 
+    @State var verticalAlignment: VerticalAlignment = .top
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
     var body: some View {
-        HStack(alignment: .top, spacing: theme.controlItem.controlItemSpaceColumnGap) {
+        HStack(alignment: verticalAlignment, spacing: theme.controlItem.controlItemSpaceColumnGap) {
             switch layoutData.orientation {
             case .default:
                 indicatorContainer()
@@ -63,6 +64,9 @@ struct ControlItemContent: View {
 
     private func labelContainer() -> some View {
         ControlItemLabel(interactionState: interactionState, layoutData: layoutData)
+            .readSize { size in
+                verticalAlignment = size.height > theme.controlItem.controlItemSizeMaxHeightAssetsContainer ? .top : .center
+            }
     }
 
     private func iconContainer() -> some View {
