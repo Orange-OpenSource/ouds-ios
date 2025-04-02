@@ -20,14 +20,57 @@ import OUDSTokensSemantic
 // swiftlint:disable missing_docs
 
 /// Declares all component tokens for tags components like `OUDSTag`
-/// Use for tokens providers like `OrangeThemeTagComponentTokensProvider`.
+/// Used for tokens providers like `OrangeThemeTagComponentTokensProvider`.
 ///
 /// - Since: 0.10.0
 public protocol TagComponentTokens {
 
-    // MARK: - Color
+    // MARK: - Borders
 
-    var tagColorBgReminder: MultipleColorSemanticTokens { get }
+    var tagBorderRadiusPill: BorderRadiusSemanticToken { get }
+    var tagBorderWidthDefault: BorderWidthSemanticToken { get }
+    var tagBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
+
+    // MARK: - Colors
+
+    var tagColorBgEnabled: MultipleColorSemanticTokens { get }
+    var tagColorBgFocus: MultipleColorSemanticTokens { get }
+    var tagColorBgHover: MultipleColorSemanticTokens { get }
+    var tagColorBgPressed: MultipleColorSemanticTokens { get }
+    var tagColorBorderDisabled: MultipleColorSemanticTokens { get }
+    var tagColorBorderEnabled: MultipleColorSemanticTokens { get }
+    var tagColorBorderFocus: MultipleColorSemanticTokens { get }
+    var tagColorBorderHover: MultipleColorSemanticTokens { get }
+    var tagColorBorderPressed: MultipleColorSemanticTokens { get }
+    var tagColorContentDisabled: MultipleColorSemanticTokens { get }
+    var tagColorContentEnabled: MultipleColorSemanticTokens { get }
+    var tagColorContentFocus: MultipleColorSemanticTokens { get }
+    var tagColorContentHover: MultipleColorSemanticTokens { get }
+    var tagColorContentPressed: MultipleColorSemanticTokens { get }
+
+    // MARK: - Sizes
+
+    var tagSizeIconMedium: SizeSemanticToken { get }
+    var tagSizeIconSmall: SizeSemanticToken { get }
+    var tagSizeMinHeightMedium: SizeSemanticToken { get }
+    var tagSizeMinHeightSmall: SizeSemanticToken { get }
+    var tagSizeMinWidthMedium: SizeSemanticToken { get }
+    var tagSizeMinWidthSmall: SizeSemanticToken { get }
+
+    // MARK: - Spaces
+
+    var tagSpaceColumnGapColumnGapMedium: SpaceSemanticToken { get }
+    var tagSpaceColumnGapColumnGapSmall: SpaceSemanticToken { get }
+    var tagSpacePaddingBlockMedium: SpaceSemanticToken { get }
+    var tagSpacePaddingBlockSmall: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineIconEndMedium: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineIconEndSmall: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineIconStartMedium: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineLabelEndMedium: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineLabelEndSmall: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineLabelStartMedium: SpaceSemanticToken { get }
+    var tagSpacePaddingInlineLabelStartSmall: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs

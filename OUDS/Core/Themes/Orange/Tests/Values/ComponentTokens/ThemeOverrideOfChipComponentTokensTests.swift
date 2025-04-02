@@ -131,11 +131,6 @@ struct ThemeOverrideOfChipComponentTokensTests {
         #expect(inheritedTheme.chip.chipColorBgFocus == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
-    @Test func inheritedThemeCanOverrideChipComponentTokenColorBorderEnabled() throws {
-        #expect(inheritedTheme.chip.chipColorBorderEnabled != abstractTheme.chip.chipColorBorderEnabled)
-        #expect(inheritedTheme.chip.chipColorBorderEnabled == MockThemeChipComponentTokenProvider.mockThemeChipColor)
-    }
-
     @Test func inheritedThemeCanOverrideChipComponentTokenColorBorderHover() throws {
         #expect(inheritedTheme.chip.chipColorBorderHover != abstractTheme.chip.chipColorBorderHover)
         #expect(inheritedTheme.chip.chipColorBorderHover == MockThemeChipComponentTokenProvider.mockThemeChipColor)
@@ -154,6 +149,11 @@ struct ThemeOverrideOfChipComponentTokensTests {
     @Test func inheritedThemeCanOverrideChipComponentTokenColorBorderSelected() throws {
         #expect(inheritedTheme.chip.chipColorBorderSelected != abstractTheme.chip.chipColorBorderSelected)
         #expect(inheritedTheme.chip.chipColorBorderSelected == MockThemeChipComponentTokenProvider.mockThemeChipColor)
+    }
+
+    @Test func inheritedThemeCanOverrideChipComponentTokenColorBorderUnselected() throws {
+        #expect(inheritedTheme.chip.chipColorBorderUnselected != abstractTheme.chip.chipColorBorderUnselected)
+        #expect(inheritedTheme.chip.chipColorBorderUnselected == MockThemeChipComponentTokenProvider.mockThemeChipColor)
     }
 
     @Test func inheritedThemeCanOverrideChipComponentTokenColorBorderFocus() throws {
