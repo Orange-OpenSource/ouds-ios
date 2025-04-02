@@ -15,6 +15,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
+### ios check_dead_code
+
+```sh
+[bundle exec] fastlane ios check_dead_code
+```
+
+RUN PERIPHERY FOR DEAD CODE ANALYSIS
+
 ### ios update_build_number
 
 ```sh

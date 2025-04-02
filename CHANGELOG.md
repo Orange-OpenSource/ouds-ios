@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Remove dead code and add `periphery` in CI/CD pipes
 - [Library] Tag component token (tokens library v0.11.0)
 - [Library] Chip component token (tokens library v0.11.0)
 - [Library] Color semantic tokens (tokens library v0.10.0)

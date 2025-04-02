@@ -82,6 +82,16 @@ platform :ios do
     end
 
     # ------------------------------------------------------------
+    # RUN PERIPHERY FOR DEAD CODE ANALYSIS
+    # ------------------------------------------------------------
+    desc "RUN PERIPHERY FOR DEAD CODE ANALYSIS"
+    lane :check_dead_code do
+        puts "👉 Check dead code with Periphery"
+
+        sh "periphery scan --strict --workspace ../DesignToolbox.xcworkspace --schemes DesignToolbox --targets DesignToolbox --format xcode"
+    end
+
+    # ------------------------------------------------------------
     # UPDATE BUILD NUMBER WITH TIMESTAMP
     # ------------------------------------------------------------
     desc "UPDATE BUILD NUMBER WITH TIMESTAMP"

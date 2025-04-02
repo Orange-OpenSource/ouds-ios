@@ -53,6 +53,15 @@ jobs:
         run: |
           bundle install
 
+      - name: Install Periphery
+        run: |
+          brew install peripheryapp/periphery/periphery
+
+      - name: Look for dead code
+        run: |
+          cd DesignToolbox
+          bundle exec fastlane check_dead_code
+
       - name: Build demo app
         run: |
           cd DesignToolbox
