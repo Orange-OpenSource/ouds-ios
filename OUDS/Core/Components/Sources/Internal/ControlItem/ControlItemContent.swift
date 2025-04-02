@@ -65,9 +65,7 @@ struct ControlItemContent: View {
     private func labelContainer() -> some View {
         ControlItemLabel(interactionState: interactionState, layoutData: layoutData)
             .readSize { size in
-                Task { @MainActor in
-                    verticalAlignment = size.height > theme.controlItem.controlItemSizeMaxHeightAssetsContainer ? .top : .center
-                }
+                verticalAlignment = size.height > theme.controlItem.controlItemSizeMaxHeightAssetsContainer ? .top : .center
             }
     }
 

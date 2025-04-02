@@ -59,9 +59,7 @@ private struct LinkUnderlineModifier: ViewModifier {
                 VStack(spacing: 0) {
                     content
                         .readSize { size in
-                            Task { @MainActor in
-                                textWidth = size.width
-                            }
+                            textWidth = size.width
                         }
                     Rectangle().frame(width: textWidth, height: 1)
                 }
