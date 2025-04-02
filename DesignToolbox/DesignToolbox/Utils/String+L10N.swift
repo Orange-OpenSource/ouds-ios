@@ -51,15 +51,6 @@ extension String {
         String(format: lhs.localized(), rhs)
     }
 
-    /// Just an operator to inject as `String` array some arguments in a localizable
-    /// - Parameters:
-    ///    - lhs: The localizable value to update
-    ///    - rhs: The values as `[String] to inject in `lhs`
-    /// - Returns String: The final result
-    static func <- (lhs: String, rhs: [String]) -> String {
-        String(format: lhs.localized(), arguments: rhs)
-    }
-
     // MARK: - Localized
 
     // swiftlint:disable nslocalizedstring_key
@@ -71,22 +62,4 @@ extension String {
     }
 
     // swiftlint:enable nslocalizedstring_key
-
-    /// Returns a localized String using `self` as wording key expected to be in localizables.
-    /// Will then inject as `String` the given `argument` inside the parameterized string.
-    /// Will first look for Bundle.main localizables, then as a last fallback will look in ODS library bundle.
-    /// - Parameter argument: The unique value to insert in the localized string with `self` as key
-    /// - Returns: The localized `String`
-    func localized(with argument: CVarArg) -> String {
-        String(format: localized(), argument)
-    }
-
-    /// Returns a localized String using `self` as wording key expected to be in localizables.
-    /// Will then inject as `String` the given `argument` objects inside the parameterized string.
-    /// Will first look for Bundle.main localizables, then as a last fallback will look in ODS library bundle.
-    /// - Parameter arguments: An array of values to insert in the localized string with `self` as key
-    /// - Returns: The localized `String`
-    func localized(with arguments: [CVarArg]) -> String {
-        String(format: localized(), arguments: arguments)
-    }
 }
