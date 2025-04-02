@@ -66,7 +66,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
                    select: MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    skeleton: MockThemeSkeletonComponentTokenProvider(colors: colors),
                    switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities),
-                   tag: MockThemeTagComponentTokenProvider(colors: colors),
+                   tag: MockThemeTagComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    fontFamily: fontFamily)
     }
 
