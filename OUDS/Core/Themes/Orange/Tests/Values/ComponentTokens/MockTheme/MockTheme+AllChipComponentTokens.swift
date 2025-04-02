@@ -59,7 +59,6 @@ final class MockThemeChipComponentTokenProvider: OrangeThemeChipComponentTokensP
     override public var chipColorBgPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorBgDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorBgFocus: MultipleColorSemanticTokens { Self.mockThemeChipColor }
-    override public var chipColorBorderEnabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorBorderHover: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorBorderPressed: MultipleColorSemanticTokens { Self.mockThemeChipColor }
     override public var chipColorBorderDisabled: MultipleColorSemanticTokens { Self.mockThemeChipColor }
