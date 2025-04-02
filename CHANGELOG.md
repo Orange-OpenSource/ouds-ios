@@ -37,12 +37,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Adjust vertical alignment of text labels according to their height in ContolItem ([#550](https://github.com/Orange-OpenSource/ouds-ios/issues/550))
 - [Library] Remove extra padding in ControlItem ([#572](https://github.com/Orange-OpenSource/ouds-ios/issues/572))
 - [Library] Add accessibility label to vocalize the IconOnly button style ([#460](https://github.com/Orange-OpenSource/ouds-ios/issues/460))
 - [Library] Chevron for link component pointing to bad direction in RTL mode ([#557](https://github.com/Orange-OpenSource/ouds-ios/issues/557))
 - [Library] Remove divider if outline effect is active in RadioItem component ([#564](https://github.com/Orange-OpenSource/ouds-ios/issues/564))
-- [DesignToolbox] In RTL mode code sample text not aligned on the left ([#554](https://github.com/Orange-OpenSource/ouds-ios/issues/554))
-- [Library] Adjust vertical alignment of text labels according to their height in ContolItem ([#55](https://github.com/Orange-OpenSource/ouds-ios/issues/550))
 - [DesignToolbox] In RTL mode code sample text not aligned on the left ([#554](https://github.com/Orange-OpenSource/ouds-ios/issues/554))
 - [DesignToolbox] Chevron for navigation link pointing to bad direction in RTL mode ([#553](https://github.com/Orange-OpenSource/ouds-ios/issues/553))
 - [DesignToolbox] Broken wording in radio button page
