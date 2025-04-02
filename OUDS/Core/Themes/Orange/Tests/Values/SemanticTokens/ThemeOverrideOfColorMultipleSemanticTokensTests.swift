@@ -833,6 +833,14 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
         #expect(inheritedTheme.colors.colorRepositoryOpacityBlackMedium == abstractTheme.colors.colorRepositoryOpacityBlackMedium)
     }
 
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityBlackMediumHigh() throws {
+        #expect(inheritedTheme.colors.colorRepositoryOpacityBlackMediumHigh == abstractTheme.colors.colorRepositoryOpacityBlackMediumHigh)
+    }
+
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityBlackMediumLow() throws {
+        #expect(inheritedTheme.colors.colorRepositoryOpacityBlackMediumLow == abstractTheme.colors.colorRepositoryOpacityBlackMediumLow)
+    }
+
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityBlackTransparent() throws {
         #expect(inheritedTheme.colors.colorRepositoryOpacityBlackTransparent == abstractTheme.colors.colorRepositoryOpacityBlackTransparent)
     }
@@ -871,6 +879,10 @@ struct ThemeOverrideOfColorMultipleSemanticTokensTests {
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWhiteMedium() throws {
         #expect(inheritedTheme.colors.colorRepositoryOpacityWhiteMedium == abstractTheme.colors.colorRepositoryOpacityWhiteMedium)
+    }
+
+    @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWhiteMediumLow() throws {
+        #expect(inheritedTheme.colors.colorRepositoryOpacityWhiteMediumLow == abstractTheme.colors.colorRepositoryOpacityWhiteMediumLow)
     }
 
     @Test func inheritedThemeCanNotOverrideSemanticTokenColorRepositoryOpacityWhiteLower() throws {

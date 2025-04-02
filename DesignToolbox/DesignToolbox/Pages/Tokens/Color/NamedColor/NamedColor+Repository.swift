@@ -48,7 +48,9 @@ extension NamedColor {
         case colorRepositoryOpacityBlackLow
         case colorRepositoryOpacityBlackLower
         case colorRepositoryOpacityBlackLowest
+        case colorRepositoryOpacityBlackMediumLow
         case colorRepositoryOpacityBlackMedium
+        case colorRepositoryOpacityBlackMediumHigh
         case colorRepositoryOpacityBlackTransparent
         case colorRepositoryOpacityInfo
         case colorRepositoryOpacityNegative
@@ -58,6 +60,7 @@ extension NamedColor {
         case colorRepositoryOpacityWhiteHigher
         case colorRepositoryOpacityWhiteHighest
         case colorRepositoryOpacityWhiteMedium
+        case colorRepositoryOpacityWhiteMediumLow
         case colorRepositoryOpacityWhiteLow
         case colorRepositoryOpacityWhiteLower
         case colorRepositoryOpacityWhiteLowest
@@ -134,8 +137,12 @@ extension NamedColor {
                 return theme.colors.colorRepositoryOpacityBlackLower
             case .colorRepositoryOpacityBlackLowest:
                 return theme.colors.colorRepositoryOpacityBlackLowest
+            case .colorRepositoryOpacityBlackMediumLow:
+                return theme.colors.colorRepositoryOpacityBlackMediumLow
             case .colorRepositoryOpacityBlackMedium:
                 return theme.colors.colorRepositoryOpacityBlackMedium
+            case .colorRepositoryOpacityBlackMediumHigh:
+                return theme.colors.colorRepositoryOpacityBlackMediumHigh
             case .colorRepositoryOpacityBlackTransparent:
                 return theme.colors.colorRepositoryOpacityBlackTransparent
             case .colorRepositoryOpacityInfo:
@@ -154,6 +161,8 @@ extension NamedColor {
                 return theme.colors.colorRepositoryOpacityWhiteHighest
             case .colorRepositoryOpacityWhiteMedium:
                 return theme.colors.colorRepositoryOpacityWhiteMedium
+            case .colorRepositoryOpacityWhiteMediumLow:
+                return theme.colors.colorRepositoryOpacityWhiteMediumLow
             case .colorRepositoryOpacityWhiteLow:
                 return theme.colors.colorRepositoryOpacityWhiteLow
             case .colorRepositoryOpacityWhiteLower:

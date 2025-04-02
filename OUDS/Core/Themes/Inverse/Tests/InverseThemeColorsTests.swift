@@ -694,8 +694,16 @@ struct InverseThemeColorsTests {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackLowest)
     }
 
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackMediumLow() throws {
+        assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackMediumLow)
+    }
+
     @Test func colorsHomogeneityColorRepositoryOpacityBlackMedium() throws {
         assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackMedium)
+    }
+
+    @Test func colorsHomogeneityColorRepositoryOpacityBlackMediumHigh() throws {
+        assertHomogeneity(inverseTheme.colors.colorRepositoryOpacityBlackMediumHigh)
     }
 
     @Test func colorsHomogeneityColorRepositoryOpacityBlackTransparent() throws {

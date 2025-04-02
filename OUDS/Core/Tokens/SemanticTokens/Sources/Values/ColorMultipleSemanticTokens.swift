@@ -390,6 +390,10 @@ public protocol ColorMultipleSemanticTokens {
 
     var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { get }
 
+    var colorRepositoryOpacityBlackMediumLow: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityBlackMediumHigh: MultipleColorSemanticTokens { get }
+
     var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityInfo: MultipleColorSemanticTokens { get }
@@ -407,6 +411,8 @@ public protocol ColorMultipleSemanticTokens {
     var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityWhiteMedium: MultipleColorSemanticTokens { get }
+
+    var colorRepositoryOpacityWhiteMediumLow: MultipleColorSemanticTokens { get }
 
     var colorRepositoryOpacityWhiteLow: MultipleColorSemanticTokens { get }
 
