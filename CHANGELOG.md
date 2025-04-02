@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Library] Tag component token (tokens library v0.11.0)
+- [Library] Chip component token (tokens library v0.11.0)
 - [Library] Color semantic tokens (tokens library v0.10.0)
 - [Library] Control item component tokens (tokens library v0.10.0)
 - [Library] New public API to use less color scheme to apply elevation and colors ([#146](https://github.com/Orange-OpenSource/ouds-ios/issues/146)) 
@@ -30,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+- [Library] Chip component token `chipColorBorderEnabled` (tokens library v0.11.0)
 - [Library] Color semantic tokens `colorRepositoryOpacityBlackSoft{Light|Dark}` (tokens library v0.10.0)
 
 ### Fixed

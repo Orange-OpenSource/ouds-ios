@@ -53,11 +53,11 @@ public protocol ChipComponentTokens {
     var chipColorBgPressed: MultipleColorSemanticTokens { get }
     var chipColorBgDisabled: MultipleColorSemanticTokens { get }
     var chipColorBgFocus: MultipleColorSemanticTokens { get }
-    var chipColorBorderEnabled: MultipleColorSemanticTokens { get }
     var chipColorBorderHover: MultipleColorSemanticTokens { get }
     var chipColorBorderPressed: MultipleColorSemanticTokens { get }
     var chipColorBorderDisabled: MultipleColorSemanticTokens { get }
     var chipColorBorderSelected: MultipleColorSemanticTokens { get }
+    var chipColorBorderUnselected: MultipleColorSemanticTokens { get }
     var chipColorBorderFocus: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces
