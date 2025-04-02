@@ -35,7 +35,7 @@ bundle exec pod install --repo-update
 # Update your references
 brew update
 
-# For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.0)
+# For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.2)
 brew install peripheryapp/periphery/periphery
 
 # For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.18.1)
