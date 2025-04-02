@@ -7,7 +7,7 @@ They can be seen as a kind of bridge between components and in the end primitive
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧱 Tokens version: 0.9.0
+🧱 Tokens version: 0.10.0
 ```
 
 Thus if a component need to change for example its _background color_, and if a _component token_ is used for it, then only the value of this _token_ should be changed without any modification on the _component_ definition.

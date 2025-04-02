@@ -54,6 +54,11 @@ struct ThemeOverrideOfControlItemComponentTokensTests {
         #expect(inheritedTheme.controlItem.controlItemSizeLoader == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
     }
 
+    @Test func inheritedThemeCanOverrideControlItemComponentTokenSizeListItemSizeMinHeightText() throws {
+        #expect(inheritedTheme.controlItem.controlItemSizeListItemSizeMinHeightText != abstractTheme.controlItem.controlItemSizeListItemSizeMinHeightText)
+        #expect(inheritedTheme.controlItem.controlItemSizeListItemSizeMinHeightText == MockThemeControlItemComponentTokenProvider.mockThemeControlItemSize)
+    }
+
     // MARK: - Colors
 
     @Test func inheritedThemeCanOverrideControlItemComponentTokenColorBgHover() throws {
