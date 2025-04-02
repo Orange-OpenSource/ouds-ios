@@ -108,6 +108,7 @@ struct ControlItem: View {
 
     public var body: some View {
         InteractionButton(isReadOnly: layoutData.isReadOnly) {
+            VibrationsManager.success()
             withAnimation(.easeInOut) {
                 switch indicatorType {
                 case .switch(let binding):

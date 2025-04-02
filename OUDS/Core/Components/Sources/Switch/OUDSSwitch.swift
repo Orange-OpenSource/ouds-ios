@@ -72,6 +72,7 @@ public struct OUDSSwitch: View {
     public var body: some View {
         InteractionButton {
             $isOn.wrappedValue.toggle()
+            VibrationsManager.warning()
         } content: { interactionState in
             SwitchIndicator(interactionState: interactionState, isOn: isOn)
                 .frame(minWidth: theme.switch.switchSizeMinWidth,
