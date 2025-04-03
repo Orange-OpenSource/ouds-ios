@@ -21,7 +21,7 @@ struct ButtonBackgroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
+    @Environment(\.oudsUseMonochrome) private var applyMonochrome
 
     // MARK: Stored Properties
 
@@ -54,11 +54,11 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var enabledColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            onColoredSurface ? theme.button.buttonColorBgDefaultEnabledMono : theme.button.buttonColorBgDefaultEnabled
+            applyMonochrome ? theme.button.buttonColorBgDefaultEnabledMono : theme.button.buttonColorBgDefaultEnabled
         case .strong:
-            onColoredSurface ? theme.button.buttonColorBgStrongEnabledMono : theme.colors.colorActionEnabled
+            applyMonochrome ? theme.button.buttonColorBgStrongEnabledMono : theme.colors.colorActionEnabled
         case .minimal:
-            onColoredSurface ? theme.button.buttonColorBgMinimalEnabledMono : theme.button.buttonColorBgMinimalEnabled
+            applyMonochrome ? theme.button.buttonColorBgMinimalEnabledMono : theme.button.buttonColorBgMinimalEnabled
         case .negative:
             theme.colors.colorActionNegativeEnabled
         }
@@ -67,11 +67,11 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var hoverColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            onColoredSurface ? theme.button.buttonColorBgDefaultHoverMono : theme.button.buttonColorBgDefaultHover
+            applyMonochrome ? theme.button.buttonColorBgDefaultHoverMono : theme.button.buttonColorBgDefaultHover
         case .strong:
-            onColoredSurface ? theme.button.buttonColorBgStrongHoverMono : theme.colors.colorActionHover
+            applyMonochrome ? theme.button.buttonColorBgStrongHoverMono : theme.colors.colorActionHover
         case .minimal:
-            onColoredSurface ? theme.button.buttonColorBgMinimalHoverMono : theme.button.buttonColorBgMinimalHover
+            applyMonochrome ? theme.button.buttonColorBgMinimalHoverMono : theme.button.buttonColorBgMinimalHover
         case .negative:
             theme.colors.colorActionNegativeHover
         }
@@ -80,11 +80,11 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var pressedColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            onColoredSurface ? theme.button.buttonColorBgDefaultPressedMono : theme.button.buttonColorBgDefaultPressed
+            applyMonochrome ? theme.button.buttonColorBgDefaultPressedMono : theme.button.buttonColorBgDefaultPressed
         case .strong:
-            onColoredSurface ? theme.button.buttonColorBgStrongPressedMono : theme.colors.colorActionPressed
+            applyMonochrome ? theme.button.buttonColorBgStrongPressedMono : theme.colors.colorActionPressed
         case .minimal:
-            onColoredSurface ? theme.button.buttonColorBgMinimalPressedMono : theme.button.buttonColorBgMinimalPressed
+            applyMonochrome ? theme.button.buttonColorBgMinimalPressedMono : theme.button.buttonColorBgMinimalPressed
         case .negative:
             theme.colors.colorActionNegativePressed
         }
@@ -93,11 +93,11 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var loadingColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            onColoredSurface ? theme.button.buttonColorBgDefaultLoadingMono : theme.button.buttonColorBgDefaultLoading
+            applyMonochrome ? theme.button.buttonColorBgDefaultLoadingMono : theme.button.buttonColorBgDefaultLoading
         case .strong:
-            onColoredSurface ? theme.button.buttonColorBgStrongLoadingMono : theme.colors.colorActionLoading
+            applyMonochrome ? theme.button.buttonColorBgStrongLoadingMono : theme.colors.colorActionLoading
         case .minimal:
-            onColoredSurface ? theme.button.buttonColorBgMinimalLoadingMono : theme.button.buttonColorBgMinimalLoading
+            applyMonochrome ? theme.button.buttonColorBgMinimalLoadingMono : theme.button.buttonColorBgMinimalLoading
         case .negative:
             theme.colors.colorActionNegativeLoading
         }
@@ -106,11 +106,11 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var disabledColor: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            onColoredSurface ? theme.button.buttonColorBgDefaultDisabledMono : theme.button.buttonColorBgDefaultDisabled
+            applyMonochrome ? theme.button.buttonColorBgDefaultDisabledMono : theme.button.buttonColorBgDefaultDisabled
         case .strong:
-            onColoredSurface ? theme.button.buttonColorBgStrongDisabledMono : theme.colors.colorActionDisabled
+            applyMonochrome ? theme.button.buttonColorBgStrongDisabledMono : theme.colors.colorActionDisabled
         case .minimal:
-            onColoredSurface ? theme.button.buttonColorBgMinimalDisabledMono : theme.button.buttonColorBgMinimalDisabled
+            applyMonochrome ? theme.button.buttonColorBgMinimalDisabledMono : theme.button.buttonColorBgMinimalDisabled
         case .negative:
             theme.colors.colorActionDisabled
         }

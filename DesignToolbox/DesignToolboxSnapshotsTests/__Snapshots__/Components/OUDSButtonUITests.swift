@@ -158,9 +158,6 @@ private struct ButtonTest: View {
         case icon
     }
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
     let layout: `Layout`
     let hierarchy: OUDSButton.Hierarchy
     let style: OUDSButton.Style
@@ -168,7 +165,7 @@ private struct ButtonTest: View {
 
     var body: some View {
         if onColoredSurface {
-            OUDSColoredSurface(color: theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme), content: button)
+            OUDSColoredSurface(color: .brandPrimary, content: button)
         } else {
             button()
         }

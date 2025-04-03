@@ -23,8 +23,7 @@ struct LinkColorContentModifier: ViewModifier {
     let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
+    @Environment(\.oudsUseMonochrome) private var useMonochrome
 
     // MARK: - Body
 
@@ -48,18 +47,18 @@ struct LinkColorContentModifier: ViewModifier {
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
-        onColoredSurface ? theme.link.linkColorContentEnabledMono : theme.link.linkColorContentEnabled
+        useMonochrome ? theme.link.linkColorContentEnabledMono : theme.link.linkColorContentEnabled
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        onColoredSurface ? theme.link.linkColorContentHoverMono : theme.link.linkColorContentHover
+        useMonochrome ? theme.link.linkColorContentHoverMono : theme.link.linkColorContentHover
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        onColoredSurface ? theme.link.linkColorContentPressedMono : theme.link.linkColorContentPressed
+        useMonochrome ? theme.link.linkColorContentPressedMono : theme.link.linkColorContentPressed
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
-        onColoredSurface ? theme.link.linkColorContentDisabledMono : theme.colors.colorActionDisabled
+        useMonochrome ? theme.link.linkColorContentDisabledMono : theme.colors.colorActionDisabled
     }
 }

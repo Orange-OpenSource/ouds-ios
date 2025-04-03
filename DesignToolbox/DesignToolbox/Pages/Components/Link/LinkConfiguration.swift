@@ -54,7 +54,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     private var coloredSurfaceCodeModifier: String {
-        onColoredSurface ? ".oudsColoredSurface(color: Color.orange)" : ""
+        onColoredSurface ? ".oudsColoredSurface(color: .brandPrimary)" : ""
     }
 
     private var disableCode: String {

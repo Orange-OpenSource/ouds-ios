@@ -24,7 +24,6 @@ struct LinkTextModifier: ViewModifier {
     let layout: OUDSLink.Layout
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 

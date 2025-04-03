@@ -280,7 +280,6 @@
 		0745C1942D7A0823006B3A1F /* RadioItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioItemPage.swift; sourceTree = "<group>"; };
 		0745C1952D7A0823006B3A1F /* RadiolItemConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiolItemConfiguration.swift; sourceTree = "<group>"; };
 		0745C1962D7A0823006B3A1F /* RaioItemElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaioItemElement.swift; sourceTree = "<group>"; };
-		074794792CAE882A0033C2D8 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTokenElement.swift; sourceTree = "<group>"; };
 		075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTokenPage.swift; sourceTree = "<group>"; };
 		075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTokenElement.swift; sourceTree = "<group>"; };
@@ -684,14 +683,6 @@
 			path = ThemeSelection;
 			sourceTree = "<group>";
 		};
-		07F0AFD52CFDAD9200D334DD /* EmptyState */ = {
-			isa = PBXGroup;
-			children = (
-				074794792CAE882A0033C2D8 /* EmptyState.swift */,
-			);
-			path = EmptyState;
-			sourceTree = "<group>";
-		};
 		07F0AFE62CFE055300D334DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,7 +853,6 @@
 				0745C1852D7A0351006B3A1F /* Radio */,
 				072141182D02F52A00B7B9C6 /* Button */,
 				513442062D75B880000B5DE4 /* Checkbox */,
-				07F0AFD52CFDAD9200D334DD /* EmptyState */,
 				07B3CCAD2D40E14C00DBB10A /* Link */,
 				07F0AFE62CFE055300D334DD /* Utils */,
 				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
