@@ -13,7 +13,8 @@
 
 source "https://rubygems.org"
 
-gem 'cocoapods',  '1.16.2'
+gem 'abbrev', '0.1.2'
+gem 'cocoapods', '1.16.2'
 gem 'fastlane', '2.227.0'
 gem 'fastlane-plugin-changelog', '0.16.0'
 gem 'fastlane-plugin-mattermost', '1.3.2'
