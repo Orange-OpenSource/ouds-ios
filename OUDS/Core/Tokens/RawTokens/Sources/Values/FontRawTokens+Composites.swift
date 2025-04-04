@@ -31,6 +31,8 @@ extension FontRawTokens {
 
     public static let typeRegular250 = FontCompositeRawToken(size: fontSize250, lineHeight: fontLineHeight350, weight: fontWeight400, letterSpacing: fontLetterSpacing250)
 
+    public static let typeRegular300 = FontCompositeRawToken(size: fontSize300, lineHeight: fontLineHeight450, weight: fontWeight400, letterSpacing: fontLetterSpacing300)
+
     public static let typeBold150 = FontCompositeRawToken(size: fontSize150, lineHeight: fontLineHeight250, weight: fontWeight700, letterSpacing: fontLetterSpacing150)
 
     public static let typeBold175 = FontCompositeRawToken(size: fontSize175, lineHeight: fontLineHeight250, weight: fontWeight700, letterSpacing: fontLetterSpacing175)

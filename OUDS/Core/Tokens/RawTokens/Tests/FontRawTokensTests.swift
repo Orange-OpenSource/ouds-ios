@@ -1145,6 +1145,10 @@ struct FontRawTokensTests {
         #expect(FontRawTokens.typeRegular200 <| FontRawTokens.typeRegular250)
     }
 
+    @Test func fontRawTokensTypeRegular250LessThanTypeRegular300() throws {
+        #expect(FontRawTokens.typeRegular250 <| FontRawTokens.typeRegular300)
+    }
+
     @Test func fontRawTokensTypeBold150LessThanTypeBold175() throws {
         #expect(FontRawTokens.typeBold150 <| FontRawTokens.typeBold175)
     }
@@ -1257,6 +1261,7 @@ struct FontRawTokensTests {
         #expect(FontRawTokens.typeRegular175 != FontRawTokens.typeBold1850)
 
         #expect(FontRawTokens.typeRegular200 != FontRawTokens.typeRegular250)
+        #expect(FontRawTokens.typeRegular200 != FontRawTokens.typeRegular300)
         #expect(FontRawTokens.typeRegular200 != FontRawTokens.typeBold150)
         #expect(FontRawTokens.typeRegular200 != FontRawTokens.typeBold175)
         #expect(FontRawTokens.typeRegular200 != FontRawTokens.typeBold200)
@@ -1275,6 +1280,7 @@ struct FontRawTokensTests {
         #expect(FontRawTokens.typeRegular200 != FontRawTokens.typeBold1450)
         #expect(FontRawTokens.typeRegular200 != FontRawTokens.typeBold1850)
 
+        #expect(FontRawTokens.typeRegular250 != FontRawTokens.typeRegular300)
         #expect(FontRawTokens.typeRegular250 != FontRawTokens.typeBold150)
         #expect(FontRawTokens.typeRegular250 != FontRawTokens.typeBold175)
         #expect(FontRawTokens.typeRegular250 != FontRawTokens.typeBold200)
@@ -1292,6 +1298,24 @@ struct FontRawTokensTests {
         #expect(FontRawTokens.typeRegular250 != FontRawTokens.typeBold1250)
         #expect(FontRawTokens.typeRegular250 != FontRawTokens.typeBold1450)
         #expect(FontRawTokens.typeRegular250 != FontRawTokens.typeBold1850)
+
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold150)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold175)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold200)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold250)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold300)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold350)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold450)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold550)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold650)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold750)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold850)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold950)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold1050)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold1150)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold1250)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold1450)
+        #expect(FontRawTokens.typeRegular300 != FontRawTokens.typeBold1850)
 
         #expect(FontRawTokens.typeBold150 != FontRawTokens.typeBold175)
         #expect(FontRawTokens.typeBold150 != FontRawTokens.typeBold200)
