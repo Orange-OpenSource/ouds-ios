@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [Library] Font composite semantic token `typeLabelDefaultXLarge` ([#590](https://github.com/Orange-OpenSource/ouds-ios/issues/590))
 - [Library] Remove extra padding in `ControlItem` ([#572](https://github.com/Orange-OpenSource/ouds-ios/issues/572))
 - [Library] Adjust vertical alignment of text labels according to their height in ContolItem ([#550](https://github.com/Orange-OpenSource/ouds-ios/issues/550))
 - [Library] Add accessibility label to vocalize the IconOnly button style ([#460](https://github.com/Orange-OpenSource/ouds-ios/issues/460))
