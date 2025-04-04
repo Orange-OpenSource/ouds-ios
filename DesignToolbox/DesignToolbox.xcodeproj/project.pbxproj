@@ -98,6 +98,12 @@
 		07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */; };
 		07CF42852CA45DA9000BD03E /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
 		07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
+		07D07C662D9EE93800D8BC21 /* ColoredSurfaceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D07C632D9EE93800D8BC21 /* ColoredSurfaceConfiguration.swift */; };
+		07D07C672D9EE93800D8BC21 /* ColoredSurfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D07C642D9EE93800D8BC21 /* ColoredSurfaceElement.swift */; };
+		07D07C682D9EE93800D8BC21 /* ColoredSurfacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D07C652D9EE93800D8BC21 /* ColoredSurfacePage.swift */; };
+		07D07C692D9EE93800D8BC21 /* ColoredSurfaceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D07C632D9EE93800D8BC21 /* ColoredSurfaceConfiguration.swift */; };
+		07D07C6A2D9EE93800D8BC21 /* ColoredSurfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D07C642D9EE93800D8BC21 /* ColoredSurfaceElement.swift */; };
+		07D07C6B2D9EE93800D8BC21 /* ColoredSurfacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D07C652D9EE93800D8BC21 /* ColoredSurfacePage.swift */; };
 		07D7E1972D035566006472EB /* ButtonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7E1962D035566006472EB /* ButtonConfiguration.swift */; };
 		07D7E1982D035566006472EB /* ButtonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7E1962D035566006472EB /* ButtonConfiguration.swift */; };
 		07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
@@ -327,6 +333,9 @@
 		07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTokenElement.swift; sourceTree = "<group>"; };
 		07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTokenPage.swift; sourceTree = "<group>"; };
 		07CF42882CA55BC8000BD03E /* ThemeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelection.swift; sourceTree = "<group>"; };
+		07D07C632D9EE93800D8BC21 /* ColoredSurfaceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfaceConfiguration.swift; sourceTree = "<group>"; };
+		07D07C642D9EE93800D8BC21 /* ColoredSurfaceElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfaceElement.swift; sourceTree = "<group>"; };
+		07D07C652D9EE93800D8BC21 /* ColoredSurfacePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfacePage.swift; sourceTree = "<group>"; };
 		07D7E1962D035566006472EB /* ButtonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfiguration.swift; sourceTree = "<group>"; };
 		07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentPage.swift; sourceTree = "<group>"; };
 		07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
@@ -683,6 +692,16 @@
 			path = ThemeSelection;
 			sourceTree = "<group>";
 		};
+		07D07C622D9EE8D900D8BC21 /* ColoredSurface */ = {
+			isa = PBXGroup;
+			children = (
+				07D07C632D9EE93800D8BC21 /* ColoredSurfaceConfiguration.swift */,
+				07D07C642D9EE93800D8BC21 /* ColoredSurfaceElement.swift */,
+				07D07C652D9EE93800D8BC21 /* ColoredSurfacePage.swift */,
+			);
+			path = ColoredSurface;
+			sourceTree = "<group>";
+		};
 		07F0AFE62CFE055300D334DD /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -850,6 +869,7 @@
 		51BD760E2C466FCF0033365D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				07D07C622D9EE8D900D8BC21 /* ColoredSurface */,
 				0745C1852D7A0351006B3A1F /* Radio */,
 				072141182D02F52A00B7B9C6 /* Button */,
 				513442062D75B880000B5DE4 /* Checkbox */,
@@ -1232,6 +1252,9 @@
 				5134420A2D75B880000B5DE4 /* CheckboxItemElement.swift in Sources */,
 				5134420B2D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */,
 				51D6D5982D8881A6009CD879 /* CheckboxLayouts.swift in Sources */,
+				07D07C692D9EE93800D8BC21 /* ColoredSurfaceConfiguration.swift in Sources */,
+				07D07C6A2D9EE93800D8BC21 /* ColoredSurfaceElement.swift in Sources */,
+				07D07C6B2D9EE93800D8BC21 /* ColoredSurfacePage.swift in Sources */,
 				514D02FC2D75F45F00622692 /* OUDSCheckboxUITests.swift in Sources */,
 				5134420C2D75B880000B5DE4 /* CheckboxElements.swift in Sources */,
 				5134420D2D75B880000B5DE4 /* CheckboxItemConfiguration.swift in Sources */,
@@ -1362,6 +1385,9 @@
 				07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */,
 				07CF427F2CA41325000BD03E /* OpacityTokenElement.swift in Sources */,
 				513442172D75B9E1000B5DE4 /* DesignToolboxBackgroundModifier.swift in Sources */,
+				07D07C662D9EE93800D8BC21 /* ColoredSurfaceConfiguration.swift in Sources */,
+				07D07C672D9EE93800D8BC21 /* ColoredSurfaceElement.swift in Sources */,
+				07D07C682D9EE93800D8BC21 /* ColoredSurfacePage.swift in Sources */,
 				07CF426B2CA30728000BD03E /* TokensPage.swift in Sources */,
 				07F75A372CC644C80004F1AD /* NamedSpace+Scaled.swift in Sources */,
 				0765B4A62CC15C9D00E69359 /* NamedColor.swift in Sources */,
