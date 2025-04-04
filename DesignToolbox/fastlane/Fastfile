@@ -534,8 +534,18 @@ platform :ios do
             puts "ℹ️ Check if '#{tag}' exists yet"
 
             uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/tags")
-            response = Net::HTTP.get(uri)
-            tags = JSON.parse(response)
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = true
+            
+            request = Net::HTTP::Get.new(uri.path)
+            request['Accept'] = 'application/vnd.github+json'
+            request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
+            request['X-GitHub-Api-Version'] = '2022-11-28'
+
+            response = http.request(request)
+            tags = JSON.parse(response.body)
+
+            # puts tags.inspect # Uncomment for debug
 
             if tags.any? { |t| t['name'] == tag }
                 puts "ℹ️ The tag '#{tag}' still exists, won't create new tag"
