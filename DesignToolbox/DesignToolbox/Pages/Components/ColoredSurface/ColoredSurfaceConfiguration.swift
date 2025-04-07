@@ -22,7 +22,10 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var selectedColor: OUDSBackgroundSurfaceColor
+    @Published var selectedColor: OUDSBackgroundSurfaceColor {
+        didSet { updateCode() }
+    }
+
     // MARK: Initializer
 
     override init() {
@@ -34,7 +37,17 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
     // MARK: Component Configuration
 
     override func updateCode() {
-        code = ""
+        code =
+        """
+       OUDSColoredSurface(color: \(selectedColor.description) {
+          Text("\(selectedColor.formattedName)")
+          .oudsForegroundColor(theme.colors.colorContentDefault)
+
+          OUDSButton(text: "\("app_components_button_label".localized())") {}
+
+          OUDSLink(text: "\("app_components_link_label".localized())", arrow: .next) {}
+       }
+       """
     }
 }
 
@@ -44,23 +57,53 @@ struct ColoredSurfaceConfiguration: View {
 
     @StateObject var model: ColoredSurfaceConfigurationModel
     @Environment(\.theme) private var theme
+    @State private var isExpanded: Bool = false
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Picker("app_components_coloredBackground_color_label".localized(), selection: $model.selectedColor) {
-                ForEach(OUDSBackgroundSurfaceColor.allCases, id: \.id) { color in
-                    Label {
-                        Text(color.description).tag(color.id)
-                    } icon: {
-                        OUDSColoredSurface(color: color) {
-                            Rectangle()
+            DisclosureGroup(isExpanded: $isExpanded) {
+                VStack(alignment: .leading) {
+                    ForEach(OUDSBackgroundSurfaceColor.allCases, id: \.id) { color in
+                        Button {
+                            model.selectedColor = color
+                        } label: {
+                            ColorEntry(color: color)
                         }
-                        .frame(width: 44, height: 44, alignment: .center)
+                    }
+                }
+            } label: {
+                VStack(alignment: .leading) {
+                    Text("app_components_coloredBackground_color_label")
+                        .typeHeadingMedium(theme)
+                        .oudsForegroundColor(theme.colors.colorContentDefault)
+
+                    ColorEntry(color: model.selectedColor)
+                    if isExpanded {
+                        Divider()
                     }
                 }
             }
-            .pickerStyle(.segmented)
         }
+    }
+}
+
+private struct ColorEntry: View {
+
+    @Environment(\.theme) private var theme
+    let color: OUDSBackgroundSurfaceColor
+
+    var body: some View {
+        Label {
+            Text(color.formattedName)
+                .oudsForegroundColor(theme.colors.colorContentDefault)
+        } icon: {
+            OUDSColoredSurface(color: color) {
+                Rectangle()
+                    .fill(Color.clear)
+                    .frame(width: 30, height: 30, alignment: .leading)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
@@ -82,7 +125,38 @@ extension OUDSBackgroundSurfaceColor: @retroactive CaseIterable, @retroactive Cu
         .statusWarningMuted,
     ]
 
-        // No l10n, tehchnical names
+    // No l10n, tehchnical names
+    var formattedName: String {
+        switch self {
+        case .brandPrimary:
+            return "Brand Primary"
+        case .statusAccentEmphasized:
+            return "Status Accent Emphasized"
+        case .statusAccentMuted:
+            return "Status Accent Muted"
+        case .statusInfoEmphasized:
+            return "Status Info Emphasized"
+        case .statusInfoMuted:
+            return "Status Info Muted"
+        case .statusNegativeEmphasized:
+            return "Status Negative Emphasized"
+        case .statusNegativeMuted:
+            return "Status Negative Muted"
+        case .statusNeutralEmphasized:
+            return "Status Neutral Emphasized"
+        case .statusNeutralMuted:
+            return "Status Neutral Muted"
+        case .statusPositiveEmphasized:
+            return "Status Positive Emphasized"
+        case .statusPositiveMuted:
+            return "Status Positive Muted"
+        case .statusWarningEmphasized:
+            return "Status Warning Emphasized"
+        case .statusWarningMuted:
+            return "Status Warning Muted"
+        }
+    }
+
     public var description: String {
         switch self {
         case .brandPrimary:

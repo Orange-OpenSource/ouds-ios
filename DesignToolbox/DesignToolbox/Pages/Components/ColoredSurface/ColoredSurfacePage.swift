@@ -52,8 +52,11 @@ struct ColoredSurfaceIllustration: View {
     @ObservedObject var model: ColoredSurfaceConfigurationModel
 
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(alignment: .center, spacing: 0) {
             ColoredSurfaceDemo(model: model)
+            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+            ColoredSurfaceDemo(model: model)
+                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
 }
@@ -64,15 +67,28 @@ private struct ColoredSurfaceDemo: View {
 
     @Environment(\.theme) private var theme
 
-    @StateObject var model: ColoredSurfaceConfigurationModel
+    @ObservedObject var model: ColoredSurfaceConfigurationModel
 
     var body: some View {
-        HStack(alignment: .center) {
-            Spacer()
+        HStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
+            OUDSColoredSurface(color: model.selectedColor) {
+                VStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
+                    Text(model.selectedColor.formattedName)
+                        .oudsForegroundColor(theme.colors.colorContentDefault)
 
-            Spacer()
+                    OUDSButton(text: "app_components_button_label".localized(),
+                               hierarchy: .default,
+                               style: .default) {
+                    }
+
+                    OUDSLink(text: "app_components_link_label".localized(), arrow: .next) {
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.all, theme.spaces.spaceFixedMedium)
+            }
         }
         .padding(.all, theme.spaces.spaceFixedMedium)
-//        .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
+        .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: false))
     }
 }
