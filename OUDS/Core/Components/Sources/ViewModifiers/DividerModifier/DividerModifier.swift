@@ -37,7 +37,7 @@ public struct DividerModifier: ViewModifier {
         if show {
             VStack(spacing: 0) {
                 content
-                Divider().oudsForegroundStyle(theme.colors.colorBorderDefault)
+                OUDSDivider()
             }
         } else {
             content

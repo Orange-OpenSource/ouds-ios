@@ -44,6 +44,8 @@ Any use or displaying shall constitute an infringement under intellectual proper
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_link.imageset/il_component_link_rtl.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_checkbox.imageset/il_component_checkbox_dark.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_checkbox.imageset/il_component_checkbox.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_divider.imageset/il_component_divider.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_divider.imageset/il_component_divider_dark.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_radio.imageset/il_component_radio.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_radio.imageset/il_component_radio_dark.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_components_colored_background.imageset/il_components_colored_background.svg

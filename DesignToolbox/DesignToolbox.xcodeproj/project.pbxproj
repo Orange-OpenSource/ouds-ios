@@ -58,6 +58,12 @@
 		075C71372CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71362CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift */; };
 		075C71392CECC50F00B93FC3 /* SpaceBasicTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71382CECC50F00B93FC3 /* SpaceBasicTokenIllustrations.swift */; };
 		075C713B2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C713A2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift */; };
+		076227572DA90748009C3632 /* DividerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076227552DA90748009C3632 /* DividerPage.swift */; };
+		076227582DA90748009C3632 /* DividerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076227532DA90748009C3632 /* DividerConfiguration.swift */; };
+		076227592DA90748009C3632 /* DividerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076227542DA90748009C3632 /* DividerElement.swift */; };
+		0762275A2DA90748009C3632 /* DividerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076227552DA90748009C3632 /* DividerPage.swift */; };
+		0762275B2DA90748009C3632 /* DividerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076227532DA90748009C3632 /* DividerConfiguration.swift */; };
+		0762275C2DA90748009C3632 /* DividerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076227542DA90748009C3632 /* DividerElement.swift */; };
 		0765A6D62D09C5E2005DAB51 /* FontTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6CF2D09C5E2005DAB51 /* FontTokenElement.swift */; };
 		0765A6D72D09C5E2005DAB51 /* NamedFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6CC2D09C5E2005DAB51 /* NamedFont.swift */; };
 		0765A6D82D09C5E2005DAB51 /* FontTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765A6D02D09C5E2005DAB51 /* FontTokenPage.swift */; };
@@ -306,6 +312,9 @@
 		075C71362CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacePaddingTokenIllustrations.swift; sourceTree = "<group>"; };
 		075C71382CECC50F00B93FC3 /* SpaceBasicTokenIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceBasicTokenIllustrations.swift; sourceTree = "<group>"; };
 		075C713A2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceGapTokenIllustrations.swift; sourceTree = "<group>"; };
+		076227532DA90748009C3632 /* DividerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerConfiguration.swift; sourceTree = "<group>"; };
+		076227542DA90748009C3632 /* DividerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerElement.swift; sourceTree = "<group>"; };
+		076227552DA90748009C3632 /* DividerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerPage.swift; sourceTree = "<group>"; };
 		0765A6CC2D09C5E2005DAB51 /* NamedFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedFont.swift; sourceTree = "<group>"; };
 		0765A6CD2D09C5E2005DAB51 /* View+Illustration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Illustration.swift"; sourceTree = "<group>"; };
 		0765A6CF2D09C5E2005DAB51 /* FontTokenElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTokenElement.swift; sourceTree = "<group>"; };
@@ -594,6 +603,16 @@
 				075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		076227562DA90748009C3632 /* Divider */ = {
+			isa = PBXGroup;
+			children = (
+				076227532DA90748009C3632 /* DividerConfiguration.swift */,
+				076227542DA90748009C3632 /* DividerElement.swift */,
+				076227552DA90748009C3632 /* DividerPage.swift */,
+			);
+			path = Divider;
 			sourceTree = "<group>";
 		};
 		0765A6CE2D09C5E2005DAB51 /* NamedFont */ = {
@@ -903,6 +922,7 @@
 				072141182D02F52A00B7B9C6 /* Button */,
 				513442062D75B880000B5DE4 /* Checkbox */,
 				07D3DBF02DA5084500D8A57F /* ColoredSurface */,
+				076227562DA90748009C3632 /* Divider */,
 				07B3CCAD2D40E14C00DBB10A /* Link */,
 				0745C1852D7A0351006B3A1F /* Radio */,
 				518B26632DAE9DE1003A6ED3 /* RadioPicker */,
@@ -1331,6 +1351,9 @@
 				07304A6C2D429F9F009320BA /* LinkPage.swift in Sources */,
 				51D6D58F2D887F04009CD879 /* CheckboxItemIndeterminatePage.swift in Sources */,
 				07D7E1982D035566006472EB /* ButtonConfiguration.swift in Sources */,
+				076227572DA90748009C3632 /* DividerPage.swift in Sources */,
+				076227582DA90748009C3632 /* DividerConfiguration.swift in Sources */,
+				076227592DA90748009C3632 /* DividerElement.swift in Sources */,
 				6D8F9C532CC160580078A10E /* SizeTokenPage.swift in Sources */,
 				6D8F9C522CC15F960078A10E /* ElevationTokenPage.swift in Sources */,
 				6D8F9C502CC14EBF0078A10E /* OpacityTokenPage.swift in Sources */,
@@ -1396,6 +1419,9 @@
 				07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */,
 				51D6D5942D888159009CD879 /* CheckboxItemIndeterminateConfiguration.swift in Sources */,
 				07B3CCB22D40E34700DBB10A /* LinkElement.swift in Sources */,
+				0762275A2DA90748009C3632 /* DividerPage.swift in Sources */,
+				0762275B2DA90748009C3632 /* DividerConfiguration.swift in Sources */,
+				0762275C2DA90748009C3632 /* DividerElement.swift in Sources */,
 				07B3CCB32D40E34700DBB10A /* LinkPage.swift in Sources */,
 				070DF8B12CDD07F20043D558 /* GrisTokenPage.swift in Sources */,
 				070DF8B22CDD07F20043D558 /* GridTokenElement.swift in Sources */,

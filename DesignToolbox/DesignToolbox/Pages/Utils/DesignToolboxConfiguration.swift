@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSComponents
 import SwiftUI
 
 struct DesignToolboxConfiguration<Configuration>: View where Configuration: View {
@@ -34,7 +35,7 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
                 .oudsForegroundColor(theme.colors.colorContentDefault)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            Divider()
+            OUDSDivider()
 
             configuration()
         }

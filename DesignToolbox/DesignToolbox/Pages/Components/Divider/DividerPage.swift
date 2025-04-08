@@ -1,0 +1,90 @@
+//
+// Software Name: OUDS iOS
+// SPDX-FileCopyrightText: Copyright (c) Orange SA
+// SPDX-License-Identifier: MIT
+// 
+// This software is distributed under the MIT license,
+// the text of which is available at https://opensource.org/license/MIT/
+// or see the "LICENSE" file for more details.
+// 
+// Authors: See CONTRIBUTORS.txt
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+//
+
+import OUDS
+import OUDSComponents
+import SwiftUI
+
+// MARK: Divider page
+
+struct DividerPage: View {
+
+    private let configuration = DividerConfigurationModel()
+
+    var body: some View {
+        ComponentConfigurationView(
+            configuration: configuration,
+            componentView: componentView,
+            configurationView: configurationView
+        )
+    }
+
+    @ViewBuilder
+    private func componentView(with configuration: ComponentConfiguration) -> some View {
+        if let model = configuration as? DividerConfigurationModel {
+            DividerIllustration(model: model)
+        }
+    }
+
+    @ViewBuilder
+    private func configurationView(with configuration: ComponentConfiguration) -> some View {
+        if let model = configuration as? DividerConfigurationModel {
+            DividerConfiguration(model: model)
+        }
+    }
+}
+
+// MARK: Divider Illustration
+
+struct DividerIllustration: View {
+
+    @Environment(\.colorScheme) private var colorScheme
+    @StateObject var model: DividerConfigurationModel
+
+    var body: some View {
+        VStack(alignment: .center) {
+            DividerDemo(model: model)
+            DividerDemo(model: model).colorScheme(colorScheme == .dark ? .light : .dark)
+        }
+    }
+}
+
+// MARK: - Button Demo
+
+private struct DividerDemo: View {
+
+    @Environment(\.theme) private var theme
+    @StateObject var model: DividerConfigurationModel
+
+    var body: some View {
+        Group {
+            switch model.orientation {
+            case .horizontal:
+                VStack(alignment: .center) {
+                    Spacer()
+                    OUDSDivider(color: model.selectedColor, orientation: .horizontal)
+                    Spacer()
+                }
+            case .vertical:
+                HStack(alignment: .center) {
+                    Spacer()
+                    OUDSDivider(color: model.selectedColor, orientation: .vertical)
+                    Spacer()
+                }
+            }
+        }
+        .frame(height: 44)
+        .padding(.all, theme.spaces.spaceFixedMedium)
+        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
+    }
+}
