@@ -19,7 +19,7 @@ struct ComponentsPage: View {
 
     let componentElements: [DesignToolboxElement] = [
         ButtonElement(),
-        ColoredSurfaceElement(),
+        ColoredBackgroundElement(),
         LinkElement(),
         CheckboxElements(),
         RadioElements(),

@@ -15,11 +15,11 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: ColoredSurface page
+// MARK: ColoredBackground page
 
-struct ColoredSurfacePage: View {
+struct ColoredBackgroundPage: View {
 
-    private let configuration = ColoredSurfaceConfigurationModel()
+    private let configuration = ColoredBackgroundConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(
@@ -31,15 +31,15 @@ struct ColoredSurfacePage: View {
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ColoredSurfaceConfigurationModel {
+        if let model = configuration as? ColoredBackgroundConfigurationModel {
             ColoredSurfaceIllustration(model: model)
         }
     }
 
     @ViewBuilder
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ColoredSurfaceConfigurationModel {
-            ColoredSurfaceConfiguration(model: model)
+        if let model = configuration as? ColoredBackgroundConfigurationModel {
+            ColoredBackgroundConfiguration(model: model)
         }
     }
 }
@@ -49,7 +49,7 @@ struct ColoredSurfacePage: View {
 struct ColoredSurfaceIllustration: View {
 
     @Environment(\.colorScheme) private var colorScheme
-    @ObservedObject var model: ColoredSurfaceConfigurationModel
+    @ObservedObject var model: ColoredBackgroundConfigurationModel
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -67,7 +67,7 @@ private struct ColoredSurfaceDemo: View {
 
     @Environment(\.theme) private var theme
 
-    @ObservedObject var model: ColoredSurfaceConfigurationModel
+    @ObservedObject var model: ColoredBackgroundConfigurationModel
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {

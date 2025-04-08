@@ -55,7 +55,7 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
 
     // MARK: Initializer
 
-    /// Create a view with background `color` applied on the `content` view.
+    /// Create a view with background color applied on the `content` view.
     ///
     /// - Parameters:
     ///     - color: The color applied as background on the content view
@@ -84,9 +84,13 @@ extension View {
 
 private struct OUDSColoredSurfaceModifier: ViewModifier {
 
+    // MARK: - Stored properties
+
     let backgroundSurfaceColor: OUDSBackgroundSurfaceColor
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+
+    // MARK: - Body
 
     public func body(content: Content) -> some View {
         content

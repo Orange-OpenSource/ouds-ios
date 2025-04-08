@@ -13,19 +13,19 @@
 
 import SwiftUI
 
-struct ColoredSurfaceElement: DesignToolboxElement {
+struct ColoredBackgroundElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
         name = "app_components_coloredBackground_label"
-        image = Image(decorative: "il_component_button").renderingMode(.original)
+        image = Image(decorative: "ic_components_colored_background").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
                 name: name,
                 image: nil,
                 description: "app_components_coloredBackground_description_text",
-                illustration: AnyView(ColoredSurfacePage())
+                illustration: AnyView(ColoredBackgroundPage())
             )
         )
     }

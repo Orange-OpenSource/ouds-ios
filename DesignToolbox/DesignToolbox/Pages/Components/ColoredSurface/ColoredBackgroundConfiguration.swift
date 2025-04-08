@@ -15,10 +15,10 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Colored Surface Configuration Model
+// MARK: - Colored Background Configuration Model
 
-/// The model shared between `ColoredSurfacePageConfiguration` view and `ColoredSurfacePageComponent` view.
-final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
+/// The model shared between `ColoredBackgroundPageConfiguration` view and `ColoredBackgroundPageComponent` view.
+final class ColoredBackgroundConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
@@ -51,11 +51,11 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - ColoredSurface Configuration View
+// MARK: - ColoredBackground Configuration View
 
-struct ColoredSurfaceConfiguration: View {
+struct ColoredBackgroundConfiguration: View {
 
-    @StateObject var model: ColoredSurfaceConfigurationModel
+    @StateObject var model: ColoredBackgroundConfigurationModel
     @Environment(\.theme) private var theme
     @State private var isExpanded: Bool = false
 
