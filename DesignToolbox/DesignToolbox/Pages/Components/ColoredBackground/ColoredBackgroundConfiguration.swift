@@ -39,7 +39,7 @@ final class ColoredBackgroundConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
         """
-       OUDSColoredSurface(color: \(selectedColor.description) {
+       OUDSColoredSurface(color: .\(selectedColor.description)) {
           Text("\(selectedColor.formattedName)")
           .oudsForegroundColor(theme.colors.colorContentDefault)
 
