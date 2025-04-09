@@ -20,7 +20,7 @@ struct ColoredBackgroundElement: DesignToolboxElement {
 
     init() {
         name = "app_components_coloredBackground_label"
-        image = Image(decorative: "ic_components_colored_background").renderingMode(.original)
+        image = Image(decorative: "il_components_colored_background").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
                 name: name,
                 image: nil,

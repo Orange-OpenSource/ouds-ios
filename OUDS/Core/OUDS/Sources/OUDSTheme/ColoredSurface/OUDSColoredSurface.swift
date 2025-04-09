@@ -14,7 +14,9 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Defines all colors available as background
+/// Defines all colors available as background used by `OUDSColoredSurface`.
+///
+/// - Since: 0.13.0
 public enum OUDSBackgroundSurfaceColor {
     // swiftlint:disable missing_docs
     case brandPrimary
@@ -36,7 +38,7 @@ public enum OUDSBackgroundSurfaceColor {
 /// Used to define if a content is used on a colored surface.
 ///
 /// It applies the `color` to the background and set the `oudsColoredSurface`
-/// environment variable to *true*. This variable is usefull, for example, to change
+/// environment variable to *true*. This variable is useful, for example, to change
 /// the style of a component according to its environment (example: monochrome mode on `OUDSButton`).
 ///
 /// ```swift
@@ -95,7 +97,7 @@ private struct OUDSColoredSurfaceModifier: ViewModifier {
     public func body(content: Content) -> some View {
         content
             .background(useColorToken.color(for: colorScheme))
-            .environment(\.oudsUseMonochrome, useMono)
+            .environment(\.oudsUseMonochrome, useMonochrome)
             .environment(\.oudsOnColoredSurface, true)
             .environment(\.colorScheme, useColorScheme)
     }
@@ -133,16 +135,16 @@ private struct OUDSColoredSurfaceModifier: ViewModifier {
         }
     }
 
-    // MARK: - The colorScheme to use
+    // MARK: - The color scheme to use
 
     private var useColorScheme: ColorScheme {
         switch backgroundSurfaceColor {
             // Force light
         case .brandPrimary,
-                .statusAccentEmphasized,
-                .statusInfoEmphasized,
-                .statusPositiveEmphasized,
-                .statusWarningEmphasized:
+              .statusAccentEmphasized,
+              .statusInfoEmphasized,
+              .statusPositiveEmphasized,
+              .statusWarningEmphasized:
             return .light
 
             // Reverse
@@ -155,33 +157,33 @@ private struct OUDSColoredSurfaceModifier: ViewModifier {
 
             // Follow device configuration
         case .statusAccentMuted,
-                .statusInfoMuted,
-                .statusNegativeMuted,
-                .statusPositiveMuted,
-                .statusNeutralMuted,
-                .statusWarningMuted:
+              .statusInfoMuted,
+              .statusNegativeMuted,
+              .statusPositiveMuted,
+              .statusNeutralMuted,
+              .statusWarningMuted:
             return colorScheme
         }
     }
 
     // MARK: - The monochrome flag
 
-    private var useMono: Bool {
+    private var useMonochrome: Bool {
         switch backgroundSurfaceColor {
         case .brandPrimary,
-                .statusAccentEmphasized,
-                .statusInfoEmphasized,
-                .statusPositiveEmphasized,
-                .statusWarningEmphasized,
-                .statusNegativeEmphasized:
+              .statusAccentEmphasized,
+              .statusInfoEmphasized,
+              .statusPositiveEmphasized,
+              .statusWarningEmphasized,
+              .statusNegativeEmphasized:
             return true
         case .statusNeutralEmphasized,
-                .statusAccentMuted,
-                .statusInfoMuted,
-                .statusNegativeMuted,
-                .statusPositiveMuted,
-                .statusNeutralMuted,
-                .statusWarningMuted:
+              .statusAccentMuted,
+              .statusInfoMuted,
+              .statusNegativeMuted,
+              .statusPositiveMuted,
+              .statusNeutralMuted,
+              .statusWarningMuted:
             return false
         }
     }

@@ -56,8 +56,8 @@ final class ColoredBackgroundConfigurationModel: ComponentConfiguration {
 struct ColoredBackgroundConfiguration: View {
 
     @StateObject var model: ColoredBackgroundConfigurationModel
-    @Environment(\.theme) private var theme
     @State private var isExpanded: Bool = false
+    @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {

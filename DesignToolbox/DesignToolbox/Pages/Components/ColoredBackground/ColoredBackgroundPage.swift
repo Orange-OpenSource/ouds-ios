@@ -15,7 +15,7 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: ColoredBackground page
+// MARK: Colored Background page
 
 struct ColoredBackgroundPage: View {
 
@@ -44,12 +44,12 @@ struct ColoredBackgroundPage: View {
     }
 }
 
-// MARK: ColoredSurface Illustration
+// MARK: Colored Surface Illustration
 
 struct ColoredSurfaceIllustration: View {
 
-    @Environment(\.colorScheme) private var colorScheme
     @ObservedObject var model: ColoredBackgroundConfigurationModel
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -61,13 +61,12 @@ struct ColoredSurfaceIllustration: View {
     }
 }
 
-// MARK: - ColoredSurface Demo
+// MARK: - Colored Surface Demo
 
 private struct ColoredSurfaceDemo: View {
 
-    @Environment(\.theme) private var theme
-
     @ObservedObject var model: ColoredBackgroundConfigurationModel
+    @Environment(\.theme) private var theme
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {

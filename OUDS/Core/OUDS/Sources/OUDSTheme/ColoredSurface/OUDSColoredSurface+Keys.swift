@@ -22,8 +22,7 @@ private struct ColoredSurfaceUseMonochromeKey: EnvironmentKey {
 
 extension EnvironmentValues {
 
-    /// Updated by the ``OUDSColoredSurface``, the value tells if the current view is
-    /// on a colored surface with a background color need to switch to monochrome.
+    /// Updated by the ``OUDSColoredSurface``, the value tells that component (or `View`) needs to switch to monochrome.
     public var oudsUseMonochrome: Bool {
         get {
             self[ColoredSurfaceUseMonochromeKey.self]
@@ -43,8 +42,7 @@ private struct OnColoredSurfaceKey: EnvironmentKey {
 
 extension EnvironmentValues {
 
-    /// Updated by the ``OUDSColoredSurface``, the value tells if the current view is
-    /// on a colored surface or not.
+    /// Updated by the ``OUDSColoredSurface``, the value tells the component (or `View` is on a colored surface or not.
     public var oudsOnColoredSurface: Bool {
         get {
             self[OnColoredSurfaceKey.self]
