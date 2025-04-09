@@ -11,59 +11,32 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-public struct OUDSDivider: View {
+/// A `ViewModifier` which will apply a specific divider under a `View` using color and size semantic token for a specified orientation.
+///
+/// - Since: 0.13.0
+struct DividerModifier: ViewModifier {
 
-    /// List of colors available for divider
-    public enum Color {
-        case borderDefault
-        case borderMuted
-        case borderEmphasized
-        case borderBrandPrimary
-        case borderBrandSecondary
-        case borderBrandTertiary
-        case borderOnBrandPrimary
-        case borderOnBrandSecondary
-        case borderOnBrandTertiary
-        case alwaysBlack
-        case alwaysWhite
-        case alwaysOnBlack
-        case alwaysOnWhite
-    }
-
-    /// The divider orientation
-    public enum Orientation {
+    /// Divider orientation
+    enum Orientation {
         case horizontal
         case vertical
     }
 
     // - MARK: Stored properties
 
-    private let color: Self.Color
-    private let orientation: Self.Orientation
+    let color: OUDSDividerColor
+    let orientation: Orientation
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
-    // - MARK: Initializer
-
-    /// Create a colored divider.
-    ///
-    /// - Parameters:
-    ///     - color: The color of the divider, `OUDSDivider.Color.borderDefault` by default
-    ///     - orientation: The orientation of the divider, `OUDSDivider.Orientation.horizontal` by default
-    public init(color: Self.Color = .borderDefault, orientation: Self.Orientation = .horizontal) {
-        self.color = color
-        self.orientation = orientation
-    }
-
     // - MARK: Body
 
-    public var body: some View {
-        Divider()
+    func body(content: Content) -> some View {
+        content
             .frame(width: width, height: height)
             .overlay(colorToken.color(for: colorScheme))
     }

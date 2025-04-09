@@ -19,7 +19,11 @@ import SwiftUI
 
 struct DividerPage: View {
 
-    private let configuration = DividerConfigurationModel()
+    private let configuration: DividerConfigurationModel
+
+    init(orientation: DividerConfigurationModel.Orientation) {
+        configuration = DividerConfigurationModel(orientation: orientation)
+    }
 
     var body: some View {
         ComponentConfigurationView(
@@ -72,18 +76,19 @@ private struct DividerDemo: View {
             case .horizontal:
                 VStack(alignment: .center) {
                     Spacer()
-                    OUDSDivider(color: model.selectedColor, orientation: .horizontal)
+                    OUDSHorizontalDivider(color: model.selectedColor)
                     Spacer()
                 }
+                .frame(height: 44)
             case .vertical:
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSDivider(color: model.selectedColor, orientation: .vertical)
+                    OUDSVerticalDivider(color: model.selectedColor)
                     Spacer()
                 }
+                .frame(height: 44)
             }
         }
-        .frame(height: 44)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
     }

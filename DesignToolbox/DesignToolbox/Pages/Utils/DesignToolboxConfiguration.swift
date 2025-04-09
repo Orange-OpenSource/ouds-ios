@@ -35,7 +35,7 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
                 .oudsForegroundColor(theme.colors.colorContentDefault)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            OUDSDivider()
+            OUDSHorizontalDivider()
 
             configuration()
         }

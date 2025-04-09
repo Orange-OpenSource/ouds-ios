@@ -1544,26 +1544,26 @@
         }
       }
     },
-    "app_components_divider_hotizontal_label" : {
+    "app_components_divider_horizontalDivider_label" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أفقي"
+            "value" : "فاصل أفقي"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hotizontal"
+            "value" : "Horizontal divider"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Horizontal"
+            "value" : "Séparateur horizontal"
           }
         }
       }
@@ -1592,50 +1592,26 @@
         }
       }
     },
-    "app_components_divider_orientation_label" : {
+    "app_components_divider_verticalDivider_label" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "توجيه"
+            "value" : "فاصل عمودي"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orientation"
+            "value" : "Vertical divider"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Orientation"
-          }
-        }
-      }
-    },
-    "app_components_divider_vertical_label" : {
-      "comment" : "Component - Divider",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "رَأسِيّ"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vertical"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vertical"
+            "value" : "Séparateur vertical"
           }
         }
       }

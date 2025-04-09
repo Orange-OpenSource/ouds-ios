@@ -22,19 +22,22 @@ final class DividerConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var selectedColor: OUDSDivider.Color {
+    @Published var selectedColor: OUDSDividerColor {
         didSet { updateCode() }
     }
 
-    @Published var orientation: OUDSDivider.Orientation {
-        didSet { updateCode() }
+    enum Orientation {
+        case horizontal
+        case vertical
     }
+
+    let orientation: Orientation
 
     // MARK: Initializer
 
-    override init() {
-        orientation = .horizontal
-        selectedColor = .borderBrandPrimary
+    init(orientation: Orientation) {
+        selectedColor = .borderDefault
+        self.orientation = orientation
     }
 
     deinit { }
@@ -44,9 +47,13 @@ final class DividerConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-          OUDSDivider(color: \(selectedColor)) {
+          \(dividerPetern)(color: \(selectedColor)) {
           }
           """
+    }
+
+    private var dividerPetern: String {
+        orientation == .horizontal ? "OUDSHorizontalDivider" : "OUDSVerticalDivider"
     }
 }
 
@@ -60,15 +67,9 @@ struct DividerConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            DesignToolboxChoicePicker(title: "app_components_divider_orientation_label", selection: $model.orientation) {
-                ForEach(OUDSDivider.Orientation.allCases, id: \.id) { orientation in
-                    Text(LocalizedStringKey(orientation.description)).tag(orientation)
-                }
-            }
-
             DisclosureGroup(isExpanded: $isExpanded) {
                 VStack(alignment: .leading) {
-                    ForEach(OUDSDivider.Color.allCases, id: \.id) { color in
+                    ForEach(OUDSDividerColor.allCases, id: \.id) { color in
                         Button {
                             model.selectedColor = color
                         } label: {
@@ -86,14 +87,14 @@ struct DividerConfiguration: View {
                                colorName: model.selectedColor.formattedName)
 
                     if isExpanded {
-                        OUDSDivider()
+                        OUDSHorizontalDivider()
                     }
                 }
             }
         }
     }
 
-    private func colorToken(for color: OUDSDivider.Color) -> MultipleColorSemanticTokens {
+    private func colorToken(for color: OUDSDividerColor) -> MultipleColorSemanticTokens {
         switch color {
         case .borderDefault:
             theme.colors.colorBorderDefault
@@ -145,9 +146,9 @@ private struct ColorEntry: View {
     }
 }
 
-extension OUDSDivider.Color: @retroactive CaseIterable, @retroactive CustomStringConvertible {
+extension OUDSDividerColor: @retroactive CaseIterable, @retroactive CustomStringConvertible {
 
-    nonisolated(unsafe) public static var allCases: [OUDSDivider.Color] = [
+    nonisolated(unsafe) public static var allCases: [OUDSDividerColor] = [
         .borderDefault,
         .borderMuted,
         .borderEmphasized,
@@ -223,22 +224,6 @@ extension OUDSDivider.Color: @retroactive CaseIterable, @retroactive CustomStrin
             "alwaysOnBlack"
         case .alwaysOnWhite:
             "alwaysOnwhite"
-        }
-    }
-
-    var id: String { description }
-}
-
-extension OUDSDivider.Orientation: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
-    nonisolated(unsafe) public static var allCases: [OUDSDivider.Orientation] = [.horizontal, .vertical]
-
-    public var description: String {
-        switch self {
-        case .horizontal:
-            "app_components_divider_hotizontal_label".localized()
-        case .vertical:
-            "app_components_divider_vertical_label".localized()
         }
     }
 

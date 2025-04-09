@@ -21,7 +21,7 @@ struct ComponentsPage: View {
         ButtonElement(),
         ColoredSurfaceElement(),
         CheckboxElements(),
-        DividerElement(),
+        DividerElements(),
         LinkElement(),
         RadioElements(),
     ]
