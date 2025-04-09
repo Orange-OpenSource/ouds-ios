@@ -43,6 +43,9 @@ open class OUDSTheme: @unchecked Sendable {
     /// All color semantic tokens exposed in one object
     public let colors: AllColorSemanticTokensProvider
 
+    /// All color mode semantic tokens exposed in one object
+    public let colorModes: AllColorModeSemanticTokensProvider
+
     /// All elevation semantic tokens exposed in one object
     public let elevations: AllElevationSemanticTokensProvider
 
@@ -120,6 +123,7 @@ open class OUDSTheme: @unchecked Sendable {
     /// - Parameters:
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
+    ///    - colorModes: All semantic tokens of color modes
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -144,6 +148,7 @@ open class OUDSTheme: @unchecked Sendable {
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     public init(borders: AllBorderSemanticTokensProvider,
                 colors: AllColorSemanticTokensProvider,
+                colorModes: AllColorModeSemanticTokensProvider,
                 elevations: AllElevationSemanticTokensProvider,
                 fonts: AllFontSemanticTokensProvider,
                 grids: AllGridSemanticTokensProvider,
@@ -170,6 +175,7 @@ open class OUDSTheme: @unchecked Sendable {
         // Save semantic tokens providers
         self.borders = borders
         self.colors = colors
+        self.colorModes = colorModes
         self.elevations = elevations
         self.fonts = fonts
         self.grids = grids

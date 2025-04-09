@@ -28,6 +28,9 @@ public protocol AllBorderSemanticTokensProvider: TokensProvider, BorderSemanticT
 /// Something which provides all semantic tokens of colors
 public protocol AllColorSemanticTokensProvider: TokensProvider, ColorSemanticTokens, ColorMultipleSemanticTokens { }
 
+/// Something which provides all semantic tokens of colors modes
+public protocol AllColorModeSemanticTokensProvider: TokensProvider, ColorModeSemanticTokens, ColorModeMultipleSemanticTokens { }
+
 /// Something which provides all semantic tokens of elevation
 public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens, ElevationMultipleSemanticTokens { }
 
