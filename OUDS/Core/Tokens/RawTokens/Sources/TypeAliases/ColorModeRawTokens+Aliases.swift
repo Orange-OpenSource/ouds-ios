@@ -11,5 +11,5 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-/// A color mode raw token is finaly a `String` containing a specific word.
+/// A color mode raw token is finaly a `String` as a specific word.
 public typealias ColorModeRawToken = String
