@@ -61,11 +61,11 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
 
     /// Depending to the given `mode`, should return the SwfitUI `ColorScheme` to consider.
     /// For Orange theme, the rules are:
-    ///     - if light version is dark mode and dark version is light mode, reverse the color scheme
-    ///     - if light and dark versions are light mode, return light color scheme
-    ///     - if light and dark versions are dark mode, return dark color scheme
-    ///     - otherwise return current color scheme
-    ///     
+    /// - if light version is dark mode and dark version is light mode, reverse the color scheme
+    /// - if light and dark versions are light mode, return light color scheme
+    /// - if light and dark versions are dark mode, return dark color scheme
+    /// - otherwise return current color scheme
+    ///
     /// - Parameters:
     ///    - mode: The color mode token to test
     ///    - current: The current color scheme
@@ -97,7 +97,7 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
 
     /// Depending to the given `mode`, should return a flag saying if monochrome mode must be considered.
     /// For Orange theme, the rule is :
-    ///     - if both light and dark versions are monochrome, return true, otherwise fale
+    /// - if both light and dark versions are monochrome, returns true, otherwise false
     ///
     /// - Parameter mode: The color mode token to test
     /// - Returns: The flag for monochrome mode depending to the theme rules
