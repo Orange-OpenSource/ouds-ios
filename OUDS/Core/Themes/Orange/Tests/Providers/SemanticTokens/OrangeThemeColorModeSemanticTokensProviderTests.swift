@@ -35,7 +35,8 @@ struct OrangeThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeOnStatusNegativeEmphasizedLight = ColorModeRawTokens.monochromeDark
         let modeOnStatusNegativeEmphasizedDark = ColorModeRawTokens.monochromeLight
-        let modeOnStatusNegativeEmphasized = MultipleColorModeSemanticTokens(light: modeOnStatusNegativeEmphasizedLight,
+        let modeOnStatusNegativeEmphasized = MultipleColorModeSemanticTokens("Doll",
+                                                                             light: modeOnStatusNegativeEmphasizedLight,
                                                                              dark: modeOnStatusNegativeEmphasizedDark)
 
         // When
@@ -51,7 +52,8 @@ struct OrangeThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeOnStatusInfoEmphasizedLight = ColorModeRawTokens.monochromeLight
         let modeOnStatusInfoEmphasizedDark = ColorModeRawTokens.monochromeLight
-        let modeOnStatusInfoEmphasized = MultipleColorModeSemanticTokens(light: modeOnStatusInfoEmphasizedLight,
+        let modeOnStatusInfoEmphasized = MultipleColorModeSemanticTokens("Dagga",
+                                                                         light: modeOnStatusInfoEmphasizedLight,
                                                                          dark: modeOnStatusInfoEmphasizedDark)
 
         // When
@@ -67,7 +69,8 @@ struct OrangeThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeOnStatusInfoBazingaLight = ColorModeRawTokens.monochromeDark
         let modeOnStatusInfoBazingaDark = ColorModeRawTokens.monochromeDark
-        let modeOnStatusInfoBazinga = MultipleColorModeSemanticTokens(light: modeOnStatusInfoBazingaLight,
+        let modeOnStatusInfoBazinga = MultipleColorModeSemanticTokens("Buzz-Buzz",
+                                                                      light: modeOnStatusInfoBazingaLight,
                                                                       dark: modeOnStatusInfoBazingaDark)
 
         // When
@@ -83,7 +86,8 @@ struct OrangeThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeOnStatusAccentMutedLight = ColorModeRawTokens.light
         let modeOnStatusAccentMutedDark = ColorModeRawTokens.dark
-        let modeOnStatusAccentMuted = MultipleColorModeSemanticTokens(light: modeOnStatusAccentMutedLight,
+        let modeOnStatusAccentMuted = MultipleColorModeSemanticTokens("Ziggety",
+                                                                      light: modeOnStatusAccentMutedLight,
                                                                       dark: modeOnStatusAccentMutedDark)
 
         // When
@@ -101,7 +105,8 @@ struct OrangeThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeOnStatusAccentMutedLight = ColorModeRawTokens.light
         let modeOnStatusAccentMutedDark = ColorModeRawTokens.dark
-        let modeOnStatusAccentMuted = MultipleColorModeSemanticTokens(light: modeOnStatusAccentMutedLight,
+        let modeOnStatusAccentMuted = MultipleColorModeSemanticTokens("Zag",
+                                                                      light: modeOnStatusAccentMutedLight,
                                                                       dark: modeOnStatusAccentMutedDark)
 
         // When
@@ -115,7 +120,8 @@ struct OrangeThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeSomeLight = ColorModeRawTokens.monochromeLight
         let modeSomeDark = ColorModeRawTokens.dark
-        let modeSome = MultipleColorModeSemanticTokens(light: modeSomeLight,
+        let modeSome = MultipleColorModeSemanticTokens("Buzz",
+                                                       light: modeSomeLight,
                                                        dark: modeSomeDark)
 
         // When
@@ -129,7 +135,8 @@ struct OrangeThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeSomeLight = ColorModeRawTokens.light
         let modeSomeDark = ColorModeRawTokens.monochromeDark
-        let modeSome = MultipleColorModeSemanticTokens(light: modeSomeLight,
+        let modeSome = MultipleColorModeSemanticTokens("Buzz",
+                                                       light: modeSomeLight,
                                                        dark: modeSomeDark)
 
         // When
@@ -143,7 +150,8 @@ struct OrangeThemeColorModeSemanticTokensProviderTests {
         // Given
         let modeSomeLight = ColorModeRawTokens.monochromeLight
         let modeSomeDark = ColorModeRawTokens.monochromeDark
-        let modeSome = MultipleColorModeSemanticTokens(light: modeSomeLight,
+        let modeSome = MultipleColorModeSemanticTokens("Buzz",
+                                                       light: modeSomeLight,
                                                        dark: modeSomeDark)
 
         // When

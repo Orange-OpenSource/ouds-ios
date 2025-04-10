@@ -22,12 +22,12 @@ struct LinkButtonStyle: ButtonStyle {
 
     // MARK: Stored properties
 
-    @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
-
-    @State private var isHover: Bool
     let layout: OUDSLink.Layout
     let size: OUDSLink.Size
+
+    @State private var isHover: Bool
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Initializer
 
@@ -78,8 +78,6 @@ struct LinkButtonStyle: ButtonStyle {
 private struct LinkArrowLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
     let interactionState: InteractionState
     let size: OUDSLink.Size
@@ -120,8 +118,6 @@ private struct LinkArrowLabelStyle: LabelStyle {
 private struct LinkIconAndTextLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
     let interactionState: InteractionState
     let size: OUDSLink.Size

@@ -14,6 +14,8 @@
 import OUDSThemesOrange
 import Testing
 
+// swiftlint:disable force_cast
+
 /// Check if the themes ahs the default tokens providers with the expected types.
 struct OrangeThemeTests {
 
@@ -27,6 +29,11 @@ struct OrangeThemeTests {
 
     @Test func defaultColorSemanticTokensProvider() throws {
         #expect(theme.colors is OrangeThemeColorSemanticTokensProvider)
+    }
+
+    @Test func defaultColorModeSemanticTokensProvider() throws {
+        #expect(theme.colorModes is OrangeThemeColorModeSemanticTokensProvider)
+        #expect((theme.colorModes as! OrangeThemeColorModeSemanticTokensProvider).colors is OrangeThemeColorSemanticTokensProvider)
     }
 
     @Test func defaultBorderSemanticTokensProvider() throws {
@@ -117,3 +124,5 @@ struct OrangeThemeTests {
 
     // NOTE: Add tests for new component tokens providers
 }
+
+// swiftlint:enable force_cast

@@ -136,7 +136,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
-        let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider())
+        let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider(colors: colors))
         let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())

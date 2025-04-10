@@ -20,7 +20,6 @@ struct LinkSizeIconModifier: ViewModifier {
     let size: OUDSLink.Size
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
