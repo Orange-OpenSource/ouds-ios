@@ -85,6 +85,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     /// - Parameters:
     ///    - borders: All semantic tokens of borders
     ///    - colors: All semantic tokens of colors
+    ///    - colorModes: All semantic tokens of color modes
     ///    - elevations: All semantic tokens of elevations
     ///    - fonts: All semantic tokens of fonts
     ///    - grids: All semantic tokens of grids
@@ -109,6 +110,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
     ///    - fontFamily: Set `nil` if system font to use, otherwise use the `FontFamilySemanticToken` you want to apply
     override public init(borders: AllBorderSemanticTokensProvider? = nil,
                          colors: AllColorSemanticTokensProvider? = nil,
+                         colorModes: AllColorModeSemanticTokensProvider? = nil,
                          elevations: AllElevationSemanticTokensProvider? = nil,
                          fonts: AllFontSemanticTokensProvider? = nil,
                          grids: AllGridSemanticTokensProvider? = nil,
@@ -134,6 +136,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        let colorModes = (colorModes ?? OrangeThemeColorModeSemanticTokensProvider())
         let elevations = (elevations ?? OrangeThemeElevationSemanticTokensProvider())
         let fonts = (fonts ?? OrangeThemeFontSemanticTokensProvider())
         let grids = (grids ?? OrangeThemeGridSemanticTokensProvider())
@@ -159,6 +162,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
 
         super.init(borders: borders,
                    colors: colors,
+                   colorModes: colorModes,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
