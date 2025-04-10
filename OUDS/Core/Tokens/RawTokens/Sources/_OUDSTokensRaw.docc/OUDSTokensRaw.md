@@ -72,6 +72,7 @@ import OUDSTokensRaw
 Then choose the tokens you want within:
 * ``BorderRawTokens`` for borders
 * ``ColorRawTokens`` for colors
+* ``ColorModeRawTokens`` for colors mode (kind of frozen and not generated raw tokens)
 * ``DimensionRawTokens`` for dimensions
 * ``ElevationRawTokens`` for elevations
 * ``FontRawTokens`` for fonts
@@ -84,6 +85,7 @@ Then choose the tokens you want within:
 
 - ``BorderRawTokens``
 - ``ColorRawTokens``
+- ``ColorModeRawTokens``
 - ``DimensionRawTokens``
 - ``ElevationRawTokens``
 - ``GridRawTokens``
