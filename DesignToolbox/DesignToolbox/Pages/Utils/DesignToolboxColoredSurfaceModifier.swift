@@ -17,7 +17,7 @@ import SwiftUI
 /// Use the background modifier to place a view on a colored surface.
 /// Today, in the design kit application the color of the surface is based on the sementic token
 /// named: _color/surface/brand/primary_
-struct DesignToolboxColoredBackgroundModifier: ViewModifier {
+struct DesignToolboxColoredSurfaceModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
 

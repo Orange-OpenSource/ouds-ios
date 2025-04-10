@@ -12,19 +12,19 @@ To do so, some tokens associated with these specific colors can be customized an
 
 #### How it works
 
-According to the color, the `OUDSColoredSurface` helper adds in SwiftUI environment two flags:
+According to the color, the `OUDSColoredSurface` component adds in SwiftUI environment two flags:
 - `oudsUseMonochrome`: to inform a component that needs to use mono version of tokens 
 - `oudsOnColoredSurface`: to inform a component it is placed on colored surface even if the mono is off 
 
 #### How to use
 
 ```swift
-    // The folowing view has a colored background ``OUDSBackgroundColor.statusPositiveEmphasized`` with
+    // The folowing view has a colored background "modeOnStatusPositiveEmphasized" with
+    // - a text with the color adapted according to the adjusted colorScheme      
     // - a button that uses the mono version of tokens
-    // - a text with the color adapted according to the adjusted colorScheme  
 
     // As view
-    OUDSColoredSurface(color: .statusPositiveEmphasized) {
+    OUDSColoredSurface(color: theme.colorModes.modeOnStatusPositiveEmphasized) {
         VStack {
             Text("Status Positive Emphasized")
             .oudsForegroundColor(theme.colors.colorContentDefault)
@@ -41,5 +41,5 @@ According to the color, the `OUDSColoredSurface` helper adds in SwiftUI environm
 
         OUDSButton(text: "Button") {}
     }
-    .oudsColoredSurface(color: .statusPositiveEmphasized)
+    .oudsColoredSurface(color: theme.colorModes.modeOnStatusPositiveEmphasized)
 ```

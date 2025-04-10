@@ -150,7 +150,7 @@ struct LinkConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            Toggle("app_components_common_onColoredBackground_label", isOn: $model.onColoredSurface)
+            Toggle("app_components_common_onColoredSurface_label", isOn: $model.onColoredSurface)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 

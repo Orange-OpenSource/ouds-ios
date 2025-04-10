@@ -15,10 +15,10 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Colored Background Configuration Model
+// MARK: - Colored Surface Configuration Model
 
-/// The model shared between `ColoredBackgroundPageConfiguration` view and `ColoredBackgroundPageComponent` view.
-final class ColoredBackgroundConfigurationModel: ComponentConfiguration {
+/// The model shared between `ColoredSurfacePageConfiguration` view and `ColoredSurfacePageComponent` view.
+final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
@@ -51,16 +51,16 @@ final class ColoredBackgroundConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - Colored Background Configuration View
+// MARK: - Colored Surface Configuration View
 
-struct ColoredBackgroundConfiguration: View {
+struct ColoredSurfaceConfiguration: View {
 
-    @StateObject var model: ColoredBackgroundConfigurationModel
+    @StateObject var model: ColoredSurfaceConfigurationModel
     @State private var isExpanded: Bool = false
     @Environment(\.theme) private var theme
 
     var body: some View {
-        DesignToolboxDisclosureGroup(isExpanded: $isExpanded, accessibilityLabel: "app_components_coloredBackground_color_label_a11y") {
+        DesignToolboxDisclosureGroup(isExpanded: $isExpanded, accessibilityLabel: "app_components_coloredSurface_color_label_a11y") {
             VStack(alignment: .leading) {
                 ForEach(NamedColorMode.allCases, id: \.id) { color in
                     Button {
@@ -72,7 +72,7 @@ struct ColoredBackgroundConfiguration: View {
             }
         } label: {
             VStack(alignment: .leading) {
-                Text("app_components_coloredBackground_color_label")
+                Text("app_components_coloredSurface_color_label")
                     .typeHeadingMedium(theme)
                     .oudsForegroundColor(theme.colors.colorContentDefault)
 

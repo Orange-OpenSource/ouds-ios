@@ -104,6 +104,6 @@ Some helpers are available in the OUDS API to avoid to use the `color(for:ColorS
 ### Components categories
 
 - <doc:Actions>
-- <doc:Navigation>
-- <doc:Input>
+- <doc:Navigations>
+- <doc:Inputs>
 - <doc:Layouts>

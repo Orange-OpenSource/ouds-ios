@@ -11,22 +11,14 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import OUDS
-import OUDSComponents
 import SwiftUI
 
-struct ComponentsPage: View {
+extension View {
 
-    let componentElements: [DesignToolboxElement] = [
-        ButtonElement(),
-        ColoredSurfaceElement(),
-        LinkElement(),
-        CheckboxElements(),
-        RadioElements(),
-    ]
-
-    var body: some View {
-        DesignToolboxElementsPage(elements: componentElements)
-            .oudsNavigationTitle("app_bottomBar_components_label")
+    /// Helper to set the current view on colored surface based on ``OUDSColoredSurface``.
+    ///
+    /// - Parameter colorMode: The color mode applied as background on the current view.
+    public func oudsColoredSurface(colorMode: OUDSColoredSurface.SurfaceColor) -> some View {
+        self.modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: colorMode))
     }
 }

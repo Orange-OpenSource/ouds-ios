@@ -173,7 +173,7 @@ struct ButtonConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.style != .`default`)
 
-            Toggle("app_components_common_onColoredBackground_label", isOn: $model.onColoredSurface)
+            Toggle("app_components_common_onColoredSurface_label", isOn: $model.onColoredSurface)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 

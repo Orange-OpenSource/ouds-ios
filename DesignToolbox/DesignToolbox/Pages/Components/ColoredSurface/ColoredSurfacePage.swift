@@ -15,11 +15,11 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: Colored Background page
+// MARK: Colored Surface Page
 
-struct ColoredBackgroundPage: View {
+struct ColoredSurfacePage: View {
 
-    private let configuration = ColoredBackgroundConfigurationModel()
+    private let configuration = ColoredSurfaceConfigurationModel()
 
     var body: some View {
         ComponentConfigurationView(
@@ -31,15 +31,15 @@ struct ColoredBackgroundPage: View {
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ColoredBackgroundConfigurationModel {
+        if let model = configuration as? ColoredSurfaceConfigurationModel {
             ColoredSurfaceIllustration(model: model)
         }
     }
 
     @ViewBuilder
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? ColoredBackgroundConfigurationModel {
-            ColoredBackgroundConfiguration(model: model)
+        if let model = configuration as? ColoredSurfaceConfigurationModel {
+            ColoredSurfaceConfiguration(model: model)
         }
     }
 }
@@ -48,7 +48,7 @@ struct ColoredBackgroundPage: View {
 
 struct ColoredSurfaceIllustration: View {
 
-    @ObservedObject var model: ColoredBackgroundConfigurationModel
+    @ObservedObject var model: ColoredSurfaceConfigurationModel
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
@@ -65,7 +65,7 @@ struct ColoredSurfaceIllustration: View {
 
 private struct ColoredSurfaceDemo: View {
 
-    @ObservedObject var model: ColoredBackgroundConfigurationModel
+    @ObservedObject var model: ColoredSurfaceConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
@@ -88,6 +88,6 @@ private struct ColoredSurfaceDemo: View {
             }
         }
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: false))
+        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
     }
 }

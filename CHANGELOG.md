@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Tool] Migration to Xcode 16.3 ([#580](https://github.com/Orange-OpenSource/ouds-ios/issues/580))
 - [Library] Update the OUDSColoredSurface to fix color available ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
+- [Library] Update the OUDSColoredSurface component to fix color available ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
 - [Tool] Migration to Xcode 16.3 ([#580](https://github.com/Orange-OpenSource/ouds-ios/issues/580))
 - [Library] Update the OUDSColoredSurface to fix color available ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
 - [Tool] Remove dead code and add `periphery` in CI/CD pipes

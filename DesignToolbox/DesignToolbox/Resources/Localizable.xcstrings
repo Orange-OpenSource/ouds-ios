@@ -1007,8 +1007,8 @@
         }
       }
     },
-    "app_components_coloredBackground_color_label" : {
-      "comment" : "Component - ColoredBackground",
+    "app_components_coloredSurface_color_label" : {
+      "comment" : "Component - Colored Surface",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1031,8 +1031,8 @@
         }
       }
     },
-    "app_components_coloredBackground_color_label_a11y" : {
-      "comment" : "Component - ColoredBackground",
+    "app_components_coloredSurface_color_label_a11y" : {
+      "comment" : "Component - Colored Surface",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1055,8 +1055,8 @@
         }
       }
     },
-    "app_components_coloredBackground_description_text" : {
-      "comment" : "Component - Colored Backround",
+    "app_components_coloredSurface_description_text" : {
+      "comment" : "Component - Colored Surface",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1079,8 +1079,8 @@
         }
       }
     },
-    "app_components_coloredBackground_label" : {
-      "comment" : "Component - ColoredBackground",
+    "app_components_coloredSurface_label" : {
+      "comment" : "Component - Colored Surface",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1271,7 +1271,7 @@
         }
       }
     },
-    "app_components_common_onColoredBackground_label" : {
+    "app_components_common_onColoredSurface_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
       "localizations" : {
@@ -1284,7 +1284,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "On colored background"
+            "value" : "On colored surface"
           }
         },
         "fr" : {

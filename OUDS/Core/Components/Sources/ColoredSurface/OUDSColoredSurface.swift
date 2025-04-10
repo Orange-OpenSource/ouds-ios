@@ -53,51 +53,7 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
     // MARK: Body
 
     public var body: some View {
-        content().modifier(ColoredSurfaceModifier(backgroundSurfaceColor: backgroundSurfaceColor))
+        content().modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: backgroundSurfaceColor))
     }
 }
 
-extension View {
-
-    /// Helper to set the current view on colored surface based on ``OUDSColoredSurface``.
-    ///
-    /// - Parameter colorMode: The color mode applied as background on the current view.
-    public func oudsColoredSurface(colorMode: OUDSColoredSurface.SurfaceColor) -> some View {
-        self.modifier(ColoredSurfaceModifier(backgroundSurfaceColor: colorMode))
-    }
-}
-
-// MARK: - Colored Surface Modifier
-
-private struct ColoredSurfaceModifier: ViewModifier {
-
-    // MARK: - Stored properties
-
-    let backgroundSurfaceColor: OUDSColoredSurface.SurfaceColor
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
-    // MARK: - Body
-
-    public func body(content: Content) -> some View {
-        content
-            .background(useColorToken.color(for: colorScheme))
-            .environment(\.oudsUseMonochrome, useMonochrome)
-            .environment(\.oudsOnColoredSurface, true)
-            .environment(\.colorScheme, useColorScheme)
-    }
-
-    // MARK: - Computed properties
-
-    private var useColorToken: MultipleColorSemanticTokens {
-        theme.colorModes.toColor(from: backgroundSurfaceColor)
-    }
-
-    private var useColorScheme: ColorScheme {
-        theme.colorModes.useColorScheme(for: backgroundSurfaceColor, colorScheme)
-    }
-
-    private var useMonochrome: Bool {
-        theme.colorModes.isMonochrome(mode: backgroundSurfaceColor)
-    }
-}
