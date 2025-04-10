@@ -30,41 +30,17 @@ struct DesignToolboxCode: View {
     // MARK: Body
 
     var body: some View {
-        VStack(spacing: theme.spaces.spaceFixedNone) {
-            toggleButtonSection()
-            if isCodeVisible {
-                codeTokenDisplayCodeSection()
-            }
+        DesignToolboxDisclosureGroup(isExpanded: $isCodeVisible, accessibilityLabel: "app_common_showCode_text_a11y".localized()) {
+            codeTokenSection()
+        } label: {
+            Text(titleText)
+                .typeBodyStrongLarge(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .padding(.vertical, theme.spaces.spacePaddingInlineShort)
         }
     }
 
-    // MARK: Private helpers
-
-    private func toggleButtonSection() -> some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-            Button(action: toggle) {
-                HStack {
-                    Text(titleText)
-                        .typeBodyStrongLarge(theme)
-                        .oudsForegroundStyle(theme.colors.colorContentDefault)
-                        .padding(.vertical, theme.spaces.spacePaddingInlineShort)
-                    Image("ic_chevron-up")
-                        .resizable()
-                        .renderingMode(.template)
-                        .rotationEffect(Angle.degrees(isCodeVisible ? 0 : 180))
-                        .oudsForegroundColor(theme.colors.colorSurfaceBrandPrimary)
-                        .frame(width: 20, height: 20)
-                        .padding(.trailing, theme.spaces.spacePaddingInlineMedium)
-                        .accessibilityLabel("app_common_showCode_text_a11y")
-                }
-            }
-            .buttonStyle(PlainButtonStyle())
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.bottom, theme.spaces.spacePaddingBlockShort)
-    }
-
-    private func codeTokenDisplayCodeSection() -> some View {
+    private func codeTokenSection() -> some View {
         HStack(alignment: .firstTextBaseline, spacing: theme.spaces.spacePaddingBlockNone) {
             Text(code)
                 .font(.system(.body, design: .monospaced))
@@ -107,11 +83,5 @@ struct DesignToolboxCode: View {
                             radius: theme.borders.borderRadiusDefault,
                             color: theme.colors.colorBorderDefault)
         )
-    }
-
-    private func toggle() {
-        withAnimation {
-            isCodeVisible.toggle()
-        }
     }
 }

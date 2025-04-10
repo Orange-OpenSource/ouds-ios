@@ -60,9 +60,14 @@ import OUDSFoundations
 /// - Since: 0.13.0
 open class OrangeThemeColorModeSemanticTokensProvider: AllColorModeSemanticTokensProvider {
 
-    /// Intializes the provider
-    public init() {
+    /// Provider of color semantic tokens to use for depending to some color modes
+    public let colors: AllColorSemanticTokensProvider
+
+    /// Defines a provider of color mode semantic tokens
+    /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    public init(colors: AllColorSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeColorModeSemanticTokensProvider")
+        self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
     }
 
     deinit{ }

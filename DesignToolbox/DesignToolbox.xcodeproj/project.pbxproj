@@ -82,8 +82,10 @@
 		07B3CCB12D40E34700DBB10A /* LinkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */; };
 		07B3CCB22D40E34700DBB10A /* LinkElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCAF2D40E34700DBB10A /* LinkElement.swift */; };
 		07B3CCB32D40E34700DBB10A /* LinkPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB02D40E34700DBB10A /* LinkPage.swift */; };
-		07B3CCB52D40F37000DBB10A /* DesignToolboxColoredBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredBackgroundModifier.swift */; };
-		07B3CCB62D40F37000DBB10A /* DesignToolboxColoredBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredBackgroundModifier.swift */; };
+		07B3CCB52D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredSurfaceModifier.swift */; };
+		07B3CCB62D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredSurfaceModifier.swift */; };
+		07C54EC12DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54EC02DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift */; };
+		07C54EC22DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C54EC02DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift */; };
 		07CAE7682CEE20A600D6C5D1 /* SpaceTokenCommonIllustration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71322CEB743300B93FC3 /* SpaceTokenCommonIllustration.swift */; };
 		07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C713A2CECC7DA00B93FC3 /* SpaceGapTokenIllustrations.swift */; };
 		07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C71362CECC3D800B93FC3 /* SpacePaddingTokenIllustrations.swift */; };
@@ -98,6 +100,12 @@
 		07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */; };
 		07CF42852CA45DA9000BD03E /* BorderTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */; };
 		07CF42892CA55BC8000BD03E /* ThemeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF42882CA55BC8000BD03E /* ThemeSelection.swift */; };
+		07D3DBF12DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBED2DA5084500D8A57F /* ColoredSurfaceConfiguration.swift */; };
+		07D3DBF22DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBEF2DA5084500D8A57F /* ColoredSurfacePage.swift */; };
+		07D3DBF32DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBEE2DA5084500D8A57F /* ColoredSurfaceElement.swift */; };
+		07D3DBF42DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBED2DA5084500D8A57F /* ColoredSurfaceConfiguration.swift */; };
+		07D3DBF52DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBEF2DA5084500D8A57F /* ColoredSurfacePage.swift */; };
+		07D3DBF62DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D3DBEE2DA5084500D8A57F /* ColoredSurfaceElement.swift */; };
 		07D7E1972D035566006472EB /* ButtonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7E1962D035566006472EB /* ButtonConfiguration.swift */; };
 		07D7E1982D035566006472EB /* ButtonConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D7E1962D035566006472EB /* ButtonConfiguration.swift */; };
 		07F0AFD72CFDB3CC00D334DD /* ComponentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */; };
@@ -180,6 +188,8 @@
 		51952AA32D3FA32E0068B807 /* GrisTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */; };
 		51952AA42D3FA32E0068B807 /* TokensPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CF426A2CA30728000BD03E /* TokensPage.swift */; };
 		51952AA52D3FA3440068B807 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543102CA154DE001187EA /* Card.swift */; };
+		51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
+		51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
 		51BD76212C466FCF0033365D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		51BD76242C466FCF0033365D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76122C466FCF0033365D /* Preview Assets.xcassets */; };
@@ -280,7 +290,6 @@
 		0745C1942D7A0823006B3A1F /* RadioItemPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioItemPage.swift; sourceTree = "<group>"; };
 		0745C1952D7A0823006B3A1F /* RadiolItemConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiolItemConfiguration.swift; sourceTree = "<group>"; };
 		0745C1962D7A0823006B3A1F /* RaioItemElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaioItemElement.swift; sourceTree = "<group>"; };
-		074794792CAE882A0033C2D8 /* EmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyState.swift; sourceTree = "<group>"; };
 		075114D82CB7D28D00B8B759 /* SizeTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTokenElement.swift; sourceTree = "<group>"; };
 		075114D92CB7D28D00B8B759 /* SizeTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeTokenPage.swift; sourceTree = "<group>"; };
 		075114DE2CB7FDC200B8B759 /* ColorTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorTokenElement.swift; sourceTree = "<group>"; };
@@ -316,7 +325,8 @@
 		07B3CCAE2D40E34700DBB10A /* LinkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkConfiguration.swift; sourceTree = "<group>"; };
 		07B3CCAF2D40E34700DBB10A /* LinkElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkElement.swift; sourceTree = "<group>"; };
 		07B3CCB02D40E34700DBB10A /* LinkPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPage.swift; sourceTree = "<group>"; };
-		07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxColoredBackgroundModifier.swift; sourceTree = "<group>"; };
+		07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredSurfaceModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxColoredSurfaceModifier.swift; sourceTree = "<group>"; };
+		07C54EC02DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxDisclosureGroup.swift; sourceTree = "<group>"; };
 		07CEDD802C7DB921003E1885 /* generateDoc.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = generateDoc.sh; path = ../generateDoc.sh; sourceTree = "<group>"; };
 		07CF426A2CA30728000BD03E /* TokensPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensPage.swift; sourceTree = "<group>"; };
 		07CF42712CA31AC3000BD03E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -328,6 +338,9 @@
 		07CF42812CA45DA9000BD03E /* BorderTokenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTokenElement.swift; sourceTree = "<group>"; };
 		07CF42822CA45DA9000BD03E /* BorderTokenPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorderTokenPage.swift; sourceTree = "<group>"; };
 		07CF42882CA55BC8000BD03E /* ThemeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelection.swift; sourceTree = "<group>"; };
+		07D3DBED2DA5084500D8A57F /* ColoredSurfaceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfaceConfiguration.swift; sourceTree = "<group>"; };
+		07D3DBEE2DA5084500D8A57F /* ColoredSurfaceElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfaceElement.swift; sourceTree = "<group>"; };
+		07D3DBEF2DA5084500D8A57F /* ColoredSurfacePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredSurfacePage.swift; sourceTree = "<group>"; };
 		07D7E1962D035566006472EB /* ButtonConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonConfiguration.swift; sourceTree = "<group>"; };
 		07F0AFD62CFDB3C300D334DD /* ComponentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentPage.swift; sourceTree = "<group>"; };
 		07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsPage.swift; sourceTree = "<group>"; };
@@ -381,6 +394,7 @@
 		51A7A9DA2C46E17F00EF7A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		51B842BB2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_legal_information.html; sourceTree = "<group>"; };
 		51B842BC2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
+		51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorMode.swift; sourceTree = "<group>"; };
 		51BD760B2C466FCF0033365D /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementsPage.swift; sourceTree = "<group>"; };
 		51BD76122C466FCF0033365D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -492,9 +506,10 @@
 				07AB45862D4D08080001D237 /* DesignToolboxChoicePicker.swift */,
 				6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */,
 				07F0AFE72CFE0FBD00D334DD /* DesignToolboxConfiguration.swift */,
-				07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredBackgroundModifier.swift */,
+				07B3CCB42D40F36C00DBB10A /* DesignToolboxColoredSurfaceModifier.swift */,
 				07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */,
 				513442152D75B9E1000B5DE4 /* DesignToolboxBackgroundModifier.swift */,
+				07C54EC02DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -684,12 +699,15 @@
 			path = ThemeSelection;
 			sourceTree = "<group>";
 		};
-		07F0AFD52CFDAD9200D334DD /* EmptyState */ = {
+		07D3DBF02DA5084500D8A57F /* ColoredSurface */ = {
 			isa = PBXGroup;
 			children = (
-				074794792CAE882A0033C2D8 /* EmptyState.swift */,
+				51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */,
+				07D3DBED2DA5084500D8A57F /* ColoredSurfaceConfiguration.swift */,
+				07D3DBEE2DA5084500D8A57F /* ColoredSurfaceElement.swift */,
+				07D3DBEF2DA5084500D8A57F /* ColoredSurfacePage.swift */,
 			);
-			path = EmptyState;
+			path = ColoredSurface;
 			sourceTree = "<group>";
 		};
 		07F0AFE62CFE055300D334DD /* Utils */ = {
@@ -859,11 +877,11 @@
 		51BD760E2C466FCF0033365D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0745C1852D7A0351006B3A1F /* Radio */,
 				072141182D02F52A00B7B9C6 /* Button */,
 				513442062D75B880000B5DE4 /* Checkbox */,
-				07F0AFD52CFDAD9200D334DD /* EmptyState */,
+				07D3DBF02DA5084500D8A57F /* ColoredSurface */,
 				07B3CCAD2D40E14C00DBB10A /* Link */,
+				0745C1852D7A0351006B3A1F /* Radio */,
 				07F0AFE62CFE055300D334DD /* Utils */,
 				07F0AFDD2CFDD1FD00D334DD /* ComponentsPage.swift */,
 			);
@@ -1217,6 +1235,7 @@
 				0745C1932D7A0596006B3A1F /* RadioElement.swift in Sources */,
 				51952A932D3FA2E30068B807 /* NamedFont.swift in Sources */,
 				6D43136D2CEF400D004E6886 /* DesignToolboxCode.swift in Sources */,
+				51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */,
 				6DED17F12CD2641800584BC9 /* OpacityTokenElement.swift in Sources */,
 				0745C18A2D7A03B8006B3A1F /* RadioElements.swift in Sources */,
 				51952A922D3FA2720068B807 /* OUDSButtonUITests.swift in Sources */,
@@ -1256,6 +1275,9 @@
 				6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */,
 				6D17A22D2CCBF12B00C00512 /* NamedColor+Always.swift in Sources */,
 				07CAE7692CEE20B200D6C5D1 /* SpaceGapTokenIllustrations.swift in Sources */,
+				07D3DBF12DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */,
+				07D3DBF22DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */,
+				07D3DBF32DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */,
 				51952A7F2D3FA17E0068B807 /* OUDSTokensColorUITests.swift in Sources */,
 				07CAE76A2CEE20B200D6C5D1 /* SpacePaddingTokenIllustrations.swift in Sources */,
 				07CAE76B2CEE20B200D6C5D1 /* SpaceBasicTokenIllustrations.swift in Sources */,
@@ -1263,7 +1285,7 @@
 				6D17A22F2CCBF12B00C00512 /* NamedColor+Border.swift in Sources */,
 				6D17A2302CCBF12B00C00512 /* NamedColor+Chart.swift in Sources */,
 				6D17A2312CCBF12B00C00512 /* NamedColor+Content.swift in Sources */,
-				07B3CCB52D40F37000DBB10A /* DesignToolboxColoredBackgroundModifier.swift in Sources */,
+				07B3CCB52D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				6D17A2332CCBF12B00C00512 /* NamedColor+Decorative.swift in Sources */,
 				51952A862D3FA1DB0068B807 /* OUDSTokensSpaceUITests.swift in Sources */,
 				51952A832D3FA1AC0068B807 /* OUDSTokensSizeUITests.swift in Sources */,
@@ -1271,6 +1293,7 @@
 				51952A892D3FA20D0068B807 /* OUDSTokensElevationUITests.swift in Sources */,
 				07F0AFD82CFDB3CC00D334DD /* ComponentPage.swift in Sources */,
 				6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */,
+				07C54EC22DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift in Sources */,
 				07CAE7682CEE20A600D6C5D1 /* SpaceTokenCommonIllustration.swift in Sources */,
 				6DE5F47D2CC696120008E774 /* ThemeSelection.swift in Sources */,
 				6D8F9C542CC160660078A10E /* SpaceTokenPage.swift in Sources */,
@@ -1327,6 +1350,7 @@
 				07CF42842CA45DA9000BD03E /* BorderTokenElement.swift in Sources */,
 				07D7E1972D035566006472EB /* ButtonConfiguration.swift in Sources */,
 				07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */,
+				51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */,
 				075114E02CB7FDC200B8B759 /* ColorTokenElement.swift in Sources */,
 				07F75A3B2CC651EB0004F1AD /* NameSpace+PaddingInline.swift in Sources */,
 				51BD762B2C466FCF0033365D /* MainView.swift in Sources */,
@@ -1362,7 +1386,7 @@
 				075114DB2CB7D28D00B8B759 /* SizeTokenElement.swift in Sources */,
 				0765B4A02CC15BBC00E69359 /* NamedColor+Content.swift in Sources */,
 				0765B49A2CC15ACE00E69359 /* NamedColor+Border.swift in Sources */,
-				07B3CCB62D40F37000DBB10A /* DesignToolboxColoredBackgroundModifier.swift in Sources */,
+				07B3CCB62D40F37000DBB10A /* DesignToolboxColoredSurfaceModifier.swift in Sources */,
 				51952A742D3F9D850068B807 /* DesignToolboxTokenIllustrationBackground.swift in Sources */,
 				51087A7B2C46DF9F00160CCF /* Bundle+extension.swift in Sources */,
 				0765B4962CC159F600E69359 /* NamedColor+Action.swift in Sources */,
@@ -1385,6 +1409,10 @@
 				5134420E2D75B880000B5DE4 /* CheckboxElement.swift in Sources */,
 				5134420F2D75B880000B5DE4 /* CheckboxPage.swift in Sources */,
 				513442102D75B880000B5DE4 /* CheckboxItemPage.swift in Sources */,
+				07C54EC12DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift in Sources */,
+				07D3DBF42DA5084500D8A57F /* ColoredSurfaceConfiguration.swift in Sources */,
+				07D3DBF52DA5084500D8A57F /* ColoredSurfacePage.swift in Sources */,
+				07D3DBF62DA5084500D8A57F /* ColoredSurfaceElement.swift in Sources */,
 				513442112D75B880000B5DE4 /* CheckboxItemElement.swift in Sources */,
 				513442122D75B880000B5DE4 /* CheckboxConfiguration.swift in Sources */,
 				513442132D75B880000B5DE4 /* CheckboxElements.swift in Sources */,
