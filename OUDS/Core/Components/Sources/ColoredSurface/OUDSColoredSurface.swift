@@ -56,4 +56,3 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
         content().modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: backgroundSurfaceColor))
     }
 }
-

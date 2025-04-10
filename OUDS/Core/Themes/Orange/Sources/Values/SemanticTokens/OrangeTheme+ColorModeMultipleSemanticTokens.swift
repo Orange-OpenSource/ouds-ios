@@ -120,10 +120,10 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
         if mode.isEqual(modeOnStatusAccentMuted) { return colors.colorSurfaceStatusAccentMuted }
         if mode.isEqual(modeOnStatusInfoEmphasized) { return colors.colorSurfaceStatusInfoEmphasized }
         if mode.isEqual(modeOnStatusInfoMuted) { return colors.colorSurfaceStatusInfoMuted }
-        if mode.isEqual(modeOnStatusNeutralEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
-        if mode.isEqual(modeOnStatusNeutralMuted) { return colors.colorSurfaceStatusNegativeMuted }
-        if mode.isEqual(modeOnStatusNegativeEmphasized) { return colors.colorSurfaceStatusNeutralEmphasized }
-        if mode.isEqual(modeOnStatusNegativeMuted) { return colors.colorSurfaceStatusNeutralMuted }
+        if mode.isEqual(modeOnStatusNeutralEmphasized) { return colors.colorSurfaceStatusNeutralEmphasized }
+        if mode.isEqual(modeOnStatusNeutralMuted) { return colors.colorSurfaceStatusNeutralMuted }
+        if mode.isEqual(modeOnStatusNegativeEmphasized) { return colors.colorSurfaceStatusNegativeEmphasized }
+        if mode.isEqual(modeOnStatusNegativeMuted) { return colors.colorSurfaceStatusNegativeMuted }
         if mode.isEqual(modeOnStatusPositiveEmphasized) { return colors.colorSurfaceStatusPositiveEmphasized }
         if mode.isEqual(modeOnStatusPositiveMuted) { return colors.colorSurfaceStatusPositiveMuted }
         if mode.isEqual(modeOnStatusWarningEmphasized) { return colors.colorSurfaceStatusWarningEmphasized }
