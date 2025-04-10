@@ -223,9 +223,6 @@ private struct RadioTest: View {
         // swiftlint:enable line_length
     }
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
     let layout: Layout
     let indicatorState: Bool
     let isDisabled: Bool

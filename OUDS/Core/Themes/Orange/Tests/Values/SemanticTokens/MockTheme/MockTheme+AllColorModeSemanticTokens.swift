@@ -24,7 +24,7 @@ import OUDSTokensSemantic
 open class MockThemeColorModeSemanticTokensProvider: OrangeThemeColorModeSemanticTokensProvider {
 
     static let mockThemeColorModeSemanticToken: ColorModeSemanticToken = "dumb value"
-    static let mockThemeMultipleColorModeSemanticTokens = MultipleColorModeSemanticTokens(mockThemeColorModeSemanticToken)
+    static let mockThemeMultipleColorModeSemanticTokens = MultipleColorModeSemanticTokens("dumber value", mockThemeColorModeSemanticToken)
 
     // MARK: - Multiple tokens
 

@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - [Library] Raw and semantic tokens for color mode ([#599](https://github.com/Orange-OpenSource/ouds-ios/issues/599))
+- [DesignToolbox] Add demo screen of the OUDSColoredSurface component ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
+- [Library] Raw and semantic tokens for color mode ([#599](https://github.com/Orange-OpenSource/ouds-ios/issues/599))
+- [DesignToolbox] Add demo screen of the OUDSColoredSurface component ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
 - [Library] `Divider` component tokens (tokens library v0.9.0)
 - [Library] `dimension1250` raw token of dimension (tokens library v0.9.0)
 - [Library] Support of arabic language ([#552](https://github.com/Orange-OpenSource/ouds-ios/issues/552))
@@ -17,6 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - [Tool] Migration to Xcode 16.3 ([#580](https://github.com/Orange-OpenSource/ouds-ios/issues/580))
+- [Library] Update the OUDSColoredSurface to fix color available ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
+- [Library] Update the OUDSColoredSurface component to fix color available ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
+- [Tool] Migration to Xcode 16.3 ([#580](https://github.com/Orange-OpenSource/ouds-ios/issues/580))
+- [Library] Update the OUDSColoredSurface to fix color available ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
 - [Tool] Remove dead code and add `periphery` in CI/CD pipes
 - [Library] Tag component token (tokens library v0.11.0)
 - [Library] Chip component token (tokens library v0.11.0)

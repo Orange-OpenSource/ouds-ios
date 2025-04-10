@@ -211,9 +211,6 @@ private struct CheckboxIndeterminateTest: View {
         // swiftlint:enable line_length
     }
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
     let layout: Layout
     let indicatorState: OUDSCheckboxIndicatorState
     let isDisabled: Bool

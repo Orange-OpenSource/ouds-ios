@@ -89,6 +89,6 @@ private struct LinkDemo: View {
         }
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
+        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: model.onColoredSurface))
     }
 }

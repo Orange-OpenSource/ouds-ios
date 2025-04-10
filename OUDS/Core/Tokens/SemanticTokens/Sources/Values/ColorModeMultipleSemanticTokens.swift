@@ -83,5 +83,10 @@ public protocol ColorModeMultipleSemanticTokens {
     /// - Parameter mode: The color mode token to test
     /// - Returns: The flag for monochrome mode depending to the theme rules
     func isMonochrome(mode: MultipleColorModeSemanticTokens) -> Bool
+
+    /// Returns the colors semantic token depending to the given color mode
+    /// - Parameter mode: The color mpde token to use
+    /// - Returns: The colors to apply
+    func toColor(from mode: MultipleColorModeSemanticTokens) -> MultipleColorSemanticTokens
 }
 // swiftlint:enable missing_docs
