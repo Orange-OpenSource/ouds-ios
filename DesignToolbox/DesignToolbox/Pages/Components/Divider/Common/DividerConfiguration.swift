@@ -168,23 +168,23 @@ extension OUDSDividerColor: @retroactive CaseIterable, @retroactive CustomString
     var formattedName: String {
         switch self {
         case .borderDefault:
-            return "Boder Default"
+            return "Border Default"
         case .borderMuted:
-            return "Boder Muted"
+            return "Border Muted"
         case .borderEmphasized:
-            return "Boder Emphasized"
+            return "Border Emphasized"
         case .borderBrandPrimary:
-            return "Boder Brand Primary"
+            return "Border Brand Primary"
         case .borderBrandSecondary:
-            return "Boder Brand Secondary"
+            return "Border Brand Secondary"
         case .borderBrandTertiary:
-            return "Boder Brand Tertiary"
+            return "Border Brand Tertiary"
         case .borderOnBrandPrimary:
-            return "Boder Brand On Primary"
+            return "Border Brand On Primary"
         case .borderOnBrandSecondary:
-            return "Boder Brand On Secondary"
+            return "Border Brand On Secondary"
         case .borderOnBrandTertiary:
-            return "Boder Brand On Tertiary"
+            return "Border Brand On Tertiary"
         case .alwaysBlack:
             return "Always Black"
         case .alwaysWhite:
