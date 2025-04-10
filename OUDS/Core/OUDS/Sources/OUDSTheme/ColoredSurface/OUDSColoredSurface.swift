@@ -14,26 +14,7 @@
 import OUDSTokensSemantic
 import SwiftUI
 
-/// Defines all colors available as background used by `OUDSColoredSurface`.
-///
-/// - Since: 0.13.0
-public enum OUDSBackgroundSurfaceColor {
-    // swiftlint:disable missing_docs
-    case brandPrimary
-    case statusAccentEmphasized
-    case statusAccentMuted
-    case statusInfoEmphasized
-    case statusInfoMuted
-    case statusNegativeEmphasized
-    case statusNegativeMuted
-    case statusNeutralEmphasized
-    case statusNeutralMuted
-    case statusPositiveEmphasized
-    case statusPositiveMuted
-    case statusWarningEmphasized
-    case statusWarningMuted
-    // swiftlint:enable missing_docs
-}
+// MARK: - Colored Surface
 
 /// Used to define if a content is used on a colored surface.
 ///
@@ -47,12 +28,14 @@ public enum OUDSBackgroundSurfaceColor {
 ///   }
 /// ```
 ///
-/// - Since: 0.10.0
+/// - Since: 0.13.0
 public struct OUDSColoredSurface<Content>: View where Content: View {
+
+    public typealias SurfaceColor = MultipleColorModeSemanticTokens
 
     // MARK: Stored Properties
 
-    let backgroundSurfaceColor: OUDSBackgroundSurfaceColor
+    let backgroundSurfaceColor: SurfaceColor
     let content: () -> Content
 
     // MARK: Initializer
@@ -60,9 +43,9 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
     /// Create a view with background color applied on the `content` view.
     ///
     /// - Parameters:
-    ///     - color: The color applied as background on the content view
-    ///     - content: The content view builder
-    public init(color: OUDSBackgroundSurfaceColor, @ViewBuilder content: @escaping () -> Content) {
+    ///    - color: The color applied as background on the content view
+    ///    - content: The content view builder
+    public init(color: SurfaceColor, @ViewBuilder content: @escaping () -> Content) {
         self.backgroundSurfaceColor = color
         self.content = content
     }
@@ -70,7 +53,7 @@ public struct OUDSColoredSurface<Content>: View where Content: View {
     // MARK: Body
 
     public var body: some View {
-        content().modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: backgroundSurfaceColor))
+        content().modifier(ColoredSurfaceModifier(backgroundSurfaceColor: backgroundSurfaceColor))
     }
 }
 
@@ -78,17 +61,19 @@ extension View {
 
     /// Helper to set the current view on colored surface based on ``OUDSColoredSurface``.
     ///
-    /// - Parameter color: The color applied as background on the current view.
-    public func oudsColoredSurface(color: OUDSBackgroundSurfaceColor) -> some View {
-        self.modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: color))
+    /// - Parameter colorMode: The color mode applied as background on the current view.
+    public func oudsColoredSurface(colorMode: OUDSColoredSurface.SurfaceColor) -> some View {
+        self.modifier(ColoredSurfaceModifier(backgroundSurfaceColor: colorMode))
     }
 }
 
-private struct OUDSColoredSurfaceModifier: ViewModifier {
+// MARK: - Colored Surface Modifier
+
+private struct ColoredSurfaceModifier: ViewModifier {
 
     // MARK: - Stored properties
 
-    let backgroundSurfaceColor: OUDSBackgroundSurfaceColor
+    let backgroundSurfaceColor: OUDSColoredSurface.SurfaceColor
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
 
@@ -102,89 +87,17 @@ private struct OUDSColoredSurfaceModifier: ViewModifier {
             .environment(\.colorScheme, useColorScheme)
     }
 
-    // MARK: - The associated sementic token color
+    // MARK: - Computed properties
 
     private var useColorToken: MultipleColorSemanticTokens {
-        switch backgroundSurfaceColor {
-        case .brandPrimary:
-            theme.colors.colorSurfaceBrandPrimary
-        case .statusAccentEmphasized:
-            theme.colors.colorSurfaceStatusAccentEmphasized
-        case .statusAccentMuted:
-            theme.colors.colorSurfaceStatusAccentMuted
-        case .statusInfoEmphasized:
-            theme.colors.colorSurfaceStatusInfoEmphasized
-        case .statusInfoMuted:
-            theme.colors.colorSurfaceStatusInfoMuted
-        case .statusNegativeEmphasized:
-            theme.colors.colorSurfaceStatusNegativeEmphasized
-        case .statusNegativeMuted:
-            theme.colors.colorSurfaceStatusNegativeMuted
-        case .statusNeutralEmphasized:
-            theme.colors.colorSurfaceStatusNeutralEmphasized
-        case .statusNeutralMuted:
-            theme.colors.colorSurfaceStatusNeutralMuted
-        case .statusPositiveEmphasized:
-            theme.colors.colorSurfaceStatusPositiveEmphasized
-        case .statusPositiveMuted:
-            theme.colors.colorSurfaceStatusPositiveMuted
-        case .statusWarningEmphasized:
-            theme.colors.colorSurfaceStatusWarningEmphasized
-        case .statusWarningMuted:
-            theme.colors.colorSurfaceStatusWarningMuted
-        }
+        theme.colorModes.toColor(from: backgroundSurfaceColor)
     }
-
-    // MARK: - The color scheme to use
 
     private var useColorScheme: ColorScheme {
-        switch backgroundSurfaceColor {
-            // Force light
-        case .brandPrimary,
-              .statusAccentEmphasized,
-              .statusInfoEmphasized,
-              .statusPositiveEmphasized,
-              .statusWarningEmphasized:
-            return .light
-
-            // Reverse
-        case .statusNegativeEmphasized, .statusNeutralEmphasized:
-            if colorScheme == .dark {
-                return .light
-            } else {
-                return .dark
-            }
-
-            // Follow device configuration
-        case .statusAccentMuted,
-              .statusInfoMuted,
-              .statusNegativeMuted,
-              .statusPositiveMuted,
-              .statusNeutralMuted,
-              .statusWarningMuted:
-            return colorScheme
-        }
+        theme.colorModes.useColorScheme(for: backgroundSurfaceColor, colorScheme)
     }
 
-    // MARK: - The monochrome flag
-
     private var useMonochrome: Bool {
-        switch backgroundSurfaceColor {
-        case .brandPrimary,
-              .statusAccentEmphasized,
-              .statusInfoEmphasized,
-              .statusPositiveEmphasized,
-              .statusWarningEmphasized,
-              .statusNegativeEmphasized:
-            return true
-        case .statusNeutralEmphasized,
-              .statusAccentMuted,
-              .statusInfoMuted,
-              .statusNegativeMuted,
-              .statusPositiveMuted,
-              .statusNeutralMuted,
-              .statusWarningMuted:
-            return false
-        }
+        theme.colorModes.isMonochrome(mode: backgroundSurfaceColor)
     }
 }

@@ -106,6 +106,30 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
         let darkIsMonochrome = ColorModeRawTokens.isMonochrome(mode: mode.dark)
         return lightIsMonochrome == true && darkIsMonochrome == true
     }
+
+    // swiftlint:disable cyclomatic_complexity
+    /// Returns the colors semantic token depending to the given color mode
+    /// - Parameter mode: The color mpde token to use
+    /// - Returns: The colors to apply
+    public func toColor(from mode: MultipleColorModeSemanticTokens) -> MultipleColorSemanticTokens {
+        if mode == modeOnBrandPrimary { return colors.colorSurfaceBrandPrimary }
+        if mode == modeOnBrandSecondary { return colors.colorSurfaceBrandPrimary } // TODO: #521 - Not sure of this implementation
+        if mode == modeOnBrandTertiary { return colors.colorSurfaceBrandPrimary } // TODO: #521 - Not sure of this implementation
+        if mode == modeOnStatusAccentEmphasized { return colors.colorSurfaceStatusAccentEmphasized }
+        if mode == modeOnStatusAccentMuted { return colors.colorSurfaceStatusAccentMuted }
+        if mode == modeOnStatusInfoEmphasized { return colors.colorSurfaceStatusInfoEmphasized }
+        if mode == modeOnStatusInfoMuted { return colors.colorSurfaceStatusInfoMuted }
+        if mode == modeOnStatusNeutralEmphasized { return colors.colorSurfaceStatusNegativeEmphasized }
+        if mode == modeOnStatusNegativeMuted { return colors.colorSurfaceStatusNegativeMuted }
+        if mode == modeOnStatusNeutralEmphasized { return colors.colorSurfaceStatusNeutralEmphasized }
+        if mode == modeOnStatusNeutralMuted { return colors.colorSurfaceStatusNeutralMuted }
+        if mode == modeOnStatusPositiveEmphasized { return colors.colorSurfaceStatusPositiveEmphasized }
+        if mode == modeOnStatusPositiveMuted { return colors.colorSurfaceStatusPositiveMuted }
+        if mode == modeOnStatusWarningEmphasized { return colors.colorSurfaceStatusWarningEmphasized }
+        if mode == modeOnStatusWarningMuted { return colors.colorSurfaceStatusWarningMuted }
+        return colors.colorSurfaceBrandPrimary // TODO: #521 - Which default behavior?
+    }
+    // swiftlint:enable cyclomatic_complexity
 }
 
 // swiftlint:enable line_length

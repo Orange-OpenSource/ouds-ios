@@ -23,7 +23,7 @@ private struct DesignToolboxBackgroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if coloredSurface {
-            content.oudsColoredSurface(color: .brandPrimary)
+            content.oudsColoredSurface(colorMode: theme.colorModes.modeOnBrandPrimary)
         } else {
             content.oudsBackground(theme.colors.colorBgSecondary)
         }
