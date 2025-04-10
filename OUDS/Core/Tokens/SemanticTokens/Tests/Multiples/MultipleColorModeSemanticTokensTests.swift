@@ -50,6 +50,6 @@ struct MultipleColorModeSemanticTokensTests {
         #expect(!first.isEqual(second))
         #expect(!first.isEqual(third))
         #expect(!first.isEqual(fourth))
-        #expect(first.isEqual(fifth))
+        #expect(!first.isEqual(fifth))
     }
 }
