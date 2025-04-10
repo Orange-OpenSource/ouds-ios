@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Migration to Xcode 16.3 ([#580](https://github.com/Orange-OpenSource/ouds-ios/issues/580))
 - [Tool] Remove dead code and add `periphery` in CI/CD pipes
 - [Library] Tag component token (tokens library v0.11.0)
 - [Library] Chip component token (tokens library v0.11.0)
