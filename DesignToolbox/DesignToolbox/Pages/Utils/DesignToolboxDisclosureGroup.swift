@@ -24,7 +24,6 @@ struct DesignToolboxDisclosureGroup<Label, Content>: View where Label: View, Con
     private let content: () -> Content
     private let accessibilityLabel: String
     @Binding private var isExpanded: Bool
-    @Environment(\.theme) private var theme
 
     // MARK: Initializer
 

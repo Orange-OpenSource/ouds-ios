@@ -33,41 +33,6 @@ enum NamedColorMode: CaseIterable, CustomStringConvertible {
     case modeOnStatusWarningEmphasized
     case modeOnStatusWarningMuted
 
-    func token(from theme: OUDSTheme) -> MultipleColorSemanticTokens {
-        switch self {
-        case .modeOnBrandPrimary:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnBrandPrimary)
-        case .modeOnBrandSecondary:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnBrandSecondary)
-        case .modeOnBrandTertiary:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnBrandTertiary)
-        case .modeOnStatusAccentEmphasized:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusAccentEmphasized)
-        case .modeOnStatusAccentMuted:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusAccentMuted)
-        case .modeOnStatusInfoEmphasized:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusInfoEmphasized)
-        case .modeOnStatusInfoMuted:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusInfoMuted)
-        case .modeOnStatusNegativeEmphasized:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusNegativeEmphasized)
-        case .modeOnStatusNegativeMuted:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusNegativeMuted)
-        case .modeOnStatusNeutralEmphasized:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusNeutralEmphasized)
-        case .modeOnStatusNeutralMuted:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusNeutralMuted)
-        case .modeOnStatusPositiveEmphasized:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusPositiveEmphasized)
-        case .modeOnStatusPositiveMuted:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusPositiveMuted)
-        case .modeOnStatusWarningEmphasized:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusWarningEmphasized)
-        case .modeOnStatusWarningMuted:
-            return theme.colorModes.toColor(from: theme.colorModes.modeOnStatusWarningMuted)
-        }
-    }
-
     func toSurfaceColor(from theme: OUDSTheme) -> OUDSColoredSurface.SurfaceColor {
         switch self {
         case .modeOnBrandPrimary:
