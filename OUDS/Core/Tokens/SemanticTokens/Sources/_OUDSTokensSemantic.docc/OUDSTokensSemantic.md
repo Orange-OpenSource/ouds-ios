@@ -66,7 +66,7 @@ public protocol ColorSemanticToken { ... }
 public protocol ColorMultipleSemanticTokens { ... }
 
 // These protoocols are merged in type aliase
-public typealias AllColorSemanticTokensprovider = ColorSemanticTokens & ColorMultipleSemanticTokens
+public typealias AllColorSemanticTokensProvider = ColorSemanticTokens & ColorMultipleSemanticTokens
 
 // For example, the provider for the colors basically is:
 open class OrangeThemeColorSemanticTokensProvider { ... }
@@ -157,7 +157,9 @@ struct DesignToolbox: App {
 
 - ``BorderSemanticTokens``
 - ``ColorSemanticTokens``
+- ``ColorModeSemanticTokens``
 - ``ColorMultipleSemanticTokens``
+- ``ColorModeMultipleSemanticTokens``
 - ``ElevationSemanticTokens``
 - ``ElevationCompositeSemanticTokens``
 - ``ElevationMultipleSemanticTokens``

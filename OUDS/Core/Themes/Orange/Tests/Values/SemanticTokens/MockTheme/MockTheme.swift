@@ -38,6 +38,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
     init(fontFamily: String?) {
         let borders = MockThemeBorderSemanticTokensProvider()
         let colors = MockThemeColorSemanticTokensProvider()
+        let colorModes = MockThemeColorModeSemanticTokensProvider()
         let elevations = MockThemeElevationSemanticTokensProvider()
         let fonts = MockThemeFontSemanticTokensProvider()
         let grids = MockThemeGridSemanticTokensProvider()
@@ -46,6 +47,7 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
         let spaces = MockThemeSpaceSemanticTokensProvider()
         super.init(borders: borders,
                    colors: colors,
+                   colorModes: colorModes,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,

@@ -15,8 +15,8 @@ import OUDSTokensRaw
 import OUDSTokensSemantic
 import Testing
 
-/// To ensure the `MultipleColorRawToken` is tested as a provider of semantic tokens for light and dark color schemes.
-struct MultipleColorRawTokenTests {
+/// To ensure the `MultipleColorSemanticTokens` is tested as a provider of semantic tokens for light and dark color schemes.
+struct MultipleColorSemanticTokensTests {
 
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {
@@ -37,8 +37,8 @@ struct MultipleColorRawTokenTests {
         #expect(token.dark == dark)
     }
 
-    /// Tests comparisons between two `MultipleColorRawToken` to ensure tokens are considered as equal
-    /// if an only if they have the same compact and regular values and have the same types.
+    /// Tests comparisons between two `MultipleColorSemanticTokens` to ensure tokens are considered as equal
+    /// if an only if they have the same light and dark values and have the same types.
     @Test func isEqual() {
         let first = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalMalachite300, dark: ColorRawTokens.colorFunctionalScarlet900)
         let second = MultipleColorSemanticTokens(light: ColorRawTokens.colorFunctionalDarkGray80, dark: ColorRawTokens.colorFunctionalSun100)
