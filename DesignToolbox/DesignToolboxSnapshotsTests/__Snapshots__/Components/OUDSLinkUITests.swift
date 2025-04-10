@@ -156,10 +156,11 @@ private struct LinkTest: View {
     let layout: LinkLayout
     let size: OUDSLink.Size
     let onColoredSurface: Bool
+    @Environment(\.theme) private var theme
 
     var body: some View {
         if onColoredSurface {
-            OUDSColoredSurface(color: .brandPrimary, content: link)
+            OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary, content: link)
         } else {
             link()
         }

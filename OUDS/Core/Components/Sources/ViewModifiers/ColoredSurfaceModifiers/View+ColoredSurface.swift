@@ -17,9 +17,10 @@ import SwiftUI
 extension View {
 
     /// Helper to set the current view on colored surface based on ``OUDSColoredSurface``.
+    /// Will use a surface color, i.e. a kind of configuration to apply considering monochrome mode and color scheme.
     ///
-    /// - Parameter colorMode: The color mode applied as background on the current view.
-    public func oudsColoredSurface(colorMode: OUDSColoredSurface.SurfaceColor) -> some View {
-        self.modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: colorMode))
+    /// - Parameter surfaceColor: The surface color applied as background on the current view
+    public func oudsColoredSurface(_ surfaceColor: OUDSColoredSurface.SurfaceColor) -> some View {
+        self.modifier(OUDSColoredSurfaceModifier(backgroundSurfaceColor: surfaceColor))
     }
 }

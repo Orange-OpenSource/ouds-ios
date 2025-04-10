@@ -163,9 +163,11 @@ private struct ButtonTest: View {
     let style: OUDSButton.Style
     let onColoredSurface: Bool
 
+    @Environment(\.theme) private var theme
+
     var body: some View {
         if onColoredSurface {
-            OUDSColoredSurface(color: .brandPrimary, content: button)
+            OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary, content: button)
         } else {
             button()
         }

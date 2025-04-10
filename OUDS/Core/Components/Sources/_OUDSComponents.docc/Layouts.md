@@ -41,5 +41,5 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
 
         OUDSButton(text: "Button") {}
     }
-    .oudsColoredSurface(color: theme.colorModes.modeOnStatusPositiveEmphasized)
+    .oudsColoredSurface(theme.colorModes.modeOnStatusPositiveEmphasized)
 ```
