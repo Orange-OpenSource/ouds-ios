@@ -1031,6 +1031,30 @@
         }
       }
     },
+    "app_components_coloredBackground_color_label_a11y" : {
+      "comment" : "Component - ColoredBackground",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تبديل رؤية الألوان"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toggle color visibility"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basculer la visibilité des couleurs"
+          }
+        }
+      }
+    },
     "app_components_coloredBackground_description_text" : {
       "comment" : "Component - Colored Backround",
       "extractionState" : "manual",

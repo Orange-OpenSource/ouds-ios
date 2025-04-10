@@ -51,7 +51,7 @@ final class ColoredBackgroundConfigurationModel: ComponentConfiguration {
     }
 }
 
-// MARK: - ColoredBackground Configuration View
+// MARK: - Colored Background Configuration View
 
 struct ColoredBackgroundConfiguration: View {
 
@@ -60,27 +60,26 @@ struct ColoredBackgroundConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            DisclosureGroup(isExpanded: $isExpanded) {
-                VStack(alignment: .leading) {
-                    ForEach(OUDSBackgroundSurfaceColor.allCases, id: \.id) { color in
-                        Button {
-                            model.selectedColor = color
-                        } label: {
-                            ColorEntry(color: color)
-                        }
+        DesignToolboxDisclosureGroup(isExpanded: $isExpanded, accessibilityLabel: "app_components_coloredBackground_color_label_a11y") {
+            VStack(alignment: .leading) {
+                ForEach(OUDSBackgroundSurfaceColor.allCases, id: \.id) { color in
+                    Button {
+                        model.selectedColor = color
+                    } label: {
+                        ColorEntry(color: color)
                     }
                 }
-            } label: {
-                VStack(alignment: .leading) {
-                    Text("app_components_coloredBackground_color_label")
-                        .typeHeadingMedium(theme)
-                        .oudsForegroundColor(theme.colors.colorContentDefault)
+            }
+        } label: {
+            VStack(alignment: .leading) {
+                Text("app_components_coloredBackground_color_label")
+                    .typeHeadingMedium(theme)
+                    .oudsForegroundColor(theme.colors.colorContentDefault)
 
-                    ColorEntry(color: model.selectedColor)
-                    if isExpanded {
-                        Divider()
-                    }
+                ColorEntry(color: model.selectedColor)
+
+                if isExpanded {
+                    Divider()
                 }
             }
         }
