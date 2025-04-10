@@ -18,12 +18,11 @@ import SwiftUI
 
 /// Used to define if a content is used on a colored surface.
 ///
-/// It applies the `color` to the background and set the `oudsColoredSurface`
-/// environment variable to *true*. This variable is useful, for example, to change
-/// the style of a component according to its environment (example: monochrome mode on `OUDSButton`).
+/// It applies the `color` to the background and set the `oudsColoredSurface` environment variable to *true*.
+/// This variable is useful, for example, to change the style of a component according to its environment (e.g monochrome mode on `OUDSButton`).
 ///
 /// ```swift
-///   OUDSColoredSurface(color: .brandPrimary) {
+///   OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary) {
 ///      OUDSButton(icon: Image("ic_heart"), hierarchy: .strong, state: .default) {}
 ///   }
 /// ```
@@ -31,6 +30,7 @@ import SwiftUI
 /// - Since: 0.13.0
 public struct OUDSColoredSurface<Content>: View where Content: View {
 
+    /// A type alias to use for clarity reasons ; a surface color is in the end a token
     public typealias SurfaceColor = MultipleColorModeSemanticTokens
 
     // MARK: Stored Properties

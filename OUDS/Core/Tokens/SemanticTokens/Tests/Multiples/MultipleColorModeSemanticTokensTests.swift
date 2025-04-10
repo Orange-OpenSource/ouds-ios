@@ -21,7 +21,7 @@ struct MultipleColorModeSemanticTokensTests {
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {
         let unique: ColorModeRawToken = ColorModeRawTokens.light
-        let token = MultipleColorModeSemanticTokens(unique)
+        let token = MultipleColorModeSemanticTokens("Toktoktok", unique)
 
         #expect(token.light == unique)
         #expect(token.dark == unique)
@@ -31,7 +31,7 @@ struct MultipleColorModeSemanticTokensTests {
     @Test func initTwoNonNilValues() {
         let light: ColorModeRawToken = ColorModeRawTokens.light
         let dark: ColorModeRawToken = ColorModeRawTokens.dark
-        let token = MultipleColorModeSemanticTokens(light: light, dark: dark)
+        let token = MultipleColorModeSemanticTokens("Toktoktok", light: light, dark: dark)
 
         #expect(token.light == light)
         #expect(token.dark == dark)
@@ -40,11 +40,11 @@ struct MultipleColorModeSemanticTokensTests {
     /// Tests comparisons between two `MultipleColorModeSemanticTokens` to ensure tokens are considered as equal
     /// if an only if they have the same compact and regular values and have the same types.
     @Test func isEqual() {
-        let first = MultipleColorModeSemanticTokens(light: ColorModeRawTokens.light, dark: ColorModeRawTokens.dark)
-        let second = MultipleColorModeSemanticTokens(light: ColorModeRawTokens.monochromeLight, dark: ColorModeRawTokens.monochromeDark)
-        let third = MultipleColorModeSemanticTokens(light: ColorModeRawTokens.light, dark: ColorModeRawTokens.monochromeDark)
-        let fourth = MultipleColorModeSemanticTokens(light: ColorModeRawTokens.monochromeLight, dark: ColorModeRawTokens.dark)
-        let fifth = MultipleColorModeSemanticTokens(light: ColorModeRawTokens.light, dark: ColorModeRawTokens.dark)
+        let first = MultipleColorModeSemanticTokens("1", light: ColorModeRawTokens.light, dark: ColorModeRawTokens.dark)
+        let second = MultipleColorModeSemanticTokens("2", light: ColorModeRawTokens.monochromeLight, dark: ColorModeRawTokens.monochromeDark)
+        let third = MultipleColorModeSemanticTokens("3", light: ColorModeRawTokens.light, dark: ColorModeRawTokens.monochromeDark)
+        let fourth = MultipleColorModeSemanticTokens("4", light: ColorModeRawTokens.monochromeLight, dark: ColorModeRawTokens.dark)
+        let fifth = MultipleColorModeSemanticTokens("5", light: ColorModeRawTokens.light, dark: ColorModeRawTokens.dark)
 
         #expect(first.isEqual(first))
         #expect(!first.isEqual(second))
