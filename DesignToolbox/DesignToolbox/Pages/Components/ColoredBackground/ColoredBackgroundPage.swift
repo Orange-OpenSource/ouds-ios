@@ -70,7 +70,7 @@ private struct ColoredSurfaceDemo: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
-            OUDSColoredSurface(color: model.selectedColor) {
+            OUDSColoredSurface(color: model.selectedColor.toSurfaceColor(from: theme)) {
                 VStack(alignment: .center, spacing: theme.spaces.spaceFixedMedium) {
                     Text(model.selectedColor.formattedName)
                         .oudsForegroundColor(theme.colors.colorContentDefault)

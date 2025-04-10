@@ -22,14 +22,14 @@ final class ColoredBackgroundConfigurationModel: ComponentConfiguration {
 
     // MARK: Published properties
 
-    @Published var selectedColor: OUDSBackgroundSurfaceColor {
+    @Published var selectedColor: NamedColorMode {
         didSet { updateCode() }
     }
 
     // MARK: Initializer
 
     override init() {
-        selectedColor = .brandPrimary
+        selectedColor = NamedColorMode.modeOnBrandPrimary
     }
 
     deinit { }
@@ -62,7 +62,7 @@ struct ColoredBackgroundConfiguration: View {
     var body: some View {
         DesignToolboxDisclosureGroup(isExpanded: $isExpanded, accessibilityLabel: "app_components_coloredBackground_color_label_a11y") {
             VStack(alignment: .leading) {
-                ForEach(OUDSBackgroundSurfaceColor.allCases, id: \.id) { color in
+                ForEach(NamedColorMode.allCases, id: \.id) { color in
                     Button {
                         model.selectedColor = color
                     } label: {
@@ -89,14 +89,14 @@ struct ColoredBackgroundConfiguration: View {
 private struct ColorEntry: View {
 
     @Environment(\.theme) private var theme
-    let color: OUDSBackgroundSurfaceColor
+    let color: NamedColorMode
 
     var body: some View {
         Label {
             Text(color.formattedName)
                 .oudsForegroundColor(theme.colors.colorContentDefault)
         } icon: {
-            OUDSColoredSurface(color: color) {
+            OUDSColoredSurface(color: color.toSurfaceColor(from: theme)) {
                 Rectangle()
                     .fill(Color.clear)
                     .frame(width: 30, height: 30, alignment: .leading)
@@ -104,88 +104,4 @@ private struct ColorEntry: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
-}
-
-extension OUDSBackgroundSurfaceColor: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-
-    nonisolated(unsafe) public static var allCases: [OUDSBackgroundSurfaceColor] = [
-        .brandPrimary,
-        .statusAccentEmphasized,
-        .statusAccentMuted,
-        .statusInfoEmphasized,
-        .statusInfoMuted,
-        .statusNegativeEmphasized,
-        .statusNegativeMuted,
-        .statusNeutralEmphasized,
-        .statusNeutralMuted,
-        .statusPositiveEmphasized,
-        .statusPositiveMuted,
-        .statusWarningEmphasized,
-        .statusWarningMuted,
-    ]
-
-    // No l10n, tehchnical names
-    var formattedName: String {
-        switch self {
-        case .brandPrimary:
-            return "Brand Primary"
-        case .statusAccentEmphasized:
-            return "Status Accent Emphasized"
-        case .statusAccentMuted:
-            return "Status Accent Muted"
-        case .statusInfoEmphasized:
-            return "Status Info Emphasized"
-        case .statusInfoMuted:
-            return "Status Info Muted"
-        case .statusNegativeEmphasized:
-            return "Status Negative Emphasized"
-        case .statusNegativeMuted:
-            return "Status Negative Muted"
-        case .statusNeutralEmphasized:
-            return "Status Neutral Emphasized"
-        case .statusNeutralMuted:
-            return "Status Neutral Muted"
-        case .statusPositiveEmphasized:
-            return "Status Positive Emphasized"
-        case .statusPositiveMuted:
-            return "Status Positive Muted"
-        case .statusWarningEmphasized:
-            return "Status Warning Emphasized"
-        case .statusWarningMuted:
-            return "Status Warning Muted"
-        }
-    }
-
-    public var description: String {
-        switch self {
-        case .brandPrimary:
-            return "brandPrimary"
-        case .statusAccentEmphasized:
-            return "statusAccentEmphasized"
-        case .statusAccentMuted:
-            return "statusAccentMuted"
-        case .statusInfoEmphasized:
-            return "statusInfoEmphasized"
-        case .statusInfoMuted:
-            return "statusInfoMuted"
-        case .statusNegativeEmphasized:
-            return "statusNegativeEmphasized"
-        case .statusNegativeMuted:
-            return "statusNegativeMuted"
-        case .statusNeutralEmphasized:
-            return "statusNeutralEmphasized"
-        case .statusNeutralMuted:
-            return "statusNeutralMuted"
-        case .statusPositiveEmphasized:
-            return "statusPositiveEmphasized"
-        case .statusPositiveMuted:
-            return "statusPositiveMuted"
-        case .statusWarningEmphasized:
-            return "statusWarningEmphasized"
-        case .statusWarningMuted:
-            return "statusWarningMuted"
-        }
-    }
-
-    var id: String { description }
 }
