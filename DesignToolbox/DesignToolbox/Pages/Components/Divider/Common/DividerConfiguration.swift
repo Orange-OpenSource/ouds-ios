@@ -35,8 +35,8 @@ final class DividerConfigurationModel: ComponentConfiguration {
 
     // MARK: Initializer
 
-    init(orientation: Orientation) {
-        selectedColor = .borderDefault
+    init(orientation: Orientation, selectedColor: OUDSDividerColor = .borderDefault) {
+        self.selectedColor = selectedColor
         self.orientation = orientation
     }
 

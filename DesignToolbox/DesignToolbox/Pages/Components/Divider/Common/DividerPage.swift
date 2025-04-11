@@ -65,7 +65,7 @@ struct DividerIllustration: View {
 
 // MARK: - Button Demo
 
-private struct DividerDemo: View {
+struct DividerDemo: View {
 
     @Environment(\.theme) private var theme
     @StateObject var model: DividerConfigurationModel
