@@ -16,16 +16,16 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Checkbox Indicator Style
+// MARK: - Checkbox Indicator Modifier
 
 /// A `ViewModier` to apply to the ``CheckboxIndicator`` component.
-/// It will define the look and feel of the indicator depending to the ``ControlItemInternalState``,
+/// It will define the look and feel of the indicator depending to the ``InteractionState``,
 /// the ``OUDSCheckboxIndicatorState`` and if there is an error context or not.
-struct CheckboxIndicatorStyle: ViewModifier {
+struct CheckboxIndicatorModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: ControlItemInternalState
+    let interactionState: InteractionState
     let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
@@ -33,9 +33,10 @@ struct CheckboxIndicatorStyle: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .modifier(CheckboxIndicatorBorderModifier(state: state, indicatorState: indicatorState, isError: isError))
-            .modifier(CheckboxIndicatorForegroundModifier(state: state, indicatorState: indicatorState, isError: isError))
-            .modifier(CheckboxIndicatorBackgroundModifier(state: state, indicatorState: indicatorState, isError: isError))
+            .modifier(SizeFrameModifier())
+            .modifier(CheckboxIndicatorBorderModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
+            .modifier(CheckboxIndicatorForegroundModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
+            .modifier(CheckboxIndicatorBackgroundModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
     }
 }
 
@@ -45,7 +46,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: ControlItemInternalState
+    let interactionState: InteractionState
     let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
@@ -56,21 +57,21 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .foregroundColor(appliedColor)
+            .oudsForegroundColor(appliedColor)
     }
 
     // MARK: - Colors
 
-    private var appliedColor: Color {
-        switch state {
+    private var appliedColor: MultipleColorSemanticTokens {
+        switch interactionState {
         case .enabled:
-            return enabledColor.color(for: colorScheme)
+            return enabledColor
         case .hover:
-            return hoverColor.color(for: colorScheme)
+            return hoverColor
         case .pressed:
-            return pressedColor.color(for: colorScheme)
+            return pressedColor
         case .disabled, .readOnly:
-            return disabledColor.color(for: colorScheme)
+            return disabledColor
         }
     }
 
@@ -110,7 +111,7 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: ControlItemInternalState
+    let interactionState: InteractionState
     let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
@@ -127,7 +128,7 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     // MARK: - Colors
 
     private var appliedColor: Color {
-        switch state {
+        switch interactionState {
         case .enabled:
             return enabledColor
         case .hover:
@@ -166,7 +167,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: ControlItemInternalState
+    let interactionState: InteractionState
     let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
@@ -186,7 +187,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     // MARK: - Colors
 
     private var appliedColor: MultipleColorSemanticTokens {
-        switch state {
+        switch interactionState {
         case .enabled:
             return enabledColor
         case .hover:
@@ -238,7 +239,7 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     // MARK: - Border width
 
     private var appliedBorderWidth: CGFloat {
-        switch state {
+        switch interactionState {
         case .enabled:
             return enabledWidth
         case .hover:
@@ -290,5 +291,18 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
 
     private var appliedBorderRadius: CGFloat {
         theme.checkbox.checkboxBorderRadius
+    }
+}
+
+// MARK: - Size Frame Modifier
+
+private struct SizeFrameModifier: ViewModifier {
+
+    @Environment(\.theme) private var theme
+
+    func body(content: Content) -> some View {
+        content
+            .frame(width: theme.checkbox.checkboxSizeIndicator,
+                   height: theme.checkbox.checkboxSizeIndicator)
     }
 }

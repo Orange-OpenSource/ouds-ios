@@ -32,11 +32,6 @@ struct BorderModifier: ViewModifier {
     /// The color token used for the border
     private let color: MultipleColorSemanticTokens
 
-    /// Color to apply depending to the `colorScheme`
-    private var colorToApply: Color {
-        color.color(for: colorScheme)
-    }
-
     /// To know if the device is in light mode or in dark mode
     @Environment(\.colorScheme) private var colorScheme
 
@@ -77,7 +72,8 @@ struct BorderModifier: ViewModifier {
     private func solid(_ content: Content) -> some View {
         content
             .clipShape(RoundedRectangle(cornerRadius: radius))
-            .overlay(RoundedRectangle(cornerRadius: radius).stroke(colorToApply, lineWidth: width))
+            .overlay(RoundedRectangle(cornerRadius: radius).stroke(color.color(for: colorScheme), lineWidth: width))
+            .oudsForegroundColor(color)
     }
 
     private func dashed(_ content: Content) -> some View {
@@ -85,7 +81,7 @@ struct BorderModifier: ViewModifier {
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .overlay(RoundedRectangle(cornerRadius: radius)
                 .stroke(style: StrokeStyle(lineWidth: width, dash: [2, 2]))
-                .foregroundColor(colorToApply)
+                .oudsForegroundColor(color)
             )
     }
 
@@ -94,7 +90,7 @@ struct BorderModifier: ViewModifier {
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .overlay(RoundedRectangle(cornerRadius: radius)
                 .stroke(style: StrokeStyle(lineWidth: width, dash: [1, 5]))
-                .foregroundColor(colorToApply)
+                .oudsForegroundColor(color)
             )
     }
 }

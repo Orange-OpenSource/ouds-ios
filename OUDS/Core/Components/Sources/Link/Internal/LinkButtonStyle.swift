@@ -16,25 +16,18 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Link Internal State
+// MARK: - Link Button Style
 
-/// The internal state used by modifiers to handle all states of the link.
-enum LinkInternalState {
-    case enabled, hover, pressed, disabled
-}
-
-// MARK: - Link Style
-
-struct LinkStyle: ButtonStyle {
+struct LinkButtonStyle: ButtonStyle {
 
     // MARK: Stored properties
 
-    @Environment(\.theme) private var theme
-    @Environment(\.isEnabled) private var isEnabled
-
-    @State private var isHover: Bool
     let layout: OUDSLink.Layout
     let size: OUDSLink.Size
+
+    @State private var isHover: Bool
+    @Environment(\.theme) private var theme
+    @Environment(\.isEnabled) private var isEnabled
 
     // MARK: Initializer
 
@@ -47,17 +40,18 @@ struct LinkStyle: ButtonStyle {
     // MARK: Body
 
     public func makeBody(configuration: Configuration) -> some View {
+        let interactionState = InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
         Group {
             switch layout {
             case .arrow(let arrow):
                 configuration.label
-                    .labelStyle(LinkArrowLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, arrow: arrow))
+                    .labelStyle(LinkArrowLabelStyle(interactionState: interactionState, size: size, arrow: arrow))
             case .textOnly:
                 configuration.label
-                    .labelStyle(LinkIconAndTextLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, layout: layout))
+                    .labelStyle(LinkIconAndTextLabelStyle(interactionState: interactionState, size: size, layout: layout))
             case .iconAndText:
                 configuration.label
-                    .labelStyle(LinkIconAndTextLabelStyle(state: internalState(isPressed: configuration.isPressed), size: size, layout: layout))
+                    .labelStyle(LinkIconAndTextLabelStyle(interactionState: interactionState, size: size, layout: layout))
             }
         }
         .padding(.horizontal, theme.link.linkSpacePaddingInline)
@@ -69,22 +63,6 @@ struct LinkStyle: ButtonStyle {
     }
 
     // MARK: Helpers
-
-    private func internalState(isPressed: Bool) -> LinkInternalState {
-        if !isEnabled {
-            return .disabled
-        }
-
-        if isPressed {
-            return .pressed
-        }
-
-        if isHover {
-            return .hover
-        }
-
-        return .enabled
-    }
 
     private var minWidth: Double {
         size == .small ? theme.link.linkSizeMinWidthSmall : theme.link.linkSizeMinWidthMedium
@@ -100,10 +78,8 @@ struct LinkStyle: ButtonStyle {
 private struct LinkArrowLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
-    let state: LinkInternalState
+    let interactionState: InteractionState
     let size: OUDSLink.Size
     let arrow: OUDSLink.Arrow
 
@@ -112,17 +88,17 @@ private struct LinkArrowLabelStyle: LabelStyle {
             if arrow == .back {
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
-                    .modifier(LinkColorArrowModifier(state: state))
+                    .modifier(LinkColorArrowModifier(interactionState: interactionState))
             }
 
             configuration.title
-                .modifier(LinkTextModifier(size: size, layout: .arrow(arrow), state: state))
-                .modifier(LinkColorContentModifier(state: state))
+                .modifier(LinkTextModifier(interactionState: interactionState, size: size, layout: .arrow(arrow)))
+                .modifier(LinkColorContentModifier(interactionState: interactionState))
 
             if arrow == .next {
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
-                    .modifier(LinkColorArrowModifier(state: state))
+                    .modifier(LinkColorArrowModifier(interactionState: interactionState))
                     .rotationEffect(.degrees(180))
             }
         }
@@ -142,19 +118,17 @@ private struct LinkArrowLabelStyle: LabelStyle {
 private struct LinkIconAndTextLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
 
-    let state: LinkInternalState
+    let interactionState: InteractionState
     let size: OUDSLink.Size
     let layout: OUDSLink.Layout
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(spacing: spacing) {
             configuration.icon.modifier(LinkSizeIconModifier(size: size))
-            configuration.title.modifier(LinkTextModifier(size: size, layout: layout, state: state))
+            configuration.title.modifier(LinkTextModifier(interactionState: interactionState, size: size, layout: layout))
         }
-        .modifier(LinkColorContentModifier(state: state))
+        .modifier(LinkColorContentModifier(interactionState: interactionState))
     }
 
     private var spacing: Double {

@@ -58,6 +58,7 @@ FILES_TO_PROCESS=(
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+CheckboxComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ChipComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ControlItemComponentTokens.swift"
+    "../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+DividerComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+InputTextComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+LinkComponentTokens.swift"
 	"../OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ListItemComponentTokens.swift"

@@ -27,14 +27,6 @@ struct OrangeThemeBulletListComponentTokensProviderTests {
 
     // MARK: - Tests
 
-    @Test func defaultSizeSemanticTokensProvider() throws {
-        #expect(provider.sizes is OrangeThemeSizeSemanticTokensProvider)
-    }
-
-    @Test func defaultColorSemanticTokensProvider() throws {
-        #expect(provider.colors is OrangeThemeColorSemanticTokensProvider)
-    }
-
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
     }

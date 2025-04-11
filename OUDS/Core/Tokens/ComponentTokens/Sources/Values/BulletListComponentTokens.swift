@@ -18,7 +18,6 @@ import OUDSTokensSemantic
 // Create an issue for update https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml
 
 // swiftlint:disable missing_docs
-// swiftlint:disable identifier_name
 
 /// Declares all component tokens for links components like `OUDSBulletList`
 /// Use for tokens providers like `OrangeThemeBulletListComponentTokensProvider`.
@@ -26,28 +25,15 @@ import OUDSTokensSemantic
 /// - Since: 0.10.0
 public protocol BulletListComponentTokens {
 
-    // MARK: - Sizes
-
-    var bulletListSizeMinHeightMedium: SizeSemanticToken { get }
-    var bulletListSizeMinHeightSmall: SizeSemanticToken { get }
-    var bulletListSizeMinWidthMedium: SizeSemanticToken { get }
-    var bulletListSizeMinWidthSmall: SizeSemanticToken { get }
-    var bulletListSizeIconMedium: SizeSemanticToken { get }
-    var bulletListSizeIconSmall: SizeSemanticToken { get }
-
-    // MARK: - Colors
-
-    var bulletListColorContentEnabled: MultipleColorSemanticTokens { get }
-
     // MARK: - Spaces
 
-    var bulletListSpaceColumnGapIconMedium: SpaceSemanticToken { get }
-    var bulletListSpaceColumnGapIconSmall: SpaceSemanticToken { get }
-    var bulletListSpacePaddingBlock: SpaceSemanticToken { get }
-    var bulletListSpacePaddingInlineEndNone: SpaceSemanticToken { get }
-    var bulletListSpacePaddingInlineStartIconMedium: SpaceSemanticToken { get }
-    var bulletListSpacePaddingInlineStartIconSmall: SpaceSemanticToken { get }
+    var bulletListSpaceColumnGapBodyLarge: SpaceSemanticToken { get }
+    var bulletListSpaceColumnGapBodyMedium: SpaceSemanticToken { get }
+    var bulletListSpacePaddingBlockBodyLarge: SpaceSemanticToken { get }
+    var bulletListSpacePaddingBlockBodyMedium: SpaceSemanticToken { get }
+    var bulletListSpacePaddingInlineLevel0: SpaceSemanticToken { get }
+    var bulletListSpacePaddingInlineLevel1: SpaceSemanticToken { get }
+    var bulletListSpacePaddingInlineLevel2: SpaceSemanticToken { get }
 }
 
 // swiftlint:enable missing_docs
-// swiftlint:enable identifier_name

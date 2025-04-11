@@ -20,46 +20,45 @@ struct LinkColorContentModifier: ViewModifier {
 
     // MARK: - Properties
 
-    let state: LinkInternalState
+    let interactionState: InteractionState
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
+    @Environment(\.oudsUseMonochrome) private var useMonochrome
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content.foregroundStyle(appliedColor)
+        content.oudsForegroundStyle(appliedColor)
     }
 
     // MARK: - Helpers
 
-    private var appliedColor: Color {
-        switch state {
+    private var appliedColor: MultipleColorSemanticTokens {
+        switch interactionState {
         case .enabled:
-            enabledColor.color(for: colorScheme)
+            enabledColor
         case .hover:
-            hoverColor.color(for: colorScheme)
+            hoverColor
         case .pressed:
-            pressedColor.color(for: colorScheme)
-        case .disabled:
-            disabledColor.color(for: colorScheme)
+            pressedColor
+        case .disabled, .readOnly:
+            disabledColor
         }
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
-        onColoredSurface ? theme.link.linkColorContentEnabledMono : theme.link.linkColorContentEnabled
+        useMonochrome ? theme.link.linkColorContentEnabledMono : theme.link.linkColorContentEnabled
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
-        onColoredSurface ? theme.link.linkColorContentHoverMono : theme.link.linkColorContentHover
+        useMonochrome ? theme.link.linkColorContentHoverMono : theme.link.linkColorContentHover
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
-        onColoredSurface ? theme.link.linkColorContentPressedMono : theme.link.linkColorContentPressed
+        useMonochrome ? theme.link.linkColorContentPressedMono : theme.link.linkColorContentPressed
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
-        onColoredSurface ? theme.link.linkColorContentDisabledMono : theme.colors.colorActionDisabled
+        useMonochrome ? theme.link.linkColorContentDisabledMono : theme.colors.colorActionDisabled
     }
 }

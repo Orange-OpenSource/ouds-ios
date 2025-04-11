@@ -16,15 +16,14 @@ import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` to apply to `ControlItem` views so as to define an outline effect,
-/// i.e. draw kind of borders around the object.
-/// If this view modifier is used to draw an outline in an error context for a disabled component, a *faal error* will happen
-/// because this behaviour is forbidden by design.
-struct ControlItemStyleOutlinedModifier: ViewModifier {
+/// A `ViewModifier` to apply to `ControlItem` views so as to define an outline effect, i.e. draw kind of borders around the object, or a divider.
+/// As they are not supposed to be displayed at the same time, even if it is requested the divider is not displayed if the outline effect is active.
+/// If this view modifier is used to draw an outline in an error context for a disabled component, a *fatal error* will happen because this behaviour is forbidden by design.
+struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Stored properties
 
-    let internalState: ControlItemInternalState
+    let interactionState: InteractionState
     let layoutData: ControlItemLabel.LayoutData
     let isOn: Bool
 
@@ -41,14 +40,14 @@ struct ControlItemStyleOutlinedModifier: ViewModifier {
                             radius: theme.borders.borderRadiusNone,
                             color: borderColor)
         } else {
-            content
+            content.oudsDivider(show: layoutData.hasDivider)
         }
     }
 
     // MARK: Private helpers
 
     private var borderColor: MultipleColorSemanticTokens? {
-        switch internalState {
+        switch interactionState {
         case .enabled:
             enabledColor
         case .pressed:

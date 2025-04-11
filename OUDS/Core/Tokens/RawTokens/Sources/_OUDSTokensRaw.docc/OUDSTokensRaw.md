@@ -6,7 +6,7 @@ _Raw tokens_ are smallest _tokens_ possible. They are associated to raw values a
 
 <!-- NOTE: Do not forget to update tokens version -->
 ```
-🧱 Tokens version: 0.7.0
+🧱 Tokens version: 0.11.0
 ```
 
 In fact, we choose to use as most as possible primitive types for raw values, like `Int`, `Double`, `CGFloat` or `String` so as to handle the smallest types with few impacts on the memory for ecodesign principles. Indeed with hundreds of raw tokens, it will be more efficient to store primitive small types than Swift `struct` or `class` objects. Keeping primitive types helps today to expose objects using Objective-C runtime.
@@ -72,6 +72,7 @@ import OUDSTokensRaw
 Then choose the tokens you want within:
 * ``BorderRawTokens`` for borders
 * ``ColorRawTokens`` for colors
+* ``ColorModeRawTokens`` for colors mode (kind of frozen and not generated raw tokens)
 * ``DimensionRawTokens`` for dimensions
 * ``ElevationRawTokens`` for elevations
 * ``FontRawTokens`` for fonts
@@ -84,6 +85,7 @@ Then choose the tokens you want within:
 
 - ``BorderRawTokens``
 - ``ColorRawTokens``
+- ``ColorModeRawTokens``
 - ``DimensionRawTokens``
 - ``ElevationRawTokens``
 - ``GridRawTokens``
