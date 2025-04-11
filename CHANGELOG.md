@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.13.0...develop)
 
+### Changed
 
+- [Tool] Update `SwiftLint` pod from v0.58.2 to v0.59.0
 
 ## [0.13.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.12.0...0.13.0) - 2025-04-11
 
