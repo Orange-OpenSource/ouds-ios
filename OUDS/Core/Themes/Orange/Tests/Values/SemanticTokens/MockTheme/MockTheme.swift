@@ -36,36 +36,39 @@ final class MockTheme: OUDSTheme, @unchecked Sendable {
     }
 
     init(fontFamily: String?) {
-        let colors = MockThemeColorSemanticTokensProvider()
         let borders = MockThemeBorderSemanticTokensProvider()
+        let colors = MockThemeColorSemanticTokensProvider()
+        let colorModes = MockThemeColorModeSemanticTokensProvider()
         let elevations = MockThemeElevationSemanticTokensProvider()
         let fonts = MockThemeFontSemanticTokensProvider()
         let grids = MockThemeGridSemanticTokensProvider()
         let opacities = MockThemeOpacitySemanticTokensProvider()
         let sizes = MockThemeSizeSemanticTokensProvider()
         let spaces = MockThemeSpaceSemanticTokensProvider()
-        super.init(colors: colors,
-                   borders: borders,
+        super.init(borders: borders,
+                   colors: colors,
+                   colorModes: colorModes,
                    elevations: elevations,
                    fonts: fonts,
                    grids: grids,
                    opacities: opacities,
                    sizes: sizes,
                    spaces: spaces,
+                   badge: MockThemeBadgeComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
+                   bulletList: MockThemeBulletListComponentTokenProvider(spaces: spaces),
                    button: MockThemeButtonComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+                   checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
+                   chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
+                   controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   divider: MockThemeDividerComponentTokenProvider(borders: borders),
+                   inputText: MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    link: MockThemeLinkComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
+                   radioButton: MockThemeRadioButtonComponentTokenProvider(sizes: sizes, borders: borders),
                    select: MockThemeSelectComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
                    skeleton: MockThemeSkeletonComponentTokenProvider(colors: colors),
-                   tag: MockThemeTagComponentTokenProvider(colors: colors),
-                   switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   listItem: MockThemeListItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   chip: MockThemeChipComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
-                   bulletList: MockThemeBulletListComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   inputText: MockThemeInputTextComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   badge: MockThemeBadgeComponentTokenProvider(sizes: sizes, borders: borders, spaces: spaces),
-                   controlItem: MockThemeControlItemComponentTokenProvider(sizes: sizes, colors: colors, spaces: spaces),
-                   checkbox: MockThemeCheckboxComponentTokenProvider(sizes: sizes, borders: borders),
-                   radioButton: MockThemeRadioButtonComponentTokenProvider(sizes: sizes, borders: borders),
+                   switch: MockThemeSwitchComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces, opacities: opacities),
+                   tag: MockThemeTagComponentTokenProvider(sizes: sizes, borders: borders, colors: colors, spaces: spaces),
                    fontFamily: fontFamily)
     }
 

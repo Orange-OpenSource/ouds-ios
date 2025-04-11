@@ -20,6 +20,7 @@ struct AboutPage: View {
 
     let privacyPolicyUrl: URL
     let legalInformationUrl: URL
+    let appSettingsUrl: URL
 
     // MARK: Initializer
 
@@ -27,12 +28,18 @@ struct AboutPage: View {
         guard let privacyNoticeUrl = Bundle.main.url(forResource: "about_privacy_policy", withExtension: "html") else {
             OL.fatal("Unable to find about_privacy_policy.html in resources")
         }
+
         guard let legalInformationUrl = Bundle.main.url(forResource: "about_legal_information", withExtension: "html") else {
             OL.fatal("Unable to find about_legal_information.html in resources")
         }
 
+        guard let appSettingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+            OL.fatal("Unable to find app settings URL")
+        }
+
         self.privacyPolicyUrl = privacyNoticeUrl
         self.legalInformationUrl = legalInformationUrl
+        self.appSettingsUrl = appSettingsUrl
     }
 
     // MARK: Body
@@ -69,6 +76,10 @@ struct AboutPage: View {
                 if let buildDetails = Bundle.main.buildDetails {
                     Text("app_about_githubBuildDetails" <- buildDetails)
                 }
+
+                Button("app_about_appSettings_label") {
+                    UIApplication.shared.open(appSettingsUrl)
+                }.accessibilityHint("app_about_appSettings_hint_a11y")
             }
             .navigationTitle("app_bottomBar_about_label")
         }

@@ -19,8 +19,8 @@ struct RadioElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_radio_selectorOnly_label"
-        image = Image(decorative: "il_component_radio").renderingMode(.template)
+        name = "app_components_radio_indicatorOnly_label"
+        image = Image(decorative: "il_component_radio").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,

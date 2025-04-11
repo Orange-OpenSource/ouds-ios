@@ -51,7 +51,7 @@ extension OrangeThemeFontSemanticTokensProvider: FontCompositeSemanticTokens {
 
     // MARK: - Semantic tokens - Typography - Composites - Label
 
-    @objc open var typeLabelDefaultXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular250) } // NOTE: .typeRegular300 in Figjam but undefined
+    @objc open var typeLabelDefaultXLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular300) }
     @objc open var typeLabelDefaultLarge: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeBold250) }
     @objc open var typeLabelDefaultMedium: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular200) }
     @objc open var typeLabelDefaultSmall: MultipleFontCompositeRawTokens { MultipleFontCompositeRawTokens(FontRawTokens.typeRegular150) }

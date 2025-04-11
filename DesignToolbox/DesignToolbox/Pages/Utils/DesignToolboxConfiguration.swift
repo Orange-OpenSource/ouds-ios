@@ -31,6 +31,7 @@ struct DesignToolboxConfiguration<Configuration>: View where Configuration: View
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
             Text("app_common_configuration_label")
                 .typeHeadingMedium(theme)
+                .oudsForegroundColor(theme.colors.colorContentDefault)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             Divider()

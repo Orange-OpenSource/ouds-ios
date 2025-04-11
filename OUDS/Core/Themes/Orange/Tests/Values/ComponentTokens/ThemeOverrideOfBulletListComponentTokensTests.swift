@@ -27,75 +27,41 @@ struct ThemeOverrideOfBulletListComponentTokensTests {
         inheritedTheme = MockTheme()
     }
 
-    // MARK: - Sizes
-
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSizeMinHeightMedium() throws {
-        #expect(inheritedTheme.bulletList.bulletListSizeMinHeightMedium != abstractTheme.bulletList.bulletListSizeMinHeightMedium)
-        #expect(inheritedTheme.bulletList.bulletListSizeMinHeightMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSize)
-    }
-
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSizeMinHeightSmall() throws {
-        #expect(inheritedTheme.bulletList.bulletListSizeMinHeightSmall != abstractTheme.bulletList.bulletListSizeMinHeightSmall)
-        #expect(inheritedTheme.bulletList.bulletListSizeMinHeightSmall == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSize)
-    }
-
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSizeMinWidthMedium() throws {
-        #expect(inheritedTheme.bulletList.bulletListSizeMinWidthMedium != abstractTheme.bulletList.bulletListSizeMinWidthMedium)
-        #expect(inheritedTheme.bulletList.bulletListSizeMinWidthMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSize)
-    }
-
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSizeMinWidthSmall() throws {
-        #expect(inheritedTheme.bulletList.bulletListSizeMinWidthSmall != abstractTheme.bulletList.bulletListSizeMinWidthSmall)
-        #expect(inheritedTheme.bulletList.bulletListSizeMinWidthSmall == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSize)
-    }
-
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSizeIconMedium() throws {
-        #expect(inheritedTheme.bulletList.bulletListSizeIconMedium != abstractTheme.bulletList.bulletListSizeIconMedium)
-        #expect(inheritedTheme.bulletList.bulletListSizeIconMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSize)
-    }
-
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSizeIconSmall() throws {
-        #expect(inheritedTheme.bulletList.bulletListSizeIconSmall != abstractTheme.bulletList.bulletListSizeIconSmall)
-        #expect(inheritedTheme.bulletList.bulletListSizeIconSmall == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSize)
-    }
-
-    // MARK: - Colors
-
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenColorContentEnabled() throws {
-        #expect(inheritedTheme.bulletList.bulletListColorContentEnabled != abstractTheme.bulletList.bulletListColorContentEnabled)
-        #expect(inheritedTheme.bulletList.bulletListColorContentEnabled == MockThemeBulletListComponentTokenProvider.mockThemeBulletListColor)
-    }
-
     // MARK: - Spaces
 
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpaceColumnGapIconMedium() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapIconMedium != abstractTheme.bulletList.bulletListSpaceColumnGapIconMedium)
-        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapIconMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+    @Test func inheritedThemeCanOverrideBulletListComponentTokenColumnGapBodyLarge() throws {
+        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapBodyLarge != abstractTheme.bulletList.bulletListSpaceColumnGapBodyLarge)
+        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapBodyLarge == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpaceColumnGapIconSmall() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapIconSmall != abstractTheme.bulletList.bulletListSpaceColumnGapIconSmall)
-        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapIconSmall == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+    @Test func inheritedThemeCanOverrideBulletListComponentTokenColumnGapBodyMedium() throws {
+        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapBodyMedium != abstractTheme.bulletList.bulletListSpaceColumnGapBodyMedium)
+        #expect(inheritedTheme.bulletList.bulletListSpaceColumnGapBodyMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingBlock() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlock != abstractTheme.bulletList.bulletListSpacePaddingBlock)
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlock == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+    @Test func inheritedThemeCanOverrideBulletListComponentTokenPaddingBlockBodyLarge() throws {
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlockBodyLarge != abstractTheme.bulletList.bulletListSpacePaddingBlockBodyLarge)
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlockBodyLarge == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingInlineEndNone() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineEndNone != abstractTheme.bulletList.bulletListSpacePaddingInlineEndNone)
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineEndNone == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingBlockBodyMedium() throws {
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlockBodyMedium != abstractTheme.bulletList.bulletListSpacePaddingBlockBodyMedium)
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingBlockBodyMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingInlineStartIconMedium() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineStartIconMedium != abstractTheme.bulletList.bulletListSpacePaddingInlineStartIconMedium)
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineStartIconMedium == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingInlineLevel0() throws {
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel0 != abstractTheme.bulletList.bulletListSpacePaddingInlineLevel0)
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel0 == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 
-    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingInlineStartIconSmall() throws {
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineStartIconSmall != abstractTheme.bulletList.bulletListSpacePaddingInlineStartIconSmall)
-        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineStartIconSmall == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingInlineLevel1() throws {
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel1 != abstractTheme.bulletList.bulletListSpacePaddingInlineLevel1)
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel1 == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
+    }
+
+    @Test func inheritedThemeCanOverrideBulletListComponentTokenSpacePaddingInlineLevel2() throws {
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel2 != abstractTheme.bulletList.bulletListSpacePaddingInlineLevel2)
+        #expect(inheritedTheme.bulletList.bulletListSpacePaddingInlineLevel2 == MockThemeBulletListComponentTokenProvider.mockThemeBulletListSpace)
     }
 }
 

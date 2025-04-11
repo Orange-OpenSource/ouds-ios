@@ -40,6 +40,26 @@ import SwiftUI
 ///         // It is recommended to use the higher level version as it is less error-prone.
 /// ```
 ///
+///
+/// ```swift
+///      @Environment(\.theme) var theme
+///      @Environment(\.colorScheme) var colorScheme
+///
+///     // Given you want to apply the color token "colorSurfaceBrandPrimary"
+///     var body: some View {
+///         // Apply the token of color for the view without managing yourself the color scheme
+///         SomeView()
+///             .oudsBackground(theme.colors.colorSurfaceBrandPrimary)
+///
+///         // Or also oudsForegroundtyle(), oudsForegroundColor(), oudsAccentColor(), ...
+///     }
+/// ```
+///
+/// ```swift
+///     // Or get the token depending to the color scheme and do whatever you want with
+///     theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme)
+/// ```
+///
 /// - Since: 0.8.0
 public final class MultipleColorSemanticTokens: NSObject, Sendable {
 

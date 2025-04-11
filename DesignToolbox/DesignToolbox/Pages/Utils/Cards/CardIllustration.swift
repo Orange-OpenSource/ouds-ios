@@ -16,7 +16,6 @@ import SwiftUI
 struct CardIllustration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 
@@ -34,8 +33,8 @@ struct CardIllustration: View {
         .accessibilityElement(children: .combine)
         .accessibilityRemoveTraits(.isImage)
         .accessibilityHidden(true)
-        .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
-        .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
+        .oudsForegroundStyle(theme.colors.colorContentDefault)
+        .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
     }
 }
 

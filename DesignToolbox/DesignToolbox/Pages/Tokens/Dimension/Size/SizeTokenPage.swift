@@ -72,7 +72,7 @@ struct SizeTokenPage: View {
                     Image("ic_token")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
+                        .oudsForegroundColor(theme.colors.colorContentStatusInfo)
                         .frame(width: token, height: token, alignment: .center)
                         .accessibilityHidden(true)
                 }
@@ -105,7 +105,7 @@ struct SizeTokenPage: View {
                     Image("ic_token")
                         .resizable()
                         .renderingMode(.template)
-                        .foregroundColor(theme.colors.colorContentStatusInfo.color(for: colorScheme))
+                        .oudsForegroundColor(theme.colors.colorContentStatusInfo)
                         .frame(width: token, height: token, alignment: .center)
                         .accessibilityHidden(true)
                 }
@@ -139,7 +139,6 @@ struct SizeTokenPage: View {
     private struct TypographyCategoryHeader: View {
 
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
         let namedFont: NamedFont
@@ -156,16 +155,16 @@ struct SizeTokenPage: View {
                         .resizable()
                         .renderingMode(.template)
                         .aspectRatio(contentMode: .fit)
-                        .foregroundStyle(theme.colors.colorContentStatusInfo.color(for: colorScheme))
+                        .oudsForegroundStyle(theme.colors.colorContentStatusInfo)
                 }
                 .frame(height: size, alignment: .center)
 
                 illustration(for: namedFont, in: theme)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                    .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
             .padding(.all, theme.spaces.spaceFixedMedium)
-            .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
+            .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
         }
     }
 

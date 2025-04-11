@@ -18,7 +18,6 @@ import SwiftUI
 struct DesignToolboxTextField: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     let text: Binding<String>
     let prompt: String
@@ -34,7 +33,7 @@ struct DesignToolboxTextField: View {
         VStack(alignment: .leading) {
             Text(LocalizedStringKey(title))
                 .typeHeadingMedium(theme)
-                .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             TextField(text: text) {
                 Text(LocalizedStringKey(prompt))

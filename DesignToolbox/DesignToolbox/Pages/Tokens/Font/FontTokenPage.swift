@@ -49,13 +49,12 @@ struct FontTokenPage: View {
         }
 
         @Environment(\.theme) private var theme
-        @Environment(\.colorScheme) private var colorScheme
         @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
         var body: some View {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 illustration(for: namedFont, in: theme)
-                    .foregroundStyle(theme.colors.colorContentDefault.color(for: colorScheme))
+                    .oudsForegroundStyle(theme.colors.colorContentDefault)
 
                 Group {
                     Text(familyText)
@@ -66,7 +65,7 @@ struct FontTokenPage: View {
                 }
                 .typeBodyDefaultMedium(theme)
                 .fixedSize(horizontal: false, vertical: true)
-                .foregroundStyle(theme.colors.colorContentMuted.color(for: colorScheme))
+                .oudsForegroundStyle(theme.colors.colorContentMuted)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.vertical, theme.spaces.spaceFixedShorter)

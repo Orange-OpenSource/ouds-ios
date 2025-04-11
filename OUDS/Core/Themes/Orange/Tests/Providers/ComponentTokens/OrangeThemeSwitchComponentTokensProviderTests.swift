@@ -31,12 +31,20 @@ struct OrangeThemeSwitchComponentTokensProviderTests {
         #expect(provider.sizes is OrangeThemeSizeSemanticTokensProvider)
     }
 
+    @Test func defaultBorderSemanticTokensProvider() throws {
+        #expect(provider.borders is OrangeThemeBorderSemanticTokensProvider)
+    }
+
     @Test func defaultColorSemanticTokensProvider() throws {
         #expect(provider.colors is OrangeThemeColorSemanticTokensProvider)
     }
 
     @Test func defaultSpaceSemanticTokensProvider() throws {
         #expect(provider.spaces is OrangeThemeSpaceSemanticTokensProvider)
+    }
+
+    @Test func defaultOpacitySemanticTokensProvider() throws {
+        #expect(provider.opacities is OrangeThemeOpacitySemanticTokensProvider)
     }
 }
 

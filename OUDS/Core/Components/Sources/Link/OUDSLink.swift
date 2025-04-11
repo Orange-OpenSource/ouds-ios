@@ -45,7 +45,8 @@ import SwiftUI
 /// If link is placed on colored surface using `OUDSColoredSurface`, the default colors (content text and icon or arrow) are automatically adjusted to switch to monochrom.
 ///
 /// ## Design documentation
-/// [unified-design-system.orange.com/472794e18/p/73c701-components](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+///
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/31c33b-link)
 ///
 /// - Since: 0.11.0
 public struct OUDSLink: View {
@@ -56,6 +57,8 @@ public struct OUDSLink: View {
     private let text: String
     private let size: Size
     private let action: () -> Void
+
+    @Environment(\.layoutDirection) private var layoutDirection
 
     /// Represents the size of an `OUDSLink`.
     public enum Size {
@@ -121,6 +124,7 @@ public struct OUDSLink: View {
                     Image(decorative: "ic_form_chevron_left", bundle: Bundle.OUDSComponents)
                         .renderingMode(.template)
                         .resizable()
+                        .scaleEffect(layoutDirection == .rightToLeft ? -1 : 1, anchor: .center)
                 }
             case .textOnly:
                 Label {
@@ -138,7 +142,7 @@ public struct OUDSLink: View {
                 }
             }
         }
-        .buttonStyle(LinkStyle(layout: layout, size: size))
+        .buttonStyle(LinkButtonStyle(layout: layout, size: size))
         .accessibilityRemoveTraits(.isButton)
         .accessibilityAddTraits(.isLink)
     }

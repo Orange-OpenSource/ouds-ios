@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensComponent
 import SwiftUI
 
 // MARK: - OUDS Checkbox Indeterminate
@@ -62,7 +63,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com/472794e18/p/23f1c1-checkbox](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
 ///
 /// - Since: 0.12.0
 public struct OUDSCheckboxIndeterminate: View {
@@ -74,6 +75,7 @@ public struct OUDSCheckboxIndeterminate: View {
 
     @Binding var selection: OUDSCheckboxIndicatorState
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.theme) private var theme
 
     // MARK: - Initializers
 
@@ -99,14 +101,19 @@ public struct OUDSCheckboxIndeterminate: View {
     // MARK: Body
 
     public var body: some View {
-        Button("") {
+        InteractionButton {
             $selection.wrappedValue.toggle()
+        } content: { interactionState in
+            CheckboxIndicator(interactionState: interactionState, indicatorState: $selection.wrappedValue, isError: isError)
+                .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
+                       maxWidth: theme.checkbox.checkboxSizeMinWidth,
+                       minHeight: theme.checkbox.checkboxSizeMinHeight,
+                       maxHeight: theme.checkbox.checkboxSizeMaxHeight)
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
         .accessibilityValue(selection.a11yDescription.localized())
         .accessibilityHint(selection.a11yHint)
-        .buttonStyle(CheckboxOnlyButtonStyle(indicatorState: $selection.wrappedValue, isError: isError))
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state

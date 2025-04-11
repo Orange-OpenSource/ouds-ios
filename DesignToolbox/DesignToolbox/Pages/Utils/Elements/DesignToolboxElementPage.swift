@@ -24,7 +24,6 @@ struct DesignToolboxElementPage: View {
 
     @AccessibilityFocusState private var requestFocus: Bool
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored Properties
 
@@ -45,6 +44,8 @@ struct DesignToolboxElementPage: View {
 
                 Text(LocalizedStringKey(description))
                     .typeBodyDefaultLarge(theme)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .accessibilityFocused($requestFocus)
                     .padding(.horizontal, theme.spaces.spaceFixedMedium)
             }
@@ -52,18 +53,18 @@ struct DesignToolboxElementPage: View {
             .listRowSeparator(Visibility.hidden)
             .padding(.horizontal, theme.spaces.spaceFixedNone)
             .padding(.bottom, theme.spaces.spaceFixedMedium)
-            .background(theme.colors.colorBgPrimary.color(for: colorScheme))
+            .oudsBackground(theme.colors.colorBgPrimary)
 
             illustration
                 .listRowInsets(EdgeInsets())
                 .listRowSeparator(Visibility.hidden)
                 .padding(.bottom, theme.spaces.spaceFixedMedium)
-                .background(theme.colors.colorBgPrimary.color(for: colorScheme))
+                .oudsBackground(theme.colors.colorBgPrimary)
         }
         .listStyle(.plain)
         .padding(.top, theme.spaces.spaceFixedNone)
         .padding(.horizontal, theme.spaces.spaceFixedNone)
-        .background(theme.colors.colorBgPrimary.color(for: colorScheme))
+        .oudsBackground(theme.colors.colorBgPrimary)
         .navigationTitle(LocalizedStringKey(name))
         .navigationbarMenuForThemeSelection()
         .oudsRequestAccessibleFocus(_requestFocus)

@@ -137,6 +137,8 @@ public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperli
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///
+    /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     public init(isOn: Binding<Bool>,
                 labelText: String,
                 additionalLabelText: String? = nil,
@@ -176,18 +178,11 @@ public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperli
     // MARK: Body
 
     public var body: some View {
-        Button("") {
-            withAnimation(nil) {
-                if !layoutData.isReadOnly {
-                    $isOn.wrappedValue.toggle()
-                }
-            }
-        }
-        .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-        .accessibilityLabel(a11yLabel)
-        .accessibilityValue(a11yValue.localized())
-        .accessibilityHint(a11yHint)
-        .buttonStyle(ControlItemStyle(indicatorType: .radioButton($isOn), layoutData: layoutData))
+        ControlItem(indicatorType: .radioButton($isOn), layoutData: layoutData)
+            .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
+            .accessibilityLabel(a11yLabel)
+            .accessibilityValue(a11yValue.localized())
+            .accessibilityHint(a11yHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator

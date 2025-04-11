@@ -53,9 +53,6 @@ GITHUB_ORG_REPO = "Orange-OpenSource/ouds-ios"
 # Fine grained personal access token with enough permissions for the suitable GitHub project
 GITHUB_ACCESS_TOKEN = ENV['GITHUB_ACCESS_TOKEN']
 
-# Should be last commit full hash, for builds and tags
-IOS_APP_COMMIT_SHA = ENV['IOS_APP_COMMIT_SHA']
-
 # Project configuration
 # ---------------------
 
@@ -76,9 +73,19 @@ platform :ios do
 
     before_all do |lane, options|
         xcodes(
-            version: '16.2',
+            version: '16.3',
             select_for_current_build_only: true,
         )
+    end
+
+    # ------------------------------------------------------------
+    # RUN PERIPHERY FOR DEAD CODE ANALYSIS
+    # ------------------------------------------------------------
+    desc "RUN PERIPHERY FOR DEAD CODE ANALYSIS"
+    lane :check_dead_code do
+        puts "👉 Check dead code with Periphery"
+
+        sh "periphery scan --strict --workspace ../DesignToolbox.xcworkspace --schemes DesignToolbox --targets DesignToolbox --format xcode"
     end
 
     # ------------------------------------------------------------
@@ -213,7 +220,7 @@ platform :ios do
     desc "BUILD & UPLOAD TO TESTFLIGHT ALPHA APP"
     lane :alpha do |params|
         issues_numbers = params[:issueNumber]
-        puts "👉 Alpha (commit hash = '#{params[:commitHash]}, issue number = '#{issues_numbers}')"
+        puts "👉 Alpha (commit hash = '#{params[:commitHash]}', issue number = '#{issues_numbers}')"
 
         if issues_numbers.nil? || issues_numbers.empty?
             puts "❌ Error: No issues numbers have been given for alpha builds, nothing will be done"
@@ -451,8 +458,9 @@ platform :ios do
             puts "ℹ️ App build number: '#{build_number}'"
 
             # Escape spaces for upload
-            sh "cp ../build/Design\\ System\\ Toolbox.ipa ../build/Design_System_Toolbox.ipa"
-            sh "curl -F 'file=@../build/Design_System_Toolbox.ipa' #{UPLOAD_STORE_URL}"
+            ipa_new_name = "Design_System_Toolbox-#{build_number}.ipa"
+            sh "cp ../build/Design\\ System\\ Toolbox.ipa ../build/#{ipa_new_name}"
+            sh "curl -F 'file=@../build/#{ipa_new_name}' #{UPLOAD_STORE_URL}"
 
             publish_mattermost_notification("📦 ✅ @here The upload to store has been done successfully (version = '#{version}', build number = '#{build_number}')")
         rescue => error
@@ -475,9 +483,8 @@ platform :ios do
                 publish_mattermost_notification("⚙️ 🤔 No commit hash has been given, no tag can be created")
                 return false
             else
-                expected_git_tag = "ci/" + commitHash[0,7]
-                if create_tag(expected_git_tag)
-                    publish_mattermost_notification("📦 ✅  New Git tag created: #{expected_git_tag}")
+                if create_tag("ci", commitHash)
+                    publish_mattermost_notification("📦 ✅  New Git CI tag created for commit #{commitHash}")
                     return true
                 else
                     return false
@@ -499,9 +506,8 @@ platform :ios do
                 publish_mattermost_notification("⚙️ 🤔 No commit hash has been given, no tag can be created")
                 return false
             else
-                expected_git_tag = "Test_Flight/" + commitHash[0,7]
-                if create_tag(expected_git_tag)
-                    publish_mattermost_notification("📦 ✅ New Git tag created: #{expected_git_tag}")
+                if create_tag("Test_Flight", commitHash)
+                    publish_mattermost_notification("📦 ✅  New Git Test_Flight tag created for commit #{commitHash}")
                     return true
                 else
                     return false
@@ -515,7 +521,7 @@ platform :ios do
 
     # Creates a Git tag at given commit through HTTP protocol to prevent proxy or firewalls to block SSH requests.
     # Not possible also to make repository mirroring because of the current purchased plan of the GitLab instance.
-    def create_tag(tag)
+    def create_tag(prefix, commitHash)
       
         # Check personal access token for tag creation
         if GITHUB_ACCESS_TOKEN.nil? || GITHUB_ACCESS_TOKEN.empty?
@@ -524,17 +530,28 @@ platform :ios do
             return false
         else
             # Check if given tag exists yet
+            tag = "#{prefix}/" + commitHash[0,7]
             puts "ℹ️ Check if '#{tag}' exists yet"
 
             uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/tags")
-            response = Net::HTTP.get(uri)
-            tags = JSON.parse(response)
+            http = Net::HTTP.new(uri.host, uri.port)
+            http.use_ssl = true
+            
+            request = Net::HTTP::Get.new(uri.path)
+            request['Accept'] = 'application/vnd.github+json'
+            request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
+            request['X-GitHub-Api-Version'] = '2022-11-28'
+
+            response = http.request(request)
+            tags = JSON.parse(response.body)
+
+            # puts tags.inspect # Uncomment for debug
 
             if tags.any? { |t| t['name'] == tag }
                 puts "ℹ️ The tag '#{tag}' still exists, won't create new tag"
                 return false
             else
-                puts "ℹ️ Commit SHA to tag is '#{IOS_APP_COMMIT_SHA}'"
+                puts "ℹ️ Commit SHA to tag is '#{commitHash}'"
 
                 uri = URI("https://api.github.com/repos/#{GITHUB_ORG_REPO}/git/refs")
                 http = Net::HTTP.new(uri.host, uri.port)
@@ -544,7 +561,7 @@ platform :ios do
                 request['Accept'] = 'application/vnd.github+json'
                 request['Authorization'] = "Bearer #{GITHUB_ACCESS_TOKEN}"
                 request['X-GitHub-Api-Version'] = '2022-11-28'
-                request.body = { ref: "refs/tags/#{tag}", sha: IOS_APP_COMMIT_SHA }.to_json
+                request.body = { ref: "refs/tags/#{tag}", sha: commitHash }.to_json
                 
                 response = http.request(request)
                 
@@ -552,7 +569,7 @@ platform :ios do
                   puts "ℹ️ Light tag '#{tag}' published in repository"
                   return true
                 else
-                  puts "❌ Error: Failed to publish light tag '#{tag}'"
+                  puts "❌ Error: Failed to publish light tag '#{tag}' (#{response.code.to_i})"
                   return false
                 end
             end

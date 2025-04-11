@@ -21,7 +21,9 @@ import OUDSTokensSemantic
 /// all tokens to the users. It helps users to override some of the tokens and assign them to an `OUDSTheme` implementation to use.
 /// Custom themes can use subclass of ``OrangeThemeTagComponentTokensProvider`` and apply the provider they need.
 /// It implements also the protocol `TagComponentTokens` so as to expose the component tokens for *tags* through any `OUDSTheme`.
-/// *Tags* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`).
+/// *Tags* components tokens are defined with semantic tokens of colors (from `AllColorSemanticTokensProvider`),
+/// sizes (from `AllSizeSemanticTokensProvider`), spaces (from `AllSpaceSemanticTokensProvider`) and borders
+/// (from `AllBorderSemanticTokensProvider`).
 ///
 /// ```swift
 ///     // Define your own provider for tag component tokens
@@ -31,6 +33,12 @@ import OUDSTokensSemantic
 ///         // Then override the tag component tokens you want.
 ///
 ///         override var tagColorBgReminder: MultipleColorSemanticTokens { colors.colorOpacityLower }
+///         
+///         override var tagBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthMedium }
+///
+///         override var tagSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension500 }
+///
+///         override var tagSpacePaddingInlineIconStartSmall: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
 ///
 ///         // ...
 ///     }
@@ -65,23 +73,49 @@ import OUDSTokensSemantic
 /// ```swift
 ///     // Uses by default here:
 ///     // - OrangeThemeColorSemanticTokensProvider for colors
+///     // - OrangeThemeBorderSemanticTokensProvider for borders
+///     // - OrangeThemeSizeSemanticTokensProvider for sizes
+///     // - OrangeThemeSpaceSemanticTokensProvider for spaces
 ///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider()
 ///
-///     // Or use your own color semantic tokens providers (or only some)
+///     // Or use your own color, space, size and border semantic tokens providers (or only some)
 ///     let tagComponentTokensProvider = OrangeThemeTagComponentTokensProvider(
-///                                                 colors: CustomColorSemanticTokensProvider())
+///                                             sizes: CustomSizeSemanticTokensProvider(),
+///                                             borders: CustomBorderSemanticTokensProvider(),
+///                                             colors: CustomColorSemanticTokensProvider(),
+///                                             spaces: CustomSpaceSemanticTokensProvider)
 /// ```
+///
 /// - Since: 0.9.0
 open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider {
 
-    /// Provider of color semantic tokens to use for link colors
+    /// Provider of size semantic tokens to use for tag suzes
+    public let sizes: AllSizeSemanticTokensProvider
+
+    /// Provider of border semantic tokens to use for tag borders
+    public let borders: AllBorderSemanticTokensProvider
+
+    /// Provider of color semantic tokens to use for tag colors
     public let colors: AllColorSemanticTokensProvider
 
+    /// Provider of space semantic tokens to use for tag spaces
+    public let spaces: AllSpaceSemanticTokensProvider
+
     /// Defines a provider of component tokens dedicated to `OUDSTag`
-    /// - Parameter colors: Provider for color semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
-    public init(colors: AllColorSemanticTokensProvider? = nil) {
+    /// - Parameters:
+    ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
+    ///    - borders: Provider for borders semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
+    ///    - colors: Provider for colors semantic tokens. If nil, a default one will be used (``OrangeThemeColorSemanticTokensProvider``)
+    ///    - spaces: Provider for spaces semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
+    public init(sizes: AllSizeSemanticTokensProvider? = nil,
+                borders: AllBorderSemanticTokensProvider? = nil,
+                colors: AllColorSemanticTokensProvider? = nil,
+                spaces: AllSpaceSemanticTokensProvider? = nil) {
         OL.debug("Init of OrangeThemeTagComponentTokensProvider")
+        self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
+        self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
+        self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
     deinit { }

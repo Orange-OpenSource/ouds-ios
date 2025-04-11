@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensComponent
 import SwiftUI
 
 // MARK: - OUDS Checkbox
@@ -61,7 +62,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com/472794e18/p/23f1c1-checkbox](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
 ///
 /// - Since: 0.12.0
 public struct OUDSCheckbox: View {
@@ -72,12 +73,8 @@ public struct OUDSCheckbox: View {
     private let a11yLabel: String
 
     @Binding var isOn: Bool
-
-    private var convertedState: OUDSCheckboxIndicatorState {
-        isOn ? .selected : .unselected
-    }
-
     @Environment(\.isEnabled) private var isEnabled
+    @Environment(\.theme) private var theme
 
     // MARK: - Initializers
 
@@ -103,14 +100,26 @@ public struct OUDSCheckbox: View {
     // MARK: Body
 
     public var body: some View {
-        Button("") {
+        InteractionButton {
             $isOn.wrappedValue.toggle()
+        } content: { interactionState in
+            CheckboxIndicator(interactionState: interactionState, indicatorState: convertedState, isError: isError)
+                .frame(minWidth: theme.checkbox.checkboxSizeMinWidth,
+                       maxWidth: theme.checkbox.checkboxSizeMinWidth,
+                       minHeight: theme.checkbox.checkboxSizeMinHeight,
+                       maxHeight: theme.checkbox.checkboxSizeMaxHeight)
+                .contentShape(Rectangle())
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
         .accessibilityValue(a11yValue())
         .accessibilityHint(a11yHint())
-        .buttonStyle(CheckboxOnlyButtonStyle(indicatorState: convertedState, isError: isError))
+    }
+
+    // MARK: - Computed value
+
+    private var convertedState: OUDSCheckboxIndicatorState {
+        isOn ? .selected : .unselected
     }
 
     // MARK: - A11Y helpers

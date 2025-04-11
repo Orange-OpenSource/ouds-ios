@@ -21,7 +21,7 @@ struct CheckboxElement: DesignToolboxElement {
 
     init() {
         name = "app_components_checkbox_twoStates_indicatorOnly_label"
-        image = Image(decorative: "il_component_checkbox").renderingMode(.template)
+        image = Image(decorative: "il_component_checkbox").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,

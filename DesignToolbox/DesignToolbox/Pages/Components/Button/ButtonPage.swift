@@ -83,11 +83,19 @@ private struct ButtonDemo: View {
             } else {
                 switch model.layout {
                 case .iconOnly:
-                    OUDSButton(icon: Image(decorative: "ic_heart"), hierarchy: model.hierarchy, style: model.style) {}
+                    OUDSButton(icon: Image(decorative: "ic_heart"),
+                               accessibilityLabel: "app_components_button_icon_a11y".localized(),
+                               hierarchy: model.hierarchy,
+                               style: model.style) {}
                 case .textOnly:
-                    OUDSButton(text: model.text, hierarchy: model.hierarchy, style: model.style) {}
+                    OUDSButton(text: model.text,
+                               hierarchy: model.hierarchy,
+                               style: model.style) {}
                 case .iconAndText:
-                    OUDSButton(icon: Image(decorative: "ic_heart"), text: model.text, hierarchy: model.hierarchy, style: model.style) {}
+                    OUDSButton(icon: Image(decorative: "ic_heart"),
+                               text: model.text,
+                               hierarchy: model.hierarchy,
+                               style: model.style) {}
                 }
             }
 
@@ -95,6 +103,6 @@ private struct ButtonDemo: View {
         }
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .modifier(DesignToolboxColoredBackgroundModifier(coloredSurface: model.onColoredSurface))
+        .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: model.onColoredSurface))
     }
 }

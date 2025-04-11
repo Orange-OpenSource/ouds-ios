@@ -153,16 +153,14 @@ final class OUDSLinkUITests: XCTestCase {
 
 private struct LinkTest: View {
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
     let layout: LinkLayout
     let size: OUDSLink.Size
     let onColoredSurface: Bool
+    @Environment(\.theme) private var theme
 
     var body: some View {
         if onColoredSurface {
-            OUDSColoredSurface(color: theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme), content: link)
+            OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary, content: link)
         } else {
             link()
         }

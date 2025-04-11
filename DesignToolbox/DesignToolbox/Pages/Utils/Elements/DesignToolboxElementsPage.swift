@@ -21,7 +21,6 @@ struct DesignToolboxElementsPage: View {
 
     @AccessibilityFocusState private var requestFocus: AccessibilityFocusable?
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Stored properties
 
@@ -48,7 +47,7 @@ struct DesignToolboxElementsPage: View {
                 .padding(.all, theme.spaces.spaceFixedMedium)
                 .navigationbarMenuForThemeSelection()
             }
-            .background(theme.colors.colorBgPrimary.color(for: colorScheme))
+            .oudsBackground(theme.colors.colorBgPrimary)
         }
         .navigationViewStyle(.stack)
     }

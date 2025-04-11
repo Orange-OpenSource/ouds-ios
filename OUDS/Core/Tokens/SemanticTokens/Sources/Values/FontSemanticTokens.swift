@@ -29,19 +29,24 @@ public protocol FontSemanticTokens {
 
     // MARK: - Semantic token - Typography - Font - Family
 
-    var fontFamily: FontFamilySemanticToken { get }
+    var fontFamilySystem: FontFamilySemanticToken { get }
+    var fontFamilyCode: FontFamilySemanticToken { get }
+    var fontFamilyBody: FontFamilySemanticToken { get }
+    var fontFamilyDisplay: FontFamilySemanticToken { get }
+    var fontFamilyHeading: FontFamilySemanticToken { get }
+    var fontFamilyLabel: FontFamilySemanticToken { get }
 
     // MARK: - Semantic token - Typography - Font - Weight
 
     var fontWeightCode: FontWeightSemanticToken { get }
-    var fontWeightDefault: FontWeightSemanticToken { get }
-    var fontWeightStrong: FontWeightSemanticToken { get }
     var fontWeightBodyDefault: FontWeightSemanticToken { get }
     var fontWeightBodyStrong: FontWeightSemanticToken { get }
     var fontWeightDisplay: FontWeightSemanticToken { get }
     var fontWeightHeading: FontWeightSemanticToken { get }
     var fontWeightLabelDefault: FontWeightSemanticToken { get }
     var fontWeightLabelStrong: FontWeightSemanticToken { get }
+    var fontWeightSystemDefault: FontWeightSemanticToken { get }
+    var fontWeightSystemStrong: FontWeightSemanticToken { get }
 
     // MARK: - Semantic token - Typography - Font - Size
 

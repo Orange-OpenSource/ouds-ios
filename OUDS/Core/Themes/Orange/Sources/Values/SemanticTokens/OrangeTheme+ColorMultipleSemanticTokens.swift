@@ -372,7 +372,9 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
 
     @objc public final var colorRepositoryOpacityBlackMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackMediumLight, dark: colorRepositoryOpacityBlackMediumDark) }
 
-    @objc public final var colorRepositoryOpacityBlackSoft: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackSoftLight, dark: colorRepositoryOpacityBlackSoftDark) }
+    @objc public final var colorRepositoryOpacityBlackMediumLow: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackMediumLowLight, dark: colorRepositoryOpacityBlackMediumLowDark) }
+
+    @objc public final var colorRepositoryOpacityBlackMediumHigh: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackMediumHighLight, dark: colorRepositoryOpacityBlackMediumHighDark) }
 
     @objc public final var colorRepositoryOpacityBlackTransparent: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityBlackTransparentLight, dark: colorRepositoryOpacityBlackTransparentDark) }
 
@@ -389,6 +391,10 @@ extension OrangeThemeColorSemanticTokensProvider: ColorMultipleSemanticTokens {
     @objc public final var colorRepositoryOpacityWhiteHigher: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHigherLight, dark: colorRepositoryOpacityWhiteHigherDark) }
 
     @objc public final var colorRepositoryOpacityWhiteHighest: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteHighestLight, dark: colorRepositoryOpacityWhiteHighestDark) }
+
+    @objc public final var colorRepositoryOpacityWhiteMediumLow: MultipleColorSemanticTokens {
+        MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteMediumLowLight, dark: colorRepositoryOpacityWhiteMediumLowDark)
+    }
 
     @objc public final var colorRepositoryOpacityWhiteMedium: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colorRepositoryOpacityWhiteMediumLight, dark: colorRepositoryOpacityWhiteMediumDark) }
 

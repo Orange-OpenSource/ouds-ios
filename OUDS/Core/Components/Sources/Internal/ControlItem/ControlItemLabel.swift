@@ -22,7 +22,7 @@ struct ControlItemLabel: View {
 
     // MARK: - Stored properties
 
-    let internalState: ControlItemInternalState
+    let interactionState: InteractionState
     let layoutData: LayoutData
 
     @Environment(\.theme) private var theme
@@ -58,21 +58,21 @@ struct ControlItemLabel: View {
             Text(LocalizedStringKey(layoutData.labelText))
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
-                .foregroundStyle(labelTextColor)
+                .oudsForegroundStyle(labelTextColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             if let additionalLabelText = layoutData.additionalLabelText {
                 Text(LocalizedStringKey(additionalLabelText))
                     .typeLabelStrongMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .foregroundStyle(additionalLabelTextColor)
+                    .oudsForegroundStyle(additionalLabelTextColor)
             }
 
             if let helperText = layoutData.helperText {
                 Text(LocalizedStringKey(helperText))
                     .typeLabelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .foregroundStyle(helperTextColor)
+                    .oudsForegroundStyle(helperTextColor)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -80,40 +80,39 @@ struct ControlItemLabel: View {
 
     // MARK: - Colors
 
-    private var labelTextColor: Color {
+    private var labelTextColor: MultipleColorSemanticTokens {
         if layoutData.isError {
-            switch internalState {
+            switch interactionState {
             case .enabled:
-                return theme.colors.colorActionNegativeEnabled.color(for: colorScheme)
+                return theme.colors.colorActionNegativeEnabled
             case .hover:
-                return theme.colors.colorActionNegativeHover.color(for: colorScheme)
+                return theme.colors.colorActionNegativeHover
             case .pressed:
-                return theme.colors.colorActionNegativePressed.color(for: colorScheme)
+                return theme.colors.colorActionNegativePressed
             case .readOnly, .disabled:
                 OL.fatal("An component (checkbox, switch, radio) with a disabled state / read only mode and an error situation has been detected, which is not allowed by design."
                              + " Only non-error situation are allowed to have a disabled state or a read only mode.")
             }
         } else {
-            switch internalState {
+            switch interactionState {
             case .enabled, .hover, .pressed, .readOnly:
-                return theme.colors.colorContentDefault.color(for: colorScheme)
+                return theme.colors.colorContentDefault
             case .disabled:
-                return theme.colors.colorContentDisabled.color(for: colorScheme)
+                return theme.colors.colorContentDisabled
             }
         }
     }
 
-    private var helperTextColor: Color {
-        switch internalState {
+    private var helperTextColor: MultipleColorSemanticTokens {
+        switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
-            theme.colors.colorContentMuted.color(for: colorScheme)
+            theme.colors.colorContentMuted
         case .disabled:
-            theme.colors.colorContentDisabled.color(for: colorScheme)
+            theme.colors.colorContentDisabled
         }
     }
 
-    private var additionalLabelTextColor: Color {
-        (internalState == .disabled ? theme.colors.colorContentDisabled : theme.colors.colorContentDefault)
-        .color(for: colorScheme)
+    private var additionalLabelTextColor: MultipleColorSemanticTokens {
+        interactionState == .disabled ? theme.colors.colorContentDisabled : theme.colors.colorContentDefault
     }
 }

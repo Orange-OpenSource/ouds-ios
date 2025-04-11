@@ -31,10 +31,6 @@ struct WebView: UIViewRepresentable {
         self.source = .url(url)
     }
 
-    init(with htmlContent: String) {
-        self.source = .html(htmlContent)
-    }
-
     // MARK: UIViewRepresentable
 
     @MainActor

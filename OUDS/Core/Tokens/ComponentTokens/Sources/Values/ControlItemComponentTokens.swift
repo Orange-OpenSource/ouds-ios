@@ -31,6 +31,7 @@ public protocol ControlItemComponentTokens {
     var controlItemSizeMinWidth: SizeSemanticToken { get }
     var controlItemSizeMaxHeightAssetsContainer: SizeSemanticToken { get }
     var controlItemSizeIcon: SizeSemanticToken { get }
+    var controlItemSizeListItemSizeMinHeightText: SizeSemanticToken { get }
     var controlItemSizeLoader: SizeSemanticToken { get }
 
     // MARK: - Colors

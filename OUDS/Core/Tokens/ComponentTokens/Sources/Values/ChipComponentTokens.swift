@@ -19,7 +19,7 @@ import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
-/// Declares all component tokens for tags components like `OUDSChip`
+/// Declares all component tokens for chips components like `OUDSChip`
 /// Use for tokens providers like `OrangeThemeChipComponentTokensProvider`.
 ///
 /// - Since: 0.10.0
@@ -27,7 +27,6 @@ public protocol ChipComponentTokens {
 
     // MARK: - Sizes
 
-    var chipSizeMaxHeight: SizeSemanticToken { get }
     var chipSizeMinHeight: SizeSemanticToken { get }
     var chipSizeMinWidth: SizeSemanticToken { get }
     var chipSizeIcon: SizeSemanticToken { get }
@@ -37,6 +36,9 @@ public protocol ChipComponentTokens {
     var chipBorderWidthDefault: BorderWidthSemanticToken { get }
     var chipBorderWidthDefaultInteraction: BorderWidthSemanticToken { get }
     var chipBorderWidthSelected: BorderWidthSemanticToken { get }
+    var chipBorderWidthSelectedInteraction: BorderWidthSemanticToken { get }
+    var chipBorderWidthUnselected: BorderWidthSemanticToken { get }
+    var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { get }
     var chipBorderRadiusPill: BorderRadiusSemanticToken { get }
 
     // MARK: - Colors
@@ -51,11 +53,11 @@ public protocol ChipComponentTokens {
     var chipColorBgPressed: MultipleColorSemanticTokens { get }
     var chipColorBgDisabled: MultipleColorSemanticTokens { get }
     var chipColorBgFocus: MultipleColorSemanticTokens { get }
-    var chipColorBorderEnabled: MultipleColorSemanticTokens { get }
     var chipColorBorderHover: MultipleColorSemanticTokens { get }
     var chipColorBorderPressed: MultipleColorSemanticTokens { get }
     var chipColorBorderDisabled: MultipleColorSemanticTokens { get }
     var chipColorBorderSelected: MultipleColorSemanticTokens { get }
+    var chipColorBorderUnselected: MultipleColorSemanticTokens { get }
     var chipColorBorderFocus: MultipleColorSemanticTokens { get }
 
     // MARK: - Spaces

@@ -4,6 +4,60 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.12.0...0.13.0) - 2025-04-11
+
+### Added
+
+- [Library] Raw and semantic tokens for color mode ([#599](https://github.com/Orange-OpenSource/ouds-ios/issues/599))
+- [DesignToolbox] Add demo screen of the OUDSColoredSurface component ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
+- [Library] Raw and semantic tokens for color mode ([#599](https://github.com/Orange-OpenSource/ouds-ios/issues/599))
+- [DesignToolbox] Add demo screen of the OUDSColoredSurface component ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
+- [Library] `Divider` component tokens (tokens library v0.9.0)
+- [Library] `dimension1250` raw token of dimension (tokens library v0.9.0)
+- [Library] Support of arabic language ([#552](https://github.com/Orange-OpenSource/ouds-ios/issues/552))
+- [DesignToolbox] Support of arabic language ([#552](https://github.com/Orange-OpenSource/ouds-ios/issues/552))
+
+### Changed
+
+- [Tool] Migration to Xcode 16.3 ([#580](https://github.com/Orange-OpenSource/ouds-ios/issues/580))
+- [Library] Update the OUDSColoredSurface to fix color available ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
+- [Library] Update the OUDSColoredSurface component to fix color available ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
+- [Tool] Migration to Xcode 16.3 ([#580](https://github.com/Orange-OpenSource/ouds-ios/issues/580))
+- [Library] Update the OUDSColoredSurface to fix color available ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
+- [Tool] Remove dead code and add `periphery` in CI/CD pipes
+- [Library] Tag component token (tokens library v0.11.0)
+- [Library] Chip component token (tokens library v0.11.0)
+- [Library] Color semantic tokens (tokens library v0.10.0)
+- [Library] Control item component tokens (tokens library v0.10.0)
+- [Library] New public API to use less color scheme to apply elevation and colors ([#146](https://github.com/Orange-OpenSource/ouds-ios/issues/146)) 
+- [Library] `BulletList` component tokens (tokens library v0.9.0)
+- [Library] `Chip` component tokens (tokens library v0.9.0)
+- [Library] Remove UI test cases on colored surface for radio button and checkbox ([#523](https://github.com/Orange-OpenSource/ouds-ios/issues/523)) 
+- [Library] Rafactor the interal interation state used by radio and checkbox components ([#560](https://github.com/Orange-OpenSource/ouds-ios/issues/560)) 
+- [Library] Font family, font weight semantic tokens (tokens library v0.8.0) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
+- [Library] Switch component tokens (tokens library v0.8.0) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
+- [Library] Color semantic tokens (tokens library v0.8.0) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
+- [Library] Control item component tokens (tokens library v0.8.0) ([#529](https://github.com/Orange-OpenSource/ouds-ios/issues/529))
+- [Tool] Change name of IPA file to upload to store portal
+
+### Removed
+
+- [Library] Chip component token `chipColorBorderEnabled` (tokens library v0.11.0)
+- [Library] Color semantic tokens `colorRepositoryOpacityBlackSoft{Light|Dark}` (tokens library v0.10.0)
+
+### Fixed
+
+- [Library] Font composite semantic token `typeLabelDefaultXLarge` ([#590](https://github.com/Orange-OpenSource/ouds-ios/issues/590))
+- [Library] Remove extra padding in `ControlItem` ([#572](https://github.com/Orange-OpenSource/ouds-ios/issues/572))
+- [Library] Adjust vertical alignment of text labels according to their height in ContolItem ([#550](https://github.com/Orange-OpenSource/ouds-ios/issues/550))
+- [Library] Add accessibility label to vocalize the IconOnly button style ([#460](https://github.com/Orange-OpenSource/ouds-ios/issues/460))
+- [Library] Chevron for link component pointing to bad direction in RTL mode ([#557](https://github.com/Orange-OpenSource/ouds-ios/issues/557))
+- [Library] Remove divider if outline effect is active in RadioItem component ([#564](https://github.com/Orange-OpenSource/ouds-ios/issues/564))
+- [DesignToolbox] In RTL mode code sample text not aligned on the left ([#554](https://github.com/Orange-OpenSource/ouds-ios/issues/554))
+- [DesignToolbox] Chevron for navigation link pointing to bad direction in RTL mode ([#553](https://github.com/Orange-OpenSource/ouds-ios/issues/553))
+- [DesignToolbox] Broken wording in radio button page
+- [DesignToolbox] Update Checkbox and Radio button assets on the screen of component list ([#519](https://github.com/Orange-OpenSource/ouds-ios/issues/519))
+
 ## [0.12.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.11.0...0.12.0) - 2025-03-20
 
 ### Added

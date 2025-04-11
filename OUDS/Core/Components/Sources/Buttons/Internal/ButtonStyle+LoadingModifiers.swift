@@ -25,7 +25,7 @@ struct ButtonLoadingContentModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.oudsOnColoredSurface) private var onColoredSurface
+    @Environment(\.oudsUseMonochrome) private var useMonochrome
 
     // MARK: Stored Properties
 
@@ -46,11 +46,11 @@ struct ButtonLoadingContentModifier: ViewModifier {
     private var colorToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            onColoredSurface ? theme.button.buttonColorContentDefaultLoadingMono : theme.button.buttonColorContentDefaultLoading
+            useMonochrome ? theme.button.buttonColorContentDefaultLoadingMono : theme.button.buttonColorContentDefaultLoading
         case .strong:
-            onColoredSurface ? theme.button.buttonColorContentStrongLoadingMono : theme.colors.colorContentOnActionLoading
+            useMonochrome ? theme.button.buttonColorContentStrongLoadingMono : theme.colors.colorContentOnActionLoading
         case .minimal:
-            onColoredSurface ? theme.button.buttonColorContentMinimalLoadingMono : theme.button.buttonColorContentMinimalLoading
+            useMonochrome ? theme.button.buttonColorContentMinimalLoadingMono : theme.button.buttonColorContentMinimalLoading
         case .negative:
             theme.colors.colorContentOnStatusEmphasizedAlt
         }

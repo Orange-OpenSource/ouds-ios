@@ -26,6 +26,15 @@ Have a look on the locks file to know which versions we are using (*Podfile*, *P
 
 If some tools are missing, pick the suitable command line below and check versions:
 ```bash
+# Get updated RubyGems
+gem update --system 3.6.7
+
+# Install bundler (at least 2.6.7)
+gem install bundler
+
+# Install rbenv (at least 1.3.2)
+brew install rbenv
+
 # Use Bundler to install a major part of dependencies (thanks to Gemfile and Gemfile.lock files)
 bundle install
 
@@ -35,7 +44,7 @@ bundle exec pod install --repo-update
 # Update your references
 brew update
 
-# For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.0)
+# For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.2)
 brew install peripheryapp/periphery/periphery
 
 # For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.18.1)
@@ -56,7 +65,7 @@ brew install xcodesorg/made/xcodes
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
-We use here _Ruby 3_ (>= 3.3).
+We use here _Ruby 3_ (>= 3.4).
 If you are not used to this tool:
 
 ```shell
@@ -64,7 +73,7 @@ If you are not used to this tool:
 rbenv install --list
 
 # Apply the expected x.y.z version of Ruby (if listed previously with the command above)
-rbenv global 3.3.5
+rbenv global 3.4.0
 
 # If you don't have the expected x.y.z version of Ruby, run:
 # >  brew update && brew upgrade ruby-build
@@ -76,9 +85,9 @@ rbenv global 3.3.5
 ruby --version
 ```
 
-We use also for our GitLab CI runners **Xcode 16.2**, we suggest you use this version or newer if you want.
+We use also for our GitLab CI runners **Xcode 16.3**, we suggest you use this version or newer if you want.
 
-**Xcode 16.2** and **Swift 6** are used for this project. You must use this configuration.
+**Xcode 16.3** and **Swift 6** are used for this project. You must use this configuration.
 
 ## Build Design System Toolbox
 

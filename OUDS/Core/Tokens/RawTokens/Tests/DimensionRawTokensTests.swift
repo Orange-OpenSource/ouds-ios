@@ -361,12 +361,26 @@ struct DimensionRawTokensTests {
     }
 
     @Test
-    func dimensionRawToken1200LessThan1400() throws {
-        #expect(DimensionRawTokens.dimension1200 < DimensionRawTokens.dimension1400)
+    func dimensionRawToken1200LessThan1250() throws {
+        #expect(DimensionRawTokens.dimension1200 < DimensionRawTokens.dimension1250)
     }
 
     @Test func dimensionRawToken1200MultipleOfBase() throws {
         TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1200, factor: DimensionRawTokens.dimensionBase)
+    }
+
+    @Test
+    func dimensionRawToken1250NotNegativeValue() throws {
+        #expect(DimensionRawTokens.dimension1250 >= 0)
+    }
+
+    @Test
+    func dimensionRawToken1250LessThan1400() throws {
+        #expect(DimensionRawTokens.dimension1250 < DimensionRawTokens.dimension1400)
+    }
+
+    @Test func dimensionRawToken1250MultipleOfBase() throws {
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension1250, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test

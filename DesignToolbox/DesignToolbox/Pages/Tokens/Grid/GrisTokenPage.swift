@@ -20,7 +20,6 @@ struct GridTokenPage: View {
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsHorizontalSizeClass) private var horizontalSizeClass
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
@@ -30,15 +29,15 @@ struct GridTokenPage: View {
                 Image(decorative: "il_tokens_grid_column_margin")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
+                    .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
                 Image(decorative: "il_tokens_grid_min_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
+                    .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
                 Image(decorative: "il_tokens_grid_max_width")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .background(theme.colors.colorSurfaceStatusNeutralMuted.color(for: colorScheme))
+                    .oudsBackground(theme.colors.colorSurfaceStatusNeutralMuted)
             }
 
             Section {

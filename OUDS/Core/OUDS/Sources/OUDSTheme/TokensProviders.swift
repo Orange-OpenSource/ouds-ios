@@ -28,6 +28,9 @@ public protocol AllBorderSemanticTokensProvider: TokensProvider, BorderSemanticT
 /// Something which provides all semantic tokens of colors
 public protocol AllColorSemanticTokensProvider: TokensProvider, ColorSemanticTokens, ColorMultipleSemanticTokens { }
 
+/// Something which provides all semantic tokens of colors modes
+public protocol AllColorModeSemanticTokensProvider: TokensProvider, ColorModeSemanticTokens, ColorModeMultipleSemanticTokens { }
+
 /// Something which provides all semantic tokens of elevation
 public protocol AllElevationSemanticTokensProvider: TokensProvider, ElevationSemanticTokens, ElevationCompositeSemanticTokens, ElevationMultipleSemanticTokens { }
 
@@ -48,11 +51,40 @@ public protocol AllSpaceSemanticTokensProvider: TokensProvider, SpaceSemanticTok
 
 // MARK: - Component tokens providers
 
+// Keep things alphabetically sorted
+
+/// Something which provides all component tokens of badge
+public protocol AllBadgeComponentTokensProvider: TokensProvider, BadgeComponentTokens { }
+
+/// Something which provides all component tokens of bullet list
+public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletListComponentTokens { }
+
 /// Something which provides all component tokens of button
 public protocol AllButtonComponentTokensProvider: TokensProvider, ButtonComponentTokens { }
 
+/// Something which provides all component tokens of checkboxes
+public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComponentTokens { }
+
+/// Something which provides all component tokens of chip
+public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTokens { }
+
+/// Something which provides all component tokens for control-item-layout-based components
+public protocol AllControlItemComponentTokensProvider: TokensProvider, ControlItemComponentTokens { }
+
+/// Something which provides all component tokens of diviers
+public protocol AllDividerComponentTokensProvider: TokensProvider, DividerComponentTokens { }
+
+/// Something which provides all component tokens of input text
+public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextComponentTokens { }
+
 /// Something which provides all component tokens of link
 public protocol AllLinkComponentTokensProvider: TokensProvider, LinkComponentTokens { }
+
+/// Something which provides all component tokens of list item
+public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens { }
+
+/// Something which provides all component tokens of radio buttons
+public protocol AllRadioButtonComponentTokensProvider: TokensProvider, RadioButtonComponentTokens { }
 
 /// Something which provides all component tokens of select
 public protocol AllSelectComponentTokensProvider: TokensProvider, SelectComponentTokens { }
@@ -60,34 +92,8 @@ public protocol AllSelectComponentTokensProvider: TokensProvider, SelectComponen
 /// Something which provides all component tokens of skeleton
 public protocol AllSkeletonComponentTokensProvider: TokensProvider, SkeletonComponentTokens { }
 
-/// Something which provides all component tokens of tag
-public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentTokens { }
-
 /// Something which provides all component tokens of switch / toggle
 public protocol AllSwitchComponentTokensProvider: TokensProvider, SwitchComponentTokens { }
 
-/// Something which provides all component tokens of list item
-public protocol AllListItemComponentTokensProvider: TokensProvider, ListItemComponentTokens { }
-
-/// Something which provides all component tokens of chip
-public protocol AllChipComponentTokensProvider: TokensProvider, ChipComponentTokens { }
-
-/// Something which provides all component tokens of bullet list
-public protocol AllBulletListComponentTokensProvider: TokensProvider, BulletListComponentTokens { }
-
-/// Something which provides all component tokens of input text
-public protocol AllInputTextComponentTokensProvider: TokensProvider, InputTextComponentTokens { }
-
-/// Something which provides all component tokens of badge
-public protocol AllBadgeComponentTokensProvider: TokensProvider, BadgeComponentTokens { }
-
-/// Something which provides all component tokens for control-item-layout-based components
-public protocol AllControlItemComponentTokensProvider: TokensProvider, ControlItemComponentTokens { }
-
-/// Something which provides all component tokens of checkboxes
-public protocol AllCheckboxComponentTokensProvider: TokensProvider, CheckboxComponentTokens { }
-
-/// Something which provides all component tokens of radio buttons
-public protocol AllRadioButtonComponentTokensProvider: TokensProvider, RadioButtonComponentTokens { }
-
-// NOTE: Add new definitions of protocols here
+/// Something which provides all component tokens of tag
+public protocol AllTagComponentTokensProvider: TokensProvider, TagComponentTokens { }

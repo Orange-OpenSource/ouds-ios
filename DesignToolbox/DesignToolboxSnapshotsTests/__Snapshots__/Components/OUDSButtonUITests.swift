@@ -158,17 +158,16 @@ private struct ButtonTest: View {
         case icon
     }
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-
     let layout: `Layout`
     let hierarchy: OUDSButton.Hierarchy
     let style: OUDSButton.Style
     let onColoredSurface: Bool
 
+    @Environment(\.theme) private var theme
+
     var body: some View {
         if onColoredSurface {
-            OUDSColoredSurface(color: theme.colors.colorSurfaceBrandPrimary.color(for: colorScheme), content: button)
+            OUDSColoredSurface(color: theme.colorModes.modeOnBrandPrimary, content: button)
         } else {
             button()
         }
@@ -181,7 +180,7 @@ private struct ButtonTest: View {
         case .textAndIcon:
             OUDSButton(icon: Image(decorative: "ic_heart"), text: "Button", hierarchy: hierarchy, style: style) {}
         case .icon:
-            OUDSButton(icon: Image(decorative: "ic_heart"), hierarchy: hierarchy, style: style) {}
+            OUDSButton(icon: Image(decorative: "ic_heart"), accessibilityLabel: "Icon", hierarchy: hierarchy, style: style) {}
         }
     }
 }
