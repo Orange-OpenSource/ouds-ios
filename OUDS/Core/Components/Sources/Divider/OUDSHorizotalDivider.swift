@@ -26,6 +26,12 @@ import SwiftUI
 ///     Text("Happy to see you")
 /// }
 /// ```
+///
+/// ## Design documentation
+///
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+///
+/// - Since: 0.14.0
 public struct OUDSHorizontalDivider: View {
 
     // - MARK: Stored properties
@@ -56,6 +62,8 @@ extension Divider {
     /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.borderDefault` by default
     ///
     /// **Remark: Horizontal means horizontal line (content separator in a VStack)**
+    /// 
+    /// - Since: 0.14.0
     @MainActor
     public func oudsHorizontalDivider(dividerColor: OUDSDividerColor = .borderDefault) -> some View {
         self.modifier(DividerModifier(dividerColor: dividerColor, orientation: .horizontal))

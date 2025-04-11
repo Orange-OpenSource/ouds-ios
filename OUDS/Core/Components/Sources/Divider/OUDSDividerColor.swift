@@ -17,6 +17,8 @@ import OUDSTokensSemantic
 // swiftlint:disable missing_docs
 
 /// List of colors available for dividers (i.e. `ÒUDSHorizontal` or `OUDSVerticalDivider`)
+///
+/// - Since: 0.14.0
 public enum OUDSDividerColor {
     case borderDefault
     case borderMuted
