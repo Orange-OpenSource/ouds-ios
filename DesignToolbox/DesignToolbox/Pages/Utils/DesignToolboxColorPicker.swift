@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSComponents
 import SwiftUI
 
 struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: View, SelectedColor: View {
@@ -35,7 +36,7 @@ struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: Vie
                 selectedColor()
 
                 if isExpanded {
-                    Divider()
+                    OUDSHorizontalDivider()
                 }
             }
         }

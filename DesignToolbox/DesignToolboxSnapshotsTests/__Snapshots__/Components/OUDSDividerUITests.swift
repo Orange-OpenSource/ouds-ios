@@ -110,3 +110,4 @@ final class OUDSDividerUITests: XCTestCase {
                            testName: testName)
     }
 }
+// swiftlint:enable required_deinit
