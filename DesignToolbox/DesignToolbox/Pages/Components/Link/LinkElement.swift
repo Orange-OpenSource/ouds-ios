@@ -19,8 +19,8 @@ struct LinkElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_link_label"
-        image = Image(decorative: "il_component_link").renderingMode(.original)
+        name = "app_components_link_label".localized()
+        image = Image(decorative: "il_components_link").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
                 name: name,
                 image: nil,
