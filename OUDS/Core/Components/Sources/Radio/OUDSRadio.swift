@@ -54,10 +54,10 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
 ///
 /// - Since: 0.12.0
-public struct OUDSRadio: View { // TODO: #266 - Update documentation hyperlink above
+public struct OUDSRadio: View {
 
     // MARK: - Properties
 

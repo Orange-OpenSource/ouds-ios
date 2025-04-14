@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.13.0...develop)
 
+### Added
+
+- [Library] Let control-item-based component flip the icons programatically or not ([#556](https://github.com/Orange-OpenSource/ouds-ios/issues/556))
+
 ### Changed
 
 - [DesignToolbox] Rename checkbox and radio button entries ([#584](https://github.com/Orange-OpenSource/ouds-ios/issues/584))

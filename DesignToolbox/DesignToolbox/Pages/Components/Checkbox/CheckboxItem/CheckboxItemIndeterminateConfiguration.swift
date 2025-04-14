@@ -40,6 +40,10 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
         didSet { updateCode() }
     }
 
+    @Published var flipIcon: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var isError: Bool {
         didSet { updateCode() }
     }
@@ -73,6 +77,7 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
         enabled = true
         helperText = true
         icon = true
+        flipIcon = false
         layoutOrientation = .default
         divider = false
         labelTextContent = String(localized: "app_components_checkbox_label_text")
@@ -87,7 +92,7 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItemIndeterminate(selection: $selection, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSCheckboxItemIndeterminate(selection: $selection, labelText: \"\(labelTextContent)\"\(helperTextPattern)\(iconPattern)\(flipIcon)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
         \(disableCode)
         """
     }
@@ -97,12 +102,16 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
         ".disable(\(enabled ? "false" : "true"))"
     }
 
-    private var helperTextPatern: String {
+    private var helperTextPattern: String {
         helperText ? ", helperText: \"\(helperTextContent)\")" : ""
     }
 
-    private var iconPatern: String {
-        icon ? ", icon: Image(decorative: \"ic_heart\")" : ""
+    private var iconPattern: String {
+        icon ? ", icon: Image(systemName: \"figure.handball\")" : ""
+    }
+
+    private var flipIconPattern: String {
+        flipIcon ? ", flipIcon: true" : ""
     }
 
     private var isInversedPattern: String {
@@ -117,7 +126,7 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
         isReadOnly ? ", isReadOnly: true" : ""
     }
 
-    private var dividerPatern: String {
+    private var dividerPattern: String {
         divider ? ", divider: true" : ""
     }
 }
@@ -163,6 +172,10 @@ struct CheckboxItemIndeterminateConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             Toggle("app_components_common_divider_label", isOn: $model.divider)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+
+            Toggle("app_components_common_flipIcon_label", isOn: $model.flipIcon)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 

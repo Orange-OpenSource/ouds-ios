@@ -78,6 +78,7 @@ private struct RadioItemDemo: View {
                       additionalLabelText: additionalLabelTextContent,
                       helperText: helperTextContent,
                       icon: icon,
+                      flipIcon: model.flipIcon,
                       isOutlined: model.outlined,
                       isInversed: model.layoutOrientation == .inverse,
                       isError: model.isError,
@@ -96,7 +97,10 @@ private struct RadioItemDemo: View {
         model.additionalLabelText ? model.additionalLabelTextContent : nil
     }
 
+    // Need here that system name, a11y managed in component
+    // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        model.icon ? Image(decorative: "ic_heart") : nil
+        model.icon ? Image(systemName: "figure.handball") : nil
     }
+    // swiftlint:enable accessibility_label_for_image
 }
