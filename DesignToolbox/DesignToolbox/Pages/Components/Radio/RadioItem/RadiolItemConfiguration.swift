@@ -104,7 +104,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSRadioItem(isOn: $isOn, label: "\(labelTextContent)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
+        OUDSRadioItem(isOn: $isOn, label: "\(labelTextContent)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
         \(disableCode)
         """
     }
@@ -134,8 +134,8 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         outlined ? ", isOutlined: true" : ""
     }
 
-    private var isInversedPattern: String {
-        layoutOrientation == .inverse ? ", isInversed: true" : ""
+    private var isReversedPattern: String {
+        layoutOrientation == .reversed ? ", isReversed: true" : ""
     }
 
     private var isErrorPattern: String {

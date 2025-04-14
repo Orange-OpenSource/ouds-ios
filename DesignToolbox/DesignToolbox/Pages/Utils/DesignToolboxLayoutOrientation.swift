@@ -14,14 +14,14 @@
 // ControlItem layout orientation is not accessible
 enum DesignToolboxLayoutOrientation: CaseIterable, CustomStringConvertible {
     case `default`
-    case inverse
+    case reversed
 
     // No l10n, tehchnical names
     var description: String {
         switch self {
         case .default:
             "Default"
-        case .inverse:
+        case .reversed:
             "Reversed"
         }
     }

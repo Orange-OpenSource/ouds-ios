@@ -78,7 +78,7 @@ private struct CheckboxItemIndeterminateDemo: View {
                                       helper: helperTextContent,
                                       icon: icon,
                                       flipIcon: model.flipIcon,
-                                      isInversed: model.layoutOrientation == .inverse,
+                                      isReversed: model.layoutOrientation == .reversed,
                                       isError: model.isError,
                                       isReadOnly: model.isReadOnly,
                                       hasDivider: model.divider)

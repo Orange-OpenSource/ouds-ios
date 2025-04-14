@@ -77,11 +77,11 @@ import SwiftUI
 ///     OUDSCheckboxItemIndeterminate(selection: $selection, label: "Bazinga!", helper: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, an helper text and an icon.
-///     // The inverse layout will be used here.
+///     // The reversed layout will be used here.
 ///     OUDSCheckboxItemIndeterminate(selection: $selection,
 ///                                   label: "We live in a fabled world",
 ///                                   helper: "Of dreaming boys and wide-eyed girls",
-///                                   isInversed: true,
+///                                   isReversed: true,
 ///                                   icon: Image(decorative: "ic_heart"))
 ///
 ///     // A leading checkbox with a label, but disabled.
@@ -138,7 +138,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isInversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isReversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
@@ -147,7 +147,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 helper: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
-                isInversed: Bool = false,
+                isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false) {
@@ -170,7 +170,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
             isError: isError,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
-            orientation: isInversed ? .inverse : .default)
+            orientation: isReversed ? .reversed : .default)
     }
 
     // MARK: Body

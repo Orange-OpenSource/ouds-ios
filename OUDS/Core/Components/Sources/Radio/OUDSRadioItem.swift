@@ -24,7 +24,7 @@ import SwiftUI
 /// The component can be rendered as two different layouts:
 ///
 /// - **default**: the component has a leading indicator, a label and optional helper texts, and an optional trailing decorative icon
-/// - **inverse**: like the *default* layout but with a trailing radio indicator and a leading optional decorative icon
+/// - **reversed**: like the *default* layout but with a trailing radio indicator and a leading optional decorative icon
 ///
 /// ## Indicator states
 ///
@@ -79,12 +79,12 @@ import SwiftUI
 ///     OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles", helper: "1967")
 ///
 ///     // A trailing radio with a label, an helper text, an icon, a divider and is about an error.
-///     // The inverse layout will be used here.
+///     // The reversed layout will be used here.
 ///     OUDSRadioItem(isOn: $selection,
 ///                   label: "Rescue from this world!",
 ///                   helper: "Put your hand in mine",
 ///                   icon: Image(decorative: "ic_heart"),
-///                   isInversed: true,
+///                   isReversed: true,
 ///                   isError: true,
 ///                   hasDivider: true)
 ///
@@ -138,7 +138,7 @@ public struct OUDSRadioItem: View {
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isOutlined: Flag to get an outlined radio, default set to `true`
-    ///   - isInversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
@@ -151,7 +151,7 @@ public struct OUDSRadioItem: View {
                 icon: Image? = nil,
                 flipIcon: Bool = false,
                 isOutlined: Bool = true,
-                isInversed: Bool = false,
+                isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false) {
@@ -179,7 +179,7 @@ public struct OUDSRadioItem: View {
             isError: isError,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
-            orientation: isInversed ? .inverse : .default)
+            orientation: isReversed ? .reversed : .default)
     }
 
     // MARK: Body
