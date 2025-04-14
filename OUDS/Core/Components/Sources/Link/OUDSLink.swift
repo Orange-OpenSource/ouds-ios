@@ -14,7 +14,7 @@
 import SwiftUI
 
 /// The ``OUDSLink`` proposes layout with text only or text with icon.
-/// It also proposes layout to navigate forward or backward. The link can be displayed in `small` or `medium` size.
+/// It also proposes layout to navigate forward or backward. The link can be displayed in `small` or `default` size.
 ///
 /// ## Text only or Text and icon layout
 ///
@@ -24,8 +24,8 @@ import SwiftUI
 ///     // Text only in small size
 ///     OUDSLink(text: "Feedback", size: .small) { /* the action to process */ }
 ///
-///     // Text and icon in medium size
-///     OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .medium) { /* the action to process */ }
+///     // Text and icon in default size
+///     OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .default) { /* the action to process */ }
 /// ```
 ///
 /// ## Navigation layout
@@ -36,8 +36,8 @@ import SwiftUI
 ///     // Navigate to next page with link in a small size
 ///     OUDSLink(text: "Feedback", arrow: .next, size: .small) { /* the action to process */ }
 ///
-///     // Navigate to previous page with link in a medium size
-///     OUDSLink(text: "Back", arrow: .back, size: .medium) { /* the action to process */ }
+///     // Navigate to previous page with link in a default size
+///     OUDSLink(text: "Back", arrow: .back, size: .default) { /* the action to process */ }
 /// ```
 ///
 /// ## Colored Surface
@@ -62,7 +62,7 @@ public struct OUDSLink: View {
 
     /// Represents the size of an `OUDSLink`.
     public enum Size {
-        case small, medium
+        case small, `default`
     }
 
     /// Represents the arrow of an `OUDSLink`.
@@ -85,7 +85,7 @@ public struct OUDSLink: View {
     ///   - icon: Icon displayed in the link
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
-    public init(text: String, icon: Image? = nil, size: Size = .medium, action: @escaping () -> Void) {
+    public init(text: String, icon: Image? = nil, size: Size = .default, action: @escaping () -> Void) {
         if let icon {
             layout = .iconAndText(icon)
         } else {
@@ -105,7 +105,7 @@ public struct OUDSLink: View {
     ///   When `OudsLink.Arrow.Next`, the arrow is displayed after the text
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
-    public init(text: String, arrow: Arrow, size: Size = .medium, action: @escaping () -> Void) {
+    public init(text: String, arrow: Arrow, size: Size = .default, action: @escaping () -> Void) {
         layout = .arrow(arrow)
         self.text = text
         self.size = size

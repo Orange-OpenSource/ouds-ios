@@ -32,7 +32,7 @@ struct LinkTextModifier: ViewModifier {
             switch size {
             case .small:
                 content.typeLabelStrongMedium(theme)
-            case .medium:
+            case .`default`:
                 content.typeLabelStrongLarge(theme)
             }
         }

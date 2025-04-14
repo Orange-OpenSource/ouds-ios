@@ -185,7 +185,7 @@ extension OUDSLink.Size: @retroactive CustomDebugStringConvertible {
         switch self {
         case .small:
             "Small"
-        case .medium:
+        case .`default`:
             "Medium"
         }
     }

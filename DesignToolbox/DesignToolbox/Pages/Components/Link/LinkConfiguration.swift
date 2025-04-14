@@ -46,7 +46,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
         enabled = true
         text = String(localized: "app_components_link_label")
         layout = .textOnly
-        size = .medium
+        size = .`default`
     }
 
     deinit { }
@@ -122,11 +122,11 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
 // MARK: Link size extension
 
 extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static let allCases: [OUDSLink.Size] = [.medium, .small]
+    nonisolated(unsafe) public static let allCases: [OUDSLink.Size] = [.`default`, .small]
 
     public var description: String {
         switch self {
-        case .medium:
+        case .`default`:
             "Medium"
         case .small:
             "Small"
