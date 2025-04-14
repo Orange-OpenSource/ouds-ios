@@ -92,7 +92,7 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItemIndeterminate(selection: $selection, labelText: \"\(labelTextContent)\"\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
+        OUDSCheckboxItemIndeterminate(selection: $selection, label: \"\(labelTextContent)\"\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
         \(disableCode)
         """
     }
@@ -103,7 +103,7 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
     }
 
     private var helperTextPattern: String {
-        helperText ? ", helperText: \"\(helperTextContent)\")" : ""
+        helperText ? ", helper: \"\(helperTextContent)\")" : ""
     }
 
     private var iconPattern: String {

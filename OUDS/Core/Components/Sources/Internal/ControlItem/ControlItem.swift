@@ -62,9 +62,9 @@ struct ControlItem: View {
     ///
     /// - Parameters:
     ///   - indicatorType: The type of indicator the `ContolItem` should display.
-    ///   - labelText: The main label text of the item.
-    ///   - additionalLabelText: An additional label text of the item.
-    ///   - helperText: An additonal helper text, should not be empty
+    ///   - label: The main label text of the item.
+    ///   - additionalLabel: An additional label text of the item.
+    ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Set to `true` to flip the icon, false otherwise
     ///   - isOutlined: If the component has lines around it like kind of borders (`true`)
@@ -75,9 +75,9 @@ struct ControlItem: View {
     ///
     /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     init(indicatorType: IndicatorType,
-         labelText: String,
-         helperText: String? = nil,
-         additionalLabelText: String? = nil,
+         label: String,
+         helper: String? = nil,
+         additionalLabel: String? = nil,
          icon: Image? = nil,
          flipIcon: Bool = false,
          isOutlined: Bool = false,
@@ -86,9 +86,9 @@ struct ControlItem: View {
          hasDivider: Bool = false,
          orientation: Self.Orientation = .default) {
         self.init(indicatorType: indicatorType,
-                  layoutData: .init(labelText: labelText,
-                                    additionalLabelText: additionalLabelText,
-                                    helperText: helperText,
+                  layoutData: .init(label: label,
+                                    additionalLabel: additionalLabel,
+                                    helper: helper,
                                     icon: icon,
                                     flipIcon: flipIcon,
                                     isOutlined: isOutlined,
