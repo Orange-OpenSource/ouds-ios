@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignToolbox] Name of layouts for control item components ([#588](https://github.com/Orange-OpenSource/ouds-ios/issues/588))
 - [DesignToolbox] Add illustration for link component in RTL mode checkbox and radio button entries ([#555](https://github.com/Orange-OpenSource/ouds-ios/issues/555))
 
 ## [0.13.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.12.0...0.13.0) - 2025-04-11

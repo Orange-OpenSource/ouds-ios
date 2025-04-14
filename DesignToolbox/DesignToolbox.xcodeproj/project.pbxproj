@@ -190,6 +190,8 @@
 		51952AA52D3FA3440068B807 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073543102CA154DE001187EA /* Card.swift */; };
 		51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
 		51B8D5A22DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */; };
+		51BBB81F2DADA2F0000F857C /* DesignToolboxLayoutOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BBB81E2DADA2F0000F857C /* DesignToolboxLayoutOrientation.swift */; };
+		51BBB8202DADA2F0000F857C /* DesignToolboxLayoutOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BBB81E2DADA2F0000F857C /* DesignToolboxLayoutOrientation.swift */; };
 		51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */ = {isa = PBXBuildFile; productRef = 51BC9DE62C6513F200EB2A11 /* OUDSFoundations */; };
 		51BD76212C466FCF0033365D /* AboutPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BD760B2C466FCF0033365D /* AboutPage.swift */; };
 		51BD76242C466FCF0033365D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51BD76122C466FCF0033365D /* Preview Assets.xcassets */; };
@@ -395,6 +397,7 @@
 		51B842BB2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_legal_information.html; sourceTree = "<group>"; };
 		51B842BC2D93FF45000382F8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ar; path = ar.lproj/about_privacy_policy.html; sourceTree = "<group>"; };
 		51B8D5A02DA7F5DF00A28BAC /* NamedColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorMode.swift; sourceTree = "<group>"; };
+		51BBB81E2DADA2F0000F857C /* DesignToolboxLayoutOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxLayoutOrientation.swift; sourceTree = "<group>"; };
 		51BD760B2C466FCF0033365D /* AboutPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPage.swift; sourceTree = "<group>"; };
 		51BD760F2C466FCF0033365D /* DesignToolboxElementsPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementsPage.swift; sourceTree = "<group>"; };
 		51BD76122C466FCF0033365D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -510,6 +513,7 @@
 				07AB45892D50CB9B0001D237 /* DesignToolboxTextField.swift */,
 				513442152D75B9E1000B5DE4 /* DesignToolboxBackgroundModifier.swift */,
 				07C54EC02DA7ABC8005E47D7 /* DesignToolboxDisclosureGroup.swift */,
+				51BBB81E2DADA2F0000F857C /* DesignToolboxLayoutOrientation.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1213,6 +1217,7 @@
 				51952A972D3FA32E0068B807 /* FontTokenElement.swift in Sources */,
 				0745C19A2D7A0823006B3A1F /* RaioItemElement.swift in Sources */,
 				0745C19B2D7A0823006B3A1F /* RadiolItemConfiguration.swift in Sources */,
+				51BBB81F2DADA2F0000F857C /* DesignToolboxLayoutOrientation.swift in Sources */,
 				0745C19C2D7A0823006B3A1F /* RadioItemPage.swift in Sources */,
 				51952A982D3FA32E0068B807 /* FontTokenPage.swift in Sources */,
 				07AB45872D4D08080001D237 /* DesignToolboxChoicePicker.swift in Sources */,
@@ -1378,6 +1383,7 @@
 				0745C1892D7A03B8006B3A1F /* RadioElements.swift in Sources */,
 				0765A6D62D09C5E2005DAB51 /* FontTokenElement.swift in Sources */,
 				0765A6D72D09C5E2005DAB51 /* NamedFont.swift in Sources */,
+				51BBB8202DADA2F0000F857C /* DesignToolboxLayoutOrientation.swift in Sources */,
 				0765A6D82D09C5E2005DAB51 /* FontTokenPage.swift in Sources */,
 				0765A6D92D09C5E2005DAB51 /* View+Illustration.swift in Sources */,
 				6DCC57E22CEB984D000F35F8 /* DesignToolboxCode.swift in Sources */,

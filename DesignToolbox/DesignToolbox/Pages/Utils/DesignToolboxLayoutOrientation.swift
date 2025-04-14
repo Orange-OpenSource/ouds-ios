@@ -11,22 +11,18 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import OUDSComponents
-
-// MARK: - OUDS Checkbox Indicator State extension
-
-extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {
-    nonisolated(unsafe) public static var allCases: [OUDSCheckboxIndicatorState] = [.selected, .unselected, .indeterminate]
+// ControlItem layout orientation is not accessible
+enum DesignToolboxLayoutOrientation: CaseIterable, CustomStringConvertible {
+    case `default`
+    case inverse
 
     // No l10n, tehchnical names
-    public var description: String {
+    var description: String {
         switch self {
-        case .selected:
-            "Selected"
-        case .unselected:
-            "Unselected"
-        case .indeterminate:
-            "Indeterminate"
+        case .default:
+            "Default"
+        case .inverse:
+            "Reversed"
         }
     }
 
