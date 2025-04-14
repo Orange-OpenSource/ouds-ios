@@ -717,7 +717,8 @@
             "value" : "Case à cocher enrichie"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_checkbox_description_text" : {
       "comment" : "Component - Checkbox",
@@ -797,23 +798,24 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "مؤشر فقط"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Indicator only"
+            "value" : "Checkbox"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Case à cocher seule"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_checkbox_label" : {
       "comment" : "Component - Checkbox",
@@ -917,23 +919,24 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "عنصر مربع الاختيار ثلاثي الحالات"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Three-states checkbox item"
+            "value" : "Indeterminate checkbox item"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Case à cocher avec 3 valeurs"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_checkbox_threeStates_indicatorOnly_label" : {
       "comment" : "Component - Checkbox",
@@ -941,23 +944,24 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "مربع الاختيار الخاص بثلاث حالات فقط"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Three-states checkbox only"
+            "value" : "Indeterminate checkbox"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Case à cocher seule avec 3 valeurs"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_checkbox_twoStates_controlItem_label" : {
       "comment" : "Component - Checkbox",
@@ -965,23 +969,24 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "عنصر مربع الاختيار الخاص بالحالتين"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Two-states checkbox item"
+            "value" : "Checkbox item"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Case à cocher avec 2 valeurs"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_checkbox_twoStates_indicatorOnly_label" : {
       "comment" : "Component - Checkbox",
@@ -989,23 +994,24 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "مربع الاختيار الخاص بالحالتين فقط"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Two-states checkbox only"
+            "value" : "Checkbox"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Case à cocher seule avec 2 valeurs"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_coloredSurface_color_label" : {
       "comment" : "Component - Colored Surface",
@@ -1701,7 +1707,8 @@
             "value" : "Bouton radio enrichi"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radio_description_text" : {
       "comment" : "Component - Radio",
@@ -1781,23 +1788,24 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "مؤشر فقط"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Indicator only"
+            "value" : "Radio button"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Bouton radio seul"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radio_label" : {
       "comment" : "Component - Radio",
