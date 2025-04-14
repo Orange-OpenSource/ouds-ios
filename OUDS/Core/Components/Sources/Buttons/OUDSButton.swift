@@ -22,7 +22,7 @@ import SwiftUI
 ///
 /// Four hierarchies are proposed for all layouts:
 ///
-/// - **default**: Default buttons are used for actions which are not mandatory or essential for the user.
+/// - **defaul (by default)t**: Default buttons are used for actions which are not mandatory or essential for the user.
 ///
 /// - **strong**: The Strong "call for action" on the page should be singular and prominent, limited to one per view.
 /// It should be reserved for the most critical action, such as "Next," "Save," "Submit," etc.
@@ -37,20 +37,27 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Icon only with default hierarchy
-///     OUDSButton(hierarchy: .default, icon: Image("ic_heart")) { /* the action to process */ }
+///     OUDSButton(icon: Image("ic_heart"), hierarchy: .default) { /* the action to process */ }
+///     // Or simpler
+///     OUDSButton(icon: Image("ic_heart")) { /* the action to process */ }
 ///
 ///     // Text only with negative hierarchy
-///     OUDSButton(hierarchy: .negative, text: "Delete") { /* the action to process */ }
+///     OUDSButton(text: "Delete", hierarchy: .negative,  style: .default) { /* the action to process */ }
+///     // Or simpler
+///     OUDSButton(text: "Delete", hierarchy: .negative) { /* the action to process */ }
+///
+///     // A loading button
+///     OUDSButton(text: "Delete", style: .loading) { /* the action to process */ }
 ///
 ///     // Text and icon with strong hierarchy
-///     OUDSButton(hierarchy: .strong, icon: Image("ic_heart"), text: "Validate") { /* the action to process */ }
+///     OUDSButton(icon: Image("ic_heart"), text: "Validate", hierarchy: .strong) { /* the action to process */ }
 /// ```
 ///
 /// ## Styles
 ///
 /// Two style are available:
 ///
-/// - **default**: used in the normal usage of button. The aspect of the button changes for following states disabled, pressed, hovered or normal (i.e. enabled)
+/// - **default (by default)**: used in the normal usage of button. The aspect of the button changes for following states disabled, pressed, hovered or normal (i.e. enabled)
 /// - **loading**: used after button was clicked and probably data are requested before navigate to a next screen or get updated data.
 ///
 /// ## Colored Surface
@@ -108,11 +115,11 @@ public struct OUDSButton: View {
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
-    ///    - text: The text to display in the button
-    ///    - hierarchy: The button hierarchy
+    ///    - text: The text to display in the button, default set to `.default`
+    ///    - hierarchy: The button hierarchy, default set to `.default`
     ///    - style: The button style
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, text: String, hierarchy: Hierarchy, style: Style, action: @escaping () -> Void) {
+    public init(icon: Image, text: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
         self.type = .textAndIcon(text: text, icon: icon)
         self.hierarchy = hierarchy
         self.style = style
@@ -124,10 +131,10 @@ public struct OUDSButton: View {
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
     ///    - accessibilityLabel: The text to vocalize with *Voice Over* describing the button action
-    ///    - hierarchy: The button hierarchy
-    ///    - style: The button style
+    ///    - hierarchy: The button hierarchy, default set to `.default`
+    ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
-    public init(icon: Image, accessibilityLabel: String, hierarchy: Hierarchy, style: Style, action: @escaping () -> Void) {
+    public init(icon: Image, accessibilityLabel: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
         self.type = .icon(icon, accessibilityLabel)
         self.hierarchy = hierarchy
         self.style = style
@@ -138,10 +145,10 @@ public struct OUDSButton: View {
     ///
     /// - Parameters:
     ///    - text: The text of the button to display
-    ///    - hierarchy: The button hierarchy
-    ///    - style: The button style
+    ///    - hierarchy: The button hierarchy, default set to `.default`
+    ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
-    public init(text: String, hierarchy: Hierarchy, style: Style, action: @escaping () -> Void) {
+    public init(text: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
         self.type = .text(text)
         self.hierarchy = hierarchy
         self.style = style
