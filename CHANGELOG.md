@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Tool] Update `fastlane` gem from v2.227.0 to v2.227.1
 - [Tool] Update `SwiftLint` pod from v0.58.2 to v0.59.0
 
+### Fixed
+
+- [DesignToolbox] Add illustration for link component in RTL mode checkbox and radio button entries ([#555](https://github.com/Orange-OpenSource/ouds-ios/issues/555))
+
 ## [0.13.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.12.0...0.13.0) - 2025-04-11
 
 ### Added
