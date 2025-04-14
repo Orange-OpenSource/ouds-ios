@@ -38,8 +38,10 @@ Any use or displaying shall constitute an infringement under intellectual proper
 
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button_dark.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_button.imageset/il_component_button.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_link.imageset/il_component_link_dark.svg
-./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_link.imageset/il_component_link.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_link.imageset/il_component_link_ltr_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_link.imageset/il_component_link_ltr.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_link.imageset/il_component_link_rtl_dark.svg
+./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_link.imageset/il_component_link_rtl.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_checkbox.imageset/il_component_checkbox_dark.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_checkbox.imageset/il_component_checkbox.svg
 ./DesignToolbox/DesignToolbox/Resources/Assets.xcassets/Components/il_component_radio.imageset/il_component_radio.svg
