@@ -1662,19 +1662,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تتيح أجهزة الراديو للمستخدمين اختيار خيار واحد من القائمة."
+            "value" : "تسمح أزرار الاختيار للمستخدمين بتحديد خيار واحد من القائمة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radios allow users to select one option from a list."
+            "value" : "Radio buttons allow users to select one option from a list."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les radios permettent aux utilisateurs de sélectionner une options dans une liste."
+            "value" : "Les boutons radio permettent aux utilisateurs de sélectionner une options dans une liste."
           }
         }
       }
@@ -1686,19 +1686,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عنصر الراديو"
+            "value" : "عنصر زر الاختيار"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radio item"
+            "value" : "Radio button item"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radio enrichi"
+            "value" : "Bouton radio enrichi"
           }
         }
       }
@@ -1716,13 +1716,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radios allows users to select an option from a list."
+            "value" : "Radio buttons allows users to select an option from a list."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les radio permettent aux utilisateurs de sélectionner une option dans une liste."
+            "value" : "Les boutons radio permettent aux utilisateurs de sélectionner une option dans une liste."
           }
         }
       }
@@ -1794,7 +1794,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radio seul"
+            "value" : "Bouton radio seul"
           }
         }
       }
@@ -1806,19 +1806,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "راديو"
+            "value" : "راديو بوتون"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radio"
+            "value" : "Radio button"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radio"
+            "value" : "Bouton radio"
           }
         }
       }
