@@ -79,10 +79,10 @@ private struct LinkDemo: View {
                 OUDSLink(text: model.text, size: model.size) {}
             case .iconAndText:
                 OUDSLink(text: model.text, icon: Image(decorative: "ic_heart"), size: model.size) {}
-            case .arrowBack:
-                OUDSLink(text: model.text, arrow: .back, size: model.size) {}
-            case .arrowNext:
-                OUDSLink(text: model.text, arrow: .next, size: model.size) {}
+            case .indicatorBack:
+                OUDSLink(text: model.text, indicator: .back, size: model.size) {}
+            case .indicatorNext:
+                OUDSLink(text: model.text, indicator: .next, size: model.size) {}
             }
 
             Spacer()

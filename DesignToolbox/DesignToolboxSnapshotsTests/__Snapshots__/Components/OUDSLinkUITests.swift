@@ -172,10 +172,10 @@ private struct LinkTest: View {
             OUDSLink(text: "Link", size: size) {}
         case .iconAndText:
             OUDSLink(text: "Link", icon: Image(decorative: "ic_heart"), size: size) {}
-        case .arrowNext:
-            OUDSLink(text: "Next", arrow: .next, size: size) {}
-        case .arrowBack:
-            OUDSLink(text: "Back", arrow: .back, size: size) {}
+        case .indicatorNext:
+            OUDSLink(text: "Next", indicator: .next, size: size) {}
+        case .indicatorBack:
+            OUDSLink(text: "Back", indicator: .back, size: size) {}
         }
     }
 }
@@ -198,10 +198,10 @@ extension LinkLayout: CustomDebugStringConvertible {
             "TextOnly"
         case .iconAndText:
             "IconAndText"
-        case .arrowBack:
-            "ArrowBack"
-        case .arrowNext:
-            "ArrowNext"
+        case .indicatorBack:
+            "IndicatorBack"
+        case .indicatorNext:
+            "IndicatorNext"
         }
     }
 }

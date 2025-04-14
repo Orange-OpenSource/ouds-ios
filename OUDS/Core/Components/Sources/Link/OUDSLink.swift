@@ -34,10 +34,10 @@ import SwiftUI
 ///
 /// ```swift
 ///     // Navigate to next page with link in a small size
-///     OUDSLink(text: "Feedback", arrow: .next, size: .small) { /* the action to process */ }
+///     OUDSLink(text: "Feedback", indicator: .next, size: .small) { /* the action to process */ }
 ///
 ///     // Navigate to previous page with link in a default size
-///     OUDSLink(text: "Back", arrow: .back, size: .default) { /* the action to process */ }
+///     OUDSLink(text: "Back", indicator: .back, size: .default) { /* the action to process */ }
 /// ```
 ///
 /// ## Colored Surface
@@ -65,13 +65,13 @@ public struct OUDSLink: View {
         case small, `default`
     }
 
-    /// Represents the arrow of an `OUDSLink`.
-    public enum Arrow {
+    /// Represents the arrow / chevron / indicator of an `OUDSLink`.
+    public enum Indicator {
         case back, next
     }
 
     enum Layout {
-        case arrow(OUDSLink.Arrow)
+        case indicator(OUDSLink.Indicator)
         case textOnly
         case iconAndText(Image)
     }
@@ -96,17 +96,17 @@ public struct OUDSLink: View {
         self.action = action
     }
 
-    /// Create a link with an `Arrow` before `OUDSLink.Arrow.back` or after `OUDSLink.Arrow.Next` the text.
+    /// Create a link with a "before `Indicator`" (`OUDSLink.Indicator.back`) or "after  indicator" (`OUDSLink.Indicator.next`) beside the text.
     ///
     /// - Parameters:
     ///   - text: Text displayed in the link
-    ///   - arrow: Arrow displayed in the link
-    ///   When `OUDSLink.Arrow.Back`, the arrow is displayed before the text
-    ///   When `OudsLink.Arrow.Next`, the arrow is displayed after the text
+    ///   - indicator: Indicator displayed in the link
+    ///   When `OUDSLink.Indicator.back`, the indicator is displayed before the text
+    ///   When `OudsLink.Indicator.next`, the indicator is displayed after the text
     ///   - size: Size of the link
     ///   - action: The action to perform when the user triggers the link
-    public init(text: String, arrow: Arrow, size: Size = .default, action: @escaping () -> Void) {
-        layout = .arrow(arrow)
+    public init(text: String, indicator: Indicator, size: Size = .default, action: @escaping () -> Void) {
+        layout = .indicator(indicator)
         self.text = text
         self.size = size
         self.action = action
@@ -117,7 +117,7 @@ public struct OUDSLink: View {
     public var body: some View {
         Button(action: action) {
             switch layout {
-            case .arrow:
+            case .indicator:
                 Label {
                     Text(LocalizedStringKey(text))
                 } icon: {

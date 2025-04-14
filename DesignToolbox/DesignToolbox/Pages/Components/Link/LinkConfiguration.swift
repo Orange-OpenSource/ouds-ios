@@ -77,17 +77,17 @@ final class LinkConfigurationModel: ComponentConfiguration {
           \(disableCode)
           \(coloredSurfaceCodeModifier)
           """
-        case .arrowNext:
+        case .indicatorNext:
             code =
             """
-          OUDSLink(text: \"Link\", arrow: .next, size: \(size.description.lowercased())) {}
+          OUDSLink(text: \"Link\", indicator: .next, size: \(size.description.lowercased())) {}
           \(disableCode)
           \(coloredSurfaceCodeModifier)
           """
-        case .arrowBack:
+        case .indicatorBack:
             code =
             """
-          OUDSLink(text: \"Link\", arrow: .back, size: \(size.description.lowercased())) {}
+          OUDSLink(text: \"Link\", indicator: .back, size: \(size.description.lowercased())) {}
           \(disableCode)
           \(coloredSurfaceCodeModifier)
           """
@@ -100,8 +100,8 @@ final class LinkConfigurationModel: ComponentConfiguration {
 enum LinkLayout: CaseIterable, CustomStringConvertible {
     case textOnly
     case iconAndText
-    case arrowBack
-    case arrowNext
+    case indicatorBack
+    case indicatorNext
 
     var description: String {
         switch self {
@@ -109,9 +109,9 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
             "app_components_common_textOnlyLayout_label"
         case .iconAndText:
             "app_components_common_iconAndTextLayout_label"
-        case .arrowBack:
+        case .indicatorBack:
             "app_components_link_arrowBack_label"
-        case .arrowNext:
+        case .indicatorNext:
             "app_components_link_arrowNext_label"
         }
     }

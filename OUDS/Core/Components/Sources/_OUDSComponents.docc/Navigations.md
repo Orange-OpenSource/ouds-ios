@@ -18,5 +18,5 @@ The link can be displayed in `small` or `medium` size.
     OUDSLink(text: "Feedback", icon: Image("ic_heart"), size: .medium) { /* the action to process */ }
 
     // Navigate to previous page with link in a medium size
-    OUDSLink(text: "Back", arrow: .back, size: .medium) { /* the action to process */ }
+    OUDSLink(text: "Back", indicator: .back, size: .medium) { /* the action to process */ }
 ```
