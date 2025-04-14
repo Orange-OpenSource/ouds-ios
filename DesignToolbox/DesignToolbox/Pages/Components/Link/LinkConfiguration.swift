@@ -127,7 +127,7 @@ extension OUDSLink.Size: @retroactive CaseIterable, @retroactive CustomStringCon
     public var description: String {
         switch self {
         case .`default`:
-            "Medium"
+            "Default"
         case .small:
             "Small"
         }
