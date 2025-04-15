@@ -19,7 +19,7 @@ struct OpacityTokenElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_tokens_opacity_label"
+        name = "app_tokens_opacity_label".localized()
         image = Image(decorative: "ic_filter_effects").renderingMode(.template)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

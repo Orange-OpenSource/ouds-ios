@@ -26,7 +26,7 @@ struct TokensPage: View {
     ]
 
     var body: some View {
-        DesignToolboxElementsPage(elements: tokenElements)
+        DesignToolboxElementsPage(elements: tokenElements.sorted(by: { $0.name < $1.name }))
             .oudsNavigationTitle("app_bottomBar_tokens_label")
     }
 }

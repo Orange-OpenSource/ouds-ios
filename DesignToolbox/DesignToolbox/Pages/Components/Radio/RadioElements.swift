@@ -27,7 +27,7 @@ struct RadioElements: DesignToolboxElement {
             RadioItemElement(),
         ]
 
-        name = "app_components_radio_label"
+        name = "app_components_radio_label".localized()
         image = Image(decorative: "il_component_radio").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
