@@ -98,7 +98,7 @@ struct InternalDisclosure<Label, Content>: View where Label: View, Content: View
                     isExpanded.toggle()
                 }
             } label: {
-                HStack(alignment: .center, spacing: 0) {
+                HStack(alignment: .top, spacing: 0) {
                     label()
                     Spacer()
                     Image("ic_chevron-up")

@@ -66,83 +66,29 @@ struct DividerConfiguration: View {
     @State private var isExpanded: Bool = false
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            DisclosureGroup(isExpanded: $isExpanded) {
-                VStack(alignment: .leading) {
-                    ForEach(OUDSDividerColor.allCases, id: \.id) { color in
-                        Button {
-                            model.selectedColor = color
-                        } label: {
-                            ColorEntry(color: colorToken(for: color), colorName: color.formattedName)
-                        }
-                    }
-                }
-            } label: {
-                VStack(alignment: .leading) {
-                    Text("app_components_coloredBackground_color_label")
-                        .typeHeadingMedium(theme)
-                        .oudsForegroundColor(theme.colors.colorContentDefault)
-
-                    ColorEntry(color: colorToken(for: model.selectedColor),
-                               colorName: model.selectedColor.formattedName)
-
-                    if isExpanded {
-                        OUDSHorizontalDivider()
-                    }
+        DesignToolboxColorPicker {
+            ForEach(OUDSDividerColor.allCases, id: \.id) { dividerColor in
+                Button {
+                    model.selectedColor = dividerColor
+                } label: {
+                    ColorEntry(dividerColor: dividerColor)
                 }
             }
-        }
-    }
-
-    private func colorToken(for color: OUDSDividerColor) -> MultipleColorSemanticTokens {
-        switch color {
-        case .borderDefault:
-            theme.colors.colorBorderDefault
-        case .borderMuted:
-            theme.colors.colorBorderMuted
-        case .borderEmphasized:
-            theme.colors.colorBorderEmphasized
-        case .borderBrandPrimary:
-            theme.colors.colorBorderBrandPrimary
-        case .borderBrandSecondary:
-            theme.colors.colorBorderBrandPrimary // TODO: Use token
-        case .borderBrandTertiary:
-            theme.colors.colorBorderBrandPrimary // TODO: Use token
-        case .borderOnBrandPrimary:
-            theme.colors.colorBorderOnBrandPrimary
-        case .borderOnBrandSecondary:
-            theme.colors.colorBorderOnBrandPrimary // TODO: Use token
-        case .borderOnBrandTertiary:
-            theme.colors.colorBorderOnBrandPrimary // TODO: Use token
-        case .alwaysBlack:
-            theme.colors.colorAlwaysBlack
-        case .alwaysWhite:
-            theme.colors.colorAlwaysWhite
-        case .alwaysOnBlack:
-            theme.colors.colorAlwaysOnBlack
-        case .alwaysOnWhite:
-            theme.colors.colorAlwaysOnWhite
+        } selectedColor: {
+            ColorEntry(dividerColor: model.selectedColor)
         }
     }
 }
 
 private struct ColorEntry: View {
 
-    let color: MultipleColorSemanticTokens
-    let colorName: String
-
+    let dividerColor: OUDSDividerColor
     @Environment(\.theme) private var theme
 
     var body: some View {
-        Label {
-            Text(colorName)
-                .oudsForegroundColor(theme.colors.colorContentDefault)
-        } icon: {
-            Rectangle()
-                .oudsBackground(color)
-                .frame(width: 30, height: 30, alignment: .leading)
+        DesignToolboxColorEntry(colorName: dividerColor.formattedName) {
+            Rectangle().oudsBackground(dividerColor.colorToken(in: theme))
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

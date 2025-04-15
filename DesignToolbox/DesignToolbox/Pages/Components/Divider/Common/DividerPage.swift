@@ -76,19 +76,18 @@ private struct DividerDemo: View {
             case .horizontal:
                 VStack(alignment: .center) {
                     Spacer()
-                    OUDSHorizontalDivider(color: model.selectedColor)
+                    OUDSHorizontalDivider(dividerColor: model.selectedColor)
                     Spacer()
                 }
-                .frame(height: 44)
             case .vertical:
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSVerticalDivider(color: model.selectedColor)
+                    OUDSVerticalDivider(dividerColor: model.selectedColor)
                     Spacer()
                 }
-                .frame(height: 44)
             }
         }
+        .frame(height: 44)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: false))
     }

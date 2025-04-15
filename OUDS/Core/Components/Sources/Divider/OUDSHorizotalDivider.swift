@@ -30,22 +30,22 @@ public struct OUDSHorizontalDivider: View {
 
     // - MARK: Stored properties
 
-    private let color: OUDSDividerColor
+    private let dividerColor: OUDSDividerColor
 
     // - MARK: Initializer
 
     /// Create a horizontal colored divider.
     ///
     /// - Parameters:
-    ///     - color: The color of the divider, `OUDSDivider.Color.borderDefault` by default
-    public init(color: OUDSDividerColor = .borderDefault) {
-        self.color = color
+    ///     - dividerColor: The color of the divider, `OUDSDividerColor.borderDefault` by default
+    public init(dividerColor: OUDSDividerColor = .borderDefault) {
+        self.dividerColor = dividerColor
     }
 
     // - MARK: Body
 
     public var body: some View {
-        Divider().oudsHorizontalDivider(color: color)
+        Divider().oudsHorizontalDivider(dividerColor: dividerColor)
     }
 }
 
@@ -53,11 +53,11 @@ extension Divider {
     /// Set the color to the horizontal divider and adjust the thickness (height)
     /// automatically according to token value.
     ///
-    /// - Parameter color: the color of the divider, `OUDSDividerColor.borderDefault` by default
+    /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.borderDefault` by default
     ///
     /// **Remark: Horizontal means horizontal line (content separator in a VStack)**
     @MainActor
-    public func oudsHorizontalDivider(color: OUDSDividerColor = .borderDefault) -> some View {
-        self.modifier(DividerModifier(color: color, orientation: .horizontal))
+    public func oudsHorizontalDivider(dividerColor: OUDSDividerColor = .borderDefault) -> some View {
+        self.modifier(DividerModifier(dividerColor: dividerColor, orientation: .horizontal))
     }
 }

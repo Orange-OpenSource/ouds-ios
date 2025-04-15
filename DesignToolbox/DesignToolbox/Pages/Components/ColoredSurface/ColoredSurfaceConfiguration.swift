@@ -60,28 +60,16 @@ struct ColoredSurfaceConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        DesignToolboxDisclosureGroup(isExpanded: $isExpanded, accessibilityLabel: "app_components_coloredSurface_color_label_a11y") {
-            VStack(alignment: .leading) {
-                ForEach(NamedColorMode.allCases, id: \.id) { color in
-                    Button {
-                        model.selectedColor = color
-                    } label: {
-                        ColorEntry(color: color)
-                    }
+        DesignToolboxColorPicker {
+            ForEach(NamedColorMode.allCases, id: \.id) { color in
+                Button {
+                    model.selectedColor = color
+                } label: {
+                    ColorEntry(color: color)
                 }
             }
-        } label: {
-            VStack(alignment: .leading) {
-                Text("app_components_coloredSurface_color_label")
-                    .typeHeadingMedium(theme)
-                    .oudsForegroundColor(theme.colors.colorContentDefault)
-
-                ColorEntry(color: model.selectedColor)
-
-                if isExpanded {
-                    Divider()
-                }
-            }
+        } selectedColor: {
+            ColorEntry(color: model.selectedColor)
         }
     }
 }
@@ -92,16 +80,11 @@ private struct ColorEntry: View {
     let color: NamedColorMode
 
     var body: some View {
-        Label {
-            Text(color.formattedName)
-                .oudsForegroundColor(theme.colors.colorContentDefault)
-        } icon: {
+        DesignToolboxColorEntry(colorName: color.formattedName) {
             OUDSColoredSurface(color: color.toSurfaceColor(from: theme)) {
                 Rectangle()
                     .fill(Color.clear)
-                    .frame(width: 30, height: 30, alignment: .leading)
             }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

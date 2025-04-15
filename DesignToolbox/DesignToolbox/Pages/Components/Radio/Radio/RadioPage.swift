@@ -82,6 +82,6 @@ private struct RadioDemo: View {
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .designToolboxBackground(onColoredSurface: false)
+        .designToolboxColoredSurface(false)
     }
 }

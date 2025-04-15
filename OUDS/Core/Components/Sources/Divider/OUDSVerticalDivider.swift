@@ -30,24 +30,24 @@ public struct OUDSVerticalDivider: View {
 
     // - MARK: Stored properties
 
-    private let color: OUDSDividerColor
+    private let dividerColor: OUDSDividerColor
 
     // - MARK: Initializer
 
     /// Create a vertical colored divider.
     ///
     /// - Parameters:
-    ///     - color: The color of the divider, `OUDSDivider.Color.borderDefault` by default
+    ///     - dividerColor: The color of the divider, `OUDSDivider.Color.borderDefault` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
-    public init(color: OUDSDividerColor = .borderDefault) {
-        self.color = color
+    public init(dividerColor: OUDSDividerColor = .borderDefault) {
+        self.dividerColor = dividerColor
     }
 
     // - MARK: Body
 
     public var body: some View {
-        Divider().oudsVerticalDivider(color: color)
+        Divider().oudsVerticalDivider(dividerColor: dividerColor)
     }
 }
 
@@ -55,11 +55,11 @@ extension Divider {
     /// Set the color to the vertical divider and adjust the thickness (width)
     /// automatically according to token value.
     ///
-    /// - Parameter color: the color of the divider, `OUDSDividerColor.borderDefault` by default
+    /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.borderDefault` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
     @MainActor
-    public func oudsVerticalDivider(color: OUDSDividerColor) -> some View {
-        self.modifier(DividerModifier(color: color, orientation: .vertical))
+    public func oudsVerticalDivider(dividerColor: OUDSDividerColor) -> some View {
+        self.modifier(DividerModifier(dividerColor: dividerColor, orientation: .vertical))
     }
 }

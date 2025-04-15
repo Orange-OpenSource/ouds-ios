@@ -1013,9 +1013,6 @@
       },
       "shouldTranslate" : false
     },
-    "app_components_coloredBackground_color_label" : {
-
-    },
     "app_components_coloredSurface_color_label" : {
       "comment" : "Component - Colored Surface",
       "extractionState" : "manual",

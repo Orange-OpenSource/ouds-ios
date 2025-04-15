@@ -11,7 +11,8 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import Foundation
+import OUDS
+import OUDSTokensSemantic
 
 // swiftlint:disable missing_docs
 
@@ -30,5 +31,39 @@ public enum OUDSDividerColor {
     case alwaysWhite
     case alwaysOnBlack
     case alwaysOnWhite
+    // swiftlint:enable missing_docs
+
+    /// Provides the color sementic token in theme associated to the divider color
+    ///
+    /// - Parameter theme: The theme that defines the token color
+    public func colorToken(in theme: OUDSTheme) -> MultipleColorSemanticTokens {
+        switch self {
+        case .borderDefault:
+            theme.colors.colorBorderDefault
+        case .borderMuted:
+            theme.colors.colorBorderMuted
+        case .borderEmphasized:
+            theme.colors.colorBorderEmphasized
+        case .borderBrandPrimary:
+            theme.colors.colorBorderBrandPrimary
+        case .borderBrandSecondary:
+            theme.colors.colorBorderBrandPrimary // TODO:
+        case .borderBrandTertiary:
+            theme.colors.colorBorderBrandPrimary // TODO:
+        case .borderOnBrandPrimary:
+            theme.colors.colorBorderOnBrandPrimary
+        case .borderOnBrandSecondary:
+            theme.colors.colorBorderOnBrandPrimary // TODO:
+        case .borderOnBrandTertiary:
+            theme.colors.colorBorderOnBrandPrimary // TODO:
+        case .alwaysBlack:
+            theme.colors.colorAlwaysBlack
+        case .alwaysWhite:
+            theme.colors.colorAlwaysWhite
+        case .alwaysOnBlack:
+            theme.colors.colorAlwaysOnBlack
+        case .alwaysOnWhite:
+            theme.colors.colorAlwaysOnWhite
+        }
+    }
 }
-// swiftlint:enable missing_docs

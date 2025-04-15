@@ -27,7 +27,7 @@ struct DividerModifier: ViewModifier {
 
     // - MARK: Stored properties
 
-    let color: OUDSDividerColor
+    let dividerColor: OUDSDividerColor
     let orientation: Orientation
 
     @Environment(\.theme) private var theme
@@ -38,7 +38,7 @@ struct DividerModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .frame(width: width, height: height)
-            .overlay(colorToken.color(for: colorScheme))
+            .overlay(dividerColor.colorToken(in: theme).color(for: colorScheme))
     }
 
     // - MARK: Private helper
@@ -58,37 +58,6 @@ struct DividerModifier: ViewModifier {
             return nil
         case .vertical:
             return theme.divider.dividerBorderWidth
-        }
-    }
-
-    private var colorToken: MultipleColorSemanticTokens {
-        switch color {
-        case .borderDefault:
-            theme.colors.colorBorderDefault
-        case .borderMuted:
-            theme.colors.colorBorderMuted
-        case .borderEmphasized:
-            theme.colors.colorBorderEmphasized
-        case .borderBrandPrimary:
-            theme.colors.colorBorderBrandPrimary
-        case .borderBrandSecondary:
-            theme.colors.colorBorderBrandPrimary // TODO:
-        case .borderBrandTertiary:
-            theme.colors.colorBorderBrandPrimary // TODO:
-        case .borderOnBrandPrimary:
-            theme.colors.colorBorderOnBrandPrimary
-        case .borderOnBrandSecondary:
-            theme.colors.colorBorderOnBrandPrimary // TODO:
-        case .borderOnBrandTertiary:
-            theme.colors.colorBorderOnBrandPrimary // TODO:
-        case .alwaysBlack:
-            theme.colors.colorAlwaysBlack
-        case .alwaysWhite:
-            theme.colors.colorAlwaysWhite
-        case .alwaysOnBlack:
-            theme.colors.colorAlwaysOnBlack
-        case .alwaysOnWhite:
-            theme.colors.colorAlwaysOnWhite
         }
     }
 }
