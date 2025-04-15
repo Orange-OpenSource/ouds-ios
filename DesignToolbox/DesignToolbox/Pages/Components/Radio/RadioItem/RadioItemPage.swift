@@ -59,34 +59,12 @@ private struct RadioItemIllustration: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            OUDSRadioPicker(selection: $selection, radios: populate())
-//            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-//            RadioItemDemo(model: model)
-//            RadioItemDemo(model: model)
-//                .colorScheme(colorScheme == .dark ? .light : .dark)
+            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+            RadioItemDemo(model: model)
+            RadioItemDemo(model: model)
+                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
-
-    // swiftlint:disable accessibility_label_for_image
-    private func populate() -> [OUDSRadioPickerData<String>] {
-        [
-            OUDSRadioPickerData<String>(tag: "Kebab_du_chef",
-                                        label: "Kebab du chef",
-                                        additionalLabel: "Spécialité de la maison",
-                                        helper: "Attention ça pique",
-                                        icon: Image(systemName: "flame")),
-
-            OUDSRadioPickerData<String>(tag: "Chien_chaud",
-                                        label: "Hot dog",
-                                        helper: "Pas de chien que du végétal",
-                                        icon: Image(systemName: "dog.fill")),
-
-            OUDSRadioPickerData<String>(tag: "Beverage",
-                                        label: "Boisson",
-                                        icon: Image(systemName: "waterbottle.fill")),
-        ]
-    }
-    // swiftlint:enable accessibility_label_for_image
 }
 
 // MARK: - Radio Item Demo

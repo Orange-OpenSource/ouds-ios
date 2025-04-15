@@ -119,6 +119,7 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable { // TODO: #266 - Upd
 
     // MARK: - Properties
 
+    // NOTE: Do not forget to kee updated OUDSRadioPickerData
     @Binding private var isOn: Bool
     private let layoutData: ControlItemLabel.LayoutData
     private let tag: Tag?
