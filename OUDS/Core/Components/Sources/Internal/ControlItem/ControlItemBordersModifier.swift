@@ -41,12 +41,12 @@ struct ControlItemBordersModifier: ViewModifier {
                             color: borderColor)
         } else {
             if layoutData.hasDivider {
-                content
-            } else {
                 VStack(spacing: 0) {
                     content
                     OUDSHorizontalDivider()
                 }
+            } else {
+                content
             }
         }
     }
