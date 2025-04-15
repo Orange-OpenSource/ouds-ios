@@ -115,12 +115,14 @@ import SwiftUI
 /// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
 ///
 /// - Since: 0.12.0
-public struct OUDSRadioItem: View {
+public struct OUDSRadioItem<Tag>: View where Tag: Hashable { // TODO: #266 - Update documentation hyperlink above
 
     // MARK: - Properties
 
     @Binding private var isOn: Bool
     private let layoutData: ControlItemLabel.LayoutData
+    private let tag: Tag?
+    private let action: (() -> Void)?
 
     @Environment(\.isEnabled) private var isEnabled
 
@@ -142,7 +144,8 @@ public struct OUDSRadioItem: View {
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    ///
+    ///   - tag: A tag, i.e. a supposed to be unique identifier to discriminate this radio button from others in a group. Useless without ``OUDSRadioPicker``integration.
+    ///   - action: An additional action to trigger when the radio button has been pressed
     /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     public init(isOn: Binding<Bool>,
                 label: String,
@@ -154,7 +157,9 @@ public struct OUDSRadioItem: View {
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false) {
+                hasDivider: Bool = false,
+                tag: Tag? = nil,
+                action: (() -> Void)? = nil) {
         if isError && isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
         }
@@ -168,7 +173,6 @@ public struct OUDSRadioItem: View {
         }
 
         _isOn = isOn
-
         self.layoutData = .init(
             label: label,
             additionalLabel: additionalLabel,
@@ -180,12 +184,14 @@ public struct OUDSRadioItem: View {
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             orientation: isReversed ? .reversed : .default)
+        self.tag = tag
+        self.action = action
     }
 
     // MARK: Body
 
     public var body: some View {
-        ControlItem(indicatorType: .radioButton($isOn), layoutData: layoutData)
+        ControlItem(indicatorType: .radioButton($isOn), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(a11yLabel)
             .accessibilityValue(a11yValue.localized())

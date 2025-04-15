@@ -53,16 +53,40 @@ struct RadioItemPage: View {
 private struct RadioItemIllustration: View {
 
     let model: RadioItemConfigurationModel
+
+    @State private var selection: String = "Kebab_du_ssssschef"
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .center) {
-            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
-            RadioItemDemo(model: model)
-            RadioItemDemo(model: model)
-                .colorScheme(colorScheme == .dark ? .light : .dark)
+            OUDSRadioPicker(selection: $selection, radios: populate())
+//            // TODO: Build a modifier to inverse colorscheme or force to a colorscheme
+//            RadioItemDemo(model: model)
+//            RadioItemDemo(model: model)
+//                .colorScheme(colorScheme == .dark ? .light : .dark)
         }
     }
+
+    // swiftlint:disable accessibility_label_for_image
+    private func populate() -> [OUDSRadioPickerData<String>] {
+        [
+            OUDSRadioPickerData<String>(tag: "Kebab_du_chef",
+                                        label: "Kebab du chef",
+                                        additionalLabel: "Spécialité de la maison",
+                                        helper: "Attention ça pique",
+                                        icon: Image(systemName: "flame")),
+
+            OUDSRadioPickerData<String>(tag: "Chien_chaud",
+                                        label: "Hot dog",
+                                        helper: "Pas de chien que du végétal",
+                                        icon: Image(systemName: "dog.fill")),
+
+            OUDSRadioPickerData<String>(tag: "Beverage",
+                                        label: "Boisson",
+                                        icon: Image(systemName: "waterbottle.fill")),
+        ]
+    }
+    // swiftlint:enable accessibility_label_for_image
 }
 
 // MARK: - Radio Item Demo
@@ -73,17 +97,16 @@ private struct RadioItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSRadioItem(isOn: $model.selection,
-                      label: model.labelTextContent,
-                      additionalLabel: additionalLabelTextContent,
-                      helper: helperTextContent,
-                      icon: icon,
-                      flipIcon: model.flipIcon,
-                      isOutlined: model.outlined,
-                      isReversed: model.layoutOrientation == .reversed,
-                      isError: model.isError,
-                      isReadOnly: model.isReadOnly,
-                      hasDivider: model.divider)
+        OUDSRadioItem<String>(isOn: $model.selection,
+                              labelText: model.labelTextContent,
+                              additionalLabelText: additionalLabelTextContent,
+                              helperText: helperTextContent,
+                              icon: icon,
+                              isOutlined: model.outlined,
+                              isInversed: model.layoutOrientation == .inverse,
+                              isError: model.isError,
+                              isReadOnly: model.isReadOnly,
+                              hasDivider: model.divider)
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .designToolboxBackground(onColoredSurface: false)
