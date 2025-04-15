@@ -43,9 +43,9 @@ struct LinkButtonStyle: ButtonStyle {
         let interactionState = InteractionState(isEnabled: isEnabled, isHover: isHover, isPressed: configuration.isPressed)
         Group {
             switch layout {
-            case .arrow(let arrow):
+            case .indicator(let indicator):
                 configuration.label
-                    .labelStyle(LinkArrowLabelStyle(interactionState: interactionState, size: size, arrow: arrow))
+                    .labelStyle(LinkIndicatorLabelStyle(interactionState: interactionState, size: size, indicator: indicator))
             case .textOnly:
                 configuration.label
                     .labelStyle(LinkIconAndTextLabelStyle(interactionState: interactionState, size: size, layout: layout))
@@ -73,32 +73,32 @@ struct LinkButtonStyle: ButtonStyle {
     }
 }
 
-// MARK: - Link Arrow Label Style
+// MARK: - Link Indicator Label Style
 
-private struct LinkArrowLabelStyle: LabelStyle {
+private struct LinkIndicatorLabelStyle: LabelStyle {
 
     @Environment(\.theme) private var theme
 
     let interactionState: InteractionState
     let size: OUDSLink.Size
-    let arrow: OUDSLink.Arrow
+    let indicator: OUDSLink.Indicator
 
     func makeBody(configuration: Configuration) -> some View {
         HStack(alignment: alignment, spacing: spacing) {
-            if arrow == .back {
+            if indicator == .back {
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
-                    .modifier(LinkColorArrowModifier(interactionState: interactionState))
+                    .modifier(LinkColorIndicatorModifier(interactionState: interactionState))
             }
 
             configuration.title
-                .modifier(LinkTextModifier(interactionState: interactionState, size: size, layout: .arrow(arrow)))
+                .modifier(LinkTextModifier(interactionState: interactionState, size: size, layout: .indicator(indicator)))
                 .modifier(LinkColorContentModifier(interactionState: interactionState))
 
-            if arrow == .next {
+            if indicator == .next {
                 configuration.icon
                     .modifier(LinkSizeIconModifier(size: size))
-                    .modifier(LinkColorArrowModifier(interactionState: interactionState))
+                    .modifier(LinkColorIndicatorModifier(interactionState: interactionState))
                     .rotationEffect(.degrees(180))
             }
         }
@@ -109,7 +109,7 @@ private struct LinkArrowLabelStyle: LabelStyle {
     }
 
     private var alignment: VerticalAlignment {
-        arrow == .back ? .center : .bottom
+        indicator == .back ? .center : .bottom
     }
 }
 

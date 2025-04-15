@@ -40,12 +40,12 @@ It can be be sued for two-states or three-states management.
                                   helperText: "from Outer Space II")
 
     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
-    // with an inverse layout, and exposing only two states through isOn binding
+    // with a reversed layout, and exposing only two states through isOn binding
     OUDSCheckboxItem(isOn: $isOn,
                      labelText: "We live in a fabled world",
                      helperText: "Of dreaming boys and wide-eyed girls",
                      icon: Image(decorative: "ic_heart"),
-                     isInversed: true,
+                     isReversed: true,
                      isError: true,
                      hasDivider: true)
 ```
@@ -74,13 +74,13 @@ The indicator can be leading or trailing.
      OUDSRadioItem(isOn: $selection, label: "Lucy in the Sky with Diamonds")
 
      // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an
-     // error with an inverse layout
+     // error with a reversed layout
      OUDSRadioItem(isOn: $selection,
                    labelText: "Lucy in the Sky with Diamonds",
                    additionalLabelText: "The Beatles"
                    helperText: "1967",
                    icon: Image(decorative: "ic_heart"),
-                   isInversed: true,
+                   isReversed: true,
                    isError: true,
                    hasDivider: true)
 ```

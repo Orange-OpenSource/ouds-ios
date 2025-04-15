@@ -41,7 +41,7 @@ struct ControlItem: View {
         /// Indicator in leading position, icon in trailing position, like LTR mode.
         case `default`
         /// Icon in leading position, indicator in trailing position, like RTL mode
-        case inverse
+        case reversed
     }
 
     // MARK: Initializers
@@ -49,8 +49,8 @@ struct ControlItem: View {
     /// Creates a control item with the layout data model
     ///
     /// - Parameters:
-    ///     - indicatorType: The type of indicator set in the control item
-    ///     - layoutData: The data of the layout
+    ///    - indicatorType: The type of indicator set in the control item
+    ///    - layoutData: The data of the layout
     ///
     /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     init(indicatorType: IndicatorType, layoutData: ControlItemLabel.LayoutData) {
@@ -62,22 +62,22 @@ struct ControlItem: View {
     ///
     /// - Parameters:
     ///   - indicatorType: The type of indicator the `ContolItem` should display.
-    ///   - labelText: The main label text of the item.
-    ///   - additionalLabelText: An additional label text of the item.
-    ///   - helperText: An additonal helper text, should not be empty
+    ///   - label: The main label text of the item.
+    ///   - additionalLabel: An additional label text of the item.
+    ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Set to `true` to flip the icon, false otherwise
     ///   - isOutlined: If the component has lines around it like kind of borders (`true`)
     ///   - isOnError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: `true` if component is in read only mode, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    ///   - orientation: Specify the orientation of the layout. If `default` the indicator is at the leading position, if `inverse` it is on trailing.
+    ///   - orientation: Specify the orientation of the layout. If `default` the indicator is at the leading position, if `reversed` it is on trailing.
     ///
     /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
     init(indicatorType: IndicatorType,
-         labelText: String,
-         helperText: String? = nil,
-         additionalLabelText: String? = nil,
+         label: String,
+         helper: String? = nil,
+         additionalLabel: String? = nil,
          icon: Image? = nil,
          flipIcon: Bool = false,
          isOutlined: Bool = false,
@@ -86,9 +86,9 @@ struct ControlItem: View {
          hasDivider: Bool = false,
          orientation: Self.Orientation = .default) {
         self.init(indicatorType: indicatorType,
-                  layoutData: .init(labelText: labelText,
-                                    additionalLabelText: additionalLabelText,
-                                    helperText: helperText,
+                  layoutData: .init(label: label,
+                                    additionalLabel: additionalLabel,
+                                    helper: helper,
                                     icon: icon,
                                     flipIcon: flipIcon,
                                     isOutlined: isOutlined,
