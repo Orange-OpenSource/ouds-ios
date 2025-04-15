@@ -41,6 +41,12 @@ import SwiftUI
 /// In addition, the ``OUDSCheckboxItem`` can be in read only mode, i.e. the user cannot interact with the component yet but this component must not be considered
 /// as disabled.
 ///
+/// The component does not follow the right-to-left (RTL) / left-to-right (LTR) mode returned by the system as it could have some meaning
+/// to have for example the indicator in trailing position for LTR mode and vice versa.
+/// However, if the component has an icon in leading position (RTL mode) or in trailing position (LTR), the content of the icon is never changed.
+/// It could lead to a loss of meaning or semantics in the icon. Thus a specific flag can be used to flip the icon content whatever the layout direction is.
+/// It prevents the user do implement its own rules to flip or not image.
+///
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom checkbox trait.
@@ -77,16 +83,6 @@ import SwiftUI
 ///                      isInversed: true,
 ///                      icon: Image(decorative: "ic_heart"))
 ///
-///     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error.
-///     // The inverse layout will be used here.
-///     OUDSCheckboxItem(isOn: $isOn,
-///                      labelText: "Rescue from this world!",
-///                      helperText: "Put your hand in mine",
-///                      icon: Image(decorative: "ic_heart"),
-///                      isInversed: true,
-///                      isError: true,
-///                      divider: true)
-///
 ///     // A leading checkbox with a label, but disabled.
 ///     // The default layout will be used here.
 ///     OUDSCheckboxItem(isOn: $isOn, labelText: "Hello world")
@@ -96,6 +92,17 @@ import SwiftUI
 ///     // This is forbidden by design!
 ///     OUDSCheckboxItem(isOn: $isOn, labelText: "Hello world", isError: true).disabled(true) // fatal error
 ///     OUDSCheckboxItem(isOn: $isOn, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
+/// ```
+///
+/// If you want to manage the RTL mode quite easily and switch your layouts (flip image, indicator in RTL leading i.e. in the right):
+/// ```swift
+///     @Environment(\.layoutDirection) var layoutDirection
+///
+///     OUDSCheckboxItem(isOn: $selection,
+///                      labelText: "Cocorico !",
+///                      icon: Image(systemName: "figure.handball"),
+///                      flipIcon: layoutDirection == .rightToLeft,
+///                      isInversed: layoutDirection == .rightToLeft)
 /// ```
 ///
 /// ## Design documentation
@@ -123,6 +130,7 @@ public struct OUDSCheckboxItem: View {
     ///   - labelText: The main label text of the checkbox.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
+    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
     ///   - isInversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
@@ -131,6 +139,7 @@ public struct OUDSCheckboxItem: View {
                 labelText: String,
                 helperText: String? = nil,
                 icon: Image? = nil,
+                flipIcon: Bool = false,
                 isInversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
@@ -149,6 +158,7 @@ public struct OUDSCheckboxItem: View {
             additionalLabelText: nil,
             helperText: helperText,
             icon: icon,
+            flipIcon: flipIcon,
             isOutlined: false,
             isError: isError,
             isReadOnly: isReadOnly,
