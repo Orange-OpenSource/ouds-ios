@@ -40,6 +40,12 @@ import SwiftUI
 /// as disabled.
 /// The radio can be also outlined in some cases.
 ///
+/// The component does not follow the right-to-left (RTL) / left-to-right (LTR) mode returned by the system as it could have some meaning
+/// to have for example the indicator in trailing position for LTR mode and vice versa.
+/// However, if the component has an icon in leading position (RTL mode) or in trailing position (LTR), the content of the icon is never changed.
+/// It could lead to a loss of meaning or semantics in the icon. Thus a specific flag can be used to flip the icon content whatever the layout direction is.
+/// It prevents the user do implement its own rules to flip or not image.
+///
 /// ## Accessibility considerations
 ///
 /// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
@@ -68,22 +74,9 @@ import SwiftUI
 ///     // The default layout will be used here.
 ///     OUDSRadioItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", helperText: "The Beatles")
 ///
-///     // A leading oulined radio with an additional label, an helper text.
-///     // The default layout will be used here.
-///     OUDSRadioItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", additionalLabelText: "The Beatles", helperText: "1967", outlined: true)
-///
 ///     // A leading radio with an additional label.
 ///     // The default layout will be used here.
 ///     OUDSRadioItem(isOn: $selection, labelText: "Lucy in the Sky with Diamonds", additionalLabelText: "The Beatles", helperText: "1967")
-///
-///     // A trailing radio with a label, an additonal label, an helper text and an icon.
-///     // The inverse layout will be used here.
-///     OUDSRadioItem(isOn: $selection,
-///                   labelText: "Lucy in the Sky with Diamonds",
-///                   additionalLabelText: "The Beatles",
-///                   helperText: "1967",
-///                   isInversed: true,
-///                   icon: Image(decorative: "ic_heart"))
 ///
 ///     // A trailing radio with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
@@ -106,12 +99,23 @@ import SwiftUI
 ///     OUDSRadioItem(isOn: $selection, labelText: "Kaboom!", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
+/// If you want to manage the RTL mode quite easily and switch your layouts (flip image, indicator in RTL leading i.e. in the right):
+/// ```swift
+///     @Environment(\.layoutDirection) var layoutDirection
+///
+///     OUDSRadioItem(isOn: $selection,
+///                   labelText: "Cocorico !",
+///                   icon: Image(systemName: "figure.handball"),
+///                   flipIcon: layoutDirection == .rightToLeft,
+///                   isInversed: layoutDirection == .rightToLeft)
+/// ```
+///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
 ///
 /// - Since: 0.12.0
-public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperlink above
+public struct OUDSRadioItem: View {
 
     // MARK: - Properties
 
@@ -129,10 +133,11 @@ public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperli
     /// - Parameters:
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - labelText: The main label text of the radio.
-    ///   - additionalLabelText: An additional label text of the radio.
-    ///   - helperText: An additonal helper text, should not be empty
-    ///   - icon: An optional icon
-    ///   - isOutlined: Flag to get an outlined radio
+    ///   - additionalLabelText: An additional label text of the radio, default set to `nil`
+    ///   - helperText: An additonal helper text, should not be empty, default set to `nil`
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - isOutlined: Flag to get an outlined radio, default set to `true`
     ///   - isInversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
@@ -144,6 +149,7 @@ public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperli
                 additionalLabelText: String? = nil,
                 helperText: String? = nil,
                 icon: Image? = nil,
+                flipIcon: Bool = false,
                 isOutlined: Bool = true,
                 isInversed: Bool = false,
                 isError: Bool = false,
@@ -168,6 +174,7 @@ public struct OUDSRadioItem: View { // TODO: #266 - Update documentation hyperli
             additionalLabelText: additionalLabelText,
             helperText: helperText,
             icon: icon,
+            flipIcon: flipIcon,
             isOutlined: isOutlined,
             isError: isError,
             isReadOnly: isReadOnly,
