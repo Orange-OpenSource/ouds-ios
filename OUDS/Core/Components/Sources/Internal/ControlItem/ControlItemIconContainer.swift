@@ -25,6 +25,7 @@ struct ControlItemIconContainer: View {
 
     let interactionState: InteractionState
     let icon: Image?
+    let flip: Bool
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
@@ -38,7 +39,9 @@ struct ControlItemIconContainer: View {
                     .resizable()
                     .renderingMode(.template)
                     .oudsForegroundStyle(iconColor)
+                    .accessibilityHidden(true)
                     .frame(width: theme.controlItem.controlItemSizeIcon, height: theme.controlItem.controlItemSizeIcon)
+                    .toFlip(flip: flip)
             }
             .frame(maxHeight: theme.controlItem.controlItemSizeMaxHeightAssetsContainer, alignment: .center)
         }
