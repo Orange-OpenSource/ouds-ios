@@ -19,7 +19,7 @@ struct SpaceTokenElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_tokens_dimension_space_label"
+        name = "app_tokens_dimension_space_label".localized()
         image = Image(decorative: "ic_dimension").renderingMode(.template)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

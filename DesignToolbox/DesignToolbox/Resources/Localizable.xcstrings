@@ -1104,7 +1104,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Colored background"
+            "value" : "Surface colorée"
           }
         }
       }
@@ -2594,7 +2594,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Élévation"
+            "value" : "Elévation"
           }
         }
       }

@@ -65,7 +65,7 @@ struct DesignToolboxElementPage: View {
         .padding(.top, theme.spaces.spaceFixedNone)
         .padding(.horizontal, theme.spaces.spaceFixedNone)
         .oudsBackground(theme.colors.colorBgPrimary)
-        .navigationTitle(LocalizedStringKey(name))
+        .navigationTitle(name)
         .navigationbarMenuForThemeSelection()
         .oudsRequestAccessibleFocus(_requestFocus)
     }
