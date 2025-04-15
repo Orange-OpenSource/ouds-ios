@@ -70,7 +70,7 @@ struct ControlItemContent: View {
     }
 
     private func iconContainer() -> some View {
-        ControlItemIconContainer(interactionState: interactionState, icon: layoutData.icon)
+        ControlItemIconContainer(interactionState: interactionState, icon: layoutData.icon, flip: layoutData.flipIcon)
     }
 
     // MARK: Computed properties

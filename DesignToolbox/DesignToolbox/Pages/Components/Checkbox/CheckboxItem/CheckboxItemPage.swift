@@ -77,6 +77,7 @@ private struct CheckboxItemDemo: View {
                          labelText: model.labelTextContent,
                          helperText: helperTextContent,
                          icon: icon,
+                         flipIcon: model.flipIcon,
                          isInversed: model.layoutOrientation == .inverse,
                          isError: model.isError,
                          isReadOnly: model.isReadOnly,
@@ -90,7 +91,10 @@ private struct CheckboxItemDemo: View {
         model.helperText ? model.helperTextContent : nil
     }
 
+    // Need here that system name, a11y managed in component
+    // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        model.icon ? Image(decorative: "ic_heart") : nil
+        model.icon ? Image(systemName: "figure.handball") : nil
     }
+    // swiftlint:enable accessibility_label_for_image
 }

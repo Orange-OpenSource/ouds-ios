@@ -41,6 +41,10 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var flipIcon: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var isError: Bool {
         didSet { updateCode() }
     }
@@ -84,6 +88,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         additionalLabelText = true
         helperText = true
         icon = true
+        flipIcon = false
         layoutOrientation = .default
         divider = true
         labelTextContent = String(localized: "app_components_radio_label_text")
@@ -94,11 +99,12 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     deinit { }
 
     // MARK: - Component Configuration
+
     // swiftlint:disable line_length
     override func updateCode() {
         code =
           """
-        OUDSRadioItem(isOn: $isOn, labelText: "\(labelTextContent)"\(additionalLabelTextPatern)\(helperTextPatern)\(iconPatern)\(outlinedPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSRadioItem(isOn: $isOn, labelText: "\(labelTextContent)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
         \(disableCode)
         """
     }
@@ -108,19 +114,23 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         ".disable(\(enabled ? "false" : "true"))"
     }
 
-    private var additionalLabelTextPatern: String {
+    private var additionalLabelTextPattern: String {
         helperText ? ", additionalLabelText: \"\(additionalLabelTextContent)\"" : ""
     }
 
-    private var helperTextPatern: String {
+    private var helperTextPattern: String {
         helperText ? ", helperText: \"\(helperTextContent)\"" : ""
     }
 
-    private var iconPatern: String {
-        icon ? ", icon: Image(decorative: \"ic_heart\")" : ""
+    private var iconPattern: String {
+        icon ? ", icon: Image(systemName: \"figure.handball\")" : ""
     }
 
-    private var outlinedPatern: String {
+    private var flipIconPattern: String {
+        flipIcon ? ", flipIcon: true" : ""
+    }
+
+    private var outlinedPattern: String {
         outlined ? ", isOutlined: true" : ""
     }
 
@@ -136,7 +146,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         isReadOnly ? ", isReadOnly: true" : ""
     }
 
-    private var dividerPatern: String {
+    private var dividerPattern: String {
         divider ? ", divider: true" : ""
     }
 }
@@ -189,6 +199,10 @@ struct RadioItemConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             Toggle("app_components_common_divider_label", isOn: $model.divider)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+
+            Toggle("app_components_common_flipIcon_label", isOn: $model.flipIcon)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 

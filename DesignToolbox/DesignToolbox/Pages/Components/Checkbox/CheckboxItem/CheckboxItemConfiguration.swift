@@ -38,6 +38,10 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var flipIcon: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var isError: Bool {
         didSet { updateCode() }
     }
@@ -71,6 +75,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         enabled = true
         helperText = true
         icon = true
+        flipIcon = false
         layoutOrientation = .default
         divider = false
         labelTextContent = String(localized: "app_components_checkbox_label_text")
@@ -81,24 +86,30 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
 
     // MARK: - Component Configuration
 
+    // swiftlint:disable line_length
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItem(isOn: $isOn, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSCheckboxItem(isOn: $isOn, labelText: \"\(labelTextContent)\"\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
         \(disableCode)
         """
     }
+    // swiftlint:enable line_length
 
     private var disableCode: String {
         ".disable(\(enabled ? "false" : "true"))"
     }
 
-    private var helperTextPatern: String {
+    private var helperTextPattern: String {
         helperText ? ", helperText: \"\(helperTextContent)\")" : ""
     }
 
-    private var iconPatern: String {
-        icon ? ", icon: Image(decorative: \"ic_heart\")" : ""
+    private var iconPattern: String {
+        icon ? ", icon: Image(systemName: \"figure.handball\")" : ""
+    }
+
+    private var flipIconPattern: String {
+        flipIcon ? ", flipIcon: true" : ""
     }
 
     private var isInversedPattern: String {
@@ -113,7 +124,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         isReadOnly ? ", isReadOnly: true" : ""
     }
 
-    private var dividerPatern: String {
+    private var dividerPattern: String {
         divider ? ", divider: true" : ""
     }
 }
@@ -157,6 +168,10 @@ struct CheckboxItemConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             Toggle("app_components_common_divider_label", isOn: $model.divider)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+
+            Toggle("app_components_common_flipIcon_label", isOn: $model.flipIcon)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 

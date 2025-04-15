@@ -66,6 +66,7 @@ struct ControlItem: View {
     ///   - additionalLabelText: An additional label text of the item.
     ///   - helperText: An additonal helper text, should not be empty
     ///   - icon: An optional icon
+    ///   - flipIcon: Set to `true` to flip the icon, false otherwise
     ///   - isOutlined: If the component has lines around it like kind of borders (`true`)
     ///   - isOnError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: `true` if component is in read only mode, i.e. not really disabled but user cannot interact with it yet, default set to `false`
@@ -78,6 +79,7 @@ struct ControlItem: View {
          helperText: String? = nil,
          additionalLabelText: String? = nil,
          icon: Image? = nil,
+         flipIcon: Bool = false,
          isOutlined: Bool = false,
          isOnError: Bool = false,
          isReadOnly: Bool = false,
@@ -88,6 +90,7 @@ struct ControlItem: View {
                                     additionalLabelText: additionalLabelText,
                                     helperText: helperText,
                                     icon: icon,
+                                    flipIcon: flipIcon,
                                     isOutlined: isOutlined,
                                     isError: isOnError,
                                     isReadOnly: isReadOnly,

@@ -1157,6 +1157,30 @@
         }
       }
     },
+    "app_components_common_flipIcon_label" : {
+      "comment" : "Control item - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أيقونة الوجه"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inverser l’icône"
+          }
+        }
+      }
+    },
     "app_components_common_helperText_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
