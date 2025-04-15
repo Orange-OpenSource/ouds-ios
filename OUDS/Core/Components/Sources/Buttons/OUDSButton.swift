@@ -22,7 +22,7 @@ import SwiftUI
 ///
 /// Four hierarchies are proposed for all layouts:
 ///
-/// - **defaul (by default)t**: Default buttons are used for actions which are not mandatory or essential for the user.
+/// - **default (by default)**: Default buttons are used for actions which are not mandatory or essential for the user.
 ///
 /// - **strong**: The Strong "call for action" on the page should be singular and prominent, limited to one per view.
 /// It should be reserved for the most critical action, such as "Next," "Save," "Submit," etc.
@@ -115,9 +115,9 @@ public struct OUDSButton: View {
     ///
     /// - Parameters:
     ///    - icon: An image which shoud contains an icon
-    ///    - text: The text to display in the button, default set to `.default`
+    ///    - text: The text to display in the button
     ///    - hierarchy: The button hierarchy, default set to `.default`
-    ///    - style: The button style
+    ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
     public init(icon: Image, text: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
         self.type = .textAndIcon(text: text, icon: icon)
