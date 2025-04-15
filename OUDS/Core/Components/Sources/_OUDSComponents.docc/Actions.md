@@ -14,8 +14,8 @@ A button with `OUDSButton.Hierarchy.Negative` hierarchy is not allowed as a dire
 
 ```swift
      // Icon only with default hierarchy
-     OUDSButton(hierarchy: .default, icon: Image("ic_heart")) {}
+     OUDSButton(icon: Image("ic_heart"), hierarchy: .default) {}
 
      // Text only with negative hierarchy
-     OUDSButton(hierarchy: .negative, text: "Delete") {}
+     OUDSButton(text: "Delete", hierarchy: .negative) {}
 ```
