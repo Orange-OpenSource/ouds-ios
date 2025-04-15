@@ -45,7 +45,7 @@ struct ControlItemContent: View {
                 indicatorContainer()
                 labelContainer()
                 iconContainer()
-            case .inverse:
+            case .reversed:
                 iconContainer()
                 labelContainer()
                 indicatorContainer()

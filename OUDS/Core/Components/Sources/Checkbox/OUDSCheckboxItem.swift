@@ -24,7 +24,7 @@ import SwiftUI
 /// The component can be rendered as two different layouts:
 ///
 /// - **default**: the component has a leading indicator, a label and optional helper texts, and an optional trailing decorative icon
-/// - **inverse**: like the *default* layout but with a trailing checkbox indicator and a leading optional image
+/// - **reversed**: like the *default* layout but with a trailing checkbox indicator and a leading optional image
 ///
 /// ## Indicator states
 ///
@@ -65,33 +65,33 @@ import SwiftUI
 ///
 ///     // A leading checkbox with a label.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(isOn: $isOn, labelText: "Hello world")
+///     OUDSCheckboxItem(isOn: $isOn, label: "Hello world")
 ///
 ///     // A leading checkbox with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(isOn: $isOn, labelText: "Hello world", isReadOnly: true)
+///     OUDSCheckboxItem(isOn: $isOn, label: "Hello world", isReadOnly: true)
 ///
 ///     // A leading checkbox with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(isOn: $isOn, labelText: "Bazinga!", helperText: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
+///     OUDSCheckboxItem(isOn: $isOn, label: "Bazinga!", helper: "Doll-Dagga Buzz-Buzz Ziggety-Zag")
 ///
 ///     // A trailing checkbox with a label, an helper text and an icon.
-///     // The inverse layout will be used here.
+///     // The reversed layout will be used here.
 ///     OUDSCheckboxItem(isOn: $isOn,
-///                      labelText: "We live in a fabled world",
-///                      helperText: "Of dreaming boys and wide-eyed girls",
-///                      isInversed: true,
+///                      label: "We live in a fabled world",
+///                      helper: "Of dreaming boys and wide-eyed girls",
+///                      isReversed: true,
 ///                      icon: Image(decorative: "ic_heart"))
 ///
 ///     // A leading checkbox with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSCheckboxItem(isOn: $isOn, labelText: "Hello world")
+///     OUDSCheckboxItem(isOn: $isOn, label: "Hello world")
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related checkbox as it will crash
 ///     // This is forbidden by design!
-///     OUDSCheckboxItem(isOn: $isOn, labelText: "Hello world", isError: true).disabled(true) // fatal error
-///     OUDSCheckboxItem(isOn: $isOn, labelText: "Hello world", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSCheckboxItem(isOn: $isOn, label: "Hello world", isError: true).disabled(true) // fatal error
+///     OUDSCheckboxItem(isOn: $isOn, label: "Hello world", isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// If you want to manage the RTL mode quite easily and switch your layouts (flip image, indicator in RTL leading i.e. in the right):
@@ -127,20 +127,20 @@ public struct OUDSCheckboxItem: View {
     ///
     /// - Parameters:
     ///   - isOn: A binding to a property that determines wether the indicator is ticked (selected) or not (unselected)
-    ///   - labelText: The main label text of the checkbox.
-    ///   - helperText: An additonal helper text, should not be empty
+    ///   - label: The main label text of the checkbox.
+    ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isInversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isReversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     public init(isOn: Binding<Bool>,
-                labelText: String,
-                helperText: String? = nil,
+                label: String,
+                helper: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
-                isInversed: Bool = false,
+                isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false) {
@@ -148,22 +148,22 @@ public struct OUDSCheckboxItem: View {
             OL.fatal("It is forbidden by design to have an OUDS Checkbox in an error context and in read only mode")
         }
 
-        if let helperText, helperText.isEmpty {
+        if let helper, helper.isEmpty {
             OL.warning("Helper text given to an OUDS Checkbox is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         _isOn = isOn
         self.layoutData = .init(
-            labelText: labelText,
-            additionalLabelText: nil,
-            helperText: helperText,
+            label: label,
+            additionalLabel: nil,
+            helper: helper,
             icon: icon,
             flipIcon: flipIcon,
             isOutlined: false,
             isError: isError,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
-            orientation: isInversed ? .inverse : .default)
+            orientation: isReversed ? .reversed : .default)
     }
 
     // MARK: Body
@@ -196,7 +196,7 @@ public struct OUDSCheckboxItem: View {
         let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
-        let result = "\(stateDescription), \(layoutData.labelText), \(layoutData.helperText ?? "") \(errorDescription), \(checkboxA11yTrait)"
+        let result = "\(stateDescription), \(layoutData.label), \(layoutData.helper ?? "") \(errorDescription), \(checkboxA11yTrait)"
         return result
     }
 

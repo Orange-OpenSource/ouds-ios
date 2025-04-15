@@ -32,7 +32,7 @@ struct LinkTextModifier: ViewModifier {
             switch size {
             case .small:
                 content.typeLabelStrongMedium(theme)
-            case .medium:
+            case .`default`:
                 content.typeLabelStrongLarge(theme)
             }
         }
@@ -70,7 +70,7 @@ private struct LinkUnderlineModifier: ViewModifier {
 
     private var underlineActive: Bool {
         switch layout {
-        case .arrow:
+        case .indicator:
             return interactionState == .hover || interactionState == .pressed
         case .textOnly:
             return true

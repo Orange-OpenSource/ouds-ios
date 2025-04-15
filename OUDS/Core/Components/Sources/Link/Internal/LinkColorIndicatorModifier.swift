@@ -16,7 +16,7 @@ import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
 
-struct LinkColorArrowModifier: ViewModifier {
+struct LinkColorIndicatorModifier: ViewModifier {
 
     // MARK: - Proeprties
 

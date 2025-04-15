@@ -74,13 +74,13 @@ private struct RadioItemDemo: View {
 
     var body: some View {
         OUDSRadioItem(isOn: $model.selection,
-                      labelText: model.labelTextContent,
-                      additionalLabelText: additionalLabelTextContent,
-                      helperText: helperTextContent,
+                      label: model.labelTextContent,
+                      additionalLabel: additionalLabelTextContent,
+                      helper: helperTextContent,
                       icon: icon,
                       flipIcon: model.flipIcon,
                       isOutlined: model.outlined,
-                      isInversed: model.layoutOrientation == .inverse,
+                      isReversed: model.layoutOrientation == .reversed,
                       isError: model.isError,
                       isReadOnly: model.isReadOnly,
                       hasDivider: model.divider)

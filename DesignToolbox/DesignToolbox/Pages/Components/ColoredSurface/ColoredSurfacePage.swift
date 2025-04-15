@@ -80,7 +80,7 @@ private struct ColoredSurfaceDemo: View {
                                style: .default) {
                     }
 
-                    OUDSLink(text: "app_components_link_label".localized(), arrow: .next) {
+                    OUDSLink(text: "app_components_link_label".localized(), indicator: .next) {
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .center)
