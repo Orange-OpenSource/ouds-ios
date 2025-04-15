@@ -75,21 +75,21 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
             """
-          OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased())) {}
+          OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
           \(disableCode)
           \(coloredSurfaceCodeModifier)
           """
         case .iconOnly:
             code =
             """
-          OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
+          OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
           \(disableCode)
           \(coloredSurfaceCodeModifier)
           """
         case .iconAndText:
             code =
             """
-          OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
+          OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
           \(disableCode)
           \(coloredSurfaceCodeModifier)
           """

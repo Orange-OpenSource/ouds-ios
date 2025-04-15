@@ -84,7 +84,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItem(selection: $selection, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSCheckboxItem(selection: $selection, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
@@ -102,8 +102,8 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         icon ? ", icon: Image(decorative: \"ic_heart\")" : ""
     }
 
-    private var isInversedPattern: String {
-        layoutOrientation == .inverse ? ", isInversed: true" : ""
+    private var isReversedPattern: String {
+        layoutOrientation == .reversed ? ", isReversed: true" : ""
     }
 
     private var isErrorPattern: String {

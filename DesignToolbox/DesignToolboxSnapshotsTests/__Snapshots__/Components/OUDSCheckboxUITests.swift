@@ -162,14 +162,14 @@ final class OUDSCheckboxUITests: XCTestCase {
             CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
             CheckboxIndeterminateTest.Layout.default(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
 
-            CheckboxIndeterminateTest.Layout.inverse(labelText: "Takoyaki", helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.inverse(labelText: "Takoyaki", helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.inverse(labelText: "Kammthaar", helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.inverse(labelText: "Kammthaar", helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
-            CheckboxIndeterminateTest.Layout.inverse(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Takoyaki", helperText: nil, icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Takoyaki", helperText: nil, icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", helperText: "Bravas", icon: nil, isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Kammthaar", helperText: nil, icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: false, isReadOnly: isReadOnly),
+            CheckboxIndeterminateTest.Layout.reversed(labelText: "Patatas", helperText: "Bravas", icon: Image(systemName: "heart.fill"), isError: isError, hasDivider: true, isReadOnly: isReadOnly),
         ]
     }
     // swiftlint:enable line_length
@@ -190,12 +190,12 @@ private struct CheckboxIndeterminateTest: View {
                        isError: Bool,
                        hasDivider: Bool,
                        isReadOnly: Bool)
-        case inverse(labelText: String,
-                     helperText: String?,
-                     icon: Image?,
-                     isError: Bool,
-                     hasDivider: Bool,
-                     isReadOnly: Bool)
+        case reversed(labelText: String,
+                      helperText: String?,
+                      icon: Image?,
+                      isError: Bool,
+                      hasDivider: Bool,
+                      isReadOnly: Bool)
 
         // swiftlint:disable line_length
         var description: String {
@@ -204,7 +204,7 @@ private struct CheckboxIndeterminateTest: View {
                 return "layout-indicatorOnly-\(isError ? "error" : "")"
             case let .default(_, helperText, icon, isError, hasDivider, isReadOnly):
                     return "layout-default-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
-            case let .inverse(_, helperText, icon, isError, hasDivider, isReadOnly):
+            case let .reversed(_, helperText, icon, isError, hasDivider, isReadOnly):
                     return "layout-inverse-label-\(helperText != nil ? "withHelper" : "")-\(icon != nil ? "withIcon" : "")-\(isError ? "error" : "")-\(isReadOnly ? "readOnly" : "")-\(hasDivider ? "divider" : "")"
             }
         }
@@ -229,20 +229,20 @@ private struct CheckboxIndeterminateTest: View {
             .disabled(isDisabled)
         case let .default(labelText, helperText, icon, isError, hasDivider, isReadOnly):
             OUDSCheckboxItemIndeterminate(selection: .constant(indicatorState),
-                                          labelText: labelText,
-                                          helperText: helperText,
+                                          label: labelText,
+                                          helper: helperText,
                                           icon: icon,
-                                          isInversed: false,
+                                          isReversed: false,
                                           isError: isError,
                                           isReadOnly: isReadOnly,
                                           hasDivider: hasDivider)
             .disabled(isDisabled)
-        case let .inverse(labelText, helperText, icon, isError, hasDivider, isReadOnly):
+        case let .reversed(labelText, helperText, icon, isError, hasDivider, isReadOnly):
             OUDSCheckboxItemIndeterminate(selection: .constant(indicatorState),
-                                          labelText: labelText,
-                                          helperText: helperText,
+                                          label: labelText,
+                                          helper: helperText,
                                           icon: icon,
-                                          isInversed: true,
+                                          isReversed: true,
                                           isError: isError,
                                           isReadOnly: isReadOnly,
                                           hasDivider: hasDivider)

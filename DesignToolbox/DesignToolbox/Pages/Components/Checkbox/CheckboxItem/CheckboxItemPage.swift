@@ -74,11 +74,11 @@ private struct CheckboxItemDemo: View {
 
     var body: some View {
         OUDSCheckboxItem(isOn: $model.indicatorState,
-                         labelText: model.labelTextContent,
-                         helperText: helperTextContent,
+                         label: model.labelTextContent,
+                         helper: helperTextContent,
                          icon: icon,
                          flipIcon: model.flipIcon,
-                         isInversed: model.layoutOrientation == .inverse,
+                         isReversed: model.layoutOrientation == .reversed,
                          isError: model.isError,
                          isReadOnly: model.isReadOnly,
                          hasDivider: model.divider)

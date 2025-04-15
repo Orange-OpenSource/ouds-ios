@@ -45,7 +45,7 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
 
           OUDSButton(text: "\("app_components_button_label".localized())") {}
 
-          OUDSLink(text: "\("app_components_link_label".localized())", arrow: .next) {}
+          OUDSLink(text: "\("app_components_link_label".localized())", indicator: .next) {}
        }
        """
     }
