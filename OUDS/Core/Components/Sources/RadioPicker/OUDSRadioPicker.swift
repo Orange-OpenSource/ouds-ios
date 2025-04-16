@@ -170,16 +170,16 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
 
     private func content(for radio: OUDSRadioPickerData<Tag>, isLast: Bool) -> some View {
         OUDSRadioItem<Tag>(isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
-                           labelText: radio.label,
-                           additionalLabelText: radio.additionalLabel,
-                           helperText: radio.helper,
+                           tag: radio.tag,
+                           label: radio.label,
+                           additionalLabel: radio.additionalLabel,
+                           helper: radio.helper,
                            icon: radio.icon,
                            isOutlined: isOutlined ? true : radio.isOutlined,
-                           isInversed: isReversed ? true : radio.isReversed,
+                           isReversed: isReversed ? true : radio.isReversed,
                            isError: isError ? true : radio.isError,
                            isReadOnly: isReadOnly ? true : radio.isReadOnly,
-                           hasDivider: hasDivider && !isLast ? true : radio.hasDivider,
-                           tag: radio.tag) {
+                           hasDivider: hasDivider && !isLast ? true : radio.hasDivider) {
             selection.wrappedValue = radio.tag
         }
     }

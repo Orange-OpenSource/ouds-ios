@@ -19,7 +19,7 @@ struct RadioItemElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_radio_controlItem_label"
+        name = "app_components_radio_controlItem_label".localized()
         image = Image(decorative: "il_component_radio_controlItem").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
