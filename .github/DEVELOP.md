@@ -52,7 +52,7 @@ brew install peripheryapp/periphery/periphery
 brew install gitleaks
 # or `brew reinstall gitleaks` to get updates if old version installed
 
-# For SwiftLint (at least 0.59.0)
+# For SwiftLint (at least 0.59.1)
 brew install swiftlint
 # or `brew reinstall swiftlint` to get updates if old version installed
 
