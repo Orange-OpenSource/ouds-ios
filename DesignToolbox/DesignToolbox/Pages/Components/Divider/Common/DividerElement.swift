@@ -19,7 +19,8 @@ struct DividerElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init(orientation: DividerConfigurationModel.Orientation) {
-        name = orientation == .horizontal ? "app_components_divider_horizontalDivider_label" : "app_components_divider_verticalDivider_label"
+        let key = orientation == .horizontal ? "app_components_divider_horizontalDivider_label" : "app_components_divider_verticalDivider_label"
+        name = key.localized()
         image = Image(decorative: "il_component_divider").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
                 name: name,

@@ -24,7 +24,7 @@ struct DividerElements: DesignToolboxElement {
             DividerElement(orientation: .vertical),
         ]
 
-        name = "app_components_divider_label"
+        name = "app_components_divider_label".localized()
         image = Image(decorative: "il_component_divider").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
                 name: name,

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Library] Let control-item-based component flip the icons programatically or not ([#556](https://github.com/Orange-OpenSource/ouds-ios/issues/556))
 - [Library] Radio picker component ([#586](https://github.com/Orange-OpenSource/ouds-ios/issues/586))
 - [Library] Add divider component ([#511](https://github.com/Orange-OpenSource/ouds-ios/issues/511))
+- [Library] Let control-item-based component flip the icons programatically or not ([#556](https://github.com/Orange-OpenSource/ouds-ios/issues/556))
 
 ### Changed
 
