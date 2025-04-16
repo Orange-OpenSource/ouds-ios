@@ -54,7 +54,6 @@ private struct RadioItemIllustration: View {
 
     let model: RadioItemConfigurationModel
 
-    @State private var selection: String = "Kebab_du_ssssschef"
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
