@@ -84,3 +84,38 @@ The indicator can be leading or trailing.
                    isError: true,
                    hasDivider: true)
 ```
+
+#### Radio picker
+
+Radio items can be embeded in a radio picker so as to let the users to select only one item without several.
+
+```swift
+    // Define the elements to display in radio buttons using OUDSRadioPickerData.
+    // This object has the same properties as the OUDSRadioItem,
+    // and some of them are optional withdefault values set
+    var someDataToPopulate: [OUDSRadioPickerData<String>] {
+        [
+            OUDSRadioPickerData<String>(tag: "Choice_1",
+                                        label: "Virgin Holy Lava",
+                                        additionalLabel: "Very spicy",
+                                        helper: "No alcohol, only tasty flavors",
+                                        icon: Image(systemName: "flame")),
+
+            OUDSRadioPickerData<String>(tag: "Choice_2",
+                                        label: "IPA beer",
+                                        helper: "From Brewdog company",
+                                        icon: Image(systemName: "dog.fill")),
+
+            OUDSRadioPickerData<String>(tag: "Choice_3",
+                                        label: "Mineral water",
+                                        icon: Image(systemName: "waterbottle.fill")),
+        ]
+    }
+
+    // Prepare the selection, with a value previously selected
+    // Use the data and the binding for the picker.
+    @State var selection: String = "Choice_1"
+
+    // Here the picker is vertical
+    OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
+```

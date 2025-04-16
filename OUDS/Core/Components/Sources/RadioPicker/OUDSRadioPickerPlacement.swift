@@ -18,7 +18,7 @@ import OUDSFoundations
 /// - Since: 0.14.0
 public enum OUDSRadioPickerPlacement: CaseIterable, CustomStringConvertible, Hashable {
 
-    /// All radio buttons are in one row, with a flag saying if an indicator can be displayed or not
+    /// All radio buttons are in one row, with a flag saying if a scroll indicator can be displayed or not
     case horizontal(Bool)
 
     /// All radio buttons are in one column

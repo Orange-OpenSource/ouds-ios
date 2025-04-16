@@ -19,6 +19,58 @@ import SwiftUI
 /// The picker will expose the choosen value through this "tag".
 /// It has also some configuration elements which will override the one applied to nested ``OUDSRadioItem`` (divider, read only and error mode, layout and outlined)
 ///
+/// ## Accessibility considerations
+///
+/// *Voice Over* will use several elements to describe the component: if component disabled / read only, if error context, the label and helper texts and a custom radio trait.
+///
+/// ## Forbidden by design
+///
+/// The design system does not allow to have ``OUDSRadioItem`` in both an error situation and a read only state.
+/// The design system does not allow to have ``OUDSRadioItem`` in both an error situation and a disabled state.
+/// The design system does not allow to have ``OUDSRadioItem`` in both a read only and a disabled state.
+///
+/// ## Code samples
+///
+/// ```swift
+///     // Define the elements to display in radio buttons using OUDSRadioPickerData.
+///     // This object has the same properties as the OUDSRadioItem,
+///     // and some of them are optional withdefault values set
+///     var someDataToPopulate: [OUDSRadioPickerData<String>] {
+///         [
+///             OUDSRadioPickerData<String>(tag: "Choice_1",
+///                                         label: "Virgin Holy Lava",
+///                                         additionalLabel: "Very spicy",
+///                                         helper: "No alcohol, only tasty flavors",
+///                                         icon: Image(systemName: "flame")),
+///
+///             OUDSRadioPickerData<String>(tag: "Choice_2",
+///                                         label: "IPA beer",
+///                                         helper: "From Brewdog company",
+///                                         icon: Image(systemName: "dog.fill")),
+///
+///             OUDSRadioPickerData<String>(tag: "Choice_3",
+///                                         label: "Mineral water",
+///                                         icon: Image(systemName: "waterbottle.fill")),
+///         ]
+///     }
+///
+///     // Prepare the selection, with a value previously selected
+///     // Use the data and the binding for the picker.
+///     @State var selection: String = "Choice_1"
+///
+///     // Here the picker is vertical
+///     OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
+///
+///     // The picker can apply some settings to all its radio buttons.
+///     // It can be also horitzontal with a scroll indicator.
+///     // Here all the the radio buttons are in read only mode and use reversed layout.
+///     OUDSRadioPicker(selection: $selection,
+///                     radios: someDataToPopulate,
+///                     isReversed: true,
+///                     isReadOnly: true,
+///                     placement: .horitzontal(true))
+/// ```
+///
 /// - Since: 0.14.0
 public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
 
