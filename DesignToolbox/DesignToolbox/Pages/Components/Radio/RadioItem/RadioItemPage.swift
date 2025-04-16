@@ -53,6 +53,7 @@ struct RadioItemPage: View {
 private struct RadioItemIllustration: View {
 
     let model: RadioItemConfigurationModel
+
     @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
@@ -78,7 +79,6 @@ private struct RadioItemDemo: View {
                       additionalLabel: additionalLabelTextContent,
                       helper: helperTextContent,
                       icon: icon,
-                      flipIcon: model.flipIcon,
                       isOutlined: model.outlined,
                       isReversed: model.layoutOrientation == .reversed,
                       isError: model.isError,

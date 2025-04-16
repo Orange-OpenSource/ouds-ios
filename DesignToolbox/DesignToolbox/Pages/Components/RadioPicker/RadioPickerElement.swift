@@ -16,24 +16,18 @@ import OUDSComponents
 import OUDSThemesOrange
 import SwiftUI
 
-struct RadioElements: DesignToolboxElement {
+struct RadioPickerElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
-        let variants: [DesignToolboxElement] = [
-            RadioElement(),
-            RadioItemElement(),
-            RadioPickerElement(),
-        ]
-
-        name = "app_components_radio_label".localized()
+        name = "app_components_radioPicker_label".localized()
         image = Image(decorative: "il_component_radio").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: Image(decorative: "il_component_radio").renderingMode(.original),
-            description: "app_components_radio_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
+            description: "app_components_radioPicker_description_text",
+            illustration: AnyView(RadioPickerPage())))
     }
 }

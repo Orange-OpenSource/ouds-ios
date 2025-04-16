@@ -1927,6 +1927,54 @@
         }
       }
     },
+    "app_components_radioPicker_description_text" : {
+      "comment" : "Component - Radio Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يسمح منتقي الراديو للمستخدمين بالاختيار على عنصر ضمن مجموعة من العديد من العناصر الأخرى باستخدام أزرار الاختيار"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio picker allows users to chose on item within a group of many others using radio buttons"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le sélecteur de radio permet aux utilisateurs de choisir un élément au sein d'un groupe de nombreux autres à l'aide de boutons radio"
+          }
+        }
+      }
+    },
+    "app_components_radioPicker_label" : {
+      "comment" : "Component - Radio picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتقي الراديو"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio picker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecteur de radio"
+          }
+        }
+      }
+    },
     "app_tokens_border_description_text" : {
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
