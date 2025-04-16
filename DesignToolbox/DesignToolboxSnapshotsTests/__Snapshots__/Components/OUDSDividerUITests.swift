@@ -59,11 +59,7 @@ final class OUDSDividerUITests: XCTestCase {
 
     /// This function tests all Divider configuration for the given theme and color schemes on a standard surface.
     ///
-    /// **/!\ It does not test the hover and pressed states.**
-    /// **The loading style is not tested yet as we face troubles with animations and snapshots.**
-    ///
-    /// It iterates through all button `hierarchy`, for all `style` with *textOnly, textAndIcon and iconOnly* layouts
-    /// in enabled and disabled states.
+    /// It iterates through all colors `OUDSDividerColor`, for both layout `orientations`.
     ///
     /// - Parameters:
     ///   - theme: The theme (`OUDSTheme`).
@@ -77,7 +73,7 @@ final class OUDSDividerUITests: XCTestCase {
     }
 
     /// This function tests divider according to all parameters of the configutation available on a `OUDSDivider`
-    /// for the given theme and color schemes and on a colored surface or not.
+    /// for the given theme and color schemes.
     ///
     /// It captures a snapshot for each tests. The snapshots are saved with names based on each parameters
     ///    test_<themeName>_<colorScheme>.<orientation>.<dividerColor>
