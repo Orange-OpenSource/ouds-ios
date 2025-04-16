@@ -206,7 +206,7 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable { // TODO: #266 - Upd
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     private var a11yLabel: String {
-        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_commmon_disabled_a11y".localized() : ""
+        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
         let radioA11yTrait = "core_radio_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
@@ -219,7 +219,11 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable { // TODO: #266 - Upd
         if layoutData.isReadOnly || !isEnabled {
             return ""
         } else {
-            return "core_radio_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
+            if _isOn.wrappedValue {
+                return "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
+            } else {
+                return "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
+            }
         }
     }
 }

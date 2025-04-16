@@ -268,20 +268,44 @@
         }
       }
     },
-    "core_radio_hint_a11y" : {
+    "core_radio_hint_selected_a11y" : {
       "comment" : "Radio",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "انقر نقرًا مزدوجًا لتبديل الإعداد %@"
+            "value" : "انقر نقرًا مزدوجًا على خيار آخر للتبديل بين %@"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Double-tap to toggle setting %@"
+            "value" : "Double-tap on other option to toggle %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois sur une autre option pour rendre %@"
+          }
+        }
+      }
+    },
+    "core_radio_hint_unselected_a11y" : {
+      "comment" : "Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرًا مزدوجًا للتبديل بين %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle %@"
           }
         },
         "fr" : {

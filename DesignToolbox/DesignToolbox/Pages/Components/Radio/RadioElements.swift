@@ -25,6 +25,7 @@ struct RadioElements: DesignToolboxElement {
         let variants: [DesignToolboxElement] = [
             RadioElement(),
             RadioItemElement(),
+            RadioPickerElement(),
         ]
 
         name = "app_components_radio_label".localized()
