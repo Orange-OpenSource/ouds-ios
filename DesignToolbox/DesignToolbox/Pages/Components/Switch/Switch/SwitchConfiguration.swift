@@ -32,7 +32,7 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        selection = false
+        selection = true
         enabled = true
     }
 

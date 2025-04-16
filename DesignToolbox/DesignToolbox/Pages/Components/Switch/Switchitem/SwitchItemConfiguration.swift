@@ -37,6 +37,10 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
+    @Published var flipIcon: Bool {
+        didSet { updateCode() }
+    }
+
     @Published var isError: Bool {
         didSet { updateCode() }
     }
@@ -70,6 +74,7 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
         enabled = true
         helperText = true
         icon = true
+        flipIcon = false
         layoutOrientation = .default
         divider = true
         labelTextContent = String(localized: "app_components_switch_label_text")
@@ -79,28 +84,35 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
     deinit { }
 
     // MARK: - Component Configuration
+
+    // swiftlint:disable line_length
     override func updateCode() {
         code =
           """
-        OUDSSwitchItem(isOn: $isOn, labelText: "\(labelTextContent)"\(helperTextPatern)\(iconPatern)\(isInversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSSwitchItem(isOn: $isOn, label: "\(labelTextContent)"\(helperTextPatern)\(iconPatern)\(flipIconPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
+    // swiftlint:enable line_length
 
     private var disableCode: String {
         ".disable(\(enabled ? "false" : "true"))"
     }
 
     private var helperTextPatern: String {
-        helperText ? ", helperText: \"\(helperTextContent)\"" : ""
+        helperText ? ", helper: \"\(helperTextContent)\"" : ""
     }
 
     private var iconPatern: String {
         icon ? ", icon: Image(decorative: \"ic_heart\")" : ""
     }
 
-    private var isInversedPattern: String {
-        layoutOrientation == .reversed ? ", isInversed: true" : ""
+    private var flipIconPattern: String {
+        flipIcon ? ", flipIcon: true" : ""
+    }
+
+    private var isReversedPattern: String {
+        layoutOrientation == .reversed ? ", isReversed: true" : ""
     }
 
     private var isErrorPattern: String {
@@ -153,6 +165,12 @@ struct SwitchItemConfiguration: View {
             Toggle("app_components_common_icon_label", isOn: $model.icon)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
+
+            if model.icon {
+                Toggle("app_components_common_flipIcon_label", isOn: $model.flipIcon)
+                    .typeHeadingMedium(theme)
+                    .oudsForegroundStyle(theme.colors.colorContentDefault)
+            }
 
             Toggle("app_components_common_divider_label", isOn: $model.divider)
                 .typeHeadingMedium(theme)

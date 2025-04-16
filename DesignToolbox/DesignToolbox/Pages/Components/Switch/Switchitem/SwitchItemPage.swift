@@ -74,10 +74,11 @@ private struct SwitchItemDemo: View {
 
     var body: some View {
         OUDSSwitchItem(isOn: $model.selection,
-                       labelText: model.labelTextContent,
-                       helperText: helperTextContent,
+                       label: model.labelTextContent,
+                       helper: helperTextContent,
                        icon: icon,
-                       isInversed: model.layoutOrientation == .reversed,
+                       flipIcon: model.flipIcon,
+                       isReversed: model.layoutOrientation == .reversed,
                        isError: model.isError,
                        isReadOnly: model.isReadOnly,
                        hasDivider: model.divider)
@@ -90,7 +91,10 @@ private struct SwitchItemDemo: View {
         model.helperText ? model.helperTextContent : nil
     }
 
+    // Need here that system name, a11y managed in component
+    // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        model.icon ? Image(decorative: "ic_heart") : nil
+        model.icon ? Image(systemName: "figure.handball") : nil
     }
+    // swiftlint:enable accessibility_label_for_image
 }

@@ -126,18 +126,20 @@ public struct OUDSSwitchItem: View {
     ///
     /// - Parameters:
     ///   - isOn: A binding to a property that determines whether the toggle is on or off.
-    ///   - labelText: The main label text of the switch.
-    ///   - helperText: An additonal helper text, should not be empty
-    ///   - icon: An optional icon
-    ///   - isInversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - label: The main label text of the switch.
+    ///   - helper: An additonal helper text, should not be empty
+    ///   - icon: An optional icon, default set to `nil`
+    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `false`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     public init(isOn: Binding<Bool>,
-                labelText: String,
-                helperText: String? = nil,
+                label: String,
+                helper: String? = nil,
                 icon: Image? = nil,
-                isInversed: Bool = false,
+                flipIcon: Bool = false,
+                isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false) {
@@ -145,23 +147,23 @@ public struct OUDSSwitchItem: View {
             OL.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
         }
 
-        if let helperText, helperText.isEmpty {
+        if let helper, helper.isEmpty {
             OL.warning("Helper text given to an OUDSSwitchItem is defined but empty, is it expected? Prefer use of `nil` value instead")
         }
 
         _isOn = isOn
 
         self.layoutData = .init(
-            label: labelText,
+            label: label,
             additionalLabel: nil,
-            helper: helperText,
+            helper: helper,
             icon: icon,
-            flipIcon: false,
+            flipIcon: flipIcon,
             isOutlined: false,
             isError: isError,
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
-            orientation: isInversed ? .reversed : .default)
+            orientation: isReversed ? .reversed : .default)
     }
 
     // MARK: Body
