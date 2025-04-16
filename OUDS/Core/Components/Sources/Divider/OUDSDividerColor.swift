@@ -24,14 +24,10 @@ public enum OUDSDividerColor {
     case borderMuted
     case borderEmphasized
     case borderBrandPrimary
-    case borderBrandSecondary
-    case borderBrandTertiary
     case borderOnBrandPrimary
-    case borderOnBrandSecondary
-    case borderOnBrandTertiary
     case alwaysBlack
-    case alwaysWhite
     case alwaysOnBlack
+    case alwaysWhite
     case alwaysOnWhite
     // swiftlint:enable missing_docs
 
@@ -48,22 +44,14 @@ public enum OUDSDividerColor {
             theme.colors.colorBorderEmphasized
         case .borderBrandPrimary:
             theme.colors.colorBorderBrandPrimary
-        case .borderBrandSecondary:
-            theme.colors.colorBorderBrandPrimary // TODO:
-        case .borderBrandTertiary:
-            theme.colors.colorBorderBrandPrimary // TODO:
         case .borderOnBrandPrimary:
             theme.colors.colorBorderOnBrandPrimary
-        case .borderOnBrandSecondary:
-            theme.colors.colorBorderOnBrandPrimary // TODO:
-        case .borderOnBrandTertiary:
-            theme.colors.colorBorderOnBrandPrimary // TODO:
         case .alwaysBlack:
             theme.colors.colorAlwaysBlack
-        case .alwaysWhite:
-            theme.colors.colorAlwaysWhite
         case .alwaysOnBlack:
             theme.colors.colorAlwaysOnBlack
+        case .alwaysWhite:
+            theme.colors.colorAlwaysWhite
         case .alwaysOnWhite:
             theme.colors.colorAlwaysOnWhite
         }

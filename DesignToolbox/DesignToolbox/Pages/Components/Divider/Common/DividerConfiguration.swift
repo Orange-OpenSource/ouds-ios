@@ -99,14 +99,10 @@ extension OUDSDividerColor: @retroactive CaseIterable, @retroactive CustomString
         .borderMuted,
         .borderEmphasized,
         .borderBrandPrimary,
-        .borderBrandSecondary,
-        .borderBrandTertiary,
         .borderOnBrandPrimary,
-        .borderOnBrandSecondary,
-        .borderOnBrandTertiary,
         .alwaysBlack,
-        .alwaysWhite,
         .alwaysOnBlack,
+        .alwaysWhite,
         .alwaysOnWhite,
     ]
 
@@ -121,16 +117,8 @@ extension OUDSDividerColor: @retroactive CaseIterable, @retroactive CustomString
             return "Border Emphasized"
         case .borderBrandPrimary:
             return "Border Brand Primary"
-        case .borderBrandSecondary:
-            return "Border Brand Secondary"
-        case .borderBrandTertiary:
-            return "Border Brand Tertiary"
         case .borderOnBrandPrimary:
             return "Border Brand On Primary"
-        case .borderOnBrandSecondary:
-            return "Border Brand On Secondary"
-        case .borderOnBrandTertiary:
-            return "Border Brand On Tertiary"
         case .alwaysBlack:
             return "Always Black"
         case .alwaysWhite:
@@ -152,16 +140,8 @@ extension OUDSDividerColor: @retroactive CaseIterable, @retroactive CustomString
             "borderEmphasized"
         case .borderBrandPrimary:
             "borderBrandPrimary"
-        case .borderBrandSecondary:
-            "borderBrandSecondary"
-        case .borderBrandTertiary:
-            "borderBrandTertiary"
         case .borderOnBrandPrimary:
             "borderOnBrandPrimary"
-        case .borderOnBrandSecondary:
-            "borderOnBrandSecondary"
-        case .borderOnBrandTertiary:
-            "borderOnBrandTertiary"
         case .alwaysBlack:
             "alwaysBlack"
         case .alwaysWhite:
