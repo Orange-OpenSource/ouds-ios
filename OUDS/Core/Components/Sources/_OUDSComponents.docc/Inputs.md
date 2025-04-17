@@ -36,14 +36,14 @@ It can be be sued for two-states or three-states management.
 
     // A leading checkbox with a label, an helper text, and exposing a three-values-based state with selection binding
     OUDSCheckboxItemIndeterminate(selection: $selection, 
-                                  labelText: "Dead Robot Zombie Cop",
-                                  helperText: "from Outer Space II")
+                                  label: "Dead Robot Zombie Cop",
+                                  helper: "from Outer Space II")
 
     // A trailing checkbox with a label, an helper text, an icon, a divider and is about an error
     // with a reversed layout, and exposing only two states through isOn binding
     OUDSCheckboxItem(isOn: $isOn,
-                     labelText: "We live in a fabled world",
-                     helperText: "Of dreaming boys and wide-eyed girls",
+                     label: "We live in a fabled world",
+                     helper: "Of dreaming boys and wide-eyed girls",
                      icon: Image(decorative: "ic_heart"),
                      isReversed: true,
                      isError: true,
@@ -76,9 +76,9 @@ The indicator can be leading or trailing.
      // A trailing radio with a label, an additional label, an helper text, an icon, a divider and is about an
      // error with a reversed layout
      OUDSRadioItem(isOn: $selection,
-                   labelText: "Lucy in the Sky with Diamonds",
-                   additionalLabelText: "The Beatles"
-                   helperText: "1967",
+                   label: "Lucy in the Sky with Diamonds",
+                   additionalLabel: "The Beatles"
+                   helper: "1967",
                    icon: Image(decorative: "ic_heart"),
                    isReversed: true,
                    isError: true,
@@ -146,16 +146,16 @@ The indicator can be leading or trailing.
 
     // A leading switch with a label, an helper text
     OUDSSwitchItem(isOn: $isOn, 
-                   labelText: "Dead Robot Zombie Cop",
-                   helperText: "from Outer Space II")
+                   label: "Dead Robot Zombie Cop",
+                   helper: "from Outer Space II")
 
     // A trailing switch with a label, an helper text, an icon, a divider and is about an error
     // with an inverse layout
     OUDSSwitchItem(isOn: $isOn,
-                     labelText: "We live in a fabled world",
-                     helperText: "Of dreaming boys and wide-eyed girls",
-                     icon: Image(decorative: "ic_heart"),
-                     isInversed: true,
-                     isError: true,
-                     hasDivider: true)
+                   label: "We live in a fabled world",
+                   helper: "Of dreaming boys and wide-eyed girls",
+                   icon: Image(decorative: "ic_heart"),
+                   isReversed: true,
+                   isError: true,
+                   hasDivider: true)
 ```
