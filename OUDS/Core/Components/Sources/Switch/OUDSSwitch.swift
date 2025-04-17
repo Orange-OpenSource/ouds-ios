@@ -71,7 +71,9 @@ public struct OUDSSwitch: View {
 
     public var body: some View {
         InteractionButton {
-            $isOn.wrappedValue.toggle()
+            withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
+                $isOn.wrappedValue.toggle()
+            }
             VibrationsManager.warning()
         } content: { interactionState in
             SwitchIndicator(interactionState: interactionState, isOn: isOn)

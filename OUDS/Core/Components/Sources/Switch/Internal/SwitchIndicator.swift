@@ -34,7 +34,7 @@ struct SwitchIndicator: View {
             .frame(width: trackWidth, height: trackHeight, alignment: cursorHorizontalAlignment)
             .oudsBackground(trackColor)
             .clipShape(Capsule())
-            .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: trackWidth)
+            .animation(.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorHorizontalAlignment)
     }
 
     // MARK: Private Helpers
@@ -75,17 +75,22 @@ private struct Cursor: View {
     let isOn: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
     var body: some View {
         HStack(alignment: .center) {
-            tick
+            Image(decorative: "ic_form_tick", bundle: Bundle.OUDSComponents)
+                .renderingMode(.template)
+                .foregroundStyle(tickColor)
+                .opacity(theme.switch.switchOpacityCheck)
         }
         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
         .oudsBackground(corsorBackgroundColor)
         .clipShape(Capsule())
         .oudsShadow(theme.elevations.elevationRaised)
+        .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorWidth)
     }
 
     // MARK: Private helpers
@@ -107,27 +112,18 @@ private struct Cursor: View {
         theme.switch.switchColorCursor
     }
 
-    @ViewBuilder
-    private var tick: some View {
+    private var tickColor: Color {
         if isOn {
             switch interactionState {
-            case .enabled, .disabled, .hover:
-                Image(decorative: "ic_form_tick", bundle: Bundle.OUDSComponents)
-                    .renderingMode(.template)
-                    .oudsForegroundStyle(tickColor)
-                    .opacity(theme.switch.switchOpacityCheck)
-            default:
-                EmptyView()
+            case .enabled, .hover:
+                theme.switch.switchColorCheck.color(for: colorScheme)
+            case .pressed:
+                Color.clear
+            case .disabled, .readOnly:
+                theme.colors.colorActionDisabled.color(for: colorScheme)
             }
-        }
-    }
-
-    private var tickColor: MultipleColorSemanticTokens {
-        switch interactionState {
-        case .enabled, .hover, .pressed:
-            return theme.switch.switchColorCheck
-        case .disabled, .readOnly:
-            return theme.colors.colorActionDisabled
+        } else {
+            Color.clear
         }
     }
 }

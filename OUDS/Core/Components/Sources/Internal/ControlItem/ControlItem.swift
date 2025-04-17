@@ -109,15 +109,15 @@ struct ControlItem: View {
     public var body: some View {
         InteractionButton(isReadOnly: layoutData.isReadOnly) {
             VibrationsManager.success()
-            withAnimation(.easeInOut) {
-                switch indicatorType {
-                case .switch(let binding):
-                    binding.wrappedValue.toggle()
-                case .radioButton(let binding):
-                    binding.wrappedValue.toggle()
-                case .checkBox(let binding):
+            switch indicatorType {
+            case .switch(let binding):
+                withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
                     binding.wrappedValue.toggle()
                 }
+            case .radioButton(let binding):
+                binding.wrappedValue.toggle()
+            case .checkBox(let binding):
+                binding.wrappedValue.toggle()
             }
             action?()
         } content: { interactionState in
