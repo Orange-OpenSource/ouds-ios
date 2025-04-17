@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Tool] New system to generate, build ad upload documentation ([#628](https://github.com/Orange-OpenSource/ouds-ios/issues/628))
 - [Library] Add divider component ([#511](https://github.com/Orange-OpenSource/ouds-ios/issues/511))
+- [Library] Switch component ([#405](https://github.com/Orange-OpenSource/ouds-ios/issues/405))
 - [Library] Let control-item-based component flip the icons programatically or not ([#556](https://github.com/Orange-OpenSource/ouds-ios/issues/556))
 - [Library] Radio picker component ([#586](https://github.com/Orange-OpenSource/ouds-ios/issues/586))
 - [Library] Let control-item-based component flip the icons programatically or not ([#556](https://github.com/Orange-OpenSource/ouds-ios/issues/556))
@@ -39,7 +40,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Add demo screen of the OUDSColoredSurface component ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
 - [Library] Raw and semantic tokens for color mode ([#599](https://github.com/Orange-OpenSource/ouds-ios/issues/599))
 - [DesignToolbox] Add demo screen of the OUDSColoredSurface component ([#521](https://github.com/Orange-OpenSource/ouds-ios/issues/521))
-- [Library] Switch component ([#405](https://github.com/Orange-OpenSource/ouds-ios/issues/405))
 - [Library] `Divider` component tokens (tokens library v0.9.0)
 - [Library] `dimension1250` raw token of dimension (tokens library v0.9.0)
 - [Library] Support of arabic language ([#552](https://github.com/Orange-OpenSource/ouds-ios/issues/552))

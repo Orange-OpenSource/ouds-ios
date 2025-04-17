@@ -40,7 +40,7 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com)
 ///
-/// - Since: 0.13.0
+/// - Since: 0.14.0
 public struct OUDSSwitch: View {
 
     // MARK: - Properties
