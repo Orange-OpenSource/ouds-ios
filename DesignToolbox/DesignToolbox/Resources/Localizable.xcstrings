@@ -1585,7 +1585,31 @@
         }
       }
     },
-    "app_components_divider_horizontalDivider_label" : {
+    "app_components_divider_horizontal_description_text" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم استخدام الفاصل الأفقي لفصل المحتوى الموضوع تحت الآخر"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A horizontal Divider is used to separate content laid out one under the other"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Le séparateur horizontal est utilisé pour séparer des contenus positionnés côte à côte"
+          }
+        }
+      }
+    },
+    "app_components_divider_horizontal_label" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
       "localizations" : {
@@ -1633,7 +1657,31 @@
         }
       }
     },
-    "app_components_divider_verticalDivider_label" : {
+    "app_components_divider_vertical_description_text" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم استخدام الفاصل الرأسي لفصل المحتوى الموضوع جنبًا إلى جنب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A vertical Divider is used to separate content in horizontal layout"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le séparateur vertical est utilisé pour séparer des contenus positionnés l’un en dessous de l’autre"
+          }
+        }
+      }
+    },
+    "app_components_divider_vertical_label" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
       "localizations" : {
