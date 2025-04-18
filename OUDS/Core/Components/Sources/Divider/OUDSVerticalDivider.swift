@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A vertical Divider is used to separate content in horizontal layout (`HStack`).
+/// A vertical Divider is used to separate content laid out side by side (`HStack`).
 /// The divider can be colored using dedicated ``OUDSDividerColor`` colors.
 /// The thickness (width) is fixed by dedicated token from `OUDSTheme`.
 ///
