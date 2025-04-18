@@ -15,44 +15,44 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-/// A vertical Divider is used to separate content in horizontal layout (HStask).
-/// The divider can be colored using dedicated `OUDSDividerColor` colors.
-/// The thickness (width) is fixed by dedicated token from `OUDStheme`.
+/// A vertical Divider is used to separate content in horizontal layout (`HStack`).
+/// The divider can be colored using dedicated ``OUDSDividerColor`` colors.
+/// The thickness (width) is fixed by dedicated token from `OUDSTheme`.
 ///
-/// ```
+/// ```swift
 /// HStack {
 ///     Text("Hello wolrd!")
-///     OUDSVerticalDivider(dividerColor: .brandPrimary)
+///     OUDSVerticalDivider(color: .brandPrimary)
 ///     Text("Happy to see you")
 /// }
 /// ```
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
 ///
 /// - Since: 0.14.0
-public struct OUDSVerticalDivider: View {
+public struct OUDSVerticalDivider: View { // TODO: #511 - Update documentation hyperlink
 
-    // MARK: Stored properties
+    // MARK: - Stored properties
 
-    private let dividerColor: OUDSDividerColor
+    private let color: OUDSDividerColor
 
-    // - MARK: Initializer
+    // MARK: - Initializer
 
     /// Create a vertical colored divider.
     ///
-    /// - Parameter dividerColor: The color of the divider, `OUDSDivider.Color.borderDefault` by default
+    /// - Parameter color: The color of the divider, `OUDSDivider.Color.borderDefault` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
-    public init(dividerColor: OUDSDividerColor = .borderDefault) {
-        self.dividerColor = dividerColor
+    public init(color: OUDSDividerColor = .borderDefault) {
+        self.color = color
     }
 
-    // - MARK: Body
+    // MARK: - Body
 
     public var body: some View {
-        Divider().oudsVerticalDivider(dividerColor: dividerColor)
+        Divider().oudsVerticalDivider(color: color)
     }
 }
 
@@ -60,20 +60,20 @@ extension Divider {
     /// Set the color to the vertical divider and adjust the thickness (width)
     /// automatically according to token value.
     ///
-    /// ```
+    /// ```swift
     /// HStack {
     ///     Text("Hello wolrd!")
-    ///        .oudsVerticalDivider(dividerColor: .brandPrimary)
+    ///        .oudsVerticalDivider(color: .brandPrimary)
     ///
     ///     Text("Happy to see you")
     /// }
     /// ```
     ///
-    /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.borderDefault` by default
+    /// - Parameter color: the color of the divider, `OUDSDividerColor.borderDefault` by default
     ///
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
     @MainActor
-    public func oudsVerticalDivider(dividerColor: OUDSDividerColor) -> some View {
-        self.modifier(DividerModifier(dividerColor: dividerColor, orientation: .vertical))
+    public func oudsVerticalDivider(color: OUDSDividerColor) -> some View {
+        self.modifier(DividerModifier(dividerColor: color, orientation: .vertical))
     }
 }

@@ -56,8 +56,6 @@ final class ColoredSurfaceConfigurationModel: ComponentConfiguration {
 struct ColoredSurfaceConfiguration: View {
 
     @StateObject var model: ColoredSurfaceConfigurationModel
-    @State private var isExpanded: Bool = false
-    @Environment(\.theme) private var theme
 
     var body: some View {
         DesignToolboxColorPicker {

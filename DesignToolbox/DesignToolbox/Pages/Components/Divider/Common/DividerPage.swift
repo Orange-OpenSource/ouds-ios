@@ -76,13 +76,13 @@ struct DividerDemo: View {
             case .horizontal:
                 VStack(alignment: .center) {
                     Spacer()
-                    OUDSHorizontalDivider(dividerColor: model.selectedColor)
+                    OUDSHorizontalDivider(color: model.selectedColor)
                     Spacer()
                 }
             case .vertical:
                 HStack(alignment: .center) {
                     Spacer()
-                    OUDSVerticalDivider(dividerColor: model.selectedColor)
+                    OUDSVerticalDivider(color: model.selectedColor)
                     Spacer()
                 }
             }

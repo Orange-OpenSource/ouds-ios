@@ -47,12 +47,12 @@ final class DividerConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-          \(dividerPettern)(color: \(selectedColor)) {
+          \(dividerPattern)(color: .\(selectedColor)) {
           }
           """
     }
 
-    private var dividerPettern: String {
+    private var dividerPattern: String {
         orientation == .horizontal ? "OUDSHorizontalDivider" : "OUDSVerticalDivider"
     }
 }
@@ -64,8 +64,6 @@ struct DividerConfiguration: View {
     // MARK: Stored properties
 
     @StateObject var model: DividerConfigurationModel
-    @State private var isExpanded: Bool = false
-    @Environment(\.theme) private var theme
 
     // MARK: Body
 
