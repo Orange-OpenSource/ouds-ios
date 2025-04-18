@@ -20,12 +20,12 @@ struct CheckboxIndeterminateElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_checkbox_threeStates_indicatorOnly_label"
+        name = "app_components_checkbox_threeStates_indicatorOnly_label".localized()
         image = Image(decorative: "il_component_checkbox").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,
-            description: "app_components_checkbox_description_text",
+            description: "app_components_checkbox_threeStates_description_text",
             illustration: AnyView(CheckboxIndeterminatePage())))
     }
 }
