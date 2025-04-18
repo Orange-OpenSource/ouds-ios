@@ -47,7 +47,7 @@ brew update
 # For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.2)
 brew install peripheryapp/periphery/periphery
 
-# For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.18.1)
+# For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.24.3)
 brew install gitleaks
 # or `brew reinstall gitleaks` to get updates if old version installed
 

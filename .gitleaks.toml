@@ -2854,5 +2854,6 @@ keywords = [
 # Customization for internal rules
 
 [[rules]]
+  id =  "apps-plus-api-key"
   description = "Detect Apps Plus key in URL"
   regex = '''(?i)apikey=([a-zA-Z0-9_-]{10})'''
