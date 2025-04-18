@@ -77,7 +77,7 @@ You will have to consider the semantic tokens providers you need:
 - font tokens are in `OrangeThemeFontSemanticTokensProvider`
 
 You can also override the component tokens providers you need.
-Have a look [on the documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/) to know which one you need to update.
+Have a look [on the documentation](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/) to know which one you need to update.
 
 Example for semantic tokens providers:
 
@@ -189,7 +189,7 @@ class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentToken
 // Etc.
 ```
 
-You can instead of overriding existing semantic tokens provider implement your own provider but it will impy to implement maybe hundreds of tokens. Your own provider must match the suitable signature.
+You can instead of overriding existing semantic tokens provider implement your own provider but it will imply to implement maybe hundreds of tokens. Your own provider must match the suitable signature.
 
 Then define your own theme class and assign the providers you want to override. If some are missing, default implementation will be used.
 

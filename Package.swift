@@ -17,7 +17,7 @@ import PackageDescription
 
 /// Exposing OUDS through a Swift Package is a good start.
 /// Expose it through Pod or XCFamework should be investigated later.
-/// Defining here hierarchy between targets will prevent us to have cyclic dependencies and help to have seperated responsibilities.
+/// Defining here hierarchy between targets will prevent us to have cyclic dependencies and help to have separated responsibilities.
 let package = Package(
     
     name: "OUDS",
