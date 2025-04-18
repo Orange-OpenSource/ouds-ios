@@ -43,3 +43,31 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
     }
     .oudsColoredSurface(theme.colorModes.modeOnStatusPositiveEmphasized)
 ```
+
+### Divider
+
+#### How it works
+
+A divider is used to separate content elements in a view. Two kinds of divider are proposed:
+- `OUDSHorizontalDivider` To separate elements stacked vertivally (VStask).
+- `OUDSVerticalDivider` To separate elements stacked Horizontally (HStask).
+
+A divider can be colored using color enumerated in the `OUDSDividerColor`.
+
+#### How to use
+
+```swift
+// Add a vertical divider between items
+HStack {
+    Text("Hello wolrd!")
+    OUDSVerticalDivider(color: .brandPrimary)
+    Text("Happy to see you")
+}
+
+// Add an horizontal divider between items
+VStack {
+    Text("Hello wolrd!")
+    OUDSHorizontalDivider(color: .brandPrimary)
+    Text("Happy to see you")
+}
+```
