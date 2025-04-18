@@ -402,7 +402,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activé"
+            "value" : "Actif"
           }
         }
       }
@@ -605,20 +605,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "أيقونة فقط"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icon only"
+            "value" : "Icon"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône uniquement"
+            "value" : "Icône"
           }
         }
       }
@@ -666,7 +666,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non autorisé sur surface colorée"
+            "value" : "Non autorisé sur fond de couleur"
           }
         }
       }
@@ -823,20 +823,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "مربعات الاختيار"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Checkboxes"
+            "value" : "Checkbox"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cases à cocher"
+            "value" : "Case à cocher"
           }
         }
       }
@@ -913,6 +913,30 @@
         }
       }
     },
+    "app_components_checkbox_threeState_controlItem_description_text" : {
+      "comment" : "Component - Checkbox - Three States",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkboxes allows users for example within a folder and file tree structure to select, unselect or partially select one or multiple items."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La case à cocher indéterminée est utilisée dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
+          }
+        }
+      }
+    },
     "app_components_checkbox_threeStates_controlItem_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
@@ -931,12 +955,35 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Case à cocher avec 3 valeurs"
+            "state" : "translated",
+            "value" : "Case à cocher indéterminée dans une liste"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
+    },
+    "app_components_checkbox_threeStates_description_text" : {
+      "comment" : "Component - Checkbox - Three States",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkboxes allows users for example within a folder and file tree structure to select, unselect or partially select one or multiple items."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La case à cocher indéterminée est utilisée dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
+          }
+        }
+      }
     },
     "app_components_checkbox_threeStates_indicatorOnly_label" : {
       "comment" : "Component - Checkbox",
@@ -956,12 +1003,11 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Case à cocher seule avec 3 valeurs"
+            "state" : "translated",
+            "value" : "Case à cocher indéterminée"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_checkbox_twoStates_controlItem_label" : {
       "comment" : "Component - Checkbox",
@@ -981,12 +1027,11 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Case à cocher avec 2 valeurs"
+            "state" : "translated",
+            "value" : "Case à cocher dans une liste"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_checkbox_twoStates_indicatorOnly_label" : {
       "comment" : "Component - Checkbox",
@@ -1006,12 +1051,11 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Case à cocher seule avec 2 valeurs"
+            "state" : "translated",
+            "value" : "Case à cocher"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_coloredSurface_color_label" : {
       "comment" : "Component - Colored Surface",
@@ -1296,7 +1340,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mise en page"
+            "value" : "Variants"
           }
         }
       }
@@ -1320,7 +1364,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sur fond coloré"
+            "value" : "Sur fond de couleur"
           }
         }
       }
@@ -1427,20 +1471,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "نص فقط"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Text only"
+            "value" : "Text"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texte uniquement"
+            "value" : "Texte"
           }
         }
       }
@@ -1541,7 +1585,31 @@
         }
       }
     },
-    "app_components_divider_horizontalDivider_label" : {
+    "app_components_divider_horizontal_description_text" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم استخدام الفاصل الأفقي لفصل المحتوى الموضوع تحت الآخر"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A horizontal Divider is used to separate content laid out one under the other"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Le séparateur horizontal est utilisé pour séparer des contenus positionnés côte à côte"
+          }
+        }
+      }
+    },
+    "app_components_divider_horizontal_label" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
       "localizations" : {
@@ -1589,7 +1657,31 @@
         }
       }
     },
-    "app_components_divider_verticalDivider_label" : {
+    "app_components_divider_vertical_description_text" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم استخدام الفاصل الرأسي لفصل المحتوى الموضوع جنبًا إلى جنب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A vertical Divider is used to separate content in horizontal layout"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le séparateur vertical est utilisé pour séparer des contenus positionnés l’un en dessous de l’autre"
+          }
+        }
+      }
+    },
+    "app_components_divider_vertical_label" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
       "localizations" : {
@@ -1824,11 +1916,10 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bouton radio enrichi"
+            "value" : "Bouton radio dans une liste"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_radio_description_text" : {
       "comment" : "Component - Radio",
@@ -1920,12 +2011,11 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Bouton radio seul"
+            "state" : "translated",
+            "value" : "Bouton radio"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_radio_label" : {
       "comment" : "Component - Radio",
@@ -2029,20 +2119,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "يسمح منتقي الراديو للمستخدمين بالاختيار على عنصر ضمن مجموعة من العديد من العناصر الأخرى باستخدام أزرار الاختيار"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Radio picker allows users to chose on item within a group of many others using radio buttons"
+            "value" : "Radio picker allows users to chose on item within a group of many radio buttons"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le sélecteur de radio permet aux utilisateurs de choisir un élément au sein d'un groupe de nombreux autres à l'aide de boutons radio"
+            "value" : "Le sélecteur de radio permet aux utilisateurs de choisir un élément au sein d'un groupe de plusieurs boutons radio"
           }
         }
       }
@@ -2066,7 +2156,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selecteur de radio"
+            "value" : "Sélecteur de boutons radio"
           }
         }
       }
@@ -2090,7 +2180,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les bordures sont utilisées pour les couleurs de contour sur les composants et aussi pour les couleurs des lignes de séparation pour des composants comme les tableaux."
+            "value" : "Les bordures sont utilisées pour les couleurs de contour sur les composants et pour les couleurs des lignes de séparation pour des composants comme les tableaux."
           }
         }
       }
@@ -2354,7 +2444,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône avec"
+            "value" : "Icône décorative"
           }
         }
       }
@@ -2378,7 +2468,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône décorative"
+            "value" : "Icône avec"
           }
         }
       }
@@ -2474,7 +2564,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espace en ligne"
+            "value" : "Espacement extérieur entre éléments côte à côte"
           }
         }
       }
@@ -2546,7 +2636,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espace empilé"
+            "value" : "Espacement extérieur entre éléments empilés"
           }
         }
       }
@@ -2581,20 +2671,20 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "استخدم الأطر المرنة لتوفير ملخص قوي للنظرات العامة عالية المستوى."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Leverage agile frameworks to provide a robust synopsis for high-level overviews."
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus ullamcorper fermentum."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tirez parti des frameworks agiles pour fournir un synopsis robuste pour des aperçus de haut niveau."
+            "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus ullamcorper fermentum."
           }
         }
       }
@@ -2642,7 +2732,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rembourrage en ligne"
+            "value" : "Espacement intérieur gauche droite"
           }
         }
       }
@@ -2666,7 +2756,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rembourrage intérieur"
+            "value" : "Espacement intérieur"
           }
         }
       }
@@ -2690,7 +2780,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rembourrage empilé"
+            "value" : "Espacement intérieur haut bas"
           }
         }
       }
@@ -2882,7 +2972,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La typographie est notre système de polices et de styles de texte. Ils améliorent la communication et renforcent le style de la marque."
+            "value" : "La typographie est notre système de polices de caractère et de styles de texte. Ils améliorent la communication et renforcent le style de la marque."
           }
         }
       }
@@ -2930,7 +3020,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Typographie"
+            "value" : "Police de caractère"
           }
         }
       }

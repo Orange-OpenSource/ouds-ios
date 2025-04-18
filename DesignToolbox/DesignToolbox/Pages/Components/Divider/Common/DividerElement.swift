@@ -19,13 +19,16 @@ struct DividerElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init(orientation: DividerConfigurationModel.Orientation) {
-        let key = orientation == .horizontal ? "app_components_divider_horizontalDivider_label" : "app_components_divider_verticalDivider_label"
-        name = key.localized()
+        let keyPattern = orientation == .horizontal ? "horizontal" : "vertical"
+        let keyForName = "app_components_divider_\(keyPattern)_label"
+        let keyForDescription = "app_components_divider_\(keyPattern)_description_text"
+
+        name = keyForName.localized()
         image = Image(decorative: "il_component_divider").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
                 name: name,
                 image: nil,
-                description: "",
+                description: keyForDescription.localized(),
                 illustration: AnyView(DividerPage(orientation: orientation))
             )
         )
