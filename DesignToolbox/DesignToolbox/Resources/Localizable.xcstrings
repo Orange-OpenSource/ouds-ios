@@ -402,7 +402,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activé"
+            "value" : "Actif"
           }
         }
       }
@@ -617,7 +617,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Icône"
           }
         }
@@ -666,7 +666,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non autorisé sur surface colorée"
+            "value" : "Non autorisé sur fond de couleur"
           }
         }
       }
@@ -917,6 +917,12 @@
       "comment" : "Component - Checkbox - Three States",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -959,6 +965,12 @@
       "comment" : "Component - Checkbox - Three States",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1328,7 +1340,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mise en page"
+            "value" : "Variants"
           }
         }
       }
@@ -1352,7 +1364,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sur fond coloré"
+            "value" : "Sur fond de couleur"
           }
         }
       }
@@ -1471,7 +1483,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Texte"
           }
         }
@@ -2623,7 +2635,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus ullamcorper fermentum."
           }
         }
