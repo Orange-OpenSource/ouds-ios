@@ -932,7 +932,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La case à cocher indéterminé est utilisé dans des structure de dossier et de fichier ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
+            "value" : "La case à cocher indéterminée est utilisée dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
           }
         }
       }
@@ -956,7 +956,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Case à cocher indéterminé dans une liste"
+            "value" : "Case à cocher indéterminée dans une liste"
           }
         }
       }
@@ -980,7 +980,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La case à cocher indéterminé est utilisé dans des structure de dossier et de fichier ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
+            "value" : "La case à cocher indéterminée est utilisée dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
           }
         }
       }
@@ -1004,7 +1004,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Case à cocher indéterminé"
+            "value" : "Case à cocher indéterminée"
           }
         }
       }
