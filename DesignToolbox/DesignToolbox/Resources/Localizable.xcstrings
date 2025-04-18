@@ -605,7 +605,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "أيقونة فقط"
           }
         },
@@ -717,8 +717,7 @@
             "value" : "Case à cocher enrichie"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_checkbox_description_text" : {
       "comment" : "Component - Checkbox",
@@ -798,8 +797,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "مؤشر فقط"
+            "state" : "translated",
+            "value" : "خانة الاختيار"
           }
         },
         "en" : {
@@ -810,12 +809,11 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Case à cocher seule"
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_components_checkbox_label" : {
       "comment" : "Component - Checkbox",
@@ -823,8 +821,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "مربعات الاختيار"
+            "state" : "translated",
+            "value" : "خانة الاختيار"
           }
         },
         "en" : {
@@ -919,8 +917,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
+            "state" : "translated",
+            "value" : "تتيح مربعات الاختيار غير المحددة للمستخدمين، على سبيل المثال، داخل بنية المجلد وشجرة الملفات تحديد أو إلغاء تحديد أو تحديد جزئي لعنصر واحد أو عناصر متعددة."
           }
         },
         "en" : {
@@ -943,7 +941,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "عنصر مربع الاختيار ثلاثي الحالات"
           }
         },
@@ -967,7 +965,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
           }
         },
@@ -991,7 +989,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "مربع الاختيار الخاص بثلاث حالات فقط"
           }
         },
@@ -1015,7 +1013,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "عنصر مربع الاختيار الخاص بالحالتين"
           }
         },
@@ -1039,7 +1037,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "مربع الاختيار الخاص بالحالتين فقط"
           }
         },
@@ -1471,7 +1469,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "نص فقط"
           }
         },
@@ -1603,7 +1601,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Le séparateur horizontal est utilisé pour séparer des contenus positionnés côte à côte"
           }
         }
@@ -1999,7 +1997,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "مؤشر فقط"
           }
         },
@@ -2119,7 +2117,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "يسمح منتقي الراديو للمستخدمين بالاختيار على عنصر ضمن مجموعة من العديد من العناصر الأخرى باستخدام أزرار الاختيار"
           }
         },
@@ -2671,7 +2669,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "استخدم الأطر المرنة لتوفير ملخص قوي للنظرات العامة عالية المستوى."
           }
         },
