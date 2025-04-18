@@ -20,7 +20,9 @@ import SwiftUI
 /// The model shared between `DividerPageConfiguration` view and `DividerPageComponent` view.
 final class DividerConfigurationModel: ComponentConfiguration {
 
-    // MARK: Published properties
+    // MARK: Stored properties
+
+    let orientation: Orientation
 
     @Published var selectedColor: OUDSDividerColor {
         didSet { updateCode() }
@@ -30,8 +32,6 @@ final class DividerConfigurationModel: ComponentConfiguration {
         case horizontal
         case vertical
     }
-
-    let orientation: Orientation
 
     // MARK: Initializer
 
@@ -47,12 +47,12 @@ final class DividerConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
             """
-          \(dividerPetern)(color: \(selectedColor)) {
+          \(dividerPettern)(color: \(selectedColor)) {
           }
           """
     }
 
-    private var dividerPetern: String {
+    private var dividerPettern: String {
         orientation == .horizontal ? "OUDSHorizontalDivider" : "OUDSVerticalDivider"
     }
 }
@@ -61,9 +61,13 @@ final class DividerConfigurationModel: ComponentConfiguration {
 
 struct DividerConfiguration: View {
 
+    // MARK: Stored properties
+
     @StateObject var model: DividerConfigurationModel
-    @Environment(\.theme) private var theme
     @State private var isExpanded: Bool = false
+    @Environment(\.theme) private var theme
+
+    // MARK: Body
 
     var body: some View {
         DesignToolboxColorPicker {

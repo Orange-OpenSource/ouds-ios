@@ -52,8 +52,8 @@ struct DividerPage: View {
 
 struct DividerIllustration: View {
 
-    @Environment(\.colorScheme) private var colorScheme
     @StateObject var model: DividerConfigurationModel
+    @Environment(\.colorScheme) private var colorScheme
 
     var body: some View {
         VStack(alignment: .center) {
@@ -67,8 +67,8 @@ struct DividerIllustration: View {
 
 struct DividerDemo: View {
 
-    @Environment(\.theme) private var theme
     @StateObject var model: DividerConfigurationModel
+    @Environment(\.theme) private var theme
 
     var body: some View {
         Group {

@@ -25,7 +25,7 @@ struct DividerModifier: ViewModifier {
         case vertical
     }
 
-    // - MARK: Stored properties
+    // MARK: Stored properties
 
     let dividerColor: OUDSDividerColor
     let orientation: Orientation

@@ -22,7 +22,7 @@ import SwiftUI
 /// ```
 /// VStack {
 ///     Text("Hello wolrd!")
-///     OUDSHorizontalDivider(color: .brandPrimary)
+///     OUDSHorizontalDivider(dividerColor: .brandPrimary)
 ///     Text("Happy to see you")
 /// }
 /// ```
@@ -34,7 +34,7 @@ import SwiftUI
 /// - Since: 0.14.0
 public struct OUDSHorizontalDivider: View {
 
-    // - MARK: Stored properties
+    // MARK: Stored properties
 
     private let dividerColor: OUDSDividerColor
 
@@ -42,8 +42,7 @@ public struct OUDSHorizontalDivider: View {
 
     /// Create a horizontal colored divider.
     ///
-    /// - Parameters:
-    ///     - dividerColor: The color of the divider, `OUDSDividerColor.borderDefault` by default
+    /// - Parameter dividerColor: The color of the divider, `OUDSDividerColor.borderDefault` by default
     public init(dividerColor: OUDSDividerColor = .borderDefault) {
         self.dividerColor = dividerColor
     }
@@ -59,11 +58,18 @@ extension Divider {
     /// Set the color to the horizontal divider and adjust the thickness (height)
     /// automatically according to token value.
     ///
+    /// ```
+    /// VStack {
+    ///     Text("Hello wolrd!")
+    ///        .oudsHorizontalDivider(dividerColor: .brandPrimary)
+    ///
+    ///     Text("Happy to see you")
+    /// }
+    /// ```
+    ///
     /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.borderDefault` by default
     ///
     /// **Remark: Horizontal means horizontal line (content separator in a VStack)**
-    /// 
-    /// - Since: 0.14.0
     @MainActor
     public func oudsHorizontalDivider(dividerColor: OUDSDividerColor = .borderDefault) -> some View {
         self.modifier(DividerModifier(dividerColor: dividerColor, orientation: .horizontal))
