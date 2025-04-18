@@ -1517,6 +1517,102 @@
         }
       }
     },
+    "app_components_divider_description_text" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يُنظّم الفاصل الواجهة بصريًا من خلال فصل أقسام المحتوى بوضوح. يُحسّن هذا الفاصل سهولة القراءة وتنظيم المحتوى دون الحاجة إلى تسلسل هرمي مُحكم كما هو الحال في العناوين أو الحاويات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A divider visually structures an interface by clearly separating content sections. It helps to improve readability and content organization without introducing a strong hierarchy like a heading or a container would. "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un séparateur structure visuellement une interface en séparant clairement les sections de contenu. Il améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie trop marquée comme le feraient un titre ou un conteneur."
+          }
+        }
+      }
+    },
+    "app_components_divider_horizontalDivider_label" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل أفقي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontal divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur horizontal"
+          }
+        }
+      }
+    },
+    "app_components_divider_label" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur"
+          }
+        }
+      }
+    },
+    "app_components_divider_verticalDivider_label" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل عمودي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertical divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur vertical"
+          }
+        }
+      }
+    },
     "app_components_link_arrowBack_label" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",

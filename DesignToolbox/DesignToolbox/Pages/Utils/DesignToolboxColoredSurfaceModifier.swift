@@ -31,3 +31,9 @@ struct DesignToolboxColoredSurfaceModifier: ViewModifier {
         }
     }
 }
+
+extension View {
+    func designToolboxColoredSurface(_ coloredSurface: Bool) -> some View {
+        self.modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: coloredSurface))
+    }
+}
