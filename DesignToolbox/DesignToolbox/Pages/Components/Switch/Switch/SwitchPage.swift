@@ -81,6 +81,6 @@ private struct SwitchDemo: View {
             Spacer()
         }
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .designToolboxBackground(onColoredSurface: false)
+        .designToolboxColoredSurface(false)
     }
 }

@@ -84,7 +84,7 @@ private struct SwitchItemDemo: View {
                        hasDivider: model.divider)
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .designToolboxBackground(onColoredSurface: false)
+        .designToolboxColoredSurface(false)
     }
 
     private var helperTextContent: String? {

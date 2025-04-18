@@ -2208,7 +2208,7 @@
       }
     },
     "app_components_switch_description_text" : {
-      "comment" : "Component Switch",
+      "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2220,7 +2220,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يتيح المفتاح للمستخدم تمكين أو تعطيل الميزات أو الخيارات أو الإعدادات.\""
+            "value" : "A switch allows user to enable or disable a feature, option, or setting."
           }
         },
         "fr" : {
@@ -2232,7 +2232,7 @@
       }
     },
     "app_components_switch_helperText_text" : {
-      "comment" : "Component Switch",
+      "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2256,6 +2256,7 @@
       }
     },
     "app_components_switch_label" : {
+      "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2272,14 +2273,14 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Switch"
           }
         }
       }
     },
     "app_components_switch_label_text" : {
-      "comment" : "Component Switch",
+      "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2303,7 +2304,7 @@
       }
     },
     "app_components_switch_selection_label" : {
-      "comment" : "Component Switch",
+      "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2327,7 +2328,7 @@
       }
     },
     "app_components_switch_selectorOnly_label" : {
-      "comment" : "Component switch",
+      "comment" : "Component - Switch",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
