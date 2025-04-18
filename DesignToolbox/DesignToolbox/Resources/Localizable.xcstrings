@@ -2334,19 +2334,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "التبديل فقط"
+            "value" : "التبديل"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Switch only"
+            "value" : "Switch"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Switch seul"
+            "value" : "Switch"
           }
         }
       }
