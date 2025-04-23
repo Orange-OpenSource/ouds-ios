@@ -81,7 +81,7 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 
 - Generate documentation: from Xcode build the documentation, export each doccarchive in your downlaods folder (9 modules), then run the script ; it will update online version and generate a ZIP file in _/tmp_
     ```shell
-    ./uploadWebDoc.sh --libversion=X.Y.Z --usegit
+    ./generateWebDocumentation.sh --libversion=X.Y.Z --usegit
     ```
     
 - Launch a job on your runner to build the demo application
@@ -178,19 +178,19 @@ First, you will have to use _Xcode_ to build the documentation (_Product > Build
 Then, **for each documentation catalog of the Swift package, i.e. for each target**, export the _doccarchive_ **in your _Downloads_ folder**.
 Today you will have to do this operation for the _doccarchives_ *OUDS*, *OUDSComponents*, *OUDSFoundations*, *OUDSModules*, *OUDSThemesInverse*, *OUDSThemesOrange*, *OUDSTokensComponent*, *OUDSTokenSemantic* and *OUDSTokenRaw*.
 
-Then, you will have to run the script `uploadWebDoc.sh` which will use these _doccarchives_, get their HTML content and upload the GitHub Pages branch.
+Then, you will have to run the script `generateWebDocumentation.sh` which will use these _doccarchives_, get their HTML content and upload the GitHub Pages branch.
 
 ```shell
 # To show the help:
-./uploadWebDoc.sh --help
+./generateWebDocumentation.sh --help
 
 # To build the doc and push to GitHub:
 # VERSION will be added in the main page
 # --usegit make the script upload sources to GitHub
-./uploadWebDoc.sh --libversion=VERSION --usegit
+./generateWebDocumentation.sh --libversion=VERSION --usegit
 
 # If you don't want the ZIP to be computed:
-./uploadWebDoc.sh --libversion=VERSION --usegit --nozip
+./generateWebDocumentation.sh --libversion=VERSION --usegit --nozip
 ```
 
 Keep in mind everything is stored in _/tmp_ folder with the execution timestamp, thus if you asked for a ZIP archive or want to get the generated files, look for files named "ouds-docs".
