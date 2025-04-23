@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSComponents_Tests.build/master.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Components/Tests/Checkbox/OUDSCheckboxStateTests.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSComponents_Tests.build/OUDSCheckboxStateTests.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSComponents_Tests.build/OUDSCheckboxStateTests.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSComponents_Tests.build/OUDSCheckboxStateTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSComponents_Tests.build/OUDSCheckboxStateTests.swiftdeps"
+  }
+}

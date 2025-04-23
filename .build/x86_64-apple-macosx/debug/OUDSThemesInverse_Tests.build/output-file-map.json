@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesInverse_Tests.build/master.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Inverse/Tests/InverseThemeColorsTests.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesInverse_Tests.build/InverseThemeColorsTests.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesInverse_Tests.build/InverseThemeColorsTests.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesInverse_Tests.build/InverseThemeColorsTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesInverse_Tests.build/InverseThemeColorsTests.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Inverse/Tests/InverseThemeElevationColorsTests.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesInverse_Tests.build/InverseThemeElevationColorsTests.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesInverse_Tests.build/InverseThemeElevationColorsTests.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesInverse_Tests.build/InverseThemeElevationColorsTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesInverse_Tests.build/InverseThemeElevationColorsTests.swiftdeps"
+  }
+}

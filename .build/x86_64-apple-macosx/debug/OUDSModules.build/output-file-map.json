@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSModules.build/master.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Modules/Sources/DummyModule/Dummy.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSModules.build/Dummy.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSModules.build/Dummy.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSModules.build/Dummy~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSModules.build/Dummy.swiftdeps"
+  }
+}

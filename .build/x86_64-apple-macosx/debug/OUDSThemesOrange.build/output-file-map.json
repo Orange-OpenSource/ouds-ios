@@ -1,0 +1,383 @@
+{
+  "": {
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/master.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Declarations/OrangeBrandColorRawTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Declarations/OrangeBrandFontRawTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/OrangeTheme.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeBadgeComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBadgeComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBadgeComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBadgeComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBadgeComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeBulletListComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBulletListComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBulletListComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBulletListComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBulletListComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeButtonComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeButtonComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeButtonComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeButtonComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeButtonComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeCheckboxComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeCheckboxComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeCheckboxComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeCheckboxComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeCheckboxComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeChipComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeChipComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeChipComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeChipComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeChipComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeControlItemComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeControlItemComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeControlItemComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeControlItemComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeControlItemComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeDividerComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeDividerComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeDividerComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeDividerComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeDividerComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeInputTextComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeInputTextComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeInputTextComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeInputTextComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeInputTextComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeLinkComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeLinkComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeLinkComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeLinkComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeLinkComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeListItemComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeListItemComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeListItemComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeListItemComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeListItemComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeRadioButtonComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeRadioButtonComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeRadioButtonComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeRadioButtonComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeRadioButtonComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeSelectComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSelectComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSelectComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSelectComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSelectComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeSkeletonComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSkeletonComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSkeletonComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSkeletonComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSkeletonComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeSwitchComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSwitchComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSwitchComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSwitchComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSwitchComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/ComponentTokens/OrangeThemeTagComponentTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeTagComponentTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeTagComponentTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeTagComponentTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeTagComponentTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/SemanticTokens/OrangeThemeBorderSemanticTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBorderSemanticTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBorderSemanticTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBorderSemanticTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeBorderSemanticTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/SemanticTokens/OrangeThemeColorModeSemanticTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeColorModeSemanticTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeColorModeSemanticTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeColorModeSemanticTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeColorModeSemanticTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/SemanticTokens/OrangeThemeColorSemanticTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeColorSemanticTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeColorSemanticTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeColorSemanticTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeColorSemanticTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/SemanticTokens/OrangeThemeElevationSemanticTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeElevationSemanticTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeElevationSemanticTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeElevationSemanticTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeElevationSemanticTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/SemanticTokens/OrangeThemeFontSemanticTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeFontSemanticTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeFontSemanticTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeFontSemanticTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeFontSemanticTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/SemanticTokens/OrangeThemeGridSemanticTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeGridSemanticTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeGridSemanticTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeGridSemanticTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeGridSemanticTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/SemanticTokens/OrangeThemeOpacitySemanticTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeOpacitySemanticTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeOpacitySemanticTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeOpacitySemanticTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeOpacitySemanticTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/SemanticTokens/OrangeThemeSizeSemanticTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSizeSemanticTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSizeSemanticTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSizeSemanticTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSizeSemanticTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Providers/SemanticTokens/OrangeThemeSpaceSemanticTokensProvider.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSpaceSemanticTokensProvider.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSpaceSemanticTokensProvider.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSpaceSemanticTokensProvider~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeThemeSpaceSemanticTokensProvider.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/TypeAliases/OrangeBrandColorRawTokens+Aliases.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens+Aliases.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens+Aliases.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens+Aliases~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens+Aliases.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/TypeAliases/OrangeBrandFontRawTokens+Aliases.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens+Aliases.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens+Aliases.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens+Aliases~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens+Aliases.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BadgeComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BadgeComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BadgeComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BadgeComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BadgeComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+BulletListComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BulletListComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BulletListComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BulletListComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BulletListComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ButtonComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ButtonComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ButtonComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ButtonComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ButtonComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+CheckboxComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+CheckboxComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+CheckboxComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+CheckboxComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+CheckboxComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ChipComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ChipComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ChipComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ChipComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ChipComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ControlItemComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ControlItemComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ControlItemComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ControlItemComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ControlItemComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+DividerComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+DividerComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+DividerComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+DividerComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+DividerComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+InputTextComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+InputTextComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+InputTextComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+InputTextComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+InputTextComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+LinkComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+LinkComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+LinkComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+LinkComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+LinkComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+ListItemComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ListItemComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ListItemComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ListItemComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ListItemComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+RadioButtonComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+RadioButtonComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+RadioButtonComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+RadioButtonComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+RadioButtonComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SelectComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SelectComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SelectComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SelectComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SelectComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SkeletonComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SkeletonComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SkeletonComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SkeletonComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SkeletonComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+SwitchComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SwitchComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SwitchComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SwitchComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SwitchComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/ComponentTokens/OrangeTheme+TagComponentTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+TagComponentTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+TagComponentTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+TagComponentTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+TagComponentTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/RawTokens/OrangeBrandColorRawTokens+Values.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens+Values.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens+Values.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens+Values~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandColorRawTokens+Values.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/RawTokens/OrangeBrandFontRawTokens+Values.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens+Values.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens+Values.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens+Values~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeBrandFontRawTokens+Values.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+BorderSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BorderSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BorderSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BorderSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+BorderSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ColorModeMultipleSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorModeMultipleSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorModeMultipleSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorModeMultipleSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorModeMultipleSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ColorModeSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorModeSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorModeSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorModeSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorModeSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ColorMultipleSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorMultipleSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorMultipleSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorMultipleSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorMultipleSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ColorSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ColorSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ElevationCompositeSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationCompositeSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationCompositeSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationCompositeSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationCompositeSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ElevationMultipleSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationMultipleSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationMultipleSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationMultipleSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationMultipleSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+ElevationSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+ElevationSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+FontCompositeSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontCompositeSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontCompositeSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontCompositeSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontCompositeSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+FontMultipleSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontMultipleSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontMultipleSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontMultipleSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontMultipleSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+FontSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+FontSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+GridSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+GridSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+GridSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+GridSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+GridSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+OpacitySemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+OpacitySemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+OpacitySemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+OpacitySemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+OpacitySemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+SizeMultipleSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SizeMultipleSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SizeMultipleSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SizeMultipleSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SizeMultipleSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+SizeSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SizeSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SizeSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SizeSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SizeSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+SpaceMultipleSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SpaceMultipleSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SpaceMultipleSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SpaceMultipleSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SpaceMultipleSemanticTokens.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/Themes/Orange/Sources/Values/SemanticTokens/OrangeTheme+SpaceSemanticTokens.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SpaceSemanticTokens.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SpaceSemanticTokens.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SpaceSemanticTokens~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDSThemesOrange.build/OrangeTheme+SpaceSemanticTokens.swiftdeps"
+  }
+}

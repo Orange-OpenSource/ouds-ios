@@ -1,0 +1,41 @@
+{
+  "": {
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/master.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/OUDS/Sources/A11Y constants.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/A11Y constants.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/A11Y constants.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/A11Y constants~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/A11Y constants.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/OUDS/Sources/OUDSTheme/Helpers/OUDSTheme+GridSemanticTokensHelper.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSTheme+GridSemanticTokensHelper.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSTheme+GridSemanticTokensHelper.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSTheme+GridSemanticTokensHelper~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSTheme+GridSemanticTokensHelper.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/OUDS/Sources/OUDSTheme/OUDSTheme.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSTheme.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSTheme.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSTheme~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSTheme.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/OUDS/Sources/OUDSTheme/TokensProviders.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/TokensProviders.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/TokensProviders.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/TokensProviders~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/TokensProviders.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/OUDS/Sources/OUDSTheme/Views/OUDSThemeableView.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSThemeableView.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSThemeableView.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSThemeableView~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSThemeableView.swiftdeps"
+  },
+  "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/OUDS/Core/OUDS/Sources/OUDSUserInterfaceSizeClass.swift": {
+    "dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSUserInterfaceSizeClass.d",
+    "object": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSUserInterfaceSizeClass.swift.o",
+    "swiftmodule": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSUserInterfaceSizeClass~partial.swiftmodule",
+    "swift-dependencies": "/Users/xhrs0459/Documents/5_Projects/17-OUDS/ouds-ios/.build/x86_64-apple-macosx/debug/OUDS.build/OUDSUserInterfaceSizeClass.swiftdeps"
+  }
+}
