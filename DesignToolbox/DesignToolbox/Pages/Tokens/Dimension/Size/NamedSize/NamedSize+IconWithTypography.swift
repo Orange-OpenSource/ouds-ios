@@ -13,7 +13,7 @@
 
 import OUDS
 import OUDSTokensSemantic
-import SwiftUICore
+import SwiftUI
 
 extension NamedSize {
     enum IconWithTypography: String, CaseIterable {
