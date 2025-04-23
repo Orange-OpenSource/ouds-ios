@@ -102,11 +102,9 @@ To build the demo application follow those steps:
 ## Documentation
 
 The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
-We use Xcode to build the documentation then export each DocC catalog as DocC archive and, finaly, merge the HTML documentations for the online version.
+Documentation catalogs / archives can be generated through Xcode with _Product > Build Documentation_.
 
-The documentation can be built from Xcode with _Product > Build Documentation_.
-
-The `uploadWebDoc.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
+The `generateWebDocumentation.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
 the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
 
 ## Run tests 
@@ -232,6 +230,8 @@ We choose to use Xcode automatic signing for debug builds of the app so as to ma
 Note the bundle identifier here for local builds is **com.orange.ouds.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.ouds.demoapp** identifiers.
 
 However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.ouds.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners and must not be available outside.
+
+You can find more details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/53-%E2%80%90-About-Apple-magic).
 
 ## Update dependencies with Renovate
 

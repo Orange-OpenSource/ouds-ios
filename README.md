@@ -7,7 +7,7 @@
   ·
   <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=feature_request.yml title="Open an issue on GitHub">Request feature</a>
   ·
-  <a href="https://ios.unified-design-system.orange.com/" title="Swift library technical documentation on GitHub Pages">Swift documentation</a>
+  <a href="https://ios.unified-design-system.orange.com/documentation" title="Swift library technical documentation on GitHub Pages">Swift documentation</a>
   ·
   <a href="https://github.com/Orange-OpenSource/ouds-ios/wiki" title="Swift library wiki">Wiki</a>
   ·
@@ -44,7 +44,7 @@
 
 This repository contains the OUDS iOS library that provides Orange iOS components for its unified design system, but also a demo application showcasing these different components.
 
-You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/), and also the [whole design system](https://unified-design-system.orange.com/).
+You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/documentation), and also the [whole design system](https://unified-design-system.orange.com/).
 
 Details about the project are also [available in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki).
 

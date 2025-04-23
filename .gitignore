@@ -16,6 +16,9 @@
 .DS_Store
 **/.DS_Store
 
+# Produced by tool generating documentation, should be versionined in gh-pages branch
+/.build/
+
 # Produced by Brew
 /Brewfile.lock.json
 
