@@ -22,7 +22,7 @@ let package = Package(
     
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15), .macOS(.v13)],
+    platforms: [.iOS(.v15), .macOS(.v13)], // No official support of macOS, but mandatory for swift-docc-plugin
     
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
@@ -56,6 +56,7 @@ let package = Package(
     ],
     
     dependencies: [
+        // Apple Swift tool to build documentation
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.3"),
     ],
 
