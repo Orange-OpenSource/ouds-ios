@@ -11,8 +11,13 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
+// Conditional import and use of UIKit for documentation generation (see #628 #626)
+
 import Foundation
 import SwiftUI
+#if canImport(UIKit)
+    import UIKit
+#endif
 
 // MARK: - Environment values
 
@@ -81,12 +86,18 @@ public struct OUDSThemeableView<Content>: View where Content: View {
     }
 
     public var body: some View {
+#if canImport(UIKit)
         content()
             .environment(\._theme, theme)
             .modifier(UserInterfaceSizeClassModifier())
+#else
+        content()
+            .environment(\._theme, theme)
+#endif
     }
 }
 
+#if canImport(UIKit)
 /// Private modifier used to set in environment the computed orizontal and vertical size classes.
 private struct UserInterfaceSizeClassModifier: ViewModifier {
 
@@ -103,6 +114,7 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
             return horizontalSizeClass == .compact ? .compact : .regular
         }
     }
+
     private var verticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
         if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
             return .extraCompact
@@ -117,3 +129,4 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
             .environment(\.oudsVerticalSizeClass, verticalUserInterfaceSizeClass)
     }
 }
+#endif
