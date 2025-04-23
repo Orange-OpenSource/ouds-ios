@@ -22,7 +22,7 @@ let package = Package(
     
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v15), .macOS(.v13)],
     
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
@@ -55,6 +55,10 @@ let package = Package(
             targets: ["OUDSFoundations"]),
     ],
     
+    dependencies: [
+        .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.0"),
+    ],
+
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [
