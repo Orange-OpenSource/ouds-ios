@@ -12,7 +12,9 @@
 //
 
 import SwiftUICore
-import UIKit
+#if canImport(UIKit)
+    import UIKit
+#endif
 
 // MARK: - Environment values
 

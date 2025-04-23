@@ -16,6 +16,9 @@ import OUDSFoundations
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
+#if canImport(UIKit)
+    import UIKit
+#endif
 
 // swiftlint:disable line_length
 
@@ -56,6 +59,7 @@ struct TypographyModifier: ViewModifier {
         isCompactMode ? font.compact : font.regular
     }
 
+#if canImport(UIKit)
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
     private var adaptiveTypography: Font {
         if let fontFamilyName = fontFamily {
@@ -102,5 +106,24 @@ struct TypographyModifier: ViewModifier {
                 .onChange(of: sizeCategory) { _ in }
         }
     }
+#else
+    /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
+    /// depending to the current `MultipleFontCompositeRawTokens`.
+    func body(content: Content) -> some View {
+        // `tracking()` only available for iOS 16+
+        // `minimumScaleFactor()` ensures text remains readable by allowing scaling down
+        // `.onChange(of: sizeCategory) { _ in }` triggers view update when Dynamic Type size changes
+        if #available(iOS 16.0, *) {
+            content
+                .tracking(adaptiveFont.letterSpacing)
+                .minimumScaleFactor(0.5)
+                .onChange(of: sizeCategory) { _ in }
+        } else {
+            content
+                .minimumScaleFactor(0.5)
+                .onChange(of: sizeCategory) { _ in }
+        }
+    }
+#endif
 }
 // swiftlint:enable line_length
