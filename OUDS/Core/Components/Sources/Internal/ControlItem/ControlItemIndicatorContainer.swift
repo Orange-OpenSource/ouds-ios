@@ -34,9 +34,8 @@ struct ControlItemIndicatorContainer: View {
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
             switch indicatorType {
-            case .switch:
-                Text("TODO: Add switch indicator here")
-//                OUDSSwitchIndicator(InteractionState: InteractionState(isPressed: isPressed), isOn: binding.wrappedValue)
+            case .switch(let binding):
+                SwitchIndicator(interactionState: interactionState, isOn: binding.wrappedValue)
             case .radioButton(let binding):
                 RadioIndicator(interactionState: interactionState, isOn: binding.wrappedValue, isError: layoutData.isError)
             case .checkBox(let binding):

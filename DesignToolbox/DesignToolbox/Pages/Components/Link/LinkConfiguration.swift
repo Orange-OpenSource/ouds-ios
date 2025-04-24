@@ -58,7 +58,7 @@ final class LinkConfigurationModel: ComponentConfiguration {
     }
 
     private var disableCode: String {
-        ".disable(\(enabled ? "false" : "true"))"
+        ".disabled(\(enabled ? "false" : "true"))"
     }
 
     override func updateCode() {

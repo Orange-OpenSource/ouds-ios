@@ -24,6 +24,7 @@ struct ComponentsPage: View {
         DividerElements(),
         LinkElement(),
         RadioElements(),
+        SwitchElements(),
     ]
 
     var body: some View {

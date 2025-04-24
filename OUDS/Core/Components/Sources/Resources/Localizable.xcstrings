@@ -340,8 +340,41 @@
         }
       }
     },
-    "TODO: Add switch indicator here" : {
-      "shouldTranslate" : false
+    "core_switch_hint_a11y" : {
+      "comment" : "Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle setting %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour rendre %@"
+          }
+        }
+      }
+    },
+    "core_switch_trait_a11y" : {
+      "comment" : "Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

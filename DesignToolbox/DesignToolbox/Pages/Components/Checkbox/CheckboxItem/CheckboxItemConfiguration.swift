@@ -97,7 +97,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
     // swiftlint:enable line_length
 
     private var disableCode: String {
-        ".disable(\(enabled ? "false" : "true"))"
+        ".disabled(\(enabled ? "false" : "true"))"
     }
 
     private var helperTextPattern: String {

@@ -55,7 +55,7 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
     }
 
     private var disableCode: String {
-        ".disable(\(enabled ? "false" : "true"))"
+        ".disabled(\(enabled ? "false" : "true"))"
     }
 
     private var isErrorPattern: String {

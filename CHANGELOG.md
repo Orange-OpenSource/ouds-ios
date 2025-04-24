@@ -8,7 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- [Library] Switch component ([#405](https://github.com/Orange-OpenSource/ouds-ios/issues/405))
 - [Tool] New system to generate, build ad upload documentation ([#628](https://github.com/Orange-OpenSource/ouds-ios/issues/628))
+- [Library] Add divider component ([#511](https://github.com/Orange-OpenSource/ouds-ios/issues/511))
 - [Library] Add divider component ([#511](https://github.com/Orange-OpenSource/ouds-ios/issues/511))
 - [Library] Let control-item-based component flip the icons programatically or not ([#556](https://github.com/Orange-OpenSource/ouds-ios/issues/556))
 - [Library] Radio picker component ([#586](https://github.com/Orange-OpenSource/ouds-ios/issues/586))
@@ -19,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Udpate language translations ([#622](https://github.com/Orange-OpenSource/ouds-ios/issues/622))
 - [Tool] Fix Gitleaks configuration file and update documentation about version in use
 - [Library] Renaming of API ([#608](https://github.com/Orange-OpenSource/ouds-ios/issues/608))
-- [DesignToolbox] Order of components and tokens in design toolbox component page ([#585](https://github.com/Orange-OpenSource/ouds-ios/issues/585))
+- [DesignToolbox] Order of OCHAcomponents and tokens in design toolbox component page ([#585](https://github.com/Orange-OpenSource/ouds-ios/issues/585))
 - [Library] Default hierarchy and style for button component ([#609](https://github.com/Orange-OpenSource/ouds-ios/issues/609))
 - [DesignToolbox] Rename checkbox and radio button entries ([#584](https://github.com/Orange-OpenSource/ouds-ios/issues/584))
 - [DesignToolbox] Rename the radio buton component ([#583](https://github.com/Orange-OpenSource/ouds-ios/issues/583))
@@ -28,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- [DesignToolbox] Fixed code samples for disabled cases of components
 - [DesignToolbox] Name of layouts for control item components ([#588](https://github.com/Orange-OpenSource/ouds-ios/issues/588))
 - [DesignToolbox] Add illustration for link component in RTL mode checkbox and radio button entries ([#555](https://github.com/Orange-OpenSource/ouds-ios/issues/555))
 
