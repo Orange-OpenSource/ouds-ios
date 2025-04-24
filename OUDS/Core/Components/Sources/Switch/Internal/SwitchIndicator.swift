@@ -87,7 +87,7 @@ private struct Cursor: View {
                 .opacity(theme.switch.switchOpacityCheck)
         }
         .frame(width: cursorWidth, height: cursorHeight, alignment: .center)
-        .oudsBackground(corsorBackgroundColor)
+        .oudsBackground(theme.switch.switchColorCursor)
         .clipShape(Capsule())
         .oudsShadow(theme.elevations.elevationRaised)
         .animation(Animation.timingCurve(0.2, 0, 0, 1, duration: 0.150), value: cursorWidth)
@@ -106,10 +106,6 @@ private struct Cursor: View {
 
     private var cursorHeight: Double {
         isOn ? theme.switch.switchSizeHeightCursorSelected : theme.switch.switchSizeHeightCursorUnselected
-    }
-
-    private var corsorBackgroundColor: MultipleColorSemanticTokens {
-        theme.switch.switchColorCursor
     }
 
     private var tickColor: Color {

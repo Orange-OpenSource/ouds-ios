@@ -118,6 +118,7 @@ Radio items can be embeded in a radio picker so as to let the users to select on
 
     // Here the picker is vertical
     OUDSRadioPicker(selection: $selection, radios: someDataToPopulate)
+```
 
 ### Switches
 

@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [DesignToolbox] Udpate language translations ([#622](https://github.com/Orange-OpenSource/ouds-ios/issues/622))
 - [Tool] Fix Gitleaks configuration file and update documentation about version in use
 - [Library] Renaming of API ([#608](https://github.com/Orange-OpenSource/ouds-ios/issues/608))
-- [DesignToolbox] Order of components and tokens in design toolbox component page ([#585](https://github.com/Orange-OpenSource/ouds-ios/issues/585))
+- [DesignToolbox] Order of OCHAcomponents and tokens in design toolbox component page ([#585](https://github.com/Orange-OpenSource/ouds-ios/issues/585))
 - [Library] Default hierarchy and style for button component ([#609](https://github.com/Orange-OpenSource/ouds-ios/issues/609))
 - [DesignToolbox] Rename checkbox and radio button entries ([#584](https://github.com/Orange-OpenSource/ouds-ios/issues/584))
 - [DesignToolbox] Rename the radio buton component ([#583](https://github.com/Orange-OpenSource/ouds-ios/issues/583))
