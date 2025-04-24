@@ -155,7 +155,7 @@ The device under tests is a **simulator of iPhone 16 Pro (18.0), in portrait mod
 #### How to use to use swift-snapshot-testing library
 
 1. Locate where are the reference images:
-    - In the Package directory, you will find the reference screenshots for the Orange and Inverse themes (Light/Dark), which will serve as comparison baselines.
+    - In the Package directory, you will find the reference screenshots for the Orange theme (Light/Dark), which will serve as comparison baselines.
     ```text
     OUDS -> DesignToolbox -> DesignToolboxSnapshotsTests -> __Snapshots__
     ```

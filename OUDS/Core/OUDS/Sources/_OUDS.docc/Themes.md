@@ -3,10 +3,10 @@
 _Themes_ are applications of specific values for _components tokens_ and _semantic tokens_ using in the end _raw tokens_.
 A _theme_ contains any relevant tokens which can be used for components rendering.
 
-This library exposes today up to two themes:
+This library exposes today following themes:
 1. [Orange Theme](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/) which can be seen as the default _theme_ ;
-2. [Inverse Theme](https://ios.unified-design-system.orange.com/documentation/oudsthemesinverse/) for other use cases.
-They both are based on an `OUDSTheme` defining default values.
+
+All themes are based on an `OUDSTheme`.
 
 _Themes_ can be defined thanks to `open class` in Swift. It allows inheritance and derivation.
 
