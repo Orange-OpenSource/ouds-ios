@@ -18,7 +18,6 @@ import OUDSTokensSemantic
 
 /// This is an override of the default basic `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
 /// It can override any properties from its superclass, and can be derived too.
-/// The `InverseTheme` inherits from this `OrangeTheme`.
 ///
 /// To use this theme, inject it to your view using `OUDSThemeableView` and get it through environment variable.
 ///

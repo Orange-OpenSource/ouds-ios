@@ -28,6 +28,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Tool] Update `fastlane` gem from v2.227.0 to v2.227.1
 - [Tool] Update `SwiftLint` pod from v0.58.2 to v0.59.0
 
+### Removed
+
+- [Library] Partial implementation of inverse theme
+
 ### Fixed
 
 - [DesignToolbox] Fixed code samples for disabled cases of components

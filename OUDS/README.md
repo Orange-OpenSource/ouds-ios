@@ -4,7 +4,6 @@
 - [Core](#core)
   * [Components](#components)
   * [Themes](#themes)
-    * [Inverse](#inverse)
     * [Orange](#orange)    
   * [Tokens](#components)
     * [Component tokens](#component-tokens)  
@@ -34,10 +33,6 @@ Contains the files for the main module with the logic for the theme management
 ### Themes
 
 Contains the themes definitions exposed by the library.
-
-#### Inverse
-
-Contains the inverse theme definition.
 
 #### Orange
 
