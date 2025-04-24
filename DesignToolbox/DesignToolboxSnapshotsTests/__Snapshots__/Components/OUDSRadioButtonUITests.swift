@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensRaw
 import OUDSTokensSemantic
@@ -38,20 +37,6 @@ final class OUDSRadioUITests: XCTestCase {
     /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllRadioButtonsOrangeThemeDark() {
         let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all buttons configuration in the `InverseTheme` with the `light` color schemes.
-    @MainActor func testAllRadioButtonsInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all buttons configuration in the `InverseTheme` with the `dark` color schemes.
-    @MainActor func testAllRadioButtonsInverseThemeDark() {
-        let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllRadioButtons(theme: theme, interfaceStyle: interfaceStyle)
     }

@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensRaw
 import OUDSTokensSemantic
@@ -38,20 +37,6 @@ final class OUDSSwitchUITests: XCTestCase {
     /// Tests all switches configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllSwitchesOrangeThemeDark() {
         let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all switches configuration in the `InverseTheme` with the `light` color schemes.
-    @MainActor func testAllSwitchesInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all switches configuration in the `InverseTheme` with the `dark` color schemes.
-    @MainActor func testAllSwitchesInverseThemeDark() {
-        let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllSwitches(theme: theme, interfaceStyle: interfaceStyle)
     }

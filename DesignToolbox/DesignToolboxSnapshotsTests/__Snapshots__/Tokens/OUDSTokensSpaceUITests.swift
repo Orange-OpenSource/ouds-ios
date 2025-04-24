@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -60,45 +59,11 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testGapStack(theme: theme, interfaceStyle: interfaceStyle)
     }
 
-    // MARK: - Inverse Theme Light Mode Space Tests
-
-    /// This function tests all space tokens in the `InverseTheme` with both the `light` color scheme.
-    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the space type, theme, and interfaceStyle (i.e color scheme).
-    @MainActor func testAllSpaceInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
-        testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInline(theme: theme, interfaceStyle: interfaceStyle)
-        testGapStack(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    // MARK: - Inverse Theme Dark Mode Space Tests
-
-    /// This function tests all space tokens in the `InverseTheme` with both the `dark` color scheme.
-    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the space type, theme, and interfaceStyle (i.e color scheme).
-    @MainActor func testAllSpaceInverseThemeDark() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testScaledProperty(theme: theme, interfaceStyle: interfaceStyle)
-        testFixedProperty(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
-        testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInline(theme: theme, interfaceStyle: interfaceStyle)
-        testGapStack(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
     // MARK: - Helper Functions
 
     /// Tests all scaled `Scaled` spaces by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testScaledProperty(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
@@ -124,7 +89,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     /// Tests all padding fixed `Fixed` spaces by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testFixedProperty(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedSpace.PaddingInline
@@ -152,7 +117,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     /// Tests all padding inline `PaddingInline` spaces by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testPaddingInline(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
         // Iterate through all background color cases defined in NamedSpace.PaddingInline
@@ -179,7 +144,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     /// Tests all padding inset `PaddingInset` spaces by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testPaddingInset(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
@@ -207,7 +172,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     /// Tests all padding stack `PaddingStack` spaces by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testPaddingStack(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
@@ -235,7 +200,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     /// Tests all gap inline `GapInline` spaces by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testGapInline(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
@@ -263,7 +228,7 @@ final class OUDSTokensSpaceUITests: XCTestCase {
 
     /// Tests all `GapStack` spaces by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testGapStack(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
