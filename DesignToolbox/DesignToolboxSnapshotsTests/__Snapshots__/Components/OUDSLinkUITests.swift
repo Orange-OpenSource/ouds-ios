@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -38,22 +37,6 @@ final class OUDSLinkUITests: XCTestCase {
     /// Tests all link configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllLinksOrangeThemeDark() {
         let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
-        testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all link configuration in the `InverseTheme` with the `light` color schemes.
-    @MainActor func testAllLinksInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
-        testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all link configuration in the `InverseTheme` with the `dark` color schemes.
-    @MainActor func testAllLinksInverseThemeDark() {
-        let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
         testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)

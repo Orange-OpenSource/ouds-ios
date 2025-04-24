@@ -21,7 +21,6 @@ import OUDS // If you want to define your theme or use OUDSThemeableView
 import OUDSModules // To use modules
 import OUDSComponents // To use components
 import OUDSThemeOrange // To use the default theme
-import OUDSThemeInverse // To use the inverse theme
 import OUDSTokensComponent // If you need to override or use directly components tokens
 import OUDSTokenSemantic // If you need to override or use directly semantic tokens
 import OUDSTokensRaw // If you need to override or use directly raw tokens
@@ -31,8 +30,7 @@ import OUDSTokensRaw // If you need to override or use directly raw tokens
 
 You can:
 1. Use the `OrangeTheme` which is the default one
-2. Use the `InverseTheme` which is a special theme for dedicated use cases (like an extended dark mode)
-3. Implement your own theme
+2. Implement your own theme
 
 ### Apply a theme
 

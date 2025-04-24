@@ -39,9 +39,6 @@ let package = Package(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
         .library(
-            name: "OUDSThemesInverse",
-            targets: ["OUDSThemesInverse"]),
-        .library(
             name: "OUDSThemesOrange",
             targets: ["OUDSThemesOrange"]),
         .library(
@@ -80,14 +77,6 @@ let package = Package(
             name: "OUDSComponents-Tests",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Core/Components/Tests"),
-        .target(
-            name: "OUDSThemesInverse",
-            dependencies: ["OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/Inverse/Sources"),
-        .testTarget(
-            name: "OUDSThemesInverse-Tests",
-            dependencies: ["OUDSThemesInverse"],
-            path: "OUDS/Core/Themes/Inverse/Tests"),
         .target(
             name: "OUDSThemesOrange",
             dependencies: ["OUDS"],

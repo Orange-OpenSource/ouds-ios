@@ -195,7 +195,6 @@ swift package \
     --target OUDS \
     --target OUDSModules \
     --target OUDSComponents \
-    --target OUDSThemesInverse \
     --target OUDSThemesOrange \
     --target OUDSTokensComponent \
     --target OUDSTokensSemantic \

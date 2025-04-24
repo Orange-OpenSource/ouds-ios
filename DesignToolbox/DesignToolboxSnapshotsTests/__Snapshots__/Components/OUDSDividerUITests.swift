@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -37,20 +36,6 @@ final class OUDSDividerUITests: XCTestCase {
     /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllDividerOrangeThemeDark() {
         let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all buttons configuration in the `InverseTheme` with the `light` color schemes.
-    @MainActor func testAllButtonsInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all buttons configuration in the `InverseTheme` with the `dark` color schemes.
-    @MainActor func testAllButtonsInverseThemeDark() {
-        let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllDividers(theme: theme, interfaceStyle: interfaceStyle)
     }

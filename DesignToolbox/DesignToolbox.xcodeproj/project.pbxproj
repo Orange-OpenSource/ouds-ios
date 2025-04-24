@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		070C35622C75EB1C0029C6A8 /* OUDS in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35612C75EB1C0029C6A8 /* OUDS */; };
-		070C35642C773A0D0029C6A8 /* OUDSThemesInverse in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35632C773A0D0029C6A8 /* OUDSThemesInverse */; };
 		070C35662C7762B90029C6A8 /* OUDSModules in Frameworks */ = {isa = PBXBuildFile; productRef = 070C35652C7762B90029C6A8 /* OUDSModules */; };
 		070DF8B12CDD07F20043D558 /* GrisTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AF2CDD07F20043D558 /* GrisTokenPage.swift */; };
 		070DF8B22CDD07F20043D558 /* GridTokenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070DF8AE2CDD07F20043D558 /* GridTokenElement.swift */; };
@@ -495,7 +494,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				51BC9DE72C6513F200EB2A11 /* OUDSFoundations in Frameworks */,
-				070C35642C773A0D0029C6A8 /* OUDSThemesInverse in Frameworks */,
 				51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */,
 				070C35622C75EB1C0029C6A8 /* OUDS in Frameworks */,
 				513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */,
@@ -1165,7 +1163,6 @@
 				51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */,
 				51BC9DE62C6513F200EB2A11 /* OUDSFoundations */,
 				070C35612C75EB1C0029C6A8 /* OUDS */,
-				070C35632C773A0D0029C6A8 /* OUDSThemesInverse */,
 				070C35652C7762B90029C6A8 /* OUDSModules */,
 				6DFC20C42CE3D9AE00F2EC33 /* DeclarationAccessibility */,
 			);
@@ -1936,10 +1933,6 @@
 		070C35612C75EB1C0029C6A8 /* OUDS */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OUDS;
-		};
-		070C35632C773A0D0029C6A8 /* OUDSThemesInverse */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = OUDSThemesInverse;
 		};
 		070C35652C7762B90029C6A8 /* OUDSModules */ = {
 			isa = XCSwiftPackageProductDependency;

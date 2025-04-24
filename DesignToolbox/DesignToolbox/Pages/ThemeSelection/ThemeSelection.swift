@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSThemesInverse
 import OUDSThemesOrange
 import SwiftUI
 
@@ -33,14 +32,9 @@ extension OUDSTheme: @retroactive Equatable {
 extension OUDSTheme: @retroactive Identifiable, @retroactive Hashable {
 
     var name: String {
-        if self is InverseTheme { // Is also an OrangeTheme, should be checked before
-            return "Inverse"
-        }
-
         if self is OrangeTheme {
             return "Orange"
         }
-
         return String(describing: Self.self)
     }
 
@@ -73,9 +67,8 @@ final class ThemeProvider: ObservableObject {
 
     init() {
         let orangeTheme = OrangeTheme()
-        let inverseTheme = InverseTheme()
         let defaultTheme = orangeTheme
-        themes = [orangeTheme, inverseTheme]
+        themes = [orangeTheme]
 
         if let themeName = UserDefaults.standard.value(forKey: "themeName") as? String,
            let theme = themes.first(where: { $0.name == themeName }) {

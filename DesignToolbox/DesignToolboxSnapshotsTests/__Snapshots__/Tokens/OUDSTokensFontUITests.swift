@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -46,33 +45,11 @@ final class OUDSTokensFontUITests: XCTestCase {
         testAllFonts(for: theme, in: interfaceStyle)
     }
 
-    // MARK: - Inverse Theme Light Mode Typography Tests
-
-    /// This function tests all font tokens in the `InverseTheme` with the `light` color scheme.
-    /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme and horizontalSizeClass
-    @MainActor func testAllFontsInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllFonts(for: theme, in: interfaceStyle)
-    }
-
-    // MARK: - Inverse Theme Dark Mode Typography Tests
-
-    /// This function tests all font tokens in the `InverseTheme` with the `dark` color scheme.
-    /// It iterates through all `NamedFont` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the font, theme, color scheme and horizontalSizeClass.
-    @MainActor func testAllFontsInverseThemeDark() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllFonts(for: theme, in: interfaceStyle)
-    }
-
     // MARK: Private test functions for all typography properties of typography token
 
     /// Tests all fonts properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme` or `InverseTheme`).
+    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testAllFonts(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 

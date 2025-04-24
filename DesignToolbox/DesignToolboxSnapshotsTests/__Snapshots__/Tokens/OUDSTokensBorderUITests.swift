@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -46,33 +45,11 @@ final class OUDSTokensBorderUITests: XCTestCase {
         testBorderStyle(for: theme, in: interfaceStyle)
     }
 
-    /// This function tests all border tokens in the `InverseTheme` with the `light` color schemes.
-    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
-    @MainActor func testAllBorderInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testBorderWidth(for: theme, in: interfaceStyle)
-        testBorderRadius(for: theme, in: interfaceStyle)
-        testBorderStyle(for: theme, in: interfaceStyle)
-    }
-
-    /// This function tests all border tokens in the `InverseTheme` with the `dark` color schemes.
-    /// It iterates through all `NamedSize` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. Each snapshot is saved with a name that indicates the spacing type, theme, and color scheme.
-    @MainActor func testAllBorderInverseThemeDark() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testBorderWidth(for: theme, in: interfaceStyle)
-        testBorderRadius(for: theme, in: interfaceStyle)
-        testBorderStyle(for: theme, in: interfaceStyle)
-    }
-
     // MARK: Private test functions for all properties of border token
 
     /// Tests all border width properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testBorderWidth(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
@@ -98,7 +75,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     /// Tests all border radius properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testBorderRadius(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 
@@ -124,7 +101,7 @@ final class OUDSTokensBorderUITests: XCTestCase {
 
     /// Tests all border style properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testBorderStyle(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 

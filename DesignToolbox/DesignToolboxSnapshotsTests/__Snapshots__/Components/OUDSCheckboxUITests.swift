@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensRaw
 import OUDSTokensSemantic
@@ -40,20 +39,6 @@ final class OUDSCheckboxUITests: XCTestCase {
     /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllCheckboxesOrangeThemeDark() {
         let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all buttons configuration in the `InverseTheme` with the `light` color schemes.
-    @MainActor func testAllCheckboxesInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all buttons configuration in the `InverseTheme` with the `dark` color schemes.
-    @MainActor func testAllCheckboxesInverseThemeDark() {
-        let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllCheckboxes(theme: theme, interfaceStyle: interfaceStyle)
     }

@@ -4,7 +4,7 @@ The Orange theme overrides some tokens from the basic `OUDSTheme` and should be 
 
 ## Overview
 
-This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries. The `InverseTheme` is based on it.
+This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries.
 It embeds also in its target the brand colors which are not shared nor exposed in lower level targets or outside any module not depending to it.
 
 In other words, this ``OrangeTheme`` is based on the abstract `OUDSTheme`, uses all the *Orange Unified Design System* kit and brings the Orange brand colors and assets.
