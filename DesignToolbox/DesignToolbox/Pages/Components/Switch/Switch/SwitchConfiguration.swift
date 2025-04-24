@@ -49,7 +49,7 @@ final class SwitchConfigurationModel: ComponentConfiguration {
     }
 
     private var disableCode: String {
-        ".disable(\(enabled ? "false" : "true"))"
+        ".disabled(\(enabled ? "false" : "true"))"
     }
 }
 

@@ -96,7 +96,7 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
     // swiftlint:enable line_length
 
     private var disableCode: String {
-        ".disable(\(enabled ? "false" : "true"))"
+        ".disabled(\(enabled ? "false" : "true"))"
     }
 
     private var helperTextPatern: String {
@@ -104,7 +104,7 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
     }
 
     private var iconPatern: String {
-        icon ? ", icon: Image(decorative: \"ic_heart\")" : ""
+        icon ? ", icon: Image(decorative: \"figure.handball\")" : ""
     }
 
     private var flipIconPattern: String {

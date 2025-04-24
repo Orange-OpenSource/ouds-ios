@@ -60,7 +60,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     private var disableCode: String {
         if case .`default` = style {
-            ".disable(\(enabled ? "false" : "true"))"
+            ".disabled(\(enabled ? "false" : "true"))"
         } else {
             ""
         }

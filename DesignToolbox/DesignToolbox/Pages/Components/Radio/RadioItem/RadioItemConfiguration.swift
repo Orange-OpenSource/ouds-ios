@@ -111,7 +111,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     // swiftlint:enable line_length
 
     private var disableCode: String {
-        ".disable(\(enabled ? "false" : "true"))"
+        ".disabled(\(enabled ? "false" : "true"))"
     }
 
     private var additionalLabelTextPattern: String {
