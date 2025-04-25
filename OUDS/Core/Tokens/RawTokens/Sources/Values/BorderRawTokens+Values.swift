@@ -18,31 +18,57 @@
 // swiftlint:disable number_separator
 
 extension BorderRawTokens {
+    /// 4
     public static let borderBase: Double = 4
+    /// borderBase * 0 
     public static let borderRadius0: BorderRadiusRawToken = borderBase * 0 // 0
+    /// borderBase * 0.25 
     public static let borderRadius25: BorderRadiusRawToken = borderBase * 0.25 // 1
+    /// borderBase * 0.5 
     public static let borderRadius50: BorderRadiusRawToken = borderBase * 0.5 // 2
+    /// borderBase * 0.75 
     public static let borderRadius75: BorderRadiusRawToken = borderBase * 0.75 // 3
+    /// borderBase * 1 
     public static let borderRadius100: BorderRadiusRawToken = borderBase * 1 // 4
+    /// borderBase * 1.5 
     public static let borderRadius150: BorderRadiusRawToken = borderBase * 1.5 // 6
+    /// borderBase * 2 
     public static let borderRadius200: BorderRadiusRawToken = borderBase * 2 // 8
+    /// borderBase * 3 
     public static let borderRadius300: BorderRadiusRawToken = borderBase * 3 // 12
+    /// borderBase * 4 
     public static let borderRadius400: BorderRadiusRawToken = borderBase * 4 // 16
+    /// borderBase * 5 
     public static let borderRadius500: BorderRadiusRawToken = borderBase * 5 // 20
+    /// borderBase * 6 
     public static let borderRadius600: BorderRadiusRawToken = borderBase * 6 // 24
+    /// borderBase * 8 
     public static let borderRadius800: BorderRadiusRawToken = borderBase * 8 // 32
+    /// 2000
     public static let borderRadius9999: BorderRadiusRawToken = 2000
+    /// dashed
     public static let borderStyleDashed: BorderStyleRawToken = "dashed"
+    /// dotted
     public static let borderStyleDotted: BorderStyleRawToken = "dotted"
+    /// none
     public static let borderStyleNone: BorderStyleRawToken = "none"
+    /// solid
     public static let borderStyleSolid: BorderStyleRawToken = "solid"
+    /// borderBase * 0 
     public static let borderWidth0: BorderWidthRawToken = borderBase * 0 // 0
+    /// borderBase * 0.25 
     public static let borderWidth25: BorderWidthRawToken = borderBase * 0.25 // 1
+    /// borderBase * 0.5 
     public static let borderWidth50: BorderWidthRawToken = borderBase * 0.5 // 2
+    /// borderBase * 0.75 
     public static let borderWidth75: BorderWidthRawToken = borderBase * 0.75 // 3
+    /// borderBase * 1 
     public static let borderWidth100: BorderWidthRawToken = borderBase * 1 // 4
+    /// borderBase * 1.25 
     public static let borderWidth125: BorderWidthRawToken = borderBase * 1.25 // 5
+    /// borderBase * 1.5 
     public static let borderWidth150: BorderWidthRawToken = borderBase * 1.5 // 6
+    /// borderBase * 2 
     public static let borderWidth200: BorderWidthRawToken = borderBase * 2 // 8
 }
 

@@ -19,25 +19,45 @@ import OUDSTokensRaw
 // swiftlint:disable missing_docs
 
 extension OrangeBrandColorRawTokens {
+    /// #FFF2E6FF
     public static let colorOrange50: ColorOrangeBrandRawToken = "#FFF2E6FF"
+    /// #FFD5B0FF
     public static let colorOrange100: ColorOrangeBrandRawToken = "#FFD5B0FF"
+    /// #FFC18AFF
     public static let colorOrange200: ColorOrangeBrandRawToken = "#FFC18AFF"
+    /// #FFA554FF
     public static let colorOrange300: ColorOrangeBrandRawToken = "#FFA554FF"
+    /// #FF9433FF
     public static let colorOrange400: ColorOrangeBrandRawToken = "#FF9433FF"
+    /// #FF7900FF
     public static let colorOrange500: ColorOrangeBrandRawToken = "#FF7900FF"
+    /// #F15E00FF
     public static let colorOrange550: ColorOrangeBrandRawToken = "#F15E00FF"
+    /// #E86E00FF
     public static let colorOrange600: ColorOrangeBrandRawToken = "#E86E00FF"
+    /// #B55600FF
     public static let colorOrange700: ColorOrangeBrandRawToken = "#B55600FF"
+    /// #8C4300FF
     public static let colorOrange800: ColorOrangeBrandRawToken = "#8C4300FF"
+    /// #6B3300FF
     public static let colorOrange900: ColorOrangeBrandRawToken = "#6B3300FF"
+    /// #F9F5F0FF
     public static let colorWarmGray100: ColorOrangeBrandRawToken = "#F9F5F0FF"
+    /// #E9DDCEFF
     public static let colorWarmGray200: ColorOrangeBrandRawToken = "#E9DDCEFF"
+    /// #D6C4AEFF
     public static let colorWarmGray300: ColorOrangeBrandRawToken = "#D6C4AEFF"
+    /// #C1AB90FF
     public static let colorWarmGray400: ColorOrangeBrandRawToken = "#C1AB90FF"
+    /// #A99275FF
     public static let colorWarmGray500: ColorOrangeBrandRawToken = "#A99275FF"
+    /// #8A7860FF
     public static let colorWarmGray600: ColorOrangeBrandRawToken = "#8A7860FF"
+    /// #685D50FF
     public static let colorWarmGray700: ColorOrangeBrandRawToken = "#685D50FF"
+    /// #48433DFF
     public static let colorWarmGray800: ColorOrangeBrandRawToken = "#48433DFF"
+    /// #353228FF
     public static let colorWarmGray900: ColorOrangeBrandRawToken = "#353228FF"
 }
 

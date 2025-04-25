@@ -22,26 +22,47 @@ import OUDSTokensSemantic
 // swiftlint:disable line_length
 
 extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
+    /// borders.borderRadiusPill
     @objc open var switchBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusPill }
+    ///  colors.colorContentDefault 
     @objc open var switchColorCheck: MultipleColorSemanticTokens { colors.colorContentDefault }
+    ///  MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhiteLight, dark: colors.colorRepositoryNeutralEmphasizedHighestDark) 
     @objc open var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhiteLight, dark: colors.colorRepositoryNeutralEmphasizedHighestDark) }
+    ///  MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefaultLight, dark: colors.colorRepositoryPositiveHighDark) 
     @objc open var switchColorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefaultLight, dark: colors.colorRepositoryPositiveHighDark) }
+    ///  MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHighLight, dark: colors.colorRepositoryPositiveLowDark) 
     @objc open var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHighLight, dark: colors.colorRepositoryPositiveLowDark) }
+    ///  MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHighLight, dark: colors.colorRepositoryOpacityWhiteHighDark) 
     @objc open var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHighLight, dark: colors.colorRepositoryOpacityWhiteHighDark) }
+    ///  MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHighLight, dark: colors.colorRepositoryOpacityWhiteHigherDark) 
     @objc open var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHighLight, dark: colors.colorRepositoryOpacityWhiteHigherDark) }
+    /// opacities.opacityOpaque
     @objc open var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }
+    /// DimensionRawTokens.dimension300
     @objc open var switchSizeHeightCursorSelected: SizeSemanticToken { DimensionRawTokens.dimension300 }
+    /// DimensionRawTokens.dimension200
     @objc open var switchSizeHeightCursorUnselected: SizeSemanticToken { DimensionRawTokens.dimension200 }
+    /// DimensionRawTokens.dimension400
     @objc open var switchSizeHeightTrack: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    /// DimensionRawTokens.dimension400
     @objc open var switchSizeMaxHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    /// DimensionRawTokens.dimension400
     @objc open var switchSizeMinHeight: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    /// DimensionRawTokens.dimension700
     @objc open var switchSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension700 }
+    /// DimensionRawTokens.dimension300
     @objc open var switchSizeWidthCursorSelected: SizeSemanticToken { DimensionRawTokens.dimension300 }
+    /// DimensionRawTokens.dimension400
     @objc open var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { DimensionRawTokens.dimension400 }
+    /// DimensionRawTokens.dimension200
     @objc open var switchSizeWidthCursorUnselected: SizeSemanticToken { DimensionRawTokens.dimension200 }
+    /// DimensionRawTokens.dimension300
     @objc open var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { DimensionRawTokens.dimension300 }
+    /// DimensionRawTokens.dimension700
     @objc open var switchSizeWidthTrack: SizeSemanticToken { DimensionRawTokens.dimension700 }
+    /// spaces.spacePaddingInlineShortest
     @objc open var switchSpacePaddingInlineSelected: SpaceSemanticToken { spaces.spacePaddingInlineShortest }
+    /// spaces.spacePaddingInlineShort
     @objc open var switchSpacePaddingInlineUnselected: SpaceSemanticToken { spaces.spacePaddingInlineShort }
 }
 

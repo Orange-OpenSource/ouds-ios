@@ -18,35 +18,65 @@
 // swiftlint:disable number_separator
 
 extension GridRawTokens {
+    /// 1
     public static let gridColumnCount100: GridRawToken = 1
+    /// 2
     public static let gridColumnCount200: GridRawToken = 2
+    /// 4
     public static let gridColumnCount400: GridRawToken = 4
+    /// 6
     public static let gridColumnCount600: GridRawToken = 6
+    /// 8
     public static let gridColumnCount800: GridRawToken = 8
+    /// 10
     public static let gridColumnCount1000: GridRawToken = 10
+    /// 12
     public static let gridColumnCount1200: GridRawToken = 12
+    /// DimensionRawTokens.dimensionBase * 0.25 
     public static let gridColumnGap10: GridRawToken = DimensionRawTokens.dimensionBase * 0.25 // 1
+    /// DimensionRawTokens.dimensionBase * 2 
     public static let gridColumnGap100: GridRawToken = DimensionRawTokens.dimensionBase * 2 // 8
+    /// DimensionRawTokens.dimensionBase * 4 
     public static let gridColumnGap200: GridRawToken = DimensionRawTokens.dimensionBase * 4 // 16
+    /// DimensionRawTokens.dimensionBase * 5 
     public static let gridColumnGap300: GridRawToken = DimensionRawTokens.dimensionBase * 5 // 20
+    /// DimensionRawTokens.dimensionBase * 6 
     public static let gridColumnGap400: GridRawToken = DimensionRawTokens.dimensionBase * 6 // 24
+    /// DimensionRawTokens.dimensionBase * 8 
     public static let gridColumnGap600: GridRawToken = DimensionRawTokens.dimensionBase * 8 // 32
+    /// DimensionRawTokens.dimensionBase * 10 
     public static let gridColumnGap800: GridRawToken = DimensionRawTokens.dimensionBase * 10 // 40
+    /// DimensionRawTokens.dimensionBase * 4 
     public static let gridMargin100: GridRawToken = DimensionRawTokens.dimensionBase * 4 // 16
+    /// DimensionRawTokens.dimensionBase * 6 
     public static let gridMargin300: GridRawToken = DimensionRawTokens.dimensionBase * 6 // 24
+    /// DimensionRawTokens.dimensionBase * 7 
     public static let gridMargin400: GridRawToken = DimensionRawTokens.dimensionBase * 7 // 28
+    /// DimensionRawTokens.dimensionBase * 8 
     public static let gridMargin500: GridRawToken = DimensionRawTokens.dimensionBase * 8 // 32
+    /// DimensionRawTokens.dimensionBase * 9 
     public static let gridMargin600: GridRawToken = DimensionRawTokens.dimensionBase * 9 // 36
+    /// DimensionRawTokens.dimensionBase * 10 
     public static let gridMargin700: GridRawToken = DimensionRawTokens.dimensionBase * 10 // 40
+    /// DimensionRawTokens.dimensionBase * 13 
     public static let gridMargin1000: GridRawToken = DimensionRawTokens.dimensionBase * 13 // 52
+    /// DimensionRawTokens.dimensionBase * 14 
     public static let gridMargin1100: GridRawToken = DimensionRawTokens.dimensionBase * 14 // 56
+    /// DimensionRawTokens.dimensionBase * 20 
     public static let gridMargin1700: GridRawToken = DimensionRawTokens.dimensionBase * 20 // 80
+    /// DimensionRawTokens.dimensionBase * 28 
     public static let gridMargin2500: GridRawToken = DimensionRawTokens.dimensionBase * 28 // 112
+    /// 852
     public static let gridMaxWidthCompact: GridRawToken = 852
+    /// 389
     public static let gridMaxWidthExtraCompact: GridRawToken = 389
+    /// 1336
     public static let gridMaxWidthRegular: GridRawToken = 1336
+    /// 390
     public static let gridMinWidthCompact: GridRawToken = 390
+    /// 320
     public static let gridMinWidthExtraCompact: GridRawToken = 320
+    /// 736
     public static let gridMinWidthRegular: GridRawToken = 736
 }
 

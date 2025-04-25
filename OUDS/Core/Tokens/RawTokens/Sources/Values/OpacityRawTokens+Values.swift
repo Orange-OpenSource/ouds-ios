@@ -17,30 +17,55 @@
 // swiftlint:disable missing_docs
 
 extension OpacityRawTokens {
+    /// 0
     public static let opacity0: OpacityRawToken = 0
+    /// 0.04
     public static let opacity40: OpacityRawToken = 0.04
+    /// 0.08
     public static let opacity80: OpacityRawToken = 0.08
+    /// 0.12
     public static let opacity120: OpacityRawToken = 0.12
+    /// 0.16
     public static let opacity160: OpacityRawToken = 0.16
+    /// 0.2
     public static let opacity200: OpacityRawToken = 0.2
+    /// 0.24
     public static let opacity240: OpacityRawToken = 0.24
+    /// 0.28
     public static let opacity280: OpacityRawToken = 0.28
+    /// 0.32
     public static let opacity320: OpacityRawToken = 0.32
+    /// 0.36
     public static let opacity360: OpacityRawToken = 0.36
+    /// 0.4
     public static let opacity400: OpacityRawToken = 0.4
+    /// 0.44
     public static let opacity440: OpacityRawToken = 0.44
+    /// 0.48
     public static let opacity480: OpacityRawToken = 0.48
+    /// 0.52
     public static let opacity520: OpacityRawToken = 0.52
+    /// 0.56
     public static let opacity560: OpacityRawToken = 0.56
+    /// 0.6
     public static let opacity600: OpacityRawToken = 0.6
+    /// 0.64
     public static let opacity640: OpacityRawToken = 0.64
+    /// 0.68
     public static let opacity680: OpacityRawToken = 0.68
+    /// 0.72
     public static let opacity720: OpacityRawToken = 0.72
+    /// 0.76
     public static let opacity760: OpacityRawToken = 0.76
+    /// 0.8
     public static let opacity800: OpacityRawToken = 0.8
+    /// 0.88
     public static let opacity880: OpacityRawToken = 0.88
+    /// 0.92
     public static let opacity920: OpacityRawToken = 0.92
+    /// 0.96
     public static let opacity960: OpacityRawToken = 0.96
+    /// 1
     public static let opacity1000: OpacityRawToken = 1
 }
 

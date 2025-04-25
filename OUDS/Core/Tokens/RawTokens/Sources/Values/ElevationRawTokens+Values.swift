@@ -17,21 +17,37 @@
 // swiftlint:disable missing_docs
 
 extension ElevationRawTokens {
+    /// 0
     public static let elevationBlur0: ElevationRawToken = 0
+    /// 1
     public static let elevationBlur100: ElevationRawToken = 1
+    /// 2
     public static let elevationBlur200: ElevationRawToken = 2
+    /// 3
     public static let elevationBlur300: ElevationRawToken = 3
+    /// 4
     public static let elevationBlur400: ElevationRawToken = 4
+    /// 8
     public static let elevationBlur500: ElevationRawToken = 8
+    /// 12
     public static let elevationBlur600: ElevationRawToken = 12
+    /// 20
     public static let elevationBlur700: ElevationRawToken = 20
+    /// 0
     public static let elevationX0: ElevationRawToken = 0
+    /// 0
     public static let elevationY0: ElevationRawToken = 0
+    /// 1
     public static let elevationY100: ElevationRawToken = 1
+    /// 2
     public static let elevationY200: ElevationRawToken = 2
+    /// 4
     public static let elevationY300: ElevationRawToken = 4
+    /// 8
     public static let elevationY400: ElevationRawToken = 8
+    /// 12
     public static let elevationY500: ElevationRawToken = 12
+    /// 20
     public static let elevationY600: ElevationRawToken = 20
 }
 

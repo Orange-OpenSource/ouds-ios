@@ -22,27 +22,49 @@ import OUDSTokensSemantic
 // swiftlint:disable identifier_name
 
 extension OrangeThemeInputTextComponentTokensProvider: InputTextComponentTokens {
+    ///  colors.colorActionSupportEnabled 
     @objc open var inputTextColorBgDefaultDisabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
+    ///  colors.colorActionSupportEnabled 
     @objc open var inputTextColorBgDefaultEnabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
+    ///  colors.colorActionSupportFocus 
     @objc open var inputTextColorBgDefaultFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
+    ///  colors.colorActionSupportHover 
     @objc open var inputTextColorBgDefaultHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
+    ///  colors.colorActionSupportLoading 
     @objc open var inputTextColorBgDefaultLoading: MultipleColorSemanticTokens { colors.colorActionSupportLoading }
+    ///  colors.colorActionSupportPressed 
     @objc open var inputTextColorBgDefaultPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
+    ///  colors.colorContentDisabled 
     @objc open var inputTextColorContentDefaultDisabled: MultipleColorSemanticTokens { colors.colorContentDisabled }
+    ///  colors.colorContentDefault 
     @objc open var inputTextColorContentDefaultEnabled: MultipleColorSemanticTokens { colors.colorContentDefault }
+    ///  colors.colorContentDefault 
     @objc open var inputTextColorContentDefaultFocus: MultipleColorSemanticTokens { colors.colorContentDefault }
+    ///  colors.colorContentDefault 
     @objc open var inputTextColorContentDefaultHover: MultipleColorSemanticTokens { colors.colorContentDefault }
+    ///  colors.colorContentDefault 
     @objc open var inputTextColorContentDefaultLoading: MultipleColorSemanticTokens { colors.colorContentDefault }
+    ///  colors.colorContentDefault 
     @objc open var inputTextColorContentDefaultPressed: MultipleColorSemanticTokens { colors.colorContentDefault }
+    /// DimensionRawTokens.dimension4000
     @objc open var inputTextSizeMaxWidth: SizeSemanticToken { DimensionRawTokens.dimension4000 }
+    /// DimensionRawTokens.dimension1600
     @objc open var inputTextSizeMinWidth: SizeSemanticToken { DimensionRawTokens.dimension1600 }
+    /// spaces.spaceInsetMedium
     @objc open var inputTextSpaceInsetIconAlone: SpaceSemanticToken { spaces.spaceInsetMedium }
+    /// spaces.spacePaddingBlockMedium
     @objc open var inputTextSpacePaddingBlock: SpaceSemanticToken { spaces.spacePaddingBlockMedium }
+    /// spaces.spacePaddingInlineShorter
     @objc open var inputTextSpacePaddingInlineContainerEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
+    /// spaces.spacePaddingInlineMedium
     @objc open var inputTextSpacePaddingInlineContainerStart: SpaceSemanticToken { spaces.spacePaddingInlineMedium }
+    /// spaces.spacePaddingInlineShorter
     @objc open var inputTextSpacePaddingInlineIconEnd: SpaceSemanticToken { spaces.spacePaddingInlineShorter }
+    /// spaces.spacePaddingInlineShort
     @objc open var inputTextSpacePaddingInlinePrefixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
+    /// spaces.spacePaddingInlineShortest
     @objc open var inputTextSpacePaddingInlineSuffixTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShortest }
+    /// spaces.spacePaddingInlineShort
     @objc open var inputTextSpacePaddingInlineTextEnd: SpaceSemanticToken { spaces.spacePaddingInlineShort }
 }
 

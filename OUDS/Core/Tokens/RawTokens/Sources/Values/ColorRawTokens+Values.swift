@@ -17,175 +17,345 @@
 // swiftlint:disable missing_docs
 
 extension ColorRawTokens {
+    /// #FFF0CCFF
     public static let colorDecorativeAmber100: ColorRawToken = "#FFF0CCFF"
+    /// #FFE199FF
     public static let colorDecorativeAmber200: ColorRawToken = "#FFE199FF"
+    /// #FFD266FF
     public static let colorDecorativeAmber300: ColorRawToken = "#FFD266FF"
+    /// #FFC333FF
     public static let colorDecorativeAmber400: ColorRawToken = "#FFC333FF"
+    /// #FFB400FF
     public static let colorDecorativeAmber500: ColorRawToken = "#FFB400FF"
+    /// #CC9000FF
     public static let colorDecorativeAmber600: ColorRawToken = "#CC9000FF"
+    /// #996C00FF
     public static let colorDecorativeAmber700: ColorRawToken = "#996C00FF"
+    /// #664800FF
     public static let colorDecorativeAmber800: ColorRawToken = "#664800FF"
+    /// #332400FF
     public static let colorDecorativeAmber900: ColorRawToken = "#332400FF"
+    /// #F1ECF9FF
     public static let colorDecorativeAmethyst100: ColorRawToken = "#F1ECF9FF"
+    /// #E0D4F2FF
     public static let colorDecorativeAmethyst200: ColorRawToken = "#E0D4F2FF"
+    /// #C5ADE6FF
     public static let colorDecorativeAmethyst300: ColorRawToken = "#C5ADE6FF"
+    /// #A885D8FF
     public static let colorDecorativeAmethyst400: ColorRawToken = "#A885D8FF"
+    /// #8D60CDFF
     public static let colorDecorativeAmethyst500: ColorRawToken = "#8D60CDFF"
+    /// #5B2F98FF
     public static let colorDecorativeAmethyst600: ColorRawToken = "#5B2F98FF"
+    /// #432371FF
     public static let colorDecorativeAmethyst700: ColorRawToken = "#432371FF"
+    /// #2C174AFF
     public static let colorDecorativeAmethyst800: ColorRawToken = "#2C174AFF"
+    /// #150B23FF
     public static let colorDecorativeAmethyst900: ColorRawToken = "#150B23FF"
+    /// #FBEBDFFF
     public static let colorDecorativeDeepPeach100: ColorRawToken = "#FBEBDFFF"
+    /// #F4CFB2FF
     public static let colorDecorativeDeepPeach200: ColorRawToken = "#F4CFB2FF"
+    /// #E3B591FF
     public static let colorDecorativeDeepPeach300: ColorRawToken = "#E3B591FF"
+    /// #C19372FF
     public static let colorDecorativeDeepPeach400: ColorRawToken = "#C19372FF"
+    /// #CF7E3FFF
     public static let colorDecorativeDeepPeach500: ColorRawToken = "#CF7E3FFF"
+    /// #AA6631FF
     public static let colorDecorativeDeepPeach600: ColorRawToken = "#AA6631FF"
+    /// #7E4F2AFF
     public static let colorDecorativeDeepPeach700: ColorRawToken = "#7E4F2AFF"
+    /// #553720FF
     public static let colorDecorativeDeepPeach800: ColorRawToken = "#553720FF"
+    /// #2E2014FF
     public static let colorDecorativeDeepPeach900: ColorRawToken = "#2E2014FF"
+    /// #E5F5EDFF
     public static let colorDecorativeEmerald100: ColorRawToken = "#E5F5EDFF"
+    /// #C0E8D4FF
     public static let colorDecorativeEmerald200: ColorRawToken = "#C0E8D4FF"
+    /// #9BDABAFF
     public static let colorDecorativeEmerald300: ColorRawToken = "#9BDABAFF"
+    /// #75CCA1FF
     public static let colorDecorativeEmerald400: ColorRawToken = "#75CCA1FF"
+    /// #50BE87FF
     public static let colorDecorativeEmerald500: ColorRawToken = "#50BE87FF"
+    /// #3BA06EFF
     public static let colorDecorativeEmerald600: ColorRawToken = "#3BA06EFF"
+    /// #2E7B54FF
     public static let colorDecorativeEmerald700: ColorRawToken = "#2E7B54FF"
+    /// #20563BFF
     public static let colorDecorativeEmerald800: ColorRawToken = "#20563BFF"
+    /// #123021FF
     public static let colorDecorativeEmerald900: ColorRawToken = "#123021FF"
+    /// #FFE5F6FF
     public static let colorDecorativeShockingPink100: ColorRawToken = "#FFE5F6FF"
+    /// #FFB4E6FF
     public static let colorDecorativeShockingPink200: ColorRawToken = "#FFB4E6FF"
+    /// #FF80D4FF
     public static let colorDecorativeShockingPink300: ColorRawToken = "#FF80D4FF"
+    /// #FF4DC3FF
     public static let colorDecorativeShockingPink400: ColorRawToken = "#FF4DC3FF"
+    /// #FF1AB2FF
     public static let colorDecorativeShockingPink500: ColorRawToken = "#FF1AB2FF"
+    /// #E50099FF
     public static let colorDecorativeShockingPink600: ColorRawToken = "#E50099FF"
+    /// #B20077FF
     public static let colorDecorativeShockingPink700: ColorRawToken = "#B20077FF"
+    /// #800055FF
     public static let colorDecorativeShockingPink800: ColorRawToken = "#800055FF"
+    /// #4D0033FF
     public static let colorDecorativeShockingPink900: ColorRawToken = "#4D0033FF"
+    /// #D2ECF9FF
     public static let colorDecorativeSky100: ColorRawToken = "#D2ECF9FF"
+    /// #A5DAF3FF
     public static let colorDecorativeSky200: ColorRawToken = "#A5DAF3FF"
+    /// #79C7ECFF
     public static let colorDecorativeSky300: ColorRawToken = "#79C7ECFF"
+    /// #4AB4E6FF
     public static let colorDecorativeSky400: ColorRawToken = "#4AB4E6FF"
+    /// #1FA2E0FF
     public static let colorDecorativeSky500: ColorRawToken = "#1FA2E0FF"
+    /// #1982B3FF
     public static let colorDecorativeSky600: ColorRawToken = "#1982B3FF"
+    /// #136186FF
     public static let colorDecorativeSky700: ColorRawToken = "#136186FF"
+    /// #0C415AFF
     public static let colorDecorativeSky800: ColorRawToken = "#0C415AFF"
+    /// #06202DFF
     public static let colorDecorativeSky900: ColorRawToken = "#06202DFF"
+    /// #000000FF
     public static let colorFunctionalBlack: ColorRawToken = "#000000FF"
+    /// #7A7A7AFF
     public static let colorFunctionalDarkGray80: ColorRawToken = "#7A7A7AFF"
+    /// #707070FF
     public static let colorFunctionalDarkGray160: ColorRawToken = "#707070FF"
+    /// #666666FF
     public static let colorFunctionalDarkGray240: ColorRawToken = "#666666FF"
+    /// #5C5C5CFF
     public static let colorFunctionalDarkGray320: ColorRawToken = "#5C5C5CFF"
+    /// #555555FF
     public static let colorFunctionalDarkGray400: ColorRawToken = "#555555FF"
+    /// #444444FF
     public static let colorFunctionalDarkGray480: ColorRawToken = "#444444FF"
+    /// #3D3D3DFF
     public static let colorFunctionalDarkGray560: ColorRawToken = "#3D3D3DFF"
+    /// #333333FF
     public static let colorFunctionalDarkGray640: ColorRawToken = "#333333FF"
+    /// #272727FF
     public static let colorFunctionalDarkGray720: ColorRawToken = "#272727FF"
+    /// #1F1F1FFF
     public static let colorFunctionalDarkGray800: ColorRawToken = "#1F1F1FFF"
+    /// #141414FF
     public static let colorFunctionalDarkGray880: ColorRawToken = "#141414FF"
+    /// #0A0A0AFF
     public static let colorFunctionalDarkGray960: ColorRawToken = "#0A0A0AFF"
+    /// #F0FAFFFF
     public static let colorFunctionalDodgerBlue100: ColorRawToken = "#F0FAFFFF"
+    /// #BDE7FFFF
     public static let colorFunctionalDodgerBlue200: ColorRawToken = "#BDE7FFFF"
+    /// #8AD5FFFF
     public static let colorFunctionalDodgerBlue300: ColorRawToken = "#8AD5FFFF"
+    /// #57C3FFFF
     public static let colorFunctionalDodgerBlue400: ColorRawToken = "#57C3FFFF"
+    /// #26B2FFFF
     public static let colorFunctionalDodgerBlue500: ColorRawToken = "#26B2FFFF"
+    /// #009BF0FF
     public static let colorFunctionalDodgerBlue600: ColorRawToken = "#009BF0FF"
+    /// #007ABDFF
     public static let colorFunctionalDodgerBlue700: ColorRawToken = "#007ABDFF"
+    /// #00598AFF
     public static let colorFunctionalDodgerBlue800: ColorRawToken = "#00598AFF"
+    /// #003857FF
     public static let colorFunctionalDodgerBlue900: ColorRawToken = "#003857FF"
+    /// #F4F4F4FF
     public static let colorFunctionalLightGray80: ColorRawToken = "#F4F4F4FF"
+    /// #EEEEEEFF
     public static let colorFunctionalLightGray160: ColorRawToken = "#EEEEEEFF"
+    /// #E0E0E0FF
     public static let colorFunctionalLightGray240: ColorRawToken = "#E0E0E0FF"
+    /// #D6D6D6FF
     public static let colorFunctionalLightGray320: ColorRawToken = "#D6D6D6FF"
+    /// #CCCCCCFF
     public static let colorFunctionalLightGray400: ColorRawToken = "#CCCCCCFF"
+    /// #C2C2C2FF
     public static let colorFunctionalLightGray480: ColorRawToken = "#C2C2C2FF"
+    /// #BBBBBBFF
     public static let colorFunctionalLightGray560: ColorRawToken = "#BBBBBBFF"
+    /// #ADADADFF
     public static let colorFunctionalLightGray640: ColorRawToken = "#ADADADFF"
+    /// #A3A3A3FF
     public static let colorFunctionalLightGray720: ColorRawToken = "#A3A3A3FF"
+    /// #999999FF
     public static let colorFunctionalLightGray800: ColorRawToken = "#999999FF"
+    /// #8F8F8FFF
     public static let colorFunctionalLightGray880: ColorRawToken = "#8F8F8FFF"
+    /// #858585FF
     public static let colorFunctionalLightGray960: ColorRawToken = "#858585FF"
+    /// #EDFCF0FF
     public static let colorFunctionalMalachite100: ColorRawToken = "#EDFCF0FF"
+    /// #C1F6CAFF
     public static let colorFunctionalMalachite200: ColorRawToken = "#C1F6CAFF"
+    /// #94F0A4FF
     public static let colorFunctionalMalachite300: ColorRawToken = "#94F0A4FF"
+    /// #67E97EFF
     public static let colorFunctionalMalachite400: ColorRawToken = "#67E97EFF"
+    /// #3DE35AFF
     public static let colorFunctionalMalachite500: ColorRawToken = "#3DE35AFF"
+    /// #1ECD3CFF
     public static let colorFunctionalMalachite600: ColorRawToken = "#1ECD3CFF"
+    /// #17A02FFF
     public static let colorFunctionalMalachite700: ColorRawToken = "#17A02FFF"
+    /// #0E621DFF
     public static let colorFunctionalMalachite800: ColorRawToken = "#0E621DFF"
+    /// #0A4715FF
     public static let colorFunctionalMalachite900: ColorRawToken = "#0A4715FF"
+    /// #FFE5E6FF
     public static let colorFunctionalScarlet100: ColorRawToken = "#FFE5E6FF"
+    /// #FFB2B3FF
     public static let colorFunctionalScarlet200: ColorRawToken = "#FFB2B3FF"
+    /// #FF8081FF
     public static let colorFunctionalScarlet300: ColorRawToken = "#FF8081FF"
+    /// #FF4D4EFF
     public static let colorFunctionalScarlet400: ColorRawToken = "#FF4D4EFF"
+    /// #FF1A1BFF
     public static let colorFunctionalScarlet500: ColorRawToken = "#FF1A1BFF"
+    /// #DB0002FF
     public static let colorFunctionalScarlet600: ColorRawToken = "#DB0002FF"
+    /// #B20002FF
     public static let colorFunctionalScarlet700: ColorRawToken = "#B20002FF"
+    /// #800001FF
     public static let colorFunctionalScarlet800: ColorRawToken = "#800001FF"
+    /// #4D0001FF
     public static let colorFunctionalScarlet900: ColorRawToken = "#4D0001FF"
+    /// #FFF7D6FF
     public static let colorFunctionalSun100: ColorRawToken = "#FFF7D6FF"
+    /// #FFED99FF
     public static let colorFunctionalSun200: ColorRawToken = "#FFED99FF"
+    /// #FFE270FF
     public static let colorFunctionalSun300: ColorRawToken = "#FFE270FF"
+    /// #FFD73DFF
     public static let colorFunctionalSun400: ColorRawToken = "#FFD73DFF"
+    /// #FFD000FF
     public static let colorFunctionalSun500: ColorRawToken = "#FFD000FF"
+    /// #D6AA00FF
     public static let colorFunctionalSun600: ColorRawToken = "#D6AA00FF"
+    /// #A38200FF
     public static let colorFunctionalSun700: ColorRawToken = "#A38200FF"
+    /// #665100FF
     public static let colorFunctionalSun800: ColorRawToken = "#665100FF"
+    /// #3D3100FF
     public static let colorFunctionalSun900: ColorRawToken = "#3D3100FF"
+    /// #FFFFFFFF
     public static let colorFunctionalWhite: ColorRawToken = "#FFFFFFFF"
+    /// #00000000
     public static let colorOpacityBlack0: ColorRawToken = "#00000000"
+    /// #0000000A
     public static let colorOpacityBlack40: ColorRawToken = "#0000000A"
+    /// #00000014
     public static let colorOpacityBlack80: ColorRawToken = "#00000014"
+    /// #0000001F
     public static let colorOpacityBlack120: ColorRawToken = "#0000001F"
+    /// #00000029
     public static let colorOpacityBlack160: ColorRawToken = "#00000029"
+    /// #00000033
     public static let colorOpacityBlack200: ColorRawToken = "#00000033"
+    /// #0000003D
     public static let colorOpacityBlack240: ColorRawToken = "#0000003D"
+    /// #00000047
     public static let colorOpacityBlack280: ColorRawToken = "#00000047"
+    /// #00000052
     public static let colorOpacityBlack320: ColorRawToken = "#00000052"
+    /// #0000005C
     public static let colorOpacityBlack360: ColorRawToken = "#0000005C"
+    /// #00000066
     public static let colorOpacityBlack400: ColorRawToken = "#00000066"
+    /// #00000070
     public static let colorOpacityBlack440: ColorRawToken = "#00000070"
+    /// #0000007A
     public static let colorOpacityBlack480: ColorRawToken = "#0000007A"
+    /// #00000085
     public static let colorOpacityBlack520: ColorRawToken = "#00000085"
+    /// #0000008F
     public static let colorOpacityBlack560: ColorRawToken = "#0000008F"
+    /// #00000099
     public static let colorOpacityBlack600: ColorRawToken = "#00000099"
+    /// #000000A3
     public static let colorOpacityBlack640: ColorRawToken = "#000000A3"
+    /// #000000AD
     public static let colorOpacityBlack680: ColorRawToken = "#000000AD"
+    /// #000000B8
     public static let colorOpacityBlack720: ColorRawToken = "#000000B8"
+    /// #000000C2
     public static let colorOpacityBlack760: ColorRawToken = "#000000C2"
+    /// #000000CC
     public static let colorOpacityBlack800: ColorRawToken = "#000000CC"
+    /// #000000D6
     public static let colorOpacityBlack840: ColorRawToken = "#000000D6"
+    /// #000000E0
     public static let colorOpacityBlack880: ColorRawToken = "#000000E0"
+    /// #000000EB
     public static let colorOpacityBlack920: ColorRawToken = "#000000EB"
+    /// #000000F5
     public static let colorOpacityBlack960: ColorRawToken = "#000000F5"
+    /// #26B2FF14
     public static let colorOpacityDodgerBlue: ColorRawToken = "#26B2FF14"
+    /// #3DE35A1F
     public static let colorOpacityMalachite: ColorRawToken = "#3DE35A1F"
+    /// #EA030514
     public static let colorOpacityScarlet: ColorRawToken = "#EA030514"
+    /// #FFD00029
     public static let colorOpacitySun: ColorRawToken = "#FFD00029"
+    /// #FFFFFF00
     public static let colorOpacityWhite0: ColorRawToken = "#FFFFFF00"
+    /// #FFFFFF0A
     public static let colorOpacityWhite40: ColorRawToken = "#FFFFFF0A"
+    /// #FFFFFF14
     public static let colorOpacityWhite80: ColorRawToken = "#FFFFFF14"
+    /// #FFFFFF1F
     public static let colorOpacityWhite120: ColorRawToken = "#FFFFFF1F"
+    /// #FFFFFF29
     public static let colorOpacityWhite160: ColorRawToken = "#FFFFFF29"
+    /// #FFFFFF33
     public static let colorOpacityWhite200: ColorRawToken = "#FFFFFF33"
+    /// #FFFFFF3D
     public static let colorOpacityWhite240: ColorRawToken = "#FFFFFF3D"
+    /// #FFFFFF47
     public static let colorOpacityWhite280: ColorRawToken = "#FFFFFF47"
+    /// #FFFFFF52
     public static let colorOpacityWhite320: ColorRawToken = "#FFFFFF52"
+    /// #FFFFFF5C
     public static let colorOpacityWhite360: ColorRawToken = "#FFFFFF5C"
+    /// #FFFFFF66
     public static let colorOpacityWhite400: ColorRawToken = "#FFFFFF66"
+    /// #FFFFFF70
     public static let colorOpacityWhite440: ColorRawToken = "#FFFFFF70"
+    /// #FFFFFF7A
     public static let colorOpacityWhite480: ColorRawToken = "#FFFFFF7A"
+    /// #FFFFFF85
     public static let colorOpacityWhite520: ColorRawToken = "#FFFFFF85"
+    /// #FFFFFF8F
     public static let colorOpacityWhite560: ColorRawToken = "#FFFFFF8F"
+    /// #FFFFFF99
     public static let colorOpacityWhite600: ColorRawToken = "#FFFFFF99"
+    /// #FFFFFFA3
     public static let colorOpacityWhite640: ColorRawToken = "#FFFFFFA3"
+    /// #FFFFFFAD
     public static let colorOpacityWhite680: ColorRawToken = "#FFFFFFAD"
+    /// #FFFFFFB8
     public static let colorOpacityWhite720: ColorRawToken = "#FFFFFFB8"
+    /// #FFFFFFC2
     public static let colorOpacityWhite760: ColorRawToken = "#FFFFFFC2"
+    /// #FFFFFFCC
     public static let colorOpacityWhite800: ColorRawToken = "#FFFFFFCC"
+    /// #FFFFFFD6
     public static let colorOpacityWhite840: ColorRawToken = "#FFFFFFD6"
+    /// #FFFFFFE0
     public static let colorOpacityWhite880: ColorRawToken = "#FFFFFFE0"
+    /// #FFFFFFEB
     public static let colorOpacityWhite920: ColorRawToken = "#FFFFFFEB"
+    /// #FFFFFFF5
     public static let colorOpacityWhite960: ColorRawToken = "#FFFFFFF5"
 }
 
