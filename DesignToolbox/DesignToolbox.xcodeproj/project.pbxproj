@@ -174,6 +174,12 @@
 		513AD9402C5AAADE0003253B /* OUDSTokensComponent in Frameworks */ = {isa = PBXBuildFile; productRef = 513AD93F2C5AAADE0003253B /* OUDSTokensComponent */; };
 		5149BADB2C3D6F4F000FA4BF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5149BADA2C3D6F4F000FA4BF /* Podfile */; };
 		514D02FC2D75F45F00622692 /* OUDSCheckboxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */; };
+		5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
+		5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
+		5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
+		5180FE712DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */; };
+		5180FE722DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */; };
+		5180FE732DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */; };
 		518B26642DAE9DE1003A6ED3 /* RadioPickerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26612DAE9DE1003A6ED3 /* RadioPickerPage.swift */; };
 		518B26652DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26622DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift */; };
 		518B26662DAE9DE1003A6ED3 /* RadioPickerElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518B26602DAE9DE1003A6ED3 /* RadioPickerElement.swift */; };
@@ -428,6 +434,9 @@
 		513442052D75B880000B5DE4 /* CheckboxElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxElements.swift; sourceTree = "<group>"; };
 		5149BADA2C3D6F4F000FA4BF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		514D02FB2D75F45F00622692 /* OUDSCheckboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OUDSCheckboxUITests.swift; sourceTree = "<group>"; };
+		5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerConfiguration.swift; sourceTree = "<group>"; };
+		5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerElement.swift; sourceTree = "<group>"; };
+		5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerPage.swift; sourceTree = "<group>"; };
 		518B26602DAE9DE1003A6ED3 /* RadioPickerElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPickerElement.swift; sourceTree = "<group>"; };
 		518B26612DAE9DE1003A6ED3 /* RadioPickerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPickerPage.swift; sourceTree = "<group>"; };
 		518B26622DAE9DE1003A6ED3 /* RadioPickerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPickerConfiguration.swift; sourceTree = "<group>"; };
@@ -922,6 +931,16 @@
 			path = Checkbox;
 			sourceTree = "<group>";
 		};
+		5180FE6D2DBBC2FA0062E489 /* CheckboxPicker */ = {
+			isa = PBXGroup;
+			children = (
+				5180FE6A2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift */,
+				5180FE6B2DBBC2FA0062E489 /* CheckboxPickerElement.swift */,
+				5180FE6C2DBBC2FA0062E489 /* CheckboxPickerPage.swift */,
+			);
+			path = CheckboxPicker;
+			sourceTree = "<group>";
+		};
 		518B26632DAE9DE1003A6ED3 /* RadioPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -992,6 +1011,7 @@
 				07CC9AEB2DB0F7DD001BC929 /* Switch */,
 				072141182D02F52A00B7B9C6 /* Button */,
 				513442062D75B880000B5DE4 /* Checkbox */,
+				5180FE6D2DBBC2FA0062E489 /* CheckboxPicker */,
 				07D3DBF02DA5084500D8A57F /* ColoredSurface */,
 				076227622DA90C65009C3632 /* Divider */,
 				07B3CCAD2D40E14C00DBB10A /* Link */,
@@ -1431,6 +1451,9 @@
 				07304A6A2D429F9F009320BA /* LinkConfiguration.swift in Sources */,
 				07304A6B2D429F9F009320BA /* LinkElement.swift in Sources */,
 				51D6D5952D888159009CD879 /* CheckboxItemIndeterminateConfiguration.swift in Sources */,
+				5180FE712DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
+				5180FE722DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
+				5180FE732DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
 				07304A6C2D429F9F009320BA /* LinkPage.swift in Sources */,
 				51D6D58F2D887F04009CD879 /* CheckboxItemIndeterminatePage.swift in Sources */,
 				07D7E1982D035566006472EB /* ButtonConfiguration.swift in Sources */,
@@ -1463,6 +1486,9 @@
 				0745C18F2D7A0596006B3A1F /* RadioConfiguration.swift in Sources */,
 				0745C1902D7A0596006B3A1F /* RadioElement.swift in Sources */,
 				519251F32D020BD0003FD1F6 /* DesignToolboxVariantElement.swift in Sources */,
+				5180FE6E2DBBC2FA0062E489 /* CheckboxPickerPage.swift in Sources */,
+				5180FE6F2DBBC2FA0062E489 /* CheckboxPickerConfiguration.swift in Sources */,
+				5180FE702DBBC2FA0062E489 /* CheckboxPickerElement.swift in Sources */,
 				519251F02D020BA6003FD1F6 /* DesignToolboxElementsPage.swift in Sources */,
 				519251EE2D020B8A003FD1F6 /* DesignToolboxElement.swift in Sources */,
 				519251EF2D020B8A003FD1F6 /* DesignToolboxElementPage.swift in Sources */,

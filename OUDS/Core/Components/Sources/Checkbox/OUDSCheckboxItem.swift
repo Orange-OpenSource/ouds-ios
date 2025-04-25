@@ -37,7 +37,8 @@ import SwiftUI
 /// ## Generic typed
 ///
 /// The checkbox can be associated to a specifc type for its *tag*.
-/// Indeed a checkbox alone with this layout is not that much useful, and should be associated to a *tag* which will permit a ``OUDSCheckboxPicker`` to provide the selected values for a group of checkboxes.
+/// Indeed a checkbox alone with this layout is not that much useful, and should be associated to a *tag* 
+/// which will permit a ``OUDSCheckboxPicker`` to provide the selected values for a group of checkboxes.
 ///
 /// ## Particular cases
 ///

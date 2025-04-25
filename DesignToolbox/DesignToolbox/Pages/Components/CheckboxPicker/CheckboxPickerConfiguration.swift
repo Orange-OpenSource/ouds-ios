@@ -14,14 +14,14 @@
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Radio Picker Configuration Model
+// MARK: - Checkbox Picker Configuration Model
 
-/// The model shared between `RadioPickerConfiguration` view and `RadioPickerPage` view.
-final class RadioPickerConfigurationModel: ComponentConfiguration {
+/// The model shared between `CheckboxPickerConfiguration` view and `CheckboxPickerPage` view.
+final class CheckboxPickerConfigurationModel: ComponentConfiguration {
 
     // MARK: - Properties
 
-    @Published var pickerPlacement: OUDSRadioPickerPlacement {
+    @Published var pickerPlacement: OUDSCheckboxPickerPlacement {
         didSet { updateCode() }
     }
 
@@ -41,10 +41,6 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var isOutlined: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var isEnabled: Bool {
         didSet { updateCode() }
     }
@@ -57,7 +53,6 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         isReadOnly = false
         isError = false
         isReversed = false
-        isOutlined = false
         isEnabled = true
     }
 
@@ -69,7 +64,7 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSRadioPicker(selection: $selection, radios: someRadiosData, placement: \(pickerPlacementPattern)\(hasDividerPattern)\(isReadOnlyPattern)\(isErrorPattern)\(isReversedPattern)\(isOutlinedPattern))\(isEnabledPattern)
+        OUDSCheckboxPicker(selections: $selections, checkboxes: someCheckboxData, placement: \(pickerPlacementPattern)\(hasDividerPattern)\(isReadOnlyPattern)\(isErrorPattern)\(isReversedPattern))\(isEnabledPattern)
         """
     }
     // swiftlint:enable line_length
@@ -82,6 +77,8 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
             return ".horizontal(true)"
         case .horizontal(let showsIndicator) where showsIndicator == false:
             return ".horizontal(false)"
+        case .verticalRooted(let label):
+            return ".verticalRooted(" + label + ")"
         default:
             return "🥜"
         }
@@ -103,41 +100,37 @@ final class RadioPickerConfigurationModel: ComponentConfiguration {
         !isReversed ? "" : ", isReversed: true"
     }
 
-    private var isOutlinedPattern: String {
-        !isOutlined ? "" : ", isOutlined: true"
-    }
-
     private var isEnabledPattern: String {
         isEnabled ? "" : ".disabled(true)"
     }
 
     // MARK: - Data populating
 
-    func populate() -> [OUDSRadioPickerData<String>] {
+    func populate() -> [OUDSCheckboxPickerData<String>] {
         [
-            OUDSRadioPickerData<String>(tag: "Choice_1",
-                                        label: "Virgin Holy Lava",
-                                        additionalLabel: "Very spicy",
-                                        helper: "No alcohol, only tasty flavors",
-                                        icon: Image(systemName: "flame")),
+            OUDSCheckboxPickerData<String>(tag: "Choice_1",
+                                           label: "Virgin Holy Lava",
+                                           additionalLabel: "Very spicy",
+                                           helper: "No alcohol, only tasty flavors",
+                                           icon: Image(systemName: "flame")),
 
-            OUDSRadioPickerData<String>(tag: "Choice_2",
-                                        label: "IPA beer",
-                                        helper: "From Brewdog company",
-                                        icon: Image(systemName: "dog.fill")),
+            OUDSCheckboxPickerData<String>(tag: "Choice_2",
+                                           label: "IPA beer",
+                                           helper: "From Brewdog company",
+                                           icon: Image(systemName: "dog.fill")),
 
-            OUDSRadioPickerData<String>(tag: "Choice_3",
-                                        label: "Mineral water",
-                                        icon: Image(systemName: "waterbottle.fill")),
+            OUDSCheckboxPickerData<String>(tag: "Choice_3",
+                                           label: "Mineral water",
+                                           icon: Image(systemName: "waterbottle.fill")),
         ]
     }
 }
 
-// MARK: - Radio Picker Configuration View
+// MARK: - Checkbox Picker Configuration View
 
-struct RadioPickerConfiguration: View {
+struct CheckboxPickerConfiguration: View {
 
-    @ObservedObject var model: RadioPickerConfigurationModel
+    @ObservedObject var model: CheckboxPickerConfigurationModel
 
     @Environment(\.theme) private var theme
 
@@ -148,26 +141,22 @@ struct RadioPickerConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.isEnabled || model.isError)
-
-            Toggle("app_components_common_error_label", isOn: $model.isError)
+            Toggle("app_components_common_onError_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.isEnabled || model.isReadOnly)
 
-            Toggle("app_components_radioButton_radioButtonItem_outlined_label", isOn: $model.isOutlined)
+            Toggle("app_components_common_readOnly_label", isOn: $model.isReadOnly)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.isEnabled || model.isError)
 
-            Toggle("app_components_controlItem_divider_label", isOn: $model.hasDivider)
+            Toggle("app_components_common_divider_label", isOn: $model.hasDivider)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.pickerPlacement) {
-                ForEach(OUDSRadioPickerPlacement.allCases, id: \.id) { placement in
+                ForEach(OUDSCheckboxPickerPlacement.allCases, id: \.id) { placement in
                     Text(placement.description).tag(placement)
                 }
             }
@@ -175,14 +164,14 @@ struct RadioPickerConfiguration: View {
     }
 }
 
-// MARK: - Extension of OUDSRadioPickerPlacement
+// MARK: - Extension of OUDS Checkbox Picker Placement
 
-extension OUDSRadioPickerPlacement: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Equatable, @retroactive Hashable {
+extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive CustomStringConvertible, @retroactive Equatable, @retroactive Hashable {
 
     // MARK: Case Iterable
 
-    public static var allCases: [OUDSRadioPickerPlacement] {
-        [.vertical, .horizontal(true), .horizontal(false)]
+    public static var allCases: [OUDSCheckboxPickerPlacement] {
+        [.vertical, .verticalRooted("Your order"), .horizontal(true), .horizontal(false)]
     }
 
     var id: String {
@@ -199,6 +188,8 @@ extension OUDSRadioPickerPlacement: @retroactive CaseIterable, @retroactive Cust
             return "Horizontal without indicator"
         case .vertical:
             return "Vertical"
+        case .verticalRooted(let label):
+            return "Vertical with root item \'" + label + "\""
         default:
             return "🥜"
         }
@@ -206,7 +197,7 @@ extension OUDSRadioPickerPlacement: @retroactive CaseIterable, @retroactive Cust
 
     // MARK: Equatable
 
-    public static func == (lhs: OUDSRadioPickerPlacement, rhs: OUDSRadioPickerPlacement) -> Bool {
+    public static func == (lhs: OUDSCheckboxPickerPlacement, rhs: OUDSCheckboxPickerPlacement) -> Bool {
         lhs.id == rhs.id
     }
 

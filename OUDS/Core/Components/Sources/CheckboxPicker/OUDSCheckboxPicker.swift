@@ -12,6 +12,7 @@
 //
 
 import OUDSFoundations
+import OUDSTokensSemantic
 import SwiftUI
 
 /// A picker allowing to expose several checkboxes and select some of them within the others.
@@ -37,6 +38,8 @@ import SwiftUI
 ///
 /// - Since: 0.14.0
 public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
+
+    // MARK: - Properties
 
     /// The tags of the selected checkbox
     var selections: Binding<[Tag]>
@@ -70,7 +73,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// - Parameters:
     ///    - selection: The current selected value
     ///    - checkboxes: The raw data to wrap in ``OUDSCheckboxItem`` for display
-    ///    - placement: How checkboxes must be placed (default set to *vertical without shift of children*)
+    ///    - placement: How checkboxes must be placed (default set to *vertical*)
     ///    - isOutlined: If *true*, force all ``OUDSCheckboxItem`` to be outlined (default set to *false*)
     ///    - isReversed: If *true*, force all ``OUDSCheckboxItem`` to have reversed layout (default set to *false*)
     ///    - isError: If *true*, force all ``OUDSCheckboxItem`` to be in error mode (default set to *false*)
@@ -78,7 +81,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - hasDivider: If *true*, force all ``OUDSCheckboxItem`` except the last one to have a divider (default set to *false*)
     public init(selections: Binding<[Tag]>,
                 checkboxes: [OUDSCheckboxPickerData<Tag>],
-                placement: OUDSCheckboxPickerPlacement = .vertical(false),
+                placement: OUDSCheckboxPickerPlacement = .vertical,
                 isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
@@ -92,7 +95,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         self.isError = isError
         self.isReadOnly = isReadOnly
         self.hasDivider = hasDivider
-        verifySelection()
+        verifySelections()
     }
 
     // MARK: - Body
@@ -105,21 +108,49 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
                     content(for: checkboxes)
                 }
             }
-        case .vertical(let shiftChildren):
+        case .vertical:
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 content(for: checkboxes)
+            }
+        case .verticalRooted(let label):
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                rootItem(labeled: label)
+                content(for: checkboxes, shiftedBy: theme.spaces.spaceFixedMedium)
             }
         }
     }
 
-    private func content(for radios: [OUDSCheckboxPickerData<Tag>]) -> some View {
+    /// Adds a root checkbox to handle groups of children checkboxes
+    /// - Parameter labeled: The text to display in the root view
+    private func rootItem(labeled: String) -> some View {
+        Text(labeled)
+    }
+
+    /// Creates several ``OUDSCheckboxItem`` `View` objects from ``OUDSCheckboxPickerData`` objects
+    /// - Parameters:
+    ///    - checkboxes: The data to display in ``OUDSCheckboxItem`
+    ///    - offset: Leading padding to add
+    /// - Returns: The view
+    private func content(for checkboxes: [OUDSCheckboxPickerData<Tag>],
+                         shiftedBy offset: SpaceSemanticToken? = nil) -> some View {
         ForEach(checkboxes, id: \.tag) { checkbox in
-            content(for: checkbox,
-                    isLast: (checkboxes[checkboxes.count - 1].tag == checkbox.tag))
+            if let offset {
+                content(for: checkbox,
+                        noDivider: (checkboxes[checkboxes.count - 1].tag == checkbox.tag)) // No divider for last item
+                .padding(.leading, offset)
+            } else {
+                content(for: checkbox,
+                        noDivider: (checkboxes[checkboxes.count - 1].tag == checkbox.tag)) // No divider for last item
+            }
         }
     }
 
-    private func content(for checkbox: OUDSCheckboxPickerData<Tag>, isLast: Bool) -> some View {
+    /// Creates a new ``OUDSCheckboxItem`` `View` from one ``OUDSCheckboxPickerData``
+    /// - Parameters:
+    ///    - checkbox: The data to display in ``OUDSCheckboxItem`
+    ///    - noDivider: If true, do not add divider to the item
+    /// - Returns: The view
+    private func content(for checkbox: OUDSCheckboxPickerData<Tag>, noDivider: Bool) -> some View {
         OUDSCheckboxItem<Tag>(isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
                               tag: checkbox.tag,
                               label: checkbox.label,
@@ -128,7 +159,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
                               isReversed: isReversed ? true : checkbox.isReversed,
                               isError: isError ? true : checkbox.isError,
                               isReadOnly: isReadOnly ? true : checkbox.isReadOnly,
-                              hasDivider: hasDivider && !isLast ? true : checkbox.hasDivider) {
+                              hasDivider: hasDivider && !noDivider ? true : checkbox.hasDivider) {
             if isSelected(tag: checkbox.tag) {
                 selections.wrappedValue.removeAll(where: { $0 == checkbox.tag })
             } else {
@@ -136,12 +167,12 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
             }
         }
     }
-    
+
     // MARK: - Helpers
 
     /// Checks if the given selections are available within the checkbox configurations.
     /// If not, displays a error message in the logs.
-    private func verifySelection() {
+    private func verifySelections() {
         let selections = selections.wrappedValue
         for selection in selections {
             let selectionCount = checkboxes.count(where: { $0.tag == selection })
@@ -152,7 +183,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
             }
         }
     }
-    
+
     /// - Parameter tag: The value to test
     /// - Returns Bool: *true* if *tag* in *selections*, *false* otherwise
     private func isSelected(tag: Tag) -> Bool {

@@ -74,6 +74,8 @@ import SwiftUI
 /// - Since: 0.14.0
 public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
 
+    // MARK: - Properties
+
     /// The tag of the selected radio button
     var selection: Binding<Tag>
 
@@ -164,11 +166,11 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     private func content(for radios: [OUDSRadioPickerData<Tag>]) -> some View {
         ForEach(radios, id: \.tag) { radio in
             content(for: radio,
-                    isLast: (radios[radios.count - 1].tag == radio.tag))
+                    noDivider: (radios[radios.count - 1].tag == radio.tag)) // No divider for last item
         }
     }
 
-    private func content(for radio: OUDSRadioPickerData<Tag>, isLast: Bool) -> some View {
+    private func content(for radio: OUDSRadioPickerData<Tag>, noDivider: Bool) -> some View {
         OUDSRadioItem<Tag>(isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
                            tag: radio.tag,
                            label: radio.label,
@@ -179,7 +181,7 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
                            isReversed: isReversed ? true : radio.isReversed,
                            isError: isError ? true : radio.isError,
                            isReadOnly: isReadOnly ? true : radio.isReadOnly,
-                           hasDivider: hasDivider && !isLast ? true : radio.hasDivider) {
+                           hasDivider: hasDivider && !noDivider ? true : radio.hasDivider) {
             selection.wrappedValue = radio.tag
         }
     }
