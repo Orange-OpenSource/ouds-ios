@@ -111,7 +111,7 @@ struct ThemeSelectionButton: View {
         } label: {
             Image(systemName: "paintpalette")
                 .accessibilityLabel("app_topBar_theme_button_a11y")
-                .accessibilityHint("app_topBar_theme_button_hint_a11y")
+                .accessibilityHint("app_topBar_theme_button_a11y")
         }
         .oudsForegroundColor(themeProvider.currentTheme.colors.colorContentBrandPrimary)
     }

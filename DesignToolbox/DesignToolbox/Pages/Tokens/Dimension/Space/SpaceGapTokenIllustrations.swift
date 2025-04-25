@@ -15,15 +15,15 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Gap Inline property
+// MARK: - Column Gap property
 
-struct GapInlineProperty: View {
+struct ColumnGapProperty: View {
 
     var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.GapInline.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.ColumnGap.allCases) {
             SpaceHeaderDescription(
-                firstText: "app_tokens_dimension_space_header_text",
-                secondText: "app_tokens_dimension_space_header_text",
+                firstText: "app_tokens_dimension_space_columnGapHeader_text",
+                secondText: "app_tokens_dimension_space_columnGapHeader_text",
                 orientation: .horizontal)
         } illustration: { token in
             Illustration(token: token)
@@ -38,15 +38,15 @@ struct GapInlineProperty: View {
     }
 }
 
-// MARK: - Gap Stack property
+// MARK: - Row Gap property
 
-struct GapStackProperty: View {
+struct RowGapProperty: View {
 
     var body: some View {
-        SpaceTokenProperty(namedTokens: NamedSpace.GapStack.allCases) {
+        SpaceTokenProperty(namedTokens: NamedSpace.RowGap.allCases) {
             SpaceHeaderDescription(
-                firstText: "app_tokens_dimension_space_header_text",
-                secondText: "app_tokens_dimension_space_header_text",
+                firstText: "app_tokens_dimension_space_rowGapHeader_text",
+                secondText: "app_tokens_dimension_space_rowGapHeader_text",
                 orientation: .verical)
         } illustration: { token in
             Illustration(token: token)

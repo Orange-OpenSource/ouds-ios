@@ -407,30 +407,6 @@
         }
       }
     },
-    "app_common_showCode_copy_a11y" : {
-      "comment" : "Common (a11y)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نسخ الكود إلى الحافظة"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copy code to clipboard"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copier le code dans le presse-papiers"
-          }
-        }
-      }
-    },
     "app_common_showCode_text" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -2520,7 +2496,7 @@
       }
     },
     "app_tokens_common_viewCodeExample_label" : {
-      "comment" : "Token screen",
+      "comment" : "Token - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2687,6 +2663,43 @@
         }
       }
     },
+    "app_tokens_dimension_space_columnGap_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "فجوة مضمنة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Column gap"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espacement extérieur entre éléments côte à côte"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_columnGapHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap inline includes the vertical spacing between objects."
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
     "app_tokens_dimension_space_description_text" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
@@ -2735,26 +2748,26 @@
         }
       }
     },
-    "app_tokens_dimension_space_gapInline_label" : {
+    "app_tokens_dimension_space_fixedHeader_text" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فجوة مضمنة"
+            "value" : "تشير المسافة الثابتة إلى مسافة ثابتة بين العناصر تظل كما هي بغض النظر عن عوامل مثل حجم الحاوية أو دقة الشاشة أو تغييرات التخطيط."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gap inline"
+            "value" : "Fixed spacing refers to a constant distance between elements that remains the same regardless of factors like container size, screen resolution, or layout changes."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espacement extérieur entre éléments côte à côte"
+            "value" : "L'espacement fixe fait référence à une distance constante entre les éléments qui reste la même quels que soient des facteurs tels que la taille du conteneur, la résolution de l'écran ou les changements de mise en page."
           }
         }
       }
@@ -2784,7 +2797,7 @@
       }
     },
     "app_tokens_dimension_space_gapInlineWithIcon_label" : {
-      "comment" : "Token - Dimension - Space - Space",
+      "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2803,54 +2816,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Espace en ligne avec icône"
-          }
-        }
-      }
-    },
-    "app_tokens_dimension_space_gapStack_label" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "كومة الفجوة"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gap stack"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Espacement extérieur entre éléments empilés"
-          }
-        }
-      }
-    },
-    "app_tokens_dimension_space_gapStackWithIcon_label" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "كومة الفجوة مع الرمز"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gap stack with icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Espace empilé avec icône"
           }
         }
       }
@@ -2927,6 +2892,30 @@
         }
       }
     },
+    "app_tokens_dimension_space_paddingInlineHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن الحشوة المضمنة الحشوة اليمنى واليسرى لكائن أو مجموعة من الكائنات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding inline includes the left and right padding of an object or a group of objects."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le remplissage en ligne inclut le remplissage gauche et droit d'un objet ou d'un groupe d'objets."
+          }
+        }
+      }
+    },
     "app_tokens_dimension_space_paddingInset_label" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
@@ -2947,6 +2936,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Espacement intérieur"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_paddingInsetHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "تتضمن الحشوة المضمنة الحشوة اليسرى واليمنى والعلوية والسفلية، مع تساوي جميع المعلمات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding inset includes the left, right, top, and bottom padding, with all parameters being equal."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le remplissage inséré comprend le remplissage gauche, droit, supérieur et inférieur, tous les paramètres étant égaux."
           }
         }
       }
@@ -2975,6 +2988,66 @@
         }
       }
     },
+    "app_tokens_dimension_space_paddingStackHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن مجموعة الحشو الحشو العلوي والسفلي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding stack includes the top and bottom padding."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La pile de rembourrage comprend le rembourrage supérieur et inférieur."
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_rowGap_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "كومة الفجوة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Row gap"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espacement extérieur entre éléments empilés"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_rowGapHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gap stack includes the horizontal spacing between objects."
+          }
+        }
+      }
+    },
     "app_tokens_dimension_space_scaled_label" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
@@ -2995,6 +3068,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Échelonné"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_scaledHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تشير المسافة المقاسة إلى المسافة التي يتم تعديلها ديناميكيًا استنادًا إلى عوامل مثل حجم الحاوية أو دقة الشاشة أو عناصر التخطيط."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scaled spacing refers to spacing that adjusts dynamically based on factors like container size, screen resolution, or layout elements."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'espacement mis à l'échelle fait référence à un espacement qui s'ajuste de manière dynamique en fonction de facteurs tels que la taille du conteneur, la résolution de l'écran ou les éléments de mise en page."
           }
         }
       }
@@ -3318,19 +3415,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تغيير الموضوع"
+            "value" : "اختر الموضوع"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Change theme"
+            "value" : "Select theme"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Changer le thème"
+            "value" : "Sélectionner un thème"
           }
         }
       }
@@ -3358,6 +3455,9 @@
           }
         }
       }
+    },
+    "Key 1" : {
+      "extractionState" : "manual"
     }
   },
   "version" : "1.0"
