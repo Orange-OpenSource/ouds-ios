@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Udpate component illustrations ([#618](https://github.com/Orange-OpenSource/ouds-ios/issues/618))
 - [DesignToolbox] Udpate language translations ([#622](https://github.com/Orange-OpenSource/ouds-ios/issues/622))
 - [Tool] Fix Gitleaks configuration file and update documentation about version in use
 - [Library] Renaming of API ([#608](https://github.com/Orange-OpenSource/ouds-ios/issues/608))
