@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [Tool] Update `json` RubyGem from 2.10.2 to 2.11.3 ([#630](https://github.com/Orange-OpenSource/ouds-ios/pull/630))
 - [DemoApp] Update components configuration section ([#637](https://github.com/Orange-OpenSource/ouds-ios/issues/637))
 - [DemoApp] Update wording keys ([#623](https://github.com/Orange-OpenSource/ouds-ios/issues/623))
 - [DesignToolbox] Udpate component illustrations ([#618](https://github.com/Orange-OpenSource/ouds-ios/issues/618))
