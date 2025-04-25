@@ -48,7 +48,8 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        pickerPlacement = .verticalRooted("Your order")
+        pickerPlacement = .verticalRooted(NSLocalizedString("app_components_checkboxPicker_rootCount", comment: ""), .textAndCount)
+//        pickerPlacement = .verticalRooted("app_components_checkboxPicker_root", .textOnly)
         hasDivider = false
         isReadOnly = false
         isError = false
@@ -69,6 +70,7 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
     }
     // swiftlint:enable line_length
 
+    // swiftlint:disable empty_enum_arguments
     private var pickerPlacementPattern: String {
         switch pickerPlacement {
         case .vertical:
@@ -77,12 +79,13 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
             return ".horizontal(true)"
         case .horizontal(let showsIndicator) where showsIndicator == false:
             return ".horizontal(false)"
-        case .verticalRooted(let label):
-            return ".verticalRooted(" + label + ")"
+        case .verticalRooted(_, _):
+            return ".verticalRooted(label, type)"
         default:
             return "🥜"
         }
     }
+    // swiftlint:enable empty_enum_arguments
 
     private var hasDividerPattern: String {
         !hasDivider ? "" : ", hasDivider: true"
@@ -173,7 +176,7 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
     // MARK: Case Iterable
 
     public static var allCases: [OUDSCheckboxPickerPlacement] {
-        [.vertical, .verticalRooted("Your order"), .horizontal(true), .horizontal(false)]
+        [.vertical, .verticalRooted("Your order", .textAndCount), .horizontal(true), .horizontal(false)]
     }
 
     var id: String {
@@ -191,7 +194,7 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
             return "Horizontal without indicator"
         case .vertical:
             return "Vertical without root iterm"
-        case .verticalRooted(_):
+        case .verticalRooted(_, _):
             return "Vertical with custom root item"
         default:
             return "🥜"

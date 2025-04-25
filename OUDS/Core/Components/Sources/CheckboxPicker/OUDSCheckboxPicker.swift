@@ -115,9 +115,9 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 content(for: checkboxes)
             }
-        case .verticalRooted(let label):
+        case let .verticalRooted(label, type):
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
-                rootItem(labeled: label)
+                rootItem(labeled: label, of: type)
                 content(for: checkboxes)
             }
         }
@@ -126,9 +126,12 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// Adds a root checkbox to handle groups of children checkboxes.
     /// If this particular checkbox is selected, all children checkboxes are selected.
     /// If this particular checkbox is unselected, all children checkboxes are unselected.
-    /// - Parameter labeled: The text to display in the root view
-    private func rootItem(labeled: String) -> some View {
-        OUDSCheckboxItemIndeterminate(selection: $coordinator.selectionRootState, label: labeled) {
+    /// - Parameters:
+    ///    - text: The text to display in the root view
+    ///    - type: The type of display for the root label
+    private func rootItem(labeled text: String, of type: OUDSCheckboxPickerPlacement.DisplayType) -> some View {
+        OUDSCheckboxItemIndeterminate(selection: $coordinator.selectionRootState,
+                                      label: rootLabel(for: text, of: type)) {
             if case .selected = coordinator.selectionRootState {
                 selections.wrappedValue = checkboxes.map { $0.tag }
             } else {
@@ -168,6 +171,21 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
                 selections.wrappedValue.append(checkbox.tag)
             }
             coordinator.updateSelectionsRoot(selections.count, checkboxes.count)
+        }
+    }
+
+    /// Given the `type` enriches the given `text` or not
+    /// - Parameters:
+    ///    - text: The text to display as label for the root checkbox, to update if needed
+    ///    - type: The type of display
+    /// - Returns: The final string to add in the view
+    private func rootLabel(for text: OUDSCheckboxPickerPlacement.RootLabel,
+                           of type: OUDSCheckboxPickerPlacement.DisplayType) -> String {
+        switch type {
+        case .textOnly:
+            return text.localized()
+        case .textAndCount:
+            return String(format: text, selections.wrappedValue.count)
         }
     }
 
