@@ -35,7 +35,7 @@ import SwiftUI
 /// ## Generic typed
 ///
 /// The radio button can be associated to a specifc type for its *tag*.
-/// Indeed a radio button alone with this layout is not that much usefull, and should be associated to a *tag* which will permit a ``OUDSRadioPicker``
+/// Indeed a radio button alone with this layout is not that much useful, and should be associated to a *tag* which will permit a ``OUDSRadioPicker``
 /// to provide the selected value for a group of radio buttons.
 /// 
 /// ## Particular cases
@@ -119,7 +119,7 @@ import SwiftUI
 /// ```
 ///
 /// However if the ``OUDSRadioItem`` should be used inside a ``OUDSRadioPicker`` for example, it must contain a tag and an associated type.
-/// The tag will be the value returned by the picked, and must be an `Hashable`.
+/// The tag will be the value returned by the picker, and must be an `Hashable`.
 ///
 /// ```swift
 ///     OUDSRadioItem<String>(isOn: $selection,
@@ -139,7 +139,7 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
 
     // MARK: - Properties
 
-    // NOTE: Do not forget to kee updated OUDSRadioPickerData
+    // NOTE: Do not forget to keep updated OUDSRadioPickerData
     @Binding private var isOn: Bool
     private let layoutData: ControlItemLabel.LayoutData
     private let tag: Tag?
