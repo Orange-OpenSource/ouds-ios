@@ -163,8 +163,7 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
-    ///   - action: An additional action to trigger when the checkbox has been pressed
-    ///
+    ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
     public init(isOn: Binding<Bool>,
                 label: String,
                 helper: String? = nil,

@@ -121,9 +121,10 @@ public struct OUDSCheckboxItemIndeterminate: View {
 
     // MARK: - Properties
 
-    private let layoutData: ControlItemLabel.LayoutData
-
     @Binding private var selection: OUDSCheckboxIndicatorState
+    private let layoutData: ControlItemLabel.LayoutData
+    private let action: (() -> Void)?
+
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Initializers
@@ -142,6 +143,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
     public init(selection: Binding<OUDSCheckboxIndicatorState>,
                 label: String,
                 helper: String? = nil,
@@ -150,7 +152,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false) {
+                hasDivider: Bool = false,
+                action: (() -> Void)? = nil) {
         if isError && isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDS Checkbox in an error context and in read only mode")
         }
@@ -160,6 +163,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
         }
 
         _selection = selection
+        self.action = action
         self.layoutData = .init(
             label: label,
             additionalLabel: nil,
@@ -176,7 +180,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
     // MARK: Body
 
     public var body: some View {
-        ControlItem(indicatorType: .checkBox($selection), layoutData: layoutData)
+        ControlItem(indicatorType: .checkBox($selection), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(a11yLabel(layoutData: layoutData))
             .accessibilityValue(selection.a11yDescription.localized())

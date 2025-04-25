@@ -12,7 +12,6 @@
 //
 
 import OUDSFoundations
-import OUDSTokensSemantic
 import SwiftUI
 
 /// A picker allowing to expose several checkboxes and select some of them within the others.
@@ -65,9 +64,6 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and forces them to apply the outlined layout
     private let isOutlined: Bool
 
-//    /// An internal binding for the picker if the `placement` is *verticalRooted*
-//    private var selectionsRoot: Binding<OUDSCheckboxIndicatorState>
-
     /// View model acting as coordinator between root checkbox and children checkboxes
     @StateObject private var coordinator: CheckboxPickerCoordinator
 
@@ -101,8 +97,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         self.isError = isError
         self.isReadOnly = isReadOnly
         self.hasDivider = hasDivider
-//        self.selectionsRoot = .constant(.unselected)
-        _coordinator = StateObject(wrappedValue: CheckboxPickerCoordinator())
+        _coordinator = StateObject(wrappedValue: CheckboxPickerCoordinator(selections.count, checkboxes.count))
         verifySelections()
     }
 
@@ -123,33 +118,32 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         case .verticalRooted(let label):
             VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
                 rootItem(labeled: label)
-                content(for: checkboxes, shiftedBy: theme.spaces.spaceFixedMedium)
+                content(for: checkboxes)
             }
         }
     }
 
-    /// Adds a root checkbox to handle groups of children checkboxes
+    /// Adds a root checkbox to handle groups of children checkboxes.
+    /// If this particular checkbox is selected, all children checkboxes are selected.
+    /// If this particular checkbox is unselected, all children checkboxes are unselected.
     /// - Parameter labeled: The text to display in the root view
     private func rootItem(labeled: String) -> some View {
-        OUDSCheckboxItemIndeterminate(selection: $coordinator.selectionRootState, label: labeled)
+        OUDSCheckboxItemIndeterminate(selection: $coordinator.selectionRootState, label: labeled) {
+            if case .selected = coordinator.selectionRootState {
+                selections.wrappedValue = checkboxes.map { $0.tag }
+            } else {
+                selections.wrappedValue = []
+            }
+        }
     }
 
     /// Creates several ``OUDSCheckboxItem`` `View` objects from ``OUDSCheckboxPickerData`` objects
-    /// - Parameters:
-    ///    - checkboxes: The data to display in ``OUDSCheckboxItem`
-    ///    - offset: Leading padding to add
+    /// - Parameter checkboxes: The data to display in ``OUDSCheckboxItem`
     /// - Returns: The view
-    private func content(for checkboxes: [OUDSCheckboxPickerData<Tag>],
-                         shiftedBy offset: SpaceSemanticToken? = nil) -> some View {
+    private func content(for checkboxes: [OUDSCheckboxPickerData<Tag>]) -> some View {
         ForEach(checkboxes, id: \.tag) { checkbox in
-            if let offset {
-                content(for: checkbox,
-                        noDivider: (checkboxes[checkboxes.count - 1].tag == checkbox.tag)) // No divider for last item
-                .padding(.leading, offset)
-            } else {
-                content(for: checkbox,
-                        noDivider: (checkboxes[checkboxes.count - 1].tag == checkbox.tag)) // No divider for last item
-            }
+           content(for: checkbox,
+                   noDivider: (checkboxes[checkboxes.count - 1].tag == checkbox.tag)) // No divider for last item
         }
     }
 
@@ -179,21 +173,33 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
 
     // MARK: - Coordinator
 
-    /// View model for coordination between root checkbox and children checkboxes
+    /// View model for coordination between root checkbox and children checkboxes.
+    /// Defines the rules for the root checkbox indicator state:
+    /// - if no children checkbox is selected, root checkbox is unselected
+    /// - if all children checkboxes are selected, root checkbox is selected
+    /// - otherwise, root checkbox is indeterminate
     private final class CheckboxPickerCoordinator: ObservableObject {
 
         @Published var selectionRootState: OUDSCheckboxIndicatorState = .unselected
 
+        init(_ selectionsCount: Int, _ checkboxesCount: Int) {
+            selectionRootState = Self.valueFor(selectionsCount, checkboxesCount)
+        }
+
         deinit { }
 
         func updateSelectionsRoot(_ selectionsCount: Int, _ checkboxesCount: Int) {
+            selectionRootState = Self.valueFor(selectionsCount, checkboxesCount)
+        }
+
+        private static func valueFor(_ selectionsCount: Int, _ checkboxesCount: Int) -> OUDSCheckboxIndicatorState {
             if selectionsCount == 0 {
-                selectionRootState = .unselected
-            } else if selectionsCount == checkboxesCount {
-                selectionRootState = .selected
-            } else {
-                selectionRootState = .indeterminate
+                return .unselected
             }
+            if selectionsCount == checkboxesCount {
+                return .selected
+            }
+            return .indeterminate
         }
     }
 
