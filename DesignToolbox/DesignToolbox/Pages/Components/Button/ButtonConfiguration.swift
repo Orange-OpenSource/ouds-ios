@@ -177,19 +177,25 @@ struct ButtonConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label", selection: $model.hierarchy) {
+            DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label",
+                                      selection: $model.hierarchy,
+                                      style: .segmented) {
                 ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
                     Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
                 }
             }
 
-            DesignToolboxChoicePicker(title: "app_components_common_style_label", selection: $model.style) {
+            DesignToolboxChoicePicker(title: "app_components_common_style_label",
+                                      selection: $model.style,
+                                      style: .segmented) {
                 ForEach(OUDSButton.Style.allCases, id: \.id) { style in
                     Text(LocalizedStringKey(style.description)).tag(style)
                 }
             }
 
-            DesignToolboxChoicePicker(title: "app_components_common_layout_label", selection: $model.layout) {
+            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
+                                      selection: $model.layout,
+                                      style: .segmented) {
                 ForEach(ButtonLayout.allCases, id: \.id) { layout in
                     Text(LocalizedStringKey(layout.description)).tag(layout)
                 }

@@ -52,8 +52,9 @@ struct CheckboxPickerPage: View {
 
 private struct CheckboxPickerIllustration: View {
 
-    @ObservedObject var model: CheckboxPickerConfigurationModel
     @State private var selections: [String] = ["Choice_1"] // cf model.populate()
+    @ObservedObject var model: CheckboxPickerConfigurationModel
+    @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .center) {
@@ -64,6 +65,7 @@ private struct CheckboxPickerIllustration: View {
                                isError: model.isError,
                                isReadOnly: model.isReadOnly,
                                hasDivider: model.hasDivider)
+            .padding([.trailing, .leading], theme.spaces.spacePaddingInlineShort )
             .disabled(!model.isEnabled)
         }
     }

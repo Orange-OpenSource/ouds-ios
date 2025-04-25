@@ -154,13 +154,17 @@ struct LinkConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            DesignToolboxChoicePicker(title: "app_components_link_size_label", selection: $model.size) {
+            DesignToolboxChoicePicker(title: "app_components_link_size_label",
+                                      selection: $model.size,
+                                      style: .segmented) {
                 ForEach(OUDSLink.Size.allCases, id: \.id) { size in
                     Text(LocalizedStringKey(size.description)).tag(size)
                 }
             }
 
-            DesignToolboxChoicePicker(title: "app_components_common_layout_label", selection: $model.layout) {
+            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
+                                      selection: $model.layout,
+                                      style: .segmented) {
                 ForEach(LinkLayout.allCases, id: \.id) { layout in
                     Text(LocalizedStringKey(layout.description)).tag(layout)
                 }

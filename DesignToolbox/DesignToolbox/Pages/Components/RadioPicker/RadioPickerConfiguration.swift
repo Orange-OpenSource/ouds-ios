@@ -166,7 +166,9 @@ struct RadioPickerConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.pickerPlacement) {
+            DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
+                                      selection: $model.pickerPlacement,
+                                      style: .menu) {
                 ForEach(OUDSRadioPickerPlacement.allCases, id: \.id) { placement in
                     Text(placement.description).tag(placement)
                 }

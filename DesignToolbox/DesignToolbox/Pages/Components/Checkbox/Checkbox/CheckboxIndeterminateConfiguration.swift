@@ -87,7 +87,9 @@ struct CheckboxIndeterminateConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled)
 
-            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
+            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label",
+                                      selection: $model.indicatorState,
+                                      style: .segmented) {
                 ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
                     Text(LocalizedStringKey(state.description)).tag(state)
                 }

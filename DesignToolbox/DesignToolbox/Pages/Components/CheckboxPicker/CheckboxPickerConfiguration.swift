@@ -48,7 +48,7 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        pickerPlacement = .vertical
+        pickerPlacement = .verticalRooted("Your order")
         hasDivider = false
         isReadOnly = false
         isError = false
@@ -155,7 +155,9 @@ struct CheckboxPickerConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.pickerPlacement) {
+            DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
+                                      selection: $model.pickerPlacement,
+                                      style: .menu) {
                 ForEach(OUDSCheckboxPickerPlacement.allCases, id: \.id) { placement in
                     Text(placement.description).tag(placement)
                 }
@@ -180,6 +182,7 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
 
     // MARK: Custom String Convertible
 
+    // swiftlint:disable empty_enum_arguments
     public var description: String {
         switch self {
         case .horizontal(let showIndicator) where showIndicator == true:
@@ -187,13 +190,14 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
         case .horizontal(let showIndicator) where showIndicator == false:
             return "Horizontal without indicator"
         case .vertical:
-            return "Vertical"
-        case .verticalRooted(let label):
-            return "Vertical with root item \'" + label + "\""
+            return "Vertical without root iterm"
+        case .verticalRooted(_):
+            return "Vertical with custom root item"
         default:
             return "🥜"
         }
     }
+    // swiftlint:enable empty_enum_arguments
 
     // MARK: Equatable
 

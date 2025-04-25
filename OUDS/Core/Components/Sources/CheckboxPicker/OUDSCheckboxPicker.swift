@@ -65,6 +65,9 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and forces them to apply the outlined layout
     private let isOutlined: Bool
 
+    /// An internal binding for the picker if the `placement` is *verticalRooted*
+    private var selectionsRoot: Binding<OUDSCheckboxIndicatorState>
+
     @Environment(\.theme) private var theme
 
     // MARK: - Init
@@ -95,7 +98,9 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         self.isError = isError
         self.isReadOnly = isReadOnly
         self.hasDivider = hasDivider
+        self.selectionsRoot = .constant(.unselected)
         verifySelections()
+        updateSelectionsRoot()
     }
 
     // MARK: - Body
@@ -123,7 +128,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// Adds a root checkbox to handle groups of children checkboxes
     /// - Parameter labeled: The text to display in the root view
     private func rootItem(labeled: String) -> some View {
-        Text(labeled)
+        OUDSCheckboxItemIndeterminate(selection: selectionsRoot, label: labeled)
     }
 
     /// Creates several ``OUDSCheckboxItem`` `View` objects from ``OUDSCheckboxPickerData`` objects
@@ -165,6 +170,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
             } else {
                 selections.wrappedValue.append(checkbox.tag)
             }
+            updateSelectionsRoot()
         }
     }
 
@@ -181,6 +187,19 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
             } else if selectionCount > 1 {
                 OL.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
             }
+        }
+    }
+
+    /// Defines the binding for the selections root depending to the state of the checkboxes
+    private func updateSelectionsRoot() {
+        let selectionsCount = selections.wrappedValue.count
+        print("@@@ selectionsCount = \(selectionsCount)")
+        if selectionsCount == 0 {
+            selectionsRoot.wrappedValue = .unselected
+        } else if selectionsCount == checkboxes.count {
+            selectionsRoot.wrappedValue = .selected
+        } else {
+            selectionsRoot.wrappedValue = .indeterminate
         }
     }
 

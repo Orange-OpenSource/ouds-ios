@@ -250,7 +250,7 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
     // MARK: Body
 
     public var body: some View {
-        ControlItem(indicatorType: .checkBox(convertedState), layoutData: layoutData)
+        ControlItem(indicatorType: .checkBox(convertedState), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(a11yLabel(layoutData: layoutData))
             .accessibilityValue(a11yValue())

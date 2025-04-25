@@ -52,8 +52,9 @@ struct RadioPickerPage: View {
 
 private struct RadioPickerIllustration: View {
 
-    @ObservedObject var model: RadioPickerConfigurationModel
     @State private var selection: String = "Choice_1" // cf model.populate()
+    @ObservedObject var model: RadioPickerConfigurationModel
+    @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .center) {
@@ -65,6 +66,7 @@ private struct RadioPickerIllustration: View {
                             isError: model.isError,
                             isReadOnly: model.isReadOnly,
                             hasDivider: model.hasDivider)
+            .padding([.trailing, .leading], theme.spaces.spacePaddingInlineShort )
             .disabled(!model.isEnabled)
         }
     }
