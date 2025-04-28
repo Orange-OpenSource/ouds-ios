@@ -18,8 +18,8 @@ import Foundation
 /// - Since: 0.14.0
 public enum OUDSCheckboxPickerPlacement {
 
-    /// A `RootLabel` is in the end a String, but can be also a localizable with parameters for counts
-    public typealias RootLabel = NSLocalizedString
+    /// A `RootLabel` is in the end a String
+    public typealias RootLabel = String
 
     // MARK: - Values
 
@@ -40,7 +40,10 @@ public enum OUDSCheckboxPickerPlacement {
         /// Display only the given root label
         case textOnly
 
-        /// Display the given root label, and the number of selected items , depending to how is defined the localizable key
+        /// Display the given root label, and the number of selected items,
         case textAndCount
+
+        /// Display the given root label, and the number of selected items if greater than zero
+        case textAndPositiveCount
     }
 }

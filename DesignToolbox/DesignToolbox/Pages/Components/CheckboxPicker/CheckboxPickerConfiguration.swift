@@ -48,8 +48,7 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
     // MARK: - Initializer
 
     override init() {
-        pickerPlacement = .verticalRooted(NSLocalizedString("app_components_checkboxPicker_rootCount", comment: ""), .textAndCount)
-//        pickerPlacement = .verticalRooted("app_components_checkboxPicker_root", .textOnly)
+        pickerPlacement = .verticalRooted("app_components_checkboxPicker_root".localized(), .textAndCount)
         hasDivider = false
         isReadOnly = false
         isError = false
@@ -70,7 +69,6 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
     }
     // swiftlint:enable line_length
 
-    // swiftlint:disable empty_enum_arguments
     private var pickerPlacementPattern: String {
         switch pickerPlacement {
         case .vertical:
@@ -79,13 +77,12 @@ final class CheckboxPickerConfigurationModel: ComponentConfiguration {
             return ".horizontal(true)"
         case .horizontal(let showsIndicator) where showsIndicator == false:
             return ".horizontal(false)"
-        case .verticalRooted(_, _):
-            return ".verticalRooted(label, type)"
+        case .verticalRooted(_, let type):
+            return ".verticalRooted(label, .\(type))"
         default:
             return "🥜"
         }
     }
-    // swiftlint:enable empty_enum_arguments
 
     private var hasDividerPattern: String {
         !hasDivider ? "" : ", hasDivider: true"
@@ -176,7 +173,14 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
     // MARK: Case Iterable
 
     public static var allCases: [OUDSCheckboxPickerPlacement] {
-        [.vertical, .verticalRooted("Your order", .textAndCount), .horizontal(true), .horizontal(false)]
+        [
+            .vertical,
+            .verticalRooted("app_components_checkboxPicker_root".localized(), .textOnly),
+            .verticalRooted("app_components_checkboxPicker_root".localized(), .textAndPositiveCount),
+            .verticalRooted("app_components_checkboxPicker_root".localized(), .textAndCount),
+            .horizontal(true),
+            .horizontal(false),
+        ]
     }
 
     var id: String {
@@ -185,7 +189,6 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
 
     // MARK: Custom String Convertible
 
-    // swiftlint:disable empty_enum_arguments
     public var description: String {
         switch self {
         case .horizontal(let showIndicator) where showIndicator == true:
@@ -193,14 +196,13 @@ extension OUDSCheckboxPickerPlacement: @retroactive CaseIterable, @retroactive C
         case .horizontal(let showIndicator) where showIndicator == false:
             return "Horizontal without indicator"
         case .vertical:
-            return "Vertical without root iterm"
-        case .verticalRooted(_, _):
-            return "Vertical with custom root item"
+            return "Vertical without root"
+        case .verticalRooted(_, let type):
+            return "Vertical with root item (\(type))"
         default:
             return "🥜"
         }
     }
-    // swiftlint:enable empty_enum_arguments
 
     // MARK: Equatable
 

@@ -67,6 +67,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// View model acting as coordinator between root checkbox and children checkboxes
     @StateObject private var coordinator: CheckboxPickerCoordinator
 
+    @Environment(\.layoutDirection) private var layoutDirection
     @Environment(\.theme) private var theme
 
     // MARK: - Init
@@ -174,18 +175,22 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         }
     }
 
-    /// Given the `type` enriches the given `text` or not
+    /// Given the `type` enriches the given `text` or not.
+    /// Displays the selections copunt or not depending to the layout direction.
     /// - Parameters:
     ///    - text: The text to display as label for the root checkbox, to update if needed
     ///    - type: The type of display
     /// - Returns: The final string to add in the view
     private func rootLabel(for text: OUDSCheckboxPickerPlacement.RootLabel,
                            of type: OUDSCheckboxPickerPlacement.DisplayType) -> String {
+        let count = selections.count
         switch type {
-        case .textOnly:
-            return text.localized()
         case .textAndCount:
-            return String(format: text, selections.wrappedValue.count)
+            return layoutDirection == .leftToRight ? "\(text) (\(count))" : "(\(count)) \(text)"
+        case .textAndPositiveCount where !selections.isEmpty:
+            return layoutDirection == .leftToRight ? "\(text) (\(count))" : "(\(count)) \(text)"
+        default: // .textOnly, .textAndPositiveCount where count <= 0
+            return text
         }
     }
 
