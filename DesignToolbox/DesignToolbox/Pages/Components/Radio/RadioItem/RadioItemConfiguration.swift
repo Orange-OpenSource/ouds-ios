@@ -61,7 +61,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var layoutOrientation: DesignToolboxLayoutOrientation {
+    @Published var isReversed: Bool {
         didSet { updateCode() }
     }
 
@@ -89,7 +89,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         helperText = true
         icon = true
         flipIcon = false
-        layoutOrientation = .default
+        isReversed = false
         divider = true
         labelTextContent = String(localized: "app_components_common_label_label")
         additionalLabelTextContent = String(localized: "app_components_radioButton_radioButtonItem_additionalLabel_label")
@@ -135,7 +135,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     }
 
     private var isReversedPattern: String {
-        layoutOrientation == .reversed ? ", isReversed: true" : ""
+        ", isReversed: \(isReversed)"
     }
 
     private var isErrorPattern: String {
@@ -172,12 +172,12 @@ struct RadioItemConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_common_onError_label", isOn: $model.isError)
+            Toggle("app_components_common_error_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isReadOnly)
 
-            Toggle("app_components_common_readOnly_label", isOn: $model.isReadOnly)
+            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isError)
@@ -190,7 +190,7 @@ struct RadioItemConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            Toggle("app_components_common_icon_label", isOn: $model.icon)
+            Toggle("app_components_controlItem_icon_label", isOn: $model.icon)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
@@ -198,7 +198,7 @@ struct RadioItemConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            Toggle("app_components_common_divider_label", isOn: $model.divider)
+            Toggle("app_components_controlItem_divider_label", isOn: $model.divider)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
@@ -206,11 +206,9 @@ struct RadioItemConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.layoutOrientation) {
-                ForEach(DesignToolboxLayoutOrientation.allCases, id: \.id) { orientation in
-                    Text(LocalizedStringKey(orientation.description)).tag(orientation)
-                }
-            }
+            Toggle("app_components_controlItem_reversed_label", isOn: $model.isReversed)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             DisclosureGroup("app_components_common_editContent_label") {
                 DesignToolboxTextField(

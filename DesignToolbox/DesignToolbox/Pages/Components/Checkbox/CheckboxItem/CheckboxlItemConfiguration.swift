@@ -49,7 +49,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var layoutOrientation: DesignToolboxLayoutOrientation {
+    @Published var isReverted: Bool {
         didSet { updateCode() }
     }
 
@@ -70,7 +70,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         enabled = true
         helperText = true
         icon = true
-        layoutOrientation = .default
+        isReverted = false
         divider = false
         labelTextContent = String(localized: "app_components_common_label_label")
         helperTextContent = String(localized: "app_components_controlItem_helperText_label")
@@ -103,7 +103,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
     }
 
     private var isReversedPattern: String {
-        layoutOrientation == .reversed ? ", isReversed: true" : ""
+        ", isReversed: \(isReversed)"
     }
 
     private var isErrorPattern: String {
@@ -164,11 +164,9 @@ struct CheckboxItemConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.layoutOrientation) {
-                ForEach(DesignToolboxLayoutOrientation.allCases, id: \.id) { orientation in
-                    Text(LocalizedStringKey(orientation.description)).tag(orientation)
-                }
-            }
+            Toggle("app_components_controlItem_reversed_label", isOn: $model.isReversed)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             DisclosureGroup("app_components_common_editContent_label") {
                 DesignToolboxTextField(text: $model.labelTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_label_label")

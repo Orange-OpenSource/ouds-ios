@@ -80,7 +80,7 @@ private struct RadioItemDemo: View {
                       helper: helperTextContent,
                       icon: icon,
                       isOutlined: model.outlined,
-                      isReversed: model.layoutOrientation == .reversed,
+                      isReversed: model.isReversed,
                       isError: model.isError,
                       isReadOnly: model.isReadOnly,
                       hasDivider: model.divider)

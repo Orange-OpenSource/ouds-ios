@@ -983,30 +983,6 @@
         }
       }
     },
-    "app_components_coloredSurface_color_label" : {
-      "comment" : "Components - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Color"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Color"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Color"
-          }
-        }
-      }
-    },
     "app_components_coloredSurface_description_text" : {
       "comment" : "Component - Colored Surface",
       "extractionState" : "manual",
@@ -1056,7 +1032,15 @@
       }
     },
     "app_components_common_color_label" : {
-
+      "comment" : "Component - Common",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        }
+      }
     },
     "app_components_common_editContent_label" : {
       "comment" : "Component - Checkbox",
@@ -1249,9 +1233,6 @@
           }
         }
       }
-    },
-    "app_components_common_onError_label" : {
-
     },
     "app_components_common_orientation_label" : {
       "comment" : "Component screen - Common",
@@ -1489,6 +1470,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lecture seule"
+          }
+        }
+      }
+    },
+    "app_components_controlItem_reversed_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معكوس"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reversed"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inversé"
           }
         }
       }
