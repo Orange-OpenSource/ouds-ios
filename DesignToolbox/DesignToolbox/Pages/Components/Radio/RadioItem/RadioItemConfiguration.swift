@@ -91,9 +91,9 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         flipIcon = false
         layoutOrientation = .default
         divider = true
-        labelTextContent = String(localized: "app_components_radio_label_text")
-        additionalLabelTextContent = String(localized: "app_components_radio_additionalLabelText_text")
-        helperTextContent = String(localized: "app_components_radio_helperText_text")
+        labelTextContent = String(localized: "app_components_common_label_label")
+        additionalLabelTextContent = String(localized: "app_components_radioButton_radioButtonItem_additionalLabel_label")
+        helperTextContent = String(localized: "app_components_controlItem_helperText_label")
     }
 
     deinit { }
@@ -162,7 +162,7 @@ struct RadioItemConfiguration: View {
     // swiftlint:disable closure_body_length
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_components_radio_selection_label", isOn: $model.selection)
+            Toggle("app_components_radioButton_selection_label", isOn: $model.selection)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
@@ -182,11 +182,11 @@ struct RadioItemConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isError)
 
-            Toggle("app_components_common_helperText_label", isOn: $model.helperText)
+            Toggle("app_components_controlItem_helperText_label", isOn: $model.helperText)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            Toggle("app_components_radio_additionalLabelText_label", isOn: $model.additionalLabelText)
+            Toggle("app_components_radioButton_radioButtonItem_additionalLabel_label", isOn: $model.additionalLabelText)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
@@ -194,7 +194,7 @@ struct RadioItemConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            Toggle("app_components_radio_outlined_label", isOn: $model.outlined)
+            Toggle("app_components_radioButton_radioButtonItem_outlined_label", isOn: $model.outlined)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
@@ -222,7 +222,7 @@ struct RadioItemConfiguration: View {
                     DesignToolboxTextField(
                         text: $model.additionalLabelTextContent,
                         prompt: "app_components_common_userText_prompt",
-                        title: "app_components_radio_additionalLabelText_label")
+                        title: "app_components_radioButton_radioButtonItem_additionalLabel_label")
                 }
 
                 if model.helperText {

@@ -77,8 +77,8 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
         flipIcon = false
         layoutOrientation = .default
         divider = true
-        labelTextContent = String(localized: "app_components_switch_label_text")
-        helperTextContent = String(localized: "app_components_switch_helperText_text")
+        labelTextContent = String(localized: "app_components_common_label_label")
+        helperTextContent = String(localized: "app_components_controlItem_helperText_label")
     }
 
     deinit { }
@@ -158,7 +158,7 @@ struct SwitchItemConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isError)
 
-            Toggle("app_components_common_helperText_label", isOn: $model.helperText)
+            Toggle("app_components_controlItem_helperText_label", isOn: $model.helperText)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
@@ -192,7 +192,7 @@ struct SwitchItemConfiguration: View {
                     DesignToolboxTextField(
                         text: $model.helperTextContent,
                         prompt: "app_components_common_userText_prompt",
-                        title: "app_components_common_helperText_label")
+                        title: "app_components_controlItem_helperText_label")
                 }
             }
         }

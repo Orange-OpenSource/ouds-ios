@@ -78,8 +78,8 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         flipIcon = false
         layoutOrientation = .default
         divider = false
-        labelTextContent = String(localized: "app_components_checkbox_label_text")
-        helperTextContent = String(localized: "app_components_checkbox_helperText_text")
+        labelTextContent = String(localized: "app_components_common_label_label")
+        helperTextContent = String(localized: "app_components_controlItem_helperText_label")
     }
 
     deinit { }
@@ -149,12 +149,12 @@ struct CheckboxItemConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_common_onError_label", isOn: $model.isError)
+            Toggle("app_components_common_error_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isReadOnly)
 
-            Toggle("app_components_common_readOnly_label", isOn: $model.isReadOnly)
+            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isError)
@@ -163,11 +163,11 @@ struct CheckboxItemConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            Toggle("app_components_common_icon_label", isOn: $model.icon)
+            Toggle("app_components_controlItem_icon_label", isOn: $model.icon)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            Toggle("app_components_common_divider_label", isOn: $model.divider)
+            Toggle("app_components_controlItem_divider_label", isOn: $model.divider)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
@@ -182,7 +182,7 @@ struct CheckboxItemConfiguration: View {
             }
 
             DisclosureGroup("app_components_common_editContent_label") {
-                DesignToolboxTextField(text: $model.labelTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_labelText_label")
+                DesignToolboxTextField(text: $model.labelTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_label_label")
                 if model.helperText {
                     DesignToolboxTextField(text: $model.helperTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_helperText_label")
                 }

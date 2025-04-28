@@ -28,12 +28,12 @@ struct RadioElements: DesignToolboxElement {
             RadioPickerElement(),
         ]
 
-        name = "app_components_radio_label".localized()
+        name = "app_components_radioButton_label".localized()
         image = Image(decorative: "il_component_radio").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: Image(decorative: "il_component_radio").renderingMode(.original),
-            description: "app_components_radio_description_text",
+            description: "app_components_radioButton_description_text",
             illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
     }
 }

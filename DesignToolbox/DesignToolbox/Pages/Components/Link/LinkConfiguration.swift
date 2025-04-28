@@ -110,9 +110,9 @@ enum LinkLayout: CaseIterable, CustomStringConvertible {
         case .iconAndText:
             "app_components_common_iconAndTextLayout_label"
         case .indicatorBack:
-            "app_components_link_arrowBack_label"
+            "app_components_link_backLayout_label"
         case .indicatorNext:
-            "app_components_link_arrowNext_label"
+            "app_components_link_nextLayout_label"
         }
     }
 

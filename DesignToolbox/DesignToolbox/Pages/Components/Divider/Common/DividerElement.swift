@@ -19,7 +19,7 @@ struct DividerElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init(orientation: DividerConfigurationModel.Orientation) {
-        let keyPattern = orientation == .horizontal ? "horizontal" : "vertical"
+        let keyPattern = orientation == .horizontal ? "horizontalDivider" : "verticalDivider"
         let keyForName = "app_components_divider_\(keyPattern)_label"
         let keyForDescription = "app_components_divider_\(keyPattern)_description_text"
 
