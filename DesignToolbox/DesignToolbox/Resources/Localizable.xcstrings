@@ -1102,30 +1102,6 @@
         }
       }
     },
-    "app_components_common_flipIcon_label" : {
-      "comment" : "Control item - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "أيقونة الوجه"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Flip icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inverser l’icône"
-          }
-        }
-      }
-    },
     "app_components_common_helperText_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
@@ -1414,6 +1390,30 @@
         }
       }
     },
+    "app_components_controlItem_flipIcon_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أيقونة الوجه"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inverser l’icône"
+          }
+        }
+      }
+    },
     "app_components_controlItem_helperText_label" : {
       "comment" : "Component - ControlItem",
       "extractionState" : "manual",
@@ -1582,6 +1582,30 @@
         }
       }
     },
+    "app_components_divider_label" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur"
+          }
+        }
+      }
+    },
     "app_components_divider_verticalDivider_description_text" : {
       "comment" : "Component - Divider",
       "extractionState" : "manual",
@@ -1626,30 +1650,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Séparateur vertical"
-          }
-        }
-      }
-    },
-    "app_components_dividerDivider_label" : {
-      "comment" : "Component - Divider",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "فاصل"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Divider"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Séparateur"
           }
         }
       }
@@ -3309,6 +3309,9 @@
           }
         }
       }
+    },
+    "Key 1" : {
+      "extractionState" : "manual"
     }
   },
   "version" : "1.0"

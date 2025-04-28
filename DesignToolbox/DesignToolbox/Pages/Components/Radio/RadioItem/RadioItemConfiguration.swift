@@ -194,15 +194,16 @@ struct RadioItemConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
+            Toggle("app_components_controlItem_flipIcon_label", isOn: $model.flipIcon)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.icon)
+
             Toggle("app_components_radioButton_radioButtonItem_outlined_label", isOn: $model.outlined)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             Toggle("app_components_controlItem_divider_label", isOn: $model.divider)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            Toggle("app_components_common_flipIcon_label", isOn: $model.flipIcon)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
