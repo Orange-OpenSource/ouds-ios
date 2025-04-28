@@ -71,6 +71,10 @@ import SwiftUI
 ///                     placement: .horitzontal(true))
 /// ```
 ///
+/// ## Design documentation
+///
+/// There is no online specification as this component is not an official OUDS one
+///
 /// - Since: 0.14.0
 public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
 
