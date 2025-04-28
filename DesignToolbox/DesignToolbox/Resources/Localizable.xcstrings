@@ -1034,10 +1034,22 @@
     "app_components_common_color_label" : {
       "comment" : "Component - Common",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لون"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Color"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur"
           }
         }
       }
@@ -1816,7 +1828,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "يتيح الراديو للمستخدمين اختيار خيار من القائمة."
           }
         },
@@ -1828,7 +1840,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Les boutons radio permettent aux utilisateurs de sélectionner une option dans une liste."
           }
         }
@@ -1912,7 +1924,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "نص الملصق الإضافي"
           }
         },
@@ -1924,7 +1936,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Label supplémentaire"
           }
         }
@@ -2560,7 +2572,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "فجوة مضمنة"
           }
         },
@@ -2582,10 +2594,22 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن فجوة العمود المسافة الرأسية بين الكائنات."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Column gap includes the vertical spacing between objects."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'espacement des colonnes comprend l'espacement vertical entre les objets."
           }
         }
       }
@@ -2764,7 +2788,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "تتضمن الحشوة المضمنة الحشوة اليسرى واليمنى والعلوية والسفلية، مع تساوي جميع المعلمات."
           }
         },
@@ -2836,7 +2860,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "كومة الفجوة"
           }
         },
@@ -2858,14 +2882,25 @@
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن فجوة الصفوف المسافة الأفقية بين الكائنات."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Row gap includes the horizontal spacing between objects."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'espacement des rangées comprend l'espacement horizontal entre les objets."
+          }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "app_tokens_dimension_space_scaled_label" : {
       "comment" : "Token - Dimension - Space",
@@ -3274,9 +3309,6 @@
           }
         }
       }
-    },
-    "Key 1" : {
-      "extractionState" : "manual"
     }
   },
   "version" : "1.0"
