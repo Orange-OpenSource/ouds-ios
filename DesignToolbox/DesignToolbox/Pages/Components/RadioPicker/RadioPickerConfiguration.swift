@@ -148,15 +148,15 @@ struct RadioPickerConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_common_error_label", isOn: $model.isError)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.isEnabled || model.isReadOnly)
-
             Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.isEnabled || model.isError)
+
+            Toggle("app_components_common_error_label", isOn: $model.isError)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.isEnabled || model.isReadOnly)
 
             Toggle("app_components_radioButton_radioButtonItem_outlined_label", isOn: $model.isOutlined)
                 .typeHeadingMedium(theme)

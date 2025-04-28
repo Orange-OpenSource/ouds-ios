@@ -166,7 +166,9 @@ struct LinkConfiguration: View {
                 }
             }
 
-            DesignToolboxTextField(text: $model.text, prompt: "app_components_common_userText_prompt")
+            DesignToolboxEditContentDisclosure {
+                DesignToolboxTextField(text: $model.text)
+            }
         }
     }
 }

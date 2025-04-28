@@ -1055,25 +1055,49 @@
       }
     },
     "app_components_common_editContent_label" : {
-      "comment" : "Component - Checkbox",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "تعديل المحتوى"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Modify content"
+            "value" : "Edit content"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Modifier contenu"
+          }
+        }
+      }
+    },
+    "app_components_common_enterText_prompt" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل النص"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a text"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Modifier contenu"
+            "value" : "Entrez un texte"
           }
         }
       }
@@ -1314,30 +1338,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Texte"
-          }
-        }
-      }
-    },
-    "app_components_common_userText_prompt" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "أدخل النص"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enter a text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Entrez un texte"
           }
         }
       }

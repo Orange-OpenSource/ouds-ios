@@ -29,7 +29,7 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var helperText: Bool {
+    @Published var helperText: String {
         didSet { updateCode() }
     }
 
@@ -57,11 +57,7 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var labelTextContent: String {
-        didSet { updateCode() }
-    }
-
-    @Published var helperTextContent: String {
+    @Published var labelText: String {
         didSet { updateCode() }
     }
 
@@ -72,13 +68,12 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
         isError = false
         isReadOnly = false
         enabled = true
-        helperText = true
+        helperText = String(localized: "app_components_controlItem_helperText_label")
         icon = true
         flipIcon = false
         isReversed = false
         divider = true
-        labelTextContent = String(localized: "app_components_common_label_label")
-        helperTextContent = String(localized: "app_components_controlItem_helperText_label")
+        labelText = String(localized: "app_components_common_label_label")
     }
 
     deinit { }
@@ -89,7 +84,7 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSSwitchItem(isOn: $isOn, label: "\(labelTextContent)"\(helperTextPatern)\(iconPatern)\(flipIconPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSSwitchItem(isOn: $isOn, label: "\(labelText)"\(helperTextPatern)\(iconPatern)\(flipIconPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
@@ -100,7 +95,7 @@ final class SwitchItemConfigurationModel: ComponentConfiguration {
     }
 
     private var helperTextPatern: String {
-        helperText ? ", helper: \"\(helperTextContent)\"" : ""
+        helperText.isEmpty ? "" : ", helper: \"\(helperText)\""
     }
 
     private var iconPatern: String {
@@ -143,25 +138,6 @@ struct SwitchItemConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_common_enabled_label", isOn: $model.enabled)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(model.isError || model.isReadOnly)
-
-            Toggle("app_components_common_error_label", isOn: $model.isError)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.enabled || model.isReadOnly)
-
-            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.enabled || model.isError)
-
-            Toggle("app_components_controlItem_helperText_label", isOn: $model.helperText)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
             Toggle("app_components_controlItem_icon_label", isOn: $model.icon)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
@@ -179,18 +155,24 @@ struct SwitchItemConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            DisclosureGroup("app_components_common_editContent_label") {
-                DesignToolboxTextField(
-                    text: $model.labelTextContent,
-                    prompt: "app_components_common_userText_prompt",
-                    title: "app_components_common_labelText_label")
+            Toggle("app_common_enabled_label", isOn: $model.enabled)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(model.isError || model.isReadOnly)
 
-                if model.helperText {
-                    DesignToolboxTextField(
-                        text: $model.helperTextContent,
-                        prompt: "app_components_common_userText_prompt",
-                        title: "app_components_controlItem_helperText_label")
-                }
+            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.enabled || model.isError)
+
+            Toggle("app_components_common_error_label", isOn: $model.isError)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.enabled || model.isReadOnly)
+
+            DesignToolboxEditContentDisclosure {
+                DesignToolboxTextField(text: $model.labelText)
+                DesignToolboxTextField(text: $model.helperText)
             }
         }
     }

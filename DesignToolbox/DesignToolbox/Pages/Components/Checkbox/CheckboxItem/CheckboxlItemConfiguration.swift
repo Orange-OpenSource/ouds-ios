@@ -29,10 +29,6 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var helperText: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var icon: Bool {
         didSet { updateCode() }
     }
@@ -53,11 +49,11 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var labelTextContent: String {
+    @Published var labelText: String {
         didSet { updateCode() }
     }
 
-    @Published var helperTextContent: String {
+    @Published var helperText: String {
         didSet { updateCode() }
     }
 
@@ -68,12 +64,11 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
         isError = false
         isReadOnly = false
         enabled = true
-        helperText = true
         icon = true
         isReverted = false
         divider = false
-        labelTextContent = String(localized: "app_components_common_label_label")
-        helperTextContent = String(localized: "app_components_controlItem_helperText_label")
+        labelText = String(localized: "app_components_common_label_label")
+        helperText = String(localized: "app_components_controlItem_helperText_label")
     }
 
     deinit { }
@@ -84,7 +79,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItem(selection: $selection, labelText: \"\(labelTextContent)\"\(helperTextPatern)\(iconPatern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
+        OUDSCheckboxItem(selection: $selection, labelText: \"\(labelText)\"\(helperTextPatern)\(iconPatern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPatern))
         \(disableCode)
         """
     }
@@ -95,7 +90,7 @@ final class CheckboxItemConfigurationModel: ComponentConfiguration {
     }
 
     private var helperTextPatern: String {
-        helperText ? ", helperText: \"\(helperTextContent)\")" : ""
+        helperText.isEmpty ? "" : ", helper: \"\(helperText)\""
     }
 
     private var iconPatern: String {
@@ -168,11 +163,9 @@ struct CheckboxItemConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            DisclosureGroup("app_components_common_editContent_label") {
-                DesignToolboxTextField(text: $model.labelTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_label_label")
-                if model.helperText {
-                    DesignToolboxTextField(text: $model.helperTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_controlItem_helperText_label")
-                }
+            DesignToolboxContentModiferDisclosure {
+                DesignToolboxTextField(text: $model.labelText)
+                DesignToolboxTextField(text: $model.helperText)
             }
         }
     }

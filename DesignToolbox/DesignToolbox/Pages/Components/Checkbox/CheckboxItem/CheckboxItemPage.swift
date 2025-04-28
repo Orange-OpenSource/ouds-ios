@@ -74,8 +74,8 @@ private struct CheckboxItemDemo: View {
 
     var body: some View {
         OUDSCheckboxItem(isOn: $model.indicatorState,
-                         label: model.labelTextContent,
-                         helper: helperTextContent,
+                         label: model.labelText,
+                         helper: model.helperText,
                          icon: icon,
                          flipIcon: model.flipIcon,
                          isReversed: model.isReversed,
@@ -85,10 +85,6 @@ private struct CheckboxItemDemo: View {
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .designToolboxColoredSurface(false)
-    }
-
-    private var helperTextContent: String? {
-        model.helperText ? model.helperTextContent : nil
     }
 
     // Need here that system name, a11y managed in component
