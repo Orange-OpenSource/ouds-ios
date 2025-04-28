@@ -31,7 +31,7 @@ struct CheckboxPage: View {
             configuration: configuration,
             componentView: componentView,
             configurationView: configurationView
-        )
+        ).accessibilityIdentifier(A11YID.ComponentsPages.checkboxPage)
     }
 
     @ViewBuilder

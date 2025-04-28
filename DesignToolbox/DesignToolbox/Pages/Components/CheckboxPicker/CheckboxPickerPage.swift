@@ -30,7 +30,7 @@ struct CheckboxPickerPage: View {
             configuration: configuration,
             componentView: componentView,
             configurationView: configurationView
-        )
+        ).accessibilityIdentifier(A11YID.Components.Checkbox.checkboxPicker)
     }
 
     @ViewBuilder

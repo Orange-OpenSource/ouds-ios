@@ -28,6 +28,7 @@ struct MainView: View {
             ComponentsPage()
                 .tabItem {
                     Label("app_bottomBar_components_label", image: "ic_component_atom")
+                        .accessibilityIdentifier(A11YID.Tabs.components)
                 }
             AboutPage()
                 .tabItem {
