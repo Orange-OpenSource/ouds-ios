@@ -202,6 +202,7 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
     ///
     /// - Parameters:
     ///   - isOn: A binding to a property that determines wether the indicator is ticked (selected) or not (unselected)
+    ///   - tag: An associated value for this checkbox, returned by the ``OUDSCheckboxPicker`` is selected
     ///   - label: The main label text of the checkbox.
     ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon

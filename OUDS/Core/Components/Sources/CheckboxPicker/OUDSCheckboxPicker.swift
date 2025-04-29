@@ -122,7 +122,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
 
     /// Defines the picker view which displays using ``OUDSCheckboxItem`` view the ``OUDSCheckboxPickerData``
     /// - Parameters:
-    ///    - selection: The current selected value
+    ///    - selections: The current selected values
     ///    - checkboxes: The raw data to wrap in ``OUDSCheckboxItem`` for display
     ///    - placement: How checkboxes must be placed (default set to *vertical*)
     ///    - isOutlined: If *true*, force all ``OUDSCheckboxItem`` to be outlined (default set to *false*)
