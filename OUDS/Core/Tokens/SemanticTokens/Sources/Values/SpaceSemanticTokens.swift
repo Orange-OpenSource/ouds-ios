@@ -103,7 +103,7 @@ public protocol SpaceSemanticTokens {
     var spaceInsetTallest: SpaceSemanticToken { get }
     var spaceInsetSpacious: SpaceSemanticToken { get }
 
-    // MARK: Semantic token - Spacing - Padding - Gap inline
+    // MARK: Semantic token - Spacing - Padding - Column Gap
 
     var spaceColumnGapNone: SpaceSemanticToken { get }
     var spaceColumnGapSmash: SpaceSemanticToken { get }
@@ -115,7 +115,7 @@ public protocol SpaceSemanticTokens {
     var spaceColumnGapTaller: SpaceSemanticToken { get }
     var spaceColumnGapTallest: SpaceSemanticToken { get }
 
-    // MARK: Semantic token - Spacing - Padding - Gap stack
+    // MARK: Semantic token - Spacing - Padding - Row Gap
 
     var spaceRowGapNone: SpaceSemanticToken { get }
     var spaceRowGapSmash: SpaceSemanticToken { get }
