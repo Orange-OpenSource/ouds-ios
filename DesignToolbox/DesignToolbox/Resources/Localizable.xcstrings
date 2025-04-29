@@ -983,6 +983,78 @@
         }
       }
     },
+    "app_components_checkboxPicker_description_text" : {
+      "comment" : "Component - Checkbox Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يجعل منتقي خانات الاختيار المستخدم قادرا على التحديد بين 0 وجميع العناصر المتوفرة في القائمة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A checkbox picker makes the user able to select between 0 and all items provided in a list"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un sélecteur de cases à cocher permet à l'utilisateur de sélectionner entre 0 et tous les éléments fournis dans une liste"
+          }
+        }
+      }
+    },
+    "app_components_checkboxPicker_label" : {
+      "comment" : "Component - Checkbox Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتقي خانات الاختيار"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox picker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélecteur de cases à cocher"
+          }
+        }
+      }
+    },
+    "app_components_checkboxPicker_root" : {
+      "comment" : "Component - Checkbox Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختياراتك\""
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre sélection"
+          }
+        }
+      }
+    },
     "app_components_coloredSurface_description_text" : {
       "comment" : "Component - Colored Surface",
       "extractionState" : "manual",
@@ -1050,6 +1122,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Couleur"
+          }
+        }
+      }
+    },
+    "app_components_common_divider_label" : {
+      "comment" : "Component screen - Common",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur"
           }
         }
       }
@@ -1246,6 +1341,29 @@
         }
       }
     },
+    "app_components_common_onError_label" : {
+      "comment" : "Component - Common",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
+          }
+        }
+      }
+    },
     "app_components_common_orientation_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
@@ -1266,6 +1384,29 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Orientation"
+          }
+        }
+      }
+    },
+    "app_components_common_readOnly_label" : {
+      "comment" : "Component screen - Common",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "للقراءة فقط"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecture seule"
           }
         }
       }

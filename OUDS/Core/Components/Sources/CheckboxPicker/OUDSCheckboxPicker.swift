@@ -180,7 +180,11 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - type: The type of display for the root label
     private func rootItem(labeled text: String, of type: OUDSCheckboxPickerPlacement.DisplayType) -> some View {
         OUDSCheckboxItemIndeterminate(selection: $coordinator.selectionRootState,
-                                      label: rootLabel(for: text, of: type)) {
+                                      label: rootLabel(for: text, of: type),
+                                      isReversed: isReversed,
+                                      isError: isError,
+                                      isReadOnly: isReadOnly,
+                                      hasDivider: hasDivider) {
             if case .selected = coordinator.selectionRootState {
                 selections.wrappedValue = checkboxes.map { $0.tag }
             } else {
