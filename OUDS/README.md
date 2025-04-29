@@ -4,7 +4,6 @@
 - [Core](#core)
   * [Components](#components)
   * [Themes](#themes)
-    * [Inverse](#inverse)
     * [Orange](#orange)    
   * [Tokens](#components)
     * [Component tokens](#component-tokens)  
@@ -19,7 +18,7 @@
 This is the _Swift package_ for the iOS library of *Orange Unified Design System*.
 Its structure is explained quickly in this file.
 
-If you expect to get documentation, feel free to [use the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) and the [online documentation](https://ios.unified-design-system.orange.com/).
+If you expect to get documentation, feel free to [use the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) and the [online documentation](https://ios.unified-design-system.orange.com/documentation).
 
 ## Core
 
@@ -34,10 +33,6 @@ Contains the files for the main module with the logic for the theme management
 ### Themes
 
 Contains the themes definitions exposed by the library.
-
-#### Inverse
-
-Contains the inverse theme definition.
 
 #### Orange
 

@@ -11,8 +11,12 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System 
 //
 
-import SwiftUICore
-import UIKit
+// Conditional import and use of UIKit for documentation generation (see #628 #626)
+
+import SwiftUI
+#if canImport(UIKit)
+    import UIKit
+#endif
 
 // MARK: - Environment values
 

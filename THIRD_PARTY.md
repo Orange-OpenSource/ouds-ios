@@ -88,6 +88,13 @@ Copyright (c) 2019 Ian Leitch
 *Periphery* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/peripheryapp/periphery).
 
+### swift-docc-plugin
+
+Copyright (c) 2022 Apple Inc. and the Swift project authors
+
+*swift-docc-plugin* is distributed under the terms and conditions of the [Apache 2.0 License](https://opensource.org/license/apache-2-0).
+You may download the source code on the [following website](https://github.com/swiftlang/swift-docc-plugin).
+
 #### SwiftFormat
 
 Copyright 2016 Nick Lockwood

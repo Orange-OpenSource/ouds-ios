@@ -148,6 +148,156 @@
         }
       }
     },
+    "core_checkboxPicker_description_a11y" : {
+      "comment" : "Checkbox Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "عنصر واحد محدد"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d عناصر محددة"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "لا توجد عناصر محددة"
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "One selected item"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d selected items"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "No selected items"
+                }
+              }
+            }
+          }
+        },
+        "fr" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Un seul élément sélectionné,"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%d éléments sélectionnés,"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Aucun élément sélectionné,"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "core_checkboxPicker_indeterminate_hint_a11y" : {
+      "comment" : "Checkbox Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرا مزدوجا لتبديل جميع مربعات الاختيار المحددة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle all checkboxes selected"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour cocher toutes les cases à cocher"
+          }
+        }
+      }
+    },
+    "core_checkboxPicker_selected_hint_a11y" : {
+      "comment" : "Checkbox Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرا مزدوجا لتبديل جميع مربعات الاختيار غير المحددة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle all checkboxes unselected"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour décocher toutes les cases à cocher"
+          }
+        }
+      }
+    },
+    "core_checkboxPicker_unselected_hint_a11y" : {
+      "comment" : "Checkbox Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرا مزدوجا لتبديل جميع مربعات الاختيار المحددة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle all checkboxes selected"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour cocher toutes les cases à cocher"
+          }
+        }
+      }
+    },
     "core_common_disabled_a11y" : {
       "comment" : "Common",
       "extractionState" : "manual",
@@ -263,25 +413,49 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Undéterminé"
+            "value" : "Non sélectionné"
           }
         }
       }
     },
-    "core_radio_hint_a11y" : {
+    "core_radio_hint_selected_a11y" : {
       "comment" : "Radio",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "انقر نقرًا مزدوجًا لتبديل الإعداد %@"
+            "value" : "انقر نقرًا مزدوجًا على خيار آخر للتبديل بين %@"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Double-tap to toggle setting %@"
+            "value" : "Double-tap on other option to toggle %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois sur une autre option pour rendre %@"
+          }
+        }
+      }
+    },
+    "core_radio_hint_unselected_a11y" : {
+      "comment" : "Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرًا مزدوجًا للتبديل بين %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle %@"
           }
         },
         "fr" : {
@@ -316,8 +490,53 @@
         }
       }
     },
-    "TODO: Add switch indicator here" : {
-      "shouldTranslate" : false
+    "core_switch_hint_a11y" : {
+      "comment" : "Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "انقر نقرا مزدوجا لتبديل الإعداد %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Double-tap to toggle setting %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taper deux fois pour rendre %@"
+          }
+        }
+      }
+    },
+    "core_switch_trait_a11y" : {
+      "comment" : "Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "حول"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

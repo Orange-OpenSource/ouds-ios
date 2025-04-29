@@ -11,34 +11,20 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSTokensSemantic
 import SwiftUI
 
-/// A `ViewModifier` which will apply a specific divider under a `View` using color semantic token.
-///
-/// - Since: 0.12.0
-public struct DividerModifier: ViewModifier {
+/// A `ViewModifier` which will apply a specific flip effect on a `View`
+struct FlipperModifier: ViewModifier { // 🐬
 
     // MARK: - Stored properties
 
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    private let show: Bool
-
-    // MARK: - Initializer
-
-    public init(show: Bool) {
-        self.show = show
-    }
+    let flip: Bool
 
     // MARK: - Body
 
     public func body(content: Content) -> some View {
-        if show {
-            VStack(spacing: 0) {
-                content
-                Divider().oudsForegroundStyle(theme.colors.colorBorderDefault)
-            }
+        if flip {
+            content.scaleEffect(x: -1, y: 1)
         } else {
             content
         }

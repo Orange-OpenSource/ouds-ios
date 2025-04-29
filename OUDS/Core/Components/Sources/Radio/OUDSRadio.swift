@@ -54,10 +54,10 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+/// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
 ///
 /// - Since: 0.12.0
-public struct OUDSRadio: View { // TODO: #266 - Update documentation hyperlink above
+public struct OUDSRadio: View {
 
     // MARK: - Properties
 
@@ -123,6 +123,10 @@ public struct OUDSRadio: View { // TODO: #266 - Update documentation hyperlink a
 
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
     private var a11yHint: String {
-        "core_radio_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
+        if _isOn.wrappedValue {
+            return "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
+        } else {
+            return "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
+        }
     }
 }
