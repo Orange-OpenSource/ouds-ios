@@ -251,11 +251,10 @@
 		51D6D5952D888159009CD879 /* CheckboxItemIndeterminateConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5932D888159009CD879 /* CheckboxItemIndeterminateConfiguration.swift */; };
 		51D6D5972D8881A6009CD879 /* CheckboxLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5962D8881A0009CD879 /* CheckboxLayouts.swift */; };
 		51D6D5982D8881A6009CD879 /* CheckboxLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D6D5962D8881A0009CD879 /* CheckboxLayouts.swift */; };
-		51EB737D2DBFD39500F37FEC /* A11YID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737C2DBFD39200F37FEC /* A11YID.swift */; };
 		51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */; };
 		51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737B2DBFD26000F37FEC /* AppTestCase.swift */; };
-		51EB73972DBFE32A00F37FEC /* A11YID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB737C2DBFD39200F37FEC /* A11YID.swift */; };
 		51EB73982DBFE3FD00F37FEC /* String+L10N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5122E0292D65E7AC00CD2857 /* String+L10N.swift */; };
+		51EB73992DC0C32E00F37FEC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5122E0272D65D18E00CD2857 /* Localizable.xcstrings */; };
 		51EE2C682C5BF5DE00F634EC /* OUDSThemesOrange in Frameworks */ = {isa = PBXBuildFile; productRef = 51EE2C672C5BF5DE00F634EC /* OUDSThemesOrange */; };
 		6D17A22B2CCBF0E200C00512 /* ColorTokenPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075114DF2CB7FDC200B8B759 /* ColorTokenPage.swift */; };
 		6D17A22C2CCBF12B00C00512 /* NamedColor+Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0765B4952CC159F600E69359 /* NamedColor+Action.swift */; };
@@ -484,7 +483,6 @@
 		51D6D5962D8881A0009CD879 /* CheckboxLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxLayouts.swift; sourceTree = "<group>"; };
 		51E3FF0A2CAFD9AE00F1BC59 /* DesignToolboxElementPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxElementPage.swift; sourceTree = "<group>"; };
 		51EB737B2DBFD26000F37FEC /* AppTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTestCase.swift; sourceTree = "<group>"; };
-		51EB737C2DBFD39200F37FEC /* A11YID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A11YID.swift; sourceTree = "<group>"; };
 		51EB737F2DBFD4BB00F37FEC /* CheckboxPickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPickerUITests.swift; sourceTree = "<group>"; };
 		51EB73842DBFDC5500F37FEC /* DesignToolboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignToolboxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCC57E12CEB984D000F35F8 /* DesignToolboxCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignToolboxCode.swift; sourceTree = "<group>"; };
@@ -1099,7 +1097,6 @@
 		51BD761D2C466FCF0033365D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				51EB737C2DBFD39200F37FEC /* A11YID.swift */,
 				5122E0292D65E7AC00CD2857 /* String+L10N.swift */,
 				51BD761C2C466FCF0033365D /* WebView.swift */,
 				51087A7A2C46DF9F00160CCF /* Bundle+extension.swift */,
@@ -1348,6 +1345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51EB73992DC0C32E00F37FEC /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1592,7 +1590,6 @@
 				07D7E1972D035566006472EB /* ButtonConfiguration.swift in Sources */,
 				07CF42802CA41325000BD03E /* OpacityTokenPage.swift in Sources */,
 				51B8D5A12DA7F5DF00A28BAC /* NamedColorMode.swift in Sources */,
-				51EB737D2DBFD39500F37FEC /* A11YID.swift in Sources */,
 				075114E02CB7FDC200B8B759 /* ColorTokenElement.swift in Sources */,
 				07F75A3B2CC651EB0004F1AD /* NameSpace+PaddingInline.swift in Sources */,
 				51BD762B2C466FCF0033365D /* MainView.swift in Sources */,
@@ -1685,7 +1682,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				51EB73982DBFE3FD00F37FEC /* String+L10N.swift in Sources */,
-				51EB73972DBFE32A00F37FEC /* A11YID.swift in Sources */,
 				51EB73952DBFDDF600F37FEC /* CheckboxPickerUITests.swift in Sources */,
 				51EB73962DBFDDF600F37FEC /* AppTestCase.swift in Sources */,
 			);

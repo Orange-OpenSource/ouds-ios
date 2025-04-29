@@ -19,25 +19,15 @@ import XCTest
 /// Provides utility functions and tools for tests like actions on views and components
 open class AppTestCase: XCTestCase {
 
-    // MARK: l10n
+    // MARK: - l10n
 
-    let testBundle = Bundle(for: AppTestCase.self)
+    private let testBundle = Bundle(for: AppTestCase.self)
 
-    private var currentLanguage: (langCode: String, localeCode: String)? {
-        let currentLocale = Locale(identifier: Locale.preferredLanguages.first!)
-        guard let langCode = currentLocale.languageCode else {
-            return nil
-        }
-        var localeCode = langCode
-        if let scriptCode = currentLocale.scriptCode {
-            localeCode = "\(langCode)-\(scriptCode)"
-        } else if let regionCode = currentLocale.regionCode {
-            localeCode = "\(langCode)-\(regionCode)"
-        }
-        return (langCode, localeCode)
+    func wording(for key: String) -> String {
+        key.localized(bundle: testBundle)
     }
 
-    // MARK: Tuning
+    // MARK: - Tuning
 
     override open func setUpWithError() throws {
         continueAfterFailure = false
@@ -45,7 +35,7 @@ open class AppTestCase: XCTestCase {
 
     override open func tearDownWithError() throws { }
 
-    // MARK: Application
+    // MARK: - Application
 
     @MainActor
     func launchApp() -> XCUIApplication {
@@ -54,68 +44,48 @@ open class AppTestCase: XCTestCase {
         return app
     }
 
-    // MARK: Button
+    // MARK: - Button
 
-    @MainActor
-    func tap(button: String, _ app: XCUIApplication) {
-        let buttonToTap = app.buttons[button]
-        XCTAssertTrue(buttonToTap.exists, "The button with id '\(button)' does not exist")
+    /// Tap on a UI element seen as a button (cf *Accessibility Inspector* with the given string as text
+    @MainActor func tapButton(withText text: String, _ app: XCUIApplication) {
+        let buttonToTap = app.buttons[text]
+        XCTAssertTrue(buttonToTap.exists, "The button with text '\(text)' does not exist")
         buttonToTap.tap()
     }
 
-    // MARK: Text
-
-    @MainActor
-    func tap(text: String, at index: Int, _ app: XCUIApplication) {
-        let elements = app.staticTexts.matching(identifier: text)
-        XCTAssertTrue(elements.count >= index, "Not enough items with id '\(text)'")
-        let element = elements.element(boundBy: index)
-        XCTAssertTrue(element.exists, "The text with id '\(text)' does not exist")
-        element.tap()
+    /// Tap on a UI element seen as a button (cf *Accessibility Inspector* with the given string as  wording key
+    @MainActor func tapButton(withWording key: String, _ app: XCUIApplication) {
+        let wording = wording(for: key)
+        let buttonToTap = app.buttons[wording]
+        XCTAssertTrue(buttonToTap.exists, "The button with wording key '\(key)' (value '\(wording)') does not exist")
+        buttonToTap.tap()
     }
 
-    // MARK: Text Field
+    // MARK: - Texts
 
     @MainActor
-    func write(_ text: String, in textField: String, _ app: XCUIApplication) {
-        let textFieldInput = app.textFields[textField]
-        XCTAssertTrue(textFieldInput.exists, "The text field with id '\(textField)' does not exist")
-        textFieldInput.tap()
-        textFieldInput.typeText(text)
-        XCTAssertEqual(textFieldInput.value as? String, text, "The text to write is not the expected one: \(String(describing: textFieldInput.value))")
+    func assertStaticTextExists(_ content: String, _ app: XCUIApplication) {
+        let text = app.staticTexts[content]
+        XCTAssertTrue(text.exists, "The expected text content '\(content)' does not exist")
     }
 
-    // MARK: Toggle
-
-    @MainActor
-    func toggle(toggle: String, switchedOn: Bool, _ app: XCUIApplication) {
-        let `switch` = app.switches[toggle]
-        XCTAssertTrue(`switch`.exists, "The toggle with id '\(toggle)' does not exist")
-        let initialState = `switch`.isOn
-        if switchedOn && !`switch`.isOn {
-            `switch`.switches.firstMatch.tap()
-            XCTAssertNotEqual(`switch`.isOn, initialState, "Toogle state was not changed.")
-        } else if !switchedOn && `switch`.isOn {
-            `switch`.switches.firstMatch.tap()
-            XCTAssertNotEqual(`switch`.isOn, initialState, "Toogle state was not changed.")
-        }
-    }
-
-    // MARK: Swipe
+    // MARK: - Swipe
 
     @MainActor
     func swipeFromDownToUp(_ app: XCUIApplication) {
         app.swipeUp()
     }
- 
-    // MARK: Navigation
- 
-    @MainActor
-    func goBack(_ app: XCUIApplication) {
-        app.navigationBars.children(matching: .button).firstMatch.tap()
+
+    // MARK: - Images
+
+    /// Tap on a UI element seen as a image with the given name
+    @MainActor func tapImage(withName name: String, _ app: XCUIApplication) {
+        let imageToTap = app.images[name]
+        XCTAssertTrue(imageToTap.exists, "The image with name '\(name)' does not exist")
+        imageToTap.tap()
     }
 
-    // MARK: Assertions
+    // MARK: - Assertions
 
     @MainActor
     func assertText(_ id: String, at index: Int, contains text: String, _ app: XCUIApplication) {
@@ -140,20 +110,11 @@ open class AppTestCase: XCTestCase {
         XCTAssertTrue(text.exists, "The element with id '\(id)' does not exist")
     }
 
-    // MARK: - Helpers
+    // MARK: - Navigations helpers
 
-    @MainActor
-    func goToComponentsSheet(_ app: XCUIApplication) {
-        tap(button: A11YID.Tabs.components, app)
-    }
-}
-
-// MARK: - Extensions
-
-extension XCUIElement {
-
-    var isOn: Bool {
-        (value as? String) == "1"
+    /// Opens the page of the components, i.e. tap on the 2nd of the tab bar
+    @MainActor func goToComponentsSheet(_ app: XCUIApplication) {
+        app.tabBars.buttons.element(boundBy: 1).tap()
     }
 }
 
