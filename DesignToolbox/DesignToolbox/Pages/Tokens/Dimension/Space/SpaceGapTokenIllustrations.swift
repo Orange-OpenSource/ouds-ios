@@ -15,7 +15,7 @@ import OUDS
 import OUDSTokensSemantic
 import SwiftUI
 
-// MARK: - Column Gap property
+// MARK: - Column Gap Property
 
 struct ColumnGapProperty: View {
 
@@ -38,7 +38,7 @@ struct ColumnGapProperty: View {
     }
 }
 
-// MARK: - Row Gap property
+// MARK: - Row Gap Property
 
 struct RowGapProperty: View {
 

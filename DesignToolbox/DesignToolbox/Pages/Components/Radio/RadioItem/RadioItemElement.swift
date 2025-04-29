@@ -24,7 +24,7 @@ struct RadioItemElement: DesignToolboxElement {
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,
-            description: "app_components_radioButton__radioButtonItem_description_text",
+            description: "app_components_radioButton_radioButtonItem_description_text",
             illustration: AnyView(RadioItemPage())))
     }
 }

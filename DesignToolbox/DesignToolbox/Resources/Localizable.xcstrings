@@ -1060,7 +1060,7 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "تعديل المحتوى"
           }
         },
@@ -1072,7 +1072,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Modifier contenu"
           }
         }
@@ -1798,30 +1798,6 @@
         }
       }
     },
-    "app_components_radioButton__radioButtonItem_description_text" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تسمح أزرار الاختيار للمستخدمين بتحديد خيار واحد من القائمة."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio buttons allow users to select one option from a list."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les boutons radio permettent aux utilisateurs de sélectionner une options dans une liste."
-          }
-        }
-      }
-    },
     "app_components_radioButton_description_text" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
@@ -1938,6 +1914,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Label supplémentaire"
+          }
+        }
+      }
+    },
+    "app_components_radioButton_radioButtonItem_description_text" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تسمح أزرار الاختيار للمستخدمين بتحديد خيار واحد من القائمة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio buttons allow users to select one option from a list."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les boutons radio permettent aux utilisateurs de sélectionner une options dans une liste."
           }
         }
       }
@@ -3309,9 +3309,6 @@
           }
         }
       }
-    },
-    "Key 1" : {
-      "extractionState" : "manual"
     }
   },
   "version" : "1.0"

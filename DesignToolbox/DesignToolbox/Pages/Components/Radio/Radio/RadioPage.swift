@@ -76,7 +76,7 @@ private struct RadioDemo: View {
         HStack(alignment: .center) {
             Spacer()
             OUDSRadio(isOn: $model.selection,
-                      accessibilityLabel: "app_components_radioButton_hint_a11y".localized(), // No LocalizedStringKey tpe inference in the component
+                      accessibilityLabel: "app_components_radioButton_hint_a11y".localized(), // No LocalizedStringKey type inference in the component
                       isError: model.isError)
                 .disabled(!model.enabled)
             Spacer()

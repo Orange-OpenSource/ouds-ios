@@ -76,7 +76,7 @@ private struct SwitchDemo: View {
         HStack(alignment: .center) {
             Spacer()
             OUDSSwitch(isOn: $model.selection,
-                       accessibilityLabel: "app_components_switch_hint_a11y".localized()) // No LocalizedStringKey tpe inference in the component
+                       accessibilityLabel: "app_components_switch_hint_a11y".localized()) // No LocalizedStringKey type inference in the component
                 .disabled(!model.enabled)
             Spacer()
         }
