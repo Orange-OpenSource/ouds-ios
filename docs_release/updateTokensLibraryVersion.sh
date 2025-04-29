@@ -25,6 +25,7 @@ FILES_TO_PROCESS=(
     "../DesignToolbox/DesignToolbox/Utils/Bundle+extension.swift"
 
     # For generated documentation
+    "../OUDS/Core/OUDS/Sources/_OUDS.docc/Tokens.md"
     "../OUDS/Core/Tokens/ComponentTokens/Sources/_OUDSTokensComponent.docc/OUDSTokensComponent.md"
     "../OUDS/Core/Tokens/RawTokens/Sources/_OUDSTokensRaw.docc/OUDSTokensRaw.md"
     "../OUDS/Core/Tokens/SemanticTokens/Sources/_OUDSTokensSemantic.docc/OUDSTokensSemantic.md"

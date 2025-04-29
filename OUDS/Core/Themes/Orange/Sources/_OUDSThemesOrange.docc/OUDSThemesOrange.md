@@ -4,7 +4,7 @@ The Orange theme overrides some tokens from the basic `OUDSTheme` and should be 
 
 ## Overview
 
-This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries. The `InverseTheme` is based on it.
+This is the default theme any app should use, and can be subclassed to define for example themes dedicated to countries.
 It embeds also in its target the brand colors which are not shared nor exposed in lower level targets or outside any module not depending to it.
 
 In other words, this ``OrangeTheme`` is based on the abstract `OUDSTheme`, uses all the *Orange Unified Design System* kit and brings the Orange brand colors and assets.
@@ -77,7 +77,7 @@ You will have to consider the semantic tokens providers you need:
 - font tokens are in `OrangeThemeFontSemanticTokensProvider`
 
 You can also override the component tokens providers you need.
-Have a look [on the documentation](https://ios.unified-design-system.orange.com/documentation/oudsthemesorange/) to know which one you need to update.
+Have a look [on the documentation](https://ios.unified-design-system.orange.com/documentation/oudstokenscomponent/) to know which one you need to update.
 
 Example for semantic tokens providers:
 
@@ -189,7 +189,7 @@ class YourAppThemeButtonComponentTokensProvider: OrangeThemeButtonComponentToken
 // Etc.
 ```
 
-You can instead of overriding existing semantic tokens provider implement your own provider but it will impy to implement maybe hundreds of tokens. Your own provider must match the suitable signature.
+You can instead of overriding existing semantic tokens provider implement your own provider but it will imply to implement maybe hundreds of tokens. Your own provider must match the suitable signature.
 
 Then define your own theme class and assign the providers you want to override. If some are missing, default implementation will be used.
 

@@ -55,11 +55,9 @@ extension String {
 
     // swiftlint:disable nslocalizedstring_key
     /// Returns the localized result string using `self` as key.
-    /// Will first look for Bundle.main localizables, then as a last fallback will look in ODS library bundle.
     /// - Returns String: The conversion of `self` as `NSLocalizedString`
     func localized() -> String {
         NSLocalizedString(self, bundle: Bundle.main, comment: "")
     }
-
     // swiftlint:enable nslocalizedstring_key
 }

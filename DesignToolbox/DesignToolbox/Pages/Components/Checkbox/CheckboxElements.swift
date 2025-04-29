@@ -27,9 +27,10 @@ struct CheckboxElements: DesignToolboxElement {
             CheckboxItemElement(),
             CheckboxIndeterminateElement(),
             CheckboxItemIndeterminateElement(),
+            CheckboxPickerElement(),
         ]
 
-        name = "app_components_checkbox_label"
+        name = "app_components_checkbox_label".localized()
         image = Image(decorative: "il_component_checkbox").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

@@ -1,6 +1,6 @@
 # ``OUDS``
 
-The iOS library of *Orange Unified Design System Design System*, the new design system unified and cohesive across all platforms to build Orange mobile applications for everyone everywhere.
+The iOS library of *Orange Unified Design System*, the new design system unified and cohesive across all platforms to build Orange mobile applications for everyone everywhere.
 
 @Metadata {
     @TechnologyRoot

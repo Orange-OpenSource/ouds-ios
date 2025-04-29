@@ -2,6 +2,15 @@
 
 The catalog of all components provided by OUDS. It contains also `View` extensions and `ViewModifiers` to apply tokens and styles on components and higher-level views.
 
+Components are grouped in several categories, the same as the ones defined in the *Figma* design kit:
+*Actions* component are for example buttons. *Navigations* group contains links, *inputs* group has checkboxes, radio buttons and switches, *layouts* groups is dedicated to things like dividers.
+You can get more details about them in the categories below:
+
+- <doc:Actions>
+- <doc:Navigations>
+- <doc:Inputs>
+- <doc:Layouts>
+
 ## Customize components
 
 ### Apply a specific shadow effect (elevation tokens)
@@ -26,7 +35,7 @@ public static let elevationBottom_3_500 = ElevationCompositeRawToken(x: elevatio
 
 Your application identity can be strongly based on the *typography* you use, i.e. the font family you choose and other configuration details like the font size or the font weight.
 
-With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositerawtokens). defined in the [`OUDSTkensSemantic` `FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
+With OUDS, typography depends to the class size, i.e. wether or not the application is in _compact mode_ or in _regular mode_, and is defined with a [`MultipleFontCompositeRawTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/multiplefontcompositerawtokens). defined in the [`OUDSTokensSemantic` `FontSemanticTokens`](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/fontsemantictokens/).
 
 The _theme_ contains lots of `MultipleFontCompositeRawTokens` listing all the combinations of typography you can apply, and these *composite semantic tokens* use *composite raw tokens*. For example:
 
@@ -98,12 +107,3 @@ Some helpers are available in the OUDS API to avoid to use the `color(for:ColorS
     // Apply an accent color
     someView.oudsAccentColor(theme.colors.colorBgPrimary)
 ```
-
-## Topics
-
-### Components categories
-
-- <doc:Actions>
-- <doc:Navigations>
-- <doc:Inputs>
-- <doc:Layouts>

@@ -29,13 +29,6 @@
     {
       "target" : {
         "containerPath" : "container:..",
-        "identifier" : "OUDSThemesInverse-Tests",
-        "name" : "OUDSThemesInverse-Tests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:..",
         "identifier" : "OUDSThemesOrange-Tests",
         "name" : "OUDSThemesOrange-Tests"
       }

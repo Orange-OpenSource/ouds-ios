@@ -12,7 +12,7 @@
 #
 
 # More details at https://realm.github.io/SwiftLint
-# Expected SwiftLint v0.57.0 (at least)
+# Expected SwiftLint v0.59.0 (at least)
 
 strict: true
 

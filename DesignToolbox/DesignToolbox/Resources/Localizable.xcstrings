@@ -402,31 +402,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activé"
-          }
-        }
-      }
-    },
-    "app_common_showCode_copy_a11y" : {
-      "comment" : "Common (a11y)",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نسخ الكود إلى الحافظة"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copy code to clipboard"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copier le code dans le presse-papiers"
+            "value" : "Actif"
           }
         }
       }
@@ -618,7 +594,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône uniquement"
+            "value" : "Icône seul"
           }
         }
       }
@@ -666,7 +642,31 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Non autorisé sur surface colorée"
+            "value" : "Non autorisé sur fond de couleur"
+          }
+        }
+      }
+    },
+    "app_components_checkbox_checkboxItem_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنصر مربع الاختيار الخاص بالحالتين"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Case à cocher dans une liste"
           }
         }
       }
@@ -695,30 +695,6 @@
         }
       }
     },
-    "app_components_checkbox_controlItem_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "عنصر مربع الاختيار"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checkbox item"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Case à cocher enrichie"
-          }
-        }
-      }
-    },
     "app_components_checkbox_description_text" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
@@ -739,30 +715,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les cases à cocher permettent aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
-          }
-        }
-      }
-    },
-    "app_components_checkbox_helperText_text" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نص مساعد"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte d’aide"
           }
         }
       }
@@ -791,6 +743,54 @@
         }
       }
     },
+    "app_components_checkbox_indeterminateCheckbox_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مربع الاختيار الخاص بثلاث حالات فقط"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkbox"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Case à cocher indéterminée"
+          }
+        }
+      }
+    },
+    "app_components_checkbox_indeterminateCheckboxItem_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنصر مربع الاختيار ثلاثي الحالات"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkbox item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Case à cocher indéterminée dans une liste"
+          }
+        }
+      }
+    },
     "app_components_checkbox_indicatorOnly_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
@@ -798,13 +798,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مؤشر فقط"
+            "value" : "خانة الاختيار"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Indicator only"
+            "value" : "Checkbox"
           }
         },
         "fr" : {
@@ -822,19 +822,19 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مربعات الاختيار"
+            "value" : "خانة الاختيار"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Checkboxes"
+            "value" : "Checkbox"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cases à cocher"
+            "value" : "Case à cocher"
           }
         }
       }
@@ -911,74 +911,50 @@
         }
       }
     },
-    "app_components_checkbox_threeStates_controlItem_label" : {
-      "comment" : "Component - Checkbox",
+    "app_components_checkbox_threeState_controlItem_description_text" : {
+      "comment" : "Component - Checkbox - Three States",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عنصر مربع الاختيار ثلاثي الحالات"
+            "value" : "تتيح مربعات الاختيار غير المحددة للمستخدمين، على سبيل المثال، داخل بنية المجلد وشجرة الملفات تحديد أو إلغاء تحديد أو تحديد جزئي لعنصر واحد أو عناصر متعددة."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Three-states checkbox item"
+            "value" : "Indeterminate checkboxes allows users for example within a folder and file tree structure to select, unselect or partially select one or multiple items."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Case à cocher avec 3 valeurs"
+            "value" : "La case à cocher indéterminée est utilisée dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
           }
         }
       }
     },
-    "app_components_checkbox_threeStates_indicatorOnly_label" : {
-      "comment" : "Component - Checkbox",
+    "app_components_checkbox_threeStates_description_text" : {
+      "comment" : "Component - Checkbox - Three States",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مربع الاختيار الخاص بثلاث حالات فقط"
+            "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Three-states checkbox only"
+            "value" : "Indeterminate checkboxes allows users for example within a folder and file tree structure to select, unselect or partially select one or multiple items."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Case à cocher seule avec 3 valeurs"
-          }
-        }
-      }
-    },
-    "app_components_checkbox_twoStates_controlItem_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "عنصر مربع الاختيار الخاص بالحالتين"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Two-states checkbox item"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Case à cocher avec 2 valeurs"
+            "value" : "La case à cocher indéterminée est utilisée dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
           }
         }
       }
@@ -996,61 +972,85 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Two-states checkbox only"
+            "value" : "Checkbox"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Case à cocher seule avec 2 valeurs"
+            "value" : "Case à cocher"
           }
         }
       }
     },
-    "app_components_coloredSurface_color_label" : {
-      "comment" : "Component - Colored Surface",
+    "app_components_checkboxPicker_description_text" : {
+      "comment" : "Component - Checkbox Picker",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Color"
+            "value" : "يجعل منتقي خانات الاختيار المستخدم قادرا على التحديد بين 0 وجميع العناصر المتوفرة في القائمة"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Color"
+            "value" : "A checkbox picker makes the user able to select between 0 and all items provided in a list"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Color"
+            "value" : "Un sélecteur de cases à cocher permet à l'utilisateur de sélectionner entre 0 et tous les éléments fournis dans une liste"
           }
         }
       }
     },
-    "app_components_coloredSurface_color_label_a11y" : {
-      "comment" : "Component - Colored Surface",
+    "app_components_checkboxPicker_label" : {
+      "comment" : "Component - Checkbox Picker",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تبديل رؤية الألوان"
+            "value" : "منتقي خانات الاختيار"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toggle color visibility"
+            "value" : "Checkbox picker"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Basculer la visibilité des couleurs"
+            "value" : "Sélecteur de cases à cocher"
+          }
+        }
+      }
+    },
+    "app_components_checkboxPicker_root" : {
+      "comment" : "Component - Checkbox Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختياراتك\""
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre sélection"
           }
         }
       }
@@ -1098,14 +1098,36 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Colored background"
+            "value" : "Surface colorée"
+          }
+        }
+      }
+    },
+    "app_components_common_color_label" : {
+      "comment" : "Component - Common",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "لون"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur"
           }
         }
       }
     },
     "app_components_common_divider_label" : {
       "comment" : "Component screen - Common",
-      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -1128,7 +1150,7 @@
       }
     },
     "app_components_common_editContent_label" : {
-      "comment" : "Component - Checkbox",
+      "comment" : "Component - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -1140,13 +1162,61 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Modify content"
+            "value" : "Edit content"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modifier contenu"
+          }
+        }
+      }
+    },
+    "app_components_common_enterText_prompt" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أدخل النص"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrez un texte"
+          }
+        }
+      }
+    },
+    "app_components_common_error_label" : {
+      "comment" : "Component screen - Common",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "خطأ"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erreur"
           }
         }
       }
@@ -1175,30 +1245,6 @@
         }
       }
     },
-    "app_components_common_icon_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "رمز"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icône"
-          }
-        }
-      }
-    },
     "app_components_common_iconAndTextLayout_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
@@ -1223,7 +1269,7 @@
         }
       }
     },
-    "app_components_common_labelText_label" : {
+    "app_components_common_label_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
@@ -1266,7 +1312,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mise en page"
+            "value" : "Variants"
           }
         }
       }
@@ -1290,14 +1336,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sur fond coloré"
+            "value" : "Sur fond de couleur"
           }
         }
       }
     },
     "app_components_common_onError_label" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "manual",
+      "comment" : "Component - Common",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -1345,7 +1390,6 @@
     },
     "app_components_common_readOnly_label" : {
       "comment" : "Component screen - Common",
-      "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -1410,7 +1454,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texte uniquement"
+            "value" : "Texte seul"
           }
         }
       }
@@ -1439,30 +1483,6 @@
         }
       }
     },
-    "app_components_common_userText_prompt" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "أدخل النص"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enter a text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Entrez un texte"
-          }
-        }
-      }
-    },
     "app_components_common_viewCodeExample_label" : {
       "comment" : "Component screen - Common",
       "extractionState" : "manual",
@@ -1487,7 +1507,295 @@
         }
       }
     },
-    "app_components_link_arrowBack_label" : {
+    "app_components_controlItem_divider_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur"
+          }
+        }
+      }
+    },
+    "app_components_controlItem_flipIcon_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "أيقونة الوجه"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flip icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inverser l’icône"
+          }
+        }
+      }
+    },
+    "app_components_controlItem_helperText_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص مساعد"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Helper text"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Texte d’aide"
+          }
+        }
+      }
+    },
+    "app_components_controlItem_icon_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "رمز"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icône"
+          }
+        }
+      }
+    },
+    "app_components_controlItem_readOnly_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "للقراءة فقط"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Read only"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lecture seule"
+          }
+        }
+      }
+    },
+    "app_components_controlItem_reversed_label" : {
+      "comment" : "Component - ControlItem",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "معكوس"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reversed"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inversé"
+          }
+        }
+      }
+    },
+    "app_components_divider_description_text" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يُنظّم الفاصل الواجهة بصريًا من خلال فصل أقسام المحتوى بوضوح. يُحسّن هذا الفاصل سهولة القراءة وتنظيم المحتوى دون الحاجة إلى تسلسل هرمي مُحكم كما هو الحال في العناوين أو الحاويات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A divider visually structures an interface by clearly separating content sections. It helps to improve readability and content organization without introducing a strong hierarchy like a heading or a container would. "
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un séparateur structure visuellement une interface en séparant clairement les sections de contenu. Il améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie trop marquée comme le feraient un titre ou un conteneur."
+          }
+        }
+      }
+    },
+    "app_components_divider_horizontalDivider_description_text" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم استخدام الفاصل الأفقي لفصل المحتوى الموضوع تحت الآخر"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A horizontal Divider is used to separate content laid out one under the other"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le séparateur horizontal est utilisé pour séparer des contenus positionnés côte à côte"
+          }
+        }
+      }
+    },
+    "app_components_divider_horizontalDivider_label" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل أفقي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horizontal divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur horizontal"
+          }
+        }
+      }
+    },
+    "app_components_divider_label" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur"
+          }
+        }
+      }
+    },
+    "app_components_divider_verticalDivider_description_text" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتم استخدام الفاصل الرأسي لفصل المحتوى الموضوع جنبًا إلى جنب"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A vertical Divider is used to separate content in horizontal layout"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le séparateur vertical est utilisé pour séparer des contenus positionnés l’un en dessous de l’autre"
+          }
+        }
+      }
+    },
+    "app_components_divider_verticalDivider_label" : {
+      "comment" : "Component - Divider",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فاصل عمودي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vertical divider"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Séparateur vertical"
+          }
+        }
+      }
+    },
+    "app_components_link_backLayout_label" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
       "localizations" : {
@@ -1507,30 +1815,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Retour"
-          }
-        }
-      }
-    },
-    "app_components_link_arrowNext_label" : {
-      "comment" : "Component - Link",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "التالي"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Suivant"
           }
         }
       }
@@ -1583,6 +1867,30 @@
         }
       }
     },
+    "app_components_link_nextLayout_label" : {
+      "comment" : "Component - Link",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التالي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Next"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suivant"
+          }
+        }
+      }
+    },
     "app_components_link_size_label" : {
       "comment" : "Component - Link",
       "extractionState" : "manual",
@@ -1603,222 +1911,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taille"
-          }
-        }
-      }
-    },
-    "app_components_radio_additionalLabelText_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نص الملصق الإضافي"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Additional label text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Label supplémentaire"
-          }
-        }
-      }
-    },
-    "app_components_radio_additionalLabelText_text" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نص الملصق الإضافي"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Additional label text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Label supplémentaire"
-          }
-        }
-      }
-    },
-    "app_components_radio_controlItem_description_text" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تتيح أجهزة الراديو للمستخدمين اختيار خيار واحد من القائمة."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radios allow users to select one option from a list."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les radios permettent aux utilisateurs de sélectionner une options dans une liste."
-          }
-        }
-      }
-    },
-    "app_components_radio_controlItem_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "عنصر الراديو"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio item"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio enrichi"
-          }
-        }
-      }
-    },
-    "app_components_radio_description_text" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "يتيح الراديو للمستخدمين اختيار خيار من القائمة."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radios allows users to select an option from a list."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les radio permettent aux utilisateurs de sélectionner une option dans une liste."
-          }
-        }
-      }
-    },
-    "app_components_radio_helperText_text" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نص مساعد"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte d’aide"
-          }
-        }
-      }
-    },
-    "app_components_radio_hint_a11y" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "هذه علامة مزيفة مستخدمة في التطبيق التجريبي"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This is a fake label used in the demo app"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ceci est un label bidon pour l’app de démo"
-          }
-        }
-      }
-    },
-    "app_components_radio_indicatorOnly_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "مؤشر فقط"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Indicator only"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio seul"
-          }
-        }
-      }
-    },
-    "app_components_radio_label" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "راديو"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Radio"
           }
         }
       }
@@ -1847,7 +1939,175 @@
         }
       }
     },
-    "app_components_radio_outlined_label" : {
+    "app_components_radioButton_description_text" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتيح الراديو للمستخدمين اختيار خيار من القائمة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A radio button allows users to select a single option from a set of mutually exclusive choices, typically displayed as a circular input with a label that becomes filled when selected."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les boutons radio permettent aux utilisateurs de sélectionner une option dans une liste."
+          }
+        }
+      }
+    },
+    "app_components_radioButton_hint_a11y" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذه علامة مزيفة مستخدمة في التطبيق التجريبي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a fake label used in the demo app"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un label bidon pour l’app de démo"
+          }
+        }
+      }
+    },
+    "app_components_radioButton_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "راديو بوتون"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bouton radio"
+          }
+        }
+      }
+    },
+    "app_components_radioButton_radioButton_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "مؤشر فقط"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bouton radio"
+          }
+        }
+      }
+    },
+    "app_components_radioButton_radioButtonItem_additionalLabel_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "نص الملصق الإضافي"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Additional label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label supplémentaire"
+          }
+        }
+      }
+    },
+    "app_components_radioButton_radioButtonItem_description_text" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تسمح أزرار الاختيار للمستخدمين بتحديد خيار واحد من القائمة."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio buttons allow users to select one option from a list."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les boutons radio permettent aux utilisateurs de sélectionner une options dans une liste."
+          }
+        }
+      }
+    },
+    "app_components_radioButton_radioButtonItem_label" : {
+      "comment" : "Component - Radio",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عنصر زر الاختيار"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio button item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bouton radio dans une liste"
+          }
+        }
+      }
+    },
+    "app_components_radioButton_radioButtonItem_outlined_label" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
@@ -1871,7 +2131,7 @@
         }
       }
     },
-    "app_components_radio_selection_label" : {
+    "app_components_radioButton_selection_label" : {
       "comment" : "Component - Radio",
       "extractionState" : "manual",
       "localizations" : {
@@ -1895,6 +2155,222 @@
         }
       }
     },
+    "app_components_radioPicker_description_text" : {
+      "comment" : "Component - Radio Picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يسمح منتقي الراديو للمستخدمين بالاختيار على عنصر ضمن مجموعة من العديد من العناصر الأخرى باستخدام أزرار الاختيار"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio picker allows users to chose on item within a group of many radio buttons"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le sélecteur de radio permet aux utilisateurs de choisir un élément au sein d'un groupe de plusieurs boutons radio"
+          }
+        }
+      }
+    },
+    "app_components_radioPicker_label" : {
+      "comment" : "Component - Radio picker",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "منتقي الراديو"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Radio picker"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélecteur de boutons radio"
+          }
+        }
+      }
+    },
+    "app_components_switch_description_text" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتيح المفتاح للمستخدم تمكين أو تعطيل الميزات أو الخيارات أو الإعدادات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A switch allows user to enable or disable a feature, option, or setting."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un switch permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre. "
+          }
+        }
+      }
+    },
+    "app_components_switch_label" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التبديل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        }
+      }
+    },
+    "app_components_switch_label_text" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ملصق"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Label"
+          }
+        }
+      }
+    },
+    "app_components_switch_selection_label" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختيار"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélection"
+          }
+        }
+      }
+    },
+    "app_components_switch_switch_label" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يُحوّل"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch"
+          }
+        }
+      }
+    },
+    "app_components_switch_switchItem_description_text" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يتيح المفتاح للمستخدم تمكين أو تعطيل الميزات أو الخيارات أو الإعدادات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swith allows user to enable or disable features, options, or settings."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un switch permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre."
+          }
+        }
+      }
+    },
+    "app_components_switch_switchItem_label" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تبديل العنصر"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Switch enrichi"
+          }
+        }
+      }
+    },
     "app_tokens_border_description_text" : {
       "comment" : "Tokens - Border",
       "extractionState" : "manual",
@@ -1914,7 +2390,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les bordures sont utilisées pour les couleurs de contour sur les composants et aussi pour les couleurs des lignes de séparation pour des composants comme les tableaux."
+            "value" : "Les bordures sont utilisées pour les couleurs de contour sur les composants et pour les couleurs des lignes de séparation pour des composants comme les tableaux."
           }
         }
       }
@@ -2064,7 +2540,7 @@
       }
     },
     "app_tokens_common_viewCodeExample_label" : {
-      "comment" : "Token screen",
+      "comment" : "Token - Common",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -2178,7 +2654,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône avec"
+            "value" : "Icône décorative"
           }
         }
       }
@@ -2202,7 +2678,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône décorative"
+            "value" : "Icône avec"
           }
         }
       }
@@ -2227,6 +2703,54 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taille"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_columnGap_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "فجوة مضمنة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Column gap"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espacement extérieur entre éléments côte à côte"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_columnGapHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن فجوة العمود المسافة الرأسية بين الكائنات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Column gap includes the vertical spacing between objects."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'espacement des colonnes comprend l'espacement vertical entre les objets."
           }
         }
       }
@@ -2279,146 +2803,26 @@
         }
       }
     },
-    "app_tokens_dimension_space_gapInline_label" : {
+    "app_tokens_dimension_space_fixedHeader_text" : {
       "comment" : "Token - Dimension - Space",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فجوة مضمنة"
+            "value" : "تشير المسافة الثابتة إلى مسافة ثابتة بين العناصر تظل كما هي بغض النظر عن عوامل مثل حجم الحاوية أو دقة الشاشة أو تغييرات التخطيط."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gap inline"
+            "value" : "Fixed spacing refers to a constant distance between elements that remains the same regardless of factors like container size, screen resolution, or layout changes."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espace en ligne"
-          }
-        }
-      }
-    },
-    "app_tokens_dimension_space_gapInlineWithArrow_label" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "الفجوة المتوازية مع السهم"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gap inline with arrow"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Espace en ligne avec flèche"
-          }
-        }
-      }
-    },
-    "app_tokens_dimension_space_gapInlineWithIcon_label" : {
-      "comment" : "Token - Dimension - Space - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "فجوة متوازية مع الرمز"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gap inline with icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Espace en ligne avec icône"
-          }
-        }
-      }
-    },
-    "app_tokens_dimension_space_gapStack_label" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "كومة الفجوة"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gap stack"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Espace empilé"
-          }
-        }
-      }
-    },
-    "app_tokens_dimension_space_gapStackWithIcon_label" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "كومة الفجوة مع الرمز"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gap stack with icon"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Espace empilé avec icône"
-          }
-        }
-      }
-    },
-    "app_tokens_dimension_space_header_text" : {
-      "comment" : "Token - Dimension - Space",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "استخدم الأطر المرنة لتوفير ملخص قوي للنظرات العامة عالية المستوى."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leverage agile frameworks to provide a robust synopsis for high-level overviews."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tirez parti des frameworks agiles pour fournir un synopsis robuste pour des aperçus de haut niveau."
+            "value" : "L'espacement fixe fait référence à une distance constante entre les éléments qui reste la même quels que soient des facteurs tels que la taille du conteneur, la résolution de l'écran ou les changements de mise en page."
           }
         }
       }
@@ -2466,7 +2870,31 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rembourrage en ligne"
+            "value" : "Espacement intérieur gauche droite"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_paddingInlineHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن الحشوة المضمنة الحشوة اليمنى واليسرى لكائن أو مجموعة من الكائنات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding inline includes the left and right padding of an object or a group of objects."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le remplissage en ligne inclut le remplissage gauche et droit d'un objet ou d'un groupe d'objets."
           }
         }
       }
@@ -2490,7 +2918,31 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rembourrage intérieur"
+            "value" : "Espacement intérieur"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_paddingInsetHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن الحشوة المضمنة الحشوة اليسرى واليمنى والعلوية والسفلية، مع تساوي جميع المعلمات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding inset includes the left, right, top, and bottom padding, with all parameters being equal."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le remplissage inséré comprend le remplissage gauche, droit, supérieur et inférieur, tous les paramètres étant égaux."
           }
         }
       }
@@ -2514,7 +2966,79 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rembourrage empilé"
+            "value" : "Espacement intérieur haut bas"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_paddingStackHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن مجموعة الحشو الحشو العلوي والسفلي."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Padding stack includes the top and bottom padding."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La pile de rembourrage comprend le rembourrage supérieur et inférieur."
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_rowGap_label" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "كومة الفجوة"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Row gap"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espacement extérieur entre éléments empilés"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_rowGapHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تتضمن فجوة الصفوف المسافة الأفقية بين الكائنات."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Row gap includes the horizontal spacing between objects."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'espacement des rangées comprend l'espacement horizontal entre les objets."
           }
         }
       }
@@ -2539,6 +3063,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Échelonné"
+          }
+        }
+      }
+    },
+    "app_tokens_dimension_space_scaledHeader_text" : {
+      "comment" : "Token - Dimension - Space",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تشير المسافة المقاسة إلى المسافة التي يتم تعديلها ديناميكيًا استنادًا إلى عوامل مثل حجم الحاوية أو دقة الشاشة أو عناصر التخطيط."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scaled spacing refers to spacing that adjusts dynamically based on factors like container size, screen resolution, or layout elements."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'espacement mis à l'échelle fait référence à un espacement qui s'ajuste de manière dynamique en fonction de facteurs tels que la taille du conteneur, la résolution de l'écran ou les éléments de mise en page."
           }
         }
       }
@@ -2586,7 +3134,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Élévation"
+            "value" : "Elévation"
           }
         }
       }
@@ -2706,7 +3254,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La typographie est notre système de polices et de styles de texte. Ils améliorent la communication et renforcent le style de la marque."
+            "value" : "La typographie est notre système de polices de caractère et de styles de texte. Ils améliorent la communication et renforcent le style de la marque."
           }
         }
       }
@@ -2754,7 +3302,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Typographie"
+            "value" : "Police de caractère"
           }
         }
       }
@@ -2868,13 +3416,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Change theme"
+            "value" : "Chgange theme"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Changer le thème"
+            "value" : "Changer de thème"
           }
         }
       }

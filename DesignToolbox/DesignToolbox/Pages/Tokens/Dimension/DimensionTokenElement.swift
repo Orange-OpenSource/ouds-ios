@@ -25,12 +25,12 @@ struct DimensionTokenElement: DesignToolboxElement {
             SpaceTokenElement(),
         ]
 
-        name = "app_tokens_dimension_label"
+        name = "app_tokens_dimension_label".localized()
         image = Image(decorative: "ic_dimension").renderingMode(.template)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: Image(decorative: "ic_dimension").renderingMode(.template),
             description: "app_tokens_dimension_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
+            illustration: AnyView(DesignToolboxVariantElement(elements: variants.sorted(by: { $0.name < $1.name })))))
     }
 }

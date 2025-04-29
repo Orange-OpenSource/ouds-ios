@@ -343,7 +343,7 @@ struct ThemeOverrideOfSpaceSemanticTokensTests {
         #expect(inheritedTheme.spaces.spaceInsetSpacious == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    // MARK: - Semantic token - Spacing - Padding - Gap inline
+    // MARK: - Semantic token - Spacing - Padding - Column Gap
 
     @Test func inheritedThemeCanOverrideSemanticTokenSpaceColumnGapNone() throws {
         #expect(inheritedTheme.spaces.spaceColumnGapNone != abstractTheme.spaces.spaceColumnGapNone)
@@ -375,7 +375,7 @@ struct ThemeOverrideOfSpaceSemanticTokensTests {
         #expect(inheritedTheme.spaces.spaceColumnGapTaller == MockThemeSpaceSemanticTokensProvider.mockThemeSpaceRawToken)
     }
 
-    // MARK: - Semantic token - Spacing - Padding - Gap stack
+    // MARK: - Semantic token - Spacing - Padding - Row Gap
 
     @Test func inheritedThemeCanOverrideSemanticTokenSpaceRowGapNone() throws {
         #expect(inheritedTheme.spaces.spaceRowGapNone != abstractTheme.spaces.spaceRowGapNone)

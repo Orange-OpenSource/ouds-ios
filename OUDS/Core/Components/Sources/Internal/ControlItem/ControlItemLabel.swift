@@ -32,10 +32,11 @@ struct ControlItemLabel: View {
 
     /// Gathers any details and content to add in the ``ControlItemLabel``
     struct LayoutData {
-        let labelText: String
-        let additionalLabelText: String?
-        let helperText: String?
+        let label: String
+        let additionalLabel: String?
+        let helper: String?
         let icon: Image?
+        let flipIcon: Bool
         let isOutlined: Bool
         let isError: Bool
         let isReadOnly: Bool
@@ -55,24 +56,24 @@ struct ControlItemLabel: View {
 
     private func texts() -> some View {
         VStack(alignment: .leading) {
-            Text(LocalizedStringKey(layoutData.labelText))
+            Text(LocalizedStringKey(layoutData.label))
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
-                .oudsForegroundStyle(labelTextColor)
+                .oudsForegroundStyle(labelColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let additionalLabelText = layoutData.additionalLabelText {
-                Text(LocalizedStringKey(additionalLabelText))
+            if let additionalLabel = layoutData.additionalLabel {
+                Text(LocalizedStringKey(additionalLabel))
                     .typeLabelStrongMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .oudsForegroundStyle(additionalLabelTextColor)
+                    .oudsForegroundStyle(additionalLabelColor)
             }
 
-            if let helperText = layoutData.helperText {
-                Text(LocalizedStringKey(helperText))
+            if let helper = layoutData.helper {
+                Text(LocalizedStringKey(helper))
                     .typeLabelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
-                    .oudsForegroundStyle(helperTextColor)
+                    .oudsForegroundStyle(helperColor)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -80,7 +81,7 @@ struct ControlItemLabel: View {
 
     // MARK: - Colors
 
-    private var labelTextColor: MultipleColorSemanticTokens {
+    private var labelColor: MultipleColorSemanticTokens {
         if layoutData.isError {
             switch interactionState {
             case .enabled:
@@ -103,7 +104,7 @@ struct ControlItemLabel: View {
         }
     }
 
-    private var helperTextColor: MultipleColorSemanticTokens {
+    private var helperColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled, .pressed, .hover, .readOnly:
             theme.colors.colorContentMuted
@@ -112,7 +113,7 @@ struct ControlItemLabel: View {
         }
     }
 
-    private var additionalLabelTextColor: MultipleColorSemanticTokens {
+    private var additionalLabelColor: MultipleColorSemanticTokens {
         interactionState == .disabled ? theme.colors.colorContentDisabled : theme.colors.colorContentDefault
     }
 }

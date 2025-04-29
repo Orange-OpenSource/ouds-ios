@@ -21,7 +21,7 @@ struct PaddingInlineProperty: View {
 
     var body: some View {
         SpaceTokenProperty(namedTokens: NamedSpace.PaddingInline.allCases) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+            SpaceHeaderDescription(text: "app_tokens_dimension_space_paddingInlineHeader_text", paddings: EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
         } illustration: { token in
             Illustration(token: token)
         }
@@ -41,7 +41,7 @@ struct PaddingInsetProperty: View {
 
     var body: some View {
         SpaceTokenProperty(namedTokens: NamedSpace.PaddingInset.allCases) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+            SpaceHeaderDescription(text: "app_tokens_dimension_space_paddingInsetHeader_text", paddings: EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
         } illustration: { token in
             Illustration(token: token)
         }
@@ -61,7 +61,7 @@ struct PaddingStackProperty: View {
 
     var body: some View {
         SpaceTokenProperty(namedTokens: NamedSpace.PaddingStack.allCases) {
-            SpaceHeaderDescription(text: "app_tokens_dimension_space_header_text", paddings: EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+            SpaceHeaderDescription(text: "app_tokens_dimension_space_paddingStackHeader_text", paddings: EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
         } illustration: { token in
             Illustration(token: token)
         }

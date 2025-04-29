@@ -1,6 +1,6 @@
 # Modules
 
-A _module_ can be seen as a set of features and components to fill a need, for example to laod from a backend the apps of your entity avialable in the App Store.
+A _module_ can be seen as a set of features and components to fill a need.
 
 *There is not component yet*
 

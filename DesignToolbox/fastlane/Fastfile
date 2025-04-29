@@ -60,7 +60,8 @@ OUDS_WORKSPACE = "DesignToolbox.xcworkspace"
 OUDS_PROJECT = "DesignToolbox.xcodeproj"
 OUDS_SCHEME = "DesignToolbox"
 OUDS_TEST_SCHEME = "DesignToolbox"
-OUDS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
+OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME = "DesignToolboxSnapshotsTests"
+OUDS_SNAPSHOTS_UI_TEST_SCHEME = "DesignToolboxUITests"
 OUDS_PROJECT_NAME = "DesignToolbox" # Root for Info.plist, etc.
 OUDS_APP_DISPLAY_NAME = "Design System Toolbox"
 
@@ -135,6 +136,38 @@ platform :ios do
         end
     end
     
+    # -------------------
+    # RUN SNAPSHOTS TESTS
+    # -------------------
+    desc "RUN SNAPSHOTS TESTS BY TRIGGERING THE TESTS PLANS OF THE PROJECT"
+    lane :test_snapshots do
+        puts "👉 Run UI tests"
+
+        # Should have on runner one device under at least iOS 15
+        # Check the available devices using `xcrun xctrace list devices`
+        # Add new environments using `xcodebuild -downloadPlatform iOS`
+        begin
+            device = "iPhone 16 Pro (18.0)"
+            scan(scheme: OUDS_SNAPSHOTS_SNAPSHOTS_TEST_SCHEME,
+                device: device,
+                skip_build: true
+            )
+
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
+            else
+                publish_mattermost_notification("🧪 ✅ No issue with snapshots tests")
+            end
+        rescue => error
+            if MATTERMOST_HOOK_URL.nil? || MATTERMOST_HOOK_URL.empty?
+                puts "ℹ️ No MATTERMOST_HOOK_URL defined, it could mean this lane is called on GitHub Action workflow or locally"
+            else
+                publish_mattermost_notification("🧪 🚨 @channel Some issue occured with tests (:test_snapshots)")
+            end
+            raise error
+        end
+    end
+
     # ------------
     # RUN UI TESTS
     # ------------
@@ -147,7 +180,7 @@ platform :ios do
         # Add new environments using `xcodebuild -downloadPlatform iOS`
         begin
             device = "iPhone 16 Pro (18.0)"
-            scan(scheme: OUDS_SNAPSHOTS_TEST_SCHEME,
+            scan(scheme: OUDS_SNAPSHOTS_UI_TEST_SCHEME,
                 device: device,
                 skip_build: true
             )

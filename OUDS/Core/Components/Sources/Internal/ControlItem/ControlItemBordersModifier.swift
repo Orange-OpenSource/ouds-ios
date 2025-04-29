@@ -40,7 +40,14 @@ struct ControlItemBordersModifier: ViewModifier {
                             radius: theme.borders.borderRadiusNone,
                             color: borderColor)
         } else {
-            content.oudsDivider(show: layoutData.hasDivider)
+            if layoutData.hasDivider {
+                VStack(spacing: 0) {
+                    content
+                    OUDSHorizontalDivider()
+                }
+            } else {
+                content
+            }
         }
     }
 

@@ -74,23 +74,23 @@ private struct CheckboxItemDemo: View {
 
     var body: some View {
         OUDSCheckboxItem(isOn: $model.indicatorState,
-                         labelText: model.labelTextContent,
-                         helperText: helperTextContent,
+                         label: model.labelText,
+                         helper: model.helperText,
                          icon: icon,
-                         isInversed: model.layoutOrientation == .inverse,
+                         flipIcon: model.flipIcon,
+                         isReversed: model.isReversed,
                          isError: model.isError,
                          isReadOnly: model.isReadOnly,
                          hasDivider: model.divider)
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
-        .designToolboxBackground(onColoredSurface: false)
+        .designToolboxColoredSurface(false)
     }
 
-    private var helperTextContent: String? {
-        model.helperText ? model.helperTextContent : nil
-    }
-
+    // Need here that system name, a11y managed in component
+    // swiftlint:disable accessibility_label_for_image
     private var icon: Image? {
-        model.icon ? Image(decorative: "ic_heart") : nil
+        model.icon ? Image(systemName: "figure.handball") : nil
     }
+    // swiftlint:enable accessibility_label_for_image
 }

@@ -1,31 +1,22 @@
 {
-  "originHash" : "83401976e6d5078c716d3d81b7069a9a115aa96085292549b781eb6d5bfe69b2",
+  "originHash" : "4c2549ac3c98d39d57e81a1c8d8ec9d1ff0d2092cf2de270cd6c8f0467736a03",
   "pins" : [
     {
-      "identity" : "accessibility-statement-lib-ios",
+      "identity" : "swift-docc-plugin",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Orange-OpenSource/accessibility-statement-lib-ios.git",
+      "location" : "https://github.com/swiftlang/swift-docc-plugin",
       "state" : {
-        "revision" : "480bf4629b951e459308379030f1ca0ce28a0987",
-        "version" : "1.3.0"
+        "revision" : "85e4bb4e1cd62cec64a4b8e769dcefdf0c5b9d64",
+        "version" : "1.4.3"
       }
     },
     {
-      "identity" : "swift-snapshot-testing",
+      "identity" : "swift-docc-symbolkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pointfreeco/swift-snapshot-testing.git",
+      "location" : "https://github.com/swiftlang/swift-docc-symbolkit",
       "state" : {
-        "revision" : "42a086182681cf661f5c47c9b7dc3931de18c6d7",
-        "version" : "1.17.6"
-      }
-    },
-    {
-      "identity" : "swift-syntax",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/swiftlang/swift-syntax",
-      "state" : {
-        "revision" : "515f79b522918f83483068d99c68daeb5116342d",
-        "version" : "600.0.0-prerelease-2024-09-04"
+        "revision" : "b45d1f2ed151d057b54504d653e0da5552844e34",
+        "version" : "1.0.0"
       }
     }
   ],

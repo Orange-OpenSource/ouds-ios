@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -38,22 +37,6 @@ final class OUDSLinkUITests: XCTestCase {
     /// Tests all link configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllLinksOrangeThemeDark() {
         let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
-        testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all link configuration in the `InverseTheme` with the `light` color schemes.
-    @MainActor func testAllLinksInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
-        testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all link configuration in the `InverseTheme` with the `dark` color schemes.
-    @MainActor func testAllLinksInverseThemeDark() {
-        let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllLinks(theme: theme, interfaceStyle: interfaceStyle)
         testAllLinksOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
@@ -172,10 +155,10 @@ private struct LinkTest: View {
             OUDSLink(text: "Link", size: size) {}
         case .iconAndText:
             OUDSLink(text: "Link", icon: Image(decorative: "ic_heart"), size: size) {}
-        case .arrowNext:
-            OUDSLink(text: "Next", arrow: .next, size: size) {}
-        case .arrowBack:
-            OUDSLink(text: "Back", arrow: .back, size: size) {}
+        case .indicatorNext:
+            OUDSLink(text: "Next", indicator: .next, size: size) {}
+        case .indicatorBack:
+            OUDSLink(text: "Back", indicator: .back, size: size) {}
         }
     }
 }
@@ -185,7 +168,7 @@ extension OUDSLink.Size: @retroactive CustomDebugStringConvertible {
         switch self {
         case .small:
             "Small"
-        case .medium:
+        case .`default`:
             "Medium"
         }
     }
@@ -198,10 +181,10 @@ extension LinkLayout: CustomDebugStringConvertible {
             "TextOnly"
         case .iconAndText:
             "IconAndText"
-        case .arrowBack:
-            "ArrowBack"
-        case .arrowNext:
-            "ArrowNext"
+        case .indicatorBack:
+            "IndicatorBack"
+        case .indicatorNext:
+            "IndicatorNext"
         }
     }
 }

@@ -20,13 +20,15 @@ struct ComponentsPage: View {
     let componentElements: [DesignToolboxElement] = [
         ButtonElement(),
         ColoredSurfaceElement(),
-        LinkElement(),
         CheckboxElements(),
+        DividerElements(),
+        LinkElement(),
         RadioElements(),
+        SwitchElements(),
     ]
 
     var body: some View {
-        DesignToolboxElementsPage(elements: componentElements)
+        DesignToolboxElementsPage(elements: componentElements.sorted(by: { $0.name < $1.name }))
             .oudsNavigationTitle("app_bottomBar_components_label")
     }
 }

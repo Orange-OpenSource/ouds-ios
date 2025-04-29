@@ -19,7 +19,7 @@ struct ButtonElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_button_label"
+        name = "app_components_button_label".localized()
         image = Image(decorative: "il_component_button").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
                 name: name,

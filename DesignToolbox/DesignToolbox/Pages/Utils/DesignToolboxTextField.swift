@@ -21,9 +21,9 @@ struct DesignToolboxTextField: View {
 
     let text: Binding<String>
     let prompt: String
-    let title: String
+    let title: String?
 
-    init(text: Binding<String>, prompt: String, title: String = "app_components_common_userText_label") {
+    init(text: Binding<String>, prompt: String = "app_components_common_enterText_prompt", title: String? = nil) {
         self.title = title
         self.text = text
         self.prompt = prompt
@@ -31,13 +31,16 @@ struct DesignToolboxTextField: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(LocalizedStringKey(title))
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            TextField(text: text) {
-                Text(LocalizedStringKey(prompt))
+            if let title {
+                Text(LocalizedStringKey(title))
+                    .typeHeadingMedium(theme)
+                    .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
+
+            TextField(text: text, prompt: Text(prompt)) {
+                Text(LocalizedStringKey(text.wrappedValue))
+            }
+            .oudsForegroundStyle(theme.colors.colorContentDefault)
         }
         .accessibilityElement(children: .combine)
         .accessibilityLabel(LocalizedStringKey(prompt))

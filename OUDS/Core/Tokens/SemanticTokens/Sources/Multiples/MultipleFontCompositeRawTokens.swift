@@ -12,7 +12,7 @@
 //
 
 import OUDSTokensRaw
-import SwiftUICore
+import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of `FontCompositeRawToken` depending to size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.

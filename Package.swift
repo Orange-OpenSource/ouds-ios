@@ -17,12 +17,12 @@ import PackageDescription
 
 /// Exposing OUDS through a Swift Package is a good start.
 /// Expose it through Pod or XCFamework should be investigated later.
-/// Defining here hierarchy between targets will prevent us to have cyclic dependencies and help to have seperated responsibilities.
+/// Defining here hierarchy between targets will prevent us to have cyclic dependencies and help to have separated responsibilities.
 let package = Package(
     
     name: "OUDS",
     defaultLocalization: "en",
-    platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v15), .macOS(.v13)], // No official support of macOS, but mandatory for swift-docc-plugin
     
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
@@ -39,9 +39,6 @@ let package = Package(
             name: "OUDSTokensComponent",
             targets: ["OUDSTokensComponent"]),
         .library(
-            name: "OUDSThemesInverse",
-            targets: ["OUDSThemesInverse"]),
-        .library(
             name: "OUDSThemesOrange",
             targets: ["OUDSThemesOrange"]),
         .library(
@@ -55,6 +52,11 @@ let package = Package(
             targets: ["OUDSFoundations"]),
     ],
     
+    dependencies: [
+        // Apple Swift tool to build documentation
+        .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.3"),
+    ],
+
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
     targets: [
@@ -75,14 +77,6 @@ let package = Package(
             name: "OUDSComponents-Tests",
             dependencies: ["OUDSComponents"],
             path: "OUDS/Core/Components/Tests"),
-        .target(
-            name: "OUDSThemesInverse",
-            dependencies: ["OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/Inverse/Sources"),
-        .testTarget(
-            name: "OUDSThemesInverse-Tests",
-            dependencies: ["OUDSThemesInverse"],
-            path: "OUDS/Core/Themes/Inverse/Tests"),
         .target(
             name: "OUDSThemesOrange",
             dependencies: ["OUDS"],

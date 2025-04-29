@@ -19,7 +19,7 @@ struct FontTokenElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_tokens_typography_label"
+        name = "app_tokens_typography_label".localized()
         image = Image(decorative: "ic_typography").renderingMode(.template)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

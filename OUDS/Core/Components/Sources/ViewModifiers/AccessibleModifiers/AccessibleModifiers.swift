@@ -11,8 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// Conditional import and use of UIKit for documentation generation (see #628 #626)
 import SwiftUI
-import UIKit
+#if canImport(UIKit)
+    import UIKit
+#endif
 
 // MARK: - Accessible Navigation Title Modifier
 
@@ -29,9 +32,11 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
         content
             .navigationTitle(LocalizedStringKey(title))
             .onAppear {
+#if canImport(UIKit)
                 DispatchQueue.main.asyncAfter(deadline: deadline) {
                     UIAccessibility.post(notification: .screenChanged, argument: title)
                 }
+#endif
             }
     }
 }

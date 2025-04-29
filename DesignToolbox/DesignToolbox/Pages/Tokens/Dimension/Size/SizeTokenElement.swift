@@ -19,7 +19,7 @@ struct SizeTokenElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_tokens_dimension_size_label"
+        name = "app_tokens_dimension_size_label".localized()
         image = Image(decorative: "ic_dimension").renderingMode(.template)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "il_component_button.svg",
+      "filename" : "il_component_button.png",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "il_component_button_dark.svg",
+      "filename" : "il_component_button_dark.png",
       "idiom" : "universal"
     }
   ],

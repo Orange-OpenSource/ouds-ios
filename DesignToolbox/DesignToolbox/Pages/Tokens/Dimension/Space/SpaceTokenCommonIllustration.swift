@@ -110,10 +110,8 @@ struct SpaceCommonIllustration: View {
 
             switch padding {
             case .topLeading:  // ZStack topleading
-                DesignToolboxTokenIllustrationBackground()
-                    .padding(.top, dimension)
-                    .padding(.leading, dimension)
-                    .oudsBackground(theme.colors.colorContentStatusInfo)
+                SpaceIllustrationRectangle(width: dimension)
+                SpaceIllustrationRectangle(height: dimension)
             case .leading(let asset): // ZStack alignment leading
                 HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     SpaceIllustrationRectangle(width: dimension)

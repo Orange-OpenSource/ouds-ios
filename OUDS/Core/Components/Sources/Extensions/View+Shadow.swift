@@ -45,9 +45,11 @@ private struct ColorSchemeBasedElevationViewModifier: ViewModifier {
     @Environment(\.colorScheme) private var colorScheme
 
     func body(content: Content) -> some View {
-        content.shadow(color: colorSchemeBasedElevation.color.color,
-                       radius: colorSchemeBasedElevation.radius,
-                       x: CGFloat(colorSchemeBasedElevation.x),
-                       y: CGFloat(colorSchemeBasedElevation.y))
+        content
+            .compositingGroup()
+            .shadow(color: colorSchemeBasedElevation.color.color,
+                    radius: colorSchemeBasedElevation.radius,
+                    x: CGFloat(colorSchemeBasedElevation.x),
+                    y: CGFloat(colorSchemeBasedElevation.y))
     }
 }

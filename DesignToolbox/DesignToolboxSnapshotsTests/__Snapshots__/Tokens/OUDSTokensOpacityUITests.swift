@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -46,33 +45,11 @@ final class OUDSTokensOpacityUITests: XCTestCase {
         testOpacities(for: theme, in: interfaceStyle)
     }
 
-    // MARK: - Inverse Theme Light Mode Opacity Tests
-
-    /// This function tests all opacity tokens in the `InverseTheme` with the `light` color scheme.
-    /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
-    @MainActor func testAllOpacitiesInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testOpacities(for: theme, in: interfaceStyle)
-    }
-
-    // MARK: - Inverse Theme Dark Mode Opacity Tests
-
-    /// This function tests all opacity tokens in the `InverseTheme` with the `dark` color scheme.
-    /// It iterates through all `NamedOpacity` cases, rendering each illustration in a `UIHostingController`
-    /// and captures a snapshot. The snapshot is saved with a name indicating the elevation, theme, and color scheme.
-    @MainActor func testAllOpacitiesInverseThemeDark() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testOpacities(for: theme, in: interfaceStyle)
-    }
-
     // MARK: Private test functions for all properties of opacity token
 
     /// Tests all opacity properties by capturing their snapshots.
     /// - Parameters:
-    ///   - theme: Theme used for rendering tokens (e.g., OrangeTheme or InverseTheme).
+    ///   - theme: Theme used for rendering tokens (e.g., `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
     @MainActor private func testOpacities(for theme: OUDSTheme, in interfaceStyle: UIUserInterfaceStyle) {
 

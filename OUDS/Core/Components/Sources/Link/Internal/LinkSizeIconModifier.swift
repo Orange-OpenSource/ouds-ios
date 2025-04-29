@@ -33,7 +33,7 @@ struct LinkSizeIconModifier: ViewModifier {
         switch size {
         case .small:
             theme.link.linkSizeIconSmall
-        case .medium:
+        case .`default`:
             theme.link.linkSizeIconMedium
         }
     }
@@ -42,7 +42,7 @@ struct LinkSizeIconModifier: ViewModifier {
         switch size {
         case .small:
             theme.link.linkSizeIconSmall
-        case .medium:
+        case .`default`:
             theme.link.linkSizeIconMedium
         }
     }

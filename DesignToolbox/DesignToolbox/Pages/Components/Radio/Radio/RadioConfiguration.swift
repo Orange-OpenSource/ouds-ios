@@ -54,7 +54,7 @@ final class RadioConfigurationModel: ComponentConfiguration {
     }
 
     private var disableCode: String {
-        ".disable(\(enabled ? "false" : "true"))"
+        ".disabled(\(enabled ? "false" : "true"))"
     }
 
     private var isErrorPattern: String {
@@ -72,7 +72,7 @@ struct RadioConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_components_radio_selection_label", isOn: $model.selection)
+            Toggle("app_components_radioButton_selection_label", isOn: $model.selection)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isError)
@@ -82,7 +82,7 @@ struct RadioConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError)
 
-            Toggle("app_components_common_onError_label", isOn: $model.isError)
+            Toggle("app_components_common_error_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled)

@@ -55,7 +55,7 @@ final class CheckboxIndeterminateConfigurationModel: ComponentConfiguration {
     }
 
     private var disableCode: String {
-        ".disable(\(enabled ? "false" : "true"))"
+        ".disabled(\(enabled ? "false" : "true"))"
     }
 
     private var isErrorPattern: String {
@@ -82,12 +82,14 @@ struct CheckboxIndeterminateConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError)
 
-            Toggle("app_components_common_onError_label", isOn: $model.isError)
+            Toggle("app_components_common_error_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled)
 
-            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
+            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label",
+                                      selection: $model.indicatorState,
+                                      style: .segmented) {
                 ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
                     Text(LocalizedStringKey(state.description)).tag(state)
                 }

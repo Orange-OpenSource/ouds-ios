@@ -2,24 +2,10 @@
 
 Design tokens represent the small, repeated design decisions that make up a design system's visual style. Tokens wrap hard-coded static values, such as hexadecimal codes for color, with self-explanatory names.
 
-About responsabilities:
-```mermaid
-flowchart TD
-    A(Raw token) --> |Contains primitive type SwiftUI value| B(Semantic token)
-    B --> |Brings higher logic and functional meanings|C(Component token)
-    C --> |Helps to make match between View and semantics|D(Component)
+<!-- NOTE: Do not forget to update tokens version -->
 ```
-
-Example:
-```mermaid
-flowchart TD
-    A(colorFunctionalDodgerBlue500) --> |#26B2FF| B(sysColorBrandInformationDefault)
-    B --> C(.informationIconbackgroundColor)
-    C --> D(InformationModalView)
+🧱 Tokens version: 0.11.0
 ```
-
-*You can have the graphical rendering of this _Mermaid_ charts in the [README markdown](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/OUDS/README.md).*
-*Frustrated? Boost [that issue](https://github.com/swiftlang/swift-docc-render/issues/413)!*
 
 ## Component tokens
 
@@ -30,6 +16,8 @@ They can be seen as a kind of bridge between components and in the end primitive
 
 Components tokens are defined and gathered inside _Swift protocol_ so as to be exposed then through implementation of `OUDSTheme` thanks to dedicated tokens providers. Because we choose to split responsabilities and objects into their own modules, we faced troubles to make possible for children themes or providers to override properties declared in _protocols_ and defined in _extensions_.
 That is the reason why tokens are exposed as `@objc open` to be available and overridable anywhere. 
+
+Below is an example about how the component tokens are declared, defined and provided.
 
 ```swift
 // Declare some component tokens for buttons with properties they must apply
@@ -69,7 +57,7 @@ extension OrangeThemeButtonComponentTokensProvider: ButtonComponentTokens {
 These _tokens_ ([OUDSTokensSemantic](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/)) can be used mainly for _component tokens_ to apply some style and configuration values.
 They can be seen as an high level of usage with functional meanings.
 
-A semantic token points to a raw token, and is used by components. 
+A semantic token points to a raw token or another semantic token, and is used by components. 
 A semantic token brings meanings, higher level notions. For example, a raw token can be a "red color", and a semantic token pointing to it can be a "danger information color". 
 Semantic tokens are used by components tokens and shared definition of themes. They are splitted in kind of families, i.e. borders, colors, spacings, elevations, sizings, opacities, grids and fonts. For some of theses tokens, like for borders, subfamilies can be defined likes width, radius and style. 
 Finally, any of these semantic tokens is associated to a raw value which will be - in the end - applied to *SwiftUI* views inside components. *Type aliases* will help to make a simple match between any semantic tokens and raw tokens. 
@@ -80,7 +68,7 @@ That is the reason why tokens are exposed as `@objc open` to be available and ov
 
 To keep the same semantics as the ones used in our specifications, _type aliases_ are used to as to make the links to _primitive types_ and our logic of _tokens_. These *type aliases* are available for those who want to make their own theme. It's only syntaxic sugar to bring _design words_ in our product.
 
-Example with [OUDSTokensComponent/ColorSemanticTokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens):
+Below is an example about how the component tokens are declared, defined and provided (with [OUDSTokensComponent/ColorSemanticTokens](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/colorsemantictokens)).
 
 ```swift
 // Declare the semantic tokens
@@ -113,11 +101,11 @@ extension OrangeThemeColorSemanticTokensProvider: ColorSemanticTokens {
 
 ### Important notice
 
-You may see the source code can be more simple, or the source code does not follow the Swift guidelines, or plenty of warnings of *SwiftLint* are disabled, or things are dirty.
+You may see the source code can be more simple, or the source code does not follow the Swift guidelines, or plenty of warnings of *SwiftLint* are disabled.
 
 In fact, we rely to much on *Figma* and how the design system is implemented.
 There are thousands of tokens, and we do not know if they will be used, how and by whom. In addition, the logic behind these tokens, their nature and names, is very tight to the web domain because the design team behind is more used to web environment than mobile ones like Android and iOS. Some tokens like composite tokens are defined in *Figma* but *Figma* is not able to manage them, it is tinkering, and the outputed JSON cannot manage that too.
-In addition, *Figma* exposes the tokens in JSON, which is then parsed with our own fork and implementation of _style dictionary_ tool which struggles to output the JSON to web, Kotlin and Swift assets.
+In addition, *Figma* exposes the tokens in JSON, which is then parsed with our own fork and implementation of _style dictionary_ tool which struggles to output the JSON to web, Kotlin, Flutter and Swift assets.
 
 That is the reason why:
 - some *SwiftLint* warnings on tokens are disabled: not possible to have doc of public tokens, too long names, too long lines, too long body, too long identifiers
@@ -176,14 +164,4 @@ enum OrangeBrandColorRawTokens {
 ## Add, edit or remove tokens
 
 If you need to add, edit or remove tokens, you will have to follow some simple steps.
-You may need to [create an issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml) or [a pull request](https://github.com/Orange-OpenSource/ouds-ios/pulls) to submit the evolutions you want.
-
-Do not forget to add or update unit tests in order to make assertions on some rules and properties of raw tokens, and the capability of semantic tokens overridings.
-
-### For raw tokens
-
-You can refer to the *OUDSTokensRaw* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokensraw/). [The wiki provides details](https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens) also.
-
-### For semantic tokens
-
-You can refer to the *OUDSTokensSemantic* documentation or [get it online](https://ios.unified-design-system.orange.com/documentation/oudstokenssemantic/). [The wiki provides details](https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens) also.
+You may need to [create an issue](https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=token_update.yml) or [a pull request](https://github.com/Orange-OpenSource/ouds-ios/pulls) to submit the evolutions you want. [The wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/20-%E2%80%90-How-to-update-tokens) can be also helpful.

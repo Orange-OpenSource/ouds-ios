@@ -14,7 +14,7 @@
 import Foundation
 import os
 
-/// To keep code smaller :-p
+/// To keep code smaller
 public typealias OL = OUDSLogger
 
 /// The `os.Logger` wrapper used in the *OUDS iOS* library so as to logs things in standard output or elsewhere.

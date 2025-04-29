@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -57,52 +56,6 @@ final class OUDSTokensColorUITests: XCTestCase {
         let interfaceStyle = UIUserInterfaceStyle.dark
 
         // Test all color sections individually for dark mode
-        testActionColors(theme: theme, interfaceStyle: interfaceStyle)
-        testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
-        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
-        testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        testChartColors(theme: theme, interfaceStyle: interfaceStyle)
-        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
-        testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
-        testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
-        testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle)
-        testSurfaceColors(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    // MARK: - Inverse Theme Light Mode Color Tests
-
-    /// This function tests all color tokens in the `InverseTheme` with the `light` color schemes.
-    /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
-    /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
-    @MainActor func testAllColorsInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-
-        // Test all color sections individually for light mode
-        testActionColors(theme: theme, interfaceStyle: interfaceStyle)
-        testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
-        testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)
-        testBorderColors(theme: theme, interfaceStyle: interfaceStyle)
-        testChartColors(theme: theme, interfaceStyle: interfaceStyle)
-        testContentColors(theme: theme, interfaceStyle: interfaceStyle)
-        testDecorativeColors(theme: theme, interfaceStyle: interfaceStyle)
-        testOpacityColors(theme: theme, interfaceStyle: interfaceStyle)
-        testOverlayColors(theme: theme, interfaceStyle: interfaceStyle)
-        testRepositoryColors(theme: theme, interfaceStyle: interfaceStyle)
-        testSurfaceColors(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    // MARK: - Inverse Theme Dark Mode Color Tests
-
-    /// This function tests all color tokens in the `InverseTheme` with the `dark` color schemes.
-    /// It iterates through all sections of `NamedColor`, rendering each illustration in a `UIHostingController`,
-    /// and captures a snapshot for each color. The snapshots are saved with names indicating the color, theme, and color scheme.
-    @MainActor func testAllColorsInverseThemeDark() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-
-        // Test all color sections individually for dark interfaceStyle
         testActionColors(theme: theme, interfaceStyle: interfaceStyle)
         testAlwaysColors(theme: theme, interfaceStyle: interfaceStyle)
         testBackgroundColors(theme: theme, interfaceStyle: interfaceStyle)

@@ -60,7 +60,7 @@ final class ButtonConfigurationModel: ComponentConfiguration {
 
     private var disableCode: String {
         if case .`default` = style {
-            ".disable(\(enabled ? "false" : "true"))"
+            ".disabled(\(enabled ? "false" : "true"))"
         } else {
             ""
         }
@@ -75,21 +75,21 @@ final class ButtonConfigurationModel: ComponentConfiguration {
         case .textOnly:
             code =
             """
-          OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased())) {}
+          OUDSButton(text: \"Button\", hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
           \(disableCode)
           \(coloredSurfaceCodeModifier)
           """
         case .iconOnly:
             code =
             """
-          OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
+          OUDSButton(icon: Image(\"ic_heart\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
           \(disableCode)
           \(coloredSurfaceCodeModifier)
           """
         case .iconAndText:
             code =
             """
-          OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: \(style.description.lowercased()) {}
+          OUDSButton(icon: Image(\"ic_heart\", text: \"Button\"), hierarchy: .\(hierarchy.description.lowercased()), style: .\(style.description.lowercased())) {}
           \(disableCode)
           \(coloredSurfaceCodeModifier)
           """
@@ -177,26 +177,34 @@ struct ButtonConfiguration: View {
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label", selection: $model.hierarchy) {
+            DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label",
+                                      selection: $model.hierarchy,
+                                      style: .segmented) {
                 ForEach(OUDSButton.Hierarchy.allCases, id: \.id) { hierarchy in
                     Text(LocalizedStringKey(hierarchy.description)).tag(hierarchy)
                 }
             }
 
-            DesignToolboxChoicePicker(title: "app_components_common_style_label", selection: $model.style) {
+            DesignToolboxChoicePicker(title: "app_components_common_style_label",
+                                      selection: $model.style,
+                                      style: .segmented) {
                 ForEach(OUDSButton.Style.allCases, id: \.id) { style in
                     Text(LocalizedStringKey(style.description)).tag(style)
                 }
             }
 
-            DesignToolboxChoicePicker(title: "app_components_common_layout_label", selection: $model.layout) {
+            DesignToolboxChoicePicker(title: "app_components_common_layout_label",
+                                      selection: $model.layout,
+                                      style: .segmented) {
                 ForEach(ButtonLayout.allCases, id: \.id) { layout in
                     Text(LocalizedStringKey(layout.description)).tag(layout)
                 }
             }
 
             if model.layout == .iconAndText || model.layout == .textOnly {
-                DesignToolboxTextField(text: $model.text, prompt: "app_components_common_userText_prompt")
+                DesignToolboxEditContentDisclosure {
+                    DesignToolboxTextField(text: $model.text)
+                }
             }
         }
     }

@@ -13,26 +13,6 @@
 
 import OUDSComponents
 
-// MARK: - Design Toolbox Layout Orientation
-
-// ControlItem layout orientation is not accessible
-enum DesignToolboxLayoutOrientation: CaseIterable, CustomStringConvertible {
-    case `default`
-    case inverse
-
-    // No l10n, tehchnical names
-    var description: String {
-        switch self {
-        case .default:
-            "Left action"
-        case .inverse:
-            "Right action"
-        }
-    }
-
-    var id: String { description }
-}
-
 // MARK: - OUDS Checkbox Indicator State extension
 
 extension OUDSCheckboxIndicatorState: @retroactive CaseIterable, @retroactive CustomStringConvertible {

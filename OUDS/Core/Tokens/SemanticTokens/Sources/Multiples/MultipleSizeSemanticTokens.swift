@@ -12,7 +12,7 @@
 //
 
 import Foundation
-import SwiftUICore
+import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of ``SizeSemanticToken`` depending to viewports / size classes.
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.

@@ -5,6 +5,7 @@
 - [Documentation](#documentation)
 - [Run tests](#run-tests)
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
+  * [Snapshots tests in demo app](#snapshots-tests-in-demo-app)
   * [UI tests in demo app](#ui-tests-in-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
@@ -47,11 +48,11 @@ brew update
 # For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.2)
 brew install peripheryapp/periphery/periphery
 
-# For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.18.1)
+# For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.24.3)
 brew install gitleaks
 # or `brew reinstall gitleaks` to get updates if old version installed
 
-# For SwiftLint (at least 0.57.0)
+# For SwiftLint (at least 0.59.1)
 brew install swiftlint
 # or `brew reinstall swiftlint` to get updates if old version installed
 
@@ -102,19 +103,18 @@ To build the demo application follow those steps:
 ## Documentation
 
 The documentation is based on the Swift documentation with [DocC](https://www.swift.org/documentation/docc/).
-We use Xcode to build the documentation then export each DocC catalog as DocC archive and, finaly, merge the HTML documentations for the online version.
+Documentation catalogs / archives can be generated through Xcode with _Product > Build Documentation_.
 
-The documentation can be built from Xcode with _Product > Build Documentation_.
-
-The `uploadWebDoc.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
+The `generateWebDocumentation.sh` script helps to build the HTML version of documentation and compress it in ZIP file, and also can update
 the online version based on [_GitHub Pages_](https://pages.github.com/), this version is hosted in the [*gh-pages* GitHub branch](https://github.com/Orange-OpenSource/ouds-ios/tree/gh-pages).
 
 ## Run tests 
 
 ### Unit tests for OUDS Swift package
 
-To run these unit tests follow some steps:
+The unit tests are here to ensure there are no regressions in core features, tokens management, etc.
 
+To run these unit tests follow some steps:
 1. `cd DesignToolbox`
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
@@ -132,10 +132,11 @@ Then, we want to know when tokens have been removed so as to warn our users and 
 
 Finally, we ensure our themes can override any semantic tokens. Themes are in fact a set of values for the whole universe of semantic tokens, and if a theme cannot override a semantic token, there could be an issue. Unit tests also help us to find if some tokens have been removed before releasing the library.
 
-### UI tests in demo app
+### Snapshots tests in demo app
 
-To run these UI tests follow some steps:
+The snapshots tests are made to test the rendering of the components and tokens, i.e. their look and feel.
 
+To run these snapshots tests follow some steps:
 1. `cd DesignToolbox`
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
@@ -157,7 +158,7 @@ The device under tests is a **simulator of iPhone 16 Pro (18.0), in portrait mod
 #### How to use to use swift-snapshot-testing library
 
 1. Locate where are the reference images:
-    - In the Package directory, you will find the reference screenshots for the Orange and Inverse themes (Light/Dark), which will serve as comparison baselines.
+    - In the Package directory, you will find the reference screenshots for the Orange theme (Light/Dark), which will serve as comparison baselines.
     ```text
     OUDS -> DesignToolbox -> DesignToolboxSnapshotsTests -> __Snapshots__
     ```
@@ -209,6 +210,17 @@ The snapshot tool fetched the reference image to compare it against the current 
 
    <img width="1364" alt="OpacityFailureImage" src="https://github.com/user-attachments/assets/03cfe17f-3752-4aba-a482-f89d3b89f53d">
 
+### UI tests in demo app
+
+The project contains some UI tests made to test the behaviour of components.
+
+To run these UI tests follow some steps:
+1. `cd DesignToolbox`
+2. `bundle exec pod install`
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolboxUITests* scheme
+5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
+6. Run tests (Product -> Test)
 
 ## Build phases
 
@@ -232,6 +244,8 @@ We choose to use Xcode automatic signing for debug builds of the app so as to ma
 Note the bundle identifier here for local builds is **com.orange.ouds.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.ouds.demoapp** identifiers.
 
 However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.ouds.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners and must not be available outside.
+
+You can find more details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/53-%E2%80%90-About-Apple-magic).
 
 ## Update dependencies with Renovate
 

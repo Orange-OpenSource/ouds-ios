@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "il_component_checkbox.svg",
+      "filename" : "il_component_checkbox.png",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "il_component_checkbox_dark.svg",
+      "filename" : "il_component_checkbox_dark.png",
       "idiom" : "universal"
     }
   ],

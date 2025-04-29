@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSComponents
-import OUDSThemesInverse
 import OUDSThemesOrange
 import OUDSTokensSemantic
 import SnapshotTesting
@@ -38,22 +37,6 @@ final class OUDSButtonUITests: XCTestCase {
     /// Tests all buttons configuration in the `OrangeTheme` with the `dark` color schemes.
     @MainActor func testAllButtonsOrangeThemeDark() {
         let theme = OrangeTheme()
-        let interfaceStyle = UIUserInterfaceStyle.dark
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all buttons configuration in the `InverseTheme` with the `light` color schemes.
-    @MainActor func testAllButtonsInverseThemeLight() {
-        let theme = InverseTheme()
-        let interfaceStyle = UIUserInterfaceStyle.light
-        testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
-        testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
-    }
-
-    /// Tests all buttons configuration in the `InverseTheme` with the `dark` color schemes.
-    @MainActor func testAllButtonsInverseThemeDark() {
-        let theme = InverseTheme()
         let interfaceStyle = UIUserInterfaceStyle.dark
         testAllButtons(theme: theme, interfaceStyle: interfaceStyle)
         testAllButtonsOnColoredSurface(theme: theme, interfaceStyle: interfaceStyle)
