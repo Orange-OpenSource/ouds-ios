@@ -5,6 +5,7 @@
 - [Documentation](#documentation)
 - [Run tests](#run-tests)
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
+  * [Snapshots tests in demo app](#snapshots-tests-in-demo-app)
   * [UI tests in demo app](#ui-tests-in-demo-app)
 - [Build phases](#build-phases)
 - [Targets](#targets)
@@ -111,8 +112,9 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 
 ### Unit tests for OUDS Swift package
 
-To run these unit tests follow some steps:
+The unit tests are here to ensure there are no regressions in core features, tokens management, etc.
 
+To run these unit tests follow some steps:
 1. `cd DesignToolbox`
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
@@ -130,10 +132,11 @@ Then, we want to know when tokens have been removed so as to warn our users and 
 
 Finally, we ensure our themes can override any semantic tokens. Themes are in fact a set of values for the whole universe of semantic tokens, and if a theme cannot override a semantic token, there could be an issue. Unit tests also help us to find if some tokens have been removed before releasing the library.
 
-### UI tests in demo app
+### Snapshots tests in demo app
 
-To run these UI tests follow some steps:
+The snapshots tests are made to test the rendering of the components and tokens, i.e. their look and feel.
 
+To run these snapshots tests follow some steps:
 1. `cd DesignToolbox`
 2. `bundle exec pod install`
 3. Open *DesignToolbox.xcworkspace*
@@ -207,6 +210,17 @@ The snapshot tool fetched the reference image to compare it against the current 
 
    <img width="1364" alt="OpacityFailureImage" src="https://github.com/user-attachments/assets/03cfe17f-3752-4aba-a482-f89d3b89f53d">
 
+### UI tests in demo app
+
+The project contains some UI tests made to test the behaviour of components.
+
+To run these UI tests follow some steps:
+1. `cd DesignToolbox`
+2. `bundle exec pod install`
+3. Open *DesignToolbox.xcworkspace*
+4. Select *DesignToolboxUITests* scheme
+5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
+6. Run tests (Product -> Test)
 
 ## Build phases
 
