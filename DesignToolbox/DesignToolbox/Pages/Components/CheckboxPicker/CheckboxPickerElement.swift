@@ -16,26 +16,18 @@ import OUDSComponents
 import OUDSThemesOrange
 import SwiftUI
 
-struct CheckboxElements: DesignToolboxElement {
+struct CheckboxPickerElement: DesignToolboxElement {
     let name: String
     let image: Image
     let pageDescription: AnyView
 
     init() {
-        let variants: [DesignToolboxElement] = [
-            CheckboxElement(),
-            CheckboxItemElement(),
-            CheckboxIndeterminateElement(),
-            CheckboxItemIndeterminateElement(),
-            CheckboxPickerElement(),
-        ]
-
-        name = "app_components_checkbox_label".localized()
+        name = "app_components_checkboxPicker_label".localized()
         image = Image(decorative: "il_component_checkbox").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: Image(decorative: "il_component_checkbox").renderingMode(.original),
-            description: "app_components_checkbox_description_text",
-            illustration: AnyView(DesignToolboxVariantElement(elements: variants))))
+            description: "app_components_checkboxPicker_description_text",
+            illustration: AnyView(CheckboxPickerPage())))
     }
 }

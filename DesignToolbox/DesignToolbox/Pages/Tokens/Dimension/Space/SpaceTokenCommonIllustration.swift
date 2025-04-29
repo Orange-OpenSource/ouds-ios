@@ -85,7 +85,6 @@ struct SpaceTokenVariant<TokenIllustration>: View where TokenIllustration: View 
 struct SpaceCommonIllustration: View {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     enum Padding {
         case top(SpaceIllustrationIcon.Asset?)

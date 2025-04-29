@@ -15,14 +15,14 @@ import OUDS
 import OUDSComponents
 import SwiftUI
 
-// MARK: - Radio Picker Page
+// MARK: - Checkbox Picker Page
 
-struct RadioPickerPage: View {
+struct CheckboxPickerPage: View {
 
-    @StateObject private var configuration: RadioPickerConfigurationModel
+    @StateObject private var configuration: CheckboxPickerConfigurationModel
 
     init() {
-        _configuration = StateObject(wrappedValue: RadioPickerConfigurationModel())
+        _configuration = StateObject(wrappedValue: CheckboxPickerConfigurationModel())
     }
 
     var body: some View {
@@ -35,37 +35,36 @@ struct RadioPickerPage: View {
 
     @ViewBuilder
     private func componentView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioPickerConfigurationModel {
-            RadioPickerIllustration(model: model)
+        if let model = configuration as? CheckboxPickerConfigurationModel {
+            CheckboxPickerIllustration(model: model)
         }
     }
 
     @ViewBuilder
     private func configurationView(with configuration: ComponentConfiguration) -> some View {
-        if let model = configuration as? RadioPickerConfigurationModel {
-            RadioPickerConfiguration(model: model)
+        if let model = configuration as? CheckboxPickerConfigurationModel {
+            CheckboxPickerConfiguration(model: model)
         }
     }
 }
 
-// MARK: - Radio Picker Illustration
+// MARK: - Checkbox Picker Illustration
 
-private struct RadioPickerIllustration: View {
+private struct CheckboxPickerIllustration: View {
 
-    @State private var selection: String = "Choice_1" // cf model.populate()
-    @ObservedObject var model: RadioPickerConfigurationModel
+    @State private var selections: [String] = ["Choice_1"] // cf model.populate()
+    @ObservedObject var model: CheckboxPickerConfigurationModel
     @Environment(\.theme) private var theme
 
     var body: some View {
         VStack(alignment: .center) {
-            OUDSRadioPicker(selection: $selection,
-                            radios: model.populate(),
-                            placement: model.pickerPlacement,
-                            isOutlined: model.isOutlined,
-                            isReversed: model.isReversed,
-                            isError: model.isError,
-                            isReadOnly: model.isReadOnly,
-                            hasDivider: model.hasDivider)
+            OUDSCheckboxPicker(selections: $selections,
+                               checkboxes: model.populate(),
+                               placement: model.pickerPlacement,
+                               isReversed: model.isReversed,
+                               isError: model.isError,
+                               isReadOnly: model.isReadOnly,
+                               hasDivider: model.hasDivider)
             .padding([.trailing, .leading], theme.spaces.spacePaddingInlineShort )
             .disabled(!model.isEnabled)
         }

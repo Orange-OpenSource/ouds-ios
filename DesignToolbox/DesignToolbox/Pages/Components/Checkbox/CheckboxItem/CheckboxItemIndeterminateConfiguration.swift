@@ -137,7 +137,9 @@ struct CheckboxItemIndeterminateConfiguration: View {
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
 
-            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label", selection: $model.indicatorState) {
+            DesignToolboxChoicePicker(title: "app_components_checkbox_selection_label",
+                                      selection: $model.indicatorState,
+                                      style: .segmented) {
                 ForEach(OUDSCheckboxIndicatorState.allCases, id: \.id) { state in
                     Text(LocalizedStringKey(state.description)).tag(state)
                 }

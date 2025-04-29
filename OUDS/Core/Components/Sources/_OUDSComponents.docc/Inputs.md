@@ -50,6 +50,53 @@ It can be be sued for two-states or three-states management.
                      hasDivider: true)
 ```
 
+#### Checkbox picker
+
+Checkboxes can be embeded in a checkbox picker so as to let the users to select one or more items within several.
+```swift
+     // Define the elements to display in checkboxes using OUDSCheckboxPickerData.
+     // This object has the same properties as the OUDSCheckboxItem,
+     // and some of them are optional with default values set
+     var someDataToPopulate: [OUDSCheckboxPickerData<String>] {
+         [
+         OUDSCheckboxPickerData<String>(tag: "Choice_1",
+                                        label: "Virgin Holy Lava",
+                                        additionalLabel: "Very spicy",
+                                        helper: "No alcohol, only tasty flavors",
+                                        icon: Image(systemName: "flame")),
+
+         OUDSCheckboxPickerData<String>(tag: "Choice_2",
+                                       label: "IPA beer",
+                                        helper: "From Brewdog company",
+                                        icon: Image(systemName: "dog.fill")),
+
+         OUDSCheckboxPickerData<String>(tag: "Choice_3",
+                                        label: "Mineral water",
+                                        icon: Image(systemName: "waterbottle.fill")),
+         ]
+     }
+
+     // Prepare the selection, with a value previously selected
+     // Use the data and the binding for the picker.
+     @State var selections: [String] = ["Choice_1"] // or empty if nothing selected
+     // Here the picker is vertical by default
+     OUDSCheckboxPicker(selections: $selections, checkboxes: someDataToPopulate)
+
+     // The picker can be vertical and have a root item with a label and a counter
+     OUDSCheckboxPicker(selections: $selections,
+                        placement: .verticalRooted(label, .textAndCount))
+
+     // The picker can apply some settings to all its radio buttons.
+     // It can be also horizontal with a scroll indicator.
+     // Here all the the checkboxes are in read only mode and use reversed layout.
+     // Here the picker is horizontal and shows the scroll indicator
+     OUDSCheckboxPicker(selections: $selections,
+                        checkboxes: someDataToPopulate)
+                        isReversed: true,
+                        isReadOnly: true,
+                        placement: .horizontal(true))
+```
+
 ### Radios
 
 #### Radio (only)
@@ -87,7 +134,7 @@ The indicator can be leading or trailing.
 
 #### Radio picker
 
-Radio items can be embeded in a radio picker so as to let the users to select only one item without several.
+Radio items can be embeded in a radio picker so as to let the users to select only one item within several.
 
 ```swift
     // Define the elements to display in radio buttons using OUDSRadioPickerData.

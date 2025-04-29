@@ -6,22 +6,6 @@
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "07FDCD902C296A500009AA13"
-               BuildableName = "Design System Toolbox.app"
-               BlueprintName = "DesignToolbox"
-               ReferencedContainer = "container:DesignToolbox.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -30,7 +14,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:../OUDS/OUDS Library.xctestplan"
+            reference = "container:DesignToolboxUITests.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
@@ -40,9 +24,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "51EB73832DBFDC5500F37FEC"
-               BuildableName = "DesignToolboxUITests.xctest"
-               BlueprintName = "DesignToolboxUITests"
+               BlueprintIdentifier = "0740A98E2C9873500069D24A"
+               BuildableName = "DesignToolboxSnapshotsTests.xctest"
+               BlueprintName = "DesignToolboxSnapshotsTests"
                ReferencedContainer = "container:DesignToolbox.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,16 +42,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07FDCD902C296A500009AA13"
-            BuildableName = "Design System Toolbox.app"
-            BlueprintName = "DesignToolbox"
-            ReferencedContainer = "container:DesignToolbox.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,16 +49,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "07FDCD902C296A500009AA13"
-            BuildableName = "Design System Toolbox.app"
-            BlueprintName = "DesignToolbox"
-            ReferencedContainer = "container:DesignToolbox.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
