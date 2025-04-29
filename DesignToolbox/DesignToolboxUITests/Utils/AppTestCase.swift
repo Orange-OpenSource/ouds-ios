@@ -13,6 +13,7 @@
 
 import XCTest
 
+// swiftlint:disable nslocalizedstring_key
 // swiftlint:disable required_deinit
 // swiftlint:disable empty_xctest_method
 
@@ -118,5 +119,18 @@ open class AppTestCase: XCTestCase {
     }
 }
 
+// MARK: - Extension of String
+
+extension String {
+
+    /// Returns the localized result string using `self` as key.
+    /// - Parameter bundle: The `Bundle` from which the wording must be loaded
+    /// - Returns String: The conversion of `self` as `NSLocalizedString`
+    func localized(bundle: Bundle) -> String {
+        NSLocalizedString(self, bundle: bundle, comment: "")
+    }
+}
+
+// swiftlint:enable nslocalizedstring_key
 // swiftlint:enable required_deinit
 // swiftlint:enable empty_xctest_method

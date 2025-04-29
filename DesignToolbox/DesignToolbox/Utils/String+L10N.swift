@@ -54,18 +54,10 @@ extension String {
     // MARK: - Localized
 
     // swiftlint:disable nslocalizedstring_key
-
     /// Returns the localized result string using `self` as key.
     /// - Returns String: The conversion of `self` as `NSLocalizedString`
     func localized() -> String {
         NSLocalizedString(self, bundle: Bundle.main, comment: "")
-    }
-
-    /// Returns the localized result string using `self` as key.
-    /// - Parameter bundle: The `Bundle` from which the wording must be loaded
-    /// - Returns String: The conversion of `self` as `NSLocalizedString`
-    func localized(bundle: Bundle) -> String {
-        NSLocalizedString(self, bundle: bundle, comment: "")
     }
     // swiftlint:enable nslocalizedstring_key
 }
