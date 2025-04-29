@@ -37,8 +37,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInline(theme: theme, interfaceStyle: interfaceStyle)
-        testGapStack(theme: theme, interfaceStyle: interfaceStyle)
+        testColumnGap(theme: theme, interfaceStyle: interfaceStyle)
+        testRowGap(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Orange Theme Dark Mode Space Tests
@@ -55,8 +55,8 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         testPaddingInline(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingInset(theme: theme, interfaceStyle: interfaceStyle)
         testPaddingStack(theme: theme, interfaceStyle: interfaceStyle)
-        testGapInline(theme: theme, interfaceStyle: interfaceStyle)
-        testGapStack(theme: theme, interfaceStyle: interfaceStyle)
+        testColumnGap(theme: theme, interfaceStyle: interfaceStyle)
+        testRowGap(theme: theme, interfaceStyle: interfaceStyle)
     }
 
     // MARK: - Helper Functions
@@ -198,18 +198,18 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         }
     }
 
-    /// Tests all gap inline `GapInline` spaces by capturing their snapshots.
+    /// Tests all Column Gap `ColumnGap` spaces by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testGapInline(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor private func testColumnGap(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
-        // Iterate through all background color cases defined in NamedSpace.GapInline
-        for namedToken in NamedSpace.GapInline.allCases {
+        // Iterate through all background color cases defined in NamedSpace.ColumnGap
+        for namedToken in NamedSpace.ColumnGap.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    GapInlineProperty.Illustration(token: token)
+                    ColumnGapProperty.Illustration(token: token)
                 }
                 .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }
@@ -226,18 +226,18 @@ final class OUDSTokensSpaceUITests: XCTestCase {
         }
     }
 
-    /// Tests all `GapStack` spaces by capturing their snapshots.
+    /// Tests all `RowGap` spaces by capturing their snapshots.
     /// - Parameters:
     ///   - theme: Theme used for rendering tokens (e.g. `OrangeTheme`).
     ///   - interfaceStyle: The user interface style (light or dark) for which to test the colors.
-    @MainActor private func testGapStack(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
+    @MainActor private func testRowGap(theme: OUDSTheme, interfaceStyle: UIUserInterfaceStyle) {
 
-        // Iterate through all background color cases defined in NamedSpace.GapInline
-        for namedToken in NamedSpace.GapStack.allCases {
+        // Iterate through all background color cases defined in NamedSpace.ColumnGap
+        for namedToken in NamedSpace.RowGap.allCases {
             // Generate the illustration for the specified space token using the spacePage instance
             let illustration = OUDSThemeableView(theme: theme) {
                 SpaceTokenVariant(namedSpaceToken: namedToken) { token in
-                    GapStackProperty.Illustration(token: token)
+                    RowGapProperty.Illustration(token: token)
                 }
                 .background(theme.colors.colorBgPrimary.color(for: interfaceStyle == .light ? .light : .dark))
             }

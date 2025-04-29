@@ -196,7 +196,9 @@ struct ButtonConfiguration: View {
             }
 
             if model.layout == .iconAndText || model.layout == .textOnly {
-                DesignToolboxTextField(text: $model.text, prompt: "app_components_common_userText_prompt")
+                DesignToolboxEditContentDisclosure {
+                    DesignToolboxTextField(text: $model.text)
+                }
             }
         }
     }

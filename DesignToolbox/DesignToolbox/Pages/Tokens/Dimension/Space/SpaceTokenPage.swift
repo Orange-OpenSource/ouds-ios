@@ -45,11 +45,11 @@ struct SpaceTokenPage: View {
                 header("app_tokens_dimension_space_paddingStack_label")
             }
             // Gap Space Tokens
-            Section { GapInlineProperty() } header: {
-                header("app_tokens_dimension_space_gapInline_label")
+            Section { ColumnGapProperty() } header: {
+                header("app_tokens_dimension_space_columnGap_label")
             }
-            Section { GapStackProperty() } header: {
-                header("app_tokens_dimension_space_gapStack_label")
+            Section { RowGapProperty() } header: {
+                header("app_tokens_dimension_space_rowGap_label")
             }
         }
         .padding(.horizontal, theme.spaces.spaceFixedMedium)

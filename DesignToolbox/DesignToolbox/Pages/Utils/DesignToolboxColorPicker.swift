@@ -23,13 +23,13 @@ struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: Vie
     @Environment(\.theme) private var theme
 
     var body: some View {
-        DesignToolboxDisclosureGroup(isExpanded: $isExpanded, accessibilityLabel: "app_components_coloredSurface_color_label_a11y") {
+        DesignToolboxDisclosureGroup(isExpanded: $isExpanded, accessibilityLabel: "app_components_common_color_label_a11y") {
             VStack(alignment: .leading) {
                 content()
             }
         } label: {
             VStack(alignment: .leading) {
-                Text("app_components_coloredSurface_color_label")
+                Text("app_components_common_color_label")
                     .typeHeadingMedium(theme)
                     .oudsForegroundColor(theme.colors.colorContentDefault)
 

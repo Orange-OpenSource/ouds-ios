@@ -75,26 +75,18 @@ private struct RadioItemDemo: View {
 
     var body: some View {
         OUDSRadioItem(isOn: $model.selection,
-                      label: model.labelTextContent,
-                      additionalLabel: additionalLabelTextContent,
-                      helper: helperTextContent,
+                      label: model.labelText,
+                      additionalLabel: model.additionalLabelText,
+                      helper: model.helperText,
                       icon: icon,
                       isOutlined: model.outlined,
-                      isReversed: model.layoutOrientation == .reversed,
+                      isReversed: model.isReversed,
                       isError: model.isError,
                       isReadOnly: model.isReadOnly,
                       hasDivider: model.divider)
         .disabled(!model.enabled)
         .padding(.all, theme.spaces.spaceFixedMedium)
         .designToolboxColoredSurface(false)
-    }
-
-    private var helperTextContent: String? {
-        model.helperText ? model.helperTextContent : nil
-    }
-
-    private var additionalLabelTextContent: String? {
-        model.additionalLabelText ? model.additionalLabelTextContent : nil
     }
 
     // Need here that system name, a11y managed in component

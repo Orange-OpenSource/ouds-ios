@@ -19,12 +19,12 @@ struct SwitchItemElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_switch_controlItem_label".localized()
+        name = "app_components_switch_switchItem_label".localized()
         image = Image(decorative: "il_component_switch_controlItem").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,
             image: nil,
-            description: "app_components_switch_controlItem_description_text",
+            description: "app_components_switch_switchItem_description_text",
             illustration: AnyView(SwitchItemPage())))
     }
 }

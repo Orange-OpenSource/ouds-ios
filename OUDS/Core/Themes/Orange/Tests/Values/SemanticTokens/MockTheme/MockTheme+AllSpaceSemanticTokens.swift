@@ -112,7 +112,7 @@ final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokens
     override public var spaceInsetTallest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spaceInsetSpacious: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
-    // MARK: Semantic token - Padding - Gap inline
+    // MARK: Semantic token - Padding - Column Gap
 
     override public var spaceColumnGapNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spaceColumnGapShorter: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
@@ -121,7 +121,7 @@ final class MockThemeSpaceSemanticTokensProvider: OrangeThemeSpaceSemanticTokens
     override public var spaceColumnGapTall: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spaceColumnGapTaller: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
 
-    // MARK: Semantic token - Padding - Gap stack
+    // MARK: Semantic token - Padding - Row Gap
 
     override public var spaceRowGapNone: SpaceSemanticToken { Self.mockThemeSpaceRawToken }
     override public var spaceRowGapShortest: SpaceSemanticToken { Self.mockThemeSpaceRawToken }

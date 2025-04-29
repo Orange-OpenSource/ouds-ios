@@ -16,7 +16,7 @@ import OUDSTokensSemantic
 
 extension NamedSpace {
 
-    enum GapInline: String, CaseIterable, NamedSpaceToken {
+    enum ColumnGap: String, CaseIterable, NamedSpaceToken {
         case spaceColumnGapNone
         case spaceColumnGapShorter
         case spaceColumnGapShort

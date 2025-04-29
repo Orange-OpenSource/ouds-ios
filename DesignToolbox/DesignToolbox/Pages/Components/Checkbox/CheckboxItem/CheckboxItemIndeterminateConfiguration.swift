@@ -32,10 +32,6 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
         didSet { updateCode() }
     }
 
-    @Published var helperText: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var icon: Bool {
         didSet { updateCode() }
     }
@@ -56,15 +52,15 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
         didSet { updateCode() }
     }
 
-    @Published var layoutOrientation: DesignToolboxLayoutOrientation {
+    @Published var isReversed: Bool {
         didSet { updateCode() }
     }
 
-    @Published var labelTextContent: String {
+    @Published var labelText: String {
         didSet { updateCode() }
     }
 
-    @Published var helperTextContent: String {
+    @Published var helperText: String {
         didSet { updateCode() }
     }
 
@@ -75,13 +71,12 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
         isError = false
         isReadOnly = false
         enabled = true
-        helperText = true
         icon = true
         flipIcon = false
-        layoutOrientation = .default
+        isReversed = false
         divider = false
-        labelTextContent = String(localized: "app_components_checkbox_label_text")
-        helperTextContent = String(localized: "app_components_checkbox_helperText_text")
+        labelText = String(localized: "app_components_common_label_label")
+        helperText = String(localized: "app_components_controlItem_helperText_label")
     }
 
     deinit { }
@@ -92,7 +87,7 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
     override func updateCode() {
         code =
           """
-        OUDSCheckboxItemIndeterminate(selection: $selection, label: \"\(labelTextContent)\"\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
+        OUDSCheckboxItemIndeterminate(selection: $selection, label: \"\(labelText)\"\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
         \(disableCode)
         """
     }
@@ -103,7 +98,7 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
     }
 
     private var helperTextPattern: String {
-        helperText ? ", helper: \"\(helperTextContent)\")" : ""
+        helperText.isEmpty ? "" : ", helper: \"\(helperText)\""
     }
 
     private var iconPattern: String {
@@ -115,7 +110,7 @@ final class CheckboxItemIndeterminateConfigurationModel: ComponentConfiguration 
     }
 
     private var isReversedPattern: String {
-        layoutOrientation == .reversed ? ", isReversed: true" : ""
+        ", isReversed: \(isReversed)"
     }
 
     private var isErrorPattern: String {
@@ -148,48 +143,41 @@ struct CheckboxItemIndeterminateConfiguration: View {
                 }
             }
 
+            Toggle("app_components_controlItem_icon_label", isOn: $model.icon)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+
+            Toggle("app_components_controlItem_flipIcon_label", isOn: $model.flipIcon)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.icon)
+
+            Toggle("app_components_controlItem_divider_label", isOn: $model.divider)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+
+            Toggle("app_components_controlItem_reversed_label", isOn: $model.isReversed)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_common_onError_label", isOn: $model.isError)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.enabled || model.isReadOnly)
-
-            Toggle("app_components_common_readOnly_label", isOn: $model.isReadOnly)
+            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isError)
 
-            Toggle("app_components_common_helperText_label", isOn: $model.helperText)
+            Toggle("app_components_common_error_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.enabled || model.isReadOnly)
 
-            Toggle("app_components_common_icon_label", isOn: $model.icon)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            Toggle("app_components_common_divider_label", isOn: $model.divider)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            Toggle("app_components_common_flipIcon_label", isOn: $model.flipIcon)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.layoutOrientation) {
-                ForEach(DesignToolboxLayoutOrientation.allCases, id: \.id) { orientation in
-                    Text(LocalizedStringKey(orientation.description)).tag(orientation)
-                }
-            }
-
-            DisclosureGroup("app_components_common_editContent_label") {
-                DesignToolboxTextField(text: $model.labelTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_labelText_label")
-                if model.helperText {
-                    DesignToolboxTextField(text: $model.helperTextContent, prompt: "app_components_common_userText_prompt", title: "app_components_common_helperText_label")
-                }
+            DesignToolboxEditContentDisclosure {
+                DesignToolboxTextField(text: $model.labelText)
+                DesignToolboxTextField(text: $model.helperText)
             }
         }
     }

@@ -148,21 +148,21 @@ struct RadioPickerConfiguration: View {
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_common_onError_label", isOn: $model.isError)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.isEnabled || model.isReadOnly)
-
-            Toggle("app_components_common_readOnly_label", isOn: $model.isReadOnly)
+            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.isEnabled || model.isError)
 
-            Toggle("app_components_radio_outlined_label", isOn: $model.isOutlined)
+            Toggle("app_components_common_error_label", isOn: $model.isError)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.isEnabled || model.isReadOnly)
+
+            Toggle("app_components_radioButton_radioButtonItem_outlined_label", isOn: $model.isOutlined)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 
-            Toggle("app_components_common_divider_label", isOn: $model.hasDivider)
+            Toggle("app_components_controlItem_divider_label", isOn: $model.hasDivider)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
 

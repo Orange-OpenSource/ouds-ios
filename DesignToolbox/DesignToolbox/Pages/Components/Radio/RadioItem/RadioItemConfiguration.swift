@@ -29,14 +29,6 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var additionalLabelText: Bool {
-        didSet { updateCode() }
-    }
-
-    @Published var helperText: Bool {
-        didSet { updateCode() }
-    }
-
     @Published var icon: Bool {
         didSet { updateCode() }
     }
@@ -61,19 +53,19 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         didSet { updateCode() }
     }
 
-    @Published var layoutOrientation: DesignToolboxLayoutOrientation {
+    @Published var isReversed: Bool {
         didSet { updateCode() }
     }
 
-    @Published var labelTextContent: String {
+    @Published var labelText: String {
         didSet { updateCode() }
     }
 
-    @Published var additionalLabelTextContent: String {
+    @Published var additionalLabelText: String {
         didSet { updateCode() }
     }
 
-    @Published var helperTextContent: String {
+    @Published var helperText: String {
         didSet { updateCode() }
     }
 
@@ -85,15 +77,13 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
         isReadOnly = false
         outlined = false
         enabled = true
-        additionalLabelText = true
-        helperText = true
         icon = true
         flipIcon = false
-        layoutOrientation = .default
+        isReversed = false
         divider = true
-        labelTextContent = String(localized: "app_components_radio_label_text")
-        additionalLabelTextContent = String(localized: "app_components_radio_additionalLabelText_text")
-        helperTextContent = String(localized: "app_components_radio_helperText_text")
+        labelText = String(localized: "app_components_common_label_label")
+        additionalLabelText = String(localized: "app_components_radioButton_radioButtonItem_additionalLabel_label")
+        helperText = String(localized: "app_components_controlItem_helperText_label")
     }
 
     deinit { }
@@ -104,7 +94,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     override func updateCode() {
         code =
           """
-        OUDSRadioItem(isOn: $isOn, label: "\(labelTextContent)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
+        OUDSRadioItem(isOn: $isOn, label: "\(labelText)"\(additionalLabelTextPattern)\(helperTextPattern)\(iconPattern)\(flipIconPattern)\(outlinedPattern)\(isReversedPattern)\(isErrorPattern)\(isReadOnlyPattern)\(dividerPattern))
         \(disableCode)
         """
     }
@@ -115,11 +105,11 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     }
 
     private var additionalLabelTextPattern: String {
-        helperText ? ", additionalLabel: \"\(additionalLabelTextContent)\"" : ""
+        additionalLabelText.isEmpty ? "" : ", additionalLabel: \"\(additionalLabelText)\""
     }
 
     private var helperTextPattern: String {
-        helperText ? ", helper: \"\(helperTextContent)\"" : ""
+        helperText.isEmpty ? "" : ", helper: \"\(helperText)\""
     }
 
     private var iconPattern: String {
@@ -135,7 +125,7 @@ final class RadioItemConfigurationModel: ComponentConfiguration {
     }
 
     private var isReversedPattern: String {
-        layoutOrientation == .reversed ? ", isReversed: true" : ""
+        ", isReversed: \(isReversed)"
     }
 
     private var isErrorPattern: String {
@@ -159,80 +149,54 @@ struct RadioItemConfiguration: View {
 
     @Environment(\.theme) private var theme
 
-    // swiftlint:disable closure_body_length
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_components_radio_selection_label", isOn: $model.selection)
+            Toggle("app_components_radioButton_selection_label", isOn: $model.selection)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
+
+            Toggle("app_components_controlItem_icon_label", isOn: $model.icon)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+
+            Toggle("app_components_controlItem_flipIcon_label", isOn: $model.flipIcon)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.icon)
+
+            Toggle("app_components_radioButton_radioButtonItem_outlined_label", isOn: $model.outlined)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+
+            Toggle("app_components_controlItem_divider_label", isOn: $model.divider)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
+
+            Toggle("app_components_controlItem_reversed_label", isOn: $model.isReversed)
+                .typeHeadingMedium(theme)
+                .oudsForegroundStyle(theme.colors.colorContentDefault)
 
             Toggle("app_common_enabled_label", isOn: $model.enabled)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_common_onError_label", isOn: $model.isError)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.enabled || model.isReadOnly)
-
-            Toggle("app_components_common_readOnly_label", isOn: $model.isReadOnly)
+            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .disabled(!model.enabled || model.isError)
 
-            Toggle("app_components_common_helperText_label", isOn: $model.helperText)
+            Toggle("app_components_common_error_label", isOn: $model.isError)
                 .typeHeadingMedium(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
+                .disabled(!model.enabled || model.isReadOnly)
 
-            Toggle("app_components_radio_additionalLabelText_label", isOn: $model.additionalLabelText)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            Toggle("app_components_common_icon_label", isOn: $model.icon)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            Toggle("app_components_radio_outlined_label", isOn: $model.outlined)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            Toggle("app_components_common_divider_label", isOn: $model.divider)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            Toggle("app_components_common_flipIcon_label", isOn: $model.flipIcon)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-
-            DesignToolboxChoicePicker(title: "app_components_common_orientation_label", selection: $model.layoutOrientation) {
-                ForEach(DesignToolboxLayoutOrientation.allCases, id: \.id) { orientation in
-                    Text(LocalizedStringKey(orientation.description)).tag(orientation)
-                }
-            }
-
-            DisclosureGroup("app_components_common_editContent_label") {
-                DesignToolboxTextField(
-                    text: $model.labelTextContent,
-                    prompt: "app_components_common_userText_prompt",
-                    title: "app_components_common_labelText_label")
-
-                if model.additionalLabelText {
-                    DesignToolboxTextField(
-                        text: $model.additionalLabelTextContent,
-                        prompt: "app_components_common_userText_prompt",
-                        title: "app_components_radio_additionalLabelText_label")
-                }
-
-                if model.helperText {
-                    DesignToolboxTextField(
-                        text: $model.helperTextContent,
-                        prompt: "app_components_common_userText_prompt",
-                        title: "app_components_common_helperText_label")
-                }
+            DesignToolboxEditContentDisclosure {
+                DesignToolboxTextField(text: $model.labelText)
+                DesignToolboxTextField(text: $model.additionalLabelText)
+                DesignToolboxTextField(text: $model.helperText)
             }
         }
-        // swiftlint:enable closure_body_length
     }
 }
