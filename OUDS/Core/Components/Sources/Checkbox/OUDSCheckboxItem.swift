@@ -34,6 +34,12 @@ import SwiftUI
 ///
 /// If you are looking for a checkbox component with three states, use instead ``OUDSCheckboxItemIndeterminate``.
 ///
+/// ## Generic typed
+///
+/// The checkbox can be associated to a specifc type for its *tag*.
+/// Indeed a checkbox alone with this layout is not that much useful, and should be associated to a *tag* 
+/// which will permit a ``OUDSCheckboxPicker`` to provide the selected values for a group of checkboxes.
+///
 /// ## Particular cases
 ///
 /// An ``OUDSCheckboxItem`` can be related to an error situation, for example troubles for a formular.
@@ -105,23 +111,45 @@ import SwiftUI
 ///                      isInversed: layoutDirection == .rightToLeft)
 /// ```
 ///
-/// ## Design documentation
+/// However if the ``OUDSCheckboxItem`` should be used inside a ``OUDSCheckboxPicker`` for example, it must contain a tag and an associated type.
+/// The tag will be the value returned by the picker, and must be an `Hashable`.
 ///
+/// ```swift
+///     OUDSCheckboxItem<String>(isOn: $isOn,
+///                              tag: "Choice_1",
+///                              label: "Virgin Holy Lava",
+///                              helper: "No alcohol, only tasty flavors",
+///                              icon: Image(systemName: "flame")
+/// ```
+///
+/// ## Design documentation
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
 ///
 /// - Since: 0.12.0
-public struct OUDSCheckboxItem: View {
+public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
 
     // MARK: - Properties
 
-    private let layoutData: ControlItemLabel.LayoutData
-
+    // NOTE: Do not forget to keep updated OUDSCheckboxPickerData
     @Binding private var isOn: Bool
+    private let layoutData: ControlItemLabel.LayoutData
+    private let tag: Tag?
+    private let action: (() -> Void)?
+
     @Environment(\.isEnabled) private var isEnabled
 
     // MARK: - Initializers
 
     /// Creates a checkbox with label and optional helper text, icon, divider.
+    /// Supposed to be used outside a ``OUDSCheckboxPicker``.
+    ///
+    /// ```swift
+    ///     OUDSCheckboxItem(isOn: $isOn,
+    ///                      tag: "Choice_1",
+    ///                      label: "Virgin Holy Lava",
+    ///                      helper: "Very spicy",
+    ///                      icon: Image(systemName: "flame")
+    /// ```
     ///
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
@@ -135,6 +163,7 @@ public struct OUDSCheckboxItem: View {
     ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
     public init(isOn: Binding<Bool>,
                 label: String,
                 helper: String? = nil,
@@ -143,7 +172,57 @@ public struct OUDSCheckboxItem: View {
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false) {
+                hasDivider: Bool = false,
+                action: (() -> Void)? = nil) where Tag == Never? {
+        self.init(isOn: isOn,
+                  tag: nil,
+                  label: label,
+                  helper: helper,
+                  icon: icon,
+                  flipIcon: flipIcon,
+                  isReversed: isReversed,
+                  isError: isError,
+                  isReadOnly: isReadOnly,
+                  hasDivider: hasDivider,
+                  action: action)
+    }
+
+    /// Creates a checkbox with label and optional helper text, icon, divider.
+    /// Supposed to be integrated inside a ``OUDSCheckboxPicker``.
+    ///
+    /// ```swift
+    ///     OUDSCheckboxItem<String>(isOn: $isOn,
+    ///                              tag: "Choice_1",
+    ///                              label: "Virgin Holy Lava",
+    ///                              helper: "Very spicy",
+    ///                              icon: Image(systemName: "flame")
+    /// ```
+    ///
+    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
+    ///
+    /// - Parameters:
+    ///   - isOn: A binding to a property that determines wether the indicator is ticked (selected) or not (unselected)
+    ///   - tag: An associated value for this checkbox, returned by the ``OUDSCheckboxPicker`` is selected
+    ///   - label: The main label text of the checkbox.
+    ///   - helper: An additonal helper text, should not be empty
+    ///   - icon: An optional icon
+    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
+    ///   - isReversed: `true` of the checkbox indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isError: `true` if the look and feel of the component must reflect an error state, default set to `false`
+    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
+    ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
+    ///   - action: An additional action to trigger when the checkbox has been pressed
+    public init(isOn: Binding<Bool>,
+                tag: Tag,
+                label: String,
+                helper: String? = nil,
+                icon: Image? = nil,
+                flipIcon: Bool = false,
+                isReversed: Bool = false,
+                isError: Bool = false,
+                isReadOnly: Bool = false,
+                hasDivider: Bool = false,
+                action: (() -> Void)? = nil) {
         if isError && isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDS Checkbox in an error context and in read only mode")
         }
@@ -164,12 +243,14 @@ public struct OUDSCheckboxItem: View {
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             orientation: isReversed ? .reversed : .default)
+        self.tag = tag
+        self.action = action
     }
 
     // MARK: Body
 
     public var body: some View {
-        ControlItem(indicatorType: .checkBox(convertedState), layoutData: layoutData)
+        ControlItem(indicatorType: .checkBox(convertedState), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(a11yLabel(layoutData: layoutData))
             .accessibilityValue(a11yValue())
