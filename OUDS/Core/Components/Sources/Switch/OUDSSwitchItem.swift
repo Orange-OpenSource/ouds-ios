@@ -179,7 +179,7 @@ public struct OUDSSwitchItem: View {
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     private var a11yLabel: String {
-        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_commmon_disabled_a11y".localized() : ""
+        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
         let switchA11yTrait = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
 

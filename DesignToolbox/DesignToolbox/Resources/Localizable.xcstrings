@@ -732,13 +732,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This is a fake label used in the demo app"
+            "value" : "This is a fake label for the design system toolbox app"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ceci est un label bidon pour l’app de démo"
+            "value" : "Ceci est un label bidon pour l’app de démo du design system"
           }
         }
       }
@@ -1976,13 +1976,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "This is a fake label used in the demo app"
+            "value" : "This is a fake label for the design system toolbox app"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ceci est un label bidon pour l’app de démo"
+            "value" : "Ceci est un label bidon pour l’app de démo du design system"
           }
         }
       }
@@ -2223,6 +2223,30 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Un switch permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre. "
+          }
+        }
+      }
+    },
+    "app_components_switch_hint_a11y" : {
+      "comment" : "Component - Switch",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "هذا تلميح مزيف لتطبيق صندوق أدوات نظام التصميم"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This is a fake hint for the design system toolbox app"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ceci est un conseil bidon pour l’app de démo du design system"
           }
         }
       }
