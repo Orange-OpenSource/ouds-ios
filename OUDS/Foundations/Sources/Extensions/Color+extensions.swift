@@ -13,7 +13,10 @@
 
 import SwiftUI
 
+// swiftlint:disable large_tuple
 extension Color {
+
+    // MARK: - Initializer
 
     /// `Color` extension to get a `Color` from its hexadecimal string representation.
     public init?(hexadecimalCode: String) {
@@ -45,4 +48,22 @@ extension Color {
 
         self.init(red: r, green: g, blue: b, opacity: a)
     }
+
+    // MARK: - UIColor
+
+    /// The current color as UIKit colot
+    public var uiColor: UIColor { .init(self) }
+
+    // MARK: - RGBA
+
+    /// Color defined as red, green, blue, alpha tuple
+    public typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+
+    /// The current color but split in RGBA mode
+    public var rgba: RGBA? {
+        var (r, g, b, a): RGBA = (0, 0, 0, 0)
+        let converted = uiColor.getRed(&r, green: &g, blue: &b, alpha: &a)
+        return converted ? (r, g, b, a) : nil
+    }
 }
+// swiftlint:enable large_tuple

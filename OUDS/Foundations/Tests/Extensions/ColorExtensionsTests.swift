@@ -50,20 +50,4 @@ struct ColorExtensionsTests {
          */
     }
 }
-
-// swiftlint:disable large_tuple
-extension Color {
-
-    var uiColor: UIColor { .init(self) }
-
-    typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
-
-    /// SwiftUI does not expose efficiently RGBA balues, and when computed these values are not that pure, thus we need to round to integer.
-    var rgba: RGBA? {
-        var (r, g, b, a): RGBA = (0, 0, 0, 0)
-        return uiColor.getRed(&r, green: &g, blue: &b, alpha: &a) ? ((r * 255).rounded(), (g * 255).rounded(), (b * 255).rounded(), (a * 255).rounded()) : nil
-    }
-}
-// swiftlint:enable large_tuple
-
 // swiftlint:enable force_unwrapping
