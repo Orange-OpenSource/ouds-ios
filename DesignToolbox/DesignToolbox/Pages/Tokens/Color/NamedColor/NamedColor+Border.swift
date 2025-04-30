@@ -20,6 +20,7 @@ extension NamedColor {
         case colorBorderBrandPrimary
         case colorBorderDefault
         case colorBorderEmphasized
+        case colorBorderMuted
         case colorBorderFocus
         case colorBorderFocusInset
         case colorBorderOnBrandPrimary
@@ -32,6 +33,8 @@ extension NamedColor {
                 return theme.colors.colorBorderDefault
             case .colorBorderEmphasized:
                 return theme.colors.colorBorderEmphasized
+            case .colorBorderMuted:
+                return theme.colors.colorBorderMuted
             case .colorBorderFocus:
                 return theme.colors.colorBorderFocus
             case .colorBorderFocusInset:
