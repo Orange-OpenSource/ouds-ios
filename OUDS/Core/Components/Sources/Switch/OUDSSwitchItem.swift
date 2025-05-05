@@ -56,24 +56,24 @@ import SwiftUI
 ///
 ///     // A leading switch with a label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 ///
 ///     // A leading switch with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", isReadOnly: true)
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, isReadOnly: true)
 ///
 ///     // A leading switch with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", helper: "The Beatles")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, helper: "The Beatles")
 ///
 ///     // A leading switch with an additional label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles", helper: "1967")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, additionalLabel: "The Beatles", helper: "1967")
 ///
 ///     // A trailing switch with a label, an additonal label, an helper text and an icon.
 ///     // The inverse layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn,
-///                   label: "Lucy in the Sky with Diamonds",
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
+///                   isOn: $isOn,
 ///                   additionalLabel: "The Beatles",
 ///                   helper: "1967",
 ///                   isReversed: true,
@@ -81,8 +81,8 @@ import SwiftUI
 ///
 ///     // A trailing switch with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn,
-///                   label: "Rescue from this world!",
+///     OUDSSwitchItem("Rescue from this world!",
+///                   isOn: $isOn,
 ///                   helper: "Put your hand in mine",
 ///                   icon: Image(decorative: "ic_heart"),
 ///                   isReversed: true,
@@ -91,13 +91,13 @@ import SwiftUI
 ///
 ///     // A leading switch with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Rescue from this world!")
+///     OUDSSwitchItem("Rescue from this world!", isOn: $isOn)
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related switch as it will crash
 ///     // This is forbidden by design!
-///     OUDSSwitchItem(isOn: $isOn, label: "Kaboom!", isError: true).disabled(true) // fatal error
-///     OUDSSwitchItem(isOn: $isOn, label: "Kaboom!", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isError: true).disabled(true) // fatal error
+///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
