@@ -217,8 +217,8 @@ private struct SwitchTest: View {
             OUDSSwitch(isOn: .constant(indicatorState), accessibilityLabel: "Bazinga!")
                 .disabled(isDisabled)
         case let .default(label, helper, icon, isError, hasDivider, isReadOnly):
-            OUDSSwitchItem(isOn: .constant(indicatorState),
-                           label: label,
+            OUDSSwitchItem(label,
+                           isOn: .constant(indicatorState),
                            helper: helper,
                            icon: icon,
                            isReversed: false,
@@ -227,8 +227,8 @@ private struct SwitchTest: View {
                            hasDivider: hasDivider)
             .disabled(isDisabled)
         case let .inverse(label, helper, icon, isError, hasDivider, isReadOnly):
-            OUDSSwitchItem(isOn: .constant(indicatorState),
-                           label: label,
+            OUDSSwitchItem(label,
+                           isOn: .constant(indicatorState),
                            helper: helper,
                            icon: icon,
                            isReversed: true,
