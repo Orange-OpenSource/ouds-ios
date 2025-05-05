@@ -56,24 +56,24 @@ import SwiftUI
 ///
 ///     // A leading switch with a label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 ///
 ///     // A leading switch with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", isReadOnly: true)
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, isReadOnly: true)
 ///
 ///     // A leading switch with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", helper: "The Beatles")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, helper: "The Beatles")
 ///
 ///     // A leading switch with an additional label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles", helper: "1967")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, additionalLabel: "The Beatles", helper: "1967")
 ///
 ///     // A trailing switch with a label, an additonal label, an helper text and an icon.
 ///     // The inverse layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn,
-///                   label: "Lucy in the Sky with Diamonds",
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
+///                   isOn: $isOn,
 ///                   additionalLabel: "The Beatles",
 ///                   helper: "1967",
 ///                   isReversed: true,
@@ -81,8 +81,8 @@ import SwiftUI
 ///
 ///     // A trailing switch with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn,
-///                   label: "Rescue from this world!",
+///     OUDSSwitchItem("Rescue from this world!",
+///                   isOn: $isOn,
 ///                   helper: "Put your hand in mine",
 ///                   icon: Image(decorative: "ic_heart"),
 ///                   isReversed: true,
@@ -91,13 +91,13 @@ import SwiftUI
 ///
 ///     // A leading switch with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Rescue from this world!")
+///     OUDSSwitchItem("Rescue from this world!", isOn: $isOn)
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related switch as it will crash
 ///     // This is forbidden by design!
-///     OUDSSwitchItem(isOn: $isOn, label: "Kaboom!", isError: true).disabled(true) // fatal error
-///     OUDSSwitchItem(isOn: $isOn, label: "Kaboom!", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isError: true).disabled(true) // fatal error
+///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
@@ -121,21 +121,21 @@ public struct OUDSSwitchItem: View {
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - label: The main label text of the switch.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `true`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    public init(isOn: Binding<Bool>,
-                label: String,
+    public init(_ label: String,
+                isOn: Binding<Bool>,
                 helper: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
-                isReversed: Bool = false,
+                isReversed: Bool = true,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false) {

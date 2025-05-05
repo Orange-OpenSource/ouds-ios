@@ -73,8 +73,8 @@ private struct SwitchItemDemo: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        OUDSSwitchItem(isOn: $model.selection,
-                       label: model.labelText,
+        OUDSSwitchItem(model.labelText,
+                       isOn: $model.selection,
                        helper: model.helperText,
                        icon: icon,
                        flipIcon: model.flipIcon,

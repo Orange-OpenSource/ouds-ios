@@ -36,7 +36,7 @@ struct DesignToolboxChoicePicker<Content, Selection>: View where Content: View, 
     var body: some View {
         VStack(alignment: .leading) {
             Text(LocalizedStringKey(title))
-                .typeHeadingMedium(theme)
+                .typeHeadingSmall(theme)
                 .oudsForegroundStyle(theme.colors.colorContentDefault)
                 .accessibilityHidden(true)
 
@@ -47,6 +47,7 @@ struct DesignToolboxChoicePicker<Content, Selection>: View where Content: View, 
             .accessibilityElement(children: .contain)
             .accessibilityLabel(LocalizedStringKey(title))
         }
+        .padding(.horizontal, theme.spaces.spaceInsetMedium)
     }
 }
 

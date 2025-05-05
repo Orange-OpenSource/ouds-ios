@@ -143,28 +143,20 @@ struct RadioPickerConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_common_enabled_label", isOn: $model.isEnabled)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(model.isError || model.isReadOnly)
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                OUDSSwitchItem("app_common_enabled_label", isOn: $model.isEnabled)
+                    .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.isEnabled || model.isError)
+                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
+                    .disabled(!model.isEnabled || model.isError)
 
-            Toggle("app_components_common_error_label", isOn: $model.isError)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.isEnabled || model.isReadOnly)
+                OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
+                    .disabled(!model.isEnabled || model.isReadOnly)
 
-            Toggle("app_components_radioButton_radioButtonItem_outlined_label", isOn: $model.isOutlined)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                OUDSSwitchItem("app_components_radioButton_radioButtonItem_outlined_label", isOn: $model.isOutlined)
 
-            Toggle("app_components_controlItem_divider_label", isOn: $model.hasDivider)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $model.hasDivider)
+            }
 
             DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
                                       selection: $model.pickerPlacement,

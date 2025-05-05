@@ -190,17 +190,17 @@ The indicator can be leading or trailing.
 
 ```swift
     // A leading switch with a label and exposing the state through isOn binding
-    OUDSSwitchItem(isOn: $isOn, label: "Hello world")
+    OUDSSwitchItem(i"Hello world", isOn: $isOn)
 
     // A leading switch with a label, an helper text
-    OUDSSwitchItem(isOn: $isOn, 
-                   label: "Dead Robot Zombie Cop",
+    OUDSSwitchItem("Dead Robot Zombie Cop",
+                   isOn: $isOn,
                    helper: "from Outer Space II")
 
     // A trailing switch with a label, an helper text, an icon, a divider and is about an error
     // with an inverse layout
-    OUDSSwitchItem(isOn: $isOn,
-                   label: "We live in a fabled world",
+    OUDSSwitchItem("We live in a fabled world",
+                   isOn: $isOn,
                    helper: "Of dreaming boys and wide-eyed girls",
                    icon: Image(decorative: "ic_heart"),
                    isReversed: true,

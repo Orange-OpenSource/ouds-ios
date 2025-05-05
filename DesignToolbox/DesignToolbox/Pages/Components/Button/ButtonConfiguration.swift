@@ -168,14 +168,12 @@ struct ButtonConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_common_enabled_label", isOn: $model.enabled)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(model.style != .`default`)
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
+                    .disabled(model.style != .`default`)
 
-            Toggle("app_components_common_onColoredSurface_label", isOn: $model.onColoredSurface)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $model.onColoredSurface)
+            }
 
             DesignToolboxChoicePicker(title: "app_components_button_hierarchy_label",
                                       selection: $model.hierarchy,

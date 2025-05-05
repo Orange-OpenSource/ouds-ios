@@ -76,20 +76,14 @@ struct CheckboxConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_common_enabled_label", isOn: $model.enabled)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
                 .disabled(model.isError)
 
-            Toggle("app_components_common_error_label", isOn: $model.isError)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+            OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
                 .disabled(!model.enabled)
 
-            Toggle("app_components_checkbox_selection_label", isOn: $model.indicatorState)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+            OUDSSwitchItem("app_components_checkbox_selection_label", isOn: $model.indicatorState)
                 .disabled(!model.enabled)
         }
     }

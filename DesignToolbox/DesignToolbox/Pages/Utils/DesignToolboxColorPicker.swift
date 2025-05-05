@@ -40,6 +40,7 @@ struct DesignToolboxColorPicker<Content, SelectedColor>: View where Content: Vie
                 }
             }
         }
+        .padding(.horizontal, theme.spaces.spaceFixedMedium)
     }
 }
 
