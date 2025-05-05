@@ -62,15 +62,11 @@ struct SwitchConfiguration: View {
     @Environment(\.theme) private var theme
 
     var body: some View {
-        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_components_switch_selection_label", isOn: $model.selection)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+            OUDSSwitchItem("app_components_switch_selection_label", isOn: $model.selection)
                 .disabled(!model.enabled)
 
-            Toggle("app_common_enabled_label", isOn: $model.enabled)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+            OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
         }
     }
 }

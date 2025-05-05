@@ -132,36 +132,24 @@ struct CheckboxItemConfiguration: View {
                 }
             }
 
-            Toggle("app_common_enabled_label", isOn: $model.enabled)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(model.isError || model.isReadOnly)
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
+                    .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_common_error_label", isOn: $model.isError)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.enabled || model.isReadOnly)
+                OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
+                    .disabled(!model.enabled || model.isReadOnly)
 
-            Toggle("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
-                .disabled(!model.enabled || model.isError)
+                OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
+                    .disabled(!model.enabled || model.isError)
 
-            Toggle("app_components_controlItem_helperText_label", isOn: $model.helperText)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                OUDSSwitchItem("app_components_controlItem_helperText_label", isOn: $model.helperText)
 
-            Toggle("app_components_controlItem_icon_label", isOn: $model.icon)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                OUDSSwitchItem("app_components_controlItem_icon_label", isOn: $model.icon)
 
-            Toggle("app_components_controlItem_divider_label", isOn: $model.divider)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $model.divider)
 
-            Toggle("app_components_controlItem_reversed_label", isOn: $model.isReversed)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                OUDSSwitchItem("app_components_controlItem_reversed_label", isOn: $model.isReversed)
+            }
 
             DesignToolboxContentModiferDisclosure {
                 DesignToolboxTextField(text: $model.labelText)

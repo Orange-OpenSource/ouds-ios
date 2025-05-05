@@ -136,24 +136,16 @@ struct CheckboxPickerConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_common_enabled_label", isOn: $model.isEnabled)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+            OUDSSwitchItem("app_common_enabled_label", isOn: $model.isEnabled)
                 .disabled(model.isError || model.isReadOnly)
 
-            Toggle("app_components_common_onError_label", isOn: $model.isError)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+            OUDSSwitchItem("app_components_common_onError_label", isOn: $model.isError)
                 .disabled(!model.isEnabled || model.isReadOnly)
 
-            Toggle("app_components_common_readOnly_label", isOn: $model.isReadOnly)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $model.isReadOnly)
                 .disabled(!model.isEnabled || model.isError)
 
-            Toggle("app_components_common_divider_label", isOn: $model.hasDivider)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+            OUDSSwitchItem("app_components_common_divider_label", isOn: $model.hasDivider)
 
             DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
                                       selection: $model.pickerPlacement,

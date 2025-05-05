@@ -121,21 +121,21 @@ public struct OUDSSwitchItem: View {
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - label: The main label text of the switch.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `true`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    public init(isOn: Binding<Bool>,
-                label: String,
+    public init(_ label: String,
+                isOn: Binding<Bool>,
                 helper: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
-                isReversed: Bool = false,
+                isReversed: Bool = true,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false) {
