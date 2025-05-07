@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- [DesignToolbox] Udpate wordings to avoid traduction for components and tokens names ([#654](https://github.com/Orange-OpenSource/ouds-ios/issues/654))
 - [Tool] Update `SwiftLint` pod from v0.59.0 to v0.59.1 ([#616](https://github.com/Orange-OpenSource/ouds-ios/pull/616))
 - [Tool] Update `json` RubyGem from v2.10.2 to v2.11.3 ([#630](https://github.com/Orange-OpenSource/ouds-ios/pull/630))
 - [DemoApp] Update components configuration section ([#637](https://github.com/Orange-OpenSource/ouds-ios/issues/637))
