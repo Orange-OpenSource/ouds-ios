@@ -139,13 +139,13 @@ struct CheckboxPickerConfiguration: View {
             OUDSSwitchItem("app_common_enabled_label", isOn: $model.isEnabled)
                 .disabled(model.isError || model.isReadOnly)
 
-            OUDSSwitchItem("app_components_common_onError_label", isOn: $model.isError)
+            OUDSSwitchItem("app_components_common_error_label", isOn: $model.isError)
                 .disabled(!model.isEnabled || model.isReadOnly)
 
-            OUDSSwitchItem("app_components_common_readOnly_label", isOn: $model.isReadOnly)
+            OUDSSwitchItem("app_components_controlItem_readOnly_label", isOn: $model.isReadOnly)
                 .disabled(!model.isEnabled || model.isError)
 
-            OUDSSwitchItem("app_components_common_divider_label", isOn: $model.hasDivider)
+            OUDSSwitchItem("app_components_controlItem_divider_label", isOn: $model.hasDivider)
 
             DesignToolboxChoicePicker(title: "app_components_common_orientation_label",
                                       selection: $model.pickerPlacement,
