@@ -25,6 +25,10 @@ struct ButtonForegroundModifier: ViewModifier {
     @Environment(\.oudsUseMonochrome) private var useMonochrome
     @Environment(\.oudsSurfaceColor) private var surfaceColor
 
+#if DEBUG
+    @Environment(\.oudsSurfaceColor) private var surfaceColor
+#endif
+
     // MARK: Stored Properties
 
     let hierarchy: OUDSButton.Hierarchy

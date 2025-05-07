@@ -27,6 +27,10 @@ struct LinkColorIndicatorModifier: ViewModifier {
     @Environment(\.oudsUseMonochrome) private var useMonochrome
     @Environment(\.oudsSurfaceColor) private var surfaceColor
 
+#if DEBUG
+    @Environment(\.oudsSurfaceColor) private var surfaceColor
+#endif
+
     // MARK: - Body
 
     func body(content: Content) -> some View {
