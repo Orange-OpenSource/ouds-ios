@@ -2417,7 +2417,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les bordures sont utilisées pour les couleurs de contour sur les composants et pour les couleurs des lignes de séparation pour des composants comme les tableaux."
+            "value" : "Les tokens Border sont utilisées pour les couleurs de contour sur les composants et pour les couleurs des lignes de séparation pour des composants comme les tableaux."
           }
         }
       }
@@ -2541,7 +2541,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La couleur renforce notre identité de marque et assure la cohérence à travers toutes les expériences produit. Les tokens sémantiques décrits sont ceux que vous devez utiliser lors de la création d'une application mobile."
+            "value" : "Les tokens Color renforce notre identité de marque et assure la cohérence à travers toutes les expériences produit. Les tokens sémantiques décrits sont ceux que vous devez utiliser lors de la création d'une application mobile."
           }
         }
       }
@@ -2614,7 +2614,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La dimension fournit des tailles et des espacements standard pour assurer la cohérence visuelle à travers l'interface utilisateur."
+            "value" : "Les tokens Dimension fournissent des tailles et des espacements standard pour assurer la cohérence visuelle à travers l'interface utilisateur."
           }
         }
       }
@@ -2663,7 +2663,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La taille fait référence aux mesures spécifiques utilisées pour définir les dimensions des éléments de l'interface utilisateur dans le système de design."
+            "value" : "Les tokens Size font référence aux mesures spécifiques utilisées pour définir les dimensions des éléments de l'interface utilisateur dans le système de design."
           }
         }
       }
@@ -2786,7 +2786,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L'espacement des colonnes comprend l'espacement vertical entre les objets."
+            "value" : "Les tokens Column Gap comprondent à l'espacement vertical entre les objets."
           }
         }
       }
@@ -2810,7 +2810,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L'espace fait référence aux mesures utilisées pour définir l'espacement entre les éléments de l'interface utilisateur."
+            "value" : "Les tokens Space font référence aux mesures utilisées pour définir l'espacement entre les éléments de l'interface utilisateur."
           }
         }
       }
@@ -2859,7 +2859,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L'espacement fixe fait référence à une distance constante entre les éléments qui reste la même quels que soient des facteurs tels que la taille du conteneur, la résolution de l'écran ou les changements de mise en page."
+            "value" : "Les tokens Fixed font référence à une distance constante entre les éléments qui reste la même quels que soient des facteurs tels que la taille du conteneur, la résolution de l'écran ou les changements de mise en page."
           }
         }
       }
@@ -2933,7 +2933,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le remplissage en ligne inclut le remplissage gauche et droit d'un objet ou d'un groupe d'objets."
+            "value" : "Les tokens de Padding inline définissent le remplissage gauche et droit d'un objet ou d'un groupe d'objets."
           }
         }
       }
@@ -2982,7 +2982,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le remplissage inséré comprend le remplissage gauche, droit, supérieur et inférieur, tous les paramètres étant égaux."
+            "value" : "Les tokens Padding Inset corespondent au remplissage équivalant autour d’un objet (gauche, droit, supérieur et inférieur)."
           }
         }
       }
@@ -3031,7 +3031,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La pile de rembourrage comprend le rembourrage supérieur et inférieur."
+            "value" : "Les tokens Padding Stack comprondent au rembourrage supérieur et inférieur."
           }
         }
       }
@@ -3080,7 +3080,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L'espacement des rangées comprend l'espacement horizontal entre les objets."
+            "value" : "Les tokens Raw Gap corespondent à l'espacement horizontal entre les objets."
           }
         }
       }
@@ -3129,7 +3129,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L'espacement mis à l'échelle fait référence à un espacement qui s'ajuste de manière dynamique en fonction de facteurs tels que la taille du conteneur, la résolution de l'écran ou les éléments de mise en page."
+            "value" : "Les ‘tokens Scaled font référence à un espacement qui s'ajuste de manière dynamique en fonction de facteurs tels que la taille du conteneur, la résolution de l'écran ou les éléments de mise en page."
           }
         }
       }
@@ -3153,7 +3153,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les ombres sont utilisées pour donner l'impression de distance ou d'élévation entre les surfaces, ce qui ajoute de la profondeur à nos designs."
+            "value" : "Les tokens Elevation sont utilisées pour donner l'impression de distance ou d'élévation entre les surfaces, ce qui ajoute de la profondeur à nos designs."
           }
         }
       }
@@ -3202,7 +3202,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les grilles sont utilisées pour positionner le contenu et créer des mises en page de page cohérentes."
+            "value" : "Les tokens Grid sont utilisées pour positionner le contenu et créer des mises en page de page cohérentes."
           }
         }
       }
@@ -3251,7 +3251,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L'opacité peut aider à distinguer les éléments de premier plan des éléments d'arrière-plan, rendant le contenu plus facile à lire et les actions importantes plus visibles."
+            "value" : "Les tokens Opacity peuvent aider à distinguer les éléments de premier plan des éléments d'arrière-plan, rendant le contenu plus facile à lire et les actions importantes plus visibles."
           }
         }
       }
@@ -3300,7 +3300,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La typographie est notre système de polices de caractère et de styles de texte. Ils améliorent la communication et renforcent le style de la marque."
+            "value" : "Les tokens Font (i.e. typographie) définissent notre système de polices de caractères et de styles de texte. Ils améliorent la communication et renforcent le style de la marque."
           }
         }
       }
