@@ -13,12 +13,17 @@
 
 import SwiftUI
 
+// MARK: - Extension of Color
+
 extension Color {
 
-    /// `Color` extension to get a `Color` from its hexadecimal string representation.
+    // MARK: Initializer
+
+    /// `Color` extension to get a `Color` from its hexadecimal string representation, in RGB or RGBA format.
     public init?(hexadecimalCode: String) {
 
-        let hexadecimalCodeSanitized = hexadecimalCode.trimmingCharacters(in: .whitespacesAndNewlines).replacingOccurrences(of: "#", with: "")
+        let hexadecimalCodeSanitized = hexadecimalCode.trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "#", with: "")
 
         var rgb: UInt64 = 0
         var r: CGFloat = 0.0, g: CGFloat = 0.0, b: CGFloat = 0.0, a: CGFloat = 1.0
@@ -44,5 +49,24 @@ extension Color {
         }
 
         self.init(red: r, green: g, blue: b, opacity: a)
+    }
+
+    // MARK: UIColor
+
+    /// The current color as UIKit color
+    public var uiColor: UIColor { .init(self) }
+
+    // MARK: RGBA
+
+    // swiftlint:disable large_tuple
+    /// Color defined as red, green, blue, alpha tuple
+    public typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+    // swiftlint:enable large_tuple
+
+    /// The current color but split in RGBA mode
+    public var rgba: RGBA? {
+        var (r, g, b, a): RGBA = (0, 0, 0, 0)
+        let converted = uiColor.getRed(&r, green: &g, blue: &b, alpha: &a)
+        return converted ? (r, g, b, a) : nil
     }
 }

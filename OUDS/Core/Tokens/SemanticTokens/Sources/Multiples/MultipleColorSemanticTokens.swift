@@ -15,6 +15,8 @@ import OUDSFoundations
 import OUDSTokensRaw
 import SwiftUI
 
+// MARK: - Multiple Color Semantic Tokens
+
 /// Kind of semantic tokens which will wrap a combination of ``ColorSemanticToken`` depending to *color scheme* (i.e. ligh mode or dark mode).
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
@@ -101,4 +103,118 @@ public final class MultipleColorSemanticTokens: NSObject, Sendable {
     public func color(for colorScheme: ColorScheme) -> Color {
         (colorScheme == .light ? light : dark).color
     }
+}
+
+// MARK: - Color WCAG 2.1
+
+extension OUDSWCAG21Ratios {
+
+    /// Flag to rise so as to display in logs some warnings if there are troubles
+    /// with contrast ratios between colors. Default set to *false*.
+    /// Consider rising this falge in DBUG mode.
+    ///
+    /// ```swift
+    /// #if DEBUG
+    ///     OUDSWCAG21Ratios.oudsDebugWCAG21Colors = true
+    /// #else
+    ///     OUDSWCAG21Ratios.oudsDebugWCAG21Colors = false
+    /// #endif
+    /// ```
+    nonisolated(unsafe) public static var oudsDebugWCAG21Colors: Bool = false
+
+    /// Lists the type of elements under tests for constrat ratio check.
+    /// Textual elements should have higher contrasts than non-textual ones.
+    public enum Target {
+        /// Contrast ratio must be computed for textual components (i.e. texts)
+        case textual
+        /// Contrast ratio must be computed for non-textual components (i.e. images, indicators, chevrons, ...)
+        case nonTextual
+    }
+
+    /// The type of WCAG 2.1 requirements to consider
+    public enum Criteria {
+        /// Consider 4.5:1 for textual and 3:1 for non-textual
+        case AA
+        /// Consider 7:1 for textual and 4.5:1 for non-textual
+        case AAA
+    }
+
+    /// Checks the contrast ratio between two tokens of color (`MultipleColorSemanticTokens`) by comparing their *light*
+    /// and *dark* values.
+    /// **Checks are done if end only if the `OUDSWCAG21Ratios.oudsDebugWCAG21Colors` flag is set to true.**
+    /// Otherwise nothing is done.
+    /// If some ratios are not reached, displays a warning in logs.
+    ///
+    /// ```swift
+    /// // Assuming you use a color from a theme
+    /// @Environment(\.theme) var theme
+    /// // Assuming a component is used on a colored surface, get the surface color
+    /// @Environment(\.oudsSurfaceColor) var surfaceColor
+    ///
+    /// // Supposing tou want to apply "someColor" on a component on the colored surface
+    /// let colorToApply = theme.colors.someColor
+    ///
+    /// // If you want to check for textual component
+    /// OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor)
+    ///
+    /// // If you want to check for non-textual component (i.e. images, chevrons, indicators, ...)
+    /// OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
+    ///
+    /// // If you want to check the AAA requirements instead of AA (by default)
+    /// OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .AAA)
+    /// ```
+    ///
+    /// - Parameters:
+    ///    - lhs: One color with light and dark values to compare with `rhs`
+    ///    - rhs: One color with light and dark values to compare with `lhs`
+    ///    - target: Type of check to do (default set to `.textual`)
+    ///    - criteria: Requirement to consider (default set to `.AA`)
+    ///    - source: Default set to `#file` to log the calling file to ease debugging
+    public static func debugContrastRatio(_ lhs: MultipleColorSemanticTokens,
+                                          _ rhs: MultipleColorSemanticTokens,
+                                          _ target: OUDSWCAG21Ratios.Target = .textual,
+                                          _ criteria: OUDSWCAG21Ratios.Criteria = .AA,
+                                          _ source: String = #file) {
+        guard Self.oudsDebugWCAG21Colors else {
+            return
+        }
+        Self.debugContrastRatio(for: "light", lhs.light, rhs.light, target, criteria, source)
+        Self.debugContrastRatio(for: "dark", lhs.dark, rhs.dark, target, criteria, source)
+    }
+
+    // swiftlint:disable line_length
+    private static func debugContrastRatio(for scheme: String,
+                                           _ lhs: String,
+                                           _ rhs: String,
+                                           _ target: OUDSWCAG21Ratios.Target,
+                                           _ criteria: OUDSWCAG21Ratios.Criteria,
+                                           _ source: String) {
+        if let ratios = OUDSWCAG21Ratios.contrastRatios(lhs, rhs) {
+            switch criteria {
+            case .AA where target == .textual:
+                let (textualPass, _) = ratios.requirementsAA
+                if !textualPass {
+                    OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for text 4.5:1 (WCAG 2.1 AA) (ratio \(ratios.ratio))")
+                }
+            case .AA where target == .nonTextual:
+                let (_, nonTextualPass) = ratios.requirementsAA
+                if !nonTextualPass {
+                    OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for non-text 3:1 (WCAG 2.1 AA) (ratio \(ratios.ratio))")
+                }
+            case .AAA where target == .textual:
+                let (textualPass, _) = ratios.requirementsAAA
+                if !textualPass {
+                    OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for text 7:1 (WCAG 2.1 AAA) (ratio \(ratios.ratio))")
+                }
+            case .AAA where target == .nonTextual:
+                let (_, nonTextualPass) = ratios.requirementsAAA
+                if !nonTextualPass {
+                    OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for nontext 4.5:1 (WCAG 2.1 AAA) (ratio \(ratios.ratio))")
+                }
+            default:
+                OL.warning("👮 Contrast check requirements not managed!")
+            }
+        }
+    }
+    // swiftlint:enable line_length
 }

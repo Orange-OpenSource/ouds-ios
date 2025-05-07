@@ -12,6 +12,7 @@
 //
 
 import Foundation
+import OUDSFoundations
 import Testing
 
 // swiftlint:disable force_unwrapping
@@ -42,15 +43,15 @@ public enum TestsUtils {
 
     /// Compares two colors in hexadecimal values and asserts if `left` is "lighter" than `right`, i.e. has a bigger integer value
     public static func assertColorLighterThan(_ left: String, _ right: String) {
-        let leftBrightness = hexadecimalStringToInt(left)
-        let rightBrightness = hexadecimalStringToInt(right)
+        let leftBrightness = left.fromHexToInt()!
+        let rightBrightness = right.fromHexToInt()!
         #expect(leftBrightness > rightBrightness, "Right color '\(right)' is not lighter than the left color '\(left)'")
     }
 
     /// Compares two colors in hexadecimal values and asserts if `left` is "darker" than `right`, i.e. has a lower integer value
     public static func assertColorDarkerThan(_ left: String, _ right: String) {
-        let leftBrightness = hexadecimalStringToInt(left)
-        let rightBrightness = hexadecimalStringToInt(right)
+        let leftBrightness = left.fromHexToInt()!
+        let rightBrightness = right.fromHexToInt()!
         #expect(leftBrightness < rightBrightness, "Right color '\(right)' is not darker than the left color '\(left)'")
     }
 
@@ -62,15 +63,6 @@ public enum TestsUtils {
         let range = NSRange(location: 0, length: value.utf16.count)
         let match = pattern.firstMatch(in: value, options: [], range: range) != nil
         #expect(match)
-    }
-
-    // MARK: - Helpers
-
-    private static func hexadecimalStringToInt(_ value: String) -> Int {
-        let hexString = value.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var intValue: UInt64 = 0
-        Scanner(string: hexString).scanHexInt64(&intValue)
-        return Int(exactly: intValue)!
     }
 }
 

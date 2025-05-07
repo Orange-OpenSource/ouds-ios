@@ -32,6 +32,7 @@ public struct OUDSColoredSurfaceModifier: ViewModifier {
             .background(useColorToken.color(for: colorScheme))
             .environment(\.oudsUseMonochrome, useMonochrome)
             .environment(\.oudsOnColoredSurface, true)
+            .environment(\.oudsSurfaceColor, useColorToken)
             .environment(\.colorScheme, useColorScheme)
     }
 
