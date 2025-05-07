@@ -12,6 +12,7 @@
 //
 
 import OUDS
+import OUDSFoundations
 import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
@@ -23,6 +24,10 @@ struct ButtonForegroundModifier: ViewModifier {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
 
+#if DEBUG
+    @Environment(\.oudsSurfaceColor) private var surfaceColor
+#endif
+
     // MARK: Stored Properties
 
     let hierarchy: OUDSButton.Hierarchy
@@ -31,26 +36,31 @@ struct ButtonForegroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.foregroundStyle(appliedColor)
+        content.foregroundStyle(appliedColor())
     }
 
     // MARK: Private helpers
 
-    private var appliedColor: Color {
+    private func appliedColor() -> Color {
+        let colorTokenToApply: MultipleColorSemanticTokens
         switch state {
         case .enabled:
-            enabledColor.color(for: colorScheme)
+            colorTokenToApply = enabledColor
         case .hover:
-            hoverColor.color(for: colorScheme)
+            colorTokenToApply = hoverColor
         case .pressed:
-            pressedColor.color(for: colorScheme)
+            colorTokenToApply = pressedColor
         case .loading:
             // Hide the content because it is replaced by the loading indicator.
             // However the content is needed to get the size of the button in loading state.
-            Color.clear.opacity(0)
+            return Color.clear.opacity(0)
         case .disabled:
-            disabledColor.color(for: colorScheme)
+            colorTokenToApply = disabledColor
         }
+#if DEBUG
+        colorTokenToApply.debugWCAG21ContrastRatio(surfaceColor)
+#endif
+        return colorTokenToApply.color(for: colorScheme)
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
