@@ -32,10 +32,15 @@ public struct OUDSColoredSurfaceModifier: ViewModifier {
             .background(useColorToken.color(for: colorScheme))
             .environment(\.oudsUseMonochrome, useMonochrome)
             .environment(\.oudsOnColoredSurface, true)
+            .environment(\.oudsSurfaceColor, useColorToken)
             .environment(\.colorScheme, useColorScheme)
     }
 
     // MARK: - Computed properties
+
+    private var useColor: Color {
+        useColorToken.color(for: colorScheme)
+    }
 
     private var useColorToken: MultipleColorSemanticTokens {
         theme.colorModes.toColor(from: backgroundSurfaceColor)

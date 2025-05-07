@@ -15,6 +15,8 @@ import OUDSFoundations
 import OUDSTokensRaw
 import SwiftUI
 
+// MARK: - Multiple Color Semantic Tokens
+
 /// Kind of semantic tokens which will wrap a combination of ``ColorSemanticToken`` depending to *color scheme* (i.e. ligh mode or dark mode).
 /// Kind of composite token with multiple values, but not named "composite" because this word is already used in the design system.
 /// Allows to gather the multiple-value tokens from *Figma* inside one object.
@@ -101,4 +103,32 @@ public final class MultipleColorSemanticTokens: NSObject, Sendable {
     public func color(for colorScheme: ColorScheme) -> Color {
         (colorScheme == .light ? light : dark).color
     }
+
+#if DEBUG
+    // MARK: - Color WCAG 2.1
+
+    /// Checks the contrast ratio between a given color and `self`.
+    /// If some ratios are not reached, displays a warning in logs.
+    /// This function works if and only if the compile-time constant `DEBUG` is defined.
+    /// Otherwise nothing is done.
+    /// - Parameter other: One color with light and dark values to compare with `self`
+    public func checkWCAG21ContrastRatio(_ other: MultipleColorSemanticTokens, _ source: String = #file) {
+        if let (lightRatio, light3to1, light4_5to1) = Color.wcag21ContrastRatioCheck(self.light, other.light) {
+            if !light3to1 {
+                OL.warning("👮 In \(source) the light color '\(self.light)' on surface '\(other.light)' does not match WCAG 2.1 3:1 (ratio \(lightRatio))")
+            }
+            if !light4_5to1 {
+                OL.warning("👮 In \(source) the light color '\(self.light)' on surface '\(other.light)' does not match WCAG 2.1 4.5:1 (ratio \(lightRatio))")
+            }
+        }
+        if let (darkRatio, dark3to1, dark4_5to1) = Color.wcag21ContrastRatioCheck(self.dark, other.dark) {
+            if !dark3to1 {
+                OL.warning("👮 In \(source) the dark color '\(self.dark)' on surface '\(other.dark)' does not match WCAG 2.1 3:1 (ratio \(darkRatio))")
+            }
+            if !dark4_5to1 {
+                OL.warning("👮 In \(source) the dark color '\(self.dark)' on surface '\(other.dark)' does not match WCAG 2.1 4.5:1 (ratio \(darkRatio))")
+            }
+        }
+    }
+#endif
 }

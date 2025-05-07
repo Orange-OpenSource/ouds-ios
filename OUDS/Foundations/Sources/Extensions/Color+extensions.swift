@@ -80,7 +80,7 @@ extension Color {
     // swiftlint:disable identifier_name
     /// Returns the luminance of the color using the WCAG 2.1 algorithm
     /// See https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html#procedure
-    public var luminance: CGFloat? {
+    public var wcag21Luminance: CGFloat? {
         // The WCAG 2.1 algorithm
         // defines R sRGB, G sRGB, B sRGB as 8-bits values of R, G and B, all divided by 255
         // but .rgba uses UIColor.getRed(green:blue:alpha) which returns values in [0;1]
@@ -104,9 +104,9 @@ extension Color {
     /// See https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html#procedure
     /// - Parameter color: The color to compare with `self`
     /// - Returns Double?: The contrast ratio or `nil` if a luminance is missing
-    public func contrastRatio(with color: Color) -> Double? {
-        guard let selfLuminance = self.luminance,
-              let otherLuminance = color.luminance else {
+    public func wcag21ContrastRatio(with color: Color) -> Double? {
+        guard let selfLuminance = self.wcag21Luminance,
+              let otherLuminance = color.wcag21Luminance else {
             OL.error("Missing color luminance(s) for contrast ratio computation")
             return nil
         }
@@ -128,8 +128,8 @@ extension Color {
     /// - Parameters:
     ///    - lhs: One color to test
     ///    - rhs: Another color to test
-    /// - Returns: The computed ratio and flags saying if it match 3:1 (components) or 4.5:1 (texts)
-    public static func ratioCheck(_ lhs: String, _ rhs: String) -> WCAG21Ratios? {
+    /// - Returns: The computed ratio and flags saying if it match 3:1 or 4.5:1
+    public static func wcag21ContrastRatioCheck(_ lhs: String, _ rhs: String) -> WCAG21Ratios? {
         guard let lhsHexa6 = lhs.toHex6(), let rhsHexa6 = rhs.toHex6() else {
             OL.error("Not possible to convert hexa colros to hex6 to compute contrast ratio between \(lhs) and \(rhs)!")
             return nil
@@ -138,7 +138,7 @@ extension Color {
             OL.error("Not possible to convert string to colors to compute contrast ratio between \(lhs) and \(rhs)!")
             return nil
         }
-        guard let contrastRatio = lhsColor.contrastRatio(with: rhsColor) else {
+        guard let contrastRatio = lhsColor.wcag21ContrastRatio(with: rhsColor) else {
             OL.error("Not possible to compute ratio between \(lhs) and \(rhs)!")
             return nil
         }
