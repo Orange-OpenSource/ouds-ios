@@ -8,11 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] API and tools to check contrast ratio of colors
+- [Library] API and tools to check contrast ratio of colors ([#656](https://github.com/Orange-OpenSource/ouds-ios/issues/656))
 
 ### Changed
 
-- [Library] Debug warnings for link and button components for WCAG 2.1 3:1 and 4.5:1 ratios on colored surface
+- [Library] Debug warnings for link and button components for WCAG 2.1 3:1 and 4.5:1 ratios on colored surface ([#656](https://github.com/Orange-OpenSource/ouds-ios/issues/656))
 
 ### Fixed
 
