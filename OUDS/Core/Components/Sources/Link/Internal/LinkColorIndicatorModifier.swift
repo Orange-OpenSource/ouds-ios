@@ -25,25 +25,34 @@ struct LinkColorIndicatorModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
 
+#if DEBUG
+    @Environment(\.oudsSurfaceColor) private var surfaceColor
+#endif
+
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content.oudsForegroundStyle(appliedColor)
+        content.oudsForegroundStyle(appliedColor())
     }
 
     // MARK: - Helpers
 
-    private var appliedColor: MultipleColorSemanticTokens {
+    private func appliedColor() -> MultipleColorSemanticTokens {
+        let colorToApply: MultipleColorSemanticTokens
         switch interactionState {
         case .enabled:
-            enabledColor
+            colorToApply = enabledColor
         case .hover:
-            hoverColor
+            colorToApply = hoverColor
         case .pressed:
-            pressedColor
+            colorToApply = pressedColor
         case .disabled, .readOnly:
-            disabledColor
+            colorToApply = disabledColor
         }
+#if DEBUG
+        colorToApply.debugWCAG21ContrastRatio(surfaceColor)
+#endif
+        return colorToApply
     }
 
     private var enabledColor: MultipleColorSemanticTokens {

@@ -114,6 +114,7 @@ let package = Package(
             path: "OUDS/Foundations/Tests"),
         .target(
             name: "TestsUtils",
+            dependencies: ["OUDSFoundations"],
             path: "OUDS/Foundations/TestsUtils"),
     ],
     

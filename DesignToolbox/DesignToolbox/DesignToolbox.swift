@@ -14,9 +14,13 @@
 import OUDS
 import SwiftUI
 
+// MARK: - App
+
 @main
 struct DesignToolbox: App {
-    @StateObject var themeProvider = ThemeProvider()
+
+    @UIApplicationDelegateAdaptor(DesignToolboxAppDelegate.self) private var appDelegate
+    @StateObject private var themeProvider = ThemeProvider()
 
     var body: some Scene {
         WindowGroup {
@@ -26,3 +30,18 @@ struct DesignToolbox: App {
         }
     }
 }
+
+// MARK: - App Delegate
+
+// swiftlint:disable discouraged_optional_collection
+private final class DesignToolboxAppDelegate: NSObject, UIApplicationDelegate {
+
+    deinit { }
+
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        Color.oudsDebugWCAG21Colors = true
+        return true
+    }
+}
+// swiftlint:enable discouraged_optional_collection
