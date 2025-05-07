@@ -42,7 +42,7 @@ struct ButtonForegroundModifier: ViewModifier {
     // MARK: Private helpers
 
     private func appliedColor() -> Color {
-        var colorTokenToApply: MultipleColorSemanticTokens
+        let colorTokenToApply: MultipleColorSemanticTokens
         switch state {
         case .enabled:
             colorTokenToApply = enabledColor

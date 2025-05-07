@@ -38,10 +38,6 @@ public struct OUDSColoredSurfaceModifier: ViewModifier {
 
     // MARK: - Computed properties
 
-    private var useColor: Color {
-        useColorToken.color(for: colorScheme)
-    }
-
     private var useColorToken: MultipleColorSemanticTokens {
         theme.colorModes.toColor(from: backgroundSurfaceColor)
     }
