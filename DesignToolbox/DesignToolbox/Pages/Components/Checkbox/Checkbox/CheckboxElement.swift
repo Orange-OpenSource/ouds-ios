@@ -20,7 +20,7 @@ struct CheckboxElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_checkbox_twoStates_indicatorOnly_label".localized()
+        name = "app_components_checkbox_label".localized()
         image = Image(decorative: "il_component_checkbox").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
             name: name,

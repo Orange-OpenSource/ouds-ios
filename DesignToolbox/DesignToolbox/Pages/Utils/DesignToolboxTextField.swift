@@ -37,7 +37,7 @@ struct DesignToolboxTextField: View {
                     .oudsForegroundStyle(theme.colors.colorContentDefault)
             }
 
-            TextField(text: text, prompt: Text(prompt)) {
+            TextField(text: text, prompt: Text(prompt.localized())) {
                 Text(LocalizedStringKey(text.wrappedValue))
             }
             .oudsForegroundStyle(theme.colors.colorContentDefault)
