@@ -2426,7 +2426,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "حدود"
+            "value" : "Border"
           }
         },
         "en" : {
@@ -2438,10 +2438,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bordure"
+            "value" : "Border"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_border_radius_label" : {
       "comment" : "Tokens - Border",
@@ -2450,7 +2451,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "نصف القطر"
+            "value" : "Radius"
           }
         },
         "en" : {
@@ -2462,10 +2463,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rayon"
+            "value" : "Radius"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_border_style_label" : {
       "comment" : "Tokens - Border",
@@ -2474,7 +2476,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أسلوب"
+            "value" : "Style"
           }
         },
         "en" : {
@@ -2489,7 +2491,8 @@
             "value" : "Style"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_border_width_label" : {
       "comment" : "Tokens - Border",
@@ -2498,7 +2501,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عرض"
+            "value" : "Width"
           }
         },
         "en" : {
@@ -2510,10 +2513,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Largeur"
+            "value" : "Width"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_color_description_text" : {
       "comment" : "Tokens - Color",
@@ -2546,7 +2550,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "لون"
+            "value" : "Color"
           }
         },
         "en" : {
@@ -2558,10 +2562,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Couleur"
+            "value" : "Color"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_common_viewCodeExample_label" : {
       "comment" : "Token - Common",
@@ -2618,7 +2623,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "البعد"
+            "value" : "Dimension"
           }
         },
         "en" : {
@@ -2633,7 +2638,8 @@
             "value" : "Dimension"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_size_description_text" : {
       "comment" : "Token - Dimension - Size",
@@ -2690,7 +2696,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أيقونة مع"
+            "value" : "Icon with"
           }
         },
         "en" : {
@@ -2702,10 +2708,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône avec"
+            "value" : "Icon with"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_size_label" : {
       "comment" : "Token - Dimension - Size",
@@ -2714,7 +2721,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مقاس"
+            "value" : "Size"
           }
         },
         "en" : {
@@ -2726,10 +2733,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Taille"
+            "value" : "Size"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_space_columnGap_label" : {
       "comment" : "Token - Dimension - Space",
@@ -2738,7 +2746,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فجوة مضمنة"
+            "value" : "Column gap"
           }
         },
         "en" : {
@@ -2750,10 +2758,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espacement extérieur entre éléments côte à côte"
+            "value" : "Column gap"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_space_columnGapHeader_text" : {
       "comment" : "Token - Dimension - Space",
@@ -2810,7 +2819,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مُثَبَّت"
+            "value" : "Fixed"
           }
         },
         "en" : {
@@ -2822,10 +2831,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fixe"
+            "value" : "Fixed"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_space_fixedHeader_text" : {
       "comment" : "Token - Dimension - Space",
@@ -2858,7 +2868,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فضاء"
+            "value" : "Space"
           }
         },
         "en" : {
@@ -2870,10 +2880,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espace"
+            "value" : "Space"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_space_paddingInline_label" : {
       "comment" : "Token - Dimension - Space",
@@ -2882,7 +2893,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "الحشو المضمن"
+            "value" : "Padding inline"
           }
         },
         "en" : {
@@ -2894,10 +2905,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espacement intérieur gauche droite"
+            "value" : "Padding inline"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_space_paddingInlineHeader_text" : {
       "comment" : "Token - Dimension - Space",
@@ -2930,7 +2942,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "حشوة داخلية"
+            "value" : "Padding inset"
           }
         },
         "en" : {
@@ -2942,10 +2954,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espacement intérieur"
+            "value" : "Padding inset"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_space_paddingInsetHeader_text" : {
       "comment" : "Token - Dimension - Space",
@@ -2978,7 +2991,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "كومة الحشو"
+            "value" : "Padding stack"
           }
         },
         "en" : {
@@ -2990,10 +3003,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espacement intérieur haut bas"
+            "value" : "Padding stack"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_space_paddingStackHeader_text" : {
       "comment" : "Token - Dimension - Space",
@@ -3026,7 +3040,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "كومة الفجوة"
+            "value" : "Row gap"
           }
         },
         "en" : {
@@ -3038,10 +3052,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espacement extérieur entre éléments empilés"
+            "value" : "Row gap"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_space_rowGapHeader_text" : {
       "comment" : "Token - Dimension - Space",
@@ -3074,7 +3089,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مقياس"
+            "value" : "Scaled"
           }
         },
         "en" : {
@@ -3086,10 +3101,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Échelonné"
+            "value" : "Scaled"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_dimension_space_scaledHeader_text" : {
       "comment" : "Token - Dimension - Space",
@@ -3146,7 +3162,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ارتفاع"
+            "value" : "Elevation"
           }
         },
         "en" : {
@@ -3158,10 +3174,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elévation"
+            "value" : "Elevation"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_grid_description_text" : {
       "comment" : "Token - Grid",
@@ -3194,7 +3211,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "شبكة"
+            "value" : "Grid"
           }
         },
         "en" : {
@@ -3206,10 +3223,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Grille"
+            "value" : "Grid"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_opacity_description_text" : {
       "comment" : "Token - Opacity",
@@ -3242,7 +3260,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "العتامة"
+            "value" : "Opacity"
           }
         },
         "en" : {
@@ -3254,10 +3272,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opacité"
+            "value" : "Opacity"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_tokens_typography_description_text" : {
       "comment" : "Token - Typography",
@@ -3314,7 +3333,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يصنع"
+            "value" : "Font"
           }
         },
         "en" : {
@@ -3326,7 +3345,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Police de caractère"
+            "value" : "Font"
           }
         }
       }
