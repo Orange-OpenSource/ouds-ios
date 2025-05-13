@@ -56,21 +56,21 @@ struct ControlItemLabel: View {
 
     private func texts() -> some View {
         VStack(alignment: .leading) {
-            Text(LocalizedStringKey(layoutData.label))
+            Text(layoutData.label)
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
                 .oudsForegroundStyle(labelColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let additionalLabel = layoutData.additionalLabel {
-                Text(LocalizedStringKey(additionalLabel))
+            if let additionalLabel = layoutData.additionalLabel, !additionalLabel.isEmpty {
+                Text(additionalLabel)
                     .typeLabelStrongMedium(theme)
                     .multilineTextAlignment(.leading)
                     .oudsForegroundStyle(additionalLabelColor)
             }
 
-            if let helper = layoutData.helper {
-                Text(LocalizedStringKey(helper))
+            if let helper = layoutData.helper, !helper.isEmpty {
+                Text(helper)
                     .typeLabelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
                     .oudsForegroundStyle(helperColor)

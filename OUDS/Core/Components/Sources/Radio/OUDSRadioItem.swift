@@ -176,7 +176,9 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///   - action: An additional action to trigger when the radio button has been pressed
     ///
-    /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    /// **Remark 2: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
     public init(isOn: Binding<Bool>,
                 label: String,
                 additionalLabel: String? = nil,
@@ -233,7 +235,10 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///   - action: An additional action to trigger when the radio button has been pressed
     ///
-    /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    ///
+    /// **Remark 2: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
     public init(isOn: Binding<Bool>,
                 tag: Tag,
                 label: String,
@@ -261,9 +266,9 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
 
         _isOn = isOn
         self.layoutData = .init(
-            label: label,
-            additionalLabel: additionalLabel,
-            helper: helper,
+            label: label.localized(),
+            additionalLabel: additionalLabel?.localized(),
+            helper: helper?.localized(),
             icon: icon,
             flipIcon: flipIcon,
             isOutlined: isOutlined,
@@ -281,13 +286,13 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
         ControlItem(indicatorType: .radioButton($isOn), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(a11yLabel)
-            .accessibilityValue(a11yValue.localized())
+            .accessibilityValue(a11yValue)
             .accessibilityHint(a11yHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
     private var a11yValue: String {
-        _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
+        (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.

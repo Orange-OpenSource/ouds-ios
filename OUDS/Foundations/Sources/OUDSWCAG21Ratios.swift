@@ -120,18 +120,22 @@ public struct OUDSWCAG21Ratios {
     ///    - rhs: Another color to test
     /// - Returns: The computed ratio and flags saying if it match 3:1, 4.5:1 or 7:1
     public static func contrastRatios(_ lhs: String, _ rhs: String) -> OUDSWCAG21Ratios? {
+        guard !lhs.isEmpty && !rhs.isEmpty else {
+            OL.warning("Ask to comput contrast ratio but one or two of the colors is empty")
+            return nil
+        }
         guard let lhsHexa6 = lhs.toHex6(), let rhsHexa6 = rhs.toHex6() else {
-            OL.error("Not possible to convert hexa colros to hex6 to compute contrast ratio between \(lhs) and \(rhs)!")
+            OL.error("Not possible to convert hexa colors to hex6 to compute contrast ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }
 
         guard let lhsColor = lhsHexa6.color, let rhsColor = rhsHexa6.color else {
-            OL.error("Not possible to convert string to colors to compute contrast ratio between \(lhs) and \(rhs)!")
+            OL.error("Not possible to convert string to colors to compute contrast ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }
 
         guard let contrastRatio = Self.contrastRatio(lhsColor, rhsColor) else {
-            OL.error("Not possible to compute ratio between \(lhs) and \(rhs)!")
+            OL.error("Not possible to compute ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }
 
