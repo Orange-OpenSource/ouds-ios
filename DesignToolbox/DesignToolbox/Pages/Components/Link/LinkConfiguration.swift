@@ -146,13 +146,11 @@ struct LinkConfiguration: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: theme.spaces.spaceFixedMedium) {
-            Toggle("app_common_enabled_label", isOn: $model.enabled)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+            VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
+                OUDSSwitchItem("app_common_enabled_label", isOn: $model.enabled)
 
-            Toggle("app_components_common_onColoredSurface_label", isOn: $model.onColoredSurface)
-                .typeHeadingMedium(theme)
-                .oudsForegroundStyle(theme.colors.colorContentDefault)
+                OUDSSwitchItem("app_components_common_onColoredSurface_label", isOn: $model.onColoredSurface)
+            }
 
             DesignToolboxChoicePicker(title: "app_components_link_size_label",
                                       selection: $model.size,

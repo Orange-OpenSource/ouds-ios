@@ -12,11 +12,13 @@
 //
 
 import OUDS
+import OUDSFoundations
 import SwiftUI
 
+// MARK: - Design Toolbox Colored Surface Modifier
+
 /// Use the background modifier to place a view on a colored surface.
-/// Today, in the design kit application the color of the surface is based on the sementic token
-/// named: _color/surface/brand/primary_
+/// Defines a debug flag to display in logs some warnigns about WCAG 2.1 contrast ratios made in components definitions.
 struct DesignToolboxColoredSurfaceModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
@@ -25,9 +27,12 @@ struct DesignToolboxColoredSurfaceModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         if coloredSurface {
-            content.oudsColoredSurface(theme.colorModes.modeOnBrandPrimary)
+            content
+                .oudsColoredSurface(theme.colorModes.modeOnBrandPrimary)
+                .modifier(DebugWCAG21RatiosModifier())
         } else {
-            content.oudsBackground(theme.colors.colorBgSecondary)
+            content
+                .oudsBackground(theme.colors.colorBgSecondary)
         }
     }
 }
@@ -35,5 +40,20 @@ struct DesignToolboxColoredSurfaceModifier: ViewModifier {
 extension View {
     func designToolboxColoredSurface(_ coloredSurface: Bool) -> some View {
         self.modifier(DesignToolboxColoredSurfaceModifier(coloredSurface: coloredSurface))
+    }
+}
+
+// MARK: - Debug WCAG 2.1 Ratios Modifier
+
+struct DebugWCAG21RatiosModifier: ViewModifier {
+
+    func body(content: Content) -> some View {
+        content
+            .onAppear {
+                OUDSWCAG21Ratio.oudsDebugWCAG21Colors = true
+            }
+            .onDisappear {
+                OUDSWCAG21Ratio.oudsDebugWCAG21Colors = false
+            }
     }
 }

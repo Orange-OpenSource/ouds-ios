@@ -13,6 +13,7 @@
 
 import OUDS
 import OUDSComponents
+import OUDSFoundations
 import SwiftUI
 
 // MARK: Colored Surface Page
@@ -26,7 +27,7 @@ struct ColoredSurfacePage: View {
             configuration: configuration,
             componentView: componentView,
             configurationView: configurationView
-        )
+        ).modifier(DebugWCAG21RatiosModifier())
     }
 
     @ViewBuilder

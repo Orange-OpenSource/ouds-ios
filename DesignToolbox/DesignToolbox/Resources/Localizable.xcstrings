@@ -1128,6 +1128,7 @@
     },
     "app_components_common_divider_label" : {
       "comment" : "Component screen - Common",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -1343,6 +1344,7 @@
     },
     "app_components_common_onError_label" : {
       "comment" : "Component - Common",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -1390,6 +1392,7 @@
     },
     "app_components_common_readOnly_label" : {
       "comment" : "Component screen - Common",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {

@@ -107,7 +107,7 @@ public final class MultipleColorSemanticTokens: NSObject, Sendable {
 
 // MARK: - Color WCAG 2.1
 
-extension OUDSWCAG21Ratios {
+extension OUDSWCAG21Ratio {
 
     /// Flag to rise so as to display in logs some warnings if there are troubles
     /// with contrast ratios between colors. Default set to *false*.
@@ -170,51 +170,58 @@ extension OUDSWCAG21Ratios {
     ///    - target: Type of check to do (default set to `.textual`)
     ///    - criteria: Requirement to consider (default set to `.AA`)
     ///    - source: Default set to `#file` to log the calling file to ease debugging
+    /// - Returns Bool: `true` if light an dark colors pass tests, false otherwise or if flag not set
+    @discardableResult
     public static func debugContrastRatio(_ lhs: MultipleColorSemanticTokens,
                                           _ rhs: MultipleColorSemanticTokens,
-                                          _ target: OUDSWCAG21Ratios.Target = .textual,
-                                          _ criteria: OUDSWCAG21Ratios.Criteria = .AA,
-                                          _ source: String = #file) {
+                                          _ target: OUDSWCAG21Ratio.Target = .textual,
+                                          _ criteria: OUDSWCAG21Ratio.Criteria = .AA,
+                                          _ source: String = #file) -> Bool {
         guard Self.oudsDebugWCAG21Colors else {
-            return
+            return false
         }
-        Self.debugContrastRatio(for: "light", lhs.light, rhs.light, target, criteria, source)
-        Self.debugContrastRatio(for: "dark", lhs.dark, rhs.dark, target, criteria, source)
+        let lightPass = Self.debugContrastRatio(for: "light", lhs.light, rhs.light, target, criteria, source)
+        let darkPass = Self.debugContrastRatio(for: "dark", lhs.dark, rhs.dark, target, criteria, source)
+        return lightPass && darkPass
     }
 
-    // swiftlint:disable line_length
     private static func debugContrastRatio(for scheme: String,
                                            _ lhs: String,
                                            _ rhs: String,
-                                           _ target: OUDSWCAG21Ratios.Target,
-                                           _ criteria: OUDSWCAG21Ratios.Criteria,
-                                           _ source: String) {
-        if let ratios = OUDSWCAG21Ratios.contrastRatios(lhs, rhs) {
-            switch criteria {
-            case .AA where target == .textual:
-                let (textualPass, _) = ratios.requirementsAA
-                if !textualPass {
-                    OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for text 4.5:1 (WCAG 2.1 AA) (ratio \(ratios.ratio))")
-                }
-            case .AA where target == .nonTextual:
-                let (_, nonTextualPass) = ratios.requirementsAA
-                if !nonTextualPass {
-                    OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for non-text 3:1 (WCAG 2.1 AA) (ratio \(ratios.ratio))")
-                }
-            case .AAA where target == .textual:
-                let (textualPass, _) = ratios.requirementsAAA
-                if !textualPass {
-                    OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for text 7:1 (WCAG 2.1 AAA) (ratio \(ratios.ratio))")
-                }
-            case .AAA where target == .nonTextual:
-                let (_, nonTextualPass) = ratios.requirementsAAA
-                if !nonTextualPass {
-                    OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for nontext 4.5:1 (WCAG 2.1 AAA) (ratio \(ratios.ratio))")
-                }
-            default:
-                OL.warning("👮 Contrast check requirements not managed!")
+                                           _ target: OUDSWCAG21Ratio.Target,
+                                           _ criteria: OUDSWCAG21Ratio.Criteria,
+                                           _ source: String) -> Bool {
+        guard let ratio = OUDSWCAG21Ratio.contrastRatios(lhs, rhs) else {
+            return false
+        }
+        switch criteria {
+        case .AA where target == .textual:
+            let (textualPass, _) = ratio.requirementsAA
+            if !textualPass {
+                OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for text 4.5:1 (WCAG 2.1 AA) (ratio \(ratio.ratio))")
             }
+            return textualPass
+        case .AA where target == .nonTextual:
+            let (_, nonTextualPass) = ratio.requirementsAA
+            if !nonTextualPass {
+                OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for non-text 3:1 (WCAG 2.1 AA) (ratio \(ratio.ratio))")
+            }
+            return nonTextualPass
+        case .AAA where target == .textual:
+            let (textualPass, _) = ratio.requirementsAAA
+            if !textualPass {
+                OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for text 7:1 (WCAG 2.1 AAA) (ratio \(ratio.ratio))")
+            }
+            return textualPass
+        case .AAA where target == .nonTextual:
+            let (_, nonTextualPass) = ratio.requirementsAAA
+            if !nonTextualPass {
+                OL.warning("👮 In \(source) the \(scheme) color '\(lhs)' on surface '\(rhs)' does not match contrast ratio for nontext 4.5:1 (WCAG 2.1 AAA) (ratio \(ratio.ratio))")
+            }
+            return nonTextualPass
+        default:
+            OL.warning("👮 Contrast check requirements not managed!")
+            return false
         }
     }
-    // swiftlint:enable line_length
 }
