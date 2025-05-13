@@ -103,37 +103,6 @@ public final class MultipleColorSemanticTokens: NSObject, Sendable {
     public func color(for colorScheme: ColorScheme) -> Color {
         (colorScheme == .light ? light : dark).color
     }
-
-#if DEBUG
-    // MARK: - Color WCAG 2.1
-
-    /// Checks the contrast ratio between a given color and `self`.
-    /// If some ratios are not reached, displays a warning in logs, if end only if the `Color.oudsDebugWCAG21Colors` flag is set to true.
-    /// This function works if and only if the compile-time constant `DEBUG` is defined.
-    /// Otherwise nothing is done.
-    /// - Parameter other: One color with light and dark values to compare with `self`
-    public func debugWCAG21ContrastRatio(_ other: MultipleColorSemanticTokens, _ source: String = #file) {
-        guard Color.oudsDebugWCAG21Colors else {
-            return
-        }
-        if let (lightRatio, light3to1, light4_5to1) = Color.wcag21ContrastRatioCheck(self.light, other.light) {
-            if !light3to1 {
-                OL.warning("👮 In \(source) the light color '\(self.light)' on surface '\(other.light)' does not match WCAG 2.1 3:1 (ratio \(lightRatio))")
-            }
-            if !light4_5to1 {
-                OL.warning("👮 In \(source) the light color '\(self.light)' on surface '\(other.light)' does not match WCAG 2.1 4.5:1 (ratio \(lightRatio))")
-            }
-        }
-        if let (darkRatio, dark3to1, dark4_5to1) = Color.wcag21ContrastRatioCheck(self.dark, other.dark) {
-            if !dark3to1 {
-                OL.warning("👮 In \(source) the dark color '\(self.dark)' on surface '\(other.dark)' does not match WCAG 2.1 3:1 (ratio \(darkRatio))")
-            }
-            if !dark4_5to1 {
-                OL.warning("👮 In \(source) the dark color '\(self.dark)' on surface '\(other.dark)' does not match WCAG 2.1 4.5:1 (ratio \(darkRatio))")
-            }
-        }
-    }
-#endif
 }
 
 // MARK: - Color WCAG 2.1

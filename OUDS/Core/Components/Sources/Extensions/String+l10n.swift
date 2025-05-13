@@ -23,36 +23,38 @@ infix operator <-
 extension String {
 
     // swiftlint:disable nslocalizedstring_key
+    // swiftlint:disable line_length
     /// Returns the localized result string using `self` as key.
     ///
-    /// If langauge is supported by *Bundle.module* the localized string is retuned from it.
-    /// Else, check if langauge is supported by *Bundle.main* (i.e. application), the localized string is retuned from it.
-    /// Else, as fallback the default language from *Bundle.mmodule* is used.
+    /// If language is supported by *Bundle.module* the localized string is retuned from it.
+    /// Else, check if language is supported by *Bundle.main* (i.e. application), the localized string is retuned from it.
+    /// Else, as fallback the default language from *Bundle.module* is used.
     ///
     /// - Returns String: The conversion of `self` as `NSLocalizedString`
     public func localized() -> String {
 
-        let preferredLocalization = Bundle.preferredLocalization
+        // let preferredLocalization = Bundle.preferredLocalization
 
-        // If language is supported by Bundle.module, prefer this traduction
+        // If language is supported by Bundle.module, prefer this translation
         let stringInModule = NSLocalizedString(self, tableName: nil, bundle: Bundle.module, value: "", comment: "")
         if stringInModule != self {
-            OL.debug("Preferred localization found: '\(preferredLocalization)' in Bundle.module")
+            // OL.debug("L10N: Preferred localization found: '\(preferredLocalization)' in Bundle.module")
             return stringInModule
         }
 
         // If language is supported by Bundle.main (i.e. application) use it.
         let stringInMain = NSLocalizedString(self, tableName: nil, bundle: .main, value: "", comment: "")
         if stringInMain != self {
-            OL.debug("Preferred localization found: '\(preferredLocalization)' in Bundle.main")
+            // OL.debug("L10N: Preferred localization found: '\(preferredLocalization)' in Bundle.main")
             return stringInMain
         }
 
         // Fallback, use default language from Bundle.module
-        OL.warning("Unable to find string from Bundle.module and Bundle.main for preferred localization '\(preferredLocalization)' -> Use the default language of Bundle.module")
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.module, value: "", comment: "")
+        // OL.warning("L10N: Unable to find string '\(self)' from Bundle.module and Bundle.main for preferred localization '\(preferredLocalization)': use the default language of Bundle.module")
+        return stringInModule
     }
     // swiftlint:enable nslocalizedstring_key
+    // swiftlint:enable line_length
 
     /// Returns a localized String using `self` as wording key expected to be in localizables.
     /// Will then inject as `String` the given `argument` inside the parameterized string.

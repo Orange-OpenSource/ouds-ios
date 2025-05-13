@@ -73,21 +73,21 @@ import SwiftUI
 ///     // A trailing switch with a label, an additonal label, an helper text and an icon.
 ///     // The inverse layout will be used here.
 ///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
-///                   isOn: $isOn,
-///                   additionalLabel: "The Beatles",
-///                   helper: "1967",
-///                   isReversed: true,
-///                   icon: Image(decorative: "ic_heart"))
+///                    isOn: $isOn,
+///                    additionalLabel: "The Beatles",
+///                    helper: "1967",
+///                    isReversed: true,
+///                    icon: Image(decorative: "ic_heart"))
 ///
 ///     // A trailing switch with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
 ///     OUDSSwitchItem("Rescue from this world!",
-///                   isOn: $isOn,
-///                   helper: "Put your hand in mine",
-///                   icon: Image(decorative: "ic_heart"),
-///                   isReversed: true,
-///                   isError: true,
-///                   hasDivider: true)
+///                    isOn: $isOn,
+///                    helper: "Put your hand in mine",
+///                    icon: Image(decorative: "ic_heart"),
+///                    isReversed: true,
+///                    isError: true,
+///                    hasDivider: true)
 ///
 ///     // A leading switch with a label, but disabled.
 ///     // The default layout will be used here.

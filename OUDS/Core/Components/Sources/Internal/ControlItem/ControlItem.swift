@@ -78,6 +78,7 @@ struct ControlItem: View {
     ///   - action: An optional action to trigger when the component has been pressed
     ///
     /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    ///
     /// **Remark 2: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
     /// provide the localized string if key is stored in another bundle.**
     init(indicatorType: IndicatorType,

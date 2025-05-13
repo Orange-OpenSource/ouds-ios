@@ -62,14 +62,14 @@ struct ControlItemLabel: View {
                 .oudsForegroundStyle(labelColor)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
-            if let additionalLabel = layoutData.additionalLabel {
+            if let additionalLabel = layoutData.additionalLabel, !additionalLabel.isEmpty {
                 Text(additionalLabel)
                     .typeLabelStrongMedium(theme)
                     .multilineTextAlignment(.leading)
                     .oudsForegroundStyle(additionalLabelColor)
             }
 
-            if let helper = layoutData.helper {
+            if let helper = layoutData.helper, !helper.isEmpty {
                 Text(helper)
                     .typeLabelDefaultMedium(theme)
                     .multilineTextAlignment(.leading)
