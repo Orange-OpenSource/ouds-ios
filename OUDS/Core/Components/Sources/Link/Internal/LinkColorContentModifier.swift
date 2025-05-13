@@ -47,7 +47,7 @@ struct LinkColorContentModifier: ViewModifier {
         case .disabled, .readOnly:
             colorToApply = disabledColor
         }
-        OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor)
+        OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor)
         return colorToApply
     }
 

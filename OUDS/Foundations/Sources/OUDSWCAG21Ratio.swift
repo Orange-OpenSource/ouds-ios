@@ -19,7 +19,7 @@ import SwiftUI
 /// WCAG 2.1 AA and AAA requirements use ratio for textual and non textual components
 public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
 
-// MARK: - OUDS WCAG 21 Ratios
+// MARK: - OUDS WCAG 21 Ratio
 
 /// Some countries set up new laws so as to force companies to have a better accessibility of their digital services.
 /// This is for example the case for France with the [Référentiel Général d'Amélioration de l'Accessibilité](https://accessibilite.numerique.gouv.fr),
@@ -31,23 +31,29 @@ public typealias WCAG21Requirements = (textual: Bool, nonTextual: Bool)
 /// See for example [the following guidelines](https://system.design.orange.com/0c1af118d/p/2531b9-accessibility-compliance)
 ///
 /// - Since: 0.15.0
-public struct OUDSWCAG21Ratios {
+public struct OUDSWCAG21Ratio {
 
     // MARK: - Stored properties
 
     /// The computed contrast ratio between two given colors
     public let ratio: Double
 
+    // MARK: - Computed properties
+
     /// If the computed contrast ratio between two given colors meets the 3:1 requirement
-    public let meets3to1: Bool
+    public var meets3to1: Bool {
+        ratio >= 3.0
+    }
 
     /// If the computed contrast ratio between two given colors meets the 4.5:1 requirement
-    public let meets4_5to1: Bool
+    public var meets4_5to1: Bool {
+        ratio >= 4.5
+    }
 
     /// If the computed contrast ratio between two given colors meets the 7:1 requirement
-    public let meets7to1: Bool
-
-    // MARK: - Computed properties
+    public var meets7to1: Bool {
+        ratio >= 7.0
+    }
 
     /// WCAG 2.1 requirement for AA level needs to have textual component matching 4.5:1 contrast ratio
     /// and non textual component matching 3:1 contrast ratio.
@@ -61,6 +67,14 @@ public struct OUDSWCAG21Ratios {
     /// This is recommended for mobiles devices projects (because of screen sizes and luminosity issues).
     public var requirementsAAA: WCAG21Requirements {
         (textual: meets7to1, nonTextual: meets4_5to1 )
+    }
+
+    // MARK: - Init
+
+    /// Defines a WCAG 2.1 ratio with the given contrast ratio value
+    /// - Parameter ratio: The contrast ratio to use
+    public init(ratio: Double) {
+        self.ratio = ratio
     }
 
     // MARK: - Luminance
@@ -119,25 +133,26 @@ public struct OUDSWCAG21Ratios {
     ///    - lhs: One color to test
     ///    - rhs: Another color to test
     /// - Returns: The computed ratio and flags saying if it match 3:1, 4.5:1 or 7:1
-    public static func contrastRatios(_ lhs: String, _ rhs: String) -> OUDSWCAG21Ratios? {
+    public static func contrastRatios(_ lhs: String, _ rhs: String) -> OUDSWCAG21Ratio? {
+        guard !lhs.isEmpty && !rhs.isEmpty else {
+            OL.warning("Ask to comput contrast ratio but one or two of the colors is empty")
+            return nil
+        }
         guard let lhsHexa6 = lhs.toHex6(), let rhsHexa6 = rhs.toHex6() else {
-            OL.error("Not possible to convert hexa colros to hex6 to compute contrast ratio between \(lhs) and \(rhs)!")
+            OL.error("Not possible to convert hexa colors to hex6 to compute contrast ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }
 
         guard let lhsColor = lhsHexa6.color, let rhsColor = rhsHexa6.color else {
-            OL.error("Not possible to convert string to colors to compute contrast ratio between \(lhs) and \(rhs)!")
+            OL.error("Not possible to convert string to colors to compute contrast ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }
 
         guard let contrastRatio = Self.contrastRatio(lhsColor, rhsColor) else {
-            OL.error("Not possible to compute ratio between \(lhs) and \(rhs)!")
+            OL.error("Not possible to compute ratio between '\(lhs)' and '\(rhs)'!")
             return nil
         }
 
-        return OUDSWCAG21Ratios(ratio: contrastRatio,
-                                meets3to1: contrastRatio >= 3.0,
-                                meets4_5to1: contrastRatio >= 4.5,
-                                meets7to1: contrastRatio >= 7.0)
+        return OUDSWCAG21Ratio(ratio: contrastRatio)
     }
 }

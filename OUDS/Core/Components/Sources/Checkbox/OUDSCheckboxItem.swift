@@ -164,6 +164,9 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - action: An additional action to trigger when the checkbox has been pressed, default set to `nil`
+    ///
+    /// **Remark: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
     public init(isOn: Binding<Bool>,
                 label: String,
                 helper: String? = nil,
@@ -212,6 +215,9 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view, by default set to `false`
     ///   - action: An additional action to trigger when the checkbox has been pressed
+    ///
+    /// **Remark: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
     public init(isOn: Binding<Bool>,
                 tag: Tag,
                 label: String,
@@ -233,9 +239,9 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
 
         _isOn = isOn
         self.layoutData = .init(
-            label: label,
+            label: label.localized(),
             additionalLabel: nil,
-            helper: helper,
+            helper: helper?.localized(),
             icon: icon,
             flipIcon: flipIcon,
             isOutlined: false,
@@ -252,9 +258,9 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
     public var body: some View {
         ControlItem(indicatorType: .checkBox(convertedState), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
-            .accessibilityLabel(a11yLabel(layoutData: layoutData))
-            .accessibilityValue(a11yValue())
-            .accessibilityHint(a11yHint(isReadOnly: layoutData.isReadOnly, indicatorState: convertedState.wrappedValue))
+            .accessibilityLabel(a11yLabel)
+            .accessibilityValue(a11yValue)
+            .accessibilityHint(a11yHint)
     }
 
     // MARK: - Computed value
@@ -265,14 +271,14 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
 
     // MARK: - A11Y helpers
 
-    /// Forges a string to vocalize with *Voice Over* describing the component value
-    private func a11yValue() -> String {
-        isOn ? "core_checkbox_checked_a11y".localized() : "core_checkbox_unchecked_a11y".localized()
+    /// The text to vocalize with *Voice Over* for the state of the indicator
+    private var a11yValue: String {
+        (isOn ? "core_checkbox_checked_a11y" : "core_checkbox_unchecked_a11y").localized()
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.
-    /// - Parameter layoutData: All data of the layout used to forge the string.
-    private func a11yLabel(layoutData: ControlItemLabel.LayoutData) -> String {
+
+    private var a11yLabel: String {
         let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
         let checkboxA11yTrait = "core_checkbox_trait_a11y".localized() // Fake trait for Voice Over vocalization
@@ -282,14 +288,11 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
     }
 
     /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
-    /// - Parameters:
-    ///    - isReadOnly: Flag saying wether or not the component is in *read only* mode
-    ///    - indicatorState: To get the hint if component both not in *read only* mode and enabled
-    private func a11yHint(isReadOnly: Bool, indicatorState: OUDSCheckboxIndicatorState) -> String {
-        if isReadOnly || !isEnabled {
+    private var a11yHint: String {
+        if layoutData.isReadOnly || !isEnabled {
             return ""
         } else {
-            return indicatorState.a11yHint
+            return convertedState.wrappedValue.a11yHint
         }
     }
 }
