@@ -59,7 +59,7 @@ extension String {
     /// - Parameter argument: The unique value to insert in the localized string with `self` as key
     /// - Returns: The localized `String`
     public func localized(with argument: CVarArg) -> String {
-        String(format: localized())
+        String(format: localized(), argument)
     }
 
     /// Just an operator to inject as `String` one argument in a localizable
@@ -78,15 +78,5 @@ extension String {
     /// - Returns String: The final result
     public static func <- (lhs: String, rhs: Int) -> String {
         String(format: lhs.localized(), rhs)
-    }
-}
-
-// MARK: - String extension - Format
-
-extension String {
-
-    /// Returns `self` but with first letter capitalized
-    public var camelCase: String {
-        self.prefix(1).capitalized + self.dropFirst()
     }
 }
