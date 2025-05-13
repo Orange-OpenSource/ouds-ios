@@ -130,6 +130,9 @@ public struct OUDSSwitchItem: View {
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
+    ///
+    /// **Remark: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are
+    /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
     public init(_ label: String,
                 isOn: Binding<Bool>,
                 helper: String? = nil,
@@ -150,9 +153,9 @@ public struct OUDSSwitchItem: View {
         _isOn = isOn
 
         self.layoutData = .init(
-            label: label,
+            label: label.localized(),
             additionalLabel: nil,
-            helper: helper,
+            helper: helper?.localized(),
             icon: icon,
             flipIcon: flipIcon,
             isOutlined: false,
@@ -168,13 +171,13 @@ public struct OUDSSwitchItem: View {
         ControlItem(indicatorType: .switch($isOn), layoutData: layoutData)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(a11yLabel)
-            .accessibilityValue(a11yValue.localized())
+            .accessibilityValue(a11yValue)
             .accessibilityHint(a11yHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
     private var a11yValue: String {
-        _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
+        (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.

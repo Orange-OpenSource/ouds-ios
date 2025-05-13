@@ -77,7 +77,9 @@ struct ControlItem: View {
     ///   - orientation: Specify the orientation of the layout. If `default` the indicator is at the leading position, if `reversed` it is on trailing.
     ///   - action: An optional action to trigger when the component has been pressed
     ///
-    /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    /// **Remark 2: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
     init(indicatorType: IndicatorType,
          label: String,
          helper: String? = nil,

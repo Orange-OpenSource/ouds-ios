@@ -62,6 +62,9 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
     ///    - isError: True if in an error context, false otherwise (default)
     ///    - isReadOnly: True if read only, false otherwise (default)
     ///    - hasDivider: True if a divider must be added for the current ``OUDSRadioItem``, false otherwise (default)
+    ///
+    /// **Remark: If `label`, `additionalLabel` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are
+    /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
     public init(tag: Tag,
                 label: String,
                 additionalLabel: String? = nil,

@@ -13,12 +13,14 @@
 
 import Foundation
 
-extension String {
+extension Bundle {
 
-    // MARK: - Format
-
-    /// Returns `self` but with first letter capitalized
-    public var camelCase: String {
-        self.prefix(1).capitalized + self.dropFirst()
+    /// Returns the fist preferred localization according to `Bundle.main`, or at least, "en"
+    static var preferredLocalization: String {
+        guard let firstPreferredLocalization = Bundle.main.preferredLocalizations.first else {
+            OL.warning("Not able to find first preferred localization!")
+            return "en"
+        }
+        return firstPreferredLocalization
     }
 }
