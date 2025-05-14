@@ -390,7 +390,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مُمَكَّن"
+            "value" : "Enabled"
           }
         },
         "en" : {
@@ -402,10 +402,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Actif"
+            "value" : "Enabled"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_common_showCode_text" : {
       "comment" : "Common",
@@ -522,19 +523,19 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les boutons permettent aux utilisateurs de faire des choix ou d'effectuer une action. Ils ont plusieurs styles pour divers besoins."
+            "value" : "Le composant Button permet aux utilisateurs de faire des choix ou d'effectuer une action. Ils ont plusieurs styles pour divers besoins."
           }
         }
       }
     },
     "app_components_button_hierarchy_label" : {
-      "comment" : "Component - Link",
+      "comment" : "Component - Button",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تَسَلسُل"
+            "value" : "Hierarchy"
           }
         },
         "en" : {
@@ -546,10 +547,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hiérarchie"
+            "value" : "Hierarchy"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_button_icon_a11y" : {
       "comment" : "Component - Button (a11y)",
@@ -582,7 +584,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أيقونة فقط"
+            "value" : "Icon only"
           }
         },
         "en" : {
@@ -594,10 +596,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône seul"
+            "value" : "Icon only"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_button_label" : {
       "comment" : "Component - Button",
@@ -606,7 +609,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "زر"
+            "value" : "Button"
           }
         },
         "en" : {
@@ -618,10 +621,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bouton"
+            "value" : "Button"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_button_negative_hierary_notAllowed_text" : {
       "comment" : "Component - Button",
@@ -654,7 +658,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عنصر مربع الاختيار الخاص بالحالتين"
+            "value" : "Checkbox Item"
           }
         },
         "en" : {
@@ -666,10 +670,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Case à cocher dans une liste"
+            "value" : "Checkbox Item"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_checkbox_controlItem_description_text" : {
       "comment" : "Component - Checkbox",
@@ -690,7 +695,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les cases à cocher permettent aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
+            "value" : "Le composant CheckboxItem permet aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
           }
         }
       }
@@ -714,7 +719,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les cases à cocher permettent aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
+            "value" : "Le composant CheckBox permet aux utilisateurs de sélectionner une ou plusieurs options dans une liste, d'activer ou de désactiver les paramètres ou de confirmer une action."
           }
         }
       }
@@ -743,200 +748,8 @@
         }
       }
     },
-    "app_components_checkbox_indeterminateCheckbox_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "مربع الاختيار الخاص بثلاث حالات فقط"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Indeterminate checkbox"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Case à cocher indéterminée"
-          }
-        }
-      }
-    },
-    "app_components_checkbox_indeterminateCheckboxItem_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "عنصر مربع الاختيار ثلاثي الحالات"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Indeterminate checkbox item"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Case à cocher indéterminée dans une liste"
-          }
-        }
-      }
-    },
-    "app_components_checkbox_indicatorOnly_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "خانة الاختيار"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checkbox"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Case à cocher seule"
-          }
-        }
-      }
-    },
-    "app_components_checkbox_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "خانة الاختيار"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checkbox"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Case à cocher"
-          }
-        }
-      }
-    },
-    "app_components_checkbox_label_text" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ملصق"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Label"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Label"
-          }
-        }
-      }
-    },
-    "app_components_checkbox_layout_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تَخطِيط"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Layout"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Disposition"
-          }
-        }
-      }
-    },
-    "app_components_checkbox_selection_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "اختيار"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selection"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sélection"
-          }
-        }
-      }
-    },
-    "app_components_checkbox_threeState_controlItem_description_text" : {
-      "comment" : "Component - Checkbox - Three States",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تتيح مربعات الاختيار غير المحددة للمستخدمين، على سبيل المثال، داخل بنية المجلد وشجرة الملفات تحديد أو إلغاء تحديد أو تحديد جزئي لعنصر واحد أو عناصر متعددة."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Indeterminate checkboxes allows users for example within a folder and file tree structure to select, unselect or partially select one or multiple items."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La case à cocher indéterminée est utilisée dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
-          }
-        }
-      }
-    },
-    "app_components_checkbox_threeStates_description_text" : {
-      "comment" : "Component - Checkbox - Three States",
+    "app_components_checkbox_indeterminateCheckbox_description_text" : {
+      "comment" : "Component - Checkbox - Indeterminate",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
@@ -954,19 +767,93 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La case à cocher indéterminée est utilisée dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
+            "value" : "Le composant CheckboxIndeterminate est utilisé dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
           }
         }
       }
     },
-    "app_components_checkbox_twoStates_indicatorOnly_label" : {
+    "app_components_checkbox_indeterminateCheckbox_label" : {
       "comment" : "Component - Checkbox",
       "extractionState" : "manual",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مربع الاختيار الخاص بالحالتين فقط"
+            "value" : "Indeterminate checkbox"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkbox"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkbox"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_checkbox_indeterminateCheckboxItem_description_text" : {
+      "comment" : "Component - Checkbox - Indeterminate",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تسمح مربعات الاختيار غير المحددة للمستخدمين على سبيل المثال داخل بنية شجرة المجلدات والملفات بتحديد عنصر واحد أو عدة عناصر أو إلغاء تحديدها أو تحديدها جزئيًا."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkboxes allows users for example within a folder and file tree structure to select, unselect or partially select one or multiple items."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Le composant CheckboxIndeterminate Item est utilisé dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
+          }
+        }
+      }
+    },
+    "app_components_checkbox_indeterminateCheckboxItem_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkbox item"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkbox item"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indeterminate checkbox item"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_checkbox_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Checkbox"
           }
         },
         "en" : {
@@ -978,10 +865,36 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Case à cocher"
+            "value" : "Checkbox"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_checkbox_selection_label" : {
+      "comment" : "Component - Checkbox",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selection"
+          }
+        }
+      },
+      "shouldTranslate" : false
     },
     "app_components_checkboxPicker_description_text" : {
       "comment" : "Component - Checkbox Picker",
@@ -1002,7 +915,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Un sélecteur de cases à cocher permet à l'utilisateur de sélectionner entre 0 et tous les éléments fournis dans une liste"
+            "value" : "Le composant Checkbox piocker permet à l'utilisateur de sélectionner entre 0 et tous les éléments fournis dans une liste"
           }
         }
       }
@@ -1014,7 +927,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "منتقي خانات الاختيار"
+            "value" : "Checkbox picker"
           }
         },
         "en" : {
@@ -1026,10 +939,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sélecteur de cases à cocher"
+            "value" : "Checkbox picker"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_checkboxPicker_root" : {
       "comment" : "Component - Checkbox Picker",
@@ -1074,7 +988,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les arrière-plans colorés utilisent des couleurs de surface pour maximiser le contraste avec le contenu. Plusieurs composants, tels que les boutons ou les liens, adaptent leur affichage en conséquence lorsqu'ils sont affichés sur des arrière-plans colorés."
+            "value" : "Le composant ColoredSurface utilisent des couleurs de surface pour maximiser le contraste avec le contenu. Plusieurs composants, tels que les boutons ou les liens, adaptent leur affichage en conséquence lorsqu'ils sont affichés sur des arrière-plans colorés."
           }
         }
       }
@@ -1086,7 +1000,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "خلفيات ملونة"
+            "value" : "Colored background"
           }
         },
         "en" : {
@@ -1098,10 +1012,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Surface colorée"
+            "value" : "Colored background"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_color_label" : {
       "comment" : "Component - Common",
@@ -1109,7 +1024,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "لون"
+            "value" : "Color"
           }
         },
         "en" : {
@@ -1121,34 +1036,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Couleur"
+            "value" : "Color"
           }
         }
-      }
-    },
-    "app_components_common_divider_label" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "فاصل"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Divider"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Séparateur"
-          }
-        }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_editContent_label" : {
       "comment" : "Component - Common",
@@ -1205,7 +1097,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "خطأ"
+            "value" : "Error"
           }
         },
         "en" : {
@@ -1217,34 +1109,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Erreur"
+            "value" : "Error"
           }
         }
-      }
-    },
-    "app_components_common_helperText_label" : {
-      "comment" : "Component - Checkbox",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "المساعد"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Helper"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte d’aide"
-          }
-        }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_iconAndTextLayout_label" : {
       "comment" : "Component screen - Common",
@@ -1253,7 +1122,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أيقونة + نص"
+            "value" : "Icon + text"
           }
         },
         "en" : {
@@ -1265,10 +1134,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône + texte"
+            "value" : "Icon + text"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_label_label" : {
       "comment" : "Component - Checkbox",
@@ -1277,7 +1147,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ملصق"
+            "value" : "Label"
           }
         },
         "en" : {
@@ -1292,7 +1162,8 @@
             "value" : "Label"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_layout_label" : {
       "comment" : "Component screen - Common",
@@ -1301,7 +1172,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تَخطِيط"
+            "value" : "Layout"
           }
         },
         "en" : {
@@ -1313,10 +1184,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Variants"
+            "value" : "Layout"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_onColoredSurface_label" : {
       "comment" : "Component screen - Common",
@@ -1325,7 +1197,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "على خلفية ملونة"
+            "value" : "On colored surface"
           }
         },
         "en" : {
@@ -1337,34 +1209,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sur fond de couleur"
+            "value" : "On colored surface"
           }
         }
-      }
-    },
-    "app_components_common_onError_label" : {
-      "comment" : "Component - Common",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "خطأ"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Error"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erreur"
-          }
-        }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_orientation_label" : {
       "comment" : "Component screen - Common",
@@ -1373,13 +1222,13 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تَخطِيط"
+            "value" : "Orientation"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Layout"
+            "value" : "Orientation"
           }
         },
         "fr" : {
@@ -1388,31 +1237,8 @@
             "value" : "Orientation"
           }
         }
-      }
-    },
-    "app_components_common_readOnly_label" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "للقراءة فقط"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Read only"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lecture seule"
-          }
-        }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_style_label" : {
       "comment" : "Component screen - Common",
@@ -1421,7 +1247,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أسلوب"
+            "value" : "Style"
           }
         },
         "en" : {
@@ -1436,7 +1262,8 @@
             "value" : "Style"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_textOnlyLayout_label" : {
       "comment" : "Component screen - Common",
@@ -1445,7 +1272,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "نص فقط"
+            "value" : "Text only"
           }
         },
         "en" : {
@@ -1457,34 +1284,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texte seul"
+            "value" : "Texte only"
           }
         }
-      }
-    },
-    "app_components_common_userText_label" : {
-      "comment" : "Component screen - Common",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "نص"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Text"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Texte"
-          }
-        }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_common_viewCodeExample_label" : {
       "comment" : "Component screen - Common",
@@ -1517,7 +1321,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فاصل"
+            "value" : "Divider"
           }
         },
         "en" : {
@@ -1529,10 +1333,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Séparateur"
+            "value" : "Divider"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_controlItem_flipIcon_label" : {
       "comment" : "Component - ControlItem",
@@ -1541,7 +1346,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أيقونة الوجه"
+            "value" : "Flip icon"
           }
         },
         "en" : {
@@ -1553,10 +1358,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inverser l’icône"
+            "value" : "Flip icon"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_controlItem_helperText_label" : {
       "comment" : "Component - ControlItem",
@@ -1565,7 +1371,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "نص مساعد"
+            "value" : "Helper text"
           }
         },
         "en" : {
@@ -1577,10 +1383,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texte d’aide"
+            "value" : "Helper text"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_controlItem_icon_label" : {
       "comment" : "Component - ControlItem",
@@ -1589,7 +1396,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "رمز"
+            "value" : "Icon"
           }
         },
         "en" : {
@@ -1601,10 +1408,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône"
+            "value" : "Icon"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_controlItem_readOnly_label" : {
       "comment" : "Component - ControlItem",
@@ -1613,7 +1421,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "للقراءة فقط"
+            "value" : "Read Only"
           }
         },
         "en" : {
@@ -1625,10 +1433,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lecture seule"
+            "value" : "Read only"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_controlItem_reversed_label" : {
       "comment" : "Component - ControlItem",
@@ -1637,7 +1446,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "معكوس"
+            "value" : "Reversed"
           }
         },
         "en" : {
@@ -1649,7 +1458,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inversé"
+            "value" : "Reversed"
           }
         }
       }
@@ -1673,7 +1482,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Un séparateur structure visuellement une interface en séparant clairement les sections de contenu. Il améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie trop marquée comme le feraient un titre ou un conteneur."
+            "value" : "Le composant Divider structure visuellement une interface en séparant clairement les sections de contenu. Il améliore la lisibilité et l'organisation du contenu sans introduire une hiérarchie trop marquée comme le feraient un titre ou un conteneur."
           }
         }
       }
@@ -1697,7 +1506,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le séparateur horizontal est utilisé pour séparer des contenus positionnés côte à côte"
+            "value" : "Le variant horizontal du composant Divider est utilisé pour séparer des contenus positionnés côte à côte"
           }
         }
       }
@@ -1709,7 +1518,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فاصل أفقي"
+            "value" : "Horizontal divider"
           }
         },
         "en" : {
@@ -1721,10 +1530,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Séparateur horizontal"
+            "value" : "Horizontal divider"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_divider_label" : {
       "comment" : "Component - Divider",
@@ -1733,7 +1543,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فاصل"
+            "value" : "Divider"
           }
         },
         "en" : {
@@ -1745,10 +1555,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Séparateur"
+            "value" : "Divider"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_divider_verticalDivider_description_text" : {
       "comment" : "Component - Divider",
@@ -1769,7 +1580,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le séparateur vertical est utilisé pour séparer des contenus positionnés l’un en dessous de l’autre"
+            "value" : "Le variant vertical du composant est utilisé pour séparer des contenus positionnés l’un en dessous de l’autre"
           }
         }
       }
@@ -1781,7 +1592,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "فاصل عمودي"
+            "value" : "Vertical divider"
           }
         },
         "en" : {
@@ -1793,10 +1604,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Séparateur vertical"
+            "value" : "Vertical divider"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_link_backLayout_label" : {
       "comment" : "Component - Link",
@@ -1805,7 +1617,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "خلف"
+            "value" : "Back"
           }
         },
         "en" : {
@@ -1817,10 +1629,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Retour"
+            "value" : "Back"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_link_description_text" : {
       "comment" : "Component - Link",
@@ -1841,7 +1654,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les liens dirigent les utilisateurs vers d'autres ressources ou sections, qu'elles soient internes (dans la même application) ou externes (vers un site web ou un document)."
+            "value" : "Le composant Link dirige les utilisateurs vers d'autres ressources ou sections, qu'elles soient internes (dans la même application) ou externes (vers un site web ou un document)."
           }
         }
       }
@@ -1853,7 +1666,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "وصلة"
+            "value" : "Link"
           }
         },
         "en" : {
@@ -1865,10 +1678,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lien"
+            "value" : "Link"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_link_nextLayout_label" : {
       "comment" : "Component - Link",
@@ -1877,7 +1691,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "التالي"
+            "value" : "Next"
           }
         },
         "en" : {
@@ -1889,10 +1703,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suivant"
+            "value" : "Next"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_link_size_label" : {
       "comment" : "Component - Link",
@@ -1901,7 +1716,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مقاس"
+            "value" : "Size"
           }
         },
         "en" : {
@@ -1913,34 +1728,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Taille"
+            "value" : "Size"
           }
         }
-      }
-    },
-    "app_components_radio_label_text" : {
-      "comment" : "Component - Radio",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ملصق"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Label"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Label"
-          }
-        }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radioButton_description_text" : {
       "comment" : "Component - Radio",
@@ -1961,7 +1753,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les boutons radio permettent aux utilisateurs de sélectionner une option dans une liste."
+            "value" : "Le composant Radio Button permettent aux utilisateurs de sélectionner une option dans une liste."
           }
         }
       }
@@ -1997,7 +1789,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "راديو بوتون"
+            "value" : "Radio button"
           }
         },
         "en" : {
@@ -2009,10 +1801,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bouton radio"
+            "value" : "Radio button"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radioButton_radioButton_label" : {
       "comment" : "Component - Radio",
@@ -2021,7 +1814,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مؤشر فقط"
+            "value" : "Radio button"
           }
         },
         "en" : {
@@ -2033,10 +1826,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bouton radio"
+            "value" : "Radio button"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radioButton_radioButtonItem_additionalLabel_label" : {
       "comment" : "Component - Radio",
@@ -2045,7 +1839,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "نص الملصق الإضافي"
+            "value" : "Additional label"
           }
         },
         "en" : {
@@ -2057,10 +1851,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Label supplémentaire"
+            "value" : "Additional label"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radioButton_radioButtonItem_description_text" : {
       "comment" : "Component - Radio",
@@ -2081,7 +1876,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les boutons radio permettent aux utilisateurs de sélectionner une options dans une liste."
+            "value" : "Le composant Radio Button Item permet aux utilisateurs de sélectionner une options dans une liste."
           }
         }
       }
@@ -2093,7 +1888,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "عنصر زر الاختيار"
+            "value" : "Radio button item"
           }
         },
         "en" : {
@@ -2105,10 +1900,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bouton radio dans une liste"
+            "value" : "Radio button item"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radioButton_radioButtonItem_outlined_label" : {
       "comment" : "Component - Radio",
@@ -2117,7 +1913,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "مخطط تفصيلي"
+            "value" : "Outlined"
           }
         },
         "en" : {
@@ -2129,10 +1925,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Encadré"
+            "value" : "Outlined"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radioButton_selection_label" : {
       "comment" : "Component - Radio",
@@ -2141,7 +1938,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اختيار"
+            "value" : "Selection"
           }
         },
         "en" : {
@@ -2153,10 +1950,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sélection"
+            "value" : "Selection"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_radioPicker_description_text" : {
       "comment" : "Component - Radio Picker",
@@ -2177,7 +1975,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le sélecteur de radio permet aux utilisateurs de choisir un élément au sein d'un groupe de plusieurs boutons radio"
+            "value" : "Le composant Radio Picker permet aux utilisateurs de choisir un élément au sein d'un groupe"
           }
         }
       }
@@ -2189,7 +1987,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "منتقي الراديو"
+            "value" : "Radio picker"
           }
         },
         "en" : {
@@ -2201,10 +1999,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sélecteur de boutons radio"
+            "value" : "Radio picker"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_switch_description_text" : {
       "comment" : "Component - Switch",
@@ -2225,7 +2024,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Un switch permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre. "
+            "value" : "Le composant Switch permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre. "
           }
         }
       }
@@ -2261,7 +2060,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "التبديل"
+            "value" : "Switch"
           }
         },
         "en" : {
@@ -2276,7 +2075,8 @@
             "value" : "Switch"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_switch_label_text" : {
       "comment" : "Component - Switch",
@@ -2309,7 +2109,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "اختيار"
+            "value" : "Selection"
           }
         },
         "en" : {
@@ -2321,10 +2121,11 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sélection"
+            "value" : "Selection"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_switch_switch_label" : {
       "comment" : "Component - Switch",
@@ -2333,7 +2134,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "يُحوّل"
+            "value" : "Switch"
           }
         },
         "en" : {
@@ -2348,7 +2149,8 @@
             "value" : "Switch"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "app_components_switch_switchItem_description_text" : {
       "comment" : "Component - Switch",
@@ -2369,7 +2171,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Un switch permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre."
+            "value" : "Le composant Switch Item permet aux utilisateurs d’activer ou désactiver une fonctionnalité, une option ou un paramètre."
           }
         }
       }
@@ -2381,7 +2183,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "تبديل العنصر"
+            "value" : "Switch Item"
           }
         },
         "en" : {
@@ -2393,7 +2195,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Switch enrichi"
+            "value" : "Switch Item"
           }
         }
       }
@@ -2417,7 +2219,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Border sont utilisées pour les couleurs de contour sur les composants et pour les couleurs des lignes de séparation pour des composants comme les tableaux."
+            "value" : "Les tokens Border sont utilisés pour les couleurs de contour sur les composants et pour les couleurs des lignes de séparation pour des composants comme les tableaux."
           }
         }
       }
@@ -2541,7 +2343,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Color renforce notre identité de marque et assure la cohérence à travers toutes les expériences produit. Les tokens sémantiques décrits sont ceux que vous devez utiliser lors de la création d'une application mobile."
+            "value" : "Les tokens Color renforcent notre identité de marque et assurent la cohérence à travers toutes les expériences produit. Les tokens sémantiques décrits sont ceux que vous devez utiliser lors de la création d'une application mobile."
           }
         }
       }
@@ -2675,7 +2477,7 @@
         "ar" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "أيقونة زخرفية"
+            "value" : "Icon decorative"
           }
         },
         "en" : {
@@ -2687,7 +2489,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Icône décorative"
+            "value" : "Icon decorative"
           }
         }
       }
@@ -2786,7 +2588,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Column Gap comprondent à l'espacement vertical entre les objets."
+            "value" : "Les tokens Column Gap correspondent à l'espacement vertical entre les objets."
           }
         }
       }
@@ -2982,7 +2784,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Padding Inset corespondent au remplissage équivalant autour d’un objet (gauche, droit, supérieur et inférieur)."
+            "value" : "Les tokens Padding Inset correspondent au remplissage équivalant autour d’un objet (gauche, droit, supérieur et inférieur)."
           }
         }
       }
@@ -3031,7 +2833,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Padding Stack comprondent au rembourrage supérieur et inférieur."
+            "value" : "Les tokens Padding Stack correspondent au remplissage supérieur et inférieur."
           }
         }
       }
@@ -3080,7 +2882,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Raw Gap corespondent à l'espacement horizontal entre les objets."
+            "value" : "Les tokens Raw Gap correspondent à l'espacement horizontal entre les objets."
           }
         }
       }
@@ -3129,7 +2931,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les ‘tokens Scaled font référence à un espacement qui s'ajuste de manière dynamique en fonction de facteurs tels que la taille du conteneur, la résolution de l'écran ou les éléments de mise en page."
+            "value" : "Les tokens Scaled font référence à un espacement qui s'ajuste de manière dynamique en fonction de facteurs tels que la taille du conteneur, la résolution de l'écran ou les éléments de mise en page."
           }
         }
       }
@@ -3153,7 +2955,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Elevation sont utilisées pour donner l'impression de distance ou d'élévation entre les surfaces, ce qui ajoute de la profondeur à nos designs."
+            "value" : "Les tokens Elevation sont utilisés pour donner l'impression de distance ou d'élévation entre les surfaces, ce qui ajoute de la profondeur à nos designs."
           }
         }
       }
@@ -3202,7 +3004,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Les tokens Grid sont utilisées pour positionner le contenu et créer des mises en page de page cohérentes."
+            "value" : "Les tokens Grid sont utilisés pour positionner le contenu et créer des mises en page de page cohérentes."
           }
         }
       }
