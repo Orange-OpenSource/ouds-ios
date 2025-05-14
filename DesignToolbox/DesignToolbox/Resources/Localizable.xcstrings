@@ -815,7 +815,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Le composant CheckboxIndeterminate Item est utilisé dans des structures de dossier et de fichiers ou l’utilisateur peut sélectionner, désélectionner ou sélectionner partiellement certains éléments."
           }
         }
@@ -993,31 +993,6 @@
         }
       }
     },
-    "app_components_coloredSurface_label" : {
-      "comment" : "Component - Colored Surface",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Colored background"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Colored background"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Colored background"
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "app_components_common_color_label" : {
       "comment" : "Component - Common",
       "localizations" : {
@@ -1185,6 +1160,31 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Layout"
+          }
+        }
+      },
+      "shouldTranslate" : false
+    },
+    "app_components_common_onColoredBackground_label" : {
+      "comment" : "Component - Colored Surface",
+      "extractionState" : "manual",
+      "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored background"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored background"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colored background"
           }
         }
       },
@@ -2077,30 +2077,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "app_components_switch_label_text" : {
-      "comment" : "Component - Switch",
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ملصق"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Label"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Label"
-          }
-        }
-      }
     },
     "app_components_switch_selection_label" : {
       "comment" : "Component - Switch",
