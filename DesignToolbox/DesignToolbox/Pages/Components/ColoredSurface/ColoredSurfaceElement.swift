@@ -19,7 +19,7 @@ struct ColoredSurfaceElement: DesignToolboxElement {
     let pageDescription: AnyView
 
     init() {
-        name = "app_components_coloredSurface_label".localized()
+        name = "app_components_common_onColoredBackground_label".localized()
         image = Image(decorative: "il_components_colored_background").renderingMode(.original)
         pageDescription = AnyView(DesignToolboxElementPage(
                 name: name,
