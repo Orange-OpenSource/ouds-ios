@@ -42,6 +42,20 @@ body:
     validations:
       required: true
   - type: input
+    id: app-ouds-lib-version
+    attributes:
+      label: OUDS iOS library version embeded in the app
+      placeholder: "0.14.0"
+    validations:
+      required: false      
+  - type: input
+    id: app-token-lib-version
+    attributes:
+      label: Token library version embeded in the app
+      placeholder: "0.11.0"
+    validations:
+      required: false      
+  - type: input
     id: app-build-type
     attributes:
       label: App build type
