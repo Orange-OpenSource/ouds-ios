@@ -81,7 +81,9 @@ struct AboutPage: View {
                     UIApplication.shared.open(appSettingsUrl)
                 }.accessibilityHint("app_about_appSettings_hint_a11y")
             }
-            .navigationTitle("app_bottomBar_about_label")
+            .oudsNavigationTitle("app_bottomBar_about_label")
+            .navigationBarTitleDisplayMode(.inline)
         }
+        .navigationViewStyle(.stack)
     }
 }

@@ -24,6 +24,7 @@ struct DesignToolboxElementsPage: View {
 
     // MARK: Stored properties
 
+    let title: String
     let elements: [DesignToolboxElement]
 
     // MARK: Body
@@ -48,6 +49,8 @@ struct DesignToolboxElementsPage: View {
                 .navigationbarMenuForThemeSelection()
             }
             .oudsBackground(theme.colors.colorBgPrimary)
+            .oudsNavigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)
     }

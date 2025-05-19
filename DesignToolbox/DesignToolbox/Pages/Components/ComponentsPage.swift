@@ -28,7 +28,6 @@ struct ComponentsPage: View {
     ]
 
     var body: some View {
-        DesignToolboxElementsPage(elements: componentElements.sorted(by: { $0.name < $1.name }))
-            .oudsNavigationTitle("app_bottomBar_components_label")
+        DesignToolboxElementsPage(title: "app_bottomBar_components_label", elements: componentElements.sorted(by: { $0.name < $1.name }))
     }
 }
