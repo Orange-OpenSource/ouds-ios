@@ -9,22 +9,6 @@ For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *
 
 ## In OUDS library 
 
-## In Design System Toolbox
-
-#### DeclarationAccessibility
-
-Copyright 2021-2023 Orange SA
-
-*DeclarationAccessibility* is distributed under the terms and conditions of the [Apache License](https://opensource.org/license/apache-2-0).
-You may download the source code on the [following website](https://github.com/Orange-OpenSource/accessibility-statement-lib-ios).
-
-### swift-snapshot-testing
-
-Copyright 2019 Point-Free, Inc.
-
-*swift-snapshot-testing* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/pointfreeco/swift-snapshot-testing).
-
 ## In Project
 
 ### Ruby gems
