@@ -1,17 +1,19 @@
 <h1 align="center">OUDS iOS</h1>
 
 <p align="center">
-  OUDS iOS provides Orange iOS components to developers and a demo application.
+  OUDS iOS provides Orange iOS components to developers.
   <br>
   <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=bug_report.yml" title="Open an issue on GitHub">Report bug</a>
   ·
-  <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=feature_request.yml title="Open an issue on GitHub">Request feature</a>
+  <a href="https://github.com/Orange-OpenSource/ouds-ios/issues/new?template=feature_request.yml" title="Open an issue on GitHub">Request feature</a>
   ·
   <a href="https://ios.unified-design-system.orange.com/documentation" title="Swift library technical documentation on GitHub Pages">Swift documentation</a>
   ·
   <a href="https://github.com/Orange-OpenSource/ouds-ios/wiki" title="Swift library wiki">Wiki</a>
   ·
   <a href="https://unified-design-system.orange.com/" title="Design system global website">Design system</a>
+  ·
+  <a href="https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox" title="Design system toolbox GitHub project">Design system toolbox</a>
 </p>
 
 <p align="center">
@@ -42,13 +44,15 @@
 
 ## Content
 
-This repository contains the OUDS iOS library that provides Orange iOS components for its unified design system, but also a demo application showcasing these different components.
+This repository contains the OUDS iOS library, as a Swift Package, that provides Orange iOS components for its unified design system.
 
 You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/documentation), and also the [whole design system](https://unified-design-system.orange.com/).
 
 Details about the project are also [available in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki).
 
 You can find the [available API online on the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
+
+The design system toolbox app, i.e. a showcase app, is [also on GitHub](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
 ```
 ⚠️ This release should not be used as is. 
@@ -73,6 +77,8 @@ Have a bug or a feature request? Please first search for existing and closed iss
 If you want to share ideas or discuss about API, features, components or other topics, you should first open a new discussion.
 [Q&A](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/q-a) is more dedicated for help, otherwise feel free to open or update a topic in [Ideas](https://github.com/Orange-OpenSource/ouds-ios/discussions/categories/ideas).
 Keep in mind internal or sensitive discussions must be in internal tools, not public ones.
+
+If your discussions, requests or issues are about the design system toolbox application, [use instead its GitHub project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
 ## Contributing
 
