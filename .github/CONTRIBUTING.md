@@ -207,13 +207,12 @@ Reviewed-by: Reviewer firstname and lastname <reviewer email>
 Signed-off-by: Author firstname and lastname <first author email>
 ```
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
+For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
 ```text
 refactor: update some things colors and design of the demo app (#123) (#4562)
 
 Some things have been refactored to make incredible things.
 
-Tested-by: Iman Assabah <benoit.suzanne@orange.com>
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>
