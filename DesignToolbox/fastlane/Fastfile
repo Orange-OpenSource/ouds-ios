@@ -657,12 +657,11 @@ Please, get the new build from *TestFlight* app, or contact the project maintain
 @ludovic35 - Ludovic PINEL - iOS developer, OUDS iOS maintainer
 @MaximeTonnerre - Maxime TONNERRE - lead designer
 @mccart77 - Stephen McCARTHY - designer
-@iassab - Iman Assabah - designer
 @TonyAntonyHello - Anton ASTAFEV - designer
 -->
 cc @B3nz01d (product owner)
 cc @pylapp @ludovic35 (dev team)
-cc @MaximeTonnerre @mccart77 @iassab @TonyAntonyHello (design team)
+cc @MaximeTonnerre @mccart77 @TonyAntonyHello (design team)
 
 _This is an automated message sent with love thanks to *Fastlane* from our CI/CD pipeline 🤘_
 EOF
