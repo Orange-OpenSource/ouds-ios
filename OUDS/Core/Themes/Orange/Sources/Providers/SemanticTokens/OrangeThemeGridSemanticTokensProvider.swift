@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -27,7 +27,7 @@ import OUDSFoundations
 ///         override var gridExtraCompactColumnGap: GridSemanticToken {
 ///             GridRawTokens.gridColumnGap200
 ///         }
-///         
+///
 ///         override var gridCompactColumnGap: GridSemanticToken {
 ///             GridRawTokens.gridColumnGap200
 ///         }
@@ -63,7 +63,7 @@ open class OrangeThemeGridSemanticTokensProvider: AllGridSemanticTokensProvider 
         OL.debug("Init of OrangeThemeGridSemanticTokensProvider")
     }
 
-    deinit{ }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

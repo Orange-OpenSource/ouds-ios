@@ -77,9 +77,9 @@ struct ControlItemContent: View {
 
     private var isOn: Bool {
         switch indicatorType {
-        case .switch(let isOn), .radioButton(let isOn):
+        case let .switch(isOn), let .radioButton(isOn):
             isOn.wrappedValue
-        case .checkBox(let selectionState):
+        case let .checkBox(selectionState):
             selectionState.wrappedValue == .selected
         }
     }

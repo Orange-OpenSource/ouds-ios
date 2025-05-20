@@ -74,6 +74,6 @@ extension Divider {
     /// **Remark: Vertical means vertical line (content separator in a HStack)**
     @MainActor
     public func oudsVerticalDivider(color: OUDSDividerColor) -> some View {
-        self.modifier(DividerModifier(dividerColor: color, orientation: .vertical))
+        modifier(DividerModifier(dividerColor: color, orientation: .vertical))
     }
 }

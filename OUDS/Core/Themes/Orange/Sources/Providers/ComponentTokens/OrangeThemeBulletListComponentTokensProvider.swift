@@ -87,7 +87,7 @@ open class OrangeThemeBulletListComponentTokensProvider: AllBulletListComponentT
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
-    deinit { }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

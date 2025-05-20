@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import Foundation
@@ -59,14 +59,14 @@ public struct OUDSWCAG21Ratio {
     /// and non textual component matching 3:1 contrast ratio.
     /// This is recommended for web projects.
     public var requirementsAA: WCAG21Requirements {
-        (textual: meets4_5to1, nonTextual: meets3to1 )
+        (textual: meets4_5to1, nonTextual: meets3to1)
     }
 
     /// WCAG 2.1 requirement for AAA level needs to have textual component matching 7:1 contrast ratio
     /// and non textual component matching 4.5:1 contrast ratio.
     /// This is recommended for mobiles devices projects (because of screen sizes and luminosity issues).
     public var requirementsAAA: WCAG21Requirements {
-        (textual: meets7to1, nonTextual: meets4_5to1 )
+        (textual: meets7to1, nonTextual: meets4_5to1)
     }
 
     // MARK: - Init
@@ -95,12 +95,13 @@ public struct OUDSWCAG21Ratio {
             return nil
         }
 
-        let R = (R_sRGB <= 0.04045 ? R_sRGB / 12.92 : pow(((R_sRGB + 0.055) / 1.055), 2.4))
-        let G = (G_sRGB <= 0.04045 ? G_sRGB / 12.92 : pow(((G_sRGB + 0.055) / 1.055), 2.4))
-        let B = (B_sRGB <= 0.04045 ? B_sRGB / 12.92 : pow(((B_sRGB + 0.055) / 1.055), 2.4))
+        let R = (R_sRGB <= 0.04045 ? R_sRGB / 12.92 : pow((R_sRGB + 0.055) / 1.055, 2.4))
+        let G = (G_sRGB <= 0.04045 ? G_sRGB / 12.92 : pow((G_sRGB + 0.055) / 1.055, 2.4))
+        let B = (B_sRGB <= 0.04045 ? B_sRGB / 12.92 : pow((B_sRGB + 0.055) / 1.055, 2.4))
 
         return 0.2126 * R + 0.7152 * G + 0.0722 * B
     }
+
     // swiftlint:enable identifier_name
 
     // MARK: - Contrast ratio
@@ -112,8 +113,9 @@ public struct OUDSWCAG21Ratio {
     ///    - rhs: The other color to compare with `lhs`
     /// - Returns Double?: The contrast ratio or `nil` if a luminance is missing
     public static func contrastRatio(_ lhs: Color, _ rhs: Color) -> Double? {
-        guard let selfLuminance = Self.luminance(for: lhs),
-              let otherLuminance = Self.luminance(for: rhs) else {
+        guard let selfLuminance = luminance(for: lhs),
+              let otherLuminance = luminance(for: rhs)
+        else {
             OL.error("Missing color luminance(s) for contrast ratio computation")
             return nil
         }
@@ -134,7 +136,7 @@ public struct OUDSWCAG21Ratio {
     ///    - rhs: Another color to test
     /// - Returns: The computed ratio and flags saying if it match 3:1, 4.5:1 or 7:1
     public static func contrastRatios(_ lhs: String, _ rhs: String) -> OUDSWCAG21Ratio? {
-        guard !lhs.isEmpty && !rhs.isEmpty else {
+        guard !lhs.isEmpty, !rhs.isEmpty else {
             OL.warning("Ask to comput contrast ratio but one or two of the colors is empty")
             return nil
         }

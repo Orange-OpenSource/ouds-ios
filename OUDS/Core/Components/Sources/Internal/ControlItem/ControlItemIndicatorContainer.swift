@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import SwiftUI
@@ -34,11 +34,11 @@ struct ControlItemIndicatorContainer: View {
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
             switch indicatorType {
-            case .switch(let binding):
+            case let .switch(binding):
                 SwitchIndicator(interactionState: interactionState, isOn: binding.wrappedValue)
-            case .radioButton(let binding):
+            case let .radioButton(binding):
                 RadioIndicator(interactionState: interactionState, isOn: binding.wrappedValue, isError: layoutData.isError)
-            case .checkBox(let binding):
+            case let .checkBox(binding):
                 CheckboxIndicator(interactionState: interactionState, indicatorState: binding.wrappedValue, isError: layoutData.isError)
             }
         }

@@ -141,7 +141,8 @@ public struct OUDSSwitchItem: View {
                 isReversed: Bool = true,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false) {
+                hasDivider: Bool = false)
+    {
         if isError && isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
         }
@@ -152,7 +153,7 @@ public struct OUDSSwitchItem: View {
 
         _isOn = isOn
 
-        self.layoutData = .init(
+        layoutData = .init(
             label: label.localized(),
             additionalLabel: nil,
             helper: helper?.localized(),

@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import Foundation
@@ -29,7 +29,7 @@ extension String {
     /// - Parameter weight: The weight to apply (e.g. "bold", "italic")
     /// - Returns String: The full name of the font to use (e.g. "Menlo-Bold" or "Menlo-Italic")
     public func compose(withFont weight: String) -> String {
-        guard !self.isEmpty else {
+        guard !isEmpty else {
             OL.error("No font family to compose with weight")
             return self
         }

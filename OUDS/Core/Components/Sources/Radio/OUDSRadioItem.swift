@@ -37,7 +37,7 @@ import SwiftUI
 /// The radio button can be associated to a specifc type for its *tag*.
 /// Indeed a radio button alone with this layout is not that much useful, and should be associated to a *tag* which will permit a ``OUDSRadioPicker``
 /// to provide the selected value for a group of radio buttons.
-/// 
+///
 /// ## Particular cases
 ///
 /// An ``OUDSRadioItem`` can be related to an error situation, for example troubles for a formular.
@@ -190,7 +190,8 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
-                action: (() -> Void)? = nil) where Tag == Never? {
+                action: (() -> Void)? = nil) where Tag == Never?
+    {
         self.init(isOn: isOn,
                   tag: nil,
                   label: label,
@@ -251,7 +252,8 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
-                action: (() -> Void)? = nil) {
+                action: (() -> Void)? = nil)
+    {
         if isError && isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
         }
@@ -265,7 +267,7 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
         }
 
         _isOn = isOn
-        self.layoutData = .init(
+        layoutData = .init(
             label: label.localized(),
             additionalLabel: additionalLabel?.localized(),
             helper: helper?.localized(),

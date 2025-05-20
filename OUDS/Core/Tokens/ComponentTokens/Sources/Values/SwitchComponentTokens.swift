@@ -36,7 +36,7 @@ public protocol SwitchComponentTokens {
     var switchSizeWidthCursorSelected: SizeSemanticToken { get }
     var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { get }
     var switchSizeWidthCursorUnselected: SizeSemanticToken { get }
-    var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken  { get }
+    var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { get }
     var switchSizeWidthTrack: SizeSemanticToken { get }
 
     // MARK: - Borders

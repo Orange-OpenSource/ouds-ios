@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -131,7 +131,8 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                          skeleton: AllSkeletonComponentTokensProvider? = nil,
                          switch: AllSwitchComponentTokensProvider? = nil,
                          tag: AllTagComponentTokensProvider? = nil,
-                         fontFamily: FontFamilySemanticToken? = nil) {
+                         fontFamily: FontFamilySemanticToken? = nil)
+    {
 
         let borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         let colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
@@ -152,7 +153,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
         let divider = (divider ?? OrangeThemeDividerComponentTokensProvider(borders: borders))
         let inputText = (inputText ?? OrangeThemeInputTextComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let link = (link ?? OrangeThemeLinkComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
-        let listItem = (`listItem` ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
+        let listItem = (listItem ?? OrangeThemeListItemComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let radioButton = (radioButton ?? OrangeThemeRadioButtonComponentTokensProvider(sizes: sizes, borders: borders))
         let select = (select ?? OrangeThemeSelectComponentTokensProvider(sizes: sizes, colors: colors, spaces: spaces))
         let skeleton = (skeleton ?? OrangeThemeSkeletonComponentTokensProvider(colors: colors))
@@ -184,7 +185,7 @@ open class OrangeTheme: OUDSTheme, @unchecked Sendable {
                    switch: `switch`,
                    tag: tag,
                    fontFamily: fontFamily)
-        }
+    }
 
-    deinit { }
+    deinit {}
 }

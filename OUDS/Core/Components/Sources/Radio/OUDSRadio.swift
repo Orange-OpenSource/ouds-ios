@@ -80,7 +80,8 @@ public struct OUDSRadio: View {
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     public init(isOn: Binding<Bool>,
                 accessibilityLabel: String,
-                isError: Bool = false) {
+                isError: Bool = false)
+    {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSRadio should not have an empty accessibility label, think about your disabled users!")
         }

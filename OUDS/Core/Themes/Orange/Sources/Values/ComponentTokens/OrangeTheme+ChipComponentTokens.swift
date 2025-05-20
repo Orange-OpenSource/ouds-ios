@@ -34,37 +34,37 @@ extension OrangeThemeChipComponentTokensProvider: ChipComponentTokens {
     @objc open var chipBorderWidthUnselected: BorderWidthSemanticToken { borders.borderWidthDefault }
     /// Has for value token borders.borderWidthMedium
     @objc open var chipBorderWidthUnselectedInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
-    /// Has for value  colors.colorOpacityTransparent 
+    /// Has for value  colors.colorOpacityTransparent
     @objc open var chipColorBgDisabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value  colors.colorOpacityTransparent 
+    /// Has for value  colors.colorOpacityTransparent
     @objc open var chipColorBgEnabled: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value  colors.colorOpacityTransparent 
+    /// Has for value  colors.colorOpacityTransparent
     @objc open var chipColorBgFocus: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value  colors.colorOpacityTransparent 
+    /// Has for value  colors.colorOpacityTransparent
     @objc open var chipColorBgHover: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value  colors.colorOpacityTransparent 
+    /// Has for value  colors.colorOpacityTransparent
     @objc open var chipColorBgPressed: MultipleColorSemanticTokens { colors.colorOpacityTransparent }
-    /// Has for value  colors.colorActionDisabled 
+    /// Has for value  colors.colorActionDisabled
     @objc open var chipColorBorderDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
-    /// Has for value  colors.colorActionFocus 
+    /// Has for value  colors.colorActionFocus
     @objc open var chipColorBorderFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value  colors.colorActionHover 
+    /// Has for value  colors.colorActionHover
     @objc open var chipColorBorderHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value  colors.colorActionPressed 
+    /// Has for value  colors.colorActionPressed
     @objc open var chipColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
-    /// Has for value  colors.colorActionSelected 
+    /// Has for value  colors.colorActionSelected
     @objc open var chipColorBorderSelected: MultipleColorSemanticTokens { colors.colorActionSelected }
-    /// Has for value  colors.colorBorderDefault 
+    /// Has for value  colors.colorBorderDefault
     @objc open var chipColorBorderUnselected: MultipleColorSemanticTokens { colors.colorBorderDefault }
-    /// Has for value  colors.colorActionDisabled 
+    /// Has for value  colors.colorActionDisabled
     @objc open var chipColorContentDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
-    /// Has for value  colors.colorActionEnabled 
+    /// Has for value  colors.colorActionEnabled
     @objc open var chipColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
-    /// Has for value  colors.colorActionFocus 
+    /// Has for value  colors.colorActionFocus
     @objc open var chipColorContentFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value  colors.colorActionHover 
+    /// Has for value  colors.colorActionHover
     @objc open var chipColorContentHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value  colors.colorActionPressed 
+    /// Has for value  colors.colorActionPressed
     @objc open var chipColorContentPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token sizes.sizeIconWithLabelMediumSizeSm
     @objc open var chipSizeIcon: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
