@@ -28,7 +28,6 @@ struct ControlItemIconContainer: View {
     let flip: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 

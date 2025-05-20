@@ -27,7 +27,6 @@ struct ControlItemIndicatorContainer: View {
     let layoutData: ControlItemLabel.LayoutData
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 

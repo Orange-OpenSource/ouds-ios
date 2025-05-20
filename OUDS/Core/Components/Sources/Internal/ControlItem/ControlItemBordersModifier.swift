@@ -28,7 +28,6 @@ struct ControlItemBordersModifier: ViewModifier {
     let isOn: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 

@@ -11,7 +11,11 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+// Conditional import and use of UIKit for documentation generation (see #628 #626)
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 // MARK: - Extension of Color
 
@@ -51,11 +55,6 @@ extension Color {
         self.init(red: r, green: g, blue: b, opacity: a)
     }
 
-    // MARK: UIColor
-
-    /// The current color as UIKit color
-    public var uiColor: UIColor { .init(self) }
-
     // MARK: RGBA
 
     // swiftlint:disable large_tuple
@@ -63,10 +62,20 @@ extension Color {
     public typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
     // swiftlint:enable large_tuple
 
+#if canImport(UIKit)
+    // MARK: UIColor
+
+    /// The current color as UIKit color
+    public var uiColor: UIColor { .init(self) }
+    
     /// The current color but split in RGBA mode
     public var rgba: RGBA? {
         var (r, g, b, a): RGBA = (0, 0, 0, 0)
         let converted = uiColor.getRed(&r, green: &g, blue: &b, alpha: &a)
         return converted ? (r, g, b, a) : nil
     }
+#else
+    /// Always nil as today the value is computed using UIKit API
+    public var rgba: RGBA? { nil }
+#endif
 }

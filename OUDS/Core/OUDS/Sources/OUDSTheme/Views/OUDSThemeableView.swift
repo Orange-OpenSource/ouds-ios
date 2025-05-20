@@ -12,7 +12,6 @@
 //
 
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
-
 import Foundation
 import SwiftUI
 #if canImport(UIKit)
