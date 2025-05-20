@@ -67,7 +67,7 @@ extension Color {
 
     /// The current color as UIKit color
     public var uiColor: UIColor { .init(self) }
-    
+
     /// The current color but split in RGBA mode
     public var rgba: RGBA? {
         var (r, g, b, a): RGBA = (0, 0, 0, 0)
