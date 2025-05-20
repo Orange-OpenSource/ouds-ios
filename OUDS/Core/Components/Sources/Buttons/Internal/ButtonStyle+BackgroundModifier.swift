@@ -20,7 +20,6 @@ import SwiftUI
 struct ButtonBackgroundModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
 
     // MARK: Stored Properties

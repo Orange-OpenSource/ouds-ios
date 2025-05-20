@@ -12,8 +12,6 @@
 //
 
 import Foundation
-import OUDSFoundations
-import OUDSTokensComponent
 import OUDSTokensSemantic
 
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.

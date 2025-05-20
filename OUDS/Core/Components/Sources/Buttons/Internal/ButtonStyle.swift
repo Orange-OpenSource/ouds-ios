@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
 import SwiftUI
 
 /// Used to apply the right style on an ``OUDSButton`` according to the `hierarchy`

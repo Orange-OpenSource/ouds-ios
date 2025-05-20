@@ -12,9 +12,6 @@
 //
 
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
-
-import OUDS
-import OUDSFoundations
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI

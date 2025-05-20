@@ -26,7 +26,6 @@ struct ControlItemLabel: View {
     let layoutData: LayoutData
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Layout Data
 

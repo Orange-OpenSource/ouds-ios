@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSFoundations
-import OUDSTokensSemantic
 
 /// A class which wraps all **component  tokens of switch** for *switch / toggle* objects like `OUDSSwitch`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.

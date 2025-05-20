@@ -249,8 +249,6 @@ private struct ButtonTextAndIcon: View {
 
 private struct ScaledIcon: View {
 
-    @Environment(\.theme) private var theme
-
     let icon: Image
     @ScaledMetric var size: CGFloat
 

@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSTokensComponent
-import OUDSTokensSemantic
 import SwiftUI
 
 // MARK: - Link Button Style

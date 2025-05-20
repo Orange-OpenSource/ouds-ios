@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSFoundations
-import OUDSTokensSemantic
 
 /// A class which wraps all **component  tokens of chip** for *chip* objects like `OUDSChip`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.

@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
-
 /// An operator to make for example comparisons between ``FontCompositeRawToken``
 infix operator <|
 

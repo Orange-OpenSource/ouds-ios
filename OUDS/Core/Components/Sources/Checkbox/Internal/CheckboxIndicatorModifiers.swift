@@ -36,7 +36,7 @@ struct CheckboxIndicatorModifier: ViewModifier {
             .modifier(SizeFrameModifier())
             .modifier(CheckboxIndicatorBorderModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
             .modifier(CheckboxIndicatorForegroundModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
-            .modifier(CheckboxIndicatorBackgroundModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
+            .modifier(CheckboxIndicatorBackgroundModifier(interactionState: interactionState, isError: isError))
     }
 }
 
@@ -51,7 +51,6 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
@@ -112,7 +111,6 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     // MARK: - Properties
 
     let interactionState: InteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -172,7 +170,6 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 

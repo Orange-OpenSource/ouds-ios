@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
 import SwiftUI
 
 /// A vertical Divider is used to separate content laid out side by side (`HStack`).
