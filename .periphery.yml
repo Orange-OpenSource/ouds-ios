@@ -1,0 +1,12 @@
+retain_public: true
+retain_objc_accessible: true
+targets:
+- OUDS
+- OUDSComponents
+- OUDSFoundations
+- OUDSModules
+- OUDSThemesOrange
+- OUDSTokensComponent
+- OUDSTokensRaw
+- OUDSTokensSemantic
+- TestsUtils
