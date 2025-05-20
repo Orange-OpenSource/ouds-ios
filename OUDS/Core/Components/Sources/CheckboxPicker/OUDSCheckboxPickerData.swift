@@ -26,17 +26,11 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// The label, main text, the ``OUDSCheckboxItem`` must have
     let label: String
 
-    /// An optional additional label the ``OUDSCheckboxItem`` can have
-    let additionalLabel: String?
-
     /// An optional helper text the ``OUDSCheckboxItem`` can have
     let helper: String?
 
     /// An optional image the ``OUDSCheckboxItem`` can have
     let icon: Image?
-
-    /// Define if the ``OUDSCheckboxItem`` is outlined or not
-    let isOutlined: Bool
 
     /// Define if the ``OUDSCheckboxItem`` is reversed or not
     let isReversed: Bool
@@ -54,10 +48,8 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// - Parameters:
     ///    - tag: a value to discriminate one checkbox to another
     ///    - label: the mandatory text to add to ``OUDSCheckboxItem``
-    ///    - additionalLabel: An optional additional text, default set to nil
     ///    - helper: Another optional text, default set to nil
     ///    - icon: An optional image, default set to nil
-    ///    - isOutlined: True to outline the ``OUDSCheckboxItem``, false otherwise (default)
     ///    - isReversed: True to use to reversed layout of the ``OUDSCheckboxItem``, false otherwise (default)
     ///    - isError: True if in an error context, false otherwise (default)
     ///    - isReadOnly: True if read only, false otherwise (default)
@@ -67,10 +59,8 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     /// provide the localized string if key is stored in another bundle.**
     public init(tag: Tag,
                 label: String,
-                additionalLabel: String? = nil,
                 helper: String? = nil,
                 icon: Image? = nil,
-                isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
@@ -78,10 +68,8 @@ public struct OUDSCheckboxPickerData<Tag> where Tag: Hashable {
     {
         self.tag = tag
         self.label = label
-        self.additionalLabel = additionalLabel
         self.helper = helper
         self.icon = icon
-        self.isOutlined = isOutlined
         self.isReversed = isReversed
         self.isError = isError
         self.isReadOnly = isReadOnly
