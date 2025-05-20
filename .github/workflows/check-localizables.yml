@@ -17,13 +17,12 @@
 name: Check Localizables
 
 on:
-  # For protected and most important branches
   push:
     branches:
       - main
       - develop
+      - '*'
 
-  # Pull request events
   pull_request:
     types:
       - opened

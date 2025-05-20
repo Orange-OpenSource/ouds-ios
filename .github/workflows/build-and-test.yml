@@ -17,16 +17,14 @@
 name: Build and Test
 
 on:
-  # For protected and most important branches
   push:
     branches:
       - main
       - develop
+      - '*'
 
-  # To trigger manually
-  workflow_dispatch:
+  workflow_dispatch: # To trigger manually
 
-  # Pull request events
   pull_request:
     types:
       - opened

@@ -18,6 +18,7 @@ on:
     branches:
       - main
       - develop
+      - '*'
   pull_request:
     branches:
       - main
