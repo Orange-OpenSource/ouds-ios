@@ -33,7 +33,7 @@ import SwiftUI
 /// - **unselected**: the checkbox is empty, does not contain a tick, the user has made the action to unselect or did not select yet the checkbox
 ///
 /// If you are looking for a checkbox component with three states, use instead ``OUDSCheckboxItemIndeterminate``.
-/// 
+///
 /// ## Particular cases
 ///
 /// An ``OUDSCheckboxItem`` can be related to an error situation, for example troubles for a formular.

@@ -25,10 +25,10 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
     /// The title used as a `LocalizedStringKey` to add as navigation title
     let title: String
 
-#if canImport(UIKit)
+    #if canImport(UIKit)
     /// Elapsed time to wait before sending an accessibility notification of a screen change with the `title` in argument
     let deadline: DispatchTime
-#endif
+    #endif
 
     func body(content: Content) -> some View {
         content
