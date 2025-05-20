@@ -62,7 +62,7 @@ extension Color {
     public typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
     // swiftlint:enable large_tuple
 
-#if canImport(UIKit)
+    #if canImport(UIKit)
     // MARK: UIColor
 
     /// The current color as UIKit color
@@ -74,8 +74,8 @@ extension Color {
         let converted = uiColor.getRed(&r, green: &g, blue: &b, alpha: &a)
         return converted ? (r, g, b, a) : nil
     }
-#else
+    #else
     /// Always nil as today the value is computed using UIKit API
     public var rgba: RGBA? { nil }
-#endif
+    #endif
 }
