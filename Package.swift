@@ -20,10 +20,14 @@ import PackageDescription
 /// Defining here hierarchy between targets will prevent us to have cyclic dependencies and help to have separated responsibilities.
 let package = Package(
     
+    // MARK: - Package setup
+
     name: "OUDS",
     defaultLocalization: "en",
     platforms: [.iOS(.v15), .macOS(.v13)], // No official support of macOS, but mandatory for swift-docc-plugin
     
+    // MARK: - Products
+
     // Products define the executables and libraries a package produces, making them visible to other packages.
     products: [
         .library(
@@ -51,13 +55,20 @@ let package = Package(
             name: "OUDSFoundations",
             targets: ["OUDSFoundations"]),
     ],
-    
+
+    // MARK: - Dependencies
+
     dependencies: [
+
         // Apple Swift tool to build documentation
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.3"),
         // Linter for Swift code
-        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.59.1")
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.59.1"),
+        // Formatter for Swift code
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.56.1"),
     ],
+
+    // MARK: - Targets
 
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
@@ -134,5 +145,7 @@ let package = Package(
             plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
     ],
     
+    // MARK: - Swift language modes
+
     swiftLanguageModes: [.v6]
 )
