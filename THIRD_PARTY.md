@@ -5,67 +5,24 @@ This document contains the list of Third Party Softwares along with the license 
 Third Party Software may impose additional restrictions and it is the user's responsibility to ensure that they have met the licensing
 requirements of the relevant license of the Third Party Software they are using.
 
-For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *Package.swift*, *Package.resolved* and *Podfile* files.
+For further details about versions, please refer to *Gemfile*, *Gemfile.lock*, *Package.swift* and *Package.resolved* files.
 
 ## In OUDS library 
+<!-- No dependency yet -->
 
-## In Project
+## In Project 
+<!-- (CI/CD, tools, etc.) -->
 
-### Ruby gems
-
-#### CocoaPods
-
-Copyright 2011 Eloy Durán, Fabio Pelosin, Samuel Giddins, Marius Rackwitz, Kyle Fuller, Boris Bügling, Orta Therox, Olivier Halligon, Danielle Tomlinson, Dimitris Koutsogiorgas, Paul Beusterien, Eric Amorde
-
-*CocoaPods* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/CocoaPods/CocoaPods).
-                   
-#### Fastlane
-
-Copyright 2015-2022 The Fastlane Authors
-
-*Fastlane* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/fastlane/fastlane).
-
-#### fastlane-plugin-changelog
-
-Copyright 2018 Pavel Procházka
-
-*fastlane-plugin-changelog* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/pajapro/fastlane-plugin-changelog).
-
-#### fastlane-plugin-mattermost
-
-Copyright 2020 cpfriend1721994
-
-*fastlane-plugin-mattermost* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/cpfriend1721994/fastlane-plugin-mattermost).
-
-#### net-http
-
-*net-http* is distributed under the terms and conditions of the [Ruby License](https://github.com/flori/json/blob/master/LICENSE).
-
-#### json
-
-*json* is distributed under the terms and conditions of the [Ruby License](https://github.com/flori/json/blob/master/LICENSE).
-
-#### xcode-install
-
-Copyright (c) 2015 Boris Bügling
-
-*xcode-install* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
-You may download the source code on the [following website](https://github.com/xcpretty/xcode-install).
-
-### Other tools
-
-#### Gitleaks
+### Gitleaks
+<!-- GitHub Action workflow -->
 
 Copyright (c) 2019 Zachary Rice
 
 *gitleaks* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/gitleaks/gitleaks).
 
-#### Periphery
+### Periphery
+<!-- GitHub Action workflow -->
 
 Copyright (c) 2019 Ian Leitch
 
@@ -73,27 +30,40 @@ Copyright (c) 2019 Ian Leitch
 You may download the source code on the [following website](https://github.com/peripheryapp/periphery).
 
 ### swift-docc-plugin
+<!-- Xcode build tool plugin, script -->
 
 Copyright (c) 2022 Apple Inc. and the Swift project authors
 
 *swift-docc-plugin* is distributed under the terms and conditions of the [Apache 2.0 License](https://opensource.org/license/apache-2-0).
 You may download the source code on the [following website](https://github.com/swiftlang/swift-docc-plugin).
 
-#### SwiftFormat
+### SwiftFormat
+<!-- Xcode build tool plugin -->
 
 Copyright 2016 Nick Lockwood
 
 *SwiftFormat* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/nicklockwood/SwiftFormat).
 
-#### SwiftLint
+### SwiftLint
+<!-- GitHub Action workflow -->
 
 Copyright 2020 Realm Inc.
 
 *SwiftLint* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
 You may download the source code on the [following website](https://github.com/realm/SwiftLint).
 
+#### SwiftLintPlugins
+<!-- Xcode build tool plugin -->
+
+Copyright 2020 Realm Inc.
+Copyright 2024 Danny Mösch
+
+*SwiftLintPlugins* is distributed under the terms and conditions of the [MIT License](http://opensource.org/licenses/MIT).
+You may download the source code on the [following website](https://github.com/SimplyDanny/SwiftLintPlugins).
+
 #### SwiftPolyglot
+<!-- GitHub Action workflow -->
 
 Copyright 2024 App Deco Studio Inc.
 
