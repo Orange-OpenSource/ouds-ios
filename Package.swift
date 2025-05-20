@@ -55,6 +55,8 @@ let package = Package(
     dependencies: [
         // Apple Swift tool to build documentation
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", exact: "1.4.3"),
+        // Linter for Swift code
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", exact: "0.59.1")
     ],
 
     // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -63,59 +65,73 @@ let package = Package(
         .target(
             name: "OUDS",
             dependencies: ["OUDSTokensRaw", "OUDSTokensSemantic", "OUDSTokensComponent"],
-            path: "OUDS/Core/OUDS/Sources"),
+            path: "OUDS/Core/OUDS/Sources",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .target(
             name: "OUDSModules",
             dependencies: ["OUDSComponents"],
-            path: "OUDS/Modules/Sources"),
+            path: "OUDS/Modules/Sources",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .target(
             name: "OUDSComponents",
             dependencies: ["OUDSTokensComponent", "OUDS"],
             path: "OUDS/Core/Components/Sources",
-            resources: [.process("Resources/")]),
+            resources: [.process("Resources/")],
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .testTarget(
             name: "OUDSComponents-Tests",
             dependencies: ["OUDSComponents"],
-            path: "OUDS/Core/Components/Tests"),
+            path: "OUDS/Core/Components/Tests",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .target(
             name: "OUDSThemesOrange",
             dependencies: ["OUDS"],
-            path: "OUDS/Core/Themes/Orange/Sources"),
+            path: "OUDS/Core/Themes/Orange/Sources",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .testTarget(
             name: "OUDSThemesOrange-Tests",
             dependencies: ["TestsUtils", "OUDSThemesOrange"],
-            path: "OUDS/Core/Themes/Orange/Tests"),
+            path: "OUDS/Core/Themes/Orange/Tests",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .target(
             name: "OUDSTokensComponent",
             dependencies: ["OUDSTokensSemantic"],
-            path: "OUDS/Core/Tokens/ComponentTokens/Sources"),
+            path: "OUDS/Core/Tokens/ComponentTokens/Sources",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .target(
             name: "OUDSTokensSemantic",
             dependencies: ["OUDSTokensRaw"],
-            path: "OUDS/Core/Tokens/SemanticTokens/Sources"),
+            path: "OUDS/Core/Tokens/SemanticTokens/Sources",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .testTarget(
             name: "OUDSTokensSemantic-Tests",
             dependencies: ["OUDSTokensSemantic"],
-            path: "OUDS/Core/Tokens/SemanticTokens/Tests"),
+            path: "OUDS/Core/Tokens/SemanticTokens/Tests",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .target(
             name: "OUDSTokensRaw",
             dependencies: ["OUDSFoundations"],
-            path: "OUDS/Core/Tokens/RawTokens/Sources"),
+            path: "OUDS/Core/Tokens/RawTokens/Sources",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .testTarget(
             name: "OUDSTokensRaw-Tests",
             dependencies: ["TestsUtils", "OUDSTokensRaw"],
-            path: "OUDS/Core/Tokens/RawTokens/Tests"),
+            path: "OUDS/Core/Tokens/RawTokens/Tests",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .target(
             name: "OUDSFoundations",
-            path: "OUDS/Foundations/Sources"),
+            path: "OUDS/Foundations/Sources",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .testTarget(
             name: "OUDSFoundations-Tests",
             dependencies: ["OUDSFoundations"],
-            path: "OUDS/Foundations/Tests"),
+            path: "OUDS/Foundations/Tests",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
         .target(
             name: "TestsUtils",
             dependencies: ["OUDSFoundations"],
-            path: "OUDS/Foundations/TestsUtils"),
+            path: "OUDS/Foundations/TestsUtils",
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]),
     ],
     
     swiftLanguageModes: [.v6]
