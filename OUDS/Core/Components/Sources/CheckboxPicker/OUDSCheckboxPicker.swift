@@ -106,9 +106,6 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and forces them to apply the reversed layout
     private let isReversed: Bool
 
-    /// Overrides any configuration applied to embeded ``OUDSCheckboxItem`` and forces them to apply the outlined layout
-    private let isOutlined: Bool
-
     /// View model acting as coordinator between root checkbox and children checkboxes
     @StateObject private var coordinator: CheckboxPickerCoordinator
 
@@ -125,7 +122,6 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - selections: The current selected values
     ///    - checkboxes: The raw data to wrap in ``OUDSCheckboxItem`` for display
     ///    - placement: How checkboxes must be placed (default set to *vertical*)
-    ///    - isOutlined: If *true*, force all ``OUDSCheckboxItem`` to be outlined (default set to *false*)
     ///    - isReversed: If *true*, force all ``OUDSCheckboxItem`` to have reversed layout (default set to *false*)
     ///    - isError: If *true*, force all ``OUDSCheckboxItem`` to be in error mode (default set to *false*)
     ///    - isReadOnly: If *true*, force all ``OUDSCheckboxItem`` to be in read only mode (default set to *false*)
@@ -133,7 +129,6 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     public init(selections: Binding<[Tag]>,
                 checkboxes: [OUDSCheckboxPickerData<Tag>],
                 placement: OUDSCheckboxPickerPlacement = .vertical,
-                isOutlined: Bool = false,
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
@@ -142,7 +137,6 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
         self.selections = selections
         self.checkboxes = checkboxes
         self.placement = placement
-        self.isOutlined = isOutlined
         self.isReversed = isReversed
         self.isError = isError
         self.isReadOnly = isReadOnly
@@ -213,15 +207,14 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - noDivider: If true, do not add divider to the item
     /// - Returns: The view
     private func content(for checkbox: OUDSCheckboxPickerData<Tag>, noDivider: Bool) -> some View {
-        OUDSCheckboxItem<Tag>(isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
-                              tag: checkbox.tag,
-                              label: checkbox.label,
-                              helper: checkbox.helper,
-                              icon: checkbox.icon,
-                              isReversed: isReversed ? true : checkbox.isReversed,
-                              isError: isError ? true : checkbox.isError,
-                              isReadOnly: isReadOnly ? true : checkbox.isReadOnly,
-                              hasDivider: hasDivider && !noDivider ? true : checkbox.hasDivider)
+        OUDSCheckboxItem(isOn: isSelected(tag: checkbox.tag) ? .constant(true) : .constant(false),
+                         label: checkbox.label,
+                         helper: checkbox.helper,
+                         icon: checkbox.icon,
+                         isReversed: isReversed ? true : checkbox.isReversed,
+                         isError: isError ? true : checkbox.isError,
+                         isReadOnly: isReadOnly ? true : checkbox.isReadOnly,
+                         hasDivider: hasDivider && !noDivider ? true : checkbox.hasDivider)
         {
             if isSelected(tag: checkbox.tag) {
                 selections.wrappedValue.removeAll(where: { $0 == checkbox.tag })
