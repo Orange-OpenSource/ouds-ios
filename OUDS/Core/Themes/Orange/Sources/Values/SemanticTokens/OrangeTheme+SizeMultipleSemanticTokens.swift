@@ -12,7 +12,6 @@
 //
 
 import Foundation
-import OUDSTokensRaw
 import OUDSTokensSemantic
 
 // swiftlint:disable line_length

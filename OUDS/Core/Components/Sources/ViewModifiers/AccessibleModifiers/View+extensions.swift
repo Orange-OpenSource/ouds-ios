@@ -37,8 +37,12 @@ extension View {
     /// - Parameter title: The navigation title
     /// - Returns View: The view with a new modifier
     public func oudsNavigationTitle(_ title: String) -> some View {
+#if canImport(UIKit)
         modifier(AccessibleNavigationTitleModifier(title: title,
                                                    deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay.rawValue))
+#else
+        modifier(AccessibleNavigationTitleModifier(title: title))
+#endif
     }
 
     /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed

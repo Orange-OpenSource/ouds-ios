@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -34,7 +33,6 @@ struct ControlItemContent: View {
 
     @State var verticalAlignment: VerticalAlignment = .top
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 

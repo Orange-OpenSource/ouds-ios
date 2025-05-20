@@ -11,9 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSFoundations
-import OUDSTokensSemantic
 import SwiftUI
 
 /// The button will compute the `InteractionState` to send it to the provided content builder.

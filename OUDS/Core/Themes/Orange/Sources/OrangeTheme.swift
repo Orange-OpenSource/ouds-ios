@@ -12,8 +12,6 @@
 //
 
 import OUDS
-import OUDSFoundations
-import OUDSTokensComponent
 import OUDSTokensSemantic
 
 /// This is an override of the default basic `OUDSTheme` and **must be seen as the default theme for the OUDS library**.
