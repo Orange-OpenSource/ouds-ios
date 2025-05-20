@@ -35,7 +35,7 @@ struct RadioIndicatorModifier: ViewModifier {
             .modifier(SizeFrameModifier())
             .modifier(RadioIndicatorBorderModifier(interactionState: interactionState, isOn: isOn, isError: isError))
             .modifier(RadioIndicatorForegroundModifier(interactionState: interactionState, isOn: isOn, isError: isError))
-            .modifier(RadioIndicatorBackgroundModifier(interactionState: interactionState, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorBackgroundModifier(interactionState: interactionState, isError: isError))
     }
 }
 
@@ -105,11 +105,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
     // MARK: - Properties
 
     let interactionState: InteractionState
-    let isOn: Bool
     let isError: Bool
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
@@ -165,7 +161,6 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
