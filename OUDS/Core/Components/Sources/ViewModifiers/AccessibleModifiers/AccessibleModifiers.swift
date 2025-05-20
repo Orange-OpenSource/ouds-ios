@@ -14,7 +14,7 @@
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
 import SwiftUI
 #if canImport(UIKit)
-    import UIKit
+import UIKit
 #endif
 
 // MARK: - Accessible Navigation Title Modifier
@@ -32,11 +32,11 @@ struct AccessibleNavigationTitleModifier: ViewModifier {
         content
             .navigationTitle(LocalizedStringKey(title))
             .onAppear {
-#if canImport(UIKit)
+                #if canImport(UIKit)
                 DispatchQueue.main.asyncAfter(deadline: deadline) {
                     UIAccessibility.post(notification: .screenChanged, argument: title)
                 }
-#endif
+                #endif
             }
     }
 }
@@ -96,7 +96,7 @@ struct RestrictedRequestAccessibleFocusModifier: ViewModifier {
     /// Elapsed time to wait before requesting the focus
     let deadline: DispatchTime
 
-   func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
         content.onAppear {
             DispatchQueue.main.asyncAfter(deadline: deadline) {
                 requestFocus = target

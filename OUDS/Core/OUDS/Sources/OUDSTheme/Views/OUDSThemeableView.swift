@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
@@ -16,7 +16,7 @@
 import Foundation
 import SwiftUI
 #if canImport(UIKit)
-    import UIKit
+import UIKit
 #endif
 
 // MARK: - Environment values
@@ -40,6 +40,7 @@ extension EnvironmentValues {
             self[ThemeEnvironmentKey.self] = newValue
         }
     }
+
     // swiftlint:enable strict_fileprivate
 
     // swiftlint:disable force_unwrapping
@@ -86,14 +87,14 @@ public struct OUDSThemeableView<Content>: View where Content: View {
     }
 
     public var body: some View {
-#if canImport(UIKit)
+        #if canImport(UIKit)
         content()
             .environment(\._theme, theme)
             .modifier(UserInterfaceSizeClassModifier())
-#else
+        #else
         content()
             .environment(\._theme, theme)
-#endif
+        #endif
     }
 }
 

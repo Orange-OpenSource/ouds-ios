@@ -74,7 +74,8 @@ public struct OUDSRadioPickerData<Tag> where Tag: Hashable {
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false) {
+                hasDivider: Bool = false)
+    {
         self.tag = tag
         self.label = label
         self.additionalLabel = additionalLabel

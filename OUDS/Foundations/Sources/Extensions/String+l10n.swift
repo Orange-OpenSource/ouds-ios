@@ -19,6 +19,6 @@ extension String {
 
     /// Returns `self` but with first letter capitalized
     public var camelCase: String {
-        self.prefix(1).capitalized + self.dropFirst()
+        prefix(1).capitalized + dropFirst()
     }
 }

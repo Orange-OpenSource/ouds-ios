@@ -6,7 +6,7 @@
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
@@ -74,8 +74,8 @@ public final class MultipleColorSemanticTokens: NSObject, Sendable {
     /// Initializes a new color multiple semantic token with the same value for light and dark modes
     /// - Parameter value: The `ColorSemanticToken` to apply wether the device is in *light* and *dark* mode
     public init(_ value: ColorSemanticToken) {
-        self.light = value
-        self.dark = value
+        light = value
+        dark = value
     }
 
     /// Initializes a new color multiple semantic token with two values
@@ -87,14 +87,14 @@ public final class MultipleColorSemanticTokens: NSObject, Sendable {
         self.dark = dark
     }
 
-    deinit { }
+    deinit {}
 
     /// Returns `true` if `self` and `object` has the same `light` and `dark` values and with `object`
     /// as a `MultipleColorRawToken`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleColorSemanticTokens else { return false }
-        return self.light == other.light && self.dark == other.dark
+        return light == other.light && dark == other.dark
     }
 
     /// Returns the right color according to the `colorScheme`.
@@ -120,7 +120,7 @@ extension OUDSWCAG21Ratio {
     ///     OUDSWCAG21Ratios.oudsDebugWCAG21Colors = false
     /// #endif
     /// ```
-    nonisolated(unsafe) public static var oudsDebugWCAG21Colors: Bool = false
+    public nonisolated(unsafe) static var oudsDebugWCAG21Colors: Bool = false
 
     /// Lists the type of elements under tests for constrat ratio check.
     /// Textual elements should have higher contrasts than non-textual ones.
@@ -176,8 +176,9 @@ extension OUDSWCAG21Ratio {
                                           _ rhs: MultipleColorSemanticTokens,
                                           _ target: OUDSWCAG21Ratio.Target = .textual,
                                           _ criteria: OUDSWCAG21Ratio.Criteria = .AA,
-                                          _ source: String = #file) -> Bool {
-        guard Self.oudsDebugWCAG21Colors else {
+                                          _ source: String = #file) -> Bool
+    {
+        guard oudsDebugWCAG21Colors else {
             return false
         }
         let lightPass = Self.debugContrastRatio(for: "light", lhs.light, rhs.light, target, criteria, source)
@@ -190,7 +191,8 @@ extension OUDSWCAG21Ratio {
                                            _ rhs: String,
                                            _ target: OUDSWCAG21Ratio.Target,
                                            _ criteria: OUDSWCAG21Ratio.Criteria,
-                                           _ source: String) -> Bool {
+                                           _ source: String) -> Bool
+    {
         guard let ratio = OUDSWCAG21Ratio.contrastRatios(lhs, rhs) else {
             return false
         }

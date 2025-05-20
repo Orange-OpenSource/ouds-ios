@@ -37,7 +37,7 @@ import SwiftUI
 /// ## Generic typed
 ///
 /// The checkbox can be associated to a specifc type for its *tag*.
-/// Indeed a checkbox alone with this layout is not that much useful, and should be associated to a *tag* 
+/// Indeed a checkbox alone with this layout is not that much useful, and should be associated to a *tag*
 /// which will permit a ``OUDSCheckboxPicker`` to provide the selected values for a group of checkboxes.
 ///
 /// ## Particular cases
@@ -176,7 +176,8 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
-                action: (() -> Void)? = nil) where Tag == Never? {
+                action: (() -> Void)? = nil) where Tag == Never?
+    {
         self.init(isOn: isOn,
                   tag: nil,
                   label: label,
@@ -228,7 +229,8 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
-                action: (() -> Void)? = nil) {
+                action: (() -> Void)? = nil)
+    {
         if isError && isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDS Checkbox in an error context and in read only mode")
         }
@@ -238,7 +240,7 @@ public struct OUDSCheckboxItem<Tag>: View where Tag: Hashable {
         }
 
         _isOn = isOn
-        self.layoutData = .init(
+        layoutData = .init(
             label: label.localized(),
             additionalLabel: nil,
             helper: helper?.localized(),

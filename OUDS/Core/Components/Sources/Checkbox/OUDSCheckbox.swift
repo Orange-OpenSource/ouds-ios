@@ -88,7 +88,8 @@ public struct OUDSCheckbox: View {
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     public init(isOn: Binding<Bool>,
                 accessibilityLabel: String,
-                isError: Bool = false) {
+                isError: Bool = false)
+    {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }
@@ -132,8 +133,8 @@ public struct OUDSCheckbox: View {
     /// Forges a string to vocalize with *Voice Over* describing the component hint
     private func a11yHint() -> String {
         isOn
-        ? "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
-        : "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
+            ? "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
+            : "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state

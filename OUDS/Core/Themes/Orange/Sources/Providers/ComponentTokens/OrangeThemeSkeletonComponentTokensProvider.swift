@@ -87,7 +87,7 @@ open class OrangeThemeSkeletonComponentTokensProvider: AllSkeletonComponentToken
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
     }
 
-    deinit { }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

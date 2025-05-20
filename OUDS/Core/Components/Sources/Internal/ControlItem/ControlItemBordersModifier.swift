@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
@@ -85,7 +85,7 @@ struct ControlItemBordersModifier: ViewModifier {
     private var disabledColor: MultipleColorSemanticTokens? {
         guard !layoutData.isError else {
             OL.fatal("An outlined ControlItem with a disabled state and an error situation has been detected, which is not allowed."
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return isOn ? theme.colors.colorActionDisabled : nil
     }

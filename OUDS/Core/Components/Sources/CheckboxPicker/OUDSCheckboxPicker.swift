@@ -137,7 +137,8 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false) {
+                hasDivider: Bool = false)
+    {
         self.selections = selections
         self.checkboxes = checkboxes
         self.placement = placement
@@ -154,7 +155,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
 
     public var body: some View {
         switch placement {
-        case .horizontal(let showsIndicator):
+        case let .horizontal(showsIndicator):
             ScrollView(.horizontal, showsIndicators: showsIndicator) {
                 HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     content(for: checkboxes)
@@ -184,15 +185,16 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
                                       isReversed: isReversed,
                                       isError: isError,
                                       isReadOnly: isReadOnly,
-                                      hasDivider: hasDivider) {
+                                      hasDivider: hasDivider)
+        {
             if case .selected = coordinator.selectionRootState {
                 selections.wrappedValue = checkboxes.map { $0.tag }
             } else {
                 selections.wrappedValue = []
             }
         }.accessibilityLabel(a11yLabel)
-        .accessibilityHint(a11yHint.localized())
-        .accessibilityValue(a11yValue)
+            .accessibilityHint(a11yHint.localized())
+            .accessibilityValue(a11yValue)
     }
 
     /// Creates several ``OUDSCheckboxItem`` `View` objects from ``OUDSCheckboxPickerData`` objects
@@ -200,8 +202,8 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// - Returns: The view
     private func content(for checkboxes: [OUDSCheckboxPickerData<Tag>]) -> some View {
         ForEach(checkboxes, id: \.tag) { checkbox in
-           content(for: checkbox,
-                   noDivider: (checkboxes[checkboxes.count - 1].tag == checkbox.tag)) // No divider for last item
+            content(for: checkbox,
+                    noDivider: checkboxes[checkboxes.count - 1].tag == checkbox.tag) // No divider for last item
         }
     }
 
@@ -219,7 +221,8 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
                               isReversed: isReversed ? true : checkbox.isReversed,
                               isError: isError ? true : checkbox.isError,
                               isReadOnly: isReadOnly ? true : checkbox.isReadOnly,
-                              hasDivider: hasDivider && !noDivider ? true : checkbox.hasDivider) {
+                              hasDivider: hasDivider && !noDivider ? true : checkbox.hasDivider)
+        {
             if isSelected(tag: checkbox.tag) {
                 selections.wrappedValue.removeAll(where: { $0 == checkbox.tag })
             } else {
@@ -236,7 +239,8 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     ///    - type: The type of display
     /// - Returns: The final string to add in the view
     private func rootLabel(for text: OUDSCheckboxPickerPlacement.RootLabel,
-                           of type: OUDSCheckboxPickerPlacement.DisplayType) -> String {
+                           of type: OUDSCheckboxPickerPlacement.DisplayType) -> String
+    {
         let count = selections.count
         switch type {
         case .textAndCount:
@@ -263,7 +267,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
             selectionRootState = Self.valueFor(selectionsCount, checkboxesCount)
         }
 
-        deinit { }
+        deinit {}
 
         func updateSelectionsRoot(_ selectionsCount: Int, _ checkboxesCount: Int) {
             selectionRootState = Self.valueFor(selectionsCount, checkboxesCount)

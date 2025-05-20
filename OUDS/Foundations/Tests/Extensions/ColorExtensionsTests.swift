@@ -50,4 +50,5 @@ struct ColorExtensionsTests {
          */
     }
 }
+
 // swiftlint:enable force_unwrapping

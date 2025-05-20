@@ -72,14 +72,15 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
     ///    - current: The current color scheme
     /// - Returns: The color scheme to consider depending to the theme rules
     public func useColorScheme(for mode: MultipleColorModeSemanticTokens,
-                               _ current: ColorScheme) -> ColorScheme {
+                               _ current: ColorScheme) -> ColorScheme
+    {
 
         let lightColorScheme = ColorModeRawTokens.colorScheme(for: mode.light)
         let darkColorScheme = ColorModeRawTokens.colorScheme(for: mode.dark)
 
         // Reverse the color scheme to apply
         if lightColorScheme == .dark && darkColorScheme == .light {
-            return (current == .light ? .dark : .light)
+            return current == .light ? .dark : .light
         }
 
         // Force light

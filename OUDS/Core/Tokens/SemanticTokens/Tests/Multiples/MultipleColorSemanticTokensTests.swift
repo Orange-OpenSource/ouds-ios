@@ -179,4 +179,5 @@ struct MultipleColorSemanticTokensTests {
         #expect(result == false)
     }
 }
+
 // swiftlint:enable function_body_length

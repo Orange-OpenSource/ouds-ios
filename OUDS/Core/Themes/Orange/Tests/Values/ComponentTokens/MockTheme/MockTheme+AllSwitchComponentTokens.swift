@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import Foundation
@@ -34,7 +34,8 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
                          borders: AllBorderSemanticTokensProvider?,
                          colors: AllColorSemanticTokensProvider?,
                          spaces: AllSpaceSemanticTokensProvider?,
-                         opacities: AllOpacitySemanticTokensProvider?) {
+                         opacities: AllOpacitySemanticTokensProvider?)
+    {
         super.init(sizes: sizes,
                    borders: borders,
                    colors: colors,
@@ -55,7 +56,7 @@ final class MockThemeSwitchComponentTokenProvider: OrangeThemeSwitchComponentTok
     override public var switchSizeWidthCursorSelected: SizeSemanticToken { Self.mockThemeSwitchSize }
     override public var switchSizeWidthCursorSelectedPressed: SizeSemanticToken { Self.mockThemeSwitchSize }
     override public var switchSizeWidthCursorUnselected: SizeSemanticToken { Self.mockThemeSwitchSize }
-    override public var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken  { Self.mockThemeSwitchSize }
+    override public var switchSizeWidthCursorUnselectedPressed: SizeSemanticToken { Self.mockThemeSwitchSize }
     override public var switchSizeWidthTrack: SizeSemanticToken { Self.mockThemeSwitchSize }
 
     // MARK: Borders

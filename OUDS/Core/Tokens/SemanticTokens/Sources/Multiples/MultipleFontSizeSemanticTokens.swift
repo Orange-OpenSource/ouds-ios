@@ -51,8 +51,8 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
     /// Initializes a new multiple font token with the same value for both *compact* and *regular* size classes
     /// - Parameter value: The `FontSizeSemanticToken` to apply if device in *compact* mode
     public init(_ value: FontSizeSemanticToken) {
-        self.compact = value
-        self.regular = value
+        compact = value
+        regular = value
     }
 
     /// Initializes a new multiple font token.
@@ -64,7 +64,7 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
         self.regular = regular
     }
 
-    deinit { }
+    deinit {}
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `MultipleFontTokens`. Otherwise returns `false`.
@@ -73,6 +73,6 @@ public final class MultipleFontSizeSemanticTokens: NSObject, Sendable {
         guard let object = object as? MultipleFontSizeSemanticTokens else {
             return false
         }
-        return self.compact == object.compact && self.regular == object.regular
+        return compact == object.compact && regular == object.regular
     }
 }
