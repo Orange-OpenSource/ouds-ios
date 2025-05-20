@@ -93,7 +93,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
     }
@@ -149,7 +149,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
     private var disabledColor: Color {
         guard !isError else {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
     }
@@ -220,7 +220,7 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed"
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
     }

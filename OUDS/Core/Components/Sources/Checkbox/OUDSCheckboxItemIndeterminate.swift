@@ -156,7 +156,8 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
-                action: (() -> Void)? = nil) {
+                action: (() -> Void)? = nil)
+    {
         if isError && isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDS Checkbox in an error context and in read only mode")
         }
@@ -167,7 +168,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
 
         _selection = selection
         self.action = action
-        self.layoutData = .init(
+        layoutData = .init(
             label: label.localized(),
             additionalLabel: nil,
             helper: helper?.localized(),

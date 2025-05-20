@@ -55,8 +55,8 @@ public final class MultipleFontCompositeRawTokens: NSObject, Sendable {
     /// Initializes a new font composite semantic token.
     /// - Parameter unique: The `FontCompositeRawToken` to apply for both in *compact* and *regular* modes
     public init(_ unique: FontCompositeRawToken) {
-        self.compact = unique
-        self.regular = unique
+        compact = unique
+        regular = unique
     }
 
     /// Initializes a new font composite semantic token.
@@ -68,14 +68,14 @@ public final class MultipleFontCompositeRawTokens: NSObject, Sendable {
         self.regular = regular
     }
 
-    deinit { }
+    deinit {}
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `MultipleFontCompositeRawTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? MultipleFontCompositeRawTokens else { return false }
-        return self.compact == object.compact && self.regular == object.regular
+        return compact == object.compact && regular == object.regular
     }
 
     /// Returns the composite raw token of font to use according to the `userInterfaceSizeClass` (i.e. `compact` or `regular`)

@@ -114,7 +114,8 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil,
-                opacities: AllOpacitySemanticTokensProvider? = nil) {
+                opacities: AllOpacitySemanticTokensProvider? = nil)
+    {
         OL.debug("Init of OrangeThemeSwitchComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
@@ -123,7 +124,7 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
         self.opacities = (opacities ?? OrangeThemeOpacitySemanticTokensProvider())
     }
 
-    deinit { }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

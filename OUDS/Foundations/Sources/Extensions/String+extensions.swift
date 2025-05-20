@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import Foundation
@@ -18,7 +18,7 @@ extension String {
     /// Converts *self*, supposed to be hexadecimal representation, to int value
     /// - Returns Int: The associated value, or nil if failed
     public func fromHexToInt() -> Int? {
-        let hexString = self.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        let hexString = trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var intValue: UInt64 = 0
         Scanner(string: hexString).scanHexInt64(&intValue)
         return Int(exactly: intValue)
@@ -30,27 +30,27 @@ extension String {
     /// For examplle, a color named "opacity dodger blue" is defined with the hexadecimal RGBA code
     /// "26B2FF14", which can be seen in RGBA as RGBA(38,178,255,0.08).
     /// For this value, it will return "EEF9FF" (corresponding to RGB(238,249,255)
-    /// 
+    ///
     /// - Returns String? - The hexadeicaml RGA color value if relevant
     public func toHex6() -> String? {
         // Expected #RRGGBB or #RRGGBBAA
-        guard self.hasPrefix("#") && (self.count == 7 || self.count == 9) else {
+        guard hasPrefix("#"), count == 7 || count == 9 else {
             return nil
         }
 
         let validHexCharacters = CharacterSet(charactersIn: "0123456789ABCDEF")
-        let hexString = String(self.dropFirst())
+        let hexString = String(dropFirst())
         let isValidHexColor = hexString.uppercased().unicodeScalars.allSatisfy { validHexCharacters.contains($0) }
         guard isValidHexColor else {
             return nil
         }
 
         // If already in hexa6, keep hexa6
-        if self.count == 7 {
+        if count == 7 {
             return self
         }
 
-        guard let rgba = self.color.rgba else {
+        guard let rgba = color.rgba else {
             return nil
         }
 

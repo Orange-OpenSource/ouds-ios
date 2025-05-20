@@ -33,7 +33,7 @@ import OUDSTokensSemantic
 ///         // Then override the tag component tokens you want.
 ///
 ///         override var tagColorBgReminder: MultipleColorSemanticTokens { colors.colorOpacityLower }
-///         
+///
 ///         override var tagBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthMedium }
 ///
 ///         override var tagSizeMinWidthMedium: SizeSemanticToken { DimensionRawTokens.dimension500 }
@@ -110,7 +110,8 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil) {
+                spaces: AllSpaceSemanticTokensProvider? = nil)
+    {
         OL.debug("Init of OrangeThemeTagComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
@@ -118,7 +119,7 @@ open class OrangeThemeTagComponentTokensProvider: AllTagComponentTokensProvider 
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
-    deinit { }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

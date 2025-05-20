@@ -92,7 +92,8 @@ struct ControlItem: View {
          isReadOnly: Bool = false,
          hasDivider: Bool = false,
          orientation: Self.Orientation = .default,
-         action: (() -> Void)? = nil) {
+         action: (() -> Void)? = nil)
+    {
         self.init(indicatorType: indicatorType,
                   layoutData: .init(label: label,
                                     additionalLabel: additionalLabel,
@@ -113,13 +114,13 @@ struct ControlItem: View {
         InteractionButton(isReadOnly: layoutData.isReadOnly) {
             VibrationsManager.success()
             switch indicatorType {
-            case .switch(let binding):
+            case let .switch(binding):
                 withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
                     binding.wrappedValue.toggle()
                 }
-            case .radioButton(let binding):
+            case let .radioButton(binding):
                 binding.wrappedValue.toggle()
-            case .checkBox(let binding):
+            case let .checkBox(binding):
                 binding.wrappedValue.toggle()
             }
             action?()

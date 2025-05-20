@@ -19,32 +19,32 @@
 extension BorderRawTokens {
     /// Has for value 4
     public static let borderBase: Double = 4
-    /// Has for value borderBase * 0 
+    /// Has for value borderBase * 0
     public static let borderRadius0: BorderRadiusRawToken = borderBase * 0 // 0
-    /// Has for value borderBase * 0.25 
+    /// Has for value borderBase * 0.25
     public static let borderRadius25: BorderRadiusRawToken = borderBase * 0.25 // 1
-    /// Has for value borderBase * 0.5 
+    /// Has for value borderBase * 0.5
     public static let borderRadius50: BorderRadiusRawToken = borderBase * 0.5 // 2
-    /// Has for value borderBase * 0.75 
+    /// Has for value borderBase * 0.75
     public static let borderRadius75: BorderRadiusRawToken = borderBase * 0.75 // 3
-    /// Has for value borderBase * 1 
+    /// Has for value borderBase * 1
     public static let borderRadius100: BorderRadiusRawToken = borderBase * 1 // 4
-    /// Has for value borderBase * 1.5 
+    /// Has for value borderBase * 1.5
     public static let borderRadius150: BorderRadiusRawToken = borderBase * 1.5 // 6
-    /// Has for value borderBase * 2 
+    /// Has for value borderBase * 2
     public static let borderRadius200: BorderRadiusRawToken = borderBase * 2 // 8
-    /// Has for value borderBase * 3 
+    /// Has for value borderBase * 3
     public static let borderRadius300: BorderRadiusRawToken = borderBase * 3 // 12
-    /// Has for value borderBase * 4 
+    /// Has for value borderBase * 4
     public static let borderRadius400: BorderRadiusRawToken = borderBase * 4 // 16
-    /// Has for value borderBase * 5 
+    /// Has for value borderBase * 5
     public static let borderRadius500: BorderRadiusRawToken = borderBase * 5 // 20
-    /// Has for value borderBase * 6 
+    /// Has for value borderBase * 6
     public static let borderRadius600: BorderRadiusRawToken = borderBase * 6 // 24
-    /// Has for value borderBase * 8 
+    /// Has for value borderBase * 8
     public static let borderRadius800: BorderRadiusRawToken = borderBase * 8 // 32
     /// Has for value 2000
-    public static let borderRadius9999: BorderRadiusRawToken = 2000
+    public static let borderRadius9999: BorderRadiusRawToken = 2_000
     /// Has for value dashed
     public static let borderStyleDashed: BorderStyleRawToken = "dashed"
     /// Has for value dotted
@@ -53,21 +53,21 @@ extension BorderRawTokens {
     public static let borderStyleNone: BorderStyleRawToken = "none"
     /// Has for value solid
     public static let borderStyleSolid: BorderStyleRawToken = "solid"
-    /// Has for value borderBase * 0 
+    /// Has for value borderBase * 0
     public static let borderWidth0: BorderWidthRawToken = borderBase * 0 // 0
-    /// Has for value borderBase * 0.25 
+    /// Has for value borderBase * 0.25
     public static let borderWidth25: BorderWidthRawToken = borderBase * 0.25 // 1
-    /// Has for value borderBase * 0.5 
+    /// Has for value borderBase * 0.5
     public static let borderWidth50: BorderWidthRawToken = borderBase * 0.5 // 2
-    /// Has for value borderBase * 0.75 
+    /// Has for value borderBase * 0.75
     public static let borderWidth75: BorderWidthRawToken = borderBase * 0.75 // 3
-    /// Has for value borderBase * 1 
+    /// Has for value borderBase * 1
     public static let borderWidth100: BorderWidthRawToken = borderBase * 1 // 4
-    /// Has for value borderBase * 1.25 
+    /// Has for value borderBase * 1.25
     public static let borderWidth125: BorderWidthRawToken = borderBase * 1.25 // 5
-    /// Has for value borderBase * 1.5 
+    /// Has for value borderBase * 1.5
     public static let borderWidth150: BorderWidthRawToken = borderBase * 1.5 // 6
-    /// Has for value borderBase * 2 
+    /// Has for value borderBase * 2
     public static let borderWidth200: BorderWidthRawToken = borderBase * 2 // 8
 }
 

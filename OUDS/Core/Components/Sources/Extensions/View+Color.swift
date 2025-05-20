@@ -23,7 +23,7 @@ extension View {
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
     public func oudsForegroundStyle(_ color: MultipleColorSemanticTokens) -> some View {
-        self.modifier(ColorSchemeBasedForegroundStyle(color: color))
+        modifier(ColorSchemeBasedForegroundStyle(color: color))
     }
 
     /// Applies a **foreground color** on the current view by using the given tokens of colors.
@@ -31,7 +31,7 @@ extension View {
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
     public func oudsForegroundColor(_ color: MultipleColorSemanticTokens) -> some View {
-        self.modifier(ColorSchemeBasedForegroundColor(color: color))
+        modifier(ColorSchemeBasedForegroundColor(color: color))
     }
 
     /// Applies a **background** on the current view by using the given tokens of colors.
@@ -39,7 +39,7 @@ extension View {
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
     public func oudsBackground(_ color: MultipleColorSemanticTokens) -> some View {
-        self.modifier(ColorSchemeBasedBackgroundColor(color: color))
+        modifier(ColorSchemeBasedBackgroundColor(color: color))
     }
 
     /// Applies an **accent color** on the current view by using the given tokens of colors.
@@ -47,7 +47,7 @@ extension View {
     /// - Parameter color: The token from which the color to use must be extracted
     /// - Returns: The modified `View`
     public func oudsAccentColor(_ color: MultipleColorSemanticTokens) -> some View {
-        self.modifier(ColorSchemeBasedAccentColor(color: color))
+        modifier(ColorSchemeBasedAccentColor(color: color))
     }
 }
 

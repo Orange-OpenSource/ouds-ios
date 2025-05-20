@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSTokensRaw
@@ -26,7 +26,7 @@ extension View {
     /// - Parameter elevation: The token to give for the shadow / elevation effect depending to the color scheme
     /// - Returns `View`: The current `View` with the shadow / elevation effect
     public func oudsShadow(_ elevation: MultipleElevationCompositeRawTokens) -> some View {
-        self.modifier(ColorSchemeBasedElevationViewModifier(elevation: elevation))
+        modifier(ColorSchemeBasedElevationViewModifier(elevation: elevation))
     }
 }
 

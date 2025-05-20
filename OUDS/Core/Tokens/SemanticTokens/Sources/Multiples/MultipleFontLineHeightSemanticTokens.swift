@@ -53,8 +53,8 @@ public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
     /// Initializes a new multiple font token with the same value for both *compact* and *regular* size classes
     /// - Parameter value: The `FontLineHeightSemanticToken` to apply if device in *compact* mode
     public init(_ value: FontLineHeightSemanticToken) {
-        self.compact = value
-        self.regular = value
+        compact = value
+        regular = value
     }
 
     /// Initializes a new multiple font token.
@@ -66,13 +66,13 @@ public final class MultipleFontLineHeightSemanticTokens: NSObject, Sendable {
         self.regular = regular
     }
 
-    deinit { }
+    deinit {}
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `MultipleFontTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let object = object as? MultipleFontLineHeightSemanticTokens else { return false }
-        return self.compact == object.compact && self.regular == object.regular
+        return compact == object.compact && regular == object.regular
     }
 }
