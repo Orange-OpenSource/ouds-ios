@@ -1,16 +1,10 @@
 # Developer guide
 
 - [Technical preconditions](#technical-preconditions)
-- [Build Design System Toolbox](#build-design-system-toolbox)
+- [Build OUDS Package](#build-ouds-package)
 - [Documentation](#documentation)
 - [Run tests](#run-tests)
   * [Unit tests for OUDS Swift package](#unit-tests-for-ouds-swift-package)
-  * [Snapshots tests in demo app](#snapshots-tests-in-demo-app)
-  * [UI tests in demo app](#ui-tests-in-demo-app)
-- [Build phases](#build-phases)
-- [Targets](#targets)
-- [Certificates, profiles and identifiers](#certificates-profiles-and-identifiers)
-- [Update dependencies with Renovate](#update-dependencies-with-renovate)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
 - [Commits, changelog, release note, versioning](#commits-changelog-release-note-versioning)
   * [About commits](#about-commits)
@@ -24,8 +18,8 @@
 ## Technical preconditions
 
 You should check wether or not you have the tools in use in the project like _Fastlane_, _SwiftLint_, _SwiftFormat_, etc.
-You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use at different levels (SDK, design system toolbox app, projects).
-Have a look on the locks file to know which versions we are using (*Podfile*, *Podfile.lock*, *Packages.swift*, *Package.resolved*, *Gemfile*, *Gemfile.lock*).
+You can have a look for example in the **THIRD\_PARTY.md** file which lists any dependencies and tools we use at different levels of the project.
+Have a look on the locks file to know which versions we are using (*Packages.swift*, *Package.resolved*, *Gemfile* and *Gemfile.lock*).
 
 If some tools are missing, pick the suitable command line below and check versions:
 ```bash
@@ -40,9 +34,6 @@ brew install rbenv
 
 # Use Bundler to install a major part of dependencies (thanks to Gemfile and Gemfile.lock files)
 bundle install
-
-# Use CocoaPods to install other dependencies not available as rubygems (thanks to Podfile and Podfile.lock files)
-bundle exec pod install --repo-update
 
 # Update your references
 brew update
@@ -92,15 +83,14 @@ We use also for our GitLab CI runners **Xcode 16.3**, we suggest you use this ve
 
 **Xcode 16.3** and **Swift 6** are used for this project. You must use this configuration.
 
-## Build Design System Toolbox
+## Build OUDS Package
 
-To build the demo application follow those steps:
+To build the OUDS package:
+1. Open the folder containing the *Package.swift. file in Xcode
+2. Select the "OUDS-Package" scheme
+3. Build
 
-1. `cd DesignToolbox`
-2. `bundle exec pod install`
-3. Open *DesignToolbox.xcworkspace*
-4. Select *DesignToolbox* scheme
-5. Build and run the Application on your device ou simulator
+You can also move the folder from the *Finder* to the [Design System Toolbox project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox) so as to have a local reference of the package in the demo project.
 
 ## Documentation
 
@@ -115,13 +105,13 @@ the online version based on [_GitHub Pages_](https://pages.github.com/), this ve
 ### Unit tests for OUDS Swift package
 
 The unit tests are here to ensure there are no regressions in core features, tokens management, etc.
+You should run the tests using an iPhone simulator (like *iPhone 16 Pro (18.0)*).
+Because OUDS is designed first for iOS, some of the OUDS API rely on UIKit (color colors and a11y features), and some tests are condioned to the platform.
+SO running tests on macOS or CI/CD today won't run all the tests (see [#667](https://github.com/Orange-OpenSource/ouds-ios/issues/667)).
 
 To run these unit tests follow some steps:
-1. `cd DesignToolbox`
-2. `bundle exec pod install`
-3. Open *DesignToolbox.xcworkspace*
-4. Select *DesignToolbox* scheme
-5. Run tests (Product -> Test)
+1. Select the "OUDS-Package" scheme
+2. In the test pane run the autocreated plan or any test scheme you want
 
 Unit tests care have been implemented for several reasons. 
 
@@ -134,135 +124,7 @@ Then, we want to know when tokens have been removed so as to warn our users and 
 
 Finally, we ensure our themes can override any semantic tokens. Themes are in fact a set of values for the whole universe of semantic tokens, and if a theme cannot override a semantic token, there could be an issue. Unit tests also help us to find if some tokens have been removed before releasing the library.
 
-### Snapshots tests in demo app
-
-The snapshots tests are made to test the rendering of the components and tokens, i.e. their look and feel.
-
-To run these snapshots tests follow some steps:
-1. `cd DesignToolbox`
-2. `bundle exec pod install`
-3. Open *DesignToolbox.xcworkspace*
-4. Select *DesignToolboxSnapshotsTests* scheme
-5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
-6. Run tests (Product -> Test)
-
-Beware, if you add new UI tests using [swift-snapshot-testing](https://github.com/pointfreeco/swift-snapshot-testing) library, you may have new tests which fail at first time.
-Indeed for new tests the tool makes snapshots of the views, thus for the first run no previews exist making the tests fail. You should run the tests twice for new tests.
-
-Such tests here are used to as to be sure the look and feel of any components and tokens rendering remain the expected ones.
-
-Any interface modifications require regenerating the illustrations using the tool, i.e. run the tests twice. The reference illustrations have already been saved within the project.
-
-**Note today because the demo app (Design System Toolbox) is hosted in the repository, the tests assets are versioned too, thus the _Swift Package_ will be heavy when being downloaded because Xcode downloads the entire repository. When the demo app app will be extracted to an internal repository, the _Swift Package_ will be lighter**.
-
-The device under tests is a **simulator of iPhone 16 Pro (18.0), in portrait mode, with no a11y feature enabled, and a text size of 100% in english mode**.
-
-#### How to use to use swift-snapshot-testing library
-
-1. Locate where are the reference images:
-    - In the Package directory, you will find the reference screenshots for the Orange theme (Light/Dark), which will serve as comparison baselines.
-    ```text
-    OUDS -> DesignToolbox -> DesignToolboxSnapshotsTests -> __Snapshots__
-    ```
-2. Navigate to the project :
-    - Open your project in Xcode and go to a directory containing tests (e.g. here *OUDSTokensOpacityUITests*):
-    ```shell
-    DesignToolbox -> DesignToolboxSnapshotsTests -> OUDSTokensOpacityUITests -> OUDSTokensOpacityUITests.swift
-    ```
-3. Open a test file (e.g. here *OUDSTokensOpacityUITests*):
-    - Open the file `OUDSTokensOpacityUITests.swift`.
-4. Run the snapshot test (success):
-    - Locate and execute some function like `testAllOpacitiesOrangeThemeLight()`.
-
-      <img width="897" alt="OrangeThemeLight_OpacityTest_Success" src="https://github.com/user-attachments/assets/550bed90-6bc9-4d68-aaf0-8e04de35d916">
- 
-The snapshot tool fetched the reference image to compare it against the current screen and detected no differences, resulting in a success
-
-5. Run the snapshot test (failure):
-    - We will deliberately change the image by setting the `OpacityOpaque` token to `OpacityInvisible` in class `OpacityTokenPage.swift`
-
-      <img width="561" alt="IntentionalTokenModification" src="https://github.com/user-attachments/assets/1d138b7b-2998-40b7-bf39-d9a597ced6c0">
-    - Test result failure :
-
-    <img width="897" alt="IntentionalUITestError" src="https://github.com/user-attachments/assets/0a6bb578-adba-42f1-abe8-e2f50ddba2a7">
-
-   The *swift-snapshot-testing tool* indicates that the issue originates from the transparent token illustration. We can observe that there are two paths: the first corresponds to our reference illustration (the one we intend to base our comparison on), while the second path is the illustration used for the current image of the application. You can open both paths and visually compare the differences.
-
-7. Verify the output:
-    - It is recommended to use the `Show the Report Navigator` tool in Xcode :
-
-    <img width="512" alt="ShowReportNavigator_Xcode" src="https://github.com/user-attachments/assets/8d866d79-5dfc-46c7-934e-8d03ec1fc667">
-
-    - In Xcode go to :
-
-    ```text
-    DesignToolboxSnapshotsTests -> DesignToolboxSnapshotsTests/DesignToolboxSnapshotsTests
-    ```
-
-    <img width="1206" alt="TestResult_Failed_testAllOpacitiesOrangeThemeLight" src="https://github.com/user-attachments/assets/1793df83-ffc1-4226-8be2-fbd7e2b71deb">
-
-8. Comparison (reference and failure):
-   
-   **Reference:**
-
-    <img width="1307" alt="OpacityReferenceImage" src="https://github.com/user-attachments/assets/493dabde-4139-468f-a57b-10ee5a5269c1">
-
-
-   **Failure:**
-
-   <img width="1364" alt="OpacityFailureImage" src="https://github.com/user-attachments/assets/03cfe17f-3752-4aba-a482-f89d3b89f53d">
-
-### UI tests in demo app
-
-The project contains some UI tests made to test the behaviour of components.
-
-To run these UI tests follow some steps:
-1. `cd DesignToolbox`
-2. `bundle exec pod install`
-3. Open *DesignToolbox.xcworkspace*
-4. Select *DesignToolboxUITests* scheme
-5. Select *iPhone 16 Pro (18.0)* simulator (the device used to tests and views rendering)
-6. Run tests (Product -> Test)
-
-## Build phases
-
-The project contains several custom build phases so as to automatize several steps:
-
-1. _SwiftLint_ will run the linter on the sources
-
-Note that sources headers are defined in *IDETemplateMacros.plist* inside *DesignToolbox/DesignToolbox.xcworkspace/xcshareddata*
-
-## Targets
-
-The Xcode project contains two targets:
-
-1. _DesignToolbox_ for the demo application
-2. _Periphery_ to look for dead code in the source code
-3. _DesignToolboxSnapshotsTests_ for UI tests in demo app
-
-## Certificates, profiles and identifiers
-
-We choose to use Xcode automatic signing for debug builds of the app so as to make easier onboarding of newcomers in development team, and also to prevent to update provisioning profiles with individual developers certificates each team someone wants to build the app and also to prevent to register each new build device. You may need to be part of our team if you want to build in debug mode.
-Note the bundle identifier here for local builds is **com.orange.ouds.demoapp-debug**, with a **-debug** suffix so as to prevent any local build to be replaced by TestFlight builds which have **com.orange.ouds.demoapp** identifiers.
-
-However for release builds we use a dedicated _provisioning profile_ built with of course a _distribution certificate_(.p12 format with private key, not .cer) and the _bundle identifier_ `com.orange.ouds.demoapp` for our _Apple Team_ `France Telecom (MG2LSJNJB6)`. Thus you won't be able to build and sign in release mode without this provisioning profile and this distribution certificate. These elements are stored in our local GitLab CI runners and must not be available outside.
-
-You can find more details [in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/53-%E2%80%90-About-Apple-magic).
-
-## Update dependencies with Renovate
-
-Sometimes dependencies should be updated, with for example warnings of [Renovate bot](https://github.com/apps/renovate).
-
-Here is the list of files to update to keep the project clean:
-- CHANGELOG (to note for releases the update of the version)
-- THIRD_PARTY (because we list all third-party components, it is a good practice)
-- Of course, update and save in your VCS the new states of the _Podfile_, _Package.swift_ or _Gemfile_ for example (and do not forget locks!)
-
-Maybe you will need to update your pods repo before if you updated a Pod:
-
-```shell
-bundle exec pod install --repo-update
-```
+Beware, UI tests and snapshots tests (i.e. visual regression) are designed in the [Design System Toolbox project](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox): we need an app to build, generated views and tigger some user inputs.
 
 ## Developer Certificate of Origin
 
@@ -393,6 +255,12 @@ Remember _Gitleaks_ is also used in GitHub project side thanks to the [dedicated
 
 We use _SwiftLint_ in this project so as to be sure the source code follows defined guidelines for the syntax and other points.
 You must run _SwiftLint_ in CLI or using _Xcode_ to be sure you don't keep and submit warnings.
+
+We provide a command to run _SwiftLint_:
+```shell
+bundle exec fastlane lint
+```
+
 **In most of cases you must fix warnings, or explain why in your commits and pull request comments you choose to disable them.**
 
 Today, only in very few cases some _SwiftLint_ warnings are disabled at files (or lower) level:
@@ -425,7 +293,7 @@ We use [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) to format sour
 You can run *SwiftFormat* in CLI:
 
 ```shell
-swiftformat .
+bundle exec fastlane format
 ```
 
 A *Git pre-commit hook* is also defined in the project. It will run *SwifFormat* before the commit so as to be sure the sources will be well formatted before being pushed.
@@ -455,18 +323,17 @@ bundle exec fastlane check_dead_code
 
 ### GitHub Action
 
-We use *GitHub Actions* so as to define a workflow with some actions to build demo application and test the library.
+We use *GitHub Actions* so as to define a workflow with some actions to build and test the library.
 It will help us to ensure code on pull requests or being merged compiles and has all tests green.
-This workflow is defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml), and makes build, unit tests and UI tests.
-
-We have also a *gitleaks* workflow making some scans on the code to look fo secrets leaks, defined in [this YAML](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks-action.yml).
-
-A dedicated workflow has been defined so as to run checks on localizables to find is some wording is missing (thanks to [SwiftPolyglot](https://github.com/appdecostudio/SwiftPolyglot)).
+Workflows are the following:
+- [build and run unit tests](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/build-and-test.yml)
+- [check if there are secrets leaks](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/gitleaks.yml).
+- [check if there are localizations troubles](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftpolyglot.yml)
+- [check if there is dead code](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/periphery.yml)
+- [run linter](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/workflows/swiftlint.yml)
 
 We use also two GitHub apps making controls on pull requests and defining wether or not prerequisites are filled or not.
 There is one control to check if [PR template are all defined ](https://github.com/stilliard/github-task-list-completed), and one if [DCO is applied](https://probot.github.io/apps/dco/).
-
-Finaly we have [this *GitHub Action*](https://github.com/cirruslabs/swiftlint-action) using _SwiftLint_ to ensure no warnings are in our codebase.
 
 ### GitLab CI (internal)
 
