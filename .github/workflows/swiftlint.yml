@@ -11,7 +11,7 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
-name: SwiftLint
+name: Swift linter
 
 on:
   push:
@@ -23,6 +23,7 @@ on:
     branches:
       - main
       - develop
+      - '*'
 
 jobs:
   SwiftLint:
