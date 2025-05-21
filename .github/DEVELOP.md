@@ -17,6 +17,7 @@
   * [About release note and changelog](#about-release-note-and-changelog)
 - [Use of Gitleaks](#use-of-gitleaks)
 - [Linter](#linter)
+- [Formater](#formater)
 - [Dead code](#dead-code)
 - [CI/CD](#cicd)
 
@@ -417,6 +418,15 @@ The warnings which can be disabled for test classes files and mocks files:
 - *implicitly_unwrapped_optional*: because for declaration of themes to test we bang!
 
 Do not forget if possible to enable the warnings in the end of the file to reduce as much as possible the scope of the disabled warnings. Disable warnings only if needed.
+
+## Formater
+
+We use [SwiftFormat](https://github.com/nicklockwood/SwiftFormat) to format sources and keep them clean. This tool is use in Xcode build phase.
+You can run *SwiftFormat* in CLI:
+
+```shell
+swiftformat .
+```
 
 ## Dead code
 
