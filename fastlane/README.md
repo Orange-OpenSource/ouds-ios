@@ -31,6 +31,22 @@ RUN PERIPHERY FOR DEAD CODE ANALYSIS
 
 RUN SWIFT FORMAT TO FORMAT SOURCES
 
+### ios build
+
+```sh
+[bundle exec] fastlane ios build
+```
+
+BUILD THE SWIFT PACKAGE
+
+### ios test_unit
+
+```sh
+[bundle exec] fastlane ios test_unit
+```
+
+RUN UNIT TESTS OF SWIFT PAKCAGE
+
 ----
 
 This README.md is auto-generated and will be re-generated every time [_fastlane_](https://fastlane.tools) is run.
