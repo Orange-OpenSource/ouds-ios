@@ -428,6 +428,14 @@ You can run *SwiftFormat* in CLI:
 swiftformat .
 ```
 
+A *Git pre-commit hook* is also defined in the project. It will run *SwifFormat* before the commit so as to be sure the sources will be well formatted before being pushed.
+The hook is degined in **.git-hook/pre-commit**.
+To apply use, run in your project (e.g. once cloned):
+
+```shell
+git config --local --add core.hooksPath .git-hooks
+```
+
 ## Dead code
 
 We use [Periphery](https://github.com/peripheryapp/periphery) to look for dead code and help developers to track it and remove it.
