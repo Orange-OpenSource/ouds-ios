@@ -19,6 +19,13 @@ import Testing
 /// To test  the extension `String`, here the `toHex6` utils.
 struct StringExtensionsTests {
 
+    // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
+#if !os(iOS)
+    private static let doesRunOniOS = false
+#else
+    private static let doesRunOniOS = true
+#endif
+
     // Some tools:
     // - https://borderleft.com/toolbox/rgba/
     // - https://rgbacolorpicker.com/hex-to-rgba
@@ -26,56 +33,56 @@ struct StringExtensionsTests {
 
     // MARK: - Opacity colors
 
-    @Test("#26B2FF14 in hexa6 must be #EDF8FF")
+    @Test("#26B2FF14 in hexa6 must be #EDF8FF", .enabled(if: Self.doesRunOniOS))
     func convertOpacityDodgerBlue() {
         #expect("#26B2FF14".toHex6()! == "#EDF8FF")
     }
 
-    @Test("#EA030514 in hexa6 must be #FDEAEB")
+    @Test("#EA030514 in hexa6 must be #FDEAEB", .enabled(if: Self.doesRunOniOS))
     func convertOpacityScarlet() {
         #expect("#EA030514".toHex6()! == "#FDEAEB")
     }
 
-    @Test("#FFFFFFCC in hexa6 must be #FAFAFA")
+    @Test("#FFFFFFCC in hexa6 must be #FAFAFA", .enabled(if: Self.doesRunOniOS))
     func convertOpacityWhite800() {
         #expect("#FFFFFFCC".toHex6()! == "#FFFFFF")
     }
 
-    @Test("#000000D6 in hexa6 must be #282828")
+    @Test("#000000D6 in hexa6 must be #282828", .enabled(if: Self.doesRunOniOS))
     func convertOpacityBlack840() {
         #expect("#000000D6".toHex6()! == "#282828")
     }
 
-    @Test("#FFD00029 in hexa6 must be #FFF7D6")
+    @Test("#FFD00029 in hexa6 must be #FFF7D6", .enabled(if: Self.doesRunOniOS))
     func convertOpacitySun() {
         #expect("#FFD00029".toHex6()! == "#FFF7D6")
     }
 
     // MARK: - Colors
 
-    @Test("#FFFFFFFF and #00000000 in hexa6 must be #FFFFFF")
+    @Test("#FFFFFFFF and #00000000 in hexa6 must be #FFFFFF", .enabled(if: Self.doesRunOniOS))
     func convertColorWhite() {
         #expect("#FFFFFFFF".toHex6()! == "#FFFFFF")
         #expect("#00000000".toHex6()! == "#FFFFFF")
         #expect("#FFFFFF00".toHex6()! == "#FFFFFF")
     }
 
-    @Test("#000000FF in hexa6 must be #000000")
+    @Test("#000000FF in hexa6 must be #000000", .enabled(if: Self.doesRunOniOS))
     func convertColorBlack() {
         #expect("#000000FF".toHex6()! == "#000000")
     }
 
-    @Test("#A99275FF in hexa6 must be #A99275")
+    @Test("#A99275FF in hexa6 must be #A99275", .enabled(if: Self.doesRunOniOS))
     func convertWarmGray500() {
         #expect("#A99275FF".toHex6()! == "#A99275")
     }
 
-    @Test("#FF7900FF in hexa6 must be #F4F4F4")
+    @Test("#FF7900FF in hexa6 must be #F4F4F4", .enabled(if: Self.doesRunOniOS))
     func convertColorOrange500() {
         #expect("#FF7900FF".toHex6()! == "#FF7900")
     }
 
-    @Test("#3DE35A1F in hexa6 must be #E2F1F1")
+    @Test("#3DE35A1F in hexa6 must be #E2F1F1", .enabled(if: Self.doesRunOniOS))
     func convertFunctionalMalachite() {
         #expect("#3DE35A1F".toHex6()! == "#E7FBEB")
     }

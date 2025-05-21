@@ -25,6 +25,13 @@ import Testing
 /// The aim is to be sure the utils are able to computed the suitable ratios and define wether or not WCAG 2.1 are respected.
 struct OUDSWCAG21RatioTests {
 
+    // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
+#if !os(iOS)
+    private static let doesRunOniOS = false
+#else
+    private static let doesRunOniOS = true
+#endif
+
     // MARK: - Requirements meets (textual)
 
     @Test("Constrast ratio under 4.5:1 must not pass for textual components and AA")
@@ -163,31 +170,31 @@ struct OUDSWCAG21RatioTests {
 
     // MARK: - Color luminance
 
-    @Test("#FFFFFFFF as luminance of 1")
+    @Test("#FFFFFFFF has luminance of 1", .enabled(if: Self.doesRunOniOS))
     func luminanceForFFFFFFFF() throws {
         let luminance = OUDSWCAG21Ratio.luminance(for: "#FFFFFFFF".color)
         #expect(luminance == 1, "luminance = \(String(describing: luminance))")
     }
 
-    @Test("#000000FF as luminance of 0.0722")
+    @Test("#000000FF has luminance of 0.0722", .enabled(if: Self.doesRunOniOS))
     func luminanceFor000000FF() throws {
         let luminance = OUDSWCAG21Ratio.luminance(for: "#000000FF".color)
         #expect(luminance == 0.0, "luminance = \(String(describing: luminance))")
     }
 
-    @Test("#F15E00FF as luminance of 0.339261794")
+    @Test("#F15E00FF has luminance of 0.339261794", .enabled(if: Self.doesRunOniOS))
     func luminanceForF15E00FF() throws {
         let luminance = OUDSWCAG21Ratio.luminance(for: "#F15E00FF".color)
         #expect(luminance == 0.267061825736296, "luminance = \(String(describing: luminance))")
     }
 
-    @Test("#26B2FF14 as luminance of 0.3230336529")
+    @Test("#26B2FF14 has luminance of 0.3230336529", .enabled(if: Self.doesRunOniOS))
     func luminanceFor26B2FF14() throws {
         let luminance = OUDSWCAG21Ratio.luminance(for: "#26B2FF14".color)
         #expect(luminance == 0.3947286020914061, "luminance = \(String(describing: luminance))")
     }
 
-    @Test("#3DE35A1F as luminance of 0.5602919883")
+    @Test("#3DE35A1F has luminance of 0.5602919883", .enabled(if: Self.doesRunOniOS))
     func luminanceFor3DE35A1F() throws {
         let luminance = OUDSWCAG21Ratio.luminance(for: "#3DE35A1F".color)
         #expect(luminance == 0.5666845580578855, "luminance = \(String(describing: luminance))")
@@ -195,7 +202,7 @@ struct OUDSWCAG21RatioTests {
 
     // MARK: - Color ratios - Always fail
 
-    @Test("White on white must fail for all")
+    @Test("White on white must fail for all", .enabled(if: Self.doesRunOniOS))
     func whiteColorOnWhiteAlwaysFail() throws {
         let foregroundColor = "#FFFFFFFF"
         let backgroundColor = "#FFFFFFFF"
@@ -204,7 +211,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black on black must fail for all")
+    @Test("Black on black must fail for all", .enabled(if: Self.doesRunOniOS))
     func blackColorOnBlackAlwaysFail() throws {
         let foregroundColor = "#000000FF"
         let backgroundColor = "#000000FF"
@@ -215,8 +222,9 @@ struct OUDSWCAG21RatioTests {
 
     // MARK: - Color ratios - Always pass
 
-    @Test("White on black must pass for all")
+    @Test("White on black must pass for all", .enabled(if: Self.doesRunOniOS))
     func whiteColorOnBlackMustAlwaysPass() throws {
+
         let foregroundColor = "#FFFFFFFF"
         let backgroundColor = "#000000FF"
         let ratio = OUDSWCAG21Ratio.contrastRatios(foregroundColor, backgroundColor)!
@@ -224,7 +232,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black on white must pass for all")
+    @Test("Black on white must pass for all", .enabled(if: Self.doesRunOniOS))
     func blackColorOnWhiteMustAlwaysPass() throws {
         let foregroundColor = "#000000FF"
         let backgroundColor = "#FFFFFFFF"
@@ -236,7 +244,7 @@ struct OUDSWCAG21RatioTests {
     // MARK: - Color ratios - Other use cases
 
     // White text on Brand secondary and Brand Tertiary color background in dark mode
-    @Test("White on Brand Primary / Secondary / Tertiary must fail for all")
+    @Test("White on Brand Primary / Secondary / Tertiary must fail for all", .enabled(if: Self.doesRunOniOS))
     func whiteColorOnOrangeSurfacesMustFailFor4_5to1() throws {
         let foregroundColor = "#FFFFFFFF"
         let backgroundColor = "#FF7900FF"
@@ -246,7 +254,7 @@ struct OUDSWCAG21RatioTests {
     }
 
     // Black text on Status Neutral Emphasized in light mode
-    @Test("Black on Status Neutral Emphasized must fail for all")
+    @Test("Black on Status Neutral Emphasized must fail for all", .enabled(if: Self.doesRunOniOS))
     func blackColorOnAlmostBlackSurfaceMustFailFor4_5to1() throws {
         let foregroundColor = "#000000FF"
         let backgroundColor = "#000000D6"
@@ -256,7 +264,7 @@ struct OUDSWCAG21RatioTests {
     }
 
     // Link's chevron for Brand secondary and Brand Tertiary color background in both light and dark mode
-    @Test("Orange colors on Brand Primary / Secondary / Tertiary must fail for all")
+    @Test("Orange colors on Brand Primary / Secondary / Tertiary must fail for all", .enabled(if: Self.doesRunOniOS))
     func orangeColorsOnOrangeSurfaceMustFailForAll() throws {
         let backgroundColor = "#FF7900FF"
 
@@ -272,7 +280,7 @@ struct OUDSWCAG21RatioTests {
     }
 
     // Link's chevron for Status Warning Muted light mode
-    @Test("Orange colors on Status Warning Muted must fail for all")
+    @Test("Orange colors on Status Warning Muted must fail for all", .enabled(if: Self.doesRunOniOS))
     func orangeColorsOnOpacitySunSurfaceMustFailForAll() throws {
         let backgroundColor = "#FFD00029" // Opacity sun color
 
@@ -288,7 +296,7 @@ struct OUDSWCAG21RatioTests {
     }
 
     // Link's chevron for Status Positive Muted light mode
-    @Test("Orange colors on Status Positive Muted")
+    @Test("Orange colors on Status Positive Muted", .enabled(if: Self.doesRunOniOS))
     func orangeColorsOnMalachiteSurface() throws {
         let backgroundColor = "#3DE35A1F" // Functional Malachite color
 
@@ -304,7 +312,7 @@ struct OUDSWCAG21RatioTests {
     }
 
     // Link's chevron for Status Neutral Emphasized light mode
-    @Test("Black color on Status Neutral Emphasized")
+    @Test("Black color on Status Neutral Emphasized", .enabled(if: Self.doesRunOniOS))
     func blackOnStatusNeutralEmphasizedSurface() throws {
         let foregroundColor = "#000000"
 
@@ -320,7 +328,7 @@ struct OUDSWCAG21RatioTests {
     }
 
     // Link's chevron for Status Info Muted light mode
-    @Test("Orange colors on Status Info Muted")
+    @Test("Orange colors on Status Info Muted", .enabled(if: Self.doesRunOniOS))
     func orangeColorsOnOpacityDodgerBlueSurface() throws {
         let backgroundColor = "#26B2FF14" // Opacity dodger blue color
 
@@ -336,7 +344,7 @@ struct OUDSWCAG21RatioTests {
     }
 
     // Link's chevron for Status Negative Muted light mode
-    @Test("Orange colors on Status Negative Muted must fail for all")
+    @Test("Orange colors on Status Negative Muted must fail for all", .enabled(if: Self.doesRunOniOS))
     func orangeColorsOnOpacityScarletSurfaceMustFailForAll() throws {
         let backgroundColor = "#EA030514" // Opacity scarlet color
 
@@ -351,7 +359,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black color on Brand Primary / Secondary / Tertiary must pass for all")
+    @Test("Black color on Brand Primary / Secondary / Tertiary must pass for all", .enabled(if: Self.doesRunOniOS))
     func blackColorOnBrandPrimarySecondaryTertiarySurfaceMustPassForAll() throws {
         let foregroundColor = "#000000"
 
@@ -366,7 +374,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black color on Status Accent Emphasized must pass for all")
+    @Test("Black color on Status Accent Emphasized must pass for all", .enabled(if: Self.doesRunOniOS))
     func blackColorOnStatusAccentEmphasizedSurfaceMustPassForAll() throws {
         let foregroundColor = "#000000"
 
@@ -381,7 +389,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black, white and orange colors on Status Accent Muted")
+    @Test("Black, white and orange colors on Status Accent Muted", .enabled(if: Self.doesRunOniOS))
     func blackWhiteOrangeColorsOnStatusAccentMutedSurface() throws {
         let foregroundBlack = "#000000FF"
         let foregroundOrangeLight = "#FF7900FF" // Orange brand color Orange 500
@@ -405,7 +413,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black color on Status Info Emphasized must pass for all")
+    @Test("Black color on Status Info Emphasized must pass for all", .enabled(if: Self.doesRunOniOS))
     func blackColorOnStatusInfoEmphasizedSurfaceMustPassForAll() throws {
         let foregroundColor = "#000000FF"
 
@@ -420,7 +428,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black, white and orange colors on Status Info Muted")
+    @Test("Black, white and orange colors on Status Info Muted", .enabled(if: Self.doesRunOniOS))
     func blackWhiteOrangeColorsOnStatusInfoMutedSurface() throws {
         let foregroundBlack = "#000000FF"
         let foregroundOrangeLight = "#FF7900FF" // Orange brand color Orange 500
@@ -444,7 +452,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black and white colors on Status Negative Emphasized")
+    @Test("Black and white colors on Status Negative Emphasized", .enabled(if: Self.doesRunOniOS))
     func blackAndWhiteColorsBlackColorsOnStatuNegativeEmphasizedSurface() throws {
         var foregroundColor = "#FFFFFFFF"
 
@@ -465,7 +473,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black, white and orange colors on Status Negative Muted")
+    @Test("Black, white and orange colors on Status Negative Muted", .enabled(if: Self.doesRunOniOS))
     func blackWhiteOrangeColorsBlackColorsOnStatusNegativeMutedSurface() throws {
         let foregroundBlack = "#000000FF"
         let foregroundOrangeLight = "#FF7900FF" // Orange brand color Orange 500
@@ -489,7 +497,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black and white colors on Status Neutral Emphasized must pass for all")
+    @Test("Black and white colors on Status Neutral Emphasized must pass for all", .enabled(if: Self.doesRunOniOS))
     func blackAndWhiteColorsBlackColorsOnStatusNeutralEmphasizedSurfaceMustPassForAll() throws {
         var foregroundColor = "#FFFFFFFF"
         var backgroundColor = "#000000D6" // Opacity Black 840
@@ -504,7 +512,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black, white and orange colors on Status Neutral Muted")
+    @Test("Black, white and orange colors on Status Neutral Muted", .enabled(if: Self.doesRunOniOS))
     func blackWhiteOrangeColorsBlackColorsOnStatusNeutralMutedSurface() throws {
         let foregroundBlack = "#000000FF"
         let foregroundOrangeLight = "#FF7900FF" // Orange brand color Orange 500
@@ -524,7 +532,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black on Status Positive Emphasized must pass for all")
+    @Test("Black on Status Positive Emphasized must pass for all", .enabled(if: Self.doesRunOniOS))
     func blackColorOnStatusPositiveEmphasizedSurfaceMustPassForAll() throws {
         let foregroundColor = "#000000FF"
 
@@ -539,7 +547,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black, white and orange colors on Status Positive Muted")
+    @Test("Black, white and orange colors on Status Positive Muted", .enabled(if: Self.doesRunOniOS))
     func blackWhiteOrangeColorsOnStatusPositiveMutedSurface() throws {
         let foregroundBlack = "#000000FF"
         let foregroundOrangeLight = "#FF7900FF" // Orange brand color Orange 500
@@ -563,7 +571,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == false, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black on Status Warning Emphasized must pass for all")
+    @Test("Black on Status Warning Emphasized must pass for all", .enabled(if: Self.doesRunOniOS))
     func blackColorOnStatusWarningEmphasizedSurfaceMustPassForAll() throws {
         let foregroundColor = "#000000FF"
 
@@ -578,7 +586,7 @@ struct OUDSWCAG21RatioTests {
         #expect(ratio.meets4_5to1 == true, "Ratio = \(ratio.ratio)")
     }
 
-    @Test("Black, white, orange colors on Status Warning Muted")
+    @Test("Black, white, orange colors on Status Warning Muted", .enabled(if: Self.doesRunOniOS))
     func blackWhiteOrangeColorsOnStatusWarningMutedSurface() throws {
         let foregroundBlack = "#000000FF"
         let foregroundOrangeLight = "#FF7900FF" // Orange brand color Orange 500
