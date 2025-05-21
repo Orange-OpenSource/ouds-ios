@@ -52,7 +52,6 @@ jobs:
 
       - name: Build Swift Package
         run: |
-          cd DesignToolbox
           bundle exec fastlane build
 
   # Test the library with unit tests
