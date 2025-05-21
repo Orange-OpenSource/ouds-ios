@@ -31,7 +31,6 @@ on:
       - synchronize
 
 jobs:
-  # Build the app (if there are linter errors or compiler issues, it will fail)
   build:
     runs-on: macos-15
     steps:
@@ -51,19 +50,10 @@ jobs:
         run: |
           bundle install
 
-      - name: Install Periphery
-        run: |
-          brew install peripheryapp/periphery/periphery
-
-      - name: Look for dead code
+      - name: Build Swift Package
         run: |
           cd DesignToolbox
-          bundle exec fastlane check_dead_code
-
-      - name: Build demo app
-        run: |
-          cd DesignToolbox
-          bundle exec fastlane buildDebugApp
+          bundle exec fastlane build
 
   # Test the library with unit tests
   unit-test:
@@ -85,8 +75,6 @@ jobs:
         run: |
           bundle install
 
-      - name: Run unit tests on demo app
+      - name: Run unit tests of Swift Package-
         run: |
-          cd DesignToolbox
-          bundle exec pod install
-          bundle exec fastlane ios test
+          bundle exec fastlane test_unit

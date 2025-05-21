@@ -11,33 +11,12 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
-
-# Project configuration
-# ---------------------
-
-#OUDS_WORKSPACE = "DesignToolbox.xcworkspace"
-#OUDS_PROJECT = "DesignToolbox.xcodeproj"
-#OUDS_SCHEME = "DesignToolbox"
-#OUDS_TARGET = "DesignToolbox"
-
-# Devices configuration
-# ---------------------
-
-#OUDS_SNAPSHOTS_TEST_DEVICE = "iPhone 16 Pro (18.0)"
-
 # Lanes
 # ------
 
 default_platform(:ios)
 
 platform :ios do
-
-    before_all do |lane, options|
-        xcodes(
-            version: '16.3',
-            select_for_current_build_only: true,
-        )
-    end
 
     # ------------------------------------------------------------
     # RUN PERIPHERY FOR DEAD CODE ANALYSIS
@@ -56,5 +35,25 @@ platform :ios do
     lane :format do
         puts "👉 Run Swift Format to format sources"
         sh "cd .. && swiftformat ."
+    end
+
+    # ------------------------------------------------------------
+    # BUILD
+    # ------------------------------------------------------------
+    desc "BUILD THE SWIFT PACKAGE"
+    lane :build do
+        puts "👉 Build Swift Package"
+
+        sh "cd .. && swift build"
+    end
+
+    # ------------------------------------------------------------
+    # RUN UNIT TESTS
+    # ------------------------------------------------------------
+    desc "RUN UNIT TESTS OF SWIFT PAKCAGE"
+    lane :test_unit do
+        puts "👉 Run unit tests of Swift Package"
+
+        sh "cd .. && swift test"
     end
 end
