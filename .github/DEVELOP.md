@@ -17,6 +17,7 @@
   * [About release note and changelog](#about-release-note-and-changelog)
 - [Use of Gitleaks](#use-of-gitleaks)
 - [Linter](#linter)
+- [Dead code](#dead-code)
 - [CI/CD](#cicd)
 
 ## Technical preconditions
@@ -416,6 +417,21 @@ The warnings which can be disabled for test classes files and mocks files:
 - *implicitly_unwrapped_optional*: because for declaration of themes to test we bang!
 
 Do not forget if possible to enable the warnings in the end of the file to reduce as much as possible the scope of the disabled warnings. Disable warnings only if needed.
+
+## Dead code
+
+We use [Periphery](https://github.com/peripheryapp/periphery) to look for dead code and help developers to track it and remove it.
+This tool is run in CI/CD side and can be run localy using *Fastlane*:
+
+Install *Periphery*:
+```shell
+brew install peripheryapp/periphery/periphery
+```
+
+And run:
+```shell
+bundle exec fastlane check_dead_code
+```
 
 ## CI/CD
 
