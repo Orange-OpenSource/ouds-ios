@@ -25,7 +25,6 @@ gem 'abbrev', '0.1.2'
 # ------------------
 
 gem 'fastlane', '2.227.2'
-gem 'fastlane-plugin-swiftformat', '0.3.0'
 
 # Magic
 

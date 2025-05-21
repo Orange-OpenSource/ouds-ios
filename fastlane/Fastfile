@@ -48,4 +48,13 @@ platform :ios do
         # Command must run at root where Package.swift is
         sh "cd .. && periphery scan --relative-results --format xcode"
     end
+
+    # ------------------------------------------------------------
+    # RUN SWIFT FORMAT TO FORMAT SOURCES
+    # ------------------------------------------------------------
+    desc "RUN SWIFT FORMAT TO FORMAT SOURCES"
+    lane :format do
+        puts "👉 Run Swift Format to format sources"
+        sh "cd .. && swiftformat ."
+    end
 end
