@@ -20,7 +20,15 @@ import Testing
 /// To test some extensions of `SwiftUI.Color`
 struct ColorExtensionsTests {
 
-    @Test func initWithHexadecimalValue() throws {
+    // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
+#if !os(iOS)
+    private static let doesRunOniOS = false
+#else
+    private static let doesRunOniOS = true
+#endif
+
+    @Test(.enabled(if: Self.doesRunOniOS))
+    func initWithHexadecimalValue() throws {
 
         // White
         let pureWhite = Color(hexadecimalCode: "#FFFFFF")!

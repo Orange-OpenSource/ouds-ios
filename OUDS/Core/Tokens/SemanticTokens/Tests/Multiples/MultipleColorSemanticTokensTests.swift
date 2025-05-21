@@ -22,6 +22,13 @@ import Testing
 /// Tests also utilies like, for exmaple, contrat ratio computations.
 struct MultipleColorSemanticTokensTests {
 
+    // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
+#if !os(iOS)
+    private static let doesRunOniOS = false
+#else
+    private static let doesRunOniOS = true
+#endif
+
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {
         let unique: ColorRawToken = ColorRawTokens.colorFunctionalMalachite300
@@ -61,7 +68,7 @@ struct MultipleColorSemanticTokensTests {
 
     // MARK: - Extension with OUDSWCAG21Ratio
 
-    @Test("OUDSWCAG21Ratio.debugContrastRatio(::::) utlity must return suitable values")
+    @Test("OUDSWCAG21Ratio.debugContrastRatio(::::) utlity must return suitable values", .enabled(if: Self.doesRunOniOS))
     func debugContrastRatioWithTokens() {
 
         OUDSWCAG21Ratio.oudsDebugWCAG21Colors = true
