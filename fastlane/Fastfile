@@ -24,6 +24,7 @@ platform :ios do
     desc "RUN PERIPHERY FOR DEAD CODE ANALYSIS"
     lane :check_dead_code do
         puts "👉 Check dead code with Periphery"
+
         # Command must run at root where Package.swift is
         sh "cd .. && periphery scan --relative-results --format xcode"
     end
@@ -34,7 +35,19 @@ platform :ios do
     desc "RUN SWIFT FORMAT TO FORMAT SOURCES"
     lane :format do
         puts "👉 Run Swift Format to format sources"
+
         sh "cd .. && swiftformat ."
+    end
+
+    # ------------------------------------------------------------
+    # RUN SWIFT LINT TO CHECK SMELLS
+    # ------------------------------------------------------------
+    desc "RUN SWIFT LINT TO CHECK SMELLS"
+    lane :lint do
+        puts "👉 Run Swift Lint for smells"
+
+        # If there are violations, error 2 will be returned by swiftlint, making Fastlane fail (expected)
+        sh "cd .. && swiftlint --strict --config .swiftlint.yml ."
     end
 
     # ------------------------------------------------------------

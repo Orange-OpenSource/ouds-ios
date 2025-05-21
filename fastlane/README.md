@@ -31,6 +31,14 @@ RUN PERIPHERY FOR DEAD CODE ANALYSIS
 
 RUN SWIFT FORMAT TO FORMAT SOURCES
 
+### ios lint
+
+```sh
+[bundle exec] fastlane ios lint
+```
+
+RUN SWIFT LINT TO CHECK SMELLS
+
 ### ios build
 
 ```sh
