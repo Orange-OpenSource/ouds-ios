@@ -6,6 +6,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 - [Release](#release)
   * [Publish release to GitHub](#publish-release-to-github)
 - [Prepare Next Release](#prepare-next-release)
+- [Update wiki](#update-wiki)
 - [About documentation](#about-documentation)
 
 ## Prepare release
@@ -149,7 +150,7 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 
 A bit lost? Quite simple: [look this release and do the same thing](https://github.com/Orange-OpenSource/ouds-ios/releases/tag/0.13.0).
 
-## Prepare Next Release
+## Prepare next release
 
 - Create a branch named `prepare-new-release` to prepare the new release for OUDS iOS version U.V.W.
 
@@ -167,6 +168,16 @@ A bit lost? Quite simple: [look this release and do the same thing](https://gith
     - Push them to the repository
     - Create a new pull request named `Update release U.V.W` on GitHub to merge your branch into `develop` 
     - Review and merge this pull request on GitHub **using merge + squash strategy**<br /><br />
+
+## Update wiki
+
+Some pages of [the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) may need to be updated:
+- [Number of tokens and objects in FAQ](https://github.com/Orange-OpenSource/ouds-ios/wiki/0-%E2%80%90-FAQ-(Frequently-Asked-Questions)#how-many-tokens-and-components-ouds-ios-provides)
+- [Availability of API](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API)
+- [Page of themes](https://github.com/Orange-OpenSource/ouds-ios/wiki/31-%E2%80%90-About-the-themes#available-themes)
+- [Page of components](https://github.com/Orange-OpenSource/ouds-ios/wiki/33-%E2%80%90-About-the-components)
+- [Page of modules](https://github.com/Orange-OpenSource/ouds-ios/wiki/32-%E2%80%90-About-the-modules)
+- [Details about hacks for Figma](https://github.com/Orange-OpenSource/ouds-ios/wiki/23-%E2%80%90-Figma-troubleshooting)
 
 ## About documentation
 
