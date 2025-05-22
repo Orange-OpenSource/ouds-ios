@@ -13,7 +13,6 @@
 
 import Foundation
 import OUDS
-import OUDSTokensSemantic
 
 /// A mock theme for tests. It helps to make tests on themes, mainly for the architecture and the overriding of tokens.
 ///
