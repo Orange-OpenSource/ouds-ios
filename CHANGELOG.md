@@ -8,19 +8,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- [Library] API and tools to check contrast ratio of colors ([#656](https://github.com/Orange-OpenSource/ouds-ios/issues/656))
+- API and tools to check contrast ratio of colors (Orange-OpenSource/ouds-ios#656)
 
 ### Changed
 
-- [DesignToolbox] Udpate wordings to avoid traduction for components and tokens names ([#654](https://github.com/Orange-OpenSource/ouds-ios/issues/654))
-- [DesignToolbox] Use the new Switch component in all screens of the application ([#431](https://github.com/Orange-OpenSource/ouds-ios/issues/431))
-- [Library] Debug warnings for link and button components for WCAG 2.1 3:1 and 4.5:1 ratios on colored surface ([#656](https://github.com/Orange-OpenSource/ouds-ios/issues/656))
+- Debug warnings for link and button components for WCAG 2.1 3:1 and 4.5:1 ratios on colored surface (Orange-OpenSource/ouds-ios#656)
 
 ### Fixed
 
-- [Library] Bad wording key for accessibility label of switch item ([#642](https://github.com/Orange-OpenSource/ouds-ios/issues/642))
-- [Library] Missing accessibility hint for switch ([#642](https://github.com/Orange-OpenSource/ouds-ios/issues/642))
-- [Library] Missing token `colorBorderMuted` ([#643](https://github.com/Orange-OpenSource/ouds-ios/issues/643))
+- Bad wording key for accessibility label of switch item (Orange-OpenSource/ouds-ios#642)
+- Missing accessibility hint for switch (Orange-OpenSource/ouds-ios#642)
+- Missing token `colorBorderMuted` (Orange-OpenSource/ouds-ios#643)
 
 ## [0.14.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.13.0...0.14.0) - 2024-04-29
 
