@@ -38,15 +38,15 @@ struct ButtonBackgroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch state {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .loading:
-            return loadingColor
+            loadingColor
         case .disabled:
-            return disabledColor
+            disabledColor
         }
     }
 

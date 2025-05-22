@@ -67,9 +67,9 @@ struct ControlItemBordersModifier: ViewModifier {
 
     private var enabledColor: MultipleColorSemanticTokens? {
         if layoutData.isError {
-            return isOn ? theme.colors.colorActionNegativeEnabled : nil
+            isOn ? theme.colors.colorActionNegativeEnabled : nil
         } else {
-            return isOn ? theme.colors.colorActionSelected : nil
+            isOn ? theme.colors.colorActionSelected : nil
         }
     }
 

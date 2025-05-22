@@ -67,15 +67,15 @@ struct ButtonBorderModifier: ViewModifier {
     private var defaultWidth: BorderWidthSemanticToken {
         switch state {
         case .enabled:
-            return theme.button.buttonBorderWidthDefault
+            theme.button.buttonBorderWidthDefault
         case .hover:
-            return theme.button.buttonBorderWidthDefaultInteraction
+            theme.button.buttonBorderWidthDefaultInteraction
         case .pressed:
-            return theme.button.buttonBorderWidthDefaultInteraction
+            theme.button.buttonBorderWidthDefaultInteraction
         case .loading:
-            return theme.button.buttonBorderWidthDefaultInteraction
+            theme.button.buttonBorderWidthDefaultInteraction
         case .disabled:
-            return theme.button.buttonBorderWidthDefault
+            theme.button.buttonBorderWidthDefault
         }
     }
 
@@ -99,15 +99,15 @@ struct ButtonBorderModifier: ViewModifier {
     private var minimalWidth: BorderWidthSemanticToken {
         switch state {
         case .enabled:
-            return theme.button.buttonBorderWidthMinimal
+            theme.button.buttonBorderWidthMinimal
         case .hover:
-            return theme.button.buttonBorderWidthMinimalInteraction
+            theme.button.buttonBorderWidthMinimalInteraction
         case .pressed:
-            return theme.button.buttonBorderWidthMinimalInteraction
+            theme.button.buttonBorderWidthMinimalInteraction
         case .loading:
-            return theme.button.buttonBorderWidthMinimalInteraction
+            theme.button.buttonBorderWidthMinimalInteraction
         case .disabled:
-            return theme.button.buttonBorderWidthMinimalInteraction
+            theme.button.buttonBorderWidthMinimalInteraction
         }
     }
 

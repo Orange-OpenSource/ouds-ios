@@ -84,11 +84,11 @@ struct ControlItemLabel: View {
         if layoutData.isError {
             switch interactionState {
             case .enabled:
-                return theme.colors.colorActionNegativeEnabled
+                theme.colors.colorActionNegativeEnabled
             case .hover:
-                return theme.colors.colorActionNegativeHover
+                theme.colors.colorActionNegativeHover
             case .pressed:
-                return theme.colors.colorActionNegativePressed
+                theme.colors.colorActionNegativePressed
             case .readOnly, .disabled:
                 OL.fatal("An component (checkbox, switch, radio) with a disabled state / read only mode and an error situation has been detected, which is not allowed by design."
                     + " Only non-error situation are allowed to have a disabled state or a read only mode.")
@@ -96,9 +96,9 @@ struct ControlItemLabel: View {
         } else {
             switch interactionState {
             case .enabled, .hover, .pressed, .readOnly:
-                return theme.colors.colorContentDefault
+                theme.colors.colorContentDefault
             case .disabled:
-                return theme.colors.colorContentDisabled
+                theme.colors.colorContentDisabled
             }
         }
     }

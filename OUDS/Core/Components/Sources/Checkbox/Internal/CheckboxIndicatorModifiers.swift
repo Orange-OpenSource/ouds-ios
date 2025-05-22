@@ -64,25 +64,25 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeEnabled
         } else {
             switch indicatorState {
             case .selected, .indeterminate:
-                return theme.colors.colorActionSelected
+                theme.colors.colorActionSelected
             case .unselected:
-                return theme.colors.colorActionEnabled
+                theme.colors.colorActionEnabled
             }
         }
     }
@@ -128,13 +128,13 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     private var appliedColor: Color {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
@@ -186,42 +186,42 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeEnabled
         } else {
             switch indicatorState {
             case .selected, .indeterminate:
-                return theme.colors.colorActionSelected
+                theme.colors.colorActionSelected
             case .unselected:
-                return theme.colors.colorActionEnabled
+                theme.colors.colorActionEnabled
             }
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeHover
+            theme.colors.colorActionNegativeHover
         } else {
-            return theme.colors.colorActionHover
+            theme.colors.colorActionHover
         }
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativePressed
+            theme.colors.colorActionNegativePressed
         } else {
-            return theme.colors.colorActionPressed
+            theme.colors.colorActionPressed
         }
     }
 
@@ -238,49 +238,49 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     private var appliedBorderWidth: CGFloat {
         switch interactionState {
         case .enabled:
-            return enabledWidth
+            enabledWidth
         case .hover:
-            return hoverWidth
+            hoverWidth
         case .pressed:
-            return pressedWidth
+            pressedWidth
         case .disabled, .readOnly:
-            return disabledWidth
+            disabledWidth
         }
     }
 
     private var enabledWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelected
+            theme.checkbox.checkboxBorderWidthSelected
         case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselected
+            theme.checkbox.checkboxBorderWidthUnselected
         }
     }
 
     private var hoverWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelectedHover
+            theme.checkbox.checkboxBorderWidthSelectedHover
         case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselectedHover
+            theme.checkbox.checkboxBorderWidthUnselectedHover
         }
     }
 
     private var pressedWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelectedPressed
+            theme.checkbox.checkboxBorderWidthSelectedPressed
         case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselectedPressed
+            theme.checkbox.checkboxBorderWidthUnselectedPressed
         }
     }
 
     private var disabledWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelected
+            theme.checkbox.checkboxBorderWidthSelected
         case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselected
+            theme.checkbox.checkboxBorderWidthUnselected
         }
     }
 

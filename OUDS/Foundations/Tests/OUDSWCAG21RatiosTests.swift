@@ -26,11 +26,11 @@ import Testing
 struct OUDSWCAG21RatioTests {
 
     // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
-#if !os(iOS)
+    #if !os(iOS)
     private static let doesRunOniOS = false
-#else
+    #else
     private static let doesRunOniOS = true
-#endif
+    #endif
 
     // MARK: - Requirements meets (textual)
 

@@ -174,7 +174,7 @@ public struct OUDSRadioItem: View {
                 hasDivider: Bool = false,
                 action: (() -> Void)? = nil)
     {
-        if isError && isReadOnly {
+        if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
         }
 
@@ -229,12 +229,12 @@ public struct OUDSRadioItem: View {
     /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
     private var a11yHint: String {
         if layoutData.isReadOnly || !isEnabled {
-            return ""
+            ""
         } else {
             if _isOn.wrappedValue {
-                return "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
+                "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
             } else {
-                return "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
+                "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
             }
         }
     }

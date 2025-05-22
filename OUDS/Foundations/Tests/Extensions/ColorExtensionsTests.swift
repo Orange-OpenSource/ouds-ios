@@ -21,11 +21,11 @@ import Testing
 struct ColorExtensionsTests {
 
     // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
-#if !os(iOS)
+    #if !os(iOS)
     private static let doesRunOniOS = false
-#else
+    #else
     private static let doesRunOniOS = true
-#endif
+    #endif
 
     @Test(.enabled(if: Self.doesRunOniOS))
     func initWithHexadecimalValue() throws {

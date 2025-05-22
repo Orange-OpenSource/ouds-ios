@@ -50,11 +50,11 @@ struct SwitchIndicator: View {
     private var trackColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return isOn ? theme.switch.switchColorTrackSelected : theme.switch.switchColorTrackUnselected
+            isOn ? theme.switch.switchColorTrackSelected : theme.switch.switchColorTrackUnselected
         case .hover, .pressed:
-            return isOn ? theme.switch.switchColorTrackSelectedInteraction : theme.switch.switchColorTrackUnselectedInteraction
+            isOn ? theme.switch.switchColorTrackSelectedInteraction : theme.switch.switchColorTrackUnselectedInteraction
         case .disabled, .readOnly:
-            return theme.colors.colorActionDisabled
+            theme.colors.colorActionDisabled
         }
     }
 

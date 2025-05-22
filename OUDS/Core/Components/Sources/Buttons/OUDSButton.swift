@@ -183,11 +183,11 @@ public struct OUDSButton: View {
     /// else the button text is used.
     private var accessibilityLabel: String {
         if style == .loading {
-            return "core_button_loading_a11y".localized()
+            "core_button_loading_a11y".localized()
         } else {
             switch type {
             case let .text(text), let .textAndIcon(text, _), let .icon(_, text):
-                return text
+                text
             }
         }
     }

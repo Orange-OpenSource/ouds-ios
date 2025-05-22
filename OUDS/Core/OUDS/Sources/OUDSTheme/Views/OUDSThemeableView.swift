@@ -109,17 +109,17 @@ private struct UserInterfaceSizeClassModifier: ViewModifier {
 
     private var horizontalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
         if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
-            return .extraCompact
+            .extraCompact
         } else {
-            return horizontalSizeClass == .compact ? .compact : .regular
+            horizontalSizeClass == .compact ? .compact : .regular
         }
     }
 
     private var verticalUserInterfaceSizeClass: OUDSUserInterfaceSizeClass {
         if UIScreen.main.bounds.width < Self.extraCompactMaxWidth {
-            return .extraCompact
+            .extraCompact
         } else {
-            return verticalSizeClass == .compact ? .compact : .regular
+            verticalSizeClass == .compact ? .compact : .regular
         }
     }
 

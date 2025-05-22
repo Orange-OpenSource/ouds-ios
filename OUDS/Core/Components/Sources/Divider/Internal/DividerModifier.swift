@@ -46,18 +46,18 @@ struct DividerModifier: ViewModifier {
     var height: CGFloat? {
         switch orientation {
         case .horizontal:
-            return theme.divider.dividerBorderWidth
+            theme.divider.dividerBorderWidth
         case .vertical:
-            return nil
+            nil
         }
     }
 
     var width: CGFloat? {
         switch orientation {
         case .horizontal:
-            return nil
+            nil
         case .vertical:
-            return theme.divider.dividerBorderWidth
+            theme.divider.dividerBorderWidth
         }
     }
 }

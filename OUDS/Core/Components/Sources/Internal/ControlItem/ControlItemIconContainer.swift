@@ -32,7 +32,7 @@ struct ControlItemIconContainer: View {
     // MARK: Body
 
     var body: some View {
-        if let icon = icon {
+        if let icon {
             HStack(alignment: .center, spacing: 0) {
                 icon
                     .resizable()

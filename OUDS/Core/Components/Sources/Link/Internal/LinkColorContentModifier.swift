@@ -36,16 +36,15 @@ struct LinkColorContentModifier: ViewModifier {
     // MARK: - Helpers
 
     private func appliedColor() -> MultipleColorSemanticTokens {
-        let colorToApply: MultipleColorSemanticTokens
-        switch interactionState {
+        let colorToApply: MultipleColorSemanticTokens = switch interactionState {
         case .enabled:
-            colorToApply = enabledColor
+            enabledColor
         case .hover:
-            colorToApply = hoverColor
+            hoverColor
         case .pressed:
-            colorToApply = pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            colorToApply = disabledColor
+            disabledColor
         }
         OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor)
         return colorToApply
