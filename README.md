@@ -21,9 +21,9 @@
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml" title="SwiftPolyglot status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml/badge.svg" alt="SwiftPolyglot status"></a>
 &nbsp;
-<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/check-localizables.yml" title="Localization status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/check-localizables.yml/badge.svg" alt="Localization status"></a>
+<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/check-localizables.yml" title="Localization status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml/badge.svg" alt="Localization status"></a>
 &nbsp;
-<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks-action.yml" title="Gitleaks status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks-action.yml/badge.svg" alt="Gitleaks status"></a>
+<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks-action.yml" title="Gitleaks status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks.yml/badge.svg" alt="Gitleaks status"></a>
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
 </p>
