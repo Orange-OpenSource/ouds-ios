@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# Configuration
+# -------------
+
+# Define patterns for commit message prefixes
+# All these prefixes must of course match the rules define for commits parsers in some the cliff.toml files
+# for CHANGELOG / RELEASE NOTE generation
+# See https://www.conventionalcommits.org/en/v1.0.0/
+PATTERN_SECTION_ADDED="feat:|chore: add"
+PATTERN_SECTION_REMOVED="refactor: remove|refactor: delete|chore: remove|chore: delete"
+PATTERN_SECTION_DEPRECATED="refactor\(deprecated\):|chore\(deprecated\)"
+PATTERN_SECTION_FIXED="fix:"
+PATTERN_SECTION_SECURITY="fix\(security\):"
+PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:"
+PATTERN_SECTION_CHANGED="build:|chore:|ci:|docs:|style:|refactor:|perf:|test:"
+
+# All acceptable patterns
+COMMIT_PREFIX_PATTERN="^($PATTERN_SECTION_ADDED|$PATTERN_SECTION_REMOVED|$PATTERN_SECTION_DEPRECATED|$PATTERN_SECTION_FIXED|$PATTERN_SECTION_SECURITY|$PATTERN_SECTION_BREAKING|$PATTERN_SECTION_CHANGED)"
+
+# Main
+# ----
+
+echo "🔎 Checking conventional commit messages commit message"
+
+INPUT_FILE=$1
+COMMIT_MESSAGE=`head -n1 $INPUT_FILE`
+if ! [[ "$COMMIT_MESSAGE" =~ $COMMIT_PREFIX_PATTERN ]]; then
+    echo "Bad commit message, it must match one of the following patterns:"
+    echo -e "\tTo add things............: 'feat:' \t \t  \t 'chore: add'"
+    echo -e "\tTo remove things.........: 'refactor: remove' \t \t 'refactor: delete' \t 'chore: remove' \t 'chore: delete'"
+    echo -e "\tTo deprecate things......: 'refactor(deprecated)' \t 'chore(deprecated)'"
+    echo -e "\tTo fix things............: 'fix:"
+    echo -e "\tFor security fixes.......: 'fix(security)'"
+    echo -e "\tFor breaking changes.....: 'feat!:' \t 'chore!:' \t 'refactor!:' \t \t 'fix!:'"
+    echo -e "\tFor any other changes....: 'build:' \t 'chore:' \t 'ci:' \t \t \t 'docs:' \t \t 'style:' \t 'refactor:' \t 'perf:' \t 'test:'"
+    echo "Your commit message: '$COMMIT_MESSAGE'"
+    exit 1
+fi
+
+echo "✨ Checking done!"
+
+exit 0

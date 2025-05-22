@@ -12,9 +12,6 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
-# pre-commit hook to format Swift sources before submitting them to remote
-# Ensures source code is always formatted.
-
 # Configuration
 # -------------
 

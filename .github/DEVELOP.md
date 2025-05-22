@@ -159,6 +159,15 @@ You can add also ! after the keyword to say a breaking change occurs, and also a
 - `feat(API)!:` breaking change in the API because..
 - `feat:` add something in the API...
 
+A *Git commit-msg hook* is also defined in the project. It will run *Shell* codes to check if rules defined in the hook are respected before commit being pushed.
+The hook is degined in **.git-hook/commit-msg**.
+
+To apply it, run in your project (e.g. once cloned):
+
+```shell
+git config --local --add core.hooksPath .git-hooks
+```
+
 #### Chain of responsability
 
 We can add metafields picked from [this good guideline](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n525) in the commit messages.
@@ -299,7 +308,7 @@ bundle exec fastlane format
 
 A *Git pre-commit hook* is also defined in the project. It will run *SwifFormat* before the commit so as to be sure the sources will be well formatted before being pushed.
 The hook is degined in **.git-hook/pre-commit**.
-To apply use, run in your project (e.g. once cloned):
+To apply it, run in your project (e.g. once cloned):
 
 ```shell
 git config --local --add core.hooksPath .git-hooks
