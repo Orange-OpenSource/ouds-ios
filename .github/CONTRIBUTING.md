@@ -143,6 +143,8 @@ Adhering to the following process is the best way to get your work included in t
 
 Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on `develop` branch: if any prerequisites are not futfilled in the pull request ticket the merge won't be done. 
 
+8. If your evolutions can be tested inside a sandbox app (like [Design System Toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/)), add in the pull request details the branch and the associated pull request (with of course codebase pointing to the suitable package branch)
+
 ## Code Guidelines
 
 Format your code before committing to ensure your changes follow our coding standards.
