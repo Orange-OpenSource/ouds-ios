@@ -38,8 +38,9 @@ bundle install
 # Update your references
 brew update
 
-# For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 2.21.2)
-brew install peripheryapp/periphery/periphery
+# For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 3.1.0)
+# If you used Periphery V2 before, follow their migration guide: https://github.com/peripheryapp/periphery/wiki/3.0-Migration-Guide
+brew install periphery
 
 # For gitleaks (https://github.com/gitleaks/gitleaks) for secrets leaks hunt (at least 8.24.3)
 brew install gitleaks
