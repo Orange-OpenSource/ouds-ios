@@ -11,7 +11,7 @@
 # Software description: A SwiftUI components library with code examples for Orange Unified Design System
 #
 
---swiftversion 5
+--swiftversion 6
 
 --exclude Resources/CodeGen/**,Pods/**
 
