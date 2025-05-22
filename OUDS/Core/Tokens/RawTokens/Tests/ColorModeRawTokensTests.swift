@@ -15,7 +15,6 @@ import Foundation
 import OUDSTokensRaw
 import SwiftUI
 import Testing
-import TestsUtils
 
 /// The aim of this tests class is to look for regressions in **color mode raw tokens**.
 ///
