@@ -19,7 +19,7 @@
 <p align="center">
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/build-and-test.yml" title="Build and test status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/build-and-test.yml/badge.svg" alt="Build and test status"></a>
 &nbsp;
-<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks-action.yml" title="Gitleaks status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks.yml/badge.svg" alt="Gitleaks status"></a>
+<a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks.yml" title="Gitleaks status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/gitleaks.yml/badge.svg" alt="Gitleaks status"></a>
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml" title="SwiftPolyglot status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftpolyglot.yml/badge.svg" alt="SwiftPolyglot status"></a>
 &nbsp;
