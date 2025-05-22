@@ -182,7 +182,7 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
                                       hasDivider: hasDivider)
         {
             if case .selected = coordinator.selectionRootState {
-                selections.wrappedValue = checkboxes.map { $0.tag }
+                selections.wrappedValue = checkboxes.map(\.tag)
             } else {
                 selections.wrappedValue = []
             }
@@ -313,24 +313,24 @@ public struct OUDSCheckboxPicker<Tag>: View where Tag: Hashable {
     /// Forges the value to vocalize with *Voice Over* for the root element
     private var a11yValue: String {
         if case .verticalRooted = placement {
-            return ", " + ("core_checkboxPicker_description_a11y" <- selections.wrappedValue.count)
+            ", " + ("core_checkboxPicker_description_a11y" <- selections.wrappedValue.count)
         } else {
-            return ""
+            ""
         }
     }
 
     /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component (for the root element)
     private var a11yHint: String {
         if isReadOnly || !isEnabled {
-            return ""
+            ""
         } else {
             switch coordinator.selectionRootState {
             case .selected:
-                return "core_checkboxPicker_selected_hint_a11y"
+                "core_checkboxPicker_selected_hint_a11y"
             case .unselected:
-                return "core_checkboxPicker_unselected_hint_a11y"
+                "core_checkboxPicker_unselected_hint_a11y"
             case .indeterminate:
-                return "core_checkboxPicker_indeterminate_hint_a11y"
+                "core_checkboxPicker_indeterminate_hint_a11y"
             }
         }
     }

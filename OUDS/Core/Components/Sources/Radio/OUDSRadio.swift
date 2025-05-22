@@ -125,9 +125,9 @@ public struct OUDSRadio: View {
     /// The text to vocalize with *Voice Over* to explain to the user to which state the component will move when tapped
     private var a11yHint: String {
         if _isOn.wrappedValue {
-            return "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
+            "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
         } else {
-            return "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
+            "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
         }
     }
 }

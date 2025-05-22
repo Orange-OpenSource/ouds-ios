@@ -79,17 +79,17 @@ extension OrangeThemeColorModeSemanticTokensProvider: ColorModeMultipleSemanticT
         let darkColorScheme = ColorModeRawTokens.colorScheme(for: mode.dark)
 
         // Reverse the color scheme to apply
-        if lightColorScheme == .dark && darkColorScheme == .light {
+        if lightColorScheme == .dark, darkColorScheme == .light {
             return current == .light ? .dark : .light
         }
 
         // Force light
-        if lightColorScheme == .light && darkColorScheme == .light {
+        if lightColorScheme == .light, darkColorScheme == .light {
             return .light
         }
 
         // Force dark
-        if lightColorScheme == .dark && darkColorScheme == .dark {
+        if lightColorScheme == .dark, darkColorScheme == .dark {
             return .dark
         }
 

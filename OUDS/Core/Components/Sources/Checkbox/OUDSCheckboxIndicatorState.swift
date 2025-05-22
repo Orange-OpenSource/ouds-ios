@@ -40,11 +40,11 @@ public enum OUDSCheckboxIndicatorState {
     var a11yDescription: String {
         switch self {
         case .selected:
-            return "core_checkbox_checked_a11y".localized()
+            "core_checkbox_checked_a11y".localized()
         case .unselected:
-            return "core_checkbox_unchecked_a11y".localized()
+            "core_checkbox_unchecked_a11y".localized()
         case .indeterminate:
-            return "core_checkbox_indeterminate_a11y".localized()
+            "core_checkbox_indeterminate_a11y".localized()
         }
     }
 
@@ -52,11 +52,11 @@ public enum OUDSCheckboxIndicatorState {
     var a11yHint: String {
         switch self {
         case .selected:
-            return "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
+            "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
         case .unselected:
-            return "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
+            "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
         case .indeterminate:
-            return "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
+            "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
         }
     }
 }

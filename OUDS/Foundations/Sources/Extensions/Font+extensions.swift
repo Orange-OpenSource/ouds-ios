@@ -20,25 +20,25 @@ extension Font.Weight: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .ultraLight:
-            return "Ultra-Light"
+            "Ultra-Light"
         case .thin:
-            return "Thin"
+            "Thin"
         case .light:
-            return "Light"
+            "Light"
         case .regular:
-            return "Regular"
+            "Regular"
         case .medium:
-            return "Medium"
+            "Medium"
         case .semibold:
-            return "Semi-Bold"
+            "Semi-Bold"
         case .bold:
-            return "Bold"
+            "Bold"
         case .heavy:
-            return "Heavy"
+            "Heavy"
         case .black:
-            return "Black"
+            "Black"
         default:
-            return ""
+            ""
         }
     }
 }

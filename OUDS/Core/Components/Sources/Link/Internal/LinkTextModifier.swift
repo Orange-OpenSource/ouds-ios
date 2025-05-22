@@ -71,11 +71,11 @@ private struct LinkUnderlineModifier: ViewModifier {
     private var underlineActive: Bool {
         switch layout {
         case .indicator:
-            return interactionState == .hover || interactionState == .pressed
+            interactionState == .hover || interactionState == .pressed
         case .textOnly:
-            return true
+            true
         case .iconAndText:
-            return interactionState == .hover || interactionState == .pressed
+            interactionState == .hover || interactionState == .pressed
         }
     }
 }

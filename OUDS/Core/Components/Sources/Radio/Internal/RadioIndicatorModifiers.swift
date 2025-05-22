@@ -63,21 +63,21 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeEnabled
         } else {
-            return isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+            isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
         }
     }
 
@@ -119,13 +119,13 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
     private var appliedColor: Color {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
@@ -177,37 +177,37 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeEnabled
         } else {
-            return isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+            isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeHover
+            theme.colors.colorActionNegativeHover
         } else {
-            return theme.colors.colorActionHover
+            theme.colors.colorActionHover
         }
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativePressed
+            theme.colors.colorActionNegativePressed
         } else {
-            return theme.colors.colorActionPressed
+            theme.colors.colorActionPressed
         }
     }
 
@@ -224,13 +224,13 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     private var appliedBorderWidth: CGFloat {
         switch interactionState {
         case .enabled:
-            return enabledWidth
+            enabledWidth
         case .hover:
-            return hoverWidth
+            hoverWidth
         case .pressed:
-            return pressedWidth
+            pressedWidth
         case .disabled, .readOnly:
-            return disabledWidth
+            disabledWidth
         }
     }
 

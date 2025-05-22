@@ -23,11 +23,11 @@ import Testing
 struct MultipleColorSemanticTokensTests {
 
     // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
-#if !os(iOS)
+    #if !os(iOS)
     private static let doesRunOniOS = false
-#else
+    #else
     private static let doesRunOniOS = true
-#endif
+    #endif
 
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {

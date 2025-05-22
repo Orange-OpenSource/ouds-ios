@@ -158,7 +158,7 @@ public struct OUDSCheckboxItemIndeterminate: View {
                 hasDivider: Bool = false,
                 action: (() -> Void)? = nil)
     {
-        if isError && isReadOnly {
+        if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDS Checkbox in an error context and in read only mode")
         }
 
@@ -209,9 +209,9 @@ public struct OUDSCheckboxItemIndeterminate: View {
     /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
     private var a11yHint: String {
         if layoutData.isReadOnly || !isEnabled {
-            return ""
+            ""
         } else {
-            return selection.a11yHint
+            selection.a11yHint
         }
     }
 }

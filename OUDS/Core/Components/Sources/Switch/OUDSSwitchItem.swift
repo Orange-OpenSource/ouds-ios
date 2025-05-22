@@ -143,7 +143,7 @@ public struct OUDSSwitchItem: View {
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false)
     {
-        if isError && isReadOnly {
+        if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
         }
 
@@ -194,9 +194,9 @@ public struct OUDSSwitchItem: View {
     /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
     private var a11yHint: String {
         if layoutData.isReadOnly || !isEnabled {
-            return ""
+            ""
         } else {
-            return "core_switch_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
+            "core_switch_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
         }
     }
 }

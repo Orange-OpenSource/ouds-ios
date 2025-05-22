@@ -39,11 +39,11 @@ extension OUDSTheme {
     public final func gridMinWidth(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch sizeClass {
         case .extraCompact:
-            return grids.gridExtraCompactMinWidth
+            grids.gridExtraCompactMinWidth
         case .compact:
-            return grids.gridCompactMinWidth
+            grids.gridCompactMinWidth
         case .regular:
-            return grids.gridRegularMinWidth
+            grids.gridRegularMinWidth
         @unknown default:
             OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
@@ -69,11 +69,11 @@ extension OUDSTheme {
     public final func gridMaxWidth(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch sizeClass {
         case .extraCompact:
-            return grids.gridExtraCompactMaxWidth
+            grids.gridExtraCompactMaxWidth
         case .compact:
-            return grids.gridCompactMaxWidth
+            grids.gridCompactMaxWidth
         case .regular:
-            return grids.gridRegularMaxWidth
+            grids.gridRegularMaxWidth
         @unknown default:
             OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
@@ -99,11 +99,11 @@ extension OUDSTheme {
     public final func gridMargin(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch sizeClass {
         case .extraCompact:
-            return grids.gridExtraCompactMargin
+            grids.gridExtraCompactMargin
         case .compact:
-            return grids.gridCompactMargin
+            grids.gridCompactMargin
         case .regular:
-            return grids.gridRegularMargin
+            grids.gridRegularMargin
         @unknown default:
             OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
@@ -129,11 +129,11 @@ extension OUDSTheme {
     public final func gridColumnGap(for sizeClass: OUDSUserInterfaceSizeClass) -> GridRawToken {
         switch sizeClass {
         case .extraCompact:
-            return grids.gridExtraCompactColumnGap
+            grids.gridExtraCompactColumnGap
         case .compact:
-            return grids.gridCompactColumnGap
+            grids.gridCompactColumnGap
         case .regular:
-            return grids.gridRegularColumnGap
+            grids.gridRegularColumnGap
         @unknown default:
             OL.fatal("🤖 Raw token unavailable for \(sizeClass)!")
         }
