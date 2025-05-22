@@ -44,20 +44,22 @@
 
 ## Content
 
-This repository contains the OUDS iOS library, as a Swift Package, that provides Orange iOS components for its unified design system.
+> [!NOTE]
+> This repository contains the OUDS iOS library, as a Swift Package, that provides Orange iOS components for its unified design system.
+>
+> You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/documentation), 
+> and also the [whole design system](https://unified-design-system.orange.com/).
+>
+> Details about the project are also [available in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki).
+>
+> You can find the [available API online on the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
 
-You can find the [detailed technical documentation online](https://ios.unified-design-system.orange.com/documentation), and also the [whole design system](https://unified-design-system.orange.com/).
+> [!TIP]
+> The design system toolbox app, i.e. the showcase app, is [on Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
-Details about the project are also [available in the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki).
-
-You can find the [available API online on the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki/01-%E2%80%90-Available-API).
-
-The design system toolbox app, i.e. a showcase app, is [also on GitHub](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
-
-```
-⚠️ This release should not be used as is. 
-⚠️ This is only an incremental version of OUDS iOS library.
-```
+> [!WARNING]
+> This release should not be used as is. 
+> This is only an incremental version of OUDS iOS library.
 
 ## OUDS
 
