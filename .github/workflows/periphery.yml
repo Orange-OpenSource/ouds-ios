@@ -52,7 +52,7 @@ jobs:
 
       - name: Install Periphery
         run: |
-          brew install peripheryapp/periphery/periphery
+          brew install periphery
 
       - name: Look for dead code
         run: |
