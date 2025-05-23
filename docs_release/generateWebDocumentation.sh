@@ -82,6 +82,7 @@ clean_repo() {
     _ "🧹 Cleaning Git repository"
     git reset --hard
     git clean -fd
+    git prune
 }
 
 show_help() {
@@ -252,6 +253,8 @@ if [[ $use_git -eq 1 ]]; then
 
     # Ensure we have only updated files on destination branch.
     # Supposing all assets are in the branch in root level (/)
+    # Do not remove .ico and .sg files ; keep the ones already existing in the branch
+    # Do not remove theme-settings.json
     rm -rf "css"
     rm -rf "data"
     rm -rf "documentation"
@@ -259,9 +262,6 @@ if [[ $use_git -eq 1 ]]; then
     rm -rf "index"
     rm -rf "js"
     rm -rf "*.jpg"
-    rm -rf "*.ico"
-    rm -rf "*.svg"
-    rm -rf "*.json"
     rm -rf "*.html"
     rm -rf "CNAME"
     
@@ -276,8 +276,6 @@ if [[ $use_git -eq 1 ]]; then
     git add "$DOCS_DIRECTORY/index"
     git add "$DOCS_DIRECTORY/js"
     git add "$DOCS_DIRECTORY/*.jpg"
-    git add "$DOCS_DIRECTORY/*.ico"
-    git add "$DOCS_DIRECTORY/*.svg"
     git add "$DOCS_DIRECTORY/*.json"
     git add "$DOCS_DIRECTORY/*.html"
     git add "$DOCS_DIRECTORY/CNAME"
