@@ -60,8 +60,11 @@
 > The design system toolbox app, i.e. the showcase app, is [on Orange-OpenSource/ouds-ios-design-system-toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox).
 
 > [!WARNING]
-> This release should not be used as is. 
+> This release should not be used as is.
 > This is only an incremental version of OUDS iOS library.
+
+> [!IMPORTANT]
+> Tokens version: 0.11.0
 
 ## OUDS
 
