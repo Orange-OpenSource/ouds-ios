@@ -217,7 +217,15 @@ if [[ $use_git -eq 1 ]]; then
     _ "👍 Updated!"
 fi
 
-# Step 4 - Checkout to service pages dedicated branch (if relevant)
+# Step 4 - Add hard-coded redirect URL
+# ------------------------------------
+
+# Landing page of generated documentation is broken, real content is in /documentation
+# Override this page and force by code redirection
+# See Orange-OpenSource/ouds-ios#636
+echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html" 
+
+# Step 5 - Checkout to service pages dedicated branch (if relevant)
 # ------------------------------------------------------------------
 
 # When the files have been generated, stash them, change branch, unstash, add, commit, push then clean
@@ -285,7 +293,7 @@ else
     _ "👍 Ok, just keep documentation here"
 fi
 
-# Step 5 - Compress ZIP (if relevant)
+# Step 6 - Compress ZIP (if relevant)
 # -----------------------------------
 
 # ZIP action must be done before reseting the Git workspace (otherwise everything will be wiped out).
@@ -296,7 +304,7 @@ if [[ $no_zip -eq 0 ]]; then
     _ "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION ($size_in_byte bytes)"
 fi
 
-# Step 5b - Resume work on Git branch (if relevant)
+# Step 6b - Resume work on Git branch (if relevant)
 # -------------------------------------------------
 
 if [[ $use_git -eq 1 ]]; then
