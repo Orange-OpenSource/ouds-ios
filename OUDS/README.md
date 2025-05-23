@@ -18,7 +18,7 @@
 This is the _Swift package_ for the iOS library of *Orange Unified Design System*.
 Its structure is explained quickly in this file.
 
-If you expect to get documentation, feel free to [use the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) and the [online documentation](https://ios.unified-design-system.orange.com/documentation).
+If you expect to get documentation, feel free to [use the wiki](https://github.com/Orange-OpenSource/ouds-ios/wiki) and the [online documentation](https://ios.unified-design-system.orange.com).
 
 ## Core
 
