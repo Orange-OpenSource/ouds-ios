@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Set border as inner stroke (Orange-OpenSource/ouds-ios#680)
 - Bad wording key for accessibility label of switch item (Orange-OpenSource/ouds-ios#642)
 - Missing accessibility hint for switch (Orange-OpenSource/ouds-ios#642)
 - Missing token `colorBorderMuted` (Orange-OpenSource/ouds-ios#643)
