@@ -11,6 +11,10 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 ## Prepare release
 
+> [!TIP]
+> We use here CLI for Git operations, but of course you are free to use GUI tools
+
+
 - Create a branch named `prepare-release` to prepare the new release for OUDS iOS version X.Y.Z.
 
     ```shell
@@ -26,7 +30,7 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
     ```
      to
 
-     ```
+    ```
      \## [X.Y.Z]\(https://github.com/Orange-OpenSource/ouds-ios/compare/P.Q.R...X.Y.Z) - YYYY-MM-dd
     ```
     where P.Q.R is the previous version tag, X.Y.Z the version we are releasing, and YYYY-MM-dd the date.
@@ -43,19 +47,24 @@ This file lists all the steps to follow when releasing a new version of OUDS iOS
 
 - Create a new pull request named `Release X.Y.Z` on GitHub to merge `develop` into `main`. Add in the description the CHANGELOG for this new version. Thus GitHub will automatically make the links and display the PR in the mentioned issues.
 
-- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits**, i.e. "create a merge commit". In fact rebase should be used to align feature branches with default one, and squash should be used when needed for work branches. In the _merge commit_ message add the changelog, the authors and the details. Thus GitHub makes links automatically between commits, PR and GitHub issues. To do that, copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed. **Remember, do not squash nor rebase but only merge commit**.
+- Review and merge this pull request on GitHub. The merge strategy must be a **simple merge without squash of commits**, i.e. "create a merge commit". 
 
-Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/98640b4b63037c2780128f41ceba5b896763b94f)):
+> [!NOTE]
+> In fact rebase should be used to align feature branches with default one, and squash should be used when needed for work branches. 
+
+In the _merge commit_ message add the changelog, the authors and the details. Thus GitHub makes links automatically between commits, PR and GitHub issues. To do that, copy/paste the content of the changelog (after the version line) and uncomment (i.e. remove # symbols) lines. Thus if in the commit message body any issue is referenced, it will appear in the associated issue. Do not forget also to add people as co-authors if needed. **Remember, do not squash nor rebase but only merge commit**.
+
+Below is an example of what should be a merge commit in `main` branch for a release (ignore of course // lines, see [this commit for example](https://github.com/Orange-OpenSource/ouds-ios/commit/4b68bdb021c426d5e001b6c4fc3e200e2a19db28)):
 
 ```text
-Version 0.2.0 (#113) // <--- Commit title, #113 is PR nummber
+Version 0.15.0 (#113) // [DO NOT ADD THIS COMMENT] <--- Commit title, #113 is PR nummber, GitHub suggests it
 
-// Below is commit body, keep an empty line
+// [DO NOT ADD THIS LINE] Below is commit body, keep an empty line
 Release of version 0.2.0
 See below the full CHANGELOG details.
 
-// Keep also an empty line above
-// And copy/paste changelog without #
+// [DO NOT ADD THIS LINE] Keep also an empty line above
+// [DO NOT ADD THIS LINE] And copy/paste changelog without #
 Added:
 - [Tests] Add UI regression tests using snapshot comparisons with *swift-snapshot-testing* tool ([#78](#78))
 - [DesignToolbox] Display fake components for elevation rendering tests
@@ -70,12 +79,13 @@ Removed:
 Fixed:
 - [Library] Fix some typos in documentation ([#89](#89))
 
-// Add in co authors anyone working on the commits being merged, add the ones who contributed (copy-paste if too lazy, use the ones you need)
+// [DO NOT ADD THIS LINE] Add in co authors anyone working on the commits being merged, add the ones who contributed (copy-paste if too lazy, use the ones you need)
 Co-authored-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Co-authored-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Co-authored-by: Ludovic Pinel <ludovic.pinel@orange.com>
 Co-authored-by: Tayeb Sedraia <tayeb.sedraia@orange.com>
 Co-authored-by: boosted-bot <boosted-bot@users.noreply.github.com>
+Co-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>
 ```
 
 You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds-ios/commit/5ce9b68aa03304fef91fc45ef43a379b4f22f98b) for example.
@@ -120,6 +130,9 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
     # set "upload" to true if you want to upload app to internal portal, false otherwise.
     ```
 
+> [!TIP]
+> Of course this build operation will be successful if and ony if you have the suitable certificates and provisoning profile son your computer
+
 ### Publish release to GitHub
 
 - Go to [GitHub Releases](https://github.com/Orange-OpenSource/ouds-ios/releases).
@@ -136,6 +149,11 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
     git-cliff --config .github/cliff.toml --output RELEASE_NOTE.md X..Y
     ```
 
+> [!TIP]
+> X can be a commit hash or the last tag for example.
+> Y should be HEAD.
+> Run this comman on main branch.    
+
 - Optionally check `Set as a pre-release` and click `Publish release`. Create a discussion from this release four announcements
 
 - Define the ZIP archive of the documentation by compressing all doccarchives files into one ZIP, and add it in artefact
@@ -149,6 +167,9 @@ You can also [look inside this commit](https://github.com/Orange-OpenSource/ouds
 - Close the previous release discussion, lock and unpin it. Pin the new discussion for the release, and add in comments the sprint number and the app details in production mode. [This is an exemple of a release discussion](https://github.com/Orange-OpenSource/ouds-ios/discussions/606) and [a detailed comment](https://github.com/Orange-OpenSource/ouds-ios/discussions/358#discussioncomment-11608399).
 
 A bit lost? Quite simple: [look this release and do the same thing](https://github.com/Orange-OpenSource/ouds-ios/releases/tag/0.13.0).
+
+> [!Important]
+> You must make a release of the Design System Toolbox app after this release so as to make the app se the new stable version of this Swift package
 
 ## Prepare next release
 
