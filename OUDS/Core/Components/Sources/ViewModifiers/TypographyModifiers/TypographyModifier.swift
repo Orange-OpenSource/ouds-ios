@@ -54,54 +54,65 @@ struct TypographyModifier: ViewModifier {
     }
 
     /// Returns the `FontCompositeRawToken` to apply depending to the layour mode
-    private var adaptiveFont: FontCompositeRawToken {
+    private var adaptiveFontToken: FontCompositeRawToken {
         isCompactMode ? font.compact : font.regular
     }
 
     #if canImport(UIKit)
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
-    private var adaptiveTypography: Font {
+    private var adaptiveFont: Font {
         if let fontFamilyName = fontFamily {
-            let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveFont.weight.fontWeight)")
-            let customFont: Font = .custom(composedFontFamily, size: adaptiveFont.size)
+            let composedFontFamily = fontFamilyName.compose(withFont: "\(adaptiveFontToken.weight.fontWeight)")
+            let customFont: Font = .custom(composedFontFamily, size: adaptiveFontToken.size)
             return customFont
         } else {
             // Apply the system font with weight, responsive to Dynamic Type
-            return .system(size: scaledFontSize, weight: adaptiveFont.weight.fontWeight, design: .default)
+            return .system(size: scaledFontSize, weight: adaptiveFontToken.weight.fontWeight, design: .default)
         }
     }
 
-    /// Computes the line spacing value to apply on the typography.
-    /// Difference between the line height tokenand  line height of computed font to apply depending the the scaled font size.
-    /// The line spacing token cannot be used as is.
-    private var adaptiveLineHeight: CGFloat {
-        adaptiveFont.lineHeight - UIFont.systemFont(ofSize: scaledFontSize).lineHeight
+    /// Adjusts the lignt height dynamically based on the user's accessibility settings
+    /// using UIFontMetrics to scale the line height, ensuring Dynamic Type support
+    private var scaledLineHeight: CGFloat {
+        UIFontMetrics.default.scaledValue(for: adaptiveFontToken.lineHeight)
     }
 
     /// Adjusts the font size dynamically based on the user's accessibility settings
     /// using UIFontMetrics to scale the font size, ensuring Dynamic Type support
     private var scaledFontSize: CGFloat {
-        UIFontMetrics.default.scaledValue(for: adaptiveFont.size)
+        UIFontMetrics.default.scaledValue(for: adaptiveFontToken.size)
+    }
+
+    /// Computes the line spacing value to apply on the typography.
+    /// Difference between the token line height and the font size (both scaled according to Dynamic Type)
+    private var lineSpacing: CGFloat {
+        scaledLineHeight - scaledFontSize
+    }
+
+    /// Computes the extra padding should be added at top and bottom to conform the line height.
+    private var padding: CGFloat {
+        lineSpacing / 2
     }
 
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
     /// depending to the current `MultipleFontCompositeRawTokens`.
     func body(content: Content) -> some View {
-        // `tracking()` only available for iOS 16+
-        // `minimumScaleFactor()` ensures text remains readable by allowing scaling down
+        // `kerning()` only available for iOS 16+
+        // `lineSpacing` to conform to the line height token when text is on sevral lines
+        // `padding` to conform to the line height height token when text is in one line
         // `.onChange(of: sizeCategory) { _ in }` triggers view update when Dynamic Type size changes
         if #available(iOS 16.0, *) {
             content
-                .font(adaptiveTypography)
-                .lineSpacing(adaptiveLineHeight)
-                .tracking(adaptiveFont.letterSpacing)
-                .minimumScaleFactor(0.5)
+                .font(adaptiveFont)
+                .kerning(adaptiveFontToken.letterSpacing * UIScreen.main.scale)
+                .lineSpacing(lineSpacing)
+                .padding(.vertical, padding)
                 .onChange(of: sizeCategory) { _ in }
         } else {
             content
-                .font(adaptiveTypography)
-                .lineSpacing(adaptiveLineHeight)
-                .minimumScaleFactor(0.5)
+                .font(adaptiveFont)
+                .lineSpacing(lineSpacing)
+                .padding(.vertical, padding)
                 .onChange(of: sizeCategory) { _ in }
         }
     }
@@ -109,12 +120,12 @@ struct TypographyModifier: ViewModifier {
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
     /// depending to the current `MultipleFontCompositeRawTokens`.
     func body(content: Content) -> some View {
-        // `tracking()` only available for iOS 16+
+        // `kerning()` only available for iOS 16+
         // `minimumScaleFactor()` ensures text remains readable by allowing scaling down
         // `.onChange(of: sizeCategory) { _ in }` triggers view update when Dynamic Type size changes
         if #available(iOS 16.0, *) {
             content
-                .tracking(adaptiveFont.letterSpacing)
+                .kerning(adaptiveFontToken.letterSpacing * UIScreen.main.scale)
                 .minimumScaleFactor(0.5)
                 .onChange(of: sizeCategory) { _ in }
         } else {
@@ -125,5 +136,4 @@ struct TypographyModifier: ViewModifier {
     }
     #endif
 }
-
 // swiftlint:enable line_length
