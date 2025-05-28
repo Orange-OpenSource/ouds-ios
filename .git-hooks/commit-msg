@@ -25,7 +25,7 @@ PATTERN_SECTION_DEPRECATED="refactor\(deprecated\):|chore\(deprecated\)"
 PATTERN_SECTION_FIXED="fix:"
 PATTERN_SECTION_SECURITY="fix\(security\):"
 PATTERN_SECTION_BREAKING="feat!:|chore!:|refactor!:|fix!:"
-PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|ci:|docs:|style:|refactor:|perf:|test:"
+PATTERN_SECTION_CHANGED="build:|chore:|chore\(deps\):|chore\(🤖\):|ci:|docs:|style:|refactor:|perf:|test:"
 
 # All acceptable patterns
 COMMIT_PREFIX_PATTERN="^($PATTERN_SECTION_ADDED|$PATTERN_SECTION_REMOVED|$PATTERN_SECTION_DEPRECATED|$PATTERN_SECTION_FIXED|$PATTERN_SECTION_SECURITY|$PATTERN_SECTION_BREAKING|$PATTERN_SECTION_CHANGED)"
@@ -45,7 +45,7 @@ if ! [[ "$COMMIT_MESSAGE" =~ $COMMIT_PREFIX_PATTERN ]]; then
     echo -e "\tTo fix things............: 'fix:"
     echo -e "\tFor security fixes.......: 'fix(security)'"
     echo -e "\tFor breaking changes.....: 'feat!:' \t 'chore!:' \t 'refactor!:' \t \t 'fix!:'"
-    echo -e "\tFor any other changes....: 'build:' \t 'chore:' \t 'chore(deps)' \t 'ci:' \t \t \t 'docs:' \t \t 'style:' \t 'refactor:' \t 'perf:' \t 'test:'"
+    echo -e "\tFor any other changes....: 'build:' \t 'chore:' \t 'chore(deps)' \t 'chore(🤖)' \t 'ci:' \t \t \t 'docs:' \t \t 'style:' \t 'refactor:' \t 'perf:' \t 'test:'"
     echo "Your commit message: '$COMMIT_MESSAGE'"
     exit 1
 fi
