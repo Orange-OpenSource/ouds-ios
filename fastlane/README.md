@@ -39,6 +39,14 @@ RUN SWIFT FORMAT TO FORMAT SOURCES
 
 RUN SWIFT LINT TO CHECK SMELLS
 
+### ios check_leaks
+
+```sh
+[bundle exec] fastlane ios check_leaks
+```
+
+RUN GITLEAKS FOR SECET LEAKS SCAN
+
 ### ios build
 
 ```sh

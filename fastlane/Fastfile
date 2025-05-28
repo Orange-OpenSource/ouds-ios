@@ -52,6 +52,17 @@ platform :ios do
     end
 
     # ------------------------------------------------------------
+    # RUN GITLEAKS FOR SECET LEAKS SCAN
+    # ------------------------------------------------------------
+    desc "RUN GITLEAKS FOR SECET LEAKS SCAN"
+    lane :check_leaks do
+        puts "👉 Run Gitleaks for leaks scan"
+
+        # If there are violations, non 0 error be returned by swiftlint, making Fastlane fail (expected)
+        sh "cd .. && gitleaks detect -v -l debug --source ."
+    end
+
+    # ------------------------------------------------------------
     # BUILD
     # ------------------------------------------------------------
     desc "BUILD THE SWIFT PACKAGE"
