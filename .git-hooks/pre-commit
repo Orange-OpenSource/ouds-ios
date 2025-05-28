@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# Configuration
+# -------------
+
+export PATH="$PATH:/opt/homebrew/bin"
+
+formatterExec=$(which swiftformat)
+
+# Functions
+# ---------
+
+checkIfSwiftFormatInstalled() {
+  if [ ! -x "$formatterExec" ]; then
+    1>&2 echo "💥 Unable to find swiftformat - no formatting will take place"
+    exit 0
+  fi
+}
+
+formatStagedFiles() {
+    # Keep only non-deleted files, in staging, and display only their names
+    git diff --diff-filter=d --staged --name-only | grep -e '\(.*\).swift$' | while read line; do
+        # Format the stages changes in a file
+        temporarySwiftFile="${line}.tmp.swift"
+        git show ":$line" > "$temporarySwiftFile"
+        $formatterExec "$temporarySwiftFile"
+        $formatterExec "$line"
+
+        # Create new Git object for formatted file
+        blob=`git hash-object -w "$temporarySwiftFile"`
+
+        # Update index with formatted content
+        git update-index --add --cacheinfo 100644 $blob "$line"
+
+        rm "$temporarySwiftFile"
+    done
+}
+
+# Main
+# ----
+
+echo "🧹 Cleaning sources before commit..."
+checkIfSwiftFormatInstalled
+formatStagedFiles
+echo "✨ Cleaning done!"

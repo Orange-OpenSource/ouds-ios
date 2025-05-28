@@ -22,17 +22,6 @@ strict: true
 
 included:
 - OUDS
-- DesignToolbox
-
-# ========
-# Excluded
-# ========
-
-excluded:
-- DesignToolbox/DesignToolbox/Info.plist
-- DesignToolbox/DesignToolbox/Resources
-- DesignToolbox/Pods
-- DesignToolbox/DerivedData
 
 # ==============
 # Disabled rules

@@ -82,6 +82,7 @@ clean_repo() {
     _ "🧹 Cleaning Git repository"
     git reset --hard
     git clean -fd
+    git prune
 }
 
 show_help() {
@@ -217,7 +218,15 @@ if [[ $use_git -eq 1 ]]; then
     _ "👍 Updated!"
 fi
 
-# Step 4 - Checkout to service pages dedicated branch (if relevant)
+# Step 4 - Add hard-coded redirect URL
+# ------------------------------------
+
+# Landing page of generated documentation is broken, real content is in /documentation
+# Override this page and force by code redirection
+# See Orange-OpenSource/ouds-ios#636
+echo '<!doctype html><html><head><meta http-equiv="refresh" content="0; URL= https://ios.unified-design-system.orange.com/documentation/"></head><body>Redirecting to https://ios.unified-design-system.orange.com/documentation/</body></html>' > "$DOCUMENTATION_HTML_LOCATION/index.html" 
+
+# Step 5 - Checkout to service pages dedicated branch (if relevant)
 # ------------------------------------------------------------------
 
 # When the files have been generated, stash them, change branch, unstash, add, commit, push then clean
@@ -244,6 +253,8 @@ if [[ $use_git -eq 1 ]]; then
 
     # Ensure we have only updated files on destination branch.
     # Supposing all assets are in the branch in root level (/)
+    # Do not remove .ico and .sg files ; keep the ones already existing in the branch
+    # Do not remove theme-settings.json
     rm -rf "css"
     rm -rf "data"
     rm -rf "documentation"
@@ -251,9 +262,6 @@ if [[ $use_git -eq 1 ]]; then
     rm -rf "index"
     rm -rf "js"
     rm -rf "*.jpg"
-    rm -rf "*.ico"
-    rm -rf "*.svg"
-    rm -rf "*.json"
     rm -rf "*.html"
     rm -rf "CNAME"
     
@@ -268,8 +276,6 @@ if [[ $use_git -eq 1 ]]; then
     git add "$DOCS_DIRECTORY/index"
     git add "$DOCS_DIRECTORY/js"
     git add "$DOCS_DIRECTORY/*.jpg"
-    git add "$DOCS_DIRECTORY/*.ico"
-    git add "$DOCS_DIRECTORY/*.svg"
     git add "$DOCS_DIRECTORY/*.json"
     git add "$DOCS_DIRECTORY/*.html"
     git add "$DOCS_DIRECTORY/CNAME"
@@ -285,7 +291,7 @@ else
     _ "👍 Ok, just keep documentation here"
 fi
 
-# Step 5 - Compress ZIP (if relevant)
+# Step 6 - Compress ZIP (if relevant)
 # -----------------------------------
 
 # ZIP action must be done before reseting the Git workspace (otherwise everything will be wiped out).
@@ -296,7 +302,7 @@ if [[ $no_zip -eq 0 ]]; then
     _ "👍 Documentation ZIP available at $DOCUMENTATION_ZIP_LOCATION ($size_in_byte bytes)"
 fi
 
-# Step 5b - Resume work on Git branch (if relevant)
+# Step 6b - Resume work on Git branch (if relevant)
 # -------------------------------------------------
 
 if [[ $use_git -eq 1 ]]; then

@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 /// A checkbox indicator has three available states: `selected`, `unselected` and `indeterminate`
@@ -25,7 +25,7 @@ public enum OUDSCheckboxIndicatorState {
     case indeterminate //  (╯° °)╯︵ ┻━┻
 
     /// Changes the value to the next one.
-    public mutating func toggle () {
+    public mutating func toggle() {
         switch self {
         case .selected:
             self = .unselected
@@ -40,11 +40,11 @@ public enum OUDSCheckboxIndicatorState {
     var a11yDescription: String {
         switch self {
         case .selected:
-            return "core_checkbox_checked_a11y"
+            "core_checkbox_checked_a11y".localized()
         case .unselected:
-            return "core_checkbox_unchecked_a11y"
+            "core_checkbox_unchecked_a11y".localized()
         case .indeterminate:
-            return "core_checkbox_indeterminate_a11y"
+            "core_checkbox_indeterminate_a11y".localized()
         }
     }
 
@@ -52,11 +52,11 @@ public enum OUDSCheckboxIndicatorState {
     var a11yHint: String {
         switch self {
         case .selected:
-            return "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
+            "core_checkbox_hint_a11y" <- "core_checkbox_unchecked_a11y".localized()
         case .unselected:
-            return "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
+            "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
         case .indeterminate:
-            return "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
+            "core_checkbox_hint_a11y" <- "core_checkbox_checked_a11y".localized()
         }
     }
 }

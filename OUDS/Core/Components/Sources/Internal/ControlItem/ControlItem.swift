@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
 import SwiftUI
 
 /// Modelizes the layout for a checkbox, radio button or switch with additional components like labels, icons and dividers.
@@ -61,62 +60,19 @@ struct ControlItem: View {
         self.action = action
     }
 
-    /// Creates a control item with label and optional helper text, icon, divider.
-    ///
-    /// - Parameters:
-    ///   - indicatorType: The type of indicator the `ContolItem` should display.
-    ///   - label: The main label text of the item.
-    ///   - additionalLabel: An additional label text of the item.
-    ///   - helper: An additonal helper text, should not be empty
-    ///   - icon: An optional icon
-    ///   - flipIcon: Set to `true` to flip the icon, false otherwise
-    ///   - isOutlined: If the component has lines around it like kind of borders (`true`)
-    ///   - isOnError: `true` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - isReadOnly: `true` if component is in read only mode, i.e. not really disabled but user cannot interact with it yet, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    ///   - orientation: Specify the orientation of the layout. If `default` the indicator is at the leading position, if `reversed` it is on trailing.
-    ///   - action: An optional action to trigger when the component has been pressed
-    ///
-    /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
-    init(indicatorType: IndicatorType,
-         label: String,
-         helper: String? = nil,
-         additionalLabel: String? = nil,
-         icon: Image? = nil,
-         flipIcon: Bool = false,
-         isOutlined: Bool = false,
-         isOnError: Bool = false,
-         isReadOnly: Bool = false,
-         hasDivider: Bool = false,
-         orientation: Self.Orientation = .default,
-         action: (() -> Void)? = nil) {
-        self.init(indicatorType: indicatorType,
-                  layoutData: .init(label: label,
-                                    additionalLabel: additionalLabel,
-                                    helper: helper,
-                                    icon: icon,
-                                    flipIcon: flipIcon,
-                                    isOutlined: isOutlined,
-                                    isError: isOnError,
-                                    isReadOnly: isReadOnly,
-                                    hasDivider: hasDivider,
-                                    orientation: orientation),
-                  action: action)
-    }
-
     // MARK: Body
 
     public var body: some View {
         InteractionButton(isReadOnly: layoutData.isReadOnly) {
             VibrationsManager.success()
             switch indicatorType {
-            case .switch(let binding):
+            case let .switch(binding):
                 withAnimation(.timingCurve(0.2, 0, 0, 1, duration: 0.150)) {
                     binding.wrappedValue.toggle()
                 }
-            case .radioButton(let binding):
+            case let .radioButton(binding):
                 binding.wrappedValue.toggle()
-            case .checkBox(let binding):
+            case let .checkBox(binding):
                 binding.wrappedValue.toggle()
             }
             action?()

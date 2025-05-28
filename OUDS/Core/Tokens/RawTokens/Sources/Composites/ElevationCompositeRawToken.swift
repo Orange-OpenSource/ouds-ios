@@ -49,7 +49,7 @@ public final class ElevationCompositeRawToken: NSObject, Sendable { // NSObject 
         radius = blur / 2
     }
 
-    deinit { }
+    deinit {}
 
     /// Compares the `self.x`, `self.y`, `self.blur` and `self.color` values between tokens.
     /// If `object` is not an `ElevationCompositeRawToken`, or ahs one of its four proeprties with another value than `self`,
@@ -58,9 +58,9 @@ public final class ElevationCompositeRawToken: NSObject, Sendable { // NSObject 
         guard let other = object as? ElevationCompositeRawToken else {
             return false
         }
-        return self.x == other.x
-        && self.y == other.y
-        && self.radius == other.radius
-        && self.color == other.color
+        return x == other.x
+            && y == other.y
+            && radius == other.radius
+            && color == other.color
     }
 }

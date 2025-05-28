@@ -14,20 +14,22 @@
 # About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
 # Runners details: https://github.com/actions/runner-images/tree/main/images/macos
 
-name: Check Localizables
+name: Check localizables
 
 on:
-  # For protected and most important branches
+  # For protected, most important and all branches
   push:
     branches:
       - main
       - develop
+      - '*'
 
   # Pull request events
   pull_request:
     types:
       - opened
       - synchronize
+      - reopened
 
 jobs:
   i18n:
@@ -43,5 +45,5 @@ jobs:
       - name: Validate translations
         run: |
           swift build --package-path ../SwiftPolyglot --configuration release
-          swift run --package-path ../SwiftPolyglot swiftpolyglot en fr --error-on-missing
+          swift run --package-path ../SwiftPolyglot swiftpolyglot en fr ar --error-on-missing
 

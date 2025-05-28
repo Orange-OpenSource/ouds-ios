@@ -12,7 +12,6 @@
 //
 
 import OUDS
-import OUDSFoundations
 import OUDSTokensSemantic
 import SwiftUI
 
@@ -34,7 +33,6 @@ struct ControlItemContent: View {
 
     @State var verticalAlignment: VerticalAlignment = .top
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: Body
 
@@ -77,9 +75,9 @@ struct ControlItemContent: View {
 
     private var isOn: Bool {
         switch indicatorType {
-        case .switch(let isOn), .radioButton(let isOn):
+        case let .switch(isOn), let .radioButton(isOn):
             isOn.wrappedValue
-        case .checkBox(let selectionState):
+        case let .checkBox(selectionState):
             selectionState.wrappedValue == .selected
         }
     }

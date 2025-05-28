@@ -1,0 +1,73 @@
+#
+# Software Name: Orange Unified Design System
+# SPDX-FileCopyrightText: Copyright (c) Orange SA
+# SPDX-License-Identifier: MIT
+#
+# This software is distributed under the MIT license,
+# the text of which is available at https://opensource.org/license/MIT/
+# or see the "LICENSE" file for more details.
+#
+# Authors: See CONTRIBUTORS.txt
+# Software description: A SwiftUI components library with code examples for Orange Unified Design System
+#
+
+# Lanes
+# ------
+
+default_platform(:ios)
+
+platform :ios do
+
+    # ------------------------------------------------------------
+    # RUN PERIPHERY FOR DEAD CODE ANALYSIS
+    # ------------------------------------------------------------
+    desc "RUN PERIPHERY FOR DEAD CODE ANALYSIS"
+    lane :check_dead_code do
+        puts "👉 Check dead code with Periphery"
+
+        # Command must run at root where Package.swift is
+        sh "cd .. && periphery scan --relative-results --format xcode"
+    end
+
+    # ------------------------------------------------------------
+    # RUN SWIFT FORMAT TO FORMAT SOURCES
+    # ------------------------------------------------------------
+    desc "RUN SWIFT FORMAT TO FORMAT SOURCES"
+    lane :format do
+        puts "👉 Run Swift Format to format sources"
+
+        template = '\\nSoftware Name: OUDS iOS\\nSPDX-FileCopyrightText: Copyright (c) Orange SA\\nSPDX-License-Identifier: MIT\\n\\nThis software is distributed under the MIT license,\\nthe text of which is available at https://opensource.org/license/MIT/\\nor see the \\"LICENSE\\" file for more details.\\n\\nAuthors: See CONTRIBUTORS.txt\\nSoftware description: A SwiftUI components library with code examples for Orange Unified Design System\\n'
+        sh "cd .. && swiftformat . --header \"#{template}\""
+    end
+
+    # ------------------------------------------------------------
+    # RUN SWIFT LINT TO CHECK SMELLS
+    # ------------------------------------------------------------
+    desc "RUN SWIFT LINT TO CHECK SMELLS"
+    lane :lint do
+        puts "👉 Run Swift Lint for smells"
+
+        # If there are violations, error 2 will be returned by swiftlint, making Fastlane fail (expected)
+        sh "cd .. && swiftlint --strict --config .swiftlint.yml ."
+    end
+
+    # ------------------------------------------------------------
+    # BUILD
+    # ------------------------------------------------------------
+    desc "BUILD THE SWIFT PACKAGE"
+    lane :build do
+        puts "👉 Build Swift Package"
+
+        sh "cd .. && swift build"
+    end
+
+    # ------------------------------------------------------------
+    # RUN UNIT TESTS
+    # ------------------------------------------------------------
+    desc "RUN UNIT TESTS OF SWIFT PAKCAGE"
+    lane :test_unit do
+        puts "👉 Run unit tests of Swift Package"
+
+        sh "cd .. && swift test"
+    end
+end

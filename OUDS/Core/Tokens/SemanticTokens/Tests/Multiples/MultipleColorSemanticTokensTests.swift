@@ -11,12 +11,23 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
+import OUDSFoundations
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import Testing
 
+// swiftlint:disable function_body_length
+
 /// To ensure the `MultipleColorSemanticTokens` is tested as a provider of semantic tokens for light and dark color schemes.
+/// Tests also utilies like, for exmaple, contrat ratio computations.
 struct MultipleColorSemanticTokensTests {
+
+    // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
+    #if !os(iOS)
+    private static let doesRunOniOS = false
+    #else
+    private static let doesRunOniOS = true
+    #endif
 
     /// Tests if the unique value is applied for light and dark modes
     @Test func initWithOneValue() {
@@ -54,4 +65,126 @@ struct MultipleColorSemanticTokensTests {
         #expect(first.isEqual(fifth))
         #expect(!first.isEqual(sixth))
     }
+
+    // MARK: - Extension with OUDSWCAG21Ratio
+
+    @Test("OUDSWCAG21Ratio.debugContrastRatio(::::) utlity must return suitable values", .enabled(if: Self.doesRunOniOS))
+    func debugContrastRatioWithTokens() {
+
+        OUDSWCAG21Ratio.oudsDebugWCAG21Colors = true
+
+        // Passing light and dark for AA and non textual (>= 3:1)
+        var result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#FFFFFF", dark: "#000000"),
+                                                        MultipleColorSemanticTokens(light: "#FF5733", dark: "#FFFFFF"),
+                                                        .nonTextual,
+                                                        .AA)
+        #expect(result == true)
+
+        // Passing light and dark for AA and textual (>= 4.5:1)
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#2C3E50", dark: "#2C3E50"),
+                                                    MultipleColorSemanticTokens(light: "#ECF0F1", dark: "#FFFFFF"),
+                                                    .textual,
+                                                    .AA)
+        #expect(result == true)
+
+        // Passing light and dark for AAA and textual (>= 7:1)
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#2C3E50", dark: "#100000"),
+                                                    MultipleColorSemanticTokens(light: "#ECF0F1", dark: "#FFFFFF"),
+                                                    .textual,
+                                                    .AAA)
+        #expect(result == true)
+
+        // Passing light and dark for AAA and non textual (>= 4.5:1)
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#2C3E50", dark: "#2C3E50CC"),
+                                                    MultipleColorSemanticTokens(light: "#ECF0F1", dark: "#FFFFFFCC"),
+                                                    .nonTextual,
+                                                    .AAA)
+        #expect(result == true)
+
+        // Passing light and non passing dark for AA and textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#4A90E2CC", dark: "#B0B0B0CC"),
+                                                    MultipleColorSemanticTokens(light: "#FFFFFFCC", dark: "#FFFFFFCC"),
+                                                    .textual,
+                                                    .AA)
+        #expect(result == false)
+
+        // Passing light and non passing dark for AA and non textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#FFFFFFCC", dark: "#AAAAAACC"),
+                                                    MultipleColorSemanticTokens(light: "#FF5733CC", dark: "#FFFFFFCC"),
+                                                    .nonTextual,
+                                                    .AA)
+        #expect(result == false)
+
+        // Passing light and non passing dark for AAA and textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#1A1A1ACC", dark: "#CCCCCCCC"),
+                                                    MultipleColorSemanticTokens(light: "#FFFFFFCC", dark: "#FFFFFFCC"),
+                                                    .textual,
+                                                    .AAA)
+        #expect(result == false)
+
+        // Passing light and non passing dark for AAA and non textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#4A90E2CC", dark: "#B0B0B0CC"),
+                                                    MultipleColorSemanticTokens(light: "#FFFFFFCC", dark: "#FFFFFFCC"),
+                                                    .nonTextual,
+                                                    .AAA)
+        #expect(result == false)
+
+        // Non passing light and passing dark for AA and textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#D9D9D9CC", dark: "#2E7D32CC"),
+                                                    MultipleColorSemanticTokens(light: "#FFFFFFCC", dark: "#FFFFFFCC"),
+                                                    .textual,
+                                                    .AA)
+        #expect(result == false)
+
+        // Non passing light and passing dark for AA and non textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#E0E0E0CC", dark: "#B0BEC5CC"),
+                                                    MultipleColorSemanticTokens(light: "#FFFFFFCC", dark: "#FFFFFFCC"),
+                                                    .nonTextual,
+                                                    .AA)
+        #expect(result == false)
+
+        // Non passing light and passing dark for AAA and textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#A0A0A0CC", dark: "#000000CC"),
+                                                    MultipleColorSemanticTokens(light: "#FFFFFFCC", dark: "#F5F5F5CC"),
+                                                    .textual,
+                                                    .AAA)
+        #expect(result == false)
+
+        // Non passing light and passing dark for AAA and non textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens(light: "#C0C0C0CC", dark: "#1A73E8CC"),
+                                                    MultipleColorSemanticTokens(light: "#FFFFFFCC", dark: "#FFFFFFCC"),
+                                                    .nonTextual,
+                                                    .AAA)
+        #expect(result == false)
+
+        // Non passing light and non passing dark for AA and textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens("#B0B0B0CC"),
+                                                    MultipleColorSemanticTokens("#FFFFFFCC"),
+                                                    .textual,
+                                                    .AA)
+        #expect(result == false)
+
+        // Non passing light and non passing dark for AA and non textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens("#D3D3D3CC"),
+                                                    MultipleColorSemanticTokens("#FFFFFFCC"),
+                                                    .nonTextual,
+                                                    .AA)
+        #expect(result == false)
+
+        // Non passing light and non passing dark for AAA and textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens("#7D7D7DCC"),
+                                                    MultipleColorSemanticTokens("#FFFFFFCC"),
+                                                    .nonTextual,
+                                                    .AAA)
+        #expect(result == false)
+
+        // Non passing light and non passing dark for AAA and non textual
+        result = OUDSWCAG21Ratio.debugContrastRatio(MultipleColorSemanticTokens("#B0B0B0CC"),
+                                                    MultipleColorSemanticTokens("#FFFFFFCC"),
+                                                    .nonTextual,
+                                                    .AAA)
+        #expect(result == false)
+    }
 }
+
+// swiftlint:enable function_body_length

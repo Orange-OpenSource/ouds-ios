@@ -11,8 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSTokensSemantic
 import SwiftUI
 
 /// A horizontal Divider is used to separate content laid out one under the other (`VStack`).
@@ -72,6 +70,6 @@ extension Divider {
     /// **Remark: Horizontal means horizontal line (content separator in a VStack)**
     @MainActor
     public func oudsHorizontalDivider(dividerColor: OUDSDividerColor = .borderDefault) -> some View {
-        self.modifier(DividerModifier(dividerColor: dividerColor, orientation: .horizontal))
+        modifier(DividerModifier(dividerColor: dividerColor, orientation: .horizontal))
     }
 }

@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSFoundations
-import OUDSTokensSemantic
 
 /// A class which wraps all **component  tokens of chip** for *chip* objects like `OUDSChip`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -110,7 +109,8 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil) {
+                spaces: AllSpaceSemanticTokensProvider? = nil)
+    {
         OL.debug("Init of OrangeThemeChipComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
@@ -118,7 +118,7 @@ open class OrangeThemeChipComponentTokensProvider: AllChipComponentTokensProvide
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
-    deinit { }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

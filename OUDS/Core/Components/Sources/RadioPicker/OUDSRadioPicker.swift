@@ -125,7 +125,8 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
                 isReversed: Bool = false,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false) {
+                hasDivider: Bool = false)
+    {
         self.selection = selection
         self.radios = radios
         self.placement = placement
@@ -150,11 +151,12 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
             OL.error("It seems the selection '\(selection)' is available more than one time. Be sure the value is available in only one tag.")
         }
     }
+
     // MARK: - Body
 
     public var body: some View {
         switch placement {
-        case .horizontal(let showsIndicator):
+        case let .horizontal(showsIndicator):
             ScrollView(.horizontal, showsIndicators: showsIndicator) {
                 HStack(alignment: .center, spacing: theme.spaces.spaceFixedNone) {
                     content(for: radios)
@@ -170,22 +172,22 @@ public struct OUDSRadioPicker<Tag>: View where Tag: Hashable {
     private func content(for radios: [OUDSRadioPickerData<Tag>]) -> some View {
         ForEach(radios, id: \.tag) { radio in
             content(for: radio,
-                    noDivider: (radios[radios.count - 1].tag == radio.tag)) // No divider for last item
+                    noDivider: radios[radios.count - 1].tag == radio.tag) // No divider for last item
         }
     }
 
     private func content(for radio: OUDSRadioPickerData<Tag>, noDivider: Bool) -> some View {
-        OUDSRadioItem<Tag>(isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
-                           tag: radio.tag,
-                           label: radio.label,
-                           additionalLabel: radio.additionalLabel,
-                           helper: radio.helper,
-                           icon: radio.icon,
-                           isOutlined: isOutlined ? true : radio.isOutlined,
-                           isReversed: isReversed ? true : radio.isReversed,
-                           isError: isError ? true : radio.isError,
-                           isReadOnly: isReadOnly ? true : radio.isReadOnly,
-                           hasDivider: hasDivider && !noDivider ? true : radio.hasDivider) {
+        OUDSRadioItem(isOn: selection.wrappedValue == radio.tag ? .constant(true) : .constant(false),
+                      label: radio.label,
+                      additionalLabel: radio.additionalLabel,
+                      helper: radio.helper,
+                      icon: radio.icon,
+                      isOutlined: isOutlined ? true : radio.isOutlined,
+                      isReversed: isReversed ? true : radio.isReversed,
+                      isError: isError ? true : radio.isError,
+                      isReadOnly: isReadOnly ? true : radio.isReadOnly,
+                      hasDivider: hasDivider && !noDivider ? true : radio.hasDivider)
+        {
             selection.wrappedValue = radio.tag
         }
     }

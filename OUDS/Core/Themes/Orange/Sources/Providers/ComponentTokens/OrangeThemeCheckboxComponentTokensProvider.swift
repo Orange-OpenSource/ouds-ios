@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSFoundations
-import OUDSTokensSemantic
 
 // swiftlint:disable type_name
 
@@ -94,13 +93,14 @@ open class OrangeThemeCheckboxComponentTokensProvider: AllCheckboxComponentToken
     ///    - sizes: Provider for size semantic tokens. If nil, a default one will be used (``OrangeThemeSizeSemanticTokensProvider``)
     ///    - borders: Provider for border semantic tokens. If nil, a default one will be used (``OrangeThemeBorderSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
-                borders: AllBorderSemanticTokensProvider? = nil) {
+                borders: AllBorderSemanticTokensProvider? = nil)
+    {
         OL.debug("Init of OrangeThemeCheckboxComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
     }
 
-    deinit { }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

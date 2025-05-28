@@ -20,7 +20,15 @@ import Testing
 /// To test some extensions of `SwiftUI.Color`
 struct ColorExtensionsTests {
 
-    @Test func initWithHexadecimalValue() throws {
+    // See https://github.com/Orange-OpenSource/ouds-ios/issues/667
+    #if !os(iOS)
+    private static let doesRunOniOS = false
+    #else
+    private static let doesRunOniOS = true
+    #endif
+
+    @Test(.enabled(if: Self.doesRunOniOS))
+    func initWithHexadecimalValue() throws {
 
         // White
         let pureWhite = Color(hexadecimalCode: "#FFFFFF")!
@@ -32,16 +40,16 @@ struct ColorExtensionsTests {
 
         // Color form palette
         let malachite500 = Color(hexadecimalCode: "#3DE35A")!
-        #expect(malachite500.rgba!.red == 61, "Value is instead '\(malachite500.rgba!.red)'")
-        #expect(malachite500.rgba!.green == 227, "Value is instead '\(malachite500.rgba!.green)'")
-        #expect(malachite500.rgba!.blue == 90, "Value is instead '\(malachite500.rgba!.blue)'")
+        #expect((malachite500.rgba!.red * 255).rounded() == 61, "Value is instead '\(malachite500.rgba!.red)'")
+        #expect((malachite500.rgba!.green * 255).rounded() == 227, "Value is instead '\(malachite500.rgba!.green)'")
+        #expect((malachite500.rgba!.blue * 255).rounded() == 90, "Value is instead '\(malachite500.rgba!.blue)'")
 
         // Color with transparency
         let colorOpacityWhite500 = Color(hexadecimalCode: "#FFFFFF52")!
-        #expect(colorOpacityWhite500.rgba!.red == 255, "Value is instead '\(colorOpacityWhite500.rgba!.red)'")
-        #expect(colorOpacityWhite500.rgba!.green == 255, "Value is instead '\(colorOpacityWhite500.rgba!.green)'")
-        #expect(colorOpacityWhite500.rgba!.blue == 255, "Value is instead '\(colorOpacityWhite500.rgba!.blue)'")
-        #expect(colorOpacityWhite500.rgba!.alpha == 82, "Value is instead '\(colorOpacityWhite500.rgba!.alpha)'")
+        #expect((colorOpacityWhite500.rgba!.red * 255).rounded() == 255, "Value is instead '\(colorOpacityWhite500.rgba!.red)'")
+        #expect((colorOpacityWhite500.rgba!.green * 255).rounded() == 255, "Value is instead '\(colorOpacityWhite500.rgba!.green)'")
+        #expect((colorOpacityWhite500.rgba!.blue * 255).rounded() == 255, "Value is instead '\(colorOpacityWhite500.rgba!.blue)'")
+        #expect((colorOpacityWhite500.rgba!.alpha * 255).rounded() == 82, "Value is instead '\(colorOpacityWhite500.rgba!.alpha)'")
         /*
          colorOpacityWhite500 is white with opacity500.
          In base 16, white is #FFFFFF and opacity500 adds 52 suffix.
@@ -50,20 +58,5 @@ struct ColorExtensionsTests {
          */
     }
 }
-
-// swiftlint:disable large_tuple
-extension Color {
-
-    var uiColor: UIColor { .init(self) }
-
-    typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
-
-    /// SwiftUI does not expose efficiently RGBA balues, and when computed these values are not that pure, thus we need to round to integer.
-    var rgba: RGBA? {
-        var (r, g, b, a): RGBA = (0, 0, 0, 0)
-        return uiColor.getRed(&r, green: &g, blue: &b, alpha: &a) ? ((r * 255).rounded(), (g * 255).rounded(), (b * 255).rounded(), (a * 255).rounded()) : nil
-    }
-}
-// swiftlint:enable large_tuple
 
 // swiftlint:enable force_unwrapping

@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import SwiftUI
@@ -37,8 +37,12 @@ extension View {
     /// - Parameter title: The navigation title
     /// - Returns View: The view with a new modifier
     public func oudsNavigationTitle(_ title: String) -> some View {
-        self.modifier(AccessibleNavigationTitleModifier(title: title,
-                                                        deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay.rawValue))
+        #if canImport(UIKit)
+        modifier(AccessibleNavigationTitleModifier(title: title,
+                                                   deadline: .now() + AccessibilityDelay.accessibleTitleNotificationDelay.rawValue))
+        #else
+        modifier(AccessibleNavigationTitleModifier(title: title))
+        #endif
     }
 
     /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed
@@ -57,8 +61,8 @@ extension View {
     /// - Parameter requestFocus: The boolean binding (e.g. the `AccessibilityFocusState`)
     /// - Returns View: The view with a new modifier
     public func oudsRequestAccessibleFocus(_ requestFocus: AccessibilityFocusState<Bool>) -> some View {
-        self.modifier(RequestAccessibleFocusModifier(requestFocus: requestFocus,
-                                                     deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
+        modifier(RequestAccessibleFocusModifier(requestFocus: requestFocus,
+                                                deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
     }
 
     /// Adds a modifier to the current `View` so as to defer a focus request after the view is displayed for the given element
@@ -79,8 +83,8 @@ extension View {
     ///    - target: The item which will get the focus
     /// - Returns View: The view with a new modifier
     public func oudsRequestAccessibleFocus(_ requestFocus: AccessibilityFocusState<AccessibilityFocusable?>, for target: AccessibilityFocusable) -> some View {
-        self.modifier(RestrictedRequestAccessibleFocusModifier(requestFocus: requestFocus,
-                                                               target: target,
-                                                               deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
+        modifier(RestrictedRequestAccessibleFocusModifier(requestFocus: requestFocus,
+                                                          target: target,
+                                                          deadline: .now() + AccessibilityDelay.accessibleFocusRequestDelay.rawValue))
     }
 }

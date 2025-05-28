@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.15.0...develop)
+
+## [0.15.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.14.0...0.15.0) - 2025-05-28
+
+### Added
+
+- API and tools to check contrast ratio of colors (#656)
+
+### Changed
+
+- [Tool] Update `SwiftFormat` SwiftPackage pod from v0.56.1 to v0.56.2
+- Debug warnings for link and button components for WCAG 2.1 3:1 and 4.5:1 ratios on colored surface (Orange-OpenSource/ouds-ios#656)
+- Debug warnings for link and button components for WCAG 2.1 3:1 and 4.5:1 ratios on colored surface (#656)
+
+### Fixed
+
+- Set border as inner stroke (#680)
+- Bad wording key for accessibility label of switch item (#642)
+- Missing accessibility hint for switch (#642)
+- Missing token `colorBorderMuted` (#643)
+
 ## [0.14.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.13.0...0.14.0) - 2024-04-29
 
 ### Added

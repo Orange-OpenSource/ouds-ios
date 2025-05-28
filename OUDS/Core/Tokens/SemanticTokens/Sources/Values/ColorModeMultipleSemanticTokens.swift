@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import SwiftUI
@@ -21,7 +21,7 @@ import SwiftUI
 /// This is a group of semantic tokens for **colors modes** but using ``MultipleColorModeSemanticTokens``.
 ///
 /// In fact the ``MultipleColorModeSemanticTokens`` class will help users (i.e. developers) to handle one semantic token for color mode containing values for light and dark modes.
-/// 
+///
 /// In few words:
 ///
 /// ```swift
@@ -89,4 +89,5 @@ public protocol ColorModeMultipleSemanticTokens {
     /// - Returns: The colors to apply
     func toColor(from mode: MultipleColorModeSemanticTokens) -> MultipleColorSemanticTokens
 }
+
 // swiftlint:enable missing_docs

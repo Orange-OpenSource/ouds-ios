@@ -143,6 +143,8 @@ Adhering to the following process is the best way to get your work included in t
 
 Note that a ruleset based [on task-list-completed tool](https://github.com/marketplace/task-list-completed) is applied on `develop` branch: if any prerequisites are not futfilled in the pull request ticket the merge won't be done. 
 
+8. If your evolutions can be tested inside a sandbox app (like [Design System Toolbox](https://github.com/Orange-OpenSource/ouds-ios-design-system-toolbox/)), add in the pull request details the branch and the associated pull request (with of course codebase pointing to the suitable package branch)
+
 ## Code Guidelines
 
 Format your code before committing to ensure your changes follow our coding standards.
@@ -207,13 +209,12 @@ Reviewed-by: Reviewer firstname and lastname <reviewer email>
 Signed-off-by: Author firstname and lastname <first author email>
 ```
 
-For example, for issue n°123 and its pull request n°456, tested by Anton, Iman, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
+For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
 ```text
 refactor: update some things colors and design of the demo app (#123) (#4562)
 
 Some things have been refactored to make incredible things.
 
-Tested-by: Iman Assabah <benoit.suzanne@orange.com>
 Tested-by: Anton Astafev <anton.astafev@orange.com>
 Tested-by: Benoit Suzanne <benoit.suzanne@orange.com>
 Tested-by: Maxime Tonnerre <maxime.tonnerre@orange.com>

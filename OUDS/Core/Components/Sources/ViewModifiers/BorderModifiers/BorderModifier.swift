@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSFoundations
@@ -40,12 +40,13 @@ struct BorderModifier: ViewModifier {
     init(_ style: BorderStyleSemanticToken,
          _ width: BorderWidthSemanticToken,
          _ radius: BorderRadiusSemanticToken,
-         _ color: MultipleColorSemanticTokens) {
+         _ color: MultipleColorSemanticTokens)
+    {
         self.style = style
         self.width = width
         self.radius = radius
         self.color = color
-        if style != "solid" && style != "dashed" && style != "dotted" {
+        if style != "solid", style != "dashed", style != "dotted" {
             OL.error("Unmanaged style: '\(style)'!")
         }
     }
@@ -72,15 +73,17 @@ struct BorderModifier: ViewModifier {
     private func solid(_ content: Content) -> some View {
         content
             .clipShape(RoundedRectangle(cornerRadius: radius))
-            .overlay(RoundedRectangle(cornerRadius: radius).stroke(color.color(for: colorScheme), lineWidth: width))
-            .oudsForegroundColor(color)
+            .overlay(RoundedRectangle(cornerRadius: radius)
+                .strokeBorder(color.color(for: colorScheme), lineWidth: width)
+                .oudsForegroundColor(color)
+            )
     }
 
     private func dashed(_ content: Content) -> some View {
         content
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .overlay(RoundedRectangle(cornerRadius: radius)
-                .stroke(style: StrokeStyle(lineWidth: width, dash: [2, 2]))
+                .strokeBorder(style: StrokeStyle(lineWidth: width, dash: [2, 2]))
                 .oudsForegroundColor(color)
             )
     }
@@ -89,7 +92,7 @@ struct BorderModifier: ViewModifier {
         content
             .clipShape(RoundedRectangle(cornerRadius: radius))
             .overlay(RoundedRectangle(cornerRadius: radius)
-                .stroke(style: StrokeStyle(lineWidth: width, dash: [1, 5]))
+                .strokeBorder(style: StrokeStyle(lineWidth: width, dash: [1, 5]))
                 .oudsForegroundColor(color)
             )
     }

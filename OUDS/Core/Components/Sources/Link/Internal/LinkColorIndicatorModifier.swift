@@ -2,16 +2,17 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
+import OUDSFoundations
 import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
@@ -24,17 +25,18 @@ struct LinkColorIndicatorModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
+    @Environment(\.oudsSurfaceColor) private var surfaceColor
 
     // MARK: - Body
 
     func body(content: Content) -> some View {
-        content.oudsForegroundStyle(appliedColor)
+        content.oudsForegroundStyle(appliedColor())
     }
 
     // MARK: - Helpers
 
-    private var appliedColor: MultipleColorSemanticTokens {
-        switch interactionState {
+    private func appliedColor() -> MultipleColorSemanticTokens {
+        let colorToApply: MultipleColorSemanticTokens = switch interactionState {
         case .enabled:
             enabledColor
         case .hover:
@@ -44,6 +46,8 @@ struct LinkColorIndicatorModifier: ViewModifier {
         case .disabled, .readOnly:
             disabledColor
         }
+        OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
+        return colorToApply
     }
 
     private var enabledColor: MultipleColorSemanticTokens {

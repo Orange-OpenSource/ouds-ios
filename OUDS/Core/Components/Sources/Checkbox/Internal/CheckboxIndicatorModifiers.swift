@@ -36,7 +36,7 @@ struct CheckboxIndicatorModifier: ViewModifier {
             .modifier(SizeFrameModifier())
             .modifier(CheckboxIndicatorBorderModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
             .modifier(CheckboxIndicatorForegroundModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
-            .modifier(CheckboxIndicatorBackgroundModifier(interactionState: interactionState, indicatorState: indicatorState, isError: isError))
+            .modifier(CheckboxIndicatorBackgroundModifier(interactionState: interactionState, isError: isError))
     }
 }
 
@@ -51,7 +51,6 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
@@ -65,25 +64,25 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeEnabled
         } else {
             switch indicatorState {
             case .selected, .indeterminate:
-                return theme.colors.colorActionSelected
+                theme.colors.colorActionSelected
             case .unselected:
-                return theme.colors.colorActionEnabled
+                theme.colors.colorActionEnabled
             }
         }
     }
@@ -99,7 +98,7 @@ private struct CheckboxIndicatorForegroundModifier: ViewModifier {
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
             OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
     }
@@ -112,7 +111,6 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     // MARK: - Properties
 
     let interactionState: InteractionState
-    let indicatorState: OUDSCheckboxIndicatorState
     let isError: Bool
 
     @Environment(\.theme) private var theme
@@ -130,13 +128,13 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     private var appliedColor: Color {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
@@ -155,7 +153,7 @@ private struct CheckboxIndicatorBackgroundModifier: ViewModifier {
     private var disabledColor: Color {
         guard !isError else {
             OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed."
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
     }
@@ -172,7 +170,6 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
@@ -189,49 +186,49 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeEnabled
         } else {
             switch indicatorState {
             case .selected, .indeterminate:
-                return theme.colors.colorActionSelected
+                theme.colors.colorActionSelected
             case .unselected:
-                return theme.colors.colorActionEnabled
+                theme.colors.colorActionEnabled
             }
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeHover
+            theme.colors.colorActionNegativeHover
         } else {
-            return theme.colors.colorActionHover
+            theme.colors.colorActionHover
         }
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativePressed
+            theme.colors.colorActionNegativePressed
         } else {
-            return theme.colors.colorActionPressed
+            theme.colors.colorActionPressed
         }
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
             OL.fatal("An OUDS Checkbox with a disabled state and an error situation has been detected, which is not allowed"
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
     }
@@ -241,49 +238,49 @@ private struct CheckboxIndicatorBorderModifier: ViewModifier {
     private var appliedBorderWidth: CGFloat {
         switch interactionState {
         case .enabled:
-            return enabledWidth
+            enabledWidth
         case .hover:
-            return hoverWidth
+            hoverWidth
         case .pressed:
-            return pressedWidth
+            pressedWidth
         case .disabled, .readOnly:
-            return disabledWidth
+            disabledWidth
         }
     }
 
     private var enabledWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelected
+            theme.checkbox.checkboxBorderWidthSelected
         case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselected
+            theme.checkbox.checkboxBorderWidthUnselected
         }
     }
 
     private var hoverWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelectedHover
+            theme.checkbox.checkboxBorderWidthSelectedHover
         case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselectedHover
+            theme.checkbox.checkboxBorderWidthUnselectedHover
         }
     }
 
     private var pressedWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelectedPressed
+            theme.checkbox.checkboxBorderWidthSelectedPressed
         case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselectedPressed
+            theme.checkbox.checkboxBorderWidthUnselectedPressed
         }
     }
 
     private var disabledWidth: CGFloat {
         switch indicatorState {
         case .selected, .indeterminate:
-            return theme.checkbox.checkboxBorderWidthSelected
+            theme.checkbox.checkboxBorderWidthSelected
         case .unselected:
-            return theme.checkbox.checkboxBorderWidthUnselected
+            theme.checkbox.checkboxBorderWidthUnselected
         }
     }
 

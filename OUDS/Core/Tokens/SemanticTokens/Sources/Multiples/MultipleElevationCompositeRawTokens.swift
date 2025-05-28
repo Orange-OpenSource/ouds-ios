@@ -11,7 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
 import OUDSTokensRaw
 import SwiftUI
 
@@ -78,8 +77,8 @@ public final class MultipleElevationCompositeRawTokens: NSObject, Sendable {
     /// Initializes a new elevation composite raw token with the same value for light and dark modes
     /// - Parameter value: The `ElevationCompositeRawToken` to apply wether the device is in *light* and *dark* mode
     public init(_ value: ElevationCompositeRawToken) {
-        self.light = value
-        self.dark = value
+        light = value
+        dark = value
     }
 
     /// Initializes a new elevation composite raw token with two values
@@ -91,21 +90,21 @@ public final class MultipleElevationCompositeRawTokens: NSObject, Sendable {
         self.dark = dark
     }
 
-    deinit { }
+    deinit {}
 
     /// Returns `true` if `self` and `object` has the same `light` and `dark` values and with `object`
     /// as a `MultipleElevationCompositeRawTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleElevationCompositeRawTokens else { return false }
-        return self.light == other.light && self.dark == other.dark
+        return light == other.light && dark == other.dark
     }
 
     /// Returns the right elevation according to the `colorScheme`.
     /// - Parameter colorScheme: The color scheme
     /// - Returns: The `ElevationCompositeRawToken` to use depending to `colorScheme`
     public func elevation(for colorScheme: ColorScheme) -> ElevationCompositeRawToken {
-        (colorScheme == .light ? light : dark)
+        colorScheme == .light ? light : dark
     }
 }
 

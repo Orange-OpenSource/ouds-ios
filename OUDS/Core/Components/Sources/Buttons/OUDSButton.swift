@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDSFoundations
@@ -120,7 +120,7 @@ public struct OUDSButton: View {
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
     public init(icon: Image, text: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
-        self.type = .textAndIcon(text: text, icon: icon)
+        type = .textAndIcon(text: text, icon: icon)
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
@@ -135,7 +135,7 @@ public struct OUDSButton: View {
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
     public init(icon: Image, accessibilityLabel: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
-        self.type = .icon(icon, accessibilityLabel)
+        type = .icon(icon, accessibilityLabel)
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
@@ -149,7 +149,7 @@ public struct OUDSButton: View {
     ///    - style: The button style, default set to `.default`
     ///    - action: The action to perform when the user triggers the button
     public init(text: String, hierarchy: Hierarchy = .default, style: Style = .default, action: @escaping () -> Void) {
-        self.type = .text(text)
+        type = .text(text)
         self.hierarchy = hierarchy
         self.style = style
         self.action = action
@@ -183,11 +183,11 @@ public struct OUDSButton: View {
     /// else the button text is used.
     private var accessibilityLabel: String {
         if style == .loading {
-            return "core_button_loading_a11y".localized()
+            "core_button_loading_a11y".localized()
         } else {
             switch type {
-            case .text(let text), .textAndIcon(let text, _), .icon(_, let text):
-                return text
+            case let .text(text), let .textAndIcon(text, _), let .icon(_, text):
+                text
             }
         }
     }
@@ -248,8 +248,6 @@ private struct ButtonTextAndIcon: View {
 // MARK: - Scaled Icon
 
 private struct ScaledIcon: View {
-
-    @Environment(\.theme) private var theme
 
     let icon: Image
     @ScaledMetric var size: CGFloat

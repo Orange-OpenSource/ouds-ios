@@ -56,48 +56,48 @@ import SwiftUI
 ///
 ///     // A leading switch with a label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn)
 ///
 ///     // A leading switch with a label, but in read only mode (user cannot interact yet, but not disabled).
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", isReadOnly: true)
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, isReadOnly: true)
 ///
 ///     // A leading switch with a label, and an helper text.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", helper: "The Beatles")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, helper: "The Beatles")
 ///
 ///     // A leading switch with an additional label.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Lucy in the Sky with Diamonds", additionalLabel: "The Beatles", helper: "1967")
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds", isOn: $isOn, additionalLabel: "The Beatles", helper: "1967")
 ///
 ///     // A trailing switch with a label, an additonal label, an helper text and an icon.
 ///     // The inverse layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn,
-///                   label: "Lucy in the Sky with Diamonds",
-///                   additionalLabel: "The Beatles",
-///                   helper: "1967",
-///                   isReversed: true,
-///                   icon: Image(decorative: "ic_heart"))
+///     OUDSSwitchItem("Lucy in the Sky with Diamonds",
+///                    isOn: $isOn,
+///                    additionalLabel: "The Beatles",
+///                    helper: "1967",
+///                    isReversed: true,
+///                    icon: Image(decorative: "ic_heart"))
 ///
 ///     // A trailing switch with a label, an helper text, an icon, a divider and is about an error.
 ///     // The inverse layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn,
-///                   label: "Rescue from this world!",
-///                   helper: "Put your hand in mine",
-///                   icon: Image(decorative: "ic_heart"),
-///                   isReversed: true,
-///                   isError: true,
-///                   hasDivider: true)
+///     OUDSSwitchItem("Rescue from this world!",
+///                    isOn: $isOn,
+///                    helper: "Put your hand in mine",
+///                    icon: Image(decorative: "ic_heart"),
+///                    isReversed: true,
+///                    isError: true,
+///                    hasDivider: true)
 ///
 ///     // A leading switch with a label, but disabled.
 ///     // The default layout will be used here.
-///     OUDSSwitchItem(isOn: $isOn, label: "Rescue from this world!")
+///     OUDSSwitchItem("Rescue from this world!", isOn: $isOn)
 ///         .disabled(true)
 ///
 ///     // Never disable a read only or an error-related switch as it will crash
 ///     // This is forbidden by design!
-///     OUDSSwitchItem(isOn: $isOn, label: "Kaboom!", isError: true).disabled(true) // fatal error
-///     OUDSSwitchItem(isOn: $isOn, label: "Kaboom!", isReadyOnly: true).disabled(true) // fatal error
+///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isError: true).disabled(true) // fatal error
+///     OUDSSwitchItem("Kaboom!", isOn: $isOn, isReadyOnly: true).disabled(true) // fatal error
 /// ```
 ///
 /// ## Design documentation
@@ -121,25 +121,29 @@ public struct OUDSSwitchItem: View {
     /// **The design system does not allow to have both an error situation and a read only mode for the component.**
     ///
     /// - Parameters:
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - label: The main label text of the switch.
+    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
     ///   - helper: An additonal helper text, should not be empty
     ///   - icon: An optional icon, default set to `nil`
     ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `false`
+    ///   - isReversed: `True` of the switch indicator must be in trailing position,` false` otherwise. Default to `true`
     ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
     ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    public init(isOn: Binding<Bool>,
-                label: String,
+    ///
+    /// **Remark: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are
+    /// automatically localized. Else, prefer to provide the localized string if key is stored in another bundle.**
+    public init(_ label: String,
+                isOn: Binding<Bool>,
                 helper: String? = nil,
                 icon: Image? = nil,
                 flipIcon: Bool = false,
-                isReversed: Bool = false,
+                isReversed: Bool = true,
                 isError: Bool = false,
                 isReadOnly: Bool = false,
-                hasDivider: Bool = false) {
-        if isError && isReadOnly {
+                hasDivider: Bool = false)
+    {
+        if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSSwitchItem in an error context and in read only mode")
         }
 
@@ -149,10 +153,10 @@ public struct OUDSSwitchItem: View {
 
         _isOn = isOn
 
-        self.layoutData = .init(
-            label: label,
+        layoutData = .init(
+            label: label.localized(),
             additionalLabel: nil,
-            helper: helper,
+            helper: helper?.localized(),
             icon: icon,
             flipIcon: flipIcon,
             isOutlined: false,
@@ -168,18 +172,18 @@ public struct OUDSSwitchItem: View {
         ControlItem(indicatorType: .switch($isOn), layoutData: layoutData)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(a11yLabel)
-            .accessibilityValue(a11yValue.localized())
+            .accessibilityValue(a11yValue)
             .accessibilityHint(a11yHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
     private var a11yValue: String {
-        _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
+        (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.
     private var a11yLabel: String {
-        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_commmon_disabled_a11y".localized() : ""
+        let stateDescription: String = layoutData.isReadOnly || !isEnabled ? "core_common_disabled_a11y".localized() : ""
         let errorDescription = layoutData.isError ? "core_common_onError_a11y".localized() : ""
         let switchA11yTrait = "core_switch_trait_a11y".localized() // Fake trait for Voice Over vocalization
 
@@ -190,9 +194,9 @@ public struct OUDSSwitchItem: View {
     /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
     private var a11yHint: String {
         if layoutData.isReadOnly || !isEnabled {
-            return ""
+            ""
         } else {
-            return "core_switch_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
+            "core_switch_hint_a11y" <- (_isOn.wrappedValue ? "core_common_unselected_a11y" : "core_common_selected_a11y").localized()
         }
     }
 }

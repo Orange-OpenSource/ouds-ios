@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import Foundation
@@ -59,14 +59,14 @@ public final class MultipleSpaceSemanticTokens: NSObject, Sendable {
         self.regular = regular
     }
 
-    deinit { }
+    deinit {}
 
     /// Returns `true` if `self` and `object` has the same `compact` and `regular` values and with `object`
     /// as a `MultipleSpaceSemanticTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleSpaceSemanticTokens else { return false }
-        return self.compact == other.compact && self.regular == other.regular
+        return compact == other.compact && regular == other.regular
     }
 
     /// Returns the right dimension according to the `userInterfaceSizeClass`.

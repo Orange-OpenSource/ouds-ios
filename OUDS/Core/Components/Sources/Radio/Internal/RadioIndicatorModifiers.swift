@@ -35,7 +35,7 @@ struct RadioIndicatorModifier: ViewModifier {
             .modifier(SizeFrameModifier())
             .modifier(RadioIndicatorBorderModifier(interactionState: interactionState, isOn: isOn, isError: isError))
             .modifier(RadioIndicatorForegroundModifier(interactionState: interactionState, isOn: isOn, isError: isError))
-            .modifier(RadioIndicatorBackgroundModifier(interactionState: interactionState, isOn: isOn, isError: isError))
+            .modifier(RadioIndicatorBackgroundModifier(interactionState: interactionState, isError: isError))
     }
 }
 
@@ -50,7 +50,6 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
@@ -64,21 +63,21 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeEnabled
         } else {
-            return isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+            isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
         }
     }
 
@@ -93,7 +92,7 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
     }
@@ -106,11 +105,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
     // MARK: - Properties
 
     let interactionState: InteractionState
-    let isOn: Bool
     let isError: Bool
-
-    @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
@@ -124,13 +119,13 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
     private var appliedColor: Color {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
@@ -149,7 +144,7 @@ private struct RadioIndicatorBackgroundModifier: ViewModifier {
     private var disabledColor: Color {
         guard !isError else {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed."
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return Color.clear
     }
@@ -166,7 +161,6 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
 
     // MARK: - Body
 
@@ -183,44 +177,44 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     private var appliedColor: MultipleColorSemanticTokens {
         switch interactionState {
         case .enabled:
-            return enabledColor
+            enabledColor
         case .hover:
-            return hoverColor
+            hoverColor
         case .pressed:
-            return pressedColor
+            pressedColor
         case .disabled, .readOnly:
-            return disabledColor
+            disabledColor
         }
     }
 
     private var enabledColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeEnabled
+            theme.colors.colorActionNegativeEnabled
         } else {
-            return isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+            isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
         }
     }
 
     private var hoverColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativeHover
+            theme.colors.colorActionNegativeHover
         } else {
-            return theme.colors.colorActionHover
+            theme.colors.colorActionHover
         }
     }
 
     private var pressedColor: MultipleColorSemanticTokens {
         if isError {
-            return theme.colors.colorActionNegativePressed
+            theme.colors.colorActionNegativePressed
         } else {
-            return theme.colors.colorActionPressed
+            theme.colors.colorActionPressed
         }
     }
 
     private var disabledColor: MultipleColorSemanticTokens {
         guard !isError else {
             OL.fatal("An OUDSRadio with a disabled state and an error situation has been detected, which is not allowed"
-                     + " Only non-error situation are allowed to have a disabled state.")
+                + " Only non-error situation are allowed to have a disabled state.")
         }
         return theme.colors.colorActionDisabled
     }
@@ -230,13 +224,13 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     private var appliedBorderWidth: CGFloat {
         switch interactionState {
         case .enabled:
-            return enabledWidth
+            enabledWidth
         case .hover:
-            return hoverWidth
+            hoverWidth
         case .pressed:
-            return pressedWidth
+            pressedWidth
         case .disabled, .readOnly:
-            return disabledWidth
+            disabledWidth
         }
     }
 

@@ -79,7 +79,7 @@ private struct LoadingIndicator: View {
                 .rotationEffect(.degrees(isAnimating ? 360 : 0))
                 .onAppear {
                     withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
-                        self.isAnimating.toggle()
+                        isAnimating.toggle()
                     }
                 }
         }

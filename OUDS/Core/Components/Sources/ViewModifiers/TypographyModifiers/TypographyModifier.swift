@@ -12,14 +12,11 @@
 //
 
 // Conditional import and use of UIKit for documentation generation (see #628 #626)
-
-import OUDS
-import OUDSFoundations
 import OUDSTokensRaw
 import OUDSTokensSemantic
 import SwiftUI
 #if canImport(UIKit)
-    import UIKit
+import UIKit
 #endif
 
 // swiftlint:disable line_length
@@ -61,7 +58,7 @@ struct TypographyModifier: ViewModifier {
         isCompactMode ? font.compact : font.regular
     }
 
-#if canImport(UIKit)
+    #if canImport(UIKit)
     /// According to the current `OUDSTheme` and if a custom font is applied or not, returns the suitable `Font`
     private var adaptiveTypography: Font {
         if let fontFamilyName = fontFamily {
@@ -108,7 +105,7 @@ struct TypographyModifier: ViewModifier {
                 .onChange(of: sizeCategory) { _ in }
         }
     }
-#else
+    #else
     /// Applies to the `Content` the *adaptive font* (i.e. *font family*, *font weight* and *font size*
     /// depending to the current `MultipleFontCompositeRawTokens`.
     func body(content: Content) -> some View {
@@ -126,6 +123,7 @@ struct TypographyModifier: ViewModifier {
                 .onChange(of: sizeCategory) { _ in }
         }
     }
-#endif
+    #endif
 }
+
 // swiftlint:enable line_length

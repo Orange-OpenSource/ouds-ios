@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSFoundations
-import OUDSTokensSemantic
 
 /// A class which wraps all **component  tokens of badge** for *badge* objects like `OUDSBadge`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -96,14 +95,15 @@ open class OrangeThemeBadgeComponentTokensProvider: AllBadgeComponentTokensProvi
     ///    - spaces: Provider for space semantic tokens, if nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 borders: AllBorderSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil) {
+                spaces: AllSpaceSemanticTokensProvider? = nil)
+    {
         OL.debug("Init of OrangeThemeBadgeComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
-    deinit { }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

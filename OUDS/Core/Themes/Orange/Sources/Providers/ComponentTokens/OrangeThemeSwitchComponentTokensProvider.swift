@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSFoundations
-import OUDSTokensSemantic
 
 /// A class which wraps all **component  tokens of switch** for *switch / toggle* objects like `OUDSSwitch`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -114,7 +113,8 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
                 borders: AllBorderSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
                 spaces: AllSpaceSemanticTokensProvider? = nil,
-                opacities: AllOpacitySemanticTokensProvider? = nil) {
+                opacities: AllOpacitySemanticTokensProvider? = nil)
+    {
         OL.debug("Init of OrangeThemeSwitchComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.borders = (borders ?? OrangeThemeBorderSemanticTokensProvider())
@@ -123,7 +123,7 @@ open class OrangeThemeSwitchComponentTokensProvider: AllSwitchComponentTokensPro
         self.opacities = (opacities ?? OrangeThemeOpacitySemanticTokensProvider())
     }
 
-    deinit { }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

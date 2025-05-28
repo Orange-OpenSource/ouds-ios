@@ -12,8 +12,6 @@
 //
 
 import Foundation
-import OUDSFoundations
-import OUDSTokensComponent
 import OUDSTokensSemantic
 
 /// This is a basic theme any theme must be a subclass off, or all themes must have as ancestor.
@@ -170,7 +168,8 @@ open class OUDSTheme: @unchecked Sendable {
                 skeleton: AllSkeletonComponentTokensProvider,
                 switch: AllSwitchComponentTokensProvider,
                 tag: AllTagComponentTokensProvider,
-                fontFamily: FontFamilySemanticToken? = nil) {
+                fontFamily: FontFamilySemanticToken? = nil)
+    {
 
         // Save semantic tokens providers
         self.borders = borders
@@ -197,12 +196,12 @@ open class OUDSTheme: @unchecked Sendable {
         self.radioButton = radioButton
         self.select = select
         self.skeleton = skeleton
-        self.`switch` = `switch`
+        self.switch = `switch`
         self.tag = tag
 
         // Load other configuration elements
         self.fontFamily = fontFamily
     }
 
-    deinit { }
+    deinit {}
 }

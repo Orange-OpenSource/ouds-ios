@@ -32,12 +32,6 @@ import SwiftUI
 /// - **selected**: the radio is filled with a filled circle, the user has made the action to select the radio
 /// - **unselected**: the radio is empty, does not contain anything, the user has made the action to unselect or did not select yet the radio
 ///
-/// ## Generic typed
-///
-/// The radio button can be associated to a specifc type for its *tag*.
-/// Indeed a radio button alone with this layout is not that much useful, and should be associated to a *tag* which will permit a ``OUDSRadioPicker``
-/// to provide the selected value for a group of radio buttons.
-/// 
 /// ## Particular cases
 ///
 /// An ``OUDSRadioItem`` can be related to an error situation, for example troubles for a formular.
@@ -118,39 +112,26 @@ import SwiftUI
 ///                   isInversed: layoutDirection == .rightToLeft)
 /// ```
 ///
-/// However if the ``OUDSRadioItem`` should be used inside a ``OUDSRadioPicker`` for example, it must contain a tag and an associated type.
-/// The tag will be the value returned by the picker, and must be an `Hashable`.
-///
-/// ```swift
-///     OUDSRadioItem<String>(isOn: $selection,
-///                           tag: "Choice_1",
-///                           label: "Virgin Holy Lava",
-///                           additionalLabel: "Very spicy",
-///                           helper: "No alcohol, only tasty flavors",
-///                           icon: Image(systemName: "flame")
-/// ```
-///
 /// ## Design documentation
 ///
 /// See [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/90c467-radio-button)
 ///
 /// - Since: 0.12.0
-public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
+public struct OUDSRadioItem: View {
 
     // MARK: - Properties
 
     // NOTE: Do not forget to keep updated OUDSRadioPickerData
     @Binding private var isOn: Bool
     private let layoutData: ControlItemLabel.LayoutData
-    private let tag: Tag?
     private let action: (() -> Void)?
 
     @Environment(\.isEnabled) private var isEnabled
 
-    // MARK: - Initializers
+    // MARK: - Initializer
 
     /// Creates a radio with label and optional helper text, icon, divider.
-    /// Supposed to be used outside a ``OUDSRadioPicker``.
+    /// Supposed to be integrated inside a ``OUDSRadioPicker``.
     ///
     /// ```swift
     ///     OUDSRadioItem(isOn: $selection,
@@ -176,7 +157,10 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
     ///   - hasDivider: If `true` a divider is added at the bottom of the view.
     ///   - action: An additional action to trigger when the radio button has been pressed
     ///
-    /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    /// **Remark 1: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
+    ///
+    /// **Remark 2: If `label` and `helper` strings are wording keys from strings catalog stored in `Bundle.main`, they are automatically localized. Else, prefer to
+    /// provide the localized string if key is stored in another bundle.**
     public init(isOn: Binding<Bool>,
                 label: String,
                 additionalLabel: String? = nil,
@@ -188,66 +172,9 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
                 isError: Bool = false,
                 isReadOnly: Bool = false,
                 hasDivider: Bool = false,
-                action: (() -> Void)? = nil) where Tag == Never? {
-        self.init(isOn: isOn,
-                  tag: nil,
-                  label: label,
-                  additionalLabel: additionalLabel,
-                  helper: helper,
-                  icon: icon,
-                  flipIcon: flipIcon,
-                  isOutlined: isOutlined,
-                  isReversed: isReversed,
-                  isError: isError,
-                  isReadOnly: isReadOnly,
-                  hasDivider: hasDivider,
-                  action: action)
-    }
-
-    /// Creates a radio with label and optional helper text, icon, divider.
-    /// Supposed to be integrated inside a ``OUDSRadioPicker``.
-    ///
-    /// ```swift
-    ///     OUDSRadioItem<String>(isOn: $selection,
-    ///                           tag: "Choice_1",
-    ///                           label: "Virgin Holy Lava",
-    ///                           additionalLabel: "Very spicy",
-    ///                           helper: "No alcohol, only tasty flavors",
-    ///                           icon: Image(systemName: "flame")
-    /// ```
-    ///
-    /// **The design system does not allow to have both an error situation and a read only mode for the component.**
-    ///
-    /// - Parameters:
-    ///   - isOn: A binding to a property that determines whether the toggle is on or off.
-    ///   - tag: A tag, i.e. a supposed to be unique identifier to discriminate this radio button from others in a group. Useless without ``OUDSRadioPicker``integration.
-    ///   - label: The main label text of the radio.
-    ///   - additionalLabel: An additional label text of the radio, default set to `nil`
-    ///   - helper: An additonal helper text, should not be empty, default set to `nil`
-    ///   - icon: An optional icon, default set to `nil`
-    ///   - flipIcon: Default set to `false`, set to true to reverse the image (i.e. flip vertically)
-    ///   - isOutlined: Flag to get an outlined radio, default set to `true`
-    ///   - isReversed: `True` of the radio indicator must be in trailing position,` false` otherwise. Default to `false`
-    ///   - isError: `True` if the look and feel of the component must reflect an error state, default set to `false`
-    ///   - isReadOnly: True if component is in read only, i.e. not really disabled but user cannot interact with it yet, default set to `false`
-    ///   - hasDivider: If `true` a divider is added at the bottom of the view.
-    ///   - action: An additional action to trigger when the radio button has been pressed
-    ///
-    /// **Remark: As divider and outline effect are not supposed to be displayed at the same time, the divider is not displayed if the outline effect is active.**
-    public init(isOn: Binding<Bool>,
-                tag: Tag,
-                label: String,
-                additionalLabel: String? = nil,
-                helper: String? = nil,
-                icon: Image? = nil,
-                flipIcon: Bool = false,
-                isOutlined: Bool = true,
-                isReversed: Bool = false,
-                isError: Bool = false,
-                isReadOnly: Bool = false,
-                hasDivider: Bool = false,
-                action: (() -> Void)? = nil) {
-        if isError && isReadOnly {
+                action: (() -> Void)? = nil)
+    {
+        if isError, isReadOnly {
             OL.fatal("It is forbidden by design to have an OUDSRadioItem in an error context and in read only mode")
         }
 
@@ -260,10 +187,10 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
         }
 
         _isOn = isOn
-        self.layoutData = .init(
-            label: label,
-            additionalLabel: additionalLabel,
-            helper: helper,
+        layoutData = .init(
+            label: label.localized(),
+            additionalLabel: additionalLabel?.localized(),
+            helper: helper?.localized(),
             icon: icon,
             flipIcon: flipIcon,
             isOutlined: isOutlined,
@@ -271,7 +198,6 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
             isReadOnly: isReadOnly,
             hasDivider: hasDivider,
             orientation: isReversed ? .reversed : .default)
-        self.tag = tag
         self.action = action
     }
 
@@ -281,13 +207,13 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
         ControlItem(indicatorType: .radioButton($isOn), layoutData: layoutData, action: action)
             .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
             .accessibilityLabel(a11yLabel)
-            .accessibilityValue(a11yValue.localized())
+            .accessibilityValue(a11yValue)
             .accessibilityHint(a11yHint)
     }
 
     /// The text to vocalize with *Voice Over* for the state of the indicator
     private var a11yValue: String {
-        _isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y"
+        (_isOn.wrappedValue ? "core_common_selected_a11y" : "core_common_unselected_a11y").localized()
     }
 
     /// Forges a string to vocalize with *Voice Over* describing the component state.
@@ -303,12 +229,12 @@ public struct OUDSRadioItem<Tag>: View where Tag: Hashable {
     /// Forges a string to vocalize with *Voice Over* explaining the hint for the user about the component.
     private var a11yHint: String {
         if layoutData.isReadOnly || !isEnabled {
-            return ""
+            ""
         } else {
             if _isOn.wrappedValue {
-                return "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
+                "core_radio_hint_selected_a11y" <- "core_common_unselected_a11y".localized()
             } else {
-                return "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
+                "core_radio_hint_unselected_a11y" <- "core_common_selected_a11y".localized()
             }
         }
     }

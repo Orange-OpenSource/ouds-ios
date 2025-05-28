@@ -2,16 +2,17 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import OUDS
+import OUDSFoundations
 import OUDSTokensComponent
 import OUDSTokensSemantic
 import SwiftUI
@@ -22,6 +23,7 @@ struct ButtonForegroundModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
+    @Environment(\.oudsSurfaceColor) private var surfaceColor
 
     // MARK: Stored Properties
 
@@ -31,26 +33,29 @@ struct ButtonForegroundModifier: ViewModifier {
     // MARK: Body
 
     func body(content: Content) -> some View {
-        content.foregroundStyle(appliedColor)
+        content.foregroundStyle(appliedColor())
     }
 
     // MARK: Private helpers
 
-    private var appliedColor: Color {
+    private func appliedColor() -> Color {
+        let colorToApply: MultipleColorSemanticTokens
         switch state {
         case .enabled:
-            enabledColor.color(for: colorScheme)
+            colorToApply = enabledColor
         case .hover:
-            hoverColor.color(for: colorScheme)
+            colorToApply = hoverColor
         case .pressed:
-            pressedColor.color(for: colorScheme)
+            colorToApply = pressedColor
         case .loading:
             // Hide the content because it is replaced by the loading indicator.
             // However the content is needed to get the size of the button in loading state.
-            Color.clear.opacity(0)
+            return Color.clear.opacity(0)
         case .disabled:
-            disabledColor.color(for: colorScheme)
+            colorToApply = disabledColor
         }
+        OUDSWCAG21Ratio.debugContrastRatio(colorToApply, surfaceColor)
+        return colorToApply.color(for: colorScheme)
     }
 
     private var enabledColor: MultipleColorSemanticTokens {

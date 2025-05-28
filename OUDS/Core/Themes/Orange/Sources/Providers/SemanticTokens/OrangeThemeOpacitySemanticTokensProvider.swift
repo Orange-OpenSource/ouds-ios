@@ -55,7 +55,7 @@ open class OrangeThemeOpacitySemanticTokensProvider: AllOpacitySemanticTokensPro
         OL.debug("Init of OrangeThemeOpacitySemanticTokensProvider")
     }
 
-    deinit{ }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

@@ -13,7 +13,6 @@
 
 import OUDS
 import OUDSFoundations
-import OUDSTokensSemantic
 
 /// A class which wraps all **component  tokens of select** for *select* objects like `OUDSSelect`.
 /// Contains also references to semantic tokens providers so as to be able to use them to define the component tokens.
@@ -100,14 +99,15 @@ open class OrangeThemeSelectComponentTokensProvider: AllSelectComponentTokensPro
     ///    - spaces: Provider for space semantic tokens. If nil, a default one will be used (``OrangeThemeSpaceSemanticTokensProvider``)
     public init(sizes: AllSizeSemanticTokensProvider? = nil,
                 colors: AllColorSemanticTokensProvider? = nil,
-                spaces: AllSpaceSemanticTokensProvider? = nil) {
+                spaces: AllSpaceSemanticTokensProvider? = nil)
+    {
         OL.debug("Init of OrangeThemeSelectComponentTokensProvider")
         self.sizes = (sizes ?? OrangeThemeSizeSemanticTokensProvider())
         self.colors = (colors ?? OrangeThemeColorSemanticTokensProvider())
         self.spaces = (spaces ?? OrangeThemeSpaceSemanticTokensProvider())
     }
 
-    deinit { }
+    deinit {}
 
     // ଘ( ･ω･)_/ﾟ･:*:･｡☆
     // Note: So as to help the integration of generated code produced by the tokenator

@@ -11,9 +11,6 @@
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDS
-import OUDSFoundations
-import OUDSTokensSemantic
 import SwiftUI
 
 /// The indicator of the radio.
@@ -25,8 +22,6 @@ struct RadioIndicator: View {
     let interactionState: InteractionState
     let isOn: Bool
     let isError: Bool
-
-    @Environment(\.theme) private var theme
 
     // MARK: - Body
 
@@ -54,32 +49,5 @@ struct RadioIndicator: View {
             .resizable()
             .scaledToFit()
             .accessibilityHidden(true)
-    }
-
-    private var appliedColor: MultipleColorSemanticTokens {
-        if isError {
-            switch interactionState {
-            case .enabled:
-                return theme.colors.colorActionNegativeEnabled
-            case .hover:
-                return theme.colors.colorActionNegativeHover
-            case .pressed:
-                return theme.colors.colorActionNegativePressed
-            case .disabled, .readOnly:
-                OL.fatal("An OUDSRadio with a disabled state / read only mode and an error situation has been detected, which is not allowed"
-                         + " Only non-error situation are allowed to have a disabled state / read only mode.")
-            }
-        } else {
-            switch interactionState {
-            case .enabled:
-                return theme.colors.colorActionSelected
-            case .hover:
-                return theme.colors.colorActionHover
-            case .pressed:
-                return theme.colors.colorActionPressed
-            case .disabled, .readOnly:
-                return theme.colors.colorActionDisabled
-            }
-        }
     }
 }

@@ -2,13 +2,13 @@
 // Software Name: OUDS iOS
 // SPDX-FileCopyrightText: Copyright (c) Orange SA
 // SPDX-License-Identifier: MIT
-// 
+//
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
-// Software description: A SwiftUI components library with code examples for Orange Unified Design System 
+// Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
 import SwiftUI
@@ -20,25 +20,25 @@ extension Font.Weight: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .ultraLight:
-            return "Ultra-Light"
+            "Ultra-Light"
         case .thin:
-            return "Thin"
+            "Thin"
         case .light:
-            return "Light"
+            "Light"
         case .regular:
-            return "Regular"
+            "Regular"
         case .medium:
-            return "Medium"
+            "Medium"
         case .semibold:
-            return "Semi-Bold"
+            "Semi-Bold"
         case .bold:
-            return "Bold"
+            "Bold"
         case .heavy:
-            return "Heavy"
+            "Heavy"
         case .black:
-            return "Black"
+            "Black"
         default:
-            return ""
+            ""
         }
     }
 }

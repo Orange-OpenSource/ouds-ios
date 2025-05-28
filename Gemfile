@@ -16,11 +16,6 @@ source "https://rubygems.org"
 # Troubleshooting
 # ---------------
 
-# Embeded in net-http RubyGem without defined version
-# Solves CVE-2025-27221 (https://github.com/Orange-OpenSource/ouds-ios/security/dependabot/6)
-# Should be removed when net-http > 0.6.0 and CVE fixed
-gem 'uri', '1.0.3'
-
 # To fix
 # "warning: abbrev was loaded from the standard library, but is not part of the default gems starting from Ruby 3.4.0.
 # You can add abbrev to your Gemfile or gemspec to silence this warning.""
@@ -29,13 +24,7 @@ gem 'abbrev', '0.1.2'
 # Really needed gems
 # ------------------
 
-gem 'fastlane', '2.227.1'
-gem 'fastlane-plugin-changelog', '0.16.0'
-gem 'fastlane-plugin-mattermost', '1.3.2'
-gem 'cocoapods', '1.16.2'
-gem 'json', '2.11.3'
-gem 'net-http', '0.6.0'
-gem 'xcode-install', '2.8.1'
+gem 'fastlane', '2.227.2'
 
 # Magic
 

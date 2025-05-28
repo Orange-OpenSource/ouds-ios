@@ -6,13 +6,11 @@
 // This software is distributed under the MIT license,
 // the text of which is available at https://opensource.org/license/MIT/
 // or see the "LICENSE" file for more details.
-// 
+//
 // Authors: See CONTRIBUTORS.txt
 // Software description: A SwiftUI components library with code examples for Orange Unified Design System
 //
 
-import OUDSFoundations
-import OUDSTokensRaw
 import SwiftUI
 
 /// Kind of semantic tokens which will wrap a combination of ``ColorModeSemanticToken`` depending to *color scheme* (i.e. light mode or dark mode).
@@ -70,8 +68,8 @@ public final class MultipleColorModeSemanticTokens: NSObject, Sendable {
     ///    - value: The `ColorModeSemanticToken` to apply wether the device is in *light* and *dark* mode
     public init(_ name: String, _ value: ColorModeSemanticToken) {
         self.name = name
-        self.light = value
-        self.dark = value
+        light = value
+        dark = value
     }
 
     /// Initializes a new color mode multiple semantic token with two values
@@ -85,13 +83,13 @@ public final class MultipleColorModeSemanticTokens: NSObject, Sendable {
         self.dark = dark
     }
 
-    deinit { }
+    deinit {}
 
     /// Returns `true` if `self` and `object` has the same `name` and with `object`
     /// as a `MultipleColorModeSemanticTokens`. Otherwise returns `false`.
     /// `isEqual` override is preferred for `NSObject`.
     override public func isEqual(_ object: Any?) -> Bool {
         guard let other = object as? MultipleColorModeSemanticTokens else { return false }
-        return self.name == other.name
+        return name == other.name
     }
 }

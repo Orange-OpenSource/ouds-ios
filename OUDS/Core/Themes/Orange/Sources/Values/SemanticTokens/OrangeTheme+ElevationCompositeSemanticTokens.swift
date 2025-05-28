@@ -40,7 +40,8 @@ extension OrangeThemeElevationSemanticTokensProvider: ElevationCompositeSemantic
     @objc open var elevationOverlayEmphasized: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_5_300) }
 
     @objc open var elevationStickyDefault: ElevationCompositeSemanticToken {
-        ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
+        ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300)
+    }
 
     @objc open var elevationStickyEmphasized: ElevationCompositeSemanticToken { ElevationCompositeSemanticToken(ElevationRawTokens.elevationBottom_3_300) }
 

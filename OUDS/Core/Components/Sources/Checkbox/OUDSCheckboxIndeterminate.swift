@@ -89,7 +89,8 @@ public struct OUDSCheckboxIndeterminate: View {
     ///    - isError: True if the look and feel of the component must reflect an error state, default set to `false`
     public init(selection: Binding<OUDSCheckboxIndicatorState>,
                 accessibilityLabel: String,
-                isError: Bool = false) {
+                isError: Bool = false)
+    {
         if accessibilityLabel.isEmpty {
             OL.warning("The OUDSCheckbox should not have an empty accessibility label, think about your disabled users!")
         }

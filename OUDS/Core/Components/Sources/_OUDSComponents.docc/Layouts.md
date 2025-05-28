@@ -44,6 +44,43 @@ According to the color, the `OUDSColoredSurface` component adds in SwiftUI envir
     .oudsColoredSurface(theme.colorModes.modeOnStatusPositiveEmphasized)
 ```
 
+##### Debuging contrast ratios
+
+Some countries set up new laws so as to force companies to have a better accessibility of their digital services.
+This is for example the case for France with the [Référentiel Général d'Amélioration de l'Accessibilité](https://accessibilite.numerique.gouv.fr/), also named "RGAA".
+
+The WCAG specifications, for AA level, defines a contrast ratio of 4.5:1 for textual elements (i.e. texts), and 3:1 for non-textual elements (i.e. link's chevron).
+However it is highly recommended for mobile devices to reach AAA level because of the screen sizes and luminosity issues, i.e. 7:1 for texts and 4.5:1 for non-textual elements.
+
+Some components like ``OUDSButton`` or ``OUDSLink`` can be used on ``OUDSColoredSurface`` ; thus in that case we can know the surface color for a given component on it, and compute the contrast ratio, and in the end display or not warnings.
+
+To do that, some steps must be followed in your component implementation:
+- Rise the flag to allow debugging (e.g. i #DEBUG mode)
+- Get the environement variable defined by the colored surface containing the applied color
+- In the component implementation, add a line of code comparing the color to test and that surface
+- Then keep an eye on your logs ; warnings will be added there if WCAG 2.1 3:1, 4.5:1 or 7:1 ratios are not reached, depending to the methods you call
+ 
+```swift
+// Rise the flag
+#if DEBUG
+OUDSWCAG21Ratios.oudsDebugWCAG21Colors = true
+#endif
+
+// Supposing we are in your component View / ViewModifer struct
+
+// Get the applied surface color
+@Environment(\.oudsSurfaceColor) var surfaceColor
+
+// In the function defining the color to apply, add the line below
+// where colorTokenToApply is the color to apply from a theme:
+
+// Non-textual components, in AA
+OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .nonTextual)
+
+// Textual components and AAA to check
+OUDSWCAG21Ratios.debugContrastRatio(colorToApply, surfaceColor, .AAA)
+```
+
 ### Divider
 
 #### How it works

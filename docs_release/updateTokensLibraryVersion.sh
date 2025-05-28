@@ -21,8 +21,8 @@ TEMPLATE_TO_LOOK_FOR="Tokens version: "
 
 FILES_TO_PROCESS=(
 
-     # For Design Toolbox app
-    "../DesignToolbox/DesignToolbox/Utils/Bundle+extension.swift"
+    # For README
+    "../README.md"
 
     # For generated documentation
     "../OUDS/Core/OUDS/Sources/_OUDS.docc/Tokens.md"
