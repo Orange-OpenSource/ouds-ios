@@ -54,7 +54,7 @@ struct ControlItemLabel: View {
     // MARK: - Layout Items
 
     private func texts() -> some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: theme.spaces.spaceFixedNone) {
             Text(layoutData.label)
                 .typeLabelDefaultLarge(theme)
                 .multilineTextAlignment(.leading)
