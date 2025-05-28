@@ -14,14 +14,16 @@
 
 Looking to contribute something OUDS iOS? **Here's how you can help.**
 
-Please take a moment to review this document in order to make the contribution process easy for everyone involved.
+> [!TIP]
+> Please take a moment to review this document in order to make the contribution process easy for everyone involved.
 
-Following these guidelines helps to communicate that you respect the time of the developers managing and developing this Open Source project.
-In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
+> [!IMPORTANT]
+> Following these guidelines helps to communicate that you respect the time of the developers managing and developing this Open Source project.
+> In return, they should reciprocate that respect in addressing your issue or assessing patches and features.
 
-You should also have a look on the wiki if you are looking for information about how the project is managed, the releases and tests done, and how to do some actions.
-[The wiki define the way to work anyone must agree](https://github.com/Orange-OpenSource/ouds-ios/wiki).
-[The Code of Conduct](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
+You should also have a look on the wiki if you are looking for information about how the project is managed, the releases and tests done, and how to do some actions:
+- [The wiki define the way to work anyone must agree](https://github.com/Orange-OpenSource/ouds-ios/wiki).
+- [The Code of Conduct](https://github.com/Orange-OpenSource/ouds-ios/blob/develop/.github/CODE_OF_CONDUCT.md) defines how we should interact together.
 
 ## Using the Issue Tracker
 
@@ -97,6 +99,9 @@ Good pull requests (patches, improvements, new features) are a fantastic help. T
 Please adhere to the [coding guidelines](#code-guidelines) used throughout the project (indentation, accurate comments, etc.) and any other requirements (such as test coverage).
 
 Adhering to the following process is the best way to get your work included in the project:
+
+> [!TIP]
+> Of course you can use GUI tools if your are not used to CLI
 
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the project, clone your fork, and configure the remotes:
 
@@ -211,7 +216,7 @@ Signed-off-by: Author firstname and lastname <first author email>
 
 For example, for issue n°123 and its pull request n°456, tested by Anton, Maxime and Benoit, reviewed by Ludovic, authored by Tayeb and Pierre-Yves, and acked by Julien:
 ```text
-refactor: update some things colors and design of the demo app (#123) (#4562)
+refactor: update some things colors and design of the demo app (#123) (#456)
 
 Some things have been refactored to make incredible things.
 
@@ -229,7 +234,7 @@ Signed-off-by: Pierre-Yves Lapersonne <pierreyves.lapersonne@orange.com>
 Finaly, if you want to note somewhere you used *generative AI* tool, you can add the field "Assisted-by" in your commit with the model in use and in parenthsies some commercial name.
 
 ```text
-feat: add thousands of tokens (#666))
+feat: add thousands of tokens (#666)
 
 Add thousands of tokens and hundreds of tests.
 
