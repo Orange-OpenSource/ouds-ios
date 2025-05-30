@@ -28,6 +28,8 @@
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml" title="SwiftLint status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/swiftlint.yml/badge.svg" alt="SwiftLint status"></a>
 &nbsp;
 <a href="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/pages/pages-build-deployment/badge.svg" title="GitHub Pages deployment status"><img src="https://github.com/Orange-OpenSource/ouds-ios/actions/workflows/pages/pages-build-deployment/badge.svg" alt="GitHub Pages deployment status"></a>
+&nbsp;
+<a href="https://www.bestpractices.dev/projects/10674" title="OpenSSF Best Practices"><img src="https://www.bestpractices.dev/projects/10674/badge" alt="OpenSSF Best Practices"></a>
 </p>
 
 ## Status
