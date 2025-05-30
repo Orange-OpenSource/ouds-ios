@@ -24,17 +24,17 @@ import OUDSTokensSemantic
 extension OrangeThemeSwitchComponentTokensProvider: SwitchComponentTokens {
     /// Has for value token borders.borderRadiusPill
     @objc open var switchBorderRadius: BorderRadiusSemanticToken { borders.borderRadiusPill }
-    /// Has for value  colors.colorContentDefault
+    /// Has for value  colors.colorContentDefault 
     @objc open var switchColorCheck: MultipleColorSemanticTokens { colors.colorContentDefault }
-    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhiteLight, dark: colors.colorRepositoryNeutralEmphasizedHighestDark)
+    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhiteLight, dark: colors.colorRepositoryNeutralEmphasizedHighestDark) 
     @objc open var switchColorCursor: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryNeutralMutedWhiteLight, dark: colors.colorRepositoryNeutralEmphasizedHighestDark) }
-    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefaultLight, dark: colors.colorRepositoryPositiveHighDark)
+    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefaultLight, dark: colors.colorRepositoryPositiveHighDark) 
     @objc open var switchColorTrackSelected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveDefaultLight, dark: colors.colorRepositoryPositiveHighDark) }
-    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHighLight, dark: colors.colorRepositoryPositiveLowDark)
+    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHighLight, dark: colors.colorRepositoryPositiveLowDark) 
     @objc open var switchColorTrackSelectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryPositiveHighLight, dark: colors.colorRepositoryPositiveLowDark) }
-    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHighLight, dark: colors.colorRepositoryOpacityWhiteHighDark)
+    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHighLight, dark: colors.colorRepositoryOpacityWhiteHighDark) 
     @objc open var switchColorTrackUnselected: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackMediumHighLight, dark: colors.colorRepositoryOpacityWhiteHighDark) }
-    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHighLight, dark: colors.colorRepositoryOpacityWhiteHigherDark)
+    /// Has for value  MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHighLight, dark: colors.colorRepositoryOpacityWhiteHigherDark) 
     @objc open var switchColorTrackUnselectedInteraction: MultipleColorSemanticTokens { MultipleColorSemanticTokens(light: colors.colorRepositoryOpacityBlackHighLight, dark: colors.colorRepositoryOpacityWhiteHigherDark) }
     /// Has for value token opacities.opacityOpaque
     @objc open var switchOpacityCheck: OpacitySemanticToken { opacities.opacityOpaque }

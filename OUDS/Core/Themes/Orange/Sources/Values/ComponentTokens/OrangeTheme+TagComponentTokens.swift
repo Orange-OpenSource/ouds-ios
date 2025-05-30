@@ -26,33 +26,33 @@ extension OrangeThemeTagComponentTokensProvider: TagComponentTokens {
     @objc open var tagBorderWidthDefault: BorderWidthSemanticToken { borders.borderWidthDefault }
     /// Has for value token borders.borderWidthMedium
     @objc open var tagBorderWidthDefaultInteraction: BorderWidthSemanticToken { borders.borderWidthMedium }
-    /// Has for value  colors.colorActionSupportEnabled
+    /// Has for value  colors.colorActionSupportEnabled 
     @objc open var tagColorBgEnabled: MultipleColorSemanticTokens { colors.colorActionSupportEnabled }
-    /// Has for value  colors.colorActionSupportFocus
+    /// Has for value  colors.colorActionSupportFocus 
     @objc open var tagColorBgFocus: MultipleColorSemanticTokens { colors.colorActionSupportFocus }
-    /// Has for value  colors.colorActionSupportHover
+    /// Has for value  colors.colorActionSupportHover 
     @objc open var tagColorBgHover: MultipleColorSemanticTokens { colors.colorActionSupportHover }
-    /// Has for value  colors.colorActionSupportPressed
+    /// Has for value  colors.colorActionSupportPressed 
     @objc open var tagColorBgPressed: MultipleColorSemanticTokens { colors.colorActionSupportPressed }
-    /// Has for value  colors.colorActionDisabled
+    /// Has for value  colors.colorActionDisabled 
     @objc open var tagColorBorderDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
-    /// Has for value  colors.colorBorderDefault
+    /// Has for value  colors.colorBorderDefault 
     @objc open var tagColorBorderEnabled: MultipleColorSemanticTokens { colors.colorBorderDefault }
-    /// Has for value  colors.colorActionFocus
+    /// Has for value  colors.colorActionFocus 
     @objc open var tagColorBorderFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value  colors.colorActionHover
+    /// Has for value  colors.colorActionHover 
     @objc open var tagColorBorderHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value  colors.colorActionPressed
+    /// Has for value  colors.colorActionPressed 
     @objc open var tagColorBorderPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
-    /// Has for value  colors.colorActionDisabled
+    /// Has for value  colors.colorActionDisabled 
     @objc open var tagColorContentDisabled: MultipleColorSemanticTokens { colors.colorActionDisabled }
-    /// Has for value  colors.colorActionEnabled
+    /// Has for value  colors.colorActionEnabled 
     @objc open var tagColorContentEnabled: MultipleColorSemanticTokens { colors.colorActionEnabled }
-    /// Has for value  colors.colorActionFocus
+    /// Has for value  colors.colorActionFocus 
     @objc open var tagColorContentFocus: MultipleColorSemanticTokens { colors.colorActionFocus }
-    /// Has for value  colors.colorActionHover
+    /// Has for value  colors.colorActionHover 
     @objc open var tagColorContentHover: MultipleColorSemanticTokens { colors.colorActionHover }
-    /// Has for value  colors.colorActionPressed
+    /// Has for value  colors.colorActionPressed 
     @objc open var tagColorContentPressed: MultipleColorSemanticTokens { colors.colorActionPressed }
     /// Has for value token sizes.sizeIconWithLabelMediumSizeSm
     @objc open var tagSizeIconMedium: SizeSemanticToken { sizes.sizeIconWithLabelMediumSizeSm }
