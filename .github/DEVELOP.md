@@ -13,6 +13,7 @@
 - [Linter](#linter)
 - [Formater](#formater)
 - [Dead code](#dead-code)
+- [Software Bill of Materials](#software-bill-of-materials)
 - [CI/CD](#cicd)
 
 ## Technical preconditions
@@ -65,6 +66,13 @@ brew install xcodesorg/made/xcodes
 
 # For git-cliff (at least 2.8.0)
 brew install git-cliff
+
+# For Syft (at least 1.26.1)
+brew install syft
+
+# For Grype (at least 0.92.2)
+brew tap anchore/grype
+brew install grype
 ```
 
 Ensure you have the suitable _Ruby_ version. We recommend the use of [rbenv](https://github.com/rbenv/rbenv) to load the suitable version of ruby.
@@ -343,6 +351,16 @@ brew install peripheryapp/periphery/periphery
 And run:
 ```shell
 bundle exec fastlane check_dead_code
+```
+
+## Software Bill of Materials
+
+For software quality reasons, intellectual property compliance, users trust and legal oblgitations with Cyber Resilience Act (CRA) and NIS2, it it interesing or mandatory to keep updated a Software Nill Of Materials (SBOM). And with such file listing dependencies in several levels we are able to make scans of them and check if there are known vulnerabilities.
+To do these operations, we use [Syft](https://github.com/anchore/syft) to generate a SBOM in SPDX JSON format, which will processed by [Grype](https://github.com/anchore/grype) to check if there are known vulnerabilities.
+
+These operations, triggered in CLI, are wrapped in a Fastlane command:
+```shell
+bundle exec fastlane update_sbom
 ```
 
 ## CI/CD

@@ -21,7 +21,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN PERIPHERY FOR DEAD CODE ANALYSIS
     # ------------------------------------------------------------
-    desc "RUN PERIPHERY FOR DEAD CODE ANALYSIS"
+    desc "Run Periphery to look dor dead code in the code base. Avoid strict mode because some false positive remains and command must be fine-tuned."
     lane :check_dead_code do
         puts "👉 Check dead code with Periphery"
 
@@ -32,7 +32,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN SWIFT FORMAT TO FORMAT SOURCES
     # ------------------------------------------------------------
-    desc "RUN SWIFT FORMAT TO FORMAT SOURCES"
+    desc "Run SwiftFormat to format Swift source files according to the local configuration."
     lane :format do
         puts "👉 Run Swift Format to format sources"
 
@@ -43,7 +43,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN SWIFT LINT TO CHECK SMELLS
     # ------------------------------------------------------------
-    desc "RUN SWIFT LINT TO CHECK SMELLS"
+    desc "Run SwiftLint in strict mode to detect code smells"
     lane :lint do
         puts "👉 Run Swift Lint for smells"
 
@@ -54,7 +54,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN GITLEAKS FOR SECET LEAKS SCAN
     # ------------------------------------------------------------
-    desc "RUN GITLEAKS FOR SECET LEAKS SCAN"
+    desc "Run GitLeaks to look for leaks of secrets in project and Git history"
     lane :check_leaks do
         puts "👉 Run Gitleaks for leaks scan"
 
@@ -63,9 +63,31 @@ platform :ios do
     end
 
     # ------------------------------------------------------------
+    # RUN SYFT AND GRYPE TO BUILD AND ANALYSE SBOM
+    # ------------------------------------------------------------
+    desc "Generates a SBOM (Software Bill Of Materials) in SPDX JSON format with Syft and analyse it with Grype to as to check for vulnerabilities"
+    lane :update_sbom do
+        puts "👉 Run Syft to generate the SBOM"
+        
+        # Or also cyclonedx-json
+        sbomFormat = "spdx-json"
+
+        # In { negligible, low, medium, high, critical }
+        vulnerabilitiesTolerance = "negligible"
+
+        Dir.chdir ".." do
+            # Run the command to generate SBOM
+            sh "syft . -o #{sbomFormat} > SBOM.json"
+
+            # Process the SBOM
+            sh "grype sbom:./SBOM.json --fail-on #{vulnerabilitiesTolerance}"
+        end
+    end
+
+    # ------------------------------------------------------------
     # BUILD
     # ------------------------------------------------------------
-    desc "BUILD THE SWIFT PACKAGE"
+    desc "Build the Swift Package to be sure the package is compilable"
     lane :build do
         puts "👉 Build Swift Package"
 
@@ -75,7 +97,7 @@ platform :ios do
     # ------------------------------------------------------------
     # RUN UNIT TESTS
     # ------------------------------------------------------------
-    desc "RUN UNIT TESTS OF SWIFT PAKCAGE"
+    desc "Run the unit tests embeded in the Swift Package project"
     lane :test_unit do
         puts "👉 Run unit tests of Swift Package"
 
