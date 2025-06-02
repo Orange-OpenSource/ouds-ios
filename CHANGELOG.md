@@ -313,11 +313,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Adjust typography modifier to be coform with line height token by adding line spacing and paddings (Orange-OpenSource/ouds-ios#594)
 - Set border as inner stroke (#680)
 - Bad wording key for accessibility label of switch item (#642)
 - Missing accessibility hint for switch (#642)
 - Missing token `colorBorderMuted` (#643)
-- Adjust typography modifier to be coform with line height token by adding line spacing and paddings (Orange-OpenSource/ouds-ios#594)
 - Set border as inner stroke (Orange-OpenSource/ouds-ios#680)
 - Bad wording key for accessibility label of switch item (Orange-OpenSource/ouds-ios#642)
 - Missing accessibility hint for switch (Orange-OpenSource/ouds-ios#642)
