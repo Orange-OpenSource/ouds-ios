@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/Orange-OpenSource/ouds-ios/compare/0.15.0...develop)
 
+### Fixed
+
+- Adjust typography modifier to be coform with line height token by adding line spacing and paddings (Orange-OpenSource/ouds-ios#594)
+
 ## [0.15.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.14.0...0.15.0) - 2025-05-28
 
 ### Added
@@ -20,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Adjust typography modifier to be coform with line height token by adding line spacing and paddings (Orange-OpenSource/ouds-ios#594)
 - Set border as inner stroke (#680)
 - Bad wording key for accessibility label of switch item (#642)
 - Missing accessibility hint for switch (#642)
