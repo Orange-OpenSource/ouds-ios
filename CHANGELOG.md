@@ -299,6 +299,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change color of indicator and borders in high contrast mode (light scheme) for radio and checkbox components (Orange-OpenSource/ouds-ios#645)
 - Change color of button loader in high contrast light mode (Orange-OpenSource/ouds-ios#437)
 
+### Fixed
+
+- Adjust typography modifier to be coform with line height token by adding line spacing and paddings (Orange-OpenSource/ouds-ios#594)
+
 ## [0.15.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.14.0...0.15.0) - 2025-05-28
 
 ### Added
@@ -313,7 +317,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Adjust typography modifier to be coform with line height token by adding line spacing and paddings (Orange-OpenSource/ouds-ios#594)
 - Set border as inner stroke (#680)
 - Bad wording key for accessibility label of switch item (#642)
 - Missing accessibility hint for switch (#642)
