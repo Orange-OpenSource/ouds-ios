@@ -27,7 +27,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/73c701-components)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/629e1b-divider)
 ///
 /// - Since: 0.14.0
 public struct OUDSVerticalDivider: View { // TODO: #511 - Update documentation hyperlink
