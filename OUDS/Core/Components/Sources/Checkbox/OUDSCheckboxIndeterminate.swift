@@ -61,9 +61,13 @@ import SwiftUI
 ///     OUDSCheckboxIndeterminate(selection: $selection, accessibilityLabel: "The cake is a lie"), isError: true).disabled(true) // fatal error
 /// ```
 ///
+/// ## Suggestions
+///
+/// According to the [documentation](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox/t/14bf4bd854), the checkbox by default must be used in unselected state.
+///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/23f1c1-checkbox)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/09d860-checkbox)
 ///
 /// - Since: 0.12.0
 public struct OUDSCheckboxIndeterminate: View {
