@@ -38,7 +38,7 @@ import SwiftUI
 ///
 /// ## Design documentation
 ///
-/// [unified-design-system.orange.com](https://unified-design-system.orange.com)
+/// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/18acc0-switch)
 ///
 /// - Since: 0.14.0
 public struct OUDSSwitch: View {
