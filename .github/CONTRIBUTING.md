@@ -43,7 +43,8 @@ You may need to refer to the [Q&A section](https://github.com/Orange-OpenSource/
 
 If you found a discussion which interests you or fills your needs, feel free to use [GitHub's "reactions" feature](https://blog.github.com/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/) and bring useful comments. We reserve the right to delete comments which violate this rule.
 
-Keep in mind internal or sensitive discussions must be in internal tools, not public ones.
+> [!IMPORTANT]
+> Keep in mind internal or sensitive discussions must be in internal tools, not public ones.
 
 ## Issues and Labels
 
@@ -52,7 +53,8 @@ Our bug tracker utilizes several labels to help organize and identify issues. He
 - `feature` - Issues asking for a new feature to be added, or an existing one to be extended or modified. New features require a minor version bump (e.g., `v1.0.0` to `v1.1.0`) or a major version bump if public API broken (e.g., `v1.0.0` to `v2.0.0`)
 - `help wanted` - Issues we need or would love help from the community to resolve.
 
-For a complete look at our labels, see the [project labels page](https://github.com/Orange-OpenSource/ouds-ios/labels).
+> [!TIP]
+> For a complete look at our labels, see the [project labels page](https://github.com/Orange-OpenSource/ouds-ios/labels).
 
 ## Bug Reports
 
@@ -156,6 +158,10 @@ Format your code before committing to ensure your changes follow our coding stan
 Linters and formatters are configured for the project.
 Keep documentation and tests updated.
 Respect the architecture of the project, and [refer to the wiki if needed](https://github.com/Orange-OpenSource/ouds-ios/wiki/30-%E2%80%90-About-the-architecture).
+
+> [!IMPORTANT]
+> About naming of the components and their parameters, use the parameters and components grammar as defined in Figma specifications.
+> Do not use your own wordings for such things as consitency must be kept between Figma specifications and all products of OUDS.
 
 ## Commits Style
 
@@ -286,4 +292,5 @@ Pull requests will be merged if no conditions / prerequisites / checks are red (
 
 ## License
 
-By contributing your code, you agree to license your contribution under the [MIT License](LICENSE).
+> [!IMPORTANT]
+> By contributing your code, you agree to license your contribution under the [MIT License](LICENSE).
