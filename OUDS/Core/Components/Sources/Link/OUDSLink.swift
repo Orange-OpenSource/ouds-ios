@@ -48,6 +48,7 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/31c33b-link)
 ///
+/// - Version: 2.0.0
 /// - Since: 0.11.0
 public struct OUDSLink: View {
 

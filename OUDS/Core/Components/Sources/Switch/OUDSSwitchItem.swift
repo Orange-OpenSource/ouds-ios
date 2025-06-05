@@ -104,6 +104,7 @@ import SwiftUI
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/18acc0-switch)
 ///
+/// - Version: 1.0.0
 /// - Since: 0.14.0
 public struct OUDSSwitchItem: View {
 
