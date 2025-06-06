@@ -11,8 +11,31 @@
 # Software description: A SwiftUI components library with code examples for Orange Design System
 #
 
+# About runners: https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+# Runners details: https://github.com/actions/runner-images/tree/main/images/macos
+
 name: gitleaks
-on: [pull_request, push, workflow_dispatch]
+
+# Rules for this GitHub Actions workflow
+# - workflow can be triggered manually if needed (workflow_dispatch)
+# - is for all branches except main as secrets leaks will be found and fixed earlier in the flow in previous branches
+# - automatically triggered when pull request is opened and has new commits (synchronize)
+# But beware, triggered on commit push, so do not be a push-machine-gun!
+
+on:
+  push:
+    branches-ignore:
+      - main      
+
+  workflow_dispatch: 
+
+  pull_request:
+    types:
+      - opened
+      - synchronize 
+    branches-ignore:
+      - main      
+
 jobs:
   scan:
     name: gitleaks

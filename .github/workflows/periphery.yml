@@ -16,23 +16,26 @@
 
 name: Check dead code
 
+# Rules for this GitHub Actions workflow
+# - workflow can be triggered manually if needed (workflow_dispatch)
+# - use "almost" frozen version of macOS
+# - is for all branches except main as dead code will be found earlier in the flow and fixed at least in develop branch
+# - automatically triggered when pull request is opened and has new commits (synchronize)
+# But beware, triggered on commit push, so do not be a push-machine-gun!
+
 on:
-  # For protected, most important and all branches
   push:
-    branches:
-      - main
-      - develop
-      - '*'
+    branches-ignore:
+      - main       
 
-  # To trigger manually
-  workflow_dispatch:
+  workflow_dispatch: 
 
-  # Pull request events
   pull_request:
     types:
       - opened
-      - synchronize
-      - reopened
+      - synchronize    
+    branches-ignore:
+      - main       
 
 jobs:
   deadcode:
