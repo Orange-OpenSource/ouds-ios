@@ -18,6 +18,7 @@ import SwiftUI
 
 /// The indicator of the checkbox.
 /// Its content depends to the ``InteractionState`` and the ``OUDSCheckboxIndicatorState`` also.
+/// This `View` manages also the high contrast mode in light color scheme so as to use a dedicated color for indicator.
 struct CheckboxIndicator: View {
 
     // MARK: - Properties
@@ -27,6 +28,8 @@ struct CheckboxIndicator: View {
     let isError: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: - Body
 
@@ -59,6 +62,7 @@ struct CheckboxIndicator: View {
     }
 
     private var appliedColor: MultipleColorSemanticTokens {
+        // Error case
         if isError {
             switch interactionState {
             case .enabled:
@@ -71,10 +75,16 @@ struct CheckboxIndicator: View {
                 OL.fatal("An OUDS Checkbox with a disabled state / read only mode and an error situation has been detected, which is not allowed"
                     + " Only non-error situation are allowed to have a disabled state / read only mode.")
             }
+
+            // Not error case
         } else {
             switch interactionState {
             case .enabled:
-                theme.colors.colorActionSelected
+                if colorSchemeContrast == .increased, colorScheme == .light {
+                    theme.colors.colorContentDefault
+                } else {
+                    theme.colors.colorActionSelected
+                }
             case .hover:
                 theme.colors.colorActionHover
             case .pressed:
