@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Gem `fastlane` gem from v2.227.2 to v2.228.0
 - Swift package `SwifFormat` from v0.56.4 to v0.57.2
 - Color mode semantic tokens (tokens library v1.1.0)
 - Color multiple semantic tokens (tokens library v1.1.0)

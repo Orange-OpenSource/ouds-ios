@@ -44,6 +44,9 @@ bundle install
 # Update your references
 brew update
 
+# Fastlane (at elast 2.228.0)
+brew install fastlane
+
 # For Periphery (https://github.com/peripheryapp/periphery) for dead code hunt (at least 3.1.0)
 # If you used Periphery V2 before, follow their migration guide: https://github.com/peripheryapp/periphery/wiki/3.0-Migration-Guide
 brew install periphery
