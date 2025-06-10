@@ -21,10 +21,12 @@ import SwiftUI
 /// Used to add a progress indicator instead of content (Text, Icon)
 /// As the button must keep the size of the content, the indicator is
 /// added as overlay on top, and the content is hidden applying an opacity.
+/// If the device has the high contrast mode enabled, changes the loader color.
 struct ButtonLoadingContentModifier: ViewModifier {
 
     @Environment(\.theme) private var theme
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
     @Environment(\.oudsUseMonochrome) private var useMonochrome
 
     // MARK: Stored Properties
@@ -46,7 +48,11 @@ struct ButtonLoadingContentModifier: ViewModifier {
     private var colorToken: MultipleColorSemanticTokens {
         switch hierarchy {
         case .default:
-            useMonochrome ? theme.button.buttonColorContentDefaultLoadingMono : theme.button.buttonColorContentDefaultLoading
+            if colorSchemeContrast == .increased, colorScheme == .light {
+                theme.colors.colorContentDefault
+            } else {
+                useMonochrome ? theme.button.buttonColorContentDefaultLoadingMono : theme.button.buttonColorContentDefaultLoading
+            }
         case .strong:
             useMonochrome ? theme.button.buttonColorContentStrongLoadingMono : theme.colors.colorContentOnActionLoading
         case .minimal:
