@@ -73,7 +73,7 @@ struct ControlItemBordersModifier: ViewModifier {
             isOn ? theme.colors.colorActionNegativeEnabled : nil
         } else {
             if colorSchemeContrast == .increased, colorScheme == .light {
-                theme.colors.colorContentDefault
+                isOn ? theme.colors.colorContentDefault : nil
             } else {
                 isOn ? theme.colors.colorActionSelected : nil
             }
