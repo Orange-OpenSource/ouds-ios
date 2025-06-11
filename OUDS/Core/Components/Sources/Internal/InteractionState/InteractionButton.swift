@@ -14,7 +14,7 @@
 import SwiftUI
 
 /// The button will compute the `InteractionState` to send it to the provided content builder.
-/// This state is computed by the `InteractinButtonStyle`.
+/// This state is computed by the `InteractionButtonStyle`.
 ///
 /// Remark: If the isReadOnly flag is true the action on the button is dropped.
 struct InteractionButton<Content>: View where Content: View {
@@ -28,7 +28,10 @@ struct InteractionButton<Content>: View where Content: View {
 
     // MARK: Initializer
 
-    init(isReadOnly: Bool = false, action: @escaping () -> Void, @ViewBuilder content: @escaping (InteractionState) -> Content) {
+    init(isReadOnly: Bool = false,
+         action: @escaping () -> Void,
+         @ViewBuilder content: @escaping (InteractionState) -> Content)
+    {
         self.isReadOnly = isReadOnly
         self.action = action
         self.content = content
@@ -42,7 +45,7 @@ struct InteractionButton<Content>: View where Content: View {
                 action()
             }
         }
-        .buttonStyle(InteractinButtonStyle(isReadOnly: isReadOnly, content: content))
+        .buttonStyle(InteractionButtonStyle(isReadOnly: isReadOnly, content: content))
     }
 }
 
@@ -53,7 +56,7 @@ struct InteractionButton<Content>: View where Content: View {
 /// - the isPressed flag get from `ButtonStyle.Configuration`
 /// - the isEnabled flag get from the `@Environement`
 /// - the isReadOnly flag provided by the init function.
-struct InteractinButtonStyle<Content>: ButtonStyle where Content: View {
+private struct InteractionButtonStyle<Content>: ButtonStyle where Content: View {
 
     // MARK: Stored properties
 

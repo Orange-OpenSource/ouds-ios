@@ -77,9 +77,10 @@ public struct OUDSCheckbox: View {
     private let isError: Bool
     private let a11yLabel: String
 
-    @Binding var isOn: Bool
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
+
+    @Binding var isOn: Bool
 
     // MARK: - Initializers
 

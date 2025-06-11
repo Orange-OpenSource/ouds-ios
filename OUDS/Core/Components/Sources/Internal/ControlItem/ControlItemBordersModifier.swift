@@ -19,6 +19,7 @@ import SwiftUI
 /// A `ViewModifier` to apply to `ControlItem` views so as to define an outline effect, i.e. draw kind of borders around the object, or a divider.
 /// As they are not supposed to be displayed at the same time, even if it is requested the divider is not displayed if the outline effect is active.
 /// If this view modifier is used to draw an outline in an error context for a disabled component, a *fatal error* will happen because this behaviour is forbidden by design.
+/// This `ViewModifier` manages also the high contrast mode in light color scheme so as to use a dedicated color for borders.
 struct ControlItemBordersModifier: ViewModifier {
 
     // MARK: Stored properties
@@ -28,6 +29,8 @@ struct ControlItemBordersModifier: ViewModifier {
     let isOn: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Body
 
@@ -69,7 +72,11 @@ struct ControlItemBordersModifier: ViewModifier {
         if layoutData.isError {
             isOn ? theme.colors.colorActionNegativeEnabled : nil
         } else {
-            isOn ? theme.colors.colorActionSelected : nil
+            if colorSchemeContrast == .increased, colorScheme == .light {
+                isOn ? theme.colors.colorContentDefault : nil
+            } else {
+                isOn ? theme.colors.colorActionSelected : nil
+            }
         }
     }
 

@@ -20,6 +20,7 @@ import SwiftUI
 
 /// A `ViewModier` to apply to the ``RadioIndicator`` component.
 /// It will define the look and feel of the indicator depending to the ``InteractionState`` and some flags
+/// This `View` manages also the high contrast mode in light color scheme so as to use a dedicated color for indicator.
 struct RadioIndicatorModifier: ViewModifier {
 
     // MARK: - Properties
@@ -50,6 +51,8 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: - Body
 
@@ -77,7 +80,11 @@ private struct RadioIndicatorForegroundModifier: ViewModifier {
         if isError {
             theme.colors.colorActionNegativeEnabled
         } else {
-            isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+            if colorSchemeContrast == .increased, colorScheme == .light {
+                theme.colors.colorContentDefault
+            } else {
+                isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+            }
         }
     }
 
@@ -161,6 +168,8 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
     let isError: Bool
 
     @Environment(\.theme) private var theme
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: - Body
 
@@ -191,7 +200,11 @@ private struct RadioIndicatorBorderModifier: ViewModifier {
         if isError {
             theme.colors.colorActionNegativeEnabled
         } else {
-            isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+            if colorSchemeContrast == .increased, colorScheme == .light {
+                theme.colors.colorContentDefault
+            } else {
+                isOn ? theme.colors.colorActionSelected : theme.colors.colorActionEnabled
+            }
         }
     }
 
