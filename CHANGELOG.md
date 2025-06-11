@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Improve documentation of components by adding component versions
+
 ### Fixed
 
 - Change color of indicator and borders in high contrast mode (light scheme) for radio and checkbox components (#645)

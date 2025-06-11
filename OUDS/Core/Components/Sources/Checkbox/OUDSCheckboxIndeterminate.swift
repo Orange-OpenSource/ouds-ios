@@ -81,8 +81,6 @@ public struct OUDSCheckboxIndeterminate: View {
     @Binding var selection: OUDSCheckboxIndicatorState
     @Environment(\.isEnabled) private var isEnabled
     @Environment(\.theme) private var theme
-    @Environment(\.colorScheme) private var colorScheme
-    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: - Initializers
 
