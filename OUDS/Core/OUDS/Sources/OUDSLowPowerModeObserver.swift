@@ -27,13 +27,24 @@ actor LowPowerModeActor {
 
 // MARK: - OUDS Low Power Mode Observer
 
-/// An `ObservableObject` providing through a published state a flag saying if the device
-/// is in low pover mode or not.
+/// An `ObservableObject` providing through a published state a flag saying if the device  is in low pover mode or not.
+/// This object is exposed as *environement object* through the ``OUDSThemeableView``, and can be used in any view
+/// inside it to apply a specific behavior when the device is in low power mode.
+///
+/// ```swift
+/// // Inside a view with the OUDSThemeableView as root view
+/// @EnvironmentObject var lowPowerModeObserver: OUDSLowPowerModeObserver
+///
+/// // Then read the boolean property
+/// lowPowerModeObserver.isLowPowerModeEnabled
+/// ```
+///
+/// - Since: 0.16.0
 @MainActor
-final class OUDSLowPowerModeObserver: ObservableObject {
+public final class OUDSLowPowerModeObserver: ObservableObject {
 
     /// The published property saying if device is in low power mode (true) or not (false)
-    @Published var isLowPowerModeEnabled: Bool = false
+    @Published public var isLowPowerModeEnabled: Bool = false
 
     /// The actor to store and update the flag in concurrency-safe context
     private let lowPowerModeActor: LowPowerModeActor

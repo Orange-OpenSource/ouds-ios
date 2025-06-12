@@ -72,22 +72,24 @@ private struct LoadingIndicator: View {
     let color: Color
 
     @State private var isAnimating = false
-
-    @Environment(\.accessibilityReduceMotion) var reduceMotion
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @EnvironmentObject private var lowPowerModeObserver: OUDSLowPowerModeObserver
 
     // MARK: Body
 
     var body: some View {
-        if reduceMotion {
+        if reduceMotion || lowPowerModeObserver.isLowPowerModeEnabled {
             circleView()
+                .onAppear { // If not set, animation never resumes is low power mode move from true to false
+                    isAnimating = false
+                }
         } else {
             circleView()
                 .rotationEffect(.degrees(isAnimating ? 360 : 0))
                 .onAppear {
-                    withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
-                        isAnimating.toggle()
-                    }
+                    isAnimating = true
                 }
+                .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false), value: isAnimating)
         }
     }
 
