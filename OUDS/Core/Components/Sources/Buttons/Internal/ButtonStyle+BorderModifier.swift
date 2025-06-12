@@ -22,6 +22,8 @@ struct ButtonBorderModifier: ViewModifier {
     @Environment(\.theme) private var theme
     @Environment(\.oudsUseMonochrome) private var useMonochrome
     @Environment(\.oudsOnColoredSurface) private var onColoredSurface
+    @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var colorSchemeContrast
 
     // MARK: Stored Properties
 
@@ -88,7 +90,11 @@ struct ButtonBorderModifier: ViewModifier {
         case .pressed:
             useMonochrome ? theme.button.buttonColorBorderDefaultPressedMono : theme.button.buttonColorBorderDefaultPressed
         case .loading:
-            useMonochrome ? theme.button.buttonColorBorderDefaultLoadingMono : theme.button.buttonColorBorderDefaultLoading
+            if colorSchemeContrast == .increased, colorScheme == .light {
+                theme.colors.colorContentDefault
+            } else {
+                useMonochrome ? theme.button.buttonColorBorderDefaultLoadingMono : theme.button.buttonColorBorderDefaultLoading
+            }
         case .disabled:
             useMonochrome ? theme.button.buttonColorBorderDefaultDisabledMono : theme.button.buttonColorBorderDefaultDisabled
         }
