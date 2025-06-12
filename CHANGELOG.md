@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- In low power mode, stop animations of loading button (#661)
 - Improve documentation of components by adding component versions
 
 ### Fixed
