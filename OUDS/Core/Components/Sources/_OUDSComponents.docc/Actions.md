@@ -22,4 +22,4 @@ A button with `OUDSButton.Hierarchy.Negative` hierarchy is not allowed as a dire
 
 For accessibility reasons, if the user in the system settings toggles the option to reduce the animations, the loading indicator will be frozen to be more comfortable for the user.
 
-For ecdoesign reasons, if the user toggles the low power mode, the loading indicator will be frozen to prevent the CPU to work and wast energy.
+For ecodesign reasons, if the user toggles the low power mode, the loading indicator will be frozen to prevent the CPU to work and waste energy.
