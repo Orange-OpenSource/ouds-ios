@@ -56,7 +56,7 @@ brew install gitleaks
 brew install swiftlint
 # or `brew reinstall swiftlint` to get updates if old version installed
 
-# For SwiftFormat (at least 0.52.4)
+# For SwiftFormat (at least 0.56.2)
 brew install swiftformat
 # or `brew reinstall swiftformat` to get updates if old version installed
 
