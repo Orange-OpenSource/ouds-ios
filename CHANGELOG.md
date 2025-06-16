@@ -8,15 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- In low power mode, stop animations of loading button (#661)
+- In low power mode, stop animations of loading button (Orange-OpenSource/ouds-io#661)
 - Improve documentation of components by adding component versions
 
 ### Fixed
 
 - Change color of indicator and borders in high contrast mode (light scheme) for radio and checkbox components (Orange-OpenSource/ouds-ios#645)
 - Change color of button loader in high contrast light mode (Orange-OpenSource/ouds-ios#437)
-- Change color of indicator and borders in high contrast mode (light scheme) for radio and checkbox components (#645)
-- Change color of button loader in high contrast light mode (#437)
 
 ## [0.15.0](https://github.com/Orange-OpenSource/ouds-ios/compare/0.14.0...0.15.0) - 2025-05-28
 
