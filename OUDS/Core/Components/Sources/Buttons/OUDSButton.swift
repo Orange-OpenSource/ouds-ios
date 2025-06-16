@@ -66,6 +66,11 @@ import SwiftUI
 ///
 /// **Remark: Today it is not allowed to place a Negative button on a colored surface.**
 ///
+/// ## Specific behavior
+///
+/// For accessibility reasons, if the system settings for reducing motion is enabled, the loading indicator does not move.
+/// For ecodesign reasons, if the device is in low power mode, the loading indicator does not move.
+///
 /// ## Design documentation
 ///
 /// [unified-design-system.orange.com](https://unified-design-system.orange.com/472794e18/p/48a788-button)
