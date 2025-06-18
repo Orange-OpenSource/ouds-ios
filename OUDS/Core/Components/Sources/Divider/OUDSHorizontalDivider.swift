@@ -41,8 +41,8 @@ public struct OUDSHorizontalDivider: View { // TODO: #511 - Update documentation
 
     /// Create a horizontal colored divider.
     ///
-    /// - Parameter color: The color of the divider, `OUDSDividerColor.borderDefault` by default
-    public init(color: OUDSDividerColor = .borderDefault) {
+    /// - Parameter color: The color of the divider, `OUDSDividerColor.default` by default
+    public init(color: OUDSDividerColor = .default) {
         self.color = color
     }
 
@@ -66,11 +66,11 @@ extension Divider {
     /// }
     /// ```
     ///
-    /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.borderDefault` by default
+    /// - Parameter dividerColor: the color of the divider, `OUDSDividerColor.default` by default
     ///
     /// **Remark: Horizontal means horizontal line (content separator in a VStack)**
     @MainActor
-    public func oudsHorizontalDivider(dividerColor: OUDSDividerColor = .borderDefault) -> some View {
+    public func oudsHorizontalDivider(dividerColor: OUDSDividerColor = .default) -> some View {
         modifier(DividerModifier(dividerColor: dividerColor, orientation: .horizontal))
     }
 }
