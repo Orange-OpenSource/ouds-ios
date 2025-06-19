@@ -68,7 +68,7 @@ struct DimensionRawTokensTests {
 
     @Test
     func dimensionRawToken50LessThan75() throws {
-        #expect(DimensionRawTokens.dimension50 < DimensionRawTokens.dimension75)
+        #expect(DimensionRawTokens.dimension50 < DimensionRawTokens.dimensionOutOfSystem150)
     }
 
     @Test func dimensionRawToken50MultipleOfBase() throws {
@@ -77,16 +77,16 @@ struct DimensionRawTokensTests {
 
     @Test
     func dimensionRawToken75NotNegativeValue() throws {
-        #expect(DimensionRawTokens.dimension75 >= 0)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 >= 0)
     }
 
     @Test
     func dimensionRawToken75LessThan100() throws {
-        #expect(DimensionRawTokens.dimension75 < DimensionRawTokens.dimension100)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 < DimensionRawTokens.dimension100)
     }
 
     @Test func dimensionRawToken75MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension75, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimensionOutOfSystem150, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -96,7 +96,7 @@ struct DimensionRawTokensTests {
 
     @Test
     func dimensionRawToken100LessThan125() throws {
-        #expect(DimensionRawTokens.dimension100 < DimensionRawTokens.dimension125)
+        #expect(DimensionRawTokens.dimension100 < DimensionRawTokens.dimensionOutOfSystem250)
     }
 
     @Test func dimensionRawToken100MultipleOfBase() throws {
@@ -105,16 +105,16 @@ struct DimensionRawTokensTests {
 
     @Test
     func dimensionRawToken125NotNegativeValue() throws {
-        #expect(DimensionRawTokens.dimension125 >= 0)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 >= 0)
     }
 
     @Test
     func dimensionRawToken125LessThan150() throws {
-        #expect(DimensionRawTokens.dimension125 < DimensionRawTokens.dimension150)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 < DimensionRawTokens.dimension150)
     }
 
     @Test func dimensionRawToken125MultipleOfBase() throws {
-        TestsUtils.assertMultipleOf(DimensionRawTokens.dimension125, factor: DimensionRawTokens.dimensionBase)
+        TestsUtils.assertMultipleOf(DimensionRawTokens.dimensionOutOfSystem250, factor: DimensionRawTokens.dimensionBase)
     }
 
     @Test
@@ -536,9 +536,9 @@ struct DimensionRawTokensTests {
     func nonEqualityForDimensions() throws {
         #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension25)
         #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension50)
-        #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension75)
+        #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimensionOutOfSystem150)
         #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension100)
-        #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension125)
+        #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimensionOutOfSystem250)
         #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension150)
         #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension200)
         #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension250)
@@ -570,9 +570,9 @@ struct DimensionRawTokensTests {
         #expect(DimensionRawTokens.dimension0 != DimensionRawTokens.dimension11000)
 
         #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimension50)
-        #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimension75)
+        #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimensionOutOfSystem150)
         #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimension100)
-        #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimension125)
+        #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimensionOutOfSystem250)
         #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimension150)
         #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimension200)
         #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimension250)
@@ -603,9 +603,9 @@ struct DimensionRawTokensTests {
         #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimension9000)
         #expect(DimensionRawTokens.dimension25 != DimensionRawTokens.dimension11000)
 
-        #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimension75)
+        #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimensionOutOfSystem150)
         #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimension100)
-        #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimension125)
+        #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimensionOutOfSystem250)
         #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimension150)
         #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimension200)
         #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimension250)
@@ -636,39 +636,39 @@ struct DimensionRawTokensTests {
         #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimension9000)
         #expect(DimensionRawTokens.dimension50 != DimensionRawTokens.dimension11000)
 
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension100)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension125)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension150)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension200)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension250)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension300)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension350)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension400)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension450)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension500)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension550)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension600)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension650)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension700)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension750)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension800)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension850)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension900)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension1000)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension1200)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension1400)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension1600)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension1800)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension2000)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension3000)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension4000)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension5000)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension6000)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension7000)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension9000)
-        #expect(DimensionRawTokens.dimension75 != DimensionRawTokens.dimension11000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension100)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimensionOutOfSystem250)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension150)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension200)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension250)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension300)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension350)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension400)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension450)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension500)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension550)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension600)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension650)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension700)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension750)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension800)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension850)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension900)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension1000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension1200)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension1400)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension1600)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension1800)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension2000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension3000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension4000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension5000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension6000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension7000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension9000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem150 != DimensionRawTokens.dimension11000)
 
-        #expect(DimensionRawTokens.dimension100 != DimensionRawTokens.dimension125)
+        #expect(DimensionRawTokens.dimension100 != DimensionRawTokens.dimensionOutOfSystem250)
         #expect(DimensionRawTokens.dimension100 != DimensionRawTokens.dimension150)
         #expect(DimensionRawTokens.dimension100 != DimensionRawTokens.dimension200)
         #expect(DimensionRawTokens.dimension100 != DimensionRawTokens.dimension250)
@@ -699,35 +699,35 @@ struct DimensionRawTokensTests {
         #expect(DimensionRawTokens.dimension100 != DimensionRawTokens.dimension9000)
         #expect(DimensionRawTokens.dimension100 != DimensionRawTokens.dimension11000)
 
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension150)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension200)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension250)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension300)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension350)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension400)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension450)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension500)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension550)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension600)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension650)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension700)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension750)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension800)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension850)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension900)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension1000)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension1200)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension1400)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension1600)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension1800)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension2000)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension3000)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension4000)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension5000)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension6000)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension7000)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension9000)
-        #expect(DimensionRawTokens.dimension125 != DimensionRawTokens.dimension11000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension150)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension200)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension250)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension300)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension350)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension400)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension450)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension500)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension550)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension600)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension650)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension700)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension750)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension800)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension850)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension900)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension1000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension1200)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension1400)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension1600)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension1800)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension2000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension3000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension4000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension5000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension6000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension7000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension9000)
+        #expect(DimensionRawTokens.dimensionOutOfSystem250 != DimensionRawTokens.dimension11000)
 
         #expect(DimensionRawTokens.dimension150 != DimensionRawTokens.dimension200)
         #expect(DimensionRawTokens.dimension150 != DimensionRawTokens.dimension250)
