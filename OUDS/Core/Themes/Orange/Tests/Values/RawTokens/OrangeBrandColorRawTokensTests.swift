@@ -20,6 +20,7 @@ import TestsUtils
 // swiftlint:disable type_body_length
 // swiftlint:disable force_try
 // swiftlint:disable function_body_length
+// swiftlint:disable file_length
 
 /// The aim of this tests class is to look for regressions in **Orange brand color raw tokens**.
 ///

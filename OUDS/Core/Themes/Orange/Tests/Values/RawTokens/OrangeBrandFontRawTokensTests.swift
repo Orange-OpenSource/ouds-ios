@@ -24,10 +24,10 @@ struct OrangeBrandFontRawTokensTests {
     // MARK: Primitive token - Colors - Orange - Brand
 
     @Test func fontRawTokenFontFamilyBrand() throws {
-        #expect(OrangeBrandFontRawTokens.fontFamilyBrand == "Helvetica Neue")
+        #expect(OrangeBrandFontRawTokens.fontFamilyBrandDefault == "Helvetica Neue")
     }
 
     @Test func fontRawTokenFontFamilyTV() throws {
-        #expect(OrangeBrandFontRawTokens.fontFamilyTV == "Helvetica Neue LT")
+        #expect(OrangeBrandFontRawTokens.fontFamilyBrandTv == "Helvetica Neue LT")
     }
 }

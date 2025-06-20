@@ -32,18 +32,6 @@ extension ElevationRawTokens {
     /// Has for value 20
     public static let elevationBlur700: ElevationRawToken = 20
     /// Has for value 0
-    public static let elevationSpread0: ElevationRawToken = 0
-    /// Has for value 3
-    public static let elevationSpread300: ElevationRawToken = 3
-    /// Has for value -1
-    public static let elevationSpreadN100: ElevationRawToken = -1
-    /// Has for value -2
-    public static let elevationSpreadN200: ElevationRawToken = -2
-    /// Has for value -4
-    public static let elevationSpreadN300: ElevationRawToken = -4
-    /// Has for value -8
-    public static let elevationSpreadN400: ElevationRawToken = -8
-    /// Has for value 0
     public static let elevationX0: ElevationRawToken = 0
     /// Has for value 0
     public static let elevationY0: ElevationRawToken = 0

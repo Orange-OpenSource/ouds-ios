@@ -933,78 +933,6 @@ struct ColorRawTokensTests {
 
         // Step 1: Gather all tokens of color in arrays
 
-        let colorsDecorativeAmber: [ColorRawToken] = [
-            OrangeBrandColorRawTokens.colorDecorativeAmber100,
-            OrangeBrandColorRawTokens.colorDecorativeAmber200,
-            OrangeBrandColorRawTokens.colorDecorativeAmber300,
-            OrangeBrandColorRawTokens.colorDecorativeAmber400,
-            OrangeBrandColorRawTokens.colorDecorativeAmber500,
-            OrangeBrandColorRawTokens.colorDecorativeAmber600,
-            OrangeBrandColorRawTokens.colorDecorativeAmber700,
-            OrangeBrandColorRawTokens.colorDecorativeAmber800,
-            OrangeBrandColorRawTokens.colorDecorativeAmber900,
-        ]
-
-        let colorsDecorativeAmethyst: [ColorRawToken] = [
-            OrangeBrandColorRawTokens.colorDecorativeAmethyst100,
-            OrangeBrandColorRawTokens.colorDecorativeAmethyst200,
-            OrangeBrandColorRawTokens.colorDecorativeAmethyst300,
-            OrangeBrandColorRawTokens.colorDecorativeAmethyst400,
-            OrangeBrandColorRawTokens.colorDecorativeAmethyst500,
-            OrangeBrandColorRawTokens.colorDecorativeAmethyst600,
-            OrangeBrandColorRawTokens.colorDecorativeAmethyst700,
-            OrangeBrandColorRawTokens.colorDecorativeAmethyst800,
-            OrangeBrandColorRawTokens.colorDecorativeAmethyst900,
-        ]
-
-        let colorsDecorativeDeepPeach: [ColorRawToken] = [
-            OrangeBrandColorRawTokens.colorDecorativeDeepPeach100,
-            OrangeBrandColorRawTokens.colorDecorativeDeepPeach200,
-            OrangeBrandColorRawTokens.colorDecorativeDeepPeach300,
-            OrangeBrandColorRawTokens.colorDecorativeDeepPeach400,
-            OrangeBrandColorRawTokens.colorDecorativeDeepPeach500,
-            OrangeBrandColorRawTokens.colorDecorativeDeepPeach600,
-            OrangeBrandColorRawTokens.colorDecorativeDeepPeach700,
-            OrangeBrandColorRawTokens.colorDecorativeDeepPeach800,
-            OrangeBrandColorRawTokens.colorDecorativeDeepPeach900,
-        ]
-
-        let colorsDecorativeEmerald: [ColorRawToken] = [
-            OrangeBrandColorRawTokens.colorDecorativeEmerald100,
-            OrangeBrandColorRawTokens.colorDecorativeEmerald200,
-            OrangeBrandColorRawTokens.colorDecorativeEmerald300,
-            OrangeBrandColorRawTokens.colorDecorativeEmerald400,
-            OrangeBrandColorRawTokens.colorDecorativeEmerald500,
-            OrangeBrandColorRawTokens.colorDecorativeEmerald600,
-            OrangeBrandColorRawTokens.colorDecorativeEmerald700,
-            OrangeBrandColorRawTokens.colorDecorativeEmerald800,
-            OrangeBrandColorRawTokens.colorDecorativeEmerald900,
-        ]
-
-        let colorsDecorativeShockingPink: [ColorRawToken] = [
-            OrangeBrandColorRawTokens.colorDecorativeShockingPink100,
-            OrangeBrandColorRawTokens.colorDecorativeShockingPink200,
-            OrangeBrandColorRawTokens.colorDecorativeShockingPink300,
-            OrangeBrandColorRawTokens.colorDecorativeShockingPink400,
-            OrangeBrandColorRawTokens.colorDecorativeShockingPink500,
-            OrangeBrandColorRawTokens.colorDecorativeShockingPink600,
-            OrangeBrandColorRawTokens.colorDecorativeShockingPink700,
-            OrangeBrandColorRawTokens.colorDecorativeShockingPink800,
-            OrangeBrandColorRawTokens.colorDecorativeShockingPink900,
-        ]
-
-        let colorsDecorativeSky: [ColorRawToken] = [
-            OrangeBrandColorRawTokens.colorDecorativeSky100,
-            OrangeBrandColorRawTokens.colorDecorativeSky200,
-            OrangeBrandColorRawTokens.colorDecorativeSky300,
-            OrangeBrandColorRawTokens.colorDecorativeSky400,
-            OrangeBrandColorRawTokens.colorDecorativeSky500,
-            OrangeBrandColorRawTokens.colorDecorativeSky600,
-            OrangeBrandColorRawTokens.colorDecorativeSky700,
-            OrangeBrandColorRawTokens.colorDecorativeSky800,
-            OrangeBrandColorRawTokens.colorDecorativeSky900,
-        ]
-
         let colorsFunctionalBlack: [ColorRawToken] = [ColorRawTokens.colorFunctionalBlack]
 
         let colorsFunctionalWhite: [ColorRawToken] = [ColorRawTokens.colorFunctionalWhite]
@@ -1153,12 +1081,6 @@ struct ColorRawTokensTests {
         // Step 2: Pack all arrays
 
         let allColors: [[ColorRawToken]] = [
-            colorsDecorativeAmber,
-            colorsDecorativeAmethyst,
-            colorsDecorativeDeepPeach,
-            colorsDecorativeEmerald,
-            colorsDecorativeShockingPink,
-            colorsDecorativeSky,
             colorsFunctionalBlack,
             colorsFunctionalWhite,
             colorsFunctionalDarkGray,
