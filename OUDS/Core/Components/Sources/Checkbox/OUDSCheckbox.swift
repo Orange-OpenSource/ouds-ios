@@ -72,7 +72,7 @@ import SwiftUI
 /// - Since: 0.12.0
 public struct OUDSCheckbox: View {
 
-    // MARK: - Properties
+    // MARK: Properties
 
     private let isError: Bool
     private let a11yLabel: String
@@ -82,7 +82,7 @@ public struct OUDSCheckbox: View {
 
     @Binding var isOn: Bool
 
-    // MARK: - Initializers
+    // MARK: Initializers
 
     /// Creates a checkbox with only an indicator.
     ///
@@ -116,6 +116,7 @@ public struct OUDSCheckbox: View {
                        minHeight: theme.checkbox.checkboxSizeMinHeight,
                        maxHeight: theme.checkbox.checkboxSizeMaxHeight)
                 .contentShape(Rectangle())
+                .modifier(CheckboxBackgroundColorModifier(interactionState: interactionState))
         }
         .accessibilityRemoveTraits([.isButton]) // .isToggle trait for iOS 17+
         .accessibilityLabel(a11yLabel(isDisabled: !isEnabled))
@@ -123,7 +124,7 @@ public struct OUDSCheckbox: View {
         .accessibilityHint(a11yHint())
     }
 
-    // MARK: - Computed value
+    // MARK: Computed value
 
     private var convertedState: OUDSCheckboxIndicatorState {
         isOn ? .selected : .unselected
