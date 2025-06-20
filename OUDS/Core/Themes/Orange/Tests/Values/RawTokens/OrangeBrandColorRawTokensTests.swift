@@ -219,6 +219,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange50 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange50 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange50 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange50 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange100 != OrangeBrandColorRawTokens.colorOrange200)
         #expect(OrangeBrandColorRawTokens.colorOrange100 != OrangeBrandColorRawTokens.colorOrange300)
@@ -238,6 +239,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange100 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange100 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange100 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange100 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange200 != OrangeBrandColorRawTokens.colorOrange300)
         #expect(OrangeBrandColorRawTokens.colorOrange200 != OrangeBrandColorRawTokens.colorOrange400)
@@ -256,6 +258,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange200 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange200 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange200 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange200 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange300 != OrangeBrandColorRawTokens.colorOrange400)
         #expect(OrangeBrandColorRawTokens.colorOrange300 != OrangeBrandColorRawTokens.colorOrange500)
@@ -273,6 +276,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange300 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange300 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange300 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange300 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange400 != OrangeBrandColorRawTokens.colorOrange500)
         #expect(OrangeBrandColorRawTokens.colorOrange400 != OrangeBrandColorRawTokens.colorOrange550)
@@ -289,6 +293,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange400 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange400 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange400 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange400 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange500 != OrangeBrandColorRawTokens.colorOrange550)
         #expect(OrangeBrandColorRawTokens.colorOrange500 != OrangeBrandColorRawTokens.colorOrange600)
@@ -304,6 +309,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange500 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange500 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange500 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange500 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange550 != OrangeBrandColorRawTokens.colorOrange600)
         #expect(OrangeBrandColorRawTokens.colorOrange550 != OrangeBrandColorRawTokens.colorOrange700)
@@ -318,6 +324,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange550 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange550 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange550 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange550 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange600 != OrangeBrandColorRawTokens.colorOrange700)
         #expect(OrangeBrandColorRawTokens.colorOrange600 != OrangeBrandColorRawTokens.colorOrange800)
@@ -331,6 +338,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange600 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange600 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange600 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange600 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange700 != OrangeBrandColorRawTokens.colorOrange800)
         #expect(OrangeBrandColorRawTokens.colorOrange700 != OrangeBrandColorRawTokens.colorOrange900)
@@ -343,6 +351,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange700 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange700 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange700 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange700 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange800 != OrangeBrandColorRawTokens.colorOrange900)
         #expect(OrangeBrandColorRawTokens.colorOrange800 != OrangeBrandColorRawTokens.colorWarmGray100)
@@ -354,6 +363,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange800 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange800 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange800 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange800 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorOrange900 != OrangeBrandColorRawTokens.colorWarmGray100)
         #expect(OrangeBrandColorRawTokens.colorOrange900 != OrangeBrandColorRawTokens.colorWarmGray200)
@@ -364,6 +374,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorOrange900 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorOrange900 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorOrange900 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorOrange900 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorWarmGray100 != OrangeBrandColorRawTokens.colorWarmGray200)
         #expect(OrangeBrandColorRawTokens.colorWarmGray100 != OrangeBrandColorRawTokens.colorWarmGray300)
@@ -373,6 +384,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorWarmGray100 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorWarmGray100 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorWarmGray100 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorWarmGray100 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorWarmGray200 != OrangeBrandColorRawTokens.colorWarmGray300)
         #expect(OrangeBrandColorRawTokens.colorWarmGray200 != OrangeBrandColorRawTokens.colorWarmGray400)
@@ -381,6 +393,7 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorWarmGray200 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorWarmGray200 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorWarmGray200 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorWarmGray200 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorWarmGray300 != OrangeBrandColorRawTokens.colorWarmGray400)
         #expect(OrangeBrandColorRawTokens.colorWarmGray300 != OrangeBrandColorRawTokens.colorWarmGray500)
@@ -388,26 +401,34 @@ struct OrangeBrandColorRawTokensTests {
         #expect(OrangeBrandColorRawTokens.colorWarmGray300 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorWarmGray300 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorWarmGray300 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorWarmGray300 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorWarmGray400 != OrangeBrandColorRawTokens.colorWarmGray500)
         #expect(OrangeBrandColorRawTokens.colorWarmGray400 != OrangeBrandColorRawTokens.colorWarmGray600)
         #expect(OrangeBrandColorRawTokens.colorWarmGray400 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorWarmGray400 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorWarmGray400 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorWarmGray400 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorWarmGray500 != OrangeBrandColorRawTokens.colorWarmGray600)
         #expect(OrangeBrandColorRawTokens.colorWarmGray500 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorWarmGray500 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorWarmGray500 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorWarmGray500 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorWarmGray600 != OrangeBrandColorRawTokens.colorWarmGray700)
         #expect(OrangeBrandColorRawTokens.colorWarmGray600 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorWarmGray600 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorWarmGray600 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorWarmGray700 != OrangeBrandColorRawTokens.colorWarmGray800)
         #expect(OrangeBrandColorRawTokens.colorWarmGray700 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorWarmGray700 != OrangeBrandColorRawTokens.colorWarmGray1000)
 
         #expect(OrangeBrandColorRawTokens.colorWarmGray800 != OrangeBrandColorRawTokens.colorWarmGray900)
+        #expect(OrangeBrandColorRawTokens.colorWarmGray800 != OrangeBrandColorRawTokens.colorWarmGray1000)
+
+        #expect(OrangeBrandColorRawTokens.colorWarmGray900 != OrangeBrandColorRawTokens.colorWarmGray1000)
     }
 
     /// Compare all colors to ensure they are all unique
